@@ -34,6 +34,7 @@ from _calendars import (
     SPAN_PRINTS_FIELDS,
     SPAN_STATED,
     TAKES_FROM,
+    load_document,
     mass_index,
     partition,
     proper_family,
@@ -778,6 +779,60 @@ def check_ordinary_appointments(
         locus = row.get("locus")
         if not isinstance(locus, str) or not locus.strip():
             problems.append(f"{label}: locus must name where the formulary prints it")
+
+
+# A recension's own witness for the Ordinary variables of the formularies it
+# inherits; `tools/mass-propers` (`recension_appointments`) drops the base's
+# appointments from every inherited mass and applies only these.
+ATTESTED_APPOINTMENTS = "attested_appointments"
+
+
+def check_attested_appointments(path: Path, document: dict, problems: list[str]) -> None:
+    """Validate a recension's attested Ordinary appointments for inherited masses."""
+    rows = document[ATTESTED_APPOINTMENTS]
+    where = f"{path}: {ATTESTED_APPOINTMENTS}"
+    if not document.get("text_from"):
+        problems.append(f"{where} belongs only to a recension (a file with text_from)")
+        return
+    if not isinstance(rows, dict) or not rows:
+        problems.append(f"{where} must be a nonempty mapping of inherited mass keys")
+        return
+    try:
+        effective = load_document(path.parent.parent, str(document.get("calendar") or ""))
+    except ValueError as error:
+        problems.append(f"{where}: the recension cannot be derived: {error}")
+        return
+    inherited: dict[str, set[str]] = {}
+    for body in (effective.get("sections") or {}).values():
+        for mass in (body or {}).get("masses") or []:
+            stamp = mass.get("recension") if isinstance(mass, dict) else None
+            if isinstance(stamp, dict) and not stamp.get("stated"):
+                inherited[str(mass.get("key"))] = {
+                    str(form.get("id")) for form in mass.get("forms") or []
+                    if isinstance(form, dict)
+                }
+    for key, row in rows.items():
+        label = f"{where}.{key}"
+        if key not in inherited:
+            problems.append(f"{label}: names no mass this recension inherits")
+            continue
+        if not isinstance(row, dict) or not row:
+            problems.append(f"{label} must be a nonempty mapping")
+            continue
+        own = {name: value for name, value in row.items() if name != "forms"}
+        if own:
+            check_ordinary_appointments(label, own, problems)
+        forms = row.get("forms")
+        if forms is None:
+            continue
+        if not isinstance(forms, dict) or not forms:
+            problems.append(f"{label}.forms must be a nonempty mapping of form ids")
+            continue
+        for form_id, form_rows in forms.items():
+            if form_id not in inherited[key]:
+                problems.append(f"{label}.forms.{form_id}: the inherited mass holds no such form")
+                continue
+            check_ordinary_appointments(f"{label}.forms.{form_id}", form_rows, problems)
 
 
 def check_form_celebrated(where: str, value: object, problems: list[str]) -> None:
@@ -2042,12 +2097,13 @@ def check_entry(
                     "but the mass also carries a Collect"
                 )
     if ORDINARY_APPOINTMENTS in entry:
+        # A Common may record the direction it prints (the Saturday Masses of
+        # Our Lady print "Praefatio de B. Maria Virgine", 1962 pp. [44]-[48]).
+        # It is read only where the Common is itself the day's own Mass; a
+        # day that takes a Common through `takes_from` never inherits it and
+        # records its own printed direction (2026-10-19, superseding the rule
+        # that a Common could carry none).
         check_ordinary_appointments(where, entry[ORDINARY_APPOINTMENTS], problems)
-        if section_kind == COMMON_KIND:
-            problems.append(
-                f"{where}: a Common cannot carry {ORDINARY_APPOINTMENTS}; the "
-                "appointment is printed by the day that takes it"
-            )
     if has_ordinary_frame:
         check_ordinary_frame(where, entry[ORDINARY_FRAME], problems)
         if section_kind == COMMON_KIND:
@@ -2486,6 +2542,8 @@ def check_file(path: Path, problems: list[str]) -> dict[str, int]:
             f"{path}: the mass list is canonical under sections; a top-level "
             "masses key duplicates it"
         )
+    if ATTESTED_APPOINTMENTS in document:
+        check_attested_appointments(path, document, problems)
     sections = document.get("sections")
     if not isinstance(sections, dict) or not sections:
         problems.append(f"{path}: sections must be a nonempty mapping")

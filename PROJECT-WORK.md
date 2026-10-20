@@ -231,10 +231,12 @@ Remaining:
 <!-- promised-deliverable: missal-reader-c2-exemplars-2026-10-19 -->
 
 The same request starts C2. **In progress: exemplars chosen; steps 1 (truthful accounting), 3
-(appointments and sequence) and 4 (claim-local truth) implemented.** Step 3 has
-one visible consequence: most days other than Pentecost now show a typed
-Preface stand-in instead of every Preface unmarked, until their printed Preface
-directions are joined. That join is the next priority. A read-only real-browser audit chose Pentecost Sunday,
+(appointments and sequence) and 4 (claim-local truth) implemented.** Step 3 first left
+most days with a typed Preface stand-in. Recording the printed directions and
+the rubric spans then brought 1962 to a seated Preface on every day of 2026.
+Pre-1955 keeps 206 stand-in days until commemorations and octaves are modelled.
+The formulary-level expected-target join (step 2) is done: 488 1962 and 463
+pre-1955 formularies are joined. A read-only real-browser audit chose Pentecost Sunday,
 2026-05-24, for all three missals and audited every unit against the six-part
 pattern. The pre-1955 audit is provisional until its witness inventory lands.
 It found 22 gaps, now recorded in the

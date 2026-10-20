@@ -1768,10 +1768,19 @@ process.stdout.write(JSON.stringify({
         # rows of the second-Postcommunion regime and Et famulos are excluded.
         # Every other event, and the common Communicantes and Hanc igitur, is
         # unchanged and in the same order.
-        self.assertEqual(len(sequence), 175)
+        # Re-pinned 2026-10-19 (C2 Preface directions), diffed against the HEAD
+        # 799988766 harness, whose digest was the one above: exactly two events
+        # left and four entered, all in the Preface. The stand-in
+        # praefatio/praefatio-diei and the Sanctus at the common Preface's seat
+        # gave way to the 1861 witness's asterisk note, the Trinity Preface
+        # heading and Preface, and the Sanctus after a proper Preface, because
+        # the Sunday's formulary prints "Praefatio de Ssma Trinitate" (physical
+        # PDF p. 471, printed p. 390; RGMR 494 b). Every other event is
+        # unchanged and in the same order.
+        self.assertEqual(len(sequence), 177)
         self.assertEqual(
             digest,
-            "25826827edcaaf20007e8a80c69ed53c8c659de9c766780e0b201a954d07dc8e",
+            "eb1cee1ad6527408486be6b47880d329f0f25fb92b17bb43d609e7c81621d6ca",
         )
 
         sequence = report["ot_18_sequence"]
@@ -1811,10 +1820,13 @@ process.stdout.write(JSON.stringify({
         # Re-pinned 2026-10-19 (C2 gaps G5 and G6): the same 30 removals and
         # one typed stand-in as the sequence pin above, diffed against HEAD
         # ec0816c59; every retained event's received text is byte-identical.
+        # Re-pinned 2026-10-19 (C2 Preface directions): the same two removals
+        # and four additions as the sequence pin above, diffed against HEAD
+        # 799988766; every retained event's received text is byte-identical.
         expected = {
             "pentecost_10_text": (
-                175,
-                "ddfa9e794021e74244bca4bc5cb585d6cca9f9521fb9bb74a654521e302ee016",
+                177,
+                "95ef913d67a48e3aec32f99f0c48b8e2a273d468798b11cc67a40387ac043492",
             ),
             "ot_18_text": (
                 67,
@@ -1858,9 +1870,10 @@ process.stdout.write(JSON.stringify({
             "oblatio/credo-in-unum-deum",
             "Offertory",
             "Secret",
-            # No formulary appointment for Easter Sunday is recorded yet, so
-            # its Preface is the typed stand-in, not the common Preface.
-            "praefatio/sanctus",
+            # Easter Sunday's formulary prints the Paschal Preface (2026-10-19),
+            # so the Sanctus is seated after that proper Preface
+            # (praefatio/sanctus-post-praefationem, not a mark this list
+            # tracks) and not at the common Preface's place.
             "canon/te-igitur",
             "canon/forma-corporis",
             "canon/forma-sanguinis",

@@ -208,7 +208,92 @@ def load_calendar(root: Path, calendar: str, effective: bool = True) -> dict:
     census of the merged document would report the base's mass count under the
     recension's name, and a projection is measured by its diff.
     """
-    return _calendars.load_document(root, calendar, effective=effective)
+    document = _calendars.load_document(root, calendar, effective=effective)
+    if effective and document.get(_calendars.RECENSION_BASE):
+        document = recension_appointments(document)
+    return document
+
+
+# A recension's own witness for the Ordinary variables its inherited formularies
+# appoint (C2 G5 follow-up, 2026-10-19). Inheritance through `text_from`
+# carries a formulary's WORDS from where they were transcribed; it is not
+# evidence that the recension's book prints the same rubrical direction, and a
+# Preface seated on that inference would present a 1962 rubric as the pre-1955
+# rite. So an inherited mass or form drops its base `ordinary_appointments`,
+# and takes only what the recension itself records under this top-level map,
+# each row citing the recension's own witness:
+#
+#     attested_appointments:
+#       pentecost:
+#         preface: {option: spiritu-sancto, locus: "..."}
+#       pentecost-ember-saturday:
+#         forms:
+#           longer: {preface: {option: spiritu-sancto, locus: "..."}}
+#
+# A mass the recension states itself (a departure row) keeps what it records.
+ATTESTED_APPOINTMENTS = "attested_appointments"
+
+
+def recension_appointments(document: dict) -> dict:
+    """Replace inherited Ordinary appointments with the recension's attested ones."""
+    attested = document.get(ATTESTED_APPOINTMENTS) or {}
+    if not isinstance(attested, dict):
+        raise ValueError(f"{ATTESTED_APPOINTMENTS} must be a mapping of mass keys")
+    seen: set[str] = set()
+    sections = {}
+    for name, body in (document.get("sections") or {}).items():
+        if not isinstance(body, dict):
+            sections[name] = body
+            continue
+        masses = []
+        for mass in body.get("masses") or []:
+            if not isinstance(mass, dict):
+                masses.append(mass)
+                continue
+            stamp = mass.get(_calendars.RECENSION)
+            inherited = isinstance(stamp, dict) and not stamp.get("stated")
+            row = attested.get(mass.get("key"))
+            if not inherited:
+                if row is not None:
+                    raise ValueError(
+                        f"{ATTESTED_APPOINTMENTS}.{mass.get('key')}: the recension states "
+                        "this mass itself; record its appointments on its own row"
+                    )
+                masses.append(mass)
+                continue
+            carried = {key: value for key, value in mass.items()
+                       if key != "ordinary_appointments"}
+            if isinstance(mass.get("forms"), list):
+                carried["forms"] = [
+                    {key: value for key, value in form.items() if key != "ordinary_appointments"}
+                    if isinstance(form, dict) else form
+                    for form in mass["forms"]
+                ]
+            if row is not None:
+                seen.add(str(mass.get("key")))
+                if not isinstance(row, dict):
+                    raise ValueError(f"{ATTESTED_APPOINTMENTS}.{mass.get('key')} must be a mapping")
+                own = {key: value for key, value in row.items() if key != "forms"}
+                if own:
+                    carried["ordinary_appointments"] = own
+                for form_id, form_rows in (row.get("forms") or {}).items():
+                    forms = [form for form in carried.get("forms") or []
+                             if isinstance(form, dict) and form.get("id") == form_id]
+                    if len(forms) != 1:
+                        raise ValueError(
+                            f"{ATTESTED_APPOINTMENTS}.{mass.get('key')}.forms names "
+                            f"{form_id!r}, which the inherited mass does not hold"
+                        )
+                    forms[0]["ordinary_appointments"] = form_rows
+            masses.append(carried)
+        sections[name] = dict(body, masses=masses)
+    unknown = sorted(set(attested) - seen)
+    if unknown:
+        raise ValueError(
+            f"{ATTESTED_APPOINTMENTS} names masses the recension does not inherit: "
+            + ", ".join(unknown)
+        )
+    return dict(document, sections=sections)
 
 
 def calendars(root: Path) -> list[str]:

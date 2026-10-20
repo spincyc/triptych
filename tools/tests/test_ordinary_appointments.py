@@ -92,6 +92,25 @@ DAYS = [
      "form": "vigil"},
     {"id": "easterPost", "calendar": "postconciliar", "date": "2026-04-05"},
     {"id": "adventPost", "calendar": "postconciliar", "date": "2026-11-29"},
+    # Preface appointments from the printed directions and RGMR 482-498
+    # (2026-10-19): a Lenten feria, a feast with a proper Preface, a saint in a
+    # de Tempore span, an Advent feria borrowing its Sunday, the Vigil of the
+    # Nativity on a weekday and on a Sunday, and pre-1955 days the Bonn witness
+    # does and does not settle.
+    {"id": "lentFeria1962", "calendar": "roman-1962", "date": "2026-03-04"},
+    {"id": "annunciation1962", "calendar": "roman-1962", "date": "2026-03-25"},
+    {"id": "petrusPaulus1962", "calendar": "roman-1962", "date": "2026-06-29"},
+    {"id": "paschalSaint1962", "calendar": "roman-1962", "date": "2026-04-14"},
+    {"id": "ascensionSaint1962", "calendar": "roman-1962", "date": "2026-05-15"},
+    {"id": "adventFeria1962", "calendar": "roman-1962", "date": "2026-12-01"},
+    {"id": "saturdayOurLady1962", "calendar": "roman-1962", "date": "2026-01-10"},
+    {"id": "christmasVigil1962", "calendar": "roman-1962", "date": "2026-12-24"},
+    {"id": "christmasVigilSunday1962", "calendar": "roman-1962", "date": "2028-12-24"},
+    {"id": "allSaintsSunday1962", "calendar": "roman-1962", "date": "2026-11-01"},
+    {"id": "transfigurationPre1955", "calendar": "roman-pre-1955", "date": "2026-08-06"},
+    {"id": "transfiguration1962", "calendar": "roman-1962", "date": "2026-08-06"},
+    {"id": "saintPre1955", "calendar": "roman-pre-1955", "date": "2026-01-15"},
+    {"id": "lentFeriaPre1955", "calendar": "roman-pre-1955", "date": "2026-03-05"},
 ]
 
 
@@ -160,9 +179,54 @@ class OrdinaryAppointments(unittest.TestCase):
         self.assertIn("canon/communicantes", ordinary)
         self.assertIn("canon/hanc-igitur", ordinary)
         self.assertNotIn("canon/communicantes-pentecoste", ordinary)
-        # Its Preface is not appointed yet: one typed stand-in, not eleven.
-        self.assertEqual(self.prefaces("pentecostX1962"), ["praefatio/praefatio-diei"])
-        self.assertIn("praefatio/sanctus", ordinary)
+        # The Sunday formulary prints "Praefatio de Ssma Trinitate" (RGMR 494 b).
+        self.assertEqual(self.prefaces("pentecostX1962"), [
+            "praefatio/praefatio-de-ss-trinitate-heading",
+            "praefatio/praefatio-de-ss-trinitate",
+        ])
+        self.assertNotIn("praefatio/praefatio-diei", ordinary)
+        self.assertIn("praefatio/sanctus-post-praefationem", ordinary)
+
+    def preface_of(self, key: str) -> str:
+        found = [one for one in self.prefaces(key) if not one.endswith("-heading")]
+        self.assertEqual(len(found), 1, (key, found))
+        return found[0].removeprefix("praefatio/")
+
+    def test_1962_prefaces_follow_the_printed_direction_then_the_season(self) -> None:
+        expected = {
+            # the formulary's own printed direction
+            "lentFeria1962": "praefatio-de-quadragesima",
+            "annunciation1962": "praefatio-de-beata-maria-virgine",
+            "petrusPaulus1962": "praefatio-de-apostolis",
+            "saturdayOurLady1962": "praefatio-de-beata-maria-virgine",
+            # RGMR 489 b) and 490 b): de Tempore in a Mass printing none
+            "paschalSaint1962": "praefatio-paschalis",
+            "ascensionSaint1962": "praefatio-de-ascensione",
+            # RGMR 482 and 498: a borrowed Advent feria and a feast with no
+            # proper Preface take the common Preface; 494 b) reaches the Mass
+            # of the Sunday, not a feast said on one
+            "adventFeria1962": "praefatio-communis",
+            "allSaintsSunday1962": "praefatio-communis",
+            "transfiguration1962": "praefatio-communis",
+            # the Vigil of the Nativity: common, Trinity on a Sunday (p. 16)
+            "christmasVigil1962": "praefatio-communis",
+            "christmasVigilSunday1962": "praefatio-de-ss-trinitate",
+        }
+        for key, preface in expected.items():
+            with self.subTest(key=key):
+                self.assertEqual(self.preface_of(key), preface)
+                self.assertEqual(self.report[key]["unresolved"], [])
+
+    def test_pre_1955_takes_only_the_bonn_witness_direction(self) -> None:
+        # The Bonn witness prints the Nativity Preface for the Transfiguration,
+        # where 1962 says the common Preface: an inherited formulary does not
+        # carry the 1962 book's direction into this recension.
+        self.assertEqual(self.preface_of("transfigurationPre1955"), "praefatio-de-nativitate")
+        self.assertEqual(self.preface_of("lentFeriaPre1955"), "praefatio-de-quadragesima")
+        # A saint's day the Bonn formulary gives no direction for: its general
+        # rubrics turn on commemorations and octaves, which are not modelled,
+        # so the typed stand-in remains, never a de Tempore or common Preface.
+        self.assertEqual(self.prefaces("saintPre1955"), ["praefatio/praefatio-diei"])
 
     def test_feast_only_canon_forms_do_not_follow_a_borrowed_formulary(self) -> None:
         feast = self.report["epiphany1962"]
@@ -251,6 +315,24 @@ class OrdinaryAppointments(unittest.TestCase):
         self.assertIn("Communicantes -- the proper form of Pentecost", finished.stdout)
         self.assertNotIn("Communicantes, et memoriam venerantes", finished.stdout)
         self.assertNotIn("The PREFACE on Festivals", finished.stdout)
+
+
+    def test_cli_seats_the_same_preface_as_the_browser(self) -> None:
+        finished = subprocess.run(
+            ["python3", "tools/mass-today", "--date", "2026-08-02", "--calendar",
+             "roman-1962", "--expanded", "--plain"],
+            cwd=ROOT, capture_output=True, text=True, check=False,
+        )
+        self.assertEqual(finished.returncode, 0, finished.stderr[-2000:])
+        self.assertIn("On TRINITY-SUNDAY", finished.stdout)
+        self.assertNotIn("appointment not established", finished.stdout)
+        finished = subprocess.run(
+            ["python3", "tools/mass-today", "--date", "2026-01-15", "--calendar",
+             "roman-pre-1955", "--expanded", "--plain"],
+            cwd=ROOT, capture_output=True, text=True, check=False,
+        )
+        self.assertEqual(finished.returncode, 0, finished.stderr[-2000:])
+        self.assertIn("The Preface of the day -- appointment not established", finished.stdout)
 
 
 if __name__ == "__main__":

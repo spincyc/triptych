@@ -93,7 +93,9 @@ conventions:
   doxology is not repeated per entry
 - propers stand in the order the Missal appoints them, not in a fixed template;
   Tracts, Sequences, and ritual texts appear only where appointed
-- the invariant Ordinary is out of scope; prefaces are not recorded
+- the invariant Ordinary is out of scope; a formulary's printed direction for
+  the Ordinary's variables (Preface, Communicantes, Hanc igitur) is recorded as
+  `ordinary_appointments` (2026-10-19), never a Preface's text
 - a mass whose body-bearing evidence covers only scripture-bearing slots says so
   in its own notes; appointed orations whose bodies are not held stand as typed,
   text-free proper slots and are not silently omitted
@@ -594,6 +596,8 @@ sections:
       name: First Sunday of Advent
       registry: '01'
       season: advent
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 83, printed p. 2; explicit Praefatio de Ssma Trinitate rubric; appointment, not new preface formula; expected-target row roman-1962.temporal.advent-1:preface-trinity"}
       propers:
       - name: Introit
         incipit: Ad te levavi
@@ -708,6 +712,8 @@ sections:
       name: Second Sunday of Advent
       registry: '02'
       season: advent
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 85, printed p. 4; explicit Praefatio de Ssma Trinitate rubric; appointment, not new preface formula; expected-target row roman-1962.temporal.advent-2:preface-trinity"}
       propers:
       - name: Introit
         incipit: Populus Sion
@@ -825,6 +831,8 @@ sections:
       name: Third Sunday of Advent
       registry: '03'
       season: advent
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 86, printed p. 5; explicit Praefatio de Ssma Trinitate rubric; appointment, not new preface formula; expected-target row roman-1962.temporal.advent-3:preface-trinity"}
       propers:
       - name: Introit
         incipit: Gaudete in Domino
@@ -1458,6 +1466,8 @@ sections:
       name: Fourth Sunday of Advent
       registry: '04'
       season: advent
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 96, printed p. 15; explicit Praefatio de Ssma Trinitate rubric; appointment, not new preface formula; expected-target row roman-1962.temporal.advent-4:preface-trinity"}
       propers:
       - name: Introit
         incipit: Rorate, coeli
@@ -1578,6 +1588,9 @@ sections:
       name: Sunday within the Octave of the Nativity
       registry: '07'
       season: christmastide
+      ordinary_appointments:
+        preface: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 104, printed p. 23; explicit Nativity Preface or referral to first Christmas Mass; expected-target row roman-1962.temporal.nativity-octave-sunday:preface-nativity"}
+        communicantes: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 104, printed p. 23; explicit proper Communicantes or referral to first Christmas Mass; night/day wording distinguished by artifact99 rubric; expected-target row roman-1962.temporal.nativity-octave-sunday:communicantes-nativity"}
       propers:
       - name: Introit
         incipit: Dum medium silentium
@@ -1691,6 +1704,9 @@ sections:
       date: 12-29
       rank: II
       kind: seasonal
+      ordinary_appointments:
+        preface: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 110, printed p. 29; explicit Nativity Preface or referral to first Christmas Mass; expected-target row roman-1962.temporal.nativity-octave-days:preface-nativity"}
+        communicantes: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 110, printed p. 29; explicit proper Communicantes or referral to first Christmas Mass; night/day wording distinguished by artifact99 rubric; expected-target row roman-1962.temporal.nativity-octave-days:communicantes-nativity"}
       takes_from:
         mass: nativitate-domini-octave
         form: Ad tertiam Missam in die
@@ -1738,6 +1754,8 @@ sections:
       registry: '09'
       season: christmastide
       rank: II
+      ordinary_appointments:
+        preface: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 116, printed p. 35; explicit seasonal Preface appointment; expected-target row roman-1962.temporal.holy-name:preface-nativity"}
       notes: 'RG 17 a assigns this feast perpetually to the Sunday falling from 2 to 5 January, and to 2 January
         in a year in which no Sunday falls there; the calendar prints it as a notice at the foot of January
         rather than against a numeral, so it carries no fixed date and a synthetic registry id. Its eight
@@ -1945,6 +1963,8 @@ sections:
       name: First Sunday after the Epiphany (Feast of the Holy Family)
       registry: '11'
       season: epiphanytide
+      ordinary_appointments:
+        preface: {option: epiphania, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 121, printed p. 40; explicit seasonal Preface appointment; expected-target row roman-1962.temporal.holy-family:preface-epiphany"}
       propers:
       - name: Introit
         incipit: Exsultet gaudio pater Justi
@@ -2192,6 +2212,8 @@ sections:
       name: Second Sunday after the Epiphany
       registry: '13'
       season: epiphanytide
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 126, printed p. 45; explicit Praefatio de Ssma Trinitate rubric; appointment, not new preface formula; expected-target row roman-1962.temporal.epiphany-2:preface-trinity"}
       propers:
       - name: Introit
         incipit: Omnis terra adoret te
@@ -2317,6 +2339,8 @@ sections:
       name: Third Sunday after the Epiphany
       registry: '14'
       season: epiphanytide
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 127, printed p. 46; explicit Praefatio de Ssma Trinitate rubric; appointment, not new preface formula; expected-target row roman-1962.temporal.epiphany-3:preface-trinity"}
       propers:
       - name: Introit
         incipit: Adorate Deum
@@ -2419,6 +2443,8 @@ sections:
       name: Fourth Sunday after the Epiphany
       registry: '15'
       season: epiphanytide
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 128, printed p. 47; explicit Praefatio de Ssma Trinitate rubric; appointment, not new preface formula; expected-target row roman-1962.temporal.epiphany-4:preface-trinity"}
       propers:
       - name: Introit
         incipit: Adorate Deum
@@ -2522,6 +2548,8 @@ sections:
       name: Fifth Sunday after the Epiphany
       registry: '16'
       season: epiphanytide
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 129, printed p. 48; explicit Praefatio de Ssma Trinitate rubric; appointment, not new preface formula; expected-target row roman-1962.temporal.epiphany-5:preface-trinity"}
       propers:
       - name: Introit
         incipit: Adorate Deum
@@ -2626,6 +2654,8 @@ sections:
       name: Sixth Sunday after the Epiphany
       registry: '17'
       season: epiphanytide
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 130, printed p. 49; explicit Praefatio de Ssma Trinitate rubric; appointment, not new preface formula; expected-target row roman-1962.temporal.epiphany-6:preface-trinity"}
       propers:
       - name: Introit
         incipit: Adorate Deum
@@ -2728,6 +2758,8 @@ sections:
       name: Septuagesima Sunday
       registry: '18'
       season: septuagesima
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 132, printed p. 51; explicit Praefatio de Ssma Trinitate rubric; appointment, not new preface formula; expected-target row roman-1962.temporal.septuagesima:preface-trinity"}
       propers:
       - name: Introit
         incipit: Circumdederunt me
@@ -2847,6 +2879,8 @@ sections:
       name: Sexagesima Sunday
       registry: '19'
       season: septuagesima
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 134, printed p. 53; explicit Praefatio de Ssma Trinitate rubric; appointment, not new preface formula; expected-target row roman-1962.temporal.sexagesima:preface-trinity"}
       propers:
       - name: Introit
         incipit: Exsurge, quare obdormis, Domine
@@ -2976,6 +3010,8 @@ sections:
       name: Quinquagesima Sunday
       registry: '20'
       season: septuagesima
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 136, printed p. 55; explicit Praefatio de Ssma Trinitate rubric; appointment, not new preface formula; expected-target row roman-1962.temporal.quinquagesima:preface-trinity"}
       propers:
       - name: Introit
         incipit: Esto mihi
@@ -3086,6 +3122,8 @@ sections:
       registry: '1962-T-ash-wednesday'
       season: lent
       rank: I
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 139, printed p. 58; explicit Praefatio de Quadragesima rubric; expected-target row roman-1962.temporal.ash-wednesday:preface-lent"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -3288,6 +3326,8 @@ sections:
       registry: '1962-T-thursday-after-ash-wednesday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 141, printed p. 60; explicit Praefatio de Quadragesima rubric; expected-target row roman-1962.temporal.after-ashes-thursday:preface-lent"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -3394,6 +3434,8 @@ sections:
       registry: '1962-T-friday-after-ash-wednesday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 142, printed p. 61; explicit Praefatio de Quadragesima rubric; expected-target row roman-1962.temporal.after-ashes-friday:preface-lent"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -3513,6 +3555,8 @@ sections:
       registry: '1962-T-saturday-after-ash-wednesday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 144, printed p. 63; explicit Praefatio de Quadragesima rubric; expected-target row roman-1962.temporal.after-ashes-saturday:preface-lent"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -3615,6 +3659,8 @@ sections:
       name: First Sunday of Lent
       registry: '21'
       season: lent
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 65; PDF physical p. 146; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:dominica-1-in-quadragesima:preface"}
       propers:
       - name: Introit
         incipit: Invocabit me
@@ -3723,6 +3769,8 @@ sections:
       registry: '1962-T-lent-1-monday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 66; PDF physical p. 147; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-2-post-dominicam-1-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -3844,6 +3892,8 @@ sections:
       registry: '1962-T-lent-1-tuesday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 67; PDF physical p. 148; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-3-post-dominicam-1-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -3942,6 +3992,8 @@ sections:
       registry: '1962-T-lent-1-ember-wednesday'
       season: lent
       rank: II
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 70; PDF physical p. 151; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-4-quatuor-temporum-quadragesimae:preface"}
       ordinary_frame:
         applicability: unavailable
         basis: >-
@@ -4066,6 +4118,8 @@ sections:
       registry: '1962-T-lent-1-thursday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 71; PDF physical p. 152; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-5-post-dominicam-1-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -4164,6 +4218,8 @@ sections:
       registry: '1962-T-lent-1-ember-friday'
       season: lent
       rank: II
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 73; PDF physical p. 154; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-6-quatuor-temporum-quadragesimae:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -4296,6 +4352,8 @@ sections:
       forms:
       - id: longer
         name: Longer form (forma missae longior)
+        ordinary_appointments:
+          preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 77; PDF physical p. 158; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:sabbato-quatuor-temporum-quadragesimae-longior:preface"}
         propers:
         - name: Introit
           incipit: Intret oratio mea in conspectu tuo
@@ -4469,6 +4527,8 @@ sections:
                 source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
       - id: shorter
         name: Shorter form
+        ordinary_appointments:
+          preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 78; PDF physical p. 159; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:sabbato-quatuor-temporum-quadragesimae-brevior:preface"}
         propers:
         - name: Introit
           incipit: Intret oratio mea in conspectu tuo
@@ -4572,6 +4632,8 @@ sections:
       name: Second Sunday of Lent
       registry: '22'
       season: lent
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 80; PDF physical p. 161; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:dominica-2-in-quadragesima:preface"}
       propers:
       - name: Introit
         incipit: Reminiscere miserationum tuarum
@@ -4689,6 +4751,8 @@ sections:
       registry: '1962-T-lent-2-monday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 81; PDF physical p. 162; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-2-post-dominicam-2-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -4799,6 +4863,8 @@ sections:
       registry: '1962-T-lent-2-tuesday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 83; PDF physical p. 164; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-3-post-dominicam-2-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -4896,6 +4962,8 @@ sections:
       registry: '1962-T-lent-2-wednesday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 84; PDF physical p. 165; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-4-post-dominicam-2-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -5014,6 +5082,8 @@ sections:
       registry: '1962-T-lent-2-thursday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 86; PDF physical p. 167; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-5-post-dominicam-2-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -5112,6 +5182,8 @@ sections:
       registry: '1962-T-lent-2-friday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 88; PDF physical p. 169; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-6-post-dominicam-2-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -5224,6 +5296,8 @@ sections:
       registry: '1962-T-lent-2-saturday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 91; PDF physical p. 172; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:sabbato-post-dominicam-2-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -5317,6 +5391,8 @@ sections:
       name: Third Sunday of Lent
       registry: '23'
       season: lent
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 92; PDF physical p. 173; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:dominica-3-in-quadragesima:preface"}
       propers:
       - name: Introit
         incipit: Oculi mei
@@ -5429,6 +5505,8 @@ sections:
       registry: '1962-T-lent-3-monday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 94; PDF physical p. 175; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-2-post-dominicam-3-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -5542,6 +5620,8 @@ sections:
       registry: '1962-T-lent-3-tuesday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 96; PDF physical p. 177; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-3-post-dominicam-3-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -5638,6 +5718,8 @@ sections:
       registry: '1962-T-lent-3-wednesday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 97; PDF physical p. 178; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-4-post-dominicam-3-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -5747,6 +5829,8 @@ sections:
       registry: '1962-T-lent-3-thursday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 99; PDF physical p. 180; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-5-post-dominicam-3-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -5842,6 +5926,8 @@ sections:
       registry: '1962-T-lent-3-friday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 101; PDF physical p. 182; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-6-post-dominicam-3-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -5956,6 +6042,8 @@ sections:
       registry: '1962-T-lent-3-saturday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 104; PDF physical p. 185; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:sabbato-post-dominicam-3-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -6055,6 +6143,8 @@ sections:
       name: Fourth Sunday of Lent
       registry: '24'
       season: lent
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 106; PDF physical p. 187; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:dominica-4-in-quadragesima:preface"}
       propers:
       - name: Introit
         incipit: Laetare, Jerusalem
@@ -6164,6 +6254,8 @@ sections:
       registry: '1962-T-lent-4-monday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 107; PDF physical p. 188; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-2-post-dominicam-4-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -6281,6 +6373,8 @@ sections:
       registry: '1962-T-lent-4-tuesday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 109; PDF physical p. 190; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-3-post-dominicam-4-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -6378,6 +6472,8 @@ sections:
       registry: '1962-T-lent-4-wednesday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 112; PDF physical p. 193; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-4-post-dominicam-4-in-quadragesima:preface"}
       ordinary_frame:
         applicability: unavailable
         basis: >-
@@ -6525,6 +6621,8 @@ sections:
       registry: '1962-T-lent-4-thursday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 113; PDF physical p. 194; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-5-post-dominicam-4-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -6625,6 +6723,8 @@ sections:
       registry: '1962-T-lent-4-friday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 116; PDF physical p. 197; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-6-post-dominicam-4-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -6741,6 +6841,8 @@ sections:
       registry: '1962-T-lent-4-saturday'
       season: lent
       rank: III
+      ordinary_appointments:
+        preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 117; PDF physical p. 198; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:sabbato-post-dominicam-4-in-quadragesima:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -6841,6 +6943,8 @@ sections:
       name: First Sunday of the Passion
       registry: '25'
       season: passiontide
+      ordinary_appointments:
+        preface: {option: sancta-cruce, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 119; PDF physical p. 200; unnumbered Praefatio de sancta Cruce appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:dominica-1-passionis:preface"}
       propers:
       - name: Introit
         incipit: Judica me, Deus
@@ -6966,6 +7070,8 @@ sections:
       registry: '1962-T-passion-monday'
       season: passiontide
       rank: III
+      ordinary_appointments:
+        preface: {option: sancta-cruce, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 120; PDF physical p. 201; unnumbered Praefatio de sancta Cruce appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-2-post-dominicam-1-passionis:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -7072,6 +7178,8 @@ sections:
       registry: '1962-T-passion-tuesday'
       season: passiontide
       rank: III
+      ordinary_appointments:
+        preface: {option: sancta-cruce, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 122; PDF physical p. 203; unnumbered Praefatio de sancta Cruce appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-3-post-dominicam-1-passionis:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -7167,6 +7275,8 @@ sections:
       registry: '1962-T-passion-wednesday'
       season: passiontide
       rank: III
+      ordinary_appointments:
+        preface: {option: sancta-cruce, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 124; PDF physical p. 205; unnumbered Praefatio de sancta Cruce appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-4-post-dominicam-1-passionis:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -7278,6 +7388,8 @@ sections:
       registry: '1962-T-passion-thursday'
       season: passiontide
       rank: III
+      ordinary_appointments:
+        preface: {option: sancta-cruce, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 126; PDF physical p. 207; unnumbered Praefatio de sancta Cruce appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-5-post-dominicam-1-passionis:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -7383,6 +7495,8 @@ sections:
       registry: '1962-T-passion-friday'
       season: passiontide
       rank: III
+      ordinary_appointments:
+        preface: {option: sancta-cruce, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 127; PDF physical p. 208; unnumbered Praefatio de sancta Cruce appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-6-post-dominicam-1-passionis:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -7498,6 +7612,8 @@ sections:
       registry: '1962-T-passion-saturday'
       season: passiontide
       rank: III
+      ordinary_appointments:
+        preface: {option: sancta-cruce, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 129; PDF physical p. 210; unnumbered Praefatio de sancta Cruce appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:sabbato-post-dominicam-1-passionis:preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -7603,6 +7719,8 @@ sections:
       name: Second Sunday of the Passion (Palm Sunday)
       registry: '26'
       season: passiontide
+      ordinary_appointments:
+        preface: {option: sancta-cruce, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact PDF p. 221; printed p. 140; expected-target row roman-1962-hw-palm-mass-preface"}
       propers:
       - name: Antiphon at the Blessing of Palms
         ordinary_disposition:
@@ -8054,6 +8172,8 @@ sections:
       registry: '1962-T-holy-monday'
       season: passiontide
       rank: I
+      ordinary_appointments:
+        preface: {option: sancta-cruce, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact PDF p. 223; printed p. 142; expected-target row roman-1962-hw-monday-mass-preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -8161,6 +8281,8 @@ sections:
       registry: '1962-T-holy-tuesday'
       season: passiontide
       rank: I
+      ordinary_appointments:
+        preface: {option: sancta-cruce, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact PDF p. 227; printed p. 146; expected-target row roman-1962-hw-tuesday-mass-preface"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -8260,6 +8382,8 @@ sections:
       registry: '1962-T-holy-wednesday'
       season: passiontide
       rank: I
+      ordinary_appointments:
+        preface: {option: sancta-cruce, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact PDF p. 232; printed p. 151; expected-target row roman-1962-hw-wednesday-mass-preface"}
       ordinary_frame:
         applicability: unavailable
         basis: >-
@@ -8396,6 +8520,8 @@ sections:
       registry: '1962-T-chrism-mass'
       season: triduum
       rank: I
+      ordinary_appointments:
+        preface: {option: missa-chrismatis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact PDF p. 234; printed p. 153; expected-target row roman-1962-hw-chrism-mass-preface"}
       notes: Only the scripture-bearing propers are recorded; the day's orations and other
         composed chants are appointed but not yet transcribed. The blessing of the oils and
         the chrism, which this Mass carries, is not recorded here.
@@ -8487,6 +8613,8 @@ sections:
       name: Mass of the Lord's Supper
       registry: '27'
       season: triduum
+      ordinary_appointments:
+        preface: {option: sancta-cruce, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact PDF p. 239; printed p. 158; expected-target row roman-1962-hw-cena-mass-preface"}
       ordinary_frame:
         applicability: unavailable
         basis: >-
@@ -9355,6 +9483,10 @@ sections:
       name: Easter Sunday
       registry: '30'
       season: paschaltide
+      ordinary_appointments:
+        preface: {option: paschalis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 411, printed p. 330; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.resurrection:preface:1"}
+        communicantes: {option: pascha, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 411, printed p. 330; explicit Canon-variable referral; expected-target row roman-1962.temporal.resurrection:communicantes:1"}
+        hanc_igitur: {option: pascha-pentecoste, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 411, printed p. 330; explicit Canon-variable referral; expected-target row roman-1962.temporal.resurrection:hanc-igitur:1"}
       propers:
       - name: Introit
         incipit: Resurrexi, et adhuc tecum sum
@@ -9488,6 +9620,10 @@ sections:
       registry: '1962-T-easter-monday'
       season: paschaltide
       rank: I
+      ordinary_appointments:
+        preface: {option: paschalis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 413, printed p. 332; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.easter-mon:preface:1"}
+        communicantes: {option: pascha, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 413, printed p. 332; explicit Canon-variable referral; expected-target row roman-1962.temporal.easter-mon:communicantes:1"}
+        hanc_igitur: {option: pascha-pentecoste, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 413, printed p. 332; explicit Canon-variable referral; expected-target row roman-1962.temporal.easter-mon:hanc-igitur:1"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -9603,6 +9739,10 @@ sections:
       registry: '1962-T-easter-tuesday'
       season: paschaltide
       rank: I
+      ordinary_appointments:
+        preface: {option: paschalis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 415, printed p. 334; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.easter-tue:preface:1"}
+        communicantes: {option: pascha, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 415, printed p. 334; explicit Canon-variable referral; expected-target row roman-1962.temporal.easter-tue:communicantes:1"}
+        hanc_igitur: {option: pascha-pentecoste, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 415, printed p. 334; explicit Canon-variable referral; expected-target row roman-1962.temporal.easter-tue:hanc-igitur:1"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -9710,6 +9850,10 @@ sections:
       registry: '1962-T-easter-wednesday'
       season: paschaltide
       rank: I
+      ordinary_appointments:
+        preface: {option: paschalis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 417, printed p. 336; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.easter-wed:preface:1"}
+        communicantes: {option: pascha, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 417, printed p. 336; explicit Canon-variable referral; expected-target row roman-1962.temporal.easter-wed:communicantes:1"}
+        hanc_igitur: {option: pascha-pentecoste, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 417, printed p. 336; explicit Canon-variable referral; expected-target row roman-1962.temporal.easter-wed:hanc-igitur:1"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -9823,6 +9967,10 @@ sections:
       registry: '1962-T-easter-thursday'
       season: paschaltide
       rank: I
+      ordinary_appointments:
+        preface: {option: paschalis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 419, printed p. 338; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.easter-thu:preface:1"}
+        communicantes: {option: pascha, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 419, printed p. 338; explicit Canon-variable referral; expected-target row roman-1962.temporal.easter-thu:communicantes:1"}
+        hanc_igitur: {option: pascha-pentecoste, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 419, printed p. 338; explicit Canon-variable referral; expected-target row roman-1962.temporal.easter-thu:hanc-igitur:1"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -9928,6 +10076,10 @@ sections:
       registry: '1962-T-easter-friday'
       season: paschaltide
       rank: I
+      ordinary_appointments:
+        preface: {option: paschalis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 420, printed p. 339; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.easter-fri:preface:1"}
+        communicantes: {option: pascha, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 420, printed p. 339; explicit Canon-variable referral; expected-target row roman-1962.temporal.easter-fri:communicantes:1"}
+        hanc_igitur: {option: pascha-pentecoste, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 420, printed p. 339; explicit Canon-variable referral; expected-target row roman-1962.temporal.easter-fri:hanc-igitur:1"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -10039,6 +10191,10 @@ sections:
       registry: '1962-T-easter-saturday'
       season: paschaltide
       rank: I
+      ordinary_appointments:
+        preface: {option: paschalis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 422, printed p. 341; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.easter-sat:preface:1"}
+        communicantes: {option: pascha, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 422, printed p. 341; explicit Canon-variable referral; expected-target row roman-1962.temporal.easter-sat:communicantes:1"}
+        hanc_igitur: {option: pascha-pentecoste, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 422, printed p. 341; explicit Canon-variable referral; expected-target row roman-1962.temporal.easter-sat:hanc-igitur:1"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -10145,6 +10301,8 @@ sections:
       name: Low Sunday (Dominica in albis)
       registry: '31'
       season: paschaltide
+      ordinary_appointments:
+        preface: {option: paschalis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 423, printed p. 342; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.easter-octave:preface:1"}
       propers:
       - name: Introit
         incipit: Quasi modo geniti infantes
@@ -10253,6 +10411,8 @@ sections:
       name: Second Sunday after Easter
       registry: '32'
       season: paschaltide
+      ordinary_appointments:
+        preface: {option: paschalis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 424, printed p. 343; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.easter-2:preface:1"}
       propers:
       - name: Introit
         incipit: Misericordia Domini
@@ -10356,6 +10516,8 @@ sections:
       name: Third Sunday after Easter
       registry: '33'
       season: paschaltide
+      ordinary_appointments:
+        preface: {option: paschalis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 426, printed p. 345; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.easter-3:preface:1"}
       propers:
       - name: Introit
         incipit: Jubilate Deo, omnis terra
@@ -10458,6 +10620,8 @@ sections:
       name: Fourth Sunday after Easter
       registry: '34'
       season: paschaltide
+      ordinary_appointments:
+        preface: {option: paschalis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 427, printed p. 346; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.easter-4:preface:1"}
       propers:
       - name: Introit
         incipit: Cantate Domino
@@ -10566,6 +10730,8 @@ sections:
       name: Fifth Sunday after Easter
       registry: '35'
       season: paschaltide
+      ordinary_appointments:
+        preface: {option: paschalis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 428, printed p. 347; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.easter-5:preface:1"}
       propers:
       - name: Introit
         incipit: Vocem jucunditatis
@@ -10801,6 +10967,8 @@ sections:
       registry: '1962-T-vigil-of-the-ascension'
       season: paschaltide
       rank: II
+      ordinary_appointments:
+        preface: {option: paschalis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 431, printed p. 350; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.ascension-vigil:preface:1"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -10906,6 +11074,7 @@ sections:
         composed chants are appointed but not yet transcribed.'
       ordinary_appointments:
         communicantes: {option: ascensione, locus: "Missale Romanum 1962, artifact PDF p. 433, printed p. 352, after Secret n. 1288: 'Communicantes vero proprium de Ascensione Domini dicitur tantum in ipso die festo Ascensionis'; Canon n. 1096, printed p. 304; read at 200 dpi page images of the registered CMAA facsimile (sha256 648fdb8f...) on 2026-10-19"}
+        preface: {option: ascensione, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 433, printed p. 352; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.ascension:preface:1"}
       propers:
       - name: Introit
         incipit: Viri Galilaei, quid admiramini aspicientes in caelum
@@ -11003,6 +11172,8 @@ sections:
       name: Sunday after the Ascension
       registry: '37'
       season: paschaltide
+      ordinary_appointments:
+        preface: {option: ascensione, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 434, printed p. 353; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.ascension-sunday:preface:1"}
       propers:
       - name: Introit
         incipit: Exaudi, Domine
@@ -12187,6 +12358,8 @@ sections:
       name: Trinity Sunday (First Sunday after Pentecost)
       registry: '39'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 453, printed p. 372; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.trinity:preface:1"}
       propers:
       - name: Introit
         incipit: Benedicta sit sancta Trinitas
@@ -12297,6 +12470,8 @@ sections:
       name: Mass of the First Sunday after Pentecost
       registry: '1962-T-mass-of-the-first-sunday-after-pentecost'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: communis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 455, printed p. 374; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-1:preface:1"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
         orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
         to the controlling 1962 edition, each on the public-domain witness its row in
@@ -12407,6 +12582,8 @@ sections:
       registry: '40'
       season: after-pentecost
       rank: I
+      ordinary_appointments:
+        preface: {option: communis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 458, printed p. 377; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.corpus-christi:preface:1"}
       notes: 'Every proper the Missal prints for this Mass is now carried. Until 2026-08-01
         this entry held its seven scripture-bearing propers and no Collect, Secret,
         Postcommunion or Sequence, and said so in this note; but nothing reads a note, so
@@ -12420,9 +12597,9 @@ sections:
         Each was then corroborated against the tracked 1920 Vatican typical edition,
         artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196,
         at lines 56316-56590 of its text layer. The 1920 corroborates every word and settles
-        nothing on its own. What is still not carried: the Preface, which this file records
-        for no entry - the page prints Praefatio communis here, where 1920 printed Praefatio
-        de Nativitate for the octave 1962 abolished - and the rubric after the Postcommunion
+        nothing on its own. The Preface the page prints, Praefatio communis, where 1920 printed Praefatio
+        de Nativitate for the octave 1962 abolished, is recorded as ordinary_appointments
+        (2026-10-19). What is still not carried: the rubric after the Postcommunion
         that for the seven following days, where a procession is held, two Masses de Ssma
         Eucharistia [58] are permitted ad modum Missae votivae II classis.'
       propers:
@@ -12583,7 +12760,7 @@ sections:
           under the heading Secreta; corroborated at 1920 lines 56539-56550, which prints the
           same words and the longer conclusion Per Dominum nostrum. The printed conclusion is
           carried as the page abbreviates it. The rubric Praefatio communis stands under this
-          Secret on the page and is not recorded, because this file records no preface.
+          Secret on the page and is recorded under ordinary_appointments.
       - name: Communion
         incipit: Quotiescumque manducabitis panem hunc
         source: scripture
@@ -12617,6 +12794,8 @@ sections:
       name: Second Sunday after Pentecost
       registry: '41'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 459, printed p. 378; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-2:preface:1"}
       propers:
       - name: Introit
         incipit: Factus est Dominus protector meus
@@ -12720,6 +12899,8 @@ sections:
       registry: '42'
       season: after-pentecost
       rank: I
+      ordinary_appointments:
+        preface: {option: sacro-corde, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 461, printed p. 380; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.sacred-heart:preface:1"}
       notes: 'The scripture-bearing propers are recorded by their printed citations. Of the day''s orations,
         the Postcommunion now carries a published Latin body collated to the controlling 1962 edition,
         on the public-domain witness its row in
@@ -12827,6 +13008,8 @@ sections:
       name: Third Sunday after Pentecost
       registry: '43'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 462, printed p. 381; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-3:preface:1"}
       propers:
       - name: Introit
         incipit: Respice in me et miserere mei
@@ -12941,6 +13124,8 @@ sections:
       name: Fourth Sunday after Pentecost
       registry: '44'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 464, printed p. 383; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-4:preface:1"}
       propers:
       - name: Introit
         incipit: Dominus illuminatio mea
@@ -13050,6 +13235,8 @@ sections:
       name: Fifth Sunday after Pentecost
       registry: '45'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 465, printed p. 384; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-5:preface:1"}
       propers:
       - name: Introit
         incipit: Exaudi, Domine, vocem meam
@@ -13162,6 +13349,8 @@ sections:
       name: Sixth Sunday after Pentecost
       registry: '46'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 466, printed p. 385; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-6:preface:1"}
       propers:
       - name: Introit
         incipit: Dominus fortitudo plebis suae
@@ -13280,6 +13469,8 @@ sections:
       name: Seventh Sunday after Pentecost
       registry: '47'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 467, printed p. 386; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-7:preface:1"}
       propers:
       - name: Introit
         incipit: Omnes gentes, plaudite manibus
@@ -13389,6 +13580,8 @@ sections:
       name: Eighth Sunday after Pentecost
       registry: '48'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 469, printed p. 388; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-8:preface:1"}
       propers:
       - name: Introit
         incipit: Suscepimus, Deus, misericordiam tuam
@@ -13503,6 +13696,8 @@ sections:
       name: Ninth Sunday after Pentecost
       registry: '49'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 470, printed p. 389; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-9:preface:1"}
       propers:
       - name: Introit
         incipit: Ecce, Deus adjuvat me
@@ -13607,6 +13802,8 @@ sections:
       name: Tenth Sunday after Pentecost
       registry: '50'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 471, printed p. 390; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-10:preface:1"}
       propers:
       - name: Introit
         incipit: Dum clamarem ad Dominum
@@ -13717,6 +13914,8 @@ sections:
       name: Eleventh Sunday after Pentecost
       registry: '51'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 472, printed p. 391; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-11:preface:1"}
       propers:
       - name: Introit
         incipit: Deus in loco sancto suo
@@ -13829,6 +14028,8 @@ sections:
       name: Twelfth Sunday after Pentecost
       registry: '52'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 474, printed p. 393; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-12:preface:1"}
       propers:
       - name: Introit
         incipit: Deus, in adjutorium meum intende
@@ -13945,6 +14146,8 @@ sections:
       name: Thirteenth Sunday after Pentecost
       registry: '53'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 475, printed p. 394; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-13:preface:1"}
       propers:
       - name: Introit
         incipit: Respice, Domine
@@ -14068,6 +14271,8 @@ sections:
       name: Fourteenth Sunday after Pentecost
       registry: '54'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 477, printed p. 396; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-14:preface:1"}
       propers:
       - name: Introit
         incipit: Protector noster
@@ -14170,6 +14375,8 @@ sections:
       name: Fifteenth Sunday after Pentecost
       registry: '55'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 478, printed p. 397; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-15:preface:1"}
       propers:
       - name: Introit
         incipit: Inclina, Domine
@@ -14274,6 +14481,8 @@ sections:
       name: Sixteenth Sunday after Pentecost
       registry: '56'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 479, printed p. 398; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-16:preface:1"}
       propers:
       - name: Introit
         incipit: Miserere mihi, Domine
@@ -14378,6 +14587,8 @@ sections:
       name: Seventeenth Sunday after Pentecost
       registry: '57'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 480, printed p. 399; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-17:preface:1"}
       propers:
       - name: Introit
         incipit: Justus es, Domine
@@ -15015,6 +15226,8 @@ sections:
       name: Eighteenth Sunday after Pentecost
       registry: '58'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 492, printed p. 411; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-18:preface:1"}
       propers:
       - name: Introit
         incipit: Da pacem, Domine
@@ -15130,6 +15343,8 @@ sections:
       name: Nineteenth Sunday after Pentecost
       registry: '59'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 493, printed p. 412; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-19:preface:1"}
       propers:
       - name: Introit
         incipit: Salus populi
@@ -15240,6 +15455,8 @@ sections:
       name: Twentieth Sunday after Pentecost
       registry: '60'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 494, printed p. 413; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-20:preface:1"}
       propers:
       - name: Introit
         incipit: Omnia, quae fecisti
@@ -15356,6 +15573,8 @@ sections:
       name: Twenty-first Sunday after Pentecost
       registry: '61'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 496, printed p. 415; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-21:preface:1"}
       propers:
       - name: Introit
         incipit: In voluntate tua
@@ -15488,6 +15707,8 @@ sections:
       name: Twenty-second Sunday after Pentecost
       registry: '62'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 497, printed p. 416; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-22:preface:1"}
       propers:
       - name: Introit
         incipit: Si iniquitates observaveris
@@ -15597,6 +15818,8 @@ sections:
       name: Twenty-third Sunday after Pentecost
       registry: '63'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 498, printed p. 417; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-23:preface:1"}
       propers:
       - name: Introit
         incipit: 'Dicit Dominus: Ego cogito'
@@ -15710,6 +15933,8 @@ sections:
       registry: 'F01'
       season: after-pentecost
       rank: I
+      ordinary_appointments:
+        preface: {option: christo-rege, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 779 / printed p. 698, raw page-local line 69; Praefatio propria; expected-target row roman-1962:sanctoral-form:p778-l1:preface:p779-l69"}
       notes: 'The October feast appointed by RG 17 d, not a seasonal votive Mass. Its heading, rank,
         appointment order and scripture citations were visually checked on 2026-10-19 in the controlling
         CMAA facsimile, printed pp. 697-698, artifact PDF pp. 778-779, nos. 3938-3949; the source-local
@@ -15861,6 +16086,8 @@ sections:
       name: Third Sunday after the Epiphany, resumed after Pentecost
       registry: '64'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 500, printed p. 419; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.resumed-epiphany-3:preface:1"}
       notes: RGMR 298 appoints this Mass. Its Introit, Gradual, Alleluia with its
         verse, Offertory and Communion are those of the Twenty-third Sunday after
         Pentecost, and its orations, Epistle and Gospel are those of the Sunday
@@ -15886,6 +16113,8 @@ sections:
       name: Fourth Sunday after the Epiphany, resumed after Pentecost
       registry: '65'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 501, printed p. 420; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.resumed-epiphany-4:preface:1"}
       notes: RGMR 298 appoints this Mass. Its Introit, Gradual, Alleluia with its
         verse, Offertory and Communion are those of the Twenty-third Sunday after
         Pentecost, and its orations, Epistle and Gospel are those of the Sunday
@@ -15911,6 +16140,8 @@ sections:
       name: Fifth Sunday after the Epiphany, resumed after Pentecost
       registry: '66'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 502, printed p. 421; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.resumed-epiphany-5:preface:1"}
       notes: RGMR 298 appoints this Mass. Its Introit, Gradual, Alleluia with its
         verse, Offertory and Communion are those of the Twenty-third Sunday after
         Pentecost, and its orations, Epistle and Gospel are those of the Sunday
@@ -15936,6 +16167,8 @@ sections:
       name: Sixth Sunday after the Epiphany, resumed after Pentecost
       registry: '67'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 503, printed p. 422; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.resumed-epiphany-6:preface:1"}
       notes: RGMR 298 appoints this Mass. Its Introit, Gradual, Alleluia with its
         verse, Offertory and Communion are those of the Twenty-third Sunday after
         Pentecost, and its orations, Epistle and Gospel are those of the Sunday
@@ -15961,6 +16194,8 @@ sections:
       name: Twenty-fourth and Last Sunday after Pentecost
       registry: '68'
       season: after-pentecost
+      ordinary_appointments:
+        preface: {option: trinitate, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 505, printed p. 424; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.pentecost-24:preface:1"}
       notes: The chants repeat those of the Twenty-third Sunday; only the orations and readings
         are proper.
       propers:
@@ -20928,6 +21163,8 @@ sections:
     - key: commune-festorum-bmv
       name: Commune festorum beatae Mariae Virginis
       registry: 1962-C-festorum-bmv
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 850, printed [42]; raw text page line 44; Explicit Preface referral: Praefatio de B. Maria Virgine Et te in; expected-target row roman-1962:body:common-marian:preface-referral:1"}
       notes: |
         The Commune Sanctorum of the 1962 typica, printed pp. [41]-[42]. The
         orations at marginal nos. 4477, 4486 and 4488 were transcribed on
@@ -21151,6 +21388,8 @@ sections:
     - key: missa-de-s-maria-in-sabbato-1
       name: 'Missa de S. Maria in sabbato I: Tempore Adventus'
       registry: 1962-C-s-maria-in-sabbato-1
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 852, printed [44]; raw text page line 29; Explicit Preface referral: Praefatio de B. Maria Virgine Et te in; expected-target row roman-1962:body:marian-saturday-advent:preface-referral:1"}
       notes: 'The Commune Sanctorum of the 1962 typica, printed pp. [43]-[44]. The three
         orations, at marginal nos. 4490, 4496 and 4498, were transcribed 2026-08-01 from
         the CMAA facsimile of the controlling edition and corroborated against the text
@@ -21288,6 +21527,8 @@ sections:
     - key: missa-de-s-maria-in-sabbato-2
       name: 'Missa de S. Maria in sabbato II: a Nativitate Domini usque ad Purificationem'
       registry: 1962-C-s-maria-in-sabbato-2
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 853, printed [45]; raw text page line 44; Explicit Preface referral: Praefatio de B. Maria Virgine Et te in ve-; expected-target row roman-1962:body:marian-saturday-nativity:preface-referral:1"}
       notes: 'The Commune Sanctorum of the 1962 typica, printed pp. [44]-[45]. The three
         orations, at marginal nos. 4500, 4507 and 4509, were transcribed 2026-08-01 from
         the CMAA facsimile of the controlling edition and corroborated against the text
@@ -21442,6 +21683,8 @@ sections:
       name: 'Missa de S. Maria in sabbato III: a die 3 februarii usque ad feriam IV Hebdomadae
         sanctae'
       registry: 1962-C-s-maria-in-sabbato-3
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 854, printed [46]; raw text page line 47; Explicit Preface referral: Praefatio de B. Maria Virgine Et te in ve-; expected-target row roman-1962:body:marian-saturday-february-lent:preface-referral:1"}
       notes: 'The Commune Sanctorum of the 1962 typica, printed pp. [45]-[46]. The three
         orations, at marginal nos. 4511, 4518 and 4520, were transcribed 2026-08-01 from
         the CMAA facsimile of the controlling edition and corroborated against the text
@@ -21576,6 +21819,8 @@ sections:
     - key: missa-de-s-maria-in-sabbato-4
       name: 'Missa de S. Maria in sabbato IV: tempore paschali'
       registry: 1962-C-s-maria-in-sabbato-4
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 855, printed [47]; raw text page line 36; Explicit Preface referral: Praefatio de B. Maria Virgine Et te in veneratione (text layer reads Prasfatio; image-checked 2026-10-19); expected-target row roman-1962:body:marian-saturday-paschal:preface-referral:1"}
       notes: |
         The Commune Sanctorum of the 1962 typica, printed pp. [46]-[47].
         The three orations, at marginal nos. 4522, 4527 and 4529, were
@@ -21703,6 +21948,8 @@ sections:
       name: 'Missa de S. Maria in sabbato V: a festo Ss. Trinitatis usque ad sabbatum
         ante dominicam I Adventus'
       registry: 1962-C-s-maria-in-sabbato-5
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 856, printed [48]; raw text page line 33; Explicit Preface referral: Praefatio de B. MariaVkgine Et te in ve-; expected-target row roman-1962:body:marian-saturday-after-trinity:preface-referral:1"}
       notes: |
         The Commune Sanctorum of the 1962 typica, printed pp. [47]-[48].
         The three orations, at marginal nos. 4531, 4537 and 4539, were
@@ -21815,6 +22062,8 @@ sections:
       date: 02-02
       rank: II
       kind: marian
+      ordinary_appointments:
+        preface: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 549 / printed p. 468, raw page-local line 19; Praefatio de Natiyitate; expected-target row roman-1962:sanctoral-form:p545-l13:preface:p549-l19"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -21970,6 +22219,8 @@ sections:
       date: 02-11
       rank: III
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 555 / printed p. 474, raw page-local line 72; Praefatio de B. Maria Virg. Et te in Con-; expected-target row roman-1962:sanctoral-form:p554-l62:preface:p555-l72"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -22128,6 +22379,8 @@ sections:
       date: 03-25
       rank: I
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 577 / printed p. 496, raw page-local line 55; Praefatio de B. Maria Virg. Et te in Annuntiatione (text layer reads Ptaefatio; image-checked 2026-10-19); expected-target row roman-1962:sanctoral-form:p576-l1:preface:p577-l55"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -22271,6 +22524,8 @@ sections:
       registry: '1962-T-septem-dolorum'
       season: passiontide
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 582 / printed p. 501, raw page-local line 60; Praefatio de B. Maria Virg. Et te in; expected-target row roman-1962:sanctoral-form:p580-l52:preface:p582-l60"}
       notes: >-
         The Commemoration of the Seven Sorrows of the Blessed Virgin Mary on the Friday
         after Passion Sunday, printed pp. 499-501 = digital pp. 580-582, marginal nn.
@@ -22308,9 +22563,8 @@ sections:
         Friday of Passion Week and belong to passion-friday, which carries them. They are
         recorded there and not repeated here, on the precedent of
         comm-s-emerentianae-virginis-martyris, whose own orations are printed under another
-        day's Mass and are not transcribed under it. Also not carried: the Preface, which
-        this file records for no entry - the page prints Praefatio de B. Maria Virg. Et te
-        in Transfixione.
+        day's Mass and are not transcribed under it. The page's Praefatio de B. Maria Virg. Et te
+        in Transfixione is recorded as ordinary_appointments (2026-10-19).
       propers:
       - name: Introit
         incipit: Stabant juxta Crucem Jesu mater ejus
@@ -22527,8 +22781,8 @@ sections:
           Printed p. 501 = digital p. 582, n. 2367, headed Secreta, rendered again at
           400 dpi. The printed conclusion is carried as the page abbreviates it. The
           rubric Praefatio de B. Maria Virg. Et te in Transfixione stands under the
-          feria's Secret on the same page and is not recorded, because this file
-          records no Preface. The typica prints Iesu; normalised to j. Printed locus
+          feria's Secret on the same page and is recorded under
+          ordinary_appointments. The typica prints Iesu; normalised to j. Printed locus
           printed p. 501, no. 2367, under the heading Secreta; artifact PDF p. 582,
           right column; read on the 1962 page image at 200 and 400 dpi on 2026-10-01.
           Preexisting material under 17 U.S.C. 103(b), corroborated word for word in
@@ -22578,6 +22832,8 @@ sections:
       date: 05-31
       rank: II
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 622 / printed p. 541, raw page-local line 55; Praefatio de beata Maria Virgine Et te; expected-target row roman-1962:sanctoral-form:p621-l16:preface:p622-l55"}
       propers:
       - name: Introit
         source: scripture
@@ -22665,6 +22921,8 @@ sections:
       date: 07-02
       rank: II
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 657 / printed p. 576, raw page-local line 10; Praefatio de beata Maria Virgine Et te in; expected-target row roman-1962:sanctoral-form:p655-l69:preface:p657-l10"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -22751,6 +23009,8 @@ sections:
       date: 07-16
       rank: Comm.
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 669 / printed p. 588, raw page-local line 55; Praefatio de B. Maria Virg. Et te in com-; expected-target row roman-1962:sanctoral-form:p668-l33:preface:p669-l55"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -22850,6 +23110,8 @@ sections:
       date: 08-14
       rank: II
       kind: marian
+      ordinary_appointments:
+        preface: {option: communis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 707 / printed p. 626, raw page-local line 10; Praefatio communis; expected-target row roman-1962:sanctoral-form:p706-l2:preface:p707-l10"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -22950,6 +23212,8 @@ sections:
       date: 08-15
       rank: I
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 709 / printed p. 628, raw page-local line 44; Praefatio de beata Maria Virgine Et te in; expected-target row roman-1962:sanctoral-form:p708-l5:preface:p709-l44"}
       notes: Only the scripture-bearing propers are recorded; the orations the Missal
         prints for this day are appointed and not transcribed here. Identity, rank and
         the printed citations were read on 2026-08-01 from the embedded text layer of
@@ -23074,6 +23338,8 @@ sections:
       date: 08-22
       rank: II
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 715 / printed p. 634, raw page-local line 41; Praefatio de beata Maria Virgine Et te in; expected-target row roman-1962:sanctoral-form:p714-l10:preface:p715-l41"}
       notes: 'The scripture-bearing propers are recorded by their printed citations. Of the orations the Missal
         prints for this day, the Secret now carries a published Latin body collated to the controlling
         1962 edition, on the public-domain witness its row in
@@ -23216,6 +23482,8 @@ sections:
       date: 09-08
       rank: II
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 732 / printed p. 651, raw page-local line 72; Praefatio de beata Maria Virgine Et te in; expected-target row roman-1962:sanctoral-form:p731-l23:preface:p732-l72"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -23289,6 +23557,8 @@ sections:
       date: 09-12
       rank: III
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 735 / printed p. 654, raw page-local line 48; Praefatio de beata Maria Virg. Et te in fe-; expected-target row roman-1962:sanctoral-form:p734-l11:preface:p735-l48"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -23415,6 +23685,8 @@ sections:
       date: 09-15
       rank: II
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 739 / printed p. 658, raw page-local line 23; Praefatio de beata Mafia Vifg. Et te in; expected-target row roman-1962:sanctoral-form:p737-l2:preface:p739-l23"}
       notes: >-
         Only the scripture-bearing propers and the Sequence are recorded; the orations the
         Missal prints for this day are appointed and not transcribed here. Identity, rank
@@ -23534,6 +23806,8 @@ sections:
       date: 09-24
       rank: Comm.
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 749 / printed p. 668, raw page-local line 24; Praefatio de B. Maria Virg. Et te in fe-; expected-target row roman-1962:sanctoral-form:p748-l74:preface:p749-l24"}
       propers:
       - name: Collect
         incipit: Deus, qui per
@@ -23580,6 +23854,8 @@ sections:
       date: 10-07
       rank: II
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 760 / printed p. 679, raw page-local line 22; Praefatio de B. Maria Vifg. Et te in fe-; expected-target row roman-1962:sanctoral-form:p758-l42:preface:p760-l22"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -23709,6 +23985,8 @@ sections:
       date: 10-11
       rank: II
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 767 / printed p. 686, raw page-local line 65; Praefatio de B. Maria Virg. Et te in fe-; expected-target row roman-1962:sanctoral-form:p766-l41:preface:p767-l65"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -23816,6 +24094,8 @@ sections:
       date: 11-21
       rank: III
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 803 / printed p. 722, raw page-local line 53; Prsefatio de B. Maria Virg. Et te InPne-; expected-target row roman-1962:sanctoral-form:p803-l30:preface:p803-l53"}
       propers:
       - name: Collect
         source: composed
@@ -23918,6 +24198,8 @@ sections:
       date: 12-08
       rank: I
       kind: marian
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 519 / printed p. 438, raw page-local line 72; Praefatio de beata Maria Virgine Et te; expected-target row roman-1962:sanctoral-form:p518-l3:preface:p519-l72"}
       propers:
       - name: Introit
         source: scripture
@@ -24048,6 +24330,9 @@ sections:
       date: 01-01
       rank: I
       kind: christological
+      ordinary_appointments:
+        preface: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 115, printed p. 34; explicit Nativity Preface or referral to first Christmas Mass; expected-target row roman-1962.temporal.nativity-octave-day:preface-nativity"}
+        communicantes: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 115, printed p. 34; explicit proper Communicantes or referral to first Christmas Mass; night/day wording distinguished by artifact99 rubric; expected-target row roman-1962.temporal.nativity-octave-day:communicantes-nativity"}
       text_status:
         state: partial
         scope: missal-formulary
@@ -24217,6 +24502,7 @@ sections:
       kind: christological
       ordinary_appointments:
         communicantes: {option: epiphania, locus: "Missale Romanum 1962: the Canon heading 'In EPIPHANIA DOMINI', n. 1094, printed p. 304, artifact PDF p. 385, limited to the feast by the Epiphany Preface footer, n. 1074, printed p. 285, PDF 366: 'Communicantes propr., ut infra in Canone 304. Et dicitur in festo tantum'; read at 200 dpi page images of the registered CMAA facsimile (sha256 648fdb8f...) on 2026-10-19. The formulary's own direction is at printed p. 38, artifact PDF p. 119, as missal-expected-targets-v1 row roman-1962.temporal.epiphany:communicantes-epiphany records; not re-read here."}
+        preface: {option: epiphania, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 119, printed p. 38; proper to Epiphany and Baptism, seasonal7–13January when no proper Preface; expected-target row roman-1962.temporal.epiphany:preface-epiphany"}
       propers:
       - name: Introit
         source: scripture
@@ -24381,6 +24667,8 @@ sections:
       date: 01-13
       rank: II
       kind: christological
+      ordinary_appointments:
+        preface: {option: epiphania, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 119, printed p. 38; explicit appointment stated in Epiphany Preface rubric; expected-target row roman-1962.temporal.baptism:preface-epiphany"}
       propers:
       - name: Introit
         source: scripture
@@ -24544,6 +24832,8 @@ sections:
       date: 07-01
       rank: I
       kind: christological
+      ordinary_appointments:
+        preface: {option: sancta-cruce, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 655 / printed p. 574, raw page-local line 56; Praefatio de sancta Cruce; expected-target row roman-1962:sanctoral-form:p654-l2:preface:p655-l56"}
       propers:
       - name: Introit
         source: scripture
@@ -24896,6 +25186,8 @@ sections:
       date: 09-14
       rank: II
       kind: christological
+      ordinary_appointments:
+        preface: {option: sancta-cruce, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 736 / printed p. 655, raw page-local line 69; Praefatio de sancta Cruce; expected-target row roman-1962:sanctoral-form:p735-l61:preface:p736-l69"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -25155,6 +25447,9 @@ sections:
       forms:
       - id: night
         name: Ad primam Missam in nocte
+        ordinary_appointments:
+          preface: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 99, printed p. 18; explicit Nativity Preface or referral to first Christmas Mass; expected-target row roman-1962.temporal.nativity-night:preface-nativity"}
+          communicantes: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 99, printed p. 18; explicit proper Communicantes or referral to first Christmas Mass; night/day wording distinguished by artifact99 rubric; expected-target row roman-1962.temporal.nativity-night:communicantes-nativity"}
         propers:
         - name: Introit
           source: scripture
@@ -25287,6 +25582,9 @@ sections:
                 source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
       - id: dawn
         name: Ad secundam Missam in aurora
+        ordinary_appointments:
+          preface: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 101, printed p. 20; explicit Nativity Preface or referral to first Christmas Mass; expected-target row roman-1962.temporal.nativity-dawn:preface-nativity"}
+          communicantes: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 101, printed p. 20; explicit proper Communicantes or referral to first Christmas Mass; night/day wording distinguished by artifact99 rubric; expected-target row roman-1962.temporal.nativity-dawn:communicantes-nativity"}
         propers:
         - name: Introit
           source: scripture
@@ -25425,6 +25723,9 @@ sections:
                 source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
       - id: day
         name: Ad tertiam Missam in die
+        ordinary_appointments:
+          preface: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 103, printed p. 22; explicit Nativity Preface or referral to first Christmas Mass; expected-target row roman-1962.temporal.nativity-day:preface-nativity"}
+          communicantes: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 103, printed p. 22; explicit proper Communicantes or referral to first Christmas Mass; night/day wording distinguished by artifact99 rubric; expected-target row roman-1962.temporal.nativity-day:communicantes-nativity"}
         propers:
         - name: Introit
           source: scripture
@@ -27029,6 +27330,8 @@ sections:
       date: 01-25
       rank: III
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: apostolis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 536 / printed p. 455, raw page-local line 77; Praefatio de Apostolis; expected-target row roman-1962:sanctoral-form:p535-l10:preface:p536-l77"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -28922,6 +29225,8 @@ sections:
       date: 02-22
       rank: II
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: apostolis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 560 / printed p. 479, raw page-local line 18; Praefatio de Apostolis; expected-target row roman-1962:sanctoral-form:p558-l49:preface:p560-l18"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -29211,6 +29516,8 @@ sections:
       date: 02-24
       rank: II
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: apostolis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 561 / printed p. 480, raw page-local line 84; Praefatio de Apostolis; expected-target row roman-1962:sanctoral-form:p560-l59:preface:p561-l84"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -30371,6 +30678,8 @@ sections:
       date: 03-19
       rank: I
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: sancto-ioseph, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 573 / printed p. 492, raw page-local line 52; Praefatio de S.Ioseph Et te in festivitate; expected-target row roman-1962:sanctoral-form:p572-l5:preface:p573-l52"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -31706,6 +32015,8 @@ sections:
       date: 04-25
       rank: II
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: apostolis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 592 / printed p. 511, raw page-local line 56; Prsefatio de Apostolis; expected-target row roman-1962:sanctoral-form:p591-l31:preface:p592-l56"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -32198,6 +32509,8 @@ sections:
       date: 05-01
       rank: I
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: sancto-ioseph, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 598 / printed p. 517, raw page-local line 31; Praefatio de S. Ioseph (image-checked 2026-10-19); expected-target row roman-1962:sanctoral-form:p597-l2:preface:p598-l31"}
       notes: 'Only the scripture-bearing propers are recorded, and for this day only they may
         be: the feast was instituted in 1955 and its composed texts are therefore the 1962
         edition''s own stratum, which 17 U.S.C. 103(b) does not reach and no witness this
@@ -33079,6 +33392,8 @@ sections:
       date: 05-11
       rank: II
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: apostolis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 606 / printed p. 525, raw page-local line 54; Praefatio de Apostolis; expected-target row roman-1962:sanctoral-form:p605-l44:preface:p606-l54"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -35266,6 +35581,8 @@ sections:
       date: 06-11
       rank: III
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: apostolis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 630 / printed p. 549, raw page-local line 54; Praefatio de Apostolis; expected-target row roman-1962:sanctoral-form:p629-l45:preface:p630-l54"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -37010,6 +37327,8 @@ sections:
       date: 06-28
       rank: II
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: communis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 648 / printed p. 567, raw page-local line 23; Praefatio communis; expected-target row roman-1962:sanctoral-form:p647-l14:preface:p648-l23"}
       propers:
       - name: Introit
         source: scripture
@@ -37106,6 +37425,8 @@ sections:
       date: 06-29
       rank: I
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: apostolis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 650 / printed p. 569, raw page-local line 67; Prsefatio de Apostolis; expected-target row roman-1962:sanctoral-form:p649-l2:preface:p650-l67"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -37260,6 +37581,8 @@ sections:
       date: 06-30
       rank: III
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: apostolis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 653 / printed p. 572, raw page-local line 63; Praefatio de Apostolis; expected-target row roman-1962:sanctoral-form:p652-l16:preface:p653-l63"}
       propers:
       - name: Introit
         source: scripture
@@ -39669,6 +39992,8 @@ sections:
       date: 07-25
       rank: II
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: apostolis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 682 / printed p. 601, raw page-local line 44; Praefatio de Apostolis; expected-target row roman-1962:sanctoral-form:p681-l30:preface:p682-l44"}
       notes: 'The scripture-bearing propers are recorded by their printed citations. Of the orations the Missal
         prints for this day, the Collect and the Secret now carry published Latin bodies collated to
         the controlling 1962 edition, each on the public-domain witness its row in
@@ -41003,6 +41328,8 @@ sections:
       date: 08-05
       rank: III
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 694 / printed p. 613, raw page-local line 81; Praefatio de beata Maria Virgine Et te in; expected-target row roman-1962:sanctoral-form:p694-l75:preface:p694-l81"}
       notes: The Missal gives this day the whole Mass of the Common of feasts of the
         Blessed Virgin Mary and prints no oration of its own, adding only et non dicitur
         Credo and the preface of the Blessed Virgin. The pointer was read on 2026-08-01
@@ -42569,6 +42896,8 @@ sections:
       date: 08-24
       rank: II
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: apostolis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 717 / printed p. 636, raw page-local line 45; Praefatio de Apostolis; expected-target row roman-1962:sanctoral-form:p716-l42:preface:p717-l45"}
       notes: 'The scripture-bearing propers are recorded by their printed citations. Of the orations the Missal
         prints for this day, the Postcommunion now carries a published Latin body collated to the
         controlling 1962 edition, on the public-domain witness its row in
@@ -44758,6 +45087,8 @@ sections:
       date: 09-21
       rank: II
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: apostolis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 746 / printed p. 665, raw page-local line 38; Praefatio de Apostolis; expected-target row roman-1962:sanctoral-form:p745-l41:preface:p746-l38"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -46805,6 +47136,8 @@ sections:
       date: 10-18
       rank: II
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: apostolis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 771 / printed p. 690, raw page-local line 72; Praefatio de Apostolis; expected-target row roman-1962:sanctoral-form:p770-l57:preface:p771-l72"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -47577,6 +47910,8 @@ sections:
       date: 10-28
       rank: II
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: apostolis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 782 / printed p. 701, raw page-local line 58; Praefatio de Apostolis; expected-target row roman-1962:sanctoral-form:p781-l46:preface:p782-l58"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -47844,8 +48179,8 @@ sections:
         whose `takes_from` resolves the printed pointer to that first-form body. Everything
         else the second and third Masses share with the first - the Tract, the Offertory
         responsory, the Communion responsory - the Missal prints out in full at each Mass,
-        and so does this entry. WHAT IS STILL ABSENT: the Preface, which this file records for no entry
-        (the page prints Praefatio defunctorum at each of the three); the rubrics on the
+        and so does this entry. The Preface the page prints at each of the three, Praefatio defunctorum, is
+        recorded as the ordinary_appointments of each form (2026-10-19). WHAT IS STILL ABSENT: the rubrics on the
         chalice between Masses, on the confession before the following Masses, and on the
         Requiescant in pace ending without a blessing, which are ritual directions and not
         propers; and the rubric governing how many Masses may be said and in what order,
@@ -47853,6 +48188,8 @@ sections:
       forms:
       - id: first
         name: First Mass (Ad primam Missam)
+        ordinary_appointments:
+          preface: {option: defunctis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 788 / printed p. 707, raw page-local line 42; Praefatio defunctorum; expected-target row roman-1962:sanctoral-form:p786-l29:preface:p788-l42"}
         propers:
         - name: Introit
           incipit: Requiem aeternam dona eis, Domine
@@ -48009,6 +48346,8 @@ sections:
             vivis.
       - id: second
         name: Second Mass (Ad secundam Missam)
+        ordinary_appointments:
+          preface: {option: defunctis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 789 / printed p. 708, raw page-local line 69; Praefatio defunctorum; expected-target row roman-1962:sanctoral-form:p788-l68:preface:p789-l69"}
         propers:
         - name: Introit
           incipit: Requiem aeternam dona eis, Domine
@@ -48140,6 +48479,8 @@ sections:
             lines 95999-96008.
       - id: third
         name: Third Mass (Ad tertiam Missam)
+        ordinary_appointments:
+          preface: {option: defunctis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 790 / printed p. 709, raw page-local line 85; Praefatio defunctorum; expected-target row roman-1962:sanctoral-form:p790-l5:preface:p790-l85"}
         propers:
         - name: Introit
           incipit: Requiem aeternam dona eis, Domine
@@ -50071,6 +50412,8 @@ sections:
       date: 11-30
       rank: II
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: apostolis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 511 / printed p. 430, raw page-local line 13; Praefatio de Apostolis; expected-target row roman-1962:sanctoral-form:p510-l4:preface:p511-l13"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -51041,6 +51384,8 @@ sections:
       date: 12-21
       rank: II
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: apostolis, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 523 / printed p. 442, raw page-local line 10; Praefatio de Apostolis; expected-target row roman-1962:sanctoral-form:p522-l16:preface:p523-l10"}
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
         prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
         bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
@@ -51171,6 +51516,9 @@ sections:
       date: 12-26
       rank: II
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 106, printed p. 25; explicit Nativity Preface or referral to first Christmas Mass; expected-target row roman-1962.temporal.stephen:preface-nativity"}
+        communicantes: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 106, printed p. 25; explicit proper Communicantes or referral to first Christmas Mass; night/day wording distinguished by artifact99 rubric; expected-target row roman-1962.temporal.stephen:communicantes-nativity"}
       propers:
       - name: Introit
         source: scripture
@@ -51330,6 +51678,9 @@ sections:
       date: 12-27
       rank: II
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 107, printed p. 26; explicit Nativity Preface or referral to first Christmas Mass; expected-target row roman-1962.temporal.john-apostle:preface-nativity"}
+        communicantes: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 107, printed p. 26; explicit proper Communicantes or referral to first Christmas Mass; night/day wording distinguished by artifact99 rubric; expected-target row roman-1962.temporal.john-apostle:communicantes-nativity"}
       propers:
       - name: Introit
         source: scripture
@@ -51447,6 +51798,9 @@ sections:
       date: 12-28
       rank: II
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 109, printed p. 28; explicit Nativity Preface or referral to first Christmas Mass; expected-target row roman-1962.temporal.holy-innocents:preface-nativity"}
+        communicantes: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 109, printed p. 28; explicit proper Communicantes or referral to first Christmas Mass; night/day wording distinguished by artifact99 rubric; expected-target row roman-1962.temporal.holy-innocents:communicantes-nativity"}
       propers:
       - name: Introit
         source: scripture
@@ -51658,6 +52012,9 @@ sections:
       date: 12-31
       rank: Comm.
       kind: sanctoral
+      ordinary_appointments:
+        preface: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 113, printed p. 32; explicit Nativity Preface or referral to first Christmas Mass; expected-target row roman-1962.temporal.sylvester:preface-nativity"}
+        communicantes: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 113, printed p. 32; explicit proper Communicantes or referral to first Christmas Mass; night/day wording distinguished by artifact99 rubric; expected-target row roman-1962.temporal.sylvester:communicantes-nativity"}
       propers:
       - name: Collect
         source: composed

@@ -439,6 +439,385 @@ citation_divergences:
     Acts 7:56: Acts 7:55
     Acts 7:56,59-60: Acts 7:55, 58-59
     Acts 7:59: Acts 7:58
+# The Ordinary appointments the Bonn witness prints for formularies this
+# recension inherits (2026-10-19). Inheritance carries a formulary's words, not
+# the 1962 book's rubrical directions, so `tools/mass-propers` drops every
+# inherited `ordinary_appointments` and applies only the rows below, each read
+# from the expected-target inventory's Bonn rows. A direction the witness makes
+# conditional (an octave commemoration, a feria resuming a Sunday) and a printed
+# "Praefatio communis", which the general rubrics (Additiones et variationes
+# tit. VIII) let a commemorated feast or an octave displace, are not recorded.
+attested_appointments:
+  advent-1:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 107, printed p. 3; expected-target row roman-pre-1955:temporal:slot:dominica-1-adventus:preface-trinity"}
+  advent-2:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 109, printed p. 5; expected-target row roman-pre-1955:temporal:slot:dominica-2-adventus:preface-trinity"}
+  advent-3:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 111, printed p. 7; expected-target row roman-pre-1955:temporal:slot:dominica-3-adventus:preface-trinity"}
+  advent-4:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 120, printed p. 16; expected-target row roman-pre-1955:temporal:slot:dominica-4-adventus:preface-trinity"}
+  nativitate-domini-octave:
+    forms:
+      night:
+        preface: {option: nativitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 126, printed p. 22; expected-target row roman-pre-1955:temporal:slot:nativitas-prima-missa:preface-nativity"}
+        communicantes: {option: nativitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 126, printed p. 22; expected-target row roman-pre-1955:temporal:slot:nativitas-prima-missa:communicantes-nativity"}
+      dawn:
+        preface: {option: nativitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 128, printed p. 24; expected-target row roman-pre-1955:temporal:slot:nativitas-secunda-missa:preface-nativity"}
+        communicantes: {option: nativitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 128, printed p. 24; expected-target row roman-pre-1955:temporal:slot:nativitas-secunda-missa:communicantes-nativity"}
+      day:
+        preface: {option: nativitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 130, printed p. 26; expected-target row roman-pre-1955:temporal:slot:nativitas-tertia-missa:preface-nativity"}
+        communicantes: {option: nativitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 130, printed p. 26; expected-target row roman-pre-1955:temporal:slot:nativitas-tertia-missa:communicantes-nativity"}
+  sunday-within-octave-of-nativity:
+    preface: {option: nativitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 139, printed p. 35; expected-target row roman-pre-1955:temporal:slot:dominica-infra-octavam-nativitatis:preface-nativity"}
+  most-holy-name-of-jesus:
+    preface: {option: nativitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 149, printed p. 45; expected-target row roman-pre-1955:temporal:slot:ssmi-nominis-jesu:preface-nativity"}
+  epiphania-domini:
+    preface: {option: epiphania, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 156, printed p. 52; expected-target row roman-pre-1955:temporal:slot:epiphania:preface-epiphany"}
+    communicantes: {option: epiphania, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 156, printed p. 52; expected-target row roman-pre-1955:temporal:slot:epiphania:communicantes-epiphany"}
+  holy-family:
+    preface: {option: epiphania, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 161, printed p. 57; expected-target row roman-pre-1955:temporal:slot:s-familiae:preface-epiphany"}
+  epiphany-2:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 166, printed p. 62; expected-target row roman-pre-1955:temporal:slot:dominica-2-post-epiphaniam:preface-trinity"}
+  epiphany-3:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 168, printed p. 64; expected-target row roman-pre-1955:temporal:slot:dominica-3-post-epiphaniam:preface-trinity"}
+  epiphany-4:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 170, printed p. 66; expected-target row roman-pre-1955:temporal:slot:dominica-4-post-epiphaniam:preface-trinity"}
+  epiphany-5:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 172, printed p. 68; expected-target row roman-pre-1955:temporal:slot:dominica-5-post-epiphaniam:preface-trinity"}
+  epiphany-6:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 173, printed p. 69; expected-target row roman-pre-1955:temporal:slot:dominica-6-post-epiphaniam:preface-trinity"}
+  septuagesima:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 175, printed p. 71; expected-target row roman-pre-1955:temporal:slot:dominica-septuagesima:preface-trinity"}
+  sexagesima:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 178, printed p. 74; expected-target row roman-pre-1955:temporal:slot:dominica-sexagesima:preface-trinity"}
+  quinquagesima:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 180, printed p. 76; expected-target row roman-pre-1955:temporal:slot:dominica-quinquagesima:preface-trinity"}
+  ash-wednesday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 185, printed p. 81; expected-target row roman-pre-1955:temporal:slot:feria-4-cinerum:preface-lent"}
+  thursday-after-ash-wednesday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 187, printed p. 83; expected-target row roman-pre-1955:temporal:slot:feria-5-post-cineres:preface-lent"}
+  friday-after-ash-wednesday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 189, printed p. 85; expected-target row roman-pre-1955:temporal:slot:feria-6-post-cineres:preface-lent"}
+  saturday-after-ash-wednesday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 191, printed p. 87; expected-target row roman-pre-1955:temporal:slot:sabbato-post-cineres:preface-lent"}
+  lent-1:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 194, printed p. 90; expected-target row roman-pre-1955:temporal:slot:dominica-1-quadragesimae:preface-lent"}
+  lent-1-monday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 196, printed p. 92; expected-target row roman-pre-1955:temporal:slot:feria-2-post-dominicam-1-quadragesimae:preface-lent"}
+  lent-1-tuesday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 198, printed p. 94; expected-target row roman-pre-1955:temporal:slot:feria-3-post-dominicam-1-quadragesimae:preface-lent"}
+  lent-1-ember-wednesday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 201, printed p. 97; expected-target row roman-pre-1955:temporal:slot:feria-4-quatuor-temporum-quadragesimae:preface-lent"}
+  lent-1-thursday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 202, printed p. 98; expected-target row roman-pre-1955:temporal:slot:feria-5-post-dominicam-1-quadragesimae:preface-lent"}
+  lent-1-ember-friday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 204, printed p. 100; expected-target row roman-pre-1955:temporal:slot:feria-6-quatuor-temporum-quadragesimae:preface-lent"}
+  lent-1-ember-saturday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 209, printed p. 105; expected-target row roman-pre-1955:temporal:slot:sabbato-quatuor-temporum-quadragesimae:preface-lent"}
+  lent-2:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 211, printed p. 107; expected-target row roman-pre-1955:temporal:slot:dominica-2-quadragesimae:preface-lent"}
+  lent-2-monday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 213, printed p. 109; expected-target row roman-pre-1955:temporal:slot:feria-2-post-dominicam-2-quadragesimae:preface-lent"}
+  lent-2-tuesday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 214, printed p. 110; expected-target row roman-pre-1955:temporal:slot:feria-3-post-dominicam-2-quadragesimae:preface-lent"}
+  lent-2-wednesday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 216, printed p. 112; expected-target row roman-pre-1955:temporal:slot:feria-4-post-dominicam-2-quadragesimae:preface-lent"}
+  lent-2-thursday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 218, printed p. 114; expected-target row roman-pre-1955:temporal:slot:feria-5-post-dominicam-2-quadragesimae:preface-lent"}
+  lent-2-friday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 221, printed p. 117; expected-target row roman-pre-1955:temporal:slot:feria-6-post-dominicam-2-quadragesimae:preface-lent"}
+  lent-2-saturday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 224, printed p. 120; expected-target row roman-pre-1955:temporal:slot:sabbato-post-dominicam-2-quadragesimae:preface-lent"}
+  lent-3:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 226, printed p. 122; expected-target row roman-pre-1955:temporal:slot:dominica-3-quadragesimae:preface-lent"}
+  lent-3-monday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 228, printed p. 124; expected-target row roman-pre-1955:temporal:slot:feria-2-post-dominicam-3-quadragesimae:preface-lent"}
+  lent-3-tuesday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 230, printed p. 126; expected-target row roman-pre-1955:temporal:slot:feria-3-post-dominicam-3-quadragesimae:preface-lent"}
+  lent-3-wednesday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 232, printed p. 128; expected-target row roman-pre-1955:temporal:slot:feria-4-post-dominicam-3-quadragesimae:preface-lent"}
+  lent-3-thursday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 234, printed p. 130; expected-target row roman-pre-1955:temporal:slot:feria-5-post-dominicam-3-quadragesimae:preface-lent"}
+  lent-3-friday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 237, printed p. 133; expected-target row roman-pre-1955:temporal:slot:feria-6-post-dominicam-3-quadragesimae:preface-lent"}
+  lent-3-saturday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 241, printed p. 137; expected-target row roman-pre-1955:temporal:slot:sabbato-post-dominicam-3-quadragesimae:preface-lent"}
+  lent-4:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 243, printed p. 139; expected-target row roman-pre-1955:temporal:slot:dominica-4-quadragesimae:preface-lent"}
+  lent-4-monday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 245, printed p. 141; expected-target row roman-pre-1955:temporal:slot:feria-2-post-dominicam-4-quadragesimae:preface-lent"}
+  lent-4-tuesday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 247, printed p. 143; expected-target row roman-pre-1955:temporal:slot:feria-3-post-dominicam-4-quadragesimae:preface-lent"}
+  lent-4-wednesday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 250, printed p. 146; expected-target row roman-pre-1955:temporal:slot:feria-4-post-dominicam-4-quadragesimae:preface-lent"}
+  lent-4-thursday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 252, printed p. 148; expected-target row roman-pre-1955:temporal:slot:feria-5-post-dominicam-4-quadragesimae:preface-lent"}
+  lent-4-friday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 255, printed p. 151; expected-target row roman-pre-1955:temporal:slot:feria-6-post-dominicam-4-quadragesimae:preface-lent"}
+  lent-4-saturday:
+    preface: {option: quadragesima, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 257, printed p. 153; expected-target row roman-pre-1955:temporal:slot:sabbato-post-dominicam-4-quadragesimae:preface-lent"}
+  passion-sunday:
+    preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 261, printed p. 157; expected-target row roman-pre-1955:temporal:slot:dominica-de-passione:preface-cross"}
+  passion-monday:
+    preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 263, printed p. 159; expected-target row roman-pre-1955:temporal:slot:feria-2-post-dominicam-passionis:preface-cross"}
+  passion-tuesday:
+    preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 265, printed p. 161; expected-target row roman-pre-1955:temporal:slot:feria-3-post-dominicam-passionis:preface-cross"}
+  passion-wednesday:
+    preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 267, printed p. 163; expected-target row roman-pre-1955:temporal:slot:feria-4-post-dominicam-passionis:preface-cross"}
+  passion-thursday:
+    preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 269, printed p. 165; expected-target row roman-pre-1955:temporal:slot:feria-5-post-dominicam-passionis:preface-cross"}
+  passion-friday:
+    preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 271, printed p. 167; expected-target row roman-pre-1955:temporal:slot:feria-6-post-dominicam-passionis:preface-cross"}
+  passion-saturday:
+    preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 273, printed p. 169; expected-target row roman-pre-1955:temporal:slot:sabbato-post-dominicam-passionis:preface-cross"}
+  holy-monday:
+    preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 291, printed p. 187; expected-target row roman-pre-1955:temporal:slot:feria-2-majoris-hebdomadae:preface-cross"}
+  holy-tuesday:
+    preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 297, printed p. 193; expected-target row roman-pre-1955:temporal:slot:feria-3-majoris-hebdomadae:preface-cross"}
+  holy-wednesday:
+    preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 304, printed p. 200; expected-target row roman-pre-1955:temporal:slot:feria-4-majoris-hebdomadae:preface-cross"}
+  mass-of-the-lords-supper:
+    preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 309, printed p. 205; expected-target row roman-pre-1955:temporal:slot:feria-5-in-cena-domini:preface-cross"}
+  easter-sunday:
+    preface: {option: paschalis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 456, printed p. 352; expected-target row roman-pre-1955:temporal:slot:dominica-resurrectionis:preface-paschal"}
+    communicantes: {option: pascha, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 456, printed p. 352; expected-target row roman-pre-1955:temporal:slot:dominica-resurrectionis:communicantes-paschal"}
+    hanc_igitur: {option: pascha-pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 456, printed p. 352; expected-target row roman-pre-1955:temporal:slot:dominica-resurrectionis:hanc-igitur-paschal"}
+  easter-monday:
+    preface: {option: paschalis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 458, printed p. 354; expected-target row roman-pre-1955:temporal:slot:feria-2-infra-octavam-paschae:preface-paschal"}
+    communicantes: {option: pascha, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 458, printed p. 354; expected-target row roman-pre-1955:temporal:slot:feria-2-infra-octavam-paschae:communicantes-paschal"}
+    hanc_igitur: {option: pascha-pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 458, printed p. 354; expected-target row roman-pre-1955:temporal:slot:feria-2-infra-octavam-paschae:hanc-igitur-paschal"}
+  easter-tuesday:
+    preface: {option: paschalis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 460, printed p. 356; expected-target row roman-pre-1955:temporal:slot:feria-3-infra-octavam-paschae:preface-paschal"}
+    communicantes: {option: pascha, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 460, printed p. 356; expected-target row roman-pre-1955:temporal:slot:feria-3-infra-octavam-paschae:communicantes-paschal"}
+    hanc_igitur: {option: pascha-pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 460, printed p. 356; expected-target row roman-pre-1955:temporal:slot:feria-3-infra-octavam-paschae:hanc-igitur-paschal"}
+  easter-wednesday:
+    preface: {option: paschalis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 462, printed p. 358; expected-target row roman-pre-1955:temporal:slot:feria-4-infra-octavam-paschae:preface-paschal"}
+    communicantes: {option: pascha, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 462, printed p. 358; expected-target row roman-pre-1955:temporal:slot:feria-4-infra-octavam-paschae:communicantes-paschal"}
+    hanc_igitur: {option: pascha-pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 462, printed p. 358; expected-target row roman-pre-1955:temporal:slot:feria-4-infra-octavam-paschae:hanc-igitur-paschal"}
+  easter-thursday:
+    preface: {option: paschalis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 465, printed p. 361; expected-target row roman-pre-1955:temporal:slot:feria-5-infra-octavam-paschae:preface-paschal"}
+    communicantes: {option: pascha, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 465, printed p. 361; expected-target row roman-pre-1955:temporal:slot:feria-5-infra-octavam-paschae:communicantes-paschal"}
+    hanc_igitur: {option: pascha-pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 465, printed p. 361; expected-target row roman-pre-1955:temporal:slot:feria-5-infra-octavam-paschae:hanc-igitur-paschal"}
+  easter-friday:
+    preface: {option: paschalis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 466, printed p. 362; expected-target row roman-pre-1955:temporal:slot:feria-6-infra-octavam-paschae:preface-paschal"}
+    communicantes: {option: pascha, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 466, printed p. 362; expected-target row roman-pre-1955:temporal:slot:feria-6-infra-octavam-paschae:communicantes-paschal"}
+    hanc_igitur: {option: pascha-pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 466, printed p. 362; expected-target row roman-pre-1955:temporal:slot:feria-6-infra-octavam-paschae:hanc-igitur-paschal"}
+  easter-saturday:
+    preface: {option: paschalis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 468, printed p. 364; expected-target row roman-pre-1955:temporal:slot:sabbato-in-albis:preface-paschal"}
+    communicantes: {option: pascha, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 468, printed p. 364; expected-target row roman-pre-1955:temporal:slot:sabbato-in-albis:communicantes-paschal"}
+    hanc_igitur: {option: pascha-pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 468, printed p. 364; expected-target row roman-pre-1955:temporal:slot:sabbato-in-albis:hanc-igitur-paschal"}
+  low-sunday:
+    preface: {option: paschalis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 470, printed p. 366; expected-target row roman-pre-1955:temporal:slot:dominica-in-albis:preface-paschal"}
+  easter-2:
+    preface: {option: paschalis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 472, printed p. 368; expected-target row roman-pre-1955:temporal:slot:dominica-2-post-pascha:preface-paschal"}
+  easter-3:
+    preface: {option: paschalis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 474, printed p. 370; expected-target row roman-pre-1955:temporal:slot:dominica-3-post-pascha:preface-paschal"}
+  easter-4:
+    preface: {option: paschalis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 475, printed p. 371; expected-target row roman-pre-1955:temporal:slot:dominica-4-post-pascha:preface-paschal"}
+  easter-5:
+    preface: {option: paschalis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 477, printed p. 373; expected-target row roman-pre-1955:temporal:slot:dominica-5-post-pascha:preface-paschal"}
+  rogation-mass:
+    preface: {option: paschalis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 479, printed p. 375; expected-target row roman-pre-1955:temporal:slot:in-litaniis:preface-paschal"}
+  vigil-of-the-ascension:
+    preface: {option: paschalis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 481, printed p. 377; expected-target row roman-pre-1955:temporal:slot:vigilia-ascensionis:preface-paschal"}
+  ascension:
+    preface: {option: ascensione, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 484, printed p. 380; expected-target row roman-pre-1955:temporal:slot:ascensio:preface-ascension"}
+    communicantes: {option: ascensione, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 484, printed p. 380; expected-target row roman-pre-1955:temporal:slot:ascensio:communicantes-ascension"}
+  sunday-after-ascension:
+    preface: {option: ascensione, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 486, printed p. 382; expected-target row roman-pre-1955:temporal:slot:dominica-infra-octavam-ascensionis:preface-ascension"}
+    communicantes: {option: ascensione, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 486, printed p. 382; expected-target row roman-pre-1955:temporal:slot:dominica-infra-octavam-ascensionis:communicantes-ascension"}
+  vigil-of-pentecost:
+    preface: {option: spiritu-sancto, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 494, printed p. 390; expected-target row roman-pre-1955:temporal:slot:vigilia-pentecostes:preface-pentecost"}
+    communicantes: {option: pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 494, printed p. 390; expected-target row roman-pre-1955:temporal:slot:vigilia-pentecostes:communicantes-pentecost"}
+    hanc_igitur: {option: pascha-pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 494, printed p. 390; expected-target row roman-pre-1955:temporal:slot:vigilia-pentecostes:hanc-igitur-pentecost"}
+  pentecost:
+    preface: {option: spiritu-sancto, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 499, printed p. 395; expected-target row roman-pre-1955:temporal:slot:dominica-pentecostes:preface-pentecost"}
+    communicantes: {option: pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 499, printed p. 395; expected-target row roman-pre-1955:temporal:slot:dominica-pentecostes:communicantes-pentecost"}
+    hanc_igitur: {option: pascha-pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 499, printed p. 395; expected-target row roman-pre-1955:temporal:slot:dominica-pentecostes:hanc-igitur-pentecost"}
+  pentecost-monday:
+    preface: {option: spiritu-sancto, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 500, printed p. 396; expected-target row roman-pre-1955:temporal:slot:feria-2-infra-octavam-pentecostes:preface-pentecost"}
+    communicantes: {option: pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 500, printed p. 396; expected-target row roman-pre-1955:temporal:slot:feria-2-infra-octavam-pentecostes:communicantes-pentecost"}
+    hanc_igitur: {option: pascha-pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 500, printed p. 396; expected-target row roman-pre-1955:temporal:slot:feria-2-infra-octavam-pentecostes:hanc-igitur-pentecost"}
+  pentecost-tuesday:
+    preface: {option: spiritu-sancto, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 501, printed p. 397; expected-target row roman-pre-1955:temporal:slot:feria-3-infra-octavam-pentecostes:preface-pentecost"}
+    communicantes: {option: pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 501, printed p. 397; expected-target row roman-pre-1955:temporal:slot:feria-3-infra-octavam-pentecostes:communicantes-pentecost"}
+    hanc_igitur: {option: pascha-pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 501, printed p. 397; expected-target row roman-pre-1955:temporal:slot:feria-3-infra-octavam-pentecostes:hanc-igitur-pentecost"}
+  pentecost-ember-wednesday:
+    preface: {option: spiritu-sancto, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 504, printed p. 400; expected-target row roman-pre-1955:temporal:slot:feria-4-quatuor-temporum-pentecostes:preface-pentecost"}
+    communicantes: {option: pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 504, printed p. 400; expected-target row roman-pre-1955:temporal:slot:feria-4-quatuor-temporum-pentecostes:communicantes-pentecost"}
+    hanc_igitur: {option: pascha-pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 504, printed p. 400; expected-target row roman-pre-1955:temporal:slot:feria-4-quatuor-temporum-pentecostes:hanc-igitur-pentecost"}
+  pentecost-thursday:
+    preface: {option: spiritu-sancto, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 505, printed p. 401; expected-target row roman-pre-1955:temporal:slot:feria-5-infra-octavam-pentecostes:preface-pentecost"}
+    communicantes: {option: pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 505, printed p. 401; expected-target row roman-pre-1955:temporal:slot:feria-5-infra-octavam-pentecostes:communicantes-pentecost"}
+    hanc_igitur: {option: pascha-pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 505, printed p. 401; expected-target row roman-pre-1955:temporal:slot:feria-5-infra-octavam-pentecostes:hanc-igitur-pentecost"}
+  pentecost-ember-friday:
+    preface: {option: spiritu-sancto, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 507, printed p. 403; expected-target row roman-pre-1955:temporal:slot:feria-6-quatuor-temporum-pentecostes:preface-pentecost"}
+    communicantes: {option: pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 507, printed p. 403; expected-target row roman-pre-1955:temporal:slot:feria-6-quatuor-temporum-pentecostes:communicantes-pentecost"}
+    hanc_igitur: {option: pascha-pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 507, printed p. 403; expected-target row roman-pre-1955:temporal:slot:feria-6-quatuor-temporum-pentecostes:hanc-igitur-pentecost"}
+  pentecost-ember-saturday:
+    preface: {option: spiritu-sancto, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 511, printed p. 407; expected-target row roman-pre-1955:temporal:slot:sabbato-quatuor-temporum-pentecostes:preface-pentecost"}
+    communicantes: {option: pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 511, printed p. 407; expected-target row roman-pre-1955:temporal:slot:sabbato-quatuor-temporum-pentecostes:communicantes-pentecost"}
+    hanc_igitur: {option: pascha-pentecoste, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 511, printed p. 407; expected-target row roman-pre-1955:temporal:slot:sabbato-quatuor-temporum-pentecostes:hanc-igitur-pentecost"}
+  trinity:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 514, printed p. 410; expected-target row roman-pre-1955:temporal:slot:ssma-trinitas:preface-trinity"}
+  mass-of-the-first-sunday-after-pentecost:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 517, printed p. 413; expected-target row roman-pre-1955:temporal:slot:dominica-1-post-pentecosten:preface-trinity"}
+  corpus-christi:
+    preface: {option: nativitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 521, printed p. 417; expected-target row roman-pre-1955:temporal:slot:corpus-christi:preface-nativity"}
+  sacred-heart:
+    preface: {option: sacro-corde, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 529, printed p. 425; expected-target row roman-pre-1955:temporal:slot:sacratissimum-cor-jesu:preface-sacred-heart"}
+  pentecost-4:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 532, printed p. 428; expected-target row roman-pre-1955:temporal:slot:dominica-4-post-pentecosten:preface-trinity"}
+  pentecost-5:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 534, printed p. 430; expected-target row roman-pre-1955:temporal:slot:dominica-5-post-pentecosten:preface-trinity"}
+  pentecost-6:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 536, printed p. 432; expected-target row roman-pre-1955:temporal:slot:dominica-6-post-pentecosten:preface-trinity"}
+  pentecost-7:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 537, printed p. 433; expected-target row roman-pre-1955:temporal:slot:dominica-7-post-pentecosten:preface-trinity"}
+  pentecost-8:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 539, printed p. 435; expected-target row roman-pre-1955:temporal:slot:dominica-8-post-pentecosten:preface-trinity"}
+  pentecost-9:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 540, printed p. 436; expected-target row roman-pre-1955:temporal:slot:dominica-9-post-pentecosten:preface-trinity"}
+  pentecost-10:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 542, printed p. 438; expected-target row roman-pre-1955:temporal:slot:dominica-10-post-pentecosten:preface-trinity"}
+  pentecost-11:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 544, printed p. 440; expected-target row roman-pre-1955:temporal:slot:dominica-11-post-pentecosten:preface-trinity"}
+  pentecost-12:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 546, printed p. 442; expected-target row roman-pre-1955:temporal:slot:dominica-12-post-pentecosten:preface-trinity"}
+  pentecost-13:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 547, printed p. 443; expected-target row roman-pre-1955:temporal:slot:dominica-13-post-pentecosten:preface-trinity"}
+  pentecost-14:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 549, printed p. 445; expected-target row roman-pre-1955:temporal:slot:dominica-14-post-pentecosten:preface-trinity"}
+  pentecost-15:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 551, printed p. 447; expected-target row roman-pre-1955:temporal:slot:dominica-15-post-pentecosten:preface-trinity"}
+  pentecost-16:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 553, printed p. 449; expected-target row roman-pre-1955:temporal:slot:dominica-16-post-pentecosten:preface-trinity"}
+  pentecost-17:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 554, printed p. 450; expected-target row roman-pre-1955:temporal:slot:dominica-17-post-pentecosten:preface-trinity"}
+  pentecost-18:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 565, printed p. 461; expected-target row roman-pre-1955:temporal:slot:dominica-18-post-pentecosten:preface-trinity"}
+  pentecost-19:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 567, printed p. 463; expected-target row roman-pre-1955:temporal:slot:dominica-19-post-pentecosten:preface-trinity"}
+  pentecost-20:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 568, printed p. 464; expected-target row roman-pre-1955:temporal:slot:dominica-20-post-pentecosten:preface-trinity"}
+  pentecost-21:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 570, printed p. 466; expected-target row roman-pre-1955:temporal:slot:dominica-21-post-pentecosten:preface-trinity"}
+  pentecost-22:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 571, printed p. 467; expected-target row roman-pre-1955:temporal:slot:dominica-22-post-pentecosten:preface-trinity"}
+  pentecost-23:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 573, printed p. 469; expected-target row roman-pre-1955:temporal:slot:dominica-23-post-pentecosten:preface-trinity"}
+  resumed-epiphany-3:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 575, printed p. 471; expected-target row roman-pre-1955:temporal:slot:dominica-3-quae-superfuit-post-epiphaniam:preface-trinity"}
+  resumed-epiphany-4:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 576, printed p. 472; expected-target row roman-pre-1955:temporal:slot:dominica-4-quae-superfuit-post-epiphaniam:preface-trinity"}
+  resumed-epiphany-5:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 578, printed p. 474; expected-target row roman-pre-1955:temporal:slot:dominica-5-quae-superfuit-post-epiphaniam:preface-trinity"}
+  resumed-epiphany-6:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 579, printed p. 475; expected-target row roman-pre-1955:temporal:slot:dominica-6-quae-superfuit-post-epiphaniam:preface-trinity"}
+  last-sunday-after-pentecost:
+    preface: {option: trinitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Tempore, artifact p. 581, printed p. 477; expected-target row roman-pre-1955:temporal:slot:dominica-24-post-pentecosten:preface-trinity"}
+  s-andreae-apostoli:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 587 / printed p. 483, raw page-local line 30; expected-target row roman-pre-1955:sanctoral-form:p586-l10:preface:p587-l30"}
+  conceptione-immaculata-beatae-mariae-virginis:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 600 / printed p. 496, raw page-local line 64; expected-target row roman-pre-1955:sanctoral-form:p599-l66:preface:p600-l64"}
+  s-thomae-apostoli:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 607 / printed p. 503, raw page-local line 9; expected-target row roman-pre-1955:sanctoral-form:p605-l84:preface:p607-l9"}
+  s-marcelli-i-papae-martyris:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 611 / printed p. 507, raw page-local line 12; expected-target row roman-pre-1955:sanctoral-form:p609-l72:preface:p611-l12"}
+  conversione-s-pauli-apostoli:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 623 / printed p. 519, raw page-local line 69; expected-target row roman-pre-1955:sanctoral-form:p621-l41:preface:p623-l69"}
+  purificatione-beatae-mariae-virginis:
+    preface: {option: nativitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 639 / printed p. 535, raw page-local line 59; expected-target row roman-pre-1955:sanctoral-form:p635-l74:preface:p639-l59"}
+  apparitione-beatae-mariae-virginis-immaculatae:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 648 / printed p. 544, raw page-local line 50; expected-target row roman-pre-1955:sanctoral-form:p647-l23:preface:p648-l50"}
+  s-matthiae-apostoli:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 654 / printed p. 550, raw page-local line 59; expected-target row roman-pre-1955:sanctoral-form:p653-l9:preface:p654-l59"}
+  s-ioseph-sponsi-beatae-mariae-virginis:
+    preface: {option: sancto-ioseph, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 670 / printed p. 566, raw page-local line 41; expected-target row roman-pre-1955:sanctoral-form:p669-l2:preface:p670-l41"}
+  annuntiatio-beatae-mariae-virginis:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 676 / printed p. 572, raw page-local line 69; expected-target row roman-pre-1955:sanctoral-form:p675-l70:preface:p676-l69"}
+  comm-septem-dolorum-beatae-mariae-virginis:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 683 / printed p. 579, raw page-local line 39; expected-target row roman-pre-1955:sanctoral-form:p681-l73:preface:p683-l39"}
+  litania-maior:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 693 / printed p. 589, raw page-local line 64; expected-target row roman-pre-1955:sanctoral-form:p692-l14:preface:p693-l64"}
+  ss-philippi-iacobi-apostolorum:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 703 / printed p. 599, raw page-local line 27; expected-target row roman-pre-1955:sanctoral-form:p701-l79:preface:p703-l27"}
+  s-petri-caelestini-papae-confessoris:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 724 / printed p. 620, raw page-local line 57; expected-target row roman-pre-1955:sanctoral-form:p723-l11:preface:p724-l57"}
+  s-barnabae-apostoli:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 742 / printed p. 638, raw page-local line 26; expected-target row roman-pre-1955:sanctoral-form:p740-l69:preface:p742-l26"}
+  ss-petri-pauli-apostolorum:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 770 / printed p. 666, raw page-local line 53; expected-target row roman-pre-1955:sanctoral-form:p769-l2:preface:p770-l53"}
+  commemoratione-s-pauli-apostoli:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 774 / printed p. 670, raw page-local line 35; expected-target row roman-pre-1955:sanctoral-form:p772-l36:preface:p774-l35"}
+  pretiosissimi-sanguinis-domini-nostri-iesu-christi:
+    preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 777 / printed p. 673, raw page-local line 37; expected-target row roman-pre-1955:sanctoral-form:p775-l2:preface:p777-l37"}
+  visitatione-beatae-mariae-virginis:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 780 / printed p. 676, raw page-local line 36; expected-target row roman-pre-1955:sanctoral-form:p779-l69:preface:p780-l36"}
+  comm-beatae-mariae-virginis-monte-carmelo:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 796 / printed p. 692, raw page-local line 34; expected-target row roman-pre-1955:sanctoral-form:p795-l28:preface:p796-l34"}
+  s-iacobi-apostoli:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 813 / printed p. 709, raw page-local line 5; expected-target row roman-pre-1955:sanctoral-form:p811-l46:preface:p813-l5"}
+  dedicatione-s-mariae-ad-nives:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 829 / printed p. 725, raw page-local line 72; expected-target row roman-pre-1955:sanctoral-form:p829-l67:preface:p829-l72"}
+  transfiguratione-domini-nostri-iesu-christi:
+    preface: {option: nativitate, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 832 / printed p. 728, raw page-local line 57; expected-target row roman-pre-1955:sanctoral-form:p831-l68:preface:p832-l57"}
+  assumptione-beatae-mariae-virginis:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 848 / printed p. 744, raw page-local line 32; expected-target row roman-pre-1955:sanctoral-form:p847-l64:preface:p848-l32"}
+  s-ioachim-patris-beatae-mariae-virginis:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 850 / printed p. 746, raw page-local line 31; expected-target row roman-pre-1955:sanctoral-form:p848-l55:preface:p850-l31"}
+  s-hyacinthi-confessoris:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 850 / printed p. 746, raw page-local line 58; expected-target row roman-pre-1955:sanctoral-form:p850-l51:preface:p850-l58"}
+  immaculati-cordis-beatae-mariae-virginis:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 857 / printed p. 753, raw page-local line 52; expected-target row roman-pre-1955:sanctoral-form:p856-l9:preface:p857-l52"}
+  s-bartholomaei-apostoli:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 860 / printed p. 756, raw page-local line 28; expected-target row roman-pre-1955:sanctoral-form:p859-l11:preface:p860-l28"}
+  nativitate-beatae-mariae-virginis:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 877 / printed p. 773, raw page-local line 2; expected-target row roman-pre-1955:sanctoral-form:p875-l2:preface:p877-l2"}
+  sanctissimi-nominis-beatae-mariae-virginis:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 879 / printed p. 775, raw page-local line 58; expected-target row roman-pre-1955:sanctoral-form:p878-l24:preface:p879-l58"}
+  exaltatione-s-crucis:
+    preface: {option: sancta-cruce, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 881 / printed p. 777, raw page-local line 15; expected-target row roman-pre-1955:sanctoral-form:p879-l73:preface:p881-l15"}
+  septem-dolorum-beatae-mariae-virginis:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 883 / printed p. 779, raw page-local line 36; expected-target row roman-pre-1955:sanctoral-form:p881-l30:preface:p883-l36"}
+  s-matthaei-apostoli-evangelistae:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 891 / printed p. 787, raw page-local line 35; expected-target row roman-pre-1955:sanctoral-form:p890-l21:preface:p891-l35"}
+  comm-beatae-mariae-virginis-a-mercede:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 893 / printed p. 789, raw page-local line 55; expected-target row roman-pre-1955:sanctoral-form:p893-l30:preface:p893-l55"}
+  beatae-mariae-virginis-a-rosario:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 906 / printed p. 802, raw page-local line 79; expected-target row roman-pre-1955:sanctoral-form:p905-l2:preface:p906-l79"}
+  maternitatis-beatae-mariae-virginis:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 914 / printed p. 810, raw page-local line 57; expected-target row roman-pre-1955:sanctoral-form:p913-l2:preface:p914-l57"}
+  s-lucae-evangelistae:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 919 / printed p. 815, raw page-local line 42; expected-target row roman-pre-1955:sanctoral-form:p918-l7:preface:p919-l42"}
+  christ-the-king:
+    preface: {option: christo-rege, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 927 / printed p. 823, raw page-local line 9; expected-target row roman-pre-1955:sanctoral-form:p925-l2:preface:p927-l9"}
+  ss-simonis-iudae-apostolorum:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 931 / printed p. 827, raw page-local line 65; expected-target row roman-pre-1955:sanctoral-form:p930-l38:preface:p931-l65"}
+  commemoratione-omnium-fidelium-defunctorum:
+    forms:
+      first:
+        preface: {option: defunctis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 940 / printed p. 836, raw page-local line 74; expected-target row roman-pre-1955:sanctoral-form:p938-l7:preface:p940-l74"}
+      second:
+        preface: {option: defunctis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 942 / printed p. 838, raw page-local line 64; expected-target row roman-pre-1955:sanctoral-form:p941-l35:preface:p942-l64"}
+      third:
+        preface: {option: defunctis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 945 / printed p. 841, raw page-local line 2; expected-target row roman-pre-1955:sanctoral-form:p943-l2:preface:p945-l2"}
+  praesentatione-beatae-mariae-virginis:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), Proprium de Sanctis, artifact p. 959 / printed p. 855, raw page-local line 46; expected-target row roman-pre-1955:sanctoral-form:p959-l23:preface:p959-l46"}
+  commune-festorum-bmv:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), artifact p. 1014, printed [48]; raw text page line 52; expected-target row roman-pre-1955:body:common-marian:preface-referral:1"}
+  missa-de-s-maria-in-sabbato-1:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), artifact p. 1016, printed [50]; raw text page line 53; expected-target row roman-pre-1955:body:marian-saturday-advent:preface-referral:1"}
+  missa-de-s-maria-in-sabbato-2:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), artifact p. 1018, printed [52]; raw text page line 23; expected-target row roman-pre-1955:body:marian-saturday-christmas:preface-referral:1"}
+  missa-de-s-maria-in-sabbato-3:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), artifact p. 1019, printed [53]; raw text page line 63; expected-target row roman-pre-1955:body:marian-saturday-february-lent:preface-referral:1"}
+  missa-de-s-maria-in-sabbato-4:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), artifact p. 1021, printed [55]; raw text page line 20; expected-target row roman-pre-1955:body:marian-saturday-paschal:preface-referral:1"}
+  missa-de-s-maria-in-sabbato-5:
+    preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), artifact p. 1022, printed [56]; raw text page line 41; expected-target row roman-pre-1955:body:marian-saturday-after-pentecost:preface-referral:1"}
+  commune-summorum-pontificum:
+    preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), artifact p. 1024, printed [58]; raw text page line 56; expected-target row roman-pre-1955:body:common-popes:preface-referral:1"}
 sections:
   seasonal:
     kind: seasonal

@@ -378,7 +378,15 @@ regression before the next begins:
      matters (G21) as restricted;
    - giving the Cummiskey and Lasance rows the same evidenced antecedent
      relation as Caswall;
-2. the expected-target join (G4), after the pre-1955 inventory lands;
+2. the expected-target join (G4): the formulary level was implemented on
+   2026-10-19:
+   - 488 1962 and 463 pre-1955 form rows are joined, and none is
+     not-represented.
+   - The field `form_id` had three meanings. Its parent-reference use became
+     `parent_id`, and its source-local formulary keys became
+     `source_form_key`, so `form_id` now means only a held-Mass form join.
+   - Four OCR-missed inventory rows were added after image checks.
+   - Follow-up: the text-slot join;
 3. the appointment and sequence model (G5–G8), implemented 2026-10-19:
    - The Preface, Communicantes, Hanc igitur and postconciliar dismissal are
      `[[appointments]]` in the Ordinary inventories, and formularies record
@@ -396,10 +404,18 @@ regression before the next begins:
    - On a solemnity's own date the Day takes its Day form; the Vigil is for the
      evening before (Missal 2002 p. 265; NUALC 11).
    Follow-ups:
-   - Only Pentecost formularies record a Preface direction yet, so most other
-     days show the typed Preface stand-in until the roughly 216 printed 1962
-     directions held in the expected-target rows are joined. This is the next
-     priority.
+   - Preface directions were then recorded from the sources on 2026-10-19:
+     - 176 1962 formulary directions from the expected-target rows, plus the
+       RGMR 482–499 de Tempore spans and the common default. 1962 days in 2026
+       showing the stand-in fell from 337 to 0.
+     - A recension no longer inherits its base's directions. Pre-1955 applies
+       its own Bonn-attested `attested_appointments` (161 masses).
+     - The pre-1955 rule that brings in a commemorated feast's or an octave's
+       Preface (Bonn tit. VIII) needs a commemoration model, so 206 pre-1955
+       days still show the typed stand-in.
+     - The 1962 Cena Domini proper Communicantes and Hanc igitur need an
+       Ordinary option.
+     - Postconciliar Preface appointments are not yet recorded.
    - Placing a vigil on the preceding civil date needs `calendar-days` support.
    - The postconciliar proper Communicantes for Eucharistic Prayer I is not
      modelled.
@@ -458,6 +474,55 @@ The existing [participation-aid review record](../src/sources/inventories/day-re
 requires review to begin by **2026-11-15** and complete before **2026-11-29**.
 Refresh its evidence before a proposed affected release; this plan records the
 existing dependency and supplies no new rights clearance.
+
+##### 1962 Pentecost complete-text plan, 2026-10-19
+
+A read-only lane checked every unit of the 1962 C2 exemplar on page images. The
+witnesses are the registered 1962 facsimile (artifact pp. 373, 385–386,
+437–439), the 1922 Mame, the 1862 Pustet, Cummiskey 1861 and Lasance.
+Public-domain witnesses exist for nearly every unit:
+
+| Unit | What is missing | Route |
+| --- | --- | --- |
+| Introit, Offertory, Communion | Missal Latin; today a Bible reconstruction | 1962 nn. 1310, 1316, 1318, collated with Mame and Pustet as for the Saturday-BVM chants; `source: mixed`; Lasance English (Cummiskey drops alleluias in the Introit and Communion) |
+| Collect, Secret, Postcommunion | English only | Cummiskey 1861 binding, with Lasance as the second reading (G3) |
+| Lesson, Gospel | Missal wording ("discipuli"; "Dixit Iesus discipulis suis") and headings | `source: mixed` with the Missal's printed text, collated with Mame and Pustet; Gospel English from Cummiskey or Lasance; Lesson English a typed witness gap |
+| Alleluia, Sequence | Inline genuflection and ten strophes | The G14 inline-action and stanza contract |
+| Preface | The common opening is hidden, Latin is uncollated, and *hodierna die* is conditional | A span-level join to the common opening; collation of 1861, 1962 and Mame |
+| Proper Hanc igitur | Whole body | Mame and Pustet Latin, Lasance English; an Ordinary element needs a non-Cummiskey source |
+| Proper Communicantes | Whole body | Head from Mame and Pustet; the continuation clause is blocked (below) |
+| Ordinary dialogues | Collation of the 1861 rows against the 1962 Ordo (G19) and per-turn rows (C4) | Element-level collation status |
+
+Rules settled from existing guidance:
+
+- The Missal's own reading text uses the existing `source: mixed` shape:
+  scriptural constituents plus the printed full text. No new field is needed.
+- A historical English that drops an alleluia or omits a word is a variant
+  under the 2026-09-03 rule. It is not bound as the antecedent, and the unit
+  carries a typed witness gap naming the loci.
+
+Maintainer decision, 2026-10-19: the 1962 Communicantes continuation's "sed et
+beati Ioseph, eiusdem Virginis Sponsi" (decree of 13 November 1962) has no
+public-domain witness. It is published as a short phrase. The implementation
+records that basis once, citing 37 CFR 202.1(a) (words and short phrases), in
+`src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml`, where
+item 5 was previously "not adjudicated". The decision reaches only that clause;
+it is not a general basis for 1962 matter. It applies to the proper and the
+common Communicantes alike.
+
+Found along the way:
+
+- `roman-1962/propers.yaml` carries 154 duplicated `notes` keys whose first,
+  provenance-bearing value the parser silently drops. Fixing them, and making
+  `check-calendar-masses` refuse duplicate keys, is the first implementation
+  step.
+- The Saturday-BVM provenance rows name Mame as the publication source while
+  their evidence text names Pustet.
+
+The ordered implementation is: the duplicate-key fix; G3 English; the chants;
+the readings; G14; the Preface; the Hanc igitur; the Communicantes; the G19
+slice; then regeneration and the C2 acceptance checks. It waits until the
+calendar and Ordinary files are free of the concurrent Preface-direction lane.
 
 #### C4: dialogue, typography, and usability contract
 

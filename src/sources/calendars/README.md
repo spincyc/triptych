@@ -580,6 +580,17 @@ stand-in is shown. A common form never stands silently in a proper seat.
 `check-calendar-masses` refuses an option the Ordinary inventory does not
 declare, and `mass-ordinary` refuses a declared option that no row prints.
 
+A Common may record the direction it prints. That direction is read only where
+the Common is itself the day's Mass, as on the Saturdays of Our Lady. A day
+that takes a Common through `takes_from` records its own direction.
+
+A recension does not inherit its base's directions. `tools/mass-propers` drops
+them from every inherited mass and applies only the recension's top-level
+`attested_appointments`: a mass key mapped to variables, or `forms` mapped to a
+form id and its variables. Each entry cites the recension's own witness.
+
+A dated span in the Ordinary inventory may name a `weekday`.
+
 ## A form may be celebrated on the evening before
 
 ```yaml
