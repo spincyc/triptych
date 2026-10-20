@@ -3,6 +3,15 @@ record_type = "bindings"
 document = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
 
 [[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-17-1925.ia-microfilm-issue-15-pdf-9cb9e63b"
+loci = ["Printed 666–668 / PDF 78–80: AD MISSAM through Postcommunio"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Fresh research run 095fe00a9fe8cfee independently rehashed the whole local delivery and read all three page images. Historical Latin bodies collated against the 1962 controller. Common conclusions and Preface closing are abbreviated; final paschal Alleluia absent. These limitations are recorded, not silently supplied by this witness. Existing Claude source transcription used only after independent image comparison, with contribution disclosed in propers/verified.md."
+verified_on = "2026-10-20"
+source_fingerprint = "sha256:4128b3a624e25b3d00099f3374ec3d1c3d2208ea6f2111a9fd7a4a361a8b35e0"
+
+[[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
 loci = ["Printed 697–698 / PDF 778–779, marginal 3938–3949", "Printed 291 / PDF 372, Preface 1080", "PDF 10,16,17,29: RG17d,109,111a,112b,115c; RGMR427,431–432"]
 role = "textual-control"
