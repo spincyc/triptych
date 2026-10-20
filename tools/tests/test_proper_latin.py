@@ -215,7 +215,9 @@ class ProductionLedgerTests(unittest.TestCase):
             # Agnes secundo Secret, a witness-gap slot with no stub row before.
             # 1114 later that day: St Angela Merici's own Secret and
             # Postcommunion, new slots, each with a new collated row.
-            "roman-1962": (1114, 5),
+            # 1119 since 2026-10-19 (C3): the Pentecost Introit, Lesson,
+            # Gospel, Offertory and Communion carry the Missal's own Latin.
+            "roman-1962": (1119, 5),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -235,7 +237,8 @@ class ProductionLedgerTests(unittest.TestCase):
 
     def test_publication_loader_validates_production_source_metadata(self) -> None:
         # 1114 since 2026-10-01: St Angela Merici's Secret and Postcommunion.
-        expected = {"postconciliar": 329, "roman-1962": 1114, "roman-pre-1955": 1114}
+        # 1119 since 2026-10-19 (C3): the five Pentecost Missal chants and readings.
+        expected = {"postconciliar": 329, "roman-1962": 1119, "roman-pre-1955": 1119}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -275,8 +278,10 @@ class ProductionLedgerTests(unittest.TestCase):
         # page image and on a page image of the 1862 Pustet or the 1922 Mame.
         # 1068 later that day: St Angela Merici's own Secret and Postcommunion,
         # read on the 1962 page image and on the 1862 Pustet's (and the Mame's).
-        self.assertEqual(1068, len(permitted))
-        self.assertEqual(1068, len(roman))
+        # 1073 since 2026-10-19 (C3): the Pentecost Introit, Lesson, Gospel,
+        # Offertory and Communion, each read on the 1962, 1862 and 1922 page images.
+        self.assertEqual(1073, len(permitted))
+        self.assertEqual(1073, len(roman))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -416,7 +421,9 @@ class ProductionLedgerTests(unittest.TestCase):
         # 32 later that day: St Angela Merici's Secret and Postcommunion, read
         # on the 1862's appendix leaves n813-n814, do the same.
         # Seven further cold-review repairs bind the 1862 page image as well.
-        self.assertEqual(39, len(supplemented), supplemented)
+        # 44 since 2026-10-19 (C3): the five Pentecost rows name the 1862
+        # page-image leaves n384-n386 they were read on.
+        self.assertEqual(44, len(supplemented), supplemented)
 
         work = tomllib.loads((EDITORIAL_PROJECTION / "work.toml").read_text())
         self.assertEqual("Triptych contributors", work["responsible"])

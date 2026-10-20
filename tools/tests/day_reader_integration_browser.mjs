@@ -1450,7 +1450,10 @@ async function runAssertions(cdp, base) {
       // 2026-10-19 (C2 Preface directions): Pentecost X seats its printed
       // Trinity Preface (with the 1861 asterisk note and heading) in place of
       // the one typed stand-in, so two more Ordinary events.
-      [STATES.romanMissal, 177, 6, 161, 10, 'proper/roman-1962/pentecost-10/010'],
+      // 2026-10-19 (C3 Ordinary variables): the 1962 Canon continues the
+      // common Communicantes with canon/communicantes-continuatio, one more
+      // Ordinary event.
+      [STATES.romanMissal, 178, 6, 162, 10, 'proper/roman-1962/pentecost-10/010'],
       [STATES.postMissal, 58, 7, 41, 10, 'proper/postconciliar/advent-1/010']
     ];
     for (const [state, total, sections, ordinary, propers, lastProper] of cases) {
@@ -1657,9 +1660,13 @@ async function runAssertions(cdp, base) {
     for (const state of [STATES.pentecost1962Missal, STATES.pentecostPre1955Missal]) {
       await navigateCandidate(cdp, base, state);
       const day = await read();
+      const is1962 = state === STATES.pentecost1962Missal;
       const prefaces = day.ids.filter(id => /^ordinary-element\/praefatio\/praefatio/.test(id));
+      // C3, 2026-10-19: the 1962 Holy Spirit Preface carries the common
+      // opening up to its printed junction; pre-1955 is unchanged.
       assert.deepEqual(prefaces, [
         'ordinary-element/praefatio/praefatio-de-spiritu-sancto-heading',
+        ...(is1962 ? ['ordinary-element/praefatio/praefatio-de-spiritu-sancto-initium'] : []),
         'ordinary-element/praefatio/praefatio-de-spiritu-sancto'
       ]);
       assert.ok(day.ids.includes('ordinary-element/canon/communicantes-pentecoste'));
@@ -1668,7 +1675,28 @@ async function runAssertions(cdp, base) {
       assert.ok(!day.ids.includes('ordinary-element/canon/hanc-igitur'));
       assert.ok(!day.ids.includes('ordinary-element/oblatio/a-cunctis'));
       assert.ok(!day.ids.includes('ordinary-element/conclusio/postcommunio-mundet'));
-      assert.match(day.text, /Withheld under “proper-canon-form-not-held”/);
+      if (is1962) {
+        assert.equal(day.ids.indexOf('ordinary-element/canon/communicantes-pentecoste') + 1,
+          day.ids.indexOf('ordinary-element/canon/communicantes-continuatio'));
+        assert.doesNotMatch(day.text, /Withheld under “proper-canon-form-not-held”/);
+        assert.match(day.text, /Withheld under “communicantes-continuation-english-lacks-1962-clause”/);
+        const preface = await evaluate(cdp, `(() => {
+          const node = document.querySelector('[data-semantic-event-id="ordinary-element/praefatio/praefatio-de-spiritu-sancto"]');
+          const mark = node && node.querySelector('.ordinary-conditional');
+          const opening = document.querySelector('[data-semantic-event-id="ordinary-element/praefatio/praefatio-de-spiritu-sancto-initium"]');
+          return {
+            marked: mark ? mark.textContent : null,
+            note: node ? Array.from(node.querySelectorAll('.ordinary-conditional-note')).map(one => one.textContent) : [],
+            opening: opening ? opening.innerText.length : 0
+          };
+        })()`);
+        assert.ok(preface.marked && preface.marked.startsWith('['), JSON.stringify(preface));
+        assert.equal(preface.note.length, 1, JSON.stringify(preface));
+        assert.match(preface.note[0], /vigil of Pentecost/);
+        assert.ok(preface.opening > 40, JSON.stringify(preface));
+      } else {
+        assert.match(day.text, /Withheld under “proper-canon-form-not-held”/);
+      }
     }
     await navigateCandidate(cdp, base, STATES.pentecostPostDefaultMissal);
     const post = await read();

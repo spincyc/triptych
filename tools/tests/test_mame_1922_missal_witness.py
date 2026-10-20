@@ -172,8 +172,10 @@ class Mame1922WitnessTests(unittest.TestCase):
         # The 2026-10-01 page readings added the Seven Sorrows and Hilary
         # Secrets and Angela Merici's orations as three further identity-only
         # witnesses. They do not make the remote facsimile payload readable.
+        # 2026-10-19 (C3 1962 Pentecost) added two: the Pentecost chants and
+        # readings, and the Pentecost Preface and proper Canon forms.
         tracked = sorted(PASSAGES.glob("*.toml"))
-        self.assertEqual(len(tracked), 48)
+        self.assertEqual(len(tracked), 50)
         recoveries = {
             "comm-septem-dolorum-beatae-mariae-virginis-orations.toml": "artifact PDF p. 677",
             "s-hilarii-episcopi-confessoris-ecclesiae-doctoris-orations.toml": "artifact PDF p. 904",

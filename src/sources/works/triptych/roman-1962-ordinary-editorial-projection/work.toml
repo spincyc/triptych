@@ -1,0 +1,14 @@
+schema = 1
+record_type = "work"
+id = "work.triptych.roman-1962-ordinary-editorial-projection"
+title = "Roman 1962 Ordinary Editorial Projection"
+responsible = "Triptych contributors"
+work_type = "editorial-source-projection"
+languages = ["la"]
+composed = "2026-10-19"
+composed_basis = "Created through Triptych's recorded page-image collations of public-domain witnesses to the Canon of the Mass against the 1962 target edition."
+relations = [
+  "work.catholic-church.missale-romanum",
+  "work.eugene-cummiskey.roman-missal-english-laity",
+]
+description = "A project-created editorial source projection of bounded Latin texts of the Ordinary of the Mass that the 1962 frame needs and that no single public-domain printing carries in the 1962 wording: the proper forms of the Canon and the continuation the 1962 Canon prints for every Communicantes. It is neither an edition of a historical missal nor an edition of the Missale Romanum. Each artifact records its transformation rule over separate public-domain and 1962 page-image witnesses. Kept apart from the Proper projection (work.triptych.roman-1962-latin-proper-editorial-projection) because the Ordinary inventory, not the calendar, consumes it."

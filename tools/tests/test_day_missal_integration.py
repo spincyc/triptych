@@ -88,7 +88,9 @@ class DayMissalIntegrationTests(unittest.TestCase):
         post = json.loads((ROOT / "src/web/data/structure/ordinary/postconciliar.json").read_text())
         roman_elements = sum(len(section["elements"]) for section in roman["sections"])
         post_elements = sum(len(section["elements"]) for section in post["sections"])
-        self.assertEqual((len(roman["sections"]), roman_elements, len(roman["slots"])), (6, 194, 9))
+        # 2026-10-19 (C3): the Holy Spirit Preface's opening and the
+        # Communicantes continuation are two more 1962 elements.
+        self.assertEqual((len(roman["sections"]), roman_elements, len(roman["slots"])), (6, 196, 9))
         self.assertEqual(len(roman["exclusions"]), 12)  # C2 G6, 2026-10-19
         self.assertEqual(
             {row["state"] for row in roman["exclusions"]},

@@ -70,6 +70,32 @@ state = "in_progress"
   evidence = ["guidance/liturgy-browser-roadmap.md"]
 
 [[deliverables]]
+id = "missal-reader-c3-1962-pentecost-2026-10-19"
+owner = "guidance/liturgy-browser-roadmap.md"
+promise = "Bring the 1962 C2 exemplar, Pentecost Sunday, to the complete-text gate from lawful, registered witnesses: the Missal's own Latin for every Proper unit, bound historical English or typed gaps, the appointed Ordinary variables with their texts, the internal-structure contract, and the exercised Ordinary collated against the 1962 typica."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "c3-pentecost-propers"
+  criterion = "Every Pentecost Proper unit carries the Missal's own Latin, collated word for word against public-domain witnesses on page images, and each English unit is bound from a word-exact public-domain witness or carries a typed gap naming the loci; duplicated calendar keys are refused."
+  status = "pass"
+  evidence = ["src/sources/calendars/roman-1962/propers.yaml", "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml", "src/sources/inventories/roman-1962-proper-translations-v1.toml", "tools/tests/test_calendar_duplicate_keys.py"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "c3-pentecost-ordinary-variables"
+  criterion = "Missal mode on 1962 Pentecost seats the whole Holy Spirit Preface with its conditional words, the proper Hanc igitur and the proper Communicantes from public-domain witnesses collated word for word; the 1962 St Joseph clause is published only under the recorded short-phrase basis."
+  status = "pass"
+  evidence = ["src/sources/inventories/roman-1962-ordo-missae-v1.toml", "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml", "tools/tests/test_ordinary_appointments.py"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "c3-pentecost-remaining"
+  criterion = "The Alleluia English, the G14 inline-action and stanza contract, the exercised Ordinary dialogues collated against the 1962 Ordo (G19), and the C2 acceptance checks for the exemplar pass."
+  status = "open"
+  evidence = ["guidance/liturgy-browser-roadmap.md"]
+
+[[deliverables]]
 id = "missal-reader-c2-exemplars-2026-10-19"
 owner = "guidance/liturgy-browser-roadmap.md"
 promise = "Deliver C2 of the 2026-10-19 Missal reader plan: choose one representative Mass per principal missal from C1's attainable coverage, audit every unit against the six-part pattern, and implement the pattern without claiming textual completeness where units remain missing or restricted."

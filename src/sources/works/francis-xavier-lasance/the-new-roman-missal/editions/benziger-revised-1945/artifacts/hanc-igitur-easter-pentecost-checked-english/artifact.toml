@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.hanc-igitur-easter-pentecost-checked-english"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The project's controlling Lasance rights inventory (src/sources/inventories/lasance-new-roman-missal-rights-v1.toml) establishes nonrenewal of the 1937 and 1945 registrations. This prayer stands on ordinary printed pages 811-812, outside both excluded later inserts. Only the checked historical English is retained; no later appendix or scan-host expression."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "Complete registered PDF held in lane scratch; SHA-256 matched 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70 on 2026-10-19. The English column was copied by script from the PDF's own text layer, cropped to the column at 300 ppi on PDF pp. 810-811, and five tokens were then patched after reading the rendered page images: a digit read for the vocative capital, two misread letters, a quotation mark read for a comma, and a host watermark fragment removed. No text was composed or supplied from another book, and no model stood in the retrieval path."
+retrieved = "2026-10-19"
+sha256 = "31c5ea8cd0ff586607bb40ec61ea2b4cc38374d712e5ea2ba67326256a3cdc4c"
+byte_size = 881
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/hanc-igitur-easter-pentecost-checked-english/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "English column of the proper Hanc igitur of Easter and Pentecost only; line-end hyphenation rejoined; historical words, pointing, capitalization and conclusion preserved; five text-layer errors corrected against the page images; the facing Latin, headings, rubrics and host watermark omitted; metadata columns added. The exemplar is a later printing of the 1945 revision, not a 1937 impression."
+notes = "Read against the 1962 Latin of n. 1099 clause by clause on 2026-10-19: every clause of the Latin is rendered and none is added. The book prints no rubric for the joining of the hands, so this English carries none; the Latin side of the frame carries it as an inline action. Recorded at passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pentecost-communicantes-and-hanc-igitur."

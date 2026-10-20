@@ -111,6 +111,14 @@ DAYS = [
     {"id": "transfiguration1962", "calendar": "roman-1962", "date": "2026-08-06"},
     {"id": "saintPre1955", "calendar": "roman-pre-1955", "date": "2026-01-15"},
     {"id": "lentFeriaPre1955", "calendar": "roman-pre-1955", "date": "2026-03-05"},
+    # The proper Canon forms across their spans (C3, 2026-10-19): the vigil
+    # and the octave of Pentecost and a day of the Easter octave.
+    {"id": "pentecostVigil1962", "calendar": "roman-1962", "date": "2026-05-23"},
+    # (The Ember days of the octave print more lessons than the frame seats,
+    # so the Day withholds its Ordinary frame there; Monday and Tuesday do not.)
+    {"id": "pentecostMonday1962", "calendar": "roman-1962", "date": "2026-05-25"},
+    {"id": "pentecostTuesday1962", "calendar": "roman-1962", "date": "2026-05-26"},
+    {"id": "easterWednesday1962", "calendar": "roman-1962", "date": "2026-04-08"},
 ]
 
 
@@ -143,10 +151,18 @@ class OrdinaryAppointments(unittest.TestCase):
     def test_1962_pentecost_seats_one_preface_and_no_common_canon_form(self) -> None:
         for key in ("pentecost1962", "pentecostPre1955"):
             day = self.report[key]
+            # 2026-10-19 (C3): the 1962 Holy Spirit Preface carries the common
+            # Preface's opening as far as the 1861 asterisk; the pre-1955
+            # frame is unchanged.
+            opening = (
+                ["praefatio/praefatio-de-spiritu-sancto-initium"]
+                if key == "pentecost1962" else []
+            )
             self.assertEqual(
                 self.prefaces(key),
                 [
                     "praefatio/praefatio-de-spiritu-sancto-heading",
+                    *opening,
                     "praefatio/praefatio-de-spiritu-sancto",
                 ],
                 key,
@@ -177,6 +193,12 @@ class OrdinaryAppointments(unittest.TestCase):
     def test_ordinary_green_sunday_keeps_the_common_canon_forms(self) -> None:
         ordinary = self.report["pentecostX1962"]["ordinary"]
         self.assertIn("canon/communicantes", ordinary)
+        # 2026-10-19 (C3): the common form, cut at its junction, is followed
+        # by the 1962 continuation that names Saint Joseph.
+        self.assertEqual(
+            ordinary.index("canon/communicantes") + 1,
+            ordinary.index("canon/communicantes-continuatio"),
+        )
         self.assertIn("canon/hanc-igitur", ordinary)
         self.assertNotIn("canon/communicantes-pentecoste", ordinary)
         # The Sunday formulary prints "Praefatio de Ssma Trinitate" (RGMR 494 b).
@@ -188,7 +210,10 @@ class OrdinaryAppointments(unittest.TestCase):
         self.assertIn("praefatio/sanctus-post-praefationem", ordinary)
 
     def preface_of(self, key: str) -> str:
-        found = [one for one in self.prefaces(key) if not one.endswith("-heading")]
+        found = [
+            one for one in self.prefaces(key)
+            if not one.endswith("-heading") and not one.endswith("-initium")
+        ]
         self.assertEqual(len(found), 1, (key, found))
         return found[0].removeprefix("praefatio/")
 
@@ -216,6 +241,174 @@ class OrdinaryAppointments(unittest.TestCase):
             with self.subTest(key=key):
                 self.assertEqual(self.preface_of(key), preface)
                 self.assertEqual(self.report[key]["unresolved"], [])
+
+    def test_proper_canon_forms_hold_their_bodies_across_their_spans(self) -> None:
+        """C3, 2026-10-19: the proper bodies, never the common forms."""
+        structure = json.loads(
+            (ROOT / "src/web/data/structure/ordinary/roman-1962.json").read_text(encoding="utf-8")
+        )
+        by_key = {
+            element["key"]: element
+            for section in structure["sections"] for element in section["elements"]
+        }
+        for key, head in (
+            ("pentecost1962", "canon/communicantes-pentecoste"),
+            ("pentecostVigil1962", "canon/communicantes-pentecoste"),
+            ("pentecostMonday1962", "canon/communicantes-pentecoste"),
+            ("pentecostTuesday1962", "canon/communicantes-pentecoste"),
+            ("easterWednesday1962", "canon/communicantes-pascha"),
+        ):
+            with self.subTest(key=key):
+                ordinary = self.report[key]["ordinary"]
+                self.assertNotIn("canon/communicantes", ordinary)
+                self.assertNotIn("canon/hanc-igitur", ordinary)
+                self.assertEqual(ordinary.index(head) + 1,
+                                 ordinary.index("canon/communicantes-continuatio"))
+                self.assertIn("canon/hanc-igitur-pascha-pentecoste", ordinary)
+                self.assertEqual(self.report[key]["unresolved"], [])
+        # Held text, not a typed absence, for the Pentecost head, the
+        # continuation and the Hanc igitur; the rubric is an inline action.
+        for key in ("canon/communicantes-pentecoste", "canon/communicantes-continuatio",
+                    "canon/hanc-igitur-pascha-pentecoste"):
+            latin = [row for row in by_key[key]["translations"] if row["lang"] == "la"]
+            self.assertEqual(len(latin), 1, key)
+            self.assertIsNone(by_key[key]["absent"]["latin"], key)
+            self.assertEqual(latin[0]["coverage_relationship"], "exact-target", key)
+        hanc = by_key["canon/hanc-igitur-pascha-pentecoste"]
+        self.assertIsNone(hanc["absent"]["english"])
+        self.assertEqual(
+            [row["source_id"] for row in hanc["translations"] if row["lang"] == "en"],
+            ["edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"],
+        )
+        for key in ("canon/communicantes-continuatio", "canon/hanc-igitur-pascha-pentecoste"):
+            turns = next(row for row in by_key[key]["translations"] if row["lang"] == "la")["turns"]
+            self.assertEqual([turn["action"] for turn in turns], [None, True, None], key)
+        # The English of the head and of the continuation is a typed variant
+        # gap, never the 1861 common form's English.
+        self.assertEqual(by_key["canon/communicantes-pentecoste"]["absent"]["english"],
+                         "proper-communicantes-english-variant")
+        self.assertEqual(by_key["canon/communicantes-continuatio"]["absent"]["english"],
+                         "communicantes-continuation-english-lacks-1962-clause")
+
+    def test_1962_holy_spirit_preface_is_whole_with_its_conditional_words(self) -> None:
+        """C3, 2026-10-19: the opening up to the junction, then the clause."""
+        structure = json.loads(
+            (ROOT / "src/web/data/structure/ordinary/roman-1962.json").read_text(encoding="utf-8")
+        )
+        by_key = {
+            element["key"]: element
+            for section in structure["sections"] for element in section["elements"]
+        }
+        opening = by_key["praefatio/praefatio-de-spiritu-sancto-initium"]
+        common = by_key["praefatio/praefatio-communis"]
+        clause = by_key["praefatio/praefatio-de-spiritu-sancto"]
+        self.assertEqual(opening["occurrence_of"], "praefatio/praefatio-communis")
+        for lang in ("en", "la"):
+            cut = next(row for row in opening["translations"] if row["lang"] == lang)
+            whole = next(row for row in common["translations"] if row["lang"] == lang)
+            # An exact prefix of the printed row, ending where the asterisk
+            # that joins the proper clause stands next.
+            self.assertTrue(whole["text"].startswith(cut["text"]), lang)
+            self.assertTrue(whole["text"][len(cut["text"]):].lstrip().startswith("*"), lang)
+            held = next(row for row in clause["translations"] if row["lang"] == lang)
+            self.assertTrue(held["text"].startswith("*"), lang)
+            spans = held["conditional_spans"]
+            self.assertEqual(len(spans), 1, lang)
+            self.assertEqual(spans[0]["said"], {"anchor": "pentecost", "from": -1, "to": 6})
+            self.assertEqual(held["text"].count(spans[0]["text"]), 1)
+        for element in (opening, clause):
+            latin = next(row for row in element["translations"] if row["lang"] == "la")
+            self.assertEqual((latin["collation"], latin["target_wording"]),
+                             ("collated", "word-exact"), element["key"])
+
+    def test_the_short_phrase_basis_reaches_the_joseph_clause_only(self) -> None:
+        """C3, 2026-10-19: one clause beyond the public-domain words, no more."""
+        import csv
+        import re
+        import tomllib
+        import unicodedata
+
+        rights = tomllib.loads((ROOT / "src/sources/inventories/"
+                                "missale-romanum-1962-facsimile-rights-v1.toml").read_text())
+        clause = rights["the_joseph_clause"]
+        self.assertEqual(clause["basis"], "37 CFR 202.1(a)")
+        self.assertIn("THAT CLAUSE AND NOTHING ELSE", clause["reach"])
+        self.assertNotIn("NOT ADJUDICATED", rights["the_1920_substitution"]["where_it_cannot"]["items"])
+
+        same = {"eumdem": "eundem", "thadaei": "thaddaei", "inprimis": "in primis"}
+
+        def words(text: str) -> list[str]:
+            text = unicodedata.normalize("NFD", text)
+            text = "".join(c for c in text if unicodedata.category(c) != "Mn")
+            text = text.replace("æ", "ae").replace("œ", "oe").lower().replace("j", "i")
+            return " ".join(same.get(w, w) for w in re.findall(r"[a-z]+", text)).split()
+
+        def rows(path: str, column: str) -> dict[str, list[str]]:
+            held: dict[str, list[str]] = {}
+            with (ROOT / path).open(encoding="utf-8") as handle:
+                for row in csv.DictReader(handle, delimiter="\t"):
+                    held.setdefault(row["element_key"], []).append(row[column])
+            return held
+
+        projection = rows(
+            "src/sources/works/triptych/roman-1962-ordinary-editorial-projection/editions/"
+            "2026-10-19-editorial-projection/artifacts/canon-proper-forms-651e3482/"
+            "canon-proper-forms-651e3482.tsv", "latin")
+        canon_1861 = rows(
+            "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/"
+            "philadelphia-1861/artifacts/canon-missae-la/canon-missae-la.tsv", "latin")
+        clause_words = words(clause["clause"])
+        common = words(canon_1861["communicantes"][0])
+        head_end = common.index("christi") + 1
+        public = common[head_end:]
+        projected = words(" ".join(projection["communicantes-continuatio"]))
+        # The 1962 continuation is the public-domain continuation with the
+        # clause after its own opening 'sed et', joined by 'et', and the inline
+        # rubric before the conclusion; nothing else differs.
+        self.assertEqual(public[:2], clause_words[:2])
+        rubric = projected.index("iungit")
+        self.assertEqual(
+            projected[:rubric] + projected[rubric + 2:],
+            public[:2] + clause_words[2:] + ["et"] + public[2:],
+        )
+        # No other projected text carries the clause's words.
+        for key, texts in projection.items():
+            if key != "communicantes-continuatio":
+                self.assertNotIn("ioseph", words(" ".join(texts)), key)
+        # In the served frame only the continuation carries them, and only its
+        # provenance cites the basis.
+        structure = json.loads(
+            (ROOT / "src/web/data/structure/ordinary/roman-1962.json").read_text(encoding="utf-8")
+        )
+        carriers, citers = set(), set()
+        for section in structure["sections"]:
+            for element in section["elements"]:
+                for row in element["translations"] or []:
+                    if "ioseph" in words(row["text"]):
+                        carriers.add((element["key"], row["lang"]))
+                    if "the_joseph_clause" in (row.get("note") or ""):
+                        citers.add((element["key"], row["lang"]))
+        self.assertEqual(carriers, {("canon/communicantes-continuatio", "la")})
+        self.assertEqual(citers, {("canon/communicantes-continuatio", "la")})
+        # Across the source library the basis is cited only by its record, the
+        # projection that uses it and the inventory that joins that projection.
+        cited = sorted(
+            str(path.relative_to(ROOT)) for path in (ROOT / "src/sources").rglob("*")
+            if path.is_file() and path.suffix in {".toml", ".tsv", ".yaml"}
+            and "the_joseph_clause" in path.read_text(encoding="utf-8", errors="replace")
+        )
+        self.assertEqual(cited, [
+            "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+            "src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+            "src/sources/works/triptych/roman-1962-ordinary-editorial-projection/editions/"
+            "2026-10-19-editorial-projection/artifacts/canon-proper-forms-651e3482/"
+            "artifact.toml",
+            "src/sources/works/triptych/roman-1962-ordinary-editorial-projection/editions/"
+            "2026-10-19-editorial-projection/artifacts/canon-proper-forms-651e3482/"
+            "canon-proper-forms-651e3482.tsv",
+            "src/sources/works/triptych/roman-1962-ordinary-editorial-projection/editions/"
+            "2026-10-19-editorial-projection/edition.toml",
+        ])
 
     def test_pre_1955_takes_only_the_bonn_witness_direction(self) -> None:
         # The Bonn witness prints the Nativity Preface for the Transfiguration,

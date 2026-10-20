@@ -1,0 +1,11 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.vatican-typica-1962.praefatio-de-spiritu-sancto"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+locus = "Praefationes sine cantu, Praefatio de Spiritu Sancto, artifact PDF p. 373 (printed p. 292), marginal n. 1081"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Holy Spirit Preface was read at the page image, at 200 dpi: its rubric of use, the rubric omitting two conditional words outside the vigil and octave of Pentecost, the dialogue, the whole Preface printed continuously from its opening through its conclusion before the Sanctus, the Sanctus, and the footer directing the proper Communicantes and Hanc igitur of the Canon, said from the vigil of Pentecost to the following Saturday inclusive in every Mass."
+verified_on = "2026-10-19"
+notes = "Collated on 2026-10-19 word by word, by a scripted diff of the page's own text layer checked against the image, with the 1861 Cummiskey facing Latin (praefationes-la seq 3 up to its asterisk, joined to seq 21) and with the 1922 Mame, printed p. 334: the words agree. The differences are transformations under the 2026-09-03 rule in guidance/propers-for-agents.md: consonantal i and j, the ae and oe ligatures and coelos/caelos, exultat/exsultat, capitals, pointing, stress accents, the square brackets the 1861 sets round the conditional words where this book uses round ones, and the 1861's cue 'Sanctus, &c.' where this book prints the Sanctus whole. The conditional words are said within the vigil and octave of Pentecost and omitted outside them; the 1922 Mame states the same omission for votive Masses of the Holy Spirit. Publication rests on 17 U.S.C. 103(b) and the public-domain 1861 witness, not on this facsimile."

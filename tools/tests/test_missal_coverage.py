@@ -423,29 +423,69 @@ class RealCorpusCoverageTests(unittest.TestCase):
         self.assertTrue(all(row["exact_target"] == 0 for row in document["coverage"]["languages"]))
 
     def test_pentecost_exemplar_accounts_truthfully(self):
-        """The C2 exemplar, 1962 Pentecost (2026-05-24), after G1-G3."""
+        """The C2 exemplar, 1962 Pentecost (2026-05-24), after G1-G3 and C3."""
+        def mass(calendar):
+            return next(row for row in self.files[calendar]["masses"] if row["key"] == "pentecost")
+
         def bodies(calendar):
-            mass = next(row for row in self.files[calendar]["masses"] if row["key"] == "pentecost")
-            return {row["name"]: row["coverage"]["languages"] for row in mass["propers"]
+            return {row["name"]: row["coverage"]["languages"] for row in mass(calendar)["propers"]
                     if (row.get("form_id") or "main") in {"main", "day"}
                     and row.get("coverage") and row["coverage"]["component"] != "scripture"}
 
         roman = bodies("roman-1962")
-        self.assertEqual(set(roman), {"Collect", "Alleluia", "Sequence", "Secret", "Postcommunion"})
-        for name, (latin, english_row) in roman.items():
+        missal_text = {"Introit", "Lesson", "Gospel", "Offertory", "Communion"}
+        self.assertEqual(set(roman), {"Collect", "Alleluia", "Sequence", "Secret", "Postcommunion"}
+                         | missal_text)
+        for name, (latin, _) in roman.items():
             with self.subTest(name=name):
                 self.assertEqual((latin["availability"], latin["relationship"], latin["collation"],
                                   latin["publication_basis"]),
                                  ("available", "exact-target", "collated", "public-domain"))
-                if name == "Sequence":
-                    self.assertEqual(english_row["relationship"], "historical-antecedent")
+        # C3: the chants and readings carry the Missal's own wording, not a
+        # Bible reconstruction. Their scriptural constituents stay typed apart,
+        # on the unit's scripture component, and no unit is itself a
+        # reconstruction any more.
+        for proper in mass("roman-1962")["propers"]:
+            with self.subTest(unit=proper["name"]):
+                unit = proper["coverage"]
+                self.assertNotEqual(unit["component"], "scripture")
+                self.assertTrue(all(row["relationship"] != "bible-reconstruction"
+                                    for row in unit["languages"]))
+                if proper["name"] in missal_text:
+                    self.assertEqual(proper["source"], "mixed")
+                    self.assertTrue(proper["text"].strip())
+                    self.assertTrue(proper["citations"])
+                    self.assertEqual(unit["scripture_component"]["relationship"],
+                                     "bible-reconstruction")
+        english_witness = {"Collect": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+                           "Secret": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+                           "Postcommunion": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+                           "Introit": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+                           "Gospel": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+                           "Offertory": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+                           "Communion": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+                           "Sequence": "edition.edward-caswall.lyra-catholica.london-1849"}
+        for name, (_, english_row) in roman.items():
+            with self.subTest(name=name, lang="en"):
+                if name in english_witness:
+                    self.assertEqual((english_row["availability"], english_row["relationship"]),
+                                     ("available", "historical-antecedent"))
+                    self.assertEqual([row["id"] for row in english_row["witnesses"]],
+                                     [english_witness[name]])
                     self.assertEqual([row["relationship"] for row in english_row["witnesses"]],
                                      ["historical-antecedent"])
+                elif name == "Lesson":
+                    # Both public-domain witnesses lack the Missal's discipuli:
+                    # a typed witness gap, not a missing binding.
+                    self.assertEqual(english_row["availability"], "unresolved")
+                    self.assertEqual(english_row["witnesses"], [])
                 else:
-                    # Cummiskey 1861 is public domain; the blocker is an unbound passage.
+                    self.assertEqual(name, "Alleluia")
                     self.assertEqual(english_row["availability"], "not-sourced")
-        mass = next(row for row in self.files["roman-1962"]["masses"] if row["key"] == "pentecost")
-        self.assertEqual(mass["coverage"]["languages"][0]["exact_target"], 5)
+        latin_summary, english_summary = mass("roman-1962")["coverage"]["languages"]
+        self.assertEqual((latin_summary["targets"], latin_summary["exact_target"]), (10, 10))
+        self.assertEqual((english_summary["available"],
+                          english_summary["relationships"]["historical-antecedent"]), (8, 8))
         # Pre-1955 inherits 1962's bodies uncollated: never exact-target there.
         for name, (latin, english_row) in bodies("roman-pre-1955").items():
             with self.subTest(calendar="roman-pre-1955", name=name):
@@ -454,6 +494,33 @@ class RealCorpusCoverageTests(unittest.TestCase):
                     self.assertEqual(english_row["relationship"], "historical-antecedent")
         sequence = bodies("postconciliar")["Sequence"][1]
         self.assertEqual(sequence["relationship"], "historical-antecedent")
+
+    def test_cummiskey_and_lasance_rows_declare_the_evidenced_antecedent_relation(self):
+        """C3: every date-bound hand-missal row is typed as Caswall's is."""
+        import tomllib
+        ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml")
+                               .read_text(encoding="utf-8"))
+        rows = {row["id"]: row for row in ledger["sources"]}
+        for source_id in ("cummiskey-1861", "cummiskey-1843", "cummiskey-1861-transcription",
+                          "lasance-1945", "caswall-1849"):
+            with self.subTest(source=source_id):
+                row = rows[source_id]
+                self.assertEqual(row["witness_relation"], "antecedent")
+                self.assertTrue(row["witness_relation_basis"].strip())
+                self.assertEqual(row["attests_kind"], "date-bound")
+                self.assertNotEqual(row["attests"], "unestablished")
+        # The Anglican hymn book attests no Roman act and stays untyped.
+        self.assertNotIn("witness_relation", rows["hymns-ancient-and-modern-1890"])
+        # Every positive Cummiskey or Lasance body therefore counts as a
+        # historical antecedent, never as unresolved.
+        relations = set()
+        for mass in self.files["roman-1962"]["masses"]:
+            for proper in mass["propers"]:
+                english_row = (proper.get("coverage") or {}).get("languages", [{}, {}])[1]
+                for witness in english_row.get("witnesses") or []:
+                    if "cummiskey" in witness["id"] or "lasance" in witness["id"]:
+                        relations.add(witness["relationship"])
+        self.assertEqual(relations, {"historical-antecedent"})
 
     def test_no_public_domain_witness_absence_is_typed_rights_withheld(self):
         # G3: `rights-withheld` asserts a restriction. The only 1962 rows that
@@ -465,7 +532,9 @@ class RealCorpusCoverageTests(unittest.TestCase):
         self.assertEqual({row["mass"] for row in withheld}, {"commune-summorum-pontificum"})
         self.assertEqual(len(withheld), 5)
         retyped = [row for row in ledger["untranslated"] if "(C2 gap G3)" in row["note"]]
-        self.assertEqual(len(retyped), 339)
+        # 336 since 2026-10-19 (C3): the Pentecost Collect, Secret and
+        # Postcommunion were bound and left the untranslated ledger.
+        self.assertEqual(len(retyped), 336)
         self.assertEqual({row["reason"]["kind"] for row in retyped}, {"no-exemplar"})
         restricted = [unit for mass in self.files["roman-1962"]["masses"]
                       for unit in coverage.proper_units(mass)

@@ -1755,13 +1755,16 @@ class ParityTests(unittest.TestCase):
         )
         self.assertEqual(coverage["state"], "supported")
         self.assertEqual(coverage["completeness"], "partial")
-        relation = next(
+        relations = [
             reason for reason in coverage["reasons"]
             if reason["kind"] == "partial-recension" and
             reason.get("domain") == "ordinary"
-        )
-        self.assertEqual(relation["relation"], "antecedent")
-        self.assertEqual(relation["collation"], "uncollated")
+        ]
+        # 2026-10-19 (C3): one English element (the Easter and Pentecost Hanc
+        # igitur, Lasance) is a collated antecedent; it is still an antecedent,
+        # and the uncollated 1861 English remains reported beside it.
+        self.assertEqual({one["relation"] for one in relations}, {"antecedent"})
+        self.assertIn("uncollated", {one["collation"] for one in relations})
         self.assertTrue(coverage["exclusions"])
         for exclusion in coverage["exclusions"]:
             self.assertEqual(exclusion["state"], "not-in-target-recension")

@@ -307,7 +307,12 @@ class OrdinaryStructure(unittest.TestCase):
             for calendar in ("roman-1962", "roman-pre-1955")
             for key in roman_elements
             for lang in ("en", "la")
-        } | {("postconciliar", "praeparatio-donorum/orate-fratres", "la")}
+        } | {("postconciliar", "praeparatio-donorum/orate-fratres", "la")} | {
+            # 2026-10-19 (C3): the Canon's proper forms carry the inline rubric
+            # for the joining of the hands as an action turn.
+            ("roman-1962", "canon/communicantes-continuatio", "la"),
+            ("roman-1962", "canon/hanc-igitur-pascha-pentecoste", "la"),
+        }
         self.assertEqual(reached, expected)
         post_turns = next(
             turns for calendar, key, lang, turns in found
@@ -323,6 +328,14 @@ class OrdinaryStructure(unittest.TestCase):
         self.assertTrue(post_turns[1]["text"].startswith("R. Suscipiat"))
         self.assertEqual([turn["printed_marker"] for turn in post_turns], [None, "R."])
         for calendar, key, lang, turns in found:
+            if key.startswith("canon/"):
+                self.assertEqual(
+                    [(turn["key"], turn["speaker"], turn["action"]) for turn in turns],
+                    [("oratio", "priest", None), ("iungit-manus", None, True),
+                     ("conclusio", None, None)],
+                    (calendar, key, lang),
+                )
+                continue
             if calendar.startswith("roman-"):
                 self.assertEqual(len(turns), 1, (calendar, key, lang))
                 self.assertEqual(turns[0]["speaker"], roman_elements[key])
@@ -378,14 +391,19 @@ class OrdinaryStructure(unittest.TestCase):
             {row["key"]: row["count"] for row in roman["absences"]},
             {
                 "appointment-not-established": 6,
+                # 2026-10-19 (C3): the Pentecost Communicantes head and the
+                # Easter and Pentecost Hanc igitur are held; the continuation's
+                # and the Pentecost head's English are typed variants.
+                "communicantes-continuation-english-lacks-1962-clause": 1,
                 "no-facing-latin": 8,
                 "not-in-the-1962-ordo": 0,
                 "preface-not-in-witness": 2,
-                "proper-canon-form-not-held": 12,
+                "proper-canon-form-not-held": 8,
+                "proper-communicantes-english-variant": 1,
                 "witness-own-english": 63,
             },
         )
-        self.assertEqual(sum(row["count"] for row in roman["absences"]), 91)
+        self.assertEqual(sum(row["count"] for row in roman["absences"]), 89)
         by_key = {element["key"]: element for element in elements(roman)}
         self.assertEqual(
             by_key["oblatio/accendat-in-nobis"]["absent"]["latin"],
@@ -869,7 +887,10 @@ class OrdinaryTool(unittest.TestCase):
         self.assertEqual(
             [(one["lang"], one["held"], one["missing"])
              for one in roman["language_coverage"]],
-            [("en", 184, 10), ("la", 113, 81)],
+            # 2026-10-19 (C3): the Holy Spirit Preface's opening occurrence,
+            # the Pentecost Communicantes head, the shared continuation and the
+            # Easter and Pentecost Hanc igitur.
+            [("en", 186, 10), ("la", 117, 79)],
         )
         self.assertEqual(
             [one["key"] for one in roman["exclusions"]],
@@ -1250,6 +1271,126 @@ class OrdinaryTool(unittest.TestCase):
                             section | {"exclusions": declarations}, witnesses, {}, {},
                             library, "synthetic.toml",
                         )
+
+    def test_junctions_projections_and_conditional_words_are_closed(self) -> None:
+        """C3, 2026-10-19: a cut is an exact prefix; a projection must be word-exact."""
+        tool = self.tool_module
+        witness_id = "edition.synthetic.witness"
+        projection_id = "edition.synthetic.projection"
+        english_id = "artifact.synthetic.junction-en"
+        latin_id = "artifact.synthetic.junction-la"
+        projected_id = "artifact.synthetic.projected-la"
+        appointments = {"canon_form": {
+            "variable": "canon_form", "options": [{"id": "proper"}, {"id": "common"}],
+            "default": "common", "spans": [],
+        }}
+        appointed = [{"kind": "appointed", "variable": "canon_form", "options": ["proper"],
+                      "basis": "Synthetic heading."}]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "english.tsv").write_text(
+                "element_key\tseq\tkind\tenglish\tlatin_incipit\tprinted_page\tspeaker\tnotes\n"
+                "whole\t10\tprayer\tAlpha beta. * Gamma [delta] epsilon.\tAlpha\t1\tpriest\t\n",
+                encoding="utf-8",
+            )
+            (root / "latin.tsv").write_text(
+                "element_key\tseq\tlatin\nwhole\t10\tUnus duo. * Tres [quattuor] quinque.\n",
+                encoding="utf-8",
+            )
+            (root / "projected.tsv").write_text(
+                "element_key\tseq\tlatin\ncontinued\t1\tSex septem.\ncontinued\t2\tIungit manus.\n",
+                encoding="utf-8",
+            )
+            library = {
+                english_id: {"id": english_id, "path": "english.tsv", "_source_root": root},
+                latin_id: {"id": latin_id, "path": "latin.tsv", "_source_root": root},
+                projected_id: {"id": projected_id, "path": "projected.tsv", "_source_root": root},
+            }
+            witnesses = {
+                (witness_id, "en"): {"lang": "en", "rights": "public-domain", "artifacts": [english_id]},
+                (witness_id, "la"): {"lang": "la", "rights": "public-domain", "artifacts": [latin_id]},
+                (projection_id, "la"): {"lang": "la", "rights": "project-created",
+                                        "artifacts": [projected_id]},
+            }
+            absences = {"gap": {"key": "gap", "kind": "witness-gap", "what": "Synthetic."}}
+            collated = {"relation": "antecedent", "collation": "collated",
+                        "collation_finding": "passage.synthetic", "note": "Synthetic note.",
+                        "target_wording": "word-exact"}
+            continued = {
+                "key": "continued", "after": "whole", "kind": "prayer", "speaker": "priest",
+                "absent_english": "gap", "conditions": appointed,
+                "latin": {"witness": projection_id, "artifact": projected_id,
+                          "elements": ["continued"], "column": "latin"} | collated,
+                "latin_turns": [{"key": "oratio", "seq": [1], "speaker": "priest"},
+                                {"key": "rubrica", "seq": [2], "action": True}],
+            }
+            section = {
+                "key": "synthetic", "artifact": english_id, "witness": witness_id,
+                "artifact_latin": latin_id,
+                "english": {"relation": "own"}, "latin": {"relation": "own"},
+                "junctions": [{"element": "whole", "through": {"en": "beta.", "la": "duo."},
+                               "basis": "Target locus."}],
+                "element_provenance": [{"element": "whole", "lang": "la"} | collated],
+                "inserted": [continued, {
+                    "key": "opening", "before": "whole", "kind": "prayer", "name": "Opening",
+                    "text_of": "whole", "through": {"en": "Alpha", "la": "Unus"},
+                    "conditions": appointed,
+                }],
+            }
+            built, _ = tool.from_artifact(section, witnesses, {}, absences, library,
+                                          "synthetic.toml", {}, appointments)
+            by_key = {one["key"]: one for one in built}
+            self.assertEqual(list(by_key), ["synthetic/opening", "synthetic/whole",
+                                            "synthetic/continued"])
+            whole = {row["lang"]: row for row in by_key["synthetic/whole"]["translations"]}
+            self.assertEqual(whole["la"]["text"], "Unus duo.")
+            self.assertEqual(whole["la"]["coverage_relationship"], "exact-target")
+            self.assertEqual(whole["en"]["relation"], "own")
+            opening = {row["lang"]: row["text"] for row in by_key["synthetic/opening"]["translations"]}
+            self.assertEqual(opening, {"en": "Alpha", "la": "Unus"})
+            cont = by_key["synthetic/continued"]
+            self.assertIsNone(cont["name"])
+            self.assertEqual(cont["absent"], {"english": "gap", "latin": None})
+
+            spans = {"conditional_spans": [{
+                "element": "whole", "lang": "la", "text": "[quattuor]",
+                "said": {"anchor": "pentecost", "from": -1, "to": 6},
+                "rubric": "Said in the window.", "locus": "Target locus."}]}
+            plain = {key: value for key, value in section.items() if key != "junctions"}
+            built, _ = tool.from_artifact(plain | spans, witnesses, {}, absences, library,
+                                          "synthetic.toml", {}, appointments)
+            latin = next(row for row in built[1]["translations"] if row["lang"] == "la")
+            self.assertEqual(latin["conditional_spans"][0]["said"]["from"], -1)
+
+            def without_wording(block: dict) -> dict:
+                return {key: value for key, value in block.items() if key != "target_wording"}
+
+            invalid = (
+                ({"junctions": [{"element": "whole", "through": {"en": "a", "la": "duo."},
+                                 "basis": "B."}]}, "occurs 2 times|exactly once"),
+                ({"junctions": [{"element": "whole", "through": {"la": "duo."},
+                                 "basis": "B."}]}, "would pair unlike texts"),
+                ({"junctions": [{"element": "whole", "through": {"en": "epsilon.", "la": "quinque."},
+                                 "basis": "B."}]}, "cuts nothing"),
+                ({"element_provenance": [{"element": "whole", "lang": "la",
+                                          "relation": "antecedent", "collation": "uncollated",
+                                          "note": "N.", "target_wording": "word-exact"}]},
+                 "without a collation"),
+                ({"inserted": [continued | {"latin": without_wording(continued["latin"])}]},
+                 "without a collated word-exact"),
+                ({"inserted": [{key: value for key, value in continued.items()
+                                if key != "absent_english"}]}, "names no absence"),
+                (spans | {"conditional_spans": [spans["conditional_spans"][0] | {"text": "absent"}]},
+                 "exactly once"),
+                (spans | {"conditional_spans": [spans["conditional_spans"][0]
+                                                | {"said": {"anchor": "nowhere", "from": 0, "to": 1}}]},
+                 "declared anchor"),
+            )
+            for change, message in invalid:
+                with self.subTest(message=message):
+                    with self.assertRaisesRegex(tool.SourceError, message):
+                        tool.from_artifact(section | change, witnesses, {}, absences, library,
+                                           "synthetic.toml", {}, appointments)
 
     def test_artifact_section_turns_partition_source_rows_not_prose(self) -> None:
         tool = self.tool_module
@@ -1777,10 +1918,17 @@ process.stdout.write(JSON.stringify({
         # the Sunday's formulary prints "Praefatio de Ssma Trinitate" (physical
         # PDF p. 471, printed p. 390; RGMR 494 b). Every other event is
         # unchanged and in the same order.
-        self.assertEqual(len(sequence), 177)
+        # Re-pinned 2026-10-19 (C3 Ordinary variables), diffed against the HEAD
+        # 839c4b6cd harness: exactly one event entered and none left. The
+        # 1962 Canon continues every Communicantes with one shared
+        # continuation carrying the clause naming Saint Joseph, so
+        # canon/communicantes-continuatio now follows the common form, which
+        # is carried as far as its printed junction. Every other event is
+        # unchanged and in the same order.
+        self.assertEqual(len(sequence), 178)
         self.assertEqual(
             digest,
-            "eb1cee1ad6527408486be6b47880d329f0f25fb92b17bb43d609e7c81621d6ca",
+            "6946cf74b2cbf867cb89304e47784ba7fff0bbed3611c81d799e4567b9f2348f",
         )
 
         sequence = report["ot_18_sequence"]
@@ -1823,10 +1971,16 @@ process.stdout.write(JSON.stringify({
         # Re-pinned 2026-10-19 (C2 Preface directions): the same two removals
         # and four additions as the sequence pin above, diffed against HEAD
         # 799988766; every retained event's received text is byte-identical.
+        # Re-pinned 2026-10-19 (C3 Ordinary variables), diffed against HEAD
+        # 839c4b6cd: the common Communicantes' received text now ends at its
+        # printed junction, and one event entered after it, the continuation,
+        # whose English is the typed absence
+        # communicantes-continuation-english-lacks-1962-clause. Every other
+        # event's received text is byte-identical.
         expected = {
             "pentecost_10_text": (
-                177,
-                "95ef913d67a48e3aec32f99f0c48b8e2a273d468798b11cc67a40387ac043492",
+                178,
+                "603e21b11ced428088d95a3ca19d828edf714177a4814dee49397a2faddd7117",
             ),
             "ot_18_text": (
                 67,
@@ -1953,14 +2107,16 @@ process.stdout.write(JSON.stringify({
         self.assertEqual(
             [one["held"] for one in report["languages"]["postconciliar"]], [0, 20])
         self.assertEqual(
-            [one["held"] for one in report["languages"]["roman-1962"]], [184, 113])
+            [one["held"] for one in report["languages"]["roman-1962"]], [186, 117])
         # The Latin the 1962 file does not hold is exactly the elements the
         # preamble's reasons partition; the next test asserts those counts from
         # the other side. Since 2026-10-19 (C2 G5/G6): six more source rows are
         # excluded, ten text-free appointment stand-ins are inserted, and the
         # Sanctus after a proper Preface is a second occurrence of its row.
         elements = report["languages"]["roman-1962"][1]["elements"]
-        self.assertEqual(elements - 113, 81)
+        # 2026-10-19 (C3): two more elements (the Preface opening and the
+        # Communicantes continuation), and four more held Latin texts.
+        self.assertEqual(elements - 117, 79)
 
         pater = report["kyrie_in_each"]
         self.assertNotIn("Our Father, who art in heaven", pater["en"])
@@ -2014,14 +2170,17 @@ process.stdout.write(JSON.stringify({
         report = self.run_harness()
         preamble = report["preamble_1962"]
         self.assertIn("no-facing-latin", preamble)
-        self.assertIn("8 of 194 elements", preamble)
+        self.assertIn("8 of 196 elements", preamble)
         self.assertIn("not-in-the-1962-ordo", preamble)
-        self.assertIn("0 of 194 elements", preamble)
+        self.assertIn("0 of 196 elements", preamble)
         self.assertIn("witness-own-english", preamble)
-        self.assertIn("63 of 194 elements", preamble)
-        self.assertIn("appointment-not-established6 of 194 elements", preamble)
-        self.assertIn("proper-canon-form-not-held12 of 194 elements", preamble)
-        self.assertIn("preface-not-in-witness2 of 194 elements", preamble)
+        self.assertIn("63 of 196 elements", preamble)
+        self.assertIn("appointment-not-established6 of 196 elements", preamble)
+        self.assertIn("proper-canon-form-not-held8 of 196 elements", preamble)
+        self.assertIn("proper-communicantes-english-variant1 of 196 elements", preamble)
+        self.assertIn(
+            "communicantes-continuation-english-lacks-1962-clause1 of 196 elements", preamble)
+        self.assertIn("preface-not-in-witness2 of 196 elements", preamble)
         self.assertNotIn("undefined", preamble)
         self.assertIn("no-facing-latin", report["accendat_in_each"]["la"])
         self.assertNotIn("no-facing-latin", report["te_igitur_in_each"]["la"])

@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3004,
-  "editions": 1094,
-  "passages": 5289,
-  "readable": 3087,
-  "works": 951
+  "artifacts": 3011,
+  "editions": 1095,
+  "passages": 5316,
+  "readable": 3092,
+  "works": 952
  },
  "facets": {
   "authors": [
@@ -1819,7 +1819,7 @@
    },
    {
     "id": "Triptych contributors",
-    "works": 1
+    "works": 2
    },
    {
     "id": "U2 / U2.com",
@@ -2336,6 +2336,10 @@
     "works": 2
    },
    {
+    "id": "editorial-source-projection",
+    "works": 2
+   },
+   {
     "id": "encyclopedia",
     "works": 2
    },
@@ -2793,10 +2797,6 @@
    },
    {
     "id": "edited-source-collection",
-    "works": 1
-   },
-   {
-    "id": "editorial-source-projection",
     "works": 1
    },
    {
@@ -3474,7 +3474,7 @@
     "id": "en"
    },
    {
-    "editions": 319,
+    "editions": 320,
     "id": "la"
    },
    {
@@ -3610,14 +3610,14 @@
     "label": "20th century"
    },
    {
-    "editions": 599,
+    "editions": 600,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1683,
+    "artifacts": 1688,
     "editions": 402,
     "id": "public-domain"
    },
@@ -3637,8 +3637,8 @@
     "id": "licensed"
    },
    {
-    "artifacts": 67,
-    "editions": 11,
+    "artifacts": 69,
+    "editions": 12,
     "id": "project-created"
    },
    {
@@ -9135,7 +9135,7 @@
      "file": "1862-pustet-ratisbon-1862.json",
      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
      "language": "la",
-     "passages": 377,
+     "passages": 380,
      "readable": 345,
      "rights": [
       "public-domain"
@@ -9174,7 +9174,7 @@
      "file": "1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
      "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
      "language": "la",
-     "passages": 48,
+     "passages": 50,
      "readable": 0,
      "rights": [
       "public-domain"
@@ -9213,7 +9213,7 @@
      "file": "1962-vatican-typica-1962.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
      "language": "la",
-     "passages": 446,
+     "passages": 448,
      "readable": 0,
      "rights": [
       "unresolved"
@@ -9713,7 +9713,7 @@
      "file": "1861-philadelphia-1861.json",
      "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
      "language": "en",
-     "passages": 440,
+     "passages": 447,
      "readable": 22,
      "rights": [
       "public-domain",
@@ -13934,7 +13934,7 @@
      "file": "1945-benziger-revised-1945.json",
      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
      "language": "en",
-     "passages": 33,
+     "passages": 41,
      "readable": 0,
      "rights": [
       "public-domain",
@@ -30482,8 +30482,8 @@
      "file": "2026-2026-09-03-editorial-projection.json",
      "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03",
      "language": "la",
-     "passages": 1055,
-     "readable": 1055,
+     "passages": 1060,
+     "readable": 1060,
      "rights": [
       "project-created"
      ],
@@ -30496,6 +30496,32 @@
     "la"
    ],
    "title": "Roman 1962 Latin Proper Editorial Projection"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Triptych contributors",
+   "category": "editorial-source-projection",
+   "directory": "editions/triptych/roman-1962-ordinary-editorial-projection/",
+   "editions": [
+    {
+     "date": "2026-10-19",
+     "file": "2026-2026-10-19-editorial-projection.json",
+     "id": "edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Ordinary Editorial Projection, 19 October 2026",
+     "year": 2026
+    }
+   ],
+   "id": "work.triptych.roman-1962-ordinary-editorial-projection",
+   "languages": [
+    "la"
+   ],
+   "title": "Roman 1962 Ordinary Editorial Projection"
   },
   {
    "alternate_titles": [
