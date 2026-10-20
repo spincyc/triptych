@@ -560,3 +560,12 @@ passed. A fresh xhigh reviewer independently rehashed and read the controlling
 grammar and all sealed hashes, and returned `PASS`. The engine emitted
 `author-study-0001` to carry this correction into the expansive study; prior
 dependent reviews are not treated as acceptance of changed prose.
+
+The study author corrected the Secret discussion in the general commentary
+and both whole-formulary readings, retaining the Father addressed and the
+offered Son as giver. The source checkpoint was committed as `7ff735c00`;
+the revised 23-page proof and production audit were committed as `92721a1f4`.
+Native study preflight and a fresh xhigh cold review passed on the changed
+study and twenty sealed files, with the 1962 Secret page image checked again.
+The engine emitted `derive-synthesis-0001`; concise and homily repairs remain
+under their own new author/review stages.
