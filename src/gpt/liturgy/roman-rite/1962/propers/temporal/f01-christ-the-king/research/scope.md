@@ -48,10 +48,20 @@ corroborates the dated feast and color; the Missal supplies the governing rubric
 | Alleluia | 3942; Daniel 7:14 | The final dominion/kingdom clauses of the verse, framed by Alleluia; the earlier bestowal and nations clauses are context, not all appointed words. |
 | Gospel | 3945; John 18:33–37 | Liturgical opening introduces Pilate's question directly. The appointment stops before Pilate's question in verse 38. |
 | Offertory | 3946; Psalm 2:8 | The Father's promise of the nations to the Son; both numbering systems use Psalm 2. |
-| Secret | 3947 | Composed prayer of reconciliation, asking the sacrificial Christ for unity and peace among the nations. |
+| Secret | 3947 | Composed prayer of reconciliation, asking the Father that Christ, the Son offered in sacrifice, himself bestow unity and peace among the nations. |
 | Preface | 1080; printed p. 291 | Proper priestly and royal Preface, with its common opening, dialogue and Sanctus distinguished from the proper body. |
 | Communion | 3948; Psalm 28:10–11 | Selected portions of two verses. The eternal kingship clause is in verse 10; the blessing of peace is in verse 11. Neither full verse is recited. Hebrew Psalm 29. |
 | Postcommunion | 3949 | Composed prayer connecting sacramental nourishment, service under Christ's standard and reigning with him. |
+
+The Secret addresses the Father and identifies the Son as the giver of the
+gifts sought. This distinction was rechecked on 20 October 2026 against the
+retained 1962 page image, printed p. 698, no. 3947 (one-based PDF page 779),
+and `propers/verified.md`, Secret in both languages. `Fílius tuus` and `Qui
+tecum` identify the Father as the addressee; `ipse ... concédat` refers to
+Jesus Christ, the Son offered in sacrifice. Thus the sacrificial Christ's
+gift of unity and peace remains explicit, without describing the prayer as
+addressed to Christ. This is a correction to the research summaries, not to
+the verified prayer text.
 
 The Missal's abbreviated conclusions are real abbreviations. The inspected
 general conclusion rule supplies the Latin expansion where needed; an English

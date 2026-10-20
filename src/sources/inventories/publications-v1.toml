@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-10-20"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 150
-source_surface_file_count = 2674
-snapshot = "sha256:6e291292ad3a01bab7e9ed53bbfb03862241cb6b96a9123012231515bd012946"
+source_surface_file_count = 2696
+snapshot = "sha256:479b7e6530160873c6f5f8dfdb69ad3ce3b0f701436eac21bc4157deb330aed1"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -11148,7 +11148,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentec
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/blocking-findings-v1.toml"
-sha256 = "9da30e689d1725f0a303e553246b8465c4b423ee6ae5c47f34533413efc7b857"
+sha256 = "1e8b258438471d9ac1332d845189e16c4d0ea444d9d95d3e0f86af71dfede5f7"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
@@ -11225,9 +11225,21 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/homily.tex"
+sha256 = "dd4ec5204788387d38668079ab2d7bf878e544a14d4ff372982851749fd93871"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/main.tex"
-sha256 = "6d163e91017ed9445c2ba60363fe57bcc1c88de33a605351cd0861b2f529a2d0"
+sha256 = "f2a150d833d8af17c32755241a7da312c15b0fccfc80512081fe93217e14a4ed"
 kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/proper-components.toml"
+sha256 = "22583cafd18bb7e8017e921403f5d9d28040883ade2428e4100b95d8a4ade181"
+kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
 [[files]]
@@ -11268,7 +11280,13 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/interpretations.md"
-sha256 = "37d9ba75031dcef24a54c3460cc2ae73eec5386e8d9e5441f29448be77173f60"
+sha256 = "9928e8e45f2b12ddfd0ffa79954433ec5a90350a3eabc9de54b6bc3f48a5b5df"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/production-review.md"
+sha256 = "676e24d803cd4806cc96edcb0bf3eb408302e696b03ba8797dbbe2229bc03fb0"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
@@ -11286,7 +11304,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/scope.md"
-sha256 = "1c80ec13ed53e0020694d0180cd30db831edbe6ef450b5a51bc5a40c901a29be"
+sha256 = "b33670b85cdaee91866529916cf32b9ec8ab3439ebb048292229a0b8ba65d065"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
@@ -11294,6 +11312,120 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/source-bindings.toml"
 sha256 = "82c23329ebe0357e896e2585d310c46a443e498527e91995de73aa783405f146"
 kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/00-opening.tex"
+sha256 = "1e6dccdd87dc4ff6e3c9031afb57e4e47b0fec9c8dd7a9f741bac9e4b0f93357"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/10-appointed-text.tex"
+sha256 = "3b1db20796e369879efe4757391f6538d016ab57bccf7925e5ad84523a1d9940"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/20-commentary.tex"
+sha256 = "2fa9c960a9fd0e50c4e3cb3f58a5899c3dbea3810857e077f2829975dc54c728"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/30-hearing-king.tex"
+sha256 = "bf481d785b3a71c14eb668e4613f92129bd8c595eb8109d2df863e8ec64e155a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/40-reconciled-creation.tex"
+sha256 = "c593356585199f5c4a6a20460623a7fe10cf693bab56e69af3c9540583eb0435"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/50-comparison.tex"
+sha256 = "8253e334965466bfaf54bb2705b447d365e8426b348832321e818475a704989e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/70-history.tex"
+sha256 = "e54d0d5bcaf3bd139fb7fd222a8cc26689c88379303f368831a1cf5a6efeef8d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/85-seasonal-witnesses.tex"
+sha256 = "37a69871418be120681b311947f1df27f6ee674f2685e98d6945cd6e8ced8622"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/90-study-apparatus.tex"
+sha256 = "fe3a9b40aa94e493b2295fdabad37db31d0e025914f7ff7cbd38252e08f481f7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/01-inventory.tex"
+sha256 = "c812b114a639f2cd310812057357f100d7ebd0b023571f02b0e1bffd7d90bf31"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/02-overview.tex"
+sha256 = "21320ca0e7ad09cfd33b7eee7689f2431179b5471740f27b93b4bbf0e7b7a37f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/03-chronology.tex"
+sha256 = "9295cce45350e013530e6377029623e517da0cac611e7d8e8361b79695a10b11"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/04-themes.tex"
+sha256 = "33bdff6c3a687bb4a1f6631a6e5dcb506b83ed3828092b3a0c39e0647028907b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/10-commentary.tex"
+sha256 = "11f8ce7486469ece837f1bc330a7ceecfa3dbc60c825471d70472fbc26a45756"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/90-apparatus.tex"
+sha256 = "6c1dd9f3d7bacd55e5f2d0545e2f47a45662b0c7cc64d15eac95c04b6099655a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/homily/10-body.tex"
+sha256 = "7bdd9368ef1fbb9424b2b6ca1f4956338abfbb8bf6070265b400d29c3143659f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/homily/90-apparatus.tex"
+sha256 = "afc95cf76d00834b0cf41aa17b6f2727ec341395d6b56d5b7eff4b1b992dcee7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/synthesis.tex"
+sha256 = "aaf4d6946f99466bc8241c26be5cdd95a72c11bcf8d01a0ea808c31e91e2d10b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/web-edition.toml"
+sha256 = "c2b85a64a7f7a36f6886b53524ed537e23c815d2762cd4b8aa150c0c9f2b1152"
+kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
 [[files]]

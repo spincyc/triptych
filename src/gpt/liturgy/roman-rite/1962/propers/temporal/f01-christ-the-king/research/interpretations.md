@@ -49,7 +49,7 @@ strengthen the reading without pretending that every modern application is his.
 | Alleluia | Received yet indestructible dominion secures the people's hope. Jerome's humanity/divinity distinction makes reception intelligible without making the Son a promoted creature. |
 | Gospel | Belonging to truth and hearing the King's voice defines the passage's decisive response. The absence of a fight to prevent his delivery identifies a kingdom not produced by that kind of force. |
 | Offertory | Augustine Psalm 2.7 places the Son's asking within incarnate sacrifice and intercession. Peoples become his inheritance for their salvation; offering is therefore missionary and intercessory. |
-| Secret | Those being gathered ask the sacrificial Christ himself for unity and peace; neither follows automatically from their social proximity or self-identification. |
+| Secret | Those being gathered ask the Father that the sacrificial Christ himself bestow unity and peace; neither follows automatically from their social proximity or self-identification. |
 | Preface | Truth, holiness and grace describe the quality of the kingdom into which people are brought. The Cross is the means by which its priestly King gives this life. |
 | Communion | Peace is received from the eternal King amid a world whose storms continue. Augustine's interpretation prevents the antiphon from becoming a promise of an untroubled week. |
 | Postcommunion | Nourishment enables service and perseverance. The military image belongs under the Gospel's refusal of a battle to prevent the Passion and under the prayer's heavenly goal; it is not a warrant for political violence. |
@@ -117,7 +117,7 @@ to meet the two-carrier threshold; the interpolation cautions in ANF remain visi
 | Alleluia | An imperishable dominion contrasts with the beasts' unstable kingdoms. The Son of Man's reception does not make the divine Son a late entrant into creation. |
 | Gospel | The king's refusal of a fight to prevent delivery makes his self-giving consistent with, rather than a defeat of, his reconciling mission. His testimony requires a response; Pilate's categories do not exhaust kingship. |
 | Offertory | The Father's grant of the nations belongs to the Son's priestly asking and rightful inheritance. The whole earth is the horizon of intercession. |
-| Secret | The prayer most explicitly joins sacrifice, reconciliation, nations, unity and peace; it asks the present victim to give what the community cannot manufacture. |
+| Secret | The prayer most explicitly joins sacrifice, reconciliation, nations, unity and peace; it asks the Father that the Son offered as victim give what the community cannot manufacture. |
 | Preface | Eternal priesthood and universal kingship converge on the Cross and the kingdom offered to the Father. Its sequence describes truth, life, holiness, grace, justice, love and peace as the content of royal victory. |
 | Communion | The people receive the King's blessing of peace after praying for the nations' reconciliation. Reception calls for the concord Chrysostom demands rather than ritual words detached from conduct. |
 | Postcommunion | Sacramental nourishment and active fidelity lead toward shared reign. Service is participation in the King's self-giving work and cannot justify renewed enmity among his members. |
