@@ -87,6 +87,46 @@
     return warm(load, 'structure/propers/catalog/roman-1962.json');
   }
 
+  // Hints only warm browser responses. The ordinary loaders remain responsible
+  // for parsing, publication admission, selection validation and split fallback.
+  function startupHints(input) {
+    if (!object(input) || typeof input.rawHash !== 'string' ||
+        typeof input.dataPath !== 'function' ||
+        !['day', 'propers'].includes(input.entrance)) return [];
+    const params = new URLSearchParams(input.rawHash.replace(/^#/, ''));
+    const keys = Array.from(params.keys());
+    const allowed = input.entrance === 'day'
+      ? ['date', 'missal', 'bible', 'orations', 'mode', 'ordinary', 'location', 'translation-witness']
+      : ['missal', 'type', 'mass', 'form', 'bible', 'orations', 'mode', 'cycle', 'alternative', 'translation-witness', 'location'];
+    if (keys.some(function (key) { return !allowed.includes(key); }) ||
+        new Set(keys).size !== keys.length || params.get('missal') !== 'roman-1962' ||
+        (params.has('mode') && params.get('mode') !== 'read') ||
+        (params.has('ordinary') && params.get('ordinary') !== '0')) return [];
+    const paths = ['bibles.json', 'structure/propers/index.json', 'structure/ordinary/index.json',
+      'structure/propers/catalog/roman-1962.json'];
+    if (input.entrance === 'day') {
+      const date = params.get('date') || '';
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return [];
+      const stamp = Date.parse(date + 'T00:00:00Z');
+      if (Number.isNaN(stamp) || new Date(stamp).toISOString().slice(0, 10) !== date) return [];
+      paths.push('structure/rubrics/index.json', 'structure/rubrics/roman-1962.json',
+        'structure/calendar/roman-1962/' + date.slice(0, 4) + '.json');
+    } else {
+      const mass = params.get('mass') || '';
+      if (!['seasonal', 'christological', 'marian', 'sanctoral'].includes(params.get('type')) ||
+          mass.length > 128 || !ID.test(mass)) return [];
+      paths.push('structure/propers/mass/roman-1962/' + mass + '.json');
+    }
+    try {
+      const urls = paths.map(function (path) { return new URL(input.dataPath(path), input.baseURI); });
+      if (urls.some(function (url) {
+        return !['http:', 'https:'].includes(url.protocol) ||
+          url.origin !== input.origin || url.username || url.password;
+      })) return [];
+      return urls.map(function (url) { return url.href; });
+    } catch (_error) { return []; }
+  }
+
   async function load(input) {
     if (!object(input) || typeof input.load !== 'function' ||
         !ID.test(input.calendar || '') || !ID.test(input.massKey || '')) {
@@ -143,5 +183,32 @@
   }
 
   return Object.freeze({ load: load, warmDay: warmDay, warmPropers: warmPropers,
+    startupHints: startupHints,
     CATALOG_SCHEMA: CATALOG_SCHEMA, MASS_SCHEMA: MASS_SCHEMA });
 }));
+
+(function (root) {
+  const doc = root.document;
+  const browser = root.Triptych;
+  if (!doc || !doc.head || typeof doc.querySelector !== 'function' || !browser ||
+      typeof browser.dataPath !== 'function' || !root.LiturgyReaderProperPayload) return;
+  const shell = doc.querySelector('[data-reader-shell][data-entrance]');
+  if (!shell) return;
+  const urls = root.LiturgyReaderProperPayload.startupHints({
+    entrance: shell.getAttribute('data-entrance'), rawHash: root.location.hash,
+    dataPath: browser.dataPath, baseURI: doc.baseURI, origin: root.location.origin
+  });
+  urls.forEach(function (url) {
+    try {
+      const present = Array.from(doc.head.querySelectorAll('link[rel="preload"][as="fetch"]'))
+        .some(function (link) { return link.href === url && link.crossOrigin === 'anonymous'; });
+      if (present) return;
+      const link = doc.createElement('link');
+      link.rel = 'preload';
+      link.as = 'fetch';
+      link.crossOrigin = 'anonymous';
+      link.href = url;
+      doc.head.append(link);
+    } catch (_error) { /* An optional hint never replaces the normal load path. */ }
+  });
+}(typeof globalThis !== 'undefined' ? globalThis : this));

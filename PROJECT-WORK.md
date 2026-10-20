@@ -549,6 +549,31 @@ cleanup. A print regression also keeps source credits with the preceding
 text tail without preventing long readings from paginating. Independent
 C5 acceptance and the remaining comparison axes are still open.
 
+The next C6 startup slice moves bounded response hints immediately after the
+shared browser core on the four modern reader entrances. Only explicit eligible
+1962 Read URLs qualify, using the core's existing data-root policy. Hints warm
+responses; the normal generation, identity, rights and fallback checks still
+admit them. The unchanged Ordinary presenter now loads only when validated
+state requests it, including Day Study with the Ordinary. Concurrent requests
+share one load; failure permits Read recovery and a later Missal retry, and an
+old response cannot replace a newer selection. Retained eager visual oracles
+remain supported. Focused Chromium probes pass nine startup-hint checks and
+eleven Ordinary-loading checks with no unexpected diagnostics. A first Missal
+visit can pay an additional code request after state validation; this tradeoff
+and cold Read timing are measured separately from semantic correctness.
+
+On a frozen C9 baseline versus the combined startup change, two cold HTTP/2
+samples per entrance at 562.5 ms latency, 1.47456 Mbps down and 4× CPU give
+Day LCP 5.328/5.360 → 4.600/4.668 s and Propers 4.552/4.368 → 4.000/3.880 s.
+Transfer falls 330,659 → 303,215 bytes and 280,651 → 253,210 bytes respectively.
+The earlier 7.34/6.36 s samples above used HTTP/1.1; transport and the newly
+frozen baseline are explicit here. State, text and semantic hashes agree, with
+no unexpected browser diagnostics. One first Day Missal switch changes from
+8.650 to 9.322 s, deferring 29,252 code bytes to that action. The selected
+All Souls/Caswall Propers fixture refuses Missal in the baseline and supplies
+no valid advanced-mode timing comparison. Neither these local samples nor
+their improvement establishes field p75 or meets the 2.5 s cold mobile target.
+
 A parallel witness audit found no publishable English witness for the 1962
 Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
 is an inaccessible page-image lead, not a text source. An

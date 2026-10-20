@@ -6,14 +6,13 @@
   const Contract = window.LiturgyReaderState;
   const Adapters = window.LiturgyReaderStateAdapters;
   const Shell = window.TriptychReaderShell;
-  const OrdinaryRenderer = window.TriptychOrdinaryRenderer;
   const SearchController = window.TriptychProperSearchController;
   const Compare = window.TriptychPropersCompare;
   const Study = window.TriptychPropersStudy;
   const ReadPayload = window.TriptychPropersReadPayload;
 
-  if (!T || !Contract || !Adapters || !Shell || !OrdinaryRenderer) {
-    throw new Error('Propers reader requires production browser, state, adapter, shell, and Ordinary renderer modules');
+  if (!T || !Contract || !Adapters || !Shell) {
+    throw new Error('Propers reader requires production browser, state, adapter, and shell modules');
   }
 
   const PROPERS_INDEX = 'structure/propers/index.json';
@@ -1464,6 +1463,8 @@
       const location = pendingLocationSet ? pendingLocation : (normalized.state.semanticLocation && {
         kind: 'event', id: normalized.state.semanticLocation.eventId
       }) || null;
+      await window.TriptychReaderOptionalRuntime?.forState(normalized.state);
+      if (serial !== runtime.serial) return;
       runtime.normalized = normalized;
       setModePresentation(normalized.state.requestedMode);
       window.propersReaderDebug.state = normalized.state;

@@ -896,6 +896,29 @@ credit with the preceding text tail while long readings still paginate.
 These are internal capabilities; remaining comparison axes, the full print
 matrix and independent C5 acceptance remain open.
 
+The following C6 startup slice adds bounded response hints immediately after
+the shared browser core on the four modern entrances. Explicit eligible 1962
+Read links use the core's existing data-root policy; normal loaders still own
+generation, identity, rights and fallback validation. Ordinary presentation
+code loads only for validated state that requests it, including Day Study with
+the Ordinary. Shared requests, explicit failure/retry and render-serial guards
+preserve selection ownership; retained eager visual oracles remain supported.
+Focused Chromium probes pass nine hint checks and eleven Ordinary-loading
+checks with no unexpected diagnostics. Deferring the code can add a request
+after validation on the first Missal visit. Timing evidence must describe that
+tradeoff and the exact transport/artifact separately from semantic parity.
+
+Two cold HTTP/2 samples per entrance on the frozen C9 baseline and combined
+startup candidate use 562.5 ms latency, 1.47456 Mbps down and 4× CPU. Day LCP
+changes from 5.328/5.360 to 4.600/4.668 s; Propers from 4.552/4.368 to
+4.000/3.880 s. Transfer is 330,659 → 303,215 bytes and 280,651 → 253,210 bytes.
+The earlier 7.34/6.36 s samples used HTTP/1.1. State, text and semantic hashes
+agree; diagnostics are clean. One first Day Missal switch costs 9.322 rather
+than 8.650 s, with 29,252 code bytes deferred to that action. The chosen All
+Souls/Caswall Propers baseline refuses Missal, so it yields no valid switch
+timing comparison. Field p75 remains unmeasured and the 2.5 s cold mobile
+target still fails.
+
 ### Verification and completion gates
 
 Recovery checks actually run on the baseline:

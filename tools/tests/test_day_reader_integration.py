@@ -175,7 +175,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertNotIn("prototypes/reader-shell", source)
         for asset in (
             "reader-shell.js", "reader-shell.css", "day-reader.js", "day-reader.css",
-            "reader-instrument.css", "day.js", "day.css", "day-missal.css",
+            "reader-instrument.css", "reader-optional-runtime.js", "day.css", "day-missal.css",
         ):
             self.assertIn(asset, source)
 
