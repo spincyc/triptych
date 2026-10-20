@@ -2640,6 +2640,55 @@ def check_file(path: Path, problems: list[str]) -> dict[str, int]:
     }
 
 
+def duplicate_key_problems(root: Path, calendar: str | None) -> list[str]:
+    """Every mapping key written twice in any YAML file under the calendar root.
+
+    YAML loaders keep the LAST value of a repeated key and say nothing, so the
+    first is dropped from every document a tool reads. On 2026-10-19 the 1962
+    index carried 154 `notes` keys written twice on one proper, and the value
+    dropped was as often a page-image provenance note as a rubric. The parse is
+    not the place to see this, so the check composes each file's node graph,
+    which still holds both keys, and refuses the second.
+
+    It reads every `*.yaml` under the root, companions included, whatever
+    schema the file declares: a duplicate in a rubric registry is lost the same
+    way.
+    """
+    import yaml
+
+    loader = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+    problems: list[str] = []
+    for path in sorted(root.rglob("*.yaml")):
+        if calendar is not None and path.parent.name != calendar:
+            continue
+        try:
+            node = yaml.compose(path.read_text(encoding="utf-8"), Loader=loader)
+        except (OSError, yaml.YAMLError):
+            # `check_file` and the companion owners report an unreadable file.
+            continue
+        stack = [node] if node is not None else []
+        while stack:
+            current = stack.pop()
+            if isinstance(current, yaml.MappingNode):
+                seen: dict[str, int] = {}
+                for key, value in current.value:
+                    name = key.value if isinstance(key, yaml.ScalarNode) else None
+                    line = key.start_mark.line + 1
+                    if name is not None and name in seen:
+                        problems.append(
+                            f"{path}:{line}: duplicate mapping key {name!r} (first "
+                            f"at line {seen[name]}); a YAML loader keeps only the "
+                            "last value, so the first is silently dropped. Merge "
+                            "the two values into one key."
+                        )
+                    elif name is not None:
+                        seen[name] = line
+                    stack.append(value)
+            elif isinstance(current, yaml.SequenceNode):
+                stack.extend(current.value)
+    return problems
+
+
 def run(root: Path, calendar: str | None) -> dict[str, object]:
     # Discovery is by declared schema, not by extension: a calendar directory
     # may hold a source another tool owns, and reading it as a mass index is how
@@ -2647,6 +2696,7 @@ def run(root: Path, calendar: str | None) -> dict[str, object]:
     # partition is shared with `citations` so the two cannot disagree about what
     # a calendar directory contains.
     paths, companions, problems = partition(root, calendar)
+    problems.extend(duplicate_key_problems(root, calendar))
     repository = Path(__file__).resolve().parents[1]
     problems.extend(
         catalog_problems(

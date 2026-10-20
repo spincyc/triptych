@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-preface-and-canon-proper-forms"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+artifact_sha256 = "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005"
+locus = "Praefationes sine cantu, In Pentecoste: the Preface, the proper Communicantes and the proper Hanc igitur, printed pp. 334-335; PDF artifact pp. 448-449; Internet Archive viewer leaves n447-n448"
+artifact_page_ranges = [[448, 449]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "This printing sets the Pentecost Preface with its rubric of use (said in votive Masses of the Holy Spirit with the two conditional words omitted), the dialogue, the Preface and Sanctus, and then, under Infra Actionem, the proper Communicantes printed whole and the proper Hanc igitur, with the rubric limiting both to the vigil of Pentecost and the following Saturday inclusive. It prints no clause naming Saint Joseph."
+verified_on = "2026-10-19"
+notes = "Read on the page images at the scan's native 360 ppi after hashing the PDF against its registered digest; collated word by word with the 1962 typical edition (passages praefatio-de-spiritu-sancto and canon-communicantes of that edition) by a scripted diff of both books' text layers, every difference checked on the images. Preface, Communicantes head and Hanc igitur: the words agree with the 1962, the differences being transformations (j, ligatures, accents, pointing, small capitals, Genitricis/Genetricis, eumdem/eundem). Communicantes continuation: the words agree except that the 1962 inserts the clause naming Saint Joseph after 'sed et', and this printing misprints 'pretectionis' for 'protectionis'. The 1862 Pustet agrees at its spoken printing, p. 251 (IA item bub_gb_E7sPAAAAIAAJ leaf n336); its chanted-Preface printing at p. 229 (leaf n314) adds a word to the Communicantes head and is a variant. Rubrics in red are read as rubrics and are not text of the prayers."

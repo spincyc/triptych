@@ -14,6 +14,17 @@ calendar = "roman-1962"
 target = "src/sources/calendars/roman-1962/propers.yaml"
 recorded_on = "2026-08-02"
 merge = """
+C3 Pentecost lane, 2026-10-19. The three `no-exemplar` rows for the Collect,
+Secret and Postcommunion of `pentecost` became positive Cummiskey entries bound
+through roman-1962-pentecost-en (C2 gap G3); the Lasance readings of the Collect
+and Secret are recorded in their notes as text-free second readings. The
+Introit, Gospel, Offertory and Communion, which now carry the Missal's own Latin
+as `source: mixed`, gained positive Lasance entries; the Lesson gained a typed
+`witness-gap` row, because both public-domain English witnesses lack the
+Missal's discipuli. The Cummiskey and Lasance rows in `sources` now declare the
+evidenced antecedent relation Caswall declares. 119 positive entries and 1,083
+`untranslated` records follow; the counts below are of their own dates.
+
 Retyped 2026-10-19 (C2 gap G3): the 335 Cummiskey and four Lasance absences
 whose only blocker was a missing publication-artifact and passage binding were
 typed `rights-withheld`, which asserted a restriction neither public-domain
@@ -927,6 +938,19 @@ editio-typica-1962, so every English word quoted from this book is pre-1955
 English, whatever calendar serves it. The `caution` below has said so in prose
 since the file was written; this says it where a check can read it.
 """
+witness_relation = "antecedent"
+witness_relation_basis = '''
+Recorded 2026-10-19 (C3; the C2 truthful-accounting follow-up to gap G2). This
+English is a HISTORICAL ANTECEDENT of the target, never its wording: the 1962
+Missal prints no English, and this book's English was made in 1861 for the
+Latin of the books si-quid-est-1634 left (`attests` above, `si-quid-est-1634`, a date bound).
+It is carried only where an entry argues, prayer by prayer, that the 1962 Latin
+is the same prayer, and a witness that drops or replaces a word of the target is
+typed a witness gap instead. The relation is the one `caswall-1849` declares for
+the same reason, and is declared once here because it is a property of the book
+against any later target, so it holds equally where roman-pre-1955 inherits this
+row. It asserts nothing about recension: the `caution` below still governs.
+'''
 rights = "public-domain"
 rights_jurisdiction = "United States"
 rights_basis = "Published in the United States in 1861, so in the public domain there by publication date: every United States work published before 1930 has entered the public domain and no renewal question arises for an 1861 imprint. The translator is unnamed and no proprietor survives. The basis is a United States one and is recorded as such, as the King James Version and Revised Version records here are, because a public-domain claim does not travel of itself; a reader outside the United States must establish the position in their own jurisdiction. That basis covers the 1861 book's own English, which is what this file carries. It does not cover the Internet Archive text layer the English was read out of: `artifact_id` names a remote, unretained artifact whose own rights the source library records as unresolved, because those exact bytes are a Google-produced derivative carrying Google's front matter and no distribution grant for it was established. The artifact record pins the bytes by sha256 and byte count and gives the URL, so a reader can fetch the same file and check any entry here against it; this repository does not redistribute them."
@@ -947,6 +971,19 @@ exemplar. The two records are held to agree by `check-calendar-masses`, which
 refuses a source row that contradicts the act history about a witness both
 files hold, so this is a checked restatement and not a second opinion.
 """
+witness_relation = "antecedent"
+witness_relation_basis = '''
+Recorded 2026-10-19 (C3; the C2 truthful-accounting follow-up to gap G2). This
+English is a HISTORICAL ANTECEDENT of the target, never its wording: the 1962
+Missal prints no English, and this book's English was made in 1843 for the
+Latin of the books si-quid-est-1634 left (`attests` above, `si-quid-est-1634`, a date bound).
+It is carried only where an entry argues, prayer by prayer, that the 1962 Latin
+is the same prayer, and a witness that drops or replaces a word of the target is
+typed a witness gap instead. The relation is the one `caswall-1849` declares for
+the same reason, and is declared once here because it is a property of the book
+against any later target, so it holds equally where roman-pre-1955 inherits this
+row. It asserts nothing about recension: the `caution` below still governs.
+'''
 rights = "public-domain"
 rights_jurisdiction = "United States"
 rights_basis = "Published in the United States in 1843, so in the public domain there by publication date, on the same basis as the 1861 printing above and with the same caveat that a reader outside the United States must establish the position in their own jurisdiction."
@@ -974,6 +1011,19 @@ different artifact of the same printing and a reader has to be able to tell the
 two rows apart; the values are copied from the row the check does hold, and if
 they ever drift the drift will be visible here rather than caught there.
 """
+witness_relation = "antecedent"
+witness_relation_basis = '''
+Recorded 2026-10-19 (C3; the C2 truthful-accounting follow-up to gap G2). This
+English is a HISTORICAL ANTECEDENT of the target, never its wording: the 1962
+Missal prints no English, and this book's English was made in 1861 for the
+Latin of the books si-quid-est-1634 left (`attests` above, `si-quid-est-1634`, a date bound).
+It is carried only where an entry argues, prayer by prayer, that the 1962 Latin
+is the same prayer, and a witness that drops or replaces a word of the target is
+typed a witness gap instead. The relation is the one `caswall-1849` declares for
+the same reason, and is declared once here because it is a property of the book
+against any later target, so it holds equally where roman-pre-1955 inherits this
+row. It asserts nothing about recension: the `caution` below still governs.
+'''
 rights = "public-domain"
 rights_jurisdiction = "United States"
 rights_basis = "The 1861 printing's own English, on the same United States publication-date basis as the edition row above, and with the same caveat for a reader elsewhere. What differs is the bytes: this row's `artifact_id` names a file this repository TRACKS, a project-made tab-separated transcription carrying only the printing's own wording, where the edition row's names a remote Google-produced text layer whose rights the source library records as unresolved. A faithful transcription of a public-domain text originates no new copyright, so nothing here is the project's to license; the artifact record states the same and pins the file by sha256."
@@ -1045,11 +1095,24 @@ quarantined on 2026-08-26 because those inserted leaves are not within the
 rights basis established for this book. Their text-free targets remain in the
 untranslated ledger below.
 """
+witness_relation = "antecedent"
+witness_relation_basis = '''
+Recorded 2026-10-19 (C3; the C2 truthful-accounting follow-up to gap G2). This
+English is a HISTORICAL ANTECEDENT of the target, never its wording: the 1962
+Missal prints no English, and this book's English was made in 1945 (printed about 1955-56) for the
+Latin of the 1945 revision of the books editio-typica-1920 established (`attests` above, `editio-typica-1920`, a date bound).
+It is carried only where an entry argues, prayer by prayer, that the 1962 Latin
+is the same prayer, and a witness that drops or replaces a word of the target is
+typed a witness gap instead. The relation is the one `caswall-1849` declares for
+the same reason, and is declared once here because it is a property of the book
+against any later target, so it holds equally where roman-pre-1955 inherits this
+row. It asserts nothing about recension: the `caution` below still governs.
+'''
 rights = "public-domain"
 rights_jurisdiction = "United States"
 rights_basis = "Public domain in the United States by failure to renew, on the affirmative registration-number record established at src/sources/inventories/lasance-new-roman-missal-rights-v1.toml: A 110108, copyright 15 July 1937, renewal window closed 15 July 1965; A 192159, copyright 1 November 1945, renewal window closed 1 November 1973. That holding is the repository's own and is recorded there with its citations, its controls, and what would overturn it; nothing here re-argues it. It does not cover the lettered inserts at printed pages 1298a-1298n or 1302a-1302d. The tracked publication artifact removes both complete page-bounded ranges, and no entry below quotes either."
 caution = "A lay hand missal of the 1945 revision, printed about 1955-56, not an approved liturgical translation and never an altar book. Its Holy Week is the pre-1955 rite, its sanctoral is not the 1962 sanctoral, and its second and third orations are not those of 1962. It is carried only where a 1962 formulary is the same prayer, and nothing here may be used for recitation."
-role = "Second English witness alongside cummiskey-1861, and independent of it in every way that matters: a different translator, a different publisher, a different century, and a book that keeps feasts and Commons the 1861 printing is older than. Where the two witnesses cover the same slot the 1861 entry stands and this one is not added; every entry below is for a slot that had no English at all."
+role = "Second English witness alongside cummiskey-1861, and independent of it in every way that matters: a different translator, a different publisher, a different century, and a book that keeps feasts and Commons the 1861 printing is older than. Where the two witnesses cover the same slot the 1861 entry stands and this one is not added; every entry below is for a slot that had no English at all. From 2026-10-19 an entry bound to the 1861 may also name this book's page as a text-free second reading in its `witness_note`, as the Pentecost Collect and Secret do: an entry bound to a publication passage serves exactly one witness's translation."
 
 [[sources]]
 id = "caswall-1849"
@@ -5557,42 +5620,6 @@ note = "No exact English exemplar is bound. A historical English lead from the p
 
 [[untranslated]]
 mass = "sunday-after-ascension"
-form_id = "main"
-proper = "Postcommunion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
-
-[[untranslated]]
-mass = "pentecost"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
-
-[[untranslated]]
-mass = "pentecost"
-form_id = "main"
-proper = "Secret"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
-
-[[untranslated]]
-mass = "pentecost"
 form_id = "main"
 proper = "Postcommunion"
 cycle = "all"
@@ -18109,6 +18136,192 @@ extent = "body"
 availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound to this source-established Latin proper, added after page-image review on 2026-10-01. This is an unbound slot, not a claim that the historical witnesses omit the prayer."
+
+[[entries]]
+mass = "pentecost"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+incipit = "Deus, qui hodierna die"
+witness = "cummiskey-1861"
+printed_page = "375"
+ia_leaf = 383
+ia_leaf_range = [383, 383]
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-pentecost--main--collect--all--1"
+publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-en"
+publication_artifact_sha256 = "d0bd7b139ba8b2df99df66a09a6e91ec050bcf940ae47fc6f99966a4e460700b"
+publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-pentecost--main--collect--all--1"
+collated = "page-image and tracked transcription, 2026-10-19"
+collation_result = "confirmed"
+witness_note = "Printed p. 375 in the formulary the book heads WHIT SUNDAY; the printed Latin cue answers the 1962 Collect, and the English renders it clause for clause. The dated page-image verification passage and the separate tracked public-domain passage bind this body; the wording also agrees with row 104 of temporal-orations-en. The Cummiskey witness remains a pre-1955 lay hand missal; this row makes no broader recension claim. Second reading: the Lasance New Roman Missal (1945 revision, printed about 1955-56) at printed p. 598, IA leaf n595, passage passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.whitsunday-collect, read on 2026-10-19, is an independent translation that also renders every clause of the 1962 Latin. It is recorded here and not served beside this body, because an entry bound to a publication passage carries exactly one witness's translation."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = "O God, who, by the light of the Holy Ghost, didst this day instruct the hearts of the faithful: grant, by the direction of the same Holy Spirit, that we may relish what is right, and always enjoy his consolation. Thro'."
+
+[[entries]]
+mass = "pentecost"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+incipit = "Munera, quaesumus, Domine"
+witness = "cummiskey-1861"
+printed_page = "377"
+ia_leaf = 385
+ia_leaf_range = [385, 385]
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-pentecost--main--secret--all--1"
+publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-en"
+publication_artifact_sha256 = "d0bd7b139ba8b2df99df66a09a6e91ec050bcf940ae47fc6f99966a4e460700b"
+publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-pentecost--main--secret--all--1"
+collated = "page-image and tracked transcription, 2026-10-19"
+collation_result = "confirmed"
+witness_note = "Printed p. 377 in the formulary the book heads WHIT SUNDAY; the printed Latin cue answers the 1962 Secret, and the English renders it clause for clause. The dated page-image verification passage and the separate tracked public-domain passage bind this body; the wording also agrees with row 105 of temporal-orations-en. The Cummiskey witness remains a pre-1955 lay hand missal; this row makes no broader recension claim. Second reading: the Lasance New Roman Missal (1945 revision, printed about 1955-56) at printed p. 601, IA leaf n598, passage passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.whitsunday-secret, read on 2026-10-19, is an independent translation that also renders every clause of the 1962 Latin. It is recorded here and not served beside this body, because an entry bound to a publication passage carries exactly one witness's translation."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = "Sanctify, we beseech thee, O Lord, these oblations, and purify our hearts by the light of the Holy Ghost. Thro'."
+
+[[entries]]
+mass = "pentecost"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+incipit = "Sancti Spiritus, Domine"
+witness = "cummiskey-1861"
+printed_page = "378"
+ia_leaf = 386
+ia_leaf_range = [386, 386]
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-pentecost--main--postcommunion--all--1"
+publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-en"
+publication_artifact_sha256 = "d0bd7b139ba8b2df99df66a09a6e91ec050bcf940ae47fc6f99966a4e460700b"
+publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-pentecost--main--postcommunion--all--1"
+collated = "page-image and tracked transcription, 2026-10-19"
+collation_result = "confirmed"
+witness_note = "Printed p. 378 in the formulary the book heads WHIT SUNDAY; the printed Latin cue answers the 1962 Postcommunion, and the English renders it clause for clause. The dated page-image verification passage and the separate tracked public-domain passage bind this body; the wording also agrees with row 106 of temporal-orations-en. The Cummiskey witness remains a pre-1955 lay hand missal; this row makes no broader recension claim. Its rendering folds the Latin's sprinkling into the inward dew it speaks of; that is a translator's compression, not a different Latin. The Lasance English at printed p. 602 (IA leaf n599) is not carried beside it: it renders the Latin's inward as heavenly, a substituted epithet."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = "May the pouring forth of the Holy Ghost into our hearts cleanse them, O Lord, and render them fruitful by the inward dew of his grace. Thro'."
+
+[[entries]]
+mass = "pentecost"
+form_id = "main"
+proper = "Introit"
+cycle = "all"
+occurrence = 1
+incipit = "Spiritus Domini"
+witness = "lasance-1945"
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.whitsunday-introit"
+printed_page = "598"
+ia_leaf = 595
+ia_leaf_range = [595, 595]
+collated = "page-image, 2026-10-19"
+collation_result = "read-from-page"
+witness_note = "Printed p. 598 in the Mass of Whitsunday, facing Latin and English. The English renders every word of the 1962 body, with the same alleluias; a printed scripture citation is omitted as in the Latin body, any cue stands as the book prints it, and nothing is supplied from the excluded inserts. Read at 200 dpi and at the scan's native 300 dpi. Cummiskey 1861 at printed p. 375 (IA leaf n383) is not bound: both its English and its own Latin cue end the antiphon with two alleluias where the 1962 prints three, so it witnesses a different text."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "The Spirit of the Lord hath filled the whole earth, alleluia; and that which containeth all things hath knowledge of the voice, alleluia, alleluia, alleluia. Ps. Let God arise, and His enemies be scattered; and let them that hate Him fly before His face. V. Glory."
+
+[[entries]]
+mass = "pentecost"
+form_id = "main"
+proper = "Gospel"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.whitsunday-gospel"
+printed_page = "600-601"
+ia_leaf = 597
+ia_leaf_range = [597, 598]
+collated = "page-image, 2026-10-19"
+collation_result = "read-from-page"
+witness_note = "Printed pp. 600-601 in the Mass of Whitsunday, facing Latin and English. The English renders every word of the 1962 body, including the printed heading; a printed scripture citation is omitted as in the Latin body, any cue stands as the book prints it, and nothing is supplied from the excluded inserts. Read at 200 dpi and at the scan's native 300 dpi. Cummiskey 1861 at printed pp. 376-377 (IA leaves n384-n385) is not bound: it prints the Gospel under a bare citation and renders no part of the Missal's spoken heading, which the 1962 body carries."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "Continuation of the holy Gospel according to St. John. At that time, Jesus said to His disciples, If any one love Me, he will keep My word, and My Father will love him, and we will come to him, and will make our abode with him. He that loveth Me not, keepeth not My words: and the word which you have heard is not Mine, but the Father's Who sent Me. These things have I spoken to you, abiding with you: but the Paraclete, the Holy Ghost, Whom the Father will send in My name, He will teach you all things, and bring all things to your mind, whatsoever I shall have said to you. Peace I leave with you, My peace I give unto you; not as the world giveth, do I give unto you. Let not your heart be troubled, nor let it be afraid. You have heard that I said to you, I go away, and I come unto you. If you loved Me, you would indeed be glad, because I go to the Father, for the Father is greater than I. And now I have told you before it come to pass, that, when it shall come to pass, you may believe. I will not now speak many things with you; for the prince of this world cometh, and in Me he hath not anything. But that the world may know that I love the Father, and as the Father hath given Me commandments, so do I."
+
+[[entries]]
+mass = "pentecost"
+form_id = "main"
+proper = "Offertory"
+cycle = "all"
+occurrence = 1
+incipit = "Confirma hoc, Deus"
+witness = "lasance-1945"
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.whitsunday-offertory"
+printed_page = "601"
+ia_leaf = 598
+ia_leaf_range = [598, 598]
+collated = "page-image, 2026-10-19"
+collation_result = "read-from-page"
+witness_note = "Printed p. 601 in the Mass of Whitsunday, facing Latin and English. The English renders every word of the 1962 body, with the same alleluias; a printed scripture citation is omitted as in the Latin body, any cue stands as the book prints it, and nothing is supplied from the excluded inserts. Read at 200 dpi and at the scan's native 300 dpi. Cummiskey 1861 at printed p. 377 (IA leaf n385) carries the same alleluia; it is not added beside this reading, which follows the Lasance as the other chants of this Mass do."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "Confirm this O God, which Thou hast wrought in us: from Thy temple, which is in Jerusalem, kings shall offer presents to Thee, alleluia."
+
+[[entries]]
+mass = "pentecost"
+form_id = "main"
+proper = "Communion"
+cycle = "all"
+occurrence = 1
+incipit = "Factus est repente"
+witness = "lasance-1945"
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.whitsunday-communion"
+printed_page = "602"
+ia_leaf = 599
+ia_leaf_range = [599, 599]
+collated = "page-image, 2026-10-19"
+collation_result = "read-from-page"
+witness_note = "Printed p. 602 in the Mass of Whitsunday, facing Latin and English. The English renders every word of the 1962 body, with the same alleluias; a printed scripture citation is omitted as in the Latin body, any cue stands as the book prints it, and nothing is supplied from the excluded inserts. Read at 200 dpi and at the scan's native 300 dpi. Cummiskey 1861 at printed pp. 377-378 (IA leaves n385-n386) is not bound: its English ends with one alleluia where the 1962 prints two."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "There came suddenly a sound from heaven as of a mighty wind coming, where they were sitting, alleluia; and they were all filled with the Holy Ghost, speaking the wonderful works of God, alleluia, alleluia."
+
+[[untranslated]]
+mass = "pentecost"
+form_id = "main"
+proper = "Lesson"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
+witness_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+witness_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-pentecost-lesson-gap"
+verified_artifact_page = 384
+verified_on_page = "2026-10-19"
+verified_printed_page = "375-376"
+note = "Both public-domain English witnesses render the Vulgate's first verse, which lacks the 1962 Missal's discipuli: Cummiskey 1861 at printed pp. 375-376 (IA leaves n383-n384) and Lasance at printed pp. 598-599 (IA leaves n595-n596, passage passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.whitsunday-lesson). A dropped word is a variant, so neither is attached. Lasance also renders the heading; Cummiskey does not."
 
 [[untranslated]]
 mass = "christ-the-king"

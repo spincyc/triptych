@@ -33,9 +33,16 @@ trap 'rm -rf "$sandbox"' EXIT INT TERM
 
 # `check` validates the inventories and reports whether the written files are
 # current. It writes nothing.
+# 2026-10-19: re-pinned from 189 elements, 2 witnesses, en 189/0, la 112/77,
+# all-uncollated relations and 6 exclusions. C2 G5 seated eleven appointment
+# elements (3 Preface, 6 Communicantes, 2 Hanc igitur) and G6 excluded six
+# second-Postcommunion/Et famulos rows (194); C3 added the Holy Spirit Preface
+# opening and the Communicantes continuation (196), held the Pentecost
+# Communicantes head and Hanc igitur from two new witnesses (Lasance English,
+# the 1962 editorial projection Latin), and graded seven rows collated.
 summary="$(run_tool check --calendar roman-1962 | head -1)"
 case "$summary" in
-*"roman-1962: 6 sections, 189 elements, 2 witnesses, 0 variants, 9 slots; en 189 held/0 missing, la 112 held/77 missing; relations en antecedent/uncollated 189, la antecedent/uncollated 112; 6 target-recension exclusions"*) ;;
+*"roman-1962: 6 sections, 196 elements, 4 witnesses, 0 variants, 9 slots; en 186 held/10 missing, la 117 held/79 missing; relations en antecedent/collated 1, en antecedent/uncollated 185, la antecedent/collated 6, la antecedent/uncollated 111; 12 target-recension exclusions"*) ;;
 *)
 	echo "unexpected summary line: $summary" >&2
 	exit 1
@@ -73,8 +80,13 @@ for path in files:
 
     for absence in payload["absences"]:
         assert set(absence) == {"key", "count", "state", "kind"}, absence
-        wanted = ("rights-restricted"
-                  if absence["kind"] == "rights-withheld" else "unavailable")
+        # 2026-10-19: rights-unresolved -> unresolved joins the table, the
+        # tool's ABSENCE_STATES, now that C2 G5's postconciliar
+        # appointed-text-printed-with-formulary is the first key of that kind.
+        wanted = {
+            "rights-withheld": "rights-restricted",
+            "rights-unresolved": "unresolved",
+        }.get(absence["kind"], "unavailable")
         assert absence["state"] == wanted, absence
 
     elements = {
@@ -84,9 +96,11 @@ for path in files:
     }
     assert elements, path.name
     if payload["calendar"] == "postconciliar":
-        assert len(elements) == 59, len(elements)
+        # 2026-10-19: 59 -> 61 and 25 -> 27, C2 G5's two appointed stand-ins
+        # (praefatio-appointed, dimissio-appointed), English-restricted both.
+        assert len(elements) == 61, len(elements)
         absence_counts = {one["key"]: one["count"] for one in payload["absences"]}
-        assert absence_counts["approved-english-publication-restriction"] == 25, absence_counts
+        assert absence_counts["approved-english-publication-restriction"] == 27, absence_counts
         assert absence_counts["antecedent-held-not-carried"] == 1, absence_counts
         assert absence_counts["antecedent-diverges-at-named-words"] == 3, absence_counts
 
@@ -158,11 +172,24 @@ for path in files:
         assert prayer_four["unknown"] == "unresolved", prayer_four
 
     elif payload["calendar"] == "roman-1962":
-        assert len(elements) == 189, len(elements)
+        # 2026-10-19: 189 -> 196, en (189, 0) -> (186, 10), la (112, 77) ->
+        # (117, 79): C2 G5 +11 appointment elements (10 text-free stand-ins and
+        # sanctus-post-praefationem), G6 -6 English-only conclusio rows, C3 +2
+        # (Preface opening, Communicantes continuation) and the held Pentecost
+        # Communicantes head and Hanc igitur.
+        assert len(elements) == 196, len(elements)
         languages = {one["lang"]: one for one in payload["languages"]}
-        assert (languages["en"]["held"], languages["en"]["missing"]) == (189, 0), languages
-        assert (languages["la"]["held"], languages["la"]["missing"]) == (112, 77), languages
+        assert (languages["en"]["held"], languages["en"]["missing"]) == (186, 10), languages
+        assert (languages["la"]["held"], languages["la"]["missing"]) == (117, 79), languages
+        # 2026-10-19: six conclusio exclusions join (C2 G6, the verified 1962
+        # Ordo passages print no second Postcommunion or Et famulos).
         expected = {
+            "conclusio/et-famulos",
+            "conclusio/oratio-et-famulos-heading",
+            "conclusio/postcommunio-mundet",
+            "conclusio/rubrica-oratio-addita",
+            "conclusio/rubrica-postcommunio-paschalis",
+            "conclusio/rubrica-postcommunio-secunda",
             "oblatio/a-cunctis",
             "oblatio/nota-incarnationis",
             "oblatio/rubrica-collecta-concede",
@@ -185,16 +212,29 @@ for path in files:
             assert all(row["relation"] == "antecedent" for row in exclusion["evidence"]), exclusion
             assert all("text" not in row for row in exclusion["evidence"]), exclusion
         absence_counts = {one["key"]: one["count"] for one in payload["absences"]}
+        # 2026-10-19: G6 excluded both not-in-the-1962-ordo orations (2 -> 0)
+        # and four witness-own-english rows (67 -> 63); G5 typed the stand-ins
+        # (appointment-not-established, preface-not-in-witness,
+        # proper-canon-form-not-held, both sides each); C3 held the Pentecost
+        # Communicantes head and Hanc igitur (12 -> 8) and typed two English
+        # variants. The sum is now both sides' missing, 10 + 79.
         assert absence_counts == {
+            "appointment-not-established": 6,
+            "communicantes-continuation-english-lacks-1962-clause": 1,
             "no-facing-latin": 8,
-            "not-in-the-1962-ordo": 2,
-            "witness-own-english": 67,
+            "not-in-the-1962-ordo": 0,
+            "preface-not-in-witness": 2,
+            "proper-canon-form-not-held": 8,
+            "proper-communicantes-english-variant": 1,
+            "witness-own-english": 63,
         }, absence_counts
-        assert sum(absence_counts.values()) == 77, absence_counts
+        assert sum(absence_counts.values()) == 89, absence_counts
 
     elif payload["calendar"] == "roman-pre-1955":
         # No 1920 exclusion is inferred from notes that speak only about 1962.
-        assert len(elements) == 195, len(elements)
+        # 2026-10-19: 195 -> 206, C2 G5's eleven appointment elements; the
+        # pre-1955 frame excludes nothing.
+        assert len(elements) == 206, len(elements)
         assert payload["exclusions"] == [], payload["exclusions"]
         for key in (
             "oblatio/a-cunctis",
@@ -340,7 +380,8 @@ if ! diff -r "$root" "$sandbox/again/structure/ordinary" >/dev/null; then
 fi
 
 # Coverage keeps target-recension exclusions visible. Reducing the element and
-# absence totals without these six records would make the false 1861 additions
+# absence totals without these twelve records (six until the 2026-10-19 C2 G6
+# conclusio exclusions) would make the false 1861 additions
 # disappear from the audit instead of recording why they are not 1962 members.
 run_tool coverage --json >"$sandbox/coverage.json"
 python3 - "$sandbox/coverage.json" "$root" <<'PY'
@@ -353,7 +394,15 @@ coverage = {
 structures = pathlib.Path(sys.argv[2])
 old = coverage["roman-1962"]
 pre = coverage["roman-pre-1955"]
+# 2026-10-19: the six C2 G6 conclusio exclusions join; counts as in the
+# structure pins above (196 and 206 elements, en 186/10, la 117/79).
 expected = {
+    "conclusio/et-famulos",
+    "conclusio/oratio-et-famulos-heading",
+    "conclusio/postcommunio-mundet",
+    "conclusio/rubrica-oratio-addita",
+    "conclusio/rubrica-postcommunio-paschalis",
+    "conclusio/rubrica-postcommunio-secunda",
     "oblatio/a-cunctis",
     "oblatio/nota-incarnationis",
     "oblatio/rubrica-collecta-concede",
@@ -361,7 +410,7 @@ expected = {
     "oblatio/rubrica-secreta-concede",
     "oblatio/secreta-ii",
 }
-assert old["elements"] == 189, old
+assert old["elements"] == 196, old
 assert {row["key"] for row in old["exclusions"]} == expected, old["exclusions"]
 assert all(row["state"] == "not-in-target-recension" for row in old["exclusions"])
 assert old["exclusions"] == json.loads(
@@ -369,12 +418,12 @@ assert old["exclusions"] == json.loads(
 )["exclusions"]
 languages = {row["lang"]: row for row in old["language_coverage"]}
 assert languages["en"] == {
-    "lang": "en", "elements": 189, "held": 189, "missing": 0, "absent": 0,
+    "lang": "en", "elements": 196, "held": 186, "missing": 10, "absent": 10,
 }, languages
 assert languages["la"] == {
-    "lang": "la", "elements": 189, "held": 112, "missing": 77, "absent": 77,
+    "lang": "la", "elements": 196, "held": 117, "missing": 79, "absent": 79,
 }, languages
-assert pre["elements"] == 195 and pre["exclusions"] == [], pre
+assert pre["elements"] == 206 and pre["exclusions"] == [], pre
 assert coverage["postconciliar"]["exclusions"] == [], coverage["postconciliar"]
 PY
 
@@ -430,11 +479,12 @@ esac
 # LATIN's own reason. Reading the block by ISO code once found nothing and fell
 # through to the English one, which reported the postconciliar Latin restricted:
 # a real reason, for the other text. Since the 1861 printing's
-# facing column was transcribed. The pre-1955 projection carries Latin for 112
-# of 195 elements and names the other 83 source blocks. The 1962 projection
-# carries the same 112 Latin blocks among 189 target members; its remaining 77
-# are the witness's English-only blocks, after six explicit nonmembers are
-# accounted separately as recension exclusions rather than false target text.
+# facing column was transcribed. As of 2026-10-19 (C2 G5/G6, C3) the pre-1955
+# projection carries Latin for 113 of 206 elements and names the other 93
+# absences. The 1962 projection carries 117 Latin blocks among 196 target
+# members; its remaining 79 are the witness's English-only blocks and the typed
+# appointment absences, after twelve explicit nonmembers are accounted
+# separately as recension exclusions rather than false target text.
 latin="$(run_tool show --calendar roman-1962 --lang la)"
 case "$latin" in
 *"[absent: no-facing-latin]"*) ;;
@@ -443,10 +493,13 @@ case "$latin" in
 	exit 1
 	;;
 esac
+# 2026-10-19 (C2 G6): both orations this class typed, postcommunio-mundet and
+# et-famulos, are now target-recension exclusions, so the class covers no
+# emitted element (count 0 above). Its reason printing in the 1962 Latin would
+# mean an excluded oration had leaked back into the frame.
 case "$latin" in
-*"[absent: not-in-the-1962-ordo]"*) ;;
-*)
-	echo "--lang la does not report the abolished-regime classification" >&2
+*"[absent: not-in-the-1962-ordo]"*)
+	echo "--lang la prints an excluded abolished-regime oration" >&2
 	exit 1
 	;;
 esac
@@ -611,9 +664,11 @@ latin = {key: side(element, "la")[0]
 assert len(latin) == 20, sorted(latin)
 latin_absent = [element["absent"]["latin"] for element in elements.values()
                 if not side(element, "la")]
-assert len(latin_absent) == 39, latin_absent
+# 2026-10-19: 39 -> 41 and 26 -> 28, C2 G5's two appointed stand-ins, typed
+# appointed-text-printed-with-formulary on the Latin side.
+assert len(latin_absent) == 41, latin_absent
 assert latin_absent.count("editio-typica-new-matter") == 13, latin_absent
-assert len(latin_absent) - latin_absent.count("editio-typica-new-matter") == 26
+assert len(latin_absent) - latin_absent.count("editio-typica-new-matter") == 28
 
 # The English side is quarantined on this assembled surface. No English row or
 # source attribution may survive, while the Latin landing remains independent.
@@ -647,16 +702,40 @@ assert graded.count("uncollated") == 15, graded
 # therefore an explicitly uncollated antecedent, in both languages. The
 # section-level declaration is deliberately uniform: it makes no invented
 # element-level finding.
+#
+# 2026-10-19 (C3, the 1962 Pentecost Ordinary-variable texts): exactly these
+# seven 1962 rows carry an element-level collated provenance, and each must
+# cite its finding. Every other row keeps the uniform uncollated declaration.
+collated_rows = {
+    "roman-1962": {
+        ("praefatio/praefatio-de-spiritu-sancto-initium", "la"),
+        ("praefatio/praefatio-de-spiritu-sancto", "la"),
+        ("canon/communicantes", "la"),
+        ("canon/communicantes-continuatio", "la"),
+        ("canon/communicantes-pentecoste", "la"),
+        ("canon/hanc-igitur-pascha-pentecoste", "en"),
+        ("canon/hanc-igitur-pascha-pentecoste", "la"),
+    },
+    "roman-pre-1955": set(),
+}
 for payload in (old, pre):
+    seen_collated = set()
     for element in by_key(payload).values():
         for lang in ("en", "la"):
             for row in side(element, lang):
                 assert row["relation"] == "antecedent", (payload["calendar"], element["key"], lang)
+                if (element["key"], lang) in collated_rows[payload["calendar"]]:
+                    seen_collated.add((element["key"], lang))
+                    assert row["collation"] == "collated", (payload["calendar"], element["key"], lang)
+                    assert (row.get("collation_finding") or "").strip(), (payload["calendar"], element["key"], lang)
+                    assert "COLLATED" in (row.get("note") or ""), (payload["calendar"], element["key"], lang)
+                    continue
                 assert row["collation"] == "uncollated", (payload["calendar"], element["key"], lang)
                 assert not row.get("collation_finding"), (payload["calendar"], element["key"], lang)
                 note = row.get("note") or ""
                 assert "ANTECEDENT, NOT THE TARGET EDITION" in note, (payload["calendar"], element["key"], lang)
                 assert "UNCOLLATED" in note, (payload["calendar"], element["key"], lang)
+    assert seen_collated == collated_rows[payload["calendar"]], (payload["calendar"], seen_collated)
 
 # Where a comparison of the two Latins found a divergence, NOTHING is carried,
 # and the file still says why. These are the elements the summary would have

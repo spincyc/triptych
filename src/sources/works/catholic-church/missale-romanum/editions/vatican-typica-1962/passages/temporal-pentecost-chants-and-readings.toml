@@ -1,0 +1,11 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-pentecost-chants-and-readings"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+locus = "Introit at printed p. 356, no. 1310; artifact PDF p. 437; Lesson at printed pp. 356-357, no. 1312; artifact PDF pp. 437-438; Gospel at printed p. 357, no. 1315; artifact PDF p. 438; Offertory at printed p. 357, no. 1316; artifact PDF p. 438; Communion at printed p. 358, no. 1318; artifact PDF p. 439"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Introit, Lesson, Gospel, Offertory and Communion of pentecost in the controlling 1962 typical edition, with the printed Lesson and Gospel headings. This is the target transcription witness for their wording, pointing and headings; it is not the rights authority for publishing them."
+verified_on = "2026-10-19"
+notes = "Read on page images rendered at 200 and again at 400 dpi from the exact identified CMAA facsimile (the scan's native resolution is 500 ppi). The embedded text layer was used only to locate the words; every token it damaged (ligatures, accented letters, drop capitals, glued words) was corrected by a named token-level patch checked on the page image. The marginal numbers, printed citations and the Gospel's closing Credo cue are apparatus and are not part of the bodies. Publication rights come from a separately registered public-domain witness and from 17 U.S.C. 103(b); see src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml."

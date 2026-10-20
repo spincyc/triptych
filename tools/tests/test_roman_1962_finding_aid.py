@@ -97,6 +97,10 @@ CUMMISKEY_PENTECOST_13_15_PUBLICATION_TSV = (
     CUMMISKEY_EDITION.parent
     / "artifacts/roman-1962-pentecost-13-15-en/roman-1962-pentecost-13-15-en.tsv"
 )
+CUMMISKEY_PENTECOST_PUBLICATION_TSV = (
+    CUMMISKEY_EDITION.parent
+    / "artifacts/roman-1962-pentecost-en/roman-1962-pentecost-en.tsv"
+)
 ANTECEDENT_EDITION = (
     ROOT
     / "src/sources/works/catholic-church/missale-romanum/editions"
@@ -689,11 +693,15 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         # On 2026-10-19 (C2 gap G3) those 335 Cummiskey rows, whose only
         # blocker is a missing publication-artifact and passage binding, were
         # retyped from rights-withheld to no-exemplar: 602 -> 937, 335 -> 0.
+        # Later on 2026-10-19 (C3) three of those rows, the Pentecost Collect,
+        # Secret and Postcommunion, became publication-bound entries, and the
+        # Pentecost Lesson, a newly text-bearing slot, gained its typed
+        # witness gap: 949 -> 947.
         self.assertEqual(len(source_established), 65)
         self.assertEqual(len(expected), 136)
         self.assertTrue(expected.issubset(typed))
         quarantined = set(typed) - expected
-        self.assertEqual(len(quarantined), 949)
+        self.assertEqual(len(quarantined), 947)
         self.assertEqual(
             {
                 (
@@ -714,8 +722,10 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                 for identity in quarantined
             },
             {
-                ("no-exemplar", None): 937,
-                ("witness-gap", CUMMISKEY_SOURCE): 12,
+                # 934 and 13 since 2026-10-19 (C3): three Pentecost orations
+                # were bound, and the Pentecost Lesson gained a witness gap.
+                ("no-exemplar", None): 934,
+                ("witness-gap", CUMMISKEY_SOURCE): 13,
             },
         )
         self.assertEqual(len(typed), len(self.base["untranslated"]))
@@ -837,7 +847,9 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             )
             and "publication_artifact_id" in row
         }
-        self.assertEqual(len(expected), 74)
+        # 77 since 2026-10-19 (C3): the Pentecost Collect, Secret and
+        # Postcommunion bind through roman-1962-pentecost-en (C2 gap G3).
+        self.assertEqual(len(expected), 77)
         self.assertEqual(set(bound), expected)
         self.assertTrue(expected.isdisjoint(self.exact_gap_identities()))
         self.assertEqual(
@@ -855,6 +867,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             CUMMISKEY_AUGUSTINE_PUBLICATION_TSV,
             CUMMISKEY_PENTECOST_19_PUBLICATION_TSV,
             CUMMISKEY_PENTECOST_13_15_PUBLICATION_TSV,
+            CUMMISKEY_PENTECOST_PUBLICATION_TSV,
         )
         publication_artifacts = {
             load(path.parent / "artifact.toml")["id"]: load(

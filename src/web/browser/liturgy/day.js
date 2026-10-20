@@ -1403,6 +1403,46 @@
     return fragment;
   }
 
+  /**
+   * Words the book prints as conditional inside a row.
+   *
+   * The generator declares each span (`conditional_spans`), checks that its
+   * text occurs exactly once in the row, and states its window and a rubric
+   * sentence. The words stay where the book prints them, in its own brackets;
+   * here they are only marked, and the rubric that governs them is set once
+   * under the element, so the condition is never separated from its words.
+   * Nothing is omitted or added on the strength of the date.
+   */
+  function markConditionalWords(section, body, held) {
+    const spans = Array.isArray(held.conditional_spans) ? held.conditional_spans : [];
+    for (const span of spans) {
+      if (!span || typeof span.text !== 'string' || !span.text) continue;
+      // SHOW_TEXT is 4; a document without tree walkers (the fake DOM the
+      // static tests use) still receives the rubric below, unmarked.
+      const walker = typeof document.createTreeWalker === 'function'
+        ? document.createTreeWalker(body, 4) : null;
+      let node;
+      while (walker && (node = walker.nextNode())) {
+        const at = node.nodeValue.indexOf(span.text);
+        if (at < 0) continue;
+        const match = node.splitText(at);
+        match.splitText(span.text.length);
+        const mark = T.el('span', 'ordinary-conditional');
+        mark.lang = held.lang;
+        mark.setAttribute('data-conditional', 'true');
+        if (span.rubric) mark.title = span.rubric;
+        match.parentNode.replaceChild(mark, match);
+        mark.appendChild(match);
+        break;
+      }
+      if (span.rubric) {
+        const note = T.el('p', 'composed-note ordinary-conditional-note', span.rubric);
+        note.lang = 'en';
+        section.appendChild(note);
+      }
+    }
+  }
+
   function renderElement(element, file) {
     // The kind rides on the class, because how a missal sets an element is
     // decided by what kind of thing it is: a rubric in italic, a head across
@@ -1438,6 +1478,7 @@
         body.lang = held.lang;
       }
       section.appendChild(body);
+      markConditionalWords(section, body, held);
 
       const witness = witnessNote(file, held.source_id);
       if (witness) {

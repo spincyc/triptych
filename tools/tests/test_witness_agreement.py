@@ -303,7 +303,9 @@ class PageImageProvenanceGate(unittest.TestCase):
         ]
 
     def test_all_lasance_page_collations_resolve_exactly(self):
-        self.assertEqual(len(self.bound), 32)
+        # 36 since 2026-10-19 (C3): the Pentecost Introit, Gospel, Offertory
+        # and Communion, which now carry the Missal's own Latin.
+        self.assertEqual(len(self.bound), 36)
         for row in self.bound:
             where = f"{row['mass']}/{row['proper']}"
             self.assertEqual(
@@ -631,7 +633,9 @@ class TheCorpusItself(unittest.TestCase):
         # On 2026-10-19 (C2 gap G3) the 335 were retyped from rights-withheld
         # to no-exemplar: the witness is public domain and only the binding is
         # missing. Each note still names this edition as the quarantined lead.
-        self.assertEqual(len(unavailable), 335)
+        # 332 since 2026-10-19 (C3): the Pentecost Collect, Secret and
+        # Postcommunion were bound through roman-1962-pentecost-en.
+        self.assertEqual(len(unavailable), 332)
         self.assertTrue(all("text" not in row for row in unavailable))
 
     def test_holy_week_is_outside_the_second_witness(self):

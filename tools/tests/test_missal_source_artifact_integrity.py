@@ -358,7 +358,14 @@ class InventoryCensusTests(unittest.TestCase):
             with self.subTest(book=book_id):
                 row = books[book_id]
                 self.assertEqual(row["retrievable"], "unresolved")
-                self.assertIn("No bounded external repository search", row["retrievable_basis"])
+                # 2026-10-19: the 1920 row now records a bounded search whose
+                # bot-challenged hosts stayed unsearched; it must still refuse
+                # a `not-located` verdict rather than claim none was searched.
+                if book_id == "missale-romanum-1920-typica":
+                    self.assertIn("still not a `not-located` verdict", row["retrievable_basis"])
+                    self.assertIn("were not searched", row["bound_reached"])
+                else:
+                    self.assertIn("No bounded external repository search", row["retrievable_basis"])
                 self.assertTrue(row["bound_reached"].strip())
 
         self.assertEqual(books["missale-romanum-1971-reimpressio"]["aliases_tried"], [])

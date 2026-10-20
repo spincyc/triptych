@@ -226,6 +226,45 @@ Remaining:
 - Element headings still print P./R. from their incipits.
 - ℣/℟ typography and turn-row layout belong to later C4 steps.
 
+## Missal reader C3 1962 Pentecost text, 2026-10-19
+
+<!-- promised-deliverable: missal-reader-c3-1962-pentecost-2026-10-19 -->
+
+The maintainer's request for the next parallel steps covers the C3 work that
+brings the 1962 exemplar to the complete-text gate. The plan and its progress
+are in the
+[roadmap](guidance/liturgy-browser-roadmap.md#1962-pentecost-complete-text-plan-2026-10-19).
+The maintainer decided on 2026-10-19 to publish the 1962 Communicantes St
+Joseph clause as a short phrase. That basis is recorded once in
+`src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml` and
+reaches only that clause.
+
+**In progress: Propers and Ordinary variables done.**
+
+- Pentecost Latin is 10/10 exact-target.
+- English is bound for 8 of 10 units, with the Lesson a typed gap.
+- Missal mode seats the whole Holy Spirit Preface and the proper Hanc igitur
+  and Communicantes.
+
+The Alleluia English, the internal-structure contract (G14), and the Ordinary
+collation (G19) remain open.
+
+A full `unittest discover -s tools/tests` run on this checkpoint executed 4,593
+tests. Every failure had a known cause:
+
+- Four were caused here and fixed: an acquisition-audit wording expectation,
+  two stale witness counts, and the derived source catalogue.
+- The rest are unchanged from session-start commit `26f192c68`:
+  - generation metadata that needs installed PDFs;
+  - lane authors without registry rows;
+  - stale chronology annotation projections;
+  - a manifest-leaf count of 24 against a pinned 20;
+  - ICEL antiphonary passage pins;
+  - and further failures, all checked against an export of that commit.
+
+`tests/tools/mass-ordinary.test` had been stale since `799988766`; it is
+re-pinned with dated causes.
+
 ## Missal reader C2 representative Masses, 2026-10-19
 
 <!-- promised-deliverable: missal-reader-c2-exemplars-2026-10-19 -->

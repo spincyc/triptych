@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-en"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The three rows reproduce only historical English wording printed in an 1861 Philadelphia edition, which is in the United States public domain by publication date. They contain no Google or Internet Archive header, watermark, page image, OCR, markup or annotation. A faithful project transcription of public-domain wording creates no new copyright. The exact Google-digitized PDF remains remote and unresolved; it is visual verification evidence, not this publication payload."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "The English of the Collect, Secret and Postcommunion of WHIT SUNDAY at printed pp. 375-378 (artifact pages 384-387, IA leaves n383-n386), copied byte for byte from rows 104-106 of the registered transcription temporal-orations-en and read on 2026-10-19 against the page images of the exact registered scan at 200 and 400 dpi, whose bytes were re-downloaded and hashed to its registered SHA-256: every word agrees. One normalization is made and only this: the book's abbreviated conclusion, at whatever length it is printed (Thro', Thro'--in the unity of, &c., Thro' our Lord--in the unity of the same, &c.), is set `Thro'.` with a straight apostrophe, the form this repository's 1962 translation overlay uses. The Postcommunion's first noun is printed with damaged type at its first letter and is read as the word the context and the earlier transcription give."
+retrieved = "2026-10-19"
+sha256 = "d0bd7b139ba8b2df99df66a09a6e91ec050bcf940ae47fc6f99966a4e460700b"
+byte_size = 810
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/roman-1962-pentecost-en/roman-1962-pentecost-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "One header and three historical-English rows, one per Roman-1962 oration target of pentecost: Collect, Secret and Postcommunion, in that order on physical lines 2-4. Columns follow roman-1962-pentecost-19-en; each row's target identity is argued on its own overlay entry in src/sources/inventories/roman-1962-proper-translations-v1.toml, which binds it through a single-line publish passage beside a page-image verify passage. Registered 2026-10-19 so that the overlay's three no-exemplar rows for this Mass (C2 gap G3) could become positive entries."

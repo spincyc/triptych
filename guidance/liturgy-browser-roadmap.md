@@ -521,8 +521,48 @@ Found along the way:
 
 The ordered implementation is: the duplicate-key fix; G3 English; the chants;
 the readings; G14; the Preface; the Hanc igitur; the Communicantes; the G19
-slice; then regeneration and the C2 acceptance checks. It waits until the
-calendar and Ordinary files are free of the concurrent Preface-direction lane.
+slice; then regeneration and the C2 acceptance checks.
+
+Progress, 2026-10-19. All text moved by script, collated word for word and
+checked on page images:
+
+- **Duplicate keys.** The 154 duplicated `notes` keys are merged, and
+  `check-calendar-masses` refuses duplicate keys in every calendar file.
+- **Latin.** The Introit, Lesson, Gospel, Offertory and Communion carry the
+  Missal's own Latin as `source: mixed`. The publication witness is the 1862
+  Pustet, from its now-tracked leaves, with Mame as the second witness.
+  Pentecost Latin is 10/10 exact-target.
+- **English.** Cummiskey binds the Collect, Secret and Postcommunion, and
+  Lasance the Introit, Gospel, Offertory and Communion. The Lesson is a typed
+  gap.
+- **Antecedent typing.** Cummiskey and Lasance rows declare the evidenced
+  antecedent relation.
+- **Saturday-BVM rows** now name Mame as their publication witness.
+- **Missal mode** seats the whole Holy Spirit Preface: its opening is joined
+  at the 1861 asterisk, and *hodierna die* is marked conditional. It also
+  seats the proper Hanc igitur (Mame and Pustet Latin, Lasance English) and the
+  proper Communicantes head with the shared 1962 continuation, under the
+  recorded short-phrase basis. The common Communicantes carries the same
+  continuation. The English of the head and of the continuation are typed
+  variant gaps.
+
+Remaining:
+
+- the Alleluia English and the G14 contract;
+- the G19 collation of the exercised Ordinary dialogues;
+- the C2 acceptance checks.
+
+Follow-ups:
+
+- For `mixed` units, the shared renderer still labels the Bible expansion
+  "Missal wording not established" beneath the Missal's own text, which now
+  misdescribes it.
+- 102 more projection rows share the Mame/Pustet naming contradiction. The St
+  Luke row rests on a weak text-layer reading.
+- Six merged notes cite two loci.
+- The other four proper Communicantes heads remain.
+- The other seven asterisk Prefaces need the opening join.
+- A Cena Domini option is still needed.
 
 #### C4: dialogue, typography, and usability contract
 

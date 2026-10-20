@@ -458,7 +458,46 @@ MONTH_DAY_RE = re.compile(r"^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$")
 INSERTED_FIELDS = {
     "key", "before", "after", "kind", "speaker", "name", "latin_incipit",
     "absent_english", "absent_latin", "note", "conditions", "text_of",
+    # `through` cuts a `text_of` occurrence at a printed junction (below).
+    "through",
+    # An inserted element may instead carry its own text from any declared,
+    # publishable witness, exactly as an inline element does (`side_text`):
+    # the 1962 Canon's proper forms are printed by no row of the 1861 book.
+    "english", "latin", "english_turns", "latin_turns",
 }
+
+# A printed junction: where a target edition continues a witness's row with
+# other words, the frame may carry the row only THROUGH a declared marker, one
+# per language the row holds.  The marker must occur exactly once and leave a
+# nonblank remainder; the emitted text is then an exact prefix of the source
+# row, so it stays auditable against the artifact.  Used on a source row
+# (`[[sections.junctions]]`, which keeps the row's identity) and on a `text_of`
+# occurrence (`through` on the inserted row).  The 1861 book prints the common
+# Preface whole and every proper Preface as a clause starting at its asterisk;
+# the 1962 prints its common Communicantes continuing with a clause the 1861
+# lacks.  Both are joined here, never rewritten.
+JUNCTION_FIELDS = {"element", "through", "basis"}
+
+# Element-level provenance.  Artifact sections declare relation and collation
+# per section; a collation run for some elements only is declared per element
+# and language here, with the same closed fields, and replaces the section's
+# block for that element alone.
+ELEMENT_PROVENANCE_FIELDS = {"element", "lang", "relation", "collation",
+                             "collation_finding", "target_wording", "note"}
+
+# Words the book prints as conditional inside a row -- the 1861 and 1962
+# Holy Spirit Preface's "hodierna die", said only from the vigil of Pentecost
+# through the following Saturday.  The span is declared, never inferred, with
+# a structured window (counted from a movable anchor, as appointment spans are)
+# and a project-written rubric sentence; the words themselves stay in the row.
+CONDITIONAL_SPAN_FIELDS = {"element", "lang", "text", "said", "rubric", "locus"}
+CONDITIONAL_SAID_FIELDS = {"anchor", "from", "to"}
+
+# A collated text whose finding establishes that its WORDS are the controlling
+# edition's (the 2026-09-03 rule in guidance/propers-for-agents.md: words,
+# never strings) may say so.  It then counts as `exact-target` in coverage, as
+# a collated word-exact Proper projection does (C2 decision of 2026-10-19).
+TARGET_WORDINGS = ("word-exact",)
 ELEMENT_CONDITION_FIELDS = {"element", "conditions"}
 
 # An artifact can contain matter which a later target recension does not.  A
@@ -488,7 +527,7 @@ RELATIONS = ("own", "antecedent")
 COLLATIONS = ("collated", "uncollated")
 NEEDS_RELATION_NOTE = ("antecedent",)
 ARTIFACT_PROVENANCE_FIELDS = {
-    "relation", "collation", "collation_finding", "note",
+    "relation", "collation", "collation_finding", "note", "target_wording",
 }
 
 
@@ -1571,18 +1610,186 @@ def artifact_element_conditions(
     return held
 
 
+def through_markers(declared: object, where: str, name: str) -> dict[str, str]:
+    """A `through` table: one nonblank marker per declared language."""
+    if not isinstance(declared, dict) or not declared:
+        raise SourceError(f"{name}: {where} through must be a nonempty table by language")
+    for lang, marker in declared.items():
+        language_row(lang)
+        if not isinstance(marker, str) or not marker.strip():
+            raise SourceError(f"{name}: {where} through for {lang} has no marker")
+    return dict(declared)
+
+
+def cut_through(translations: list[dict], markers: dict[str, str], where: str,
+                name: str) -> list[dict]:
+    """Each translation's exact prefix through its language's printed marker."""
+    held = {row["lang"] for row in translations}
+    if held != set(markers):
+        raise SourceError(
+            f"{name}: {where} declares a junction for {', '.join(sorted(markers))} "
+            f"but holds text in {', '.join(sorted(held)) or 'no language'}; a row "
+            "cut in one language and whole in another would pair unlike texts"
+        )
+    out = []
+    for row in translations:
+        if row.get("turns"):
+            raise SourceError(f"{name}: {where} cannot cut a row partitioned into turns")
+        marker = markers[row["lang"]]
+        text = row["text"]
+        if text.count(marker) != 1:
+            raise SourceError(
+                f"{name}: {where} junction marker for {row['lang']} occurs "
+                f"{text.count(marker)} times; it must occur exactly once"
+            )
+        end = text.index(marker) + len(marker)
+        if not text[end:].strip():
+            raise SourceError(
+                f"{name}: {where} junction for {row['lang']} cuts nothing; the "
+                "marker ends the row"
+            )
+        out.append(dict(row) | {"text": text[:end].rstrip(), "through": marker})
+    return out
+
+
+def artifact_junction_table(section: dict, source_keys: set[str], excluded: dict,
+                            name: str) -> dict[str, dict]:
+    """Source rows the frame carries only through a printed junction."""
+    declared = section.get("junctions")
+    if declared is None:
+        return {}
+    if not isinstance(declared, list) or not declared:
+        raise SourceError(f"{name}: section {section['key']} has empty or malformed junctions")
+    held: dict[str, dict] = {}
+    for entry in declared:
+        if not isinstance(entry, dict) or set(entry) != JUNCTION_FIELDS:
+            raise SourceError(
+                f"{name}: section {section['key']} junction rows carry exactly "
+                f"{', '.join(sorted(JUNCTION_FIELDS))}"
+            )
+        element = entry["element"]
+        if element not in source_keys or element in excluded or element in held:
+            raise SourceError(
+                f"{name}: section {section['key']} junction names {element!r}, which "
+                "is no single emitted row of its artifact"
+            )
+        if not isinstance(entry["basis"], str) or not entry["basis"].strip():
+            raise SourceError(f"{name}: section {section['key']} junction {element} has no basis")
+        held[element] = {
+            "through": through_markers(entry["through"], f"junction {element}", name),
+            "basis": entry["basis"],
+        }
+    return held
+
+
+def artifact_element_provenance(section: dict, keys: set[str], name: str) -> dict:
+    """Element-level provenance blocks by (element, lang)."""
+    declared = section.get("element_provenance")
+    if declared is None:
+        return {}
+    if not isinstance(declared, list) or not declared:
+        raise SourceError(
+            f"{name}: section {section['key']} has empty or malformed element_provenance"
+        )
+    held: dict[tuple[str, str], dict] = {}
+    for entry in declared:
+        if not isinstance(entry, dict):
+            raise SourceError(f"{name}: section {section['key']} has a non-table provenance row")
+        unknown = set(entry) - ELEMENT_PROVENANCE_FIELDS
+        if unknown or "element" not in entry or "lang" not in entry:
+            raise SourceError(
+                f"{name}: section {section['key']} element_provenance rows carry element, "
+                f"lang and provenance fields only"
+            )
+        element, lang = entry["element"], entry["lang"]
+        language_row(lang)
+        if element not in keys:
+            raise SourceError(
+                f"{name}: section {section['key']} declares provenance for {element!r}, "
+                "which it does not emit"
+            )
+        if (element, lang) in held:
+            raise SourceError(
+                f"{name}: section {section['key']} declares provenance for {element} "
+                f"in {lang} twice"
+            )
+        block = {k: v for k, v in entry.items() if k not in ("element", "lang")}
+        if block.get("relation") != "antecedent":
+            raise SourceError(
+                f"{name}: section {section['key']} element provenance for {element} must "
+                "declare relation = antecedent; an own relation needs no override"
+            )
+        held[(element, lang)] = block
+    return held
+
+
+def artifact_conditional_spans(section: dict, keys: set[str], name: str) -> dict:
+    """Declared conditional words by (element, lang)."""
+    declared = section.get("conditional_spans")
+    if declared is None:
+        return {}
+    if not isinstance(declared, list) or not declared:
+        raise SourceError(
+            f"{name}: section {section['key']} has empty or malformed conditional_spans"
+        )
+    held: dict[tuple[str, str], list[dict]] = {}
+    for entry in declared:
+        if not isinstance(entry, dict) or set(entry) != CONDITIONAL_SPAN_FIELDS:
+            raise SourceError(
+                f"{name}: section {section['key']} conditional_spans rows carry exactly "
+                f"{', '.join(sorted(CONDITIONAL_SPAN_FIELDS))}"
+            )
+        element, lang = entry["element"], entry["lang"]
+        language_row(lang)
+        if element not in keys:
+            raise SourceError(
+                f"{name}: section {section['key']} conditions words of {element!r}, "
+                "which it does not emit"
+            )
+        said = entry["said"]
+        if (
+            not isinstance(said, dict)
+            or set(said) != CONDITIONAL_SAID_FIELDS
+            or said["anchor"] not in APPOINTMENT_ANCHORS
+            or any(not isinstance(said[one], int) or isinstance(said[one], bool)
+                   for one in ("from", "to"))
+            or said["from"] > said["to"]
+        ):
+            raise SourceError(
+                f"{name}: section {section['key']} conditional span on {element} needs "
+                "said = {anchor, from, to} with a declared anchor and from <= to"
+            )
+        for field in ("text", "rubric", "locus"):
+            if not isinstance(entry[field], str) or not entry[field].strip():
+                raise SourceError(
+                    f"{name}: section {section['key']} conditional span on {element} "
+                    f"has no {field}"
+                )
+        held.setdefault((element, lang), []).append(
+            {"text": entry["text"], "said": dict(said), "rubric": entry["rubric"],
+             "locus": entry["locus"]}
+        )
+    return held
+
+
 def artifact_inserted(
     section: dict, source_keys: set[str], excluded: dict, absences: dict,
     options: dict, appointments: dict, name: str,
+    witnesses: dict | None = None, restricted: dict | None = None,
+    library: dict | None = None,
 ) -> tuple[dict[str, list[dict]], dict[str, list[dict]]]:
-    """Text-free elements the inventory stands beside an artifact's rows.
+    """Elements the inventory stands beside an artifact's rows.
 
     They exist for one purpose: where a day appoints a text this witness does
     not print (a proper Communicantes) or where nothing has established which
-    text is appointed (the Preface), the frame still owes the reader a typed
-    statement IN THE APPOINTED PLACE.  Each therefore carries no words, names
-    both absences, and must be conditioned on an appointment, so it can never
-    stand on a day it does not describe.
+    text is appointed (the Preface), the frame still owes the reader the
+    appointed text or a typed statement IN THE APPOINTED PLACE.  Each must be
+    conditioned on an appointment, so it can never stand on a day it does not
+    describe.  It is one of three things: a text-free stand-in naming both
+    absences; a second occurrence of a row (`text_of`, optionally cut
+    `through` a printed junction); or a text from another declared witness
+    (`latin`/`english` blocks, resolved by `side_text` under that witness's
+    own rights, with a typed absence for any language it does not reach).
     """
     declared = section.get("inserted")
     before: dict[str, list[dict]] = {}
@@ -1632,11 +1839,25 @@ def artifact_inserted(
                 "stand-in that is not tied to an appointment would print every day"
             )
         text_of = entry.get("text_of")
+        own_text = [lang for lang, side in SIDE_BLOCKS.items() if entry.get(side)]
+        translations = None
+        if text_of is not None and own_text:
+            raise SourceError(
+                f"{name}: inserted {key} both repeats {text_of} and carries its own "
+                "text; an occurrence adds no words"
+            )
+        if "through" in entry and text_of is None:
+            raise SourceError(
+                f"{name}: inserted {key} declares through without text_of; a "
+                "junction cuts a repeated row and nothing else"
+            )
         if text_of is not None:
             # A second occurrence of a row the book prints once and then cues
             # by incipit: the 1861 prints the Sanctus after the common Preface
             # only and ends every proper Preface "Holy, &c.".  The occurrence
-            # carries that row's own text and absences, never new words.
+            # carries that row's own text and absences, never new words; with
+            # `through` it carries an exact prefix of them (the common
+            # Preface as far as the asterisk at which a proper clause joins).
             if text_of not in source_keys or text_of in excluded:
                 raise SourceError(
                     f"{name}: inserted {key} takes its text from {text_of!r}, which "
@@ -1648,19 +1869,50 @@ def artifact_inserted(
                     "absences are that row's and are not restated"
                 )
             absent = {side: None for side in ABSENT_SIDES}
+        elif own_text:
+            # Text a witness other than the frame's artifact prints, from a
+            # declared, publishable witness and checked exactly as an inline
+            # element's: each language either reaches a text or names why not.
+            where = section["key"] + "/" + key
+            translations = [
+                row for row in (
+                    side_text(entry, language["lang"], witnesses or {}, restricted or {},
+                              library or {}, where, name)
+                    for language in LANGUAGES
+                ) if row
+            ]
+            absent = absent_pair(entry, {}, absences, key, name)
+            for language in LANGUAGES:
+                if any(row["lang"] == language["lang"] for row in translations):
+                    if absent[language["absent"]] is not None:
+                        raise SourceError(
+                            f"{name}: inserted {key} holds {language['lang']} text and "
+                            "also names its absence"
+                        )
+                elif absent[language["absent"]] is None:
+                    raise SourceError(
+                        f"{name}: inserted {key} carries no {language['lang']} text and "
+                        "names no absence; a silent gap is the one thing this layer "
+                        "must never emit"
+                    )
         else:
             absent = absent_pair(entry, {}, absences, key, name)
             if any(absent[side] is None for side in ABSENT_SIDES):
                 raise SourceError(
                     f"{name}: inserted {key} must name both absences; it carries no text"
                 )
-        if not isinstance(entry.get("name"), str) or not entry["name"].strip():
+        entry_name = entry.get("name")
+        if entry_name is not None and (not isinstance(entry_name, str) or not entry_name.strip()):
+            raise SourceError(f"{name}: inserted {key} has an empty name")
+        if entry_name is None and not own_text:
+            # A stand-in or occurrence is identified by its name; a text-bearing
+            # continuation may stand under the heading of what it continues.
             raise SourceError(f"{name}: inserted {key} has no name")
         element = {
             "key": section["key"] + "/" + key,
             "kind": kind,
             "speaker": entry.get("speaker") or None,
-            "name": entry["name"],
+            "name": entry_name,
             "latin_incipit": entry.get("latin_incipit") or None,
             "locus": None,
             "note": entry.get("note") or None,
@@ -1668,10 +1920,12 @@ def artifact_inserted(
             "alternatives": [],
             "conditions": conditions,
             "absent": absent,
-            "translations": None,
+            "translations": translations or None,
         }
         if text_of is not None:
             element["occurrence_of"] = section["key"] + "/" + text_of
+            if "through" in entry:
+                element["_through"] = through_markers(entry["through"], f"inserted {key}", name)
         (before if sides[0] == "before" else after).setdefault(target, []).append(element)
     return before, after
 
@@ -1730,8 +1984,18 @@ def from_artifact(
     )
     inserted_before, inserted_after = artifact_inserted(
         section, set(source_groups), excluded, absences, options or {},
-        appointments or {}, name,
+        appointments or {}, name, witnesses, restricted, library,
     )
+    inserted_keys = {
+        element["key"].split("/", 1)[1]
+        for table in (inserted_before, inserted_after)
+        for rows in table.values()
+        for element in rows
+    }
+    emitted_keys = (set(source_groups) - set(excluded)) | inserted_keys
+    junctions = artifact_junction_table(section, set(source_groups), excluded, name)
+    element_provenance = artifact_element_provenance(section, emitted_keys, name)
+    conditional_spans = artifact_conditional_spans(section, emitted_keys, name)
 
     elements = []
     exclusions = []
@@ -1875,6 +2139,52 @@ def from_artifact(
             element["locus"] = held["locus"]
             if element["note"] is None:
                 element["note"] = held["note"]
+    prefix = section["key"] + "/"
+    for element in elements:
+        local = element["key"][len(prefix):]
+        markers = element.pop("_through", None)
+        where = f"element {element['key']}"
+        if local in junctions:
+            if element.get("occurrence_of"):
+                raise SourceError(f"{name}: {where} is an occurrence; cut it with through")
+            markers = junctions[local]["through"]
+            element["junction"] = {"basis": junctions[local]["basis"]}
+        if markers is not None:
+            element["translations"] = cut_through(
+                element["translations"] or [], markers, where, name)
+        for lang in ("en", "la"):
+            block = element_provenance.pop((local, lang), None)
+            if block is None:
+                continue
+            rows = [row for row in element["translations"] or [] if row["lang"] == lang]
+            if len(rows) != 1:
+                raise SourceError(
+                    f"{name}: {where} declares {lang} provenance but holds no {lang} text"
+                )
+            row = rows[0]
+            for field in ("relation", "collation", "collation_finding", "note",
+                          "target_wording", "coverage_relationship"):
+                row.pop(field, None)
+            row.update(relation_of(block, element["key"], lang, name))
+        for lang in ("en", "la"):
+            spans = conditional_spans.pop((local, lang), None)
+            if spans is None:
+                continue
+            rows = [row for row in element["translations"] or [] if row["lang"] == lang]
+            if len(rows) != 1:
+                raise SourceError(
+                    f"{name}: {where} conditions {lang} words but holds no {lang} text"
+                )
+            for span in spans:
+                if rows[0]["text"].count(span["text"]) != 1:
+                    raise SourceError(
+                        f"{name}: {where} conditional words for {lang} must occur "
+                        "exactly once in its text"
+                    )
+            rows[0]["conditional_spans"] = spans
+    if element_provenance or conditional_spans:
+        left = sorted(set(element_provenance) | set(conditional_spans))[0]
+        raise SourceError(f"{name}: section {section['key']} leaves {left} unapplied")
     if latin_rows:
         raise SourceError(
             f"{name}: section {section['key']} carries Latin for "
@@ -1979,6 +2289,20 @@ def relation_of(block: dict, key: str, lang: str, name: str) -> dict:
             f"{finding!r}; a citation on an uncollated row invites the reader to "
             "read it as the collation that was not made"
         )
+    wording = block.get("target_wording")
+    if wording is not None:
+        if wording not in TARGET_WORDINGS:
+            raise SourceError(
+                f"{name}: element {key} declares target_wording {wording!r} for "
+                f"{lang}; one of {', '.join(TARGET_WORDINGS)} is required"
+            )
+        if collation != "collated":
+            raise SourceError(
+                f"{name}: element {key} declares target_wording for {lang} without "
+                "a collation; word-exactness is a collation finding or nothing"
+            )
+        out["target_wording"] = wording
+        out["coverage_relationship"] = "exact-target"
     return out
 
 
@@ -2211,6 +2535,18 @@ def side_text(entry: dict, lang: str, witnesses: dict, restricted: dict, library
         "rights": witness["rights"],
         "text": text,
     } | relation_of(block, key, lang, name)
+    if (
+        witness["rights"] == "project-created"
+        and lang == "la"
+        and translation.get("target_wording") is None
+    ):
+        # A project-created Latin text is an editorial projection.  Coverage
+        # would read its rights as a study translation's; only a collated
+        # word-exact finding gives it a relationship the vocabulary can state.
+        raise SourceError(
+            f"{name}: element {key} draws project-created Latin from "
+            f"{witness_id} without a collated word-exact target_wording"
+        )
     turns = structured_turns(
         entry, SIDE_BLOCKS[lang], library, artifact_id, named, column, key, name, text
     )
@@ -2344,7 +2680,8 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         elif "elements" in section:
             for field in (
                 "exclusions", "turn_partitions", "absent_latin_by_element",
-                "element_conditions", "inserted",
+                "element_conditions", "inserted", "junctions",
+                "element_provenance", "conditional_spans",
             ):
                 if field in section:
                     raise SourceError(
@@ -2516,9 +2853,14 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
                 if reason:
                     disposition[language["lang"]] = coverage_absences[absences[reason]["kind"]]
             occurrence = _missal_coverage.identity(calendar, "ordinary", element["key"])
+            # A repeated row is the same target; a row cut at a junction is
+            # a different, shorter text and is its own target.
+            whole_repeat = element.get("occurrence_of") and not any(
+                row.get("through") for row in element["translations"] or []
+            )
             identifier = (
                 _missal_coverage.identity(calendar, "ordinary", element["occurrence_of"])
-                if element.get("occurrence_of") else occurrence
+                if whole_repeat else occurrence
             )
             element["coverage"] = _missal_coverage.unit(
                 element, target_id=identifier, occurrence_id=occurrence,

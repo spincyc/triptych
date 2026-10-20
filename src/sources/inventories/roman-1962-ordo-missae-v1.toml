@@ -23,11 +23,17 @@ and never the text of the 1962 typical edition - its Communicantes prints no \
 clause naming St Joseph, its Prefaces are the eleven this book knew, and its \
 spelling, its j and its ae and oe ligatures are its own. Where the book sets a \
 block across the full measure in English and prints no facing Latin at all, \
-that silence is the witness's own and the element says so.
+that silence is the witness's own and the element says so. Where the 1962 \
+Missal appoints a text the 1861 book does not print, or prints differently, \
+the element names its own witness: the proper Communicantes and Hanc igitur of \
+Pentecost and Easter and the continuation the 1962 Canon prints for every \
+Communicantes come from a project editorial projection over public-domain \
+printings, and the Hanc igitur's English from the Lasance hand missal.
 """
 
 derived_from = """
-Every element is read from a tab-separated artifact under \
+Every element but those the canon section inserts with a witness of its own \
+is read from a tab-separated artifact under \
 edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861, one row \
 per printed block, transcribed visually from page images of the facsimile \
 registered as that edition's ia-scan-pdf artifact at 640 dpi with doubtful \
@@ -76,7 +82,7 @@ not_decided_here = [
   "What the 1962 typical edition prints. This is an 1861 witness to the same rite, not a transcription of the 1962 altar book, and the two are not collated element by element.",
   "Which Preface, Communicantes or Hanc igitur a given formulary takes. The formulary's own printed direction is the mass index's `ordinary_appointments`; this file declares only what the frame shows for each appointed option, the dated spans and defaults the book's own Canon headings state (`[[appointments]]`), and a typed stand-in where nothing establishes the appointment.",
   "Anything about how the rite is performed. The rubrics transcribed here are the book's own, in its own words, and are evidence of what it printed in 1861 and of nothing else.",
-  "Whether any element's Latin is the wording the 1962 typical edition prints. The Latin here is this 1861 book's own, transcribed from its facing column; the departures that are known are named on the elements that carry them and in the advisory above, and no element-by-element collation against the 1962 book is asserted.",
+  "Whether any element's Latin is the wording the 1962 typical edition prints, except where an element's own provenance declares a collation. The Latin here is this 1861 book's own, transcribed from its facing column; the departures that are known are named on the elements that carry them and in the advisory above. Element-level collations (2026-10-19, `element_provenance` below) cover the Holy Spirit Preface and the head of the common Communicantes; every other 1861 element stays uncollated.",
   "Where a proper stands that the Ordo Missae does not place. A slot is declared only where the 1962 book states the position in terms; the oration super populum of the Lenten ferias, the chants of an Ember Saturday after the first, and the whole of Good Friday and the paschal Vigil are left unplaced, and a page that reads this file must show them in the missal's own order rather than guess at a seat for them.",
 ]
 
@@ -106,7 +112,7 @@ id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 lang = "la"
 label = "The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861), the facing Latin column"
 rights = "public-domain"
-caution = "The Latin of a pre-1955 lay hand missal's facing column: never an altar book, and nothing here may be used for recitation. It is the 1861 printing's own text and NOT the 1962 typical edition's. Its Canon prints the Communicantes without the clause naming St Joseph that later legislation inserted; its seasonal second orations and rubrics are the discipline in force before the 1955 and 1960 reforms; and its orthography, j and the ae/oe ligatures, is its own. No element-by-element collation against the 1962 book is asserted."
+caution = "The Latin of a pre-1955 lay hand missal's facing column: never an altar book, and nothing here may be used for recitation. It is the 1861 printing's own text and NOT the 1962 typical edition's. Its Canon prints the Communicantes without the clause naming St Joseph that later legislation inserted; its seasonal second orations and rubrics are the discipline in force before the 1955 and 1960 reforms; and its orthography, j and the ae/oe ligatures, is its own. Collation against the 1962 book is asserted only on the elements whose own provenance says so."
 artifacts = [
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la",
@@ -114,6 +120,30 @@ artifacts = [
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la",
+]
+
+# The Canon's proper forms are printed by no row of the 1861 Ordinary, and the
+# 1962 continues every Communicantes with a clause no public-domain printing
+# carries (C3, 2026-10-19). Each witness below supplies only the elements that
+# name it, under its own rights and provenance.
+[[witnesses]]
+id = "edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19"
+lang = "la"
+label = "Triptych editorial projection of the 1962 Canon's proper Communicantes and Hanc igitur and of its Communicantes continuation (19 October 2026)"
+rights = "project-created"
+caution = "A project-created projection, not an edition of any missal and never an altar book. Its words are the 1922 Tours Mame's, read with the 1862 Pustet and the 1861 Cummiskey, in the calendar's declared orthography and the 1962 printing's pointing; collated word for word with the 1962 typical edition. The one clause no public-domain printing carries, naming Saint Joseph, is the 1962 book's, published as a short phrase on the basis recorded at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml [the_joseph_clause]."
+artifacts = [
+  "artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.canon-proper-forms-651e3482",
+]
+
+[[witnesses]]
+id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+lang = "en"
+label = "The New Roman Missal in Latin and English, by F. X. Lasance and F. A. Walsh (New York: Benziger Brothers), revised edition of 1945, in a printing of about 1955-56"
+rights = "public-domain"
+caution = "A publisher's hand missal, not an approved liturgical translation and never an altar book; nothing here may be used for recitation. Used only for the proper Hanc igitur of Easter and Pentecost, whose English was read against the 1962 Latin clause by clause; it prints no rubric for the joining of the hands."
+artifacts = [
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.hanc-igitur-easter-pentecost-checked-english",
 ]
 
 # ---------------------------------------------------------------- absences
@@ -146,7 +176,17 @@ what = "The day appoints a Preface the 1861 Cummiskey lay missal does not print:
 [[absences]]
 key = "proper-canon-form-not-held"
 kind = "witness-gap"
-what = "The day appoints a proper Communicantes or Hanc igitur, which the 1962 Missal prints in its Canon at printed pp. 304-305 (marginal nn. 1093-1097 and 1099), and no witness this frame joins prints it: the 1861 Cummiskey Canon carries only the common forms (canon-missae-en seq 8 and 10), and the 1962 facsimile's own wording has not been collated against a public-domain witness for this surface. The common form is NOT shown in the proper form's place."
+what = "The day appoints a proper Communicantes whose head (before the dagger at which the 1962 Canon joins every proper form to its shared continuation, printed pp. 304-305, nn. 1093-1096) no witness this frame joins prints: the 1861 Cummiskey Canon carries only the common forms (canon-missae-en seq 8 and 10), and the public-domain printings of these heads have not been collated for this surface. The common form is NOT shown in the proper head's place; the shared continuation, which is held, follows. Since 2026-10-19 the Pentecost head and the Easter and Pentecost Hanc igitur are held and no longer stand under this reason."
+
+[[absences]]
+key = "proper-communicantes-english-variant"
+kind = "witness-gap"
+what = "No public-domain English this repository has read renders the head of the Pentecost Communicantes word for word. The Lasance missal (printed p. 811, passage pentecost-communicantes-and-hanc-igitur) calls the Virgin mother of 'the same' Lord, a word the Pentecost Latin does not print, and is a variant under the 2026-09-03 words rule; the 1861 Cummiskey (printed p. 377, IA leaf n385) prints only part of the head and refers the reader to its Ordinary, whose English does not mark where it resumes. No English is shown and none is composed."
+
+[[absences]]
+key = "communicantes-continuation-english-lacks-1962-clause"
+kind = "witness-gap"
+what = "Every public-domain English this repository holds for the Communicantes passes from the Virgin to the Apostles without the clause naming Saint Joseph that the 1962 Canon prints in its continuation (decree of 13 November 1962): the 1861 Cummiskey Canon (canon-missae-en seq 8, printed p. xxxiv) and the Lasance missal (printed p. 811). Under the 2026-09-03 words rule an English lacking a clause is a variant, so it is not bound as the antecedent of the 1962 wording (roadmap, 1962 Pentecost complete-text plan). No English is shown and none is composed; the short-phrase basis for the Latin clause supplies no English."
 
 # ---------------------------------------------------------------- appointments
 #
@@ -574,6 +614,58 @@ absent_english = "preface-not-in-witness"
 absent_latin = "preface-not-in-witness"
 conditions = [{ kind = "appointed", variable = "preface", options = ["missa-chrismatis", "sacro-corde", "christo-rege", "sancto-ioseph", "defunctis"], basis = "Stands for an appointed Preface the 1861 witness does not print." }]
 
+# The 1861 book prints the common Preface whole and the Holy Spirit Preface as
+# a clause opening at an asterisk, "inserted at the asterisk of
+# praefatio-communis" (praefationes-en seq 2 and the row notes). The 1962
+# prints the Preface continuously (n. 1081). This occurrence carries the common
+# Preface's own row as far as that printed junction, so the appointed Preface
+# reads whole; it adds no words (C3, 2026-10-19). Only the Holy Spirit Preface
+# takes it here: the other asterisk Prefaces' junctions are not yet collated.
+[[sections.inserted]]
+key = "praefatio-de-spiritu-sancto-initium"
+before = "praefatio-de-spiritu-sancto"
+kind = "prayer"
+speaker = "priest"
+name = "Vere dignum et justum est"
+text_of = "praefatio-communis"
+through = { la = "æterne Deus.", en = "eternal God." }
+note = "The common Preface's opening, praefationes-en/-la seq 3 at printed p. xxviii, cut at the asterisk the book prints before its seam; the proper clause that follows opens at the same asterisk."
+conditions = [{ kind = "appointed", variable = "preface", options = ["spiritu-sancto"], basis = "The Holy Spirit Preface opens with the common Preface's words up to the asterisk (1861 praefationes-en seq 2; 1962 n. 1081, printed p. 292)." }]
+
+[[sections.element_provenance]]
+element = "praefatio-de-spiritu-sancto-initium"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.praefatio-de-spiritu-sancto; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-preface-and-canon-proper-forms"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. The 1861 Cummiskey facing Latin of the common Preface (praefationes-la seq 3, printed p. xxviii, IA leaf 38), as far as its asterisk, collated on 2026-10-19 with the 1962 typical edition, n. 1081 (printed p. 292), and the 1922 Mame (printed p. 334): the words agree. Spelling, ligatures, capitals and pointing are the 1861 printing's own and differ as transformations only."
+
+[[sections.element_provenance]]
+element = "praefatio-de-spiritu-sancto"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.praefatio-de-spiritu-sancto; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-preface-and-canon-proper-forms"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. The 1861 Cummiskey facing Latin (praefationes-la seq 21, printed pp. xxxi-xxxii), collated on 2026-10-19 with the 1962 typical edition, n. 1081 (printed p. 292), and the 1922 Mame (printed p. 334): the words agree. The differences are transformations: j, the ligatures, coelos for caelos, exultat for exsultat, capitals, pointing, square brackets for the 1962's round ones, and the cue 'Sanctus, &c.' where the 1962 prints the Sanctus, which the frame supplies next. The bracketed words are conditional; see conditional_spans."
+
+[[sections.conditional_spans]]
+element = "praefatio-de-spiritu-sancto"
+lang = "la"
+text = "[ hodierna die ]"
+said = { anchor = "pentecost", from = -1, to = 6 }
+rubric = "The bracketed words are said from the vigil of Pentecost through the following Saturday, and omitted at every other Mass that takes this Preface."
+locus = "1962 n. 1081, printed p. 292, rubric under the heading; 1922 Mame printed p. 334"
+
+[[sections.conditional_spans]]
+element = "praefatio-de-spiritu-sancto"
+lang = "en"
+text = "[this day]"
+said = { anchor = "pentecost", from = -1, to = 6 }
+rubric = "The bracketed words are said from the vigil of Pentecost through the following Saturday, and omitted at every other Mass that takes this Preface."
+locus = "1962 n. 1081, printed p. 292, rubric under the heading; 1922 Mame printed p. 334"
+
 [[sections.inserted]]
 key = "sanctus-post-praefationem"
 after = "rubrica-nota-nominis"
@@ -608,6 +700,26 @@ conditions = [{ kind = "appointed", variable = "communicantes", options = ["comm
 [[sections.element_conditions]]
 element = "hanc-igitur"
 conditions = [{ kind = "appointed", variable = "hanc_igitur", options = ["common"], basis = "The common Hanc igitur stands only where the day appoints it; a day appointing the proper Hanc igitur shows that form or its typed absence instead." }]
+
+# The 1962 prints the common Communicantes (n. 1090) with the clause naming
+# Saint Joseph, which the 1861 row lacks, and every proper form as a head
+# joined at a dagger to one shared continuation carrying the same clause
+# (printed p. 305). So the common row is carried as far as that junction and
+# the continuation is one element after it, shown under every Communicantes
+# the day appoints (C3, 2026-10-19).
+[[sections.junctions]]
+element = "communicantes"
+through = { la = "Jesu Christi:", en = "Jesus Christ:" }
+basis = "The 1962 Canon continues the common Communicantes after these words with the clause naming Saint Joseph and the list of the Apostles and Martyrs (n. 1090, printed pp. 302-303), as it continues every proper head after its dagger (printed p. 305); the 1861 row's remainder lacks the clause, so the frame carries the row's head and the 1962 continuation (communicantes-continuatio) instead of the remainder."
+
+[[sections.element_provenance]]
+element = "communicantes"
+lang = "la"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes"
+target_wording = "word-exact"
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. The head of the 1861 Cummiskey common Communicantes (canon-missae-la seq 8, printed p. xxxiv) as far as the junction, collated on 2026-10-19 with the 1962 typical edition, n. 1090 (printed p. 302): the words agree, the differences being j, the ligatures, inprimis for in primis, Genitricis for Genetricis, capitals and pointing. The row's remainder, which lacks the clause naming Saint Joseph, is not carried."
 
 [[sections.inserted]]
 key = "communicantes-nativitate"
@@ -655,9 +767,42 @@ before = "communicantes"
 kind = "prayer"
 speaker = "priest"
 name = "Communicantes — the proper form of Pentecost"
-absent_english = "proper-canon-form-not-held"
-absent_latin = "proper-canon-form-not-held"
+absent_english = "proper-communicantes-english-variant"
 conditions = [{ kind = "appointed", variable = "communicantes", options = ["pentecoste"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
+[sections.inserted.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.canon-proper-forms-651e3482"
+elements = ["communicantes-pentecoste"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-preface-and-canon-proper-forms"
+target_wording = "word-exact"
+note = "PROJECTED FROM PUBLIC-DOMAIN WITNESSES, COLLATED WORD-EXACT. The head of the proper Communicantes of Pentecost as far as the 1962 printing's dagger (n. 1097, printed p. 304), in the words of the 1922 Mame (printed p. 334) and the 1862 Pustet (printed p. 251), written in the calendar's declared orthography with the 1962 pointing. The Pustet's chanted-Preface printing (p. 229) adds a word and is not used."
+
+[[sections.inserted]]
+key = "communicantes-continuatio"
+after = "communicantes"
+kind = "prayer"
+speaker = "priest"
+absent_english = "communicantes-continuation-english-lacks-1962-clause"
+note = "The continuation the 1962 Canon prints after the dagger of every proper Communicantes (printed p. 305) and in its common form (n. 1090): it carries the clause naming Saint Joseph inserted by the decree of 13 November 1962."
+conditions = [{ kind = "appointed", variable = "communicantes", options = ["common", "nativitate", "epiphania", "pascha", "ascensione", "pentecoste"], basis = "The 1962 Canon closes the common form and every proper head with these words (n. 1090, printed pp. 302-303; printed p. 305 after the dagger of nn. 1093-1097). A day whose Communicantes is not established shows its stand-in alone." }]
+latin_turns = [
+  { key = "oratio", seq = [2], speaker = "priest" },
+  { key = "iungit-manus", seq = [3], action = true },
+  { key = "conclusio", seq = [4] },
+]
+[sections.inserted.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.canon-proper-forms-651e3482"
+elements = ["communicantes-continuatio"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-preface-and-canon-proper-forms"
+target_wording = "word-exact"
+note = "PROJECTED FROM PUBLIC-DOMAIN WITNESSES PLUS ONE 1962 CLAUSE, COLLATED WORD-EXACT. Every word is the 1922 Mame's (printed pp. 334-335), read with the 1862 Pustet (p. 251) and the 1861 Cummiskey (canon-missae-la seq 8), except the clause naming Saint Joseph, which none of them prints and which is the 1962 book's (printed pp. 302 and 305), published as a short phrase on the basis recorded at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml [the_joseph_clause] and on no other. The inline rubric for the joining of the hands is a turn of its own."
 
 [[sections.inserted]]
 key = "communicantes-diei"
@@ -675,9 +820,31 @@ before = "hanc-igitur"
 kind = "prayer"
 speaker = "priest"
 name = "Hanc igitur — the proper form of Easter and Pentecost"
-absent_english = "proper-canon-form-not-held"
-absent_latin = "proper-canon-form-not-held"
 conditions = [{ kind = "appointed", variable = "hanc_igitur", options = ["pascha-pentecoste"], basis = "Stands where the day appoints the proper Hanc igitur, in place of the common form." }]
+latin_turns = [
+  { key = "oratio", seq = [5], speaker = "priest" },
+  { key = "iungit-manus", seq = [6], action = true },
+  { key = "conclusio", seq = [7] },
+]
+[sections.inserted.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.canon-proper-forms-651e3482"
+elements = ["hanc-igitur-pascha-pentecoste"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-preface-and-canon-proper-forms"
+target_wording = "word-exact"
+note = "PROJECTED FROM PUBLIC-DOMAIN WITNESSES, COLLATED WORD-EXACT. The proper Hanc igitur (1962 n. 1099, printed p. 305) in the words of the 1922 Mame (printed p. 335) and the 1862 Pustet (p. 251), written in the calendar's declared orthography with the 1962 pointing; no word differs. The inline rubric for the joining of the hands is a turn of its own."
+[sections.inserted.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.hanc-igitur-easter-pentecost-checked-english"
+elements = ["hanc-igitur-pascha-pentecoste"]
+column = "english"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pentecost-communicantes-and-hanc-igitur"
+note = "ANTECEDENT ENGLISH, COLLATED CLAUSE BY CLAUSE. The Lasance hand missal's English (printed pp. 811-812, IA leaves n809-n810), read on 2026-10-19 against the 1962 Latin of n. 1099: every clause is rendered and none added. It is a publisher's translation, not an approved one, and prints no rubric for the joining of the hands."
 
 [[sections.inserted]]
 key = "hanc-igitur-diei"

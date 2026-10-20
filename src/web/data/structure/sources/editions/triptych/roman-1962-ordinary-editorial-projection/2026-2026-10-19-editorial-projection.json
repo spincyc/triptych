@@ -1,0 +1,46 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "editorial-projection",
+   "byte_size": 4106,
+   "edition_owned": true,
+   "id": "artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.canon-proper-forms-651e3482",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "One header line and seven data rows; columns seq, element_key, part, target_locus, witness_locus, latin, notes. Element keys are those of the 1962 Ordinary inventory (src/sources/inventories/roman-1962-ordo-missae-v1.toml), which joins them. The Pustet's chanted-Preface printing of the Pentecost Communicantes at p. 229 reads 'genitricis ejusdem Dei' against 'genitricis Dei' at its spoken printing at p. 251; settled on the leaf images, the p. 229 reading is a word variant against both the Mame and the 1962 and is not used. The facsimile passages that record the readings are passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes, passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-preface-and-canon-proper-forms and passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pentecost-communicantes-and-hanc-igitur.",
+   "page_count": null,
+   "retrieved": "2026-10-19",
+   "rights": "project-created",
+   "rights_basis": "Triptych created the bounded selection, row division, normalization decisions and collation record and offers those editorial contributions under CC BY 4.0. Every Latin word but one clause is public domain in the United States as preexisting material under 17 U.S.C. 103(b), witnessed by the 1922 Tours Mame (registered public-domain scan, printed pp. 334-335), the 1862 Ratisbon Pustet (printed p. 251) and, for the continuation, the tracked 1861 Cummiskey facing Latin (canon-missae-la seq 8). The one clause none of them carries, 'sed et beati Ioseph, eiusdem Virginis Sponsi' (here 'beati Joseph, ejusdem Virginis Sponsi, et' after the witnesses' own 'sed et'), inserted into the Canon by the decree of 13 November 1962, is published as a short phrase under 37 CFR 202.1(a), on the maintainer's decision of 2026-10-19 recorded once at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml [the_joseph_clause]; that basis reaches that clause only. Triptych claims no exclusive right in any of the underlying words. No page image, layout, marginal number or other 1962-only matter is reproduced.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Project editorial artifact; not a Missal edition or liturgical authority",
+  "date": "2026-10-19",
+  "editors": [
+   "Triptych contributors"
+  ],
+  "id": "edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19",
+  "jurisdiction": "United States",
+  "language": "la",
+  "publication": "Triptych project-created editorial projection",
+  "title": "Roman 1962 Ordinary Editorial Projection, 19 October 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Triptych contributors",
+  "category": "editorial-source-projection",
+  "description": "A project-created editorial source projection of bounded Latin texts of the Ordinary of the Mass that the 1962 frame needs and that no single public-domain printing carries in the 1962 wording: the proper forms of the Canon and the continuation the 1962 Canon prints for every Communicantes. It is neither an edition of a historical missal nor an edition of the Missale Romanum. Each artifact records its transformation rule over separate public-domain and 1962 page-image witnesses. Kept apart from the Proper projection (work.triptych.roman-1962-latin-proper-editorial-projection) because the Ordinary inventory, not the calendar, consumes it.",
+  "id": "work.triptych.roman-1962-ordinary-editorial-projection",
+  "languages": [
+   "la"
+  ],
+  "title": "Roman 1962 Ordinary Editorial Projection"
+ }
+}

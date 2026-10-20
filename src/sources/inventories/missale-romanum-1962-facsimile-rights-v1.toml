@@ -659,9 +659,14 @@ witness AND no public-domain basis is available from it:
       13 November 1962, effective 8 December 1962 -- AFTER the typical edition
       was declared typical on 23 June 1962. Either the scanned printing is a
       later impression carrying the insertion, or the published sentence is
-      wrong. NOT ADJUDICATED HERE: settling it needs the facsimile's own page
-      opened, which this lane was not to do. Flagged because it bears on both the
-      identity of the scanned printing and the accuracy of a published claim.
+      wrong. ADJUDICATED 2026-10-19 on the page images: the scanned printing
+      carries the clause, in the common form n. 1090 (printed p. 302) and in the
+      continuation shared by the proper forms (printed p. 305), so it is a later
+      impression and the published sentence is right about it
+      (passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes,
+      verified 2026-07-26). No public-domain witness carries the clause; its
+      publication basis is `[the_joseph_clause]` below, which reaches that clause
+      and nothing else.
 
   6.  PAGINATION AND MARGINAL NUMBERING. Not a rights problem -- page and item
       numbers are facts -- but the 1920 cannot supply them even as facts: its
@@ -727,6 +732,40 @@ LANE THAT OWNS THAT ARTIFACT; it is out of scope here and is not silently left
 unsaid.
 """
 evidence = "verified"
+
+# ==============================================================================
+# THE CLAUSE NAMING SAINT JOSEPH -- MAINTAINER DECISION, 2026-10-19
+# ==============================================================================
+
+[the_joseph_clause]
+decided_on = "2026-10-19"
+decided_by = "the maintainer"
+clause = "sed et beati Ioseph, eiusdem Virginis Sponsi"
+clause_source = "Decree of the Sacred Congregation of Rites of 13 November 1962, effective 8 December 1962, inserting the name of Saint Joseph into the Communicantes; printed in this facsimile at n. 1090 (printed p. 302) and in the continuation of the proper forms (printed p. 305)."
+basis = "37 CFR 202.1(a)"
+basis_text = """
+"Words and short phrases such as names, titles, and slogans" are among the
+materials not subject to copyright [sourced, 37 CFR 202.1(a), read whole at
+https://www.law.cornell.edu/cfr/text/37/202.1 on 2026-10-19, SHA-256 of the
+page d23f6a8fd4697709521c34a086a5508605c9fd362c28c5c3e4746d7f2c92983d]. The
+clause is seven words naming a saint and his relation to the Virgin. On the maintainer's
+decision of 2026-10-19 it is published as a short phrase.
+"""
+reach = """
+THIS BASIS REACHES THAT CLAUSE AND NOTHING ELSE. It is not a general basis for
+1962 matter, for the 1962 Canon, or for any other new text of the edition, and
+no other record may cite it for anything but these words. It applies alike to
+the clause in the common Communicantes and in the continuation the 1962 Canon
+prints for every proper Communicantes. In the published projection the clause
+stands between the public-domain witnesses' own 'sed et' and their 'beatorum
+Apostolorum', joined by the conjunction 'et'; every other word of the
+Communicantes is preexisting material under `[the_underlying_edition.the_limit_that_actually_matters]`
+and rests on 17 U.S.C. 103(b) and the public-domain 1922 Mame, 1862 Pustet and
+1861 Cummiskey printings, none of which carries the clause.
+"""
+consumer = "artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.canon-proper-forms-651e3482, row 2 (communicantes-continuatio), joined by src/sources/inventories/roman-1962-ordo-missae-v1.toml."
+english = "No public-domain English renders the clause. An English lacking it is a variant of the 1962 wording under the 2026-09-03 words rule (guidance/propers-for-agents.md) and is not bound as its antecedent; the 1962 Ordinary inventory types that English as a witness gap. This basis supplies no English and licenses no English composed for the purpose."
+evidence = "decision recorded; clause verified on the page images 2026-10-19"
 
 # ==============================================================================
 # THE THREE-WAY CONTRADICTION THIS RECORD FOUND AND DOES NOT OWN
