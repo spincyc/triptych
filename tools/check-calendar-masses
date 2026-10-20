@@ -286,6 +286,7 @@ MASS_FIELDS = frozenset(
         "name",
         "notes",
         "ordinary_frame",
+        "ordinary_appointments",
         "propers",
         "rank",
         "registry",
@@ -385,6 +386,23 @@ TEXT_STATUS_REASON_KINDS = frozenset(
 )
 ORDINARY_FRAME = "ordinary_frame"
 ORDINARY_FRAME_FIELDS = frozenset({"applicability", "basis"})
+# What a formulary prints about the Ordinary variables the day takes: "Praefatio,
+# Communicantes et Hanc igitur propria", "Praefatio: De mysterio Pentecostes".
+# Each row names the variable, the option the formulary appoints and the printed
+# locus; which options a variable offers, and what the frame shows for each, is
+# the Ordinary inventory's (`[[appointments]]`), cross-checked there.
+ORDINARY_APPOINTMENTS = "ordinary_appointments"
+ORDINARY_APPOINTMENT_FIELDS = frozenset({"option", "locus"})
+ORDINARY_APPOINTMENT_VARIABLE_RE = re.compile(r"^[a-z]+(?:_[a-z]+)*$")
+ORDINARY_APPOINTMENT_OPTION_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+# When a form is celebrated, where its own book says so in terms.  The only
+# value is the vigil Mass of a solemnity used on the evening before it
+# (Normae universales n. 11 and the Missal's rubric at the vigil itself); the
+# Day reader then does not offer that form as a coequal choice on the
+# solemnity's own date.
+FORM_CELEBRATED = "celebrated"
+FORM_CELEBRATED_FIELDS = frozenset({"when", "locus"})
+FORM_CELEBRATED_WHEN = frozenset({"evening-before"})
 ORDINARY_FRAME_APPLICABILITY = frozenset({"full", "none", "unavailable"})
 FORM_ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 DAYS_IN_MONTH = (31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
@@ -738,6 +756,41 @@ def check_text_status(
         if identity in seen:
             problems.append(f"{label} duplicates text-status reason {identity!r}")
         seen.add(identity)
+
+
+def check_ordinary_appointments(
+    where: str, value: object, problems: list[str]
+) -> None:
+    """Validate a formulary's printed Ordinary-variable appointments."""
+    if not isinstance(value, dict) or not value:
+        problems.append(f"{where}: {ORDINARY_APPOINTMENTS} must be a nonempty mapping")
+        return
+    for variable, row in value.items():
+        label = f"{where}: {ORDINARY_APPOINTMENTS}.{variable}"
+        if not isinstance(variable, str) or not ORDINARY_APPOINTMENT_VARIABLE_RE.fullmatch(variable):
+            problems.append(f"{label}: variable must be a snake_case id")
+        if not isinstance(row, dict) or set(row) != ORDINARY_APPOINTMENT_FIELDS:
+            problems.append(f"{label}: must carry exactly option and locus")
+            continue
+        option = row.get("option")
+        if not isinstance(option, str) or not ORDINARY_APPOINTMENT_OPTION_RE.fullmatch(option):
+            problems.append(f"{label}: option must be a kebab-case id")
+        locus = row.get("locus")
+        if not isinstance(locus, str) or not locus.strip():
+            problems.append(f"{label}: locus must name where the formulary prints it")
+
+
+def check_form_celebrated(where: str, value: object, problems: list[str]) -> None:
+    """Validate when a form is celebrated, as its own book states it."""
+    if not isinstance(value, dict) or set(value) != FORM_CELEBRATED_FIELDS:
+        problems.append(f"{where}: {FORM_CELEBRATED} must carry exactly when and locus")
+        return
+    if value.get("when") not in FORM_CELEBRATED_WHEN:
+        problems.append(
+            f"{where}: {FORM_CELEBRATED}.when must be one of {sorted(FORM_CELEBRATED_WHEN)}"
+        )
+    if not isinstance(value.get("locus"), str) or not value["locus"].strip():
+        problems.append(f"{where}: {FORM_CELEBRATED}.locus must be a nonempty string")
 
 
 def check_ordinary_frame(where: str, value: object, problems: list[str]) -> None:
@@ -1988,6 +2041,13 @@ def check_entry(
                     f"{where}: {TEXT_STATUS} says the proper Collect is unavailable "
                     "but the mass also carries a Collect"
                 )
+    if ORDINARY_APPOINTMENTS in entry:
+        check_ordinary_appointments(where, entry[ORDINARY_APPOINTMENTS], problems)
+        if section_kind == COMMON_KIND:
+            problems.append(
+                f"{where}: a Common cannot carry {ORDINARY_APPOINTMENTS}; the "
+                "appointment is printed by the day that takes it"
+            )
     if has_ordinary_frame:
         check_ordinary_frame(where, entry[ORDINARY_FRAME], problems)
         if section_kind == COMMON_KIND:
@@ -2110,12 +2170,24 @@ def check_entry(
                             "no forms and cannot identify a named form"
                         )
                 unknown = field_names(
-                    set(form) - {"id", "name", "propers", ORDINARY_FRAME}
+                    set(form) - {
+                        "id", "name", "propers", ORDINARY_FRAME,
+                        ORDINARY_APPOINTMENTS, FORM_CELEBRATED,
+                    }
                 )
                 if unknown:
                     problems.append(
                         f"{where}: form carries unknown field(s) {', '.join(unknown)}; "
-                        "it takes id, name, propers, ordinary_frame"
+                        "it takes id, name, propers, ordinary_frame, "
+                        "ordinary_appointments, celebrated"
+                    )
+                if ORDINARY_APPOINTMENTS in form:
+                    check_ordinary_appointments(
+                        f"{where}/form {form_id!r}", form[ORDINARY_APPOINTMENTS], problems
+                    )
+                if FORM_CELEBRATED in form:
+                    check_form_celebrated(
+                        f"{where}/form {form_id!r}", form[FORM_CELEBRATED], problems
                     )
                 if ORDINARY_FRAME in form:
                     check_ordinary_frame(

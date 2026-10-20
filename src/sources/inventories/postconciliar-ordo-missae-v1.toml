@@ -6,14 +6,14 @@ advisory = """
 A finding aid for the shape of the rite, and never a book to celebrate from. \
 Most of this Order of Mass is missing here, and every element says which of its \
 two texts is missing and why, because they are not missing for one reason. The \
-English side has six reasons. Twenty-five elements record a rights absence \
+English side has six reasons. Twenty-seven elements record a rights absence \
 rather than text on this distribution surface. Sixteen modelled elements \
 have official exemplars registered but no tracked payload this generator may \
 join to them. Six variable \
 texts belong to the Propers rather than this frame. Three elements have no fixed \
 words, three span parts with different availability, and six are prayers the \
 Priest says quietly for which no exact exemplar is held. The Latin side \
-has six reasons, and they run from the reform's own new matter, which is the \
+has seven reasons, and they run from the reform's own new matter, which is the \
 Holy See's and is withheld, to a rubric that has no words in any book. Where a \
 text is missing what stands in its place is the element's received Latin \
 incipit, which is a reference and not the prayer. THE LATIN THAT IS HERE IS NOT \
@@ -65,9 +65,9 @@ slot below anchors to an element whose number this file already carries.
 
 not_decided_here = [
   "Which Eucharistic Prayer a priest should use. The Missal offers four and the choice is his; the option this file marks default is simply the first the Missal prints.",
-  "Whether the Latin editio typica itself may be republished. That question is open, this file does not answer it, and nothing here depends on the answer. Of the fifty-nine elements, sixteen are empty in Latin because their target wording is the Holy See's post-1929 matter and is withheld; twenty-three are empty because of a witness or a modelling gap and no rightsholder has refused them; and twenty carry Latin that is not the editio typica's at all, but an 1861 lay printing's of the ancient prayer this Order received. No word of the editio typica is reproduced here, in any element.",
+  "Whether the Latin editio typica itself may be republished. That question is open, this file does not answer it, and nothing here depends on the answer. Of the sixty-one elements, sixteen are empty in Latin because their target wording is the Holy See's post-1929 matter and is withheld; twenty-three are empty because of a witness or a modelling gap and no rightsholder has refused them; two are a formulary's appointed Preface and dismissal, printed with that formulary, whose publication basis is unresolved; and twenty carry Latin that is not the editio typica's at all, but an 1861 lay printing's of the ancient prayer this Order received. No word of the editio typica is reproduced here, in any element.",
   "The Prefaces, of which the Missal prints fifty; they are proper to the day and belong to the propers layer, not to the invariant frame.",
-  "Where a proper stands that this file does not seat. The Sequence, the chants of the Paschal Triduum and the whole of the Good Friday liturgy are left unplaced; a page reading this file must show them in the Missal's own order beside the proper they follow rather than invent a seat for them.",
+  "Where a proper stands that this file does not seat. The chants of the Paschal Triduum and the whole of the Good Friday liturgy are left unplaced; a page reading this file must show them in the Missal's own order beside the proper they follow rather than invent a seat for them.",
   "Whether the fifteen elements carried here at the `uncollated` grade are word-identical with the editio typica. They are carried because the words themselves are attested in a public-domain witness this project has read at a named leaf, never because an older text has been silently relabelled as the target. That is not an established identity and it is not written down as one. At the Pax the study quotes the target versicle but does not establish the response at n. 127; eight Roman Canon children each name the untested extent or configuration that keeps the complete older row uncollated; and the other six state their own exact evidence bounds beside their words. The repository's verified 2002 Ordo evidence plus the official bounded 2008 variation list does not by itself establish all fifteen identities; settling them requires the missing word-level comparisons.",
   "Whether an antecedent witness's spelling should ever be brought toward the controlling edition's. It is not, anywhere here. The 1861 column prints justum for iustum, Jesu for Iesu, the ae- and oe-ligatures, Et expecto for Et exspecto, and at least one plain misprint - nodie for hodie - and every one of them is carried as printed and named in the element's own note. Smoothing them would manufacture a target witness this project has not established; carrying them silently under a heading naming the editio typica would attribute a lay printer's misprints to the Holy See. Naming them is the only honest third option and it is what this file does.",
 ]
@@ -183,7 +183,7 @@ what = "A prayer the Priest says quietly, for which this project holds no exact 
 
 # Six Latin reasons stand where one stood, because a single blanket key had
 # described rights refusals where many elements instead have witness or model gaps.
-# The 59 are classified element by element against the recovered divergence audit
+# The 59 (61 since the two appointed stand-ins of 2026-10-19) are classified element by element against the recovered divergence audit
 # and this repository's own collated study of this Order of Mass at
 # src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/
 # 00-order-of-mass and the active source records. Each key below covers exactly
@@ -218,6 +218,34 @@ what = "Seven elements combine inherited and changed matter inside a boundary wh
 key = "not-a-text"
 kind = "not-applicable"
 what = "These twelve elements carry no words of their own at this layer, so nothing is withheld and nothing is missing; the key exists because calling their emptiness a rights refusal would turn a modelling fact into a claim that the rite omits something. Eight are frame markers for an action or a chant - the entrance and the veneration of the altar, the first and second readings, the responsorial psalm, the Alleluia or Lenten acclamation, the homily, the universal prayer whose n. 20 is one line and no formulary, and the veneration and departure - and six of the twelve carry no Latin incipit at all. Four are propers of the day, whose text belongs to the propers layer and not to this invariant frame: the Collect, the Prayer over the Offerings, the Preface, and the Prayer after Communion. The Prefaces are the one row here with mixed matter underneath: the constitution's own two categories are taken from the more ancient tradition of the Roman Church or newly composed, the two must not be conflated in either direction, and whoever opens that corpus must classify prayer by prayer rather than treat it as one thing."
+
+[[absences]]
+key = "appointed-text-printed-with-formulary"
+kind = "rights-unresolved"
+what = "A text the day's formulary itself appoints and prints, not the invariant frame: on Pentecost Sunday, Mass during the Day, the Missal directs 'Praefatio: De mysterio Pentecostes' and prints that Preface with the formulary (artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944, artifact PDF p. 266), and directs the deacon or priest to dismiss the people with the paschal Ite, missa est with a double Alleluia and its doubled response (artifact PDF p. 267); read in the artifact's rendered text on 2026-10-19 against a local copy whose sha256 matched the record. The registered artifact is restricted, no public-domain antecedent has been collated against either text, and whether this surface may publish their words has not been established. Nothing is invented in their place and no other Preface or dismissal is shown instead."
+
+# ---------------------------------------------------------------- appointments
+#
+# Variables a DAY appoints (C2 gap G5, 2026-10-19). The formulary's own printed
+# direction is the mass index's `ordinary_appointments`. Neither variable has a
+# default: a day whose formulary records no appointment shows the generic
+# element, which carries no text and names the Missal's own range of options.
+
+[[appointments]]
+variable = "preface"
+name = "The Preface"
+what = "Which Preface the day's formulary appoints, where the formulary prints that direction and the mass index records it. Recorded so far only for Pentecost Sunday, Mass during the Day."
+options = [
+  { id = "pentecost", name = "Preface of the Mystery of Pentecost" },
+]
+
+[[appointments]]
+variable = "dismissal"
+name = "The Dismissal"
+what = "Which dismissal the day's formulary appoints, where it prints one. Recorded so far only for the paschal dismissal with a double Alleluia at Pentecost Sunday, Mass during the Day."
+options = [
+  { id = "paschal-double-alleluia", name = "Ite, missa est, with a double Alleluia" },
+]
 
 # ================================================================ A. Ritus initiales
 
@@ -691,6 +719,19 @@ missal_number = "nn. 33-82"
 absent_english = "proper-text-outside-ordinary"
 absent_latin = "not-a-text"
 note = "Fifty Prefaces, proper to the day, the season, or the Eucharistic Prayer itself. They are not carried in this layer."
+conditions = [{ kind = "unappointed", variable = "preface", basis = "The generic Preface element stands where no formulary appointment names the day's Preface; an appointed Preface stands in its place at praefatio-appointed." }]
+
+[[sections.elements]]
+key = "praefatio-appointed"
+kind = "prayer"
+speaker = "priest"
+name = "The Preface of the Mystery of Pentecost"
+latin_incipit = "Praefatio: De mysterio Pentecostes"
+missal_number = "proper to the formulary"
+absent_english = "approved-english-publication-restriction"
+absent_latin = "appointed-text-printed-with-formulary"
+note = "Appointed by the formulary of Pentecost Sunday, Mass during the Day, and printed with it (2002 artifact PDF p. 266). Its text is not carried here."
+conditions = [{ kind = "appointed", variable = "preface", options = ["pentecost"], basis = "Stands where the day's formulary appoints the Preface of the Mystery of Pentecost." }]
 
 [[sections.elements]]
 key = "sanctus"
@@ -1309,6 +1350,19 @@ missal_number = "n. 144"
 absent_latin = "element-spans-mixed-matter"
 note = "The 2008 emended reprint added three alternative formulas to Ite, missa est."
 absent_english = "approved-english-publication-restriction"
+conditions = [{ kind = "unappointed", variable = "dismissal", basis = "The generic dismissal element stands where no formulary appointment names the day's dismissal; an appointed dismissal stands in its place at dimissio-appointed." }]
+
+[[sections.elements]]
+key = "dimissio-appointed"
+kind = "dialogue"
+speaker = "all"
+name = "The paschal Dismissal, with a double Alleluia"
+latin_incipit = "Ite, missa est, alleluia, alleluia"
+missal_number = "n. 144, as the formulary appoints it"
+absent_english = "approved-english-publication-restriction"
+absent_latin = "appointed-text-printed-with-formulary"
+note = "Appointed by the formulary of Pentecost Sunday, Mass during the Day, with its doubled response (2002 artifact PDF p. 267). Its text is not carried here."
+conditions = [{ kind = "appointed", variable = "dismissal", options = ["paschal-double-alleluia"], basis = "Stands where the day's formulary appoints the paschal dismissal with a double Alleluia." }]
 
 [[sections.elements]]
 key = "recessus"
@@ -1362,10 +1416,16 @@ after = "liturgia-verbi/lectio-secunda"
 propers = ["Second Reading"]
 locus = "Ordo Missae n. 12"
 
-# The Sequence is deliberately absent from this slot. The Missal sings it
-# before the Alleluia, and the propers layer already prints it there, so a
-# proper that rides with the reading before it lands in the right place; naming
-# it here would seat it after the acclamation and be wrong.
+# The Sequence has its own seat, immediately BEFORE the acclamation element:
+# naming it in the acclamation slot below would seat it after the acclamation
+# and be wrong. Added 2026-10-19 (C2 gap G7): until then no slot claimed it, so
+# every form appointing a Sequence had to withhold the whole frame.
+[[slots]]
+key = "sequentia"
+before = "liturgia-verbi/acclamatio-ante-evangelium"
+propers = ["Sequence"]
+locus = "IGMR 64 (Institutio generalis Missalis Romani, editio typica tertia 2002), which says the Sequence, optional except on the days of Easter and Pentecost, is sung before the Alleluia; read on 2026-10-19 in the registered 2002 Latin General Instruction segment"
+
 [[slots]]
 key = "acclamatio-ante-evangelium"
 after = "liturgia-verbi/acclamatio-ante-evangelium"

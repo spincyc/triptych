@@ -9559,14 +9559,6 @@ sections:
       name: Easter Sunday of the Resurrection of the Lord
       registry: pc-s17
       season: easter
-      ordinary_frame:
-        applicability: unavailable
-        basis: >-
-          This source appoints the Sequence between the second reading and the
-          Gospel Acclamation. The postconciliar Order-of-Mass inventory has no
-          source-backed Sequence anchor, so a generic frame would invent its
-          place. The frame is withheld until that placement is established and
-          modeled; the Sequence remains present in source order.
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact page 85, printed page 31, n. 42.
@@ -11203,6 +11195,9 @@ sections:
       forms:
       - id: vigil
         name: Vigil Mass
+        celebrated:
+          when: evening-before
+          locus: "Missale Romanum, editio typica tertia 2002 (registered secondary digital reproduction), Dominica Pentecostes, Ad Missam in Vigilia, artifact PDF p. 265: this Mass is used on the evening of the Saturday, before or after First Vespers of the Sunday (read in its rendered text on 2026-10-19 against a local copy whose sha256 matched the registered record; cited, not quoted beyond its direction); Normae universales de anno liturgico et de calendario n. 11 (passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text, artifact p. 65): a proper vigil Mass is used on the evening of the preceding day; Ordo lectionum Missae 1981 n. 62, artifact p. 95, printed p. 41, the same timing"
         propers:
         - name: Entrance Antiphon
           incipit: Caritas Dei diffusa est
@@ -11371,15 +11366,9 @@ sections:
               source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - id: day
         name: Mass during the Day
-        ordinary_frame:
-          applicability: unavailable
-          basis: >-
-            This form appoints the Sequence between the second reading and the
-            Gospel Acclamation. The postconciliar Order-of-Mass inventory has
-            no source-backed Sequence anchor, so a generic frame would invent
-            its place. The frame is withheld until that placement is
-            established and modeled; the Sequence remains present in source
-            order.
+        ordinary_appointments:
+          preface: {option: pentecost, locus: "Missale Romanum, editio typica tertia 2002 (registered secondary digital reproduction), Dominica Pentecostes, Ad Missam in die, artifact PDF p. 266: 'Praefatio: De mysterio Pentecostes'; read in its rendered text on 2026-10-19 against a local copy whose sha256 matched the registered record; cited, not quoted beyond its direction"}
+          dismissal: {option: paschal-double-alleluia, locus: "Missale Romanum, editio typica tertia 2002 (registered secondary digital reproduction), Dominica Pentecostes, Ad Missam in die, artifact PDF p. 267: the people are dismissed with Ite, missa est and a double Alleluia, answered with a doubled Alleluia; read in its rendered text on 2026-10-19 against a local copy whose sha256 matched the registered record; cited, not quoted beyond its direction"}
         propers:
         - name: Entrance Antiphon
           ordinary_disposition:
@@ -21487,14 +21476,6 @@ sections:
       name: The Most Holy Body and Blood of Christ
       registry: pc-s27
       season: solemnities-of-the-lord
-      ordinary_frame:
-        applicability: unavailable
-        basis: >-
-          This source appoints the Sequence between the second reading and the
-          Gospel Acclamation. The postconciliar Order-of-Mass inventory has no
-          source-backed Sequence anchor, so a generic frame would invent its
-          place. The frame is withheld until that placement is established and
-          modeled; the Sequence remains present in source order.
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact pages 148-149, printed pages

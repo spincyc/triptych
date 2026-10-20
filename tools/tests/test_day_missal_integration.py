@@ -88,13 +88,13 @@ class DayMissalIntegrationTests(unittest.TestCase):
         post = json.loads((ROOT / "src/web/data/structure/ordinary/postconciliar.json").read_text())
         roman_elements = sum(len(section["elements"]) for section in roman["sections"])
         post_elements = sum(len(section["elements"]) for section in post["sections"])
-        self.assertEqual((len(roman["sections"]), roman_elements, len(roman["slots"])), (6, 189, 9))
-        self.assertEqual(len(roman["exclusions"]), 6)
+        self.assertEqual((len(roman["sections"]), roman_elements, len(roman["slots"])), (6, 194, 9))
+        self.assertEqual(len(roman["exclusions"]), 12)  # C2 G6, 2026-10-19
         self.assertEqual(
             {row["state"] for row in roman["exclusions"]},
             {"not-in-target-recension"},
         )
-        self.assertEqual((len(post["sections"]), post_elements, len(post["slots"])), (7, 59, 11))
+        self.assertEqual((len(post["sections"]), post_elements, len(post["slots"])), (7, 61, 12))  # C2 G5/G7, 2026-10-19
         self.assertEqual(roman.get("variants", []), [])
         groups = {row["group"]: row for row in post["variants"]}
         self.assertEqual(set(groups), {"penitential-act", "creed", "eucharistic-prayer"})

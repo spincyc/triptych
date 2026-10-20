@@ -558,6 +558,41 @@ closed and suppress the generic Ordinary. Do not mark a Mass `none` merely
 because blessings, processions, extra lessons, or another exceptional Proper
 structure surround or enter it.
 
+## A formulary may appoint the Ordinary's variables
+
+The Ordinary's appointable variables are the Preface, the Communicantes, the
+Hanc igitur and, in the postconciliar book, the dismissal. The owning Ordinary
+inventory under `src/sources/inventories/*-ordo-missae-v1.toml` declares them
+as `[[appointments]]`, with their options, dated spans and sourced defaults. A
+formulary records its own printed direction with `ordinary_appointments`, on the
+mass or on one of its `forms`:
+
+```yaml
+ordinary_appointments:
+  preface: {option: de-spiritu-sancto, locus: "printed page and line of the direction"}
+  communicantes: {option: pentecoste, locus: "..."}
+```
+
+Resolution takes the formulary's own direction first; a feria that borrows the
+formulary does not inherit it. Then it takes a dated span the book states, then
+the sourced default. Otherwise the variable is unappointed and its typed
+stand-in is shown. A common form never stands silently in a proper seat.
+`check-calendar-masses` refuses an option the Ordinary inventory does not
+declare, and `mass-ordinary` refuses a declared option that no row prints.
+
+## A form may be celebrated on the evening before
+
+```yaml
+celebrated:
+  when: evening-before
+  locus: "the Missal's rubric for the vigil Mass, with its registered locus"
+```
+
+A form with `celebrated.when: evening-before` is a vigil Mass for the evening
+of the preceding day. On the solemnity's own civil date the Day entrance does
+not offer it as a coequal choice, but an explicit `form=` still selects it.
+Placing it on the preceding civil date is not yet modelled.
+
 ## A rubric may appoint one text across a span of days
 
 The Missal appoints a text on a range of days as readily as on one. Under the

@@ -72,7 +72,7 @@ this repository and is recorded as an open item in the calendar's own \
 
 not_decided_here = [
   "What the 1920 typical edition prints. This is an 1861 witness to the same rite, not a transcription of the 1920 altar book, and the two are not collated element by element.",
-  "Which of the ten proper Prefaces a given day takes. That is the propers layer's question, and this file carries the Prefaces as the book prints them without appointing any.",
+  "Which Preface, Communicantes or Hanc igitur a given formulary takes. The formulary's own printed direction is the mass index's `ordinary_appointments`; this file declares only what the frame shows for each appointed option, the dated spans and defaults the book's own Canon headings state (`[[appointments]]`), and a typed stand-in where nothing establishes the appointment.",
   "Anything about how the rite is performed. The rubrics transcribed here are the book's own, in its own words, and are evidence of what it printed in 1861 and of nothing else.",
   "Whether any element's Latin is the wording the 1920 typical edition prints. The Latin here is this 1861 book's own, transcribed from its facing column; the departures that are known are named on the elements that carry them and in the advisory above, and no element-by-element collation against the 1920 book is asserted.",
   "Where a proper stands that the Ordo Missae does not place. A slot is declared only where the 1920 book states the position in terms; the oration super populum of the Lenten ferias, the chants of an Ember Saturday after the first, and the whole of Good Friday and the paschal Vigil are left unplaced, and a page that reads this file must show them in the missal's own order rather than guess at a seat for them.",
@@ -120,6 +120,136 @@ artifacts = [
 key = "no-facing-latin"
 kind = "witness-gap"
 what = "The 1861 book sets this block across the full measure in English only and prints no Latin text for it; the facing-column Latin of every block that has one is transcribed. The absence is the witness's, not a rights or effort gap. It holds for 83 elements - 53 rubrics, 21 English headings, 8 prayers (a-cunctis, munda-cor-meum, dominus-sit-in-corde-meo, per-evangelica-dicta, accendat-in-nobis, secreta-ii, postcommunio-mundet, et-famulos) and the form benedicat-vos-omnipotens-deus - and each was established by opening the leaf, not inferred: leaves n25-n56 were all read. Whether the 1920 Ordo Missae prints any of these is a separate target-edition question; the reason is scoped to this witness's page and says nothing about the rite."
+
+[[absences]]
+key = "appointment-not-established"
+kind = "model-gap"
+what = "Nothing in this repository yet establishes which text the day appoints here: no reading of the celebrated formulary's own direction is recorded, no dated span stated by the accepted pre-1955 witness covers the date, and no sourced default applies. The Preface is recorded so far only for the Pentecost Masses, inherited uncollated from the 1962 index and corroborated for those Masses by the Bonn reimpressio (artifact pp. 494-511). The stand-in replaces printing every Preface the 1861 witness holds, which claimed all of them were said."
+
+[[absences]]
+key = "preface-not-in-witness"
+kind = "witness-gap"
+what = "The day appoints a Preface the 1861 Cummiskey lay missal does not print (it knew eleven; the Sacred Heart, Christ the King, St Joseph and the Dead came later). No witness this frame joins carries it, and no other Preface is shown in its place."
+
+[[absences]]
+key = "proper-canon-form-not-held"
+kind = "witness-gap"
+what = "The day appoints a proper Communicantes or Hanc igitur, which the accepted pre-1955 witness prints in its Canon at printed pp. 336-337 (Bonn reimpressio artifact pp. 440-441), and no witness this frame joins prints it: the 1861 Cummiskey Canon carries only the common forms (canon-missae-en seq 8 and 10). The common form is NOT shown in the proper form's place."
+
+# ---------------------------------------------------------------- appointments
+#
+# The Ordinary variables a DAY appoints (C2 gap G5, 2026-10-19). Each element
+# that prints one option carries an `appointed` condition below; a day whose
+# appointment is not established shows a typed stand-in, never the common form.
+
+[[appointments]]
+variable = "preface"
+name = "The Preface"
+what = "Which Preface the day takes. The formulary's own printed direction is recorded in the roman-1962 mass index as `ordinary_appointments` and reaches this recension by its uncollated inheritance; for the Pentecost Masses the Bonn witness prints the same direction (artifact pp. 494-511). No dated span or default is declared, so a day whose formulary records none is unappointed."
+options = [
+  { id = "communis", name = "Common Preface" },
+  { id = "trinitate", name = "Preface of the Most Holy Trinity" },
+  { id = "nativitate", name = "Preface of the Nativity" },
+  { id = "epiphania", name = "Preface of the Epiphany" },
+  { id = "quadragesima", name = "Preface of Lent" },
+  { id = "sancta-cruce", name = "Preface of the Holy Cross" },
+  { id = "paschalis", name = "Paschal Preface" },
+  { id = "ascensione", name = "Preface of the Ascension" },
+  { id = "spiritu-sancto", name = "Preface of the Holy Spirit" },
+  { id = "beata-maria-virgine", name = "Preface of the Blessed Virgin Mary" },
+  { id = "apostolis", name = "Preface of the Apostles" },
+  { id = "sacro-corde", name = "Preface of the Sacred Heart" },
+  { id = "christo-rege", name = "Preface of Christ the King" },
+  { id = "sancto-ioseph", name = "Preface of St Joseph" },
+  { id = "defunctis", name = "Preface of the Dead" },
+]
+
+[[appointments]]
+variable = "communicantes"
+name = "Communicantes"
+what = "Which Communicantes the Canon says: the common form, or the proper form a formulary or the book's own dated heading appoints."
+options = [
+  { id = "common", name = "The common Communicantes" },
+  { id = "nativitate", name = "Communicantes of the Nativity" },
+  { id = "epiphania", name = "Communicantes of the Epiphany" },
+  { id = "pascha", name = "Communicantes of Easter" },
+  { id = "ascensione", name = "Communicantes of the Ascension" },
+  { id = "pentecoste", name = "Communicantes of Pentecost" },
+]
+default = "common"
+default_basis = "The accepted pre-1955 witness, the Bonn 2004 reimpressio of the 28th edition iuxta typicam (sha256 b676ce5c...), prints in its Canon (artifact PDF pp. 439-440, printed pp. 335-336; read at 200 dpi on 2026-10-19) the common Communicantes followed by its five seasonal inserts, each under its own heading: 'In Nativitate Domini et per Octavam', 'In Epiphania Domini et per Octavam', 'A Sabbato sancto usque ad Sabbatum in Albis', 'In Ascensione Domini et per Octavam', 'A Vigilia Pentecostes usque ad sequens Sabbatum inclusive'. Every date the dated spans below do not reach therefore says the common Communicantes. This is the witness's rule, applied to the 1962 formularies this recension inherits uncollated."
+
+[[appointments.spans]]
+option = "nativitate"
+from = "12-25"
+to = "01-01"
+locus = "Bonn Canon, 'In Nativitate Domini et per Octavam', printed p. 336, artifact PDF p. 440"
+
+[[appointments.spans]]
+option = "epiphania"
+from = "01-06"
+to = "01-13"
+locus = "Bonn Canon, 'In Epiphania Domini et per Octavam', printed p. 336, artifact PDF p. 440"
+
+[[appointments.spans]]
+option = "pascha"
+anchor = "easter"
+from = -1
+to = 6
+locus = "Bonn Canon, 'A Sabbato sancto usque ad Sabbatum in Albis', printed p. 336, artifact PDF p. 440"
+
+[[appointments.spans]]
+option = "ascensione"
+anchor = "ascension_thursday_form"
+from = 0
+to = 7
+locus = "Bonn Canon, 'In Ascensione Domini et per Octavam', printed p. 336, artifact PDF p. 440"
+
+[[appointments.spans]]
+option = "pentecoste"
+anchor = "pentecost"
+from = -1
+to = 6
+locus = "Bonn Canon, 'A Vigilia Pentecostes usque ad sequens Sabbatum inclusive', printed p. 336, artifact PDF p. 440; Holy Spirit Preface footer, printed p. 328, PDF 432"
+
+[[appointments.spans]]
+withheld = true
+anchor = "easter"
+from = -3
+to = -3
+locus = "Feria V in Cena Domini prints its own Communicantes and Hanc igitur in the Proprium (Bonn artifact PDF p. 309, printed p. 205, located by missal-expected-targets-v1 rows roman-pre-1955:temporal:slot:feria-5-in-cena-domini:*, not re-read here); the date is left unappointed rather than given the common form."
+
+[[appointments]]
+variable = "hanc_igitur"
+name = "Hanc igitur"
+what = "Which Hanc igitur the Canon says: the common form, or the proper Easter and Pentecost insertion its heading appoints."
+options = [
+  { id = "common", name = "The common Hanc igitur" },
+  { id = "pascha-pentecoste", name = "Hanc igitur of Easter and Pentecost" },
+]
+default = "common"
+default_basis = "The same Bonn Canon prints the common Hanc igitur and one insertion (artifact PDF p. 441, printed p. 337) headed 'A Sabbato sancto usque ad Sabbatum in Albis incl. et a Vigilia Pentecostes usque ad sequens Sabbatum incl. additur'; every other date says the common Hanc igitur."
+
+[[appointments.spans]]
+option = "pascha-pentecoste"
+anchor = "easter"
+from = -1
+to = 6
+locus = "Bonn Canon Hanc igitur insertion heading, printed p. 337, artifact PDF p. 441"
+
+[[appointments.spans]]
+option = "pascha-pentecoste"
+anchor = "pentecost"
+from = -1
+to = 6
+locus = "Bonn Canon Hanc igitur insertion heading, printed p. 337, artifact PDF p. 441"
+
+[[appointments.spans]]
+withheld = true
+anchor = "easter"
+from = -3
+to = -3
+locus = "Feria V in Cena Domini prints its own Communicantes and Hanc igitur in the Proprium (Bonn artifact PDF p. 309, printed p. 205, located by missal-expected-targets-v1 rows roman-pre-1955:temporal:slot:feria-5-in-cena-domini:*, not re-read here); the date is left unappointed rather than given the common form."
 
 # ---------------------------------------------------------------- sections
 
@@ -205,6 +335,26 @@ element = "suscipiat-dominus"
 lang = "la"
 parts = [{ key = "suscipiat-dominus", seq = [53], speaker = "server", printed_marker = "R." }]
 
+[[sections.element_conditions]]
+element = "a-cunctis"
+conditions = [{ kind = "include-when-any", predicates = ["a-cunctis-season"], basis = "The seasonal second oration A cunctis with its Secret and Postcommunion. Established as NOT said outside the windows its rubrics name, the union of the 1861 witness's own rubrics (ordinarium-oblatio-en seq 1 and 54, ordinarium-conclusio-en seq 6: Candlemas to Passion Sunday, the third Sunday after Pentecost to Advent) and the Bonn reimpressio's Additiones et Variationes in Rubricis Missalis tit. VI n. 1 and 3) (artifact p. 56*, read at 200 dpi on 2026-10-19: 3 February to the Tuesday after Quinquagesima, the first Sunday after Pentecost to the Saturday before Advent). Inside a window it is said only in semidouble and simple offices (RG IX n. 1; tit. VI n. 1), and the rank of the day is not held here, so it stays unresolved there. Added 2026-10-19 (C2 gap G5)." }]
+
+[[sections.element_conditions]]
+element = "rubrica-collecta-concede"
+conditions = [{ kind = "include-when-any", predicates = ["concede-season"], basis = "The paschal substitution Concede for the seasonal orations. Established as NOT said from Passion Sunday to Saturday in albis and through the octave of Pentecost, where a single oration contra persecutores is said instead (Bonn Additiones tit. VI n. 1 and 6), artifact pp. 56*-57*), and on the vigil of Pentecost, which omits the seasonal orations (tit. VI n. 1; Proprium printed p. 399). Elsewhere the rank of the day decides and it stays unresolved. Added 2026-10-19 (C2 gap G5)." }]
+
+[[sections.element_conditions]]
+element = "rubrica-secreta"
+conditions = [{ kind = "include-when-any", predicates = ["a-cunctis-season"], basis = "The seasonal second oration A cunctis with its Secret and Postcommunion. Established as NOT said outside the windows its rubrics name, the union of the 1861 witness's own rubrics (ordinarium-oblatio-en seq 1 and 54, ordinarium-conclusio-en seq 6: Candlemas to Passion Sunday, the third Sunday after Pentecost to Advent) and the Bonn reimpressio's Additiones et Variationes in Rubricis Missalis tit. VI n. 1 and 3) (artifact p. 56*, read at 200 dpi on 2026-10-19: 3 February to the Tuesday after Quinquagesima, the first Sunday after Pentecost to the Saturday before Advent). Inside a window it is said only in semidouble and simple offices (RG IX n. 1; tit. VI n. 1), and the rank of the day is not held here, so it stays unresolved there. Added 2026-10-19 (C2 gap G5)." }]
+
+[[sections.element_conditions]]
+element = "secreta-ii"
+conditions = [{ kind = "include-when-any", predicates = ["a-cunctis-season"], basis = "The seasonal second oration A cunctis with its Secret and Postcommunion. Established as NOT said outside the windows its rubrics name, the union of the 1861 witness's own rubrics (ordinarium-oblatio-en seq 1 and 54, ordinarium-conclusio-en seq 6: Candlemas to Passion Sunday, the third Sunday after Pentecost to Advent) and the Bonn reimpressio's Additiones et Variationes in Rubricis Missalis tit. VI n. 1 and 3) (artifact p. 56*, read at 200 dpi on 2026-10-19: 3 February to the Tuesday after Quinquagesima, the first Sunday after Pentecost to the Saturday before Advent). Inside a window it is said only in semidouble and simple offices (RG IX n. 1; tit. VI n. 1), and the rank of the day is not held here, so it stays unresolved there. Added 2026-10-19 (C2 gap G5)." }]
+
+[[sections.element_conditions]]
+element = "rubrica-secreta-concede"
+conditions = [{ kind = "include-when-any", predicates = ["concede-season"], basis = "The paschal substitution Concede for the seasonal orations. Established as NOT said from Passion Sunday to Saturday in albis and through the octave of Pentecost, where a single oration contra persecutores is said instead (Bonn Additiones tit. VI n. 1 and 6), artifact pp. 56*-57*), and on the vigil of Pentecost, which omits the seasonal orations (tit. VI n. 1; Proprium printed p. 399). Elsewhere the rank of the day decides and it stays unresolved. Added 2026-10-19 (C2 gap G5)." }]
+
 [[sections]]
 key = "praefatio"
 name = "The Prefaces"
@@ -223,6 +373,139 @@ relation = "antecedent"
 collation = "uncollated"
 note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column printed by the 1861 Cummiskey lay hand missal, not the text of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
 
+[[sections.element_conditions]]
+element = "praefatio-communis-heading"
+conditions = [{ kind = "appointed", variable = "preface", options = ["communis"], basis = "This row prints the Common Preface; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-communis"
+conditions = [{ kind = "appointed", variable = "preface", options = ["communis"], basis = "This row prints the Common Preface; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-ss-trinitate-heading"
+conditions = [{ kind = "appointed", variable = "preface", options = ["trinitate"], basis = "This row prints the Preface of the Most Holy Trinity; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-ss-trinitate"
+conditions = [{ kind = "appointed", variable = "preface", options = ["trinitate"], basis = "This row prints the Preface of the Most Holy Trinity; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-nativitate-heading"
+conditions = [{ kind = "appointed", variable = "preface", options = ["nativitate"], basis = "This row prints the Preface of the Nativity; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-nativitate"
+conditions = [{ kind = "appointed", variable = "preface", options = ["nativitate"], basis = "This row prints the Preface of the Nativity; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-epiphania-heading"
+conditions = [{ kind = "appointed", variable = "preface", options = ["epiphania"], basis = "This row prints the Preface of the Epiphany; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-epiphania"
+conditions = [{ kind = "appointed", variable = "preface", options = ["epiphania"], basis = "This row prints the Preface of the Epiphany; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-quadragesima-heading"
+conditions = [{ kind = "appointed", variable = "preface", options = ["quadragesima"], basis = "This row prints the Preface of Lent; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-quadragesima"
+conditions = [{ kind = "appointed", variable = "preface", options = ["quadragesima"], basis = "This row prints the Preface of Lent; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-sancta-cruce-heading"
+conditions = [{ kind = "appointed", variable = "preface", options = ["sancta-cruce"], basis = "This row prints the Preface of the Holy Cross; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-sancta-cruce"
+conditions = [{ kind = "appointed", variable = "preface", options = ["sancta-cruce"], basis = "This row prints the Preface of the Holy Cross; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-paschalis-heading"
+conditions = [{ kind = "appointed", variable = "preface", options = ["paschalis"], basis = "This row prints the Paschal Preface; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-paschalis"
+conditions = [{ kind = "appointed", variable = "preface", options = ["paschalis"], basis = "This row prints the Paschal Preface; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-ascensione-heading"
+conditions = [{ kind = "appointed", variable = "preface", options = ["ascensione"], basis = "This row prints the Preface of the Ascension; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-ascensione"
+conditions = [{ kind = "appointed", variable = "preface", options = ["ascensione"], basis = "This row prints the Preface of the Ascension; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-spiritu-sancto-heading"
+conditions = [{ kind = "appointed", variable = "preface", options = ["spiritu-sancto"], basis = "This row prints the Preface of the Holy Spirit; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-spiritu-sancto"
+conditions = [{ kind = "appointed", variable = "preface", options = ["spiritu-sancto"], basis = "This row prints the Preface of the Holy Spirit; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-beata-maria-virgine-heading"
+conditions = [{ kind = "appointed", variable = "preface", options = ["beata-maria-virgine"], basis = "This row prints the Preface of the Blessed Virgin Mary; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-beata-maria-virgine"
+conditions = [{ kind = "appointed", variable = "preface", options = ["beata-maria-virgine"], basis = "This row prints the Preface of the Blessed Virgin Mary; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "rubrica-nota-nominis"
+conditions = [{ kind = "appointed", variable = "preface", options = ["beata-maria-virgine"], basis = "This row prints the Preface of the Blessed Virgin Mary; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-apostolis-heading"
+conditions = [{ kind = "appointed", variable = "preface", options = ["apostolis"], basis = "This row prints the Preface of the Apostles; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "praefatio-de-apostolis"
+conditions = [{ kind = "appointed", variable = "preface", options = ["apostolis"], basis = "This row prints the Preface of the Apostles; it stands only when the day appoints that Preface." }]
+
+[[sections.element_conditions]]
+element = "rubrica-nota-asterisci"
+conditions = [{ kind = "appointed", variable = "preface", options = ["trinitate", "nativitate", "epiphania", "quadragesima", "sancta-cruce", "paschalis", "ascensione", "spiritu-sancto", "beata-maria-virgine", "apostolis"], basis = "The 1861 book's own note that an asterisk marks where a proper Preface's clause joins the common Preface (praefationes-en seq 2); it stands with every proper Preface this witness prints." }]
+
+[[sections.element_conditions]]
+element = "rubrica-nota-obeli"
+conditions = [{ kind = "appointed", variable = "preface", options = ["nativitate", "epiphania", "ascensione", "paschalis"], basis = "The 1861 book's own note that a Preface marked with a dagger takes the Christmas conclusion (praefationes-en seq 8); it stands with the four Prefaces that end at a dagger." }]
+
+[[sections.element_conditions]]
+element = "sanctus"
+conditions = [{ kind = "appointed", variable = "preface", options = ["communis"], or_unappointed = true, basis = "The 1861 book prints the Sanctus once, after the common Preface (praefationes-en seq 4). At that place it stands with the common Preface and on a day whose Preface is not established, since whatever Preface is said the Sanctus follows it; after a proper Preface it stands at praefatio/sanctus-post-praefationem." }]
+
+[[sections.inserted]]
+key = "praefatio-diei"
+before = "praefatio-communis-heading"
+kind = "rubric"
+name = "The Preface of the day — appointment not established"
+absent_english = "appointment-not-established"
+absent_latin = "appointment-not-established"
+note = "Stands where the day's Preface would, on a day whose Preface no formulary appointment, dated span or default in this repository establishes. The witness's Prefaces are not printed here in its place: printing all of them would claim every one is said."
+conditions = [{ kind = "unappointed", variable = "preface", basis = "Shown only when nothing appoints the day's Preface." }]
+
+[[sections.inserted]]
+key = "praefatio-non-in-teste"
+after = "rubrica-nota-nominis"
+kind = "prayer"
+speaker = "priest"
+name = "The appointed Preface, which this witness does not print"
+absent_english = "preface-not-in-witness"
+absent_latin = "preface-not-in-witness"
+conditions = [{ kind = "appointed", variable = "preface", options = ["sacro-corde", "christo-rege", "sancto-ioseph", "defunctis"], basis = "Stands for an appointed Preface the 1861 witness does not print." }]
+
+[[sections.inserted]]
+key = "sanctus-post-praefationem"
+after = "rubrica-nota-nominis"
+kind = "prayer"
+text_of = "sanctus"
+name = "Sanctus"
+note = "The 1861 book prints the Sanctus once, after the common Preface, and ends every proper Preface with the cue Holy, &c. (Latin Sanctus, &c.). This occurrence resolves that printed cue to the same printed row, praefationes-en seq 4 at p. xxviii; it adds no words."
+conditions = [{ kind = "appointed", variable = "preface", options = ["trinitate", "nativitate", "epiphania", "quadragesima", "sancta-cruce", "paschalis", "ascensione", "spiritu-sancto", "beata-maria-virgine", "apostolis", "sacro-corde", "christo-rege", "sancto-ioseph", "defunctis"], basis = "Stands after every Preface other than the common one, where the book's own cue Holy, &c. calls for the Sanctus." }]
+
 [[sections]]
 key = "canon"
 name = "The Canon of the Mass"
@@ -240,6 +523,94 @@ note = "ANTECEDENT, NOT THE TARGET EDITION. This English is the anonymous transl
 relation = "antecedent"
 collation = "uncollated"
 note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column printed by the 1861 Cummiskey lay hand missal, not the text of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
+
+[[sections.element_conditions]]
+element = "communicantes"
+conditions = [{ kind = "appointed", variable = "communicantes", options = ["common"], basis = "The common Communicantes stands only where the day appoints it; a day appointing a proper Communicantes shows that form or its typed absence instead." }]
+
+[[sections.element_conditions]]
+element = "hanc-igitur"
+conditions = [{ kind = "appointed", variable = "hanc_igitur", options = ["common"], basis = "The common Hanc igitur stands only where the day appoints it; a day appointing the proper Hanc igitur shows that form or its typed absence instead." }]
+
+[[sections.inserted]]
+key = "communicantes-nativitate"
+before = "communicantes"
+kind = "prayer"
+speaker = "priest"
+name = "Communicantes — the proper form of the Nativity"
+absent_english = "proper-canon-form-not-held"
+absent_latin = "proper-canon-form-not-held"
+conditions = [{ kind = "appointed", variable = "communicantes", options = ["nativitate"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
+
+[[sections.inserted]]
+key = "communicantes-epiphania"
+before = "communicantes"
+kind = "prayer"
+speaker = "priest"
+name = "Communicantes — the proper form of the Epiphany"
+absent_english = "proper-canon-form-not-held"
+absent_latin = "proper-canon-form-not-held"
+conditions = [{ kind = "appointed", variable = "communicantes", options = ["epiphania"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
+
+[[sections.inserted]]
+key = "communicantes-pascha"
+before = "communicantes"
+kind = "prayer"
+speaker = "priest"
+name = "Communicantes — the proper form of Easter"
+absent_english = "proper-canon-form-not-held"
+absent_latin = "proper-canon-form-not-held"
+conditions = [{ kind = "appointed", variable = "communicantes", options = ["pascha"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
+
+[[sections.inserted]]
+key = "communicantes-ascensione"
+before = "communicantes"
+kind = "prayer"
+speaker = "priest"
+name = "Communicantes — the proper form of the Ascension"
+absent_english = "proper-canon-form-not-held"
+absent_latin = "proper-canon-form-not-held"
+conditions = [{ kind = "appointed", variable = "communicantes", options = ["ascensione"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
+
+[[sections.inserted]]
+key = "communicantes-pentecoste"
+before = "communicantes"
+kind = "prayer"
+speaker = "priest"
+name = "Communicantes — the proper form of Pentecost"
+absent_english = "proper-canon-form-not-held"
+absent_latin = "proper-canon-form-not-held"
+conditions = [{ kind = "appointed", variable = "communicantes", options = ["pentecoste"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
+
+[[sections.inserted]]
+key = "communicantes-diei"
+before = "communicantes"
+kind = "prayer"
+speaker = "priest"
+name = "Communicantes — appointment not established"
+absent_english = "appointment-not-established"
+absent_latin = "appointment-not-established"
+conditions = [{ kind = "unappointed", variable = "communicantes", basis = "Shown only on a date a withheld span leaves unappointed." }]
+
+[[sections.inserted]]
+key = "hanc-igitur-pascha-pentecoste"
+before = "hanc-igitur"
+kind = "prayer"
+speaker = "priest"
+name = "Hanc igitur — the proper form of Easter and Pentecost"
+absent_english = "proper-canon-form-not-held"
+absent_latin = "proper-canon-form-not-held"
+conditions = [{ kind = "appointed", variable = "hanc_igitur", options = ["pascha-pentecoste"], basis = "Stands where the day appoints the proper Hanc igitur, in place of the common form." }]
+
+[[sections.inserted]]
+key = "hanc-igitur-diei"
+before = "hanc-igitur"
+kind = "prayer"
+speaker = "priest"
+name = "Hanc igitur — appointment not established"
+absent_english = "appointment-not-established"
+absent_latin = "appointment-not-established"
+conditions = [{ kind = "unappointed", variable = "hanc_igitur", basis = "Shown only on a date a withheld span leaves unappointed." }]
 
 [[sections]]
 key = "communio"
@@ -287,6 +658,18 @@ element = "deo-gratias"
 lang = "la"
 parts = [{ key = "deo-gratias", seq = [23], speaker = "server", printed_marker = "R." }]
 
+[[sections.element_conditions]]
+element = "rubrica-postcommunio-secunda"
+conditions = [{ kind = "include-when-any", predicates = ["a-cunctis-season"], basis = "The seasonal second oration A cunctis with its Secret and Postcommunion. Established as NOT said outside the windows its rubrics name, the union of the 1861 witness's own rubrics (ordinarium-oblatio-en seq 1 and 54, ordinarium-conclusio-en seq 6: Candlemas to Passion Sunday, the third Sunday after Pentecost to Advent) and the Bonn reimpressio's Additiones et Variationes in Rubricis Missalis tit. VI n. 1 and 3) (artifact p. 56*, read at 200 dpi on 2026-10-19: 3 February to the Tuesday after Quinquagesima, the first Sunday after Pentecost to the Saturday before Advent). Inside a window it is said only in semidouble and simple offices (RG IX n. 1; tit. VI n. 1), and the rank of the day is not held here, so it stays unresolved there. Added 2026-10-19 (C2 gap G5)." }]
+
+[[sections.element_conditions]]
+element = "postcommunio-mundet"
+conditions = [{ kind = "include-when-any", predicates = ["a-cunctis-season"], basis = "The seasonal second oration A cunctis with its Secret and Postcommunion. Established as NOT said outside the windows its rubrics name, the union of the 1861 witness's own rubrics (ordinarium-oblatio-en seq 1 and 54, ordinarium-conclusio-en seq 6: Candlemas to Passion Sunday, the third Sunday after Pentecost to Advent) and the Bonn reimpressio's Additiones et Variationes in Rubricis Missalis tit. VI n. 1 and 3) (artifact p. 56*, read at 200 dpi on 2026-10-19: 3 February to the Tuesday after Quinquagesima, the first Sunday after Pentecost to the Saturday before Advent). Inside a window it is said only in semidouble and simple offices (RG IX n. 1; tit. VI n. 1), and the rank of the day is not held here, so it stays unresolved there. Added 2026-10-19 (C2 gap G5)." }]
+
+[[sections.element_conditions]]
+element = "rubrica-postcommunio-paschalis"
+conditions = [{ kind = "include-when-any", predicates = ["concede-season"], basis = "The paschal substitution Concede for the seasonal orations. Established as NOT said from Passion Sunday to Saturday in albis and through the octave of Pentecost, where a single oration contra persecutores is said instead (Bonn Additiones tit. VI n. 1 and 6), artifact pp. 56*-57*), and on the vigil of Pentecost, which omits the seasonal orations (tit. VI n. 1; Proprium printed p. 399). Elsewhere the rank of the day decides and it stays unresolved. Added 2026-10-19 (C2 gap G5)." }]
+
 # ---------------------------------------------------------------- slots
 #
 # A slot is a seat in this frame for a proper of the day. It names one element
@@ -303,6 +686,12 @@ parts = [{ key = "deo-gratias", seq = [23], speaker = "server", printed_marker =
 # The slots are declared in the order the rite runs, and the generator refuses
 # a file whose slots run backwards against the elements they anchor to. So the
 # order below is not decoration: it is checked against the artifacts.
+#
+# The Secret and Postcommunion seats anchor on the rows just before the
+# seasonal second-oration rubrics (2026-10-19, C2 gap G5): those rubrics now
+# stand only on the days their windows admit, and a seat anchored on a row
+# that is not shown would lose the day's own Secret or Postcommunion. The
+# position is unchanged.
 
 [[slots]]
 key = "introitus"
@@ -360,7 +749,7 @@ locus = "Ritus servandus VII, 1"
 
 [[slots]]
 key = "secreta"
-before = "oblatio/rubrica-secreta"
+after = "oblatio/suscipiat-dominus"
 propers = ["Secret"]
 qualified = true
 locus = "Ritus servandus VII, 7, which names `orationem, vel orationes secretas` and locates the first and the last at the one place"
@@ -373,7 +762,7 @@ locus = "Ritus servandus XI, 1"
 
 [[slots]]
 key = "postcommunio"
-before = "conclusio/rubrica-postcommunio-secunda"
+after = "conclusio/dominus-vobiscum-ante-postcommunionem"
 propers = ["Postcommunion"]
 qualified = true
 locus = "Ritus servandus XI, 1, which appoints the prayers after Communion `eisdem modo, numero et ordine` as the orations at the beginning of Mass"

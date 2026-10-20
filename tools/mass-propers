@@ -475,6 +475,36 @@ def public_text_status(status: dict) -> dict:
     }
 
 
+def public_ordinary_appointments(value: object) -> dict:
+    """Project a formulary's printed Ordinary-variable appointments exactly.
+
+    The browser seats the Preface, Communicantes and Hanc igitur from these
+    rows, so a malformed row fails here rather than seating nothing.
+    """
+    if not isinstance(value, dict) or not value:
+        raise ValueError("ordinary_appointments must be a nonempty mapping")
+    projected = {}
+    for variable in sorted(value):
+        row = value[variable]
+        if not isinstance(row, dict) or set(row) != {"option", "locus"}:
+            raise ValueError(
+                f"ordinary_appointments.{variable} must carry exactly option and locus"
+            )
+        if not all(isinstance(row[key], str) and row[key].strip() for key in row):
+            raise ValueError(f"ordinary_appointments.{variable} fields must be nonempty")
+        projected[str(variable)] = {"option": row["option"], "locus": row["locus"]}
+    return projected
+
+
+def public_form_celebrated(value: object) -> dict:
+    """Project when a form is celebrated, as its own book states it."""
+    if not isinstance(value, dict) or set(value) != {"when", "locus"} or \
+            value.get("when") != "evening-before" or \
+            not isinstance(value.get("locus"), str) or not value["locus"].strip():
+        raise ValueError("celebrated must carry when = evening-before and a locus")
+    return {"when": value["when"], "locus": value["locus"]}
+
+
 def public_ordinary_frame(value: object) -> dict:
     """Project one explicit Ordinary frame without weakening its identity."""
 
@@ -2857,6 +2887,10 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
         # unchanged so the adapter can fail closed on its applicability.
         if "ordinary_frame" in mass:
             built["ordinary_frame"] = public_ordinary_frame(mass["ordinary_frame"])
+        if "ordinary_appointments" in mass:
+            built["ordinary_appointments"] = public_ordinary_appointments(
+                mass["ordinary_appointments"]
+            )
         source_forms = [
             form for form in (mass.get("forms") or []) if isinstance(form, dict)
         ]
@@ -2877,6 +2911,12 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                     built_form["ordinary_frame"] = public_ordinary_frame(
                         form["ordinary_frame"]
                     )
+                if "ordinary_appointments" in form:
+                    built_form["ordinary_appointments"] = public_ordinary_appointments(
+                        form["ordinary_appointments"]
+                    )
+                if "celebrated" in form:
+                    built_form["celebrated"] = public_form_celebrated(form["celebrated"])
                 built["forms"].append(built_form)
         # How the recension reached this mass, where the calendar is one.
         # `_calendars._stamp` puts this on every entry of a recension precisely
