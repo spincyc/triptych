@@ -2,7 +2,8 @@ appointed_text_completeness = "complete"
 
 # Christ the King: context and text inventory
 
-Resolved afresh 20 October 2026 for the requested occurrence of 25 October 2026.
+Resolved afresh 20 October 2026 for the requested occurrence of 25 October 2026,
+with a second independent appointment and source-plan check on the same date.
 The canonical owner is this GPT 1962 proper leaf, permanent identity **F01**,
 calendar key `christ-the-king`. The intended audience is an adult parish
 assembly. No preliminary research handoff was supplied.
@@ -48,9 +49,9 @@ entry for Sunday 25 October, was independently opened and read on 20 October
 HTML snapshot was independently rehashed and its October 25 entry reread
 (169,687 bytes; SHA-256
 `4eb6a52bd3e6b2b5d294035133c01b14dc1dc0ca42ac9953e167e443a991af04`).
-A fresh complete retrieval on 20 October independently confirms the same entry
-(169,686 bytes; SHA-256
-`a8b61f142291b4e5c21f0c5b6f3d63406e238b7a972d648ac701165257b25c26`).
+A fresh complete retrieval for this resolution on 20 October independently
+confirms the same entry (169,685 bytes; SHA-256
+`674571518b0e1431bf5e9169f4194da5d47e1b5bbb169a5535683b524a716e6e`).
 The two deliveries are distinct artifacts; the existing binding remains to
 the registered snapshot, not silently to the new bytes. Its October section
 is the controlling dated corroboration; the mutable page also contains
@@ -93,7 +94,8 @@ The additional inspected controls are General Rubrics 115(c), printed p. XIX
 (PDF 17), on the three prayers' conclusions; 120(a), on white for this feast
 of the Lord; and General Rubrics of the Missal 427–432, printed p. XXXI
 (PDF 29), on the Introit frame and Gloria. The recorded rule for this feast's
-Gloria is 431(b), for festal Masses. The antiphon's repetition after the psalm
+Gloria is 431(a), for festal Masses; the fresh page-image check corrects the
+earlier context record's erroneous 431(b) locator. The antiphon's repetition after the psalm
 verse and doxology follows 427. These appointment checks do not establish that a complete
 publication transcription has been verified.
 
@@ -167,6 +169,42 @@ in the existing source-library records on 20 October before any new source
 acquisition. Their earlier verification labels do not substitute for the
 research stage's direct examination.
 
+### Latin first-printing witness
+
+The registered *Acta Apostolicae Sedis* 17 (1925), fascicle 15,
+contains the Mass at printed pp. 666–668. Its source owner is
+`src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-17-1925/`;
+the exact artifact is
+`artifact.holy-see.acta-apostolicae-sedis.volume-17-1925.ia-microfilm-issue-15-pdf-9cb9e63b`.
+The complete 141-page fascicle already acquired was independently authenticated
+at 30,625,498 bytes, SHA-256
+`9cb9e63b61fdf9ef317354d736d73f49bc5fa0727fc9715ca79e7b4b7b7ed56a`.
+Its [microfilm scan](https://archive.org/download/sim_acta-apostolicae-sedis_1925-12-28_17_15/sim_acta-apostolicae-sedis_1925-12-28_17_15.pdf)
+is distinct from the Holy See's OCR-only reconstruction identified in the
+edition record. Newly rendered images of one-based PDF pages 78–80 were opened
+and inspected on 20 October for the following source-plan boundaries:
+
+| Elements or boundary | 1925 printed page | One-based PDF page |
+| --- | --- | --- |
+| `Ad Missam` heading; Introit; Collect; Epistle opening through the page break | 666 | 78 |
+| Epistle conclusion; Gradual; ordinary Alleluia; inactive Tract; Paschal Alleluia; Gospel; Credo indication; Offertory; Secret | 667 | 79 |
+| Proper Preface; Communion; Postcommunion; following Martyrology section and decree | 668 | 80 |
+
+The artifact record supplies an affirmative U.S. public-domain basis for this
+1925 printing. It is the first-printing Latin comparison route for the research
+stage, alongside the independently sourced historical English below. The
+present inspection establishes that the elements are there, not a completed
+word-for-word collation or a new transcription. Research must collate every
+adopted form against the governing 1962 pages and preserve differences in
+orthography, abbreviation, framing, and rubrics. In particular, the 1925
+Sunday-commemoration instructions differ from the 1962 exclusions; they must
+not govern the dated occurrence. Its Preface conclusion is abbreviated and
+must not be expanded from memory. The research binding and review seal must
+reach this exact artifact and its controlling rights evidence before adopting
+its wording. No acceptance from another provider's study is inherited.
+
+### Historical English and complete-context reading
+
 | Elements | Independent study-text route | Remaining verification |
 | --- | --- | --- |
 | Introit, Gradual, Alleluia, Offertory and Communion | Registered Douay–Rheims/Challoner American 1899 Bible, Psalms, Daniel and Apocalypse artifacts already named in `source-bindings.toml`; compare the exact scriptural loci in the inventory above. | Check Vulgate verse numbering, the Psalm 71 title/verse offset, the Introit's composite selection, and the Communion's selected clauses from both verses. Bible quotations must be identified as biblical study text rather than a newly rendered translation of the Missal's adaptations. |
@@ -222,8 +260,11 @@ full-text record; preparatory work provides no native acceptance:
    seasonal branches from the authenticated 1962 Missal. Preserve the original
    source pull and separately verified source record required by the profile,
    with actual inspection outcomes and unresolved discrepancies.
-2. Verify the historical English and any Latin antecedent used against their
-   identified edition and controlling rights evidence. The registered
+2. Verify the historical English and Latin antecedent against their
+   identified edition and controlling rights evidence. The registered 1925
+   AAS fascicle supplies the Latin route at printed pp. 666–668 (PDF 78–80);
+   its abbreviated framing and older commemoration instructions require
+   explicit comparison with the 1962 edition. The registered
    Lasance/Walsh revised 1945 witness is a comparison route at printed
    pp. 1257–1260 (one-based PDF 1258–1261) and Preface pp. 813–814
    (PDF 812–813). Its earlier commemoration rubrics do not govern 1962.
