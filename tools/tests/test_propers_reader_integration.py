@@ -58,6 +58,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             "reader-state-adapters.js", "propers-reader.js", "propers-reader.css",
             "reader-instrument.css", "reader-comparison.js", "reader-compare-view.js",
             "reader-compare-view.css", "propers-compare.js", "proper-search-controller.js",
+            "reader-study-view.js", "reader-study-view.css", "propers-study.js",
         ):
             self.assertIn(asset, html)
 
@@ -246,8 +247,8 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             self.assertIn(f'data-reader-action="{action}"', source)
             self.assertIn(f'class="action-label">{label}</span>', source)
         self.assertIn('data-mode="read"', source)
-        self.assertEqual(source.count('aria-disabled="true"'), 1)
-        self.assertEqual(source.count(' disabled>'), 1)
+        self.assertEqual(source.count('aria-disabled="true"'), 0)
+        self.assertEqual(source.count(' disabled>'), 0)
         for name, description in (
             ("Read", "Continuous reading of the appointed texts."),
             ("Missal", "Continuous Ordinary with appointed propers in place."),

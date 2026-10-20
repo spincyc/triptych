@@ -631,22 +631,25 @@ async function testSemanticLocations(cdp, base) {
   assert.equal(new URLSearchParams(invalid.hash.slice(1)).get('location'), invalidLocation);
 }
 
-async function testDeferredModeContract(cdp, base) {
+async function testStudyModeContract(cdp, base) {
   await navigate(cdp, base, state({ date: '2026-08-02', mass: 'ot-18', mode: 'study' }));
   const study = await snapshot(cdp);
-  assert.equal(study.outcome, 'deferred');
+  assert.equal(study.outcome, 'unresolved');
+  assert.ok(study.semanticLocations.length > 0);
+  assert.ok(await evaluate(cdp, `Boolean(document.querySelector('.study-overview .study-calendar'))`));
   const studyParams = new URLSearchParams(study.hash.slice(1));
   assert.equal(studyParams.get('mode'), 'study');
   assert.equal(studyParams.get('ordinary'), '0');
   assert.equal(studyParams.get('ordinary-lang'), null);
   await navigate(cdp, base, study.hash);
-  assert.equal((await snapshot(cdp)).outcome, 'deferred');
+  assert.equal((await snapshot(cdp)).outcome, 'unresolved');
 
   await navigate(cdp, base, state({
     date: '2026-08-02', mass: 'ot-18', mode: 'study', ordinary: '1'
   }));
   const studyOrdinary = await snapshot(cdp);
   assert.equal(studyOrdinary.outcome, 'deferred');
+  assert.equal(await evaluate(cdp, `document.querySelectorAll('.study-overview, .study-event').length`), 0);
   const studyOrdinaryParams = new URLSearchParams(studyOrdinary.hash.slice(1));
   assert.equal(studyOrdinaryParams.get('ordinary'), '1');
   assert.equal(studyOrdinaryParams.get('ordinary-lang'), 'en');
@@ -655,7 +658,7 @@ async function testDeferredModeContract(cdp, base) {
 
   await navigate(cdp, base, state({
     date: '2026-08-02', mass: 'ot-18', mode: 'study',
-    location: 'proper/postconciliar/ot-18/001'
+    location: 'proper/postconciliar/ot-18/999'
   }));
   const studyLocation = await snapshot(cdp);
   assert.equal(studyLocation.outcome, 'invalid');
@@ -705,13 +708,13 @@ async function main() {
     await testConditionedOrdinaryGroups(cdp, base);
     await testTranslationWitnesses(cdp, base);
     await testSemanticLocations(cdp, base);
-    await testDeferredModeContract(cdp, base);
+    await testStudyModeContract(cdp, base);
     process.stdout.write(JSON.stringify({
       status: 'pass',
       assertions: [
         'calendar-formulary-choices', 'proper-form-choices', 'cold-read-validation',
         'multiple-ordinary-groups', 'conditioned-ordinary-groups', 'translation-witness-choices',
-        'semantic-location-contract', 'deferred-mode-contract'
+        'semantic-location-contract', 'study-mode-contract'
       ].map((name) => ({ name, status: 'pass' }))
     }) + '\n');
   } finally {

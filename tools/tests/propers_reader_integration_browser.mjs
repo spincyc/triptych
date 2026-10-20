@@ -1309,6 +1309,115 @@ async function assertions(cdp, base) {
     assert.equal(await evaluate(cdp, 'propersReaderDebug.error?.[0]?.code'), 'unsupported-comparison');
   });
 
+  await check('C5 Propers Study keeps Read source text and event identities beside date-free apparatus', async () => {
+    await candidate(cdp, base, STATES.roman);
+    const readText = await evaluate(cdp,
+      `[...document.querySelectorAll('#reader-document .proper')].map(row => row.textContent)`);
+    const route = STATES.roman + '&mode=study&location=proper%2Froman-1962%2Fadvent-1%2F002';
+    await candidate(cdp, base, route);
+    const study = await evaluate(cdp, `(() => ({
+      outcome: propersReaderDebug.outcome,
+      state: propersReaderDebug.state,
+      dom: [...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
+        .map(row => row.dataset.semanticEventId),
+      contents: [...document.querySelectorAll('[data-reader-contents] [data-reader-location]')]
+        .map(row => row.dataset.readerLocation),
+      text: [...document.querySelectorAll('#reader-document .proper')].map(row => {
+        const source = row.cloneNode(true);
+        source.querySelectorAll('.study-event').forEach(note => note.remove());
+        return source.textContent;
+      }),
+      notes: [...document.querySelectorAll('#reader-document .study-event')]
+        .map(row => row.dataset.studyEventId),
+      dateAbsence: document.querySelector('.study-date-absence')?.textContent || '',
+      ordinaryNodes: document.querySelectorAll('#reader-document .ordinary-element').length,
+      title: document.title,
+      hash: location.hash
+    }))()`);
+    assert.equal(study.outcome, 'ready');
+    assert.equal(study.state.requestedMode, 'study');
+    assert.equal(study.state.civilDate, null);
+    assert.equal(study.state.semanticLocation.eventId, 'proper/roman-1962/advent-1/002');
+    assert.deepEqual(study.text, readText);
+    assert.deepEqual(study.dom, study.contents);
+    assert.deepEqual(study.notes, study.dom);
+    assert.match(study.dateAbsence, /date-independent; no calendar result/);
+    assert.equal(study.ordinaryNodes, 0);
+    assert.match(study.title, /Study/);
+    assert.match(study.hash, /mode=study/);
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
+    const print = await evaluate(cdp, `({
+      text: getComputedStyle(document.querySelector('#reader-document .proper')).display,
+      apparatus: getComputedStyle(document.querySelector('#reader-document .study-event')).display
+    })`);
+    assert.notEqual(print.text, 'none');
+    assert.notEqual(print.apparatus, 'none');
+    const pdf = await cdp.send('Page.printToPDF', { printBackground: true });
+    assert.ok(Buffer.from(pdf.data, 'base64').length > 1000);
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+    await current(cdp, base, route);
+    assert.deepEqual(await evaluate(cdp,
+      `[...document.querySelectorAll('#reader-document [data-semantic-event-id]')].map(row => row.dataset.semanticEventId)`), study.dom);
+  });
+
+  await check('C5 Propers Study mode changes preserve locations and latent Ordinary language', async () => {
+    const proper = 'proper/roman-1962/pentecost/001';
+    await candidate(cdp, base, STATES.romanPentecost + '&mode=missal&ordinary-lang=la&location=' +
+      encodeURIComponent(proper));
+    await waitFor(cdp,
+      `document.querySelector('#reader-document [data-semantic-location="${proper}"]')?.getBoundingClientRect().top <= 300`,
+      'Missal Proper location scroll');
+    await click(cdp, '[data-reader-action="mode"]');
+    await click(cdp, '[data-mode="study"]');
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state?.requestedMode === 'study'`, 'Study mode');
+    const studied = await evaluate(cdp, `({ outcome: propersReaderDebug.outcome,
+      location: propersReaderDebug.state.semanticLocation?.eventId,
+      ordinaryLanguage: propersReaderDebug.state.languages.ordinary,
+      ordinaryNodes: document.querySelectorAll('#reader-document .ordinary-element').length,
+      active: document.activeElement?.dataset.readerAction, hash: location.hash })`);
+    assert.equal(studied.outcome, 'ready');
+    assert.equal(studied.location, proper);
+    assert.equal(studied.ordinaryLanguage, 'la');
+    assert.equal(studied.ordinaryNodes, 0);
+    assert.equal(studied.active, 'mode');
+    assert.match(studied.hash, /ordinary-lang=la/);
+    await waitFor(cdp,
+      `document.querySelector('#reader-document [data-semantic-location="${proper}"]')?.getBoundingClientRect().top <= 300`,
+      'Study Proper location scroll');
+    await click(cdp, '[data-reader-action="mode"]');
+    await click(cdp, '[data-mode="read"]');
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state?.requestedMode === 'read'`, 'Read return from Study');
+    assert.equal(await evaluate(cdp, 'propersReaderDebug.state.semanticLocation?.eventId'), proper);
+    await candidate(cdp, base, STATES.roman +
+      '&mode=compare&compare=oration-language&peer-orations=en&location=compare%2Fproper%2Fcollect');
+    await waitFor(cdp,
+      `document.querySelector('#reader-document [data-semantic-location="compare/proper/collect"]')?.getBoundingClientRect().top <= 300`,
+      'Compare Collect location scroll');
+    await click(cdp, '[data-reader-action="mode"]');
+    await click(cdp, '[data-mode="study"]');
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state?.requestedMode === 'study'`, 'Study from Compare');
+    assert.equal(await evaluate(cdp, 'propersReaderDebug.state.semanticLocation?.eventId'),
+      'proper/roman-1962/advent-1/002');
+  });
+
+  await check('C5 Propers Study rejects absent locations and annotates unresolved source choices', async () => {
+    await candidate(cdp, base, STATES.roman + '&mode=study&location=study%2Fevent%2Fnot-held');
+    assert.equal(await evaluate(cdp, 'propersReaderDebug.outcome'), 'invalid');
+    assert.equal(await evaluate(cdp, 'propersReaderDebug.error?.[0]?.code'), 'invalid-semantic-location');
+    await candidate(cdp, base, STATES.postPentecostDay + '&mode=study');
+    const value = await evaluate(cdp, `({ outcome: propersReaderDebug.outcome,
+      choices: propersReaderDebug.semantic?.unresolvedChoices || [],
+      choiceNodes: document.querySelectorAll('#reader-document .proper-choice').length,
+      choiceNotes: document.querySelectorAll('#reader-document .proper-choice .study-event').length,
+      ids: [...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
+        .map(row => row.dataset.semanticEventId) })`);
+    assert.equal(value.outcome, 'ready');
+    assert.ok(value.choices.length);
+    assert.equal(value.choiceNodes, 1);
+    assert.equal(value.choiceNotes, 1);
+    assert.equal(new Set(value.ids).size, value.ids.length);
+  });
+
   await check('C5 1962 Propers Missal seats the production Ordinary with exact event and Contents order', async () => {
     await candidate(cdp, base, STATES.romanPentecost + '&mode=missal');
     const value = await evaluate(cdp, `(() => ({
@@ -2008,7 +2117,7 @@ async function assertions(cdp, base) {
     assert.deepEqual(modes, [
       { mode: 'read', disabled: false, checked: 'true' },
       { mode: 'missal', disabled: false, checked: 'false' },
-      { mode: 'study', disabled: true, checked: 'false' },
+      { mode: 'study', disabled: false, checked: 'false' },
       { mode: 'compare', disabled: false, checked: 'false' }
     ]);
     await escape(cdp); await click(cdp, '[data-reader-action="details"]');

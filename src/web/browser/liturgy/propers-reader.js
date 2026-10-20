@@ -9,6 +9,7 @@
   const OrdinaryRenderer = window.TriptychOrdinaryRenderer;
   const SearchController = window.TriptychProperSearchController;
   const Compare = window.TriptychPropersCompare;
+  const Study = window.TriptychPropersStudy;
 
   if (!T || !Contract || !Adapters || !Shell || !OrdinaryRenderer) {
     throw new Error('Propers reader requires production browser, state, adapter, shell, and Ordinary renderer modules');
@@ -237,7 +238,8 @@
   }
 
   function setModePresentation(mode) {
-    const label = mode === 'missal' ? 'Missal' : (mode === 'compare' ? 'Compare' : 'Read');
+    const label = mode === 'missal' ? 'Missal' : (mode === 'compare' ? 'Compare' :
+      (mode === 'study' ? 'Study' : 'Read'));
     shellRoot.dataset.readerMode = mode;
     const context = shellRoot.querySelector('.reader-context');
     if (context) context.textContent = 'Propers · ' + label;
@@ -712,24 +714,6 @@
     return location && location.kind === 'event' && location.id ? location.id : null;
   }
 
-  function nearestProperLocation(location) {
-    const id = eventLocation(location);
-    if (!id || /^(?:proper|proper-choice)\//.test(id)) return location;
-    const events = runtime.result && runtime.result.events || [];
-    const at = events.findIndex(function (row) { return row.id === id; });
-    if (at < 0) return { kind: 'top', id: null };
-    let best = null;
-    events.forEach(function (row, index) {
-      if (row.kind !== 'proper' && row.kind !== 'proper-choice') return;
-      const distance = Math.abs(index - at);
-      if (!best || distance < best.distance ||
-          (distance === best.distance && index < best.index)) {
-        best = { id: row.id, distance: distance, index: index };
-      }
-    });
-    return best ? { kind: 'event', id: best.id } : { kind: 'top', id: null };
-  }
-
   function canonicalAddress(normalized) {
     return Contract.canonicalRoute('propers', window.location.pathname) +
       window.location.search + Contract.serializeLegacy(normalized);
@@ -986,6 +970,8 @@
       });
     });
     }
+    if (state.requestedMode === 'study') Study.attach({ result: result,
+      fragment: fragment, contents: contents });
     const semanticIds = renderedSemanticInventory(contents, fragment);
     if (eventLocation(location) && semanticIds.indexOf(eventLocation(location)) < 0) {
       return { invalidLocation: true, semanticIds: semanticIds };
@@ -1037,7 +1023,8 @@
     document.title = [
       mass.name || mass.key,
       selectedForm && (selectedForm.name || selectedForm.id),
-      state.requestedMode === 'missal' ? 'Missal' : 'Propers', 'Triptych'
+      state.requestedMode === 'missal' ? 'Missal' :
+        (state.requestedMode === 'study' ? 'Study' : 'Propers'), 'Triptych'
     ].filter(Boolean).join(' — ');
     return { semanticIds: semanticIds };
   }
@@ -1385,6 +1372,8 @@
       return ((runtime.manifests && runtime.manifests.ordinaryIndex.calendars) || [])
         .flatMap(function (row) { return row.variants || []; });
     } });
+  if (Study) Study.bindControls({ runtime: runtime, readerShell: readerShell,
+    navigate: navigate, Compare: Compare, ProperEvents: ProperEvents });
 
   async function renderCandidate() {
     const serial = ++runtime.serial;
@@ -1473,7 +1462,7 @@
       setModePresentation(normalized.state.requestedMode);
       window.propersReaderDebug.state = normalized.state;
       window.propersReaderDebug.legacy = normalized.legacy;
-      if ((Compare ? ['read', 'missal', 'compare'] :
+      if ((Compare && Study ? ['read', 'missal', 'compare', 'study'] :
           ['read', 'missal']).indexOf(normalized.state.requestedMode) < 0) {
         if (eventLocation(location)) {
           renderFailure([{
@@ -1718,7 +1707,7 @@
     const captured = readerShell.captureSemanticLocation();
     const location = current.requestedMode === 'compare'
       ? Compare.fromCompareLocation(captured, runtime.result)
-      : nearestProperLocation(captured);
+      : ProperEvents.nearestProperLocation(captured, runtime.result);
     readerShell.close({ restoreFocus: false });
     navigate({ mode: 'read' }, ['compare', 'peer-orations'],
       { location: location, focus: 'mode' });

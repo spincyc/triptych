@@ -229,7 +229,8 @@ class DayReaderIntegrationTests(unittest.TestCase):
             self.assertIn(f'class="action-label">{label}</span>', source)
         self.assertIn('data-mode="read"', source)
         self.assertIn('data-mode="missal"', source)
-        self.assertEqual(source.count('aria-disabled="true" disabled'), 1)
+        self.assertIn('data-mode="study"', source)
+        self.assertEqual(source.count('aria-disabled="true" disabled'), 0)
         self.assertIn("Continuous reading of the appointed texts.", source)
         self.assertIn("Continuous Ordinary with appointed propers in place.", source)
         self.assertIn("<strong>Study</strong><span>Expanded notes and apparatus.</span>", source)
@@ -243,10 +244,11 @@ class DayReaderIntegrationTests(unittest.TestCase):
             self.assertIn(key, source)
         self.assertIn("parsed.variantKeys", source)
         self.assertIn(
-            "return mode === 'study' ? ['mode=' + mode] : [];",
+            "mode === 'study' && parsed.recognized.ordinary === '1'",
             source,
         )
         self.assertIn("DayCompare.present", source)
+        self.assertIn("DayStudy.attach(row)", source)
         self.assertNotIn("recognized.why === '1'", source)
         self.assertNotIn("recognized.rubrics === '1'", source)
         self.assertNotIn("const ordinaryActive = recognized.ordinary === '1'", source)
@@ -329,8 +331,8 @@ class DayReaderIntegrationTests(unittest.TestCase):
             "Contract.canonicalRoute('day', window.location.pathname)",
             "Contract.serializeLegacy(normalized)",
             "normalized.state.semanticLocation",
-            "navigate({ mode: 'read' }",
-            "navigate({ mode: 'missal' }",
+            "['read', 'missal', 'study'].forEach",
+            "navigate({ mode: mode }",
             "(removals || []).concat(['ordinary'])",
         ):
             self.assertIn(token, source)

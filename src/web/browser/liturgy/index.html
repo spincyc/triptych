@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="reader-shell.css">
 <link rel="stylesheet" href="propers-reader.css">
 <link rel="stylesheet" href="reader-compare-view.css">
+<link rel="stylesheet" href="reader-study-view.css">
 <link rel="stylesheet" href="reader-instrument.css">
 </head>
 <body class="propers-reader-candidate">
@@ -146,7 +147,7 @@
       <button type="button" role="radio" aria-checked="false" data-mode="missal">
         <strong>Missal</strong><span>Continuous Ordinary with appointed propers in place.</span>
       </button>
-      <button type="button" role="radio" aria-checked="false" aria-disabled="true" data-mode="study" disabled>
+      <button type="button" role="radio" aria-checked="false" data-mode="study">
         <strong>Study</strong><span>Expanded notes and apparatus.</span>
       </button>
       <button type="button" role="radio" aria-checked="false" data-mode="compare"
@@ -189,11 +190,13 @@
 <script src="reader-state-adapters.js"></script>
 <script src="reader-comparison.js"></script>
 <script src="reader-compare-view.js"></script>
+<script src="reader-study-view.js"></script>
 <script src="reader-shell.js"></script>
 <script src="propers-events.js"></script>
 <script src="proper-search.js"></script>
 <script src="proper-search-controller.js"></script>
 <script src="propers-compare.js"></script>
+<script src="propers-study.js"></script>
 <script src="propers-reader.js"></script>
 </body>
 </html>
