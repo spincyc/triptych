@@ -1088,7 +1088,7 @@
       const languages = Object.assign({}, current.languages, { orations: language });
       delete languages.translationWitness;
       try {
-        const probe = Adapters.adaptPropers({ request: Object.assign({}, current, { languages: languages }), structure: structure });
+        const probe = Adapters.adaptPropers({ request: Object.assign({}, current, { languages: languages }), structure: structure, ordinary: runtime.ordinary });
         report = T.summarizeCoverage(T.selectedCoverageUnits(probe, structure));
       } catch (_error) {
         return { deterministic: null, choices: [], held: [] };

@@ -72,7 +72,7 @@
   const PROPERS_KEYS = Object.freeze([
     'missal', 'type', 'mass', 'bible', 'orations',
     'form', 'cycle', 'alternative', 'translation-witness', 'mode', 'location',
-    'ordinary-lang', 'compare', 'peer-orations', 'peer-cycle'
+    'ordinary-lang', 'compare', 'peer-orations', 'peer-cycle', 'peer-alternative'
   ]);
   const URL_INVENTORY = Object.freeze({
     day: Object.freeze({
@@ -926,6 +926,24 @@
         ));
       }
     }
+    if (value.comparison && value.comparison.dimension === 'reading-alternative' && value.entrance === 'propers') {
+      const sides = value.comparison.sides;
+      const left = Array.isArray(sides) && sides[0];
+      const right = Array.isArray(sides) && sides[1];
+      const primary = left && left.alternative && left.alternative.id;
+      const peer = right && right.alternative && right.alternative.id;
+      if (!Array.isArray(sides) || sides.length !== 2 || !left || !right || !left.edition || !right.edition ||
+          !left.formulary || !right.formulary ||
+          left.edition.id !== (value.edition && value.edition.id) || right.edition.id !== left.edition.id ||
+          left.formulary.id !== (value.formulary && value.formulary.id) || right.formulary.id !== left.formulary.id ||
+          !nonempty(primary) || !nonempty(peer) || primary === peer ||
+          primary.slice(0, primary.lastIndexOf('/')) !== peer.slice(0, peer.lastIndexOf('/')) ||
+          primary !== (value.alternative && value.alternative.id) || !value.comparison.anchor ||
+          value.comparison.anchor.correspondingFormulary !== left.formulary.id) {
+        errors.push(issue('propers-compare-alternative-state', 'comparison.sides',
+          'reading-alternative Compare needs explicit distinct options of one edition-qualified source group'));
+      }
+    }
     if (value.requestedMode === 'compare' &&
         (!has(value, 'comparison') || value.comparison === null)) {
       errors.push(issue(
@@ -1256,13 +1274,13 @@
     // shared URL identifies the left side with the existing entrance keys and
     // names the second side and comparison anchor with these additive keys.
     const comparisonKeys = parsed.entrance === 'day'
-      ? ['compare', 'peer-missal', 'territory'] : ['compare', 'peer-orations', 'peer-cycle'];
+      ? ['compare', 'peer-missal', 'territory'] : ['compare', 'peer-orations', 'peer-cycle', 'peer-alternative'];
     const compared = comparisonKeys.filter(function (key) {
       return has(parsed.recognized, key);
     });
     if (state.requestedMode === 'compare' && (parsed.unknown || []).some(function (row) {
       return row.key === (parsed.entrance === 'day' ? 'peer-orations' : 'peer-missal') ||
-        row.key === 'peer-cycle' && parsed.entrance === 'day' ||
+        ['peer-cycle', 'peer-alternative'].includes(row.key) && parsed.entrance === 'day' ||
         row.key === 'territory' && parsed.entrance === 'propers';
     })) {
       errors.push(issue(
@@ -1278,7 +1296,8 @@
     }
     if (state.requestedMode === 'compare') {
       const requiredKeys = parsed.entrance === 'propers'
-        ? ['compare', parsed.recognized.compare === 'lectionary-cycle' ? 'peer-cycle' : 'peer-orations']
+        ? ['compare', parsed.recognized.compare === 'reading-alternative' ? 'peer-alternative' :
+          parsed.recognized.compare === 'lectionary-cycle' ? 'peer-cycle' : 'peer-orations']
         : comparisonKeys;
       requiredKeys.forEach(function (key) {
         if (!has(parsed.recognized, key) || !nonempty(parsed.recognized[key])) {
@@ -1318,7 +1337,33 @@
         }
       } else if (errors.length === 0) {
         const peer = parsed.recognized['peer-orations'];
-        if (parsed.recognized.compare === 'lectionary-cycle') {
+        if (parsed.recognized.compare === 'reading-alternative') {
+          const primary = state.alternative && state.alternative.id;
+          const peerAlternative = parsed.recognized['peer-alternative'];
+          if (has(parsed.recognized, 'peer-orations') || has(parsed.recognized, 'peer-cycle')) {
+            errors.push(issue('comparison-peer-dimension', 'compare',
+              'a reading-alternative comparison accepts only its explicit alternative peer', 'url'));
+          } else if (!has(parsed.recognized, 'alternative') || !nonempty(primary) ||
+              !/^proper-choice\/[^/]+\/[^/]+\/[^/]+\/[^/]+\/[^/]+$/.test(primary) ||
+              !nonempty(peerAlternative) || primary === peerAlternative ||
+              primary.slice(0, primary.lastIndexOf('/')) !== peerAlternative.slice(0, peerAlternative.lastIndexOf('/'))) {
+            errors.push(issue('invalid-comparison-peer', 'peer-alternative',
+              'choose explicit distinct alternatives from one held source group', 'url'));
+          } else if (!state.formulary || !state.formulary.id) {
+            errors.push(issue('comparison-formulary-required', 'mass', 'Propers Compare needs an exact formulary', 'url'));
+          } else {
+            state.comparison = {
+              dimension: 'reading-alternative', anchor: { correspondingFormulary: state.formulary.id },
+              sides: [primary, peerAlternative].map(function (id) {
+                return { id: id.slice(id.lastIndexOf('/') + 1), edition: { id: missal },
+                  formulary: { id: state.formulary.id }, alternative: { id: id } };
+              })
+            };
+          }
+        } else if (has(parsed.recognized, 'peer-alternative')) {
+          errors.push(issue('comparison-peer-dimension', 'peer-alternative',
+            'this comparison dimension accepts no alternative peer', 'url'));
+        } else if (parsed.recognized.compare === 'lectionary-cycle') {
           const peerCycle = parsed.recognized['peer-cycle'];
           if (has(parsed.recognized, 'peer-orations')) {
             errors.push(issue('comparison-peer-dimension', 'peer-orations',
@@ -1346,7 +1391,7 @@
         } else if (parsed.recognized.compare !== 'oration-language') {
           errors.push(issue(
             'comparison-dimension', 'compare',
-            'Propers Compare supports oration language or held lectionary cycles', 'url'
+            'Propers Compare supports oration language, held cycles, or reading alternatives', 'url'
           ));
         } else if (!valuesOf(missalContext.orationLanguages).includes(peer) ||
                    peer === state.languages.orations) {
@@ -1426,7 +1471,9 @@
       pairs.push(['mode', state.requestedMode || 'read']);
       if (state.comparison) {
         pairs.push(['compare', state.comparison.dimension]);
-        if (state.comparison.dimension === 'lectionary-cycle') {
+        if (state.comparison.dimension === 'reading-alternative') {
+          pairs.push(['peer-alternative', state.comparison.sides[1].alternative.id]);
+        } else if (state.comparison.dimension === 'lectionary-cycle') {
           pairs.push(['peer-cycle', state.comparison.sides[1].cycle]);
         } else pairs.push(['peer-orations', state.comparison.sides[1].languages.orations]);
       }

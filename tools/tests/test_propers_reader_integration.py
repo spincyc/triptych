@@ -49,7 +49,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             "Continuous reading of the appointed texts.",
             "Continuous Ordinary with appointed propers in place.",
             "Expanded notes and apparatus.",
-            "Languages or held cycles for one formulary.",
+            "Languages, cycles or reading alternatives for one formulary.",
         ):
             self.assertEqual(html.count(description), 1)
         self.assertNotIn("prototypes/reader-shell", html)
@@ -261,7 +261,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             ("Read", "Continuous reading of the appointed texts."),
             ("Missal", "Continuous Ordinary with appointed propers in place."),
             ("Study", "Expanded notes and apparatus."),
-            ("Compare", "Languages or held cycles for one formulary."),
+            ("Compare", "Languages, cycles or reading alternatives for one formulary."),
         ):
             self.assertIn(f"<strong>{name}</strong><span>{description}</span>", source)
 

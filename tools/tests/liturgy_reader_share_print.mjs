@@ -62,6 +62,15 @@ test('descriptive titles name the Day date and Compare territory, without invent
   });
   assert.match(cycle, /Compare lectionary-cycle with Cycle B/);
   assert.doesNotMatch(cycle, /with postconciliar/);
+  const alternative = actions.shareTitle('propers', shell, {
+    edition: { id: 'postconciliar' }, requestedMode: 'compare',
+    comparison: { dimension: 'reading-alternative', sides: [{}, {
+      edition: { id: 'postconciliar' },
+      alternative: { id: 'proper-choice/postconciliar/presentation-lord/main/gospel/shorter' }
+    }] }
+  });
+  assert.match(alternative, /Compare reading-alternative with Option shorter/);
+  assert.doesNotMatch(alternative, /with postconciliar/);
 });
 
 test('native share receives only title and URL; copy handles unavailability and native failure', async () => {

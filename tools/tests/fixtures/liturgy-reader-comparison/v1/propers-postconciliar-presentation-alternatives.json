@@ -1,0 +1,62 @@
+{
+  "schema": "triptych-liturgy-reader-comparison-fixture/v1",
+  "id": "propers-postconciliar-presentation-alternatives",
+  "basis": {
+    "kind": "tracked-production-data",
+    "paths": [
+      "src/sources/calendars/postconciliar/propers.yaml",
+      "src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml",
+      "src/web/data/structure/propers/postconciliar.json"
+    ],
+    "sourceRecord": "Ordo lectionum Missae, editio typica altera 1981; internet-archive-scan-pdf-ed4bc14e; artifact p. 331, printed p. 277, n. 524",
+    "qualification": "Existing source records identify a longer Gospel and its shorter alternative. Displayed Bible passages remain reconstructions; this comparison appoints neither alternative for a date."
+  },
+  "comparison": {
+    "dimension": "reading-alternative",
+    "anchor": {
+      "correspondingFormulary": "presentation-lord"
+    },
+    "sides": [
+      {
+        "id": "longer",
+        "edition": {
+          "id": "postconciliar"
+        },
+        "formulary": {
+          "id": "presentation-lord"
+        },
+        "alternative": {
+          "id": "proper-choice/postconciliar/presentation-lord/main/gospel/longer"
+        }
+      },
+      {
+        "id": "shorter",
+        "edition": {
+          "id": "postconciliar"
+        },
+        "formulary": {
+          "id": "presentation-lord"
+        },
+        "alternative": {
+          "id": "proper-choice/postconciliar/presentation-lord/main/gospel/shorter"
+        }
+      }
+    ]
+  },
+  "expected": {
+    "calendar": null,
+    "unitCount": 5,
+    "gospelSelections": {
+      "longer": [
+        "Luke 2:22-40"
+      ],
+      "shorter": [
+        "Luke 2:22-32"
+      ]
+    },
+    "gospelEvents": {
+      "longer": "proper/postconciliar/presentation-lord/005",
+      "shorter": "proper/postconciliar/presentation-lord/006"
+    }
+  }
+}

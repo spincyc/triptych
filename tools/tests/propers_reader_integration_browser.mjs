@@ -1292,13 +1292,27 @@ async function assertions(cdp, base) {
     assert.equal(loads['structure/propers/roman-1962.json'], 1);
   });
 
-  await check('C6 Browse, apparatus modes, unresolved form, and cross-Mass Commons use the monolith', async () => {
+  await check('C6 bounded Missal uses one Mass while language, form, and source dependencies keep the monolith', async () => {
+    await candidate(cdp, base, STATES.roman + '&mode=missal');
+    const missal = await evaluate(cdp, `({ outcome: propersReaderDebug.outcome,
+      state: propersReaderDebug.state, loads: propersReaderDebug.loads,
+      ordinary: document.querySelectorAll('#reader-document .ordinary-element').length })`);
+    assert.equal(missal.outcome, 'ready');
+    assert.equal(missal.state.requestedMode, 'missal');
+    assert.equal(missal.state.options.ordinary, true);
+    assert.equal(missal.loads['structure/propers/catalog/roman-1962.json'], 1);
+    assert.equal(missal.loads['structure/propers/mass/roman-1962/advent-1.json'], 1);
+    assert.equal(missal.loads['structure/propers/roman-1962.json'] || 0, 0);
+    assert.equal(missal.loads['structure/ordinary/roman-1962.json'], 1);
+    assert.ok(missal.ordinary > 0);
     const cases = [
       [STATES.missing, 'browse'],
-      [STATES.roman + '&mode=missal', 'ready'],
+      [STATES.romanPentecostEnglish + '&mode=missal', 'ready'],
       [STATES.roman + '&mode=study', 'ready'],
       [STATES.roman + '&mode=compare&compare=oration-language&peer-orations=en', 'ready'],
       [STATES.romanChristmasForms, 'unresolved'],
+      [STATES.romanChristmasForms + '&mode=missal', 'unresolved'],
+      [STATES.romanChristmasNight + '&mode=missal', 'ready'],
       [hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'comm-s-telesphori-papae-martyris', bible: 'douay-rheims', orations: 'la' }), 'ready']
     ];
     for (const [route, outcome] of cases) {

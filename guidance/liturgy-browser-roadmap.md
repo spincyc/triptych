@@ -919,6 +919,27 @@ Souls/Caswall Propers baseline refuses Missal, so it yields no valid switch
 timing comparison. Field p75 remains unmeasured and the 2.5 s cold mobile
 target still fails.
 
+The following internal C5 slice compares the Presentation Gospel's source-held
+longer Luke 2:22–40 and shorter Luke 2:22–32 options by their explicit IDs. Other
+axes remain fixed; source choices are retained and no date applicability is
+inferred. Eight Node checks and six Chromium checks cover selection, invalid
+peers, place/focus, narrow pairing and print. The All Souls/Caswall Missal
+refusal found in timing is corrected by passing the already loaded Ordinary
+to its Proper-witness probe. Five Node and four Chromium checks preserve the
+held Sequence, per-Proper witness gaps and independent Ordinary language.
+
+The next C6 payload slice extends the existing exact Mass projection to
+conservative 1962 Missal and Day Study-with-Ordinary states with explicit Latin
+orations. Cross-Mass dependencies, commemorations, choices/forms, exceptional
+frames and other languages keep full-source loading. Five durable test groups
+cover 2,044 exact state/result comparisons; forty Chromium groups preserve
+text, semantic events, source/coverage, controls and races. Existing Read
+requests/results match across 365 dates and 491 Masses. Gzip6 Proper bodies
+become 41,404 bytes for the Tenth Sunday or 51,149 for Pentecost instead of
+1,225,510; an eligible Read→Missal transition reuses already held Proper data.
+The complete Ordinary stays separate. No new latency, field percentile or
+independent release acceptance follows from these byte measurements.
+
 ### Verification and completion gates
 
 Recovery checks actually run on the baseline:

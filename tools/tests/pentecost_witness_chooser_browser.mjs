@@ -140,16 +140,40 @@ async function waitFor(cdp, expression, description) {
 function hash(values) { return '#' + new URLSearchParams(values).toString(); }
 
 async function navigate(cdp, url, debugName) {
+  const requested = Object.fromEntries(new URLSearchParams(new URL(url).hash.slice(1)));
+  const mode = requested.mode || (requested.ordinary === '1' ? 'missal' : 'read');
   await cdp.send('Page.navigate', { url });
   try {
-    await waitFor(cdp,
-      `location.pathname === ${JSON.stringify(new URL(url).pathname)} && ` +
-        `window.${debugName}Ready === true`,
+    await waitFor(cdp, `(() => {
+      const debug = window.${debugName}Debug;
+      if (location.pathname !== ${JSON.stringify(new URL(url).pathname)} ||
+          window.${debugName}Ready !== true || !debug?.ready ||
+          !['ready', 'unresolved'].includes(debug.outcome) ||
+          document.getElementById('reader-document')?.getAttribute('aria-busy') !== 'false' ||
+          debug.state?.requestedMode !== ${JSON.stringify(mode)} || !debug.legacy) return false;
+      // A hash navigation can still expose the previous generation's ready
+      // flag. Compare the committed normalized selection through its owning
+      // serializer, including every requested identity and language field.
+      const canonical = LiturgyReaderState.serializeLegacy({
+        ok: true, state: debug.state, legacy: debug.legacy
+      });
+      if (canonical !== location.hash) return false;
+      const shown = new URLSearchParams(canonical.slice(1));
+      const requested = ${JSON.stringify(requested)};
+      if (!Object.entries(requested).every(([key, value]) => key === 'ordinary'
+        ? String(debug.state.options.ordinary ? 1 : 0) === value
+        : shown.get(key) === value)) return false;
+      return !debug.committedRender || (debug.committedRender.href === location.href &&
+        debug.committedRender.mode === ${JSON.stringify(mode)});
+    })()`,
       debugName + ' committed render');
   } catch (error) {
     const diagnostic = await evaluate(cdp, `(() => ({href: location.href,
       ready: window.${debugName}Ready, debug: window.${debugName}Debug?.error,
-      body: document.body?.textContent?.slice(0, 350)}))()`);
+      outcome: window.${debugName}Debug?.outcome,
+      mode: window.${debugName}Debug?.state?.requestedMode,
+      busy: document.getElementById('reader-document')?.getAttribute('aria-busy'),
+      committed: window.${debugName}Debug?.committedRender}))()`);
     throw new Error(error.message + ': ' + JSON.stringify(diagnostic));
   }
   const outcome = await evaluate(cdp, `${debugName}Debug.outcome`);

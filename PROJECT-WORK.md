@@ -574,6 +574,38 @@ All Souls/Caswall Propers fixture refuses Missal in the baseline and supplies
 no valid advanced-mode timing comparison. Neither these local samples nor
 their improvement establishes field p75 or meets the 2.5 s cold mobile target.
 
+The following C5 slice compares explicit source reading alternatives. The
+Presentation Gospel's held longer Luke 2:22–40 and shorter Luke 2:22–32 choices
+use their existing option IDs, preserving the other source evidence and holding
+all other axes fixed. Eight Node checks and six Chromium checks cover coequal
+selection, invalid peers, location/focus, narrow stacking and independent print.
+The partial-witness Missal refusal found during timing was an implementation
+bug: its Proper-witness probe omitted the already loaded Ordinary. Supplying
+that input preserves Caswall's held All Souls Sequence and each other Proper's
+typed gap; five Node checks and four Chromium checks cover the corrected path.
+
+The next C6 payload slice reuses the existing exact catalog/Mass envelopes for
+conservative 1962 Missal and Day Study-with-Ordinary states with explicit Latin
+orations. Cross-Mass references, commemorations, forms/choices, exceptional
+frames and other languages retain full-source loading. Five durable test groups
+include 2,044 exact state/result comparisons; forty Chromium groups preserve
+text, events, source/coverage context, controls and race ownership. Old Read
+request/result paths agree across 365 dates and 491 Masses. Gzip6 Proper data
+for the Tenth Sunday is 41,404 bytes and Pentecost 51,149, replacing the
+1,225,510-byte monolith; an eligible Read→Missal transition already holds those
+Proper inputs. The full Ordinary remains separate. These byte counts establish
+neither new latency nor field performance or release acceptance.
+
+This checkpoint passes the full tracked-source gate: 259 captured examples,
+250 replayed, no divergence and no tracked writes. The registered browser
+contracts pass across full runs and focused corrections: two obsolete monolith
+expectations were migrated to bounded Missal plus real fallback cases; a
+same-document witness test now waits for the requested committed selection
+instead of a previous ready flag. The corrected payload contracts pass 9/9 and
+69/69 in the second full run; its only remaining witness wait failure passes
+5/5 after the test-only correction, with empty diagnostic arrays. This records
+the actual rerun sequence, not a claim that either earlier full run was green.
+
 A parallel witness audit found no publishable English witness for the 1962
 Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
 is an inaccessible page-image lead, not a text source. An

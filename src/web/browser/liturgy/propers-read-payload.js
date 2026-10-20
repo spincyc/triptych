@@ -1,4 +1,4 @@
-/* Narrow 1962 Propers Read fast path; every split failure uses the full source projection. */
+/* Narrow 1962 Propers reading fast path; every split failure uses the full source projection. */
 'use strict';
 
 (function (root, factory) {
@@ -8,10 +8,12 @@
 }(typeof globalThis !== 'undefined' ? globalThis : this, function (root) {
   function eligible(parsed, calendar) {
     const present = parsed.present || [];
+    const framed = parsed.recognized.mode === 'missal';
     return calendar === 'roman-1962' &&
-      (!present.includes('mode') || parsed.recognized.mode === 'read') &&
+      (!present.includes('mode') || parsed.recognized.mode === 'read' || framed) &&
       present.includes('type') && present.includes('mass') &&
-      !present.includes('ordinary-lang') &&
+      (framed || !present.includes('ordinary-lang')) &&
+      (!framed || root.LiturgyReaderProperPayload?.framedRequest?.(parsed)) &&
       !(parsed.variantKeys || []).some(function (key) { return present.includes(key); }) &&
       !(parsed.duplicates || []).length;
   }
@@ -41,6 +43,8 @@
       });
       if (!mass || mass.kind !== input.parsed.recognized.type ||
           !resolvedForm(input.parsed, mass) ||
+          (input.parsed.recognized.mode === 'missal' &&
+            !root.LiturgyReaderProperPayload.framedMass(mass, input.parsed)) ||
           (mass.takes_from && mass.takes_from.common_sets != null)) {
         return monolith();
       }

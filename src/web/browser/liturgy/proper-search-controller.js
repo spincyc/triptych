@@ -34,7 +34,7 @@
         mode: 'read', location: null, 'ordinary-lang': null
       };
       const removals = [
-        'cycle', 'alternative', 'translation-witness', 'compare', 'peer-orations', 'peer-cycle',
+        'cycle', 'alternative', 'translation-witness', 'compare', 'peer-orations', 'peer-cycle', 'peer-alternative',
         aliases.cycle, aliases.alternative, aliases.translationWitness
       ];
       ((runtime.manifests && runtime.manifests.ordinaryIndex.calendars) || [])
