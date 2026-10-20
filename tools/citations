@@ -66,7 +66,7 @@ EXAMPLES = {
             "tools/citations encode --root build/example-cal",
             (
                 "build/example-cal/postconciliar/propers.yaml\t3590 already_encoded\t0 encoded",
-                "build/example-cal/roman-1962/propers.yaml\t2600 already_encoded\t0 encoded",
+                "build/example-cal/roman-1962/propers.yaml\t2620 already_encoded\t0 encoded",
                 "build/example-cal/roman-pre-1955/propers.yaml\t0 already_encoded\t0 encoded",
             ),
             "WRITES. --root here is an untracked copy; with no --root this rewrites the tracked src/sources/calendars YAML in place",
@@ -85,7 +85,7 @@ EXAMPLES = {
             (
                 "citation excepted: src/sources/calendars/postconciliar/propers.yaml: ot-24-saturday/Responsorial... [+74 chars]",
                 "src/sources/calendars/postconciliar/propers.yaml\t73 books\t3590 passages",
-                "src/sources/calendars/roman-1962/propers.yaml\t57 books\t2600 passages",
+                "src/sources/calendars/roman-1962/propers.yaml\t57 books\t2620 passages",
                 "src/sources/calendars/roman-pre-1955/propers.yaml\t0 books\t0 passages",
             ),
             "exit 1: the tracked postconciliar propers really do cite verses past the end of their hebrew-numbered psalms, and check refuses rather than clamping",

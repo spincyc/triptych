@@ -62,7 +62,7 @@ ASSERTION_COUNTS = {
     # source-only run executes one fewer.
     "day_reader_integration_browser.mjs": 57,
     "liturgy_reader_shell_browser.mjs": 18,
-    "liturgy_reader_visual_reset_browser.mjs": 28,
+    "liturgy_reader_visual_reset_browser.mjs": 30,
     # Plus the C2 G9 both-entrances Bible-reconstruction claim check, and the
     # three C2 G14 / G9 follow-up checks on 1962 Pentecost (2026-10-19).
     "propers_reader_integration_browser.mjs": 66,

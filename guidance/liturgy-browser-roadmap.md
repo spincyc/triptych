@@ -803,6 +803,26 @@ after the latest source regeneration. All seven registered built-preview
 browser harnesses pass. Study, independent visual acceptance,
 and the full C5 scope remain open.
 
+The Study continuation keeps Read source text and semantic event IDs in place
+and attaches calendar, coverage, source and availability context. Day's
+source-served Study probe passed 10/10; Propers Read/Missal/Search/Compare/
+Study passed 66/66. Day `mode=study&ordinary=0` is live, while explicit
+`ordinary=1` still reports a deferred state. All seven registered built-preview
+browser harnesses pass after integration; independent C5 acceptance remains
+open.
+Independent private-preview QA found and corrected three print fragmentations,
+a 400% Day Compare Contents landing and a modal focus-wrap gap. The refreshed
+visual harness passes 30/30 against the verified preview. Day Study print is
+ten pages, Propers Study eight and Day Compare twelve; further C4 composition
+and the complete C5 acceptance matrix remain open.
+
+The committed `eb8ac428b` preview's C6 lab sample measured 12.5–12.9 s
+narrow cold LCP on Slow 4G and 4× CPU, against the 2.5 s target; warm narrow
+and desktop cold samples passed. The 1962 Proper structure is about 1.23 MB
+gzipped and dominates transfer. A selected-Mass payload with a compact
+index is the next measured performance candidate, subject to full source and
+coverage parity. These local two-run measurements are not field percentiles.
+
 ### Verification and completion gates
 
 Recovery checks actually run on the baseline:

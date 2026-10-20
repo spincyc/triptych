@@ -177,7 +177,7 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index containment",
             (
-                "containment: 127 containers (95 records, 32 whole-volume artifacts), 338 constituents, 65 of them commentary-index leads",
+                "containment: 127 containers (95 records, 32 whole-volume artifacts), 340 constituents, 67 of them commentary-index leads",
                 "  resolved 25 · partial 85 · unresolved 17 · not containers 27 · identities 6",
             ),
             "validates the inventory; a container-shaped record with no entry, an unknown record or a malformed extent fails it",
@@ -185,7 +185,7 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index containment --container work.jacques-paul-migne.patrologia-latina-volume-37",
             (
-                "containment: 127 containers (95 records, 32 whole-volume artifacts), 338 constituents, 65 of them commentary-index leads",
+                "containment: 127 containers (95 records, 32 whole-volume artifacts), 340 constituents, 67 of them commentary-index leads",
                 "  resolved 25 · partial 85 · unresolved 17 · not containers 27 · identities 6",
                 "",
                 "  work.jacques-paul-migne.patrologia-latina-volume-37  [resolved]",
@@ -227,7 +227,8 @@ EXAMPLES = {
             "tools/commentary-work-index standing",
             (
                 "author standing: 33 persons · father 13 · doctor 2 · saint 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 13 · non-catholic 1",
-                "  liturgical commentaries with a row: 12 of 12 · published lane authors with a row: 27 of 29",
+                "  liturgical commentaries with a row: 12 of 12 · published lane authors with a row: 28 of 31",
+                "  no row yet (lane authors): Alphonsus Liguori",
                 "  no row yet (lane authors): Anthony of Padua",
                 "  no row yet (lane authors): Cyril of Alexandria",
             ),
@@ -237,7 +238,8 @@ EXAMPLES = {
             "tools/commentary-work-index standing --person theodoret-of-cyrus",
             (
                 "author standing: 33 persons · father 13 · doctor 2 · saint 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 13 · non-catholic 1",
-                "  liturgical commentaries with a row: 12 of 12 · published lane authors with a row: 27 of 29",
+                "  liturgical commentaries with a row: 12 of 12 · published lane authors with a row: 28 of 31",
+                "  no row yet (lane authors): Alphonsus Liguori",
                 "  no row yet (lane authors): Anthony of Padua",
                 "  no row yet (lane authors): Cyril of Alexandria",
                 "",
@@ -267,7 +269,7 @@ EXAMPLES = {
             "tools/commentary-work-index build-corpus --calendar roman-1962 --output build/example-corpus.yaml",
             (
                 "masses: 331 covered of 331",
-                "total works in union corpus: 176",
+                "total works in union corpus: 175",
                 "unresolved passages: 110",
                 "refused loci: 0",
                 "",

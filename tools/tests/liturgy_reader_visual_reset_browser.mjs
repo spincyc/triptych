@@ -47,6 +47,8 @@ const STATES = Object.freeze({
   territorialEpiphanyWhy: '#date=2026-01-04&missal=postconciliar&bible=douay-rheims&orations=la&ordinary=0&why=1',
   propers: '#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims&orations=la',
   propersCycleChoice: '#missal=postconciliar&type=seasonal&mass=advent-1&bible=douay-rheims&orations=la',
+  dayStudy: '#date=2026-11-22&missal=roman-1962&bible=douay-rheims&orations=la&mode=study&ordinary=0',
+  dayCompare: '#date=2026-11-22&missal=roman-1962&bible=douay-rheims&orations=la&mode=compare&compare=recension&peer-missal=postconciliar&territory=universal&ordinary=0',
   browse: '#missal=roman-1962&bible=douay-rheims&orations=la'
 });
 
@@ -874,6 +876,91 @@ async function runAssertions(cdp, base) {
     } finally {
       await cdp.send('Emulation.setPageScaleFactor', { pageScaleFactor: 1 });
     }
+  });
+
+  await check('400% Day Compare Contents jump reveals Calendar results in the visual viewport', async () => {
+    await viewport(cdp, 393, 852);
+    await productionFresh(cdp, productionUrl(base, 'day', STATES.dayCompare), 'day');
+    await cdp.send('Emulation.setPageScaleFactor', { pageScaleFactor: 4 });
+    try {
+      await click(cdp, '[data-reader-action="contents"]');
+      await waitFor(cdp, 'document.querySelector("#contents-surface").open', 'Compare Contents');
+      await click(cdp, '[data-reader-location="compare/calendar-result"]');
+      // The shallow jump receives a debounced visual-viewport correction.
+      await new Promise(resolve => setTimeout(resolve, 350));
+      await stableFrames(cdp, '[data-semantic-location="compare/calendar-result"]');
+      const destination = await evaluate(cdp, `(() => {
+        const target = document.querySelector('[data-semantic-location="compare/calendar-result"]');
+        const heading = (target.querySelector(':scope > h2, :scope > h3') || target).getBoundingClientRect();
+        const dock = document.querySelector('.reader-actions').getBoundingClientRect();
+        const masthead = document.querySelector('.reader-masthead').getBoundingClientRect();
+        return { headingTop: heading.top, headingBottom: heading.bottom,
+          unobscuredTop: Math.max(visualViewport.offsetTop, masthead.bottom),
+          unobscuredBottom: Math.min(visualViewport.offsetTop + visualViewport.height, dock.top),
+          scale: visualViewport.scale,
+          focus: document.activeElement.dataset.semanticLocation || null,
+          contentsOpen: document.querySelector('#contents-surface').open };
+      })()`);
+      assert.equal(destination.scale, 4);
+      assert.equal(destination.focus, 'compare/calendar-result');
+      assert.equal(destination.contentsOpen, false);
+      assert.ok(destination.headingTop >= destination.unobscuredTop - 1 &&
+        destination.headingBottom <= destination.unobscuredBottom + 1,
+      JSON.stringify(destination));
+    } finally {
+      await cdp.send('Emulation.setPageScaleFactor', { pageScaleFactor: 1 });
+    }
+  });
+
+  await check('Day Study Mode modal wraps Tab from Compare to Close and restores Mode on Escape', async () => {
+    await viewport(cdp, 393, 852);
+    await productionFresh(cdp, productionUrl(base, 'day', STATES.dayStudy), 'day');
+    await evaluate(cdp, `document.querySelector('[data-reader-action="mode"]').focus()`);
+    for (const type of ['keyDown', 'keyUp']) {
+      await cdp.send('Input.dispatchKeyEvent', {
+        type, key: ' ', code: 'Space', windowsVirtualKeyCode: 32, nativeVirtualKeyCode: 32
+      });
+    }
+    await waitFor(cdp, 'document.querySelector("#mode-surface").open', 'Study Mode surface');
+    const focused = () => evaluate(cdp, `(() => {
+      const node = document.activeElement;
+      return { close: node.matches('#mode-surface [data-reader-close]'),
+        mode: node.dataset.mode || null, inside: document.querySelector('#mode-surface').contains(node),
+        visible: node.matches(':focus-visible'), outline: getComputedStyle(node).outlineStyle };
+    })()`);
+    let value = await focused();
+    assert.equal(value.close, true, JSON.stringify(value));
+    for (const mode of ['read', 'missal', 'study', 'compare']) {
+      for (const type of ['keyDown', 'keyUp']) {
+        await cdp.send('Input.dispatchKeyEvent', {
+          type, key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9, nativeVirtualKeyCode: 9
+        });
+      }
+      value = await focused();
+      assert.equal(value.mode, mode, JSON.stringify(value));
+      assert.equal(value.inside, true);
+      assert.equal(value.visible, true);
+      assert.equal(value.outline, 'solid');
+    }
+    for (const type of ['keyDown', 'keyUp']) {
+      await cdp.send('Input.dispatchKeyEvent', {
+        type, key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9, nativeVirtualKeyCode: 9
+      });
+    }
+    value = await focused();
+    assert.equal(value.close, true, JSON.stringify(value));
+    assert.equal(value.visible, true);
+    await escape(cdp);
+    const restored = await evaluate(cdp, `({
+      open: document.querySelector('#mode-surface').open,
+      action: document.activeElement.dataset.readerAction || null,
+      visible: document.activeElement.matches(':focus-visible'),
+      outline: getComputedStyle(document.activeElement).outlineStyle
+    })`);
+    assert.equal(restored.open, false);
+    assert.equal(restored.action, 'mode');
+    assert.equal(restored.visible, true);
+    assert.equal(restored.outline, 'solid');
   });
 
   await check('forced colors, reduced motion, and keyboard focus remain explicit', async () => {

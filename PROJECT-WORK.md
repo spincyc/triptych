@@ -345,7 +345,8 @@ wording and independent C2 acceptance still require review.
 The 400% Contents jump now leaves its Canon destination wholly in the readable
 band above the bottom action dock. The source-served ritual-flow harness passes
 28/28 assertions after accounting for the intentional C2 claim typography;
-the built-preview rerun and independent visual disposition remain open.
+the later seven-harness built-preview gate passes. Independent visual
+disposition remains open.
 Day and Propers now share validated missal, Bible and oration-language
 preferences, written only after successful Date or Browse Apply. URLs retain
 precedence, and bad or blocked storage falls back without affecting explicit
@@ -417,6 +418,25 @@ unavailable text have source-served browser checks: 10/10 Day Compare and
 pass focused tests. The private preview verifies and all seven registered
 built-preview browser harnesses pass; the focused source/UI suite passes 230
 tests. Study and independent C5 acceptance remain open.
+The Study continuation attaches a contextual apparatus to the same Read DOM
+and semantic event IDs in both entrances. Day shows its actual calendar
+result, coverage and source/availability facts; Propers states its
+date-independent boundary. Source-served Chromium passed 10/10 Day Study and
+66/66 Propers Read/Missal/Search/Compare/Study checks, with preserved text,
+Contents, location and print. Day `mode=study&ordinary=0` is live; an explicit
+`ordinary=1` remains deferred without partial rendering. The shared adjunct
+passes five focused tests. All seven registered built-preview browser
+harnesses pass after the Study integration. Independent C5 acceptance remains
+open.
+Independent private-preview QA covered 29 responsive Study/Compare states and
+ten Search variants without horizontal overflow or browser errors. At 400%
+zoom, the Day Compare Calendar-results Contents jump now lands visibly; Mode
+dialogs keep keyboard focus inside and restore it on Escape. The built-preview
+visual harness locks those regressions at 30/30. Print keeps short Coverage,
+Study-note and unavailable-Compare groups together; inspected PDFs are ten
+pages for Day Study, eight for Propers Study and twelve for Day Compare. The
+long Day Study print remains C4 composition work, and this review does not
+establish full C5 acceptance.
 
 A source-inventoried bounded form report now keeps its parent form identity and
 counts the 1962 Pentecost Day appointments at 13 expected and 13 represented.
@@ -437,6 +457,25 @@ their accessible and copied text, 320-pixel reflow and print. A print rule
 keeps a short Collect translation credit beside its witness note. The
 source-served Day integration harness passed its new glyph case; the built
 preview and independent C4 matrix remain separate checks.
+
+Independent C2 review of the three Pentecost exemplars confirms the event
+order and appointed seats. The 1962 example has ten exact-target Latin
+Propers, while its English Lesson and two Communicantes passages remain
+unwitnessed. Postconciliar Day is accepted only as a partial state: target
+Latin and approved English cannot be inferred from the study Collect,
+Caswall Sequence or Bible reconstructions. Pre-1955 remains a structural
+projection with two typed proper-Canon absences and no collated full 1920
+target witness. Event parity therefore closes the ordering check, not
+word-exact or rights acceptance.
+
+A read-only C6 lab probe of committed preview `eb8ac428b` measured narrow
+cold LCP at 12.5–12.9 seconds for Day and Propers on a Slow-4G/4×-CPU
+profile, versus the 2.5-second vision target. Warm narrow loads were below
+0.61 seconds; desktop cold loads were 1.56–1.62 seconds. The 1962 Proper
+structure contributes about 1.23 MB gzipped and dominates the cold
+transfer. These are two-run lab samples, not field percentiles. A compact
+index plus selected-Mass fetch is the next C6 implementation candidate;
+it must retain source/coverage parity and URL behavior.
 
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 
