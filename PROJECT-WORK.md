@@ -60,6 +60,34 @@ and a subway-map visualizer over the same evidence. The workspace target is
 `feature/missal-timeline`; this does not authorize changing the default branch.
 The full project remains **in progress**.
 
+**Clean-agent handoff, 2026-10-20.** The maintainer requested a persistent
+restart record after the regional, missionary and historical expansion.
+The [continuation handoff](src/sources/inventories/missal-timeline-handoff-2026-10-20.md)
+pins research checkpoint `1356d8eaa56341687106c52170e450f29867f9b5`,
+pushed to `feature/missal-timeline`, and names the evidence owners, checked
+commands, source corrections and concrete next inputs. This request permits
+the tracked handoff for the current checkpoint; it supersedes the earlier
+instruction against another handoff without closing the underlying project.
+
+The current audit reconciles **96 routes**: 23 Eastern and 73 Western.
+Eighty-five have selected stages, nine retain related dossiers or unresolved
+local reception, and two have no new researched sequence. Nine routes have no
+mapped stage at all. The inventories hold 440 Eastern and 1,161 Western
+candidates; the 29 dossiers hold 272 stages, 76 transitions and 177 declared
+research gaps. Text coverage remains 256 not-transcribed and 16 partial stages,
+with no complete whole-book stage. The regional and mission permission register
+contains 49 scoped findings across 32 routes. These current totals supersede
+the earlier checkpoint counts in this section, without turning them into
+historical or textual completeness measures.
+
+Source-library validation, zero-finding coverage reconciliation, the 539-file
+projection drift check, 84 focused stage/history tests, the new reconciliation
+smoke test and the tool-registry self-check passed at the research checkpoint.
+The handoff distinguishes interrupted broad test runs and known wider findings
+from those completed checks. Current historical, text, Git-history and reader
+requirements remain open. The handoff and ledger changes are documentation
+only; no further research, source acquisition or deployment is claimed.
+
 **Execution resumed, 2026-10-17.** The maintainer clarified that completing the
 bounded review is not the requested finish: continue the underlying all-rite
 inventory, source texts, generated history and reader work to completion, with
