@@ -1,0 +1,2282 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "british-irish-2026-10-20",
+  "title": "British and Irish Western local-use research review",
+  "lane": "british-western-local-uses",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "coverage_rows": [
+    "sarum",
+    "york",
+    "hereford",
+    "british-other-uses"
+  ],
+  "integration_status": "integrated-qualified-metadata",
+  "semantics": "These 32 candidates are bounded witnesses, components and bibliography leads, not 32 substantive revisions; source-library acquisition receipts establish hash and delivery extent only.",
+  "review_files": {
+    "storage": "Scratch-only packets and acquired bytes, pinned by SHA-256; no source artifact registered or redistributed.",
+    "research_packet_sha256": "dfb4a545c8f26e3bc2a30fd4df33fb99b69b4d5cea6362156cea514e52ad8315",
+    "acquisition_manifest_sha256": "bc9d4a9da7c49c3e21ebe8e145e422337f5a498a0f699dc1fec57a0f9084b809",
+    "cold_verdict_sha256": "7d5bff2ad457cc07537e9d76febef1fa5012ed84228028be7b91486bf225d141",
+    "first_addendum_sha256": "ee9a88c14582cfc6c8e073880e6d6fa01e9cff5ebab3de2801481de8e7979ff2",
+    "copy_condition_supplement_sha256": "725b01532fc89dde3670325d6d75eb78634a3eb9af276358db8478a8fc91bcd6",
+    "cold_release_verdict_sha256": "dfd82a728ceef821fd7df35875ed56cbb92347d57382fe914fe11c1898981eb8",
+    "final_cold_release_verdict_sha256": "e66e09d7702e6426607ea0eaf19dd003aa875511966e10b73ec358419a8b1314",
+    "fragment_v2_sha256": "4d18c3864942155b5403ddc5b17e44b3ea018907be8097737c37847289e677a0",
+    "reviewed_plan_v3_sha256": "915e29a7ff455854be1017b20b36dc43979e6660f2865aa46c776f0b763ecca0",
+    "western_preimage_sha256": "dde38671887437e481498ad890f9f8a3b7ace867041c312ecc01ce9ab0cd023d",
+    "presentation_preimage_sha256": "65e4a926a821e57ccf2fce06ac4860d833c12db1871b41ea47ba44b895aeb9f7",
+    "coverage_preimage_sha256": "abb092198ce6e8a13ae5178b692978c1118c47427e481eed4e4c6f38eba8e942"
+  },
+  "uses": [
+    {
+      "id": "sarum",
+      "frozen_expected_ids": [
+        "cold-british-1",
+        "cold-british-2",
+        "cold-british-3"
+      ],
+      "new_candidate_ids": [
+        "british-sarum-trinity-b1014",
+        "british-sarum-yale286",
+        "british-sarum-osborn-a44",
+        "british-sarum-arsenal135",
+        "british-sarum-1494",
+        "british-sarum-1497",
+        "british-sarum-1500",
+        "british-sarum-1550",
+        "british-great-easton-nlw492f"
+      ],
+      "disposition": "The 1497 print remains a bibliographic witness: BIM PDF delivery is truncated; the distinct IA/BPL PDF is byte-complete against its host object but scans an imperfect copy missing 26 leaves. Their identity and gatherings are uncollated. The 102 USU entries are catalogue rows, 73 with a Missal genre, not versions."
+    },
+    {
+      "id": "york",
+      "frozen_expected_ids": [
+        "cold-british-4",
+        "cold-british-5"
+      ],
+      "new_candidate_ids": [
+        "british-york-huntington",
+        "british-york-tcd83",
+        "british-york-add43380"
+      ],
+      "disposition": "catalogued witnesses/components; no proved substantive revision or uninterrupted local adoption"
+    },
+    {
+      "id": "hereford",
+      "frozen_expected_ids": [
+        "cold-british-6",
+        "cold-british-7"
+      ],
+      "new_candidate_ids": [
+        "british-hereford-downside48243",
+        "british-hereford-worcester-f161",
+        "british-hereford-harley3965"
+      ],
+      "disposition": "catalogued witnesses/components; no proved substantive revision or uninterrupted local adoption"
+    },
+    {
+      "id": "aberdeen",
+      "frozen_expected_ids": [
+        "cold-british-8"
+      ],
+      "new_candidate_ids": [
+        "british-aberdeen-blairs"
+      ],
+      "disposition": "catalogued witnesses/components; no proved substantive revision or uninterrupted local adoption"
+    },
+    {
+      "id": "bangor-wales",
+      "frozen_expected_ids": [
+        "cold-british-9"
+      ],
+      "new_candidate_ids": [],
+      "disposition": "NLW 492F disproves the old sole Bangor Missal attribution; no secure Bangor massbook found in examined repertoire"
+    },
+    {
+      "id": "canterbury",
+      "frozen_expected_ids": [
+        "cold-british-10"
+      ],
+      "new_candidate_ids": [
+        "british-canterbury-cccc270"
+      ],
+      "disposition": "catalogued witnesses/components; no proved substantive revision or uninterrupted local adoption"
+    },
+    {
+      "id": "durham",
+      "frozen_expected_ids": [
+        "cold-british-11"
+      ],
+      "new_candidate_ids": [
+        "british-durham-harley5289"
+      ],
+      "disposition": "catalogued witnesses/components; no proved substantive revision or uninterrupted local adoption"
+    },
+    {
+      "id": "exeter",
+      "frozen_expected_ids": [
+        "cold-british-12"
+      ],
+      "new_candidate_ids": [
+        "british-exeter-leofric-bodley579"
+      ],
+      "disposition": "catalogued witnesses/components; no proved substantive revision or uninterrupted local adoption"
+    },
+    {
+      "id": "lincoln",
+      "frozen_expected_ids": [
+        "cold-british-13"
+      ],
+      "new_candidate_ids": [
+        "british-lincoln-tanner4"
+      ],
+      "disposition": "catalogued witnesses/components; no proved substantive revision or uninterrupted local adoption"
+    },
+    {
+      "id": "london",
+      "frozen_expected_ids": [
+        "cold-british-14"
+      ],
+      "new_candidate_ids": [],
+      "disposition": "No secure complete London/St Paul’s missal identified in inspected USU list; local calendar and constitutions are leads"
+    },
+    {
+      "id": "westminster",
+      "frozen_expected_ids": [
+        "cold-british-15"
+      ],
+      "new_candidate_ids": [
+        "british-westminster-litlyngton"
+      ],
+      "disposition": "catalogued witnesses/components; no proved substantive revision or uninterrupted local adoption"
+    },
+    {
+      "id": "winchester",
+      "frozen_expected_ids": [
+        "cold-british-16"
+      ],
+      "new_candidate_ids": [
+        "british-winchester-lehavre330",
+        "british-winchester-rouen274"
+      ],
+      "disposition": "catalogued witnesses/components; no proved substantive revision or uninterrupted local adoption"
+    },
+    {
+      "id": "worcester",
+      "frozen_expected_ids": [
+        "cold-british-17"
+      ],
+      "new_candidate_ids": [
+        "british-worcester-laud482"
+      ],
+      "disposition": "catalogued witnesses/components; no proved substantive revision or uninterrupted local adoption"
+    },
+    {
+      "id": "st-andrews-arbuthnott",
+      "frozen_expected_ids": [
+        "cold-british-18"
+      ],
+      "new_candidate_ids": [
+        "british-st-andrews-arbuthnott1491"
+      ],
+      "disposition": "Arbuthnott 1491 is a St Andrews/Sarum-related Scottish manuscript witness; Forbes 1864 is a critical edition; substantive local revision remains unproved."
+    },
+    {
+      "id": "ireland-earlier",
+      "frozen_expected_ids": [
+        "cold-british-19"
+      ],
+      "new_candidate_ids": [],
+      "disposition": "Stowe, Drummond, Corpus and Rosslyn are owned by Latin-early lane; no duplicate candidate proposed"
+    },
+    {
+      "id": "dublin",
+      "frozen_expected_ids": [
+        "cold-british-20"
+      ],
+      "new_candidate_ids": [
+        "british-dublin-add24198"
+      ],
+      "disposition": "catalogued witnesses/components; no proved substantive revision or uninterrupted local adoption"
+    },
+    {
+      "id": "kilcormac",
+      "frozen_expected_ids": [
+        "cold-british-21"
+      ],
+      "new_candidate_ids": [
+        "british-kilcormac-tcd82"
+      ],
+      "disposition": "catalogued witnesses/components; no proved substantive revision or uninterrupted local adoption"
+    },
+    {
+      "id": "bangor-county-down",
+      "frozen_expected_ids": [
+        "cold-british-22"
+      ],
+      "new_candidate_ids": [],
+      "disposition": "Antiphonary is Office book with Eucharistic items; existing Latin-early owner; not Welsh Bangor"
+    },
+    {
+      "id": "lismore",
+      "frozen_expected_ids": [
+        "cold-british-23"
+      ],
+      "new_candidate_ids": [
+        "british-irish-rawlc892"
+      ],
+      "disposition": "Rawl. C. 892 is an Irish Gradual; Lismore, Downpatrick and other provenance/use proposals remain contested. No confirmed Lismore missal or recension is inferred."
+    },
+    {
+      "id": "additional-monastic-uses",
+      "frozen_expected_ids": [
+        "cold-british-24"
+      ],
+      "new_candidate_ids": [
+        "british-winchcombe-orleans127"
+      ],
+      "disposition": "Ten named leads individually disposed in monastic_leads; one existing Gilbertine candidate, one proposed Winchcombe witness and eight deferred open leads. A house name does not establish a distinct monastic use."
+    },
+    {
+      "id": "english-mission",
+      "frozen_expected_ids": [],
+      "new_candidate_ids": [
+        "british-mission-1615",
+        "british-mission-1623",
+        "british-mission-1626"
+      ],
+      "disposition": "Three Latin Roman-derived mission print or component leads for itinerant priests. They are a research grouping, not an independent rite or three demonstrated revisions; 1623 remains bibliography-only, and 1626 imprint is disputed."
+    },
+    {
+      "id": "winchcombe",
+      "frozen_expected_ids": [
+        "cold-british-24"
+      ],
+      "new_candidate_ids": [
+        "british-winchcombe-orleans127"
+      ],
+      "disposition": "Orléans 127(105) sacramentary witness; IRHT third-quarter tenth century and USU 985–1009 disagree. House use and revision relation remain uncollated."
+    }
+  ],
+  "searches": [
+    {
+      "repertoire": "USUARIUM origin index",
+      "extent": "Saved full origins JSON plus displayed UK offset 500 and Ireland offset 600; 72 origin lists/387 book records in researcher sweep log; several direct requests failed and were served by saved or cold snapshots.",
+      "negative_boundary": "Zero missals under a named origin is a catalogue result only; no absence of historical use inferred.",
+      "unexamined_range": "Unlisted archives, manuscript images, closed holdings, all unsupported origins and inaccessible public responses."
+    },
+    {
+      "repertoire": "USUARIUM Sarum origin",
+      "extent": "All 102 listed entries preserved; 73 genres beginning Missal, but includes duplicate shelfmark/print identities.",
+      "negative_boundary": "No completeness or revision count from cataloguing.",
+      "unexamined_range": "Underlying book images, colophons, original gatherings and full text comparison for all 102."
+    },
+    {
+      "repertoire": "Legg1904/1916, Weale1886, Weale–Bohatta1928",
+      "extent": "Named prefaces, entire 58-row Legg table and bounded print bibliography sections in cold followup.",
+      "negative_boundary": "Bibliographic lists are historical selections, not exhaustive modern manuscript census.",
+      "unexamined_range": "Remainder of Weale–Bohatta, especially marginal print identities and all original print colophons."
+    },
+    {
+      "repertoire": "Buckley2005 Ireland manuscript appendix",
+      "extent": "Entire Appendices I–II pp. 809–813; notation-bearing manuscript scope only.",
+      "negative_boundary": "No negative claim about unnotated Mass books.",
+      "unexamined_range": "Unnotated Irish manuscripts, later corrections, each codex’s full contents."
+    },
+    {
+      "repertoire": "Internet Archive/BIM acquisition search",
+      "extent": "Two saved Sarum search snapshots (25 and 82 hits), exact PDF acquisitions listed in this packet; five-year York and missions queries in final-search log.",
+      "negative_boundary": "Search results include translations, critical editions, duplicate identities and wrong genre.",
+      "unexamined_range": "Every unacquired hit and all original title, colophon, Mass order and proper comparison outside explicitly inspected loci; eight retained BIM PDFs are truncated and need fresh whole retrieval."
+    }
+  ],
+  "versions": [
+    {
+      "candidate_id": "british-sarum-trinity-b1014",
+      "family": "historic-sarum-use",
+      "date": "1300–1400",
+      "kind": "manuscript-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "USU 5011/5012 describe one shelfmark; confirm duplicated records and extent before counting distinct copies.",
+      "source_ids": [
+        "sarum-usuarium",
+        "british-legg1904"
+      ]
+    },
+    {
+      "candidate_id": "british-sarum-yale286",
+      "family": "historic-sarum-use",
+      "date": "1390–1400",
+      "kind": "manuscript-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "USU 1628; no full text collation.",
+      "source_ids": [
+        "sarum-usuarium"
+      ]
+    },
+    {
+      "candidate_id": "british-sarum-osborn-a44",
+      "family": "historic-sarum-use",
+      "date": "1390–1420",
+      "kind": "composite-manuscript",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "USU 1651; missal portion requires range identification.",
+      "source_ids": [
+        "sarum-usuarium"
+      ]
+    },
+    {
+      "candidate_id": "british-sarum-arsenal135",
+      "family": "historic-sarum-use",
+      "date": "1275–1300",
+      "kind": "manuscript-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "USU places under Canterbury, but Legg revised its attribution to Sarum; verify with original manuscript.",
+      "source_ids": [
+        "medieval-legg1916",
+        "british-usuarium-canterbury"
+      ]
+    },
+    {
+      "candidate_id": "british-sarum-1494",
+      "family": "historic-sarum-use",
+      "date": "1494",
+      "kind": "printed-missal-witness",
+      "status": "acquired-host-delivery",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Acquired BIM provider PDF and host OCR; original title/colophon not independently collated. Not a demonstrated revision.",
+      "source_ids": [
+        "sarum-usuarium"
+      ]
+    },
+    {
+      "candidate_id": "british-sarum-1500",
+      "family": "historic-sarum-use",
+      "date": "1500",
+      "kind": "printed-missal-witness",
+      "status": "acquired-host-delivery",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Acquired BIM provider PDF and host OCR; 1500 is imprint, not reform proof.",
+      "source_ids": [
+        "sarum-usuarium"
+      ]
+    },
+    {
+      "candidate_id": "british-sarum-1550",
+      "family": "historic-sarum-use",
+      "date": "1550",
+      "kind": "bibliographic-print-lead",
+      "status": "acquired-unverified-identity",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "BIM title is generic LITURGIES-MISSALS-SALISBURY; original title/use and complete extent require direct check.",
+      "source_ids": [
+        "british-bim-1550"
+      ]
+    },
+    {
+      "candidate_id": "british-york-huntington",
+      "family": "historic-york-use",
+      "date": "1400–1450",
+      "kind": "manuscript-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Institutional catalogue identifies York missal; no direct collation.",
+      "source_ids": [
+        "british-huntington-york"
+      ]
+    },
+    {
+      "candidate_id": "british-york-tcd83",
+      "family": "historic-york-use",
+      "date": "fourteenth–fifteenth century",
+      "kind": "manuscript-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "TCD identifies MS 83 as York missal; dates need detailed catalogue and original.",
+      "source_ids": [
+        "british-tcd-manuscripts"
+      ]
+    },
+    {
+      "candidate_id": "british-york-add43380",
+      "family": "historic-york-use",
+      "date": "early fifteenth century; additions to 1554–1558",
+      "kind": "layered-manuscript-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Core, later additions and erasures are distinct strata. Philip and Mary reconciliation collects are later additions, not a new complete York edition.",
+      "source_ids": [
+        "british-bl-add43380"
+      ]
+    },
+    {
+      "candidate_id": "british-hereford-downside48243",
+      "family": "historic-hereford-use",
+      "date": "medieval, date unresolved",
+      "kind": "canon-witness",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Smith preview identifies Canon witness; original catalogue and folios still needed.",
+      "source_ids": [
+        "british-smith-hereford"
+      ]
+    },
+    {
+      "candidate_id": "british-hereford-worcester-f161",
+      "family": "historic-hereford-use",
+      "date": "fifteenth century",
+      "kind": "manuscript-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Holding in Worcester does not make it Worcester use; original contents uncollated.",
+      "source_ids": [
+        "british-worcester-f161"
+      ]
+    },
+    {
+      "candidate_id": "british-hereford-harley3965",
+      "family": "historic-hereford-use",
+      "date": "circa 1350",
+      "kind": "gradual-component",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Imperfect ff. 1r–142r; Eucharistic chant component, not full missal.",
+      "source_ids": [
+        "british-bl-harley3965"
+      ]
+    },
+    {
+      "candidate_id": "british-aberdeen-blairs",
+      "family": "historic-aberdeen-use",
+      "date": "1506 print; manuscript additions after 1498",
+      "kind": "adapted-print-witness",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Eeles identifies a 1506 Martin Morin Rouen Sarum print of 277 leaves, with roughly 100 manuscript additions/corrections and a 1498 St Nicholas dedication calendar entry. Print and annotation dates are separate. Aberdeen Breviary is Office, excluded.",
+      "source_ids": [
+        "british-aberdeen-eeles"
+      ]
+    },
+    {
+      "candidate_id": "british-great-easton-nlw492f",
+      "family": "historic-sarum-use",
+      "date": "mid fifteenth century",
+      "kind": "manuscript-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Apparently Sarum, produced for Great Easton Essex; traditional Bangor-use attribution discredited; given to Oswestry 1554.",
+      "source_ids": [
+        "british-nlw492f"
+      ]
+    },
+    {
+      "candidate_id": "british-canterbury-cccc270",
+      "family": "historic-canterbury-use",
+      "date": "circa 1094–1095",
+      "kind": "manuscript-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "USU 224; 1896 critical edition is later textual witness, not a 1090s print.",
+      "source_ids": [
+        "british-usuarium-canterbury",
+        "british-staugustine1896"
+      ]
+    },
+    {
+      "candidate_id": "british-durham-harley5289",
+      "family": "historic-durham-use",
+      "date": "early fourteenth century",
+      "kind": "manuscript-lead",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Lucas thesis names BL Harley 5289 as Durham Priory missal; direct holding catalogue/folio check remains; preserve as lead, not confirmed Durham recension.",
+      "source_ids": [
+        "british-durham-study"
+      ]
+    },
+    {
+      "candidate_id": "british-exeter-leofric-bodley579",
+      "family": "historic-exeter-use",
+      "date": "ninth–eleventh centuries",
+      "kind": "layered-sacramentary-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Ninth-century core, tenth-century calendar, eleventh-century quires and later Exeter additions; gift/use date is not core composition. Four of 757 IIIF canvas responses are Image Unavailable placeholders.",
+      "source_ids": [
+        "british-bodley-leofric",
+        "british-usuarium-exeter"
+      ]
+    },
+    {
+      "candidate_id": "british-lincoln-tanner4",
+      "family": "historic-lincoln-use",
+      "date": "fifteenth century",
+      "kind": "manuscript-fragment",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Only fragmentary Mass content; no complete local missal inferred.",
+      "source_ids": [
+        "british-legg1904"
+      ]
+    },
+    {
+      "candidate_id": "british-westminster-litlyngton",
+      "family": "historic-westminster-use",
+      "date": "1383–1384",
+      "kind": "manuscript-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Abbey identifies MS 37, now bound in two physical volumes. Three HBS editorial volumes are one modern edition, not three medieval manuscripts. Frozen reviewer expected MS 34 in error.",
+      "source_ids": [
+        "british-abbey-litlyngton",
+        "british-abbey-collection",
+        "british-westminster-edition"
+      ]
+    },
+    {
+      "candidate_id": "british-winchester-lehavre330",
+      "family": "historic-winchester-use",
+      "date": "1100–1125",
+      "kind": "manuscript-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "USU 2414; original extent and local use to check against holding library.",
+      "source_ids": [
+        "british-usuarium-winchester"
+      ]
+    },
+    {
+      "candidate_id": "british-winchester-rouen274",
+      "family": "historic-winchester-use",
+      "date": "circa 1020",
+      "kind": "manuscript-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "IRHT gives possible Canterbury production; later Jumièges gift and USU Winchester indexing do not prove Winchester origin or use.",
+      "source_ids": [
+        "british-irht-robert",
+        "british-robert1896"
+      ]
+    },
+    {
+      "candidate_id": "british-worcester-laud482",
+      "family": "historic-worcester-use",
+      "date": "1075–1200",
+      "kind": "manuscript-sacramentary",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "USU 3369; broad copying interval, substantive comparison open.",
+      "source_ids": [
+        "british-usuarium-worcester"
+      ]
+    },
+    {
+      "candidate_id": "british-st-andrews-arbuthnott1491",
+      "family": "historic-st-andrews-use",
+      "date": "1491",
+      "kind": "manuscript-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Scottish Sarum-related local manuscript; Forbes 1864 edition is distinct evidence object.",
+      "source_ids": [
+        "british-usuarium-st-andrews"
+      ]
+    },
+    {
+      "candidate_id": "british-dublin-add24198",
+      "family": "historic-dublin-use",
+      "date": "1300–1325",
+      "kind": "manuscript-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Dublin provenance/use requires component inspection; not automatically independent revision.",
+      "source_ids": [
+        "british-usuarium-dublin"
+      ]
+    },
+    {
+      "candidate_id": "british-kilcormac-tcd82",
+      "family": "historic-kilcormac-use",
+      "date": "1458",
+      "kind": "composite-manuscript-missal",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Carmelite missal ff. 1r–154v; separate c.1300 Irish Sarum antiphonal ff. 156r–171v.",
+      "source_ids": [
+        "british-tcd-manuscripts",
+        "british-buckley2005",
+        "british-usuarium-kilcormac"
+      ]
+    },
+    {
+      "candidate_id": "british-winchcombe-orleans127",
+      "family": "historic-winchcombe-use",
+      "date": "tenth century",
+      "kind": "manuscript-sacramentary",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "IRHT third-quarter tenth century vs USU 985–1009; origin and dating require reconciliation.",
+      "source_ids": [
+        "british-irht-winchcombe"
+      ]
+    },
+    {
+      "candidate_id": "british-mission-1615",
+      "family": "historic-english-mission-use",
+      "date": "1615",
+      "kind": "mission-mass-component",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Latin Roman-derived mission book; may be selected Masses, not full missal or distinct source revision.",
+      "source_ids": [
+        "british-weale1886"
+      ]
+    },
+    {
+      "candidate_id": "british-mission-1623",
+      "family": "historic-english-mission-use",
+      "date": "1623",
+      "kind": "mission-missal-bibliographic-lead",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Weale bibliographic entry only; original title, text and imprint still needed.",
+      "source_ids": [
+        "british-weale1886"
+      ]
+    },
+    {
+      "candidate_id": "british-mission-1626",
+      "family": "historic-english-mission-use",
+      "date": "1626",
+      "kind": "mission-missal-print",
+      "status": "catalogued-bounded",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "Imprint disagreement BnF/Folger; original colophon and delta from 1615/1623 unexamined.",
+      "source_ids": [
+        "british-mission-bnf",
+        "british-mission-folger"
+      ]
+    },
+    {
+      "candidate_id": "british-sarum-1497",
+      "family": "historic-sarum-use",
+      "date": "1497",
+      "kind": "printed-missal-witness",
+      "status": "partial-provider-delivery-and-unverified-other-host",
+      "version_status": "witness-or-component; substantive-distinctness-unproved",
+      "qualification": "The BIM 1497 PDF (british-acq-sarum-additional-18) is truncated at 864,026,624 of 923,671,404 host-listed bytes; pdfinfo fails. The separate Internet Archive PDF (british-acq-sarum-print-18) matches its 41,087,043-byte host object and has 538 parser-readable pages, but scans Boston Public Library copy Q.402.48 FOLIO, catalogued imperfect with 26 leaves wanting (a1, a6, a7, A1–4, X1, c8, o1–p8, q8). Host-byte completeness does not establish physical-copy or complete-text completeness. The two digitizations are not equated or collated; retain a 1497 print-witness lead without a substantive-revision claim.",
+      "source_ids": [
+        "sarum-usuarium",
+        "british-bpl-1497-copy-metadata"
+      ]
+    },
+    {
+      "candidate_id": "british-irish-rawlc892",
+      "family": "historic-irish-use-undetermined",
+      "date": "1175–1200",
+      "kind": "gradual-component",
+      "status": "catalogued-bounded",
+      "version_status": "component-witness; local-use-attribution-contested; substantive-distinctness-unproved",
+      "qualification": "Bodleian/Biblissima identify Rawl. C. 892 as a late-twelfth-century Irish Gradual. USU indexes it under Lismore; Buckley discusses Downpatrick Benedictine attribution, while other scholarship argues Lismore. Provenance and intended local use remain disputed. This is a Eucharistic chant component, not a missal or demonstrated Lismore recension.",
+      "source_ids": [
+        "british-usuarium-lismore",
+        "british-buckley2005",
+        "british-biblissima-rawlc892"
+      ]
+    }
+  ],
+  "acquisitions": [
+    {
+      "id": "british-acq-aberdeen-eeles-alt",
+      "path": ".scratch/full-research-20261019/british/research/acquired/aberdeen-eeles-alt.pdf",
+      "sha256": "9c40846d473a49f2f8df828b87c30792529dfb82d0c13742a680599a8d18b8ee",
+      "bytes": 1371829,
+      "pdf_pages": 21,
+      "title_or_host_label": "",
+      "url_or_catalogue_route": "https://journals.socantscot.org/index.php/psas/article/download/6749/6718/6707",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": null,
+      "download_complete_against_host_metadata": null,
+      "delivered_extent": "provider PDF; 21 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Historical pre-1931 source or edition: United States public-domain eligibility by publication date; host scan and non-US status require artifact-specific review.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-corpus1879",
+      "path": ".scratch/full-research-20261019/british/research/acquired/corpus1879.pdf",
+      "sha256": "77ed4b2b23678d41db86874d7ac07af3e2498bfd50abd1c69aa3e3a02154d42b",
+      "bytes": 13132859,
+      "pdf_pages": 240,
+      "title_or_host_label": "The manuscript Irish missal belonging to the President and Fellows of Corpus Christi College, Oxford",
+      "url_or_catalogue_route": "https://archive.org/download/manuscriptirishm00cath/manuscriptirishm00cath.pdf",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": 13132859,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 240 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Historical pre-1931 source or edition: United States public-domain eligibility by publication date; host scan and non-US status require artifact-specific review.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-drummond1882",
+      "path": ".scratch/full-research-20261019/british/research/acquired/drummond1882.pdf",
+      "sha256": "7f52ac10045dcd9ed07509541601407b300cd218e85be3956844730511127e43",
+      "bytes": 6696175,
+      "pdf_pages": 203,
+      "title_or_host_label": "Missale Drummondiense; the ancient Irish missal, in the possession of the Baroness Willoughby de Eresby, Drummond Castle, Perthshire",
+      "url_or_catalogue_route": "https://archive.org/download/missaledrummond00unkngoog/missaledrummond00unkngoog.pdf",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": 6696175,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 203 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Historical pre-1931 source or edition: United States public-domain eligibility by publication date; host scan and non-US status require artifact-specific review.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-durham-lucas",
+      "path": ".scratch/full-research-20261019/british/research/acquired/durham-lucas.pdf",
+      "sha256": "78f434b9ee8035bfad2cfb2d67d2acca60461a28c97c4b3ebfdac3eb61011e4b",
+      "bytes": 36475862,
+      "pdf_pages": 237,
+      "title_or_host_label": "",
+      "url_or_catalogue_route": "https://era.ed.ac.uk/server/api/core/bitstreams/557dff08-b24a-4cbf-a114-f834027bfb56/content",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": null,
+      "download_complete_against_host_metadata": null,
+      "delivered_extent": "provider PDF; 237 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Modern authored study/scan: copyright and repository redistribution unresolved.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-irish-buckley",
+      "path": ".scratch/full-research-20261019/british/research/acquired/irish-buckley.pdf",
+      "sha256": "15c6112bdc06e23c8dd38c66d6f472fdf389330cc65fb98e2581e399bddd9126",
+      "bytes": 346247,
+      "pdf_pages": 70,
+      "title_or_host_label": "",
+      "url_or_catalogue_route": "https://www.examenapium.it/cs/biblio/Buckley2005.pdf",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": null,
+      "download_complete_against_host_metadata": null,
+      "delivered_extent": "provider PDF; 70 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Modern authored study/scan: copyright and repository redistribution unresolved.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-leofric1883",
+      "path": ".scratch/full-research-20261019/british/research/acquired/leofric1883.pdf",
+      "sha256": "e9a4ab89b1250d896691e66b3b849474578c9cea72bd0cab371f1667071bd5e6",
+      "bytes": 37385915,
+      "pdf_pages": 426,
+      "title_or_host_label": "The Leofric missal as used in the Cathedral of Exeter during the episcopate of its first bishop, A.D. 1050-1072. Together with some account of the Red book of Derby, the Missal of Robert of Jumièges, and a few other early manuscript service books of the English church. Edited, with introd. and notes",
+      "url_or_catalogue_route": "https://archive.org/download/theleofricmissal00unknuoft/theleofricmissal00unknuoft.pdf",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": 37385915,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 426 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Historical pre-1931 source or edition: United States public-domain eligibility by publication date; host scan and non-US status require artifact-specific review.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-london1880",
+      "path": ".scratch/full-research-20261019/british/research/acquired/london1880.pdf",
+      "sha256": "537c167c247d8b20cab64a2a1712095dfdb483649869179f6911edaffeb81298",
+      "bytes": 21527633,
+      "pdf_pages": 322,
+      "title_or_host_label": "Documents illustrating the history of S. Paul's cathedral",
+      "url_or_catalogue_route": "https://archive.org/download/documentsillustr226simp/documentsillustr226simp.pdf",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": 21527633,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 322 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Historical pre-1931 source or edition: United States public-domain eligibility by publication date; host scan and non-US status require artifact-specific review.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-oldservice",
+      "path": ".scratch/full-research-20261019/british/research/acquired/oldservice.pdf",
+      "sha256": "4fd5e08dc85803bb5f3aac05758861f0a3bb505778f8df52373aaa0a1bd6c393",
+      "bytes": 32867938,
+      "pdf_pages": 466,
+      "title_or_host_label": "The old service-books of the English Church",
+      "url_or_catalogue_route": "https://archive.org/download/oldservicebook00word/oldservicebook00word.pdf",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": 32867938,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 466 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Historical pre-1931 source or edition: United States public-domain eligibility by publication date; host scan and non-US status require artifact-specific review.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-robert1896",
+      "path": ".scratch/full-research-20261019/british/research/acquired/robert1896.pdf",
+      "sha256": "cfae22ae19cf14dea9f12e3844447d52cca29987ddb010cd6e3451221b296aa2",
+      "bytes": 31965615,
+      "pdf_pages": 472,
+      "title_or_host_label": "The missal of Robert of Jumièges;",
+      "url_or_catalogue_route": "https://archive.org/download/missalofrobertof11cath/missalofrobertof11cath.pdf",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": 31965615,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 472 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Historical pre-1931 source or edition: United States public-domain eligibility by publication date; host scan and non-US status require artifact-specific review.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-rosslyn1899",
+      "path": ".scratch/full-research-20261019/british/research/acquired/rosslyn1899.pdf",
+      "sha256": "13527cfa455589e9f5c945bf1c2bba98a69b51ae0acb5d367285c7fcd9f598ad",
+      "bytes": 17369270,
+      "pdf_pages": 298,
+      "title_or_host_label": "The Rosslyn Missal; an Irish manuscript in the advocates' library, Edinburgh",
+      "url_or_catalogue_route": "https://archive.org/download/rosslynmissaliri00lawlrich/rosslynmissaliri00lawlrich.pdf",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": 17369270,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 298 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Historical pre-1931 source or edition: United States public-domain eligibility by publication date; host scan and non-US status require artifact-specific review.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-additional-11",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-additional-11.pdf",
+      "sha256": "4eed2d7e8d777b9d2f35c0bb48e3f46c6f64423f47b0566f107f7c997cb5c005",
+      "bytes": 347718285,
+      "pdf_pages": 502,
+      "title_or_host_label": "Missals sarum ...  1506",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missals-sarum-_1506/bim_early-english-books-1475-1640_missals-sarum-_1506.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 347718285,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 502 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-additional-14",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-additional-14.pdf",
+      "sha256": "d036fe5315c8b3ad759def776251f0426a4ebcfdcf00c52eb12f9880d8452d8e",
+      "bytes": 588971798,
+      "pdf_pages": 401,
+      "title_or_host_label": "Missale  1516",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale_1516/bim_early-english-books-1475-1640_missale_1516.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 588971798,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 401 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-additional-16",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-additional-16.pdf",
+      "sha256": "2d53d74f11463738080abec82f8adea3708d148f8f2197816bf258a3f66e1ddd",
+      "bytes": 937187158,
+      "pdf_pages": 607,
+      "title_or_host_label": "Missale ad usum insignis ac preclare ecclie Saų, ...  1521",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-usum-insignis_liturgies-latin-rite-mis_1521/bim_early-english-books-1475-1640_missale-ad-usum-insignis_liturgies-latin-rite-mis_1521.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 937187158,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 607 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-additional-17",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-additional-17.pdf",
+      "sha256": "863aa3d84c01474bbcad7693e3401c0ccf1285212c42cdffe788f137935cb779",
+      "bytes": 329518478,
+      "pdf_pages": 533,
+      "title_or_host_label": "Missale ad ...  1508",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-_rothomagi_1508/bim_early-english-books-1475-1640_missale-ad-_rothomagi_1508.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 329518478,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 533 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-additional-18",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-additional-18.pdf",
+      "sha256": "ee0248186ab890cdef6acb282dfc15f5226fefa6021610d957d89ac729c26115",
+      "bytes": 864026624,
+      "pdf_pages": null,
+      "title_or_host_label": "Missale secundum vsum insignis ecclie say.  1497",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-secundum-vsum-in_liturgies-latin-rite-mis_1497/bim_early-english-books-1475-1640_missale-secundum-vsum-in_liturgies-latin-rite-mis_1497.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 923671404,
+      "download_complete_against_host_metadata": false,
+      "delivered_extent": "TRUNCATED PROVIDER DELIVERY; 864026624 of 923671404 expected bytes; pdfinfo fails; do not use as complete book",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-additional-19",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-additional-19.pdf",
+      "sha256": "9d3ebf1e3c39c2606b38c7f7e5775056fdfd45a188aef68281e34447db31a7f3",
+      "bytes": 61112702,
+      "pdf_pages": 89,
+      "title_or_host_label": "Catalogue of Sarum and York missals.  1780",
+      "url_or_catalogue_route": "https://archive.org/download/bim_eighteenth-century_catalogue-of-sarum-and-y_gough-richard_1780/bim_eighteenth-century_catalogue-of-sarum-and-y_gough-richard_1780.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 61112702,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 89 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-additional-23",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-additional-23.pdf",
+      "sha256": "497acf3bfe5bf68d369671ac1f6857c3230463c9636824a5a214cbbd7e01d691",
+      "bytes": 623902720,
+      "pdf_pages": null,
+      "title_or_host_label": "Missale ad vsū insignis eccl'ie ...  1510",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-vs-insignis-_liturgies-latin-rite-mis_1510/bim_early-english-books-1475-1640_missale-ad-vs-insignis-_liturgies-latin-rite-mis_1510.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 919439659,
+      "download_complete_against_host_metadata": false,
+      "delivered_extent": "TRUNCATED PROVIDER DELIVERY; 623902720 of 919439659 expected bytes; pdfinfo fails; do not use as complete book",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-additional-27",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-additional-27.pdf",
+      "sha256": "6d237f09731a29c19c6a40b5e9dcd6f8dde2129303a7ed33bc16dbfc570494ed",
+      "bytes": 366508769,
+      "pdf_pages": 493,
+      "title_or_host_label": "Missals Salisbury ...  1512",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missals-salisbury-_r-pynson_1512/bim_early-english-books-1475-1640_missals-salisbury-_r-pynson_1512.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 366508769,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 493 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-additional-28",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-additional-28.pdf",
+      "sha256": "0ac85817272260bec29710a9027c3c7f2ffeee12e14b2d605741cef142511424",
+      "bytes": 682622976,
+      "pdf_pages": null,
+      "title_or_host_label": "Missals-Salisbury.  1501",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missals-salisbury_1501/bim_early-english-books-1475-1640_missals-salisbury_1501.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 903896014,
+      "download_complete_against_host_metadata": false,
+      "delivered_extent": "TRUNCATED PROVIDER DELIVERY; 682622976 of 903896014 expected bytes; pdfinfo fails; do not use as complete book",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-additional-29",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-additional-29.pdf",
+      "sha256": "62dca9840cd50139c84f98ae7e70e2ea35facb6ea5fc917b46670f7aef1c4c06",
+      "bytes": 803586155,
+      "pdf_pages": 559,
+      "title_or_host_label": "Missals-Salisbury.  1508",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missals-salisbury_verarda_1508/bim_early-english-books-1475-1640_missals-salisbury_verarda_1508.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 803586155,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 559 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-additional-30",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-additional-30.pdf",
+      "sha256": "92ed0241ff7b970c5e988635a61b19a42135efb9d989d518bb75bc48cacd68c0",
+      "bytes": 1226636093,
+      "pdf_pages": 481,
+      "title_or_host_label": "Missals-York: Missale Secundum usum ecclesie aborace ...  1509",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missals-york-missale-se_1509/bim_early-english-books-1475-1640_missals-york-missale-se_1509.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 1226636093,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 481 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-additional-34",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-additional-34.pdf",
+      "sha256": "ca79f5fca99e200835814b2f692173a1b545a5cd55be8a28f437148cdda0d64c",
+      "bytes": 38797312,
+      "pdf_pages": null,
+      "title_or_host_label": "Missale ad usum insignis ac preclare ecclesie ...  1519",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-usum-insignis_liturgies-latin-rite-mis_1519/bim_early-english-books-1475-1640_missale-ad-usum-insignis_liturgies-latin-rite-mis_1519.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 751592155,
+      "download_complete_against_host_metadata": false,
+      "delivered_extent": "TRUNCATED PROVIDER DELIVERY; 38797312 of 751592155 expected bytes; pdfinfo fails; do not use as complete book",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-additional-4",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-additional-4.pdf",
+      "sha256": "02c7c818842e9025f1eea3c75624cf2c08ba26909ee2da6315e7b85cd7417d3b",
+      "bytes": 938393135,
+      "pdf_pages": 497,
+      "title_or_host_label": "LITURGIES-MISSALS-SALISBURY.  1550",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_liturgies-missals-salisb_1550/bim_early-english-books-1475-1640_liturgies-missals-salisb_1550.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 938393135,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 497 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-additional-6",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-additional-6.pdf",
+      "sha256": "23afee6f2b11537549f3355052cd60b9b5ab4b29a4ec6af13edb091715edcb57",
+      "bytes": 710668016,
+      "pdf_pages": 629,
+      "title_or_host_label": "Missale ad usum ecclesie Sarisburiēsis.  1532",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-usum-ecclesie_liturgies-latin-rite-mis_1532/bim_early-english-books-1475-1640_missale-ad-usum-ecclesie_liturgies-latin-rite-mis_1532.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 710668016,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 629 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-0",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-0.pdf",
+      "sha256": "72b856b8a9faa2ca275bd536c02cc2ef463695257f871fe94fc9a170218ff396",
+      "bytes": 562418067,
+      "pdf_pages": 505,
+      "title_or_host_label": "Missale ad usum sarum, ...  1516",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-usum-sarum-_rothomagi_1516/bim_early-english-books-1475-1640_missale-ad-usum-sarum-_rothomagi_1516.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 562418067,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 505 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-10",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-10.pdf",
+      "sha256": "77c8b0f9f3f60934fec073e8709d150ad1eccfad4ce46c04f0074fe882f3f50f",
+      "bytes": 700806326,
+      "pdf_pages": 496,
+      "title_or_host_label": "Missale secundum vsum ecclesie Sarum Anglicane ...  1500",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-secundum-vsum-ec_liturgies-latin-rite-mis_1500/bim_early-english-books-1475-1640_missale-secundum-vsum-ec_liturgies-latin-rite-mis_1500.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 700806326,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 496 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-11",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-11.pdf",
+      "sha256": "2ad1a54e9fc1f506879ccaf8dfd94f24ae89acff40b408625863b510a96cbe15",
+      "bytes": 602671314,
+      "pdf_pages": 637,
+      "title_or_host_label": "Missale ad usum ecclesie sarisbury, ...  1529",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-usum-ecclesie_f-regnault_1529/bim_early-english-books-1475-1640_missale-ad-usum-ecclesie_f-regnault_1529.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 602671314,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 637 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-12",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-12.pdf",
+      "sha256": "f77218361023e77b0f57ca33ed0dc0abe5296b1a42ce16fd7f6ae1006d6aa566",
+      "bytes": 487201455,
+      "pdf_pages": 423,
+      "title_or_host_label": "Missale ad usum ecclesie sarum, ...  1520",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-usum-ecclesie_r-pynson_1520/bim_early-english-books-1475-1640_missale-ad-usum-ecclesie_r-pynson_1520.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 487201455,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 423 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-13",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-13.pdf",
+      "sha256": "cf484d3fee32733eacc91d1bad66726291f587477588983ce08f02b3b14e753a",
+      "bytes": 359545244,
+      "pdf_pages": 693,
+      "title_or_host_label": "Missale secundum usum ecclesie Sarum Anglicane, ...  1494",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-secundum-usum-ec_liturgies-latin-rite-mis_1494/bim_early-english-books-1475-1640_missale-secundum-usum-ec_liturgies-latin-rite-mis_1494.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 359545244,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 693 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-14",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-14.pdf",
+      "sha256": "e0fa222118a1ef11e21b6ac81075db8033de69c137592ea2a34d05f5c827cd50",
+      "bytes": 555745280,
+      "pdf_pages": null,
+      "title_or_host_label": "Missale ad usum ecclesie Sarisburiensis ...  1554",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-usum-ecclesie_liturgies-latin-rite-mis_1554/bim_early-english-books-1475-1640_missale-ad-usum-ecclesie_liturgies-latin-rite-mis_1554.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 697375467,
+      "download_complete_against_host_metadata": false,
+      "delivered_extent": "TRUNCATED PROVIDER DELIVERY; 555745280 of 697375467 expected bytes; pdfinfo fails; do not use as complete book",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-15",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-15.pdf",
+      "sha256": "eb2a7d5aaebb857bbd2dc31b2b0a0dcfaa46d189f731614f80eedb9d6073e9e0",
+      "bytes": 823151404,
+      "pdf_pages": 619,
+      "title_or_host_label": "Missale ad usum ... Sarum ....  1527",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-usum-saru_1527/bim_early-english-books-1475-1640_missale-ad-usum-saru_1527.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 823151404,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 619 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-17",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-17.pdf",
+      "sha256": "073efc59da6f51ea62a6a382b2f324aa9bdab4779ad4bf5e4b44302630f61363",
+      "bytes": 451936256,
+      "pdf_pages": null,
+      "title_or_host_label": "Missale ad vsum ecclesie Sarisburiensis  1555",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-vsum-ecclesie_liturgies-latin-rite-mis_1555/bim_early-english-books-1475-1640_missale-ad-vsum-ecclesie_liturgies-latin-rite-mis_1555.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 698695514,
+      "download_complete_against_host_metadata": false,
+      "delivered_extent": "TRUNCATED PROVIDER DELIVERY; 451936256 of 698695514 expected bytes; pdfinfo fails; do not use as complete book",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-18",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-18.pdf",
+      "sha256": "51a9b33ea55d967727e870d87c5ddf23a1397186e1d019f6c826bf80f2c8d625",
+      "bytes": 41087043,
+      "pdf_pages": 538,
+      "title_or_host_label": "[Missale secundum vsum ecclesie Sarum Anglicane]",
+      "url_or_catalogue_route": "https://archive.org/download/missalesecundumv00cath/missalesecundumv00cath.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 41087043,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "Provider PDF complete against 41,087,043-byte IA host object (538 parser-readable pages); BPL Rare Books Q.402.48 FOLIO physical copy is imperfect, 26 leaves wanting: a1, a6, a7, A1-4, X1, c8, o1-p8, q8. No complete-book text or collation claim.",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation",
+      "physical_copy_complete": false,
+      "physical_copy_shelfmark": "Boston Public Library Rare Books Q.402.48 FOLIO",
+      "copy_note_source_id": "british-bpl-1497-copy-metadata"
+    },
+    {
+      "id": "british-acq-sarum-print-19",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-19.pdf",
+      "sha256": "4250eb7796a40b334ba220447d392d3c0a5686c79023a75107aa1365b6577b32",
+      "bytes": 375390208,
+      "pdf_pages": null,
+      "title_or_host_label": "Missale ad usum ecclesie sarum ...  1514",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-usum-ecclesie_rothomagi_1514/bim_early-english-books-1475-1640_missale-ad-usum-ecclesie_rothomagi_1514.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 382557160,
+      "download_complete_against_host_metadata": false,
+      "delivered_extent": "TRUNCATED PROVIDER DELIVERY; 375390208 of 382557160 expected bytes; pdfinfo fails; do not use as complete book",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-20",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-20.pdf",
+      "sha256": "9aeffaafa683d43999eff4604ae994e4b35e217ebe98f354c844b678638f7f52",
+      "bytes": 117440512,
+      "pdf_pages": null,
+      "title_or_host_label": "Missale ad usum sarum, ...  1527",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-usum-sarum-_f-byrckman_1527/bim_early-english-books-1475-1640_missale-ad-usum-sarum-_f-byrckman_1527.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 352084915,
+      "download_complete_against_host_metadata": false,
+      "delivered_extent": "TRUNCATED PROVIDER DELIVERY; 117440512 of 352084915 expected bytes; pdfinfo fails; do not use as complete book",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-3",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-3.pdf",
+      "sha256": "d4d053762a4574b4cadd4266845570153b51e6a2cb6a7554d23224779a9e069c",
+      "bytes": 993622310,
+      "pdf_pages": 499,
+      "title_or_host_label": "Missale ad usum ac consuetudinem insignis ecclesie Sarum, ...  1519",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-usum-ac-consu_liturgies-latin-rite-mis_1519/bim_early-english-books-1475-1640_missale-ad-usum-ac-consu_liturgies-latin-rite-mis_1519.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 993622310,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 499 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-4",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-4.pdf",
+      "sha256": "d8fcd117f84598a009ade484e16b08e6da8d1650319b0760e260aa027014310c",
+      "bytes": 251625970,
+      "pdf_pages": 417,
+      "title_or_host_label": "Missale ad usum ecclesie, ...  1533",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-usum-ecclesie_f-regnault_1533/bim_early-english-books-1475-1640_missale-ad-usum-ecclesie_f-regnault_1533.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 251625970,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 417 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-5",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-5.pdf",
+      "sha256": "0ae94346c7331e7f5ce99285c53d9fc8910da73b8d79630dc821663dd650ee6c",
+      "bytes": 1510281755,
+      "pdf_pages": 593,
+      "title_or_host_label": "Missale ad cõsuetudinem ecclesie Sarum, ...  1513",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-csuetudinem-_liturgies-latin-rite-mis_1513/bim_early-english-books-1475-1640_missale-ad-csuetudinem-_liturgies-latin-rite-mis_1513.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 1510281755,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 593 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-6",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-6.pdf",
+      "sha256": "d655e7678426106ce1eba9f1c6c4dd9694c247fc4c4854000a667623c558fd8e",
+      "bytes": 731785512,
+      "pdf_pages": 504,
+      "title_or_host_label": "Missale ad vsum ecclesie Sarisburiensis ...  1557",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-vsum-ecclesie_liturgies-latin-rite-mis_1557/bim_early-english-books-1475-1640_missale-ad-vsum-ecclesie_liturgies-latin-rite-mis_1557.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 731785512,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 504 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-8",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-8.pdf",
+      "sha256": "8f6e085ad3a915b0caeb8500559415e26f14fc010d62c4a50468feb70373306e",
+      "bytes": 575114120,
+      "pdf_pages": 527,
+      "title_or_host_label": "Missale ad usum sarum, ...  1527",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-usum-sarum-_f-regnault_1527/bim_early-english-books-1475-1640_missale-ad-usum-sarum-_f-regnault_1527.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 575114120,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 527 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-sarum-print-9",
+      "path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-9.pdf",
+      "sha256": "291b8bb905d1290f4f0689f0bdc616519fa3ca20c12a9ce22fb452898ab96440",
+      "bytes": 569288607,
+      "pdf_pages": 640,
+      "title_or_host_label": "Missale ad usum ecclesie Sarisburiensis, ...  1555",
+      "url_or_catalogue_route": "https://archive.org/download/bim_early-english-books-1475-1640_missale-ad-usum-ecclesie_liturgies-latin-rite-mis_1555/bim_early-english-books-1475-1640_missale-ad-usum-ecclesie_liturgies-latin-rite-mis_1555.pdf",
+      "url_precision": "inferred-from-host-metadata-or-unknown",
+      "expected_host_bytes": 569288607,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 640 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Underlying early-modern printed Latin is public domain in the United States by age; BIM/host image and database redistribution terms remain unverified.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-scotland-davies",
+      "path": ".scratch/full-research-20261019/british/research/acquired/scotland-davies.pdf",
+      "sha256": "84d80956a336e7c43acebee5d160e70636009a41c4a30dd20d9913bc866d76d4",
+      "bytes": 324590,
+      "pdf_pages": 16,
+      "title_or_host_label": "",
+      "url_or_catalogue_route": "https://eprints.gla.ac.uk/166469/1/166469.pdf",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": null,
+      "download_complete_against_host_metadata": null,
+      "delivered_extent": "provider PDF; 16 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Modern authored study/scan: copyright and repository redistribution unresolved.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-staugustine1896",
+      "path": ".scratch/full-research-20261019/british/research/acquired/staugustine1896.pdf",
+      "sha256": "3e65c200dad6102fd8413c8ce081e47ce08edf0e782ba304ed49b1596522278e",
+      "bytes": 23356015,
+      "pdf_pages": 380,
+      "title_or_host_label": "The missal of St. Augustine's abbey, Canterbury, with excerpts from the Antiphonary and Lectionary of the same monastery",
+      "url_or_catalogue_route": "https://archive.org/download/missalofstaugust00cath/missalofstaugust00cath.pdf",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": 23356015,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 380 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Historical pre-1931 source or edition: United States public-domain eligibility by publication date; host scan and non-US status require artifact-specific review.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-tracts1904",
+      "path": ".scratch/full-research-20261019/british/research/acquired/tracts1904.pdf",
+      "sha256": "a1a16ac57394754ff36e509a7c7d9cb88e1274cc7022fc183c33ce1e87516309",
+      "bytes": 22171170,
+      "pdf_pages": 348,
+      "title_or_host_label": "Tracts on the Mass",
+      "url_or_catalogue_route": "https://archive.org/download/tractsonmass00leggrich/tractsonmass00leggrich.pdf",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": 22171170,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 348 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Historical pre-1931 source or edition: United States public-domain eligibility by publication date; host scan and non-US status require artifact-specific review.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-weale1886",
+      "path": ".scratch/full-research-20261019/british/research/acquired/weale1886.pdf",
+      "sha256": "288f014be769b189e20e84433ba0d6c7f573d0c64f72aadd8dfb7862e75a597f",
+      "bytes": 5985475,
+      "pdf_pages": 321,
+      "title_or_host_label": "Bibliographia liturgica. : Catalogus missalium ritus latini, ab anno M.CCCC.LXXV. impressorum",
+      "url_or_catalogue_route": "https://archive.org/download/bibliographiali00wealgoog/bibliographiali00wealgoog.pdf",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": 5985475,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 321 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Historical pre-1931 source or edition: United States public-domain eligibility by publication date; host scan and non-US status require artifact-specific review.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-westminster1",
+      "path": ".scratch/full-research-20261019/british/research/acquired/westminster1.pdf",
+      "sha256": "6f8b69e266ec3e9b3f95c372bb9f51fa98191c5215c23de55a34ec843afcee2f",
+      "bytes": 22178141,
+      "pdf_pages": 294,
+      "title_or_host_label": "Missale ad usum Ecclesie westmonasteriensis",
+      "url_or_catalogue_route": "https://archive.org/download/pt1missaleadusum01cath/pt1missaleadusum01cath.pdf",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": 22178141,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 294 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Historical pre-1931 source or edition: United States public-domain eligibility by publication date; host scan and non-US status require artifact-specific review.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-westminster2",
+      "path": ".scratch/full-research-20261019/british/research/acquired/westminster2.pdf",
+      "sha256": "09e6201f36a3a64cf9a4cde4d5f2dd8f8e5f218907976630503c1c80bb288363",
+      "bytes": 29872867,
+      "pdf_pages": 422,
+      "title_or_host_label": "Missale ad usum Ecclesie westmonasteriensis",
+      "url_or_catalogue_route": "https://archive.org/download/pt2missaleadusum01cath/pt2missaleadusum01cath.pdf",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": 29872867,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 422 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Historical pre-1931 source or edition: United States public-domain eligibility by publication date; host scan and non-US status require artifact-specific review.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    },
+    {
+      "id": "british-acq-westminster3",
+      "path": ".scratch/full-research-20261019/british/research/acquired/westminster3.pdf",
+      "sha256": "3013d9359d8ca945ffcd38cdf3b63a033f4e7382f5c29874b44ef5d84cd13626",
+      "bytes": 36435325,
+      "pdf_pages": 460,
+      "title_or_host_label": "Missale ad usum Ecclesie westmonasteriensis",
+      "url_or_catalogue_route": "https://archive.org/download/missaleadusumecc12cath/missaleadusumecc12cath.pdf",
+      "url_precision": "exact-receipt",
+      "expected_host_bytes": 36435325,
+      "download_complete_against_host_metadata": true,
+      "delivered_extent": "provider PDF; 460 parser-readable pages; no gathering audit",
+      "rights_jurisdiction": "United States evaluated provisionally; non-US status unresolved",
+      "rights_basis": "Historical pre-1931 source or edition: United States public-domain eligibility by publication date; host scan and non-US status require artifact-specific review.",
+      "rights_scope": "Exact acquired PDF bytes, including host presentation; no affirmative redistribution basis established for these bytes.",
+      "proposed_storage": "scratch-only-pending-whole-pass-retention-review",
+      "storage_reason": "Maintainer deferred source-library registration for all lanes; no PDF is proposed for Git before per-artifact rights and size review.",
+      "transcription_or_collation": "host OCR may be present but is uncorrected; no complete text collation"
+    }
+  ],
+  "image_acquisition_series": {
+    "source_id": "british-bodley-leofric",
+    "manifest_sha256": "bc9d4a9da7c49c3e21ebe8e145e422337f5a498a0f699dc1fec57a0f9084b809",
+    "image_count": 757,
+    "unavailable_canvas_numbers": [
+      110,
+      127,
+      303,
+      304
+    ],
+    "unavailable_folios": [
+      "54r",
+      "62v",
+      "150v",
+      "151r"
+    ],
+    "limit": "Four matching saved JPG receipts contain Image Unavailable placeholders; the original canvases are not acquired."
+  },
+  "source_evidence": [
+    {
+      "id": "british-legg1904",
+      "url": "https://archive.org/details/tractsonmass00leggrich",
+      "type": "historical-edition-bibliography",
+      "inspection": "Preface pp. xiv–xv/PDF pp. 22–23: complete 58-row manuscript table inspected on page images."
+    },
+    {
+      "id": "british-weale1886",
+      "url": "https://archive.org/details/bibliographiali00wealgoog",
+      "type": "historical-printed-bibliography",
+      "inspection": "York pp. 65–66, Hereford p. 78, Sarum pp. 178–189, itinerant p. 82 in exact host OCR; title image checked."
+    },
+    {
+      "id": "british-weale1928",
+      "url": "https://usuarium.elte.hu/catalogue/87/view",
+      "type": "partial-historical-bibliography-evidence",
+      "inspection": "USU catalogue 87 is an abridged linked subset. Separate saved 21,468-byte OCR excerpt covers relevant York, Hereford and Sarum sections; saved image p. 240 inspected."
+    },
+    {
+      "id": "british-buckley2005",
+      "url": "https://www.examenapium.it/cs/biblio/Buckley2005.pdf",
+      "type": "scholarly-manuscript-survey",
+      "inspection": "Appendices I–II, pp. 809–813/PDF pp. 66–70, all listed Irish music manuscripts."
+    },
+    {
+      "id": "british-nlw492f",
+      "url": "https://archifau.llyfrgell.cymru/index.php/missale-ad-usum-bangor-sic",
+      "type": "holding-library-catalogue",
+      "inspection": "NLW catalogue: MS 492F, mid-fifteenth century, extent “ii, 263 ff.”; ff. i–ii and 262–263 are modern parchment flyleaves and one folio is lost after f. 32. Scope says apparently Sarum, produced for Great Easton, Essex, presented to Oswestry in 1554."
+    },
+    {
+      "id": "british-bl-add43380",
+      "url": "https://searcharchives.bl.uk/catalog/032-002056261",
+      "type": "holding-library-catalogue",
+      "inspection": "Add MS 43380 summary and described later additions, erasures, York use."
+    },
+    {
+      "id": "british-tcd-manuscripts",
+      "url": "https://www.tcd.ie/library/research-collections/projects/medieval/manuscripts.php",
+      "type": "holding-library-catalogue",
+      "inspection": "Complete public list headings and descriptions for MS 82, 83, 109."
+    },
+    {
+      "id": "british-worcester-f161",
+      "url": "https://worcestercathedrallibrary.wordpress.com/2025/01/14/bunny-business-rabbit-warrens-on-the-priory-of-worcesters-manors/",
+      "type": "holding-library-description",
+      "inspection": "Worcester Cathedral Library F 161 identified as fifteenth-century Hereford Missal, image of f. 194v."
+    },
+    {
+      "id": "british-irht-robert",
+      "url": "https://initiale.irht.cnrs.fr/en/codex/3800",
+      "type": "manuscript-catalogue",
+      "inspection": "Rouen 274 (Y.6), circa 1020, possible Canterbury production; gift to Jumièges later."
+    },
+    {
+      "id": "british-irht-winchcombe",
+      "url": "https://initiale.irht.cnrs.fr/it/codex/2951",
+      "type": "manuscript-catalogue",
+      "inspection": "Orléans 127(105), Winchcombe sacramentary, third quarter tenth century."
+    },
+    {
+      "id": "british-huntington-york",
+      "url": "https://www.huntington.org/collections/lib-p15150coll7-50799",
+      "type": "holding-library-catalogue",
+      "inspection": "HM 1067, ff. 1–297v; calendar, Temporale, Ordinary/Canon ff. 137–156v, sanctoral and votives, dated 1400–1450."
+    },
+    {
+      "id": "british-bl-harley3965",
+      "url": "https://searcharchives.bl.uk/catalog/040-002049802",
+      "type": "holding-library-catalogue",
+      "inspection": "Harley MS 3965, Hereford gradual, circa 1350, imperfect ff. 1r–142r."
+    },
+    {
+      "id": "british-smith-hereford",
+      "url": "https://www.routledge.com/The-Use-of-Hereford-The-Sources-of-a-Medieval-English-Diocesan-Rite/Smith/p/book/9781032917436",
+      "type": "scholarly-preview-lead",
+      "inspection": "Public preview table of contents and p. xvi expand SFda 48243 as Downside Abbey MS 48243."
+    },
+    {
+      "id": "british-bodley-leofric",
+      "url": "https://digital.bodleian.ox.ac.uk/objects/97b5f725-af6d-4934-ad75-575eb081838f/",
+      "type": "holding-library-digitization",
+      "inspection": "Bodley 579 IIIF 757 canvases; 753 scaled 1600px image responses and four Image Unavailable placeholders were acquired; core and additions identified by scholarly catalogue."
+    },
+    {
+      "id": "british-abbey-litlyngton",
+      "url": "https://www.westminster-abbey.org/learning/christianity-in-10-objects/the-litlyngton-missal",
+      "type": "holding-institution-page",
+      "inspection": "Westminster Abbey objects page identifies and dates the Litlyngton Missal, 1383–84, without giving a shelfmark. The separate Abbey library collection page identifies it as MS 37, now two physical volumes; the Henry Bradshaw Society edition is three editorial volumes (1891–1896)."
+    },
+    {
+      "id": "british-bim-1550",
+      "url": "https://archive.org/details/bim_early-english-books-1475-1640_liturgies-missals-salisb_1550",
+      "type": "scan-provider-catalogue",
+      "inspection": "BIM/Internet Archive catalogue label LITURGIES-MISSALS-SALISBURY 1550 and exact 497-page provider PDF acquired."
+    },
+    {
+      "id": "british-abbey-collection",
+      "url": "https://www.westminster-abbey.org/about/library-research/library-collection",
+      "type": "holding-institution-library-catalogue",
+      "inspection": "Library collection identifies Litlyngton Missal as MS 37, now in two physical volumes; HBS three-volume edition 1891–1896."
+    },
+    {
+      "id": "british-usuarium-st-andrews",
+      "url": "https://usuarium.elte.hu/origin/318/view",
+      "type": "research-catalogue",
+      "inspection": "St Andrews 1491 Arbuthnott missal row."
+    },
+    {
+      "id": "british-usuarium-dublin",
+      "url": "https://usuarium.elte.hu/origin/372/view",
+      "type": "research-catalogue",
+      "inspection": "Dublin BL Add. 24198 missal entry, 1300–1325."
+    },
+    {
+      "id": "british-usuarium-kilcormac",
+      "url": "https://usuarium.elte.hu/origin/1120/view",
+      "type": "research-catalogue",
+      "inspection": "TCD MS 82 missal entry, 1300–1458; Buckley distinguishes Carmelite missal from separate Sarum antiphonal."
+    },
+    {
+      "id": "british-usuarium-lismore",
+      "url": "https://usuarium.elte.hu/origin/1123/view",
+      "type": "research-catalogue",
+      "inspection": "Rawl. C. 892 gradual row, 1175–1200."
+    },
+    {
+      "id": "british-usuarium-winchester",
+      "url": "https://usuarium.elte.hu/origin/322/view",
+      "type": "research-catalogue",
+      "inspection": "Book 2414 Le Havre 330 and 2649 Rouen 274."
+    },
+    {
+      "id": "british-usuarium-worcester",
+      "url": "https://usuarium.elte.hu/origin/323/view",
+      "type": "research-catalogue",
+      "inspection": "Book 3369 Laud Misc. 482 sacramentary row."
+    },
+    {
+      "id": "british-usuarium-exeter",
+      "url": "https://usuarium.elte.hu/origin/301/view",
+      "type": "research-catalogue",
+      "inspection": "Book 283 Bodley 579."
+    },
+    {
+      "id": "british-usuarium-canterbury",
+      "url": "https://usuarium.elte.hu/origin/291/view",
+      "type": "research-catalogue",
+      "inspection": "Book 224 CCCC 270 missal and 3025 Arsenal 135, plus gradual."
+    },
+    {
+      "id": "british-mission-bnf",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb36817488t",
+      "type": "national-library-catalogue",
+      "inspection": "1626 Missale parvum for itinerant priests, catalogue imprint."
+    },
+    {
+      "id": "british-mission-folger",
+      "url": "https://catalog.folger.edu/record/405000",
+      "type": "holding-library-catalogue",
+      "inspection": "1626 Missale parvum for England, Scotland and Ireland, conflicting imprint."
+    },
+    {
+      "id": "british-aberdeen-eeles",
+      "url": "https://journals.socantscot.org/index.php/psas/article/download/6749/6718/6707",
+      "type": "historical-witness-study",
+      "inspection": "21-page acquired article, Blairs Sarum printed missal and manuscript Aberdeen calendar additions."
+    },
+    {
+      "id": "british-robert1896",
+      "url": "https://archive.org/details/missalofrobertof11cath",
+      "type": "critical-edition",
+      "inspection": "Title and introductory matter of HBS volume; original manuscript is Rouen 274."
+    },
+    {
+      "id": "british-staugustine1896",
+      "url": "https://archive.org/details/missalofstaugust00cath",
+      "type": "critical-edition",
+      "inspection": "Title and introductory matter of Canterbury St Augustine’s Abbey missal edition."
+    },
+    {
+      "id": "british-westminster-edition",
+      "url": "https://archive.org/details/pt1missaleadusum01cath",
+      "type": "critical-edition-series",
+      "inspection": "Part I–III exact acquired PDFs, each title page checked."
+    },
+    {
+      "id": "british-durham-study",
+      "url": "https://era.ed.ac.uk/server/api/core/bitstreams/557dff08-b24a-4cbf-a114-f834027bfb56/content",
+      "type": "modern-study",
+      "inspection": "237-page acquired study; title and relevant Durham manuscript discussion."
+    },
+    {
+      "id": "british-biblissima-rawlc892",
+      "url": "https://iiif.biblissima.fr/collections/manifest/f7781161f54e8bcb7be59a2478a0743e15b5aa3c",
+      "type": "Biblissima presentation of Bodleian digital-manuscript metadata",
+      "inspection": "Shelfmark Rawl. C. 892; title Gradual; late twelfth century; Irish place with several tentative local alternatives; link to Bodleian digital object and manuscript catalogue."
+    },
+    {
+      "id": "british-bpl-1497-copy-metadata",
+      "url": "https://archive.org/metadata/missalesecundumv00cath",
+      "type": "holding-copy-host-metadata",
+      "inspection": "Boston Public Library Rare Books copy Q.402.48 FOLIO: 1497 Rouen Sarum missal; copy note says imperfect, 26 leaves wanting (a1, a6, a7, A1–4, X1, c8, o1–p8, q8). IA PDF host object is 41,087,043 bytes; a byte-complete host delivery is not a complete printed copy."
+    }
+  ],
+  "monastic_leads": [
+    {
+      "name": "Bury St Edmunds",
+      "shelfmark": "Laon BM MS 238",
+      "prior_catalogue_id": "USU book 2405",
+      "disposition": "deferred-open-lead",
+      "owner": "monastic-house follow-up",
+      "reason": "USU missal attestation only; no original-book comparison or distinct Bury use shown."
+    },
+    {
+      "name": "Ely",
+      "shelfmark": "Cambridge University Library MS Ii.4.20",
+      "prior_catalogue_id": null,
+      "disposition": "deferred-open-lead",
+      "owner": "monastic-house follow-up",
+      "reason": "Frozen Pfaff lead; USU Ely origin list lacked a massbook in saved sweep, which is a catalogue limit, not absence proof."
+    },
+    {
+      "name": "Gilbertine",
+      "shelfmark": "Lincoln Cathedral MS 115",
+      "prior_catalogue_id": "USU book 785",
+      "disposition": "existing-inventory-candidate",
+      "owner": "western inventory / Gilbertine order lane",
+      "existing_candidate_id": "gilbertine-lincoln115",
+      "reason": "Already catalogued as Mass collection; no new duplicate row or full Gilbertine missal claim."
+    },
+    {
+      "name": "Abingdon",
+      "shelfmark": "Bodleian Digby MS 227",
+      "prior_catalogue_id": null,
+      "disposition": "deferred-open-lead",
+      "owner": "monastic-house follow-up",
+      "reason": "Named frozen manuscript lead; Eucharistic contents, ownership and local text variation require holding-catalogue check."
+    },
+    {
+      "name": "St Albans",
+      "shelfmark": "Bodleian Laud MS 279",
+      "prior_catalogue_id": null,
+      "disposition": "deferred-open-lead",
+      "owner": "monastic-house follow-up",
+      "reason": "Named frozen manuscript lead; must reconcile shelfmark and Mass contents before candidate admission."
+    },
+    {
+      "name": "Tewkesbury",
+      "shelfmark": "Cambridge University Library MS Gg.3.21",
+      "prior_catalogue_id": "USU book 3825",
+      "disposition": "deferred-open-lead",
+      "owner": "monastic-house follow-up",
+      "reason": "USU missal label and Legg hiemale witness; range and original contents need check before a complete-book or distinctive-use claim."
+    },
+    {
+      "name": "Whitby",
+      "shelfmark": "Bodleian Rawl. liturg. b. 1",
+      "prior_catalogue_id": null,
+      "disposition": "deferred-open-lead",
+      "owner": "monastic-house follow-up",
+      "reason": "Named frozen manuscript lead; original extent and house use uncollated."
+    },
+    {
+      "name": "Sherborne",
+      "shelfmark": "British Library Add MS 74236",
+      "prior_catalogue_id": "USU book 1887",
+      "disposition": "deferred-open-lead",
+      "owner": "monastic-house follow-up",
+      "reason": "USU missal catalogue witness; monastery association and substantive distinctness need manuscript inspection."
+    },
+    {
+      "name": "Winchcombe",
+      "shelfmark": "Orléans BM MS 127(105)",
+      "prior_catalogue_id": "USU book 2536",
+      "disposition": "proposed-british-candidate",
+      "owner": "british packet",
+      "proposed_candidate_id": "british-winchcombe-orleans127",
+      "reason": "Proposed sacramentary witness; IRHT and USU date ranges conflict; no Winchcombe-specific reform inferred."
+    },
+    {
+      "name": "Lesnes",
+      "shelfmark": "V&A London MSL/1916/404",
+      "prior_catalogue_id": "USU book 5300, Abbey Wood",
+      "disposition": "deferred-open-lead",
+      "owner": "monastic-house follow-up",
+      "reason": "USU Abbey Wood missal catalogue witness; Lesnes attribution and complete Mass contents need holding-catalogue check."
+    }
+  ],
+  "frozen_id_reconciliation": [
+    {
+      "frozen_expected_id": "cold-british-1",
+      "use": "sarum",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "Crawford/Manchester Latin24; Bologna2565; Arsenal135; Trinity B.10.14; Yale Beinecke286, Osborn a44; additional catalogued manuscripts including USU7729. Distinctness unproved until component comparison."
+    },
+    {
+      "frozen_expected_id": "cold-british-2",
+      "use": "sarum",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "All73 USU missal catalogue entries individually retained below. Every imprint needs witness-level accounting, not elevation to substantive version. 1530s erasure and Marian restoration layers deserve explicit checks."
+    },
+    {
+      "frozen_expected_id": "cold-british-3",
+      "use": "sarum",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "Pearson and other lay translations deferred; no new original liturgical state."
+    },
+    {
+      "frozen_expected_id": "cold-british-4",
+      "use": "york",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "Huntington1400-1450; TCD83 fourteen/fifteenth century; Henderson manuscript sigla require full introduction, not print-only representation."
+    },
+    {
+      "frozen_expected_id": "cold-british-5",
+      "use": "york",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "Five bibliographical editions, not automatically five liturgical revisions.1530 divided copy needs both volumes."
+    },
+    {
+      "frozen_expected_id": "cold-british-6",
+      "use": "hereford",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "BL Add39675 plus Hereford Cathedral missals and Oxford University College78A known as a lead; complete Henderson/modern source lists required."
+    },
+    {
+      "frozen_expected_id": "cold-british-7",
+      "use": "hereford",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "USU89 critical mediated source and6358 original edition must resolve to one historical1502 printing, with1502-09-01 publication role."
+    },
+    {
+      "frozen_expected_id": "cold-british-8",
+      "use": "aberdeen",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "St Nicholas/Blairs missal is Eucharistic witness;1509-10 Breviary alone is Office, not Eucharistic version."
+    },
+    {
+      "frozen_expected_id": "cold-british-9",
+      "use": "bangor-wales",
+      "disposition": "correction-no-bangor-missal-proved",
+      "expected_scope": "NLW492E is disputed/reassigned; do not use its traditional title as proof of Bangor local recension. Pontifical Anian1309-1328 is separate component."
+    },
+    {
+      "frozen_expected_id": "cold-british-10",
+      "use": "canterbury",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "CCCC270 c1094-95; Cosin V.v.6 gradual; Arsenal135 also Sarum; institutional subuse/provenance must not manufacture distinct versions."
+    },
+    {
+      "frozen_expected_id": "cold-british-11",
+      "use": "durham",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "Missal is absent from USU Durham list; known witness must survive that index omission. Ritual A.IV.19 and Durham priory books are components."
+    },
+    {
+      "frozen_expected_id": "cold-british-12",
+      "use": "exeter",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "Bodley579 strata; Cathedral3510,3515 massbooks and Grandisson Ordinale3502. Do not conflate Leofric creation, Exeter use, and modern editions."
+    },
+    {
+      "frozen_expected_id": "cold-british-13",
+      "use": "lincoln",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "Explicit Lincoln fragment edited Henderson YorkII343-348; Spalding M.J.II and Rugby missals have distinct local sequences. USU pontifical-only list is not absence proof."
+    },
+    {
+      "frozen_expected_id": "cold-british-14",
+      "use": "london",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "USU only two pontificals. Needs local massbook / Sarum supplement evidence; not a freestanding missal merely because London listed as origin."
+    },
+    {
+      "frozen_expected_id": "cold-british-15",
+      "use": "westminster",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "Westminster AbbeyMS34; USU5730,5731 date1362-1386 likely complementary critical volumes; do not count as two medieval missals."
+    },
+    {
+      "frozen_expected_id": "cold-british-16",
+      "use": "winchester",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "Le Havre330 c1120, Rouen2741000-1025; Red Book of Darley CCCC422 and troper also relevant components, provenance not unity."
+    },
+    {
+      "frozen_expected_id": "cold-british-17",
+      "use": "worcester",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "USU3369 c1075-1200; Worcester F160 Office antiphoner not altar missal."
+    },
+    {
+      "frozen_expected_id": "cold-british-18",
+      "use": "st-andrews-arbuthnott",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "Sarum-related local Scottish manuscript; library-held1864 Forbes critical edition is not medieval source date."
+    },
+    {
+      "frozen_expected_id": "cold-british-19",
+      "use": "ireland-earlier",
+      "disposition": "already-in-latin-early; no-duplicate-owner",
+      "expected_scope": "Historical four-missal list requires modern control, not exhaustive claim; distinct manuscript strata/date roles. Coordinate common-ancestor lane to avoid duplicate owners."
+    },
+    {
+      "frozen_expected_id": "cold-british-20",
+      "use": "dublin",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "BL Add24198 c1300-1325, Trinity Irish massbook/fragment catalogue; Irish provenance alone not new use."
+    },
+    {
+      "frozen_expected_id": "cold-british-21",
+      "use": "kilcormac",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "TCD82; date copied1458; Carmelite local Irish witness, not Sarum despite neighbouring descriptions."
+    },
+    {
+      "frozen_expected_id": "cold-british-22",
+      "use": "bangor-county-down",
+      "disposition": "already-in-latin-early; office-book-with-eucharistic-items",
+      "expected_scope": "Ambrosiana C5inf c680-691: Irish monastery, not Welsh cathedral Bangor. USU misplaced duplicate6091 versus correct1025 requires explicit distinction."
+    },
+    {
+      "frozen_expected_id": "cold-british-23",
+      "use": "lismore",
+      "disposition": "retained-with-qualification",
+      "expected_scope": "Eucharistic choir component; no full altar book claimed."
+    },
+    {
+      "frozen_expected_id": "cold-british-24",
+      "use": "additional-monastic-uses",
+      "disposition": "cross-lane-leads; no-monastic-revision-inferred",
+      "expected_scope": "Bury St Edmunds Laon238; Ely CUL Ii.4.20; Gilbertine Lincoln115; Abingdon Digby227; St Albans Laud279; Tewkesbury CUL Gg.iii.21; Whitby Rawl liturg.b.1; Sherborne BL Add74236; Winchcombe Orleans127; Lesnes VAM MSL/1916/404. Names must be dispositioned even if out-of-lane ownership."
+    }
+  ],
+  "negative_findings": [
+    "Westminster Abbey identifies the Litlyngton Missal as MS 37, not frozen reviewer MS 34; it is now two physical volumes and the HBS edition has three editorial volumes.",
+    "NLW MS 492F is not a secure Bangor-use missal; shelfmark 492E in first cold note corrected to 492F.",
+    "Bangor County Down antiphonary is an Office book with Eucharistic items, already owned by Latin-early; no Welsh Bangor version inferred.",
+    "USU 89/6358 for 1502 Hereford and 5011/5012 for Sarum Trinity B.10.14 are potential duplicate cataloguing, not duplicate recensions.",
+    "Hereford Worcester F161 is a Hereford-use manuscript held in Worcester, not Worcester use.",
+    "TCD 109’s summary calls it a missal but its heading and Buckley’s surveyed genre are antiphonal; mixed description retained as unresolved.",
+    "Arsenal 135 carries a Canterbury catalogue origin but Legg’s revised Sarum attribution; do not count a Canterbury revision.",
+    "Robert of Jumièges is not securely Winchester produced; IRHT allows Canterbury manufacture.",
+    "Of 757 Leofric IIIF canvas deliveries, four are identical Image Unavailable placeholders, leaving 753 usable scaled images; no complete transcription."
+  ],
+  "unresolved_leads": [
+    "Full original-book comparison of Sarum 1487–1557 imprints, especially 1534/1537 identity, 1550 generic BIM label, 1554–57 Marian states and erasure layers.",
+    "York five prints, 1530 divided copy, Henderson manuscript sigla and BL Add 43380 later additions.",
+    "Hereford 1502 original vs critical ID, manuscript readings across Add 39675, Whitchurch, Downside 48243 and Worcester F161.",
+    "NLW 492F is Sarum/Great Easton; recover an independently evidenced Welsh Bangor Mass book if one exists.",
+    "Aberdeen Blairs print identity and local calendar hands; Aberdeen Breviary Office-only.",
+    "London/St Paul’s complete Mass-book identity; USU origin has only pontificals in saved sweep.",
+    "Rawl C 892 Lismore vs Downpatrick, Rawl C 32 ordinal vs missal, TCD 109 antiphonal vs TCD summary phrase.",
+    "Leofric 757 scaled canvas requests yield 753 image responses and four Image Unavailable placeholders (folios 54r, 62v, 150v, 151r); layer-by-layer collation and Bodleian reproduction rights remain open.",
+    "Robert of Jumièges Rouen 274 manufacture/use attribution; Winchester index not proof.",
+    "British monastic house witnesses in frozen cold 24 need their owning monastic/order lane or later dedicated use-level evidence.",
+    "1615/1623/1626 mission book identity, contents and BnF/Folger 1626 imprint disagreement.",
+    "For every acquired BIM scan: verify licence, original-book gathering completeness, title/colophon and text; eight saved BIM PDFs are truncated relative to host metadata and must be redownloaded whole."
+  ],
+  "rights_and_access": [
+    "Eight BIM Sarum PDFs need full re-download and original title/colophon checks before whole-book use.",
+    "Four Leofric IIIF canvases are Image Unavailable placeholders; full image and layer collation remain open.",
+    "No acquired BIM or Bodleian image bytes have an affirmative repository redistribution basis; retain in scratch pending artifact-specific rights ruling.",
+    "Underlying images or full contents for catalogue-only witnesses, including TCD 109 and Rawl. C. 32, remain unexamined; no substantive version can be inferred.",
+    "Rawl. C. 892 local-use provenance needs original catalogue, images and scholarly comparison; its Biblissima/Bodleian route establishes gradual genre but not Lismore use.",
+    "Eight deferred monastic house leads need original holding descriptions and Mass-content checks; no omission is silently closed.",
+    "No affirmative redistribution basis established for either acquired PDF; keep source files scratch-only."
+  ],
+  "1497_copy_condition": {
+    "id": "british-acq-sarum-print-18",
+    "host_item": "missalesecundumv00cath",
+    "host_pdf_bytes": 41087043,
+    "local_pdf_sha256": "51a9b33ea55d967727e870d87c5ddf23a1397186e1d019f6c826bf80f2c8d625",
+    "pdf_pages": 538,
+    "delivery_status": "byte-complete-against-host-PDF",
+    "physical_copy_status": "imperfect-26-leaves-wanting",
+    "copy_shelfmark": "Boston Public Library Rare Books Q.402.48 FOLIO",
+    "missing_leaves": "a1, a6, a7, A1-4, X1, c8, o1-p8, q8",
+    "metadata_snapshot_path": ".scratch/full-research-20261019/british/research/acquired/sarum-print-18-metadata.json",
+    "metadata_snapshot_sha256": "57611d94f78ded3fe665a712ad0e5f1dd7c4b9993de685f71746e79aa8d02f4a",
+    "live_metadata_path": ".scratch/full-research-20261019/british/continuation-agent/missalesecundumv00cath-metadata.json",
+    "live_metadata_sha256": "b4828f854a7840062d0897591da482f0ab5e40bfcd8ea6b618e3ff7a7aa2dd3e",
+    "metadata_url": "https://archive.org/metadata/missalesecundumv00cath",
+    "semantic_limit": "Host PDF byte completeness must not be treated as complete original copy or complete liturgical text."
+  },
+  "inventory_links": {
+    "source_ids": [
+      "british-legg1904",
+      "british-weale1886",
+      "british-weale1928",
+      "british-buckley2005",
+      "british-nlw492f",
+      "british-bl-add43380",
+      "british-tcd-manuscripts",
+      "british-worcester-f161",
+      "british-irht-robert",
+      "british-irht-winchcombe",
+      "british-huntington-york",
+      "british-bl-harley3965",
+      "british-smith-hereford",
+      "british-bodley-leofric",
+      "british-abbey-litlyngton",
+      "british-bim-1550",
+      "british-abbey-collection",
+      "british-usuarium-st-andrews",
+      "british-usuarium-dublin",
+      "british-usuarium-kilcormac",
+      "british-usuarium-lismore",
+      "british-usuarium-winchester",
+      "british-usuarium-worcester",
+      "british-usuarium-exeter",
+      "british-usuarium-canterbury",
+      "british-mission-bnf",
+      "british-mission-folger",
+      "british-aberdeen-eeles",
+      "british-robert1896",
+      "british-staugustine1896",
+      "british-westminster-edition",
+      "british-durham-study",
+      "british-biblissima-rawlc892",
+      "british-bpl-1497-copy-metadata"
+    ],
+    "candidate_ids": [
+      "british-sarum-trinity-b1014",
+      "british-sarum-yale286",
+      "british-sarum-osborn-a44",
+      "british-sarum-arsenal135",
+      "british-sarum-1494",
+      "british-sarum-1500",
+      "british-sarum-1550",
+      "british-york-huntington",
+      "british-york-tcd83",
+      "british-york-add43380",
+      "british-hereford-downside48243",
+      "british-hereford-worcester-f161",
+      "british-hereford-harley3965",
+      "british-aberdeen-blairs",
+      "british-great-easton-nlw492f",
+      "british-canterbury-cccc270",
+      "british-durham-harley5289",
+      "british-exeter-leofric-bodley579",
+      "british-lincoln-tanner4",
+      "british-westminster-litlyngton",
+      "british-winchester-lehavre330",
+      "british-winchester-rouen274",
+      "british-worcester-laud482",
+      "british-st-andrews-arbuthnott1491",
+      "british-dublin-add24198",
+      "british-kilcormac-tcd82",
+      "british-winchcombe-orleans127",
+      "british-mission-1615",
+      "british-mission-1623",
+      "british-mission-1626",
+      "british-sarum-1497",
+      "british-irish-rawlc892"
+    ],
+    "coverage_candidate_assignments": {
+      "sarum": [
+        "sarum-medieval-manuscripts",
+        "sarum-1487",
+        "sarum-1554-1557",
+        "british-sarum-trinity-b1014",
+        "british-sarum-yale286",
+        "british-sarum-osborn-a44",
+        "british-sarum-arsenal135",
+        "british-sarum-1494",
+        "british-sarum-1497",
+        "british-sarum-1500",
+        "british-sarum-1550",
+        "british-great-easton-nlw492f"
+      ],
+      "york": [
+        "york-printing-series",
+        "british-york-huntington",
+        "british-york-tcd83",
+        "british-york-add43380"
+      ],
+      "hereford": [
+        "hereford-medieval",
+        "hereford-1502",
+        "british-hereford-downside48243",
+        "british-hereford-worcester-f161",
+        "british-hereford-harley3965"
+      ],
+      "british-other-uses": [
+        "british-aberdeen-blairs",
+        "british-canterbury-cccc270",
+        "british-durham-harley5289",
+        "british-exeter-leofric-bodley579",
+        "british-lincoln-tanner4",
+        "british-westminster-litlyngton",
+        "british-winchester-lehavre330",
+        "british-winchester-rouen274",
+        "british-worcester-laud482",
+        "british-st-andrews-arbuthnott1491",
+        "british-dublin-add24198",
+        "british-kilcormac-tcd82",
+        "british-irish-rawlc892",
+        "british-winchcombe-orleans127",
+        "british-mission-1615",
+        "british-mission-1623",
+        "british-mission-1626"
+      ]
+    },
+    "presentation_groups": [
+      "sarum",
+      "york",
+      "hereford"
+    ]
+  },
+  "limits": [
+    "No complete whole-book text, substantive revision, historical stage, parentage, normative approval or local reception is established.",
+    "102 Sarum USU rows, 73 labelled Missal, remain catalogue records, not version counts.",
+    "Eight BIM PDFs are truncated against host file sizes; four Leofric IIIF canvases are placeholders.",
+    "No acquired PDF or image has an affirmative tracked retention or redistribution basis.",
+    "A later british-other-uses coverage correction recognizes 17 selected witnesses and leads while its local-use census remains open; Bangor (Wales) and London/St Paul’s lack secure complete Mass-book evidence, and Rawl. C. 892 and Rouen 274 retain disputed local attribution."
+  ],
+  "integration": {
+    "checkpoint_head": "82bc65a9f",
+    "western_preimage_sha256": "dde38671887437e481498ad890f9f8a3b7ace867041c312ecc01ce9ab0cd023d",
+    "western_postimage_sha256": "0787a3fd26481b34405319c59b49df8b072b3438533375c399031659e2739c9b",
+    "source_additions": 34,
+    "candidate_additions": 32,
+    "coverage_rows_updated": [
+      "sarum",
+      "york",
+      "hereford",
+      "british-other-uses"
+    ],
+    "presentation_edited": false,
+    "stage_coverage_audit_edited": false,
+    "source_payloads_registered": 0
+  },
+  "unrouted_presentation_families": [
+    "historic-aberdeen-use",
+    "historic-canterbury-use",
+    "historic-dublin-use",
+    "historic-durham-use",
+    "historic-english-mission-use",
+    "historic-exeter-use",
+    "historic-irish-use-undetermined",
+    "historic-kilcormac-use",
+    "historic-lincoln-use",
+    "historic-st-andrews-use",
+    "historic-westminster-use",
+    "historic-winchcombe-use",
+    "historic-winchester-use",
+    "historic-worcester-use"
+  ],
+  "coverage_audit_refresh": "Pending coordinator refresh of source fingerprints, candidate lists and witness projections after this Western-only edit boundary."
+}

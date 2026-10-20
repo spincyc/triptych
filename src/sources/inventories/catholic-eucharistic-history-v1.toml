@@ -239,6 +239,151 @@ id = "zaire"
 label = "Roman Missal: Zaire adaptation"
 families = ["roman-zaire-adaptation"]
 
+[[presentation_groups]]
+id = "salzburg"
+label = "Use of Salzburg"
+families = ["historic-salzburg-use"]
+
+[[presentation_groups]]
+id = "gurk"
+label = "Use of Gurk"
+families = ["historic-gurk-use"]
+
+[[presentation_groups]]
+id = "seckau"
+label = "Use of Seckau"
+families = ["historic-seckau-use"]
+
+[[presentation_groups]]
+id = "basel"
+label = "Use of Basel"
+families = ["historic-basel-use"]
+
+[[presentation_groups]]
+id = "chur"
+label = "Use of Chur"
+families = ["historic-chur-use"]
+
+[[presentation_groups]]
+id = "geneva"
+label = "Use of Geneva"
+families = ["historic-geneva-use"]
+
+[[presentation_groups]]
+id = "lausanne"
+label = "Use of Lausanne"
+families = ["historic-lausanne-use"]
+
+[[presentation_groups]]
+id = "sion"
+label = "Use of Sion"
+families = ["historic-sion-use"]
+
+[[presentation_groups]]
+id = "st-gall"
+label = "Use of St Gall"
+families = ["historic-st-gall-use"]
+
+[[presentation_groups]]
+id = "augsburg"
+label = "Use of Augsburg"
+families = ["historic-augsburg-use"]
+
+[[presentation_groups]]
+id = "bamberg"
+label = "Use of Bamberg"
+families = ["historic-bamberg-use"]
+
+[[presentation_groups]]
+id = "bremen"
+label = "Use of Bremen"
+families = ["historic-bremen-use"]
+
+[[presentation_groups]]
+id = "eichstatt"
+label = "Use of Eichstätt"
+families = ["historic-eichstatt-use"]
+
+[[presentation_groups]]
+id = "cologne"
+label = "Use of Cologne"
+families = ["historic-cologne-use"]
+
+[[presentation_groups]]
+id = "freising"
+label = "Use of Freising"
+families = ["historic-freising-use"]
+
+[[presentation_groups]]
+id = "hildesheim"
+label = "Use of Hildesheim"
+families = ["historic-hildesheim-use"]
+
+[[presentation_groups]]
+id = "konstanz"
+label = "Use of Konstanz"
+families = ["historic-konstanz-use"]
+
+[[presentation_groups]]
+id = "magdeburg"
+label = "Use of Magdeburg"
+families = ["historic-magdeburg-use"]
+
+[[presentation_groups]]
+id = "meissen"
+label = "Use of Meissen"
+families = ["historic-meissen-use"]
+
+[[presentation_groups]]
+id = "munster"
+label = "Use of Münster"
+families = ["historic-munster-use"]
+
+[[presentation_groups]]
+id = "passau"
+label = "Use of Passau"
+families = ["historic-passau-use"]
+
+[[presentation_groups]]
+id = "regensburg"
+label = "Use of Regensburg"
+families = ["historic-regensburg-use"]
+
+[[presentation_groups]]
+id = "schleswig"
+label = "Use of Schleswig"
+families = ["historic-schleswig-use"]
+
+[[presentation_groups]]
+id = "speyer"
+label = "Use of Speyer"
+families = ["historic-speyer-use"]
+
+[[presentation_groups]]
+id = "trier"
+label = "Use of Trier"
+families = ["historic-trier-use"]
+
+[[presentation_groups]]
+id = "wurzburg"
+label = "Use of Würzburg"
+families = ["historic-wurzburg-use"]
+
+[[presentation_groups]]
+id = "utrecht"
+label = "Use of Utrecht"
+families = ["historic-utrecht-use"]
+
+[[presentation_groups]]
+id = "riga"
+label = "Use of Riga"
+families = ["historic-riga-use"]
+
+[[presentation_groups]]
+id = "brixen"
+label = "Use of Brixen"
+families = ["historic-brixen-use"]
+
 [[catalogues]]
 id = "eastern"
 path = "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml"
@@ -1116,3 +1261,214 @@ note = "Navigation for two catalogue-backed order-labelled witnesses. Membership
 id = "hospitaller-order-of-malta"
 label = "Hospitaller Order of St John of Jerusalem, Rhodes and Malta"
 families = ["Hospitaller Order of St John of Jerusalem (OMel)"]
+
+[[presentation_groups]]
+id = "aosta"
+label = "Use of Aosta"
+families = ["aosta-local"]
+
+[[presentation_groups]]
+id = "benevento"
+label = "Use of Benevento"
+families = ["benevento-local"]
+
+[[presentation_groups]]
+id = "messina"
+label = "Use of Messina"
+families = ["messina-local"]
+
+# Scratch-only routing addition for the Évora original witness.
+[[presentation_groups]]
+id = "evora"
+label = "Évora diocesan use"
+families = ["evora"]
+# Cold-reviewed navigation for bounded British and Irish witnesses.
+# Labels describe attested books or components, not distinct rites or recensions.
+
+[[presentation_groups]]
+id = "aberdeen"
+label = "Blairs Sarum missal with Aberdeen additions"
+families = ["historic-aberdeen-use"]
+note = "Navigation for a bounded witness or book lead; no complete recension or independent rite is established."
+
+[[presentation_groups]]
+id = "canterbury"
+label = "St Augustine’s Canterbury missal"
+families = ["historic-canterbury-use"]
+note = "Navigation for a bounded witness or book lead; no complete recension or independent rite is established."
+
+[[presentation_groups]]
+id = "durham"
+label = "Durham Priory missal lead"
+families = ["historic-durham-use"]
+note = "Navigation for a bounded witness or book lead; no complete recension or independent rite is established."
+
+[[presentation_groups]]
+id = "exeter"
+label = "Leofric Missal and Exeter additions"
+families = ["historic-exeter-use"]
+note = "Navigation for a bounded witness or book lead; no complete recension or independent rite is established."
+
+[[presentation_groups]]
+id = "lincoln"
+label = "Lincoln Mass fragment (Tanner 4)"
+families = ["historic-lincoln-use"]
+note = "Navigation for a bounded witness or book lead; no complete recension or independent rite is established."
+
+[[presentation_groups]]
+id = "westminster"
+label = "Westminster Abbey use witness"
+families = ["historic-westminster-use"]
+note = "Navigation for a bounded witness or book lead; no complete recension or independent rite is established."
+
+[[presentation_groups]]
+id = "winchester"
+label = "Winchester-associated missals"
+families = ["historic-winchester-use"]
+note = "Navigation for a bounded witness or book lead; no complete recension or independent rite is established."
+
+[[presentation_groups]]
+id = "worcester"
+label = "Worcester use witness"
+families = ["historic-worcester-use"]
+note = "Navigation for a bounded witness or book lead; no complete recension or independent rite is established."
+
+[[presentation_groups]]
+id = "st-andrews"
+label = "St Andrews / Arbuthnott witness"
+families = ["historic-st-andrews-use"]
+note = "Navigation for a bounded witness or book lead; no complete recension or independent rite is established."
+
+[[presentation_groups]]
+id = "dublin"
+label = "Dublin-associated missal (Add MS 24198)"
+families = ["historic-dublin-use"]
+note = "Navigation for a bounded witness or book lead; no complete recension or independent rite is established."
+
+[[presentation_groups]]
+id = "kilcormac"
+label = "TCD MS 82 Carmelite missal layer"
+families = ["historic-kilcormac-use"]
+note = "Navigation for a bounded witness or book lead; no complete recension or independent rite is established."
+
+[[presentation_groups]]
+id = "winchcombe"
+label = "Winchcombe sacramentary witness"
+families = ["historic-winchcombe-use"]
+note = "Navigation for a bounded witness or book lead; no complete recension or independent rite is established."
+
+[[presentation_groups]]
+id = "english-mission"
+label = "English mission Mass-book witnesses and leads"
+families = ["historic-english-mission-use"]
+note = "Navigation for a bounded witness or book lead; no complete recension or independent rite is established."
+
+[[presentation_groups]]
+id = "irish-use-undetermined"
+label = "Irish gradual, use undetermined"
+families = ["historic-irish-use-undetermined"]
+note = "Navigation for a bounded witness or book lead; no complete recension or independent rite is established."
+
+# Scratch-only French cold-released append fragment. Review preimages before application.
+
+[[presentation_groups]]
+id = "bourges"
+label = "Use of Bourges"
+families = ["historic-bourges-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "cambrai"
+label = "Use of Cambrai"
+families = ["historic-cambrai-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "chartres"
+label = "Use of Chartres"
+families = ["historic-chartres-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "clermont"
+label = "Use of Clermont-Ferrand"
+families = ["historic-clermont-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "coutances"
+label = "Use of Coutances"
+families = ["historic-coutances-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "dijon"
+label = "Use of Dijon"
+families = ["historic-dijon-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "le-mans"
+label = "Use of Le Mans"
+families = ["historic-le-mans-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "laon"
+label = "Use of Laon"
+families = ["historic-laon-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "limoges"
+label = "Use of Limoges"
+families = ["historic-limoges-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "sens"
+label = "Use of Sens"
+families = ["historic-sens-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "reims"
+label = "Use of Reims"
+families = ["historic-reims-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "strasbourg"
+label = "Use of Strasbourg"
+families = ["historic-strasbourg-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "metz"
+label = "Use of Metz"
+families = ["historic-metz-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "orleans"
+label = "Use of Orléans"
+families = ["historic-orleans-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "poitiers"
+label = "Use of Poitiers"
+families = ["historic-poitiers-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "nevers"
+label = "Use of Nevers"
+families = ["historic-nevers-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."
+
+[[presentation_groups]]
+id = "narbonne"
+label = "Use of Narbonne"
+families = ["historic-narbonne-use"]
+note = "Bibliographic witness grouping; no distinct recension, complete census or local adoption inferred."

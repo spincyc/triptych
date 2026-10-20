@@ -1,0 +1,1996 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "italian-2026-10-20",
+  "title": "Full research pass review of Italian local Mass-book uses, excluding Ambrosian",
+  "lane": "italian",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "coverage_rows": [
+    "italian-aquileia",
+    "italian-aosta",
+    "italian-benevento",
+    "italian-padua",
+    "italian-monza",
+    "italian-ravenna",
+    "italian-messina"
+  ],
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "semantics": "Review receipt for bounded witness evidence. Entries are not a count of physical books, independent recensions, authorized use, or substantive revisions.",
+  "review_files": {
+    "storage": "disposable .scratch evidence, pinned by SHA-256; no scratch path is a published source binding",
+    "research_packet_sha256": "f742dab6df781d0565048a487467aa878787f463390ceef87b85e4a31b66db63",
+    "first_correction_addendum_sha256": "8f3f6167a6e3107afc55522c5da2a996961bd86017c054d5397fb74adc9a09d2",
+    "second_release_addendum_sha256": "09a9a37d26715469b0464aecd6cf02a2cd9fab5291c7aa891cc14df839a26daa",
+    "cold_verdict_sha256": "22b3f1fc17dc74e064fa3a8469dcec52de0a7d8322457883ee919e3610569e2f",
+    "release_verdict_sha256": "4d69cfc22d188de75733f1dc10142e86cef6f92a0dd7c93b9952d460056151ba",
+    "release_preview_sha256": "9c4992b38a9e6aa0fe5a22128d0385cb9cddacd186ba3dc1bbfbdb73e01f73d2",
+    "integration_fragment_sha256": "0d7afe961b6a2e2adf9cd16147dda028c87ad4412fe9ba528bf9d4a77a6d9fe9",
+    "exact_integration_plan_sha256": "7512309ef5cbcf6cca10562db2572615dc83fdb54ccb3482a01d487638c9a4d6"
+  },
+  "integration": {
+    "status": "integrated-western-and-presentation-stage-crosswalk-pending",
+    "western_preimage_sha256": "0787a3fd26481b34405319c59b49df8b072b3438533375c399031659e2739c9b",
+    "presentation_preimage_sha256": "65e4a926a821e57ccf2fce06ac4860d833c12db1871b41ea47ba44b895aeb9f7",
+    "stage_coverage_preimage_sha256": "abb092198ce6e8a13ae5178b692978c1118c47427e481eed4e4c6f38eba8e942",
+    "new_source_ids": [
+      "italian-usuarium-aquileia",
+      "italian-usuarium-aosta",
+      "italian-usuarium-benevento",
+      "italian-usuarium-padua",
+      "italian-usuarium-monza",
+      "italian-usuarium-ravenna",
+      "italian-usuarium-cosenza",
+      "italian-usuarium-messina",
+      "italian-amiet-aosta-1976",
+      "italian-aquileia-1494-ia",
+      "italian-aquileia-1508-braidense",
+      "italian-aquileia-1519-iccu",
+      "italian-padua-e57-source",
+      "italian-benevento-vi29-return",
+      "italian-walters-w6",
+      "italian-beweb-census",
+      "italian-monza-ordo-vatican-bibliography",
+      "italian-messina-1499-book",
+      "italian-benevento-vi29-case"
+    ],
+    "new_candidate_ids": [
+      "italian-aquileia-1494",
+      "italian-aquileia-1508",
+      "italian-aquileia-1517",
+      "italian-aquileia-1519",
+      "italian-aosta-1617",
+      "italian-aosta-1733",
+      "italian-benevento-vi33",
+      "italian-benevento-vi29",
+      "italian-messina-1480",
+      "italian-messina-1499",
+      "italian-messina-1510",
+      "italian-messina-1527",
+      "italian-messina-1534",
+      "italian-messina-1538",
+      "italian-messina-1568"
+    ],
+    "updated_candidate_ids": [
+      "cosenza-1549-burchard"
+    ],
+    "new_coverage_ids": [
+      "italian-aquileia",
+      "italian-aosta",
+      "italian-benevento",
+      "italian-padua",
+      "italian-monza",
+      "italian-ravenna",
+      "italian-messina"
+    ],
+    "new_presentation_group_ids": [
+      "aosta",
+      "benevento",
+      "messina"
+    ],
+    "retained_umbrella_id": "italian-other-uses",
+    "derived_stage_sequence_added": false,
+    "source_library_work_edition_artifact_added": false,
+    "western_postimage_sha256": "77a52292fc62eb6309d164d5dea6d6702009844a195b23ef1cefbf11ce088520",
+    "presentation_postimage_sha256": "df5c2ffebf46fac355e98ebabc54584aa3e5e32b2fb66175ccbc5f1550e417a9",
+    "western_counts_after": {
+      "sources": 574,
+      "candidates": 688,
+      "coverage": 73
+    },
+    "presentation_groups_after": 67
+  },
+  "cold_release_counts": {
+    "accepted_bounded": 46,
+    "accepted_after_correction": 17,
+    "deferred_catalogue_leads": 17,
+    "total_version_entries": 80
+  },
+  "uses": [
+    {
+      "id": "italian-aquileia",
+      "label": "Aquileia",
+      "coverage_row": "italian-other-uses",
+      "disposition": "researched-with-explicit-bounds",
+      "finding": "Eleventh-century missal and four printed dated witnesses are catalogued. The 1494 facsimile has exact bytes; 1508 and 1519 are independently identified bibliographically. Dated printings are not yet proved substantive textual states.",
+      "limit": "Catalogue entries are witness leads unless original text or an edition-specific scholarly comparison is identified. No complete all-component stage sequence certified.",
+      "next_sources": [
+        "Compare Ordinary, Canon, temporal, sanctoral, rubrics, and Holy Week across 1494, 1508, 1517, 1519; identify authorities and earlier manuscript layers."
+      ],
+      "review_disposition": "accepted-bounded-after-cold-release",
+      "review_remaining_gap": "Compare Ordinary, Canon, temporal, sanctoral, rubrics, and Holy Week across 1494, 1508, 1517, 1519; identify authorities and earlier manuscript layers.",
+      "research_review_disposition": "proposed-for-cold-review"
+    },
+    {
+      "id": "italian-aosta",
+      "label": "Aosta",
+      "coverage_row": "italian-other-uses",
+      "disposition": "researched-with-explicit-bounds",
+      "finding": "Amiet identifies 24 Ordinary witnesses, including later layers, and describes a fourteenth-century offertory revision and a 1617 substitution of the Roman Ordinary. The 1612 card remains underidentified.",
+      "limit": "Catalogue entries are witness leads unless original text or an edition-specific scholarly comparison is identified. No complete all-component stage sequence certified.",
+      "next_sources": [
+        "Compare the 1617 and 1733 books against manuscript subuses and inspect original title, approbation and complete component scope."
+      ],
+      "review_disposition": "accepted-bounded-after-cold-release",
+      "review_remaining_gap": "Compare the 1617 and 1733 books against manuscript subuses and inspect original title, approbation and complete component scope.",
+      "research_review_disposition": "proposed-for-cold-review"
+    },
+    {
+      "id": "italian-benevento",
+      "label": "Benevento",
+      "coverage_row": "italian-other-uses",
+      "disposition": "researched-with-explicit-bounds",
+      "finding": "VI 33 catalogue IDs 938, 1299, 6276 refer to one manuscript. VI 29 is former BL Egerton 3511; Ott. lat. 576 has dated parts. Script and notation are not proof of one Old Beneventan Mass text.",
+      "limit": "Catalogue entries are witness leads unless original text or an edition-specific scholarly comparison is identified. No complete all-component stage sequence certified.",
+      "next_sources": [
+        "Acquire original manuscripts or facsimiles; map Latin prayers and chant strata separately; resolve unnamed missal entries and current VI 29 holding."
+      ],
+      "review_disposition": "accepted-bounded-after-cold-release",
+      "review_remaining_gap": "Acquire original manuscripts or facsimiles; map Latin prayers and chant strata separately; resolve unnamed missal entries and current VI 29 holding.",
+      "research_review_disposition": "proposed-for-cold-review"
+    },
+    {
+      "id": "italian-padua",
+      "label": "Padua",
+      "coverage_row": "italian-other-uses",
+      "disposition": "researched-with-explicit-bounds",
+      "finding": "The examined Usuarium Padua origin 899 Books table has pontificals and rituals but no Missal/Sacramentary/Gradual row. Padua D 47 is a Gregorian sacramentary with disputed production region, later Verona appendix and early Latin ownership; E 57 is an uncollated local order-book lead.",
+      "limit": "Catalogue entries are witness leads unless original text or an edition-specific scholarly comparison is identified. No complete all-component stage sequence certified.",
+      "next_sources": [
+        "Inspect E 57 Eucharistic rubrics and local missal holdings; do not equate Pataviense (Passau) with Padua."
+      ],
+      "review_disposition": "accepted-bounded-after-cold-release",
+      "review_remaining_gap": "Inspect E 57 Eucharistic rubrics and local missal holdings; do not equate Pataviense (Passau) with Padua.",
+      "research_review_disposition": "proposed-for-cold-review"
+    },
+    {
+      "id": "italian-monza",
+      "label": "Monza",
+      "coverage_row": "italian-other-uses",
+      "disposition": "researched-with-explicit-bounds",
+      "finding": "In the examined Usuarium Monza origin 1103 table and named order-book bibliography, a Gradual, uncertain-origin sacramentary and homiliary are leads; no independent complete local Eucharistic recension is established within this searched range. Wider manuscript and text corpora remain unexamined.",
+      "limit": "Catalogue entries are witness leads unless original text or an edition-specific scholarly comparison is identified. No complete all-component stage sequence certified.",
+      "next_sources": [
+        "Inspect Liber ordinarius Modoetiensis and exact Monza/Berengar sacramentary contents; separate Roman, Ambrosian and local ritual material."
+      ],
+      "review_disposition": "accepted-bounded-after-cold-release",
+      "review_remaining_gap": "Inspect Liber ordinarius Modoetiensis and exact Monza/Berengar sacramentary contents; separate Roman, Ambrosian and local ritual material.",
+      "research_review_disposition": "proposed-for-cold-review"
+    },
+    {
+      "id": "italian-ravenna",
+      "label": "Ravenna",
+      "coverage_row": "italian-other-uses",
+      "disposition": "researched-with-explicit-bounds",
+      "finding": "In the examined Usuarium Ravenna origin 929 table and Ravenna Rotulus/fragment cards, prayer components and unidentified fragments appear; no complete Ravenna Missal is established within this searched range. Wider manuscript corpora remain unexamined.",
+      "limit": "Catalogue entries are witness leads unless original text or an edition-specific scholarly comparison is identified. No complete all-component stage sequence certified.",
+      "next_sources": [
+        "Identify each fragment, copying layer and provenance; compare Advent prayer corpus without inventing a complete annual Mass book."
+      ],
+      "review_disposition": "accepted-bounded-after-cold-release",
+      "review_remaining_gap": "Identify each fragment, copying layer and provenance; compare Advent prayer corpus without inventing a complete annual Mass book.",
+      "research_review_disposition": "proposed-for-cold-review"
+    },
+    {
+      "id": "italian-cosenza",
+      "label": "Cosenza",
+      "coverage_row": "cosenza",
+      "disposition": "researched-with-explicit-bounds",
+      "finding": "The 1549 Missale Cosentinum is catalogued and already has a Burchard-component candidate. The original local text remains unacquired.",
+      "limit": "Catalogue entries are witness leads unless original text or an edition-specific scholarly comparison is identified. No complete all-component stage sequence certified.",
+      "next_sources": [
+        "Inspect the original 1549 witness and compare the cited ceremonial component, whole-book content and any earlier/later states."
+      ],
+      "review_disposition": "accepted-bounded-after-cold-release",
+      "review_remaining_gap": "Inspect the original 1549 witness and compare the cited ceremonial component, whole-book content and any earlier/later states.",
+      "research_review_disposition": "proposed-for-cold-review"
+    },
+    {
+      "id": "italian-messina",
+      "label": "Messina",
+      "coverage_row": "new-coverage-proposed",
+      "disposition": "researched-with-explicit-bounds",
+      "finding": "Seven printed missal dates appear in the catalogue. The 1499 title advertises correction and additions, especially sanctoral/common, but exact changed readings remain uncollated.",
+      "limit": "Catalogue entries are witness leads unless original text or an edition-specific scholarly comparison is identified. No complete all-component stage sequence certified.",
+      "next_sources": [
+        "Establish each edition identity and compare 1480, 1499, 1510, 1527, 1534, 1538, 1568 across all Mass components."
+      ],
+      "review_disposition": "accepted-bounded-after-cold-release",
+      "review_remaining_gap": "Establish each edition identity and compare 1480, 1499, 1510, 1527, 1534, 1538, 1568 across all Mass components.",
+      "research_review_disposition": "proposed-for-cold-review"
+    }
+  ],
+  "searches": [
+    {
+      "repository": "Usuarium",
+      "queries": [
+        "origin-393"
+      ],
+      "url": "https://usuarium.elte.hu/origin/393/view",
+      "checked_on": "2026-10-20",
+      "outcome": "19 book rows inspected; 9 Missal, Sacramentary or Gradual rows retained as Mass-book/component leads.",
+      "extent_examined": "Complete origin Books table and stored HTML receipt; selected book detail cards only.",
+      "unexamined_range": "Original images, full Latin text, authority and textual comparison of each catalogue witness remain unexamined."
+    },
+    {
+      "repository": "Usuarium",
+      "queries": [
+        "origin-392"
+      ],
+      "url": "https://usuarium.elte.hu/origin/392/view",
+      "checked_on": "2026-10-20",
+      "outcome": "7 book rows inspected; 6 Missal, Sacramentary or Gradual rows retained as Mass-book/component leads.",
+      "extent_examined": "Complete origin Books table and stored HTML receipt; selected book detail cards only.",
+      "unexamined_range": "Original images, full Latin text, authority and textual comparison of each catalogue witness remain unexamined."
+    },
+    {
+      "repository": "Usuarium",
+      "queries": [
+        "origin-545"
+      ],
+      "url": "https://usuarium.elte.hu/origin/545/view",
+      "checked_on": "2026-10-20",
+      "outcome": "43 book rows inspected; 18 Missal, Sacramentary or Gradual rows retained as Mass-book/component leads.",
+      "extent_examined": "Complete origin Books table and stored HTML receipt; selected book detail cards only.",
+      "unexamined_range": "Original images, full Latin text, authority and textual comparison of each catalogue witness remain unexamined."
+    },
+    {
+      "repository": "Usuarium",
+      "queries": [
+        "origin-899"
+      ],
+      "url": "https://usuarium.elte.hu/origin/899/view",
+      "checked_on": "2026-10-20",
+      "outcome": "15 book rows inspected; 0 Missal, Sacramentary or Gradual rows retained as Mass-book/component leads.",
+      "extent_examined": "Complete origin Books table and stored HTML receipt; selected book detail cards only.",
+      "unexamined_range": "Original images, full Latin text, authority and textual comparison of each catalogue witness remain unexamined."
+    },
+    {
+      "repository": "Usuarium",
+      "queries": [
+        "origin-1103"
+      ],
+      "url": "https://usuarium.elte.hu/origin/1103/view",
+      "checked_on": "2026-10-20",
+      "outcome": "3 book rows inspected; 2 Missal, Sacramentary or Gradual rows retained as Mass-book/component leads.",
+      "extent_examined": "Complete origin Books table and stored HTML receipt; selected book detail cards only.",
+      "unexamined_range": "Original images, full Latin text, authority and textual comparison of each catalogue witness remain unexamined."
+    },
+    {
+      "repository": "Usuarium",
+      "queries": [
+        "origin-929"
+      ],
+      "url": "https://usuarium.elte.hu/origin/929/view",
+      "checked_on": "2026-10-20",
+      "outcome": "11 book rows inspected; 5 Missal, Sacramentary or Gradual rows retained as Mass-book/component leads.",
+      "extent_examined": "Complete origin Books table and stored HTML receipt; selected book detail cards only.",
+      "unexamined_range": "Original images, full Latin text, authority and textual comparison of each catalogue witness remain unexamined."
+    },
+    {
+      "repository": "Usuarium",
+      "queries": [
+        "origin-1087"
+      ],
+      "url": "https://usuarium.elte.hu/origin/1087/view",
+      "checked_on": "2026-10-20",
+      "outcome": "1 book rows inspected; 1 Missal, Sacramentary or Gradual rows retained as Mass-book/component leads.",
+      "extent_examined": "Complete origin Books table and stored HTML receipt; selected book detail cards only.",
+      "unexamined_range": "Original images, full Latin text, authority and textual comparison of each catalogue witness remain unexamined."
+    },
+    {
+      "repository": "Usuarium",
+      "queries": [
+        "origin-403"
+      ],
+      "url": "https://usuarium.elte.hu/origin/403/view",
+      "checked_on": "2026-10-20",
+      "outcome": "12 book rows inspected; 7 Missal, Sacramentary or Gradual rows retained as Mass-book/component leads.",
+      "extent_examined": "Complete origin Books table and stored HTML receipt; selected book detail cards only.",
+      "unexamined_range": "Original images, full Latin text, authority and textual comparison of each catalogue witness remain unexamined."
+    },
+    {
+      "repository": "Saved Italian Usuarium/IRHT discovery sweep",
+      "queries": [
+        "60 Italian origin cards",
+        "69 selected book detail attempts",
+        "116 IRHT named manuscript details"
+      ],
+      "url": "https://usuarium.elte.hu/origins?country=IT",
+      "checked_on": "2026-10-20",
+      "outcome": "60 origin cards, 69 selected book requests, 116 IRHT detail requests inventoried. These are discovery receipts, not 60 researched uses.",
+      "extent_examined": "Stored JSON and selected HTML cards; eight use tables receive per-use dispositions above.",
+      "unexamined_range": "Full Italian BeWeB manuscript census, IRHT contents for every named entry, Gamber CLLA range outside saved leads, all original manuscript images and most original printed books."
+    },
+    {
+      "repository": "Cold independent review",
+      "queries": [
+        "cold-initial",
+        "cold-supplement",
+        "cold-supplement-2",
+        "cold-supplement-3"
+      ],
+      "url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "checked_on": "2026-10-20",
+      "outcome": "All four frozen reports read. Initial eight expected uses preserved; three supplements qualify Amiet and bibliographic identities.",
+      "extent_examined": "Complete four JSON reports and stated saved facsimile receipts.",
+      "unexamined_range": "The cold report is independent expectation evidence; it is not a substitute for original text collation."
+    }
+  ],
+  "versions": [
+    {
+      "id": "italian-usuarium-164",
+      "label": "Missale Aquileiense",
+      "tradition_or_use": "Aquileia",
+      "date_label": "1517",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/164/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-711",
+      "label": "Bibl. Cap. Udine Cod. Quarto 26",
+      "tradition_or_use": "Aquileia",
+      "date_label": "1000-1100",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/711/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-1538",
+      "label": "BAV Ross. 0076",
+      "tradition_or_use": "Aquileia",
+      "date_label": "1200-1300",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Gradual",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/1538/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-5883",
+      "label": "OSB St. Gallen Cod. Sang. 0908 (pp. 79/80, 85/86, 93/94, 97-100, 103/104)",
+      "tradition_or_use": "Aquileia",
+      "date_label": "0501-0800",
+      "date_role": "catalogue-witness-date",
+      "record_class": "fragmentary-sacramentary-lead",
+      "distinctness_basis": "St Gall Cod. Sang. 908 contains the specified sacramentary fragments; Aquileian attribution remains unresolved, not a proved local recension.",
+      "source_url": "https://usuarium.elte.hu/book/5883/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": true
+    },
+    {
+      "id": "italian-usuarium-6614",
+      "label": "Library missing",
+      "tradition_or_use": "Aquileia",
+      "date_label": "0800 (after)",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Sacramentary",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/6614/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "No shelfmark; possible relation to 6615 unresolved. Do not count as a distinct physical witness."
+    },
+    {
+      "id": "italian-usuarium-6615",
+      "label": "Staatsarch. Marburg Hr 1, 4",
+      "tradition_or_use": "Aquileia",
+      "date_label": "0800 (after)",
+      "date_role": "catalogue-witness-date",
+      "record_class": "identified-fragmentary-sacramentary-lead",
+      "distinctness_basis": "Identified Marburg Hr 1, 4 lead; possible relation to unidentified Usuarium 6614 unresolved.",
+      "source_url": "https://usuarium.elte.hu/book/6615/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "physical_witness_key": "Marburg Hr 1, 4",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": true
+    },
+    {
+      "id": "italian-usuarium-6908",
+      "label": "Missale Aquileiense",
+      "tradition_or_use": "Aquileia",
+      "date_label": "1494",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/6908/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [
+        "italian-aquileia-1494-facsimile"
+      ],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-6909",
+      "label": "Missale Aquileiense",
+      "tradition_or_use": "Aquileia",
+      "date_label": "1508",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/6909/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-6910",
+      "label": "Missale Aquileiense",
+      "tradition_or_use": "Aquileia",
+      "date_label": "1519",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/6910/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-93",
+      "label": "Library missing",
+      "tradition_or_use": "Aosta",
+      "date_label": "1000-1600",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/93/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "No shelfmark and 1000–1600 span; preserve only as an unresolved catalogue lead, not an additional Aosta witness."
+    },
+    {
+      "id": "italian-usuarium-1042",
+      "label": "Arch. Storico Reg. Aosta 7",
+      "tradition_or_use": "Aosta",
+      "date_label": "1091-1100",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Usuarium 1042 is the Brusson codex 7 described by Amiet as A. A2 and A3 are later hands in that codex; do not count 1042 as an extra physical witness.",
+      "source_url": "https://usuarium.elte.hu/book/1042/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "physical_witness_key": "Aosta Archives Historiques Régionales cod. 7",
+      "alias_or_layer": "Same codex as Amiet A, with later A2 and A3 hands; one physical book.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": false
+    },
+    {
+      "id": "italian-usuarium-5763",
+      "label": "Missale Augustense",
+      "tradition_or_use": "Aosta",
+      "date_label": "1612",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/5763/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "The exact HTML card has only Aosta, generic Missale Augustense and 1612; no printer, holder or original title. Do not create a dated candidate."
+    },
+    {
+      "id": "italian-usuarium-5764",
+      "label": "Missale Augustense",
+      "tradition_or_use": "Aosta",
+      "date_label": "1617",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/5764/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-6356",
+      "label": "DUPLICATED",
+      "tradition_or_use": "Aosta",
+      "date_label": "1617",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Explicit duplicate of 1617 entry 5764; no extra version.",
+      "source_url": "https://usuarium.elte.hu/book/6356/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Explicit duplicate of 1617 entry 5764; no extra version.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-6920",
+      "label": "Missale Augustense",
+      "tradition_or_use": "Aosta",
+      "date_label": "1733",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/6920/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-936",
+      "label": "BAV Vat. lat. 10673",
+      "tradition_or_use": "Benevento",
+      "date_label": "1000-1100",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Gradual",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/936/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-937",
+      "label": "Bibl. Cap. Benevento Cod. VI. 34",
+      "tradition_or_use": "Benevento",
+      "date_label": "1000-1200",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Gradual",
+      "distinctness_basis": "Catalogue ID 937 and 1673 are aliases for Benevento VI 34. This is a Gradual, not a second Eucharistic book.",
+      "source_url": "https://usuarium.elte.hu/book/937/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "physical_witness_key": "Benevento VI 34",
+      "alias_or_layer": "Same Gradual as Usuarium 1673; one physical chant book.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": true
+    },
+    {
+      "id": "italian-usuarium-938",
+      "label": "Bibl. Cap. Benevento Cod. VI. 33",
+      "tradition_or_use": "Benevento",
+      "date_label": "1000 (about)",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Alias of one VI 33 manuscript; no extra version.",
+      "source_url": "https://usuarium.elte.hu/book/938/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Alias of one VI 33 manuscript; no extra version.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-1299",
+      "label": "Arch. Dioc. Benevento Ms. VI-33",
+      "tradition_or_use": "Benevento",
+      "date_label": "1000-1025",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Alias of one VI 33 manuscript; no extra version.",
+      "source_url": "https://usuarium.elte.hu/book/1299/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Alias of one VI 33 manuscript; no extra version.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-1673",
+      "label": "Bibl. Cap. Benevento Codex VI. 34",
+      "tradition_or_use": "Benevento",
+      "date_label": "1000-1200",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Gradual",
+      "distinctness_basis": "Catalogue ID 1673 is the same Benevento VI 34 Gradual as ID 937; exclude the alias from physical witness counts.",
+      "source_url": "https://usuarium.elte.hu/book/1673/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "physical_witness_key": "Benevento VI 34",
+      "alias_or_layer": "Alias of Usuarium 937.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": false
+    },
+    {
+      "id": "italian-usuarium-5319",
+      "label": "Missale Beneventanum",
+      "tradition_or_use": "Benevento",
+      "date_label": "undated",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/5319/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "Missale Beneventanum lacks date and physical identity in the inspected table."
+    },
+    {
+      "id": "italian-usuarium-6276",
+      "label": "Arch. Dioc. Benevento Cod. VI 33",
+      "tradition_or_use": "Benevento",
+      "date_label": "0900-1100",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Alias of one VI 33 manuscript; no extra version.",
+      "source_url": "https://usuarium.elte.hu/book/6276/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Alias of one VI 33 manuscript; no extra version.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-6282",
+      "label": "BAV Ott. lat. 576 (pars I-II)",
+      "tradition_or_use": "Benevento",
+      "date_label": "1000-1025",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Earlier parts I–II of Ott. lat. 576; catalogue dates this layer 1000–1025. Same physical codex as the later 6286 layer; origin uncertain.",
+      "source_url": "https://usuarium.elte.hu/book/6282/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "physical_witness_key": "BAV Ott. lat. 576",
+      "alias_or_layer": "Earlier parts I–II, catalogued 1000–1025; same codex as 6286.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": true
+    },
+    {
+      "id": "italian-usuarium-6286",
+      "label": "BAV Ott. lat. 576",
+      "tradition_or_use": "Benevento",
+      "date_label": "1100-1125",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Later catalogued part of Ott. lat. 576, dated 1100–1125 in Usuarium. Distinguish hand/layer from earlier parts, but count one physical codex; origin uncertain.",
+      "source_url": "https://usuarium.elte.hu/book/6286/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "physical_witness_key": "BAV Ott. lat. 576",
+      "alias_or_layer": "Later catalogued part, 1100–1125; same codex as 6282.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": false
+    },
+    {
+      "id": "italian-usuarium-6287",
+      "label": "BL London Egerton Ms. 3511",
+      "tradition_or_use": "Benevento",
+      "date_label": "1000-1200",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Benevento VI 29, formerly BL Egerton 3511; government announcement confirms identity and University of Geneva case record reports executed return 11 November 2010. Later manuscript additions remain distinct layers.",
+      "source_url": "https://usuarium.elte.hu/book/6287/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "VI 29, formerly British Library Egerton 3511; one manuscript with later additions.",
+      "physical_witness_key": "Benevento VI 29",
+      "alias_or_layer": "Former British Library Egerton 3511; same book as italian-extra-vi29.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": true
+    },
+    {
+      "id": "italian-usuarium-6289",
+      "label": "Library missing",
+      "tradition_or_use": "Benevento",
+      "date_label": "1000-1200",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/6289/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "Missing shelfmark; keep as a catalogue gap, not a distinct identified physical witness or recension."
+    },
+    {
+      "id": "italian-usuarium-6290",
+      "label": "Library missing",
+      "tradition_or_use": "Benevento",
+      "date_label": "1000-1200",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/6290/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "Missing shelfmark; keep as a catalogue gap, not a distinct identified physical witness or recension."
+    },
+    {
+      "id": "italian-usuarium-6291",
+      "label": "Library missing",
+      "tradition_or_use": "Benevento",
+      "date_label": "1000-1200",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/6291/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "Missing shelfmark; keep as a catalogue gap, not a distinct identified physical witness or recension."
+    },
+    {
+      "id": "italian-usuarium-6292",
+      "label": "KB Den Haag Cod. 75 H 39 (ff. 25-28)",
+      "tradition_or_use": "Benevento",
+      "date_label": "1000-1100",
+      "date_role": "catalogue-witness-date",
+      "record_class": "missal-fragment",
+      "distinctness_basis": "Den Haag 75 H 39 folios 25–28 only; four named folios do not establish a complete Missal.",
+      "source_url": "https://usuarium.elte.hu/book/6292/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": true
+    },
+    {
+      "id": "italian-usuarium-6293",
+      "label": "Library missing",
+      "tradition_or_use": "Benevento",
+      "date_label": "1100-1200",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/6293/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "Missing shelfmark; keep as a catalogue gap, not a distinct identified physical witness or recension."
+    },
+    {
+      "id": "italian-usuarium-6294",
+      "label": "Pierpont Morgan New York M 830 A",
+      "tradition_or_use": "Benevento",
+      "date_label": "1000-1200",
+      "date_role": "catalogue-witness-date",
+      "record_class": "manuscript-missal-lead",
+      "distinctness_basis": "Morgan M.830A is a manuscript lead; physical and textual extent remain unverified, so completeness cannot be inferred.",
+      "source_url": "https://usuarium.elte.hu/book/6294/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": true
+    },
+    {
+      "id": "italian-usuarium-6295",
+      "label": "BNF Paris Lat. 6894 (f. A-B)",
+      "tradition_or_use": "Benevento",
+      "date_label": "0900-1000",
+      "date_role": "catalogue-witness-date",
+      "record_class": "missal-fragment",
+      "distinctness_basis": "Paris Latin 6894 folios A–B only; fragment, not a complete Missal.",
+      "source_url": "https://usuarium.elte.hu/book/6295/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": true
+    },
+    {
+      "id": "italian-usuarium-6296",
+      "label": "Library missing",
+      "tradition_or_use": "Benevento",
+      "date_label": "1000-1200",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/6296/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "Missing shelfmark; keep as a catalogue gap, not a distinct identified physical witness or recension."
+    },
+    {
+      "id": "italian-usuarium-6510",
+      "label": "Graduale Modoetiense",
+      "tradition_or_use": "Monza",
+      "date_label": "undated",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Gradual",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/6510/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-6540",
+      "label": "Library missing",
+      "tradition_or_use": "Monza",
+      "date_label": "0830-0870",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Sacramentary",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/6540/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "Unidentified 830–870 sacramentary with uncertain origin; Monza holding does not establish Monza use."
+    },
+    {
+      "id": "italian-usuarium-5911",
+      "label": "Ravenna Rotulus / Ambrosiana S.P. Cassaf. 1 Orationes",
+      "tradition_or_use": "Ravenna",
+      "date_label": "0601-0800",
+      "date_role": "catalogue-witness-date",
+      "record_class": "prayer-component",
+      "distinctness_basis": "Usuarium 5911 identifies the Ravenna Rotulus; ELMSS 709 identifies the present Ambrosiana holding and treats Ravenna provenance as presumptive. This prayer roll is not a complete Missal.",
+      "source_url": "https://usuarium.elte.hu/book/5911/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": true
+    },
+    {
+      "id": "italian-usuarium-6347",
+      "label": "LB Stuttgart Cod. fragm. 100A (from Cod. H. B. VII 10)",
+      "tradition_or_use": "Ravenna",
+      "date_label": "0600-0700",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Sacramentary",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/6347/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-6348",
+      "label": "Library missing",
+      "tradition_or_use": "Ravenna",
+      "date_label": "0600-0800",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Sacramentary",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/6348/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "Missing shelfmark and 600–800 span; physical extent and exact Eucharistic content unresolved."
+    },
+    {
+      "id": "italian-usuarium-6349",
+      "label": "LB Stuttgart Ink. 15370 b om",
+      "tradition_or_use": "Ravenna",
+      "date_label": "0900-1000",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Sacramentary",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/6349/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "Stuttgart Ink. 15370 b om has unclear physical identity and extent; do not imply whole sacramentary."
+    },
+    {
+      "id": "italian-usuarium-6351",
+      "label": "OSB Montecassino Cod. 271 (olim 348)",
+      "tradition_or_use": "Ravenna",
+      "date_label": "0675-0700",
+      "date_role": "catalogue-witness-date",
+      "record_class": "palimpsest-component-lead",
+      "distinctness_basis": "Montecassino 271 (olim 348) palimpsest lead; exact leaf, hand and text stratum unverified. Do not promote to a Ravenna local stage.",
+      "source_url": "https://usuarium.elte.hu/book/6351/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": true
+    },
+    {
+      "id": "italian-usuarium-5816",
+      "label": "Missale Cosentinum",
+      "tradition_or_use": "Cosenza",
+      "date_label": "1549",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/5816/view",
+      "existing_candidate_ids": [
+        "cosenza-1549-burchard"
+      ],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-382",
+      "label": "Missale Messanense",
+      "tradition_or_use": "Messina",
+      "date_label": "1499",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/382/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-7272",
+      "label": "Missale Messanense",
+      "tradition_or_use": "Messina",
+      "date_label": "1480",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/7272/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-7273",
+      "label": "Missale Messanense",
+      "tradition_or_use": "Messina",
+      "date_label": "1510",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/7273/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-7274",
+      "label": "Missale Messanense",
+      "tradition_or_use": "Messina",
+      "date_label": "1527",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/7274/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-7275",
+      "label": "Missale Messanense",
+      "tradition_or_use": "Messina",
+      "date_label": "1534",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/7275/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-7276",
+      "label": "Missale Messanense",
+      "tradition_or_use": "Messina",
+      "date_label": "1538",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/7276/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-usuarium-7277",
+      "label": "Missale Messanense",
+      "tradition_or_use": "Messina",
+      "date_label": "1568",
+      "date_role": "catalogue-witness-date",
+      "record_class": "Missal",
+      "distinctness_basis": "Catalogue witness or component only; substantive difference and completeness unverified.",
+      "source_url": "https://usuarium.elte.hu/book/7277/view",
+      "existing_candidate_ids": [],
+      "acquisition_ids": [],
+      "unresolved": "Full source text and edition relationship not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-a",
+      "label": "Aosta, Archives Historiques Régionales, cod. 7",
+      "tradition_or_use": "Aosta",
+      "date_label": "late 11th century",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Brusson missal; cathedral origin proposed; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "113r–115v; 118r–119v",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-a2",
+      "label": "Same cod. 7",
+      "tradition_or_use": "Aosta",
+      "date_label": "12th century",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Amiet lists this as a later Ordinary layer in cod. 7; count as component state, not a second physical book.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "119r",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "physical_witness_key": "cod. 7",
+      "alias_or_layer": "Later hand/layer in same manuscript, not a separate physical book.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": false
+    },
+    {
+      "id": "italian-amiet-c",
+      "label": "Aosta, Saint-Ours, cod. 37",
+      "tradition_or_use": "Aosta",
+      "date_label": "12th century",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Ritual-missal; Ordinary reported illegible by 1976, previously published by Boson in 1924; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "29r–39v",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-d",
+      "label": "Aosta, Grand Séminaire, cod. 71",
+      "tradition_or_use": "Aosta",
+      "date_label": "12th–13th century",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Courmayeur missal; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "105r–108v",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-e",
+      "label": "Turin, Biblioteca Nazionale e Universitaria, E.II.4",
+      "tradition_or_use": "Aosta",
+      "date_label": "early 14th century",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Saint-Ours missal; thanksgiving placed before Canon; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "50r–61r",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-e2",
+      "label": "Same E.II.4",
+      "tradition_or_use": "Aosta",
+      "date_label": "later, undated",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Amiet lists this as a later Ordinary layer in Turin E.II.4; count as component state, not a second physical book.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "after Mass",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "physical_witness_key": "Turin E.II.4",
+      "alias_or_layer": "Later hand/layer in same manuscript, not a separate physical book.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": false
+    },
+    {
+      "id": "italian-amiet-f",
+      "label": "Aosta, Grand Séminaire, cod. 4",
+      "tradition_or_use": "Aosta",
+      "date_label": "1391",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Saint-Ours missal; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "71r–75v",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-g",
+      "label": "Aosta, Cathedral Chapter, cod. 16",
+      "tradition_or_use": "Aosta",
+      "date_label": "14th century",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Saint-Ours Sunday/feast missal for Nus; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "14r–20v",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-h",
+      "label": "Aosta, Saint-Ours, cod. 48",
+      "tradition_or_use": "Aosta",
+      "date_label": "14th century",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Festive and votive missal; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "6r–14r",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-y",
+      "label": "Aosta, Grand Séminaire, cod. 144",
+      "tradition_or_use": "Aosta",
+      "date_label": "late 14th century",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Saint-Ours votive missal, used at Sarre; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "15r–24v",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-i",
+      "label": "Aosta, Saint-Ours, cod. 23",
+      "tradition_or_use": "Aosta",
+      "date_label": "late 15th century",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Giorgio di Challant missal; Ordinary ends at preface; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "136v–139r",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-j",
+      "label": "Turin, Baronessa Accusani di Retorto collection (1976 holding)",
+      "tradition_or_use": "Aosta",
+      "date_label": "1499",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Giorgio di Challant, Issogne chapel; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "130r–153r",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-k",
+      "label": "Aosta, Saint-Ours, cod. 43",
+      "tradition_or_use": "Aosta",
+      "date_label": "early 16th century",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Giorgio di Challant large illuminated missal; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "56r–82v",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-l",
+      "label": "Aosta, Grand Séminaire, cod. 25",
+      "tradition_or_use": "Aosta",
+      "date_label": "16th century",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Saint-Ours votive missal; disordered leaves; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "44v; 25r–35r",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-m",
+      "label": "Aosta, Cathedral Chapter, cod. 20",
+      "tradition_or_use": "Aosta",
+      "date_label": "about 1420",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Oger Moriset missal; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "105r–108r",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-n",
+      "label": "Vercelli, Cathedral Chapter, cod. CCX",
+      "tradition_or_use": "Aosta",
+      "date_label": "about 1420",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Breviary-missal for Pierre de Gilaren, Morgex; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "372r–375r",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-p",
+      "label": "Aosta, Cathedral Chapter, cod. 7",
+      "tradition_or_use": "Aosta",
+      "date_label": "about 1450",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Festive/votive missal; Ordinary begins at preface; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "34r–42v",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-r",
+      "label": "Aosta, Cathedral Chapter, cod. 18",
+      "tradition_or_use": "Aosta",
+      "date_label": "about 1460",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Baudouin L’Écuyer breviary-missal; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "108r–113r",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-s",
+      "label": "Aosta, Cathedral Chapter, cod. 21",
+      "tradition_or_use": "Aosta",
+      "date_label": "about 1500",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "François de Prez missal; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "196r–199v; 202r–213v",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-t",
+      "label": "Aosta, Cathedral Chapter, cod. 19",
+      "tradition_or_use": "Aosta",
+      "date_label": "early 16th century",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Festive missal for unnamed cathedral canon; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "35r–41v",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-v",
+      "label": "Aosta, Grand Séminaire, cod. 28",
+      "tradition_or_use": "Aosta",
+      "date_label": "15th century",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Festive/votive parish missal; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "74r–80v",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-w",
+      "label": "Aosta, Grand Séminaire, cod. 84",
+      "tradition_or_use": "Aosta",
+      "date_label": "about 1485",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Ayas votive missal; surviving Ordinary starts inside Canon; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "1r–2v",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-x",
+      "label": "Vatican Library, Patetta 12",
+      "tradition_or_use": "Aosta",
+      "date_label": "late 15th century",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Courmayeur festive/votive missal; surviving Ordinary starts inside Canon; Amiet printed pp. 89–91. This is a manuscript or hand, not automatically a whole-Missal recension.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "1r–2v",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-amiet-a3",
+      "label": "Aosta, Archives Historiques Régionales, cod. 7",
+      "tradition_or_use": "Aosta",
+      "date_label": "15th century",
+      "date_role": "manuscript-hand-or-witness-date",
+      "record_class": "Ordinary component witness",
+      "distinctness_basis": "Amiet lists this as a later Ordinary layer in cod. 7; count as component state, not a second physical book.",
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "locus": "120v–122r",
+      "acquisition_ids": [
+        "italian-amiet-1976-study"
+      ],
+      "unresolved": "Original manuscript text and complete book coverage not collated.",
+      "physical_witness_key": "cod. 7",
+      "alias_or_layer": "Later hand/layer in same manuscript, not a separate physical book.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": false
+    },
+    {
+      "id": "italian-extra-e57",
+      "label": "Padua Cathedral Liber ordinarius E 57",
+      "tradition_or_use": "Padua",
+      "date_label": "thirteenth century",
+      "date_role": "manuscript-date",
+      "record_class": "order-book Mass component",
+      "distinctness_basis": "Institutional catalogue identity; no independent whole-use recension claim.",
+      "source_url": "https://www.istitutostoriaecclesiasticapadovana.net/fonti/27.html",
+      "unresolved": "Original liturgical contents and complete text not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-extra-w6",
+      "label": "Walters W.6 Beneventan Sacramentary-Missal",
+      "tradition_or_use": "Benevento",
+      "date_label": "second half eleventh century",
+      "date_role": "manuscript-date",
+      "record_class": "attributed Canosa manuscript",
+      "distinctness_basis": "Institutional catalogue identity; no independent whole-use recension claim.",
+      "source_url": "https://art.thewalters.org/object/W.6/",
+      "unresolved": "Original liturgical contents and complete text not collated.",
+      "review_disposition": "accepted-bounded"
+    },
+    {
+      "id": "italian-extra-vi29",
+      "label": "Benevento VI 29, former BL Egerton 3511",
+      "tradition_or_use": "Benevento",
+      "date_label": "twelfth century base; later additions",
+      "date_role": "manuscript-date",
+      "record_class": "missal manuscript identity",
+      "distinctness_basis": "Alias of Benevento VI 29 / former Egerton 3511, already represented by Usuarium 6287; no extra physical witness.",
+      "source_url": "https://www.gov.uk/government/news/manuscript-lost-during-nazi-era-will-be-returned-to-italy-culture-minister-ed-vaizey-confirms",
+      "unresolved": "Original liturgical contents and complete text not collated.",
+      "physical_witness_key": "Benevento VI 29",
+      "alias_or_layer": "Same book as Usuarium 6287; former BL Egerton 3511.",
+      "review_disposition": "accepted-after-correction",
+      "physical_count_included": false
+    },
+    {
+      "id": "italian-extra-monza-ordo",
+      "label": "Liber ordinarius Modoetiensis",
+      "tradition_or_use": "Monza",
+      "date_label": "medieval manuscript, date unverified here",
+      "date_role": "undated-manuscript-lead",
+      "record_class": "local-order-book-lead",
+      "distinctness_basis": "Official Vatican music bibliography lists the Dell’Oro and Mambretti edition; the manuscript date is a secondary catalogue attribution. No complete Eucharistic book or unique Mass recension is inferred.",
+      "source_url": "https://www.musicasacra.va/content/dam/musicasacra/documenti/cataloghi/libri/libri-e-partiture-dal-1995/LIBRI-E-PARTITURE-DAL-1995.pdf",
+      "unresolved": "Exact shelfmark, Eucharistic loci, manuscript hands and relation to local Roman practice remain uninspected.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "Edition title exists but exact manuscript shelfmark and Eucharistic loci were not inspected."
+    },
+    {
+      "id": "italian-ravenna-component-6346",
+      "label": "Library missing",
+      "tradition_or_use": "Ravenna",
+      "date_label": "0530-0570",
+      "date_role": "catalogue-witness-date",
+      "record_class": "unclassified-fragment-or-documentary-component",
+      "distinctness_basis": "Usuarium origin-table lead; genre is blank and Eucharistic coverage is not established.",
+      "source_url": "https://usuarium.elte.hu/book/6346/view",
+      "unresolved": "Identify physical extent, genre and liturgical content before any stage proposal.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "Genre blank; no Eucharistic content demonstrated."
+    },
+    {
+      "id": "italian-ravenna-component-6350",
+      "label": "Library missing",
+      "tradition_or_use": "Ravenna",
+      "date_label": "0600-0800",
+      "date_role": "catalogue-witness-date",
+      "record_class": "unclassified-fragment-or-documentary-component",
+      "distinctness_basis": "Usuarium origin-table lead; genre is blank and Eucharistic coverage is not established.",
+      "source_url": "https://usuarium.elte.hu/book/6350/view",
+      "unresolved": "Identify physical extent, genre and liturgical content before any stage proposal.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "Genre blank and shelfmark missing; no Eucharistic content demonstrated."
+    },
+    {
+      "id": "italian-ravenna-component-6411",
+      "label": "BSB München Clm 29270(8 (olim: Clm 29155 c)",
+      "tradition_or_use": "Ravenna",
+      "date_label": "0575-0600",
+      "date_role": "catalogue-witness-date",
+      "record_class": "unclassified-fragment-or-documentary-component",
+      "distinctness_basis": "Usuarium origin-table lead; genre is blank and Eucharistic coverage is not established.",
+      "source_url": "https://usuarium.elte.hu/book/6411/view",
+      "unresolved": "Identify physical extent, genre and liturgical content before any stage proposal.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "Genre blank; verify fragment content and provenance before classifying as Mass evidence."
+    },
+    {
+      "id": "italian-ravenna-component-6843",
+      "label": "BM Troyes Ms. 0853",
+      "tradition_or_use": "Ravenna",
+      "date_label": "0775-0800",
+      "date_role": "catalogue-witness-date",
+      "record_class": "unclassified-fragment-or-documentary-component",
+      "distinctness_basis": "Usuarium origin-table lead; genre is blank and Eucharistic coverage is not established.",
+      "source_url": "https://usuarium.elte.hu/book/6843/view",
+      "unresolved": "Identify physical extent, genre and liturgical content before any stage proposal.",
+      "review_disposition": "deferred-catalogue-lead",
+      "physical_count_included": false,
+      "review_limit": "Genre blank; verify Troyes 853 content and provenance before classifying as Mass evidence."
+    }
+  ],
+  "acquisitions": [
+    {
+      "id": "italian-aquileia-1494-facsimile",
+      "original_url": "https://archive.org/download/missale-aquileiense-1494/Missale%20Aquileiense%20-%201494.pdf",
+      "path": ".scratch/full-research-20261019/italian/research/acquisitions/aquileia1494.pdf",
+      "sha256": "11c9f767c680d75f883dbf8b282a29cf042b60dcb0c36d68fc18077175862c7b",
+      "bytes": 313701827,
+      "delivered_extent": "532 PDF pages, 313,701,827 bytes; front images 4–6 and final images 528–529 inspected; date remains catalogue-reported; no full text layer or page-by-page collation.",
+      "identity_inspection": "PDF header and pdfinfo verified; frontispiece names Aquileian church, while 1494 date remains catalogue-reported; exact colophon and full title still require inspection.",
+      "rights_basis": "Underlying fifteenth-century print is public domain in US by age. Host scan rights or reuse terms not fully reviewed; no tracked redistribution proposed.",
+      "proposed_storage": "scratch-only",
+      "storage_reason": "Retain only as a research receipt pending rights and practical size review.",
+      "existing_canonical_identity": "No exact artifact identity in canonical source library verified in this pass."
+    },
+    {
+      "id": "italian-amiet-1976-study",
+      "original_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "path": ".scratch/full-research-20261019/italian/cold/amiet-1976-ordo.pdf",
+      "sha256": "a99dca9f319e6558e4b20436df938708a430e6465378d9ca7bf2d065f38aba37",
+      "bytes": 5656038,
+      "delivered_extent": "145 PDF pages; extracted text and printed pp. 89–92, 153–155, 176 inspected, with page images for key claims.",
+      "identity_inspection": "Title and content identify Robert Amiet, L’Ordinaire de la Messe selon le rit valdôtain (1976).",
+      "rights_basis": "Modern scholarly article, rights unresolved for redistribution; use as research-only secondary control.",
+      "proposed_storage": "scratch-only",
+      "storage_reason": "Retain only as a research receipt pending rights and practical size review.",
+      "existing_canonical_identity": "No exact artifact identity in canonical source library verified in this pass."
+    },
+    {
+      "id": "italian-aosta-1612-card",
+      "original_url": "https://usuarium.elte.hu/book/5763/view",
+      "path": ".scratch/full-research-20261019/italian/cold/aosta-5763-detail.html",
+      "sha256": "34f9d7269396599ff755e597d6ea19c251a613649f50bba341170ebf5c4d9d4c",
+      "bytes": 16078,
+      "delivered_extent": "Complete 16,078-byte HTML bibliographic card.",
+      "identity_inspection": "Card supplies Aosta label and year 1612 but no holding, printer or original title transcription.",
+      "rights_basis": "Usuarium dataset attribution requested; HTML site markup and database rights not cleared; research-only.",
+      "proposed_storage": "scratch-only",
+      "storage_reason": "Retain only as a research receipt pending rights and practical size review.",
+      "existing_canonical_identity": "No exact artifact identity in canonical source library verified in this pass."
+    },
+    {
+      "id": "italian-aosta-mlea-contents",
+      "original_url": "https://www.regione.vda.it/allegato.aspx?pk=80020",
+      "path": ".scratch/full-research-20261019/italian/research/acquisitions/aosta-mlea-contents.pdf",
+      "sha256": "856f058a210cd1990d781539901c60d641bff6b0f546968612e70d69223e461d",
+      "bytes": 358647,
+      "delivered_extent": "Whole 358,647-byte PDF, contents/bibliography rather than original liturgical book.",
+      "identity_inspection": "Aosta regional document, no witness transcription claim.",
+      "rights_basis": "Modern institutional PDF; redistribution not assessed; research-only.",
+      "proposed_storage": "scratch-only",
+      "storage_reason": "Retain only as a research receipt pending rights and practical size review.",
+      "existing_canonical_identity": "No exact artifact identity in canonical source library verified in this pass."
+    },
+    {
+      "id": "italian-aquileia-1519-failed-pdf",
+      "original_url": "https://www.dlib.si/stream/URN:NBN:SI:DOC-K3N5CNLM/bbb0c245-4f99-4d1d-8b23-48762d0adc73/PDF",
+      "path": ".scratch/full-research-20261019/italian/research/acquisitions/aquileia1519.pdf",
+      "sha256": "479860f7d09c50989ab11bfe265bad6ba7d1cb9de86dd43e58e823380c95e2b0",
+      "bytes": 95122,
+      "delivered_extent": "95,122 bytes HTML returned by redirect, not PDF; no book pages acquired.",
+      "identity_inspection": "Content type text/html and missing PDF header checked.",
+      "rights_basis": "Host HTML only; redistribution not assessed; research-only.",
+      "proposed_storage": "scratch-only",
+      "storage_reason": "Retain only as a research receipt pending rights and practical size review.",
+      "existing_canonical_identity": "No exact artifact identity in canonical source library verified in this pass."
+    }
+  ],
+  "expected_list_reconciliation": [
+    {
+      "expected_id": "aquileia",
+      "expected_label": "Aquileia",
+      "frozen_in": "cold-initial.json",
+      "matched_packet_ids": [
+        "italian-usuarium-164",
+        "italian-usuarium-711",
+        "italian-usuarium-1538",
+        "italian-usuarium-5883",
+        "italian-usuarium-6614",
+        "italian-usuarium-6615",
+        "italian-usuarium-6908",
+        "italian-usuarium-6909",
+        "italian-usuarium-6910"
+      ],
+      "outcome": "matched-with-explicit-gaps",
+      "evidence": "Eleventh-century missal and four printed dated witnesses are catalogued. The 1494 facsimile has exact bytes; 1508 and 1519 are independently identified bibliographically. Dated printings are not yet proved substantive textual states.",
+      "remaining": [
+        "Do not erase1494 because inaccessible",
+        "Como, Venice and Trieste reception and variants need local evidence.",
+        "1963/2007 facsimiles are not historical recensions"
+      ]
+    },
+    {
+      "expected_id": "aosta",
+      "expected_label": "Aosta",
+      "frozen_in": "cold-initial.json",
+      "matched_packet_ids": [
+        "italian-usuarium-93",
+        "italian-usuarium-1042",
+        "italian-usuarium-5763",
+        "italian-usuarium-5764",
+        "italian-usuarium-6356",
+        "italian-usuarium-6920",
+        "italian-amiet-a",
+        "italian-amiet-a2",
+        "italian-amiet-c",
+        "italian-amiet-d",
+        "italian-amiet-e",
+        "italian-amiet-e2",
+        "italian-amiet-f",
+        "italian-amiet-g",
+        "italian-amiet-h",
+        "italian-amiet-y",
+        "italian-amiet-i",
+        "italian-amiet-j",
+        "italian-amiet-k",
+        "italian-amiet-l",
+        "italian-amiet-m",
+        "italian-amiet-n",
+        "italian-amiet-p",
+        "italian-amiet-r",
+        "italian-amiet-s",
+        "italian-amiet-t",
+        "italian-amiet-v",
+        "italian-amiet-w",
+        "italian-amiet-x",
+        "italian-amiet-a3"
+      ],
+      "outcome": "matched-with-explicit-gaps",
+      "evidence": "Amiet identifies 24 Ordinary witnesses, including later layers, and describes a fourteenth-century offertory revision and a 1617 substitution of the Roman Ordinary. The 1612 card remains underidentified.",
+      "remaining": [
+        "Amiet1986 edition of22missals is modern synthetic source not medieval edition",
+        "1530s printed missal mentioned in Valle d'Aosta regional bibliography remains unverified lead",
+        "Do not stop scope atTrent while local use continues"
+      ]
+    },
+    {
+      "expected_id": "benevento",
+      "expected_label": "Benevento",
+      "frozen_in": "cold-initial.json",
+      "matched_packet_ids": [
+        "italian-usuarium-936",
+        "italian-usuarium-937",
+        "italian-usuarium-938",
+        "italian-usuarium-1299",
+        "italian-usuarium-1673",
+        "italian-usuarium-5319",
+        "italian-usuarium-6276",
+        "italian-usuarium-6282",
+        "italian-usuarium-6286",
+        "italian-usuarium-6287",
+        "italian-usuarium-6289",
+        "italian-usuarium-6290",
+        "italian-usuarium-6291",
+        "italian-usuarium-6292",
+        "italian-usuarium-6293",
+        "italian-usuarium-6294",
+        "italian-usuarium-6295",
+        "italian-usuarium-6296",
+        "italian-extra-w6",
+        "italian-extra-vi29"
+      ],
+      "outcome": "matched-with-explicit-gaps",
+      "evidence": "VI 33 catalogue IDs 938, 1299, 6276 refer to one manuscript. VI 29 is former BL Egerton 3511; Ott. lat. 576 has dated parts. Script and notation are not proof of one Old Beneventan Mass text.",
+      "remaining": [
+        "Beneventan script/notation does not itself identify an Old Beneventan liturgical recension",
+        "1983VI33 facsimile is not new liturgical state",
+        "Some chant books mix Old Beneventan/Gregorian strata; identify layers rather than uniform rite"
+      ]
+    },
+    {
+      "expected_id": "padua",
+      "expected_label": "Padua",
+      "frozen_in": "cold-initial.json",
+      "matched_packet_ids": [
+        "italian-extra-e57"
+      ],
+      "outcome": "matched-with-explicit-gaps",
+      "evidence": "The examined Usuarium Padua origin 899 Books table has pontificals and rituals but no Missal/Sacramentary/Gradual row. Padua D 47 is a Gregorian sacramentary with disputed production region, later Verona appendix and early Latin ownership; E 57 is an uncollated local order-book lead.",
+      "remaining": [
+        "Missale Pataviense can name Passau; Usuarium gives Patavinus for Padua. Resolve the specific book identity rather than the adjective alone.",
+        "A manuscript copied in Padua for Roman or Franciscan use is not independently a Padua recension.",
+        "1597Rituale Paduense not a Eucharistic missal"
+      ]
+    },
+    {
+      "expected_id": "monza",
+      "expected_label": "Monza",
+      "frozen_in": "cold-initial.json",
+      "matched_packet_ids": [
+        "italian-usuarium-6510",
+        "italian-usuarium-6540",
+        "italian-extra-monza-ordo"
+      ],
+      "outcome": "matched-with-explicit-gaps",
+      "evidence": "In the examined Usuarium Monza origin 1103 table and named order-book bibliography, a Gradual, uncertain-origin sacramentary and homiliary are leads; no independent complete local Eucharistic recension is established within this searched range. Wider manuscript and text corpora remain unexamined.",
+      "remaining": [
+        "Separate Roman books, Ambrosian books held atMonza, and patriarchine baptism/funeral customs",
+        "Como1557Sacramentarium Patriarchale is ritual evidence, not proof ofMonza Eucharistic recension"
+      ]
+    },
+    {
+      "expected_id": "ravenna",
+      "expected_label": "Ravenna",
+      "frozen_in": "cold-initial.json",
+      "matched_packet_ids": [
+        "italian-usuarium-5911",
+        "italian-usuarium-6347",
+        "italian-usuarium-6348",
+        "italian-usuarium-6349",
+        "italian-usuarium-6351",
+        "italian-ravenna-component-6346",
+        "italian-ravenna-component-6350",
+        "italian-ravenna-component-6411",
+        "italian-ravenna-component-6843"
+      ],
+      "outcome": "matched-with-explicit-gaps",
+      "evidence": "In the examined Usuarium Ravenna origin 929 table and Ravenna Rotulus/fragment cards, prayer components and unidentified fragments appear; no complete Ravenna Missal is established within this searched range. Wider manuscript corpora remain unexamined.",
+      "remaining": [
+        "No complete extant Ravenna missal implied",
+        "A manuscript now held in Ravenna may be Roman or Camaldolese rather than a Ravenna use.",
+        "Potentially reconstructed Ravenna or Italian sacramentary types need scholarly attribution, not genealogy"
+      ]
+    },
+    {
+      "expected_id": "cosenza",
+      "expected_label": "Cosenza",
+      "frozen_in": "cold-initial.json",
+      "matched_packet_ids": [
+        "italian-usuarium-5816"
+      ],
+      "outcome": "matched-with-explicit-gaps",
+      "evidence": "The 1549 Missale Cosentinum is catalogued and already has a Burchard-component candidate. The original local text remains unacquired.",
+      "remaining": [
+        "The Gallicorum title may indicate Norman-derived local use; it does not establish identity with the ancient Gallican rite.",
+        "One shared component does not determine the whole Missal ancestry.",
+        "Earlier/later state sequence unresolved"
+      ]
+    },
+    {
+      "expected_id": "messina",
+      "expected_label": "Messina",
+      "frozen_in": "cold-initial.json",
+      "matched_packet_ids": [
+        "italian-usuarium-382",
+        "italian-usuarium-7272",
+        "italian-usuarium-7273",
+        "italian-usuarium-7274",
+        "italian-usuarium-7275",
+        "italian-usuarium-7276",
+        "italian-usuarium-7277"
+      ],
+      "outcome": "matched-with-explicit-gaps",
+      "evidence": "Seven printed missal dates appear in the catalogue. The 1499 title advertises correction and additions, especially sanctoral/common, but exact changed readings remain uncollated.",
+      "remaining": [
+        "All seven dates need individual edition/witness dispositions",
+        "1499reform advertising is insufficient for exhaustive changed-components claim",
+        "Norman or Sicilian consuetudo Gallicorum does not establish an ancient Gallican rite."
+      ]
+    }
+  ],
+  "coverage_placements": [
+    {
+      "coverage_id": "italian-aquileia",
+      "inventory_status": "bounded-bibliographic-candidates-documented",
+      "candidate_ids": [
+        "italian-aquileia-1494",
+        "italian-aquileia-1508",
+        "italian-aquileia-1517",
+        "italian-aquileia-1519"
+      ],
+      "source_ids": [
+        "italian-usuarium-aquileia",
+        "italian-aquileia-1494-ia",
+        "italian-aquileia-1508-braidense",
+        "italian-aquileia-1519-iccu"
+      ]
+    },
+    {
+      "coverage_id": "italian-aosta",
+      "inventory_status": "selected-witnesses-and-scoped-textual-relationships-documented",
+      "candidate_ids": [
+        "italian-aosta-1617",
+        "italian-aosta-1733"
+      ],
+      "source_ids": [
+        "italian-usuarium-aosta",
+        "italian-amiet-aosta-1976"
+      ]
+    },
+    {
+      "coverage_id": "italian-benevento",
+      "inventory_status": "selected-witnesses-documented",
+      "candidate_ids": [
+        "italian-benevento-vi33",
+        "italian-benevento-vi29"
+      ],
+      "source_ids": [
+        "italian-usuarium-benevento",
+        "italian-benevento-vi29-return",
+        "italian-benevento-vi29-case"
+      ]
+    },
+    {
+      "coverage_id": "italian-padua",
+      "inventory_status": "index-discovery-only",
+      "candidate_ids": [],
+      "source_ids": [
+        "italian-usuarium-padua",
+        "italian-padua-e57-source"
+      ]
+    },
+    {
+      "coverage_id": "italian-monza",
+      "inventory_status": "index-discovery-only",
+      "candidate_ids": [],
+      "source_ids": [
+        "italian-usuarium-monza",
+        "italian-monza-ordo-vatican-bibliography"
+      ]
+    },
+    {
+      "coverage_id": "italian-ravenna",
+      "inventory_status": "index-discovery-only",
+      "candidate_ids": [],
+      "source_ids": [
+        "italian-usuarium-ravenna"
+      ]
+    },
+    {
+      "coverage_id": "italian-messina",
+      "inventory_status": "bounded-bibliographic-candidates-documented",
+      "candidate_ids": [
+        "italian-messina-1480",
+        "italian-messina-1499",
+        "italian-messina-1510",
+        "italian-messina-1527",
+        "italian-messina-1534",
+        "italian-messina-1538",
+        "italian-messina-1568"
+      ],
+      "source_ids": [
+        "italian-usuarium-messina",
+        "italian-messina-1499-book"
+      ]
+    }
+  ],
+  "unlinked_new_records": [],
+  "remaining_bounded_gaps": [
+    "Aosta 1612 card lacks holding and imprint; do not equate Augustensis with Augsburg or accept as verified Aosta edition.",
+    "Aosta 1530s printed witness is a bibliography lead, not yet an identified edition.",
+    "Aquileia 1519 attempted dLib PDF is HTML; original pages not acquired.",
+    "Aquileia 1508, 1517 and 1519 original images and textual relation need collation.",
+    "Benevento unnamed Usuarium IDs 6289, 6290, 6291, 6293, 6296 and 5319 need exact identification.",
+    "Ravenna fragment and Rotulus composition/provenance remains uncertain; no full missal.",
+    "Padua E 57 Mass loci, Monza order book and 1578 normalization require direct reading.",
+    "Cosenza 1549 original book remains unacquired.",
+    "Messina seven printings require original images and collation.",
+    "Brixen belongs German-Swiss lane; D 47, Trento 1590, Verona sacramentary and Lateran A65 belong early Latin; Ambrosian Monza palimpsest belongs Ambrosian lane."
+  ],
+  "inspected_loci": [
+    {
+      "source": "italian-aquileia-1494-facsimile",
+      "locus": "PDF image pages 4–6 and 528–529",
+      "finding": "The frontispiece explicitly names the Aquileian church. A prefatory local argument follows. The inspected end image is a device and does not give the year; 1494 is catalogue-reported.",
+      "limit": "No approval act or complete contents inferred."
+    },
+    {
+      "source": "italian-amiet-1976-study",
+      "locus": "printed pp. 89–91, 153–155, 176",
+      "finding": "24 Ordinary witnesses are enumerated; a late fourteenth-century offertory simplification and the later Roman Ordinary substitution are described, while cathedral and Saint-Ours communion developments differ.",
+      "limit": "Scholarly manuscript comparison, not direct full manuscript collation or a normative act."
+    },
+    {
+      "source": "italian-aosta-1612-card",
+      "locus": "complete bibliographic card",
+      "finding": "Aosta and 1612 repeated without original title, holding or printer.",
+      "limit": "Underidentified bibliographic lead, no candidate proposed."
+    },
+    {
+      "source": "italian-usuarium-messina",
+      "locus": "1499 book 382 original-title field",
+      "finding": "The 1499 wording advertises correction and additions especially in sanctoral and common.",
+      "limit": "Advertising does not identify exact changed readings or prove all seven printings substantive."
+    },
+    {
+      "source": "italian-usuarium-padua",
+      "locus": "complete Books table",
+      "finding": "The table lists pontifical and ritual books, including twelve 1597 ritual rows, but no Missal row.",
+      "limit": "Absence in this index is not absence of a historical Padua Mass book."
+    },
+    {
+      "source": "italian-messina-1499-book",
+      "locus": "Usuarium book 382 original-title field and catalogue contents references 125/1r, 564/235r",
+      "finding": "Usuarium transcribes a title claiming correction and additions; the entry is catalogue metadata, not direct original-page inspection.",
+      "limit": "No exact changed readings or approval identified."
+    }
+  ],
+  "negative_findings": [
+    "No Missal/Sacramentary/Gradual row in the fully inspected Padua origin 899 table; historical Padua holdings outside it remain unexamined.",
+    "No independent complete Monza Eucharistic recension in the examined origin 1103 entries, order-book bibliography and saved cold sources; national and local holdings remain unsearched in full.",
+    "No complete Ravenna Missal in the examined origin 929 entries and named Rotulus/fragment cards; no claim of corpus-wide absence.",
+    "Aosta 1617 duplicate ID 6356 is not a second version.",
+    "Benevento VI 33 aliases and VI 29 former shelfmark are not extra witnesses.",
+    "The attempted 1519 Aquileian PDF delivery is HTML, so no 1519 liturgical text was acquired."
+  ],
+  "omission_controls": [
+    {
+      "id": "monza-wien-1616",
+      "url": "https://usuarium.elte.hu/book/6841/view",
+      "identity": "ÖNB Wien Cod. 1616 (olim Salisb. 230), Usuarium 6841",
+      "disposition": "Retain as an omission control only. Catalogue calls it a Homiliarium dated 700–900 with uncertain origin; no Eucharistic genre or Monza use established. Excluded from Mass-book/version count."
+    },
+    {
+      "id": "monza-berengar-sacramentary",
+      "url": "https://www.degruyterbrill.com/document/doi/10.1515/9781501517563-009/html",
+      "identity": "Scholarly chapter titled The Sacramentary of Berengar in Monza",
+      "disposition": "Retain as a Monza/Berengar original-study lead; exact shelfmark and Mass text uninspected here. Do not infer distinctive Monza use or count a separately identified physical witness."
+    }
+  ],
+  "limits": [
+    "No claim that witness count equals substantive revision count.",
+    "No approval, promulgation, adoption date or local authority is inferred from publication year.",
+    "No complete all-component Eucharistic text corpus or stage chain is certified.",
+    "Saved Usuarium/IRHT catalogue pages are discovery evidence; full bibliographic identities and manuscript contents remain partly unexamined.",
+    "The 1494 scan is a large facsimile without verified reusable text; rights of delivered scan need an artifact-specific review before tracked retention."
+  ]
+}
