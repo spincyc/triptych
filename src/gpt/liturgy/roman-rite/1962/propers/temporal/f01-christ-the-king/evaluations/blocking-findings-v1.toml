@@ -49,22 +49,22 @@ provider = "gpt"
 run_id = "095fe00a9fe8cfee"
 workflow = "proper-study"
 workflow_version = 13
-stage = "synthesis-review"
+stage = "homily-review"
 iteration = 1
 disposition = "PASS"
-standing = 1
+standing = 0
 accepted_count = 0
 advisory_count = 0
 observation_count = 0
 
 [[stages]]
 stage = "homily-review"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
+iteration = 1
+disposition = "PASS"
 run_id = "095fe00a9fe8cfee"
 workflow = "proper-study"
 workflow_version = 13
-standing = 1
+standing = 0
 accepted_count = 0
 advisory_count = 0
 observation_count = 0
@@ -104,12 +104,3 @@ standing = 0
 accepted_count = 0
 advisory_count = 0
 observation_count = 0
-
-[[findings]]
-stage = "homily-review"
-id = "HOM-001"
-severity = "blocking"
-location = "research/scope.md, Complete active inventory and bounds, Secret row; research/interpretations.md, reading A's Secret row; sections/20-commentary.tex, Secret subsection; sections/40-reconciled-creation.tex, paragraph beginning 'The Introit has made'; sections/concise/10-commentary.tex, paragraph beginning 'The Collect’s wound'; sections/homily/10-body.tex, paragraph 14 beginning 'At the offering'"
-problem = "The homily says that the Secret 'asks Christ for unity and peace among the nations', carrying forward the same claim from the research summaries and both studies. The actual Secret addresses the Father: Missale Romanum (1962), printed p. 698, no. 3947, explicitly calls Jesus Christ 'Filius tuus' and closes 'Qui tecum'. Its petition asks the Father that the Son offered in sacrifice himself bestow unity and peace. The identification of Christ as the giver is correct, but it does not make him the prayer's addressee. This is a factual misdescription of an appointed prayer used to connect the sermon’s argument to the Eucharist, rather than a stylistic preference."
-required_result = "Correct the owning research summaries to distinguish the Father addressed from the Son whose gift is sought, retaining the supported connection between Christ's sacrifice and his gift of unity and peace. Carry that distinction into the dependent study, concise study and spoken homily through their normal authoring and review stages; an accurate formulation may say that the Secret asks the Father that Christ bestow unity and peace, or simply that it asks for these gifts from the sacrificial Christ without identifying Christ as the person addressed. The existing verified text and cited page image already supply the necessary evidence; preserve them and the rest of the supported argument."
-repair_target = "research"

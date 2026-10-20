@@ -579,3 +579,14 @@ compared the revised claims with the accepted study and exact witnesses, and
 returned `PASS` with no findings. The engine emitted `derive-homily-0001` for
 the final dependent content correction. Artifact and publication review remain
 pending.
+
+The homily repair changed the spoken Secret sentence and terminal note while
+preserving its argument and 10–12-minute estimate. Source correction and
+metadata were committed as `8ba6bf08f`; the new three-page proof and audit
+were committed as `5ea61729f`. Native homily preflight passed. A fresh xhigh
+reviewer checked the controlling 1962 Missal pages, Augustine and Chrysostom,
+confirmed the corrected prayer's Father/Son roles and the 1,280-word speaking
+estimate, and returned `PASS` with no findings. All three content documents
+have passed their latest cold reviews. The engine emitted `build-artifacts-0000`
+for the shared generation build; artifact, web and publication acceptance
+remain pending.
