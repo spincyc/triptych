@@ -1,6 +1,6 @@
 # Metadata-only research inventory. Witness census is not a version genealogy.
 schema = "western-eucharistic-books-research-inventory/v1"
-researched_on = "2026-10-19"
+researched_on = "2026-10-20"
 scope = "Non-exhaustive Western Eucharistic service-book research census: current Catholic traditions, shared historical ancestors and extinct local uses. Original liturgical-language books have priority. Witnesses and revision candidates are distinguished; metadata only."
 evidence_limit = "Catalogue and official metadata are supplemented by linked canonical source artifacts and bounded original-page inspection. Each row distinguishes whole provider delivery, retained component or selected pages, unverified OCR and checked transcription. Complete acquisition does not establish physical-copy completeness, complete text coverage, normative revision or local reception. Attributed scholarly comparisons remain distinct from independent original-book collation."
 further_leads_not_researched = ["Verona LXXXV(80): obtain holding-library manuscript description and cleared old full edition; distinguish collected Roman libelli from a complete annual sacramentary.", "Additional early Gallican and Roman-Frankish witnesses, Gregorian supplements and Old Gelasian layers: manuscript-wide census and textual relationships remain open. The Mone Masses are identified as ELMSS 1569 but their undertext remains uncollated.", "Medieval Ambrosian sacramentaries, 1582/1588 reforms and subsequent Latin typical editions: direct witnesses and reform instruments still needed.", "Old Hispanic manuscripts beyond BL Add MS 30846; distinguish Liber misticus, Liber missarum, Liber ordinum and Liber commicus by actual Eucharistic contents.", "Roman-curial/Haymo manuscript succession and full missal revisions remain incomplete. Burchard1501/1502 ceremonial states and specified reception are now documented, with partial comparison limits.", "Roman experimental Easter Vigil stages, 1969 separate Ordo Missae and later amendments: coordinate with existing Roman and Holy Week inventories instead of duplicating acts.", "Slavonic/Glagolitic Roman books: distinguish source-recension changes from permissions and translations; original historical source status and publication rights need review.", "Order trajectories still lacking a revision census: Benedictine houses/Cassinese, Teutonic, Paulines, Gilbertines, Windesheim, Camaldolese, Augustinian, Humiliati, Trinitarian, Minims and Discalced Carmelite.", "Four Iberian local-use catalogue witnesses are now identified (Barcelona, Salamanca, Seville, Toledo Roman); the broader census and original-book comparisons remain incomplete. Toledo Roman must remain separate from Old Hispanic.", "Book of Divine Worship edition history, later Divine Worship corrections, Zaire source-language edition and approved regional adaptations beyond it need primary front matter.", "Post-medieval diocesan missals require comparison of prayers, rubrics, calendar and order. A long dated printing series is not a revision series."]
@@ -6440,18 +6440,18 @@ scope = "western-original-source-trajectory"
 id = "salzburg-gurk-seckau"
 title = "Salzburg, Gurk and Seckau"
 status = "selected-catalogue-witness-census-documented"
-sources = ["usuarium-origins-0", "german-swiss-usuarium-origin-72", "german-swiss-weale1886", "german-swiss-weale1928", "german-swiss-usuarium-origin-17", "german-swiss-prassl1996", "german-swiss-usuarium-origin-19", "german-swiss-usuarium-origin-595"]
-candidate_ids = ["german-swiss-salzburg-witness-cluster", "german-swiss-gurk-witness-cluster", "german-swiss-seckau-witness-cluster"]
-remaining_work = "Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence."
+sources = ["usuarium-origins-0", "german-swiss-usuarium-origin-72", "german-swiss-weale1886", "german-swiss-weale1928", "german-swiss-usuarium-origin-17", "german-swiss-prassl1996", "german-swiss-usuarium-origin-19", "german-swiss-usuarium-origin-595", "german-regional-salzburg-domquartier", "german-regional-salzburg-1642"]
+candidate_ids = ["german-swiss-salzburg-witness-cluster", "german-swiss-gurk-witness-cluster", "german-swiss-seckau-witness-cluster", "german-salzburg-1605", "german-salzburg-propers-1642"]
+remaining_work = "Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence. The 2026-10-20 regional dossier records selected book and proper states only; acquire the named original acts, front matter and paired component leaves before a revision or adoption edge."
 scope = "western-original-source-trajectory"
 
 [[coverage]]
 id = "swiss-uses"
 title = "Basel, Chur, Geneva, Lausanne, Sion and St Gall"
 status = "selected-catalogue-witness-census-documented"
-sources = ["usuarium-origins-0", "german-swiss-usuarium-origin-24", "german-swiss-weale1886", "german-swiss-weale1928", "german-swiss-usuarium-origin-25", "german-swiss-usuarium-origin-26", "german-swiss-usuarium-origin-27", "german-swiss-usuarium-origin-31", "german-swiss-usuarium-origin-30"]
-candidate_ids = ["german-swiss-basel-witness-cluster", "german-swiss-chur-witness-cluster", "german-swiss-geneva-witness-cluster", "german-swiss-lausanne-witness-cluster", "german-swiss-sion-witness-cluster", "german-swiss-st-gall-witness-cluster"]
-remaining_work = "Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence."
+sources = ["usuarium-origins-0", "german-swiss-usuarium-origin-24", "german-swiss-weale1886", "german-swiss-weale1928", "german-swiss-usuarium-origin-25", "german-swiss-usuarium-origin-26", "german-swiss-usuarium-origin-27", "german-swiss-usuarium-origin-31", "german-swiss-usuarium-origin-30", "german-regional-stgallen"]
+candidate_ids = ["german-swiss-basel-witness-cluster", "german-swiss-chur-witness-cluster", "german-swiss-geneva-witness-cluster", "german-swiss-lausanne-witness-cluster", "german-swiss-sion-witness-cluster", "german-swiss-st-gall-witness-cluster", "german-swiss-propers-1976"]
+remaining_work = "Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence. The 2026-10-20 regional dossier records selected book and proper states only; acquire the named original acts, front matter and paired component leaves before a revision or adoption edge."
 scope = "western-original-source-trajectory"
 
 [[coverage]]
@@ -6476,18 +6476,18 @@ scope = "western-original-source-trajectory"
 id = "cologne"
 title = "Cologne"
 status = "selected-catalogue-witness-census-documented"
-sources = ["usuarium-origins-100", "german-swiss-usuarium-origin-3", "german-swiss-weale1886", "german-swiss-weale1928"]
-candidate_ids = ["german-swiss-cologne-witness-cluster"]
-remaining_work = "Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence."
+sources = ["usuarium-origins-100", "german-swiss-usuarium-origin-3", "german-swiss-weale1886", "german-swiss-weale1928", "german-regional-cologne-directorium"]
+candidate_ids = ["german-swiss-cologne-witness-cluster", "german-cologne-propers-2002"]
+remaining_work = "Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence. The 2026-10-20 regional dossier records selected book and proper states only; acquire the named original acts, front matter and paired component leaves before a revision or adoption edge."
 scope = "western-original-source-trajectory"
 
 [[coverage]]
 id = "german-diocesan-uses"
 title = "Brixen, Freising, Hildesheim, Konstanz, Magdeburg, Meissen, Münster, Passau, Regensburg, Speyer, Trier and Würzburg"
 status = "selected-catalogue-witness-census-documented"
-sources = ["usuarium-origins-100", "german-swiss-usuarium-origin-44", "german-swiss-weale1886", "german-swiss-weale1928", "german-swiss-usuarium-origin-52", "german-swiss-usuarium-origin-54", "german-swiss-usuarium-origin-4", "german-swiss-usuarium-origin-58", "german-swiss-usuarium-origin-61", "german-swiss-usuarium-origin-68", "german-swiss-usuarium-origin-70", "german-swiss-usuarium-origin-73", "german-swiss-usuarium-origin-75", "german-swiss-usuarium-origin-78", "german-swiss-usuarium-origin-6", "german-swiss-neustift-catalogue2021"]
-candidate_ids = ["german-swiss-freising-witness-cluster", "german-swiss-hildesheim-witness-cluster", "german-swiss-konstanz-witness-cluster", "german-swiss-magdeburg-witness-cluster", "german-swiss-meissen-witness-cluster", "german-swiss-munster-witness-cluster", "german-swiss-passau-witness-cluster", "german-swiss-regensburg-witness-cluster", "german-swiss-speyer-witness-cluster", "german-swiss-trier-witness-cluster", "german-swiss-wurzburg-witness-cluster", "german-swiss-brixen-witness-cluster"]
-remaining_work = "Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence."
+sources = ["usuarium-origins-100", "german-swiss-usuarium-origin-44", "german-swiss-weale1886", "german-swiss-weale1928", "german-swiss-usuarium-origin-52", "german-swiss-usuarium-origin-54", "german-swiss-usuarium-origin-4", "german-swiss-usuarium-origin-58", "german-swiss-usuarium-origin-61", "german-swiss-usuarium-origin-68", "german-swiss-usuarium-origin-70", "german-swiss-usuarium-origin-73", "german-swiss-usuarium-origin-75", "german-swiss-usuarium-origin-78", "german-swiss-usuarium-origin-6", "german-swiss-neustift-catalogue2021", "german-regional-muenster-usu", "german-regional-muenster-archive", "german-regional-speyer-lectionary", "german-regional-speyer-books"]
+candidate_ids = ["german-swiss-freising-witness-cluster", "german-swiss-hildesheim-witness-cluster", "german-swiss-konstanz-witness-cluster", "german-swiss-magdeburg-witness-cluster", "german-swiss-meissen-witness-cluster", "german-swiss-munster-witness-cluster", "german-swiss-passau-witness-cluster", "german-swiss-regensburg-witness-cluster", "german-swiss-speyer-witness-cluster", "german-swiss-trier-witness-cluster", "german-swiss-wurzburg-witness-cluster", "german-swiss-brixen-witness-cluster", "german-muenster-1632", "german-muenster-supplement-1784", "german-speyer-propers-1975", "german-speyer-propers-2023"]
+remaining_work = "Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence. The 2026-10-20 regional dossier records selected book and proper states only; acquire the named original acts, front matter and paired component leaves before a revision or adoption edge."
 scope = "western-original-source-trajectory"
 
 [[coverage]]
@@ -29058,3 +29058,198 @@ chronology_start = 1986
 chronology_end = 1986
 chronology_kind = "publication"
 chronology_certainty = "contemporary-source-described"
+
+# Regional book and proper states reviewed on 2026-10-20; source names mirror german-regional.json.
+# Salzburg, Münster, Speyer, Cologne and Swiss components remain separate from whole-book revision claims.
+
+[[sources]]
+id = "german-regional-salzburg-domquartier"
+url = "https://www.domquartier.at/musik/dom-zu-salzburg/"
+type = "archive-museum-retrospective-with-identified-book"
+inspection = "Wolf Dietrich section, archive copy caption and paragraphs: 1596 papal permission reported, 1605 missal printing and distribution, Roman basis and Salzburg feasts. Original permission and book body not inspected."
+
+[[sources]]
+id = "german-regional-salzburg-1642"
+url = "https://books.google.com/books/about/Missae_Propriae_Cum_Propriis_Sanctorvm_A.html?id=uNdJAAAAcAAJ"
+type = "holding-library-digitization-catalogue"
+inspection = "Austrian National Library-derived catalogue title, 1642 imprint and 14-page extent checked; original page text and authorization not inspected. Distinct 1651 print exists and is not merged."
+
+[[sources]]
+id = "german-regional-muenster-usu"
+url = "https://usuarium.elte.hu/book/6490/view"
+type = "university-liturgical-book-catalogue"
+inspection = "Record 6490 title, 1632 date and indexed contents, including title image 7 and decree image 11. Image texts not collated; catalogue remarks book represents medieval use despite Romanizing title."
+
+[[sources]]
+id = "german-regional-muenster-archive"
+url = "https://www.bistum-muenster.de/fileadmin/user_upload/Website/Downloads/Bistum/BGV/S300-Kirche-in-Gesellschaft/320-KuK/Findbuecher-Bistumsarchiv/Pfarrarchive/findbuch-pfa-handschriften-und-druckschriften.pdf"
+type = "diocesan-archive-catalogue"
+inspection = "PDF pp.37–38, DS 0212 and DS 1915–17: 1632 Moretus Missal, 1673 parish donation inscription in DS 0212, and 1784 supplement pp.603–630 expressly for Missal of 1632. No original Mass text collated."
+
+[[sources]]
+id = "german-regional-stgallen"
+url = "https://www.bistum-stgallen.ch/bistum/heilige/"
+type = "official-diocesan-operative-book-list"
+inspection = "Official texts section names the 1976 Einsiedeln Missal and Lectionary diocesan proper supplements for current St Gall Mass celebration, plus later local downloads. 1976 books/approval leaves not inspected."
+
+[[sources]]
+id = "german-regional-cologne-directorium"
+url = "https://www.erzbistum-koeln.de/export/sites/ebkportal/seelsorge_und_glaube/gottesdienst_liturgie/.content/.galleries/downloads/DIRECTORIUM_Einleitung_2026.pdf"
+type = "official-diocesan-liturgical-book-directory"
+inspection = "PDF p.26, printed XXVIII, h and p.27 m: 2002 Latin/German Eigenfeiern Missal and 2002 Lectionary are binding Cologne components. Original 2002 books/decrees not inspected."
+
+[[sources]]
+id = "german-regional-speyer-lectionary"
+url = "https://www.bistum-speyer.de/fileadmin/user_upload/1-0-0/Hauptabteilung_I/Downloads/Liturgie/Messlektionar.Eigenfeiern_Bistum_Speyer.pdf"
+type = "official-2023-local-lectionary"
+inspection = "PDF title p.0, approval references p.2, feast contents p.4: 1971 diocesan calendar approval, 1972 Roman confirmation Prot.2069/71, 1975 proper-text confirmation Prot.697/75, and identified 2023 Lectionary. Original earlier instruments not inspected."
+
+[[sources]]
+id = "german-regional-speyer-books"
+url = "https://www.bistum-speyer.de/seelsorge/seelsorge-vor-ort/liturgie/eigenfeiern/"
+type = "official-diocesan-operative-book-list"
+inspection = "Eigenfeiern page names 2023 second expanded Mass proper book and first Lectionary edition, offered for diocesan feasts. No first-edition Missal collation or fresh approval event established."
+
+[[candidates]]
+id = "german-salzburg-1605"
+family = "historic-salzburg-use"
+title = "Missale Salisburgense iuxta ritum et consuetudinem Sanctae Romanae Ecclesiae restitutum"
+date = "1605"
+kind = "identified-printed-local-missal"
+status = "institutional-book-identification-and-component-description"
+sources = ["german-regional-salzburg-domquartier"]
+source_locus = "Archive copy caption; Wolf Dietrich section, paragraphs on 1605 printing, Roman basis and local feasts."
+qualification = "Wolf Dietrich printed and distributed the book after reported 1596 permission. Roman Missal basis and Salzburg proper feasts are stated; original permission, exact parent edition, local text and first celebration uninspected."
+date_role = "printing and reported distribution, not 1596 permission or first use"
+chronology_start = 1605
+chronology_end = 1605
+chronology_kind = "publication"
+chronology_certainty = "institutional-retrospective-and-identified-archive-copy"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "documented-book-state; substantive-transition-unestablished"
+
+[[candidates]]
+id = "german-salzburg-propers-1642"
+family = "historic-salzburg-use"
+title = "Missae propriae cum propriis Sanctorum Archidioecesis Salisburgensis officiis"
+date = "1642"
+kind = "local-mass-propers-booklet"
+status = "bibliographic-component-witness"
+sources = ["german-regional-salzburg-1642"]
+source_locus = "Austrian National Library-derived title metadata, 1642 and 14 pages."
+qualification = "Short saints' Mass-proper printing, not a full Missal; title claims archiepiscopal authority. Formularies, 1605 relation and use uncollated. Keep separate from 1651 printing."
+date_role = "booklet imprint, not first local proper or adoption"
+chronology_start = 1642
+chronology_end = 1642
+chronology_kind = "publication"
+chronology_certainty = "holding-library-catalogue"
+scope_disposition = "in-scope-component-or-adjunct"
+version_status = "component-witness-not-collated"
+
+[[candidates]]
+id = "german-muenster-1632"
+family = "historic-munster-use"
+title = "Missale Sanctae Monasteriensis Ecclesiae, Moretus 1632"
+date = "1632"
+kind = "identified-printed-local-missal"
+status = "catalogue-identified-book-state"
+sources = ["german-regional-muenster-usu", "german-regional-muenster-archive"]
+source_locus = "Usuarium 6490 title, index images 7/11/20/32/280/337; diocesan archive PDF pp.37–38 DS 0212, DS 1915–17."
+qualification = "Title attributes the printing to Ferdinand and claims Roman ceremonial accommodation and added saint offices; catalogue indexes the decree. Original act and before/after text uninspected. Medieval-use classification remains."
+date_role = "1632 print, not first use or decree date"
+chronology_start = 1632
+chronology_end = 1632
+chronology_kind = "publication"
+chronology_certainty = "catalogue-identified-printing"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "book-state-documented; component-change-title-claim-uncollated"
+
+[[candidates]]
+id = "german-muenster-supplement-1784"
+family = "historic-munster-use"
+title = "Supplementum Missalis Monasteriensis for the 1632 Missal"
+date = "1784"
+kind = "bound-local-missal-supplement"
+status = "diocesan-archive-identified-component"
+sources = ["german-regional-muenster-archive"]
+source_locus = "Archive PDF p.38, DS 1915–17, supplement title and pp.603–630."
+qualification = "Supplement expressly addressed to the 1632 Missal following the 1784 Breviary revision under Bishop Maximilian Friedrich; exact supplement pages and directives not read. Not a new complete Missal."
+date_role = "supplement imprint and reported Breviary-revision year, not adoption"
+chronology_start = 1784
+chronology_end = 1784
+chronology_kind = "publication"
+chronology_certainty = "diocesan-archive-catalogue"
+scope_disposition = "in-scope-component-or-adjunct"
+version_status = "supplement-component-documented; textual-transition-unestablished"
+
+[[candidates]]
+id = "german-swiss-propers-1976"
+family = "roman"
+title = "Diözesanproprien der deutschsprachigen Schweiz, Missal and Lectionary supplements"
+date = "1976"
+kind = "regional-mass-and-lectionary-propers"
+status = "official-current-use-attested; original-books-uninspected"
+sources = ["german-regional-stgallen"]
+source_locus = "St Gall official texts section, 1976 Einsiedeln Missal and Lectionary supplements."
+qualification = "St Gall now directs use of the 1976 German supplements for official local Mass texts. The 1976 original approval and first use across other Swiss dioceses are not inferred; later local PDFs are separate additions."
+date_role = "1976 supplement imprint, current St Gall use evidenced separately"
+chronology_start = 1976
+chronology_end = 1976
+chronology_kind = "publication"
+chronology_certainty = "official-diocesan-retrospective"
+scope_disposition = "in-scope-component-or-adjunct"
+version_status = "received-local-propers-component; exact-text-uncollated"
+
+[[candidates]]
+id = "german-cologne-propers-2002"
+family = "roman"
+title = "Messbuch: Die Eigenfeiern des Erzbistums Köln and matching Lectionary"
+date = "2002"
+kind = "diocesan-mass-and-lectionary-propers"
+status = "official-binding-component-attested"
+sources = ["german-regional-cologne-directorium"]
+source_locus = "2026 Directorium PDF pp.26–27, valid-books list h and m."
+qualification = "2002 Latin/German Mass proper and Lectionary components are binding for Cologne by 2026. Original 2002 approval, first use and prayer contents uninspected; no continuity claim from medieval Cologne use."
+date_role = "2002 publication reported in 2026, not approval or effective date"
+chronology_start = 2002
+chronology_end = 2002
+chronology_kind = "publication"
+chronology_certainty = "official-diocesan-retrospective"
+scope_disposition = "in-scope-component-or-adjunct"
+version_status = "received-local-propers-component; exact-text-uncollated"
+
+[[candidates]]
+id = "german-speyer-propers-1975"
+family = "roman"
+title = "Speyer particular calendar and Mass/Lectionary proper confirmations"
+date = "1971/1972/1975"
+kind = "diocesan-propers-approval-state"
+status = "official-later-book-reports-distinct-approvals"
+sources = ["german-regional-speyer-lectionary"]
+source_locus = "2023 Lectionary PDF p.2, Approbation und Konfirmation, calendar 1971/1972 and proper texts 1975, Prot.697/75."
+qualification = "Bishop approved calendar 3 November 1971; Roman congregation confirmed it 15 November 1972, Prot.2069/71; confirmed Mass/Lectionary proper texts 11 July 1975, Prot.697/75. Original acts, first-edition book, first use and texts uninspected."
+date_role = "1975 proper-text confirmation; 1971/1972 calendar acts distinct"
+chronology_start = 1975
+chronology_end = 1975
+chronology_kind = "approval"
+chronology_certainty = "official-book-retrospective-with-protocols"
+scope_disposition = "in-scope-component-or-adjunct"
+version_status = "scoped-approval-state; substantive-text-delta-unestablished"
+
+[[candidates]]
+id = "german-speyer-propers-2023"
+family = "roman"
+title = "Speyer second expanded proper Missal and first proper Lectionary editions"
+date = "2023"
+kind = "diocesan-mass-and-lectionary-propers-publication"
+status = "official-2023-books-identified"
+sources = ["german-regional-speyer-lectionary", "german-regional-speyer-books"]
+source_locus = "Diocesan Eigenfeiern page, linked 2023 books; Lectionary PDF title p.0, approval p.2, feast contents p.4."
+qualification = "The diocese identifies a second expanded Missal edition and first Lectionary edition; the Lectionary is directly opened. The earlier Missal and 2023 second Missal have not been collated; a new 2023 approval is not inferred."
+date_role = "publication, not 1975 confirmation or first celebration"
+chronology_start = 2023
+chronology_end = 2023
+chronology_kind = "publication"
+chronology_certainty = "official-diocesan-book-and-page"
+scope_disposition = "in-scope-component-or-adjunct"
+version_status = "paired-book-state; substantive-change-uncollated"

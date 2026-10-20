@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "evora",
+  "title": "Évora printed missal and bounded diocesan reception evidence",
+  "traditions": [
+    {
+      "id": "evora-use",
+      "label": "Évora diocesan use",
+      "family": "latin",
+      "scope": "The original Missale secundum consuetudinem Elborensis ecclesie and the later Évora archdiocesan requirement for books of that custom; Coimbra, Lisbon and Braga remain separate uses.",
+      "coverage_note": "One printed Évora missal is directly witnessed. A 1565 diocesan rule requires Évora-custom missals but does not identify this printing as each church's copy or establish a new book recension."
+    }
+  ],
+  "sources": [
+    {
+      "id": "evora:bnp-missal",
+      "title": "Missale secundum consuetudinem Elborensis ecclesie, Biblioteca Nacional de Portugal RES.155 A",
+      "url": "https://purl.pt/14879",
+      "kind": "primary-book",
+      "inspection": "Complete 514-page BNP facsimile acquired in scratch, SHA-256 544fcdebb8f8688e025ad42cfcc63c7c3b8f9359366386fdaac5594aa3ceb73d. Original page images inspected: title PDF p. 5 and colophon PDF p. 505 (fol. cclij). The title names the Évora church's custom; the colophon prints 28 February 1509 and shows a local Salazar votive Mass on the same page.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Only the named leaves were inspected here; 514 acquired PDF pages do not mean full textual collation. The printed colophon year is disputed; BNP facsimile reuse terms remain unreviewed and the scan is retained only in scratch."
+    },
+    {
+      "id": "evora:alvarenga2017",
+      "title": "João Pedro d’Alvarenga, The Office of the Dead in Portuguese Medieval Uses, Revista Portuguesa de Musicologia 4/1 (2017)",
+      "url": "https://rpm-ns.pt/index.php/rpm/article/download/317/506/1066",
+      "kind": "scholarship",
+      "inspection": "Complete 38-page PDF acquired in scratch, SHA-256 19ea2402ee74f269015bed5bad7e4d0dc91ba0f850a3cf0e7c2f7eaa75bb6dcc; Appendix III, printed pp. 201–202, checked in extracted text against the identified PDF.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Modern scholarship, not an original date act. The author reasons that the colophon year is a typesetting error and 1519 the most likely actual printing year; 1519 remains an attribution rather than the year printed on the book."
+    },
+    {
+      "id": "evora:constitutions1565",
+      "title": "Constituições do Arcebispado de Évora (1565), Biblioteca Nacional de Portugal RES.2787 V",
+      "url": "https://purl.pt/13348/7/res-2787-v_PDF/res-2787-v_PDF_24-C-R0150/res-2787-v_0000_capa-capa_t24-C-R0150.pdf",
+      "kind": "primary-act",
+      "inspection": "Complete 208-page original scan acquired in scratch, SHA-256 32ee9e75396492e2d47fa336e3a8f182cafd542295018da2a31f9cb3a2826ca5. Title XXVII chapter I, printed fol. lxxv recto–verso, PDF pp. 169–170, visually inspected.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The decree requires Évora-custom missals in archdiocesan churches; it does not publish a 1565 missal, identify the exact printing used in each church, demonstrate compliance, or establish continuation after the 1570 Roman missal."
+    }
+  ],
+  "stages": [
+    {
+      "id": "evora:printed-missal",
+      "tradition_id": "evora-use",
+      "label": "Printed Missale secundum consuetudinem Elborensis ecclesie",
+      "date_label": "Colophon: 28 February 1509; actual printing most likely 1519 by bibliographic analysis",
+      "start_year": 1519,
+      "end_year": 1519,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "An identifiable printed Évora-use Mass book, with title and one local votive formulary leaf inspected; no complete book recension or dated reform established.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:evora-elborense-1509-colophon-1519-probable"
+      ],
+      "witness_label": "BNP RES.155 A printed Évora missal",
+      "summary": "The original title expressly names the Évora church's custom; its colophon prints 28 February 1509. The apparent discrepancy with printer chronology makes 1519 the most likely production year in the checked bibliographic study. This is a book-state attestation, not a claim that a reform took effect in either year.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "evora:bnp-missal",
+          "locus": "PDF p. 5 title and p. 505, fol. cclij, colophon and Salazar votive Mass",
+          "claim": "Original title identifies an Évora-custom missal; the colophon literally gives 28 February 1509; the inspected last leaf includes a local Mass formulary."
+        },
+        {
+          "source_id": "evora:alvarenga2017",
+          "locus": "Appendix III, printed pp. 201–202",
+          "claim": "Printer chronology and competing dates are assessed; 1519 is argued as the most likely actual printing year, not the original colophon year."
+        },
+        {
+          "source_id": "evora:constitutions1565",
+          "locus": "Title XXVII chapter I, fol. lxxv recto–verso, PDF pp. 169–170",
+          "claim": "A later archdiocesan rule requires sufficient missals of Évora custom, establishing a jurisdictional use mandate without naming this exact printing or creating a new textual state."
+        }
+      ],
+      "limitations": "The stage uses the bibliographically favored 1519 printing year; the original colophon literally says 1509 and remains a separate source datum. This is one printing event, not years of liturgical validity. Its prayers, rubrics, complete extent and relation to any predecessor remain uncollated. No authorization, adoption day or post-1570 continuation is inferred from the printed witness.",
+      "reception": "The distinct 1565 constitutions mandate missals of Évora custom across archdiocesan churches. They do not show that this exact BNP printing was used in each church or that the use continued after 1570."
+    }
+  ],
+  "transitions": [],
+  "gaps": [
+    {
+      "id": "evora:sequence-gap",
+      "tradition_id": "evora-use",
+      "period": "Before the Évora printing through and after the 1565 mandate",
+      "missing": "Earlier Évora Mass-book identities and text; actual printing-year confirmation; complete contents and comparison with later books; implementation records for the 1565 mandate and post-1570 use.",
+      "next_source": "Compare surviving Évora missal copies and earlier Mass manuscripts; inspect printer records and archdiocesan visitation or book inventories tied to particular churches; check post-1570 acts and witnesses.",
+      "consequence": "No predecessor, substantive revision edge, 1565 missal stage, universal adoption or continuing-use interval can be drawn from the currently checked material."
+    }
+  ]
+}

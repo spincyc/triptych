@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "romanian-blaj",
+  "title": "Romanian Greek Catholic Blaj liturgy book witnesses of 1756 and 1775",
+  "traditions": [
+    {
+      "id": "romanian-blaj:historical",
+      "label": "Blaj Romanian Greek Catholic book line",
+      "family": "Byzantine",
+      "scope": "Two Romanian Cyrillic Eucharistic printings issued at the Holy Trinity monastery in Blaj.",
+      "coverage_note": "The original title leaves establish printed book states. They do not establish two substantive recensions, exclusive use in Romanian Greek Catholic parishes, or direct descent from a particular earlier copy."
+    }
+  ],
+  "sources": [
+    {
+      "id": "romanian-blaj:book1756",
+      "title": "Dumnezeeştile Liturghii, Blaj 1756, BCU Cluj BRV 300",
+      "url": "https://www.bcucluj.ro/synfilebibdigit/patrimoniu/BCUCLUJ_FCS_BRV300.pdf",
+      "kind": "primary-book",
+      "inspection": "Complete 240-page scan acquired; original Cyrillic title PDF p. 1, contents p. 2 and liturgy opening p. 3 visually inspected. The title names Bishop Petru Pavel Aron and the Holy Trinity monastery at Blaj and states this printing was the first in its form. SHA-256 of acquired PDF: 5fed41bc2a35c96cec9f9bb15574274fc49007d88af4f366a1a0867bf7915fe8.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The scan was acquired but the full text and physical completeness were not collated. The title establishes a Blaj imprint, not the adoption history of every parish or a new recension."
+    },
+    {
+      "id": "romanian-blaj:book1775",
+      "title": "Dumnezeeştile Liturghii, Blaj 1775, BCU Cluj BRV 391",
+      "url": "https://www.bcucluj.ro/synfilebibdigit/patrimoniu/BCUCLUJ_FCS_BRV391.pdf",
+      "kind": "primary-book",
+      "inspection": "Complete 118-page scan acquired; original Cyrillic title at PDF p. 3 visually inspected. It identifies the volume as a second printing. The handwritten comparison to a Râmnic 1733 book across the top is a later annotation. SHA-256 of acquired PDF: 109b66354180a43313a3fe6d67f1736c73efedf25bcc2624062baa4f00b5d6ba.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Physical completeness and text were not collated. A second printing is not by itself a textual revision or evidence of exclusive parish use."
+    },
+    {
+      "id": "romanian-blaj:balan1915",
+      "title": "Ioan Bălan, Stabilirea limbei liturgice româneşti (II), Cultura Creștină 5 (1915), no. 5",
+      "url": "https://dspace.bcucluj.ro/jspui/bitstream/123456789/1727/1/BCUCLUJ_FP_279432_1915_005_005.pdf",
+      "kind": "scholarship",
+      "inspection": "Printed pp. 137–149 read in the acquired periodical scan. At pp. 139–140 Bălan describes the 1756, 1775 and 1807 Blaj editions as close copies of Antim's Liturghier, with limited corrections, and names specific examples against Antim's text.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Contemporary comparative argument, not this project's independent page-level collation of the predecessor and the two Blaj printings. Its summary does not establish complete textual identity or exact descent."
+    }
+  ],
+  "stages": [
+    {
+      "id": "romanian-blaj:1756-printing",
+      "tradition_id": "romanian-blaj:historical",
+      "label": "First Blaj Romanian Cyrillic liturgies printing",
+      "date_label": "Printed at Blaj in 1756",
+      "start_year": 1756,
+      "end_year": 1756,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Printed service book of the liturgies of John Chrysostom, Basil and the Presanctified Gifts.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byz-blaj1756"
+      ],
+      "witness_label": "BCU Cluj BRV 300, original title and opening page images",
+      "summary": "A Romanian Cyrillic Eucharistic service book printed at the Holy Trinity monastery, Blaj, under Bishop Petru Pavel Aron.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "romanian-blaj:book1756",
+          "locus": "PDF pp. 1–3, especially original title p. 1",
+          "claim": "Identifies the first Blaj printing, its place, episcopal association and named liturgies."
+        },
+        {
+          "source_id": "romanian-blaj:balan1915",
+          "locus": "Printed pp. 139–140",
+          "claim": "A contemporary comparison treats this as part of the early Blaj book line and describes limited changes against Antim's Liturghier."
+        }
+      ],
+      "limitations": "Only bounded original pages inspected; no complete transcription, Antim collation or proof of a distinct recension. Title-page authority and printing do not date parish adoption.",
+      "reception": "Blaj Greek Catholic episcopal association is explicit on the book's title. The geographic spread and duration of actual use remain unestablished."
+    },
+    {
+      "id": "romanian-blaj:1775-printing",
+      "tradition_id": "romanian-blaj:historical",
+      "label": "Second Blaj Romanian Cyrillic liturgies printing",
+      "date_label": "Printed at Blaj in 1775",
+      "start_year": 1775,
+      "end_year": 1775,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Second printed issue of the Blaj Romanian Cyrillic liturgies book; textual difference from the 1756 printing unestablished.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byz-blaj1775"
+      ],
+      "witness_label": "BCU Cluj BRV 391, original title image at PDF p. 3",
+      "summary": "A second Blaj printing of the named Eucharistic liturgies, without a demonstrated substantive revision from 1756.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "romanian-blaj:book1775",
+          "locus": "PDF p. 3, original title image",
+          "claim": "Identifies Blaj and the liturgies, and calls this the second printing."
+        },
+        {
+          "source_id": "romanian-blaj:balan1915",
+          "locus": "Printed pp. 139–140",
+          "claim": "Places 1775 alongside 1756 and 1807 as closely related early Blaj printings with few reported changes."
+        }
+      ],
+      "limitations": "The original title identifies a printed state; no component comparison between 1756 and 1775 has been performed. Later handwriting on the title page is not printed evidence. No reform or direct-parent transition is asserted.",
+      "reception": "Blaj imprint and the Greek Catholic book line are identified. Extent and dates of actual parish use have not been proved by this copy."
+    }
+  ],
+  "transitions": [],
+  "gaps": [
+    {
+      "id": "romanian-blaj:early-collation-gap",
+      "tradition_id": "romanian-blaj:historical",
+      "period": "Before 1756 through 1807",
+      "missing": "A controlled comparison of Antim's Liturghier and the 1756, 1775 and 1807 Blaj printings, plus exact printed approval and parish-use evidence.",
+      "next_source": "Collate original prayer and rubric loci in the two acquired BCU Cluj scans against an identified Antim printing; acquire the 1807 title and text; inspect the early Blaj front matter and dated parish inventories.",
+      "consequence": "Two book states can be displayed, but substantive revision, exact textual parentage and regional adoption cannot yet be plotted as documented transitions."
+    },
+    {
+      "id": "romanian-blaj:later-book-line-gap",
+      "tradition_id": "romanian-blaj:historical",
+      "period": "1870 onward",
+      "missing": "Original-book and act collation of the reported 1870, 1905, 1931, 1996 and 2014 revisions.",
+      "next_source": "Acquire the original editions and compare named ordinary and rubric components; examine the 20 May 2015 official circular separately from the 2014 publication date.",
+      "consequence": "Later reported changes are retained as inventory candidates, not silently promoted to a continuous stage sequence."
+    }
+  ]
+}
