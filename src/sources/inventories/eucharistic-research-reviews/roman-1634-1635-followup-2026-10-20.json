@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "roman-1634-1635-followup-2026-10-20",
+  "title": "Rome 1634 Urban VIII original and 1635 Vatican witness follow-up",
+  "lane": "roman_modern",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "status": "integrated-Western-inventory-and-receipt; stage-coverage-refresh-pending",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "original_packet_sha256": "b2ec219a2f6d68069f56bc19bfbf1ae38155c2d017097ed8823ba8c85fa58120",
+    "revised_packet_sha256": "b52b9b68a87f8065af0571b226425c78f03d2e3e362a07f846aeb81d8b9f1d01",
+    "cold_verdict_sha256": "728cf40e0b1d9845411faea18b274eb79e8a670e2fefb1ea43dc41ee93847bbe",
+    "integration_fragment_sha256": "8ab41db24e14a3b4a2cda94fad77365be79d1b27277955e3c371049d46134c2c",
+    "inventory_append_toml_sha256": "f76d5ea8477b7149f0a6a3dc1386b4488387eddec37a29af5c00e36948241021",
+    "release_verdict_sha256": "a091d2abce141a09a6c8e32ae298b7f07771b72455b191468ec00df5dda18fd2"
+  },
+  "integration": {
+    "new_source_ids": [
+      "roman-modern-1634-ub-torra",
+      "roman-modern-1635-rusca-l77",
+      "roman-modern-1635-asachiana-iasi"
+    ],
+    "new_candidate_ids": [
+      "roman-modern-1635-vatican-witness-lead"
+    ],
+    "existing_candidate_updates": [
+      "roman-modern-004"
+    ],
+    "coverage_updates": [
+      "roman-modern"
+    ],
+    "no_tracked_edit_until_boundary_release": false,
+    "boundary_released_western_sha256": "e519179cf6a4b84bbdb6b603604701630fb9c4764a8dbad313260e3c12f10c6e",
+    "new_source_count": 3,
+    "new_candidate_count": 1,
+    "coverage_reconciliation_deferred_to_coordinator": true,
+    "coverage_candidate_ids_to_add": [
+      "roman-modern-1635-vatican-witness-lead"
+    ],
+    "coverage_witness_to_add": {
+      "candidate_id": "roman-modern-1635-vatican-witness-lead",
+      "label": "Rome 1635 Vatican Missale Romanum: bibliographic witnesses after Urban VIII revision",
+      "start_year": 1635,
+      "end_year": 1635,
+      "date_role": "imprint-year",
+      "status": "inventory-witness-candidate-not-a-stage"
+    }
+  },
+  "versions": [
+    {
+      "id": "rome-vatican-brogiotto-1634",
+      "inventory_id": "roman-modern-004",
+      "disposition": "known-original-printing-unacquired",
+      "evidence": "Torra Miró printed p. 188 no. 120; act-backed Urban VIII revision separately at roman-stages-1634",
+      "source_ids": [
+        "roman-modern-1634-ub-torra"
+      ],
+      "limits": "UB holdings list alone does not display original title, extent or text; exact book not acquired."
+    },
+    {
+      "id": "rome-vatican-1635-rusca-l77",
+      "inventory_id": "roman-modern-1635-vatican-witness-lead",
+      "disposition": "physical-witness-bibliographic-lead",
+      "evidence": "Rusca Lanzada L-77 printed p. 49 / PDF p. 17; explicit Secunda editio; physical copy incomplete after final sequence p. 4",
+      "source_ids": [
+        "roman-modern-1635-rusca-l77"
+      ],
+      "limits": "No title image or full edition extent; no 1634 comparison."
+    },
+    {
+      "id": "rome-vatican-1635-asachiana",
+      "inventory_id": "roman-modern-1635-vatican-witness-lead",
+      "disposition": "photographed-title-and-physical-witness-lead",
+      "evidence": "Asachiana 19 printed p. 15 / PDF p. 16 title photograph; descriptions pp. 15-16, 27-28",
+      "source_ids": [
+        "roman-modern-1635-asachiana-iasi"
+      ],
+      "limits": "Reported 698 pages conflicts with enumerated sections if leaves count as two pages; copy defective/composite; identity with L-77 unresolved."
+    }
+  ],
+  "acquisitions": [
+    {
+      "kind": "research-document",
+      "source_id": "torra-2009-ub-list",
+      "path": "torra-miro.pdf",
+      "sha256": "565ec1d8e92a3551740f4ec9adf9b3576c1d98055734eef7d1c8ae78e3abf511",
+      "bytes": 4679747,
+      "pdf_pages": 17,
+      "rights": "Scholarly article and images retained only as scratch research evidence; no redistribution basis assessed."
+    },
+    {
+      "kind": "research-document",
+      "source_id": "rusca-lanzada-l77",
+      "path": "lanzada.pdf",
+      "sha256": "dd0af07224d70a9a51fc740702384e91cad811bf7ce8fb6d44a024112e07709c",
+      "bytes": 1686095,
+      "pdf_pages": 80,
+      "rights": "Catalogue retained only as scratch research evidence; no redistribution basis assessed."
+    },
+    {
+      "kind": "research-document",
+      "source_id": "asachiana-iasi-1635",
+      "path": "asachiana-19-2023.pdf",
+      "sha256": "90ae1edb3bffbd59f00650527311c382045a38e777ce44da1912c1b8bd2915ce",
+      "bytes": 7240648,
+      "pdf_pages": 154,
+      "rights": "Institutional journal article and embedded photographs retained only as scratch evidence; no image redistribution basis assessed."
+    }
+  ],
+  "exact_original_book_acquired": false,
+  "rights_disposition": "Catalogue/article files and embedded photograph held in untracked scratch only; original book scans not acquired, image redistribution not cleared.",
+  "remaining_gaps": [
+    "UB no. 120's shelfmark, exact original title, Urban VIII decree or Si quid est pages, completeness and whole-book extent",
+    "Original title page and complete pagination of Rusca L-77",
+    "Asachiana 698-page aggregate versus its leaf/page breakdown",
+    "Identity or difference of the two 1635 settings or issues, and textual relation between either 1635 witness and the Rome 1634 book",
+    "Provider permissions to redistribute article, catalogue or original-page images"
+  ],
+  "next_access_request": {
+    "recipient": "CRAI Biblioteca de Fons Antic, Universitat de Barcelona, bib.fonsantic@ub.edu",
+    "reference": "Jordi Torra Miró, Els llibres litúrgics impresos de la Biblioteca de la Universitat de Barcelona, printed p. 188 no. 120: Missale romanum, Roma, Typ. Vaticana/A. Brogiotto, 1634",
+    "request": "Please provide the catalogue permalink and shelfmark, confirm whether a full digital facsimile exists, report the copy's completeness and pagination, and advise how to order research reproductions of the title page, Urban VIII Si quid est/privilege, colophon, calendar and selected rubrics/proper loci; provide research-use and publication rights terms. No request was sent in this follow-up.",
+    "route": "https://crai.ub.edu/serveis-i-recursos/reproduccio-documents"
+  },
+  "counting_rule": "Three cited witnesses/holdings leads and one proposed 1635 candidate are bibliographic metadata, not a 1635 act, substantive recension, station, textual parentage or full transcription.",
+  "reviewed_on": "2026-10-20",
+  "coverage_rows": [
+    "roman-modern"
+  ],
+  "limits": [
+    "No exact Rome 1634 or Rome 1635 book acquired or fully collated.",
+    "1635 is a bibliographic witness lead, not a new recension or station.",
+    "Asachiana aggregate 698 pages conflicts with its enumerated leaf/page parts; full extent unresolved.",
+    "No image redistribution rights established."
+  ],
+  "uses": [],
+  "searches": []
+}

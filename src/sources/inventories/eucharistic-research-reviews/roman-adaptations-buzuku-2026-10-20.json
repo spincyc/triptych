@@ -1,0 +1,374 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "roman-adaptations-buzuku-2026-10-20",
+  "title": "Buzuku Meshari 1555: Roman-rite vernacular witness identity control",
+  "lane": "roman_adaptations",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "status": "integrated-bounded-identity-control",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "semantics": "One incomplete mixed Albanian Roman-rite-related witness, chiefly translated according to a retrospective Vatican report. An undated handwritten note attributes a Latin source. No Latin exemplar comparison, distinct Roman source recension, normative state, complete missal, act-history station, ancestry edge, or independent translation version series is asserted.",
+  "coverage_rows": [
+    "roman-historical-vernacular-witness-controls"
+  ],
+  "review_files": {
+    "storage": "Underlying research scratch is pinned by SHA-256; this tracked receipt documents the coordinated integration.",
+    "frozen_packet_sha256": "de58e6dc5a150c357bb8c2275e36791ef6682213f9106600440d2d6c96d6b4c2",
+    "cold_correction_addendum_sha256": "fe54d04953f4a89572961829ba66e62970f33b7889481afaa7ce1a7f9d2bcbd4",
+    "cold_release_verdict_sha256": "19870d2437170d59aa38b1975242f21ef654cc42743a81c90833069699407d95",
+    "cold_verdict": "accepted exact two-field correction for bounded identity-control integration"
+  },
+  "integration": {
+    "new_source_ids": [
+      "roman-adaptations-src-buzuku-bksh92035",
+      "roman-adaptations-src-buzuku-vn2026",
+      "roman-adaptations-src-buzuku-vn2020",
+      "roman-adaptations-src-buzuku-vr2012",
+      "roman-adaptations-src-buzuku-bnf1958",
+      "roman-adaptations-src-buzuku-torrossa1958",
+      "roman-adaptations-src-buzuku-titus2003",
+      "roman-adaptations-src-buzuku-usuarium9559"
+    ],
+    "new_candidate_ids": [
+      "roman-adaptations-buzuku1555"
+    ],
+    "new_coverage_ids": [
+      "roman-historical-vernacular-witness-controls"
+    ],
+    "fragment_sha256": "6e09c9165a5eb634982f8456bbabd9a7b476c9027f5e1f8a71976c7c6aa3a10c",
+    "western_inventory_sha256_at_draft": "878a7783af7949a239b26f6a2d7a9040148c81f9a552b9fdb67581b7194e0a47",
+    "state": "Tracked receipt and Western source, candidate and coverage records integrated; no act-history station or source text admitted.",
+    "western_inventory_sha256_before_integration": "69be4b183c14ad55ee2a59a8dfda3d8a3f348f24fdb6bc6e07451c3be2573253",
+    "integrated_on": "2026-10-20"
+  },
+  "uses": [
+    {
+      "id": "roman-adaptations-use-buzuku-albanian-roman-witness",
+      "label": "Historical Albanian Roman-rite vernacular mixed-book witness",
+      "version_ids": [
+        "roman-adaptations-buzuku1555"
+      ],
+      "disposition": "identity control only; independent translation history deferred"
+    }
+  ],
+  "searches": [
+    {
+      "route": "BKSH national-library catalogue; Vatican News/Radio; BnF facsimile bibliography; Torrossa licensed access route; TITUS preliminary derivative; BAV OPAC search shell",
+      "finding": "Original Vatican item record and page images unresolved; metadata and one derivative text page inspected."
+    }
+  ],
+  "sources": [
+    {
+      "id": "roman-adaptations-src-buzuku-bksh92035",
+      "url": "https://bksh.al/cgi-bin/alis/opac-detail.pl?biblionumber=92035",
+      "type": "holding-library-facsimile-catalogue",
+      "title": "Biblioteka Kombëtare e Shqipërisë, [Meshari] / Gjon Buzuku, record 92035",
+      "inspection": "Catalogue heading and notes: bracketed publication year [1555], date and author from afterword, missing title leaf, other leaves blank-filled in this digital facsimile, Vatican exemplar R.G. Liturgia III, 194, handwritten Italian Latin-translation note.",
+      "limitations": "Catalogue describes an Albanian National Library facsimile, not a complete direct image collation of Vatican original; handwritten note has unknown date.",
+      "inspected_on": "2026-10-20",
+      "integration_review": "Frozen GS-004 packet plus exact two-field addendum accepted by independent cold release verdict; receipt src/sources/inventories/eucharistic-research-reviews/roman-adaptations-buzuku-2026-10-20.json.",
+      "rights": "Bibliographic metadata only; downloaded HTML and derivative transcription remain scratch-only; no book-image or text republication rights asserted."
+    },
+    {
+      "id": "roman-adaptations-src-buzuku-vn2026",
+      "url": "https://www.vaticannews.va/sq/bota/news/2026-01/me-5-janar-bie-pervjetori-i-se-shkruomi-te-mesharit-te-dom-g.html",
+      "type": "official-Catholic-historical-report",
+      "title": "Vatican News, 5 January 2026 Buzuku Meshari anniversary",
+      "inspection": "Body paragraphs from opening through contents: 20 March 1554 start, 5 January 1555 completion, printing reported same year, mixed Mass, sacramental, Bible and catechetical sections, reported priest use, missing initial/internal pages, mostly translation with authored material.",
+      "limitations": "Retrospective report, not a 1555 authorization or direct facsimile inspection.",
+      "inspected_on": "2026-10-20",
+      "integration_review": "Frozen GS-004 packet plus exact two-field addendum accepted by independent cold release verdict; receipt src/sources/inventories/eucharistic-research-reviews/roman-adaptations-buzuku-2026-10-20.json.",
+      "rights": "Bibliographic metadata only; downloaded HTML and derivative transcription remain scratch-only; no book-image or text republication rights asserted."
+    },
+    {
+      "id": "roman-adaptations-src-buzuku-vn2020",
+      "url": "https://www.vaticannews.va/sq/kisha/news/2020-01/zef-chiaramonte-meshari-i-gjon-buzukut-1555-nje-hapax.html",
+      "type": "hosted-specialist-historical-study",
+      "title": "Zef Chiaramonte study reproduced by Vatican News, 5 January 2020",
+      "inspection": "Status quaestionis and Libri-mit paragraphs: Roman-rite priest, one Vatican exemplar, unknown printing place, 1554–1555 colophon span, Albanian Catholic liturgical attempt.",
+      "limitations": "Specialist interpretation hosted by Vatican News; not contemporary authorization, precise jurisdiction, or original-book collation.",
+      "inspected_on": "2026-10-20",
+      "integration_review": "Frozen GS-004 packet plus exact two-field addendum accepted by independent cold release verdict; receipt src/sources/inventories/eucharistic-research-reviews/roman-adaptations-buzuku-2026-10-20.json.",
+      "rights": "Bibliographic metadata only; downloaded HTML and derivative transcription remain scratch-only; no book-image or text republication rights asserted."
+    },
+    {
+      "id": "roman-adaptations-src-buzuku-vr2012",
+      "url": "https://www.archivioradiovaticana.va/storico/2012/11/07/meshari_1555_i_dom_gjon_buzukut_t%C3%AB_diel%C3%ABn_mb%C3%ABrrin_n%C3%AB_shqip%C3%ABri/alb-636783",
+      "type": "Vatican-radio-holding-report",
+      "title": "Radio Vaticana, 7 November 2012, original Meshari loan report",
+      "inspection": "Opening and holding paragraph identify BAV loan of original and catalogue mark R.G. Liturgia III, 194.",
+      "limitations": "News report of holding, not the Vatican Library item record or original image.",
+      "inspected_on": "2026-10-20",
+      "integration_review": "Frozen GS-004 packet plus exact two-field addendum accepted by independent cold release verdict; receipt src/sources/inventories/eucharistic-research-reviews/roman-adaptations-buzuku-2026-10-20.json.",
+      "rights": "Bibliographic metadata only; downloaded HTML and derivative transcription remain scratch-only; no book-image or text republication rights asserted."
+    },
+    {
+      "id": "roman-adaptations-src-buzuku-bnf1958",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb318947626",
+      "type": "national-library-facsimile-edition-catalogue",
+      "title": "BnF catalogue, Namik Ressuli, Il “Messale” di Giovanni Buzuku, BAV 1958",
+      "inspection": "Publication and Comprend fields: Vatican Library 1958 edition, printed pp. 3–381 facsimile facing edited text, BnF print holding.",
+      "limitations": "Edition bibliography only. No facsimile page images acquired; 1958 book is a derivative witness, not a 1555 revision.",
+      "inspected_on": "2026-10-20",
+      "integration_review": "Frozen GS-004 packet plus exact two-field addendum accepted by independent cold release verdict; receipt src/sources/inventories/eucharistic-research-reviews/roman-adaptations-buzuku-2026-10-20.json.",
+      "rights": "Bibliographic metadata only; downloaded HTML and derivative transcription remain scratch-only; no book-image or text republication rights asserted."
+    },
+    {
+      "id": "roman-adaptations-src-buzuku-torrossa1958",
+      "url": "https://www.torrossa.com/it/resources/an/3179797",
+      "type": "licensed-facsimile-access-catalogue",
+      "title": "Torrossa listing, BAV Studi e Testi 199, Ressuli 1958",
+      "inspection": "Title, publisher, date, xix+406 pages, 89.64 MB PDF and licensed purchase route.",
+      "limitations": "Paid licensed PDF was not acquired; no 1555 original page inspected.",
+      "inspected_on": "2026-10-20",
+      "integration_review": "Frozen GS-004 packet plus exact two-field addendum accepted by independent cold release verdict; receipt src/sources/inventories/eucharistic-research-reviews/roman-adaptations-buzuku-2026-10-20.json.",
+      "rights": "Bibliographic metadata only; downloaded HTML and derivative transcription remain scratch-only; no book-image or text republication rights asserted."
+    },
+    {
+      "id": "roman-adaptations-src-buzuku-titus2003",
+      "url": "https://titus.uni-frankfurt.de/texte/etcs/alban/buzuku/buzuk001.htm",
+      "type": "scholarly-derived-transcription-sample",
+      "title": "TITUS, Buzuku Missale, part 1, preliminary edition",
+      "inspection": "Editorial heading cites 1958 and 1987 facsimiles and explicitly labels text preliminary; first displayed surviving page marked 009r; sample lines 1–61 only.",
+      "limitations": "Digital transcription is derivative, not verified against original; representation substitutes characters not encoded in Unicode, and site forbids republication.",
+      "inspected_on": "2026-10-20",
+      "integration_review": "Frozen GS-004 packet plus exact two-field addendum accepted by independent cold release verdict; receipt src/sources/inventories/eucharistic-research-reviews/roman-adaptations-buzuku-2026-10-20.json.",
+      "rights": "Bibliographic metadata only; downloaded HTML and derivative transcription remain scratch-only; no book-image or text republication rights asserted."
+    },
+    {
+      "id": "roman-adaptations-src-buzuku-usuarium9559",
+      "url": "https://usuarium.elte.hu/book/9559/view",
+      "type": "university-liturgical-catalogue-control",
+      "title": "USUARIUM book 9559, Meshari i Gjon Buzukut",
+      "inspection": "Saved origin 1153 HTML lists book 9559 as Missal, 1555, Albania; saved owner control routes to Roman adaptations with vernacular translation history deferred.",
+      "limitations": "Direct book page was inaccessible in web tool; origin is geographic, not independent rite or source recension.",
+      "inspected_on": "2026-10-20",
+      "integration_review": "Frozen GS-004 packet plus exact two-field addendum accepted by independent cold release verdict; receipt src/sources/inventories/eucharistic-research-reviews/roman-adaptations-buzuku-2026-10-20.json.",
+      "rights": "Bibliographic metadata only; downloaded HTML and derivative transcription remain scratch-only; no book-image or text republication rights asserted."
+    }
+  ],
+  "versions": [
+    {
+      "id": "roman-adaptations-buzuku1555",
+      "family": "roman",
+      "title": "Gjon Buzuku, Meshari: surviving 1555 Albanian Roman-related liturgical compilation",
+      "date": "1555 completion; [1555] printing attributed",
+      "kind": "historical-vernacular-mixed-liturgical-witness",
+      "status": "reviewed-bounded-metadata",
+      "qualification": "The national catalogue identifies a facsimile of the incomplete Vatican-held exemplar, with lost title leaf and other missing leaves represented by blanks. The closing statement is reported to date composition from 20 March 1554 to 5 January 1555; [1555] printing is catalogued from the afterword, while place and printer are unknown. The book mixes Mass, sacramental, biblical, devotional and catechetical material. Vatican News 2026 describes it as chiefly translated, with some original Albanian material. The BKSH record separately reports an undated handwritten Italian note attributing a Latin source; no Latin exemplar or textual relation has been directly compared. Priest use is retrospectively reported, but approval, operative jurisdiction, exact contents and relation to Latin exemplars are unverified. This witness does not establish a distinct Roman source recension or act-history station.",
+      "date_role": "reported colophon completion 5 January 1555; bracketed printing year from afterword",
+      "version_status": "identifiable-vernacular-witness; independent translation history deferred; no distinct Roman recension",
+      "scope_disposition": "historical-Roman-vernacular-identity-control-only",
+      "sources": [
+        "roman-adaptations-src-buzuku-bksh92035",
+        "roman-adaptations-src-buzuku-vn2026",
+        "roman-adaptations-src-buzuku-vn2020",
+        "roman-adaptations-src-buzuku-vr2012",
+        "roman-adaptations-src-buzuku-bnf1958",
+        "roman-adaptations-src-buzuku-torrossa1958",
+        "roman-adaptations-src-buzuku-titus2003",
+        "roman-adaptations-src-buzuku-usuarium9559"
+      ],
+      "source_locus": "BKSH record 92035 notes on date, Vatican exemplar and missing leaves; Vatican News 2026 opening and contents paragraphs; Chiaramonte 2020 Status quaestionis/Libri-mit; BnF Ressuli 1958 facsimile Comprend field; TITUS part 1 editorial note/page 009r; USUARIUM origin 1153 saved book 9559.",
+      "acquisition_status": "metadata-and-one-preliminary-derivative-text-page-only; original and full facsimile unacquired",
+      "collation_status": "no-complete-book-or-Latin-exemplar-collation",
+      "transcription_status": "no-project-verified-transcription",
+      "chronology_start": 1555,
+      "chronology_end": 1555,
+      "chronology_kind": "reported-composition-completion",
+      "chronology_certainty": "1555 author/year from afterword per BKSH; exact day from retrospective Vatican News; printing year attributed, not separately proved",
+      "existing_inventory": "src/sources/inventories/eucharistic-research-reviews/roman-adaptations-buzuku-2026-10-20.json"
+    }
+  ],
+  "acquisitions": [
+    {
+      "id": "buzuku-acq-bksh-92035",
+      "original_url": "https://bksh.al/cgi-bin/alis/opac-detail.pl?biblionumber=92035",
+      "path": ".scratch/full-research-20261019/roman_adaptations/continuation-agent/buzuku-followup/bksh-92035.html",
+      "sha256": "63c901279430bb6ad338f2f2f5e2c99843cd0a639499fdf8456585b300ac3d7d",
+      "bytes": 39547,
+      "delivered_extent": "single HTML metadata or derivative-text page only; no 1555 exemplar images or complete 1958 facsimile",
+      "identity_inspection": "Albanian National Library record 92035; catalogues its 2014 gifted facsimile of the Vatican exemplar, bracketed 1555, lost title leaf, missing leaves and inserted blanks, and a later handwritten Latin-translation note.",
+      "rights_basis": "Scratch-only research copy of HTML. Bibliographic metadata may be paraphrased; no book/facsimile text or images cleared for republication. TITUS and BAV expressly reserve reproduction rights.",
+      "proposed_storage": "scratch-only"
+    },
+    {
+      "id": "buzuku-acq-vatican-news-2026",
+      "original_url": "https://www.vaticannews.va/sq/bota/news/2026-01/me-5-janar-bie-pervjetori-i-se-shkruomi-te-mesharit-te-dom-g.html",
+      "path": ".scratch/full-research-20261019/roman_adaptations/continuation-agent/buzuku-followup/vatican-news-2026.html",
+      "sha256": "d31550324cf19859918774b79301d92a0827fff5f2baec1d19a1afcb9d63ef98",
+      "bytes": 81170,
+      "delivered_extent": "single HTML metadata or derivative-text page only; no 1555 exemplar images or complete 1958 facsimile",
+      "identity_inspection": "Vatican News 5 Jan 2026 historical report; 1554 start and 5 Jan 1555 completion attributed to Buzuku, mixed Eucharistic, sacramental, biblical and catechetical contents, and reported priest use.",
+      "rights_basis": "Scratch-only research copy of HTML. Bibliographic metadata may be paraphrased; no book/facsimile text or images cleared for republication. TITUS and BAV expressly reserve reproduction rights.",
+      "proposed_storage": "scratch-only"
+    },
+    {
+      "id": "buzuku-acq-vatican-news-2020",
+      "original_url": "https://www.vaticannews.va/sq/kisha/news/2020-01/zef-chiaramonte-meshari-i-gjon-buzukut-1555-nje-hapax.html",
+      "path": ".scratch/full-research-20261019/roman_adaptations/continuation-agent/buzuku-followup/vatican-news-2020.html",
+      "sha256": "337128c7cc8e4cb2f6653eb76f2dee7941e9b501fb49e04bc306603dbcfbf02a",
+      "bytes": 141993,
+      "delivered_extent": "single HTML metadata or derivative-text page only; no 1555 exemplar images or complete 1958 facsimile",
+      "identity_inspection": "Vatican News 5 Jan 2020 reproduces Zef Chiaramonte study; pp are web paragraph loci, Roman-rite priest description, one surviving exemplar, scholarly liturgical-use context.",
+      "rights_basis": "Scratch-only research copy of HTML. Bibliographic metadata may be paraphrased; no book/facsimile text or images cleared for republication. TITUS and BAV expressly reserve reproduction rights.",
+      "proposed_storage": "scratch-only"
+    },
+    {
+      "id": "buzuku-acq-bav-edition-1958",
+      "original_url": "https://www.torrossa.com/it/resources/an/3179797",
+      "path": ".scratch/full-research-20261019/roman_adaptations/continuation-agent/buzuku-followup/bav-edition-1958.html",
+      "sha256": "447c74c3fd88fe61194b0ab6a4acda6e237b05d7ab216fbcab8cc22545cfef5b",
+      "bytes": 47041,
+      "delivered_extent": "single HTML metadata or derivative-text page only; no 1555 exemplar images or complete 1958 facsimile",
+      "identity_inspection": "Licensed distributor metadata for Biblioteca Apostolica Vaticana Studi e Testi 199, Namik Ressuli 1958 facsimile/transcription; 89.64 MB PDF offered by purchase, not acquired.",
+      "rights_basis": "Scratch-only research copy of HTML. Bibliographic metadata may be paraphrased; no book/facsimile text or images cleared for republication. TITUS and BAV expressly reserve reproduction rights.",
+      "proposed_storage": "scratch-only"
+    },
+    {
+      "id": "buzuku-acq-bnf-1958-facsimile",
+      "original_url": "https://catalogue.bnf.fr/ark:/12148/cb318947626",
+      "path": ".scratch/full-research-20261019/roman_adaptations/continuation-agent/buzuku-followup/bnf-1958-facsimile.html",
+      "sha256": "65e7b77e627170594bf2d8362a222a78a63094792a25640818a9117c5bb2900f",
+      "bytes": 73297,
+      "delivered_extent": "single HTML metadata or derivative-text page only; no 1555 exemplar images or complete 1958 facsimile",
+      "identity_inspection": "BnF catalogue for BAV 1958 facsimile; reproduction of original on printed pp. 3–381 facing edited text, physical holding; no online full scan supplied.",
+      "rights_basis": "Scratch-only research copy of HTML. Bibliographic metadata may be paraphrased; no book/facsimile text or images cleared for republication. TITUS and BAV expressly reserve reproduction rights.",
+      "proposed_storage": "scratch-only"
+    },
+    {
+      "id": "buzuku-acq-titus-buzuku-001",
+      "original_url": "https://titus.uni-frankfurt.de/texte/etcs/alban/buzuku/buzuk001.htm",
+      "path": ".scratch/full-research-20261019/roman_adaptations/continuation-agent/buzuku-followup/titus-buzuku-001.html",
+      "sha256": "ae947b7ab317ce65168e66e6084f755f63da123fb338ae27907011449fbe3e08",
+      "bytes": 43481,
+      "delivered_extent": "single HTML metadata or derivative-text page only; no 1555 exemplar images or complete 1958 facsimile",
+      "identity_inspection": "TITUS preliminary derivative transcription, part 1, mapped to surviving exemplar page 009r; based on 1958 and 1987 facsimiles, no original page image and no complete collation.",
+      "rights_basis": "Scratch-only research copy of HTML. Bibliographic metadata may be paraphrased; no book/facsimile text or images cleared for republication. TITUS and BAV expressly reserve reproduction rights.",
+      "proposed_storage": "scratch-only"
+    },
+    {
+      "id": "buzuku-acq-bav-opac-shell",
+      "original_url": "https://opac.vatlib.it/mss",
+      "path": ".scratch/full-research-20261019/roman_adaptations/continuation-agent/buzuku-followup/bav-opac-shell.html",
+      "sha256": "6988b0c5f523525a3de1ba04a369ff9bc735ae3ba0ef0a184daf58c7aedf1487",
+      "bytes": 403608,
+      "delivered_extent": "single HTML metadata or derivative-text page only; no 1555 exemplar images or complete 1958 facsimile",
+      "identity_inspection": "Vatican Apostolic Library manuscript catalogue search shell only; JavaScript application yielded no resolved Buzuku item record.",
+      "rights_basis": "Scratch-only research copy of HTML. Bibliographic metadata may be paraphrased; no book/facsimile text or images cleared for republication. TITUS and BAV expressly reserve reproduction rights.",
+      "proposed_storage": "scratch-only"
+    },
+    {
+      "id": "buzuku-acq-vatican-radio-2012",
+      "original_url": "https://www.archivioradiovaticana.va/storico/2012/11/07/meshari_1555_i_dom_gjon_buzukut_t%C3%AB_diel%C3%ABn_mb%C3%ABrrin_n%C3%AB_shqip%C3%ABri/alb-636783",
+      "path": ".scratch/full-research-20261019/roman_adaptations/continuation-agent/buzuku-followup/vatican-radio-2012.html",
+      "sha256": "3e6395625b4942339770b28700b710e49c2b264fa405ce11914e990bb62d644e",
+      "bytes": 5749,
+      "delivered_extent": "single HTML metadata or derivative-text page only; no 1555 exemplar images or complete 1958 facsimile",
+      "identity_inspection": "Radio Vaticana archival report of BAV loan of original in 2012 and holding mark R.G. Liturgia III, 194; not a BAV catalogue item record.",
+      "rights_basis": "Scratch-only research copy of HTML. Bibliographic metadata may be paraphrased; no book/facsimile text or images cleared for republication. TITUS and BAV expressly reserve reproduction rights.",
+      "proposed_storage": "scratch-only"
+    }
+  ],
+  "coverage_proposal": {
+    "id": "roman-historical-vernacular-witness-controls",
+    "title": "Identified historical Roman-rite vernacular translation and mixed-book witnesses",
+    "status": "reviewed-identity-only-translation-history-deferred",
+    "sources": [
+      "roman-adaptations-src-buzuku-bksh92035",
+      "roman-adaptations-src-buzuku-vn2020",
+      "roman-adaptations-src-buzuku-vn2026"
+    ],
+    "candidate_ids": [
+      "roman-adaptations-buzuku1555"
+    ],
+    "remaining_work": "Acquire authorized Vatican item record or facsimile access, inspect actual surviving Mass sections and leaf losses, compare Latin exemplars, establish printer/place, formal authorization and reception. Do not infer full missal, separate source recension, normative state or Byzantine Albanian ownership from geographic label.",
+    "scope": "western-historical-vernacular-identity-control",
+    "research_review": "src/sources/inventories/eucharistic-research-reviews/roman-adaptations-buzuku-2026-10-20.json"
+  },
+  "date_roles": [
+    {
+      "role": "composition-start",
+      "date": "1554-03-20",
+      "basis": "Vatican News 2020/2026 attribution to closing statement; original colophon not directly inspected"
+    },
+    {
+      "role": "composition-completion",
+      "date": "1555-01-05",
+      "basis": "Vatican News 2020/2026 attribution to closing statement; original colophon not directly inspected"
+    },
+    {
+      "role": "printing",
+      "date": "[1555]",
+      "basis": "BKSH national catalogue bracketed year from afterword; title leaf absent; printer and place unknown"
+    },
+    {
+      "role": "1958-facsimile",
+      "date": "1958",
+      "basis": "BAV publication catalogued by BnF and Torrossa; not a new 1555 source recension"
+    }
+  ],
+  "ownership": {
+    "proposed_lane": "roman_adaptations",
+    "proposed_family": "roman",
+    "byzantine_albanian_church": "excluded by Roman-rite priest and Catholic liturgical evidence; no Byzantine book identity established",
+    "reception": "priest use retrospectively reported; formal approval and operative jurisdiction unverified"
+  },
+  "access_assessment": {
+    "vatican_holding": "R.G. Liturgia III, 194 reported by BKSH and Vatican Radio 2012; BAV manuscript OPAC search shell loaded but direct item record was not resolved",
+    "original_exemplar": "not acquired or image-read; sole surviving copy and missing leaves reported, exact leaf census unverified",
+    "national_library_facsimile": "BKSH item 92035 is its own 2014 gifted digital facsimile copy of Vatican exemplar, not a second 1555 printing",
+    "vatican_1958_facsimile": "Namik Ressuli, BAV Studi e Testi 199, listed as licensed 89.64 MB PDF by Torrossa; BnF describes original facsimile on pp. 3–381 facing edited text; full pages not acquired",
+    "titus": "Part 1 first displayed page 009r inspected as a preliminary 2003 transcription based on later facsimiles; no original image or whole-body verification",
+    "digital_library_search": "DigiVatLib miscellanea R.G.Liturg. list showed a different II.9(3) item; this limited route did not resolve III,194 and does not prove it is undigitized"
+  },
+  "negative_findings": [
+    "No direct Vatican Library item record or original images resolved in this pass.",
+    "No complete 1958 facsimile acquired; Torrossa offers a licensed PDF, and BnF lists a print holding.",
+    "National Library facsimile catalogue cannot fill missing leaves or certify entire 1555 book.",
+    "Handwritten Italian note calling the book translated from Latin has no demonstrated contemporary date or approval force.",
+    "Reported priest use does not establish formal authorization, specific jurisdiction, or a separate Roman recension.",
+    "TITUS preliminary transcription is derivative and does not establish full original extent, exact typography, or collation."
+  ],
+  "cold_review_questions": [
+    "Does the Roman-rite identification in Chiaramonte and the mixed Mass contents justify a Western Roman identity-control candidate while independent Albanian translation history remains deferred?",
+    "Is a new historical vernacular witness coverage row preferable to placing a 1555 mixed book under modern original-source adaptations?",
+    "Can BAV item metadata or licensed facsimile establish the exact missing-leaf census and Mass-content extent without conflating later editions with the 1555 witness?",
+    "Does any contemporary act prove Albanian priestly use, approval or jurisdiction beyond retrospective reports?",
+    "Should the 1555 chronology coordinate denote reported composition completion only, with [1555] printing confined to the date note?"
+  ],
+  "retained_evidence": [
+    {
+      "path": ".scratch/full-research-20261019/global_scope/raw/origin-1153.html",
+      "sha256": "b929320594f91f893a2190c49633459d155c21a5d7533d52c9ba34b5d66c9d80",
+      "bytes": 15123,
+      "role": "geographic origin and book 9559 control; not a direct book record"
+    }
+  ],
+  "source_pins": {
+    "scope_findings": {
+      "path": ".scratch/full-research-20261019/global_scope/continuation-agent/scope-findings.json",
+      "sha256": "1694cd5e11886423bfe77fa2bedb21eb7e7bebab62bf933ecb2db17f24995972"
+    },
+    "saved_origin_control": {
+      "path": ".scratch/full-research-20261019/global_scope/lane-roman_adaptations-origin-controls.json",
+      "sha256": "88f4d2daaa8a7458206ef2c34a069006eaf62f5ef3bcfeaabd9b646e6fe0c783"
+    },
+    "saved_origin_html": {
+      "path": ".scratch/full-research-20261019/global_scope/raw/origin-1153.html",
+      "sha256": "b929320594f91f893a2190c49633459d155c21a5d7533d52c9ba34b5d66c9d80"
+    },
+    "prior_reviewed_packet": {
+      "path": ".scratch/full-research-20261019/roman_adaptations/continuation-agent/research-final-v3.json",
+      "sha256": "c265dc0e5d74f1bdb8e5c9f7f39e1b6c4e45b642b01a7e098d60d8380dc1f1da"
+    }
+  },
+  "rights_policy": "Only project-created bibliographic metadata is proposed for tracking. Eight downloaded HTML pages remain scratch-only; licensed BAV facsimile and original images were not acquired. TITUS prohibits republication without permission. No reusable book text or image rights are asserted.",
+  "limits": [
+    "The 1555 plotted date is reported composition completion; bracketed [1555] printing is a catalogue attribution based on the afterword, not an inspected title page.",
+    "BKSH item is a later facsimile of a damaged Vatican exemplar, with missing leaves represented by blanks; no physical completeness or exact Mass-content census is established.",
+    "Roman-rite owner is a bounded historical identity classification; no Byzantine Albanian Church ownership follows from Albania geography."
+  ]
+}

@@ -1,0 +1,981 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "ambrosian-lyon-2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "lane": "ambrosian_lyon",
+  "side": "western",
+  "integration": {
+    "status": "qualified-metadata-integrated",
+    "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+    "new_source_count": 17,
+    "new_candidate_count": 21,
+    "updated_coverage_ids": [
+      "ambrosian",
+      "lyon"
+    ],
+    "packet_sha256": "2dff77991261ff208b02b9536b25418d9b69a3fe1ae6603d9ed0934379d3454a",
+    "addendum_sha256": "7d679d7755af2f16fb90f93a4f34f545300c96dd2fa22acdf43075041eb21b9c",
+    "source_map_sha256": "6d3cd6e872d5124ec9aaf9a830de78265d24123aea344265d3e4d091bef2fb75",
+    "cold_verdict_sha256": "2f1539102fbf9e0f7a51505c4880bcd71bb2b5d6a14d5b049774deb7f97b84f0",
+    "cold_addendum_verdict_sha256": "14a6bad627ca457f09d90bf710519c20f8fa9fc655ae072af7cea70321b0ccae",
+    "cold_source_map_verdict_sha256": "c867ee17d762358ea1db1643cff73fc12c63568ea3c234197608c0c57195e0a1",
+    "post_integration_cold_verdict_sha256": "1253425afc991c6629499e62e5fe7ae546f9a9808b94c52aff171e28f7a79720"
+  },
+  "semantics": "Rows are witnesses, components and qualified leads; no complete book transcription, textual parentage, full use census or permission to republish follows. Approval, publication, printing and effective use remain distinct.",
+  "uses": [
+    {
+      "id": "ambrosian",
+      "selected_candidate_ids": [
+        "ambrosian-1499-print",
+        "ambrosian-1640-print",
+        "ambrosian-1954-fifth",
+        "ambrosian-1965-latin-italian",
+        "ambrosian-1975-prayers",
+        "ambrosian-2010-sanctoral",
+        "ambrosian-2011-evangeliario",
+        "ambrosian-2016-short-readings",
+        "ambrosian-1986-update"
+      ],
+      "status": "selected acts and bounded manuscript/printing repertoire; recension census open"
+    },
+    {
+      "id": "lyon",
+      "selected_candidate_ids": [
+        "lyon-bm537",
+        "lyon-bm5139",
+        "lyon-bm1391",
+        "lyon-bm5129",
+        "lyon-bm5947",
+        "lyon-lost-montbrison",
+        "lyon-1487-missal",
+        "lyon-1737-missal",
+        "lyon-1771-missal",
+        "lyon-1825-missal",
+        "lyon-1844-missal",
+        "lyon-1866-missal"
+      ],
+      "status": "44-entry diocesan manuscript repertoire and selected print witnesses; recension census open"
+    }
+  ],
+  "amiet_1998_lyon_diocesan_repertoire": [
+    {
+      "number": 144,
+      "page": 109,
+      "heading": "Missel XVe s."
+    },
+    {
+      "number": 145,
+      "page": 110,
+      "heading": "Missel, XVe s."
+    },
+    {
+      "number": 146,
+      "page": 111,
+      "heading": "Missel du chevalier Antoine Bertrand, ca 1480."
+    },
+    {
+      "number": 147,
+      "page": 112,
+      "heading": "Missel, XVe s."
+    },
+    {
+      "number": 148,
+      "page": 112,
+      "heading": "Missel du chanoine Claude Gaste, ca 1450."
+    },
+    {
+      "number": 149,
+      "page": 113,
+      "heading": "Sacramentaire, XIe s."
+    },
+    {
+      "number": 150,
+      "page": 114,
+      "heading": "Missel du chanoine Jean de Coligny, ca 1435."
+    },
+    {
+      "number": 151,
+      "page": 115,
+      "heading": "Missel de Jean de Masso, abbé de Valbenoite, ca 1 570. Lyon, Bibl. mun., ms. 1391 (1266)."
+    },
+    {
+      "number": 152,
+      "page": 117,
+      "heading": "Missel, XVe s."
+    },
+    {
+      "number": 153,
+      "page": 117,
+      "heading": "Missel de Jean de Talaru, ca 1380."
+    },
+    {
+      "number": 154,
+      "page": 118,
+      "heading": "Missel du chanoine Jean Machard, 1491 ."
+    },
+    {
+      "number": 155,
+      "page": 119,
+      "heading": "Missel, XVe s."
+    },
+    {
+      "number": 156,
+      "page": 120,
+      "heading": "Missel, XVe s."
+    },
+    {
+      "number": 157,
+      "page": 121,
+      "heading": "Missel de la collégiale Saint-Just, XIIIe s."
+    },
+    {
+      "number": 158,
+      "page": 122,
+      "heading": "Missel de la paroisse de Souzy-l'Argentière, XVe s."
+    },
+    {
+      "number": 159,
+      "page": 123,
+      "heading": "Sacramentaire (fragment), XIIIe s."
+    },
+    {
+      "number": 160,
+      "page": 123,
+      "heading": "Missel noté de l'église Saint-Saturnin de Lyon, XIIe s."
+    },
+    {
+      "number": 161,
+      "page": 124,
+      "heading": "Missel festif du Cardinal de Bonald, ca 1865."
+    },
+    {
+      "number": 162,
+      "page": 125,
+      "heading": "Missel du prieur Guichard de Rovedis, XVe s."
+    },
+    {
+      "number": 163,
+      "page": 126,
+      "heading": "Missel dominical et festif, XVe s."
+    },
+    {
+      "number": 164,
+      "page": 126,
+      "heading": "Missel (fragment), XIIe s."
+    },
+    {
+      "number": 165,
+      "page": 127,
+      "heading": "Missel (fragment), XIVe s."
+    },
+    {
+      "number": 166,
+      "page": 127,
+      "heading": "Missel (fragment), XIIIe s."
+    },
+    {
+      "number": 167,
+      "page": 127,
+      "heading": "Missel (fragment), XIIIe s."
+    },
+    {
+      "number": 168,
+      "page": 127,
+      "heading": "Missel (fragment), XIIIe s."
+    },
+    {
+      "number": 169,
+      "page": 128,
+      "heading": "Missel (fragment), XVe s."
+    },
+    {
+      "number": 170,
+      "page": 128,
+      "heading": "Missel (fragment), XVe s."
+    },
+    {
+      "number": 171,
+      "page": 128,
+      "heading": "Missel (fragment), XVe s."
+    },
+    {
+      "number": 172,
+      "page": 129,
+      "heading": "Missel (fragment), XIVe s."
+    },
+    {
+      "number": 173,
+      "page": 129,
+      "heading": "Missel de la paroisse de Saint-Germain-Laval, 1401 ."
+    },
+    {
+      "number": 174,
+      "page": 129,
+      "heading": "Missel festif de la Collégiale Saint-Nizier, XVe s."
+    },
+    {
+      "number": 175,
+      "page": 130,
+      "heading": "Missel de la paroisse de Longessaigne, 1404."
+    },
+    {
+      "number": 176,
+      "page": 131,
+      "heading": "Missel festif de la paroisse de Saint -Oyand-en-Forez, XVe s."
+    },
+    {
+      "number": 177,
+      "page": 131,
+      "heading": "Sacramentaire grégorien, IXe s."
+    },
+    {
+      "number": 178,
+      "page": 132,
+      "heading": "Sacramentaire grégorien, IXe s."
+    },
+    {
+      "number": 179,
+      "page": 132,
+      "heading": "Missel, XVe s."
+    },
+    {
+      "number": 180,
+      "page": 133,
+      "heading": "Missel festif de la Collégiale Saint-Nizier, XVe s. Poitiers, Bibl. mun., ms. 29. Microfilm."
+    },
+    {
+      "number": 181,
+      "page": 134,
+      "heading": "Missel de l'église Saint-Michel de Lyon, XIIe s."
+    },
+    {
+      "number": 182,
+      "page": 136,
+      "heading": "Sacramentaire grégorien, IXe s."
+    },
+    {
+      "number": 183,
+      "page": 136,
+      "heading": "Missel de la collégiale de Saint-Bonnet-le-Château, XVe s."
+    },
+    {
+      "number": 184,
+      "page": 137,
+      "heading": "Missel (fragment), XIIe s."
+    },
+    {
+      "number": 185,
+      "page": 137,
+      "heading": "Missel de la paroisse de Saint-Maurice-sur-Dargoire, XVe s."
+    },
+    {
+      "number": 186,
+      "page": 138,
+      "heading": "Missel festif, XVe s."
+    },
+    {
+      "number": 187,
+      "page": 139,
+      "heading": "Missel de la Collégiale Notre-Dame de Montbrison (extraits), XVe s. (?)."
+    }
+  ],
+  "source_ref_correction_map": [
+    {
+      "candidate_id": "ambrosian-1909-posttypical",
+      "stable_source_id": "ambrosian-src-1909-ministry-catalogue",
+      "url": "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0100453961",
+      "locus": "Italian cultural ministry binding-object catalogue record 0100453961 (object dated 1909–1924); historical note cites a 1909 Missale Ambrosianum and Turin C9782. Original book uninspected.",
+      "rights_and_limit": "Record metadata is CC BY 4.0. Object photographs and other images have separate rights; no image licence inferred. Historical note is bibliographic evidence only; no title leaf, edition ordinal or distinct recension established.",
+      "disposition": "deferred lead source; source ID reserved in receipt, not inventory source row"
+    },
+    {
+      "candidate_id": "ambrosian-1924-posttypical",
+      "stable_source_id": "ambrosian-src-vonach-bibliography",
+      "url": "https://bibliographie.uni-tuebingen.de/xmlui/bitstream/handle/10900/128231/Vonach_053.pdf?isAllowed=y&sequence=1",
+      "locus": "PDF p.18 / printed p.170 bibliography: full 1924 Missale Ambrosianum citation and editio tertia post typicam",
+      "rights_and_limit": "Bibliographic citation only; original title leaf uninspected. Modern article PDF reuse basis unverified; remote citation only, no tracked text or PDF.",
+      "disposition": "deferred lead source; source ID reserved in receipt, not inventory source row"
+    },
+    {
+      "candidate_id": "ambrosian-1936-posttypical",
+      "stable_source_id": "ambrosian-src-maraschi-1938-advert",
+      "url": "https://it.scribd.com/document/725515735/1938-Le-Paricolarita-Des-Rito-Ambrosiano-Maraschi",
+      "locus": "search-rendered 1938 Maraschi book p.171 advertisement names 1936 San Giuseppe editio quarta post typicam",
+      "rights_and_limit": "Search-rendered excerpt only; full page image and original 1936 title uninspected. Modern host rights/scan basis unknown; no bytes retained or text republished.",
+      "disposition": "deferred lead source; source ID reserved in receipt, not inventory source row"
+    },
+    {
+      "candidate_id": "ambrosian-1972-lent-easter",
+      "stable_source_id": "ambrosian-src-alzati-montini-study",
+      "url": "https://www.clementemauri.com/PDF/Montini%20-%20pastorale%20liturgica.pdf",
+      "locus": "PDF p.16 / note 59: 1972 Quaresima e Pasqua missal and direct contemporary citations to Rivista Diocesana Milanese LX p.184 and Ambrosius XLVIII pp.23–39",
+      "rights_and_limit": "Scholarly citation to 1972 partial book, not original book/act inspection. Article PDF reuse basis unverified; remote citation only, no tracked payload.",
+      "disposition": "deferred lead source; source ID reserved in receipt, not inventory source row"
+    },
+    {
+      "candidate_id": "lyon-1904-missal",
+      "stable_source_id": "lyon-src-new-catholic-encyclopedia",
+      "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/lyonese-rite",
+      "locus": "Lyonese Rite article, paragraph after 1866 Romano-Lugdunense: revised edition approved by Congregation of Rites appeared 1904 with named title",
+      "rights_and_limit": "Secondary claim only; original 1904 title/approval leaves absent. Copyrighted encyclopedia article; paraphrased bibliographic fact only, no tracked text or payload.",
+      "disposition": "deferred lead source; source ID reserved in receipt, not inventory source row"
+    },
+    {
+      "candidate_id": "lyon-1956-missal",
+      "stable_source_id": "lyon-src-theologica-1956-citation",
+      "url": "https://revistas.ucp.pt/index.php/theologica/article/download/13619/12995",
+      "locus": "PDF p.11 / printed p.421 note 41 cites Missale Romanum in quo antiqui ritus Lugdunenses servantur, Vite, MCMLVI, p.554 (publisher printed with one t); original book uninspected.",
+      "rights_and_limit": "Proves a cited 1956 imprint lead only; original book/front matter absent and relation to 1904 unresolved. Modern article PDF reuse basis unverified; remote citation only, no tracked payload.",
+      "disposition": "deferred lead source; source ID reserved in receipt, not inventory source row"
+    }
+  ],
+  "deferred_leads": [
+    {
+      "id": "ambrosian-1712-print",
+      "coverage_id": "ambrosian",
+      "date": 1712,
+      "classification": "printing witness",
+      "locus_and_limit": "host metadata and complete PDF; text not collated",
+      "source_id": "ambrosian-src-1712",
+      "disposition": "deferred bibliographic lead; no timeline candidate or distinct recension admitted"
+    },
+    {
+      "id": "ambrosian-1909-posttypical",
+      "coverage_id": "ambrosian",
+      "date": 1909,
+      "classification": "bibliographic witness lead",
+      "locus_and_limit": "San Giuseppe book; edition ordinal needs title inspection",
+      "source_id": "ambrosian-src-1909-ministry-catalogue",
+      "disposition": "deferred bibliographic lead; no timeline candidate or distinct recension admitted"
+    },
+    {
+      "id": "ambrosian-1924-posttypical",
+      "coverage_id": "ambrosian",
+      "date": 1924,
+      "classification": "bibliographic witness lead",
+      "locus_and_limit": "third post-typical bibliographic citation only",
+      "source_id": "ambrosian-src-vonach-bibliography",
+      "disposition": "deferred bibliographic lead; no timeline candidate or distinct recension admitted"
+    },
+    {
+      "id": "ambrosian-1936-posttypical",
+      "coverage_id": "ambrosian",
+      "date": 1936,
+      "classification": "bibliographic witness lead",
+      "locus_and_limit": "contemporary advertisement says fourth post-typical; original title uninspected",
+      "source_id": "ambrosian-src-maraschi-1938-advert",
+      "disposition": "deferred bibliographic lead; no timeline candidate or distinct recension admitted"
+    },
+    {
+      "id": "ambrosian-1972-lent-easter",
+      "coverage_id": "ambrosian",
+      "date": 1972,
+      "classification": "experimental partial Missal lead",
+      "locus_and_limit": "Alzati footnotes 59–60; original book and act uninspected",
+      "source_id": "ambrosian-src-alzati-montini-study",
+      "disposition": "deferred bibliographic lead; no timeline candidate or distinct recension admitted"
+    },
+    {
+      "id": "lyon-1868-missal",
+      "coverage_id": "lyon",
+      "date": 1868,
+      "classification": "printing witness",
+      "locus_and_limit": "relationship to 1866 untested",
+      "source_id": "lyon-usuarium",
+      "disposition": "deferred bibliographic lead; no timeline candidate or distinct recension admitted"
+    },
+    {
+      "id": "lyon-1904-missal",
+      "coverage_id": "lyon",
+      "date": 1904,
+      "classification": "publication/revision lead",
+      "locus_and_limit": "original title/front matter unavailable",
+      "source_id": "lyon-src-new-catholic-encyclopedia",
+      "disposition": "deferred bibliographic lead; no timeline candidate or distinct recension admitted"
+    },
+    {
+      "id": "lyon-1956-missal",
+      "coverage_id": "lyon",
+      "date": 1956,
+      "classification": "publication witness lead",
+      "locus_and_limit": "Theologica printed p.421 n.41 cites Vite (one t) edition; original uninspected",
+      "source_id": "lyon-src-theologica-1956-citation",
+      "disposition": "deferred bibliographic lead; no timeline candidate or distinct recension admitted"
+    }
+  ],
+  "acquisitions": [
+    {
+      "id": "2024-Premesse_praenotanda_portale.pdf",
+      "bytes": 734522,
+      "sha256": "8a1f06caea183819fbcf811aedc07adae29f788187fcd32d29fd2ba4386c7ff2",
+      "pages": 89,
+      "rights_and_retention": "restricted",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "ambrosian-frontmatter-route-2024",
+      "acquisition_url": "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2024/11/Premesse_praenotanda_portale.pdf"
+    },
+    {
+      "id": "2024-I-Mistero_Incarnazione_portale.pdf",
+      "bytes": 1561391,
+      "sha256": "840e3762c2cb0f1ebad893afb40510ea4063b6fa8df6d8fbda4cc596205e80b6",
+      "pages": 159,
+      "rights_and_retention": "restricted",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "milan-current-landing",
+      "acquisition_url": "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2024/11/I-Mistero_Incarnazione_portale.pdf"
+    },
+    {
+      "id": "2024-II-Mistero_della_Pasqua_del_Signore_portale.pdf",
+      "bytes": 1556956,
+      "sha256": "b3e1a90dfe7fe8554c2b18678437bb52073eb274af7974a5e179c1c8fb56029b",
+      "pages": 257,
+      "rights_and_retention": "restricted",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "milan-current-landing",
+      "acquisition_url": "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2024/11/II-Mistero_della_Pasqua_del_Signore_portale.pdf"
+    },
+    {
+      "id": "2024-III-Mistero_della_Pentecoste_portale.pdf",
+      "bytes": 674172,
+      "sha256": "069a6145cd91768bc4700d7a16f196dc3a7c649c321e2d2fa2070c20b812d20d",
+      "pages": 76,
+      "rights_and_retention": "restricted",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "milan-current-landing",
+      "acquisition_url": "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2024/11/III-Mistero_della_Pentecoste_portale.pdf"
+    },
+    {
+      "id": "2024-Messa_col_popoloappendice_portale.pdf",
+      "bytes": 1838689,
+      "sha256": "b0cf71548918f75a72cb7ec0341583413ed28d19fcc55d51d42f2ee6e90418fb",
+      "pages": 141,
+      "rights_and_retention": "restricted",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "milan-current-landing",
+      "acquisition_url": "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2024/11/Messa_col_popoloappendice_portale.pdf"
+    },
+    {
+      "id": "2024-Proprio_dei_santi_portale.pdf",
+      "bytes": 2973271,
+      "sha256": "c7c03aceb6a0585956714a337bd7f55a78843407ac8be79bee7aa84fa402a685",
+      "pages": 335,
+      "rights_and_retention": "restricted",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "milan-current-landing",
+      "acquisition_url": "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2024/11/Proprio_dei_santi_portale.pdf"
+    },
+    {
+      "id": "2024-Comune_dei_santi_portale.pdf",
+      "bytes": 676435,
+      "sha256": "3641afc8f05b47c3fd3cb12dce67a6451db406c5727b6d152c0f9fd8f4fa6475",
+      "pages": 96,
+      "rights_and_retention": "restricted",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "milan-current-landing",
+      "acquisition_url": "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2024/11/Comune_dei_santi_portale.pdf"
+    },
+    {
+      "id": "2024-Messe_rituali_portale.pdf",
+      "bytes": 995621,
+      "sha256": "e8e7922ceca67f92084a1de410a80a0b3a03fbc1944193e6304fc8a426ab39c7",
+      "pages": 129,
+      "rights_and_retention": "restricted",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "milan-current-landing",
+      "acquisition_url": "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2024/11/Messe_rituali_portale.pdf"
+    },
+    {
+      "id": "2024-Messe_votive_portale.pdf",
+      "bytes": 184235,
+      "sha256": "45a95bcb24d54d343ec075c31582ff140c8c3529841160a9417910beedc9bf46",
+      "pages": 43,
+      "rights_and_retention": "restricted",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "milan-current-landing",
+      "acquisition_url": "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2024/11/Messe_votive_portale.pdf"
+    },
+    {
+      "id": "2024-Messe_e_orazioni_per_varie_necessita_portale.pdf",
+      "bytes": 626599,
+      "sha256": "9aedba4021f3d14d1e79a514493432b5bab4795ecf445c0af4a9184ecbcb2cb1",
+      "pages": 156,
+      "rights_and_retention": "restricted",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "milan-current-landing",
+      "acquisition_url": "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2024/11/Messe_e_orazioni_per_varie_necessita_portale.pdf"
+    },
+    {
+      "id": "2024-Messe_dei_defunti_portale.pdf",
+      "bytes": 448758,
+      "sha256": "616656586a18f81ba5ddf9021ab1646322e389d1b00a53fb26a5563cf93c0d15",
+      "pages": 60,
+      "rights_and_retention": "restricted",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "milan-current-landing",
+      "acquisition_url": "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2024/11/Messe_dei_defunti_portale.pdf"
+    },
+    {
+      "id": "2024-Appendiciindici_portale.pdf",
+      "bytes": 923052,
+      "sha256": "7a65572bd8717192585c83bae99ebb9d4be6beaa71862cad52399af6341cadfa",
+      "pages": 65,
+      "rights_and_retention": "restricted",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "milan-current-landing",
+      "acquisition_url": "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2024/11/Appendiciindici_portale.pdf"
+    },
+    {
+      "id": "amiet-1960.html",
+      "bytes": 137616,
+      "sha256": "b16464c2da3fe1151ba53c6f39793ffa82fb1d3da9a055147d4f307bffc63026",
+      "pages": null,
+      "rights_and_retention": "restricted",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "html",
+      "source_id": "ambrosian-src-amiet-1960"
+    },
+    {
+      "id": "amiet-1995.html",
+      "bytes": 81380,
+      "sha256": "051ae137eff070d97395104931b5013a8826cf3f69aa8a638fc254191c55ebf1",
+      "pages": null,
+      "rights_and_retention": "restricted",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "html",
+      "source_id": "ambrosian-src-amiet-1995"
+    },
+    {
+      "id": "ambrosian-1499-full.pdf",
+      "bytes": 23246928,
+      "sha256": "469c584a3706ef1b29ac6195418beafad605941d1eb75276cc7fe56b93b7ae00",
+      "pages": 394,
+      "rights_and_retention": "underlying historical text public domain; scan/host reuse basis requires review before tracked retention",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "ambrosian-src-1499"
+    },
+    {
+      "id": "ambrosian-1640-full.pdf",
+      "bytes": 78039485,
+      "sha256": "a2c349195305c12f6d7ca6428b5d84cf198bdcaaf60b2385862dba997c6a20ea",
+      "pages": 772,
+      "rights_and_retention": "underlying historical text public domain; scan/host reuse basis requires review before tracked retention",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "ambrosian-src-1640"
+    },
+    {
+      "id": "ambrosian-1712-full.pdf",
+      "bytes": 99996171,
+      "sha256": "180769e3a6989ee863bf6404090ab430fd786fa10def1442485cc8537beaf4ce",
+      "pages": 625,
+      "rights_and_retention": "underlying historical text public domain; scan/host reuse basis requires review before tracked retention",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": null,
+      "source_identity": "qualified research-only acquisition; edition identity unresolved"
+    },
+    {
+      "id": "ambrosian-1954.pdf",
+      "bytes": 113925868,
+      "sha256": "3fca1ee7cbfdd2d9e252cc081384c4e777bb3be8ba3404a7c110d5d41be74da9",
+      "pages": 1049,
+      "rights_and_retention": "modern copyrighted book or unresolved; research only, no tracked payload",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "ambrosian-src-1954"
+    },
+    {
+      "id": "ambrosian-1981.pdf",
+      "bytes": 435984048,
+      "sha256": "ab16df74ad2e3c150c69497ed046ed8cc241a1676cc2a537872ebebd26acb277",
+      "pages": 1380,
+      "rights_and_retention": "modern copyrighted book or unresolved; research only, no tracked payload",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "ambrosian-src-1981"
+    },
+    {
+      "id": "notitiae-006-1965.pdf",
+      "bytes": 4319214,
+      "sha256": "c11e8f15a8607047dcdae665bc67f68fc1d080b00398bebc8b97cd5730dbe16d",
+      "pages": 52,
+      "rights_and_retention": "unresolved; no tracked retention until per-artifact basis",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "ambrosian-src-notitiae-1965"
+    },
+    {
+      "id": "32-letture-forma-breve.docx",
+      "bytes": 117666,
+      "sha256": "421363ae82a55bd8971e0f8af7d1a151128aaab9b7aa770d4add9b8f120c15a5",
+      "pages": null,
+      "rights_and_retention": "unresolved; no tracked retention until per-artifact basis",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "docx",
+      "source_id": "ambrosian-src-lectionary-service"
+    },
+    {
+      "id": "LIBRO-DELLE-VIGILIE-Forma-II-ad-libitum.doc",
+      "bytes": 64512,
+      "sha256": "383f5d5ef201f57d258c992e1f001e34261ae74149deffb83843d5d6397553fa",
+      "pages": null,
+      "rights_and_retention": "unresolved; no tracked retention until per-artifact basis",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "doc",
+      "source_id": null,
+      "source_identity": "qualified research-only acquisition; edition identity unresolved"
+    },
+    {
+      "id": "decreto-avvento.pdf",
+      "bytes": 258447,
+      "sha256": "a3f8009b8fe95a9285bc514993f61f002f2b77c22a42a34b6e9e837eb0f3b2e9",
+      "pages": 1,
+      "rights_and_retention": "unresolved; no tracked retention until per-artifact basis",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "ambrosian-src-lectionary-service"
+    },
+    {
+      "id": "lyon-1866-full.pdf",
+      "bytes": 136007884,
+      "sha256": "efc887c98f7ee661bff7672183c4b1933f3047e324c606594277f2bf8bdeb636",
+      "pages": 802,
+      "rights_and_retention": "Numelyo cover and catalogue: public domain + Licence Ouverte; source text historical; candidate for tracked retention after artifact manifest review",
+      "extent": "complete provider delivery as measured; physical-copy completeness and full textual collation unverified",
+      "format": "pdf",
+      "source_id": "lyon-src-numelyo-1866"
+    },
+    {
+      "id": "amiet-1998.html",
+      "bytes": 433809,
+      "sha256": "a00d570ff87ce5e0e6201918a675c2ec2f57b96b06035599c359fbd1e99d4972",
+      "format": "html",
+      "rights_and_retention": "modern scholarly host text, research only; redistribution unverified",
+      "extent": "complete acquired host HTML, not original manuscript images",
+      "source_id": "lyon-src-amiet-1998"
+    },
+    {
+      "id": "notitiae-257-1987.pdf",
+      "bytes": 7834332,
+      "sha256": "1afbf76eaa952bce2f720aa176bb023186e22d17b59dcdb0be51c3ffc1a972d1",
+      "pages": 100,
+      "format": "pdf",
+      "rights_and_retention": "official periodical online; republication basis unverified; research only",
+      "extent": "complete 100-page provider PDF, printed p.1288 inspected",
+      "source_id": "ambrosian-src-notitiae-1987-bibliography"
+    },
+    {
+      "id": "fontaine-public-render.html",
+      "bytes": 1777905,
+      "sha256": "a74cf0d9e7ee253599c914db616baa4295a88aab51ac7480c3299d0db0d6ff4e",
+      "format": "html",
+      "rights_and_retention": "modern scholarly OCR, no republication basis; research only",
+      "extent": "public HTML OCR full 82-entry article; images uncollated",
+      "source_id": "lyon-src-fontaine-1980"
+    }
+  ],
+  "negative_findings": [
+    "1582/1588 Ambrosian are breviaries; 1506 is manuscript funerary, not printing",
+    "Amiet 1960 p.16 rejects Monza E18/99 as Ambrosian; Roman fragment",
+    "Amiet 1998 no.161 Bonald 6173 uses Roman formulas; nos.177/182 Gregorian copied at Lyon; p.140 rejects Lunel 13 Lyon attribution",
+    "Amiet 1998 no.154 Machard copies 1487 printing in 1491; no.151 Masso ca.1570 combines 1487 print and older calendars",
+    "Deleuze 2014 26 books are printed at Lyon, not Lyon use",
+    "USUARIUM PDF 401/503, Gallica Duplex PDF/OCR 403, bounded access failures only; Buenner IA search zero is not global absence"
+  ],
+  "cross_lane_referrals": [
+    {
+      "use": "Génovéfains of Saint-Irénée, Lyon",
+      "loci": "Amiet 1998 nos.233–235 pp.173–175",
+      "disposition": "Bilingual private missal manuscripts 1199/1201/1202 belong to translation history. Latin Missale Canonicum based on Beauvais 1756, plus a 1757 proper supplement, are original source-state leads. Amiet did not locate a copy; this is not proof of global absence."
+    },
+    {
+      "use": "Grands Augustins of Lyon",
+      "loci": "Amiet 1998 nos.238–241 pp.176–177",
+      "disposition": "Mass chant components include two 1737 temporal volumes, 1739 sanctoral and ca.1740 fragment; a 1738 book mixes offices and Masses. These do not establish cathedral Lyon missal recensions."
+    },
+    {
+      "use": "Neuville-les-Dames canonesses",
+      "loci": "Amiet 1998 no.245 pp.179–180",
+      "disposition": "Festal missal ca.1480 (Chalon-sur-Saône 148) is Augustinian canonical use; no cathedral recension inferred."
+    },
+    {
+      "use": "Ainay abbey",
+      "loci": "Amiet 1998 p.13",
+      "disposition": "A 1531 printed missal preserves historical abbey use; the 1520 book is a breviary. Refer to monastic lane."
+    },
+    {
+      "use": "Saint-Claude abbey",
+      "loci": "Amiet 1998 no.256 p.186; nos.260–261 pp.188–189",
+      "disposition": "BnF n.a.lat.3042 breviary has added votive Masses at fol.54; a fourteenth-century festal missal is Lons-le-Saunier 10; Paris Assemblée Nationale 10 is ca.1490. Refer as local monastic Eucharistic witnesses."
+    },
+    {
+      "use": "Nantua priory",
+      "loci": "Amiet 1998 no.274 pp.195–196",
+      "disposition": "Thirteenth-century missal in Collection Thiollier has fifteenth-century additions; refer to monastic lane."
+    },
+    {
+      "use": "Saint-Rambert-en-Bugey abbey",
+      "loci": "Amiet 1998 nos.284–286 pp.200–201",
+      "disposition": "Three fragmentary missal witnesses date to the fifteenth century, turn of fifteenth/sixteenth centuries, and second half of eleventh century. Refer to monastic lane."
+    },
+    {
+      "use": "Notre-Dame de Portes charterhouse",
+      "loci": "Amiet 1998 nos.297–298 pp.206–207",
+      "disposition": "Ambrosiana M.70 sup. ca.1160 and Parkminster A.33 twelfth-century graduals are Carthusian Mass chant components. The Milan holding location does not make M.70 Ambrosian use."
+    },
+    {
+      "use": "Notre-Dame de Confort Dominican convent",
+      "loci": "Amiet 1998 no.307 pp.212–213",
+      "disposition": "Getty Ludwig V 5 missal, dated 1254–1262, requires Dominican-lane accounting; no cathedral Lyon recension inferred."
+    },
+    {
+      "use": "Sainte-Elisabeth Franciscan convent",
+      "loci": "Amiet 1998 no.311 pp.215–216",
+      "disposition": "The 1776 festal gradual SM 007 is a local Franciscan Mass chant component."
+    }
+  ],
+  "open_leads": [
+    "Amiet 1979 full 274-page nineteenth/twentieth-century printing census and Amiet 1990 supplement",
+    "Buenner 1934 pp.294–296 and Fontaine 1980 pp.156/164 direct review",
+    "Lyon 1904/1956 original title/front matter, text and actual reception",
+    "Ambrosian 1902 typical, 1974 approved exemplar, 1975 prayers, 1965 Daverio original book/fascicles, possible 1966 printing, and 1972 original book",
+    "1981–2026 Latin source collation, 1990/2020 supplements, full signed 2023/2024 acts",
+    "Artifact rights for IA historical scans; Milan 2024 files consultation only",
+    "1909 ministry record is a binding-object catalogue dated 1909–1924; its historical note cites 1909 Missale and Turin C9782. Metadata CC BY 4.0 is distinct from image/host rights.",
+    "1956 Theologica printed p.421 note 41 spells publisher Vite (one t); original book uninspected.",
+    "1986 official update is a witness lead, not proven 1986 printed altar book; 1990 is an updated reprint. Two Notitiae 1987 Piemme Festivo listings with equal extent may duplicate."
+  ],
+  "rights_and_access": "Milan 2024 PDFs consultation only, ITL literary property reserved. Modern 1954/1981 books and modern articles have no tracked redistribution basis. Numelyo 1866 labels public domain and Licence Ouverte; payload retention still requires manifest and attribution. Historical IA scan reuse remains to review.",
+  "cold_review_questions": [
+    "Verify Fontaine 1980 1825 change and 1844 reprint/1846 misdating against direct source",
+    "Classify 1981 Martini changes as a documented component or provisional stage after identifying changed passages",
+    "Decide which Amiet 1998 entries qualify as Lyon use versus Roman reception or copying context",
+    "Review retention under Numelyo Licence Ouverte and modern Ambrosian publisher reservation",
+    "Official 2024 colophon establishes 1986 update in first-edition line and 1990 updated reprint. It does not say what changed.",
+    "1986 Festivo Piemme is a separately titled publication; the Notitiae bibliography does not establish it as the altar book or as an approved revision.",
+    "1981 Latin decree documents changes since 1976 but supplies no causal attribution to the 1986 Italian update.",
+    "No exact date such as 18 May 1986 is admitted from an unverified secondary list."
+  ],
+  "title": "Ambrosian and Lyon Eucharistic books: qualified research review, 2026-10-20",
+  "checked_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "coverage_rows": [
+    "ambrosian",
+    "lyon"
+  ],
+  "review_files": {
+    "storage": "untracked workspace scratch, pinned here by SHA-256 only",
+    "packet_sha256": "2dff77991261ff208b02b9536b25418d9b69a3fe1ae6603d9ed0934379d3454a",
+    "addendum_sha256": "7d679d7755af2f16fb90f93a4f34f545300c96dd2fa22acdf43075041eb21b9c",
+    "source_map_sha256": "6d3cd6e872d5124ec9aaf9a830de78265d24123aea344265d3e4d091bef2fb75",
+    "cold_verdict_sha256": "2f1539102fbf9e0f7a51505c4880bcd71bb2b5d6a14d5b049774deb7f97b84f0",
+    "cold_addendum_verdict_sha256": "14a6bad627ca457f09d90bf710519c20f8fa9fc655ae072af7cea70321b0ccae",
+    "cold_source_map_verdict_sha256": "c867ee17d762358ea1db1643cff73fc12c63568ea3c234197608c0c57195e0a1",
+    "post_integration_cold_verdict_sha256": "1253425afc991c6629499e62e5fe7ae546f9a9808b94c52aff171e28f7a79720"
+  },
+  "searches": [
+    {
+      "name": "Amiet 1960",
+      "examined": "37-entry repertoire; pp.16–60",
+      "unexamined": "manuscript images and full book collation"
+    },
+    {
+      "name": "Amiet 1995",
+      "examined": "27-manual repertoire and no.20 layers",
+      "unexamined": "original manuscript images and component comparison"
+    },
+    {
+      "name": "Amiet 1998",
+      "examined": "intro9–14, all Lyon diocesan entries144–187 pp109–140, table239–240, selected monastic entries and headers171–216",
+      "unexamined": "rest of 318-entry prose and every original manuscript image"
+    },
+    {
+      "name": "USUARIUM origin 404/211",
+      "examined": "displayed origin tables and saved selected book records",
+      "unexamined": "blocked full-book downloads, duplicates and external linked scans"
+    },
+    {
+      "name": "Ambrosian scans",
+      "examined": "1499/1640 titles, 1954 decree, 1981 front matter, 2024 official PDF inventory",
+      "unexamined": "complete prayer/rubric/calendar collation and 1902/1974/2026 comparisons"
+    },
+    {
+      "name": "Lyon 1866",
+      "examined": "802-page file acquired, PDF 1–11 images",
+      "unexamined": "PDF 12–802 and comparison with 1771/1825/1904/1956"
+    },
+    {
+      "name": "Weale 1928",
+      "examined": "Ambrosian 26–53, Lyon 546–563 via cold reviewer",
+      "unexamined": "originals for 1490/1605 Ambrosian and 1512/1823 Lyon leads"
+    }
+  ],
+  "versions": [
+    {
+      "candidate_id": "ambrosian-1499-print",
+      "date": "1499",
+      "kind": "printing-witness",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "PDF title/front; distinctness from 1475 untested"
+    },
+    {
+      "candidate_id": "ambrosian-1640-print",
+      "date": "1640",
+      "kind": "printing-witness",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Milan 1640 engraved title inspected. Prior audit flags an archiepiscopal revision letter in OCR; inspect it and collate before calling this a reprint or distinct recension."
+    },
+    {
+      "candidate_id": "ambrosian-1954-fifth",
+      "date": "1954",
+      "kind": "printing-plus-approved-appendix",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Schuster decree PDF p.9 says fifth post-typical printing conforms to 1902 typical and authorizes an appendix of Masses for certain congregations adapted to Ambrosian rite. Authorized component addition, not established whole-book recension."
+    },
+    {
+      "candidate_id": "ambrosian-1965-latin-italian",
+      "date": "1965",
+      "kind": "partial-Latin/Italian-Missal-printing-with-separate-proper-fascicles",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Notitiae 1 (1965) printed p.166 is a publication notice: Daverio 1965, 290 pp. and separately issued proper fascicles. Neither approval nor a complete 1965 book is proved; possible 1966 printing remains uninspected."
+    },
+    {
+      "candidate_id": "ambrosian-1975-prayers",
+      "date": "1975",
+      "kind": "approved-prayer-component",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Notitiae 11 (1975) p.346 reports 1 September confirmation of Latin Eucharistic prayers for Maundy Thursday and Easter Vigil. Exact text, textual delta, publication and first use remain uninspected.",
+      "date_role": "Latin prayer-component confirmation on 1975-09-01; publication and first use unverified",
+      "chronology_kind": "source-approval-of-prayer-component"
+    },
+    {
+      "candidate_id": "ambrosian-2010-sanctoral",
+      "date": "2010",
+      "kind": "complementary-lectionary-volume",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "sanctoral completion, not new whole Missal"
+    },
+    {
+      "candidate_id": "ambrosian-2011-evangeliario",
+      "date": "2011",
+      "kind": "complementary-Gospel-book",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "separate component, not new whole Missal"
+    },
+    {
+      "candidate_id": "ambrosian-2016-short-readings",
+      "date": "2016",
+      "kind": "lectionary-amendment",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Scola decree 25 January 2016 permits 32 shortened readings in Ambrosian temporal lectionary; exact official decree and list acquired. Component amendment, not whole-Missal edition; book publication and first use unverified.",
+      "date_role": "lectionary-amendment authorization on 2016-01-25; publication and first use unverified",
+      "chronology_kind": "component-amendment-authorization"
+    },
+    {
+      "candidate_id": "ambrosian-1986-update",
+      "date": "1986",
+      "kind": "update-witness-lead",
+      "version_status": "update-witness-lead-no-independent-recension-established",
+      "qualification": "The official colophon calls 1986 an aggiornamento within the 1976 first Italian edition. A physical 1986 altar-book printing, approval, specific texts, source-language status and actual use date are not directly established. Two 1986 Piemme Festivo listings may be duplicates and are not identified with this update."
+    },
+    {
+      "candidate_id": "lyon-bm537",
+      "date": "11th century",
+      "kind": "sacramentary-witness",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Amiet 1998 no.149 p.113: layered Gregorian Hadrianum with Aniane supplement and Lyon additions; not a wholly Lyon source recension."
+    },
+    {
+      "candidate_id": "lyon-bm5139",
+      "date": "1225–1250",
+      "kind": "manuscript-Missal-witness",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Amiet 1998 no.157 pp.121–122 dates second quarter thirteenth century (about 1225–1250); USUARIUM gives 1200–1210. Dating disagreement retained."
+    },
+    {
+      "candidate_id": "lyon-bm1391",
+      "date": "ca.1570",
+      "kind": "copied-composite-Missal",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Amiet 1998 no.151 pp.115–117: ca.1570 manuscript takes 1487 Lyon print and older calendars, one from a 1498 breviary. Valbenoite abbey ownership needs monastic cross-lane account."
+    },
+    {
+      "candidate_id": "lyon-bm5129",
+      "date": "1491",
+      "kind": "manuscript-copy-of-printing",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Amiet 1998 no.154 p.118: 1491 manuscript conforms to 1487 printing including two errors; no new recension inferred."
+    },
+    {
+      "candidate_id": "lyon-bm5947",
+      "date": "late 12th century",
+      "kind": "layered-manuscript-Missal",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Amiet 1998 no.160 pp.123–124: second-half twelfth-century book with lacunae and fourteenth-century substituted Canon fols.145–150."
+    },
+    {
+      "candidate_id": "lyon-lost-montbrison",
+      "date": "15th century?",
+      "kind": "lost-original-via-excerpts",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Amiet 1998 no.187 pp.139–140: fifteenth-century? original lost; only La Mure excerpts survive. No extant complete book."
+    },
+    {
+      "candidate_id": "lyon-1487-missal",
+      "date": "1487",
+      "kind": "printing-witness",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Amiet 1998 nos.151,154,179 report manuscript dependence on 1487 print. Original 1487 title/front matter unavailable; printing witness only."
+    },
+    {
+      "candidate_id": "lyon-1737-missal",
+      "date": "1737",
+      "kind": "printing-witness",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "origin table; distinctness untested"
+    },
+    {
+      "candidate_id": "lyon-1771-missal",
+      "date": "1771",
+      "kind": "qualified-reform-lead",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Montazet reform lead in catalogue/secondary histories. Original mandement and complete text uninspected; no whole-book collation."
+    },
+    {
+      "candidate_id": "lyon-1825-missal",
+      "date": "1825",
+      "kind": "qualified-revision-lead",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Fontaine 1980 no.65 p.156 OCR reports serious changes, especially Epistle/Gospel introduction formulas, from 1771. OCR/page images and originals unverified; substantive revision lead only."
+    },
+    {
+      "candidate_id": "lyon-1844-missal",
+      "date": "1844",
+      "kind": "probable-reprint",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Fontaine 1980 no.81 p.164 OCR calls 1844 a simple reprint of 1825 and says Bohatta misdated it 1846. Treat 1846 as disputed alias until original title inspection."
+    },
+    {
+      "candidate_id": "lyon-1866-missal",
+      "date": "1866",
+      "kind": "qualified-Romano-Lyonese-reform-lead",
+      "version_status": "witness-or-component; distinct-whole-book-recension-unestablished",
+      "qualification": "Numelyo 802-page scan and cover identify 1866 Romano-Lugdunense. First eleven leaves inspected; exact local textual differences and normative status remain uncollated."
+    }
+  ],
+  "acquisition_attribution": "Twelve official 2024 component PDFs are acquired separately. Premesse is identified by its exact registered source; the other eleven are linked from the official diocesan landing source, with each stable direct acquisition URL recorded. Landing metadata alone does not certify content or reuse rights."
+}

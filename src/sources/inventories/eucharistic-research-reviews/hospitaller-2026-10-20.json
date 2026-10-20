@@ -1,0 +1,671 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "hospitaller-2026-10-20",
+  "title": "Hospitaller Order Eucharistic books: BnF-corrected bounded research and cold review",
+  "lane": "additional_orders",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "coverage_rows": [
+    "hospitaller-order-of-malta"
+  ],
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "semantics": "Cold-reviewed bibliographic metadata only; statuses label evidence state, not accepted independent recensions or stages. BnF B-320 is 1553, separate 1551 is deferred, USUARIUM 9950 copy identity is open, four translations remain deferred, and source bytes remain scratch with rights separately recorded.",
+  "review_files": {
+    "packet_path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/packet.json",
+    "packet_sha256": "bef49a9e9b1495963d6fbe394daa2f8fa18949781b09a984533890d592358513",
+    "initial_cold_verdict_path": ".scratch/full-research-20261019/additional_orders/cold-continuation-agent/hospitaller-followup/cold-verdict-packet-v1.json",
+    "initial_cold_verdict_sha256": "e11c876a436667160e7e4f7a5612b45aecdbe7d7295de5599f05f810c0087227",
+    "correction_addendum_path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/correction-addendum.json",
+    "correction_addendum_sha256": "1c860df1a541b8d408dbfa244487190f5ac72a7b7f1a55394b12f2532f79302f",
+    "release_verdict_path": ".scratch/full-research-20261019/additional_orders/cold-continuation-agent/hospitaller-followup/release-verdict.json",
+    "release_verdict_sha256": "1ef5b6c52f4e19a126b02fcc717dfb06c61c32290f5930a83e7d804e128b0bb4",
+    "western_fragment_sha256": "b3f9bc97af1233b58b4886a2b046ec395d58c31ff7163b4942ac3693ad0ace03",
+    "presentation_fragment_sha256": "4d14a81fe62613d18588ff74cf5a1123d9738a3e692198a1ef30ef2498b82fb4",
+    "scratch_integration_receipt_sha256": "98585684969ae5584a8e31d2f411ee59d117865a9dec0c9623a0d6f74acd09ce"
+  },
+  "uses": [
+    {
+      "id": "hospitaller-order-of-malta",
+      "coverage_row": "hospitaller-order-of-malta",
+      "presentation_group": "hospitaller-order-of-malta",
+      "disposition": "dedicated Catholic order route with 13 qualified metadata candidates; no recension, normative stage, or Holy Sepulchre parentage"
+    }
+  ],
+  "searches": [
+    {
+      "id": "bnf-b320-correction",
+      "source_url": "https://catalogue.bnf.fr/ark:/12148/cb36827961c",
+      "disposition": "owning catalogue confirms 1553 and rejects B-320 old 1551 date; original folios uninspected"
+    },
+    {
+      "id": "disputed-lyon-1551",
+      "disposition": "no independent holding found; Dondi bibliographic report deferred from candidate rows"
+    },
+    {
+      "id": "google-9950-copy",
+      "disposition": "metadata loaded but PDF unavailable; physical identity and relation to Lyon 29597/B-320 open"
+    },
+    {
+      "id": "access-1",
+      "target": "USUARIUM 7877 PDF",
+      "disposition": "no original PDF"
+    },
+    {
+      "id": "access-2",
+      "target": "BnF Gallica ark",
+      "disposition": "no original folio"
+    },
+    {
+      "id": "access-3",
+      "target": "Google Books 9950 PDF",
+      "disposition": "no original PDF"
+    },
+    {
+      "id": "access-4",
+      "target": "Google Books 9950 page images",
+      "disposition": "title/colophon requests yielded identical 9103-byte unavailable-placeholder PNG, SHA256 3efa8c43e5b4348f303a528c81adf435f0111ea752fe9f0f6241478b60987fa6; no original folio"
+    }
+  ],
+  "versions": [
+    {
+      "id": "additional-orders-hospitaller-fribourg-l91",
+      "family": "Hospitaller Order of St John of Jerusalem (OMel)",
+      "title": "Fribourg L 91 Hospitaller missal",
+      "kind": "missal-manuscript",
+      "date": "1300–1345",
+      "date_role": "copying range",
+      "sources": [
+        "additional-orders-src-hospitaller-dondi-v1",
+        "additional-orders-src-hospitaller-dondi-v2"
+      ],
+      "qualification": "Colmar/German-area repertory in Dondi; institutional use/text boundaries require original. Bibliographic metadata only: no independent recension, act-history station, whole-book collation, or accepted ancestry edge.",
+      "status": "researched-witness-proposal",
+      "version_status": "witness-or-component-candidate-not-proven-recension",
+      "scope_disposition": "in-scope-original-book-or-historical-witness"
+    },
+    {
+      "id": "additional-orders-hospitaller-bnf-nal1689",
+      "family": "Hospitaller Order of St John of Jerusalem (OMel)",
+      "title": "BnF nouv. acq. lat. 1689 adapted missal",
+      "kind": "missal-manuscript",
+      "date": "1330–1400",
+      "date_role": "copying range",
+      "sources": [
+        "additional-orders-src-hospitaller-dondi-v1",
+        "additional-orders-src-hospitaller-dondi-v2"
+      ],
+      "qualification": "Opening expressly says Autun use; later/order-specific master petitions, Holy Sepulchre sanctoral, Holy Land Masses. Mixed/local adaptation, not generic Hospitaller exemplar. Bibliographic metadata only: no independent recension, act-history station, whole-book collation, or accepted ancestry edge.",
+      "status": "researched-witness-proposal",
+      "version_status": "witness-or-component-candidate-not-proven-recension",
+      "scope_disposition": "in-scope-original-book-or-historical-witness"
+    },
+    {
+      "id": "additional-orders-hospitaller-aosta-ms1",
+      "family": "Hospitaller Order of St John of Jerusalem (OMel)",
+      "title": "Aosta Seminario Maggiore ms I missal",
+      "kind": "incomplete-missal-manuscript",
+      "date": "1455 or 1488",
+      "date_role": "conflicting scholarly manuscript dates",
+      "sources": [
+        "additional-orders-src-hospitaller-dondi-v1",
+        "additional-orders-src-hospitaller-dondi-v2"
+      ],
+      "qualification": "Missing calendar; breaks after Peter and Paul, lacking rest of sanctoral, common, votives. Date conflict unresolved; later Aosta ownership does not establish Aosta origin. Bibliographic metadata only: no independent recension, act-history station, whole-book collation, or accepted ancestry edge.",
+      "status": "researched-witness-proposal",
+      "version_status": "witness-or-component-candidate-not-proven-recension",
+      "scope_disposition": "in-scope-original-book-or-historical-witness"
+    },
+    {
+      "id": "additional-orders-hospitaller-strasbourg-1505",
+      "family": "Hospitaller Order of St John of Jerusalem (OMel)",
+      "title": "Strasbourg Johannes Prüss Hospitaller missal",
+      "kind": "printed-missal",
+      "date": "1505",
+      "date_role": "reported publication year",
+      "sources": [
+        "additional-orders-src-hospitaller-dondi-v1",
+        "additional-orders-src-hospitaller-dondi-v2"
+      ],
+      "qualification": "Five extant copy holdings named by Dondi; publication mandate transcribed; no holding catalogue or original leaf acquired. Scholarly comparison finds Strasbourg local feasts. Bibliographic metadata only: no independent recension, act-history station, whole-book collation, or accepted ancestry edge.",
+      "status": "researched-witness-proposal",
+      "version_status": "witness-or-component-candidate-not-proven-recension",
+      "scope_disposition": "in-scope-original-book-or-historical-witness"
+    },
+    {
+      "id": "additional-orders-hospitaller-haarlem-1511",
+      "family": "Hospitaller Order of St John of Jerusalem (OMel)",
+      "title": "Haarlem 184 C 1 Hospitaller missal",
+      "kind": "missal-manuscript",
+      "date": "1511",
+      "date_role": "reported copying/completion year",
+      "sources": [
+        "additional-orders-src-hospitaller-dondi-v1",
+        "additional-orders-src-hospitaller-dondi-v2"
+      ],
+      "qualification": "Commissioned by Hospitaller commander; local exemplar and full content uncollated. Bibliographic metadata only: no independent recension, act-history station, whole-book collation, or accepted ancestry edge.",
+      "status": "researched-witness-proposal",
+      "version_status": "witness-or-component-candidate-not-proven-recension",
+      "scope_disposition": "in-scope-original-book-or-historical-witness"
+    },
+    {
+      "id": "additional-orders-hospitaller-sixena-1528",
+      "family": "Hospitaller Order of St John of Jerusalem (OMel)",
+      "title": "Sigena/Sixena convent missal, Zaragoza Jorge Coci",
+      "kind": "reported-lost-local-printed-missal",
+      "date": "1528",
+      "date_role": "reported publication year",
+      "sources": [
+        "additional-orders-src-hospitaller-dondi-v1",
+        "additional-orders-src-hospitaller-dondi-v2",
+        "additional-orders-src-hospitaller-sigena-study"
+      ],
+      "qualification": "No extant copy located by Aragón study; local convent title, not general Order use. Codex of Prioress Blanca preserves only related gradual incipits and cannot fill missing book. Bibliographic metadata only: no independent recension, act-history station, whole-book collation, or accepted ancestry edge.",
+      "status": "researched-source-gap",
+      "version_status": "witness-or-component-candidate-not-proven-recension",
+      "scope_disposition": "unresolved-source-gap"
+    },
+    {
+      "id": "additional-orders-hospitaller-lyon-1553",
+      "family": "Hospitaller Order of St John of Jerusalem (OMel)",
+      "title": "Lyon heirs of Jacques Giunta/Cornelius Hospitaller missal",
+      "kind": "printed-missal-bibliographic-cluster",
+      "date": "1553",
+      "date_role": "catalogue/reported publication year",
+      "sources": [
+        "additional-orders-src-hospitaller-usuarium-origin-889",
+        "additional-orders-src-hospitaller-usuarium-7877",
+        "additional-orders-src-hospitaller-usuarium-9950",
+        "additional-orders-src-hospitaller-google-9950",
+        "additional-orders-src-hospitaller-dondi-v1",
+        "additional-orders-src-hospitaller-dondi-v2",
+        "additional-orders-src-hospitaller-bnf-cb36827961c"
+      ],
+      "qualification": "BnF owning catalogue cb36827961c confirms its B-320 copy is 1553 and explicitly corrects an old 1551 misdate. USUARIUM 7877 agrees. The 9950 Google record names Lyon Public Library, but exact copy/shelfmark and relation to B-320 or Lyon BM 29597 remain open. Dondi’s 1553-as-reprint assessment relied on a now-misdated B-320 for 1551; no distinct 1551 text sequence is established here. Bibliographic metadata only: no independent recension, act-history station, whole-book collation, or accepted ancestry edge.",
+      "status": "researched-witness-proposal",
+      "version_status": "witness-or-component-candidate-not-proven-recension",
+      "scope_disposition": "in-scope-original-book-or-historical-witness"
+    },
+    {
+      "id": "additional-orders-hospitaller-haarlem-gradual-184c7",
+      "family": "Hospitaller Order of St John of Jerusalem (OMel)",
+      "title": "Haarlem 184 C 7 gradual",
+      "kind": "Mass-chant-component-manuscript",
+      "date": "1300–1350",
+      "date_role": "copying range",
+      "sources": [
+        "additional-orders-src-hospitaller-dondi-v2"
+      ],
+      "qualification": "Haarlem Hospitaller provenance; Utrecht saints added later. Chant repertoire and relation to missals unexamined. Bibliographic metadata only: no independent recension, act-history station, whole-book collation, or accepted ancestry edge.",
+      "status": "researched-witness-proposal",
+      "version_status": "witness-or-component-candidate-not-proven-recension",
+      "scope_disposition": "in-scope-original-book-or-historical-witness"
+    },
+    {
+      "id": "additional-orders-hospitaller-zittau-gradual-av",
+      "family": "Hospitaller Order of St John of Jerusalem (OMel)",
+      "title": "Zittau ms A.V gradual",
+      "kind": "Mass-chant-component-manuscript",
+      "date": "1435",
+      "date_role": "colophon copying year",
+      "sources": [
+        "additional-orders-src-hospitaller-dondi-v2"
+      ],
+      "qualification": "Hospitaller commander commissioned for Zittau parish. Parish use and order ownership do not prove general order chant. Bibliographic metadata only: no independent recension, act-history station, whole-book collation, or accepted ancestry edge.",
+      "status": "researched-witness-proposal",
+      "version_status": "witness-or-component-candidate-not-proven-recension",
+      "scope_disposition": "in-scope-original-book-or-historical-witness"
+    },
+    {
+      "id": "additional-orders-hospitaller-turin-gradual-fiii17",
+      "family": "Hospitaller Order of St John of Jerusalem (OMel)",
+      "title": "Turin F.III.17 gradual-prosary",
+      "kind": "Mass-chant-component-manuscript",
+      "date": "15th century, possibly before 1449",
+      "date_role": "scholarly copying estimate",
+      "sources": [
+        "additional-orders-src-hospitaller-dondi-v2"
+      ],
+      "qualification": "Unidentified Hospitaller context; full chant repertoire and dating remain unverified. Bibliographic metadata only: no independent recension, act-history station, whole-book collation, or accepted ancestry edge.",
+      "status": "researched-witness-proposal",
+      "version_status": "witness-or-component-candidate-not-proven-recension",
+      "scope_disposition": "in-scope-original-book-or-historical-witness"
+    },
+    {
+      "id": "additional-orders-hospitaller-cologne-gradual-262",
+      "family": "Hospitaller Order of St John of Jerusalem (OMel)",
+      "title": "Cologne Dom-Hs. 262 gradual",
+      "kind": "Mass-chant-component-manuscript",
+      "date": "16th century",
+      "date_role": "scholarly copying range",
+      "sources": [
+        "additional-orders-src-hospitaller-dondi-v2"
+      ],
+      "qualification": "Burgsteinfurt Hospitaller provenance; institutional adaptation of chant not established. Bibliographic metadata only: no independent recension, act-history station, whole-book collation, or accepted ancestry edge.",
+      "status": "researched-witness-proposal",
+      "version_status": "witness-or-component-candidate-not-proven-recension",
+      "scope_disposition": "in-scope-original-book-or-historical-witness"
+    },
+    {
+      "id": "additional-orders-hospitaller-proper-1987",
+      "family": "Hospitaller Order of St John of Jerusalem (OMel)",
+      "title": "Proprium Missarum una cum Lectionario Ordinis Sancti Ioannis Hierosolymitani",
+      "kind": "combined-Mass-proper-and-lectionary",
+      "date": "1987",
+      "date_role": "Latin approval 4 July 1987 and catalogued publication year",
+      "sources": [
+        "additional-orders-src-hospitaller-notitiae-1987",
+        "additional-orders-src-hospitaller-dli-1987",
+        "additional-orders-src-hospitaller-order-regulations"
+      ],
+      "qualification": "Latin proper approved under Prot 839/87; DLI attests 136-page one-volume proper with lectionary. Extent of 1987 confirmation relative to lectionary, front matter, text and use not inspected. Bibliographic metadata only: no independent recension, act-history station, whole-book collation, or accepted ancestry edge.",
+      "status": "researched-witness-proposal",
+      "version_status": "witness-or-component-candidate-not-proven-recension",
+      "scope_disposition": "in-scope-original-book-or-historical-witness"
+    },
+    {
+      "id": "additional-orders-hospitaller-proper-2005",
+      "family": "Hospitaller Order of St John of Jerusalem (OMel)",
+      "title": "Proprium Missarum una cum Lectionario, second edition lead",
+      "kind": "combined-Mass-proper-and-lectionary-edition-lead",
+      "date": "2005",
+      "date_role": "Order bibliography second-edition year",
+      "sources": [
+        "additional-orders-src-hospitaller-order-regulations",
+        "additional-orders-src-hospitaller-order-calendar"
+      ],
+      "qualification": "Second edition attested bibliographically; 2005 revised Ordo in calendar need not mean the combined proper was textually revised. Original 2005 front matter/text absent. Bibliographic metadata only: no independent recension, act-history station, whole-book collation, or accepted ancestry edge.",
+      "status": "researched-source-gap",
+      "version_status": "witness-or-component-candidate-not-proven-recension",
+      "scope_disposition": "unresolved-source-gap"
+    }
+  ],
+  "acquisitions": [
+    {
+      "source_id": "uorigin",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/origin889.html",
+      "sha256": "a4bd35ca16774a3cd5b47ab7846f01e010df32235da8d11747d9a6c157816bf0",
+      "extent": {
+        "bytes": 15733
+      },
+      "medium": "HTML response",
+      "rights": "Public web access observed; no scan/text republication grant established. Metadata paraphrase and link only; retained scratch research bytes."
+    },
+    {
+      "source_id": "u7877",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/book7877.html",
+      "sha256": "b7e6156e426db21a37511d157dee3fd12610aa8eacdc1eb900d36283fddb459b",
+      "extent": {
+        "bytes": 65095
+      },
+      "medium": "HTML response",
+      "rights": "Public web access observed; no scan/text republication grant established. Metadata paraphrase and link only; retained scratch research bytes."
+    },
+    {
+      "source_id": "u9950",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/book9950.html",
+      "sha256": "1008ba7d35d7fdcdc56fbd558f619d4c80bbe332ca8a3fe8bd6d5af252688f5e",
+      "extent": {
+        "bytes": 16140
+      },
+      "medium": "HTML response",
+      "rights": "Public web access observed; no scan/text republication grant established. Metadata paraphrase and link only; retained scratch research bytes."
+    },
+    {
+      "source_id": "g9950",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/google-9950.html",
+      "sha256": "c9ad00213b0a6a1c981790d32714aa9a83ede7ba29b71f1189d3d195b1f7fdc1",
+      "extent": {
+        "bytes": 100016
+      },
+      "medium": "HTML response",
+      "rights": "Public web access observed; no scan/text republication grant established. Metadata paraphrase and link only; retained scratch research bytes."
+    },
+    {
+      "source_id": "order",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/order-status.html",
+      "sha256": "5b20aaa19bf291e597db44f9972b1d1eed09550c5b87b7d7c3261b91830dd369",
+      "extent": {
+        "bytes": 131774
+      },
+      "medium": "HTML response",
+      "rights": "Public web access observed; no scan/text republication grant established. Metadata paraphrase and link only; retained scratch research bytes."
+    },
+    {
+      "source_id": "dondi1",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/dondi-thesis.pdf",
+      "sha256": "45250b9d7ad26b69880a76cd8539328e16c728a78c422873cd3b707d711708a3",
+      "extent": {
+        "bytes": 12243243,
+        "pdf_pages": 225
+      },
+      "medium": "PDF",
+      "rights": "KCL front leaf: author copyright; CC BY-NC-ND 4.0 unless another license; attribution required; research scratch only"
+    },
+    {
+      "source_id": "dondi2",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/dondi-thesis-vol2.pdf",
+      "sha256": "4b63f4e6e61eef4e97ce7b49744176904191c3ece2f7cdfca1312f842bfa25d3",
+      "extent": {
+        "bytes": 43346753,
+        "pdf_pages": 242
+      },
+      "medium": "PDF",
+      "rights": "KCL thesis delivery; same author copyright and CC BY-NC-ND 4.0; research scratch only"
+    },
+    {
+      "source_id": "sigena",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/sigena-study.pdf",
+      "sha256": "53221589b66ebdec8a88d03f1f722320e962b2aa86bec36b685027cfb375b9dc",
+      "extent": {
+        "bytes": 14039138,
+        "pdf_pages": 209
+      },
+      "medium": "PDF",
+      "rights": "Public web access observed; no scan/text republication grant established. Metadata paraphrase and link only; retained scratch research bytes."
+    },
+    {
+      "source_id": "n1987",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/notitiae-1987.pdf",
+      "sha256": "a27da7836e393576d3d74a7200a5e2939642bf970c7f55709cdee612cbe0d488",
+      "extent": {
+        "bytes": 12108831,
+        "pdf_pages": 136
+      },
+      "medium": "PDF",
+      "rights": "Public web access observed; no scan/text republication grant established. Metadata paraphrase and link only; retained scratch research bytes."
+    },
+    {
+      "source_id": "n1990",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/notitiae-1990.pdf",
+      "sha256": "061f9992945b25077c53670ba4c65fd114585b7286a55331239f1ce1240e56c0",
+      "extent": {
+        "bytes": 5279321,
+        "pdf_pages": 70
+      },
+      "medium": "PDF",
+      "rights": "Public web access observed; no scan/text republication grant established. Metadata paraphrase and link only; retained scratch research bytes."
+    },
+    {
+      "source_id": "n1991",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/notitiae-1991.pdf",
+      "sha256": "33c4d1d5662df7b7171b086d16ff7cfe85975a674d41758139e52d3327858a50",
+      "extent": {
+        "bytes": 5666049,
+        "pdf_pages": 64
+      },
+      "medium": "PDF",
+      "rights": "Public web access observed; no scan/text republication grant established. Metadata paraphrase and link only; retained scratch research bytes."
+    },
+    {
+      "source_id": "n1995",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/notitiae-1995.pdf",
+      "sha256": "1144eeee1effcd054b51b8ab566aa7ac8194a2fa51c84325fd3b8604e0d95621",
+      "extent": {
+        "bytes": 5043659,
+        "pdf_pages": 68
+      },
+      "medium": "PDF",
+      "rights": "Public web access observed; no scan/text republication grant established. Metadata paraphrase and link only; retained scratch research bytes."
+    },
+    {
+      "source_id": "dli",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/dli-1987.html",
+      "sha256": "c8011a3541da95171d66bb4fdd9f9b274165f141bf4f31d191bb20f58d5ca844",
+      "extent": {
+        "bytes": 6712
+      },
+      "medium": "HTML response",
+      "rights": "Public web access observed; no scan/text republication grant established. Metadata paraphrase and link only; retained scratch research bytes."
+    },
+    {
+      "source_id": "regs",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/order-regulations-2011.pdf",
+      "sha256": "5090d411e151e7c722f35c1b0c0f76ed387ef69b8ee9d4f974a3ccc0fc9078e7",
+      "extent": {
+        "bytes": 590118,
+        "pdf_pages": 154
+      },
+      "medium": "PDF",
+      "rights": "Public web access observed; no scan/text republication grant established. Metadata paraphrase and link only; retained scratch research bytes."
+    },
+    {
+      "source_id": "calendar",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/order-calendar-2008.pdf",
+      "sha256": "866a7b27a7de563162b9cb4ce763b7735300bc98ca58e263b5597a08fbe79d64",
+      "extent": {
+        "bytes": 107704,
+        "pdf_pages": 1
+      },
+      "medium": "PDF",
+      "rights": "Public web access observed; no scan/text republication grant established. Metadata paraphrase and link only; retained scratch research bytes."
+    },
+    {
+      "source_id": "bnf",
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/bnf-cb36827961c.html",
+      "sha256": "0d95079b6d659e9b258d4213432e3c3ade4e79546d4808bbf42e9ba83e384b56",
+      "extent": {
+        "bytes": 77441
+      },
+      "medium": "HTML response",
+      "rights": "Public catalogue metadata accessible; no scan/text republication permission established. Scratch capture only; paraphrased metadata and link may be tracked."
+    }
+  ],
+  "prepared_scratch_schema": "hospitaller-followup-scratch-integration-receipt-v1",
+  "date": "2026-10-20",
+  "status": "integrated-reviewed-bibliographic-metadata",
+  "inputs": {
+    "packet": {
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/packet.json",
+      "sha256": "bef49a9e9b1495963d6fbe394daa2f8fa18949781b09a984533890d592358513"
+    },
+    "cold_verdict": {
+      "path": ".scratch/full-research-20261019/additional_orders/cold-continuation-agent/hospitaller-followup/cold-verdict-packet-v1.json",
+      "sha256": "e11c876a436667160e7e4f7a5612b45aecdbe7d7295de5599f05f810c0087227"
+    },
+    "addendum": {
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/correction-addendum.json",
+      "sha256": "1c860df1a541b8d408dbfa244487190f5ac72a7b7f1a55394b12f2532f79302f"
+    }
+  },
+  "fragments": {
+    "western": {
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/integration-western.toml",
+      "sha256": "b3f9bc97af1233b58b4886a2b046ec395d58c31ff7163b4942ac3693ad0ace03"
+    },
+    "presentation": {
+      "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/integration-presentation.toml",
+      "sha256": "4d14a81fe62613d18588ff74cf5a1123d9738a3e692198a1ef30ef2498b82fb4"
+    }
+  },
+  "source_id_mapping": {
+    "uorigin": "additional-orders-src-hospitaller-usuarium-origin-889",
+    "u7877": "additional-orders-src-hospitaller-usuarium-7877",
+    "u9950": "additional-orders-src-hospitaller-usuarium-9950",
+    "g9950": "additional-orders-src-hospitaller-google-9950",
+    "order": "additional-orders-src-hospitaller-order-status",
+    "dondi1": "additional-orders-src-hospitaller-dondi-v1",
+    "dondi2": "additional-orders-src-hospitaller-dondi-v2",
+    "sigena": "additional-orders-src-hospitaller-sigena-study",
+    "n1987": "additional-orders-src-hospitaller-notitiae-1987",
+    "n1990": "additional-orders-src-hospitaller-notitiae-1990",
+    "n1991": "additional-orders-src-hospitaller-notitiae-1991",
+    "n1995": "additional-orders-src-hospitaller-notitiae-1995",
+    "dli": "additional-orders-src-hospitaller-dli-1987",
+    "regs": "additional-orders-src-hospitaller-order-regulations",
+    "calendar": "additional-orders-src-hospitaller-order-calendar",
+    "bnf": "additional-orders-src-hospitaller-bnf-cb36827961c"
+  },
+  "tracked_review_target_proposed": "src/sources/inventories/eucharistic-research-reviews/hospitaller-2026-10-20.json",
+  "source_count": 16,
+  "candidate_ids": [
+    "additional-orders-hospitaller-fribourg-l91",
+    "additional-orders-hospitaller-bnf-nal1689",
+    "additional-orders-hospitaller-aosta-ms1",
+    "additional-orders-hospitaller-strasbourg-1505",
+    "additional-orders-hospitaller-haarlem-1511",
+    "additional-orders-hospitaller-sixena-1528",
+    "additional-orders-hospitaller-lyon-1553",
+    "additional-orders-hospitaller-haarlem-gradual-184c7",
+    "additional-orders-hospitaller-zittau-gradual-av",
+    "additional-orders-hospitaller-turin-gradual-fiii17",
+    "additional-orders-hospitaller-cologne-gradual-262",
+    "additional-orders-hospitaller-proper-1987",
+    "additional-orders-hospitaller-proper-2005"
+  ],
+  "candidate_count": 13,
+  "deferred_1551_candidate_id": "additional-orders-hospitaller-lyon-1551",
+  "deferred_translation_expressions": [
+    {
+      "key": "maltese-1990-sisters",
+      "date_role": "approval 15 Nov 1990",
+      "locus": "Notitiae 1990 printed p698/PDF p16, CD 473/90",
+      "status": "local Maltese proper translation for Jerusalemite Sisters; printed book not identified",
+      "source_ids": [
+        "n1990"
+      ]
+    },
+    {
+      "key": "spanish-1991",
+      "date_role": "approval 7 Oct 1991",
+      "locus": "Notitiae 1991 printed p627/PDF p17, CD 765/91",
+      "status": "Spanish proper translation approval, publication not identified",
+      "source_ids": [
+        "n1991"
+      ]
+    },
+    {
+      "key": "english-1997",
+      "date_role": "1995 approval; 1997 publication",
+      "locus": "Notitiae 1995 printed p306/PDF p24, 956/94/L; Order Regulations printed p171/PDF p151",
+      "status": "English Missal with Readings translation, original book absent; no independent Latin recension inferred",
+      "source_ids": [
+        "n1995",
+        "regs"
+      ]
+    },
+    {
+      "key": "french-2002",
+      "date_role": "2002 publication",
+      "locus": "Order Regulations printed p171/PDF p151",
+      "status": "French Missel et Lectionnaire translation, approval/front matter absent; no independent Latin recension inferred",
+      "source_ids": [
+        "regs"
+      ]
+    }
+  ],
+  "rights_policy": "Only metadata, links and brief source-grounded paraphrases proposed for tracking. Dondi volumes carry CC BY-NC-ND 4.0 with attribution; other downloaded official/catalogue PDFs/HTML have no verified broad republication permission here. Original scans/text/images stay scratch-only; verify rights before redistribution.",
+  "access_gaps": [
+    {
+      "target": "USUARIUM 7877 PDF",
+      "url": "https://usuarium.elte.hu/book/7877/pdf",
+      "method": "HEAD",
+      "observed_http_status": 401,
+      "result": "no original PDF"
+    },
+    {
+      "target": "BnF Gallica ark",
+      "url": "https://gallica.bnf.fr/ark:/12148/bpt6k1910226j",
+      "method": "HEAD",
+      "observed_http_status": 403,
+      "result": "no original folio"
+    },
+    {
+      "target": "Google Books 9950 PDF",
+      "url": "https://books.google.hu/books/download/Missale_sacri_ordinis_s_Joannis_Hierosol.pdf?id=VoKaTSVGB80C&hl=hu&output=pdf&sig=ACfU3U0h1BhNbu2VYjezvmCAw-Ci5TA1UA",
+      "method": "GET",
+      "observed_http_status": 429,
+      "result": "no original PDF"
+    },
+    {
+      "target": "Google Books 9950 page images",
+      "method": "GET",
+      "result": "title/colophon requests yielded identical 9103-byte unavailable-placeholder PNG, SHA256 3efa8c43e5b4348f303a528c81adf435f0111ea752fe9f0f6241478b60987fa6; no original folio"
+    }
+  ],
+  "negative_controls": [
+    {
+      "key": "usuarium-2486",
+      "source": "https://usuarium.elte.hu/book/2486/view",
+      "reason": "1300–1400 Marseille Ms109 breviary; USUARIUM says origin uncertain; Office only"
+    },
+    {
+      "key": "usuarium-3010",
+      "source": "https://usuarium.elte.hu/book/3010/view",
+      "reason": "1547 Sigena breviary; local Office print, not 1528 missal"
+    },
+    {
+      "key": "usuarium-3974",
+      "source": "https://usuarium.elte.hu/book/3974/view",
+      "reason": "1375–1425 Cologne 259 antiphonal winter Office, not Mass chant gradual"
+    },
+    {
+      "key": "dondi-office-propers",
+      "source": "dondi1",
+      "locus": "printed pp128-129/PDF pp129-130",
+      "reason": "1659, 1739, 1759, 1785 Officia propria are Office books, not Mass propers"
+    },
+    {
+      "key": "dondi-palat-lat-9",
+      "source": "dondi2",
+      "locus": "3.21 printed p370/PDF p148",
+      "reason": "1345 capitulare epistolarum et evangeliorum is expressly Teutonic Order, not Hospitaller; cross-lane exclusion"
+    },
+    {
+      "key": "dondi-molfetta",
+      "source": "dondi2",
+      "locus": "3.55 printed p379/PDF p157",
+      "reason": "15th-century Roman-use missal with Hospitaller ownership/coats of arms then Franciscan; ownership-only Roman control"
+    },
+    {
+      "key": "dondi-london-k100",
+      "source": "dondi2",
+      "locus": "3.56 printed p380/PDF p158",
+      "reason": "1500–1501 festive Roman-use missal gifted to Rhodes; order-owned Roman-use component, not general Hospitaller missal"
+    },
+    {
+      "key": "dondi-choral-books",
+      "source": "dondi2",
+      "locus": "3.22-39 printed pp370-372/PDF pp149-150",
+      "reason": "18 choral books (Messina, Valletta groups) lack Mass-versus-Office component identification in catalogue; investigate without counting Mass books"
+    }
+  ],
+  "reconciliation": "BnF owner 1553 overrides Dondi B-320 1551. 9950 identity remains open; no original Mass book collated; metadata integration proposed only.",
+  "independent_cold_release": {
+    "path": ".scratch/full-research-20261019/additional_orders/cold-continuation-agent/hospitaller-followup/release-verdict.json",
+    "sha256": "1ef5b6c52f4e19a126b02fcc717dfb06c61c32290f5930a83e7d804e128b0bb4",
+    "verdict": "release_for_bounded_metadata_integration",
+    "blocking_items": 0
+  },
+  "prepared_scratch_receipt": {
+    "path": ".scratch/full-research-20261019/additional_orders/continuation-agent/hospitaller-followup/integration-receipt.json",
+    "sha256": "98585684969ae5584a8e31d2f411ee59d117865a9dec0c9623a0d6f74acd09ce"
+  },
+  "integration": {
+    "date": "2026-10-20",
+    "western_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+    "western_preimage_sha256": "ad531a9609a1ef47458e378e4124829157c1972913edf272ae4464aa954b5d42",
+    "western_integrated_sha256": "dde38671887437e481498ad890f9f8a3b7ace867041c312ecc01ce9ab0cd023d",
+    "western_counts_before": {
+      "sources": 505,
+      "candidates": 628,
+      "coverage": 65
+    },
+    "western_counts_after": {
+      "sources": 521,
+      "candidates": 641,
+      "coverage": 66
+    },
+    "presentation_inventory": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+    "presentation_preimage_sha256": "efb2afe5ceb3df21dde2c1cb66d91b0111079bbd7d8998e47abc9ae9ed2c5ec8",
+    "presentation_integrated_sha256": "65e4a926a821e57ccf2fce06ac4860d833c12db1871b41ea47ba44b895aeb9f7",
+    "presentation_groups_before": 63,
+    "presentation_groups_after": 64,
+    "coverage_id": "hospitaller-order-of-malta",
+    "presentation_group_id": "hospitaller-order-of-malta",
+    "metadata_only": true,
+    "deferred_1551": "No separate 1551 candidate row; BnF B-320 belongs to 1553.",
+    "unresolved_9950": "Second catalogue/Google record retained without physical copy, shelfmark or edition-state assignment.",
+    "no_recension_or_stage_edge": true
+  }
+}
