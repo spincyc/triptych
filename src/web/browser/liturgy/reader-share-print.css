@@ -41,3 +41,37 @@
 @media print {
   .reader-share-print { display: none !important; }
 }
+
+/* Mode-aware printed reading: compact Study evidence and pair Compare's
+   corresponding units at a legible Letter-page measure. */
+@media print {
+  .reader-instrument[data-reader-mode="study"] .reader-document .study-event {
+    margin-bottom: 0.12in;
+    padding-top: 0.08in;
+  }
+  .reader-instrument[data-reader-mode="study"] .reader-document .study-event h3 {
+    margin-bottom: 0.06in;
+    font-size: 11pt;
+  }
+  .reader-instrument[data-reader-mode="study"] .reader-document .study-facts {
+    row-gap: 0.02in;
+  }
+  .reader-instrument[data-reader-mode="study"] .reader-document .study-facts dt,
+  .reader-instrument[data-reader-mode="study"] .reader-document .study-facts dd {
+    padding-block: 0.02in;
+    line-height: 1.35;
+  }
+  .reader-instrument[data-reader-mode="compare"] .reader-document .compare-pair,
+  .reader-instrument[data-reader-mode="compare"] .reader-document .compare-calendar-pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.16in;
+  }
+  .reader-instrument[data-reader-mode="compare"] .reader-document .compare-unit:last-of-type {
+    break-inside: avoid-page;
+  }
+  .reader-instrument[data-reader-mode="compare"] .reader-document .compare-side .passage,
+  .reader-instrument[data-reader-mode="compare"] .reader-document .compare-side .composed {
+    font-size: 10.5pt;
+    line-height: 1.4;
+  }
+}

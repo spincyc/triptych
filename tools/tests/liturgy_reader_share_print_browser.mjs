@@ -3,10 +3,11 @@
 /* Source-served Chromium coverage for both reader Share/Print entrances. */
 
 import assert from 'node:assert/strict';
-import { spawn } from 'node:child_process';
+import { execFile, spawn } from 'node:child_process';
 import { createServer } from 'node:http';
-import { mkdir, mkdtemp, readFile, rm } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { extname, resolve, sep } from 'node:path';
+import { promisify } from 'node:util';
 
 const ROOT = resolve(import.meta.dirname, '../..');
 const CHROME = process.env.TRIPTYCH_CHROME || '/usr/bin/chromium';
@@ -14,6 +15,7 @@ const SCRATCH = resolve(process.env.TRIPTYCH_BROWSER_SCRATCH ||
   resolve(ROOT, '.scratch/reader-share-print-browser'));
 const DAY = '/src/web/browser/liturgy/day.html';
 const PROPERS = '/src/web/browser/liturgy/index.html';
+const execFileAsync = promisify(execFile);
 
 const mime = (file) => ({ '.css': 'text/css', '.html': 'text/html',
   '.js': 'text/javascript', '.json': 'application/json' })[extname(file)] || 'application/octet-stream';
@@ -178,6 +180,7 @@ try {
       navigator.share = async (value) => { window.__shared = value; };
       window.__printed = 0;
       window.print = () => { window.__printed += 1; };
+      document.querySelector('[data-reader-action="mode"]').click();
       document.querySelector('[data-reader-action="details"]').click();
     })()`);
     await waitFor(cdp, `document.querySelector('[data-reader-surface="details"]').open &&
@@ -216,12 +219,17 @@ try {
     assert.match(shared.title, new RegExp(state.edition.id));
     if (entrance === 'day') {
       assert.match(shared.title, /2026-11-22/);
-      assert.match(shared.title, /Compare recension with postconciliar/);
-      assert.match(shared.title, /universal/);
-      assert.match(new URL(shared.url).hash, /territory=universal/);
+      if (state.requestedMode === 'compare') {
+        assert.match(shared.title, /Compare recension with postconciliar/);
+        assert.match(shared.title, /universal/);
+        assert.match(new URL(shared.url).hash, /territory=universal/);
+      } else assert.match(shared.title, /study/);
     } else {
       assert.doesNotMatch(shared.title, /2026-11-22/);
       assert.equal(new URL(shared.url).hash.includes('date='), false);
+      if (state.requestedMode === 'compare') {
+        assert.match(shared.title, /Compare oration-language with en/);
+      }
     }
     assert.equal(await evaluate(cdp, 'location.href'), before);
     assert.equal(await evaluate(cdp,
@@ -245,21 +253,71 @@ try {
     await evaluate(cdp, `document.querySelectorAll('[data-reader-share-print] button')[1].click()`);
     assert.equal(await evaluate(cdp, 'window.__printed'), 1);
     assert.equal(await evaluate(cdp, 'location.href'), before);
+    const expectedPrint = await evaluate(cdp, `(() => ({
+      mode: document.querySelector('.reader-instrument').dataset.readerMode,
+      studyNotes: document.querySelectorAll('#reader-document .study-event').length,
+      studySources: [...document.querySelectorAll('#reader-document .study-event dt')]
+        .filter((node) => node.textContent.trim() === 'Source record').length,
+      compareSources: [...document.querySelectorAll('#reader-document .compare-evidence')]
+        .filter((node) => node.textContent.trim().startsWith('Source records:')).length
+    }))()`);
+    assert.equal(expectedPrint.mode, state.requestedMode);
     await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
     const printed = await evaluate(cdp, `(() => ({
       controls: getComputedStyle(document.querySelector('[data-reader-share-print]')).display,
       dialog: getComputedStyle(document.querySelector('[data-reader-surface="details"]')).display,
       title: getComputedStyle(document.querySelector('.reader-identity')).display,
-      reading: getComputedStyle(document.querySelector('#reader-document')).display
+      reading: getComputedStyle(document.querySelector('#reader-document')).display,
+      compareColumns: document.querySelector('.compare-pair') &&
+        getComputedStyle(document.querySelector('.compare-pair')).gridTemplateColumns
     }))()`);
     assert.equal(printed.controls, 'none');
     assert.equal(printed.dialog, 'none');
     assert.notEqual(printed.title, 'none');
     assert.notEqual(printed.reading, 'none');
+    if (state.requestedMode === 'compare') {
+      assert.equal(printed.compareColumns.split(' ').filter(Boolean).length, 2,
+        'printed Compare keeps both semantic sides aligned');
+    }
     const pdf = await cdp.send('Page.printToPDF', {
       printBackground: true, preferCSSPageSize: true
     });
     assert.ok(pdf.data.length > 10000, 'the selected reader generates a PDF');
+    const pdfFile = resolve(profile, entrance + '-' + state.requestedMode + '.pdf');
+    await writeFile(pdfFile, Buffer.from(pdf.data, 'base64'));
+    const { stdout: pdfText } = await execFileAsync('pdftotext', ['-layout', pdfFile, '-'],
+      { maxBuffer: 2 * 1024 * 1024 });
+    const pages = pdfText.split('\f').filter((page) => page.trim());
+    assert.ok(pages.length > 0 && pages.every((page) => page.trim().length > 80),
+      'no detached or empty PDF page');
+    assert.match(pages[0], new RegExp(entrance.toUpperCase() + ' · ' +
+      state.requestedMode.toUpperCase()));
+    assert.doesNotMatch(pdfText, /Share link|Print dialog opened/);
+    if (entrance === 'day') {
+      assert.match(pdfText, /Sunday 22 November 2026/);
+      if (state.requestedMode === 'compare') {
+        assert.match(pdfText, /Territorial context: universal/);
+        assert.match(pdfText, /Calendar results on this date/);
+      } else assert.match(pdfText, /Calendar result/);
+    } else {
+      assert.match(pdfText, /First Sunday of Advent/);
+      assert.match(pdfText, /advent-1/);
+    }
+    if (state.requestedMode === 'study') {
+      assert.ok(expectedPrint.studyNotes > 0);
+      assert.equal((pdfText.match(/Study notes for /g) || []).length,
+        expectedPrint.studyNotes);
+      assert.equal((pdfText.match(/Source record/g) || []).length,
+        expectedPrint.studySources);
+      assert.match(pdfText, /Coverage/);
+    } else {
+      assert.ok(expectedPrint.compareSources > 0);
+      assert.equal((pdfText.match(/Source records:/g) || []).length,
+        expectedPrint.compareSources);
+      assert.match(pdfText, /Compare corresponding Propers/);
+      assert.match(pdfText, /Entrance antiphon/);
+      assert.match(pages.at(-1), /Prayer after Communion/);
+    }
     await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
     await evaluate(cdp, `document.querySelector('[data-reader-details]').replaceChildren(
       document.createElement('p'))`);
@@ -274,6 +332,14 @@ try {
   activeCase = 'propers-study-share-print';
   await check('propers', '#missal=roman-1962&type=seasonal&mass=advent-1' +
     '&bible=douay-rheims&orations=la&mode=study');
+  assertions.push({ name: activeCase, status: 'pass' });
+  activeCase = 'day-study-print-composition';
+  await check('day', '#date=2026-11-22&missal=roman-1962&bible=douay-rheims&orations=la' +
+    '&mode=study&ordinary=0');
+  assertions.push({ name: activeCase, status: 'pass' });
+  activeCase = 'propers-compare-print-composition';
+  await check('propers', '#missal=roman-1962&type=seasonal&mass=advent-1' +
+    '&bible=douay-rheims&orations=la&mode=compare&compare=oration-language&peer-orations=en');
   assertions.push({ name: activeCase, status: 'pass' });
 } catch (error) {
   const detail = error && error.stack || String(error);

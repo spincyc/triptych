@@ -887,6 +887,7 @@
     contextLine.textContent = 'Day · ' + modeLabel(mode);
     if (instrumentMode) instrumentMode.textContent = modeLabel(mode);
     modeState.textContent = mode ? modeLabel(mode) : 'Unavailable';
+    DayStudy?.syncMode(mode);
     modeButtons.forEach(function (button) {
       button.setAttribute('aria-checked', String(Boolean(mode) && button.dataset.mode === mode));
     });
@@ -2780,6 +2781,8 @@
         function (node) { return node.dataset.semanticLocation === held.focus.event; }
       );
       if (target) target.focus({ preventScroll: true });
+    } else if (held.focus && held.focus.kind === 'study-action') {
+      shellRoot.querySelector('[data-reader-action="study"]').focus({ preventScroll: true });
     } else if (held.modeFocus) {
       modeAction.focus({ preventScroll: true });
     }
@@ -2837,19 +2840,11 @@
       ['mass', 'form', 'translation-witness', 'location']);
   });
 
-  ['read', 'missal', 'study'].forEach(function (mode) {
-    const button = document.querySelector('[data-mode="' + mode + '"]');
-    if (!button) return;
-    button.addEventListener('click', function () {
-      if (runtime.mode === mode) { readerShell.close(); return; }
-      const location = captureModeLocation(mode);
-      readerShell.close({ restoreFocus: false, restoreScroll: false });
+  DayStudy.bindControls({ runtime: runtime, readerShell: readerShell, navigate: navigate,
+    captureModeLocation: captureModeLocation, onModeSwitch: function () {
       window.dayReaderDebug.modeSwitches += 1;
       runtime.modeStartedAt = performance.now();
-      navigate({ mode: mode }, ['ordinary', 'compare', 'peer-missal', 'territory'],
-        { location: location, modeFocus: true });
-    });
-  });
+    } });
   if (DayCompare) DayCompare.bindControls({
     runtime: runtime, T: T, Model: Model, load: load,
     readerShell: readerShell, navigate: navigate, variantKeys: variantKeys,

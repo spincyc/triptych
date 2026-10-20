@@ -20,23 +20,30 @@
   }
 
   function bindControls(input) {
-    const button = root.document.querySelector('[data-mode="study"]');
-    if (!button) return;
-    button.addEventListener('click', function () {
-      const current = input.runtime.normalized && input.runtime.normalized.state;
-      if (!current || current.requestedMode === 'study') {
-        input.readerShell.close();
-        return;
-      }
-      const captured = input.readerShell.captureSemanticLocation();
-      const location = current.requestedMode === 'compare'
-        ? input.Compare.fromCompareLocation(captured, input.runtime.result)
-        : input.ProperEvents.nearestProperLocation(captured, input.runtime.result);
-      input.readerShell.close({ restoreFocus: false });
-      input.navigate({ mode: 'study' }, ['compare', 'peer-orations'],
-        { location: location, focus: 'mode' });
-    });
+    root.document.querySelectorAll('[data-mode="study"], [data-reader-action="study"]')
+      .forEach(function (button) {
+        button.addEventListener('click', function () {
+          const current = input.runtime.normalized && input.runtime.normalized.state;
+          if (!current || current.requestedMode === 'study') {
+            input.readerShell.close();
+            return;
+          }
+          const captured = input.readerShell.captureSemanticLocation();
+          const location = current.requestedMode === 'compare'
+            ? input.Compare.fromCompareLocation(captured, input.runtime.result)
+            : input.ProperEvents.nearestProperLocation(captured, input.runtime.result);
+          input.readerShell.close({ restoreFocus: false });
+          input.navigate({ mode: 'study' }, ['compare', 'peer-orations'], {
+            location: location, focus: button.dataset.readerAction === 'study' ? 'study' : 'mode'
+          });
+        });
+      });
   }
 
-  return Object.freeze({ attach: attach, bindControls: bindControls });
+  function syncMode(mode) {
+    const action = root.document.querySelector('[data-reader-action="study"]');
+    if (action) action.setAttribute('aria-current', String(mode === 'study'));
+  }
+
+  return Object.freeze({ attach: attach, bindControls: bindControls, syncMode: syncMode });
 }));

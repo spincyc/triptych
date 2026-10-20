@@ -274,11 +274,14 @@
       const surface = surfaces.get(name);
       if (!surface) return;
       const modal = !(presentation && presentation.modal === false);
-      if (openName) close({ restoreFocus: false });
+      // A command inside a surface returns to that surface's visible invoker.
+      const returnTo = openName && button && surfaces.get(openName).contains(button)
+        ? invoker : button;
+      if (openName) close({ restoreFocus: false, restoreScroll: false });
       markCurrent();
       preservedY = window.scrollY;
       preservedLocation = currentLocation;
-      invoker = button || actions.get(name) || null;
+      invoker = returnTo || actions.get(name) || null;
       if (typeof held.beforeOpen === 'function') held.beforeOpen(name);
       openName = name;
       openModal = modal;

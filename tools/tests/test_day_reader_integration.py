@@ -223,10 +223,12 @@ class DayReaderIntegrationTests(unittest.TestCase):
             ("date", "Date"),
             ("contents", "Contents"),
             ("mode", "Mode"),
-            ("details", "Details"),
+            ("study", "Study"),
         ):
             self.assertIn(f'data-reader-action="{action}"', source)
             self.assertIn(f'class="action-label">{label}</span>', source)
+        self.assertIn('data-reader-secondary-actions', source)
+        self.assertIn('data-reader-action="details"', source)
         self.assertIn('data-mode="read"', source)
         self.assertIn('data-mode="missal"', source)
         self.assertIn('data-mode="study"', source)
@@ -331,11 +333,13 @@ class DayReaderIntegrationTests(unittest.TestCase):
             "Contract.canonicalRoute('day', window.location.pathname)",
             "Contract.serializeLegacy(normalized)",
             "normalized.state.semanticLocation",
-            "['read', 'missal', 'study'].forEach",
-            "navigate({ mode: mode }",
+            "DayStudy.bindControls({ runtime: runtime, readerShell: readerShell, navigate: navigate",
             "(removals || []).concat(['ordinary'])",
         ):
             self.assertIn(token, source)
+        html = text(HTML)
+        self.assertLess(html.index('src="day-study.js"'), html.index('src="day-reader.js"'))
+        self.assertIn("bindControls: bindControls", text(LITURGY / "day-study.js"))
         self.assertNotIn("runtime.bibles[0]", source)
         self.assertNotIn("navigate({ ordinary: '1'", source)
         for token in (

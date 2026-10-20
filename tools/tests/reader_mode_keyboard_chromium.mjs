@@ -10,7 +10,8 @@ import { extname, resolve, sep } from 'node:path';
 
 const ROOT = resolve(import.meta.dirname, '../..');
 const CHROME = process.env.TRIPTYCH_CHROME || '/usr/bin/chromium';
-const SCRATCH = resolve(ROOT, '.scratch/reader-mode-keyboard');
+const SCRATCH = resolve(process.env.TRIPTYCH_BROWSER_SCRATCH ||
+  resolve(ROOT, '.scratch/reader-mode-keyboard'));
 const pages = [
   { path: '/src/web/browser/liturgy/day.html', ready: 'dayReaderReady',
     mode: 'dayReaderDebug.mode',
@@ -122,8 +123,9 @@ async function key(cdp, name, shift = false) {
 }
 
 function snapshot() {
-  return `(() => ({ focus: document.activeElement.dataset.mode ||
-      document.activeElement.dataset.readerClose || document.activeElement.id || null,
+  return `(() => ({ focus: document.activeElement.hasAttribute('data-reader-close') ? 'close' :
+      document.activeElement.dataset.mode || document.activeElement.dataset.readerAction ||
+      document.activeElement.id || null,
     checked: [...document.querySelectorAll('[role="radiogroup"] [role="radio"]')]
       .filter(node => node.getAttribute('aria-checked') === 'true').map(node => node.dataset.mode),
     tabs: [...document.querySelectorAll('[role="radiogroup"] [role="radio"]')]
@@ -163,11 +165,18 @@ try {
     checks += 1;
 
     await evaluate(cdp, `document.querySelector('[data-reader-action="mode"]').click()`);
-    await key(cdp, 'Tab', true); // The checked radio is the only Tab stop in the group.
+    await key(cdp, 'Tab'); // The checked radio is the only Tab stop in the group.
     assert.equal((await evaluate(cdp, snapshot())).focus, 'read');
     await key(cdp, 'Tab');
-    assert.equal(await evaluate(cdp,
-      `document.activeElement.hasAttribute('data-reader-close')`), true);
+    assert.equal((await evaluate(cdp, snapshot())).focus, 'reader-text-size');
+    await key(cdp, 'Tab');
+    assert.equal((await evaluate(cdp, snapshot())).focus, 'details');
+    await key(cdp, 'Tab');
+    assert.equal((await evaluate(cdp, snapshot())).focus, 'close');
+    await key(cdp, 'Tab', true);
+    assert.equal((await evaluate(cdp, snapshot())).focus, 'details');
+    await key(cdp, 'Tab', true);
+    assert.equal((await evaluate(cdp, snapshot())).focus, 'reader-text-size');
     await key(cdp, 'Tab', true);
     assert.equal((await evaluate(cdp, snapshot())).focus, 'read');
     checks += 1;
@@ -180,7 +189,7 @@ try {
     checks += 1;
 
     await evaluate(cdp, `document.querySelector('[data-reader-action="mode"]').click()`);
-    await key(cdp, 'Tab', true);
+    await key(cdp, 'Tab');
     assert.equal((await evaluate(cdp, snapshot())).focus, 'missal');
     await key(cdp, 'ArrowDown');
     await waitFor(cdp, `${page.mode} === 'study'`, page.path + ' Study');
@@ -188,19 +197,30 @@ try {
     checks += 1;
 
     await evaluate(cdp, `document.querySelector('[data-reader-action="mode"]').click()`);
-    await key(cdp, 'Tab', true);
+    await key(cdp, 'Tab');
     await key(cdp, 'End');
     const compare = await evaluate(cdp, snapshot());
     assert.equal(compare.setup, true);
     assert.deepEqual(compare.checked, ['study']); // Compare needs a completed setup.
     assert.match(compare.focus, /^reader-compare-/);
     assert.equal(await evaluate(cdp, page.mode), 'study');
+    // Compare adds its own form fields between the roving group and the
+    // preferences. Tab still reaches the shared secondary controls in order.
+    for (let tabs = 0; tabs < 8; tabs += 1) {
+      if ((await evaluate(cdp, snapshot())).focus === 'reader-text-size') break;
+      await key(cdp, 'Tab');
+    }
+    assert.equal((await evaluate(cdp, snapshot())).focus, 'reader-text-size');
+    await key(cdp, 'Tab');
+    assert.equal((await evaluate(cdp, snapshot())).focus, 'details');
+    await key(cdp, 'Tab');
+    assert.equal((await evaluate(cdp, snapshot())).focus, 'close');
     checks += 1;
 
     await evaluate(cdp, `document.querySelector('#mode-surface [data-reader-close]').click()`);
     await evaluate(cdp, `document.querySelector('[data-reader-action="mode"]').click()`);
     assert.deepEqual((await evaluate(cdp, snapshot())).tabs, ['study']);
-    await key(cdp, 'Tab', true);
+    await key(cdp, 'Tab');
     await key(cdp, 'Home');
     await waitFor(cdp, `${page.mode} === 'read'`, page.path + ' Read');
     assert.deepEqual((await evaluate(cdp, snapshot())).tabs, ['read']);
@@ -208,7 +228,7 @@ try {
 
     for (const activation of ['Enter', 'Space']) {
       await evaluate(cdp, `document.querySelector('[data-reader-action="mode"]').click()`);
-      await key(cdp, 'Tab', true);
+      await key(cdp, 'Tab');
       assert.equal((await evaluate(cdp, snapshot())).focus, 'read',
         page.path + ' before ' + activation);
       await evaluate(cdp, 'window.__modeClicks = 0');
@@ -221,7 +241,7 @@ try {
     }
 
     await evaluate(cdp, `document.querySelector('[data-reader-action="mode"]').click()`);
-    await key(cdp, 'Tab', true);
+    await key(cdp, 'Tab');
     await evaluate(cdp, `document.querySelector('[data-mode="missal"]')
       .setAttribute('aria-disabled', 'true')`);
     await key(cdp, 'ArrowRight');

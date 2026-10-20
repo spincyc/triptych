@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="reader-compare-view.css">
 <link rel="stylesheet" href="reader-study-view.css">
 <link rel="stylesheet" href="reader-share-print.css">
+<link rel="stylesheet" href="reader-text-size.css">
 </head>
 <body class="day-reader-candidate page-browser">
 <a class="skip-link" href="#reader-document">Skip to the Mass</a>
@@ -62,10 +63,9 @@
       <span class="action-label">Mode</span>
       <span class="action-state" aria-live="polite">Read</span>
     </button>
-    <button type="button" data-reader-action="details" aria-controls="details-surface"
-            aria-expanded="false">
-      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 10.5V17M12 7.2h.01"/></svg></span>
-      <span class="action-label">Details</span>
+    <button type="button" data-reader-action="study" aria-current="false">
+      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><path d="M12 6.5C9.5 4.5 6 4 3 5v14c3-1 6.5-.5 9 1.5 2.5-2 6-2.5 9-1.5V5c-3-1-6.5-.5-9 1.5ZM12 6.5v14"/></svg></span>
+      <span class="action-label">Study</span>
     </button>
   </nav>
 
@@ -171,6 +171,12 @@
       <p id="compare-setup-note" class="surface-note" role="status">Choose both editions and a territory. Each calendar will be resolved independently.</p>
       <button class="surface-apply" type="submit">Open Compare</button>
     </form>
+    <div class="surface-body surface-secondary-actions" data-reader-secondary-actions>
+      <button type="button" data-reader-action="details" aria-controls="details-surface"
+              aria-expanded="false">
+        <span class="action-label">Details</span><span>Sources, selection, share and print.</span>
+      </button>
+    </div>
   </dialog>
 
   <dialog id="details-surface" class="reader-surface details-surface"
@@ -206,5 +212,6 @@
 <script src="reader-mode-keyboard.js"></script>
 <script src="day-reader.js"></script>
 <script src="reader-share-print.js"></script>
+<script src="reader-text-size.js"></script>
 </body>
 </html>

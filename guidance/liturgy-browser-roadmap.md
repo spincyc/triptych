@@ -852,6 +852,23 @@ Day and 6.36–6.37 s for Propers, with about 325 KB and 274 KB transferred.
 Cold desktop samples are 0.60–0.70 s. The 2.5 s mobile gate still fails; these
 local samples establish neither field p75 nor independent release acceptance.
 
+The following C5 usability slice exposes Study directly in the fourth dock
+position on both entrances. Details moves into Mode while retaining source,
+Share and Print access. Direct Study preserves semantic place and returns
+focus to its command; secondary Details returns to the visible Mode invoker.
+A native 100–200% text-size control preserves place/focus, stores only valid
+display preferences, works without storage, and leaves print independently
+sized. Integrated focused Chromium probes pass eighteen keyboard checks,
+twelve direct-Study checks, three enlargement cases and four Share/Print
+cases, including reduced-motion surface transfer and clean diagnostics.
+
+Compact Study facts and paired Compare print columns retain source/coverage
+context, unavailable-side protection and a complete final pair. Checked page
+counts are now 7/9/7/6 for Day Study, Day Compare, Propers Study and Propers
+Compare, formerly 10/12/8/9. Extracted content parity and representative page
+rasters were checked. Full C4 print composition, the broader C5 modes and
+independent acceptance remain open.
+
 ### Verification and completion gates
 
 Recovery checks actually run on the baseline:
