@@ -753,6 +753,30 @@ cannot rescue the revision or establish the 2.5 s release target. Another
 priority mix has no supporting measurement; the next architectural proposal
 must address the serial authenticated data path or its competing transfers.
 
+A further scratch prototype places the canonical resource owner and an
+authenticated two-year request kernel in the initial Day HTML. Its complete
+kernel is 3,986 gzip6 bytes and authentication metadata 280 bytes. The final
+source-derived generation passes 2,770 topology/fault checks, 14,452 facade
+comparisons, 66 build-boundary checks and 43 browser groups. Pending/completed
+Bible reads share one raw response while normal admission stays authoritative.
+These correctness and size results do not establish a performance improvement.
+
+The eight-sample HTTP/2 comparison rejects this prototype: baseline/inline LCP
+medians are 4.574/9.726 s for 2026-08-02 and 4.586/9.710 s for 2027-09-05.
+The owner publishes near 0.60 s, directed appends finish near 1.86 s, and the
+selected Mass plus seven chapters finish by 2.52 s. No full Proper monolith
+or duplicate response body is requested. The normal body scripts are instead
+discovered serially, delaying the controller response to about 9.58 s.
+Text/state/events/URL and all 108 served-body identities agree; diagnostics
+and foreign-browser boundary counts are zero. The completed run and analysis
+exit 0, and all experiment processes close. An earlier single-baseline attempt
+failed a process-census parser, is retained separately, and is excluded from
+the paired result; its two-line harness repair changed no served bytes.
+The failed prototype remains off branch. A separate scratch revision will
+test build-derived preloads for exactly the existing Day scripts without
+changing their execution order or priorities. Its value and the unchanged
+3.0 s / 1.0 s gain integration limits and 2.5 s release budget remain unproved.
+
 A parallel witness audit found no publishable English witness for the 1962
 Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
 is an inaccessible page-image lead, not a text source. An

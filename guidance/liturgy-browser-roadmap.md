@@ -1058,6 +1058,32 @@ the duplicate Bible wait alone cannot meet either the original integration
 limit or the 2.5 s release target. Future work must address the measured
 serial data path or competing transfers rather than repeat priority guesses.
 
+A subsequent initial-HTML scratch prototype combines the canonical resource
+owner, private Day startup policy and authenticated two-year dispatcher in
+3,986 gzip6 bytes, with 280 bytes of complete CSP/authentication metadata.
+Its final generation passes 2,770 actual-kernel topology/fault checks,
+14,452 facade comparisons, 66 build-boundary checks and 43 browser groups.
+The narrow Bible handoff preserves independent parsing and normal admission.
+The derived head exception applies only to the two Day pages; authored inline
+scripts remain refused and stricter header CSP retains external fallback.
+
+Its eight cold HTTP/2 samples nevertheless fail: baseline/inline LCP medians
+are 4.574/9.726 s on 2026-08-02 and 4.586/9.710 s on 2027-09-05. Directed data
+finishes by 2.52 s, but the fifteen normal scripts are discovered serially
+and the controller finishes near 9.58 s. There is no Proper-monolith fallback
+or duplicate body. Exact reader parity and all 108 response identities pass,
+with no diagnostics or foreign browsers at sample boundaries; run, analysis
+and teardown pass. An excluded first baseline preserves its process-census
+harness failure and the bounded parsing repair. The candidate stays outside
+the branch, with both performance thresholds and the 101-year hold intact.
+[Chromium's scanner source](https://chromium.googlesource.com/chromium/src.git/+/c5542734590fdc1427ddf14171904c7a7ea13b0d/third_party/blink/renderer/core/html/parser/html_preload_scanner.cc)
+supports a CSP-meta discovery explanation when its experimental preloading
+feature is disabled; that installed-browser causal attribution is not yet
+isolated. One scratch revision will derive native preloads for exactly the
+existing Day body scripts, preserving execution order, attributes and
+priorities. Runtime/kernel/table bytes remain fixed; complete HTML growth,
+browser behavior and measured value require fresh evidence.
+
 ### Verification and completion gates
 
 The integrated 2026-10-20 source checkpoint passes 80 focused source tests,
