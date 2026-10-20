@@ -110,6 +110,10 @@
     margin-bottom: 0.18in;
     break-inside: auto;
   }
+  .reader-instrument .reader-document .study-coverage-row,
+  .reader-instrument .reader-document .study-event {
+    break-inside: avoid;
+  }
   .reader-instrument .reader-document :is(.study-calendar, .study-coverage, .study-choices) h2,
   .reader-instrument .reader-document .study-event h3 {
     break-after: avoid;

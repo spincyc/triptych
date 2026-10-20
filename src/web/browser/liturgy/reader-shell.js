@@ -2,11 +2,18 @@
 'use strict';
 
 (function (root) {
+  const FOCUSABLE_SELECTOR = '[data-reader-close], button:not([disabled]), ' +
+    'input:not([disabled]), select:not([disabled]), textarea:not([disabled]), ' +
+    'a[href], [tabindex]:not([tabindex="-1"])';
+
   function focusable(surface) {
-    return surface.querySelector(
-      '[data-reader-close], button:not([disabled]), input:not([disabled]), ' +
-      'select:not([disabled]), textarea:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])'
-    );
+    return surface.querySelector(FOCUSABLE_SELECTOR);
+  }
+
+  function visibleTabStops(surface) {
+    return Array.from(surface.querySelectorAll(FOCUSABLE_SELECTOR)).filter(function (node) {
+      return !node.hidden && node.getClientRects().length > 0;
+    });
   }
 
   // What the browser gives a MODAL dialog by itself (`dialog:modal`: fixed to
@@ -40,6 +47,7 @@
     let sections = [];
     let loci = [];
     let updateQueued = false;
+    let visualRevealTimer = null;
 
     function currentSection() {
       if (!sections.length) return null;
@@ -146,9 +154,37 @@
       });
       if (!target) return false;
       target.scrollIntoView({ block: 'start', behavior: 'auto' });
+      revealAtVisualZoom(target);
       currentLocation = held.id;
       markCurrent();
       return true;
+    }
+
+    // Pinch zoom exposes only part of the layout viewport. A shallow Contents
+    // target can satisfy scrollIntoView in layout coordinates while its heading
+    // remains just below the visual viewport.
+    function revealAtVisualZoom(target) {
+      if (visualRevealTimer) clearTimeout(visualRevealTimer);
+      // URL persistence may restore the same target after a Contents click.
+      // Wait for that restoration and the layout scroll to settle so one jump
+      // receives one visual-viewport adjustment.
+      visualRevealTimer = setTimeout(function () {
+        visualRevealTimer = null;
+        if (!target.isConnected) return;
+        const viewport = window.visualViewport;
+        if (!viewport || viewport.scale <= 1) return;
+        const heading = target.querySelector(':scope > h2, :scope > h3') || target;
+        const box = heading.getBoundingClientRect();
+        // Deep jumps already have a layout scroll in progress. Adjusting them
+        // mid-animation compounds that scroll; only the first-screen targets
+        // can satisfy layout visibility without entering the pinch viewport.
+        if (box.top + window.scrollY > window.innerHeight) return;
+        const top = viewport.offsetTop;
+        const bottom = top + viewport.height;
+        if (box.top >= top + 8 && box.top < bottom - 8) return;
+        const delta = box.top - (top + viewport.height * 0.55);
+        window.scrollBy({ top: delta, behavior: 'instant' });
+      }, 200);
     }
 
     function markCurrent() {
@@ -297,6 +333,7 @@
         button.addEventListener('click', function () {
           close({ restoreScroll: false, restoreFocus: false });
           item.element.scrollIntoView({ block: 'start', behavior: 'auto' });
+          revealAtVisualZoom(item.element);
           item.element.focus({ preventScroll: true });
           currentLocation = item.id;
           markCurrent();
@@ -312,6 +349,22 @@
       button.addEventListener('click', function () { open(name, button); });
     });
     surfaces.forEach(function (surface) {
+      surface.addEventListener('keydown', function (event) {
+        if (!openModal || openName !== surface.dataset.readerSurface || event.key !== 'Tab') return;
+        const stops = visibleTabStops(surface);
+        if (!stops.length) return;
+        const first = stops[0];
+        const last = stops[stops.length - 1];
+        if (event.shiftKey && (document.activeElement === first ||
+            !surface.contains(document.activeElement))) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && (document.activeElement === last ||
+            !surface.contains(document.activeElement))) {
+          event.preventDefault();
+          first.focus();
+        }
+      });
       surface.querySelectorAll('[data-reader-close]').forEach(function (button) {
         button.addEventListener('click', function () { close(); });
       });

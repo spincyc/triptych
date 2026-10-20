@@ -130,6 +130,9 @@
     margin: 0 0 0.08in;
     break-inside: auto;
   }
+  .reader-instrument .reader-document .compare-side:not([data-compare-status="text-held"]) {
+    break-inside: avoid;
+  }
   .reader-instrument .reader-document .compare-status {
     border-color: #222;
     background: transparent;

@@ -115,8 +115,8 @@ EXAMPLES = {
             "tools/mass-propers structure --out build/example-propers",
             (
                 "postconciliar: 619 masses, 3626 citations",
-                "roman-1962: 491 masses, 4370 citations",
-                "roman-pre-1955: 489 masses, 4305 citations",
+                "roman-1962: 491 masses, 4375 citations",
+                "roman-pre-1955: 489 masses, 4310 citations",
                 "  -> build/example-propers/structure/propers/postconciliar.json",
                 "  -> build/example-propers/structure/propers/search/postconciliar.json",
                 "  -> build/example-propers/structure/propers/roman-1962.json",
@@ -124,7 +124,7 @@ EXAMPLES = {
                 "  -> build/example-propers/structure/propers/roman-pre-1955.json",
                 "  -> build/example-propers/structure/propers/search/roman-pre-1955.json",
                 "  -> build/example-propers/structure/propers/index.json",
-                "  Latin withheld from publication: 1789",
+                "  Latin withheld from publication: 1793",
                 "  refused: 24",
             ),
             "WRITES one structure and search file per missal plus the manifest. --out here is untracked; the default writes tracked src/web/data",
@@ -133,8 +133,8 @@ EXAMPLES = {
             "tools/mass-propers structure --check",
             (
                 "postconciliar: 619 masses, 3626 citations",
-                "roman-1962: 491 masses, 4370 citations",
-                "roman-pre-1955: 489 masses, 4305 citations",
+                "roman-1962: 491 masses, 4375 citations",
+                "roman-pre-1955: 489 masses, 4310 citations",
                 "  7 tracked file(s) are current",
             ),
             "writes nothing: exits 1 naming each tracked file the sources no longer produce. The calendar-Mass check target runs this",
@@ -144,8 +144,8 @@ EXAMPLES = {
         Example(
             "tools/mass-propers census",
             (
-                "# roman-pre-1955 English orations: 1154 slots appointed, 107 public-available, 0 held rights-restricted, 1047 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
-                "# roman-1962 English orations: 1202 slots appointed, 120 public-available, 0 held rights-restricted, 1082 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# roman-pre-1955 English orations: 1158 slots appointed, 107 public-available, 0 held rights-restricted, 1051 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# roman-1962 English orations: 1206 slots appointed, 120 public-available, 0 held rights-restricted, 1086 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
                 "# postconciliar English orations: 330 slots appointed, 113 public-available, 0 held rights-restricted, 217 ledgered untranslated, 0 unaccounted; 3 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
                 "# postconciliar Latin recension: 326 unique non-scriptural slots, 0 bodies resident; 0 explicitly antecedent substitutes, 0 other bodies with antecedent-relation metadata, 0 without per-slot Latin relation; direct target-edition artifact attestation not-represented",
                 "<!-- census:begin — derived; edit nothing between these markers -->",
