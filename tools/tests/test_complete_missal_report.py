@@ -115,6 +115,7 @@ def fixture_reports() -> tuple[dict, dict, dict]:
                     {
                         "count": 3,
                         "key": "witness-gap",
+                        "label": "A witness is not held",
                         "kind": "witness-gap",
                         "state": "unavailable",
                     }
@@ -126,6 +127,7 @@ def fixture_reports() -> tuple[dict, dict, dict]:
                     {
                         "count": 1,
                         "key": "witness-gap",
+                        "label": "A witness is not held",
                         "kind": "witness-gap",
                         "lang": "en",
                         "state": "unavailable",
@@ -133,6 +135,7 @@ def fixture_reports() -> tuple[dict, dict, dict]:
                     {
                         "count": 2,
                         "key": "witness-gap",
+                        "label": "A witness is not held",
                         "kind": "witness-gap",
                         "lang": "la",
                         "state": "unavailable",
@@ -557,10 +560,12 @@ class CompleteMissalReportTests(unittest.TestCase):
         pre_unknown = pre_1955["textual"]["unknown_slots"]
         roman_unknown = families["roman-1962"]["textual"]["unknown_slots"]
         post_unknown = families["postconciliar"]["textual"]["unknown_slots"]
-        self.assertEqual(pre_unknown["lower_bound"], 7)
-        self.assertEqual(roman_unknown["lower_bound"], 7)
+        self.assertEqual(pre_unknown["lower_bound"], 6)
+        self.assertEqual(roman_unknown["lower_bound"], 6)
         self.assertEqual(post_unknown["lower_bound"], 0)
-        self.assertEqual(len(pre_unknown["unresolved_common_set_selections"]), 7)
+        # The 1962 page-image C 2 mark resolves Stanislaus's shared Common
+        # selection in both 1962 and the inherited pre-1955 source model.
+        self.assertEqual(len(pre_unknown["unresolved_common_set_selections"]), 6)
         for row in pre_unknown["unresolved_common_set_selections"]:
             self.assertEqual(set(row), {"mass", "target", "group", "candidates"})
 
@@ -766,6 +771,7 @@ class CompleteMissalReportTests(unittest.TestCase):
                 {
                     "count": 3,
                     "key": "witness-gap",
+                    "label": "A witness is not held",
                     "kind": "rights-unresolved",
                     "state": "unresolved",
                 }

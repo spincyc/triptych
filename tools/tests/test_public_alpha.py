@@ -1994,6 +1994,7 @@ class PublicAlphaTest(unittest.TestCase):
         safe_rows = [
             {
                 "key": "text-rights-withheld",
+                "label": "Approved English text is not published here.",
                 "lang": "en",
                 "count": 2,
                 "state": "rights-restricted",
@@ -2001,6 +2002,7 @@ class PublicAlphaTest(unittest.TestCase):
             },
             {
                 "key": "text-rights-unresolved",
+                "label": "An English witness is still under review.",
                 "lang": "la",
                 "count": 1,
                 "state": "unresolved",
@@ -2024,9 +2026,20 @@ class PublicAlphaTest(unittest.TestCase):
             self.tool.validate_liturgical_public_data(self.root / structure)
 
         self.assertIn(
-            "must contain exactly key, lang, count, state and kind",
+            "must contain exactly key, label, lang, count, state and kind",
             str(failure.exception),
         )
+
+        unsafe = dict(safe_rows[0])
+        unsafe["label"] = "Permission details: src/private/rights-record"
+        self.write(
+            structure,
+            (json.dumps({"language_absences": [unsafe]}) + "\n").encode(),
+        )
+        with self.assertRaisesRegex(
+            self.tool.ReleaseError, "absence label must be concise public prose"
+        ):
+            self.tool.validate_liturgical_public_data(self.root / structure)
 
     def test_verifier_rejects_copied_pdf_without_owning_catalog_link(self) -> None:
         self.authorize_current_inputs()

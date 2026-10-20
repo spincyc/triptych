@@ -158,31 +158,37 @@ artifacts = [
 
 [[absences]]
 key = "approved-english-publication-restriction"
+label = "Approved English text is not published here"
 kind = "rights-withheld"
 what = "The approved English text is ICEL's and its exact official source remains registered as restricted provenance. ICEL's standing permission may support a qualifying free, noncommercial website display under all six stated conditions, but it does not authorize this tracked corpus, public Git, downloadable data, or PDFs. No text join or turn metadata is retained on those public surfaces unless a separate distribution basis is recorded."
 
 [[absences]]
 key = "official-exemplar-not-carried"
+label = "The official exemplar has no tracked text payload here"
 kind = "witness-gap"
 what = "Sixteen modelled elements have registered official exemplars but no tracked payload this generator may join to them: Penitential Act I, the twelve source-grounded children of Eucharistic Prayer I, and Eucharistic Prayers II-IV. These are five fixed formulary spans represented at their received boundaries, not sixteen independent source acquisitions. This is a payload and currentness gap, not a claim that the words are unavailable at their official source. The registered exemplars remain remote artifacts, and the Prayer II-IV witnesses predate the 2013 insertion of Saint Joseph. A later import must establish the exact target state and its per-surface distribution basis before any words enter this public corpus. Until then each element records the registered exemplar without pretending it has been transcribed, updated, or cleared for Git distribution."
 
 [[absences]]
 key = "proper-text-outside-ordinary"
+label = "The appointed text belongs to the day’s formulary"
 kind = "outside-layer"
 what = "Six variable texts do not belong to this invariant frame: the Collect, Responsorial Psalm, Alleluia or Lenten acclamation, Prayer over the Offerings, Preface, and Prayer after Communion. Their assignments and any text this project may serve belong to the Propers and Scripture layers. Empty Ordinary elements preserve their seats in the Order of Mass; they do not assert that the appointed text is missing from the day or from the rite."
 
 [[absences]]
 key = "no-fixed-text"
+label = "This part of the rite has no fixed text"
 kind = "not-applicable"
 what = "Three frame elements have no invariant recitation for this layer to carry: the Homily, the locally supplied intentions of the Universal Prayer, and the veneration of the altar and departure. Their elements preserve an action or location in the Order of Mass. No textual witness could make those three into fixed Ordinary text, so their emptiness is structural rather than an acquisition or rights gap."
 
 [[absences]]
 key = "element-spans-mixed-availability"
+label = "Parts of this element have different text availability"
 kind = "model-gap"
 what = "Three elements combine parts with different availability and cannot honestly be represented by one undivided text block: the prayers over the bread and chalice combine a Priest's prayer with the people's response, and the Communion element combines the Priest's private Communion, the public distribution formula, and intervening actions. The available official excerpts do not supply one complete tracked payload for any of these composite spans. Carrying only a public response would make a partial element look complete; the elements must be split at the Missal's own boundaries before their independently sourced parts can be served."
 
 [[absences]]
 key = "priest-prayer-said-quietly"
+label = "No exact exemplar of this quiet prayer is held here"
 kind = "no-exemplar"
 what = "A prayer the Priest says quietly, for which this project holds no exact exemplar, and nobody has refused anything. Six elements are empty for this reason: the mingling of water and wine at n. 24, In spiritu humilitatis at n. 26, the washing of hands at n. 28, the commingling formula at n. 129, the Priest's two prayers of private preparation at n. 131, and the purification at n. 137. The gap follows the bounds of the available official excerpts, which do not supply these inaudible prayers. What would close it is an authoritative complete Order of Mass exemplar whose exact target state and per-surface distribution basis are recorded. Until one is registered these elements stay empty, and the reason is a page nobody here has read rather than a permission nobody has given."
 
@@ -196,36 +202,43 @@ what = "A prayer the Priest says quietly, for which this project holds no exact 
 
 [[absences]]
 key = "editio-typica-new-matter"
+label = "New target wording has no publication basis here"
 kind = "rights-withheld"
 what = "The reform's own new matter, and this is the class for which the rights refusal is the true reason. The Latin of the postconciliar Missal is a work of the Holy See, first published in 1969, revised in 1975 and 2002, with the emended reprint of 2008; it is a post-1929 foreign work, protected in the United States, and this project has established no distribution basis for it. For these thirteen elements no public-domain antecedent establishes the wording either, so nothing may be carried from an older book instead. This repository's tracked study of this Order of Mass states, at the loci its endnotes give, that the two Penitential Act forms II and III are new compositions in their present arrangement; that the two Benedictus es prayers over the bread and the chalice are new compositions which replaced the medieval offertory prayers Suscipe sancte Pater and Offerimus tibi Domine; that Prayers II, III and IV are twentieth-century compositions, Prayer II being an adaptation which does not print the ancient anaphora it is built on; and that the acclamation after the consecration is wholly new. Five more are recastings of ancient matter, where the older prayer is public domain and is NOT this element's text: Qui pridie adds quod pro vobis tradetur, removes mysterium fidei from the chalice form, and replaces the older concluding command; the mingling formula is a shortened form of a Roman Christmas collect and the older witness carries an opening clause and a full conclusion the Missal deleted, as visually controlled by passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-303; the washing of hands prints a shortened verse of a different psalm from the one the older Order recited; the invitation to Communion is the older Ecce Agnus Dei joined to the beatitude of Revelation 19:9, which the study places among the substantially changed; and the two-word Communion formula with the communicant's Amen replaces the longer formula the older Order gave the priest alone. What is refused is the Missal's own composed or recast wording. Nothing here refuses the ancient prayers underneath the recastings, which are public domain and are not what these elements print."
 
 [[absences]]
 key = "antecedent-held-not-carried"
+label = "The older witness does not fit this element’s structure"
 kind = "witness-gap"
 what = "One ancient text this project holds but cannot carry onto the element as modelled, and no rightsholder has refused any of it. The 1861 witness sets the Kyrie as three rows of three, the ninefold form, while this Missal prints six acclamations, two to each invocation. Joining all three witness rows would print nine acclamations under an element of six; dropping three to fit would edit the witness. This is an arrangement gap, not permission and not an invitation to reconstruct the target."
 
 [[absences]]
 key = "antecedent-diverges-at-named-words"
+label = "The older witness differs at the target words"
 kind = "rights-withheld"
 what = "Three elements have public-domain antecedents in the 1861 Cummiskey hand missal and the 1862 Pustet altar book, but those antecedents are NOT the target elements' words. The target's altered wording is Holy See post-1929 matter for which this project has established no distribution basis. At the prayer for peace the target quotation reads peccata nostra where both antecedents read peccata mea. The target quotation stops at digneris inside a running sentence, and its passage record reports no ending: whether the target carries the antecedents' qui vivis conclusion is UNTESTED, not an established omission. At the private preparation the target names Perceptio Corporis et Sanguinis tui where both antecedents read Perceptio Corporis tui; the first alternative prayer's body is separately untested. At Libera nos the verified target passage record reports that the intercession of the saints is absent and exspectantes beatam spem et adventum Salvatoris nostri Iesu Christi is added, while both antecedents print the older form. The 1862 readings are controlled by passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-347, passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-348, and passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-349. No further witness of the older text can establish the target's changed wording, and none of the antecedent bodies is carried here."
 
 [[absences]]
 key = "no-antecedent-witness"
+label = "No historical witness establishes the target wording"
 kind = "witness-gap"
 what = "Three elements have no antecedent witness that establishes their target wording, which is a witness boundary and not permission. The Apostles' Creed is not an element of the Tridentine or 1962 Order of Mass, so neither the 1861 Cummiskey nor the 1862 Pustet Ordo prints it. The fraction and commingling formula is printed by the 1861 inside an English rubric with no facing Latin; the checked 1862 leaf shows the older formula, but no target collation yet establishes an identity. The n. 128 invitation Offerte vobis pacem is new to this Order: the older books instead print the distinct clerical pax Pax tecum, and their words cannot be transferred. The 1862 page evidence is passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-347 and passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-348."
 
 [[absences]]
 key = "element-spans-mixed-matter"
+label = "This element mixes inherited and changed wording"
 kind = "model-gap"
 what = "Seven elements combine inherited and changed matter inside a boundary whose complete target configuration an older witness cannot express. The Greeting carries four forms, of which the 1861 holds one; Penitential Act I carries an invitation the witness lacks and a Confiteor printed there only by incipit; the Gospel dialogue differs in both announcement and conclusion; the Blessing carries simple, solemn or prayer-over-the-people, and pontifical regimes; and the Dismissal combines ancient Ite missa est with three formulas added in 2008. Inside Eucharistic Prayer I, Communicantes adds Saint Joseph, makes part of its saints list optional, and has proper forms the antecedent lacks; Supplices reads target perferri against antecedent praeferri and makes its older conclusion optional. Each remains text-free until its target-owned and inherited parts can be modelled without silently editing the antecedent. Libera nos is not in this class because its ancient embolism itself differs; the Pax is already split at nn. 127 and 128."
 
 [[absences]]
 key = "not-a-text"
+label = "This structural element has no words of its own"
 kind = "not-applicable"
 what = "These twelve elements carry no words of their own at this layer, so nothing is withheld and nothing is missing; the key exists because calling their emptiness a rights refusal would turn a modelling fact into a claim that the rite omits something. Eight are frame markers for an action or a chant - the entrance and the veneration of the altar, the first and second readings, the responsorial psalm, the Alleluia or Lenten acclamation, the homily, the universal prayer whose n. 20 is one line and no formulary, and the veneration and departure - and six of the twelve carry no Latin incipit at all. Four are propers of the day, whose text belongs to the propers layer and not to this invariant frame: the Collect, the Prayer over the Offerings, the Preface, and the Prayer after Communion. The Prefaces are the one row here with mixed matter underneath: the constitution's own two categories are taken from the more ancient tradition of the Roman Church or newly composed, the two must not be conflated in either direction, and whoever opens that corpus must classify prayer by prayer rather than treat it as one thing."
 
 [[absences]]
 key = "appointed-text-printed-with-formulary"
+label = "The appointed text is printed with the day’s formulary"
 kind = "rights-unresolved"
 what = "A text the day's formulary itself appoints and prints, not the invariant frame: on Pentecost Sunday, Mass during the Day, the Missal directs 'Praefatio: De mysterio Pentecostes' and prints that Preface with the formulary (artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944, artifact PDF p. 266), and directs the deacon or priest to dismiss the people with the paschal Ite, missa est with a double Alleluia and its doubled response (artifact PDF p. 267); read in the artifact's rendered text on 2026-10-19 against a local copy whose sha256 matched the record. The registered artifact is restricted, no public-domain antecedent has been collated against either text, and whether this surface may publish their words has not been established. Nothing is invented in their place and no other Preface or dismissal is shown instead."
 

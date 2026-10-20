@@ -688,6 +688,129 @@ state = "unenumerated"
             "roman-1962.temporal.pentecost:preface:1",
         })
 
+    def test_1962_source_inventoried_proper_joins_stay_one_to_one(self):
+        path = ROOT / "src/sources/inventories/missal-expected-targets-v1.toml"
+        inventory = tomllib.loads(path.read_text(encoding="utf-8"))
+        by_id = {row["id"]: row for row in inventory["targets"]}
+        expected = {
+            "roman-1962-temporal-pre-holy-week-slots": 329,
+            "roman-1962-temporal-lent-source-forms-slots": 341,
+            "roman-1962-temporal-easter-through-last-sunday": 548,
+            "roman-1962-sanctoral-printed-slots": 1934,
+            "roman-1962-body-commons-slots": 205,
+        }
+        joined = [row for row in inventory["targets"]
+                  if row["slice_id"] in expected and row.get("calendar_proper_name")]
+        self.assertEqual(Counter(row["slice_id"] for row in joined), expected)
+        calendar_units = set()
+        for row in joined:
+            parent = by_id[row["parent_id"]]
+            self.assertEqual((row["identity_state"], parent["identity_state"], parent["kind"]),
+                             ("established", "established", "form"))
+            self.assertTrue(row.get("source_record") and row.get("source_locus"))
+            unit_key = (parent["calendar_mass_key"], parent.get("form_id") or "main",
+                        row["calendar_proper_name"])
+            self.assertNotIn(unit_key, calendar_units,
+                             "two independently inventoried slots cannot borrow one held Proper")
+            calendar_units.add(unit_key)
+
+        propers = tool("mass-propers")
+        document = propers.load_calendar(ROOT / "src/sources/calendars", "roman-1962")
+        masses = [mass for _, mass in propers.masses_of(document)]
+        current = {row["id"]: row["state"] for row in coverage.expectations(
+            path, "roman-1962", masses)["targets"]}
+        self.assertEqual(Counter(current[row["id"]] for row in joined),
+                         {"represented": 2950, "not-represented": 407})
+        gap_id = "roman-1962:sanctoral-form:p511-l46:slot:p511-l62:secret"
+        self.assertEqual(current[gap_id], "not-represented")
+
+        damaged = copy.deepcopy(masses)
+        by_key = {mass["key"]: mass for mass in damaged}
+        for key, name in (("advent-1", "Introit"),
+                          ("comm-s-saturnini-martyris", "Collect"),
+                          ("commune-summorum-pontificum", "Introit")):
+            mass = by_key[key]
+            mass["propers"] = [row for row in mass["propers"] if row["name"] != name]
+        ember = by_key["advent-ember-saturday"]
+        longer = next(form for form in ember["forms"] if form["id"] == "longer")
+        shorter = next(form for form in ember["forms"] if form["id"] == "shorter")
+        self.assertTrue(any(row["name"] == "Introit" for row in shorter["propers"]))
+        longer["propers"] = [row for row in longer["propers"] if row["name"] != "Introit"]
+        # A source-printed Sanctoral Secret missing from the held Mass becomes
+        # structurally represented if that exact role is supplied.
+        by_key["s-bibianae-virginis-martyris"]["propers"].append({"name": "Secret"})
+        changed = {row["id"]: row["state"] for row in coverage.expectations(
+            path, "roman-1962", damaged)["targets"]}
+        self.assertEqual(changed[gap_id], "represented")
+        for target_id in (
+            "roman-1962.temporal.advent-1:introit:1",
+            "roman-1962:sanctoral-form:p509-l16:slot:p509-l22:collect",
+            "roman-1962:body:common-popes:introit:1",
+            "roman-1962.temporal.advent-ember-saturday-long:introit:1",
+        ):
+            self.assertEqual((current[target_id], changed[target_id]),
+                             ("represented", "not-represented"))
+
+    def test_1962_effective_sanctoral_repairs_join_the_printed_slots(self):
+        propers = tool("mass-propers")
+        document = propers.calendar_structure(
+            ROOT / "src/sources/calendars", "roman-1962", propers.book_tokens())
+        masses = {mass["key"]: mass for mass in document["masses"]}
+        joins = {
+            "roman-1962:sanctoral-form:p511-l74:slot:p512-l44:alleluia":
+                ("s-francisci-xaverii-confessoris", "Alleluia", "James 1:12"),
+            "roman-1962:sanctoral-form:p520-l55:slot:p521-l10:alleluia":
+                ("s-luciae-virginis-martyris", "Alleluia", "Psalms 44:3"),
+            "roman-1962:sanctoral-form:p520-l55:slot:p521-l57:communion-antiphon":
+                ("s-luciae-virginis-martyris", "Communion", "Psalms 118:161-162"),
+            "roman-1962:sanctoral-form:p564-l51:slot:p564-l58:collect":
+                ("ss-perpetuae-felicitatis-martyrum",
+                 "Collect (Pro pluribus Martyribus quae non sint Virgines)", None),
+            "roman-1962:sanctoral-form:p564-l51:slot:p564-l66:secret":
+                ("ss-perpetuae-felicitatis-martyrum",
+                 "Secret (Pro pluribus Martyribus quae non sint Virgines)", None),
+            "roman-1962:sanctoral-form:p589-l34:slot:p589-l40:collect":
+                ("ss-soteris-caii-paparum-martyrum", "Collect (in plurali)", None),
+            "roman-1962:sanctoral-form:p590-l75:slot:p591-l14:secret":
+                ("s-fidelis-sigmaringa-martyris", "Secret (Pro Martyre tantum)", None),
+            "roman-1962:sanctoral-form:p590-l75:slot:p591-l21:postcommunion":
+                ("s-fidelis-sigmaringa-martyris", "Postcommunion (Pro Martyre tantum)", None),
+            "roman-1962:sanctoral-form:p601-l74:slot:p602-l9:secret":
+                ("s-stanislai-episcopi-martyris", "Secret (Item altera secreta)", None),
+            "roman-1962:sanctoral-form:p601-l74:slot:p602-l15:postcommunion":
+                ("s-stanislai-episcopi-martyris", "Postcommunion (Item altera postcommunio)", None),
+        }
+        states = {row["id"]: row["state"] for row in coverage.expectations(
+            ROOT / "src/sources/inventories/missal-expected-targets-v1.toml",
+            "roman-1962", document["masses"])["targets"]}
+        for target_id, (mass_key, proper_name, citation) in joins.items():
+            with self.subTest(target=target_id):
+                self.assertEqual(states[target_id], "represented")
+                held = [proper for proper in masses[mass_key]["propers"]
+                        if proper["name"] == proper_name]
+                self.assertEqual(len(held), 1)
+                if citation:
+                    self.assertEqual([row["ref"] for row in held[0]["citations"]], [citation])
+        published = document["coverage"]["expected_inventory"]
+        self.assertEqual(published["target_states"],
+                         {"represented": 4005, "not-represented": 179, "unresolved": 3806})
+        self.assertEqual({row["id"] for row in published["not_represented"]} & joins.keys(), set())
+        self.assertIn("roman-1962:sanctoral-form:p518-l3:slot:p518-l21:collect",
+                      {row["id"] for row in published["not_represented"]})
+
+    def test_duplicate_held_proper_does_not_resolve_a_single_source_slot(self):
+        slot = ('\n[[targets]]\nid="slot"\nslice_id="fixed"\nkind="text-slot"\n'
+                'identity_state="established"\nparent_id="feast"\n'
+                'calendar_proper_name="Introit"\n')
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "inventory.toml"
+            path.write_text(self.inventory().replace('kind = "celebration"',
+                                                     'kind = "form"\nform_id = "main"') + slot)
+            mass = {"key": "feast", "propers": [{"name": "Introit"}, {"name": "Introit"}]}
+            states = {row["id"]: row["state"] for row in coverage.expectations(
+                path, "roman-1962", [mass])["targets"]}
+        self.assertEqual(states, {"feast": "represented", "slot": "not-represented"})
+
     def test_source_calendar_keeps_missing_christmas_commemoration_visible(self):
         propers = tool("mass-propers")
         document = propers.load_calendar(ROOT / "src/sources/calendars", "roman-1962")
@@ -703,7 +826,9 @@ state = "unenumerated"
         self.assertEqual([row["id"] for row in missing],
                          ["roman-1962:commemoration:1962-12-25-comm"])
         published = coverage.published_expectations(report)
-        self.assertEqual([row["id"] for row in published["not_represented"]],
+        self.assertEqual(len(published["not_represented"]), 408)
+        self.assertEqual([row["id"] for row in published["not_represented"]
+                          if row["slice_id"] == "roman-1962-universal-fixed-calendar"],
                          ["roman-1962:commemoration:1962-12-25-comm"])
 
     def test_published_inventory_keeps_exact_totals_without_target_rows(self):

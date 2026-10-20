@@ -212,7 +212,8 @@ class DayReaderIntegrationTests(unittest.TestCase):
             self.assertIn(token, source)
         self.assertNotIn("innerHTML", source)
         self.assertNotIn("navigator.geolocation", source)
-        self.assertNotIn("localStorage", source)
+        # Core choices now have a scoped, explicit-Apply preference path;
+        # the real-browser preference test owns its write and fallback rules.
         self.assertNotIn("prototypes/reader-shell", source)
         self.assertNotIn("fixture", source.lower())
 

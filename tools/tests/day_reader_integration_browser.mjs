@@ -2064,8 +2064,8 @@ async function runAssertions(cdp, base) {
       if (is1962) {
         assert.equal(day.ids.indexOf('ordinary-element/canon/communicantes-pentecoste') + 1,
           day.ids.indexOf('ordinary-element/canon/communicantes-continuatio'));
-        assert.doesNotMatch(day.text, /Withheld under “proper-canon-form-not-held”/);
-        assert.match(day.text, /Withheld under “communicantes-continuation-english-lacks-1962-clause”/);
+        assert.doesNotMatch(day.text, /The appointed proper Canon form is not held here \(witness gap\)/);
+        assert.match(day.text, /Held English lacks the 1962 Saint Joseph clause \(witness gap\)/);
         const preface = await evaluate(cdp, `(() => {
           const node = document.querySelector('[data-semantic-event-id="ordinary-element/praefatio/praefatio-de-spiritu-sancto"]');
           const mark = node && node.querySelector('.ordinary-conditional');
@@ -2081,7 +2081,7 @@ async function runAssertions(cdp, base) {
         assert.match(preface.note[0], /vigil of Pentecost/);
         assert.ok(preface.opening > 40, JSON.stringify(preface));
       } else {
-        assert.match(day.text, /Withheld under “proper-canon-form-not-held”/);
+        assert.match(day.text, /The appointed proper Canon form is not held here \(witness gap\)/);
       }
     }
     await navigateCandidate(cdp, base, STATES.pentecostPostDefaultMissal);
@@ -2097,15 +2097,15 @@ async function runAssertions(cdp, base) {
     assert.equal(await evaluate(cdp, 'dayReaderDebug.state.languages.ordinary'), 'la');
     const unavailableLatin = await evaluate(cdp,
       'document.querySelector("#reader-document").innerText');
-    assert.match(unavailableLatin, /Withheld under “no-facing-latin”/);
+    assert.match(unavailableLatin, /The 1861 witness prints this block only in English \(witness gap\)/);
     // 2026-10-19 (C2 G6): both not-in-the-1962-ordo orations are excluded,
     // so that reason no longer stands at any emitted element.
-    assert.doesNotMatch(unavailableLatin, /Withheld under “not-in-the-1962-ordo”/);
+    assert.doesNotMatch(unavailableLatin, /This older oration is outside the 1962 Ordinary \(witness gap\)/);
     // 2026-10-19 (C2 Preface directions): the Sunday's printed Trinity
     // Preface is appointed, so no typed "appointment not established" stands.
-    assert.doesNotMatch(unavailableLatin, /Withheld under “appointment-not-established”/);
+    assert.doesNotMatch(unavailableLatin, /This day’s Ordinary appointment is not established \(model gap\)/);
     assert.match(unavailableLatin, /Qui cum unigenito Filio tuo/);
-    assert.match(unavailableLatin, /Withheld under “witness-own-english”/);
+    assert.match(unavailableLatin, /The 1861 lay witness supplies its own English heading or rubric \(witness gap\)/);
     assert.equal(await evaluate(cdp, 'document.querySelector("#coverage-notice").hidden'), false);
     await navigateCandidate(cdp, base, STATES.partial);
     assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');

@@ -297,6 +297,7 @@ async function metrics(cdp) {
     const locus = document.querySelector('[data-reader-locus]');
     const currentRow = document.querySelector('[data-reader-contents] [aria-current="location"]');
     const contentsScroller = document.querySelector('[data-reader-surface="contents"] [data-reader-contents]');
+    const firstClaim = reading.querySelector('.proper .unit-claim');
     const text = reading.querySelector('.passage, .composed');
     const liturgical = reading.querySelector('.proper, .ordinary-element, .candidate-entry, .candidate-limitation');
     const division = reading.querySelector('.ordinary-division');
@@ -326,6 +327,54 @@ async function metrics(cdp) {
     const locusRect = locus && !locus.hidden ? locus.getBoundingClientRect() : null;
     const obscured = locusRect ? [...reading.querySelectorAll('.passage, .composed')]
       .map(node => overlaps(locusRect, node.getBoundingClientRect())).filter(area => area > 0) : [];
+    // Block rectangles include paragraphs already passing behind the accepted
+    // opaque masthead. Probe character rectangles and compare paint hit targets
+    // with only the locus hidden to isolate any newly covered reading glyphs.
+    const glyphObscuration = (() => {
+      const result = { overlappingGlyphs: 0, newlyObscuredGlyphs: 0,
+        alreadyBehindMasthead: 0 };
+      if (!locusRect) return result;
+      const masthead = document.querySelector('.reader-masthead');
+      const samples = [];
+      const range = document.createRange();
+      for (const block of reading.querySelectorAll('.passage, .composed')) {
+        if (!overlaps(locusRect, block.getBoundingClientRect())) continue;
+        const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT);
+        let node;
+        while ((node = walker.nextNode())) {
+          if (!node.nodeValue.trim()) continue;
+          range.selectNodeContents(node);
+          if (![...range.getClientRects()].some(rect => overlaps(locusRect, rect))) continue;
+          for (let index = 0; index < node.length; index += 1) {
+            if (!node.nodeValue[index].trim()) continue;
+            range.setStart(node, index);
+            range.setEnd(node, index + 1);
+            for (const rect of range.getClientRects()) {
+              if (!rect.width || !rect.height || !overlaps(locusRect, rect)) continue;
+              const x = (Math.max(rect.left, locusRect.left) + Math.min(rect.right, locusRect.right)) / 2;
+              const y = (Math.max(rect.top, locusRect.top) + Math.min(rect.bottom, locusRect.bottom)) / 2;
+              samples.push({ block, x, y, before: document.elementFromPoint(x, y) });
+            }
+          }
+        }
+      }
+      result.overlappingGlyphs = samples.length;
+      const priorVisibility = locus.style.visibility;
+      try {
+        locus.style.visibility = 'hidden';
+        for (const sample of samples) {
+          const after = document.elementFromPoint(sample.x, sample.y);
+          if (sample.block.contains(after) && !sample.block.contains(sample.before)) {
+            result.newlyObscuredGlyphs += 1;
+          } else if (masthead && masthead.contains(after)) {
+            result.alreadyBehindMasthead += 1;
+          }
+        }
+      } finally {
+        locus.style.visibility = priorVisibility;
+      }
+      return result;
+    })();
     const actionButtons = actions ? [...actions.querySelectorAll('button')].map(node => {
       const label = node.querySelector('.action-label');
       const labelStyle = label ? getComputedStyle(label) : null;
@@ -356,7 +405,8 @@ async function metrics(cdp) {
       reading: rect(reading), identity: rect(identity), actions: rect(actions),
       locus: { hidden: !locus || locus.hidden, text: locus ? locus.textContent.trim() : '',
         box: rect(locus && !locus.hidden ? locus : null), obscuredTextCount: obscured.length,
-        obscuredTextArea: Math.round(obscured.reduce((sum, area) => sum + area, 0) * 100) / 100 },
+        obscuredTextArea: Math.round(obscured.reduce((sum, area) => sum + area, 0) * 100) / 100,
+        glyphObscuration },
       currentLocation: currentRow ? currentRow.dataset.readerLocation : null,
       contentsCurrent: currentRow ? {
         id: currentRow.dataset.readerLocation, label: currentRow.textContent.trim(),
@@ -371,6 +421,7 @@ async function metrics(cdp) {
         })()
       } : null,
       firstLiturgical: rect(liturgical), firstText: rect(text),
+      firstClaim: firstClaim ? { ...rect(firstClaim), text: firstClaim.textContent.trim() } : null,
       coverage: { hidden: coverage ? coverage.hidden : true, box: rect(coverage),
         text: coverage ? coverage.textContent.trim() : '' },
       absences: {
@@ -557,6 +608,33 @@ async function runAssertions(cdp, base) {
     }
     await productionFresh(cdp, productionUrl(base, 'day', STATES.romanRead), 'day');
     assert.equal(await evaluate(cdp, `document.querySelector('[data-reader-locus]').hidden`), true);
+  });
+
+  await check('mobile ritual locus adds no reading-glyph obstruction', async () => {
+    for (const [entrance, state, width, semantic] of [
+      ['day', 'romanMissal', 393, 'ordinary-element/canon/forma-corporis'],
+      ['day', 'romanMissal', 320, 'ordinary-element/canon/forma-corporis'],
+      ['propers', 'propers', 393, 'proper/roman-1962/advent-1/010']
+    ]) {
+      await viewport(cdp, width, 852);
+      await productionFresh(cdp, productionUrl(base, entrance, STATES[state]), entrance);
+      const shown = await evaluate(cdp, `(async () => {
+        const target = [...document.querySelectorAll('[data-semantic-location]')]
+          .find(node => node.dataset.semanticLocation === ${JSON.stringify(semantic)});
+        if (!target) throw new Error('missing semantic target ${semantic}');
+        target.scrollIntoView({ block: 'center', behavior: 'instant' });
+        for (let attempt = 0; attempt < 12; attempt += 1) {
+          await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+          if (!document.querySelector('[data-reader-locus]').hidden) return true;
+          scrollBy({ top: 48, behavior: 'instant' });
+        }
+        return false;
+      })()`);
+      assert.equal(shown, true, `${entrance} ${width}: locus remained hidden`);
+      const measured = await metrics(cdp);
+      assert.equal(measured.locus.glyphObscuration.newlyObscuredGlyphs, 0,
+        JSON.stringify({ entrance, width, locus: measured.locus }));
+    }
   });
 
   await check('Read and Missal mode switching keeps semantic location and focus behavior', async () => {
@@ -768,6 +846,36 @@ async function runAssertions(cdp, base) {
     await cdp.send('Emulation.setPageScaleFactor', { pageScaleFactor: 1 });
   });
 
+  await check('400% production Contents jump reveals its destination above the action dock', async () => {
+    await viewport(cdp, 393, 852);
+    await productionFresh(cdp, productionUrl(base, 'day', STATES.romanMissal), 'day');
+    await cdp.send('Emulation.setPageScaleFactor', { pageScaleFactor: 4 });
+    try {
+      await click(cdp, '[data-reader-action="contents"]');
+      await waitFor(cdp, 'document.querySelector("#contents-surface").open', '400% Contents');
+      await click(cdp, '[data-reader-location="ordinary-section/canon"]');
+      await stableFrames(cdp, '[data-semantic-location="ordinary-section/canon"]');
+      const destination = await evaluate(cdp, `(() => {
+        const target = document.querySelector('[data-semantic-location="ordinary-section/canon"]');
+        const heading = target.getBoundingClientRect();
+        const dock = document.querySelector('.reader-actions').getBoundingClientRect();
+        const masthead = document.querySelector('.reader-masthead').getBoundingClientRect();
+        const top = Math.max(visualViewport.offsetTop, masthead.bottom);
+        const bottom = Math.min(visualViewport.offsetTop + visualViewport.height, dock.top);
+        return { headingTop: heading.top, headingBottom: heading.bottom,
+          unobscuredTop: top, unobscuredBottom: bottom, scale: visualViewport.scale,
+          focus: document.activeElement.dataset.semanticLocation || null };
+      })()`);
+      assert.equal(destination.scale, 4);
+      assert.equal(destination.focus, 'ordinary-section/canon');
+      assert.ok(destination.headingTop >= destination.unobscuredTop - 1 &&
+        destination.headingBottom <= destination.unobscuredBottom + 1,
+      JSON.stringify(destination));
+    } finally {
+      await cdp.send('Emulation.setPageScaleFactor', { pageScaleFactor: 1 });
+    }
+  });
+
   await check('forced colors, reduced motion, and keyboard focus remain explicit', async () => {
     await cdp.send('Emulation.setEmulatedMedia', { media: 'screen', features: [
       { name: 'forced-colors', value: 'active' },
@@ -816,8 +924,17 @@ async function runAssertions(cdp, base) {
     assert.equal(production.text.approximateCharacters, 75);
     assert.ok(Math.abs(production.reading.width - oracle.reading.width) <= 1);
     assert.ok(Math.abs(production.identity.x - oracle.identity.x) <= 1);
-    assert.ok(Math.abs(production.firstText.top - oracle.firstText.top) <= 1,
+    // C2 added a truthful Bible-reconstruction claim to both DOMs. Production
+    // makes that claim smaller and closer to the passage; the frozen oracle's
+    // inherited body styling puts the same words 18px lower. Guard the source
+    // claim, text, and unobscured first viewport instead of pinning that offset.
+    assert.equal(production.firstClaim.text, oracle.firstClaim.text);
+    assert.equal(production.firstTextSample, oracle.firstTextSample);
+    assert.ok(production.firstClaim.bottom < production.firstText.top);
+    assert.ok(production.firstText.top <= oracle.firstText.top + 1,
       JSON.stringify({ production: production.firstText, oracle: oracle.firstText }));
+    assert.ok(production.firstText.bottom < production.actions.top,
+      JSON.stringify({ text: production.firstText, dock: production.actions }));
     assert.ok(production.document.scrollWidth <= production.document.clientWidth + 1);
     assert.deepEqual(production.actionButtons.map(row => row.label), ['Date', 'Contents', 'Mode', 'Details']);
     // The governed browser uses the explicitly private public-alpha preview;
@@ -1172,11 +1289,13 @@ async function captureRitualFlowMatrix(cdp, base, directory) {
     epistle: ['proper/roman-1962/pentecost-10/003', 'proper/roman-1962/pentecost-10/003'],
     gospel: ['proper/roman-1962/pentecost-10/006', 'proper/roman-1962/pentecost-10/006'],
     offertory: ['proper/roman-1962/pentecost-10/007', 'proper/roman-1962/pentecost-10/007'],
-    preface: ['ordinary-element/praefatio/praefatio-communis', 'ordinary-section/praefatio'],
+    // Pentecost X appoints the Trinity Preface; the old common Preface and
+    // postcommunion Paschal rubric are no longer rendered for this state.
+    preface: ['ordinary-element/praefatio/praefatio-de-ss-trinitate', 'ordinary-section/praefatio'],
     canon: ['ordinary-element/canon/forma-corporis', 'ordinary-section/canon'],
     communion: ['ordinary-element/communio/domine-non-sum-dignus', 'ordinary-section/communio'],
     postcommunion: ['proper/roman-1962/pentecost-10/010', 'proper/roman-1962/pentecost-10/010'],
-    conditional: ['ordinary-element/conclusio/rubrica-postcommunio-paschalis', 'ordinary-section/conclusio']
+    conditional: ['ordinary-element/conclusio/rubrica-in-missis-defunctorum', 'ordinary-section/conclusio']
   };
   for (const [width, height] of [[1440, 900], [393, 852]]) {
     add(`day-roman-missal-top-${width}x${height}.png`, 'day', 'romanMissal', width, height);

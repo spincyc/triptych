@@ -436,7 +436,7 @@ regression before the next begins:
    - Details reports an explicit formulary or form and only what remains open;
    - Read and Missal Contents jumps record `location` by replacing the history
      entry, as Propers does (neither Day mode had written it).
-   Ordinary element absences keep their key-only wording, a C4 (G15) item.
+   Ordinary element absences received reader labels in the 2026-10-20 C4 pass.
    The `mass-propers` reading view now states the same typed reasons, held
    equal to the browser's table by test. Published inventory slices omit
    `source_refs`, which name repository records including restricted
@@ -458,6 +458,26 @@ counts or the 25-page Latin Day Missal print. Extensive translation notes
 still dominate the English print, an open C4 presentation finding. Full CLI/structure/browser
 event-order parity, the complete viewport and print matrix, and independent
 acceptance remain open; this checkpoint does not close C2 or C3.
+
+Continuation, 2026-10-20: source-inventoried, unique parent-form and Proper-role
+joins now classify more of the 1962 target universe. Of 6,285 inventoried text
+slots, the served structure reports 3,182 represented, 178 not represented,
+and 2,925 unresolved. Another 229 roles absent from their raw Mass rows resolve
+through an appointed Common. The remaining 178 effective Sanctoral role gaps
+are printed in the source but lack a role in the calendar model. The published
+inventory also carries one earlier missing Christmas commemoration, so its
+all-kind `not-represented` count is 179. These joins
+establish structural placement, not word agreement or translation coverage.
+Three image-checked Scripture appointments (St Francis Xavier's Alleluia and
+St Lucy's Alleluia and Communion) and seven Common oration joins account for
+the ten newly represented roles. The St Stanislaus C 2 page mark resolves one
+Common option inherited by the pre-1955 model; six such selections remain
+unresolved in each recension.
+A focused Pentecost parity check now compares all 179 generated Missal events
+with browser semantic and DOM order, and thirteen ordered CLI landmarks with
+the same browser sequence. The CLI still has no machine-readable expanded
+event stream for full event-ID parity. This is additional C2 evidence, not
+independent acceptance.
 
 An exemplar passes C2 when:
 
@@ -669,6 +689,25 @@ Remaining:
 - twenty opaque dialogue blocks;
 - ℣/℟ typography;
 - the postconciliar dismissal, which has no sourced text.
+
+On 2026-10-20, Ordinary absence rows gained short source-owned reader labels.
+The Day preamble and silent elements now show those labels with the existing
+typed state, while the internal keys remain in generated data. This closes the
+key-only wording portion of G15; repeated absence notices and other G15–G16
+presentation work remain open. A print-only C4 pass lets long Proper witness
+accounts paginate, keeping headings and short prayers together; 1962 Pentecost
+English Read fell from ten to seven pages in both entrances with the extracted
+text unchanged. Long notes still need mode-aware print composition.
+
+The first C5 core-preference slice now shares missal, Bible and oration-language
+choices across Day and Propers. An explicit URL still wins; a malformed or
+unavailable stored value falls back to a valid repository default, and only a
+successful Date or Browse Apply saves a new preference. The older Propers
+record remains readable for migration. Date, territory, Mass, form and witness
+choices are never remembered. Dedicated source-served Chromium checks passed
+11/11, with the existing Day and Propers suites passing 55/55 and 49/49.
+Propers Missal, Study, Compare, search and independent C5 acceptance remain
+open.
 
 ### Verification and completion gates
 

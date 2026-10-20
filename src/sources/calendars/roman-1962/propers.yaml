@@ -33147,30 +33147,21 @@ sections:
           Deus, pro cujus honore gloriosus Pontifex Stanislaus gladiis impiorum
           occubuit: praesta, quaesumus; ut omnes, qui ejus implorant auxilium,
           petitionis suae salutarem consequantur effectum. Per Dominum.
-      notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
-        carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
-        CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
-        itself prints -- Commune Martyrum tempore paschali, Missa I: Protexisti me, Deus -- which is unambiguous
-        where the Introit incipit is not, two Commons sharing `Os iusti` and two more sharing `Me
-        exspectaverunt`. The Missal prints the day''s own Collect and this pass read it, but the
-        facsimile sets each oration under a drop capital that the text layer renders as wreckage and glues
-        marginal section numbers to the words -- `Cyrilluui`, `quivere earn`, `Ecclesise2517` -- so
-        what this pass read was not of publishable quality and was not recorded. The Collect slot now
-        carries a published Latin body collated to the controlling 1962 edition, while every other
-        slot is the Common''s, which is what the Missal appoints. This pass''s reading of the
-        directive was not visually collated. The day''s own Collect was read on 2026-08-08 from the
-        PAGE IMAGE of leaf n527
-        of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862 printing the source library
-        already tracks as public domain, and not from any optical text layer -- that printing''s own OCR
-        corrupts roughly one word in three. The body now published is not quoted from that 1862
-        reading: it is collated to the controlling 1962 edition, on the public-domain witness its row
-        in src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names.'
+      notes: 'The Missal appoints the first Paschal Common of Martyrs and prints
+        the day''s three orations under its heading. The Collect is marked P; the
+        Secret and Postcommunion are marked C 2, selecting the second Common
+        oration set. This was checked on the registered CMAA facsimile page image,
+        artifact PDF p. 602 / printed p. 521, marginal nos. 2520-2522, on
+        2026-10-20. The Collect carries a published Latin body collated to the
+        controlling 1962 edition on the public-domain witness named by its row
+        in src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml;
+        the C 2 orations are resolved through the Common without copying them.'
       takes_from:
         mass: commune-martyrum-tempore-paschali-1
         common_sets:
           orations:
-            state: unresolved
-            candidates: [c3, c4]
+            state: selected
+            option: c2
         citation: 'Commune Martyrum tempore paschali, Missa I: Protexisti me, Deus'
     - key: s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae
       name: S. Gregorii Nazianzeni Episcopi, Confessoris et Ecclesiae Doctoris
@@ -50757,6 +50748,22 @@ sections:
               chapter: 91
               verse: 14
           ref: Psalms 91:13, 14
+      - name: Alleluia
+        source: scripture
+        notes: >-
+          Missale Romanum 1962, registered CMAA facsimile, artifact PDF p. 512,
+          printed p. 431, marginal no. 1830. The verse and its Jac. 1, 12
+          citation were checked on the page image on 2026-10-20.
+        verses:
+        - book: James
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 12
+            end:
+              chapter: 1
+              verse: 12
+          ref: James 1:12
       - name: Gospel
         source: scripture
         verses:
@@ -51416,6 +51423,23 @@ sections:
               chapter: 44
               verse: 8
           ref: Psalms 44:8
+      - name: Alleluia
+        source: scripture
+        notes: >-
+          Missale Romanum 1962, registered CMAA facsimile, artifact PDF p. 521,
+          printed p. 440, marginal no. 1894. The verse is Ps. 44, 3 by the
+          page's Ibid. reference to the Gradual, checked on the page image on
+          2026-10-20.
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 3
+            end:
+              chapter: 44
+              verse: 3
+          ref: Psalms 44:3
       - name: Gospel
         source: scripture
         verses:
@@ -51457,6 +51481,22 @@ sections:
           Accepta tibi sit, Domine, sacratae plebis oblatio pro tuorum honore
           Sanctorum: quorum se meritis de tribulatione percepisse cognoscit auxilium.
           Per Dominum.
+      - name: Communion
+        source: scripture
+        notes: >-
+          Missale Romanum 1962, registered CMAA facsimile, artifact PDF p. 521,
+          printed p. 440, marginal no. 1898. The Ps. 118, 161-162 citation
+          was checked on the page image on 2026-10-20.
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 118
+              verse: 161
+            end:
+              chapter: 118
+              verse: 162
+          ref: Psalms 118:161-162
       - name: Postcommunion
         source: composed
         notes: >-

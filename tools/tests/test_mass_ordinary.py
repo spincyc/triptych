@@ -196,7 +196,8 @@ class OrdinaryStructure(unittest.TestCase):
             expected_absences,
         )
         for absence in file["absences"]:
-            self.assertEqual(set(absence), {"key", "count", "state", "kind"})
+            self.assertEqual(set(absence), {"key", "label", "count", "state", "kind"})
+            self.assertTrue(absence["label"].strip())
             self.assertEqual(
                 absence["state"],
                 {
@@ -914,7 +915,7 @@ class OrdinaryTool(unittest.TestCase):
             for absence in row["language_absences"]:
                 self.assertGreater(absence["count"], 0, calendar)
                 self.assertEqual(
-                    set(absence), {"key", "lang", "count", "state", "kind"}
+                    set(absence), {"key", "label", "lang", "count", "state", "kind"}
                 )
             for absence in row["absent"]:
                 self.assertEqual(
@@ -1678,6 +1679,7 @@ class OrdinaryTool(unittest.TestCase):
             )
         unresolved = tool.absence_table(
             {"absences": [{"key": "rights-open", "kind": "rights-unresolved",
+                            "label": "Publication basis is unresolved",
                             "what": "Authorization has not been established."}]},
             "synthetic",
         )
@@ -1691,6 +1693,7 @@ class OrdinaryTool(unittest.TestCase):
         row = {
             "key": "provider-neutral-gap",
             "kind": "witness-gap",
+            "label": "The witness has no facing text",
             "what": "The held witness carries no facing text.",
         }
         with self.assertRaisesRegex(
@@ -2163,10 +2166,13 @@ process.stdout.write(JSON.stringify({
         # headings that lost a reviewed printed cue (Dominus vobiscum before
         # the Gospel and the Offertory, Laus tibi, Suscipiat, and Per omnia
         # before the Pax).
+        # Re-pinned 2026-10-20 (C4 G15): both streams keep their
+        # liturgical words and order; typed absence prose now uses the
+        # source-owned reader labels instead of storage keys.
         expected = {
             "pentecost_10_text": (
                 178,
-                "afb5d82df5e921d4fd26e0b68c53e55ef742407b487ccf08285e76119410fdaa",
+                "d279eefc0b4f4bc7568bd36309fb375a5fa9f75efcb8df583e2c28d95229f23b",
             ),
             # Re-pinned 2026-10-19 (C4 step 2), diffed against HEAD 1107fdc1a:
             # the sequence is unchanged and only the Preface dialogue and the
@@ -2174,7 +2180,7 @@ process.stdout.write(JSON.stringify({
             # that each turn row carries one presentation-only cue.
             "ot_18_text": (
                 67,
-                "f344433914b0769092526f681f724c438242fa65b1819c5d5244db77dc482b40",
+                "a68c61acabac67a7cb994e63c51077793a72e016af2125c7e7e405ce6eb20042",
             ),
         }
         for key, (count, wanted_digest) in expected.items():
@@ -2189,7 +2195,7 @@ process.stdout.write(JSON.stringify({
         report = self.run_harness()
         self.assertNotIn("Lord, have mercy.", report["kyrie"])
         self.assertIn("Not shown: its English.", report["kyrie"])
-        self.assertIn("approved-english-publication-restriction", report["kyrie"])
+        self.assertIn("Approved English text is not published here", report["kyrie"])
         self.assertNotIn(ICEL_SOURCE_ID, report["kyrie"])
         self.assertNotIn(ICEL_ACKNOWLEDGEMENT, report["kyrie"])
         self.assertIn("WE therefore, humbly pray", report["te_igitur_1861"])
@@ -2311,16 +2317,16 @@ process.stdout.write(JSON.stringify({
         pater = report["kyrie_in_each"]
         self.assertNotIn("Our Father, who art in heaven", pater["en"])
         self.assertIn("Not shown: its English.", pater["en"])
-        self.assertIn("approved-english-publication-restriction", pater["en"])
+        self.assertIn("Approved English text is not published here", pater["en"])
         self.assertIn("Pater noster, qui es in cœlis", pater["la"])
         self.assertNotIn("Not shown: its Latin.", pater["la"])
 
         greeting = report["greeting_in_each"]
         self.assertNotIn("The grace of our Lord Jesus Christ", greeting["en"])
         self.assertIn("Not shown: its English.", greeting["en"])
-        self.assertIn("approved-english-publication-restriction", greeting["en"])
+        self.assertIn("Approved English text is not published here", greeting["en"])
         self.assertIn("Not shown: its Latin.", greeting["la"])
-        self.assertIn("element-spans-mixed-matter", greeting["la"])
+        self.assertIn("This element mixes inherited and changed wording", greeting["la"])
 
         # Held: the facing column was read, so the Latin stands in its own right
         # and no reason is offered for a silence there is not.
@@ -2329,7 +2335,7 @@ process.stdout.write(JSON.stringify({
         self.assertNotIn("WE therefore, humbly pray", canon["la"])
         self.assertIn("TE igitur, clementissime Pater", canon["la"])
         self.assertNotIn("Not shown: its Latin.", canon["la"])
-        self.assertNotIn("no-facing-latin", canon["la"])
+        self.assertNotIn("The 1861 witness prints this block only in English", canon["la"])
 
         # Absent: this offertory prayer is one of the eight 1962 prayers/forms
         # the book sets to the full measure in English, so the Latin side names
@@ -2338,7 +2344,7 @@ process.stdout.write(JSON.stringify({
         self.assertIn("May the Lord enkindle", accendat["en"])
         self.assertNotIn("May the Lord enkindle", accendat["la"])
         self.assertIn("Not shown: its Latin.", accendat["la"])
-        self.assertIn("no-facing-latin", accendat["la"])
+        self.assertIn("The 1861 witness prints this block only in English", accendat["la"])
         self.assertNotIn("editio-typica", accendat["la"])
 
     def test_the_reason_is_stated_once_and_referred_to_after_that(self) -> None:
@@ -2359,21 +2365,21 @@ process.stdout.write(JSON.stringify({
         """
         report = self.run_harness()
         preamble = report["preamble_1962"]
-        self.assertIn("no-facing-latin", preamble)
+        self.assertIn("The 1861 witness prints this block only in English", preamble)
         self.assertIn("8 of 196 elements", preamble)
-        self.assertIn("not-in-the-1962-ordo", preamble)
+        self.assertIn("This older oration is outside the 1962 Ordinary", preamble)
         self.assertIn("0 of 196 elements", preamble)
-        self.assertIn("witness-own-english", preamble)
+        self.assertIn("The 1861 lay witness supplies its own English heading or rubric", preamble)
         self.assertIn("63 of 196 elements", preamble)
-        self.assertIn("appointment-not-established6 of 196 elements", preamble)
-        self.assertIn("proper-canon-form-not-held8 of 196 elements", preamble)
-        self.assertIn("proper-communicantes-english-variant1 of 196 elements", preamble)
+        self.assertIn("This day’s Ordinary appointment is not established — 6 of 196 elements", preamble)
+        self.assertIn("The appointed proper Canon form is not held here — 8 of 196 elements", preamble)
+        self.assertIn("Held English differs from this proper Communicantes — 1 of 196 elements", preamble)
         self.assertIn(
-            "communicantes-continuation-english-lacks-1962-clause1 of 196 elements", preamble)
-        self.assertIn("preface-not-in-witness2 of 196 elements", preamble)
+            "Held English lacks the 1962 Saint Joseph clause — 1 of 196 elements", preamble)
+        self.assertIn("The appointed Preface is absent from the 1861 witness — 2 of 196 elements", preamble)
         self.assertNotIn("undefined", preamble)
-        self.assertIn("no-facing-latin", report["accendat_in_each"]["la"])
-        self.assertNotIn("no-facing-latin", report["te_igitur_in_each"]["la"])
+        self.assertIn("The 1861 witness prints this block only in English", report["accendat_in_each"]["la"])
+        self.assertNotIn("The 1861 witness prints this block only in English", report["te_igitur_in_each"]["la"])
 
     def test_the_speaker_is_named_and_a_name_is_not_a_mark(self) -> None:
         """Who is speaking, in words, and never a ℣ standing over a response.

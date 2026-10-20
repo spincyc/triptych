@@ -150,41 +150,49 @@ artifacts = [
 
 [[absences]]
 key = "no-facing-latin"
+label = "The 1861 witness prints this block only in English"
 kind = "witness-gap"
 what = "Eight blocks in the 1861 book contain a prayer or form of the 1962 Ordo Missae but are set across the full measure in English only, with no facing Latin text: rubrica-benedictio-incensi-et-introitus, munda-cor-meum, dominus-sit-in-corde-meo, per-evangelica-dicta, accendat-in-nobis, rubrica-commixtio, rubrica-agnus-dei-in-missis-defunctorum, and benedicat-vos-omnipotens-deus. The absence is this witness's, not a claim that the rite lacks the text. This classification supplies no Latin wording: the target-edition text remains unheld and uncollated, and the mixed prayer-and-rubric extents remain unresolved."
 
 [[absences]]
 key = "not-in-the-1962-ordo"
+label = "This older oration is outside the 1962 Ordinary"
 kind = "witness-gap"
 what = "Four English-only orations belong to the pre-1955 second-oration regime printed bodily inside the 1861 Ordinary: a-cunctis, secreta-ii, postcommunio-mundet, and et-famulos. The 1962 Ordo Missae does not carry that regime, which the 1960 Code of Rubrics abolished. All four are excluded from this target frame (2026-10-19: the last two on the verified 1962 Ordo passages, see the conclusio exclusions); the classification remains the source-witness accounting for their missing Latin. This classification supplies no Latin body or inferred extent."
 
 [[absences]]
 key = "witness-own-english"
+label = "The 1861 lay witness supplies its own English heading or rubric"
 kind = "witness-gap"
 what = "Seventy-one English-only blocks are the 1861 printer's own headings or rubrics for a lay reader, not untranslated Latin text: 50 rubrics and 21 headings. Eight are excluded from this target frame, leaving 63 emitted elements in this class. No Latin counterpart or prayer/rubric extent is inferred."
 
 [[absences]]
 key = "appointment-not-established"
+label = "This day’s Ordinary appointment is not established"
 kind = "model-gap"
 what = "Nothing in this repository yet establishes which text the day appoints here: no reading of the celebrated formulary's own direction is recorded, no dated span stated by the 1962 book covers the date, and no sourced default applies. For the Preface this is now only a date the declared spans cannot be evaluated on (no civil date or year anchors reach the frame); RGMR 482's three steps are otherwise all declared: the formulary's printed direction, the de Tempore spans of RGMR 484-493 and the common default of RGMR 482 and 498. The stand-in replaces printing every Preface the witness holds, which claimed all of them were said."
 
 [[absences]]
 key = "preface-not-in-witness"
+label = "The appointed Preface is absent from the 1861 witness"
 kind = "witness-gap"
 what = "The day appoints a Preface the 1861 Cummiskey lay missal does not print: it knew eleven Prefaces and the 1962 Missal prints sixteen (RGMR 484-499; the Chrism Mass, Sacred Heart, Christ the King, St Joseph and the Dead). No witness this frame joins carries it, and no other Preface is shown in its place."
 
 [[absences]]
 key = "proper-canon-form-not-held"
+label = "The appointed proper Canon form is not held here"
 kind = "witness-gap"
 what = "The day appoints a proper Communicantes whose head (before the dagger at which the 1962 Canon joins every proper form to its shared continuation, printed pp. 304-305, nn. 1093-1096) no witness this frame joins prints: the 1861 Cummiskey Canon carries only the common forms (canon-missae-en seq 8 and 10), and the public-domain printings of these heads have not been collated for this surface. The common form is NOT shown in the proper head's place; the shared continuation, which is held, follows. Since 2026-10-19 the Pentecost head and the Easter and Pentecost Hanc igitur are held and no longer stand under this reason."
 
 [[absences]]
 key = "proper-communicantes-english-variant"
+label = "Held English differs from this proper Communicantes"
 kind = "witness-gap"
 what = "No public-domain English this repository has read renders the head of the Pentecost Communicantes word for word. The Lasance missal (printed p. 811, passage pentecost-communicantes-and-hanc-igitur) calls the Virgin mother of 'the same' Lord, a word the Pentecost Latin does not print, and is a variant under the 2026-09-03 words rule; the 1861 Cummiskey (printed p. 377, IA leaf n385) prints only part of the head and refers the reader to its Ordinary, whose English does not mark where it resumes. No English is shown and none is composed."
 
 [[absences]]
 key = "communicantes-continuation-english-lacks-1962-clause"
+label = "Held English lacks the 1962 Saint Joseph clause"
 kind = "witness-gap"
 what = "Every public-domain English this repository holds for the Communicantes passes from the Virgin to the Apostles without the clause naming Saint Joseph that the 1962 Canon prints in its continuation (decree of 13 November 1962): the 1861 Cummiskey Canon (canon-missae-en seq 8, printed p. xxxiv) and the Lasance missal (printed p. 811). Under the 2026-09-03 words rule an English lacking a clause is a variant, so it is not bound as the antecedent of the 1962 wording (roadmap, 1962 Pentecost complete-text plan). No English is shown and none is composed; the short-phrase basis for the Latin clause supplies no English."
 

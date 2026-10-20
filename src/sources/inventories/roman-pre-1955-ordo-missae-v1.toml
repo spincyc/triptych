@@ -118,21 +118,25 @@ artifacts = [
 
 [[absences]]
 key = "no-facing-latin"
+label = "The 1861 witness prints this block only in English"
 kind = "witness-gap"
 what = "The 1861 book sets this block across the full measure in English only and prints no Latin text for it; the facing-column Latin of every block that has one is transcribed. The absence is the witness's, not a rights or effort gap. It holds for 83 elements - 53 rubrics, 21 English headings, 8 prayers (a-cunctis, munda-cor-meum, dominus-sit-in-corde-meo, per-evangelica-dicta, accendat-in-nobis, secreta-ii, postcommunio-mundet, et-famulos) and the form benedicat-vos-omnipotens-deus - and each was established by opening the leaf, not inferred: leaves n25-n56 were all read. Whether the 1920 Ordo Missae prints any of these is a separate target-edition question; the reason is scoped to this witness's page and says nothing about the rite."
 
 [[absences]]
 key = "appointment-not-established"
+label = "This day’s Ordinary appointment is not established"
 kind = "model-gap"
 what = "Nothing in this repository yet establishes which text the day appoints here: no reading of the celebrated formulary's own direction is recorded, no dated span stated by the accepted pre-1955 witness covers the date, and no sourced default applies. A formulary's Preface is recorded only where the Bonn witness prints it (the `attested_appointments` of src/sources/calendars/roman-pre-1955/propers.yaml), and no span or default is declared: the witness's general rubrics (Additiones et variationes tit. VIII, artifact p. 59*) let a commemorated feast's proper Preface or an octave's displace the de Tempore and common Prefaces, and commemorations and octaves are not modelled in this recension. The stand-in replaces printing every Preface the 1861 witness holds, which claimed all of them were said."
 
 [[absences]]
 key = "preface-not-in-witness"
+label = "The appointed Preface is absent from the 1861 witness"
 kind = "witness-gap"
 what = "The day appoints a Preface the 1861 Cummiskey lay missal does not print (it knew eleven; the Sacred Heart, Christ the King, St Joseph and the Dead came later). No witness this frame joins carries it, and no other Preface is shown in its place."
 
 [[absences]]
 key = "proper-canon-form-not-held"
+label = "The appointed proper Canon form is not held here"
 kind = "witness-gap"
 what = "The day appoints a proper Communicantes or Hanc igitur, which the accepted pre-1955 witness prints in its Canon at printed pp. 336-337 (Bonn reimpressio artifact pp. 440-441), and no witness this frame joins prints it: the 1861 Cummiskey Canon carries only the common forms (canon-missae-en seq 8 and 10). The common form is NOT shown in the proper form's place."
 

@@ -537,7 +537,7 @@ SAFE_PROPER_TARGET_FIELDS = {
     "occurrence",
     "extent",
 }
-SAFE_ORDINARY_ABSENCE_FIELDS = {"key", "count", "state", "kind"}
+SAFE_ORDINARY_ABSENCE_FIELDS = {"key", "label", "count", "state", "kind"}
 SAFE_ORDINARY_LANGUAGE_ABSENCE_FIELDS = SAFE_ORDINARY_ABSENCE_FIELDS | {"lang"}
 SAFE_COMMON_FROM_FIELDS = {"scope", "options"}
 SAFE_COMMON_OPTION_FIELDS = {"mass", "form_id", "selection"}
@@ -1325,6 +1325,18 @@ def restricted_projection_findings(row: dict, label: str) -> list[str]:
             or any(part in key for part in NON_NEUTRAL_ABSENCE_KEY_PARTS)
         ):
             findings.append(f"{label}: Ordinary absence key is not neutral")
+        reader_label = row.get("label")
+        if (
+            not isinstance(reader_label, str)
+            or not reader_label.strip()
+            or len(reader_label) > 120
+            or "\n" in reader_label
+            or "http://" in reader_label.casefold()
+            or "https://" in reader_label.casefold()
+            or re.search(r"\b(?:icel|permission|copyright)\b|(?:src/|artifact\.)",
+                         reader_label, re.IGNORECASE)
+        ):
+            findings.append(f"{label}: Ordinary absence reader label is not concise public prose")
         if (
             not isinstance(row.get("count"), int)
             or isinstance(row.get("count"), bool)
@@ -3842,12 +3854,14 @@ class RightsMutationBoundary(unittest.TestCase):
             "absences": [
                 {
                     "key": "protected-text",
+                    "label": "Target text is withheld",
                     "count": 3,
                     "state": "rights-restricted",
                     "kind": "rights-withheld",
                 },
                 {
                     "key": "no-exemplar",
+                    "label": "No exact exemplar is held",
                     "count": 2,
                     "state": "unavailable",
                     "kind": "no-exemplar",
@@ -3862,6 +3876,7 @@ class RightsMutationBoundary(unittest.TestCase):
             "absences": [
                 {
                     "key": "icel-permission",
+                    "label": "Target text is withheld",
                     "count": 3,
                     "state": "rights-restricted",
                     "kind": "rights-withheld",
@@ -3869,6 +3884,7 @@ class RightsMutationBoundary(unittest.TestCase):
                 },
                 {
                     "key": "icel-permission",
+                    "label": "Target text is withheld",
                     "count": 3,
                     "state": "rights-restricted",
                     "kind": "rights-withheld",
@@ -3880,6 +3896,14 @@ class RightsMutationBoundary(unittest.TestCase):
         )
         self.assertTrue(any("exact safe fields" in one for one in failures), failures)
         self.assertTrue(any("key is not neutral" in one for one in failures), failures)
+        with_identity = {
+            "absences": [{"key": "protected-text", "label": "ICEL permission applies",
+                           "count": 3, "state": "rights-restricted",
+                           "kind": "rights-withheld"}]
+        }
+        self.assertTrue(any("reader label is not concise public prose" in one
+                            for one in public_liturgy_findings(
+                                with_identity, set(), set(), "synthetic labelled Ordinary")))
 
     def test_source_inventory_mutation_rejects_protected_text_not_metadata(self) -> None:
         identity = "artifact.synthetic.protected-source-mutation"

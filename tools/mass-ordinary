@@ -808,6 +808,9 @@ def absence_table(source: dict, name: str) -> dict[str, dict]:
             raise SourceError(f"{name}: absence {key} is declared twice")
         if not entry.get("what"):
             raise SourceError(f"{name}: absence {key} says nothing about why")
+        label = entry.get("label")
+        if not isinstance(label, str) or not label.strip() or len(label) > 120:
+            raise SourceError(f"{name}: absence {key} needs a concise reader label")
         kind = entry.get("kind")
         if kind not in ABSENCE_KINDS:
             raise SourceError(
@@ -2914,6 +2917,7 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
     absence_rows = [
         {
             "key": key,
+            "label": absences[key]["label"],
             "count": absent_counts.get(key, 0),
             "state": absence_state(absences[key]["kind"]),
             "kind": absences[key]["kind"],
@@ -2923,6 +2927,7 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
     language_absences = [
         {
             "key": key,
+            "label": absences[key]["label"],
             "lang": language["lang"],
             "count": absent_by_lang.get(key, {}).get(language["lang"], 0),
             "state": absence_state(absences[key]["kind"]),
