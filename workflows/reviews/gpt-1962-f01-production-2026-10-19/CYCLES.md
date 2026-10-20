@@ -630,3 +630,12 @@ link to the verified author-qualified Migne 1845 delivery. The new 23-page,
 Native build, component, content-preflight and pinned web-probe checks passed;
 the author inspected the page contact sheets and changed terminal pages at
 full size. A fresh study review and all dependent stages remain pending.
+
+The fresh xhigh study reviewer verified all twenty sealed inputs and the
+revised 23-page proof, checked the corrected live Jerome witness link, and
+returned `PASS` with no findings. Native study preflight also passed. The
+engine emitted `derive-synthesis-0002`; the concise author carried the
+corrected witness link and reader-facing review limit into its apparatus
+without altering the comparative arguments or chronology. Its new 10-page,
+4,149-word proof passed build, component and content preflight, with all
+pages inspected. A fresh concise review is pending.

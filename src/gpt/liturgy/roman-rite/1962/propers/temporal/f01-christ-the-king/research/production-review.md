@@ -564,3 +564,75 @@ was changed, and no new upstream defect was identified. The workflow must
 rederive and review the dependent companions and perform the later common
 build and publication stages. Global source-inventory checks, integration,
 commits and publication remain with the parent driver.
+
+# Concise study reentry: revised terminal apparatus
+
+`derive-synthesis` iteration 2 completed on 20 October 2026 for `proper-study`
+v13, run `095fe00a9fe8cfee`. The complete accepted expansive study and the
+concise components were reread against each other. The concise References now
+carry the accepted study's corrected Jerome witness URL,
+`https://la.wikisource.org/wiki/Commentaria_in_Danielem_(Hieronymus)`; that
+page was opened and identifies Jerome's commentary and the Migne 1845 edition.
+The concise scope now states the absence of ecclesiastical approval or human
+specialist review directly, following the revised expansive scope, without
+narrating what production checks confer. Exact loci and substantive review
+qualifications remain unchanged. No research or expansive-study component was
+edited and no new evidence-dependent claim was added.
+
+The two readings and their five interleaved comparative questions remain
+intact: grace enables obedient hearing; the uncreated Son receives dominion
+according to his humanity; heavenly reconciliation concerns the restored
+relation of holy angels and humanity; universal authority differs from willing
+conversion and final acknowledgment; received peace demands perseverance and
+concord. Augustine and Bellarmine's different immediate readings of Psalm 71
+remain explicit. Both interpretations' controlling claims and consequential
+four-sense distinctions remain recoverable from the concise prose alone.
+
+The existing entrypoint and manifest still accurately declare literal component
+imports, six synthesis-only components, the five presentation roles and
+`orientation-v2`. No layout change was needed. The nine reviewed chronology
+rows retain their exact dates, alternatives, relation labels and unresolved
+states. The common generation record retains the packet's exact provenance,
+now with finalization time `2026-10-20T14:32:03Z` and the actual contribution.
+
+The prescribed synthesis build and artifact component check passed, as did
+the complete synthesis content preflight. The settled proof has **10 physical
+pages**, **406,509 bytes**, and **4,149 substantive words** by the established
+Pandoc method: inventory 173, overview 74, themes 958 and commentary 2,944.
+Footnotes, chronology, terminal apparatus and generation colophon are excluded.
+The settled log has no warnings, undefined references or overfull/underfull
+boxes. All listed Latin Modern font subsets are embedded with Unicode mapping;
+PDF title, subject and modification timestamp agree with the source.
+
+All ten full-page rasters were visually inspected. The auxiliary absolute-page
+labels and the rendered pages agree: inventory and the four overview senses
+on page 1; chronology alone on page 2; thematic movement on pages 3–4; developed
+commentary beginning on page 5. The page-2 lookup separately pairs John 18's
+Jerusalem interrogation with its unresolved event date, the Gospel's traditional
+Ephesus writing frame with its composition alternatives, Colossians' prison
+setting with its recipients at Colossae, and the Introit's Apocalypse passages
+with their own composition answer. Psalm attribution, occasion and composition
+remain distinct. The long generated Psalm lists are readable. Page 10 holds
+the scope, used references, revised timestamp and rights colophon without
+clipping, overlap or a separate rights page. Extracted text confirms the revised
+review statement. This is author verification, not independent concise or final
+visual acceptance.
+
+Built PDF:
+`build/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.pdf`.
+The exact proof and review evidence are retained under
+`build/tpt-runs/095fe00a9fe8cfee/artifacts/derive-synthesis-0002/`:
+
+| File | SHA-256 |
+| --- | --- |
+| `author-proof.pdf` | `92738b1a989ac05be79c49d10c188b83c70a78be9042cc4a87f1dd59e074ca6d` |
+| `author-proof.aux` | `fc869f5656388d79f742546941ab414e9338201a0da760450138901cfa54054a` |
+| `author-proof.log` | `f892eb2609cd334ddaae7102fd16b1c14bbfe0cac3edf3a2cdefd1be660a2c10` |
+
+The directory also retains build, component and preflight logs, font and
+metadata reports, extracted text, word-count evidence and hashes. The raster
+helper's replaceable destination is its dedicated `rasters/` child. There were
+no forwarded findings and no new upstream defect was identified. No PDF or web
+edition was installed. The parent driver owns global source-inventory checks,
+workflow advancement, integration, commits and publication; the dependent
+homily derivation and final common build must use the resulting shared metadata.
