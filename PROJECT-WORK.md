@@ -79,6 +79,17 @@ published on `main`; it is not GPT acceptance. Full GPT source material and
 its three deliverables still require a safe path consistent with the
 maintainer's rejection of locator-only output.
 
+A further full-material v13 run `095fe00a9fe8cfee` has passed scope and fresh
+context resolution. Its research is in progress. The worker independently
+rehashes and reads the primary page images, treating the already published
+Claude collation only as source-data lead and disclosing its transcription
+contribution. All thirteen 1962 Latin units and an unedited AAS source pull
+have been saved as a clearly incomplete GPT checkpoint; continuous historical
+English from Lasance is being checked for every element. The source checkpoint
+and AAS binding/dependency are feature-pushed at `8b693dc86` and `1649a5864`.
+No new output rejection has occurred in this run so far. The full English,
+research review, documents, artifacts and deployment remain unaccepted.
+
 ## Claude 1962 Christ the King three documents, 2026-10-19
 
 <!-- promised-deliverable: claude-1962-f01-christ-the-king-three-documents-2026-10-19 -->
