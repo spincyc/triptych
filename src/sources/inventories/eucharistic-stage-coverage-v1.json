@@ -14,12 +14,12 @@
     {
       "id": "western",
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "561a4ca002809df33189164293a6d03b8194a1ec95de7893e226d9c4a0db875e"
+      "sha256": "878a7783af7949a239b26f6a2d7a9040148c81f9a552b9fdb67581b7194e0a47"
     },
     {
       "id": "presentation",
       "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
-      "sha256": "747b89178d2f05096fd4297bff2eba5e8ae0851f72a5cc92ddacc8e1390c532f"
+      "sha256": "403a9bd11b4bf67ac0459ae1234f4a1b5f27fca0946a63b4bb5b78c0cf61553f"
     },
     {
       "id": "legacy_latin",
@@ -99,15 +99,15 @@
   ],
   "count_semantics": {
     "eastern_census_slots": 23,
-    "western_coverage_trajectories": 54,
+    "western_coverage_trajectories": 58,
     "eastern_candidates": 439,
-    "western_candidates": 389,
-    "presentation_groups": 54,
+    "western_candidates": 541,
+    "presentation_groups": 61,
     "eastern_empty_candidate_slots_at_input": [
       "albanian",
       "macedonian"
     ],
-    "western_empty_candidate_slots_at_input": 20,
+    "western_empty_candidate_slots_at_input": 18,
     "warning": "These count different objects. Western trajectories include composite and overlapping discovery buckets. Presentation groups are display categories. Neither candidate linkage nor a dossier certifies complete coverage."
   },
   "findings": [
@@ -7914,7 +7914,33 @@
         "roman-zaire-1988",
         "divine-worship-2015",
         "book-divine-worship-predecessor",
-        "divine-worship-updated-sanctoral"
+        "divine-worship-updated-sanctoral",
+        "roman-adaptations-bdw1987",
+        "roman-adaptations-bdw1999",
+        "roman-adaptations-ordinariate2013",
+        "roman-adaptations-chiapas2024",
+        "roman-adaptations-broome1973",
+        "roman-adaptations-broome2024",
+        "roman-adaptations-india1969",
+        "roman-adaptations-india1971",
+        "roman-adaptations-india-anaphora-early",
+        "roman-adaptations-india-anaphora-late",
+        "roman-adaptations-philippines1971",
+        "roman-adaptations-philippines1976",
+        "roman-adaptations-brazil1974",
+        "roman-adaptations-brazil1991",
+        "roman-adaptations-swiss1974",
+        "roman-adaptations-swiss1974-italian",
+        "roman-adaptations-german-deaf1970",
+        "roman-adaptations-dutchv1979",
+        "roman-adaptations-dutchvi",
+        "roman-adaptations-dutchv2019",
+        "roman-adaptations-swiss1971",
+        "roman-adaptations-english-original-collects",
+        "roman-adaptations-italian-collects1983",
+        "roman-adaptations-italian-collects2020",
+        "roman-adaptations-german-easy2024",
+        "roman-adaptations-bdw1984-provision"
       ],
       "proposed_tradition_ids": [
         "roman-zaire",
@@ -7963,18 +7989,243 @@
           "end_year": null,
           "date_role": "later update date unestablished; do not reuse product dates2015 or2018",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-bdw1987",
+          "label": "Anglican Use Eucharistic provision / Book of Divine Worship before 2003",
+          "start_year": 1987,
+          "end_year": 1987,
+          "date_role": "approval",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-bdw1999",
+          "label": "Book of Divine Worship: Draft November 1999",
+          "start_year": 1999,
+          "end_year": 1999,
+          "date_role": "draft-attestation",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ordinariate2013",
+          "label": "Ordinariate revised Order of Mass",
+          "start_year": 2013,
+          "end_year": 2013,
+          "date_role": "reported-order-use",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-chiapas2024",
+          "label": "Adaptaciones del Ordinario de la Misa para comunidades indígenas de San Cristóbal de las Casas",
+          "start_year": 2024,
+          "end_year": 2024,
+          "date_role": "official-explanation-attestation",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-broome1973",
+          "label": "Earlier Broome local Mass practice, reported in 2024",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "retrospective historical-use lead, not an exact 1973 event",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-broome2024",
+          "label": "Missa Terra Spiritus Sancti / Missa Kimberley",
+          "start_year": 2024,
+          "end_year": 2024,
+          "date_role": "episcopal-conference-approval",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-india1969",
+          "label": "Indian twelve points of adaptation",
+          "start_year": 1969,
+          "end_year": 1969,
+          "date_role": "approval",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-india1971",
+          "label": "Indian Orderof Mass",
+          "start_year": 1971,
+          "end_year": 1971,
+          "date_role": "reported-order-preparation",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-india-anaphora-early",
+          "label": "Early Indiananaphoraproposal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "proposal",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-india-anaphora-late",
+          "label": "Revised Indiananaphoraproposal",
+          "start_year": 1980,
+          "end_year": 1989,
+          "date_role": "reported-proposal",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-philippines1971",
+          "label": "Philippine First Communion Mass with special Eucharistic prayer",
+          "start_year": 1971,
+          "end_year": 1971,
+          "date_role": "experimental-confirmation",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-philippines1976",
+          "label": "Misa ng Bayang Pilipino",
+          "start_year": 1976,
+          "end_year": 1976,
+          "date_role": "episcopal-submission",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-brazil1974",
+          "label": "Brazilian Oração Eucarística V",
+          "start_year": 1974,
+          "end_year": 1974,
+          "date_role": "reported-approval",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-brazil1991",
+          "label": "Brazilian Eucharistic Prayer V in the 1991 Portuguese translation witness",
+          "start_year": 1991,
+          "end_year": 1991,
+          "date_role": "translation-alignment-attestation",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-swiss1974",
+          "label": "Swiss Synod Eucharistic Prayer, originallanguage versions",
+          "start_year": 1974,
+          "end_year": 1974,
+          "date_role": "Roman-confirmation",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-swiss1974-italian",
+          "label": "Swiss Synodprayer: Italianadaptedversion",
+          "start_year": 1974,
+          "end_year": 1974,
+          "date_role": "reported-language-version",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-german-deaf1970",
+          "label": "Eucharistic Prayer for deaf congregations",
+          "start_year": 1970,
+          "end_year": 1970,
+          "date_role": "approval",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-dutchv1979",
+          "label": "God, onze Vader / Boskapel Eucharistic Prayer V",
+          "start_year": 1979,
+          "end_year": 1979,
+          "date_role": "publication-attestation",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-dutchvi",
+          "label": "Machtige God Eucharistic Prayer VI, Jan Duin",
+          "start_year": 2001,
+          "end_year": 2001,
+          "date_role": "terminus-ante-quem-attestation",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-dutchv2019",
+          "label": "Revised God, onze Vader",
+          "start_year": 2019,
+          "end_year": 2019,
+          "date_role": "Roman-recognition",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-swiss1971",
+          "label": "Swiss abbreviated EP I and IV",
+          "start_year": 1971,
+          "end_year": 1971,
+          "date_role": "reported-experimental-approval",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-english-original-collects",
+          "label": "Original English alternative opening prayers",
+          "start_year": 1974,
+          "end_year": 1974,
+          "date_role": "reported-introduction",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-italian-collects1983",
+          "label": "Original Italian alternative collects appendix",
+          "start_year": 1983,
+          "end_year": 1983,
+          "date_role": "component-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-italian-collects2020",
+          "label": "Revised original Italian alternative collects",
+          "start_year": 2020,
+          "end_year": 2020,
+          "date_role": "component-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-german-easy2024",
+          "label": "Hochgebet in Leichter Sprache",
+          "start_year": 2024,
+          "end_year": 2024,
+          "date_role": "official-report-attestation",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-bdw1984-provision",
+          "label": "Pastoral Provision, reported 1984 Eucharistic authorization",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "reported approval, original act uninspected",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Zaire French adaptation established by primary decree and selected rubrics; complete approved exemplar remains missing. Divine Worship substantive adaptation established by official descriptions; original decree, 2003/2015 comparison and dated later sanctoral updates remain open. Survey other authorized original adaptations.",
+      "missing_stage_chain": "Zaire French adaptation established by primary decree and selected rubrics; complete approved exemplar remains missing. Divine Worship substantive adaptation established by official descriptions; original decree, 2003/2015 comparison and dated later sanctoral updates remain open. Survey other authorized original adaptations. The reviewed Roman adaptations receipt adds 26 bounded regional book, component, translation and lead candidates. Compare original books and acts for Zaire, Divine Worship, India, Brazil, Switzerland and other named uses before asserting textual succession or local adoption. The 1991 Brazilian entry is a Portuguese common-formula translation witness, not a dated original-anaphora revision. Four leads in the receipt lack a secure finite chronology coordinate. Harley 5512 remains a cross-lane contact witness without an established Catholic reception and is not routed here.",
       "next_sources": {
         "inventory_source_ids": [
           "ordinariate-dwm",
           "zaire-official-retrospect",
           "zaire-primary-1988",
           "dwm-usccb-2015",
-          "dwm-publisher-current"
+          "dwm-publisher-current",
+          "roman-adaptations-src-bdw1999",
+          "roman-adaptations-src-ordinariate2024",
+          "roman-adaptations-src-chiapas2024",
+          "roman-adaptations-src-broome2024",
+          "roman-adaptations-src-broome-booklet",
+          "roman-adaptations-src-india1969",
+          "roman-adaptations-src-india2005",
+          "roman-adaptations-src-philippines1980",
+          "roman-adaptations-src-brazil2006",
+          "roman-adaptations-src-swiss1974",
+          "roman-adaptations-src-dbkah77",
+          "roman-adaptations-src-dutchv",
+          "roman-adaptations-src-dutchvi",
+          "roman-adaptations-src-cold-vonarx1977",
+          "roman-adaptations-src-cold-cccb-original-orations",
+          "roman-adaptations-src-cold-italian-original-collects",
+          "roman-adaptations-src-cold-dbk-easy2024"
         ],
         "source_urls": [
           "https://www.ordinariate.net/divine-worship-missal",
@@ -7982,10 +8233,10 @@
           "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-24-(1988)/Notitiae-264-1988.pdf",
           "https://www.usccb.org/resources/newsletter-2015-10.pdf"
         ],
-        "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Zaire French adaptation established by primary decree and selected rubrics; complete approved exemplar remains missing. Divine Worship substantive adaptation established by official descriptions; original decree, 2003/2015 comparison and dated later sanctoral updates remain open. Survey other authorized original adaptations."
+        "inspection": "Owning inventory and dated research-receipt metadata reviewed for this crosswalk; direct source inspection and limits remain in their source records.",
+        "target": "Zaire French adaptation established by primary decree and selected rubrics; complete approved exemplar remains missing. Divine Worship substantive adaptation established by official descriptions; original decree, 2003/2015 comparison and dated later sanctoral updates remain open. Survey other authorized original adaptations. The reviewed Roman adaptations receipt adds 26 bounded regional book, component, translation and lead candidates. Compare original books and acts for Zaire, Divine Worship, India, Brazil, Switzerland and other named uses before asserting textual succession or local adoption. The 1991 Brazilian entry is a Portuguese common-formula translation witness, not a dated original-anaphora revision. Four leads in the receipt lack a secure finite chronology coordinate. Harley 5512 remains a cross-lane contact witness without an established Catholic reception and is not routed here."
       },
-      "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
+      "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence. The Indian anaphora proposals remain unapproved or pending a Roman decision; their placement does not establish authorized use.",
       "canonical_tradition_ids": []
     },
     {
@@ -9038,7 +9289,20 @@
       "candidate_ids": [
         "carmelite-sibert-ordinal",
         "carmelite-early-missals",
-        "carmelite-krakow-gradual-1644"
+        "carmelite-krakow-gradual-1644",
+        "mendicant-oc-ordinals",
+        "mendicant-oc-medieval",
+        "mendicant-oc-krakow-graduals",
+        "mendicant-oc-1759",
+        "mendicant-oc-1866",
+        "mendicant-oc-1935",
+        "mendicant-oc-antiphonale1960",
+        "mendicant-oc-proper1974",
+        "mendicant-oc-calendar2021",
+        "mendicant-oc-calendar1972",
+        "mendicant-oc-1490",
+        "mendicant-oc-1500",
+        "mendicant-oc-1510"
       ],
       "proposed_tradition_ids": [
         "carmelite"
@@ -9088,22 +9352,137 @@
           "end_year": 1644,
           "date_role": "manuscript-completion-year",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-oc-ordinals",
+          "label": "Dublin MS 194 and Lambeth 193 Sibert de Beka ordinals",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript and reported promulgation",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-oc-medieval",
+          "label": "Carmelite medieval missal manuscript cluster",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "copying range",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-oc-krakow-graduals",
+          "label": "Krakow Carmelite Mass graduals, four witnesses",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript attestation dates",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-oc-1759",
+          "label": "Rome 1759 Carmelite missal",
+          "start_year": 1759,
+          "end_year": 1759,
+          "date_role": "printing date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-oc-1866",
+          "label": "Missale Fratrum Ordinis BMV de Monte Carmeli, Rome 1866",
+          "start_year": 1866,
+          "end_year": 1866,
+          "date_role": "printing date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-oc-1935",
+          "label": "Missale Ordinis Fratrum BMV de Monte Carmelo, Rome 1935",
+          "start_year": 1935,
+          "end_year": 1935,
+          "date_role": "printing date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-oc-antiphonale1960",
+          "label": "Chorale II Antiphonale Missarum",
+          "start_year": 1959,
+          "end_year": 1959,
+          "date_role": "approval, promulgation and printing",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-oc-proper1974",
+          "label": "Proprium Missarum una cum lectionario OCarm, editio typica",
+          "start_year": 1974,
+          "end_year": 1974,
+          "date_role": "publication date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-oc-calendar2021",
+          "label": "OCarm 1972 and 2021 calendar states, later Titus Brandsma memorial",
+          "start_year": 2021,
+          "end_year": 2021,
+          "date_role": "6 November 2021 calendar approval; 18 November notification; 26 November order letter",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-oc-calendar1972",
+          "label": "OCarm proper calendar preceding 2021 revision",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "calendar publication/approval not yet discriminated",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-oc-1490",
+          "label": "Missale Carmelitarum, Brescia 1490",
+          "start_year": 1490,
+          "end_year": 1490,
+          "date_role": "printing date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-oc-1500",
+          "label": "Missale Carmelitarum, 1500; USUARIUM 4913",
+          "start_year": 1500,
+          "end_year": 1500,
+          "date_role": "printing date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-oc-1510",
+          "label": "Missale secundum usum Carmelitarum cum annotationibus, 1510",
+          "start_year": 1510,
+          "end_year": 1510,
+          "date_role": "printing date",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "1312 promulgation and Holy Sepulchre reception documented by scholarship. Exact Jerusalem source witnesses, full Mass-text comparison, later Carmelite missal revisions and adaptation boundaries remain open; Office comparisons do not establish Mass changes.",
+      "missing_stage_chain": "1312 promulgation and Holy Sepulchre reception documented by scholarship. Exact Jerusalem source witnesses, full Mass-text comparison, later Carmelite missal revisions and adaptation boundaries remain open; Office comparisons do not establish Mass changes. Added print, chant, proper and calendar candidates through 2021 remain bibliographic/component controls; inspect the 1490/1500/1510, 1759, 1935/37 and 1974 originals and collate substantive Mass changes.",
       "next_sources": {
         "inventory_source_ids": [
           "carmelite-usuarium",
-          "boyce-carmelite-2004"
+          "boyce-carmelite-2004",
+          "mendicant-src-oc-usu",
+          "mendicant-src-oc-boyce",
+          "mendicant-src-oc-acta2020",
+          "mendicant-src-oc-1866",
+          "mendicant-src-oc-openlibrary",
+          "mendicant-src-oc-ant1960",
+          "mendicant-src-oc-carmelus",
+          "mendicant-src-oc-calendar",
+          "mendicant-src-oc-1490-gallica",
+          "mendicant-src-oc-1500-usu",
+          "mendicant-src-oc-bnf"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origin/226/view",
           "https://real.mtak.hu/65294/1/smus.45.2004.1-2.2.pdf"
         ],
-        "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "1312 promulgation and Holy Sepulchre reception documented by scholarship. Exact Jerusalem source witnesses, full Mass-text comparison, later Carmelite missal revisions and adaptation boundaries remain open; Office comparisons do not establish Mass changes."
+        "inspection": "Owning inventory and dated research-receipt metadata reviewed for this crosswalk; direct source inspection and limits remain in their source records.",
+        "target": "1312 promulgation and Holy Sepulchre reception documented by scholarship. Exact Jerusalem source witnesses, full Mass-text comparison, later Carmelite missal revisions and adaptation boundaries remain open; Office comparisons do not establish Mass changes. Added print, chant, proper and calendar candidates through 2021 remain bibliographic/component controls; inspect the 1490/1500/1510, 1759, 1935/37 and 1974 originals and collate substantive Mass changes."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "existing_catalogue_ids": [
@@ -9124,7 +9503,8 @@
         "carthusian-1981",
         "carthusian-ordinarium-1582",
         "carthusian-missale-1603",
-        "carthusian-1627"
+        "carthusian-1627",
+        "monastic-carthusian-2021"
       ],
       "proposed_tradition_ids": [
         "carthusian"
@@ -9201,22 +9581,31 @@
           "end_year": 1627,
           "date_role": "publication-witness-date",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "monastic-carthusian-2021",
+          "label": "Missale Cartusiense, 2021",
+          "start_year": 2021,
+          "end_year": 2021,
+          "date_role": "publication-on-title",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "The alleged 1620 copy is identified as Lyon 1627. Complete earlier/later missal and Ordinarium comparisons, the full 1677 ordinance and the modern original book/approval record remain open.",
+      "missing_stage_chain": "The alleged 1620 copy is identified as Lyon 1627. Complete earlier/later missal and Ordinarium comparisons, the full 1677 ordinance and the modern original book/approval record remain open. The 2021 titled missal PDF has Praenotanda-described changes, but its Roman recognition date, effective date and relation to 1981 remain uncollated; the 2018 calendar approval is separate. Recover the 1679 original through an institutional viewer after Gallica PDF 403, complete the intervening Cartusiana bibliography lines and compare early editions against reprints.",
       "next_sources": {
         "inventory_source_ids": [
           "carthusian-usuarium",
-          "palecki-carthusian-2015"
+          "palecki-carthusian-2015",
+          "monastic-src-carthusian-2021"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origin/227/view",
           "https://repozytorium.kul.pl/bitstreams/1781a58a-e2ce-4358-bc6f-fc4d9ff9f2c2/download"
         ],
-        "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "The alleged 1620 copy is identified as Lyon 1627. Complete earlier/later missal and Ordinarium comparisons, the full 1677 ordinance and the modern original book/approval record remain open."
+        "inspection": "Owning inventory and dated research-receipt metadata reviewed for this crosswalk; direct source inspection and limits remain in their source records.",
+        "target": "The alleged 1620 copy is identified as Lyon 1627. Complete earlier/later missal and Ordinarium comparisons, the full 1677 ordinance and the modern original book/approval record remain open. The 2021 titled missal PDF has Praenotanda-described changes, but its Roman recognition date, effective date and relation to 1981 remain uncollated; the 2018 calendar approval is separate. Recover the 1679 original through an institutional viewer after Gallica PDF 403, complete the intervening Cartusiana bibliography lines and compare early editions against reprints."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "existing_catalogue_ids": [
@@ -9236,7 +9625,9 @@
         "cistercian-early-prints",
         "cistercian-1606",
         "cistercian-1657",
-        "cistercian-1487"
+        "cistercian-1487",
+        "monastic-cistercian-1617",
+        "monastic-cistercian-1590"
       ],
       "proposed_tradition_ids": [
         "cistercian"
@@ -9306,21 +9697,39 @@
           "end_year": 1487,
           "date_role": "publication",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "monastic-cistercian-1617",
+          "label": "Missale ad usum sacri Ordinis Cisterciensis, Paris 1617",
+          "start_year": 1617,
+          "end_year": 1617,
+          "date_role": "publication-on-title",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "monastic-cistercian-1590",
+          "label": "Missale Cisterciense, 1590 witness",
+          "start_year": 1590,
+          "end_year": 1590,
+          "date_role": "catalogue-publication-year",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "The 1487 witness now has direct title, imprint and bounded page evidence. Complete its native transcription and compare full 1487/1606/1657 contents; selected 1606/1657 readings do not establish whole-book reconstruction.",
+      "missing_stage_chain": "The 1487 witness now has direct title, imprint and bounded page evidence. Complete its native transcription and compare full 1487/1606/1657 contents; selected 1606/1657 readings do not establish whole-book reconstruction. The acquired 1590 witness still needs a verified title; the 1617 title claims General Chapter decrees, Roman conformity and augmentation without a collated change set. Extend post-1657 and local-congregation repertoires, compare complete books, and seek original Latin proper additions after 1983.",
       "next_sources": {
         "inventory_source_ids": [
           "cistercian-usuarium",
-          "cistercian-1487-bsb-primary"
+          "cistercian-1487-bsb-primary",
+          "monastic-src-cistercian-1617",
+          "monastic-src-cistercian-1590"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origin/228/view"
         ],
-        "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "The 1487 witness now has direct title, imprint and bounded page evidence. Complete its native transcription and compare full 1487/1606/1657 contents; selected 1606/1657 readings do not establish whole-book reconstruction."
+        "inspection": "Owning inventory and dated research-receipt metadata reviewed for this crosswalk; direct source inspection and limits remain in their source records.",
+        "target": "The 1487 witness now has direct title, imprint and bounded page evidence. Complete its native transcription and compare full 1487/1606/1657 contents; selected 1606/1657 readings do not establish whole-book reconstruction. The acquired 1590 witness still needs a verified title; the 1617 title claims General Chapter decrees, Roman conformity and augmentation without a collated change set. Extend post-1657 and local-congregation repertoires, compare complete books, and seek original Latin proper additions after 1983."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "canonical_tradition_ids": [
@@ -9336,7 +9745,26 @@
         "dominican-correctorium-1256",
         "dominican-early-prints",
         "dominican-1933-1939-1965",
-        "dominican-master-exemplar-add23935"
+        "dominican-master-exemplar-add23935",
+        "mendicant-op-pre-humbert",
+        "mendicant-op-medieval-components",
+        "mendicant-op-armenian1728",
+        "mendicant-op-1933",
+        "mendicant-op-1939",
+        "mendicant-op-holyweek1959",
+        "mendicant-op-1965",
+        "mendicant-op-holyweek1965",
+        "mendicant-op-1977-78",
+        "mendicant-op-directorium1979",
+        "mendicant-op-1985",
+        "mendicant-op-additamenta2006",
+        "mendicant-op-calendar2019",
+        "mendicant-op-1969-control",
+        "mendicant-op-1977-calendar",
+        "mendicant-op-1983-preface",
+        "mendicant-op-1983-annual",
+        "mendicant-op-1983-angelico",
+        "mendicant-op-claverie2019"
       ],
       "proposed_tradition_ids": [
         "dominican"
@@ -9394,22 +9822,186 @@
           "end_year": 1263,
           "date_role": "manuscript-copying-interval",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-pre-humbert",
+          "label": "OP early manuscript cluster: BnF lat. 8884; Karlsruhe St Peter perg. 20 and 46; Toulouse 103–105",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript copying range",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-medieval-components",
+          "label": "Provins 3bis Mass lectionary and Rochester Sibley Gradual",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript copying",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-armenian1728",
+          "label": "Armenian expression of Dominican missal, USUARIUM 8323",
+          "start_year": 1728,
+          "end_year": 1728,
+          "date_role": "printing date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-1933",
+          "label": "Missale S. Ordinis Praedicatorum, Rome 1933",
+          "start_year": 1933,
+          "end_year": 1933,
+          "date_role": "publication; Gillet letter 19 March",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-1939",
+          "label": "Missale S. Ordinis Praedicatorum, Rome 1939",
+          "start_year": 1939,
+          "end_year": 1939,
+          "date_role": "publication; Gillet letter 2 February",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-holyweek1959",
+          "label": "Cantus Gregoriani ad Ordinem Hebdomadae Sanctae OP",
+          "start_year": 1959,
+          "end_year": 1959,
+          "date_role": "publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-1965",
+          "label": "Missale S. Ordinis Praedicatorum, 1965",
+          "start_year": 1965,
+          "end_year": 1965,
+          "date_role": "1965 printing; separate 1960 rubric, 1961 calendar and 4 May 1965 Order of Mass approvals",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-holyweek1965",
+          "label": "Officium Hebdomadae Sanctae iuxta ritum OP",
+          "start_year": 1965,
+          "end_year": 1965,
+          "date_role": "publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-1977-78",
+          "label": "OP peculiar elements and proper confirmations",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "confirmations 25 July 1977 and 18 February 1978",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-directorium1979",
+          "label": "Directorium pro celebrationibus liturgicis OP",
+          "start_year": 1979,
+          "end_year": 1979,
+          "date_role": "publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-1985",
+          "label": "Missale et Lectionarium OP, editio typica",
+          "start_year": 1985,
+          "end_year": 1985,
+          "date_role": "publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-additamenta2006",
+          "label": "Additamenta ad Proprium Missalis et Liturgiae Horarum",
+          "start_year": 2006,
+          "end_year": 2006,
+          "date_role": "compilation publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-calendar2019",
+          "label": "OP calendar and Peter Claverie proper",
+          "start_year": 2019,
+          "end_year": 2019,
+          "date_role": "24 July promulgation; first Vespers 30 November effectiveness",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-1969-control",
+          "label": "De Missali Romano et novo calendario pro O.F.P.",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "decree date cited in 1985 promulgation letter",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-1977-calendar",
+          "label": "OP calendar changes CD 670/76",
+          "start_year": 1977,
+          "end_year": 1977,
+          "date_role": "component approval date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-1983-preface",
+          "label": "OP proper preface CD 194/83",
+          "start_year": 1983,
+          "end_year": 1983,
+          "date_role": "text approval date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-1983-annual",
+          "label": "OP annual rites and texts renewal CD 524/83",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "component approval, date unresolved",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-1983-angelico",
+          "label": "Blessed Angelico calendar insertion and Mass/Office texts CD 1165/83",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "calendar and text approval, date unresolved",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-op-claverie2019",
+          "label": "Peter Claverie and companions Dominican Mass proper",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "proper-text witness, approval unresolved",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Documented 1256 reform context and shared Temporal pericopes. Still need component-level prototype revisions, 1267 instrument, pre-Humbert witnesses and substantive boundaries of printed series.",
+      "missing_stage_chain": "Documented 1256 reform context and shared Temporal pericopes. Still need component-level prototype revisions, 1267 instrument, pre-Humbert witnesses and substantive boundaries of printed series. Added medieval, printed and modern book/component candidates include the cited 1969 control, 1977 and 1983 decisions and 1985 proper/lectionary. Inspect original instruments and local reception, collate exact component changes, and do not infer a complete predecessor chain.",
       "next_sources": {
         "inventory_source_ids": [
           "dominican-usuarium",
-          "ocarroll-1979-pericopes"
+          "ocarroll-1979-pericopes",
+          "mendicant-src-op-usu",
+          "mendicant-src-cmaa-dom",
+          "mendicant-src-op-m39",
+          "mendicant-src-op-hw1959",
+          "mendicant-src-op-m65",
+          "mendicant-src-op-hw1965",
+          "mendicant-src-op-official",
+          "mendicant-src-op-dir1979",
+          "mendicant-src-op-1985-original",
+          "mendicant-src-op-add2006",
+          "mendicant-src-op-calendar",
+          "mendicant-src-op-claverie2019"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origin/231/view",
           "https://heyjoe.fbk.eu/index.php/afp/article/download/8504/8505/8506"
         ],
-        "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Documented 1256 reform context and shared Temporal pericopes. Still need component-level prototype revisions, 1267 instrument, pre-Humbert witnesses and substantive boundaries of printed series."
+        "inspection": "Owning inventory and dated research-receipt metadata reviewed for this crosswalk; direct source inspection and limits remain in their source records.",
+        "target": "Documented 1256 reform context and shared Temporal pericopes. Still need component-level prototype revisions, 1267 instrument, pre-Humbert witnesses and substantive boundaries of printed series. Added medieval, printed and modern book/component candidates include the cited 1969 control, 1977 and 1983 decisions and 1985 proper/lectionary. Inspect original instruments and local reception, collate exact component changes, and do not infer a complete predecessor chain."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "existing_catalogue_ids": [
@@ -9427,7 +10019,8 @@
       "candidate_ids": [
         "premonstratensian-medieval",
         "premon-1622",
-        "premon-1663"
+        "premon-1663",
+        "premon-1936"
       ],
       "proposed_tradition_ids": [
         "premonstratensian"
@@ -9479,20 +10072,29 @@
           "end_year": 1663,
           "date_role": "publication",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "premon-1936",
+          "label": "Missale Praemonstratense, Mechelen, H. Dessain, 1936",
+          "start_year": 1936,
+          "end_year": 1936,
+          "date_role": "publication",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Acquire and collate the original 1622/1663 missals, 1739 ordinal and chapter acts; the sourced component changes do not establish exact first implementation or a complete text.",
+      "missing_stage_chain": "The 1936 title and preface establish a printed witness and describe added Masses and changes in text and chant; compare it with the unresolved 1900/1902 predecessor books, inspect chapter acts and house reception, and collate the original 1622/1663 missals and 1739 ordinal. Catalogue and dated print records do not establish an exhaustive revision genealogy or complete text.",
       "next_sources": {
         "inventory_source_ids": [
-          "premonstratensian-usuarium"
+          "premonstratensian-usuarium",
+          "canonical-premon-1936-book"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origin/232/view"
         ],
-        "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Acquire and collate the original 1622/1663 missals, 1739 ordinal and chapter acts; the sourced component changes do not establish exact first implementation or a complete text."
+        "inspection": "Owning inventory and dated research-receipt metadata reviewed for this crosswalk; direct source inspection and limits remain in their source records.",
+        "target": "The 1936 title and preface establish a printed witness and describe added Masses and changes in text and chant; compare it with the unresolved 1900/1902 predecessor books, inspect chapter acts and house reception, and collate the original 1622/1663 missals and 1739 ordinal. Catalogue and dated print records do not establish an exhaustive revision genealogy or complete text."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "existing_catalogue_ids": [
@@ -10154,7 +10756,13 @@
       "label": "Benedictine houses, Cassinese and Camaldolese",
       "coverage_unit": "trajectory-or-discovery-bucket",
       "inventory_status": "index-discovery-only",
-      "candidate_ids": [],
+      "candidate_ids": [
+        "monastic-cassinese-1580",
+        "monastic-montecorona-1896",
+        "monastic-benedictine-1937",
+        "monastic-benedictine-propers-1923",
+        "monastic-usuarium-benedictine-469"
+      ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
@@ -10167,19 +10775,65 @@
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": []
       },
-      "witnesses": [],
+      "witnesses": [
+        {
+          "candidate_id": "monastic-cassinese-1580",
+          "label": "Missale monasticum, Cassinese congregation, Venice 1580",
+          "start_year": 1580,
+          "end_year": 1580,
+          "date_role": "publication-on-title",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "monastic-montecorona-1896",
+          "label": "Missale Monasticum for the Hermits of Monte Corona, Rome 1896",
+          "start_year": 1896,
+          "end_year": 1896,
+          "date_role": "publication-on-title",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "monastic-benedictine-1937",
+          "label": "Missale Romano-Monasticum, fifth-edition rubric extract, 1937 dated preliminaries",
+          "start_year": 1937,
+          "end_year": 1937,
+          "date_role": "prefatory-letter-and-approval-year; provider-labelled-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "monastic-benedictine-propers-1923",
+          "label": "Benedictine Mass propers, provider labelled 1923",
+          "start_year": 1923,
+          "end_year": 1923,
+          "date_role": "provider-date-unverified",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "monastic-usuarium-benedictine-469",
+          "label": "Missale Benedictinum, USUARIUM 469",
+          "start_year": 1481,
+          "end_year": 1481,
+          "date_role": "catalogue-publication-year",
+          "status": "inventory-witness-candidate-not-a-stage"
+        }
+      ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness.",
+      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. The complete OSB origin 409 table identifies a 1481 Benedictine missal (ID 469) as a catalogue-only print witness; its title and text are unexamined. Direct title inspection identifies the Cassinese 1580 congregation printing and Monte Corona 1896 branch book with bounded title claims, while 1937 and 1923 Benedictine files are partial components with qualified dates. House, congregation and branch originals, approvals, later propers and reception require separate review; medieval Montecassino manuscripts are not the Cassinese print sequence.",
       "next_sources": {
         "inventory_source_ids": [
-          "usuarium-origins-600"
+          "usuarium-origins-600",
+          "monastic-src-cassinese-1580",
+          "monastic-src-montecorona-1896",
+          "monastic-src-osb-1937",
+          "monastic-src-osb-1923",
+          "monastic-src-usuarium-osb-409"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origins?offset=600"
         ],
-        "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness."
+        "inspection": "Owning inventory and dated research-receipt metadata reviewed for this crosswalk; direct source inspection and limits remain in their source records.",
+        "target": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. The complete OSB origin 409 table identifies a 1481 Benedictine missal (ID 469) as a catalogue-only print witness; its title and text are unexamined. Direct title inspection identifies the Cassinese 1580 congregation printing and Monte Corona 1896 branch book with bounded title claims, while 1937 and 1923 Benedictine files are partial components with qualified dates. House, congregation and branch originals, approvals, later propers and reception require separate review; medieval Montecassino manuscripts are not the Cassinese print sequence."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "canonical_tradition_ids": []
@@ -10258,7 +10912,23 @@
       "label": "Humiliati, Minims and Discalced Carmelite",
       "coverage_unit": "trajectory-or-discovery-bucket",
       "inventory_status": "index-discovery-only",
-      "candidate_ids": [],
+      "candidate_ids": [
+        "mendicant-ocd-early",
+        "mendicant-ocd-1925",
+        "mendicant-ocd-1933",
+        "mendicant-ocd-1950",
+        "mendicant-ocd-1959",
+        "mendicant-ocd-1973",
+        "mendicant-ocd-2025",
+        "mendicant-hum-ms",
+        "mendicant-hum-1504",
+        "mendicant-min-manual1569",
+        "mendicant-min-proper1756",
+        "mendicant-min-1976",
+        "mendicant-min-later",
+        "mendicant-ocd-calendar2023",
+        "mendicant-ocd-2025-saints-open"
+      ],
       "proposed_tradition_ids": [],
       "mapping_strength": "research-grouping-not-recension-proof",
       "dossier_coverage": {
@@ -10271,19 +10941,155 @@
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": []
       },
-      "witnesses": [],
+      "witnesses": [
+        {
+          "candidate_id": "mendicant-ocd-early",
+          "label": "OCD 1616 manual, 1692 ceremonial, Barcelona abbreviated Missal/Gradual",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication and catalogue date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-ocd-1925",
+          "label": "Proprium Missarum OCD, Mechlin 1925",
+          "start_year": 1925,
+          "end_year": 1925,
+          "date_role": "1925 printing; separate 1920 order approval, 1921 concordat and 1924 imprimatur",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-ocd-1933",
+          "label": "Proprium Missarum et Officiorum OCD, Desclée",
+          "start_year": 1933,
+          "end_year": 1933,
+          "date_role": "publication date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-ocd-1950",
+          "label": "Proprium Missarum et Officiorum OCD, Desclée 1950",
+          "start_year": 1950,
+          "end_year": 1950,
+          "date_role": "publication date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-ocd-1959",
+          "label": "Proprium Missarum et Officiorum OCD 1959",
+          "start_year": 1959,
+          "end_year": 1959,
+          "date_role": "1959 printing; 28 August 1958 order approval",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-ocd-1973",
+          "label": "Proprium Missarum OCD, editio typica",
+          "start_year": 1973,
+          "end_year": 1973,
+          "date_role": "typical-edition publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-ocd-2025",
+          "label": "Proprium Missarum OCD editio typica altera, Missale plus Lectionarium",
+          "start_year": 2025,
+          "end_year": 2025,
+          "date_role": "15 August 2025 promulgation; separate 2 October 2023 calendar and 16 July 2025 proper recognitions, 30 November 2025 obligation",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-hum-ms",
+          "label": "Humiliati missal Venegono FV.B.VII.45",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript copy range",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-hum-1504",
+          "label": "Ordo missalis Ordinis Humiliatorum, Milan Zarotus",
+          "start_year": 1504,
+          "end_year": 1504,
+          "date_role": "printing date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-min-manual1569",
+          "label": "Manuale fratrum ordinis minimorum",
+          "start_year": 1569,
+          "end_year": 1569,
+          "date_role": "catalogue publication date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-min-proper1756",
+          "label": "Missae propriae ss. Ordinis Minimorum, Delaroche",
+          "start_year": 1756,
+          "end_year": 1756,
+          "date_role": "publication date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-min-1976",
+          "label": "Minim Latin proper, Italian translation and calendar",
+          "start_year": 1976,
+          "end_year": 1976,
+          "date_role": "confirmation date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-min-later",
+          "label": "Later Minim saint Mass propers",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "Latin proper approval unknown; 24 June 2015 is a translation confirmation only",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-ocd-calendar2023",
+          "label": "OCD proper calendar recognition Prot. 600/23",
+          "start_year": 2023,
+          "end_year": 2023,
+          "date_role": "recognition date",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "mendicant-ocd-2025-saints-open",
+          "label": "Individual OCD newly approved saints’ Mass propers and decrees",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "individual approval and effective dates unresolved",
+          "status": "inventory-witness-candidate-not-a-stage"
+        }
+      ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness.",
+      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Selected Humiliati missals, Minim propers and Discalced Carmelite proper books are identified as witnesses or component controls. Obtain Humiliati originals, the 1756 and 1976 Minim books, the 1973 OCD proper and individual saints’ decrees; collate Mass components and settle rights and reception. The index and print dates do not establish a revision sequence.",
       "next_sources": {
         "inventory_source_ids": [
-          "usuarium-origins-600"
+          "usuarium-origins-600",
+          "mendicant-src-ocd-usu",
+          "mendicant-src-ocd-1925",
+          "mendicant-src-ocd-teresianum",
+          "mendicant-src-ocd-1950",
+          "mendicant-src-ocd-1959",
+          "mendicant-src-ocd-1978",
+          "mendicant-src-ocd-2025-missale",
+          "mendicant-src-ocd-2025-lectionarium",
+          "mendicant-src-hum-746",
+          "mendicant-src-hum-8571",
+          "mendicant-src-min-adabi",
+          "mendicant-src-min-google",
+          "mendicant-src-min-notitiae",
+          "mendicant-src-min-2015",
+          "mendicant-src-ocd-2025-documents"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origins?offset=600"
         ],
-        "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness."
+        "inspection": "Owning inventory and dated research-receipt metadata reviewed for this crosswalk; direct source inspection and limits remain in their source records.",
+        "target": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Selected Humiliati missals, Minim propers and Discalced Carmelite proper books are identified as witnesses or component controls. Obtain Humiliati originals, the 1756 and 1976 Minim books, the 1973 OCD proper and individual saints’ decrees; collate Mass components and settle rights and reception. The index and print dates do not establish a revision sequence."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "canonical_tradition_ids": []
@@ -10574,7 +11380,44 @@
         "slavonic-roman-1789-supplement",
         "slavonic-roman-1893",
         "slavonic-roman-1896",
-        "slavonic-roman-1905"
+        "slavonic-roman-1905",
+        "roman-adaptations-slavonic1494",
+        "roman-adaptations-slavonic1528",
+        "roman-adaptations-slavonic1531",
+        "roman-adaptations-slavonic1637",
+        "roman-adaptations-slavonic1707",
+        "roman-adaptations-slavonic1767",
+        "roman-adaptations-slavonic1860",
+        "roman-adaptations-slavonic1864",
+        "roman-adaptations-slavonic1881",
+        "roman-adaptations-slavonic1922",
+        "roman-adaptations-slavonic1927",
+        "roman-adaptations-slavonic1963",
+        "roman-adaptations-slavonic1972",
+        "roman-adaptations-slavonic1980",
+        "roman-adaptations-slavonic1992",
+        "roman-adaptations-ms-vat4",
+        "roman-adaptations-ms-novak",
+        "roman-adaptations-ms-copenhagen",
+        "roman-adaptations-ms-berlin",
+        "roman-adaptations-ms-hrvoje",
+        "roman-adaptations-ms-novi",
+        "roman-adaptations-ms-roc",
+        "roman-adaptations-ms-beram1",
+        "roman-adaptations-ms-beram2",
+        "roman-adaptations-ms-vat8",
+        "roman-adaptations-ms-bribir",
+        "roman-adaptations-ms-oxford2",
+        "roman-adaptations-ms-zagreb",
+        "roman-adaptations-ms-newyork",
+        "roman-adaptations-ms-vrbnik1",
+        "roman-adaptations-ms-vrbnik2",
+        "roman-adaptations-ms-oxford172",
+        "roman-adaptations-ms-paris73",
+        "roman-adaptations-ms-oxford1",
+        "roman-adaptations-vienna-folia",
+        "roman-adaptations-split-fragment",
+        "roman-adaptations-sinai5n"
       ],
       "proposed_tradition_ids": [
         "slavonic-roman"
@@ -10674,11 +11517,307 @@
           "end_year": 1905,
           "date_role": "publication",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-slavonic1494",
+          "label": "Senjski glagoljski misal",
+          "start_year": 1494,
+          "end_year": 1494,
+          "date_role": "printing-attestation",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-slavonic1528",
+          "label": "Misal Pavla Modrušanina",
+          "start_year": 1528,
+          "end_year": 1528,
+          "date_role": "printing-attestation",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-slavonic1531",
+          "label": "Misal hruacki",
+          "start_year": 1531,
+          "end_year": 1531,
+          "date_role": "printing-attestation",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-slavonic1637",
+          "label": "Levaković, Ordo Missae, 1637",
+          "start_year": 1637,
+          "end_year": 1637,
+          "date_role": "component-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-slavonic1707",
+          "label": "Misse za umervšie, 1707",
+          "start_year": 1707,
+          "end_year": 1707,
+          "date_role": "component-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-slavonic1767",
+          "label": "Misse za umervšie, new edition, 1767",
+          "start_year": 1767,
+          "end_year": 1767,
+          "date_role": "component-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-slavonic1860",
+          "label": "Parčić Misi za umr’šee s koralnim napjevom",
+          "start_year": 1860,
+          "end_year": 1860,
+          "date_role": "component-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-slavonic1864",
+          "label": "Parčić Masses for the Dead, reported 1864 witness",
+          "start_year": 1864,
+          "end_year": 1864,
+          "date_role": "bibliographic-lead",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-slavonic1881",
+          "label": "Parčić, Čin i pravilo misi, 1881",
+          "start_year": 1881,
+          "end_year": 1881,
+          "date_role": "component-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-slavonic1922",
+          "label": "Vajs Služebnik, Order/Canon and Bohemian Masses",
+          "start_year": 1922,
+          "end_year": 1922,
+          "date_role": "component-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-slavonic1927",
+          "label": "Vajs Latin-Glagolitic Missale Romanum Slavonico idiomate",
+          "start_year": 1927,
+          "end_year": 1927,
+          "date_role": "book-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-slavonic1963",
+          "label": "Tkadlčík Romanmissal typescript",
+          "start_year": 1963,
+          "end_year": 1963,
+          "date_role": "unapproved-draft",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-slavonic1972",
+          "label": "Tkadlčík Rimskyjmisal",
+          "start_year": 1972,
+          "end_year": 1972,
+          "date_role": "experimental-book-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-slavonic1980",
+          "label": "Tandarić Činmisi s izbranimi misami",
+          "start_year": 1980,
+          "end_year": 1980,
+          "date_role": "component-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-slavonic1992",
+          "label": "Tkadlčík, Rimskyj misal, 1992 selected Masses",
+          "start_year": 1992,
+          "end_year": 1992,
+          "date_role": "component-book-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-vat4",
+          "label": "Vatican/Omišalj missal, Borg. Illirico 4",
+          "start_year": 1301,
+          "end_year": 1400,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-novak",
+          "label": "Misal kneza Novaka",
+          "start_year": 1368,
+          "end_year": 1368,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-copenhagen",
+          "label": "Copenhagen missal",
+          "start_year": 1301,
+          "end_year": 1400,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-berlin",
+          "label": "Berlin Glagoliticmissal",
+          "start_year": 1402,
+          "end_year": 1402,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-hrvoje",
+          "label": "Hrvojev misal",
+          "start_year": 1401,
+          "end_year": 1500,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-novi",
+          "label": "Novljanski missal",
+          "start_year": 1401,
+          "end_year": 1500,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-roc",
+          "label": "Ročki misal",
+          "start_year": 1401,
+          "end_year": 1500,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-beram1",
+          "label": "Ljubljana/Beram I, Ms 162",
+          "start_year": 1401,
+          "end_year": 1500,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-beram2",
+          "label": "Ljubljana/Beram II, Ms 164",
+          "start_year": 1401,
+          "end_year": 1500,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-vat8",
+          "label": "Vatican Borg. Illirico 8",
+          "start_year": 1435,
+          "end_year": 1435,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-bribir",
+          "label": "Bribir Glagoliticmissal",
+          "start_year": 1401,
+          "end_year": 1500,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-oxford2",
+          "label": "Oxford, Canon. Liturg.349",
+          "start_year": 1401,
+          "end_year": 1500,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-zagreb",
+          "label": "Zagreb Metropolitana MR 180",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-date-attributed",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-newyork",
+          "label": "New York Glagoliticmissal",
+          "start_year": 1401,
+          "end_year": 1500,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-vrbnik1",
+          "label": "Vrbnik I",
+          "start_year": 1456,
+          "end_year": 1456,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-vrbnik2",
+          "label": "Vrbnik II",
+          "start_year": 1462,
+          "end_year": 1462,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-oxford172",
+          "label": "Oxford Canon. Liturg.172, mixedbreviarywith Canon",
+          "start_year": 1301,
+          "end_year": 1400,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-paris73",
+          "label": "Paris Slave 73, mixedbookwith Mass Order",
+          "start_year": 1375,
+          "end_year": 1375,
+          "date_role": "manuscript-date-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-ms-oxford1",
+          "label": "Oxford Canon. Liturg.373",
+          "start_year": 1401,
+          "end_year": 1500,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-vienna-folia",
+          "label": "Bečki listići, ÖNB Cod Slav 136",
+          "start_year": 1001,
+          "end_year": 1200,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-split-fragment",
+          "label": "Splitski fragmentmisala",
+          "start_year": 1201,
+          "end_year": 1300,
+          "date_role": "manuscript-copying-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-adaptations-sinai5n",
+          "label": "Liturgiarium Sinaiticum, Sinai Slav 5/N with Petersburg fragments",
+          "start_year": 1030,
+          "end_year": 1039,
+          "date_role": "main-manuscript-layer-attribution",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Complete manuscript and printed comparisons and original 1631/1706/1741/1789/1896/1905 witness acquisition; identify substantive deltas and local reception. The historical liturgical-language series is in scope.",
+      "missing_stage_chain": "Complete manuscript and printed comparisons and original 1631/1706/1741/1789/1896/1905 witness acquisition; identify substantive deltas and local reception. The historical liturgical-language series is in scope. The reviewed receipt adds 37 bounded Glagolitic and Slavonic Roman witnesses and components. Compare original books before inferring textual descent or a new normative recension. NSK 15228 acquired 288 of 460 offered canvases, leaving 289–460 unexamined; NSK 15235 acquired 0 of 519. The 1896 Parčić printing differs in sanctoral extent (182 pages plus four-page appendix versus 170 pages in 1893), while changed prayers and normative status remain unverified.",
       "next_sources": {
         "inventory_source_ids": [
           "early-miklas-sinai",
@@ -10687,16 +11826,33 @@
           "slavonic-roman:jelic1906",
           "slavonic-roman:lokmer2008",
           "slavonic-roman:nsk1483",
-          "slavonic-roman:stin"
+          "slavonic-roman:stin",
+          "roman-adaptations-src-nsk1494",
+          "roman-adaptations-src-stinprint",
+          "roman-adaptations-src-nsk1528",
+          "roman-adaptations-src-nsk1531",
+          "roman-adaptations-src-cold-mihaljevic2012",
+          "roman-adaptations-src-ambrosiani2019",
+          "roman-adaptations-src-parcic1860",
+          "roman-adaptations-src-vajs1922",
+          "roman-adaptations-src-veprek2010",
+          "roman-adaptations-src-aas1927",
+          "roman-adaptations-src-google1927",
+          "roman-adaptations-src-veprek2015",
+          "roman-adaptations-src-tkadlcik1992",
+          "roman-adaptations-src-stats2024",
+          "roman-adaptations-src-stinms",
+          "roman-adaptations-src-cold-kuhar2018",
+          "roman-adaptations-src-sinai2019"
         ],
         "source_urls": [
           "https://austriaca.at/0xc1aa5572%200x003e8cb3.pdf",
           "https://irbis-nbuv.gov.ua/dlib/item/0000039"
         ],
-        "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Complete manuscript and printed comparisons and original 1631/1706/1741/1789/1896/1905 witness acquisition; identify substantive deltas and local reception. The historical liturgical-language series is in scope."
+        "inspection": "Owning inventory and dated research-receipt metadata reviewed for this crosswalk; direct source inspection and limits remain in their source records.",
+        "target": "Complete manuscript and printed comparisons and original 1631/1706/1741/1789/1896/1905 witness acquisition; identify substantive deltas and local reception. The historical liturgical-language series is in scope. The reviewed receipt adds 37 bounded Glagolitic and Slavonic Roman witnesses and components. Compare original books before inferring textual descent or a new normative recension. NSK 15228 acquired 288 of 460 offered canvases, leaving 289–460 unexamined; NSK 15235 acquired 0 of 519. The 1896 Parčić printing differs in sanctoral extent (182 pages plus four-page appendix versus 170 pages in 1893), while changed prayers and normative status remain unverified."
       },
-      "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
+      "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence. The 1963 order is an unapproved proposal, not a received normative book.",
       "existing_catalogue_ids": [
         "missale-romanum-slavonico-idiomate"
       ],
@@ -10897,6 +12053,478 @@
         "target": "Only retained native Latin columns included. Independent translation history is deferred; do not infer normative status from episcopal approbation of a lay book."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
+      "canonical_tradition_ids": []
+    },
+    {
+      "id": "augustinian-hermits",
+      "label": "Augustinian Hermits (OSA)",
+      "coverage_unit": "trajectory-or-discovery-bucket",
+      "inventory_status": "bounded-bibliographic-candidates-documented",
+      "candidate_ids": [
+        "additional-orders-osa-pal500-base",
+        "additional-orders-osa-pal500-layer1400",
+        "additional-orders-osa-pal500-layer1466",
+        "additional-orders-osa-galdiano",
+        "additional-orders-osa-1491",
+        "additional-orders-osa-1674",
+        "additional-orders-osa-mdz-undated",
+        "additional-orders-osa-1715",
+        "additional-orders-osa-1926",
+        "additional-orders-osa-1953",
+        "additional-orders-osa-1965",
+        "additional-orders-osa-first-postconciliar",
+        "additional-orders-osa-2006"
+      ],
+      "proposed_tradition_ids": [],
+      "mapping_strength": "bibliographic-grouping-not-recension-proof",
+      "dossier_coverage": {
+        "status": "no-new-researched-stage-sequence",
+        "dossier_ids": [],
+        "stage_ids": [],
+        "scope": "The additional-orders receipt identifies witnesses, components, publication and approval roles; no text-collated stage sequence is assigned.",
+        "provisional_stage_ids": [],
+        "text_coverage_counts": {},
+        "date_limit": "Candidate dates keep their individual copying, approval, attestation or publication roles; they do not imply uninterrupted use, local adoption or reform.",
+        "gap_ids": []
+      },
+      "witnesses": [
+        {
+          "candidate_id": "additional-orders-osa-pal500-base",
+          "label": "BAV Pal. lat. 500, Augustinian Ordo missalis, base hand",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copying",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-osa-pal500-layer1400",
+          "label": "BAV Pal. lat. 500, layer attributed to about 1400",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-addition",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-osa-pal500-layer1466",
+          "label": "BAV Pal. lat. 500, layer attributed to 1466",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-addition",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-osa-galdiano",
+          "label": "Madrid Galdiano Mss. I15405, missal and breviary",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copying",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-osa-1491",
+          "label": "Missale Ordinis Fratrum Eremitarum Sancti Augustini de observantia",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication-conflict",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-osa-1674",
+          "label": "Missae propriae sanctorum Ordinis Eremitarum Sancti Augustini",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-osa-mdz-undated",
+          "label": "BSB bsb10869713, Missale Propriae Festorum",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "undetermined",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-osa-1715",
+          "label": "Missale Romanum with Augustinian saints Masses",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-osa-1926",
+          "label": "Proprium missarum et Officiorum Ordinis Eremitarum Sancti Augustini",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-osa-1953",
+          "label": "Gent Augustijnsmissaal or Proprium missarum",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication-lead",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-osa-1965",
+          "label": "Recently approved OSA Proprium Officiorum et Missarum",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "attestation",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-osa-first-postconciliar",
+          "label": "1975-approved Spanish Augustinian Mass proper; source-language antecedent unresolved",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "Spanish-confirmation-and-publication",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-osa-2006",
+          "label": "Shared Augustinian Latin Proprium Missarum",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "approval",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        }
+      ],
+      "component_profile": "western",
+      "component_coverage": "Medieval manuscript layers, printed missals and later Mass propers identified; complete textual sequence unverified.",
+      "missing_stage_chain": "The other displayed origin-408 records beyond genre labels, each underlying manuscript or print beyond retained pages, and the entire non-USUARIUM OSA manuscript and print bibliography.",
+      "next_sources": {
+        "inventory_source_ids": [
+          "additional-orders-src-augustinian-2007",
+          "additional-orders-src-osa-1491",
+          "additional-orders-src-osa-1674",
+          "additional-orders-src-osa-1715",
+          "additional-orders-src-osa-1926",
+          "additional-orders-src-osa-1953",
+          "additional-orders-src-osa-1965",
+          "additional-orders-src-osa-bsb-manifest",
+          "additional-orders-src-osa-galdiano",
+          "additional-orders-src-osa-mdz",
+          "additional-orders-src-osa-pal500",
+          "additional-orders-src-osa-pal500-manifest"
+        ],
+        "source_urls": [
+          "https://usuarium.elte.hu/origin/408/view",
+          "https://digi.ub.uni-heidelberg.de/diglit/bav_pal_lat_500/0091",
+          "https://agustinosrecoletos.com/wp-content/uploads/2016/09/FICHERO9159.pdf"
+        ],
+        "inspection": "USUARIUM OSA origin 408 and BAV Pal. lat. 500 attest order-labelled witnesses; 2007 Augustinian Acta reports the Spanish confirmation of 17 May 1975 and 1976 missal. Keep Hermits separate from Canons Regular and Windesheim.",
+        "target": "The other displayed origin-408 records beyond genre labels, each underlying manuscript or print beyond retained pages, and the entire non-USUARIUM OSA manuscript and print bibliography."
+      },
+      "caveat": "Order-level presentation groups are catalogue routes for heterogeneous books and components. Print date, ownership, translation and title do not establish textual parentage, independent recension or a complete chronology. The reviewed receipt records rights and access limits.",
+      "canonical_tradition_ids": []
+    },
+    {
+      "id": "mercedarians",
+      "label": "Order of Mercy (Mercedarians)",
+      "coverage_unit": "trajectory-or-discovery-bucket",
+      "inventory_status": "bounded-bibliographic-candidates-documented",
+      "candidate_ids": [
+        "additional-orders-merced-1507",
+        "additional-orders-merced-1560",
+        "additional-orders-merced-1617",
+        "additional-orders-merced-bound-supplement",
+        "additional-orders-merced-1694",
+        "additional-orders-merced-1976"
+      ],
+      "proposed_tradition_ids": [],
+      "mapping_strength": "bibliographic-grouping-not-recension-proof",
+      "dossier_coverage": {
+        "status": "no-new-researched-stage-sequence",
+        "dossier_ids": [],
+        "stage_ids": [],
+        "scope": "The additional-orders receipt identifies witnesses, components, publication and approval roles; no text-collated stage sequence is assigned.",
+        "provisional_stage_ids": [],
+        "text_coverage_counts": {},
+        "date_limit": "Candidate dates keep their individual copying, approval, attestation or publication roles; they do not imply uninterrupted use, local adoption or reform.",
+        "gap_ids": []
+      },
+      "witnesses": [
+        {
+          "candidate_id": "additional-orders-merced-1507",
+          "label": "First printed Mercedarian missal, catalogue report",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication-reported",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-merced-1560",
+          "label": "Missale secundum consuetudinem Ordinis de Mercede, ACA XXVI.1.1",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-merced-1617",
+          "label": "Missae propriae festorum Ordinis de Mercede, Madrid",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-merced-bound-supplement",
+          "label": "ACA XXVI.1.1 bound Mercedarian proper booklet",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "component-publication",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-merced-1694",
+          "label": "Mercedarian missal with proper Masses reported in order history",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication-reported",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-merced-1976",
+          "label": "Latin Proprium Missarum Ordinis Beatae Mariae Virginis de Mercede",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "approval-and-publication",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        }
+      ],
+      "component_profile": "western",
+      "component_coverage": "Early missal reports, seventeenth-century supplements and a later Mass proper identified; complete textual sequence unverified.",
+      "missing_stage_chain": "All original pages of 1507, 1560 and 1641; 1617 and 1694 originals; complete Amiet, Palau and Madurell-Rubio relevant sections; any later Latin proper editions.",
+      "next_sources": {
+        "inventory_source_ids": [
+          "additional-orders-src-merced-1507",
+          "additional-orders-src-merced-1560",
+          "additional-orders-src-merced-1617",
+          "additional-orders-src-merced-1641-container",
+          "additional-orders-src-merced-1976",
+          "additional-orders-src-merced-history",
+          "additional-orders-src-merced-manual-acquired"
+        ],
+        "source_urls": [
+          "https://usuarium.elte.hu/book/8573/view",
+          "https://usuarium.elte.hu/book/8574/view",
+          "https://bibliotecavirtualmadrid.comunidad.madrid/bvmadrid_publicacion/en/consulta/registro.do?control=BDCM20211876331",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-14-%281978%29/Notitiae-143-144-1978.pdf"
+        ],
+        "inspection": "USUARIUM book 8573 and 8574 separate 1507 and 1560 missal reports; Biblioteca Virtual de Madrid identifies the 1617 supplement; Notitiae records 1976 proper confirmation. A title or bound supplement is not recension proof.",
+        "target": "All original pages of 1507, 1560 and 1641; 1617 and 1694 originals; complete Amiet, Palau and Madurell-Rubio relevant sections; any later Latin proper editions."
+      },
+      "caveat": "Order-level presentation groups are catalogue routes for heterogeneous books and components. Print date, ownership, translation and title do not establish textual parentage, independent recension or a complete chronology. The reviewed receipt records rights and access limits.",
+      "canonical_tradition_ids": []
+    },
+    {
+      "id": "santiago-military",
+      "label": "Military Order of Santiago",
+      "coverage_unit": "trajectory-or-discovery-bucket",
+      "inventory_status": "bounded-bibliographic-candidates-documented",
+      "candidate_ids": [
+        "additional-orders-santiago-evangeliary",
+        "additional-orders-santiago-ms931",
+        "additional-orders-santiago-first-print",
+        "additional-orders-santiago-second-print",
+        "additional-orders-santiago-1560"
+      ],
+      "proposed_tradition_ids": [],
+      "mapping_strength": "bibliographic-grouping-not-recension-proof",
+      "dossier_coverage": {
+        "status": "no-new-researched-stage-sequence",
+        "dossier_ids": [],
+        "stage_ids": [],
+        "scope": "The additional-orders receipt identifies witnesses, components, publication and approval roles; no text-collated stage sequence is assigned.",
+        "provisional_stage_ids": [],
+        "text_coverage_counts": {},
+        "date_limit": "Candidate dates keep their individual copying, approval, attestation or publication roles; they do not imply uninterrupted use, local adoption or reform.",
+        "gap_ids": []
+      },
+      "witnesses": [
+        {
+          "candidate_id": "additional-orders-santiago-evangeliary",
+          "label": "BNE MSS/08958, Santiago Order evangeliary",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copying",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-santiago-ms931",
+          "label": "BNE MS 931, Missale Sancti Jacobi associated with Uclés",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copying",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-santiago-first-print",
+          "label": "Earlier reformed Santiago Order missal",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "authorization-and-attestation",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-santiago-second-print",
+          "label": "Second Santiago Order missal before the 1560 third edition",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication-lead",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-santiago-1560",
+          "label": "Santiago Order missal, León, Pedro de Celada",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        }
+      ],
+      "component_profile": "western",
+      "component_coverage": "Manuscript witnesses, reported predecessor prints and 1560 printed missal identified; complete textual sequence unverified.",
+      "missing_stage_chain": "Direct BNE MS 931 and MSS/08958 catalogues, Colombina 1560 copy, two earlier edition originals or full imprints, complete Order print bibliography and post-Tridentine reception.",
+      "next_sources": {
+        "inventory_source_ids": [
+          "additional-orders-src-santiago-iec",
+          "additional-orders-src-santiago-thesis",
+          "additional-orders-src-santiago-usuarium"
+        ],
+        "source_urls": [
+          "https://usuarium.elte.hu/origin/890/view",
+          "https://publicacions.iec.cat/repository/pdf/00000086/00000023.pdf",
+          "https://www.centrodedocumentacionmusicaldeandalucia.es/documents/162188325/162313931/tomo-i.pdf/8d38439a-3b22-4c51-84df-9538c4646426"
+        ],
+        "inspection": "USUARIUM origin 890 indexes Santiago books; IEC study printed p. 73 calls the 1560 print the third missal and cites a 1536 authorization letter and 1541 Uclés inventory for an earlier edition. The Andalusian thesis p. 116 supplies the BNE MS 931 manuscript lead. Earlier print exemplars and the direct BNE record remain uninspected.",
+        "target": "Direct BNE MS 931 and MSS/08958 catalogues, Colombina 1560 copy, two earlier edition originals or full imprints, complete Order print bibliography and post-Tridentine reception."
+      },
+      "caveat": "Order-level presentation groups are catalogue routes for heterogeneous books and components. Print date, ownership, translation and title do not establish textual parentage, independent recension or a complete chronology. The reviewed receipt records rights and access limits.",
+      "canonical_tradition_ids": []
+    },
+    {
+      "id": "servites",
+      "label": "Servite Order",
+      "coverage_unit": "trajectory-or-discovery-bucket",
+      "inventory_status": "bounded-bibliographic-candidates-documented",
+      "candidate_ids": [
+        "additional-orders-servite-pal505",
+        "additional-orders-servite-pal505-additions",
+        "additional-orders-servite-1964",
+        "additional-orders-servite-1972-antiphonale",
+        "additional-orders-servite-1972-lectionary",
+        "additional-orders-servite-1998-antiphonale",
+        "additional-orders-servite-1998-lectionary",
+        "additional-orders-servite-1745"
+      ],
+      "proposed_tradition_ids": [],
+      "mapping_strength": "bibliographic-grouping-not-recension-proof",
+      "dossier_coverage": {
+        "status": "no-new-researched-stage-sequence",
+        "dossier_ids": [],
+        "stage_ids": [],
+        "scope": "The additional-orders receipt identifies witnesses, components, publication and approval roles; no text-collated stage sequence is assigned.",
+        "provisional_stage_ids": [],
+        "text_coverage_counts": {},
+        "date_limit": "Candidate dates keep their individual copying, approval, attestation or publication roles; they do not imply uninterrupted use, local adoption or reform.",
+        "gap_ids": []
+      },
+      "witnesses": [
+        {
+          "candidate_id": "additional-orders-servite-pal505",
+          "label": "BAV Pal. lat. 505, Missale Romanum for Servite use",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-copying",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-servite-pal505-additions",
+          "label": "BAV Pal. lat. 505, additional Mass formularies",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "manuscript-addition",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-servite-1964",
+          "label": "Claimed Servite proper approval and promulgation",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "approval-lead",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-servite-1972-antiphonale",
+          "label": "Servite Proprium Missarum, volume I, Antiphonale Sacramentarium",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "approval-and-publication",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-servite-1972-lectionary",
+          "label": "Servite Proprium Missarum, volume II, Lectionarium",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-servite-1998-antiphonale",
+          "label": "Servite Proprium Missarum editio typica altera, volume I Antiphonale Sacramentarium",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-servite-1998-lectionary",
+          "label": "Servite Proprium Missarum editio typica altera, volume II Lectionarium",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication-reported",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "additional-orders-servite-1745",
+          "label": "Vienna Missae propriae festorum Ordinis Servorum Beatae Mariae Virginis",
+          "start_year": null,
+          "end_year": null,
+          "date_role": "publication",
+          "status": "inventory-metadata-candidate-not-a-stage"
+        }
+      ],
+      "component_profile": "western",
+      "component_coverage": "Manuscript and later proper, antiphonale-sacramentary and lectionary components identified; complete textual sequence unverified.",
+      "missing_stage_chain": "Pal. lat. 505 remaining 660 canvases; all historical Servite print editions other than the named 1745 and modern bibliography entries; official 1964 and 1998 original front matter.",
+      "next_sources": {
+        "inventory_source_ids": [
+          "additional-orders-src-servite-1964-lead",
+          "additional-orders-src-servite-1971-approval",
+          "additional-orders-src-servite-1972",
+          "additional-orders-src-servite-bibliography",
+          "additional-orders-src-servite-order-biblio",
+          "additional-orders-src-servite-oszk-1745",
+          "additional-orders-src-servite-pal505",
+          "additional-orders-src-servite-pal505-manifest"
+        ],
+        "source_urls": [
+          "https://digi.ub.uni-heidelberg.de/diglit/bav_pal_lat_505",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-09-%281973%29/Notitiae-085-1973.pdf",
+          "https://www.liturgia.it/content/baroffio/AMEN%20AMEN.pdf",
+          "https://oszk.hu/sites/default/files/languages/ritka_%20kotesek.pdf"
+        ],
+        "inspection": "BAV Pal. lat. 505 describes a Servite witness; OSZK cites a 1745 proper, Notitiae attests the 1971 proper approval, and Baroffio PDF p. 230 identifies both 1998 volumes. Original 1998 front matter remains unexamined.",
+        "target": "Pal. lat. 505 remaining 660 canvases; all historical Servite print editions other than the named 1745 and modern bibliography entries; official 1964 and 1998 original front matter."
+      },
+      "caveat": "Order-level presentation groups are catalogue routes for heterogeneous books and components. Print date, ownership, translation and title do not establish textual parentage, independent recension or a complete chronology. The reviewed receipt records rights and access limits.",
       "canonical_tradition_ids": []
     }
   ],
@@ -11446,7 +13074,7 @@
   "validation": {
     "result": "passed",
     "checks": [
-      "23 Eastern and 54 Western rows preserved exactly once",
+      "23 Eastern and 58 Western rows preserved exactly once",
       "candidate and contextual-ancestry membership reconciled to each owning inventory row",
       "witness labels and chronological bounds read from exact candidate owners",
       "canonical tradition and dossier snapshots match their current owners",
@@ -11457,7 +13085,7 @@
       "no absolute or scratch paths in deliverable"
     ],
     "coverage_status_counts": {
-      "no-new-researched-stage-sequence": 41,
+      "no-new-researched-stage-sequence": 45,
       "selected-stages-available": 32,
       "related-dossier-only-local-reception-unresearched": 4
     },
