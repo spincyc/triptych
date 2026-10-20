@@ -740,11 +740,27 @@ Step 2, 2026-10-19:
   under the same rule.
 - **Headings.** Reviewed incipit markers keep P./R. out of element headings.
 
-Remaining:
+Remaining at that checkpoint:
 
 - twenty opaque dialogue blocks;
 - ℣/℟ typography;
 - the postconciliar dismissal, which has no sourced text.
+
+Further source-fragment work on 2026-10-20 completes the explicit twenty-block
+1962 mixed-speaker scope: Adjutorium was already divided, and the remaining
+nineteen now partition 38 language-local parent cells into 97 source fragments.
+Ten immutable 1861 derivative artifacts preserve the exact parent words;
+independent 1962 page evidence controls dialogue roles. The three English Kyrie
+translations are explicit nonspoken source glosses with their own note semantics;
+Latin retains its three acclamations. No turn-index pairing is implied. The
+196-element order, event identities, rights, coverage and target qualifications
+remain. Source-only Postcommunion gains no target placement. Pre-1955 stays
+outside this slice. Postconciliar doxology now has checked speaker spans;
+Pater noster retains its source-only Amen and an explicit extent qualification,
+with target turn mapping still unresolved. The integrated browser probe passes
+36 checks, including real native copy and AX trees. Representative AT, literal
+desktop 400% zoom, complete print composition and independent acceptance remain
+open; this bounded result is not all-Ordinary completion.
 
 On 2026-10-20, Ordinary absence rows gained short source-owned reader labels.
 The Day preamble and silent elements now show those labels with the existing

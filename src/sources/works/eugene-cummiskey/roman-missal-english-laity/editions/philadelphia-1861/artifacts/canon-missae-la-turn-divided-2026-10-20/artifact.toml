@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la-turn-divided-2026-10-20"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The underlying 1861 Philadelphia printing is public domain in the United States. This is a word-preserving, source-fragment derivative of the exact tracked parent transcription, retaining its source words, printed letters, pointing and known misprints. The parent's United States public-domain basis applies; no modern protected text or apparatus is added."
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"
+transformation = "From exact parent artifact artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la, sha256 dfda5e399047a3136908a0b90b6f98cfe25366f175a648240478e6f80dfe0ba7, copy every TSV row byte for byte except the page-checked divisions: seq 30 into 3001-3002, zero-based single-space token boundaries [0, 5, 7]. Child rows are seq*100+n. Each first child retains the parent's metadata with an appended division note; later children retain its page and element identity while notes and any element-level speaker/incipit cells are blank. Joining each parent's child text cells with one ASCII space exactly recovers that parent's text cell. All other rows and the parent artifact remain unchanged."
+retrieved = "2026-10-20"
+sha256 = "6336518bed4b036f7845671dacb99ad0224b4e765c8339670f9f25e84dd196fd"
+byte_size = 10095
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-la-turn-divided-2026-10-20/canon-missae-la-turn-divided-2026-10-20.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "The source's own page images were read at 200 and 400 dpi on 2026-10-20. These rows hold only the 1861 lay witness, never a transcription of the 1962 typical edition. P./R. remains source speaker evidence; target dialogue roles are independently declared with their exact page basis in the 1962 inventory. Any English Kyrie translation gloss is a separately declared nonspoken source fragment, with no speaker, dialogue role or cue; the Latin artifact has no copy of that English gloss. The original source qualifications, variants and absences remain unchanged."

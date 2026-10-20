@@ -627,6 +627,18 @@ This classification is local to the target recension: a 1962 finding does not
 propagate into the pre-1955 projection of the same witness. Target-recension
 exclusions remain separate accounting and never erase the source-side finding.
 
+**Source fragments remain language-local.** An optional `turns` list partitions
+already selected artifact rows in their source order; it adds no text or
+semantic destination. `gloss = true` in the Ordinary v1 model identifies a
+page-checked source translation printed beside a recitation, carried as
+nonspoken explanatory matter. It requires its own source basis and carries no
+speaker, dialogue role, action or printed cue. The shared renderer names it as
+a note, and the CLI sets it apart from recitation; hiding rubrics retains it.
+The source's full text remains recoverable. Do not zip two languages by turn
+index: the 1861 English Kyrie has three acclamations and a gloss, while its
+Latin derivative carries only the three acclamations. `mass-ordinary` enforces
+this additive contract; no source-library record schema changes.
+
 **Languages are declared, and one of them holds nothing.** Each file carries a
 `languages` block naming every language the layer speaks of, the side of
 `absent` that records why each is missing, and how many of the file's elements

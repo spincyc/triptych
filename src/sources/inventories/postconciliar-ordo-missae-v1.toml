@@ -106,11 +106,12 @@ artifacts = [
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la",
-  # The turn-divided derivatives, read only by the elements whose Latin turns
-  # address one printed turn each (sursum-corda, pax-domini); every other
-  # element reads its parent above (2026-10-19).
+  # The turn-divided derivatives are read only by the elements whose Latin
+  # fragments address the checked source rows: sursum-corda, pax-domini and
+  # doxologia. Every other element retains its original artifact.
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la-turn-divided-2026-10-20",
 ]
 
 # ICEL's own free chant library, Music for the Roman Missal, as the rightsholder
@@ -1068,19 +1069,25 @@ latin_incipit = "Per ipsum, et cum ipso, et in ipso"
 missal_number = "n. 98"
 note = "The people's Amen closes it. Here per omnia saecula saeculorum is part of the doxology itself; in the 1962 book it follows as a separate versicle of priest and minister."
 
-# Two witness rows, and the second is where this element's own note above
-# becomes visible in the words: the older book sets Per omnia saecula saeculorum
-# as a separate versicle of priest and minister, and this Missal makes it the
-# end of the doxology, answered by the people. The witness's P. and R. marks are
-# left standing so that the difference can be seen rather than described.
+# Two witness blocks now have three source fragments. The first two fragments
+# belong to one contiguous priest span; the third is the people's Amen. They
+# remain inside this one doxology element and create no new liturgical event.
+# The older book's P./R. letters remain stored in its source text. Displayed
+# cues use the independently checked target speakers, not those source letters.
 #
 # The doxology is not one of Eucharistic Prayer I's twelve split children. It is
 # common to all four prayers, the Missal prints it as its own numbered element,
 # and the study places Per ipsum inside the stretch it calls substantially identical.
 absent_english = "approved-english-publication-restriction"
+turns_basis = "Missale Romanum 2002, registered restricted artifact secondary-digital-pdf-0b458944 (sha256 0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7), Ordo Missae n. 98 (artifact PDF p. 354; priest context at n. 84, p. 347), read on rendered page images at 200 and 400 dpi on 2026-10-20: the priest's doxology continues through per omnia saecula saeculorum, then Populus acclamat assigns Amen to the people. Neither span carries a versicle or response mark. Three immutable 1861 source fragments represent two target speaker spans: seq 29 and 3001 are contiguous priest material, and seq 3002 is the people's Amen, all within this one element and semantic event. The source's P./R. letters remain stored; displayed cues name the independently checked target speakers. The official bounded 2008 variation list (Notitiae 503-504, artifact PDF p. 54, printed p. 372) names no change to this unit, but the notice at artifact p. 49, printed p. 367 records further unlisted accent, pointing, color and typographic corrections; this does not establish complete 2008 wording or marks. Speakers only; no dialogue role and no target wording imported."
+latin_turns = [
+  { key = "priest-doxology", seq = [29], speaker = "priest" },
+  { key = "priest-conclusion", seq = [3001], speaker = "priest", printed_marker = "P." },
+  { key = "people-amen", seq = [3002], speaker = "all", printed_marker = "R." },
+]
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la-turn-divided-2026-10-20"
 elements = ["per-ipsum", "per-omnia-saecula"]
 column = "latin"
 relation = "antecedent"
@@ -1097,18 +1104,23 @@ list, but that evidence does not establish this word identity; these are the \
 signs in this block, which the older Roman rite marks five times; it reads \
 saecula saeculorum with the ae-ligature, set unbroken here where the same \
 versicle at the foot of xxvii prints a full stop after saecula; and it sets \
-the Amen in italic. THE SHAPE DIFFERS AND THE MARKS SHOW IT: the witness's \
-P. and R. divide the closing versicle between priest and minister, which is the \
-older Order, where this Missal makes per omnia saecula saeculorum the end of the \
-doxology itself and the people's Amen answers the whole. The marks are the \
-witness's and are not this Missal's rubric. \
+the Amen in italic. The witness's P. and R. divide its closing versicle \
+between priest and minister. Those source letters remain stored in the three \
+fragments; displayed cues instead name the independently checked target \
+speakers. The first two fragments form one contiguous priest span through \
+per omnia saecula saeculorum, and the people's Amen answers the whole. These \
+are source fragments inside one doxology, not additional liturgical events. \
+Neither target span prints a versicle or response mark in the inspected 2002 \
+witness. The bounded 2008 variation list names no change here, but does not \
+establish complete 2008 wording or marks. \
 UNCOLLATED: the identity of this text with the controlling edition's is not \
 established here. This repository's study of this Order of Mass records at \
 00-order-of-mass/sections/55-roman-canon.tex:114 that the prayer text is \
 substantially identical from Te igitur to Per ipsum apart from the changes to \
 the dominical words, which fall elsewhere in the Canon and not in this element. \
-It quotes no 2002 Latin of the doxology, so no word-level comparison has been \
-made.
+It quotes no 2002 Latin of the doxology. The separate 2026-10-20 direct page \
+review establishes the speaker boundary above, without promoting this \
+antecedent to exact controlling-2008 wording.
 """
 
 # ================================================================ F. Ritus communionis
@@ -1127,11 +1139,23 @@ missal_number = "n. 124"
 absent_english = "approved-english-publication-restriction"
 note = "The Roman Rite does not say the prayer continuously: the doxology follows the embolism Libera nos rather than preceding it."
 
-# Two witness rows to one element, and the witness's own speaker marks are left
-# standing inside the second. They record the older Order, where the priest said
-# the prayer and the ministers answered the last petition; this Missal has all
-# say it together. That is a change of speaker and not of words, and deleting
-# the marks would have hidden the one difference there is to see.
+# Source-study evidence for the bounded structural check, 2026-10-20:
+# artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944
+# sha256 0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7;
+# artifact PDF p. 366, n. 124, read at 200/400 dpi with Cummiskey p. xxxix,
+# IA leaf n49. This is a secondary digital witness, not a 2008 exemplar.
+# artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174
+# sha256 74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f;
+# artifact PDF pp. 49/54, printed pp. 367/372, read at 200/400 dpi;
+# the bounded list has no n. 124 entry and excludes further typography changes.
+# Exact protected identities stay in this owning study record; the public note
+# below identifies the human edition and bounded locus without those identities.
+# Two witness rows to one element, preserving the older Order's source marks
+# and its full selected extent. Direct 2002 n. 124 evidence establishes both a
+# different speaker division and an extent mismatch: the held final P. Amen.
+# has no counterpart between this prayer and n. 125. It remains source-only.
+# No exact target-turn partition can cover this unchanged antecedent extent
+# until the model can distinguish an excess source fragment from a target turn.
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la"
@@ -1154,16 +1178,27 @@ oe-ligature and quotidianum for cotidianum; and the book runs the response R. \
 Sed libera nos a malo and the priest's italic P. Amen. into the same block, \
 which is the older Order's division of the prayer between priest and ministers \
 and not this Missal's. \
-UNCOLLATED: the identity of this text with the controlling edition's is not \
-established here. This repository's study of this Order of Mass quotes the 2002 \
-Latin of the INVITATION at n. 124, in \
-00-order-of-mass/sections/70-communion-rite.tex:19-23, and that quotation and \
-this witness's first row agree word for word. It quotes no 2002 Latin of the \
-Our Father itself, which is the larger half of this element and has been \
-compared with nothing. The study names the Pater noster with its introduction \
-among the texts retained with little or no change of wording, and records the \
-change that is real: the people now say it with the priest, where in the older \
-Roman Order the priest said it and the ministers answered the last petition.
+UNCOLLATED: the identity of this text with the controlling edition's remains \
+unestablished. The tracked study quotes the 2002 Latin of the invitation at \
+n. 124 in 00-order-of-mass/sections/70-communion-rite.tex:19-23, but not the \
+Our Father itself. A bounded structural check on 2026-10-20 read the registered \
+secondary digital witness of the Missale Romanum, third typical edition \
+(2002), Ordo Missae n. 124, PDF p. 366, and this 1861 source page at 200 and \
+400 dpi. \
+The 2002 rubrics assign the invitation to the priest and the prayer through \
+its final petition to the priest with the people; n. 125 then begins the \
+embolism without an intervening Amen. The full 1861 block retained here has \
+the additional priest's P. Amen., which is source-only at this target locus. \
+The difference therefore concerns both speaker allocation and selected extent; \
+the source's P./R. letters do not establish target dialogue roles. This check \
+does not establish complete word identity with the controlling 2008 edition. \
+The official bounded variation list in Notitiae 44 (2008), nos. 503-504, \
+p. 372, has no n. 124 entry, but its introduction at p. 367 explicitly leaves \
+further accent, punctuation, colour and typography \
+corrections outside that list. Alternative tones referred to in the 2002 \
+Appendix at pp. 1242-1243 were not inspected in this check. The antecedent \
+relation and uncollated grade are retained, with no deletion, harmonisation \
+or new target ceremony inferred.
 """
 
 [[sections.elements]]

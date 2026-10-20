@@ -468,6 +468,12 @@ body:has(.reader-instrument) > .site-footer,
   color: var(--instrument-soft);
   font: italic 0.92rem/1.55 var(--instrument-serif);
 }
+/* The lay witness prints these explanatory translations in italic. They
+   remain source text, separately named as notes and without a spoken cue. */
+.reader-instrument .reader-document .ordinary-turn.is-gloss[data-gloss="true"] > .ordinary-turn-text {
+  color: var(--instrument-soft);
+  font-style: italic;
+}
 .reader-instrument .reader-document .ordinary-locus { color: var(--instrument-faint); font: 500 0.65rem/1.2 var(--instrument-sans); }
 .reader-instrument .reader-document .ordinary-preamble { margin: 2rem 0 0; padding-top: 1.2rem; border-top: 1px solid var(--instrument-line); }
 .reader-instrument .reader-document .ordinary-absence { border-left: 2px solid var(--instrument-line); padding-left: 0.75rem; }

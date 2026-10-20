@@ -272,7 +272,7 @@ class OrdinaryStructure(unittest.TestCase):
                         self.assertEqual(
                             set(turn),
                             {"key", "speaker", "dialogue_role", "action",
-                             "printed_marker", "text"},
+                             "printed_marker", "text"} | ({"gloss"} if turn.get("gloss") is True else set()),
                         )
                         # The reviewed marker is the row's own head letter,
                         # one space, then spoken matter; the row text itself
@@ -335,10 +335,12 @@ class OrdinaryStructure(unittest.TestCase):
         } | {
             ("postconciliar", "prex-eucharistica/praefationis-dialogus", "la"),
             ("postconciliar", "ritus-communionis/pax-domini", "la"),
+            ("postconciliar", "prex-eucharistica/doxologia", "la"),
         } | {
             # The 1962 n. 1016 Adjutorium has its own two source-backed turns;
             # the pre-1955 frame still uses the unchanged block artifact.
-            ("roman-1962", "praeparatio/adjutorium-nostrum", lang)
+            ("roman-1962", key, lang)
+            for key in ['praeparatio/adjutorium-nostrum', 'praeparatio/deus-tu-conversus', 'praeparatio/ostende-nobis', 'praeparatio/domine-exaudi', 'praeparatio/dominus-vobiscum', 'praeparatio/misereatur-tui', 'praeparatio/misereatur-vestri', 'praeparatio/indulgentiam', 'praeparatio/kyrie-eleison', 'praeparatio/christe-eleison', 'praeparatio/kyrie-eleison-repetitio', 'praeparatio/dominus-vobiscum-post-gloriam', 'oblatio/dominus-vobiscum-ante-evangelium', 'oblatio/dominus-vobiscum-ante-offertorium', 'conclusio/dominus-vobiscum-ante-postcommunionem', 'canon/per-omnia-saecula', 'communio/pater-noster', 'communio/per-omnia-saecula-post-libera-nos', 'conclusio/requiescant-in-pace', 'conclusio/initium-sancti-evangelii']
             for lang in ("en", "la")
         }
         self.assertEqual(reached, expected)
@@ -354,6 +356,18 @@ class OrdinaryStructure(unittest.TestCase):
             [(turn["speaker"], turn["dialogue_role"], turn["printed_marker"])
              for turn in by_reach[("postconciliar", "ritus-communionis/pax-domini", "la")]],
             [("priest", None, "P."), ("all", None, "R.")],
+        )
+        doxology = by_reach[("postconciliar", "prex-eucharistica/doxologia", "la")]
+        # Three source fragments retain the two contiguous target speaker spans;
+        # they remain one doxology event. The 2002 target has no V./R. marks.
+        self.assertEqual(
+            [(turn["speaker"], turn["dialogue_role"], turn["printed_marker"])
+             for turn in doxology],
+            [("priest", None, None), ("priest", None, "P."), ("all", None, "R.")],
+        )
+        self.assertEqual(
+            [turn["key"] for turn in doxology],
+            ["priest-doxology", "priest-conclusion", "people-amen"],
         )
         post_turns = next(
             turns for calendar, key, lang, turns in found
@@ -373,7 +387,7 @@ class OrdinaryStructure(unittest.TestCase):
         self.assertTrue(post_turns[1]["text"].startswith("R. Suscipiat"))
         self.assertEqual([turn["printed_marker"] for turn in post_turns], [None, "R."])
         for calendar, key, lang, turns in found:
-            if key.startswith("canon/"):
+            if key.startswith("canon/") and any(turn["action"] is True for turn in turns):
                 self.assertEqual(
                     [(turn["key"], turn["speaker"], turn["action"]) for turn in turns],
                     [("oratio", "priest", None), ("iungit-manus", None, True),
@@ -1968,10 +1982,21 @@ class OrdinaryPage(unittest.TestCase):
 
     def test_the_page_loads_the_shared_seating_before_its_renderer(self) -> None:
         page = DAY_HTML.read_text(encoding="utf-8")
+        self.assertNotIn('<script src="day.js"></script>', page)
         self.assertLess(
             page.index('<script src="ordinary-seating.js"></script>'),
-            page.index('<script src="day.js"></script>'),
+            page.index('<script src="reader-optional-runtime.js"></script>'),
         )
+        loader = (DAY_HTML.parent / "reader-optional-runtime.js").read_text(encoding="utf-8")
+        self.assertIn("new URL('day.js', doc.currentScript.src)", loader)
+        self.assertIn("return state.options.ordinary ? loadOrdinary() : Promise.resolve(null);", loader)
+        self.assertIn("if (root.TriptychOrdinaryRenderer) resolve(root.TriptychOrdinaryRenderer);", loader)
+        self.assertLess(loader.index("script.onload = function ()"),
+                        loader.index("doc.head.appendChild(script)"))
+        controller = (DAY_HTML.parent / "day-reader.js").read_text(encoding="utf-8")
+        ready = controller.index("await window.TriptychReaderOptionalRuntime?.forState(normalized.state);")
+        self.assertLess(controller.index("const validation = Contract.validateReaderState(normalized.state);"), ready)
+        self.assertLess(ready, controller.index("OrdinaryRenderer = window.TriptychOrdinaryRenderer;", ready))
 
     def test_definite_omission_dominates_unknown_conditions(self) -> None:
         script = r"""
@@ -2060,7 +2085,10 @@ process.stdout.write(JSON.stringify({
         notice_opening = page[notice:page.index(">", notice) + 1]
         self.assertIn('role="note"', notice_opening)
         self.assertIn(" hidden", notice_opening)
-        self.assertEqual(page.count('data-reader-action="'), 4)
+        self.assertEqual(page.count('data-reader-action="'), 5)
+        # Study is a direct mode action; the four dialog actions keep their
+        # existing aria-controls/expanded contract below.
+        self.assertIn('data-reader-action="study" aria-current="false"', page)
         for action, surface in (
             ("date", "date"),
             ("contents", "contents"),
@@ -2076,7 +2104,7 @@ process.stdout.write(JSON.stringify({
         scripts = [
             '<script src="assembly-model.js"></script>',
             '<script src="ordinary-seating.js"></script>',
-            '<script src="day.js"></script>',
+            '<script src="reader-optional-runtime.js"></script>',
             '<script src="reader-state.js"></script>',
             '<script src="reader-state-adapters.js"></script>',
             '<script src="reader-shell.js"></script>',
@@ -2181,18 +2209,26 @@ process.stdout.write(JSON.stringify({
         # Re-pinned 2026-10-20 (C4 Adjutorium): one 1962 element's received
         # cue words become the two structured turns established by n. 1016;
         # its 1861 spoken words and semantic event position are unchanged.
+        # Re-pinned 2026-10-20 (C4 complete source-turn batch): source-owned
+        # child rows replace interior speaker labels with presentation-only
+        # cues. Kyrie translation glosses remain exact, named nonspoken notes.
+        # Every source word and semantic event position is unchanged.
         expected = {
             "pentecost_10_text": (
                 178,
-                "0050435a37259403fd32488be1eba46df9a6c117bbffcad39468d86621b4c0f0",
+                "c5b11f528425b4a3e6039ba647522f46514d4e67f55ffef687db63fcd63a8b0f",
             ),
             # Re-pinned 2026-10-19 (C4 step 2), diffed against HEAD 1107fdc1a:
             # the sequence is unchanged and only the Preface dialogue and the
             # Pax changed, by losing their "Priest"/"Response" word labels now
             # that each turn row carries one presentation-only cue.
+            # Re-pinned 2026-10-20 (C4 doxology): only the doxology's
+            # stored P./R. letters become independently checked speaker cues.
+            # Three source fragments remain two target speaker spans inside
+            # one unchanged event; all source words and event order survive.
             "ot_18_text": (
                 67,
-                "a68c61acabac67a7cb994e63c51077793a72e016af2125c7e7e405ce6eb20042",
+                "08c8e30c67d3b1f86a62c44ae7183874df3043dcad9bcfb2177926359349ceb6",
             ),
         }
         for key, (count, wanted_digest) in expected.items():
@@ -2592,7 +2628,7 @@ process.stdout.write(JSON.stringify({
         """
         report = self.run_harness()
         dialogues = report["real_dialogues"]
-        self.assertEqual(len(dialogues), 33)
+        self.assertEqual(len(dialogues), 72)
         priest_server = [("P", "Priest", "P."), ("S", "Server", "R.")]
         versicle_response = [("℣", "Versicle — Priest", "P."), ("℟", "Response — Server", "R.")]
         expected_cues = {
@@ -2617,6 +2653,25 @@ process.stdout.write(JSON.stringify({
                 ("P", "Priest", "P."), ("℟", "Response — Server", "R."),
             ],
             "praeparatio/adjutorium-nostrum": versicle_response,
+            'praeparatio/deus-tu-conversus': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
+            'praeparatio/ostende-nobis': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
+            'praeparatio/domine-exaudi': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
+            'praeparatio/dominus-vobiscum': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
+            'praeparatio/misereatur-tui': [('S', 'Server', 'R.'), ('P', 'Priest', 'P.')],
+            'praeparatio/misereatur-vestri': [('P', 'Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
+            'praeparatio/indulgentiam': [('P', 'Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
+            'praeparatio/kyrie-eleison': [('P', 'Priest', 'P.'), ('S', 'Server', 'R.'), ('P', 'Priest', 'P.')],
+            'praeparatio/christe-eleison': [('S', 'Server', 'R.'), ('P', 'Priest', 'P.'), ('S', 'Server', 'R.')],
+            'praeparatio/kyrie-eleison-repetitio': [('P', 'Priest', 'P.'), ('S', 'Server', 'R.'), ('P', 'Priest', 'P.')],
+            'praeparatio/dominus-vobiscum-post-gloriam': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
+            'oblatio/dominus-vobiscum-ante-evangelium': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.'), ('P', 'Priest', 'P.'), ('S', 'Server', 'R.')],
+            'oblatio/dominus-vobiscum-ante-offertorium': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
+            'conclusio/dominus-vobiscum-ante-postcommunionem': [('P', 'Priest', None), ('S', 'Server', 'R.'), ('P', 'Priest', None)],
+            'canon/per-omnia-saecula': [('P', 'Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
+            'communio/pater-noster': [('P', 'Priest', None), ('℟', 'Response — Server', 'R.'), ('P', 'Priest', 'P.')],
+            'communio/per-omnia-saecula-post-libera-nos': [('P', 'Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
+            'conclusio/requiescant-in-pace': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
+            'conclusio/initium-sancti-evangelii': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.'), ('P', 'Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
             "oblatio/per-omnia-saecula": versicle_response,
             "oblatio/sursum-corda": versicle_response * 3,
             "communio/pax-domini": [("P", "Priest", "P."), ("℟", "Response — Server", "R.")],
@@ -2629,6 +2684,9 @@ process.stdout.write(JSON.stringify({
                 ("℣", "Versicle — Priest", "P."), ("℟", "Response — All", "R."),
             ] * 3,
             "ritus-communionis/pax-domini": [("P", "Priest", "P."), ("All", "All", "R.")],
+            "prex-eucharistica/doxologia": [
+                ("P", "Priest", None), ("P", "Priest", "P."), ("All", "All", "R."),
+            ],
         }
         antiphon = dialogues["roman-1962 praeparatio/introibo-ad-altare-dei la"]
         self.assertTrue(antiphon["rendered_turns"][0]["texts"][0]["text"].startswith("Ant. "))
@@ -2636,7 +2694,7 @@ process.stdout.write(JSON.stringify({
         self.assertTrue(antiphon["rendered_turns"][0]["texts"][0]["text"].startswith("Anth. "))
         for name, dialogue in dialogues.items():
             calendar, key, lang = name.split(" ")
-            rows = dialogue["rendered_turns"]
+            rows = [row for row in dialogue["rendered_turns"] if row.get("gloss") != "true"]
             with self.subTest(dialogue=name):
                 self.assertEqual(
                     [
@@ -2649,7 +2707,8 @@ process.stdout.write(JSON.stringify({
                     ],
                     expected_cues[key],
                 )
-                for row, source in zip(rows, dialogue["source_turns"]):
+                spoken_source = [turn for turn in dialogue["source_turns"] if turn.get("gloss") is not True]
+                for row, source in zip(rows, spoken_source):
                     self.assertEqual(len(row["cues"]), 1, "one visible cue")
                     self.assertEqual(row["cues"][0]["aria_hidden"], "true")
                     self.assertEqual(len(row["labels"]), 1, "one accessible label")
@@ -2705,6 +2764,28 @@ process.stdout.write(JSON.stringify({
         self.assertFalse(priest["received"].startswith("Priest Priest"))
         self.assertNotIn("P. ", priest["received"])
 
+    def test_source_gloss_is_a_note_after_three_spoken_acclamations(self) -> None:
+        report = self.run_harness()
+        for key in ("kyrie-eleison", "christe-eleison", "kyrie-eleison-repetitio"):
+            english = report["real_dialogues"]["roman-1962 praeparatio/" + key + " en"]
+            latin = report["real_dialogues"]["roman-1962 praeparatio/" + key + " la"]
+            self.assertEqual(len(english["rendered_turns"]), 4)
+            self.assertEqual(len(latin["rendered_turns"]), 3)
+            gloss = english["rendered_turns"][-1]
+            source = english["source_turns"][-1]
+            self.assertTrue(source["gloss"])
+            self.assertEqual((gloss["gloss"], gloss["note_role"], gloss["note_label"]),
+                             ("true", "note", "Source translation"))
+            self.assertEqual((gloss["speaker"], gloss["dialogue_role"], gloss["printed_marker"], gloss["action"]),
+                             (None, None, None, None))
+            self.assertEqual(gloss["cues"], [])
+            self.assertEqual(gloss["labels"], [])
+            self.assertEqual(gloss["texts"], [{"lang": "en", "text": source["text"]}])
+            self.assertEqual(gloss["received"], source["text"])
+            self.assertIsNone(gloss["id"])
+            self.assertIsNone(gloss["semantic_id"])
+            self.assertTrue(all(row["dialogue_role"] is None for row in english["rendered_turns"] + latin["rendered_turns"]))
+
     def run_harness(self) -> dict:
         run = subprocess.run(
             ["node", "-e", HARNESS],
@@ -2729,7 +2810,10 @@ class FormularyPage(unittest.TestCase):
         self.assertLess(notice, proper)
         self.assertLess(proper, actions)
         self.assertLess(actions, browse)
-        self.assertEqual(page.count('data-reader-action="'), 4)
+        self.assertEqual(page.count('data-reader-action="'), 5)
+        # Study is a direct mode action; the four dialog actions keep their
+        # existing aria-controls/expanded contract below.
+        self.assertIn('data-reader-action="study" aria-current="false"', page)
         for action, surface in (
             ("browse", "browse"),
             ("contents", "contents"),
@@ -2968,10 +3052,18 @@ class ProperPlacementNotesPage(unittest.TestCase):
     def test_day_alone_loads_placement_notes_before_its_renderer(self) -> None:
         day = DAY_HTML.read_text(encoding="utf-8")
         self.assertNotIn('proper-placement-notes.js', day)
+        self.assertNotIn('<script src="day.js"></script>', day)
         self.assertLess(
-            day.index('<script src="day.js"></script>'),
+            day.index('<script src="reader-optional-runtime.js"></script>'),
             day.index('<script src="day-reader.js"></script>'),
         )
+        # Placement reasoning remains owned by the Day controller and comes
+        # only from actual seated Proper events and their source loci.
+        day_controller = (DAY_HTML.parent / "day-reader.js").read_text(encoding="utf-8")
+        start = day_controller.index("function appendOrdinaryReasoning(")
+        reasoning = day_controller[start:day_controller.index("\n  function ", start + 1)]
+        self.assertIn("event.kind === 'proper' && event.seat && event.seat.locus", reasoning)
+        self.assertIn("'Seated here by ' + event.seat.locus", reasoning)
 
         formulary = FORMULARY_HTML.read_text(encoding="utf-8")
         self.assertNotIn("proper-placement-notes", formulary)
@@ -3144,6 +3236,7 @@ function dialogueReport(rendered) {
     dialogue_role: row.attrs['data-dialogue-role'] || null,
     action: row.attrs['data-action'] || null,
     printed_marker: row.attrs['data-printed-marker'] || null,
+    ...(row.attrs['data-gloss'] === 'true' ? {gloss: 'true', note_role: row.attrs.role, note_label: row.attrs['aria-label']} : {}),
     id: row.attrs.id || null,
     semantic_id: row.attrs['data-semantic-id'] || null,
     labels: descendants(row, 'visually-hidden').map((one) => one.text()),
@@ -3376,13 +3469,15 @@ for (const lang of ['en', 'la']) {
     'praeparatio/emitte-lucem-tuam', 'praeparatio/confitebor-tibi-in-cithara',
     'praeparatio/gloria-patri', 'praeparatio/introibo-ad-altare-dei-repetitio',
     'praeparatio/adjutorium-nostrum',
+    'praeparatio/deus-tu-conversus', 'praeparatio/ostende-nobis', 'praeparatio/domine-exaudi', 'praeparatio/dominus-vobiscum', 'praeparatio/misereatur-tui', 'praeparatio/misereatur-vestri', 'praeparatio/indulgentiam', 'praeparatio/kyrie-eleison', 'praeparatio/christe-eleison', 'praeparatio/kyrie-eleison-repetitio', 'praeparatio/dominus-vobiscum-post-gloriam', 'oblatio/dominus-vobiscum-ante-evangelium', 'oblatio/dominus-vobiscum-ante-offertorium', 'conclusio/dominus-vobiscum-ante-postcommunionem', 'canon/per-omnia-saecula', 'communio/pater-noster', 'communio/per-omnia-saecula-post-libera-nos', 'conclusio/requiescant-in-pace', 'conclusio/initium-sancti-evangelii',
     'oblatio/per-omnia-saecula', 'oblatio/sursum-corda', 'communio/pax-domini',
     'conclusio/dominus-vobiscum-ite-missa-est', 'conclusio/deo-gratias']) {
     realDialogues['roman-1962 ' + key + ' ' + lang] = realTurns(tlm, key, lang);
   }
 }
 for (const key of ['praeparatio-donorum/orate-fratres',
-  'prex-eucharistica/praefationis-dialogus', 'ritus-communionis/pax-domini']) {
+  'prex-eucharistica/praefationis-dialogus', 'ritus-communionis/pax-domini',
+  'prex-eucharistica/doxologia']) {
   realDialogues['postconciliar ' + key + ' la'] = realTurns(pc, key, 'la');
 }
 

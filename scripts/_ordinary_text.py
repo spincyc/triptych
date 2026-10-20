@@ -32,11 +32,12 @@ So an element is set as what its `kind` says it is, in every tier:
     dialogue  the words, with V. and R. as glyphs where the stream carries them
 
 WHAT IS NOT DECIDED HERE. Not rights — the generator has already dropped every
-witness it may not publish and written the recorded reason on each element, and
-this prints what it is handed. Not who is speaking beyond the mark the book
-prints: the 1861 book's `P.`/`R.` column mixes a person with a position in a
-dialogue, the browser says so at length, and a terminal inventing a second
-answer would be the defect this repository is most careful about.
+witness it may not publish and written the recorded reason on each element.
+Structured fragments use only their reviewed speaker and dialogue_role; the
+1861 book's P./R. speaker letters never create a role. A source translation
+gloss is a separately named nonspoken note, and an action remains an action.
+Only legacy opaque blocks still use the printed-mark formatter; no boundary
+or new role is inferred here.
 """
 from __future__ import annotations
 
@@ -138,8 +139,27 @@ def element_lines(
             for line in wrap(f"[ {' '.join(text.split())} ]", body):
                 lines.append(style.note(line))
         elif kind in SPOKEN:
-            for line in wrap(style.versicled(text), body):
-                lines.append(line)
+            turns = held[0].get("turns") or []
+            if turns:
+                for turn in turns:
+                    words = str(turn.get("text") or "")
+                    if turn.get("gloss") is True:
+                        lines.extend(style.note(line) for line in wrap(f"[ Source translation: {words} ]", body))
+                    elif turn.get("action") is True:
+                        if show_rubrics:
+                            lines.extend(style.note(line) for line in wrap(f"[ {words} ]", body))
+                    else:
+                        speaker = {"priest": "Priest", "server": "Server", "all": "All"}.get(turn.get("speaker"))
+                        role = {"versicle": "℣", "response": "℟"}.get(turn.get("dialogue_role"))
+                        cue = (role + (" — " + speaker if speaker else "")) if role else speaker
+                        marker = turn.get("printed_marker")
+                        if cue and marker and words.startswith(marker + " "):
+                            words = words[len(marker) + 1:]
+                        shown = ((cue + ": ") if cue else "") + words
+                        lines.extend(wrap(style.text(shown), body))
+            else:
+                for line in wrap(style.versicled(text), body):
+                    lines.append(line)
         else:
             lines.extend(wrap(text, body))
         return lines

@@ -606,6 +606,23 @@ instead of a previous ready flag. The corrected payload contracts pass 9/9 and
 5/5 after the test-only correction, with empty diagnostic arrays. This records
 the actual rerun sequence, not a claim that either earlier full run was green.
 
+The next source checkpoint divides the remaining nineteen explicit mixed-speaker
+1962 blocks in both held languages: 38 exact parent cells become 97 fragments,
+including three English nonspoken Kyrie glosses. Ten new immutable Cummiskey
+1861 derivatives retain every parent word; source speakers and independently
+checked target roles stay distinct. The Ordinary keeps 196 elements and its
+semantic event order. A separate postconciliar doxology slice adds checked
+speaker spans; Pater noster records the source-only Amen and unresolved target
+turn mapping. Source-library validation and `make check-sources` pass; catalog
+review admits exactly ten new artifact identities, with no existing manifest
+change or family-screening promotion. The source projection changes apparatus
+metadata only. The integrated browser probe passes all 36 checks, including
+native clipboard and real accessibility trees. All 69 source/Ordinary tests,
+the owning shell test and 29 affected captured examples pass. The public
+qualification uses readable edition/locus citations; protected artifact IDs and
+hashes remain in the owning study evidence. Representative AT and final
+print/independent acceptance remain open.
+
 A parallel witness audit found no publishable English witness for the 1962
 Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
 is an inaccessible page-image lead, not a text source. An

@@ -1259,7 +1259,7 @@
 
   /** One explicit turn cue, with one accessible label and no spoken glyph. */
   function structuredTurnCue(turn) {
-    if (turn.action === true) return null;
+    if (turn.action === true || turn.gloss === true) return null;
     const speakerWord = SPEAKER_WORDS[turn.speaker] || null;
     const roleWord = DIALOGUE_ROLE_WORDS[turn.dialogue_role] || null;
     const visible = DIALOGUE_ROLE_CUES[turn.dialogue_role] ||
@@ -1314,7 +1314,13 @@
 
     for (const turn of held.turns) {
       const action = turn.action === true;
-      const row = T.el('p', 'ordinary-turn' + (action ? ' is-action' : ''));
+      const gloss = turn.gloss === true;
+      const row = T.el('p', 'ordinary-turn' + (action ? ' is-action' : '') + (gloss ? ' is-gloss' : ''));
+      if (gloss) {
+        row.setAttribute('data-gloss', 'true');
+        row.setAttribute('role', 'note');
+        row.setAttribute('aria-label', 'Source translation');
+      }
       if (turn.speaker) row.setAttribute('data-speaker', turn.speaker);
       if (turn.dialogue_role) {
         row.setAttribute('data-dialogue-role', turn.dialogue_role);

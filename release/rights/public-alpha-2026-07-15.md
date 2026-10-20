@@ -11374,7 +11374,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/day-study.js` | `063aaf59eb5e9afcd500be4a4e3129ca4c7135d9e605f848bb2b5eee6ebc8780` |
 | `src/web/browser/liturgy/day.css` | `93ef9f44ee5d6488cb95a1587e856bd75488ea6b34b6ff723a01a437a75b6ed1` |
 | `src/web/browser/liturgy/day.html` | `77f7d924a661c93d1d6a24e55d7163b1e806c3fe62647f3d550d53c0cecedf36` |
-| `src/web/browser/liturgy/day.js` | `5d4ee306f09e2d875fb9ea587fb8ec497c76469a7c000bb54419b8bbb621167b` |
+| `src/web/browser/liturgy/day.js` | `08741c93a0f7423745d184a2b1c3f13b01776199e44950bca293b08654fc1956` |
 | `src/web/browser/liturgy/index.html` | `dfab29471e9f9ce5b19540eee9bf9e90331e5a74b4317f36785fab47ee79108d` |
 | `src/web/browser/liturgy/liturgy.css` | `5333873c3fbcdabb5cd10b1d92897feaa27fad7d532e70c17fd2130088f936b6` |
 | `src/web/browser/liturgy/liturgy.js` | `b6a2ca7e2bf3b5966855312569092a3b6c3f32435cf73e4d04cf14fc801feabf` |
@@ -11392,7 +11392,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/reader-compare-view.css` | `7dbebb3478e5978064c6f38bd299d85323bde5b91c3a6a7ccb39eb1627e784e7` |
 | `src/web/browser/liturgy/reader-compare-view.js` | `0a90bf3f37a31fc90daa71d5682445a68f9cbf1f0b89637156f2524403e727ce` |
 | `src/web/browser/liturgy/reader-comparison.js` | `5cbdba8f90253703adf3238b728881471e77b0fa54fac1ed714789b1254c28bc` |
-| `src/web/browser/liturgy/reader-instrument.css` | `6d22e26a94633e1eaea5bc1266b0b9e08d2d4c864b71759a3504334f5e27cf02` |
+| `src/web/browser/liturgy/reader-instrument.css` | `6006dd3c09b1a3586dfc2627d7bb02e87ae892f05475ec24628a55cb0041ee5f` |
 | `src/web/browser/liturgy/reader-mode-keyboard.js` | `5f5170b64f7a9d312d2b66449573a13b104f355e0a6efc3aee38941b836a31ba` |
 | `src/web/browser/liturgy/reader-optional-runtime.js` | `ef8132a7bd3f4723a71fde1743b1779a973ed16eec7692b9b46fc6e23945393c` |
 | `src/web/browser/liturgy/reader-proper-payload.js` | `993c7432383b6e46acd6cce811cb9d45972136d914ca05be88fb710421bcef7e` |
@@ -14154,8 +14154,8 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-6.json` | `54408d9f5e1c8b684850b05976d6e3ac9ee3b88b6194c37c7e1cf83d52256d28` |
 | `src/web/data/structure/documents/corpus.json` | `56070f77c5f99cef1be7724266aab28b89c9bf3fb045478247ad92c5d6bfe9e1` |
 | `src/web/data/structure/ordinary/index.json` | `d42c3482d78158b8d1a0d51b65ce6d5704b5d634f8833bc46f2a8a65b3a73816` |
-| `src/web/data/structure/ordinary/postconciliar.json` | `92f700d466f17a4cd8554bfb486f24ce31a774c60af3ce32105c373e63e88ef3` |
-| `src/web/data/structure/ordinary/roman-1962.json` | `295f51e6f71cfc25a38bfeb0d5d2893f53fef36fd5c27a4ce437aa274fa2e5e1` |
+| `src/web/data/structure/ordinary/postconciliar.json` | `53b1322024937c579069b998af29911c08ce9e4b51cd5da96372ea56fbd64004` |
+| `src/web/data/structure/ordinary/roman-1962.json` | `8bda8aada6f53037944f8f6602503c1cb4833e9587f3b0e84cee464442ca93ac` |
 | `src/web/data/structure/ordinary/roman-pre-1955.json` | `0148747d78f061dda74c9b4d77e1c4b6d67b0c222cb4e034a29c642b84bead44` |
 | `src/web/data/structure/paragraphs/catholic-public-domain-version/01-gen/001.json` | `4f79beb5afe32b8fe6bad5133cf93ad8a3c27f7a6e1fcbfd583d4943c42ab2ee` |
 | `src/web/data/structure/paragraphs/catholic-public-domain-version/01-gen/002.json` | `baff1b94da49a490aad58ef3eda8c76fcbae8eb5852ca5d7953af6c8f81f746e` |
@@ -20579,7 +20579,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/eric-perl/pseudo-dionysius-cambridge-history-chapter-42/2011-2011-online-summary.json` | `0c12be4f3ef35f6de5ee9281423ab436dfc703b0420e00c437be5b4edde3c31b` |
 | `src/web/data/structure/sources/editions/ernst-haeckel/history-of-creation/1880-gutenberg-40472.json` | `a6b12cc89bbe4bc9f1a4ed9357b2ddf7214d808d7050ae907723b14dced1b544` |
 | `src/web/data/structure/sources/editions/eugene-cummiskey/roman-missal-english-laity/1843-philadelphia-1843.json` | `f02a7131ed5cce6ed0c9b5ee3d42edf7aeb592aa0d793ac47d1b6c7a903db443` |
-| `src/web/data/structure/sources/editions/eugene-cummiskey/roman-missal-english-laity/1861-philadelphia-1861.json` | `3df237fcc4555edaeeeb9beaaf737ff55fd739095c2212bb9e38c9a28b07a0bc` |
+| `src/web/data/structure/sources/editions/eugene-cummiskey/roman-missal-english-laity/1861-philadelphia-1861.json` | `859cdbe6edadb67202abb471fe7e09231d8161e9d040c9d70479e889ef395d0a` |
 | `src/web/data/structure/sources/editions/eusebius/ecclesiastical-history/1908-greek-schwartz-mommsen-gcs-1908.json` | `a1f71ccf80c184d94fd726a4c7d63cf0ea48063aa50b1775bbdbe9ac41410789` |
 | `src/web/data/structure/sources/editions/eusebius/ecclesiastical-history/2026-english-mcgiffert-npnf2-1-newadvent-web-2026-07-27.json` | `d95dfb74f49a129b5c608d13384a42d2fe9df4786928fa5299d16633b85b54be` |
 | `src/web/data/structure/sources/editions/federation-of-diocesan-liturgical-commissions/mystagogical-reflections/2012-2012-2013-collects.json` | `f9f4a1c2794392b49007ea349ebab918ed4c4803acdb1606827c9a08f54895a7` |
@@ -21304,7 +21304,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/william-williams/guide-me-o-thou-great-jehovah/2026-hymnal-of-praise-1913-hymnary-web-2026-07-29.json` | `0c387edabb7fcde38b30186316a98931754e5184bea07b1c3f437c3192f8e195` |
 | `src/web/data/structure/sources/editions/world-health-organization/icd-11-clinical-descriptions-and-diagnostic-requirements/2024-english-who-2024.json` | `97b5a08dc7e0a83a6c4da5990e21e8fcc2e4356d569903f09b8b97d34f1672aa` |
 | `src/web/data/structure/sources/editions/world-intellectual-property-organization/wipo-lex-berne-contracting-parties/2026-web-2026-08-01.json` | `ffaf08c0f47cd6ab1d4761546a9e290ce69420b185c891d67395fcc17d5d9d5e` |
-| `src/web/data/structure/sources/index.json` | `9323ca847f30c3439f8cced9a500b44afcf1b53e413bc867e35af7862691bd02` |
+| `src/web/data/structure/sources/index.json` | `45c12a80e50709da2501ab0ea995ae95be13b28d0396fc4438b536f6da841ebf` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.1.json` | `bf80df77e273500e8769a0a0613d4bb907a736fafce970a0e62804eda1219c58` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.10.json` | `14700390dab93606af7e6e934d457e2ed524f13977f64bb6ede3f04daea4521d` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.100.json` | `c9b31161f4c7f56ea4c89bfaa550e47bc6327f5b8db9f685dc5bf2a4d73d1de2` |

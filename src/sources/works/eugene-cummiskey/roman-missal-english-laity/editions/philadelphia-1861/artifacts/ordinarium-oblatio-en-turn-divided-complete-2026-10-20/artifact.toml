@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The underlying 1861 Philadelphia printing is public domain in the United States. This is a word-preserving, source-fragment derivative of the exact tracked parent transcription, retaining its source words, printed letters, pointing and known misprints. The parent's United States public-domain basis applies; no modern protected text or apparatus is added."
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided"
+transformation = "From exact parent artifact artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided, sha256 fe0b5460fd2d6fbac435ae33ce61a762925240120a794cd3a559d27f5d3ab7c6, copy every TSV row byte for byte except the page-checked divisions: seq 8 into 801-804, zero-based single-space token boundaries [0, 6, 11, 24, 31]; seq 18 into 1801-1802, zero-based single-space token boundaries [0, 6, 11]. Child rows are seq*100+n. Each first child retains the parent's metadata with an appended division note; later children retain its page and element identity while notes and any element-level speaker/incipit cells are blank. Joining each parent's child text cells with one ASCII space exactly recovers that parent's text cell. All other rows and the parent artifact remain unchanged."
+retrieved = "2026-10-20"
+sha256 = "ddafb57c42993839877629ff18a9f3268d5dc3f7a079f3ab84769831383880a5"
+byte_size = 27417
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-en-turn-divided-complete-2026-10-20/ordinarium-oblatio-en-turn-divided-complete-2026-10-20.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "The source's own page images were read at 200 and 400 dpi on 2026-10-20. These rows hold only the 1861 lay witness, never a transcription of the 1962 typical edition. P./R. remains source speaker evidence; target dialogue roles are independently declared with their exact page basis in the 1962 inventory. Any English Kyrie translation gloss is a separately declared nonspoken source fragment, with no speaker, dialogue role or cue; the Latin artifact has no copy of that English gloss. The original source qualifications, variants and absences remain unchanged."

@@ -219,7 +219,7 @@ EXAMPLES = {
                 "    IN the Name of the Father, and of the Son, and of the Holy Ghost. Amen.",
                 "",
                 "  Introibo ad altare Dei (priest)",
-                "... 607 more lines",
+                "... 647 more lines",
             ),
             "read-only; prints the same assembly `structure` writes for the browser",
         ),
@@ -394,7 +394,10 @@ TURN_DIALOGUE_ROLES = ("versicle", "response")
 # rendered with two cues.
 TURN_PRINTED_MARKERS = ("P.", "R.")
 TURN_MARKER_HEAD = re.compile(r"^(?:[PRVS]\.|[℣℟]\.?)\s")
-TURN_FIELDS = {"key", "seq", "speaker", "dialogue_role", "action", "printed_marker"}
+# A source translation gloss is printed explanatory text, not an extra
+# recitation or a rubric. Only an explicitly reviewed row may declare it;
+# it carries no speaker, dialogue role, action or printed cue.
+TURN_FIELDS = {"key", "seq", "speaker", "dialogue_role", "action", "gloss", "printed_marker"}
 TURN_PARTITION_FIELDS = {"element", "lang", "parts"}
 # A dialogue role is a reviewed reading of where the controlling book prints
 # its versicle and response marks, never of the witness's P./R. column.  A
@@ -1557,10 +1560,11 @@ def artifact_turn_partition_table(section: dict, name: str) -> dict[tuple[str, s
             isinstance(part, dict) and part.get("dialogue_role") is not None
             for part in parts
         )
-        if roles and basis is None:
+        glosses = any(isinstance(part, dict) and part.get("gloss") is True for part in parts)
+        if (roles or glosses) and basis is None:
             raise SourceError(
                 f"{name}: section {section['key']} turn partition for {element} "
-                f"in {lang} declares a dialogue role without a basis; a role is "
+                f"in {lang} declares a {'source gloss' if glosses and not roles else 'dialogue role'} without a basis; a role is "
                 "read from where the controlling book prints its versicle and "
                 "response marks, and the partition must say where"
             )
@@ -2529,7 +2533,14 @@ def structured_turns(entry: dict, side: str, library: dict, artifact_id: str,
                 f"{name}: element {key} turn {turn_key} cannot be both an action "
                 "and a spoken turn"
             )
+        gloss = declaration.get("gloss") if "gloss" in declaration else None
+        if "gloss" in declaration and gloss is not True:
+            raise SourceError(f"{name}: element {key} turn {turn_key} gloss must be true or omitted")
+        if gloss and (speaker is not None or dialogue_role is not None or action):
+            raise SourceError(f"{name}: element {key} turn {turn_key} source gloss cannot carry a speaker, dialogue role or action")
         printed_marker = declaration.get("printed_marker")
+        if gloss and printed_marker is not None:
+            raise SourceError(f"{name}: element {key} turn {turn_key} source gloss cannot carry a printed marker")
         if printed_marker is not None and printed_marker not in TURN_PRINTED_MARKERS:
             raise SourceError(
                 f"{name}: element {key} turn {turn_key} has printed_marker "
@@ -2548,7 +2559,7 @@ def structured_turns(entry: dict, side: str, library: dict, artifact_id: str,
                 "action": action,
                 "printed_marker": printed_marker,
                 "text": None,
-            }
+            } | ({"gloss": True} if gloss else {})
         )
 
     # The inline counterpart of the artifact partition's `basis` rule (C4,
@@ -2560,10 +2571,10 @@ def structured_turns(entry: dict, side: str, library: dict, artifact_id: str,
     # artifact turn partition has already been held to its own `basis` by
     # artifact_turn_partition_table, and says so with role_basis_checked.
     if not role_basis_checked and any(
-        turn["dialogue_role"] is not None for turn in turns
+        turn["dialogue_role"] is not None or turn.get("gloss") is True for turn in turns
     ) and not isinstance(entry.get("turns_basis"), str):
         raise SourceError(
-            f"{name}: element {key} declares a dialogue role in {field} without a "
+            f"{name}: element {key} declares a {'source gloss' if any(turn.get('gloss') is True for turn in turns) else 'dialogue role'} in {field} without a "
             "turns_basis; a role is read from where the controlling book prints "
             "its versicle and response marks, and the element must say where"
         )

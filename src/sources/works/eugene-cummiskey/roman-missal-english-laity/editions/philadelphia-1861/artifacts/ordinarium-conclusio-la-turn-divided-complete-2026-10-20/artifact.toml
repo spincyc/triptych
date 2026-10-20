@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la-turn-divided-complete-2026-10-20"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The underlying 1861 Philadelphia printing is public domain in the United States. This is a word-preserving, source-fragment derivative of the exact tracked parent transcription, retaining its source words, printed letters, pointing and known misprints. The parent's United States public-domain basis applies; no modern protected text or apparatus is added."
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la-turn-divided"
+transformation = "From exact parent artifact artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la-turn-divided, sha256 d6b612312a631ad0b78358b66a551c44132404ba55193067147eea9d0ae1bdcd, copy every TSV row byte for byte except the page-checked divisions: seq 5 into 501-503, zero-based single-space token boundaries [0, 2, 7, 8]; seq 14 into 1401-1402, zero-based single-space token boundaries [0, 4, 6]; seq 19 into 1901-1904, zero-based single-space token boundaries [0, 3, 8, 14, 18]. Child rows are seq*100+n. Each first child retains the parent's metadata with an appended division note; later children retain its page and element identity while notes and any element-level speaker/incipit cells are blank. Joining each parent's child text cells with one ASCII space exactly recovers that parent's text cell. All other rows and the parent artifact remain unchanged."
+retrieved = "2026-10-20"
+sha256 = "a47d7f43b667fffa08b234f4d2fa0693ac286864adc96b8220fdc617d7332458"
+byte_size = 5935
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-conclusio-la-turn-divided-complete-2026-10-20/ordinarium-conclusio-la-turn-divided-complete-2026-10-20.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "The source's own page images were read at 200 and 400 dpi on 2026-10-20. These rows hold only the 1861 lay witness, never a transcription of the 1962 typical edition. P./R. remains source speaker evidence; target dialogue roles are independently declared with their exact page basis in the 1962 inventory. Any English Kyrie translation gloss is a separately declared nonspoken source fragment, with no speaker, dialogue role or cue; the Latin artifact has no copy of that English gloss. The original source qualifications, variants and absences remain unchanged."
