@@ -2181,6 +2181,10 @@ RUN_BREAK_RE = re.compile(SOURCE_BREAK_RE.pattern + r"|[{}]")
 
 def source_word_runs(sources: str) -> list[list[str]]:
     """The leaf's words, grouped by the runs no reader may be read across."""
+    # PDF metadata is not a reader-facing prose run. A pdftitle can repeat a
+    # displayed title and subtitle as one long argument even though the
+    # corresponding \propertitle arguments are separate fields.
+    sources = replace_grouped_macro(sources, "hypersetup", 1, lambda _: "")
     return [
         [word.casefold() for word in WORD_RE.findall(CONTROL_WORD_RE.sub(" ", piece))]
         for piece in RUN_BREAK_RE.split(COMMENT_RE.sub("", sources))

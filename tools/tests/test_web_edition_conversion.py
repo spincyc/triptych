@@ -305,6 +305,19 @@ class WebEditionConversionTests(unittest.TestCase):
             any("lowercase" in failure for failure in failures), failures
         )
 
+    def test_pdf_title_metadata_does_not_join_display_title_fields(self) -> None:
+        sources = (
+            r"\hypersetup{pdftitle={Our Lord Jesus Christ the King: "
+            r"Hearing the King and Receiving His Peace}}" "\n"
+            r"\propertitle{Our Lord Jesus Christ the King}"
+            r"{Hearing the King and Receiving His Peace}{1962 Roman Missal}{25 October 2026}"
+        )
+        markdown = (
+            "**Our Lord Jesus Christ the King**\n\n"
+            "Hearing the King and Receiving His Peace\n"
+        )
+        self.assertEqual(DRIVER.severed_runs(sources, markdown), [])
+
     def test_a_break_hint_does_not_eat_the_token_after_it(self) -> None:
         # Pandoc consumed the token after \allowbreak inside \texttt, so
         # `sections/50-resumed-sundays.tex` reached the reader as
