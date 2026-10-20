@@ -46679,6 +46679,7 @@ source_locus = "Missale Romanum 1962, physical PDF p. 437, printed p. 356; numbe
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost"
 
+calendar_proper_name = "Introit"
 [[targets]]
 id = "roman-1962.temporal.pentecost:collect:1"
 slice_id = "roman-1962-temporal-easter-through-last-sunday"
@@ -46689,6 +46690,7 @@ source_locus = "Missale Romanum 1962, physical PDF p. 437, printed p. 356; numbe
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost"
 
+calendar_proper_name = "Collect"
 [[targets]]
 id = "roman-1962.temporal.pentecost:reading:1"
 slice_id = "roman-1962-temporal-easter-through-last-sunday"
@@ -46699,6 +46701,7 @@ source_locus = "Missale Romanum 1962, physical PDF p. 437, printed p. 356; numbe
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost"
 
+calendar_proper_name = "Lesson"
 [[targets]]
 id = "roman-1962.temporal.pentecost:alleluia:1"
 slice_id = "roman-1962-temporal-easter-through-last-sunday"
@@ -46709,6 +46712,7 @@ source_locus = "Missale Romanum 1962, physical PDF p. 438, printed p. 357; numbe
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost"
 
+calendar_proper_name = "Alleluia"
 [[targets]]
 id = "roman-1962.temporal.pentecost:sequence:1"
 slice_id = "roman-1962-temporal-easter-through-last-sunday"
@@ -46719,6 +46723,7 @@ source_locus = "Missale Romanum 1962, physical PDF p. 438, printed p. 357; numbe
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost"
 
+calendar_proper_name = "Sequence"
 [[targets]]
 id = "roman-1962.temporal.pentecost:gospel:1"
 slice_id = "roman-1962-temporal-easter-through-last-sunday"
@@ -46729,6 +46734,7 @@ source_locus = "Missale Romanum 1962, physical PDF p. 438, printed p. 357; numbe
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost"
 
+calendar_proper_name = "Gospel"
 [[targets]]
 id = "roman-1962.temporal.pentecost:offertory:1"
 slice_id = "roman-1962-temporal-easter-through-last-sunday"
@@ -46739,6 +46745,7 @@ source_locus = "Missale Romanum 1962, physical PDF p. 438, printed p. 357; numbe
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost"
 
+calendar_proper_name = "Offertory"
 [[targets]]
 id = "roman-1962.temporal.pentecost:secret:1"
 slice_id = "roman-1962-temporal-easter-through-last-sunday"
@@ -46749,6 +46756,7 @@ source_locus = "Missale Romanum 1962, physical PDF p. 438, printed p. 357; numbe
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost"
 
+calendar_proper_name = "Secret"
 [[targets]]
 id = "roman-1962.temporal.pentecost:communion:1"
 slice_id = "roman-1962-temporal-easter-through-last-sunday"
@@ -46759,6 +46767,7 @@ source_locus = "Missale Romanum 1962, physical PDF p. 439, printed p. 358; numbe
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost"
 
+calendar_proper_name = "Communion"
 [[targets]]
 id = "roman-1962.temporal.pentecost:postcommunion:1"
 slice_id = "roman-1962-temporal-easter-through-last-sunday"
@@ -46769,6 +46778,7 @@ source_locus = "Missale Romanum 1962, physical PDF p. 439, printed p. 358; numbe
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost"
 
+calendar_proper_name = "Postcommunion"
 [[targets]]
 id = "roman-1962.temporal.pentecost:preface:1"
 slice_id = "roman-1962-temporal-easter-through-last-sunday"
@@ -46779,6 +46789,8 @@ source_locus = "Missale Romanum 1962, physical PDF p. 438, printed p. 357; expli
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost"
 
+calendar_ordinary_appointment = "preface"
+calendar_ordinary_option = "spiritu-sancto"
 [[targets]]
 id = "roman-1962.temporal.pentecost:communicantes:1"
 slice_id = "roman-1962-temporal-easter-through-last-sunday"
@@ -46789,6 +46801,8 @@ source_locus = "Missale Romanum 1962, physical PDF p. 438, printed p. 357; expli
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost"
 
+calendar_ordinary_appointment = "communicantes"
+calendar_ordinary_option = "pentecoste"
 [[targets]]
 id = "roman-1962.temporal.pentecost:hanc-igitur:1"
 slice_id = "roman-1962-temporal-easter-through-last-sunday"
@@ -46799,6 +46813,8 @@ source_locus = "Missale Romanum 1962, physical PDF p. 438, printed p. 357; expli
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost"
 
+calendar_ordinary_appointment = "hanc_igitur"
+calendar_ordinary_option = "pascha-pentecoste"
 [[targets]]
 id = "roman-1962.temporal.pentecost-mon"
 slice_id = "roman-1962-temporal-easter-through-last-sunday"

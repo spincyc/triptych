@@ -1935,6 +1935,38 @@ async function captures(cdp, base) {
   const pdf = await cdp.send('Page.printToPDF', { printBackground: true, preferCSSPageSize: true });
   await writeFile(resolve(captureDir, 'propers-reader-cycle-choice-print.pdf'), Buffer.from(pdf.data, 'base64'));
   await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+  for (const [label, width, height] of [
+    ['1440x900', 1440, 900], ['393x852', 393, 852], ['320x852', 320, 852]
+  ]) {
+    await viewport(cdp, width, height);
+    for (const [language, state] of [
+      ['latin', STATES.romanPentecost], ['english', STATES.romanPentecostEnglish]
+    ]) {
+      await candidate(cdp, base, state);
+      const overflow = await evaluate(cdp,
+        'document.documentElement.scrollWidth - document.documentElement.clientWidth');
+      assert.ok(overflow <= 1, `Pentecost ${language} ${label} overflows by ${overflow}px`);
+      await shot(cdp, resolve(captureDir,
+        `propers--pentecost-1962-read-${language}--${label}.png`));
+    }
+  }
+  await viewport(cdp, 1024, 768);
+  for (const [language, state] of [
+    ['latin', STATES.romanPentecost], ['english', STATES.romanPentecostEnglish]
+  ]) {
+    await candidate(cdp, base, state);
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
+    try {
+      const printed = await cdp.send('Page.printToPDF', {
+        printBackground: true, preferCSSPageSize: true
+      });
+      await writeFile(resolve(captureDir,
+        `propers--pentecost-1962-read-${language}--print.pdf`),
+      Buffer.from(printed.data, 'base64'));
+    } finally {
+      await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+    }
+  }
   await writeFile(resolve(captureDir, 'browser-results.json'), JSON.stringify({
     results, measurements, accessibility: accessibilityReport, performance: performanceReport
   }, null, 2) + '\n');

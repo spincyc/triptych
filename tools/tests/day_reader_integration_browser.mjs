@@ -3587,6 +3587,50 @@ async function captureCandidate(cdp, base, state, kind) {
   return { ...navigation, settlement };
 }
 
+async function captureC2Exemplar(cdp, base, directory) {
+  await mkdir(directory, { recursive: true });
+  const evidence = [];
+  const states = [
+    ['read-latin', STATES.pentecost1962],
+    ['read-english', STATES.pentecost1962English],
+    ['missal-latin', STATES.pentecost1962Missal]
+  ];
+  for (const [width, height] of [[1440, 900], [393, 852], [320, 852]]) {
+    await viewport(cdp, width, height);
+    for (const [name, state] of states) {
+      const navigation = await navigateCandidate(cdp, base, state);
+      const overflow = await evaluate(cdp,
+        'document.documentElement.scrollWidth - document.documentElement.clientWidth');
+      assert.ok(overflow <= 1, `Pentecost ${name} ${width}x${height} overflows by ${overflow}px`);
+      const file = `day--pentecost-1962-${name}--${width}x${height}.png`;
+      await shot(cdp, join(directory, file));
+      evidence.push(await captureEvidence(cdp, file, name, navigation.path,
+        { settlement: navigation.settlement }));
+    }
+  }
+  await viewport(cdp, 1024, 768);
+  for (const [name, state] of [states[1], states[2]]) {
+    const navigation = await navigateCandidate(cdp, base, state);
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
+    try {
+      const pdf = await cdp.send('Page.printToPDF', {
+        printBackground: true, preferCSSPageSize: true,
+        paperWidth: 8.5, paperHeight: 11,
+        marginTop: 0.4, marginBottom: 0.4, marginLeft: 0.45, marginRight: 0.45
+      });
+      const file = `day--pentecost-1962-${name}--print.pdf`;
+      await writeFile(join(directory, file), Buffer.from(pdf.data, 'base64'));
+      evidence.push(await captureEvidence(cdp, file, name + '-print', navigation.path,
+        { settlement: navigation.settlement }));
+    } finally {
+      await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+    }
+  }
+  await writeFile(join(directory, 'c2-exemplar-evidence.json'),
+    JSON.stringify(evidence, null, 2) + '\n');
+  return evidence;
+}
+
 async function captureMatrix(cdp, base, directory) {
   await mkdir(directory, { recursive: true });
   const sizes = [[1440, 900], [1024, 768], [768, 1024], [393, 852], [320, 852]];
@@ -3867,8 +3911,9 @@ async function main() {
 
     await runAssertions(cdp, base);
     const sourceOnly = SOURCE_ONLY;
-    const captures = !sourceOnly && captureDir ?
-      await captureMatrix(cdp, base, captureDir) : [];
+    const captures = captureDir ? (sourceOnly ?
+      await captureC2Exemplar(cdp, base, captureDir) :
+      await captureMatrix(cdp, base, captureDir)) : [];
     await viewport(cdp, 393, 852);
     if (sourceOnly) await navigateCandidate(cdp, base);
     else await navigateBuiltCandidate(cdp, base);

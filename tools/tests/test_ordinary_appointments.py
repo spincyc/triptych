@@ -77,6 +77,13 @@ out.propersPentecost = project(A.adaptPropers({
   request: propersRequest,
   structure: read('src/web/data/structure/propers/postconciliar.json')
 }));
+out.propersPentecost1962 = project(A.adaptPropers({
+  request: {
+    ...propersRequest,
+    edition: { id: 'roman-1962' }, formulary: { id: 'pentecost' }
+  },
+  structure: read('src/web/data/structure/propers/roman-1962.json')
+}));
 process.stdout.write(JSON.stringify(out));
 """
 
@@ -141,6 +148,18 @@ class OrdinaryAppointments(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.report = run()
+
+    def test_1962_pentecost_day_and_propers_have_the_same_ten_units(self) -> None:
+        day = self.report["pentecost1962"]
+        formulary = self.report["propersPentecost1962"]
+        self.assertEqual(formulary["resolved"]["formulary"], "pentecost")
+        # Date-independent Propers has no ritual seats; Day supplies them.
+        self.assertEqual([row[0] for row in day["propers"]],
+                         [row[0] for row in formulary["propers"]])
+        self.assertEqual([row[0] for row in day["propers"]], [
+            "Introit", "Collect", "Lesson", "Alleluia", "Sequence",
+            "Gospel", "Offertory", "Secret", "Communion", "Postcommunion",
+        ])
 
     def prefaces(self, key: str) -> list[str]:
         return [
