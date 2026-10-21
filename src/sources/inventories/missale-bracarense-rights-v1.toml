@@ -218,7 +218,9 @@ datable rather than merely suspicious [verified]:
      79634 and 109091  2 October 1932  |  71812  5 September 1933
      68602  Turin 6 May 1936 and Braga 5 August 1936  |  119346 and 121841
      3 April 1936  |  103203  9 October 1940  |  110366  24 May 1947
-     69954  5 November 1953  |  131516  15 March 1955  |  131724  5 July 1955
+     69954  5 November 1953  |  131516  15 March 1955 in the text layer; the
+     page image reads 15 March 1956 (PDF p. 1202; corrected 2026-10-21, see
+     `[[corrections]]` ocr-probe-absences-falsified)  |  131724  5 July 1955
      91332  November 1958  |  84293  21 NOVEMBER 1961, the latest dated matter in
      the book
 
@@ -245,6 +247,8 @@ is the same line the edition clears.
   that for works of this age -- they were restored under 17 U.S.C. 104A for 95
   years from publication. On that reading the 1932 leaves run to the end of 2027,
   the 1936 leaves to 2031, the 1955 leaves to 2050, and the 1961 leaf to 2056.
+  [Corrected 2026-10-21: the Queenship leaf is dated 1956 on the page image and
+  on this reading runs to 2051; see `[[corrections]]` ocr-probe-absences-falsified.]
   This repository has already worked that analysis once, for a different book,
   at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml
   `[the_underlying_edition.uraa_conditions]` [recorded], and nothing here
@@ -367,19 +371,23 @@ Absent, and each absence bounds the printing from the other side -- nothing in
 this book is later than 1961:
 
   St Therese of Lisieux, canonized 1925 and universal 1927 -- 0 hits on
-  `Teresia a/ab Jesu Infante` and `Infante Jesu`. Notable: her Braga leaf either
-  was never issued or is not in this copy, while three other 1925 canonisations
-  are.
+  `Teresia a/ab Jesu Infante` and `Infante Jesu`. [FALSIFIED 2026-10-21: the
+  leaf is present at PDF pp. 930-931 as `S. TERESIAE A JESU INFANTE`, which the
+  `Teresia a` probe cannot match; see `[[corrections]]`
+  ocr-probe-absences-falsified.]
   St Madeleine Sophie Barat (1925), St Bernadette Soubirous (1933), St John Bosco
   (1934), Thomas More and John Fisher (1935), St Andrew Bobola (1938), St Gemma
   Galgani (1940), St Louis Marie de Montfort (1947), St Maria Goretti (1950) --
-  0 hits each.
+  0 hits each. [St John Bosco FALSIFIED 2026-10-21: present at PDF pp. 635-636;
+  the other names were not re-checked on the page images.]
   The feast of the Immaculate Heart of Mary (1944) -- 0 hits on `Immaculati
   Cordis`.
   Our Lady of Fatima -- 0 hits, in a Portuguese book, which is worth knowing on
   its own.
   The 1929 Mass of the Sacred Heart (`Cogitationes cordis` as an Introit) -- the
-  only hit is the phrase inside an unrelated collect.
+  only hit is the phrase inside an unrelated collect. [FALSIFIED 2026-10-21: the
+  Mass `SACRATISSIMI CORDIS JESU` with Introit `Cogitationes Cordis ejus` is
+  present at PDF pp. 758-764; see `[[corrections]]` ocr-probe-absences-falsified.]
   The restored Holy Week of 1955 -- 0 hits on `Vigilia paschalis`, `Ordo
   Hebdomadae Sanctae`, `instauratus ordo`.
   St Joseph in the Canon, inserted 1962 -- 0 hits on `ejusdem Virginis Sponsi`.
@@ -794,6 +802,12 @@ id = "may-publish-text-yes"
 claim = "`may_publish_text = \"yes\"` for the Braga missal [recorded, missal-acquisition-audit-v1.toml book row missale-bracarense], and `rights = \"public-domain\"` with `digitisation` naming this item on the witness row [recorded, latin-missal-acts-v1.toml]."
 finding = "True of the 1924 EDITION and false of THIS DIGITISATION. The item carries at least fifteen supplement leaves dated 1925 to 1961 and twelve post-1924 formularies, at the loci in `[the_supplement]` [verified]. The audit's own evidence class was `verified`, and it was verified -- for the instruments in the front matter, which is what it read. Nobody read the sanctoral."
 effect = "Reverses the stated disposition for the artifacts: `remote` and `unresolved`, no bytes in Git, instead of `tracked` and `public-domain`. The edition's own status is unchanged, and so is the audit's priority ranking -- Braga is still the cheapest use to reach, because the book is still whole, still fetchable, and still out of copyright as an edition. What changed is that reaching it now needs a leaf map first."
+
+[[corrections]]
+id = "ocr-probe-absences-falsified"
+claim = "`[what_was_searched].searched_and_absent` reports St Therese of Lisieux, St John Bosco and the 1929 Mass of the Sacred Heart absent from this digitisation, and `[the_supplement].subscriptions` dates the Queenship leaf's approbation 15 March 1955 [recorded, this file]."
+finding = "All four are wrong on the page images of the artifact named by sha256 2be6474d... in `[the_acquisition]`. S. Teresiae a Jesu Infante, 3 October, is at PDF pp. 930-931 (Rites concordat 17 May 1925; Braga imprimatur 3 October 1928). S. Joannis Bosco, 31 January, is at PDF pp. 635-636 (Turin concordat 6 May 1936; Braga imprimatur 5 August 1936). Sacratissimi Cordis Jesu, with the Introit Cogitationes Cordis ejus, is at PDF pp. 758-764 (Rites concordat 2 April 1929). The Queenship leaf's approbation reads `Bracarae, 15 Martii, 1956` at PDF p. 1202 [verified 2026-10-21 by the batch-4 western-gaps lane, its independent cold reviewer, and the coordinator on the page images]. The approbation dates for the first three were already in `[the_supplement].subscriptions`; the formularies were missed because the probes ran on the OCR layer, and `Teresia a` cannot match `Teresiae a`. The cold reviewer also reports, from images not re-checked by the coordinator, that 21 supplement inserts are present rather than `at least fifteen`; that 106395 (7 April 1927) is a Turin archdiocesan concordat rather than a Rites one; that the Christ the King leaf carries that 1927 concordat rather than a 1925 date; and that the Assumption leaf carries a Braga imprimatur of 16 December 1950 missing from the list above."
+effect = "The holding is unchanged and nothing is freed. The supplement remains UNRESOLVED and unpublishable under `[the_practical_answer]`. The Therese and Sacred Heart leaves fall in the 1925-1930 class and the Bosco leaf in the 1932-1961 class (2031 on the URAA reading); the 1956 Queenship leaf runs to 2051, not 2050. `post_1924_formularies_found = 12` in `[counts]` records what the OCR sweep found, not the book's contents: at least fifteen post-1924 formularies are present. The falsified entries are marked in place rather than deleted. The western-gaps lane's leaf map (not tracked) is a step toward `[what_would_overturn_this]` item 2, but it has no control yet."
 
 # --- Counts ---------------------------------------------------------------------
 
