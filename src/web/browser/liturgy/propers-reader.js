@@ -1315,9 +1315,7 @@
       }
       if (name === 'mode') {
         const setup = document.getElementById('compare-setup');
-        const button = document.querySelector('[data-mode="compare"]');
         if (setup) setup.hidden = true;
-        if (button) button.setAttribute('aria-expanded', 'false');
       }
     }
   });

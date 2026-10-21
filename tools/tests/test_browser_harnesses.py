@@ -52,7 +52,7 @@ ASSERTION_COUNTS = {
     "day_reader_study_browser.mjs": 25,
     "day_reader_choices_browser.mjs": 8,
     "liturgy_reader_preferences_browser.mjs": 11,
-    "liturgy_reader_share_print_browser.mjs": 5,
+    "liturgy_reader_share_print_browser.mjs": 7,
     "reader_text_size_browser.mjs": 5,
     "pentecost_witness_chooser_browser.mjs": 5,
     # 45 declared at eeb17891d (the recorded 43 had drifted; a source-only run

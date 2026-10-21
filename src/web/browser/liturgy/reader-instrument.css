@@ -61,6 +61,7 @@ body:has(.reader-instrument) > .site-footer,
 }
 
 .reader-instrument {
+  --ink-faint: var(--instrument-faint);
   position: relative;
   container: reader-shell / inline-size;
   min-width: 0;

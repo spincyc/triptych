@@ -336,7 +336,6 @@
 
     button.addEventListener('click', function () {
       setup.hidden = false;
-      button.setAttribute('aria-expanded', 'true');
       const state = input.runtime.normalized && input.runtime.normalized.state;
       if (!state) {
         note.textContent = 'Choose a valid Day selection before comparing editions.';
@@ -363,7 +362,6 @@
       );
       input.readerShell.close({ restoreFocus: false, restoreScroll: false });
       setup.hidden = true;
-      button.setAttribute('aria-expanded', 'false');
       input.onModeSwitch();
       input.navigate({
         mode: 'compare', compare: 'recension',
