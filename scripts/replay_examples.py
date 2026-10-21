@@ -165,6 +165,14 @@ EXEMPT: dict[str, str] = {
 # Not an exemption: the invocation is replayed wherever its precondition holds,
 # and reported by name wherever it does not.
 REQUIRES: dict[str, tuple[str, str]] = {
+    "tools/chant-page-proof .scratch/mvp-1962-latin-bodies/uncited-chants-proof --manifest MANIFEST.json": (
+        "path:.scratch/mvp-1962-latin-bodies/uncited-chants-proof",
+        "the locally held proof packet; absent private inputs are reported as not run",
+    ),
+    "tools/chant-page-proof .scratch/mvp-1962-latin-bodies/uncited-followon-proof/early-five --sha256sums SHA256SUMS --record-root . --render-receipt metadata/render-200dpi.json --render-receipt metadata/render-400dpi.json": (
+        "path:.scratch/mvp-1962-latin-bodies/uncited-followon-proof/early-five",
+        "the locally held proof packet; absent private inputs are reported as not run",
+    ),
     "tools/artwork-library check-pdf build/core-last-20.pdf": (
         "path:build/core-last-20.pdf",
         "a built PDF; no target produces this one, so a fresh clone has no copy",

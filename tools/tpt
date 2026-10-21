@@ -85,13 +85,13 @@ EXAMPLES = {
                 "acquisition:",
                 "  Retrieval from outside the project. This is the only group that reaches",
                 "  outside your machine at all, and no tool in any other group makes a network",
-                "... 70 more lines",
+                "... 71 more lines",
             ),
         ),
         Example(
             "tools/tpt --list --json",
             (
-                "[{\"group\": \"calendar\", \"mutates\": true, \"nam... [+11948 chars]",
+                "[{\"group\": \"calendar\", \"mutates\": true, \"nam... [+12251 chars]",
             ),
             "one object a tool, each carrying the group its listing section came from",
         ),
@@ -138,13 +138,13 @@ EXAMPLES = {
         Example(
             "tools/tpt --check",
             (
-                "registry ok: 43 tools",
+                "registry ok: 44 tools",
             ),
         ),
         Example(
             "tools/tpt --check --json",
             (
-                "registry ok: 43 tools",
+                "registry ok: 44 tools",
             ),
             "--check reports in text either way; it is a gate, not a query",
         ),

@@ -71,6 +71,19 @@
       "stage": "draft",
       "usage": "calendar-spine [derive] [--calendar NAME] [--kind KIND]"
     },
+    "chant-page-proof": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Check mechanical integrity of held chant page-proof packets.",
+      "requires": [
+        "source-library"
+      ],
+      "stage": "draft",
+      "usage": "chant-page-proof PACKET (--manifest REL | --sha256sums REL) [--proof REL] [--record-root DIR] [--render-receipt REL] [--json]"
+    },
     "check-calendar-masses": {
       "idempotent": true,
       "json": true,
