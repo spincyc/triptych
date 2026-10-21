@@ -2535,6 +2535,27 @@ scope_disposition = "in-scope-original-book-or-historical-witness"
 chronology_layout = "unpositioned-pending-date-evidence-or-dispute-resolution"
 
 [[candidates]]
+id = "braga-1924-supplemented-altar-copy"
+family = "braga"
+title = "Missale Bracarense 1924, digitized altar copy with bound supplement leaves to 1961"
+date = "1924 body; latest supplement leaf 1961-11-21"
+kind = "printed-witness-candidate"
+status = "checked-primary-book-pages"
+route = "https://archive.org/details/missale-bracarense-1924"
+sources = ["western-braga1924-supplemented-copy"]
+qualification = "One physical copy of the Vatican 1924 Braga missal with twenty-one supplement inserts, each carrying its own approbation (Sacred Congregation of Rites concordat, Turin archdiocesan concordat or imprimatur, or Braga imprimatur) dated from 17 May 1925 to 21 November 1961, plus a scan-assembly duplicate run (PDF 534-573 repeats 494-533). The copy attests the supplemented state of an altar book; it is not a new edition and does not date local adoption. The 1924 edition itself keeps its act-witness IDs."
+existing_record = "missale-bracarense"
+existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
+date_role = "attestation of a supplemented copy between its latest dated insert leaf (21 November 1961) and its digitization (Internet Archive item added 1 February 2026); not publication of a new edition"
+version_status = "witness-or-revision-candidate-see-qualification"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+chronology_start = 1961
+chronology_end = 2026
+chronology_kind = "supplemented-copy-attestation-window"
+chronology_certainty = "latest-approbation-date-visually-read; upper-bound-digitization-date"
+source_locus = "Inserts at PDF 758-764 (Sacred Heart 1929), 884-885 (Assumption 1950), 964-971 (Christ the King 1927), 781 (Braga 21 November 1961); body pp. 613, 726, 796-797 (PDF 765, 883, 963, 972)."
+
+[[candidates]]
 id = "dominican-1933-1939-1965"
 family = "dominican"
 title = "Missale S.O.P., 1933/1939/1965 witnesses"
@@ -3371,6 +3392,44 @@ chronology_kind = "publication-witness-cluster"
 chronology_certainty = "catalogue-reported-years"
 
 [[candidates]]
+id = "dominican-1553-venice-giunta"
+family = "dominican"
+title = "Missale secundum ordinem fratrum Praedicatorum iuxta decreta Capituli Generalis anno 1551 Salmanticae celebrati reformatum (Venice: Giunta, 1553), BSB"
+date = "1553"
+kind = "printed-witness-candidate"
+status = "checked-primary-book-pages"
+route = "https://www.digitale-sammlungen.de/en/view/bsb10869682"
+sources = ["western-dominican1553-bsb"]
+qualification = "Title (BSB canvas 5) states reform according to the general chapter held at Salamanca in 1551 and apostolic approval; imprint Venetiis apud Iuntas MDLIII. The Suscepimus Deus formulary (canvases 276-277) is directly checked; no whole-book collation."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-see-qualification"
+date_role = "publication year printed on the title page"
+chronology_start = 1553
+chronology_end = 1553
+chronology_kind = "publication-witness-date"
+chronology_certainty = "title-imprint-visually-verified"
+source_locus = "Title canvas 5; Dominica septima (post octavam Trinitatis), canvases 276-277; renumbering rubric fol. 114r, canvas 269."
+
+[[candidates]]
+id = "dominican-1603-rome-ciacconi"
+family = "dominican"
+title = "Missale iuxta ritum sacri ordinis Praedicatorum S. P. N. Dominici sub Hieronymo Xavierre recognitum (Rome: Alfonso Ciacconi, apud Carolum Vulliettum, 1603), BSB"
+date = "1603"
+kind = "printed-witness-candidate"
+status = "checked-primary-book-pages"
+route = "https://www.digitale-sammlungen.de/en/view/bsb10164238"
+sources = ["western-dominican1603-bsb"]
+qualification = "Title (BSB canvas 7) dated MDCIII, Rome, Ciacconi officina apud Vulliettum; Clement VIII brief and Xavierre letter follow (canvases 9-11). A different setting from the 1604 printing already in the dossier: Suscepimus Deus falls on pp. 263-264 (canvases 333-334) rather than pp. 238-239. A second BSB copy dated 1603 (bsb11057591) was not inspected."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-see-qualification"
+date_role = "publication year printed on the title page"
+chronology_start = 1603
+chronology_end = 1603
+chronology_kind = "publication-witness-date"
+chronology_certainty = "title-imprint-visually-verified"
+source_locus = "Title canvas 7; Dominica sexta post octavas Trinitatis pp. 263-264, canvases 333-334."
+
+[[candidates]]
 id = "premonstratensian-medieval"
 family = "premonstratensian"
 title = "Premonstratensian missal, Charleville Ms3"
@@ -3935,6 +3994,25 @@ chronology_certainty = "reported-by-inspected-critical-edition"
 acquisition_status = "not-acquired-in-this-pass"
 transcription_status = "no-verified-transcription"
 collation_status = "relies-on-cited-scholarly-comparison-not-new-full-collation"
+
+[[candidates]]
+id = "carthusian-1561-pavia"
+family = "carthusian"
+title = "Missale Carthusiense, printed in the charterhouse of Pavia, 28 September 1561, BSB"
+date = "1561-09-28"
+kind = "printed-witness-candidate"
+status = "checked-primary-book-pages"
+route = "https://www.digitale-sammlungen.de/en/view/bsb10197405"
+sources = ["western-carthusian1561-bsb"]
+source_locus = "Patentes canvas 8 (licence 28 August 1560); Ordinary fols 106v–107v, canvases 254-256; colophon canvas 498."
+qualification = "Prior General's licence under General Chapter authority to print the Order's books in the same form as Thielman Kerver's Paris editions (now sold out), the large Lyon missals being also exhausted; colophon dated 28 September 1561. Selected Ordinary loci checked; no whole-book collation."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-see-qualification"
+date_role = "colophon publication date"
+chronology_start = 1561
+chronology_end = 1561
+chronology_kind = "publication-witness-date"
+chronology_certainty = "exact-colophon-date-visually-verified"
 
 [[candidates]]
 id = "carthusian-missale-1603"
@@ -6422,7 +6500,7 @@ title = "Ambrosian sacramentaries, missals and reform stages"
 status = "bounded-repertoire-and-selected-primary-acts-reviewed; full-recension-census-open"
 sources = ["milan-publisher-2024", "ambrosian-latin-approval-1974", "ambrosian-second-approval-2023", "ambrosian-promulgation-excerpt-2024", "ambrosian-latin-publisher-2026", "ambrosian-src-amiet-1960", "ambrosian-src-amiet-1995", "ambrosian-src-usuarium-404", "ambrosian-src-notitiae-1965", "ambrosian-src-1981", "ambrosian-frontmatter-route-2024", "amiet-census-usuarium-6032", "amiet-census-usuarium-6033", "amiet-census-usuarium-6035", "amiet-census-usuarium-6036", "amiet-census-usuarium-6037", "amiet-census-usuarium-6038", "amiet-census-usuarium-6039", "amiet-census-usuarium-6042", "amiet-census-usuarium-6044", "amiet-census-usuarium-6045", "amiet-census-usuarium-6048", "amiet-census-usuarium-6497"]
 candidate_ids = ["ambrosian-1475", "ambrosian-1751-1902", "ambrosian-1976", "ambrosian-1981-latin", "ambrosian-1990", "ambrosian-2008-lectionary", "ambrosian-2020-ordo", "ambrosian-2024", "ambrosian-1974-latin-reform", "ambrosian-2026-latin", "ambrosian-1499-print", "ambrosian-1640-print", "ambrosian-1954-fifth", "ambrosian-1965-latin-italian", "ambrosian-1975-prayers", "ambrosian-2010-sanctoral", "ambrosian-2011-evangeliario", "ambrosian-2016-short-readings", "ambrosian-1986-update", "amiet-usuarium-6032", "amiet-usuarium-6033", "amiet-usuarium-6035", "amiet-usuarium-6036", "amiet-usuarium-6037", "amiet-usuarium-6038", "amiet-usuarium-6039", "amiet-usuarium-6042", "amiet-usuarium-6044", "amiet-usuarium-6045", "amiet-usuarium-6048", "amiet-usuarium-6497"]
-remaining_work = "Inspect 1640 revision letter; pre-1902 and post-typical front matter; 1965 book/fascicles and possible 1966 printing; 1972 experiment; 1975 prayers; 1981 changed passages; original 1986 update and 1990 updated reprint; 2008–2016 lectionary parts; 2020 order; Latin 1981/2026 collation. 2024 Italian files are consultation only."
+remaining_work = "2026-10-21 batch4: 1640 Monti letter, 1954 decree and selected pages, and 1981 front matter, Prex V-VI and reformed Sanctoral units inspected; 1712 Archinto letter describes an emended reprint. Remaining: 1594, 1609 and 1902 originals; pre-1902 and post-typical front matter; 1965 book/fascicles and possible 1966 printing; 1972 experiment; 1975 prayers; 1981 changed passages; original 1986 update and 1990 updated reprint; 2008–2016 lectionary parts; 2020 order; Latin 1981/2026 collation. 2024 Italian files are consultation only."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
 existing_record_ids = ["missale-ambrosianum"]
@@ -6433,7 +6511,7 @@ title = "Old Hispanic and Hispano-Mozarabic trajectories"
 status = "selected-manuscript-and-reform-witnesses"
 sources = ["old-hispanic-bl30846", "toledo-mozarabic-retrospect", "old-hispanic-office-exclusion", "mozarabic-primary-1988", "mozarabic-publication-1994", "mozarabic-lectionary-1995", "musicahispanica-52315", "musicahispanica-20175", "musicahispanica-20176", "musicahispanica-20185", "musicahispanica-20196", "musicahispanica-20187", "musicahispanica-20201", "musicahispanica-20177", "musicahispanica-21404", "musicahispanica-20188", "musicahispanica-20186", "musicahispanica-20179", "musicahispanica-70790", "musicahispanica-20190", "musicahispanica-20192", "musicahispanica-84980", "musicahispanica-20178", "musicahispanica-20195", "musicahispanica-20180", "musicahispanica-20194", "musicahispanica-20200", "musicahispanica-103204", "musicahispanica-115262", "musicahispanica-62316", "musicahispanica-20198", "musicahispanica-111539", "musicahispanica-111584", "musicahispanica-111585", "franco-commicus-2024", "ihnat-hoijinck-2024", "kbr-iv9481", "weale-bohatta-1928-mozarabic", "lorenzana-1770", "rubrics-original-catalogue", "vicente-2009", "morin-1893", "ferotin-1904", "bne-janini-sacerdotal-1981", "bne-janini-episcopal-1991", "ivorra-2007", "lopez-1992"]
 candidate_ids = ["old-hispanic-bl30846", "mozarabic-1500", "mozarabic-1804", "hispano-mozarabic-1991-1994", "mozarabic-liber-commicus-1994-1995", "mozarabic-mh-52315", "mozarabic-mh-20175", "mozarabic-mh-20176", "mozarabic-mh-20185", "mozarabic-mh-20196", "mozarabic-mh-20187", "mozarabic-mh-20201", "mozarabic-mh-20177", "mozarabic-mh-21404", "mozarabic-mh-20188", "mozarabic-mh-20186", "mozarabic-mh-20179", "mozarabic-mh-70790", "mozarabic-mh-20190", "mozarabic-mh-20192", "mozarabic-mh-84980", "mozarabic-mh-20178", "mozarabic-mh-20195", "mozarabic-mh-20180", "mozarabic-mh-20194", "mozarabic-mh-20200", "mozarabic-mh-103204", "mozarabic-mh-115262", "mozarabic-mh-62316", "mozarabic-mh-20198", "mozarabic-mh-111539", "mozarabic-mh-111584", "mozarabic-mh-111585", "old-hispanic-toledo-354-commicus", "old-hispanic-toledo-354-advent", "old-hispanic-toledo-358", "old-hispanic-paris-nal2171", "old-hispanic-leon-2", "old-hispanic-rah-22", "old-hispanic-toledo-1326", "old-hispanic-toledo-442", "old-hispanic-toledo-9930", "old-hispanic-munich-aumer238", "old-hispanic-brussels-iv9481", "mozarabic-ilerda-undated", "mozarabic-lesley-1750", "mozarabic-madrid-1775", "mozarabic-madrid-1788", "mozarabic-lorenzana-1770", "mozarabic-salamanca-rubrics-1772", "mozarabic-morin-1893", "mozarabic-ferotin-1904", "mozarabic-commicus-1950-1955", "mozarabic-sacerdotal-1981", "mozarabic-episcopal-1991", "mozarabic-toledo-missarum-1982", "mozarabic-sancho-1981", "mozarabic-liber-offerentium-1991"]
-remaining_work = "Survey actual Eucharistic contents of Liber misticus/missarum/ordinum/commicus; BNE MSS 10110 lead is Office-only and excluded as complete Eucharistic witness. Lesley/Migne critical reprints not new reforms. Modern 1988 partial approval and substantive reform now documented; full 1994 decree and exact Latin volume front matter remain needed. 2026-10-20 review: Add bounded manuscript/component and print leads; keep A/B attributions source-specific and modern exact-volume access open. Eleven manuscript/modern leads deferred; 1988 approval and 1989 celebration remain events."
+remaining_work = "Survey actual Eucharistic contents of Liber misticus/missarum/ordinum/commicus; BNE MSS 10110 lead is Office-only and excluded as complete Eucharistic witness. Lesley/Migne critical reprints not new reforms. Modern 1988 partial approval and substantive reform now documented; full 1994 decree and exact Latin volume front matter remain needed. 2026-10-20 review: Add bounded manuscript/component and print leads; keep A/B attributions source-specific and modern exact-volume access open. Eleven manuscript/modern leads deferred; 1988 approval and 1989 celebration remain events. 2026-10-21 batch4: official 1994 decree summary inspected; Advent IV Memento/Creed rubric collated across 1500, 1755 and 1804."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
 existing_record_ids = ["missale-mozarabicum"]
@@ -6442,9 +6520,9 @@ existing_record_ids = ["missale-mozarabicum"]
 id = "braga"
 title = "Braga use"
 status = "selected-original-witness-and-1971-ordo-account"
-sources = ["iberian-braga-fragment-braganca", "iberian-braga-notitiae-073"]
-candidate_ids = ["braga-1498", "braga-1538", "braga-1558", "braga-twelfth-century-bifolium"]
-remaining_work = "Medieval and post-sixteenth-century development plus 1924 remain to compare; acquisition audit holds existing 1924 and early printed references. 2026-10-20 review: Add fragment, 1512 printed lead, and 1971 official-journal preservation disposition; do not create 1970s replacement missal."
+sources = ["iberian-braga-fragment-braganca", "iberian-braga-notitiae-073", "western-braga1924-supplemented-copy"]
+candidate_ids = ["braga-1498", "braga-1538", "braga-1558", "braga-1924-supplemented-altar-copy", "braga-twelfth-century-bifolium"]
+remaining_work = "Medieval and post-sixteenth-century development plus 1924 remain to compare; acquisition audit holds existing 1924 and early printed references. 2026-10-20 review: Add fragment, 1512 printed lead, and 1971 official-journal preservation disposition; do not create 1970s replacement missal. 2026-10-21 batch 4: 1924 scan leaf-mapped; supplemented altar copy (inserts 1925-1961) added as a separate attestation; 1538-1924 Palm blessing compared; 1558 pages and Pinheiro thesis still unreached."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
 existing_record_ids = ["missale-bracarense"]
@@ -6558,7 +6636,7 @@ title = "Carmelite trajectory"
 status = "selected-witnesses-and-scoped-textual-relationships-documented"
 sources = ["carmelite-usuarium", "boyce-carmelite-2004"]
 candidate_ids = ["carmelite-sibert-ordinal", "carmelite-early-missals", "carmelite-krakow-gradual-1644", "mendicant-oc-ordinals", "mendicant-oc-medieval", "mendicant-oc-krakow-graduals", "mendicant-oc-1759", "mendicant-oc-1866", "mendicant-oc-1935", "mendicant-oc-antiphonale1960", "mendicant-oc-proper1974", "mendicant-oc-calendar2021", "mendicant-oc-calendar1972", "mendicant-oc-1490", "mendicant-oc-1500", "mendicant-oc-1510"]
-remaining_work = "1312 promulgation and Holy Sepulchre reception documented by scholarship. Exact Jerusalem source witnesses, full Mass-text comparison, later Carmelite missal revisions and adaptation boundaries remain open; Office comparisons do not establish Mass changes. Added print, chant, proper and calendar candidates through 2021 remain bibliographic/component controls; inspect the 1490/1500/1510, 1759, 1935/37 and 1974 originals and collate substantive Mass changes."
+remaining_work = "1312 promulgation and Holy Sepulchre reception documented by scholarship. Exact Jerusalem source witnesses, full Mass-text comparison, later Carmelite missal revisions and adaptation boundaries remain open; Office comparisons do not establish Mass changes. Added print, chant, proper and calendar candidates through 2021 remain bibliographic/component controls; inspect the 1490/1500/1510, 1759, 1935/37 and 1974 originals and collate substantive Mass changes. 2026-10-21 batch 4: Notitiae 8 (1972) p. 362 confirms (4 July 1972, Prot. 863/72) the general council decree adopting the postconciliar Roman Missal, with an exception for older friars celebrating without a congregation."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
 existing_record_ids = ["missale-carmelitarum"]
@@ -6568,8 +6646,8 @@ id = "carthusian"
 title = "Carthusian trajectory"
 status = "selected-witnesses-and-scoped-textual-relationships-documented"
 sources = ["carthusian-usuarium", "palecki-carthusian-2015", "monastic-src-carthusian-2021"]
-candidate_ids = ["carthusian-medieval", "carthusian-1603-1627", "carthusian-1981", "carthusian-ordinarium-1582", "carthusian-missale-1603", "carthusian-1627", "monastic-carthusian-2021"]
-remaining_work = "The 2021 titled missal PDF has Praenotanda-described changes, but its Roman recognition date, effective date and relation to 1981 remain uncollated; the 2018 calendar approval is separate. Recover the 1679 original through an institutional viewer after Gallica PDF 403, complete the intervening Cartusiana bibliography lines and compare early editions against reprints."
+candidate_ids = ["carthusian-medieval", "carthusian-1561-pavia", "carthusian-1603-1627", "carthusian-1981", "carthusian-ordinarium-1582", "carthusian-missale-1603", "carthusian-1627", "monastic-carthusian-2021"]
+remaining_work = "The 2021 titled missal PDF has Praenotanda-described changes, but its Roman recognition date, effective date and relation to 1981 remain uncollated; the 2018 calendar approval is separate. Recover the 1679 original through an institutional viewer after Gallica PDF 403, complete the intervening Cartusiana bibliography lines and compare early editions against reprints. 2026-10-21 batch 4: 1561 Pavia printing inspected (licence, colophon, Ordinary) and a 1679 BSB excerpt located (title, Masses for the dead, Canon only); 2018 calendar confirmation documented from Notitiae and the 2021 calendar leaf."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
 existing_record_ids = ["missale-cartusiense"]
@@ -6588,8 +6666,8 @@ id = "dominican"
 title = "Dominican trajectory"
 status = "selected-witnesses-and-scoped-textual-relationships-documented"
 sources = ["dominican-usuarium", "ocarroll-1979-pericopes", "french-census-7100-usuarium"]
-candidate_ids = ["dominican-correctorium-1256", "dominican-early-prints", "dominican-1933-1939-1965", "dominican-master-exemplar-add23935", "mendicant-op-pre-humbert", "mendicant-op-medieval-components", "mendicant-op-armenian1728", "mendicant-op-1933", "mendicant-op-1939", "mendicant-op-holyweek1959", "mendicant-op-1965", "mendicant-op-holyweek1965", "mendicant-op-1977-78", "mendicant-op-directorium1979", "mendicant-op-1985", "mendicant-op-additamenta2006", "mendicant-op-calendar2019", "mendicant-op-1969-control", "mendicant-op-1977-calendar", "mendicant-op-1983-preface", "mendicant-op-1983-annual", "mendicant-op-1983-angelico", "mendicant-op-claverie2019", "dominican-usuarium-7100-1687"]
-remaining_work = "Documented 1256 reform context and shared Temporal pericopes. Still need component-level prototype revisions, 1267 instrument, pre-Humbert witnesses and substantive boundaries of printed series. Added medieval, printed and modern book/component candidates include the cited 1969 control, 1977 and 1983 decisions and 1985 proper/lectionary. Inspect original instruments and local reception, collate exact component changes, and do not infer a complete predecessor chain."
+candidate_ids = ["dominican-correctorium-1256", "dominican-early-prints", "dominican-1553-venice-giunta", "dominican-1603-rome-ciacconi", "dominican-1933-1939-1965", "dominican-master-exemplar-add23935", "mendicant-op-pre-humbert", "mendicant-op-medieval-components", "mendicant-op-armenian1728", "mendicant-op-1933", "mendicant-op-1939", "mendicant-op-holyweek1959", "mendicant-op-1965", "mendicant-op-holyweek1965", "mendicant-op-1977-78", "mendicant-op-directorium1979", "mendicant-op-1985", "mendicant-op-additamenta2006", "mendicant-op-calendar2019", "mendicant-op-1969-control", "mendicant-op-1977-calendar", "mendicant-op-1983-preface", "mendicant-op-1983-annual", "mendicant-op-1983-angelico", "mendicant-op-claverie2019", "dominican-usuarium-7100-1687"]
+remaining_work = "Documented 1256 reform context and shared Temporal pericopes. Still need component-level prototype revisions, 1267 instrument, pre-Humbert witnesses and substantive boundaries of printed series. Added medieval, printed and modern book/component candidates include the cited 1969 control, 1977 and 1983 decisions and 1985 proper/lectionary. Inspect original instruments and local reception, collate exact component changes, and do not infer a complete predecessor chain. 2026-10-21 batch 4: BSB 1553 (Salamanca 1551 reform) and 1603 Xavierre printings checked at the Suscepimus Deus formulary; the collect/Gospel recombination now falls between 1553 and 1603."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
 existing_record_ids = ["missale-ordinis-praedicatorum"]
@@ -6771,9 +6849,9 @@ scope = "western-original-source-trajectory"
 id = "monastic-other-orders"
 title = "Benedictine houses, Bursfelde, Cassinese and Camaldolese"
 status = "selected-witness-census-documented"
-sources = ["usuarium-origins-600", "monastic-src-usuarium-osb-409", "monastic-src-bursfelde-bsb-1498", "monastic-src-bursfelde-usuarium-220", "monastic-src-cassinese-1580", "monastic-src-montecorona-1896", "monastic-src-osb-1923", "monastic-src-osb-1937", "central-amiet-usuarium-5832"]
-candidate_ids = ["monastic-cassinese-1580", "monastic-montecorona-1896", "monastic-benedictine-1937", "monastic-benedictine-propers-1923", "monastic-usuarium-benedictine-469", "monastic-bursfelde-1498", "monastic-melk-usuarium-5832"]
-remaining_work = "The 1481 Benedictine missal (USUARIUM 469) remains catalogue-only. The distinct 1498 Speyer Bursfelde observance missal has an original title and Mass-opening use heading, but its prefatory Trithemius letter is not a promulgation act; chapter approval, house reception and textual difference remain unproved. Direct title inspection identifies Cassinese 1580 and Monte Corona 1896 branch books with bounded claims, while 1937 and 1923 Benedictine files are partial components. House, congregation and branch originals, approvals, later propers and reception require separate review; medieval Montecassino manuscripts are not the Cassinese print sequence."
+sources = ["usuarium-origins-600", "monastic-src-usuarium-osb-409", "monastic-src-bursfelde-bsb-1498", "monastic-src-bursfelde-usuarium-220", "monastic-src-bursfelde-bsb-1518", "monastic-src-cassinese-1580", "monastic-src-montecorona-1896", "monastic-src-osb-1923", "monastic-src-osb-1937", "central-amiet-usuarium-5832"]
+candidate_ids = ["monastic-cassinese-1580", "monastic-montecorona-1896", "monastic-benedictine-1937", "monastic-benedictine-propers-1923", "monastic-usuarium-benedictine-469", "monastic-bursfelde-1498", "monastic-bursfelde-1518", "monastic-melk-usuarium-5832"]
+remaining_work = "The 1481 Benedictine missal (USUARIUM 469; BSB bsb00030076, Bamberg 1481) has only its Canon openings inspected (2026-10-21), which agree in content with the Bursfelde prints. The distinct 1498 Speyer Bursfelde observance missal has an original title and Mass-opening use heading, but its prefatory Trithemius letter is not a promulgation act; chapter approval, house reception and textual difference remain unproved. The 1518 Hagenau Bursfelde printing describes itself as a re-emendation of copying faults; sampled Canon units and January feast entries agree with 1498 (the golden-number column is reset), so only a witness succession is recorded. Direct title inspection identifies Cassinese 1580 and Monte Corona 1896 branch books with bounded claims, while 1937 and 1923 Benedictine files are partial components. House, congregation and branch originals, approvals, later propers and reception require separate review; medieval Montecassino manuscripts are not the Cassinese print sequence."
 scope = "western-original-source-trajectory"
 
 [[coverage]]
@@ -6807,9 +6885,9 @@ scope = "western-original-source-trajectory"
 id = "trinitarian-order"
 title = "Trinitarian Eucharistic books"
 status = "selected-catalogue-witnesses; original-text-comparison-open"
-sources = ["monastic-src-usuarium-trinitarian-896", "trinitarian-src-bnf-latin-1022", "trinitarian-src-irht-latin-1022", "trinitarian-src-usuarium-3126", "trinitarian-src-arca-provins-1529", "trinitarian-src-usuarium-2548"]
-candidate_ids = ["monastic-usuarium-trinitarian-3126", "monastic-usuarium-trinitarian-2548"]
-remaining_work = "Inspect Latin 1022's Mass folios and later calendar/use layers; check the 1529 Provins original title, colophon and reproduction completeness; acquire order acts and intervening books and compare text. The thirteenth-century copying window does not date Trinitarian adoption, and 1529 is a catalogue print year, not a reform date. No lineage, independent recension or complete text is established."
+sources = ["monastic-src-usuarium-trinitarian-896", "trinitarian-src-bnf-latin-1022", "trinitarian-src-irht-latin-1022", "trinitarian-src-usuarium-3126", "trinitarian-src-arca-provins-1529", "trinitarian-src-usuarium-2548", "trinitarian-src-irht-provins-1529-images", "trinitarian-src-notitiae-1975-cd172"]
+candidate_ids = ["monastic-usuarium-trinitarian-3126", "monastic-usuarium-trinitarian-2548", "trinitarian-proper-1975"]
+remaining_work = "2026-10-21 western-gaps batch4: 1529 title, January calendar, Preparatio, Canon opening and final prose leaves inspected in images (no dated colophon on those leaves); 1975 Latin proper confirmation (CD 172/75) added as a candidate. Inspect Latin 1022's Mass folios and later calendar/use layers; check the 1529 Provins colophon and reproduction completeness; acquire order acts and intervening books and compare text. The thirteenth-century copying window does not date Trinitarian adoption, and 1529 is a catalogue print year, not a reform date. No lineage, independent recension or complete text is established."
 scope = "western-original-source-trajectory"
 
 [[coverage]]
@@ -6834,9 +6912,9 @@ scope = "western-original-source-trajectory"
 id = "iberian-index-gap"
 title = "Iberian diocesan uses beyond Braga and Old Hispanic"
 status = "selected-catalogue-witnesses; stage-sequences-unresearched"
-sources = ["coverage-usuarium-progress", "coverage-barcelona-1498", "coverage-salamanca-1533", "coverage-seville-1565", "coverage-toledo-roman-1551", "iberian-seville-1565-original", "iberian-usuarium-1783", "iberian-usuarium-9036", "iberian-usuarium-58", "iberian-usuarium-3441", "iberian-usuarium-7554", "iberian-usuarium-7002", "iberian-usuarium-7623", "iberian-usuarium-7624", "iberian-usuarium-7625", "iberian-usuarium-6999", "iberian-usuarium-7626", "iberian-usuarium-6995", "iberian-usuarium-6996", "iberian-usuarium-6997", "iberian-usuarium-6998", "iberian-usuarium-7334"]
-candidate_ids = ["barcelona-1498", "salamanca-1533", "seville-1565", "toledo-roman-1551", "iberian-tarragona-1550", "iberian-tarazona-1500", "iberian-tarazona-1529-cluster", "iberian-urgell-1536", "iberian-urgell-1557", "iberian-valencia-1509", "iberian-valencia-1528", "iberian-zaragoza-1522", "iberian-zaragoza-1531", "iberian-zaragoza-1540", "iberian-zaragoza-1598", "iberian-huesca-1488"]
-remaining_work = "Original Barcelona 1498 (fragment), Salamanca 1533 and Toledo Roman 1551 copies, approval leaves and predecessor/successor comparisons remain uninspected. Seville 1565 original title and preface are inspected, but complete text and predecessor remain uncollated. Broader Iberian census is incomplete. Toledo Roman is distinct from Hispano-Mozarabic. 2026-10-20 review: Record Seville original acquisition and inspected 1565 revision claim; 129 Usuarium detail records remain candidate leads, not 129 stages. Six Office/Ordinal detail rows excluded; ten blank-genre detail rows unresolved; no local-use revision sequence inferred."
+sources = ["coverage-usuarium-progress", "coverage-barcelona-1498", "coverage-salamanca-1533", "coverage-seville-1565", "coverage-toledo-roman-1551", "iberian-seville-1565-original", "iberian-usuarium-1783", "iberian-usuarium-9036", "iberian-usuarium-58", "iberian-usuarium-3441", "iberian-usuarium-7554", "iberian-usuarium-7002", "iberian-usuarium-7623", "iberian-usuarium-7624", "iberian-usuarium-7625", "iberian-usuarium-6999", "iberian-usuarium-7626", "iberian-usuarium-6995", "iberian-usuarium-6996", "iberian-usuarium-6997", "iberian-usuarium-6998", "iberian-usuarium-7334", "western-gaps-barcelona1521-bc"]
+candidate_ids = ["barcelona-1498", "barcelona-1521", "salamanca-1533", "seville-1565", "toledo-roman-1551", "iberian-tarragona-1550", "iberian-tarazona-1500", "iberian-tarazona-1529-cluster", "iberian-urgell-1536", "iberian-urgell-1557", "iberian-valencia-1509", "iberian-valencia-1528", "iberian-zaragoza-1522", "iberian-zaragoza-1531", "iberian-zaragoza-1540", "iberian-zaragoza-1598", "iberian-huesca-1488"]
+remaining_work = "2026-10-21 batch 4: Barcelona 1498 fragment extent image-checked (title and colophon lost from the digitized copy); a 29 April 1521 Lyon Barcelona Missal added from inspected title and colophon; Seville 1565 colophon states Archbishop Valdés's order and dates printing 17 August 1565. Original Salamanca 1533 and Toledo Roman 1551 copies, approval leaves and predecessor/successor comparisons remain uninspected. Seville 1565 original title and preface are inspected, but complete text and predecessor remain uncollated. Broader Iberian census is incomplete. Toledo Roman is distinct from Hispano-Mozarabic. 2026-10-20 review: Record Seville original acquisition and inspected 1565 revision claim; 129 Usuarium detail records remain candidate leads, not 129 stages. Six Office/Ordinal detail rows excluded; ten blank-genre detail rows unresolved; no local-use revision sequence inferred."
 scope = "western-original-source-trajectory"
 
 [[coverage]]
@@ -7323,6 +7401,16 @@ limitations = "Catalogue metadata only. Original page images not inspected. Hold
 status = "inspected"
 
 [[sources]]
+id = "western-gaps-barcelona1521-bc"
+url = "https://mdc.csuc.cat/digital/collection/llibimps16/id/273153"
+type = "primary-book"
+title = "Biblioteca de Catalunya, Memòria Digital de Catalunya: Missale secundum usum almae sedis sanctae Crucis Barcinone, Lyon 1521 (1-VI-35)"
+checked_on = "2026-10-21"
+inspection = "Holding record read (740 images, public-domain mark, collation A10 a–z8 A8 B6 C10 D–X8). Title (image 9: red title, St Eulalia woodcut, 'Cum gratia et privilegio') and register/colophon (image 731: Lyon, Bernard Lescuyer, for Joan Trinxer and Francesc Costa, 29 April 1521; 'peroptime correctum et emendatum: cum multis missis votivis') viewed."
+limitations = "Title and colophon only; no body collation and no mandate leaf seen."
+status = "inspected"
+
+[[sources]]
 id = "coverage-salamanca-1533"
 url = "https://usuarium.elte.hu/book/55/view"
 type = "institutional-catalogue"
@@ -7363,15 +7451,37 @@ sources = ["coverage-barcelona-1498"]
 route = "https://mdc.csuc.cat/digital/collection/incunableBC/id/14914"
 holding = "Biblioteca de Catalunya, Inc. 46-Fol."
 catalogue_id = "Usuarium 48; Weale–Bohatta 150"
-qualification = "Fragmentary surviving copy. Establish exact title/colophon and missing extent before comparing earlier/later books. Original pages uninspected; catalogue identity does not establish a new revision or normative effective date."
+qualification = "Fragmentary surviving copy. 2026-10-21: Biblioteca de Catalunya images checked at f. LXXXVIIIr (first surviving leaf, Easter Vigil) and f. CCXXXXVIIIIv (last, January sanctoral); the holding record lists missing leaves 1–87 and 250 onward among others, so this copy has no title or colophon and the 1498 Gumiel imprint remains bibliographic. Catalogue identity does not establish a new revision or normative effective date."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "catalogue-witness-only; substantive-difference-not-established"
 date_role = "publication-year-reported-by-catalogue"
 chronology_start = 1498
 chronology_end = 1498
 chronology_kind = "publication-witness-date"
-chronology_certainty = "inspected-catalogue-metadata; original-imprint-uninspected"
-acquisition_status = "not-acquired"
+chronology_certainty = "inspected-catalogue-metadata; original-imprint-leaves-lost-in-digitized-copy"
+acquisition_status = "two-page-images-acquired-in-scratch"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+
+[[candidates]]
+id = "barcelona-1521"
+family = "historic-barcelona-use"
+title = "Missale secundum usum almae sedis sanctae Crucis Barcinone (Lyon: Bernard Lescuyer for Joan Trinxer and Francesc Costa)"
+date = "1521-04-29"
+kind = "historic-local-use-witness"
+status = "checked-primary-book-pages"
+sources = ["western-gaps-barcelona1521-bc"]
+route = "https://mdc.csuc.cat/digital/collection/llibimps16/id/273153"
+holding = "Biblioteca de Catalunya, 1-VI-35"
+qualification = "Title (image 9) and colophon (image 731) inspected 2026-10-21. Colophon: missal of the rite of the church of Barcelona, thoroughly corrected and emended with many votive Masses, printed at Lyon by Bernard Lescuyer at the expense of the Barcelona booksellers Joan Trinxer and Francesc Costa, 29 April 1521. The correction claim is the book's own; no comparison with the 1498 fragment and no episcopal mandate established."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "original-witness-with-colophon-reported-correction; substantive-difference-not-established-by-collation"
+date_role = "publication-date-from-inspected-colophon"
+chronology_start = 1521
+chronology_end = 1521
+chronology_kind = "publication-witness-date"
+chronology_certainty = "exact-colophon-date-visually-verified"
+acquisition_status = "title-and-colophon-images-acquired-in-scratch"
 transcription_status = "not-transcribed"
 collation_status = "not-collated"
 
@@ -7409,15 +7519,15 @@ sources = ["coverage-seville-1565", "iberian-seville-1565-original"]
 route = "https://bvpb.mcu.es/es/consulta/registro.cmd?id=451904"
 holding = "Biblioteca Universitaria de Sevilla, A Res. 10/1/06"
 catalogue_id = "Usuarium 57; Weale–Bohatta 455"
-qualification = "Original 1565 PDF title p.13 and preface p.16 inspected; preface reports corrections. This establishes an original witness and a revision claim, but no direct predecessor/successor comparison, complete collation, or effective date."
+qualification = "Original 1565 PDF title p.13 and preface p.16 inspected; preface reports corrections. 2026-10-21: colophon PDF p.680 inspected: emended by order of Archbishop Fernando de Valdés after all earlier editions, begun under the provisor Juan de Ovando and completed by Egidio Cevadilla, printed at Seville by Juan Gutiérrez (Gotherius) XVI Kal. Sept. (17 August) 1565. This establishes an original witness, archiepiscopal authority as stated by the colophon and a revision claim, but no direct predecessor/successor comparison, complete collation, or effective date."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "original-witness-with-preface-reported-correction; substantive-difference-not-established-by-collation"
-date_role = "publication-year-reported-by-catalogue"
+date_role = "publication-date-from-inspected-colophon"
 chronology_start = 1565
 chronology_end = 1565
 chronology_kind = "publication-witness-date"
-chronology_certainty = "original-title-front-matter-inspected; preface-correction-claim-not-collated"
-acquisition_status = "scratch-original-PDF-acquired; title-and-preface-inspected; full-text-uncollated"
+chronology_certainty = "original-title-preface-and-colophon-inspected; colophon-date-17-August-1565; correction-claim-not-collated"
+acquisition_status = "scratch-original-PDF-acquired; title-preface-and-colophon-inspected; full-text-uncollated"
 transcription_status = "not-transcribed"
 collation_status = "not-collated"
 
@@ -7557,6 +7667,30 @@ id = "western-braga1538-primary"
 url = "https://purl.pt/14877"
 type = "primary-book"
 inspection = "Complete 368-page file acquired and hashed; Palm blessing fols 41r–43r (PDF 95–99) and colophon fol. 184v (PDF 364) visually inspected. Whole-file SHA-256 cc797a89ed2122ee8595da02d60363a97e6954c3f458b7e783b5e90ad8c0a06d. The physical copy is incomplete according to BNP. All pages supporting these bounded claims are retained."
+
+[[sources]]
+id = "western-carthusian1561-bsb"
+url = "https://www.digitale-sammlungen.de/en/view/bsb10197405"
+type = "primary-book"
+inspection = "BSB IIIF page images viewed on 2026-10-21: title canvas 7, Patentes canvas 8 (1300 px), calendar canvases 9-10, sweep of canvases 20-380, Ordinary canvases 254-256 (850 px), colophon canvas 498 (1300 px)."
+
+[[sources]]
+id = "western-dominican1553-bsb"
+url = "https://www.digitale-sammlungen.de/en/view/bsb10869682"
+type = "primary-book"
+inspection = "BSB IIIF manifest (526 canvases) and page images viewed on 2026-10-21: title canvas 5 (1551 Salamanca chapter reform, Venice Giunta 1553) and canvases 270-281 of the Sundays after Trinity, with canvases 276-277 read at 1400 px."
+
+[[sources]]
+id = "western-dominican1603-bsb"
+url = "https://www.digitale-sammlungen.de/en/view/bsb10164238"
+type = "primary-book"
+inspection = "BSB IIIF manifest (728 canvases) and page images viewed on 2026-10-21: title canvas 7 (Rome, Ciacconi apud Vulliettum, 1603), front matter canvases 9-11, pp. 237-275 (canvases 306-345), with pp. 263-264 (canvases 333-334) read at 1300 px."
+
+[[sources]]
+id = "western-braga1924-supplemented-copy"
+url = "https://archive.org/details/missale-bracarense-1924"
+type = "primary-book"
+inspection = "Prior acquisition reused (PDF SHA-256 2be6474d75f495f79a74eac962355aa880d08b326915c3a3547ae7be82930841, 1,210 pages). On 2026-10-21 every page was mapped from its text layer and each insert boundary viewed as rendered page images: body pp. 1-828 at PDF 94-1005, second pagination [1]-[194] at PDF 1008-1210, twenty-one dated supplement inserts, duplicate run PDF 534-573. Selected formularies (Palm Sunday pp. 146-149; Sacred Heart p. 613 and insert PDF 758-764; Assumption p. 726 and insert PDF 884-885; Christ the King insert PDF 964-971) were read from the images. archive.org was unreachable from the lane host on 2026-10-21; identity rests on the retained hash. Cold review 2026-10-21: the host metadata lists the PDF at 176,021,172 bytes with SHA-1 5d782a7de0df09bde3f3c99a01f44e136ec8390b, matching the retained file; the Christ the King insert carries Turin, not Rites or Braga, approval."
 
 [[sources]]
 id = "western-carthusian1627-primary"
@@ -15389,7 +15523,7 @@ kind = "proper-edition-lead"
 status = "research-candidate-not-a-stage"
 existing_record = "none"
 route = "https://dialnet.unirioja.es/descarga/articulo/5363764.pdf"
-qualification = "Scholarly attestation; original unavailable."
+qualification = "Scholarly attestation; original unavailable. 2026-10-21 western-gaps batch4: Notitiae 8 (1972) pp. 12, 358 and 362 (page images viewed) record the OCD proper calendar confirmation of 20 October 1971 (Prot. 1653/71), confirmation of the Latin Mass and Hours texts on 17 and 22 September 1972 (Prot. 666/72, 1131/72), and 1972 calendar variations. The 1973 book itself remains uninspected."
 existing_inventory = "none"
 date_role = "typical-edition publication"
 version_status = "witness-or-component-not-yet-collated"
@@ -15485,7 +15619,7 @@ kind = "proper-book-witness-lead"
 status = "research-candidate-not-a-stage"
 existing_record = "none"
 route = "https://books.google.com/books?id=mCzcRyDjD6kC&printsec=frontcover"
-qualification = "Google Books public-domain metadata, 48 printed pages; full PDF not acquired."
+qualification = "Google Books public-domain metadata, 48 printed pages; full PDF not acquired. 2026-10-21 western-gaps batch4: title page, Index Missarum and pp. iii–iv viewed on page images; title 'Missae propriae SS. Ordini Minimorum Sancti Francisci de Paula, a variis Pontificibus specialiter concessae', Lyon, Amatus Delaroche, 1756; notated propers plus named mensural Mass settings."
 existing_inventory = "none"
 date_role = "publication date"
 version_status = "witness-or-component-not-yet-collated"
@@ -17832,7 +17966,7 @@ kind = "manuscript-witness"
 date = "first half of the fourteenth century; 1314 catalogue date requires checking"
 date_role = "manuscript-copying"
 sources = ["additional-orders-src-osa-pal500", "additional-orders-src-osa-pal500-manifest"]
-qualification = "The manuscript is order-labelled. Its precise copy date, contents and relation to other OSA books need direct folio review."
+qualification = "The manuscript is order-labelled. Its precise copy date, contents and relation to other OSA books need direct folio review. 2026-10-21 western-gaps batch4: DigiVatLib images viewed of the older Canon f. 96v (interlinear bowing, altar-kiss and threefold-sign rubrics) and the colophon f. 183v (1314, St Ulrich's day; scribe a brother of the Hermits of St Augustine). The Heidelberg description doubts that the colophon, in later gatherings, dates those gatherings; the core is dated to the first half of the fourteenth century."
 status = "researched-witness-proposal"
 language_priority = ["Latin"]
 version_status = "witness-or-component-candidate-not-proven-recension"
@@ -17866,7 +18000,7 @@ kind = "manuscript-layer"
 date = "about 1400, catalogue layer date"
 date_role = "manuscript-addition"
 sources = ["additional-orders-src-osa-pal500", "additional-orders-src-osa-pal500-manifest"]
-qualification = "Layer boundary and Mass content require direct folio comparison; the date is not a promulgation."
+qualification = "Layer boundary and Mass content require direct folio comparison; the date is not a promulgation. 2026-10-21 western-gaps batch4: the inserted gathering ff. 82–91 holds a second Canon (85ra–88rb, script about 1400); its Te igitur page at f. 85r (image viewed) has red crosses but none of the interlinear gesture rubrics of the older Canon at f. 96v."
 status = "researched-witness-proposal"
 language_priority = ["Latin"]
 version_status = "witness-or-component-candidate-not-proven-recension"
@@ -17883,7 +18017,7 @@ kind = "manuscript-layer"
 date = "1466, catalogue layer date"
 date_role = "manuscript-addition"
 sources = ["additional-orders-src-osa-pal500", "additional-orders-src-osa-pal500-manifest"]
-qualification = "Layer boundary and Mass content require direct folio comparison; the date is not a promulgation."
+qualification = "Layer boundary and Mass content require direct folio comparison; the date is not a promulgation. 2026-10-21 western-gaps batch4: f. 184r image viewed; the rubric introduces a Mass of the fourteen helpers for any tribulation and carries the year 1466; its prayers name fifteen saints (Magnus added)."
 status = "researched-witness-proposal"
 language_priority = ["Latin"]
 version_status = "witness-or-component-candidate-not-proven-recension"
@@ -18002,7 +18136,7 @@ kind = "source-language-unresolved-proper-gap"
 date = "Spanish version confirmed 17 May 1975; missal published in Rome in 1976"
 date_role = "Spanish-confirmation-and-publication"
 sources = ["additional-orders-src-augustinian-2007"]
-qualification = "Acta OAR 2007, PDF pp. 19–20, reports a revision begun in 1970, confirmation of the Spanish version on 17 May 1975 (Prot. 588/75), and a Rome 1976 missal. It does not identify a prior Latin original, its date, volumes, or approval. The 1971 OSA calendar confirmation is a separate event."
+qualification = "Acta OAR 2007, PDF pp. 19–20, reports a revision begun in 1970, confirmation of the Spanish version on 17 May 1975 (Prot. 588/75), and a Rome 1976 missal. It does not identify a prior Latin original, its date, volumes, or approval. The 1971 OSA calendar confirmation is a separate event. 2026-10-21 western-gaps batch4: Notitiae 11 (1975), printed p. 234 (page image viewed), records confirmation of the OSA proper Mass and Hours texts in Latin on 15 April 1975 (Prot. n. 2435/74), before the Spanish version (17 May, Prot. n. 588/75), and permission of 15 May 1975 (Prot. n. 582/75) for the Augustinian Recollects to use them. The Latin confirmation is now attested; the Latin book, its publication and contents remain uninspected."
 status = "researched-source-gap"
 language_priority = ["Spanish"]
 version_status = "Spanish-proper-attested-antecedent-source-language-unresolved"
@@ -18070,7 +18204,7 @@ kind = "manuscript-layer"
 date = "later than main manuscript, exact date unresolved"
 date_role = "manuscript-addition"
 sources = ["additional-orders-src-servite-pal505"]
-qualification = "Heidelberg catalogue places additions at 321rb–322v. Layer-specific hands, wording and dates remain unexamined."
+qualification = "Heidelberg catalogue places additions at 321rb–322v. 2026-10-21 western-gaps batch4: f. 321r image viewed; the first addition, in a later hand after the main-hand Palm Sunday rubrics, is a Mass for the ruler (Deus temporalis vitae administrator; Deus qui subiectas tibi glorificas potestates; Fidelem famulum tuum principem nostrum). The later additions and all dates remain unexamined."
 status = "researched-witness-proposal"
 language_priority = ["Latin"]
 version_status = "witness-or-component-candidate-not-proven-recension"
@@ -18427,6 +18561,12 @@ type = "liturgical-contents-index"
 inspection = "Book 220 identifies 1498 Speyer Bursfelde missal, BSB shelfmark and distinct Mass Ordinary, Canon, temporal, sanctoral, common, votive and rubrical sections; its page-6 'decree' label is qualified by the inspected BSB prefatory letter."
 
 [[sources]]
+id = "monastic-src-bursfelde-bsb-1518"
+url = "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10197473/manifest"
+type = "holding-library-manifest-and-bounded-original-image-inspection"
+inspection = "BSB Res/2 Liturg. 451 q, 566 canvases, Hagenau, Thomas Anshelm, 1518, VD16 M 5641. Original images inspected 2026-10-21: 7 title; 12 recognitor's letter dated 1518; 13 January calendar; 319–320 Te igitur through Communicantes; 559 colophon dated January 1518; manuscript supplements on 5–6 and 8. No whole-book collation."
+
+[[sources]]
 id = "monastic-src-cassinese-1580"
 url = "https://archive.org/download/bub_gb_mMB31zxR8McC/bub_gb_mMB31zxR8McC.pdf"
 type = "direct-image-inspection"
@@ -18478,7 +18618,7 @@ kind = "catalogue-print-witness"
 status = "checked-complete-retained-catalogue-row"
 sources = ["monastic-src-usuarium-osb-409"]
 source_locus = "USUARIUM OSB origin 409, Books row 469"
-qualification = "The saved full origin page identifies this 1481 missal. Its title page, imprint and text remain uninspected; no order-wide recension or substantive revision is inferred."
+qualification = "The saved full origin page identifies this 1481 missal. The BSB digitization (bsb00030076, 2 L.impr.membr. 71) gives the imprint Bamberg, Johann Sensenschmidt, 31 July 1481, GW M24117, against the catalogue row's Italian label. On 2026-10-21 only its Te igitur and Memento (BSB images 287–288) were inspected; they agree in content with the 1498 and 1518 Bursfelde prints. Title page and the rest of the text remain uninspected; no order-wide recension, Bursfelde assignment or substantive revision is inferred."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "catalogue-witness-not-yet-collated"
 chronology_start = 1481
@@ -18503,6 +18643,25 @@ chronology_start = 1498
 chronology_end = 1498
 chronology_kind = "catalogue-publication-year"
 chronology_certainty = "BSB-manifest-bracketed-date; colophon-unread"
+
+[[candidates]]
+id = "monastic-bursfelde-1518"
+family = "monasticum"
+title = "Missale denuo diligentissime castigatum et revisum Ordinis sancti Benedicti reformatorum nigrorum monachorum Bursfeldensium, Hagenau 1518"
+date = "1518-01 (colophon)"
+date_role = "publication-on-colophon; recognitor's letter dated 1518"
+kind = "observance-print-witness"
+status = "bounded-original-title-letter-colophon-calendar-and-Canon-inspected"
+route = "https://www.digitale-sammlungen.de/en/view/bsb10197473"
+sources = ["monastic-src-bursfelde-bsb-1518"]
+source_locus = "BSB Res/2 Liturg. 451 q: image 7 title, image 12 recognitor's letter, image 13 January calendar, images 319–320 Te igitur to Communicantes, image 559 colophon"
+qualification = "The title and colophon assign the book to the Bursfelde observance and call its exemplar newly emended. The printer's recognitor describes correcting copying and orthographic faults in the order's missals as earlier emended by Trithemius; sampled Canon units and the January feast entries agree in content with the 1498 Speyer printing, while the January golden-number column is reset. No chapter authorization or specific liturgical change is established. The BSB copy has undated manuscript supplements for Trier saints; its owning house is not identified."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "identified-observance-witness; self-described-correction-not-substantive-revision"
+chronology_start = 1518
+chronology_end = 1518
+chronology_kind = "publication-witness-date"
+chronology_certainty = "colophon-month-and-year-visually-verified"
 
 [[candidates]]
 id = "monastic-cassinese-1580"
@@ -18790,7 +18949,7 @@ kind = "printing-witness"
 status = "bounded-source-inspection-or-qualified-catalogue"
 sources = ["ambrosian-src-1640"]
 source_locus = "engraved title; text not collated"
-qualification = "Milan 1640 engraved title inspected. Prior audit flags an archiepiscopal revision letter in OCR; inspect it and collate before calling this a reprint or distinct recension."
+qualification = "Milan 1640 engraved title inspected. Prior audit flags an archiepiscopal revision letter in OCR; inspect it and collate before calling this a reprint or distinct recension. 2026-10-21 (batch 4, confirmed by cold review): the undated Monti letter is inspected and states its revision programme (stage ambrosian-1640); the book remains uncollated."
 scope_disposition = "in-scope-witness-or-component; source-language-review-where-Italian"
 version_status = "witness-or-component; distinct-whole-book-recension-unestablished"
 chronology_start = 1640
@@ -20548,6 +20707,18 @@ type = "scholarly-book-catalogue"
 inspection = "Book 2548 metadata and contents index, retrieved 2026-10-20: 1529 Missale for Trinitarian order, Provins Impr. XVI a 8; index title p. 6 through colophon p. 551. Index is not original-page transcription or proof of complete scan; PDF returned 401."
 
 [[sources]]
+id = "trinitarian-src-irht-provins-1529-images"
+url = "https://arca.irht.cnrs.fr/ark:/63955/md23hx121454"
+type = "primary-book-page-images"
+inspection = "2026-10-21 western-gaps batch4: prior-lane IRHT IIIF images of Provins Impr. XVI a 8 rehashed and viewed: f. 1r title (canvas 4), f. 2r January calendar (canvas 5), f. 140r Preparatio ante missam (canvas 143), ff. 144v-145r Marian preface and Canon Te igitur to Hanc igitur (canvas 148), Commune prosarum fo. lix-lx ending 'Trinitati laus perhennis' (canvases 275-276). No dated colophon on the leaves read; the IRHT image host timed out on 2026-10-21."
+
+[[sources]]
+id = "trinitarian-src-notitiae-1975-cd172"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-111-112-1975.pdf"
+type = "official-journal-act-summary"
+inspection = "2026-10-21 western-gaps batch4: Notitiae 11 (1975), printed p. 343 (PDF p. 61) page image viewed: Ordo Sanctissimae Trinitatis, 18 and 27 Oct. 1975 (Prot. CD 172/75; CD 400/75), Latin text of the order's proper of Masses and Liturgy of the Hours and of the Mass of Blessed Vincent Grossi confirmed."
+
+[[sources]]
 id = "monastic-src-ocso-official-liturgy"
 url = "https://www.ocso.org/resources/liturgy/"
 type = "order-primary-prior-review-control"
@@ -20576,15 +20747,33 @@ date = "1529"
 date_role = "catalogue-reported-print-publication-year"
 kind = "catalogue-only-printed-missal-witness"
 status = "checked-concordant-catalogues; original-pages-open"
-sources = ["monastic-src-usuarium-trinitarian-896", "trinitarian-src-arca-provins-1529", "trinitarian-src-usuarium-2548"]
-source_locus = "USUARIUM origin 896 Books row 2548 and book 2548 metadata/index; ARCA Provins Impr. XVI a 8 object record"
-qualification = "The unchanged pending ninth item in the 2026-10-20 monastic receipt. The two catalogues describe the same Provins copy; their metadata independence is not established. ARCA reports 272 physical folios and 279 digital views; USUARIUM's index reaches p. 551. Original title, colophon, images and complete text uninspected. The catalogue year proves no revision, approval, adoption or descent from BnF Latin 1022."
+sources = ["monastic-src-usuarium-trinitarian-896", "trinitarian-src-arca-provins-1529", "trinitarian-src-usuarium-2548", "trinitarian-src-irht-provins-1529-images"]
+source_locus = "USUARIUM origin 896 Books row 2548 and book 2548 metadata/index; ARCA Provins Impr. XVI a 8 object record; IRHT images f. 1r, f. 2r, f. 140r, ff. 144v-145r, fo. lix-lx"
+qualification = "The unchanged pending ninth item in the 2026-10-20 monastic receipt. The two catalogues describe the same Provins copy; their metadata independence is not established. ARCA reports 272 physical folios and 279 digital views; USUARIUM's index reaches p. 551. 2026-10-21 western-gaps batch4: title, January calendar (28 January Agnes secundo totum duplex for the order's foundation), Preparatio, Canon opening and final prose leaves inspected in IRHT images; no dated colophon appears on those leaves, so 1529 and the Paris printer remain catalogue statements and complete text is uninspected. The catalogue year proves no revision, approval, adoption or descent from BnF Latin 1022."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "catalogue-witness-not-yet-collated"
 chronology_start = 1529
 chronology_end = 1529
 chronology_kind = "catalogue-print-publication-year"
-chronology_certainty = "concordant-catalogue-records-for-one-Provins-copy; title-image-uninspected"
+chronology_certainty = "concordant-catalogue-records-for-one-Provins-copy; title-image-inspected-undated"
+
+[[candidates]]
+id = "trinitarian-proper-1975"
+family = "trinitarian"
+title = "Proprium Missarum et Liturgiae Horarum Ordinis SS.mae Trinitatis, Latin texts confirmed 1975"
+date = "1975-10 (18 and 27 October confirmations)"
+date_role = "Latin-text-confirmation-not-publication"
+kind = "order-proper-approval-witness"
+status = "checked-official-journal-page"
+sources = ["trinitarian-src-notitiae-1975-cd172"]
+source_locus = "Notitiae 11 (1975), printed p. 343 (PDF p. 61), section II"
+qualification = "Confirmation of the Latin order proper of Masses and Hours and of the Mass of Blessed Vincent Grossi, notified as 18 and 27 October 1975 (Prot. CD 172/75; CD 400/75); the notice does not assign each date and protocol to a text. A proper, not a whole missal; the order-issued printed book, its year and contents are not inspected. No descent from the 1529 missal is asserted."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "approval-attested-book-uninspected"
+chronology_start = 1975
+chronology_end = 1975
+chronology_kind = "approval"
+chronology_certainty = "official-journal-entry-image-checked"
 
 # Hospitaller scratch-only proposed Western insertion; reviewed correction addendum governs 1551.
 # Append only after independent recheck and exclusive Western edit boundary.

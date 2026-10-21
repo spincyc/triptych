@@ -112,6 +112,16 @@
       "limitations": "Metadata-only witness. Publisher, original text, approval and relation to later proper remain unchecked."
     },
     {
+      "id": "residual-orders-round3:min1756-pages",
+      "title": "Missae propriae SS. Ordini Minimorum Sancti Francisci de Paula, Lyon: Amatus Delaroche, 1756 (Google Books page images)",
+      "url": "https://books.google.com/books?id=mCzcRyDjD6kC",
+      "kind": "primary-book",
+      "inspection": "Prior-lane page images PR1–PR4 (title, index of Masses, pp. iii–iv) rehashed and viewed on 21 October 2026.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Four pages; the Mass texts beyond the opening Introit and the mensural Mass settings were not read. The digitized copy carries an Antwerp library stamp."
+    },
+    {
       "id": "residual-orders-round3:min1976",
       "title": "Notitiae 12 (1976), Minim Latin and Italian proper confirmation",
       "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-12-%281976%29/Notitiae-121-122-1976.pdf",
@@ -150,6 +160,16 @@
       "checked_on": "2026-10-20",
       "status": "inspected",
       "limitations": "The 1958 order approval does not alone establish a Mass-specific change from 1950; complete texts are uncollated."
+    },
+    {
+      "id": "residual-orders-round3:ocd1971-1972-acts",
+      "title": "Sacred Congregation for Divine Worship, OCD calendar and Latin proper confirmations, Notitiae 8 (1972)",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-08-%281972%29/Notitiae-078-1972.pdf",
+      "kind": "primary-act",
+      "inspection": "Notitiae 8 (1972) printed p. 358 (issue 78, PDF p. 20) and p. 362 (PDF p. 24) rendered and viewed; printed p. 12 (issue 69, PDF p. 18, prior-lane copy rehashed) rendered and viewed.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Summaries of decrees, not the decrees or the printed 1973 book."
     },
     {
       "id": "residual-orders-round3:ocd2025",
@@ -297,13 +317,13 @@
       "date_kind": "publication",
       "status": "documented",
       "scope": "Mass proper for Minim saints, not a complete missal.",
-      "components": ["propers"],
+      "components": ["propers", "chant"],
       "witness_ids": ["western:mendicant-min-proper1756"],
       "witness_label": "Missae propriae SS. Ordinis Minimorum, 1756",
-      "summary": "The catalogue identifies a 48-page dated proper for Masses of Minim saints.",
+      "summary": "The title presents notated Masses proper to the Minims, conceded by various popes, printed at Lyon by Amatus Delaroche in 1756. The index lists Masses of Francis of Paula, Gabriel, the Seven Sorrows, the Patronage of St Joseph, Raphael, a Mass conceded to certain kingdoms and All Souls, followed by named mensural Mass settings.",
       "text_coverage": "not-transcribed",
-      "evidence": [{"source_id": "residual-orders-round3:min1756", "locus": "Google Books id mCzcRyDjD6kC, bibliographic title, date and 48-page extent", "claim": "The 1756 object is a Mass proper, rather than an order whole missal."}],
-      "limitations": "Metadata only; original title and prayers require inspection, and the 1569 Manuale has no established Mass contents.",
+      "evidence": [{"source_id": "residual-orders-round3:min1756", "locus": "Google Books id mCzcRyDjD6kC, bibliographic title, date and 48-page extent", "claim": "The 1756 object is a Mass proper, rather than an order whole missal."}, {"source_id": "residual-orders-round3:min1756-pages", "locus": "Title page (PR1); Index Missarum (PR2); pp. iii–iv (PR3–PR4)", "claim": "Title, imprint 'Lugduni, typis Amati Delaroche ... M.DCC.LVI', index of Masses and the notated Introit Caritas Dei for Francis of Paula, 2 April, duplex I classis with octave."}],
+      "limitations": "Title and index read on page images; the Mass texts are not transcribed. The 1569 Manuale has no established Mass contents.",
       "reception": "Intended order use in title; actual use not documented."
     },
     {
@@ -383,6 +403,25 @@
       "reception": "Order-issued proper; use at named houses not verified."
     },
     {
+      "id": "residual-orders-round3:ocd-1972-latin-proper",
+      "tradition_id": "ocd-round3",
+      "label": "1971–1972 OCD postconciliar calendar and Latin proper confirmations",
+      "date_label": "Calendar confirmed 20 October 1971 (Prot. 1653/71); Latin Mass and Hours texts confirmed 17 and 22 September 1972 (Prot. 666/72, 1131/72)",
+      "start_year": 1972,
+      "end_year": 1972,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Confirmed postconciliar Latin proper of Masses and Hours according to the order's proper calendar; the 1973 printed typical edition itself is not inspected.",
+      "components": ["propers", "calendar"],
+      "witness_ids": [],
+      "witness_label": "Acts only: Notitiae 8 (1972) pp. 12, 358, 362; the reported 1973 typical edition (western:mendicant-ocd-1973) is not linked because its title, date and contents are uninspected",
+      "summary": "The Congregation confirmed the order's proper calendar on 20 October 1971, confirmed variations in it on 20 July 1972, confirmed the Latin texts of Masses and Hours according to that calendar on 17 and 22 September 1972, and on 4 October 1972 allowed the Transverberation of St Teresa to be added.",
+      "text_coverage": "not-transcribed",
+      "evidence": [{"source_id": "residual-orders-round3:ocd1971-1972-acts", "locus": "Notitiae 8 (1972), printed p. 12", "claim": "Ordo Fratrum Discalceatorum B.M.V. de Monte Carmelo, 20 Oct. 1971 (Prot. n. 1653/71): proper calendar confirmed."}, {"source_id": "residual-orders-round3:ocd1971-1972-acts", "locus": "Notitiae 8 (1972), printed p. 358, section II", "claim": "17 and 22 Sept. 1972 (Prot. nn. 666/72 and 1131/72): Latin texts of Masses and Liturgy of the Hours according to the order's proper calendar confirmed."}, {"source_id": "residual-orders-round3:ocd1971-1972-acts", "locus": "Notitiae 8 (1972), printed p. 362", "claim": "20 July 1972 (Prot. n. 969/72) calendar variations confirmed; 4 Oct. 1972 (Prot. n. 1285/72) the calendar completed with S. Teresia ab Avila, In transverberatione cordis."}],
+      "limitations": "The acts precede the reported 1973 printing; that book's title, date and contents remain uninspected, so it is not linked as a witness. The calendar component rests on the 1971 confirmation as varied in 1972; the stage year is that of the Latin text confirmation. No text transition from the 1959 proper is asserted.",
+      "reception": "Confirmation for the order; dated house use is not documented."
+    },
+    {
       "id": "residual-orders-round3:ocd-2025",
       "tradition_id": "ocd-round3",
       "label": "2025 OCD Latin proper, second typical edition",
@@ -443,16 +482,16 @@
       "id": "residual-orders-round3:minim-gap",
       "tradition_id": "minim-round3",
       "period": "1569–1976 and later",
-      "missing": "Determine whether the 1569 Manuale contains Mass texts, inspect 1756 proper and an original edition of the 1976 Latin and Italian proper, then verify first local use and later saint additions.",
-      "next_source": "Full 1569 Manuale, 1756 Missae propriae, CD 405/76 decree and the order's 1976 printed proper.",
+      "missing": "Determine whether the 1569 Manuale contains Mass texts; read the Mass texts of the 1756 proper beyond its title, index and first Introit; inspect an original edition of the 1976 Latin and Italian proper; verify first local use and later saint additions.",
+      "next_source": "Full 1569 Manuale; complete 1756 Missae propriae (Google Books mCzcRyDjD6kC; full download previously refused with HTTP 429); the order's 1976 printed proper under CD 405/76.",
       "consequence": "The approved Italian translation is recorded without an invented publication date, territory or replacement of a whole missal."
     },
     {
       "id": "residual-orders-round3:ocd-gap",
       "tradition_id": "ocd-round3",
       "period": "Seventeenth century–2025 and regional translations",
-      "missing": "Inspect early Mass components, 1933 proper and the original 1973 first typical edition; collate 1925, 1950, 1959, 1973 and 2025 Mass texts, local grades, individual saint decrees and approved translations.",
-      "next_source": "OCD General Curia liturgical archive and original 1973 volume; side-by-side component leaves from retained facsimiles and 2025 Missale/Lectionarium.",
+      "missing": "Inspect early Mass components, the 1933 proper and the original 1973 first typical edition (its 1971 calendar and September 1972 Latin-text confirmations are now documented); collate 1925, 1950, 1959, 1973 and 2025 Mass texts, local grades, individual saint decrees and approved translations.",
+      "next_source": "OCD General Curia liturgical archive and original 1973 volume; side-by-side component leaves from retained facsimiles and 2025 Missale/Lectionarium; Notitiae 9 (1973) pp. 122, 256 and 10 (1974) p. 85 for the Transverberation Mass, Spanish version and Teresa of the Child Jesus preface.",
       "consequence": "The 2025 book is a documented second typical proper, but no earlier-to-later text transition or blanket regional translation permission is inferred."
     },
     {

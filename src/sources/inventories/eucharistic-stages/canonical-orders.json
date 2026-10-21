@@ -72,6 +72,16 @@
       "limitations": "Modern protected source: retain metadata and concise findings only in canonical material. Historical original missals/ordinarii and chapter acts remain distinct witnesses."
     },
     {
+      "id": "canonical-orders:premon1578-primary",
+      "title": "Missale Praemonstratense, Paris, 1578, BSB Res/2 Liturg. 235 (bsb10197414)",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb10197414",
+      "kind": "primary-book",
+      "inspection": "Complete 604-canvas IIIF manifest acquired; thumbnails of canvases 230–330 surveyed to locate the Canon; canvases 314–316 (Canon fol. 146v, fol. 147r and the following verso) downloaded at 1500 px and read.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Three Canon pages only; the title leaf and colophon were not re-read in this pass, and no complete collation was made."
+    },
+    {
       "id": "canonical-orders:windesheim-pal479-catalogue",
       "title": "Uli Steiger, catalogue description of Vatican Pal. lat. 479 (Heidelberg, 2018; updated 2024)",
       "url": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_lat_479.html",
@@ -267,7 +277,7 @@
       "end_year": 1578,
       "date_kind": "publication",
       "status": "documented",
-      "scope": "Paten gesture in the embolism.",
+      "scope": "Paten gesture in the embolism and the immediately following peace rubrics.",
       "components": [
         "rubrics"
       ],
@@ -282,9 +292,19 @@
           "source_id": "canonical-orders:king1955-canonical",
           "locus": "p. 218 (PDF 242)",
           "claim": "King quotes the 1578 rubric."
+        },
+        {
+          "source_id": "canonical-orders:premon1578-primary",
+          "locus": "Canon fol. 146v, BSB canvas 314",
+          "claim": "After the Pater the priest raises the paten and says Libera nos silently; at 'Da propicius pacem in diebus nostris' the rubric reads 'Hic osculetur patenam, faciendo crucem', and at 'ab omni perturbatione securi' 'Hic signet se cum patena in fronte'."
+        },
+        {
+          "source_id": "canonical-orders:premon1578-primary",
+          "locus": "Canon, BSB canvas 316",
+          "claim": "The kiss of peace uses 'Habete vinculum caritatis et pacis'; deacon, subdeacon and a novice minister carry the peace to the abbot and religious in choir."
         }
       ],
-      "limitations": "Original 1578 leaf not yet collated; quotation is secondary evidence.",
+      "limitations": "The 1578 embolism and peace rubrics are now read on the original pages. Other parts of the book and the 1530 Paris printing were not compared.",
       "reception": "Publication or witness survival does not establish uniform reception across houses."
     },
     {
@@ -697,13 +717,18 @@
           "component": "rubrics",
           "before": "Kiss and later forehead sign.",
           "after": "Roman pacem rubric.",
-          "locus_before": "King, p. 218, quoting 1578",
+          "locus_before": "1578 Canon fol. 146v (BSB bsb10197414, canvas 314); King, p. 218, quoting 1578",
           "locus_after": "King, p. 217, 1739",
           "evidence": [
             {
               "source_id": "canonical-orders:king1955-canonical",
               "locus": "pp. 217–218 (PDF 241–242)",
               "claim": "Explicit comparison of the earlier and later ritual."
+            },
+            {
+              "source_id": "canonical-orders:premon1578-primary",
+              "locus": "Canon fol. 146v, BSB canvas 314",
+              "claim": "Directly confirms the earlier state: paten kissed with a cross at da propitius pacem and the forehead signed with the paten at ab omni perturbatione securi."
             }
           ]
         }
@@ -715,7 +740,7 @@
           "claim": "Explicit comparison of the earlier and later ritual."
         }
       ],
-      "limitations": "Intervening history and immediate book ancestry remain unestablished.",
+      "limitations": "The 1578 side is now checked on the original page; the 1739 side remains King's description. Intervening history and immediate book ancestry remain unestablished.",
       "historical_parentage": "unestablished",
       "comparison_ids": [],
       "git_ancestry": false,
@@ -807,9 +832,9 @@
       "id": "canonical-orders:premon-original-comparison",
       "tradition_id": "premonstratensian",
       "period": "1578–1739",
-      "missing": "Original 1622 and 1663 missals, the 1739 ordinal and chapter acts have not been collated.",
-      "next_source": "The Norbertine canonesses’ 1622 PDF returned HTTP 403 during the recorded retrieval attempt; seek an alternate lawful original scan and the BSB 1578 download.",
-      "consequence": "Scholarly transitions cannot be promoted to text-collated or exact first implementation."
+      "missing": "Original 1622 and 1663 missals, the 1739 ordinal and chapter acts have not been collated. The 1578 embolism and peace rubrics are now read in the BSB original.",
+      "next_source": "Alternate lawful scans of the 1622 and 1663 missals and the 1739 ordinal (the Norbertine canonesses' 1622 PDF returned HTTP 403 in the earlier recorded attempt); the 1530 Paris printing (BSB bsb10164241) for the pre-1578 rubric.",
+      "consequence": "Only the 1578 side of the paten change has primary evidence; the transition stays scholarly-description and no exact first implementation is claimed."
     },
     {
       "id": "canonical-orders:gilbertine-originals",
