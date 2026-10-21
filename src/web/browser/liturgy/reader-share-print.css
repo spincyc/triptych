@@ -45,6 +45,12 @@
 /* Mode-aware printed reading: compact Study evidence and pair Compare's
    corresponding units at a legible Letter-page measure. */
 @media print {
+  /* Match the Letter content box: 8.5in minus two 0.72in @page margins.
+     The wide screen :has(.text-pair) width otherwise survives print media
+     and makes beforeprint measure at 1152px instead of the paper's 677.76px. */
+  .reader-instrument .reader-document {
+    width: min(100%, 7.06in) !important;
+  }
   .reader-instrument[data-reader-mode="study"] .reader-document .study-event {
     margin-bottom: 0.08in;
     padding-top: 0.04in;
@@ -65,9 +71,6 @@
   .reader-instrument[data-reader-mode="compare"] .reader-document .compare-calendar-pair {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.16in;
-  }
-  .reader-instrument[data-reader-mode="compare"] .reader-document .compare-unit:last-of-type {
-    break-inside: avoid-page;
   }
   .reader-instrument[data-reader-mode="compare"] .reader-document .compare-side .passage,
   .reader-instrument[data-reader-mode="compare"] .reader-document .compare-side .composed {
@@ -106,6 +109,18 @@
   }
   .reader-instrument[data-reader-mode="study"] .reader-document .study-print-tie > .composed {
     break-inside: avoid;
+  }
+  /* The Study account belongs to this Ordinary event. Keep it with the
+     final body tail while long paired text remains free to paginate. */
+  .reader-instrument[data-reader-mode="study"] .reader-document .ordinary-element > :is(.text-pair,.composed,.ordinary-head,.ordinary-dialogue,.composed-note,.ordinary-absence-inline):has(+ .study-event) {
+    break-after: avoid-page;
+  }
+  .reader-instrument[data-reader-mode="study"] .reader-document .ordinary-element > .study-event {
+    break-before: avoid-page;
+  }
+  /* Only a bounded, two-sided Psalm slot travels as a whole. */
+  .reader-instrument[data-reader-mode="compare"] .reader-document .compare-unit.print-keep-short-psalm {
+    break-inside: avoid-page;
   }
 }
 

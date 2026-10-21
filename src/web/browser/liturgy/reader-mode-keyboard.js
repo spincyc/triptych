@@ -26,9 +26,7 @@
       // form expanded would make reopening skip the selected radio on Shift+Tab.
       if (!surface.open) {
         const setup = surface.querySelector('#compare-setup');
-        const compare = radios.find(function (radio) { return radio.dataset.mode === 'compare'; });
         if (setup) setup.hidden = true;
-        if (compare) compare.setAttribute('aria-expanded', 'false');
       }
       const choices = radios.filter(available);
       const focused = choices.find(function (radio) {

@@ -133,6 +133,7 @@
     if (typeof win.addEventListener !== 'function') return function () {};
     let ties = [];
     let keptSides = [];
+    let keptUnits = [];
     const reading = function () { return doc.getElementById('reader-document'); };
     function clear() {
       const current = reading();
@@ -149,6 +150,12 @@
         }
       });
       keptSides = [];
+      keptUnits.forEach(function (unit) {
+        if (unit.isConnected && current && current.contains(unit)) {
+          unit.classList.remove('print-keep-short-psalm');
+        }
+      });
+      keptUnits = [];
     }
     function wrap(parent, first, last, className) {
       const tie = doc.createElement('div');
@@ -167,9 +174,10 @@
       const current = reading();
       if (!current) return;
       // Repeated beforeprint is harmless; a new render replaces stale ties.
-      if ((ties.length || keptSides.length) &&
+      if ((ties.length || keptSides.length || keptUnits.length) &&
           ties.every(function (tie) { return tie.isConnected && current.contains(tie); }) &&
-          keptSides.every(function (side) { return side.isConnected && current.contains(side); })) return;
+          keptSides.every(function (side) { return side.isConnected && current.contains(side); }) &&
+          keptUnits.every(function (unit) { return unit.isConnected && current.contains(unit); })) return;
       clear();
       const shell = current.closest('.reader-instrument');
       if (!shell) return;
@@ -185,6 +193,26 @@
         side.classList.add('print-keep-short-body');
         keptSides.push(side);
       });
+      if (shell.dataset.readerMode === 'compare') {
+        current.querySelectorAll('.compare-unit[data-semantic-event-id="compare/proper/responsorial-psalm"]').forEach(function (unit) {
+          const pair = unit.querySelector(':scope > .compare-pair');
+          const sides = pair && Array.from(pair.children);
+          if (!sides || sides.length !== 2 || !sides.every(function (side) {
+            if (!side.matches('.compare-side[data-compare-status="text-held"]')) return false;
+            const proper = side.querySelector(':scope > .proper');
+            const passages = proper && proper.querySelectorAll('.passage');
+            return passages && passages.length === 1 &&
+              passages[0].textContent.trim().length > 0;
+          })) return;
+          // The print reader now has the same width as the Letter content
+          // box. Only a source-owned slot that occupies at most half its
+          // 9.6in-high content area can travel with both headings and bodies.
+          const height = unit.getBoundingClientRect().height;
+          if (!height || height > 460.8) return;
+          unit.classList.add('print-keep-short-psalm');
+          keptUnits.push(unit);
+        });
+      }
       if (shell.dataset.readerMode === 'study') {
         current.querySelectorAll('.proper:has(> .study-event)').forEach(function (proper) {
           const note = proper.lastElementChild;

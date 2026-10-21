@@ -329,7 +329,6 @@
     dimension.addEventListener('change', fields);
     button.addEventListener('click', function () {
       setup.hidden = false;
-      button.setAttribute('aria-expanded', 'true');
       const state = input.runtime.normalized && input.runtime.normalized.state;
       select.replaceChildren(new Option('Choose another oration language', ''));
       if (!state || !state.formulary) {
@@ -413,7 +412,6 @@
       const location = sameDimension ? captured : compareLocation(sourceLocation, input.runtime.result, dimension.value);
       input.readerShell.close({ restoreFocus: false, restoreScroll: false });
       setup.hidden = true;
-      button.setAttribute('aria-expanded', 'false');
       input.navigate(bibles ? { mode: 'compare', compare: 'bible-edition', 'peer-bible': peerBible.value } : witnesses ? { mode: 'compare', compare: 'translation-witness',
         'translation-witness': witness.value, 'peer-witness': peerWitness.value } : alternatives ? { mode: 'compare', compare: 'reading-alternative',
         alternative: alternative.value, 'peer-alternative': peerAlternative.value } :

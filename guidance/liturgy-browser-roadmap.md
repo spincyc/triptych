@@ -1181,6 +1181,43 @@ Eleven offline adapter checks pass; no final images or acceptance follow from
 this preparation. Current-row centering or proved boundary clamping, focus,
 inertness, source parity and every-image inspection remain required.
 
+#### Print attachment correction and startup experiment boundary, 2026-10-20
+
+The narrow print repair uses the actual Letter content width during native
+`beforeprint`, scopes measured Compare keeps to a short responsorial Psalm,
+and attaches Study evidence to its selected language's tail and source credit.
+The preceding companion language may paginate independently; a whole paired
+Ordinary element is not kept together. The rejected broad keep candidate's
+173 Study pages and 37 nonfinal pages ending above 400 points remain a failed
+result. The narrower three-PDF proof has 143/9/4 pages, all 156 individually
+inspected, with passing attachment and 400-point pagination checks. Ordered
+semantic DOM and text-character multiset parity hold, while column extraction
+order and page counts can change. Both rerender/late-`afterprint` orders restore
+the exact screen DOM. Seven registered browser groups now include real PDF
+regressions; the final frozen eight-PDF review remains required.
+
+For the next source-owned plain-JSON startup experiment, the complete inline
+kernel's experimental ceiling is **4,500 gzip6 bytes**. The reviewed 4,333-byte
+kernel still fails the historical 4,000-byte ceiling by 333 bytes; no earlier
+experiment is relabelled as passing. One source-owner reuse investigation
+reduced the kernel from 4,382 to 4,333 bytes; further legacy annual-sidecar
+machinery is excluded. The extra 333 bytes cost about 1.8 ms at the lab's
+nominal bandwidth, against a frozen-input composed reduction of about 13 KB.
+Those byte estimates justify testing this bounded architecture, not a latency
+claim. Actual composed HTML, payload, runtime, and response multiplicity must
+all be charged again after current source and accessibility changes.
+
+The complete authentication ceiling remains 300 gzip6 bytes; the pilot's
+plain-JSON payload ceiling remains 128 KiB. Initial Read savings must remain at
+least 18,000 gzip6 bytes after a 512-byte reserve. The 3.0-second / 1.0-second
+gain integration gate and 2.5-second release budget are unchanged. The naive
+101-year inline envelope exceeds the pilot bound, so full-span generation is
+held for an explicit source-owned size/architecture decision and passing pilot
+value evidence. Exact canonical data-root identity gates speculative warming;
+different custom roots skip these optional hints and retain normal loading.
+Publication copy eligibility and actual artifact fragment bytes must agree
+through the canonical owner before any generated experiment can be accepted.
+
 ### Verification and completion gates
 
 The integrated 2026-10-20 source checkpoint passes 80 focused source tests,

@@ -885,7 +885,9 @@ window.Triptych = (function () {
       verse.appendChild(marker);
       // The number is repeated for assistive technology, which does not get the
       // typographic cue that a superscript is a verse marker.
-      verse.appendChild(el('span', 'visually-hidden', 'Verse ' + number + '. '));
+      const label = el('span', 'visually-hidden', 'Verse ' + number + '. ');
+      label.lang = 'en';
+      verse.appendChild(label);
       verse.appendChild(document.createTextNode(fragment.verses[number] + ' '));
       passage.appendChild(verse);
     }
@@ -1781,7 +1783,9 @@ window.Triptych = (function () {
     const glyph = el('span', 'vr-glyph', VERSICLE_MARKS[letter]);
     glyph.setAttribute('aria-hidden', 'true');
     node.appendChild(glyph);
-    node.appendChild(el('span', 'visually-hidden', VERSICLE_NAMES[letter]));
+    const label = el('span', 'visually-hidden', VERSICLE_NAMES[letter]);
+    label.lang = 'en';
+    node.appendChild(label);
     return node;
   }
 

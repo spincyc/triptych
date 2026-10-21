@@ -928,6 +928,47 @@ preserving the historical oracle hashes through their one recorded dependency
 exception. Six affected CLI transcripts were recaptured from actual runs.
 Final print, accessibility, performance and independent acceptance remain open.
 
+The next print repair measures the physical Letter content width rather than
+the wide screen reader width during `beforeprint`. Compare keeps only a
+source-owned, measured short responsorial Psalm together; Study keeps the
+selected language's text tail and source credit with its own labelled evidence.
+The preceding Latin companion can paginate separately. Long bodies remain free
+to fragment. The rejected broad keep strategy produced 173 Study pages and
+37 nonfinal pages ending above 400 points; that result remains a failure.
+The narrower repair produces 143 Study pages, nine recension-Compare pages
+and four Presentation-Compare pages. All 156 pages were individually inspected;
+the independent attachment/pagination checks pass, with every nonfinal page
+reaching at least 400 points down the page. This page-count cost is explicit, not a claim of unchanged
+pagination. Text-character multiset and ordered semantic DOM parity hold;
+raw PDF extraction order can differ across paired columns.
+
+The registered Share/Print browser gate now passes all seven groups, including
+real Presentation and paired-Study PDF regressions. Its first expanded run
+stopped on a harness-only Propers snapshot error after the original five groups
+passed; the one-line correction collects Ordinary owners only for Day and
+preserves strict Day data checks. A separate rerender probe passes both late
+`afterprint` orders with exact restored DOM and no remaining browser resources.
+Thirty shell/visual static tests and the seven-test registry pass (two explicit
+browser opt-in skips). The locked preview build and integrity verification pass
+after six already published F01 PDFs were recovered against their tracked
+deployment hashes. Final eight-PDF and complete artifact review remain open.
+
+The accompanying accessibility repair removes unsupported `aria-expanded`
+from Compare radio controls, tags the hidden English verse/response cues with
+their own language, and maps Instrument's faint ink to its existing accessible
+color token. A separately copied, hash-verified artifact passes the 36-state
+AX/axe diagnostic with zero automated violations, zero unnamed selected
+interactive nodes across 1,056 inspected AX nodes, and no browser or network
+diagnostics. All 36 original screenshots were individually inspected. All 28
+contrast incompletes retain their raw results and have measured dispositions:
+25 fully visible, two below their own scrollport, one partially clipped by its
+own scrollport, no unresolved item; the minimum computed foreground/backdrop
+ratio is 5.3471. The 28 symbolic Close-label observations retain their actual
+functional AX names. No automated result was suppressed. This diagnostic
+checkpoint does not establish representative human screen-reader use, manual
+touch, WCAG conformance or final reader acceptance. Actual AT control setup,
+source completion, startup value and the final immutable review remain open.
+
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 
 <!-- promised-deliverable: missal-reader-completion-plan-2026-10-19 -->
