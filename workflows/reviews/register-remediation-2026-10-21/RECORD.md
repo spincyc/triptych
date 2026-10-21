@@ -201,6 +201,41 @@ defect. The advisories concern the shared template (a running head naming the
 section that begins on a page, an unnumbered last page), as before the
 revision.
 
+## Installing the from-scratch homily and themes pages
+
+Asked afterwards, the maintainer chose to install the round-3 homily and the
+round-2 themes pages, which every final judge had ranked first, after checks,
+and to push the result to main.
+
+- **Install.** Fresh lanes converted each draft into the leaf's conventions
+  without rewriting it: the homily's body matched the draft word for word, the
+  themes pages kept their page markers. Every quotation (22 in the homily, 50
+  in the themes pages) is verbatim in the study as published. The concise
+  commentary was trimmed in fifteen places where it repeated the new themes
+  pages, and one quotation there that had never been verbatim was corrected.
+- **Coordinator's changes.** The homily was cut from 1,631 to about 1,530
+  spoken words, removing a sentence that blended Bellarmine's readings of two
+  psalms and a second *Quas primas* point the judges found opaque, and
+  correcting "at the beginning of Mass" (the Introit, not the Collect, begins
+  it). The PDF subject now describes the new speech.
+- **Fidelity.** An independent review of the installed texts found three
+  blocking errors — the "bounded by place" reasoning again credited to
+  Aquinas in the homily, the themes pages' opening thesis credited to "the
+  Fathers" as a body, a wrong word count in the homily note — and advisories,
+  most of them antecedents left dangling by the commentary's trims. All were
+  corrected and the corrections re-checked by a second reviewer.
+- **Checks.** 33, 12 and 4 pages; the concise opening holds, pages 3–4 full
+  and the commentary from page 5. `check-proper-components` passes; the
+  content preflight's errors equal the baseline's and house-voice,
+  structural-meta-labels and references-used pass; the web edition,
+  catalogue and release bindings are regenerated and exact.
+- **Selection.** The concise study now quotes a different selection: 25
+  quotations the revision carried are gone, most of them restatements moved
+  out of the commentary, and every References entry is still used.
+
+The judged drafts remain in `evidence/generated/`; the installed texts differ
+from them by the changes above.
+
 ## What the judges can and cannot show
 
 Every judge is a Claude model, and the defect is a Claude habit. Judges
@@ -213,13 +248,10 @@ maintainer is the judge of the register this record is about.
 
 ## Open
 
-- The round-3 homily and round-2 themes pages, written from scratch under the
-  final guidance, were ranked first by every final judge. They are not
-  installed: the maintainer chose in-place revision, and new prose needs its
-  own fidelity review. They are kept in `evidence/generated/` with their
-  notes.
 - Version 14 has not yet driven a full `proper-study` run; the authoring
   evidence comes from stage-level experiments outside the engine.
 - The same defects stand in other published leaves: the leaf-61 homily
-  review above, and the GPT Christ the King documents.
-- Nothing here is pushed, merged or deployed.
+  review above, and the GPT Christ the King documents. On 21 October 2026 the
+  maintainer decided to let the next real `proper-study` production under
+  version 14 test the guidance and review end to end before any backfill of
+  older documents.

@@ -812,3 +812,19 @@ documents and adds a contribution for the revision.
   `check-document-catalogue`, `check-web-edition` and the scoped
   `public-alpha check` pass.
 - **Not done.** No push, merge or deployment.
+
+### The homily and themes pages replaced, 21 October 2026
+
+At the maintainer's direction the homily's spoken body and note and the
+concise study's themes pages were replaced by drafts written from scratch
+under the final guidance (`workflows/reviews/register-remediation-2026-10-21/`,
+"Installing the from-scratch homily and themes pages"). The homily follows the
+second interpretation with the first's consenting prisoner and the third's
+Communion verse; its one response is a prayer, from the Introit's verse, over
+whatever charge each hearer holds. It runs to about 1,530 spoken words, some
+11.8 to 12.8 minutes at 120 to 130 words a minute by arithmetic alone; it has
+not been delivered or timed. The concise commentary was trimmed where it
+repeated the new themes pages. Two fidelity reviews checked the installed
+texts; their findings are corrected. The PDFs are 33, 12 and 4 pages; the
+checks named above give the same results.
+

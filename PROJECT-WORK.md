@@ -11,7 +11,7 @@ Last reconciled: 2026-10-21.
 
 <!-- promised-deliverable: register-remediation-2026-10-21 -->
 
-**Complete on `feature/jargon`; not pushed.** The maintainer reported that produced
+**In progress: installing the from-scratch homily and themes pages, then pushing to main at the maintainer's direction.** The maintainer reported that produced
 documents still fall into unearned profundity, empty significance, jargon,
 ham-fisted hokiness and little subtlety, naming the Claude 1962 Christ the King
 documents, and asked for the cause, a remediation, its execution on those
