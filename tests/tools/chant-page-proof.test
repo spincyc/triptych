@@ -1,0 +1,15 @@
+#!/bin/sh
+# Read-only CLI smoke: help plus a structured missing-packet failure.
+set -eu
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/chant-page-proof"
+"$tool" --help >/dev/null
+if result="$("$tool" "$repo/.scratch/chant-page-proof-absent-packet" --manifest MANIFEST.json --json)"; then
+    echo "expected missing packet to fail" >&2
+    exit 1
+else
+    status=$?
+    test "$status" -eq 1
+fi
+printf '%s\n' "$result" | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["status"] == "fail" and d["scope"] == "mechanical-only"'
+echo ok

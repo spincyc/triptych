@@ -1,0 +1,241 @@
+#!/usr/bin/env python3
+"""Check only the mechanical integrity of a held chant page-proof packet.
+
+No receipt command is executed. This does not certify a source reading,
+normalization, OCR, actual visual review, rights, or canonical fingerprints.
+"""
+from __future__ import annotations
+
+import argparse
+from importlib.machinery import SourceFileLoader
+from importlib.util import module_from_spec, spec_from_loader
+import json
+from pathlib import Path
+import re
+import struct
+import sys
+
+sys.dont_write_bytecode = True
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from _proper_latin import text_sha256
+from _tooling import Example, with_examples
+
+# The implementation is owned by this checkout; packet roots are data only.
+loader = SourceFileLoader("_chant_page_proof_source_library", str(ROOT / "tools/source-library"))
+spec = spec_from_loader(loader.name, loader)
+source_library = module_from_spec(spec)
+sys.modules[spec.name] = source_library
+loader.exec_module(source_library)
+hash_and_size = source_library._hash_and_size
+
+HEX = re.compile(r"[0-9a-f]{64}\Z")
+LIMITS = ["source readings and OCR", "normalization or lexical equivalence",
+          "actually_viewed or other review attestations", "rights and publication permission",
+          "canonical source-library fingerprints", "PDF identity and rendered page content",
+          "complete PNG decoding beyond its IHDR dimensions"]
+# Outputs are captured from the two held packets, not source-specific writers.
+EXAMPLES = {"": (
+    Example(
+        "tools/chant-page-proof .scratch/mvp-1962-latin-bodies/uncited-chants-proof --manifest MANIFEST.json",
+        ("chant-page-proof pass (mechanical only): 10 files, 24 body_hash_pairs, 26 images, 0 embedded_render_records, 0 external_render_receipts",),
+        "requires the locally held eight-row proof packet; performs no visual review"),
+    Example(
+        "tools/chant-page-proof .scratch/mvp-1962-latin-bodies/uncited-followon-proof/early-five --sha256sums SHA256SUMS --record-root . --render-receipt metadata/render-200dpi.json --render-receipt metadata/render-400dpi.json",
+        ("chant-page-proof pass (mechanical only): 33 files, 18 body_hash_pairs, 22 images, 22 embedded_render_records, 22 external_render_receipts",),
+        "requires the locally held six-row early-five packet; recorded commands are never run"),
+)
+}
+
+
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
+def local_file(packet, name, record_root=None):
+    require(isinstance(name, str) and name and "\\" not in name, "invalid file path")
+    value = Path(name)
+    require(not value.is_absolute() and ".." not in value.parts, "file path must be relative without parent traversal")
+    target = ((record_root or packet) / value).resolve()
+    require(target.is_relative_to(packet), "file path escapes the packet")
+    require(target.is_file(), "packet file is missing: " + name)
+    return target
+
+
+def read_json(path):
+    def unique(pairs):
+        result = {}
+        for key, value in pairs:
+            require(key not in result, "duplicate JSON key: " + key)
+            result[key] = value
+        return result
+    return json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique)
+
+
+def byte_record(path, expected_hash, expected_size=None):
+    require(isinstance(expected_hash, str) and HEX.fullmatch(expected_hash), "invalid byte SHA256")
+    if expected_size is not None:
+        require(type(expected_size) is int and expected_size >= 0, "invalid byte size")
+    actual_hash, actual_size = hash_and_size(path)
+    require(actual_hash == expected_hash, "byte SHA256 mismatch: " + path.name)
+    require(expected_size is None or actual_size == expected_size, "byte size mismatch: " + path.name)
+
+
+def png_dimensions(path):
+    with path.open("rb") as stream:
+        header = stream.read(33)
+    require(len(header) == 33 and header[:8] == b"\x89PNG\r\n\x1a\n" and
+            header[8:16] == b"\x00\x00\x00\rIHDR", "missing PNG IHDR: " + path.name)
+    dimensions = list(struct.unpack(">II", header[16:24]))
+    require(all(value > 0 for value in dimensions), "invalid PNG dimensions: " + path.name)
+    return dimensions
+
+
+def positive(value):
+    return type(value) is int and value > 0
+
+
+def render_record(record, packet, record_root, image_path, dimensions):
+    require(type(record.get("exit")) is int and record["exit"] == 0, "render receipt records failure or lacks an exit status")
+    require(positive(record.get("artifact_page_one_based")) and positive(record.get("dpi")), "invalid render page or DPI")
+    command = record.get("command")
+    require(isinstance(command, list) and len(command) >= 3 and all(isinstance(v, str) for v in command), "invalid render command record")
+    require(Path(command[0]).name == "pdftoppm", "unsupported render command; only recorded pdftoppm arguments are checked")
+    flags = {}; i = 1
+    while i < len(command) - 2:
+        flag = command[i]
+        require(flag not in flags, "duplicate render flag")
+        if flag in {"-png", "-singlefile"}:
+            flags[flag] = True; i += 1
+        else:
+            require(flag in {"-f", "-l", "-r", "-x", "-y", "-W", "-H"} and i + 1 < len(command) - 2, "unsupported render flag")
+            require(re.fullmatch(r"[0-9]+", command[i + 1]), "invalid numeric render flag")
+            flags[flag] = int(command[i + 1]); i += 2
+    require(flags.get("-png") is True and flags.get("-singlefile") is True, "render must record PNG singlefile output")
+    require(flags.get("-f") == flags.get("-l") == record["artifact_page_one_based"] and flags.get("-r") == record["dpi"], "render command page/DPI disagrees with receipt")
+    require(local_file(packet, command[-1] + ".png", record_root) == image_path, "render output path disagrees with image")
+    crop = record.get("crop")
+    crop_flags = {"-x", "-y", "-W", "-H"}
+    if crop is None:
+        require(not (crop_flags & flags.keys()), "render crop flags contradict whole-page receipt")
+    else:
+        require(isinstance(crop, dict) and set(crop) == {"x", "y", "width", "height"}, "unsupported crop receipt")
+        require(all(type(crop[k]) is int and crop[k] >= 0 for k in ("x", "y")) and all(positive(crop[k]) for k in ("width", "height")), "invalid crop dimensions")
+        require([flags.get(k) for k in ("-x", "-y", "-W", "-H")] == [crop[k] for k in ("x", "y", "width", "height")], "render command crop disagrees with receipt")
+        require(dimensions == [crop["width"], crop["height"]], "PNG dimensions disagree with recorded crop")
+
+
+def check_packet(packet, *, manifest=None, sha256sums=None, proof="source-proof.json", record_root=None, receipts=()):
+    counts = {"files": 0, "body_hash_pairs": 0, "images": 0, "embedded_render_records": 0, "external_render_receipts": 0}
+    result = {"schema": "triptych-chant-page-proof-check/v1", "scope": "mechanical-only",
+              "status": "fail", "counts": counts, "problems": [], "not_certified": LIMITS}
+    try:
+        packet = Path(packet).resolve()
+        require(packet.is_dir(), "packet directory is missing")
+        record_root = Path(record_root).resolve() if record_root else packet
+        require(bool(manifest) != bool(sha256sums), "supply exactly one manifest or SHA256SUMS inventory")
+        if manifest:
+            inventory = read_json(local_file(packet, manifest))
+            require(isinstance(inventory, dict) and isinstance(inventory.get("files"), list) and inventory["files"], "manifest needs a nonempty files list")
+            entries = inventory["files"]
+        else:
+            entries = []
+            for line in local_file(packet, sha256sums).read_text(encoding="utf-8").splitlines():
+                match = re.fullmatch(r"([0-9a-f]{64})  (.+)", line)
+                require(match is not None, "unsupported SHA256SUMS line; expected lowercase hash, two spaces, relative path")
+                entries.append({"path": match[2], "sha256": match[1]})
+            require(entries, "SHA256SUMS must not be empty")
+        seen = set()
+        for item in entries:
+            require(isinstance(item, dict) and {"path", "sha256"} <= item.keys() and (not manifest or "size_bytes" in item), "malformed file inventory record")
+            path = local_file(packet, item["path"])
+            require(not manifest or (type(item["size_bytes"]) is int and item["size_bytes"] >= 0), "invalid manifest byte size")
+            require(path not in seen, "duplicate inventory file")
+            seen.add(path); byte_record(path, item["sha256"], item.get("size_bytes")); counts["files"] += 1
+        proof_path = local_file(packet, proof)
+        require(proof_path in seen, "proof must be covered by the selected file inventory")
+        document = read_json(proof_path)
+        require(isinstance(document, dict), "proof must be a JSON object")
+        if document.get("packet_type") == "bounded-source-proof-only":
+            layout = "nested"
+        elif document.get("schema") == "triptych.scratch.checked-chant-word-proof/v1":
+            layout = "flat"
+        else:
+            raise ValueError("unsupported source-proof layout")
+        require(isinstance(document.get("rows"), list) and document["rows"], "proof needs nonempty rows")
+        for number, row in enumerate(document["rows"], 1):
+            require(isinstance(row, dict), "malformed proof row")
+            if layout == "nested":
+                require(isinstance(row.get("source"), dict) and isinstance(row.get("target"), dict), "nested proof row needs source and target objects")
+                pairs = [(row[w].get("checked_text"), row[w].get("checked_text_sha256")) for w in ("source", "target")]
+                pairs.append((row.get("normalized_target_proposal"), row.get("normalized_target_proposal_sha256")))
+            else:
+                pairs = [(row.get(field), row.get(field + "_sha256")) for field in ("source_body", "target_control_body", "target_proposal")]
+            for text, expected_hash in pairs:
+                require(isinstance(text, str) and text and isinstance(expected_hash, str) and HEX.fullmatch(expected_hash), "malformed exact body/hash pair at row " + str(number))
+                require(text_sha256(text) == expected_hash, "exact Unicode body SHA256 mismatch at row " + str(number))
+                counts["body_hash_pairs"] += 1
+        require(isinstance(document.get("images"), list) and document["images"], "proof needs nonempty images")
+        images = {}
+        for item in document["images"]:
+            require(isinstance(item, dict), "malformed image record")
+            path = local_file(packet, item.get("path"), record_root)
+            require(path not in images, "duplicate proof image")
+            size_key = "size_bytes" if layout == "nested" else "bytes"
+            require(type(item.get(size_key)) is int and item[size_key] >= 0, "image lacks a valid byte size")
+            byte_record(path, item.get("sha256"), item[size_key])
+            dimensions = png_dimensions(path)
+            declared = item.get("dimensions_pixels") if layout == "nested" else [item.get("width"), item.get("height")]
+            require(isinstance(declared, list) and len(declared) == 2 and all(positive(v) for v in declared) and dimensions == declared, "PNG IHDR dimensions mismatch: " + path.name)
+            if layout == "flat":
+                render_record(item, packet, record_root, path, dimensions); counts["embedded_render_records"] += 1
+            images[path] = item; counts["images"] += 1
+        receipt_paths = set()
+        for receipt_name in receipts:
+            receipt_path = local_file(packet, receipt_name)
+            require(receipt_path in seen, "render receipt must be covered by the selected file inventory")
+            records = read_json(receipt_path)
+            require(isinstance(records, list) and records, "render receipt needs a nonempty record list")
+            for record in records:
+                require(isinstance(record, dict), "malformed render receipt")
+                path = local_file(packet, record.get("path"), record_root)
+                require(path in images and path not in receipt_paths, "render receipt image is unknown or duplicated")
+                render_record(record, packet, record_root, path, png_dimensions(path))
+                for key in ("role", "artifact_page_one_based", "dpi", "crop", "command", "exit", "stderr"):
+                    require(key in record and key in images[path] and record[key] == images[path][key], "render receipt disagrees with image record: " + key)
+                receipt_paths.add(path); counts["external_render_receipts"] += 1
+        require(not receipts or receipt_paths == set(images), "explicit render receipts do not cover every proof image")
+        result["status"] = "pass"
+    except (ValueError, OSError, UnicodeError, KeyError, TypeError) as error:
+        result["problems"].append(str(error))
+    return result
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("packet", type=Path, help="held packet directory")
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--manifest", help="packet-relative JSON files inventory")
+    group.add_argument("--sha256sums", help="packet-relative narrow SHA256SUMS inventory")
+    parser.add_argument("--proof", default="source-proof.json", help="packet-relative proof JSON")
+    parser.add_argument("--record-root", type=Path, help="base for recorded image/render paths; all must resolve inside packet")
+    parser.add_argument("--render-receipt", action="append", default=[], help="packet-relative recorded pdftoppm JSON list; repeat for each DPI")
+    parser.add_argument("--json", action="store_true", help="print mechanical-only JSON result")
+    with_examples(parser, EXAMPLES[""])
+    args = parser.parse_args(argv)
+    result = check_packet(args.packet, manifest=args.manifest, sha256sums=args.sha256sums,
+                          proof=args.proof, record_root=args.record_root, receipts=args.render_receipt)
+    if args.json:
+        print(json.dumps(result, indent=2))
+    else:
+        counts = result["counts"]
+        print("chant-page-proof " + result["status"] + " (mechanical only): " +
+              ", ".join(str(counts[k]) + " " + k for k in counts))
+        for problem in result["problems"]:
+            print(problem)
+    return 0 if result["status"] == "pass" else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

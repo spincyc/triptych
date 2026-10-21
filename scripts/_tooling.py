@@ -109,6 +109,7 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         "Where a publication's material came from, and whether the research "
         "behind it is still current.",
         (
+            "chant-page-proof",
             "research-staleness",
             "source-family-migration",
             "source-inventory",
@@ -194,6 +195,7 @@ REACHES: dict[str, str] = {
     "calendar-days": NOTHING,
     "calendar-rubrics": NOTHING,
     "calendar-spine": NOTHING,
+    "chant-page-proof": NOTHING,
     "check-calendar-masses": NOTHING,
     "check-content-preflight": NOTHING,
     "check-curriculum-structure": NOTHING,
