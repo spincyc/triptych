@@ -1191,9 +1191,21 @@ sections:
           Order-of-Mass inventory explicitly leaves the later Ember chants
           unplaced. A specialized frame has not yet been modeled, so every row
           remains source-ordered while the generic frame is withheld.
-      notes: Only the scripture-bearing propers are recorded; the day's orations and other
-        composed chants are appointed but not yet transcribed. The Missal prints a longer
-        and a shorter form of this Mass.
+      notes: >-
+        The source prints both a longer and a shorter Mass form. Their initial
+        Collect, additional literal Oratio heads, Secret and Postcommunion were read
+        at 200 and 400 dpi and independently collated word for word against
+        public-domain Mame 1922 on 2026-10-20. The longer form has five additional
+        Oratio appointments between its reading units; the shorter form has one
+        before the Epistle. Each form explicitly reprints its own prayers. Every
+        target conclusion remains at its own printed length, including repeated
+        prayers with different conclusion lengths. The separate source-faithful
+        historical derivative retains Mame spelling and shortened conclusions. The
+        other Scripture-bearing nodes retain their prior evidence state; their full
+        bodies were not collated in this oration repair. The existing unavailable
+        Ordinary-frame boundary remains in force. No English prayer body,
+        conditional ordination-prayer body or whole-form completeness claim is
+        supplied.
       forms:
       - id: longer
         name: Longer form (forma missae longior)
@@ -1209,14 +1221,19 @@ sections:
             - begin: {chapter: 79, verse: 2}
               end: {chapter: 79, verse: 2}
             ref: Psalm 79:4, 2
-        - name: Collect
-          source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        - name: "Collect"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 longer form, PDF 89, printed p. 8, no.
+            53. The target explicitly reprints this prayer in this form; no cross-form
+            borrowing is inferred. Actual 200 and 400 dpi word collation against the
+            independently registered public-domain Mame 1922 witness establishes the
+            petition words. The source-faithful historical derivative and separate
+            target projection preserve their own conclusion lengths; no English body
+            or full-form completeness claim is supplied.
+          text: |
+            Deus, qui conspicis, quia ex nostra pravitate affligimur: concede propitius; ut
+            ex tua visitatione consolemur: Qui vivis et regnas cum Deo Patre in unitate.
         - name: First Lesson
           source: scripture
           verses:
@@ -1236,6 +1253,21 @@ sections:
             - begin: {chapter: 18, verse: 2}
               end: {chapter: 18, verse: 2}
             ref: Psalm 18:7, 2
+        - name: "Oratio"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 longer form, PDF 90, printed p. 9, no.
+            56. Source Oratio ordinal 2; calendar Oratio occurrence 1. Source cues:
+            Orémus. Flectámus génua. — Leváte. They remain outside the prayer body.
+            Actual 200 and 400 dpi word collation against the independently registered
+            public-domain Mame 1922 witness establishes the petition words. The
+            source-faithful historical derivative and separate target projection
+            preserve their own conclusion lengths; no English body or full-form
+            completeness claim is supplied.
+          text: |
+            Concede, quaesumus, omnipotens Deus: ut, qui sub peccati jugo ex vetusta
+            servitute deprimimur; exspectata unigeniti Filii tui nova nativitate liberemur:
+            Qui tecum vivit et regnat.
         - name: Second Lesson
           source: scripture
           verses:
@@ -1253,6 +1285,21 @@ sections:
             - begin: {chapter: 18, verse: 6}
               end: {chapter: 18, verse: 7}
             ref: Psalm 18:6-7
+        - name: "Oratio"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 longer form, PDF 90, printed p. 9, no.
+            59. Source Oratio ordinal 3; calendar Oratio occurrence 2. Source cues:
+            Orémus. Flectámus génua. — Leváte. They remain outside the prayer body.
+            Actual 200 and 400 dpi word collation against the independently registered
+            public-domain Mame 1922 witness establishes the petition words. The
+            source-faithful historical derivative and separate target projection
+            preserve their own conclusion lengths; no English body or full-form
+            completeness claim is supplied.
+          text: |
+            Indignos nos, quaesumus, Domine, famulos tuos, quos actionis propriae culpa
+            contristat, unigeniti Filii tui adventu laetifica: Qui tecum vivit et regnat in
+            unitate.
         - name: Third Lesson
           source: scripture
           verses:
@@ -1272,6 +1319,21 @@ sections:
             - begin: {chapter: 79, verse: 3}
               end: {chapter: 79, verse: 3}
             ref: Psalm 79:20, 3
+        - name: "Oratio"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 longer form, PDF 91, printed p. 10, no.
+            62. Source Oratio ordinal 4; calendar Oratio occurrence 3. Source cues:
+            Orémus. Flectámus génua. — Leváte. They remain outside the prayer body.
+            Actual 200 and 400 dpi word collation against the independently registered
+            public-domain Mame 1922 witness establishes the petition words. The
+            source-faithful historical derivative and separate target projection
+            preserve their own conclusion lengths; no English body or full-form
+            completeness claim is supplied.
+          text: |
+            Praesta, quaesumus, omnipotens Deus: ut Filii tui ventura solemnitas, et
+            praesentis nobis vitae remedia conferat, et praemia aeterna concedat. Per eundem
+            Dominum.
         - name: Fourth Lesson
           source: scripture
           verses:
@@ -1291,6 +1353,21 @@ sections:
             - begin: {chapter: 79, verse: 2}
               end: {chapter: 79, verse: 3}
             ref: Psalm 79:3, 2-3
+        - name: "Oratio"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 longer form, PDF 91, printed p. 10, no.
+            65. Source Oratio ordinal 5; calendar Oratio occurrence 4. Source cues:
+            Orémus. Flectámus génua. — Leváte. They remain outside the prayer body.
+            Actual 200 and 400 dpi word collation against the independently registered
+            public-domain Mame 1922 witness establishes the petition words. The
+            source-faithful historical derivative and separate target projection
+            preserve their own conclusion lengths; no English body or full-form
+            completeness claim is supplied.
+          text: |
+            Preces populi tui, quaesumus, Domine, clementer exaudi: ut, qui juste pro
+            peccatis nostris affligimur, pietatis tuae visitatione consolemur: Qui vivis et
+            regnas cum Deo Patre in unitate.
         - name: Fifth Lesson
           source: scripture
           verses:
@@ -1308,6 +1385,21 @@ sections:
             - begin: {chapter: 3, verse: 52}
               end: {chapter: 3, verse: 56}
             ref: Daniel 3:52-56
+        - name: "Oratio"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 longer form, PDF 92, printed p. 11, no.
+            68. Source Oratio ordinal 6; calendar Oratio occurrence 5. The source
+            directs ℣. Dóminus vobíscum without Flectámus génua, followed by Orémus;
+            other occurring orations follow under the printed rubric. These cues do
+            not assign a speaker or an Ordinary seat. Actual 200 and 400 dpi word
+            collation against the independently registered public-domain Mame 1922
+            witness establishes the petition words. The source-faithful historical
+            derivative and separate target projection preserve their own conclusion
+            lengths; no English body or full-form completeness claim is supplied.
+          text: |
+            Deus, qui tribus pueris mitigasti flammas ignium: concede propitius; ut nos
+            famulos tuos non exurat flamma vitiorum. Per Dominum.
         - name: Epistle
           source: scripture
           verses:
@@ -1342,14 +1434,19 @@ sections:
             - begin: {chapter: 9, verse: 9}
               end: {chapter: 9, verse: 9}
             ref: Zechariah 9:9
-        - name: Secret
-          source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        - name: "Secret"
+          source: "composed"
+          notes: >-
+            Literal printed Secreta head; 1962 longer form, PDF 93, printed p. 12, no.
+            73. The target explicitly reprints this prayer in this form; no cross-form
+            borrowing is inferred. Actual 200 and 400 dpi word collation against the
+            independently registered public-domain Mame 1922 witness establishes the
+            petition words. The source-faithful historical derivative and separate
+            target projection preserve their own conclusion lengths; no English body
+            or full-form completeness claim is supplied.
+          text: |
+            Sacrificiis praesentibus, quaesumus, Domine, placatus intende: ut et devotioni
+            nostrae proficiant, et saluti. Per Dominum nostrum.
         - name: Communion
           incipit: Exsultavit ut gigas ad currendam viam
           source: scripture
@@ -1359,14 +1456,20 @@ sections:
             - begin: {chapter: 18, verse: 6}
               end: {chapter: 18, verse: 7}
             ref: Psalm 18:6-7
-        - name: Postcommunion
-          source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        - name: "Postcommunion"
+          source: "composed"
+          notes: >-
+            Literal printed Postcommunio head; 1962 longer form, PDF 93, printed p.
+            12, no. 75. The target explicitly reprints this prayer in this form; no
+            cross-form borrowing is inferred. Actual 200 and 400 dpi word collation
+            against the independently registered public-domain Mame 1922 witness
+            establishes the petition words. The source-faithful historical derivative
+            and separate target projection preserve their own conclusion lengths; no
+            English body or full-form completeness claim is supplied.
+          text: |
+            Quaesumus, Domine Deus noster: ut sacrosancta mysteria, quae pro reparationis
+            nostrae munimine contulisti; et praesens nobis remedium esse facias, et futurum.
+            Per Dominum.
       - id: shorter
         name: Shorter form
         propers:
@@ -1381,14 +1484,19 @@ sections:
             - begin: {chapter: 79, verse: 2}
               end: {chapter: 79, verse: 2}
             ref: Psalm 79:4, 2
-        - name: Collect
-          source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        - name: "Collect"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 shorter form, PDF 93, printed p. 12, no.
+            77. The target explicitly reprints this prayer in this form; no cross-form
+            borrowing is inferred. Actual 200 and 400 dpi word collation against the
+            independently registered public-domain Mame 1922 witness establishes the
+            petition words. The source-faithful historical derivative and separate
+            target projection preserve their own conclusion lengths; no English body
+            or full-form completeness claim is supplied.
+          text: |
+            Deus, qui conspicis, quia ex nostra pravitate affligimur: concede propitius; ut
+            ex tua visitatione consolemur: Qui vivis et regnas cum Deo Patre in unitate.
         - name: Lesson
           source: scripture
           verses:
@@ -1408,6 +1516,22 @@ sections:
             - begin: {chapter: 18, verse: 2}
               end: {chapter: 18, verse: 2}
             ref: Psalm 18:7, 2
+        - name: "Oratio"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 shorter form, PDF 93, printed p. 12, no.
+            80. Source Oratio ordinal 2; calendar Oratio occurrence 1. The source
+            directs ℣. Dóminus vobíscum without Flectámus génua, followed by Orémus;
+            other occurring orations follow under the printed rubric. These cues do
+            not assign a speaker or an Ordinary seat. Actual 200 and 400 dpi word
+            collation against the independently registered public-domain Mame 1922
+            witness establishes the petition words. The source-faithful historical
+            derivative and separate target projection preserve their own conclusion
+            lengths; no English body or full-form completeness claim is supplied.
+          text: |
+            Concede, quaesumus, omnipotens Deus: ut, qui sub peccati jugo ex vetusta
+            servitute deprimimur; exspectata unigeniti Filii tui nova nativitate liberemur:
+            Qui tecum vivit et regnat.
         - name: Epistle
           source: scripture
           verses:
@@ -1442,14 +1566,19 @@ sections:
             - begin: {chapter: 9, verse: 9}
               end: {chapter: 9, verse: 9}
             ref: Zechariah 9:9
-        - name: Secret
-          source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        - name: "Secret"
+          source: "composed"
+          notes: >-
+            Literal printed Secreta head; 1962 shorter form, PDF 94, printed p. 13,
+            no. 85. The target explicitly reprints this prayer in this form; no
+            cross-form borrowing is inferred. Actual 200 and 400 dpi word collation
+            against the independently registered public-domain Mame 1922 witness
+            establishes the petition words. The source-faithful historical derivative
+            and separate target projection preserve their own conclusion lengths; no
+            English body or full-form completeness claim is supplied.
+          text: |
+            Sacrificiis praesentibus, quaesumus, Domine, placatus intende: ut et devotioni
+            nostrae proficiant, et saluti. Per Dominum nostrum.
         - name: Communion
           incipit: Exsultavit ut gigas ad currendam viam
           source: scripture
@@ -1459,14 +1588,20 @@ sections:
             - begin: {chapter: 18, verse: 6}
               end: {chapter: 18, verse: 7}
             ref: Psalm 18:6-7
-        - name: Postcommunion
-          source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        - name: "Postcommunion"
+          source: "composed"
+          notes: >-
+            Literal printed Postcommunio head; 1962 shorter form, PDF 94, printed p.
+            13, no. 87. The target explicitly reprints this prayer in this form; no
+            cross-form borrowing is inferred. Actual 200 and 400 dpi word collation
+            against the independently registered public-domain Mame 1922 witness
+            establishes the petition words. The source-faithful historical derivative
+            and separate target projection preserve their own conclusion lengths; no
+            English body or full-form completeness claim is supplied.
+          text: |
+            Quaesumus, Domine Deus noster: ut sacrosancta mysteria, quae pro reparationis
+            nostrae munimine contulisti; et praesens nobis remedium esse facias, et futurum.
+            Per Dominum nostrum Jesum Christum.
     - key: advent-4
       name: Fourth Sunday of Advent
       registry: '04'
@@ -4351,9 +4486,22 @@ sections:
           Order-of-Mass inventory explicitly leaves the later Ember chants
           unplaced. A specialized frame has not yet been modeled, so every row
           remains source-ordered while the generic frame is withheld.
-      notes: Only the scripture-bearing propers are recorded; the day's orations and other
-        composed chants are appointed but not yet transcribed. The Missal prints a longer
-        and a shorter form of this Mass.
+      notes: >-
+        The source prints both a longer and a shorter Mass form. Their initial
+        Collect, additional literal Oratio heads, Secret and Postcommunion were read
+        at 200 and 400 dpi and independently collated word for word against
+        public-domain Mame 1922 on 2026-10-20. The longer form has five additional
+        Oratio appointments between its reading units; the shorter form has one
+        before the Epistle. Both forms also print Oratio under Super populum after
+        Postcommunion, with the source qualification and cues retained separately.
+        Each form explicitly reprints its own prayers. Every target conclusion
+        remains at its own printed length, including repeated prayers with different
+        conclusion lengths. The separate source-faithful historical derivative
+        retains Mame spelling and shortened conclusions. The other Scripture-bearing
+        nodes retain their prior evidence state; their full bodies were not collated
+        in this oration repair. The existing unavailable Ordinary-frame boundary
+        remains in force. No English prayer body, conditional ordination-prayer body
+        or whole-form completeness claim is supplied.
       forms:
       - id: longer
         name: Longer form (forma missae longior)
@@ -4374,14 +4522,19 @@ sections:
             - begin: {chapter: 87, verse: 2}
               end: {chapter: 87, verse: 2}
             ref: Psalm 87:2
-        - name: Collect
-          source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        - name: "Collect"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 longer form, PDF 154, printed p. 73, no.
+            494. The target explicitly reprints this prayer in this form; no
+            cross-form borrowing is inferred. Actual 200 and 400 dpi word collation
+            against the independently registered public-domain Mame 1922 witness
+            establishes the petition words. The source-faithful historical derivative
+            and separate target projection preserve their own conclusion lengths; no
+            English body or full-form completeness claim is supplied.
+          text: |
+            Populum tuum, quaesumus, Domine, propitius respice: atque ab eo flagella tuae
+            iracundiae clementer averte. Per Dominum.
         - name: First Lesson
           source: scripture
           verses:
@@ -4399,6 +4552,21 @@ sections:
             - begin: {chapter: 78, verse: 9}
               end: {chapter: 78, verse: 10}
             ref: Psalm 78:9-10
+        - name: "Oratio"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 longer form, PDF 155, printed p. 74, no.
+            497. Source Oratio ordinal 2; calendar Oratio occurrence 1. Source cues:
+            Orémus. Flectámus génua. — Leváte. They remain outside the prayer body.
+            Actual 200 and 400 dpi word collation against the independently registered
+            public-domain Mame 1922 witness establishes the petition words. The
+            source-faithful historical derivative and separate target projection
+            preserve their own conclusion lengths; no English body or full-form
+            completeness claim is supplied.
+          text: |
+            Protector noster, aspice, Deus: ut, qui malorum nostrorum pondere premimur,
+            percepta misericordia, libera tibi mente famulemur. Per Dominum nostrum Jesum
+            Christum.
         - name: Second Lesson
           source: scripture
           verses:
@@ -4418,6 +4586,21 @@ sections:
             - begin: {chapter: 83, verse: 9}
               end: {chapter: 83, verse: 9}
             ref: Psalm 83:10, 9
+        - name: "Oratio"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 longer form, PDF 155, printed p. 74, no.
+            500. Source Oratio ordinal 3; calendar Oratio occurrence 2. Source cues:
+            Orémus. Flectámus génua. — Leváte. They remain outside the prayer body.
+            Actual 200 and 400 dpi word collation against the independently registered
+            public-domain Mame 1922 witness establishes the petition words. The
+            source-faithful historical derivative and separate target projection
+            preserve their own conclusion lengths; no English body or full-form
+            completeness claim is supplied.
+          text: |
+            Adesto, quaesumus, Domine, supplicationibus nostris: ut esse, te largiente,
+            mereamur, et inter prospera humiles, et inter adversa securi. Per Dominum
+            nostrum.
         - name: Third Lesson
           source: scripture
           verses:
@@ -4437,6 +4620,22 @@ sections:
             - begin: {chapter: 89, verse: 13}
               end: {chapter: 89, verse: 13}
             ref: Psalm 89:13
+        - name: "Oratio"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 longer form, PDF 156, printed p. 75, no.
+            503. Source Oratio ordinal 4; calendar Oratio occurrence 3. Source cues:
+            Orémus. Flectámus génua. — Leváte. They remain outside the prayer body.
+            Actual 200 and 400 dpi word collation against the independently registered
+            public-domain Mame 1922 witness establishes the petition words. The
+            source-faithful historical derivative and separate target projection
+            preserve their own conclusion lengths; no English body or full-form
+            completeness claim is supplied.
+          text: |
+            Preces populi tui, quaesumus, Domine, clementer exaudi: ut, qui juste pro
+            peccatis nostris affligimur, pro tui nominis gloria misericorditer liberemur.
+            Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+            unitate.
         - name: Fourth Lesson
           source: scripture
           verses:
@@ -4454,6 +4653,21 @@ sections:
             - begin: {chapter: 140, verse: 2}
               end: {chapter: 140, verse: 2}
             ref: Psalm 140:2
+        - name: "Oratio"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 longer form, PDF 156, printed p. 75, no.
+            506. Source Oratio ordinal 5; calendar Oratio occurrence 4. Source cues:
+            Orémus. Flectámus génua. — Leváte. They remain outside the prayer body.
+            Actual 200 and 400 dpi word collation against the independently registered
+            public-domain Mame 1922 witness establishes the petition words. The
+            source-faithful historical derivative and separate target projection
+            preserve their own conclusion lengths; no English body or full-form
+            completeness claim is supplied.
+          text: |
+            Actiones nostras, quaesumus, Domine, aspirando praeveni, et adjuvando
+            prosequere: ut cuncta nostra oratio et operatio a te semper incipiat, et per te
+            coepta finiatur. Per Dominum.
         - name: Fifth Lesson
           source: scripture
           verses:
@@ -4471,6 +4685,21 @@ sections:
             - begin: {chapter: 3, verse: 52}
               end: {chapter: 3, verse: 56}
             ref: Daniel 3:52-56
+        - name: "Oratio"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 longer form, PDF 157, printed p. 76, no.
+            509. Source Oratio ordinal 6; calendar Oratio occurrence 5. The source
+            directs ℣. Dóminus vobíscum without Flectámus génua, followed by Orémus;
+            other occurring orations follow under the printed rubric. These cues do
+            not assign a speaker or an Ordinary seat. Actual 200 and 400 dpi word
+            collation against the independently registered public-domain Mame 1922
+            witness establishes the petition words. The source-faithful historical
+            derivative and separate target projection preserve their own conclusion
+            lengths; no English body or full-form completeness claim is supplied.
+          text: |
+            Deus, qui tribus pueris mitigasti flammas ignium: concede propitius; ut nos
+            famulos tuos non exurat flamma vitiorum. Per Dominum.
         - name: Epistle
           source: scripture
           verses:
@@ -4505,14 +4734,20 @@ sections:
             - begin: {chapter: 87, verse: 2}
               end: {chapter: 87, verse: 3}
             ref: Psalm 87:2-3
-        - name: Secret
-          source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        - name: "Secret"
+          source: "composed"
+          notes: >-
+            Literal printed Secreta head; 1962 longer form, PDF 158, printed p. 77,
+            no. 514. The target explicitly reprints this prayer in this form; no
+            cross-form borrowing is inferred. Actual 200 and 400 dpi word collation
+            against the independently registered public-domain Mame 1922 witness
+            establishes the petition words. The source-faithful historical derivative
+            and separate target projection preserve their own conclusion lengths; no
+            English body or full-form completeness claim is supplied.
+          text: |
+            Praesentibus sacrificiis, quaesumus, Domine, jejunia nostra sanctifica: ut, quod
+            observantia nostra profitetur extrinsecus, interius operetur. Per Dominum
+            nostrum.
         - name: Communion
           incipit: Domine Deus meus, in te speravi
           source: scripture
@@ -4522,14 +4757,35 @@ sections:
             - begin: {chapter: 7, verse: 2}
               end: {chapter: 7, verse: 2}
             ref: Psalm 7:2
-        - name: Postcommunion
-          source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        - name: "Postcommunion"
+          source: "composed"
+          notes: >-
+            Literal printed Postcommunio head; 1962 longer form, PDF 158, printed p.
+            77, no. 516. The target explicitly reprints this prayer in this form; no
+            cross-form borrowing is inferred. Actual 200 and 400 dpi word collation
+            against the independently registered public-domain Mame 1922 witness
+            establishes the petition words. The source-faithful historical derivative
+            and separate target projection preserve their own conclusion lengths; no
+            English body or full-form completeness claim is supplied.
+          text: |
+            Sanctificationibus tuis, omnipotens Deus, et vitia nostra curentur, et remedia
+            nobis aeterna proveniant. Per Dominum nostrum.
+        - name: "Oratio"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 longer form, PDF 158, printed p. 77, no.
+            517. Source Oratio ordinal 7; calendar Oratio occurrence 6. Source
+            qualification and cues: Super populum: Orémus. Humiliáte cápita vestra
+            Deo. This prayer follows Postcommunion; those cues are not prayer-body
+            words. Actual 200 and 400 dpi word collation against the independently
+            registered public-domain Mame 1922 witness establishes the petition words.
+            The source-faithful historical derivative and separate target projection
+            preserve their own conclusion lengths; no English body or full-form
+            completeness claim is supplied.
+          text: |
+            Fideles tuos, Deus, benedictio desiderata confirmet: quae eos, et a tua
+            voluntate numquam faciat discrepare, et tuis semper indulgeat beneficiis
+            gratulari. Per Dominum.
       - id: shorter
         name: Shorter form
         ordinary_appointments:
@@ -4549,14 +4805,19 @@ sections:
             - begin: {chapter: 87, verse: 2}
               end: {chapter: 87, verse: 2}
             ref: Psalm 87:2
-        - name: Collect
-          source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        - name: "Collect"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 shorter form, PDF 158, printed p. 77,
+            no. 519. The target explicitly reprints this prayer in this form; no
+            cross-form borrowing is inferred. Actual 200 and 400 dpi word collation
+            against the independently registered public-domain Mame 1922 witness
+            establishes the petition words. The source-faithful historical derivative
+            and separate target projection preserve their own conclusion lengths; no
+            English body or full-form completeness claim is supplied.
+          text: |
+            Populum tuum, quaesumus, Domine, propitius respice: atque ab eo flagella tuae
+            iracundiae clementer averte. Per Dominum.
         - name: Lesson
           source: scripture
           verses:
@@ -4574,6 +4835,22 @@ sections:
             - begin: {chapter: 78, verse: 9}
               end: {chapter: 78, verse: 10}
             ref: Psalm 78:9-10
+        - name: "Oratio"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 shorter form, PDF 159, printed p. 78,
+            no. 522. Source Oratio ordinal 2; calendar Oratio occurrence 1. The source
+            directs ℣. Dóminus vobíscum without Flectámus génua, followed by Orémus;
+            other occurring orations follow under the printed rubric. These cues do
+            not assign a speaker or an Ordinary seat. Actual 200 and 400 dpi word
+            collation against the independently registered public-domain Mame 1922
+            witness establishes the petition words. The source-faithful historical
+            derivative and separate target projection preserve their own conclusion
+            lengths; no English body or full-form completeness claim is supplied.
+          text: |
+            Protector noster, aspice, Deus: ut, qui malorum nostrorum pondere premimur,
+            percepta misericordia, libera tibi mente famulemur. Per Dominum nostrum Jesum
+            Christum.
         - name: Epistle
           source: scripture
           verses:
@@ -4608,14 +4885,20 @@ sections:
             - begin: {chapter: 87, verse: 2}
               end: {chapter: 87, verse: 3}
             ref: Psalm 87:2-3
-        - name: Secret
-          source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        - name: "Secret"
+          source: "composed"
+          notes: >-
+            Literal printed Secreta head; 1962 shorter form, PDF 159, printed p. 78,
+            no. 527. The target explicitly reprints this prayer in this form; no
+            cross-form borrowing is inferred. Actual 200 and 400 dpi word collation
+            against the independently registered public-domain Mame 1922 witness
+            establishes the petition words. The source-faithful historical derivative
+            and separate target projection preserve their own conclusion lengths; no
+            English body or full-form completeness claim is supplied.
+          text: |
+            Praesentibus sacrificiis, quaesumus, Domine, jejunia nostra sanctifica: ut, quod
+            observantia nostra profitetur extrinsecus, interius operetur. Per Dominum
+            nostrum.
         - name: Communion
           incipit: Domine Deus meus, in te speravi
           source: scripture
@@ -4625,14 +4908,35 @@ sections:
             - begin: {chapter: 7, verse: 2}
               end: {chapter: 7, verse: 2}
             ref: Psalm 7:2
-        - name: Postcommunion
-          source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        - name: "Postcommunion"
+          source: "composed"
+          notes: >-
+            Literal printed Postcommunio head; 1962 shorter form, PDF 160, printed p.
+            79, no. 529. The target explicitly reprints this prayer in this form; no
+            cross-form borrowing is inferred. Actual 200 and 400 dpi word collation
+            against the independently registered public-domain Mame 1922 witness
+            establishes the petition words. The source-faithful historical derivative
+            and separate target projection preserve their own conclusion lengths; no
+            English body or full-form completeness claim is supplied.
+          text: |
+            Sanctificationibus tuis, omnipotens Deus, et vitia nostra curentur, et remedia
+            nobis aeterna proveniant. Per Dominum nostrum.
+        - name: "Oratio"
+          source: "composed"
+          notes: >-
+            Literal printed Oratio head; 1962 shorter form, PDF 160, printed p. 79,
+            no. 530. Source Oratio ordinal 3; calendar Oratio occurrence 2. Source
+            qualification and cues: Super populum: Orémus. Humiliáte cápita vestra
+            Deo. This prayer follows Postcommunion; those cues are not prayer-body
+            words. Actual 200 and 400 dpi word collation against the independently
+            registered public-domain Mame 1922 witness establishes the petition words.
+            The source-faithful historical derivative and separate target projection
+            preserve their own conclusion lengths; no English body or full-form
+            completeness claim is supplied.
+          text: |
+            Fideles tuos, Deus, benedictio desiderata confirmet: quae eos, et a tua
+            voluntate numquam faciat discrepare, et tuis semper indulgeat beneficiis
+            gratulari. Per Dominum nostrum Jesum Christum.
     - key: lent-2
       name: Second Sunday of Lent
       registry: '22'

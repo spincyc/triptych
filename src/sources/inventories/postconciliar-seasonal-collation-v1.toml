@@ -1341,3 +1341,72 @@ optional_reference = "Ezekiel 16:59-63"
 source_standing = "ad-libitum-option"
 implementation = "Adjacent principal/ad-libitum rows retain one semantic first-reading seat through the existing ordinary_disposition owner. The new member carries weekday_cycles II only; both original principal I/II readings remain unchanged."
 boundary = "Text-free 1981 source-local appointment metadata only. No Year I alternative, protected wording, publication basis, complete target-2008 correspondence, or enacted celebration is inferred."
+
+[ot21_communion_cue_correction_2026_10_20]
+recorded_on = "2026-10-20"
+mass = "ot-21"
+form_id = "main"
+proper = "Communion Antiphon (alternative)"
+occurrence = 1
+source_cycle = "all"
+correction_artifact = "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174"
+correction_sha256 = "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f"
+correction_artifact_page = 53
+correction_printed_page = 371
+referenced_missal_printed_page = 471
+registered_passage = "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.tempus-per-annum"
+literal_prior_cue = "Io 6,55"
+literal_replacement_cue = "Is 6,54"
+corroborating_artifact = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+corroborating_sha256 = "e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca"
+corroborating_artifact_page = 85
+corroborating_printed_page = 77
+corroborating_printed_cue = "Cf. Jn 6:54"
+prior_artifact = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+prior_sha256 = "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7"
+prior_artifact_page = 285
+corrected_reference = "John 6:54"
+retained_vulgate_target = "John 6:55"
+retained_technical_option_identity = "john-6-55"
+inference = "Notitiae literally prints Is in the replacement cue. John is independently corroborated by ICEL2010; the abbreviation typo is not silently reported as Io."
+method = "Held registered PDFs were hash-verified and their actual page images personally viewed; Notitiae AP53 was inspected at 350 dpi. No antiphon body words were transcribed."
+scope = "One corrected antiphon appointment cue and its existing exact locus resolution. The Hebrew stance stays unrecorded and refuses. A new raw John6:55 source row requires separate exact evidence; no unused old mapping is retained as a default."
+rights_scope = "Existing artifact and text rights are unchanged. No protected body, whole-book identity, publication grant, or new runtime mechanism follows."
+regression = "tools/tests/test_postconciliar_ot21_antiphon_cue.py"
+
+
+[seasonal_antiphon_numbering_2026_10_20]
+recorded_on = "2026-10-20"
+witness = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+witness_sha256 = "e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca"
+witness_byte_size = 1120199
+convention_artifact_page = 7
+convention_printed_page = "v"
+structural_scope_artifact_page = 6
+structural_scope_printed_page = "iv"
+method = "The exact held PDF was hash-checked. Artifact pages 71 and 92 were newly viewed as 110 dpi page images, separately from the registered foreword collation. The literal antiphon citation and the parenthesized Hebrew number agree; parenthesized Graduale suggestions are not extra appointments. Only factual citation metadata is retained here."
+correction = "Declare psalm_numbering: vulgate on the two exact Entrance Antiphon rows. Keep reference strings, verse ranges, ordering, IDs, default Hebrew ownership, all reading citations and all other antiphons unchanged. Previously inherited Hebrew numbering selected the wrong Psalm while returning valid Bible verses."
+qualification = "The registered foreword positively covers structural antiphon appointments of the 2002/2008 Missal. This does not establish exact Latin or English liturgical wording, a full 2008 altar-book denominator, an English territorial adaptation, or a public payload permission. The exact English witness is held for review and restricted; no protected body is added."
+regression = "tools/tests/test_postconciliar_seasonal_antiphon_numbering.py"
+
+[[seasonal_antiphon_numbering_2026_10_20.rows]]
+mass = "easter-7"
+form = "main"
+proper = "Entrance Antiphon"
+occurrence = 1
+artifact_page = 71
+printed_page = 63
+source_reference = "Psalm 26:7-9"
+numbering = "vulgate"
+previous_inherited_numbering = "hebrew"
+
+[[seasonal_antiphon_numbering_2026_10_20.rows]]
+mass = "corpus-christi"
+form = "main"
+proper = "Entrance Antiphon"
+occurrence = 1
+artifact_page = 92
+printed_page = 84
+source_reference = "Psalm 80:17"
+numbering = "vulgate"
+previous_inherited_numbering = "hebrew"

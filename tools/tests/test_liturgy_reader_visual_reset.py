@@ -78,7 +78,9 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
                 "day.js",
                 "reader-state.js",
                 "reader-state-adapters.js",
+                "source-choice-controls.js",
                 "reader-shell.js",
+                "day-study.js",
                 "day-reader.js",
                 "reader-visual-reset.js",
             ],
@@ -97,6 +99,7 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
                 "day.js",
                 "reader-state.js",
                 "reader-state-adapters.js",
+                "source-choice-controls.js",
                 "reader-shell.js",
                 "propers-events.js",
                 "propers-reader.js",
@@ -173,6 +176,29 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
         self.assertIn('background: var(--vr-panel);', rule)
         self.assertIn('box-shadow: none;', rule)
 
+    def _assert_production_action_ownership(self, source: str, first_action: str) -> None:
+        # Since f88c657866b6 (C5), Study is the fourth persistent command;
+        # Details belongs to Mode. Count each owning surface, not page labels.
+        docks = re.findall(r'<nav\b[^>]*class="reader-actions"[^>]*>(.*?)</nav>',
+                           source, re.DOTALL)
+        self.assertEqual(len(docks), 1)
+        dock = docks[0]
+        actions = re.findall(r'\bdata-reader-action="([^"]+)"', dock)
+        self.assertEqual(actions, [first_action.lower(), "contents", "mode", "study"])
+        self.assertEqual(re.findall(r'class="action-label">([^<]+)</span>', dock),
+                         [first_action, "Contents", "Mode", "Study"])
+        self.assertEqual(len(re.findall(r'<button\b', dock)), 4)
+        modes = re.findall(r'<dialog\b[^>]*id="mode-surface"[^>]*>(.*?)</dialog>',
+                           source, re.DOTALL)
+        self.assertEqual(len(modes), 1)
+        self.assertEqual(re.findall(r'\bdata-reader-action="([^"]+)"', modes[0]),
+                         ["details"])
+        self.assertEqual(re.findall(r'class="action-label">([^<]+)</span>', modes[0]),
+                         ["Details"])
+        self.assertEqual(modes[0].count('data-mode="study"'), 1)
+        self.assertEqual(re.findall(r'\bdata-reader-action="([^"]+)"', source),
+                         [first_action.lower(), "contents", "mode", "study", "details"])
+
     def test_accepted_instrument_has_one_scoped_production_presentation_seam(self) -> None:
         css = held(INSTRUMENT)
         self.assertIn("Accepted Liturgical Instrument presentation", css)
@@ -181,12 +207,15 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
         self.assertIn('@container reader-shell (max-width: 18rem)', css)
         self.assertIn("ordinary-absence-inline", css)
         self.assertNotIn('[data-design=', css)
-        for page in (PRODUCTION_DAY, PRODUCTION_PROPERS):
+        for page, first_action in (
+            (PRODUCTION_DAY, "Date"), (PRODUCTION_PROPERS, "Browse"),
+            (LITURGY / "day.html", "Date"), (LITURGY / "index.html", "Browse"),
+        ):
             source = held(page)
             self.assertIn('class="reader-shell reader-instrument"', source)
             self.assertIn('href="reader-instrument.css"', source)
             self.assertEqual(source.count('class="reader-masthead"'), 1)
-            self.assertEqual(source.count('class="action-label"'), 4)
+            self._assert_production_action_ownership(source, first_action)
         self.assertIn("composeInstrumentAbsences", held(LITURGY / "day-reader.js"))
         self.assertIn("shellRoot.dataset.readerMode", held(LITURGY / "day-reader.js"))
         self.assertIn("coverageNotice.replaceChildren(...uncompiled.childNodes)", held(LITURGY / "propers-reader.js"))
@@ -332,8 +361,7 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
             self.assertIn(f"<title>{title}</title>", source)
             self.assertNotIn('class="candidate-flag"', source)
             self.assertNotIn("internal candidate", source.lower())
-            self.assertEqual(source.count('class="action-label"'), 4)
-            self.assertIn(f'class="action-label">{first_action}</span>', source)
+            self._assert_production_action_ownership(source, first_action)
             for copy in (
                 "Continuous reading of the appointed texts.",
                 "Expanded notes and apparatus.",
@@ -341,7 +369,8 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
                 self.assertIn(copy, source)
             self.assertIn(
                 "Parallel editions and recensions." if path == PRODUCTION_DAY else
-                "Parallel oration languages for one formulary.",
+                # e28407c80 expanded Propers beyond oration-language pairs.
+                "Translation witnesses, Bible editions, languages or readings for one formulary.",
                 source,
             )
 
@@ -371,7 +400,7 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
             ids = re.findall(r'\bid="([^"]+)"', held(page))
             self.assertEqual(len(ids), len(set(ids)), page.name)
 
-    def test_visual_oracle_is_exactly_unchanged(self) -> None:
+    def test_visual_oracle_preserves_the_recorded_day_dependency_exception(self) -> None:
         expected = {
             "reader-visual-reset-day.html": "ff734f07b797e5706c7e62a4c890f47c32c0fbfd78bfc855f421a4123273c18d",
             "reader-visual-reset-propers.html": "e6f9afa33589068ba81585b15f288b154ad55e180f9ed2faa291e24cfc9c5ee3",
@@ -379,7 +408,23 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
             "reader-visual-reset.js": "eb1c1dd5c0c9c7076b74f2187627dc56e39963429212c0a51872df0ea98a9679",
         }
         for name, digest in expected.items():
-            self.assertEqual(hashlib.sha256((LITURGY / name).read_bytes()).hexdigest(), digest, name)
+            source = (LITURGY / name).read_bytes()
+            if name in {"reader-visual-reset-day.html", "reader-visual-reset-propers.html"}:
+                # Only the newly authorized source-choice include is removed;
+                # the original hashes and earlier Day Study exception stay put.
+                dependency = b'<script src="source-choice-controls.js"></script>\n'
+                self.assertEqual(source.count(dependency), 1, name)
+                self.assertIn(dependency + b'<script src="reader-shell.js"></script>', source, name)
+                source = source.replace(dependency, b"", 1)
+            if name == "reader-visual-reset-day.html":
+                # f88c657866b6 added this one required dependency; the bounded
+                # exception is recorded in the roadmap at 033769e96e95.
+                # Keep the original visual bytes pinned instead of blessing
+                # the whole changed HTML. The script-order test covers placement.
+                dependency = b'<script src="day-study.js"></script>\n'
+                self.assertEqual(source.count(dependency), 1, name)
+                source = source.replace(dependency, b"", 1)
+            self.assertEqual(hashlib.sha256(source).hexdigest(), digest, name)
 
 
 if __name__ == "__main__":

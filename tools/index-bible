@@ -84,7 +84,7 @@ EXAMPLES = {
         Example(
             "tools/index-bible check --bible douay-rheims",
             (
-                "douay-rheims: 3489 passages -> src/sources/bibles/douay-rheims/index.yaml",
+                "douay-rheims: 3487 passages -> src/sources/bibles/douay-rheims/index.yaml",
                 "  postconciliar: 2340/2346 references resolved (99.7%)",
                 "  roman-1962: 1430/1433 references resolved (99.8%)",
                 "  roman-pre-1955: 1375/1378 references resolved (99.8%)",
@@ -106,15 +106,15 @@ EXAMPLES = {
         Example(
             "tools/index-bible check --bible king-james-version --verbose",
             (
-                "king-james-version: 3313 passages -> src/sources/bibles/king-james-version/index.yaml",
-                "  postconciliar: 2247/2346 references resolved (95.8%)",
+                "king-james-version: 3312 passages -> src/sources/bibles/king-james-version/index.yaml",
+                "  postconciliar: 2248/2346 references resolved (95.8%)",
                 "  roman-1962: 1343/1433 references resolved (93.7%)",
                 "  roman-pre-1955: 1289/1378 references resolved (93.5%)",
                 "  projection: 4314 rules (renumber 2698, merge 2, absent 4, displaced 16, unrecorded 1594)",
                 "  rule renumber Dan.13.1 -> Sus.1.1",
                 "  rule renumber Dan.13.10 -> Sus.1.10",
                 "  rule renumber Dan.13.11 -> Sus.1.11",
-                "... 4589 more lines",
+                "... 4588 more lines",
             ),
             "--verbose prints every rule and every unresolved citation. A rule whose target "
             "reads `(refused)` says where the text is not: this edition does not carry it, or "
@@ -157,7 +157,7 @@ EXAMPLES = {
         Example(
             "tools/index-bible check --bible douay-rheims",
             (
-                "douay-rheims: 3489 passages -> src/sources/bibles/douay-rheims/index.yaml",
+                "douay-rheims: 3487 passages -> src/sources/bibles/douay-rheims/index.yaml",
                 "  postconciliar: 2340/2346 references resolved (99.7%)",
                 "  roman-1962: 1430/1433 references resolved (99.8%)",
                 "  roman-pre-1955: 1375/1378 references resolved (99.8%)",
@@ -169,7 +169,7 @@ EXAMPLES = {
         Example(
             "tools/index-bible build --bible douay-rheims --bible-root build/example-bibles",
             (
-                "douay-rheims: 3489 passages -> build/example-bibles/douay-rheims/index.yaml",
+                "douay-rheims: 3487 passages -> build/example-bibles/douay-rheims/index.yaml",
                 "  postconciliar: 2340/2346 references resolved (99.7%)",
                 "  roman-1962: 1430/1433 references resolved (99.8%)",
                 "  roman-pre-1955: 1375/1378 references resolved (99.8%)",

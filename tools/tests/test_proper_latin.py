@@ -143,6 +143,60 @@ def permitted_nonexact_fields() -> list[str]:
 
 
 class ProductionLedgerTests(unittest.TestCase):
+    def test_ember_advent_lent_orations_keep_source_order_and_exact_form_owners(self):
+        # The ordered body oracle is independently collated against both printed
+        # target forms; generic ordering cannot distinguish repeated Oratio heads.
+        expected = {'advent-ember-saturday': {'longer': [(1, 'Collect', 1, '473f7257116cd8c0d2a86267683cc4fa8bc088fb43dcbec4f70dd27617e97e1d'), (4, 'Oratio', 1, 'c7461c7079181e3c24e5c0fb6eb6b607f432a9f3dc3d4936e199c33cb677e054'), (7, 'Oratio', 2, 'efdb1b2d638d7bba3c33ce95f71aff8f3df138a042de32e16bf1e0d7711a1d1e'), (10, 'Oratio', 3, '1b1a81d0920612209faa58bb6567bd4b5a89e404eb6db484b793ab71ba1121cb'), (13, 'Oratio', 4, '2d6a29be50863d4697c88f7c76f36cd568d1893afb91dc828cbe81919ac142a7'), (16, 'Oratio', 5, '7c0f207aee56711c8e4caf64e2318abe602d7d48771675419dfd1066b484c38b'), (21, 'Secret', 1, '94aab6eefb88e4df85a51f59335d50cb6215afff5fc34d7bf714c22fb7d24b31'), (23, 'Postcommunion', 1, 'dbb05b476bdb7ff698fc903a4ee0426a8f13178e19a2c9d098c9511b0a50b289')], 'shorter': [(1, 'Collect', 1, '473f7257116cd8c0d2a86267683cc4fa8bc088fb43dcbec4f70dd27617e97e1d'), (4, 'Oratio', 1, 'c7461c7079181e3c24e5c0fb6eb6b607f432a9f3dc3d4936e199c33cb677e054'), (9, 'Secret', 1, '94aab6eefb88e4df85a51f59335d50cb6215afff5fc34d7bf714c22fb7d24b31'), (11, 'Postcommunion', 1, '6c898e13277cdd2e3cc88affa700c0b638dab73ee606e4f6e949939bbfb15fd0')]}, 'lent-1-ember-saturday': {'longer': [(1, 'Collect', 1, '8a86af6147dcb73eb0bec31e1101f1a366cec3b7f3c363796afe4a04a6869533'), (4, 'Oratio', 1, 'c6ddb6df9f0a42a9ab9ce039dbc629722143433d60e0645981ece24ccf8f4dd6'), (7, 'Oratio', 2, '46fee93cb038dc64ed59374f11e1c0533c937b14ea0b93bcf568d846a57a5f99'), (10, 'Oratio', 3, 'a36c7c7a95d2050801796aa212e738889a99bb111c2924048602909a6e0495b9'), (13, 'Oratio', 4, 'ecf77a36fe4f22196746da9b2fe0cfc3c68ec9ab7ac42b5affed494a32393884'), (16, 'Oratio', 5, '7c0f207aee56711c8e4caf64e2318abe602d7d48771675419dfd1066b484c38b'), (21, 'Secret', 1, 'e9f5f554d58316aeb07ed474ef629fe23d4263206cd8eed948cdaeca45151ccd'), (23, 'Postcommunion', 1, '6115d2418c3ac487a4b206cda8686e5da8385c0264e530e2c65fd82f4179c781'), (24, 'Oratio', 6, 'ffd76454250595e7b5b42db4ab9af8b8cccdc8d9815dc6ecce3620cff3e1358b')], 'shorter': [(1, 'Collect', 1, '8a86af6147dcb73eb0bec31e1101f1a366cec3b7f3c363796afe4a04a6869533'), (4, 'Oratio', 1, 'c6ddb6df9f0a42a9ab9ce039dbc629722143433d60e0645981ece24ccf8f4dd6'), (9, 'Secret', 1, 'e9f5f554d58316aeb07ed474ef629fe23d4263206cd8eed948cdaeca45151ccd'), (11, 'Postcommunion', 1, '6115d2418c3ac487a4b206cda8686e5da8385c0264e530e2c65fd82f4179c781'), (12, 'Oratio', 2, 'c144bfe62c61c56def5d058e889745e00a1c03af0361b7ba206e898f73061e4c')]}}
+        document = _calendars.load_document(CALENDARS, "roman-1962")
+        records, problems = read_sidecar(INVENTORIES / "roman-1962-proper-latin-provenance-v1.toml")
+        self.assertEqual([], problems)
+        masses = {mass["key"]: mass for _, _, mass in _calendars.departures_of(document)}
+        for key, form_oracles in expected.items():
+            mass = masses[key]
+            self.assertEqual("unavailable", mass["ordinary_frame"]["applicability"])
+            self.assertEqual(["longer", "shorter"], [form["id"] for form in mass["forms"]])
+            for form in mass["forms"]:
+                oracle = form_oracles[form["id"]]
+                occurrences = {}
+                actual = []
+                for index, proper in enumerate(form["propers"]):
+                    name = proper["name"]
+                    if name not in {"Collect", "Secret", "Postcommunion", "Oratio"}:
+                        continue
+                    occurrences[name] = occurrences.get(name, 0) + 1
+                    occurrence = occurrences[name]
+                    actual.append((index, name, occurrence, text_sha256(proper["text"])))
+                    self.assertEqual("composed", proper["source"])
+                    self.assertNotIn("text_status", proper)
+                    self.assertNotIn("takes_from", proper)
+                    row = records[LatinKey(key, form["name"], name, "", "", occurrence)]
+                    self.assertEqual(text_sha256(proper["text"]), row["text_sha256"])
+                    self.assertEqual("editorial-projection-exact-to-target", row["relationship"])
+                    self.assertEqual(['artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.advent-lent-ember-orations-4ba2f77c', 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-lent-ember-orations-la-checked-39b0b0aa'], row["publication_source_ids"])
+                    self.assertEqual("permitted", row["publication_status"])
+                self.assertEqual(oracle, actual, (key, form["id"]))
+        # Equal underlying prayers retain each target occurrence's printed cue.
+        advent = masses["advent-ember-saturday"]["forms"]
+        post = [next(p["text"] for p in f["propers"] if p["name"] == "Postcommunion") for f in advent]
+        self.assertTrue(post[0].rstrip().endswith("Per Dominum."))
+        self.assertTrue(post[1].rstrip().endswith("Per Dominum nostrum Jesum Christum."))
+        lent = masses["lent-1-ember-saturday"]["forms"]
+        for form, ending in zip(lent, ("Per Dominum.", "Per Dominum nostrum Jesum Christum.")):
+            self.assertEqual("Postcommunion", form["propers"][-2]["name"])
+            final = form["propers"][-1]
+            self.assertEqual("Oratio", final["name"])
+            self.assertIn("Super populum", final["notes"])
+            self.assertNotIn("Super populum", final["text"])
+            self.assertNotIn("Humiliate", final["text"])
+            self.assertTrue(final["text"].rstrip().endswith(ending))
+        historical = registered_artifact('artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-lent-ember-orations-la-checked-39b0b0aa')
+        self.assertEqual('39b0b0aa30f03ed3ecad53520b095c551ffc1fe28237635d8d16cea35160eab1', historical["sha256"])
+        source = (ROOT / historical["path"]).read_text()
+        self.assertIn("Per Dm̃.", source)
+        self.assertIn("quæ eos, et a tua voluntáte", " ".join(source.split()))
+        self.assertIn("finiátur. Per.", source)
+        self.assertNotIn("Per Dominum nostrum Jesum Christum", source)
+
     def test_christmas_three_forms_keep_principal_oration_sources_distinct(self):
         document = _calendars.load_document(CALENDARS, "roman-1962")
         mass = next(row for _, _, row in _calendars.departures_of(document)
@@ -382,7 +436,7 @@ class ProductionLedgerTests(unittest.TestCase):
             # 1120 since 2026-10-20 (C3): St Lucy's Communion carries the
             # Missal antiphon rather than a Bible reconstruction.
             # +3 on 2026-10-20: source-backed Christ-the-King orations.
-            "roman-1962": (1145, 5),
+            "roman-1962": (1171, 15),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -398,12 +452,13 @@ class ProductionLedgerTests(unittest.TestCase):
             )
             # Four duplicate-name pairs and one six-item procession are all
             # separate permission decisions, never last-row-wins dict entries.
+            # Advent/Lent Ember Oratio rows add ten repeated-name decisions.
             self.assertEqual(repeated, sum(key.occurrence > 1 for key in records))
 
     def test_publication_loader_validates_production_source_metadata(self) -> None:
         # 1114 since 2026-10-01: St Angela Merici's Secret and Postcommunion.
         # 1120 since 2026-10-20 (C3): St Lucy's Communion has its own body.
-        expected = {"postconciliar": 329, "roman-1962": 1145, "roman-pre-1955": 1145}
+        expected = {"postconciliar": 329, "roman-1962": 1171, "roman-pre-1955": 1171}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -445,8 +500,8 @@ class ProductionLedgerTests(unittest.TestCase):
         # read on the 1962 page image and on the 1862 Pustet's (and the Mame's).
         # 1074 since 2026-10-20 (C3): St Lucy's Communion is independently
         # collated on the 1962 and public-domain Mame 1922 page images.
-        self.assertEqual(1099, len(permitted))
-        self.assertEqual(1099, len(roman))
+        self.assertEqual(1125, len(permitted))
+        self.assertEqual(1125, len(roman))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -513,8 +568,8 @@ class ProductionLedgerTests(unittest.TestCase):
             # a bounded, independently publishable 1929 Schott derivative.
             "editorial-projection-2026-10-20": {
                 "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-orations-dc4287d2",
-                "publication_source_ids": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4"},
-                "projected_from": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", target_artifact, "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4"},
+                "publication_source_ids": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-lent-ember-orations-la-checked-39b0b0aa'},
+                "projected_from": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", target_artifact, "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-lent-ember-orations-la-checked-39b0b0aa'},
             },
         }
 

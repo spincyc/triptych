@@ -715,6 +715,7 @@
   }
 
   function navigate(updates, removals) {
+    removals = Shell.properChoiceRemovals(runtime.normalized && runtime.normalized.state, updates, removals);
     const navigation = arguments.length > 2 && arguments[2] || {};
     runtime.pendingPreferences = navigation.rememberPreferences === true;
     const currentLocation = readerShell.captureSemanticLocation();

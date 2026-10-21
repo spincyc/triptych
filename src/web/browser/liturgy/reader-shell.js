@@ -406,5 +406,11 @@
     });
   }
 
-  root.TriptychReaderShell = Object.freeze({ create: create });
+  root.TriptychReaderShell = Object.freeze({ create: create,
+    renderProperChoice: function (input) {
+      return root.TriptychSourceChoiceControls.renderProperChoice(input);
+    },
+    properChoiceRemovals: function (state, updates, removals) {
+      return root.TriptychSourceChoiceControls.properChoiceRemovals(state, updates, removals);
+    } });
 }(typeof globalThis !== 'undefined' ? globalThis : window));

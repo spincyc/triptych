@@ -359,7 +359,7 @@ class CompleteMissalReportTests(unittest.TestCase):
         report = REPORT.build_report(*fixture_reports())
         gate = report["scope"]["runtime_year_gate"]
         self.assertFalse(gate["included"])
-        self.assertEqual(gate["expected_renders"], 4380)
+        self.assertEqual(gate["expected_renders"], 5856)
         self.assertIn("test_complete_missal_year", gate["command"])
 
     def test_report_bytes_are_deterministic_for_the_same_owned_inputs(self) -> None:

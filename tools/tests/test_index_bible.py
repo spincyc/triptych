@@ -689,9 +689,9 @@ class CorrectedReadingTests(unittest.TestCase):
     def test_the_bread_of_life_discourse_keeps_the_flesh_given_for_the_world(self) -> None:
         self.assertIn("for the life of the world", self.douay["John 6:41-51"])
 
-    def test_a_vulgate_numbered_john_antiphon_is_left_where_it_stood(self) -> None:
+    def test_corrected_john_antiphon_retains_its_vulgate_words(self) -> None:
         self.assertTrue(
-            self.douay["John 6:55"].startswith("He that eateth my flesh")
+            self.douay["John 6:54"].startswith("He that eateth my flesh")
         )
 
     def test_a_lectionary_numbered_john_acclamation_moves_one_verse_on(self) -> None:

@@ -28,30 +28,8 @@
     return 'proper/' + editionId + '/' + formularyId + '/' + pad(index);
   }
 
-  const SEMANTIC_SLOTS = Object.freeze({
-    'Introit': 'entrance-antiphon',
-    'Entrance Antiphon': 'entrance-antiphon',
-    'Collect': 'collect',
-    'Epistle': 'reading-1',
-    'First Reading': 'reading-1',
-    'Gradual': 'gradual',
-    'Responsorial Psalm': 'responsorial-psalm',
-    'Second Reading': 'reading-2',
-    'Alleluia': 'gospel-acclamation',
-    'Tract': 'gospel-acclamation',
-    'Gospel Acclamation': 'gospel-acclamation',
-    'Gospel': 'gospel',
-    'Offertory': 'offertory-chant',
-    'Secret': 'prayer-over-offerings',
-    'Prayer over the Offerings': 'prayer-over-offerings',
-    'Communion': 'communion-antiphon',
-    'Communion Antiphon': 'communion-antiphon',
-    'Postcommunion': 'prayer-after-communion',
-    'Prayer after Communion': 'prayer-after-communion'
-  });
-
   function semanticSlot(proper) {
-    const id = proper && SEMANTIC_SLOTS[proper.name];
+    const id = Seating.semanticProperId(proper, false);
     return id ? { state: 'mapped', identity: { id: id } } : {
       state: 'edition-local-unmapped',
       reason: 'generated Proper data has no cross-edition semantic slot identity'
@@ -59,10 +37,7 @@
   }
 
   function qualifiedSemanticId(proper) {
-    const name = proper && proper.name || '';
-    if (SEMANTIC_SLOTS[name]) return SEMANTIC_SLOTS[name];
-    const family = /^(.+?) \(.+\)$/.exec(name);
-    return family && SEMANTIC_SLOTS[family[1]] || null;
+    return Seating.semanticProperId(proper, true);
   }
 
   /**
@@ -444,7 +419,7 @@
     };
   }
 
-  function materialForCycle(proper, request, structure, selection) {
+  function materialForCycleValue(proper, request, structure, selection) {
     const cycle = selection ? selection.key : null;
     const cycleRows = selection && selection.dimension === 'sunday' ? [cycle] : [];
     const weekdayCycleRows = selection && selection.dimension === 'weekday' ? [cycle] : [];
@@ -456,7 +431,8 @@
       if (row.text) cycleText = row.text;
     }
     const references = citations.map(function (one) { return one.ref; }).filter(Boolean);
-    if (references.length) {
+    const owner = selectedOwner(proper, selection);
+    if (references.length && (owner.source || proper.source) !== 'mixed') {
       const unresolved = citations.filter(function (one) { return one.unresolved; }).map(function (one) {
         return { reference: one.ref, reason: one.unresolved };
       });
@@ -591,6 +567,26 @@
       kind: 'absent', rights: null, availability: 'absent',
       reason: proper.name === 'Placeholder' ? 'not-transcribed' : 'semantic-absence'
     };
+  }
+
+  function materialForCycle(proper, request, structure, selection) {
+    const material = materialForCycleValue(proper, request, structure, selection);
+    const owner = selectedOwner(proper, selection);
+    if ((owner.source || proper.source) !== 'mixed') return material;
+    const citations = (proper.citations || []).concat(
+      owner === proper ? [] : owner.citations || []
+    );
+    // Scripture references identify components of this exact mixed body. They
+    // cannot supply its composed portion or make an unavailable witness held.
+    material.scriptureComponents = {
+      bible: request.bible && request.bible.id || null,
+      numbering: request.bible && request.bible.numbering || null,
+      references: citations.map(function (one) { return one.ref; }).filter(Boolean),
+      unresolved: citations.filter(function (one) { return one.unresolved; }).map(function (one) {
+        return { reference: one.ref, reason: one.unresolved };
+      })
+    };
+    return material;
   }
 
   function selectedMaterial(proper, request, structure, cycleMode) {
@@ -844,7 +840,8 @@
     const ids = new Set();
     (event.options || []).forEach(function (option) {
       (option.rows || []).forEach(function (row) {
-        const id = qualifiedSemanticId(row.proper);
+        const disposition = row.proper.ordinary_disposition;
+        const id = disposition && disposition.anchor && disposition.seat || qualifiedSemanticId(row.proper);
         if (id) ids.add(id);
       });
     });
@@ -893,6 +890,12 @@
       return { id: option.id, events: events };
     }).filter(Boolean);
     if (!options.length) throw new Error('alternative Proper choice has no option for the selected cycle');
+    const selection = event.selection || {state: 'required', option: null};
+    if (selection.state === 'selected' && !options.some(function (option) {
+      return option.id === selection.option;
+    })) throw new Error(request.alternative
+      ? 'explicit Propers alternative is not held by the exact selected formulary and form'
+      : 'explicit Proper choice is not applicable to the selected cycle');
     if (options.length === 1) {
       const option = options[0];
       return option.events.map(function (member) {
@@ -901,12 +904,20 @@
         ]) });
       });
     }
+    if (selection.state === 'selected') {
+      const chosen = options.find(function (option) { return option.id === selection.option; });
+      chosen.events = chosen.events.map(function (member) {
+        return Object.assign({}, member, {sourceHooks: member.sourceHooks.concat([
+          {kind: 'proper-choice-option', id: id + '/' + chosen.id}
+        ])});
+      });
+    }
     const memberEvents = options.reduce(function (all, option) {
       return all.concat(option.events);
     }, []);
     return [{
       id: id, kind: 'proper-choice', group: event.group,
-      selection: { state: 'required', option: null },
+      selection: selection,
       seat: seat, options: options, sourceHooks: uniqueSourceHooks(memberEvents),
       choiceBasis: event.basis
     }];
@@ -928,12 +939,65 @@
     });
   }
 
+  function prepareAppointments(mass, properRows, request, structure, dayContext) {
+    // Validate every authored body state before applicability can suppress an
+    // inactive candidate; only the later active pass contributes coverage.
+    activeProperBodyClaims(properRows.map(function (row) { return row.proper; }), request);
+    const choices = {};
+    const prefix = 'proper-choice/' + request.edition.id + '/' + mass.key + '/';
+    Object.keys(request.properChoices || {}).forEach(function (id) {
+      if (!id.startsWith(prefix) || id.slice(prefix.length).split('/').length !== 2) {
+        throw new Error('explicit Proper choice belongs to another edition, formulary or form');
+      }
+      choices[id.slice(prefix.length)] = request.properChoices[id];
+    });
+    if (request.alternative) {
+      const id = request.alternative.id;
+      const parts = id.startsWith(prefix) ? id.slice(prefix.length).split('/') : [];
+      if (parts.length !== 3) throw new Error('explicit Propers alternative is not held by the exact selected formulary and form');
+      const group = parts.slice(0, 2).join('/');
+      if (hasOwn(choices, group)) throw new Error('duplicate explicit Proper choice declaration');
+      choices[group] = parts[2];
+    }
+    const prepared = Seating.prepareProperAppointments(properRows, {
+      calendar: request.edition.id, entrance: request.entrance,
+      date: dayContext && dayContext.date || null,
+      season: dayContext && dayContext.season || null,
+      facts: structure.proper_appointment_facts || {}, choices: choices
+    });
+    prepared.activeRows = prepared.rows.filter(function (row) {
+      const disposition = row.proper.ordinary_disposition;
+      if (!disposition || disposition.kind !== 'alternative') return true;
+      const selection = prepared.selections[(row.proper.form_id || 'main') + '/' + disposition.group];
+      return selection && selection.state === 'selected' && selection.option === disposition.option;
+    });
+    return prepared;
+  }
+
+  function appointmentChoices(prepared, mass, request, structure) {
+    return (prepared.unresolved || []).map(function (condition) {
+      const fact = structure.proper_appointment_facts[condition.when.fact];
+      return Contract.unresolvedChoice(
+        'proper-condition/' + request.edition.id + '/' + mass.key + '/' +
+          condition.appointment.form_id + '/' + condition.group,
+        condition.basis,
+        fact.values.map(function (value) {
+          return {id: value, identity: {id: condition.when.fact + '/' + value}};
+        }),
+        [{kind: 'proper-appointment', id: JSON.stringify(condition.appointment)}]
+      );
+    });
+  }
+
   function seatedEvents(
-    mass, properRows, request, structure, ordinary, cycleMode, predicateFacts
+    mass, properRows, request, structure, ordinary, cycleMode, predicateFacts, dayContext
   ) {
+    const prepared = prepareAppointments(mass, properRows, request, structure, dayContext);
+    properRows = prepared.rows;
     if (!ordinary) {
       const unframed = Seating.unframedEvents(
-        properRows, function (proper) { return proper && proper.name === 'Placeholder'; }
+        properRows, function (proper) { return proper && proper.name === 'Placeholder'; },
+        prepared.selections
       );
       return {
         events: projectSeatingEvents(
@@ -946,7 +1010,7 @@
           },
           function () { throw new Error('unframed Proper sequence carried an Ordinary event'); }
         ),
-        ordinaryUnresolved: []
+        ordinaryUnresolved: [], prepared: prepared
       };
     }
     const resolution = ordinaryElements(
@@ -956,7 +1020,8 @@
     const placed = Seating.seatPropers(
       properRows,
       Seating.seats(ordinary, resolution.shown),
-      function (proper) { return proper && proper.name === 'Placeholder'; }
+      function (proper) { return proper && proper.name === 'Placeholder'; },
+      prepared.selections
     );
     assertSeatingComplete(placed);
     const events = projectSeatingEvents(
@@ -998,7 +1063,7 @@
       }
       throw new Error('Ordinary seating emitted an unsupported semantic event');
     });
-    return { events: events, ordinaryUnresolved: resolution.unresolved };
+    return { events: events, ordinaryUnresolved: resolution.unresolved, prepared: prepared };
   }
 
   function partialRecensionReason(structure, mass) {
@@ -1387,7 +1452,8 @@
   }
 
   function coverageFor(
-    structure, mass, propers, request, ordinary, events, ordinaryUnresolved, selectedForm
+    structure, mass, propers, request, ordinary, events, ordinaryUnresolved, selectedForm,
+    appointmentUnresolved
   ) {
     const rows = [];
     const effectiveFrame = ordinaryFrame(mass, selectedForm);
@@ -1399,6 +1465,11 @@
     });
     const partialRecension = partialRecensionReason(structure, mass);
     const claimReasons = [];
+    const pendingAppointments = alternativeChoices(events).length + (appointmentUnresolved || []).length;
+    if (pendingAppointments) claimReasons.push({
+      kind: 'unresolved-choice', count: pendingAppointments,
+      repositoryTerm: 'proper-appointment'
+    });
     if (properBodyClaims.length) {
       claimReasons.push({
         kind: 'text-not-held', count: properBodyClaims.length,
@@ -1714,35 +1785,6 @@
     return rows;
   }
 
-  function selectProperAlternative(events, request) {
-    if (!request.alternative) return events;
-    const id = request.alternative.id;
-    let selected = events.some(function (event) {
-      return event.kind === 'proper' && (event.sourceHooks || []).some(function (hook) {
-        return hook.kind === 'proper-choice-option' && hook.id === id;
-      });
-    }) ? 1 : 0;
-    const resolved = events.map(function (event) {
-      if (event.kind !== 'proper-choice') return event;
-      const option = event.options.find(function (one) { return event.id + '/' + one.id === id; });
-      if (!option) return event;
-      selected += 1;
-      return Object.assign({}, event, {
-        selection: { state: 'selected', option: option.id },
-        options: event.options.map(function (one) {
-          if (one !== option) return one;
-          return Object.assign({}, one, { events: one.events.map(function (member) {
-            return Object.assign({}, member, { sourceHooks: member.sourceHooks.concat([
-              { kind: 'proper-choice-option', id: id }
-            ]) });
-          }) });
-        })
-      });
-    });
-    if (selected !== 1) throw new Error('explicit Propers alternative is not held by the exact selected formulary and form');
-    return resolved;
-  }
-
   function alternativeChoices(events) {
     return (events || []).filter(function (event) {
       return event && event.kind === 'proper-choice' && event.selection.state === 'required';
@@ -1788,8 +1830,8 @@
     if (languages.translationWitness) {
       const held = selectedRows(events).some(function (row) {
         if (row.selected.sourceId === languages.translationWitness) return true;
-        // A mixed Proper retains its v1 Scripture event, while its composed
-        // body remains independently selectable in the shared renderer/report.
+        // Citation-led units and conflicting readings retain the authored
+        // witness validation without selecting a conflicting body.
         if (row.selected.kind !== 'scripture' && row.selected.reason !== 'conflicting-witness') return false;
         const hook = (row.event.sourceHooks || []).find(function (one) { return one.kind === 'proper-structure'; });
         if (!hook || !structure) return false;
@@ -1822,7 +1864,7 @@
     (events || []).forEach(function (event) {
       if (event && event.kind === 'proper-choice') {
         (event.options || []).filter(function (option) {
-          return event.selection.state !== 'selected' || event.selection.option === option.id;
+          return event.selection.state === 'selected' && event.selection.option === option.id;
         }).forEach(function (option) {
           properEvents.push.apply(properEvents, option.events || []);
         });
@@ -1919,6 +1961,7 @@
     if (!mass) throw new Error('resolved Day formulary is absent from the selected edition structure');
     const formSelection = properFormSelection(mass, request, true);
     if (formSelection.choice) {
+      if (request.properChoices) throw new Error('explicit Proper choices require an exact selected Mass form');
       if (request.languages && (request.languages.translationWitness ||
           request.languages.ordinaryWitness)) {
         throw new Error('an explicit witness requires an exact selected Mass form');
@@ -1945,7 +1988,7 @@
         date: derived.date,
         anchors: derived.liturgicalYear && derived.liturgicalYear.anchors || null,
         appointments: formularyAppointments(mass, formSelection.form, branch.winner)
-      })
+      }), {date: derived.date, season: derived.season}
     );
     const events = seated.events;
     assertExplicitWitnesses(events, adaptedRequest, input.structure);
@@ -1970,14 +2013,15 @@
       resolved: resolved,
       events: events,
       coverage: coverageFor(
-        input.structure, mass, formSelection.rows.map(function (row) { return row.proper; }),
-        adaptedRequest, ordinary, events, seated.ordinaryUnresolved, formSelection.form
+        input.structure, mass, seated.prepared.activeRows.map(function (row) { return row.proper; }),
+        adaptedRequest, ordinary, events, seated.ordinaryUnresolved, formSelection.form, seated.prepared.unresolved
       ),
       explicitAbsences: explicitAbsencesFor(branch, lectionary).concat(
         claimLocalCollectAbsences(mass, request, formSelection.form)
       ),
       unresolvedChoices: choices.concat(
         unresolvedCommonSetChoices(input.structure, mass, request),
+        appointmentChoices(seated.prepared, mass, request, input.structure),
         alternativeChoices(events), translationChoices(events)
       ),
       ordinaryUnresolved: seated.ordinaryUnresolved
@@ -2003,7 +2047,7 @@
     }
     const formSelection = properFormSelection(mass, request);
     if (formSelection.choice) {
-      if (hasOwn(request, 'alternative')) {
+      if (hasOwn(request, 'alternative') || request.properChoices) {
         throw new Error('an explicit alternative requires an exact selected Mass form');
       }
       if (request.languages && request.languages.translationWitness) {
@@ -2048,7 +2092,7 @@
         appointments: formularyAppointments(mass, formSelection.form, null)
       })
     );
-    const events = selectProperAlternative(seated.events, request);
+    const events = seated.events;
     assertExplicitWitnesses(events, request, input.structure);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, type: mass.kind || null
@@ -2062,8 +2106,8 @@
       resolved: resolved,
       events: events,
       coverage: coverageFor(
-        input.structure, mass, formSelection.rows.map(function (row) { return row.proper; }),
-        request, ordinary, events, seated.ordinaryUnresolved, formSelection.form
+        input.structure, mass, seated.prepared.activeRows.map(function (row) { return row.proper; }),
+        request, ordinary, events, seated.ordinaryUnresolved, formSelection.form, seated.prepared.unresolved
       ),
       explicitAbsences: [{
         kind: 'explicit-semantic-absence',
@@ -2073,6 +2117,7 @@
       }].concat(claimLocalCollectAbsences(mass, request, formSelection.form)),
       unresolvedChoices: (request.unresolvedChoices || []).concat(
         unresolvedCommonSetChoices(input.structure, mass, request),
+        appointmentChoices(seated.prepared, mass, request, input.structure),
         alternativeChoices(events), translationChoices(events)
       ),
       ordinaryUnresolved: seated.ordinaryUnresolved
@@ -2081,6 +2126,16 @@
 
   function sameJson(left, right) {
     return JSON.stringify(left) === JSON.stringify(right);
+  }
+
+  function appointmentFactIdentity(facts) {
+    return Object.keys(facts || {}).sort().map(function (id) {
+      const fact = facts[id];
+      return [id, Object.keys(fact).sort(), fact.edition, fact.basis, fact.values,
+        Object.keys(fact.season_values || {}).sort().map(function (season) {
+          return [season, fact.season_values[season]];
+        })];
+    });
   }
 
   function cliLanguageMaterial(proper, request, generated) {
@@ -2158,8 +2213,12 @@
     const cycles = selection && selection.dimension === 'sunday' ? [cycle] : [];
     const weekdayCycles = selection && selection.dimension === 'weekday' ? [cycle] : [];
     const references = (proper.verses || []).map(function (one) { return one.ref; }).filter(Boolean);
-    if (references.length) {
-      const generated = selectedMaterial(generatedProper, request, { numbering: null }, 'day');
+    const generated = selectedMaterial(generatedProper, request, { numbering: null }, 'day');
+    if (generated.scriptureComponents &&
+        !sameJson(references, generated.scriptureComponents.references)) {
+      throw new Error('mass-today mixed scripture components disagree with generated structure');
+    }
+    if (references.length && !generated.scriptureComponents) {
       if (generated.kind !== 'scripture' || !sameJson(references, generated.references)) {
         throw new Error('mass-today scripture references disagree with generated structure');
       }
@@ -2178,7 +2237,6 @@
         unresolved: unresolved
       };
     }
-    const generated = selectedMaterial(generatedProper, request, { numbering: null }, 'day');
     const projected = cliLanguageMaterial(proper, request, generated);
     if (projected) return projected;
     const latin = proper.latin || {};
@@ -2205,12 +2263,7 @@
       if (proper.text !== generatedText) {
         throw new Error('mass-today composed text disagrees with generated structure');
       }
-      return {
-        kind: 'composed', language: 'la', cycle: cycle, cycles: cycles,
-        weekdayCycles: weekdayCycles,
-        cycleDimension: selection ? selection.dimension : null,
-        sourceId: null, rights: null, missing: false, availability: 'held', text: proper.text
-      };
+      return generated;
     }
     if (generated && generated.availability === 'unavailable' && generated.missing) {
       const language = proper.language_selection || {};
@@ -2286,8 +2339,13 @@
       return one.key === mass.key;
     });
     if (!generatedMass) throw new Error('mass-today parity requires the matching generated formulary');
+    if (!sameJson(appointmentFactIdentity(mass.proper_appointment_facts),
+        appointmentFactIdentity(input.structure.proper_appointment_facts))) {
+      throw new Error('mass-today Proper appointment facts disagree with the source structure');
+    }
     const formSelection = properFormSelection(generatedMass, request, true);
     if (formSelection.choice) {
+      if (request.properChoices) throw new Error('explicit Proper choices require an exact selected Mass form');
       if (request.languages && (request.languages.translationWitness ||
           request.languages.ordinaryWitness)) {
         throw new Error('an explicit witness requires an exact selected Mass form');
@@ -2322,6 +2380,13 @@
     if (generatedRows.length !== (mass.propers || []).length) {
       throw new Error('mass-today held Proper count disagrees with generated structure');
     }
+    generatedRows.forEach(function (row, index) {
+      const proper = (mass.propers || [])[index] || {};
+      if (hasOwn(row.proper, 'appointment_applicability') !== hasOwn(proper, 'appointment_applicability') ||
+          !sameJson(row.proper.appointment_applicability, proper.appointment_applicability)) {
+        throw new Error('mass-today Proper applicability metadata disagrees with generated structure');
+      }
+    });
     const lectionary = input.derived && input.derived.liturgicalYear &&
       input.derived.liturgicalYear.lectionary || null;
     const payloadLectionary = day.why && hasOwn(day.why, 'lectionary')
@@ -2330,6 +2395,9 @@
       throw new Error('mass-today lectionary result disagrees with calendar assembly');
     }
     const adaptedRequest = Object.assign({}, request, { lectionary: lectionary });
+    const prepared = prepareAppointments(generatedMass, generatedRows, adaptedRequest, input.structure, {
+      date: input.derived.date, season: input.derived.season
+    });
     const payloadBySourceIndex = new Map();
     generatedRows.forEach(function (generatedRow, cliIndex) {
       payloadBySourceIndex.set(generatedRow.sourceIndex, {
@@ -2340,12 +2408,14 @@
       const sourceIndex = row.sourceIndex;
       const held = payloadBySourceIndex.get(sourceIndex) || {};
       const proper = held.proper;
-      const generatedProper = row.proper;
+      const generatedProper = held.generated;
       if (!generatedProper || generatedProper.name !== proper.name ||
           (generatedProper.form || null) !== (proper.form || null) ||
           generatedProper.form_id !== proper.form_id ||
           (generatedProper.source || null) !== (proper.source || null) ||
           !sameJson(generatedProper.taken_from || null, proper.taken_from || null) ||
+          !sameJson(generatedProper.appointment_identity || null, proper.appointment_identity || null) ||
+          !sameJson(generatedProper.appointment_replacement || null, proper.appointment_replacement || null) ||
           !sameJson(
             generatedProper.ordinary_disposition || null,
             proper.ordinary_disposition || null
@@ -2381,7 +2451,7 @@
       const ordinary = day.ordinary;
       const resolution = ordinaryElements(
         ordinary, adaptedRequest,
-        generatedRows.map(function (row) { return row.proper; }),
+        prepared.rows.map(function (row) { return row.proper; }),
         Seating.predicateFacts({
           settled: branch.settled, weekday: input.derived.weekday,
           season: input.derived.season,
@@ -2395,7 +2465,7 @@
       );
       ordinaryUnresolved = resolution.unresolved;
       const placed = Seating.seatPropers(
-        generatedRows, Seating.seats(ordinary, resolution.shown)
+        prepared.rows, Seating.seats(ordinary, resolution.shown), null, prepared.selections
       );
       assertSeatingComplete(placed);
       events = projectSeatingEvents(
@@ -2435,7 +2505,7 @@
       });
     } else {
       events = projectSeatingEvents(
-        Seating.unframedEvents(generatedRows), generatedMass, adaptedRequest,
+        Seating.unframedEvents(prepared.rows, null, prepared.selections), generatedMass, adaptedRequest,
         function (row, seat, semantic) {
           return cliProper(row, seat, semantic);
         },
@@ -2461,17 +2531,18 @@
       events: events,
       coverage: coverageFor(
         input.structure, generatedMass,
-        formSelection.rows.map(function (row) { return row.proper; }), adaptedRequest,
+        prepared.activeRows.map(function (row) { return row.proper; }), adaptedRequest,
         request.options && request.options.ordinary && frame.applicability === 'full' &&
           day.ordinary && !day.ordinary.refused
           ? day.ordinary : null,
-        events, ordinaryUnresolved, formSelection.form
+        events, ordinaryUnresolved, formSelection.form, prepared.unresolved
       ),
       explicitAbsences: explicitAbsencesFor(branch, lectionary).concat(
         claimLocalCollectAbsences(generatedMass, request, formSelection.form)
       ),
       unresolvedChoices: choices.concat(
         unresolvedCommonSetChoices(input.structure, generatedMass, request),
+        appointmentChoices(prepared, generatedMass, request, input.structure),
         alternativeChoices(events), translationChoices(events)
       ),
       ordinaryUnresolved: ordinaryUnresolved
@@ -2479,6 +2550,10 @@
   }
 
   function browseState(prepared, context) {
+    if (Object.prototype.hasOwnProperty.call(prepared.parsed.recognized, 'proper-choices')) {
+      return {ok: false, errors: [{code: 'incomplete-explicit-identity', path: 'proper-choices',
+        message: 'explicit Proper choices require an exact formulary'}]};
+    }
     const requestedMode = Object.prototype.hasOwnProperty.call(prepared.parsed.recognized, 'mode')
       ? prepared.parsed.recognized.mode : 'read';
     const ordinaryLanguage = Object.prototype.hasOwnProperty.call(

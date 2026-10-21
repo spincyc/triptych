@@ -2,6 +2,9 @@
 from __future__ import annotations
 
 import copy
+import hashlib
+import re
+import tomllib
 import json
 import sys
 import tempfile
@@ -83,6 +86,42 @@ class ExpectedProperOccurrenceTest(unittest.TestCase):
                 self.assertEqual(selected['fixture_target_id'], row['target_id'])
                 self.assertEqual(selected['fixture_raw_model_index'], row['frozen_raw_model_index'])
                 self.assertTrue(row['source_record'] and row['source_locus'])
+
+    def test_integrated_advent_lent_joins_bind_their_actual_source_numbered_nodes(self):
+        # The other twelve frozen fixture joins await their actual model nodes.
+        # Hashes here identify existing nodes, without a new wording/rights claim.
+        import yaml
+
+        inventory = tomllib.loads((ROOT / 'src/sources/inventories/missal-expected-targets-v1.toml').read_text())
+        targets = {row['id']: row for row in inventory['targets']}
+        document = yaml.safe_load((ROOT / 'src/sources/calendars/roman-1962/propers.yaml').read_text())
+        masses = {mass['key']: mass for section in document['sections'].values()
+                  for mass in section['masses']}
+        records = tomllib.loads((ROOT / 'src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml').read_text())['entries']
+        joins = [row for row in self.fixture['joins']
+                 if row['mass'] in {'advent-ember-saturday', 'lent-1-ember-saturday'}]
+        self.assertEqual(len(joins), 14)
+        for row in joins:
+            with self.subTest(target=row['target_id']):
+                target = targets[row['target_id']]
+                parent = targets[target['parent_id']]
+                self.assertEqual((parent['calendar_mass_key'], parent['form_id']),
+                                 (row['mass'], row['form_id']))
+                self.assertEqual((target['calendar_proper_name'], target['calendar_proper_occurrence']),
+                                 (row['calendar_proper_name'], row['calendar_proper_occurrence']))
+                self.assertEqual((target['source_record'], target['source_locus']),
+                                 (row['source_record'], row['source_locus']))
+                form = next(form for form in masses[row['mass']]['forms'] if form['id'] == row['form_id'])
+                named = [proper for proper in form['propers'] if proper['name'] == 'Oratio']
+                actual = named[row['calendar_proper_occurrence'] - 1]
+                bindings = [record for record in records
+                            if (record['mass'], record.get('form', ''), record['proper'], record.get('occurrence', 1))
+                            == (row['mass'], form['name'], 'Oratio', row['calendar_proper_occurrence'])]
+                self.assertEqual(len(bindings), 1)
+                self.assertEqual(hashlib.sha256(actual['text'].encode()).hexdigest(), bindings[0]['text_sha256'])
+                unit = re.search(r'\bunit\s*(\d+)\b', bindings[0]['verification_locator'])
+                self.assertIsNotNone(unit)
+                self.assertEqual(int(unit.group(1)), row['target_marginal'])
 
     def test_occurrence_counts_all_exact_name_nodes_without_a_body_filter(self):
         mass = {'key': 'mass', 'propers': [

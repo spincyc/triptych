@@ -194,11 +194,25 @@ class DayReaderIntegrationTests(unittest.TestCase):
             "aria-expanded", "scrollIntoView", "aria-current", "preventScroll"
         ):
             self.assertIn(token, source)
+        ownership_source = source
+        for name, arguments in (
+            ("renderProperChoice", "input"),
+            ("properChoiceRemovals", "state, updates, removals"),
+        ):
+            delegation = f"return root.TriptychSourceChoiceControls.{name}({arguments});"
+            wrapper = f"{name}: function ({arguments}) {{\n      {delegation}\n    }}"
+            self.assertEqual(source.count(delegation), 1)
+            self.assertEqual(source.count(wrapper), 1)
+            ownership_source = ownership_source.replace(wrapper, "", 1)
         for forbidden in (
             "MassAssembly", "renderProper", "fetchFragments", "calendar/",
             "reader-state", "shell-hidden", "scroll-reveal", "geolocation"
         ):
-            self.assertNotIn(forbidden, source)
+            self.assertNotIn(forbidden, ownership_source)
+        self.assertNotRegex(
+            ownership_source,
+            r"\bfunction\s+(?:properChoiceRequest|properChoiceRemovals)\s*\(",
+        )
         self.assertEqual(source.count("showModal()"), 1)
 
     def test_candidate_crosses_existing_state_assembly_and_renderer_boundaries(self) -> None:
@@ -478,7 +492,15 @@ class DayReaderIntegrationTests(unittest.TestCase):
             bindings.stdout + bindings.stderr,
         )
         for path, expected in FROZEN_SOURCE_HASHES.items():
-            actual = hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
+            source = (ROOT / path).read_bytes()
+            if Path(path).name in {"reader-visual-reset-day.html", "reader-visual-reset-propers.html"}:
+                # The roadmap records this dependency-only source-choice repair.
+                # Every original oracle byte remains pinned after its removal.
+                dependency = b'<script src="source-choice-controls.js"></script>\n'
+                self.assertEqual(source.count(dependency), 1, path)
+                self.assertIn(dependency + b'<script src="reader-shell.js"></script>', source, path)
+                source = source.replace(dependency, b"", 1)
+            actual = hashlib.sha256(source).hexdigest()
             self.assertEqual(actual, expected, path)
         public_renderer = text(LITURGY / "day.js")
         self.assertIn("window.TriptychOrdinaryRenderer", public_renderer)

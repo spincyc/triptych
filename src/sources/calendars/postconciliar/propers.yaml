@@ -526,13 +526,17 @@ citation_divergences:
     John 6:51-52: John 6:51-52
     John 6:51-58: John 6:51-59
     John 6:52-59: John 6:53-60
-    John 6:55: John 6:55
+    "John 6:54": "John 6:55"
     John 6:56: John 6:57
     John 6:57: John 6:57
     John 6:58: John 6:58
     John 6:60-69: John 6:61-70
     John 6:63c, 68c: John 6:64c, 69
-    John 6:64b, 69b: John 6:64b, 69b
+    # Exact dated n. 552 -> Common n. 729.3 (OLM1981 artifact pp. 338,390).
+    # Containing whole verses only; b/b and c/c establish no translated cuts.
+    John 6:64b, 69b:
+      vulgate: John 6:64b, 69b
+      hebrew: John 6:63c, 68c
     John 6:68c: John 6:69
 - book: Mark
   chapters:
@@ -11651,14 +11655,19 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact page 94, printed page 40, nn.
         59-61. The Ordo prints its responsorial psalms in Vulgate numbering; they are
         converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Communion Antiphon and the
-        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
-        does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        this file declares psalm_numbering hebrew. The antiphons were not read in that OLM collation. On 2026-10-20 the
+        Entrance Antiphon citation was checked in the registered ICEL 2010 Antiphonary,
+        artifact antiphonary-pdf e6b82741, artifact page 71, printed page 63: Psalm 26:7-9.
+        Its printed Vulgate cue is now declared locally; the inherited Hebrew setting
+        previously selected the wrong Psalm. The foreword identifies structural antiphon
+        coverage of the 2002/2008 Missal; no Latin wording, approved English body, or rights
+        grade is supplied. The Communion Antiphon remains outside this two-slot numbering
+        correction. See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
         incipit: Exaudi, Domine, vocem meam
         source: scripture
+        psalm_numbering: vulgate
         verses:
         - book: Psalms
           ranges:
@@ -19560,10 +19569,10 @@ sections:
         verses:
         - book: John
           ranges:
-          - begin: {chapter: 6, verse: 55}
-            end: {chapter: 6, verse: 55}
-          ref: John 6:55
-        notes: Printed as the alternative ("Vel") Communion Antiphon.
+          - begin: {chapter: 6, verse: 54}
+            end: {chapter: 6, verse: 54}
+          ref: "John 6:54"
+        notes: "Printed as the alternative (\"Vel\") Communion Antiphon. The 2008 correction list in Notitiae 503-504, artifact page 53, printed page 371, changes the second Communion cue at Missal page 471 from Io 6,55 to the literally printed Is 6,54. The book abbreviation is a source typo: the 2010 ICEL Antiphonary, artifact page 85, printed page 77, independently prints Cf. Jn 6:54. The corrected John 6:54 cue resolves through the existing citation-divergence owner to Vulgate John 6:55; no antiphon body or Hebrew-addressing ruling is established by this correction."
       - name: Prayer after Communion
         incipit: Plenum, quaesumus, Domine, in nobis remedium
         source: composed
@@ -22776,14 +22785,19 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact pages 148-149, printed pages
         94-95, nn. 167-169. The Ordo prints its responsorial psalms in Vulgate
         numbering; they are converted here by scripts/_psalms from the tracked verse
-        concordance, because this file declares psalm_numbering hebrew. The Communion
-        Antiphon and the Entrance Antiphon of this Mass were NOT read: the Missal prints
-        them, the Ordo does not, and they are still model-generated leads. See
-        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
+        concordance, because this file declares psalm_numbering hebrew. The antiphons were not read in that OLM collation. On 2026-10-20 the
+        Entrance Antiphon citation was checked in the registered ICEL 2010 Antiphonary,
+        artifact antiphonary-pdf e6b82741, artifact page 92, printed page 84: Psalm 80:17.
+        Its printed Vulgate cue is now declared locally; the inherited Hebrew setting
+        previously selected the wrong Psalm. The foreword identifies structural antiphon
+        coverage of the 2002/2008 Missal; no Latin wording, approved English body, or rights
+        grade is supplied. The Communion Antiphon remains outside this two-slot numbering
+        correction. See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
         incipit: Cibavit eos ex adipe frumenti
         source: scripture
+        psalm_numbering: vulgate
         verses:
         - book: Psalms
           ranges:

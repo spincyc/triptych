@@ -645,6 +645,26 @@ class RealCorpusCoverageTests(unittest.TestCase):
 
 
 class ExpectedInventoryTests(unittest.TestCase):
+    def test_ember_advent_lent_english_owners_keep_each_source_form_and_oratio_occurrence(self):
+        expected = set([('advent-ember-saturday', 'longer', 'Collect', 1), ('advent-ember-saturday', 'longer', 'Oratio', 1), ('advent-ember-saturday', 'longer', 'Oratio', 2), ('advent-ember-saturday', 'longer', 'Oratio', 3), ('advent-ember-saturday', 'longer', 'Oratio', 4), ('advent-ember-saturday', 'longer', 'Oratio', 5), ('advent-ember-saturday', 'longer', 'Postcommunion', 1), ('advent-ember-saturday', 'longer', 'Secret', 1), ('advent-ember-saturday', 'shorter', 'Collect', 1), ('advent-ember-saturday', 'shorter', 'Oratio', 1), ('advent-ember-saturday', 'shorter', 'Postcommunion', 1), ('advent-ember-saturday', 'shorter', 'Secret', 1), ('lent-1-ember-saturday', 'longer', 'Collect', 1), ('lent-1-ember-saturday', 'longer', 'Oratio', 1), ('lent-1-ember-saturday', 'longer', 'Oratio', 2), ('lent-1-ember-saturday', 'longer', 'Oratio', 3), ('lent-1-ember-saturday', 'longer', 'Oratio', 4), ('lent-1-ember-saturday', 'longer', 'Oratio', 5), ('lent-1-ember-saturday', 'longer', 'Oratio', 6), ('lent-1-ember-saturday', 'longer', 'Postcommunion', 1), ('lent-1-ember-saturday', 'longer', 'Secret', 1), ('lent-1-ember-saturday', 'shorter', 'Collect', 1), ('lent-1-ember-saturday', 'shorter', 'Oratio', 1), ('lent-1-ember-saturday', 'shorter', 'Oratio', 2), ('lent-1-ember-saturday', 'shorter', 'Postcommunion', 1), ('lent-1-ember-saturday', 'shorter', 'Secret', 1)])
+        masses = {row[0] for row in expected}
+        ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml").read_text())
+        rows = [row for row in ledger["untranslated"] if row["mass"] in masses]
+        self.assertEqual(26, len(rows))
+        actual = {(row["mass"], row["form_id"], row["proper"], row["occurrence"]) for row in rows}
+        self.assertEqual(expected, actual)
+        self.assertFalse([row for row in ledger["entries"] if row["mass"] in masses])
+        for row in rows:
+            self.assertEqual(("all", "en", "body", "unavailable"),
+                             tuple(row[k] for k in ("cycle", "lang", "extent", "availability")))
+            self.assertEqual({"kind": "no-exemplar"}, row["reason"])
+            self.assertNotIn("text", row)
+            self.assertNotIn("text-free", row["note"])
+        propers = tool("mass-propers")
+        for calendar in ("roman-1962", "roman-pre-1955"):
+            report = propers.english_coverage(ROOT / "src/sources/calendars", calendar)
+            self.assertEqual((0, 0, 0), (report["outside_the_ledger"], report["unaccounted"], report["unmatched_records"]))
+
     def test_christmas_existing_nine_english_absences_keep_stable_form_ids(self):
         propers = tool("mass-propers")
         root = ROOT / "src/sources/calendars"
@@ -810,8 +830,8 @@ state = "unenumerated"
         inventory = tomllib.loads(path.read_text(encoding="utf-8"))
         by_id = {row["id"]: row for row in inventory["targets"]}
         expected = {
-            "roman-1962-temporal-pre-holy-week-slots": 329,
-            "roman-1962-temporal-lent-source-forms-slots": 341,
+            "roman-1962-temporal-pre-holy-week-slots": 335,
+            "roman-1962-temporal-lent-source-forms-slots": 347,
             "roman-1962-temporal-easter-through-last-sunday": 548,
             "roman-1962-sanctoral-printed-slots": 1934,
             "roman-1962-body-commons-slots": 205,
@@ -826,7 +846,7 @@ state = "unenumerated"
                              ("established", "established", "form"))
             self.assertTrue(row.get("source_record") and row.get("source_locus"))
             unit_key = (parent["calendar_mass_key"], parent.get("form_id") or "main",
-                        row["calendar_proper_name"])
+                        row["calendar_proper_name"], row.get("calendar_proper_occurrence", 1))
             self.assertNotIn(unit_key, calendar_units,
                              "two independently inventoried slots cannot borrow one held Proper")
             calendar_units.add(unit_key)
@@ -837,7 +857,7 @@ state = "unenumerated"
         current = {row["id"]: row["state"] for row in coverage.expectations(
             path, "roman-1962", masses)["targets"]}
         self.assertEqual(Counter(current[row["id"]] for row in joined),
-                         {"represented": 2997, "not-represented": 360})
+                         {"represented": 3009, "not-represented": 360})
         gap_id = "roman-1962:sanctoral-form:p511-l46:slot:p511-l62:secret"
         self.assertEqual(current[gap_id], "represented")
 
@@ -913,7 +933,7 @@ state = "unenumerated"
                     self.assertEqual([row["ref"] for row in held[0]["citations"]], [citation])
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4044, "not-represented": 140, "unresolved": 3806})
+                         {"represented": 4056, "not-represented": 140, "unresolved": 3794})
         self.assertEqual({row["id"] for row in published["not_represented"]} & joins.keys(), set())
         # The source's Tract1877 is explicitly votive after Septuagesima;
         # it remains an expected source obligation outside this feast model.
@@ -958,7 +978,7 @@ state = "unenumerated"
                 self.assertLess(order.index(role), order.index(after))
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4044, "not-represented": 140, "unresolved": 3806})
+                         {"represented": 4056, "not-represented": 140, "unresolved": 3794})
         gaps = {row["id"] for row in published["not_represented"]}
         self.assertTrue(all(f"roman-1962:sanctoral-form:{locus}" not in gaps
                             for locus, *_ in rows))
