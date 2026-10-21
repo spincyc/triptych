@@ -11188,9 +11188,17 @@ sections:
         internet-archive-scan-pdf-ed4bc14e, at artifact pages 95-96, printed pages
         41-42, nn. 62-63. The Ordo prints its responsorial psalms in Vulgate numbering;
         they are converted here by scripts/_psalms from the tracked verse concordance,
-        because this file declares psalm_numbering hebrew. The Communion Antiphon and
-        the Entrance Antiphon of this Mass were NOT read: the Missal prints them, the
-        Ordo does not, and they are still model-generated leads. See
+        because this file declares psalm_numbering hebrew. On 2026-10-20 the five
+        Vigil/Day antiphon appointment alternatives were checked in the registered
+        ICEL Antiphonary, artifact p. 73 / printed p. 65; its foreword explicitly
+        identifies the Missale Romanum 2002/2008 scope. The corresponding 2002
+        digitally typeset reproduction, artifact pp. 265-267, was read for its
+        bounded prayer and Ordinary-variable appointments. These are structural
+        checks, not Latin-wording collation, new English wording, or a complete
+        2008 formulary/option certificate. The exact source passages and unresolved
+        joins are recorded in
+        src/sources/inventories/postconciliar-pentecost-source-accounting-2026-10-20.md;
+        the earlier Lectionary collation remains in
         src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       forms:
       - id: vigil

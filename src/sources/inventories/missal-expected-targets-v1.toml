@@ -1273,6 +1273,39 @@ source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/2004-
 enumeration_state = "complete-within-slice"
 basis = "Witness: Bonn reimpressio, accepted 2026-10-19 for the pre-1955 recension; its text layer is a 2003 digital typesetting. Each identity was compared with the 1922 Mame editio quarta iuxta typicam; Commune Sanctorum pro aliquibus locis juxta decretum S. R. C. diei 22 Maji 1914 (heading printed in both witnesses), artifact pp. 1209–1220 / printed [243]–[254]: six Common forms with two numbered prayer alternatives each. every identity in this slice is also printed in Mame 1922. Structural identity metadata only: no prayer bodies, no wording collation, English attestation or publication permission."
 
+[[slices]]
+id = "postconciliar-pentecost-antiphon-appointments"
+calendar = "postconciliar"
+recension_id = "roman-2008-reimpressio-emendata"
+territory = "universal"
+languages = ["la", "en"]
+date_range = "Historical third-typical-edition structural appointments; no civil-year or exact-wording claim"
+source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/passages/pentecost-vigil-and-day-appointments.toml", "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/passages/foreword.toml", "src/sources/inventories/postconciliar-pentecost-source-accounting-2026-10-20.md"]
+enumeration_state = "partial"
+basis = "Five source-printed antiphon alternatives at artifact p. 73 / printed p. 65, independently read in the authoritative 2010/2011 English excerpt whose foreword expressly scopes its antiphons to Missale Romanum 2002/2008. These establish only antiphon identity and appointment, not Latin wording, a complete formulary, or publication rights. Day Entrance alternatives have no distinct v1 option join and remain unresolved; the unique Vigil Entrance/Communion and Day Communion roles are joined. Compiler Graduale psalm suggestions are excluded. Extended-Vigil ritual structure belongs to its separate 2008 Supplementum slice."
+
+[[slices]]
+id = "postconciliar-pentecost-lectionary-roles"
+calendar = "postconciliar"
+recension_id = "roman-2008-reimpressio-emendata"
+territory = "universal"
+languages = ["la", "en"]
+date_range = "Source-local 1981 Ordo lectionum Missae nn. 62-63; target correspondence remains unresolved"
+source_refs = ["src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/dominica-pentecostes-62-63.toml", "src/sources/inventories/postconciliar-pentecost-source-accounting-2026-10-20.md"]
+enumeration_state = "partial"
+basis = "Eleven independently printed role headings/referrals at artifact pp. 95-96 / printed pp. 41-42: five Vigil roles and six Day roles. Each target is a headed role, not a count or complete individual join of every reading, response, cycle alternative, incipit, title, or verse. Exact candidate Mass/form/unique-role addresses are recorded where v1 can express them; all retain unresolved 2008 target correspondence because this source-local 1981 reading alone is no new certificate for the target Missal. Vigil First Reading remains unjoined rather than conflating its four source choices into one held entry."
+
+[[slices]]
+id = "postconciliar-pentecost-2002-missal-appointments"
+calendar = "postconciliar"
+recension_id = "roman-2008-reimpressio-emendata"
+territory = "universal"
+languages = ["la", "en"]
+date_range = "Registered secondary 2002 reproduction, artifact pp. 265-267; 2008 correspondence unresolved"
+source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-pentecostes-vigilia-et-die.toml", "src/sources/inventories/postconciliar-pentecost-source-accounting-2026-10-20.md"]
+enumeration_state = "partial"
+basis = "Twelve source-local prayer and Ordinary-variable appointments read independently of held rows: three Day orations, two Vigil Collect alternatives and two other Vigil orations, Preface directions in both forms, conditional proper Communicantes directions in both forms, and Day paschal dismissal. Antiphons are owned by the stronger positive 2002/2008 excerpt slice. Source presence does not establish 2008 target correspondence or word-exactness. Existing model addresses are retained where available; no Communicantes option identity is invented. Gloria/Creed, optional solemn blessings, invariant Ordinary, ceremonial actions, cycle variants and the separate 2008 extended Vigil are outside this partial text-slot scope."
+
 [[targets]]
 id = "roman-1962:celebration:1962-01-01"
 slice_id = "roman-1962-universal-fixed-calendar"
@@ -19553,6 +19586,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact p. 265; Proprium de tempore > Easter; web text L10933"
 identity_state = "target-correspondence-unresolved"
 source_form_key = "mr2002-temporal-pentecost-vigil"
+calendar_mass_key = "pentecost"
+form_id = "vigil"
 
 [[targets]]
 id = "pc2002-temporal-pentecost-day"
@@ -19563,6 +19598,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact p. 266; Proprium de tempore > Easter; web text L10972"
 identity_state = "target-correspondence-unresolved"
 source_form_key = "mr2002-temporal-pentecost-day"
+calendar_mass_key = "pentecost"
+form_id = "day"
 
 [[targets]]
 id = "pc2002-temporal-ordinary-01"
@@ -192251,6 +192288,310 @@ source_locus = "Bonn 2004 reimpressio of the 28th edition iuxta typicam (1920); 
 identity_state = "established"
 parent_id = "roman-pre-1955:sanctoral-form:p611-l33"
 
+[[targets]]
+id = "postconciliar:pentecost:vigil:antiphon:entrance"
+slice_id = "postconciliar-pentecost-antiphon-appointments"
+kind = "text-slot"
+label = "Vigil Entrance Antiphon"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/passages/pentecost-vigil-and-day-appointments.toml"
+source_locus = "ICEL Antiphonary 2010, artifact p. 73 / printed p. 65; Vigil Entrance Antiphon; Romans 5:5; cf. 8:11. The foreword at artifact pp. 6-7 expressly scopes the antiphons to Missale Romanum 2002/2008. No Latin or approved-English body is supplied."
+identity_state = "established"
+parent_id = "pc2002-temporal-pentecost-vigil"
+calendar_proper_name = "Entrance Antiphon"
+
+[[targets]]
+id = "postconciliar:pentecost:vigil:antiphon:communion"
+slice_id = "postconciliar-pentecost-antiphon-appointments"
+kind = "text-slot"
+label = "Vigil Communion Antiphon"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/passages/pentecost-vigil-and-day-appointments.toml"
+source_locus = "ICEL Antiphonary 2010, artifact p. 73 / printed p. 65; Vigil Communion Antiphon; John 7:37. The foreword at artifact pp. 6-7 expressly scopes the antiphons to Missale Romanum 2002/2008. No Latin or approved-English body is supplied."
+identity_state = "established"
+parent_id = "pc2002-temporal-pentecost-vigil"
+calendar_proper_name = "Communion Antiphon"
+
+[[targets]]
+id = "postconciliar:pentecost:day:antiphon:entrance-1"
+slice_id = "postconciliar-pentecost-antiphon-appointments"
+kind = "text-slot"
+label = "Day Entrance Antiphon, first alternative"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/passages/pentecost-vigil-and-day-appointments.toml"
+source_locus = "ICEL Antiphonary 2010, artifact p. 73 / printed p. 65; Day Entrance Antiphon, first alternative; Wisdom 1:7. The foreword at artifact pp. 6-7 expressly scopes the antiphons to Missale Romanum 2002/2008. No Latin or approved-English body is supplied. Distinct alternative remains unjoined: v1 has no option address and the held Day form has two Entrance Antiphons."
+identity_state = "established"
+parent_id = "pc2002-temporal-pentecost-day"
+
+[[targets]]
+id = "postconciliar:pentecost:day:antiphon:entrance-2"
+slice_id = "postconciliar-pentecost-antiphon-appointments"
+kind = "text-slot"
+label = "Day Entrance Antiphon, second alternative"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/passages/pentecost-vigil-and-day-appointments.toml"
+source_locus = "ICEL Antiphonary 2010, artifact p. 73 / printed p. 65; Day Entrance Antiphon, second alternative; Romans 5:5; cf. 8:11. The foreword at artifact pp. 6-7 expressly scopes the antiphons to Missale Romanum 2002/2008. No Latin or approved-English body is supplied. Distinct alternative remains unjoined: v1 has no option address and the held Day form has two Entrance Antiphons."
+identity_state = "established"
+parent_id = "pc2002-temporal-pentecost-day"
+
+[[targets]]
+id = "postconciliar:pentecost:day:antiphon:communion"
+slice_id = "postconciliar-pentecost-antiphon-appointments"
+kind = "text-slot"
+label = "Day Communion Antiphon"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/passages/pentecost-vigil-and-day-appointments.toml"
+source_locus = "ICEL Antiphonary 2010, artifact p. 73 / printed p. 65; Day Communion Antiphon; Acts 2:4,11. The foreword at artifact pp. 6-7 expressly scopes the antiphons to Missale Romanum 2002/2008. No Latin or approved-English body is supplied."
+identity_state = "established"
+parent_id = "pc2002-temporal-pentecost-day"
+calendar_proper_name = "Communion Antiphon"
+
+[[targets]]
+id = "postconciliar:pentecost:vigil:lectionary:first-reading"
+slice_id = "postconciliar-pentecost-lectionary-roles"
+kind = "text-slot"
+label = "Vigil First Reading role"
+source_record = "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/dominica-pentecostes-62-63.toml"
+source_locus = "Ordo lectionum Missae 1981, no. 62, artifact p. 95 / printed p. 41; First Reading: Genesis 11:1-9; or Exodus 19:3-8a,16-20b; or Ezekiel 37:1-14; or Joel 3:1-5. Source psalm numbering is Vulgate. This witnesses the source-local headed role; 2008 target correspondence and exact proclaimed wording remain unresolved. The held Vigil has four alternative First Reading entries; no unique-role join is asserted."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-vigil"
+
+[[targets]]
+id = "postconciliar:pentecost:vigil:lectionary:responsorial-psalm"
+slice_id = "postconciliar-pentecost-lectionary-roles"
+kind = "text-slot"
+label = "Vigil Responsorial Psalm role"
+source_record = "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/dominica-pentecostes-62-63.toml"
+source_locus = "Ordo lectionum Missae 1981, no. 62, artifact p. 95 / printed p. 41; Responsorial Psalm: Psalms 103:1-2a,24,35c,27-28,29bc-30; response alternatives not individually targeted. Source psalm numbering is Vulgate. This witnesses the source-local headed role; 2008 target correspondence and exact proclaimed wording remain unresolved."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-vigil"
+calendar_proper_name = "Responsorial Psalm"
+
+[[targets]]
+id = "postconciliar:pentecost:vigil:lectionary:second-reading"
+slice_id = "postconciliar-pentecost-lectionary-roles"
+kind = "text-slot"
+label = "Vigil Second Reading role"
+source_record = "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/dominica-pentecostes-62-63.toml"
+source_locus = "Ordo lectionum Missae 1981, no. 62, artifact p. 95 / printed p. 41; Second Reading: Romans 8:22-27. Source psalm numbering is Vulgate. This witnesses the source-local headed role; 2008 target correspondence and exact proclaimed wording remain unresolved."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-vigil"
+calendar_proper_name = "Second Reading"
+
+[[targets]]
+id = "postconciliar:pentecost:vigil:lectionary:gospel-acclamation"
+slice_id = "postconciliar-pentecost-lectionary-roles"
+kind = "text-slot"
+label = "Vigil Gospel Acclamation role"
+source_record = "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/dominica-pentecostes-62-63.toml"
+source_locus = "Ordo lectionum Missae 1981, no. 62, artifact p. 95 / printed p. 41; Gospel Acclamation: Alleluia role; non-scriptural verse; no wording copied. Source psalm numbering is Vulgate. This witnesses the source-local headed role; 2008 target correspondence and exact proclaimed wording remain unresolved."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-vigil"
+calendar_proper_name = "Gospel Acclamation"
+
+[[targets]]
+id = "postconciliar:pentecost:vigil:lectionary:gospel"
+slice_id = "postconciliar-pentecost-lectionary-roles"
+kind = "text-slot"
+label = "Vigil Gospel role"
+source_record = "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/dominica-pentecostes-62-63.toml"
+source_locus = "Ordo lectionum Missae 1981, no. 62, artifact p. 95 / printed p. 41; Gospel: John 7:37-39. Source psalm numbering is Vulgate. This witnesses the source-local headed role; 2008 target correspondence and exact proclaimed wording remain unresolved."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-vigil"
+calendar_proper_name = "Gospel"
+
+[[targets]]
+id = "postconciliar:pentecost:day:lectionary:first-reading"
+slice_id = "postconciliar-pentecost-lectionary-roles"
+kind = "text-slot"
+label = "Day First Reading role"
+source_record = "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/dominica-pentecostes-62-63.toml"
+source_locus = "Ordo lectionum Missae 1981, no. 63, artifact p. 95-96 / printed p. 41-42; First Reading: Acts 2:1-11. Source psalm numbering is Vulgate. This witnesses the source-local headed role; 2008 target correspondence and exact proclaimed wording remain unresolved."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-day"
+calendar_proper_name = "First Reading"
+
+[[targets]]
+id = "postconciliar:pentecost:day:lectionary:responsorial-psalm"
+slice_id = "postconciliar-pentecost-lectionary-roles"
+kind = "text-slot"
+label = "Day Responsorial Psalm role"
+source_record = "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/dominica-pentecostes-62-63.toml"
+source_locus = "Ordo lectionum Missae 1981, no. 63, artifact p. 95-96 / printed p. 41-42; Responsorial Psalm: Psalms 103:1ab,24ac,29bc-30,31,34; response alternatives not individually targeted. Source psalm numbering is Vulgate. This witnesses the source-local headed role; 2008 target correspondence and exact proclaimed wording remain unresolved."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-day"
+calendar_proper_name = "Responsorial Psalm"
+
+[[targets]]
+id = "postconciliar:pentecost:day:lectionary:second-reading"
+slice_id = "postconciliar-pentecost-lectionary-roles"
+kind = "text-slot"
+label = "Day Second Reading role"
+source_record = "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/dominica-pentecostes-62-63.toml"
+source_locus = "Ordo lectionum Missae 1981, no. 63, artifact p. 95-96 / printed p. 41-42; Second Reading: 1 Corinthians 12:3b-7,12-13; optional for year B Galatians 5:16-25; optional for year C Romans 8:8-17; individual cycle/option joins outside this role target. Source psalm numbering is Vulgate. This witnesses the source-local headed role; 2008 target correspondence and exact proclaimed wording remain unresolved."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-day"
+calendar_proper_name = "Second Reading"
+
+[[targets]]
+id = "postconciliar:pentecost:day:lectionary:sequence"
+slice_id = "postconciliar-pentecost-lectionary-roles"
+kind = "text-slot"
+label = "Day Sequence role"
+source_record = "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/dominica-pentecostes-62-63.toml"
+source_locus = "Ordo lectionum Missae 1981, no. 63, artifact p. 95-96 / printed p. 41-42; Sequence: Sequence referral to the source book printed p. 444; no wording copied. Source psalm numbering is Vulgate. This witnesses the source-local headed role; 2008 target correspondence and exact proclaimed wording remain unresolved."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-day"
+calendar_proper_name = "Sequence"
+
+[[targets]]
+id = "postconciliar:pentecost:day:lectionary:gospel-acclamation"
+slice_id = "postconciliar-pentecost-lectionary-roles"
+kind = "text-slot"
+label = "Day Gospel Acclamation role"
+source_record = "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/dominica-pentecostes-62-63.toml"
+source_locus = "Ordo lectionum Missae 1981, no. 63, artifact p. 95-96 / printed p. 41-42; Gospel Acclamation: Alleluia referral to no. 62; no wording copied. Source psalm numbering is Vulgate. This witnesses the source-local headed role; 2008 target correspondence and exact proclaimed wording remain unresolved."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-day"
+calendar_proper_name = "Gospel Acclamation"
+
+[[targets]]
+id = "postconciliar:pentecost:day:lectionary:gospel"
+slice_id = "postconciliar-pentecost-lectionary-roles"
+kind = "text-slot"
+label = "Day Gospel role"
+source_record = "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/dominica-pentecostes-62-63.toml"
+source_locus = "Ordo lectionum Missae 1981, no. 63, artifact p. 95-96 / printed p. 41-42; Gospel: John 20:19-23; optional for year B John 15:26-27;16:12-15; optional for year C John 14:15-16,23b-26; individual cycle/option joins outside this role target. Source psalm numbering is Vulgate. This witnesses the source-local headed role; 2008 target correspondence and exact proclaimed wording remain unresolved."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-day"
+calendar_proper_name = "Gospel"
+
+[[targets]]
+id = "postconciliar:pentecost:vigil:missal2002:collect-1"
+slice_id = "postconciliar-pentecost-2002-missal-appointments"
+kind = "text-slot"
+label = "Vigil Collect, first alternative"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-pentecostes-vigilia-et-die.toml"
+source_locus = "Missale Romanum 2002, registered secondary digital reproduction, artifact p. 265; Ad Missam in Vigilia; Collect, first alternative. Source-local structure only, not a printed-facsimile wording collation or established 2008 correspondence. Two printed Collect alternatives remain separately inventoried and unjoined; no option address is invented."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-vigil"
+
+[[targets]]
+id = "postconciliar:pentecost:vigil:missal2002:collect-2"
+slice_id = "postconciliar-pentecost-2002-missal-appointments"
+kind = "text-slot"
+label = "Vigil Collect, second alternative"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-pentecostes-vigilia-et-die.toml"
+source_locus = "Missale Romanum 2002, registered secondary digital reproduction, artifact p. 265; Ad Missam in Vigilia; Collect, second alternative. Source-local structure only, not a printed-facsimile wording collation or established 2008 correspondence. Two printed Collect alternatives remain separately inventoried and unjoined; no option address is invented."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-vigil"
+
+[[targets]]
+id = "postconciliar:pentecost:vigil:missal2002:offerings"
+slice_id = "postconciliar-pentecost-2002-missal-appointments"
+kind = "text-slot"
+label = "Vigil Prayer over the Offerings"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-pentecostes-vigilia-et-die.toml"
+source_locus = "Missale Romanum 2002, registered secondary digital reproduction, artifact p. 265; Ad Missam in Vigilia; Prayer over the Offerings. Source-local structure only, not a printed-facsimile wording collation or established 2008 correspondence."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-vigil"
+calendar_proper_name = "Prayer over the Offerings"
+
+[[targets]]
+id = "postconciliar:pentecost:vigil:missal2002:postcommunion"
+slice_id = "postconciliar-pentecost-2002-missal-appointments"
+kind = "text-slot"
+label = "Vigil Prayer after Communion"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-pentecostes-vigilia-et-die.toml"
+source_locus = "Missale Romanum 2002, registered secondary digital reproduction, artifact p. 265-266; Ad Missam in Vigilia; Prayer after Communion. Source-local structure only, not a printed-facsimile wording collation or established 2008 correspondence."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-vigil"
+calendar_proper_name = "Prayer after Communion"
+
+[[targets]]
+id = "postconciliar:pentecost:vigil:missal2002:preface"
+slice_id = "postconciliar-pentecost-2002-missal-appointments"
+kind = "text-slot"
+label = "Vigil Pentecost Preface referral"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-pentecostes-vigilia-et-die.toml"
+source_locus = "Missale Romanum 2002, registered secondary digital reproduction, artifact p. 265; Ad Missam in Vigilia; Pentecost Preface referral. Source-local structure only, not a printed-facsimile wording collation or established 2008 correspondence."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-vigil"
+calendar_ordinary_appointment = "preface"
+calendar_ordinary_option = "pentecost"
+
+[[targets]]
+id = "postconciliar:pentecost:vigil:missal2002:communicantes"
+slice_id = "postconciliar-pentecost-2002-missal-appointments"
+kind = "text-slot"
+label = "Vigil Proper Communicantes when the Roman Canon is used"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-pentecostes-vigilia-et-die.toml"
+source_locus = "Missale Romanum 2002, registered secondary digital reproduction, artifact p. 265; Ad Missam in Vigilia; Proper Communicantes when the Roman Canon is used. Source-local structure only, not a printed-facsimile wording collation or established 2008 correspondence. Conditional Roman Canon insertion; no model option identity is recorded or inferred, and this is not a Pentecost Hanc igitur."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-vigil"
+
+[[targets]]
+id = "postconciliar:pentecost:day:missal2002:collect"
+slice_id = "postconciliar-pentecost-2002-missal-appointments"
+kind = "text-slot"
+label = "Day Collect"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-pentecostes-vigilia-et-die.toml"
+source_locus = "Missale Romanum 2002, registered secondary digital reproduction, artifact p. 266; Ad Missam in die; Collect. Source-local structure only, not a printed-facsimile wording collation or established 2008 correspondence."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-day"
+calendar_proper_name = "Collect"
+
+[[targets]]
+id = "postconciliar:pentecost:day:missal2002:offerings"
+slice_id = "postconciliar-pentecost-2002-missal-appointments"
+kind = "text-slot"
+label = "Day Prayer over the Offerings"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-pentecostes-vigilia-et-die.toml"
+source_locus = "Missale Romanum 2002, registered secondary digital reproduction, artifact p. 266; Ad Missam in die; Prayer over the Offerings. Source-local structure only, not a printed-facsimile wording collation or established 2008 correspondence."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-day"
+calendar_proper_name = "Prayer over the Offerings"
+
+[[targets]]
+id = "postconciliar:pentecost:day:missal2002:postcommunion"
+slice_id = "postconciliar-pentecost-2002-missal-appointments"
+kind = "text-slot"
+label = "Day Prayer after Communion"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-pentecostes-vigilia-et-die.toml"
+source_locus = "Missale Romanum 2002, registered secondary digital reproduction, artifact p. 267; Ad Missam in die; Prayer after Communion. Source-local structure only, not a printed-facsimile wording collation or established 2008 correspondence."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-day"
+calendar_proper_name = "Prayer after Communion"
+
+[[targets]]
+id = "postconciliar:pentecost:day:missal2002:preface"
+slice_id = "postconciliar-pentecost-2002-missal-appointments"
+kind = "text-slot"
+label = "Day Pentecost Preface"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-pentecostes-vigilia-et-die.toml"
+source_locus = "Missale Romanum 2002, registered secondary digital reproduction, artifact p. 266-267; Ad Missam in die; Pentecost Preface. Source-local structure only, not a printed-facsimile wording collation or established 2008 correspondence."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-day"
+calendar_ordinary_appointment = "preface"
+calendar_ordinary_option = "pentecost"
+
+[[targets]]
+id = "postconciliar:pentecost:day:missal2002:communicantes"
+slice_id = "postconciliar-pentecost-2002-missal-appointments"
+kind = "text-slot"
+label = "Day Proper Communicantes when the Roman Canon is used"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-pentecostes-vigilia-et-die.toml"
+source_locus = "Missale Romanum 2002, registered secondary digital reproduction, artifact p. 267; Ad Missam in die; Proper Communicantes when the Roman Canon is used. Source-local structure only, not a printed-facsimile wording collation or established 2008 correspondence. Conditional Roman Canon insertion; no model option identity is recorded or inferred, and this is not a Pentecost Hanc igitur."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-day"
+
+[[targets]]
+id = "postconciliar:pentecost:day:missal2002:dismissal"
+slice_id = "postconciliar-pentecost-2002-missal-appointments"
+kind = "text-slot"
+label = "Day Dismissal with double Alleluia and response"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-pentecostes-vigilia-et-die.toml"
+source_locus = "Missale Romanum 2002, registered secondary digital reproduction, artifact p. 267; Ad Missam in die; Dismissal with double Alleluia and response. Source-local structure only, not a printed-facsimile wording collation or established 2008 correspondence."
+identity_state = "target-correspondence-unresolved"
+parent_id = "pc2002-temporal-pentecost-day"
+calendar_ordinary_appointment = "dismissal"
+calendar_ordinary_option = "paschal-double-alleluia"
+
 [[boundaries]]
 id = "roman-1962-fixed-calendar-text-slots"
 slice_id = "roman-1962-universal-fixed-calendar"
@@ -193090,3 +193431,27 @@ kind = "exceptional-rite"
 state = "unenumerated"
 source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920/artifacts/ia-reimpressio-pdf-b676ce5c/artifact.toml"]
 basis = "Only the bound excerpts at artifact pp. 1118–1124 are inventoried; the rites of the Pontificale and Rituale outside this volume are not inferred."
+
+[[boundaries]]
+id = "postconciliar-pentecost-exact-2008-formulary-correspondence"
+slice_id = "postconciliar-pentecost-2002-missal-appointments"
+kind = "forms-and-cycles"
+state = "unenumerated"
+source_refs = ["src/sources/inventories/postconciliar-pentecost-source-accounting-2026-10-20.md", "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/dominica-pentecostes-vigilia-et-die.toml"]
+basis = "The 2002 base Vigil and Day address the held forms, but their exact 2008 appointment/body correspondence is not certified. No complete target-form denominator, Latin wording, new Ordinary option or rights clearance follows. The official 2008 extended Vigil retains its separate inventoried rite and is not equated with the held base Vigil."
+
+[[boundaries]]
+id = "postconciliar-pentecost-lectionary-options-and-response-units"
+slice_id = "postconciliar-pentecost-lectionary-roles"
+kind = "text-slots"
+state = "unenumerated"
+source_refs = ["src/sources/inventories/postconciliar-pentecost-source-accounting-2026-10-20.md", "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/dominica-pentecostes-62-63.toml"]
+basis = "The positive targets count headed source roles only. Four Vigil reading choices, Day optional B/C Second Reading and Gospel choices, psalm-response alternatives, pericope titles, incipits and exact Lectionary wording are not individually inventoried/joined by this slice. Unknown option-unit and target-book totals remain unknown, never zero."
+
+[[boundaries]]
+id = "postconciliar-pentecost-antiphon-option-joins-and-wording"
+slice_id = "postconciliar-pentecost-antiphon-appointments"
+kind = "text-slots"
+state = "unenumerated"
+source_refs = ["src/sources/inventories/postconciliar-pentecost-source-accounting-2026-10-20.md", "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/passages/pentecost-vigil-and-day-appointments.toml"]
+basis = "The two Day Entrance alternatives lack distinct option joins in v1. Positive source appointment identity does not establish Latin/approved-English public bodies, compiler psalm suggestions as Missal appointments, a complete rite, or complete target-book text coverage."
