@@ -31090,9 +31090,9 @@ id = "french-pamiers"
 title = "Pamiers local Mass books"
 status = "bounded-amiet-table-witness-census-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-pamiers-6904-usuarium", "french-pamiers-6905-usuarium"]
+sources = ["french-pamiers-6904-usuarium", "french-pamiers-6905-usuarium", "french-b-liturgie-romaine-1849", "french-b-episcopat-1907"]
 candidate_ids = ["french-pamiers-usuarium-6904", "french-pamiers-usuarium-6905"]
-remaining_work = "Only the complete set of records under this raw origin label in the frozen 2026-10-20 USUARIUM Amiet table is enumerated here. Broader manuscripts, printings, complementary books, historical revisions, reception, exact originals and full-text comparison remain open. This is not complete historical coverage."
+remaining_work = "No stage. Searched on 2026-10-21: Google Books feed ('missale appamiense', 'missale appamiense Levis'), Europeana and Numelyo found no full-view or reachable original. Gallica is behind a Cloudflare challenge (HTTP 403) and archive.org/BVMM were unreachable from the lane. Any inspected Pamiers missal (1782, 1845). The 1849 survey (p. 343 note, citing the Nouvelles ecclésiastiques of 18 September 1777 and 20 November 1781) says Pamiers refused the Toulouse breviary and later had its own variety of the Paris liturgy, edited under a canon's supervision in Paris; it lists Pamiers as Parisian. L'épiscopat français (p. 446) says Bishop Bélaval (1858–1881) established the Roman liturgy, without a year."
 
 [[coverage]]
 id = "french-dax"
@@ -32119,6 +32119,30 @@ full_contents_examined = false
 rights_note = "Project-created bibliographic description attributed to USUARIUM, Eötvös Loránd University. The exact HTML wrapper has no affirmative redistribution basis and remains scratch-only; no liturgical text is proposed for publication."
 
 [[sources]]
+id = "french-b-lalore-1883-troyes"
+title = "Ch. Lalore, Ancienne discipline du diocèse de Troyes jusqu'en 1788, vol. IV: Livres liturgiques (1883)"
+url = "https://books.google.com/books?id=2OFNAQAAMAAJ"
+type = "diocesan-history"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images PA80–PA89, PA105, PA110–PA117, PA444 viewed on 2026-10-21."
+limitations = "Secondary or printed-document statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright nineteenth-century scholarship; page images consulted on Google Books and kept only in scratch; short title phrases only."
+
+[[sources]]
+id = "french-b-probationes-trecensis-1869"
+title = "Probationes cultus sanctorum dioecesis Trecensis ac indulta S.R.C. (1869)"
+url = "https://books.google.com/books?id=OJrNugCzFYgC"
+type = "printed-document-compilation"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images PA439, PA442–PA443, PA480 viewed on 2026-10-21."
+limitations = "Secondary or printed-document statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright nineteenth-century scholarship; page images consulted on Google Books and kept only in scratch; short title phrases only."
+
+[[sources]]
 id = "french-beauvais-6953-usuarium"
 url = "https://usuarium.elte.hu/book/6953/view"
 type = "university-research-catalogue"
@@ -32231,6 +32255,30 @@ full_contents_examined = false
 rights_note = "Project-created bibliographic description attributed to USUARIUM, Eötvös Loránd University. The exact HTML wrapper has no affirmative redistribution basis and remains scratch-only; no liturgical text is proposed for publication."
 
 [[sources]]
+id = "french-b-duine-1906-breton-missals"
+title = "F. Duine, Bréviaires et missels des églises et abbayes bretonnes de France antérieurs au XVIIe siècle (1906)"
+url = "https://books.google.com/books?id=W5x3Cfx-_2QC"
+type = "scholarly-descriptive-bibliography"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images of the Nantes, Rennes, Vannes and Léon missal entries viewed on 2026-10-21 (PA35–PA47, PA113–PA118, PA143–PA144, PA171; footnote PA7)."
+limitations = "Scholarly description of named copies; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright nineteenth/early-twentieth-century scholarship; page images consulted on Google Books and kept only in scratch; short title phrases only."
+
+[[sources]]
+id = "french-b-liturgie-romaine-1849"
+title = "La liturgie romaine et les liturgies françaises: détails historiques et statistiques (1849)"
+url = "https://books.google.com/books?id=ngdTayagE3UC"
+type = "historical-survey"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images of the 1780 Tours-assembly account (PA245–PA247), dated returns to the Roman liturgy (PA49, PA346, PA381), the nineteenth-century changes at Nîmes and Meaux (PA251), the 1772 and 1777 Nouvelles ecclésiastiques reports (PA295, PA343), the Vienne pastoral letter of 18 August 1782 (PA364–PA368) and the 1849 diocesan table (PA412–PA413) viewed on 2026-10-21 (lane helpers; PA365 re-viewed by the lane owner). Cold review re-read the same pages in the archive.org copy of this edition (bub_gb_9ywtAAAAYAAJ, Melchior Du Lac)."
+limitations = "Anonymous polemical survey; statements recorded as its own."
+full_contents_examined = false
+rights_note = "Out-of-copyright nineteenth/early-twentieth-century scholarship; page images consulted on Google Books and kept only in scratch; short title phrases only."
+
+[[sources]]
 id = "french-perigueux-7907-usuarium"
 url = "https://usuarium.elte.hu/book/7907/view"
 type = "university-research-catalogue"
@@ -32273,6 +32321,18 @@ full_contents_examined = false
 rights_note = "Project-created bibliographic description attributed to USUARIUM, Eötvös Loránd University. The exact HTML wrapper has no affirmative redistribution basis and remains scratch-only; no liturgical text is proposed for publication."
 
 [[sources]]
+id = "french-b-perigord-bulletin-1888"
+title = "Bulletin de la Société historique et archéologique du Périgord (1888)"
+url = "https://books.google.com/books?id=bHfOAAAAMAAJ"
+type = "diocesan-history"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images PA419-IA48 viewed on 2026-10-21."
+limitations = "Secondary or periodical statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright eighteenth- to early-twentieth-century printed sources; page images consulted on Google Books and kept only in scratch; short phrases only."
+
+[[sources]]
 id = "french-vienne-7636-usuarium"
 url = "https://usuarium.elte.hu/book/7636/view"
 type = "university-research-catalogue"
@@ -32313,6 +32373,30 @@ sha256 = "4736ce9fc7d036b08a6620a52de56d253bd7a6af551ab147a67bd39010ca1fe1"
 byte_count = 16695
 full_contents_examined = false
 rights_note = "Project-created bibliographic description attributed to USUARIUM, Eötvös Loránd University. The exact HTML wrapper has no affirmative redistribution basis and remains scratch-only; no liturgical text is proposed for publication."
+
+[[sources]]
+id = "french-vienne-1519-numelyo-original"
+title = "Missale ad usum sancte Viennensis ecclesie, Lyon 1519, BM Lyon, Numelyo original images"
+url = "https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001100760433"
+type = "library-digital-facsimile"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Views 5 (title), 8 (February calendar) and 674 (colophon: Lyon, Bernard Lescuyer, last day of February 1519) viewed at web resolution on 2026-10-21."
+limitations = "Web-resolution derivatives only; three views read; no collation."
+full_contents_examined = false
+rights_note = "Pre-1800 printed book; page images consulted on the provider site and kept only as scratch research copies; no image or text is tracked or proposed for publication."
+
+[[sources]]
+id = "french-b-pompignan-biography-1903"
+title = "Jean-Georges Le Franc de Pompignan, évêque du Puy, archevêque de Vienne, 1715–1790 (1903)"
+url = "https://books.google.com/books?id=sy2wAAAAMAAJ"
+type = "biography"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page image RA1-PA82 viewed on 2026-10-21 (publication of the provincial breviary and missal in 1783)."
+limitations = "Secondary footnote."
+full_contents_examined = false
+rights_note = "Pre-1800 printed book; page images consulted on the provider site and kept only as scratch research copies; no image or text is tracked or proposed for publication."
 
 [[sources]]
 id = "french-cahors-5813-usuarium"
@@ -32440,6 +32524,18 @@ full_contents_examined = false
 rights_note = "Project-created bibliographic description attributed to USUARIUM, Eötvös Loránd University. The exact HTML wrapper has no affirmative redistribution basis and remains scratch-only; no liturgical text is proposed for publication."
 
 [[sources]]
+id = "french-b-notes-autun-chalon-macon-1883"
+title = "Notes sur les livres liturgiques des diocèses d'Autun, Chalon et Mâcon (1883)"
+url = "https://books.google.com/books?id=O0JDAAAAYAAJ"
+type = "diocesan-history"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images PA48–PA49, PA125, PA134–PA135, PA143–PA144 viewed on 2026-10-21."
+limitations = "Secondary or printed-document statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright nineteenth-century scholarship; page images consulted on Google Books and kept only in scratch; short title phrases only."
+
+[[sources]]
 id = "french-saint-papoul-7480-usuarium"
 url = "https://usuarium.elte.hu/book/7480/view"
 type = "university-research-catalogue"
@@ -32466,6 +32562,18 @@ sha256 = "ea1329dafe406c631338671b7bb40ccc8b0e10a1b9b842e68e40aa9777729e93"
 byte_count = 16655
 full_contents_examined = false
 rights_note = "Project-created bibliographic description attributed to USUARIUM, Eötvös Loránd University. The exact HTML wrapper has no affirmative redistribution basis and remains scratch-only; no liturgical text is proposed for publication."
+
+[[sources]]
+id = "french-b-gallia-christiana-novissima-sisteron"
+title = "J.-H. Albanès, Gallia christiana novissima: Aix, Apt, Fréjus, Gap, Riez et Sisteron (1899)"
+url = "https://books.google.com/books?id=h78cAQAAMAAJ"
+type = "historical-register"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images PA779 (cols. 779–780) viewed on 2026-10-21."
+limitations = "Secondary or periodical statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright eighteenth- to early-twentieth-century printed sources; page images consulted on Google Books and kept only in scratch; short phrases only."
 
 [[sources]]
 id = "french-valence-5825-usuarium"
@@ -32908,9 +33016,9 @@ title = "Missale ad usum insignis ecclesie Trecensis"
 date = "1497"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
-sources = ["french-troyes-7584-usuarium"]
+sources = ["french-troyes-7584-usuarium", "french-b-lalore-1883-troyes"]
 source_locus = "Original title: Missale ad usum insignis ecclesie Trecensis; Origin: Troyes (FR); Age: 1497; Shelfmark of library: BM Troyes , Inc. 32; Catalogue: Amiet , 1562 USTC , 202247"
-qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions.  Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established."
+qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions.  Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established. Batch 4 lane B: Lalore 1883 p. 80 describes the 1497 du Pré printing and its colophon."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 date_role = "catalogue-attributed-printed-witness-publication"
@@ -32929,9 +33037,9 @@ title = "Missale ad usum insignis ecclesie Trecensis"
 date = "1514"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
-sources = ["french-troyes-7585-usuarium"]
+sources = ["french-troyes-7585-usuarium", "french-b-lalore-1883-troyes"]
 source_locus = "Original title: Missale ad usum insignis ecclesie Trecensis; Origin: Troyes (FR); Age: 1514; Shelfmark of library: BNF Paris , B-2691; Catalogue: Amiet , 1564 USTC , 111130"
-qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions. The catalogue reports an Early European Books digitization; it was not accessed. Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established."
+qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions. The catalogue reports an Early European Books digitization; it was not accessed. Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established. Batch 4 lane B: Lalore 1883 p. 80 lists the 1514 Le Coq printing (listing only)."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 date_role = "catalogue-attributed-printed-witness-publication"
@@ -32950,9 +33058,9 @@ title = "Missale ad usum insignis ecclesie Trecensis"
 date = "1525"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
-sources = ["french-troyes-7586-usuarium"]
+sources = ["french-troyes-7586-usuarium", "french-b-lalore-1883-troyes"]
 source_locus = "Original title: Missale ad usum insignis ecclesie Trecensis; Origin: Troyes (FR); Age: 1525; Shelfmark of library: BNF Paris , B-2692; Catalogue: Amiet , 1565 USTC , 111136"
-qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions. The catalogue reports an Early European Books digitization; it was not accessed. Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established."
+qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions. The catalogue reports an Early European Books digitization; it was not accessed. Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established. Batch 4 lane B: Lalore 1883 p. 81 quotes the 1525 colophon with added Masses of Joseph, Godo and Edmund."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 date_role = "catalogue-attributed-printed-witness-publication"
@@ -32971,9 +33079,9 @@ title = "Missalis prior (-posterior) pars, secundum usum insignis ecclesiae Trec
 date = "1580"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
-sources = ["french-troyes-7587-usuarium"]
+sources = ["french-troyes-7587-usuarium", "french-b-lalore-1883-troyes"]
 source_locus = "Original title: Missalis prior (-posterior) pars, secundum usum insignis ecclesiae Trecensis; Origin: Troyes (FR); Age: 1580; Shelfmark of library: BNF Paris , B-4888; Catalogue: Amiet , 1569"
-qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions. USUARIUM describes two volumes and a BnF digitization NUMM-8703699 reported as not online. Neither volume nor its completeness was inspected. Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established."
+qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions. USUARIUM describes two volumes and a BnF digitization NUMM-8703699 reported as not online. Neither volume nor its completeness was inspected. Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established. Batch 4 lane B: Lalore 1883 pp. 82, 88–89 describes the 1580 edition and prints Bauffremont's mandate of 1 March 1580."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 date_role = "catalogue-attributed-printed-witness-publication"
@@ -32992,9 +33100,9 @@ title = "Missale Trecense"
 date = "1615"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
-sources = ["french-troyes-7588-usuarium"]
+sources = ["french-troyes-7588-usuarium", "french-b-lalore-1883-troyes"]
 source_locus = "Origin: Troyes (FR); Age: 1615; Shelfmark of library: BM Troyes , Impr. Tr. 242-243; Catalogue: Amiet , 1570"
-qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions. The individual record supplies no Original title field; its short catalogue heading is retained as an attributed label. Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established."
+qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions. The individual record supplies no Original title field; its short catalogue heading is retained as an attributed label. Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established. Batch 4 lane B: Lalore 1883 p. 82 says the 1615 missal reprints the 1580 edition; no separate state."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 date_role = "catalogue-attributed-printed-witness-publication"
@@ -33013,9 +33121,9 @@ title = "Missale Trecense"
 date = "1736"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
-sources = ["french-troyes-7589-usuarium"]
+sources = ["french-troyes-7589-usuarium", "french-b-lalore-1883-troyes"]
 source_locus = "Origin: Troyes (FR); Age: 1736; Shelfmark of library: BNF Paris , B-240 or B-240 (BIS) or B-241; Catalogue: Amiet , 1571"
-qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions. The individual record supplies no Original title field and gives alternative BnF callmarks B-240, B-240 (BIS), or B-241. The precise exemplified copy is unresolved. Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established."
+qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions. The individual record supplies no Original title field and gives alternative BnF callmarks B-240, B-240 (BIS), or B-241. The precise exemplified copy is unresolved. Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established. Batch 4 lane B: Lalore 1883 pp. 105–117 prints Bossuet's mandates of 16 September 1735 and 26 September 1736 and the 1737–1738 controversy chronology."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 date_role = "catalogue-attributed-printed-witness-publication"
@@ -33026,6 +33134,28 @@ chronology_start = 1736
 chronology_end = 1736
 chronology_kind = "catalogue-attributed-printed-witness-publication"
 chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected"
+
+[[candidates]]
+id = "french-troyes-1696-orationes-addendae"
+family = "historic-troyes-use"
+title = "Orationes addendae Missali Romano pro celebrantibus missam ritu dioecesis Trecensis, Troyes, Charles Briden, 1696"
+date = "1696"
+kind = "complementary-volume-candidate"
+status = "scholarly-described-edition"
+route = "https://books.google.com/books?id=2OFNAQAAMAAJ&pg=PA113"
+sources = ["french-b-lalore-1883-troyes"]
+source_locus = "Lalore 1883 pp. 83, 113 n. 1"
+qualification = "Diocesan supplement to the Roman Missal, known here from Lalore's description and his note to Bossuet's 1736 mandate. It is a supplement, not a complete missal; the Roman Missal it accompanied is not identified by edition. Original not inspected."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-component-candidate-not-proven-recension"
+date_role = "scholar-reported-publication"
+acquisition_status = "original-book-not-acquired; scholarly-description-viewed"
+transcription_status = "no-new-verified-transcription"
+collation_status = "no-new-complete-collation"
+chronology_start = 1696
+chronology_end = 1696
+chronology_kind = "publication"
+chronology_certainty = "scholar-reported-year"
 
 [[candidates]]
 id = "french-beauvais-usuarium-6953"
@@ -33121,9 +33251,9 @@ title = "Missale ad usum insignis ecclesie Nannetensis"
 date = "1520"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
-sources = ["french-nantes-7322-usuarium"]
+sources = ["french-nantes-7322-usuarium", "french-b-duine-1906-breton-missals"]
 source_locus = "Original title: Missale ad usum insignis ecclesie Nannetensis; Origin: Nantes (FR); Age: 1520; Shelfmark of library: BNF Paris , B-1814; Catalogue: Amiet , 663"
-qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions.  Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established."
+qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions.  Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established. Batch 4 lane B: Duine 1906, p. 117 no. 46, describes a 1520 Rouen (Martin Morin) Nantes missal, BnF Rés. B.1814, with a second Gloria de beata Maria at fol. CIII; edition-level match assumed, copy identity not verified."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 date_role = "catalogue-attributed-printed-witness-publication"
@@ -33142,9 +33272,9 @@ title = "Missale secundum usum insignis ecclesiae nanetensis"
 date = "1588"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
-sources = ["french-nantes-7323-usuarium"]
+sources = ["french-nantes-7323-usuarium", "french-b-duine-1906-breton-missals"]
 source_locus = "Original title: Missale secundum usum insignis ecclesiae nanetensis; Origin: Nantes (FR); Age: 1588; Shelfmark of library: BM Nantes , 1277R; Catalogue: Amiet , 664"
-qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions.  Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established."
+qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions.  Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established. Batch 4 lane B: Duine 1906, p. 117 no. 47, transcribes the 1588 title (Philippe du Bec mandate; 'Ad exemplar Tridentinum proxime accedens'; Nantes, Vincent Hucet); BM Nantes 1277."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 date_role = "catalogue-attributed-printed-witness-publication"
@@ -33247,9 +33377,9 @@ title = "Missale ad usum provinciae Viennensis"
 date = "1784"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
-sources = ["french-vienne-7636-usuarium"]
+sources = ["french-vienne-7636-usuarium", "french-b-liturgie-romaine-1849", "french-b-pompignan-biography-1903"]
 source_locus = "Original title: Missale ad usum provinciae Viennensis; Origin: Vienne (FR); Age: 1784; Shelfmark of library: BNF Paris , B-50070; Catalogue: Amiet , 1634"
-qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions.  Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established."
+qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions.  Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established. Batch 4 lane B: the 1849 survey (pp. 364–368) describes Lefranc de Pompignan's pastoral letter of 18 August 1782 promulgating the provincial missal and breviary; his 1903 biographer (p. 82 note) gives publication as 1783 (Grenoble, widow Giroud). Edition identity with this 1784 catalogue entry is assumed, not verified."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 date_role = "catalogue-attributed-printed-witness-publication"
@@ -33302,6 +33432,28 @@ chronology_start = 1840
 chronology_end = 1840
 chronology_kind = "catalogue-attributed-printed-witness-publication"
 chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected"
+
+[[candidates]]
+id = "french-vienne-1519-numelyo-lyon"
+family = "historic-vienne-use"
+title = "Missale ad usum sancte Viennensis ecclesie, Lyon, Bernard Lescuyer, 1519 (BM Lyon, Numelyo)"
+date = "1519-02 (colophon; possibly 1520 new style)"
+kind = "printed-edition-candidate"
+status = "bounded-original-leaf-inspection"
+route = "https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001100760433"
+sources = ["french-vienne-1519-numelyo-original"]
+source_locus = "Numelyo views 5, 8, 674"
+qualification = "Exact Lyon copy outside the Amiet-table selection for this route (1784, 1822, 1840). Colophon read at web resolution: Lyon, Bernard Lescuyer, last day of February 1519. Europeana/BnF date the Gallica copy bpt6k857944f to 1520, consistent with a year-style difference; identity with that copy is not asserted."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-component-candidate-not-proven-recension"
+date_role = "colophon-dated-publication"
+acquisition_status = "selected-web-resolution-views-acquired-scratch-only"
+transcription_status = "no-new-verified-transcription"
+collation_status = "no-new-complete-collation"
+chronology_start = 1519
+chronology_end = 1520
+chronology_kind = "publication"
+chronology_certainty = "direct-colophon-inspection; year-style-uncertain"
 
 [[candidates]]
 id = "french-cahors-usuarium-6993"
@@ -33459,7 +33611,7 @@ kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 sources = ["french-macon-7267-usuarium"]
 source_locus = "Original title: Missale Matisconense; Origin: Mâcon (FR); Age: 1494 (about); Catalogue: Amiet , 579"
-qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions.  Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established."
+qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions.  Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established. Batch 4 lane B: the 1883 Notes on the Autun, Chalon and Mâcon liturgical books describe only a 1532 printed Mâcon missal; this c.1494 entry was not found there."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 date_role = "catalogue-attributed-printed-witness-publication"
@@ -33470,6 +33622,28 @@ chronology_start = 1494
 chronology_end = 1494
 chronology_kind = "approximate-catalogue-publication-coordinate"
 chronology_certainty = "catalogue-about-1494; coordinate-is-not-exact-year"
+
+[[candidates]]
+id = "french-macon-1532-harsy-notes"
+family = "historic-macon-use"
+title = "Missale Matisconense, Lyon, Denys de Harsy, 15 March 1532"
+date = "1532-03-15 (colophon as described)"
+kind = "printed-edition-candidate"
+status = "scholarly-described-edition"
+route = "https://books.google.com/books?id=O0JDAAAAYAAJ&pg=PA134"
+sources = ["french-b-notes-autun-chalon-macon-1883"]
+source_locus = "Notes 1883 pp. 134–135"
+qualification = "Edition outside the Amiet-table selection, known here from a description of its title and colophon. Original not inspected."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-component-candidate-not-proven-recension"
+date_role = "scholar-reported-publication"
+acquisition_status = "original-book-not-acquired; scholarly-description-viewed"
+transcription_status = "no-new-verified-transcription"
+collation_status = "no-new-complete-collation"
+chronology_start = 1532
+chronology_end = 1532
+chronology_kind = "publication"
+chronology_certainty = "scholar-reported-colophon-year"
 
 [[candidates]]
 id = "french-saint-papoul-usuarium-7480"
@@ -33499,9 +33673,9 @@ title = "Missale Sistaricense"
 date = "1785"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
-sources = ["french-sisteron-7546-usuarium"]
+sources = ["french-sisteron-7546-usuarium", "french-b-gallia-christiana-novissima-sisteron"]
 source_locus = "Original title: Missale Sistaricense; Origin: Sisteron (FR); Age: 1785; Catalogue: Amiet , 1465"
-qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions. USUARIUM reports a Thomas Fisher Rare Book Library, Toronto copy and WorldCat lead; it was not independently authenticated. Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established."
+qualification = "USUARIUM bibliographic printing candidate; the catalogue origin is an attribution, not demonstrated local use. Dates identify reported books, not substantive revisions. USUARIUM reports a Thomas Fisher Rare Book Library, Toronto copy and WorldCat lead; it was not independently authenticated. Catalogue metadata only. Original prayers, rubrics, calendar and Order of Mass were not inspected; no complete source-book acquisition, substantive recension, normative approval, reception or ancestry is established. Batch 4 lane B: Albanès, Gallia christiana novissima (1899), cols. 779–780, cites Missale Sistaricense, Toulouse, J. Dalles, 1785, in-4, as Suffren's Toulouse-type liturgy."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 date_role = "catalogue-attributed-printed-witness-publication"
@@ -33555,11 +33729,11 @@ remaining_work = "Batch 4 documents the 1831 du Trousset d'Héricourt missal and
 [[coverage]]
 id = "french-troyes"
 title = "Troyes catalogue-origin Mass-book candidates"
-status = "bounded-assigned-amiet-rows-reviewed"
+status = "bounded-scholarly-stage-evidence-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-troyes-7584-usuarium", "french-troyes-7585-usuarium", "french-troyes-7586-usuarium", "french-troyes-7587-usuarium", "french-troyes-7588-usuarium", "french-troyes-7589-usuarium"]
-candidate_ids = ["french-troyes-usuarium-7584", "french-troyes-usuarium-7585", "french-troyes-usuarium-7586", "french-troyes-usuarium-7587", "french-troyes-usuarium-7588", "french-troyes-usuarium-7589"]
-remaining_work = "This entry covers the assigned frozen Amiet-table records only. Broader manuscripts, printings and complementary books remain outside this bounded review; acquire and inspect originals with an affirmative rights basis, resolve exact copy identity and compare prayers, calendar, Order and rubrics before asserting substantive revisions or reception."
+sources = ["french-troyes-7584-usuarium", "french-troyes-7585-usuarium", "french-troyes-7586-usuarium", "french-troyes-7587-usuarium", "french-troyes-7588-usuarium", "french-troyes-7589-usuarium", "french-b-lalore-1883-troyes", "french-b-probationes-trecensis-1869", "french-b-liturgie-romaine-1849"]
+candidate_ids = ["french-troyes-usuarium-7584", "french-troyes-usuarium-7585", "french-troyes-usuarium-7586", "french-troyes-usuarium-7587", "french-troyes-usuarium-7588", "french-troyes-usuarium-7589", "french-troyes-1696-orationes-addendae"]
+remaining_work = "1497, 1525, 1580, 1696 (Roman Missal with Troyes supplement) and 1736 (Bossuet) states documented from Lalore. Open: originals, 1492/1514/1533 editions, the 1738 corrected state, the 1830 supplement and the Roman restoration (mandement 14 June 1847; 1846 in an 1868 decree)."
 
 [[coverage]]
 id = "french-beauvais"
@@ -33573,29 +33747,29 @@ remaining_work = "This entry covers the assigned frozen Amiet-table records only
 [[coverage]]
 id = "french-nantes"
 title = "Nantes catalogue-origin Mass-book candidates"
-status = "bounded-assigned-amiet-rows-reviewed"
+status = "bounded-scholarly-stage-evidence-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-nantes-6906-usuarium", "french-nantes-7322-usuarium", "french-nantes-7323-usuarium", "french-nantes-7324-usuarium"]
+sources = ["french-nantes-6906-usuarium", "french-nantes-7322-usuarium", "french-nantes-7323-usuarium", "french-nantes-7324-usuarium", "french-b-duine-1906-breton-missals", "french-b-liturgie-romaine-1849"]
 candidate_ids = ["french-nantes-usuarium-6906", "french-nantes-usuarium-7322", "french-nantes-usuarium-7323", "french-nantes-usuarium-7324"]
-remaining_work = "This entry covers the assigned frozen Amiet-table records only. Broader manuscripts, printings and complementary books remain outside this bounded review; acquire and inspect originals with an affirmative rights basis, resolve exact copy identity and compare prayers, calendar, Order and rubrics before asserting substantive revisions or reception."
+remaining_work = "1520 and 1588 publication states documented from Duine 1906. Open: originals, the 1482 and lost 1501 editions, the eighteenth-century Poitiers-type liturgy, the 1837 missal and the 1858 Roman adoption act."
 
 [[coverage]]
 id = "french-perigueux"
 title = "Périgueux catalogue-origin Mass-book candidates"
 status = "bounded-assigned-amiet-rows-reviewed"
 scope = "western-original-source-trajectory"
-sources = ["french-perigueux-7907-usuarium", "french-perigueux-7908-usuarium", "french-perigueux-7392-usuarium"]
+sources = ["french-perigueux-7907-usuarium", "french-perigueux-7908-usuarium", "french-perigueux-7392-usuarium", "french-b-perigord-bulletin-1888", "french-b-episcopat-1907"]
 candidate_ids = ["french-perigueux-usuarium-7907", "french-perigueux-usuarium-7908", "french-perigueux-usuarium-7392"]
-remaining_work = "This entry covers the assigned frozen Amiet-table records only. Broader manuscripts, printings and complementary books remain outside this bounded review; acquire and inspect originals with an affirmative rights basis, resolve exact copy identity and compare prayers, calendar, Order and rubrics before asserting substantive revisions or reception. The1525 entry remains a lost-printing report; check the underlying Blume reference before promoting its existence beyond that attribution."
+remaining_work = "No stage. Searched on 2026-10-21: Google Books feed ('missale petrocorense', 'missale petrocorense Flamarens', 'missale petrocoricense'), Europeana and Numelyo found no full-view or reachable original. Gallica is behind a Cloudflare challenge (HTTP 403) and archive.org/BVMM were unreachable from the lane. Any inspected Périgueux missal (1525 report, 1541, 1782). A library list in the 1888 Bulletin records letters of Bishop Grossolles de Flamarens to the clergy on the new missal dated 1 May 1781 (title only). The 1849 survey dates the return to the Roman to 1844 (pp. 380–381, 413); L'épiscopat français (p. 470) calls Bishop Georges one of the first to adopt it, without a year."
 
 [[coverage]]
 id = "french-vienne"
 title = "Vienne catalogue-origin Mass-book candidates"
-status = "bounded-assigned-amiet-rows-reviewed"
+status = "bounded-original-and-scholarly-stage-evidence-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-vienne-7636-usuarium", "french-vienne-7637-usuarium", "french-vienne-7638-usuarium"]
-candidate_ids = ["french-vienne-usuarium-7636", "french-vienne-usuarium-7637", "french-vienne-usuarium-7638"]
-remaining_work = "This entry covers the assigned frozen Amiet-table records only. Broader manuscripts, printings and complementary books remain outside this bounded review; acquire and inspect originals with an affirmative rights basis, resolve exact copy identity and compare prayers, calendar, Order and rubrics before asserting substantive revisions or reception."
+sources = ["french-vienne-7636-usuarium", "french-vienne-7637-usuarium", "french-vienne-7638-usuarium", "french-vienne-1519-numelyo-original", "french-b-liturgie-romaine-1849", "french-b-pompignan-biography-1903"]
+candidate_ids = ["french-vienne-usuarium-7636", "french-vienne-usuarium-7637", "french-vienne-usuarium-7638", "french-vienne-1519-numelyo-lyon"]
+remaining_work = "The 1782 provincial missal promulgation is documented from secondary descriptions. A Lyon-printed Vienne missal of February 1519 (possibly 1520) is documented from title, calendar and colophon. Open: intervening editions, the 1784 provincial missal and successors, and the adoption of the Roman Missal."
 
 [[coverage]]
 id = "french-cahors"
@@ -33645,29 +33819,29 @@ remaining_work = "Searched 2026-10-21 without a supportable stage: the complete 
 [[coverage]]
 id = "french-macon"
 title = "Mâcon catalogue-origin Mass-book candidates"
-status = "bounded-assigned-amiet-rows-reviewed"
+status = "bounded-scholarly-stage-evidence-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-macon-7267-usuarium"]
-candidate_ids = ["french-macon-usuarium-7267"]
-remaining_work = "This entry covers the assigned frozen Amiet-table records only. Broader manuscripts, printings and complementary books remain outside this bounded review; acquire and inspect originals with an affirmative rights basis, resolve exact copy identity and compare prayers, calendar, Order and rubrics before asserting substantive revisions or reception."
+sources = ["french-macon-7267-usuarium", "french-b-notes-autun-chalon-macon-1883"]
+candidate_ids = ["french-macon-usuarium-7267", "french-macon-1532-harsy-notes"]
+remaining_work = "1532 Harsy missal documented from description. Open: the c.1494 attribution, originals, the 1601 Roman adoption and its scope, and the post-1801 Autun sequence (1812, 1831, 1856)."
 
 [[coverage]]
 id = "french-saint-papoul"
 title = "Saint-Papoul catalogue-origin Mass-book candidates"
 status = "bounded-assigned-amiet-rows-reviewed"
 scope = "western-original-source-trajectory"
-sources = ["french-saint-papoul-7480-usuarium"]
+sources = ["french-saint-papoul-7480-usuarium", "french-b-liturgie-romaine-1849"]
 candidate_ids = ["french-saint-papoul-usuarium-7480"]
-remaining_work = "This entry covers the assigned frozen Amiet-table records only. Broader manuscripts, printings and complementary books remain outside this bounded review; acquire and inspect originals with an affirmative rights basis, resolve exact copy identity and compare prayers, calendar, Order and rubrics before asserting substantive revisions or reception."
+remaining_work = "No stage. Searched on 2026-10-21: Google Books feed ('missale sanpapulense', 'missale sanpapulense Langle'), Europeana and Numelyo found no full-view or reachable original. Gallica is behind a Cloudflare challenge (HTTP 403) and archive.org/BVMM were unreachable from the lane. Any inspected Saint-Papoul missal, including the 1774 Missale Sanpapulense (Langle). The Nouvelles ecclésiastiques of 16 April 1772, quoted in the 1849 survey (p. 295), name Saint-Papoul among the dioceses that took a Paris-type breviary 'last year'; nothing on the missal. The Carcassonne mandement of 1842 (p. 346) notes surviving local rites in its former parishes."
 
 [[coverage]]
 id = "french-sisteron"
 title = "Sisteron catalogue-origin Mass-book candidates"
-status = "bounded-assigned-amiet-rows-reviewed"
+status = "bounded-scholarly-stage-evidence-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-sisteron-7546-usuarium"]
+sources = ["french-sisteron-7546-usuarium", "french-b-gallia-christiana-novissima-sisteron"]
 candidate_ids = ["french-sisteron-usuarium-7546"]
-remaining_work = "This entry covers the assigned frozen Amiet-table records only. Broader manuscripts, printings and complementary books remain outside this bounded review; acquire and inspect originals with an affirmative rights basis, resolve exact copy identity and compare prayers, calendar, Order and rubrics before asserting substantive revisions or reception."
+remaining_work = "1785 Suffren missal documented from Albanès. Open: original and mandate, earlier Sisteron books, and comparison with the Toulouse missal."
 
 [[coverage]]
 id = "french-valence-saint-ruf"
@@ -34222,6 +34396,30 @@ full_contents_examined = false
 rights_note = "Project-created bibliographic metadata and paraphrase only. Raw university HTML remains in scratch with no affirmative repository redistribution basis. Data retrieved from USUARIUM: A Digital Library and Database for the Study of Latin Liturgical History in the Middle Ages and Early Modern Period (https://usuarium.elte.hu), built by Miklós István Földváry and colleagues at Eötvös Loránd University, Budapest, Research Group of Liturgical History, from 2015 onwards. Selected bibliographic facts are paraphrased here; no licence for the raw HTML is asserted."
 
 [[sources]]
+id = "french-soissons-1745-google-original"
+title = "Missale Suessionense 1745, École Sainte-Geneviève copy, Google Books / Numelyo original images"
+url = "https://books.google.com/books?id=JWXbxJ1ccrQC"
+type = "library-digital-facsimile"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Title PP9 and complete episcopal letter PP11–PP13 (dated Soissons, 6 January 1745) viewed on 2026-10-21; the same scan is offered by Numelyo as BML:BML_00GOO0100137001102160046."
+limitations = "Prefatory matter only; no Mass formulary inspected; no collation."
+full_contents_examined = false
+rights_note = "Pre-1800 printed book; page images consulted on the provider site and kept only as scratch research copies; no image or text is tracked or proposed for publication."
+
+[[sources]]
+id = "french-b-leclercq-1852-soissons"
+title = "J. Leclercq de Laprairie, Observations sur les livres liturgiques du diocèse de Soissons (1852)"
+url = "https://books.google.com/books?id=VipWAAAAcAAJ"
+type = "scholarly-descriptive-bibliography"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images PA10, PA14–PA19 viewed on 2026-10-21 (1531 missal via Grenier; 1687 Roman Missal with Soissons proper; Fitz-James and 1852 change)."
+limitations = "Secondary descriptions; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright 1852 scholarship; page images kept only in scratch."
+
+[[sources]]
 id = "french-arras-6914-usuarium"
 url = "https://usuarium.elte.hu/book/6914/view"
 type = "university-research-catalogue"
@@ -34372,6 +34570,18 @@ sha256 = "921ae2dc5601f3b588c3bb5a0c72588b851e2d54c9d2219d1e66bd9eeb433931"
 byte_count = 17071
 full_contents_examined = false
 rights_note = "Project-created bibliographic metadata and paraphrase only. Raw university HTML remains in scratch with no affirmative repository redistribution basis. Data retrieved from USUARIUM: A Digital Library and Database for the Study of Latin Liturgical History in the Middle Ages and Early Modern Period (https://usuarium.elte.hu), built by Miklós István Földváry and colleagues at Eötvös Loránd University, Budapest, Research Group of Liturgical History, from 2015 onwards. Selected bibliographic facts are paraphrased here; no licence for the raw HTML is asserted."
+
+[[sources]]
+id = "french-b-episcopat-1907"
+title = "L'épiscopat français depuis le Concordat jusqu'à la Séparation (1802–1905) (1907)"
+url = "https://books.google.com/books?id=jcozAQAAMAAJ"
+type = "biographical-dictionary"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images PA263, PA353–354, PA367, PA417, PA446, PA470, PA612, PA616, PA626, PA633–635, PA655 viewed on 2026-10-21."
+limitations = "Secondary or periodical statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright eighteenth- to early-twentieth-century printed sources; page images consulted on Google Books and kept only in scratch; short phrases only."
 
 [[sources]]
 id = "french-saint-pol-de-leon-6499-usuarium"
@@ -35221,9 +35431,9 @@ date = "1745"
 kind = "catalogued-printed-missal-witness"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7113/view"
-sources = ["french-soissons-7113-usuarium"]
+sources = ["french-soissons-7113-usuarium", "french-soissons-1745-google-original"]
 source_locus = "Catalogue title: Missale Suessionense; Origin: Soissons (FR); Age: 1745; Original title: Missale Suessionense; Shelfmark: BM Lyon , SJ LB 030/68; Catalogue: Amiet , 1523 BM Lyon Digit. , SJ LB 030/68"
-qualification = "Catalogue evidence only. Original title leaves, colophons, prayers, rubrics, calendar and Order of Mass have not been inspected. Neither a substantive recension nor a stage, normative approval, actual local reception, complete physical book or complete acquired liturgical text is established. Attribution to Soissons is the catalogue's; the family label is a finding-aid grouping, not proof of actual local use."
+qualification = "Catalogue evidence only. Original title leaves, colophons, prayers, rubrics, calendar and Order of Mass have not been inspected. Neither a substantive recension nor a stage, normative approval, actual local reception, complete physical book or complete acquired liturgical text is established. Attribution to Soissons is the catalogue's; the family label is a finding-aid grouping, not proof of actual local use. Batch 4 lane B, re-identified by cold review: this holding (BM Lyon SJ LB 030/68) is the copy digitised by Numelyo (BML_00GOO0100137001102160046, whose record gives this shelfmark) and offered by Google Books as JWXbxJ1ccrQC (École Sainte-Geneviève stamp). Its title leaf (PP9: Fitz-James's authority, chapter consent, Paris, J.-B. Coignard, 1745) and the bishop's letter dated Soissons, 6 January 1745 (PP11–PP13) were inspected in batch 4, superseding the title-leaf limitation above for this copy; Mass formularies remain uninspected. It is the witness of stage french-dioceses-b-batch4:soissons-1745."
 version_status = "witness-or-component-candidate-not-proven-recension"
 scope_disposition = "in-scope-original-book-or-historical-witness"
 date_role = "catalogue-attributed-printed-object-age"
@@ -35234,6 +35444,28 @@ chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected
 acquisition_status = "source-metadata-acquired-original-book-not-certified"
 transcription_status = "no-new-verified-transcription"
 collation_status = "no-new-complete-collation"
+
+[[candidates]]
+id = "french-soissons-1687-roman-proprium-leclercq"
+family = "historic-soissons-use"
+title = "Missale Romanum with Proprium Missalis Suessionensis, Soissons, Hanisset, 1687"
+date = "1687"
+kind = "printed-edition-candidate"
+status = "scholarly-described-edition"
+route = "https://books.google.com/books?id=VipWAAAAcAAJ&pg=PA16"
+sources = ["french-b-leclercq-1852-soissons", "french-b-ledouble-1880-soissons"]
+source_locus = "Leclercq de Laprairie 1852 pp. 16–17; Ledouble 1880 p. 383"
+qualification = "Roman Missal with a Soissons proper printed in 1687, known here from descriptions of the Acy church and seminary copies. The Roman Missal edition is unidentified; original not inspected."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-component-candidate-not-proven-recension"
+date_role = "scholar-reported-publication"
+acquisition_status = "original-book-not-acquired; scholarly-description-viewed"
+transcription_status = "no-new-verified-transcription"
+collation_status = "no-new-complete-collation"
+chronology_start = 1687
+chronology_end = 1687
+chronology_kind = "publication"
+chronology_certainty = "scholar-reported-year"
 
 [[candidates]]
 id = "french-arras-usuarium-6914"
@@ -35483,9 +35715,9 @@ date = "1526"
 kind = "catalogued-printed-missal-witness"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/6499/view"
-sources = ["french-saint-pol-de-leon-6499-usuarium"]
+sources = ["french-saint-pol-de-leon-6499-usuarium", "french-b-duine-1906-breton-missals"]
 source_locus = "Catalogue title: Missale Leonense; Origin: Saint-Pol-de-Léon (FR); Age: 1526; Original title: Missale secundum usum insignis ecclesiae Leonensis; Shelfmark: Bibl. dioc. Quimper et Léon , XVI 4 MIS; Catalogue: Amiet , 0530"
-qualification = "Catalogue evidence only. Original title leaves, colophons, prayers, rubrics, calendar and Order of Mass have not been inspected. Neither a substantive recension nor a stage, normative approval, actual local reception, complete physical book or complete acquired liturgical text is established. Attribution to Saint-Pol-de-Léon is the catalogue's; the family label is a finding-aid grouping, not proof of actual local use. The catalogue also identifies a BnF copy, B-27804; that additional copy and the linked diocesan PDF were not acquired or inspected here."
+qualification = "Catalogue evidence only. Original title leaves, colophons, prayers, rubrics, calendar and Order of Mass have not been inspected. Neither a substantive recension nor a stage, normative approval, actual local reception, complete physical book or complete acquired liturgical text is established. Attribution to Saint-Pol-de-Léon is the catalogue's; the family label is a finding-aid grouping, not proof of actual local use. The catalogue also identifies a BnF copy, B-27804; that additional copy and the linked diocesan PDF were not acquired or inspected here. Batch 4 lane B: Duine 1906, p. 171 no. 63, reports the last-leaf printing statement (Paris, Nicolas Prévost, for Yves Quilleveré, 1526), the phrase 'prefateque ecclesie ritui adaptatum' and Order-of-Mass features."
 version_status = "witness-or-component-candidate-not-proven-recension"
 scope_disposition = "in-scope-original-book-or-historical-witness"
 date_role = "catalogue-attributed-printed-object-age"
@@ -35576,11 +35808,11 @@ remaining_work = "Batch 4 documents the approved 1891 Luçon proper of Masses (S
 [[coverage]]
 id = "french-soissons"
 title = "Soissons catalogue-attributed Mass books"
-status = "bounded-amiet-table-witness-census-documented"
+status = "bounded-original-stage-evidence-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-soissons-7549-usuarium", "french-soissons-7550-usuarium", "french-soissons-7113-usuarium"]
-candidate_ids = ["french-soissons-usuarium-7549", "french-soissons-usuarium-7550", "french-soissons-usuarium-7113"]
-remaining_work = "This covers only the assigned records under this raw origin label in the frozen 2026-10-20 USUARIUM Amiet-table selection. Catalogue attribution does not establish actual local reception, a complete historical witness census, a substantive recension, a stage or a complete book. Broader witnesses, original title leaves, rights, exact extents and textual comparison remain open."
+sources = ["french-soissons-7549-usuarium", "french-soissons-7550-usuarium", "french-soissons-7113-usuarium", "french-soissons-1745-google-original", "french-b-leclercq-1852-soissons", "french-b-ledouble-1880-soissons"]
+candidate_ids = ["french-soissons-usuarium-7549", "french-soissons-usuarium-7550", "french-soissons-usuarium-7113", "french-soissons-1687-roman-proprium-leclercq"]
+remaining_work = "The 1745 Fitz-James missal is documented from its original title and letter; a 1687 Roman Missal with Soissons proper is documented from description. Open: the 1516/1531 prints, the post-Tridentine Soissons missal, later printings and the 1852 Roman restoration mandement."
 
 [[coverage]]
 id = "french-arras"
@@ -35632,27 +35864,27 @@ id = "french-nimes"
 title = "Nîmes catalogue-attributed Mass books"
 status = "bounded-amiet-table-witness-census-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-nimes-7325-usuarium"]
+sources = ["french-nimes-7325-usuarium", "french-b-liturgie-romaine-1849", "french-b-episcopat-1907"]
 candidate_ids = ["french-nimes-usuarium-7325"]
-remaining_work = "This covers only the assigned records under this raw origin label in the frozen 2026-10-20 USUARIUM Amiet-table selection. Catalogue attribution does not establish actual local reception, a complete historical witness census, a substantive recension, a stage or a complete book. Broader witnesses, original title leaves, rights, exact extents and textual comparison remain open."
+remaining_work = "Provisional 1827 Larèche-liturgy state only. Open: inspection of the 1831 missal and its mandate, and the 1851 Roman replacement."
 
 [[coverage]]
 id = "french-saint-pol-de-leon"
 title = "Saint-Pol-de-Léon catalogue-attributed Mass books"
-status = "bounded-amiet-table-witness-census-documented"
+status = "bounded-scholarly-stage-evidence-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-saint-pol-de-leon-6499-usuarium"]
+sources = ["french-saint-pol-de-leon-6499-usuarium", "french-b-duine-1906-breton-missals", "french-b-liturgie-romaine-1849"]
 candidate_ids = ["french-saint-pol-de-leon-usuarium-6499"]
-remaining_work = "This covers only the assigned records under this raw origin label in the frozen 2026-10-20 USUARIUM Amiet-table selection. Catalogue attribution does not establish actual local reception, a complete historical witness census, a substantive recension, a stage or a complete book. Broader witnesses, original title leaves, rights, exact extents and textual comparison remain open."
+remaining_work = "1526 publication state documented from Duine 1906. Open: original colophon text, later Léon books and liturgy before the see's suppression."
 
 [[coverage]]
 id = "french-tarbes"
 title = "Tarbes catalogue-attributed Mass books"
 status = "bounded-amiet-table-witness-census-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-tarbes-7551-usuarium"]
+sources = ["french-tarbes-7551-usuarium", "french-b-episcopat-1907"]
 candidate_ids = ["french-tarbes-usuarium-7551"]
-remaining_work = "This covers only the assigned records under this raw origin label in the frozen 2026-10-20 USUARIUM Amiet-table selection. Catalogue attribution does not establish actual local reception, a complete historical witness census, a substantive recension, a stage or a complete book. Broader witnesses, original title leaves, rights, exact extents and textual comparison remain open."
+remaining_work = "No stage. Searched on 2026-10-21: Google Books feed ('missale tarbiense') and Europeana found no record; Numelyo 'Tarbiense': 0. Gallica is behind a Cloudflare challenge (HTTP 403) and archive.org/BVMM were unreachable from the lane. Any inspected Tarbes missal, including the catalogue's 1836 Missale Tarbiense. L'épiscopat français (p. 612) says ordinances of 24 September 1847, 2 February 1849 and 21 November 1866 made obligatory the Roman rite, which had been the diocese's rite before the Revolution; the 1849 survey dates the return to 1847."
 
 [[sources]]
 id = "french-rennes-7428-usuarium"
@@ -35935,6 +36167,18 @@ full_contents_examined = false
 rights_note = "Project-created bibliographic metadata with USUARIUM attribution; exact university HTML wrapper remains in scratch, without an affirmative repository redistribution grant."
 
 [[sources]]
+id = "french-b-mende-history-1859"
+title = "Origine et histoire abrégée de l'église de Mende (1859)"
+url = "https://books.google.com/books?id=7z0Zx4hrpCoC"
+type = "diocesan-history"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images PA194–195, PA228 viewed on 2026-10-21."
+limitations = "Secondary or periodical statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright eighteenth- to early-twentieth-century printed sources; page images consulted on Google Books and kept only in scratch; short phrases only."
+
+[[sources]]
 id = "french-sees-7467-usuarium"
 url = "https://usuarium.elte.hu/book/7467/view"
 type = "university-research-catalogue"
@@ -36003,6 +36247,30 @@ sha256 = "13b235ee4944830d7c54e47976761f46249c48d4abb1452169f545bd9b1594db"
 byte_count = 16649
 full_contents_examined = false
 rights_note = "Project-created bibliographic metadata with USUARIUM attribution; exact university HTML wrapper remains in scratch, without an affirmative repository redistribution grant."
+
+[[sources]]
+id = "french-b-hommey-1900-sees"
+title = "L. Hommey, Histoire générale ecclésiastique et civile du diocèse de Séez, vol. V (1900)"
+url = "https://books.google.com/books?id=ALdCAAAAYAAJ"
+type = "diocesan-history"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books pp. 55–56 and 408–410 viewed on 2026-10-21 (1742 missal; 1853 and 15 May 1864 Roman measures)."
+limitations = "Secondary statements only."
+full_contents_examined = false
+rights_note = "Out-of-copyright nineteenth/early-twentieth-century scholarship; page images consulted on Google Books and kept only in scratch; short title phrases only."
+
+[[sources]]
+id = "french-b-marais-beaudouin-1878-sees"
+title = "H. Marais and H. Beaudouin, Essai historique sur la cathédrale et le chapitre de Séez (1878)"
+url = "https://books.google.com/books?id=ds9LAAAAYAAJ"
+type = "diocesan-history"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books pp. 180–181, 217, 220 viewed on 2026-10-21 (Suarez's Roman adoption; decrees of 1608 and 1676; 1737 breviary mandement)."
+limitations = "Secondary statements only."
+full_contents_examined = false
+rights_note = "Out-of-copyright nineteenth/early-twentieth-century scholarship; page images consulted on Google Books and kept only in scratch; short title phrases only."
 
 [[sources]]
 id = "french-bazas-201-usuarium"
@@ -36089,6 +36357,18 @@ full_contents_examined = false
 rights_note = "Project-created bibliographic metadata with USUARIUM attribution; exact university HTML wrapper remains in scratch, without an affirmative repository redistribution grant."
 
 [[sources]]
+id = "french-b-allou-1875-meaux"
+title = "A. Allou, Chronique des évêques de Meaux (1875)"
+url = "https://books.google.com/books?id=xlIabNpPhw8C"
+type = "diocesan-history"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images PA72, PA80, PA96, PA118, PA173, PA182, PA198 viewed on 2026-10-21."
+limitations = "Secondary or printed-document statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright nineteenth-century scholarship; page images consulted on Google Books and kept only in scratch; short title phrases only."
+
+[[sources]]
 id = "french-therouanne-87-usuarium"
 url = "https://usuarium.elte.hu/book/87/view"
 type = "university-research-catalogue"
@@ -36129,6 +36409,18 @@ sha256 = "088c9d80a90e3e018a2a4b2acf2d7a3ae58e7c298c223d7f4e65d0afaa16bee9"
 byte_count = 16931
 full_contents_examined = false
 rights_note = "Project-created bibliographic metadata with USUARIUM attribution; exact university HTML wrapper remains in scratch, without an affirmative repository redistribution grant."
+
+[[sources]]
+id = "french-b-saint-omer-bibliography-1887"
+title = "Bibliographie historique de l'arrondissement de Saint-Omer (1887)"
+url = "https://books.google.com/books?id=lyPil4vfUA4C"
+type = "scholarly-descriptive-bibliography"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books pp. 77, 86–88 and 186–188 viewed on 2026-10-21 (Thérouanne missals 1516/1518; suppression 1553 and partition 29 June 1559; Saint-Omer liturgical books)."
+limitations = "Descriptive bibliography; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright nineteenth/early-twentieth-century scholarship; page images consulted on Google Books and kept only in scratch; short title phrases only."
 
 [[sources]]
 id = "french-avranches-6867-usuarium"
@@ -36215,6 +36507,30 @@ full_contents_examined = false
 rights_note = "Project-created bibliographic metadata with USUARIUM attribution; exact university HTML wrapper remains in scratch, without an affirmative repository redistribution grant."
 
 [[sources]]
+id = "french-b-bibliographie-noyonnaise"
+title = "Bibliographie noyonnaise"
+url = "https://books.google.com/books?id=0ho6AQAAMAAJ"
+type = "scholarly-descriptive-bibliography"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images PP31–PP34 viewed on 2026-10-21."
+limitations = "Secondary or printed-document statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright nineteenth-century scholarship; page images consulted on Google Books and kept only in scratch; short title phrases only."
+
+[[sources]]
+id = "french-b-ledouble-1880-soissons"
+title = "Ledouble, État religieux ancien et moderne des pays qui forment aujourd'hui le diocèse de Soissons (1880)"
+url = "https://books.google.com/books?id=3UUAAAAAMAAJ"
+type = "diocesan-history"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images PA120, PA383–PA385 viewed on 2026-10-21."
+limitations = "Secondary or printed-document statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright nineteenth-century scholarship; page images consulted on Google Books and kept only in scratch; short title phrases only."
+
+[[sources]]
 id = "french-frejus-5695-usuarium"
 url = "https://usuarium.elte.hu/book/5695/view"
 type = "university-research-catalogue"
@@ -36257,6 +36573,18 @@ full_contents_examined = false
 rights_note = "Project-created bibliographic metadata with USUARIUM attribution; exact university HTML wrapper remains in scratch, without an affirmative repository redistribution grant."
 
 [[sources]]
+id = "french-b-nouvelles-ecclesiastiques-1778"
+title = "Nouvelles ecclésiastiques, issue of 6 March 1778"
+url = "https://books.google.com/books?id=9UkTAAAAQAAJ"
+type = "contemporary-periodical"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images RA1-PA37, RA1-PA39 viewed on 2026-10-21."
+limitations = "Secondary or periodical statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright eighteenth- to early-twentieth-century printed sources; page images consulted on Google Books and kept only in scratch; short phrases only."
+
+[[sources]]
 id = "french-saintes-7657-usuarium"
 url = "https://usuarium.elte.hu/book/7657/view"
 type = "university-research-catalogue"
@@ -36292,9 +36620,9 @@ date = "1492-0493"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7428/view"
-sources = ["french-rennes-7428-usuarium"]
+sources = ["french-rennes-7428-usuarium", "french-b-duine-1906-breton-missals"]
 source_locus = "Original title: Missale Redonense; Origin: Rennes (FR); Genre: Missal (Mass); Age: 1492-0493; Shelfmark of library: BNF Paris, VELINS-201; Catalogue: Amiet, 818; USTC, 761389"
-qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability. The raw catalogue age is malformed and remains unresolved; no numeric chronology is assigned."
+qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability. The raw catalogue age is malformed and remains unresolved; no numeric chronology is assigned. Batch 4 lane B, re-identified by cold review: this holding (BnF Vélins 201) is the copy Duine 1906 describes as no. 10 (Google Books pp. 36–37), quoting a last-leaf colophon finished at Paris on 10 January 1492 for a missal corrected by order of Bishop Michel Guibé; it is the witness of stage french-dioceses-b-batch4:rennes-1492. The colophon year style is not stated, so the printing may fall in January 1493 by modern reckoning, which may explain the catalogue age '1492-0493'; no numeric chronology is assigned here."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date_role = "printed-witness-publication"
@@ -36310,9 +36638,9 @@ date = "1523"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7430/view"
-sources = ["french-rennes-7430-usuarium"]
+sources = ["french-rennes-7430-usuarium", "french-b-duine-1906-breton-missals"]
 source_locus = "Original title: Missale ad consuetudinem insignis ecclesie Redonensis; Origin: Rennes (FR); Genre: Missal (Mass); Age: 1523; Shelfmark of library: BNF Arsenal Paris, FOL-T-725; Catalogue: Amiet, 820"
-qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability."
+qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability. Batch 4 lane B: Duine 1906, p. 39 no. 12 (Arsenal 2742), reports correction by order of and approval by Bishop Yves Mahyeuc and added Masses; edition-level match assumed."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date_role = "printed-witness-publication"
@@ -36332,9 +36660,9 @@ date = "1531"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7431/view"
-sources = ["french-rennes-7431-usuarium"]
+sources = ["french-rennes-7431-usuarium", "french-b-duine-1906-breton-missals"]
 source_locus = "Original title: Missale ad usum insignis ecclesie Redonensis; Origin: Rennes (FR); Genre: Missal (Mass); Age: 1531; Catalogue: Amiet, 821; USTC, 111636"
-qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability."
+qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability. Batch 4 lane B: Duine 1906, pp. 41–43 no. 13, transcribes the 1531 title with added Masses and describes Order-of-Mass features."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date_role = "printed-witness-publication"
@@ -36354,9 +36682,9 @@ date = "1533"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7432/view"
-sources = ["french-rennes-7432-usuarium"]
+sources = ["french-rennes-7432-usuarium", "french-b-duine-1906-breton-missals"]
 source_locus = "Original title: Missale ad usum insignis ecclesie Redonensis; Origin: Rennes (FR); Genre: Missal (Mass); Age: 1533; Catalogue: Amiet, 822"
-qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability."
+qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability. Batch 4 lane B: Duine 1906, pp. 44–45 no. 14, treats the 1533 copy as a second issue of the 1531 edition, against Delisle's view that it is the same edition."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date_role = "printed-witness-publication"
@@ -36455,6 +36783,28 @@ chronology_start = 1831
 chronology_end = 1831
 chronology_kind = "printed-witness-publication"
 chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected"
+
+[[candidates]]
+id = "french-rennes-1588-duine-hennequin"
+family = "historic-rennes-use"
+title = "Missale insignis ecclesiae Rhedonensis, Rennes, Pierre Bretel, 1588 (Aymar Hennequin; Duine no. 16)"
+date = "1588"
+kind = "printed-edition-candidate"
+status = "scholarly-described-edition"
+route = "https://books.google.com/books?id=W5x3Cfx-_2QC&pg=PA46"
+sources = ["french-b-duine-1906-breton-missals"]
+source_locus = "Duine 1906 pp. 45–47, no. 16"
+qualification = "Edition outside the Amiet-table selection, known here from Duine's transcription of its title (restored and emended by order of Bishop Aymar Hennequin with chapter consent). Original not inspected."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-component-candidate-not-proven-recension"
+date_role = "scholar-reported-title-publication"
+acquisition_status = "original-book-not-acquired; scholarly-description-viewed"
+transcription_status = "no-new-verified-transcription"
+collation_status = "no-new-complete-collation"
+chronology_start = 1588
+chronology_end = 1588
+chronology_kind = "publication"
+chronology_certainty = "scholar-reported-title-year"
 
 [[candidates]]
 id = "french-amiens-usuarium-6882"
@@ -36797,9 +37147,9 @@ date = "1742"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7472/view"
-sources = ["french-sees-7472-usuarium"]
+sources = ["french-sees-7472-usuarium", "french-b-hommey-1900-sees"]
 source_locus = "Origin: Sées (FR); Genre: Missal (Mass); Age: 1742; Shelfmark of library: BNF Paris, B-234; Catalogue: Amiet, 1375"
-qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability."
+qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability. Batch 4 lane B: Hommey 1900, pp. 56 and 409, states that Néel de Christot promulgated the missal printed in 1742, completing Lallemant's liturgy."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date_role = "printed-witness-publication"
@@ -36907,9 +37257,9 @@ date = "1556"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7268/view"
-sources = ["french-meaux-7268-usuarium"]
+sources = ["french-meaux-7268-usuarium", "french-b-allou-1875-meaux"]
 source_locus = "Original title: Missale opus ecclesie Meldensis; Origin: Meaux (FR); Genre: Missal (Mass); Age: 1556; Catalogue: Amiet, 585; USTC, 154335"
-qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability."
+qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability. Batch 4 lane B: Allou 1875 p. 80 says Louis de Brézé issued a corrected new edition of L'Huillier's missal in 1556."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date_role = "printed-witness-publication"
@@ -36929,9 +37279,9 @@ date = "1836"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7269/view"
-sources = ["french-meaux-7269-usuarium"]
+sources = ["french-meaux-7269-usuarium", "french-b-allou-1875-meaux"]
 source_locus = "Original title: Missale Meldense; Origin: Meaux (FR); Genre: Missal (Mass); Age: 1836; Shelfmark of library: BNF Paris, B-826; Catalogue: Amiet, 589"
-qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability."
+qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability. Batch 4 lane B: Allou 1875 p. 182 says Pruneau's missal for Gallard's new liturgy appeared in 1836."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date_role = "printed-witness-publication"
@@ -36953,7 +37303,7 @@ status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7270/view"
 sources = ["french-meaux-7270-usuarium"]
 source_locus = "Original title: Missale Meldense; Origin: Meaux (FR); Genre: Missal (Mass); Age: 1845; Shelfmark of library: BL London, D-3366.h.2.; Catalogue: Amiet, 590"
-qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability."
+qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability. Batch 4 lane B: no 1845 edition was found in Allou's chronicle."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date_role = "printed-witness-publication"
@@ -36966,6 +37316,50 @@ chronology_kind = "printed-witness-publication"
 chronology_certainty = "catalogue-reported-year; original-title-leaf-uninspected"
 
 [[candidates]]
+id = "french-meaux-1642-allou-seguier"
+family = "historic-meaux-use"
+title = "Missale Meldense, 1642 (Dominique Séguier)"
+date = "1642"
+kind = "printed-edition-candidate"
+status = "scholarly-described-edition"
+route = "https://books.google.com/books?id=xlIabNpPhw8C&pg=PA96"
+sources = ["french-b-allou-1875-meaux"]
+source_locus = "Allou 1875 p. 96"
+qualification = "Edition outside the Amiet-table selection, recorded by Allou; catalogue records (Google Books metadata) give the title 'ad formam sacrosancti concilii Tridentini restitutum, authoritate … Dominici Seguier … editum'. Original not inspected."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-component-candidate-not-proven-recension"
+date_role = "scholar-reported-publication"
+acquisition_status = "original-book-not-acquired; scholarly-description-viewed"
+transcription_status = "no-new-verified-transcription"
+collation_status = "no-new-complete-collation"
+chronology_start = 1642
+chronology_end = 1642
+chronology_kind = "publication"
+chronology_certainty = "scholar-reported-year"
+
+[[candidates]]
+id = "french-meaux-1709-allou-bissy"
+family = "historic-meaux-use"
+title = "Missale sanctae ecclesiae Meldensis, 1709 (Henri de Thiard de Bissy)"
+date = "1709"
+kind = "printed-edition-candidate"
+status = "scholarly-described-edition"
+route = "https://books.google.com/books?id=xlIabNpPhw8C&pg=PA118"
+sources = ["french-b-allou-1875-meaux"]
+source_locus = "Allou 1875 p. 118"
+qualification = "Edition outside the Amiet-table selection, recorded by Allou; Europeana lists a Gallica copy (bpt6k56983347) that was unreachable (Cloudflare 403). Original not inspected."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-component-candidate-not-proven-recension"
+date_role = "scholar-reported-publication"
+acquisition_status = "original-book-not-acquired; scholarly-description-viewed"
+transcription_status = "no-new-verified-transcription"
+collation_status = "no-new-complete-collation"
+chronology_start = 1709
+chronology_end = 1709
+chronology_kind = "publication"
+chronology_certainty = "scholar-reported-year"
+
+[[candidates]]
 id = "french-therouanne-usuarium-87"
 family = "historic-therouanne-use"
 title = "Missale ad usum Morinensis ecclesiae ǀ Missale secundum usum Morinensis ecclesiae"
@@ -36975,7 +37369,7 @@ status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/87/view"
 sources = ["french-therouanne-87-usuarium"]
 source_locus = "Original title: Missale ad usum Morinensis ecclesiae ǀ Missale secundum usum Morinensis ecclesiae; Origin: Thérouanne (FR); Genre: Missal (Mass); Age: 1491; Printer: Du Pré, Ioannes I. (Paris, 1481-1504); Shelfmark of library: SUB Göttingen, H.E.Rit. I, 7420; Catalogue: Amiet, 649 C"
-qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability."
+qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability. Batch 4 lane B: no 1491 Thérouanne missal was found in the Saint-Omer bibliography (in-volume search '1491': 0 hits) or among Weale's Morinensis entries; Weale lists a 1491 Arras missal. Attribution to Thérouanne should be checked."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date_role = "printed-witness-publication"
@@ -36995,9 +37389,9 @@ date = "1516"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7308/view"
-sources = ["french-therouanne-7308-usuarium"]
+sources = ["french-therouanne-7308-usuarium", "french-b-saint-omer-bibliography-1887"]
 source_locus = "Original title: Missale ad usum insignis ecclesie Morinensis; Origin: Thérouanne (FR); Genre: Missal (Mass); Age: 1516; Shelfmark of library: BM St. Omer, 74 or 5838; Catalogue: Amiet, 650; CCFR Digit., BM St. Omer 74 or 5838"
-qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability."
+qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability. Batch 4 lane B: Bibliographie historique de l'arrondissement de Saint-Omer (1887), pp. 187–188 no. 1083, transcribes the title and reports (in French, not as a transcription) the final note and printer's device (Lagache of Arras; Martin Morin, Rouen; 12 November 1516)."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date_role = "printed-witness-publication"
@@ -37017,9 +37411,9 @@ date = "1518"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7309/view"
-sources = ["french-therouanne-7309-usuarium"]
+sources = ["french-therouanne-7309-usuarium", "french-b-saint-omer-bibliography-1887"]
 source_locus = "Original title: Missale ad usum insignis ecclesie Morinensis; Origin: Thérouanne (FR); Genre: Missal (Mass); Age: 1518; Shelfmark of library: BM Douai, I-16-1518-1-7; Catalogue: Amiet, 651; CCFR Digit., BM Douai I-16-1518-1-7"
-qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability."
+qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability. Batch 4 lane B: same bibliography, p. 188 no. 1083 bis, transcribes the title (correction, sequences placed, added Masses) and colophon (Paris, Nicolas de Pratis, 11 September 1518)."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date_role = "printed-witness-publication"
@@ -37149,9 +37543,9 @@ date = "1770"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7328/view"
-sources = ["french-noyon-7328-usuarium"]
+sources = ["french-noyon-7328-usuarium", "french-b-bibliographie-noyonnaise"]
 source_locus = "Original title: Missale Noviomense; Origin: Noyon (FR); Genre: Missal (Mass); Age: 1770; Shelfmark of library: BNF Paris, B-50064; Catalogue: Amiet, 684"
-qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability."
+qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability. Batch 4 lane B: the Bibliographie noyonnaise records the Broglie missal's title without a year, and lay books of 1774 and 1777 that follow it."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date_role = "printed-witness-publication"
@@ -37215,9 +37609,9 @@ date = "1776"
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7439/view"
-sources = ["french-rieux-7439-usuarium"]
+sources = ["french-rieux-7439-usuarium", "french-b-nouvelles-ecclesiastiques-1778"]
 source_locus = "Original title: Missale Rivense; Origin: Rieux (FR); Genre: Missal (Mass); Age: 1776; Catalogue: Amiet, 839"
-qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability."
+qualification = "Individually identified bibliographic witness; no original title leaf, prayer, rubric, calendar or Order of Mass inspected. Printing identity does not establish a new recension, local approval, reception or whole-book availability. Batch 4 lane B: the Nouvelles ecclésiastiques of 6 March 1778 report Bishop de Lastic's adoption of the Paris breviary and missal in place of the Roman; this 1776 entry is not named there."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-revision-candidate-not-yet-collated"
 date_role = "printed-witness-publication"
@@ -37276,11 +37670,11 @@ chronology_certainty = "approximate-catalogue-attribution; exact-year-unverified
 [[coverage]]
 id = "french-rennes"
 title = "Rennes local Mass-book witnesses"
-status = "selected-witness-census-documented"
+status = "bounded-scholarly-stage-evidence-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-rennes-7428-usuarium", "french-rennes-7430-usuarium", "french-rennes-7431-usuarium", "french-rennes-7432-usuarium", "french-rennes-7433-usuarium", "french-rennes-7434-usuarium", "french-rennes-7435-usuarium", "french-rennes-7436-usuarium"]
-candidate_ids = ["french-rennes-usuarium-7428", "french-rennes-usuarium-7430", "french-rennes-usuarium-7431", "french-rennes-usuarium-7432", "french-rennes-usuarium-7433", "french-rennes-usuarium-7434", "french-rennes-usuarium-7435", "french-rennes-usuarium-7436"]
-remaining_work = "Bounded worker 3 slice of the 2026-10-20 Amiet-table census: 7428, 7430, 7431, 7432, 7433, 7434, 7435, 7436. This enumerates individually inspected catalogue identities only; broader manuscript and printing coverage, exact originals, dating, rights, reception and full-text comparison remain open. Records 7437 and 7438 are withheld because their Rennes origin conflicts with Remensis titles."
+sources = ["french-rennes-7428-usuarium", "french-rennes-7430-usuarium", "french-rennes-7431-usuarium", "french-rennes-7432-usuarium", "french-rennes-7433-usuarium", "french-rennes-7434-usuarium", "french-rennes-7435-usuarium", "french-rennes-7436-usuarium", "french-b-duine-1906-breton-missals", "french-b-liturgie-romaine-1849"]
+candidate_ids = ["french-rennes-usuarium-7428", "french-rennes-usuarium-7430", "french-rennes-usuarium-7431", "french-rennes-usuarium-7432", "french-rennes-usuarium-7433", "french-rennes-usuarium-7434", "french-rennes-usuarium-7435", "french-rennes-usuarium-7436", "french-rennes-1588-duine-hennequin"]
+remaining_work = "1492, 1523, 1531 and 1588 publication states documented from Duine 1906. Open: originals, the eighteenth-century missals, the 1780 cathedral-only Tours liturgy, and the Roman adoption (1846 vs 1848). Records 7437 and 7438 remain withheld from this route because their Rennes origin conflicts with Remensis titles (decision carried forward from the earlier census slice)."
 
 [[coverage]]
 id = "french-amiens"
@@ -37296,18 +37690,18 @@ id = "french-mende"
 title = "Mende local Mass-book witnesses"
 status = "selected-witness-census-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-mende-749-usuarium", "french-mende-7282-usuarium", "french-mende-7283-usuarium", "french-mende-7284-usuarium", "french-mende-7285-usuarium"]
+sources = ["french-mende-749-usuarium", "french-mende-7282-usuarium", "french-mende-7283-usuarium", "french-mende-7284-usuarium", "french-mende-7285-usuarium", "french-b-mende-history-1859", "french-b-episcopat-1907"]
 candidate_ids = ["french-mende-usuarium-749", "french-mende-usuarium-7282", "french-mende-usuarium-7283", "french-mende-usuarium-7284", "french-mende-usuarium-7285"]
-remaining_work = "Bounded worker 3 slice of the 2026-10-20 Amiet-table census: 749, 7282, 7283, 7284, 7285. This enumerates individually inspected catalogue identities only; broader manuscript and printing coverage, exact originals, dating, rights, reception and full-text comparison remain open."
+remaining_work = "No stage. Searched on 2026-10-21: Google Books feed ('missale mimatense', 'missale mimatense Choiseul'), Europeana and Numelyo found no full-view or reachable original. Gallica is behind a Cloudflare challenge (HTTP 403) and archive.org/BVMM were unreachable from the lane. Any inspected Mende missal (1530, 1764, 1766, 1825, 1841). The 1859 Mende history says Bishop de Choiseul introduced the Paris liturgy 'vers l'an 1768' but gives his death as 7 July 1767 on the same page (p. 195); the 1849 survey lists Mende as Parisian; L'épiscopat français (pp. 353–354) dates the Roman adoption to 1860 after synods of 1853–1855, and the 1859 history (p. 228) says the 1850 Albi provincial council prescribed the return."
 
 [[coverage]]
 id = "french-sees"
 title = "Sées local Mass-book witnesses"
-status = "selected-witness-census-documented"
+status = "bounded-scholarly-stage-evidence-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-sees-7467-usuarium", "french-sees-7468-usuarium", "french-sees-7471-usuarium", "french-sees-7472-usuarium", "french-sees-7474-usuarium"]
+sources = ["french-sees-7467-usuarium", "french-sees-7468-usuarium", "french-sees-7471-usuarium", "french-sees-7472-usuarium", "french-sees-7474-usuarium", "french-b-hommey-1900-sees", "french-b-marais-beaudouin-1878-sees", "french-b-liturgie-romaine-1849"]
 candidate_ids = ["french-sees-usuarium-7467", "french-sees-usuarium-7468", "french-sees-usuarium-7471", "french-sees-usuarium-7472", "french-sees-usuarium-7474"]
-remaining_work = "Bounded worker 3 slice of the 2026-10-20 Amiet-table census: 7467, 7468, 7471, 7472, 7474. This enumerates individually inspected catalogue identities only; broader manuscript and printing coverage, exact originals, dating, rights, reception and full-text comparison remain open."
+remaining_work = "1742 Néel de Christot missal documented from Hommey. Open: medieval prints, Suarez's Roman adoption (decrees 1608/1676), the 1841 missal and the 1864 ordinance."
 
 [[coverage]]
 id = "french-bazas"
@@ -37321,20 +37715,20 @@ remaining_work = "Searched 2026-10-21 without a supportable stage: the complete 
 [[coverage]]
 id = "french-meaux"
 title = "Meaux local Mass-book witnesses"
-status = "selected-witness-census-documented"
+status = "bounded-scholarly-stage-evidence-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-meaux-7268-usuarium", "french-meaux-7269-usuarium", "french-meaux-7270-usuarium"]
-candidate_ids = ["french-meaux-usuarium-7268", "french-meaux-usuarium-7269", "french-meaux-usuarium-7270"]
-remaining_work = "Bounded worker 3 slice of the 2026-10-20 Amiet-table census: 7268, 7269, 7270. This enumerates individually inspected catalogue identities only; broader manuscript and printing coverage, exact originals, dating, rights, reception and full-text comparison remain open."
+sources = ["french-meaux-7268-usuarium", "french-meaux-7269-usuarium", "french-meaux-7270-usuarium", "french-b-allou-1875-meaux", "french-b-liturgie-romaine-1849"]
+candidate_ids = ["french-meaux-usuarium-7268", "french-meaux-usuarium-7269", "french-meaux-usuarium-7270", "french-meaux-1642-allou-seguier", "french-meaux-1709-allou-bissy"]
+remaining_work = "1556, 1709 and 1836 states documented and 1642 provisional, from Allou's chronicle. Open: originals, 1492 and 1518, the 1845 reissue, and the 1858 Roman adoption mandate (22 August 1858)."
 
 [[coverage]]
 id = "french-therouanne"
 title = "Thérouanne local Mass-book witnesses"
-status = "selected-witness-census-documented"
+status = "bounded-scholarly-stage-evidence-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-therouanne-87-usuarium", "french-therouanne-7308-usuarium", "french-therouanne-7309-usuarium"]
+sources = ["french-therouanne-87-usuarium", "french-therouanne-7308-usuarium", "french-therouanne-7309-usuarium", "french-b-saint-omer-bibliography-1887"]
 candidate_ids = ["french-therouanne-usuarium-87", "french-therouanne-usuarium-7308", "french-therouanne-usuarium-7309"]
-remaining_work = "Bounded worker 3 slice of the 2026-10-20 Amiet-table census: 87, 7308, 7309. This enumerates individually inspected catalogue identities only; broader manuscript and printing coverage, exact originals, dating, rights, reception and full-text comparison remain open."
+remaining_work = "1516 and 1518 publication states documented from the Saint-Omer bibliography. Open: originals, the doubtful 1491 attribution, Weale's 1523 edition. The see was suppressed after 1553 and partitioned 29 June 1559."
 
 [[coverage]]
 id = "french-avranches"
@@ -37359,9 +37753,9 @@ id = "french-noyon"
 title = "Noyon local Mass-book witnesses"
 status = "selected-witness-census-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-noyon-7327-usuarium", "french-noyon-7328-usuarium"]
+sources = ["french-noyon-7327-usuarium", "french-noyon-7328-usuarium", "french-b-bibliographie-noyonnaise", "french-b-ledouble-1880-soissons", "french-b-liturgie-romaine-1849"]
 candidate_ids = ["french-noyon-usuarium-7327", "french-noyon-usuarium-7328"]
-remaining_work = "Bounded worker 3 slice of the 2026-10-20 Amiet-table census: 7327, 7328. This enumerates individually inspected catalogue identities only; broader manuscript and printing coverage, exact originals, dating, rights, reception and full-text comparison remain open."
+remaining_work = "Provisional Broglie-missal state only (attested by 1774). Gallica holds the 1506 missal (bpt6k1501962w) but returned 403 on 2026-10-21. Open: any inspected Noyon missal, the 1583–1764 Roman phase, Bourzac's 1764 books and the 1857 Roman adoption."
 
 [[coverage]]
 id = "french-frejus"
@@ -37386,9 +37780,9 @@ id = "french-rieux"
 title = "Rieux local Mass-book witnesses"
 status = "selected-witness-census-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-rieux-7439-usuarium"]
+sources = ["french-rieux-7439-usuarium", "french-b-nouvelles-ecclesiastiques-1778"]
 candidate_ids = ["french-rieux-usuarium-7439"]
-remaining_work = "Bounded worker 3 slice of the 2026-10-20 Amiet-table census: 7439. This enumerates individually inspected catalogue identities only; broader manuscript and printing coverage, exact originals, dating, rights, reception and full-text comparison remain open."
+remaining_work = "Provisional reported adoption of the Paris books (1778 report). Open: inspection of the 1776 Missale Rivense and its mandate."
 
 [[coverage]]
 id = "french-saintes"
@@ -37397,16 +37791,16 @@ status = "selected-witness-census-documented"
 scope = "western-original-source-trajectory"
 sources = ["french-saintes-7657-usuarium"]
 candidate_ids = ["french-saintes-usuarium-7657"]
-remaining_work = "Bounded worker 3 slice of the 2026-10-20 Amiet-table census: 7657. This enumerates individually inspected catalogue identities only; broader manuscript and printing coverage, exact originals, dating, rights, reception and full-text comparison remain open."
+remaining_work = "No stage. Searched on 2026-10-21: Google Books feed ('intitle:missale intitle:santonense', 'intitle:missale intitle:xanctonense', full-view 'missale xanctonense', 'missale santonense 1491', 'missel de Saintes liturgie'), Europeana ('missale AND santonense/xanctonense': 0; 'santonensis': unrelated manuscripts), Numelyo ('Santonense': 0) found no original or description. Gallica is behind a Cloudflare challenge (HTTP 403) and archive.org/BVMM were unreachable from the lane. Any inspected Saintes missal, including the 1491 Missale Xanctonense; no edition-specific description was found (Weale 1886 in-volume searches for 'Xanctonense', 'Xanctonensis' and 'Santonensis' returned 0 hits). Later Saintes missals, the see's suppression in 1790/1801 and the books used in its territory (La Rochelle) are also open."
 
 [[coverage]]
 id = "french-tarentaise"
 title = "Tarentaise local Mass-book witnesses"
 status = "selected-witness-census-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-tarentaise-7552-usuarium"]
+sources = ["french-tarentaise-7552-usuarium", "french-b-episcopat-1907"]
 candidate_ids = ["french-tarentaise-usuarium-7552"]
-remaining_work = "Bounded worker 3 slice of the 2026-10-20 Amiet-table census: 7552. This enumerates individually inspected catalogue identities only; broader manuscript and printing coverage, exact originals, dating, rights, reception and full-text comparison remain open."
+remaining_work = "No stage. Searched on 2026-10-21: Google Books feed ('missale tarentasiense', 'missale tharentasie'), Europeana ('missale AND tarentasiense/tharentasie': 0), Numelyo ('Tarentasiense': 0), e-rara ('missale' list) found nothing. Gallica is behind a Cloudflare challenge (HTTP 403) and archive.org/BVMM were unreachable from the lane. Any inspected Tarentaise missal, including the 1486 Missale ad usum Tharentasie; no scholarly description was found. L'épiscopat français (p. 616) records only the restoration of the see in 1825."
 
 [[sources]]
 id = "french-toul-7605-usuarium"
@@ -37633,6 +38027,30 @@ full_contents_examined = false
 rights_note = "Project-created bibliographic metadata only, attributed to USUARIUM; exact university HTML wrapper remains scratch-only because no affirmative redistribution basis was established."
 
 [[sources]]
+id = "french-toulouse-1490-rosalis-original"
+title = "Missale ad usum sancti Stephani Tolosae 1490, BM Toulouse Inc. Toulouse 106, Rosalis original images"
+url = "https://rosalis.bibliotheque.toulouse.fr/ark:/12148/bd6t5328010m"
+type = "library-digital-facsimile"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Rosalis IIIF manifest acquired; canvas 7 (letter dated 24 July 1490), canvas 613 (colophon, Kleblat, 24 July 1490) and canvas 20 (November calendar) viewed on 2026-10-21."
+limitations = "Three leaves read; no Mass-text collation; copy completeness unestablished."
+full_contents_examined = false
+rights_note = "Pre-1800 printed book; page images consulted on the provider site and kept only as scratch research copies; no image or text is tracked or proposed for publication."
+
+[[sources]]
+id = "french-toulouse-1774-google-original"
+title = "Missale Tolosanum 1774, École Sainte-Geneviève copy, Google Books original images"
+url = "https://books.google.com/books?id=rZCkXZ7X0VQC"
+type = "library-digital-facsimile"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Title PA1, complete pastoral letter PA3–PA9 (dated 29 October 1772) and Monitum RA1-PP14 viewed on 2026-10-21."
+limitations = "Prefatory matter only; no Mass formulary or Canon page inspected; no collation."
+full_contents_examined = false
+rights_note = "Pre-1800 printed book; page images consulted on the provider site and kept only as scratch research copies; no image or text is tracked or proposed for publication."
+
+[[sources]]
 id = "french-tours-7610-usuarium"
 url = "https://usuarium.elte.hu/book/7610/view"
 type = "university-research-catalogue"
@@ -37701,6 +38119,18 @@ sha256 = "fcb785bc93c510f9d22f2e1ece4991d55fce97d465a739bbb82d6fb4fefb3a78"
 byte_count = 17191
 full_contents_examined = false
 rights_note = "Project-created bibliographic metadata only, attributed to USUARIUM; exact university HTML wrapper remains scratch-only because no affirmative redistribution basis was established."
+
+[[sources]]
+id = "french-b-touraine-bulletin-1926"
+title = "Bulletin trimestriel de la Société archéologique de Touraine (1926)"
+url = "https://books.google.com/books?id=4jFMAAAAMAAJ"
+type = "diocesan-history"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images RA2-PA60 viewed on 2026-10-21."
+limitations = "Secondary or periodical statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright eighteenth- to early-twentieth-century printed sources; page images consulted on Google Books and kept only in scratch; short phrases only."
 
 [[sources]]
 id = "french-tours-7614-usuarium"
@@ -37787,6 +38217,30 @@ full_contents_examined = false
 rights_note = "Project-created bibliographic metadata only, attributed to USUARIUM; exact university HTML wrapper remains scratch-only because no affirmative redistribution basis was established."
 
 [[sources]]
+id = "french-b-petite-bibliotheque-verdunoise"
+title = "Petite bibliothèque verdunoise (bibliography of Nicolas Psaulme)"
+url = "https://books.google.com/books?id=E9Sh6U-pky4C"
+type = "scholarly-descriptive-bibliography"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images PA150–PA153 viewed on 2026-10-21."
+limitations = "Secondary or printed-document statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright nineteenth-century scholarship; page images consulted on Google Books and kept only in scratch; short title phrases only."
+
+[[sources]]
+id = "french-b-pouille-verdun-1888"
+title = "N. Robinet, Pouillé du diocèse de Verdun, vol. I (1888)"
+url = "https://books.google.com/books?id=wXJJAAAAYAAJ"
+type = "diocesan-history"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images PA33, PA37, PA44, PA55 viewed on 2026-10-21."
+limitations = "Secondary or printed-document statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright nineteenth-century scholarship; page images consulted on Google Books and kept only in scratch; short title phrases only."
+
+[[sources]]
 id = "french-lisieux-7226-usuarium"
 url = "https://usuarium.elte.hu/book/7226/view"
 type = "university-research-catalogue"
@@ -37869,6 +38323,30 @@ sha256 = "08b2b0eca9e8ea9274a9455d650b26a9cbd2785e03de8e1c385266c9fe20e313"
 byte_count = 16395
 full_contents_examined = false
 rights_note = "Project-created bibliographic metadata only, attributed to USUARIUM; exact university HTML wrapper remains scratch-only because no affirmative redistribution basis was established."
+
+[[sources]]
+id = "french-b-daux-1882-montauban"
+title = "C. Daux, Histoire de l'église de Montauban (1882)"
+url = "https://books.google.com/books?id=uMuJPbVAZ0cC"
+type = "diocesan-history"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images RA5-PA35–PA37, RA8-PA63 viewed on 2026-10-21."
+limitations = "Secondary or periodical statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright eighteenth- to early-twentieth-century printed sources; page images consulted on Google Books and kept only in scratch; short phrases only."
+
+[[sources]]
+id = "french-b-forestie-1898-montauban"
+title = "E. Forestié, Histoire de l'imprimerie et de la librairie à Montauban (1898)"
+url = "https://books.google.com/books?id=ky9-Spl_iZ4C"
+type = "printing-bibliography"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "Google Books page images PA352 viewed on 2026-10-21."
+limitations = "Secondary or periodical statements; originals not viewed."
+full_contents_examined = false
+rights_note = "Out-of-copyright eighteenth- to early-twentieth-century printed sources; page images consulted on Google Books and kept only in scratch; short phrases only."
 
 [[sources]]
 id = "french-vannes-7631-usuarium"
@@ -38389,7 +38867,7 @@ status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7569/view"
 sources = ["french-toulouse-7569-usuarium"]
 source_locus = "USUARIUM individual book metadata HTML lines 155–222; origin, age, original-title/genre and bibliography fields."
-qualification = "Toulouse missal catalogue record, age 1773; Amiet , 1543. Original title attributed by USUARIUM: Missale Tolosanum. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings."
+qualification = "Toulouse missal catalogue record, age 1773; Amiet , 1543. Original title attributed by USUARIUM: Missale Tolosanum. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings. Batch 4 lane B: the inspected 1774 copy's pastoral letter is dated 29 October 1772; whether this 1773 entry is a distinct issue remains unresolved."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 acquisition_status = "source-metadata-acquired-original-book-not-certified"
@@ -38411,7 +38889,7 @@ status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7570/view"
 sources = ["french-toulouse-7570-usuarium"]
 source_locus = "USUARIUM individual book metadata HTML lines 155–221; origin, age, original-title/genre and bibliography fields."
-qualification = "Toulouse missal catalogue record, age 1774; Amiet , 1544. Original title attributed by USUARIUM: Missale Tolosanum. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings."
+qualification = "Toulouse missal catalogue record, age 1774; Amiet , 1544. Original title attributed by USUARIUM: Missale Tolosanum. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings. Batch 4 lane B: an inspected 1774 copy (french-toulouse-1774-google-ste-genevieve) bears the same title year; probable same edition, copy identity not asserted."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 acquisition_status = "source-metadata-acquired-original-book-not-certified"
@@ -38443,6 +38921,50 @@ chronology_start = 1832
 chronology_end = 1832
 chronology_kind = "catalogue-attributed-printed-object-age"
 chronology_certainty = "catalogue-attribution"
+
+[[candidates]]
+id = "french-toulouse-1490-rosalis-inc106"
+family = "historic-toulouse-use"
+title = "Missale ad usum sancti Stephani Tolosae, Toulouse, Stephanus Kleblat, 1490 (BM Toulouse Inc. Toulouse 106)"
+date = "1490-07-24"
+kind = "printed-edition-candidate"
+status = "bounded-original-leaf-inspection"
+route = "https://rosalis.bibliotheque.toulouse.fr/ark:/12148/bd6t5328010m"
+sources = ["french-toulouse-1490-rosalis-original"]
+source_locus = "Rosalis canvas 7 (letter), 613 (colophon), 20 (calendar)"
+qualification = "Exact Toulouse copy outside the Amiet-table selection, which begins at 1501. The colophon and the prefatory chapter letter both read 24 July 1490 and name the printer Stephanus Kleblat. Only three leaves were read; no Mass text is collated and no identity with other copies is asserted."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-component-candidate-not-proven-recension"
+date_role = "colophon-dated-publication"
+acquisition_status = "iiif-manifest-and-selected-leaf-images-acquired-scratch-only"
+transcription_status = "no-new-verified-transcription"
+collation_status = "no-new-complete-collation"
+chronology_start = 1490
+chronology_end = 1490
+chronology_kind = "publication"
+chronology_certainty = "direct-colophon-inspection"
+
+[[candidates]]
+id = "french-toulouse-1774-google-ste-genevieve"
+family = "historic-toulouse-use"
+title = "Missale Tolosanum, Toulouse 1774 (Loménie de Brienne), Google Books rZCkXZ7X0VQC"
+date = "1774"
+kind = "printed-edition-candidate"
+status = "bounded-original-leaf-inspection"
+route = "https://books.google.com/books?id=rZCkXZ7X0VQC"
+sources = ["french-toulouse-1774-google-original"]
+source_locus = "Google Books PA1 title; PA3–PA9 letter; RA1-PP14 Monitum"
+qualification = "Exact copy stamped École Sainte-Geneviève. Its title year 1774 matches the catalogue entry french-toulouse-usuarium-7570 (Amiet 1544), which names no holding; the two are probably the same edition, but copy identity is not asserted. The letter is dated 29 October 1772; its relation to the catalogue's 1773 entry (Amiet 1543) is unresolved."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-component-candidate-not-proven-recension"
+date_role = "title-dated-publication"
+acquisition_status = "selected-page-images-acquired-scratch-only"
+transcription_status = "no-new-verified-transcription"
+collation_status = "no-new-complete-collation"
+chronology_start = 1774
+chronology_end = 1774
+chronology_kind = "publication"
+chronology_certainty = "direct-title-page-inspection"
 
 [[candidates]]
 id = "french-tours-usuarium-7610"
@@ -38585,9 +39107,9 @@ date_role = "catalogue age attributed to a printed witness; imprint, approval an
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7639/view"
-sources = ["french-verdun-7639-usuarium"]
+sources = ["french-verdun-7639-usuarium", "french-b-petite-bibliotheque-verdunoise"]
 source_locus = "USUARIUM individual book metadata HTML lines 155–221; origin, age, original-title/genre and bibliography fields."
-qualification = "Verdun missal catalogue record, age 1509; Amiet , 1639. Original title attributed by USUARIUM: Missale Virdunense. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings."
+qualification = "Verdun missal catalogue record, age 1509; Amiet , 1639. Original title attributed by USUARIUM: Missale Virdunense. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings. Batch 4 lane B: Petite bibliothèque verdunoise pp. 152–153 describes the 1509 Hopyl missal commissioned by the chapter sede vacante."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 acquisition_status = "source-metadata-acquired-original-book-not-certified"
@@ -38607,9 +39129,9 @@ date_role = "catalogue age attributed to a printed witness; imprint, approval an
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7640/view"
-sources = ["french-verdun-7640-usuarium"]
+sources = ["french-verdun-7640-usuarium", "french-b-petite-bibliotheque-verdunoise", "french-b-pouille-verdun-1888"]
 source_locus = "USUARIUM individual book metadata HTML lines 155–226; origin, age, original-title/genre and bibliography fields."
-qualification = "Verdun missal catalogue record, age 1554; Amiet , 1640. Named holding: BNF Paris , VELINS-209. Original title attributed by USUARIUM: Missale secundum usum, ritum et consuetudinem insignis ecclesie et diocesis Virdunensis. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings."
+qualification = "Verdun missal catalogue record, age 1554; Amiet , 1640. Named holding: BNF Paris , VELINS-209. Original title attributed by USUARIUM: Missale secundum usum, ritum et consuetudinem insignis ecclesie et diocesis Virdunensis. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings. Batch 4 lane B: Petite bibliothèque verdunoise pp. 150–151 transcribes Psaulme's 1554 title and divisions; the Pouillé (p. 37) dates a reprint to 1557."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 acquisition_status = "source-metadata-acquired-original-book-not-certified"
@@ -38629,9 +39151,9 @@ date_role = "catalogue age attributed to a printed witness; imprint, approval an
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7641/view"
-sources = ["french-verdun-7641-usuarium"]
+sources = ["french-verdun-7641-usuarium", "french-b-pouille-verdun-1888"]
 source_locus = "USUARIUM individual book metadata HTML lines 155–221; origin, age, original-title/genre and bibliography fields."
-qualification = "Verdun missal catalogue record, age 1699; Amiet , 1642; CCFR Digit.. Original title attributed by USUARIUM: Missale Virdunense. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings."
+qualification = "Verdun missal catalogue record, age 1699; Amiet , 1642; CCFR Digit.. Original title attributed by USUARIUM: Missale Virdunense. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings. Batch 4 lane B: the Pouillé's list of Béthune's liturgical publications (p. 44) names no missal; this 1699 entry is unconfirmed."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 acquisition_status = "source-metadata-acquired-original-book-not-certified"
@@ -38761,9 +39283,9 @@ date_role = "catalogue age attributed to a printed witness; imprint, approval an
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7304/view"
-sources = ["french-montauban-7304-usuarium"]
+sources = ["french-montauban-7304-usuarium", "french-b-daux-1882-montauban"]
 source_locus = "USUARIUM individual book metadata HTML lines 155–225; origin, age, original-title/genre and bibliography fields."
-qualification = "Montauban missal catalogue record, age 1773; Amiet , 647. Catalogue note: another copy in BM Toulouse (Res. A XVIII 132, https://ccfr.bnf.fr/portailccfr/ark:/06871/0014975021). Original title attributed by USUARIUM: Missale Montalbanense. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings."
+qualification = "Montauban missal catalogue record, age 1773; Amiet , 647. Catalogue note: another copy in BM Toulouse (Res. A XVIII 132, https://ccfr.bnf.fr/portailccfr/ark:/06871/0014975021). Original title attributed by USUARIUM: Missale Montalbanense. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings. Batch 4 lane B: Daux (1882) dates the mandement ordering the new Montauban breviary and missal to 24 February 1779, later than this catalogue year; unresolved."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 acquisition_status = "source-metadata-acquired-original-book-not-certified"
@@ -38805,9 +39327,9 @@ date_role = "catalogue age attributed to a printed witness; imprint, approval an
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/7307/view"
-sources = ["french-montauban-7307-usuarium"]
+sources = ["french-montauban-7307-usuarium", "french-b-forestie-1898-montauban"]
 source_locus = "USUARIUM individual book metadata HTML lines 155–221; origin, age, original-title/genre and bibliography fields."
-qualification = "Montauban missal catalogue record, age 1830; Amiet , 648 B. Original title attributed by USUARIUM: Missale Montalbanense. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings."
+qualification = "Montauban missal catalogue record, age 1830; Amiet , 648 B. Original title attributed by USUARIUM: Missale Montalbanense. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings. Batch 4 lane B: Forestié (1898) p. 352 lists a Missale Montalbanense with Missae pro defunctis, Crosilhes, 1827; the relation to this 1830 entry is unresolved."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 acquisition_status = "source-metadata-acquired-original-book-not-certified"
@@ -38849,9 +39371,9 @@ date_role = "catalogue age attributed to a printed witness; imprint, approval an
 kind = "printed-edition-candidate"
 status = "checked-catalogue-metadata"
 route = "https://usuarium.elte.hu/book/860/view"
-sources = ["french-vannes-860-usuarium", "french-vannes-5824-usuarium"]
+sources = ["french-vannes-860-usuarium", "french-vannes-5824-usuarium", "french-b-duine-1906-breton-missals"]
 source_locus = "USUARIUM individual book metadata HTML lines 155–242; origin, age, original-title/genre and bibliography fields."
-qualification = "Vannes missal catalogue record, age 1535; Amiet , 1624; USTC , 111651. Printer metadata: Bonhomme, Jolanda (Paris, 1522-1557). Named holding: BNF Paris , B- 28973. Original title attributed by USUARIUM: Missale ad usum insignis ecclesiae Venetensis. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings. USUARIUM 5824 is the same-copy metadata alias: same title, date, printer, Amiet/USTC identifiers, BnF shelfmark after spacing normalization and Gallica ark. One candidate only; catalogue records are not two books."
+qualification = "Vannes missal catalogue record, age 1535; Amiet , 1624; USTC , 111651. Printer metadata: Bonhomme, Jolanda (Paris, 1522-1557). Named holding: BNF Paris , B- 28973. Original title attributed by USUARIUM: Missale ad usum insignis ecclesiae Venetensis. Only individual bibliographic metadata inspected. Catalogue age is not an authenticated imprint, approval or reception date. No original text, complete-book extent, substantive revision, local normative use or textual genealogy established. Different catalogue years do not establish different recensions or independent printings. USUARIUM 5824 is the same-copy metadata alias: same title, date, printer, Amiet/USTC identifiers, BnF shelfmark after spacing normalization and Gallica ark. One candidate only; catalogue records are not two books. Batch 4 lane B: Duine 1906, pp. 143–144 no. 53, reports printing by Yolande Bonhomme and a second-hand note on a St Denis sequence and Credo; provisional only."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-or-component-candidate-not-proven-recension"
 acquisition_status = "source-metadata-acquired-original-book-not-certified"
@@ -39158,29 +39680,29 @@ remaining_work = "This row covers only the assigned individually inspected recor
 [[coverage]]
 id = "french-toulouse"
 title = "Toulouse local Mass-book catalogue witnesses"
-status = "bounded-amiet-table-witness-census-documented"
+status = "bounded-original-stage-evidence-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-toulouse-7564-usuarium", "french-toulouse-7565-usuarium", "french-toulouse-7566-usuarium", "french-toulouse-7567-usuarium", "french-toulouse-7568-usuarium", "french-toulouse-7569-usuarium", "french-toulouse-7570-usuarium", "french-toulouse-7572-usuarium"]
-candidate_ids = ["french-toulouse-usuarium-7564", "french-toulouse-usuarium-7565", "french-toulouse-usuarium-7566", "french-toulouse-usuarium-7567", "french-toulouse-usuarium-7568", "french-toulouse-usuarium-7569", "french-toulouse-usuarium-7570", "french-toulouse-usuarium-7572"]
-remaining_work = "This row covers only the assigned individually inspected records from the frozen Amiet-table census. It is not complete historical coverage. Check original imprints, physical extent, independent printing identities, textual contents, local approval/reception and comparison of prayers, rubrics, calendar and order. A catalogue year or local title does not prove substantive revision or continuity of a rite."
+sources = ["french-toulouse-7564-usuarium", "french-toulouse-7565-usuarium", "french-toulouse-7566-usuarium", "french-toulouse-7567-usuarium", "french-toulouse-7568-usuarium", "french-toulouse-7569-usuarium", "french-toulouse-7570-usuarium", "french-toulouse-7572-usuarium", "french-toulouse-1490-rosalis-original", "french-toulouse-1774-google-original"]
+candidate_ids = ["french-toulouse-usuarium-7564", "french-toulouse-usuarium-7565", "french-toulouse-usuarium-7566", "french-toulouse-usuarium-7567", "french-toulouse-usuarium-7568", "french-toulouse-usuarium-7569", "french-toulouse-usuarium-7570", "french-toulouse-usuarium-7572", "french-toulouse-1490-rosalis-inc106", "french-toulouse-1774-google-ste-genevieve"]
+remaining_work = "Two publication states (1490, 1774) are documented from original leaves. Open: the 1501–1552 prints, the 1773/1774 pair, the 1832 missal, the date of adoption of the Roman Missal and any component collation between the states."
 
 [[coverage]]
 id = "french-tours"
 title = "Tours local Mass-book catalogue witnesses"
 status = "bounded-amiet-table-witness-census-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-tours-7610-usuarium", "french-tours-7611-usuarium", "french-tours-7613-usuarium", "french-tours-7615-usuarium", "french-tours-7616-usuarium", "french-tours-7614-usuarium"]
+sources = ["french-tours-7610-usuarium", "french-tours-7611-usuarium", "french-tours-7613-usuarium", "french-tours-7615-usuarium", "french-tours-7616-usuarium", "french-tours-7614-usuarium", "french-b-touraine-bulletin-1926", "french-b-liturgie-romaine-1849"]
 candidate_ids = ["french-tours-usuarium-7610", "french-tours-usuarium-7611", "french-tours-usuarium-7613", "french-tours-usuarium-7615", "french-tours-usuarium-7616", "french-tours-usuarium-7614"]
-remaining_work = "This row covers only the assigned individually inspected records from the frozen Amiet-table census. It is not complete historical coverage. Check original imprints, physical extent, independent printing identities, textual contents, local approval/reception and comparison of prayers, rubrics, calendar and order. A catalogue year or local title does not prove substantive revision or continuity of a rite."
+remaining_work = "No stage. Searched on 2026-10-21: Google Books feed ('missale turonense', 'missale turonense Conzie'), Europeana (Gallica 1493 copy only, 403), Numelyo (Tours breviaries only) found no reachable missal; bvh.univ-tours.fr timed out. Gallica is behind a Cloudflare challenge (HTTP 403) and archive.org/BVMM were unreachable from the lane. Any inspected Tours missal (1485–1533, the Saint-Martin 1529 missal, 1784). The 1926 Touraine bulletin reports a 1784 breviary under Archbishop de Conzié but names no missal; the 1849 survey reports that at the 1780 provincial assembly the archbishop urged suffragans to take the Tours liturgy, in substance the Viger/Mésenguy Paris books (pp. 245–246), and lists Tours as Parisian; no Roman-adoption date was found (L'épiscopat français pp. 633–635 silent)."
 
 [[coverage]]
 id = "french-verdun"
 title = "Verdun local Mass-book catalogue witnesses"
-status = "bounded-amiet-table-witness-census-documented"
+status = "bounded-scholarly-stage-evidence-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-verdun-7639-usuarium", "french-verdun-7640-usuarium", "french-verdun-7641-usuarium", "french-verdun-7642-usuarium", "french-verdun-7643-usuarium"]
+sources = ["french-verdun-7639-usuarium", "french-verdun-7640-usuarium", "french-verdun-7641-usuarium", "french-verdun-7642-usuarium", "french-verdun-7643-usuarium", "french-b-petite-bibliotheque-verdunoise", "french-b-pouille-verdun-1888", "french-b-liturgie-romaine-1849"]
 candidate_ids = ["french-verdun-usuarium-7639", "french-verdun-usuarium-7640", "french-verdun-usuarium-7641", "french-verdun-usuarium-7642", "french-verdun-usuarium-7643"]
-remaining_work = "This row covers only the assigned individually inspected records from the frozen Amiet-table census. It is not complete historical coverage. Check original imprints, physical extent, independent printing identities, textual contents, local approval/reception and comparison of prayers, rubrics, calendar and order. A catalogue year or local title does not prove substantive revision or continuity of a rite."
+remaining_work = "1509 and 1554 states documented from description. Open: originals, 1481, the unconfirmed 1699 Béthune missal, 1779 and 1829, and Rossat's 1862 Roman restoration."
 
 [[coverage]]
 id = "french-lisieux"
@@ -39196,18 +39718,18 @@ id = "french-montauban"
 title = "Montauban local Mass-book catalogue witnesses"
 status = "bounded-amiet-table-witness-census-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-montauban-7304-usuarium", "french-montauban-7305-usuarium", "french-montauban-7307-usuarium"]
+sources = ["french-montauban-7304-usuarium", "french-montauban-7305-usuarium", "french-montauban-7307-usuarium", "french-b-daux-1882-montauban", "french-b-forestie-1898-montauban", "french-b-liturgie-romaine-1849"]
 candidate_ids = ["french-montauban-usuarium-7304", "french-montauban-usuarium-7305", "french-montauban-usuarium-7307"]
-remaining_work = "This row covers only the assigned individually inspected records from the frozen Amiet-table census. It is not complete historical coverage. Check original imprints, physical extent, independent printing identities, textual contents, local approval/reception and comparison of prayers, rubrics, calendar and order. A catalogue year or local title does not prove substantive revision or continuity of a rite."
+remaining_work = "Provisional 1779 mandement state only (no edition identified). Open: the 1773/1774 and 1827/1830 books, and the 16 July 1847 Roman restoration mandement (effective 18 January 1848)."
 
 [[coverage]]
 id = "french-vannes"
 title = "Vannes local Mass-book catalogue witnesses"
 status = "bounded-amiet-table-witness-census-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-vannes-7631-usuarium", "french-vannes-860-usuarium", "french-vannes-5824-usuarium"]
+sources = ["french-vannes-7631-usuarium", "french-vannes-860-usuarium", "french-vannes-5824-usuarium", "french-b-duine-1906-breton-missals", "french-b-liturgie-romaine-1849"]
 candidate_ids = ["french-vannes-usuarium-7631", "french-vannes-usuarium-860"]
-remaining_work = "This row covers only the assigned individually inspected records from the frozen Amiet-table census. It is not complete historical coverage. Check original imprints, physical extent, independent printing identities, textual contents, local approval/reception and comparison of prayers, rubrics, calendar and order. A catalogue year or local title does not prove substantive revision or continuity of a rite."
+remaining_work = "Provisional 1535 state from Duine's report only. Gallica holds the 1535 copy (bpt6k313781z) but returned Cloudflare 403 on 2026-10-21. Open: originals, the Paris-books phase and the Roman adoption (1847 vs 1848)."
 
 [[coverage]]
 id = "french-bayonne"
@@ -39259,18 +39781,18 @@ id = "french-mirepoix"
 title = "Mirepoix local Mass-book catalogue witnesses"
 status = "bounded-amiet-table-witness-census-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-mirepoix-5801-usuarium"]
+sources = ["french-mirepoix-5801-usuarium", "french-b-liturgie-romaine-1849"]
 candidate_ids = ["french-mirepoix-usuarium-5801"]
-remaining_work = "This row covers only the assigned individually inspected records from the frozen Amiet-table census. It is not complete historical coverage. Check original imprints, physical extent, independent printing identities, textual contents, local approval/reception and comparison of prayers, rubrics, calendar and order. A catalogue year or local title does not prove substantive revision or continuity of a rite."
+remaining_work = "No stage. Searched on 2026-10-21: Google Books feed ('missale mirapiscense', 'missale Champflour'), Numelyo ('Mirapiscense': 0); Europeana located only the Gallica copy. Gallica is behind a Cloudflare challenge (HTTP 403) and archive.org/BVMM were unreachable from the lane. Any inspected Mirepoix missal; the 1753 Missale Mirapiscense (Champflour) exists in a Gallica copy (bpt6k325514v) that returned Cloudflare 403. After the see's suppression, the Carcassonne mandement of 29 June 1842 (1849 survey p. 346) notes that parishes from old Mirepoix, Saint-Papoul and Alet had kept their former churches' rites."
 
 [[coverage]]
 id = "french-saint-omer"
 title = "Saint-Omer local Mass-book catalogue witnesses"
 status = "bounded-amiet-table-witness-census-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-saint-omer-6919-usuarium"]
+sources = ["french-saint-omer-6919-usuarium", "french-b-saint-omer-bibliography-1887"]
 candidate_ids = ["french-saint-omer-usuarium-6919"]
-remaining_work = "This row covers only the assigned individually inspected records from the frozen Amiet-table census. It is not complete historical coverage. Check original imprints, physical extent, independent printing identities, textual contents, local approval/reception and comparison of prayers, rubrics, calendar and order. A catalogue year or local title does not prove substantive revision or continuity of a rite."
+remaining_work = "No stage. Searched: Google Books full view ('intitle:missale intitle:audomarense'; 'missale audomarense'), Europeana, Numelyo (Audomarense: 0); the Saint-Omer bibliography (1887) gives only titles (1747 Paris-breviary adoption pamphlet, 1779 Ordo 'juxta … missale Romanum', 1786 Graduale Parisiense). Next: an original of the 1785 missal and its mandate."
 
 [[coverage]]
 id = "french-sarlat-la-caneda"
@@ -39279,16 +39801,16 @@ status = "bounded-amiet-table-witness-census-documented"
 scope = "western-original-source-trajectory"
 sources = ["french-sarlat-la-caneda-5803-usuarium"]
 candidate_ids = ["french-sarlat-la-caneda-usuarium-5803"]
-remaining_work = "This row covers only the assigned individually inspected records from the frozen Amiet-table census. It is not complete historical coverage. Check original imprints, physical extent, independent printing identities, textual contents, local approval/reception and comparison of prayers, rubrics, calendar and order. A catalogue year or local title does not prove substantive revision or continuity of a rite."
+remaining_work = "No stage. Searched on 2026-10-21: Google Books feed ('missale sarlatense', 'missale sarlatense Montesquiou'), Numelyo ('Sarlatense': 0); Europeana located only the Gallica copy. Gallica is behind a Cloudflare challenge (HTTP 403) and archive.org/BVMM were unreachable from the lane. Any inspected Sarlat missal; the 1777 Missale Sarlatense (Montesquiou de Poylebon) exists in a Gallica copy (bpt6k325684k) that returned Cloudflare 403. Sarlat is absent from the 1849 survey's tables (see suppressed in 1790/1801)."
 
 [[coverage]]
 id = "french-tulle"
 title = "Tulle local Mass-book catalogue witnesses"
 status = "bounded-amiet-table-witness-census-documented"
 scope = "western-original-source-trajectory"
-sources = ["french-tulle-7617-usuarium"]
+sources = ["french-tulle-7617-usuarium", "french-b-episcopat-1907"]
 candidate_ids = ["french-tulle-usuarium-7617"]
-remaining_work = "This row covers only the assigned individually inspected records from the frozen Amiet-table census. It is not complete historical coverage. Check original imprints, physical extent, independent printing identities, textual contents, local approval/reception and comparison of prayers, rubrics, calendar and order. A catalogue year or local title does not prove substantive revision or continuity of a rite."
+remaining_work = "No stage. Searched on 2026-10-21: Google Books feed ('missale tutellense', 'missale tutellense Rafelis'), Europeana and Numelyo found no full-view or reachable original. Gallica is behind a Cloudflare challenge (HTTP 403) and archive.org/BVMM were unreachable from the lane. Any inspected Tulle missal, including the 1777 Missale Tutellense (Rafélis de Saint-Sauveur). The 1849 survey lists Tulle as Parisian; L'épiscopat français (p. 655) dates the restoration of the Roman liturgy to 1866 under Bishop Berteaud."
 
 [[sources]]
 id = "iberian-usuarium-1783"
@@ -39897,8 +40419,8 @@ date_role = "catalogue-attributed printing/publication or object age; inspect ti
 kind = "catalogued-printed-missal-witness"
 status = "researched-witness-proposal"
 route = "https://usuarium.elte.hu/book/5818/view"
-sources = ["central-amiet-usuarium-5818"]
-qualification = "USUARIUM bibliographic witness only; printer not supplied in the inspected table. Local reception, original contents, completeness, independent recension and normative approval unverified. Halberstadt origin, BSB München 2 Inc.s.a. 879 f, catalogue age 1498; linked GW M24400 and BSB bsb00032887 not separately inspected."
+sources = ["central-amiet-usuarium-5818", "central-halberstadt-1498-bsb-google-original"]
+qualification = "USUARIUM bibliographic witness only; printer not supplied in the inspected table. Local reception, original contents, completeness, independent recension and normative approval unverified. Halberstadt origin, BSB München 2 Inc.s.a. 879 f, catalogue age 1498; linked GW M24400 and BSB bsb00032887 not separately inspected. Batch 4 lane B, re-identified by cold review: this BSB holding (2 Inc.s.a. 879 f; the BSB incunable catalogue, BSB-Ink M-434, lists no other BSB copy) is digitised by MDZ (bsb00032887) and by Google Books (xhKLX-OS2c0C), whose leaf PP7 matches MDZ canvas 7. That leaf carries the printed, undated mandate ('Datum Halberstadt') of Ernst, archbishop of Magdeburg and administrator of Halberstadt: diocesan missals were variously ordered, corrupted by scribes and age and at odds with the true rubric, and he authorised missals printed according to the order and rubric of Halberstadt from emended exemplars. The year remains catalogue/provider metadata (BSB: 'ca. 1498'); no colophon was located. Index row: no stage is constructed."
 version_status = "witness-or-component-candidate-not-proven-recension"
 scope_disposition = "in-scope-original-book-or-historical-witness"
 acquisition_status = "source-metadata-acquired-original-book-not-certified"
@@ -39942,6 +40464,18 @@ url = "https://usuarium.elte.hu/book/7271/view"
 type = "university-liturgical-catalogue-individual-book-metadata"
 inspection = "Complete individual HTML metadata acquired and inspected on 2026-10-20; SHA256 3189c4cece0c47fa562ea3e9805b360ba72e06401ea27a09a448eeb66083cefe; 16899 bytes. Identity table and catalogue references inspected; external catalogue links and original book not inspected. Bibliographic metadata only; not complete-book certification or a substantive-revision claim."
 
+[[sources]]
+id = "central-halberstadt-1498-bsb-google-original"
+title = "Missale Halberstatense (1498 per Google/BSB metadata), BSB copy, Google Books original images"
+url = "https://books.google.com/books?id=xhKLX-OS2c0C"
+type = "library-digital-facsimile"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "PP7 viewed at 1800 px on 2026-10-21: printed mandate of Ernst, archbishop of Magdeburg and administrator of Halberstadt, to the clergy of the city and diocese of Halberstadt, undated ('Datum Halberstadt'); BSB stamp. Final pages PA240–PT2 seen only as thumbnails; no colophon located."
+limitations = "One leaf read. The year 1498 comes from the Google/BSB metadata, not from an inspected colophon."
+full_contents_examined = false
+rights_note = "Pre-1800 printed book; page images consulted on the provider site and kept only as scratch research copies; no image or text is tracked or proposed for publication."
+
 [[candidates]]
 id = "central-merseburg-usuarium-7271"
 family = "historic-merseburg-use"
@@ -39967,7 +40501,7 @@ chronology_certainty = "catalogue-attribution"
 id = "central-amiet-additional-german-uses"
 title = "Halberstadt, Lübeck and Merseburg: selected Amiet missal witnesses"
 status = "selected-catalogue-witnesses-documented"
-sources = ["central-amiet-usuarium-5818", "central-amiet-usuarium-7238", "central-amiet-usuarium-7271"]
+sources = ["central-amiet-usuarium-5818", "central-amiet-usuarium-7238", "central-amiet-usuarium-7271", "central-halberstadt-1498-bsb-google-original"]
 candidate_ids = ["central-halberstadt-usuarium-5818", "central-lubeck-usuarium-7238", "central-merseburg-usuarium-7271"]
 remaining_work = "Single catalogue witnesses only. Inspect holding catalogues, exact titles, colophons, contents, rights and complete extents; resolve the Lübeck USTC references. No continuous local-use chronology, normative revision, original-book completeness or modern survival is established."
 scope = "western-original-source-trajectory"
@@ -40349,9 +40883,9 @@ date_role = "catalogue-attributed witness year; not approval, composition, recep
 kind = "catalogued-missal-witness"
 status = "bounded-primary-catalogue-metadata-inspected"
 route = "https://usuarium.elte.hu/book/6917/view"
-sources = ["amiet-census-usuarium-6917"]
+sources = ["amiet-census-usuarium-6917", "amiet-bnf-cb36819909j"]
 source_locus = "Individual book-card bibliographic fields; USUARIUM book IDs 6917; Amiet catalogue number(s) 0097"
-qualification = "Positive catalogue witness only. Original book, imprint/colophon, complete physical-copy extent, actual language, authority and local reception uncollated; no distinct source recension inferred. Raw country/origin blank; primary Origin is Irrelevant(None). Church, rite, country and geographical use remain unknown; Latin-looking titles are not used to assign them."
+qualification = "Positive catalogue witness only. Original book, imprint/colophon, complete physical-copy extent, actual language, authority and local reception uncollated; no distinct source recension inferred. Raw country/origin blank; primary Origin is Irrelevant(None). Church, rite, country and geographical use remain unknown; Latin-looking titles are not used to assign them. Batch 4 lane B: Missale Aturense 1844: BnF record gives Toulouse, Delsol; Aire (Atura) diocesan title. Catalogue-level origin evidence only; no route reassignment."
 version_status = "catalogue-witness-or-cluster; independent-recension-unestablished"
 scope_disposition = "in-scope-eucharistic-witness-metadata; rite-and-Church-unassigned-where-source-silent"
 acquisition_status = "whole-metadata-card-acquired; original-book-not-acquired"
@@ -40507,9 +41041,9 @@ date_role = "catalogue-attributed witness year; not approval, composition, recep
 kind = "catalogued-missal-witness"
 status = "bounded-primary-catalogue-metadata-inspected"
 route = "https://usuarium.elte.hu/book/7466/view"
-sources = ["amiet-census-usuarium-7466"]
+sources = ["amiet-census-usuarium-7466", "amiet-bnf-cb36817503w"]
 source_locus = "Individual book-card bibliographic fields; USUARIUM book IDs 7466; Amiet catalogue number(s) 1369"
-qualification = "Positive catalogue witness only. Original book, imprint/colophon, complete physical-copy extent, actual language, authority and local reception uncollated; no distinct source recension inferred. Raw country/origin blank; primary Origin is Irrelevant(None). Church, rite, country and geographical use remain unknown; Latin-looking titles are not used to assign them."
+qualification = "Positive catalogue witness only. Original book, imprint/colophon, complete physical-copy extent, actual language, authority and local reception uncollated; no distinct source recension inferred. Raw country/origin blank; primary Origin is Irrelevant(None). Church, rite, country and geographical use remain unknown; Latin-looking titles are not used to assign them. Batch 4 lane B: Missale Rupellense 1835: BnF record names Bishop Joseph Bernet of La Rochelle; Paris, Adrien Le Clere. Catalogue-level origin evidence only; no route reassignment."
 version_status = "catalogue-witness-or-cluster; independent-recension-unestablished"
 scope_disposition = "in-scope-eucharistic-witness-metadata; rite-and-Church-unassigned-where-source-silent"
 acquisition_status = "whole-metadata-card-acquired; original-book-not-acquired"
@@ -40567,9 +41101,9 @@ date_role = "catalogue-attributed witness year; not approval, composition, recep
 kind = "catalogued-missal-witness"
 status = "bounded-primary-catalogue-metadata-inspected"
 route = "https://usuarium.elte.hu/book/6971/view"
-sources = ["amiet-census-usuarium-6971"]
+sources = ["amiet-census-usuarium-6971", "amiet-bnf-cb368199651"]
 source_locus = "Individual book-card bibliographic fields; USUARIUM book IDs 6971; Amiet catalogue number(s) 195"
-qualification = "Positive catalogue witness only. Original book, imprint/colophon, complete physical-copy extent, actual language, authority and local reception uncollated; no distinct source recension inferred. Raw country/origin blank; primary Origin is Irrelevant(None). Church, rite, country and geographical use remain unknown; Latin-looking titles are not used to assign them."
+qualification = "Positive catalogue witness only. Original book, imprint/colophon, complete physical-copy extent, actual language, authority and local reception uncollated; no distinct source recension inferred. Raw country/origin blank; primary Origin is Irrelevant(None). Church, rite, country and geographical use remain unknown; Latin-looking titles are not used to assign them. Batch 4 lane B: Missale Blesense 1741: BnF record names François de Crussol d'Uzès, bishop of Blois; Paris, Bibliopolae Usuum Blesensium. Catalogue-level origin evidence only; no route reassignment."
 version_status = "catalogue-witness-or-cluster; independent-recension-unestablished"
 scope_disposition = "in-scope-eucharistic-witness-metadata; rite-and-Church-unassigned-where-source-silent"
 acquisition_status = "whole-metadata-card-acquired; original-book-not-acquired"
@@ -40597,9 +41131,9 @@ date_role = "catalogue-attributed witness year; not approval, composition, recep
 kind = "catalogued-missal-witness"
 status = "bounded-primary-catalogue-metadata-inspected"
 route = "https://usuarium.elte.hu/book/7137/view"
-sources = ["amiet-census-usuarium-7137"]
+sources = ["amiet-census-usuarium-7137", "amiet-bnf-cb36817265m"]
 source_locus = "Individual book-card bibliographic fields; USUARIUM book IDs 7137; Amiet catalogue number(s) 383"
-qualification = "Positive catalogue witness only. Original book, imprint/colophon, complete physical-copy extent, actual language, authority and local reception uncollated; no distinct source recension inferred. Raw country/origin blank; primary Origin is Irrelevant(None). Church, rite, country and geographical use remain unknown; Latin-looking titles are not used to assign them."
+qualification = "Positive catalogue witness only. Original book, imprint/colophon, complete physical-copy extent, actual language, authority and local reception uncollated; no distinct source recension inferred. Raw country/origin blank; primary Origin is Irrelevant(None). Church, rite, country and geographical use remain unknown; Latin-looking titles are not used to assign them. Batch 4 lane B: Missale Electense 1774: BnF record names Charles de La Cropte de Chanterac, bishop of Alet; Toulouse, Bibliopolae Usuum Electensium. Catalogue-level origin evidence only; no route reassignment."
 version_status = "catalogue-witness-or-cluster; independent-recension-unestablished"
 scope_disposition = "in-scope-eucharistic-witness-metadata; rite-and-Church-unassigned-where-source-silent"
 acquisition_status = "whole-metadata-card-acquired; original-book-not-acquired"
@@ -41031,9 +41565,9 @@ date_role = "catalogue-attributed witness year; not approval, composition, recep
 kind = "catalogued-missal-witness"
 status = "bounded-primary-catalogue-metadata-inspected"
 route = "https://usuarium.elte.hu/book/7321/view"
-sources = ["amiet-census-usuarium-7321"]
+sources = ["amiet-census-usuarium-7321", "amiet-bnf-cb368176244"]
 source_locus = "Individual book-card bibliographic fields; USUARIUM book IDs 7321; Amiet catalogue number(s) 660"
-qualification = "Positive catalogue witness only. Original book, imprint/colophon, complete physical-copy extent, actual language, authority and local reception uncollated; no distinct source recension inferred. Raw country/origin blank; primary Origin is Irrelevant(None). Church, rite, country and geographical use remain unknown; Latin-looking titles are not used to assign them."
+qualification = "Positive catalogue witness only. Original book, imprint/colophon, complete physical-copy extent, actual language, authority and local reception uncollated; no distinct source recension inferred. Raw country/origin blank; primary Origin is Irrelevant(None). Church, rite, country and geographical use remain unknown; Latin-looking titles are not used to assign them. Batch 4 lane B: Missale Nanceiense et Tullense 1838: BnF record gives Nancy, Thomas. Catalogue-level origin evidence only; no route reassignment."
 version_status = "catalogue-witness-or-cluster; independent-recension-unestablished"
 scope_disposition = "in-scope-eucharistic-witness-metadata; rite-and-Church-unassigned-where-source-silent"
 acquisition_status = "whole-metadata-card-acquired; original-book-not-acquired"
@@ -41082,6 +41616,66 @@ inspection = "Whole individual Usuarium metadata HTML card acquired2026-10-20; h
 limitations = "Bibliographic metadata only; linked scans and source-book text not fetched or collated. Blank origin/country and absent printer/imprint remain unknown; no current Catholic affiliation, approved recension or book-publication permission inferred."
 source_locus = "Original title: Missale secundum ritum insignium ecclesiarum Oscensis et Iaccensi; Origin: Irrelevant (None); Genre: Missal ( Mass ); Age: 1504; Catalogue: Amiet , 692 USTC , 347646"
 
+[[sources]]
+id = "amiet-bnf-cb36817503w"
+title = "BnF catalogue record cb36817503w"
+url = "https://catalogue.bnf.fr/ark:/12148/cb36817503w"
+type = "national-library-catalogue"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "BnF SRU Dublin Core record read on 2026-10-21. Missale Rupellense 1835: BnF record names Bishop Joseph Bernet of La Rochelle; Paris, Adrien Le Clere."
+limitations = "Catalogue metadata only; original book not inspected; copy identity with the USUARIUM row not asserted."
+full_contents_examined = false
+rights_note = "Catalogue facts only."
+
+[[sources]]
+id = "amiet-bnf-cb36819909j"
+title = "BnF catalogue record cb36819909j"
+url = "https://catalogue.bnf.fr/ark:/12148/cb36819909j"
+type = "national-library-catalogue"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "BnF SRU Dublin Core record read on 2026-10-21. Missale Aturense 1844: BnF record gives Toulouse, Delsol; Aire (Atura) diocesan title."
+limitations = "Catalogue metadata only; original book not inspected; copy identity with the USUARIUM row not asserted."
+full_contents_examined = false
+rights_note = "Catalogue facts only."
+
+[[sources]]
+id = "amiet-bnf-cb368199651"
+title = "BnF catalogue record cb368199651"
+url = "https://catalogue.bnf.fr/ark:/12148/cb368199651"
+type = "national-library-catalogue"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "BnF SRU Dublin Core record read on 2026-10-21. Missale Blesense 1741: BnF record names François de Crussol d'Uzès, bishop of Blois; Paris, Bibliopolae Usuum Blesensium."
+limitations = "Catalogue metadata only; original book not inspected; copy identity with the USUARIUM row not asserted."
+full_contents_examined = false
+rights_note = "Catalogue facts only."
+
+[[sources]]
+id = "amiet-bnf-cb36817265m"
+title = "BnF catalogue record cb36817265m"
+url = "https://catalogue.bnf.fr/ark:/12148/cb36817265m"
+type = "national-library-catalogue"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "BnF SRU Dublin Core record read on 2026-10-21. Missale Electense 1774: BnF record names Charles de La Cropte de Chanterac, bishop of Alet; Toulouse, Bibliopolae Usuum Electensium."
+limitations = "Catalogue metadata only; original book not inspected; copy identity with the USUARIUM row not asserted."
+full_contents_examined = false
+rights_note = "Catalogue facts only."
+
+[[sources]]
+id = "amiet-bnf-cb368176244"
+title = "BnF catalogue record cb368176244"
+url = "https://catalogue.bnf.fr/ark:/12148/cb368176244"
+type = "national-library-catalogue"
+checked_on = "2026-10-21"
+inspection_status = "inspected"
+inspection = "BnF SRU Dublin Core record read on 2026-10-21. Missale Nanceiense et Tullense 1838: BnF record gives Nancy, Thomas."
+limitations = "Catalogue metadata only; original book not inspected; copy identity with the USUARIUM row not asserted."
+full_contents_examined = false
+rights_note = "Catalogue facts only."
+
 [[candidates]]
 id = "amiet-usuarium-7335"
 family = "unassigned-eucharistic-catalogue-witnesses"
@@ -41093,7 +41687,7 @@ status = "bounded-primary-catalogue-metadata-inspected"
 route = "https://usuarium.elte.hu/book/7335/view"
 sources = ["amiet-census-usuarium-7335"]
 source_locus = "Individual book-card bibliographic fields; USUARIUM book IDs 7335; Amiet catalogue number(s) 692"
-qualification = "Positive catalogue witness only. Original book, imprint/colophon, complete physical-copy extent, actual language, authority and local reception uncollated; no distinct source recension inferred. Raw country/origin blank; primary Origin is Irrelevant(None). Church, rite, country and geographical use remain unknown; Latin-looking titles are not used to assign them."
+qualification = "Positive catalogue witness only. Original book, imprint/colophon, complete physical-copy extent, actual language, authority and local reception uncollated; no distinct source recension inferred. Raw country/origin blank; primary Origin is Irrelevant(None). Church, rite, country and geographical use remain unknown; Latin-looking titles are not used to assign them. Batch 4 lane B: the catalogue-recorded title (USUARIUM 'Original title' field; the book itself was not inspected) names the churches of Huesca (Osca) and Jaca; the USUARIUM origin field reads 'Irrelevant (None)' in the existing source locus, and a live recheck of the USUARIUM page timed out on 2026-10-21. Origin by title only; no reassignment from this index row."
 version_status = "catalogue-witness-or-cluster; independent-recension-unestablished"
 scope_disposition = "in-scope-eucharistic-witness-metadata; rite-and-Church-unassigned-where-source-silent"
 acquisition_status = "whole-metadata-card-acquired; original-book-not-acquired"
@@ -41109,7 +41703,7 @@ id = "amiet-unassigned-eucharistic-witnesses"
 title = "Country-blank Amiet Eucharistic catalogue witnesses and Mass collections"
 status = "bounded-primary-catalogue-metadata-census"
 scope = "unassigned-eucharistic-catalogue-discovery-bucket; no independent tradition, rite, Church or country asserted"
-sources = ["amiet-census-usuarium-6878", "amiet-census-usuarium-6917", "amiet-census-usuarium-7081", "amiet-census-usuarium-7169", "amiet-census-usuarium-7463", "amiet-census-usuarium-7464", "amiet-census-usuarium-7465", "amiet-census-usuarium-7466", "amiet-census-usuarium-5827", "amiet-census-usuarium-6971", "amiet-census-usuarium-7137", "amiet-census-usuarium-7167", "amiet-census-usuarium-7171", "amiet-census-usuarium-7172", "amiet-census-usuarium-7173", "amiet-census-usuarium-7174", "amiet-census-usuarium-7175", "amiet-census-usuarium-7176", "amiet-census-usuarium-7177", "amiet-census-usuarium-7178", "amiet-census-usuarium-7179", "amiet-census-usuarium-7180", "amiet-census-usuarium-7181", "amiet-census-usuarium-7182", "amiet-census-usuarium-7183", "amiet-census-usuarium-7184", "amiet-census-usuarium-7185", "amiet-census-usuarium-7188", "amiet-census-usuarium-7190", "amiet-census-usuarium-7191", "amiet-census-usuarium-7194", "amiet-census-usuarium-7321", "amiet-census-usuarium-7330", "amiet-census-usuarium-7335"]
+sources = ["amiet-census-usuarium-6878", "amiet-census-usuarium-6917", "amiet-census-usuarium-7081", "amiet-census-usuarium-7169", "amiet-census-usuarium-7463", "amiet-census-usuarium-7464", "amiet-census-usuarium-7465", "amiet-census-usuarium-7466", "amiet-census-usuarium-5827", "amiet-census-usuarium-6971", "amiet-census-usuarium-7137", "amiet-census-usuarium-7167", "amiet-census-usuarium-7171", "amiet-census-usuarium-7172", "amiet-census-usuarium-7173", "amiet-census-usuarium-7174", "amiet-census-usuarium-7175", "amiet-census-usuarium-7176", "amiet-census-usuarium-7177", "amiet-census-usuarium-7178", "amiet-census-usuarium-7179", "amiet-census-usuarium-7180", "amiet-census-usuarium-7181", "amiet-census-usuarium-7182", "amiet-census-usuarium-7183", "amiet-census-usuarium-7184", "amiet-census-usuarium-7185", "amiet-census-usuarium-7188", "amiet-census-usuarium-7190", "amiet-census-usuarium-7191", "amiet-census-usuarium-7194", "amiet-census-usuarium-7321", "amiet-census-usuarium-7330", "amiet-census-usuarium-7335", "amiet-bnf-cb36817503w", "amiet-bnf-cb36819909j", "amiet-bnf-cb368199651", "amiet-bnf-cb36817265m", "amiet-bnf-cb368176244"]
 candidate_ids = ["amiet-usuarium-6878", "amiet-usuarium-6917", "amiet-itinerantium-464-7081", "amiet-usuarium-7463", "amiet-usuarium-7464", "amiet-usuarium-7465", "amiet-usuarium-7466", "amiet-usuarium-5827", "amiet-usuarium-6971", "amiet-usuarium-7137", "amiet-itinerantium-461-7167", "amiet-itinerantium-467-7171", "amiet-itinerantium-467-b-7172", "amiet-itinerantium-468-7173", "amiet-itinerantium-469-7178", "amiet-itinerantium-470-7181", "amiet-itinerantium-472-7188", "amiet-itinerantium-473-7190", "amiet-itinerantium-474-7191", "amiet-itinerantium-477-7194", "amiet-usuarium-7321", "amiet-usuarium-7330", "amiet-usuarium-7335"]
 remaining_work = "Resolve exact use, physical-copy and edition identities from original imprints and holding-library records; inspect contents, rights and reception before any recension, Catholic affiliation or geographical mapping. Repeated catalogue rows in a cluster are not independent edition counts."
 
