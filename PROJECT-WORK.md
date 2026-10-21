@@ -92,8 +92,8 @@ The sanitized-history and merged-file disclosure audit finds no credentials,
 machine-specific references or unintended artifact paths. The ledger, whitespace
 and repository-hygiene checks pass. The integrated candidate passes
 `make check-deployment-sources`, `make public-site`, and
-`public-alpha verify --deployment-target github-pages`. The final committed-range
-audit, normal fast-forward push, and automatic Pages verification remain pending.
+`public-alpha verify --deployment-target github-pages`. Publication remains
+subject to the final committed-range audit, normal push and Pages verification.
 Earlier annual and browser results above apply to the unchanged reader
 implementation; they have not been repeated merely for this metadata merge.
 The final fast-forward guard then found four additional published commits
@@ -107,8 +107,19 @@ and 4 pages with settled logs and no final layout or reference warnings.
 All three publication gates pass again for this later candidate. Outgoing
 whitespace and repository hygiene pass; the incoming production-review record
 retains its already-published blank line at EOF. No reader-model code changed
-in this additional delta. Final range disclosure and remote verification still
-control publication.
+in this additional delta.
+
+The final implementation checkpoint is
+`bad8e2f5a9a46611d1af4da6da60b2956f00f0a1`. Fresh main is its ancestor.
+The exact outgoing implementation audit covers 64 commits and 4,407 objects,
+including commit metadata, with no credentials, machine-specific references or
+unintended paths. Only the four already-reviewed public-domain source binaries
+are newly reachable. The normal push was blocked before execution because the
+local secret scanner could not buffer the full outgoing-history diff.
+Remote main remains `90e13e78fd107e3649fe97870f8a76da39e52c5a`; no force-push,
+scanner bypass or remote change occurred. A maintainer terminal push is required
+before automatic Pages and live-route verification can proceed. This independent
+disclosure audit does not override the blocked control.
 The full annual text-completeness promise remains separate and open;
 structural renderability must not stand in for missing source text.
 
