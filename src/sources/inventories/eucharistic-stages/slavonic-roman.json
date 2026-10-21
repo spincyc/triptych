@@ -9,7 +9,7 @@
       "label": "Slavonic / Glagolitic Roman books",
       "family": "latin",
       "scope": "Historical Church Slavonic Roman celebrant-book tradition, distinct from Byzantine Slavonic and from independent modern translations.",
-      "coverage_note": "1631 mandate directly witnessed; 1741/1893 linguistic redactions remain provisional pending prayer/rubric collation. 1483 is an incomplete original-copy witness; 1896/1905 are uncollated printing leads."
+      "coverage_note": "1631 mandate, 1631 printed calendar and 1741 printed calendar directly witnessed; a bounded 1631→1741 calendar revision is page-collated (November and 2 October), with the 1706 reissue agreeing with 1631 at the November rows. The 1741 East Slavonic linguistic redaction and the 1893 restoration remain attributed to scholarship; 1893 stays provisional. 1706 and 1896 are reissues at their inspected leaves; 1483 is an incomplete original-copy witness; 1905 is an uncollated printing lead."
     }
   ],
   "sources": [
@@ -62,6 +62,46 @@
       "checked_on": "2026-10-17",
       "status": "inspected",
       "limitations": "Institutional modern scholarly overview not republished. Supports linguistic-recension characterization, not specific changed prayers or an independent normative lineage."
+    },
+    {
+      "id": "slavonic-roman:nsk1631",
+      "title": "NSK RIIA-4-2a, Missal rimskij va ezik slovenskij (Rome: Propaganda Fide, 1631), digital copy",
+      "url": "https://urn.nsk.hr/urn:nbn:hr:238:717907",
+      "kind": "primary-book",
+      "inspection": "Public IIIF manifest (798 canvases) acquired 2026-10-21; canvases 2–7 fetched and inspected: Latin-Glagolitic title with imprint Rome, Propaganda Fide, 1631 (canvas 3), followed by the bilingual Pius V bull Quo primum (canvases 5–7). NSK record marks the copy public domain and freely accessible. Calendar pages also inspected: October (canvas 46) and November (canvas 47), together with the movable-feast tables (canvases 35–37).",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Front leaves only; the body was not read or collated. Catalogue extent [552] + [118] pp."
+    },
+    {
+      "id": "slavonic-roman:nsk1706",
+      "title": "NSK RIIA-8-14a, Missal rimskiĵ (Rome: Propaganda Fide, 1706), digital copy",
+      "url": "https://urn.nsk.hr/urn:nbn:hr:238:647033",
+      "kind": "primary-book",
+      "inspection": "Public IIIF manifest (956 canvases) acquired 2026-10-21; canvases 2–7 inspected: title repeating the 1631 Latin-Glagolitic title form with imprint Rome, Propaganda Fide, 1706, superiorum permissu (canvas 3), and the bilingual Quo primum (canvases 5–7). November calendar inspected at canvas 56 (lower part, 1–18 November) and canvas 57 (upper part, 19–30 November).",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Front leaves only. Lokmer describes 1706 as a reissue of the 1631 missal without language change; this project has not collated it. Jelić's report of new Masses in 1706 (inventory candidate slavonic-roman-1706) is unchecked."
+    },
+    {
+      "id": "slavonic-roman:nsk1741",
+      "title": "NSK RIIA-4-3, Missalь rimskiĵ slavenskimь êzykom' (Rome: Propaganda Fide, 1741), digital copy",
+      "url": "https://urn.nsk.hr/urn:nbn:hr:238:090215",
+      "kind": "primary-book",
+      "inspection": "Public IIIF manifest (816 canvases) acquired 2026-10-21; canvases 1–24 and samples 690, 720, 740, 755, 765, 775, 790 and 805 inspected. Canvas 5 is the Latin-Glagolitic title, Rome, Propaganda Fide, MDCCXLI, superiorum facultate; canvases 7–14 carry papal prefatory acts, the Urban VIII brief in parallel Glagolitic and Latin at canvas 11; canvases 19–20 begin the calendar tables. Calendar months inspected at canvases 29–40 (printed pp. 27–36); October (canvas 38, printed p. 34) and November (canvas 39, printed p. 35) read row by row against 1631.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "The sampled late canvases (from about 740) are a round-type nineteenth-century Glagolitic supplement bound into this copy, so the 1741 pro aliquibus locis appendix has not been identified in it. Body uncollated; Glagolitic prefatory texts not read."
+    },
+    {
+      "id": "slavonic-roman:nsk1896",
+      "title": "Parčić missal, 1896 issue (Rome: Polyglot press of Propaganda Fide), NSK digital copy from Prvić Luka parish",
+      "url": "https://digitalna.nsk.hr/?pr=i&id=579116",
+      "kind": "primary-book",
+      "inspection": "Public IIIF manifest (902 canvases) acquired 2026-10-21; canvases 3–10 inspected. Canvas 7 is the Glagolitic-Latin title with imprint MDCCCXCVI; canvas 8 reprints the Propaganda permission stating that the Slavonic missal faithfully renders the Roman Missal, dated January 1893 and signed by the pro-secretary, Archbishop of Larissa.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Front leaves only; the 1896 issue carries the 1893 permission rather than a new approval. No body collation. Lokmer's report of a longer sanctoral (182 pages plus a four-page appendix against 170 in 1893) is unchecked, so 1896 is not shown to be textually identical to 1893."
     }
   ],
   "stages": [
@@ -94,40 +134,85 @@
           "source_id": "slavonic-roman:lokmer2008",
           "locus": "Printed 164, PDF 4; p. 170, extracted text",
           "claim": "1631 title and Levaković preparation identify historical celebrant witness."
+        },
+        {
+          "source_id": "slavonic-roman:nsk1631",
+          "locus": "Canvas 3 (title); canvases 5–7",
+          "claim": "Original 1631 title and imprint directly inspected in a complete public image copy."
         }
       ],
-      "limitations": "Original 1631 body not acquired; no actual-use abolition or exact prayer/rubric delta claimed. Need precise target source/prayer collation; no immediate 1483 parent.",
+      "limitations": "A complete public NSK image copy of the 1631 book is now located and its title inspected, but its body has not been read; no actual-use abolition or exact prayer/rubric delta claimed. Need precise target source/prayer collation; no immediate 1483 parent.",
       "reception": "Prescription, printing and regional reception are separate. No universal implementation date asserted."
+    },
+    {
+      "id": "slavonic-roman:1631-calendar",
+      "tradition_id": "slavonic-roman",
+      "label": "Calendar of the 1631 Levaković Slavonic Roman missal",
+      "date_label": "Printed at Rome, Propaganda Fide, 1631",
+      "start_year": 1631,
+      "end_year": 1631,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Printed calendar at the inspected months (October and November), with the title leaf; not the whole book.",
+      "components": [
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:slavonic-roman-1631"
+      ],
+      "witness_label": "NSK RIIA-4-2a, Missal rimskij va ezik slovenskij, Rome 1631",
+      "summary": "The printed 1631 calendar leaves 2 October and 13, 14, 15, 16 and 20 November without entries, and gives single entries on 10, 19 and 24 November.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "slavonic-roman:nsk1631",
+          "locus": "Canvas 3 (title); canvas 46 (October); canvas 47 (November)",
+          "claim": "Original title and calendar rows read for occupancy, dates and red/black entries."
+        }
+      ],
+      "limitations": "Row occupancy and dates were read directly; the Glagolitic saint names were not transliterated. Other months and the proper of saints were not compared. Same printed book as slavonic-roman:1631, whose row is dated by the Urban VIII mandate; this row records the printed calendar for the 1631→1741 comparison and is not a second 1631 version.",
+      "reception": "Printed book state; regional adoption is a separate question."
     },
     {
       "id": "slavonic-roman:1741",
       "tradition_id": "slavonic-roman",
-      "label": "Karaman/Sović East Slavonic redaction candidate",
+      "label": "Karaman/Sović 1741 Slavonic Roman missal with an expanded calendar",
       "date_label": "1741",
       "start_year": 1741,
       "end_year": 1741,
       "date_kind": "publication",
-      "status": "provisional",
-      "scope": "Historical source-language redaction; component changes uncollated.",
+      "status": "documented",
+      "scope": "Printed 1741 edition: inspected title and calendar months; linguistic redaction attributed to scholarship.",
       "components": [
         "ordinary",
         "propers",
-        "rubrics"
+        "rubrics",
+        "calendar"
       ],
       "witness_ids": [
         "western:slavonic-roman-1741"
       ],
       "witness_label": "Karaman/Sović East Slavonic redaction candidate",
-      "summary": "Copy-based scholarship reports complete East Slavonic linguistic recension and an initial pro aliquibus locis appendix; later 1789 supplement is separately bound.",
+      "summary": "The 1741 Rome edition adds calendar entries absent from the 1631 printing (2 October; 13, 15 and 20 November) and gives new first-named feasts on 10, 19 and 24 November. Copy-based scholarship reports a complete East Slavonic linguistic recension and an initial pro aliquibus locis appendix; a later 1789 supplement is separately bound.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {
           "source_id": "slavonic-roman:lokmer2008",
           "locus": "Printed 181, 185; PDF 21, 25",
           "claim": "Redaction description and original title photo checked."
+        },
+        {
+          "source_id": "slavonic-roman:nsk1741",
+          "locus": "Canvas 5 (title); canvases 7–14 (prefatory acts)",
+          "claim": "Original 1741 Latin title and imprint directly inspected; the holding library transcribes the Glagolitic title as slavenskim êzykom, against va ezik slovenskij for 1631 (catalogue transcriptions, Glagolitic not read here)."
+        },
+        {
+          "source_id": "slavonic-roman:nsk1741",
+          "locus": "Canvas 38 (printed p. 34, October); canvas 39 (printed p. 35, November)",
+          "claim": "Calendar rows with Mass page references read directly and compared with 1631."
         }
       ],
-      "limitations": "Language-redaction characterization does not by itself establish changed ritual/prayer content; no accepted independent Latin source revision or exact before/after transition. Whole original 1741 and supplements required.",
+      "limitations": "Documented as a calendar state from inspected primary pages; the East Slavonic redaction and the appendix remain Lokmer's description. Saint names in the added rows were not transliterated, so identifications are by date only. The pro aliquibus locis appendix was not identified in the composite NSK copy, and ordinary and rubric changes are uncollated.",
       "reception": "Prescription, printing and regional reception are separate. No universal implementation date asserted."
     },
     {
@@ -161,21 +246,128 @@
           "source_id": "slavonic-roman:stin",
           "locus": "Glagoljica u Hrvata section",
           "claim": "Attributed linguistic restoration characterization."
+        },
+        {
+          "source_id": "slavonic-roman:nsk1896",
+          "locus": "Canvases 7–8",
+          "claim": "The 1896 issue reprints the January 1893 permission and carries no new approval at the inspected front leaves; whether its text differs from 1893 (Lokmer reports a longer sanctoral) is unverified."
         }
       ],
       "limitations": "No exact body wording has been collated against 1741 or Latin 1884; publication permission is not evidence of an independent Latin recension. 1896/1905 not automatically distinct.",
       "reception": "Prescription, printing and regional reception are separate. No universal implementation date asserted."
     }
   ],
-  "transitions": [],
+  "transitions": [
+    {
+      "id": "slavonic-roman:1631-to-1741-calendar-additions",
+      "from_stage": "slavonic-roman:1631-calendar",
+      "to_stage": "slavonic-roman:1741",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "text-collated",
+      "summary": "Between the 1631 printing and 1741 (the 1706 printing leaves the same November rows empty; its October page was not compared), the calendar gains entries on previously empty days and new first-named feasts on days that held only martyr entries.",
+      "components": [
+        "calendar"
+      ],
+      "changes": [
+        {
+          "component": "calendar",
+          "before": "13, 15 and 20 November have no entry (14 and 16 November are also empty).",
+          "after": "13, 15 and 20 November each carry an entry with a Mass reference (pp. 295, 295 and 296); 14 and 16 November remain empty.",
+          "locus_before": "1631 canvas 47; same rows empty in the 1706 reissue, canvases 56–57",
+          "locus_after": "1741 canvas 39, printed p. 35",
+          "evidence": [
+            {
+              "source_id": "slavonic-roman:nsk1631",
+              "locus": "Canvas 47",
+              "claim": "Rows for the Ides and 18th, 17th, 16th and 12th days before the December Kalends are empty."
+            },
+            {
+              "source_id": "slavonic-roman:nsk1706",
+              "locus": "Canvases 56–57",
+              "claim": "The 1706 reissue leaves the same November rows empty."
+            },
+            {
+              "source_id": "slavonic-roman:nsk1741",
+              "locus": "Canvas 39, printed p. 35",
+              "claim": "The same dates now have entries with page references."
+            }
+          ]
+        },
+        {
+          "component": "calendar",
+          "before": "10, 19 and 24 November each have a single entry, apparently the same in 1706.",
+          "after": "Each of these days opens with a new entry, followed by a red rubric and the earlier entry (pp. 293, 296 and 298).",
+          "locus_before": "1631 canvas 47; 1706 canvases 56–57",
+          "locus_after": "1741 canvas 39, printed p. 35",
+          "evidence": [
+            {
+              "source_id": "slavonic-roman:nsk1631",
+              "locus": "Canvas 47",
+              "claim": "Single entries on these days."
+            },
+            {
+              "source_id": "slavonic-roman:nsk1741",
+              "locus": "Canvas 39, printed p. 35",
+              "claim": "Two-part entries on these days."
+            }
+          ]
+        },
+        {
+          "component": "calendar",
+          "before": "2 October (sixth day before the Nones) has no entry.",
+          "after": "2 October carries an entry with a Mass reference at p. 279.",
+          "locus_before": "1631 canvas 46",
+          "locus_after": "1741 canvas 38, printed p. 34",
+          "evidence": [
+            {
+              "source_id": "slavonic-roman:nsk1631",
+              "locus": "Canvas 46",
+              "claim": "Empty row."
+            },
+            {
+              "source_id": "slavonic-roman:nsk1741",
+              "locus": "Canvas 38, printed p. 34",
+              "claim": "New row entry with page reference."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "slavonic-roman:nsk1631",
+          "locus": "Canvases 46–47",
+          "claim": "Earlier calendar state."
+        },
+        {
+          "source_id": "slavonic-roman:nsk1706",
+          "locus": "Canvases 56–57",
+          "claim": "Reissue repeats the earlier November state."
+        },
+        {
+          "source_id": "slavonic-roman:nsk1741",
+          "locus": "Canvases 38–39",
+          "claim": "Later calendar state."
+        },
+        {
+          "source_id": "slavonic-roman:lokmer2008",
+          "locus": "Printed pp. 175 and 181 (p. 175 read in the extracted text layer)",
+          "claim": "Frames 1706 as a reissue of 1631 and 1741 as Karaman's new edition for the same missal line."
+        }
+      ],
+      "limitations": "Bounded to two months. The added feasts are not named here because the Glagolitic was not transliterated; their dates match feasts added to the Roman calendar after 1631 (for example the Guardian Angels on 2 October and Didacus, Gertrude, Felix of Valois, Andrew Avellino, Elizabeth of Hungary and John of the Cross in November), but that identification is an inference from dates. No claim that 1741 introduced the feasts into Glagolitic use: separate supplements may have carried them earlier. Proper Mass texts at the referenced pages were not read. Jelić, recorded on the inventory candidate slavonic-roman-1706, reports new Masses in 1706, so 1706 is not shown to be an unchanged reissue beyond the compared November rows.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    }
+  ],
   "gaps": [
     {
       "id": "slavonic-roman:original-copies",
       "tradition_id": "slavonic-roman",
       "period": "1483–1905",
-      "missing": "Complete printed/multiple manuscript comparison; 1631, 1706, 1741, 1789, 1896, 1905 full originals; precise substantive deltas; local reception.",
-      "next_source": "NSK RI-4-62a and second 1483 copy; Vienna 25B124 Nr. 5765 (1631); Senj 16.409/15.974 (1631), 15.724/15.795 (1741 with 1789), 15.721 and 15.723 partial extracts; original 1896/1905 titles and approvals.",
-      "consequence": "A real historical native Roman celebrant-book trajectory is established, but its full version genealogy and source-defined complete texts remain open."
+      "missing": "Collation of 1631, 1741 and 1893 beyond the October–November calendar rows (other months, proper of saints texts, ordinary and rubrics); transliteration of the added 1741 feasts; identification of the 1741 pro aliquibus locis appendix and the 1789 supplement in an inspected copy; the new Masses Jelić reports for 1706 and the longer 1896 sanctoral Lokmer reports; the 1905 Vajs original; a second 1483 copy; local reception.",
+      "next_source": "NSK public IIIF copies now located: 1631 urn:nbn:hr:238:717907, 1706 urn:nbn:hr:238:647033, 1741 urn:nbn:hr:238:090215 (composite copy with a later supplement), 1893 (NSK item 575139) and 1896 (NSK item 579116); a full 1893 PDF also at dlib.si URN:NBN:SI:DOC-1EWY36NZ (about 1.3 GB, not fetched). Compare calendar tables and the proper of saints of 1631 and 1741 first; Senj copies 15.724/15.795 for the 1741 appendices; Vienna and Senj 1631 copies for copy variance.",
+      "consequence": "The 1631 and 1741 originals are accessible and a bounded calendar revision between them is page-collated; 1706 and 1896 show no new approval (and 1706 no November calendar change) at their inspected leaves, but their reported additions remain unchecked. Full version genealogy and the linguistic redaction remain open."
     }
   ]
 }

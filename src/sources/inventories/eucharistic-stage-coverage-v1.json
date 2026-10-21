@@ -9,14 +9,14 @@
     {
       "id": "eastern",
       "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
-      "sha256": "6bb8f7b8fe3921bf73163b5785b39ef5965fb05cf08a692642530ef544a85ba8",
-      "byte_size": 1458966
+      "sha256": "c012a5e4359b7e15ce9fd29310f1a10e6081dd973435129d769ff7f5c407b000",
+      "byte_size": 1472169
     },
     {
       "id": "western",
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "a821036b5f1f9645d1620bceef78238db5b9d080e36b6786c12d93f931dd2500",
-      "byte_size": 2778179
+      "sha256": "cddd0c17e429af2d6cbfa6ecd1195f47391ab59db817a66b7a02ac0a42c577d6",
+      "byte_size": 2778652
     },
     {
       "id": "presentation",
@@ -33,8 +33,8 @@
     {
       "id": "dossier:alexandrian-stages",
       "path": "src/sources/inventories/eucharistic-stages/alexandrian.json",
-      "sha256": "f47a20513aef0ca65452902da493c5239894e7e7ef9f46df74a4dd76ec334f9a",
-      "byte_size": 54962
+      "sha256": "07db37ec7cdaba079e48d294d7d59cbebc2caef99edb42d07b6f997fb4289690",
+      "byte_size": 68704
     },
     {
       "id": "dossier:ambrosian",
@@ -45,14 +45,14 @@
     {
       "id": "dossier:armenian-eucharistic-stages",
       "path": "src/sources/inventories/eucharistic-stages/armenian.json",
-      "sha256": "1834b5a154119038cf42b0a899dd5bc562cb5153b3432958445b14ebdc622153",
-      "byte_size": 43099
+      "sha256": "8a1ac1e7425fc21b6397811fffe72af47c261d2d4c55add08bd0afab5c0f4af5",
+      "byte_size": 68797
     },
     {
       "id": "dossier:byzantine-stages",
       "path": "src/sources/inventories/eucharistic-stages/byzantine.json",
-      "sha256": "fcf1afcc469c3cacb1b8daaa0e4cdfb3df2e3fd7a9b426adc2dfdb8492e21544",
-      "byte_size": 73252
+      "sha256": "96986ee0cad2112a0c47b3ce1f6296e69ce3239204da47cabf9b3261575b5a68",
+      "byte_size": 87460
     },
     {
       "id": "dossier:canonical-orders",
@@ -63,8 +63,8 @@
     {
       "id": "dossier:chaldean-east-syriac",
       "path": "src/sources/inventories/eucharistic-stages/chaldean.json",
-      "sha256": "c117f0343b5fb8e91ab8dbb070ae907f71318f30b822628a2751400c7926efb0",
-      "byte_size": 45165
+      "sha256": "42e01e0d944e398e79931dc6959ba844517ae37cde361b52580362b05070d9cd",
+      "byte_size": 58990
     },
     {
       "id": "dossier:cistercian-1606-1657",
@@ -87,14 +87,14 @@
     {
       "id": "dossier:stages-malabar",
       "path": "src/sources/inventories/eucharistic-stages/malabar.json",
-      "sha256": "18dc67367728a9af0cdf919b0eb34b2304da8b44b39b98fcde26756f3e8a18c2",
-      "byte_size": 42250
+      "sha256": "cb16f1cff27a1c1ae8907d03483c955b0697b4ff47d33db92d16753dbbdc175e",
+      "byte_size": 43813
     },
     {
       "id": "dossier:maronite",
       "path": "src/sources/inventories/eucharistic-stages/maronite.json",
-      "sha256": "78bcaa7f4b123694e121dcabaa523cde7431477821fde2e619fda81eaeb42965",
-      "byte_size": 44469
+      "sha256": "dd53f5daeb9fdfc6fa19ff14f60166f22f76da3e74f27cd3b1a3fa2c4a471198",
+      "byte_size": 65199
     },
     {
       "id": "dossier:hispano-mozarabic",
@@ -117,14 +117,14 @@
     {
       "id": "dossier:slavonic-roman",
       "path": "src/sources/inventories/eucharistic-stages/slavonic-roman.json",
-      "sha256": "680df02025d8b9d66165a0c0bd878b5c3a6758e9ac21c203e59d676cbe7563b8",
-      "byte_size": 10800
+      "sha256": "378c45273960198fc3d0b60c4a2c269ace2adbb876ae97b4dccc3f7a246fd273",
+      "byte_size": 23959
     },
     {
       "id": "dossier:west-syriac-stages",
       "path": "src/sources/inventories/eucharistic-stages/west-syriac.json",
-      "sha256": "5af5b77cfacbce6570a8abf8b7d3060070301fe8be43afcd3409bd6d9fb71587",
-      "byte_size": 36965
+      "sha256": "baf3743635c613db31316bfae3f00318293a239131d15ae420306c8737b32611",
+      "byte_size": 45065
     },
     {
       "id": "dossier:bursfelde",
@@ -153,8 +153,8 @@
     {
       "id": "dossier:romanian-blaj",
       "path": "src/sources/inventories/eucharistic-stages/romanian-blaj.json",
-      "sha256": "f59e5da265728d0dd6c1f1f048c2045d1e9e95ad15b3b2e37e45f88f0356c42b",
-      "byte_size": 8181
+      "sha256": "7272196db304885303d2dc24b4107c25083206f2a8c7165bc8716a0eeef581b7",
+      "byte_size": 35994
     },
     {
       "id": "dossier:central-europe-round3",
@@ -8000,6 +8000,11 @@
       "dossier_id": "alexandrian-stages"
     },
     {
+      "id": "geez-rome-1548-print",
+      "label": "Ge’ez liturgy in the Rome 1548 printing",
+      "dossier_id": "alexandrian-stages"
+    },
+    {
       "id": "geez-catholic",
       "label": "Ge’ez Catholic missal",
       "dossier_id": "alexandrian-stages"
@@ -8802,14 +8807,18 @@
           "label": "Ge’ez Aksumite Euchologion witness"
         },
         {
+          "id": "geez-rome-1548-print",
+          "label": "Ge’ez liturgy in the Rome 1548 printing"
+        },
+        {
           "id": "geez-catholic",
           "label": "Ge’ez Catholic missal"
         }
       ],
-      "documented_stage_count": 9,
+      "documented_stage_count": 10,
       "provisional_stage_count": 0,
       "text_coverage_counts": {
-        "not-transcribed": 8,
+        "not-transcribed": 9,
         "partial": 1
       },
       "status": "canonical-bounded-dossier-snapshot"
@@ -8849,10 +8858,10 @@
           "label": "Armenian Apostolic textual witnesses"
         }
       ],
-      "documented_stage_count": 10,
+      "documented_stage_count": 14,
       "provisional_stage_count": 0,
       "text_coverage_counts": {
-        "not-transcribed": 10
+        "not-transcribed": 14
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -8895,10 +8904,10 @@
           "label": "Roman Slavonic Vulgata (Russian-use series)"
         }
       ],
-      "documented_stage_count": 18,
+      "documented_stage_count": 21,
       "provisional_stage_count": 0,
       "text_coverage_counts": {
-        "not-transcribed": 16,
+        "not-transcribed": 19,
         "partial": 2
       },
       "status": "canonical-bounded-dossier-snapshot"
@@ -9005,10 +9014,10 @@
           "label": "Chaldean Catholic recension"
         }
       ],
-      "documented_stage_count": 8,
+      "documented_stage_count": 9,
       "provisional_stage_count": 0,
       "text_coverage_counts": {
-        "not-transcribed": 8
+        "not-transcribed": 9
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -9370,10 +9379,10 @@
           "label": "Maronite Antiochene Qurbono"
         }
       ],
-      "documented_stage_count": 9,
+      "documented_stage_count": 10,
       "provisional_stage_count": 1,
       "text_coverage_counts": {
-        "not-transcribed": 10
+        "not-transcribed": 11
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -9756,10 +9765,10 @@
           "label": "Blaj Romanian Greek Catholic book line"
         }
       ],
-      "documented_stage_count": 2,
+      "documented_stage_count": 7,
       "provisional_stage_count": 0,
       "text_coverage_counts": {
-        "not-transcribed": 2
+        "not-transcribed": 7
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -9771,10 +9780,10 @@
           "label": "Slavonic / Glagolitic Roman books"
         }
       ],
-      "documented_stage_count": 1,
-      "provisional_stage_count": 2,
+      "documented_stage_count": 3,
+      "provisional_stage_count": 1,
       "text_coverage_counts": {
-        "not-transcribed": 3
+        "not-transcribed": 4
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -9933,14 +9942,15 @@
           "byzantine-stages"
         ],
         "stage_ids": [
-          "byzantine-stages:vilnius1692"
+          "byzantine-stages:vilnius1692",
+          "byzantine-stages:suprasl1758"
         ],
         "assigned_family": "Ruthenian Slavonic books and Roman revision",
         "scope": "selected source-book stages; not all Byzantine Churches",
         "reception_limit": "Mapped stages concern identified source books or relevant recensions. This crosswalk does not create a local adoption or continuous-use claim.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 1
+          "not-transcribed": 2
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -9961,7 +9971,7 @@
       ],
       "component_profile": "byzantine",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Inspect Кир.1269п base volume and appended booklets separately; trace later Slavonic revisions and local receipt.",
+      "missing_stage_chain": "Inspect Кир.1269п base volume and appended booklets separately; trace later Slavonic revisions and local receipt. eastern-gaps batch 4 (2026-10-21): the Supraśl 1758 Sluzhebnik for private celebration and travel is inspected (stage suprasl1758); Univ 1740 and Pochaiv 1788 are mapped to the Ruthenian and Ukrainian rows.",
       "next_sources": {
         "inventory_source_ids": [
           "nbuv-vilnius-suprasl",
@@ -9987,7 +9997,7 @@
           "https://drive.google.com/file/d/0B4vzPDufLbhuVEhuY3R3WlZwbHM/view"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Inspect Кир.1269п base volume and appended booklets separately; trace later Slavonic revisions and local receipt."
+        "target": "Inspect Кир.1269п base volume and appended booklets separately; trace later Slavonic revisions and local receipt. eastern-gaps batch 4 (2026-10-21): the Supraśl 1758 Sluzhebnik for private celebration and travel is inspected (stage suprasl1758); Univ 1740 and Pochaiv 1788 are mapped to the Ruthenian and Ukrainian rows."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
@@ -10139,7 +10149,7 @@
       ],
       "component_profile": "byzantine",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Obtain the cited 2022 approval letters and exact 1942 witness; identify earlier and other jurisdictional Slavonic books. Regional lane addition (2026-10-19): Obtain a copy of the Rome 1970 Ruthenian Chrysostom printing and any renewal of decree 5/2018; identify the celebrant books actually used by Serbian Greek Catholics (Ruski Krstur) and their dates.",
+      "missing_stage_chain": "Obtain the cited 2022 approval letters and exact 1942 witness; identify earlier and other jurisdictional Slavonic books. Regional lane addition (2026-10-19): Obtain a copy of the Rome 1970 Ruthenian Chrysostom printing and any renewal of decree 5/2018; identify the celebrant books actually used by Serbian Greek Catholics (Ruski Krstur) and their dates. eastern-gaps batch 4 (2026-10-21): no new route-specific stage; the shared Ruthenian 1733–1905 gap is narrowed by three inspected books mapped to the Ruthenian rows.",
       "next_sources": {
         "inventory_source_ids": [
           "bogataj-slovenian-source",
@@ -10159,7 +10169,7 @@
           "https://er.ucu.edu.ua/bitstreams/d95afaf7-2f69-4b6e-bc43-7058d00aef1a/download"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Obtain the cited 2022 approval letters and exact 1942 witness; identify earlier and other jurisdictional Slavonic books. Current owning route limit: Obtain the cited 2022 approval letters and exact 1942 witness; identify earlier and other jurisdictional Slavonic books. Regional lane addition (2026-10-19): Obtain a copy of the Rome 1970 Ruthenian Chrysostom printing and any renewal of decree 5/2018; identify the celebrant books actually used by Serbian Greek Catholics (Ruski Krstur) and their dates."
+        "target": "Obtain the cited 2022 approval letters and exact 1942 witness; identify earlier and other jurisdictional Slavonic books. Current owning route limit: Obtain the cited 2022 approval letters and exact 1942 witness; identify earlier and other jurisdictional Slavonic books. Regional lane addition (2026-10-19): Obtain a copy of the Rome 1970 Ruthenian Chrysostom printing and any renewal of decree 5/2018; identify the celebrant books actually used by Serbian Greek Catholics (Ruski Krstur) and their dates. eastern-gaps batch 4 (2026-10-21): no new route-specific stage; the shared Ruthenian 1733–1905 gap is narrowed by three inspected books mapped to the Ruthenian rows."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
@@ -10680,13 +10690,18 @@
         ],
         "stage_ids": [
           "romanian-blaj:1756-printing",
-          "romanian-blaj:1775-printing"
+          "romanian-blaj:1775-printing",
+          "romanian-blaj:1807-printing",
+          "romanian-blaj:1870-revision",
+          "romanian-blaj:1905-revision",
+          "romanian-blaj:1931-standardization",
+          "romanian-blaj:2014-official-edition"
         ],
         "scope": "Two original Blaj printings are attested; no 1756-to-1775 substantive revision or uniform Romanian parish reception has been demonstrated.",
         "reception_limit": "A selected book state or proper records only the authority and use expressly evidenced; it does not prove uniform adoption or continuous descent.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 2
+          "not-transcribed": 7
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -10714,7 +10729,7 @@
       ],
       "component_profile": "byzantine",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Establish Slavonic/Greek predecessors, original composition versus translation in historical Romanian books, later Blaj revisions and twentieth-century normative sequence.",
+      "missing_stage_chain": "Establish Slavonic/Greek predecessors, original composition versus translation in historical Romanian books, later Blaj revisions and twentieth-century normative sequence. eastern-gaps batch 4 (2026-10-21): the Blaj 1807 printing is acquired and inspected; 1870, 1905, 1931 and 2014/2015 states are documented from Bălan 1915, Macaveiu 1932 and the 20 May 2015 synodal circular, not from the books themselves. Still open: an Antim exemplar for collation, the 1870–2014 books, the 1905→1931 change and the 1996 identity.",
       "next_sources": {
         "inventory_source_ids": [
           "blaj-cluj",
@@ -10725,7 +10740,8 @@
           "byzantine-regional-src-macaveiu1932",
           "byzantine-regional-src-ro-circular2015",
           "byzantine-regional-src-ro-editors-note2014",
-          "byzantine-regional-src-theologos2020"
+          "byzantine-regional-src-theologos2020",
+          "byzantine-regional-src-blaj1807-bcucluj"
         ],
         "source_urls": [
           "https://documente.bcucluj.ro/carti.html",
@@ -10736,10 +10752,11 @@
           "https://dspace.bcucluj.ro/bitstream/123456789/37771/1/BCUCLUJ_FP_P2628_1932_042_0007.pdf",
           "https://www.egco.ro/2015/05/20/scrisoare-circulara-referitoare-la-noua-editie-oficiala-a-liturghierului/",
           "https://www.e-communio.ro/stire2882-nota-asupra-editiei-2014-a-liturghierului-de-la-blaj",
-          "https://www.unipo.sk/public/media/31348/Theologos2020_1.pdf"
+          "https://www.unipo.sk/public/media/31348/Theologos2020_1.pdf",
+          "https://www.bcucluj.ro/synfilebibdigit/patrimoniu/BCUCLUJ_FCS_BRV721_1.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Establish Slavonic/Greek predecessors, original composition versus translation in historical Romanian books, later Blaj revisions and twentieth-century normative sequence."
+        "target": "Establish Slavonic/Greek predecessors, original composition versus translation in historical Romanian books, later Blaj revisions and twentieth-century normative sequence. eastern-gaps batch 4 (2026-10-21): the Blaj 1807 printing is acquired and inspected; 1870, 1905, 1931 and 2014/2015 states are documented from Bălan 1915, Macaveiu 1932 and the 20 May 2015 synodal circular, not from the books themselves. Still open: an Antim exemplar for collation, the 1870–2014 books, the 1905→1931 change and the 1996 identity."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
@@ -10893,14 +10910,17 @@
           "byzantine-stages:lviv1905",
           "byzantine-stages:ruth1940-41",
           "byzantine-stages:ruth1942",
-          "regional-variants:pittsburgh2007"
+          "regional-variants:pittsburgh2007",
+          "byzantine-stages:univ1740-pontifical",
+          "byzantine-stages:suprasl1758",
+          "byzantine-stages:pochaiv1788"
         ],
         "assigned_family": "Ruthenian Slavonic books and Roman revision",
         "scope": "Includes the approved Pittsburgh English regional books alongside selected Ruthenian source books; source-language parentage and individual parish uptake remain separate.",
         "reception_limit": "Mapped stages concern identified source books or relevant recensions. This crosswalk does not create a local adoption or continuous-use claim.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 8
+          "not-transcribed": 11
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -10946,7 +10966,7 @@
       ],
       "component_profile": "byzantine",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement. Pittsburgh's 2006 English people's book and official MCI account document a regionally approved and used 2007 text, while the clergy Liturgikons and predecessor books remain uncollated. The officially approved 2010 Pittsburgh Presanctified set remains an origin/use review candidate because optional adoption was announced but an actual celebration with the exact books has not been identified. Slavic-lane addition (byzantine_slavic, 2026-10-19): Locate the acts of the Rome meeting of October 1929 attended by the Mukachevo, Pittsburgh and Philadelphia bishops (reported in the 1930 Lviv small Liturgikon), the Mukachevo 1944 reprint of the 1941 Chrysostom (Keleher) and the Pittsburgh 1954/1955 English Ordo.",
+      "missing_stage_chain": "Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement. Pittsburgh's 2006 English people's book and official MCI account document a regionally approved and used 2007 text, while the clergy Liturgikons and predecessor books remain uncollated. The officially approved 2010 Pittsburgh Presanctified set remains an origin/use review candidate because optional adoption was announced but an actual celebration with the exact books has not been identified. Slavic-lane addition (byzantine_slavic, 2026-10-19): Locate the acts of the Rome meeting of October 1929 attended by the Mukachevo, Pittsburgh and Philadelphia bishops (reported in the 1930 Lviv small Liturgikon), the Mukachevo 1944 reprint of the 1941 Chrysostom (Keleher) and the Pittsburgh 1954/1955 English Ordo. eastern-gaps batch 4 (2026-10-21): three Ruthenian books inside the 1733–1905 gap are inspected: the Univ 1740 bishop's Sluzhebnik (mandate citing Zamość), Supraśl 1758 for private celebration and Pochaiv 1788. The ordinary Univ 1740/1747 Sluzhebniks and the 1738/1745 supplements are not digitized at NBUV.",
       "next_sources": {
         "inventory_source_ids": [
           "mci-liturgikon",
@@ -10962,10 +10982,11 @@
           "https://www.teof.uni-lj.si/uploads/File/Edinost/77/02/Bogataj1.pdf",
           "https://librinostri.catholica.cz/download/ActAcadVele18-r.pdf",
           "https://plc-ugcc.blogspot.com/2016/10/recensio-ruthena.html",
-          "https://museumbollandianum.be/records/123110"
+          "https://museumbollandianum.be/records/123110",
+          "https://irbis-nbuv.gov.ua/ulib/item/0001789"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement. Current owning route limit: Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement. Pittsburgh's 2006 English people's book and official MCI account document a regionally approved and used 2007 text, while the clergy Liturgikons and predecessor books remain uncollated. The officially approved 2010 Pittsburgh Presanctified set remains an origin/use review candidate because optional adoption was announced but an actual celebration with the exact books has not been identified. Slavic-lane addition (byzantine_slavic, 2026-10-19): Locate the acts of the Rome meeting of October 1929 attended by the Mukachevo, Pittsburgh and Philadelphia bishops (reported in the 1930 Lviv small Liturgikon), the Mukachevo 1944 reprint of the 1941 Chrysostom (Keleher) and the Pittsburgh 1954/1955 English Ordo."
+        "target": "Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement. Current owning route limit: Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement. Pittsburgh's 2006 English people's book and official MCI account document a regionally approved and used 2007 text, while the clergy Liturgikons and predecessor books remain uncollated. The officially approved 2010 Pittsburgh Presanctified set remains an origin/use review candidate because optional adoption was announced but an actual celebration with the exact books has not been identified. Slavic-lane addition (byzantine_slavic, 2026-10-19): Locate the acts of the Rome meeting of October 1929 attended by the Mukachevo, Pittsburgh and Philadelphia bishops (reported in the 1930 Lviv small Liturgikon), the Mukachevo 1944 reprint of the 1941 Chrysostom (Keleher) and the Pittsburgh 1954/1955 English Ordo. eastern-gaps batch 4 (2026-10-21): three Ruthenian books inside the 1733–1905 gap are inspected: the Univ 1740 bishop's Sluzhebnik (mandate citing Zamość), Supraśl 1758 for private celebration and Pochaiv 1788. The ordinary Univ 1740/1747 Sluzhebniks and the 1738/1745 supplements are not digitized at NBUV."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
@@ -11045,7 +11066,7 @@
       ],
       "component_profile": "byzantine",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Identify and inspect the received 1940 Chrysostom and 1942 Liturgikon source-language copies (Boháč's and Mojzes's 1952 Liturgikon is the photolithographic reissue of 1942, Kolupaev 2012, p. 390) and dated local implementation records; the official 1997 and 2004 translation approvals do not themselves establish those source editions or universal use. Pre-1905 books used in the Prešov eparchy, including the reported Buda 1835 Sluzhebnik, remain unidentified.",
+      "missing_stage_chain": "Identify and inspect the received 1940 Chrysostom and 1942 Liturgikon source-language copies (Boháč's and Mojzes's 1952 Liturgikon is the photolithographic reissue of 1942, Kolupaev 2012, p. 390) and dated local implementation records; the official 1997 and 2004 translation approvals do not themselves establish those source editions or universal use. Pre-1905 books used in the Prešov eparchy, including the reported Buda 1835 Sluzhebnik, remain unidentified. eastern-gaps batch 4 (2026-10-21): no new Slovak-specific stage; the Ruthenian 1733–1905 gap is narrowed by three inspected Univ, Supraśl and Pochaiv books mapped to the Ruthenian rows.",
       "next_sources": {
         "inventory_source_ids": [
           "glevanak-presov-2006",
@@ -11077,7 +11098,7 @@
           "https://www.sav.sk/journals/uploads/issue/04231806Slavica_Slovaca_2025_1_06.pdf",
           "https://inslav.ru/sites/default/files/slav-2005-1.pdf"
         ],
-        "target": "Inspect the 1940 Grottaferrata Chrysostom and 1952 Rome Liturgikon title/approval leaves and the 1998/2005 Slovak books cited by Boháč. Retain the Prešov archival targets for interrupted earlier reception. Current owning route limit: Identify and inspect the received 1940 Chrysostom and 1942 Liturgikon source-language copies (Boháč's and Mojzes's 1952 Liturgikon is the photolithographic reissue of 1942, Kolupaev 2012, p. 390) and dated local implementation records; the official 1997 and 2004 translation approvals do not themselves establish those source editions or universal use. Pre-1905 books used in the Prešov eparchy, including the reported Buda 1835 Sluzhebnik, remain unidentified.",
+        "target": "Inspect the 1940 Grottaferrata Chrysostom and 1952 Rome Liturgikon title/approval leaves and the 1998/2005 Slovak books cited by Boháč. Retain the Prešov archival targets for interrupted earlier reception. Current owning route limit: Identify and inspect the received 1940 Chrysostom and 1942 Liturgikon source-language copies (Boháč's and Mojzes's 1952 Liturgikon is the photolithographic reissue of 1942, Kolupaev 2012, p. 390) and dated local implementation records; the official 1997 and 2004 translation approvals do not themselves establish those source editions or universal use. Pre-1905 books used in the Prešov eparchy, including the reported Buda 1835 Sluzhebnik, remain unidentified. eastern-gaps batch 4 (2026-10-21): no new Slovak-specific stage; the Ruthenian 1733–1905 gap is narrowed by three inspected Univ, Supraśl and Pochaiv books mapped to the Ruthenian rows.",
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
@@ -11136,14 +11157,17 @@
           "byzantine-stages:ruth1940-41",
           "byzantine-stages:ruth1942",
           "byzantine-stages:lviv-seminary-1942",
-          "byzantine-stages:ugcc-ordo-obligation-2006"
+          "byzantine-stages:ugcc-ordo-obligation-2006",
+          "byzantine-stages:univ1740-pontifical",
+          "byzantine-stages:suprasl1758",
+          "byzantine-stages:pochaiv1788"
         ],
         "assigned_family": "Ruthenian Slavonic books and Roman revision",
         "scope": "Selected shared Ruthenian source books, bounded Lviv extracts, seminary reception testimony in 1942 and UGCC obligation for the complementary 1953 Ordo affirmed in 2006. Local use and a Church-wide norm are separate claims.",
         "reception_limit": "Mapped stages concern identified source books or relevant recensions. This crosswalk does not create a local adoption or continuous-use claim.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 9
+          "not-transcribed": 12
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -11220,7 +11244,7 @@
       ],
       "component_profile": "byzantine",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement.",
+      "missing_stage_chain": "Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement. eastern-gaps batch 4 (2026-10-21): three Ruthenian books inside the 1733–1905 gap are inspected: the Univ 1740 bishop's Sluzhebnik (mandate citing Zamość), Supraśl 1758 for private celebration and Pochaiv 1788. The ordinary Univ 1740/1747 Sluzhebniks and the 1738/1745 supplements are not digitized at NBUV.",
       "next_sources": {
         "inventory_source_ids": [
           "mci-liturgikon",
@@ -11244,10 +11268,11 @@
           "https://slovene.ru/2021_1_Semenenko-Basin_Caprio.pdf",
           "https://plc-ugcc.blogspot.com/p/blog-page_6446.html",
           "https://www.vatican.va/archive/actes/documents/Volume-3b.pdf",
-          "https://docs.ugcc.ua/201/"
+          "https://docs.ugcc.ua/201/",
+          "https://irbis-nbuv.gov.ua/ulib/item/0001789"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement."
+        "target": "Acquire 1940/1941 and 1942 printed witnesses and 1944 Ordo; establish region-specific receipt and supplements. The 1941 act permits exceptions, so publication is not universal replacement. eastern-gaps batch 4 (2026-10-21): three Ruthenian books inside the 1733–1905 gap are inspected: the Univ 1740 bishop's Sluzhebnik (mandate citing Zamość), Supraśl 1758 for private celebration and Pochaiv 1788. The ordinary Univ 1740/1747 Sluzhebniks and the 1738/1745 supplements are not digitized at NBUV."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
@@ -11494,7 +11519,7 @@
       ],
       "component_profile": "alexandrian",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Inspect the original 1898 and 1934 books and later Coptic/Arabic revisions; preserve 1934 as bibliography-only and Vat.copt.17 as collateral, without asserted Catholic reception or direct parentage. Coptic lane addition (2026-10-19): retrieve the full-view 1898 copy (HathiTrust oxu1.308011427) and the 1898 synodal acts; inspect the Rome 1971 book and the 1990 Basil liturgy with its patriarchal preface, and establish how the 1987–2009 Basil printings relate to the 1975–1990 revision; check images of the two Catholic manuscript Euchologia (Coptic Museum Liturgy 265 and BnF Arabe 5969), keeping the later correction layer of Liturgy 265 distinct.",
+      "missing_stage_chain": "Inspect the original 1898 and 1934 books and later Coptic/Arabic revisions; preserve 1934 as bibliography-only and Vat.copt.17 as collateral, without asserted Catholic reception or direct parentage. Coptic lane addition (2026-10-19): retrieve the full-view 1898 copy (HathiTrust oxu1.308011427) and the 1898 synodal acts; inspect the Rome 1971 book and the 1990 Basil liturgy with its patriarchal preface, and establish how the 1987–2009 Basil printings relate to the 1975–1990 revision; check images of the two Catholic manuscript Euchologia (Coptic Museum Liturgy 265 and BnF Arabe 5969), keeping the later correction layer of Liturgy 265 distinct. eastern-gaps batch 4 (2026-10-21): HathiTrust oxu1.308011427 is the 1902 Orthodox Euchologion of ʿAbd al-Masīḥ Ṣalīb, not the 1898 Catholic book, and no longer counts as a route to it; the 1898, 1934 and 1971 originals remain unlocated online.",
       "next_sources": {
         "inventory_source_ids": [
           "coptic-1736",
@@ -11509,7 +11534,7 @@
           "https://api.pageplace.de/preview/DT0400.9783112470480_A46374007/preview-9783112470480_A46374007.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "The 1736 Arabic Creed is a checked complete constituent, with partial whole-book coverage. Identify Tuki’s exact exemplar, inspect original 1898/1934/1971 books and establish precise rubric, anaphora and later reception changes. Current owning route limit: Inspect the original 1898 and 1934 books and later Coptic/Arabic revisions; preserve 1934 as bibliography-only and Vat.copt.17 as collateral, without asserted Catholic reception or direct parentage. Coptic lane addition (2026-10-19): retrieve the full-view 1898 copy (HathiTrust oxu1.308011427) and the 1898 synodal acts; inspect the Rome 1971 book and the 1990 Basil liturgy with its patriarchal preface, and establish how the 1987–2009 Basil printings relate to the 1975–1990 revision; check images of the two Catholic manuscript Euchologia (Coptic Museum Liturgy 265 and BnF Arabe 5969), keeping the later correction layer of Liturgy 265 distinct."
+        "target": "The 1736 Arabic Creed is a checked complete constituent, with partial whole-book coverage. Identify Tuki’s exact exemplar, inspect original 1898/1934/1971 books and establish precise rubric, anaphora and later reception changes. Current owning route limit: Inspect the original 1898 and 1934 books and later Coptic/Arabic revisions; preserve 1934 as bibliography-only and Vat.copt.17 as collateral, without asserted Catholic reception or direct parentage. Coptic lane addition (2026-10-19): retrieve the full-view 1898 copy (HathiTrust oxu1.308011427) and the 1898 synodal acts; inspect the Rome 1971 book and the 1990 Basil liturgy with its patriarchal preface, and establish how the 1987–2009 Basil printings relate to the 1975–1990 revision; check images of the two Catholic manuscript Euchologia (Coptic Museum Liturgy 265 and BnF Arabe 5969), keeping the later correction layer of Liturgy 265 distinct. eastern-gaps batch 4 (2026-10-21): HathiTrust oxu1.308011427 is the 1902 Orthodox Euchologion of ʿAbd al-Masīḥ Ṣalīb, not the 1898 Catholic book, and no longer counts as a route to it; the 1898, 1934 and 1971 originals remain unlocated online."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
@@ -11595,7 +11620,7 @@
       ],
       "component_profile": "alexandrian",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Verify 1945 Roman Geez missal directly; earlier manuscripts/printing, approved successors, calendar/chant changes and exact 2025 imprint/promulgation remain open. Asmara 1914/15 (approved 1913) is now acquired but carries an Eritrean imprimatur, so Ethiopian reception remains to be shown; Keren 1890 and Vatican 1945 originals, the 1940 to 1944 revision documents and the Paez-era and pre-1888 Catholic revisions remain unwitnessed.",
+      "missing_stage_chain": "Verify 1945 Roman Geez missal directly; earlier manuscripts/printing, approved successors, calendar/chant changes and exact 2025 imprint/promulgation remain open. Asmara 1914/15 (approved 1913) is now acquired but carries an Eritrean imprimatur, so Ethiopian reception remains to be shown; Keren 1890 and Vatican 1945 originals, the 1940 to 1944 revision documents and the Paez-era and pre-1888 Catholic revisions remain unwitnessed. eastern-gaps batch 4 (2026-10-21): the Asmara 1914/15 printing (approbation 25 February 1913) is inspected and the prayer sampled by the Keren study identified on the page; the Rome 1548 Ethiopic New Testament with Mass order is documented as a separate early print (not a Catholic Church book). Still open: Keren 1890 and Vatican 1945 originals, and the 2024 native book.",
       "next_sources": {
         "inventory_source_ids": [
           "geez-2025",
@@ -11603,10 +11628,12 @@
         ],
         "source_urls": [
           "https://www.osservatoreromano.va/en/news/2025-06/ing-006/new-edition-of-missal-in-ge-ez.html",
-          "https://www.liturgia.it/content/addaicongress/interventi/Fritsch.pdf"
+          "https://www.liturgia.it/content/addaicongress/interventi/Fritsch.pdf",
+          "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3222909",
+          "https://books.google.com/books?id=jXZRAAAAcAAJ"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Acquire original Keren 1890, Asmara 1913 and Vatican 1945 title, approval and native prayer pages, then the complete 2024 edition and local implementation records; source-described stages and 2025 presentation do not fill those gaps. Current owning route limit: Verify 1945 Roman Geez missal directly; earlier manuscripts/printing, approved successors, calendar/chant changes and exact 2025 imprint/promulgation remain open. Asmara 1914/15 (approved 1913) is now acquired but carries an Eritrean imprimatur, so Ethiopian reception remains to be shown; Keren 1890 and Vatican 1945 originals, the 1940 to 1944 revision documents and the Paez-era and pre-1888 Catholic revisions remain unwitnessed."
+        "target": "Acquire original Keren 1890, Asmara 1913 and Vatican 1945 title, approval and native prayer pages, then the complete 2024 edition and local implementation records; source-described stages and 2025 presentation do not fill those gaps. Current owning route limit: Verify 1945 Roman Geez missal directly; earlier manuscripts/printing, approved successors, calendar/chant changes and exact 2025 imprint/promulgation remain open. Asmara 1914/15 (approved 1913) is now acquired but carries an Eritrean imprimatur, so Ethiopian reception remains to be shown; Keren 1890 and Vatican 1945 originals, the 1940 to 1944 revision documents and the Paez-era and pre-1888 Catholic revisions remain unwitnessed. eastern-gaps batch 4 (2026-10-21): the Asmara 1914/15 printing (approbation 25 February 1913) is inspected and the prayer sampled by the Keren study identified on the page; the Rome 1548 Ethiopic New Testament with Mass order is documented as a separate early print (not a Catholic Church book). Still open: Keren 1890 and Vatican 1945 originals, and the 2024 native book."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
@@ -11681,16 +11708,18 @@
       ],
       "component_profile": "alexandrian",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Shared 2025 publication does not fill earlier Geez chronology. Need 1945 witness, pre-2015 territorial use, local printing/revision sequence and 2025 authority front matter. The Asmara book (imprimatur of the Vicar Apostolic of Eritrea, 12 April 1913; imprint 1914/15) is now acquired and linked; Keren 1890 and Vatican 1945 originals remain open. The locally approved Keren 2008 Blin/Ge'ez Mass set is linked on distinct approval and by-2010 actual-use evidence; obtain the exact edition's implementation record and compare its named components with the 1945 base before asserting a ritual revision or wider reception.",
+      "missing_stage_chain": "Shared 2025 publication does not fill earlier Geez chronology. Need 1945 witness, pre-2015 territorial use, local printing/revision sequence and 2025 authority front matter. The Asmara book (imprimatur of the Vicar Apostolic of Eritrea, 12 April 1913; imprint 1914/15) is now acquired and linked; Keren 1890 and Vatican 1945 originals remain open. The locally approved Keren 2008 Blin/Ge'ez Mass set is linked on distinct approval and by-2010 actual-use evidence; obtain the exact edition's implementation record and compare its named components with the 1945 base before asserting a ritual revision or wider reception. eastern-gaps batch 4 (2026-10-21): the Asmara 1914/15 printing (approbation 25 February 1913) is inspected and the prayer sampled by the Keren study identified on the page; the Rome 1548 Ethiopic New Testament with Mass order is documented as a separate early print (not a Catholic Church book). Still open: Keren 1890 and Vatican 1945 originals, and the 2024 native book.",
       "next_sources": {
         "inventory_source_ids": [
           "geez-2025"
         ],
         "source_urls": [
-          "https://www.osservatoreromano.va/en/news/2025-06/ing-006/new-edition-of-missal-in-ge-ez.html"
+          "https://www.osservatoreromano.va/en/news/2025-06/ing-006/new-edition-of-missal-in-ge-ez.html",
+          "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3222909",
+          "https://books.google.com/books?id=jXZRAAAAcAAJ"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Acquire original Keren 1890, Asmara 1913 and Vatican 1945 books and establish territorial use; compare the complete 2024 joint edition and its local implementation independently of the 2025 presentation. Current owning route limit: Shared 2025 publication does not fill earlier Geez chronology. Need 1945 witness, pre-2015 territorial use, local printing/revision sequence and 2025 authority front matter. The Asmara book (imprimatur of the Vicar Apostolic of Eritrea, 12 April 1913; imprint 1914/15) is now acquired and linked; Keren 1890 and Vatican 1945 originals remain open. The locally approved Keren 2008 Blin/Ge'ez Mass set is linked on distinct approval and by-2010 actual-use evidence; obtain the exact edition's implementation record and compare its named components with the 1945 base before asserting a ritual revision or wider reception."
+        "target": "Acquire original Keren 1890, Asmara 1913 and Vatican 1945 books and establish territorial use; compare the complete 2024 joint edition and its local implementation independently of the 2025 presentation. Current owning route limit: Shared 2025 publication does not fill earlier Geez chronology. Need 1945 witness, pre-2015 territorial use, local printing/revision sequence and 2025 authority front matter. The Asmara book (imprimatur of the Vicar Apostolic of Eritrea, 12 April 1913; imprint 1914/15) is now acquired and linked; Keren 1890 and Vatican 1945 originals remain open. The locally approved Keren 2008 Blin/Ge'ez Mass set is linked on distinct approval and by-2010 actual-use evidence; obtain the exact edition's implementation record and compare its named components with the 1945 base before asserting a ritual revision or wider reception. eastern-gaps batch 4 (2026-10-21): the Asmara 1914/15 printing (approbation 25 February 1913) is inspected and the prayer sampled by the Keren study identified on the page; the Rome 1548 Ethiopic New Testament with Mass order is documented as a separate early print (not a Catholic Church book). Still open: Keren 1890 and Vatican 1945 originals, and the 2024 native book."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
@@ -11759,14 +11788,15 @@
           "armenian-eucharistic-stages:venice1823-state",
           "armenian-eucharistic-stages:vienna1879",
           "armenian-eucharistic-stages:revised1994",
-          "armenian-eucharistic-stages:lviv-corrected"
+          "armenian-eucharistic-stages:lviv-corrected",
+          "armenian-eucharistic-stages:zmmar2007-classical"
         ],
         "assigned_family": "Armenian Catholic book states; Lviv Armenian manuscript reception",
         "scope": "selected Armenian source-book stages",
         "reception_limit": "Mapped stages concern identified source books or relevant recensions. This crosswalk does not create a local adoption or continuous-use claim.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 7
+          "not-transcribed": 8
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -11821,20 +11851,23 @@
       ],
       "component_profile": "armenian",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Need medieval Armenian witnesses, fuller comparison beyond the checked 1642/1677/1823 Creed passages, later altar books and modern original-language recension. The 1642 Armenian liturgical identity is established; its specific reception and whole-book parentage remain unverified. Distinguish Armenian-rite books from Roman-rite translations into Armenian. Armenian lane (2026-10-19): Rome 1777, Venice 1741, Trieste 1803, Venice 1809, Vienna 1858, the patriarchal Vienna 1879 book (title and 6 January 1879 declaration inspected; ordinary section not in the delivered scan), its 1904 second printing, the 1994 prescription and the complementary deacons', clerks' and low-Mass server books are now labelled; Rome 1670, Rome 1686, Venice and Trieste 1808, Vienna 1884 and Venice 1895 remain unconfirmed leads. Textual collation of 1677, 1879 and 1994 is still open.",
+      "missing_stage_chain": "Need medieval Armenian witnesses, fuller comparison beyond the checked 1642/1677/1823 Creed passages, later altar books and modern original-language recension. The 1642 Armenian liturgical identity is established; its specific reception and whole-book parentage remain unverified. Distinguish Armenian-rite books from Roman-rite translations into Armenian. Armenian lane (2026-10-19): Rome 1777, Venice 1741, Trieste 1803, Venice 1809, Vienna 1858, the patriarchal Vienna 1879 book (title and 6 January 1879 declaration inspected; ordinary section not in the delivered scan), its 1904 second printing, the 1994 prescription and the complementary deacons', clerks' and low-Mass server books are now labelled; Rome 1670, Rome 1686, Venice and Trieste 1808, Vienna 1884 and Venice 1895 remain unconfirmed leads. Textual collation of 1677, 1879 and 1994 is still open. eastern-gaps batch 4 (2026-10-21): the 1879 book is read as an examination exemplar for the bishops and the 1904 printing as an authorized second printing of the same text (a later witness of the 1879 stage) (permission no. 1093 of 17 May 1903); a 2007 patriarchal low-Mass book attests the classical text with a Creed lacking the Western readings and anathema of 1677/1823 (date of change unknown); medieval manuscripts are known from Brightman only. Still open: the 1879/1904 ordinary, the 1994 decree and book, Lviv MS 669 images.",
       "next_sources": {
         "inventory_source_ids": [
           "armenia-1677",
           "armenia-1823",
-          "rsl-arm-ordo1642"
+          "rsl-arm-ordo1642",
+          "armenian-src-vienna1904-google"
         ],
         "source_urls": [
           "https://melikiancollection.com/artwork/lyturgia-armena-and-ministerium-missale-17/",
           "https://www.loc.gov/exhibits/armenian-literary-tradition/exhibition-items.html#obj10",
-          "https://kp.rusneb.ru/item/material/ordo-divinae-missae-armenorum-io-giouanni-molino-interprete"
+          "https://kp.rusneb.ru/item/material/ordo-divinae-missae-armenorum-io-giouanni-molino-interprete",
+          "https://books.google.com/books?id=jJIwAQAAMAAJ",
+          "https://armeniancatholic.org/wp-content/uploads/2017/07/Khorhrtadedre-Sourp-Badaraki.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Need medieval Armenian witnesses, fuller comparison beyond the checked 1642/1677/1823 Creed passages, later altar books and modern original-language recension. The 1642 Armenian liturgical identity is established; its specific reception and whole-book parentage remain unverified. Distinguish Armenian-rite books from Roman-rite translations into Armenian. Current owning route limit: Need medieval Armenian witnesses, fuller comparison beyond the checked 1642/1677/1823 Creed passages, later altar books and modern original-language recension. The 1642 Armenian liturgical identity is established; its specific reception and whole-book parentage remain unverified. Distinguish Armenian-rite books from Roman-rite translations into Armenian. Armenian lane (2026-10-19): Rome 1777, Venice 1741, Trieste 1803, Venice 1809, Vienna 1858, the patriarchal Vienna 1879 book (title and 6 January 1879 declaration inspected; ordinary section not in the delivered scan), its 1904 second printing, the 1994 prescription and the complementary deacons', clerks' and low-Mass server books are now labelled; Rome 1670, Rome 1686, Venice and Trieste 1808, Vienna 1884 and Venice 1895 remain unconfirmed leads. Textual collation of 1677, 1879 and 1994 is still open."
+        "target": "Need medieval Armenian witnesses, fuller comparison beyond the checked 1642/1677/1823 Creed passages, later altar books and modern original-language recension. The 1642 Armenian liturgical identity is established; its specific reception and whole-book parentage remain unverified. Distinguish Armenian-rite books from Roman-rite translations into Armenian. Current owning route limit: Need medieval Armenian witnesses, fuller comparison beyond the checked 1642/1677/1823 Creed passages, later altar books and modern original-language recension. The 1642 Armenian liturgical identity is established; its specific reception and whole-book parentage remain unverified. Distinguish Armenian-rite books from Roman-rite translations into Armenian. Armenian lane (2026-10-19): Rome 1777, Venice 1741, Trieste 1803, Venice 1809, Vienna 1858, the patriarchal Vienna 1879 book (title and 6 January 1879 declaration inspected; ordinary section not in the delivered scan), its 1904 second printing, the 1994 prescription and the complementary deacons', clerks' and low-Mass server books are now labelled; Rome 1670, Rome 1686, Venice and Trieste 1808, Vienna 1884 and Venice 1895 remain unconfirmed leads. Textual collation of 1677, 1879 and 1994 is still open. eastern-gaps batch 4 (2026-10-21): the 1879 book is read as an examination exemplar for the bishops and the 1904 printing as an authorized second printing of the same text (a later witness of the 1879 stage) (permission no. 1093 of 17 May 1903); a 2007 patriarchal low-Mass book attests the classical text with a Creed lacking the Western readings and anathema of 1677/1823 (date of change unknown); medieval manuscripts are known from Brightman only. Still open: the 1879/1904 ordinary, the 1994 decree and book, Lviv MS 669 images."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition. The distinct FSL A/711 EAP 1677 19-page setting is an additional witness only; existing stages retain their Google-controlled source identities. No qualified Armenian transcription, new stage, substantive recension or ancestry is supplied by its acquired images.",
       "contextual_ancestry_candidates": [
@@ -11899,7 +11932,8 @@
           "maronite-dibs1888",
           "maronite-simple1973",
           "maronite-bkerke1992",
-          "maronite-synod2003-2006"
+          "maronite-synod2003-2006",
+          "maronite-bkerke2005"
         ],
         "assigned_family": "Maronite Antiochene Qurbono",
         "scope": "Selected manuscript and printed states, experimental books and the 2003–2006 synod’s book-use prescriptions; the latter are not a new whole-book textual edition.",
@@ -11908,7 +11942,7 @@
           "maronite-experiment1972"
         ],
         "text_coverage_counts": {
-          "not-transcribed": 10
+          "not-transcribed": 11
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -11968,20 +12002,24 @@
       ],
       "component_profile": "syriac",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Independently verify early imprints and manuscripts, Qozhaya reprints and anaphora selection; resolve Syriac/Garshuni/Arabic original composition in 1959/1973/1992 books. No complete series collation. Maronite lane (2026-10-19): the 1762 missal's title (1762) and approbation (10 April 1763) are now read on one acquired copy, but its anaphora count is not; Qozhaya 1816-1872 and Beirut 1888 remain reported printings; 1959, 1973, 1992 and 2005 originals are unacquired, the 2005 book being known from its decree reproduced in the 2012 English edition.",
+      "missing_stage_chain": "Independently verify early imprints and manuscripts, Qozhaya reprints and anaphora selection; resolve Syriac/Garshuni/Arabic original composition in 1959/1973/1992 books. No complete series collation. Maronite lane (2026-10-19): the 1762 missal's title (1762) and approbation (10 April 1763) are now read on one acquired copy, but its anaphora count is not; Qozhaya 1816-1872 and Beirut 1888 remain reported printings; 1959, 1973, 1992 and 2005 originals are unacquired, the 2005 book being known from its decree reproduced in the 2012 English edition. eastern-gaps batch 4 (2026-10-21): the 1762 missal's eight anaphora headings and its Good Friday chalice order are read on the ONB copy; the Bonn 1908 copy prints the same eight in a new order; Vat. sir. 431 f. 45 is inspected; decree 43/1973 and decree 1512/2005 are read in the approved 2012 edition, giving a documented 2005 stage. Still open: a 1716 copy (partial roster via Kaufhold and Feulner), Qozhaya 1816–1872 and Dibs 1888, the 1959 script edition, the 1992 and 2005 Arabic/Syriac originals.",
       "next_sources": {
         "inventory_source_ids": [
           "maronite",
           "bonn-mar1908",
-          "book-mar-dibs-1908"
+          "book-mar-dibs-1908",
+          "maronite-src-kaufhold1988"
         ],
         "source_urls": [
           "https://www.stmaron.org/qurbono",
           "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3088113",
-          "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3088113"
+          "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3088113",
+          "https://api.onb.ac.at/iiif/presentation/v3/manifest/ABO_+Z221480402",
+          "https://digi.vatlib.it/view/MSS_Vat.sir.431",
+          "https://syriac-anaphoras.org/catalogue/html/kaufhold_2.html"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Independently verify early imprints and manuscripts, Qozhaya reprints and anaphora selection; resolve Syriac/Garshuni/Arabic original composition in 1959/1973/1992 books. No complete series collation. Current owning route limit: Independently verify early imprints and manuscripts, Qozhaya reprints and anaphora selection; resolve Syriac/Garshuni/Arabic original composition in 1959/1973/1992 books. No complete series collation. Maronite lane (2026-10-19): the 1762 missal's title (1762) and approbation (10 April 1763) are now read on one acquired copy, but its anaphora count is not; Qozhaya 1816-1872 and Beirut 1888 remain reported printings; 1959, 1973, 1992 and 2005 originals are unacquired, the 2005 book being known from its decree reproduced in the 2012 English edition."
+        "target": "Independently verify early imprints and manuscripts, Qozhaya reprints and anaphora selection; resolve Syriac/Garshuni/Arabic original composition in 1959/1973/1992 books. No complete series collation. Current owning route limit: Independently verify early imprints and manuscripts, Qozhaya reprints and anaphora selection; resolve Syriac/Garshuni/Arabic original composition in 1959/1973/1992 books. No complete series collation. Maronite lane (2026-10-19): the 1762 missal's title (1762) and approbation (10 April 1763) are now read on one acquired copy, but its anaphora count is not; Qozhaya 1816-1872 and Beirut 1888 remain reported printings; 1959, 1973, 1992 and 2005 originals are unacquired, the 2005 book being known from its decree reproduced in the 2012 English edition. eastern-gaps batch 4 (2026-10-21): the 1762 missal's eight anaphora headings and its Good Friday chalice order are read on the ONB copy; the Bonn 1908 copy prints the same eight in a new order; Vat. sir. 431 f. 45 is inspected; decree 43/1973 and decree 1512/2005 are read in the approved 2012 edition, giving a documented 2005 stage. Still open: a 1716 copy (partial roster via Kaufhold and Feulner), Qozhaya 1816–1872 and Dibs 1888, the 1959 script edition, the 1992 and 2005 Arabic/Syriac originals."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
@@ -12088,7 +12126,7 @@
       ],
       "component_profile": "syriac",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Collate the retained 1843 and 1922 native prayer bodies beyond the checked repertoire labels and openings; complete earlier/later local reception and common-order/anaphora-selection chronology. The 1843 provider file, title and approval leaves are acquired; physical completeness remains distinct from the provider page count. Syriac-Malankara lane addition (2026-10-19): Obtain the reported post-1922 celebrant books (Hayek 1978; Musa, Baghdad 2003; Mosul 2015) and the 1868 and undated Mosul deacon books; compare the acquired 1905 Sharfeh deacon book with 1881.",
+      "missing_stage_chain": "Collate the retained 1843 and 1922 native prayer bodies beyond the checked repertoire labels and openings; complete earlier/later local reception and common-order/anaphora-selection chronology. The 1843 provider file, title and approval leaves are acquired; physical completeness remains distinct from the provider page count. Syriac-Malankara lane addition (2026-10-19): Obtain the reported post-1922 celebrant books (Hayek 1978; Musa, Baghdad 2003; Mosul 2015) and the 1868 and undated Mosul deacon books; compare the acquired 1905 Sharfeh deacon book with 1881. eastern-gaps batch 4 (2026-10-21): the fraction formula change between Rome 1843 (printed 29) and Sharfeh 1922 (printed 81 and 134) is page-collated; Wright's catalogue identifies Add. 17128, the manuscript Rahmani cites, as a tenth- or eleventh-century sacerdotal. Still open: entrance prayers and Presanctified collation, the Mosul 1868 book and later Syriac/Arabic missals.",
       "next_sources": {
         "inventory_source_ids": [
           "bonn-syr1881",
@@ -12118,10 +12156,11 @@
           "https://bakhdida.ca/Churches/PatHaik.htm",
           "https://ci.nii.ac.jp/ncid/BC11052671?l=en",
           "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/4156832",
-          "https://bl.syriac.uk/ms/355"
+          "https://bl.syriac.uk/ms/355",
+          "https://books.google.com/books?id=CWtoAAAAcAAJ&pg=PA226"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Collate the retained 1843 and 1922 native prayer bodies beyond the checked repertoire labels and openings; complete earlier/later local reception and common-order/anaphora-selection chronology. The 1843 provider file, title and approval leaves are acquired; physical completeness remains distinct from the provider page count. Current owning route limit: Collate the retained 1843 and 1922 native prayer bodies beyond the checked repertoire labels and openings; complete earlier/later local reception and common-order/anaphora-selection chronology. The 1843 provider file, title and approval leaves are acquired; physical completeness remains distinct from the provider page count. Syriac-Malankara lane addition (2026-10-19): Obtain the reported post-1922 celebrant books (Hayek 1978; Musa, Baghdad 2003; Mosul 2015) and the 1868 and undated Mosul deacon books; compare the acquired 1905 Sharfeh deacon book with 1881."
+        "target": "Collate the retained 1843 and 1922 native prayer bodies beyond the checked repertoire labels and openings; complete earlier/later local reception and common-order/anaphora-selection chronology. The 1843 provider file, title and approval leaves are acquired; physical completeness remains distinct from the provider page count. Current owning route limit: Collate the retained 1843 and 1922 native prayer bodies beyond the checked repertoire labels and openings; complete earlier/later local reception and common-order/anaphora-selection chronology. The 1843 provider file, title and approval leaves are acquired; physical completeness remains distinct from the provider page count. Syriac-Malankara lane addition (2026-10-19): Obtain the reported post-1922 celebrant books (Hayek 1978; Musa, Baghdad 2003; Mosul 2015) and the 1868 and undated Mosul deacon books; compare the acquired 1905 Sharfeh deacon book with 1881. eastern-gaps batch 4 (2026-10-21): the fraction formula change between Rome 1843 (printed 29) and Sharfeh 1922 (printed 81 and 134) is page-collated; Wright's catalogue identifies Add. 17128, the manuscript Rahmani cites, as a tenth- or eleventh-century sacerdotal. Still open: entrance prayers and Presanctified collation, the Mosul 1868 book and later Syriac/Arabic missals."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
@@ -12195,7 +12234,7 @@
       ],
       "component_profile": "syriac",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Locate 1934 Pampakuda title, approval and prayer leaves; verify 1931/1934 anaphora selection. Establish actual use of the approved, issued 1966 Malayalam Taksa printing, its textual source, and liturgical use of the approved October 2007 Malayalam Taksa before candidate admission. Acquire and collate the latter's original printing to establish its exact text and predecessor independently of synodal concelebration decisions. Locate the distinct February 2007 Qurbonokramam to identify its language and use, the 1987 nine-anaphora Takso, and the edition behind the 1960 re-imprimatur.",
+      "missing_stage_chain": "Locate 1934 Pampakuda title, approval and prayer leaves; verify 1931/1934 anaphora selection. Establish actual use of the approved, issued 1966 Malayalam Taksa printing, its textual source, and liturgical use of the approved October 2007 Malayalam Taksa before candidate admission. Acquire and collate the latter's original printing to establish its exact text and predecessor independently of synodal concelebration decisions. Locate the distinct February 2007 Qurbonokramam to identify its language and use, the 1987 nine-anaphora Takso, and the edition behind the 1960 re-imprimatur. eastern-gaps batch 4 (2026-10-21): the 1966 Malayalam Taksa's own Part Two introduction (printed 57) states that it prints Xystus, with James customary on special days, matching the pair Tisserant reports for 1934; it names no source edition. The 1934 original, the 2007 Taksa and an image of King p. 203 remain open (archive.org unreachable on 2026-10-21).",
       "next_sources": {
         "inventory_source_ids": [
           "tisserant-malankara-books",
@@ -12226,7 +12265,7 @@
           "https://archive.malankaralibrary.com/ImageUpload/6d1ae8a1eb378b9392e20fe9969a97f9.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Document actual liturgical use of the 1966 and October 2007 Malayalam Taksa books before candidate admission; acquire and collate both printings and identify textual predecessors. Find the separate February 2007 Qurbonokramam to verify its language and use. Retain the 1934 Syriac original and anaphora-selection gaps. Current owning route limit: Locate 1934 Pampakuda title, approval and prayer leaves; verify 1931/1934 anaphora selection. Establish actual use of the approved, issued 1966 Malayalam Taksa printing, its textual source, and liturgical use of the approved October 2007 Malayalam Taksa before candidate admission. Acquire and collate the latter's original printing to establish its exact text and predecessor independently of synodal concelebration decisions. Locate the distinct February 2007 Qurbonokramam to identify its language and use, the 1987 nine-anaphora Takso, and the edition behind the 1960 re-imprimatur."
+        "target": "Document actual liturgical use of the 1966 and October 2007 Malayalam Taksa books before candidate admission; acquire and collate both printings and identify textual predecessors. Find the separate February 2007 Qurbonokramam to verify its language and use. Retain the 1934 Syriac original and anaphora-selection gaps. Current owning route limit: Locate 1934 Pampakuda title, approval and prayer leaves; verify 1931/1934 anaphora selection. Establish actual use of the approved, issued 1966 Malayalam Taksa printing, its textual source, and liturgical use of the approved October 2007 Malayalam Taksa before candidate admission. Acquire and collate the latter's original printing to establish its exact text and predecessor independently of synodal concelebration decisions. Locate the distinct February 2007 Qurbonokramam to identify its language and use, the 1987 nine-anaphora Takso, and the edition behind the 1960 re-imprimatur. eastern-gaps batch 4 (2026-10-21): the 1966 Malayalam Taksa's own Part Two introduction (printed 57) states that it prints Xystus, with James customary on special days, matching the pair Tisserant reports for 1934; it names no source edition. The 1934 original, the 2007 Taksa and an image of King p. 203 remain open (archive.org unreachable on 2026-10-21)."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
@@ -12298,14 +12337,15 @@
           "chaldean-east-syriac:mosul1901",
           "chaldean-east-syriac:reform2007",
           "chaldean-east-syriac:baghdad2014",
-          "chaldean-east-syriac:baghdad2020"
+          "chaldean-east-syriac:baghdad2020",
+          "chaldean-east-syriac:rome1697-joseph"
         ],
         "assigned_family": "Chaldean Catholic recension",
         "scope": "selected Chaldean source-book stages",
         "reception_limit": "Mapped stages concern identified source books or relevant recensions. This crosswalk does not create a local adoption or continuous-use claim.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 5
+          "not-transcribed": 6
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -12377,7 +12417,7 @@
       ],
       "component_profile": "east-syriac",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Extend collation of the retained 1767 and 1901 books beyond the checked Addai and Mari intercession; acquire the original 2020 impression/confirmation and compare complementary lections and the 2014 trial. The 2025 reprint is not a separately established reform; Urmia 1876 remains a collateral ritual boundary. Chaldean lane (2026-10-19): the 2020 decree (No. 31, 17 February 2020; recognition 21 November 2019; effective 5 April 2020) is now inspected; the 1773, 1936, 1971, 1982 and 2006 books remain unacquired and the Chaldean manuscript tradition (Vat. sir. 491, 44, 43) is labelled but not collated.",
+      "missing_stage_chain": "Extend collation of the retained 1767 and 1901 books beyond the checked Addai and Mari intercession; acquire the original 2020 impression/confirmation and compare complementary lections and the 2014 trial. The 2025 reprint is not a separately established reform; Urmia 1876 remains a collateral ritual boundary. Chaldean lane (2026-10-19): the 2020 decree (No. 31, 17 February 2020; recognition 21 November 2019; effective 5 April 2020) is now inspected; the 1773, 1936, 1971, 1982 and 2006 books remain unacquired and the Chaldean manuscript tradition (Vat. sir. 491, 44, 43) is labelled but not collated. eastern-gaps batch 4 (2026-10-21): Renaudot (1716) II p. 593 n. 16 documents Patriarch Joseph's 1697 Rome copy with the dominical-words locus at the fraction reformed after a Roman-printed Chaldean missal (stage rome1697-joseph). The 2020 decree No. 31 and celebration instructions are read in the born-digital 2020 edition and the 2014→2020 instruction changes are page-collated; Sako's 'Urmia 1890' title photograph matches the Anglican mission edition. Still open: the 1767 institution/fraction locus, the 1936 and 1971 originals, the printed 2020 impression and the Holy See letter.",
       "next_sources": {
         "inventory_source_ids": [
           "chaldean-1901",
@@ -12401,10 +12441,12 @@
           "https://thecmsindia.org/StaticFiles/docs/pdf/Chaldean-catholic-holy-mass-text-with-arabic-and-syriac.pdf",
           "https://chaldeanpatriarchate.com/2025/08/27/القداس-الأول-لأدّاي-وماري-الأصالة-وال/",
           "https://chaldeanpatriarchate.com/2025/11/09/إعادة-طبع-رُتَب-القدّاس-بحسب-الطقس-ال/",
-          "https://media.chaldeanpatriarchate.com/2025/11/%D9%83%D8%AA%D8%A7%D8%A8-%D8%A7%D9%84%D9%82%D8%AF%D8%A7%D8%B3-%D8%B7%D8%A8%D8%B9%D8%A9-%D8%AA1-2025.pdf"
+          "https://media.chaldeanpatriarchate.com/2025/11/%D9%83%D8%AA%D8%A7%D8%A8-%D8%A7%D9%84%D9%82%D8%AF%D8%A7%D8%B3-%D8%B7%D8%A8%D8%B9%D8%A9-%D8%AA1-2025.pdf",
+          "https://books.google.com/books?id=eZYxgW_kHJYC&pg=PA593",
+          "https://files.ecatholic.com/32718/documents/2022/8/03%20Arabic%20Mass%20-%202020%20-%20St%20Peters.pdf?t=1659997972000"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Extend collation of the retained 1767 and 1901 books beyond the checked Addai and Mari intercession; acquire the original 2020 impression/confirmation and compare complementary lections and the 2014 trial. The 2025 reprint is not a separately established reform; Urmia 1876 remains a collateral ritual boundary. Current owning route limit: Extend collation of the retained 1767 and 1901 books beyond the checked Addai and Mari intercession; acquire the original 2020 impression/confirmation and compare complementary lections and the 2014 trial. The 2025 reprint is not a separately established reform; Urmia 1876 remains a collateral ritual boundary. Chaldean lane (2026-10-19): the 2020 decree (No. 31, 17 February 2020; recognition 21 November 2019; effective 5 April 2020) is now inspected; the 1773, 1936, 1971, 1982 and 2006 books remain unacquired and the Chaldean manuscript tradition (Vat. sir. 491, 44, 43) is labelled but not collated."
+        "target": "Extend collation of the retained 1767 and 1901 books beyond the checked Addai and Mari intercession; acquire the original 2020 impression/confirmation and compare complementary lections and the 2014 trial. The 2025 reprint is not a separately established reform; Urmia 1876 remains a collateral ritual boundary. Current owning route limit: Extend collation of the retained 1767 and 1901 books beyond the checked Addai and Mari intercession; acquire the original 2020 impression/confirmation and compare complementary lections and the 2014 trial. The 2025 reprint is not a separately established reform; Urmia 1876 remains a collateral ritual boundary. Chaldean lane (2026-10-19): the 2020 decree (No. 31, 17 February 2020; recognition 21 November 2019; effective 5 April 2020) is now inspected; the 1773, 1936, 1971, 1982 and 2006 books remain unacquired and the Chaldean manuscript tradition (Vat. sir. 491, 44, 43) is labelled but not collated. eastern-gaps batch 4 (2026-10-21): Renaudot (1716) II p. 593 n. 16 documents Patriarch Joseph's 1697 Rome copy with the dominical-words locus at the fraction reformed after a Roman-printed Chaldean missal (stage rome1697-joseph). The 2020 decree No. 31 and celebration instructions are read in the born-digital 2020 edition and the 2014→2020 instruction changes are page-collated; Sako's 'Urmia 1890' title photograph matches the Anglican mission edition. Still open: the 1767 institution/fraction locus, the 1936 and 1971 originals, the printed 2020 impression and the Holy See letter."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
@@ -12601,7 +12643,7 @@
       ],
       "component_profile": "east-syriac",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Acquire original 1774/1775 and 1960 books, complete 1946 source and 1955 consultation study; resolve 1844/1845 identity and 2003 substantive predecessor comparison. Complete scans of the 1962, 1968 and 1986 books are in research scratch; still missing are the 1774/1775/1844 Rome printings, the 1959 and 1960 originals, the 1989 Malayalam book, the 2005 propria, 2011 Taksa, 2013 lectionary and first-print Theodore, the 2018 Syriac typica and the 2025 Christmas text. Approved Malayalam Qurbana and component books are now candidates, but their textual relationships and a corresponding 1968–2025 stage sequence remain unestablished. Keep study, approval, reception and effective dates distinct; candidate inclusion is not a collation or a stage.",
+      "missing_stage_chain": "Acquire original 1774/1775 and 1960 books, complete 1946 source and 1955 consultation study; resolve 1844/1845 identity and 2003 substantive predecessor comparison. Complete scans of the 1962, 1968 and 1986 books are in research scratch; still missing are the 1774/1775/1844 Rome printings, the 1959 and 1960 originals, the 1989 Malayalam book, the 2005 propria, 2011 Taksa, 2013 lectionary and first-print Theodore, the 2018 Syriac typica and the 2025 Christmas text. Approved Malayalam Qurbana and component books are now candidates, but their textual relationships and a corresponding 1968–2025 stage sequence remain unestablished. Keep study, approval, reception and effective dates distinct; candidate inclusion is not a collation or a stage. eastern-gaps batch 4 (2026-10-21): the 1906 added section 55*–101* is read from its running heads as added feasts arranged by month from December to November, with separately headed Sacred Heart (72*) and Holy Name of Mary (86*) feasts. Entry-level enumeration, the 1774/1775 originals (Google records without preview), 1946, 1955–1962 and 2003 books remain open.",
       "next_sources": {
         "inventory_source_ids": [
           "bonn-mal1898",
@@ -12638,7 +12680,7 @@
           "https://www.thecmsindia.in/StaticFiles/docs/pdf/Suriyani-Qurbana-Thaksa-2003-printed-in-Rome.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Acquire missing original 1774/1775, 1959/1960, 1989, 2005, 2011 and 2013 books; collate the held 1962, 1968 and 1986 Malayalam scans and 2021 official book, identify the later complementary volumes, and review a 1968–2025 stage sequence separately. Preserve 1844/1845 identity and 2003 predecessor gaps and distinguish approval, release, effectiveness and reception. Current owning route limit: Acquire original 1774/1775 and 1960 books, complete 1946 source and 1955 consultation study; resolve 1844/1845 identity and 2003 substantive predecessor comparison. Complete scans of the 1962, 1968 and 1986 books are in research scratch; still missing are the 1774/1775/1844 Rome printings, the 1959 and 1960 originals, the 1989 Malayalam book, the 2005 propria, 2011 Taksa, 2013 lectionary and first-print Theodore, the 2018 Syriac typica and the 2025 Christmas text. Approved Malayalam Qurbana and component books are now candidates, but their textual relationships and a corresponding 1968–2025 stage sequence remain unestablished. Keep study, approval, reception and effective dates distinct; candidate inclusion is not a collation or a stage."
+        "target": "Acquire missing original 1774/1775, 1959/1960, 1989, 2005, 2011 and 2013 books; collate the held 1962, 1968 and 1986 Malayalam scans and 2021 official book, identify the later complementary volumes, and review a 1968–2025 stage sequence separately. Preserve 1844/1845 identity and 2003 predecessor gaps and distinguish approval, release, effectiveness and reception. Current owning route limit: Acquire original 1774/1775 and 1960 books, complete 1946 source and 1955 consultation study; resolve 1844/1845 identity and 2003 substantive predecessor comparison. Complete scans of the 1962, 1968 and 1986 books are in research scratch; still missing are the 1774/1775/1844 Rome printings, the 1959 and 1960 originals, the 1989 Malayalam book, the 2005 propria, 2011 Taksa, 2013 lectionary and first-print Theodore, the 2018 Syriac typica and the 2025 Christmas text. Approved Malayalam Qurbana and component books are now candidates, but their textual relationships and a corresponding 1968–2025 stage sequence remain unestablished. Keep study, approval, reception and effective dates distinct; candidate inclusion is not a collation or a stage. eastern-gaps batch 4 (2026-10-21): the 1906 added section 55*–101* is read from its running heads as added feasts arranged by month from December to November, with separately headed Sacred Heart (72*) and Holy Name of Mary (86*) feasts. Entry-level enumeration, the 1774/1775 originals (Google records without preview), 1946, 1955–1962 and 2003 books remain open."
       },
       "caveat": "No claim of universal adoption, present obligation, complete chronology or a required unique Church edition.",
       "contextual_ancestry_candidates": [
@@ -24374,15 +24416,16 @@
           "slavonic-roman"
         ],
         "stage_ids": [
-          "slavonic-roman:1631"
+          "slavonic-roman:1631",
+          "slavonic-roman:1631-calendar",
+          "slavonic-roman:1741"
         ],
         "scope": "Historical native-language Roman celebrant books; the 1631 revision mandate is documented, while 1741 and 1893 stages retain provisional status. No Kyiv-to-Croatian-print genealogy is asserted.",
         "provisional_stage_ids": [
-          "slavonic-roman:1741",
           "slavonic-roman:1893-witness"
         ],
         "text_coverage_counts": {
-          "not-transcribed": 3
+          "not-transcribed": 4
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "assigned_family": "Slavonic / Glagolitic Roman books",
@@ -24762,7 +24805,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "The reviewed receipt adds 37 bounded Glagolitic and Slavonic Roman witnesses and components. Compare original books before inferring textual descent or a new normative recension. NSK 15228 acquired 288 of 460 offered canvases, leaving 289–460 unexamined; NSK 15235 acquired 0 of 519. The 1896 Parčić printing differs in sanctoral extent (182 pages plus four-page appendix versus 170 pages in 1893), while changed prayers and normative status remain unverified.",
+      "missing_stage_chain": "The reviewed receipt adds 37 bounded Glagolitic and Slavonic Roman witnesses and components. Compare original books before inferring textual descent or a new normative recension. NSK 15228 acquired 288 of 460 offered canvases, leaving 289–460 unexamined; NSK 15235 acquired 0 of 519. The 1896 Parčić printing differs in sanctoral extent (182 pages plus four-page appendix versus 170 pages in 1893), while changed prayers and normative status remain unverified. eastern-gaps batch 4 (2026-10-21): NSK public-domain copies of 1631, 1706, 1741 and 1896 are inspected at title leaves; the October–November calendars of 1631, 1706 and 1741 are page-collated, documenting post-1631 calendar additions in 1741 (now a documented stage). Still open: 1483 comparison, the 1741 pro aliquibus locis appendix, 1789, 1896 changes and 1905.",
       "next_sources": {
         "inventory_source_ids": [
           "early-miklas-sinai",
@@ -24814,10 +24857,12 @@
           "https://ojs.srce.hr/index.php/fluminensia/article/view/32211",
           "https://stin.hr/portfolio-items/liturgijske-knjige/?portfolioCats=57",
           "https://hrcak.srce.hr/clanak/318641",
-          "https://ebooks.uni-lj.si/ZalozbaUL/catalog/download/172/268/4425?inline=1"
+          "https://ebooks.uni-lj.si/ZalozbaUL/catalog/download/172/268/4425?inline=1",
+          "https://urn.nsk.hr/urn:nbn:hr:238:717907",
+          "https://urn.nsk.hr/urn:nbn:hr:238:090215"
         ],
         "inspection": "Owning inventory and dated research-receipt metadata reviewed for this crosswalk; direct source inspection and limits remain in their source records.",
-        "target": "Complete manuscript and printed comparisons and original 1631/1706/1741/1789/1896/1905 witness acquisition; identify substantive deltas and local reception. The historical liturgical-language series is in scope. The reviewed receipt adds 37 bounded Glagolitic and Slavonic Roman witnesses and components. Compare original books before inferring textual descent or a new normative recension. NSK 15228 acquired 288 of 460 offered canvases, leaving 289–460 unexamined; NSK 15235 acquired 0 of 519. The 1896 Parčić printing differs in sanctoral extent (182 pages plus four-page appendix versus 170 pages in 1893), while changed prayers and normative status remain unverified."
+        "target": "Complete manuscript and printed comparisons and original 1631/1706/1741/1789/1896/1905 witness acquisition; identify substantive deltas and local reception. The historical liturgical-language series is in scope. The reviewed receipt adds 37 bounded Glagolitic and Slavonic Roman witnesses and components. Compare original books before inferring textual descent or a new normative recension. NSK 15228 acquired 288 of 460 offered canvases, leaving 289–460 unexamined; NSK 15235 acquired 0 of 519. The 1896 Parčić printing differs in sanctoral extent (182 pages plus four-page appendix versus 170 pages in 1893), while changed prayers and normative status remain unverified. eastern-gaps batch 4 (2026-10-21): NSK public-domain copies of 1631, 1706, 1741 and 1896 are inspected at title leaves; the October–November calendars of 1631, 1706 and 1741 are page-collated, documenting post-1631 calendar additions in 1741 (now a documented stage). Still open: 1483 comparison, the 1741 pro aliquibus locis appendix, 1789, 1896 changes and 1905."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence. The 1963 order is an unapproved proposal, not a received normative book.",
       "existing_catalogue_ids": [
