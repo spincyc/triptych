@@ -54,8 +54,7 @@ verification: 'a citation carrying a mass-level notes line naming an artifact pa
   placeholders, having been inscribed after it: Our Lady of Fatima, Saint John of Avila,
   Saints Christopher Magallanes and Companions, Saint Rita of Cascia and Saint Paul VI.
   One slot is absent for a third reason: at n. 551, Saint Martin I, the Ordo prints
-  against Alleluia the bare cross-reference n. 717,6 and no scriptural citation, so that
-  Mass carries no Gospel Acclamation, as at n. 536. Their euchology and antiphons are
+  against Alleluia the bare cross-reference n. 717,6 and no scriptural citation, so that Mass has no sourced scriptural Gospel Acclamation; its appointment is carried as an unavailable body, as at n. 536. Their euchology and antiphons are
   absent rather than placeholder, on the Chrism Mass''s footing. A fourth wave continued
   the same run on 2026-08-01, from artifact page 349 - the page the third wave stopped
   before - to artifact page 358, printed pages 295 to 304, nn. 593 to 634, 3 July
@@ -79,8 +78,10 @@ verification: 'a citation carrying a mass-level notes line naming an artifact pa
   the bare cross-reference n. 729,8 and no citation, and at n. 620, Saints Pontian and
   Hippolytus, the same n. 717,6 it declines to spell out at nn. 536 and 551; at n. 603,
   Saint Mary Magdalene, and at n. 622, the Assumption''s Mass during the Day, it prints
-  a chant text against Alleluia with no scriptural citation at all. Every one of the
-  four is left absent rather than filled from elsewhere. A fifth wave continued the same
+  a chant text against Alleluia with no scriptural citation at all. At that pass all
+  four roles were left absent. The 2026-10-20 bounded Common review now carries the
+  source-appointed roles at nn. 602 and 620 with explicit unavailable bodies; the
+  two other uncited source bodies remain outside that repair. A fifth wave continued the same
   run from artifact page 359 to artifact page 374, printed pages 305 to 320, nn. 635 to
   700, 3 September through 31 December: 53 further masses and 210 further citations.
   That finished the Proprium de Sanctis, which ends at n. 700 and not at n. 707;
@@ -95,10 +96,12 @@ verification: 'a citation carrying a mass-level notes line naming an artifact pa
   settle is every cross-reference this file had left standing. Six of the 289 options
   carry no scriptural citation, all six are Alleluia verses, and all seven bare
   cross-references in the Proprium de Sanctis point at one of them: n. 717,6 at nn. 536,
-  551 and 620, n. 729,8 at nn. 602 and 637, and n. 735,2 at nn. 681 and 692. Those seven
-  Gospel Acclamations are therefore absent on read evidence rather than on a declined
-  pointer, and no citation anywhere in the sanctoral is now unread for want of following
-  a pointer. Measured on 2026-08-02, 216 masses in this file carry a notes line naming
+  551 and 620, n. 729,8 at nn. 602 and 637, and n. 735,2 at nn. 681 and 692. At that
+  pass those seven Gospel Acclamations were left absent despite their explicit
+  appointments. The 2026-10-20 bounded Common review now carries all seven roles
+  with typed unavailable bodies, without substituting Bible words or adopting a
+  target-2008 body. The original pointer review supplies source-local appointment
+  evidence, not exact target correspondence. Measured on 2026-08-02, 216 masses in this file carry a notes line naming
   an artifact page, 151 of them dated, and 53 hold nothing but a placeholder - 44
   sanctoral, 4 marian, 3 christological and 2 seasonal. See
   src/sources/inventories/postconciliar-seasonal-collation-v1.toml and
@@ -428,7 +431,7 @@ citation_divergences:
     Isaiah 9:1: Isaiah 9:2
     Isaiah 9:1-6: Isaiah 9:2-7
     Isaiah 9:5: Isaiah 9:6
-    Isaiah 63:16b-17, 19b; 64:2-7: Isaiah 63:16b-17; 64:1, 3-8
+    Isaiah 63:16b-17, 19b; 64:2b-7: Isaiah 63:16b-17; 64:1, 3-8
 - book: Micah
   chapters:
   - 5
@@ -698,6 +701,23 @@ citation_divergences:
   citations:
     Zechariah 2:5-9, 14-15a: Zechariah 2:1-5, 10-11a
     Zechariah 2:14-17: Zechariah 2:10-13
+- book: Haggai
+  chapters:
+  - 1
+  - 2
+  divergence: OLM 1981 artifact page 293 / printed page 239, n. 453, appoints
+    Haggai 1:15b-2:9. The four held offered Vulgate editions place the opening
+    regnal-year clause inside 2:1 and the closing peace clause at 2:10; their
+    intervening 2:2-9 were compared with the three offered Hebrew editions'
+    2:1-8. The Hebrew editions carry the source coordinates as cited. Only the
+    two appointments below are resolved; no general chapter offset is inferred.
+    The opening part b remains identified while Bible reconstruction displays
+    its entire carrier verse. See src/sources/inventories/postconciliar-haggai-psalm-seams-2026-10-20.md
+  numbering:
+    hebrew: as-cited
+  citations:
+    Haggai 1:1-8: Haggai 1:1-8
+    Haggai 1:15b-2:9: Haggai 2:1b-10
 proper_order_exceptions:
 - mass: easter-vigil
   reason: the Vigil prints seven Old Testament readings, each followed by its own
@@ -763,9 +783,9 @@ sections:
                 end: {chapter: 63, verse: 17}
               - begin: {chapter: 63, verse: 19, part: b}
                 end: {chapter: 63, verse: 19, part: b}
-              - begin: {chapter: 64, verse: 2}
+              - begin: {chapter: 64, verse: 2, part: b}
                 end: {chapter: 64, verse: 7}
-              ref: "Isaiah 63:16b-17, 19b; 64:2-7"
+              ref: "Isaiah 63:16b-17, 19b; 64:2b-7"
           C:
             verses:
             - book: Jeremiah
@@ -3270,6 +3290,11 @@ sections:
                 end: {chapter: 16, verse: 14, part: b}
               ref: Acts 16:14b
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: longer
+          basis: OLM 1981 artifact page 67 / printed page 13, n. 17, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
         source: scripture
         cycles:
           A:
@@ -3296,6 +3321,32 @@ sections:
                 end: {chapter: 2, verse: 52}
               ref: Luke 2:41-52
         notes: 'Short form in Year B: Luke 2:22, 39-40.'
+      - name: Gospel (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: shorter
+          basis: OLM 1981 artifact page 67 / printed page 13, n. 17, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
+        source: scripture
+        cycles:
+          B:
+            verses:
+              - book: Luke
+                ranges:
+                  - begin:
+                      chapter: 2
+                      verse: 22
+                    end:
+                      chapter: 2
+                      verse: 22
+                  - begin:
+                      chapter: 2
+                      verse: 39
+                    end:
+                      chapter: 2
+                      verse: 40
+                ref: Luke 2:22, 39-40
+        notes: Shorter scriptural form read in registered OLM artifact internet-archive-scan-pdf-ed4bc14e, artifact page 67 / printed page 13, n. 17. Only the explicitly carried cycles apply; no Year A ritual substitution or common-versus-year alternative is resolved here.
       - name: Prayer over the Offerings
         incipit: Hostiam tibi placationis offerimus
         source: composed
@@ -3536,13 +3587,45 @@ sections:
             end: {chapter: 3, verse: 16}
           ref: 1 Timothy 3:16
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: longer
+          basis: OLM 1981 artifact page 69 / printed page 15, n. 19, prints longer and shorter Gospel alternatives. This is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
         source: scripture
         verses:
         - book: John
           ranges:
-          - begin: {chapter: 1, verse: 1}
-            end: {chapter: 1, verse: 18}
+          - begin:
+              chapter: 1
+              verse: 1
+            end:
+              chapter: 1
+              verse: 18
           ref: John 1:1-18
+      - name: Gospel (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: shorter
+          basis: OLM 1981 artifact page 69 / printed page 15, n. 19, prints longer and shorter Gospel alternatives. This is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 1
+            end:
+              chapter: 1
+              verse: 5
+          - begin:
+              chapter: 1
+              verse: 9
+            end:
+              chapter: 1
+              verse: 14
+          ref: John 1:1-5, 9-14
       - name: Prayer over the Offerings
         incipit: Oblata, Domine, munera
         source: composed
@@ -4964,6 +5047,11 @@ sections:
                 end: {chapter: 91, verse: 15}
               ref: "Psalm 91:1-2, 10-11, 12-13, 14-15"
       - name: Second Reading
+        ordinary_disposition:
+          kind: alternative
+          group: second-reading
+          option: longer
+          basis: OLM 1981 artifact page 73 / printed page 19, n. 22, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
         source: scripture
         cycles:
           A:
@@ -4988,6 +5076,32 @@ sections:
                 end: {chapter: 10, verse: 13}
               ref: Romans 10:8-13
         notes: 'Year A short form: Romans 5:12, 17-19.'
+      - name: Second Reading (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: second-reading
+          option: shorter
+          basis: OLM 1981 artifact page 73 / printed page 19, n. 22, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
+        source: scripture
+        cycles:
+          A:
+            verses:
+              - book: Romans
+                ranges:
+                  - begin:
+                      chapter: 5
+                      verse: 12
+                    end:
+                      chapter: 5
+                      verse: 12
+                  - begin:
+                      chapter: 5
+                      verse: 17
+                    end:
+                      chapter: 5
+                      verse: 19
+                ref: Romans 5:12, 17-19
+        notes: Shorter scriptural form read in registered OLM artifact internet-archive-scan-pdf-ed4bc14e, artifact page 73 / printed page 19, n. 22. Only the explicitly carried cycles apply; no Year A ritual substitution or common-versus-year alternative is resolved here.
       - name: Verse Before the Gospel
         source: scripture
         verses:
@@ -5208,6 +5322,11 @@ sections:
                 end: {chapter: 27, verse: 14}
               ref: "Psalm 27:1, 7-8, 9abc, 13-14"
       - name: Second Reading
+        ordinary_disposition:
+          kind: alternative
+          group: second-reading
+          option: longer
+          basis: OLM 1981 artifact page 74 / printed page 20, n. 27, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
         source: scripture
         cycles:
           A:
@@ -5232,6 +5351,26 @@ sections:
                 end: {chapter: 4, verse: 1}
               ref: Philippians 3:17-4:1
         notes: 'Year C short form: Philippians 3:20-4:1.'
+      - name: Second Reading (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: second-reading
+          option: shorter
+          basis: OLM 1981 artifact page 74 / printed page 20, n. 27, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
+        source: scripture
+        cycles:
+          C:
+            verses:
+              - book: Philippians
+                ranges:
+                  - begin:
+                      chapter: 3
+                      verse: 20
+                    end:
+                      chapter: 4
+                      verse: 1
+                ref: Philippians 3:20-4:1
+        notes: Shorter scriptural form read in registered OLM artifact internet-archive-scan-pdf-ed4bc14e, artifact page 74 / printed page 20, n. 27. Only the explicitly carried cycles apply; no Year A ritual substitution or common-versus-year alternative is resolved here.
       - name: Verse Before the Gospel
         source: composed
         text_status:
@@ -5355,6 +5494,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: First Reading
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: longer
+          basis: OLM 1981 artifact page 75 / printed page 21, n. 29, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
         source: scripture
         cycles:
           A:
@@ -5381,6 +5525,38 @@ sections:
                 end: {chapter: 3, verse: 15}
               ref: "Exodus 3:1-8a, 13-15"
         notes: 'Year B short form: Exodus 20:1-3, 7-8, 12-17.'
+      - name: First Reading (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: shorter
+          basis: OLM 1981 artifact page 75 / printed page 21, n. 29, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
+        source: scripture
+        cycles:
+          B:
+            verses:
+              - book: Exodus
+                ranges:
+                  - begin:
+                      chapter: 20
+                      verse: 1
+                    end:
+                      chapter: 20
+                      verse: 3
+                  - begin:
+                      chapter: 20
+                      verse: 7
+                    end:
+                      chapter: 20
+                      verse: 8
+                  - begin:
+                      chapter: 20
+                      verse: 12
+                    end:
+                      chapter: 20
+                      verse: 17
+                ref: Exodus 20:1-3, 7-8, 12-17
+        notes: Shorter scriptural form read in registered OLM artifact internet-archive-scan-pdf-ed4bc14e, artifact page 75 / printed page 21, n. 29. Only the explicitly carried cycles apply; no Year A ritual substitution or common-versus-year alternative is resolved here.
       - name: Responsorial Psalm
         source: scripture
         cycles:
@@ -5478,6 +5654,11 @@ sections:
                 end: {chapter: 4, verse: 17}
               ref: Matthew 4:17
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: longer
+          basis: OLM 1981 artifact page 75 / printed page 21, n. 28, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
         source: scripture
         cycles:
           A:
@@ -5502,6 +5683,47 @@ sections:
                 end: {chapter: 13, verse: 9}
               ref: Luke 13:1-9
         notes: 'Year A short form: John 4:5-15, 19b-26, 39a, 40-42.'
+      - name: Gospel (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: shorter
+          basis: OLM 1981 artifact page 75 / printed page 21, n. 28, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
+        source: scripture
+        cycles:
+          A:
+            verses:
+              - book: John
+                ranges:
+                  - begin:
+                      chapter: 4
+                      verse: 5
+                    end:
+                      chapter: 4
+                      verse: 15
+                  - begin:
+                      chapter: 4
+                      verse: 19
+                      part: b
+                    end:
+                      chapter: 4
+                      verse: 26
+                  - begin:
+                      chapter: 4
+                      verse: 39
+                      part: a
+                    end:
+                      chapter: 4
+                      verse: 39
+                      part: a
+                  - begin:
+                      chapter: 4
+                      verse: 40
+                    end:
+                      chapter: 4
+                      verse: 42
+                ref: John 4:5-15, 19b-26, 39a, 40-42
+        notes: Shorter scriptural form read in registered OLM artifact internet-archive-scan-pdf-ed4bc14e, artifact page 75 / printed page 21, n. 28. Only the explicitly carried cycles apply; no Year A ritual substitution or common-versus-year alternative is resolved here.
       - name: Prayer over the Offerings
         incipit: His sacrificiis, Domine
         source: composed
@@ -5714,6 +5936,11 @@ sections:
         notes: In Lent the Alleluia is replaced by one of the appointed acclamations, such as
           Laus tibi, Christe, rex aeternae gloriae.
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: longer
+          basis: OLM 1981 artifact page 76 / printed page 22, n. 31, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
         source: scripture
         cycles:
           A:
@@ -5741,6 +5968,44 @@ sections:
               ref: "Luke 15:1-3, 11-32"
         notes: 'Short form in Year A: John 9:1, 6-9, 13-17, 34-38; the Year A readings may be
           used in Years B and C, especially where the Scrutinies are celebrated.'
+      - name: Gospel (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: shorter
+          basis: OLM 1981 artifact page 76 / printed page 22, n. 31, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
+        source: scripture
+        cycles:
+          A:
+            verses:
+              - book: John
+                ranges:
+                  - begin:
+                      chapter: 9
+                      verse: 1
+                    end:
+                      chapter: 9
+                      verse: 1
+                  - begin:
+                      chapter: 9
+                      verse: 6
+                    end:
+                      chapter: 9
+                      verse: 9
+                  - begin:
+                      chapter: 9
+                      verse: 13
+                    end:
+                      chapter: 9
+                      verse: 17
+                  - begin:
+                      chapter: 9
+                      verse: 34
+                    end:
+                      chapter: 9
+                      verse: 38
+                ref: John 9:1, 6-9, 13-17, 34-38
+        notes: Shorter scriptural form read in registered OLM artifact internet-archive-scan-pdf-ed4bc14e, artifact page 76 / printed page 22, n. 31. Only the explicitly carried cycles apply; no Year A ritual substitution or common-versus-year alternative is resolved here.
       - name: Prayer over the Offerings
         incipit: Remedii sempiterni munera
         source: composed
@@ -5965,6 +6230,11 @@ sections:
         notes: In Lent the Alleluia is replaced by one of the appointed acclamations, such as
           Laus tibi, Christe, rex aeternae gloriae.
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: longer
+          basis: OLM 1981 artifact page 78 / printed page 24, n. 34, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
         source: scripture
         cycles:
           A:
@@ -5990,6 +6260,45 @@ sections:
               ref: John 8:1-11
         notes: 'Short form in Year A: John 11:3-7, 17, 20-27, 33b-45; the Year A readings may
           be used in Years B and C, especially where the Scrutinies are celebrated.'
+      - name: Gospel (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: shorter
+          basis: OLM 1981 artifact page 78 / printed page 24, n. 34, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
+        source: scripture
+        cycles:
+          A:
+            verses:
+              - book: John
+                ranges:
+                  - begin:
+                      chapter: 11
+                      verse: 3
+                    end:
+                      chapter: 11
+                      verse: 7
+                  - begin:
+                      chapter: 11
+                      verse: 17
+                    end:
+                      chapter: 11
+                      verse: 17
+                  - begin:
+                      chapter: 11
+                      verse: 20
+                    end:
+                      chapter: 11
+                      verse: 27
+                  - begin:
+                      chapter: 11
+                      verse: 33
+                      part: b
+                    end:
+                      chapter: 11
+                      verse: 45
+                ref: John 11:3-7, 17, 20-27, 33b-45
+        notes: Shorter scriptural form read in registered OLM artifact internet-archive-scan-pdf-ed4bc14e, artifact page 78 / printed page 24, n. 34. Only the explicitly carried cycles apply; no Year A ritual substitution or common-versus-year alternative is resolved here.
       - name: Prayer over the Offerings
         incipit: Exaudi nos, omnipotens Deus
         source: composed
@@ -7010,12 +7319,18 @@ sections:
         verses:
         - book: Psalms
           ranges:
+          - begin: {chapter: 43, verse: 2}
+            end: {chapter: 43, verse: 2}
           - begin: {chapter: 43, verse: 3}
             end: {chapter: 43, verse: 3}
           - begin: {chapter: 43, verse: 4}
             end: {chapter: 43, verse: 4}
-          ref: Psalm 43:3, 4
-        notes: 'The second of the two psalms the book appoints in this slot.'
+          ref: Psalm 43:2, 3, 4
+        notes: 'The second of the two psalms the book appoints in this slot. On 2026-10-20
+          OLM artifact page 188 / printed page 134, n. 237, was re-read on the page image:
+          its Ps 42, 2. 3. 4 appoints Hebrew Psalm 43:2, 3, 4 through the existing Psalm
+          concordance. The previously omitted verse 2 is restored; the first Psalm remains
+          a separate source-ordered unit.'
       - name: Verse Before the Gospel
         source: scripture
         verses:
@@ -7671,6 +7986,11 @@ sections:
       season: lent
       propers:
       - name: First Reading
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: longer
+          basis: OLM 1981 artifact page 192 / printed page 138, n. 251, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
         source: scripture
         verses:
         - book: Daniel
@@ -7685,6 +8005,25 @@ sections:
             end: {chapter: 13, verse: 62}
           ref: Daniel 13:1-9, 15-17, 19-30, 33-62
         notes: 'Short form: Daniel 13:41c-62.'
+      - name: First Reading (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: shorter
+          basis: OLM 1981 artifact page 192 / printed page 138, n. 251, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
+        source: scripture
+        verses:
+          - book: Daniel
+            ranges:
+              - begin:
+                  chapter: 13
+                  verse: 41
+                  part: c
+                end:
+                  chapter: 13
+                  verse: 62
+            ref: Daniel 13:41c-62
+        notes: Shorter scriptural form read in registered OLM artifact internet-archive-scan-pdf-ed4bc14e, artifact page 192 / printed page 138, n. 251. Only the explicitly carried cycles apply; no Year A ritual substitution or common-versus-year alternative is resolved here.
       - name: Responsorial Psalm
         source: scripture
         verses:
@@ -8241,6 +8580,11 @@ sections:
             end: {chapter: 2, verse: 9}
           ref: Philippians 2:8-9
       - name: Passion of the Lord
+        ordinary_disposition:
+          kind: alternative
+          group: passion-of-the-lord
+          option: longer
+          basis: OLM 1981 artifact page 80 / printed page 26, n. 38, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
         source: scripture
         cycles:
           A:
@@ -8265,6 +8609,48 @@ sections:
                 end: {chapter: 23, verse: 56}
               ref: Luke 22:14-23:56
         notes: 'Short forms: Matthew 27:11-54, Mark 15:1-39, Luke 23:1-49.'
+      - name: Passion of the Lord (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: passion-of-the-lord
+          option: shorter
+          basis: OLM 1981 artifact page 80 / printed page 26, n. 38, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
+        source: scripture
+        cycles:
+          A:
+            verses:
+              - book: Matthew
+                ranges:
+                  - begin:
+                      chapter: 27
+                      verse: 11
+                    end:
+                      chapter: 27
+                      verse: 54
+                ref: Matthew 27:11-54
+          B:
+            verses:
+              - book: Mark
+                ranges:
+                  - begin:
+                      chapter: 15
+                      verse: 1
+                    end:
+                      chapter: 15
+                      verse: 39
+                ref: Mark 15:1-39
+          C:
+            verses:
+              - book: Luke
+                ranges:
+                  - begin:
+                      chapter: 23
+                      verse: 1
+                    end:
+                      chapter: 23
+                      verse: 49
+                ref: Luke 23:1-49
+        notes: Shorter scriptural form read in registered OLM artifact internet-archive-scan-pdf-ed4bc14e, artifact page 80 / printed page 26, n. 38. Only the explicitly carried cycles apply; no Year A ritual substitution or common-versus-year alternative is resolved here.
       - name: Prayer over the Offerings
         incipit: Per Unigeniti tui passionem
         source: composed
@@ -9099,6 +9485,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: First Reading
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: longer
+          basis: OLM 1981, artifact page 84 / printed page 30, n. 41, explicitly gives the longer or shorter First Reading.
         source: scripture
         verses:
         - book: Genesis
@@ -9106,7 +9497,40 @@ sections:
           - begin: {chapter: 1, verse: 1}
             end: {chapter: 2, verse: 2}
           ref: Genesis 1:1-2:2
+      - name: First Reading (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: shorter
+          basis: OLM 1981, artifact page 84 / printed page 30, n. 41, explicitly gives the longer or shorter First Reading.
+        source: scripture
+        verses:
+        - book: Genesis
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 1
+            end:
+              chapter: 1
+              verse: 1
+          - begin:
+              chapter: 1
+              verse: 26
+            end:
+              chapter: 1
+              verse: 31
+              part: a
+          ref: Genesis 1:1, 26-31a
+        notes: Source-printed Scripture option verified on the held OLM 1981 page image, artifact 84 / printed 30, n. 41, on 2026-10-20.
+          This records the appointment only; no reading reduction, Baptism-dependent substitution, target 2008 correspondence, protected
+          body, or rights state is inferred.
       - name: Responsorial Psalm
+        ordinary_disposition:
+          kind: alternative
+          group: responsorial-psalm-after-the-first-reading
+          option: psalm-103
+          basis: OLM 1981, artifact page 84 / printed page 30, n. 41, explicitly gives either Psalm 103 or Psalm 32 after the First
+            Reading; this is one Psalm seat.
         source: scripture
         verses:
         - book: Psalms
@@ -9126,6 +9550,51 @@ sections:
           - begin: {chapter: 104, verse: 35, part: c}
             end: {chapter: 104, verse: 35, part: c}
           ref: "Psalm 104:1-2a, 5-6, 10, 12, 13-14, 24, 35c"
+      - name: Responsorial Psalm (alternative after the First Reading)
+        ordinary_disposition:
+          kind: alternative
+          group: responsorial-psalm-after-the-first-reading
+          option: psalm-32
+          basis: OLM 1981, artifact page 84 / printed page 30, n. 41, explicitly gives either Psalm 103 or Psalm 32 after the First
+            Reading; this is one Psalm seat.
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 33
+              verse: 4
+            end:
+              chapter: 33
+              verse: 5
+          - begin:
+              chapter: 33
+              verse: 6
+            end:
+              chapter: 33
+              verse: 7
+          - begin:
+              chapter: 33
+              verse: 12
+            end:
+              chapter: 33
+              verse: 13
+          - begin:
+              chapter: 33
+              verse: 20
+            end:
+              chapter: 33
+              verse: 20
+          - begin:
+              chapter: 33
+              verse: 22
+            end:
+              chapter: 33
+              verse: 22
+          ref: Psalm 33:4-5, 6-7, 12-13, 20, 22
+        notes: Source-printed Scripture option verified on the held OLM 1981 page image, artifact 84 / printed 30, n. 41, on 2026-10-20.
+          This records the appointment only; no reading reduction, Baptism-dependent substitution, target 2008 correspondence, protected
+          body, or rights state is inferred.
       - name: Prayer after the First Reading
         ordinary_disposition:
           kind: alternative
@@ -9156,6 +9625,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Second Reading
+        ordinary_disposition:
+          kind: alternative
+          group: second-reading
+          option: longer
+          basis: OLM 1981, artifact page 84 / printed page 30, n. 41, explicitly gives the longer or shorter Second Reading.
         source: scripture
         verses:
         - book: Genesis
@@ -9163,6 +9637,46 @@ sections:
           - begin: {chapter: 22, verse: 1}
             end: {chapter: 22, verse: 18}
           ref: Genesis 22:1-18
+      - name: Second Reading (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: second-reading
+          option: shorter
+          basis: OLM 1981, artifact page 84 / printed page 30, n. 41, explicitly gives the longer or shorter Second Reading.
+        source: scripture
+        verses:
+        - book: Genesis
+          ranges:
+          - begin:
+              chapter: 22
+              verse: 1
+            end:
+              chapter: 22
+              verse: 2
+          - begin:
+              chapter: 22
+              verse: 9
+              part: a
+            end:
+              chapter: 22
+              verse: 9
+              part: a
+          - begin:
+              chapter: 22
+              verse: 10
+            end:
+              chapter: 22
+              verse: 13
+          - begin:
+              chapter: 22
+              verse: 15
+            end:
+              chapter: 22
+              verse: 18
+          ref: Genesis 22:1-2, 9a, 10-13, 15-18
+        notes: Source-printed Scripture option verified on the held OLM 1981 page image, artifact 84 / printed 30, n. 41, on 2026-10-20.
+          This records the appointment only; no reading reduction, Baptism-dependent substitution, target 2008 correspondence, protected
+          body, or rights state is inferred.
       - name: Responsorial Psalm
         source: scripture
         verses:
@@ -9776,16 +10290,78 @@ sections:
               ref: Acts 5:12-16
       - name: Responsorial Psalm
         source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 118, verse: 2}
-            end: {chapter: 118, verse: 4}
-          - begin: {chapter: 118, verse: 13}
-            end: {chapter: 118, verse: 15}
-          - begin: {chapter: 118, verse: 22}
-            end: {chapter: 118, verse: 24}
-          ref: "Psalm 118:2-4, 13-15, 22-24"
+        cycles:
+          A:
+            verses:
+            - book: Psalms
+              ranges:
+              - begin:
+                  chapter: 118
+                  verse: 2
+                end:
+                  chapter: 118
+                  verse: 4
+              - begin:
+                  chapter: 118
+                  verse: 13
+                end:
+                  chapter: 118
+                  verse: 15
+              - begin:
+                  chapter: 118
+                  verse: 22
+                end:
+                  chapter: 118
+                  verse: 24
+              ref: Psalm 118:2-4, 13-15, 22-24
+          B:
+            verses:
+            - book: Psalms
+              ranges:
+              - begin:
+                  chapter: 118
+                  verse: 2
+                end:
+                  chapter: 118
+                  verse: 4
+              - begin:
+                  chapter: 118
+                  verse: 16
+                  part: ab
+                end:
+                  chapter: 118
+                  verse: 18
+              - begin:
+                  chapter: 118
+                  verse: 22
+                end:
+                  chapter: 118
+                  verse: 24
+              ref: Psalm 118:2-4, 16ab-18, 22-24
+          C:
+            verses:
+            - book: Psalms
+              ranges:
+              - begin:
+                  chapter: 118
+                  verse: 2
+                end:
+                  chapter: 118
+                  verse: 4
+              - begin:
+                  chapter: 118
+                  verse: 22
+                end:
+                  chapter: 118
+                  verse: 24
+              - begin:
+                  chapter: 118
+                  verse: 25
+                end:
+                  chapter: 118
+                  verse: 27
+                  part: a
+              ref: Psalm 118:2-4, 22-24, 25-27a
       - name: Second Reading
         source: scripture
         cycles:
@@ -10022,6 +10598,11 @@ sections:
         notes: Years A and B use Luke 24:32; Year C has a composed acclamation with no scriptural
           citation.
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: longer
+          basis: OLM 1981 artifact page 88 / printed page 34, n. 48, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
         source: scripture
         cycles:
           A:
@@ -10046,6 +10627,26 @@ sections:
                 end: {chapter: 21, verse: 19}
               ref: John 21:1-19
         notes: 'Short form in Year C: John 21:1-14.'
+      - name: Gospel (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: shorter
+          basis: OLM 1981 artifact page 88 / printed page 34, n. 48, prints longer and shorter alternatives with the stated source-cycle applicability; this is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
+        source: scripture
+        cycles:
+          C:
+            verses:
+              - book: John
+                ranges:
+                  - begin:
+                      chapter: 21
+                      verse: 1
+                    end:
+                      chapter: 21
+                      verse: 14
+                ref: John 21:1-14
+        notes: Shorter scriptural form read in registered OLM artifact internet-archive-scan-pdf-ed4bc14e, artifact page 88 / printed page 34, n. 48. Only the explicitly carried cycles apply; no Year A ritual substitution or common-versus-year alternative is resolved here.
       - name: Prayer over the Offerings
         incipit: Suscipe munera, Domine
         source: composed
@@ -10903,16 +11504,33 @@ sections:
             - begin: {chapter: 47, verse: 8}
               end: {chapter: 47, verse: 9}
             ref: "Psalm 47:2-3, 6-7, 8-9"
+        - name: Second Reading (common provision)
+          ordinary_disposition:
+            kind: alternative
+            group: second-reading
+            option: common
+            basis: 'OLM 1981 n. 58, artifact page 93 / printed page 39: Ephesians 1 is the principal provision in all cycles; Ephesians
+              4 longer/shorter is optional in B and Hebrews 9-10 in C. Source-local appointments; target-2008 wording and separate
+              Vigil correspondence remain unresolved.'
+          source: scripture
+          verses:
+          - book: Ephesians
+            ranges:
+            - begin: {chapter: 1, verse: 17}
+              end: {chapter: 1, verse: 23}
+            ref: Ephesians 1:17-23
+          notes: The principal provision in OLM 1981 n. 58 is available in all three Sunday cycles; the B/C heading marks optional
+            alternatives. No historical celebration or approved Lectionary wording is inferred.
         - name: Second Reading
+          ordinary_disposition:
+            kind: alternative
+            group: second-reading
+            option: longer
+            basis: 'OLM 1981 n. 58, artifact page 93 / printed page 39: Ephesians 1 is the principal provision in all cycles; Ephesians
+              4 longer/shorter is optional in B and Hebrews 9-10 in C. Source-local appointments; target-2008 wording and separate
+              Vigil correspondence remain unresolved.'
           source: scripture
           cycles:
-            A:
-              verses:
-              - book: Ephesians
-                ranges:
-                - begin: {chapter: 1, verse: 17}
-                  end: {chapter: 1, verse: 23}
-                ref: Ephesians 1:17-23
             B:
               verses:
               - book: Ephesians
@@ -10920,6 +11538,38 @@ sections:
                 - begin: {chapter: 4, verse: 1}
                   end: {chapter: 4, verse: 13}
                 ref: Ephesians 4:1-13
+          notes: 'Short form in Year B: Ephesians 4:1-7, 11-13.'
+        - name: Second Reading (shorter form)
+          ordinary_disposition:
+            kind: alternative
+            group: second-reading
+            option: shorter
+            basis: 'OLM 1981 n. 58, artifact page 93 / printed page 39: Ephesians 1 is the principal provision in all cycles; Ephesians
+              4 longer/shorter is optional in B and Hebrews 9-10 in C. Source-local appointments; target-2008 wording and separate
+              Vigil correspondence remain unresolved.'
+          source: scripture
+          cycles:
+            B:
+              verses:
+              - book: Ephesians
+                ranges:
+                - begin: {chapter: 4, verse: 1}
+                  end: {chapter: 4, verse: 7}
+                - begin: {chapter: 4, verse: 11}
+                  end: {chapter: 4, verse: 13}
+                ref: Ephesians 4:1-7, 11-13
+          notes: Shorter optional Year B Second Reading printed in OLM 1981 artifact page 93 / printed page 39, n. 58. Its existing
+            shorter option identity and exact citation remain unchanged; no other cycle or separate Vigil reuse is inferred.
+        - name: Second Reading (Year C optional)
+          ordinary_disposition:
+            kind: alternative
+            group: second-reading
+            option: year-c
+            basis: 'OLM 1981 n. 58, artifact page 93 / printed page 39: Ephesians 1 is the principal provision in all cycles; Ephesians
+              4 longer/shorter is optional in B and Hebrews 9-10 in C. Source-local appointments; target-2008 wording and separate
+              Vigil correspondence remain unresolved.'
+          source: scripture
+          cycles:
             C:
               verses:
               - book: Hebrews
@@ -10929,7 +11579,8 @@ sections:
                 - begin: {chapter: 10, verse: 19}
                   end: {chapter: 10, verse: 23}
                 ref: Hebrews 9:24-28; 10:19-23
-          notes: 'Short form in Year B: Ephesians 4:1-7, 11-13.'
+          notes: The Year C Second Reading is explicitly optional in OLM 1981 n. 58; the principal Ephesians 1 provision remains available.
+            No other source cycle or target wording is inferred.
         - name: Gospel Acclamation
           source: scripture
           verses:
@@ -14183,6 +14834,11 @@ sections:
                 end: {chapter: 19, verse: 15}
               ref: "Psalm 19:8, 9, 10, 15"
       - name: Second Reading
+        ordinary_disposition:
+          kind: "alternative"
+          group: "second-reading"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 69, artifact page 100."
         source: scripture
         cycles:
           A:
@@ -14209,6 +14865,25 @@ sections:
                 end: {chapter: 12, verse: 30}
               ref: 1 Corinthians 12:12-30
         notes: 'Year C short form: 1 Corinthians 12:12-14, 27.'
+      - name: "Second Reading (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "second-reading"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 69, artifact page 100."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year C, n. 69, artifact page 100); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          C:
+            verses:
+            - book: "1 Corinthians"
+              ranges:
+              - begin: {chapter: 12, verse: 12}
+                end: {chapter: 12, verse: 14}
+              - begin: {chapter: 12, verse: 27}
+                end: {chapter: 12, verse: 27}
+              ref: "1 Corinthians 12:12-14, 27"
       - name: Gospel Acclamation
         source: scripture
         cycles:
@@ -14234,6 +14909,11 @@ sections:
                 end: {chapter: 4, verse: 18}
               ref: Luke 4:18
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 67, artifact page 100."
         source: scripture
         cycles:
           A:
@@ -14263,6 +14943,23 @@ sections:
                 end: {chapter: 4, verse: 21}
               ref: Luke 4:14-21
         notes: 'Year A short form: Matthew 4:12-17.'
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 67, artifact page 100."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year A, n. 67, artifact page 100); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          A:
+            verses:
+            - book: "Matthew"
+              ranges:
+              - begin: {chapter: 4, verse: 12}
+                end: {chapter: 4, verse: 17}
+              ref: "Matthew 4:12-17"
       - name: Prayer over the Offerings
         incipit: Munera nostra
         source: composed
@@ -14421,6 +15118,11 @@ sections:
                 end: {chapter: 71, verse: 17}
               ref: "Psalm 71:1-2, 3-4a, 5-6ab, 15ab, 17"
       - name: Second Reading
+        ordinary_disposition:
+          kind: "alternative"
+          group: "second-reading"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 72, artifact page 102."
         source: scripture
         cycles:
           A:
@@ -14445,6 +15147,23 @@ sections:
                 end: {chapter: 13, verse: 13}
               ref: 1 Corinthians 12:31-13:13
         notes: 'Year C short form: 1 Corinthians 13:4-13.'
+      - name: "Second Reading (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "second-reading"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 72, artifact page 102."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year C, n. 72, artifact page 102); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          C:
+            verses:
+            - book: "1 Corinthians"
+              ranges:
+              - begin: {chapter: 13, verse: 4}
+                end: {chapter: 13, verse: 13}
+              ref: "1 Corinthians 13:4-13"
       - name: Gospel Acclamation
         source: scripture
         cycles:
@@ -14648,6 +15367,11 @@ sections:
                 end: {chapter: 138, verse: 8}
               ref: "Psalm 138:1-2a, 2bc-3, 4-5, 7c-8"
       - name: Second Reading
+        ordinary_disposition:
+          kind: "alternative"
+          group: "second-reading"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 75, artifact page 103."
         source: scripture
         cycles:
           A:
@@ -14674,6 +15398,25 @@ sections:
                 end: {chapter: 15, verse: 11}
               ref: 1 Corinthians 15:1-11
         notes: 'Year C short form: 1 Corinthians 15:3-8, 11.'
+      - name: "Second Reading (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "second-reading"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 75, artifact page 103."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year C, n. 75, artifact page 103); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          C:
+            verses:
+            - book: "1 Corinthians"
+              ranges:
+              - begin: {chapter: 15, verse: 3}
+                end: {chapter: 15, verse: 8}
+              - begin: {chapter: 15, verse: 11}
+                end: {chapter: 15, verse: 11}
+              ref: "1 Corinthians 15:3-8, 11"
       - name: Gospel Acclamation
         source: scripture
         cycles:
@@ -14926,6 +15669,11 @@ sections:
                 end: {chapter: 6, verse: 23, part: ab}
               ref: Luke 6:23ab
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 76, artifact page 104."
         source: scripture
         cycles:
           A:
@@ -14952,6 +15700,29 @@ sections:
                 end: {chapter: 6, verse: 26}
               ref: "Luke 6:17, 20-26"
         notes: 'Year A short form: Matthew 5:20-22a, 27-28, 33-34a, 37.'
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 76, artifact page 104."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year A, n. 76, artifact page 104); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          A:
+            verses:
+            - book: "Matthew"
+              ranges:
+              - begin: {chapter: 5, verse: 20}
+                end: {chapter: 5, verse: 22, part: "a"}
+              - begin: {chapter: 5, verse: 27}
+                end: {chapter: 5, verse: 28}
+              - begin: {chapter: 5, verse: 33}
+                end: {chapter: 5, verse: 34, part: "a"}
+              - begin: {chapter: 5, verse: 37}
+                end: {chapter: 5, verse: 37}
+              ref: "Matthew 5:20-22a, 27-28, 33-34a, 37"
       - name: Prayer over the Offerings
         incipit: Haec nos oblatio
         source: composed
@@ -15632,6 +16403,11 @@ sections:
                 end: {chapter: 3, verse: 16}
               ref: John 3:16
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year B, n. 86, artifact page 107."
         source: scripture
         cycles:
           A:
@@ -15656,6 +16432,23 @@ sections:
                 end: {chapter: 7, verse: 10}
               ref: Luke 7:1-10
         notes: 'Year B short form: Mark 2:23-28.'
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year B, n. 86, artifact page 107."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year B, n. 86, artifact page 107); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          B:
+            verses:
+            - book: "Mark"
+              ranges:
+              - begin: {chapter: 2, verse: 23}
+                end: {chapter: 2, verse: 28}
+              ref: "Mark 2:23-28"
       - name: Prayer over the Offerings
         incipit: In tua pietate confidentes
         source: composed
@@ -16095,6 +16888,11 @@ sections:
               ref: 1 John 4:10b
         notes: The Year B verse is a composed acclamation, given without a scripture reference.
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 93, artifact page 110."
         source: scripture
         cycles:
           A:
@@ -16119,6 +16917,23 @@ sections:
                 end: {chapter: 8, verse: 3}
               ref: Luke 7:36-8:3
         notes: 'Short form in Year C: Luke 7:36-50.'
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 93, artifact page 110."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year C, n. 93, artifact page 110); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          C:
+            verses:
+            - book: "Luke"
+              ranges:
+              - begin: {chapter: 7, verse: 36}
+                end: {chapter: 7, verse: 50}
+              ref: "Luke 7:36-50"
       - name: Prayer over the Offerings
         incipit: Deus, qui humani generis utramque substantiam
         source: composed
@@ -16577,6 +17392,11 @@ sections:
                 end: {chapter: 6, verse: 68, part: c}
               ref: John 6:68c
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year B, n. 98, artifact page 112."
         source: scripture
         cycles:
           A:
@@ -16601,6 +17421,25 @@ sections:
                 end: {chapter: 9, verse: 62}
               ref: Luke 9:51-62
         notes: 'Short form in Year B: Mark 5:21-24, 35b-43.'
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year B, n. 98, artifact page 112."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year B, n. 98, artifact page 112); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          B:
+            verses:
+            - book: "Mark"
+              ranges:
+              - begin: {chapter: 5, verse: 21}
+                end: {chapter: 5, verse: 24}
+              - begin: {chapter: 5, verse: 35, part: "b"}
+                end: {chapter: 5, verse: 43}
+              ref: "Mark 5:21-24, 35b-43"
       - name: Prayer over the Offerings
         incipit: Deus, qui mysteriorum tuorum
         source: composed
@@ -16809,6 +17648,11 @@ sections:
                 end: {chapter: 3, verse: 16, part: a}
               ref: "Colossians 3:15a, 16a"
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 102, artifact page 114."
         source: scripture
         cycles:
           A:
@@ -16835,6 +17679,23 @@ sections:
                 end: {chapter: 10, verse: 20}
               ref: "Luke 10:1-12, 17-20"
         notes: Year C short form, Luke 10:1-9.
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 102, artifact page 114."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year C, n. 102, artifact page 114); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          C:
+            verses:
+            - book: "Luke"
+              ranges:
+              - begin: {chapter: 10, verse: 1}
+                end: {chapter: 10, verse: 9}
+              ref: "Luke 10:1-9"
       - name: Prayer over the Offerings
         incipit: Oblatio nos, Domine, tuo nomini dicata purificet
         source: composed
@@ -16945,6 +17806,11 @@ sections:
                 end: {chapter: 30, verse: 14}
               ref: Deuteronomy 30:10-14
       - name: Responsorial Psalm
+        ordinary_disposition:
+          kind: alternative
+          group: responsorial-psalm
+          option: principal
+          basis: OLM 1981 artifact page 115 / printed page 61, n. 105, prints an alternative Responsorial Psalm only for Year C. This is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
         source: scripture
         cycles:
           A:
@@ -16989,7 +17855,49 @@ sections:
                 end: {chapter: 69, verse: 37}
               ref: "Psalm 69:14, 17, 30-31, 33-34, 36ab, 37"
         notes: Year C admits Psalm 19:8, 9, 10, 11 as an alternative.
+      - name: Responsorial Psalm (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: responsorial-psalm
+          option: psalm-19
+          basis: OLM 1981 artifact page 115 / printed page 61, n. 105, prints an alternative Responsorial Psalm only for Year C. This is source-local appointment evidence, not full target-2008 correspondence or liturgical wording.
+        source: scripture
+        cycles:
+          C:
+            verses:
+            - book: Psalms
+              ranges:
+              - begin:
+                  chapter: 19
+                  verse: 8
+                end:
+                  chapter: 19
+                  verse: 8
+              - begin:
+                  chapter: 19
+                  verse: 9
+                end:
+                  chapter: 19
+                  verse: 9
+              - begin:
+                  chapter: 19
+                  verse: 10
+                end:
+                  chapter: 19
+                  verse: 10
+              - begin:
+                  chapter: 19
+                  verse: 11
+                end:
+                  chapter: 19
+                  verse: 11
+              ref: Psalm 19:8, 9, 10, 11
       - name: Second Reading
+        ordinary_disposition:
+          kind: "alternative"
+          group: "second-reading"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year B, n. 104, artifact page 115."
         source: scripture
         cycles:
           A:
@@ -17014,6 +17922,23 @@ sections:
                 end: {chapter: 1, verse: 20}
               ref: Colossians 1:15-20
         notes: Year B short form, Ephesians 1:3-10.
+      - name: "Second Reading (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "second-reading"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year B, n. 104, artifact page 115."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year B, n. 104, artifact page 115); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          B:
+            verses:
+            - book: "Ephesians"
+              ranges:
+              - begin: {chapter: 1, verse: 3}
+                end: {chapter: 1, verse: 10}
+              ref: "Ephesians 1:3-10"
       - name: Gospel Acclamation
         cycles:
           A:
@@ -17048,6 +17973,11 @@ sections:
         notes: The Year A acclamation is a composed text to which the Lectionary attaches no scriptural
           reference.
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 103, artifact page 115."
         source: scripture
         cycles:
           A:
@@ -17072,6 +18002,23 @@ sections:
                 end: {chapter: 10, verse: 37}
               ref: Luke 10:25-37
         notes: Year A short form, Matthew 13:1-9.
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 103, artifact page 115."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year A, n. 103, artifact page 115); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          A:
+            verses:
+            - book: "Matthew"
+              ranges:
+              - begin: {chapter: 13, verse: 1}
+                end: {chapter: 13, verse: 9}
+              ref: "Matthew 13:1-9"
       - name: Prayer over the Offerings
         incipit: Respice, Domine, munera supplicantis Ecclesiae
         source: composed
@@ -17276,6 +18223,11 @@ sections:
                 end: {chapter: 8, verse: 15}
               ref: Luke 8:15
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 106, artifact page 116."
         source: scripture
         cycles:
           A:
@@ -17300,6 +18252,23 @@ sections:
                 end: {chapter: 10, verse: 42}
               ref: Luke 10:38-42
         notes: Year A short form, Matthew 13:24-30.
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 106, artifact page 116."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year A, n. 106, artifact page 116); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          A:
+            verses:
+            - book: "Matthew"
+              ranges:
+              - begin: {chapter: 13, verse: 24}
+                end: {chapter: 13, verse: 30}
+              ref: "Matthew 13:24-30"
       - name: Prayer over the Offerings
         incipit: Deus, qui legalium differentiam hostiarum
         source: composed
@@ -17507,6 +18476,11 @@ sections:
                 end: {chapter: 8, verse: 15, part: bc}
               ref: Romans 8:15bc
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 109, artifact page 117."
         source: scripture
         cycles:
           A:
@@ -17531,6 +18505,23 @@ sections:
                 end: {chapter: 11, verse: 13}
               ref: Luke 11:1-13
         notes: Year A short form, Matthew 13:44-46.
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 109, artifact page 117."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year A, n. 109, artifact page 117); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          A:
+            verses:
+            - book: "Matthew"
+              ranges:
+              - begin: {chapter: 13, verse: 44}
+                end: {chapter: 13, verse: 46}
+              ref: "Matthew 13:44-46"
       - name: Prayer over the Offerings
         incipit: Suscipe, quaesumus, Domine, munera
         source: composed
@@ -17942,6 +18933,11 @@ sections:
                 end: {chapter: 33, verse: 22}
               ref: "Psalm 33:1, 12, 18-19, 20, 22"
       - name: Second Reading
+        ordinary_disposition:
+          kind: "alternative"
+          group: "second-reading"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 117, artifact page 120."
         source: scripture
         cycles:
           A:
@@ -17968,6 +18964,25 @@ sections:
                 end: {chapter: 11, verse: 19}
               ref: "Hebrews 11:1-2, 8-19"
         notes: 'Year C has a short form: Hebrews 11:1-2, 8-12.'
+      - name: "Second Reading (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "second-reading"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 117, artifact page 120."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year C, n. 117, artifact page 120); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          C:
+            verses:
+            - book: "Hebrews"
+              ranges:
+              - begin: {chapter: 11, verse: 1}
+                end: {chapter: 11, verse: 2}
+              - begin: {chapter: 11, verse: 8}
+                end: {chapter: 11, verse: 12}
+              ref: "Hebrews 11:1-2, 8-12"
       - name: Gospel Acclamation
         source: scripture
         cycles:
@@ -17995,6 +19010,11 @@ sections:
                 end: {chapter: 24, verse: 44}
               ref: "Matthew 24:42a, 44"
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 117, artifact page 120."
         source: scripture
         cycles:
           A:
@@ -18019,6 +19039,23 @@ sections:
                 end: {chapter: 12, verse: 48}
               ref: Luke 12:32-48
         notes: 'Year C has a short form: Luke 12:35-40.'
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 117, artifact page 120."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year C, n. 117, artifact page 120); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          C:
+            verses:
+            - book: "Luke"
+              ranges:
+              - begin: {chapter: 12, verse: 35}
+                end: {chapter: 12, verse: 40}
+              ref: "Luke 12:35-40"
       - name: Prayer over the Offerings
         incipit: Ecclesiae tuae, Domine, munera placatus assume
         source: composed
@@ -19155,6 +20192,11 @@ sections:
                 end: {chapter: 5, verse: 19}
               ref: 2 Corinthians 5:19
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 132, artifact page 125."
         source: scripture
         cycles:
           A:
@@ -19179,6 +20221,23 @@ sections:
                 end: {chapter: 15, verse: 32}
               ref: Luke 15:1-32
         notes: 'Short form in Year C: Luke 15:1-10.'
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 132, artifact page 125."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year C, n. 132, artifact page 125); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          C:
+            verses:
+            - book: "Luke"
+              ranges:
+              - begin: {chapter: 15, verse: 1}
+                end: {chapter: 15, verse: 10}
+              ref: "Luke 15:1-10"
       - name: Prayer over the Offerings
         incipit: Propitiare, Domine, supplicationibus nostris
         source: composed
@@ -19381,6 +20440,11 @@ sections:
                 end: {chapter: 8, verse: 9}
               ref: 2 Corinthians 8:9
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 135, artifact page 127."
         source: scripture
         cycles:
           A:
@@ -19405,6 +20469,23 @@ sections:
                 end: {chapter: 16, verse: 13}
               ref: Luke 16:1-13
         notes: 'Short form in Year C: Luke 16:10-13.'
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year C, n. 135, artifact page 127."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year C, n. 135, artifact page 127); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          C:
+            verses:
+            - book: "Luke"
+              ranges:
+              - begin: {chapter: 16, verse: 10}
+                end: {chapter: 16, verse: 13}
+              ref: "Luke 16:10-13"
       - name: Prayer over the Offerings
         incipit: Munera, quaesumus, Domine, tuae plebis
         source: composed
@@ -19578,6 +20659,11 @@ sections:
                 end: {chapter: 146, verse: 10}
               ref: "Psalm 146:7, 8-9a, 9bc-10"
       - name: Second Reading
+        ordinary_disposition:
+          kind: "alternative"
+          group: "second-reading"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 136, artifact page 128."
         source: scripture
         cycles:
           A:
@@ -19602,6 +20688,23 @@ sections:
                 end: {chapter: 6, verse: 16}
               ref: 1 Timothy 6:11-16
         notes: 'Year A short form: Philippians 2:1-5.'
+      - name: "Second Reading (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "second-reading"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 136, artifact page 128."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year A, n. 136, artifact page 128); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          A:
+            verses:
+            - book: "Philippians"
+              ranges:
+              - begin: {chapter: 2, verse: 1}
+                end: {chapter: 2, verse: 5}
+              ref: "Philippians 2:1-5"
       - name: Gospel Acclamation
         source: scripture
         cycles:
@@ -19860,6 +20963,11 @@ sections:
                 end: {chapter: 1, verse: 25}
               ref: 1 Peter 1:25
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year B, n. 140, artifact page 130."
         source: scripture
         cycles:
           A:
@@ -19884,6 +20992,23 @@ sections:
                 end: {chapter: 17, verse: 10}
               ref: Luke 17:5-10
         notes: 'Year B short form: Mark 10:2-12.'
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year B, n. 140, artifact page 130."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year B, n. 140, artifact page 130); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          B:
+            verses:
+            - book: "Mark"
+              ranges:
+              - begin: {chapter: 10, verse: 2}
+                end: {chapter: 10, verse: 12}
+              ref: "Mark 10:2-12"
       - name: Prayer over the Offerings
         incipit: Suscipe, quaesumus, Domine, sacrificia
         source: composed
@@ -20083,6 +21208,12 @@ sections:
                 end: {chapter: 5, verse: 18}
               ref: 1 Thessalonians 5:18
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 142, artifact page 131; Year B, n. 143, artifact page\
+            \ 131."
         source: scripture
         cycles:
           A:
@@ -20107,6 +21238,31 @@ sections:
                 end: {chapter: 17, verse: 19}
               ref: Luke 17:11-19
         notes: 'Short forms: Year A Matthew 22:1-10, Year B Mark 10:17-27.'
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 142, artifact page 131; Year B, n. 143, artifact page\
+            \ 131."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year A, n. 142, artifact page 131; Year B, n. 143, artifact\
+          \ page 131); this does not establish the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          A:
+            verses:
+            - book: "Matthew"
+              ranges:
+              - begin: {chapter: 22, verse: 1}
+                end: {chapter: 22, verse: 10}
+              ref: "Matthew 22:1-10"
+          B:
+            verses:
+            - book: "Mark"
+              ranges:
+              - begin: {chapter: 10, verse: 17}
+                end: {chapter: 10, verse: 27}
+              ref: "Mark 10:17-27"
       - name: Prayer over the Offerings
         incipit: Suscipe, Domine, fidelium preces
         source: composed
@@ -20322,6 +21478,11 @@ sections:
                 end: {chapter: 4, verse: 12}
               ref: Hebrews 4:12
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year B, n. 146, artifact page 133."
         source: scripture
         cycles:
           A:
@@ -20346,6 +21507,23 @@ sections:
                 end: {chapter: 18, verse: 8}
               ref: Luke 18:1-8
         notes: 'Year B short form: Mark 10:42-45.'
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year B, n. 146, artifact page 133."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year B, n. 146, artifact page 133); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          B:
+            verses:
+            - book: "Mark"
+              ranges:
+              - begin: {chapter: 10, verse: 42}
+                end: {chapter: 10, verse: 45}
+              ref: "Mark 10:42-45"
       - name: Prayer over the Offerings
         incipit: Tribue nos, Domine, quaesumus
         source: composed
@@ -20958,6 +22136,11 @@ sections:
                 end: {chapter: 17, verse: 15}
               ref: "Psalm 17:1, 5-6, 8b, 15"
       - name: Second Reading
+        ordinary_disposition:
+          kind: "alternative"
+          group: "second-reading"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 154, artifact page 139."
         source: scripture
         cycles:
           A:
@@ -20982,6 +22165,23 @@ sections:
                 end: {chapter: 3, verse: 5}
               ref: 2 Thessalonians 2:16-3:5
         notes: 'Short form in Year A: 1 Thessalonians 4:13-14.'
+      - name: "Second Reading (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "second-reading"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 154, artifact page 139."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year A, n. 154, artifact page 139); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          A:
+            verses:
+            - book: "1 Thessalonians"
+              ranges:
+              - begin: {chapter: 4, verse: 13}
+                end: {chapter: 4, verse: 14}
+              ref: "1 Thessalonians 4:13-14"
       - name: Gospel Acclamation
         source: scripture
         cycles:
@@ -21011,6 +22211,12 @@ sections:
                 end: {chapter: 1, verse: 6, part: b}
               ref: "Revelation 1:5a, 6b"
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year B, n. 155, artifact page 139; Year C, n. 156, artifact page\
+            \ 140."
         source: scripture
         cycles:
           A:
@@ -21035,6 +22241,33 @@ sections:
                 end: {chapter: 20, verse: 38}
               ref: Luke 20:27-38
         notes: 'Short forms: Mark 12:41-44 in Year B; Luke 20:27, 34-38 in Year C.'
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year B, n. 155, artifact page 139; Year C, n. 156, artifact page\
+            \ 140."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year B, n. 155, artifact page 139; Year C, n. 156, artifact\
+          \ page 140); this does not establish the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          B:
+            verses:
+            - book: "Mark"
+              ranges:
+              - begin: {chapter: 12, verse: 41}
+                end: {chapter: 12, verse: 44}
+              ref: "Mark 12:41-44"
+          C:
+            verses:
+            - book: "Luke"
+              ranges:
+              - begin: {chapter: 20, verse: 27}
+                end: {chapter: 20, verse: 27}
+              - begin: {chapter: 20, verse: 34}
+                end: {chapter: 20, verse: 38}
+              ref: "Luke 20:27, 34-38"
       - name: Prayer over the Offerings
         incipit: Sacrificiis praesentibus
         source: composed
@@ -21246,6 +22479,11 @@ sections:
                 end: {chapter: 21, verse: 28}
               ref: Luke 21:28
       - name: Gospel
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "longer"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 157, artifact page 141."
         source: scripture
         cycles:
           A:
@@ -21270,6 +22508,25 @@ sections:
                 end: {chapter: 21, verse: 19}
               ref: Luke 21:5-19
         notes: 'Short form in Year A: Matthew 25:14-15, 19-21.'
+      - name: "Gospel (shorter form)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "gospel"
+          option: "shorter"
+          basis: "The 1981 Ordo lectionum Missae prints longer and shorter forms for Year A, n. 157, artifact page 141."
+        source: "scripture"
+        notes: "Appointment and citation verified in the 1981 Ordo page images on 2026-10-20 (Year A, n. 157, artifact page 141); this does not establish\
+          \ the target Missal wording or a publication basis for Lectionary text."
+        cycles:
+          A:
+            verses:
+            - book: "Matthew"
+              ranges:
+              - begin: {chapter: 25, verse: 14}
+                end: {chapter: 25, verse: 15}
+              - begin: {chapter: 25, verse: 19}
+                end: {chapter: 25, verse: 21}
+              ref: "Matthew 25:14-15, 19-21"
       - name: Prayer over the Offerings
         incipit: Concede, quaesumus, Domine
         source: composed
@@ -30429,9 +31686,10 @@ sections:
         acclamation and the Gospel are printed once across the measure and carry plain verses. The Ordo
         prints its psalms in the numbering of the Latin books; they are converted here by scripts/_psalms
         from the tracked verse concordance, because this file declares psalm_numbering hebrew. A rubric
-        under the Gospel appoints Matthew 14:22-36 (n. 408) on this day instead in years in which this
-        Gospel was already read on the preceding Sunday; the appointed Gospel is carried and the
-        conditional substitute is not. NOTHING ELSE OF THIS DAY IS HELD. No pericope title, psalm
+        under the Gospel appoints Matthew 14:22-36 (n. 408) on this day instead in Year A when
+        Matthew 14:13-21 was actually read on the preceding Sunday; the principal Gospel is carried
+        and the conditional substitute is not. That actual-prior-reading condition remains unresolved
+        in the shared appointment model; Sunday occurrence alone does not establish it. NOTHING ELSE OF THIS DAY IS HELD. No pericope title, psalm
         response, acclamation text or printed heading is carried. The Missal prints no formulary for an
         Ordinary Time weekday; IGMR 363 lists the orations of the preceding Sunday first among the
         permitted bases (see rubrics.yaml, ordinary-time-weekday) and nothing here chooses one, so no
@@ -30502,6 +31760,11 @@ sections:
             end: {chapter: 1, verse: 49, part: b}
           ref: John 1:49b
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: principal
+          basis: OLM 1981 artifact page 270 / printed page 216, n. 408, prints Matthew 15:1-2, 10-14 as an ad-libitum Gospel option, especially when the principal Gospel was read on the preceding day in Year A. This preference is not a required predicate. Only source-local factual appointment is attested; target-2008 correspondence and protected wording remain unestablished.
         source: scripture
         verses:
         - book: Matthew
@@ -30509,6 +31772,30 @@ sections:
           - begin: {chapter: 14, verse: 22}
             end: {chapter: 14, verse: 36}
           ref: Matthew 14:22-36
+      - name: Gospel (ad libitum)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: ad-libitum
+          basis: OLM 1981 artifact page 270 / printed page 216, n. 408, prints Matthew 15:1-2, 10-14 as an ad-libitum Gospel option, especially when the principal Gospel was read on the preceding day in Year A. This preference is not a required predicate. Only source-local factual appointment is attested; target-2008 correspondence and protected wording remain unestablished.
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 15
+              verse: 1
+            end:
+              chapter: 15
+              verse: 2
+          - begin:
+              chapter: 15
+              verse: 10
+            end:
+              chapter: 15
+              verse: 14
+          ref: Matthew 15:1-2, 10-14
+        notes: OLM 1981 n. 408 offers this Gospel ad libitum. Its especially-Year-A, actually-read-on-the-preceding-day qualification is a preference, not a condition restricting the option. No liturgical body or broader edition correspondence is supplied.
       notes: 'The Lectionary citations were read at 200 dpi in a page image of the Ordo lectionum Missae, editio
         typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 270, printed
         page 216, n. 408; the heading verified on that image is the eighteenth week of Ordinary Time,
@@ -30517,8 +31804,8 @@ sections:
         acclamation and the Gospel are printed once across the measure and carry plain verses. The Ordo
         prints its psalms in the numbering of the Latin books; they are converted here by scripts/_psalms
         from the tracked verse concordance, because this file declares psalm_numbering hebrew. A rubric
-        under the Gospel offers Matthew 15:1-2, 10-14 ad libitum, chiefly where this Gospel was read on
-        the preceding day; the appointed Gospel is carried and the alternative is not. The Year II
+        under the Gospel offers Matthew 15:1-2, 10-14 ad libitum, especially when the principal Gospel was actually read on
+        the preceding day in Year A; both are carried as one structured Gospel choice. The Year II
         responsorial psalm is printed with its verse blocks out of numeric order and is carried in the
         order the book prints them. NOTHING ELSE OF THIS DAY IS HELD. No pericope title, psalm response,
         acclamation text or printed heading is carried. The Missal prints no formulary for an Ordinary
@@ -31199,6 +32486,11 @@ sections:
       season: ordinary-time
       propers:
       - name: First Reading
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: principal
+          basis: OLM 1981 artifact page 275 / printed page 221, n. 417, prints Ezekiel 16:59-63 as an ad-libitum alternative to the Year II first reading. Only source-local factual appointment is attested; target-2008 correspondence and protected wording remain unestablished.
         source: scripture
         weekday_cycles:
           'I':
@@ -31219,6 +32511,26 @@ sections:
               - begin: {chapter: 16, verse: 63}
                 end: {chapter: 16, verse: 63}
               ref: Ezekiel 16:1-15, 60, 63
+      - name: First Reading (ad libitum)
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: ad-libitum
+          basis: OLM 1981 artifact page 275 / printed page 221, n. 417, prints Ezekiel 16:59-63 as an ad-libitum alternative to the Year II first reading. Only source-local factual appointment is attested; target-2008 correspondence and protected wording remain unestablished.
+        source: scripture
+        weekday_cycles:
+          II:
+            verses:
+            - book: Ezekiel
+              ranges:
+              - begin:
+                  chapter: 16
+                  verse: 59
+                end:
+                  chapter: 16
+                  verse: 63
+              ref: Ezekiel 16:59-63
+        notes: OLM 1981 n. 417 offers this first reading ad libitum only in the Year II column. The source gives no corresponding Year I option. No liturgical body or broader edition correspondence is supplied.
       - name: Responsorial Psalm
         source: scripture
         weekday_cycles:
@@ -31271,8 +32583,7 @@ sections:
         prints its psalms in the numbering of the Latin books; they are converted here by scripts/_psalms
         from the tracked verse concordance, because this file declares psalm_numbering hebrew. The book
         prefixes the acclamation citation with cf.; the citation carried is the one the book gives. A
-        rubric offers Ezekiel 16:59-63 ad libitum in place of the Year II first reading; the appointed
-        reading is carried and the alternative is not. The Year II responsorial psalm is the canticle of
+        rubric offers Ezekiel 16:59-63 ad libitum in place of the Year II first reading; the principal reading and its sparse Year II ad-libitum alternative are carried as one structured first-reading choice. The Year II responsorial psalm is the canticle of
         Isaiah 12, not a psalm. NOTHING ELSE OF THIS DAY IS HELD. No pericope title, psalm response,
         acclamation text or printed heading is carried. The Missal prints no formulary for an Ordinary
         Time weekday; IGMR 363 lists the orations of the preceding Sunday first among the permitted bases
@@ -42084,14 +43395,12 @@ sections:
         psalm_numbering hebrew. The Ordo groups two selections into one stanza with et
         (6 et 8ab, and 16bc et 17); the citation grammar here carries no stanza
         grouping, so each selection is recorded separately and the ranges are unchanged.
-        This Mass carries no Gospel Acclamation because the Ordo prints none: against
+        No Scripture citation is supplied for this Gospel Acclamation appointment: against
         Alleluia it prints the bare cross-reference n. 717,6 and no scriptural citation
         at all. The Communia were read on 2026-08-02, artifact pages 375 to 398, and
         that pointer was followed to its entry. n. 717,6, at artifact page 383, printed
         page 329, is the Te Deum laudamus couplet with a second line proper to martyrs,
-        a chant text carrying no scriptural citation, read at 400 dpi. The slot
-        therefore stays absent because the book gives no reference for it anywhere, not
-        because a Common pointer was declined. The Ordo prints this same bare
+        a chant text carrying no scriptural citation, read at 400 dpi. The appointment is explicit but its body remains unavailable; no Scripture citation or Bible reconstruction is substituted for it. The Ordo prints this same bare
         cross-reference at n. 536, n. 551 and n. 620, and n. 717,6 is one of only six
         items in the whole Communia that carry no citation. Nothing else of this Mass
         has been read - the Entrance and Communion Antiphons and the three orations are
@@ -42123,6 +43432,15 @@ sections:
           - begin: {chapter: 31, verse: 17}
             end: {chapter: 31, verse: 17}
           ref: Psalm 31:3cd-4, 6, 8ab, 16bc, 17
+      - name: Gospel Acclamation
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        notes: 'Source-local appointment: OLM 1981 n. 536, artifact p. 333, refers to n. 717,6, artifact p. 383, without a Scripture citation. The exact target-2008 body is not adopted or established. No chant words, removed-body hash, publication permission or Bible reconstruction is supplied.'
       - name: Gospel
         source: scripture
         verses:
@@ -43119,13 +44437,10 @@ sections:
         Ordo prints its responsorial psalms in Vulgate numbering; they are converted
         here by scripts/_psalms from the tracked verse concordance, because this file
         declares psalm_numbering hebrew. Against Alleluia the Ordo prints the bare
-        cross-reference n. 717,6 and no scriptural citation at all, so this Mass carries
-        no Gospel Acclamation. The Communia were read on 2026-08-02, artifact pages 375
+        cross-reference n. 717,6 and no scriptural citation at all, so only an unavailable Gospel Acclamation appointment is carried. The Communia were read on 2026-08-02, artifact pages 375
         to 398, and that pointer was followed to its entry. n. 717,6, at artifact page
         383, printed page 329, is the Te Deum laudamus couplet with a second line proper
-        to martyrs, a chant text carrying no scriptural citation, read at 400 dpi. The
-        slot therefore stays absent because the book gives no reference for it anywhere,
-        not because a Common pointer was declined. The Ordo prints this same bare
+        to martyrs, a chant text carrying no scriptural citation, read at 400 dpi. The appointment is explicit but its body remains unavailable; no Scripture citation or Bible reconstruction is substituted for it. The Ordo prints this same bare
         cross-reference at n. 536, n. 551 and n. 620, and n. 717,6 is one of only six
         items in the whole Communia that carry no citation. Nothing else of this Mass
         has been read - the Entrance and Communion Antiphons and the three orations are
@@ -43157,6 +44472,15 @@ sections:
           - begin: {chapter: 126, verse: 6}
             end: {chapter: 126, verse: 6}
           ref: Psalm 126:1-2ab, 2cd-3, 4-5, 6
+      - name: Gospel Acclamation
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        notes: 'Source-local appointment: OLM 1981 n. 551, artifact p. 338, refers to n. 717,6, artifact p. 383, without a Scripture citation. The exact target-2008 body is not adopted or established. No chant words, removed-body hash, publication permission or Bible reconstruction is supplied.'
       - name: Gospel
         source: scripture
         verses:
@@ -46740,12 +48064,11 @@ sections:
         with et; this file''s citation grammar has an ordered list of ranges and no
         stanza grouping, so each grouped stanza is recorded as two selections naming the
         same verses. Against Alleluia the Ordo prints the bare cross-reference n. 729,8
-        and no scriptural citation at all, so this Mass carries no Gospel Acclamation.
+        and no scriptural citation at all, so only an unavailable Gospel Acclamation appointment is carried.
         The Communia were read on 2026-08-02, artifact pages 375 to 398, and that
         pointer was followed to its entry. n. 729,8, at artifact page 390, printed page
         336, is the couplet Semen est verbum Dei, a chant text carrying no scriptural
-        citation, read at 400 dpi. The slot therefore stays absent because the book
-        gives no reference for it anywhere, not because a Common pointer was declined.
+        citation, read at 400 dpi. The appointment is explicit but its body remains unavailable; no Scripture citation or Bible reconstruction is substituted for it.
         The Ordo prints this same bare cross-reference at n. 602 and n. 637, and n.
         729,8 is one of only six items in the whole Communia that carry no citation. The
         Ordo prints its responsorial psalms in Vulgate numbering; they are converted
@@ -46782,7 +48105,21 @@ sections:
           - begin: {chapter: 40, verse: 10}
             end: {chapter: 40, verse: 10}
           ref: Psalm 40:2, 4ab, 7-8a, 8b-9, 10
+      - name: Gospel Acclamation
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        notes: 'Source-local appointment: OLM 1981 n. 602, artifact p. 351, refers to n. 729,8, artifact p. 390, without a Scripture citation. The exact target-2008 body is not adopted or established. No chant words, removed-body hash, publication permission or Bible reconstruction is supplied.'
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: longer
+          basis: OLM 1981 n. 602 (artifact p. 351) refers to Common n. 730.5 (artifact p. 390), whose one Gospel option includes a shorter form; Praenotanda n. 83 permits Common readings. The shorter form is Common-derived, not printed as a separate alternative on the dated entry.
         source: scripture
         verses:
         - book: Mark
@@ -46792,6 +48129,24 @@ sections:
           - begin: {chapter: 4, verse: 13}
             end: {chapter: 4, verse: 20}
           ref: Mark 4:1-10, 13-20
+      - name: Gospel (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: shorter
+          basis: OLM 1981 n. 602 (artifact p. 351) refers to Common n. 730.5 (artifact p. 390), whose one Gospel option includes a shorter form; Praenotanda n. 83 permits Common readings. The shorter form is Common-derived, not printed as a separate alternative on the dated entry.
+        source: scripture
+        notes: Source-local OLM 1981 Common n. 730.5, artifact p. 390, supplies Mark 4:1-9 as a shorter form. The dated n. 602 refers to that numbered option but prints only the long citation. This is a permitted Common-derived reading under Praenotanda n. 83, not a compulsory substitution for the weekday course. Exact target-2008 or territorial Lectionary correspondence is not established; any Bible rendering remains a reconstruction, not adopted liturgical wording.
+        verses:
+        - book: Mark
+          ranges:
+          - begin:
+              chapter: 4
+              verse: 1
+            end:
+              chapter: 4
+              verse: 9
+          ref: Mark 4:1-9
     - key: saint-mary-magdalene
       name: Saint Mary Magdalene
       registry: pc-07-22
@@ -48036,13 +49391,11 @@ sections:
         620. The Ordo heads it De Communi martyrum vel pastorum, and this repository
         carries identity-only Common records that do not resolve a target-edition formulary, so the heading is recorded and not resolved. Against Alleluia
         the Ordo prints the bare cross-reference n. 717,6 and no scriptural citation at
-        all, so this Mass carries no Gospel Acclamation. The Communia were read on
+        all, so only an unavailable Gospel Acclamation appointment is carried. The Communia were read on
         2026-08-02, artifact pages 375 to 398, and that pointer was followed to its
         entry. n. 717,6, at artifact page 383, printed page 329, is the Te Deum laudamus
         couplet with a second line proper to martyrs, a chant text carrying no
-        scriptural citation, read at 400 dpi. The slot therefore stays absent because
-        the book gives no reference for it anywhere, not because a Common pointer was
-        declined. The Ordo prints this same bare cross-reference at n. 536, n. 551 and
+        scriptural citation, read at 400 dpi. The appointment is explicit but its body remains unavailable; no Scripture citation or Bible reconstruction is substituted for it. The Ordo prints this same bare cross-reference at n. 536, n. 551 and
         n. 620, and n. 717,6 is one of only six items in the whole Communia that carry
         no citation. The Ordo prints its responsorial psalms in Vulgate numbering; they
         are converted here by scripts/_psalms from the tracked verse concordance,
@@ -48072,6 +49425,15 @@ sections:
           - begin: {chapter: 124, verse: 7, part: b}
             end: {chapter: 124, verse: 8}
           ref: Psalm 124:2-3, 4-5, 7b-8
+      - name: Gospel Acclamation
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        notes: 'Source-local appointment: OLM 1981 n. 620, artifact p. 355, refers to n. 717,6, artifact p. 383, without a Scripture citation. The exact target-2008 body is not adopted or established. No chant words, removed-body hash, publication permission or Bible reconstruction is supplied.'
       - name: Gospel
         source: scripture
         verses:
@@ -49142,12 +50504,11 @@ sections:
         the Gospel in a longer form (longior) and a shorter one (brevior), carried here
         as two propers under this file''s convention for a printed alternative. Against
         Alleluia the Ordo prints the bare cross-reference n. 729,8 and no scriptural
-        citation at all, so this Mass carries no Gospel Acclamation. The Communia were
+        citation at all, so only an unavailable Gospel Acclamation appointment is carried. The Communia were
         read on 2026-08-02, artifact pages 375 to 398, and that pointer was followed to
         its entry. n. 729,8, at artifact page 390, printed page 336, is the couplet
         Semen est verbum Dei, a chant text carrying no scriptural citation, read at 400
-        dpi. The slot therefore stays absent because the book gives no reference for it
-        anywhere, not because a Common pointer was declined. The Ordo prints this same
+        dpi. The appointment is explicit but its body remains unavailable; no Scripture citation or Bible reconstruction is substituted for it. The Ordo prints this same
         bare cross-reference at n. 602 and n. 637, and n. 729,8 is one of only six items
         in the whole Communia that carry no citation. The Ordo prints its responsorial
         psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
@@ -49183,6 +50544,15 @@ sections:
           - begin: {chapter: 40, verse: 10}
             end: {chapter: 40, verse: 10}
           ref: Psalm 40:2, 4ab, 7-8a, 8b-9, 10
+      - name: Gospel Acclamation
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        notes: 'Source-local appointment: OLM 1981 n. 637, artifact p. 359, refers to n. 729,8, artifact p. 390, without a Scripture citation. The exact target-2008 body is not adopted or established. No chant words, removed-body hash, publication permission or Bible reconstruction is supplied.'
       - name: Gospel
         ordinary_disposition:
           kind: alternative
@@ -52208,12 +53578,11 @@ sections:
         681. The Ordo heads it De Communi martyrum vel virginum, and this repository
         carries identity-only Common records that do not resolve a target-edition formulary, so the heading is recorded and not resolved. Against Alleluia
         the Ordo prints the bare cross-reference n. 735,2 and no scriptural citation at
-        all, so this Mass carries no Gospel Acclamation. The Communia were read on
+        all, so only an unavailable Gospel Acclamation appointment is carried. The Communia were read on
         2026-08-02, artifact pages 375 to 398, and that pointer was followed to its
         entry. n. 735,2, at artifact page 391, printed page 337, is the couplet Haec est
         virgo sapiens, a chant text carrying no scriptural citation, read at 400 dpi.
-        The slot therefore stays absent because the book gives no reference for it
-        anywhere, not because a Common pointer was declined. The Ordo prints this same
+        The appointment is explicit but its body remains unavailable; no Scripture citation or Bible reconstruction is substituted for it. The Ordo prints this same
         bare cross-reference at n. 681 and n. 692, and n. 735,2 is one of only six items
         in the whole Communia that carry no citation. The Ordo prints its responsorial
         psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
@@ -52247,6 +53616,15 @@ sections:
           - begin: {chapter: 45, verse: 16}
             end: {chapter: 45, verse: 17}
           ref: Psalm 45:11-12, 14-15, 16-17
+      - name: Gospel Acclamation
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        notes: 'Source-local appointment: OLM 1981 n. 681, artifact p. 370, refers to n. 735,2, artifact p. 391, without a Scripture citation. The exact target-2008 body is not adopted or established. No chant words, removed-body hash, publication permission or Bible reconstruction is supplied.'
       - name: Gospel
         source: scripture
         verses:
@@ -52688,6 +54066,11 @@ sections:
             end: {chapter: 14, verse: 23}
           ref: John 14:23
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: longer
+          basis: OLM 1981 n. 686 (artifact p. 371) refers to Common n. 742.12 (artifact p. 397), whose one Gospel option includes a shorter form; Praenotanda n. 83 permits Common readings. The shorter form is Common-derived, not printed as a separate alternative on the dated entry.
         source: scripture
         verses:
         - book: Matthew
@@ -52695,6 +54078,24 @@ sections:
           - begin: {chapter: 25, verse: 14}
             end: {chapter: 25, verse: 30}
           ref: Matthew 25:14-30
+      - name: Gospel (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: shorter
+          basis: OLM 1981 n. 686 (artifact p. 371) refers to Common n. 742.12 (artifact p. 397), whose one Gospel option includes a shorter form; Praenotanda n. 83 permits Common readings. The shorter form is Common-derived, not printed as a separate alternative on the dated entry.
+        source: scripture
+        notes: Source-local OLM 1981 Common n. 742.12, artifact p. 397, supplies Matthew 25:14-23 as a shorter form. The dated n. 686 refers to that numbered option but prints only the long citation. This is a permitted Common-derived reading under Praenotanda n. 83, not a compulsory substitution for the weekday course. Exact target-2008 or territorial Lectionary correspondence is not established; any Bible rendering remains a reconstruction, not adopted liturgical wording.
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 25
+              verse: 14
+            end:
+              chapter: 25
+              verse: 23
+          ref: Matthew 25:14-23
     - key: saint-nicholas-bishop
       text_status:
         state: partial
@@ -52935,12 +54336,11 @@ sections:
         citation grammar has an ordered list of ranges and no stanza grouping, so each
         grouped stanza is recorded as two selections naming the same verses. Against
         Alleluia the Ordo prints the bare cross-reference n. 735,2 and no scriptural
-        citation at all, so this Mass carries no Gospel Acclamation. The Communia were
+        citation at all, so only an unavailable Gospel Acclamation appointment is carried. The Communia were
         read on 2026-08-02, artifact pages 375 to 398, and that pointer was followed to
         its entry. n. 735,2, at artifact page 391, printed page 337, is the couplet Haec
         est virgo sapiens, a chant text carrying no scriptural citation, read at 400
-        dpi. The slot therefore stays absent because the book gives no reference for it
-        anywhere, not because a Common pointer was declined. The Ordo prints this same
+        dpi. The appointment is explicit but its body remains unavailable; no Scripture citation or Bible reconstruction is substituted for it. The Ordo prints this same
         bare cross-reference at n. 681 and n. 692, and n. 735,2 is one of only six items
         in the whole Communia that carry no citation. The Ordo prints its responsorial
         psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
@@ -52974,6 +54374,15 @@ sections:
           - begin: {chapter: 31, verse: 17}
             end: {chapter: 31, verse: 17}
           ref: Psalm 31:3cd-4, 6, 8ab, 16bc, 17
+      - name: Gospel Acclamation
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        notes: 'Source-local appointment: OLM 1981 n. 692, artifact p. 372, refers to n. 735,2, artifact p. 391, without a Scripture citation. The exact target-2008 body is not adopted or established. No chant words, removed-body hash, publication permission or Bible reconstruction is supplied.'
       - name: Gospel
         source: scripture
         verses:

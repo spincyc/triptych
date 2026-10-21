@@ -1475,19 +1475,19 @@ locus = "Ordo Missae n. 9"
 [[slots]]
 key = "lectio-prima"
 after = "liturgia-verbi/lectio-prima"
-propers = ["First Reading", "First Reading (alternative)", "First Reading (shorter form)"]
+propers = ["First Reading", "First Reading (alternative)", "First Reading (shorter form)", "First Reading (ad libitum)"]
 locus = "Ordo Missae n. 10"
 
 [[slots]]
 key = "psalmus-responsorius"
 after = "liturgia-verbi/psalmus-responsorius"
-propers = ["Responsorial Psalm"]
+propers = ["Responsorial Psalm", "Responsorial Psalm (alternative)"]
 locus = "Ordo Missae n. 11"
 
 [[slots]]
 key = "lectio-secunda"
 after = "liturgia-verbi/lectio-secunda"
-propers = ["Second Reading"]
+propers = ["Second Reading", "Second Reading (shorter form)", "Second Reading (common provision)", "Second Reading (Year C optional)"]
 locus = "Ordo Missae n. 12"
 
 # The Sequence has its own seat, immediately BEFORE the acclamation element:
@@ -1514,7 +1514,7 @@ key = "evangelium"
 after = "liturgia-verbi/evangelium"
 propers = [
   "Gospel", "Gospel (alternative)", "Gospel (shorter form)",
-  "Gospel (alternative, longer form)", "Gospel (alternative, shorter form)",
+  "Gospel (alternative, longer form)", "Gospel (alternative, shorter form)", "Gospel (ad libitum)",
   "Passion of the Lord",
 ]
 locus = "Ordo Missae nn. 14-16"

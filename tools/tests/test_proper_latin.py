@@ -143,6 +143,152 @@ def permitted_nonexact_fields() -> list[str]:
 
 
 class ProductionLedgerTests(unittest.TestCase):
+    def test_christmas_three_forms_keep_principal_oration_sources_distinct(self):
+        document = _calendars.load_document(CALENDARS, "roman-1962")
+        mass = next(row for _, _, row in _calendars.departures_of(document)
+                    if row["key"] == "nativitate-domini-octave")
+        form_names = {'night': 'Ad primam Missam in nocte', 'dawn': 'Ad secundam Missam in aurora', 'day': 'Ad tertiam Missam in die'}
+        expected = {('night', 'Collect'): '43cf746196c66232af49c9d4a1c2f1927e452c82869582052845c2fe1ff8d166', ('night', 'Secret'): 'e7e29c76ab1a0ccf0b8eb4bd35ded4431d55db9e8a9272fbdb1cef93b25528e7', ('night', 'Postcommunion'): '53f6ace4a9b54ab897e13e4e7de8fc6ff97fff5c3f38eb5238d4ce88f0d99c7e', ('dawn', 'Collect'): 'bb56efd1e9a1608c3ee3e4a694011f50736b85d3028d2d01ca6df948bd7872d8', ('dawn', 'Secret'): '7c0c7d86dc2da4c2c0ec3c46de1517efd96080bbd0f15c7128e04e72b122dee2', ('dawn', 'Postcommunion'): '13ca23a543baa7a5891f687119e4c9b9d2c2059a1d46e46c36dfd1b474b126e7', ('day', 'Collect'): '56acab1dd52c97f54e612270f44534e3372c3ad3ffee7fc49f6ce12ec97a54ad', ('day', 'Secret'): '5e684d0b826f149f3cbd875f31c87287990d5fa1bbc4f25f18a5672d9bd18d04', ('day', 'Postcommunion'): '959f01005caf1c72a9e22382504447c8723e6f61b41f818f3a88e7616deda780'}
+        self.assertEqual(form_names, {form["id"]: form["name"] for form in mass["forms"]})
+        records, problems = read_sidecar(INVENTORIES / "roman-1962-proper-latin-provenance-v1.toml")
+        self.assertEqual([], problems)
+        seen = set()
+        import hashlib
+        import copy
+        unchanged = copy.deepcopy(mass)
+        unchanged.pop("notes", None)
+        for form in unchanged["forms"]:
+            form["propers"] = [p for p in form["propers"]
+                               if p["name"] not in {"Collect", "Secret", "Postcommunion"}]
+        self.assertEqual('e9cca9b307fde1df85b16efe33465ac8936d5309cb4fb8d850f9508f1fca68d4',
+                         hashlib.sha256(json.dumps(unchanged, ensure_ascii=False, sort_keys=True,
+                                                   separators=(",", ":")).encode()).hexdigest())
+        for form in mass["forms"]:
+            self.assertEqual({'night': ['Introit', 'Collect', 'Epistle', 'Gradual', 'Alleluia', 'Gospel', 'Offertory', 'Secret', 'Communion', 'Postcommunion'], 'dawn': ['Introit', 'Collect', 'Epistle', 'Gradual', 'Alleluia', 'Gospel', 'Offertory', 'Secret', 'Communion', 'Postcommunion'], 'day': ['Introit', 'Collect', 'Epistle', 'Gradual', 'Gospel', 'Offertory', 'Secret', 'Communion', 'Postcommunion']}[form["id"]], [p["name"] for p in form["propers"]])
+            for proper in form["propers"]:
+                address = (form["id"], proper["name"])
+                if address not in expected:
+                    continue
+                with self.subTest(form=form["id"], proper=proper["name"]):
+                    self.assertEqual(expected[address], text_sha256(proper["text"]))
+                    self.assertNotIn("text_status", proper)
+                    self.assertFalse({"actor", "speaker", "role"} & set(proper))
+                    key = LatinKey("nativitate-domini-octave", form["name"], proper["name"], occurrence=1)
+                    row = records[key]
+                    self.assertEqual("collated", row["provenance_status"])
+                    self.assertEqual("editorial-projection-exact-to-target", row["relationship"])
+                    self.assertEqual("public-domain", row["publication_basis"])
+                    self.assertEqual("permitted", row["publication_status"])
+                    self.assertEqual(set(SURFACES), set(row["surfaces"]))
+                    self.assertTrue(row["source_id"].endswith(".christmas-" + form["id"] + "-" + proper["name"].lower()))
+                    self.assertEqual('artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4', row["publication_source_ids"][1])
+                    seen.add(address)
+        self.assertEqual(set(expected), seen)
+        source = registered_artifact('artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4')
+        historical = (ROOT / source["path"]).read_text().strip().split("\n\n")
+        self.assertEqual(9, len(historical))
+        historical_day_collect = " ".join(historical[6].split())
+        self.assertTrue(historical_day_collect.endswith("Per eúmdem Dóminum."))
+        self.assertNotIn("Amen", historical_day_collect)
+        self.assertNotIn("℟", historical_day_collect)
+        self.assertIn("Per eúmdem Dñm.", " ".join(historical[3].split()))
+        day = next(form for form in mass["forms"] if form["id"] == "day")
+        day_collect = next(p["text"] for p in day["propers"] if p["name"] == "Collect")
+        self.assertTrue(" ".join(day_collect.split()).endswith(
+            "in unitate Spiritus Sancti, Deus: per omnia saecula saeculorum. ℟. Amen."))
+        self.assertNotIn("R. Amen.", day_collect)
+        historical_day_secret = " ".join(historical[7].split())
+        self.assertTrue(historical_day_secret.endswith("Per eúmdem Dóminum nostrum Jesum Christum."))
+        day_secret = next(p["text"] for p in day["propers"] if p["name"] == "Secret")
+        self.assertTrue(" ".join(day_secret.split()).endswith("Per eundem Dominum."))
+
+    def test_immaculate_feast_bodies_preserve_source_qualification_and_active_order(self):
+        document = _calendars.load_document(CALENDARS, "roman-1962")
+        mass = next(row for _, _, row in _calendars.departures_of(document)
+                    if row["key"] == 'conceptione-immaculata-beatae-mariae-virginis')
+        self.assertEqual(["Introit", "Collect", "Lesson", "Gradual", "Alleluia",
+                          "Gospel", "Offertory", "Secret", "Communion", "Postcommunion"],
+                         [p["name"] for p in mass["propers"]])
+        expected = {'Collect': '3dd9b9b0db918ec4f65b9a175e77347c0a54b5875fb874f50ed0bbe636b311f2', 'Secret': '6755a936e24660ef77e7c0ceffba13c28d21a82cc941bf8fb9ba5b57863f31a9', 'Communion': 'e26ba7251680129e9e04187733f30e4601c1479cdc157f20b6d160dbe4007936', 'Postcommunion': 'aa2efdb79676b0a403afaeb0f5bfacd9e9888af5af507f6d0cd09296cf5bf5d0'}
+        unchanged = [p for p in mass["propers"] if p["name"] not in expected]
+        import hashlib
+        self.assertEqual('649063bf9f7a74b95285676bee8f81cd11da10ec8212dd0ad2bf3257c9fa04d9',
+                         hashlib.sha256(json.dumps(unchanged, ensure_ascii=False,
+                                                   sort_keys=True, separators=(",", ":")).encode()).hexdigest())
+        appointed, problems = _calendars.resolve_propers(document, mass)
+        self.assertEqual([], problems)
+        found = {p["name"]: (p, origin) for _, p, origin in appointed if p["name"] in expected}
+        self.assertEqual(set(expected), set(found))
+        records, problems = read_sidecar(INVENTORIES / "roman-1962-proper-latin-provenance-v1.toml")
+        self.assertEqual([], problems)
+        for name, digest in expected.items():
+            proper, origin = found[name]
+            self.assertIsNone(origin)
+            self.assertEqual(digest, text_sha256(proper["text"]))
+            self.assertEqual("composed", proper["source"])
+            row = records[LatinKey('conceptione-immaculata-beatae-mariae-virginis', "", name, "", "", 1)]
+            self.assertEqual(digest, row["text_sha256"])
+            self.assertEqual('passage.catholic-church.missale-romanum.vatican-typica-1962.immaculate-conception-selected-feast-four-propers-word-collation-2026-10-20', row["verification_source_id"])
+        secret = " ".join(found["Secret"][0]["text"].split())
+        self.assertIn("quam in solemnitate immaculatae", secret)
+        self.assertNotIn("commemoratione", secret)
+        self.assertIn("commemoratione", found["Secret"][0]["notes"])
+        self.assertEqual("Gloriosa dicta sunt de te, Maria: quia fecit tibi magna qui potens est.",
+                         " ".join(found["Communion"][0]["text"].split()))
+        self.assertNotIn("verses", found["Communion"][0])
+        historical = registered_artifact('artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74')
+        self.assertEqual('18084e74e99af80af96f5879b9392fa5ab29b84a1cea955eef36604621a14c82', historical["sha256"])
+        source = (ROOT / historical["path"]).read_text()
+        self.assertIn("Per eumdem Dominum.", source)
+        self.assertNotIn("commemoratione", source)
+        self.assertTrue(source.rstrip().endswith("Per Dominum."))
+        self.assertIn("post Septuagesimam", mass["notes"])
+        self.assertIn("Psalm86:1-2,3,5".replace("Psalm86", "Psalm 86"), mass["notes"])
+        self.assertIn("not represented", mass["notes"])
+
+    def test_all_saints_own_bodies_keep_order_citations_and_source_boundaries(self):
+        document = _calendars.load_document(CALENDARS, "roman-1962")
+        mass = next(row for _, _, row in _calendars.departures_of(document)
+                    if row["key"] == "omnium-sanctorum")
+        self.assertEqual(
+            ["Introit", "Collect", "Lesson", "Gradual", "Alleluia", "Gospel",
+             "Offertory", "Secret", "Communion", "Postcommunion"],
+            [row["name"] for row in mass["propers"]],
+        )
+        expected = {'Introit': '05d6cd5dae69b6c05a69f9379ebd558836a0a630ab3072cc53cd54db0ae9d68d', 'Collect': 'b858d54df308cea45ae480dc0a715ba730661f8d9af1db5f8875353fc1e4cff0', 'Secret': '0f451845add633adda1c7fa6c23fe6332715561e5e21404b631b4c94e760c22a', 'Postcommunion': 'c64fbf6c5e2927c2ebb150c3a83ee0936a225bd459845b06da2fab85fe83eb21'}
+        unchanged = [row for row in mass["propers"] if row["name"] not in expected]
+        import hashlib
+        self.assertEqual(
+            '8a3a65633b4ed48cc631001e526a392ea7969fb000071a79fc5bcb23b1345c6e',
+            hashlib.sha256(json.dumps(unchanged, ensure_ascii=False, sort_keys=True,
+                                      separators=(",", ":")).encode()).hexdigest(),
+        )
+        appointed, problems = _calendars.resolve_propers(document, mass)
+        self.assertEqual([], problems)
+        found = {p["name"]: (p, origin) for _, p, origin in appointed
+                 if p["name"] in expected}
+        self.assertEqual(set(expected), set(found))
+        for name, digest in expected.items():
+            proper, origin = found[name]
+            self.assertIsNone(origin, name)
+            self.assertEqual(digest, text_sha256(proper["text"]))
+            self.assertNotIn("text_status", proper)
+        introit = found["Introit"][0]
+        self.assertEqual("mixed", introit["source"])
+        self.assertEqual([{"book": "Psalms", "ranges": [{
+            "begin": {"chapter": 32, "verse": 1},
+            "end": {"chapter": 32, "verse": 1}}], "ref": "Psalms 32:1"}],
+            introit["verses"])
+        self.assertTrue(introit["text"].startswith("Gaudeamus omnes in Domino"))
+        self.assertTrue(introit["text"].rstrip().endswith("V. Gloria Patri."))
+        self.assertNotIn("Sicut erat", introit["text"])
+        self.assertNotIn("Judicant Sancti", introit["text"])
+        for name in ("Collect", "Secret"):
+            self.assertTrue(" ".join(found[name][0]["text"].split())
+                            .endswith("Per Dominum."))
+        self.assertTrue(" ".join(found["Postcommunion"][0]["text"].split())
+                        .endswith("Per Dominum nostrum."))
+
     def test_theodore_own_orations_do_not_fall_back_to_common_prayers(self):
         document = _calendars.load_document(CALENDARS, "roman-1962")
         mass = next(row for _, _, row in _calendars.departures_of(document)
@@ -236,7 +382,7 @@ class ProductionLedgerTests(unittest.TestCase):
             # 1120 since 2026-10-20 (C3): St Lucy's Communion carries the
             # Missal antiphon rather than a Bible reconstruction.
             # +3 on 2026-10-20: source-backed Christ-the-King orations.
-            "roman-1962": (1128, 5),
+            "roman-1962": (1145, 5),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -257,7 +403,7 @@ class ProductionLedgerTests(unittest.TestCase):
     def test_publication_loader_validates_production_source_metadata(self) -> None:
         # 1114 since 2026-10-01: St Angela Merici's Secret and Postcommunion.
         # 1120 since 2026-10-20 (C3): St Lucy's Communion has its own body.
-        expected = {"postconciliar": 329, "roman-1962": 1128, "roman-pre-1955": 1128}
+        expected = {"postconciliar": 329, "roman-1962": 1145, "roman-pre-1955": 1145}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -299,8 +445,8 @@ class ProductionLedgerTests(unittest.TestCase):
         # read on the 1962 page image and on the 1862 Pustet's (and the Mame's).
         # 1074 since 2026-10-20 (C3): St Lucy's Communion is independently
         # collated on the 1962 and public-domain Mame 1922 page images.
-        self.assertEqual(1082, len(permitted))
-        self.assertEqual(1082, len(roman))
+        self.assertEqual(1099, len(permitted))
+        self.assertEqual(1099, len(roman))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -367,8 +513,8 @@ class ProductionLedgerTests(unittest.TestCase):
             # a bounded, independently publishable 1929 Schott derivative.
             "editorial-projection-2026-10-20": {
                 "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-orations-dc4287d2",
-                "publication_source_ids": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5"},
-                "projected_from": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", target_artifact, "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5"},
+                "publication_source_ids": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4"},
+                "projected_from": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", target_artifact, "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4"},
             },
         }
 
@@ -388,9 +534,22 @@ class ProductionLedgerTests(unittest.TestCase):
                 self.assertEqual("roman-1962", calendar)
                 self.assertIsNone(row.get("body_status"))
                 self.assertEqual("collated", row["provenance_status"])
-                self.assertEqual(
-                    "editorial-projection-exact-to-target", row["relationship"]
-                )
+                # One reviewed dated-feast selection has a conservative grade;
+                # every other legacy row still satisfies the exact-target rule.
+                if key == LatinKey('conceptione-immaculata-beatae-mariae-virginis', "", "Secret", "", "", 1):
+                    self.assertEqual("roman-1962", calendar)
+                    self.assertEqual('6755a936e24660ef77e7c0ceffba13c28d21a82cc941bf8fb9ba5b57863f31a9', row["text_sha256"])
+                    self.assertEqual("collated-exact", row["relationship"])
+                    self.assertEqual('passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.immaculate-conception-secret', row["source_id"])
+                    self.assertEqual('passage.catholic-church.missale-romanum.vatican-typica-1962.immaculate-conception-selected-feast-four-propers-word-collation-2026-10-20', row["verification_source_id"])
+                    self.assertEqual(['artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.immaculate-conception-four-propers-5f582ed9', 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74'],
+                                     row["publication_source_ids"])
+                    self.assertIn("solemnitate feast selection only", row["provenance_evidence"])
+                    self.assertIn("commemoratione alternative is not represented", row["provenance_evidence"])
+                else:
+                    self.assertEqual(
+                        "editorial-projection-exact-to-target", row["relationship"]
+                    )
                 self.assertTrue(row["transformations"])
                 self.assertEqual("public-domain", row["publication_basis"])
                 self.assertEqual(set(SURFACES), set(row["surfaces"]))

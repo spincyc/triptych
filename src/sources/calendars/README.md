@@ -810,13 +810,13 @@ owns the canon. Both run inside `make check` and need PyYAML
 | roman-pre-1955 | sanctoral | 1 | 0 | 0 |
 | roman-1962 | seasonal | 128 | 1354 | 0 |
 | roman-1962 | christological | 8 | 96 | 0 |
-| roman-1962 | marian | 18 | 127 | 0 |
-| roman-1962 | sanctoral | 307 | 1542 | 0 |
+| roman-1962 | marian | 18 | 134 | 0 |
+| roman-1962 | sanctoral | 307 | 1564 | 0 |
 | roman-1962 | common | 30 | 358 | 0 |
-| postconciliar | seasonal | 390 | 2116 | 0 |
+| postconciliar | seasonal | 390 | 2160 | 0 |
 | postconciliar | christological | 7 | 69 | 0 |
 | postconciliar | marian | 14 | 52 | 0 |
-| postconciliar | sanctoral | 201 | 761 | 0 |
+| postconciliar | sanctoral | 201 | 770 | 0 |
 | postconciliar | common | 7 | 0 | 0 |
 
 | Calendar | Rank | Entries | Celebrations |
@@ -841,9 +841,9 @@ owns the canon. Both run inside `make check` and need PyYAML
 | Masses | 8 | 491 | 619 |
 | Propers | 0 | 3445 | 2998 |
 | — named `Placeholder` | 0 | 0 | 0 |
-| — inside a `forms` block | 0 | 182 | 188 |
-| — carrying a `cycles` mapping | 0 | 0 | 258 |
-| — carrying a `weekday_cycles` mapping | 0 | 0 | 409 |
+| — inside a `forms` block | 0 | 182 | 191 |
+| — carrying a `cycles` mapping | 0 | 0 | 295 |
+| — carrying a `weekday_cycles` mapping | 0 | 0 | 410 |
 | Masses holding only placeholders | 0 | 0 | 0 |
 | Masses taking a formulary from another entry | 0 | 165 | 0 |
 | Propers taking their text from another entry | 0 | 70 | 49 |
@@ -851,7 +851,7 @@ owns the canon. Both run inside `make check` and need PyYAML
 | — of those, scripture-bearing | 0 | 2193 | 2635 |
 | Encoded passages | 0 | 2599 | 3590 |
 | Distinct books cited | 0 | 57 | 73 |
-| Distinct slot names | 0 | 120 | 92 |
+| Distinct slot names | 0 | 120 | 100 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
 `tools/mass-propers census --write`, which is the only thing that writes the

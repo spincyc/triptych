@@ -1678,7 +1678,8 @@ class ResolveCommonSets(unittest.TestCase):
             mass["takes_from"]["common_sets"]["orations"]["option"]
             for mass in supreme
         ]
-        self.assertEqual(options.count("c1-singular"), 27)
+        self.assertEqual(options.count("c1-singular"), 26)
+        self.assertEqual(options.count("c2-singular"), 1)
         self.assertEqual(options.count("c1-plural"), 2)
 
 

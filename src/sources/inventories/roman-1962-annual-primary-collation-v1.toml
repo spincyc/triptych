@@ -1,0 +1,156 @@
+collation_schema = 1
+record_type = "calendar-proper-citation-collation"
+calendar = "roman-1962"
+sections = ["sanctoral", "marian"]
+target = "src/sources/calendars/roman-1962/propers.yaml"
+collated_on = "2026-10-20"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+artifact_byte_size = 82815941
+artifact_page_count = 1088
+scope = "Ten active-full-Mass primary-reading metadata corrections plus one missing dated terminal reading explicitly offered by a Common source pool. Nicholas is not an active2026 full-Mass omission."
+method = "Each bounded held controlling-page image was visually inspected by the assigned source reviewer; all ten defects were independently viewed by the coordinator. Printed headings, full continuations, next-item boundaries and local whole-formulary context control these metadata changes."
+limits = "Citation and appointment facts only. No complete reading body, no new rights claim, and no claim that whole-verse Bible expansion equals exact Missal wording. Gregory Thaumaturgus is a liturgical cento requiring separate lawful-source body proof. Seasonal and Palm Sunday conditional proposals, Thomas Common pointer, and full-form omissions are separate."
+
+[[appointments]]
+mass = "assumptione-beatae-mariae-virginis"
+proper = "Lesson"
+origin = "direct"
+operation = "replace"
+printed_reference = "Iudith 13, 22-25; 15, 10"
+pdf_pages = [708, 709]
+printed_pages = [627, 628]
+context = "Benedixit te Dominus; Includes15:10 at foot; AP709 opens Gradual."
+raster_sha256 = ["dd593b8d8967536418f1c1606ace59fb3ee4462c7b2400d613e07ae2a42ee054", "c79888f25819d95df810c8d50db6f71a9fabfb0118d7ef8de50034607aca2d2b"]
+marginal_number = 3380
+qualification = "Source bounds and appointment identity; exact liturgical wording is a separate obligation."
+
+[[appointments]]
+mass = "s-barnabae-apostoli"
+proper = "Epistle"
+origin = "direct"
+operation = "replace"
+printed_reference = "Act. 11, 21-26; 13, 1-3"
+pdf_pages = [629, 630]
+printed_pages = [548, 549]
+context = "Multus numerus credentium; Both printed ranges form one reading before Gradual. Paschal referral on AP630 right retains Epistle and Gospel."
+raster_sha256 = ["4afffb62e29443563bb15f9d52f24e26acd0f78bb2d15eb08b9e60a1e3bdb83b", "033f65a2289593697731f24aebab50a4871200a0a25d43c0d3d8f72f19efec21"]
+marginal_number = 2752
+qualification = "Source bounds and appointment identity; exact liturgical wording is a separate obligation."
+
+[[appointments]]
+mass = "s-ignatii-confessoris"
+proper = "Epistle"
+origin = "direct"
+operation = "replace"
+printed_reference = "2 Tim. 2, 8-10; 3, 10-12"
+pdf_pages = [689, 690]
+printed_pages = [608, 609]
+context = "Memor esto; Second chapter passage ends before Gradual."
+raster_sha256 = ["8f6c1d33b434d4dc301e8d987e30d27b1b8615d2bd834e5ec246196a29bdb44f", "9ba2ea06f09347876a453352adb1928061593126eaebb2c7577b92b61250466a"]
+marginal_number = 3226
+qualification = "Source bounds and appointment identity; exact liturgical wording is a separate obligation."
+
+[[appointments]]
+mass = "s-irenaei-episcopi-martyris"
+proper = "Epistle"
+origin = "direct"
+operation = "replace"
+printed_reference = "2 Tim. 3, 14-17; 4, 1-5"
+pdf_pages = [658, 659, 660]
+printed_pages = [577, 578, 579]
+context = "Permane in iis; Crosses chapter division and page; ends before Gradual."
+raster_sha256 = ["b5959265f11bd5db0bdb3b31d19952dab517c363d52a69cd1bcca43fb43d05be", "cd418b67ab1ca957f42f93bb8c6fd8933d661049cd8fb971f915a61f1109c03e", "003581d9e54fe36926957ac9feac34351e801dbc2335d94464c07adeb13b236b"]
+marginal_number = 2974
+qualification = "Source bounds and appointment identity; exact liturgical wording is a separate obligation."
+
+[[appointments]]
+mass = "s-mariae-magdalenae-paenitentis"
+proper = "Lesson"
+origin = "direct"
+operation = "replace"
+printed_reference = "Cant. 3, 2-5; 8, 6-7"
+pdf_pages = [677, 678, 679]
+printed_pages = [596, 597, 598]
+context = "Surgam et circuibo; Second printed passage continues in same column; ends before Gradual."
+raster_sha256 = ["3dd39251cb71e00ab8f6a51ec1a0b7fec773ef3e64c2eba4392e1ad4880a34d6", "b71b85e8e4cdddd75fc8e243c46b4d8ac58285a31efd07b422914afc85b5b513", "0462345e285be51663a272ccfe41f9961c61a704176ef014909c0cf5fb29c4ca"]
+marginal_number = 3135
+qualification = "Source bounds and appointment identity; exact liturgical wording is a separate obligation."
+
+[[appointments]]
+mass = "s-marthae-virginis"
+proper = "Epistle"
+origin = "direct"
+operation = "replace"
+printed_reference = "2 Cor. 10, 17-18; 11, 1-2"
+pdf_pages = [686, 687]
+printed_pages = [605, 606]
+context = "Qui gloriatur; Crosses chapter before Gradual."
+raster_sha256 = ["3e6475009387667ed2ff135f94da84f611e8cb87ee21e7ce44ad68c5d184e457", "663ebfabd33c20e5af76c62b3bba8aca61e23a055b169f01f469ba2bfa96dbcf"]
+marginal_number = 3201
+qualification = "Source bounds and appointment identity; exact liturgical wording is a separate obligation."
+
+[[appointments]]
+mass = "s-raphaelis-archangeli"
+proper = "Epistle"
+origin = "direct"
+operation = "remove"
+printed_reference = "No such primary appointment in the complete printed local formulary"
+pdf_pages = [776, 777]
+printed_pages = ["695", "696"]
+context = "Absent: no such primary slot in full printed formulary; Absent; next boundary: No such source appointment; complete local formulary read"
+raster_sha256 = ["a921d67a92b40e49edeeb3cff21b53d521e39c305458d3bf33bcd974f864df1d", "a40d4c5f57fc5e27a4d1bc1450045204a1cc7cf9d7292a4db8ebe5026a70f725"]
+qualification = "Source bounds and appointment identity; exact liturgical wording is a separate obligation."
+
+[[appointments]]
+mass = "ss-simonis-iudae-apostolorum"
+proper = "Lesson"
+origin = "direct"
+operation = "remove"
+printed_reference = "No such primary appointment in the complete printed local formulary"
+pdf_pages = [781, 782, 783]
+printed_pages = ["700", "701", "702"]
+context = "Absent: no such primary slot in full printed formulary; Absent; next boundary: No such local source appointment; Revelation7:2-12 begins AllSaints #3976 on AP783"
+raster_sha256 = ["8e2239e5e01071a4db907cd940236a0a13a7f95c20616d117aa58665ed755c97", "2d22ca456d9a9523f472e448912c7592ba02a23d5cfcb2fb84c142ea7c6c837e", "93c0a7b1f320671f97b9d8a7557ebec6757b15fbad399d24d1998e84659be5c4"]
+qualification = "Source bounds and appointment identity; exact liturgical wording is a separate obligation."
+
+[[appointments]]
+mass = "s-gregorii-thaumaturgi-episcopi-confessoris"
+proper = "Lesson"
+origin = "direct"
+operation = "replace"
+printed_reference = "Eccli. 44, 16-27; 45, 3-20"
+pdf_pages = [801]
+printed_pages = ["720"]
+context = "Ecce sacerdos magnus; in odorem suavitatis; next boundary: Graduale 4115"
+raster_sha256 = ["84573aba8a151e29659530109539ea9406095e1f783b26c5c4a70424a81f1e59"]
+marginal_number = 4114
+qualification = "Printed broad references describe a liturgical cento, not every expanded biblical verse. Separate exact body proof is required."
+
+[[appointments]]
+mass = "s-clementis-i-papae-martyris"
+proper = "Epistle"
+origin = "direct"
+operation = "replace"
+printed_reference = "Philipp. 3, 17-21; 4, 1-3"
+pdf_pages = [805]
+printed_pages = ["724"]
+context = "Imitatores mei estote; in libro vitae; next boundary: Graduale 4148"
+raster_sha256 = ["c33e8454d8f4d29968331d225027b8bcae1aaa4e3014ae790ad61443f2bccd8b"]
+marginal_number = 4147
+qualification = "Source bounds and appointment identity; exact liturgical wording is a separate obligation."
+
+[[appointments]]
+mass = "s-nicolai-episcopi-confessoris"
+proper = "Epistle"
+origin = "direct"
+operation = "insert-before-Gradual"
+printed_head = "Lectio Epistolae beati Pauli Apostoli ad Hebraeos"
+printed_reference = "Hebr. 13, 7-17"
+ref = "Hebrews 13:7-17"
+pdf_pages = [515]
+printed_pages = [434]
+marginal_number = 1854
+context = "From the lower left column to the upper right, between Collect1853 and Gradual1855. Independently viewed by coordinator. The CommonConfessorPontiff source pool expressly offers this Memento reading via the dated Nicholas target."
+qualification = "Terminal appointment identity only, not automatic eligibility. The body ends inside biblical17 before the remainder of that verse; no unprinted part letter is invented. Exact lawful Missal wording is a separate body proof."
+raster_sha256 = ["fdb993f5bdce8a3d3006e6c44721005edff4cb64accd38a408d2cab5713b42f5"]

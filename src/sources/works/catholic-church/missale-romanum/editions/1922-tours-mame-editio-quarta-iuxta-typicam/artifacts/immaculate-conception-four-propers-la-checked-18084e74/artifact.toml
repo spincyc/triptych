@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Bounded historical Latin from the separately registered public-domain Tours Mame 1922 printing. Only its four own Immaculate Conception bodies are retained, with actual source pointing, i/j orthography and conclusion cues. The parent artifact owns the United States publication and mechanical-reproduction basis; no new rights decision is made."
+rights_jurisdiction = "United States"
+provenance = "Direct actual 200 and 400 dpi page-image readings on 2026-10-20 of registered whole PDF SHA256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005. Tours Mame 1922 PDF 607/printed 493 (feast-opening numeral suppressed), Collect crossing left foot to right top; PDF 609/printed 495, Secret, Communion and Postcommunion in left column."
+retrieved = "2026-10-20"
+sha256 = "18084e74e99af80af96f5879b9392fa5ab29b84a1cea955eef36604621a14c82"
+byte_size = 785
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/immaculate-conception-four-propers-la-checked-18084e74/immaculate-conception-four-propers-la.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Select Collect, Secret, Communion and Postcommunion; join initials and line divisions; remove stress accents; expand ae ligatures; use initial sentence case and ordinary punctuation spacing; wrap at 80 columns with final newline. Preserve source words, j spelling, comma after praevisa, eumdem and actual conclusion lengths. No target parenthesis, added nostrum, Bible wording, rubric or actor is inserted."
+indexable = true
+encoding = "utf-8"
+notes = "The historical Secret prints solemnitate only. Communion has no printed Bible citation. Source octave and votive directions are excluded and carry no 1962 appointment authority."

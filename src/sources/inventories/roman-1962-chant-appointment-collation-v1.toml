@@ -1,0 +1,419 @@
+collation_schema = 1
+record_type = "calendar-proper-citation-collation"
+calendar = "roman-1962"
+sections = ["marian", "sanctoral"]
+target = "src/sources/calendars/roman-1962/propers.yaml"
+collated_on = "2026-10-20"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+artifact_byte_size = 82815941
+artifact_page_count = 1088
+scope = "Bounded missing chant appointments, omitted citation constituents, and the Martin Lesson continuation identified while collating active 2026 primary-reading gaps. This is not a complete expected-slot universe or full-year collation."
+method = "Every reading rests on individually inspected images from the already-held hash-verified CMAA control, not OCR, a chosen Bible or remembered text. Original lanes used 120/150/180/200 dpi or 1800-pixel page images; separate conditional-rubric crops used 400 dpi. No whole YAML document was dumped. Source references were encoded through tools/citations.parse_citation."
+limits = "No new text bodies or rights determinations. Uncited composed appointments carry typed witness-gap Latin status and exact English no-exemplar absences, without asserting that translations do not exist. Conditional/votive replacements, unresolved source context and the separate Hermenegild seasonal Alleluia payload remain with the owning selection-contract lane. Nothing here makes chant alternatives cumulative."
+
+[[appointments]]
+mass = "annuntiatio-beatae-mariae-virginis"
+proper = "Introit"
+origin = "direct"
+pdf_page = 576
+printed_page = 495
+printed_references = ["Ps. 44, 13, 15 et 16", "Ps. ibid., 2"]
+raster_sha256 = ["56edfeb12901c55717813defeb24619feb3a145abeebc93e03eb98c46ed52bdf"]
+qualification = "The same direct Introit is printed before the separate paschal chant substitution rubric."
+marginal_number = 2323
+operation = "extend-citation"
+canonical_references = ["Psalms 44:13, 15-16", "Psalms 44:2"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "nativitate-beatae-mariae-virginis"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 732
+printed_page = 651
+printed_references = []
+raster_sha256 = ["926308887c99c0cc503f37ad6e6e61d7e1a30b2eb8a3a3f83d7c7ec6d325255c"]
+qualification = "Direct uncited ordinary chant; only the appointment is represented, without body or rights decision."
+marginal_number = 3574
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "nativitate-beatae-mariae-virginis"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 732
+printed_page = 651
+printed_references = []
+raster_sha256 = ["926308887c99c0cc503f37ad6e6e61d7e1a30b2eb8a3a3f83d7c7ec6d325255c"]
+qualification = "Direct uncited ordinary chant; only the appointment is represented, without body or rights decision."
+marginal_number = 3575
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "nativitate-beatae-mariae-virginis"
+proper = "Offertory"
+origin = "direct"
+pdf_page = 732
+printed_page = 651
+printed_references = []
+raster_sha256 = ["926308887c99c0cc503f37ad6e6e61d7e1a30b2eb8a3a3f83d7c7ec6d325255c"]
+qualification = "Direct uncited ordinary chant; only the appointment is represented, without body or rights decision."
+marginal_number = 3577
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "nativitate-beatae-mariae-virginis"
+proper = "Communion"
+origin = "direct"
+pdf_page = 732
+printed_page = 651
+printed_references = []
+raster_sha256 = ["926308887c99c0cc503f37ad6e6e61d7e1a30b2eb8a3a3f83d7c7ec6d325255c"]
+qualification = "Direct uncited ordinary chant; only the appointment is represented, without body or rights decision."
+marginal_number = 3580
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "s-hermenegildi-martyris"
+proper = "Introit"
+origin = "direct"
+pdf_page = 585
+printed_page = 504
+printed_references = ["Ps. 63, 3", "Ps. ibid., 2"]
+raster_sha256 = ["6df9fb7551705e305ae88151d08e6820345b444516aacbce85070863dfced6bd"]
+qualification = "explicitly Tempore paschali"
+marginal_number = 2392
+operation = "extend-citation"
+canonical_references = ["Psalms 63:3", "Psalm 63:2"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "litania-maior"
+proper = "Introit"
+origin = "direct"
+pdf_page = 591
+printed_page = 510
+printed_references = ["Ps. 63, 3", "Ps. ibid., 2"]
+raster_sha256 = ["c7e5fa640badb1bb6507f579d81a54cf4c08c60e257b5ff949da6642e03a6e48"]
+qualification = "St Mark direct feast formulary; paschal complex inferred from double Alleluia and outside-Easter rubric"
+marginal_number = 2440
+operation = "extend-citation"
+canonical_references = ["Psalms 63:3", "Psalm 63:2"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "litania-maior"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 592
+printed_page = 511
+printed_references = ["Ps. 88, 6", "Ps. 20, 4"]
+raster_sha256 = ["76547cfc2937ba50b9feed55d8b24c04e774c88f991c08f76d6f1f4398ef99af"]
+qualification = "St Mark direct feast formulary; paschal complex inferred from double Alleluia and outside-Easter rubric"
+marginal_number = 2444
+operation = "add-proper"
+canonical_references = ["Psalm 88:6", "Psalm 20:4"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-petri-martyris"
+proper = "Introit"
+origin = "direct"
+pdf_page = 595
+printed_page = 514
+printed_references = ["Ps. 63, 3", "Ps. ibid., 2"]
+raster_sha256 = ["d720e491fc90cd6011aaf8085e7880903b607a6f951eb790c5d4addb84b0e44c"]
+qualification = "direct feast formulary; paschal complex inferred from double Alleluia and outside-Easter rubric"
+marginal_number = 2470
+operation = "extend-citation"
+canonical_references = ["Psalms 63:3", "Psalm 63:2"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-petri-martyris"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 595
+printed_page = 514
+printed_references = ["Ps. 88, 6", "Ps. 20, 4"]
+raster_sha256 = ["d720e491fc90cd6011aaf8085e7880903b607a6f951eb790c5d4addb84b0e44c"]
+qualification = "direct feast formulary; paschal complex inferred from double Alleluia and outside-Easter rubric"
+marginal_number = 2473
+operation = "add-proper"
+canonical_references = ["Psalm 88:6", "Psalm 20:4"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "vigil-nativity-saint-john-baptist"
+proper = "Introit"
+origin = "direct"
+pdf_page = 642
+printed_page = 561
+printed_references = ["Luc. 1, 13, 15 et 14", "Ps. 20, 2"]
+raster_sha256 = ["2a1e93aad3fc05924a7ba4d774377cbece7fa0718aeb799d8caa43a937b1cdf2"]
+qualification = "ordinary printed 23 June vigil, II classis"
+marginal_number = 2858
+operation = "extend-citation"
+canonical_references = ["Luke 1:13, 15, 14", "Psalm 20:2"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "nativitate-s-ioannis-baptistae"
+proper = "Communion"
+origin = "direct"
+pdf_page = 645
+printed_page = 564
+printed_references = ["Luc. 1, 76"]
+raster_sha256 = ["a3eb66fecf908108cf8b98562599d39ecb27703139cf8ef2e11316eeb14e6862"]
+qualification = "Direct Communion precedes Postcommunion2876 and the later explicitly votive paragraph."
+marginal_number = 2875
+operation = "add-proper"
+canonical_references = ["Luke 1:76"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-hieronymi-aemiliani-confessoris"
+proper = "Introit"
+origin = "direct"
+pdf_page = 674
+printed_page = 593
+printed_references = ["Ps. 112, 1"]
+raster_sha256 = ["c6f023e57b9d913857a43b9eb73d2b34860d2643f3bf9e4b74eb905a947753f8"]
+qualification = "after the antiphon citation Thren. 2, 11; only the direct default-main-form citation is repaired."
+marginal_number = 3103
+operation = "extend-citation"
+canonical_references = ["Lamentations 2:11", "Psalm 112:1"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-hieronymi-aemiliani-confessoris"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 674
+printed_page = 593
+printed_references = ["℣. Ps. 111, 5-6"]
+raster_sha256 = ["c6f023e57b9d913857a43b9eb73d2b34860d2643f3bf9e4b74eb905a947753f8"]
+qualification = "after Prov. 5, 16; only the direct default-main-form citation is repaired."
+marginal_number_note = "Not asserted where the rendered margin does not settle every digit."
+operation = "extend-citation"
+canonical_references = ["Proverbs 5:16", "Psalm 111:5-6"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-hieronymi-aemiliani-confessoris"
+proper = "Communion"
+origin = "direct"
+pdf_page = 675
+printed_page = 594
+printed_references = ["Iac. 1, 27"]
+raster_sha256 = ["2f3b30d09c783d6c957d23bda1b8e5bef5688994636a88274e3d6d67eba2c6ba"]
+qualification = "after Secret and before Postcommunion; only the direct default-main-form citation is repaired."
+marginal_number = 3114
+operation = "add-proper"
+canonical_references = ["James 1:27"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-laurentii-martyris"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 703
+printed_page = 622
+printed_references = []
+raster_sha256 = ["6d8636786a9de5145c6a2d9dd4be9f23d7740dc26f6f35175b6b022350ea1c07"]
+qualification = "No printed Bible citation. Must compose with C9 disposition of the conditional votive Tract before serving a flat course."
+marginal_number = 3341
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "decollatione-s-ioannis-baptistae"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 723
+printed_page = 642
+printed_references = ["Ps. 91, 13 et 14; ℣. Ibid., 3"]
+raster_sha256 = ["7dc46dd784125416c955c5625eb873a7ac06b48c5b4972adf8ba57663e1482d9"]
+qualification = "after Lesson and before Alleluia; only the direct default-main-form citation is repaired."
+marginal_number = 3498
+operation = "add-proper"
+canonical_references = ["Psalm 91:13-14, 3"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-stephani-regis-confessoris"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 728
+printed_page = 647
+printed_references = ["℣. Ibid., 3"]
+raster_sha256 = ["9bafd4352b342935e8809ff496c7b4c3fe6c06b05c38c4bf4a18c1d86fdb4806"]
+qualification = "after the existing Ps. 91, 13 et 14 citation; only the direct default-main-form citation is repaired."
+marginal_number = 3548
+operation = "extend-citation"
+canonical_references = ["Psalms 91:13, 14", "Psalm 91:3"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-stephani-regis-confessoris"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 728
+printed_page = 647
+printed_references = ["Iac. 1, 12"]
+raster_sha256 = ["9bafd4352b342935e8809ff496c7b4c3fe6c06b05c38c4bf4a18c1d86fdb4806"]
+qualification = "after Gradual and before Gospel; only the direct default-main-form citation is repaired."
+marginal_number = 3549
+operation = "add-proper"
+canonical_references = ["James 1:12"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-matthaei-apostoli-evangelistae"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 745
+printed_page = 664
+printed_references = ["Ps. 111, 1-2"]
+raster_sha256 = ["897c4b803b9d97e7a1bf2930c7e8b5ada3d5a185c395f62bda6eb3ff23734090"]
+qualification = "Direct ordinary-feast appointment; separate votive and paschal replacements are not folded into this repair."
+marginal_number = 3682
+operation = "add-proper"
+canonical_references = ["Psalms 111:1-2"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-matthaei-apostoli-evangelistae"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 745
+printed_page = 664
+printed_references = []
+raster_sha256 = ["897c4b803b9d97e7a1bf2930c7e8b5ada3d5a185c395f62bda6eb3ff23734090"]
+qualification = "No printed Bible citation. Must compose with C9 disposition of the conditional votive Tract before serving a flat course."
+marginal_number = 3683
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "s-teresiae-a-iesu-infante-virginis"
+proper = "Introit"
+origin = "direct"
+pdf_page = 755
+printed_page = 674
+printed_references = ["Ps. 112, 1"]
+raster_sha256 = ["2b7c7a73c46abeff680b8c80916a6a5fae548245f6896dbd2ff7adf24354b576"]
+qualification = "Direct ordinary-feast appointment; separate votive and paschal replacements are not folded into this repair."
+marginal_number = 3757
+operation = "extend-citation"
+canonical_references = ["Song of Songs 4:8-9", "Psalms 112:1"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-teresiae-a-iesu-infante-virginis"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 755
+printed_page = 674
+printed_references = ["Ps. 70, 5"]
+raster_sha256 = ["2b7c7a73c46abeff680b8c80916a6a5fae548245f6896dbd2ff7adf24354b576"]
+qualification = "Direct ordinary-feast appointment; separate votive and paschal replacements are not folded into this repair."
+marginal_number = 3760
+operation = "extend-citation"
+canonical_references = ["Matthew 11:25", "Psalms 70:5"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-birgittae-viduae"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 761
+printed_page = 680
+printed_references = ["Ibid., 5, referring to Ps. 44 at the Gradual"]
+raster_sha256 = ["c0d086807e22a1edbf2e202fb56432ae16bd9a7608d21bcbcabf45418e1f59f5"]
+qualification = "Direct ordinary-feast appointment; separate votive and paschal replacements are not folded into this repair."
+marginal_number = 3807
+operation = "add-proper"
+canonical_references = ["Psalms 44:5"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-birgittae-viduae"
+proper = "Communion"
+origin = "direct"
+pdf_page = 761
+printed_page = 680
+printed_references = ["Ps. 44, 8"]
+raster_sha256 = ["c0d086807e22a1edbf2e202fb56432ae16bd9a7608d21bcbcabf45418e1f59f5"]
+qualification = "Direct ordinary-feast appointment; separate votive and paschal replacements are not folded into this repair."
+marginal_number = 3812
+operation = "add-proper"
+canonical_references = ["Psalms 44:8"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-ioannis-cantii-confessoris"
+proper = "Offertory"
+origin = "direct"
+pdf_page = 774
+printed_page = 693
+printed_references = ["Iob 29, 14-16"]
+raster_sha256 = ["3f8938948ba9adc403a905d17d3d67a5c0b0c6d3da11259f79db96a85d9fc991"]
+qualification = "Direct Scripture appointment, encoded by the existing citation parser. No composed-body or English absence row is needed for this Scripture-only node."
+marginal_number = 3910
+operation = "add-proper"
+canonical_references = ["Job 29:14-16"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-martini-episcopi-confessoris"
+proper = "Lesson"
+origin = "direct"
+pdf_page = 797
+printed_page = 716
+printed_references = ["Eccli. 44, 16-27; 45, 3-20"]
+raster_sha256 = ["c642705ec18b185b4e8a30386ef325b4814106ab8e9d487d424a46863244f551"]
+qualification = "Preserve the existing chapter-44 citation and append the explicitly printed chapter-45 continuation in the same Lesson node, keeping the node between Collect and Gradual."
+marginal_number = 4076
+operation = "extend-citation"
+canonical_references = ["Sirach 44:16-27", "Sirach 45:3-20"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-martini-episcopi-confessoris"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 797
+printed_page = 716
+printed_references = ["Eccli. 44, 16; V. Ibid., 20"]
+raster_sha256 = ["c642705ec18b185b4e8a30386ef325b4814106ab8e9d487d424a46863244f551"]
+qualification = "The versicle explicitly cites Ibid., 20, inheriting Ecclesiasticus chapter 44 from the heading. Preserve the first citation and append verse 20."
+marginal_number = 4077
+operation = "extend-citation"
+canonical_references = ["Sirach 44:16", "Sirach 44:20"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-martini-episcopi-confessoris"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 797
+printed_page = 716
+printed_references = []
+raster_sha256 = ["c642705ec18b185b4e8a30386ef325b4814106ab8e9d487d424a46863244f551"]
+qualification = "This is the ordinary Alleluia4078, not the separate Paschal votive replacement4079."
+marginal_number = 4078
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"

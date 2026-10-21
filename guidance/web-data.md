@@ -450,6 +450,20 @@ whole-book denominator; unresolved enumeration keeps that denominator unknown.
 Neither represented-unit availability nor an inventory's validity is a claim
 of textual completeness.
 
+A source-owned text-slot join may qualify `calendar_proper_name` with
+`calendar_proper_occurrence`, a positive integer excluding booleans. It is
+one-based among **all** exact-name Proper nodes in the joined calendar form,
+including Scripture nodes; it is not a direct-body provenance ordinal, source
+prayer ordinal, or overall Proper position. The independently inventoried
+source slot must establish that correspondence. Without the qualifier the
+existing unique-name rule remains: a missing or repeated name is unjoined and
+classified `not-represented`. An explicit out-of-range occurrence likewise
+stays `not-represented`, and unresolved source identity stays `unresolved`.
+Adding, removing or reordering same-name nodes requires rechecking the source
+join. This optional v1 input field adds no public renderer field and establishes
+structural representation only, never wording, publication, or whole-book
+completeness.
+
 The structure file's `coverage.expected_inventory` is a projection
 (`_missal_coverage.published_expectations`) of the full join
 `_missal_coverage.expectations` returns. It keeps every slice with its

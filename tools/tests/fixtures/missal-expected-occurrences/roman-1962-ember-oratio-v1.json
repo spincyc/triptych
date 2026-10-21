@@ -1,0 +1,1353 @@
+{
+  "schema": "triptych-missal-expected-occurrence-fixture/v1",
+  "provenance": {
+    "source_inventory_sha256": "194aff021f03a51af712d74237e16a0785a85d7d14fdfe1042ad95395bd1f796",
+    "source_packet_sha256": "0c2bb4df208c4304ab7d01690dfcd87d7579804ff6d7e19a84f90cce329b2faa",
+    "frozen_raw_model_sha256": "f284f50769f10592856ebf6b6d60c2c664fe6a9945c5bab371fc9d9bb4e97437",
+    "model_projection": "Only ordered names and fixture identity markers are retained; no body or publication data."
+  },
+  "inventory": {
+    "schema": "triptych-missal-expected-targets/v1",
+    "as_of": "2026-10-20",
+    "slices": [
+      {
+        "id": "roman-1962-universal-fixed-calendar",
+        "calendar": "roman-1962",
+        "recension_id": "roman-1962",
+        "territory": "universal",
+        "languages": [
+          "la",
+          "en"
+        ],
+        "date_range": "1962 typical-edition calendar",
+        "source_refs": [
+          "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/research/calendar-inventory.md",
+          "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/research/source-bindings.toml"
+        ],
+        "enumeration_state": "complete-within-slice",
+        "basis": "Singular identities derived by calendar-spine from the independently source-backed calendar publication, not from held propers. This closes fixed-calendar identity enumeration only: neither per-formulary slots, territorial additions, movable celebrations nor text coverage."
+      },
+      {
+        "id": "roman-1962-temporal-pre-holy-week-forms",
+        "calendar": "roman-1962",
+        "recension_id": "roman-1962",
+        "territory": "universal",
+        "languages": [
+          "la",
+          "en"
+        ],
+        "date_range": "1962 edition snapshot",
+        "source_refs": [
+          "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
+        ],
+        "enumeration_state": "complete-within-slice",
+        "basis": "All printed Mass-form headings in artifact82–144 up to LentI opening, including Nativity/January saints embedded in Temporal and distinct Advent Ember Saturday long/short forms. Shared-form and Common referrals are separately counted appointments."
+      },
+      {
+        "id": "roman-1962-temporal-pre-holy-week-slots",
+        "calendar": "roman-1962",
+        "recension_id": "roman-1962",
+        "territory": "universal",
+        "languages": [
+          "la",
+          "en"
+        ],
+        "date_range": "1962 edition snapshot",
+        "source_refs": [
+          "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
+        ],
+        "enumeration_state": "complete-within-slice",
+        "basis": "Every marginal numbered functional text block1–427 of the inspected extent. Introit antiphon+psalm, gradual, tract and paired Alleluia remain compound functional appointments; their verses/repetitions are not multiplied. Explicit seasonal alternatives and commemorative orations retain distinct semantic roles. No prayer bodies or target wording collation."
+      },
+      {
+        "id": "roman-1962-temporal-lent-source-forms-slots",
+        "calendar": "roman-1962",
+        "recension_id": "roman-1962",
+        "territory": "universal",
+        "languages": [
+          "la",
+          "en"
+        ],
+        "date_range": "1962 typical edition: Dominica I in Quadragesima through Saturday after Dominica I Passionis",
+        "source_refs": [
+          "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
+        ],
+        "enumeration_state": "complete-within-slice",
+        "basis": "Independent enumeration from the exact facsimile SHA-256 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a, artifact pp. 144–210 / printed pp. 63–129: from the Dominica I in Quadragesima heading (after marginal 427 on the same page) through marginal 825 on p. 210; Hebdomada sancta begins p. 211 at marginal 826. 36 formularies (35 days; the Lent Ember Saturday long and short forms are printed separately), all 398 numbered proper units 428–825 with their semantic roles, 36 unnumbered Preface appointments, two conditional ordination-oration referrals, Credo and other explicit Ordinary directions and use referrals. Roles were checked mechanically against the raw extraction (the OCR role-heading sequence of every formulary is a subsequence of the enumerated sequence; 350 of 398 numbers located with matching pages) and every unlocated number or missed heading was confirmed on page images. Completeness is bounded to these local printed proper units and explicit appointments, not the whole Ordinary, every rubrical combination, or text wording. No held propers were used."
+      },
+      {
+        "id": "roman-1962-temporal-easter-through-last-sunday",
+        "calendar": "roman-1962",
+        "recension_id": "roman-1962",
+        "territory": "universal",
+        "languages": [
+          "la",
+          "en"
+        ],
+        "date_range": "Historical edition snapshot; no civil-year occurrence claim",
+        "source_refs": [
+          "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
+        ],
+        "enumeration_state": "complete-within-slice",
+        "basis": "All 60 explicit Mass formularies from Easter through the last Sunday after Pentecost, including both long/short forms of Pentecost and September Ember Saturday, and all 639 numbered proper text appointments (1140–1778). Explicit Preface, Canon-variable, commemoration, ritual, procession and form-reuse referrals are included. Rogation seasonal alternatives remain distinct appointments. Numbered compound chants remain compound slots; no inferred civil-date occurrence universe."
+      }
+    ],
+    "targets": [
+      {
+        "id": "roman-1962.temporal.advent-ember-saturday-long",
+        "slice_id": "roman-1962-temporal-pre-holy-week-forms",
+        "kind": "form",
+        "identity_state": "established",
+        "calendar_mass_key": "advent-ember-saturday",
+        "form_id": "longer"
+      },
+      {
+        "id": "roman-1962.temporal.advent-ember-saturday-short",
+        "slice_id": "roman-1962-temporal-pre-holy-week-forms",
+        "kind": "form",
+        "identity_state": "established",
+        "calendar_mass_key": "advent-ember-saturday",
+        "form_id": "shorter"
+      },
+      {
+        "id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-longior",
+        "slice_id": "roman-1962-temporal-lent-source-forms-slots",
+        "kind": "form",
+        "identity_state": "established",
+        "calendar_mass_key": "lent-1-ember-saturday",
+        "form_id": "longer"
+      },
+      {
+        "id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-brevior",
+        "slice_id": "roman-1962-temporal-lent-source-forms-slots",
+        "kind": "form",
+        "identity_state": "established",
+        "calendar_mass_key": "lent-1-ember-saturday",
+        "form_id": "shorter"
+      },
+      {
+        "id": "roman-1962.temporal.pentecost-ember-sat-long",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "form",
+        "identity_state": "established",
+        "calendar_mass_key": "pentecost-ember-saturday",
+        "form_id": "longer"
+      },
+      {
+        "id": "roman-1962.temporal.pentecost-ember-sat-short",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "form",
+        "identity_state": "established",
+        "calendar_mass_key": "pentecost-ember-saturday",
+        "form_id": "shorter"
+      },
+      {
+        "id": "roman-1962.temporal.september-ember-sat-long",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "form",
+        "identity_state": "established",
+        "calendar_mass_key": "september-ember-saturday",
+        "form_id": "longer"
+      },
+      {
+        "id": "roman-1962.temporal.september-ember-sat-short",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "form",
+        "identity_state": "established",
+        "calendar_mass_key": "september-ember-saturday",
+        "form_id": "shorter"
+      },
+      {
+        "id": "roman-1962.temporal.advent-ember-saturday-long:collect-before-lesson-2:1",
+        "slice_id": "roman-1962-temporal-pre-holy-week-slots",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.advent-ember-saturday-long",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 1
+      },
+      {
+        "id": "roman-1962.temporal.advent-ember-saturday-long:collect-before-lesson-3:1",
+        "slice_id": "roman-1962-temporal-pre-holy-week-slots",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.advent-ember-saturday-long",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 2
+      },
+      {
+        "id": "roman-1962.temporal.advent-ember-saturday-long:collect-before-lesson-4:1",
+        "slice_id": "roman-1962-temporal-pre-holy-week-slots",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.advent-ember-saturday-long",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 3
+      },
+      {
+        "id": "roman-1962.temporal.advent-ember-saturday-long:collect-before-lesson-5:1",
+        "slice_id": "roman-1962-temporal-pre-holy-week-slots",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.advent-ember-saturday-long",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 4
+      },
+      {
+        "id": "roman-1962.temporal.advent-ember-saturday-long:collect-before-epistle:1",
+        "slice_id": "roman-1962-temporal-pre-holy-week-slots",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.advent-ember-saturday-long",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 5
+      },
+      {
+        "id": "roman-1962.temporal.advent-ember-saturday-short:collect-before-epistle:1",
+        "slice_id": "roman-1962-temporal-pre-holy-week-slots",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.advent-ember-saturday-short",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 1
+      },
+      {
+        "id": "roman-1962:temporal:text-497",
+        "slice_id": "roman-1962-temporal-lent-source-forms-slots",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-longior",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 1
+      },
+      {
+        "id": "roman-1962:temporal:text-500",
+        "slice_id": "roman-1962-temporal-lent-source-forms-slots",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-longior",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 2
+      },
+      {
+        "id": "roman-1962:temporal:text-503",
+        "slice_id": "roman-1962-temporal-lent-source-forms-slots",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-longior",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 3
+      },
+      {
+        "id": "roman-1962:temporal:text-506",
+        "slice_id": "roman-1962-temporal-lent-source-forms-slots",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-longior",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 4
+      },
+      {
+        "id": "roman-1962:temporal:text-509",
+        "slice_id": "roman-1962-temporal-lent-source-forms-slots",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-longior",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 5
+      },
+      {
+        "id": "roman-1962:temporal:text-517",
+        "slice_id": "roman-1962-temporal-lent-source-forms-slots",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-longior",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 6
+      },
+      {
+        "id": "roman-1962:temporal:text-522",
+        "slice_id": "roman-1962-temporal-lent-source-forms-slots",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-brevior",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 1
+      },
+      {
+        "id": "roman-1962:temporal:text-530",
+        "slice_id": "roman-1962-temporal-lent-source-forms-slots",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-brevior",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 2
+      },
+      {
+        "id": "roman-1962.temporal.pentecost-ember-sat-long:collect:2",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.pentecost-ember-sat-long",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 1
+      },
+      {
+        "id": "roman-1962.temporal.pentecost-ember-sat-long:collect:3",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.pentecost-ember-sat-long",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 2
+      },
+      {
+        "id": "roman-1962.temporal.pentecost-ember-sat-long:collect:4",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.pentecost-ember-sat-long",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 3
+      },
+      {
+        "id": "roman-1962.temporal.pentecost-ember-sat-long:collect:5",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.pentecost-ember-sat-long",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 4
+      },
+      {
+        "id": "roman-1962.temporal.pentecost-ember-sat-long:collect:6",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.pentecost-ember-sat-long",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 5
+      },
+      {
+        "id": "roman-1962.temporal.pentecost-ember-sat-short:collect:2",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.pentecost-ember-sat-short",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 1
+      },
+      {
+        "id": "roman-1962.temporal.september-ember-sat-long:collect:2",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.september-ember-sat-long",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 1
+      },
+      {
+        "id": "roman-1962.temporal.september-ember-sat-long:collect:3",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.september-ember-sat-long",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 2
+      },
+      {
+        "id": "roman-1962.temporal.september-ember-sat-long:collect:4",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.september-ember-sat-long",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 3
+      },
+      {
+        "id": "roman-1962.temporal.september-ember-sat-long:collect:5",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.september-ember-sat-long",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 4
+      },
+      {
+        "id": "roman-1962.temporal.september-ember-sat-long:collect:6",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.september-ember-sat-long",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 5
+      },
+      {
+        "id": "roman-1962.temporal.september-ember-sat-short:collect:2",
+        "slice_id": "roman-1962-temporal-easter-through-last-sunday",
+        "kind": "text-slot",
+        "identity_state": "established",
+        "parent_id": "roman-1962.temporal.september-ember-sat-short",
+        "calendar_proper_name": "Oratio",
+        "calendar_proper_occurrence": 1
+      }
+    ],
+    "boundaries": [
+      {
+        "id": "roman-1962-fixed-calendar-text-slots",
+        "slice_id": "roman-1962-universal-fixed-calendar",
+        "kind": "text-slots",
+        "state": "unenumerated",
+        "source_refs": [
+          "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/research/calendar-inventory.md"
+        ],
+        "basis": "The calendar identifies celebrations and commemorations; it does not enumerate every appointed text, alternative, proper preface or Common reference. No text-slot denominator is inferred from these identities."
+      }
+    ]
+  },
+  "model_masses": [
+    {
+      "key": "advent-ember-saturday",
+      "forms": [
+        {
+          "id": "longer",
+          "propers": [
+            {
+              "name": "Introit"
+            },
+            {
+              "name": "Collect"
+            },
+            {
+              "name": "First Lesson"
+            },
+            {
+              "name": "First Gradual"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.advent-ember-saturday-long:collect-before-lesson-2:1",
+              "fixture_raw_model_index": 4
+            },
+            {
+              "name": "Second Lesson"
+            },
+            {
+              "name": "Second Gradual"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.advent-ember-saturday-long:collect-before-lesson-3:1",
+              "fixture_raw_model_index": 7
+            },
+            {
+              "name": "Third Lesson"
+            },
+            {
+              "name": "Third Gradual"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.advent-ember-saturday-long:collect-before-lesson-4:1",
+              "fixture_raw_model_index": 10
+            },
+            {
+              "name": "Fourth Lesson"
+            },
+            {
+              "name": "Fourth Gradual"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.advent-ember-saturday-long:collect-before-lesson-5:1",
+              "fixture_raw_model_index": 13
+            },
+            {
+              "name": "Fifth Lesson"
+            },
+            {
+              "name": "Hymn (Benedictus es)"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.advent-ember-saturday-long:collect-before-epistle:1",
+              "fixture_raw_model_index": 16
+            },
+            {
+              "name": "Epistle"
+            },
+            {
+              "name": "Tract"
+            },
+            {
+              "name": "Gospel"
+            },
+            {
+              "name": "Offertory"
+            },
+            {
+              "name": "Secret"
+            },
+            {
+              "name": "Communion"
+            },
+            {
+              "name": "Postcommunion"
+            }
+          ]
+        },
+        {
+          "id": "shorter",
+          "propers": [
+            {
+              "name": "Introit"
+            },
+            {
+              "name": "Collect"
+            },
+            {
+              "name": "Lesson"
+            },
+            {
+              "name": "Gradual"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.advent-ember-saturday-short:collect-before-epistle:1",
+              "fixture_raw_model_index": 4
+            },
+            {
+              "name": "Epistle"
+            },
+            {
+              "name": "Tract"
+            },
+            {
+              "name": "Gospel"
+            },
+            {
+              "name": "Offertory"
+            },
+            {
+              "name": "Secret"
+            },
+            {
+              "name": "Communion"
+            },
+            {
+              "name": "Postcommunion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "lent-1-ember-saturday",
+      "forms": [
+        {
+          "id": "longer",
+          "propers": [
+            {
+              "name": "Introit"
+            },
+            {
+              "name": "Collect"
+            },
+            {
+              "name": "First Lesson"
+            },
+            {
+              "name": "First Gradual"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962:temporal:text-497",
+              "fixture_raw_model_index": 4
+            },
+            {
+              "name": "Second Lesson"
+            },
+            {
+              "name": "Second Gradual"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962:temporal:text-500",
+              "fixture_raw_model_index": 7
+            },
+            {
+              "name": "Third Lesson"
+            },
+            {
+              "name": "Third Gradual"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962:temporal:text-503",
+              "fixture_raw_model_index": 10
+            },
+            {
+              "name": "Fourth Lesson"
+            },
+            {
+              "name": "Fourth Gradual"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962:temporal:text-506",
+              "fixture_raw_model_index": 13
+            },
+            {
+              "name": "Fifth Lesson"
+            },
+            {
+              "name": "Hymn (Benedictus es)"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962:temporal:text-509",
+              "fixture_raw_model_index": 16
+            },
+            {
+              "name": "Epistle"
+            },
+            {
+              "name": "Tract"
+            },
+            {
+              "name": "Gospel"
+            },
+            {
+              "name": "Offertory"
+            },
+            {
+              "name": "Secret"
+            },
+            {
+              "name": "Communion"
+            },
+            {
+              "name": "Postcommunion"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962:temporal:text-517",
+              "fixture_raw_model_index": 24
+            }
+          ]
+        },
+        {
+          "id": "shorter",
+          "propers": [
+            {
+              "name": "Introit"
+            },
+            {
+              "name": "Collect"
+            },
+            {
+              "name": "Lesson"
+            },
+            {
+              "name": "Gradual"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962:temporal:text-522",
+              "fixture_raw_model_index": 4
+            },
+            {
+              "name": "Epistle"
+            },
+            {
+              "name": "Tract"
+            },
+            {
+              "name": "Gospel"
+            },
+            {
+              "name": "Offertory"
+            },
+            {
+              "name": "Secret"
+            },
+            {
+              "name": "Communion"
+            },
+            {
+              "name": "Postcommunion"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962:temporal:text-530",
+              "fixture_raw_model_index": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "pentecost-ember-saturday",
+      "forms": [
+        {
+          "id": "longer",
+          "propers": [
+            {
+              "name": "Introit"
+            },
+            {
+              "name": "Collect"
+            },
+            {
+              "name": "First Lesson"
+            },
+            {
+              "name": "First Alleluia"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.pentecost-ember-sat-long:collect:2",
+              "fixture_raw_model_index": 4
+            },
+            {
+              "name": "Second Lesson"
+            },
+            {
+              "name": "Second Alleluia"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.pentecost-ember-sat-long:collect:3",
+              "fixture_raw_model_index": 7
+            },
+            {
+              "name": "Third Lesson"
+            },
+            {
+              "name": "Third Alleluia"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.pentecost-ember-sat-long:collect:4",
+              "fixture_raw_model_index": 10
+            },
+            {
+              "name": "Fourth Lesson"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.pentecost-ember-sat-long:collect:5",
+              "fixture_raw_model_index": 12
+            },
+            {
+              "name": "Fifth Lesson"
+            },
+            {
+              "name": "Fifth Alleluia"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.pentecost-ember-sat-long:collect:6",
+              "fixture_raw_model_index": 15
+            },
+            {
+              "name": "Epistle"
+            },
+            {
+              "name": "Tract"
+            },
+            {
+              "name": "Sequence"
+            },
+            {
+              "name": "Gospel"
+            },
+            {
+              "name": "Offertory"
+            },
+            {
+              "name": "Secret"
+            },
+            {
+              "name": "Communion"
+            },
+            {
+              "name": "Postcommunion"
+            }
+          ]
+        },
+        {
+          "id": "shorter",
+          "propers": [
+            {
+              "name": "Introit"
+            },
+            {
+              "name": "Collect"
+            },
+            {
+              "name": "Lesson"
+            },
+            {
+              "name": "Alleluia"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.pentecost-ember-sat-short:collect:2",
+              "fixture_raw_model_index": 4
+            },
+            {
+              "name": "Epistle"
+            },
+            {
+              "name": "Sequence"
+            },
+            {
+              "name": "Gospel"
+            },
+            {
+              "name": "Offertory"
+            },
+            {
+              "name": "Secret"
+            },
+            {
+              "name": "Communion"
+            },
+            {
+              "name": "Postcommunion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "september-ember-saturday",
+      "forms": [
+        {
+          "id": "longer",
+          "propers": [
+            {
+              "name": "Introit"
+            },
+            {
+              "name": "Collect"
+            },
+            {
+              "name": "First Lesson"
+            },
+            {
+              "name": "First Gradual"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.september-ember-sat-long:collect:2",
+              "fixture_raw_model_index": 4
+            },
+            {
+              "name": "Second Lesson"
+            },
+            {
+              "name": "Second Gradual"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.september-ember-sat-long:collect:3",
+              "fixture_raw_model_index": 7
+            },
+            {
+              "name": "Third Lesson"
+            },
+            {
+              "name": "Third Gradual"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.september-ember-sat-long:collect:4",
+              "fixture_raw_model_index": 10
+            },
+            {
+              "name": "Fourth Lesson"
+            },
+            {
+              "name": "Fourth Gradual"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.september-ember-sat-long:collect:5",
+              "fixture_raw_model_index": 13
+            },
+            {
+              "name": "Fifth Lesson"
+            },
+            {
+              "name": "Hymn (Benedictus es)"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.september-ember-sat-long:collect:6",
+              "fixture_raw_model_index": 16
+            },
+            {
+              "name": "Epistle"
+            },
+            {
+              "name": "Tract"
+            },
+            {
+              "name": "Gospel"
+            },
+            {
+              "name": "Offertory"
+            },
+            {
+              "name": "Secret"
+            },
+            {
+              "name": "Communion"
+            },
+            {
+              "name": "Postcommunion"
+            }
+          ]
+        },
+        {
+          "id": "shorter",
+          "propers": [
+            {
+              "name": "Introit"
+            },
+            {
+              "name": "Collect"
+            },
+            {
+              "name": "Lesson"
+            },
+            {
+              "name": "Gradual"
+            },
+            {
+              "name": "Oratio",
+              "fixture_target_id": "roman-1962.temporal.september-ember-sat-short:collect:2",
+              "fixture_raw_model_index": 4
+            },
+            {
+              "name": "Epistle"
+            },
+            {
+              "name": "Tract"
+            },
+            {
+              "name": "Gospel"
+            },
+            {
+              "name": "Offertory"
+            },
+            {
+              "name": "Secret"
+            },
+            {
+              "name": "Communion"
+            },
+            {
+              "name": "Postcommunion"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "joins": [
+    {
+      "target_id": "roman-1962.temporal.advent-ember-saturday-long:collect-before-lesson-2:1",
+      "parent_id": "roman-1962.temporal.advent-ember-saturday-long",
+      "mass": "advent-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 1,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "1962 Proprium de tempore, artifact PDF p. 90, printed p. 9, marginal unit 56",
+      "target_marginal": 56,
+      "source_oration_ordinal": 2,
+      "complete_source_proper_ordinal": 5,
+      "frozen_raw_model_index": 4,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.advent-ember-saturday-long:collect-before-lesson-3:1",
+      "parent_id": "roman-1962.temporal.advent-ember-saturday-long",
+      "mass": "advent-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 2,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "1962 Proprium de tempore, artifact PDF p. 90, printed p. 9, marginal unit 59",
+      "target_marginal": 59,
+      "source_oration_ordinal": 3,
+      "complete_source_proper_ordinal": 8,
+      "frozen_raw_model_index": 7,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.advent-ember-saturday-long:collect-before-lesson-4:1",
+      "parent_id": "roman-1962.temporal.advent-ember-saturday-long",
+      "mass": "advent-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 3,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "1962 Proprium de tempore, artifact PDF p. 91, printed p. 10, marginal unit 62",
+      "target_marginal": 62,
+      "source_oration_ordinal": 4,
+      "complete_source_proper_ordinal": 11,
+      "frozen_raw_model_index": 10,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.advent-ember-saturday-long:collect-before-lesson-5:1",
+      "parent_id": "roman-1962.temporal.advent-ember-saturday-long",
+      "mass": "advent-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 4,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "1962 Proprium de tempore, artifact PDF p. 91, printed p. 10, marginal unit 65",
+      "target_marginal": 65,
+      "source_oration_ordinal": 5,
+      "complete_source_proper_ordinal": 14,
+      "frozen_raw_model_index": 13,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.advent-ember-saturday-long:collect-before-epistle:1",
+      "parent_id": "roman-1962.temporal.advent-ember-saturday-long",
+      "mass": "advent-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 5,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "1962 Proprium de tempore, artifact PDF p. 92, printed p. 11, marginal unit 68",
+      "target_marginal": 68,
+      "source_oration_ordinal": 6,
+      "complete_source_proper_ordinal": 17,
+      "frozen_raw_model_index": 16,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.advent-ember-saturday-short:collect-before-epistle:1",
+      "parent_id": "roman-1962.temporal.advent-ember-saturday-short",
+      "mass": "advent-ember-saturday",
+      "form_id": "shorter",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 1,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "1962 Proprium de tempore, artifact PDF p. 93, printed p. 12, marginal unit 80",
+      "target_marginal": 80,
+      "source_oration_ordinal": 2,
+      "complete_source_proper_ordinal": 5,
+      "frozen_raw_model_index": 4,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962:temporal:text-497",
+      "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-longior",
+      "mass": "lent-1-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 1,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "1962 Vatican typical-edition facsimile; printed p. 74; PDF physical p. 155; numbered text 497; semantic slot collect-before-lesson-2",
+      "target_marginal": 497,
+      "source_oration_ordinal": 2,
+      "complete_source_proper_ordinal": 5,
+      "frozen_raw_model_index": 4,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962:temporal:text-500",
+      "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-longior",
+      "mass": "lent-1-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 2,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "1962 Vatican typical-edition facsimile; printed p. 74; PDF physical p. 155; numbered text 500; semantic slot collect-before-lesson-3",
+      "target_marginal": 500,
+      "source_oration_ordinal": 3,
+      "complete_source_proper_ordinal": 8,
+      "frozen_raw_model_index": 7,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962:temporal:text-503",
+      "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-longior",
+      "mass": "lent-1-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 3,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "1962 Vatican typical-edition facsimile; printed p. 75; PDF physical p. 156; numbered text 503; semantic slot collect-before-lesson-4",
+      "target_marginal": 503,
+      "source_oration_ordinal": 4,
+      "complete_source_proper_ordinal": 11,
+      "frozen_raw_model_index": 10,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962:temporal:text-506",
+      "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-longior",
+      "mass": "lent-1-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 4,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "1962 Vatican typical-edition facsimile; printed p. 75; PDF physical p. 156; numbered text 506; semantic slot collect-before-lesson-5",
+      "target_marginal": 506,
+      "source_oration_ordinal": 5,
+      "complete_source_proper_ordinal": 14,
+      "frozen_raw_model_index": 13,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962:temporal:text-509",
+      "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-longior",
+      "mass": "lent-1-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 5,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "1962 Vatican typical-edition facsimile; printed p. 76; PDF physical p. 157; numbered text 509; semantic slot collect",
+      "target_marginal": 509,
+      "source_oration_ordinal": 6,
+      "complete_source_proper_ordinal": 17,
+      "frozen_raw_model_index": 16,
+      "previous_join_name": "Collect"
+    },
+    {
+      "target_id": "roman-1962:temporal:text-517",
+      "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-longior",
+      "mass": "lent-1-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 6,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "1962 Vatican typical-edition facsimile; printed p. 77; PDF physical p. 158; numbered text 517; semantic slot super-populum",
+      "target_marginal": 517,
+      "source_oration_ordinal": 7,
+      "complete_source_proper_ordinal": 25,
+      "frozen_raw_model_index": 24,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962:temporal:text-522",
+      "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-brevior",
+      "mass": "lent-1-ember-saturday",
+      "form_id": "shorter",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 1,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "1962 Vatican typical-edition facsimile; printed p. 78; PDF physical p. 159; numbered text 522; semantic slot collect",
+      "target_marginal": 522,
+      "source_oration_ordinal": 2,
+      "complete_source_proper_ordinal": 5,
+      "frozen_raw_model_index": 4,
+      "previous_join_name": "Collect"
+    },
+    {
+      "target_id": "roman-1962:temporal:text-530",
+      "parent_id": "roman-1962:temporal:form:sabbato-quatuor-temporum-quadragesimae-brevior",
+      "mass": "lent-1-ember-saturday",
+      "form_id": "shorter",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 2,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "1962 Vatican typical-edition facsimile; printed p. 79; PDF physical p. 160; numbered text 530; semantic slot super-populum",
+      "target_marginal": 530,
+      "source_oration_ordinal": 3,
+      "complete_source_proper_ordinal": 13,
+      "frozen_raw_model_index": 12,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.pentecost-ember-sat-long:collect:2",
+      "parent_id": "roman-1962.temporal.pentecost-ember-sat-long",
+      "mass": "pentecost-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 1,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "Missale Romanum 1962, physical PDF p. 448, printed p. 367; numbered text 1377; collect 2; owning form heading physical PDF p. 447, printed p. 366",
+      "target_marginal": 1377,
+      "source_oration_ordinal": 2,
+      "complete_source_proper_ordinal": 5,
+      "frozen_raw_model_index": 4,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.pentecost-ember-sat-long:collect:3",
+      "parent_id": "roman-1962.temporal.pentecost-ember-sat-long",
+      "mass": "pentecost-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 2,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "Missale Romanum 1962, physical PDF p. 448, printed p. 367; numbered text 1380; collect 3; owning form heading physical PDF p. 447, printed p. 366",
+      "target_marginal": 1380,
+      "source_oration_ordinal": 3,
+      "complete_source_proper_ordinal": 8,
+      "frozen_raw_model_index": 7,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.pentecost-ember-sat-long:collect:4",
+      "parent_id": "roman-1962.temporal.pentecost-ember-sat-long",
+      "mass": "pentecost-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 3,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "Missale Romanum 1962, physical PDF p. 449, printed p. 368; numbered text 1383; collect 4; owning form heading physical PDF p. 447, printed p. 366",
+      "target_marginal": 1383,
+      "source_oration_ordinal": 4,
+      "complete_source_proper_ordinal": 11,
+      "frozen_raw_model_index": 10,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.pentecost-ember-sat-long:collect:5",
+      "parent_id": "roman-1962.temporal.pentecost-ember-sat-long",
+      "mass": "pentecost-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 4,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "Missale Romanum 1962, physical PDF p. 449, printed p. 368; numbered text 1386; collect 5; owning form heading physical PDF p. 447, printed p. 366",
+      "target_marginal": 1386,
+      "source_oration_ordinal": 5,
+      "complete_source_proper_ordinal": 14,
+      "frozen_raw_model_index": 12,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.pentecost-ember-sat-long:collect:6",
+      "parent_id": "roman-1962.temporal.pentecost-ember-sat-long",
+      "mass": "pentecost-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 5,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "Missale Romanum 1962, physical PDF p. 450, printed p. 369; numbered text 1389; collect 6; owning form heading physical PDF p. 447, printed p. 366",
+      "target_marginal": 1389,
+      "source_oration_ordinal": 6,
+      "complete_source_proper_ordinal": 17,
+      "frozen_raw_model_index": 15,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.pentecost-ember-sat-short:collect:2",
+      "parent_id": "roman-1962.temporal.pentecost-ember-sat-short",
+      "mass": "pentecost-ember-saturday",
+      "form_id": "shorter",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 1,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "Missale Romanum 1962, physical PDF p. 451, printed p. 370; numbered text 1402; collect 2; owning form heading physical PDF p. 451, printed p. 370",
+      "target_marginal": 1402,
+      "source_oration_ordinal": 2,
+      "complete_source_proper_ordinal": 5,
+      "frozen_raw_model_index": 4,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.september-ember-sat-long:collect:2",
+      "parent_id": "roman-1962.temporal.september-ember-sat-long",
+      "mass": "september-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 1,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "Missale Romanum 1962, physical PDF p. 485, printed p. 404; numbered text 1637; collect 2; owning form heading physical PDF p. 484, printed p. 403",
+      "target_marginal": 1637,
+      "source_oration_ordinal": 2,
+      "complete_source_proper_ordinal": 5,
+      "frozen_raw_model_index": 4,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.september-ember-sat-long:collect:3",
+      "parent_id": "roman-1962.temporal.september-ember-sat-long",
+      "mass": "september-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 2,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "Missale Romanum 1962, physical PDF p. 486, printed p. 405; numbered text 1640; collect 3; owning form heading physical PDF p. 484, printed p. 403",
+      "target_marginal": 1640,
+      "source_oration_ordinal": 3,
+      "complete_source_proper_ordinal": 8,
+      "frozen_raw_model_index": 7,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.september-ember-sat-long:collect:4",
+      "parent_id": "roman-1962.temporal.september-ember-sat-long",
+      "mass": "september-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 3,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "Missale Romanum 1962, physical PDF p. 486, printed p. 405; numbered text 1643; collect 4; owning form heading physical PDF p. 484, printed p. 403",
+      "target_marginal": 1643,
+      "source_oration_ordinal": 4,
+      "complete_source_proper_ordinal": 11,
+      "frozen_raw_model_index": 10,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.september-ember-sat-long:collect:5",
+      "parent_id": "roman-1962.temporal.september-ember-sat-long",
+      "mass": "september-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 4,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "Missale Romanum 1962, physical PDF p. 486, printed p. 405; numbered text 1646; collect 5; owning form heading physical PDF p. 484, printed p. 403",
+      "target_marginal": 1646,
+      "source_oration_ordinal": 5,
+      "complete_source_proper_ordinal": 14,
+      "frozen_raw_model_index": 13,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.september-ember-sat-long:collect:6",
+      "parent_id": "roman-1962.temporal.september-ember-sat-long",
+      "mass": "september-ember-saturday",
+      "form_id": "longer",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 5,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "Missale Romanum 1962, physical PDF p. 487, printed p. 406; numbered text 1649; collect 6; owning form heading physical PDF p. 484, printed p. 403",
+      "target_marginal": 1649,
+      "source_oration_ordinal": 6,
+      "complete_source_proper_ordinal": 17,
+      "frozen_raw_model_index": 16,
+      "previous_join_name": null
+    },
+    {
+      "target_id": "roman-1962.temporal.september-ember-sat-short:collect:2",
+      "parent_id": "roman-1962.temporal.september-ember-sat-short",
+      "mass": "september-ember-saturday",
+      "form_id": "shorter",
+      "calendar_proper_name": "Oratio",
+      "calendar_proper_occurrence": 1,
+      "source_record": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "source_locus": "Missale Romanum 1962, physical PDF p. 489, printed p. 408; numbered text 1661; collect 2; owning form heading physical PDF p. 489, printed p. 408",
+      "target_marginal": 1661,
+      "source_oration_ordinal": 2,
+      "complete_source_proper_ordinal": 5,
+      "frozen_raw_model_index": 4,
+      "previous_join_name": null
+    }
+  ],
+  "limits": "The fixture proves the source-backed structural join to the reviewed raw model. Its raw indexes exclude later Veni chant seats, unlike complete source Proper ordinals; named Oratio occurrences are unchanged by those differently named seats. No canonical-body hash, final model integration, wording fidelity or whole-book completeness is asserted."
+}

@@ -32,7 +32,7 @@ from _psalms import PSALMS
 # rather than a gap. The distinction is load-bearing: a recorded refusal is
 # settled data about the edition, and nothing downstream should read it as a
 # correction that has gone stale.
-NOT_CARRIED = "is recorded as not carried by this edition"
+NOT_CARRIED = "has no exact selection recorded for this edition"
 
 
 DIVERGENCES = "citation_divergences"
@@ -345,7 +345,7 @@ class EditionReader(NamedTuple):
 
     `addressing` is the loci key the edition reads (`_psalms.addressing`).
     `carried` is the edition's own verse-alias table -- where it prints a
-    cited locus, `None` where it records not carrying it -- with each row's
+    cited locus, `None` where it records no exact selection -- with each row's
     note; `chapters` are the chapters that table touches.
     """
 
@@ -427,7 +427,7 @@ def placed(reader: EditionReader, token: str, loci: list[dict]) -> tuple[list[di
             verse = int(first if first is not None else last)
             target, note = carrier(verse)
             if target is None:
-                return [], f"{book} {chapter}:{verse} is recorded as not carried by this edition: {note}"
+                return [], f"{book} {chapter}:{verse} {NOT_CARRIED}: {note}"
             if target[:2] != (book, chapter):
                 return [], (
                     f"{book} {chapter}:{verse} stands at {target[0]} {target[1]}:{target[2]} "
@@ -443,7 +443,7 @@ def placed(reader: EditionReader, token: str, loci: list[dict]) -> tuple[list[di
         for verse in range(int(first), int(last) + 1):
             target, note = carrier(verse)
             if target is None:
-                return [], f"{book} {chapter}:{verse} is recorded as not carried by this edition: {note}"
+                return [], f"{book} {chapter}:{verse} {NOT_CARRIED}: {note}"
             if not carriers or carriers[-1] != target:
                 carriers.append(target)
         runs: list[list] = []
