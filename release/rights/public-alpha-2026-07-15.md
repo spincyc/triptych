@@ -11369,13 +11369,13 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/day-missal.css` | `218d8a97a7ab034891f178ec83ef5d9dc980c407fc12b0106797798fc64f41aa` |
 | `src/web/browser/liturgy/day-read-payload.js` | `f0d591505d34424b4ef2590b1e76d0b13d4031e8d8204e98999178f93aa0a10e` |
 | `src/web/browser/liturgy/day-reader.css` | `695de63e1ae82091248515a849de5354389a551e4f589504d2faa1ae46b0b2e0` |
-| `src/web/browser/liturgy/day-reader.html` | `8666533ceea9297e8d4181295f941169c0d5a514a3cd0b772b3fb8d2acd307a7` |
+| `src/web/browser/liturgy/day-reader.html` | `3e7b175454eee29e3b054ae5517da84367130a3f1da6583adbd5aa3526be9af8` |
 | `src/web/browser/liturgy/day-reader.js` | `372bae890b7b5d9fd07a92becc1b6c4c2404c439b9267fe236d5058339232f83` |
 | `src/web/browser/liturgy/day-study.js` | `063aaf59eb5e9afcd500be4a4e3129ca4c7135d9e605f848bb2b5eee6ebc8780` |
 | `src/web/browser/liturgy/day.css` | `93ef9f44ee5d6488cb95a1587e856bd75488ea6b34b6ff723a01a437a75b6ed1` |
-| `src/web/browser/liturgy/day.html` | `37d64e633fd4982d44c39ff2fb198ce28089ef9e6ab5000c01e49047ac6a3bfa` |
+| `src/web/browser/liturgy/day.html` | `aa652c2a1b1fc6ec389ca5e3b1185c92a130348548cf514a352591daf706e8e9` |
 | `src/web/browser/liturgy/day.js` | `8492d1a1b4bce59794804127eb7cbd70eb127c4f12099fdc875e4214f04dbf51` |
-| `src/web/browser/liturgy/index.html` | `41eee289ea4d731b90a2fd18fa076958144a2fec7001996718ff77f1805e3a7f` |
+| `src/web/browser/liturgy/index.html` | `990fefdc0c0eafbd7adb228d510159333aa52c001d1a87dbe55580fd31d534cd` |
 | `src/web/browser/liturgy/liturgy.css` | `5333873c3fbcdabb5cd10b1d92897feaa27fad7d532e70c17fd2130088f936b6` |
 | `src/web/browser/liturgy/liturgy.js` | `b6a2ca7e2bf3b5966855312569092a3b6c3f32435cf73e4d04cf14fc801feabf` |
 | `src/web/browser/liturgy/ordinary-seating.js` | `b89d4ff4e205c60428ca86c3bae4d6c0027a1507452fc2b4425dac5cb2ab7dae` |
@@ -11386,7 +11386,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/propers-events.js` | `3441e4aba85e554bcf975f88c34f8892cf9e9bc9c5458a84c4fe7e61a85d023b` |
 | `src/web/browser/liturgy/propers-read-payload.js` | `94ceb053aae20f897f381459bffdb0eeda40550cc781cd5c6543e86788408c90` |
 | `src/web/browser/liturgy/propers-reader.css` | `f1d112229dccaf92a2bc6522f151460a4e63e2879113436db7edc598b4e94a32` |
-| `src/web/browser/liturgy/propers-reader.html` | `b655fec4c26d96147bafd58e12600a4d2b356b5a4a701a9ca4e2433d6c99d6ec` |
+| `src/web/browser/liturgy/propers-reader.html` | `0cc8308c34a4443783481de440625dbef67f6a301b647d948331deeaae4fb62a` |
 | `src/web/browser/liturgy/propers-reader.js` | `b0996a5ea61582bb8747d49e666791148a6f250fac90584e3b7582094be87ac4` |
 | `src/web/browser/liturgy/propers-study.js` | `75bc604e0fcb7553e13bd8068e23320652d8c0096e9d47622c4f0d65dfdf0e24` |
 | `src/web/browser/liturgy/reader-compare-view.css` | `ffd083ad1954bcf1c90a2accb9d3a16ddfdc2e6d57def11f9e7c52efa24c5249` |
