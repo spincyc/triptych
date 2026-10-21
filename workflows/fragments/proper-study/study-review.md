@@ -18,7 +18,10 @@ must develop substantive, compatible contributions from at least two distinct
 Fathers or saints, as the three-document profile defines them; a second name
 without contributing reasoning does not count.
 
-Check substantial depth, meaningful treatment of every element, accurate
+Check that each element's treatment is shown where the argument uses it, and
+that no interpretation opens or closes with a claim or roll call that every
+element takes its place in one movement; such a roll call is a register
+defect, not coverage. Check substantial depth, meaningful treatment of every element, accurate
 development of the particular questions and distinctive arguments or inferences
 required by the three-document profile, and treatment of consequential textual
 difficulties. Different readings may answer the same question.

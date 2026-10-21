@@ -1,0 +1,71 @@
+{
+  "stage": "homily-review",
+  "iteration": 0,
+  "disposition": "CHANGES_REQUIRED",
+  "summary": "Register-only cold review (version 14) of the Twenty-first Sunday after Pentecost homily (homily.tex; spoken body sections/homily/10-homily.tex, 187 lines, read straight through; terminal note 90-note.tex checked for register only). The exegesis is specific to this proper and Father-led, and the opening question (from Mt 18:33), the Lord's Prayer response and much of the Chrysostom and Augustine exposition are plain and earned. But the speech is built on the devices the editorial rule and homily profile exclude, recurring through every section: maxim and restatement closers (7 instances), asserted significance and emphatic fragments including 'the moment on which the whole Gospel turns' (8), questions answered in the next breath (5), texts and Augustine credited with the homily's own links that the note itself calls the homily's (3), 'not X but Y' against positions nobody holds (4), a recurring throat motif and 'words that saved him' refrain (8), and a three-point 'this week' application with further exhortations where the profile allows one response said once. Each is a recurring pattern and blocking; repairs change sentences, not evidence. One advisory: production vocabulary ('readings', 'joins') in the note. Limits: source fidelity, citations, timing and layout were not checked in this dispatch.",
+  "findings": [
+    {
+      "id": "HOM-REG-001",
+      "severity": "blocking",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/10-homily.tex:53-55, 75-76, 106-108, 126-127, 151-152, 159-161, 186-187",
+      "problem": "Paragraphs repeatedly end one sentence late, on a maxim, chiasmus or restatement of what the paragraph has just said. Instances: 53-55 \"That is where the ten thousand talents were forgiven: not in a story, but on Calvary and at the empty tomb.\" (restates 51-53); 75-76 \"A man who remembered the ten thousand talents could not have kept his hand on that throat.\" (restates 74-75); 108 \"The enemy was the one who wanted the grudge.\" (an aphoristic closer that states the homily's own inference as fact); 127 \"Forgiveness from the heart forbids rancour. It does not forbid correction.\" (restates 124-126 as an antithetical maxim); 151-152 \"The price of our pardon is laid on this altar.\" (restates 150-151); 160-161 \"To receive him is to share his death and his rising, and to follow him is to go out as he came out to us.\" (chiastic closer); 186-187 \"A hundred pence is not too much to forgive, for a man whom the King has made so rich.\" (the speech ends on a maxim that re-argues the whole). Deleting each loses no information.",
+      "required_result": "End each paragraph where its information ends. For example: 126-127 ends at \"What must go is the account we keep against our brother in the heart.\" (cut both closing sentences); 51-55 becomes \"The King's own Son took our debt on himself. He paid it on the Cross, in his own blood, and the Father raised him from the dead, so that the pardon stands for ever.\" (cut the 'That is where ... not in a story' sentence); 151-152 cut \"The price of our pardon is laid on this altar.\"; 159-161 end at \"...asks that the pure mind may follow after what the mouth has received.\"; the conclusion ends on a sentence that says something, e.g. at \"...and feeds him at his own table.\", without the closing maxim.",
+      "repair_target": "homily"
+    },
+    {
+      "id": "HOM-REG-002",
+      "severity": "blocking",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/10-homily.tex:34, 49, 69, 84, 101, 111-112, 114-115, 147",
+      "problem": "Significance is asserted and emphasis performed rather than carried by content. Instances: 34 \"The whole parable hangs on the distance between the two debts.\"; 49 \"We know what that word cost.\" (teaser fragment); 69 \"This is the moment on which the whole Gospel turns.\" (the exact form the editorial rule names: \"the words on which the feast turns\"); 84 \"All the debt.\" (emphatic fragment); 101 \"St John Chrysostom says something startling.\" (tells the listener how to react); 111-112 \"And this Mass shows how far the real enemy can go.\"; 114-115 \"Given, and measured.\" (emphatic fragment; 'measured' is the homily's gloss); 147 \"That patience has a place where we can see it. It is this altar.\" (staged reveal of the homily's own join).",
+      "required_result": "State what the text does and let that carry the weight. For example: 69-70 becomes \"The servant is hearing his own prayer. The words that had just saved him are now in another man's mouth.\" (cut the first sentence); 34-35 becomes \"Set the two debts side by side. A hundred pence was about a hundred days' wages for a labourer.\" or simply begins at the wage; 101 becomes \"Explaining this passage, St John Chrysostom says:\"; 84 becomes \"The debt that was forgiven comes back.\" (cut \"All the debt.\"); 113-115 ends on the Offertory's own statement of what power was given Satan, with no fragment; 147 becomes a plain statement that the homily connects God's patience with the altar.",
+      "repair_target": "homily"
+    },
+    {
+      "id": "HOM-REG-003",
+      "severity": "blocking",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/10-homily.tex:43, 84-85, 97, 131-135, 165",
+      "problem": "Questions are raised by the speaker and answered in the next breath, a recurring device rather than a question the text raises and the paragraph works out. Instances: 43 \"Who is that servant? St Augustine answers...\"; 84-85 \"Who took the pardon away? Chrysostom answers,\"; 97 \"Why does the forgiven servant do it? The Epistle gives part of the answer.\"; 132-135 \"Has the Church forgotten the Gospel by then? St Augustine ... answers it.\" (a staged objection); 165 \"What, then, shall we do this week? First, ...\". The opening question at 29 is drawn from the Gospel (Mt 18:33) and is proper; the others are a pattern.",
+      "required_result": "Turn each into a statement. For example: 43 becomes \"St Augustine says that every one of us is both men in this story at once.\"; 84-86 becomes \"The debt that was forgiven comes back, and Chrysostom says who revoked it: 'it was not he that revoked it, but the one who had received it.'\"; 131-135 becomes \"Later in this Mass the Communion verse asks, 'when wilt thou judge those who persecute me?' St Augustine, preaching on the Lord's Prayer, speaks of that same longing for vengeance:\".",
+      "repair_target": "homily"
+    },
+    {
+      "id": "HOM-REG-004",
+      "severity": "blocking",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/10-homily.tex:97, 111-112, 135",
+      "problem": "Texts and a Father are credited with links that are the homily's own (the note at 90-note.tex:39-48 itself lists these joins as 'the homily's own and credited to no Father'). Instances: 97 \"The Epistle gives part of the answer\" (the Epistle says nothing about why the servant acts; the Epistle-to-parable link is the preacher's); 111-112 \"this Mass shows how far the real enemy can go\" (the Introit-and-Offertory measure of the enemy's reach is the homily's inference, credited to the Mass); 135 \"St Augustine, preaching on the Lord's Prayer, answers it\" (the note at 47-48 concedes the sermon 'speaks of the martyrs and not of this chant', so Augustine does not answer the question put about the Communion).",
+      "required_result": "Let the texts do what texts do and state the link once as the preacher's inference. For example: 97-98 becomes \"In the Epistle St Paul writes, ...\" followed after the Chrysostom quotation by \"Read beside the Gospel, that puts the servant's hand on a fellow debtor's throat while his real enemy is elsewhere.\"; 111-113 becomes \"At the start of this Mass the Introit said, 'All things, O Lord, are in thy power ...'\"; 135 becomes \"St Augustine, preaching on the Lord's Prayer, speaks of that same longing to be avenged:\".",
+      "repair_target": "homily"
+    },
+    {
+      "id": "HOM-REG-005",
+      "severity": "blocking",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/10-homily.tex:51, 54, 110, 150, 157",
+      "problem": "'Not X but Y' constructions deny positions nobody in the assembly holds, and one restates an earlier denial. Instances: 51 \"Our debt was not cancelled by God looking the other way.\"; 54 \"not in a story, but on Calvary and at the empty tomb\"; 110 \"Chrysostom does not call the wrong done to you nothing.\" (repeats 35-37, \"A hundred pence is not nothing ... The Gospel does not tell you that a wrong done to you does not matter\"); 157 \"not a delay, but the Lord himself\". 150 \"not a second payment beside the Cross\" denies a position actually held and is doctrinally precise; it is not part of the defect. 35-37 and 124 (\"Forgiveness is not pretending\") answer a misunderstanding a listener may reasonably bring and may stay once.",
+      "required_result": "State Y. For example: 51-52 becomes \"The King's own Son took our debt on himself.\"; 110-111 becomes \"Chrysostom tells you where to aim your anger.\"; 157-158 becomes \"At this altar the beggar is given the Lord himself, crucified and risen.\"",
+      "repair_target": "homily"
+    },
+    {
+      "id": "HOM-REG-006",
+      "severity": "blocking",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/10-homily.tex:76, 106, 165, 175-176, 184; 24-27, 70, 183",
+      "problem": "The Gospel's 'took him by the throat' (Mt 18:28, quoted at 65) is turned into a recurring motif, and 'the words that saved him' into a refrain; the profile excludes a recurring tag or motif, and a device the text supplies may be used once. Throat instances: 76 \"kept his hand on that throat\"; 106 \"The servant had his hands on the wrong throat.\"; 165 \"Most of us know at once whose throat we are holding.\"; 175-176 \"Let no one ... go out and take his brother by the throat.\"; 184 \"Let him take his hand from that throat\". Refrain instances: 24-27 \"The words are the same ... The first time, those words save him.\"; 70 \"The words that had just saved him are now in another man's mouth.\"; 183 \"They are the words by which he was saved.\" (title: \"The Words That Saved Him\").",
+      "required_result": "Keep the Gospel's own throat at 65 and at most one recall; say the 'words that saved him' point once (70 suffices). For example: 106 becomes \"The man who owed him a hundred pence was not his enemy. He was a fellow servant, a fellow debtor, standing before the same king.\" (cut the 'wrong throat' sentence); 165-166 becomes \"Name before God the person you have not forgiven.\"; cut 175-176 \"Let no one who has received the Lord at this altar go out and take his brother by the throat.\"; 183 cut \"They are the words by which he was saved.\"",
+      "repair_target": "homily"
+    },
+    {
+      "id": "HOM-REG-007",
+      "severity": "blocking",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/10-homily.tex:165-176",
+      "problem": "The application is a stock three-point 'this week' list (\"What, then, shall we do this week? First, name the debt. ... Second, ... Third, ...\") followed by a fourth exhortation (175-176) and a further exhortation in the conclusion (183-184). The profile allows one practicable response from the text, said once, in ordinary words, and names the 'This week, ...' formula as the failure it was written against. 165 \"Most of us know at once whose throat we are holding\" is a generalisation about the listeners' lives; \"name the debt\" is a slogan. The second point (the Lord's Prayer before Communion, 168-169) is drawn from the text and is a sound single response.",
+      "required_result": "Close the application with one response, said once, from the text. For example, replace 165-172 with \"Before Communion we will say at this altar the prayer Christ taught us: 'Forgive us our debts, as we forgive our debtors.' Say it this morning with in mind the one person who owes you.\" Keep the Chrysostom aim-your-anger point in its own section (110-111), not as a numbered step, and cut 175-176.",
+      "repair_target": "homily"
+    },
+    {
+      "id": "HOM-REG-008",
+      "severity": "advisory",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/sections/homily/90-note.tex:24-48",
+      "problem": "Production vocabulary leaks into the reader-facing note: 'reading(s)' for the study's interpretations (24 \"Relation to the reviewed readings\", \"the second of the full study's three readings\", 32 \"the first reading\", 36 \"The third reading\") collides with the Mass's own readings named in the same paragraph, and 'join(s)' (28 \"whose own join this is\", 34 \"his own join\", 39 \"These joins are the homily's own\") and 45 \"the hinge between altar and brother\" are working terms, not the reader's words. Not spoken; isolated to one paragraph.",
+      "required_result": "Use 'interpretation' for the study's readings and 'connection' or the Father's name for 'join', e.g. 24-25 \"The homily follows the second of the full study's three interpretations\"; 28 \"(Augustine, who makes this connection himself)\"; 39-40 \"These connections are the homily's own and credited to no Father:\"."
+    }
+  ]
+}

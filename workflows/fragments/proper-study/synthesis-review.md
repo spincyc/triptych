@@ -27,6 +27,8 @@ distinctions remain clear where they affect the argument. Judge it as a useful
 finished document, never as a teaser that requires the study to be understood.
 Recover each interpretation's distinct answer from this prose before consulting
 the expansive study. Check whether pages 5 onward explain and compare reasoning
-beyond the thematic opening, rather than repeating its conclusions.
+beyond the thematic opening, rather than repeating its conclusions. Pages 3–4
+filled with sentences asserting that the texts turn, cohere or are ordered are
+padded, however full the page looks.
 Use `SYN-` findings with `research`, `study`, or `synthesis` according to the
 actual owner. An upstream repair reruns this derivation and its cold review.

@@ -26,7 +26,14 @@ The first two thematic pages orient the reader; the later commentary earns
 its extent by explaining and comparing witnesses' reasoning. The earlier
 1,500–2,500-word and one-third ratio limits do not govern this revised contract.
 The commentary must deepen the first two thematic pages through explanations
-and comparisons the reader has not already been given.
+and comparisons the reader has not already been given. Fill the thematic pages
+with textual detail and the Fathers' reasoning, not with sentences saying that
+a text turns, orders or holds together the Mass; every reader sentence follows
+`guidance/editorial.md`, "Say what the texts say, plainly", including its
+warning against the flat opposite: orient the reader in the Mass's order,
+translate Latin, and give a Father's point plainly where his exact words are
+not needed. In reader prose the study's interpretations are interpretations,
+not readings.
 
 Preserve every interpretation's controlling claim, meaningful agreements and
 differences, exact source attributions, and truth-changing qualifications.
