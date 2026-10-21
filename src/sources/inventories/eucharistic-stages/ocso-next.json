@@ -24,6 +24,36 @@
       "limitations": "Official published summary; original signed decree and attached texts not acquired. No book title, imprint, first celebration or whole-missal scope is supplied."
     },
     {
+      "id": "ocso-next:notitiae1967-1969",
+      "title": "Notitiae 3 (1967) p. 54, 4 (1968) p. 233, 5 (1969) p. 358: confirmations of OCSO vernacular proper texts",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-03-%281967%29/Notitiae-026-1967.pdf",
+      "kind": "primary-act",
+      "inspection": "Page images viewed 2026-10-21: 29 November 1966 (Prot. 3257/66) French texts of the proper prayers and antiphons of the Missale cisterciense; 26 March 1968 (Prot. A 120/68) Italian proper of the Missal for the Easter Vigil; 19 May 1969 (Prot. 31/69) Spanish texts of the Supplementum cisterciense ad Missale romanum and a lectionary supplement for certain saints; each for the Ordo Cisterciensium Reformatorum.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Vernacular confirmations attest the existence of Latin proper books but do not identify their editions. Issue files: Notitiae-026-1967, Notitiae-041-1968 and Notitiae-048-1969 on the same cultodivino.va archive."
+    },
+    {
+      "id": "ocso-next:notitiae1971-1972",
+      "title": "Notitiae 7 (1971) p. 261 and 8 (1972) pp. 12, 143, 362: Cistercian concessions and OCSO calendar",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-08-%281972%29/Notitiae-069-1972.pdf",
+      "kind": "primary-act",
+      "inspection": "Page images viewed 2026-10-21: 8 (1972) p. 12, 8 June 1971 (Prot. 525/71) to OCist and OCSO confirming four traditional Cistercian Ordo Missae particularities ad libitum (deep bow for genuflection, large sign of the cross at the Gospel, Gospel kiss and lavabo in silence, chalice prepared before going to the altar); p. 143, 17 March 1972 interim Holy Week order; p. 362, 31 August 1972 (Prot. 855/72) OCSO proper calendar confirmed; 7 (1971) p. 261, 27 May 1971 communion under both kinds.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Published summaries of the replies, not the signed instruments; issue files Notitiae-065-1971, -069-1972, -073-1972 and -078-1972. The OCSO Praenotanda cites the 1971 reply as Prot. 525/70 and the calendar decrees as 27 April and 31 July 1972; both discrepancies are retained."
+    },
+    {
+      "id": "ocso-next:praenotanda",
+      "title": "OCSO Ordo, Praenotanda (Latin), ocso.org",
+      "url": "https://www.ocso.org/uploads/resources/liturgy/ordo/Praenotanda-LA.pdf",
+      "kind": "official-retrospective",
+      "inspection": "PDF p. 8 section III.A viewed 2026-10-21: cites the reply Prot. 525/70 for the Cistercian Ordo Missae particularities, requires the order's proper texts under the decree of 16 September 1975, and permits texts from the old Cistercian Missal and prayers approved 9 May 1977.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Undated order publication; a later retrospective, not the instruments themselves."
+    },
+    {
       "id": "ocso-next:ritual1998",
       "title": "Rituale Cisterciense, Langwaden 1998, shared Latin Ritual",
       "url": "https://win.ocist.org/pdf/LAT_RITUALE_1998.pdf",
@@ -85,6 +115,65 @@
     }
   ],
   "stages": [
+    {
+      "id": "ocso-next:ordo-particularities-1971",
+      "tradition_id": "ocso-round2",
+      "label": "Confirmed Cistercian Ordo Missae particularities (1971)",
+      "date_label": "8 June 1971 reply, Prot. 525/71 (Praenotanda: 525/70)",
+      "start_year": 1971,
+      "end_year": 1971,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Four optional ritual particularities within the Roman Order of Mass, confirmed jointly to the Cistercian Order and the OCSO.",
+      "components": [
+        "rubrics"
+      ],
+      "witness_ids": [],
+      "witness_label": "Notitiae 8 (1972) p. 12 summary of the 8 June 1971 reply; no printed OCSO book identified",
+      "summary": "The Congregation confirms, ad libitum, a deep bow in place of genuflection, a large sign of the cross at the Gospel, the Gospel kiss and lavabo in silence, and preparing the chalice before going to the altar.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ocso-next:notitiae1971-1972",
+          "locus": "Notitiae 8 (1972) p. 12",
+          "claim": "Four confirmed Cistercian particularities, 8 June 1971."
+        },
+        {
+          "source_id": "ocso-next:praenotanda",
+          "locus": "PDF p. 8 section III.A",
+          "claim": "The order's own Ordo cites the same reply (as Prot. 525/70)."
+        }
+      ],
+      "limitations": "Published summary; the signed reply is not inspected. Shared with the Common Observance; no OCSO-only book or text state follows.",
+      "reception": "Optional for both Cistercian branches; house-level practice is not established."
+    },
+    {
+      "id": "ocso-next:calendar1972",
+      "tradition_id": "ocso-round2",
+      "label": "OCSO proper calendar confirmed (1972)",
+      "date_label": "31 August 1972, Prot. 855/72 (Praenotanda: 27 April and 31 July 1972)",
+      "start_year": 1972,
+      "end_year": 1972,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Confirmation of the order's proper calendar for postconciliar use.",
+      "components": [
+        "calendar"
+      ],
+      "witness_ids": [],
+      "witness_label": "Notitiae 8 (1972) p. 362 summary; calendar text not inspected",
+      "summary": "The Congregation confirms the OCSO proper calendar.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ocso-next:notitiae1971-1972",
+          "locus": "Notitiae 8 (1972) p. 362",
+          "claim": "OCSO proper calendar confirmed 31 August 1972."
+        }
+      ],
+      "limitations": "The calendar's entries are not inspected. The Praenotanda cites decrees of 27 April and 31 July 1972 for the general monastic calendar used by the order; whether either is the instrument summarized in Notitiae is unresolved. Placed by approval date; it precedes the 1975 proper confirmation.",
+      "reception": "Order-wide calendar confirmation; house observance not established."
+    },
     {
       "id": "ocso-next:proper1975",
       "tradition_id": "ocso-round2",
@@ -212,15 +301,15 @@
       "id": "ocso-early-distinct-branch-reception-gap",
       "tradition_id": "ocso-round2",
       "period": "1892–1971",
-      "missing": "The distinct Strict Observance branch's exact Mass-book sequence, branch-specific approvals, and named-house reception from the 1892 separation to the 1971 Roman Missal adoption faculty have not been established in this continuation.",
-      "next_source": "Original OCSO General Chapter and liturgy records after 1892, identified preconciliar Latin Mass books and their approval leaves, and dated house book inventories or adoption records; reconcile earlier monastic receipt leads without treating catalogue association as proof of branch-wide reception.",
+      "missing": "The Strict Observance branch's exact Latin Mass-book sequence, branch-specific approvals and named-house reception from the 1892 separation to 1971. Late-period evidence now exists: confirmations of OCSO vernacular texts of the proper prayers and antiphons of the Missale cisterciense (29 November 1966), of the Missal's Easter Vigil proper (26 March 1968) and of a Supplementum cisterciense ad Missale romanum (19 May 1969); the Latin editions behind them are unidentified.",
+      "next_source": "Westmalle 1951 Missale Cisterciense reformatum (B3Kat BV008771237, unseen) and earlier OCSO Latin Missal printings with approval leaves; General Chapter liturgy records after 1892; the Latin Supplementum cisterciense of about 1969.",
       "consequence": "The new postconciliar states do not fill the 1892–1971 interval or establish continuous OCSO reception. Shared earlier Cistercian material does not create a medieval OCSO institutional identity."
     },
     {
       "id": "ocso-original-books-and-instruments-gap",
       "tradition_id": "ocso-round2",
       "period": "1971–1983",
-      "missing": "Original signed reply 525/70 of 8 June 1971; signed OCSO CD 83/75 with attached prayers/reading indications; signed OCist CD 452/77; exact Rome 1983 Mass proper and Lectionarium; resolution of the overview's reported 1983 general approval.",
+      "missing": "Signed originals of the 8 June 1971 reply (Notitiae Prot. 525/71; Praenotanda 525/70) and of the 1972 calendar decree(s) (Notitiae 31 August 1972; Praenotanda 27 April and 31 July 1972); signed OCSO CD 83/75 with its prayers and reading indications; signed OCist CD 452/77 (no Notitiae 1977 notice found by text search); exact Rome 1983 Mass proper and Lectionarium; resolution of the overview's reported 1983 general approval.",
       "next_source": "Order archives and public library copies, beginning with DLI 83442 (128, 96 pages); compare branch-specific approval and title leaves against the official 1975 notice, 1983 bibliography and shared 1998 Ritual.",
       "consequence": "No whole OCSO Missal, exact complete text, substantive before/after revision or automatic relation to the older Cistercian whole-missal line is claimed."
     },
@@ -228,7 +317,7 @@
       "id": "ocso-web-lectionary-and-later-use-gap",
       "tradition_id": "ocso-round2",
       "period": "1983–present",
-      "missing": "Edition identity and approval of the official undated Latin DOC reading supplement, relation to the 1983 printed Lectionarium, original later-addition instruments, and exact books used by OCSO houses.",
+      "missing": "The order's Latin DOC is titled Supplementum Cisterciense Ordinis Lectionum Missae iuxta Missale Romanum (1969) and lists about 27 saints' entries with reading references only, without an approval statement (read by raw text extraction); its edition identity, relation to the 1969 vernacular-confirmed lectionary supplement and the 1983 printed Lectionarium, the later-addition instruments, and the books actually used by houses remain open.",
       "next_source": "Render the order's Lectionario-cisterciense-LA.doc; acquire the 1983 book and original 1983/1992/1995 instruments named by Ritual p. 85; use dated house ordines and celebrations that identify exact books and language. The 2019 Atlas directive is a separate permission/reception control.",
       "consequence": "File metadata dates do not create a 2010 revision. Named permissions and one house celebration do not establish uniform reception, exact Latin-book use or modern full-text publication rights."
     }

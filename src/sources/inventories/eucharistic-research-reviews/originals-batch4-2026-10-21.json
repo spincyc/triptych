@@ -1,0 +1,2229 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "originals-batch4-2026-10-21",
+  "lane": "originals-batch4",
+  "title": "Batch 4 originals lane: Rome Urbanian original, Iberian historic uses, Italian local uses, OCSO and batch-3 originals",
+  "side": "western",
+  "checked_on": "2026-10-21",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml; src/sources/inventories/eucharistic-stages/{roman,western-originals-batch3,italian-local-round2,monza-local-next,padua-local-round3,ravenna-fragments,ocso-next,iberian-historic-batch4}.json; src/sources/inventories/eucharistic-stage-coverage-v1.json",
+  "review_files": {
+    "lane_worklog_sha256": "4005c74568303e984f4d3be8e4ffb72956d87927e0adc250c20e22438535018c",
+    "independent_review_sha256": "f1ba56bd27425bdb65888d04b8d7e4a88ffa123f0288dfd90fefe9694ac72a59"
+  },
+  "coverage_rows": [
+    "french-beauvais",
+    "french-besancon",
+    "french-toul",
+    "historic-huesca-use",
+    "historic-tarazona-use",
+    "historic-tarragona-use",
+    "historic-urgell-use",
+    "historic-valencia-use",
+    "historic-zaragoza-use",
+    "italian-aosta",
+    "italian-aquileia",
+    "italian-benevento",
+    "italian-messina",
+    "italian-monza",
+    "italian-other-uses",
+    "italian-padua",
+    "italian-ravenna",
+    "liege",
+    "ocso",
+    "roman-curial",
+    "roman-modern",
+    "tournai"
+  ],
+  "uses": [
+    {
+      "id": "roman-modern",
+      "disposition": "stages-strengthened-and-added",
+      "finding": "Inspected an original Rome Typographia Vaticana 1635 printing of the Urban VIII Missal (Google XNC4a07qPqQC): title, Si quid est dated 2 September 1634, a Congregation of Rites decree extract ordered for the new printing, register and colophon; it now witnesses roman-stages-1634 and adds one concrete preliminary-rubric change against Rome 1604. Added the 1951 and 1952 experimental Easter Vigil stages with a six-locus documented revision from AAS 43/44.",
+      "limit": "No 1634-dated imprint located or inspected; body text of 1604/1635 uncollated; AAS texts are gazette renditions.",
+      "next_sources": "A 1634-dated Vatican copy if one exists; UB [1634?] preliminaries; 1956 TPV Holy Week book; 2020 Supplementum."
+    },
+    {
+      "id": "roman-curial",
+      "disposition": "unchanged-searched",
+      "finding": "No new digitized curial ordinal or pre-Pian comparison source; van Dijk/Walker 1975 located only in print.",
+      "limit": "archive.org was unreachable during the fork's searches.",
+      "next_sources": "van Dijk–Walker, HBS 85, Lippe 1907; Legg 1571 Varisco copy."
+    },
+    {
+      "id": "historic-zaragoza-use",
+      "disposition": "stages-added",
+      "finding": "Original 1498 Hurus (Toledo Inc. 248) and 1522 Coci (BUZ H-1-152) copies inspected; two documented stages and one holy-day-list revision.",
+      "limit": "The 1522 copy is catalogued 1540; only the holy-day list is collated.",
+      "next_sources": "Another 1485 copy; 1522 edition copies; 1552 Bernuz; Roman adoption."
+    },
+    {
+      "id": "historic-valencia-use",
+      "disposition": "stages-added",
+      "finding": "Original 1509 Giunta and 1528 Coci copies inspected; two documented stages and one January-calendar revision.",
+      "limit": "Low-resolution images; 1492 incunable unseen.",
+      "next_sources": "BNE or Valencia copy of 1492; Esteve Forriol 1992."
+    },
+    {
+      "id": "historic-tarragona-use",
+      "disposition": "searched-no-stage",
+      "finding": "1499 Rosembach edition identified (GW M24774) and its BVPB digitization located but unreachable (HTTP 429 throughout).",
+      "limit": "No original leaf viewed beyond a cached thumbnail.",
+      "next_sources": "BVPB 397105 retry; 1550 Lyon copy."
+    },
+    {
+      "id": "historic-urgell-use",
+      "disposition": "searched-no-stage",
+      "finding": "No Urgell incunable in GW and no digitization in CCPB, MDC, Europeana or Zaguán.",
+      "limit": "Absence from repertories is not absence of printing.",
+      "next_sources": "Seu d'Urgell archive inventory; 1536/1557 copies."
+    },
+    {
+      "id": "historic-huesca-use",
+      "disposition": "gap-narrowed",
+      "finding": "Copy census (Seo de Zaragoza; Hispanic Society) and a cross-check placing Lambert's quoted supplication in Zaragoza 1485 one folio earlier; no digitized original.",
+      "limit": "Original 1488 book unacquired; defective-tail supplement unresolved.",
+      "next_sources": "Hispanic Society or Seo de Zaragoza images; amiet-usuarium-7335 (1504 Osca-Jaca)."
+    },
+    {
+      "id": "historic-tarazona-use",
+      "disposition": "unchanged-searched",
+      "finding": "The 1529 Coci printing is digitized (Zaguán 749, ~507 MB DjVu, not opened); a further undated copy at Palacio Larrinaga.",
+      "limit": "No new 1500 evidence.",
+      "next_sources": "Zaguán 749 with a DjVu decoder."
+    },
+    {
+      "id": "french-beauvais",
+      "disposition": "gap-narrowed",
+      "finding": "BnF catalogue records a 1625 Augustin Potier missal (B-781), probably the predecessor named in the mandate by the bishop's name (an unverified match, not a catalogue statement), and earlier 1514/1520/1538 printings; the c. 1290 cathedral manuscript is a separate lead.",
+      "limit": "Catalogue level only; nothing inspected.",
+      "next_sources": "BnF B-781 title and mandate leaves."
+    },
+    {
+      "id": "french-besancon",
+      "disposition": "unchanged-searched",
+      "finding": "BnF catalogue lists 1497, 1551, 1694 and 1769 items; Vesoul γ 130 (1508) is reported digitized but its host was unreachable.",
+      "limit": "Zero public image payloads kept, as previously decided.",
+      "next_sources": "Vesoul γ 130 via BVMM."
+    },
+    {
+      "id": "french-toul",
+      "disposition": "unchanged-searched",
+      "finding": "BnF lists Toul missals 1493–1630, Toul Missale Romanum 1638/1718 and Nancy-Toul 1838/1860 items, none digitized.",
+      "limit": "Catalogue only.",
+      "next_sources": "BnF copies of 1551 and 1630; 1860 SRC-revised propers."
+    },
+    {
+      "id": "tournai",
+      "disposition": "unchanged-searched",
+      "finding": "BnF confirms 1509 and 1540 printings matching existing leads.",
+      "limit": "Ghent catalogue unreachable.",
+      "next_sources": "Ghent and BnF copies."
+    },
+    {
+      "id": "liege",
+      "disposition": "stage-added-and-gap-narrowed",
+      "finding": "ULiège 1499 copies preserve the a1 title leaf (other-copy evidence for the leaf the BSB catalogue reports missing); a 22 July 1540 Paris issue is documented as a stage with appended Masses.",
+      "limit": "No 1499 → 1540 transition asserted; 1540 issues not reconciled.",
+      "next_sources": "Cockx-Indestege et al. 1997; BnF Liège copies."
+    },
+    {
+      "id": "italian-aquileia",
+      "disposition": "stages-strengthened",
+      "finding": "1494 colophon (Ratdolt, 23 December 1494) and 1517 BSB colophon (Pentius for Oswald, 16 September 1517) read; the Liechtenstein 1517 is a separate edition.",
+      "limit": "Bodies uncollated; one calendar difference recorded as observation only.",
+      "next_sources": "Peressotti 2007; 1508 and 1519 originals."
+    },
+    {
+      "id": "italian-aosta",
+      "disposition": "stage-and-transition-added",
+      "finding": "Cathedral cod. 21 (Amiet cod. S) local Ordo documented and linked to the 1617 Pian Ordo substitution at scholarly-description level.",
+      "limit": "1617 book and decree unread; manuscript known through Amiet only.",
+      "next_sources": "Arsenal FOL-Z-1397 decree; 1828 instrument."
+    },
+    {
+      "id": "italian-benevento",
+      "disposition": "unchanged-searched",
+      "finding": "No digitization of VI.33 or VI.29 found.",
+      "limit": "Usuarium timed out.",
+      "next_sources": "Paléographie musicale 20 facsimile."
+    },
+    {
+      "id": "italian-messina",
+      "disposition": "stage-strengthened-and-gap-narrowed",
+      "finding": "Rylands 1480 incipit and colophon read; USTC identifies the 1499–1568 editions.",
+      "limit": "Incipit names the Gallici, not Messina; later editions catalogue only.",
+      "next_sources": "Agatina Inc. 1; Napoli S.Q.21.D21."
+    },
+    {
+      "id": "italian-monza",
+      "disposition": "unchanged-searched",
+      "finding": "No digitization of H14, the 2001 edition or the sacramentaries; a museum display lead for the 1578 Borromeo letter.",
+      "limit": "Lead only; handwriting illegible.",
+      "next_sources": "Dell'Oro–Mambretti 2001; original 1578 letters."
+    },
+    {
+      "id": "italian-other-uses",
+      "disposition": "composite-index-unchanged",
+      "finding": "Composite index retained; no sequence manufactured.",
+      "limit": "Child routes own the books.",
+      "next_sources": "See child routes."
+    },
+    {
+      "id": "italian-padua",
+      "disposition": "unchanged-searched",
+      "finding": "No facsimile or edition text of E 57 or D 30 found; IRHT timed out.",
+      "limit": "Padua kept distinct from Passau Pataviense.",
+      "next_sources": "E 57 ff. 89v–95r images."
+    },
+    {
+      "id": "italian-ravenna",
+      "disposition": "partly-searched",
+      "finding": "Archive 011 and the 1454 Ursiana missal web-searched without result; fragment critical editions not searched in this batch.",
+      "limit": "Three Ravenna fragment gaps not attempted.",
+      "next_sources": "Dold/Gamber/Catella editions; Manus Online."
+    },
+    {
+      "id": "ocso",
+      "disposition": "stages-added-and-gaps-narrowed",
+      "finding": "Published 8 June 1971 Ordo particularities and 31 August 1972 calendar confirmations added as stages; 1966–1969 confirmations of OCSO vernacular proper texts and the lectionary DOC title narrow the gaps.",
+      "limit": "Signed instruments and the Latin books remain unseen; Prot. number and date discrepancies retained.",
+      "next_sources": "Westmalle 1951 Missale Cisterciense reformatum; DLI 83442."
+    }
+  ],
+  "searches": [
+    {
+      "repository": "Internet Archive (advancedsearch, scrape API, WebFetch)",
+      "queries": [
+        "title:(missale romanum) AND year:1634",
+        "title:(missale romanum) AND date:[1634-01-01 TO 1635-12-31]",
+        "title:(missale) AND year:[1630 TO 1640]"
+      ],
+      "url": "https://archive.org/advancedsearch.php",
+      "checked_on": "2026-10-21",
+      "outcome": "access-failure: connection timed out (curl) and connection refused (WebFetch); no results obtained",
+      "extent_examined": "none",
+      "unexamined_range": "entire repository for Rome 1634/1635"
+    },
+    {
+      "repository": "Google Books API v1",
+      "queries": [
+        "intitle:\"missale romanum\" 1634",
+        "missale romanum urbani octavi 1634 typographia vaticana"
+      ],
+      "url": "https://www.googleapis.com/books/v1/volumes",
+      "checked_on": "2026-10-21",
+      "outcome": "access-failure: HTTP 429 daily quota exceeded for the shared anonymous key",
+      "extent_examined": "none",
+      "unexamined_range": "all"
+    },
+    {
+      "repository": "Google Books legacy gdata volume feed",
+      "queries": [
+        "missale romanum urbani 1634 (first 60 of 156)",
+        "intitle:missale \"nunc denuo urbani\" (all 2 reported, ~100 listed)",
+        "intitle:missale \"urbani papae octavi\" (all 9)"
+      ],
+      "url": "https://www.google.com/books/feeds/volumes",
+      "checked_on": "2026-10-21",
+      "outcome": "Only full-view Urbanian Rome hit: XNC4a07qPqQC, Rome Typographia Vaticana 1635 (inspected). 674JoAEACAAJ is Antwerp Plantin/B. Moretus 1634 already titled as recognized by Urban VIII (no view). s_hyvAEACAAJ Vatican 1635 record without view. No Rome-1634-dated Vatican record.",
+      "extent_examined": "1630-1647 Urbanian title hits listed by the feed",
+      "unexamined_range": "records lacking the title phrases; non-Google digitizations"
+    },
+    {
+      "repository": "Europeana Search API (api2demo key)",
+      "queries": [
+        "\"missale romanum\" AND YEAR:1634",
+        "\"missale romanum\" AND YEAR:[1634 TO 1636]",
+        "missale AND urbani AND YEAR:[1634 TO 1640]",
+        "missale AND (vaticana OR vaticanis) AND YEAR:[1630 TO 1645]"
+      ],
+      "url": "https://api.europeana.eu/record/v2/search.json",
+      "checked_on": "2026-10-21",
+      "outcome": "6 hits 1634-1636: BSB Res/2 Liturg. 281 and DBC Wroclaw XVII-20336 (both Antwerp Moretus 1634), ONB Paris 1636 Urbanian, BSB Ingolstadt/Dillingen 1636 (Clementine title), NKCR 33 A 000102 Venice Ciera 1635/1636 Urbanian. No Rome 1634 Vatican copy.",
+      "extent_examined": "all returned records",
+      "unexamined_range": "providers not aggregated by Europeana"
+    },
+    {
+      "repository": "Weale, Catalogus missalium ritus Latini (1886), Google Books 1Jio3o9OfncC",
+      "queries": [
+        "search-within 1634",
+        "1635",
+        "Vaticana"
+      ],
+      "url": "https://books.google.com/books?id=1Jio3o9OfncC",
+      "checked_on": "2026-10-21",
+      "outcome": "p. 170 viewed: an undescribed '1634 ... Romae. Folio.' heading for the Urbanian title, no printer, extent or copy locations; printer index p. 291 (Typographia Vaticana) snippet lists 1604/1609 Roman entries.",
+      "extent_examined": "pp. 170 and 291 images",
+      "unexamined_range": "Bohatta 1911 and later repertories"
+    },
+    {
+      "repository": "USTC, HathiTrust catalogue, DigiVatLib, Gallica SRU, BVPB, Lower Silesian Digital Library",
+      "queries": [
+        "missale romanum 1634"
+      ],
+      "url": "https://www.ustc.ac.uk/explore",
+      "checked_on": "2026-10-21",
+      "outcome": "access-failure: USTC served a JavaScript application without machine-readable results; HathiTrust Cloudflare challenge 403; DigiVatLib 403; Gallica SRU 403; BVPB 429; dbc.wroc.pl browser proof-of-work challenge. None circumvented.",
+      "extent_examined": "none",
+      "unexamined_range": "all"
+    },
+    {
+      "repository": "Internet Archive advancedsearch (retry after recovery)",
+      "queries": [
+        "title:(missale romanum) AND year:[1633 TO 1636]",
+        "title:(missale) AND date:[1634-01-01 TO 1635-12-31]",
+        "missale romanum urbani octavi vaticana"
+      ],
+      "url": "https://archive.org/advancedsearch.php",
+      "checked_on": "2026-10-21",
+      "outcome": "Only dbc.wroc.pl XVII-20336 (Antwerp, Moretus 1634) returned; no Rome 1634 or 1635 Vatican copy.",
+      "extent_examined": "all returned records",
+      "unexamined_range": "items lacking title or date metadata"
+    },
+    {
+      "repository": "Bayerische Staatsbibliothek MDZ (control)",
+      "queries": [
+        "bsb10869696 IIIF canvases 5-19"
+      ],
+      "url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10869696/manifest",
+      "checked_on": "2026-10-21",
+      "outcome": "Antwerp 1634 BSB Res/2 Liturg. 281 has a Clementine title with Urban VIII's new saints and no Si quid est in its preliminaries; it is not the Urbanian recension.",
+      "extent_examined": "title and preliminaries to the Paschal table",
+      "unexamined_range": "body"
+    },
+    {
+      "repository": "Gesamtkatalog der Wiegendrucke (GW) docs pages",
+      "queries": [
+        "sequential record scan docs/M24260-M24349",
+        "docs/M24751-M24870",
+        "sampled every 50 in M23800-M25200",
+        "docs/M24589"
+      ],
+      "url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M24589.htm",
+      "checked_on": "2026-10-21",
+      "outcome": "Iberian Missale entries found: Caesaraugustanum M24298 (um 1485, no copies), M24301 (27.X.1485, IBE 3963, ISTC im00653130, BC digital copy), M24305 (23.XI.1498, IBE 3964, ISTC im00653150, BNE and Toledo digital copies); Tarraconense M24773 ([Hagembach?] um 1499?, no copies), M24774 (Rosembach 26.VI.1499, IBE 3985, ISTC im00726000, BVPB digital copy); Valentinum M24826 (1490, no copies), M24827 (Venice Hamann 1.VI.1492, IBE 3988, ISTC im00688430, BNE digital copy); Oscense M24589 (Hans Hurus 1.VI.1488, IBE 3970; New York HispanSoc, Zaragoza Catedr def.). No Missale Urgellense between Ucetiense M24821 and Upsalense M24824. [gaps: western-originals-batch3:huesca-text-and-reception, iberian-historic-batch4:zaragoza-sequence, iberian-historic-batch4:valencia-sequence, iberian-historic-batch4:tarragona-originals, iberian-historic-batch4:urgell-originals]",
+      "extent_examined": "All existing records M24260-M24349 and M24751-M24870; sampled heads elsewhere to locate the Missale alphabetic run",
+      "unexamined_range": "Other GW Missale numbers outside the two scanned windows; Urgell absence is limited to the alphabetic slot inspected"
+    },
+    {
+      "repository": "ISTC (data.cerl.org)",
+      "queries": [
+        "_search?query=missale tarraconense&format=json"
+      ],
+      "url": "https://data.cerl.org/istc/_search?query=missale%20tarraconense&format=json",
+      "checked_on": "2026-10-21",
+      "outcome": "Refused: Anubis bot-check interstitial (HTTP 200 HTML 'Making sure you're not a bot!'); not solved. ISTC numbers taken from GW instead. [gaps: iberian-historic-batch4:tarragona-originals, western-originals-batch3:huesca-text-and-reception]",
+      "extent_examined": "One request",
+      "unexamined_range": "Entire ISTC database"
+    },
+    {
+      "repository": "CCPB union catalogue (AbsysNet OPAC)",
+      "queries": [
+        "missale oscense",
+        "missale urgellense",
+        "missale urgellensis",
+        "missale tarraconense",
+        "missale valentinum",
+        "missale caesaraugustanum",
+        "missale tirasonense"
+      ],
+      "url": "https://ccpbe.cultura.gob.es/CCPBOPAC/cgi-ccpbopac/abnetop?ACC=DOSEARCH&xsqf99=missale+oscense",
+      "checked_on": "2026-10-21",
+      "outcome": "Oscense: CCPB000111205-8, Huesca 1488, one holding Archivo y Biblioteca Capitular de la Seo de Zaragoza, no digital link. Tarraconense: 2 records (1550 Lyon Septgranges CCPB001399849-8; second record not opened). Valentinum: Costilla evangeliary CCPB001205398-8 and 1492 CCPB000111223-6 (BDH digital). Caesaraugustanum: 4 records incl. 1522 Coci CCPB000017862-4 (17 hoj.+310 fol.), 1485 CCPB000111198-1, 1498 CCPB000111199-X (fourth not read). Tirasonense: CCPB001012028-9 undated (Palau compares 1529 Coci), Palacio Larrinaga Zaragoza. Urgellense/Urgellensis: no result. [gaps: western-originals-batch3:huesca-text-and-reception, western-originals-batch3:tarazona-text-and-reception, iberian-historic-batch4:zaragoza-sequence, iberian-historic-batch4:valencia-sequence, iberian-historic-batch4:tarragona-originals, iberian-historic-batch4:urgell-originals]",
+      "extent_examined": "Any-field searches for the seven queries; first result page each",
+      "unexamined_range": "Alternative title forms (e.g. Missale secundum consuetudinem ...), second Tarragona and fourth Zaragoza records, holdings tabs other than Huesca and Tarazona"
+    },
+    {
+      "repository": "BVPB (Biblioteca Virtual del Patrimonio Bibliográfico)",
+      "queries": [
+        "registro.do?id=397105",
+        "catalogo_imagenes/grupo.do?path=11000715",
+        "homepage"
+      ],
+      "url": "https://bvpb.mcu.es/es/consulta/registro.do?id=397105",
+      "checked_on": "2026-10-21",
+      "outcome": "Refused: HTTP 429 Too Many Requests on every attempt between about 15:45Z and 16:07Z (curl and WebFetch). Tarragona 1499 BVPB copy not viewed. [gaps: iberian-historic-batch4:tarragona-originals]",
+      "extent_examined": "Repeated single requests",
+      "unexamined_range": "Entire BVPB Tarragona 1499 digitization and any other BVPB Iberian missals"
+    },
+    {
+      "repository": "BNE Biblioteca Digital Hispánica",
+      "queries": [
+        "viewer.vm?id=0000181046&page=1",
+        "bnedigital.bne.es/bd/card?oid=0000181046"
+      ],
+      "url": "https://bdh-rd.bne.es/viewer.vm?id=0000181046&page=1",
+      "checked_on": "2026-10-21",
+      "outcome": "Refused: HTTP 403 JavaScript security-verification challenge; not attempted further. Zaragoza 1498 BNE copy and Valencia 1492 BNE copy (0000098925, not requested) unseen. [gaps: iberian-historic-batch4:zaragoza-sequence, iberian-historic-batch4:valencia-sequence]",
+      "extent_examined": "Two requests",
+      "unexamined_range": "All BDH digitizations"
+    },
+    {
+      "repository": "Roderic (Universitat de València) DSpace REST API and public image directories",
+      "queries": [
+        "discover/search/objects?query=missale valentin*",
+        "core/items/00b8bbff-ed54-47e0-bed5-0af5ea548a59",
+        "core/items/5e39f4b3-4683-47c3-8dca-4c6d4d5b4d5e",
+        "weblioteca.uv.es/europeana/migracion/im/b14499423/",
+        "weblioteca.uv.es/europeana/migracion/im/b13937431/"
+      ],
+      "url": "https://roderic.uv.es/server/api/discover/search/objects?query=missale%20valentin*&size=40",
+      "checked_on": "2026-10-21",
+      "outcome": "17 results; two missals: 10550/7813 Valencia 1509 (Venice, Giunta for Monteacuto) and 10550/52560 Valencia 1528 (Zaragoza, Coci). Items have no DSpace bitstreams; images found in public directory listings (730 and 532 jp2). Viewed title, calendar Jan/Feb, colophon and index leaves of both. Roderic item HTML pages show an Anubis bot check. [gaps: iberian-historic-batch4:valencia-sequence]",
+      "extent_examined": "Full result set for the query; selected images 0002-0005, 0723-0730 (1509) and 0001-0004, 0525-0532 (1528)",
+      "unexamined_range": "Remaining images of both books; Roderic searches for other Iberian uses not run"
+    },
+    {
+      "repository": "Zaguán (Universidad de Zaragoza repository)",
+      "queries": [
+        "missale",
+        "tirasonens",
+        "tarraconens",
+        "urgell",
+        "valentin",
+        "oscens",
+        "missalis",
+        "tirassonensis",
+        "title:missale",
+        "title:missal",
+        "title:misal",
+        "missalis/tirassonensis/turiasonensis/tarazona missal/misal/AN-7-1/oscensis/urgellen with c=Fondo Antiguo"
+      ],
+      "url": "https://zaguan.unizar.es/search?p=missale&of=xm&rg=100",
+      "checked_on": "2026-10-21",
+      "outcome": "Missale Cesaraugustanum record 74837 (catalogued 1540, colophon read as 1522; PDF acquired and title, letter and colophon viewed); Missale Cesaraugustanum 1552 Bernuz record 3148 (DjVu 277 MB, incomplete, not downloaded); Tarazona 1529 Coci record 749 (AN-7-1-6, DjVu 506,908,522 bytes, not downloaded: no decoder, size); Cistercian 1545 and Montearagón 1559 (out of scope). tarraconens/urgell/valentin/oscens hits were unrelated scholarship. [gaps: iberian-historic-batch4:zaragoza-sequence, western-originals-batch3:tarazona-text-and-reception, western-originals-batch3:huesca-text-and-reception, iberian-historic-batch4:tarragona-originals, iberian-historic-batch4:urgell-originals, iberian-historic-batch4:valencia-sequence]",
+      "extent_examined": "All returned records for the listed queries (missale: 4; title:missale: 9; missalis: 4)",
+      "unexamined_range": "Contents of the two DjVu files; Zaguán records reachable only through other title forms"
+    },
+    {
+      "repository": "Patrimonio Digital de Castilla-La Mancha (formerly BIDICAM)",
+      "queries": [
+        "bidicam.castillalamancha.es grupo.cmd?path=1501265 (DNS failure)",
+        "patrimoniodigital.castillalamancha.es registro.do?id=12263",
+        "grupo.do?path=1501265 viewer positions"
+      ],
+      "url": "https://patrimoniodigital.castillalamancha.es/es/consulta/registro.do?id=12263",
+      "checked_on": "2026-10-21",
+      "outcome": "Old BIDICAM host does not resolve. New host: Missale secundum morem ecclesiae Caesaraugustanae, Hurus 23 Nov 1498, BCLM Inc. 248, 733 images, CC BY. Viewed title (pos. 5), holy-days list (6), calendar (7) and colophon (727). [gaps: iberian-historic-batch4:zaragoza-sequence]",
+      "extent_examined": "Record page and images at positions 1-8 and 722-733",
+      "unexamined_range": "Positions 9-721"
+    },
+    {
+      "repository": "Memòria Digital de Catalunya (CONTENTdm)",
+      "queries": [
+        "IIIF manifest incunableBC:49455",
+        "dmQuery title missale",
+        "dmQuery title missal",
+        "dmQuery title urgel (all 565 records paged)",
+        "dmQuery title tarrac",
+        "dmQuery title valent",
+        "dmQuery title caesaraug",
+        "dmQuery title cesaraug",
+        "dmQuery title oscen",
+        "dmQuery title tiras"
+      ],
+      "url": "https://mdc.csuc.cat/iiif/incunableBC:49455/manifest.json",
+      "checked_on": "2026-10-21",
+      "outcome": "Zaragoza 1485 BC Res. 700-Fol. manifest (330 canvases): copy lacks calendar, temporal I-LXIII, sanctoral after LXXI; viewed ff. CVII, CIXr-v, CXr-v, CXCI, XVIIr, LXXIv. Litany supplication found at CIXr col.2 l.3 (Lambert cites Huesca CXr col.2 l.3). No Urgell, Tarragona, Valencia, Huesca or Tarazona missal digitizations in MDC title results. [gaps: western-originals-batch3:huesca-text-and-reception, iberian-historic-batch4:zaragoza-sequence, iberian-historic-batch4:urgell-originals, iberian-historic-batch4:tarragona-originals]",
+      "extent_examined": "Full manifest; title searches as listed (missale first 200 of 532; urgel all 565)",
+      "unexamined_range": "missale results 201-532; full-text fields"
+    },
+    {
+      "repository": "Europeana Search, Record and IIIF APIs",
+      "queries": [
+        "Missale Tarraconense",
+        "Missale Urgellense",
+        "Missale Valentinum",
+        "Missale Caesaraugustanum",
+        "Missale Oscense",
+        "Missale Tirasonense",
+        "Missale Urgellen*",
+        "record /109/...bvpb_mcu_es_397105",
+        "record /540/...patrimoniodigital_jccm_es_12263",
+        "IIIF manifest for 397105",
+        "thumbnail w400 of BVPB image 101203088"
+      ],
+      "url": "https://api.europeana.eu/record/v2/search.json?query=Missale%20Tarraconense",
+      "checked_on": "2026-10-21",
+      "outcome": "Tarraconense: 1 (BVPB 397105, 26 June 1499, 605 images, PDF 165 MB). Caesaraugustanum: 3 (BNE 1498, Patrimonio Digital CLM 1498, MDC 1485). Others: 0. Europeana thumbnail of first BVPB Tarragona image viewed: f. XI temporal leaf, so the copy lacks its opening leaves. [gaps: iberian-historic-batch4:tarragona-originals, iberian-historic-batch4:zaragoza-sequence, iberian-historic-batch4:urgell-originals, iberian-historic-batch4:valencia-sequence, western-originals-batch3:huesca-text-and-reception, western-originals-batch3:tarazona-text-and-reception]",
+      "extent_examined": "All results for each query",
+      "unexamined_range": "Europeana does not proxy the BVPB images; no title or colophon reached"
+    },
+    {
+      "repository": "Hispanic Society of America eMuseum",
+      "queries": [
+        "search/oscense/objects",
+        "search/huesca/objects",
+        "search/missal/objects",
+        "search/tarraconense/objects",
+        "objects/9391 (WebFetch)"
+      ],
+      "url": "https://hispanicsociety.emuseum.com/search/oscense/objects",
+      "checked_on": "2026-10-21",
+      "outcome": "Refused: HTTP 403 Cloudflare 'Just a moment' challenge for all requests. [gaps: western-originals-batch3:huesca-text-and-reception, iberian-historic-batch4:tarragona-originals]",
+      "extent_examined": "Five requests",
+      "unexamined_range": "Entire Hispanic Society catalogue, including its Huesca 1488 and Tarragona 1499 copies"
+    },
+    {
+      "repository": "Google Books API and Internet Archive advanced search",
+      "queries": [
+        "Google Books volumes q=missale+tarraconense|urgellense|urgellensis|valentinum|caesaraugustanum|cesaraugustanum|oscense|tirasonense|intitle:missale+tarraconensis",
+        "archive.org advancedsearch title:missale AND tarraconense|tarraconensis ..."
+      ],
+      "url": "https://www.googleapis.com/books/v1/volumes?q=missale+tarraconense",
+      "checked_on": "2026-10-21",
+      "outcome": "Google Books: HTTP 429 daily quota exceeded for every query. Internet Archive: connection timeout on first two queries; run stopped. [gaps: iberian-historic-batch4:tarragona-originals, iberian-historic-batch4:urgell-originals, iberian-historic-batch4:valencia-sequence, iberian-historic-batch4:zaragoza-sequence, western-originals-batch3:huesca-text-and-reception, western-originals-batch3:tarazona-text-and-reception]",
+      "extent_examined": "None returned",
+      "unexamined_range": "All Google Books and Internet Archive holdings"
+    },
+    {
+      "repository": "Public web search (WebSearch)",
+      "queries": [
+        "\"Missale Tarraconense\" 1499 Rosenbach incunable digitalizado",
+        "\"Missale Caesaraugustanum\" Hurus 1485 OR 1498 digital incunable",
+        "\"Missale Valentinum\" 1492 incunable digital Roderic OR bivaldi",
+        "\"Missale Urgellense\" incunable OR 1487 OR 1536 digitalitzat",
+        "bdh.bne.es Missale Caesaraugustanum incunable Hurus",
+        "\"Missale secundum consuetudinem\" \"Tarraconensis\" 1499 Rosembach bvpb OR \"Biblioteca Pública de Tarragona\"",
+        "missal Valencia incunable \"Missale secundum morem\" Valentinae ecclesiae ... roderic.uv.es",
+        "Biblioteca Digital de Castilla-La Mancha BIDICAM incunable \"Missale Caesaraugustanum\" 1498 Toledo Inc. 248",
+        "\"Missale Urgellense\" OR \"missal d'Urgell\" 1536 Coci digitalitzat OR \"Biblioteca de Montserrat\" OR \"Memòria Digital\"",
+        "Missale Caesaraugustanum 1552 OR 1543 OR 1531 Coci Zaragoza digital",
+        "\"Urgellensis\" missale 1557 Septgranges OR \"Masson 882\" Beaux-Arts numérique",
+        "\"Missale\" \"Oscensis et Iaccensis\" 1504 OR 1505 Coci digital",
+        "misal Huesca 1488 incunable ejemplar catedral Zaragoza \"Missale Oscense\" IBE 3970"
+      ],
+      "url": "harness WebSearch tool; no single repository URL",
+      "checked_on": "2026-10-21",
+      "outcome": "Leads: BVPB 397105 for Tarragona 1499; Valencia 1492 BH Inc. 015; Roderic and Zaguán as hosts. IEC chronicle p.837 (fetched) lists Seu d'Urgell archive printed missals 1509 and 1527, use unstated. Dialnet 7865621 (Jaén missal, fetched then discarded as irrelevant) and Zaguán 150204 (unrelated Huesca incunable) checked. No Urgell, Huesca 1488 or Huesca/Jaca 1504 digitization found. [gaps: iberian-historic-batch4:tarragona-originals, iberian-historic-batch4:zaragoza-sequence, iberian-historic-batch4:valencia-sequence, iberian-historic-batch4:urgell-originals, western-originals-batch3:huesca-text-and-reception]",
+      "extent_examined": "Result lists of 13 queries; two linked PDFs opened",
+      "unexamined_range": "Results beyond the first page; non-indexed library catalogues"
+    },
+    {
+      "repository": "B3Kat SRU (Bavarian union catalogue)",
+      "queries": [
+        "marcxml.title=missale and marcxml.title=aquil*"
+      ],
+      "url": "http://bvbr.bib-bvb.de:5661/bvb01sru",
+      "checked_on": "2026-10-21",
+      "outcome": "4 records: BSB 1517 copy Res/4 Liturg. 393 digitised as bsb10202279; Peressotti 2007 facsimile; two 1963 Brussels facsimile records of 1519. [gaps: italian-local-round2:aquileia-collation]",
+      "extent_examined": "All 4 records, fields 245/250/264/300/500/505/856.",
+      "unexamined_range": "Other title spellings (Aquilegiensis etc.)"
+    },
+    {
+      "repository": "B3Kat SRU",
+      "queries": [
+        "marcxml.title=missale and marcxml.title=messan*"
+      ],
+      "url": "http://bvbr.bib-bvb.de:5661/bvb01sru",
+      "checked_on": "2026-10-21",
+      "outcome": "2 records; only relevant: Sorci-Zito 2009 facsimile of the 1499 edition (LEV). [gaps: italian-local-round2:messina-remaining]",
+      "extent_examined": "Both records.",
+      "unexamined_range": "Gallicorum/Gallicanum title forms"
+    },
+    {
+      "repository": "B3Kat SRU",
+      "queries": [
+        "marcxml.title=missale and marcxml.title=augusten* and marcxml.year=1617"
+      ],
+      "url": "http://bvbr.bib-bvb.de:5661/bvb01sru",
+      "checked_on": "2026-10-21",
+      "outcome": "0 records. [gaps: italian-local-round2:aosta-authority]",
+      "extent_examined": "Whole result set.",
+      "unexamined_range": "1733 and other spellings"
+    },
+    {
+      "repository": "B3Kat SRU",
+      "queries": [
+        "marcxml.title=missale and marcxml.title=cisterc*",
+        "marcxml.title=\"missale cisterciense reformatum\"",
+        "marcxml.title=\"missae propriae\""
+      ],
+      "url": "http://bvbr.bib-bvb.de:5661/bvb01sru",
+      "checked_on": "2026-10-21",
+      "outcome": "47 Cistercian missal records incl. BV008771237 Missale Cisterciense reformatum, Westmalle 1951 (catalogue only); 'missae propriae' 374 hits, no OCSO/OCist 1983 book among first 50. [gaps: ocso-early-distinct-branch-reception-gap, ocso-original-books-and-instruments-gap]",
+      "extent_examined": "All 47 cisterc* records; first 50 of 374 'missae propriae'.",
+      "unexamined_range": "Remaining 324 'missae propriae' records"
+    },
+    {
+      "repository": "MDZ / BSB digital collections IIIF",
+      "queries": [
+        "bsb10202279 manifest and canvases 1-24, 40, 240-316 sampled, 264, 452-453, 518-531"
+      ],
+      "url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10202279/manifest",
+      "checked_on": "2026-10-21",
+      "outcome": "Title (c5), Gordinus preface (c7), calendar (c9-20), canon minor (c249-251), notated prefaces, colophon c530: Venice, Jacobus Pentius de Leucho for Johannes Osvaldus, 16 Sept 1517. [gaps: italian-local-round2:aquileia-collation]",
+      "extent_examined": "Canvases listed; 532 total.",
+      "unexamined_range": "Te igitur leaf not located; most temporale/sanctoral canvases unviewed"
+    },
+    {
+      "repository": "MDZ HTML search",
+      "queries": [
+        "Missale Aquileiense"
+      ],
+      "url": "https://www.digitale-sammlungen.de/en/search?query=Missale+Aquileiense",
+      "checked_on": "2026-10-21",
+      "outcome": "JavaScript-only page; no results parseable. [gaps: italian-local-round2:aquileia-collation]",
+      "extent_examined": "Static HTML only.",
+      "unexamined_range": "Whole MDZ search"
+    },
+    {
+      "repository": "dLib.si (NUK Ljubljana)",
+      "queries": [
+        "URN:NBN:SI:DOC-GKJAQ0TO EDM and full PDF"
+      ],
+      "url": "https://www.dlib.si/details/URN:NBN:SI:DOC-GKJAQ0TO",
+      "checked_on": "2026-10-21",
+      "outcome": "Whole 532-page PDF acquired; viewed PDF pp.1-12 (incl. p.4 frontispiece, p.5 preface), p.13 July calendar, pp.520-532 incl. p.521 colophon Augsburg Ratdolt 23 Dec 1494. [gaps: italian-local-round2:aquileia-collation]",
+      "extent_examined": "PDF pp.1-13, 520-532.",
+      "unexamined_range": "PDF pp.14-519"
+    },
+    {
+      "repository": "UB Regensburg/B3Kat table-of-contents PDF",
+      "queries": [
+        "Peressotti 2007 TOC"
+      ],
+      "url": "https://bvbr.bib-bvb.de:443/exlibris/aleph/a24_1/apache_media/1Y2P9ANFHGBY9F37F3G58M8CTAG4G5.pdf",
+      "checked_on": "2026-10-21",
+      "outcome": "2-page TOC viewed; edition reproduces 'Il Missale Liechtenstein' (p.XX). [gaps: italian-local-round2:aquileia-collation]",
+      "extent_examined": "Complete TOC.",
+      "unexamined_range": "Edition body"
+    },
+    {
+      "repository": "USTC (explore search, Inertia JSON)",
+      "queries": [
+        "missale messina",
+        "missale aquileia",
+        "missale aosta",
+        "missale padova",
+        "missale ravenna",
+        "missale benevento",
+        "missale monza"
+      ],
+      "url": "https://www.ustc.ac.uk/explore",
+      "checked_on": "2026-10-21",
+      "outcome": "messina 2, aquileia 4 (two distinct 1517 editions 810138/810139; 1508; 1519), aosta 1 (1617 Turin Cavalleri), padova 2 (Roman 1697 and OCD 1695 only), ravenna 0, benevento 0, monza 0. [gaps: italian-local-round2:aquileia-collation, italian-local-round2:aosta-authority, italian-local-round2:messina-remaining, italian-local-round2:padua-local, padua-local-round3:local-books-sequence, italian-local-round2:ravenna-local, italian-local-round2:benevento-identity, italian-local-round2:monza-local]",
+      "extent_examined": "Pages 1-2 of each query.",
+      "unexamined_range": "Pre-1450 manuscripts not in USTC scope; other spellings"
+    },
+    {
+      "repository": "USTC (explore search)",
+      "queries": [
+        "gallicorum",
+        "messanensis ecclesie",
+        "messanensis missale",
+        "messanensis",
+        "messanense",
+        "aquileiensis missale",
+        "augustensis missale"
+      ],
+      "url": "https://www.ustc.ac.uk/explore",
+      "checked_on": "2026-10-21",
+      "outcome": "Messina missal editions 1510 (819816), 1527 (820193), 1534 (820216), 1538 (820236), 1568 (819994) identified; edition pages fetched for these plus 4029699, 810137-810139, 998723-998724. No digitisations listed. [gaps: italian-local-round2:messina-remaining, italian-local-round2:aosta-authority, italian-local-round2:aquileia-collation]",
+      "extent_examined": "gallicorum pages 1-3 of 64 hits (missal rows only); others complete.",
+      "unexamined_range": "gallicorum hits beyond page 3"
+    },
+    {
+      "repository": "Gesamtkatalog der Wiegendrucke",
+      "queries": [
+        "M24535",
+        "M2453510"
+      ],
+      "url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M24535.htm",
+      "checked_on": "2026-10-21",
+      "outcome": "1480 Messina Alding, one defective copy Rylands 18620 with digitisation link; 1499 Venice Emerich, one copy Catania Seminario. [gaps: italian-local-round2:messina-remaining]",
+      "extent_examined": "Both records.",
+      "unexamined_range": "none"
+    },
+    {
+      "repository": "Manchester LUNA IIIF",
+      "queries": [
+        "Manchester~20~20~64~188868 manifest; canvases 0-29, 498-509"
+      ],
+      "url": "https://luna.manchester.ac.uk/luna/servlet/iiif/m/Manchester~20~20~64~188868/manifest",
+      "checked_on": "2026-10-21",
+      "outcome": "Calendar c10, incipit c22 'secundum consuetudinem Gallicorum', colophon c500 Messina Alding 31 May 1480 viewed. [gaps: italian-local-round2:messina-remaining]",
+      "extent_examined": "Canvases 0-29, 498-509 of 512.",
+      "unexamined_range": "Canvases 30-497"
+    },
+    {
+      "repository": "Manchester LUNA / Digital Collections HTML search",
+      "queries": [
+        "Messanense",
+        "PR-INC-18620"
+      ],
+      "url": "https://luna.manchester.ac.uk/luna/servlet/view/search?q=Messanense",
+      "checked_on": "2026-10-21",
+      "outcome": "Refused: 'Verify Access' / login page; Digital Collections IIIF path 404. [gaps: italian-local-round2:messina-remaining]",
+      "extent_examined": "none",
+      "unexamined_range": "Whole search"
+    },
+    {
+      "repository": "Europeana API (wskey api2demo)",
+      "queries": [
+        "title:(Missale Messanense)",
+        "title:(Missale Gallicanum Messanensis)",
+        "title:(Missale Aquileiense)",
+        "title:(Missale Augustense)",
+        "title:(Missale Beneventanum)",
+        "title:(Missale Cisterciense reformatum)",
+        "title:(Missale Paduanum)"
+      ],
+      "url": "https://api.europeana.eu/record/v2/search.json",
+      "checked_on": "2026-10-21",
+      "outcome": "All 0 except Augustense 4 (all Augsburg 1510, not Aosta). [gaps: italian-local-round2:messina-remaining, italian-local-round2:aquileia-collation, italian-local-round2:aosta-authority, italian-local-round2:benevento-identity, italian-local-round2:padua-local, ocso-early-distinct-branch-reception-gap]",
+      "extent_examined": "All results.",
+      "unexamined_range": "Non-title fields"
+    },
+    {
+      "repository": "MGH-Bibliothek PDF (Amiet 1976)",
+      "queries": [
+        "full-text grep imprim|16xx|17xx|18xx; page images PDF 1, 17-18, 47, 79, 107, 133"
+      ],
+      "url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "checked_on": "2026-10-21",
+      "outcome": "pp.125,153,177,201 viewed: 1617 printed missal substituted Pian Ordo Missae; rite ended 1828; witness list pp.89-91 read in text. [gaps: italian-local-round2:aosta-authority]",
+      "extent_examined": "Whole 145-page text layer searched; listed pages viewed.",
+      "unexamined_range": "Most pages not viewed as images"
+    },
+    {
+      "repository": "Regione Valle d'Aosta",
+      "queries": [
+        "MLEA table of contents"
+      ],
+      "url": "https://gestionewww.regione.vda.it/allegato.aspx?pk=80020",
+      "checked_on": "2026-10-21",
+      "outcome": "TOC only: Amiet Missale Augustanum MLEA VIII-IX (1986); Repertorium II p.473 printed books. [gaps: italian-local-round2:aosta-authority]",
+      "extent_examined": "Complete 5-page PDF text.",
+      "unexamined_range": "The volumes themselves"
+    },
+    {
+      "repository": "Gallica SRU",
+      "queries": [
+        "dc.title all \"missale augustense\""
+      ],
+      "url": "https://gallica.bnf.fr/SRU",
+      "checked_on": "2026-10-21",
+      "outcome": "Refused: Cloudflare challenge (also 403 on homepage). [gaps: italian-local-round2:aosta-authority]",
+      "extent_examined": "none",
+      "unexamined_range": "Whole Gallica"
+    },
+    {
+      "repository": "Web search",
+      "queries": [
+        "\"Missale Augustense\" Aosta 1617 OR 1733 numérisé OR digitalizzato OR \"google books\""
+      ],
+      "url": "n/a (Claude WebSearch tool; engine unspecified)",
+      "checked_on": "2026-10-21",
+      "outcome": "No digitised 1617/1733 Aosta missal; found VdA MLEA TOC. [gaps: italian-local-round2:aosta-authority]",
+      "extent_examined": "First result page.",
+      "unexamined_range": "Library catalogues directly"
+    },
+    {
+      "repository": "Web search",
+      "queries": [
+        "digitale-sammlungen \"Missale Aquileiense\" 1517"
+      ],
+      "url": "n/a (Claude WebSearch tool; engine unspecified)",
+      "checked_on": "2026-10-21",
+      "outcome": "Usuarium 164 card, dLib 1494 record; no MDZ link (found later via B3Kat). [gaps: italian-local-round2:aquileia-collation]",
+      "extent_examined": "First result page.",
+      "unexamined_range": "-"
+    },
+    {
+      "repository": "Web search",
+      "queries": [
+        "Benevento Biblioteca Capitolare \"VI 33\" messale digitalizzato OR facsimile OR \"Rehle\""
+      ],
+      "url": "n/a (Claude WebSearch tool; engine unspecified)",
+      "checked_on": "2026-10-21",
+      "outcome": "No online digitisation; leads Paléographie musicale 20 (1983 facsimile), Mallet-Thibaut II. [gaps: italian-local-round2:benevento-identity]",
+      "extent_examined": "First result page.",
+      "unexamined_range": "VI.29 not separately searched; Benevento library site not browsed"
+    },
+    {
+      "repository": "Web search",
+      "queries": [
+        "\"consuetudinem Gallicorum\" Messina messale Sorci pdf rito messinese abolizione rito romano"
+      ],
+      "url": "n/a (Claude WebSearch tool; engine unspecified)",
+      "checked_on": "2026-10-21",
+      "outcome": "Led to Manchester 1480 record; no Sorci PDF or abolition date. [gaps: italian-local-round2:messina-remaining]",
+      "extent_examined": "First result page.",
+      "unexamined_range": "-"
+    },
+    {
+      "repository": "Web search",
+      "queries": [
+        "\"Liber ordinarius\" Padova E 57 Cattin Vildera 2002 \"ecclesie Paduane\" messa rubriche"
+      ],
+      "url": "n/a (Claude WebSearch tool; engine unspecified)",
+      "checked_on": "2026-10-21",
+      "outcome": "No facsimile/edition text; nothing new on Mass rubrics. [gaps: italian-local-round2:padua-local, padua-local-round3:e57-originals, padua-local-round3:d30-date-use, padua-local-round3:local-books-sequence]",
+      "extent_examined": "First result page.",
+      "unexamined_range": "D.30 dating (Bernardinello) not separately web-searched; B.26/B.31/C.47-D.34 not searched"
+    },
+    {
+      "repository": "IRHT Iter liturgicum italicum",
+      "queries": [
+        "manuscrit/616628 connectivity test"
+      ],
+      "url": "https://liturgicum.irht.cnrs.fr/manuscrit/616628",
+      "checked_on": "2026-10-21",
+      "outcome": "Refused: timeout after 40 s. [gaps: padua-local-round3:d30-date-use, ravenna-fragments:archive011]",
+      "extent_examined": "none",
+      "unexamined_range": "All IRHT records (Padua D.30, Ravenna 011)"
+    },
+    {
+      "repository": "Web search",
+      "queries": [
+        "\"Liber ordinarius Modoetiensis\" OR \"Sacramentario di Berengario\" Monza Biblioteca Capitolare digitale pdf"
+      ],
+      "url": "n/a (Claude WebSearch tool; engine unspecified)",
+      "checked_on": "2026-10-21",
+      "outcome": "No digitisation of H14, the 2001 edition or the sacramentaries. [gaps: italian-local-round2:monza-local, monza-local-next:h14-text, monza-local-next:sacramentary-identity-use]",
+      "extent_examined": "First result page.",
+      "unexamined_range": "F.1/101 and Berengar 98/89 not separately searched"
+    },
+    {
+      "repository": "Web search + New Liturgical Movement",
+      "queries": [
+        "Monza rito patriarchino 1578 Carlo Borromeo rito romano duomo Monza lettera"
+      ],
+      "url": "https://www.newliturgicalmovement.org/2017/02/the-treasury-of-monza-cathedral.html",
+      "checked_on": "2026-10-21",
+      "outcome": "Photo of museum display of autograph Borromeo letter to Monza canons (label 1578) with museum transcription; handwriting illegible. [gaps: monza-local-next:1578-instruments]",
+      "extent_examined": "First result page; NLM post and letter image viewed.",
+      "unexamined_range": "Abbiati 1940; Fontana 2025; original archive"
+    },
+    {
+      "repository": "Web search",
+      "queries": [
+        "Ravenna Archivio Arcivescovile messale codice 11 calendario 1454 Ursiana messale romano manoscritto"
+      ],
+      "url": "n/a (Claude WebSearch tool; engine unspecified)",
+      "checked_on": "2026-10-21",
+      "outcome": "Nothing on archive 011 or the 1454 Ursiana missal. [gaps: ravenna-fragments:archive011, italian-local-round2:ravenna-local]",
+      "extent_examined": "First result page.",
+      "unexamined_range": "Manus Online not queried"
+    },
+    {
+      "repository": "Usuarium",
+      "queries": [
+        "connectivity test homepage"
+      ],
+      "url": "https://usuarium.elte.hu/",
+      "checked_on": "2026-10-21",
+      "outcome": "Refused: timeout after 25 s. [gaps: italian-local-round2:benevento-identity, ravenna-fragments:roll-and-context]",
+      "extent_examined": "none",
+      "unexamined_range": "All cards"
+    },
+    {
+      "repository": "Internet Archive",
+      "queries": [
+        "advancedsearch title:(missale aquileiense) etc.; metadata/missale-aquileiense-1494"
+      ],
+      "url": "https://archive.org/advancedsearch.php",
+      "checked_on": "2026-10-21",
+      "outcome": "Refused: timeouts (60 s). [gaps: italian-local-round2:aquileia-collation, italian-local-round2:messina-remaining, italian-local-round2:aosta-authority, ocso-early-distinct-branch-reception-gap]",
+      "extent_examined": "none",
+      "unexamined_range": "Whole archive"
+    },
+    {
+      "repository": "ISTC (data.cerl.org)",
+      "queries": [
+        "missale messanense",
+        "missale aquileiense",
+        "missale beneventanum",
+        "missale augustense",
+        "missale paduanum",
+        "missale ravennatense"
+      ],
+      "url": "https://data.cerl.org/istc/_search",
+      "checked_on": "2026-10-21",
+      "outcome": "Refused: Anubis bot challenge. [gaps: italian-local-round2:messina-remaining, italian-local-round2:aquileia-collation]",
+      "extent_examined": "none",
+      "unexamined_range": "Whole ISTC"
+    },
+    {
+      "repository": "Internet Culturale",
+      "queries": [
+        "missale gallicorum",
+        "missale messanense",
+        "missale aquileiense",
+        "missale augustense",
+        "liber ordinarius modoetiensis",
+        "sacramentarium monza"
+      ],
+      "url": "https://www.internetculturale.it/it/16/search",
+      "checked_on": "2026-10-21",
+      "outcome": "Error page returned for all queries. [gaps: italian-local-round2:messina-remaining, italian-local-round2:monza-local, monza-local-next:h14-text, monza-local-next:sacramentary-identity-use]",
+      "extent_examined": "none",
+      "unexamined_range": "Whole portal"
+    },
+    {
+      "repository": "Google Books API",
+      "queries": [
+        "intitle:missale aquileiense / aquileyensis / augustense / messanense / cisterciense; missae propriae cisterciensis"
+      ],
+      "url": "https://www.googleapis.com/books/v1/volumes",
+      "checked_on": "2026-10-21",
+      "outcome": "Refused: HTTP 429, daily quota 0. [gaps: italian-local-round2:aquileia-collation, italian-local-round2:aosta-authority, italian-local-round2:messina-remaining, ocso-early-distinct-branch-reception-gap]",
+      "extent_examined": "none",
+      "unexamined_range": "Whole Google Books"
+    },
+    {
+      "repository": "HathiTrust catalog",
+      "queries": [
+        "missale cisterciense"
+      ],
+      "url": "https://catalog.hathitrust.org/Search/Home?lookfor=missale+cisterciense",
+      "checked_on": "2026-10-21",
+      "outcome": "Refused: Cloudflare 403. [gaps: ocso-early-distinct-branch-reception-gap]",
+      "extent_examined": "none",
+      "unexamined_range": "Whole catalog"
+    },
+    {
+      "repository": "Web search",
+      "queries": [
+        "\"Missale Cisterciense\" Westmalle \"Strictioris Observantiae\" editio",
+        "\"Missale Cisterciense\" 1926 OR 1924 OR 1951 Westmalle \"Typis Cisterciensibus\""
+      ],
+      "url": "n/a (Claude WebSearch tool; engine unspecified)",
+      "checked_on": "2026-10-21",
+      "outcome": "Bookseller listings only (Westmalle Missae defunctorum 1890/1956); no full OCSO missal record. [gaps: ocso-early-distinct-branch-reception-gap]",
+      "extent_examined": "First result page of each.",
+      "unexamined_range": "-"
+    },
+    {
+      "repository": "Notitiae (cultodivino.va), full-text grep 'cisterc|trappist'",
+      "queries": [
+        "all issues 1965-1972 (nos. 1-78)"
+      ],
+      "url": "https://www.cultodivino.va/it/rivista-notitiae.html",
+      "checked_on": "2026-10-21",
+      "outcome": "OCSO items found and pages viewed: 1967 p.54 (Missale cisterciense French propers), 1968 p.233 (Easter Vigil proper Italian), 1969 p.358 (Supplementum cisterciense ad Missale romanum, Spanish), 1971 p.261 (communion under both kinds), 1972 p.12 (Prot. 525/71 Ordo Missae particularities), p.143 (Holy Week ad interim), p.362 (proper calendar 31 Aug 1972). [gaps: ocso-early-distinct-branch-reception-gap, ocso-original-books-and-instruments-gap]",
+      "extent_examined": "Every page of every issue 1965-1972 (OCR text layer); hits checked against images.",
+      "unexamined_range": "OCR misses possible"
+    },
+    {
+      "repository": "Notitiae (cultodivino.va), full-text grep 'cisterc'",
+      "queries": [
+        "all issues 1977, 1992, 1995"
+      ],
+      "url": "https://www.cultodivino.va/it/rivista-notitiae.html",
+      "checked_on": "2026-10-21",
+      "outcome": "1977: only Office/dedication/French Sanctoral items; no CD 452/77 notice found. 1992/1995: no OCSO Mass-proper instrument (1995 hit is a Maria Gabriella mention in a papal text). [gaps: ocso-original-books-and-instruments-gap, ocso-web-lectionary-and-later-use-gap]",
+      "extent_examined": "Every page of those years (OCR).",
+      "unexamined_range": "1973-1976, 1978-1991, 1993-1994, 1996-"
+    },
+    {
+      "repository": "ocso.org",
+      "queries": [
+        "Lectionario-cisterciense-LA.doc",
+        "Praenotanda-LA.pdf"
+      ],
+      "url": "https://www.ocso.org/uploads/resources/liturgy/ordo/Praenotanda-LA.pdf",
+      "checked_on": "2026-10-21",
+      "outcome": "DOC = Supplementum Cisterciense Ordinis Lectionum Missae iuxta Missale Romanum (1969), no approval text (strings extraction only). Praenotanda PDF p.8 III.A viewed: 525/70 reply, 16/9/1975 and 9/5/1977 texts; calendar decrees 27/4 and 31/7/1972. [gaps: ocso-web-lectionary-and-later-use-gap, ocso-original-books-and-instruments-gap]",
+      "extent_examined": "Whole DOC text strings; whole Praenotanda text, p.8 image.",
+      "unexamined_range": "Other ocso.org documents"
+    },
+    {
+      "repository": "win.ocist.org",
+      "queries": [
+        "LAT_RITUALE_1998.pdf"
+      ],
+      "url": "https://win.ocist.org/pdf/LAT_RITUALE_1998.pdf",
+      "checked_on": "2026-10-21",
+      "outcome": "Refused: IIS 999 error at 16:06:49 UTC. [gaps: ocso-original-books-and-instruments-gap]",
+      "extent_examined": "none",
+      "unexamined_range": "Ritual pp.85-87"
+    },
+    {
+      "repository": "not searched",
+      "queries": [
+        "(see outcome)"
+      ],
+      "url": "https://www.manus.iccu.sbn.it/",
+      "checked_on": "2026-10-21",
+      "outcome": "Not searched in this sub-lane: Ravenna fragment critical editions (Dold, Gamber, Catella et al.), Rotulus literature (Benz, Olivar, Mohlberg, Caronti), Usuarium 6346, Manus Online, Munich Clm 29303(1 further sides. [gaps: ravenna-fragments:local-reception, ravenna-fragments:canon-extent, ravenna-fragments:roll-and-context]",
+      "extent_examined": "none",
+      "unexamined_range": "All"
+    },
+    {
+      "repository": "Web search (discovery)",
+      "queries": [
+        "\"Cum sanctissima\" Supplementum Missale Romanum 1962 proper texts saints published"
+      ],
+      "url": "not recorded",
+      "checked_on": "2026-10-21",
+      "outcome": "Decree and 2020 news pages only; no published Holy See Supplementum. [gaps: roman-stages-gap-2020-saints]",
+      "extent_examined": "Returned result list and summaries.",
+      "unexamined_range": "Unindexed publisher catalogues."
+    },
+    {
+      "repository": "Web search (discovery, extended)",
+      "queries": [
+        "Supplement 1962 Missal newly canonized saints Holy See \"supplement\" never published Traditionis custodes Ecclesia Dei 2020 decree"
+      ],
+      "url": "not recorded",
+      "checked_on": "2026-10-21",
+      "outcome": "No publication or cancellation statement; abyssum.org blog speculation only. [gaps: roman-stages-gap-2020-saints]",
+      "extent_examined": "Returned result list.",
+      "unexamined_range": "Holy See archives not indexed."
+    },
+    {
+      "repository": "Web search (discovery)",
+      "queries": [
+        "\"Supplementum\" \"Missale Romanum\" 1962 \"Libreria Editrice Vaticana\" OR \"Typis Vaticanis\" sanctorum 2021 OR 2022 OR 2023"
+      ],
+      "url": "not recorded",
+      "checked_on": "2026-10-21",
+      "outcome": "Seller listings (FSSP 2021 edition, Clear Creek) and 2020 news; no Vatican Supplementum. [gaps: roman-stages-gap-2020-saints]",
+      "extent_examined": "Returned result list.",
+      "unexamined_range": "LEV catalogue not queried directly."
+    },
+    {
+      "repository": "Fraternity Publications product page",
+      "queries": [
+        "Missale Romanum 1962 full size with supplement"
+      ],
+      "url": "https://fraternitypublications.com/product/missale-romanum-1962-full-size-with-supplement/",
+      "checked_on": "2026-10-21",
+      "outcome": "2021 edition with American feast-days insert and Quo magis prefaces; no Holy See approval or Supplementum claim. [gaps: roman-stages-gap-2020-saints]",
+      "extent_examined": "Product page via WebFetch.",
+      "unexamined_range": "Physical book not inspected."
+    },
+    {
+      "repository": "Web search (discovery, site:vatican.va)",
+      "queries": [
+        "site:vatican.va \"Missale Romanum\" \"1962\" supplementum sanctorum decretum 2021"
+      ],
+      "url": "not recorded",
+      "checked_on": "2026-10-21",
+      "outcome": "No vatican.va supplement decree; Traditionis custodes pages and 2020 news only. [gaps: roman-stages-gap-2020-saints]",
+      "extent_examined": "Returned result list.",
+      "unexamined_range": "Dicastery for Divine Worship decree index not browsed."
+    },
+    {
+      "repository": "HathiTrust catalog search",
+      "queries": [
+        "\"ordo hebdomadae sanctae\""
+      ],
+      "url": "https://catalog.hathitrust.org/Search/Home?lookfor=%22ordo+hebdomadae+sanctae%22&type=all",
+      "checked_on": "2026-10-21",
+      "outcome": "FAILED: Cloudflare 'Just a moment' challenge; not solved. [gaps: roman-stages-holyweek-components]",
+      "extent_examined": "None.",
+      "unexamined_range": "Whole HathiTrust catalogue."
+    },
+    {
+      "repository": "Google Books API",
+      "queries": [
+        "intitle:\"ordo hebdomadae sanctae\"",
+        "intitle:\"preces eucharisticae\"",
+        "intitle:\"ritus servandus in concelebratione\"",
+        "intitle:\"supplementum\" missale romanum"
+      ],
+      "url": "https://www.googleapis.com/books/v1/volumes",
+      "checked_on": "2026-10-21",
+      "outcome": "FAILED: HTTP 429 daily quota exceeded for all four queries. [gaps: roman-stages-holyweek-components, roman-stages-transitional-books, roman-stages-gap-2020-saints]",
+      "extent_examined": "None.",
+      "unexamined_range": "All Google Books holdings."
+    },
+    {
+      "repository": "Internet Archive advanced search",
+      "queries": [
+        "title:(hebdomadae OR hebdomada) AND (sanctae OR sancta)",
+        "instauratus OR instaurata",
+        "concelebratione 1964-1970",
+        "preces eucharisticae 1967-1970",
+        "missale romanum 1970-1976",
+        "missale romanum 2000-2012",
+        "title:(hebdomadae) AND title:(sanctae)"
+      ],
+      "url": "https://archive.org/advancedsearch.php",
+      "checked_on": "2026-10-21",
+      "outcome": "FAILED: archive.org unreachable (connection timeouts 15:42-16:08 UTC, IPv4 retry also failed). [gaps: roman-stages-holyweek-components, roman-stages-transitional-books, roman-stages-later-books, roman-stages-curial-descent, roman-stages-pre-pian-delta]",
+      "extent_examined": "None.",
+      "unexamined_range": "All Internet Archive holdings."
+    },
+    {
+      "repository": "Gallica SRU",
+      "queries": [
+        "gallica all \"bellovacense\"",
+        "missale + bellovac",
+        "missale + tullense",
+        "missale + bisuntin",
+        "missale + tornacense",
+        "missale + leodiense"
+      ],
+      "url": "https://gallica.bnf.fr/SRU",
+      "checked_on": "2026-10-21",
+      "outcome": "FAILED: Cloudflare 'Attention Required' page for all six. [gaps: western-originals-batch3:beauvais-predecessor-reception, western-originals-batch3:toul-text-and-reception, western-originals-batch3:besancon-text-and-reception, western-originals-batch3:tournai-text-and-reception, western-originals-batch3:liege-text-and-reception]",
+      "extent_examined": "None.",
+      "unexamined_range": "All Gallica holdings (incl. BP16-linked scans, 1756 BnF Beauvais copy)."
+    },
+    {
+      "repository": "Vatican AAS archive (official OCR PDFs)",
+      "queries": [
+        "AAS 43 (1951)",
+        "AAS 44 (1952)",
+        "AAS 45 (1953)",
+        "AAS 46 (1954)",
+        " grep: vigili* paschal*, sabbat* sanct*, hebdomad* sanct*"
+      ],
+      "url": "https://www.vatican.va/archive/aas/documents/",
+      "checked_on": "2026-10-21",
+      "outcome": "1951 decree and rubrics (AAS 43:128-137) and 1952 decree, ordinationes and varied rubrics (AAS 44:48-63) located and page images viewed; 1953 no hit; 1954 only Holy Office fast decree (AAS 46:112). [gaps: roman-stages-holyweek-components]",
+      "extent_examined": "Whole-volume text search of four volumes; pages 43:128-137 and 44:48-63 read, images viewed at 43:130,131,137 and 44:49,53,54,62,63.",
+      "unexamined_range": "OCR misses possible; Ordo booklets themselves not inspected."
+    },
+    {
+      "repository": "Web search (discovery, extended)",
+      "queries": [
+        "\"Ordo Hebdomadae Sanctae instauratus\" \"Typis Polyglottis Vaticanis\" 1956 pdf scan"
+      ],
+      "url": "not recorded",
+      "checked_on": "2026-10-21",
+      "outcome": "Catalogue/bookseller records; HathiTrust iau.31858049248663 and IA Marietti scan; no TPV full view. [gaps: roman-stages-holyweek-components]",
+      "extent_examined": "Returned result list.",
+      "unexamined_range": "Library holdings behind catalogues."
+    },
+    {
+      "repository": "HathiTrust full-text search (babel)",
+      "queries": [
+        "Typis within iau.31858049248663"
+      ],
+      "url": "https://babel.hathitrust.org/cgi/pt/search?q1=Typis;id=iau.31858049248663",
+      "checked_on": "2026-10-21",
+      "outcome": "FAILED: HTTP 403 Cloudflare challenge. [gaps: roman-stages-holyweek-components]",
+      "extent_examined": "None.",
+      "unexamined_range": "Volume contents."
+    },
+    {
+      "repository": "HathiTrust Bibliographic API",
+      "queries": [
+        "htid iau.31858049248663"
+      ],
+      "url": "https://catalog.hathitrust.org/api/volumes/full/htid/iau.31858049248663.json",
+      "checked_on": "2026-10-21",
+      "outcome": "Record is Marietti 'Editio Taurinensis juxta typicam', Approbatio 1956, xi+108 pp., search-only; not the TPV edition. [gaps: roman-stages-holyweek-components]",
+      "extent_examined": "Complete MARC record (sha256 8dda409f...).",
+      "unexamined_range": "Other HathiTrust copies."
+    },
+    {
+      "repository": "Christ-Net liturgical list",
+      "queries": [
+        "node 3410 page scan for 1956 / concelebration / Preces"
+      ],
+      "url": "https://portal.christ-net.sk/node/3410",
+      "checked_on": "2026-10-21",
+      "outcome": "Page is the Ordo Missae 1965 item; no 1956, concelebration or Preces delivery. [gaps: roman-stages-holyweek-components, roman-stages-transitional-books]",
+      "extent_examined": "Single page text.",
+      "unexamined_range": "Other Christ-Net nodes."
+    },
+    {
+      "repository": "Web search (discovery, extended)",
+      "queries": [
+        "\"Ritus servandus in concelebratione Missae et ritus communionis sub utraque specie\" 1965 digitized OR digitalizado OR digitalisat OR \"full view\""
+      ],
+      "url": "not recorded",
+      "checked_on": "2026-10-21",
+      "outcome": "Catalogue records only (Open Library, Google Books 9nHMAQAACAAJ 104 pp no preview, WorldCat 301424179/12889875, Notre Dame Dearden Papers PDRD 2/02, booksellers). [gaps: roman-stages-transitional-books]",
+      "extent_examined": "Returned result list.",
+      "unexamined_range": "Unindexed scan hosts."
+    },
+    {
+      "repository": "Web search (discovery)",
+      "queries": [
+        "\"Preces eucharisticae et praefationes\" 1968 \"Typis Polyglottis Vaticanis\" scan OR pdf OR digitalisat"
+      ],
+      "url": "not recorded",
+      "checked_on": "2026-10-21",
+      "outcome": "No booklet scan; Hrcak 1968 journal reprint of decree only. [gaps: roman-stages-transitional-books]",
+      "extent_examined": "Returned result list.",
+      "unexamined_range": "Unindexed scan hosts."
+    },
+    {
+      "repository": "Web search (discovery)",
+      "queries": [
+        "van Dijk Walker \"The Ordinal of the Papal Court from Innocent III to Boniface VIII\" Spicilegium Friburgense 22 pdf OR \"full view\""
+      ],
+      "url": "not recorded",
+      "checked_on": "2026-10-21",
+      "outcome": "Print catalogue records only (Penn BX2017 .A2 1975; Salzburg); no digital copy. [gaps: roman-stages-curial-descent, roman-stages-pre-pian-delta]",
+      "extent_examined": "Returned result list.",
+      "unexamined_range": "HathiTrust/IA not reachable; Legg and Lippe not searched (IA down)."
+    },
+    {
+      "repository": "Web search (discovery, extended)",
+      "queries": [
+        "\"Missale Bellovacense\" Augustin Potier OR 1637 OR 1520 OR 1538 OR 1785 numérisé"
+      ],
+      "url": "not recorded",
+      "checked_on": "2026-10-21",
+      "outcome": "1637 Manuale Bellovacense (ritual), 1756 Gallica copy, 13th-c. Beauvais Missal leaves; no digitized earlier printed missal. [gaps: western-originals-batch3:beauvais-predecessor-reception]",
+      "extent_examined": "Returned result list.",
+      "unexamined_range": "not recorded"
+    },
+    {
+      "repository": "Web search (discovery)",
+      "queries": [
+        "Missale \"ecclesiae Bellovacensis\" OR \"insignis ecclesiae Belvacensis\" missel de Beauvais imprimé XVIe XVIIe siècle exemplaire"
+      ],
+      "url": "not recorded",
+      "checked_on": "2026-10-21",
+      "outcome": "Medieval Beauvais Missal (Fragmentarium, Wikipedia) only. [gaps: western-originals-batch3:beauvais-predecessor-reception]",
+      "extent_examined": "Returned result list.",
+      "unexamined_range": "not recorded"
+    },
+    {
+      "repository": "Fragmentarium record",
+      "queries": [
+        "F-yi3b/2569"
+      ],
+      "url": "https://fragmentarium.ms/description/F-yi3b/2569",
+      "checked_on": "2026-10-21",
+      "outcome": "Beauvais Missal c.1290, cathedral provenance via 1926 Sotheby's lost-leaf inscription and 1356 gift; Beinecke MS 748.5; Ege dispersal. [gaps: western-originals-batch3:beauvais-predecessor-reception]",
+      "extent_examined": "Description page via WebFetch.",
+      "unexamined_range": "Leaf images and other records."
+    },
+    {
+      "repository": "BnF catalogue SRU (dublincore)",
+      "queries": [
+        "bib.title all \"missale\" and bib.title any \"bellovacense belvacensis bellovacensis\""
+      ],
+      "url": "https://catalogue.bnf.fr/api/SRU",
+      "checked_on": "2026-10-21",
+      "outcome": "5 records: 1514 Morin, 1520 Vostre, 1538 Galliot du Pre/Lefevre, 1625 Augustin Potier (ad formam Tridentini), 1756 Desaint. [gaps: western-originals-batch3:beauvais-predecessor-reception]",
+      "extent_examined": "All 5 records (sha256 894d7805...).",
+      "unexamined_range": "Title-word variants not covered; other libraries."
+    },
+    {
+      "repository": "BnF catalogue record page",
+      "queries": [
+        "cb36817358m (1625)"
+      ],
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb36817358m",
+      "checked_on": "2026-10-21",
+      "outcome": "Shelfmark B-781; no Gallica link; privilege not reproduced. [gaps: western-originals-batch3:beauvais-predecessor-reception]",
+      "extent_examined": "Record page via WebFetch.",
+      "unexamined_range": "Physical book."
+    },
+    {
+      "repository": "Web search (discovery)",
+      "queries": [
+        "\"Missale Bellovacense\" 1625 \"concilii Tridentini\" Potier Valet"
+      ],
+      "url": "not recorded",
+      "checked_on": "2026-10-21",
+      "outcome": "No digitized 1625 copy; medieval leaves and BP16 1520 record. [gaps: western-originals-batch3:beauvais-predecessor-reception]",
+      "extent_examined": "Returned result list.",
+      "unexamined_range": "not recorded"
+    },
+    {
+      "repository": "BnF catalogue SRU (dublincore)",
+      "queries": [
+        "bib.title all \"missale\" and bib.title any \"tullense tullensis tullensem\""
+      ],
+      "url": "https://catalogue.bnf.fr/api/SRU",
+      "checked_on": "2026-10-21",
+      "outcome": "41 records incl. 1493, 1516, 1551, 1630, 1638 and 1718 Toul Missale Romanum, 1750 x2, 1838 Nanceiense et Tullense, 1860 Nancy propers revised by SRC. [gaps: western-originals-batch3:toul-text-and-reception]",
+      "extent_examined": "All 41 records (sha256 a835bb87...).",
+      "unexamined_range": "Other libraries; title variants."
+    },
+    {
+      "repository": "Web search (discovery)",
+      "queries": [
+        "\"Missale\" \"Tullensis\" 1630 OR 1551 OR 1516 OR 1493 numérisé Limédia OR \"Bibliothèque de Nancy\" OR \"Kiosque lorrain\" OR \"Google Books\""
+      ],
+      "url": "not recorded",
+      "checked_on": "2026-10-21",
+      "outcome": "No digitized Toul missal; USUARIUM 1492-1493 record only. [gaps: western-originals-batch3:toul-text-and-reception]",
+      "extent_examined": "Returned result list.",
+      "unexamined_range": "Limédia not queried directly."
+    },
+    {
+      "repository": "BnF catalogue SRU (dublincore)",
+      "queries": [
+        "bib.title all \"missale\" and bib.title any \"bisuntinum bisuntinense bisuntinensis bisuntine bisuntinensem\""
+      ],
+      "url": "https://catalogue.bnf.fr/api/SRU",
+      "checked_on": "2026-10-21",
+      "outcome": "5 records: 1485, 1497, 1551, 1694 (de novo recognitum, Grammont), 1769 Ordo missae privatae. [gaps: western-originals-batch3:besancon-text-and-reception]",
+      "extent_examined": "All 5 (sha256 e1e3777c...).",
+      "unexamined_range": "Other libraries."
+    },
+    {
+      "repository": "Web search (discovery)",
+      "queries": [
+        "\"Missale Bisuntinum\" 1694 Grammont numérisé OR \"memoirevive\" OR \"Google Books\""
+      ],
+      "url": "not recorded",
+      "checked_on": "2026-10-21",
+      "outcome": "No digitized 1694; Vesoul BM gamma 130 (1508) surfaced. [gaps: western-originals-batch3:besancon-text-and-reception]",
+      "extent_examined": "Returned result list.",
+      "unexamined_range": "Memoire Vive not queried directly."
+    },
+    {
+      "repository": "Web search (discovery)",
+      "queries": [
+        "Vesoul bibliothèque municipale \"130\" missel Besançon 1508 manuscrit OR imprimé"
+      ],
+      "url": "not recorded",
+      "checked_on": "2026-10-21",
+      "outcome": "Vesoul gamma 130: Besancon missal, Paris Kerver / Besancon Turgis, 7 July 1508, reported fully digitized. [gaps: western-originals-batch3:besancon-text-and-reception]",
+      "extent_examined": "Returned result list.",
+      "unexamined_range": "Images not inspected."
+    },
+    {
+      "repository": "Biblissima IIIF / BVMM",
+      "queries": [
+        "manifest 0519669afa7054ebb5adfabef2f10d42c8d92a27",
+        "BVMM search missale bisuntinensis"
+      ],
+      "url": "https://iiif.biblissima.fr/collections/manifest/0519669afa7054ebb5adfabef2f10d42c8d92a27",
+      "checked_on": "2026-10-21",
+      "outcome": "FAILED: curl timeout; WebFetch ECONNREFUSED for both hosts. [gaps: western-originals-batch3:besancon-text-and-reception]",
+      "extent_examined": "None.",
+      "unexamined_range": "Vesoul gamma 130 images."
+    },
+    {
+      "repository": "BnF catalogue SRU (dublincore)",
+      "queries": [
+        "bib.title all \"missale\" and bib.title any \"tornacense tornacensis tornacensem\""
+      ],
+      "url": "https://catalogue.bnf.fr/api/SRU",
+      "checked_on": "2026-10-21",
+      "outcome": "3 records: 1498, 1509 Du Rieu, 1540 Antwerp Hillenius. [gaps: western-originals-batch3:tournai-text-and-reception]",
+      "extent_examined": "All 3 (sha256 dbe443b3...).",
+      "unexamined_range": "Other libraries."
+    },
+    {
+      "repository": "Ghent University Library catalogue",
+      "queries": [
+        "missale tornacense"
+      ],
+      "url": "https://lib.ugent.be/en/catalog?q=missale+tornacense&type=all",
+      "checked_on": "2026-10-21",
+      "outcome": "FAILED: connection timeout. [gaps: western-originals-batch3:tournai-text-and-reception]",
+      "extent_examined": "None.",
+      "unexamined_range": "Ghent holdings."
+    },
+    {
+      "repository": "BnF catalogue SRU (dublincore)",
+      "queries": [
+        "bib.title all \"missale\" and bib.title any \"leodiense leodiensis leodiensem\""
+      ],
+      "url": "https://catalogue.bnf.fr/api/SRU",
+      "checked_on": "2026-10-21",
+      "outcome": "7 records: 1499, 1509, 1513, 1540 x2, 1552, 1997 Cockx-Indestege et al. study. [gaps: western-originals-batch3:liege-text-and-reception]",
+      "extent_examined": "All 7 (sha256 5f87cb99...).",
+      "unexamined_range": "Other libraries."
+    },
+    {
+      "repository": "Web search (discovery)",
+      "queries": [
+        "\"Missale\" \"Leodiensis\" OR \"Leodiense\" 1513 OR 1540 OR 1552 OR 1486 numérisé donum.uliege OR \"Belgica\" OR \"e-rara\" OR \"digitale-sammlungen\""
+      ],
+      "url": "not recorded",
+      "checked_on": "2026-10-21",
+      "outcome": "ULiege DONum 1499 (2268.1/2440) and 1540 (2268.1/14241) digitized; Het Boek 1928 article; BP16 records. [gaps: western-originals-batch3:liege-text-and-reception]",
+      "extent_examined": "Returned result list.",
+      "unexamined_range": "not recorded"
+    },
+    {
+      "repository": "ULiege DONum",
+      "queries": [
+        "handle 2268.1/2440 (1499, XV.B200 and XV.A46)",
+        "handle 2268.1/14241 (1540, R00424D)"
+      ],
+      "url": "https://donum.uliege.be/handle/2268.1/2440",
+      "checked_on": "2026-10-21",
+      "outcome": "Three whole PDFs acquired; 1499 leaf a1 (title blurb, woodcut, tabula) and colophon inspected; 1540 title, Nov calendar, appended Masses (PDF 605-611) and registrum inspected; 1499 Nov calendar checked. [gaps: western-originals-batch3:liege-text-and-reception]",
+      "extent_examined": "Named pages only: XV.B200 PDF 1-12, 18, 534-545 (sheets), 540; XV.A46 PDF 1-24, 560-571 (sheets); R00424D PDF 1-12, 8, 20, 600-624 (sheets), 605-612.",
+      "unexamined_range": "All other interior pages; XV.A46 colophon; 1499 sanctoral search for the four added Masses."
+    }
+  ],
+  "versions": [
+    {
+      "id": "roman-modern-1635-vatican-gb-xnc4a07qpqqc",
+      "label": "Missale Romanum, Rome Typographia Vaticana 1635 (Urbanian)",
+      "tradition_or_use": "roman-stages-pian",
+      "date_label": "1635 imprint and colophon",
+      "date_role": "publication",
+      "record_class": "exact-original-copy-witness",
+      "distinctness_basis": "Witness of the 1634 Urbanian recension stage; not a new version.",
+      "existing_candidate_ids": [
+        "roman-modern-1635-vatican-witness-lead",
+        "roman-modern-004"
+      ],
+      "source_refs": [
+        "roman-stages-source-1635-vatican"
+      ],
+      "unresolved": "Identity with SBN UM1E008100, Rusca L-77 Secunda editio and UB [1634?]."
+    },
+    {
+      "id": "roman-stages-1951-vigil",
+      "label": "1951 experimental Easter Vigil",
+      "tradition_or_use": "roman-stages-pian",
+      "date_label": "9 February 1951",
+      "date_role": "approval",
+      "record_class": "complementary-component-state",
+      "distinctness_basis": "Distinct rubrics from 1952 at six loci.",
+      "existing_candidate_ids": [
+        "roman-modern-019"
+      ],
+      "source_refs": [
+        "roman-stages-source-aas-1951"
+      ],
+      "unresolved": "Booklet not re-collated."
+    },
+    {
+      "id": "roman-stages-1952-vigil",
+      "label": "1952 revised Easter Vigil",
+      "tradition_or_use": "roman-stages-pian",
+      "date_label": "11 January 1952",
+      "date_role": "approval",
+      "record_class": "complementary-component-state",
+      "distinctness_basis": "Decree approves rubric variations.",
+      "existing_candidate_ids": [
+        "roman-modern-020"
+      ],
+      "source_refs": [
+        "roman-stages-source-aas-1952"
+      ],
+      "unresolved": "1952 booklet uninspected."
+    },
+    {
+      "id": "iberian-zaragoza-1498",
+      "label": "Zaragoza missal 1498 (Hurus)",
+      "tradition_or_use": "historic-zaragoza-use",
+      "date_label": "23 November 1498",
+      "date_role": "publication",
+      "record_class": "exact-original-copy-witness",
+      "distinctness_basis": "Documented state; holy-day list differs from 1522.",
+      "existing_candidate_ids": [],
+      "source_refs": [
+        "iberian-historic-batch4:zaragoza-1498-toledo"
+      ],
+      "unresolved": "Episcopal authority leaf."
+    },
+    {
+      "id": "iberian-zaragoza-buz-h-1-152",
+      "label": "Zaragoza missal, Coci, colophon 1522",
+      "tradition_or_use": "historic-zaragoza-use",
+      "date_label": "colophon 15 February 1522; catalogue 1540",
+      "date_role": "publication",
+      "record_class": "exact-original-copy-witness",
+      "distinctness_basis": "Preface states archiepiscopal correction; holy-day list adds Matthias and Barnabas.",
+      "existing_candidate_ids": [
+        "iberian-zaragoza-1522",
+        "iberian-zaragoza-1540"
+      ],
+      "source_refs": [
+        "iberian-historic-batch4:zaragoza-buz-h-1-152"
+      ],
+      "unresolved": "1522 versus 1540 edition identity."
+    },
+    {
+      "id": "iberian-valencia-1509",
+      "label": "Valencia missal 1509 (Giunta)",
+      "tradition_or_use": "historic-valencia-use",
+      "date_label": "19 May 1509",
+      "date_role": "publication",
+      "record_class": "edition-candidate-with-inspected-copy",
+      "distinctness_basis": "January calendar differs from 1528.",
+      "existing_candidate_ids": [
+        "iberian-valencia-1509"
+      ],
+      "source_refs": [
+        "iberian-historic-batch4:valencia-1509-roderic"
+      ],
+      "unresolved": "Copy shelfmark."
+    },
+    {
+      "id": "iberian-valencia-1528",
+      "label": "Valencia missal 1528 (Coci)",
+      "tradition_or_use": "historic-valencia-use",
+      "date_label": "1528",
+      "date_role": "publication",
+      "record_class": "edition-candidate-with-inspected-copy",
+      "distinctness_basis": "8 January Holy Name added.",
+      "existing_candidate_ids": [
+        "iberian-valencia-1528"
+      ],
+      "source_refs": [
+        "iberian-historic-batch4:valencia-1528-roderic"
+      ],
+      "unresolved": "Colophon day."
+    },
+    {
+      "id": "liege-1540-uliege-r00424d",
+      "label": "Liège missal, Paris 22 July 1540",
+      "tradition_or_use": "historic-liege-use",
+      "date_label": "22 July 1540",
+      "date_role": "publication",
+      "record_class": "exact-original-copy-witness",
+      "distinctness_basis": "Title claims emendation and added offices; appended Masses present; no transition asserted.",
+      "existing_candidate_ids": [
+        "amiet-nonfrance-liege-1540-7223"
+      ],
+      "source_refs": [
+        "western-originals-batch3:liege-uliege-1540"
+      ],
+      "unresolved": "Relation to the March 1540 issue and 1499."
+    },
+    {
+      "id": "italian-aosta-cathedral-cod21-c1500",
+      "label": "Aosta cathedral cod. 21 (cod. S)",
+      "tradition_or_use": "italian-local-round2:aosta",
+      "date_label": "c. 1500",
+      "date_role": "attestation",
+      "record_class": "manuscript-witness-by-scholarly-description",
+      "distinctness_basis": "Local Ordo replaced by the Pian Ordo in 1617 (Amiet).",
+      "existing_candidate_ids": [],
+      "source_refs": [
+        "italian-local-round2:aosta-amiet1976"
+      ],
+      "unresolved": "Manuscript uninspected."
+    },
+    {
+      "id": "ocso-next:ordo-particularities-1971",
+      "label": "Cistercian Ordo particularities confirmed 1971",
+      "tradition_or_use": "ocso-round2",
+      "date_label": "8 June 1971",
+      "date_role": "approval",
+      "record_class": "approval-state-without-book-witness",
+      "distinctness_basis": "Four optional rubrics within the Roman Order of Mass.",
+      "existing_candidate_ids": [],
+      "source_refs": [
+        "ocso-next:notitiae1971-1972",
+        "ocso-next:praenotanda"
+      ],
+      "unresolved": "Prot. 525/71 versus 525/70."
+    },
+    {
+      "id": "ocso-next:calendar1972",
+      "label": "OCSO proper calendar confirmed 1972",
+      "tradition_or_use": "ocso-round2",
+      "date_label": "31 August 1972",
+      "date_role": "approval",
+      "record_class": "approval-state-without-book-witness",
+      "distinctness_basis": "Proper calendar confirmation.",
+      "existing_candidate_ids": [],
+      "source_refs": [
+        "ocso-next:notitiae1971-1972"
+      ],
+      "unresolved": "Calendar entries and Praenotanda dates."
+    },
+    {
+      "id": "rome-1634-dated-issue",
+      "label": "Rome Typographia Vaticana 1634-dated Urbanian Missal",
+      "tradition_or_use": "roman-stages-pian",
+      "date_label": "1634 (reported)",
+      "date_role": "publication",
+      "record_class": "unresolved-lead",
+      "distinctness_basis": "Not established; Weale 1886 p. 170 lists an undescribed 1634 Rome folio; UB holds a defective [1634?] copy.",
+      "existing_candidate_ids": [
+        "roman-modern-004"
+      ],
+      "source_refs": [
+        "roman-modern-1634-ub-alma"
+      ],
+      "unresolved": "Whether any 1634-dated issue exists."
+    },
+    {
+      "id": "tarragona-1499",
+      "label": "Missale Tarraconense 1499 (Rosembach)",
+      "tradition_or_use": "historic-tarragona-use",
+      "date_label": "26 June 1499",
+      "date_role": "publication",
+      "record_class": "unresolved-lead",
+      "distinctness_basis": "Edition identified bibliographically only.",
+      "existing_candidate_ids": [],
+      "source_refs": [],
+      "unresolved": "BVPB copy unreachable; no candidate added."
+    }
+  ],
+  "acquisitions": [
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PP7",
+      "retrieved_at_utc": "2026-10-21T15:52:17Z",
+      "sha256": "5d0723b3e4219fefb78b160ac2ce38bc3596628ec92cd78543f9f76a807c945a",
+      "byte_size": 447146,
+      "retrieved_extent": "single page image PP7",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Google Books public-domain full view; page images for research only; no redistribution basis assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/acq/rome1635-gb-XNC4a07qPqQC/PP7.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PP9",
+      "retrieved_at_utc": "2026-10-21T15:52:19Z",
+      "sha256": "7aead330e1a5e53a55f0de6813ea2a433884b91b9e74473bd6e5848fda4289c4",
+      "byte_size": 537984,
+      "retrieved_extent": "single page image PP9",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Google Books public-domain full view; page images for research only; no redistribution basis assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/acq/rome1635-gb-XNC4a07qPqQC/PP9.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PP10",
+      "retrieved_at_utc": "2026-10-21T15:52:20Z",
+      "sha256": "2a5a7b93e53df957924b5a69257d2dcdadbe645904130d13e66c56de3a787974",
+      "byte_size": 516568,
+      "retrieved_extent": "single page image PP10",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Google Books public-domain full view; page images for research only; no redistribution basis assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/acq/rome1635-gb-XNC4a07qPqQC/PP10.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PP11",
+      "retrieved_at_utc": "2026-10-21T15:52:49Z",
+      "sha256": "6ec29108c404abdc0e4d2b609bc3bb3e929a086dec6f12653d45977b7125806d",
+      "byte_size": 508307,
+      "retrieved_extent": "single page image PP11",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Google Books public-domain full view; page images for research only; no redistribution basis assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/acq/rome1635-gb-XNC4a07qPqQC/PP11.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PP12",
+      "retrieved_at_utc": "2026-10-21T15:52:50Z",
+      "sha256": "06af2f8130c82b1b16ef309598802eb0c8a38012b2c52a5a4fc18bd635f2d7aa",
+      "byte_size": 419069,
+      "retrieved_extent": "single page image PP12",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Google Books public-domain full view; page images for research only; no redistribution basis assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/acq/rome1635-gb-XNC4a07qPqQC/PP12.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PP13",
+      "retrieved_at_utc": "2026-10-21T15:52:50Z",
+      "sha256": "202d655ee897b4f7d1f1bb8c1cb5c0591b4d6279a25b3609b37dd49e84ee5730",
+      "byte_size": 522794,
+      "retrieved_extent": "single page image PP13",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Google Books public-domain full view; page images for research only; no redistribution basis assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/acq/rome1635-gb-XNC4a07qPqQC/PP13.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PT3",
+      "retrieved_at_utc": "2026-10-21T15:53:32Z",
+      "sha256": "14528f281a8c8a469df42408ec5fee78db368e06ef40f394b6ff2a6e6d52b1a9",
+      "byte_size": 503099,
+      "retrieved_extent": "single page image PT3",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Google Books public-domain full view; page images for research only; no redistribution basis assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/acq/rome1635-gb-XNC4a07qPqQC/PT3.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PT4",
+      "retrieved_at_utc": "2026-10-21T15:53:32Z",
+      "sha256": "17d862485bcd340e0cdfdc805f9d652ec29ebf7a11e6a1085630b34045cd384f",
+      "byte_size": 308196,
+      "retrieved_extent": "single page image PT4",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Google Books public-domain full view; page images for research only; no redistribution basis assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/acq/rome1635-gb-XNC4a07qPqQC/PT4.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=aaPpAuHRY9IC&pg=PP5",
+      "retrieved_at_utc": "2026-10-21T15:54:55Z",
+      "sha256": "68855fbefd80f521f8b01f01c264f61070d6bd49b7437ca64e0cf53a074f7da0",
+      "byte_size": 333851,
+      "retrieved_extent": "single page image PP5",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Google Books public-domain full view; page images for research only; no redistribution basis assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/acq/rome1604-gb-aaPpAuHRY9IC/PP5.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=aaPpAuHRY9IC&pg=PP9",
+      "retrieved_at_utc": "2026-10-21T15:54:58Z",
+      "sha256": "2d2704bc7d55b2de67255d6bca96fc422790dae9731e6e77be2b4f3d515999d1",
+      "byte_size": 528053,
+      "retrieved_extent": "single page image PP9",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Google Books public-domain full view; page images for research only; no redistribution basis assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/acq/rome1604-gb-aaPpAuHRY9IC/PP9.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=aaPpAuHRY9IC&pg=PP10",
+      "retrieved_at_utc": "2026-10-21T15:54:59Z",
+      "sha256": "27b4b621ccea207abb87e4b7980227875c891b474a6a101b7b97e781836ef5d8",
+      "byte_size": 498459,
+      "retrieved_extent": "single page image PP10",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Google Books public-domain full view; page images for research only; no redistribution basis assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/acq/rome1604-gb-aaPpAuHRY9IC/PP10.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=1Jio3o9OfncC&pg=PA170",
+      "retrieved_at_utc": "2026-10-21T15:54:29Z",
+      "sha256": "44020559ca5cbe11b0813133c3ae84ac6394bc9b32377264e649450653947d16",
+      "byte_size": 184319,
+      "retrieved_extent": "single page image p. 170",
+      "source_role": "bibliography-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Google Books public-domain full view; page images for research only; no redistribution basis assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/acq/weale-1886-gb-1Jio3o9OfncC/PA170.png"
+    },
+    {
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10869696_00007/full/700,/0/default.jpg",
+      "retrieved_at_utc": "2026-10-21T16:05:17Z",
+      "sha256": "4b5e309bc38fe38d450dbbb0b3eb878b08e01f48cd200b14abc23521f3671c54",
+      "byte_size": 190189,
+      "retrieved_extent": "IIIF canvas 7 (title)",
+      "source_role": "control-original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "BSB digitization; no reuse basis assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/acq/antwerp1634-bsb10869696/c00007.jpg"
+    },
+    {
+      "source_url": "https://patrimoniodigital.castillalamancha.es/bidicam/es/consulta/registro.do?id=12263",
+      "retrieved_at_utc": "2026-10-21T16:02:22Z",
+      "sha256": "0df757f0ccfd9c3e769a42adb3152da35106e5119760a3851657dfcb468ed46a",
+      "byte_size": 360818,
+      "retrieved_extent": "position 5 title image",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "CC BY per provider; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/iberian/downloads/zgz1498/p005.jpg"
+    },
+    {
+      "source_url": "https://patrimoniodigital.castillalamancha.es/bidicam/es/consulta/registro.do?id=12263",
+      "retrieved_at_utc": "2026-10-21T16:02:25Z",
+      "sha256": "fac5783ec1631fcb109e4a362f48b73e5e2a885f789d2989237caa660511b480",
+      "byte_size": 334887,
+      "retrieved_extent": "position 6 holy-day list image",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "CC BY per provider; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/iberian/downloads/zgz1498/p006.jpg"
+    },
+    {
+      "source_url": "https://patrimoniodigital.castillalamancha.es/bidicam/es/consulta/registro.do?id=12263",
+      "retrieved_at_utc": "2026-10-21T16:02:48Z",
+      "sha256": "a439fece363bb813ac4dd7ca44a01c297426fdb33f739051bc58667a0314bf86",
+      "byte_size": 363422,
+      "retrieved_extent": "position 727 colophon image",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "CC BY per provider; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/iberian/downloads/zgz1498/p727.jpg"
+    },
+    {
+      "source_url": "http://zaguan.unizar.es/record/74837/files/H_1_152.pdf",
+      "retrieved_at_utc": "2026-10-21T15:54:44Z",
+      "sha256": "5c2490690f8085d845c499dd7247a031c660d147f29523ed2c239fc2b3de7423",
+      "byte_size": 106595848,
+      "retrieved_extent": "whole 613-page PDF",
+      "source_role": "original-book-facsimile",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "CC BY 4.0 per provider; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/iberian/downloads/zaguan/zgz1540-H_1_152.pdf"
+    },
+    {
+      "source_url": "https://weblioteca.uv.es/europeana/migracion/im/b14499423/",
+      "retrieved_at_utc": "2026-10-21T15:50:22Z",
+      "sha256": "b58d7e34e70f58cc93c547d76510d8314a73171a1b455a2641b69ca1cfed346c",
+      "byte_size": 352079,
+      "retrieved_extent": "image 0004 January calendar",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Universitat de València digitization; reuse basis not assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/iberian/downloads/roderic/v1509/p0004.jp2"
+    },
+    {
+      "source_url": "https://weblioteca.uv.es/europeana/migracion/im/b14499423/",
+      "retrieved_at_utc": "2026-10-21T15:50:32Z",
+      "sha256": "e967a94bb7557afe99df4246f63d3ce30477254e1aac5f5f6c3530dc82f6ed1e",
+      "byte_size": 346710,
+      "retrieved_extent": "image 0727 colophon",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Universitat de València digitization; reuse basis not assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/iberian/downloads/roderic/v1509/p0727.jp2"
+    },
+    {
+      "source_url": "https://weblioteca.uv.es/europeana/migracion/im/b13937431/",
+      "retrieved_at_utc": "2026-10-21T15:52:01Z",
+      "sha256": "4e5528188d142dd8ff132c6e3ba8a351cb55d5cf5ba9ecfac94bae187d46cf64",
+      "byte_size": 359817,
+      "retrieved_extent": "image 0003 January calendar",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Universitat de València digitization; reuse basis not assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/iberian/downloads/roderic/v1528/p0003.jp2"
+    },
+    {
+      "source_url": "https://weblioteca.uv.es/europeana/migracion/im/b13937431/",
+      "retrieved_at_utc": "2026-10-21T15:52:15Z",
+      "sha256": "483faed89e6f483d027275f76bf20e1ef501670cafa3343719e53affb137e158",
+      "byte_size": 384641,
+      "retrieved_extent": "image 0532 colophon and table",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Universitat de València digitization; reuse basis not assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/iberian/downloads/roderic/v1528/p0532.jp2"
+    },
+    {
+      "source_url": "https://mdc.csuc.cat/iiif/incunableBC:49455/manifest.json",
+      "retrieved_at_utc": "2026-10-21T15:47:56Z",
+      "sha256": "3c1f97715fde9d5fe256d80a3945948e29972cd11f90ef84219fb41fd5588e92",
+      "byte_size": 433952,
+      "retrieved_extent": "IIIF canvas 87 (f. CIXr)",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Public-domain mark per provider; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/iberian/downloads/zgz1485/c87.jpg"
+    },
+    {
+      "source_url": "https://www.dlib.si/details/URN:NBN:SI:DOC-GKJAQ0TO",
+      "retrieved_at_utc": "2026-10-21T16:00:32Z",
+      "sha256": "11c9f767c680d75f883dbf8b282a29cf042b60dcb0c36d68fc18077175862c7b",
+      "byte_size": 313701827,
+      "retrieved_extent": "whole 532-page PDF",
+      "source_role": "original-book-facsimile",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Public-domain mark per provider; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/italian-ocso/downloads/aquileia1494/aquileia1494.pdf"
+    },
+    {
+      "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10202279/manifest",
+      "retrieved_at_utc": "2026-10-21T15:50:37Z",
+      "sha256": "290d083ca2d5c705fc02e37a46149036425ab1cf5285e2d3205a4d1560b4d2f3",
+      "byte_size": 295836,
+      "retrieved_extent": "IIIF canvas 530 colophon",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "BSB digitization; no reuse basis assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/italian-ocso/downloads/aquileia1517/c00530.jpg"
+    },
+    {
+      "source_url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "retrieved_at_utc": "2026-10-21T15:55:38Z",
+      "sha256": "a99dca9f319e6558e4b20436df938708a430e6465378d9ca7bf2d065f38aba37",
+      "byte_size": 5656038,
+      "retrieved_extent": "whole PDF of Amiet 1976",
+      "source_role": "scholarship",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Copyrighted study; scratch only, short loci cited.",
+      "scratch_path": ".scratch/batch4-20261021/originals/italian-ocso/downloads/aosta/mgh-b044359.pdf"
+    },
+    {
+      "source_url": "https://luna.manchester.ac.uk/luna/servlet/iiif/m/Manchester~20~20~64~188868/manifest",
+      "retrieved_at_utc": "2026-10-21T16:09:58Z",
+      "sha256": "3e9384768d34f7a6934885323a118862f3bde436ca2f4e587d7d9b5e1bcdd404",
+      "byte_size": 26327,
+      "retrieved_extent": "IIIF canvas 501 colophon (LUNA page index 500; file named p500)",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Rylands digitization; no reuse basis assessed.",
+      "scratch_path": ".scratch/batch4-20261021/originals/italian-ocso/downloads/messina/r/p500.jpg"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-08-%281972%29/Notitiae-069-1972.pdf",
+      "retrieved_at_utc": "2026-10-21T15:59:37Z",
+      "sha256": "0ccd64a258ca32ad903c927a9f27bfa6be70ce0072bd785f81491052ed0eee50",
+      "byte_size": 10263412,
+      "retrieved_extent": "whole issue PDF",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/italian-ocso/downloads/notitiae/Notitiae-069-1972.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-08-%281972%29/Notitiae-078-1972.pdf",
+      "retrieved_at_utc": "2026-10-21T16:00:03Z",
+      "sha256": "dd01545fd354ccedd1e807240d7a2088b015cf8e3b3dd7f80c8791110a834847",
+      "byte_size": 4965319,
+      "retrieved_extent": "whole issue PDF",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/italian-ocso/downloads/notitiae/Notitiae-078-1972.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-03-%281967%29/Notitiae-026-1967.pdf",
+      "retrieved_at_utc": "2026-10-21T16:05:54Z",
+      "sha256": "6fb810722f4ce9fc663354f2b1e0e9c2d9738a1f217fd21d14fe6f0f29d4c924",
+      "byte_size": 4995475,
+      "retrieved_extent": "whole issue PDF",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/italian-ocso/downloads/notitiae/Notitiae-026-1967.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-04-%281968%29/Notitiae-041-1968.pdf",
+      "retrieved_at_utc": "2026-10-21T16:06:14Z",
+      "sha256": "19020f4f8eb33350c2716b2fc74b3144498e37b88855b85700caa71ae58c9ab0",
+      "byte_size": 7474711,
+      "retrieved_extent": "whole issue PDF",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/italian-ocso/downloads/notitiae/Notitiae-041-1968.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-05-%281969%29/Notitiae-048-1969.pdf",
+      "retrieved_at_utc": "2026-10-21T16:06:28Z",
+      "sha256": "f31becd3adaba007d9509c5c1d78b6546da7331e52eb3686277cc9cfb64c2f8e",
+      "byte_size": 7146389,
+      "retrieved_extent": "whole issue PDF",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/italian-ocso/downloads/notitiae/Notitiae-048-1969.pdf"
+    },
+    {
+      "source_url": "https://www.ocso.org/uploads/resources/liturgy/ordo/Praenotanda-LA.pdf",
+      "retrieved_at_utc": "2026-10-21T15:57:22Z",
+      "sha256": "bfede3555513c6113eb8c0d1d719cd58088e92114b7b51911acfa20172d01cc6",
+      "byte_size": 78921,
+      "retrieved_extent": "whole PDF",
+      "source_role": "official-retrospective",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Order publication; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/italian-ocso/downloads/ocso/Praenotanda-LA.pdf"
+    },
+    {
+      "source_url": "https://www.ocso.org/uploads/resources/liturgy/cistercian-lectionary/Lectionario-cisterciense-LA.doc",
+      "retrieved_at_utc": "2026-10-21T15:57:21Z",
+      "sha256": "521e663115f7d78fd7f8f224c5638699439283f73b2ee45e322aa4355f1de05b",
+      "byte_size": 53760,
+      "retrieved_extent": "whole DOC",
+      "source_role": "order-web-text",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Order publication; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/italian-ocso/downloads/ocso/Lectionario-cisterciense-LA.doc"
+    },
+    {
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-43-1951-ocr.pdf",
+      "retrieved_at_utc": "2026-10-21T15:47:05Z",
+      "sha256": "4b80095bae6d93901f28f30bae8f10ff7e3e362d9441695e5fbaf8c057070ebc",
+      "byte_size": 4270050,
+      "retrieved_extent": "whole volume PDF",
+      "source_role": "primary-act-gazette",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Vatican legal notes restrict reuse; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/roman-french/downloads/AAS-43-1951-ocr.pdf"
+    },
+    {
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-44-1952-ocr.pdf",
+      "retrieved_at_utc": "2026-10-21T15:46:29Z",
+      "sha256": "b2a187b2b9e85362fe739f93e2299f5b3cb75ec48c6840e61de3737449d49bb8",
+      "byte_size": 4336253,
+      "retrieved_extent": "whole volume PDF",
+      "source_role": "primary-act-gazette",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Vatican legal notes restrict reuse; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/roman-french/downloads/AAS-44-1952-ocr.pdf"
+    },
+    {
+      "source_url": "https://hdl.handle.net/2268.1/2440",
+      "retrieved_at_utc": "2026-10-21T16:00:39Z",
+      "sha256": "74d8365f7317de8ba7dbb9f78772cf96e9cdb64a5be2704239741ec6ba611980",
+      "byte_size": 208091563,
+      "retrieved_extent": "whole 545-page PDF",
+      "source_role": "original-book-facsimile",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Public domain per provider; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/roman-french/downloads/liege/uliege-XVB200-1499.pdf"
+    },
+    {
+      "source_url": "https://hdl.handle.net/2268.1/14241",
+      "retrieved_at_utc": "2026-10-21T16:03:56Z",
+      "sha256": "8173b7a94b7faf07140a7012ff31c5991ef062f114432d9c71a6a58775cd79cd",
+      "byte_size": 225795913,
+      "retrieved_extent": "whole 624-page PDF",
+      "source_role": "original-book-facsimile",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Public domain per provider; scratch only.",
+      "scratch_path": ".scratch/batch4-20261021/originals/roman-french/downloads/liege/uliege-R00424D-1540.pdf"
+    },
+    {
+      "source_url": "multiple; see manifest and lane searches",
+      "retrieved_at_utc": "2026-10-21T16:35:03Z",
+      "sha256": "f7f2d31e5bc13cae62fb543cca80cd9d7010260b7e20de9acfa2c2756a66269d",
+      "byte_size": 4290,
+      "retrieved_extent": "SHA-256 manifest of all 42 files in parent lane Rome/control page images; each listed file is a scratch acquisition from 2026-10-21",
+      "source_role": "acquisition-manifest",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Per-file rights follow the providers named in the lane searches; none assessed for redistribution.",
+      "scratch_path": ".scratch/batch4-20261021/originals/MANIFEST-acq.sha256"
+    },
+    {
+      "source_url": "multiple; see manifest and lane searches",
+      "retrieved_at_utc": "2026-10-21T16:35:03Z",
+      "sha256": "04f7a86477977753b4065f826fc407ce0d2b08522e403f99ba12dc98aca99dfe",
+      "byte_size": 35765,
+      "retrieved_extent": "SHA-256 manifest of all 416 files in Iberian research fork downloads; each listed file is a scratch acquisition from 2026-10-21",
+      "source_role": "acquisition-manifest",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Per-file rights follow the providers named in the lane searches; none assessed for redistribution.",
+      "scratch_path": ".scratch/batch4-20261021/originals/MANIFEST-iberian-downloads.sha256"
+    },
+    {
+      "source_url": "multiple; see manifest and lane searches",
+      "retrieved_at_utc": "2026-10-21T16:35:04Z",
+      "sha256": "7ae57a3ac0b7a0990deb992d416f6e921e53529cc0c846f2bc1238782429f983",
+      "byte_size": 32009,
+      "retrieved_extent": "SHA-256 manifest of all 341 files in Italian/OCSO research fork downloads; each listed file is a scratch acquisition from 2026-10-21",
+      "source_role": "acquisition-manifest",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Per-file rights follow the providers named in the lane searches; none assessed for redistribution.",
+      "scratch_path": ".scratch/batch4-20261021/originals/MANIFEST-italian-ocso-downloads.sha256"
+    },
+    {
+      "source_url": "multiple; see manifest and lane searches",
+      "retrieved_at_utc": "2026-10-21T16:35:04Z",
+      "sha256": "03297a27b531a0f62d546413b034f3d413e7068c79894aa0dbf64c4b2fddb889",
+      "byte_size": 3201,
+      "retrieved_extent": "SHA-256 manifest of all 35 files in Roman/French research fork downloads; each listed file is a scratch acquisition from 2026-10-21",
+      "source_role": "acquisition-manifest",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Per-file rights follow the providers named in the lane searches; none assessed for redistribution.",
+      "scratch_path": ".scratch/batch4-20261021/originals/MANIFEST-roman-french-downloads.sha256"
+    }
+  ],
+  "gap_dispositions": [
+    {
+      "gap_id": "roman-stages-curial-descent",
+      "disposition": "unchanged-searched",
+      "evidence": "Web search found van Dijk–Walker 1975 only as print copies; archive.org unreachable during the fork's IA search.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "roman-stages-pre-pian-delta",
+      "disposition": "unchanged-searched",
+      "evidence": "Same bounded searches; no Legg/Varisco or 1474/1570 collation source acquired.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "roman-stages-urbanian-to-pian-reform",
+      "disposition": "narrowed",
+      "evidence": "Original Rome Vatican 1635 Urbanian printing inspected (title, Si quid est, decree extract, register, colophon) and linked as the 1634 stage witness, with one concrete preliminary change against Rome 1604; bounded searches found no 1634-dated imprint.",
+      "remaining": "1634-dated issue, UB [1634?], body collation and 1635–1920 progression; gap row rewritten."
+    },
+    {
+      "gap_id": "roman-stages-holyweek-components",
+      "disposition": "narrowed",
+      "evidence": "1951 → 1952 relation documented at six rubric loci from AAS 43/44; AAS 45/46 searched without a Vigil act.",
+      "remaining": "1956 TPV book, booklet collation, complete Missal reconstruction; gap row rewritten."
+    },
+    {
+      "gap_id": "roman-stages-transitional-books",
+      "disposition": "unchanged-searched",
+      "evidence": "Catalogue-only records of the 1965 concelebration Ritus (Google Books 9nHMAQAACAAJ, OCLC) and a 1968 journal reprint of the decree.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "roman-stages-later-books",
+      "disposition": "not-attempted",
+      "evidence": "The only attempted route (archive.org) was unreachable during the fork's search; no bounded search completed.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "roman-stages-gap-2020-saints",
+      "disposition": "unchanged-searched",
+      "evidence": "Four web searches and the FSSP 2021 edition page found no published Holy See Supplementum.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "western-originals-batch3:beauvais-predecessor-reception",
+      "disposition": "narrowed",
+      "evidence": "BnF catalogue records a 1625 Potier missal, probably (by bishop's name, unverified) the predecessor named in the mandate, and earlier printings; the medieval cathedral manuscript is a separate lead.",
+      "remaining": "Inspection of the 1625 book and collation; gap row rewritten."
+    },
+    {
+      "gap_id": "western-originals-batch3:toul-text-and-reception",
+      "disposition": "unchanged-searched",
+      "evidence": "BnF lists 1493–1860 Toul and Nancy-Toul items, none digitized; next_source extended.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "western-originals-batch3:tournai-text-and-reception",
+      "disposition": "unchanged-searched",
+      "evidence": "BnF confirms 1509 and 1540 printings; Ghent catalogue unreachable; next_source extended.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "western-originals-batch3:liege-text-and-reception",
+      "disposition": "narrowed",
+      "evidence": "ULiège 1499 copies show the a1 title leaf and movable-feast table; a 1540 issue documented as a stage.",
+      "remaining": "BSB-copy identity of the lost leaf, collation across editions, reception; gap row rewritten."
+    },
+    {
+      "gap_id": "western-originals-batch3:tarazona-text-and-reception",
+      "disposition": "unchanged-searched",
+      "evidence": "1529 Zaguán digitization located but not opened (size and DjVu decoder); further undated copy at Palacio Larrinaga; next_source extended.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "western-originals-batch3:huesca-text-and-reception",
+      "disposition": "narrowed",
+      "evidence": "Copy census (CCPB one Spanish copy; GW Hispanic Society) and the Zaragoza 1485 cross-check of Lambert's quoted line; no digitized original found.",
+      "remaining": "Original images, tail supplement and sheet relationship; gap row rewritten."
+    },
+    {
+      "gap_id": "western-originals-batch3:besancon-text-and-reception",
+      "disposition": "unchanged-searched",
+      "evidence": "BnF records and the Vesoul γ 130 lead (host unreachable); next_source extended.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "italian-local-round2:aquileia-collation",
+      "disposition": "narrowed",
+      "evidence": "1494 and 1517 colophons read from originals; separate Liechtenstein 1517 edition identified.",
+      "remaining": "Collation, 1508/1519 originals, reception; gap row rewritten."
+    },
+    {
+      "gap_id": "italian-local-round2:aosta-authority",
+      "disposition": "narrowed",
+      "evidence": "Amiet 1976 documents the 1617 Ordinary substitution; cod. S stage and transition added.",
+      "remaining": "1617 decree and book, 1733 comparison, 1828 instrument; gap row rewritten."
+    },
+    {
+      "gap_id": "italian-local-round2:benevento-identity",
+      "disposition": "unchanged-searched",
+      "evidence": "USTC, Europeana and web searches found no digitization; Usuarium timed out.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "italian-local-round2:messina-remaining",
+      "disposition": "narrowed",
+      "evidence": "1480 incipit and colophon read; USTC identifies the 1510–1568 editions.",
+      "remaining": "Originals of 1499, 1538 and later editions; gap row rewritten."
+    },
+    {
+      "gap_id": "italian-local-round2:padua-local",
+      "disposition": "unchanged-searched",
+      "evidence": "USTC, Europeana and web searches found nothing new.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "italian-local-round2:monza-local",
+      "disposition": "unchanged-searched",
+      "evidence": "Web and Internet Culturale (error) searches found no digitization.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "italian-local-round2:ravenna-local",
+      "disposition": "unchanged-searched",
+      "evidence": "Web search found nothing on archive 011 or the 1454 Ursiana missal.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "monza-local-next:h14-text",
+      "disposition": "unchanged-searched",
+      "evidence": "No digitization of H14 or the 2001 edition found.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "monza-local-next:sacramentary-identity-use",
+      "disposition": "unchanged-searched",
+      "evidence": "No digitization of the sacramentaries found.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "monza-local-next:1578-instruments",
+      "disposition": "unchanged-searched",
+      "evidence": "A museum-display photograph lead added to next_source; no instrument read.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "padua-local-round3:e57-originals",
+      "disposition": "unchanged-searched",
+      "evidence": "Web search found no facsimile or edition text.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "padua-local-round3:d30-date-use",
+      "disposition": "unchanged-searched",
+      "evidence": "Web search; IRHT timed out.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "padua-local-round3:local-books-sequence",
+      "disposition": "unchanged-searched",
+      "evidence": "USTC and web searches found nothing new.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "ravenna-fragments:local-reception",
+      "disposition": "not-attempted",
+      "evidence": "Not searched in this batch.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "ravenna-fragments:canon-extent",
+      "disposition": "not-attempted",
+      "evidence": "Not searched in this batch.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "ravenna-fragments:archive011",
+      "disposition": "unchanged-searched",
+      "evidence": "Web search without result; IRHT timed out.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "ravenna-fragments:roll-and-context",
+      "disposition": "not-attempted",
+      "evidence": "Not searched in this batch (Usuarium attempt timed out).",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "ocso-early-distinct-branch-reception-gap",
+      "disposition": "narrowed",
+      "evidence": "1966–1969 Notitiae confirmations of OCSO vernacular proper texts and Supplementum; Westmalle 1951 catalogue lead.",
+      "remaining": "1892–1971 Latin book sequence and approvals (the editions behind the 1966–1969 vernacular confirmations are unidentified); gap row rewritten."
+    },
+    {
+      "gap_id": "ocso-original-books-and-instruments-gap",
+      "disposition": "narrowed",
+      "evidence": "1971 and 1972 instruments now published-summary stages; discrepancies recorded; no 1977 Notitiae notice found.",
+      "remaining": "Signed instruments and the 1983 books; gap row rewritten."
+    },
+    {
+      "gap_id": "ocso-web-lectionary-and-later-use-gap",
+      "disposition": "narrowed",
+      "evidence": "DOC title and contents identified (no approval statement).",
+      "remaining": "Edition identity, approval and house use; gap row rewritten."
+    }
+  ],
+  "independent_review": {
+    "status": "accepted-with-corrections",
+    "independent": true,
+    "reviewer": "independent batch-4 cold reviewer, distinct from the lane author and the coordinator",
+    "checked_on": "2026-10-21",
+    "verdict_sha256": "f1ba56bd27425bdb65888d04b8d7e4a88ffa123f0288dfd90fefe9694ac72a59",
+    "scope": "Re-fetched and inspected, independently of the lane, the cited page images or texts for every new or date-changed documented stage (Rome 1634 via the Vatican 1635 copy, 1951 and 1952 Vigil, Liège 1499 and 1540, Aosta cod. S and 1617, Aquileia 1494 and 1517, Messina 1480, OCSO 1971 and 1972, Zaragoza 1498 and 1522, Valencia 1509 and 1528) and for every transition loci pair (the Urbanian decree extract, the six 1951/1952 AAS loci, Amiet p. 153, the Zaragoza holy-day lists and the Valencia January calendars and tables); also the narrowed gap claims for Huesca (Zaragoza 1485 f. CIXr), Beauvais (BnF SRU) and OCSO (Notitiae 1967-1969). Corrections narrowed wording, loci and gap remainders; no stage, transition or candidate was removed. Not re-checked: the Weale 1886 entry (Google rate limit), negative searches in unchanged-searched or not-attempted gaps, USTC Messina identifiers, the OCSO lectionary DOC and the BnF shelfmark B-781. No body text was collated."
+  },
+  "remaining_gaps": [
+    "A 1634-dated Rome Vatican Urbanian imprint, if any; body collation of Rome 1604 and the Urbanian book.",
+    "1956 TPV Holy Week book; 1965/1968 component booklets; 1971/1975/2008 originals; 2020 Supplementum.",
+    "Zaragoza 1485 complete copy and the 1522/1540 identity; Valencia 1492; Tarragona 1499 BVPB copy; Urgell printings.",
+    "Huesca 1488 original images and tail; Tarazona 1529 DjVu.",
+    "Liège edition collation; Beauvais 1625 book; Besançon Vesoul 1508; Toul and Tournai originals.",
+    "Aquileia and Messina body collation; Aosta 1617 decree and book; Benevento, Padua, Monza and Ravenna originals; three Ravenna gaps not attempted.",
+    "OCSO signed instruments, Latin books 1892–1983 and house reception.",
+    "New Iberian gaps: iberian-historic-batch4:zaragoza-sequence, valencia-sequence, tarragona-originals, urgell-originals."
+  ],
+  "limits": "Page-level inspection only: every claimed locus was viewed by the parent or a research fork, and the parent re-viewed the loci behind each new documented stage and transition. No body-text or whole-book collation; text coverage stays not-transcribed. Several hosts refused or timed out (archive.org until about 16:40Z, Gallica, HathiTrust, ISTC, BVPB, BNE, DigiVatLib, Usuarium, IRHT, BVMM); those are access limits, not negative findings. Acquired bytes stay in scratch with no redistribution basis assessed. Research forks (Iberian, Italian/OCSO, Roman/French) worked read-only in exclusive scratch subfolders; the parent made all tracked edits."
+}

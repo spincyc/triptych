@@ -15,8 +15,8 @@
     {
       "id": "western",
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "28f352fa61d567caa0fad41c5e006ed5e0a383eb105d2c72ef3b73f5116fe816",
-      "byte_size": 2762227
+      "sha256": "a821036b5f1f9645d1620bceef78238db5b9d080e36b6786c12d93f931dd2500",
+      "byte_size": 2778179
     },
     {
       "id": "presentation",
@@ -73,6 +73,12 @@
       "byte_size": 45402
     },
     {
+      "id": "dossier:iberian-historic-batch4",
+      "path": "src/sources/inventories/eucharistic-stages/iberian-historic-batch4.json",
+      "sha256": "6affe19864ffef74db09fbd3feb98990de00fe83667e514bf45bea172e0b0eb9",
+      "byte_size": 22164
+    },
+    {
       "id": "dossier:latin-uses",
       "path": "src/sources/inventories/eucharistic-stages/latin-uses.json",
       "sha256": "5d39634aa6f58127e2f2ce5244b750751ea8982a0b29f8f065a4a6679ef8680a",
@@ -99,8 +105,8 @@
     {
       "id": "dossier:roman-stages",
       "path": "src/sources/inventories/eucharistic-stages/roman.json",
-      "sha256": "0803cb8241d49b82b796db94403c2f05756fa607b86d3a9e89b85a8627aaf0ec",
-      "byte_size": 108549
+      "sha256": "190871701d3d2bcbc942173c8d8cc41f4e9a798ce8c51bc32398be696c9e0538",
+      "byte_size": 125276
     },
     {
       "id": "dossier:regional-variants",
@@ -177,8 +183,8 @@
     {
       "id": "dossier:italian-local-round2",
       "path": "src/sources/inventories/eucharistic-stages/italian-local-round2.json",
-      "sha256": "23a7cc45b3d7c8d0e3aeb04d930581ad2bd295a2448ccac84421cd81056ea4f5",
-      "byte_size": 32075
+      "sha256": "a7a0491d343a04829aa8f9df6ffc0fb552f199f5909f72de0d63a84b217d5cdf",
+      "byte_size": 42156
     },
     {
       "id": "dossier:northwest-round2",
@@ -219,14 +225,14 @@
     {
       "id": "dossier:monza-local-next",
       "path": "src/sources/inventories/eucharistic-stages/monza-local-next.json",
-      "sha256": "47dcb83a520ae81cab766376dfc94ac00c3df9d46a99ce452122e2a0bf9fdecd",
-      "byte_size": 9223
+      "sha256": "773889b075f13dc98a8736f548ca6f3deef6caa54ef8f1b3d0abee6f1e194772",
+      "byte_size": 9588
     },
     {
       "id": "dossier:ocso-next",
       "path": "src/sources/inventories/eucharistic-stages/ocso-next.json",
-      "sha256": "259643b64d9cfd57fa19984da7cbf4e4b9000544ad1002b591b33773ddd46c2d",
-      "byte_size": 16383
+      "sha256": "a86a7745a12bc3da1a25dbc9c286fa8755fdaef9b21aae32e7ce3b9f23a3de75",
+      "byte_size": 22949
     },
     {
       "id": "dossier:padua-local-round3",
@@ -243,15 +249,15 @@
     {
       "id": "dossier:western-originals-batch3",
       "path": "src/sources/inventories/eucharistic-stages/western-originals-batch3.json",
-      "sha256": "ba1336179ab6c61b25e7d5154ce775ec53e73a49274ae549dd96c75e694dfde4",
-      "byte_size": 36699
+      "sha256": "b5198ec28c46cb3491a1e68cd48130130e695dbf9d3df6c7f042a540ffad4fef",
+      "byte_size": 43702
     }
   ],
   "count_semantics": {
     "eastern_census_slots": 23,
     "western_coverage_trajectories": 151,
     "eastern_candidates": 451,
-    "western_candidates": 1464,
+    "western_candidates": 1469,
     "presentation_groups": 233,
     "eastern_empty_candidate_slots_at_input": [
       "albanian",
@@ -8319,6 +8325,26 @@
       "dossier_id": "hungarian-reception"
     },
     {
+      "id": "historic-zaragoza-use",
+      "label": "Zaragoza (Caesaraugustan) local missal",
+      "dossier_id": "iberian-historic-batch4"
+    },
+    {
+      "id": "historic-valencia-use",
+      "label": "Valencia local missal",
+      "dossier_id": "iberian-historic-batch4"
+    },
+    {
+      "id": "historic-tarragona-use",
+      "label": "Tarragona local missal",
+      "dossier_id": "iberian-historic-batch4"
+    },
+    {
+      "id": "historic-urgell-use",
+      "label": "Urgell local missal",
+      "dossier_id": "iberian-historic-batch4"
+    },
+    {
       "id": "italian-local-round2:aquileia",
       "label": "Aquileian local Mass books",
       "dossier_id": "italian-local-round2"
@@ -9212,6 +9238,33 @@
       "status": "canonical-bounded-dossier-snapshot"
     },
     {
+      "dossier_id": "iberian-historic-batch4",
+      "traditions": [
+        {
+          "id": "historic-zaragoza-use",
+          "label": "Zaragoza (Caesaraugustan) local missal"
+        },
+        {
+          "id": "historic-valencia-use",
+          "label": "Valencia local missal"
+        },
+        {
+          "id": "historic-tarragona-use",
+          "label": "Tarragona local missal"
+        },
+        {
+          "id": "historic-urgell-use",
+          "label": "Urgell local missal"
+        }
+      ],
+      "documented_stage_count": 4,
+      "provisional_stage_count": 0,
+      "text_coverage_counts": {
+        "not-transcribed": 4
+      },
+      "status": "canonical-bounded-dossier-snapshot"
+    },
+    {
       "dossier_id": "italian-local-round2",
       "traditions": [
         {
@@ -9243,10 +9296,10 @@
           "label": "Ravenna Mass-book leads"
         }
       ],
-      "documented_stage_count": 11,
+      "documented_stage_count": 12,
       "provisional_stage_count": 0,
       "text_coverage_counts": {
-        "not-transcribed": 11
+        "not-transcribed": 12
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -9501,10 +9554,10 @@
           "label": "Cistercians of the Strict Observance (OCSO)"
         }
       ],
-      "documented_stage_count": 3,
+      "documented_stage_count": 5,
       "provisional_stage_count": 0,
       "text_coverage_counts": {
-        "not-transcribed": 3
+        "not-transcribed": 5
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -9687,10 +9740,10 @@
           "label": "Postconciliar Latin Roman Missal"
         }
       ],
-      "documented_stage_count": 24,
+      "documented_stage_count": 26,
       "provisional_stage_count": 1,
       "text_coverage_counts": {
-        "not-transcribed": 24,
+        "not-transcribed": 26,
         "partial": 1
       },
       "status": "canonical-bounded-dossier-snapshot"
@@ -9780,10 +9833,10 @@
           "label": "Besançon local missal witnesses"
         }
       ],
-      "documented_stage_count": 7,
+      "documented_stage_count": 8,
       "provisional_stage_count": 0,
       "text_coverage_counts": {
-        "not-transcribed": 7
+        "not-transcribed": 8
       },
       "status": "canonical-bounded-dossier-snapshot"
     }
@@ -13320,11 +13373,8 @@
       "candidate_ids": [
         "roman-1884",
         "roman-1900",
-        "roman-ordo-1965",
-        "roman-holy-week-1965",
         "roman-concelebration-1965",
-        "roman-variationes-1967",
-        "roman-preces-1968",
+        "roman-holy-week-1965",
         "roman-modern-001",
         "roman-modern-002",
         "roman-modern-003",
@@ -13389,6 +13439,8 @@
         "roman-modern-069",
         "roman-modern-070",
         "roman-modern-071",
+        "roman-modern-1635-vatican-witness-lead",
+        "roman-modern-1635-vatican-gb-xnc4a07qpqqc",
         "roman-modern-extra-001",
         "roman-modern-extra-002",
         "roman-modern-extra-003",
@@ -13432,8 +13484,10 @@
         "roman-modern-extra-044",
         "roman-modern-extra-045",
         "roman-modern-extra-046",
-        "roman-modern-1635-vatican-witness-lead",
-        "roman-preces-1968-november-declaration"
+        "roman-ordo-1965",
+        "roman-preces-1968",
+        "roman-preces-1968-november-declaration",
+        "roman-variationes-1967"
       ],
       "proposed_tradition_ids": [
         "roman-general"
@@ -13451,6 +13505,8 @@
           "roman-stages-1860-imperial-prayers",
           "roman-stages-1877-corrections",
           "roman-stages-1920",
+          "roman-stages-1951-vigil",
+          "roman-stages-1952-vigil",
           "roman-stages-1956-holyweek",
           "roman-stages-1962-december",
           "roman-stages-1962-june",
@@ -13472,7 +13528,7 @@
         "provisional_stage_ids": [],
         "text_coverage_counts": {
           "partial": 1,
-          "not-transcribed": 20
+          "not-transcribed": 22
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -14405,6 +14461,14 @@
           "status": "inventory-witness-candidate-not-a-stage"
         },
         {
+          "candidate_id": "roman-modern-1635-vatican-gb-xnc4a07qpqqc",
+          "label": "Missale Romanum, Rome: Ex Typographia Vaticana 1635, Urbanian recognition (Google Books XNC4a07qPqQC)",
+          "start_year": 1635,
+          "end_year": 1635,
+          "date_role": "imprint-and-colophon-year; witness to the 1634 approval-stage recension",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
           "candidate_id": "roman-preces-1968-november-declaration",
           "label": "Consilium declaration concerning preparation of the new Eucharistic Prayer translations",
           "start_year": 1968,
@@ -14415,7 +14479,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Request reproductions of the surviving preliminaries and any colophon for UB Alma MMS 991002308499706708, whose probable Rome imprint is dated [1634?] and whose title page and Q1 are missing; seek an independently dated complete Rome copy. Obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station.",
+      "missing_stage_chain": "Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Batch 4 inspected an original Rome Vatican 1635 Urbanian printing (Google XNC4a07qPqQC: title, Si quid est, Congregation of Rites decree extract, register, colophon) and now witnesses roman-stages-1634; no 1634-dated imprint has been inspected and its body text is uncollated. Request reproductions of the surviving preliminaries and any colophon for UB Alma MMS 991002308499706708, whose probable Rome imprint is dated [1634?] and whose title page and Q1 are missing; seek an independently dated complete Rome copy. Obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station.",
       "next_sources": {
         "inventory_source_ids": [
           "notitiae-book-bibliography-1985",
@@ -14426,6 +14490,7 @@
           "roman-modern-1634-ub-alma",
           "roman-modern-1635-rusca-l77",
           "roman-modern-1635-asachiana-iasi",
+          "roman-batch4-1635-vatican-gb-xnc4a07qpqqc",
           "roman-next-1951-original-tpv",
           "roman-next-1951-aas-original",
           "roman-next-1955-march-aas-images",
@@ -26211,14 +26276,16 @@
           "ocso-next"
         ],
         "stage_ids": [
+          "ocso-next:ordo-particularities-1971",
+          "ocso-next:calendar1972",
           "ocso-next:proper1975",
           "ocso-next:shared-book1983",
           "ocso-next:gabriella1983-component"
         ],
-        "scope": "Branch-specific confirmations, one related OCist publication and a bounded proper/calendar addition; no whole-book or substantive-succession claim.",
+        "scope": "Branch-specific confirmations (1971 Ordo particularities shared with OCist, 1972 calendar, 1975 proper), one related OCist publication and a bounded proper/calendar addition; no whole-book or substantive-succession claim.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 3
+          "not-transcribed": 5
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -26263,7 +26330,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "The distinct OCSO branch's 1892–1971 book sequence, approvals and named-house reception remain an explicit unresolved interval; obtain original post-1892 chapter records and exact preconciliar books without backdating OCSO identity. Acquire the original signed CD 83/75 and its attached Latin prayers/reading indications, OCist CD 452/77, and DLI 83442's Rome 1983 proper plus lectionary (128, 96 pages). Collate their branch scopes and relationship; do not turn the current overview's reported 1983 approval into a general decree date against the 1975/1977 confirmations and 1983 publication evidence. Authenticate and render the undated official Latin DOC and determine whether it derives from the printed Lectionarium. Original later-addition decrees and actual use of exact editions remain open. Vitorchiano's 2014 Mass celebration supplies bounded house reception of Maria Gabriella's observance, not use of a named Latin book or universal reception. Medieval Cistercian witnesses remain shared ancestry, not medieval OCSO institutional identity.",
+      "missing_stage_chain": "The distinct OCSO branch's 1892–1971 book sequence, approvals and named-house reception remain an explicit unresolved interval; obtain original post-1892 chapter records and exact preconciliar books without backdating OCSO identity. Acquire the original signed CD 83/75 and its attached Latin prayers/reading indications, OCist CD 452/77, and DLI 83442's Rome 1983 proper plus lectionary (128, 96 pages). Collate their branch scopes and relationship; do not turn the current overview's reported 1983 approval into a general decree date against the 1975/1977 confirmations and 1983 publication evidence. Authenticate and render the undated official Latin DOC and determine whether it derives from the printed Lectionarium. Original later-addition decrees and actual use of exact editions remain open. Vitorchiano's 2014 Mass celebration supplies bounded house reception of Maria Gabriella's observance, not use of a named Latin book or universal reception. Medieval Cistercian witnesses remain shared ancestry, not medieval OCSO institutional identity. Batch 4 adds the published 8 June 1971 Ordo particularities and 31 August 1972 calendar confirmations from Notitiae, and 1966–1969 confirmations of OCSO vernacular proper texts that presuppose Latin Missale cisterciense and Supplementum books still unidentified.",
       "next_sources": {
         "inventory_source_ids": [
           "monastic-src-ocso-official-liturgy",
@@ -26767,6 +26834,7 @@
       "inventory_status": "selected-witnesses-and-scoped-textual-relationships-documented",
       "candidate_ids": [
         "italian-aosta-1617",
+        "italian-aosta-cathedral-cod21-c1500",
         "italian-aosta-1733"
       ],
       "proposed_tradition_ids": [],
@@ -26777,13 +26845,14 @@
           "italian-local-round2"
         ],
         "stage_ids": [
+          "italian-local-round2:aosta-cod21-c1500",
           "italian-local-round2:italian-aosta-1617",
           "italian-local-round2:italian-aosta-1733"
         ],
         "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 2
+          "not-transcribed": 3
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -26801,6 +26870,14 @@
           "status": "inventory-witness-candidate-not-a-stage"
         },
         {
+          "candidate_id": "italian-aosta-cathedral-cod21-c1500",
+          "label": "Aosta, Biblioteca del Capitolo cod. 21 (Amiet cod. S), c. 1500",
+          "start_year": 1490,
+          "end_year": 1510,
+          "date_role": "manuscript-dating-circa-1500",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
           "candidate_id": "italian-aosta-1733",
           "label": "Missale Augustense, 1733 Aosta printing",
           "start_year": 1733,
@@ -26811,7 +26888,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Compare the 1617 and 1733 books against manuscript subuses and inspect original title, approbation and complete component scope.",
+      "missing_stage_chain": "Amiet's study now documents the local Ordo of cathedral cod. S (c. 1500) and its replacement by the Pian Ordo Missae in the 1617 printed missal. Read the 1617 decree and book, compare 1617 and 1733 calendars and propers with the manuscript subuses, and locate the 1828 instrument ending the rite.",
       "next_sources": {
         "inventory_source_ids": [
           "italian-usuarium-aosta",
@@ -32093,16 +32170,22 @@
       "label": "Tarragona local Mass-book catalogue witnesses",
       "coverage_unit": "trajectory-or-discovery-bucket",
       "proposed_tradition_ids": [],
-      "canonical_tradition_ids": [],
+      "canonical_tradition_ids": [
+        "historic-tarragona-use"
+      ],
       "mapping_strength": "catalogue-witness-links-only-no-canonical-stage-assigned",
       "dossier_coverage": {
         "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
+        "dossier_ids": [
+          "iberian-historic-batch4"
+        ],
         "stage_ids": [],
         "provisional_stage_ids": [],
         "text_coverage_counts": {},
-        "gap_ids": [],
-        "scope": "Exact bounded catalogue witnesses; no original-book stage sequence has been established for this route.",
+        "gap_ids": [
+          "iberian-historic-batch4:tarragona-originals"
+        ],
+        "scope": "Exact bounded catalogue witnesses; bounded batch-4 searches established no inspectable original-book stage for this route.",
         "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
         "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
       },
@@ -32135,7 +32218,7 @@
       "candidate_ids": [
         "iberian-tarragona-1550"
       ],
-      "missing_stage_chain": "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage."
+      "missing_stage_chain": "The 1499 Rosembach missal (GW M24774) is digitized at BVPB 397105 but was unreachable (HTTP 429) on 2026-10-21; the 1550 Lyon printing is uninspected. Inspect title, colophon and archiepiscopal authority before any stage."
     },
     {
       "id": "historic-tarazona-use",
@@ -32212,16 +32295,22 @@
       "label": "La Seu D'Urgell local Mass-book catalogue witnesses",
       "coverage_unit": "trajectory-or-discovery-bucket",
       "proposed_tradition_ids": [],
-      "canonical_tradition_ids": [],
+      "canonical_tradition_ids": [
+        "historic-urgell-use"
+      ],
       "mapping_strength": "catalogue-witness-links-only-no-canonical-stage-assigned",
       "dossier_coverage": {
         "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
+        "dossier_ids": [
+          "iberian-historic-batch4"
+        ],
         "stage_ids": [],
         "provisional_stage_ids": [],
         "text_coverage_counts": {},
-        "gap_ids": [],
-        "scope": "Exact bounded catalogue witnesses; no original-book stage sequence has been established for this route.",
+        "gap_ids": [
+          "iberian-historic-batch4:urgell-originals"
+        ],
+        "scope": "Exact bounded catalogue witnesses; bounded batch-4 searches established no inspectable original-book stage for this route.",
         "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
         "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
       },
@@ -32265,25 +32354,36 @@
         "iberian-urgell-1536",
         "iberian-urgell-1557"
       ],
-      "missing_stage_chain": "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage."
+      "missing_stage_chain": "GW records no Urgell incunable and bounded CCPB, MDC, Europeana and Zaguán searches found no digitization; inspect the 1536 and 1557 printings and the Seu d'Urgell archive's 1509 and 1527 missals."
     },
     {
       "id": "historic-valencia-use",
       "label": "València local Mass-book catalogue witnesses",
       "coverage_unit": "trajectory-or-discovery-bucket",
       "proposed_tradition_ids": [],
-      "canonical_tradition_ids": [],
-      "mapping_strength": "catalogue-witness-links-only-no-canonical-stage-assigned",
+      "canonical_tradition_ids": [
+        "historic-valencia-use"
+      ],
+      "mapping_strength": "selected-bounded-publication-attestation-no-recension-or-actual-reception-inference",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "iberian-historic-batch4"
+        ],
+        "stage_ids": [
+          "iberian-historic-batch4:valencia-1509",
+          "iberian-historic-batch4:valencia-1528"
+        ],
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
-        "gap_ids": [],
-        "scope": "Exact bounded catalogue witnesses; no original-book stage sequence has been established for this route.",
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
+        "gap_ids": [
+          "iberian-historic-batch4:valencia-sequence"
+        ],
+        "scope": "Selected original-book publication states with title, calendar or holy-day list and colophon inspected, and one bounded calendar change; not a complete sequence, recension or text.",
         "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
-        "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
+        "date_limit": "The selected stages date their stated printing events; date bounds express uncertainty in that event, not duration of use. Candidate positioning follows only the inventory's supplied numeric chronology."
       },
       "witnesses": [
         {
@@ -32307,11 +32407,15 @@
       "component_coverage": "incomplete-not-certified",
       "next_sources": {
         "inventory_source_ids": [
+          "iberian-batch4-valencia-1509-roderic",
+          "iberian-batch4-valencia-1528-roderic",
           "iberian-usuarium-7625",
           "iberian-usuarium-6999",
           "iberian-usuarium-7626"
         ],
         "source_urls": [
+          "https://hdl.handle.net/10550/7813",
+          "https://hdl.handle.net/10550/52560",
           "https://usuarium.elte.hu/book/7625/view",
           "https://usuarium.elte.hu/book/6999/view",
           "https://usuarium.elte.hu/book/7626/view"
@@ -32325,27 +32429,54 @@
         "iberian-valencia-1509",
         "iberian-valencia-1528"
       ],
-      "missing_stage_chain": "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage."
+      "missing_stage_chain": "Valencia 1509 and 1528 states are documented with a bounded January-calendar change. The 1492 incunable (BNE copy behind a security challenge), episcopal authority, later printings, Roman adoption and reception remain open."
     },
     {
       "id": "historic-zaragoza-use",
       "label": "Zaragoza local Mass-book catalogue witnesses",
       "coverage_unit": "trajectory-or-discovery-bucket",
       "proposed_tradition_ids": [],
-      "canonical_tradition_ids": [],
-      "mapping_strength": "catalogue-witness-links-only-no-canonical-stage-assigned",
+      "canonical_tradition_ids": [
+        "historic-zaragoza-use"
+      ],
+      "mapping_strength": "selected-bounded-publication-attestation-no-recension-or-actual-reception-inference",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "iberian-historic-batch4"
+        ],
+        "stage_ids": [
+          "iberian-historic-batch4:zaragoza-1498",
+          "iberian-historic-batch4:zaragoza-1522"
+        ],
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
-        "gap_ids": [],
-        "scope": "Exact bounded catalogue witnesses; no original-book stage sequence has been established for this route.",
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
+        "gap_ids": [
+          "iberian-historic-batch4:zaragoza-sequence"
+        ],
+        "scope": "Selected original-book publication states with title, calendar or holy-day list and colophon inspected, and one bounded calendar change; not a complete sequence, recension or text.",
         "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
-        "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
+        "date_limit": "The selected stages date their stated printing events; date bounds express uncertainty in that event, not duration of use. Candidate positioning follows only the inventory's supplied numeric chronology."
       },
       "witnesses": [
+        {
+          "candidate_id": "iberian-zaragoza-1498",
+          "label": "Missale secundum morem ecclesie Cesaraugustane, Zaragoza: Hurus 1498 (Toledo Inc. 248)",
+          "start_year": 1498,
+          "end_year": 1498,
+          "date_role": "printing-completion-date-from-colophon",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "iberian-zaragoza-buz-h-1-152",
+          "label": "Missale Cesaraugustanum, Coci, colophon 1522 (Zaragoza H-1-152)",
+          "start_year": 1522,
+          "end_year": 1540,
+          "date_role": "colophon-1522; holding-catalogue-1540; unresolved",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
         {
           "candidate_id": "iberian-zaragoza-1522",
           "label": "Missale Caesaraugustanum",
@@ -32383,12 +32514,16 @@
       "component_coverage": "incomplete-not-certified",
       "next_sources": {
         "inventory_source_ids": [
+          "iberian-batch4-zaragoza-1498-toledo",
+          "iberian-batch4-zaragoza-buz-h-1-152",
           "iberian-usuarium-6995",
           "iberian-usuarium-6996",
           "iberian-usuarium-6997",
           "iberian-usuarium-6998"
         ],
         "source_urls": [
+          "https://patrimoniodigital.castillalamancha.es/bidicam/es/consulta/registro.do?id=12263",
+          "https://zaguan.unizar.es/record/74837",
           "https://usuarium.elte.hu/book/6995/view",
           "https://usuarium.elte.hu/book/6996/view",
           "https://usuarium.elte.hu/book/6997/view",
@@ -32400,12 +32535,14 @@
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
       "inventory_status": "bounded-assigned-amiet-catalogue-witness-census",
       "candidate_ids": [
+        "iberian-zaragoza-1498",
+        "iberian-zaragoza-buz-h-1-152",
         "iberian-zaragoza-1522",
         "iberian-zaragoza-1531",
         "iberian-zaragoza-1540",
         "iberian-zaragoza-1598"
       ],
-      "missing_stage_chain": "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage."
+      "missing_stage_chain": "Zaragoza 1498 and 1522 states are documented with one holy-day-list change. The defective 1485 copy lacks title and colophon; the 1522/1540 dating of H-1-152 and the 1531, 1540, 1552 and 1598 printings, Roman adoption and reception remain open."
     },
     {
       "id": "historic-huesca-use",
@@ -32953,16 +33090,17 @@
           "western-originals-batch3"
         ],
         "stage_ids": [
-          "western-originals-batch3:liege-1499"
+          "western-originals-batch3:liege-1499",
+          "western-originals-batch3:liege-1540"
         ],
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 1
+          "not-transcribed": 2
         },
         "gap_ids": [
           "western-originals-batch3:liege-text-and-reception"
         ],
-        "scope": "A physically defective surviving 1499 Liège-use missal copy, with original local-use incipit and printing colophon directly inspected. This selects one bounded publication attestation; it does not certify a full original book, a distinct recension or complete text.",
+        "scope": "A physically defective 1499 Liège-use copy (incipit and colophon inspected; other ULiège copies show the a1 title leaf) and a 22 July 1540 Paris issue with title, calendar and appended Masses inspected. These are bounded publication attestations, not a full original book, a distinct recension or complete text.",
         "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership. The surviving book declares Liège use; present BSB holding is not evidence of historical use there, and receipt by any particular Liège church is unestablished.",
         "date_limit": "The selected stage dates its stated publication event. Printing, a separately dated or undated commissioning statement, first actual use and duration of use remain distinct. Candidate positioning follows only the inventory’s supplied numeric chronology."
       },
@@ -33048,6 +33186,14 @@
           "status": "inventory-witness-candidate-not-a-stage"
         },
         {
+          "candidate_id": "liege-1540-uliege-r00424d",
+          "label": "Missale ad usum insignis ecclesie Leodiensis, Paris 22 July 1540 (ULiège R00424D)",
+          "start_year": 1540,
+          "end_year": 1540,
+          "date_role": "printing-date-from-title-imprint",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
           "candidate_id": "amiet-nonfrance-liege-1552-7225",
           "label": "Missale ad usum insignis ecclesiae Leodiensis",
           "start_year": 1552,
@@ -33073,7 +33219,8 @@
           "amiet-nonfrance-book-7225",
           "liege-1499-bsb-original-selected-images",
           "liege-1499-bsb-catalogue-rights-evidence",
-          "liege-1499-usuarium-1-discovery"
+          "liege-1499-usuarium-1-discovery",
+          "liege-batch4-uliege-r00424d-1540"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/7213/view",
@@ -33089,7 +33236,8 @@
           "https://usuarium.elte.hu/book/7225/view",
           "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
           "https://inkunabeln.digitale-sammlungen.de/Exemplar_M-437,1.html",
-          "https://usuarium.elte.hu/book/1/view"
+          "https://usuarium.elte.hu/book/1/view",
+          "https://hdl.handle.net/2268.1/14241"
         ],
         "inspection": "Owning accepted catalogue review and source metadata reconciled only; this audit adds no external inspection event.",
         "target": "Identify and inspect the original copies, title pages, imprints, gatherings and Mass text; reconcile printers and duplicate catalogue records before counting printings or versions. Approval, local reception and any substantive revision remain unestablished. Current owning route limit: Identify and inspect the original copies, title pages, imprints, gatherings and Mass text; reconcile printers and duplicate catalogue records before counting printings or versions. Approval, local reception and any substantive revision remain unestablished.\n\nOriginal-source update 2026-10-21 UTC: selected 1499 BSB original images now identify the incipit, colophon and bounded structure; the whole volume, uninspected title-page contents, complete text, other listed printing candidates, textual differences, approval and reception remain open. No candidate membership is removed or duplicated."
@@ -33107,9 +33255,10 @@
         "amiet-nonfrance-liege-1523-7221",
         "amiet-nonfrance-liege-1527-7222",
         "amiet-nonfrance-liege-1540-7223",
+        "liege-1540-uliege-r00424d",
         "amiet-nonfrance-liege-1552-7225"
       ],
-      "missing_stage_chain": "Identify and inspect the original copies, title pages, imprints, gatherings and Mass text; reconcile printers and duplicate catalogue records before counting printings or versions. Approval, local reception and any substantive revision remain unestablished. Batch 3 selected-state gap: Unacquired original pages and a complete authenticated delivery; lost text and physical copy extent; complete native text, predecessor comparison, commissioning and local reception."
+      "missing_stage_chain": "Identify and inspect the original copies, title pages, imprints, gatherings and Mass text; reconcile printers and duplicate catalogue records before counting printings or versions. Approval, local reception and any substantive revision remain unestablished. Batch 4 selected-state gap: Content of the BSB copy's leaf a1, which its catalogue reports missing (other ULiège copies carry a title leaf and movable-feast table there); complete native text and physical extent of the 1499 edition; collation of 1499 with the 1500–1527 editions and both 1540 issues; whether the 1540 appended Masses were new; commissioning and local reception."
     }
   ],
   "component_profiles": {
@@ -33707,8 +33856,8 @@
       "This audit creates no stages, transitions, source inspections, whole-book text or ancestry permissions; final broader gates remain separate"
     ],
     "coverage_status_counts": {
-      "no-new-researched-stage-sequence": 73,
-      "selected-stages-available": 98,
+      "no-new-researched-stage-sequence": 71,
+      "selected-stages-available": 100,
       "related-dossier-only-local-reception-unresearched": 3
     },
     "limit": "Dossier presence is a canonical file snapshot. Exact tradition and stage references resolve, but no count is a completeness score or proof of local reception.",
