@@ -215,6 +215,36 @@
       "checked_on": "2026-10-20",
       "status": "inspected",
       "limitations": "No original book pages, printer, prayers, approval or use record inspected. Usuarium 7461 is a possible duplicate bibliographic representation, not an independently established textual version."
+    },
+    {
+      "id": "french-local-round2-cambrai:liege-xva44",
+      "title": "Université de Liège, XVA 44, Missale Cameracense, Paris: Johann Higman for Johannes de Campis, February 1495/96 (DONum 2268.1/6923)",
+      "url": "https://donum.uliege.be/handle/2268.1/6923",
+      "kind": "primary-book",
+      "inspection": "Page images from the DONum viewer (570 images) viewed 2026-10-21: image 2 (manuscript flyleaf with ownership and contents list), image 3 (January calendar), image 566 (printed colophon and manuscript purchase note).",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Selected images only; body not collated. The DONum PDF link serves a FlowPaper viewer whose individual page images were fetched."
+    },
+    {
+      "id": "french-local-round2-uzes:gw-m24821",
+      "title": "Gesamtkatalog der Wiegendrucke M24821, Missale Ucetiense, Lyon 1495",
+      "url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M24821.htm",
+      "kind": "institutional-catalogue",
+      "inspection": "Record read 2026-10-21: Lyon, Michel Topié and Johann Numeister, 5 August 1495, at the instance of Bishop Nicolaus Maugras of Uzès; the note says the arms at the end and an acrostic point to him; copies BL IB.41819 and Nîmes archives.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Bibliographic attribution; the arms and acrostic were not viewed. The BL digitisation was not reached."
+    },
+    {
+      "id": "french-local-round2-paris:gw-m24596",
+      "title": "Gesamtkatalog der Wiegendrucke M24596, Missale Parisiense, Paris: Du Pré and Huym 1481",
+      "url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M24596.htm",
+      "kind": "institutional-catalogue",
+      "inspection": "Record read 2026-10-21: 22.IX.1481; under 'Zur Datierung' it cites Ursula Baurmeister, '1481: A false landmark', in Incunabula ... presented to Lotte Hellinga (1999), pp. 469–491; copies Oxford, Paris BN (2) and BSG OE XV 228.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "The cited dating study was not read; its argument is not summarised here."
     }
   ],
   "stages": [
@@ -245,7 +275,7 @@
           "claim": "Original folios identify bounded Maundy Thursday prayer/rubric material; the colophon dates the Dupré and Huym printing to 22 September 1481."
         }
       ],
-      "limitations": "The scan and selected leaves do not certify full physical or textual completeness; 1685, 1705 and 1738 originals are uncollated.",
+      "limitations": "The scan and selected leaves do not certify full physical or textual completeness; 1685, 1705 and 1738 originals are uncollated. GW M24596 cites a published dating study (Baurmeister 1999) under \"Zur Datierung\"; it has not been read, so the colophon year is kept as printed and flagged.",
       "reception": "The local-use designation identifies the intended book tradition; actual adoption by every church and any continuing-use interval have not been established."
     },
     {
@@ -344,6 +374,11 @@
           "source_id": "french-local-round2-uzes:source",
           "locus": "Book 663 title and identity lines 11–23; contents pp. 1, 15, 127–165, 273–470",
           "claim": "The catalogue identifies the Uzès-use 1495 print, with calendar, Mass cycles, prefaces, Canon, sequentional and an appended priestly Mass order."
+        },
+        {
+          "source_id": "french-local-round2-uzes:gw-m24821",
+          "locus": "GW M24821 heading and Anm.",
+          "claim": "GW dates the print to 5 August 1495 and attributes its commissioning to Bishop Nicolaus Maugras from the arms and an acrostic; it lists BL IB.41819, matching the Usuarium copy."
         }
       ],
       "limitations": "Usuarium lists BL IB.41819 while the earlier Legg-based inventory cites IB.41877 for the extracted Ordo; copy identity must be reconciled before treating the records as one physical witness.",
@@ -381,6 +416,36 @@
       ],
       "limitations": "No original leaf readings, predecessor comparison, normative approval or reception interval is established.",
       "reception": "The local-use designation identifies the intended book tradition; actual adoption by every church and any continuing-use interval have not been established."
+    },
+    {
+      "id": "french-local-round2-cambrai:book-1496",
+      "tradition_id": "french-local-round2-cambrai",
+      "label": "1496 Missale Cameracense, Higman for de Campis",
+      "date_label": "Penultimate day of February 1495 by the colophon (old style; 1496 new style)",
+      "start_year": 1496,
+      "end_year": 1496,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "One Paris print for Cambrai use; colophon and January calendar inspected.",
+      "components": [
+        "calendar",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:french-cambrai-1496-higman-liege-xva44"
+      ],
+      "witness_label": "Liège University Library XVA 44",
+      "summary": "The colophon states that this missal according to the use of the church of Cambrai was printed at Paris by Johann Higman at the expense of Johannes de Campis, with that church's customs and observances added, completed on the penultimate day of February 1495. The calendar carries Cambrai entries with folio references.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "french-local-round2-cambrai:liege-xva44",
+          "locus": "DONum images 3 (January calendar) and 566 (colophon)",
+          "claim": "Colophon and calendar inspected."
+        }
+      ],
+      "limitations": "The colophon year 1495 is old style (the Paris year then began at Easter), so the penultimate day of February 1495 falls in February 1496 by modern reckoning; GW gives 27/28 February 1495/96. The 1496 bounds express this conversion only, not a period of use. Not compared with the 1507 Lyon-held print, which was unavailable.",
+      "reception": "A manuscript note records purchase by an abbot named Gerard; diocesan use is not dated."
     },
     {
       "id": "french-local-round2-cambrai:book",
@@ -619,8 +684,8 @@
       "id": "french-local-round2-paris:sequence-gap",
       "tradition_id": "french-local-round2-paris",
       "period": "1481 through the identified 1738 edition and later reception",
-      "missing": "Original 1685, 1705 and 1738 prayer bodies and rubrics, first introduction of postcommunion 1060, component-by-component comparison, legal acts and local uptake.",
-      "next_source": "Resolve access to Gallica BnF B-178 and compare original Paris missals of 1685 and 1705 with the 1481 BSG print at Maundy Thursday and other named components.",
+      "missing": "Original 1685, 1705 and 1738 prayer bodies and rubrics, first introduction of postcommunion 1060, component-by-component comparison, legal acts and local uptake. GW M24596 flags a dating discussion of the 1481 colophon (Baurmeister 1999) that has not been read. On 2026-10-21 Gallica returned HTTP 403 (Cloudflare), archive.org, Usuarium and HathiTrust were unreachable or refused, Google Books returned HTTP 429, and BM Lyon Numelyo showed a maintenance page; no MDZ copy was found.",
+      "next_source": "Baurmeister, \"1481: A false landmark\" (1999); non-Gallica copies of the 1685 (Harlay), 1705 and 1738 (Vintimille) Paris missals; the 1489/90 Muneratus edition (GW M24597) and 1497 Gering-Remboldt edition (GW M24606) for the incunable sequence. Earlier lead retained: Gallica BnF B-178 (refused 2026-10-21); compare the 1685 and 1705 missals with the 1481 BSG print at Maundy Thursday and other named components.",
       "consequence": "Two book states are recorded without a reform edge, a first-composition date, text inheritance or duration of use."
     },
     {
@@ -628,7 +693,7 @@
       "tradition_id": "french-local-round2-rouen",
       "period": "1495 through the catalogue-identified 1728 printing and later reception",
       "missing": "Original 1728 text and approval, 1495-to-1728 component collation, relation of Usuarium 7090 to 7461, and dated local uptake.",
-      "next_source": "Inspect BM Lyon 20390 and resolve Amiet 1364 records 7090/7461 against physical copies; collate with BSG OEXV 664 RES and intervening Rouen editions.",
+      "next_source": "BM Lyon 20390 once Numelyo returns; Rouen 1491 Du Pré (GW M24676, Rouen BM Inc g 33) and 1499/1500 Morin for Richard (GW M24678); BSG OEXV 664 when archive.org is reachable. On 2026-10-21 Gallica returned HTTP 403 (Cloudflare), archive.org, Usuarium and HathiTrust were unreachable or refused, Google Books returned HTTP 429, and BM Lyon Numelyo showed a maintenance page; no MDZ copy was found. Earlier lead retained: resolve Amiet 1364 records 7090/7461 against physical copies.",
       "consequence": "The two book witnesses are shown as separate publication attestations, with no inferred substantive revision or second 1728 textual state."
     },
     {
@@ -636,7 +701,7 @@
       "tradition_id": "french-local-round2-langres",
       "period": "Before and after this witnessed printing",
       "missing": "Original-book collation, exact predecessor and successor changes, legal acts and local reception dates.",
-      "next_source": "Inspect BnF B-27888 original title and added-feast loci; obtain the circa 1492 Langres book and compare the preparation, Mass prayers and sequences.",
+      "next_source": "BnF B-27888 (Gallica refused 2026-10-21); the circa 1491 Du Pré Langres print (GW M24481; BL IB.39833, Chaumont, Morgan) for the predecessor comparison. Earlier lead retained: inspect the B-27888 title and added-feast loci, and compare the preparation, Mass prayers and sequences.",
       "consequence": "No substantive revision, recension branch, direct ancestry, text inheritance or duration of use is asserted."
     },
     {
@@ -644,7 +709,7 @@
       "tradition_id": "french-local-round2-uzes",
       "period": "Before and after this witnessed printing",
       "missing": "Original-book collation, exact predecessor and successor changes, legal acts and local reception dates.",
-      "next_source": "Compare the original BL holdings and Legg’s edited Ordo with the 1495 volume; inspect later Uzès witnesses and exact ritual variants.",
+      "next_source": "BL IB.41819 digitisation (listed by GW M24821) for the colophon, arms and acrostic; Nîmes archives copy; Legg’s edited Ordo. Earlier lead retained: inspect later Uzès witnesses and exact ritual variants.",
       "consequence": "No substantive revision, recension branch, direct ancestry, text inheritance or duration of use is asserted."
     },
     {
@@ -652,15 +717,15 @@
       "tradition_id": "french-local-round2-bourges",
       "period": "Before and after this witnessed printing",
       "missing": "Original-book collation, exact predecessor and successor changes, legal acts and local reception dates.",
-      "next_source": "Inspect BM Bourges Bya 20158 res original and compare earlier and later Bourges Mass books at named prayer and rubric loci.",
+      "next_source": "BM Bourges Bya 20158 res; earlier Bourges prints of 1493 (Paris, Higman; GW M24282, Bourges BM) and 1500 (Lyon, Maillet; GW M24281) for predecessor comparison. Earlier lead retained: compare at named prayer and rubric loci.",
       "consequence": "No substantive revision, recension branch, direct ancestry, text inheritance or duration of use is asserted."
     },
     {
       "id": "french-local-round2-cambrai:sequence-gap",
       "tradition_id": "french-local-round2-cambrai",
-      "period": "Before and after this witnessed printing",
-      "missing": "Original-book collation, exact predecessor and successor changes, legal acts and local reception dates.",
-      "next_source": "Inspect the Lyon copy, confirm its colophon and compare its Mass formularies with earlier and later Cambrai books.",
+      "period": "1496–1507 and later",
+      "missing": "A dated February 1496 Paris print is now primary-evidenced; the 1507 Lyon copy, comparison of the two prints, earlier manuscripts and reception remain.",
+      "next_source": "BM Lyon SJ Inc. 317 (1507) once Numelyo returns; DONum XVA 44 temporal and sanctoral; Cambrai manuscripts BM Cambrai 181, 183 and 234.",
       "consequence": "No substantive revision, recension branch, direct ancestry, text inheritance or duration of use is asserted."
     },
     {
@@ -668,7 +733,7 @@
       "tradition_id": "french-local-round2-chartres",
       "period": "Before and after this witnessed printing",
       "missing": "Original-book collation, exact predecessor and successor changes, legal acts and local reception dates.",
-      "next_source": "Inspect the BnF Arsenal copy and compare the Canon, Mass order, calendar and Holy Week sections with identified Chartres manuscripts.",
+      "next_source": "Gallica copies of the 1482 Chartres print (GW M24310, bpt6k15017730) and the 1490 Arsenal copy (bpt6k857660p), both refused with HTTP 403 on 2026-10-21; Chartres manuscripts. Earlier lead retained: compare the Canon, Mass order, calendar and Holy Week sections with identified Chartres manuscripts.",
       "consequence": "No substantive revision, recension branch, direct ancestry, text inheritance or duration of use is asserted."
     },
     {
@@ -676,7 +741,7 @@
       "tradition_id": "french-local-round2-laon",
       "period": "Before and after this witnessed printing",
       "missing": "Original-book collation, exact predecessor and successor changes, legal acts and local reception dates.",
-      "next_source": "Inspect BnF FOL-T-689 title, decree and core Mass sections, then compare earlier and later Laon witnesses.",
+      "next_source": "Gallica copy of the 1491 Du Pré Laon print (GW M2445410, bpt6k8728863m; refused with HTTP 403 on 2026-10-21); Laon BM copy; later Laon witnesses. Earlier lead retained: inspect the Arsenal FOL-T-689 copy (listed by GW M2445410 for the 1491 print) at its title, decree and core Mass sections.",
       "consequence": "No substantive revision, recension branch, direct ancestry, text inheritance or duration of use is asserted."
     },
     {
@@ -684,7 +749,7 @@
       "tradition_id": "french-local-round2-reims",
       "period": "Before and after this witnessed printing",
       "missing": "Original-book collation, exact predecessor and successor changes, legal acts and local reception dates.",
-      "next_source": "Inspect the BnF print and its directions, then collate against an identified earlier Reims missal and later editions.",
+      "next_source": "The 1491 Du Pré Reims print (GW M24673; Angers BU and Reims BM) as the identified predecessor of 1505; BnF B-27774 when Gallica is reachable. Earlier lead retained: inspect the BnF print's directions and collate with later editions.",
       "consequence": "No substantive revision, recension branch, direct ancestry, text inheritance or duration of use is asserted."
     },
     {
