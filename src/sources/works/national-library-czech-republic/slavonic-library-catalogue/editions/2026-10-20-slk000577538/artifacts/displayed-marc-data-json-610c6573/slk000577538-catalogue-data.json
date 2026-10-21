@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "record_type": "displayed-marc-catalogue-data-transport",
+  "record_id": "SLK000577538",
+  "source_url": "https://aleph.nkp.cz/F/?func=direct&doc_number=000577538&local_base=SLK&format=001",
+  "source_parent": {
+    "sha256": "c7ed691158626b00ce7db5f667053cde345c646f4149215911c934930e1c3e88",
+    "byte_size": 24479
+  },
+  "retrieved_on": "2026-10-20",
+  "license": "CC0-1.0",
+  "extent": "All 34 ordered displayed catalogue fields, LDR through SYS, including repeated 562 and 650 fields and FMT/PSP/SYS local fields; not a machine-exported MARC21 record.",
+  "transformation": "Extract every two-cell data row from the complete HTML table id=record; decode HTML character entities, strip display markup and collapse HTML layout whitespace to single spaces inside each cell; preserve order, displayed field/indicator labels and literal subfield separators. No correction of catalogue text or missing-leaf arithmetic. Excludes navigation, software, JavaScript, catalogue wrapper, CSS, footer and session URLs.",
+  "fields": [
+    {
+      "displayed_tag": "LDR",
+      "value": "-----nam-a22------i-4500"
+    },
+    {
+      "displayed_tag": "FMT",
+      "value": "BK"
+    },
+    {
+      "displayed_tag": "001",
+      "value": "slk20160577538"
+    },
+    {
+      "displayed_tag": "003",
+      "value": "CZ-PrNK"
+    },
+    {
+      "displayed_tag": "005",
+      "value": "20160222141544.0"
+    },
+    {
+      "displayed_tag": "007",
+      "value": "ta"
+    },
+    {
+      "displayed_tag": "008",
+      "value": "160208s1646----un-a---e-f----000-0-chu--"
+    },
+    {
+      "displayed_tag": "040",
+      "value": "|a ABA004 |b cze |e rda"
+    },
+    {
+      "displayed_tag": "072 7",
+      "value": "|a 27-5 |x Liturgie. Křesťanské umění a symbolika. Duchovní život |2 Konspekt |9 5"
+    },
+    {
+      "displayed_tag": "080",
+      "value": "|a 27-282 |2 MRF"
+    },
+    {
+      "displayed_tag": "080",
+      "value": "|a 27-53/-54 |2 MRF"
+    },
+    {
+      "displayed_tag": "080",
+      "value": "|a 271.2-528.8 |2 MRF"
+    },
+    {
+      "displayed_tag": "080",
+      "value": "|a (035) |2 MRF"
+    },
+    {
+      "displayed_tag": "24500",
+      "value": "|a [Služebnik]"
+    },
+    {
+      "displayed_tag": "24633",
+      "value": "|a [Leiturgiarion]"
+    },
+    {
+      "displayed_tag": "264 1",
+      "value": "|a [Lvov] : |b [typ. M. Sljozka], |c [1646]"
+    },
+    {
+      "displayed_tag": "300",
+      "value": "|a 305 zachovalých folií : |b ilustrace ; |c 21 cm"
+    },
+    {
+      "displayed_tag": "336",
+      "value": "|a text |b txt |2 rdacontent"
+    },
+    {
+      "displayed_tag": "337",
+      "value": "|a bez média |b n |2 rdamedia"
+    },
+    {
+      "displayed_tag": "338",
+      "value": "|a svazek |b nc |2 rdacarrier"
+    },
+    {
+      "displayed_tag": "500",
+      "value": "|a Inc. fo. 1: „Poslědovanie s[vja]ščennodiakonstva ...“ -- ed. Arsenij Želiborskij"
+    },
+    {
+      "displayed_tag": "5104",
+      "value": "|a Cyrilské a hlaholské staré tisky v českých knihovnách, |c s. 114-115"
+    },
+    {
+      "displayed_tag": "561",
+      "value": "|a ﻿Tištěno červeně a černě. Po stranách živých záhlaví tiskařské ozdůbky. Foliace a signatury cyrilským písmem. U 13 listů neoznačena foliace. Viněty z ozdůbek. 3 velikosti písma. Grafika: dřevořezy, 5 ilustrací, z nich Grigorij Dvojeslov (fo. 259v) signován „Ilia“. 2 titulové viněty s figurálním námětem, 1 z nich signována „Ilia“ a otištěna třikrát; 1 pásková koncová viněta. Iniciály červené konturové v čtvercových a obdélných rámečcích s figurálním a rostl. ornamentem ve výši 1-3ř. |5 CZ-PrNK"
+    },
+    {
+      "displayed_tag": "562",
+      "value": "|a Chybí 11 ff.: [1-6] na začátku, 306, 307 a [1-2] na konci. |5 CZ-PrNK"
+    },
+    {
+      "displayed_tag": "562",
+      "value": "|a Restaurováno doléváním papíru opraven zejm. poškozený konec knihy, z fo. 304 zach. jen spodní polovina. Na fo 146v přípis skoropisem, uvádějící jména osob připomínaných při modlitbách. |5 CZ-PrNK"
+    },
+    {
+      "displayed_tag": "563",
+      "value": "|a Restaurováno, nová polokožená vazba (1962) |5 CZ-PrNK"
+    },
+    {
+      "displayed_tag": "65007",
+      "value": "|a liturgické texty |7 ph115163 |2 czenas"
+    },
+    {
+      "displayed_tag": "65007",
+      "value": "|a liturgické obřady |7 ph122417 |2 czenas"
+    },
+    {
+      "displayed_tag": "65007",
+      "value": "|a pravoslavná liturgie |7 ph191885 |2 czenas"
+    },
+    {
+      "displayed_tag": "655 7",
+      "value": "|a příručky |7 fd133209 |2 czenas"
+    },
+    {
+      "displayed_tag": "85641",
+      "value": "|u http://books.google.cz/books?vid=NKP:3186213823&printsec=frontcover |y Digitalizovaný dokument"
+    },
+    {
+      "displayed_tag": "910",
+      "value": "|a ABA004"
+    },
+    {
+      "displayed_tag": "PSP",
+      "value": "|a RP"
+    },
+    {
+      "displayed_tag": "SYS",
+      "value": "000577538"
+    }
+  ]
+}

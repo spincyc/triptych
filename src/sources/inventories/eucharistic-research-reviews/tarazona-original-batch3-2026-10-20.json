@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "tarazona-original-batch3-2026-10-20",
+  "title": "Tarazona 1500 original facsimile, original colophon and defective-copy boundary",
+  "lane": "iberian-originals-tarazona",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "verdict": "Accepted after independent source/proposal review; exact added envelope receives separate bounded review.",
+    "accepted_source_proposal_sha256": "2a5d7107458cc7b141ffd0120ff6e8cc33889838f64b044a0213f4a0e592b733",
+    "independent_source_proposal_review_sha256": "0a0ada5934b48f628c659c460eaa0afe8261928d8e9a5b6ceae25f776fef7fd9",
+    "isolated_source_library_validation_sha256": "95d948cea46cee9ee32f1c82bfcdc647321c33fdfc345dc18ae841a7b55b13d5",
+    "provider_pdf_sha256": "c6e5dbd8c1b77231ec4f97c77752c3c863bdffe3edc8d4f8b81a1afd279a3cc7",
+    "metadata_derivative_sha256": "680ca1de4c1aa8a1c80fcf93ca35d062d3821df9a19a740cf32915387b757459",
+    "final_metadata_scope": "Only the factual metadata artifact rights_status changes from public-domain to project-created after source acceptance; unchanged source facts and payload bytes. A separate final bounded metadata review and central batch gates cover this addendum."
+  },
+  "coverage_rows": [
+    "historic-tarazona-use"
+  ],
+  "uses": [
+    {
+      "id": "historic-tarazona-use",
+      "disposition": "Original witness acquired and bounded identity/local-use evidence inspected; complete text and reception unestablished.",
+      "candidate_ids": [
+        "iberian-tarazona-1500"
+      ],
+      "next_sources": [
+        "Full physical collation of the explicitly defective copy against another copy of the same printing",
+        "Separate receiving or use records for the diocese",
+        "Independently inspect the 1529 printing cluster without assuming substantive recension or ancestry"
+      ]
+    }
+  ],
+  "searches": [
+    {
+      "repository": "Public web search and holding-library Lau Haizeetara item",
+      "queries": [
+        "\"Missale\" \"Tirasonensis\" \"1500\" digital",
+        "\"Biblioteca Foral\" \"INC-35\"",
+        "\"Tarazona\" \"1500\" \"missal\" digital"
+      ],
+      "result": "Located holding-library item 20.500.11938/69046 and its exact whole PDF.",
+      "bound": "Three web queries and complete simple/full library item responses plus linked generic rights page; not a comprehensive incunable census or negative finding."
+    }
+  ],
+  "versions": [
+    {
+      "candidate_id": "iberian-tarazona-1500",
+      "edition_id": "edition.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar",
+      "kind": "Original printed witness; distinct substantive recension not established",
+      "publication_date": "1500-02-13",
+      "basis": "Original colophon PDF656, corroborated by holding-library metadata.",
+      "limits": "Printing completion, commissioning and corrections do not establish a separate normative act, earlier exact textual state, actual comprehensive reception or physically complete copy."
+    }
+  ],
+  "acquisitions": [
+    {
+      "artifact_id": "artifact.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.bizkaia-pdf-c6e5dbd8",
+      "sha256": "c6e5dbd8c1b77231ec4f97c77752c3c863bdffe3edc8d4f8b81a1afd279a3cc7",
+      "byte_size": 57922507,
+      "storage": "tracked",
+      "canonical_path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/artifacts/bizkaia-pdf-c6e5dbd8/source.pdf",
+      "reason": "Complete lawful historical source, complete machine text derivative, or bounded factual metadata derivative retained for offline reopening."
+    },
+    {
+      "artifact_id": "artifact.diocese-of-tarazona.missale-tirasonense.1500-pamplona-brocar.pdf-text-858de226",
+      "sha256": "858de226a2e643f546e91ed69827b83538c8c93b7da5443031a6b59fe66a0769",
+      "byte_size": 1921840,
+      "storage": "tracked",
+      "canonical_path": "src/sources/works/diocese-of-tarazona/missale-tirasonense/editions/1500-pamplona-brocar/artifacts/pdf-text-858de226/source.txt",
+      "reason": "Complete lawful historical source, complete machine text derivative, or bounded factual metadata derivative retained for offline reopening."
+    },
+    {
+      "artifact_id": "artifact.biblioteca-foral-de-bizkaia.lau-haizeetara-catalogue.2026-10-20-item-states.facts-680ca1de",
+      "sha256": "680ca1de4c1aa8a1c80fcf93ca35d062d3821df9a19a740cf32915387b757459",
+      "byte_size": 4710,
+      "storage": "tracked",
+      "canonical_path": "src/sources/works/biblioteca-foral-de-bizkaia/lau-haizeetara-catalogue/editions/2026-10-20-item-states/artifacts/facts-680ca1de/facts.json",
+      "reason": "Complete lawful historical source, complete machine text derivative, or bounded factual metadata derivative retained for offline reopening."
+    },
+    {
+      "source_url": "https://liburutegibiltegi.bizkaia.eus/handle/20.500.11938/69046",
+      "sha256": "b2b460f7073f0c43a40652bb1f081840ca9712c9cf6732803dd7fefe8f8fa3e9",
+      "byte_size": 25878,
+      "artifact_id": "artifact.biblioteca-foral-de-bizkaia.lau-haizeetara-catalogue.2026-10-20-item-states.raw-item-b2b460f7",
+      "storage": "restricted",
+      "reason": "Reserved-rights modern wrapper; complete factual metadata derivative retained instead."
+    },
+    {
+      "source_url": "https://liburutegibiltegi.bizkaia.eus/handle/20.500.11938/69046?show=full",
+      "sha256": "a7322d36f0b6786c27082120dfdd1fdbca52f1e1071736dd86e2ebe77c71f329",
+      "byte_size": 28270,
+      "artifact_id": "artifact.biblioteca-foral-de-bizkaia.lau-haizeetara-catalogue.2026-10-20-item-states.raw-item-full-a7322d36",
+      "storage": "restricted",
+      "reason": "Reserved-rights modern wrapper; complete factual metadata derivative retained instead."
+    },
+    {
+      "source_url": "https://liburutegibiltegi.bizkaia.eus/page/userights",
+      "sha256": "ba7ef58b86873d60d0cfe02f583d49f8a5ce9efd7cd97993cc27f186e1c09986",
+      "byte_size": 14338,
+      "storage": "restricted",
+      "extent": "Complete generic user-rights HTML response.",
+      "reason": "Modern page wrapper has reserved-rights notice; its general statements do not replace the retained exact item-specific PDM metadata. No public payload proposed; offline rights decision can be reopened from retained item facts and facsimile. Reopen if the provider grants wrapper redistribution."
+    },
+    {
+      "source_url": "https://liburutegibiltegi.bizkaia.eus/bitstream/20.500.11938/69046/1/b1116962x.pdf",
+      "derived_from_sha256": "c6e5dbd8c1b77231ec4f97c77752c3c863bdffe3edc8d4f8b81a1afd279a3cc7",
+      "sha256": "c3f68d8edc3bae98a9b3d9405cd9ea87740ce33a393e009c5b62943fdd140b55",
+      "byte_size": 101082,
+      "storage": "remote",
+      "extent": "Complete rendered source PDF page 1",
+      "reason": "Redundant mechanical reading raster; the entire controlling PDF is retained without changes. Offline readers can regenerate the page with pdftoppm. Not a separate offered library acquisition."
+    },
+    {
+      "source_url": "https://liburutegibiltegi.bizkaia.eus/bitstream/20.500.11938/69046/1/b1116962x.pdf",
+      "derived_from_sha256": "c6e5dbd8c1b77231ec4f97c77752c3c863bdffe3edc8d4f8b81a1afd279a3cc7",
+      "sha256": "f58a0466a376cfb1e6bbf8bb463e79bcc6e15af0df1981a586ee0b9add7ae5ed",
+      "byte_size": 476609,
+      "storage": "remote",
+      "extent": "Complete rendered source PDF page 3",
+      "reason": "Redundant mechanical reading raster; the entire controlling PDF is retained without changes. Offline readers can regenerate the page with pdftoppm. Not a separate offered library acquisition."
+    },
+    {
+      "source_url": "https://liburutegibiltegi.bizkaia.eus/bitstream/20.500.11938/69046/1/b1116962x.pdf",
+      "derived_from_sha256": "c6e5dbd8c1b77231ec4f97c77752c3c863bdffe3edc8d4f8b81a1afd279a3cc7",
+      "sha256": "b728fde8320b8c88d63195bbbcafabb416a5ed3d35e927eded8a2830975ae2ab",
+      "byte_size": 314106,
+      "storage": "remote",
+      "extent": "Complete rendered source PDF page 14",
+      "reason": "Redundant mechanical reading raster; the entire controlling PDF is retained without changes. Offline readers can regenerate the page with pdftoppm. Not a separate offered library acquisition."
+    },
+    {
+      "source_url": "https://liburutegibiltegi.bizkaia.eus/bitstream/20.500.11938/69046/1/b1116962x.pdf",
+      "derived_from_sha256": "c6e5dbd8c1b77231ec4f97c77752c3c863bdffe3edc8d4f8b81a1afd279a3cc7",
+      "sha256": "62ce0ec766675b7c17d8fe8d99abb7540bd14c26522ccf2dbd593c7401dd2fe3",
+      "byte_size": 314237,
+      "storage": "remote",
+      "extent": "Complete rendered source PDF page 19",
+      "reason": "Redundant mechanical reading raster; the entire controlling PDF is retained without changes. Offline readers can regenerate the page with pdftoppm. Not a separate offered library acquisition."
+    },
+    {
+      "source_url": "https://liburutegibiltegi.bizkaia.eus/bitstream/20.500.11938/69046/1/b1116962x.pdf",
+      "derived_from_sha256": "c6e5dbd8c1b77231ec4f97c77752c3c863bdffe3edc8d4f8b81a1afd279a3cc7",
+      "sha256": "a0c434cdda43c87316d8cceb2027a1c9d7231febfa6ee714c3d041cf90c19094",
+      "byte_size": 309692,
+      "storage": "remote",
+      "extent": "Complete rendered source PDF page 329",
+      "reason": "Redundant mechanical reading raster; the entire controlling PDF is retained without changes. Offline readers can regenerate the page with pdftoppm. Not a separate offered library acquisition."
+    },
+    {
+      "source_url": "https://liburutegibiltegi.bizkaia.eus/bitstream/20.500.11938/69046/1/b1116962x.pdf",
+      "derived_from_sha256": "c6e5dbd8c1b77231ec4f97c77752c3c863bdffe3edc8d4f8b81a1afd279a3cc7",
+      "sha256": "f809a385cf4a886a9e1a2bd726ca7a2ddddf48dc916694b29a349383f7286655",
+      "byte_size": 1336271,
+      "storage": "remote",
+      "extent": "Complete rendered source PDF page 656",
+      "reason": "Redundant mechanical reading raster; the entire controlling PDF is retained without changes. Offline readers can regenerate the page with pdftoppm. Not a separate offered library acquisition."
+    },
+    {
+      "source_url": "https://liburutegibiltegi.bizkaia.eus/bitstream/20.500.11938/69046/1/b1116962x.pdf",
+      "derived_from_sha256": "c6e5dbd8c1b77231ec4f97c77752c3c863bdffe3edc8d4f8b81a1afd279a3cc7",
+      "sha256": "0e149a0ac2b7c27a0a4a868219e02f25b3d650fe5c02e13e3cdafe204338f720",
+      "byte_size": 113328,
+      "storage": "remote",
+      "extent": "Complete rendered source PDF page 658",
+      "reason": "Redundant mechanical reading raster; the entire controlling PDF is retained without changes. Offline readers can regenerate the page with pdftoppm. Not a separate offered library acquisition."
+    }
+  ],
+  "limitations": [
+    "No new canonical native-book binding, whole-book transcription, substantive transition or historical parentage.",
+    "The original-copy defects named by the library remain explicit; acquisition of all offered PDF bytes does not fill them.",
+    "No full text is independently collated. Six selected page images were directly inspected; the rest were acquired only.",
+    "The 1529 printing/copy cluster remains outside this lane."
+  ],
+  "root_owned_suggestions": [
+    "A bounded publication-state dossier may cite the original 1500 colophon, incipit and instruction, after independent source review; no normative act or version parent should be inferred."
+  ],
+  "reviewed_on": "2026-10-20",
+  "metadata_corrections": [
+    {
+      "artifact_id": "artifact.biblioteca-foral-de-bizkaia.lau-haizeetara-catalogue.2026-10-20-item-states.facts-680ca1de",
+      "field": "rights_status",
+      "old": "public-domain",
+      "new": "project-created",
+      "basis": "The whole JSON is a project-created factual selection/provenance record offered under CC BY 4.0; individual source facts remain unprotected. Exact payload and the already recorded two-part rights basis remain unchanged."
+    }
+  ]
+}

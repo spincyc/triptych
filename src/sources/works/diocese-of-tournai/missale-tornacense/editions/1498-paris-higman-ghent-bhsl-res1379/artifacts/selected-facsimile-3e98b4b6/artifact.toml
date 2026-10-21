@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.diocese-of-tournai.missale-tornacense.1498-paris-higman-ghent-bhsl-res1379.selected-facsimile-3e98b4b6"
+edition_id = "edition.diocese-of-tournai.missale-tornacense.1498-paris-higman-ghent-bhsl-res1379"
+artifact_type = "facsimile-pdf-derivative"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "United States: the 1498 printed Latin missal and its historical typography are public domain by publication date. These are mechanical reproductions of that identified copy. U.S. Copyright Office Compendium 313.4(A), third edition Chapter 300 pp. 26–27, treats scanning an existing literary work as mere copying without new copyrightable authorship; the whole official 39-page chapter and the full 1,396-page Compendium are retained separately. The fetched Google Books Terms of Service section 2 preserves uses permitted under the U.S. Copyright Act; it is contextual wording, not a general scan redistribution licence or a complete current-contract analysis. Google attribution and incidental library labels, accession stamps and ownership marks remain unchanged, distinct from the 1498 printing and excluded from Triptych CC BY 4.0. Their incidental preservation for noncommercial source verification rests on the project reading of 17 U.S.C.107: functional or factual character, small incidental extent and no substitute market or endorsement. The settled Google-notice record at src/sources/inventories/google-usage-guidelines-rights-v1.toml does not itself decide direct-scan rights. No status outside the United States is asserted. This fourteen-page selection contains neither exterior cover image. It preserves the independently public-domain historical printed pages and incidental factual provenance marks; the separate parent-package cover exception does not claim those covers are part of this selected PDF."
+source_url = "https://books.google.com/books?id=HldPAAAAcAAJ"
+retrieved = "2026-10-21"
+sha256 = "3e98b4b6412ed980bddb00cc1782d321c4e9c60e5f3f23eaf19841f16e7c309a"
+byte_size = 1730658
+path = "src/sources/works/diocese-of-tournai/missale-tornacense/editions/1498-paris-higman-ghent-bhsl-res1379/artifacts/selected-facsimile-3e98b4b6/tournai-1498-evidence-pages.pdf"
+indexable = false
+page_count = 14
+derived_from = "artifact.diocese-of-tournai.missale-tornacense.1498-paris-higman-ghent-bhsl-res1379.google-images-1c403b1c"
+transformation = "Read exact JPEG members for provider PP 5, PP 7, PP 18, PP 19, PP 21, PP 299, PP 307, PP 310, PP 311, PP 312, PP 313, PP 351, PP 579 and PP 582 from the exact parent ZIP, in that order. Embed each complete JPEG byte stream unchanged as one PDF DCTDecode image. Page width and height in points equal the source pixel dimensions. No cropping, resampling, re-encoding, rotation, restoration, overlay or text layer. All fourteen JPEG streams independently recover byte-identically with pdfimages -j."
+provenance = "Project-created mechanical selection from the retained complete offered-image package. The title is selected PDF page 1/provider PP 5; the colophon is PDF page 14/provider PP 582. It is a bounded evidence selection, not a whole missal or complete Canon facsimile."
+notes = "Fourteen pages in provider order. Intervening omitted pages remain in the full 580-image package. The strict Canon begins on PP 307 and ends after Per omnia/Amen before Pater on PP 310; this selection includes its opening and ending but omits PP 308–309. The printed Canon running heading continues through PP 312 with later rites. Scope is title, calendar/division boundaries and colophon; no complete text collation."

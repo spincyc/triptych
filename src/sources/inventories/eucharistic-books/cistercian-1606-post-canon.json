@@ -1,0 +1,1599 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "cistercian-1606-post-canon",
+  "title": "Cistercian 1606: post-Canon Ordinary tail and appended Suffragium",
+  "scope": "Complete bounded printed post-Canon tail and appended Suffragium of the Paris 1606 Cistercian missal. It begins with Orémus/Præcéptis on printed p. 197 left, immediately after and excluding the accepted strict Canon’s final Per omnia/Amen. The main Ordinary tail closes on printed p. 199 right with the departure rubric Sicque signans se, & inclinans recedat. The appended Suffragium pro pace Ecclesiastica & temporali on printed p. 200 is included through its final Amen before INCIPIT SANCTORALE on p. 201. The appendix is printed after the main closure but its own rubric assigns recitation after the Canon’s Pater noster; units retain physical source order rather than silently relocating it. This is a bounded composite functional selection, not an assertion of an uninterrupted printed chapter or complete Ordinary. All in-scope prayers, abbreviated incipits, rubrics, response cues, crosses and sung words are included under the disclosed normalization. The prior 7-unit offertory and 35-unit Canon remain unchanged. Whole-Missal and complete-Ordinary text coverage remain partial; no wording or ancestry is inherited.",
+  "transcribed_by": "AI original-image source transcription team (Paris 1606 post-Canon tail and appendix)",
+  "stage_ids": [
+    "cistercian-1606-1657-1606"
+  ],
+  "catalogue_witness_ids": [
+    "western:cistercian-1606"
+  ],
+  "components": [
+    "ordinary",
+    "rubrics"
+  ],
+  "languages": [
+    "la"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "All material before the initial post-Canon Orémus on printed p. 197, including the strict Canon’s final Per omnia/Amen and all earlier Canon text",
+    "Earlier preparations, offertory, prefaces and all other Ordinary portions outside the declared post-Canon tail",
+    "Sanctorale beginning printed p. 201, calendar, propers, lectionary and all remaining book divisions",
+    "Repeated running heads, foliation, catchwords, signatures, ornament, ink colour, imposed line/column geometry and musical notation; all sung words inside the bounds remain included"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1606 Paris publication",
+    "start_year": 1606,
+    "end_year": 1606,
+    "evidence": [
+      {
+        "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.title-and-imprint",
+        "locus": "Unnumbered title page, BSB canvas 1: Paris Marnef/Cavellat imprint 1606"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-post-canon-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-post-canon-review.json",
+  "witnesses": [
+    {
+      "id": "cistercian-1606-bsb-post-canon",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "scope_pages": [
+        [
+          1,
+          4
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile",
+          "locus": "Five complete photographed source pages, with page 5 explicitly excluded Sanctorale boundary context; bounded post-Canon wording begins after the excluded strict-Canon Amen and includes the printed appendix through p. 200 Amen"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.oremus-post-canon",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "oremus-post-canon"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "invocation",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-oremus-post-canon",
+      "text_sha256": "a8b6cea0cfa689e9adb92abd42ccfb9458c1e42c4d079fe12d521a3a9da0a64e",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.praeceptis-salutaribus",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "praeceptis-salutaribus"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-invitation",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-praeceptis-salutaribus",
+      "text_sha256": "e2b7aaa020b345d08da83a02c9fae20250276c594b0061a396f231f80935c8cd",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.pater-noster",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-noster"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pater-noster",
+      "text_sha256": "26920c81e2619aecb6cf52301886dffb770d57d5af715f649fde2e5e2c45510c",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.et-ne-nos-inducas",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "et-ne-nos-inducas"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-fragment",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-et-ne-nos-inducas",
+      "text_sha256": "893bc0ed4c892e3c7b243caa19646ff0469227af8fbce83010e410277ebea611",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.sed-libera-nos-response",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "sed-libera-nos-response"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "response",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-sed-libera-nos-response",
+      "text_sha256": "b6170812c43c2671eab7e9fe6d511db521c15ad978381bd3d4bfb534bedca81b",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.pater-noster-amen",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-noster-amen"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "response",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pater-noster-amen",
+      "text_sha256": "8ff6fd77382d182e963fd3f322dddc3bc062d441675ae64cef5d58d73538467b",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.libera-nos",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "libera-nos"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-libera-nos",
+      "text_sha256": "2d2c1afa89d73150cdc45b4cb9269ed45be02dd9bfc0f460c580a62586ec2d67",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.qui-tecum",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "qui-tecum"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-continuation",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-qui-tecum",
+      "text_sha256": "f5a822d63597cc443d9e840f38cd696527f96758818f717b47910e29f0a2ef82",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.libera-per-omnia",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "libera-per-omnia"
+      ],
+      "source_order": 9,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "dialogue-call",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-libera-per-omnia",
+      "text_sha256": "d2e3c234304ed68f587bcba28a7d8efb2649d2b7e6a08fd400ecb68b57135201",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.libera-per-omnia-amen",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "libera-per-omnia-amen"
+      ],
+      "source_order": 10,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "response",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-libera-per-omnia-amen",
+      "text_sha256": "d07a178bc193c1910055e2cfd1e2c19eece00b6cd3368d5e96308f79539eaad3",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.pax-domini",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pax-domini"
+      ],
+      "source_order": 11,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "dialogue-call",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-domini",
+      "text_sha256": "cb061beaa22a8278c84b139cc205452d80b7ba4ccd52eeba24b8e45534198d18",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.pax-response",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pax-response"
+      ],
+      "source_order": 12,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "response",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-response",
+      "text_sha256": "0c3c344f7a32a067692f65f2a861e4116fd70f1aae800e0ee03e450fe3ecfff5",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.dum-miscetur-rubric",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "dum-miscetur-rubric"
+      ],
+      "source_order": 13,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-dum-miscetur-rubric",
+      "text_sha256": "d6f747c355cbfbdeecc4fc4e33c5bb4cffe872c8018db130eabaa7d58b09eb0a",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.haec-sacrosancta-commixtio",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "haec-sacrosancta-commixtio"
+      ],
+      "source_order": 14,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-haec-sacrosancta-commixtio",
+      "text_sha256": "1e2efa952810c5d710bc2e320fb2a5e594e1a857f0a5268b2a867829b879734a",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.agnus-dei-first",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "agnus-dei-first"
+      ],
+      "source_order": 15,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "invocation",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-agnus-dei-first",
+      "text_sha256": "f97e69dbfa68afa477c847cc9d99ed66c4d9c553780d9edf6549c77dbbee8675",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.agnus-dei-second",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "agnus-dei-second"
+      ],
+      "source_order": 16,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "invocation",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-agnus-dei-second",
+      "text_sha256": "f97e69dbfa68afa477c847cc9d99ed66c4d9c553780d9edf6549c77dbbee8675",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.agnus-dei-tertius",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "agnus-dei-tertius"
+      ],
+      "source_order": 17,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-agnus-dei-tertius",
+      "text_sha256": "af099a048921cb84fa8e779ddf325a0b18cedd35ea7942fe153b0607c58cecf2",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.agnus-defunctorum-rubric",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "agnus-defunctorum-rubric"
+      ],
+      "source_order": 18,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-agnus-defunctorum-rubric",
+      "text_sha256": "9e4e88de40ab3b3ba3acf4f57d01b8926a01630675cfaa3ef9d6417c44928eb9",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.agnus-defunctorum",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "agnus-defunctorum"
+      ],
+      "source_order": 19,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-variant",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-agnus-defunctorum",
+      "text_sha256": "be5bf8530687959386907b532448047896f28557ec5bb3ac197233957c4c1169",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.pax-prayer-rubric",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pax-prayer-rubric"
+      ],
+      "source_order": 20,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-prayer-rubric",
+      "text_sha256": "5dad7355e35d9a0e48530a6cfb4a64929c8e0a8c044927c782c0405cf511ff69",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.domine-iesu-christe-pacem",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "domine-iesu-christe-pacem"
+      ],
+      "source_order": 21,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-domine-iesu-christe-pacem",
+      "text_sha256": "01dfdb5d7adf4cf7ec60b4345eefe420324595c5e11c149c460aed3c2fafa6be",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.pax-dans-rubric",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pax-dans-rubric"
+      ],
+      "source_order": 22,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-dans-rubric",
+      "text_sha256": "668d19323b49cac16cc2cf6ae8ecd2d56c01d331933b74a976614cbc2dd52550",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.pax-tecum",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pax-tecum"
+      ],
+      "source_order": 23,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "versicle",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-tecum",
+      "text_sha256": "b9ff9141bdd1c75bfa9769a686b6e801e3c05e8e2f154baa466a7980e3b6b4e4",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.pax-response-communion",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pax-response-communion"
+      ],
+      "source_order": 24,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "response",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-response-communion",
+      "text_sha256": "0b2e0b1209007da2ba1777bb285684474edf90410965b2bb7317e597956f374c",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.antequam-sumat-rubric",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "antequam-sumat-rubric"
+      ],
+      "source_order": 25,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-antequam-sumat-rubric",
+      "text_sha256": "2a408ff7e8e774cf39875a650e00b7ed02abbd299b9ac320ad98bcc854082dc8",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.domine-iesu-christe-fili",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "domine-iesu-christe-fili"
+      ],
+      "source_order": 26,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-domine-iesu-christe-fili",
+      "text_sha256": "9ce08ae6e7fb5cab8e8ad743e531cb3d179099a6e35c82586260d0cb9b868757",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.hae-orationes-addi-rubric",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "hae-orationes-addi-rubric"
+      ],
+      "source_order": 27,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-hae-orationes-addi-rubric",
+      "text_sha256": "939ae4db6edb75f6f8d516cecad34635b9215391b22b5995262f5e12bf4f2d59",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.perceptio-corporis",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "perceptio-corporis"
+      ],
+      "source_order": 28,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-perceptio-corporis",
+      "text_sha256": "e1d674ebfc8d1f20fcd835d2cf1725af3449085643e22135ca5448e8746951f0",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.panem-coelestem",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "panem-coelestem"
+      ],
+      "source_order": 29,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-panem-coelestem",
+      "text_sha256": "d527a70be6ba3bfdd1b6e8281dea2cc8099bbf1bca35a64cbfd167a3ac240f8d",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.domine-non-sum-dignus",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "domine-non-sum-dignus"
+      ],
+      "source_order": 30,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-domine-non-sum-dignus",
+      "text_sha256": "a0e25a259c8cb98f35941feab78b024b134879973ef6e6ce2924187930a7ea3d",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.corpus-domini",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "corpus-domini"
+      ],
+      "source_order": 31,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-corpus-domini",
+      "text_sha256": "32a00d60f96ad14d0157db29a91bf34cf9758601193adf07b0e8ddc61cd89e06",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.deinde-sumat-rubric",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "deinde-sumat-rubric"
+      ],
+      "source_order": 32,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-deinde-sumat-rubric",
+      "text_sha256": "c1f20e85c7a097f5d54591488d015e4334a88449c2f63efb6a0f49f6a52c635f",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.quid-retribuam",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "quid-retribuam"
+      ],
+      "source_order": 33,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-quid-retribuam",
+      "text_sha256": "980f39590b76680a87b711e7fd7b8d8360ac232b31cf01b9ec3884aa889fb016",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.signando-se-calice-rubric",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "signando-se-calice-rubric"
+      ],
+      "source_order": 34,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-signando-se-calice-rubric",
+      "text_sha256": "ebe40d53642dbbcb76714bdf58e04ab5f3ffd8cf3e42f76599a7d492874ea48d",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.sanguis-domini",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "sanguis-domini"
+      ],
+      "source_order": 35,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-sanguis-domini",
+      "text_sha256": "f978cc2bfb7c86805d428f12c4e116369e758b7aa4f2959411ed913bf47f8477",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.post-sumptionem-rubric",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "post-sumptionem-rubric"
+      ],
+      "source_order": 36,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-post-sumptionem-rubric",
+      "text_sha256": "b2fac3c62fa38edb4ed02ec4d49c87fe0e2b7e902f85058599776a7ce447158a",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.quod-ore-sumpsimus",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "quod-ore-sumpsimus"
+      ],
+      "source_order": 37,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-quod-ore-sumpsimus",
+      "text_sha256": "2dc30499c97ff58dec1e6585fc3b0302642027eb1eb1d691c53ac16db4923c72",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.corpus-tuum",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "corpus-tuum"
+      ],
+      "source_order": 38,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-corpus-tuum",
+      "text_sha256": "204f90d8da68c37ebbc2b7c3bf4d9463310a533f50b74a1a130bd26b764f349a",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.post-finitam-missam-rubric",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "post-finitam-missam-rubric"
+      ],
+      "source_order": 39,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-post-finitam-missam-rubric",
+      "text_sha256": "7c7e2f4f0b4ba0f42fb9894565c31259692af5c42056894294246893511315d7",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.placeat-tibi",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "placeat-tibi"
+      ],
+      "source_order": 40,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-placeat-tibi",
+      "text_sha256": "87afcf27c1ef89e7ec6ce8157271a6b6a531cd357c4ef3949f0c3dba9ca40e52",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.tunc-erigens-rubric",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "tunc-erigens-rubric"
+      ],
+      "source_order": 41,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-tunc-erigens-rubric",
+      "text_sha256": "80f23f3012cadd7cb98dd63ee1834a7a88a6a7d235c5928c96c8cf7b73f8f5cb",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.meritis-et-precibus",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "meritis-et-precibus"
+      ],
+      "source_order": 42,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-meritis-et-precibus",
+      "text_sha256": "4ed5d7278a63af025d7ff3c7007fdded04977c356a7277b330f11d799ada6d25",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.sicque-signans-rubric",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "sicque-signans-rubric"
+      ],
+      "source_order": 43,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-sicque-signans-rubric",
+      "text_sha256": "0d7252c88fd944682b416116fa3bfcc3de87900b2f3f03ecfd2920db232b451d",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-heading-rubric",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-heading-rubric"
+      ],
+      "source_order": 44,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-heading-rubric",
+      "text_sha256": "81815cc58dd95b241647320be1ace4e37f30bab315095c0f816521244d8fa521",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-psalmus-rubric",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-psalmus-rubric"
+      ],
+      "source_order": 45,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-psalmus-rubric",
+      "text_sha256": "a5bea2b8175dc220c20fd332292b2e5b89f5c8cb2fa804f894a675cc84ca5be6",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-laetatus-sum",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-laetatus-sum"
+      ],
+      "source_order": 46,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "incipit",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-laetatus-sum",
+      "text_sha256": "260a36a5ff27b45771688532a8a0ded17c2e3a768315b77ec2a5024bb13006bc",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-gloria-patri",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-gloria-patri"
+      ],
+      "source_order": 47,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "incipit",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-gloria-patri",
+      "text_sha256": "fb9a6f884bb545e1fe7b4b7160eb9a3cbaeb7f09f13a70780890e13d29e79c8d",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-kyrie",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-kyrie"
+      ],
+      "source_order": 48,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "incipit",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-kyrie",
+      "text_sha256": "67f833e34fcab90ecfdf195b9f87485468dd292ef7f9b452d4af6781f1f35937",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-pater-noster",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-pater-noster"
+      ],
+      "source_order": 49,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "incipit",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-pater-noster",
+      "text_sha256": "c907ba915737cbf6da58c081e6851b1c6e5f9529eb1e2571176f3ac59cef8028",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-ne-nos",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-et-ne-nos"
+      ],
+      "source_order": 50,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "versicle-fragment",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-ne-nos",
+      "text_sha256": "11e7eb6adaca24dbf5032a43ce10ceab70f113665643316b5d7f91b776e34663",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-domine-saluos",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-domine-saluos"
+      ],
+      "source_order": 51,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "versicle",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-domine-saluos",
+      "text_sha256": "9f22f2488ab396c7b3934a5386afaeb17be57a60ecf67a9e6cf8ff94bf813369",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-exaudi",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-et-exaudi"
+      ],
+      "source_order": 52,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "response",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-exaudi",
+      "text_sha256": "56f836f768d9820bfde36f4449fc1f9fa0f7ee030b9a587e502098fa9e402212",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-saluum-fac",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-saluum-fac"
+      ],
+      "source_order": 53,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "versicle",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-saluum-fac",
+      "text_sha256": "513db2bb941149e81804450b0577a9a5af44643810427aedb72dd5a517c60494",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-rege",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-et-rege"
+      ],
+      "source_order": 54,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "response",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-rege",
+      "text_sha256": "67cb95ad5ca311608a5cead36d5f0ceecc11f9ddf96ae0ce84df533574085b11",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-fiat-pax",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-fiat-pax"
+      ],
+      "source_order": 55,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "versicle",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-fiat-pax",
+      "text_sha256": "504d826dbda80eea7d1894c892cf7fa2de232fe66ae067779fad14c0c933cca1",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-abundantia",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-et-abundantia"
+      ],
+      "source_order": 56,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "response",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-abundantia",
+      "text_sha256": "f376266e3eb9ababf2698a14976064f28383cb6112de6dbb440a8c6d5b9f6da0",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-domine-exaudi",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-domine-exaudi"
+      ],
+      "source_order": 57,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "versicle",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-domine-exaudi",
+      "text_sha256": "de97eff3ed355df70155b9fcd24e430f57cb46a568222d659b4e93495f2b2674",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-clamor",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-et-clamor"
+      ],
+      "source_order": 58,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "response",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-clamor",
+      "text_sha256": "04c4c5077d33e7f8c14da52813146f8964c3e0e8286dc0156c3a083220c6d473",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-dominus-vobiscum",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-dominus-vobiscum"
+      ],
+      "source_order": 59,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "versicle",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-dominus-vobiscum",
+      "text_sha256": "e1d3f72a67075e4c1c5928c8f26c42c033fdd4212c314af0b62b0aa4107788fc",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-cum-spiritu",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-et-cum-spiritu"
+      ],
+      "source_order": 60,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "response",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-cum-spiritu",
+      "text_sha256": "0c3c344f7a32a067692f65f2a861e4116fd70f1aae800e0ee03e450fe3ecfff5",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-oremus",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-oremus"
+      ],
+      "source_order": 61,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "invitation",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-oremus",
+      "text_sha256": "a8b6cea0cfa689e9adb92abd42ccfb9458c1e42c4d079fe12d521a3a9da0a64e",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-ecclesiae-tuae",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-ecclesiae-tuae"
+      ],
+      "source_order": 62,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-ecclesiae-tuae",
+      "text_sha256": "8d827db63a115c43e0f3e0c204aeecf04a1716bd3a116ecc577c9bf925071c75",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-hostium",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-hostium"
+      ],
+      "source_order": 63,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-hostium",
+      "text_sha256": "f92e415d889a91389d4d5a70d7013d895399866365490fe55cdea7d0671e9fcf",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-amen",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-amen"
+      ],
+      "source_order": 64,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "acclamation",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-amen",
+      "text_sha256": "d07a178bc193c1910055e2cfd1e2c19eece00b6cd3368d5e96308f79539eaad3",
+      "verified_against_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "verified_against_artifact_sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "normalization": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    }
+  ]
+}

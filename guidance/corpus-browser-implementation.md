@@ -1144,6 +1144,51 @@ font stacks and CSS-drawn marks; a webfont is a generator change plus a bindings
 refresh plus a rights record for the font, which is a separate authorized work
 unit.
 
+**2026-10-20 current exception: literal-source U+2E4E.** The allowlist and
+missing browser-asset parity described in this reconnaissance are historical
+findings. The authorized punctuation work unit now registers exactly two
+browser-owned assets through `WEB_BROWSER_FONT_ASSETS` and
+`browser_font_files()` in `tools/public-alpha`:
+
+- `src/web/browser/shared/fonts/triptych-punctus-elevatus.woff2` →
+  `shared/fonts/triptych-punctus-elevatus.woff2`;
+- `src/web/browser/shared/fonts/OFL-Junicode.txt` →
+  `shared/fonts/OFL-Junicode.txt`.
+
+The shared CSS uses the renamed **Triptych Punctus Elevatus** face only for
+`unicode-range: U+2E4E`, to retain literal source punctuation in History
+held/standing text, native normalization prose, comparison/original text and
+Sources literal/context reading. Ordinary serif, sans and monospace text keeps
+its existing fallback role. Source Unicode is not replaced. This addresses a
+reproduced missing-glyph defect with common installed fonts; it is not a new
+typographic identity or permission to depend on a locally installed font.
+
+The WOFF2 is a deterministic single-character subset of Junicode, with variable
+axes pinned to upstream defaults and derivative family/full/PostScript names
+changed. Copyright and SIL Open Font License 1.1 metadata are retained. Exact
+upstream commit, embedded version, input/output hashes and the complete
+subset/rename recipe belong to the adjacent source-only `fonts/README.md`;
+the verbatim licence is served beside the font, and `THIRD_PARTY.md` records
+its separate rights. The README is not a published browser asset.
+
+When the shared CSS declares this face, both explicit inputs are required as
+regular, non-symlink files, and the font must identify as WOFF2. The browser
+copy remains non-recursive. Both artifact type guards admit this exact WOFF2
+path, not the `.woff2` suffix generally. The existing browser map derives the
+copy, expected artifact set and `site_source_paths()` bindings for both assets;
+`verify_web_data()` authenticates every mapped artifact against its source
+bytes, including the font, licence, CSS and JS. There is no additional layout
+marker, preload, fixed site-level copy tuple or parallel asset hand list. The
+six-place site-level registration rule below remains applicable to site-level
+assets outside that derived browser map.
+
+This exception still requires the normal mechanical release-binding refresh,
+source/artifact parity and preview build/verification; it waives no acceptance
+gate. Other webfonts, icon libraries, recursive browser assets and arbitrary
+binary types remain separate generator, binding and rights work units. The
+original findings and dated decisions below remain the record of their earlier
+scope; this paragraph is their explicit current qualification for this asset.
+
 **The 1 MB per-page HTML ceiling.** `PREVIEW_DOCUMENT_LIMIT = 1_000_000`
 (`tools/public-alpha:3264`), enforced at `:3304` against every HTML page. A
 shell that inlines CSS or a nav manifest into every page multiplies across 144
@@ -1741,7 +1786,9 @@ the current generator.** See §10. The accepted precedent is explicit: "the
 candidate adds no framework, package, font, icon library, or build system," and
 the Instrument mark is a three-stroke CSS mark. Safer reading: design to system
 font stacks and CSS-drawn marks; a font is a generator change plus a bindings
-refresh plus a rights record, as a separate authorized work unit.
+refresh plus a rights record, as a separate authorized work unit. The
+2026-10-20 literal-source U+2E4E exception in §10 records that bounded unit;
+it does not broaden the earlier design precedent.
 
 **C11 — A generated search index is a new writer under `src/web/data/` and must
 be recorded there.** `guidance/web-data.md:452-468` lists the ten writers and
@@ -1822,7 +1869,7 @@ is named so nobody reopens it without new evidence.
 | C6 | D10 | Durable truth lives in the tracked guidance and ledger, not in `build/agent-continuity/*`. That directory may still carry handoffs, screenshots and temporary continuity, but no fact required by a future agent may live there alone. |
 | C8 | D11 | One site-wide matrix: 1440×900, 1024×768, 768×1024, 393×852, 320×852 — plus 200% text, exact 320-pixel reflow, 400% where meaningful, keyboard-only, forced colors, reduced motion, print where not delegated to the PDF, no-JavaScript truth, and console/network/HTTP/accessible-name checks. No pixel-diff baseline before a real-data surface has independent visual acceptance. |
 | C9 | D1, D8 | `/texts/` is labelled **Publications** and the route is not renamed. A faceted Publications surface is a discovery view; each publication keeps exactly one owning catalogue and one canonical PDF home. |
-| C10 | D12 | No webfont, no icon library, no framework migration, no root-relative link, no new asset type the generator rejects. Design to system stacks and CSS-drawn marks. |
+| C10 | D12 | No webfont, no icon library, no framework migration, no root-relative link, no new asset type the generator rejects. Design to system stacks and CSS-drawn marks. Current qualification: the separately authorized 2026-10-20 U+2E4E literal-source fallback is defined in §10; other asset introductions remain separate work units. |
 | C11 | D13 | A generated search index is a new writer under `src/web/data/` and carries its writer line, tool registration, smoke test and additivity proof in the same commit. |
 | C12 | D14 | Only proven edges may be shown: containment, passage→artifact/segment, Catena fragment→Scripture locus, Catena passage→Source Library passage, act descent and change, document→catalogue page, Mass→propers→Scripture. `translation_of`, `used_by`, `derived_from`, canon correspondences and Law→Source citations are **not** to be synthesised. Each is a schema and generator work unit first. |
 | C13 | D15 | Progressive disclosure may defer hashes, extended provenance, long rights apparatus and secondary metadata. It may never defer the licence acknowledgement at point of use, a withheld-text reason, a typed absence or unread or unsupported or invalid state, or the distinction between availability and redistribution. These must survive semantically, not merely as a colour or a class. |

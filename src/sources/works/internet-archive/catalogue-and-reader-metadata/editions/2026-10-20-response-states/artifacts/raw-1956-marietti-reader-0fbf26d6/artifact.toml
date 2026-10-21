@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.internet-archive.catalogue-and-reader-metadata.2026-10-20-response-states.raw-1956-marietti-reader-0fbf26d6"
+edition_id = "edition.internet-archive.catalogue-and-reader-metadata.2026-10-20-response-states"
+artifact_type = "catalogue-or-service-response"
+media_type = "application/json"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Exact reader response includes operator/uploader, lending-service and loan/account-status fields. No need or basis was established to republish those fields or the complete host response; it stays outside Git. Offline readers can inspect the minimal factual access derivative. Reopen only after complete-response licence and privacy review."
+rights_jurisdiction = "United States"
+source_url = "https://ia801907.us.archive.org/BookReader/BookReaderJSIA.php?id=ordohebdomadaesa0000cath&itemPath=/16/items/ordohebdomadaesa0000cath&server=ia801907.us.archive.org&format=jsonp&subPrefix=ordohebdomadaesa0000cath"
+provenance = "Whole received bytes acquired by direct curl GET on 2026-10-20, then hashed locally. Source text did not pass through a model retrieval route."
+retrieved = "2026-10-20"
+sha256 = "0fbf26d6111417bfce5d721d91e7126a56bb428590da3b310898220c86bbbe60"
+byte_size = 55560
+indexable = false
+notes = "Whole reader JSON, 138 page descriptors, metadata imagecount 140; no downloadable book body. Access flags are current only at retrieval."

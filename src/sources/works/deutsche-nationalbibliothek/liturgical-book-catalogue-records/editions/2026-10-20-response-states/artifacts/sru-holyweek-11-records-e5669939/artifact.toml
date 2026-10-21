@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.deutsche-nationalbibliothek.liturgical-book-catalogue-records.2026-10-20-response-states.sru-holyweek-11-records-e5669939"
+edition_id = "edition.deutsche-nationalbibliothek.liturgical-book-catalogue-records.2026-10-20-response-states"
+artifact_type = "catalogue-or-service-response"
+media_type = "application/xml"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "DNB bibliographic metadata is supplied under CC0 1.0, as confirmed in the acquired open-data preamble. The response is bibliographic metadata, not any linked contents PDF or book. Rights-notice facts artifact: artifact.deutsche-nationalbibliothek.liturgical-book-catalogue-records.2026-10-20-response-states.facts-opendata-notice-e0b0a1a6."
+rights_jurisdiction = "United States"
+source_url = "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=Ordo%20hebdomadae%20sanctae%20instauratus&recordSchema=MARC21-xml&maximumRecords=50"
+provenance = "Whole received bytes acquired by direct curl GET on 2026-10-20, then hashed locally. Source text did not pass through a model retrieval route."
+retrieved = "2026-10-20"
+sha256 = "e5669939dcafeb10487d32a6d1ae9a5b6711592450f0642f47de42ed89e53f06"
+byte_size = 37804
+indexable = false
+notes = "Whole SRU response: numberOfRecords=11, requested maximumRecords=50, all 11 returned. Record 453655165: 1956 Pustet, Editio iuxta typicam vaticanam, 142 S., 1 Taf., 4°. Record 453655173: same edition designation, 158 S., kl.8°. Record 577308688: Lipsiae 1956, XVI, 144 S. Records include later books and German adaptations; this is not 11 liturgical versions."
+license = "CC0-1.0"
+path = "src/sources/works/deutsche-nationalbibliothek/liturgical-book-catalogue-records/editions/2026-10-20-response-states/artifacts/sru-holyweek-11-records-e5669939/dnb-search.xml"

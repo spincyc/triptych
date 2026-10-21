@@ -1,0 +1,471 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "albanian-received-book-search-batch3-2026-10-20",
+  "title": "Catholic Elbasan received Eucharistic book: bounded institutional-source and original-title controls",
+  "lane": "albanian-elbasan-batch3",
+  "side": "eastern",
+  "checked_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+  "coverage_rows": [
+    "albanian"
+  ],
+  "review_files": {
+    "claim_matrix": {
+      "sha256": "365e58aa53c7c9d27b1a92f641fdae6284ee9be303b06809e26f9098a2096446",
+      "byte_size": 5429
+    },
+    "search_log": {
+      "sha256": "4ecbb1fb3b322cee8b03284dd255be53bfe7c4771f6e24a024b142acf8dd42cf",
+      "byte_size": 3009
+    },
+    "current_field_proposals": {
+      "sha256": "96f5c1b0a05ad12083b8ac3c9aac7b6e1f364a72d92f276f9848b58e6343a27a",
+      "byte_size": 6673
+    },
+    "retention_proposals": {
+      "sha256": "1bf7ccd6cdc3e05d70a0ae38230f120141350353832b862a0020a93c4e7b5d0d",
+      "byte_size": 23689
+    },
+    "independent_review_status": "required-before-integration; supplied as a separate pinned acceptance receipt",
+    "namespace_correction": {
+      "sha256": "ebce32940cfccc7042967d04ec68beaae481f5803d4a376bbae20f6a8e761978",
+      "byte_size": 881
+    },
+    "locus_correction": {
+      "sha256": "13bae5e389781d7a2fcc0efb1f2b94c89f778bee0798e15e52032cb8fe8036b0",
+      "byte_size": 1219
+    }
+  },
+  "semantics": "Project-created research metadata. Two institutional sources strengthen Catholic community/church identity, with no exact book, approbation, received exemplar, stage, transition or native text established. Current census classification is outside this lane.",
+  "uses": [
+    {
+      "id": "albanian",
+      "disposition": "book-title-and-received-use-unidentified",
+      "claims": [
+        {
+          "id": "ALB3-C01",
+          "source": "shkoder-papamihali",
+          "locus": "Served HTML lines 1460–1476; displayed 19 October 2015; complete short article body read.",
+          "result": "The archdiocesan biography identifies Josif Papamihali as a Catholic priest of Byzantine rite and connects his ministry to Elbasan and other Albanian towns.",
+          "ceiling": "A retrospective biography, not a book inventory, approbation, exact Eucharistic exemplar or dated use of a particular book. The webpage modification date is not the ministry date.",
+          "image_verified": false
+        },
+        {
+          "id": "ALB3-C02",
+          "source": "aidssh-bulletin2021-6",
+          "locus": "Printed / PDF p. 48: report paragraph 1 dates the 5 November event; paragraph beginning Pas përfundimit të ceremonisë describes the subsequent church visit and Catholic/Byzantine identification. Original page image inspected; copyright printed / PDF p. 4.",
+          "result": "The official November–December 2021 activity bulletin reports a 5 November 2021 commemorative ceremony followed by a visit to Shën Pjetri, described as a Catholic church of Byzantine rite. A parish priest accompanied the visitors.",
+          "ceiling": "A church visit does not prove a Eucharistic celebration, resident Byzantine clergy, liturgical language, received book, edition or approbation.",
+          "image_verified": true
+        },
+        {
+          "id": "ALB3-C03",
+          "source": "franco-rito-greco-mezzojuso",
+          "locus": "PDF p. 1 original scanned title leaf, and PDF p. 10 / modern reset p. 9, both page images inspected.",
+          "result": "The original title leaf identifies Nicola Franco’s lecture delivered 4 December 1910 and printed at Rome by Riccardo Garroni in 1912. The modern reset body recounts Germanos of the Elbasan Greek Catholic community joining an Italo-Albanian pilgrimage in 1900 and singing Mass at a church of St Peter.",
+          "ceiling": "Only the title leaf is original-image evidence. The modern body is not collated to the original printing. Its pilgrimage account names no book, edition, language or approval. Do not relocate this St Peter celebration to the later Elbasan church or infer a book from the celebrants’ Italo-Albanian origin.",
+          "image_verified": true
+        },
+        {
+          "id": "ALB3-C04",
+          "source": "elbasan-municipal-heritage",
+          "locus": "Undated municipal webpage, section Kisha Bizantine Shën Pjetri; section read from complete served HTML.",
+          "result": "The municipal description concerns church decoration and heritage. Its description of Albanian writing is attached to painted images and inscriptions. It also states an undated absence of priests and Masses.",
+          "ceiling": "Not evidence of an Albanian Eucharistic translation, current 2026 practice or a dated cessation. Its construction/cleric chronology is not adopted; the parish-priest-accompanied 2021 visit also proves no liturgy.",
+          "image_verified": false
+        },
+        {
+          "id": "ALB3-C05",
+          "source": "etj2016-2",
+          "locus": "Giuseppe Munarini, article beginning printed p. 267; printed p. 277 / PDF p. 84 image inspected, including notes 36–37.",
+          "result": "The discussion of Scarpelli, the 1929 mission and disputes over liturgical language is explicitly mediated through Murzaku’s 2007 article.",
+          "ceiling": "Not independent inspection of the cited archival originals or of a received Catholic service book; language disputes cannot identify the book used. Exact issue bytes were already recorded by the byzantine-greek research review.",
+          "image_verified": true
+        },
+        {
+          "id": "ALB3-C06",
+          "source": "lungro-lajme2024-1",
+          "locus": "Lajme 2024 I, reprinted Rigotti study; PDF p. 143 / embedded printed p. 357, questionnaire item 76, page image inspected; copyright text in acquired text layer lines 2599–2601.",
+          "result": "The generic ad-limina questionnaire asks about book titles, language, publisher and approval. Related historical book references concern the Italian eparchial setting.",
+          "ceiling": "A question is not an Elbasan answer. Italian or Italo-Albanian books cannot be assigned to Catholic Elbasan from common language, a missionary’s origin or geographic association.",
+          "image_verified": true
+        },
+        {
+          "id": "ALB3-C07",
+          "source": "approval-register-control",
+          "locus": "Complete served HTML, lines 33–53: stated list of recent recognitiones and approvals with entries 2004–2013.",
+          "result": "This bounded recent-approvals list has no identified Albanian entry.",
+          "ceiling": "The source describes recent entries, not a complete historical census. Absence from this extent proves neither denial nor absence of approval and says nothing about current law. New response bytes differ from the existing registered Vatican HTML artifact; do not repin or replace that artifact.",
+          "image_verified": false
+        },
+        {
+          "id": "ALB3-C08",
+          "source": "usco-duration-circ15a",
+          "locus": "Complete four-page circular text read; p. 2 maximum 95-year term; p. 3 foreign restoration; p. 4 revised April 2026.",
+          "result": "Rights support for the narrow faithful image of the original 1912 title leaf, under the repository’s United States treatment of historical foreign printings.",
+          "ceiling": "No blanket rights transfer to the host’s modern reset text, its editorial additions, modern journal issues, website wrappers, photographs, or other jurisdictions.",
+          "image_verified": false
+        }
+      ],
+      "preserved_original_targets": [
+        "DGA 2007 checked printed pp. 244, 374, 496 / PDF pp. 242, 372, 494 remain finding-aid evidence only.",
+        "ACCO Prot. 441/28, Nr. X: Scarpelli, Terza Relazione, 10 January 1930, pp. 37–50; original uninspected, cited through Murzaku.",
+        "ACCO letters Nr. III p. 19, Nr. IV p. 20, Nr. VI p. 26; AVPSJ Cordignano 1929 report; Greek College de Meester–Scarpelli correspondence and local inventories remain uninspected."
+      ],
+      "next_evidence": "An authenticated mission/sacristy book inventory, received exemplar or original instrument naming title, language, imprint, approval and dated local use. Confirm the exact book independently of priest identity or general rite membership."
+    }
+  ],
+  "searches": [
+    {
+      "id": "albanian-exact-book-web-pass",
+      "endpoint": "General public web search; Italian and Albanian aliases; complete public deliveries separately pinned below.",
+      "exact_confirmation_queries": [
+        "\"Elbasan\" \"Scarpelli\" \"libri liturgici\"",
+        "\"Elbasan\" \"Papamihali\" \"liturgikon\"",
+        "\"Elbasan\" \"eucologio\" cattolica",
+        "\"Elbasan\" \"greko-katolike\" \"libra\"",
+        "\"Elbasan\" \"liturgici\" site:orientchurch.va",
+        "\"Elbasan\" \"libri\" site:eparchialungro.it",
+        "\"Scarpelli\" \"Pietro\" \"messale\"",
+        "\"Josif Papamihali\" \"meshar\""
+      ],
+      "earlier_discovery_scope": "An earlier discovery pass used Elbasan, Scarpelli / Skarpeli, Papamihali, Shën Pjetri, liturgia / liturgjia, libri / libra, messale / meshar, Eucologio / Liturgikon and Catholic / greco-cattolica combinations and site filters. This is a descriptive search boundary; only the eight exact confirmation queries above are claimed as a durable exact-string log.",
+      "dispositions": [
+        {
+          "range": "queries 1–4",
+          "result": "Returned related Besa/Murzaku transcriptions and unrelated historical/language material; no exact Catholic celebrant book authenticated. Search snippets are discovery leads, not inspected original source pages."
+        },
+        {
+          "range": "queries 5–8",
+          "result": "Returned mediated mission history and unrelated name matches; no original book title/approval/received exemplar established. Site-filter web queries do not constitute exhaustive catalogue or archive searches."
+        }
+      ],
+      "acquisition_limit": "Eight complete HTTP responses acquired, five complete PDF text layers derived, five bounded PDF-page renderings plus one embedded original JPEG extracted; only the explicitly listed loci read or visually inspected.",
+      "unexamined": [
+        "All ACCO/AVPSJ mission originals and the de Meester–Scarpelli correspondence.",
+        "Elbasan sacristy/library inventory, loan or supply register, received exemplar and marginal ownership notes.",
+        "Full native archive and library catalogue databases; undigitized files and unpublished local records.",
+        "Original Franco body leaves beyond the one original title image; a modern reset is not a facsimile-body collation."
+      ],
+      "bounded_negative": "Within this recorded search and inspection boundary, no exact Catholic Elbasan Eucharistic celebrant book, received exemplar, approbation instrument or dated use of a particular book was authenticated. This does not show that no such object or record exists.",
+      "rejected_transfers": [
+        "Orthodox Albanian translations or Elbasan geographical matches.",
+        "Italo-Albanian books or a missionary’s Italian/Arbëresh origin without local receipt evidence.",
+        "Albanian church inscriptions as proof of a translated liturgical book.",
+        "A church visit, commemoration, biography or a selective approval-list silence as exact book/use evidence."
+      ]
+    }
+  ],
+  "versions": [],
+  "acquisitions": [
+    {
+      "id": "alb3-etj2016-2",
+      "url": "https://epa.oszk.hu/05300/05319/00004/pdf/EPA05319_eastern_theological_journal_2016_2.pdf",
+      "response_url": "https://epa.oszk.hu/05300/05319/00004/pdf/EPA05319_eastern_theological_journal_2016_2.pdf",
+      "retrieved_at": "2026-10-21T00:52:50.740151+00:00",
+      "sha256": "85d164977b5b35297c002da2eab6ba005766e286d98c0d971c2c7718d58edc64",
+      "byte_size": 1875444,
+      "kind": "complete-source-response",
+      "delivered_extent": "145-page journal issue",
+      "decision": "defer",
+      "proposed_storage": "restricted",
+      "rights_basis": "The modern 2016 journal issue and article have no affirmative repository distribution grant in the inspected front matter; subscription/contact publication data are not a licence.",
+      "scope_note": "Reused exact SHA decision already present as byzantine-greek-acq-etj2016-pdf in byzantine-greek.json; no canonical artifact ID was found for those bytes.",
+      "offline_limit": "Exact full response bytes are not in the public repository. Public metadata and claim limits are available offline; reproducing this response-dependent inspection requires reacquisition and hash comparison.",
+      "reopen_condition": "Reassess on an affirmative grant over these exact bytes or an independently lawful equivalent carrying the relevant evidence.",
+      "historical_decision_reuse": {
+        "review_path": "src/sources/inventories/eucharistic-research-reviews/byzantine-greek.json",
+        "acquisition_id": "byzantine-greek-acq-etj2016-pdf",
+        "canonical_artifact_id": null
+      }
+    },
+    {
+      "id": "alb3-lungro-lajme2024-1",
+      "url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2026/01/impaginato-2024-Vol-I-per-la-stampa-ok_compressed.pdf",
+      "response_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2026/01/impaginato-2024-Vol-I-per-la-stampa-ok_compressed.pdf",
+      "retrieved_at": "2026-10-21T00:52:50.740782+00:00",
+      "sha256": "f9f6a31d54d49299084c8de29f78a8e8f18046e3d231e325daa5da1f77043544",
+      "byte_size": 12372468,
+      "kind": "complete-source-response",
+      "delivered_extent": "256-page journal file",
+      "decision": "defer",
+      "proposed_storage": "restricted",
+      "rights_basis": "The reprinted study expressly states all rights reserved and Archivio Apostolico Vaticano copyright 2024; no repository redistribution grant was established.",
+      "scope_note": "Modern institutional journal/reprint; the generic questionnaire is not an answered Elbasan inventory.",
+      "offline_limit": "Exact full response bytes are not in the public repository. Public metadata and claim limits are available offline; reproducing this response-dependent inspection requires reacquisition and hash comparison.",
+      "reopen_condition": "Reassess on an affirmative grant over these exact bytes or an independently lawful equivalent carrying the relevant evidence."
+    },
+    {
+      "id": "alb3-franco-rito-greco-mezzojuso",
+      "url": "https://www.dimarcomezzojuso.it/download.php?as=Franco-Necessit%C3%A0diMantenereilRitoGrecoinMezzojuso.pdf&file=pubs%2F15%2Flibro.pdf",
+      "response_url": "https://www.dimarcomezzojuso.it/download.php?as=Franco-Necessit%C3%A0diMantenereilRitoGrecoinMezzojuso.pdf&file=pubs%2F15%2Flibro.pdf",
+      "retrieved_at": "2026-10-21T00:52:50.741040+00:00",
+      "sha256": "2a3c4f7ccf82adefb4c047e8899615b01d0e8cabec32fd833bd2db2a32500363",
+      "byte_size": 698401,
+      "kind": "complete-source-response",
+      "delivered_extent": "13-page mixed original-title/modern-reset delivery",
+      "decision": "defer",
+      "proposed_storage": "restricted",
+      "rights_basis": "Complete delivery mixes the original title image with a modern reset credited to Giuseppina and Pietro Di Marco. Original body fidelity and rights over additions are unestablished.",
+      "scope_note": "A narrower extracted original title leaf is retained; no blanket rights grant inferred for the mixed file.",
+      "offline_limit": "Exact full response bytes are not in the public repository. Public metadata and claim limits are available offline; reproducing this response-dependent inspection requires reacquisition and hash comparison.",
+      "reopen_condition": "Reassess on an affirmative grant over these exact bytes or an independently lawful equivalent carrying the relevant evidence.",
+      "canonical_artifact_id": "artifact.nicola-franco.necessita-mantenere-rito-greco-mezzojuso.undated-di-marco-online-reset.mixed-pdf-2a3c4f7c"
+    },
+    {
+      "id": "alb3-shkoder-papamihali",
+      "url": "https://kishakatolikeshkoder.com/it/ate-josif-papamihali/",
+      "response_url": "https://kishakatolikeshkoder.com/it/ate-josif-papamihali/",
+      "retrieved_at": "2026-10-21T00:52:50.741664+00:00",
+      "sha256": "69dc63d065006257969655dff8f9f08678dbe21d8f23e0a6e0a8e8c7c8b260f0",
+      "byte_size": 299668,
+      "kind": "complete-source-response",
+      "delivered_extent": "complete served HTML response; linked external assets not separately acquired",
+      "decision": "defer",
+      "proposed_storage": "restricted",
+      "rights_basis": "Modern diocesan biography and website wrapper assert archdiocesan copyright in the footer; no affirmative repository redistribution grant was found.",
+      "scope_note": "Metadata and limited factual paraphrase only; the source photograph was neither separately fetched nor retained.",
+      "offline_limit": "Exact full response bytes are not in the public repository. Public metadata and claim limits are available offline; reproducing this response-dependent inspection requires reacquisition and hash comparison.",
+      "reopen_condition": "Reassess on an affirmative grant over these exact bytes or an independently lawful equivalent carrying the relevant evidence."
+    },
+    {
+      "id": "alb3-elbasan-municipal-heritage",
+      "url": "https://elbasani.gov.al/trashegimia-kulturore/",
+      "response_url": "https://elbasani.gov.al/trashegimia-kulturore/",
+      "retrieved_at": "2026-10-21T00:56:02.554611+00:00",
+      "sha256": "738636f91602d6cd529cdc9afed81024e27053d1bdfdea4af8f870c3e17f490c",
+      "byte_size": 484877,
+      "kind": "complete-source-response",
+      "delivered_extent": "complete served HTML response; linked external assets not separately acquired",
+      "decision": "defer",
+      "proposed_storage": "restricted",
+      "rights_basis": "Modern municipal heritage text, images and HTML wrapper; footer asserts municipal copyright. No affirmative repository redistribution grant was established.",
+      "scope_note": "No copyright exemption for a foreign municipal webpage was inferred.",
+      "offline_limit": "Exact full response bytes are not in the public repository. Public metadata and claim limits are available offline; reproducing this response-dependent inspection requires reacquisition and hash comparison.",
+      "reopen_condition": "Reassess on an affirmative grant over these exact bytes or an independently lawful equivalent carrying the relevant evidence."
+    },
+    {
+      "id": "alb3-aidssh-bulletin2021-6",
+      "url": "https://aidssh.al/wp-content/uploads/2025/06/Buletin-Nr.6-Nentor-Dhjetor-2021.pdf",
+      "response_url": "https://aidssh.al/wp-content/uploads/2025/06/Buletin-Nr.6-Nentor-Dhjetor-2021.pdf",
+      "retrieved_at": "2026-10-21T00:56:02.555147+00:00",
+      "sha256": "5f8f88693f0288d8f091bb7f3b6717a2d58849d55bad8020f9799052e9e96866",
+      "byte_size": 6162671,
+      "kind": "complete-source-response",
+      "delivered_extent": "56-page activity bulletin",
+      "decision": "defer",
+      "proposed_storage": "restricted",
+      "rights_basis": "The modern bulletin expressly asserts AIDSSH copyright on printed p. 4; online availability is stated but no repository redistribution grant is given there.",
+      "scope_note": "No foreign-government public-domain status inferred; modern photographs remain excluded.",
+      "offline_limit": "Exact full response bytes are not in the public repository. Public metadata and claim limits are available offline; reproducing this response-dependent inspection requires reacquisition and hash comparison.",
+      "reopen_condition": "Reassess on an affirmative grant over these exact bytes or an independently lawful equivalent carrying the relevant evidence."
+    },
+    {
+      "id": "alb3-approval-register-control",
+      "url": "https://press.vatican.va/roman_curia/congregations/orientchurch/documents/rc_con_corient_doc_20070601_liturgical-texts_it.html",
+      "response_url": "https://press.vatican.va/roman_curia/congregations/orientchurch/documents/rc_con_corient_doc_20070601_liturgical-texts_it.html",
+      "retrieved_at": "2026-10-21T00:56:02.555491+00:00",
+      "sha256": "7e2756a37572a305670c69982739e09b75f0bb21f708b366ab03ae75f5aa685c",
+      "byte_size": 10116,
+      "kind": "complete-source-response",
+      "delivered_extent": "complete served HTML response; linked external assets not separately acquired",
+      "decision": "defer",
+      "proposed_storage": "restricted",
+      "rights_basis": "Modern Vatican HTML wrapper; no affirmative repository redistribution grant established. Existing project Holy See restriction remains.",
+      "scope_note": "New delivery differs from the existing registered 91f32ae0 artifact; not a replacement or repin.",
+      "offline_limit": "Exact full response bytes are not in the public repository. Public metadata and claim limits are available offline; reproducing this response-dependent inspection requires reacquisition and hash comparison.",
+      "reopen_condition": "Reassess on an affirmative grant over these exact bytes or an independently lawful equivalent carrying the relevant evidence."
+    },
+    {
+      "id": "alb3-usco-duration-circ15a",
+      "url": "https://www.copyright.gov/circs/circ15a.pdf",
+      "response_url": "https://www.copyright.gov/circs/circ15a.pdf",
+      "retrieved_at": "2026-10-21T01:01:44.936941+00:00",
+      "sha256": "6ff3c5612e1cd56469b3eb7d35eba7fd3374843d82744c63ab909225f53b7aef",
+      "byte_size": 273867,
+      "kind": "complete-source-response",
+      "delivered_extent": "4-page official circular",
+      "decision": "retain",
+      "proposed_storage": "tracked",
+      "rights_basis": "Official United States Copyright Office publication produced as federal government work; United States public domain under 17 U.S.C. 105. Complete official publication retained as rights evidence, including its printed revision date.",
+      "scope_note": "Complete small lawful official PDF retained.",
+      "offline_limit": "Complete controlling PDF proposed for retention.",
+      "reopen_condition": "No deferral.",
+      "canonical_artifact_id": "artifact.united-states-copyright-office.duration-of-copyright-circular15a.2026-04-revision.official-pdf-6ff3c561"
+    },
+    {
+      "id": "alb3-derived-aidssh-bulletin2021-6-page-48",
+      "url": "https://aidssh.al/wp-content/uploads/2025/06/Buletin-Nr.6-Nentor-Dhjetor-2021.pdf",
+      "sha256": "95cf7c69f4551f91d962559f4b73608ca2813b67d5445587af55d4f6e0fe7171",
+      "byte_size": 551032,
+      "kind": "mechanical-derivative",
+      "parent_sha256": "5f8f88693f0288d8f091bb7f3b6717a2d58849d55bad8020f9799052e9e96866",
+      "derived_extent": "PDF page 48 rendered at 110 dpi",
+      "decision": "defer",
+      "proposed_storage": "restricted",
+      "rights_basis": "The modern bulletin expressly asserts AIDSSH copyright on printed p. 4; online availability is stated but no repository redistribution grant is given there.",
+      "offline_limit": "Derivative bytes are not public; rights restrictions on the controlling source are not cleared by mechanical extraction. Public source pins and precise loci remain readable offline.",
+      "reopen_condition": "Reassess if the controlling exact source is cleared for repository redistribution or a lawful independent source is obtained."
+    },
+    {
+      "id": "alb3-derived-aidssh-bulletin2021-6",
+      "url": "https://aidssh.al/wp-content/uploads/2025/06/Buletin-Nr.6-Nentor-Dhjetor-2021.pdf",
+      "sha256": "94b13234fb430b87722cb09d95bbf2fb518670b1fc2b89a3c11a7248fd31caa7",
+      "byte_size": 159657,
+      "kind": "mechanical-derivative",
+      "parent_sha256": "5f8f88693f0288d8f091bb7f3b6717a2d58849d55bad8020f9799052e9e96866",
+      "derived_extent": "complete mechanical PDF text layer",
+      "decision": "defer",
+      "proposed_storage": "restricted",
+      "rights_basis": "The modern bulletin expressly asserts AIDSSH copyright on printed p. 4; online availability is stated but no repository redistribution grant is given there.",
+      "offline_limit": "Derivative bytes are not public; rights restrictions on the controlling source are not cleared by mechanical extraction. Public source pins and precise loci remain readable offline.",
+      "reopen_condition": "Reassess if the controlling exact source is cleared for repository redistribution or a lawful independent source is obtained."
+    },
+    {
+      "id": "alb3-derived-etj2016-2-page-84",
+      "url": "https://epa.oszk.hu/05300/05319/00004/pdf/EPA05319_eastern_theological_journal_2016_2.pdf",
+      "sha256": "b74d4996c1ff328bcd94a6560ef05d2d9961380a1da2fa85330d7f497dcc3281",
+      "byte_size": 204018,
+      "kind": "mechanical-derivative",
+      "parent_sha256": "85d164977b5b35297c002da2eab6ba005766e286d98c0d971c2c7718d58edc64",
+      "derived_extent": "PDF page 84 rendered at 110 dpi",
+      "decision": "defer",
+      "proposed_storage": "restricted",
+      "rights_basis": "The modern 2016 journal issue and article have no affirmative repository distribution grant in the inspected front matter; subscription/contact publication data are not a licence.",
+      "offline_limit": "Derivative bytes are not public; rights restrictions on the controlling source are not cleared by mechanical extraction. Public source pins and precise loci remain readable offline.",
+      "reopen_condition": "Reassess if the controlling exact source is cleared for repository redistribution or a lawful independent source is obtained."
+    },
+    {
+      "id": "alb3-derived-etj2016-2",
+      "url": "https://epa.oszk.hu/05300/05319/00004/pdf/EPA05319_eastern_theological_journal_2016_2.pdf",
+      "sha256": "8e1c5c3924d090395b42e3a175926006137f4fe287be61d646fa546b653e1755",
+      "byte_size": 427938,
+      "kind": "mechanical-derivative",
+      "parent_sha256": "85d164977b5b35297c002da2eab6ba005766e286d98c0d971c2c7718d58edc64",
+      "derived_extent": "complete mechanical PDF text layer",
+      "decision": "defer",
+      "proposed_storage": "restricted",
+      "rights_basis": "The modern 2016 journal issue and article have no affirmative repository distribution grant in the inspected front matter; subscription/contact publication data are not a licence.",
+      "offline_limit": "Derivative bytes are not public; rights restrictions on the controlling source are not cleared by mechanical extraction. Public source pins and precise loci remain readable offline.",
+      "reopen_condition": "Reassess if the controlling exact source is cleared for repository redistribution or a lawful independent source is obtained."
+    },
+    {
+      "id": "alb3-derived-franco-original-title-000",
+      "url": "https://www.dimarcomezzojuso.it/download.php?as=Franco-Necessit%C3%A0diMantenereilRitoGrecoinMezzojuso.pdf&file=pubs%2F15%2Flibro.pdf",
+      "sha256": "f7ddeaa9be946325ed379516d19e7967d6d0e8a77b48514a57ca0281aac29d95",
+      "byte_size": 626732,
+      "kind": "mechanical-derivative",
+      "parent_sha256": "2a3c4f7ccf82adefb4c047e8899615b01d0e8cabec32fd833bd2db2a32500363",
+      "derived_extent": "original JPEG image on PDF page 1, object 261 0, 2480 by 3425 pixels",
+      "decision": "retain",
+      "proposed_storage": "tracked",
+      "rights_basis": "Narrow original 1912 printed title leaf only: a faithful flat scan with no modern reset body or editorial footer. Under the repository’s United States treatment of historical foreign publications, the maximum 95-year term for the 1912 publication has expired; Circular 15A pp. 2–3 supplies duration/restoration support. Mechanical extraction adds no authorship. This basis does not license the modern digital body or apply in other jurisdictions.",
+      "offline_limit": "Exact bounded derivative proposed for retention; parent and omitted-scope qualifications preserved.",
+      "reopen_condition": "No deferral.",
+      "canonical_artifact_id": "artifact.nicola-franco.necessita-mantenere-rito-greco-mezzojuso.undated-di-marco-online-reset.original-title-f7ddeaa9"
+    },
+    {
+      "id": "alb3-derived-franco-rito-greco-mezzojuso-page-1",
+      "url": "https://www.dimarcomezzojuso.it/download.php?as=Franco-Necessit%C3%A0diMantenereilRitoGrecoinMezzojuso.pdf&file=pubs%2F15%2Flibro.pdf",
+      "sha256": "8d8932e82c4f2f1fee856af7f379ee22c2e65a155026da2c28b687ef53bbf2a5",
+      "byte_size": 1529687,
+      "kind": "mechanical-derivative",
+      "parent_sha256": "2a3c4f7ccf82adefb4c047e8899615b01d0e8cabec32fd833bd2db2a32500363",
+      "derived_extent": "PDF page 1 rendered at 110 dpi",
+      "decision": "defer",
+      "proposed_storage": "remote",
+      "rights_basis": "Mechanical lower-resolution rendering of the same original title leaf; exact embedded higher-resolution JPEG is proposed for retention. Retaining this larger duplicate adds no distinct evidence or offline scope.",
+      "offline_limit": "Same evidence remains readable in the retained original JPEG.",
+      "reopen_condition": "No further storage needed while the superior original image is retained."
+    },
+    {
+      "id": "alb3-derived-franco-rito-greco-mezzojuso-page-10",
+      "url": "https://www.dimarcomezzojuso.it/download.php?as=Franco-Necessit%C3%A0diMantenereilRitoGrecoinMezzojuso.pdf&file=pubs%2F15%2Flibro.pdf",
+      "sha256": "c431728c9afb12e08952c68e0470d17f129e39cf7d7e207c1cc52b04b3966e70",
+      "byte_size": 317192,
+      "kind": "mechanical-derivative",
+      "parent_sha256": "2a3c4f7ccf82adefb4c047e8899615b01d0e8cabec32fd833bd2db2a32500363",
+      "derived_extent": "PDF page 10 rendered at 110 dpi",
+      "decision": "defer",
+      "proposed_storage": "restricted",
+      "rights_basis": "Complete delivery mixes the original title image with a modern reset credited to Giuseppina and Pietro Di Marco. Original body fidelity and rights over additions are unestablished.",
+      "offline_limit": "Derivative bytes are not public; rights restrictions on the controlling source are not cleared by mechanical extraction. Public source pins and precise loci remain readable offline.",
+      "reopen_condition": "Reassess if the controlling exact source is cleared for repository redistribution or a lawful independent source is obtained."
+    },
+    {
+      "id": "alb3-derived-franco-rito-greco-mezzojuso",
+      "url": "https://www.dimarcomezzojuso.it/download.php?as=Franco-Necessit%C3%A0diMantenereilRitoGrecoinMezzojuso.pdf&file=pubs%2F15%2Flibro.pdf",
+      "sha256": "2ebe8538830fa032fa9ddea99197319d92ab1c6bcd3bedebebc8f74db43dd328",
+      "byte_size": 32518,
+      "kind": "mechanical-derivative",
+      "parent_sha256": "2a3c4f7ccf82adefb4c047e8899615b01d0e8cabec32fd833bd2db2a32500363",
+      "derived_extent": "complete mechanical PDF text layer",
+      "decision": "defer",
+      "proposed_storage": "restricted",
+      "rights_basis": "Complete delivery mixes the original title image with a modern reset credited to Giuseppina and Pietro Di Marco. Original body fidelity and rights over additions are unestablished.",
+      "offline_limit": "Derivative bytes are not public; rights restrictions on the controlling source are not cleared by mechanical extraction. Public source pins and precise loci remain readable offline.",
+      "reopen_condition": "Reassess if the controlling exact source is cleared for repository redistribution or a lawful independent source is obtained."
+    },
+    {
+      "id": "alb3-derived-lungro-lajme2024-1-page-143",
+      "url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2026/01/impaginato-2024-Vol-I-per-la-stampa-ok_compressed.pdf",
+      "sha256": "2ef85e827db632e3929e90a3f10e9f2916c5719d0ec3999f89ee6b1210e4fcc0",
+      "byte_size": 241295,
+      "kind": "mechanical-derivative",
+      "parent_sha256": "f9f6a31d54d49299084c8de29f78a8e8f18046e3d231e325daa5da1f77043544",
+      "derived_extent": "PDF page 143 rendered at 110 dpi",
+      "decision": "defer",
+      "proposed_storage": "restricted",
+      "rights_basis": "The reprinted study expressly states all rights reserved and Archivio Apostolico Vaticano copyright 2024; no repository redistribution grant was established.",
+      "offline_limit": "Derivative bytes are not public; rights restrictions on the controlling source are not cleared by mechanical extraction. Public source pins and precise loci remain readable offline.",
+      "reopen_condition": "Reassess if the controlling exact source is cleared for repository redistribution or a lawful independent source is obtained."
+    },
+    {
+      "id": "alb3-derived-lungro-lajme2024-1",
+      "url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2026/01/impaginato-2024-Vol-I-per-la-stampa-ok_compressed.pdf",
+      "sha256": "4e2aa37e901d32c4ab776b7b3e9e5c55ccecb1e41055ef8e43d952177cf3d9bb",
+      "byte_size": 672541,
+      "kind": "mechanical-derivative",
+      "parent_sha256": "f9f6a31d54d49299084c8de29f78a8e8f18046e3d231e325daa5da1f77043544",
+      "derived_extent": "complete mechanical PDF text layer",
+      "decision": "defer",
+      "proposed_storage": "restricted",
+      "rights_basis": "The reprinted study expressly states all rights reserved and Archivio Apostolico Vaticano copyright 2024; no repository redistribution grant was established.",
+      "offline_limit": "Derivative bytes are not public; rights restrictions on the controlling source are not cleared by mechanical extraction. Public source pins and precise loci remain readable offline.",
+      "reopen_condition": "Reassess if the controlling exact source is cleared for repository redistribution or a lawful independent source is obtained."
+    },
+    {
+      "id": "alb3-derived-usco-duration-circ15a",
+      "url": "https://www.copyright.gov/circs/circ15a.pdf",
+      "sha256": "217799b7aa8eca6c297549d5f5c2a91d606f7157de72f94e8750699364942729",
+      "byte_size": 11516,
+      "kind": "mechanical-derivative",
+      "parent_sha256": "6ff3c5612e1cd56469b3eb7d35eba7fd3374843d82744c63ab909225f53b7aef",
+      "derived_extent": "complete mechanical PDF text layer",
+      "decision": "retain",
+      "proposed_storage": "tracked",
+      "rights_basis": "Official United States Copyright Office publication produced as federal government work; United States public domain under 17 U.S.C. 105. Complete official publication retained as rights evidence, including its printed revision date.",
+      "offline_limit": "Exact bounded derivative proposed for retention; parent and omitted-scope qualifications preserved.",
+      "reopen_condition": "No deferral.",
+      "canonical_artifact_id": "artifact.united-states-copyright-office.duration-of-copyright-circular15a.2026-04-revision.mechanical-text"
+    }
+  ],
+  "counts": {
+    "new_inventory_sources": 2,
+    "new_candidates": 0,
+    "new_stages": 0,
+    "new_transitions": 0,
+    "new_native_texts": 0,
+    "proposed_source_manifests": 8,
+    "proposed_retained_payloads": 3,
+    "proposed_retained_bytes": 912115
+  },
+  "limitations": [
+    "No archival original was acquired or inspected in this batch. Prior DGA original-page checks are preserved as prior evidence, not repeated or relabelled primary mission inspection.",
+    "No Orthodox Albanian or Italo-Albanian book is assigned to Catholic Elbasan. No book-language conclusion follows from Albanian painted church inscriptions.",
+    "No current census classification or legal permission conclusion is drawn from the selective 2004–2013 approval webpage.",
+    "The only retained historical original image is Franco’s title leaf; its mixed online body is a modern reset and remains uncollated.",
+    "The zero-candidate/stage result is a bounded evidence disposition, not proof of historical nonexistence or project completion."
+  ]
+}

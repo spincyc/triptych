@@ -33,9 +33,9 @@ EXAMPLES = {
             "tools/missal-coverage-reconciliation",
             (
                 "Missal coverage reconciliation: ok",
-                "eastern: 444 candidates, 398 sources, 23 coverage rows",
-                "western: 1451 candidates, 1290 sources, 151 coverage rows",
-                "Stages: 35 dossiers, 149 traditions, 287 stages, 77 transitions, 195 declared research gaps",
+                "eastern: 446 candidates, 409 sources, 23 coverage rows",
+                "western: 1457 candidates, 1314 sources, 151 coverage rows",
+                "Stages: 36 dossiers, 156 traditions, 295 stages, 77 transitions, 203 declared research gaps",
                 "Mechanical reconciliation only; unresolved research is not an invalid reference, and agreement is not historical completeness.",
             ),
             "read-only reconciliation; incomplete research is reported without becoming a validation failure",
@@ -43,7 +43,7 @@ EXAMPLES = {
         Example(
             "tools/missal-coverage-reconciliation --json",
             (
-                "{\"actual\":{\"count_semantics\":{\"eastern_candidates\":444,\"eastern_census_slots\":23,\"eastern_empty_candidate_slots_at_input\":[\"albanian\",\"macedonian\"],\"presentation_groups\":232,\"western_candidates\":1451,\"western_coverage_trajectories\":151,\"western_empty_candidate_slots_at_input\":1},\"coverage_status_cou... [+63018 chars]",
+                "{\"actual\":{\"count_semantics\":{\"eastern_candidates\":446,\"eastern_census_slots\":23,\"eastern_empty_candidate_slots_at_input\":[\"albanian\",\"macedonian\"],\"presentation_groups\":233,\"western_candidates\":1457,\"western_coverage_trajectories\":151,\"western_empty_candidate_slots_at_input\":1},\"coverage_status_cou... [+63411 chars]",
             ),
             "the same audit as one deterministic JSON object; no caches or research records are written",
         ),

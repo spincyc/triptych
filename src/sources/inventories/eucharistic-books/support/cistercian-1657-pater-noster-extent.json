@@ -1,0 +1,1803 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "title": "Cistercian missal 1657: Pater noster in its two chant forms: complete functional extent",
+  "book_id": "cistercian-1657-pater-noster",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.cistercian-1657.pater-noster.pater-first-introduction",
+    "unit.cistercian-1657.pater-noster.pater-first-prayer-response",
+    "unit.cistercian-1657.pater-noster.pater-first-amen",
+    "unit.cistercian-1657.pater-noster.pater-alternative-usage",
+    "unit.cistercian-1657.pater-noster.pater-alternative-per-omnia",
+    "unit.cistercian-1657.pater-noster.pater-alternative-introduction",
+    "unit.cistercian-1657.pater-noster.pater-alternative-prayer-response",
+    "unit.cistercian-1657.pater-noster.pater-alternative-amen"
+  ],
+  "pages": [
+    {
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.cistercian-1657.pater-noster.pater-first-introduction"
+      ],
+      "description": "Only RIGHT Orémus/introduction/Extendit manus selected; all earlier Canon and entire left excluded."
+    },
+    {
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.cistercian-1657.pater-noster.pater-first-prayer-response",
+        "unit.cistercian-1657.pater-noster.pater-first-amen",
+        "unit.cistercian-1657.pater-noster.pater-alternative-usage",
+        "unit.cistercian-1657.pater-noster.pater-alternative-per-omnia",
+        "unit.cistercian-1657.pater-noster.pater-alternative-introduction",
+        "unit.cistercian-1657.pater-noster.pater-alternative-prayer-response"
+      ],
+      "description": "All two-column body text selected, including both settings and governing rubric."
+    },
+    {
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "ranges": [
+        [
+          3,
+          3
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.cistercian-1657.pater-noster.pater-alternative-prayer-response",
+        "unit.cistercian-1657.pater-noster.pater-alternative-amen"
+      ],
+      "description": "Only LEFT through terminal rubric and Amén selected; entire RIGHT Deinde/Libera excluded."
+    }
+  ],
+  "normalization": "NFC UTF-8; long s becomes s; unambiguous abbreviation signs expand only as individually documented; horizontal chant syllable spacing and physical line-end division hyphens join into words. Source u/v, i/j, ligatures, accents, case including display initials, punctuation, printed referrals, rubric wording and response markers remain. A printed pilcrow remains ¶ and response cue becomes ℟. Each stored LF is one consecutive source block distinguished by source wording, voice or ink; it is not newly inferred prayer paragraphing. Staff notation and pitches remain in the facsimile, not the Latin payload. No explanatory wrapper or source-completing wording is inserted.",
+  "source_boundary_audit": {
+    "scope": "Complete functional Pater constituent in offered source order: FIDES page-file 0275 (printed p.213), right column from Orémus after the earlier Canon/Iungit manus, through the introduction and adjacent Extendit manus; all page-file 0276 (printed p.214) body text, including the first complete Pater and response/Amen, the governing alternative-cantus rubric for three-lesson feasts, ferial days and Masses for the dead, the separately printed Per omnia/Amen and second introduction/Pater; and page-file 0277 (printed p.215), left column through Sacerdos submissâ voce dicit / Amén. It stops before the right-column Deinde accipit Patenam and Libera nos. Both complete printed chant forms and all governing rubrics are included. Final Amén. preserves the independently preferred probable printed acute over e in a worn/folded area; the hooked mark meets a crease, so that diacritic retains an explicit source-condition reservation. This complete declared functional constituent has partial whole-book and partial post-Canon text coverage. The wider continuation through page-file 0285 remains blocked by concealed source letters and punctuation; no alternate-setting words fill those gaps.",
+    "original_image_sequence": [
+      {
+        "artifact_page": 1,
+        "page_file": "0275",
+        "printed_page": 213,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0275-canon-jpeg-f8cc5ad4",
+        "sha256": "f8cc5ad48a21cbd0ee2f000d2c9f05fe4452dde6c261fd978a1565fdf8c0a5cb",
+        "filename": "1657-page-0275.jpg",
+        "original_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0275-djvu-2b1ce57e",
+        "original_sha256": "2b1ce57e4b96df444b07eacc88a24850aa0fdfa291705b5aa6972863a200abd5"
+      },
+      {
+        "artifact_page": 2,
+        "page_file": "0276",
+        "printed_page": 214,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0276-pater-jpeg-fb0e7ca4",
+        "sha256": "fb0e7ca4438aa810580727ba34cca2a73eb9b7084f4399db31e9da86952ec643",
+        "filename": "1657-page-0276.jpg",
+        "original_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0276-djvu-34a9ced2",
+        "original_sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81"
+      },
+      {
+        "artifact_page": 3,
+        "page_file": "0277",
+        "printed_page": 215,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0277-pater-jpeg-b0ea986f",
+        "sha256": "b0ea986f623ad8566b7bbb71a120df7de82eb8a34b9fab154be33051a9bac829",
+        "filename": "1657-page-0277.jpg",
+        "original_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0277-djvu-3fe7cf90",
+        "original_sha256": "3fe7cf90567d89562faa6f30a40900c1c454693585f8b574337f0014ace26af0"
+      }
+    ],
+    "retained_native_source_pages": [
+      {
+        "provider_raw_page": 275,
+        "printed_page": 213,
+        "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0275.djvu",
+        "sha256": "2b1ce57e4b96df444b07eacc88a24850aa0fdfa291705b5aa6972863a200abd5",
+        "byte_size": 857486,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0275-djvu-2b1ce57e",
+        "scope_role": "Pater source page"
+      },
+      {
+        "provider_raw_page": 276,
+        "printed_page": 214,
+        "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0276.djvu",
+        "sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81",
+        "byte_size": 848105,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0276-djvu-34a9ced2",
+        "scope_role": "Pater source page"
+      },
+      {
+        "provider_raw_page": 277,
+        "printed_page": 215,
+        "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0277.djvu",
+        "sha256": "3fe7cf90567d89562faa6f30a40900c1c454693585f8b574337f0014ace26af0",
+        "byte_size": 908634,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0277-djvu-3fe7cf90",
+        "scope_role": "Pater source page"
+      },
+      {
+        "provider_raw_page": 278,
+        "printed_page": 216,
+        "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0278.djvu",
+        "sha256": "909471eb13a35729f4fb013372b53cd02e78bfda421e664e7b94348658149685",
+        "byte_size": 816764,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0278-djvu-909471eb",
+        "scope_role": "wider endpoint/gap or following-division context only"
+      },
+      {
+        "provider_raw_page": 279,
+        "printed_page": 217,
+        "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0279.djvu",
+        "sha256": "e367a0c52710c62dda059518813d9e67f527203926215dde542b371f319a61f4",
+        "byte_size": 863454,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0279-djvu-e367a0c5",
+        "scope_role": "wider endpoint/gap or following-division context only"
+      },
+      {
+        "provider_raw_page": 280,
+        "printed_page": 214,
+        "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0280.djvu",
+        "sha256": "65396859c74b63d439ae0c0f7782c2d980ac344c4546353e6d337c60369917e9",
+        "byte_size": 807475,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0280-djvu-65396859",
+        "scope_role": "wider endpoint/gap or following-division context only"
+      },
+      {
+        "provider_raw_page": 281,
+        "printed_page": 215,
+        "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0281.djvu",
+        "sha256": "15c6789bf12722b6e9476f32db7b8d2ce1d260ead8ddc3603741cfe6948c2856",
+        "byte_size": 927957,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0281-djvu-15c6789b",
+        "scope_role": "wider endpoint/gap or following-division context only"
+      },
+      {
+        "provider_raw_page": 282,
+        "printed_page": 216,
+        "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0282.djvu",
+        "sha256": "d778b27a88699210d9efb7de9e831861ca471b21170f401432fb54b604bad828",
+        "byte_size": 821614,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0282-djvu-d778b27a",
+        "scope_role": "wider endpoint/gap or following-division context only"
+      },
+      {
+        "provider_raw_page": 283,
+        "printed_page": 217,
+        "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0283.djvu",
+        "sha256": "00840df1922d6056a9e05f0d0ff5b0fd419a4282d360ba319769bd4b3c043d0c",
+        "byte_size": 909399,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0283-djvu-00840df1",
+        "scope_role": "wider endpoint/gap or following-division context only"
+      },
+      {
+        "provider_raw_page": 284,
+        "printed_page": 218,
+        "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0284.djvu",
+        "sha256": "6449e9d3c01945711a76e88cd575e406b39cefae8bfc6097c58bef58912d2874",
+        "byte_size": 869261,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0284-djvu-6449e9d3",
+        "scope_role": "wider endpoint/gap or following-division context only"
+      },
+      {
+        "provider_raw_page": 285,
+        "printed_page": 219,
+        "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0285.djvu",
+        "sha256": "1a6c6994eb12dba5ca3644b932e1334253116b0e2cec2ce2441f7da706786f63",
+        "byte_size": 931067,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0285-djvu-1a6c6994",
+        "scope_role": "wider endpoint/gap or following-division context only"
+      },
+      {
+        "provider_raw_page": 286,
+        "printed_page": null,
+        "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0286.djvu",
+        "sha256": "e4a9c033a1d4a21bd010f0701f6a6b1573e869b684217ebd6c479c258552164e",
+        "byte_size": 1419097,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0286-djvu-e4a9c033",
+        "scope_role": "wider endpoint/gap or following-division context only"
+      },
+      {
+        "provider_raw_page": 287,
+        "printed_page": 221,
+        "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0287.djvu",
+        "sha256": "7223d0853a5c837b8b7a2e894c98217cdc7bea707db17d5944a55e57318ebe69",
+        "byte_size": 1113242,
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0287-djvu-7223d085",
+        "scope_role": "wider endpoint/gap or following-division context only"
+      }
+    ],
+    "facsimile_pdf_sha256": "995d68b0f623dad1b2a37407857fa5cb8497f8873ec12ad5c15dd87af64a76bc",
+    "page_image_package_sha256": "64178fe52d4d8330fc44f866718f943b956a29ba19e6f8c7cc44ef57b0329244",
+    "independent_source_extent": {
+      "schema": "cistercian-1657-pater-and-post-canon-extent-review/v1",
+      "review_date": "2026-10-20",
+      "review_kind": "independent image-first source extent and physical census; no candidate literal acceptance",
+      "work_id": "work.cistercian-order.missale-cisterciense",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "edition_identity": "Missale Cisterciense, Paris, Sébastien and Gabriel Cramoisy, 1657; FIDES3755 Krzeszów holding copy",
+      "source_landing_url": "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content",
+      "method": "Sequential complete-page visual inspection of provider raw0275–0287 through decoded representations. Existing exact originals reused; no OCR text supplies readings. Raw0277–0287 were locally decoded from previously acquired originals. No new network requests.",
+      "line_convention": "Numerical main-text baselines count visible body lyric/rubric/prose text rows down each column; exclude running head, printed page number, staff lines, notes, catchwords and signatures. Display initials belong to their text baseline. The marginal Iungit/Extendit lines on raw0275 are separately identified and do not increment the main-text count.",
+      "pater_constituent": {
+        "proposed_slug": "cistercian-1657-pater-noster",
+        "proposed_title": "Cistercian missal 1657: Pater noster in its two chant forms",
+        "extent_judgment": "complete functional Pater source extent accepted; literal candidate acceptance is separate",
+        "selected_raw_pages": [
+          275,
+          276,
+          277
+        ],
+        "page_incidence_count": 3,
+        "selected_physical_groups": [
+          "P01",
+          "P02",
+          "P03",
+          "P04",
+          "P05",
+          "P06",
+          "P07",
+          "P08",
+          "P09"
+        ],
+        "source_physical_group_count": 9,
+        "start": {
+          "provider_raw_page": 275,
+          "printed_page": 213,
+          "column": "right",
+          "physical_part": "main-text baseline 11, Orémus, after the earlier excluded Iungit manus and Canon Per omnia/Amen",
+          "raw_sha256": "2b1ce57e4b96df444b07eacc88a24850aa0fdfa291705b5aa6972863a200abd5"
+        },
+        "end": {
+          "provider_raw_page": 277,
+          "printed_page": 215,
+          "column": "left",
+          "physical_part": "main-text baseline 12, black Amen. after red Sacerdos submissa voce di-/cit,",
+          "raw_sha256": "3fe7cf90567d89562faa6f30a40900c1c454693585f8b574337f0014ace26af0"
+        },
+        "includes": [
+          "First introduction and adjacent Extendit manus",
+          "First entire Pater chant including Sed libera / nos à malo and Sacerdos secretè dicit, Amen.",
+          "Complete governing alternative-cantus rubric for iij Lectionum, ferial and Defunctorum use",
+          "Alternative Per omnia/Amen, complete second introduction and complete second Pater chant",
+          "Final Sacerdos submissa voce dicit, Amen."
+        ],
+        "excludes": [
+          "Raw0275 entire left column and right-column material before Orémus, already belonging to the accepted Canon constituent",
+          "Raw0277 entire right column from Deinde accipit Patenam… and Libera nos",
+          "All raw0278–0287 content; these images support wider endpoint/gap research only",
+          "Chant pitches/staff notation as a Latin text payload, while lyrics and governing rubrics are included"
+        ],
+        "heading_judgment": "Canon Missæ over raw0276/0277 and later pages is a continuing running head. It does not make Pater part of the strict accepted Canon extent or turn the functional Pater into the complete printed Ordo."
+      },
+      "wider_post_canon": {
+        "literal_completion_status": "blocked; not an accepted complete native binding",
+        "physical_extent_status": "source start, actual endpoint and following division checked",
+        "start": {
+          "provider_raw_page": 275,
+          "printed_page": 213,
+          "column": "right",
+          "physical_part": "Orémus at main-text baseline11",
+          "raw_sha256": "2b1ce57e4b96df444b07eacc88a24850aa0fdfa291705b5aa6972863a200abd5"
+        },
+        "end": {
+          "provider_raw_page": 285,
+          "printed_page": 219,
+          "column": "right",
+          "physical_part": "final departure/thanksgiving rubric, main-text baselines28–33; last text pio Missalis.",
+          "raw_sha256": "1a6c6994eb12dba5ca3644b932e1334253116b0e2cec2ce2441f7da706786f63"
+        },
+        "text_page_incidence_count": 11,
+        "text_raw_pages": [
+          275,
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          283,
+          284,
+          285
+        ],
+        "context_raw_pages": [
+          286,
+          287
+        ],
+        "explicit_Finis_marker": false,
+        "endpoint_basis": "Terminal direction leaves the altar after the Last Gospel and refers to the opening Missal for thanksgiving. Next raw page is a Resurrection engraving; the following text page opens the actual Easter Sunday division. The running head alone was not used as endpoint evidence.",
+        "terminal_rubric_anchor": "Finito Euangelio sancti Ioannis discedens ab Altari, pro gratiarum actione dicit Antiphonam. Trium puerorum. cum reliquis, vt habetur in principio Missalis.",
+        "terminal_rubric_ink": "Red governing direction with black Trium puerorum. incipit.",
+        "last_gospel_limit": "This source segment prints incipits, formulas and governing directions, not the full Last Gospel. It also refers to remaining thanksgiving at the beginning of the Missal. Neither missing full text may be supplied from familiarity.",
+        "next_division": {
+          "provider_raw_page": 287,
+          "printed_page": 221,
+          "heading": "DOMINICA / RESVRRECTIONIS.",
+          "following_text_anchors": [
+            "Statio ad S. Mariam Maiorem.",
+            "Introitus.",
+            "Resurrexi"
+          ],
+          "excluded_intervening_page": {
+            "provider_raw_page": 286,
+            "printed_page": null,
+            "description": "full-page Resurrection engraving"
+          }
+        }
+      },
+      "unresolved_wider_literal_spans": [
+        {
+          "provider_raw_page": 278,
+          "printed_page": 216,
+          "column": "right",
+          "locus": "right ends of fraction rubric between Qui tecum conclusion and Per omnia chant",
+          "observed_source_condition": "A pale physical paper strip/fold conceals the far-right part of the upper column and terminal letters of several rubric rows.",
+          "consequence": "Do not certify a full literal fraction-rubric reading by normal-form reconstruction."
+        },
+        {
+          "provider_raw_page": 281,
+          "printed_page": 215,
+          "column": "left",
+          "locus": "main-text baselines17–19, lower Perceptio Corporis tui prayer, from end of tutamentum men- to medelam per-",
+          "observed_source_condition": "Lower-left paper/fold conceals portions of the prayer; visible remainder does not certify all concealed graphemes.",
+          "consequence": "Do not certify a complete literal prayer by copying the familiar formula."
+        },
+        {
+          "provider_raw_page": 282,
+          "printed_page": 216,
+          "column": "right",
+          "locus": "final Sanguis Domini formula, last Amen and terminal punctuation near right edge",
+          "observed_source_condition": "Physical strip overlaps the line ending.",
+          "consequence": "Terminal punctuation cannot be certified from the selected view."
+        }
+      ],
+      "alternative_setting_review": {
+        "pater": "Both actually printed chant forms and the usage rubric are included in the narrowed constituent.",
+        "dismissal": "Nine labelled printed chant settings on raw0284 are inventoried separately below; all lie outside the narrowed Pater.",
+        "alternative_copy_or_scan": "No alternative copy/scan was fetched or certified in this extent lane. An alternative setting cannot silently supply concealed wording of the FIDES3755 holding."
+      },
+      "pagination_warning": "Raw0275–0279 read213–217; raw0280–0283 repeat214–217; raw0284=218, raw0285=219, raw0286 has no visible printed number, raw0287=221. Always cite provider raw page plus observed printed page.",
+      "physical_groups": [
+        {
+          "id": "P01",
+          "description": "First notated Orémus / Præceptis introduction",
+          "start": {
+            "provider_raw_page": 275,
+            "printed_page": 213,
+            "column": "right",
+            "physical_part": "main-text baseline 11, Orémus",
+            "raw_sha256": "2b1ce57e4b96df444b07eacc88a24850aa0fdfa291705b5aa6972863a200abd5"
+          },
+          "end": {
+            "provider_raw_page": 275,
+            "printed_page": 213,
+            "column": "right",
+            "physical_part": "main-text baseline 14, dícere",
+            "raw_sha256": "2b1ce57e4b96df444b07eacc88a24850aa0fdfa291705b5aa6972863a200abd5"
+          },
+          "pater_selected": true
+        },
+        {
+          "id": "P02",
+          "description": "Governing red action Extendit manus beside final introduction staff",
+          "start": {
+            "provider_raw_page": 275,
+            "printed_page": 213,
+            "column": "right margin",
+            "physical_part": "two red lines beside last introduction staff",
+            "raw_sha256": "2b1ce57e4b96df444b07eacc88a24850aa0fdfa291705b5aa6972863a200abd5"
+          },
+          "end": {
+            "provider_raw_page": 275,
+            "printed_page": 213,
+            "column": "right margin",
+            "physical_part": "manus",
+            "raw_sha256": "2b1ce57e4b96df444b07eacc88a24850aa0fdfa291705b5aa6972863a200abd5"
+          },
+          "pater_selected": true
+        },
+        {
+          "id": "P03",
+          "description": "First Pater noster chant, including Sed líbera response",
+          "start": {
+            "provider_raw_page": 276,
+            "printed_page": 214,
+            "column": "left",
+            "physical_part": "main-text baseline 1, display P + ater noster",
+            "raw_sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81"
+          },
+          "end": {
+            "provider_raw_page": 276,
+            "printed_page": 214,
+            "column": "right",
+            "physical_part": "main-text baseline 1, nos à malo.",
+            "raw_sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81"
+          },
+          "pater_selected": true
+        },
+        {
+          "id": "P04",
+          "description": "Red Sacerdos secretè dicit, and black Amen.",
+          "start": {
+            "provider_raw_page": 276,
+            "printed_page": 214,
+            "column": "right",
+            "physical_part": "main-text baseline 2",
+            "raw_sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81"
+          },
+          "end": {
+            "provider_raw_page": 276,
+            "printed_page": 214,
+            "column": "right",
+            "physical_part": "main-text baseline 2, Amen.",
+            "raw_sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81"
+          },
+          "pater_selected": true
+        },
+        {
+          "id": "P05",
+          "description": "Alternative chant usage rubric, not a new division title",
+          "start": {
+            "provider_raw_page": 276,
+            "printed_page": 214,
+            "column": "right",
+            "physical_part": "main-text baseline 3, Sequens cantus dicitur in Fe-",
+            "raw_sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81"
+          },
+          "end": {
+            "provider_raw_page": 276,
+            "printed_page": 214,
+            "column": "right",
+            "physical_part": "main-text baseline 5, bus, & in Missis Defunctorum.",
+            "raw_sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81"
+          },
+          "pater_selected": true
+        },
+        {
+          "id": "P06",
+          "description": "Alternative Per omnia sæcula sæculorum / response Amen",
+          "start": {
+            "provider_raw_page": 276,
+            "printed_page": 214,
+            "column": "right",
+            "physical_part": "main-text baseline 6, display P + er omnia",
+            "raw_sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81"
+          },
+          "end": {
+            "provider_raw_page": 276,
+            "printed_page": 214,
+            "column": "right",
+            "physical_part": "main-text baseline 7, Amen.",
+            "raw_sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81"
+          },
+          "pater_selected": true
+        },
+        {
+          "id": "P07",
+          "description": "Alternative notated Orémus / Præceptis introduction",
+          "start": {
+            "provider_raw_page": 276,
+            "printed_page": 214,
+            "column": "right",
+            "physical_part": "main-text baseline 8, Orémus",
+            "raw_sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81"
+          },
+          "end": {
+            "provider_raw_page": 276,
+            "printed_page": 214,
+            "column": "right",
+            "physical_part": "main-text baseline 11, dícere.",
+            "raw_sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81"
+          },
+          "pater_selected": true
+        },
+        {
+          "id": "P08",
+          "description": "Second Pater noster chant, including Sed líbera response",
+          "start": {
+            "provider_raw_page": 276,
+            "printed_page": 214,
+            "column": "right",
+            "physical_part": "main-text baseline 12, display P + ater noster",
+            "raw_sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81"
+          },
+          "end": {
+            "provider_raw_page": 277,
+            "printed_page": 215,
+            "column": "left",
+            "physical_part": "main-text baseline 10, nos à malo.",
+            "raw_sha256": "3fe7cf90567d89562faa6f30a40900c1c454693585f8b574337f0014ace26af0"
+          },
+          "pater_selected": true
+        },
+        {
+          "id": "P09",
+          "description": "Terminal red Sacerdos submissa voce dicit, and black Amen.",
+          "start": {
+            "provider_raw_page": 277,
+            "printed_page": 215,
+            "column": "left",
+            "physical_part": "main-text baseline 11, Sacerdos submissa voce di-",
+            "raw_sha256": "3fe7cf90567d89562faa6f30a40900c1c454693585f8b574337f0014ace26af0"
+          },
+          "end": {
+            "provider_raw_page": 277,
+            "printed_page": 215,
+            "column": "left",
+            "physical_part": "main-text baseline 12, cit, Amen.",
+            "raw_sha256": "3fe7cf90567d89562faa6f30a40900c1c454693585f8b574337f0014ace26af0"
+          },
+          "pater_selected": true
+        },
+        {
+          "id": "W10",
+          "description": "Deinde accipit Patenam rubric; Libera nos prayer with interleaved sign/cum Patena/osculatur directions",
+          "start": {
+            "provider_raw_page": 277,
+            "printed_page": 215,
+            "column": "right",
+            "physical_part": "top, Deinde accipit Patenam",
+            "raw_sha256": "3fe7cf90567d89562faa6f30a40900c1c454693585f8b574337f0014ace26af0"
+          },
+          "end": {
+            "provider_raw_page": 278,
+            "printed_page": 216,
+            "column": "left",
+            "physical_part": "securi. before Submittit Patenam",
+            "raw_sha256": "909471eb13a35729f4fb013372b53cd02e78bfda421e664e7b94348658149685"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W11",
+          "description": "Paten/fraction directions and Per eundem / Qui tecum conclusions",
+          "start": {
+            "provider_raw_page": 278,
+            "printed_page": 216,
+            "column": "left",
+            "physical_part": "Submittit Patenam Hostiæ",
+            "raw_sha256": "909471eb13a35729f4fb013372b53cd02e78bfda421e664e7b94348658149685"
+          },
+          "end": {
+            "provider_raw_page": 278,
+            "printed_page": 216,
+            "column": "right",
+            "physical_part": "fraction rubric before Per omnia; right edge partly concealed",
+            "raw_sha256": "909471eb13a35729f4fb013372b53cd02e78bfda421e664e7b94348658149685"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W12",
+          "description": "Notated Per omnia / Amen and Pax Domini / Et cum spiritu tuo, with adjacent action rubrics",
+          "start": {
+            "provider_raw_page": 278,
+            "printed_page": 216,
+            "column": "right",
+            "physical_part": "Per omnia chant",
+            "raw_sha256": "909471eb13a35729f4fb013372b53cd02e78bfda421e664e7b94348658149685"
+          },
+          "end": {
+            "provider_raw_page": 278,
+            "printed_page": 216,
+            "column": "right",
+            "physical_part": "Particulam ipsam immittit in Calicem, dicens secretè.",
+            "raw_sha256": "909471eb13a35729f4fb013372b53cd02e78bfda421e664e7b94348658149685"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W13",
+          "description": "Hæc commixtio prayer and conclusion",
+          "start": {
+            "provider_raw_page": 278,
+            "printed_page": 216,
+            "column": "right",
+            "physical_part": "display H at bottom",
+            "raw_sha256": "909471eb13a35729f4fb013372b53cd02e78bfda421e664e7b94348658149685"
+          },
+          "end": {
+            "provider_raw_page": 279,
+            "printed_page": 217,
+            "column": "left",
+            "physical_part": "Amen. before Cooperit Calicem",
+            "raw_sha256": "e367a0c52710c62dda059518813d9e67f527203926215dde542b371f319a61f4"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W14",
+          "description": "Agnus Dei three invocations and governing rubric, including Defunctorum variation",
+          "start": {
+            "provider_raw_page": 279,
+            "printed_page": 217,
+            "column": "left",
+            "physical_part": "Cooperit Calicem rubric",
+            "raw_sha256": "e367a0c52710c62dda059518813d9e67f527203926215dde542b371f319a61f4"
+          },
+          "end": {
+            "provider_raw_page": 279,
+            "printed_page": 217,
+            "column": "right",
+            "physical_part": "Requiem usage rubric before Domine Iesu Christe",
+            "raw_sha256": "e367a0c52710c62dda059518813d9e67f527203926215dde542b371f319a61f4"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W15",
+          "description": "Domine Iesu Christe qui dixisti prayer; Pax tecum / Et cum spiritu tuo and Requiem omission direction",
+          "start": {
+            "provider_raw_page": 279,
+            "printed_page": 217,
+            "column": "right",
+            "physical_part": "display D at prayer beginning",
+            "raw_sha256": "e367a0c52710c62dda059518813d9e67f527203926215dde542b371f319a61f4"
+          },
+          "end": {
+            "provider_raw_page": 280,
+            "printed_page": 214,
+            "column": "left",
+            "physical_part": "Defunctorum direction before next display D",
+            "raw_sha256": "65396859c74b63d439ae0c0f7782c2d980ac344c4546353e6d337c60369917e9"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W16",
+          "description": "Domine Iesu Christe Fili Dei vivi prayer",
+          "start": {
+            "provider_raw_page": 280,
+            "printed_page": 214,
+            "column": "left",
+            "physical_part": "second display D",
+            "raw_sha256": "65396859c74b63d439ae0c0f7782c2d980ac344c4546353e6d337c60369917e9"
+          },
+          "end": {
+            "provider_raw_page": 281,
+            "printed_page": 215,
+            "column": "left",
+            "physical_part": "main-text baseline 5, rum, Amen.",
+            "raw_sha256": "15c6789bf12722b6e9476f32db7b8d2ce1d260ead8ddc3603741cfe6948c2856"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W17",
+          "description": "Perceptio Corporis tui prayer",
+          "start": {
+            "provider_raw_page": 281,
+            "printed_page": 215,
+            "column": "left",
+            "physical_part": "main-text baseline 6, display P",
+            "raw_sha256": "15c6789bf12722b6e9476f32db7b8d2ce1d260ead8ddc3603741cfe6948c2856"
+          },
+          "end": {
+            "provider_raw_page": 281,
+            "printed_page": 215,
+            "column": "right",
+            "physical_part": "Amen. before Genuflectit rubric",
+            "raw_sha256": "15c6789bf12722b6e9476f32db7b8d2ce1d260ead8ddc3603741cfe6948c2856"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W18",
+          "description": "Panem cælestem; genuflection/Host-paten directions; Domine non sum dignus",
+          "start": {
+            "provider_raw_page": 281,
+            "printed_page": 215,
+            "column": "right",
+            "physical_part": "Genuflectit, surgit, & dicit",
+            "raw_sha256": "15c6789bf12722b6e9476f32db7b8d2ce1d260ead8ddc3603741cfe6948c2856"
+          },
+          "end": {
+            "provider_raw_page": 282,
+            "printed_page": 216,
+            "column": "left",
+            "physical_part": "anima mea. before Postea dexterâ",
+            "raw_sha256": "d778b27a88699210d9efb7de9e831861ca471b21170f401432fb54b604bad828"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W19",
+          "description": "Corpus Domini communion formula and Host sumption/paten directions",
+          "start": {
+            "provider_raw_page": 282,
+            "printed_page": 216,
+            "column": "left",
+            "physical_part": "Postea dexterâ se signans rubric",
+            "raw_sha256": "d778b27a88699210d9efb7de9e831861ca471b21170f401432fb54b604bad828"
+          },
+          "end": {
+            "provider_raw_page": 282,
+            "printed_page": 216,
+            "column": "left",
+            "physical_part": "interim dicens: before Quid retribuam",
+            "raw_sha256": "d778b27a88699210d9efb7de9e831861ca471b21170f401432fb54b604bad828"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W20",
+          "description": "Quid retribuam and Calicem salutaris; Chalice direction and Sanguis Domini communion formula",
+          "start": {
+            "provider_raw_page": 282,
+            "printed_page": 216,
+            "column": "left",
+            "physical_part": "display Q at bottom",
+            "raw_sha256": "d778b27a88699210d9efb7de9e831861ca471b21170f401432fb54b604bad828"
+          },
+          "end": {
+            "provider_raw_page": 282,
+            "printed_page": 216,
+            "column": "right",
+            "physical_part": "æternam, Amen at bottom; terminal punctuation concealed",
+            "raw_sha256": "d778b27a88699210d9efb7de9e831861ca471b21170f401432fb54b604bad828"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W21",
+          "description": "Chalice sumption / communicants direction; Quod ore; purification direction; Corpus tuum; ablution/dismissal transition",
+          "start": {
+            "provider_raw_page": 283,
+            "printed_page": 217,
+            "column": "left",
+            "physical_part": "Sumit totum Sanguinem",
+            "raw_sha256": "00840df1922d6056a9e05f0d0ff5b0fd419a4282d360ba319769bd4b3c043d0c"
+          },
+          "end": {
+            "provider_raw_page": 283,
+            "printed_page": 217,
+            "column": "right",
+            "physical_part": "deinde prosequitur Missam.",
+            "raw_sha256": "00840df1922d6056a9e05f0d0ff5b0fd419a4282d360ba319769bd4b3c043d0c"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W22",
+          "description": "Prose dismissal formulas and Requiem response",
+          "start": {
+            "provider_raw_page": 283,
+            "printed_page": 217,
+            "column": "right",
+            "physical_part": "Dicto, post vltimam Orationem",
+            "raw_sha256": "00840df1922d6056a9e05f0d0ff5b0fd419a4282d360ba319769bd4b3c043d0c"
+          },
+          "end": {
+            "provider_raw_page": 283,
+            "printed_page": 217,
+            "column": "right",
+            "physical_part": "Amen. at bottom",
+            "raw_sha256": "00840df1922d6056a9e05f0d0ff5b0fd419a4282d360ba319769bd4b3c043d0c"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W23",
+          "description": "Nine labelled dismissal chant settings and their usage rubrics",
+          "start": {
+            "provider_raw_page": 284,
+            "printed_page": 218,
+            "column": "left",
+            "physical_part": "A Missa Sabbati Sancti",
+            "raw_sha256": "6449e9d3c01945711a76e88cd575e406b39cefae8bfc6097c58bef58912d2874"
+          },
+          "end": {
+            "provider_raw_page": 284,
+            "printed_page": 218,
+            "column": "right",
+            "physical_part": "Requiéscant in pace. before Dicto",
+            "raw_sha256": "6449e9d3c01945711a76e88cd575e406b39cefae8bfc6097c58bef58912d2874"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W24",
+          "description": "Post-dismissal action and Placeat tibi sancta Trinitas prayer",
+          "start": {
+            "provider_raw_page": 284,
+            "printed_page": 218,
+            "column": "right",
+            "physical_part": "Dicto, Ite Missa est",
+            "raw_sha256": "6449e9d3c01945711a76e88cd575e406b39cefae8bfc6097c58bef58912d2874"
+          },
+          "end": {
+            "provider_raw_page": 285,
+            "printed_page": 219,
+            "column": "left",
+            "physical_part": "nostrum. before Deinde osculatur",
+            "raw_sha256": "1a6c6994eb12dba5ca3644b932e1334253116b0e2cec2ce2441f7da706786f63"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W25",
+          "description": "Blessing directions, spoken Benedicat and Pater/Filius/Spiritus/Amen; Pontifical triple blessing direction",
+          "start": {
+            "provider_raw_page": 285,
+            "printed_page": 219,
+            "column": "left",
+            "physical_part": "Deinde osculatur Altare",
+            "raw_sha256": "1a6c6994eb12dba5ca3644b932e1334253116b0e2cec2ce2441f7da706786f63"
+          },
+          "end": {
+            "provider_raw_page": 285,
+            "printed_page": 219,
+            "column": "right",
+            "physical_part": "main-text baseline 1, citur, vt in Pontificali habetur.",
+            "raw_sha256": "1a6c6994eb12dba5ca3644b932e1334253116b0e2cec2ce2441f7da706786f63"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W26",
+          "description": "Last Gospel directions with printed spoken formulas/incipits; Requiem conclusion direction",
+          "start": {
+            "provider_raw_page": 285,
+            "printed_page": 219,
+            "column": "right",
+            "physical_part": "main-text baseline 2, Deinde in cornu Euangelij",
+            "raw_sha256": "1a6c6994eb12dba5ca3644b932e1334253116b0e2cec2ce2441f7da706786f63"
+          },
+          "end": {
+            "provider_raw_page": 285,
+            "printed_page": 219,
+            "column": "right",
+            "physical_part": "main-text baseline 27, gelium sancti Ioannis.",
+            "raw_sha256": "1a6c6994eb12dba5ca3644b932e1334253116b0e2cec2ce2441f7da706786f63"
+          },
+          "pater_selected": false
+        },
+        {
+          "id": "W27",
+          "description": "Final departure/thanksgiving direction; Trium puerorum incipit, remaining prayers referred to beginning of Missal",
+          "start": {
+            "provider_raw_page": 285,
+            "printed_page": 219,
+            "column": "right",
+            "physical_part": "main-text baseline 28, Finito Euangelio sancti Ioan-",
+            "raw_sha256": "1a6c6994eb12dba5ca3644b932e1334253116b0e2cec2ce2441f7da706786f63"
+          },
+          "end": {
+            "provider_raw_page": 285,
+            "printed_page": 219,
+            "column": "right",
+            "physical_part": "main-text baseline 33, pio Missalis.",
+            "raw_sha256": "1a6c6994eb12dba5ca3644b932e1334253116b0e2cec2ce2441f7da706786f63"
+          },
+          "pater_selected": false
+        }
+      ],
+      "dismissal_setting_census": {
+        "provider_raw_page": 284,
+        "printed_page": 218,
+        "count": 9,
+        "status": "source-incidence inventory; these short labels/formula anchors are not a full literal collation of that page",
+        "settings_in_source_order": [
+          {
+            "column": "left",
+            "source_heading": "A Missa Sabbati Sancti vsque ad Sabbatum in Albis inclusiuè.",
+            "printed_formula": "Ite Missa est allelúia, allelúia."
+          },
+          {
+            "column": "left",
+            "source_heading": "In festis Sermonum.",
+            "printed_formula": "Ite Missa est."
+          },
+          {
+            "column": "left",
+            "source_heading": "In festis Beatæ Mariæ.",
+            "printed_formula": "Ite Missa est."
+          },
+          {
+            "column": "left",
+            "source_heading": "In festis duarum Missarum, & Dominicis.",
+            "printed_formula": "Ite Missa est."
+          },
+          {
+            "column": "left",
+            "source_heading": "In festis duodecim Lect. & Missæ, & diebus infrà Octauis solemnis.",
+            "printed_formula": "Ite Missa est."
+          },
+          {
+            "column": "right",
+            "source_heading": "In festis iij. Lectionum & feriis tempore Paschali.",
+            "printed_formula": "Ite Missa est."
+          },
+          {
+            "column": "right",
+            "source_heading": "In Dominicis Aduentus, Quadragesimæ, in festo SS. Innocentium, & Vigilia Natiuitatis Domini.",
+            "printed_formula": "Benedicámus Dómino."
+          },
+          {
+            "column": "right",
+            "source_heading": "In Missis ferialibus.",
+            "printed_formula": "Benedicámus Dómino."
+          },
+          {
+            "column": "right",
+            "source_heading": "In Missis Defunctorum.",
+            "printed_formula": "Requiéscant in pace."
+          }
+        ]
+      },
+      "page_census": [
+        {
+          "provider_raw_page": 275,
+          "printed_page": 213,
+          "groups": "P01–P02",
+          "finding": "Only right-column Pater introduction and Extendit manus selected. Entire left and earlier right belong to accepted Canon and are excluded."
+        },
+        {
+          "provider_raw_page": 276,
+          "printed_page": 214,
+          "groups": "P03–P08",
+          "finding": "Entire two-column body selected. First Pater concludes at right top. Rule and red alternative-usage rubric govern second complete setting, which includes a fresh Per omnia and introduction."
+        },
+        {
+          "provider_raw_page": 277,
+          "printed_page": 215,
+          "groups": "P08–P09; W10",
+          "finding": "Left column selected through terminal mixed rubric/Amen; right begins paten/Libera and is excluded from Pater."
+        },
+        {
+          "provider_raw_page": 278,
+          "printed_page": 216,
+          "groups": "W10–W13",
+          "finding": "Libera, fraction, chanted conclusions/Pax and commixture beginning. Concealment at right edge of fraction rubric."
+        },
+        {
+          "provider_raw_page": 279,
+          "printed_page": 217,
+          "groups": "W13–W15",
+          "finding": "Commixture conclusion, Agnus Dei and Requiem direction, first peace prayer beginning."
+        },
+        {
+          "provider_raw_page": 280,
+          "printed_page": 214,
+          "groups": "W15–W16",
+          "finding": "Printed number repeats 214. Peace prayer/Pax/Requiem direction; Domine Iesu Christe Fili Dei vivi."
+        },
+        {
+          "provider_raw_page": 281,
+          "printed_page": 215,
+          "groups": "W16–W18",
+          "finding": "Printed number repeats 215. Prayer conclusion, Perceptio, Panem cælestem and Host communion introduction. Lower-left physical concealment."
+        },
+        {
+          "provider_raw_page": 282,
+          "printed_page": 216,
+          "groups": "W18–W20",
+          "finding": "Printed number repeats 216. Domine non sum dignus conclusion, Host/Chalice communion prayers and rubrics. Final right punctuation concealed."
+        },
+        {
+          "provider_raw_page": 283,
+          "printed_page": 217,
+          "groups": "W21–W22",
+          "finding": "Printed number repeats 217. Sumption/communicants/purifications and prose dismissal forms. No full Communion or Postcommunion proper is printed here; reference assumes their place."
+        },
+        {
+          "provider_raw_page": 284,
+          "printed_page": 218,
+          "groups": "W23–W24",
+          "finding": "Nine labelled dismissal chant alternatives, then Placeat beginning."
+        },
+        {
+          "provider_raw_page": 285,
+          "printed_page": 219,
+          "groups": "W24–W27",
+          "finding": "Placeat conclusion, blessing, Last Gospel incipits/directions, Requiem directions and final departure/thanksgiving rubric; actual Ordo endpoint."
+        },
+        {
+          "provider_raw_page": 286,
+          "printed_page": null,
+          "groups": "excluded context",
+          "finding": "Unnumbered full-page Resurrection engraving. No printed ordinary text continues here. Do not invent a visible page number 220."
+        },
+        {
+          "provider_raw_page": 287,
+          "printed_page": 221,
+          "groups": "excluded next division",
+          "finding": "Printed221, large actual DOMINICA / RESVRRECTIONIS heading; Easter Sunday station, Introitus and proper texts. This is a new division, not a running head."
+        }
+      ],
+      "raw_source_identities": [
+        {
+          "provider_raw_page": 275,
+          "printed_page": 213,
+          "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0275.djvu",
+          "sha256": "2b1ce57e4b96df444b07eacc88a24850aa0fdfa291705b5aa6972863a200abd5",
+          "byte_size": 857486
+        },
+        {
+          "provider_raw_page": 276,
+          "printed_page": 214,
+          "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0276.djvu",
+          "sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81",
+          "byte_size": 848105
+        },
+        {
+          "provider_raw_page": 277,
+          "printed_page": 215,
+          "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0277.djvu",
+          "sha256": "3fe7cf90567d89562faa6f30a40900c1c454693585f8b574337f0014ace26af0",
+          "byte_size": 908634
+        },
+        {
+          "provider_raw_page": 278,
+          "printed_page": 216,
+          "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0278.djvu",
+          "sha256": "909471eb13a35729f4fb013372b53cd02e78bfda421e664e7b94348658149685",
+          "byte_size": 816764
+        },
+        {
+          "provider_raw_page": 279,
+          "printed_page": 217,
+          "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0279.djvu",
+          "sha256": "e367a0c52710c62dda059518813d9e67f527203926215dde542b371f319a61f4",
+          "byte_size": 863454
+        },
+        {
+          "provider_raw_page": 280,
+          "printed_page": 214,
+          "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0280.djvu",
+          "sha256": "65396859c74b63d439ae0c0f7782c2d980ac344c4546353e6d337c60369917e9",
+          "byte_size": 807475
+        },
+        {
+          "provider_raw_page": 281,
+          "printed_page": 215,
+          "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0281.djvu",
+          "sha256": "15c6789bf12722b6e9476f32db7b8d2ce1d260ead8ddc3603741cfe6948c2856",
+          "byte_size": 927957
+        },
+        {
+          "provider_raw_page": 282,
+          "printed_page": 216,
+          "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0282.djvu",
+          "sha256": "d778b27a88699210d9efb7de9e831861ca471b21170f401432fb54b604bad828",
+          "byte_size": 821614
+        },
+        {
+          "provider_raw_page": 283,
+          "printed_page": 217,
+          "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0283.djvu",
+          "sha256": "00840df1922d6056a9e05f0d0ff5b0fd419a4282d360ba319769bd4b3c043d0c",
+          "byte_size": 909399
+        },
+        {
+          "provider_raw_page": 284,
+          "printed_page": 218,
+          "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0284.djvu",
+          "sha256": "6449e9d3c01945711a76e88cd575e406b39cefae8bfc6097c58bef58912d2874",
+          "byte_size": 869261
+        },
+        {
+          "provider_raw_page": 285,
+          "printed_page": 219,
+          "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0285.djvu",
+          "sha256": "1a6c6994eb12dba5ca3644b932e1334253116b0e2cec2ce2441f7da706786f63",
+          "byte_size": 931067
+        },
+        {
+          "provider_raw_page": 286,
+          "printed_page": null,
+          "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0286.djvu",
+          "sha256": "e4a9c033a1d4a21bd010f0701f6a6b1573e869b684217ebd6c479c258552164e",
+          "byte_size": 1419097
+        },
+        {
+          "provider_raw_page": 287,
+          "printed_page": 221,
+          "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0287.djvu",
+          "sha256": "7223d0853a5c837b8b7a2e894c98217cdc7bea707db17d5944a55e57318ebe69",
+          "byte_size": 1113242
+        }
+      ],
+      "scope_limits": [
+        "This review accepts a functional Pater extent, not a whole book, complete Ordo Missæ or ancestry claim.",
+        "The wider endpoint/census is gap research and is not evidence that all intervening Latin has passed literal collation.",
+        "Existing accepted Canon52 and offertory25 are outside this extension and are not revised by this report.",
+        "Physical groups are independent extent-review groups, not a promise of the final semantic unit count or adapter numbering.",
+        "Candidate-specific binding, unit, script-line and derived-text literal acceptance must be supplied separately."
+      ]
+    },
+    "source_block_map": [
+      {
+        "slug": "pater-first-introduction",
+        "blocks": [
+          {
+            "serialized_line": 1,
+            "kind": "chant-fragment",
+            "text": "Orémus. Præcéptis salutáribus móniti, & diuína institutióne formáti audémus",
+            "source_fragments": [
+              {
+                "page_file": "0275",
+                "column": "right",
+                "line_start": 13,
+                "line_end": 13,
+                "color": "red",
+                "text": "O"
+              },
+              {
+                "page_file": "0275",
+                "column": "right",
+                "line_start": 13,
+                "line_end": 13,
+                "color": "black",
+                "text": "rémus. Præcéptis salutá-",
+                "source_underlay": "rémus. Præcéptis sa lu tá-"
+              },
+              {
+                "page_file": "0275",
+                "column": "right",
+                "line_start": 14,
+                "line_end": 14,
+                "color": "black",
+                "text": "ribus móniti, & diuína insti-",
+                "source_underlay": "ribus móni ti, & diuína insti-"
+              },
+              {
+                "page_file": "0275",
+                "column": "right",
+                "line_start": 15,
+                "line_end": 15,
+                "color": "black",
+                "text": "tutióne formáti audémus",
+                "source_underlay": "tu ti óne formá ti audémus"
+              }
+            ]
+          },
+          {
+            "serialized_line": 2,
+            "kind": "rubric",
+            "text": "Extendit manus.",
+            "source_fragments": [
+              {
+                "page_file": "0275",
+                "column": "right",
+                "line_start": 16,
+                "line_end": 16,
+                "color": "red",
+                "text": "Extendit"
+              },
+              {
+                "page_file": "0275",
+                "column": "right",
+                "line_start": 17,
+                "line_end": 17,
+                "color": "red",
+                "text": "manus."
+              }
+            ]
+          },
+          {
+            "serialized_line": 3,
+            "kind": "chant-fragment",
+            "text": "dícere.",
+            "source_fragments": [
+              {
+                "page_file": "0275",
+                "column": "right",
+                "line_start": 18,
+                "line_end": 18,
+                "color": "black",
+                "text": "dícere.",
+                "source_underlay": "dí ce re."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "pater-first-prayer-response",
+        "blocks": [
+          {
+            "serialized_line": 4,
+            "kind": "chant-prayer",
+            "text": "PAter noster, qui es in cælis: Sanctificétur nomen tuum: Aduéniat regnum tuum: Fiat volúntas tua, sicut in cælo, & in terra. Panem nostrum quotidiánum da nobis hódie: Et dimítte nobis débita nostra, sicut & nos dimíttimus debitóribus nostris. Et ne nos indúcas in tentatiónem.",
+            "source_fragments": [
+              {
+                "page_file": "0276",
+                "column": "left",
+                "line_start": 1,
+                "line_end": 1,
+                "color": "red",
+                "text": "P"
+              },
+              {
+                "page_file": "0276",
+                "column": "left",
+                "line_start": 1,
+                "line_end": 1,
+                "color": "black",
+                "text": "Ater noster, qui es in",
+                "source_underlay": "A ter noster, qui es in"
+              },
+              {
+                "page_file": "0276",
+                "column": "left",
+                "line_start": 2,
+                "line_end": 2,
+                "color": "black",
+                "text": "cælis: Sanctificétur nomen",
+                "source_underlay": "cæ lis: Sancti ficétur nomen"
+              },
+              {
+                "page_file": "0276",
+                "column": "left",
+                "line_start": 3,
+                "line_end": 3,
+                "color": "black",
+                "text": "tuum: Aduéniat regnum",
+                "source_underlay": "tuum: Aduéni at regnum"
+              },
+              {
+                "page_file": "0276",
+                "column": "left",
+                "line_start": 4,
+                "line_end": 4,
+                "color": "black",
+                "text": "tuum: Fiat volúntas tua, si-",
+                "source_underlay": "tuum: Fi at volúntas tu a, si-"
+              },
+              {
+                "page_file": "0276",
+                "column": "left",
+                "line_start": 5,
+                "line_end": 5,
+                "color": "black",
+                "text": "cut in cælo, & in terra."
+              },
+              {
+                "page_file": "0276",
+                "column": "left",
+                "line_start": 6,
+                "line_end": 6,
+                "color": "black",
+                "text": "Panem nostrum quotidiánum",
+                "source_underlay": "Panem nostrum quotidi ánum"
+              },
+              {
+                "page_file": "0276",
+                "column": "left",
+                "line_start": 7,
+                "line_end": 7,
+                "color": "black",
+                "text": "da nobis hódie: Et dimítte",
+                "source_underlay": "da nobis hódi e: Et dimítte"
+              },
+              {
+                "page_file": "0276",
+                "column": "left",
+                "line_start": 8,
+                "line_end": 8,
+                "color": "black",
+                "text": "nobis débita nostra, sicut &"
+              },
+              {
+                "page_file": "0276",
+                "column": "left",
+                "line_start": 9,
+                "line_end": 9,
+                "color": "black",
+                "text": "nos dimíttimus debitóribus"
+              },
+              {
+                "page_file": "0276",
+                "column": "left",
+                "line_start": 10,
+                "line_end": 10,
+                "color": "black",
+                "text": "nostris. Et ne nos indúcas in"
+              },
+              {
+                "page_file": "0276",
+                "column": "left",
+                "line_start": 11,
+                "line_end": 11,
+                "color": "black",
+                "text": "tentatiónem.",
+                "source_underlay": "tentati ónem."
+              }
+            ]
+          },
+          {
+            "serialized_line": 5,
+            "kind": "chant-response",
+            "text": "℟. Sed líbera nos à malo.",
+            "source_fragments": [
+              {
+                "page_file": "0276",
+                "column": "left",
+                "line_start": 11,
+                "line_end": 11,
+                "color": "black",
+                "text": "℟."
+              },
+              {
+                "page_file": "0276",
+                "column": "left",
+                "line_start": 11,
+                "line_end": 11,
+                "color": "black",
+                "text": "Sed líbera"
+              },
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 1,
+                "line_end": 1,
+                "color": "black",
+                "text": "nos à malo."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "pater-first-amen",
+        "blocks": [
+          {
+            "serialized_line": 6,
+            "kind": "rubric",
+            "text": "Sacerdos secretè dicit,",
+            "source_fragments": [
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 2,
+                "line_end": 2,
+                "color": "red",
+                "text": "Sacerdos secretè dicit,"
+              }
+            ]
+          },
+          {
+            "serialized_line": 7,
+            "kind": "spoken-response",
+            "text": "Amen.",
+            "source_fragments": [
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 2,
+                "line_end": 2,
+                "color": "black",
+                "text": "Amen."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "pater-alternative-usage",
+        "blocks": [
+          {
+            "serialized_line": 8,
+            "kind": "rubric",
+            "text": "¶ Sequens cantus dicitur in Festis iij. Lectionum, & diebus ferialibus, & in Missis Defunctorum.",
+            "source_fragments": [
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 3,
+                "line_end": 3,
+                "color": "black",
+                "text": "¶"
+              },
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 3,
+                "line_end": 3,
+                "color": "red",
+                "text": "Sequens cantus dicitur in Fe-"
+              },
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 4,
+                "line_end": 4,
+                "color": "red",
+                "text": "stis iij. Lectionum, & diebus feriali-"
+              },
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 5,
+                "line_end": 5,
+                "color": "red",
+                "text": "bus, & in Missis Defunctorum."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "pater-alternative-per-omnia",
+        "blocks": [
+          {
+            "serialized_line": 9,
+            "kind": "chant",
+            "text": "PEr ómnia sæcula sæculórum.",
+            "source_fragments": [
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 6,
+                "line_end": 6,
+                "color": "red",
+                "text": "P"
+              },
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 6,
+                "line_end": 6,
+                "color": "black",
+                "text": "Er ómnia sæcula sæcu-",
+                "source_underlay": "Er ómni a sæcula sæcu-"
+              },
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 7,
+                "line_end": 7,
+                "color": "black",
+                "text": "lórum."
+              }
+            ]
+          },
+          {
+            "serialized_line": 10,
+            "kind": "chant-response",
+            "text": "℟. Amen.",
+            "source_fragments": [
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 7,
+                "line_end": 7,
+                "color": "red",
+                "text": "℟."
+              },
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 7,
+                "line_end": 7,
+                "color": "black",
+                "text": "Amen."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "pater-alternative-introduction",
+        "blocks": [
+          {
+            "serialized_line": 11,
+            "kind": "chant",
+            "text": "Orémus. Præcéptis salutáribus móniti, & diuína institutióne formáti audémus dícere.",
+            "source_fragments": [
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 8,
+                "line_end": 8,
+                "color": "red",
+                "text": "O"
+              },
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 8,
+                "line_end": 8,
+                "color": "black",
+                "text": "rémus. Præcéptis salutá-",
+                "source_underlay": "rémus. Præcéptis sa lu tá-"
+              },
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 9,
+                "line_end": 9,
+                "color": "black",
+                "text": "ribus móniti, & diuína insti-",
+                "source_underlay": "ribus móni ti, & diuína insti-"
+              },
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 10,
+                "line_end": 10,
+                "color": "black",
+                "text": "tutióne formáti audémus",
+                "source_underlay": "tu ti óne formá ti audémus"
+              },
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 11,
+                "line_end": 11,
+                "color": "black",
+                "text": "dícere.",
+                "source_underlay": "dí ce re."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "pater-alternative-prayer-response",
+        "blocks": [
+          {
+            "serialized_line": 12,
+            "kind": "chant-prayer",
+            "text": "PAter noster, qui es in cælis: Sanctificétur nomen tuum: Aduéniat regnum tuum: Fiat volúntas tua, sicut in cælo, & in terra. Panem nostrum quotidiánum da nobis hódie: Et dimitte nobis débita nostra, sicut & nos dimíttimus debitóribus nostris. Et ne nos indúcas in tentatiónem.",
+            "source_fragments": [
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 12,
+                "line_end": 12,
+                "color": "red",
+                "text": "P"
+              },
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 12,
+                "line_end": 12,
+                "color": "black",
+                "text": "Ater noster, qui es in"
+              },
+              {
+                "page_file": "0276",
+                "column": "right",
+                "line_start": 13,
+                "line_end": 13,
+                "color": "black",
+                "text": "cælis: Sanctificétur nomen",
+                "source_underlay": "cælis: Sancti fi cétur nomen"
+              },
+              {
+                "page_file": "0277",
+                "column": "left",
+                "line_start": 1,
+                "line_end": 1,
+                "color": "black",
+                "text": "tuum: Aduéniat regnum",
+                "source_underlay": "tuum: Aduéni at regnum"
+              },
+              {
+                "page_file": "0277",
+                "column": "left",
+                "line_start": 2,
+                "line_end": 2,
+                "color": "black",
+                "text": "tuum: Fiat volúntas tua, si-",
+                "source_underlay": "tuum: Fi at volúntas tu a, si-"
+              },
+              {
+                "page_file": "0277",
+                "column": "left",
+                "line_start": 3,
+                "line_end": 3,
+                "color": "black",
+                "text": "cut in cælo, & in terra."
+              },
+              {
+                "page_file": "0277",
+                "column": "left",
+                "line_start": 4,
+                "line_end": 4,
+                "color": "black",
+                "text": "Panem nostrum quotidiánum",
+                "source_underlay": "Panem nostrum quotidi ánum"
+              },
+              {
+                "page_file": "0277",
+                "column": "left",
+                "line_start": 5,
+                "line_end": 5,
+                "color": "black",
+                "text": "da nobis hódie: Et dimitte",
+                "source_underlay": "da nobis hódi e: Et dimitte"
+              },
+              {
+                "page_file": "0277",
+                "column": "left",
+                "line_start": 6,
+                "line_end": 6,
+                "color": "black",
+                "text": "nobis débita nostra, sicut &"
+              },
+              {
+                "page_file": "0277",
+                "column": "left",
+                "line_start": 7,
+                "line_end": 7,
+                "color": "black",
+                "text": "nos dimíttimus debitóribus"
+              },
+              {
+                "page_file": "0277",
+                "column": "left",
+                "line_start": 8,
+                "line_end": 8,
+                "color": "black",
+                "text": "nostris. Et ne nos indúcas in"
+              },
+              {
+                "page_file": "0277",
+                "column": "left",
+                "line_start": 9,
+                "line_end": 9,
+                "color": "black",
+                "text": "tentatiónem.",
+                "source_underlay": "tentati ónem."
+              }
+            ]
+          },
+          {
+            "serialized_line": 13,
+            "kind": "chant-response",
+            "text": "℟. Sed líbera nos à malo.",
+            "source_fragments": [
+              {
+                "page_file": "0277",
+                "column": "left",
+                "line_start": 9,
+                "line_end": 9,
+                "color": "red",
+                "text": "℟."
+              },
+              {
+                "page_file": "0277",
+                "column": "left",
+                "line_start": 9,
+                "line_end": 9,
+                "color": "black",
+                "text": "Sed líbera"
+              },
+              {
+                "page_file": "0277",
+                "column": "left",
+                "line_start": 10,
+                "line_end": 10,
+                "color": "black",
+                "text": "nos à malo."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "pater-alternative-amen",
+        "blocks": [
+          {
+            "serialized_line": 14,
+            "kind": "rubric",
+            "text": "Sacerdos submissâ voce dicit,",
+            "source_fragments": [
+              {
+                "page_file": "0277",
+                "column": "left",
+                "line_start": 11,
+                "line_end": 11,
+                "color": "red",
+                "text": "Sacerdos submissâ voce di-"
+              },
+              {
+                "page_file": "0277",
+                "column": "left",
+                "line_start": 12,
+                "line_end": 12,
+                "color": "red",
+                "text": "cit,"
+              }
+            ]
+          },
+          {
+            "serialized_line": 15,
+            "kind": "spoken-response",
+            "text": "Amén.",
+            "source_fragments": [
+              {
+                "page_file": "0277",
+                "column": "left",
+                "line_start": 12,
+                "line_end": 12,
+                "color": "black",
+                "text": "Amén."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "baseline_convention": "Source-block addresses count every visible text baseline, including marginal action text, down each column; repeated same-baseline ink fragments share an address. The independent physical-group census separately excludes marginal action rows from its main-text count. Both conventions are explicitly identified; they locate the same original source blocks.",
+    "final_amen_source_condition": {
+      "schema": "cistercian-1657-pater-terminal-mark-arbitration/v1",
+      "review_date": "2026-10-20",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "source_url": "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0277.djvu",
+      "provider_raw_page": 277,
+      "printed_page": 215,
+      "column": "left",
+      "main_text_baseline": 12,
+      "locus": "Black final response after the terminal red Sacerdos submissa voce di- / cit, rubric; this review arbitrates only the response mark and stop.",
+      "method": "Directly inspected the supplied terminal-response crop and the previously decoded complete native PNG, followed by an unretouched native-resolution crop of that same PNG. No new decoding, acquisition, OCR or broad recollation. Familiar liturgical spelling was not used to decide the mark.",
+      "best_reading": "Amén.",
+      "mark_classification": "probable printed acute over e",
+      "reading_confidence": "The acute is supported, with residual material uncertainty from the worn/folded source. The terminal full stop is clear.",
+      "positive_evidence": [
+        "The dark stroke is discrete and centered over the e, within the vertical space where the source places accents.",
+        "Its lower end lies slightly to the left of its upper end, compatible with an acute even though the surviving shape is upright and hooked.",
+        "Its darkness is comparable to the black response letters. The nearby broad crease tracks are paler.",
+        "The full stop after n is a separate clear black point."
+      ],
+      "material_uncertainty": "The upper end of the mark meets a physical crease, and the stroke is less regular than a pristine sloping acute. These bytes do not prove that wear contributed nothing to its surviving shape. A source-condition note should preserve this reservation; the preferred reading remains Amén.",
+      "scope_limit": "This addendum arbitrates the terminal response mark and stop only. It does not alter frozen extent outputs, settle the separately reviewed dícere punctuation, or provide candidate-specific whole-binding literal acceptance.",
+      "source_raw": {
+        "sha256": "3fe7cf90567d89562faa6f30a40900c1c454693585f8b574337f0014ace26af0",
+        "byte_size": 908634
+      },
+      "native_png": {
+        "sha256": "07da815344d2370caac60135912b0e382757023eab78bdbb21a7ae2f53b065a7",
+        "byte_size": 24033665,
+        "dimensions_px": [
+          3292,
+          4989
+        ]
+      },
+      "native_detail_crop": {
+        "sha256": "f438ee1d5d02b2253c5e4320abdcc87444337ce5b2611bf6464026164144a4e5",
+        "byte_size": 921322,
+        "dimensions_px": [
+          1500,
+          620
+        ],
+        "recipe": "ImageMagick input-native-PNG -crop 1500x620+250+4230 +repage output-PNG; no resize, sharpen, color or content alteration."
+      },
+      "supplied_comparison_crop": {
+        "sha256": "519475218013632f30a0f75c5f69e87be8bd35fdb65f74439163bc8721fdc38a",
+        "byte_size": 1056949,
+        "dimensions_px": [
+          1760,
+          800
+        ],
+        "status": "Secondary crop directly inspected and compared with the native source; its generation recipe is not certified by this addendum."
+      }
+    },
+    "reviewed_corrections": [
+      "The first invitation ends dícere. with acute on i only; no final e acute is asserted.",
+      "The first Pater prints dimítte, while the second prints dimitte without acute; the actual difference is preserved.",
+      "The final rubric reads submissâ; final Amén. preserves the preferred printed-acute reading with its explicit crease/wear source-condition note."
+    ],
+    "whole_book_complete": false,
+    "wider_post_canon_complete": false,
+    "ancestry_authorized": false
+  }
+}

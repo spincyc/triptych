@@ -42,6 +42,7 @@ from _tooling import (  # noqa: E402
     add_style_flags,
     resolve_style,
     GROUPS,
+    LOCAL,
     GROUP_OF,
     MODEL,
     NETWORK,
@@ -84,14 +85,14 @@ EXAMPLES = {
             (
                 "acquisition:",
                 "  Retrieval from outside the project. This is the only group that reaches",
-                "  outside your machine at all, and no tool in any other group makes a network",
-                "... 70 more lines",
+                "  outside your machine at all. Browser acceptance in the release group uses",
+                "... 72 more lines",
             ),
         ),
         Example(
             "tools/tpt --list --json",
             (
-                "[{\"group\": \"calendar\", \"mutates\": true, \"nam... [+11948 chars]",
+                "[{\"group\": \"calendar\", \"mutates\": true, \"nam... [+12577 chars]",
             ),
             "one object a tool, each carrying the group its listing section came from",
         ),
@@ -138,13 +139,13 @@ EXAMPLES = {
         Example(
             "tools/tpt --check",
             (
-                "registry ok: 43 tools",
+                "registry ok: 45 tools",
             ),
         ),
         Example(
             "tools/tpt --check --json",
             (
-                "registry ok: 43 tools",
+                "registry ok: 45 tools",
             ),
             "--check reports in text either way; it is a gate, not a query",
         ),
@@ -270,10 +271,10 @@ def list_tools(registry: Registry, *, as_json: bool) -> int:
 
 
 def reach_summary(registry: Registry) -> str:
-    """One sentence naming every tool that reaches outside, or saying none do."""
+    """Name external and local service use separately."""
     outward = {
         kind: sorted(n for n in registry if REACHES.get(n) == kind)
-        for kind in (NETWORK, MODEL)
+        for kind in (NETWORK, MODEL, LOCAL)
     }
     parts = [
         f"{REACH_LABEL[kind]}: {', '.join(names)}"
@@ -281,10 +282,10 @@ def reach_summary(registry: Registry) -> str:
         if names
     ]
     if not parts:
-        return "No registered tool reaches the network or calls a model."
+        return "No registered tool reaches the external network, calls a model or uses local browser services."
     return (
         "; ".join(parts)
-        + ". No other registered tool reaches the network or calls a model."
+        + ". No other registered tool reaches the external network, calls a model or uses local browser services."
     )
 
 

@@ -32,6 +32,36 @@
       "checked_on": "2026-10-20",
       "status": "inspected",
       "limitations": "Original books and circulars not acquired. Its table gives 1235/1920 for the 1949 title, against 1650/1949 reported by Ivancsó 2003. Neither number is silently preferred. The books’ whole contents and modern reception after this source’s date are not independently collated."
+    },
+    {
+      "id": "hungarian-reception:title1920-photo",
+      "title": "1920-imprint Liturgikon title leaf photographed in AbeBooks item 32188629463 (Time-Honored Books)",
+      "url": "https://pictures.abebooks.com/inventory/32188629463_4._SL1500_.jpg",
+      "kind": "primary-book",
+      "inspection": "All four offered photographs acquired and visually inspected. Photograph 4 shows the unnumbered title leaf with 1235/1920 private-use permission, revised/expanded statement, Hajdúdorog episcopal office and Jóba Elek printer line 1723–1920. Photographs 1–3 show binding and endpapers only.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Four offered seller photographs acquired and inspected: front cover, spine/cover, endpapers, and an unnumbered title leaf. Only the fourth photograph carries printed book text. It verifies the reproduced title, 1235/1920 private-use permission, revised/expanded editorial statement and Jóba Elek printer line 1723–1920. No permission-date verso, contents, Greek anaphora pages, terminal leaves or Emlékezetül pp. 309–310 are shown. The seller calls the book a 1920 first edition, but the physical impression cannot be independently authenticated from these four photographs: the known 1984 facsimile retains the 1920 imprint. No full 1920 book or complete textual state is acquired. A binding appearance cannot establish a print date."
+    },
+    {
+      "id": "hungarian-reception:opac1920",
+      "title": "Szent Atanáz college library catalogue, bibNY56K501 / recnum 448: revised and expanded Liturgikon (1920)",
+      "url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=marc&recnum=448",
+      "kind": "institutional-catalogue",
+      "inspection": "Complete MARC and long-with-holdings records read. MARC 001 identifies bibNY56K501; 250 gives revised/expanded; 260 gives Jóba Elek, Nyíregyháza, 1920; 300 gives 311 pages, illustrations, 24 cm. Holdings are Ant10911/M-1638, Ant10792/M-1637 and Ant101011/M-1891. The M-1637 copy lacks pp. 273–311; its catalogued front annotations include Melles's 16 August 1920 presentation and Szemerszky's August 1920 note about preparation and Greek-text correction. Ant101011/M-1891 bears Hajdúböszörmény Greek Catholic parish stamps. M-1638 was re-bound in 2019.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Full catalogue records read, original physical copies and annotations not inspected. The catalogue lists three separate copies, including an incomplete annotated copy; they must not be merged with the seller copy. No digital object or MARC 856 field is present in the returned record. Parish stamps and ownership annotations do not by themselves date liturgical use. Catalogue transcription is an acquisition route, not a replacement for original-book collation."
+    },
+    {
+      "id": "hungarian-reception:opac1949",
+      "title": "Szent Atanáz college library catalogue, bibNY56K11755 / recnum 10613: Aranyszájú Szent János liturgy (1949)",
+      "url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=marc&recnum=10613",
+      "kind": "institutional-catalogue",
+      "inspection": "Complete MARC and long-with-holdings records read. MARC 246 transcribes private-use permission 1650/1949; 260 names Orosz Károly, Nyíregyháza, 1949; 300 gives 59 pages plus 5 typed pages. Holdings are D 442, DT 399, DT 484 and C 12647. Copy DT 484 has typed additions numbered 60–80; copy 104641/C 12647 has five typed pages with prayers for the sick, petitions and Communion prayers. These are explicitly copy-specific additions.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Full catalogue records read; no original title image or full 1949 book acquired. MARC 246 transcribes 1650/1949 private-use permission and corroborates Ivancsó 2003, but does not independently resolve its disagreement with Ivancsó 2008's 1235/1920. Copy-specific typed supplements are not part of the printed 59-page extent and do not establish another printed recension. No digital object or MARC 856 field is present in the returned record."
     }
   ],
   "stages": [
@@ -55,7 +85,7 @@
       "witness_ids": [
         "eastern:byzantine-regional-hung1920"
       ],
-      "witness_label": "Nyíregyháza, Jóba Elek, 1920, 311 pages; identified and described by Ivancsó, originals unacquired",
+      "witness_label": "Nyíregyháza, Jóba Elek, 1920-imprint title photographed in a seller copy whose impression is unconfirmed; 311 pages per college catalogue, complete book unacquired",
       "summary": "The revised and expanded book bearing a 1920 imprint is attested off press and awaiting distribution in early 1921. It combines the earlier separately issued liturgies and adds Greek canonical parts, offices, calendar and paschalion. The 1921 wording directive documents operative local reception, with private-use permission explicit.",
       "text_coverage": "not-transcribed",
       "evidence": [
@@ -73,9 +103,19 @@
           "source_id": "hungarian-reception:ivancso2008",
           "locus": "Printed p. 21, quotation of circular 2351/1949",
           "claim": "Dudás describes the heavily worn Chrysostom sections of copies in use, corroborating actual reception of the 1920 book before 1949."
+        },
+        {
+          "source_id": "hungarian-reception:title1920-photo",
+          "locus": "Seller photograph 4, unnumbered title leaf",
+          "claim": "The photographed leaf reproduces the 1920 imprint, 1235/1920 private-use permission and revised/expanded editorial statement. It does not show the 22 August permission date or authenticate the physical impression against the later facsimile."
+        },
+        {
+          "source_id": "hungarian-reception:opac1920",
+          "locus": "MARC 001, 250, 260, 300, 500, 561–562 and 949",
+          "claim": "Identifies three exact college copies, 311-page catalogue extent and the incomplete annotated M-1637 copy. Original annotations and terminal pagination are not inspected."
         }
       ],
-      "limitations": "No exact complete book or original approval/circular scan acquired. The stage uses the early-1921 attestation of a book already off press and awaiting distribution. Its 1920 imprint, summer preparation and 22 August 1920 printing permission do not establish an exact publication date; neither does the early-1921 announcement exclude late-1920 printing. First celebration remains unknown. The printed permission is for private use, and no general Holy See authorization or present obligation follows. Scholarly descriptions do not authorize text inheritance.",
+      "limitations": "No exact complete book or original approval/circular scan acquired. The stage uses the early-1921 attestation of a book already off press and awaiting distribution. Its 1920 imprint, summer preparation and 22 August 1920 printing permission do not establish an exact publication date; neither does the early-1921 announcement exclude late-1920 printing. First celebration remains unknown. The printed permission is for private use, and no general Holy See authorization or present obligation follows. Scholarly descriptions do not authorize text inheritance. Batch 3 adds only a photographed title and exact catalogue-copy routes. The title image does not authenticate the seller's physical impression, which may require comparison with the known facsimile. The permission date, contents, Greek canonical sections and terminal Emlékezetül remain uninspected.",
       "reception": "Local operational wording is documented by the 1921 directive; worn copies are described in the 1949 episcopal circular through scholarship. Geographic extent, first use, individual parish compliance and later modifications remain unproved."
     },
     {
@@ -109,9 +149,14 @@
           "source_id": "hungarian-reception:ivancso2007",
           "locus": "Printed p. 73",
           "claim": "Describes the 1949 publication as an unchanged-text extract of the 1920 book."
+        },
+        {
+          "source_id": "hungarian-reception:opac1949",
+          "locus": "MARC 246, 260, 300, 500 and 949",
+          "claim": "The holding catalogue transcribes private-use permission 1650/1949, supplies exact copy routes and distinguishes typed additions from 59 printed pages. This corroborates one secondary reading but does not replace original-title inspection."
         }
       ],
-      "limitations": "Full original copy and the 1949 circular were not inspected. Ivancsó 2003 gives private-use permission 1650/1949; Ivancsó 2008 gives 1235/1920. Approval number remains unresolved; no substantive new textual recension or first date of actual use is claimed.",
+      "limitations": "Full original copy and the 1949 circular were not inspected. Ivancsó 2003 gives private-use permission 1650/1949; Ivancsó 2008 gives 1235/1920. Approval number remains unresolved; no substantive new textual recension or first date of actual use is claimed. Holding-library catalogue bibNY56K11755 corroborates 1650/1949; original-title inspection is still needed before resolving the disagreement. Typed additions in particular copies do not establish new printed textual states.",
       "reception": "Episcopal commissioning and distribution are reported by the quoted 1949 circular. Its replacement purpose concerns the operative 1920 book; no independent altar-use event of a named surviving 1949 copy was found."
     }
   ],
@@ -155,7 +200,7 @@
       "tradition_id": "hungarian-reception:hajdudorog",
       "period": "Before 1920",
       "missing": "Dated Nyírderzs use, the unidentified Kriva/Krive church in the 1666 note, and a supported sequence of exact Slavonic service books. Habina’s ownership and a separate museum colophon do not establish such a chain.",
-      "next_source": "M–920 (Ant 10467) ownership leaves 102–109 and dated Nyírderzs parish inventories; Eger Uu.III.8 original terminal colophon; Földvári–Ojtozi 1992 catalogue item 4 and the original 1775 estate list.",
+      "next_source": "M–920 (Ant 10467) ownership leaves 102–109 and dated Nyírderzs parish inventories; Eger Uu.III.8 original terminal colophon; Földvári–Ojtozi 1992 catalogue item 4 and the original 1775 estate list. Batch 3 identifies the separate Google copy as Czech Slovanská knihovna A 003340 (SLK000577538); its own front/title and terminal leaves are missing. It cannot supply the missing original M–920 ownership leaves or substitute for dated Nyírderzs use.",
       "consequence": "No reception edge connects Lviv 1646 or the Vilnius/Supraśl edition to the Hungarian 1920 book."
     },
     {
@@ -163,7 +208,7 @@
       "tradition_id": "hungarian-reception:hajdudorog",
       "period": "1920–1949",
       "missing": "Exact original service books, original circulars and resolution of the 1949 permission number. The distinction between private-use printing permission, normative local wording and public-language authorization remains explicit.",
-      "next_source": "Acquire the 1920 book including its permission and Emlékezetül pp. 309–310, both 1949 formats including title/permission leaves, circulars 1021/1921, 1195/1921 and 2351/1949, and Ivancsó Dokumentáció I (2006), pp. 44–54.",
+      "next_source": "Acquire the 1920 book including its permission and Emlékezetül pp. 309–310, both 1949 formats including title/permission leaves, circulars 1021/1921, 1195/1921 and 2351/1949, and Ivancsó Dokumentáció I (2006), pp. 44–54. Batch 3 acquisition routes: college OPAC bibNY56K501/recnum448 has Ant10911/M-1638, Ant10792/M-1637 (pp.273–311 missing) and Ant101011/M-1891; bibNY56K11755/recnum10613 has D442, DT399, DT484 and C12647. Original copy-specific annotations and typed supplements remain uninspected. Current official GMFL finding aid (https://hd.gorogkatolikus.hu/leveltar/fond_es_allagjegyzek.pdf, 2025-, p.1) lists circulars I–1–h, 4.886 linear metres; Arca https://arca.melte.hu/index.php/korlevelek-12 gives HU GMFL I.01.h. Exact original1021/1921,1195/1921 and2351/1949 issues remain needed. Separate Nyíregyháza parish box28 (circulars1903–1989) and Penészlek box15 (1913–1967) are series-level routes; exact issue completeness is unverified.",
       "consequence": "Documentary book states and the described extract relationship are available; exact liturgical text, legal scope beyond the printed permission and substantive prayer changes remain uncollated."
     },
     {
@@ -171,7 +216,7 @@
       "tradition_id": "hungarian-reception:hajdudorog",
       "period": "After 1949",
       "missing": "Original 1954 rubric directives, later operative revisions and exact editions currently used. The reported unchanged 1984 printing does not establish a new textual state.",
-      "next_source": "Dudás directive 819 in circular 1954/XIII; exact 1984 reprint and its 1983/1984 correspondence; later local rubric/translation decrees and dated named-copy use.",
+      "next_source": "Dudás directive 819 in circular 1954/XIII; exact 1984 reprint and its 1983/1984 correspondence; later local rubric/translation decrees and dated named-copy use. Batch 3 also leaves original819/1954 open. Current GMFL I–1–h and the separately described parish circular collections are acquisition targets, with no scanned original directive or named-copy altar-use event acquired.",
       "consequence": "No continuous or present-day adoption claim is inferred from the two documented states."
     }
   ]

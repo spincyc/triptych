@@ -1,0 +1,36 @@
+{
+  "schema": "triptych-source-factual-extract-v1",
+  "rights_notice": "Project-created selection of individual bibliographic facts, dates, identifiers, page numbers and access flags. No liturgical body, original catalogue prose, scan typography, database arrangement or host UI is copied. Distributed under Triptych CC BY 4.0; factual source values remain attributed.",
+  "source_artifact_id": "artifact.catholic-church.ordo-hebdomadae-sanctae-instauratus.1956-ratisbon-pustet-octavo.dnb-contents-pdf-a7630541",
+  "source_sha256": "a7630541d32db0edef04372e32c666ae97d6c295cfccbd62de8bd9ef2f09f5ee",
+  "source_bytes": 153137,
+  "source_url": "https://d-nb.info/453655173/04",
+  "source_loci": [
+    "PDF page1: decree,instruction,Palm Sunday through Thursday",
+    "PDF page2: Good Friday through table blessing; Thursday Office appendix"
+  ],
+  "facts": {
+    "catalogue_id": "453655173",
+    "delivery_pages": 2,
+    "book_pages_reported_by_catalogue": 158,
+    "format_reported_by_catalogue": "kl.8°",
+    "selected_contents_start_pages": {
+      "decree": 5,
+      "instruction": 9,
+      "palm_sunday": 15,
+      "holy_monday": 30,
+      "holy_tuesday": 32,
+      "holy_wednesday": 37,
+      "ex_ordine_missae": 44,
+      "holy_thursday": 72,
+      "chrism_mass": 72,
+      "evening_mass": 77,
+      "good_friday": 87,
+      "holy_saturday": 111,
+      "easter_vigil_mass": 145,
+      "table_blessing": 149,
+      "thursday_office_appendix": 150
+    },
+    "scope": "Only selected contents locations; no liturgical text, full contents transcription or whole-book completeness."
+  }
+}

@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.universitat-de-barcelona.catalogue-and-digital-services.2026-10-21-response-states.facts-ub-exact-marc-a9b83560"
+edition_id = "edition.universitat-de-barcelona.catalogue-and-digital-services.2026-10-21-response-states"
+artifact_type = "project-created-factual-metadata-extract"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Project-created mechanical selection of individual factual metadata, short titles, dates, identifiers, quantities, signatures, fingerprints and access flags under the repository CC BY 4.0 terms. No full-response or database-expression licence is inferred from public access. The already retained official U.S. Copyright Office database and 37 CFR 202.1 guidance supplies the factual-expression distinction."
+rights_jurisdiction = "United States"
+source_url = "https://csuc-ub.alma.exlibrisgroup.com/view/sru/34CSUC_UB?version=1.2&operation=searchRetrieve&query=alma.mms_id%3D991002308499706708&recordSchema=marcxml&maximumRecords=10"
+provenance = "Mechanical selection from exact input named by derived_from; individual bibliographic facts and request/count data only."
+retrieved = "2026-10-21"
+sha256 = "a9b83560182f6455c3d0c662c15e1a1a0b21569162814d1e1c84040924c49fc5"
+byte_size = 5986
+path = "src/sources/works/universitat-de-barcelona/catalogue-and-digital-services/editions/2026-10-21-response-states/artifacts/facts-ub-exact-marc-a9b83560/facts.json"
+derived_from = "artifact.universitat-de-barcelona.catalogue-and-digital-services.2026-10-21-response-states.raw-ub-exact-marc-930a1d57"
+transformation = "Select declared named XML/JSON factual fields and mechanically identify individual setting/copy-condition facts. Exact fingerprint/signature/identifier strings are preserved; modern descriptive prose is represented by separately selected factual values. Omit UI, unrelated descriptions, accounts and transport headers. Source hashes/bytes and request URLs remain exact."
+encoding = "utf-8"
+indexable = false
+notes = "Metadata only; no original liturgical body, ideal-edition completeness, global holding absence or textual parentage."

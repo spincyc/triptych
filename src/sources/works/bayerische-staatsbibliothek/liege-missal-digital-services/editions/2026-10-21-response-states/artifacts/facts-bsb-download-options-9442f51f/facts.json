@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "record_type": "bounded-institutional-factual-extract",
+  "id": "bsb-download-options-2026-10-21",
+  "source_url": "https://www.digitale-sammlungen.de/en/download-options",
+  "source_sha256": "e1ba91d12fe651a81b6a7641c4c68bf3a6a1e77638d1f61dd3755d2761f88ec5",
+  "source_byte_size": 41920,
+  "retrieved_on": "2026-10-21",
+  "project_licence": "CC BY 4.0",
+  "selection_method": "Declared factual fields selected from the exact acquired response and checked against it; source-native prose, layout, navigation and database expression are omitted.",
+  "facts": {
+    "whole_or_partial_pdf_download_described": true,
+    "delivery_process": [
+      "choose extent",
+      "submit request",
+      "wait for prepared download link"
+    ],
+    "default_extent": "whole digitized object",
+    "limitation": "Description of offered route is not proof a PDF was obtained."
+  }
+}

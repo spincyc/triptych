@@ -1,0 +1,472 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-stages",
+  "dossier_id": "western-originals-batch3",
+  "title": "Western local missals: bounded original-book and scholarly-described witnesses",
+  "traditions": [
+    {
+      "id": "beauvais-diocesan-missal",
+      "label": "Beauvais diocesan missal",
+      "family": "latin",
+      "scope": "The 1756 Paris and Beauvais Fratres Desaint Missale Bellovacense, as offered by Numelyo from Lyon SJ L 013/12.",
+      "coverage_note": "One printing and its scoped episcopal mandate are directly inspected; predecessor versions, actual local uptake and complete liturgical texts remain unestablished."
+    },
+    {
+      "id": "historic-toul-use",
+      "label": "Toul local missal witnesses",
+      "family": "latin",
+      "scope": "An identified 1750 Toul missal, its title and scoped episcopal mandate, and selected original Mass Order and Canon loci.",
+      "coverage_note": "One bounded publication attestation; complete text, predecessor comparison and actual local reception remain unresolved."
+    },
+    {
+      "id": "historic-tournai-use",
+      "label": "Tournai local missal witnesses",
+      "family": "latin",
+      "scope": "The Ghent copy of a 1498 Paris missal expressly naming the Tournai church’s use; no separate diocesan reform is identified.",
+      "coverage_note": "One bounded publication attestation; complete text, predecessor comparison and actual local reception remain unresolved."
+    },
+    {
+      "id": "historic-liege-use",
+      "label": "Liège local missal witnesses",
+      "family": "latin",
+      "scope": "A physically defective surviving 1499 Liège-use missal copy, with original local-use incipit and printing colophon directly inspected.",
+      "coverage_note": "One bounded publication attestation; complete text, predecessor comparison and actual local reception remain unresolved."
+    },
+    {
+      "id": "historic-tarazona-use",
+      "label": "Tarazona local missal witnesses",
+      "family": "latin",
+      "scope": "A physically defective 1500 Tarazona-use missal, with original use-instruction, temporal incipit, Mass-preparation material and printing/commissioning colophon inspected.",
+      "coverage_note": "One bounded publication attestation; complete text, predecessor comparison and actual local reception remain unresolved."
+    },
+    {
+      "id": "historic-huesca-use",
+      "label": "Huesca local missal witnesses",
+      "family": "latin",
+      "scope": "The 1488 Huesca missal as described by Lambert’s inspected scholarly copy report, including his explicit defective-tail limit.",
+      "coverage_note": "One bounded publication attestation; complete text, predecessor comparison and actual local reception remain unresolved."
+    },
+    {
+      "id": "historic-besancon-use",
+      "label": "Besançon local missal witnesses",
+      "family": "latin",
+      "scope": "The original 1485 Salins printing identified by the Besançon holding catalogue as Missale Bisuntinense, INC.98; later Besançon books remain separate witnesses.",
+      "coverage_note": "One bounded publication attestation with an undated printed commissioning notice; full original acquisition, complete text and actual local receipt remain unresolved."
+    }
+  ],
+  "sources": [
+    {
+      "id": "western-originals-batch3:beauvais1756-original",
+      "title": "Missale Bellovacense (Paris and Beauvais, Fratres Desaint, 1756), Lyon SJ L 013/12",
+      "url": "https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001102132797/IMG00000001",
+      "kind": "primary-book",
+      "inspection": "Title image 9; complete episcopal mandate images 11–14; selected calendar images 16/24; Ordo image 267, printed p. 193; Canon opening image 303, printed p. 229; final Per omnia/Amen and Pater image 313, printed p. 239. Image 292, printed p. 218, has the end of Præfationes cum cantu with staff notation in the left column and the unnotated Advent preface in the right. Image 313 also prints notation for the Canon ending and Pater. These image/column identifications are independently checked. All 830 offered web images were acquired and retained in two exact-byte packages; physical completeness is unestablished.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Direct image inspection is bounded to named loci. No complete literal transcription or full-book collation; provider labels are not automatically printed pagination; BnF B-225 and Lyon copy differences remain unchecked."
+    },
+    {
+      "id": "western-originals-batch3:toul-source",
+      "title": "Missale ad usum cathedralis ecclesiae et dioecesis Tullensis (Toul, 1750), Lyon SJ L 013/7",
+      "url": "https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001102132474/IMG00000001",
+      "kind": "primary-book",
+      "inspection": "Original title view 11 and complete five-page episcopal letter views 13–17 directly inspected and independently reviewed; letter dateline 17 September 1750. The located Ordinarium extent is printed pp. 244–250/views 304–310, checked at opening/end/cutoff views 304/310/311. The located strict Canon extent is printed pp. 327–334/views 387–394, checked only at boundary/context views 387/394/395, with its first Per omnia/Amen before Oremus/Pater at view 394. Interior Ordinarium and Canon pages were not inspected throughout. All 920 offered web-image responses were acquired; the canonical title, mandate and boundary passages retain these distinct scopes.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Named source views, rather than the whole liturgical text, were inspected. Full offered-web acquisition does not certify physical completeness or acquisition of all native-resolution masters. The letter describes its changes; no exact predecessor collation verifies them."
+    },
+    {
+      "id": "western-originals-batch3:tournai-source",
+      "title": "Missale Tornacense (Paris, Johannes Higman, 1498), Ghent BHSL.RES.1379",
+      "url": "https://books.google.com/books?id=HldPAAAAcAAJ",
+      "kind": "primary-book",
+      "inspection": "Original title source PP 5, temporal incipit PP 21 and colophon PP 582 directly inspected; selected calendar PP 7/18, Accidentia PP 19, preface and Creed PP 299, strict Canon boundaries PP 307/310 and following context PP 311/312, Common PP 313, Sanctoral PP 351 and preparation material PP 579 also inspected. The located strict Canon extent is PP 307–310; interior PP 308/309 were not inspected. All 580 offered images acquired unchanged; independent review checks all image hashes and 14 selected original images.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Only selected original loci are inspected. The 580 offered images do not establish physical gathering completeness. Modern source PP labels must not be treated as printed foliation."
+    },
+    {
+      "id": "western-originals-batch3:liege-source",
+      "title": "Missale Leodiense (Paris,1499), BSB 2 Inc.c.a.3785 / bsb 00075725",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb00075725",
+      "kind": "primary-book",
+      "inspection": "Surviving original temporal incipit at IIIF canvas 23 names Liège use; original colophon at canvas 553 gives Paris, expenses of Johannes Higman and 24 November 1499. Calendar canvases 9–20, Ordinary 331–334, Canon 361–366, Common 367, preparation 393, accidents 397–398 and Sanctoral 399 were inspected within 40 acquired original images from 563 offered canvases. Holding-library copy description M-437,1 was also inspected.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The library copy catalogue reports first leaf a1 missing; no original title-page inspection is claimed. Only 40 of 563 offered canvas images were acquired; the full-book PDF attempt returned incomplete HTML, and no whole-source-image acquisition is claimed. The library reports copy losses; selected Canon images visibly lose lower text."
+    },
+    {
+      "id": "western-originals-batch3:tarazona-source",
+      "title": "Missale mixtum secundum usum ecclesie et diocesis Tirasonensis (Pamplona,Brocar,1500), Bizkaia INC-35",
+      "url": "https://hdl.handle.net/20.500.11938/69046",
+      "kind": "primary-book",
+      "inspection": "Complete 658-page offered PDF acquired, SHA-256 c6e5dbd8c1b77231ec4f97c77752c3c863bdffe3edc8d4f8b81a1afd279a3cc7. Direct images inspected: modern copy-description card PDF p. 1, episcopal arms p. 3, local-use instruction p. 14, temporal incipit p. 19, Mass preparation p. 329 and colophon p. 656. Six metadata-only canonical passages retain exact bounded claims; no literal liturgical text imported.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "The modern library card reports missing leaves and gatherings. Acquisition of all 658 offered PDF pages does not fill those physical losses. Calendar was located only through unverified raw text; it is not independently collated."
+    },
+    {
+      "id": "western-originals-batch3:huesca-source",
+      "title": "Lambert, Notes sur divers incunables d’Aragon (1910), section VII on the 1488 Missale Oscense",
+      "url": "https://doi.org/10.3406/hispa.1910.1638",
+      "kind": "scholarship",
+      "inspection": "Lambert’s section VII, printed pp. 42–44, directly inspected in page images of a 1970 photographic reprint of the 1910 article. Complete 26-page historical article retained, SHA-256 c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58; cited section is retained article PDF pp. 20–22. Canonical passage.aime-lambert.notes-sur-divers-incunables-d-aragon.1970-facsimile-of-1910-article.huesca-vii records the mediated evidence boundary.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "A 1910 scholar’s direct-copy description, consulted in a 1970 reprint, is not this project’s original-book inspection. No original 1488 service-book facsimile was acquired. Neither 1910 nor 1970 is the historical book-state date."
+    },
+    {
+      "id": "western-originals-batch3:besancon-source",
+      "title": "Missale Bisuntinense (Salins, 1485), Besançon INC.98, selected original images",
+      "url": "https://memoirevive.besancon.fr/ark:/48565/7q6vpbx05whm",
+      "kind": "primary-book",
+      "inspection": "Original printer notice at viewer image 267 and final red colophon at image 606 directly inspected. Selected calendar images 4–15, preparation 393, Ordo 394–396, prefaces 397–399, common preface and Te igitur 401, Canon through 403, Pater and later rites 403–405, thanksgiving 405–406 and Annunciation 407 were inspected within 40 acquired copy images. Image 400 is an added Crucifixion engraving and is not claimed as part of the 1485 printed contents. The provider supplied 606 enumerated image descriptions.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Only 40 selected original images were acquired, rather than a full 606-image facsimile. Those images remain restricted; the dossier imports no literal text or scan. No conventional printed title leaf occurs among the three inspected opening frames; the conventional title and shelfmark come from the separate holding catalogue."
+    },
+    {
+      "id": "western-originals-batch3:besancon-catalogue",
+      "title": "Besançon Mémoire vive holding record for INC.98, Missale Bisuntinense",
+      "url": "https://memoirevive.besancon.fr/ark:/48565/7q6vpbx05whm",
+      "kind": "institutional-catalogue",
+      "inspection": "The holding-library item record and complete offered image-description enumeration identify INC.98 and the conventional Missale Bisuntinense title; the library records a missing final blank. Original printing identity is checked separately against the surviving book’s notice and colophon.",
+      "checked_on": "2026-10-20",
+      "status": "inspected",
+      "limitations": "Conventional cataloguing title and copy-condition report remain library testimony, rather than an original printed title or this project’s complete physical collation. Enumerating 606 image descriptions does not acquire or inspect all images."
+    }
+  ],
+  "stages": [
+    {
+      "id": "western-originals-batch3:beauvais1756",
+      "tradition_id": "beauvais-diocesan-missal",
+      "label": "1756 Beauvais diocesan missal",
+      "date_label": "1756 printing; episcopal mandate dated 19 April 1756",
+      "start_year": 1756,
+      "end_year": 1756,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "The identified 1756 missal with bishop/chapter authority, its scoped mandate, calendar, Mass Order/Canon and prefatory account of selected orations and additional prefaces.",
+      "components": [
+        "calendar",
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:french-beauvais-usuarium-7099"
+      ],
+      "witness_label": "Missale Bellovacense, Fratres Desaint 1756, Lyon SJ L 013/12",
+      "summary": "The title names Étienne-René Potier de Gesvres and the cathedral chapter. His mandate, dated 19 April 1756, describes selected orations and additional prefaces for Advent, Corpus Christi, patrons, All Saints and the dead. The mandate directs all churches, chapters, colleges, monasteries and orders of his diocese, and all priests who are bound by law or custom to celebrate or recite the Beauvais Office, to use this missal henceforth. The original calendar, Mass Order/Canon and selected chant notation are directly located.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-originals-batch3:beauvais1756-original",
+          "locus": "offered image 9, title/imprint",
+          "claim": "The book names Beauvais, episcopal and chapter authority, Paris/Beauvais Fratres Desaint and 1756."
+        },
+        {
+          "source_id": "western-originals-batch3:beauvais1756-original",
+          "locus": "offered images 11–14, complete episcopal mandate; added-preface account image 13; dateline and obligated addressees image 14",
+          "claim": "The mandate describes its editorial programme and additional preface categories, is dated 19 April 1756, and commands the book within its named institutions and qualified priest addressees."
+        },
+        {
+          "source_id": "western-originals-batch3:beauvais1756-original",
+          "locus": "images 16/24, January/September calendar; image 267 printed p.193; image 303 printed p.229; image 313 printed p.239; image 292 printed p.218",
+          "claim": "Original calendar, Ordo Missae, Canon and unnotated Advent preface are present at exact inspected loci; no complete wording is imported."
+        },
+        {
+          "source_id": "western-originals-batch3:beauvais1756-original",
+          "locus": "Image 292, printed p. 218, left column; image 313, printed p. 239, Canon ending and Pater",
+          "claim": "Original staff notation is present in the end of Præfationes cum cantu and in the Canon ending/Pater. Image 292’s right-column Advent preface is unnotated; the two columns retain different functions."
+        }
+      ],
+      "limitations": "The mandate describes changes relative to earlier practice, but no exact predecessor book has been collated; no substantive transition, native parent, whole-book text or physical completeness is claimed. Publication year and 19 April mandate are distinct events.",
+      "reception": "The mandate directs all churches, chapters, colleges, monasteries and orders of his diocese, and all priests who are bound by law or custom to celebrate or recite the Beauvais Office, to use this missal henceforth. The printed institutional list and qualified priest clause remain distinct. This records the stated command and its recipients, without establishing universal religious-order jurisdiction, uniform actual uptake or a first effective-use date."
+    },
+    {
+      "id": "western-originals-batch3:toul-1750",
+      "tradition_id": "historic-toul-use",
+      "label": "1750 Toul missal",
+      "date_label": "1750 printing; episcopal letter and mandate dated 17 September 1750",
+      "start_year": 1750,
+      "end_year": 1750,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "An identified 1750 Toul missal, its title and scoped episcopal mandate, and selected original Mass Order and Canon loci.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:french-toul-usuarium-7097"
+      ],
+      "witness_label": "Missale ad usum cathedralis ecclesiae et dioecesis Tullensis (Toul, 1750), Lyon SJ L 013/7",
+      "summary": "The original title prints 1750. Scipion-Jérôme Bégon’s letter, dated 17 September 1750, describes changes to collects, prefaces, readings and other propers and orders the book within its named recipients. Its legal scope and the printing year are distinct from an observed first-use date.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-originals-batch3:toul-source",
+          "locus": "Original title view 11; complete episcopal letter views 13–17, mandate and dateline view 17",
+          "claim": "The title identifies the 1750 Toul printing. The letter dates its mandate 17 September 1750 and names the recipients; its account of changes remains a primary description rather than a collated revision."
+        },
+        {
+          "source_id": "western-originals-batch3:toul-source",
+          "locus": "Ordinarium opening/end/cutoff views 304/310/311 (located printed pp. 244–250); strict Canon boundary/context views 387/394/395 (located pp. 327–334)",
+          "claim": "Inspected opening/end/cutoff and following context pages locate the original Ordinarium and strict Canon extents. The wider printed Canon heading continues after the strict prayer; inspection of all interior pages is not claimed."
+        }
+      ],
+      "limitations": "One publication state is shown. No independent predecessor, exact changed reading, substantive transition, complete text or effective-use date is established. Source view numbers and printed pagination remain distinct.",
+      "reception": "The mandate names diocesan churches and their deans/rectors, monasteries, colleges, orders, sodalities and communities, followed by priests bound by law or custom to celebrate or recite the Toul Office. The full reach of that qualified priest clause is unresolved; universal territorial application or actual compliance is not established."
+    },
+    {
+      "id": "western-originals-batch3:tournai-1498",
+      "tradition_id": "historic-tournai-use",
+      "label": "1498 Tournai missal",
+      "date_label": "20 October 1498 printing completion, original colophon",
+      "start_year": 1498,
+      "end_year": 1498,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "The Ghent copy of a 1498 Paris missal expressly naming the Tournai church’s use; no separate diocesan reform is identified.",
+      "components": [
+        "calendar",
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:tournai-1498-ghent-higman"
+      ],
+      "witness_label": "Missale Tornacense (Paris, Johannes Higman, 1498), Ghent BHSL.RES.1379",
+      "summary": "The title and temporal incipit name Tournai use. The original colophon records Paris, Johannes Higman, expenses of Wilhelm Houtmart, and completion on 20 October 1498. The retained offered images support this identified printed witness, without establishing approval or implementation.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-originals-batch3:tournai-source",
+          "locus": "Source PP 5, title; PP 21, temporal incipit; PP 582, colophon",
+          "claim": "The original identifies Tournai use and the Paris 20 October 1498 printing event."
+        },
+        {
+          "source_id": "western-originals-batch3:tournai-source",
+          "locus": "Source PP 7/18, calendar; PP 19, Accidentia; PP 299, preface and Creed; PP 307/310, strict Canon boundaries, with following context PP 311/312; PP 313, Common; PP 351, Sanctoral; PP 579, preparation",
+          "claim": "Selected original divisions and Mass material are located. Strict Canon ends at final Per omnia/Amen before Pater on PP 310; the printed Canon heading continues through PP 312. The Creed and preparation material support a bounded Ordinary component, without a complete Ordinary claim."
+        }
+      ],
+      "limitations": "One printing attests a book state. No full transcription, physical completeness, distinct substantive recension, predecessor, adoption date or ancestry is established.",
+      "reception": "The book’s own title and incipit declare Tournai use; particular churches’ receipt or use of this exact printing remains unverified."
+    },
+    {
+      "id": "western-originals-batch3:liege-1499",
+      "tradition_id": "historic-liege-use",
+      "label": "1499 Liège missal",
+      "date_label": "24 November 1499 printing completion, original colophon",
+      "start_year": 1499,
+      "end_year": 1499,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "A physically defective surviving 1499 Liège-use missal copy, with original local-use incipit and printing colophon directly inspected.",
+      "components": [
+        "calendar",
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:amiet-nonfrance-liege-1499-7214"
+      ],
+      "witness_label": "Missale Leodiense (Paris,1499), BSB 2 Inc.c.a.3785 / bsb 00075725",
+      "summary": "The surviving incipit names the Liège church’s use. The colophon records Paris, publication at Johannes Higman’s expense, and 24 November 1499. The library copy catalogue reports first leaf a1 missing, and the surviving images have visible losses; those defects remain part of the witness.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-originals-batch3:liege-source",
+          "locus": "IIIF canvas 23 incipit; canvas 553 colophon",
+          "claim": "The surviving original identifies Liège use and a 24 November 1499 Paris printing. The expense clause does not alone identify the printer’s workshop."
+        },
+        {
+          "source_id": "western-originals-batch3:liege-source",
+          "locus": "IIIF canvases 361–366, Canon; BSB copy record M-437,1",
+          "claim": "Canon images show lower text loss. The library reports leaf 1 (a1) missing, 274 (K6) pasted, and text loss at 169 (X1), 177 (X9), 178 (X10), 180 (X12); its folio conventions are distinct from modern pencil and IIIF labels."
+        }
+      ],
+      "limitations": "Copy defects prevent a complete-text or complete-Canon claim. The 1499 date is a printing event, not approval or actual local receipt. No substantive revision, exact predecessor or ancestry follows from the incipit or colophon.",
+      "reception": "The surviving book declares Liège use; present BSB holding is not evidence of historical use there, and receipt by any particular Liège church is unestablished."
+    },
+    {
+      "id": "western-originals-batch3:tarazona-1500",
+      "tradition_id": "historic-tarazona-use",
+      "label": "1500 Tarazona missal",
+      "date_label": "13 February 1500 printing completion, original colophon",
+      "start_year": 1500,
+      "end_year": 1500,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "A physically defective 1500 Tarazona-use missal, with original use-instruction, temporal incipit, Mass-preparation material and printing/commissioning colophon inspected.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:iberian-tarazona-1500"
+      ],
+      "witness_label": "Missale mixtum secundum usum ecclesie et diocesis Tirasonensis (Pamplona,Brocar,1500), Bizkaia INC-35",
+      "summary": "The original incipit identifies a mixed missal for Tarazona church and diocese. Its colophon names Pamplona, printer Arnaldus Guillermus de Broquario and completion on 13 February 1500, and attributes commissioning to Bishop Guillermus Raymundus de Moncada with the dean and chapter. The book’s local commissioning statement does not supply a separate promulgation or observed implementation.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-originals-batch3:tarazona-source",
+          "locus": "PDF p. 14, local-use instruction; p. 19, temporal incipit; p. 329, Mass preparation; p. 656, colophon",
+          "claim": "The original identifies Tarazona use and a 13 February 1500 Pamplona printing commissioned by the bishop and chapter; selected Mass material is present."
+        },
+        {
+          "source_id": "western-originals-batch3:tarazona-source",
+          "locus": "Modern holding-library copy-description card, PDF p. 1",
+          "claim": "The library reports two missing leaves of the first gathering, the whole gathering signed Z, leaf C-6 and one leaf of the third-numeration gathering D; this is a library condition report, not a new physical collation."
+        }
+      ],
+      "limitations": "Only the six named images were directly inspected. No complete Ordinary or Canon, native transcription, exact predecessor state, distinct recension or substantive revision is established. The 1529 printing/copy cluster remains separate and uncollated.",
+      "reception": "The incipit and instruction declare Tarazona use and the colophon names local commissioning; these do not prove receipt or compliance by all diocesan churches."
+    },
+    {
+      "id": "western-originals-batch3:huesca-1488",
+      "tradition_id": "historic-huesca-use",
+      "label": "1488 Huesca missal described by Lambert",
+      "date_label": "1 June 1488 printing reported by Lambert; original book unacquired",
+      "start_year": 1488,
+      "end_year": 1488,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "The 1488 Huesca missal as described by Lambert’s inspected scholarly copy report, including his explicit defective-tail limit.",
+      "components": [
+        "calendar",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:iberian-huesca-1488"
+      ],
+      "witness_label": "Lambert, Notes sur divers incunables d’Aragon (1910), section VII on the 1488 Missale Oscense",
+      "summary": "Lambert reports a 1488 Huesca adaptation of 1485 Zaragoza sheets with a local calendar, bishop letter, colophon and pasted heading. He reports retention of an archbishop supplication in Holy Saturday and says his copy’s lost tail prevents deciding whether a local saints supplement followed. These are attributed copy descriptions; the original 1488 book remains unacquired.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-originals-batch3:huesca-source",
+          "locus": "Lambert section VII, printed p. 42 heading and pp. 42–43 reported colophon and copy description; retained article PDF pp. 20–21",
+          "claim": "The scholarly copy report identifies the 1488 local book and its described replacements, retained Holy Saturday supplication and defective-tail limit. The reported 1 June 1488 date is a printing event, not a directly inspected episcopal act or uptake date."
+        }
+      ],
+      "limitations": "The stage documents only a scholarly-described printed witness. No original wording, full textual state, physical completeness, independent recension, revision edge or native parent is established. A possible appended supplement remains unresolved, rather than absent.",
+      "reception": "The scholar identifies the local Huesca book; no directly inspected episcopal mandate or actual parish receipt is established here."
+    },
+    {
+      "id": "western-originals-batch3:besancon-1485",
+      "tradition_id": "historic-besancon-use",
+      "label": "1485 Besançon missal printed at Salins",
+      "date_label": "1485 printing, original Salins colophon; mandate notice undated",
+      "start_year": 1485,
+      "end_year": 1485,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "The 1485 Salins missal witness, its printed Besançon-customary commissioning notice, and selected original calendar and Mass divisions; no separate dated approval state.",
+      "components": [
+        "calendar",
+        "ordinary",
+        "anaphoras",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:french-besancon-1485-salins-inc98"
+      ],
+      "witness_label": "Besançon INC.98, catalogued Missale Bisuntinense (Salins, 1485)",
+      "summary": "The original final colophon gives Salins and 1485. A separate printed notice names Jean Des Prés, Benoît Bigot and Claude Bodram and states the express mandate of Caroli de Novocastro for the Besançon customary. No separately located or dated commissioning act is supplied. Selected original Mass Order, Canon and other divisions attest this bounded local book witness.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-originals-batch3:besancon-source",
+          "locus": "Viewer image 267, printer notice; image 606, final red colophon",
+          "claim": "The original notice states its Besançon-customary and episcopal commissioning claim; the colophon identifies a Salins printing in 1485. The notice’s mandate is not independently dated."
+        },
+        {
+          "source_id": "western-originals-batch3:besancon-source",
+          "locus": "Images 4–15, calendar; 393–399, preparation, Ordo and prefaces; 401–403, common preface and Canon; 403–406, Pater, later rites and thanksgiving; 407, Annunciation",
+          "claim": "The named original leaves locate calendar and Mass divisions, without a complete Ordinary or Canon transcription."
+        },
+        {
+          "source_id": "western-originals-batch3:besancon-catalogue",
+          "locus": "Holding-library conventional title, INC.98 shelfmark and copy-condition note; complete offered description sequence",
+          "claim": "The catalogue supplies the conventional book title and reports the missing final blank. The 606 descriptions are the offered enumeration, not a full acquired facsimile."
+        }
+      ],
+      "limitations": "The first three inspected opening frames do not supply a conventional printed title leaf. Forty selected images and a library report of the missing final blank do not certify physical completeness. No whole-book text, independent predecessor comparison, distinct recension, substantive transition or historical parentage is established.",
+      "reception": "The original printer notice asserts an episcopal mandate for the Besançon customary. It supplies neither a separately dated act nor evidence of receipt or actual use by a particular cathedral, monastery or parish."
+    }
+  ],
+  "transitions": [],
+  "gaps": [
+    {
+      "id": "western-originals-batch3:beauvais-predecessor-reception",
+      "tradition_id": "beauvais-diocesan-missal",
+      "period": "before and after 1756",
+      "missing": "Exact predecessor edition and component collation; complete native divisions and chant coverage; copy defects, actual cathedral/parish uptake and later replacement.",
+      "next_source": "Earlier Augustin Potier missal named in the mandate, exact 1520/1538/1756 witnesses, cathedral/parish inventories and local mandate reception records.",
+      "consequence": "A 1756 publication state and scoped mandate are documented, while substantive before/after changes, actual adoption and ancestry remain open."
+    },
+    {
+      "id": "western-originals-batch3:toul-text-and-reception",
+      "tradition_id": "historic-toul-use",
+      "period": "Before and after 1750",
+      "missing": "Exact predecessor text, full native divisions and copy condition; complete text and independent collation; the mandate’s complete recipient reach and observed local implementation.",
+      "next_source": "Collate original earlier Toul missals against the 1750 book and its complete letter; inspect cathedral/parish book inventories, visitation records and evidence of implementation.",
+      "consequence": "The 1750 printing and scoped mandate attest a bounded book state, while substantive revision, uniform adoption, duration of use and ancestry remain open."
+    },
+    {
+      "id": "western-originals-batch3:tournai-text-and-reception",
+      "tradition_id": "historic-tournai-use",
+      "period": "Before and after 1498",
+      "missing": "Full copy and gathering collation, complete native text, exact predecessor or successor comparison, commissioning instruments and actual local reception.",
+      "next_source": "Collate Ghent BHSL.RES.1379 against other copies and earlier/later Tournai books; inspect local chapter or diocesan book records and any commissioning instruments.",
+      "consequence": "A dated Tournai-use printing can be shown without a reform edge, complete-book claim or continuous use interval."
+    },
+    {
+      "id": "western-originals-batch3:liege-text-and-reception",
+      "tradition_id": "historic-liege-use",
+      "period": "Before and after 1499",
+      "missing": "Unacquired original pages and a complete authenticated delivery; lost text and physical copy extent; complete native text, predecessor comparison, commissioning and local reception.",
+      "next_source": "Obtain the complete publicly offered BSB image sequence or authenticated full PDF; compare another copy to the named missing or damaged leaves; inspect Liège chapter or diocesan book records.",
+      "consequence": "The defective 1499 witness attests a printing, without repairing lost text or defining a complete Liège recension."
+    },
+    {
+      "id": "western-originals-batch3:tarazona-text-and-reception",
+      "tradition_id": "historic-tarazona-use",
+      "period": "Before and after 1500",
+      "missing": "Physical losses and a copy-to-copy extent check; complete native text and collation; earlier/later textual relations, separate approval evidence and actual use.",
+      "next_source": "Compare another 1500 copy to Bizkaia INC-35, collate the original Mass divisions and the separately identified 1529 printing cluster, and inspect diocesan/chapter receiving or use records.",
+      "consequence": "A dated commissioned local-use printing is attested without claiming a complete witness, substantive version or ancestry."
+    },
+    {
+      "id": "western-originals-batch3:huesca-text-and-reception",
+      "tradition_id": "historic-huesca-use",
+      "period": "Before and after 1488",
+      "missing": "Public original 1488 book images and copy extent; original calendar, bishop letter, colophon and tail; the alleged reused 1485 Zaragoza sheets; complete text, separate authority and reception.",
+      "next_source": "Obtain public original images from the GW-reported New York Hispanic Society or defective Zaragoza Cathedral copies; compare exact 1485 Zaragoza sheets and seek another copy preserving the tail.",
+      "consequence": "A mediated 1488 publication attestation does not become original acquisition, a verified sheet relationship, a complete recension or a parent edge."
+    },
+    {
+      "id": "western-originals-batch3:besancon-text-and-reception",
+      "tradition_id": "historic-besancon-use",
+      "period": "Before and after 1485",
+      "missing": "Complete public original facsimile and physical copy extent; the separate commissioning instrument and date; complete native divisions/text and independent collation; exact earlier/later relations and local implementation.",
+      "next_source": "Pursue a lawfully reusable complete original delivery or another copy, collate the 1485 Mass divisions and earlier/later Besançon books, and inspect archdiocesan/chapter commissioning and receiving records.",
+      "consequence": "The original 1485 publication and printed commissioning claim can be shown without inventing a dated approval, complete book, substantive revision or use interval."
+    }
+  ]
+}

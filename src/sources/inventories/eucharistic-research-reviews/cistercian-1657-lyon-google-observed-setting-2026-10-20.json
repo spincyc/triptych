@@ -1,0 +1,924 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "cistercian-1657-lyon-google-observed-setting-2026-10-20",
+  "title": "Bounded original-source search and unresolved FIDES gaps: observed Lyon/Google 1657 setting",
+  "side": "western",
+  "target_inventory": "src/sources/inventories/eucharistic-source-retention-decision-v1.toml",
+  "coverage_rows": [],
+  "uses": [],
+  "versions": [],
+  "acquisitions": [],
+  "review_files": {
+    "provisional_alternate_setting_rights_review": {
+      "sha256": "a430b798073019380a81d590d8cd4b9a6802472ef8fac65be91b3e396f427bb0",
+      "scope": "Earlier provisional provenance/rights assessment, followed by the separately pinned exact source-V1 acceptance below."
+    },
+    "existing_primary_rights_evidence_reuse": {
+      "sha256": "a0258e032c6df5386becb6d11128d9dcff8ed1b66220962f174a6db8f06af0b1",
+      "scope": "Existing retained primary U.S. originality evidence and bounded prior independent review reuse; no fresh acquisition."
+    },
+    "exact_source_v1_acceptance": {
+      "sha256": "8d362c09c6fa462f38af1f6c3d91f46a24fc358285012c4761bb8cbe0c02e638",
+      "byte_size": 5367,
+      "decision": "accept-exact-source-manifests-and-original-images-only",
+      "source_proposal_sha256": "49900518bac7cd090ee99cd832990f5e10538d16347347be21c79220d4d20be1",
+      "source_verification_sha256": "89b6679a6cd392c33a0e772c3a7b0d2c1773ef310a11747726471d499de8c2c8",
+      "source_verification_byte_size": 6306,
+      "scope": "Three source manifests and two exact original JPEGs only; no native text, stage, ancestry, FIDES reading transfer or whole-book claim. Current derivative changes source notes only to record this actual acceptance; its per-input provenance adds no source acquisition."
+    }
+  },
+  "checked_on": "2026-10-20",
+  "proposal_status": "independently-source-reviewed-source-only-research",
+  "work_id": "work.cistercian-order.missale-cisterciense",
+  "proposed_edition_id": "edition.cistercian-order.missale-cisterciense.1657-paris-cramoisy-lyon-google-observed-setting",
+  "identity": {
+    "stable_volume_url": "https://books.google.com/books?id=a8329mzqJMUC",
+    "provider_volume_id": "a8329mzqJMUC",
+    "holding_credit_from_provider_metadata": "Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+    "provider_metadata_digitized_date": "2011-02-10",
+    "title_page": {
+      "stable_locator": "https://books.google.com/books?id=a8329mzqJMUC&pg=PP7",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.1657-paris-cramoisy-lyon-google-observed-setting.google-pp7-jpeg-d2f424ec",
+      "title_lines_directly_read": [
+        "MISSALE",
+        "CISTERCIENSE",
+        "IVXTA ROMANI",
+        "RECOGNITI CORRECTIONEM.",
+        "PRIMO EDITVM.",
+        "AVTHORITATE SVPERIORVM."
+      ],
+      "imprint_lines_directly_read": [
+        "LVTETIÆ PARISIORVM,",
+        "Sumptibus SEBASTIANI CRAMOISY, Architypographi",
+        "Regis, & Reginæ.",
+        "Et GABRIELIS CRAMOISY, viâ Iacobæâ, sub Ciconijs.",
+        "M. DC. LVII.",
+        "CVM PRIVILEGIO REGIS."
+      ]
+    },
+    "prayer_page": {
+      "stable_locator": "https://books.google.com/books?id=a8329mzqJMUC&pg=PA215",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.1657-paris-cramoisy-lyon-google-observed-setting.google-pa215-jpeg-4742ac41",
+      "provider_page_locator": "PA215",
+      "printed_folio_directly_read": "293",
+      "running_head_directly_read": "Canon Missæ.",
+      "relevant_locus": "Perceptio prayer, left column; entire original page retained. No reading is transferred to a concealed FIDES region."
+    },
+    "evidence_ceiling": "The original PP7 image directly verifies the title, Paris Cramoisy imprint, Primo Editum and M. DC. LVII date. The inspected body page has different pagination and typesetting from FIDES 3755 printed 215. Their bibliographic/body relationship is unresolved. This source-library separation is an observed-setting distinction, not a claim of a new historical recension, format, impression, inherited reading, or exact FIDES setting."
+  },
+  "acquisition_facts": {
+    "acquired_on": "2026-10-20",
+    "method": "Direct curl acquisition of complete publicly offered original-page responses; images then hashed and directly viewed locally. No OCR or model reconstruction supplied source wording.",
+    "stable_locators_are_not_delivery_urls": true,
+    "actual_delivery_route": {
+      "host": "books.google.com",
+      "path": "/books/content",
+      "common_parameters": {
+        "id": "a8329mzqJMUC",
+        "img": "1",
+        "zoom": "3",
+        "hl": "en",
+        "w": "1600"
+      },
+      "page_parameters": [
+        "PP7",
+        "PA215"
+      ],
+      "transient_provider_signature": "Present in the actual successful offered delivery; omitted from this public record. Exact SHA-256 identifies the acquired rendition.",
+      "unsigned_route_claim": "No unsigned image endpoint is claimed to have delivered the historical source JPEGs."
+    },
+    "selected_payload_count": 2,
+    "selected_payload_bytes": 1059929,
+    "selected_payloads": [
+      {
+        "pid": "PP7",
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.1657-paris-cramoisy-lyon-google-observed-setting.google-pp7-jpeg-d2f424ec",
+        "canonical_payload": "src/sources/works/cistercian-order/missale-cisterciense/editions/1657-paris-cramoisy-lyon-google-observed-setting/artifacts/google-pp7-jpeg-d2f424ec/title-pp7.jpg",
+        "sha256": "d2f424ec5e96531ca071d0b7e62f152b750a0b5e9ee270c5d06e546a3acd27f2",
+        "byte_size": 501315,
+        "width": 1600,
+        "height": 2498,
+        "role": "Complete original title and imprint page; no printed folio claimed."
+      },
+      {
+        "pid": "PA215",
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.1657-paris-cramoisy-lyon-google-observed-setting.google-pa215-jpeg-4742ac41",
+        "canonical_payload": "src/sources/works/cistercian-order/missale-cisterciense/editions/1657-paris-cramoisy-lyon-google-observed-setting/artifacts/google-pa215-jpeg-4742ac41/canon-printed-293-pa215.jpg",
+        "sha256": "4742ac41d3485ba1fe3ad515f8942b4fda1bb16ac59a48ab9420bfa5e91cc279",
+        "byte_size": 558614,
+        "width": 1600,
+        "height": 2478,
+        "role": "Complete original Canon Missæ. page, printed folio 293, at Google locator PA215; includes the Perceptio prayer in the left column. Google PA215 is a provider locator, not the printed page number."
+      }
+    ],
+    "acquisition_bound": "Two necessary complete original pages only. No whole book, PDF, OCR corpus, modern replacement edition or new FIDES native page was acquired. The original search follow-up stopped after the recorded bounded checks; no new acquisition occurred while preparing this proposal.",
+    "modern_marks": "Both complete JPEGs preserve their intact Digitized by Google stamps; no other modern addition was observed on direct visual review."
+  },
+  "rights_assessment": {
+    "status": "The exact source identity, provenance and bounded U.S. rights assessment are independently accepted by the pinned source-V1 acceptance receipt. This public bookkeeping derivative preserves the accepted historical scope and exact image bytes.",
+    "jurisdiction": "United States",
+    "basis": "United States: the observed title/imprint dates this historical printed source to 1657, beyond the U.S. publication term. This exact artifact is a faithful flat reproduction of an old printed page surface, with no independently original modern photographic composition or modern editorial/translated text observed. The artifact-specific copying/originality assessment follows U.S. Copyright Office Compendium 313.4(A) and 909.3(A), using the existing retained primary evidence; that administrative guidance is not a source-owner licence or a court holding about these bytes. The unchanged Digitized by Google stamp remains intact and is treated under src/sources/inventories/google-usage-guidelines-rights-v1.toml for attribution only, outside Triptych's CC BY 4.0 grant. The independent historical-work and flat-copy basis controls; the stamp rule does not settle direct-download terms. No general Google licence, complete applicable-contract determination, or other-jurisdiction clearance is asserted.",
+    "existing_primary_evidence": [
+      {
+        "artifact_id": "artifact.united-states-copyright-office.copyrightable-authorship-what-can-be-registered.2021-third-edition-chapter-300.official-pdf-363f7898",
+        "sha256": "363f7898364800c62b7a8457133955df3884cf5950510abaffecf656bd39c37d",
+        "byte_size": 641671,
+        "locus": "313.4(A), chapter pages 26–27",
+        "source_url": "https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf"
+      },
+      {
+        "artifact_id": "artifact.united-states-copyright-office.compendium-chapter-900-visual-art-works.2021-01-28.government-text-4e92938e",
+        "sha256": "4e92938e28a78c28bd9e3e964110fd3d52d7cf8148ff629f3ce333c9ba3e800b",
+        "byte_size": 244523,
+        "locus": "909.3(A), chapter page 22, existing complete retained text derivative",
+        "source_url": "https://www.copyright.gov/comp3/chap900/ch900-visual-art.pdf"
+      }
+    ],
+    "existing_stamp_record": {
+      "path": "src/sources/inventories/google-usage-guidelines-rights-v1.toml",
+      "sha256": "721d78d00a6d07a7562f6ea8d2c629d6e9fdbbdf14f4247e3a29af022ee5fd6f",
+      "byte_size": 33186,
+      "limit": "Attribution/stamp rule only; its unresolved adjacent direct-download terms question is not converted into permission. No stamp-only licence basis."
+    },
+    "limits": "No general Google licence or other-jurisdiction clearance; no external-cover photograph exception; no modern wrapper clearance. Existing primary evidence is reused by exact ID without reacquisition. Rights assessment does not establish source-setting identity or permit a FIDES reading transfer."
+  },
+  "searches": [
+    {
+      "provider": "web search",
+      "queries": [
+        "\"Missale Cisterciense\" \"1657\"",
+        "\"Missale Cisterciense\" \"Cramoisy\" 1657",
+        "\"Missale\" \"Cisterciense\" \"M.DC.LVII\""
+      ],
+      "result_bound": "Initial aliases surfaced the Google/Lyon and known FIDES deliveries, secondary historical accounts, and a 1669 RPB catalogue candidate. Secondary accounts were not used for prayer wording."
+    },
+    {
+      "provider": "web search",
+      "queries": [
+        "\"Missale Cisterciense\" \"1657\" library",
+        "\"Missale Cisterciense\" \"1657\" site:books.google.com",
+        "\"Missale Cisterciense\" \"1657\" site:archive.org",
+        "\"Missale Cisterciense\" \"1657\" site:gallica.bnf.fr"
+      ],
+      "result_bound": "Google ID a8329mzqJMUC was the promising new exact-title/year lead; known FIDES edition 3755 also surfaced. No additional exact original copy was identified in the returned result set."
+    },
+    {
+      "provider": "web search",
+      "queries": [
+        "\"a8329mzqJMUC\"",
+        "\"Missale cisterciense\" \"1657\" \"Lyon\"",
+        "\"Missale cisterciense\" \"1657\" site:numelyo.bm-lyon.fr",
+        "\"Missale cisterciense\" \"1657\" site:catalogue.bnf.fr"
+      ],
+      "result_bound": "The same Google/Lyon delivery surfaced. No separate Lyon-hosted original image delivery or BnF original scan was identified in this result set."
+    },
+    {
+      "provider": "web search",
+      "queries": [
+        "\"Missale Cisterciense\" \"1657\" Cramoisy folio",
+        "\"Missale Cisterciense\" \"1657\" \"293\"",
+        "\"Missale Cisterciense\" \"1657\" numelyo Lyon Fontaines",
+        "\"Missale cisterciense\" \"1657\" \"215\""
+      ],
+      "result_bound": "No additional matching-setting original image was identified. Numerical mentions in secondary pages were not accepted as edition or page evidence."
+    },
+    {
+      "provider": "web search",
+      "query": "\"Missale Cisterciense\" \"1657\"",
+      "domain_filters_run_separately": [
+        [
+          "gallica.bnf.fr",
+          "catalogue.bnf.fr",
+          "ccfr.bnf.fr"
+        ],
+        [
+          "digitale-sammlungen.de",
+          "bsb-muenchen.de",
+          "digital.onb.ac.at"
+        ],
+        [
+          "archive.org",
+          "numelyo.bm-lyon.fr",
+          "catalogue.bm-lyon.fr"
+        ],
+        [
+          "digital.fides.org.pl"
+        ]
+      ],
+      "result_bound": "Known FIDES 3755 was returned. Other returned BnF/CCFr records were unrelated manuscript or collection records. No further exact original setting was identified in the returned result set. These are search-engine bounds, not exhaustive direct catalogue searches or a world-wide absence claim."
+    }
+  ],
+  "candidate_facts": [
+    {
+      "id": "google-lyon-a8329mzqJMUC",
+      "url": "https://books.google.com/books?id=a8329mzqJMUC",
+      "disposition": "Promising exact-title/year lead verified at original title/imprint PP7, but inspected body page has a different observed setting; two complete original images proposed as a distinct source witness."
+    },
+    {
+      "id": "rpb-929t01040334",
+      "url": "https://rpb.lbz-rlp.de/929t01040334",
+      "metadata_directly_read": {
+        "date": "1669",
+        "place": "Lutetiae Parisiorum",
+        "publisher": "Mabre-Cramoisy",
+        "edition": "Secundo Editum",
+        "fulltext_pointer": "urn:nbn:de:0128-4-39"
+      },
+      "disposition": "Different date/edition; declined. No original book or page payload acquired; catalogue facts are not prayer evidence."
+    },
+    {
+      "id": "known-fides-3755",
+      "url": "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content",
+      "metadata_directly_read": {
+        "title": "Missale Cisterciense 1657",
+        "issued": "1657",
+        "format": "image/x.djvu",
+        "holder": "Opactwo Benedyktynek w Krzeszowie",
+        "call_number": "OSB Missale_Cisterciense_1657",
+        "rights_flag": "Domena publiczna (Public domain)",
+        "access_flag": "Dla wszystkich bez ograniczeń"
+      },
+      "delivery_links_observed": [
+        "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657.djvu",
+        "https://digital.fides.org.pl/Content/3755/download/"
+      ],
+      "disposition": "Already known native delivery and download alias; no independent new scan or repair-free delivery established and no duplicate native source page fetched."
+    }
+  ],
+  "failed_api_event": {
+    "service": "Google Books volume API",
+    "http_status": 429,
+    "curl_exit_status": 22,
+    "acquired_json_body": false,
+    "evidence_limit": "Status only. No volume JSON body exists in this acquisition and no affirmative platform rights licence or flag was inferred.",
+    "source_url": "https://www.googleapis.com/books/v1/volumes/a8329mzqJMUC"
+  },
+  "remaining_gaps": [
+    {
+      "holding": "FIDES 3755",
+      "raw_page_file": "0281",
+      "printed_page": "215",
+      "column": "left",
+      "physical_body_baselines": [
+        17,
+        18,
+        19
+      ],
+      "status": "unresolved",
+      "reason": "A triangular physical repair conceals source sorts on baselines 17–18 and the prefix before visible medélam per- on baseline 19. The distinct Google setting does not expose these exact FIDES sorts. No reconstruction or reading transfer is accepted."
+    },
+    {
+      "holding": "FIDES 3755",
+      "raw_page_file": "0282",
+      "printed_page": "216",
+      "column": "right",
+      "physical_body_baselines": [
+        19
+      ],
+      "status": "unresolved",
+      "reason": "Any punctuation following visible ætérnam, Amen is concealed by the right-side repair. No final period is inferred from another witness."
+    }
+  ],
+  "bounded_negative": "Within the recorded query sets and the directly acquired Google/Lyon, FIDES, and RPB metadata/pages, no independent original image of the exact FIDES large-type p.215 setting was established. This does not assert that no other copy, scan, or matching setting exists.",
+  "measured_input_dispositions": [
+    {
+      "input_label": "fides-holding.headers",
+      "sha256": "59ab5fe00d919746775751326ff5f49ecb08e28eda92a6f935d70a93b17bbccf",
+      "byte_size": 371,
+      "media_type": "text/plain",
+      "decision": "private-runtime-control-not-published",
+      "contains_cookie_fields": true,
+      "reason": "HTTP response-header control, individually measured; contents are not source evidence and are excluded from public retention for runtime/privacy hygiene. No general copyright claim is made over status or factual header values.",
+      "provenance": {
+        "exact_request_urls": [
+          "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content"
+        ],
+        "stable_source_context_urls": [
+          "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "FIDES holding 3755",
+        "extent": "Complete HTTP response-header control for the holding request; not a body or original page",
+        "limitation": "Holding facts identify only the already known native delivery. The modern wrapper is the prior exact-SHA deferred alias; header contents are not published."
+      }
+    },
+    {
+      "input_label": "fides-holding.html",
+      "sha256": "87efdec4a219ac48e38beeb73e5aa248809ad7811721a1373e6d368e4d521b4c",
+      "byte_size": 21293,
+      "media_type": "text/html",
+      "decision": "defer-existing-exact-wrapper-alias",
+      "prior_decision": {
+        "path": "src/sources/inventories/eucharistic-source-retention-decision-v1.toml",
+        "table": "batch2_artifacts",
+        "match_sha256": "87efdec4a219ac48e38beeb73e5aa248809ad7811721a1373e6d368e4d521b4c",
+        "owner_receipt_locus": "src/sources/inventories/eucharistic-research-reviews/source-retention-batch2-2026-10-20.json#artifacts[469]",
+        "owner_receipt_sha256": "456111896e5beff5bed9b4484b0f3c2500997243d575447d9afbbe5969e5a592"
+      },
+      "reason": "Byte-identical alias of the already deferred modern FIDES holding wrapper. Reuse its existing disposition: full modern wrapper publication basis unestablished; factual holding/access fields may be stated separately. No new licence or duplicate-wrapper registration is proposed.",
+      "provenance": {
+        "exact_request_urls": [
+          "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content"
+        ],
+        "stable_source_context_urls": [
+          "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "FIDES holding 3755",
+        "extent": "Complete acquired holding HTML response",
+        "limitation": "Holding facts identify only the already known native delivery. The modern wrapper is the prior exact-SHA deferred alias; header contents are not published."
+      }
+    },
+    {
+      "input_label": "google-PA215-folio-detail.jpg",
+      "sha256": "a15b816bf3840d39af09fef437e9cefbcb21368c366a04e84199df47f0d17a13",
+      "byte_size": 19046,
+      "media_type": "image/jpeg",
+      "decision": "defer-duplicate-review-derivative",
+      "retained_parent_artifact_id": "artifact.cistercian-order.missale-cisterciense.1657-paris-cramoisy-lyon-google-observed-setting.google-pa215-jpeg-4742ac41",
+      "recipe": {
+        "tool": "/usr/bin/magick",
+        "crop_width_height_x_y": [
+          220,
+          145,
+          1250,
+          60
+        ],
+        "repage": true,
+        "resize_percent": 300
+      },
+      "reason": "Local review crop of the retained full original page. It establishes no additional historical witness. Parent bytes and explicit crop/resize recipe preserve the finding aid without retaining another JPEG; bit-identical JPEG re-encoding is not promised.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PA215"
+        ],
+        "parent_sha256": [
+          "4742ac41d3485ba1fe3ad515f8942b4fda1bb16ac59a48ab9420bfa5e91cc279"
+        ],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "No external request produced this local derivative. The exact retained full-page parent SHA and the recorded crop/resize recipe define its source scope; bit-identical JPEG regeneration is not promised.",
+        "extent": "Local finding-aid crop of the printed folio, resized 300%; not a complete page"
+      }
+    },
+    {
+      "input_label": "google-PA215-perceptio-detail.jpg",
+      "sha256": "bb1d183e379d975bbaa27c59915a170f04071068bdf21bfad8c6bd31b1f2748a",
+      "byte_size": 75962,
+      "media_type": "image/jpeg",
+      "decision": "defer-duplicate-review-derivative",
+      "retained_parent_artifact_id": "artifact.cistercian-order.missale-cisterciense.1657-paris-cramoisy-lyon-google-observed-setting.google-pa215-jpeg-4742ac41",
+      "recipe": {
+        "tool": "/usr/bin/magick",
+        "crop_width_height_x_y": [
+          750,
+          530,
+          120,
+          1250
+        ],
+        "repage": true,
+        "resize_percent": 100
+      },
+      "reason": "Local review crop of the retained full original page. It establishes no additional historical witness. Parent bytes and explicit crop/resize recipe preserve the finding aid without retaining another JPEG; bit-identical JPEG re-encoding is not promised.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PA215"
+        ],
+        "parent_sha256": [
+          "4742ac41d3485ba1fe3ad515f8942b4fda1bb16ac59a48ab9420bfa5e91cc279"
+        ],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "No external request produced this local derivative. The exact retained full-page parent SHA and the recorded crop/resize recipe define its source scope; bit-identical JPEG regeneration is not promised.",
+        "extent": "Local finding-aid crop of the Perceptio area, at source scale; not a complete page"
+      }
+    },
+    {
+      "input_label": "google-PA215-signed-page.headers",
+      "sha256": "29573413d05fe94bdc10b28d9ebfd3079ded8bb34a1edd6fb4a6cda649a91c42",
+      "byte_size": 867,
+      "media_type": "text/plain",
+      "decision": "private-runtime-control-not-published",
+      "contains_cookie_fields": true,
+      "reason": "HTTP response-header control, individually measured; contents are not source evidence and are excluded from public retention for runtime/privacy hygiene. No general copyright claim is made over status or factual header values.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PA215"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response.",
+        "extent": "Complete response-header control for the indicated provider/object request, not the response body; header contents omitted"
+      }
+    },
+    {
+      "input_label": "google-PA215-signed-page.png",
+      "sha256": "f0551b4846745af1912afadcf676eeae153a31395f8583f608a9ca53618dea9a",
+      "byte_size": 136404,
+      "media_type": "image/jpeg",
+      "decision": "defer-duplicate-representation",
+      "dimensions": [
+        575,
+        891
+      ],
+      "retained_page_artifact_id": "artifact.cistercian-order.missale-cisterciense.1657-paris-cramoisy-lyon-google-observed-setting.google-pa215-jpeg-4742ac41",
+      "reason": "Earlier smaller rendition or thumbnail of a page covered by the selected full original JPEG. Extra bytes add no necessary source locus. Different exact bytes remain pinned here; exact bit recreation is not promised. File extension is not authoritative for the recorded media type.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PA215"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response. The selected full rendition covers the same page; it is not asserted to be the byte-generating parent of this separately acquired smaller response.",
+        "extent": "Complete earlier smaller original prayer-page JPEG, 575 × 891 pixels",
+        "same_page_selected_rendition_sha256": "4742ac41d3485ba1fe3ad515f8942b4fda1bb16ac59a48ab9420bfa5e91cc279"
+      }
+    },
+    {
+      "input_label": "google-PA215-w1600-page.headers",
+      "sha256": "1db2bd13734107b4ac04c23060c10f5f1779f633eda0124e1b84812bf0d9380c",
+      "byte_size": 867,
+      "media_type": "text/plain",
+      "decision": "private-runtime-control-not-published",
+      "contains_cookie_fields": true,
+      "reason": "HTTP response-header control, individually measured; contents are not source evidence and are excluded from public retention for runtime/privacy hygiene. No general copyright claim is made over status or factual header values.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PA215"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response.",
+        "extent": "Complete response-header control for the indicated provider/object request, not the response body; header contents omitted"
+      }
+    },
+    {
+      "input_label": "google-PA215-w1600-page.jpg",
+      "sha256": "4742ac41d3485ba1fe3ad515f8942b4fda1bb16ac59a48ab9420bfa5e91cc279",
+      "byte_size": 558614,
+      "media_type": "image/jpeg",
+      "decision": "propose-retain-exact-original",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.1657-paris-cramoisy-lyon-google-observed-setting.google-pa215-jpeg-4742ac41",
+      "canonical_payload": "src/sources/works/cistercian-order/missale-cisterciense/editions/1657-paris-cramoisy-lyon-google-observed-setting/artifacts/google-pa215-jpeg-4742ac41/canon-printed-293-pa215.jpg",
+      "reason": "Complete original Canon Missæ. page, printed folio 293, at Google locator PA215; includes the Perceptio prayer in the left column. Google PA215 is a provider locator, not the printed page number.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PA215"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response. This is the exact acquired service rendition; no locally retained higher-level image parent is asserted.",
+        "extent": "Complete original Canon Missæ. page JPEG, printed folio 293, 1600 × 2478 pixels"
+      }
+    },
+    {
+      "input_label": "google-PP7-signed-page.headers",
+      "sha256": "7934d9f5e432e67f60318f61070915f7e64d955ce05a20be0673145991a58e59",
+      "byte_size": 867,
+      "media_type": "text/plain",
+      "decision": "private-runtime-control-not-published",
+      "contains_cookie_fields": true,
+      "reason": "HTTP response-header control, individually measured; contents are not source evidence and are excluded from public retention for runtime/privacy hygiene. No general copyright claim is made over status or factual header values.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PP7"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response.",
+        "extent": "Complete response-header control for the indicated provider/object request, not the response body; header contents omitted"
+      }
+    },
+    {
+      "input_label": "google-PP7-signed-page.png",
+      "sha256": "36ebcfab1c82ceae4c8fa4f7fd8406750cb653dac17ba606190bbeafa6dac0db",
+      "byte_size": 114295,
+      "media_type": "image/jpeg",
+      "decision": "defer-duplicate-representation",
+      "dimensions": [
+        575,
+        898
+      ],
+      "retained_page_artifact_id": "artifact.cistercian-order.missale-cisterciense.1657-paris-cramoisy-lyon-google-observed-setting.google-pp7-jpeg-d2f424ec",
+      "reason": "Earlier smaller rendition or thumbnail of a page covered by the selected full original JPEG. Extra bytes add no necessary source locus. Different exact bytes remain pinned here; exact bit recreation is not promised. File extension is not authoritative for the recorded media type.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PP7"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response. The selected full rendition covers the same page; it is not asserted to be the byte-generating parent of this separately acquired smaller response.",
+        "extent": "Complete earlier smaller original title-page JPEG, 575 × 898 pixels",
+        "same_page_selected_rendition_sha256": "d2f424ec5e96531ca071d0b7e62f152b750a0b5e9ee270c5d06e546a3acd27f2"
+      }
+    },
+    {
+      "input_label": "google-PP7-w1600-page.headers",
+      "sha256": "b450c42a47765a209af2a2bfa9cc4211472f7b4efd93db4ffba0b2282073c9f5",
+      "byte_size": 866,
+      "media_type": "text/plain",
+      "decision": "private-runtime-control-not-published",
+      "contains_cookie_fields": true,
+      "reason": "HTTP response-header control, individually measured; contents are not source evidence and are excluded from public retention for runtime/privacy hygiene. No general copyright claim is made over status or factual header values.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PP7"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response.",
+        "extent": "Complete response-header control for the indicated provider/object request, not the response body; header contents omitted"
+      }
+    },
+    {
+      "input_label": "google-PP7-w1600-page.jpg",
+      "sha256": "d2f424ec5e96531ca071d0b7e62f152b750a0b5e9ee270c5d06e546a3acd27f2",
+      "byte_size": 501315,
+      "media_type": "image/jpeg",
+      "decision": "propose-retain-exact-original",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.1657-paris-cramoisy-lyon-google-observed-setting.google-pp7-jpeg-d2f424ec",
+      "canonical_payload": "src/sources/works/cistercian-order/missale-cisterciense/editions/1657-paris-cramoisy-lyon-google-observed-setting/artifacts/google-pp7-jpeg-d2f424ec/title-pp7.jpg",
+      "reason": "Complete original title and imprint page; no printed folio claimed.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PP7"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response. This is the exact acquired service rendition; no locally retained higher-level image parent is asserted.",
+        "extent": "Complete original title/imprint page JPEG, 1600 × 2498 pixels"
+      }
+    },
+    {
+      "input_label": "google-books-metadata.headers",
+      "sha256": "7d43e54d449231b13640017eb47394d5453b7deb94c9ac427160626d8d59b16b",
+      "byte_size": 907,
+      "media_type": "text/plain",
+      "decision": "private-runtime-control-not-published",
+      "contains_cookie_fields": true,
+      "reason": "HTTP response-header control, individually measured; contents are not source evidence and are excluded from public retention for runtime/privacy hygiene. No general copyright claim is made over status or factual header values.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response.",
+        "extent": "Complete response-header control for the indicated provider/object request, not the response body; header contents omitted"
+      }
+    },
+    {
+      "input_label": "google-books-metadata.html",
+      "sha256": "e59276f4197576ac99fb5be18a9e3877e2bdf6f3ae7ecd4f29de2c5d48697859",
+      "byte_size": 42680,
+      "media_type": "text/html",
+      "decision": "defer-modern-wrapper-with-private-delivery-data",
+      "reason": "Modern provider metadata/control wrapper contains transient signed image queries; no full-wrapper redistribution basis is established. Only the necessary bibliographic/access facts are independently stated in this public research record. Wrapper bytes and embedded queries are not published.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response.",
+        "extent": "Complete acquired modern provider metadata/control response; not a complete book or original-page image"
+      }
+    },
+    {
+      "input_label": "google-page-acquisition.json",
+      "sha256": "8456a9a199c446e04bb50c722427e4e16e01fb60bc3cc31e8cf6fb8dae77e201",
+      "byte_size": 673,
+      "media_type": "application/json",
+      "decision": "private-project-control-not-published",
+      "reason": "Project acquisition/report control includes transient signed locators and/or private working paths. Do not install the raw JSON. Only freshly prepared portable facts, exact hashes and stable public source locators are proposed.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PP7",
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PA215"
+        ],
+        "parent_sha256": [
+          "36ebcfab1c82ceae4c8fa4f7fd8406750cb653dac17ba606190bbeafa6dac0db",
+          "f0551b4846745af1912afadcf676eeae153a31395f8583f608a9ca53618dea9a"
+        ],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "Project control stores private actual signed request locators. Only the source page contexts and exact associated response SHAs are published; raw event JSON is excluded.",
+        "extent": "Private project event record covering two complete acquired page renditions, not an external source response"
+      }
+    },
+    {
+      "input_label": "google-page-w1600-acquisition.json",
+      "sha256": "f1f3b1cd837208ff329733d461b06e8a9397439de621e888a75c550c85f0a42c",
+      "byte_size": 685,
+      "media_type": "application/json",
+      "decision": "private-project-control-not-published",
+      "reason": "Project acquisition/report control includes transient signed locators and/or private working paths. Do not install the raw JSON. Only freshly prepared portable facts, exact hashes and stable public source locators are proposed.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PP7",
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PA215"
+        ],
+        "parent_sha256": [
+          "d2f424ec5e96531ca071d0b7e62f152b750a0b5e9ee270c5d06e546a3acd27f2",
+          "4742ac41d3485ba1fe3ad515f8942b4fda1bb16ac59a48ab9420bfa5e91cc279"
+        ],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "Project control stores private actual signed request locators. Only the source page contexts and exact associated response SHAs are published; raw event JSON is excluded.",
+        "extent": "Private project event record covering two complete acquired page renditions, not an external source response"
+      }
+    },
+    {
+      "input_label": "google-page215-metadata.headers",
+      "sha256": "4ea2330c92fed3fe9950eeb777c60e74162faabb865e88815bc8e9f33a91e319",
+      "byte_size": 982,
+      "media_type": "text/plain",
+      "decision": "private-runtime-control-not-published",
+      "contains_cookie_fields": true,
+      "reason": "HTTP response-header control, individually measured; contents are not source evidence and are excluded from public retention for runtime/privacy hygiene. No general copyright claim is made over status or factual header values.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PA215"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response.",
+        "extent": "Complete response-header control for the indicated provider/object request, not the response body; header contents omitted"
+      }
+    },
+    {
+      "input_label": "google-page215-metadata.html",
+      "sha256": "372db3358679250d8b6d71eb35f000fd1bb2128bfcdfa81b3c80809ab10fcb81",
+      "byte_size": 11422,
+      "media_type": "text/html",
+      "decision": "defer-modern-wrapper-with-private-delivery-data",
+      "reason": "Modern provider metadata/control wrapper contains transient signed image queries; no full-wrapper redistribution basis is established. Only the necessary bibliographic/access facts are independently stated in this public research record. Wrapper bytes and embedded queries are not published.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PA215"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response.",
+        "extent": "Complete acquired modern provider metadata/control response; not a complete book or original-page image"
+      }
+    },
+    {
+      "input_label": "google-title-PP7-zoom2.headers",
+      "sha256": "03f922e323a524aeb07fb7c2303a4cf6906aeada5dd2d437946489d64b3f14fe",
+      "byte_size": 861,
+      "media_type": "text/plain",
+      "decision": "private-runtime-control-not-published",
+      "contains_cookie_fields": true,
+      "reason": "HTTP response-header control, individually measured; contents are not source evidence and are excluded from public retention for runtime/privacy hygiene. No general copyright claim is made over status or factual header values.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PP7"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response.",
+        "extent": "Complete response-header control for the indicated provider/object request, not the response body; header contents omitted"
+      }
+    },
+    {
+      "input_label": "google-title-PP7-zoom2.png",
+      "sha256": "92fb4888ef5135122990d60f318d927db503a63597dfe4797458319630115880",
+      "byte_size": 82451,
+      "media_type": "image/png",
+      "decision": "private-failed-response-control-not-published",
+      "dimensions": [
+        1280,
+        1670
+      ],
+      "reason": "Image-not-available placeholder from an unsuccessful image request, not an original page or a second witness. The failed route is not represented as successful original-image delivery.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PP7"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "Unsuccessful image request only. Exact failed-request locator is not published; the stable viewer URL is object context and is not claimed as a successful original-image delivery endpoint.",
+        "extent": "Complete image-not-available placeholder PNG, 1280 × 1670 pixels; no historical page content"
+      }
+    },
+    {
+      "input_label": "google-title-PP7.headers",
+      "sha256": "9f81f2a24839dc7ca55ee73e0c2f762e740226037595c00d0ed031c8bb7e1e8f",
+      "byte_size": 385,
+      "media_type": "text/plain",
+      "decision": "private-runtime-control-not-published",
+      "contains_cookie_fields": false,
+      "reason": "HTTP response-header control, individually measured; contents are not source evidence and are excluded from public retention for runtime/privacy hygiene. No general copyright claim is made over status or factual header values.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PP7"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response.",
+        "extent": "Complete response-header control for the indicated provider/object request, not the response body; header contents omitted"
+      }
+    },
+    {
+      "input_label": "google-title-PP7.jpg",
+      "sha256": "f35a1f65a82250426c900ec546ffab5877551d2045b712bbb32a2d7b517965d7",
+      "byte_size": 53879,
+      "media_type": "image/png",
+      "decision": "defer-duplicate-representation",
+      "dimensions": [
+        128,
+        200
+      ],
+      "retained_page_artifact_id": "artifact.cistercian-order.missale-cisterciense.1657-paris-cramoisy-lyon-google-observed-setting.google-pp7-jpeg-d2f424ec",
+      "reason": "Earlier smaller rendition or thumbnail of a page covered by the selected full original JPEG. Extra bytes add no necessary source locus. Different exact bytes remain pinned here; exact bit recreation is not promised. File extension is not authoritative for the recorded media type.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PP7"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response. The selected full rendition covers the same page; it is not asserted to be the byte-generating parent of this separately acquired smaller response.",
+        "extent": "Provider title-page thumbnail PNG, 128 × 200 pixels",
+        "same_page_selected_rendition_sha256": "d2f424ec5e96531ca071d0b7e62f152b750a0b5e9ee270c5d06e546a3acd27f2"
+      }
+    },
+    {
+      "input_label": "google-title-metadata.headers",
+      "sha256": "41a3cd234cd4ea3b0c5e2e947d4eabdb0de5b2b3178cf1320fefe4270a350121",
+      "byte_size": 983,
+      "media_type": "text/plain",
+      "decision": "private-runtime-control-not-published",
+      "contains_cookie_fields": true,
+      "reason": "HTTP response-header control, individually measured; contents are not source evidence and are excluded from public retention for runtime/privacy hygiene. No general copyright claim is made over status or factual header values.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PP7"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response.",
+        "extent": "Complete response-header control for the indicated provider/object request, not the response body; header contents omitted"
+      }
+    },
+    {
+      "input_label": "google-title-metadata.json",
+      "sha256": "1db46d99844e785810be0f2bdeeaedcb81b5bfe6a22aff2422ddcd4c84aef3ba",
+      "byte_size": 11403,
+      "media_type": "application/json",
+      "decision": "defer-modern-wrapper-with-private-delivery-data",
+      "reason": "Modern provider metadata/control wrapper contains transient signed image queries; no full-wrapper redistribution basis is established. Only the necessary bibliographic/access facts are independently stated in this public research record. Wrapper bytes and embedded queries are not published.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC&pg=PP7"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The stable URL identifies provider/object context, not the exact response delivery. No exact request URL is published where the acquired route contains transient signed parameters or private/runtime request details; the successful original-page route parameters are separately stated in acquisition_facts, and exact SHA-256 pins the response.",
+        "extent": "Complete acquired modern provider metadata/control response; not a complete book or original-page image"
+      }
+    },
+    {
+      "input_label": "google-volume-api.headers",
+      "sha256": "ee7396478368a32ed954e7fdcc069100ce7250f122169fa1f03ebb973a267a6b",
+      "byte_size": 334,
+      "media_type": "text/plain",
+      "decision": "private-runtime-control-not-published",
+      "contains_cookie_fields": false,
+      "reason": "HTTP response-header control, individually measured; contents are not source evidence and are excluded from public retention for runtime/privacy hygiene. No general copyright claim is made over status or factual header values.",
+      "provenance": {
+        "exact_request_urls": [
+          "https://www.googleapis.com/books/v1/volumes/a8329mzqJMUC"
+        ],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Google Books volume a8329mzqJMUC, credited to Lyon Public Library (Bibliothèque jésuite des Fontaines)",
+        "limitation": "The exact clean Google Books volume-API request URL is preserved in the original event report and is recorded here. The acquired event returned HTTP 429 with curl exit 22; no JSON body was acquired. The response-header bytes remain private runtime control. No affirmative platform rights flag or licence is inferred.",
+        "extent": "Complete response-header control for a Google Books volume-API HTTP 429 event; no JSON body acquired"
+      }
+    },
+    {
+      "input_label": "report.json",
+      "sha256": "358f730f653ba1830be0d2e36b65ce29b00cd0977d3dd9dba3be9f1243ab340f",
+      "byte_size": 14028,
+      "media_type": "application/json",
+      "decision": "private-project-control-not-published",
+      "reason": "Project acquisition/report control includes transient signed locators and/or private working paths. Do not install the raw JSON. Only freshly prepared portable facts, exact hashes and stable public source locators are proposed.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [
+          "https://books.google.com/books?id=a8329mzqJMUC",
+          "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content",
+          "https://rpb.lbz-rlp.de/929t01040334"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Triptych project-generated research/measurement control; not an external historical source",
+        "extent": "Complete original private bounded-search report",
+        "limitation": "No external request produced this project control. Public facts and measured file identities are separately stated; private paths, embedded delivery queries and raw control contents are not retained publicly."
+      }
+    },
+    {
+      "input_label": "rpb-candidate.headers",
+      "sha256": "16ff41f1e73a4781f1e1bd245bd1b0cbd795513a588581090496e3e50a19b61a",
+      "byte_size": 348,
+      "media_type": "text/plain",
+      "decision": "private-runtime-control-not-published",
+      "contains_cookie_fields": true,
+      "reason": "HTTP response-header control, individually measured; contents are not source evidence and are excluded from public retention for runtime/privacy hygiene. No general copyright claim is made over status or factual header values.",
+      "provenance": {
+        "exact_request_urls": [
+          "https://rpb.lbz-rlp.de/929t01040334"
+        ],
+        "stable_source_context_urls": [
+          "https://rpb.lbz-rlp.de/929t01040334"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Rheinland-Pfälzische Bibliographie catalogue candidate 929t01040334",
+        "extent": "Complete HTTP response-header control for the catalogue request; not a book image",
+        "limitation": "The directly read catalogue describes the distinct 1669 Secundo Editum. No original page or book body was acquired."
+      }
+    },
+    {
+      "input_label": "rpb-candidate.html",
+      "sha256": "14dc517ebf4e1cb9ebd05bba1bcd02c87f1b00dcc4810e66a72a36468a2d50b4",
+      "byte_size": 11105,
+      "media_type": "text/html",
+      "decision": "defer-modern-catalogue-wrapper",
+      "reason": "Modern catalogue HTML; a complete-wrapper publication basis and source need are not established. The necessary date, publisher, edition and stable locator facts are stated separately. Its 1669 candidate was rejected for the 1657 original-page search.",
+      "provenance": {
+        "exact_request_urls": [
+          "https://rpb.lbz-rlp.de/929t01040334"
+        ],
+        "stable_source_context_urls": [
+          "https://rpb.lbz-rlp.de/929t01040334"
+        ],
+        "parent_sha256": [],
+        "provider_or_object_context": "Rheinland-Pfälzische Bibliographie catalogue candidate 929t01040334",
+        "extent": "Complete acquired modern catalogue HTML response",
+        "limitation": "The directly read catalogue describes the distinct 1669 Secundo Editum. No original page or book body was acquired."
+      }
+    },
+    {
+      "input_label": "write_report.py",
+      "sha256": "3fc022e4053cf81a8e61efb48ad85ed2558300d4e3a793680f0d44ce388a685c",
+      "byte_size": 14607,
+      "media_type": "text/plain",
+      "decision": "private-project-script-not-source",
+      "reason": "Local report-generation control, not external source evidence; it contains private working details and is unnecessary for the portable public facts or exact JPEG identity.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [],
+        "parent_sha256": [],
+        "provider_or_object_context": "Triptych project-generated research/measurement control; not an external historical source",
+        "extent": "Complete local report-generation script",
+        "limitation": "No external request produced this project control. Public facts and measured file identities are separately stated; private paths, embedded delivery queries and raw control contents are not retained publicly."
+      }
+    },
+    {
+      "input_label": "manifest.json",
+      "sha256": "895ef41a947c0d693ef301d9f7665cb97fbda8764715a04c3d1c23dcb6efdd94",
+      "byte_size": 6390,
+      "media_type": "application/json",
+      "decision": "private-project-measurement-control-not-source",
+      "reason": "Original local file measurement inventory is preserved unchanged privately. Its necessary per-input hash/byte facts have been restated here; it is not an additional historical source payload.",
+      "provenance": {
+        "exact_request_urls": [],
+        "stable_source_context_urls": [],
+        "parent_sha256": [],
+        "provider_or_object_context": "Triptych project-generated research/measurement control; not an external historical source",
+        "extent": "Complete original 29-file local measurement inventory",
+        "limitation": "No external request produced this project control. Public facts and measured file identities are separately stated; private paths, embedded delivery queries and raw control contents are not retained publicly."
+      }
+    }
+  ],
+  "disposition_counts": {
+    "measured_inputs": 30,
+    "response_header_controls": 12,
+    "response_header_controls_with_cookie_fields": 10,
+    "google_modern_wrappers_with_transient_image_queries": 3,
+    "selected_original_payloads": 2
+  },
+  "promotion_limits": "Public research and original-image/source identity only. No canonical prayer readings, passage bindings, liturgical unit adoption, stage/ancestry/completeness promotion, historical recension or FIDES gap completion is proposed.",
+  "input_provenance_limits": "Each measured input has its own source/provider context and extent. Exact-request lists are deliberately empty for signed/private or unpreserved request locators and for locally generated controls; stable context URLs must not be read as claims that those URLs returned the measured bytes. Actual successful original-image routes are explicitly distinguished in acquisition_facts. Source-parent SHAs are supplied for the two local image crops; separately acquired smaller renditions are page equivalents, not asserted byte-generating children of the selected larger rendition. No missing route is reconstructed."
+}

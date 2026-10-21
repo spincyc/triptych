@@ -1,0 +1,343 @@
+{
+  "record_type": "labelled-public-navigation-cli-index-addendum/v1",
+  "derivative_notice": "Read-only documentary addendum from exact accepted proof. No Git command, index parse, original CLI replay, full gate, projection generation, corpus export, browser or print run occurs in this lane. Original receipts remain unchanged and authoritative within their stated scopes.",
+  "originals": [
+    {
+      "review_provenance": ".scratch/batch3-20261020/examples/navigation-capture-v2/summary.json",
+      "sha256": "e5a8cef735c027ec836b705ecbce21f5e35e08eb0bf8e7438953c65b29172e71",
+      "byte_size": 5327
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/root/final-input-freeze-v2.json",
+      "sha256": "707bbed2a9acf04cddbb3f6eb5685456a2cf2a8fd181ebb12a12c9417ddcb93a",
+      "byte_size": 10943008
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/integration/SOURCE-FROZEN-COMPANION-v2.json",
+      "sha256": "f3539075c365cece8e16322975c71a7d01ad401c2e79f60082286be073c1d851",
+      "byte_size": 19537
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/root/navigation-index-disposition-v1.json",
+      "sha256": "077093b89edd61d6cd4374fdad11287e6ec327a6d0fa9fe6c598dcbbc7605a09",
+      "byte_size": 2553
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/examples/navigation-capture-v1/failure-before-rewrite.json",
+      "sha256": "a5c8edbaa6809974bbbe7ed6362f3a377e4e693c6212a8b26168883bfe27fb54",
+      "byte_size": 991
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/examples/navigation-capture-v1/index-metadata-proof.json",
+      "sha256": "cb1cfc5e3d56247c727898a5e689677e6d60da67cfbefc20888ca1ca7d1223e3",
+      "byte_size": 4042
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/examples/navigation-capture-v2/bounded-index-metadata-proof.json",
+      "sha256": "901686cc5f12a910bd713ccc6bc8bad4b683f77c8a8ba99d258b882a0778ee8b",
+      "byte_size": 462
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/examples/navigation-capture-v2/plain-renderer-field-proof.json",
+      "sha256": "d65c30adba787e79b73d1254422ba2d8ab92caa892647a1e33f577eef0c2ea1e",
+      "byte_size": 279
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/examples/navigation-capture-v2/comparison-serialization-proof.json",
+      "sha256": "34d6f30278468daa6ead0a2306c5c3b21ae4bcc545ea8c9d3b057554aa84df33",
+      "byte_size": 342
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/examples/navigation-capture-v2/old-to-actual-comparison.json",
+      "sha256": "35c96e1d18f54687446bede5db89c30a7ab7a17260f27baa3c77a2d53ad9b6e3",
+      "byte_size": 1720
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/root/history-projection-v3/receipt.json",
+      "sha256": "27479238c1175f014b7b4f65770e65f67a67081add0b23f8ef3dab762dd75bac",
+      "byte_size": 1085
+    }
+  ],
+  "current_freeze": {
+    "owner": {
+      "review_provenance": ".scratch/batch3-20261020/root/final-input-freeze-v2.json",
+      "sha256": "707bbed2a9acf04cddbb3f6eb5685456a2cf2a8fd181ebb12a12c9417ddcb93a",
+      "byte_size": 10943008
+    },
+    "base_commit": "e2267fdeb417d99b03d8cefea05fc30397bdf816",
+    "files": 45128,
+    "bytes": 5071708165,
+    "intended_new_files": 701,
+    "qualification": "Coordinator frozen input inventory; this lane verifies selected proof/file identities only, not all5GB, final Git membership or an outgoing patch."
+  },
+  "source_and_navigation": {
+    "companion": {
+      "review_provenance": ".scratch/batch3-20261020/integration/SOURCE-FROZEN-COMPANION-v2.json",
+      "sha256": "f3539075c365cece8e16322975c71a7d01ad401c2e79f60082286be073c1d851",
+      "byte_size": 19537
+    },
+    "exclusive_source_resources": 586,
+    "current_related_root_resources": 8,
+    "combined_source_and_notice_resources": 594,
+    "source_payloads": 121,
+    "source_payload_bytes": 537045013,
+    "only_two_changed_source_resources": [
+      {
+        "before": {
+          "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+          "sha256": "4d4023eb9ec6d0afeaeabf19a1b1bd3ef68b3a4802a43e537bc8ee554d19301a",
+          "byte_size": 188182
+        },
+        "after": {
+          "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+          "sha256": "8362843cc22d7b7cc4044ec79471f874a4248ac543c128b9b00909a844c4b449",
+          "byte_size": 188631
+        }
+      },
+      {
+        "before": {
+          "path": "src/sources/inventories/eucharistic-stage-coverage-v1.json",
+          "sha256": "807c2aefa8d298d604e76842018a1c47c0064c061940071ac05fd63fb58338eb",
+          "byte_size": 1667617
+        },
+        "after": {
+          "path": "src/sources/inventories/eucharistic-stage-coverage-v1.json",
+          "sha256": "a8ca6be712970faff60bb0bac9827dbbace35781088d7fd87eb82d71d1a6b465",
+          "byte_size": 1667617
+        }
+      }
+    ],
+    "reviewed_navigation_counts": {
+      "before": {
+        "declared_groups": 232,
+        "displayed_groups": 234,
+        "unmapped_families": 2
+      },
+      "after": {
+        "declared_groups": 233,
+        "displayed_groups": 233,
+        "unmapped_families": 0
+      },
+      "unchanged": {
+        "entries": 1962,
+        "relationship_entities": 28,
+        "generic_roman_entries": 175,
+        "generic_roman_entities": 4
+      },
+      "ravenna_attributed_fragment_entries": {
+        "before": 4,
+        "after": 5
+      },
+      "new_roman_diocesan_mass_proper_entries": 1
+    },
+    "source_status_rights_stage_parent_text_or_edition_change": false,
+    "source_admission_retention_font_and_prior_implementation_unchanged": true,
+    "catalogue": {
+      "review_provenance": "src/web/data/structure/act-history/catalogue.json",
+      "sha256": "bc57597f8754bf3a0974c74f19abf0be340ce1dbe1a966a125fc14c3b28157bf",
+      "byte_size": 9805843,
+      "entries": 1962,
+      "presentation_groups": 233,
+      "unmapped_families": 0,
+      "native_versions": 11,
+      "actual_native_units": 235,
+      "native_count_basis": "Coordinator current native payload count; fresh corpus acceptance remains separate."
+    },
+    "history_projection": {
+      "original": {
+        "review_provenance": ".scratch/batch3-20261020/root/history-projection-v3/receipt.json",
+        "sha256": "27479238c1175f014b7b4f65770e65f67a67081add0b23f8ef3dab762dd75bac",
+        "byte_size": 1085
+      },
+      "exit_code": 0,
+      "updated_outputs": 32
+    },
+    "Sources_projection": {
+      "unchanged_files": 4581,
+      "basis": "Coordinator freeze report; no new Sources projection write in this addendum."
+    }
+  },
+  "single_tuple_refresh": {
+    "summary_status": "RELEASED: one tuple refreshed from retained actual stdout under root's limited evidence disposition",
+    "new_owning_commands_in_capture_attempt": 0,
+    "new_full_21_replay": false,
+    "reused_actual_argv_unchanged": [
+      "tools/missal-coverage-reconciliation",
+      "--json"
+    ],
+    "reused_original_command_runs": 1,
+    "reused_actual_exit_status": 0,
+    "reused_actual_stdout": {
+      "review_provenance": ".scratch/batch3-20261020/coverage-audit/navigation-v1/stdout.json",
+      "sha256": "553d5a51e4920a13f6bb3aca91ddb4b23f74f53e9793ed69a0c4cc3711a30e52",
+      "byte_size": 63712
+    },
+    "reconciliation_findings": [],
+    "tool_before": {
+      "sha256": "2b35040cee4ca6c13ee6038751b3b5535bd2513dc53e0aff15902341ddff467b",
+      "byte_size": 28949
+    },
+    "tool_after": {
+      "sha256": "517a96df318a3beb570eca5dba5ee9efa19e40f8d1bddeba9070a5af81a3f3a2",
+      "byte_size": 28949
+    },
+    "only_changed_tuple": "One JSON captured-output tuple; presentation group count232→233. No second owning command.",
+    "actual_json_tuple_comparison_after_refresh": "match",
+    "exact_bytes_and_AST_outside_tuple_unchanged": true,
+    "act_history_unchanged": {
+      "sha256": "346f5ffed7028f26d060b31e1dd9a82e3c64b9310bdabf84981e75d1f0594d96",
+      "byte_size": 255818
+    },
+    "source_manifest_resource_count_stable": 586,
+    "runtime_dependency_count": 97,
+    "runtime_dependencies_except_authorized_tuple_stable": true,
+    "historical_21_capture_scope": "The existing public CLI derivative remains exact historical21 actual-command evidence on the prior navigation input. It is not a fresh21-command proof against this current route."
+  },
+  "preserved_index_events": [
+    {
+      "event": "original owning reconciliation command",
+      "original_receipt": {
+        "path": ".scratch/batch3-20261020/coverage-audit/navigation-v1/receipt.json",
+        "sha256": "0f54e3187f559670252a21f6a0bc1bb6ca7ca7bb5af4fb11bf2b6a1b93522c28",
+        "byte_size": 5727
+      },
+      "root_limited_disposition": {
+        "review_provenance": ".scratch/batch3-20261020/root/navigation-index-disposition-v1.json",
+        "sha256": "077093b89edd61d6cd4374fdad11287e6ec327a6d0fa9fe6c598dcbbc7605a09",
+        "byte_size": 2553
+      },
+      "accepted_scope": "accepted actual reconciliation and retained stdout within stated input/file-guard scope; raw-index-stability claim withheld",
+      "ordinary_input_and_file_guard_observations": {
+        "actual_owning_command_exit": 0,
+        "reconciliation_findings": 0,
+        "normal_tracked_guard_changes": 0,
+        "all_40_direct_inputs_and_34_native_metadata_inputs_and_audit_stable": true,
+        "raw_index_changed": true,
+        "current_index_equals_HEAD": true,
+        "current_staged_diff_empty": true,
+        "HEAD_unchanged": true
+      },
+      "raw_index_changed": true,
+      "original_before_raw_bytes_and_semantic_entries_preserved": false,
+      "unresolved_limit": "Only the original pre-command raw hash was retained. Its raw bytes and semantic entries were not preserved, so the writer and nature of the raw-index change cannot be proven. No claim of raw-index stability, stat-cache attribution, or absence of transient index mutation is made.",
+      "disposition": "The observed CLI output and source/audit reconciliation remain valid actual command evidence under the clean ordinary file guard and exact input hashes. Reuse those bytes for the one affected stdout tuple without repeating the owning command. Preserve the original discrepancy and receipt unchanged. This is not final project acceptance.",
+      "writer_attribution": "UNPROVEN",
+      "stat_only_change": "UNPROVEN",
+      "absence_of_transient_index_mutation": "UNPROVEN",
+      "required_followup": "Create a new full post-navigation input freeze and run the affected final source gate with raw index copies AND semantic staged-entry snapshots before/after; require exact semantic equality and report raw equality or differences truthfully. All final source/corpus/browser/print and outgoing-index/commit checks remain required."
+    },
+    {
+      "event": "subsequent navigation capture v1 aborted before tracked rewrite",
+      "original_failure": {
+        "review_provenance": ".scratch/batch3-20261020/examples/navigation-capture-v1/failure-before-rewrite.json",
+        "sha256": "a5c8edbaa6809974bbbe7ed6362f3a377e4e693c6212a8b26168883bfe27fb54",
+        "byte_size": 991
+      },
+      "wrapper_exit_status": 1,
+      "owning_commands_executed": 0,
+      "tracked_rewrite_performed": false,
+      "both_raw_and_semantic_snapshots_preserved_privately": true,
+      "strict_parser_original": {
+        "review_provenance": ".scratch/batch3-20261020/examples/navigation-capture-v1/index-metadata-proof.json",
+        "sha256": "cb1cfc5e3d56247c727898a5e689677e6d60da67cfbefc20888ca1ca7d1223e3",
+        "byte_size": 4042
+      },
+      "public_field_name_and_count_summary": {
+        "index_version": 2,
+        "entry_count": 44427,
+        "raw_equal": false,
+        "all_stage_mode_blob_path_flags_equal": true,
+        "extensions_equal": true,
+        "valid_before_and_after_checksums": true,
+        "all_changed_bytes_are_stat_fields_or_trailing_checksum": true,
+        "changed_raw_bytes": 7624,
+        "changed_stat_entry_count": 514,
+        "changed_fields": {
+          "ctime_seconds": 514,
+          "ctime_nanoseconds": 514,
+          "mtime_seconds": 514,
+          "mtime_nanoseconds": 514,
+          "inode": 514
+        },
+        "writer_attribution": "unknown; this parser identifies changed fields, not the writer",
+        "copied_index_semantic_entries_equal": true,
+        "both_copied_indexes_equal_HEAD": true
+      },
+      "qualification": "The strict proof identifies permitted field classes in this second event only. No writer attribution or retroactive proof of the original command event follows."
+    },
+    {
+      "event": "navigation capture v2 bounded tuple edit",
+      "original_summary": {
+        "review_provenance": ".scratch/batch3-20261020/examples/navigation-capture-v2/summary.json",
+        "sha256": "e5a8cef735c027ec836b705ecbce21f5e35e08eb0bf8e7438953c65b29172e71",
+        "byte_size": 5327
+      },
+      "strict_parser_original": {
+        "review_provenance": ".scratch/batch3-20261020/examples/navigation-capture-v2/bounded-index-metadata-proof.json",
+        "sha256": "901686cc5f12a910bd713ccc6bc8bad4b683f77c8a8ba99d258b882a0778ee8b",
+        "byte_size": 462
+      },
+      "public_field_name_and_count_summary": {
+        "index_version": 2,
+        "entry_count": 44427,
+        "raw_equal": true,
+        "all_stage_mode_blob_path_flags_equal": true,
+        "extensions_equal": true,
+        "valid_before_and_after_checksums": true,
+        "all_changed_bytes_are_stat_fields_or_trailing_checksum": true,
+        "changed_raw_bytes": 0,
+        "changed_stat_entry_count": 0,
+        "changed_fields": {},
+        "writer_attribution": "unknown; this parser identifies changed fields, not the writer"
+      },
+      "all_semantic_entries_and_flags_stable": true,
+      "raw_indexes_identical_during_bounded_edit": true,
+      "qualification": "Observed bounded-edit stability; no attribution of earlier writers or erasure of earlier findings."
+    }
+  ],
+  "non_replay_comparison_proofs": {
+    "plain_fields": {
+      "original": {
+        "review_provenance": ".scratch/batch3-20261020/examples/navigation-capture-v2/plain-renderer-field-proof.json",
+        "sha256": "d65c30adba787e79b73d1254422ba2d8ab92caa892647a1e33f577eef0c2ea1e",
+        "byte_size": 279
+      },
+      "record": {
+        "basis": "new actual JSON fields compared literally to prior actual plain stdout and prior actual JSON; no new plain CLI execution",
+        "status_family_stage_scope_and_findings_equal": true,
+        "existing_plain_tuple_matches_prior_actual": true,
+        "plain_tuple_mutated": false
+      }
+    },
+    "canonical_comparison_serialization": {
+      "original": {
+        "review_provenance": ".scratch/batch3-20261020/examples/navigation-capture-v2/comparison-serialization-proof.json",
+        "sha256": "34d6f30278468daa6ead0a2306c5c3b21ae4bcc545ea8c9d3b057554aa84df33",
+        "byte_size": 342
+      },
+      "record": {
+        "basis": "actual canonical History v3 comparison, rendered with exact CLI v1 serializer; no CLI execution",
+        "canonical": {
+          "sha256": "1f4a8d51202dedd6f1bbbff490fa515c89cc0e603cafff86934c2f9cebf2e653",
+          "byte_size": 235463
+        },
+        "line_characters": 209319,
+        "existing_tuple_matches": true,
+        "act_history_tuple_mutated": false
+      },
+      "canonical_input": {
+        "review_provenance": "src/web/data/structure/act-history/comparisons/roman-canon-memento-wilson-r-and-cummiskey-1861.json",
+        "sha256": "1f4a8d51202dedd6f1bbbff490fa515c89cc0e603cafff86934c2f9cebf2e653",
+        "byte_size": 235463
+      }
+    },
+    "qualification": "These compare saved fields and the exact CLI serializer against new canonical data; neither proof represents a fresh plain/compare command."
+  },
+  "public_boundary": {
+    "included": "Original proof SHA/bytes, public source paths, field names/counts, judgments and scope only.",
+    "excluded": "Raw index/semantic dumps, debug values, entry examples, actual inode/stat timestamps, UID/GID, hardware values, runtime environment and machine-private paths. No raw stdout body or index contents copied."
+  },
+  "pending_actual_closure": "Fresh affected post-navigation source gate with both raw copies and semantic snapshots is running under its owner; no result is assumed. Fresh browser/nav preview transfer, print/nav render, independent final corpus/bundle, final docs/commit/outgoing audit/fixture offsets and explicit main handoff grant remain separate.",
+  "final_project_acceptance": false,
+  "no_package_allocation_or_assembly_grant": true
+}

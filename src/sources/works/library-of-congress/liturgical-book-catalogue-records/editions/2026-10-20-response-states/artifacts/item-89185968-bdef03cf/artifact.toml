@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.library-of-congress.liturgical-book-catalogue-records.2026-10-20-response-states.item-89185968-bdef03cf"
+edition_id = "edition.library-of-congress.liturgical-book-catalogue-records.2026-10-20-response-states"
+artifact_type = "catalogue-or-service-response"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "United States federal bibliographic metadata created by the Library of Congress; this response describes an item and contains no book body. Same narrow basis as the existing Library of Congress catalogue artifact records."
+rights_jurisdiction = "United States"
+source_url = "https://www.loc.gov/item/89185968/?fo=json"
+provenance = "Whole received bytes acquired by direct curl GET on 2026-10-20, then hashed locally. Source text did not pass through a model retrieval route."
+retrieved = "2026-10-20"
+sha256 = "bdef03cf0883914130cc36ce30b820a59122367d080f585a0a37c4ec1b6b9d95"
+byte_size = 24416
+indexable = false
+notes = "Complete item JSON response. Checked item.title, item.created_published, item.medium, item.digitized=false and resources=[]. It identifies TPV/Wagner 1956, xvi, 144 pages; it is not a digitized book and grants no rights in that book."
+path = "src/sources/works/library-of-congress/liturgical-book-catalogue-records/editions/2026-10-20-response-states/artifacts/item-89185968-bdef03cf/loc-89185968.json"

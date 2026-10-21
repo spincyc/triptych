@@ -1,0 +1,84 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "page-image-package",
+   "byte_size": 73257195,
+   "edition_owned": true,
+   "id": "artifact.diocese-of-tournai.missale-tornacense.1498-paris-higman-ghent-bhsl-res1379.google-images-1c403b1c",
+   "media_type": "application/zip",
+   "page_count": 580,
+   "retrieved": "2026-10-21",
+   "rights": "legal-exception",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://books.google.com/books?id=HldPAAAAcAAJ",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf-derivative",
+   "byte_size": 1730658,
+   "edition_owned": true,
+   "id": "artifact.diocese-of-tournai.missale-tornacense.1498-paris-higman-ghent-bhsl-res1379.selected-facsimile-3e98b4b6",
+   "media_type": "application/pdf",
+   "notes": "Fourteen pages in provider order. Intervening omitted pages remain in the full 580-image package. The strict Canon begins on PP 307 and ends after Per omnia/Amen before Pater on PP 310; this selection includes its opening and ending but omits PP 308–309. The printed Canon running heading continues through PP 312 with later rites. Scope is title, calendar/division boundaries and colophon; no complete text collation.",
+   "page_count": 14,
+   "retrieved": "2026-10-21",
+   "rights": "public-domain",
+   "rights_basis": "United States: the 1498 printed Latin missal and its historical typography are public domain by publication date. These are mechanical reproductions of that identified copy. U.S. Copyright Office Compendium 313.4(A), third edition Chapter 300 pp. 26–27, treats scanning an existing literary work as mere copying without new copyrightable authorship; the whole official 39-page chapter and the full 1,396-page Compendium are retained separately. The fetched Google Books Terms of Service section 2 preserves uses permitted under the U.S. Copyright Act; it is contextual wording, not a general scan redistribution licence or a complete current-contract analysis. Google attribution and incidental library labels, accession stamps and ownership marks remain unchanged, distinct from the 1498 printing and excluded from Triptych CC BY 4.0. Their incidental preservation for noncommercial source verification rests on the project reading of 17 U.S.C.107: functional or factual character, small incidental extent and no substitute market or endorsement. The settled Google-notice record at src/sources/inventories/google-usage-guidelines-rights-v1.toml does not itself decide direct-scan rights. No status outside the United States is asserted. This fourteen-page selection contains neither exterior cover image. It preserves the independently public-domain historical printed pages and incidental factual provenance marks; the separate parent-package cover exception does not claim those covers are part of this selected PDF.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://books.google.com/books?id=HldPAAAAcAAJ",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1498-10-20",
+  "editors": [],
+  "id": "edition.diocese-of-tournai.missale-tornacense.1498-paris-higman-ghent-bhsl-res1379",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Paris: Johannes Higman, at the expense of Wilhelm Houtmart",
+  "title": "Missale insignis ecclesie Tornacensis",
+  "translators": [],
+  "year": 1498
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.diocese-of-tournai.missale-tornacense.1498-paris-higman-ghent-bhsl-res1379.selected-facsimile-3e98b4b6",
+   "artifact_type": "facsimile-pdf-derivative",
+   "id": "passage.diocese-of-tournai.missale-tornacense.1498-paris-higman-ghent-bhsl-res1379.title-divisions-colophon",
+   "locus": "Selected PDF pages 1–14 correspond to provider PP 5,7,18,19,21,299,307,310,311,312,313,351,579,582. Title/local-use formula: PP 5 and PP 21. Original colophon: PP 582.",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://books.google.com/books?id=HldPAAAAcAAJ",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-21",
+   "withheld": "no-transcription"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Missale insignis ecclesie Tornacensis",
+   "Missale secundum usum insignis ecclesie Tornacensis",
+   "Tournai missal"
+  ],
+  "author": "Tournai liturgical use; edition-specific printers and witnesses identified separately",
+  "category": "liturgical-book",
+  "description": "Historical missals naming the use of the church of Tournai. This work identity does not establish a single unchanged recension, any particular approval, or uniform local reception.",
+  "id": "work.diocese-of-tournai.missale-tornacense",
+  "languages": [
+   "la"
+  ],
+  "title": "Missale Tornacense"
+ }
+}

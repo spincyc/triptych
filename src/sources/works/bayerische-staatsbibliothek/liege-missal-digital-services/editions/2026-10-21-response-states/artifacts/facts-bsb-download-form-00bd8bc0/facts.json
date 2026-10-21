@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "record_type": "bounded-institutional-factual-extract",
+  "id": "bsb-download-form-2026-10-21",
+  "source_url": "https://download.digitale-sammlungen.de/BOOKS/download.pl?id=bsb00075725",
+  "source_sha256": "10dcf0db7311fc95cafcb9b83f35cf7656d89018b032cf40048abd17d83659fb",
+  "source_byte_size": 8657,
+  "retrieved_on": "2026-10-21",
+  "project_licence": "CC BY 4.0",
+  "selection_method": "Declared factual fields selected from the exact acquired response and checked against it; source-native prose, layout, navigation and database expression are omitted.",
+  "facts": {
+    "digital_object": "00075725",
+    "first_image": 1,
+    "last_image": 563,
+    "rights_statement": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "method": "GET",
+    "action": "/BOOKS/download.pl",
+    "limitation": "Form response acquired; underlying whole PDF is a separate object."
+  }
+}

@@ -392,7 +392,8 @@ class ListingGroupTests(unittest.TestCase):
 class ReachTests(unittest.TestCase):
     """What a tool reaches is declared, and the declaration is checked.
 
-    Exactly one registered tool opens a socket and exactly one calls a model.
+    One registered tool retrieves from the external network, one uses local
+    browser services and one calls a model.
     That is the property a reader is being asked to trust before running
     anything, and a convention alone would not keep it: a tool that grows a
     `urlopen` and forgets its declaration has to fail here, or the listing
@@ -444,6 +445,8 @@ class ReachTests(unittest.TestCase):
         network read as a network call.
         """
         text = (TOOLS / name).read_text(encoding="utf-8", errors="replace")
+        if name == "history-browser-acceptance":
+            text += "\n" + (ROOT / "scripts/_history_browser_acceptance.py").read_text(encoding="utf-8")
         head, marker, tail = text.partition("\nEXAMPLES = {")
         if marker:
             text = head + tail.partition("\n}\n")[2]
@@ -456,17 +459,17 @@ class ReachTests(unittest.TestCase):
         self.assertEqual(set(declared), set(registry()))
         for name, reach in declared.items():
             with self.subTest(tool=name):
-                self.assertIn(reach, ("network", "model", "nothing"))
+                self.assertIn(reach, ("network", "model", "local", "nothing"))
 
-    def test_a_tool_that_opens_a_socket_declares_the_network(self) -> None:
+    def test_a_tool_that_opens_a_socket_declares_external_or_local_services(self) -> None:
         declared = self.declarations()
         for name in registry():
             with self.subTest(tool=name):
                 found = self.NETWORK_CALLS.search(self.body(name))
-                if declared[name] == "network":
+                if declared[name] in ("network", "local"):
                     self.assertIsNotNone(
                         found,
-                        f"{name} declares the network but makes no call; "
+                        f"{name} declares network services but makes no call; "
                         "declare 'nothing' instead",
                     )
                 else:
@@ -494,23 +497,35 @@ class ReachTests(unittest.TestCase):
         """The measured fact, and the sentence a reader is shown, must agree.
 
         Two, and which two, is the whole claim: `harvest ask` calls a model and
-        `knox-bible` opens a socket, and nothing else does either. A third name
+        `knox-bible` retrieves from the external network. A third name
         appearing here is a tool that started spending outside this machine, and
         it should have to be added deliberately rather than noticed later.
         """
         declared = self.declarations()
-        outward = sorted(n for n, r in declared.items() if r != "nothing")
+        outward = sorted(n for n, r in declared.items() if r in ("network", "model"))
         self.assertEqual(outward, ["harvest", "knox-bible"], "the reach story has changed")
         self.assertEqual(declared["harvest"], "model")
         self.assertEqual(declared["knox-bible"], "network")
         listing = subprocess.run(
             [str(LAUNCHER), "--list"], capture_output=True, text=True, cwd=ROOT,
         ).stdout
-        self.assertIn("reaches the network: knox-bible", listing)
+        self.assertIn("reaches the external network: knox-bible", listing)
         self.assertIn("calls a model: harvest", listing)
         self.assertIn(
-            "No other registered tool reaches the network or calls a model", listing
+            "No other registered tool reaches the external network, calls a model or uses local browser services", listing
         )
+
+    def test_browser_acceptance_declares_local_services_in_the_release_group(self) -> None:
+        rows = json.loads(subprocess.run(
+            [str(LAUNCHER), "--list", "--json"], capture_output=True, text=True, cwd=ROOT,
+        ).stdout)
+        local = [row for row in rows if row["reaches"] == "local"]
+        self.assertEqual([row["name"] for row in local], ["history-browser-acceptance"])
+        self.assertEqual(local[0]["group"], "release")
+        listing = subprocess.run(
+            [str(LAUNCHER), "--list"], capture_output=True, text=True, cwd=ROOT,
+        ).stdout
+        self.assertIn("uses local browser services: history-browser-acceptance", listing)
 
     def test_the_acquisition_group_claims_every_outward_tool(self) -> None:
         rows = {
@@ -521,7 +536,7 @@ class ReachTests(unittest.TestCase):
         }
         for name, row in rows.items():
             with self.subTest(tool=name):
-                if row["reaches"] != "nothing":
+                if row["reaches"] in ("network", "model"):
                     self.assertEqual(row["group"], "acquisition")
 
     def test_harvest_names_the_one_verb_of_it_that_calls_a_model(self) -> None:

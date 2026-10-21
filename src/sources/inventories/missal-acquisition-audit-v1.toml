@@ -962,8 +962,8 @@ evidence = "recorded"
 id = "ordo-hebdomadae-sanctae-1956"
 group = "roman-line"
 station = false
-is_typical_edition = true
-kind = "typical-edition-of-a-part"
+is_typical_edition = false
+kind = "commercial-conformed-printing-of-a-part"
 label = "Ordo Hebdomadae Sanctae instauratus, Turin: Marietti, 1956"
 attests_act = "maxima-redemptionis-1955"
 aliases_tried = [
@@ -978,14 +978,7 @@ rights_basis = "1956 liturgical book of the Holy See, after the 1929 line."
 may_publish_text = "no"
 digitisation = "https://archive.org/details/ordohebdomadaesa0000cath -- 140 images [verified]. A second 1956 witness, the Dessain Officium Hebdomadae Sanctae, at https://archive.org/details/officiumhebdomad0000cath_l5d2 -- 778 images [verified]."
 retrievable = "restricted"
-bound_reached = """
-EXACT BOUND: both items report `access-restricted-item: true` through the
-metadata API, and both expose only `_encrypted.pdf` and `_lcp.epub` derivatives
-alongside the open ones [verified]. The identification, the page count, the
-publisher and the date are established; the bytes are not retrievable at this
-host. The prior lt-hist ledger reached the same bound independently and recorded
-`full Ordo not importable` [sourced].
-"""
+bound_reached = "EXACT BOUND: both items report `access-restricted-item: true` through the\nmetadata API, and both expose only `_encrypted.pdf` and `_lcp.epub` derivatives\nalongside the open ones [verified]. The identification, the page count, the\npublisher and the date are established; the bytes are not retrievable at this\nhost. The prior lt-hist ledger reached the same bound independently and recorded\n`full Ordo not importable` [sourced].\n\nCORRECTION 20 October 2026: This row preserves the Marietti acquisition lead. OL27785604M explicitly identifies Editio Taurinensis juxta typicam (xi, 108 pages, 1 color plate), distinct from the TPV 1956 Editio typica catalogued as xvi, 144 pages by LoC 89185968/OL1789541M. The older is_typical_edition=true classification conflated these identities and is corrected to false. The Dessain 778-image Officium is a different Office/Missal/Pontifical compilation, not a second scan of the same Ordo. Current IA public reader returns no download URLs and marks the item restricted; a title-preview response could not be interpreted as an image. No original TPV 1956 book body, decree leaves or complete service text was acquired. The legacy rights wording above is preserved as audit history, not freshly re-derived US copyright analysis.\n"
 priority = 1
 priority_basis = """
 Highest. The 1955 reform is the single largest set of departures in the

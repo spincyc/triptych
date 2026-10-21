@@ -2461,6 +2461,30 @@
     });
   }
 
+  function nativeTextSourceLink(unit,sources,witnesses) {
+    const edition=sources.get(unit.text_edition_id),passage=sources.get(unit.source_id),artifact=sources.get(unit.source_artifact_id);
+    const label=edition.title+(edition.date ? ' ('+edition.date+')' : '');
+    const identifier=function (value,prefix) {
+      return typeof value==='string' && value===value.trim() && value.startsWith(prefix+'.') &&
+        /^[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?$/.test(value.slice(prefix.length+1));
+    };
+    // A source route names this exact literal controller, never an edition
+    // inferred from its title or from the facsimile container's ID.
+    if (!identifier(unit.text_edition_id,'edition') || !identifier(unit.source_id,'passage') ||
+        !identifier(unit.source_artifact_id,'artifact') || edition.record_type!=='edition' ||
+        !passage || passage.record_type!=='passage' || passage.edition_id!==unit.text_edition_id ||
+        passage.artifact_id!==unit.source_artifact_id || !artifact || artifact.record_type!=='artifact' ||
+        artifact.edition_id!==unit.text_edition_id)
+      return T.el('span',null,label+' — link unavailable');
+    const witness=witnesses.get(unit.witness_id),facsimile=witness && sources.get(witness.artifact_id);
+    if (witness && witness.edition_id===unit.text_edition_id && facsimile && facsimile.record_type==='artifact' &&
+        facsimile.edition_id===unit.text_edition_id && catalogueURL(facsimile.source_url))
+      return catalogueLink(facsimile.source_url,label);
+    const link=T.el('a',null,label+' — Source Library passage');
+    link.href='../sources/#edition='+encodeURIComponent(unit.text_edition_id)+'&passage='+encodeURIComponent(unit.source_id);
+    return link;
+  }
+
   function renderNativeText(host,payload,stage,binding) {
     if (!nativeTextValid(payload,stage,binding)) throw Error('The source text is malformed or does not match this state’s accepted binding and extent.');
     T.clear(host);
@@ -2484,9 +2508,8 @@
       text.setAttribute('data-unit-id',unit.unit_id);
       text.setAttribute('lang',unit.language); text.setAttribute('dir',unit.direction);
       part.appendChild(text);
-      const edition=sources.get(unit.text_edition_id),witness=witnesses.get(unit.witness_id),facsimile=sources.get(witness.artifact_id);
       const citation=T.el('p','panel-note native-text-source');
-      citation.appendChild(catalogueLink(facsimile.source_url,edition.title+(edition.date ? ' ('+edition.date+')' : '')));
+      citation.appendChild(nativeTextSourceLink(unit,sources,witnesses));
       citation.appendChild(T.el('span',null,' · '+unit.source_locator));
       part.appendChild(citation); host.appendChild(part);
     });

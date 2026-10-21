@@ -1,0 +1,517 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "huesca-original-followup-batch3-2026-10-20",
+  "title": "Huesca 1488 original-book follow-up: qualified reissued-sheet evidence and unresolved original access",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "independent_acceptance": {
+      "sha256": "0e9e54589aca6c715bb381fe48daf0a2a25905457b339e4ac5e3df1ce487b4ee",
+      "byte_size": 6567
+    },
+    "author_source_freeze": {
+      "sha256": "4a21fff945a2c7339a8e05923f2e952922c68f5e7f76550503135eb93b4b3075",
+      "byte_size": 38217
+    },
+    "isolated_source_validation": {
+      "sha256": "21a1bc1878f046ab0e0b9d743850c61426741f914fc87caf3fb59fade6fece7d",
+      "byte_size": 249
+    },
+    "accepted_metadata_corrections": [
+      "Annual volume composition date changed to unknown; only its original 1910 publication is established.",
+      "GW catalogue edition language corrected from fr to de.",
+      "Additional deferrals explicitly enumerate the full mixed-volume text extraction and all 26 reproducible review rasters."
+    ]
+  },
+  "coverage_rows": [
+    "historic-huesca-use"
+  ],
+  "uses": [
+    {
+      "id": "historic-huesca-use",
+      "candidate_ids": [
+        "iberian-huesca-1488"
+      ],
+      "disposition": "Original 1488 service book not acquired in this bounded public pass; exact historical scholarly article and catalogue facts retained. No new stage, recension, native text or Git parent asserted."
+    }
+  ],
+  "searches": [
+    {
+      "repository": "Public web search, institutional/librarian bibliographic routes and holding-library public entry pages",
+      "queries": [
+        "\"Missale Oscense\" 1488 digital",
+        "\"Missale\" \"1488\" \"Huesca\" digital",
+        "\"765889\" missale",
+        "\"im00679000\"",
+        "\"Missale Oscense\" \"digital\"",
+        "\"Missale Oscense\" \"Hispanic\"",
+        "site:hispanicsociety.org \"Oscense\"",
+        "site:hispanicsociety.org \"missal\" \"1488\"",
+        "\"Missale Oscense\" \"digitalizado\"",
+        "\"Missale Oscense\" \"Zaragoza\" \"16-42\"",
+        "\"Missale Oscense\" site:archive.org",
+        "\"Missale Oscense\" \"Biblioteca Digital\"",
+        "\"Missale Oscense\" site:bvpb.mcu.es",
+        "\"Missale Oscense\" site:patrimonio.bne.es"
+      ],
+      "result": "GW M24589 identifies two public copies/fragments: New York Hispanic Society and Zaragoza Cathedral (defective). Its four image links are catalogue cards, not original-book pages. No authenticated full original Huesca 1488 digital book was acquired. This is not an exhaustive holding-library or internet absence result."
+    },
+    {
+      "repository": "GW M24589 and CERL ISTC direct routes",
+      "routes": [
+        "https://www.gesamtkatalogderwiegendrucke.de/docs/M24589.htm",
+        "https://data.cerl.org/istc/im00679000"
+      ],
+      "result": "Complete GW response and all four card-image deliveries acquired; bounded factual metadata retained. The exact ISTC response was a bot interstitial, not a catalogue record. No challenge/session metadata enters canonical or public records."
+    },
+    {
+      "repository": "Hispanic Society public library and Digital Collections landing pages",
+      "routes": [
+        "https://hispanicsociety.org/collections/library/",
+        "https://hispanicsociety.org/collections/digital-collections/"
+      ],
+      "result": "Library page expressly limits online-catalogue coverage and points to a full onsite catalogue. Its linked public search requires a JavaScript/session-bearing route; no completed original-book catalogue search is claimed. Public Digital Collections landing page supplied no Huesca item link in the inspected response. No institution contacted or appointment requested."
+    },
+    {
+      "repository": "Persée and Internet Archive public periodical routes",
+      "queries": [
+        "title:\"Bulletin hispanique\" AND year:1910"
+      ],
+      "routes": [
+        "https://www.persee.fr/doc/hispa_0007-4640_1910_num_12_1_1638",
+        "https://www.persee.fr/docAsPDF/hispa_0007-4640_1910_num_12_1_1638.pdf",
+        "https://archive.org/metadata/bulletinhispaniq12bord",
+        "https://archive.org/metadata/bulletin-hispanique_1910_12"
+      ],
+      "result": "Persée offered whole-article PDF returned HTTP403. Guessed old IA alias returned empty JSON; advanced search identified bulletin-hispanique_1910_12. Complete 476-page PDF and raw OCR were acquired. PDF1 identifies a 1970 Swets reprint, not an original 1910 delivery; the 26 complete historical article pages29-54 were extracted and retained. No retrieval route through model-generated text."
+    }
+  ],
+  "versions": [
+    {
+      "candidate_id": "iberian-huesca-1488",
+      "original_service_book_acquired": false,
+      "catalogue_date": "1488",
+      "reported_exact_imprint": "1 June 1488, Hans Hurus, Zaragoza, as GW and Lambert report",
+      "source_loci": [
+        "Lambert, sectionVII, printed42-44; retained article PDF20-22",
+        "GW M24589 complete institutional record"
+      ],
+      "claims": [
+        {
+          "status": "inspected-scholarly-description",
+          "claim": "Lambert describes adapting 1485 Zaragoza sheets: replaced Huesca calendar (eleven preliminary leaves, or at least the first gathering of eight), temporal leaf1 with the bishop letter, Sanctoral leaf119 with the colophon, and a pasted local title."
+        },
+        {
+          "status": "inspected-scholarly-description",
+          "claim": "The archbishop supplication remained in the Holy Saturday litany, specifically temporal folio110r,column2,line3 as the article reports."
+        },
+        {
+          "status": "explicit-unknown-in-source",
+          "claim": "Lambert reports his copy stops at Sanctoral folio135. Its missing tail prevents deciding whether a Huesca/Jaca/Barbastro saints supplement followed. His separate view that a supplement is unlikely does not establish absence."
+        }
+      ],
+      "limits": [
+        "Specific original book pages, the alleged reused sheets and the missing-tail question remain unverified by this project against the 1488 physical book or its facsimile.",
+        "A bibliographic reissue with a changed calendar is not automatically a separate whole liturgical recension; no complete textual-state bridge or native Git parent is established.",
+        "The 1910 article, consulted in a 1970 photographic reprint, is a separate source object from the historical 1488 service book."
+      ]
+    }
+  ],
+  "acquisitions": [
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "sha256": "6eec5111abff345a00920e44a9d882a00e90a97794e123803b2801b545cb1e41",
+      "byte_size": 26868988,
+      "decision": "defer",
+      "reason": "Exact whole delivery includes modern 1970 Swets cover with unresolved rights. Complete historical 26-page article retained separately; offline access to the cited section remains available."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12_djvu.txt",
+      "sha256": "fbdc255117cbf292f9f7ae84515cc961544db5f5c67a42342da3884ad904af36",
+      "byte_size": 1145882,
+      "decision": "defer",
+      "reason": "Exact raw whole-volume OCR includes the 1970 cover and unreviewed other articles; mixed delivery rights are unresolved. It was a locator only; cited article is retained as independently checked facsimile. No searchable whole-volume absence claim."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "byte_size": 2093092,
+      "decision": "retain",
+      "reason": "Small complete lawful derivative; exact source and scope recorded in its canonical artifact."
+    },
+    {
+      "source_url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M24589.htm",
+      "sha256": "15f1be0fabf9a388854ccbd7f80b652733e0608fdd8f5cea1081a80f9abab581",
+      "byte_size": 6554,
+      "decision": "defer",
+      "reason": "Exact modern wrapper rights unresolved; complete factual metadata derivative retained separately with exact raw parent hash."
+    },
+    {
+      "source_url": "https://www.gesamtkatalogderwiegendrucke.de/pics/24589.jpg",
+      "sha256": "7b1e05921aff63b8e4af452baadadb4645e6de4d04c9b44cd1a45bcd7f8aa407",
+      "byte_size": 142701,
+      "decision": "defer",
+      "reason": "Handwritten modern catalogue-card image, not original-book facsimile; no affirmative reuse basis or card authorship/date established. Maincard facts checked against HTML and retained in factual derivative; adjacent crossrefs are not evidence of an acquired book."
+    },
+    {
+      "source_url": "https://www.gesamtkatalogderwiegendrucke.de/pics/24589a.jpg",
+      "sha256": "ba83463d8abfe6ea637d5af8f9308cfe6c988e79ee50de968e00df62e697936d",
+      "byte_size": 113557,
+      "decision": "defer",
+      "reason": "Handwritten modern catalogue-card image, not original-book facsimile; no affirmative reuse basis or card authorship/date established. Maincard facts checked against HTML and retained in factual derivative; adjacent crossrefs are not evidence of an acquired book."
+    },
+    {
+      "source_url": "https://www.gesamtkatalogderwiegendrucke.de/pics/24453.jpg",
+      "sha256": "8c91372fd812b30c7ae8652f22b07483bdc48d2633d9d28abc7cd61986c82535",
+      "byte_size": 49546,
+      "decision": "defer",
+      "reason": "Handwritten modern catalogue-card image, not original-book facsimile; no affirmative reuse basis or card authorship/date established. Maincard facts checked against HTML and retained in factual derivative; adjacent crossrefs are not evidence of an acquired book."
+    },
+    {
+      "source_url": "https://www.gesamtkatalogderwiegendrucke.de/pics/24304.jpg",
+      "sha256": "749b99d7918177e968b9d1a91e11222c842804fcb193518fdf569653eeaaab7d",
+      "byte_size": 61081,
+      "decision": "defer",
+      "reason": "Handwritten modern catalogue-card image, not original-book facsimile; no affirmative reuse basis or card authorship/date established. Maincard facts checked against HTML and retained in factual derivative; adjacent crossrefs are not evidence of an acquired book."
+    },
+    {
+      "source_url": "https://data.cerl.org/istc/im00679000",
+      "sha256": "a59ada532295ea6a0016cac1db1405cf58a635a14f0977088d88d68b08ee804c",
+      "byte_size": 7803,
+      "decision": "defer",
+      "reason": "Acquired response is a bot interstitial, not an ISTC record; it contains ephemeral challenge/request metadata and has no bibliographic evidentiary role. Never publish this response."
+    },
+    {
+      "source_url": "https://www.persee.fr/doc/hispa_0007-4640_1910_num_12_1_1638",
+      "sha256": "4c446cab33d8943eba326ce2ea12f0f9b7841927d133dbe68d008d2b676d31f5",
+      "byte_size": 108201,
+      "decision": "defer",
+      "reason": "Modern Persée wrapper/fragment delivery with unresolved redistribution rights; fullarticle PDF download returned 403. The whole article was subsequently acquired through an identified 1970 photoreprint and its historical pages are retained; these responses are redundant locator controls, not the controlling article witness."
+    },
+    {
+      "source_url": "https://www.persee.fr/doc/page/hispa_0007-4640_1910_num_12_1_1638/hispa_0007-4640_1910_num_12_1_T1_0042_0000",
+      "sha256": "9ff4722a1e3646f39963946277396a360f369dc172b124bc28c7208023e73e80",
+      "byte_size": 2707,
+      "decision": "defer",
+      "reason": "Modern Persée wrapper/fragment delivery with unresolved redistribution rights; fullarticle PDF download returned 403. The whole article was subsequently acquired through an identified 1970 photoreprint and its historical pages are retained; these responses are redundant locator controls, not the controlling article witness."
+    },
+    {
+      "source_url": "https://hispanicsociety.org/collections/library/",
+      "sha256": "d9bc1b0b0963512e3d219af75af2805076e590dee05d8cf07643c4a570b1f8c7",
+      "byte_size": 82603,
+      "decision": "defer",
+      "reason": "Modern institution web wrapper has no affirmative general redistribution grant. Used only for bounded public-access route information: incomplete online catalogue, onsite full catalogue and public digital landing page; neither delivers the Huesca book. No source prose retained."
+    },
+    {
+      "source_url": "https://hispanicsociety.org/collections/digital-collections/",
+      "sha256": "cf75c3d61ce1f1870fb51bf66c94fe24bb896a0da1bd0ba0b5188631829b68e3",
+      "byte_size": 80104,
+      "decision": "defer",
+      "reason": "Modern institution web wrapper has no affirmative general redistribution grant. Used only for bounded public-access route information: incomplete online catalogue, onsite full catalogue and public digital landing page; neither delivers the Huesca book. No source prose retained."
+    },
+    {
+      "source_url": "https://archive.org/metadata/bulletinhispaniq12bord",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "byte_size": 2,
+      "decision": "defer",
+      "reason": "Wrong guessed item returns empty JSON object, not an authenticated source record; no claim rests on it."
+    },
+    {
+      "source_url": "https://archive.org/metadata/bulletin-hispanique_1910_12",
+      "sha256": "44975f91aec8e3622b32a529dc21000938a14552aea4a627d5f1179f00ddabf9",
+      "byte_size": 90315,
+      "decision": "defer",
+      "reason": "Exact modern Internet Archive API/search response includes account/operational fields with unresolved redistribution/privacy boundaries. Only bibliographic factual identity and exact provider-download routes are used; historical article bytes retained independently. No raw APIwrapper enters public owners."
+    },
+    {
+      "source_url": "https://archive.org/advancedsearch.php?q=title%3A%22Bulletin+hispanique%22+AND+year%3A1910&output=json&rows=50",
+      "sha256": "b4f91e6a7dc4f863aac4a195b8a4234bb9538882a9fd9b151fb711e4122f2f1a",
+      "byte_size": 1242,
+      "decision": "defer",
+      "reason": "Exact modern Internet Archive API/search response includes account/operational fields with unresolved redistribution/privacy boundaries. Only bibliographic factual identity and exact provider-download routes are used; historical article bytes retained independently. No raw APIwrapper enters public owners."
+    },
+    {
+      "source_url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M24589.htm",
+      "sha256": "d53a50ba2d5e3cc43040abc64815333665de989c020c63c8dd9ac625b997fc19",
+      "byte_size": 1444,
+      "decision": "retain",
+      "reason": "Small complete lawful derivative; exact source and scope recorded in its canonical artifact."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "6eec5111abff345a00920e44a9d882a00e90a97794e123803b2801b545cb1e41",
+      "sha256": "f29c1b5a4c89fb0d04c3c5d1d441db855d21d504cb70d521c9117c3ba7c0b53d",
+      "byte_size": 1190807,
+      "decision": "defer",
+      "reason": "Complete pdftotext -layout extraction of the 476-page mixed 1970 facsimile used solely to locate article pages. It includes the modern 1970 cover and other contributions; no affirmative basis for that exact mixed derivative is claimed. The complete cited historical article facsimile is retained instead; no whole-volume negative search claim."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "f1ab8744e69447144b5920e516db9a7d71eca42291a624f606381ac96c872aef",
+      "byte_size": 742679,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 1",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "79d7eefee766cf0ddf4cd02776d57d05f0b893d335eeee48d59ce7b319d312ad",
+      "byte_size": 803730,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 2",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "5ce1f46d06760a2ae269adf22b43d5bc6cfd429536a712f2cf6bc8a557b639db",
+      "byte_size": 790619,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 3",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "d1783291370be776e0adb7094667510050c80dcff58ce93d31d975330c39ab49",
+      "byte_size": 988667,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 4",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "54721bdd5c88f298429cfba2bd5c5fd1821c80fdf2ac1ab66e63ee5e60861638",
+      "byte_size": 1073203,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 5",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "229b2b4a94503b534a73960826871a0eb607e76f71fd0aaaf3eea09c0880c9b4",
+      "byte_size": 930574,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 6",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "d19716cfed49e2955844e1b8dd6d56e4d94fc6f15a38cfb617c551c5474e0c95",
+      "byte_size": 948888,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 7",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "536266c3183819a15ae3c925d793c93f19fdb39d22a7d5107a9dab1dc257bab4",
+      "byte_size": 918822,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 8",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "171a5c0f0eedc7685660fcfaf78e423174248a4f7fdce0c434d68692aca3bf20",
+      "byte_size": 968285,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 9",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "f24fdb689800d866a2f1bc16c12c0ced8e36031544aa068a3b0b40a724a16d0b",
+      "byte_size": 959331,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 10",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "bfe2721dc13ac529e097316f6f4bbc3ffab3393152968366f3adb9ae1e0534fc",
+      "byte_size": 921423,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 11",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "49ba30621f6787a650770819119e74d6baf1198a8935150890f1774ef3dea132",
+      "byte_size": 925977,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 12",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "b96d44c24030cc7ed6fb35aae018d2b56777874473492d6fc06ce0e6813dbb8e",
+      "byte_size": 975193,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 13",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "25ba694568ff9c5b323e2f321d19668cdd02b45966e417f6456bc52d11495d69",
+      "byte_size": 878070,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 14",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "4efaab0bb7bcf856793d9b1c3e733be8d6560fa3e95bfa00933f001a17f7e8a7",
+      "byte_size": 831110,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 15",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "6604c0e6be7459dadd891837c5f7c84bb268fefe49ddcbd1e7291ddd02b7bb74",
+      "byte_size": 1056128,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 16",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "1f1b180deecb464081be87ef43844af4d3a6f290fc038a946730de947674cd48",
+      "byte_size": 984166,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 17",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "f919bebe44376cac0f5c34b377dd320bb23e03633a34eda5f6e10596a7b4bc5a",
+      "byte_size": 933209,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 18",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "2afaefb74ba45db682cb9a8c7b94e910e880811e67994119961d33441ee98a4e",
+      "byte_size": 931342,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 19",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "fc7ba6b2f2a6874d269763eb894db05f695db177ec5f61ec57566836e1ad2494",
+      "byte_size": 907530,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 20",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "c03ea476a4d9ce3866209eccd2cd4f37f040712952703bef09bc4639b7bc9221",
+      "byte_size": 946517,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 21",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "25ca791ce87428e1712d6261ef3863cde53b33bd34cea1b7aa5f9bda9af2a8d7",
+      "byte_size": 980564,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 22",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "2ebb49671f69080a1af64f8cb78bf2f930cdf262fd4e6ed7dc013b98e1b31a9d",
+      "byte_size": 945113,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 23",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "4b87b137aca1287562c5e28a2df783bf7abd3817cce0b247000c30ccaa595a36",
+      "byte_size": 945577,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 24",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "f32609dcb84403604542f42746f06917733f3eab4e4457beeee783e579a969a2",
+      "byte_size": 935042,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 25",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://archive.org/download/bulletin-hispanique_1910_12/bulletin-hispanique_1910_12.pdf",
+      "derived_from_sha256": "c03234f9fcfea843ae49194b5865174376b85b140c78f62d8b67e79354098e58",
+      "sha256": "2122fd4c1a008f2b44b237672dc7d74099d2bcf0279e2dcc1ee7b370bba5debd",
+      "byte_size": 832978,
+      "decision": "defer",
+      "extent": "One complete mechanically rendered article PDF page 26",
+      "reason": "Redundant review raster generated by the registered pdf-review tool; controlling complete article PDF retained for offline reopening. No separate source acquisition or additional historical evidence."
+    },
+    {
+      "source_url": "https://hispanicsociety.mlasolutions.com/m5/catalog/default.aspx?installation=Default",
+      "sha256": "b91badb3828f843c58424eb33e65c95484be024a1e456573b823acc6310fb3bd",
+      "byte_size": 72256,
+      "decision": "defer",
+      "storage": "restricted",
+      "reason": "The exact complete public catalogue entry response contains ephemeral anonymous-session fields and a modern reserved-rights wrapper. It confirms the JavaScript search interface only; no completed catalogue search or original-book delivery is claimed. Raw bytes and operational fields stay outside canonical/public records. Offline readers retain the factual access boundary here; reopen through the public library catalogue if its interface or digitization changes."
+    }
+  ],
+  "limitations": [
+    "Original Huesca 1488 book not acquired; no exhaustive holding-library or internet absence claim.",
+    "Lambert 1910 copy is defective at tail; possible local saints supplement remains uncheckable.",
+    "Calendar/letter/colophon reuse is attributed bibliographical description; exact native ancestry and substantive whole-recension distinction remain unestablished.",
+    "No literal 1488 service text or source-owned prayers transcribed.",
+    "Originalprinting 1910, deliveredphotoreprint 1970 and researchdate 2026 are separate.",
+    "Some source microfilm page edges are clipped or faint; retaining all 26 page rectangles does not restore lost text. Only the named scholarly claims were checked at page-image level.",
+    "No direct 1488 liturgical source text was transcribed or published."
+  ],
+  "root_owned_suggestions": [
+    {
+      "kind": "bounded-book-state-for-root-consideration",
+      "route": "historic-huesca-use",
+      "catalogue_witness": "western:iberian-huesca-1488",
+      "date_kind": "publication",
+      "date_label": "1488; reported by an inspected scholarly direct-copy description",
+      "evidence_level": "scholarly-description",
+      "source_id": "iberian-huesca-lambert-1910-original-followup",
+      "locus": "Section VII, printed pp. 42–44; retained article PDF pages 20–22",
+      "scope": "Huesca calendar, bishop letter, colophon and pasted heading in reported reused Zaragoza 1485 sheets; unchanged Holy Saturday archbishop supplication.",
+      "limitations": "Original 1488 book remains unacquired. The copy tail was defective, leaving a possible local saints supplement unresolved. A bounded documented book state would grant no normative station, whole-recension distinction, substantive transition, native text, Git ancestry or universal diocesan adoption."
+    }
+  ],
+  "independent_review_status": "Accepted source and extent findings, with the declared metadata corrections; no original-book or native-text promotion."
+}

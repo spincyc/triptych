@@ -1,0 +1,415 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "cistercian-1657-pater-post-canon-gap-batch3-2026-10-20",
+  "title": "Cistercian 1657: complete two-form Pater and unresolved wider post-Canon source damage",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "coverage_rows": [],
+  "uses": [],
+  "searches": [],
+  "versions": [],
+  "acquisitions": [],
+  "review_files": {
+    "native_binding": {
+      "path": "src/sources/inventories/eucharistic-books/cistercian-1657-pater-noster.json",
+      "sha256": "22bf58d344f284e32c2ee540d6d7a3135f3412f259a7cbc1c22883fe1b9e6013"
+    },
+    "complete_extent": {
+      "path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-pater-noster-extent.json",
+      "sha256": "3bc63fc6120834a723e398e8e646165943563d6d56beaaabc121dbe62da7d105"
+    },
+    "independent_complete_literal_review": {
+      "path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-pater-noster-review.json",
+      "sha256": "b0c1df5a3d6319d32ea48ca8d9ed32d7332579eded33e80ac7ebcd49ea17d29a",
+      "byte_size": 10188
+    },
+    "independent_extent_acceptance": {
+      "sha256": "816473524b66b374b8aad5aa271cbfdd8f6d43b42bb3e9238f0d72d2cc3ac16e",
+      "byte_size": 2329
+    },
+    "bounded_alternative_setting_search": {
+      "path": "src/sources/inventories/eucharistic-research-reviews/cistercian-1657-lyon-google-observed-setting-2026-10-20.json",
+      "sha256": "8ab4fe0472178c1c942effca120c9d8ad9237d10d35dfca03a053dc552a9e471",
+      "byte_size": 60635
+    }
+  },
+  "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+  "native_book_id": "cistercian-1657-pater-noster",
+  "accepted_constituent": {
+    "title": "Cistercian missal 1657: Pater noster in its two chant forms",
+    "scope": "Complete functional Pater constituent in offered source order: FIDES page-file 0275 (printed p.213), right column from Orémus after the earlier Canon/Iungit manus, through the introduction and adjacent Extendit manus; all page-file 0276 (printed p.214) body text, including the first complete Pater and response/Amen, the governing alternative-cantus rubric for three-lesson feasts, ferial days and Masses for the dead, the separately printed Per omnia/Amen and second introduction/Pater; and page-file 0277 (printed p.215), left column through Sacerdos submissâ voce dicit / Amén. It stops before the right-column Deinde accipit Patenam and Libera nos. Both complete printed chant forms and all governing rubrics are included. Final Amén. preserves the independently preferred probable printed acute over e in a worn/folded area; the hooked mark meets a crease, so that diacritic retains an explicit source-condition reservation. This complete declared functional constituent has partial whole-book and partial post-Canon text coverage. The wider continuation through page-file 0285 remains blocked by concealed source letters and punctuation; no alternate-setting words fill those gaps.",
+    "unit_count": 8,
+    "literal_lf_blocks": 15,
+    "whitespace_tokens": 152,
+    "counted_text_baselines": 42,
+    "color_fragments": 56,
+    "physical_extent_groups": 9,
+    "complete_declared_extent": true,
+    "whole_book_complete": false,
+    "wider_post_canon_complete": false,
+    "selected_raw_pages": [
+      275,
+      276,
+      277
+    ],
+    "facsimile_pages": 3,
+    "literal_sha256": "d84644c461efd1de17ba4398a4f6932c6651fe597af25e0bbf99aa3e151c796c",
+    "facsimile_sha256": "995d68b0f623dad1b2a37407857fa5cb8497f8873ec12ad5c15dd87af64a76bc",
+    "source_ordered_units": [
+      {
+        "unit_id": "unit.cistercian-1657.pater-noster.pater-first-introduction",
+        "native_path": [
+          "ordinary",
+          "post-canon",
+          "pater-first-introduction"
+        ],
+        "body": "Orémus. Præcéptis salutáribus móniti, & diuína institutióne formáti audémus\nExtendit manus.\ndícere.",
+        "sha256": "4e687873d31783fd198a8d8c213e787dc19ba54c9e9440e297cf71d5f70be07a"
+      },
+      {
+        "unit_id": "unit.cistercian-1657.pater-noster.pater-first-prayer-response",
+        "native_path": [
+          "ordinary",
+          "post-canon",
+          "pater-first-prayer-response"
+        ],
+        "body": "PAter noster, qui es in cælis: Sanctificétur nomen tuum: Aduéniat regnum tuum: Fiat volúntas tua, sicut in cælo, & in terra. Panem nostrum quotidiánum da nobis hódie: Et dimítte nobis débita nostra, sicut & nos dimíttimus debitóribus nostris. Et ne nos indúcas in tentatiónem.\n℟. Sed líbera nos à malo.",
+        "sha256": "2645b4aa5103e6f95d995efd9c5f19a32b29d9593a057911770000b9fe854898"
+      },
+      {
+        "unit_id": "unit.cistercian-1657.pater-noster.pater-first-amen",
+        "native_path": [
+          "ordinary",
+          "post-canon",
+          "pater-first-amen"
+        ],
+        "body": "Sacerdos secretè dicit,\nAmen.",
+        "sha256": "322d659d6d4085a5bb82f744e93e53fb3361f5d3b98812bc4e47c0f80da08303"
+      },
+      {
+        "unit_id": "unit.cistercian-1657.pater-noster.pater-alternative-usage",
+        "native_path": [
+          "ordinary",
+          "post-canon",
+          "pater-alternative-usage"
+        ],
+        "body": "¶ Sequens cantus dicitur in Festis iij. Lectionum, & diebus ferialibus, & in Missis Defunctorum.",
+        "sha256": "ccffa6f101dcc8bc23ad8e95bf5434090b73d052f3345a60a0b0526e5ff7d7b0"
+      },
+      {
+        "unit_id": "unit.cistercian-1657.pater-noster.pater-alternative-per-omnia",
+        "native_path": [
+          "ordinary",
+          "post-canon",
+          "pater-alternative-per-omnia"
+        ],
+        "body": "PEr ómnia sæcula sæculórum.\n℟. Amen.",
+        "sha256": "8ad55fe2422f21c65e8632ab3ceb3efa7171cfe3e9f78ff05c770b34d6f56b08"
+      },
+      {
+        "unit_id": "unit.cistercian-1657.pater-noster.pater-alternative-introduction",
+        "native_path": [
+          "ordinary",
+          "post-canon",
+          "pater-alternative-introduction"
+        ],
+        "body": "Orémus. Præcéptis salutáribus móniti, & diuína institutióne formáti audémus dícere.",
+        "sha256": "09c3a63912f388b1ba017b6341baa975f859566a13a712e2a4361604646d8baa"
+      },
+      {
+        "unit_id": "unit.cistercian-1657.pater-noster.pater-alternative-prayer-response",
+        "native_path": [
+          "ordinary",
+          "post-canon",
+          "pater-alternative-prayer-response"
+        ],
+        "body": "PAter noster, qui es in cælis: Sanctificétur nomen tuum: Aduéniat regnum tuum: Fiat volúntas tua, sicut in cælo, & in terra. Panem nostrum quotidiánum da nobis hódie: Et dimitte nobis débita nostra, sicut & nos dimíttimus debitóribus nostris. Et ne nos indúcas in tentatiónem.\n℟. Sed líbera nos à malo.",
+        "sha256": "a986d4659045c63acda349408cd5d961e914a7e9030366784cc1aeb4af5e0fb9"
+      },
+      {
+        "unit_id": "unit.cistercian-1657.pater-noster.pater-alternative-amen",
+        "native_path": [
+          "ordinary",
+          "post-canon",
+          "pater-alternative-amen"
+        ],
+        "body": "Sacerdos submissâ voce dicit,\nAmén.",
+        "sha256": "85ca6158ba52ab42724fdb3832c6766992898348e23b8a2c21c06ae4892fad2b"
+      }
+    ]
+  },
+  "source_condition": {
+    "locus": "FIDES raw0277, printed215, left column, final Amén. before the excluded right-column Deinde/Libera",
+    "accepted_reading": "Amén.",
+    "judgment": "Independently preferred probable printed acute over e, with explicit wear/fold reservation. The hooked dark mark meets a crease; the accepted reading is not described as pristine or unambiguous. The final period is visible.",
+    "visible_scope_disclosure": true,
+    "repair_from_other_witness": false
+  },
+  "wider_post_canon": {
+    "literal_completion_status": "blocked; not an accepted complete native binding",
+    "physical_extent_status": "source start, actual endpoint and following division checked",
+    "start": {
+      "provider_raw_page": 275,
+      "printed_page": 213,
+      "column": "right",
+      "physical_part": "Orémus at main-text baseline11",
+      "raw_sha256": "2b1ce57e4b96df444b07eacc88a24850aa0fdfa291705b5aa6972863a200abd5"
+    },
+    "end": {
+      "provider_raw_page": 285,
+      "printed_page": 219,
+      "column": "right",
+      "physical_part": "final departure/thanksgiving rubric, main-text baselines28–33; last text pio Missalis.",
+      "raw_sha256": "1a6c6994eb12dba5ca3644b932e1334253116b0e2cec2ce2441f7da706786f63"
+    },
+    "text_page_incidence_count": 11,
+    "text_raw_pages": [
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285
+    ],
+    "context_raw_pages": [
+      286,
+      287
+    ],
+    "explicit_Finis_marker": false,
+    "endpoint_basis": "Terminal direction leaves the altar after the Last Gospel and refers to the opening Missal for thanksgiving. Next raw page is a Resurrection engraving; the following text page opens the actual Easter Sunday division. The running head alone was not used as endpoint evidence.",
+    "terminal_rubric_anchor": "Finito Euangelio sancti Ioannis discedens ab Altari, pro gratiarum actione dicit Antiphonam. Trium puerorum. cum reliquis, vt habetur in principio Missalis.",
+    "terminal_rubric_ink": "Red governing direction with black Trium puerorum. incipit.",
+    "last_gospel_limit": "This source segment prints incipits, formulas and governing directions, not the full Last Gospel. It also refers to remaining thanksgiving at the beginning of the Missal. Neither missing full text may be supplied from familiarity.",
+    "next_division": {
+      "provider_raw_page": 287,
+      "printed_page": 221,
+      "heading": "DOMINICA / RESVRRECTIONIS.",
+      "following_text_anchors": [
+        "Statio ad S. Mariam Maiorem.",
+        "Introitus.",
+        "Resurrexi"
+      ],
+      "excluded_intervening_page": {
+        "provider_raw_page": 286,
+        "printed_page": null,
+        "description": "full-page Resurrection engraving"
+      }
+    }
+  },
+  "unresolved_wider_literal_spans": [
+    {
+      "provider_raw_page": 278,
+      "printed_page": 216,
+      "column": "right",
+      "locus": "right ends of fraction rubric between Qui tecum conclusion and Per omnia chant",
+      "observed_source_condition": "A pale physical paper strip/fold conceals the far-right part of the upper column and terminal letters of several rubric rows.",
+      "consequence": "Do not certify a full literal fraction-rubric reading by normal-form reconstruction."
+    },
+    {
+      "provider_raw_page": 281,
+      "printed_page": 215,
+      "column": "left",
+      "locus": "main-text baselines17–19, lower Perceptio Corporis tui prayer, from end of tutamentum men- to medelam per-",
+      "observed_source_condition": "Lower-left paper/fold conceals portions of the prayer; visible remainder does not certify all concealed graphemes.",
+      "consequence": "Do not certify a complete literal prayer by copying the familiar formula."
+    },
+    {
+      "provider_raw_page": 282,
+      "printed_page": 216,
+      "column": "right",
+      "locus": "final Sanguis Domini formula, last Amen and terminal punctuation near right edge",
+      "observed_source_condition": "Physical strip overlaps the line ending.",
+      "consequence": "Terminal punctuation cannot be certified from the selected view."
+    }
+  ],
+  "damage_details": [
+    {
+      "raw_page": 278,
+      "printed_page": 216,
+      "column": "right",
+      "visible_anchors": [
+        "Qui tecum viui…",
+        "& regnat in vn…",
+        "táte Spíritus san…",
+        "Aliam mediam partem cu…"
+      ],
+      "limit": "A paper strip/fold conceals line endings in the conclusion and fraction rubric. Ellipses here describe gaps and are not native text."
+    },
+    {
+      "raw_page": 281,
+      "printed_page": 215,
+      "column": "left",
+      "baselines": [
+        17,
+        19
+      ],
+      "visible_anchors": [
+        "utaméntū men-",
+        "& córporis, &",
+        "medélam per-"
+      ],
+      "limit": "Repair conceals letters and beginnings on all three baselines, including a possible prefix before medélam; familiar prayer wording is not supplied."
+    },
+    {
+      "raw_page": 282,
+      "printed_page": 216,
+      "column": "right",
+      "visible_anchor": "ætérnam, Amen",
+      "limit": "Edge repair hides final punctuation; no complete wider formula or punctuation is certified."
+    }
+  ],
+  "offered_order_and_pagination": {
+    "observed_labels": "Raw0275–0279 read213–217; raw0280–0283 repeat214–217; raw0284=218, raw0285=219, raw0286 has no visible printed number, raw0287=221. Always cite provider raw page plus observed printed page.",
+    "interpretation": "Provider file order is retained. Repeated visible page labels and textual continuity are observations; physical misprint, duplicate leaves or historical binding cause is unestablished. No arithmetic foliation conversion is applied across the seam.",
+    "page_census": [
+      {
+        "provider_raw_page": 275,
+        "printed_page": 213,
+        "groups": "P01–P02",
+        "finding": "Only right-column Pater introduction and Extendit manus selected. Entire left and earlier right belong to accepted Canon and are excluded."
+      },
+      {
+        "provider_raw_page": 276,
+        "printed_page": 214,
+        "groups": "P03–P08",
+        "finding": "Entire two-column body selected. First Pater concludes at right top. Rule and red alternative-usage rubric govern second complete setting, which includes a fresh Per omnia and introduction."
+      },
+      {
+        "provider_raw_page": 277,
+        "printed_page": 215,
+        "groups": "P08–P09; W10",
+        "finding": "Left column selected through terminal mixed rubric/Amen; right begins paten/Libera and is excluded from Pater."
+      },
+      {
+        "provider_raw_page": 278,
+        "printed_page": 216,
+        "groups": "W10–W13",
+        "finding": "Libera, fraction, chanted conclusions/Pax and commixture beginning. Concealment at right edge of fraction rubric."
+      },
+      {
+        "provider_raw_page": 279,
+        "printed_page": 217,
+        "groups": "W13–W15",
+        "finding": "Commixture conclusion, Agnus Dei and Requiem direction, first peace prayer beginning."
+      },
+      {
+        "provider_raw_page": 280,
+        "printed_page": 214,
+        "groups": "W15–W16",
+        "finding": "Printed number repeats 214. Peace prayer/Pax/Requiem direction; Domine Iesu Christe Fili Dei vivi."
+      },
+      {
+        "provider_raw_page": 281,
+        "printed_page": 215,
+        "groups": "W16–W18",
+        "finding": "Printed number repeats 215. Prayer conclusion, Perceptio, Panem cælestem and Host communion introduction. Lower-left physical concealment."
+      },
+      {
+        "provider_raw_page": 282,
+        "printed_page": 216,
+        "groups": "W18–W20",
+        "finding": "Printed number repeats 216. Domine non sum dignus conclusion, Host/Chalice communion prayers and rubrics. Final right punctuation concealed."
+      },
+      {
+        "provider_raw_page": 283,
+        "printed_page": 217,
+        "groups": "W21–W22",
+        "finding": "Printed number repeats 217. Sumption/communicants/purifications and prose dismissal forms. No full Communion or Postcommunion proper is printed here; reference assumes their place."
+      },
+      {
+        "provider_raw_page": 284,
+        "printed_page": 218,
+        "groups": "W23–W24",
+        "finding": "Nine labelled dismissal chant alternatives, then Placeat beginning."
+      },
+      {
+        "provider_raw_page": 285,
+        "printed_page": 219,
+        "groups": "W24–W27",
+        "finding": "Placeat conclusion, blessing, Last Gospel incipits/directions, Requiem directions and final departure/thanksgiving rubric; actual Ordo endpoint."
+      },
+      {
+        "provider_raw_page": 286,
+        "printed_page": null,
+        "groups": "excluded context",
+        "finding": "Unnumbered full-page Resurrection engraving. No printed ordinary text continues here. Do not invent a visible page number 220."
+      },
+      {
+        "provider_raw_page": 287,
+        "printed_page": 221,
+        "groups": "excluded next division",
+        "finding": "Printed221, large actual DOMINICA / RESVRRECTIONIS heading; Easter Sunday station, Introitus and proper texts. This is a new division, not a running head."
+      }
+    ]
+  },
+  "bounded_alternative_outcome": {
+    "public_review": "src/sources/inventories/eucharistic-research-reviews/cistercian-1657-lyon-google-observed-setting-2026-10-20.json",
+    "provider_volume_id": "a8329mzqJMUC",
+    "title_locator": "https://books.google.com/books?id=a8329mzqJMUC&pg=PP7",
+    "prayer_locator": "https://books.google.com/books?id=a8329mzqJMUC&pg=PA215",
+    "outcome": "Original title verifies Paris Cramoisy 1657 imprint. The selected prayer page visibly reads293 and differs in setting from FIDES printed215. Bibliographic/body relationship remains unresolved. No concealed FIDES letters, accents or punctuation are transferred.",
+    "search_closed_for_this_batch": true,
+    "negative_limit": "A bounded inspected different-setting witness does not prove that no same-setting alternate survives.",
+    "source_only_separate_edition": "src/sources/works/cistercian-order/missale-cisterciense/editions/1657-paris-cramoisy-lyon-google-observed-setting/edition.toml"
+  },
+  "reopening_conditions": [
+    "Acquire or locate a lawful same-setting original delivery that visibly exposes each concealed FIDES span; establish exact setting and locus before any reading transfer.",
+    "Alternatively obtain source-repair imaging of the same FIDES copy that reveals the covered letters and punctuation.",
+    "Keep the complete functional Pater separate from the wider unaccepted post-Canon until every intervening source block has independent literal and extent review."
+  ],
+  "retention_scope": {
+    "native_pages_reused_from_dated_prior_acquisition": [
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287
+    ],
+    "newly_retained_native_pages": [
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287
+    ],
+    "existing_native_pages_reused": [
+      275,
+      276
+    ],
+    "support_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.djvu-shared-annotation-af707c77",
+    "original_receipt_sha256": "47f0a22c61d363166b4ca99ec29a67bab7750833110a7c3e25c1bf49fc14ad95",
+    "original_receipt_bytes": 260336,
+    "original_acquisition_date": "2026-10-17",
+    "new_FIDES_network_fetches": 0,
+    "limit": "Exact native bytes used for this thirteen-page source review are retained or reused. Earlier acquisition of 740 offered page files is not inspection of all 740 pages or complete physical-volume proof. Modern wrappers, response headers and transient signed routes are excluded from public payloads."
+  },
+  "preservation": {
+    "old_offertory_units_unchanged": 25,
+    "old_Canon_units_unchanged": 52,
+    "text_inheritance": false,
+    "parents": [],
+    "wider_omission_claim": false,
+    "comparison_limit": "Only the accepted complete Pater overlap may support a parallel text comparison with 1606. Later untranscribed 1657 prayers are not absent merely because this binding stops before Libera."
+  }
+}

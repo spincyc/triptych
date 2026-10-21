@@ -1,0 +1,57 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "catalogue-data-transport",
+   "byte_size": 5030,
+   "edition_owned": true,
+   "id": "artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.displayed-marc-data-json-610c6573",
+   "media_type": "application/json",
+   "notes": "One complete 34-field catalogue record in a declared JSON transport. Not a complete catalogue, original book, manuscript transcription or native liturgical text. Reuse of catalogue data follows CC0-1.0; attribution to the National Library is retained for provenance.",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "licensed",
+   "rights_basis": "National Library of the Czech Republic explicitly dedicates its Online Catalogue of the Slavonic Library (SLK) to CC0-1.0 Universal. Official open-data page https://www.nkp.cz/o-knihovne/odborne-cinnosti/otevrena-data names the 29 August 2023 declaration; the signed declaration https://www.nkp.cz/file/9bf1384644a5a479ff11ae4a517cfc3b/2688/cc0_srpen_2023.pdf names SLK on PDF page 3, with Ministry approval dated 29 August 2023 on pages1–2 (exact policyPDF SHA256 64f1e0b4d4100c298a4332550a7cc59e3aaca3ba1c95642c9c5a8585948bc1fc, 1331534bytes). This payload contains only the complete catalogue DATA table, converted to ordered JSON; software, ExLibris wrapper, scripts, navigation and session links are excluded. The grant does not license Google images, seller photographs or the underlying liturgical book.",
+   "rights_jurisdiction": null,
+   "source_url": "https://aleph.nkp.cz/F/?func=direct&doc_number=000577538&local_base=SLK&format=001",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "raw-catalogue-html",
+   "byte_size": 24479,
+   "edition_owned": true,
+   "id": "artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.raw-marc-html-c7ed6911",
+   "media_type": "text/html; charset=utf-8",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://aleph.nkp.cz/F/?func=direct&doc_number=000577538&local_base=SLK&format=001",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-10-20",
+  "editors": [],
+  "id": "edition.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538",
+  "jurisdiction": null,
+  "language": "cs",
+  "publication": "National Library of the Czech Republic, public SLK catalogue record",
+  "title": "SLK000577538 catalogue-data snapshot, 20 October 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "National Library of the Czech Republic, Slovanská knihovna",
+  "category": "library-catalogue",
+  "description": "Institutional bibliographic catalogue. The retained scope is one complete displayed catalogue record snapshot, not the catalogue as a whole and not the historical service book it describes.",
+  "id": "work.national-library-czech-republic.slavonic-library-catalogue",
+  "languages": [
+   "cs"
+  ],
+  "title": "Online Catalogue of the Slavonic Library (SLK)"
+ }
+}

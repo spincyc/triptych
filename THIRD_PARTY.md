@@ -825,3 +825,110 @@ are not newly relicensed by Triptych; public-domain elements remain public domai
 ### Cistercian Paris 1657 Canon and prefatory proper forms (20 October 2026)
 
 The Paris Cramoisy 1657 Cistercian Canon is additionally retained as a checked declared constituent with its proper forms printed in the preceding prefaces. Forty exact native DjVu pages preserve the full preface-census and Canon/cutoff source boundary; eighteen complete page-image derivatives, a page-image package and viewing PDF carry the selected readable facsimile. The native files retain their separately manifested shared annotation dependency. The historical Latin and faithful mechanical images have the recorded United States public-domain basis and are excluded from Triptych’s CC BY 4.0 licence. The reader images are explicit lossy mechanical derivatives, distinct from the unchanged retained native sources. The seven proper-form paragraphs, their governing rubrics and the main Canon remain in original source order and at their exact physical loci; source accents, spelling, printed referrals and apparent printing errors are preserved. This is a complete declared discontiguous constituent with partial whole-book text coverage, not a complete missal, proof of a direct exemplar, or authorization for contemporary ritual use. The earlier accepted offertory constituent is unchanged.
+
+### Batch 3: Albanian source research (2026-10-20)
+
+Batch 3 Albanian research source additions (checked 20 October 2026).
+The original title-leaf JPEG extracted from Nicola Franco, Necessità di mantenere il rito greco in Mezzojuso (Rome: Riccardo Garroni, 1912), is a faithful scan of that original leaf, preserved unchanged. The mixed Di Marco online PDF is separately restricted: the modern reset body has not been collated to the original printing and is not retained. The image establishes title/imprint only; no Elbasan celebrant book or approval follows.
+The complete April 2026 revision of the United States Copyright Office Circular 15A and its unedited mechanical text layer are federal government works, United States public domain under 17 U.S.C. 105. These are supporting rights evidence. All other modern source wrappers, journal/bulletin bytes and protected derivatives remain individually deferred as stated in the pinned research review. Public reachability is not a redistribution grant. These United States rights bases do not adjudicate other jurisdictions.
+
+### Batch 3: Roman 1956 catalogue controls (2026-10-20)
+
+LoC item JSON: federal bibliographic metadata, public-domain. DNB SRU XML: CC0-1.0 metadata only. Selected factual JSON: project-created CC BY 4.0. Underlying 1956 liturgical books, contents typography, protected preview responses and raw host UI are excluded from the outbound project licence. No public liturgical body/images proposed. Open Library catalogue response JSON is also retained under CC0-1.0; its catalogue-data FAQ and developer caution do not clear linked book scans.
+
+### Batch 3: Roman 1968 declaration and catalogue control (2026-10-20)
+
+The exact Open Library edition metadata response OL18084448M is retained under Open Library’s catalogue-data CC0 1.0 Universal/public-domain dedication basis. The official Using Open Library Data FAQ and separate developer licensing caution were checked on 20 October 2026. This 795-byte bibliographic JSON contains no service-book scan or liturgical body; the catalogue-data basis grants no rights in the separate Vatican booklet. The developer page’s caution about existing contributor rights is preserved in the source manifest. This external metadata is not offered under the project’s CC BY 4.0 licence.
+
+Source and rights references: [1](https://openlibrary.org/help/faq/using), [2](https://openlibrary.org/developers/licensing).
+
+### Batch 3: Roman 1634 catalogue crosswalk (2026-10-20)
+
+CRAI reproduction-service HTML 57076075: CRAI Universitat de Barcelona; Reproducció de documents; https://crai.ub.edu/serveis-i-recursos/reproduccio-documents; CC BY 4.0 https://creativecommons.org/licenses/by/4.0/; exact acquired HTML unmodified, external assets omitted.
+
+All catalogue and FIDES raw responses: Restricted responses and FIDES page images are not distributed. Project factual extracts and interpretation retain source identity, precise limits and parent hashes.
+
+### Batch 3: Toul 1750 source facsimiles (2026-10-20)
+
+BmLyon | numelyo (SJ L 013/7). Bibliothèque municipale de Lyon / Numelyo, Missale Tullense (Toul 1750). Source https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001102132474/IMG00000001
+Retrieved state 2026-10-20; provider last-update date not supplied. Domaine public / Licence Ouverte-Open Licence (Etalab October 2011): https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf
+Images unchanged. Project ZIP packaging adds source index, hashes and this attribution; it does not alter or restore page images. No institutional endorsement is implied. Source images are excluded from Triptych CC BY 4.0. 920 offered web images do not certify physical completeness, native-master acquisition or checked transcription.
+
+The complete higher-resolution single-title provider ZIP is separately retained unchanged. No full native-master archive is claimed.
+
+### Batch 3: Tournai 1498 source facsimiles and rights references (2026-10-20)
+
+The 1498 Tournai missal is represented by Ghent University Library BHSL.RES.1379, digitized by Google(HldPAAAAcAAJ). Its historical Latin text and typography are public domain in the United States. Exact mechanical facsimiles remain excluded from Triptych CC BY 4.0. The archive preserves all 580 offered source images with Google attribution and incidental library labels/stamps unchanged. PP 1 andPP 586 are undated exterior-binding views with photographic rights unestablished; they are retained under a separately reviewed 17 U.S.C.107 noncommercial physical-copy-identification basis, not cleared by 1498 publication or the subject alone. Both whole views are preserved; no public-domain cover/photo or general Google licence is asserted. The 14-page evidence PDF contains no exterior covers and embeds original JPEGs unchanged. Physical completeness, official approval, actual reception and a checked full text remain unestablished. The full 1,396-page Compendium, separately offered 39-page Chapter 300, official Compendium landing page and complete statutory Chapter 1 HTML each have their own federal-source public-domain basis.
+
+### Batch 3: Beauvais and Amiens original-source research (2026-10-20)
+
+Beauvais 1756: BmLyon | numelyo (SJ L 013/12). Source https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001102132797/IMG00000001 . All 830 offered web JPEG images are preserved unchanged in two project-created packages, under the library's Domaine public / Licence Ouverte-Open Licence notice and the separate U.S. public-domain basis for the 1756 work and faithful flat-page reproductions. Retain producer/source/date, licence link and no-endorsement qualifications; no physical completeness, checked liturgical text or whole-book transcription is implied. Exact October2011 Etalab licence PDF is retained unchanged under the independent data.gouv.fr dataset LO2.0 grant, resource last updated11September2026; its operative content remains v1.0. The source matter is excluded from Triptych CC BY4.0. Factual selections and acquisition metadata are project-created CC BY4.0; they do not claim ownership of individual facts. The exact four-page April 2017 LO2.0 French licence is also retained under the official dataset grant, separately from the older v1.0 content. Complete U.S. Copyright Office chapter900 government text is retained under its U.S. public-domain basis; five unassessed embedded images are excluded and the complete originalPDF remains hash-registered without retained bytes.
+
+### Batch 3: Hungarian witness and catalogue controls (2026-10-20)
+
+Google attribution and watermark treatment remain under src/sources/inventories/google-usage-guidelines-rights-v1.toml; historical payloads and provider marks are outside project CC BY4.0 grant.
+
+Five separate faithful flat1646-content images; modern Czech/college catalogue responses, archive finding aids, seller photographs and failed delivery responses excluded.
+
+One complete SLK catalogue-record transport under CC0-1.0; catalogue attribution retained; no CC0 claim for ExLibris wrapper, Google presentation or other source payloads.
+
+### Batch 3: Ravenna fragment and publication evidence (2026-10-20)
+
+Bayerische Staatsbibliothek München: Clm 29270(8), PDM 1.0 object images; Earlier Latin Manuscripts, University of Galway: CLA IX 1334 faithful manuscript facsimile; Creative Commons: Public Domain Mark 1.0 deed under CC BY 4.0; United States Copyright Office: Circular 33. Modern Hauke/Notitiae/Ravenna-Cervia source bytes are not offered under the project license and are not retained in Git. BSB canvas1’s separately noticed modern calibration graphic is excluded from retention/public handoff; auxiliary metadata surfaces have their own factual-description rationale. Existing ELMSS1835 catalogue HTML is reused under its accepted CC BY-NC4.0 record, with Mark Stansbury/University of Galway attribution.
+
+### Batch 3: Tarazona original and Huesca scholarly evidence (2026-10-20)
+
+Dom A. Lambert, Notes sur divers incunables d'Aragon inédits ou peu connus, Bulletin hispanique 12/1(1910),23-48, is retained as all 26 historical article pages extracted without image recompression from the 1970 Swets photoreprint of tome 12. Original article text and faithful mechanical reproductions have a United States public-domain basis; the 1970 cover, other articles and whole raw OCR remain excluded. Historical source material is not relicensed under Triptych's CC BY 4.0. The separate GW factual metadata selection is project-created CC BY 4.0; individual facts, library names and identifiers are not claimed as authored expression; modern wrapper and handwritten-card images are excluded.
+
+Tarazona 1500 Missale Tirasonense, Biblioteca Foral de Bizkaia INC-35, Lau Haizeetara item 20.500.11938/69046. The complete unchanged 658-page provider PDF and its uncorrected machine-text extraction retain the historical edition’s United States public-domain and holding-library item-specific Public Domain Mark bases. The copy is defective: its source card names missing leaves and one whole gathering. Complete delivery is not physical completeness or checked transcription. Modern website wrappers are withheld; the retained factual metadata projection preserves identifiers and exact rights designations. These external words/images are excluded from Triptych’s CC BY 4.0 licence. Preserve source attribution and integrity; no endorsement is implied.
+
+### Batch 3: Roman 1965 exact component and colophon evidence (2026-10-20)
+
+The Roman 1965 research receipt retains bibliographic facts and a project-created CCCB colophon factual extract under CC BY 4.0. Exact modern scans and ritual/translation bodies are excluded. Source facts, titles, claimant names and page references remain attributed.
+
+### Batch 3: Besançon 1485 original-copy metadata (2026-10-20)
+
+Mémoire Vive, Bibliothèque municipale de Besançon, INC.98: exact original images and website/API wrappers are restricted and are not distributed here. Source records and the research receipt provide factual descriptions, public routes and exact acquisition hashes only. The historical 1485 printing and current municipal-host delivery conditions are distinct.
+
+### Batch 3: Liège 1499 selected original evidence (2026-10-20)
+
+The 40 selected complete original page images of the Liège missal (Paris, 24 November 1499), BSB München 2 Inc.c.a. 3785 / bsb00075725 / urn:nbn:de:bvb:12-bsb00075725-7, are provided by the holding library under Public Domain Mark 1.0. The historical text and source image streams are excluded from Triptych’s CC BY 4.0 offer. The retained PDF is a project-created lossless selection, not the provider’s whole-book PDF. Credit the holding library, shelfmark, exact canvas/folio and URN. Project-created factual extracts, sequence metadata and rebuild code have their separately recorded CC BY 4.0 basis. Modern HTML wrappers remain restricted; no licence over those wrappers is asserted.
+
+### Batch 3: Lungro original-book and decree research (2026-10-20)
+
+### Batch 3: Lungro original-book and decree source research (2026-10-20)
+
+The Di Marco e-biblia collection affirmatively offers free consultation and whole download. This packet retains project-written bibliographic facts, inspection/rights findings and exact acquisition hashes only. The distinct Roma 1967 Greek–Albanian book, Lungro 1999 edition for the faithful, Nilo Somma's 1973 musical experiment, manuscript notation, Koliqi inventory, modern catalogue/site wrappers and all source text/raster derivatives remain outside the public source payloads while complete-object republication rights are unresolved. General ecclesiastical approval is separate from civil redistribution permission. The reservation under the 1967 frontispiece is recorded at its observed location without extending it to every prayer or translation component. These source words, music and images are not relicensed under Triptych CC BY 4.0. The two complete empty public media-search responses are retained only as exact nonexpressive JSON literals with their request URLs and hashes; they do not license other site content. Source-host links remain available for consultation. The acquired 1967 setting is not silently identified with all reported 1968 printings or a particular receiving copy.
+
+### Batch 3: Cistercian 1606 complete post-Canon constituent (2026-10-20)
+
+### Cistercian Paris 1606 post-Canon tail and appendix
+
+Five complete BSB bsb10496382 source pages (München, Bayerische Staatsbibliothek, 2 Liturg. 205 a), provider PDF pp. 252–256 / printed pp. 197–201 (the final Sanctorale page is excluded boundary context), are retained as a lossless bounded facsimile. The source images retain the provider’s [No Copyright - Non-Commercial Use Only 1.0](https://rightsstatements.org/vocab/NoC-NC/1.0/) condition and attribution; they are excluded from Triptych’s CC BY 4.0 license, and no unrestricted image reuse is asserted. The complete acquired 672,254,859-byte parent scan keeps its existing remote-only canonical disposition for measured size. The faithful original Latin transcription is public domain in the United States by expiration of the 1606 publication term and is also excluded from the project license. No modern translation or other edition’s wording is imported. The selected main Ordinary tail closes on printed p. 199; the separately identified Suffragium appendix on p. 200 is included in physical printing order. This historical scholarly transcription does not authorize contemporary liturgical use.
+
+### Junicode-derived punctus elevatus fallback
+
+`src/web/browser/shared/fonts/triptych-punctus-elevatus.woff2` is a modified,
+renamed, single-character subset of Junicode VF Regular by Peter S. Baker.
+It supplies U+2E4E PUNCTUS ELEVATUS MARK without changing source text.
+The derivative family is **Triptych Punctus Elevatus**. The upstream font's
+embedded copyright is © 1998–2023 Peter S. Baker; the verbatim accompanying
+OFL file bears © 2025 Peter S. Baker. The font and derivative are licensed
+under the **SIL Open Font License 1.1**, separately from the project's own
+licence; no Reserved Font Names are specified in that upstream licence.
+
+The input is `webfiles/JunicodeVF-Roman.woff2` from the Junicode repository
+at commit `180ce3c94bf051f9457422b87e87e9b1cb41107e` (tag `v2.218`).
+Its embedded version is **2.003**; the repository tag does not change that
+font version. Copyright and OFL metadata remain in the derivative.
+The [verbatim upstream licence](https://raw.githubusercontent.com/psb1558/Junicode-font/180ce3c94bf051f9457422b87e87e9b1cb41107e/OFL.txt)
+is retained at `src/web/browser/shared/fonts/OFL-Junicode.txt`,
+served with the font at `shared/fonts/OFL-Junicode.txt`.
+Source pins and the deterministic subset/rename recipe are recorded in
+`src/web/browser/shared/fonts/README.md`.
+
+### Batch 3: Cistercian 1657 complete two-form Pater and source damage (2026-10-20)
+
+Cistercian 1657 batch3 Pater and source-damage research. The historical Latin Paris Cramoisy 1657 printing is outside its United States publication term. The eleven newly retained exact FIDES native pages 0277–0287, two mechanical page-view JPEGs, bounded three-page PDF/package and checked Latin preserve this historical source; existing pages 0275/0276, page 0275 JPEG and 83-byte annotation are reused unchanged. FIDES marks its object public domain and unrestricted. These historical texts and mechanical facsimiles are excluded from Triptych’s CC BY 4.0 grant. Source acquisition does not imply whole-book collation. The eight-unit functional Pater includes both chant forms and governing rubrics, stopping before Deinde/Libera; final Amén. retains an explicit probable-acute/crease reservation. Wider post-Canon letters and punctuation remain obscured. The earlier 25-unit offertory and 52-unit Canon remain unchanged.
+
+Two original Google Books images from Lyon, stable volume a8329mzqJMUC locators PP7 and PA215, are separately retained under the observed-setting edition. Their original title shows the 1657 Paris Cramoisy imprint, while printed 293 differs visibly in setting from FIDES. No source wording is transferred. They are faithful flat reproductions of the old Latin printing under the bounded United States originality/publication-term basis documented in the retained U.S. Copyright Office materials; the intact Digitized by Google stamp is preserved. This is no general Google licence, contract conclusion or other-jurisdiction claim. Stable viewer locators are distinguished from the actual signed image delivery routes, whose transient parameters are omitted publicly. Modern metadata HTML, cookie-bearing headers, private request controls and redundant review images are not published; factual status/provenance and exact measured dispositions are recorded separately.

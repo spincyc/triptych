@@ -1,0 +1,735 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "amiet-excerpt-reconnaissance-batch3-2026-10-20",
+  "title": "Amiet1990 source reconnaissance: the named CMAA file is a selected28-page extract",
+  "lane": "amiet-full-book-reconnaissance",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "review_status": "accepted-with-explicit-evidentiary-qualifications",
+  "review_files": {
+    "amiet_excerpt_pdf": {
+      "url": "https://media.churchmusicassociation.org/dominican/Studies/amiet-missels_et_breviaires_imprimes-1990.pdf",
+      "sha256": "b288cfc32be336c8eb47db084e06177bdadd9a4c1dd09ccaf4a635c0862abdfe",
+      "bytes": 9136029,
+      "pdf_pages": 28
+    },
+    "publisher_html": {
+      "url": "https://www.cnrseditions.fr/catalogue/arts-et-essais-litteraires/missels-et-breviaires-imprimes/",
+      "sha256": "0293d0f9375a05088ce859f76c663977401a6a136d58fd44e1ef35a48f179441",
+      "bytes": 230693
+    },
+    "bnf_manual_pdf": {
+      "url": "https://www.bnf.fr/sites/default/files/2018-11/MC_liturgie.pdf",
+      "sha256": "ecca3ab60daa890695fdc72335643350e904430d76deece6978c09f8587a67a3",
+      "bytes": 866558,
+      "pdf_pages": 116
+    },
+    "western_inventory_snapshot": {
+      "sha256": "29eedc87429c1671986df872623e877f5a8b44c10dc6cc22bd1feb15d1404251",
+      "candidate_count": 1451,
+      "source_count": 1290
+    },
+    "prior678_checkpoint": {
+      "sha256": "80089f75f838312b6f104e8494f5a3d1d9228c47c1f3c8b9b404d0f628eda802",
+      "row_count": 678
+    },
+    "frozen_author_review": {
+      "filename": "public-review.json",
+      "sha256": "0d597ddb2d7c0032c96a9bd8624c08494339991c622e08f14a54cf75c23e6728",
+      "bytes": 32481
+    },
+    "frozen_research_proposal": {
+      "filename": "proposal.json",
+      "sha256": "d8a499eb74917e3cf25b99da50dbfbb55551e80687087695515ad058700df575",
+      "bytes": 16200
+    },
+    "independent_scope_review": {
+      "filename": "independent-review/review.json",
+      "sha256": "d630eb974fb3891aa93c97061d1527e8f53e411f2becd34f81b6d3ee78425683",
+      "bytes": 12597
+    },
+    "independent_scope_review_summary": {
+      "filename": "independent-review/review.md",
+      "sha256": "94ba9a8dddd419a44a0e42b600769216900b53d4c07cc7f9c776fea2d8942ec5",
+      "bytes": 2949
+    }
+  },
+  "source_identity": {
+    "author": "Robert Amiet",
+    "title": "Missels et bréviaires imprimés (supplément aux catalogues de Weale et Bohatta). Propres des saints (édition princeps)",
+    "publisher": "Éditions du Centre national de la recherche scientifique, Paris",
+    "year": 1990,
+    "series": "Documents, études et répertoires",
+    "isbn13": "9782222044345",
+    "publisher_pagination": 638,
+    "bnf_bibliography_collation": "XIV-623 pages",
+    "collation_limit": "Publisher and BnF descriptions identify the complete work. This review does not reconcile the publisher’s638-page marketing count with Roman-plus-Arabic collation, or claim examination of the absent full volume."
+  },
+  "findings": {
+    "named_url_is_complete_book": false,
+    "artifact_page_count": 28,
+    "no_duplicate_pdf_download": true,
+    "current_head_status": 200,
+    "current_head_content_length": 9136029,
+    "current_head_checked_at_utc": "2026-10-21T00:58:06Z",
+    "prior_exact_acquisition_reused": true,
+    "prior_review_owners": [
+      "monastic-2026-10-20",
+      "mendicant-2026-10-20"
+    ],
+    "table_of_contents_or_scope_preface_present": false,
+    "copyright_verso_present": false,
+    "full_volume_acquired": false,
+    "new_complete_source_books": 0,
+    "new_checked_original_liturgical_texts": 0,
+    "new_recensions": 0,
+    "new_stages": 0,
+    "new_canonical_candidate_appends_proposed": 0
+  },
+  "page_map": [
+    {
+      "pdf_page": 1,
+      "printed_page": null,
+      "role": "title page",
+      "scope": "Identifies Robert Amiet, the two-part bibliography title, CNRS and1990; copyright verso and contents absent."
+    },
+    {
+      "pdf_page": 2,
+      "printed_page": 117,
+      "role": "selected order-missal bibliography pages",
+      "scope": "Dominican entries with preceding two Eremitarum-title edge records and following Carmelite entries; neither neighboring order section is complete."
+    },
+    {
+      "pdf_page": 3,
+      "printed_page": 118,
+      "role": "selected order-missal bibliography pages",
+      "scope": "Dominican entries with preceding two Eremitarum-title edge records and following Carmelite entries; neither neighboring order section is complete."
+    },
+    {
+      "pdf_page": 4,
+      "printed_page": 119,
+      "role": "selected order-missal bibliography pages",
+      "scope": "Dominican entries with preceding two Eremitarum-title edge records and following Carmelite entries; neither neighboring order section is complete."
+    },
+    {
+      "pdf_page": 5,
+      "printed_page": 120,
+      "role": "selected order-missal bibliography pages",
+      "scope": "Dominican entries with preceding two Eremitarum-title edge records and following Carmelite entries; neither neighboring order section is complete."
+    },
+    {
+      "pdf_page": 6,
+      "printed_page": 121,
+      "role": "selected order-missal bibliography pages",
+      "scope": "Dominican entries with preceding two Eremitarum-title edge records and following Carmelite entries; neither neighboring order section is complete."
+    },
+    {
+      "pdf_page": 7,
+      "printed_page": 204,
+      "role": "selected order-breviary bibliography pages",
+      "scope": "Office-book discovery material; no separately inspected Eucharistic component admitted."
+    },
+    {
+      "pdf_page": 8,
+      "printed_page": 205,
+      "role": "selected order-breviary bibliography pages",
+      "scope": "Office-book discovery material; no separately inspected Eucharistic component admitted."
+    },
+    {
+      "pdf_page": 9,
+      "printed_page": 206,
+      "role": "selected order-breviary bibliography pages",
+      "scope": "Office-book discovery material; no separately inspected Eucharistic component admitted."
+    },
+    {
+      "pdf_page": 10,
+      "printed_page": 207,
+      "role": "selected order-breviary bibliography pages",
+      "scope": "Office-book discovery material; no separately inspected Eucharistic component admitted."
+    },
+    {
+      "pdf_page": 11,
+      "printed_page": 208,
+      "role": "selected order-breviary bibliography pages",
+      "scope": "Office-book discovery material; no separately inspected Eucharistic component admitted."
+    },
+    {
+      "pdf_page": 12,
+      "printed_page": 209,
+      "role": "selected order-breviary bibliography pages",
+      "scope": "Office-book discovery material; no separately inspected Eucharistic component admitted."
+    },
+    {
+      "pdf_page": 13,
+      "printed_page": 210,
+      "role": "selected order-breviary bibliography pages",
+      "scope": "Office-book discovery material; no separately inspected Eucharistic component admitted."
+    },
+    {
+      "pdf_page": 14,
+      "printed_page": 454,
+      "role": "selected order-proper bibliography pages",
+      "scope": "Three explicit Mass-proper records are queued; Office and ambiguous proper records are not treated as full missals."
+    },
+    {
+      "pdf_page": 15,
+      "printed_page": 455,
+      "role": "selected order-proper bibliography pages",
+      "scope": "Three explicit Mass-proper records are queued; Office and ambiguous proper records are not treated as full missals."
+    },
+    {
+      "pdf_page": 16,
+      "printed_page": 537,
+      "role": "library abbreviation index",
+      "scope": "Supports resolving historical holding abbreviations; not another source-book repertoire or proof of current holdings.",
+      "printed_page_basis": "inferred",
+      "printed_page_qualification": "PDF page 16 has no visible printed page numeral. Its assignment to printed page 537 is inferred from the index opening position before the continuous visible printed pages 538–549."
+    },
+    {
+      "pdf_page": 17,
+      "printed_page": 538,
+      "role": "library abbreviation index",
+      "scope": "Supports resolving historical holding abbreviations; not another source-book repertoire or proof of current holdings."
+    },
+    {
+      "pdf_page": 18,
+      "printed_page": 539,
+      "role": "library abbreviation index",
+      "scope": "Supports resolving historical holding abbreviations; not another source-book repertoire or proof of current holdings."
+    },
+    {
+      "pdf_page": 19,
+      "printed_page": 540,
+      "role": "library abbreviation index",
+      "scope": "Supports resolving historical holding abbreviations; not another source-book repertoire or proof of current holdings."
+    },
+    {
+      "pdf_page": 20,
+      "printed_page": 541,
+      "role": "library abbreviation index",
+      "scope": "Supports resolving historical holding abbreviations; not another source-book repertoire or proof of current holdings."
+    },
+    {
+      "pdf_page": 21,
+      "printed_page": 542,
+      "role": "library abbreviation index",
+      "scope": "Supports resolving historical holding abbreviations; not another source-book repertoire or proof of current holdings."
+    },
+    {
+      "pdf_page": 22,
+      "printed_page": 543,
+      "role": "library abbreviation index",
+      "scope": "Supports resolving historical holding abbreviations; not another source-book repertoire or proof of current holdings."
+    },
+    {
+      "pdf_page": 23,
+      "printed_page": 544,
+      "role": "library abbreviation index",
+      "scope": "Supports resolving historical holding abbreviations; not another source-book repertoire or proof of current holdings."
+    },
+    {
+      "pdf_page": 24,
+      "printed_page": 545,
+      "role": "library abbreviation index",
+      "scope": "Supports resolving historical holding abbreviations; not another source-book repertoire or proof of current holdings."
+    },
+    {
+      "pdf_page": 25,
+      "printed_page": 546,
+      "role": "library abbreviation index",
+      "scope": "Supports resolving historical holding abbreviations; not another source-book repertoire or proof of current holdings."
+    },
+    {
+      "pdf_page": 26,
+      "printed_page": 547,
+      "role": "library abbreviation index",
+      "scope": "Supports resolving historical holding abbreviations; not another source-book repertoire or proof of current holdings."
+    },
+    {
+      "pdf_page": 27,
+      "printed_page": 548,
+      "role": "library abbreviation index",
+      "scope": "Supports resolving historical holding abbreviations; not another source-book repertoire or proof of current holdings."
+    },
+    {
+      "pdf_page": 28,
+      "printed_page": 549,
+      "role": "library abbreviation index",
+      "scope": "Supports resolving historical holding abbreviations; not another source-book repertoire or proof of current holdings."
+    }
+  ],
+  "coverage_rows": [],
+  "uses": [],
+  "sources": [
+    {
+      "id": "amiet-1990-selected-order-excerpt",
+      "url": "https://media.churchmusicassociation.org/dominican/Studies/amiet-missels_et_breviaires_imprimes-1990.pdf",
+      "sha256": "b288cfc32be336c8eb47db084e06177bdadd9a4c1dd09ccaf4a635c0862abdfe",
+      "bytes": 9136029,
+      "pdf_pages": 28,
+      "type": "modern-bibliography-selected-extract",
+      "inspection": "Title and complete28-page sequence visually inspected; selected actual missal and proper entries read directly on images. Underlying originals not inspected.",
+      "extent": "Title; printed117–121,204–210,454–455,537–549. No general contents, preface or full repertoire.",
+      "rights": "restricted; no payload proposed for tracking"
+    },
+    {
+      "id": "amiet-publisher-catalogue",
+      "url": "https://www.cnrseditions.fr/catalogue/arts-et-essais-litteraires/missels-et-breviaires-imprimes/",
+      "sha256": "0293d0f9375a05088ce859f76c663977401a6a136d58fd44e1ef35a48f179441",
+      "bytes": 230693,
+      "type": "official-publisher-catalogue",
+      "inspection": "Full HTML acquired; title, ISBN, publisher,1990 and638-page pagination inspected. Metadata only."
+    },
+    {
+      "id": "bnf-liturgical-cataloguing-manual",
+      "url": "https://www.bnf.fr/sites/default/files/2018-11/MC_liturgie.pdf",
+      "sha256": "ecca3ab60daa890695fdc72335643350e904430d76deece6978c09f8587a67a3",
+      "bytes": 866558,
+      "pdf_pages": 116,
+      "type": "official-institutional-cataloguing-manual",
+      "inspection": "Whole116-page offered PDF acquired; source-count discussion at PDF5 and Amiet citation at PDF98 read in embedded text.",
+      "locus": "PDF5;PDF98",
+      "evidence_limit": "Counts are attributed to BnF’s manual, not independently enumerated from the full Amiet volume."
+    }
+  ],
+  "searches": [
+    {
+      "method": "Exact URL and SHA-256 search across canonical sources/inventories/reviews before any PDF retrieval",
+      "result": "Existing monastic and mendicant acquisition records both identify the same9136029-byte28-page PDF; no canonical source-library manifest for these exact bytes was found."
+    },
+    {
+      "method": "Normalize the10 selected bibliographic references against all678 prior table catalogue numbers, preserving suffixes and P-series prefix",
+      "result": "All10 selected references are absent as exact reference numbers. Reference1869, the existing1687 Dominican control, is present and is not counted as new."
+    },
+    {
+      "method": "Compare selected dates, order/use and component type against pinned current Western candidates and linked review records",
+      "result": "Research-only leads remain unmaterialized.1687/1870 explicitly requires comparison with existing1687/1869;1933/1939/1965 anchors are already represented and not re-proposed."
+    }
+  ],
+  "versions": [],
+  "acquisitions": [
+    {
+      "id": "amiet-1990-selected-order-excerpt",
+      "url": "https://media.churchmusicassociation.org/dominican/Studies/amiet-missels_et_breviaires_imprimes-1990.pdf",
+      "sha256": "b288cfc32be336c8eb47db084e06177bdadd9a4c1dd09ccaf4a635c0862abdfe",
+      "bytes": 9136029,
+      "pdf_pages": 28,
+      "method": "existing retained exact-byte reuse; current HTTP HEAD only",
+      "extent": "Selected28-page extract, not the complete book",
+      "rights": "restricted; scratch-only; no payload import"
+    },
+    {
+      "id": "amiet-publisher-catalogue",
+      "url": "https://www.cnrseditions.fr/catalogue/arts-et-essais-litteraires/missels-et-breviaires-imprimes/",
+      "sha256": "0293d0f9375a05088ce859f76c663977401a6a136d58fd44e1ef35a48f179441",
+      "bytes": 230693,
+      "method": "whole public HTML response",
+      "rights": "modern HTML retained only in scratch; public bibliographic facts paraphrased"
+    },
+    {
+      "id": "bnf-liturgical-cataloguing-manual",
+      "url": "https://www.bnf.fr/sites/default/files/2018-11/MC_liturgie.pdf",
+      "sha256": "ecca3ab60daa890695fdc72335643350e904430d76deece6978c09f8587a67a3",
+      "bytes": 866558,
+      "pdf_pages": 116,
+      "method": "whole offered PDF response",
+      "rights": "modern institutional manual retained only in scratch; limited factual bibliographic claims paraphrased"
+    }
+  ],
+  "repertoire_comparison": {
+    "known_online_boundary": "One offered Usuarium table of678 IDs, including repeated printing/copy records and mixed genres; it is not a census of all printed Amiet entries.",
+    "observed_excerpt_vs_table": "Within the displayed missal reference interval1813–1890, the table has only reference1869, Usuarium7100, Dominican1687. The10 selected queue references are absent as exact numbers.",
+    "bnf_reported_full_bibliographic_context": {
+      "additional_missal_editions": 311,
+      "additional_breviary_editions": 777,
+      "proper_titles": 3639,
+      "locus": "BnF manual PDF5",
+      "qualification": "Source-reported bibliographical units. Propers include Office and Mass material; these figures are not comparable to678 online copy/printing IDs and cannot be subtracted to produce a missing-Eucharistic count."
+    },
+    "not_established": "The complete volume’s entry sequence, total Eucharistic subset, correspondence to every online row and original-book identities have not been exhaustively checked."
+  },
+  "research_queue": [
+    {
+      "id": "amiet-queue-cistercian-1871-p2697",
+      "bibliographic_reference": "P2697",
+      "date_label": "1871",
+      "date_role": "bibliography-reported printing or component year; original imprint unverified",
+      "kind": "mass-proper-component",
+      "label": "Cistercian Mass propers",
+      "source_id": "amiet-1990-selected-order-excerpt",
+      "printed_page": 454,
+      "pdf_page": 14,
+      "imprint_facts_reported": null,
+      "holding_lead_reported_in_1990": "Campénéac; Sept-Fons; La Trappe (library/abbey abbreviations in source)",
+      "known678_exact_reference_match": false,
+      "priority": 1,
+      "canonical_relation": "No matching1871 Cistercian component candidate identified in the pinned Western inventory. Distinguish from the later1975/1983 order propers and from full missals.",
+      "disposition": "research-queue-only; not a proposed accepted witness or distinct edition",
+      "next_action": "Resolve the named holding in a public institutional catalogue; inspect original title/colophon and exact copy extent if publicly available. Compare all current candidates and nested review leads before admission; retain unresolved duplicates and rights.",
+      "evidence_limit": "Directly read modern bibliographic entry. Underlying original book, current holding, authorization, reception and substantive text unverified.",
+      "order_attribution_basis": "Cistercian attribution is contextual, supported by neighboring visible titles and reported holdings; the controlling section heading is on an absent prior page. The explicit Mass-proper title and 1871 date were directly inspected."
+    },
+    {
+      "id": "amiet-queue-senanque-1876-p2698",
+      "bibliographic_reference": "P2698",
+      "date_label": "1876",
+      "date_role": "bibliography-reported printing or component year; original imprint unverified",
+      "kind": "mass-proper-component",
+      "label": "Mass propers for the Sénanque congregation of the Cistercian order",
+      "source_id": "amiet-1990-selected-order-excerpt",
+      "printed_page": 454,
+      "pdf_page": 14,
+      "imprint_facts_reported": {
+        "place": "Notre-Dame de Lérins",
+        "printer": "Marie-Bernard"
+      },
+      "holding_lead_reported_in_1990": "Lérins abbey; source gives nc. rather than a settled shelfmark",
+      "known678_exact_reference_match": false,
+      "priority": 1,
+      "canonical_relation": "No matching1876 Sénanque component candidate identified in the pinned Western inventory; house/congregation scope is not an order-wide revised Missal.",
+      "disposition": "research-queue-only; not a proposed accepted witness or distinct edition",
+      "next_action": "Resolve the named holding in a public institutional catalogue; inspect original title/colophon and exact copy extent if publicly available. Compare all current candidates and nested review leads before admission; retain unresolved duplicates and rights.",
+      "evidence_limit": "Directly read modern bibliographic entry. Underlying original book, current holding, authorization, reception and substantive text unverified."
+    },
+    {
+      "id": "amiet-queue-dominican-1949-p2710",
+      "bibliographic_reference": "P2710",
+      "date_label": "1949",
+      "date_role": "bibliography-reported printing or component year; original imprint unverified",
+      "kind": "mass-proper-component",
+      "label": "Dominican Mass propers",
+      "source_id": "amiet-1990-selected-order-excerpt",
+      "printed_page": 455,
+      "pdf_page": 15,
+      "imprint_facts_reported": null,
+      "holding_lead_reported_in_1990": "Paris CNPL,141 O.P.; index expands CNPL as Centre national de Pastorale liturgique",
+      "known678_exact_reference_match": false,
+      "priority": 1,
+      "canonical_relation": "No matching1949 Dominican Mass-proper candidate identified in the pinned Western inventory. Distinct from Hungarian1949 reception work and from1933/1939/1965 complete-missal controls.",
+      "disposition": "research-queue-only; not a proposed accepted witness or distinct edition",
+      "next_action": "Resolve the named holding in a public institutional catalogue; inspect original title/colophon and exact copy extent if publicly available. Compare all current candidates and nested review leads before admission; retain unresolved duplicates and rights.",
+      "evidence_limit": "Directly read modern bibliographic entry. Underlying original book, current holding, authorization, reception and substantive text unverified."
+    },
+    {
+      "id": "amiet-queue-op-1505-1829b",
+      "bibliographic_reference": "1829B",
+      "date_label": "1505",
+      "date_role": "bibliography-reported printing or component year; original imprint unverified",
+      "kind": "missal-bibliography-lead",
+      "label": "Dominican missal, Paris1505",
+      "source_id": "amiet-1990-selected-order-excerpt",
+      "printed_page": 118,
+      "pdf_page": 3,
+      "imprint_facts_reported": {
+        "place": "Paris",
+        "printer": "Wolfgang Hopyl",
+        "financier": "Jean Petit"
+      },
+      "holding_lead_reported_in_1990": "Paris national library, Réserve B11518",
+      "known678_exact_reference_match": false,
+      "priority": 2,
+      "canonical_relation": "Compare dominican-early-prints and all linked reviewed leads. The date is not one of that candidate’s explicit1482/1484/1494/1500/1512 labels; do not unpack the cluster automatically.",
+      "disposition": "research-queue-only; not a proposed accepted witness or distinct edition",
+      "next_action": "Resolve the named holding in a public institutional catalogue; inspect original title/colophon and exact copy extent if publicly available. Compare all current candidates and nested review leads before admission; retain unresolved duplicates and rights.",
+      "evidence_limit": "Directly read modern bibliographic entry. Underlying original book, current holding, authorization, reception and substantive text unverified."
+    },
+    {
+      "id": "amiet-queue-op-1587-1855b",
+      "bibliographic_reference": "1855B",
+      "date_label": "1587",
+      "date_role": "bibliography-reported printing or component year; original imprint unverified",
+      "kind": "missal-bibliography-lead",
+      "label": "Dominican missal, Paris1587",
+      "source_id": "amiet-1990-selected-order-excerpt",
+      "printed_page": 119,
+      "pdf_page": 4,
+      "imprint_facts_reported": {
+        "place": "Paris",
+        "publishers": "Jérôme de Marnef and the widow of Guillaume Cavellat"
+      },
+      "holding_lead_reported_in_1990": "Lyon municipal library,100.232 and157.484 Réserve",
+      "known678_exact_reference_match": false,
+      "priority": 2,
+      "canonical_relation": "No exact1587 Dominican candidate identified in the pinned Western inventory; printing identity and relation to the existing1604 acquisition audit remain to be checked.",
+      "disposition": "research-queue-only; not a proposed accepted witness or distinct edition",
+      "next_action": "Resolve the named holding in a public institutional catalogue; inspect original title/colophon and exact copy extent if publicly available. Compare all current candidates and nested review leads before admission; retain unresolved duplicates and rights.",
+      "evidence_limit": "Directly read modern bibliographic entry. Underlying original book, current holding, authorization, reception and substantive text unverified."
+    },
+    {
+      "id": "amiet-queue-op-1600-1857b",
+      "bibliographic_reference": "1857B",
+      "date_label": "1600",
+      "date_role": "bibliography-reported printing or component year; original imprint unverified",
+      "kind": "missal-bibliography-lead",
+      "label": "Dominican missal, Venice1600",
+      "source_id": "amiet-1990-selected-order-excerpt",
+      "printed_page": 119,
+      "pdf_page": 4,
+      "imprint_facts_reported": {
+        "place": "Venice",
+        "printer_or_publisher": "Sessa"
+      },
+      "holding_lead_reported_in_1990": "Colmar municipal library,VIII/246",
+      "known678_exact_reference_match": false,
+      "priority": 2,
+      "canonical_relation": "Do not equate with the existing1604 Dominican witness or any Roman1600 printing on year/title similarity alone.",
+      "disposition": "research-queue-only; not a proposed accepted witness or distinct edition",
+      "next_action": "Resolve the named holding in a public institutional catalogue; inspect original title/colophon and exact copy extent if publicly available. Compare all current candidates and nested review leads before admission; retain unresolved duplicates and rights.",
+      "evidence_limit": "Directly read modern bibliographic entry. Underlying original book, current holding, authorization, reception and substantive text unverified."
+    },
+    {
+      "id": "amiet-queue-op-1622-1862b",
+      "bibliographic_reference": "1862B",
+      "date_label": "1622",
+      "date_role": "bibliography-reported printing or component year; original imprint unverified",
+      "kind": "missal-bibliography-lead",
+      "label": "Dominican missal, Paris1622",
+      "source_id": "amiet-1990-selected-order-excerpt",
+      "printed_page": 119,
+      "pdf_page": 4,
+      "imprint_facts_reported": {
+        "place": "Paris",
+        "printer_or_publisher": "Societas Typographica"
+      },
+      "holding_lead_reported_in_1990": "Beaune municipal library,G620; additional holdings reported",
+      "known678_exact_reference_match": false,
+      "priority": 2,
+      "canonical_relation": "No exact1622 Dominican candidate identified in the pinned Western inventory. Catalogue printing evidence alone is not a revision or adoption date.",
+      "disposition": "research-queue-only; not a proposed accepted witness or distinct edition",
+      "next_action": "Resolve the named holding in a public institutional catalogue; inspect original title/colophon and exact copy extent if publicly available. Compare all current candidates and nested review leads before admission; retain unresolved duplicates and rights.",
+      "evidence_limit": "Directly read modern bibliographic entry. Underlying original book, current holding, authorization, reception and substantive text unverified."
+    },
+    {
+      "id": "amiet-queue-op-1676-1868b",
+      "bibliographic_reference": "1868B",
+      "date_label": "1676",
+      "date_role": "bibliography-reported printing or component year; original imprint unverified",
+      "kind": "missal-bibliography-lead",
+      "label": "Dominican missal, Paris1676",
+      "source_id": "amiet-1990-selected-order-excerpt",
+      "printed_page": 119,
+      "pdf_page": 4,
+      "imprint_facts_reported": {
+        "place": "Paris",
+        "printer_or_publisher": "Frédéric Léonard"
+      },
+      "holding_lead_reported_in_1990": "Bordeaux municipal library,T547 Réserve; Einsiedeln abbey,De77",
+      "known678_exact_reference_match": false,
+      "priority": 2,
+      "canonical_relation": "No exact1676 Dominican candidate identified in the pinned Western inventory. Check relation to existing1687 print witnesses without assuming linear descent.",
+      "disposition": "research-queue-only; not a proposed accepted witness or distinct edition",
+      "next_action": "Resolve the named holding in a public institutional catalogue; inspect original title/colophon and exact copy extent if publicly available. Compare all current candidates and nested review leads before admission; retain unresolved duplicates and rights.",
+      "evidence_limit": "Directly read modern bibliographic entry. Underlying original book, current holding, authorization, reception and substantive text unverified."
+    },
+    {
+      "id": "amiet-queue-op-1687-1870",
+      "bibliographic_reference": "1870",
+      "date_label": "1687",
+      "date_role": "bibliography-reported printing or component year; original imprint unverified",
+      "kind": "unresolved-bibliographic-printing-or-copy-relation",
+      "label": "Second1687 Dominican bibliography reference",
+      "source_id": "amiet-1990-selected-order-excerpt",
+      "printed_page": 120,
+      "pdf_page": 5,
+      "imprint_facts_reported": null,
+      "holding_lead_reported_in_1990": "Firenze Laurenziana,10.T.1.9; Milano Ambrosiana,S.M.E.IV.34",
+      "known678_exact_reference_match": false,
+      "priority": 2,
+      "canonical_relation": "Existing dominican-usuarium-7100-1687 corresponds to Amiet1869, present in the678table. Different reference1870 and holdings require identity comparison; they do not prove a second edition.",
+      "disposition": "research-queue-only; not a proposed accepted witness or distinct edition",
+      "next_action": "Resolve the named holding in a public institutional catalogue; inspect original title/colophon and exact copy extent if publicly available. Compare all current candidates and nested review leads before admission; retain unresolved duplicates and rights.",
+      "evidence_limit": "Directly read modern bibliographic entry. Underlying original book, current holding, authorization, reception and substantive text unverified."
+    },
+    {
+      "id": "amiet-queue-op-1768-1877b",
+      "bibliographic_reference": "1877B",
+      "date_label": "1768",
+      "date_role": "bibliography-reported printing or component year; original imprint unverified",
+      "kind": "missal-bibliography-lead",
+      "label": "Dominican missal, Rome1768",
+      "source_id": "amiet-1990-selected-order-excerpt",
+      "printed_page": 120,
+      "pdf_page": 5,
+      "imprint_facts_reported": {
+        "place": "Rome",
+        "printer": "Ottavio Puccinelli"
+      },
+      "holding_lead_reported_in_1990": "Brussels royal library,VB849; additional holdings reported",
+      "known678_exact_reference_match": false,
+      "priority": 2,
+      "canonical_relation": "No exact1768 Dominican candidate identified in the pinned Western inventory. Book, printer and holding evidence need institutional confirmation.",
+      "disposition": "research-queue-only; not a proposed accepted witness or distinct edition",
+      "next_action": "Resolve the named holding in a public institutional catalogue; inspect original title/colophon and exact copy extent if publicly available. Compare all current candidates and nested review leads before admission; retain unresolved duplicates and rights.",
+      "evidence_limit": "Directly read modern bibliographic entry. Underlying original book, current holding, authorization, reception and substantive text unverified."
+    }
+  ],
+  "range_triage": [
+    {
+      "range": "printed117–121",
+      "action": "Eucharistic missal leads; prioritize selected direct entries, preserve same-year printing/copy ambiguity. Neighboring partial order sections require prior/following pages before attribution or completeness claims."
+    },
+    {
+      "range": "printed204–210",
+      "action": "Breviary/Office range; outside this Eucharistic queue unless independent evidence identifies a specific Mass component."
+    },
+    {
+      "range": "printed454–455",
+      "action": "Queue explicit Mass-proper records P2697,P2698,P2710. Explicit breviary propers are Office material; generic proper titles need contents before Eucharistic classification."
+    },
+    {
+      "range": "printed537–549",
+      "action": "Use only to resolve holding abbreviations. It establishes neither current library availability nor new book witnesses."
+    }
+  ],
+  "retention_deferrals": [
+    {
+      "artifact": "amiet-1990-selected-order-excerpt",
+      "disposition": "restricted; exact PDF and all rasters/text derivatives remain scratch-only",
+      "basis": "Modern1990 authored bibliography. No affirmative redistribution grant was established from the inspected extract or publisher page; this task explicitly requires restricted treatment absent a grant. Public access and the presence of historical book facts do not license the modern compilation or scans.",
+      "retention_action": "Reuse the already retained exact28-page file. No duplicate PDF GET or payload import was performed. No source-library payload or public derivative of the book is proposed.",
+      "exact_access_limit": "A public checkout cannot reopen the1990 PDF or its page rasters offline. The portable review retains public URL, exact SHA-256/byte/page identity, page map, limited factual queue and limitations instead. The complete638-page publisher-described volume was not acquired and is not represented by this28-page artifact.",
+      "reevaluation_trigger": "An affirmative artifact-specific distribution grant, a different lawfully distributable complete source or an independently cleared edition; then acquire whole bytes, authenticate extent and map contents before a larger census."
+    }
+  ],
+  "limits": [
+    "This is reconnaissance of a previously acquired selected extract, not a new whole-book acquisition or a complete Amiet census.",
+    "The10 queue rows are bibliographic leads requiring holding-catalogue and original-book checks, not10 independent editions, missing historical books or proposed recensions.",
+    "No source-page image, OCR text, raw HTML or wholesale catalogue transcription is proposed for public retention. Bibliographic facts and short paraphrase only.",
+    "No purchase, subscription or credential route is proposed. If no public complete source can be found, retain an explicit full-volume access gap."
+  ],
+  "acceptance": {
+    "status": "accepted within frozen reconnaissance scope; no blocking correction",
+    "independent_receipt_sha256": "d630eb974fb3891aa93c97061d1527e8f53e411f2becd34f81b6d3ee78425683",
+    "author_frozen_review_sha256": "0d597ddb2d7c0032c96a9bd8624c08494339991c622e08f14a54cf75c23e6728",
+    "all_28_page_images_directly_inspected_by_independent_reviewer": true,
+    "all_10_queue_entries_accepted_as_research_only_leads": true,
+    "claim_dispositions": [
+      {
+        "id": "source-identity",
+        "disposition": "accepted"
+      },
+      {
+        "id": "artifact-extent",
+        "disposition": "accepted"
+      },
+      {
+        "id": "index-opening-pagination",
+        "disposition": "accepted-with-qualification"
+      },
+      {
+        "id": "absent-frontmatter",
+        "disposition": "accepted"
+      },
+      {
+        "id": "mass-office-boundary",
+        "disposition": "accepted"
+      },
+      {
+        "id": "historical-holdings",
+        "disposition": "accepted"
+      },
+      {
+        "id": "eremitarum-edge",
+        "disposition": "accepted"
+      },
+      {
+        "id": "bnf-counts",
+        "disposition": "accepted-as-attributed"
+      },
+      {
+        "id": "queue-reference-absence",
+        "disposition": "accepted-with-bound"
+      },
+      {
+        "id": "no-new-canonical-entities",
+        "disposition": "accepted"
+      },
+      {
+        "id": "public-privacy-and-payload",
+        "disposition": "accepted"
+      },
+      {
+        "id": "retention-ceiling",
+        "disposition": "accepted"
+      },
+      {
+        "id": "retrieval-history",
+        "disposition": "accepted-as-recorded"
+      },
+      {
+        "id": "whole-book-or-new-edition-inference",
+        "disposition": "rejected"
+      },
+      {
+        "id": "amiet-queue-cistercian-1871-p2697",
+        "disposition": "accepted-as-research-only-lead"
+      },
+      {
+        "id": "amiet-queue-senanque-1876-p2698",
+        "disposition": "accepted-as-research-only-lead"
+      },
+      {
+        "id": "amiet-queue-dominican-1949-p2710",
+        "disposition": "accepted-as-research-only-lead"
+      },
+      {
+        "id": "amiet-queue-op-1505-1829b",
+        "disposition": "accepted-as-research-only-lead"
+      },
+      {
+        "id": "amiet-queue-op-1587-1855b",
+        "disposition": "accepted-as-research-only-lead"
+      },
+      {
+        "id": "amiet-queue-op-1600-1857b",
+        "disposition": "accepted-as-research-only-lead"
+      },
+      {
+        "id": "amiet-queue-op-1622-1862b",
+        "disposition": "accepted-as-research-only-lead"
+      },
+      {
+        "id": "amiet-queue-op-1676-1868b",
+        "disposition": "accepted-as-research-only-lead"
+      },
+      {
+        "id": "amiet-queue-op-1687-1870",
+        "disposition": "accepted-as-research-only-lead"
+      },
+      {
+        "id": "amiet-queue-op-1768-1877b",
+        "disposition": "accepted-as-research-only-lead"
+      }
+    ],
+    "qualifications": [
+      {
+        "id": "pdf16-inferred-pagination",
+        "detail": "PDF page 16 has no visible printed page numeral. Its assignment to printed page 537 is inferred from the index opening position before the continuous visible printed pages 538–549."
+      },
+      {
+        "id": "p2697-contextual-order-attribution",
+        "detail": "Cistercian attribution is contextual, supported by neighboring visible titles and reported holdings; the controlling section heading is on an absent prior page. The explicit Mass-proper title and 1871 date were directly inspected."
+      },
+      {
+        "id": "retrieval-history-as-recorded",
+        "detail": "The retained HEAD response and exact prior PDF identity support the recorded retrieval history. The independent review made no network call and cannot independently prove the author's no-duplicate-GET execution history from the retained files alone."
+      },
+      {
+        "id": "bounded-reference-absence",
+        "detail": "The ten references are absent as exact normalized references from the pinned 678-row snapshot. This is not proof of ten missing historical editions, exhaustive canonical novelty, or complete coverage of the full Amiet volume."
+      }
+    ],
+    "scope_counts": {
+      "research_leads": 10,
+      "canonical_candidate_appends": 0,
+      "new_recensions": 0,
+      "new_stages": 0,
+      "native_source_payload_additions": 0
+    },
+    "retention": "The modern 1990 PDF and all rasters/text derivatives remain restricted in scratch absent an affirmative artifact-specific distribution grant. This public entrypoint contains metadata and limited factual leads only.",
+    "remaining_access_gap": "The complete volume and the underlying original liturgical books have not been acquired or inspected. Current holdings, distinct-edition identity, authorization, reception and substantive contents remain unverified."
+  }
+}

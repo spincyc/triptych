@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "record_type": "bounded-institutional-factual-extract",
+  "id": "bsb-whole-pdf-failed-response-2026-10-21",
+  "source_url": "https://download.digitale-sammlungen.de/BOOKS/download.pl?id=00075725&ersteseite=1&letzteseite=563&vers=d&nr=&abschicken=ja&submitbutton=WEITER",
+  "source_sha256": "24d9b005df59c2bafe8cd866d7577de7f1455ffa17094102be65194778dad31d",
+  "source_byte_size": 3941,
+  "retrieved_on": "2026-10-21",
+  "project_licence": "CC BY 4.0",
+  "selection_method": "Privacy-only transformation of the exact prior project-created factual extract. All declared facts and underlying raw-response identity remain unchanged; only transient challenge parameters are omitted from the public context route and that route is explicitly labelled.",
+  "facts": {
+    "first_image_requested": 1,
+    "last_image_requested": 563,
+    "configured_curl_max_time_seconds": 300,
+    "response_media_type": "text/html",
+    "response_complete": false,
+    "whole_pdf_acquired": false,
+    "numeric_curl_exit_captured": false,
+    "limitation": "Only incomplete HTML was left by the bounded request. No whole-book PDF hash or byte size is asserted."
+  },
+  "source_url_role": "Stable provider/object context with transient challenge query parameters omitted; not the exact logged request.",
+  "derivation_parent_sha256": "5e4f91e3792e90c454c83a86591a6d278cc3fc41f43d3afb585dc52ceda4e934",
+  "derivation_parent_byte_size": 1098
+}

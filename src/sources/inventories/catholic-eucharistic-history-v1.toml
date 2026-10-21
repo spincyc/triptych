@@ -85,6 +85,12 @@ label = "Roman Missal: editions and reforms"
 families = ["roman", "typica", "roman-latin-lay-book-witness", "Roman"]
 
 [[presentation_groups]]
+id = "roman-diocesan-propers-modern"
+label = "Modern Roman diocesan Mass propers"
+families = ["roman-diocesan-proper-modern"]
+note = "Local Roman Missal appendices and their announcement records remain distinct from complete Missals. Inspected contents, decrees and effective dates retain each source's limits; this group asserts no independent rite, textual revision or ancestry."
+
+[[presentation_groups]]
 id = "roman-1962-use"
 label = "Use of the 1962 Roman Missal"
 families = ["usus-antiquior"]
@@ -501,7 +507,7 @@ note = "The bounded local ceremonial witness does not establish a complete indep
 [[presentation_groups]]
 id = "ravenna-attributed-fragments"
 label = "Fragments attributed to Ravenna"
-families = ["ravenna-attributed-fragment"]
+families = ["ravenna-attributed-fragment", "ravenna-attributed-lectionary-fragment"]
 note = "Provenance and local liturgical reception remain separately qualified; attribution does not establish use in Ravenna."
 
 [[presentation_groups]]
@@ -2609,3 +2615,38 @@ unit_ids = ["unit.cistercian-1606.canon.heading", "unit.cistercian-1606.canon.te
 text_set = "cistercian-1657-canon"
 record_id = "western:cistercian-1657"
 unit_ids = ["unit.cistercian-1657.canon.prefatory-proper-forms.nativity-infra-actionem", "unit.cistercian-1657.canon.prefatory-proper-forms.nativity-communicantes", "unit.cistercian-1657.canon.prefatory-proper-forms.nativity-usage", "unit.cistercian-1657.canon.prefatory-proper-forms.epiphany-infra-actionem", "unit.cistercian-1657.canon.prefatory-proper-forms.epiphany-communicantes", "unit.cistercian-1657.canon.prefatory-proper-forms.epiphany-usage", "unit.cistercian-1657.canon.prefatory-proper-forms.easter-infra-actionem", "unit.cistercian-1657.canon.prefatory-proper-forms.easter-communicantes", "unit.cistercian-1657.canon.prefatory-proper-forms.easter-sequitur", "unit.cistercian-1657.canon.prefatory-proper-forms.easter-hanc-igitur", "unit.cistercian-1657.canon.prefatory-proper-forms.easter-usage", "unit.cistercian-1657.canon.prefatory-proper-forms.ascension-infra-actionem", "unit.cistercian-1657.canon.prefatory-proper-forms.ascension-communicantes", "unit.cistercian-1657.canon.prefatory-proper-forms.ascension-usage", "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-infra-actionem", "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-communicantes", "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-sequitur", "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-hanc-igitur", "unit.cistercian-1657.canon.prefatory-proper-forms.pentecost-usage", "unit.cistercian-1657.canon.main.standalone-title", "unit.cistercian-1657.canon.main.body-heading", "unit.cistercian-1657.canon.main.opening-rubric", "unit.cistercian-1657.canon.main.te-igitur", "unit.cistercian-1657.canon.main.commemoratio-pro-viuis-heading", "unit.cistercian-1657.canon.main.memento-viuorum", "unit.cistercian-1657.canon.main.infra-actionem-heading", "unit.cistercian-1657.canon.main.communicantes", "unit.cistercian-1657.canon.main.hanc-igitur-rubric", "unit.cistercian-1657.canon.main.hanc-igitur", "unit.cistercian-1657.canon.main.quam-oblationem", "unit.cistercian-1657.canon.main.qui-pridie", "unit.cistercian-1657.canon.main.hostia-consecrationis-rubric", "unit.cistercian-1657.canon.main.hoc-est-corpus-meum", "unit.cistercian-1657.canon.main.hostia-post-consecrationem-rubric", "unit.cistercian-1657.canon.main.simili-modo", "unit.cistercian-1657.canon.main.calix-consecrationis-rubric", "unit.cistercian-1657.canon.main.hic-est-calix", "unit.cistercian-1657.canon.main.calix-depositio-rubric", "unit.cistercian-1657.canon.main.haec-quotiescumque", "unit.cistercian-1657.canon.main.calix-post-consecrationem-rubric", "unit.cistercian-1657.canon.main.unde-et-memores", "unit.cistercian-1657.canon.main.supra-quae-rubric", "unit.cistercian-1657.canon.main.supra-quae", "unit.cistercian-1657.canon.main.supplices-rubric", "unit.cistercian-1657.canon.main.supplices-te-rogamus", "unit.cistercian-1657.canon.main.memento-defunctorum-heading", "unit.cistercian-1657.canon.main.memento-defunctorum", "unit.cistercian-1657.canon.main.nobis-quoque-rubric", "unit.cistercian-1657.canon.main.nobis-quoque-peccatoribus", "unit.cistercian-1657.canon.main.per-quem-haec-omnia", "unit.cistercian-1657.canon.main.per-ipsum-doxology", "unit.cistercian-1657.canon.main.per-omnia-amen"]
+
+# Independently collated bounded post-Canon tail and physical appendix; whole-book coverage remains partial.
+[[text_sets]]
+id = "cistercian-1606-post-canon"
+adapter = "native-book:cistercian-1606-post-canon"
+
+[[text_versions]]
+id = "cistercian-1606-post-canon"
+text_set = "cistercian-1606-post-canon"
+parents = []
+
+[[text_sets]]
+id = "cistercian-1657-pater-noster"
+adapter = "native-book:cistercian-1657-pater-noster"
+
+[[text_versions]]
+id = "cistercian-1657-pater-noster"
+text_set = "cistercian-1657-pater-noster"
+parents = []
+
+[[comparisons]]
+id = "cistercian-1606-1657-pater-noster-first-chant"
+kind = "same-prayer-witness-comparison"
+membership_status = "established"
+basis = "Complete Pater noster invitation, prayer, Sed libera response and final Amen in the Paris 1606 Cistercian witness, aligned with the first of the two printed 1657 chant forms. The incipit, full petition sequence and response establish witnesses of the same prayer. Six maintained 1606 units correspond to three maintained 1657 units; the latter retain Extendit manus inside the introduction and Sacerdos secretè dicit before Amen. Each side preserves its exact source order, wording and governing rubrics; unequal unit counts do not imply unequal prayer extent."
+apparatus_caveat = "The left selection is printed p. 197 after and excluding the prior strict-Canon final Amen, ending at the post-Pater Amen before Libera. The right selection is FIDES raw 0275 right / printed p. 213 from Oremus, then raw 0276 / printed p. 214 through the FIRST Amen, before the Sequens cantus rubric. The second 1657 chant and its governing rubric, Per omnia/Amen, repeated introduction, prayer and terminal Amen remain in the native binding but are excluded from this comparison. The following Sequens cantus rubric is cited only as contextual evidence for that exclusion; it assigns the second form to three-lesson feasts, ferial days and Masses for the dead, and does not by itself establish an exclusive usage rule for the first form. The wider untranscribed 1657 post-Canon continuation is outside scope, so this comparison makes no claim that its prayers were absent. Source punctuation, accents, display-initial case, cœ/cæ ligatures and the interleaved rubric positions retain each artifact’s declared normalization; the literal text diff is not a comparison of chant pitches. The worn/creased final Amén reading belongs to the excluded second form, not the selected first Amen. Publication dates identify these witnesses, not the introduction of any wording or rubric. No whole-book completeness, historical descent, act, inherited wording or date of change is inferred."
+source_refs = ["passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-oremus-post-canon", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-praeceptis-salutaribus", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pater-noster", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-et-ne-nos-inducas", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-sed-libera-nos-response", "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pater-noster-amen", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-first-introduction", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-first-prayer-response", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-first-amen", "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-usage"]
+[comparisons.left]
+text_set = "cistercian-1606-post-canon"
+record_id = "western:cistercian-1606"
+unit_ids = ["unit.cistercian-1606.post-canon.oremus-post-canon", "unit.cistercian-1606.post-canon.praeceptis-salutaribus", "unit.cistercian-1606.post-canon.pater-noster", "unit.cistercian-1606.post-canon.et-ne-nos-inducas", "unit.cistercian-1606.post-canon.sed-libera-nos-response", "unit.cistercian-1606.post-canon.pater-noster-amen"]
+[comparisons.right]
+text_set = "cistercian-1657-pater-noster"
+record_id = "western:cistercian-1657"
+unit_ids = ["unit.cistercian-1657.pater-noster.pater-first-introduction", "unit.cistercian-1657.pater-noster.pater-first-prayer-response", "unit.cistercian-1657.pater-noster.pater-first-amen"]
