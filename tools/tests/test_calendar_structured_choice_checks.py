@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import copy
+import json
 from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec, spec_from_loader
 import os
@@ -30,6 +31,7 @@ SOURCE_CHECK = checker(ROOT, "_structured_choice_source_ordinals")
 ORDER = SOURCE_CHECK.slot_ordinals("roman-1962")
 SOURCE_FILE = ROOT / "src/sources/calendars/roman-1962/propers.yaml"
 SOURCE = C.load_document(SOURCE_FILE.parent.parent, "roman-1962", effective=False)
+COLLECT_JOIN_FIXTURE = MODULE_ROOT / "tools/tests/fixtures/calendar-unavailable-collect-join-v1.json"
 UNAVAILABLE = (
     "s-gregorii-barbadici-episcopi-confessoris",
     "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
@@ -80,14 +82,23 @@ class StructuredChoiceSourceChecks(unittest.TestCase):
                 self.assertEqual([], CHECK.common_reference_problems(common_rows(SOURCE, saint), document=SOURCE))
 
     def test_unavailable_collect_does_not_erase_a_missing_or_invalid_fact(self):
+        # Barbarigo now has an own Collect. Keep this negative on the exact
+        # earlier structural source projection, rather than freezing a live
+        # source gap or borrowing its repaired Collect into the fixture.
+        fixture = json.loads(COLLECT_JOIN_FIXTURE.read_text())
+        self.assertEqual("8ec28db22062c573cc7a2630d15deeeb79b670a43660799956cd95b1481603d0",
+                         fixture["source_snapshot"]["sha256"])
+        historical = fixture["document"]
+        saint = C.mass_index(historical)[fixture["saint_key"]]
+        self.assertEqual([], CHECK.common_reference_problems(common_rows(historical, saint), document=historical))
         for change in ("missing", "wrong-edition"):
-            document = copy.deepcopy(SOURCE)
+            document = copy.deepcopy(historical)
             if change == "missing":
                 del document[C.PROPER_APPOINTMENT_FACTS]
             else:
                 for fact in document[C.PROPER_APPOINTMENT_FACTS].values():
                     fact["edition"] = "another-edition"
-            saint = C.mass_index(document)[UNAVAILABLE[0]]
+            saint = C.mass_index(document)[fixture["saint_key"]]
             with self.subTest(change=change):
                 problems = CHECK.common_reference_problems(common_rows(document, saint), document=document)
                 wanted = "unknown fact or enum value" if change == "missing" else "different edition"
@@ -161,6 +172,35 @@ class StructuredChoiceSourceChecks(unittest.TestCase):
                 problems = order_problems(document, {mass["key"]})
                 wanted = "one edition-attested Proper order rank" if applicability.startswith("known-") else "unknown fact or enum value"
                 self.assertTrue(any(wanted in p for p in problems), problems)
+
+
+    def test_two_late_apostle_menus_need_no_order_exception(self):
+        # Their independently printed Paschal paragraphs remain physically
+        # late. Valid same-seat anchors already place each exclusive menu at
+        # its principal chant; no source-order exception is left to excuse.
+        for key in ("s-barnabae-apostoli", "s-bartholomaei-apostoli"):
+            with self.subTest(mass=key):
+                self.assertFalse(any(row["mass"] == key for row in SOURCE.get(CHECK.ORDER_EXCEPTIONS, [])))
+                self.assertEqual([], order_problems(SOURCE, {key}))
+
+    def test_reintroducing_an_obsolete_apostle_exception_is_refused(self):
+        for key in ("s-barnabae-apostoli", "s-bartholomaei-apostoli"):
+            document = copy.deepcopy(SOURCE)
+            document[CHECK.ORDER_EXCEPTIONS] = [row for row in document.get(CHECK.ORDER_EXCEPTIONS, []) if row["mass"] != key]
+            document[CHECK.ORDER_EXCEPTIONS].append({"mass": key, "reason": "Negative control: obsolete exception."})
+            with self.subTest(mass=key):
+                self.assertTrue(any("no longer departs" in p for p in order_problems(document, {key})))
+
+    def test_apostle_menus_do_not_hide_a_really_misplaced_secret(self):
+        for key in ("s-barnabae-apostoli", "s-bartholomaei-apostoli"):
+            document = copy.deepcopy(SOURCE)
+            document[CHECK.ORDER_EXCEPTIONS] = [row for row in document.get(CHECK.ORDER_EXCEPTIONS, []) if row["mass"] != key]
+            mass = C.mass_index(document)[key]
+            secret = next(p for p in mass["propers"] if p["name"] == "Secret")
+            mass["propers"].remove(secret)
+            mass["propers"].append(secret)
+            with self.subTest(mass=key):
+                self.assertTrue(any("order the edition prints" in p for p in order_problems(document, {key})))
 
 
 if __name__ == "__main__":

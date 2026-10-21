@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import re
 import tomllib
 import unittest
@@ -25,6 +26,11 @@ ANTIPHONARY_ARTIFACT = (
     ROOT
     / "src/sources/works/catholic-church/missale-romanum/editions"
     / "2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml"
+)
+
+ANTIPHONARY_SOURCE_ID = (
+    "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary"
+    ".antiphonary-pdf"
 )
 
 COMMON_PATTERNS = (
@@ -157,8 +163,12 @@ def _annex_row(section: str, mass: dict) -> dict:
 
 def _antiphonary_row(section: str, mass: dict) -> dict:
     relation = mass["common_from"]
+    if relation["source_id"] != ANTIPHONARY_SOURCE_ID:
+        raise AssertionError(f"invalid Antiphonary source for {mass['key']}")
     locator = re.fullmatch(
-        r"artifact page (\d+), printed page (\d+)", relation["locus"]
+        r"artifact page ([1-9]\d*), printed page ([1-9]\d*)"
+        r"(?:; Common target printed pages [1-9]\d*(?:, [1-9]\d*)*)?",
+        relation["locus"],
     )
     if not locator:
         raise AssertionError(f"invalid Antiphonary locator for {mass['key']}")
@@ -215,6 +225,74 @@ class PostconciliarSanctoralCommonsInventoryTest(unittest.TestCase):
         cls.inventory = tomllib.loads(INVENTORY.read_text(encoding="utf-8"))
         cls.rows = cls.inventory["rows"]
         cls.expected = derive_rows(cls.calendar)
+
+    def test_structured_common_targets_keep_exact_pointer_and_option_metadata(self) -> None:
+        expected = {
+            "saint-raymond-penyafort-priest": (97, 89, "161", ["pastors"],
+                ["For One Pastor (p. 161 )"]),
+            "saint-hilary-bishop-doctor-church": (97, 89, "159, 165",
+                ["pastors", "doctors-of-the-church"], ["For a Bishop (p. 159 )"]),
+            "saint-apollinaris-bishop-martyr": (121, 113, "154, 159",
+                ["martyrs", "pastors"], ["For One Martyr (p. 154 )", "For a Bishop (p. 159 )"]),
+            "saint-peter-claver-priest": (131, 123, "161, 172",
+                ["pastors", "saints-and-holy-women"],
+                ["For One Pastor (p. 161 )", "For Those Who Practiced Works of Mercy (p. 172 )"]),
+        }
+        masses = {mass["key"]: (section, mass)
+                  for section, payload in self.calendar["sections"].items()
+                  for mass in payload["masses"]}
+        rows = {row["mass_key"]: row for row in self.rows}
+        for key, (artifact, printed, targets, categories, subselections) in expected.items():
+            with self.subTest(mass=key):
+                section, mass = masses[key]
+                relation = mass["common_from"]
+                row = _antiphonary_row(section, mass)
+                self.assertEqual(row, rows[key])
+                self.assertEqual((row["artifact_page"], row["printed_page"]), (artifact, printed))
+                self.assertEqual(row["source_locus"],
+                    f"artifact page {artifact}, printed page {printed}; Common target printed pages {targets}")
+                self.assertEqual(row["source_locus"], relation["locus"])
+                self.assertEqual(relation["source_id"], ANTIPHONARY_SOURCE_ID)
+                self.assertEqual(row["categories"], categories)
+                self.assertEqual(len(row["categories"]), len(relation["options"]))
+                self.assertEqual(row["subselections"], subselections)
+                self.assertEqual(row["alternatives"], len(relation["options"]) > 1)
+
+    def test_antiphonary_locator_and_source_remain_strict(self) -> None:
+        mass = next(mass for payload in self.calendar["sections"].values()
+                    for mass in payload["masses"] if mass["key"] == "saint-raymond-penyafort-priest")
+        invalid = [
+            "artifact page 97",
+            "artifact page 97, printed page 89; Common target printed pages ",
+            "artifact page 97, printed page 89; Common target printed pages unknown",
+            "artifact page 97, printed page 89; Common target printed pages 159-165",
+            "artifact page 97, printed page 89; Common target printed pages 159,165",
+            "artifact page 97, printed page 89; Common target printed pages 161; arbitrary suffix",
+            "artifact page 0, printed page 89",
+            "artifact page 97, printed page 0",
+        ]
+        for locus in invalid:
+            mutated = copy.deepcopy(mass)
+            mutated["common_from"]["locus"] = locus
+            with self.subTest(locus=locus), self.assertRaisesRegex(AssertionError, "invalid Antiphonary locator"):
+                _antiphonary_row("sanctoral", mutated)
+        wrong_source = copy.deepcopy(mass)
+        wrong_source["common_from"]["source_id"] = "artifact.unrelated-antiphonary"
+        with self.assertRaisesRegex(AssertionError, "invalid Antiphonary source"):
+            _antiphonary_row("sanctoral", wrong_source)
+
+    def test_held_ordo_evidence_keeps_precedence_over_common_direction(self) -> None:
+        masses = {mass["key"]: mass for payload in self.calendar["sections"].values()
+                  for mass in payload["masses"]}
+        overlap = [row for row in self.rows
+                   if row["basis"] == "ordo-lectionum-missae-1981"
+                   and masses[row["mass_key"]].get("common_from")]
+        self.assertTrue(overlap)
+        derived = {row["mass_key"]: row for row in derive_rows(self.calendar)}
+        for row in overlap:
+            with self.subTest(mass=row["mass_key"]):
+                self.assertEqual(derived[row["mass_key"]], row)
+                self.assertEqual(row["evidence_scope"], "lectionary-readings")
 
     def test_inventory_is_exact_current_note_recovery(self) -> None:
         self.assertEqual(self.rows, self.expected)

@@ -2,11 +2,13 @@
 from __future__ import annotations
 
 import json
+import argparse
 import subprocess
 import sys
 import tempfile
 import tomllib
 import unittest
+from types import SimpleNamespace
 from importlib.machinery import SourceFileLoader
 from pathlib import Path
 
@@ -214,11 +216,11 @@ class ProductionLedgerTests(unittest.TestCase):
         for form in unchanged["forms"]:
             form["propers"] = [p for p in form["propers"]
                                if p["name"] not in {"Collect", "Secret", "Postcommunion"}]
-        self.assertEqual('e9cca9b307fde1df85b16efe33465ac8936d5309cb4fb8d850f9508f1fca68d4',
+        self.assertEqual('2be17aea48a931cee2ce981fb995323730148601c3b6038897a1db34c860dda6',
                          hashlib.sha256(json.dumps(unchanged, ensure_ascii=False, sort_keys=True,
                                                    separators=(",", ":")).encode()).hexdigest())
         for form in mass["forms"]:
-            self.assertEqual({'night': ['Introit', 'Collect', 'Epistle', 'Gradual', 'Alleluia', 'Gospel', 'Offertory', 'Secret', 'Communion', 'Postcommunion'], 'dawn': ['Introit', 'Collect', 'Epistle', 'Gradual', 'Alleluia', 'Gospel', 'Offertory', 'Secret', 'Communion', 'Postcommunion'], 'day': ['Introit', 'Collect', 'Epistle', 'Gradual', 'Gospel', 'Offertory', 'Secret', 'Communion', 'Postcommunion']}[form["id"]], [p["name"] for p in form["propers"]])
+            self.assertEqual({'night': ['Introit', 'Collect', 'Epistle', 'Gradual', 'Alleluia', 'Gospel', 'Offertory', 'Secret', 'Communion', 'Postcommunion'], 'dawn': ['Introit', 'Collect', 'Epistle', 'Gradual', 'Alleluia', 'Gospel', 'Offertory', 'Secret', 'Communion', 'Postcommunion'], 'day': ['Introit', 'Collect', 'Epistle', 'Gradual', 'Alleluia', 'Gospel', 'Offertory', 'Secret', 'Communion', 'Postcommunion']}[form["id"]], [p["name"] for p in form["propers"]])
             for proper in form["propers"]:
                 address = (form["id"], proper["name"])
                 if address not in expected:
@@ -418,6 +420,45 @@ class ProductionLedgerTests(unittest.TestCase):
             rows["s-ubaldi-episcopi-confessoris", "Collect"]["publication_locator"],
         )
 
+    def test_2008_collect_owners_distinguish_held_latin_from_unheld_english(self) -> None:
+        document = yaml.safe_load((CALENDARS / "postconciliar/propers.yaml").read_text())
+        masses = {m["key"]: m for section in document["sections"].values()
+                  for m in section["masses"]}
+        expected = {"saint-pius-pietrelcina-priest": "pio",
+                    "saint-juan-diego-cuauhtlatoatzin": "juan-diego",
+                    "our-lady-guadalupe": "guadalupe"}
+        artifact = "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174"
+        inventory = tomllib.loads((INVENTORIES / "missal-expected-targets-v1.toml").read_text())
+        target_by_id = {row["id"]: row for row in inventory["targets"]}
+        english = tomllib.loads((INVENTORIES / "postconciliar-proper-translations-v1.toml").read_text())
+        latin = tomllib.loads((INVENTORIES / "postconciliar-proper-latin-provenance-v1.toml").read_text())
+        for mass_key, suffix in expected.items():
+            with self.subTest(mass=mass_key):
+                mass = masses[mass_key]
+                self.assertEqual("partial", mass["text_status"]["state"])
+                found = [p for p in mass["propers"] if p["name"] == "Collect"]
+                self.assertEqual(1, len(found))
+                proper = found[0]
+                self.assertEqual("composed", proper["source"])
+                self.assertEqual({"state": "unavailable", "scope": "proper-body",
+                                  "body_status": "held-unpublished",
+                                  "reasons": [{"kind": "rights-withheld", "source_id": artifact}]},
+                                 proper["text_status"])
+                self.assertTrue({"text", "incipit", "text_sha256", "provenance"}.isdisjoint(proper))
+                self.assertEqual([], [r for r in latin["entries"] if r["mass"] == mass_key])
+                target = target_by_id[f"postconciliar:2008:supplement:{suffix}-collect"]
+                self.assertEqual("established", target["identity_state"])
+                records = [r for r in english["untranslated"] if r["mass"] == mass_key and r["proper"] == "Collect"]
+                self.assertEqual(1, len(records))
+                row = records[0]
+                self.assertEqual(("main", "all", 1, "en", "body", "unavailable"),
+                    tuple(row[k] for k in ("form_id", "cycle", "occurrence", "lang", "extent", "availability")))
+                self.assertEqual({"kind": "no-exemplar"}, row["reason"])
+                self.assertIn("Latin source body is privately held", row["note"])
+        sept8 = masses["nativity-blessed-virgin-mary"]
+        self.assertFalse(any(p["name"] == "Prayer over the Offerings" for p in sept8["propers"]),
+                         "the unresolved two-option source packet is outside these three Collects")
+
     def test_ledgers_cover_every_direct_text_without_name_collapse(self) -> None:
         paths = [
             CALENDARS / calendar / "propers.yaml"
@@ -436,7 +477,7 @@ class ProductionLedgerTests(unittest.TestCase):
             # 1120 since 2026-10-20 (C3): St Lucy's Communion carries the
             # Missal antiphon rather than a Bible reconstruction.
             # +3 on 2026-10-20: source-backed Christ-the-King orations.
-            "roman-1962": (1182, 15),
+            "roman-1962": (1216, 23),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -447,7 +488,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual(total, len(records))
             self.assertEqual(
                 # 46 since 2026-10-01: KI-054 published 31 quarantined bodies.
-                {"postconciliar": 329, "roman-1962": 46}.get(calendar, 0),
+                {"postconciliar": 329, "roman-1962": 30}.get(calendar, 0),
                 sum(row.get("body_status") == "removed" for row in records.values()),
             )
             # Four duplicate-name pairs and one six-item procession are all
@@ -458,7 +499,7 @@ class ProductionLedgerTests(unittest.TestCase):
     def test_publication_loader_validates_production_source_metadata(self) -> None:
         # 1114 since 2026-10-01: St Angela Merici's Secret and Postcommunion.
         # 1120 since 2026-10-20 (C3): St Lucy's Communion has its own body.
-        expected = {"postconciliar": 329, "roman-1962": 1182, "roman-pre-1955": 1182}
+        expected = {"postconciliar": 329, "roman-1962": 1216, "roman-pre-1955": 1216}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -500,8 +541,8 @@ class ProductionLedgerTests(unittest.TestCase):
         # read on the 1962 page image and on the 1862 Pustet's (and the Mame's).
         # 1074 since 2026-10-20 (C3): St Lucy's Communion is independently
         # collated on the 1962 and public-domain Mame 1922 page images.
-        self.assertEqual(1136, len(permitted))
-        self.assertEqual(1136, len(roman))
+        self.assertEqual(1186, len(permitted))
+        self.assertEqual(1186, len(roman))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -568,8 +609,8 @@ class ProductionLedgerTests(unittest.TestCase):
             # a bounded, independently publishable 1929 Schott derivative.
             "editorial-projection-2026-10-20": {
                 "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-orations-dc4287d2",
-                "publication_source_ids": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-lent-ember-orations-la-checked-39b0b0aa', 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.adapted-primary-readings-la-checked-e3a67098'},
-                "projected_from": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", target_artifact, "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-lent-ember-orations-la-checked-39b0b0aa', 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.adapted-primary-readings-la-checked-e3a67098'},
+                "publication_source_ids": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-lent-ember-orations-la-checked-39b0b0aa', 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.adapted-primary-readings-la-checked-e3a67098', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.uncited-eight-chants-la-checked-d05badcc', 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-souls-twelve-bodies-la-checked-4a41c7e8'},
+                "projected_from": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", target_artifact, "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-lent-ember-orations-la-checked-39b0b0aa', 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.adapted-primary-readings-la-checked-e3a67098', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.uncited-eight-chants-la-checked-d05badcc', 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-souls-twelve-bodies-la-checked-4a41c7e8'},
             },
             # One source-proved correction; existing permission count is unchanged.
             "editorial-projection-2026-10-21": {
@@ -717,7 +758,7 @@ class ProductionLedgerTests(unittest.TestCase):
                 for line in payload[start - 1 : end]
             )
             self.assertEqual(row["text_sha256"], text_sha256(projected_body))
-        self.assertEqual(375, len(nonpermitted))
+        self.assertEqual(359, len(nonpermitted))
         collated = [
             item for item in nonpermitted if item[2]["provenance_status"] == "collated"
         ]
@@ -778,7 +819,7 @@ class ProductionLedgerTests(unittest.TestCase):
         unresolved = [
             row for _, _, row in nonpermitted if row["provenance_status"] == "unresolved"
         ]
-        self.assertEqual(371, len(unresolved))
+        self.assertEqual(355, len(unresolved))
         self.assertTrue(all(row["publication_basis"] == "unresolved" for row in unresolved))
         postconciliar = [
             row for calendar, _, row in nonpermitted if calendar == "postconciliar"
@@ -936,6 +977,137 @@ class ModelTests(unittest.TestCase):
                 )["propers"][0]
                 self.assertEqual(status, projected["text_status"])
                 self.assertNotIn("latin", projected)
+
+    def test_held_unpublished_has_no_ledger_and_projects_only_neutral_state(self) -> None:
+        source_id = "artifact.demo.held"
+        status = {
+            "state": "unavailable", "scope": "proper-body",
+            "body_status": "held-unpublished",
+            "reasons": [{"kind": "rights-withheld", "source_id": source_id}],
+        }
+        proper = {"name": "Collect", "source": "composed", "text_status": status}
+        document = demo_document(proper)
+        self.assertEqual([], list(body_owners(document)))
+        with tempfile.TemporaryDirectory() as room:
+            sources = Path(room) / "sources"
+            calendar_dir = sources / "calendars/demo"
+            inventory_dir = sources / "inventories"
+            calendar_dir.mkdir(parents=True)
+            inventory_dir.mkdir()
+            calendar = calendar_dir / "propers.yaml"
+            calendar.write_text(yaml.safe_dump(document, sort_keys=False))
+            sidecar = inventory_dir / f"demo{SIDECAR_SUFFIX}"
+            sidecar.write_text(render_unresolved_sidecar("demo", document).replace(
+                "\n[defaults]\n", "\nentries = []\n\n[defaults]\n", 1))
+            self.assertEqual([], sidecar_problems(
+                [calendar], inventory_root=inventory_dir, required=True,
+                registered_source_ids={source_id}))
+            # A made-up former owner is forbidden, even with a syntactically
+            # well-formed fixture hash: it is an orphan, not source evidence.
+            sidecar.write_text(toml_ledger(
+                f'text_sha256 = "{text_sha256("Fixture former words.")}"\n'
+                'body_status = "removed"'))
+            self.assertTrue(any("orphan entry" in item for item in sidecar_problems(
+                [calendar], inventory_root=inventory_dir, required=True,
+                registered_source_ids={source_id})))
+        public = load_tool("mass-propers")
+        wanted_latin = {"target": "Collect", "state": "unavailable",
+                        "held": False, "available": False, "withheld": True}
+        for surfaces in (STRUCTURE_SURFACES, CLI_SURFACES, SURFACES):
+            with self.subTest(surfaces=surfaces):
+                clean = sanitize_mass(document["sections"]["01"]["masses"][0], {}, surfaces)
+                self.assertEqual(wanted_latin, clean["propers"][0]["latin"])
+                visible = public.rights_safe_copy(clean)["propers"][0]
+                self.assertEqual({"state": "unavailable", "scope": "proper-body"},
+                                 visible["text_status"])
+                self.assertEqual(wanted_latin, visible["latin"])
+                self.assertNotIn("text", visible)
+                self.assertNotIn("body_status", json.dumps(visible))
+                self.assertNotIn(source_id, json.dumps(visible))
+        # The projection also refuses accidentally resident private words;
+        # validation independently rejects the contradictory source shape.
+        invalid = {**proper, "text": "Private fixture words."}
+        for invalid_status in (status, {**status, "state": "partial"},
+                               {**status, "scope": "missal-formulary"},
+                               {**status, "reasons": [{"kind": "no-exemplar"}]}):
+            projected = sanitize_proper({**invalid, "text_status": invalid_status},
+                                       LatinKey("day", "", "Collect"), {}, SURFACES)
+            self.assertNotIn("text", projected)
+            self.assertEqual(wanted_latin, projected["latin"])
+
+    def test_held_unpublished_checker_requires_exact_registered_rights_witness(self) -> None:
+        checker = load_tool("check-calendar-masses")
+        exact = "artifact.demo.held"
+        broad = "edition.demo"
+        checker.source_ids = lambda: ({exact, broad}, None)
+        checker.source_records = lambda: ({
+            exact: SimpleNamespace(record_type="artifact"),
+            broad: SimpleNamespace(record_type="edition"),
+        }, None)
+        proper = {
+            "name": "Collect", "source": "composed",
+            "text_status": {"state": "unavailable", "scope": "proper-body",
+                            "body_status": "held-unpublished",
+                            "reasons": [{"kind": "rights-withheld", "source_id": exact}]},
+        }
+        problems = []
+        checker.check_proper("demo", proper, problems)
+        self.assertEqual([], problems)
+        variants = []
+        def changed():
+            return json.loads(json.dumps(proper))
+        row = changed(); row["text"] = "Unexpected words."; variants.append(row)
+        row = changed(); row["text_sha256"] = "a" * 64; variants.append(row)
+        row = changed(); row["text_status"]["text_sha256"] = "a" * 64; variants.append(row)
+        row = changed(); row["text_status"]["body_status"] = "removed"; variants.append(row)
+        row = changed(); row["text_status"]["scope"] = "missal-formulary"; variants.append(row)
+        row = changed(); row["text_status"]["state"] = "partial"; variants.append(row)
+        row = changed(); row["text_status"]["reasons"][0]["kind"] = "witness-gap"; variants.append(row)
+        row = changed(); row["text_status"]["reasons"][0] = {"kind": "no-exemplar"}; variants.append(row)
+        row = changed(); row["text_status"]["reasons"][0]["source_id"] = broad; variants.append(row)
+        row = changed(); row["text_status"]["reasons"][0]["source_id"] = "artifact.unregistered"; variants.append(row)
+        row = changed(); row["text_status"]["reasons"].append({"kind": "rights-withheld", "source_id": exact}); variants.append(row)
+        for index, row in enumerate(variants):
+            with self.subTest(invalid=index):
+                checker.check_proper("demo", row, problems := [])
+                self.assertTrue(problems, row)
+        checker.check_text_status("mass", proper["text_status"], problems := [])
+        self.assertTrue(problems, "the private marker cannot be used on a Mass")
+        for witness_type in ("segment", "passage"):
+            checker.source_records = lambda t=witness_type: ({exact: SimpleNamespace(record_type=t)}, None)
+            checker.check_proper("demo", proper, problems := [])
+            self.assertEqual([], problems)
+
+    def test_held_unpublished_does_not_shift_legacy_latin_ledger_ordinals(self) -> None:
+        source_id = "artifact.demo.held"
+        reason = [{"kind": "rights-withheld", "source_id": source_id}]
+        held = {"name": "Collect", "source": "composed", "text_status": {
+            "state": "unavailable", "scope": "proper-body",
+            "body_status": "held-unpublished", "reasons": reason}}
+        removed = {"name": "Collect", "source": "composed", "text_status": {
+            "state": "unavailable", "scope": "proper-body", "reasons": reason}}
+        present = {"name": "Collect", "source": "composed", "text": "Public fixture words."}
+        owners = list(body_owners(demo_document(held, removed, present)))
+        self.assertEqual([(LatinKey("day", "", "Collect", occurrence=1), None, "removed"),
+                          (LatinKey("day", "", "Collect", occurrence=2), "Public fixture words.", "present")], owners)
+        public = load_tool("mass-propers")
+        rows = list(public.coverage_slot_units(held, ("day", "main", "Collect", 1)))
+        self.assertEqual(("day", "main", "Collect", "all", 1), rows[0][0],
+                         "the exact source seat still exists outside the Latin text ledger")
+
+    def test_held_public_body_keeps_its_existing_permission_behavior(self) -> None:
+        text = "Public fixture words."
+        key = LatinKey("day", "", "Collect", occurrence=1)
+        row = {"text_sha256": text_sha256(text), "provenance_status": "identified",
+               "publication_status": "permitted", "publication_basis": "project-created",
+               "surfaces": sorted(SURFACES), "transformations": [],
+               "provenance_evidence": "Test fixture created here.",
+               "provenance_confidence": "high"}
+        proper = {"name": "Collect", "source": "composed", "text": text}
+        clean = sanitize_proper(proper, key, {key: row}, SURFACES)
+        self.assertEqual(text, clean["text"])
+        self.assertFalse(clean["latin"]["withheld"])
+        self.assertTrue(decision_for(key, text, {key: row}).permits(SURFACES))
 
     def test_removed_body_retains_hash_without_fabricating_provenance(self) -> None:
         former = "Corpus quarantined."
@@ -1446,6 +1618,68 @@ class ProjectionTests(unittest.TestCase):
         self.assertNotIn("publication_basis", reading)
         payload = json.loads(machine)
         self.assertTrue(payload["appointed"][0]["proper"]["latin"]["withheld"])
+
+
+    def test_held_unpublished_cli_structure_and_daily_dumps_keep_private_status_private(self) -> None:
+        source_id = "artifact.private.fixture"
+        status = {"state": "unavailable", "scope": "proper-body",
+                  "body_status": "held-unpublished",
+                  "reasons": [{"kind": "rights-withheld", "source_id": source_id}]}
+        self.document = demo_document({"name": "Collect", "source": "composed", "text_status": status})
+        (self.calendars / "demo/propers.yaml").write_text(yaml.safe_dump(self.document, sort_keys=False))
+        (self.inventories / f"demo{SIDECAR_SUFFIX}").write_text(
+            render_unresolved_sidecar("demo", self.document).replace(
+                "\n[defaults]\n", "\nentries = []\n\n[defaults]\n", 1))
+        neutral = {"target": "Collect", "state": "unavailable",
+                   "held": False, "available": False, "withheld": True}
+        def public_statuses(value):
+            if isinstance(value, dict):
+                if isinstance(value.get("text_status"), dict):
+                    self.assertEqual({"state", "scope"}, set(value["text_status"]))
+                for child in value.values(): public_statuses(child)
+            elif isinstance(value, list):
+                for child in value: public_statuses(child)
+        mass_propers = load_tool("mass-propers")
+        built = mass_propers.calendar_structure(self.calendars, "demo", {})
+        public_statuses(built)
+        self.assertEqual(neutral, built["masses"][0]["propers"][0]["latin"])
+        command = [sys.executable, str(ROOT / "tools/mass-propers"), "show",
+                   "--root", str(self.calendars), "--calendar", "demo", "--mass", "day"]
+        machine = None
+        for fmt in ("json", "yaml", "text"):
+            result = subprocess.run([*command, "--format", fmt], check=True, capture_output=True, text=True)
+            self.assertNotIn("held-unpublished", result.stdout)
+            self.assertNotIn(source_id, result.stdout)
+            if fmt == "text":
+                self.assertIn("Latin text unavailable", result.stdout)
+                continue
+            payload = json.loads(result.stdout) if fmt == "json" else yaml.safe_load(result.stdout)
+            public_statuses(payload)
+            self.assertEqual(neutral, payload["appointed"][0]["proper"]["latin"])
+            self.assertEqual(neutral, payload["mass"]["propers"][0]["latin"])
+            machine = payload
+        today = load_tool("mass-today")
+        args = argparse.Namespace(form=None, lang="la", bible=None, witness=None, json=True, format="json")
+        assembled = today.propers_of("demo", "day", args, payload=machine)
+        self.assertNotIn("refused", assembled)
+        self.assertEqual(neutral, assembled["propers"][0]["latin"])
+        public_statuses(assembled)
+        for fmt in ("json", "yaml"):
+            # Exercise the actual dump function in a subprocess: print_json
+            # binds its stream at import time, before redirect_stdout exists.
+            program = ("import argparse,json,sys; from importlib.machinery import SourceFileLoader; "
+                       "tool=SourceFileLoader('daily_dump',sys.argv[1]).load_module(); "
+                       "args=argparse.Namespace(json=sys.argv[2]=='json',format=sys.argv[2]); "
+                       "raise SystemExit(tool.render(json.load(sys.stdin),args))")
+            output = subprocess.run([sys.executable, "-c", program,
+                                     str(ROOT / "tools/mass-today"), fmt],
+                                    input=json.dumps({"assembled": assembled}),
+                                    check=True, capture_output=True, text=True).stdout
+            self.assertNotIn("held-unpublished", output)
+            self.assertNotIn(source_id, output)
+            dumped = json.loads(output) if fmt == "json" else yaml.safe_load(output)
+            public_statuses(dumped)
+
 
 
 if __name__ == "__main__":

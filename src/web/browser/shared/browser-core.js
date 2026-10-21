@@ -1435,8 +1435,39 @@ window.Triptych = (function () {
     'unresolved': 'target relationship unresolved'
   });
 
+  function validateBodyLanguages(unit) {
+    if (!unit || !Object.prototype.hasOwnProperty.call(unit, 'body_languages')) return;
+    if (!Array.isArray(unit.body_languages) || unit.body_languages.length !== 1 ||
+        unit.body_languages[0] !== 'en' || unit.component !== 'proper-body' ||
+        !unit.scripture_component || typeof unit.scripture_component !== 'object' ||
+        Array.isArray(unit.scripture_component)) {
+      throw new Error('language-only body coverage requires English scope and a separate Scripture component');
+    }
+  }
+
+  function languageBodyTargetMatches(proper, row) {
+    if (!row || !row.target || row.target.extent !== 'body') return false;
+    const unit = proper.coverage;
+    validateBodyLanguages(unit);
+    if (!unit || !unit.body_languages || !unit.body_languages.includes(row.lang)) return false;
+    const target = row.target;
+    function identity(parts) {
+      return parts.map(function (one) {
+        return encodeURIComponent(String(one)).replace(/[!'()*]/g, function (c) {
+          return '%' + c.charCodeAt(0).toString(16).toUpperCase();
+        });
+      }).join(':');
+    }
+    const prefix = decodeURIComponent(unit.target_id.split(':')[0]).split(':').slice(0, 2);
+    const source = identity(prefix.concat([target.mass, target.form_id,
+      target.proper, target.occurrence]));
+    return identity([source, unit.cycle_family || 'all', target.cycle]) === unit.target_id &&
+      target.proper === proper.name;
+  }
+
   function coverageUnitsOf(owner) {
     if (!owner) return [];
+    validateBodyLanguages(owner.coverage);
     const units = owner.coverage && owner.coverage.schema === 'triptych-missal-unit-coverage/v1'
       ? [owner.coverage] : [];
     ['cycles', 'weekday_cycles'].forEach(function (family) {
@@ -1488,7 +1519,9 @@ window.Triptych = (function () {
 
   /** Only report identities and dispositions are aggregated; text rows are never counted. */
   function summarizeCoverage(units) {
-    const unique = new Map(units.map(function (unit) { return [unit.occurrence_id, unit]; }));
+    const unique = new Map(units.map(function (unit) {
+      validateBodyLanguages(unit); return [unit.occurrence_id, unit];
+    }));
     const languages = new Map();
     ['la', 'en'].forEach(function (lang) {
       languages.set(lang, {
@@ -1512,11 +1545,14 @@ window.Triptych = (function () {
         if (unit.scripture_component) {
           row.scripture_targets.add(unit.scripture_component.target_id);
           row.scripture_occurrences += 1;
-          row.mixed_targets.add(unit.target_id); row.mixed_occurrences += 1;
+          if (!unit.body_languages || unit.body_languages.includes(entry.lang)) {
+            row.mixed_targets.add(unit.target_id); row.mixed_occurrences += 1;
+          }
         }
         if (unit.component === 'scripture') {
           row.scripture_targets.add(unit.target_id); row.scripture_occurrences += 1; return;
         }
+        if (unit.body_languages && !unit.body_languages.includes(entry.lang)) return;
         row.targets.add(unit.target_id); row.occurrences += 1;
         row.availability[entry.availability] = (row.availability[entry.availability] || 0) + 1;
         row.relationships[entry.relationship] = (row.relationships[entry.relationship] || 0) + 1;
@@ -2088,7 +2124,9 @@ window.Triptych = (function () {
     const unavailable = (proper.unavailable_translations || []).concat(
       proper.untranslated || []
     ).find((translation) => {
-      return translation && translation.lang === asked;
+      return translation && translation.lang === asked &&
+        !(proper.source === 'scripture' && translation.target &&
+          translation.target.extent === 'body' && !languageBodyTargetMatches(proper, translation));
     });
     if (unavailable && !(proper.translations || []).some((translation) => {
       return translation && translation.lang === asked && translation.text;
@@ -2151,6 +2189,7 @@ window.Triptych = (function () {
 
   function unitCoverageOf(owner) {
     const unit = owner && owner.coverage;
+    validateBodyLanguages(unit);
     return unit && unit.schema === 'triptych-missal-unit-coverage/v1' ? unit : null;
   }
 
@@ -2470,8 +2509,10 @@ window.Triptych = (function () {
     // their opening words and does not hold their bodies.
     const hasOrationState = Boolean(proper.text) ||
       (proper.translations || []).some((translation) => translation && translation.text) ||
-      (proper.unavailable_translations || []).length > 0 ||
-      (proper.untranslated || []).length > 0 ||
+      (proper.unavailable_translations || []).concat(proper.untranslated || []).some(function (row) {
+        return proper.source !== 'scripture' || !row.target || row.target.extent !== 'body' ||
+          languageBodyTargetMatches(proper, row);
+      }) ||
       Boolean(proper.latin && proper.latin.withheld) ||
       properBodyUnavailable(proper);
     let missalTextShown = false;

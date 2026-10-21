@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from collections import Counter
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, unquote
 import tomllib
 
 SCHEMA = "triptych-missal-coverage/v1"
@@ -179,6 +179,20 @@ def unit(owner: dict, *, target_id: str, occurrence_id: str,
     witnesses = witnesses or {}
     if component is None:
         component = "scripture" if owner.get("source") == "scripture" else "proper-body"
+    body_languages = None
+    if component == "scripture":
+        scoped = set()
+        for row in owner.get("untranslated") or []:
+            target = row.get("target") or {}
+            prefix = unquote(target_id.split(":")[0]).split(":")[:2]
+            expected = identity(identity(*prefix, target.get("mass"), target.get("form_id"),
+                                         target.get("proper"), target.get("occurrence")),
+                                cycle_family or "all", target.get("cycle"))
+            if target.get("extent") == "body" and expected == target_id:
+                scoped.add(row.get("lang"))
+        if scoped:
+            body_languages = sorted(scoped)
+            component = "proper-body"
     languages = []
     for lang in LANGUAGES:
         published = [row for row in owner.get("translations") or []
@@ -217,7 +231,7 @@ def unit(owner: dict, *, target_id: str, occurrence_id: str,
             relations.add(latin_relation or evidence["relationship"])
             rights.add(evidence["publication_basis"])
             collations.add(evidence["collation"])
-        if component == "scripture":
+        if component == "scripture" or (body_languages is not None and lang not in body_languages):
             availability, relation, right = "unresolved", "bible-reconstruction", "unresolved"
         elif source_body or offered:
             availability = "available"
@@ -240,6 +254,8 @@ def unit(owner: dict, *, target_id: str, occurrence_id: str,
         "occurrence_id": occurrence_id, "component": component,
         "cycle_family": cycle_family, "cycle": cycle, "languages": languages,
     }
+    if body_languages is not None:
+        result["body_languages"] = body_languages
     if component != "scripture" and owner.get("citations"):
         result["scripture_component"] = {
             "target_id": identity(target_id, "scripture"),
@@ -247,7 +263,18 @@ def unit(owner: dict, *, target_id: str, occurrence_id: str,
             "relationship": "bible-reconstruction", "availability": "unresolved",
             "publication_basis": "unresolved",
         }
+    validate_body_languages(result)
     return result
+
+
+def validate_body_languages(unit: dict) -> None:
+    """The optional language-only body scope is closed and additive."""
+    if "body_languages" not in unit:
+        return
+    if (unit["body_languages"] != ["en"]
+            or unit.get("component") != "proper-body"
+            or not isinstance(unit.get("scripture_component"), dict)):
+        raise ValueError("language-only body coverage requires body_languages=['en'] and a separate Scripture component")
 
 
 def summarize(units: list[dict], scope: str) -> dict:
@@ -256,6 +283,7 @@ def summarize(units: list[dict], scope: str) -> dict:
     for one in units:
         if one.get("schema") != UNIT_SCHEMA:
             raise ValueError("Missal coverage unit has an unsupported schema")
+        validate_body_languages(one)
         key = one["occurrence_id"]
         if key in by_occurrence and one != by_occurrence[key]:
             raise ValueError(f"conflicting Missal coverage occurrence {key}")
@@ -267,13 +295,15 @@ def summarize(units: list[dict], scope: str) -> dict:
     languages = []
     alternatives = set()
     for lang in LANGUAGES:
+        language_bodies = [one for one in bodies
+                           if lang in one.get("body_languages", LANGUAGES)]
         availability = Counter({key: 0 for key in AVAILABILITIES})
         relations = Counter({key: 0 for key in RELATIONSHIPS})
         collations = Counter({key: 0 for key in COLLATIONS})
         available_targets, exact_targets = set(), set()
         offered: dict[str, dict] = {}
         exact_occurrences = 0
-        for one in bodies:
+        for one in language_bodies:
             row = next(row for row in one["languages"] if row["lang"] == lang)
             if row["availability"] not in AVAILABILITIES or row["relationship"] not in RELATIONSHIPS:
                 raise ValueError("Missal coverage unit has an unknown classification")
@@ -311,16 +341,18 @@ def summarize(units: list[dict], scope: str) -> dict:
                  "occurrences": len(item["occurrence_ids"]),
                  "available": len(item["occurrence_ids"])})
         languages.append({
-            "lang": lang, "targets": len({one["target_id"] for one in bodies}),
-            "occurrences": len(bodies), "available": availability["available"],
+            "lang": lang, "targets": len({one["target_id"] for one in language_bodies}),
+            "occurrences": len(language_bodies), "available": availability["available"],
             "available_targets": len(available_targets),
             "exact_target": exact_occurrences, "exact_target_targets": len(exact_targets),
             "scripture_targets": len({one["target_id"] for one in scripture} | {
                 one["scripture_component"]["target_id"] for one in mixed
             }),
             "scripture_occurrences": len(scripture) + len(mixed),
-            "mixed_targets": len({one["target_id"] for one in mixed}),
-            "mixed_occurrences": len(mixed),
+            "mixed_targets": len({one["target_id"] for one in mixed
+                                  if lang in one.get("body_languages", LANGUAGES)}),
+            "mixed_occurrences": sum(lang in one.get("body_languages", LANGUAGES)
+                                     for one in mixed),
             "availability": dict(availability), "relationships": dict(relations),
             "collations": dict(collations),
             "witnesses": witnesses,

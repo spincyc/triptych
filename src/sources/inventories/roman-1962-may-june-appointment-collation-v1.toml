@@ -1,0 +1,2537 @@
+collation_schema = 1
+record_type = "calendar-proper-citation-collation"
+calendar = "roman-1962"
+sections = ["sanctoral"]
+target = "src/sources/calendars/roman-1962/propers.yaml"
+collated_on = "2026-10-20"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+artifact_byte_size = 82815941
+artifact_page_count = 1088
+scope = "All normal local nonprimary appointment units and printed referrals for this bounded active May-June 2026 group. Existing primary bounds and Common model proofs are reused separately."
+method = "Individual actual page-image examination of each complete owned source extent; printed numeric citations encoded through tools/citations.parse_citation. The source denominator was enumerated independently of current Proper nodes."
+limits = "Appointment identities, source order and seasonal membership only. No body wording, new publication basis, guessed citations, new Common defaults, unsupported votive eligibility, Ordinary or annual calendar computation."
+
+[[appointments]]
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+origin = "local"
+pdf_page = 597
+printed_page = 516
+column = "L"
+marginal_number = 2482
+canonical_references = ["Wisdom 10:17", "Psalms 126:1"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["a812c9cdd2e89eb67b348fcb754d04c5a68144c68afaa9573c6bccd66cb3664a"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 597
+printed_page = 516
+column = "L"
+marginal_number = 2483
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["a812c9cdd2e89eb67b348fcb754d04c5a68144c68afaa9573c6bccd66cb3664a"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+origin = "local"
+pdf_page = 597
+printed_page = 516
+column = "R"
+marginal_number = 2485
+canonical_references = []
+source_condition = "Tempore paschali"
+raster_sha256 = ["a812c9cdd2e89eb67b348fcb754d04c5a68144c68afaa9573c6bccd66cb3664a"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+origin = "local"
+pdf_page = 598
+printed_page = 517
+column = "L"
+marginal_number = 2490
+canonical_references = ["Psalms 89:17"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["86f6d7b33c4ec582e34ae608b79ada0c08e1042d62a9f70525ee859b4bc0384d"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 598
+printed_page = 517
+column = "L"
+marginal_number = 2491
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["86f6d7b33c4ec582e34ae608b79ada0c08e1042d62a9f70525ee859b4bc0384d"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+origin = "local"
+pdf_page = 598
+printed_page = 517
+column = "L"
+marginal_number = 2492
+canonical_references = ["Matthew 13:54, 55"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["86f6d7b33c4ec582e34ae608b79ada0c08e1042d62a9f70525ee859b4bc0384d"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 598
+printed_page = 517
+column = "L"
+marginal_number = 2493
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["86f6d7b33c4ec582e34ae608b79ada0c08e1042d62a9f70525ee859b4bc0384d"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-athanasii-episcopi-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+origin = "local"
+pdf_page = 598
+printed_page = 517
+column = "R"
+marginal_number = 2494
+canonical_references = ["Sirach 15:5", "Psalms 91:2"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["86f6d7b33c4ec582e34ae608b79ada0c08e1042d62a9f70525ee859b4bc0384d"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-athanasii-episcopi-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 598
+printed_page = 517
+column = "R"
+marginal_number = 2495
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["86f6d7b33c4ec582e34ae608b79ada0c08e1042d62a9f70525ee859b4bc0384d"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-athanasii-episcopi-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+origin = "local"
+pdf_page = 599
+printed_page = 518
+column = "L"
+marginal_number = 2497
+canonical_references = ["Psalms 109:4", "James 1:12"]
+source_condition = "Tempore paschali"
+raster_sha256 = ["f60b138790fec9433f8d20d1ab920354aeed32294df3f376065125b0522c4850"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-athanasii-episcopi-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+origin = "local"
+pdf_page = 599
+printed_page = 518
+column = "R"
+marginal_number = 2501
+canonical_references = ["Psalms 88:21-22"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["f60b138790fec9433f8d20d1ab920354aeed32294df3f376065125b0522c4850"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-athanasii-episcopi-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 599
+printed_page = 518
+column = "R"
+marginal_number = 2502
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["f60b138790fec9433f8d20d1ab920354aeed32294df3f376065125b0522c4850"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-athanasii-episcopi-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+origin = "local"
+pdf_page = 599
+printed_page = 518
+column = "R"
+marginal_number = 2503
+canonical_references = ["Matthew 10:27"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["f60b138790fec9433f8d20d1ab920354aeed32294df3f376065125b0522c4850"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-athanasii-episcopi-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 599
+printed_page = 518
+column = "R"
+marginal_number = 2504
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["f60b138790fec9433f8d20d1ab920354aeed32294df3f376065125b0522c4850"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-monicae-viduae"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+origin = "local"
+pdf_page = 600
+printed_page = 519
+column = "L"
+marginal_number = 2508
+canonical_references = ["Psalms 118:75, 120, 1"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["f34e0bbf31c0f65267da02a2a43623e316cc7b270078f9a09c5430fa51f6a1f7"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-monicae-viduae"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 600
+printed_page = 519
+column = "R"
+marginal_number = 2509
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["f34e0bbf31c0f65267da02a2a43623e316cc7b270078f9a09c5430fa51f6a1f7"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-monicae-viduae"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+origin = "local"
+pdf_page = 600
+printed_page = 519
+column = "R"
+marginal_number = 2511
+canonical_references = ["Psalms 44:5"]
+source_condition = "Tempore paschali"
+raster_sha256 = ["f34e0bbf31c0f65267da02a2a43623e316cc7b270078f9a09c5430fa51f6a1f7"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-monicae-viduae"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+origin = "local"
+pdf_page = 601
+printed_page = 520
+column = "L"
+marginal_number = 2513
+canonical_references = ["Psalms 44:3"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["ff410ceb2900538752617a8879bc88f92722d08a55a140942cc1873949d22dc6"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-monicae-viduae"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 601
+printed_page = 520
+column = "L"
+marginal_number = 2514
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["ff410ceb2900538752617a8879bc88f92722d08a55a140942cc1873949d22dc6"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-monicae-viduae"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+origin = "local"
+pdf_page = 601
+printed_page = 520
+column = "L"
+marginal_number = 2515
+canonical_references = ["Psalms 44:8"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["ff410ceb2900538752617a8879bc88f92722d08a55a140942cc1873949d22dc6"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-monicae-viduae"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 601
+printed_page = 520
+column = "L"
+marginal_number = 2516
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["ff410ceb2900538752617a8879bc88f92722d08a55a140942cc1873949d22dc6"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-pii-v-papae-confessoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 601
+printed_page = 520
+column = "R"
+marginal_number = 2517
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["ff410ceb2900538752617a8879bc88f92722d08a55a140942cc1873949d22dc6"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-pii-v-papae-confessoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "inherited"
+pdf_page = 601
+printed_page = 520
+column = "R"
+marginal_number = 2518
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["ff410ceb2900538752617a8879bc88f92722d08a55a140942cc1873949d22dc6"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-pii-v-papae-confessoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "inherited"
+pdf_page = 601
+printed_page = 520
+column = "R"
+marginal_number = 2519
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["ff410ceb2900538752617a8879bc88f92722d08a55a140942cc1873949d22dc6"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+origin = "local"
+pdf_page = 602
+printed_page = 521
+column = "L"
+marginal_number = 2523
+canonical_references = ["Sirach 15:5", "Psalms 91:2"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["20475b5c0de7014b0328662a16d4018dd1ced4c435706df46f26dd8eff4ec291"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 602
+printed_page = 521
+column = "L"
+marginal_number = 2524
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["20475b5c0de7014b0328662a16d4018dd1ced4c435706df46f26dd8eff4ec291"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+origin = "local"
+pdf_page = 602
+printed_page = 521
+column = "R"
+marginal_number = 2526
+canonical_references = ["Sirach 45:9", "Hosea 14:6"]
+source_condition = "Tempore paschali"
+raster_sha256 = ["20475b5c0de7014b0328662a16d4018dd1ced4c435706df46f26dd8eff4ec291"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+origin = "local"
+pdf_page = 602
+printed_page = 521
+column = "R"
+marginal_number = 2527
+canonical_references = ["Psalms 36:30-31"]
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["20475b5c0de7014b0328662a16d4018dd1ced4c435706df46f26dd8eff4ec291"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 2
+origin = "local"
+pdf_page = 602
+printed_page = 521
+column = "R"
+marginal_number = 2528
+canonical_references = ["Sirach 45:9"]
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["20475b5c0de7014b0328662a16d4018dd1ced4c435706df46f26dd8eff4ec291"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+origin = "local"
+pdf_page = 603
+printed_page = 522
+column = "L"
+marginal_number = 2530
+canonical_references = ["Psalms 91:13"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["5a6b5e5a352c23867fbe39b9c224accbdfc223b23fd0ce29877344e6a79030ae"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 603
+printed_page = 522
+column = "L"
+marginal_number = 2531
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["5a6b5e5a352c23867fbe39b9c224accbdfc223b23fd0ce29877344e6a79030ae"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+origin = "local"
+pdf_page = 603
+printed_page = 522
+column = "L"
+marginal_number = 2532
+canonical_references = ["Luke 12:42"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["5a6b5e5a352c23867fbe39b9c224accbdfc223b23fd0ce29877344e6a79030ae"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 603
+printed_page = 522
+column = "R"
+marginal_number = 2533
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["5a6b5e5a352c23867fbe39b9c224accbdfc223b23fd0ce29877344e6a79030ae"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+origin = "local"
+pdf_page = 605
+printed_page = 524
+column = "R"
+marginal_number = 2549
+canonical_references = ["Nehemiah 9:27", "Psalms 32:1"]
+source_condition = "Tempore paschali"
+raster_sha256 = ["54c74f213ba58dc56370e5d0b2147852064be254a79651a6453530d6e79194e8"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 605
+printed_page = 524
+column = "R"
+marginal_number = 2550
+canonical_references = []
+source_condition = "Tempore paschali"
+raster_sha256 = ["54c74f213ba58dc56370e5d0b2147852064be254a79651a6453530d6e79194e8"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+origin = "local"
+pdf_page = 605
+printed_page = 524
+column = "R"
+marginal_number = 2552
+canonical_references = ["Psalms 88:6", "John 14:9"]
+source_condition = "Tempore paschali"
+raster_sha256 = ["54c74f213ba58dc56370e5d0b2147852064be254a79651a6453530d6e79194e8"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+origin = "local"
+pdf_page = 606
+printed_page = 525
+column = "R"
+marginal_number = 2554
+canonical_references = ["Psalms 88:6"]
+source_condition = "Tempore paschali"
+raster_sha256 = ["beede176114e6781972a95c80177ec23259159e3747dcfff09abd86489b01011"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 606
+printed_page = 525
+column = "R"
+marginal_number = 2555
+canonical_references = []
+source_condition = "Tempore paschali"
+raster_sha256 = ["beede176114e6781972a95c80177ec23259159e3747dcfff09abd86489b01011"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+origin = "local"
+pdf_page = 606
+printed_page = 525
+column = "R"
+marginal_number = 2556
+canonical_references = ["John 14:9, 10"]
+source_condition = "Tempore paschali"
+raster_sha256 = ["beede176114e6781972a95c80177ec23259159e3747dcfff09abd86489b01011"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 606
+printed_page = 525
+column = "R"
+marginal_number = 2557
+canonical_references = []
+source_condition = "Tempore paschali"
+raster_sha256 = ["beede176114e6781972a95c80177ec23259159e3747dcfff09abd86489b01011"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+origin = "local"
+pdf_page = 606
+printed_page = 525
+column = "R"
+marginal_number = 2558
+canonical_references = ["Nehemiah 9:27", "Psalms 32:1"]
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["beede176114e6781972a95c80177ec23259159e3747dcfff09abd86489b01011"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+proper = "Collect"
+occurrence = 2
+origin = "local"
+pdf_page = 606
+printed_page = 525
+column = "R"
+marginal_number = 2559
+canonical_references = []
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["beede176114e6781972a95c80177ec23259159e3747dcfff09abd86489b01011"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+origin = "local"
+pdf_page = 607
+printed_page = 526
+column = "L"
+marginal_number = 2561
+canonical_references = ["Psalms 44:17-18"]
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["decc1a64cecdfd3b3930ba62981ee2e0cf0581c34d3eac66574f7d98c0046eae"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 2
+origin = "local"
+pdf_page = 607
+printed_page = 526
+column = "L"
+marginal_number = 2562
+canonical_references = ["John 14:9"]
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["decc1a64cecdfd3b3930ba62981ee2e0cf0581c34d3eac66574f7d98c0046eae"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+proper = "Offertory"
+occurrence = 2
+origin = "local"
+pdf_page = 607
+printed_page = 526
+column = "R"
+marginal_number = 2564
+canonical_references = ["Psalms 18:15"]
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["decc1a64cecdfd3b3930ba62981ee2e0cf0581c34d3eac66574f7d98c0046eae"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 607
+printed_page = 526
+column = "R"
+marginal_number = 2565
+canonical_references = []
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["decc1a64cecdfd3b3930ba62981ee2e0cf0581c34d3eac66574f7d98c0046eae"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+origin = "local"
+pdf_page = 607
+printed_page = 526
+column = "R"
+marginal_number = 2566
+canonical_references = ["John 14:9, 10"]
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["decc1a64cecdfd3b3930ba62981ee2e0cf0581c34d3eac66574f7d98c0046eae"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 607
+printed_page = 526
+column = "R"
+marginal_number = 2567
+canonical_references = []
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["decc1a64cecdfd3b3930ba62981ee2e0cf0581c34d3eac66574f7d98c0046eae"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+origin = "local"
+pdf_page = 607
+printed_page = 526
+column = "R"
+marginal_number = 2568
+canonical_references = ["Psalms 32:18, 19, 20, 1"]
+source_condition = "Tempore paschali"
+raster_sha256 = ["decc1a64cecdfd3b3930ba62981ee2e0cf0581c34d3eac66574f7d98c0046eae"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 608
+printed_page = 527
+column = "L"
+marginal_number = 2569
+canonical_references = []
+source_condition = "Tempore paschali"
+raster_sha256 = ["d59e5efdf9c23222ba6f389b48cc491b279fd0483780c8c5392601e720c595bc"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+origin = "local"
+pdf_page = 608
+printed_page = 527
+column = "L"
+marginal_number = 2571
+canonical_references = []
+source_condition = "Tempore paschali"
+raster_sha256 = ["d59e5efdf9c23222ba6f389b48cc491b279fd0483780c8c5392601e720c595bc"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+origin = "local"
+pdf_page = 608
+printed_page = 527
+column = "R"
+marginal_number = 2573
+canonical_references = ["Psalms 88:6"]
+source_condition = "Tempore paschali"
+raster_sha256 = ["d59e5efdf9c23222ba6f389b48cc491b279fd0483780c8c5392601e720c595bc"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 608
+printed_page = 527
+column = "R"
+marginal_number = 2574
+canonical_references = []
+source_condition = "Tempore paschali"
+raster_sha256 = ["d59e5efdf9c23222ba6f389b48cc491b279fd0483780c8c5392601e720c595bc"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+origin = "local"
+pdf_page = 608
+printed_page = 527
+column = "R"
+marginal_number = 2575
+canonical_references = ["Psalms 32:1"]
+source_condition = "Tempore paschali"
+raster_sha256 = ["d59e5efdf9c23222ba6f389b48cc491b279fd0483780c8c5392601e720c595bc"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 608
+printed_page = 527
+column = "R"
+marginal_number = 2576
+canonical_references = []
+source_condition = "Tempore paschali"
+raster_sha256 = ["d59e5efdf9c23222ba6f389b48cc491b279fd0483780c8c5392601e720c595bc"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+proper = "Introit"
+occurrence = 2
+origin = "local"
+pdf_page = 608
+printed_page = 527
+column = "R"
+marginal_number = 2577
+canonical_references = ["Psalms 36:39, 1"]
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["d59e5efdf9c23222ba6f389b48cc491b279fd0483780c8c5392601e720c595bc"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 609
+printed_page = 528
+column = "L"
+marginal_number = 2578
+canonical_references = []
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["bade4e46a3842f029b008bb7a130954fdcaeb3d9d1efd1355a97a57299506a2a"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+origin = "local"
+pdf_page = 609
+printed_page = 528
+column = "L"
+marginal_number = 2580
+canonical_references = ["Exodus 15:11, 6"]
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["bade4e46a3842f029b008bb7a130954fdcaeb3d9d1efd1355a97a57299506a2a"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 2
+origin = "local"
+pdf_page = 609
+printed_page = 528
+column = "L"
+marginal_number = 2581
+canonical_references = []
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["bade4e46a3842f029b008bb7a130954fdcaeb3d9d1efd1355a97a57299506a2a"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+proper = "Offertory"
+occurrence = 2
+origin = "local"
+pdf_page = 609
+printed_page = 528
+column = "R"
+marginal_number = 2582
+canonical_references = ["Psalms 123:7"]
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["bade4e46a3842f029b008bb7a130954fdcaeb3d9d1efd1355a97a57299506a2a"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 609
+printed_page = 528
+column = "R"
+marginal_number = 2583
+canonical_references = []
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["bade4e46a3842f029b008bb7a130954fdcaeb3d9d1efd1355a97a57299506a2a"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+proper = "Communion"
+occurrence = 2
+origin = "local"
+pdf_page = 609
+printed_page = 528
+column = "R"
+marginal_number = 2584
+canonical_references = ["Matthew 25:40, 34"]
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["bade4e46a3842f029b008bb7a130954fdcaeb3d9d1efd1355a97a57299506a2a"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 609
+printed_page = 528
+column = "R"
+marginal_number = 2585
+canonical_references = []
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["bade4e46a3842f029b008bb7a130954fdcaeb3d9d1efd1355a97a57299506a2a"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ioannis-baptistae-la-salle-confessoris"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+origin = "local"
+pdf_page = 611
+printed_page = 530
+column = "R"
+marginal_number = 2601
+canonical_references = ["Psalms 36:30-31, 1"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["2a130b8e4af73cb263c351d43f45d89c7340d1a350c4570e4ddd968437bd2e59"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ioannis-baptistae-la-salle-confessoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 611
+printed_page = 530
+column = "R"
+marginal_number = 2602
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["2a130b8e4af73cb263c351d43f45d89c7340d1a350c4570e4ddd968437bd2e59"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ioannis-baptistae-la-salle-confessoris"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+origin = "local"
+pdf_page = 612
+printed_page = 531
+column = "L"
+marginal_number = 2604
+canonical_references = ["James 1:12", "Sirach 45:9"]
+source_condition = "Tempore paschali"
+raster_sha256 = ["2a5696f83516fc0bc72e2817108e425205466e6c6971f162059c6e7b95322dca"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ioannis-baptistae-la-salle-confessoris"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+origin = "local"
+pdf_page = 612
+printed_page = 531
+column = "L"
+marginal_number = 2605
+canonical_references = ["Psalms 91:13, 14, 3"]
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["2a5696f83516fc0bc72e2817108e425205466e6c6971f162059c6e7b95322dca"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ioannis-baptistae-la-salle-confessoris"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 2
+origin = "local"
+pdf_page = 612
+printed_page = 531
+column = "L"
+marginal_number = 2606
+canonical_references = ["James 1:12"]
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["2a5696f83516fc0bc72e2817108e425205466e6c6971f162059c6e7b95322dca"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ioannis-baptistae-la-salle-confessoris"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+origin = "local"
+pdf_page = 612
+printed_page = 531
+column = "R"
+marginal_number = 2608
+canonical_references = ["Psalms 88:25"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["2a5696f83516fc0bc72e2817108e425205466e6c6971f162059c6e7b95322dca"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ioannis-baptistae-la-salle-confessoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 612
+printed_page = 531
+column = "R"
+marginal_number = 2609
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["2a5696f83516fc0bc72e2817108e425205466e6c6971f162059c6e7b95322dca"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ioannis-baptistae-la-salle-confessoris"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+origin = "local"
+pdf_page = 612
+printed_page = 531
+column = "R"
+marginal_number = 2610
+canonical_references = ["Matthew 24:46-47"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["2a5696f83516fc0bc72e2817108e425205466e6c6971f162059c6e7b95322dca"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ioannis-baptistae-la-salle-confessoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 612
+printed_page = 531
+column = "R"
+marginal_number = 2611
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["2a5696f83516fc0bc72e2817108e425205466e6c6971f162059c6e7b95322dca"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ubaldi-episcopi-confessoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 612
+printed_page = 531
+column = "R"
+marginal_number = 2612
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["2a5696f83516fc0bc72e2817108e425205466e6c6971f162059c6e7b95322dca"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ubaldi-episcopi-confessoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "inherited"
+pdf_page = 613
+printed_page = 532
+column = "L"
+marginal_number = 2613
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["dc7850ba5fcbec158d00c35afb264a0af415cc6bcb1efbbeed3765dee5037916"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ubaldi-episcopi-confessoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "inherited"
+pdf_page = 613
+printed_page = 532
+column = "L"
+marginal_number = 2614
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["dc7850ba5fcbec158d00c35afb264a0af415cc6bcb1efbbeed3765dee5037916"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-petri-caelestini-papae-confessoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 614
+printed_page = 533
+column = "L"
+marginal_number = 2621
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["a6696f7422d150f5ab08379aaa53e05f737b3fa4468770b114edcee2ebf7f72c"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-petri-caelestini-papae-confessoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "inherited"
+pdf_page = 614
+printed_page = 533
+column = "L"
+marginal_number = 2623
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["a6696f7422d150f5ab08379aaa53e05f737b3fa4468770b114edcee2ebf7f72c"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-petri-caelestini-papae-confessoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "inherited"
+pdf_page = 614
+printed_page = 533
+column = "L"
+marginal_number = 2625
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["a6696f7422d150f5ab08379aaa53e05f737b3fa4468770b114edcee2ebf7f72c"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bernardini-senensis-confessoris"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+origin = "local"
+pdf_page = 614
+printed_page = 533
+column = "R"
+marginal_number = 2627
+canonical_references = ["Psalms 36:30-31, 1"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["a6696f7422d150f5ab08379aaa53e05f737b3fa4468770b114edcee2ebf7f72c"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bernardini-senensis-confessoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 614
+printed_page = 533
+column = "R"
+marginal_number = 2628
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["a6696f7422d150f5ab08379aaa53e05f737b3fa4468770b114edcee2ebf7f72c"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bernardini-senensis-confessoris"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+origin = "local"
+pdf_page = 615
+printed_page = 534
+column = "L"
+marginal_number = 2630
+canonical_references = ["James 1:12", "Sirach 45:9"]
+source_condition = "Tempore paschali"
+raster_sha256 = ["1a7015a2da754c959cf9cf1bba424e2044c8819d3c4af1b1881c0fb2318691c7"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bernardini-senensis-confessoris"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+origin = "local"
+pdf_page = 615
+printed_page = 534
+column = "L"
+marginal_number = 2631
+canonical_references = ["Psalms 91:13, 14, 3"]
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["1a7015a2da754c959cf9cf1bba424e2044c8819d3c4af1b1881c0fb2318691c7"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bernardini-senensis-confessoris"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 2
+origin = "local"
+pdf_page = 615
+printed_page = 534
+column = "L"
+marginal_number = 2632
+canonical_references = ["James 1:12"]
+source_condition = "Extra tempus paschale"
+raster_sha256 = ["1a7015a2da754c959cf9cf1bba424e2044c8819d3c4af1b1881c0fb2318691c7"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bernardini-senensis-confessoris"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+origin = "local"
+pdf_page = 615
+printed_page = 534
+column = "R"
+marginal_number = 2634
+canonical_references = ["Psalms 88:25"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["1a7015a2da754c959cf9cf1bba424e2044c8819d3c4af1b1881c0fb2318691c7"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bernardini-senensis-confessoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 615
+printed_page = 534
+column = "R"
+marginal_number = 2635
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["1a7015a2da754c959cf9cf1bba424e2044c8819d3c4af1b1881c0fb2318691c7"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bernardini-senensis-confessoris"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+origin = "local"
+pdf_page = 615
+printed_page = 534
+column = "R"
+marginal_number = 2636
+canonical_references = ["Matthew 24:46-47"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["1a7015a2da754c959cf9cf1bba424e2044c8819d3c4af1b1881c0fb2318691c7"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bernardini-senensis-confessoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 615
+printed_page = 534
+column = "R"
+marginal_number = 2637
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["1a7015a2da754c959cf9cf1bba424e2044c8819d3c4af1b1881c0fb2318691c7"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-angelae-mericiae-virginis"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 623
+printed_page = 542
+column = "L"
+marginal_number = 2697
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["c3b90fd2f2ad82b300598d62fae5303df2e3bd9cd423199a27db44a8ab28a210"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-angelae-mericiae-virginis"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 623
+printed_page = 542
+column = "L"
+marginal_number = 2698
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["c3b90fd2f2ad82b300598d62fae5303df2e3bd9cd423199a27db44a8ab28a210"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-angelae-mericiae-virginis"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 623
+printed_page = 542
+column = "L"
+marginal_number = 2699
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["c3b90fd2f2ad82b300598d62fae5303df2e3bd9cd423199a27db44a8ab28a210"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bonifatii-episcopi-martyris"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+origin = "local"
+pdf_page = 626
+printed_page = 545
+column = "L"
+marginal_number = 2722
+canonical_references = ["Isaiah 65:19, 23", "Psalms 43:2"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["1e1e62e5a5f2e3c035bf6a4593037593b4082b06244d9eeffa7e4c56da7e7f99"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bonifatii-episcopi-martyris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 626
+printed_page = 545
+column = "L"
+marginal_number = 2723
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["1e1e62e5a5f2e3c035bf6a4593037593b4082b06244d9eeffa7e4c56da7e7f99"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bonifatii-episcopi-martyris"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+origin = "local"
+pdf_page = 626
+printed_page = 545
+column = "R"
+marginal_number = 2725
+canonical_references = ["1 Peter 4:13-14"]
+source_condition = "Default printed Gradual/Alleluia; the following Tempore paschali rubric replaces this complex and omits Gradual"
+raster_sha256 = ["1e1e62e5a5f2e3c035bf6a4593037593b4082b06244d9eeffa7e4c56da7e7f99"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bonifatii-episcopi-martyris"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 2
+origin = "local"
+pdf_page = 626
+printed_page = 545
+column = "R"
+marginal_number = 2726
+canonical_references = ["Isaiah 66:12"]
+source_condition = "Default printed Gradual/Alleluia; the following Tempore paschali rubric replaces this complex and omits Gradual"
+raster_sha256 = ["1e1e62e5a5f2e3c035bf6a4593037593b4082b06244d9eeffa7e4c56da7e7f99"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bonifatii-episcopi-martyris"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+origin = "local"
+pdf_page = 626
+printed_page = 545
+column = "R"
+marginal_number = 2727
+canonical_references = ["Isaiah 66:10, 14"]
+source_condition = "Tempore paschali"
+raster_sha256 = ["1e1e62e5a5f2e3c035bf6a4593037593b4082b06244d9eeffa7e4c56da7e7f99"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bonifatii-episcopi-martyris"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+origin = "local"
+pdf_page = 627
+printed_page = 546
+column = "L"
+marginal_number = 2729
+canonical_references = ["Psalms 15:7, 8"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["7a01030fadc95a67ada5036ccbf1f6834544e72d546dfc8e1e6ce50e65bf8017"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bonifatii-episcopi-martyris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 627
+printed_page = 546
+column = "L"
+marginal_number = 2730
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["7a01030fadc95a67ada5036ccbf1f6834544e72d546dfc8e1e6ce50e65bf8017"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bonifatii-episcopi-martyris"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+origin = "local"
+pdf_page = 627
+printed_page = 546
+column = "L"
+marginal_number = 2731
+canonical_references = ["Revelation 3:21"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["7a01030fadc95a67ada5036ccbf1f6834544e72d546dfc8e1e6ce50e65bf8017"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-bonifatii-episcopi-martyris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 627
+printed_page = 546
+column = "R"
+marginal_number = 2732
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["7a01030fadc95a67ada5036ccbf1f6834544e72d546dfc8e1e6ce50e65bf8017"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-norberti-episcopi-confessoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 627
+printed_page = 546
+column = "R"
+marginal_number = 2733
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["7a01030fadc95a67ada5036ccbf1f6834544e72d546dfc8e1e6ce50e65bf8017"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-norberti-episcopi-confessoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "inherited"
+pdf_page = 627
+printed_page = 546
+column = "R"
+marginal_number = 2734
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["7a01030fadc95a67ada5036ccbf1f6834544e72d546dfc8e1e6ce50e65bf8017"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-norberti-episcopi-confessoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "inherited"
+pdf_page = 627
+printed_page = 546
+column = "R"
+marginal_number = 2735
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["7a01030fadc95a67ada5036ccbf1f6834544e72d546dfc8e1e6ce50e65bf8017"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-margaritae-reginae-viduae"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 629
+printed_page = 548
+column = "L"
+marginal_number = 2747
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["4afffb62e29443563bb15f9d52f24e26acd0f78bb2d15eb08b9e60a1e3bdb83b"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-margaritae-reginae-viduae"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "inherited"
+pdf_page = 629
+printed_page = 548
+column = "L"
+marginal_number = 2748
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["4afffb62e29443563bb15f9d52f24e26acd0f78bb2d15eb08b9e60a1e3bdb83b"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-margaritae-reginae-viduae"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "inherited"
+pdf_page = 629
+printed_page = 548
+column = "L"
+marginal_number = 2749
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["4afffb62e29443563bb15f9d52f24e26acd0f78bb2d15eb08b9e60a1e3bdb83b"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-antonii-padua-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 632
+printed_page = 551
+column = "R"
+marginal_number = 2776
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["130a2e31c81fbc315de4a7bfac7787cd2c921cccd9270df5cbccacf414de1051"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-antonii-padua-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 633
+printed_page = 552
+column = "L"
+marginal_number = 2777
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["78155e7aa85a3a8c7c1e04283cb24fb98b46dd784dcdbcdd74a24cad3a8aa957"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-antonii-padua-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 633
+printed_page = 552
+column = "L"
+marginal_number = 2778
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["78155e7aa85a3a8c7c1e04283cb24fb98b46dd784dcdbcdd74a24cad3a8aa957"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ephraem-syri-diaconi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 636
+printed_page = 555
+column = "L"
+marginal_number = 2802
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["858fd5dc0866658bb20f0551222ebe97aa4e53a6666daa78a56a6f400eacfedc"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ephraem-syri-diaconi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "inherited"
+pdf_page = 636
+printed_page = 555
+column = "L"
+marginal_number = 2804
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["858fd5dc0866658bb20f0551222ebe97aa4e53a6666daa78a56a6f400eacfedc"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-ephraem-syri-diaconi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "inherited"
+pdf_page = 636
+printed_page = 555
+column = "R"
+marginal_number = 2806
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["858fd5dc0866658bb20f0551222ebe97aa4e53a6666daa78a56a6f400eacfedc"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-iulianae-falconeriis-virginis"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 637
+printed_page = 556
+column = "R"
+marginal_number = 2818
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["3b0a7324b72fcb996bbaba6c08103d74dfc86a83eb8d9cc8b588c51389eac781"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-iulianae-falconeriis-virginis"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "inherited"
+pdf_page = 638
+printed_page = 557
+column = "L"
+marginal_number = 2820
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["ee24ba239ec5a8df89f900c59fb36cc81ec555d95aeb3f2fb2f1f4b673e4ca5b"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-iulianae-falconeriis-virginis"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "inherited"
+pdf_page = 638
+printed_page = 557
+column = "L"
+marginal_number = 2822
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["ee24ba239ec5a8df89f900c59fb36cc81ec555d95aeb3f2fb2f1f4b673e4ca5b"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-paulini-episcopi-confessoris"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+origin = "local"
+pdf_page = 641
+printed_page = 560
+column = "L"
+marginal_number = 2848
+canonical_references = ["Psalms 131:9-10, 1"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["f79eba7ec2a373747ee261cdb69a8fdaadd97765278d8b72c8646e7787163f4b"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-paulini-episcopi-confessoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 641
+printed_page = 560
+column = "L"
+marginal_number = 2849
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["f79eba7ec2a373747ee261cdb69a8fdaadd97765278d8b72c8646e7787163f4b"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-paulini-episcopi-confessoris"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+origin = "local"
+pdf_page = 641
+printed_page = 560
+column = "R"
+marginal_number = 2851
+canonical_references = ["Sirach 44:16, 20"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["f79eba7ec2a373747ee261cdb69a8fdaadd97765278d8b72c8646e7787163f4b"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-paulini-episcopi-confessoris"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+origin = "local"
+pdf_page = 641
+printed_page = 560
+column = "R"
+marginal_number = 2852
+canonical_references = ["Psalms 109:4"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["f79eba7ec2a373747ee261cdb69a8fdaadd97765278d8b72c8646e7787163f4b"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-paulini-episcopi-confessoris"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+origin = "local"
+pdf_page = 642
+printed_page = 561
+column = "L"
+marginal_number = 2854
+canonical_references = ["Psalms 88:21-22"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["0bebf8f96ef4cb5dae9746029b10baa55a3435a67501670ac0a510b6a09363d5"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-paulini-episcopi-confessoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 642
+printed_page = 561
+column = "L"
+marginal_number = 2855
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["0bebf8f96ef4cb5dae9746029b10baa55a3435a67501670ac0a510b6a09363d5"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-paulini-episcopi-confessoris"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+origin = "local"
+pdf_page = 642
+printed_page = 561
+column = "L"
+marginal_number = 2856
+canonical_references = ["Luke 12:42"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["0bebf8f96ef4cb5dae9746029b10baa55a3435a67501670ac0a510b6a09363d5"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-paulini-episcopi-confessoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 642
+printed_page = 561
+column = "L"
+marginal_number = 2857
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["0bebf8f96ef4cb5dae9746029b10baa55a3435a67501670ac0a510b6a09363d5"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-gulielmi-abbatis"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 645
+printed_page = 564
+column = "R"
+marginal_number = 2878
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["9b71e372f187922e23d9ee21f0aeec652c9cd08d49dc43a7c41ab9a859cbc87e"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-gulielmi-abbatis"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "inherited"
+pdf_page = 645
+printed_page = 564
+column = "R"
+marginal_number = 2879
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["9b71e372f187922e23d9ee21f0aeec652c9cd08d49dc43a7c41ab9a859cbc87e"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "s-gulielmi-abbatis"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "inherited"
+pdf_page = 645
+printed_page = 564
+column = "R"
+marginal_number = 2880
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["9b71e372f187922e23d9ee21f0aeec652c9cd08d49dc43a7c41ab9a859cbc87e"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-ioannis-pauli-martyrum"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+origin = "local"
+pdf_page = 646
+printed_page = 565
+column = "L"
+marginal_number = 2881
+canonical_references = ["Psalms 33:20-21", "Psalms 33:2"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["fbc8bf93f621d793900fc49aa8926328ec6798cb44fc14af5afa1ff3fd803fdc"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-ioannis-pauli-martyrum"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 646
+printed_page = 565
+column = "L"
+marginal_number = 2882
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["fbc8bf93f621d793900fc49aa8926328ec6798cb44fc14af5afa1ff3fd803fdc"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-ioannis-pauli-martyrum"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+origin = "local"
+pdf_page = 646
+printed_page = 565
+column = "L"
+marginal_number = 2884
+canonical_references = ["Psalms 132:1-2"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["fbc8bf93f621d793900fc49aa8926328ec6798cb44fc14af5afa1ff3fd803fdc"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-ioannis-pauli-martyrum"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+origin = "local"
+pdf_page = 646
+printed_page = 565
+column = "L"
+marginal_number = 2885
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["fbc8bf93f621d793900fc49aa8926328ec6798cb44fc14af5afa1ff3fd803fdc"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-ioannis-pauli-martyrum"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+origin = "local"
+pdf_page = 646
+printed_page = 565
+column = "R"
+marginal_number = 2887
+canonical_references = ["Psalms 5:12-13"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["fbc8bf93f621d793900fc49aa8926328ec6798cb44fc14af5afa1ff3fd803fdc"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-ioannis-pauli-martyrum"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 646
+printed_page = 565
+column = "R"
+marginal_number = 2888
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["fbc8bf93f621d793900fc49aa8926328ec6798cb44fc14af5afa1ff3fd803fdc"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-ioannis-pauli-martyrum"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+origin = "local"
+pdf_page = 647
+printed_page = 566
+column = "L"
+marginal_number = 2889
+canonical_references = ["Wisdom 3:4, 5, 6"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["fecdff801c23f400459fbcc1c62b3be98227bdf50ca93cea861cbe1079e2cedb"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-ioannis-pauli-martyrum"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 647
+printed_page = 566
+column = "L"
+marginal_number = 2890
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["fecdff801c23f400459fbcc1c62b3be98227bdf50ca93cea861cbe1079e2cedb"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-petri-pauli-apostolorum"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+origin = "local"
+pdf_page = 649
+printed_page = 568
+column = "L"
+marginal_number = 2900
+canonical_references = ["Acts 12:11", "Psalms 138:1-2"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["a165dea9f8a33f721bc9fdaab075e8c797087966e5c93f04698bad3fb8be9d54"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-petri-pauli-apostolorum"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 649
+printed_page = 568
+column = "L"
+marginal_number = 2901
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["a165dea9f8a33f721bc9fdaab075e8c797087966e5c93f04698bad3fb8be9d54"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-petri-pauli-apostolorum"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+origin = "local"
+pdf_page = 650
+printed_page = 569
+column = "L"
+marginal_number = 2903
+canonical_references = ["Psalms 44:17-18"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["479c95a88bc485796f3c630a927cc5e7ea712d4891c440e2277032b68a4bc16b"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-petri-pauli-apostolorum"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+origin = "local"
+pdf_page = 650
+printed_page = 569
+column = "L"
+marginal_number = 2904
+canonical_references = ["Matthew 16:18"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["479c95a88bc485796f3c630a927cc5e7ea712d4891c440e2277032b68a4bc16b"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-petri-pauli-apostolorum"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+origin = "local"
+pdf_page = 650
+printed_page = 569
+column = "R"
+marginal_number = 2906
+canonical_references = ["Psalms 44:17-18"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["479c95a88bc485796f3c630a927cc5e7ea712d4891c440e2277032b68a4bc16b"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-petri-pauli-apostolorum"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 650
+printed_page = 569
+column = "R"
+marginal_number = 2907
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["479c95a88bc485796f3c630a927cc5e7ea712d4891c440e2277032b68a4bc16b"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-petri-pauli-apostolorum"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+origin = "local"
+pdf_page = 650
+printed_page = 569
+column = "R"
+marginal_number = 2908
+canonical_references = ["Matthew 16:18"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["479c95a88bc485796f3c630a927cc5e7ea712d4891c440e2277032b68a4bc16b"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "ss-petri-pauli-apostolorum"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 650
+printed_page = 569
+column = "R"
+marginal_number = 2909
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["479c95a88bc485796f3c630a927cc5e7ea712d4891c440e2277032b68a4bc16b"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "commemoratione-s-pauli-apostoli"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+origin = "local"
+pdf_page = 652
+printed_page = 571
+column = "L"
+marginal_number = 2922
+canonical_references = ["2 Timothy 1:12", "Psalms 138:1-2"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["f1b882aaf01802cde986be7ea7644ce8691ffb6658acc9c3dabb2164c91d10d8"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "commemoratione-s-pauli-apostoli"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+origin = "local"
+pdf_page = 652
+printed_page = 571
+column = "L"
+marginal_number = 2923
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["f1b882aaf01802cde986be7ea7644ce8691ffb6658acc9c3dabb2164c91d10d8"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "commemoratione-s-pauli-apostoli"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+origin = "local"
+pdf_page = 652
+printed_page = 571
+column = "R"
+marginal_number = 2926
+canonical_references = ["Galatians 2:8-9", "1 Corinthians 15:10"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["f1b882aaf01802cde986be7ea7644ce8691ffb6658acc9c3dabb2164c91d10d8"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "commemoratione-s-pauli-apostoli"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+origin = "local"
+pdf_page = 653
+printed_page = 572
+column = "L"
+marginal_number = 2927
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["e51effdfe53faa41e6efd26009707d54dc58cd868787affb60f46af56f5afcd2"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "commemoratione-s-pauli-apostoli"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+origin = "local"
+pdf_page = 653
+printed_page = 572
+column = "R"
+marginal_number = 2931
+canonical_references = ["Psalms 138:17"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["e51effdfe53faa41e6efd26009707d54dc58cd868787affb60f46af56f5afcd2"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "commemoratione-s-pauli-apostoli"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+origin = "local"
+pdf_page = 653
+printed_page = 572
+column = "R"
+marginal_number = 2932
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["e51effdfe53faa41e6efd26009707d54dc58cd868787affb60f46af56f5afcd2"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "commemoratione-s-pauli-apostoli"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+origin = "local"
+pdf_page = 653
+printed_page = 572
+column = "R"
+marginal_number = 2934
+canonical_references = ["Matthew 19:28, 29"]
+source_condition = "normal fixed-day form"
+raster_sha256 = ["e51effdfe53faa41e6efd26009707d54dc58cd868787affb60f46af56f5afcd2"]
+operation = "confirm-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[appointments]]
+mass = "commemoratione-s-pauli-apostoli"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+origin = "local"
+pdf_page = 653
+printed_page = 572
+column = "R"
+marginal_number = 2935
+canonical_references = []
+source_condition = "normal fixed-day form"
+raster_sha256 = ["e51effdfe53faa41e6efd26009707d54dc58cd868787affb60f46af56f5afcd2"]
+operation = "correct-appointment"
+body_availability = "unchanged-or-explicit-unavailable"
+
+[[referrals]]
+mass = "s-pii-v-papae-confessoris"
+form_id = "main"
+kind = "whole-Mass Common referral"
+artifact_page = 601
+printed_folio = 520
+column = "R"
+target_mass = "commune-summorum-pontificum"
+printed_clause_identifier = "[1]; praeter orationem sequentem; Secret/Postcommunion marked C1"
+qualification = "Inherited physical Common units belong to the Common owner; this row counts one literal referral, not a guessed nominal slot total."
+raster_sha256 = ["ff410ceb2900538752617a8879bc88f92722d08a55a140942cc1873949d22dc6"]
+
+[[referrals]]
+mass = "s-ubaldi-episcopi-confessoris"
+form_id = "main"
+kind = "whole-Mass Common referral"
+artifact_page = 612
+printed_folio = 531
+column = "R"
+target_mass = "commune-confessoris-pontificis-1"
+printed_clause_identifier = "[19]; praeter orationem; Secret/Postcommunion marked C"
+qualification = "Inherited physical Common units belong to the Common owner; this row counts one literal referral, not a guessed nominal slot total."
+raster_sha256 = ["2a5696f83516fc0bc72e2817108e425205466e6c6971f162059c6e7b95322dca"]
+
+[[referrals]]
+mass = "s-petri-caelestini-papae-confessoris"
+form_id = "main"
+kind = "whole-Mass Common referral"
+artifact_page = 613
+printed_folio = 532
+column = "R"
+target_mass = "commune-summorum-pontificum"
+printed_clause_identifier = "[1]; praeter orationem; Secret/Postcommunion marked C1; Pudentiana units2622/2624/2626 separate commemoration"
+qualification = "Inherited physical Common units belong to the Common owner; this row counts one literal referral, not a guessed nominal slot total."
+raster_sha256 = ["dc7850ba5fcbec158d00c35afb264a0af415cc6bcb1efbbeed3765dee5037916"]
+
+[[referrals]]
+mass = "s-angelae-mericiae-virginis"
+form_id = "main"
+kind = "whole-Mass Common referral"
+artifact_page = 623
+printed_folio = 542
+column = "L"
+target_mass = "commune-virginum-3"
+printed_clause_identifier = "[32]; cum orationibus ut infra; all three marked P"
+qualification = "Inherited physical Common units belong to the Common owner; this row counts one literal referral, not a guessed nominal slot total."
+raster_sha256 = ["c3b90fd2f2ad82b300598d62fae5303df2e3bd9cd423199a27db44a8ab28a210"]
+
+[[referrals]]
+mass = "s-norberti-episcopi-confessoris"
+form_id = "main"
+kind = "whole-Mass Common referral"
+artifact_page = 627
+printed_folio = 546
+column = "R"
+target_mass = "commune-confessoris-pontificis-1"
+printed_clause_identifier = "[19]; praeter orationem; Secret/Postcommunion marked C"
+qualification = "Inherited physical Common units belong to the Common owner; this row counts one literal referral, not a guessed nominal slot total."
+raster_sha256 = ["7a01030fadc95a67ada5036ccbf1f6834544e72d546dfc8e1e6ce50e65bf8017"]
+
+[[referrals]]
+mass = "s-margaritae-reginae-viduae"
+form_id = "main"
+kind = "whole-Mass Common referral"
+artifact_page = 629
+printed_folio = 548
+column = "L"
+target_mass = "commune-non-virginum-2"
+printed_clause_identifier = "[37]; praeter orationem; Secret/Postcommunion marked C"
+qualification = "Inherited physical Common units belong to the Common owner; this row counts one literal referral, not a guessed nominal slot total."
+raster_sha256 = ["4afffb62e29443563bb15f9d52f24e26acd0f78bb2d15eb08b9e60a1e3bdb83b"]
+
+[[referrals]]
+mass = "s-antonii-padua-confessoris-ecclesiae-doctoris"
+form_id = "main"
+kind = "whole-Mass Common referral"
+artifact_page = 632
+printed_folio = 551
+column = "R"
+target_mass = "commune-doctorum-non-pontificis"
+printed_clause_identifier = "[22]; cum orationibus ut infra; all three marked P"
+qualification = "Inherited physical Common units belong to the Common owner; this row counts one literal referral, not a guessed nominal slot total."
+raster_sha256 = ["130a2e31c81fbc315de4a7bfac7787cd2c921cccd9270df5cbccacf414de1051"]
+
+[[referrals]]
+mass = "s-ephraem-syri-diaconi-confessoris-ecclesiae"
+form_id = "main"
+kind = "whole-Mass Common referral"
+artifact_page = 636
+printed_folio = 555
+column = "L"
+target_mass = "commune-doctorum-non-pontificis"
+printed_clause_identifier = "[22]; praeter orationem; Secret/Postcommunion explicitly C2; Marcus/Marcellianus2803/2805/2807 excluded"
+qualification = "Inherited physical Common units belong to the Common owner; this row counts one literal referral, not a guessed nominal slot total."
+raster_sha256 = ["858fd5dc0866658bb20f0551222ebe97aa4e53a6666daa78a56a6f400eacfedc"]
+
+[[referrals]]
+mass = "s-iulianae-falconeriis-virginis"
+form_id = "main"
+kind = "whole-Mass Common referral"
+artifact_page = 637
+printed_folio = 556
+column = "R"
+target_mass = "commune-virginum-3"
+printed_clause_identifier = "[32]; praeter orationem; Secret/Postcommunion marked C; Gervasius/Protasius2819/2821/2823 excluded"
+qualification = "Inherited physical Common units belong to the Common owner; this row counts one literal referral, not a guessed nominal slot total."
+raster_sha256 = ["3b0a7324b72fcb996bbaba6c08103d74dfc86a83eb8d9cc8b588c51389eac781"]
+
+[[referrals]]
+mass = "s-gulielmi-abbatis"
+form_id = "main"
+kind = "whole-Mass Common referral"
+artifact_page = 645
+printed_folio = 564
+column = "R"
+target_mass = "commune-abbatum"
+printed_clause_identifier = "[27]; praeter orationem; Secret/Postcommunion marked C"
+qualification = "Inherited physical Common units belong to the Common owner; this row counts one literal referral, not a guessed nominal slot total."
+raster_sha256 = ["9b71e372f187922e23d9ee21f0aeec652c9cd08d49dc43a7c41ab9a859cbc87e"]
+
+[[referrals]]
+mass = "ss-philippi-iacobi-apostolorum"
+form_id = "main"
+kind = "Gospel referral across printed seasonal forms"
+artifact_page = 607
+printed_folio = 526
+column = "L"
+target_unit = 2553
+raster_sha256 = ["decc1a64cecdfd3b3930ba62981ee2e0cf0581c34d3eac66574f7d98c0046eae"]
+
+[[referrals]]
+mass = "ss-nerei-achillei-domitillae-virginis-atque"
+form_id = "main"
+kind = "Gospel referral across printed seasonal forms"
+artifact_page = 609
+printed_folio = 528
+column = "L"
+target_unit = 2572
+raster_sha256 = ["bade4e46a3842f029b008bb7a130954fdcaeb3d9d1efd1355a97a57299506a2a"]

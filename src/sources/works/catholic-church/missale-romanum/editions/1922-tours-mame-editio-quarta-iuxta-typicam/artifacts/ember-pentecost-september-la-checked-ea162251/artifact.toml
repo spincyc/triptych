@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Bounded historical Latin from the separately registered public-domain Tours Mame 1922 printing. This derivative retains sixteen source prayer occurrences and two complete Alleluia/Veni chants actually read on its page images, including their source conclusion cues and preexisting genuflection parentheses. It adds no target wording and makes no new rights decision. The parent artifact owns the United States publication-date and mechanical-reproduction basis."
+rights_jurisdiction = "United States"
+provenance = "Read directly on 2026-10-20 from actual 200 and 400 dpi page images of the exact registered Mame 1922 PDF, SHA256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005. Pentecost Ember Saturday prayer loci: printed pp.410-414/PDF524-528; September: pp.456-461/PDF570-575. Single-opening Veni: Pentecost Saturday p.413/PDF527; double-opening Veni: Pentecost Ember Wednesday p.406/PDF520. The entire short chant is printed contiguously there, with no terminal Alleluia; no fragments are concatenated."
+retrieved = "2026-10-20"
+sha256 = "ea16225176113c4be2fc090f6c256010a49994278aed86c14e4d702b9df06541"
+byte_size = 2661
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ember-pentecost-september-la-checked-ea162251/ember-pentecost-september-la.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Select only eighteen checked historical blocks; join printed line wraps and word divisions; flatten opening small capitals to sentence case; remove stress accents and expand ae/oe ligatures; retain source j, pointing, conclusion length and the abbreviation Per Dm with overline. Preserve the two source genuflection parentheses and versicle markers in their own chant blocks. No 1962 conclusion or punctuation is inserted."
+indexable = true
+encoding = "utf-8"
+notes = "One payload preserves historical wording, independently of its later target appointments. The repeated Deus qui tribus source occurrences have distinct printed conclusions (Per Dominum. at Pentecost, abbreviated Per Dm at September). Each block is mapped in the checked passage and target projections. No modern rubrical authority or full-form completeness follows."

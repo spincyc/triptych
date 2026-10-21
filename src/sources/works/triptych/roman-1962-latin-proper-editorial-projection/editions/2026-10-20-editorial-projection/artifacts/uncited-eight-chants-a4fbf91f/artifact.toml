@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.uncited-eight-chants-a4fbf91f"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers the bounded editorial normalization, selection and target-relation record under CC BY 4.0 and claims no exclusive right in the independently public-domain historical Latin. Its words stand in the separately owned Mame 1922 checked derivative. No target page image, arrangement, rubric or marginal number is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Whole bodies independently read on actual 200 and 400 dpi images of the already held Mame 1922 and separately identified CMAA1962 control on 2026-10-20. Nativity BVM Introit artifact p.822 / printed p.708; Gradual and Alleluia p.823 / p.709; Offertory and Communion p.824 / p.710. Laurence Alleluia p.801 / p.687. Matthew Alleluia p.835 / p.721. Martin ordinary Alleluia p.868 / p.754. Target control: Nativity BVM Introit3570 artifact p.731 / printed p.650; Gradual3574, Alleluia3575, Offertory3577 and Communion3580 p.732 / p.651. Laurence Alleluia3341 p.703 / p.622. Matthew Alleluia3683 p.745 / p.664. Martin ordinary Alleluia4078 p.797 / p.716."
+retrieved = "2026-10-20"
+sha256 = "a4fbf91fd6774e0ff323e185e6202e17d22ab4c8f618fc38d6d54e6175a23660"
+byte_size = 1061
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/uncited-eight-chants-a4fbf91f/uncited-eight-chants.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.uncited-eight-chants-la-checked-d05badcc", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Select only the eight independent historical bodies; remove stress accents, expand ae/oe ligatures, apply the calendar Alleluia and consonantal j convention, target capitals and pointing. For Nativity BVM Gradual use target Genetrix against source Genitrix, the received spelling transformation explicitly allowed in guidance/propers-for-agents.md. Represent the printed versicle siglum as V. Retain exactly two opening Alleluia words and one closing Alleluia for every complete Alleluia. Preserve the Introit literal Gloria Patri cue, without expansion or repetition. Keep Scripture label and Sedulius attribution separately as metadata, not spoken body words. Exclude headings, source rubrics, neighbours and additional conditional chants."
+indexable = true
+encoding = "utf-8"
+notes = "Eight exact whole bodies under declared word-agreement transformations. The Introit is mixed: its uncited Sedulius antiphon is not Psalm 44:2, and the selected Bible must not replace its full literal body. The other seven chants have no printed Scripture reference in either bounded witness. No English, inferred actor or ritual repetition is supplied. Martin no. 4079 paschal votive chant is independent from ordinary no. 4078 and contributes no added verse. Physical lines and final newlines are project payload formatting, distinct from the source-proof single-line proposal hashes."

@@ -1,7 +1,7 @@
 collation_schema = 1
 record_type = "calendar-proper-citation-collation"
 calendar = "roman-1962"
-sections = ["marian", "sanctoral"]
+sections = ["marian", "sanctoral", "seasonal"]
 target = "src/sources/calendars/roman-1962/propers.yaml"
 collated_on = "2026-10-20"
 artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
@@ -10,7 +10,7 @@ artifact_byte_size = 82815941
 artifact_page_count = 1088
 scope = "Bounded missing chant appointments, omitted citation constituents, and the Martin Lesson continuation identified while collating active 2026 primary-reading gaps. This is not a complete expected-slot universe or full-year collation."
 method = "Every reading rests on individually inspected images from the already-held hash-verified CMAA control, not OCR, a chosen Bible or remembered text. Original lanes used 120/150/180/200 dpi or 1800-pixel page images; separate conditional-rubric crops used 400 dpi. No whole YAML document was dumped. Source references were encoded through tools/citations.parse_citation."
-limits = "No new text bodies or rights determinations. Uncited composed appointments carry typed witness-gap Latin status and exact English no-exemplar absences, without asserting that translations do not exist. Conditional/votive replacements, unresolved source context and the separate Hermenegild seasonal Alleluia payload remain with the owning selection-contract lane. Nothing here makes chant alternatives cumulative."
+limits = "No new text bodies or rights determinations. Uncited composed appointments carry typed witness-gap Latin status and exact English no-exemplar absences, without asserting that translations do not exist. Conditional/votive replacements, unresolved source context and the separate Hermenegild seasonal Alleluia payload remain with the owning selection-contract lane. Nothing here makes chant alternatives cumulative. The per-row body_availability values and no-body qualifications record the initial dated appointment-only review before subsequent body collation; current body availability, provenance and publication decisions are owned by the current Proper and roman-1962-proper-latin-provenance-v1.toml."
 
 [[appointments]]
 mass = "annuntiatio-beatae-mariae-virginis"
@@ -25,6 +25,48 @@ marginal_number = 2323
 operation = "extend-citation"
 canonical_references = ["Psalms 44:13, 15-16", "Psalms 44:2"]
 body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "annuntiatio-beatae-mariae-virginis"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 576
+printed_page = 495
+printed_references = ["Ps. 44, 3 et 5"]
+raster_sha256 = ["52126344dc1a6281015da279f1ece56ec45b06dcb146e9ae893d92f5bcf47bbd"]
+qualification = "The directly printed Gradual is omitted together with Tract2327 in paschal time; both remain the normal outside-paschal course."
+marginal_number = 2326
+operation = "qualify-appointment"
+canonical_references = ["Psalms 44:3, 5"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "annuntiatio-beatae-mariae-virginis"
+proper = "Tract"
+origin = "direct"
+pdf_page = 576
+printed_page = 495
+printed_references = ["Ibid., 11 et 12", "V. Ibid., 13 et 10", "V. Ibid., 15-16"]
+raster_sha256 = ["52126344dc1a6281015da279f1ece56ec45b06dcb146e9ae893d92f5bcf47bbd"]
+qualification = "Direct normal Tract; the image reads13 et10, not3 et10, preserving13 before10. Omitted with Gradual2326 in paschal time."
+marginal_number = 2327
+operation = "add-proper"
+canonical_references = ["Psalms 44:11-12, 13, 10, 15-16"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "annuntiatio-beatae-mariae-virginis"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 576
+printed_page = 495
+printed_references = ["Luc. 1, 28"]
+raster_sha256 = ["52126344dc1a6281015da279f1ece56ec45b06dcb146e9ae893d92f5bcf47bbd"]
+qualification = "Paschal-only double Alleluia replaces both Gradual2326 and Tract2327. Second verse Virga Jesse floruit is uncited; Luke1:28 does not supply the whole mixed body."
+marginal_number = 2328
+operation = "recognize-mixed-extent"
+canonical_references = ["Luke 1:28"]
+body_availability = "unavailable"
 
 [[appointments]]
 mass = "nativitate-beatae-mariae-virginis"
@@ -230,7 +272,7 @@ pdf_page = 703
 printed_page = 622
 printed_references = []
 raster_sha256 = ["6d8636786a9de5145c6a2d9dd4be9f23d7740dc26f6f35175b6b022350ea1c07"]
-qualification = "No printed Bible citation. Must compose with C9 disposition of the conditional votive Tract before serving a flat course."
+qualification = "Direct uncited Alleluia3341 follows Gradual3340 in the normal feast course and precedes Gospel3342. Tract3347 is printed only under In Missis votivis and post Septuagesimam; the later paschal-votive double Alleluia3348 replaces the Gradual. These unsupported votive branches are excluded from the normal feast course; their source facts do not activate from season alone. Existing Latin and English whole-body absences are preserved."
 marginal_number = 3341
 operation = "add-proper"
 canonical_references = []
@@ -417,3 +459,676 @@ marginal_number = 4078
 operation = "add-proper"
 canonical_references = []
 body_availability = "unavailable"
+
+[[appointments]]
+mass = "s-hieronymi-aemiliani-confessoris"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 674
+printed_page = 593
+printed_references = ["Ibid., 9"]
+raster_sha256 = ["c6f023e57b9d913857a43b9eb73d2b34860d2643f3bf9e4b74eb905a947753f8"]
+qualification = "The normal Alleluia follows the Gradual's Psalm111:5-6 citation, so Ibid.,9 is Psalm111:9. Psalm111:1 appears only in the separate In Missis votivis tempore paschali replacement of the Gradual, followed there by Psalm111:9. No votive branch is activated from season alone."
+marginal_number_note = "The right-edge marginal figure is cropped after the visible prefix310; no final digit is inferred."
+canonical_references = ["Psalm 111:9"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "assumptione-beatae-mariae-virginis"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 709
+printed_page = 628
+printed_references = []
+raster_sha256 = ["c79888f25819d95df810c8d50db6f71a9fabfb0118d7ef8de50034607aca2d2b"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3382
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "immaculati-cordis-beatae-mariae-virginis"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 714
+printed_page = 633
+printed_references = ["Psalms 12:6", "Psalms 44:18"]
+raster_sha256 = ["98c8ff6f414f8bd8a8f88d6eb4e55d4ea1e8bca11a891e50fc27d217cf8c247b"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3427
+operation = "extend-citation"
+canonical_references = ["Psalms 12:6", "Psalms 44:18"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "immaculati-cordis-beatae-mariae-virginis"
+proper = "Offertory"
+origin = "direct"
+pdf_page = 715
+printed_page = 634
+printed_references = ["Luke 1:47, 49"]
+raster_sha256 = ["48691dab584400b0feeadcad31a6e9dfe32e9a8837f93669d10660fd3c3b88b9"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3432
+operation = "add-proper"
+canonical_references = ["Luke 1:47, 49"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-apollinaris-episcopi-martyris"
+proper = "Introit"
+origin = "direct"
+pdf_page = 679
+printed_page = 598
+printed_references = ["Daniel 3:84, 87", "Daniel 3:57"]
+raster_sha256 = ["0462345e285be51663a272ccfe41f9961c61a704176ef014909c0cf5fb29c4ca"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3143
+operation = "extend-citation"
+canonical_references = ["Daniel 3:84, 87", "Daniel 3:57"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-bernardi-abbatis-ecclesiae-doctoris"
+proper = "Offertory"
+origin = "direct"
+pdf_page = 713
+printed_page = 632
+printed_references = ["Psalms 91:13"]
+raster_sha256 = ["22a6e0c263147f3225e99140e08bbac14644ac068342ba8cc264c4eb4e4a2673"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3416
+operation = "add-proper"
+canonical_references = ["Psalms 91:13"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-caietani-confessoris"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 697
+printed_page = 616
+printed_references = ["Psalms 91:13-14", "Psalms 91:3"]
+raster_sha256 = ["c701711184e04496f8b606d66958f37761647ffb50fe770e96fd22e110270945"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3286
+operation = "extend-citation"
+canonical_references = ["Psalms 91:13-14", "Psalms 91:3"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-caietani-confessoris"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 697
+printed_page = 616
+printed_references = ["James 1:12"]
+raster_sha256 = ["c701711184e04496f8b606d66958f37761647ffb50fe770e96fd22e110270945"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3287
+operation = "add-proper"
+canonical_references = ["James 1:12"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-camilli-lellis-confessoris"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 671
+printed_page = 590
+printed_references = ["Psalms 111:1"]
+raster_sha256 = ["9cb2d26d5f611f4a03695d3c2356d1fc875082a450cb9301cf8c0cae9dbed57a"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3082
+operation = "add-proper"
+canonical_references = ["Psalms 111:1"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-dominici-confessoris"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 694
+printed_page = 613
+printed_references = ["Psalms 91:13-14", "Psalms 91:3"]
+raster_sha256 = ["eb0c79751e9e1be809da589a9d41621f79745bce7f49d1d62afbc4da36ed4189"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3262
+operation = "extend-citation"
+canonical_references = ["Psalms 91:13-14", "Psalms 91:3"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-ignatii-confessoris"
+proper = "Introit"
+origin = "direct"
+pdf_page = 689
+printed_page = 608
+printed_references = ["Philippians 2:10-11", "Psalms 5:12-13"]
+raster_sha256 = ["8f6c1d33b434d4dc301e8d987e30d27b1b8615d2bd834e5ec246196a29bdb44f"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3224
+operation = "extend-citation"
+canonical_references = ["Philippians 2:10-11", "Psalms 5:12-13"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-ignatii-confessoris"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 689
+printed_page = 608
+printed_references = ["Psalms 91:13-14", "Psalms 91:3"]
+raster_sha256 = ["8f6c1d33b434d4dc301e8d987e30d27b1b8615d2bd834e5ec246196a29bdb44f"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3227
+operation = "extend-citation"
+canonical_references = ["Psalms 91:13-14", "Psalms 91:3"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-ignatii-confessoris"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 689
+printed_page = 608
+printed_references = ["James 1:12"]
+raster_sha256 = ["8f6c1d33b434d4dc301e8d987e30d27b1b8615d2bd834e5ec246196a29bdb44f"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3228
+operation = "add-proper"
+canonical_references = ["James 1:12"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-ioannae-franciscae-fremiot-chantal-viduae"
+proper = "Postcommunion"
+origin = "direct"
+pdf_page = 714
+printed_page = 633
+printed_references = []
+raster_sha256 = ["98c8ff6f414f8bd8a8f88d6eb4e55d4ea1e8bca11a891e50fc27d217cf8c247b"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3422
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "s-ioannae-franciscae-fremiot-chantal-viduae"
+proper = "Secret"
+origin = "direct"
+pdf_page = 713
+printed_page = 632
+printed_references = []
+raster_sha256 = ["22a6e0c263147f3225e99140e08bbac14644ac068342ba8cc264c4eb4e4a2673"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3421
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "s-iosephi-calasanctii-confessoris"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 720
+printed_page = 639
+printed_references = ["James 1:12"]
+raster_sha256 = ["b7b6014d5040c24a2863287062f37a0e8879c7419ff5d22d1f09c7b33234d867"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3472
+operation = "add-proper"
+canonical_references = ["James 1:12"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-irenaei-episcopi-martyris"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 659
+printed_page = 578
+printed_references = ["Psalms 121:8", "Psalms 36:37"]
+raster_sha256 = ["cd418b67ab1ca957f42f93bb8c6fd8933d661049cd8fb971f915a61f1109c03e"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 2975
+operation = "extend-citation"
+canonical_references = ["Psalms 121:8", "Psalms 36:37"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-laurentii-brundusio-confessoris-ecclesiae-doctoris"
+proper = "Collect"
+origin = "direct"
+pdf_page = 675
+printed_page = 594
+printed_references = []
+raster_sha256 = ["db41b7a7a106d3d5ef6b49f6d03ab525a243fffe80b9fcdd6e6397c6ab62114e"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3117
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "s-ludovici-regis-confessoris"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 718
+printed_page = 637
+printed_references = ["Psalms 91:13-14", "Psalms 91:3"]
+raster_sha256 = ["72503bf80feec10a6f2aa2fc4e52c5edefc576c38bb5361cb7945f036bbd2e5c"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3458
+operation = "extend-citation"
+canonical_references = ["Psalms 91:13-14", "Psalms 91:3"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-ludovici-regis-confessoris"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 718
+printed_page = 637
+printed_references = ["James 1:12"]
+raster_sha256 = ["72503bf80feec10a6f2aa2fc4e52c5edefc576c38bb5361cb7945f036bbd2e5c"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3459
+operation = "add-proper"
+canonical_references = ["James 1:12"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-mariae-magdalenae-paenitentis"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 678
+printed_page = 597
+printed_references = ["Psalms 44:3"]
+raster_sha256 = ["b71b85e8e4cdddd75fc8e243c46b4d8ac58285a31efd07b422914afc85b5b513"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3137
+operation = "add-proper"
+canonical_references = ["Psalms 44:3"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-marthae-virginis"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 686
+printed_page = 605
+printed_references = ["Psalms 44:15-16"]
+raster_sha256 = ["3e6475009387667ed2ff135f94da84f611e8cb87ee21e7ce44ad68c5d184e457"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3203
+operation = "add-proper"
+canonical_references = ["Psalms 44:15-16"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "s-marthae-virginis"
+proper = "Communion"
+origin = "direct"
+pdf_page = 687
+printed_page = 606
+printed_references = ["Matthew 25:4, 6"]
+raster_sha256 = ["663ebfabd33c20e5af76c62b3bba8aca61e23a055b169f01f469ba2bfa96dbcf"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3208
+operation = "add-proper"
+canonical_references = ["Matthew 25:4, 6"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "ss-nazarii-celsi-martyrum-victoris-i"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 685
+printed_page = 604
+printed_references = ["Exodus 15:11", "Exodus 15:6"]
+raster_sha256 = ["b1086adad05550f29ca5a43a7e62e26dc70f8b775d8583b84f278f8a76a870a8"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3191
+operation = "add-proper"
+canonical_references = ["Exodus 15:11", "Exodus 15:6"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "ss-septem-fratrum-martyrum-ac-ss"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 664
+printed_page = 583
+printed_references = []
+raster_sha256 = ["df3fb514f459956cdbbae1547311384d151523d425b6f0a797ba969bb8410dfc"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3015
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "vigil-assumption"
+proper = "Communion"
+origin = "direct"
+pdf_page = 707
+printed_page = 626
+printed_references = []
+raster_sha256 = ["a10c5eaf56413ac8b5f081fc2874facc5e70a6b56dadf520c556d47946e1ed40"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3374
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "vigil-assumption"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 706
+printed_page = 625
+printed_references = []
+raster_sha256 = ["98466e5ad47e1a8b7b5588b8235c5b8f62cf886d600b193d2664de2197262a5f"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3369
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "vigil-assumption"
+proper = "Offertory"
+origin = "direct"
+pdf_page = 706
+printed_page = 625
+printed_references = []
+raster_sha256 = ["98466e5ad47e1a8b7b5588b8235c5b8f62cf886d600b193d2664de2197262a5f"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 3371
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "visitatione-beatae-mariae-virginis"
+proper = "Introit"
+origin = "direct"
+pdf_page = 655
+printed_page = 574
+printed_references = []
+raster_sha256 = ["3027de949f25076423210719d05ce9b77676730b742d04197ed87b0f608a5606"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 2949
+operation = "restore-mixed-body-identity"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "visitatione-beatae-mariae-virginis"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 656
+printed_page = 575
+printed_references = []
+raster_sha256 = ["5911222dda7278be67ef43cd4c1f9e716267f09abecac8358b898e725af7be77"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 2954
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "visitatione-beatae-mariae-virginis"
+proper = "Communion"
+origin = "direct"
+pdf_page = 657
+printed_page = 576
+printed_references = []
+raster_sha256 = ["e95cd7f779b01a513a16934d3ebdb44f84cd255674f9f9aa9412415663c6dcce"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 2959
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "visitatione-beatae-mariae-virginis"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 656
+printed_page = 575
+printed_references = []
+raster_sha256 = ["5911222dda7278be67ef43cd4c1f9e716267f09abecac8358b898e725af7be77"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 2953
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "visitatione-beatae-mariae-virginis"
+proper = "Offertory"
+origin = "direct"
+pdf_page = 656
+printed_page = 575
+printed_references = []
+raster_sha256 = ["5911222dda7278be67ef43cd4c1f9e716267f09abecac8358b898e725af7be77"]
+qualification = "Individually image-collated normal-form appointment and source order. Literal wording was not copied or independently verified in this lane."
+marginal_number = 2956
+operation = "add-proper"
+canonical_references = []
+body_availability = "unavailable"
+
+# Bounded normal temporal appointments and exact local seasonal courses.
+
+[[appointments]]
+mass = "holy-wednesday"
+proper = "Oratio"
+origin = "direct"
+pdf_page = 228
+printed_page = 147
+printed_references = []
+raster_sha256 = ["9bc89090dadbe8d4d26fa20633b9bae1fa3f94c2765022638d4fe0cc516a343f"]
+qualification = "Missale Romanum 1962, artifact p. 228, printed p. 147, numbered unit 882; source-established normal appointment. Printed after Graduale881 and before the second Lesson883. Exact wording remains unavailable in this record."
+marginal_number = 882
+operation = "insert-before"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "holy-wednesday"
+proper = "Oratio super populum"
+origin = "direct"
+pdf_page = 232
+printed_page = 151
+printed_references = []
+raster_sha256 = ["b88bc07bed61ae6b9d389a2759fff6ee79026a6222876882f6a01684fe7540dc"]
+qualification = "Missale Romanum 1962, artifact p. 232, printed p. 151, numbered unit 890; source-established normal appointment. Printed after Postcommunio889, with the Humiliate capita vestra Deo cue. Exact wording remains unavailable in this record."
+marginal_number = 890
+operation = "insert-after"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "easter-tuesday"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 414
+printed_page = 333
+printed_references = []
+raster_sha256 = ["2c03fe75d5968049732f79a8b9361eaa76c2185137a85a1b821c68028b9561ee"]
+qualification = "Missale Romanum 1962, artifact p. 414, printed p. 333, numbered unit 1166; source-established normal appointment. The printed acclamation has no biblical citation and follows Graduale1165. Exact wording remains unavailable in this record."
+marginal_number = 1166
+operation = "insert-before"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "easter-thursday"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 418
+printed_page = 337
+printed_references = []
+raster_sha256 = ["bcb2fd66c7ef7d50ab18b09bc4aa76e3e8f0b18346790e0c6c6f84f789761cac"]
+qualification = "Missale Romanum 1962, artifact p. 418, printed p. 337, numbered unit 1188; source-established normal appointment. The printed acclamation has no biblical citation and follows Graduale1187. Exact wording remains unavailable in this record."
+marginal_number = 1188
+operation = "insert-before"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "pentecost-ember-wednesday"
+proper = "Oratio"
+origin = "direct"
+pdf_page = 443
+printed_page = 362
+printed_references = []
+raster_sha256 = ["514528d5dab1bae59b6b3aa0743fd468938346fbd5a9fbd8a601899bd9ae36f6"]
+qualification = "Missale Romanum 1962, artifact p. 443, printed p. 362, numbered unit 1344; source-established normal appointment. Printed after the first Alleluia1343 and before the second Lesson1345. Exact wording remains unavailable in this record."
+marginal_number = 1344
+operation = "insert-before"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "pentecost-ember-wednesday"
+proper = "Second Alleluia"
+origin = "direct"
+pdf_page = 443
+printed_page = 362
+printed_references = []
+raster_sha256 = ["514528d5dab1bae59b6b3aa0743fd468938346fbd5a9fbd8a601899bd9ae36f6"]
+qualification = "Missale Romanum 1962, artifact p. 443, printed p. 362, numbered unit 1346; source-established normal appointment. The printed invocation has no biblical citation and follows the second Lesson1345. Exact wording remains unavailable in this record."
+marginal_number = 1346
+operation = "insert-before"
+canonical_references = []
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "vigil-of-the-ascension"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 431
+printed_page = 350
+printed_references = ["John 16:28"]
+raster_sha256 = ["f7405349b36012f83ef8e6d4f59b0d5800cfc08650d59d3991df78f3281b6fd0"]
+qualification = "Missale Romanum 1962, artifact p. 431, printed p. 350, numbered unit 1276; this normal Alleluia also appoints a separate uncited verse. Its biblical citation is retained; the uncited wording remains unavailable."
+marginal_number = 1276
+operation = "replace"
+canonical_references = ["John 16:28"]
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "pentecost-monday"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 439
+printed_page = 358
+printed_references = ["Acts 2:4"]
+raster_sha256 = ["e93af5587333f26c442fb215ad0aaed42e3289ac0f7ac39add828b43b155da85"]
+qualification = "Missale Romanum 1962, artifact p. 439, printed p. 358, numbered unit 1323; this normal Alleluia also appoints a separate uncited verse. Its biblical citation is retained; the uncited wording remains unavailable."
+marginal_number = 1323
+operation = "replace"
+canonical_references = ["Acts 2:4"]
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "pentecost-tuesday"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 441
+printed_page = 360
+printed_references = ["John 14:26"]
+raster_sha256 = ["b931c854d456e5fce2dc20b18050cd87683c835f967dc5bec87d3c2b5f3a77b5"]
+qualification = "Missale Romanum 1962, artifact p. 441, printed p. 360, numbered unit 1333; this normal Alleluia also appoints a separate uncited verse. Its biblical citation is retained; the uncited wording remains unavailable."
+marginal_number = 1333
+operation = "replace"
+canonical_references = ["John 14:26"]
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "pentecost-thursday"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 445
+printed_page = 364
+printed_references = ["Psalm 103:30"]
+raster_sha256 = ["007c847832e5c951a3f2e2535806cf6bf749a5f9bc46e56e859a11982d3e0663"]
+qualification = "Missale Romanum 1962, artifact p. 445, printed p. 364, numbered unit 1356; this normal Alleluia also appoints a separate uncited verse. Its biblical citation is retained; the uncited wording remains unavailable."
+marginal_number = 1356
+operation = "replace"
+canonical_references = ["Psalm 103:30"]
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "pentecost-ember-friday"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 446
+printed_page = 365
+printed_references = ["Wisdom 12:1"]
+raster_sha256 = ["2355ee4c35ea972452a6cbbed6fa936be1c57c0293a9b812b073339daa8584b7"]
+qualification = "Missale Romanum 1962, artifact p. 446, printed p. 365, numbered unit 1366; this normal Alleluia also appoints a separate uncited verse. Its biblical citation is retained; the uncited wording remains unavailable."
+marginal_number = 1366
+operation = "replace"
+canonical_references = ["Wisdom 12:1"]
+body_availability = "unavailable"
+
+[[appointments]]
+mass = "rogation-mass"
+proper = "Gradual"
+origin = "direct"
+pdf_page = 429
+printed_page = 348
+printed_references = ["Psalm 43:8-9"]
+raster_sha256 = ["007157ee76ab258c80f515f10e943e24485b3b96d0a5fafe9f07f6d7d78f7982"]
+qualification = "Missale Romanum 1962, artifact pp. 429-430, printed pp. 348-349: unit1264 is headed Tempore paschali; units1265-1266 follow Extra tempus paschale; unit1267 follows Post Septuagesimam, omissis Alleluia et versu sequenti."
+marginal_number = 1265
+operation = "replace"
+canonical_references = ["Psalm 43:8-9"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "rogation-mass"
+proper = "Alleluia"
+origin = "direct"
+pdf_page = 429
+printed_page = 348
+printed_references = ["Psalm 78:9-10"]
+raster_sha256 = ["007157ee76ab258c80f515f10e943e24485b3b96d0a5fafe9f07f6d7d78f7982"]
+qualification = "Missale Romanum 1962, artifact pp. 429-430, printed pp. 348-349: unit1264 is headed Tempore paschali; units1265-1266 follow Extra tempus paschale; unit1267 follows Post Septuagesimam, omissis Alleluia et versu sequenti."
+marginal_number = 1266
+operation = "replace"
+canonical_references = ["Psalm 78:9-10"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "rogation-mass"
+proper = "Tract"
+origin = "direct"
+pdf_page = 429
+printed_page = 348
+printed_references = ["Psalm 24:17-18, 1-4"]
+raster_sha256 = ["007157ee76ab258c80f515f10e943e24485b3b96d0a5fafe9f07f6d7d78f7982", "db91af9ab9dbd9e5c0714caa22edaccabcb318e3323e93ab366189ad2df021bf"]
+qualification = "Missale Romanum 1962, artifact pp. 429-430, printed pp. 348-349: unit1264 is headed Tempore paschali; units1265-1266 follow Extra tempus paschale; unit1267 follows Post Septuagesimam, omissis Alleluia et versu sequenti."
+marginal_number = 1267
+operation = "replace"
+canonical_references = ["Psalm 24:17-18, 1-4"]
+body_availability = "scripture-reconstruction"
+
+[[appointments]]
+mass = "rogation-mass"
+proper = "Alleluia (Tempore paschali)"
+origin = "direct"
+pdf_page = 429
+printed_page = 348
+printed_references = ["Psalm 78:9-10", "Psalm 30:8"]
+raster_sha256 = ["007157ee76ab258c80f515f10e943e24485b3b96d0a5fafe9f07f6d7d78f7982"]
+qualification = "Missale Romanum 1962, artifact pp. 429-430, printed pp. 348-349: unit1264 is headed Tempore paschali; units1265-1266 follow Extra tempus paschale; unit1267 follows Post Septuagesimam, omissis Alleluia et versu sequenti."
+marginal_number = 1264
+operation = "insert-before"
+canonical_references = ["Psalm 78:9-10", "Psalm 30:8"]
+body_availability = "scripture-reconstruction"

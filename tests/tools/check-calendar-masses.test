@@ -1520,3 +1520,63 @@ if "$tpt" "$tool" --root empty-root >/dev/null 2>&1; then
 fi
 
 echo ok
+
+# The dated Telesphorus and Hyginus prayer printings are marked C1 throughout
+# (1962 AP117 nos.248-250; AP123 nos.283-285). Their Common source, Si diligis
+# me [1], owns Collect4176, Secret4187 and Postcommunion4190. Own wrappers
+# must not replace those appointments with an older formular's prayers.
+/usr/bin/python3 - "$tools/$tool" "$tools/../src/sources/calendars" <<'PY'
+import copy
+import re
+import sys
+from importlib.machinery import SourceFileLoader
+from importlib.util import module_from_spec, spec_from_loader
+from pathlib import Path
+
+loader = SourceFileLoader("check_calendar_q1_papal", sys.argv[1])
+spec = spec_from_loader(loader.name, loader)
+module = module_from_spec(spec)
+loader.exec_module(module)
+document = module.load_document(Path(sys.argv[2]), "roman-1962")
+masses = module.mass_index(document)
+slots = ["Collect", "Secret", "Postcommunion"]
+units = [4176, 4187, 4190]
+
+for key in (
+    "comm-s-telesphori-papae-martyris",
+    "comm-s-hygini-papae-martyris",
+    "comm-s-lucii-i-papae-martyris",
+):
+    mass = masses[key]
+    assert mass["takes_from"]["mass"] == "commune-summorum-pontificum"
+    assert mass["takes_from"]["common_sets"]["orations"] == {
+        "state": "selected", "option": "c1-singular"
+    }
+    assert not [p for p in mass.get("propers", []) if p["name"] in slots]
+    resolved, problems = module.resolve_propers(document, mass)
+    assert not problems, problems
+    prayers = [(p, origin) for _, p, origin in resolved if p["name"] in slots]
+    assert [p["name"] for p, _ in prayers] == slots
+    for (proper, origin), unit in zip(prayers, units):
+        assert origin["mass"] == "commune-summorum-pontificum"
+        assert re.search(r"\b" + str(unit) + r"\b", proper.get("notes", ""))
+        module.check_proper(key, proper, problems, calendar="roman-1962")
+    assert not problems, problems
+
+# The selector vocabulary is source owned: an incompatible selector is not
+# interpreted as permission to emit one of the other prayer sets.
+bad = copy.deepcopy(masses["comm-s-hygini-papae-martyris"])
+bad["takes_from"]["common_sets"]["orations"]["option"] = "plural"
+resolved, problems = module.resolve_propers(document, bad)
+assert any("unknown option" in problem for problem in problems), problems
+assert not [p for _, p, _ in resolved if module.proper_family(p["name"]) in slots]
+
+# Gregory's explicit P-marked own prayers remain replacements of that Common.
+resolved, problems = module.resolve_propers(
+    document, masses["s-gregorii-i-papae-confessoris-ecclesiae"]
+)
+assert not problems, problems
+prayers = [(p, origin) for _, p, origin in resolved if p["name"] in slots]
+assert [p["name"] for p, _ in prayers] == slots
+assert all(origin is None for _, origin in prayers)
+PY

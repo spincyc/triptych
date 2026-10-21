@@ -21,16 +21,39 @@ class CommonAcclamationAppointmentsTests(unittest.TestCase):
     def test_source_appointed_acclamations_remain_in_their_actual_seat(self):
         for key,(entry,page,common,common_page) in CASES.items():
             with self.subTest(mass=key):
-                rows = self.masses[key]['propers']
-                names = [r['name'] for r in rows]
-                self.assertEqual(names[1:4], ['Responsorial Psalm', 'Gospel Acclamation', 'Gospel'])
-                row = rows[2]
-                self.assertEqual(row['source'], 'composed')
-                self.assertEqual(row['text_status'], {'state':'unavailable','scope':'proper-body','reasons':[{'kind':'witness-gap','source_id':TARGET}]})
-                self.assertIn(f'n. {entry}',row['notes'])
-                self.assertIn(f'n. {common}',row['notes'])
-                for field in ('text','verses','translations','incipit'):
-                    self.assertNotIn(field,row)
+                self.assert_source_appointed_acclamation(key, self.masses[key]['propers'])
+
+    def assert_source_appointed_acclamation(self, key, rows):
+        entry, page, common, common_page = CASES[key]
+        expected = ['First Reading', 'Responsorial Psalm', 'Gospel Acclamation', 'Gospel']
+        if key in ('saint-lawrence-brindisi-priest-doctor-church',
+                   'saint-john-chrysostom-bishop-doctor-church'):
+            expected.append('Gospel (shorter form)')
+        if key == 'saint-john-chrysostom-bishop-doctor-church':
+            # Later Antiphonary evidence adds the two antiphons, without
+            # changing the Ordo's reading course or its shorter Gospel.
+            self.assertIn('artifact page 132, printed page 124', self.masses[key]['notes'])
+            expected = ['Entrance Antiphon', *expected, 'Communion Antiphon']
+        self.assertEqual([row['name'] for row in rows], expected)
+        row, = [row for row in rows if row['name'] == 'Gospel Acclamation']
+        self.assertEqual(row['source'], 'composed')
+        self.assertEqual(row['text_status'], {'state':'unavailable','scope':'proper-body','reasons':[{'kind':'witness-gap','source_id':TARGET}]})
+        self.assertIn(f'n. {entry}',row['notes'])
+        self.assertIn(f'n. {common}',row['notes'])
+        for field in ('text','verses','translations','incipit'):
+            self.assertNotIn(field,row)
+
+    def test_acclamation_seat_rejects_missing_duplicate_or_reordered_appointments(self):
+        key = 'saint-john-chrysostom-bishop-doctor-church'
+        rows = self.masses[key]['propers']
+        missing = [row for row in rows if row['name'] != 'Gospel Acclamation']
+        duplicate = [*rows[:4], rows[3], *rows[4:]]
+        reordered = [*rows[:2], rows[3], rows[2], *rows[4:]]
+        lost_shorter = [row for row in rows if row['name'] != 'Gospel (shorter form)']
+        for label, altered in [('missing', missing), ('duplicate', duplicate),
+                               ('reordered', reordered), ('lost-shorter-Gospel', lost_shorter)]:
+            with self.subTest(alteration=label), self.assertRaises(AssertionError):
+                self.assert_source_appointed_acclamation(key, altered)
 
     def test_never_adopted_bodies_create_no_fictitious_removed_body_owners(self):
         owners = [key for key,_,_ in body_owners(self.document) if key.mass in CASES and key.proper == 'Gospel Acclamation']

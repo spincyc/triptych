@@ -1585,6 +1585,14 @@
       });
     }
 
+    Shell.attachSourcePathChoices({ T: T, root: documentFragment, result: result,
+      state: state, prefix: prefix, navigate: navigate,
+      adapt: function (request) {
+        return Adapters.adaptDay({ request: request, derived: runtime.derived,
+          structure: structure, ordinary: ordinary });
+      }
+    });
+
     // Keep the Mass-wide witness choice beside its first Proper.
     for (const choice of documentFragment.querySelectorAll('.translation-witness-choice')) {
       if (choice.closest('.proper-choice')) continue;
@@ -1750,7 +1758,9 @@
     function hasBody(row) {
       return row.selected && (row.selected.kind === 'composed' ||
         T.selectedCoverageUnits({ events: [row] }, runtime.structure).some(function (unit) {
-          return unit.component !== 'scripture';
+          const language = result.request && result.request.languages && result.request.languages.orations || 'la';
+          return unit.component !== 'scripture' &&
+            (!unit.body_languages || unit.body_languages.includes(language));
         }));
     }
     if (!hasBody(event)) return null;
@@ -2709,7 +2719,7 @@
   function restorePendingNavigation(pending) {
     const held = pending || {};
     let optionTarget = null;
-    if (held.focus && held.focus.kind === 'ordinary-option') {
+    if (held.focus && ['ordinary-option', 'source-path-option'].indexOf(held.focus.kind) >= 0) {
       optionTarget = Array.from(reading.querySelectorAll(
         '[data-option-group] input[type="radio"]'
       )).find(function (input) {

@@ -410,6 +410,9 @@
     renderProperChoice: function (input) {
       return root.TriptychSourceChoiceControls.renderProperChoice(input);
     },
+    attachSourcePathChoices: function (input) {
+      return root.TriptychSourceChoiceControls.attachSourcePathChoices(input);
+    },
     properChoiceRemovals: function (state, updates, removals) {
       return root.TriptychSourceChoiceControls.properChoiceRemovals(state, updates, removals);
     } });

@@ -610,15 +610,15 @@ carries the identical block.
 | roman-pre-1955 | seasonal | 6 | 0 | 0 |
 | roman-pre-1955 | marian | 1 | 0 | 0 |
 | roman-pre-1955 | sanctoral | 1 | 0 | 0 |
-| roman-1962 | seasonal | 128 | 1368 | 0 |
-| roman-1962 | christological | 8 | 96 | 0 |
-| roman-1962 | marian | 18 | 134 | 0 |
-| roman-1962 | sanctoral | 307 | 1564 | 0 |
+| roman-1962 | seasonal | 128 | 1424 | 0 |
+| roman-1962 | christological | 8 | 99 | 0 |
+| roman-1962 | marian | 18 | 156 | 0 |
+| roman-1962 | sanctoral | 307 | 1669 | 0 |
 | roman-1962 | common | 30 | 382 | 0 |
-| postconciliar | seasonal | 390 | 2160 | 0 |
-| postconciliar | christological | 7 | 69 | 0 |
-| postconciliar | marian | 14 | 52 | 0 |
-| postconciliar | sanctoral | 201 | 770 | 0 |
+| postconciliar | seasonal | 390 | 2385 | 0 |
+| postconciliar | christological | 7 | 79 | 0 |
+| postconciliar | marian | 14 | 70 | 0 |
+| postconciliar | sanctoral | 201 | 900 | 0 |
 | postconciliar | common | 7 | 0 | 0 |
 
 | Calendar | Rank | Entries | Celebrations |
@@ -641,19 +641,19 @@ carries the identical block.
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 8 | 491 | 619 |
-| Propers | 0 | 3544 | 3051 |
+| Propers | 0 | 3730 | 3434 |
 | — named `Placeholder` | 0 | 0 | 0 |
-| — inside a `forms` block | 0 | 196 | 191 |
-| — carrying a `cycles` mapping | 0 | 0 | 295 |
+| — inside a `forms` block | 0 | 211 | 204 |
+| — carrying a `cycles` mapping | 0 | 0 | 305 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 410 |
 | Masses holding only placeholders | 0 | 0 | 0 |
-| Masses taking a formulary from another entry | 0 | 165 | 0 |
-| Propers taking their text from another entry | 0 | 79 | 49 |
-| Propers that are not placeholders | 0 | 3544 | 3051 |
-| — of those, scripture-bearing | 0 | 2245 | 2680 |
-| Encoded passages | 0 | 2667 | 3639 |
+| Masses taking a formulary from another entry | 0 | 166 | 0 |
+| Propers taking their text from another entry | 0 | 101 | 49 |
+| Propers that are not placeholders | 0 | 3730 | 3434 |
+| — of those, scripture-bearing | 0 | 2263 | 3025 |
+| Encoded passages | 0 | 2748 | 4004 |
 | Distinct books cited | 0 | 57 | 73 |
-| Distinct slot names | 0 | 126 | 100 |
+| Distinct slot names | 0 | 128 | 100 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
 `tools/mass-propers census --write`, which is the only thing that writes the

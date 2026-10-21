@@ -245,6 +245,77 @@ verification pass. Exactly 501 existing site inputs were refreshed; no new
 site inputs were adopted, and unrelated bindings were preserved. Eleven
 changed CLI examples were recaptured from successful real invocations.
 
+### Integrated annual source repair, 2026-10-21
+
+The next integration restores source-appointed Novus Ordo antiphons, Common
+referrals, alternate Entrance options and coupled reading courses. Shared
+source-path selection preserves every candidate and its source identity;
+English-only whole-antiphon absences do not change Latin Scripture eligibility
+or turn Bible components into a complete Missal body. Three unpublished held
+Collects remain unavailable, with their exact source and provenance state.
+The seasonal increment supplies 213 antiphon appointments across 106 Masses,
+with two exact verse-number correspondences. Its 125 source-proven English
+whole-body gaps retain 111 reviewed records and fourteen accepted additions;
+the unsupported Lent V Wednesday Entrance inference is withdrawn. These are
+English qualifications and do not infer Latin body gaps. All sixteen focused
+seasonal tests pass on the integrated source; final index and annual gates
+remain separate.
+
+The Roman 1962 source review covers the allocated 295 full formularies and
+104 commemorations. Its appointment and referral repairs preserve existing
+body words while adding precise English absence records. Hermenegild's nine
+own Paschal units and the outside-Paschal Common course are alternatives.
+Chantal's prayers follow their printed order; obsolete order exceptions are
+removed. Jerome's Postcommunion incipit is corrected to `Repleti alimonia
+caelesti`. Gregory Barbarigo, Laurence of Brindisi and Claret retain explicitly
+held-unpublished Collect gaps; no formerly published body or removal hash is
+invented for them.
+
+Six English whole-wording obligations remain open, each at main/all,
+occurrence 1, English body: Joseph spouse of Mary
+(`s-ioseph-sponsi-beatae-mariae-virginis`), `Alleluia (Tempore paschali)` and
+`Offertory`; Justin (`s-iustini-martyris`), `Alleluia (Tempore paschali)`,
+`Gradual` and `Introit`; Paul of the Cross
+(`s-pauli-a-cruce-confessoris`), `Alleluia`. These Scripture-delegated targets
+need whole-wording and ownership evidence. Their Bible components do not close
+those obligations, and unsupported composed-body absence rows are not added.
+
+The complete 2008 Latin altar-book artifact is not held. The registered
+secondary PDF identifies 2002 on its title and printing history and retains
+the children's Eucharistic Prayer appendix and index entries omitted in 2008;
+individual readings matching later corrections do not establish its whole-file
+2008 identity. Exact 2008 whole-form and internal-option correspondence
+therefore remains open. Work continues with the held official Notitiae
+corrections and Supplementum, the ICEL Antiphonary's explicitly bounded
+2002/2008 antiphon evidence, and exact source-owned Common, role and referral
+joins. No complete annual/body denominator, unchanged wording, publication
+right or human acceptance is inferred. The source-family review remains
+162 pending and zero screened.
+
+Twenty-six checked Latin bodies are now supplied for the Pentecost and
+September Ember Saturdays, including fourteen newly explicit appointments.
+Longer and shorter forms retain their separate Oratio occurrences and the
+Veni chants retain their genuflection rubrics. Existing English words are
+unchanged; fourteen exact English absences are added. The historical source,
+1962 target comparison and project projection remain separately identified.
+Eight complete chant bodies and sixteen All Souls body owners bring this
+increment to fifty checked Latin bodies. All Souls retains its two Sequence
+references and eighteen appointed occurrences. Its sixteen formerly removed
+body records now have separately proved publication sources; no English words
+are added. The integrated body and coverage suite passes all 94 tests.
+
+The full Ordinary gate exposed three Matthias Paschal wrappers using a season
+as part of their seat name. Their exact role names and own occurrence joins
+are repaired, with season, source anchors and Common ownership preserved.
+All calendars now pass the Ordinary check. The distinct votive-only unit 2225
+remains unrepresented. On the maintainer's latest instruction, the publication
+target is now `main` after coherent commits, reconciliation, rebase and gates;
+this changes the earlier feature-only publication hold.
+
+Final integrated gates and the complete 5,856-render execution are still
+pending at this source integration. Earlier checkpoints and private candidate
+proofs retain their own source epochs and do not certify this merged tree.
+
 ## Missal reader C1 truthful coverage, 2026-10-19
 
 <!-- promised-deliverable: missal-reader-c1-coverage-2026-10-19 -->

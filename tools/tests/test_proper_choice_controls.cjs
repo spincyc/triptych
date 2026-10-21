@@ -36,11 +36,25 @@ class Element {
     }};
   }
   appendChild(node) { this.children.push(node); node.parentElement = this; return node; }
+  get firstChild() { return this.children[0] || null; }
+  insertBefore(node, before) {
+    const at = before ? this.children.indexOf(before) : this.children.length;
+    assert(at >= 0); this.children.splice(at, 0, node); node.parentElement = this; return node;
+  }
+  before(node) { this.parentElement.insertBefore(node, this); }
+  closest(selector) {
+    for (let node = this; node; node = node.parentElement)
+      if (selector === '[data-option-group]' && node.dataset.optionGroup) return node;
+    return null;
+  }
   setAttribute(key, value) { this.attributes[key] = value; }
   addEventListener(name, fn) { (this.listeners[name] ||= []).push(fn); }
   dispatch(name) { (this.listeners[name] || []).forEach((fn) => fn({target: this})); }
   querySelectorAll(selector) { return descendants(this).filter((node) => selector === '[data-semantic-location]'
-    ? node.dataset.semanticLocation : selector === '[data-semantic-event-id]' ? node.dataset.semanticEventId : false); }
+    ? node.dataset.semanticLocation : selector === '[data-semantic-event-id]' ? node.dataset.semanticEventId
+    : selector === '[data-option-group]' ? node.dataset.optionGroup
+    : selector === 'input[type="radio"]' ? node.tagName === 'INPUT' && node.type === 'radio'
+    : selector === '[data-option-group] input[type="radio"]' ? node.tagName === 'INPUT' && node.type === 'radio' && node.closest('[data-option-group]') : false); }
   querySelector(selector) { return this.querySelectorAll(selector)[0] || null; }
   focus(options) { this.focused = options; }
   scrollIntoView(options) { this.scrolled = options; }
@@ -273,8 +287,8 @@ test('both actual navigation functions retain choices and clear them on every id
     const same = navContext(entrance, state, hash);
     same.context.navigate({bible: 'vulgate'}, [], {location: {kind: 'event', id: gospel}, focus: 'event'});
     assert.deepEqual(JSON.parse(new URLSearchParams(same.pushes[0].split('#')[1]).get('proper-choices')), state.properChoices);
-    const changes = entrance === 'day' ? [{date: '2026-04-16'}, {missal: 'postconciliar'}, {mass: 'other'}, {form: 'other'}]
-      : [{missal: 'postconciliar'}, {type: 'other'}, {mass: 'other'}, {form: 'other'}];
+    const changes = entrance === 'day' ? [{date: '2026-04-16'}, {missal: 'postconciliar'}, {mass: 'other'}, {form: 'other'}, {cycle: 'C'}]
+      : [{missal: 'postconciliar'}, {type: 'other'}, {mass: 'other'}, {form: 'other'}, {cycle: 'C'}];
     for (const update of changes) {
       const next = navContext(entrance, state, hash);
       next.context.navigate(update, [], {location: null});
@@ -370,7 +384,7 @@ test('both entrances load the single control owner before the thin shell and mat
 
 test('dedicated CommonJS controls retain browser DOM, legacy migration, and disabled Day negatives', () => {
   const commonJS = require(path.join(uiModuleRoot, 'source-choice-controls.js'));
-  assert.deepEqual(Object.keys(commonJS).sort(), ['properChoiceRemovals', 'renderProperChoice']);
+  assert.deepEqual(Object.keys(commonJS).sort(), ['attachSourcePathChoices', 'properChoiceRemovals', 'renderProperChoice']);
   function snapshot(node) {
     return {tag: node.tagName, className: node.className, dataset: {...node.dataset},
       attributes: {...node.attributes}, text: node.textContent, id: node.id || null,
@@ -420,6 +434,224 @@ test('dedicated CommonJS controls retain browser DOM, legacy migration, and disa
       if (previous === undefined) delete globalThis.document;
       else globalThis.document = previous;
     }
+  }
+});
+
+const relationId = groupId('correlated-readings');
+const owned = [groupId('coupled-first-reading'), groupId('coupled-gospel')];
+const firstEvent = 'proper/roman-1962/contract-formulary/001';
+const nextEvent = 'proper/roman-1962/contract-formulary/002';
+function sourcePathView(options = {}) {
+  const env = environment(), node = new Element('div'), navigation = [], probes = [];
+  const prefix = options.prefix || '';
+  for (const id of [firstEvent, nextEvent]) {
+    const body = new Element('section'); body.textContent = 'Existing qualified source body ' + id;
+    body.dataset.semanticEventId = id; body.dataset.semanticLocation = prefix + id; node.appendChild(body);
+  }
+  const independent = propersView({...request(), properChoices: {[gospel]: 'additional'}}, 'gospel-reading');
+  node.appendChild(independent.node);
+  const eventIds = node.querySelectorAll('[data-semantic-event-id]').map((row) => row.dataset.semanticEventId);
+  const paths = ['common', 'optional-shorter', 'wrong', 'candidate-unknown', 'false', 'unknown'].map((id) => ({
+    id, standing: id === 'common' ? 'principal' : 'optional',
+    choices: {[owned[0]]: id === 'optional-shorter' ? 'shorter' : 'longer',
+      [owned[1]]: id === 'optional-shorter' ? 'shorter' : 'longer'},
+    condition: id === 'unknown' ? {fact: 'held-source-condition', in: ['transferred']} : null,
+    applicability: {state: id === 'false' ? 'inapplicable' : id === 'unknown' ? 'unresolved' : 'applicable',
+      reason: id === 'unknown' ? 'source-condition-unresolved' : null}}));
+  const relation = {id: relationId, basis: 'Synthetic exact source heading and span.',
+    selection: options.selectedUnknown ? {state: 'selected', option: 'unknown'} : {state: 'selected', option: 'optional-shorter'},
+    ownedChoiceIds: owned, beforeEventId: options.start ? null : firstEvent,
+    focusEventId: options.nullFocus ? null : firstEvent, paths};
+  const state = request(options.entrance || 'propers');
+  state.properChoices = {[relationId]: 'optional-shorter', [owned[1]]: 'shorter', [gospel]: 'additional'};
+  state.alternative = {id: owned[0] + '/shorter'};
+  const result = {events: eventIds.map((id) => ({id, kind: 'proper'})), sourcePathChoices: [relation]};
+  function adapt(candidate) {
+    probes.push(clone(candidate));
+    const id = candidate.properChoices[relationId];
+    const selected = paths.find((row) => row.id === id);
+    assert.equal(candidate.alternative, undefined);
+    for (const group of owned) assert.equal(candidate.properChoices[group], selected.choices[group]);
+    assert.equal(candidate.properChoices[gospel], 'additional');
+    if (id === 'wrong') throw new Error('Synthetic owning adapter refusal.');
+    const held = clone(relation); held.selection = {state: 'selected', option: id};
+    if (id === 'candidate-unknown') held.paths.find((row) => row.id === id).applicability.state = 'unresolved';
+    return {...result, sourcePathChoices: [held]};
+  }
+  const beforeBodies = node.children.map((row) => row.textContent);
+  const input = {T: env.T, root: node, result, state, prefix, adapt,
+    navigate: (...args) => navigation.push(clone(args))};
+  if (options.commonJS) {
+    const previous = globalThis.document;
+    globalThis.document = env.context.document;
+    try { require(path.join(uiModuleRoot, 'source-choice-controls.js')).attachSourcePathChoices(input); }
+    finally {
+      if (previous === undefined) delete globalThis.document;
+      else globalThis.document = previous;
+    }
+  } else env.Shell.attachSourcePathChoices(input);
+  const wrapper = descendants(node).find((row) => row.dataset.sourcePathChoice);
+  const controls = descendants(wrapper).find((row) => row.tagName === 'FIELDSET');
+  return {...env, node, wrapper, controls, relation, state, result, probes, navigation,
+    eventIds, beforeBodies, independent};
+}
+
+test('one cross-seat path control preserves normal event inventory, bodies, independent controls and print notes', () => {
+  for (const commonJS of [false, true]) {
+  const view = sourcePathView({commonJS});
+  assert.equal(view.node.children[0], view.wrapper);
+  assert.equal(view.wrapper.dataset.semanticEventId, undefined);
+  assert.deepEqual(view.node.querySelectorAll('[data-semantic-event-id]').map((row) => row.dataset.semanticEventId), view.eventIds);
+  assert.deepEqual(view.node.children.filter((row) => row !== view.wrapper).map((row) => row.textContent), view.beforeBodies);
+  Object.assign(view.context, {reading: view.node});
+  vm.runInContext(exactFunction(propersSource, 'renderedSemanticInventory'), view.context);
+  assert.deepEqual(clone(view.context.renderedSemanticInventory(view.eventIds.map((id) => ({id})), view.node)), view.eventIds);
+  assert.equal(radios(view.independent.node).filter((input) => !input.disabled).length, 2);
+  const summary = view.wrapper.children[0];
+  assert.match(summary.className, /source-path-note/);
+  assert.equal(summary.parentElement, view.wrapper);
+  assert.match(summary.textContent, /Source basis: Synthetic exact source heading and span/);
+  assert.match(view.controls.className, /ordinary-choice/);
+  assert.equal(radios(view.wrapper).length, 6);
+  assert(radios(view.wrapper).every((radio) => radio.type === 'radio' && radio.parentElement.tagName === 'LABEL' && !radio.listeners.keydown));
+  assert.equal(new Set(radios(view.wrapper).map((radio) => radio.name)).size, 1);
+  assert.equal(radios(view.wrapper).filter((radio) => radio.checked).length, 1);
+  assert.match(exactFunction(daySource, 'buildResultDocument'), /Shell.attachSourcePathChoices/);
+  assert.match(exactFunction(propersSource, 'renderResult'), /Shell.attachSourcePathChoices/);
+  }
+});
+test('source path selection replaces the whole tuple atomically, migrates scalar and preserves independent Gospel', () => {
+  for (const entrance of ['day', 'propers']) {
+  const prefix = entrance === 'day' ? 'territory/contract/' : '';
+  const view = sourcePathView({entrance, prefix});
+  const before = JSON.stringify(view.state);
+  const radio = radios(view.wrapper).find((row) => row.value === 'common');
+  radio.checked = true; radio.dispatch('change');
+  assert.equal(view.navigation.length, 1);
+  assert.deepEqual(JSON.parse(view.navigation[0][0]['proper-choices']), {
+    [relationId]: 'common', [owned[0]]: 'longer', [owned[1]]: 'longer', [gospel]: 'additional'});
+  assert.deepEqual(view.navigation[0][1], ['alternative', '_candidate-alternative']);
+  const id = prefix + firstEvent;
+  assert.deepEqual(view.navigation[0][2], {location: {kind: 'event', id}, focus: {kind: 'proper-choice-result', event: id}});
+  assert.equal(JSON.stringify(view.state), before);
+  assert(view.probes.every((candidate) => candidate.properChoices[owned[0]] === candidate.properChoices[owned[1]]));
+  Object.assign(view.context, {reading: view.node, readerShell: {restoreSemanticLocation: () => true}});
+  if (entrance === 'day') {
+    vm.runInContext(exactFunction(daySource, 'restorePendingNavigation'), view.context);
+    view.context.restorePendingNavigation(view.navigation[0][2]);
+  } else {
+    vm.runInContext(exactFunction(propersSource, 'eventLocation'), view.context);
+    vm.runInContext(exactFunction(propersSource, 'focusCommittedResult'), view.context);
+    view.context.focusCommittedResult(view.navigation[0][2].focus, view.navigation[0][2].location);
+  }
+  const body = view.node.querySelectorAll('[data-semantic-event-id]').find((row) => row.dataset.semanticEventId === firstEvent);
+  assert.equal(body.focused.preventScroll, true);
+  }
+});
+test('wrong and unknown candidate conditions stay disabled, with exact unresolved condition retained for print', () => {
+  const view = sourcePathView({selectedUnknown: true});
+  for (const id of ['wrong', 'candidate-unknown', 'false', 'unknown']) {
+    const input = radios(view.wrapper).find((row) => row.value === id);
+    assert.equal(input.disabled, true, id); input.checked = true; input.dispatch('change');
+  }
+  assert.equal(view.navigation.length, 0);
+  const note = view.wrapper.children[0];
+  assert.match(note.textContent, /Held Source Condition in Transferred/);
+  assert.match(note.textContent, /Applicability unresolved/);
+  assert.equal(note.closest('[data-option-group]'), null);
+});
+test('null placement starts the container and null event focus restores the checked path radio in both controllers', () => {
+  for (const entrance of ['day', 'propers']) {
+    const view = sourcePathView({entrance, start: true, nullFocus: true, prefix: entrance === 'day' ? 'territory/contract/' : ''});
+    const radio = radios(view.wrapper).find((row) => row.value === 'common');
+    radio.checked = true; radio.dispatch('change');
+    const intent = view.navigation[0][2];
+    assert.equal(view.node.children[0], view.wrapper); assert.equal(intent.location, null);
+    assert.equal(intent.focus.kind, 'source-path-option');
+    Object.assign(view.context, {reading: view.node, readerShell: {restoreSemanticLocation: () => true}});
+    if (entrance === 'day') {
+      vm.runInContext(exactFunction(daySource, 'restorePendingNavigation'), view.context);
+      view.context.restorePendingNavigation(intent);
+    } else {
+      vm.runInContext(exactFunction(propersSource, 'focusCommittedResult'), view.context);
+      view.context.focusCommittedResult(intent.focus, intent.location);
+    }
+    assert.equal(radio.focused.preventScroll, true);
+    assert.equal(view.controls.scrolled.block, 'start');
+  }
+});
+test('source path URL copy preserves relation plus tuple without claiming calendar-only Common A entitlement', () => {
+  const view = sourcePathView();
+  const radio = radios(view.wrapper).find((row) => row.value === 'common'); radio.checked = true; radio.dispatch('change');
+  const choices = JSON.parse(view.navigation[0][0]['proper-choices']);
+  const hash = C.serializeLegacy({ok: true, state: {...request(), cycle: 'B', properChoices: choices}, legacy: {variants: {}, unknown: [], inert: []}});
+  const shared = Share.canonicalUrl('propers', {href: 'https://example.test/liturgy/propers-reader.html' + hash}, C);
+  assert.deepEqual(JSON.parse(new URLSearchParams(new URL(shared).hash.slice(1)).get('proper-choices')), choices);
+  const selected = clone(view.result); selected.sourcePathChoices[0].selection = {state: 'selected', option: 'common'};
+  const root = new Element('div');
+  const body = new Element('section'); body.dataset.semanticEventId = firstEvent; root.appendChild(body);
+  view.Shell.attachSourcePathChoices({T: view.T, root, result: selected, state: view.state,
+    navigate: () => {}, adapt: () => selected});
+  const note = root.children[0].children[0].textContent;
+  assert.match(note, /Common \(principal\)/); assert.doesNotMatch(note, /Year A|A.only|calendar.*A/i);
+});
+
+const actualSourceFixture = process.argv[4] && path.resolve(process.argv[4]);
+if (actualSourceFixture) test('canonical Lent III source paths bridge adapters to atomic DOM controls with unchanged calendar B', () => {
+  const structure = JSON.parse(fs.readFileSync(actualSourceFixture));
+  const mass = structure.masses.find((row) => row.key === 'lent-3');
+  const source = mass.proper_source_paths[0];
+  const id = 'proper-choice/' + structure.calendar + '/lent-3/main/' + source.id;
+  for (const entrance of ['day', 'propers']) {
+    const env = environment(), node = new Element('div'), navigation = [];
+    const state = {...request(entrance), edition: {id: structure.calendar}, cycle: 'B'};
+    const d = {calendar: structure.calendar, date: '2027-02-28', weekday: 'sunday', season: 'lent',
+      liturgicalYear: {lectionary: {sunday: 'B', weekday: 'I'}, anchors: {}}, options: [{option: null,
+        winner: {id: mass.key, nature: 'sunday'}, settled: true, readable: [{key: mass.key, state: 'said'}], absent: []}]};
+    if (entrance === 'day') { state.civilDate = d.date; state.calendar = {id: structure.calendar}; }
+    else state.formulary = {id: mass.key, type: mass.kind};
+    const adapt = (request) => entrance === 'day' ? A.adaptDay({request, derived: d, structure}) : A.adaptPropers({request, structure});
+    const unresolved = adapt(state);
+    for (const event of unresolved.events) {
+      const body = new Element('section'); body.dataset.semanticEventId = event.id; node.appendChild(body);
+    }
+    const raw = JSON.stringify(structure);
+    env.Shell.attachSourcePathChoices({T: env.T, root: node, result: unresolved, state, adapt,
+      navigate: (...args) => navigation.push(clone(args))});
+    const wrapper = descendants(node).find((row) => row.dataset.sourcePathChoice === id);
+    const selectedId = 'optional-material-a-gospel-longer';
+    const radio = radios(wrapper).find((row) => row.value === selectedId);
+    assert(radio && !radio.disabled); radio.checked = true; radio.dispatch('change');
+    assert.equal(navigation.length, 1);
+    const choices = JSON.parse(navigation[0][0]['proper-choices']);
+    const expected = unresolved.sourcePathChoices[0].paths.find((row) => row.id === selectedId).choices;
+    assert.deepEqual(choices, {...expected, [id]: selectedId});
+    const result = adapt({...state, properChoices: choices});
+    if (entrance === 'day') assert.equal(result.calendarResult.lectionary.sunday, 'B');
+    else assert.equal(result.calendarResult, null);
+    const selectedEvents = result.events.filter((event) => ['004', '006', '007', '008', '009'].some((n) => event.id.endsWith('/' + n)));
+    assert.equal(selectedEvents.length, 5); assert(selectedEvents.every((event) => event.selected.cycle === 'A'));
+    assert(!result.events.some((event) => event.kind === 'proper-choice' && ['first-reading', 'gospel'].includes(event.group)));
+    assert(result.events.some((event) => event.kind === 'proper-choice' && event.group === 'entrance-antiphon'));
+    assert(result.events.some((event) => event.kind === 'proper-choice' && event.group === 'communion-antiphon'));
+    assert.equal(navigation[0][2].location.id, result.sourcePathChoices[0].focusEventId);
+    const selectedRoot = new Element('div');
+    const renderer = env.context.TriptychPropersEvents.create({navigate: () => {},
+      sourceIndex: (event) => Number(event.sourceHooks.find((row) => row.kind === 'proper-structure').id.slice(-3)) - 1,
+      publicKeys: {cycle: 'cycle'}, legacyKeys: {cycle: '_candidate-cycle'},
+      getStructure: () => structure, getOrdinary: () => null});
+    const qualification = JSON.stringify(selectedEvents.map((event) => ({id: event.id, selected: event.selected, sourceHooks: event.sourceHooks})));
+    for (const event of selectedEvents) {
+      const index = Number(event.sourceHooks.find((row) => row.kind === 'proper-structure').id.slice(-3)) - 1;
+      selectedRoot.appendChild(renderer.renderEvent(event, mass.propers[index], {}, {}, {...state, properChoices: choices}));
+    }
+    const rendered = env.rendered.slice(-5);
+    assert(rendered.every((row) => row.options.cycle === 'A'));
+    env.Shell.attachSourcePathChoices({T: env.T, root: selectedRoot, result, state: {...state, properChoices: choices}, adapt, navigate: () => {}});
+    assert.deepEqual(selectedRoot.querySelectorAll('[data-semantic-event-id]').map((row) => row.dataset.semanticEventId), selectedEvents.map((event) => event.id));
+    assert.equal(JSON.stringify(selectedEvents.map((event) => ({id: event.id, selected: event.selected, sourceHooks: event.sourceHooks}))), qualification);
+    assert.equal(JSON.stringify(structure), raw);
+    assert.deepEqual(node.querySelectorAll('[data-semantic-event-id]').map((row) => row.dataset.semanticEventId), unresolved.events.map((event) => event.id));
   }
 });
 process.stdout.write(JSON.stringify({status: 'pass', groups: results.length, checks: results,

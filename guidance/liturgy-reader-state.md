@@ -194,6 +194,17 @@ optional `selected.scriptureComponents` carries only Bible ID, numbering and
 references; it does not replace a missing whole chant body. Pure Scripture
 continues through its existing Bible reconstruction selector.
 
+A source-owned `proper_source_paths` relation may additionally constrain
+several groups to one held reading set. Its qualified `properChoices` identity
+selects a path ID; the source path supplies the exact compatible sibling tuple.
+Conflicting sibling choices refuse. Native path controls, CLI choices, Share
+and Print use the same state map and source admission owner. The calendar's
+cycle remains distinct from each admitted material cycle, including a held
+Year A set authorized on a Year B or C calendar day. Missing actual-use facts
+remain unresolved even after an explicit path selection. No URL or choice
+attests an evening celebration, an Ascension arrangement or previous reading
+use. See the [source contract](../src/sources/calendars/README.md#correlated-source-paths).
+
 Day Compare fixes the state's civil date and a named territorial context, then
 resolves each edition side independently before comparing semantic units.
 Propers Compare fixes corresponding edition-qualified formularies and rejects

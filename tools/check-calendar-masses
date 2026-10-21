@@ -52,6 +52,8 @@ from _calendars import (
     _appointment_rows,
     _appointment_contract_problems,
     ordinary_disposition_source_problems,
+    PROPER_SOURCE_PATHS,
+    validate_proper_source_paths,
 )
 from _recensions import catalog_problems
 from _tooling import (
@@ -62,7 +64,11 @@ from _tooling import (
     with_examples,
 )
 from _latin_body_damage import body_damage
-from _proper_latin import sidecar_problems as latin_sidecar_problems
+from _proper_latin import (
+    EXACT_WITNESS_TYPES,
+    HELD_UNPUBLISHED_BODY_STATUS,
+    sidecar_problems as latin_sidecar_problems,
+)
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
@@ -70,7 +76,7 @@ EXAMPLES = {
         Example(
             "tools/check-calendar-masses check --calendar roman-1962",
             (
-                "src/sources/calendars/roman-1962/propers.yaml\t491 masses\t3461 propers",
+                "src/sources/calendars/roman-1962/propers.yaml\t491 masses\t3730 propers",
                 "src/sources/inventories/roman-1962-proper-translations-v1.toml\t6 read twice\t5 agree\t1 disagree",
             ),
         ),
@@ -297,6 +303,7 @@ MASS_FIELDS = frozenset(
         "ordinary_frame",
         "ordinary_appointments",
         "propers",
+        PROPER_SOURCE_PATHS,
         "rank",
         "registry",
         "season",
@@ -387,7 +394,7 @@ COMMON_SET_GROUP_FIELDS = frozenset({"families", "options"})
 COMMON_SET_SELECTION_FIELDS = frozenset({"state", "option", "candidates"})
 COMMON_SET_SELECTION_STATES = frozenset({"selected", "unresolved"})
 TEXT_STATUS = "text_status"
-TEXT_STATUS_FIELDS = frozenset({"state", "scope", "reasons"})
+TEXT_STATUS_FIELDS = frozenset({"state", "scope", "reasons", "body_status"})
 TEXT_STATUS_STATES = frozenset({"partial", "unavailable"})
 UNAVAILABLE_TEXT_STATUS_STATES = frozenset({"unavailable"})
 MASS_TEXT_STATUS_SCOPES = frozenset({"missal-formulary", "proper-collect"})
@@ -743,10 +750,23 @@ def check_text_status(
             f"{where}: {TEXT_STATUS}.scope must be one of "
             f"{sorted(allowed_scopes)}, got {scope!r}"
         )
+    unpublished = value.get("body_status") == HELD_UNPUBLISHED_BODY_STATUS
+    if "body_status" in value:
+        if not unpublished:
+            problems.append(
+                f"{where}: {TEXT_STATUS}.body_status, when present, must be "
+                f"{HELD_UNPUBLISHED_BODY_STATUS!r}"
+            )
+        if state != "unavailable" or scope != "proper-body":
+            problems.append(
+                f"{where}: held-unpublished belongs only to unavailable/proper-body"
+            )
     reasons = value.get("reasons")
     if not isinstance(reasons, list) or not reasons:
         problems.append(f"{where}: {TEXT_STATUS}.reasons must be a nonempty list")
         return
+    if unpublished and len(reasons) != 1:
+        problems.append(f"{where}: held-unpublished requires one exact rights-withheld witness")
     seen: set[tuple[str, str]] = set()
     for index, reason in enumerate(reasons):
         label = f"{where}: {TEXT_STATUS}.reasons[{index}]"
@@ -774,6 +794,18 @@ def check_text_status(
                 )
         else:
             check_registered_source(label, source_id, problems)
+        if unpublished:
+            if kind != "rights-withheld":
+                problems.append(f"{label}: held-unpublished requires rights-withheld")
+            records, trouble = source_records()
+            witness = (records or {}).get(source_id) if isinstance(source_id, str) else None
+            if records is None:
+                problems.append(f"{label}: cannot verify held-unpublished witness: {trouble}")
+            elif getattr(witness, "record_type", None) not in EXACT_WITNESS_TYPES:
+                problems.append(
+                    f"{label}: held-unpublished requires an exact registered "
+                    "artifact, segment or passage witness"
+                )
         identity = (str(kind), str(source_id))
         if identity in seen:
             problems.append(f"{label} duplicates text-status reason {identity!r}")
@@ -956,11 +988,10 @@ def check_cycle_mapping(
                 allowed_states=UNAVAILABLE_TEXT_STATUS_STATES,
                 allowed_scopes=PROPER_TEXT_STATUS_SCOPES,
             )
-            # A text-free Proper may be either a quarantined former body or a
-            # source-established slot whose wording was never held.  The
-            # typed reason keeps those states distinct: ``rights-withheld`` is
-            # joined to the Latin quarantine ledger, while ``witness-gap`` and
-            # ``no-exemplar`` remain body-less source gaps.
+            # A text-free Proper may be a former body, a privately held but
+            # unpublished source body, or a never-held target wording gap.
+            # Unmarked rights-withheld retains its Latin quarantine join;
+            # the explicit held-unpublished marker has no former local hash.
             if "text" in value:
                 problems.append(
                     f"{branch_where}: a proper-body {TEXT_STATUS} records "
@@ -2018,6 +2049,11 @@ def check_entry(
         if field not in entry:
             problems.append(f"{where}: missing {field}")
     key = entry.get("key")
+    if PROPER_SOURCE_PATHS in entry:
+        try:
+            validate_proper_source_paths(entry[PROPER_SOURCE_PATHS])
+        except ValueError as error:
+            problems.append(f"{where}: {error}")
     if isinstance(key, str) and key.strip():
         where = f"mass[{index}] {key}"
         if not FORM_ID_RE.fullmatch(key):
@@ -3807,6 +3843,7 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
                             if not isinstance(status, dict):
                                 status = proper.get(TEXT_STATUS)
                             exact_targets[(*base, occurrence)] = {
+                                "source": owner.get("source") or proper.get("source"),
                                 "text": isinstance(owner.get("text"), str),
                                 "body": isinstance(owner.get("text"), str)
                                 or (
@@ -4178,9 +4215,20 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
                             "Proper and cannot be an untranslated target"
                         )
                     if extent == "body" and not live_target.get("body"):
-                        problems.append(
-                            f"{where}: target owns no body or proper-body unavailable state"
-                        )
+                        if live_target.get("source") == "scripture":
+                            global _MASS_PROPERS
+                            if _MASS_PROPERS is None:
+                                _MASS_PROPERS = sibling("mass-propers")
+                            records, trouble = source_records()
+                            bound = _MASS_PROPERS.scripture_body_absence_problems(
+                                row, path.parent.name, records or {})
+                            problems.extend(f"{where}: {error}" for error in bound)
+                            if trouble:
+                                problems.append(f"{where}: {trouble}")
+                        else:
+                            problems.append(
+                                f"{where}: target owns no body or proper-body unavailable state"
+                            )
                     if extent == "incipit":
                         live_incipit = str(live_target.get("incipit") or "")
                         if not live_incipit:

@@ -290,11 +290,14 @@ A legacy payload with no form manifest or form labels may normalize its sole
 formulary to `main`; any payload showing multiple or ambiguous formularies but
 lacking stable IDs is refused. Display labels remain presentation, never keys.
 
-The same public Proper rows retain exact source-authored
-`ordinary_disposition` mappings. An `alternative` row carries stable `group`
-and `option` ids plus its source basis; every member is preserved inside one
+The same public Proper rows retain source-authored `ordinary_disposition`
+semantics. Stable ids, anchors, conditions and seats remain exact. The public
+producer replaces a basis withheld by its existing witness-caution filter with
+neutral structural prose; the full study basis remains in the source record.
+Safe bases remain unchanged. An `alternative` row carries stable `group`
+and `option` ids plus this public basis; every member is preserved inside one
 atomic unresolved choice until a consumer has an explicit selection. An
-`unplaced` row carries a stable group, a source basis, and exactly
+`unplaced` row carries a stable group, a public basis, and exactly
 `before-frame` or `after-frame`; it remains visible in source order with an
 unseated identity. Names, parentheses, adjacency, and array order infer none of
 these meanings. A form may also override its Mass's `ordinary_frame`; the

@@ -66,17 +66,45 @@ class Roman1962NamedOrationAppointmentTest(unittest.TestCase):
                 self.assertEqual(len(appointed), 1)
                 self.assertEqual(appointed[0], (raw[0], None))
 
-    def test_appointment_evidence_keeps_the_exact_page_and_classification(self):
-        rows = {(r['mass'], r['proper']): r for r in self.evidence['appointments']}
-        self.assertEqual(len(rows), len(EXPECTED))
-        self.assertEqual(self.evidence['artifact_sha256'], '648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a')
+    def assert_original_named_evidence(self, evidence):
+        expected_identities = {(key, name) for key, name, *_ in EXPECTED}
+        all_rows = [r for r in evidence['appointments']
+                    if (r['mass'], r['proper']) in expected_identities]
+        identities = [(r['mass'], r['proper']) for r in all_rows]
+        self.assertEqual(len(identities), len(set(identities)), "duplicate original source appointment identity")
+        # This ledger accepts later independently collated appointments. Keep
+        # these original six exact controls, not an obsolete global row count.
+        rows = {(r['mass'], r['proper']): r for r in all_rows
+                if (r['mass'], r['proper']) in expected_identities}
+        self.assertEqual(set(rows), expected_identities)
+        self.assertEqual(evidence['artifact_sha256'], '648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a')
         for key, name, pdf, printed, number, marker in EXPECTED:
-            with self.subTest(mass=key, proper=name):
-                row = rows[(key, name)]
-                self.assertEqual((row['pdf_page'], row['printed_page'], row['marginal_number']), (pdf, printed, number))
-                self.assertEqual(row['source_classification'], marker)
-                self.assertEqual(row['origin'], 'direct-named-appointment')
-                self.assertEqual(len(row['raster_sha256']), 64)
+            row = rows[(key, name)]
+            self.assertEqual((row['pdf_page'], row['printed_page'], row['marginal_number']), (pdf, printed, number))
+            self.assertEqual(row['source_classification'], marker)
+            self.assertEqual(row['origin'], 'direct-named-appointment')
+            self.assertEqual(len(row['raster_sha256']), 64)
+
+    def test_appointment_evidence_keeps_the_exact_page_and_classification(self):
+        self.assert_original_named_evidence(self.evidence)
+
+    def test_appended_evidence_does_not_hide_broken_original_targets(self):
+        for key, name, *_ in EXPECTED:
+            for defect in ('missing', 'duplicate', 'page', 'classification'):
+                evidence = copy.deepcopy(self.evidence)
+                row = next(r for r in evidence['appointments']
+                           if (r['mass'], r['proper']) == (key, name))
+                if defect == 'missing':
+                    evidence['appointments'].remove(row)
+                elif defect == 'duplicate':
+                    evidence['appointments'].append(copy.deepcopy(row))
+                elif defect == 'page':
+                    row['printed_page'] += 1
+                else:
+                    row['source_classification'] = 'C' if row['source_classification'] == 'P' else 'P'
+                with self.subTest(mass=key, proper=name, defect=defect):
+                    with self.assertRaises(AssertionError):
+                        self.assert_original_named_evidence(evidence)
 
     def test_anthony_routes_to_the_nonbishop_doctor_form_without_changing_collect(self):
         mass = self.index[ANTHONY]

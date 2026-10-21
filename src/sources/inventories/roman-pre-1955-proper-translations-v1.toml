@@ -495,3 +495,16 @@ cycle = "all"
 occurrence = 1
 reason = "recension-replaced"
 basis = "calendar-departure"
+
+# The later parent source now records its own Alleluia2485 English absence.
+# This child already declares the whole Joseph the Worker Mass absent; suppress
+# only that exact inherited record, without changing either recension's text.
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Alleluia"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"

@@ -1,0 +1,194 @@
+{
+  "schema": 1,
+  "purpose": "Historical structural regression only: preserve the pre-C7 unavailable-Collect source-context edge; not a current body, rights, availability or coverage owner.",
+  "source_snapshot": {
+    "path": "src/sources/calendars/roman-1962/propers.yaml",
+    "sha256": "8ec28db22062c573cc7a2630d15deeeb79b670a43660799956cd95b1481603d0",
+    "qualification": "Exact working source snapshot after Common14 and usage integration, before reviewed C7 own-Collect2799 repair. The snapshot is identified by bytes, not attributed to an unchanged commit.",
+    "projected_fields": {
+      "saint": [
+        "key",
+        "takes_from",
+        "text_status"
+      ],
+      "common": [
+        "key",
+        "propers[].name",
+        "propers[].ordinary_disposition"
+      ],
+      "header": [
+        "calendar",
+        "proper_appointment_facts referenced by those source candidates"
+      ]
+    },
+    "full_source_saint_node_sha256": "8745ec34422695ed977fd5af428abbf6c674f8515b1f020af8b5886a81e3c13e",
+    "full_source_common_node_sha256": "85062ad7a655bbd0dea8abb2a5a2d65adb958680031a9ed1decb79b310e53d2b",
+    "projection_sha256": "2452d97029be093dadfbb6f449cbfd715352eb415d57583a360fc2423e89631a",
+    "body_text_retained": false
+  },
+  "saint_key": "s-gregorii-barbadici-episcopi-confessoris",
+  "document": {
+    "calendar": "roman-1962",
+    "proper_appointment_facts": {
+      "roman-1962-common-chant-regime": {
+        "edition": "roman-1962",
+        "values": [
+          "advent",
+          "regular",
+          "tract",
+          "paschal"
+        ],
+        "season_values": {
+          "advent": "advent",
+          "after-pentecost": "regular",
+          "christmastide": "regular",
+          "epiphanytide": "regular",
+          "septuagesima": "tract",
+          "lent": "tract",
+          "passiontide": "tract",
+          "paschaltide": "paschal",
+          "triduum": null
+        },
+        "basis": "Held 1962 control RG73-76 (artifact14/printedXVI), RG469 (artifact31/printedXXXIII), Common opening (artifact809/printed[1]) and each numbered local chant cue; BVM Advent replacement4481 at artifact849/printed[41]. Triduum season alone cannot establish Easter-Vigil Mass phase."
+      }
+    },
+    "sections": {
+      "sanctoral": {
+        "kind": "sanctoral",
+        "masses": [
+          {
+            "key": "s-gregorii-barbadici-episcopi-confessoris",
+            "takes_from": {
+              "mass": "commune-confessoris-pontificis-1",
+              "citation": "Missa Statuit, de Communi Confessoris Pontificis I loco [4], praeter orationem sequentem"
+            },
+            "text_status": {
+              "state": "unavailable",
+              "scope": "proper-collect",
+              "reasons": [
+                {
+                  "kind": "rights-withheld",
+                  "source_id": "edition.catholic-church.missale-romanum.vatican-typica-1962"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "common": {
+        "kind": "common",
+        "masses": [
+          {
+            "key": "commune-confessoris-pontificis-1",
+            "propers": [
+              {
+                "name": "Introit"
+              },
+              {
+                "name": "Collect"
+              },
+              {
+                "name": "Lesson"
+              },
+              {
+                "name": "Gradual",
+                "ordinary_disposition": {
+                  "kind": "conditional",
+                  "group": "confessoris-pontificis-1-gradual",
+                  "basis": "1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 827, printed [19]; raw text page line 1 and the numbered local chant cues",
+                  "when": {
+                    "fact": "roman-1962-common-chant-regime",
+                    "in": [
+                      "advent",
+                      "regular",
+                      "tract"
+                    ]
+                  }
+                }
+              },
+              {
+                "name": "Alleluia",
+                "ordinary_disposition": {
+                  "kind": "alternative",
+                  "group": "confessoris-pontificis-1-post-epistle",
+                  "option": "regular",
+                  "basis": "1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 827, printed [19]; raw text page line 1 and the numbered local chant cues",
+                  "anchor": {
+                    "mass": "commune-confessoris-pontificis-1",
+                    "form_id": "main",
+                    "proper": "Alleluia",
+                    "occurrence": 1
+                  },
+                  "when": {
+                    "fact": "roman-1962-common-chant-regime",
+                    "in": [
+                      "advent",
+                      "regular"
+                    ]
+                  }
+                }
+              },
+              {
+                "name": "Tract",
+                "ordinary_disposition": {
+                  "kind": "alternative",
+                  "group": "confessoris-pontificis-1-post-epistle",
+                  "option": "tract",
+                  "basis": "1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 827, printed [19]; raw text page line 1 and the numbered local chant cues",
+                  "anchor": {
+                    "mass": "commune-confessoris-pontificis-1",
+                    "form_id": "main",
+                    "proper": "Alleluia",
+                    "occurrence": 1
+                  },
+                  "when": {
+                    "fact": "roman-1962-common-chant-regime",
+                    "in": [
+                      "tract"
+                    ]
+                  }
+                }
+              },
+              {
+                "name": "Alleluia (Tempore paschali)",
+                "ordinary_disposition": {
+                  "kind": "alternative",
+                  "group": "confessoris-pontificis-1-post-epistle",
+                  "option": "paschal",
+                  "basis": "1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 827, printed [19]; raw text page line 1 and the numbered local chant cues",
+                  "anchor": {
+                    "mass": "commune-confessoris-pontificis-1",
+                    "form_id": "main",
+                    "proper": "Alleluia",
+                    "occurrence": 1
+                  },
+                  "when": {
+                    "fact": "roman-1962-common-chant-regime",
+                    "in": [
+                      "paschal"
+                    ]
+                  }
+                }
+              },
+              {
+                "name": "Gospel"
+              },
+              {
+                "name": "Offertory"
+              },
+              {
+                "name": "Secret"
+              },
+              {
+                "name": "Communion"
+              },
+              {
+                "name": "Postcommunion"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

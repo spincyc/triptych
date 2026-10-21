@@ -122,9 +122,16 @@ let raw='';process.stdin.on('data',x=>raw+=x);process.stdin.on('end',()=>
     def structure(self):
         all_masses = list(MP.masses_of(self.source))
         selected = [(kind, mass) for kind, mass in all_masses if mass["key"] in {*CASES, "pentecost-2"}]
-        # Keep the complete entry catalog for the source citation registry,
-        # then project only the five requested public Masses.
-        with patch.object(MP, "load_calendar", return_value=self.source), patch.object(MP, "masses_of", side_effect=[all_masses, selected]):
+        original_masses_of = MP.masses_of
+        original_translation_overlay = MP.translation_overlay
+
+        def complete_translation_overlay(*args, **kwargs):
+            with patch.object(MP, "masses_of", original_masses_of):
+                return original_translation_overlay(*args, **kwargs)
+
+        # The overlay validates its Scripture targets against the real catalog.
+        # Keep the complete citation catalog, then project only the five Masses.
+        with patch.object(MP, "load_calendar", return_value=self.source), patch.object(MP, "translation_overlay", side_effect=complete_translation_overlay), patch.object(MP, "masses_of", side_effect=[all_masses, selected]):
             return MP.calendar_structure(ROOT / "src/sources/calendars", "roman-1962", MP.book_tokens())
 
     def test_original_branch_and_readable_survive_privately_before_public_projection(self):

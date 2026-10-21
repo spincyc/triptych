@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import copy
 import hashlib
+import importlib.machinery
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -18,6 +20,12 @@ SOURCE_ROOT = Path(os.environ.get("TRIPTYCH_COMMON_SOURCE_ROOT", ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(MODULE_ROOT / "scripts"))
 import _calendars as C
+
+_loader = importlib.machinery.SourceFileLoader("_advent_usage_publisher", str(MODULE_ROOT / "tools/mass-propers"))
+_spec = importlib.util.spec_from_loader(_loader.name, _loader)
+PUBLISHER = importlib.util.module_from_spec(_spec)
+sys.modules[_spec.name] = PUBLISHER
+_loader.exec_module(PUBLISHER)
 
 SOURCE = C.read_yaml(SOURCE_ROOT / "src/sources/calendars/roman-1962/propers.yaml")
 INDEX = C.mass_index(SOURCE)
@@ -40,7 +48,9 @@ def structure():
             raise AssertionError(problems)
         rows = []
         for form, proper, _origin in entries:
-            row = copy.deepcopy(proper)
+            # Source-side absence reasons are audit metadata. Cross the same
+            # recursive publication boundary as the actual CLI Proper carrier.
+            row = PUBLISHER.rights_safe_copy(proper)
             row.update(form=form, form_id="main", cycles={}, translations=[])
             row["citations"] = [{"ref": verse["ref"]} for verse in row.get("verses", [])]
             rows.append(row)
@@ -74,7 +84,15 @@ const withoutRule=structure=>{const out=clone(structure);for(const mass of out.m
 const condition=(result,key)=>result.unresolvedChoices.filter(c=>c.id==='proper-condition/roman-1962/'+key+'/main/'+key+'-alleluia-use');
 let raw='';process.stdin.on('data',chunk=>raw+=chunk);process.stdin.on('end',()=>{
  const input=JSON.parse(raw),s=input.structure,base=withoutRule(s),checks=[];
- if(input.mode==='annual') {
+ if(input.mode==='private-status') {
+  const target=s.masses.find(m=>m.key==='advent-3').propers.find(p=>p.name==='Alleluia');
+  assert.deepEqual(target.text_status,{state:'unavailable',scope:'proper-body'});
+  assert.equal(target.source,'composed');assert.deepEqual(target.citations,[]);
+  target.text_status.reasons=[{kind:'no-exemplar'}];
+  assert.throws(()=>A.adaptDay({request:request('2026-12-13','advent-3'),
+   derived:derive('2026-12-13'),structure:s}),/text_status must use the exact public state\/scope shape/);
+  checks.push({sourceAuditRefused:true});
+ } else if(input.mode==='annual') {
   for(const [key,[sunday,ferias]] of Object.entries(input.cases))for(const date of [sunday,...ferias]) {
    const d=derive(date),b=d.options[0],w=b.winner,r=request(date,key);
    assert.equal(d.options.length,1);assert.equal(b.settled,true);
@@ -176,7 +194,17 @@ class AdventFerialUse(unittest.TestCase):
             self.assertNotIn("Tract", [p["name"] for p in INDEX[key]["propers"]])
         self.assertEqual({key: [v["ref"] for v in INDEX[key]["propers"][4].get("verses", [])]
                           for key in CASES}, {"advent-1": ["Psalm 84:8"], "advent-2": ["Psalm 121:1"],
-                                             "advent-3": ["Psalm 79:3"], "advent-4": []})
+                                             "advent-3": [], "advent-4": []})
+        # Held 1962 AP86 / printed p.5 L, unit25 (before Gospel26) has
+        # no printed citation. The former Psalm79:3 was an inference, removed
+        # by the held-page appointment correction.
+        alleluia = INDEX["advent-3"]["propers"][4]
+        self.assertEqual(alleluia["source"], "composed")
+        self.assertEqual(alleluia["incipit"], "Excita, Domine, potentiam tuam")
+        self.assertNotIn("text", alleluia)
+        self.assertEqual(alleluia["text_status"], {
+            "state": "unavailable", "scope": "proper-body",
+            "reasons": [{"kind": "no-exemplar"}]})
         self.assertEqual(hashlib.sha256(INDEX["advent-4"]["propers"][4]["text"].encode()).hexdigest(),
                          "b7d6fee93fb37223387643d18c0640604e0235b2e63e5813ad8755dfff0f7240")
 
@@ -189,6 +217,19 @@ class AdventFerialUse(unittest.TestCase):
                           ("advent-2", "main", "Alleluia", 1, 4, 15, 84), ("advent-3", "main", "Alleluia", 1, 4, 25, 86),
                           ("advent-4", "main", "Alleluia", 1, 4, 92, 95)])
         self.assertEqual([(r["artifact_page"], r["printed_page"], r["column"]) for r in ledger["source_contrasts"]], [(459, "378", "L")])
+
+    def test_public_fixture_keeps_body_gap_and_refuses_source_audit_shape(self):
+        before = copy.deepcopy(SOURCE)
+        public = structure()
+        for mass in public["masses"]:
+            resolved, problems = C.resolve_propers(SOURCE, INDEX[mass["key"]], appointments=True)
+            self.assertEqual(problems, [])
+            for row, (_, proper, _) in zip(mass["propers"], resolved, strict=True):
+                for field in ("name", "source", "text", "incipit", "verses",
+                              "ordinary_disposition", "appointment_identity"):
+                    self.assertEqual(row.get(field), proper.get(field), (mass["key"], field))
+        self.assertEqual(SOURCE, before)
+        self.assertEqual(self.node("private-status"), [{"sourceAuditRefused": True}])
 
     def test_all_ten_reuses_omit_only_alleluia_and_four_own_sundays_retain_it(self):
         checks = self.node("annual")

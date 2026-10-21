@@ -203,41 +203,36 @@
   const SUNDAY_CYCLE_KEYS = Object.freeze(['A', 'B', 'C']);
   const WEEKDAY_CYCLE_KEYS = Object.freeze(['I', 'II']);
 
-  function cycleKeysFor(proper, family, allowed) {
-    const rows = (proper && proper[family]) || {};
-    const keys = Object.keys(rows);
-    const invalid = keys.filter(function (key) { return allowed.indexOf(key) < 0; });
-    if (invalid.length) {
-      throw new Error(family + ' carries unsupported Lectionary cycle keys: ' + invalid.join(', '));
-    }
-    return keys.sort().filter(function (key) {
-      const row = rows[key] || {};
-      return Boolean(
-        (row.citations || []).length || row.text ||
-        (row.translations || []).some(function (translation) {
-          return translation && translation.text;
-        }) ||
-        (row.unavailable_translations || []).length ||
-        (row.untranslated || []).length ||
-        (row.latin && row.latin.withheld) || row.text_status
-      );
-    });
+  // Enumeration has one owner shared with source-path admission. It validates
+  // every authored course without choosing a calendar or material year.
+  function cycleSelections(proper) {
+    return Seating.properCycleSelections(proper);
   }
 
   function sundayCycleKeys(proper) {
-    return cycleKeysFor(proper, 'cycles', SUNDAY_CYCLE_KEYS);
+    return cycleSelections(proper).filter(function (one) {
+      return one.dimension === 'sunday';
+    }).map(function (one) { return one.key; });
   }
 
   function weekdayCycleKeys(proper) {
-    return cycleKeysFor(proper, 'weekday_cycles', WEEKDAY_CYCLE_KEYS);
+    return cycleSelections(proper).filter(function (one) {
+      return one.dimension === 'weekday';
+    }).map(function (one) { return one.key; });
   }
 
-  function cycleSelections(proper) {
-    return sundayCycleKeys(proper).map(function (key) {
-      return { key: key, dimension: 'sunday', family: 'cycles' };
-    }).concat(weekdayCycleKeys(proper).map(function (key) {
-      return { key: key, dimension: 'weekday', family: 'weekday_cycles' };
-    }));
+  // Only copies admitted by the shared source-path owner can carry this
+  // override. Reader URL state cannot attest actual-use conditions or rewrite
+  // the calendar course. Weak keys keep one reader projection isolated.
+  const admittedMaterialCycles = new WeakMap();
+
+  function admittedCycle(proper) {
+    if (!admittedMaterialCycles.has(proper)) return undefined;
+    const selector = admittedMaterialCycles.get(proper);
+    return selector.family === null ? null : {
+      key: selector.cycle, family: selector.family,
+      dimension: selector.family === 'cycles' ? 'sunday' : 'weekday'
+    };
   }
 
   function dayCycle(proper, lectionary, allowInapplicable) {
@@ -419,6 +414,37 @@
     };
   }
 
+  function languageBodyAbsence(proper, wanted, selection, request) {
+    const owner = selectedOwner(proper, selection);
+    const coverage = owner.coverage;
+    if (!coverage) return false;
+    if (hasOwn(coverage, 'body_languages') &&
+        (!Array.isArray(coverage.body_languages) || coverage.body_languages.length !== 1 ||
+         coverage.body_languages[0] !== 'en' || coverage.component !== 'proper-body' ||
+         !coverage.scripture_component || typeof coverage.scripture_component !== 'object' ||
+         Array.isArray(coverage.scripture_component))) {
+      throw new Error('language-only body coverage requires English scope and a separate Scripture component');
+    }
+    if (wanted === 'la' || !coverage.body_languages || !coverage.body_languages.includes(wanted)) return false;
+    return (owner.untranslated || []).some(function (row) {
+      const target = row && row.target || {};
+      if (row.lang !== wanted || target.extent !== 'body') return false;
+      function identity(parts) {
+        return parts.map(function (one) {
+          return encodeURIComponent(String(one)).replace(/[!'()*]/g, function (c) {
+            return '%' + c.charCodeAt(0).toString(16).toUpperCase();
+          });
+        }).join(':');
+      }
+      const source = identity([request.edition.id, 'proper', target.mass,
+        target.form_id, target.proper, target.occurrence]);
+      const id = identity([source, selection ? selection.family : 'all',
+        selection ? selection.key : 'all']);
+      return id === coverage.target_id && target.proper === proper.name &&
+        target.cycle === (selection ? selection.key : 'all');
+    });
+  }
+
   function materialForCycleValue(proper, request, structure, selection) {
     const cycle = selection ? selection.key : null;
     const cycleRows = selection && selection.dimension === 'sunday' ? [cycle] : [];
@@ -432,7 +458,9 @@
     }
     const references = citations.map(function (one) { return one.ref; }).filter(Boolean);
     const owner = selectedOwner(proper, selection);
-    if (references.length && (owner.source || proper.source) !== 'mixed') {
+    const wanted = request.languages && request.languages.orations || 'la';
+    const hasLanguageBody = languageBodyAbsence(proper, wanted, selection, request);
+    if (references.length && (owner.source || proper.source) !== 'mixed' && !hasLanguageBody) {
       const unresolved = citations.filter(function (one) { return one.unresolved; }).map(function (one) {
         return { reference: one.ref, reason: one.unresolved };
       });
@@ -450,7 +478,6 @@
         unresolved: unresolved
       };
     }
-    const wanted = request.languages && request.languages.orations || 'la';
     const witness = request.languages && request.languages.translationWitness || null;
     if (wanted === 'la') {
       if (witness) {
@@ -572,7 +599,9 @@
   function materialForCycle(proper, request, structure, selection) {
     const material = materialForCycleValue(proper, request, structure, selection);
     const owner = selectedOwner(proper, selection);
-    if ((owner.source || proper.source) !== 'mixed') return material;
+    const wanted = request.languages && request.languages.orations || 'la';
+    if ((owner.source || proper.source) !== 'mixed' &&
+        !languageBodyAbsence(proper, wanted, selection, request)) return material;
     const citations = (proper.citations || []).concat(
       owner === proper ? [] : owner.citations || []
     );
@@ -591,6 +620,8 @@
 
   function selectedMaterial(proper, request, structure, cycleMode) {
     const selections = cycleSelections(proper);
+    const admitted = admittedCycle(proper);
+    if (admitted !== undefined) return materialForCycle(proper, request, structure, admitted);
     if (cycleMode === 'day') {
       return materialForCycle(proper, request, structure, dayCycle(proper, request.lectionary));
     }
@@ -942,7 +973,18 @@
   function prepareAppointments(mass, properRows, request, structure, dayContext) {
     // Validate every authored body state before applicability can suppress an
     // inactive candidate; only the later active pass contributes coverage.
-    activeProperBodyClaims(properRows.map(function (row) { return row.proper; }), request);
+    properRows.forEach(function (row) {
+      const proper = row.proper;
+      const selections = cycleSelections(proper);
+      properBodyStatus(proper);
+      selections.forEach(function (selection) { properBodyStatus(selectedOwner(proper, selection)); });
+      // Path-qualified rows are checked against their exact source member
+      // selector by Seating. Other rows retain the existing calendar guard.
+      if (!proper.source_path_relation && request.entrance === 'day') {
+        dayCycle(proper, request.lectionary,
+          proper.ordinary_disposition && proper.ordinary_disposition.kind === 'alternative');
+      }
+    });
     const choices = {};
     const prefix = 'proper-choice/' + request.edition.id + '/' + mass.key + '/';
     Object.keys(request.properChoices || {}).forEach(function (id) {
@@ -960,11 +1002,22 @@
       choices[group] = parts[2];
     }
     const prepared = Seating.prepareProperAppointments(properRows, {
-      calendar: request.edition.id, entrance: request.entrance, mass: mass.key,
+      calendar: request.edition.id, entrance: request.entrance,
+      mass: mass.key,
+      formId: properRows.length ? properRows[0].proper.form_id || 'main' : request.form || 'main',
+      sourcePaths: hasOwn(mass, 'proper_source_paths') ? mass.proper_source_paths : [],
+      calendarCycles: request.lectionary || {
+        sunday: SUNDAY_CYCLE_KEYS.indexOf(request.cycle) >= 0 ? request.cycle : null,
+        weekday: WEEKDAY_CYCLE_KEYS.indexOf(request.cycle) >= 0 ? request.cycle : null
+      },
+      conditionFacts: dayContext ? dayContext.conditionFacts : undefined,
       date: dayContext && dayContext.date || null,
       season: dayContext && dayContext.season || null,
       usageContext: dayContext && dayContext.usageContext,
       facts: structure.proper_appointment_facts || {}, choices: choices
+    });
+    prepared.rows.forEach(function (row) {
+      if (hasOwn(row, 'materialCycle')) admittedMaterialCycles.set(row.proper, row.materialCycle);
     });
     prepared.activeRows = prepared.rows.filter(function (row) {
       const disposition = row.proper.ordinary_disposition;
@@ -987,6 +1040,65 @@
         }),
         [{kind: 'proper-appointment', id: JSON.stringify(condition.appointment)}]
       );
+    });
+  }
+
+  function sourcePathChoices(prepared, mass, request, events) {
+    const prefix = 'proper-choice/' + request.edition.id + '/' + mass.key + '/';
+    const eventIds = new Set();
+    function collect(items) {
+      (items || []).forEach(function (event) {
+        eventIds.add(event.id);
+        if (event.kind === 'proper-choice') {
+          (event.options || []).forEach(function (option) { collect(option.events); });
+        }
+      });
+    }
+    collect(events);
+    return (mass.proper_source_paths || []).filter(function (relation) {
+      return hasOwn(prepared.sourcePathSelections, relation.form_id + '/' + relation.id);
+    }).map(function (relation) {
+      const key = relation.form_id + '/' + relation.id;
+      const selection = prepared.sourcePathSelections[key];
+      const member = prepared.rows.find(function (row) {
+        return row.materialCycle && relation.paths.some(function (path) {
+          return path.id === selection.option && path.members.some(function (one) {
+            const actual = row.proper.appointment_identity || {};
+            return ['mass', 'form_id', 'proper', 'occurrence'].every(function (key) {
+              return one.appointment[key] === actual[key];
+            });
+          });
+        });
+      });
+      const focus = member && properEventId(request.edition.id, mass.key, member.sourceIndex);
+      const existing = focus && eventIds.has(focus) ? focus : null;
+      const groups = new Set();
+      const paths = relation.paths.map(function (path) {
+        const tuple = {};
+        Object.keys(path.choices).forEach(function (group) {
+          const id = prefix + relation.form_id + '/' + group;
+          tuple[id] = path.choices[group]; groups.add(id);
+        });
+        return {id: path.id, standing: path.standing, choices: tuple,
+          condition: path.when || null,
+          applicability: prepared.sourcePathAvailability[key][path.id]};
+      });
+      return {id: prefix + key, basis: relation.basis, selection: selection,
+        ownedChoiceIds: Array.from(groups), beforeEventId: existing, focusEventId: existing,
+        paths: paths};
+    });
+  }
+
+  function sourcePathUnresolvedChoices(prepared, mass, request) {
+    const prefix = 'proper-choice/' + request.edition.id + '/' + mass.key + '/';
+    return (prepared.sourcePathUnresolved || []).map(function (unresolved) {
+      const relation = mass.proper_source_paths.find(function (one) {
+        return one.id === unresolved.relation && one.form_id === unresolved.form_id;
+      });
+      const id = prefix + relation.form_id + '/' + relation.id;
+      return Contract.unresolvedChoice(id, relation.basis, relation.paths.map(function (path) {
+        return {id: path.id, identity: {id: path.id}};
+      }), [{kind: 'proper-source-path', id: id}]);
     });
   }
 
@@ -1312,7 +1424,10 @@
       const selections = cycleSelections(proper);
       let activeSelections = selections;
       let includeProper = true;
-      if (request.entrance === 'day') {
+      const admitted = admittedCycle(proper);
+      if (admitted !== undefined) {
+        activeSelections = admitted ? [admitted] : [];
+      } else if (request.entrance === 'day') {
         const selected = dayCycle(proper, request.lectionary,
           proper.ordinary_disposition && proper.ordinary_disposition.kind === 'alternative');
         includeProper = selected !== false;
@@ -1989,7 +2104,7 @@
         date: derived.date,
         anchors: derived.liturgicalYear && derived.liturgicalYear.anchors || null,
         appointments: formularyAppointments(mass, formSelection.form, branch.winner)
-      }), {date: derived.date, season: derived.season, usageContext: {
+      }), {date: derived.date, season: derived.season, conditionFacts: input.conditionFacts, usageContext: {
         calendar: derived.calendar, entrance: request.entrance, branch: branch, readable: readable,
         mass: mass, formId: formSelection.id || 'main'
       }}
@@ -2017,9 +2132,10 @@
       resolved: resolved,
       events: events,
       ...(hasOwn(seated.prepared, 'usage') ? {properAppointmentUsage: seated.prepared.usage} : {}),
+      sourcePathChoices: sourcePathChoices(seated.prepared, mass, request, events),
       coverage: coverageFor(
         input.structure, mass, seated.prepared.activeRows.map(function (row) { return row.proper; }),
-        adaptedRequest, ordinary, events, seated.ordinaryUnresolved, formSelection.form, seated.prepared.unresolved
+        adaptedRequest, ordinary, events, seated.ordinaryUnresolved, formSelection.form, seated.prepared.unresolved.concat(seated.prepared.sourcePathUnresolved)
       ),
       explicitAbsences: explicitAbsencesFor(branch, lectionary).concat(
         claimLocalCollectAbsences(mass, request, formSelection.form)
@@ -2027,6 +2143,7 @@
       unresolvedChoices: choices.concat(
         unresolvedCommonSetChoices(input.structure, mass, request),
         appointmentChoices(seated.prepared, mass, request, input.structure),
+        sourcePathUnresolvedChoices(seated.prepared, mass, request),
         alternativeChoices(events), translationChoices(events)
       ),
       ordinaryUnresolved: seated.ordinaryUnresolved
@@ -2095,7 +2212,7 @@
       mass, formSelection.rows, request, input.structure, ordinary, 'propers',
       Seating.predicateFacts({
         appointments: formularyAppointments(mass, formSelection.form, null)
-      })
+      }), {conditionFacts: input.conditionFacts}
     );
     const events = seated.events;
     assertExplicitWitnesses(events, request, input.structure);
@@ -2111,9 +2228,10 @@
       resolved: resolved,
       events: events,
       ...(hasOwn(seated.prepared, 'usage') ? {properAppointmentUsage: seated.prepared.usage} : {}),
+      sourcePathChoices: sourcePathChoices(seated.prepared, mass, request, events),
       coverage: coverageFor(
         input.structure, mass, seated.prepared.activeRows.map(function (row) { return row.proper; }),
-        request, ordinary, events, seated.ordinaryUnresolved, formSelection.form, seated.prepared.unresolved
+        request, ordinary, events, seated.ordinaryUnresolved, formSelection.form, seated.prepared.unresolved.concat(seated.prepared.sourcePathUnresolved)
       ),
       explicitAbsences: [{
         kind: 'explicit-semantic-absence',
@@ -2124,6 +2242,7 @@
       unresolvedChoices: (request.unresolvedChoices || []).concat(
         unresolvedCommonSetChoices(input.structure, mass, request),
         appointmentChoices(seated.prepared, mass, request, input.structure),
+        sourcePathUnresolvedChoices(seated.prepared, mass, request),
         alternativeChoices(events), translationChoices(events)
       ),
       ordinaryUnresolved: seated.ordinaryUnresolved
@@ -2217,12 +2336,22 @@
   }
 
   function cliMaterial(proper, request, generatedProper) {
-    const selection = generatedProper ? dayCycle(generatedProper, request.lectionary) : null;
+    const admitted = generatedProper && admittedCycle(generatedProper);
+    const selection = admitted !== undefined ? admitted : generatedProper ? dayCycle(generatedProper, request.lectionary) : null;
     const cycle = selection ? selection.key : null;
     const cycles = selection && selection.dimension === 'sunday' ? [cycle] : [];
     const weekdayCycles = selection && selection.dimension === 'weekday' ? [cycle] : [];
     const references = (proper.verses || []).map(function (one) { return one.ref; }).filter(Boolean);
     const generated = selectedMaterial(generatedProper, request, { numbering: null }, 'day');
+    if (generated.scriptureComponents && languageBodyAbsence(
+        generatedProper, request.languages && request.languages.orations || 'la',
+        selection, request)) {
+      generated.scriptureComponents.unresolved = (proper.verses || []).filter(function (one) {
+        return one && one.ref && !one.text;
+      }).map(function (one) {
+        return { reference: one.ref, reason: one.note || 'text-not-held' };
+      });
+    }
     if (generated.scriptureComponents &&
         !sameJson(references, generated.scriptureComponents.references)) {
       throw new Error('mass-today mixed scripture components disagree with generated structure');
@@ -2282,6 +2411,48 @@
       return generated;
     }
     return { kind: 'absent', rights: null, availability: 'absent', reason: 'semantic-absence' };
+  }
+
+  function assertCliProperIdentity(generatedProper, proper, pathOwned) {
+    if (hasOwn(generatedProper, 'appointment_applicability') !== hasOwn(proper, 'appointment_applicability') ||
+        !sameJson(generatedProper.appointment_applicability, proper.appointment_applicability)) {
+      throw new Error('mass-today Proper applicability metadata disagrees with generated structure');
+    }
+    if (!generatedProper || !proper || generatedProper.name !== proper.name ||
+        (generatedProper.form || null) !== (proper.form || null) ||
+        generatedProper.form_id !== proper.form_id ||
+        (generatedProper.source || null) !== (proper.source || null) ||
+        !sameJson(generatedProper.taken_from || null, proper.taken_from || null) ||
+        !sameJson(generatedProper.appointment_identity || null, proper.appointment_identity || null) ||
+        !sameJson(generatedProper.appointment_replacement || null, proper.appointment_replacement || null) ||
+        !sameJson(generatedProper.appointment_applicability || null, proper.appointment_applicability || null) ||
+        hasOwn(generatedProper, 'source_path_relation') !== hasOwn(proper, 'source_path_relation') ||
+        !sameJson(generatedProper.source_path_relation, proper.source_path_relation) ||
+        !sameJson(generatedProper.ordinary_disposition || null, proper.ordinary_disposition || null)) {
+      throw new Error('mass-today Proper order disagrees with generated structure or source appointment metadata');
+    }
+    function references(owner) {
+      return (owner.citations || owner.verses || []).map(function (one) { return one.ref; });
+    }
+    if (pathOwned && !sameJson(references(generatedProper), references(proper))) {
+      throw new Error('mass-today raw source path references disagree with generated structure');
+    }
+    cycleSelections(proper);
+    properBodyStatus(proper);
+    for (const family of ['cycles', 'weekday_cycles']) {
+      const generatedKeys = Object.keys(generatedProper[family] || {}).sort();
+      const payloadKeys = Object.keys(proper[family] || {}).sort();
+      if (!sameJson(payloadKeys, generatedKeys)) {
+        throw new Error('mass-today ' + family + ' inventory disagrees with generated structure');
+      }
+      payloadKeys.forEach(function (cycle) {
+        const owner = proper[family][cycle];
+        properBodyStatus(owner);
+        if (pathOwned && !sameJson(references(generatedProper[family][cycle]), references(owner))) {
+          throw new Error('mass-today raw source path material references disagree with generated structure');
+        }
+      });
+    }
   }
 
   function adaptCli(input) {
@@ -2352,6 +2523,9 @@
         appointmentFactIdentity(input.structure.proper_appointment_facts))) {
       throw new Error('mass-today Proper appointment facts disagree with the source structure');
     }
+    if (!sameJson(mass.proper_source_paths || [], generatedMass.proper_source_paths || [])) {
+      throw new Error('mass-today source path relations disagree with the source structure');
+    }
     const formSelection = properFormSelection(generatedMass, request, true);
     if (formSelection.choice) {
       if (request.properChoices) throw new Error('explicit Proper choices require an exact selected Mass form');
@@ -2390,11 +2564,7 @@
       throw new Error('mass-today held Proper count disagrees with generated structure');
     }
     generatedRows.forEach(function (row, index) {
-      const proper = (mass.propers || [])[index] || {};
-      if (hasOwn(row.proper, 'appointment_applicability') !== hasOwn(proper, 'appointment_applicability') ||
-          !sameJson(row.proper.appointment_applicability, proper.appointment_applicability)) {
-        throw new Error('mass-today Proper applicability metadata disagrees with generated structure');
-      }
+      assertCliProperIdentity(row.proper, (mass.propers || [])[index], Boolean(generatedMass.proper_source_paths));
     });
     const lectionary = input.derived && input.derived.liturgicalYear &&
       input.derived.liturgicalYear.lectionary || null;
@@ -2405,7 +2575,7 @@
     }
     const adaptedRequest = Object.assign({}, request, { lectionary: lectionary });
     const prepared = prepareAppointments(generatedMass, generatedRows, adaptedRequest, input.structure, {
-      date: input.derived.date, season: input.derived.season, usageContext: {
+      date: input.derived.date, season: input.derived.season, conditionFacts: input.conditionFacts, usageContext: {
         calendar: input.derived.calendar, entrance: request.entrance, branch: branch, readable: readable,
         mass: generatedMass, formId: formSelection.id || 'main'
       }
@@ -2413,6 +2583,15 @@
     if (hasOwn(mass, 'proper_appointment_usage') !== hasOwn(prepared, 'usage') ||
         !sameJson(mass.proper_appointment_usage, prepared.usage)) {
       throw new Error('mass-today Proper usage context disagrees with the original calendar owner');
+    }
+    if ((generatedMass.proper_source_paths || []).length) {
+      [['source_path_selections', 'sourcePathSelections'], ['source_path_unresolved', 'sourcePathUnresolved'],
+        ['source_path_availability', 'sourcePathAvailability'], ['material_selections', 'materialSelections']]
+        .forEach(function (fields) {
+          if (!sameJson(mass[fields[0]], prepared[fields[1]])) {
+            throw new Error('mass-today ' + fields[0] + ' disagrees with shared source path admission');
+          }
+        });
     }
     const payloadBySourceIndex = new Map();
     generatedRows.forEach(function (generatedRow, cliIndex) {
@@ -2423,28 +2602,15 @@
     function cliProper(row, seat, semanticSlotOverride) {
       const sourceIndex = row.sourceIndex;
       const held = payloadBySourceIndex.get(sourceIndex) || {};
-      const proper = held.proper;
-      const generatedProper = held.generated;
-      if (!generatedProper || generatedProper.name !== proper.name ||
-          (generatedProper.form || null) !== (proper.form || null) ||
-          generatedProper.form_id !== proper.form_id ||
-          (generatedProper.source || null) !== (proper.source || null) ||
-          !sameJson(generatedProper.taken_from || null, proper.taken_from || null) ||
-          !sameJson(generatedProper.appointment_identity || null, proper.appointment_identity || null) ||
-          !sameJson(generatedProper.appointment_replacement || null, proper.appointment_replacement || null) ||
-          !sameJson(
-            generatedProper.ordinary_disposition || null,
-            proper.ordinary_disposition || null
-          )) {
-        throw new Error('mass-today Proper order disagrees with generated structure');
-      }
-      for (const family of ['cycles', 'weekday_cycles']) {
-        const generatedKeys = Object.keys(generatedProper[family] || {}).sort();
-        const payloadKeys = Object.keys(proper[family] || {}).sort();
-        if (!sameJson(payloadKeys, generatedKeys)) {
-          throw new Error('mass-today ' + family + ' inventory disagrees with generated structure');
-        }
-      }
+      const rawProper = held.proper;
+      const rawGenerated = held.generated;
+      // Full raw parity ran before path filtering. Material and body rights
+      // now use only the exact admitted source owner, keeping calendar cycle.
+      const generatedProper = row.proper;
+      const selector = prepared.materialSelections[sourceIndex];
+      const proper = selector && selector.family !== null
+        ? Object.assign({}, rawProper, rawProper[selector.family][selector.cycle]) : rawProper;
+      if (!rawGenerated) throw new Error('mass-today has no raw source row for admitted appointment');
       const selected = cliMaterial(proper, adaptedRequest, generatedProper);
       return {
         id: properEventId(request.edition.id, mass.key, sourceIndex),
@@ -2546,13 +2712,14 @@
       resolved: resolved,
       events: events,
       ...(hasOwn(prepared, 'usage') ? {properAppointmentUsage: prepared.usage} : {}),
+      sourcePathChoices: sourcePathChoices(prepared, generatedMass, request, events),
       coverage: coverageFor(
         input.structure, generatedMass,
         prepared.activeRows.map(function (row) { return row.proper; }), adaptedRequest,
         request.options && request.options.ordinary && frame.applicability === 'full' &&
           day.ordinary && !day.ordinary.refused
           ? day.ordinary : null,
-        events, ordinaryUnresolved, formSelection.form, prepared.unresolved
+        events, ordinaryUnresolved, formSelection.form, prepared.unresolved.concat(prepared.sourcePathUnresolved)
       ),
       explicitAbsences: explicitAbsencesFor(branch, lectionary).concat(
         claimLocalCollectAbsences(generatedMass, request, formSelection.form)
@@ -2560,6 +2727,7 @@
       unresolvedChoices: choices.concat(
         unresolvedCommonSetChoices(input.structure, generatedMass, request),
         appointmentChoices(prepared, generatedMass, request, input.structure),
+        sourcePathUnresolvedChoices(prepared, generatedMass, request),
         alternativeChoices(events), translationChoices(events)
       ),
       ordinaryUnresolved: ordinaryUnresolved

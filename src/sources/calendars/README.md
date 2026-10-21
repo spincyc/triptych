@@ -232,6 +232,18 @@ rights-withheld pairing is checked bidirectionally. The hash remains an audit
 identity, not a store from which a consumer may recover or reconstruct the
 wording.
 
+A third case is a complete source body held privately but never published or
+transcribed into this index. Its unavailable/proper-body `text_status` carries
+`body_status: held-unpublished` and exactly one `rights-withheld` reason naming
+an exact registered artifact, segment or passage. The marker is forbidden on
+mass statuses and gap reasons. It carries no text, former hash or Latin
+ledger row; adding one would falsely describe a local transcription/removal.
+The source witness and exact appointment locator remain factual metadata; this
+state alone establishes no target-edition wording correspondence or permission.
+Unmarked rights-withheld owners keep the existing removed-body rule. The public
+projection still emits only neutral unavailable/held:false/withheld:true state;
+`public_text_status` strips the private marker and reasons.
+
 `provenance_status` identifies the transcription witness, source date,
 locator, relationship, transformations, verification witness, evidence,
 authority, and confidence. `publication_status`, `publication_basis`, and
@@ -530,6 +542,54 @@ The bounded 1962 source records are
 reading pools remain controlling; populated choice rows do not establish a
 complete Common corpus or annual eligibility.
 
+### Correlated source paths
+
+A Mass may author `proper_source_paths` when the held source permits a complete
+reading set or ties several separate reading roles to one provision. It is a
+list of exact relations `{id, form_id, basis, paths}`. Each path is exactly
+`{id, standing, calendar_cycles, choices, members}`, optionally with
+`when: {fact, is: boolean}`. `standing` retains `principal` or `optional`; it
+never selects a default. Relation IDs may not collide with actual Proper-group
+IDs, and distinct relations may not share appointments or actual groups.
+
+`calendar_cycles` is `{family: sunday|weekday, in: [...]}` with held A/B/C or
+I/II values. Every member names an exact same-Mass/form positive-occurrence
+`appointment` and a `material_cycle: {family, cycle}`. The material family is
+`cycles` with A/B/C, `weekday_cycles` with I/II, or explicit `null` with `all`
+for flat material. The material must be held on that exact appointment. A
+calendar Year B or C may therefore select source-authorized Year A material
+without changing the calendar's own cycle.
+
+`choices` maps actual same-form group IDs to their exact option IDs. Each path
+contains every member of each selected option bundle. Across its paths the
+relation conserves the complete raw membership of every group it owns. This
+is a source-authored tuple, never a Cartesian product, a cross-seat Proper
+group, a heading join or an inference from array order. All authored material,
+including inactive branches, must validate before selection.
+
+Shared Seating admits a path before enriching its selected material from the
+Bible and projecting the requested language or body. Raw source validation
+and rights-safe publication filtering remain independent producer gates and
+may precede admission. The CLI uses the shared admission and preserves all raw
+material maps, guards, original source ordinals and references. Bible reconstruction is
+added only for admitted exact material owners; unselected children remain
+unenriched. An unknown calendar cycle or actual-use condition remains a typed
+obligation. An explicit path cannot establish an unknown actual-use fact, and
+URL state carries no fact attestation. A sole proved eligible path may select
+deterministically; principal/optional standing and source order select nothing.
+
+The producer derives relation `source_edition`, each member's
+`source_path_relation`, and its `appointment_identity`; source files cannot
+author these guards. Foreign inherited path members retain raw words, maps and
+provenance with the existing unsupported-applicability marker, even when they
+carry no disposition. Static source admission can validate that diagnostic
+shape; execution still refuses unsupported foreign applicability.
+
+The bounded NO source records retain their OLM 1981 appointment scope. These
+relations assert neither actual use nor target-2008 wording, correspondence,
+publication or rights. Other conditional referrals remain unresolved until
+their exact source relation and actual-use facts have owners.
+
 ## A mass may say where its text is printed
 
 The books do this constantly. A fourth-class feria takes the preceding Sunday's
@@ -668,9 +728,12 @@ the gap; `no-exemplar` names the absence of an exact copy and therefore omits
 At proper level, `scope: proper-body` preserves an exact source-owned composed
 slot while recording why its body is unavailable. A `witness-gap` or
 `no-exemplar` proper-body was never held and therefore has no Latin provenance
-row. A `rights-withheld` proper-body is a quarantine owner and must have the
-matching `body_status = "removed"` row with the former body's exact hash. The
-reason, not the shared unavailable state, distinguishes those two cases.
+row. An unmarked `rights-withheld` proper-body is a quarantine owner and must
+have the matching Latin-ledger `body_status = "removed"` row with the former
+body's exact hash. The explicit private `body_status: held-unpublished` case
+instead records held source wording never published here and forbids a former
+hash or Latin-ledger row. The shared public unavailable state does not collapse
+these three source histories.
 
 ```yaml
 - key: target-formulary-not-held
@@ -921,15 +984,15 @@ owns the canon. Both run inside `make check` and need PyYAML
 | roman-pre-1955 | seasonal | 6 | 0 | 0 |
 | roman-pre-1955 | marian | 1 | 0 | 0 |
 | roman-pre-1955 | sanctoral | 1 | 0 | 0 |
-| roman-1962 | seasonal | 128 | 1368 | 0 |
-| roman-1962 | christological | 8 | 96 | 0 |
-| roman-1962 | marian | 18 | 134 | 0 |
-| roman-1962 | sanctoral | 307 | 1564 | 0 |
+| roman-1962 | seasonal | 128 | 1424 | 0 |
+| roman-1962 | christological | 8 | 99 | 0 |
+| roman-1962 | marian | 18 | 156 | 0 |
+| roman-1962 | sanctoral | 307 | 1669 | 0 |
 | roman-1962 | common | 30 | 382 | 0 |
-| postconciliar | seasonal | 390 | 2160 | 0 |
-| postconciliar | christological | 7 | 69 | 0 |
-| postconciliar | marian | 14 | 52 | 0 |
-| postconciliar | sanctoral | 201 | 770 | 0 |
+| postconciliar | seasonal | 390 | 2385 | 0 |
+| postconciliar | christological | 7 | 79 | 0 |
+| postconciliar | marian | 14 | 70 | 0 |
+| postconciliar | sanctoral | 201 | 900 | 0 |
 | postconciliar | common | 7 | 0 | 0 |
 
 | Calendar | Rank | Entries | Celebrations |
@@ -952,19 +1015,19 @@ owns the canon. Both run inside `make check` and need PyYAML
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 8 | 491 | 619 |
-| Propers | 0 | 3544 | 3051 |
+| Propers | 0 | 3730 | 3434 |
 | — named `Placeholder` | 0 | 0 | 0 |
-| — inside a `forms` block | 0 | 196 | 191 |
-| — carrying a `cycles` mapping | 0 | 0 | 295 |
+| — inside a `forms` block | 0 | 211 | 204 |
+| — carrying a `cycles` mapping | 0 | 0 | 305 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 410 |
 | Masses holding only placeholders | 0 | 0 | 0 |
-| Masses taking a formulary from another entry | 0 | 165 | 0 |
-| Propers taking their text from another entry | 0 | 79 | 49 |
-| Propers that are not placeholders | 0 | 3544 | 3051 |
-| — of those, scripture-bearing | 0 | 2245 | 2680 |
-| Encoded passages | 0 | 2667 | 3639 |
+| Masses taking a formulary from another entry | 0 | 166 | 0 |
+| Propers taking their text from another entry | 0 | 101 | 49 |
+| Propers that are not placeholders | 0 | 3730 | 3434 |
+| — of those, scripture-bearing | 0 | 2263 | 3025 |
+| Encoded passages | 0 | 2748 | 4004 |
 | Distinct books cited | 0 | 57 | 73 |
-| Distinct slot names | 0 | 126 | 100 |
+| Distinct slot names | 0 | 128 | 100 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
 `tools/mass-propers census --write`, which is the only thing that writes the
@@ -1011,3 +1074,25 @@ This table answers what an index is scoped to; it does not answer which
 entries are Sundays, because no entry states that and it is not derived here.
 
 <!-- census:end -->
+
+### Language-only whole-body absences on Scripture assignments
+
+A canonical `source: scripture` assignment can retain a separately verified
+English whole-antiphon body without establishing the Latin target's body
+classification. An English `[[untranslated]]` row with `extent = "body"` is
+admitted on such a target only for `reason.kind = "rights-withheld"` and an
+exact inspected, verified, hash-pinned registered English passage. Its `locus`
+is `proper-body:` followed by the shared coverage identity of calendar, mass,
+form_id, proper, cycle, occurrence, and lang. Artifact, page, verification date,
+and reason source must agree. No publication permission or removed-body hash is
+inferred. An ordinary Scripture assignment does not create a body target.
+
+The text-free public unit coverage may add `body_languages: ["en"]` only for
+that exact body target, with `component: "proper-body"` and a separate
+`scripture_component`. This optional field has the single closed shape shown
+here. Only English enters its body denominator; Latin retains Scripture
+delegation and no new Latin body claim. Existing units without the field keep
+their existing language scope. The existing public absence target must match
+the unit's exact target identity. Read selects an eligible held English body
+first; otherwise it shows the typed whole-body absence. Bible references and
+excerpts remain separately identified components and cannot close the gap.

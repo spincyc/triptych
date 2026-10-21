@@ -6,7 +6,7 @@
 
 inventory_schema = 1
 record_type = "postconciliar-sanctoral-commons-recovery"
-recorded_on = "2026-08-27"
+recorded_on = "2026-10-21"
 calendar = "postconciliar"
 target_edition = "Missale Romanum, editio typica tertia, reimpressio emendata 2008"
 calendar_path = "src/sources/calendars/postconciliar/propers.yaml"
@@ -41,26 +41,26 @@ on the same row and it never licenses the antecedent as target-Missal evidence.
 """
 
 [counts.rows]
-rows = 163
+rows = 167
 ordo_1981 = 144
 official_additiones = 4
-antiphonary = 15
-alternatives = 85
-with_subselection = 83
+antiphonary = 19
+alternatives = 88
+with_subselection = 87
 wrong_edition_evidence = 8
 
 [counts.sections]
 marian = 7
-sanctoral = 156
+sanctoral = 160
 
 [counts.category_appearances]
 "dedication-of-a-church" = 0
 "blessed-virgin-mary" = 8
-"martyrs" = 46
-"pastors" = 88
-"doctors-of-the-church" = 30
+"martyrs" = 47
+"pastors" = 92
+"doctors-of-the-church" = 31
 "virgins" = 19
-"saints-and-holy-women" = 59
+"saints-and-holy-women" = 60
 
 [witnesses.ordo-1981]
 artifact_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
@@ -73,6 +73,46 @@ artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiph
 artifact_sha256 = "e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca"
 storage = "remote"
 role = "Common directions for antiphons only; no orations or whole formularies"
+
+[[rows]]
+key = "postconciliar-common.saint-raymond-penyafort-priest"
+mass_key = "saint-raymond-penyafort-priest"
+registry = "pc-01-07"
+date = "01-07"
+section = "sanctoral"
+celebration = "Saint Raymond of Penyafort, Priest"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 97, printed page 89; Common target printed pages 161"
+artifact_page = 97
+printed_page = 89
+categories = ["pastors"]
+subselections = ["For One Pastor (p. 161 )"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-hilary-bishop-doctor-church"
+mass_key = "saint-hilary-bishop-doctor-church"
+registry = "pc-01-13"
+date = "01-13"
+section = "sanctoral"
+celebration = "Saint Hilary, Bishop and Doctor of the Church"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 97, printed page 89; Common target printed pages 159, 165"
+artifact_page = 97
+printed_page = 89
+categories = ["pastors", "doctors-of-the-church"]
+subselections = ["For a Bishop (p. 159 )"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
 
 [[rows]]
 key = "postconciliar-common.saint-fabian-pope-martyr"
@@ -1840,6 +1880,26 @@ target_formulary_body_authority = false
 resolvable = false
 
 [[rows]]
+key = "postconciliar-common.saint-apollinaris-bishop-martyr"
+mass_key = "saint-apollinaris-bishop-martyr"
+registry = "pc-07-20"
+date = "07-20"
+section = "sanctoral"
+celebration = "Saint Apollinaris, Bishop and Martyr"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 121, printed page 113; Common target printed pages 154, 159"
+artifact_page = 121
+printed_page = 113
+categories = ["martyrs", "pastors"]
+subselections = ["For One Martyr (p. 154 )", "For a Bishop (p. 159 )"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
 key = "postconciliar-common.saint-lawrence-brindisi-priest-doctor-church"
 mass_key = "saint-lawrence-brindisi-priest-doctor-church"
 registry = "pc-07-21"
@@ -2466,6 +2526,26 @@ entry_number = "635"
 heading = "De Communi pastorum [pro papa] vel doctorum Ecclesiae"
 categories = ["pastors", "doctors-of-the-church"]
 subselections = ["pro papa"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-peter-claver-priest"
+mass_key = "saint-peter-claver-priest"
+registry = "pc-09-09"
+date = "09-09"
+section = "sanctoral"
+celebration = "Saint Peter Claver, Priest"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 131, printed page 123; Common target printed pages 161, 172"
+artifact_page = 131
+printed_page = 123
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["For One Pastor (p. 161 )", "For Those Who Practiced Works of Mercy (p. 172 )"]
 alternatives = true
 wrong_edition_evidence = false
 target_formulary_body_authority = false
