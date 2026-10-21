@@ -11,7 +11,7 @@ Last reconciled: 2026-10-21.
 
 <!-- promised-deliverable: register-remediation-2026-10-21 -->
 
-**In progress: installing the from-scratch homily and themes pages, then pushing to main at the maintainer's direction.** The maintainer reported that produced
+**Complete and published.** Pushed to `main` at `90e13e78f`; the Pages deployment succeeded and the leaf's live web edition and PDFs match the verified build. The maintainer reported that produced
 documents still fall into unearned profundity, empty significance, jargon,
 ham-fisted hokiness and little subtlety, naming the Claude 1962 Christ the King
 documents, and asked for the cause, a remediation, its execution on those
@@ -25,10 +25,11 @@ documents are revised and their web edition, catalogue and release bindings
 regenerated, and the verification — version-14 reviews, from-scratch
 generation, blind comparisons, two fidelity reviews and the mechanical gates
 — is in [the remediation record](workflows/reviews/register-remediation-2026-10-21/RECORD.md).
-Open for the maintainer: whether to install the from-scratch homily and
-themes pages that every final judge preferred, and whether to revise other
-leaves with the same defect. No push, merge or deployment is part of this
-work.
+At the maintainer's direction the from-scratch homily and themes pages that
+every final judge preferred are installed after two further fidelity reviews.
+Open: the maintainer decided that the next real `proper-study` production
+under version 14 tests the guidance end to end before any backfill of other
+leaves with the same defect.
 
 ## Missal chronology acceptance review, 2026-10-17
 
