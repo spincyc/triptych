@@ -25,6 +25,27 @@ closed and no audio pipeline or speech proof is a completion requirement.
 Earlier implementation records retain their dated scopes. The latest pushed
 checkpoint at this redirect is `a60f87e1a1bbc08f09b3570000af40b267be67e9`.
 
+### First annual correctness repair, 2026-10-20
+
+The official antiphonary's numbering statement and individual page checks
+establish 29 Ordinary Time antiphon Psalm-numbering overrides. The browser
+Propers compiler now uses the same declared non-Psalm citation-divergence
+resolver as Bible indexing: fourteen existing mappings reach their intended
+verses, including the printed Stephen citations, while unrecorded mappings
+still refuse. All seven Bible indexes were regenerated; no Bible chapter
+fragment changed.
+
+The 147 partial postconciliar formularies awaiting Common recovery now declare
+their source witness gap at Mass level. Their 599 events per language remain
+unchanged; the reader can no longer describe 139 of them as complete. This is
+truthful gap accounting, not completion of the missing Commons or their words.
+
+The combined 109 focused regressions, seven Bible index freshness checks,
+Propers freshness and source checks pass. Generated structures and their exact
+495 existing site bindings were refreshed. Further annual source repairs and
+basic Read selection corrections remain active; this checkpoint does not
+claim a complete annual missal.
+
 ## Missal reader C1 truthful coverage, 2026-10-19
 
 <!-- promised-deliverable: missal-reader-c1-coverage-2026-10-19 -->

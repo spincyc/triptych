@@ -26,12 +26,13 @@ import _missal_coverage  # noqa: E402
 from _psalms import (  # noqa: E402
     PSALMS,
     SYSTEMS,
+    ADDRESSINGS,
     NumberingError,
     addressed,
     convert_range_whole,
     convert_reference,
 )
-from _loci import edition_departures, range_to_loci  # noqa: E402
+from _loci import Divergences, RESOLVED_IN, edition_departures, range_to_loci  # noqa: E402
 from _proper_latin import (  # noqa: E402
     CLI_SURFACES,
     STRUCTURE_SURFACES,
@@ -1419,7 +1420,9 @@ def spans_in(entry: dict, source: str, target: str) -> list[dict]:
     return loci_of(pieces_in(entry, source, target))
 
 
-def citation_structure(entry: dict, source: str, tokens: dict[str, str]) -> dict:
+def citation_structure(
+    entry: dict, source: str, tokens: dict[str, str], divergences: dict | None = None
+) -> dict:
     """A citation with its verses resolved for every way an edition is addressed.
 
     Resolved here rather than in the browser so that no numbering logic ships
@@ -1457,7 +1460,19 @@ def citation_structure(entry: dict, source: str, tokens: dict[str, str]) -> dict
     except NumberingError as error:
         structure["unresolved"] = str(error)
         return structure
+    # The calendar's citation divergences are owned by index-bible. Reuse
+    # its decisions before the edition's own departures are applied below.
+    problems = {}
+    if divergences is not None:
+        for target, pieces in converted.items():
+            converted[target], problem = divergences[target].apply(entry, pieces)
+            if problem:
+                problems[target] = problem
     ranges, refused = addressed(book, converted)
+    for key, (target, _) in ADDRESSINGS.items():
+        if target in problems:
+            ranges.pop(key, None)
+            refused[key] = problems[target]
     structure["loci"] = {key: loci_of(pieces) for key, pieces in ranges.items()}
     departures, refused = edition_departures(structure["token"], structure["loci"], refused)
     if departures:
@@ -2931,6 +2946,22 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
     source = document.get("psalm_numbering")
     if source not in SYSTEMS:
         raise ValueError(f"{calendar} declares unknown psalm numbering {source!r}")
+    loader = SourceFileLoader("_structure_citations", str(ROOT / "tools" / "citations"))
+    spec = spec_from_loader(loader.name, loader)
+    canon = module_from_spec(spec)
+    loader.exec_module(canon)
+    entries = [
+        entry
+        for _, mass in masses_of(document)
+        for entry, _ in numbered_entries(mass, source)
+    ]
+    divergences = {
+        target: Divergences(
+            calendar, document, entries, canon, target,
+            numberings=tuple(system for system in SYSTEMS if system != RESOLVED_IN),
+        )
+        for target in SYSTEMS
+    }
     masses = []
     for kind, mass in masses_of(document):
         propers = []
@@ -2982,7 +3013,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
             def cited(owner: dict) -> list[dict]:
                 numbering = owner.get("psalm_numbering") or inherited
                 return [
-                    citation_structure(entry, numbering, tokens)
+                    citation_structure(entry, numbering, tokens, divergences)
                     for entry in (owner.get("verses") or [])
                     if isinstance(entry, dict) and entry.get("ref")
                 ]
