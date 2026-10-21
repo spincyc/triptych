@@ -550,6 +550,7 @@ class SourceDrivenFailClosedRegressionTests(unittest.TestCase):
             "ordinary-time-orations": "2026-01-12",
             "ordinary-time-loses": "2026-08-15",
             "mother-of-church": "2020-06-01",
+            "mother-of-church-boniface": "2028-06-05",
         },
         "roman-1962": {
             "litanies-lose": "2021-04-25",
@@ -663,11 +664,35 @@ class SourceDrivenFailClosedRegressionTests(unittest.TestCase):
         self.assertEqual(branch["unsettled"], [])
         self.assertEqual(len(branch["orations"]["all"]), 1)
 
-    def test_mother_of_church_collision_uses_the_source_reason(self) -> None:
-        branch = self.assert_refused("mother-of-church", "precedence")
-        reason, = branch["unsettled"]
-        self.assertIn("Mother of the Church", reason["what"])
-        self.assertNotIn("movable before fixed", reason["why"])
+    def test_mother_of_church_notification_resolves_saint_memorial_collisions(self) -> None:
+        for identifier, loser in (
+            ("mother-of-church", "saint-justin-martyr"),
+            ("mother-of-church-boniface", "saint-boniface-bishop-martyr"),
+        ):
+            with self.subTest(case=identifier):
+                _, branch = self.results[identifier]
+                self.assertTrue(branch["settled"])
+                self.assertEqual(branch["winner"]["key"], "blessed-virgin-mary-mother-church")
+                self.assertEqual(branch["winner"]["row"], 10)
+                self.assertFalse(branch["choiceRequired"])
+                self.assertEqual(branch["unsettled"], [])
+                omitted, = [one for one in branch["losers"] if one["id"] == loser]
+                self.assertEqual(omitted["disposition"], "omitted")
+
+    def test_mother_of_church_preference_does_not_defeat_a_higher_feast(self) -> None:
+        case = json.loads(json.dumps(self.inputs["mother-of-church-boniface"]))
+        case["id"] = "synthetic-higher-local-rank"
+        # Guard only: this does not assert Boniface has that rank anywhere.
+        case["rubrics"]["keys"]["saint-boniface-bishop-martyr"]["basis"] = next(
+            i for i, row in enumerate(case["rubrics"]["bases"])
+            if row["id"] == "place-7-feast"
+        )
+        result = rubrics.run_model({"cases": [case]})["results"][0]
+        self.assertTrue(result["ok"])
+        branch, = result["result"]["options"]
+        self.assertTrue(branch["settled"])
+        self.assertEqual(branch["winner"]["key"], "saint-boniface-bishop-martyr")
+        self.assertEqual(branch["winner"]["row"], 7)
 
     def test_1962_litanies_refuse_only_when_the_combined_entry_loses(self) -> None:
         losing = self.assert_refused("litanies-lose", "occurrence")

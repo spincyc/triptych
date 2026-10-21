@@ -1,6 +1,21 @@
 {
  "artifacts": [
   {
+   "artifact_type": "normalized-text",
+   "byte_size": 643,
+   "edition_owned": true,
+   "id": "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "This bounded normalized derivative is independently publishable historical wording. Complete source facsimile remains restricted and is not retained as a payload here. No active or inactive Mass branch, rubric, actor assignment or whole-book completeness is established by this three-prayer extent.",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "public-domain",
+   "rights_basis": "The identified historical Latin wording is public domain in the United States by the bounded 1929-printing finding in src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml. This derivative contains only the three inspected Latin orations, not the modern watermark, digital packaging, German translation, images, rubrics or later matter. It does not grant republication of the complete PDF.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "facsimile-pdf",
    "byte_size": 62711309,
    "edition_owned": true,
@@ -26,7 +41,34 @@
   "translators": [],
   "year": 1929
  },
- "passages": [],
+ "passages": [
+  {
+   "artifact_id": "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40",
+   "artifact_type": "normalized-text",
+   "context": "Bounded historical Latin wording of the three Christ the King orations in the actual 1929 second revised Schott/Bihlmeyer printing, normalized from page images.",
+   "id": "passage.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-three-latin-orations-checked",
+   "locus": "Christ the King: Collect printed p. 1105 / PDF 1175; Secret p. 1107 / PDF 1177; Postcommunion p. 1108 / PDF 1178; three normalized Latin prayer blocks, source conclusion cues retained.",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Only the Latin oration blocks are transcribed. Earlier Sunday commemoration directions and last Gospel are excluded; they do not govern the 1962 feast. No speaker or response marker is printed inside these three blocks. Conclusions are source cues, not silently expanded historical text.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The identified historical Latin wording is public domain in the United States by the bounded 1929-printing finding in src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml. This derivative contains only the three inspected Latin orations, not the modern watermark, digital packaging, German translation, images, rubrics or later matter. It does not grant republication of the complete PDF.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-three-latin-orations-checked.json",
+   "verified_on": "2026-10-20",
+   "words": 82
+  }
+ ],
  "schema": "triptych-source-reader/v1",
  "work": {
   "alternate_titles": [],

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Bounded historical Latin from the separately registered public-domain Tours Mame 1922 printing. This derivative contains only the two own Theodore orations read on its page images, with their actual short conclusions; it adds no modern source wording and makes no new rights decision. The parent artifact records the United States publication and mechanical-reproduction basis."
+rights_jurisdiction = "United States"
+provenance = "Read directly on 2026-10-20 from actual 200 and 400 dpi images of the exact held registered Mame 1922 PDF, SHA256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005. Secret: printed p.752/PDF866, right column; Postcommunion: p.752-753/PDF866-867, from the right-column foot to the next left-column top."
+retrieved = "2026-10-20"
+sha256 = "638fc0c5b458745ea2e565ae2cf3800a0a1882856854e7caf9b2404a721ddeb1"
+byte_size = 321
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/theodore-two-orations-la-checked-638fc0c5/theodore-two-orations-la.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Select only the two Theodore own prayer blocks; join printed line wraps and word divisions; join ornamental initials; remove stress accents; expand ae ligatures; use sentence case for the opening word; retain all source words, pointing and the literal Per Dominum. conclusion cue. No target wording or expanded conclusion is inserted."
+indexable = true
+encoding = "utf-8"
+notes = "Source headings and neighbouring formularies are excluded. The Postcommunion opens on PDF866 and continues on PDF867; omitting that next-page continuation would lose part of the petition. This text witnesses historical words, not 1962 occurrence, rubric authority or an actor assignment."

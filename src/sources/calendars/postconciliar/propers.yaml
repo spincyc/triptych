@@ -5233,13 +5233,14 @@ sections:
               ref: Philippians 3:17-4:1
         notes: 'Year C short form: Philippians 3:20-4:1.'
       - name: Verse Before the Gospel
-        source: scripture
-        verses:
-        - book: Matthew
-          ranges:
-          - begin: {chapter: 17, verse: 5}
-            end: {chapter: 17, verse: 5}
-          ref: Matthew 17:5
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e
+        notes: 'The Ordo lectionum Missae 1981, artifact internet-archive-scan-pdf-ed4bc14e, artifact page 74 / printed page 20, prints this uncited composed unit at n. 25 and refers to it at nn. 26-27. Its exact target body has never been held in this index. No scriptural appointment is inferred and no protected wording is reproduced.'
       - name: Gospel
         source: scripture
         cycles:

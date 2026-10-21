@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3046,
-  "editions": 1103,
-  "passages": 5336,
-  "readable": 3096,
-  "works": 956
+  "artifacts": 3051,
+  "editions": 1105,
+  "passages": 5346,
+  "readable": 3103,
+  "works": 957
  },
  "facets": {
   "authors": [
@@ -451,7 +451,7 @@
    },
    {
     "id": "Congregation for Divine Worship and the Discipline of the Sacraments",
-    "works": 16
+    "works": 17
    },
    {
     "id": "Congregation for the Doctrine of the Faith",
@@ -2264,6 +2264,10 @@
     "works": 3
    },
    {
+    "id": "official-liturgical-notification",
+    "works": 3
+   },
+   {
     "id": "papal-catechesis",
     "works": 3
    },
@@ -2397,10 +2401,6 @@
    },
    {
     "id": "newspaper",
-    "works": 2
-   },
-   {
-    "id": "official-liturgical-notification",
     "works": 2
    },
    {
@@ -3482,11 +3482,11 @@
   ],
   "languages": [
    {
-    "editions": 603,
+    "editions": 604,
     "id": "en"
    },
    {
-    "editions": 320,
+    "editions": 321,
     "id": "la"
    },
    {
@@ -3626,20 +3626,20 @@
     "label": "20th century"
    },
    {
-    "editions": 605,
+    "editions": 607,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1712,
-    "editions": 404,
+    "artifacts": 1714,
+    "editions": 405,
     "id": "public-domain"
    },
    {
-    "artifacts": 811,
-    "editions": 410,
+    "artifacts": 812,
+    "editions": 411,
     "id": "restricted"
    },
    {
@@ -3653,8 +3653,8 @@
     "id": "licensed"
    },
    {
-    "artifacts": 73,
-    "editions": 12,
+    "artifacts": 75,
+    "editions": 13,
     "id": "project-created"
    },
    {
@@ -5667,9 +5667,10 @@
      "file": "1929-herder-second-revised-1929.json",
      "id": "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929",
      "language": "la-de",
-     "passages": 0,
-     "readable": 0,
+     "passages": 1,
+     "readable": 1,
      "rights": [
+      "public-domain",
       "restricted"
      ],
      "title": "Das vollständige Römische Meßbuch, second revised edition, 1929 printing",
@@ -9246,8 +9247,8 @@
      "file": "1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
      "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
      "language": "la",
-     "passages": 57,
-     "readable": 0,
+     "passages": 58,
+     "readable": 1,
      "rights": [
       "public-domain"
      ],
@@ -9285,7 +9286,7 @@
      "file": "1962-vatican-typica-1962.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
      "language": "la",
-     "passages": 453,
+     "passages": 455,
      "readable": 0,
      "rights": [
       "unresolved"
@@ -11449,6 +11450,32 @@
     "la"
    ],
    "title": "Notificatio de ritu Exorcismi"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Congregation for Divine Worship and the Discipline of the Sacraments",
+   "category": "official-liturgical-notification",
+   "directory": "editions/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/notification-memorial-mary-mother-church-2018/",
+   "editions": [
+    {
+     "date": "2026-10-20",
+     "file": "2026-2026-english-press-office-web-2026-10-20.json",
+     "id": "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notification-memorial-mary-mother-church-2018.english-press-office-web-2026-10-20",
+     "language": "en",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Notification on the Memorial of the Blessed Virgin Mary, Mother of the Church — official English Press Office web state",
+     "year": 2026
+    }
+   ],
+   "id": "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notification-memorial-mary-mother-church-2018",
+   "languages": [
+    "en"
+   ],
+   "title": "Notification on the Memorial of the Blessed Virgin Mary, Mother of the Church"
   },
   {
    "alternate_titles": [
@@ -30638,6 +30665,19 @@
       "project-created"
      ],
      "title": "Roman 1962 Latin Proper Editorial Projection, 3 September 2026",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-20",
+     "file": "2026-2026-10-20-editorial-projection.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20",
+     "language": "la",
+     "passages": 5,
+     "readable": 5,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 20 October 2026",
      "year": 2026
     }
    ],

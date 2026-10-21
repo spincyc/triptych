@@ -334,6 +334,37 @@ if (input.op === 'fixture-validate') {
       }]
     }
   }));
+} else if (input.op === 'unsettled-day-course') {
+  const id = 'postconciliar';
+  const held = derive(id, input.date);
+  const structure = read(base + 'propers/' + id + '.json');
+  const branch = held.options[0];
+  const requested = {
+    schema: C.STATE_SCHEMA, entrance: 'day', civilDate: input.date,
+    edition: {id}, calendar: {id}, requestedMode: 'read',
+    bible: {id: 'douay-rheims', numbering: 'vulgate'},
+    languages: {orations: input.language},
+    options: {ordinary: false, legitimate: {}}, coverage: [],
+    unresolvedChoices: [], sourceHooks: []
+  };
+  if (input.mutation === 'precedence') branch.unsettled[0].scope = 'precedence';
+  if (input.mutation === 'coequal') branch.readable.push(
+    Object.assign({}, branch.readable[0], {id: 'unselected-peer', key: 'unselected-peer'})
+  );
+  if (input.mutation === 'settled') branch.settled = true;
+  if (input.mutation === 'winner') branch.winner = {id: 'unselected-winner'};
+  if (input.mutation === 'missing-winner') delete branch.winner;
+  const before = JSON.stringify(held);
+  const day = A.adaptDay({request: requested, derived: held, structure});
+  const explicit = A.adaptDay({
+    request: Object.assign({}, requested, {
+      selectedReadableFormulary: {id: branch.readable[0].key}
+    }), derived: held, structure
+  });
+  output = {
+    day: resultProjection(day), explicit: resultProjection(explicit),
+    unchanged: JSON.stringify(held) === before, unsettled: branch.unsettled
+  };
 } else if (input.op === 'synthetic-day-cycle') {
   const request = {
     schema: C.STATE_SCHEMA, entrance: 'day', civilDate: '2026-08-26',
@@ -3096,6 +3127,35 @@ class ParityTests(unittest.TestCase):
             proper_events = [one for one in parity["day"]["events"] if one["kind"] == "proper"]
             self.assertEqual(len(proper_events), 10)
             self.assertTrue(all(one["seat"]["placement"] == "seated" for one in proper_events))
+
+    def test_sole_unsettled_ferial_course_is_readable_without_appointing_orations(self) -> None:
+        for date in ("2026-01-12", "2027-01-11", "2028-01-10"):
+            for language in ("en", "la"):
+                with self.subTest(date=date, language=language):
+                    result = node_call({
+                        "op": "unsettled-day-course", "date": date,
+                        "language": language,
+                    })
+                    self.assertTrue(result["unchanged"])
+                    self.assertEqual(result["day"], result["explicit"])
+                    day = result["day"]
+                    self.assertEqual(day["resolved"]["standing"], "unresolved")
+                    self.assertFalse(day["calendarResult"]["settled"])
+                    self.assertIsNone(day["calendarResult"]["winner"])
+                    self.assertEqual([one["scope"] for one in result["unsettled"]],
+                                     ["oration-owner"])
+                    self.assertTrue(day["events"])
+                    self.assertTrue(all(one["selected"]["kind"] == "scripture"
+                                        for one in day["events"]))
+
+    def test_unsettled_course_does_not_resolve_other_ambiguity(self) -> None:
+        for mutation in ("precedence", "coequal", "settled", "winner", "missing-winner"):
+            with self.subTest(mutation=mutation):
+                with self.assertRaisesRegex(
+                    AssertionError, "no deterministic or explicitly selected formulary"
+                ):
+                    node_call({"op": "unsettled-day-course", "date": "2026-01-12",
+                               "language": "en", "mutation": mutation})
 
     def test_postconciliar_2026_2027_weekday_and_sunday_cli_browser_cycle_parity(self) -> None:
         cases = (

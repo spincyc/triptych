@@ -1,0 +1,268 @@
+collation_schema = 1
+record_type = "calendar-proper-citation-collation"
+calendar = "roman-1962"
+sections = ["sanctoral", "marian"]
+target = "src/sources/calendars/roman-1962/propers.yaml"
+collated_on = "2026-10-20"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+artifact_byte_size = 82815941
+artifact_page_count = 1088
+scope = "Missing direct Lesson, Epistle and Gospel appointments identified among active 2026 full-Mass keys; Andrew Avellino is excluded for a separate Common/mixed-formulary repair."
+method = "The already-held registered control PDF was independently size/hash verified before page rendering. Each bounded page was visually inspected. No OCR, selected Bible, historical missal or remembered appointment supplied a reading. Canonical encodings use tools/citations.parse_citation; printed citation facts remain separate below."
+limits = "Citation and brief heading facts only. No new prayer or reading bodies, no new rights claim, no complete-formulary or annual-calendar completeness claim. Rendered source pages are research evidence, not public payload. Printed 5, 6 et 7 is encoded as the equivalent contiguous 5-7; other disjoint source ranges remain separate."
+
+[[appointments]]
+mass = "annuntiatio-beatae-mariae-virginis"
+proper = "Lesson"
+origin = "direct"
+printed_head = "Léctio Isaíae Prophétae."
+printed_reference = "Isai. 7, 10-15"
+ref = "Isaiah 7:10-15"
+pdf_pages = [576]
+printed_pages = [495]
+marginal_number = 2325
+context = "The Lesson follows Collect no. 2324, begins at the foot of the left column, continues at the head of the right column on the same page, and ends before Gradual no. 2326."
+qualification = "No Common referral supplies this reading. Only the primary appointment is collated here; adjacent chant and seasonal omissions are separate findings."
+method = "120 dpi PNG page images; both bounded pages visually inspected"
+raster_sha256 = ["56edfeb12901c55717813defeb24619feb3a145abeebc93e03eb98c46ed52bdf", "0819e52f5bc8583d7e5d9ae1b4609e5209397f5205525fb4becd53fbfa8e8b94"]
+
+[[appointments]]
+mass = "nativitate-beatae-mariae-virginis"
+proper = "Gospel"
+origin = "direct"
+printed_head = "Initium sancti Evangelii secundum Matthaeum."
+printed_reference = "Mt. 1, 1-16"
+ref = "Matthew 1:1-16"
+pdf_pages = [732]
+printed_pages = [651]
+marginal_number = 3576
+context = "The feast heading is printed at AP731/p650, followed by its own Introit, Collect and Lesson. AP732/p651 prints Gradual, Alleluia and this Gospel, which continues into the right column before the feast's Offertory. It is directly printed; no Common pointer supplies the Gospel."
+qualification = "This is the position among existing nodes. The printed Gradual and Alleluia are also absent from the present Mass and remain outside this assigned primary-reading repair."
+method = "150 dpi PNG page images; all bounded pages visually inspected"
+raster_sha256 = ["73caf5cbece8254db7db229714f96dd0c5ad02c13c8a8f17906ebca57bfbd960", "926308887c99c0cc503f37ad6e6e61d7e1a30b2eb8a3a3f83d7c7ec6d325255c"]
+
+[[appointments]]
+mass = "s-hermenegildi-martyris"
+proper = "Gospel"
+origin = "direct"
+printed_head = "Sequentia sancti Evangelii secundum Lucam"
+printed_reference = "Luc. 14, 26-33"
+ref = "Luke 14:26-33"
+pdf_pages = [585, 586]
+printed_pages = [504, 505]
+marginal_number = 2396
+context = "The Gospel is printed directly at no. 2396, after the double Alleluia and before Offertory no. 2397. It starts on artifact p. 585 and ends at the top of p. 586."
+qualification = "The Extra tempus paschale rubric on printed p. 505 appoints Common In virtute, unius Martyris III [6], with Collect and Gospel from the preceding Mass. The proposed Gospel is therefore direct at its printing; this proposal does not model the alternate nonpaschal formulary."
+method = "180 dpi PNG page images; all bounded pages visually inspected"
+raster_sha256 = ["6df9fb7551705e305ae88151d08e6820345b444516aacbce85070863dfced6bd", "08de328991c694cf834596cac78f800c8ac52568c645943fb947deba132fea4c"]
+
+[[appointments]]
+mass = "litania-maior"
+proper = "Lesson"
+origin = "direct"
+printed_head = "Lectio Ezechielis Prophetae"
+printed_reference = "Ezech. 1, 10-14"
+ref = "Ezekiel 1:10-14"
+pdf_pages = [591, 592]
+printed_pages = [510, 511]
+marginal_number = 2443
+context = "The Lesson is printed directly under S. MARCI EVANGELISTAE / II classis at no. 2443, after its Collect and the commemorated Rogation Collect. It ends at the top of artifact p. 592 before Alleluia no. 2444."
+qualification = "Printed p. 510 sends the procession to the separate Mass de Rogationibus in Proprium de Tempore p. 348. Ezekiel is the St Mark Mass appointment under the existing combined key, not the procession's Rogation reading. Printed p. 511 retains this Epistle for the outside-Easter votive referral to St Luke."
+method = "180 dpi PNG page images; all bounded pages visually inspected"
+raster_sha256 = ["c7e5fa640badb1bb6507f579d81a54cf4c08c60e257b5ff949da6642e03a6e48", "76547cfc2937ba50b9feed55d8b24c04e774c88f991c08f76d6f1f4398ef99af"]
+
+[[appointments]]
+mass = "s-petri-martyris"
+proper = "Epistle"
+origin = "direct"
+printed_head = "Lectio Epistolae beati Pauli Apostoli ad Timotheum"
+printed_reference = "2 Tim. 2, 8-10; 3, 10-12"
+ref = "2 Timothy 2:8-10; 3:10-12"
+pdf_pages = [595]
+printed_pages = [514]
+marginal_number = 2472
+context = "The Epistle is printed directly at no. 2472 on artifact p. 595, after Collect no. 2471 and before Alleluia no. 2473. The semicolon divides two noncontiguous chapter blocks."
+qualification = "Printed p. 515 separately refers an outside-Easter votive Mass to Laetabitur, unius Martyris IV [8], retaining the day's orations. The direct Epistle proposed here belongs to the printed paschal formulary, not automatically to that votive referral."
+method = "180 dpi PNG page images; all bounded pages visually inspected"
+raster_sha256 = ["d720e491fc90cd6011aaf8085e7880903b607a6f951eb790c5d4addb84b0e44c", "14d3434867758f8c4ef403219a948136b33c71aa9c7f6f17d9fcf4346869624e"]
+
+[[appointments]]
+mass = "vigil-nativity-saint-john-baptist"
+proper = "Lesson"
+origin = "direct"
+printed_head = "Lectio Ieremiae Prophetae"
+printed_reference = "Ierem. 1, 4-10"
+ref = "Jeremiah 1:4-10"
+pdf_pages = [642]
+printed_pages = [561]
+marginal_number = 2860
+context = "The Lesson is printed directly at no. 2860 after Collect no. 2859 and before Gradual no. 2861 under the 23 June vigil's II classis heading."
+qualification = "No Common or other reading referral is printed within the vigil formulary on artifact pp. 642-643."
+method = "180 dpi PNG page images; all bounded pages visually inspected"
+raster_sha256 = ["2a1e93aad3fc05924a7ba4d774377cbece7fa0718aeb799d8caa43a937b1cdf2"]
+
+[[appointments]]
+mass = "vigil-nativity-saint-john-baptist"
+proper = "Gospel"
+origin = "direct"
+printed_head = "Initium sancti Evangelii secundum Lucam"
+printed_reference = "Luc. 1, 5-17"
+ref = "Luke 1:5-17"
+pdf_pages = [643]
+printed_pages = [562]
+marginal_number = 2862
+context = "The Gospel is printed directly at no. 2862 on artifact p. 643, following the preceding page's Gradual and ending before Offertory no. 2863. Its printed heading is Initium, not Sequentia."
+qualification = "No Common or other reading referral is printed within the vigil formulary on artifact pp. 642-643."
+method = "180 dpi PNG page images; all bounded pages visually inspected"
+raster_sha256 = ["3dd381df9bb0469d11d4a5843b69f7dfe2801ab4e25c4fa2eaa496d652264082"]
+
+[[appointments]]
+mass = "nativitate-s-ioannis-baptistae"
+proper = "Lesson"
+origin = "direct"
+printed_head = "Léctio Isaíae Prophétae."
+printed_reference = "Isai. 49, 1-3, 5, 6 et 7"
+ref = "Isaiah 49:1-3, 5-7"
+pdf_pages = [644]
+printed_pages = [563]
+marginal_number = 2869
+context = "The Lesson follows Collect no. 2868, begins at the foot of the left column, continues at the head of the right column on the same page, and ends before Gradual no. 2870."
+qualification = "No Common referral supplies this reading. Only the primary appointment is collated here; adjacent chant and seasonal omissions are separate findings."
+method = "120 dpi PNG page images; both bounded pages visually inspected"
+raster_sha256 = ["5a0eac5645bc144a5f85f5a398bbffd0dc0fae647f7f2f297bbec097d7447aed", "a3eb66fecf908108cf8b98562599d39ecb27703139cf8ef2e11316eeb14e6862"]
+
+[[appointments]]
+mass = "s-hieronymi-aemiliani-confessoris"
+proper = "Lesson"
+origin = "direct"
+printed_head = "Léctio Isaíae Prophétae."
+printed_reference = "Isai. 58, 7-11"
+ref = "Isaiah 58:7-11"
+pdf_pages = [674]
+printed_pages = [593]
+marginal_number = 3106
+context = "The reading begins at the foot of the left column and continues to the top of the right column on artifact page 674."
+qualification = "Only this primary appointment is collated; other appointments remain outside this repair."
+method = "200 dpi grayscale PNG page images; all bounded pages visually inspected"
+raster_sha256 = ["c6f023e57b9d913857a43b9eb73d2b34860d2643f3bf9e4b74eb905a947753f8", "2f3b30d09c783d6c957d23bda1b8e5bef5688994636a88274e3d6d67eba2c6ba"]
+
+[[appointments]]
+mass = "s-laurentii-martyris"
+proper = "Epistle"
+origin = "direct"
+printed_head = "Léctio Epístolae beáti Pauli Apóstoli ad Corínthios."
+printed_reference = "2 Cor. 9, 6-10"
+ref = "2 Corinthians 9:6-10"
+pdf_pages = [703]
+printed_pages = [622]
+marginal_number = 3339
+context = "The whole reading is printed in the left column of artifact page 703."
+qualification = "Only this primary appointment is collated; other appointments remain outside this repair."
+method = "200 dpi grayscale PNG page images; all bounded pages visually inspected"
+raster_sha256 = ["9e89981ee5803acfeb32e7aeb485709ea91e95de0ad88cbba7a166b743273bd5", "6d8636786a9de5145c6a2d9dd4be9f23d7740dc26f6f35175b6b022350ea1c07", "3065c3e9b9e4bfcc59bc13faf98b40500d044e3cf2d32ea50d5eb9c102b88422"]
+
+[[appointments]]
+mass = "decollatione-s-ioannis-baptistae"
+proper = "Lesson"
+origin = "direct"
+printed_head = "Léctio Ieremíae Prophétae."
+printed_reference = "Ier. 1, 17-19"
+ref = "Jeremiah 1:17-19"
+pdf_pages = [723]
+printed_pages = [642]
+marginal_number = 3497
+context = "The whole reading is printed in the upper left column of artifact page 723."
+qualification = "Only this primary appointment is collated; other appointments remain outside this repair."
+method = "200 dpi grayscale PNG page images; all bounded pages visually inspected"
+raster_sha256 = ["b06f111dd5b42e025a5bcd5fe89d797cd3694b5a55c6321f6715418e1f71028f", "7dc46dd784125416c955c5625eb873a7ac06b48c5b4972adf8ba57663e1482d9", "98159db56f50d7048d9094442c64c225ec6068d8668ede1f8840abb89716e5bc"]
+
+[[appointments]]
+mass = "s-stephani-regis-confessoris"
+proper = "Lesson"
+origin = "direct"
+printed_head = "Léctio libri Sapiéntiae."
+printed_reference = "Eccli. 31, 8-11"
+ref = "Sirach 31:8-11"
+pdf_pages = [728]
+printed_pages = [647]
+marginal_number = 3547
+context = "The reading begins at the foot of the left column and continues to the top of the right column on artifact page 728. The printed heading says Sapientiae, while its printed citation is Eccli.; the canonical book follows the explicit citation. This is the September 2 king and confessor, not the December protomartyr."
+qualification = "Only this primary appointment is collated; other appointments remain outside this repair."
+method = "200 dpi grayscale PNG page images; all bounded pages visually inspected"
+raster_sha256 = ["9bafd4352b342935e8809ff496c7b4c3fe6c06b05c38c4bf4a18c1d86fdb4806", "99660a1414925ad296970b1d319d915b3e46ad2727fcf6786ad32ad2c0df9558"]
+
+[[appointments]]
+mass = "s-matthaei-apostoli-evangelistae"
+proper = "Lesson"
+origin = "direct"
+printed_head = "Léctio Ezechiélis Prophétae."
+printed_reference = "Ezech. 1, 10-14"
+ref = "Ezekiel 1:10-14"
+pdf_pages = [745]
+printed_pages = [664]
+marginal_number = 3681
+context = "Introit, Collect, Lesson, Gradual, Alleluia, Gospel; votive Tract printed separately on p. 665."
+qualification = "No ambiguity in the primary reading. This proposal does not collate or repair other appointments."
+method = "PNG page images scaled to 1800 pixels; all bounded pages visually inspected"
+raster_sha256 = ["897c4b803b9d97e7a1bf2930c7e8b5ada3d5a185c395f62bda6eb3ff23734090", "cd5cb96544413ef625a05bc33a1dd08d5c40f566941e36aaf68ce6795a7d4bff"]
+
+[[appointments]]
+mass = "s-teresiae-a-iesu-infante-virginis"
+proper = "Lesson"
+origin = "direct"
+printed_head = "Léctio Isaíae Prophétae."
+printed_reference = "Isai. 66, 12-14"
+ref = "Isaiah 66:12-14"
+pdf_pages = [755]
+printed_pages = [674]
+marginal_number = 3759
+context = "Introit and Collect in left column; Lesson opens right column before Gradual."
+qualification = "No ambiguity in the primary reading. Full citation is 12-14 as printed; no part-verse letter is printed."
+method = "PNG page images scaled to 1800 pixels; all bounded pages visually inspected"
+raster_sha256 = ["2b7c7a73c46abeff680b8c80916a6a5fae548245f6896dbd2ff7adf24354b576", "4328ddf70e99f3aace4948dffb2a124cbe05b92eb2a2cd768b7c4dd1f19b4726"]
+
+[[appointments]]
+mass = "s-birgittae-viduae"
+proper = "Epistle"
+origin = "direct"
+printed_head = "Léctio Epístolae beáti Pauli Apóstoli ad Timótheum."
+printed_reference = "1 Tim. 5, 3-10"
+ref = "1 Timothy 5:3-10"
+pdf_pages = [761]
+printed_pages = [680]
+marginal_number = 3805
+context = "Feast heading and own Collect on p. 679; separate commemorative Collect follows; feast's Epistle opens p. 680 and precedes Gradual."
+qualification = "No ambiguity in the primary reading. The intervening commemorative Collect belongs to Ss. Sergii, Bacchi, Marcelli et Apuleii, not to another feast form."
+method = "PNG page images scaled to 1800 pixels; all bounded pages visually inspected"
+raster_sha256 = ["6e6cf7c73ff10822db7f70e13e635fcb80bb4657c3e2035568860649521d91b7", "c0d086807e22a1edbf2e202fb56432ae16bd9a7608d21bcbcabf45418e1f59f5", "306a53c0e2c9fc3c70f6b25278fc9308e740a61e17f74d72550b1eebca671e15"]
+
+[[appointments]]
+mass = "s-ioannis-cantii-confessoris"
+proper = "Epistle"
+origin = "direct"
+printed_head = "Lectio Epistolae beati Iacobi Apostoli."
+printed_reference = "Iac. 2, 12-17"
+ref = "James 2:12-17"
+pdf_pages = [773]
+printed_pages = [692]
+marginal_number = 3905
+context = "Under Die 20 octobris / S. Ioannis Cantii Conf. / III classis, the feast's own Introit and Collect stand in the left column; the right column prints the complete Epistle at its head, then Gradual and Alleluia."
+qualification = "None for this appointment or its direct source identity; no full-Mass collation claimed."
+method = "150 dpi PNG page images; all bounded pages visually inspected"
+raster_sha256 = ["38d86cf2c875a15a024914148eae978a4f0e9d8b1e1f5f99b1a8109c873d1bdb"]
+
+[[appointments]]
+mass = "s-martini-episcopi-confessoris"
+proper = "Gospel"
+origin = "direct"
+printed_head = "Sequentia sancti Evangelii secundum Lucam."
+printed_reference = "Luc. 11, 33-36"
+ref = "Luke 11:33-36"
+pdf_pages = [797]
+printed_pages = [716]
+marginal_number = 4080
+context = "The feast begins at AP796/p715, Die 11 novembris / S. Martini Ep. et Conf. / III classis. AP797/p716 follows its Lesson, Gradual and Alleluia with this directly printed Gospel at the head of the right column, then the feast's Offertory."
+qualification = "This is the position among existing nodes; the page also prints an Alleluia and a Paschal-time alternative absent from the current Mass."
+method = "150 dpi PNG page images; all bounded pages visually inspected"
+raster_sha256 = ["da987dd82af270316076e5d5839ffc1fe75f506b9fb58a55b6ba0e7e97685a89", "c642705ec18b185b4e8a30386ef325b4814106ab8e9d487d424a46863244f551"]

@@ -98,8 +98,8 @@ EXAMPLES = {
             "tools/calendar-days check",
             (
                 "postconciliar: 38406 placements",
-                "roman-1962: 12871 placements",
-                "roman-pre-1955: 12769 placements",
+                "roman-1962: 12667 placements",
+                "roman-pre-1955: 12565 placements",
                 "checked against the worked tables in guidance/liturgy/calendar-computation.md",
             ),
         ),
@@ -115,7 +115,7 @@ EXAMPLES = {
             "tools/calendar-days coverage --calendar roman-1962 --first 2026 --last 2026",
             (
                 "roman-1962: 2026-2026",
-                "  dates 365: 316 resolve to a mass, 49 to nothing, 124 carry unranked candidates",
+                "  dates 365: 316 resolve to a mass, 49 to nothing, 123 carry unranked candidates",
                 "  ferial formulary on 239 dates; 0 dates reach no mass at all",
                 "  masses 491: 456 reachable, 8 never placed",
                 "    never placed: epiphany-4 (seasonal) - no rule in guidance/liturgy/calendar-computation.md fixes a date for this mass",
@@ -135,8 +135,8 @@ EXAMPLES = {
             "tools/calendar-days check",
             (
                 "postconciliar: 38406 placements",
-                "roman-1962: 12871 placements",
-                "roman-pre-1955: 12769 placements",
+                "roman-1962: 12667 placements",
+                "roman-pre-1955: 12565 placements",
                 "checked against the worked tables in guidance/liturgy/calendar-computation.md",
             ),
             "read-only first: `check` verifies the same computation `structure` writes out",
@@ -913,19 +913,24 @@ def build_1962(
             "a transfer by the local Ordinary is not computed",
         )
 
-    thursday_form, sunday_form = TERRITORIAL_OPTIONS["ascension"]
+    # Universal Norms 7 belongs to the postconciliar calendar. No 1962
+    # territorial Sunday transfer has been established by a source held here.
+    # The uncollated pre-1955 projection keeps its existing arithmetic.
+    universal_1962 = target_calendar == "roman-1962"
+    thursday_form, sunday_form = (
+        (None, None) if universal_1962 else TERRITORIAL_OPTIONS["ascension"]
+    )
     year.put(easter + timedelta(days=38), "vigil-of-the-ascension", "Easter +38", thursday_form)
     year.put(a.ascension_thursday, "ascension", "Easter +39", thursday_form)
     year.put(a.ascension_sunday, "sunday-after-ascension", "Easter +42", thursday_form)
-    year.put(a.ascension_sunday, "ascension", "Easter +42", sunday_form)
+    if not universal_1962:
+        year.put(a.ascension_sunday, "ascension", "Easter +42", sunday_form)
 
     # The Missal provides otherwise at In Ascensione Domini, printed p. 352:
     # "Diebus a feria VI post Ascensionem usque ad feriam VI ante vigiliam
     # Pentecostes inclusive, dicitur Missa de festo Ascensionis." The rubric is
-    # stated from the Ascension's own day, so it holds only where the Ascension
-    # is kept on the Thursday; where the competent authority has moved it to
-    # the Sunday, these ferias are still governed by the preceding Sunday, and
-    # after that Sunday this repository states nothing at all.
+    # applied to the universal Thursday assignment in the 1962 projection.
+    # No alternative 1962 borrowing is inferred for an unproved local transfer.
     for offset in range(40, 48):
         when = easter + timedelta(days=offset)
         year.borrows(
@@ -968,9 +973,12 @@ def build_1962(
         "prints for the ferias of the week that follows it, Trinity Sunday "
         "having taken the Sunday",
     )
-    corpus_thursday, corpus_sunday = TERRITORIAL_OPTIONS["corpus-christi"]
+    corpus_thursday, corpus_sunday = (
+        (None, None) if universal_1962 else TERRITORIAL_OPTIONS["corpus-christi"]
+    )
     year.put(a.corpus_christi_thursday, "corpus-christi", "Easter +60", corpus_thursday)
-    year.put(a.corpus_christi_sunday, "corpus-christi", "Easter +63", corpus_sunday)
+    if not universal_1962:
+        year.put(a.corpus_christi_sunday, "corpus-christi", "Easter +63", corpus_sunday)
     year.put(
         easter + timedelta(days=68),
         "sacred-heart",
@@ -1827,7 +1835,7 @@ def year_document(index: dict, civil_year: int, built: dict[int, Year]) -> dict:
         "precedence": {"note": PRECEDENCE_NOTE, "stated": False},
         "rules": rules,
         "schema": SCHEMA,
-        "territorial": territorial_block(index["builder"]),
+        "territorial": territorial_block(index["builder"], index["directory"]),
     }
     # Carried only by a calendar this tool can borrow for WHOLE, which today is
     # 1962 alone.
@@ -1875,8 +1883,12 @@ def week_spans(weeks: dict[date, int]) -> list[dict]:
 
 
 def year_summary(year: Year, calendar: str) -> dict:
+    anchors = year.anchors.as_json()
+    if year.calendar == "roman-1962":
+        anchors.pop("ascension_transferred_sunday_form")
+        anchors.pop("body_and_blood_transferred_sunday_form")
     summary: dict[str, object] = {
-        "anchors": year.anchors.as_json(),
+        "anchors": anchors,
         "begins": year.anchors.begins.isoformat(),
         "ends": year.anchors.last_day.isoformat(),
         "facts": year.facts,
@@ -1905,7 +1917,23 @@ def year_summary(year: Year, calendar: str) -> dict:
     return summary
 
 
-def territorial_block(calendar: str) -> dict:
+def territorial_block(calendar: str, target_calendar: str | None = None) -> dict:
+    if calendar == "roman-1962" and (target_calendar or calendar) == "roman-1962":
+        unsupported = (
+            "not computed: no competent 1962 territorial Sunday-transfer "
+            "decision or governing rule is established in the held sources"
+        )
+        return {
+            "note": (
+                "The 1962 General Calendar's universal assignments are computed. "
+                "Postconciliar Universal Norms 7 is not a 1962 transfer authority. "
+                "A local or external solemnity requires its own competent source "
+                "and is not inferred here."
+            ),
+            "epiphany": {"computed": "6 January", "transferred_sunday_form": unsupported},
+            "ascension": {"computed": "Easter +39 (Thursday)", "transferred_sunday_form": unsupported},
+            "body_and_blood_of_christ": {"computed": "Easter +60 (Thursday)", "transferred_sunday_form": unsupported},
+        }
     block: dict[str, object] = {"note": TERRITORIAL_NOTE}
     if calendar == "roman-1962":
         block["epiphany"] = {"computed": "6 January", "transferred_sunday_form": NO_TRANSFER_RULE}
@@ -2304,10 +2332,10 @@ def check_ferial(known: set[str]) -> list[str]:
                     problems.append(f"{ending}: {when} borrows {entry['key']}, not in the index")
                 if entry["key"] == "ascension":
                     seen_window.add(when)
-                    if entry.get("territorial") != TERRITORIAL_OPTIONS["ascension"][0]:
+                    if entry.get("territorial") is not None:
                         problems.append(
-                            f"{ending}: {when} takes the Ascension's Mass untagged; the "
-                            "Missal states that rubric from the Ascension's own day"
+                            f"{ending}: {when} tags the universal 1962 Ascension "
+                            "borrowing with an unproved territorial alternative"
                         )
         # Every day of the stated window that is not a Sunday and has no Mass
         # of its own must be in it, and nothing outside it may be.
@@ -2376,7 +2404,7 @@ def structure_projection(
                 "edition": index["edition"],
                 "lectionary_cycles": CYCLED[index["builder"]],
                 "path": f"structure/calendar/{name}/{{civil_year}}.json",
-                "territorial": territorial_block(index["builder"]),
+                "territorial": territorial_block(index["builder"], index["directory"]),
             }
         )
     index_document = {

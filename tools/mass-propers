@@ -115,9 +115,9 @@ EXAMPLES = {
         Example(
             "tools/mass-propers structure --out build/example-propers",
             (
-                "postconciliar: 619 masses, 3626 citations",
-                "roman-1962: 491 masses, 4374 citations",
-                "roman-pre-1955: 489 masses, 4309 citations",
+                "postconciliar: 619 masses, 3625 citations",
+                "roman-1962: 491 masses, 4396 citations",
+                "roman-pre-1955: 489 masses, 4331 citations",
                 "  -> build/example-propers/structure/propers/postconciliar.json",
                 "  -> build/example-propers/structure/propers/search/postconciliar.json",
                 "  -> build/example-propers/structure/propers/roman-1962.json",
@@ -129,9 +129,9 @@ EXAMPLES = {
         Example(
             "tools/mass-propers structure --check",
             (
-                "postconciliar: 619 masses, 3626 citations",
-                "roman-1962: 491 masses, 4374 citations",
-                "roman-pre-1955: 489 masses, 4309 citations",
+                "postconciliar: 619 masses, 3625 citations",
+                "roman-1962: 491 masses, 4396 citations",
+                "roman-pre-1955: 489 masses, 4331 citations",
                 "  499 tracked file(s) are current",
             ),
             "writes nothing: exits 1 naming each tracked file the sources no longer produce. The calendar-Mass check target runs this",
@@ -141,10 +141,10 @@ EXAMPLES = {
         Example(
             "tools/mass-propers census",
             (
-                "# roman-pre-1955 English orations: 1161 slots appointed, 107 public-available, 0 held rights-restricted, 1054 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
-                "# roman-1962 English orations: 1209 slots appointed, 120 public-available, 0 held rights-restricted, 1089 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
-                "# postconciliar English orations: 330 slots appointed, 113 public-available, 0 held rights-restricted, 217 ledgered untranslated, 0 unaccounted; 3 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
-                "# postconciliar Latin recension: 326 unique non-scriptural slots, 0 bodies resident; 0 explicitly antecedent substitutes, 0 other bodies with antecedent-relation metadata, 0 without per-slot Latin relation; direct target-edition artifact attestation not-represented",
+                "# roman-pre-1955 English orations: 1163 slots appointed, 107 public-available, 0 held rights-restricted, 1056 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# roman-1962 English orations: 1211 slots appointed, 120 public-available, 0 held rights-restricted, 1091 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# postconciliar English orations: 331 slots appointed, 113 public-available, 0 held rights-restricted, 218 ledgered untranslated, 0 unaccounted; 3 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# postconciliar Latin recension: 327 unique non-scriptural slots, 0 bodies resident; 0 explicitly antecedent substitutes, 0 other bodies with antecedent-relation metadata, 0 without per-slot Latin relation; direct target-edition artifact attestation not-represented",
                 "<!-- census:begin — derived; edit nothing between these markers -->",
                 "",
                 "... 95 more lines",

@@ -265,7 +265,7 @@
     }));
   }
 
-  function dayCycle(proper, lectionary) {
+  function dayCycle(proper, lectionary, allowInapplicable) {
     const sunday = sundayCycleKeys(proper);
     const weekday = weekdayCycleKeys(proper);
     if (!sunday.length && !weekday.length) return null;
@@ -274,14 +274,20 @@
       throw new Error('Proper carries both Sunday and weekday Lectionary cycle families');
     }
     if (sunday.length) {
-      if (SUNDAY_CYCLE_KEYS.indexOf(lectionary.sunday) < 0 ||
-          sunday.indexOf(lectionary.sunday) < 0) {
+      if (SUNDAY_CYCLE_KEYS.indexOf(lectionary.sunday) < 0) {
+        throw new Error('resolved Sunday Lectionary year is not held for this Proper');
+      }
+      if (sunday.indexOf(lectionary.sunday) < 0) {
+        if (allowInapplicable) return false;
         throw new Error('resolved Sunday Lectionary year is not held for this Proper');
       }
       return { key: lectionary.sunday, dimension: 'sunday', family: 'cycles' };
     }
-    if (WEEKDAY_CYCLE_KEYS.indexOf(lectionary.weekday) < 0 ||
-        weekday.indexOf(lectionary.weekday) < 0) {
+    if (WEEKDAY_CYCLE_KEYS.indexOf(lectionary.weekday) < 0) {
+      throw new Error('resolved weekday Lectionary year is not held for this Proper');
+    }
+    if (weekday.indexOf(lectionary.weekday) < 0) {
+      if (allowInapplicable) return false;
       throw new Error('resolved weekday Lectionary year is not held for this Proper');
     }
     return { key: lectionary.weekday, dimension: 'weekday', family: 'weekday_cycles' };
@@ -854,36 +860,60 @@
     return { state: 'mapped', identity: { id: Array.from(ids)[0] } };
   }
 
+  function properChoiceCycleApplies(proper, request) {
+    if (request.entrance === 'day') {
+      return dayCycle(proper, request.lectionary, true) !== false;
+    }
+    const selections = cycleSelections(proper);
+    return !hasOwn(request, 'cycle') || request.cycle === null ||
+      !selections.length || Boolean(explicitCycleSelection(proper, request.cycle));
+  }
+
   function projectProperChoice(event, mass, request, projectMember) {
     const id = 'proper-choice/' + request.edition.id + '/' + mass.key + '/' +
       event.formId + '/' + event.group;
     const seat = projectedSeat(event.seat, event.placement, mass, request);
     const semantic = sharedChoiceSemanticSlot(event);
-    const options = (event.options || []).map(function (option) {
-      const events = (option.rows || []).map(function (row) {
-        return projectMember(row, seat, semantic);
+    const authored = event.options || [];
+    if (authored.length < 2 || new Set(authored.map(function (one) { return one.id; })).size !== authored.length) {
+      throw new Error('alternative Proper choice must carry distinct options');
+    }
+    const options = authored.map(function (option) {
+      const rows = option.rows || [];
+      // Check every member before dropping a whole inapplicable source option.
+      const applicable = rows.map(function (row) {
+        return properChoiceCycleApplies(row.proper, request);
       });
-      if (!events.length || new Set(events.map(function (one) { return one.id; })).size !== events.length) {
+      if (!rows.length) throw new Error('alternative Proper option must conserve distinct source events');
+      if (!applicable.every(Boolean)) return null;
+      const events = rows.map(function (row) { return projectMember(row, seat, semantic); });
+      if (new Set(events.map(function (one) { return one.id; })).size !== events.length) {
         throw new Error('alternative Proper option must conserve distinct source events');
       }
       return { id: option.id, events: events };
-    });
-    if (options.length < 2 || new Set(options.map(function (one) { return one.id; })).size !== options.length) {
-      throw new Error('alternative Proper choice must carry distinct options');
+    }).filter(Boolean);
+    if (!options.length) throw new Error('alternative Proper choice has no option for the selected cycle');
+    if (options.length === 1) {
+      const option = options[0];
+      return option.events.map(function (member) {
+        return Object.assign({}, member, { sourceHooks: member.sourceHooks.concat([
+          { kind: 'proper-choice-option', id: id + '/' + option.id }
+        ]) });
+      });
     }
     const memberEvents = options.reduce(function (all, option) {
       return all.concat(option.events);
     }, []);
-    return {
+    return [{
       id: id, kind: 'proper-choice', group: event.group,
       selection: { state: 'required', option: null },
       seat: seat, options: options, sourceHooks: uniqueSourceHooks(memberEvents),
       choiceBasis: event.basis
-    };
+    }];
   }
 
   function projectSeatingEvents(events, mass, request, projectMember, projectOrdinary) {
-    return (events || []).map(function (event) {
+    return (events || []).flatMap(function (event) {
       if (event.kind === 'proper_choice') {
         return projectProperChoice(event, mass, request, projectMember);
       }
@@ -1217,7 +1247,9 @@
       let activeSelections = selections;
       let includeProper = true;
       if (request.entrance === 'day') {
-        const selected = dayCycle(proper, request.lectionary);
+        const selected = dayCycle(proper, request.lectionary,
+          proper.ordinary_disposition && proper.ordinary_disposition.kind === 'alternative');
+        includeProper = selected !== false;
         activeSelections = selected ? [selected] : [];
       } else if (hasOwn(request, 'cycle') && request.cycle !== null) {
         const selected = explicitCycleSelection(proper, request.cycle);
@@ -1566,7 +1598,7 @@
   function branchFor(derived, request) {
     const branches = derived.options || [];
     const territory = territoryId(request);
-    if (branches.length === 1 && (branches[0].option === null || branches[0].option === territory)) {
+    if (branches.length === 1 && branches[0].option === territory) {
       return branches[0];
     }
     if (territory === null) throw new Error('territorial Day branch must be explicit');
@@ -1612,6 +1644,14 @@
     const said = rows.filter(function (one) { return one.state === 'said'; });
     if (said.length === 1) return said[0];
     if (said.length > 1 || branch.choice) return null;
+    // The sole ferial reading course can be read while its oration owner stays
+    // unresolved. Retain that standing; this does not appoint a Mass or prayer.
+    if (rows.length === 1 && rows[0].state === 'unresolved' &&
+        branch.settled === false && branch.winner === null &&
+        !(branch.massChoices || []).length && (branch.unsettled || []).length &&
+        branch.unsettled.every(function (one) { return one.scope === 'oration-owner'; })) {
+      return rows[0];
+    }
     return null;
   }
 
@@ -1677,7 +1717,11 @@
   function selectProperAlternative(events, request) {
     if (!request.alternative) return events;
     const id = request.alternative.id;
-    let selected = 0;
+    let selected = events.some(function (event) {
+      return event.kind === 'proper' && (event.sourceHooks || []).some(function (hook) {
+        return hook.kind === 'proper-choice-option' && hook.id === id;
+      });
+    }) ? 1 : 0;
     const resolved = events.map(function (event) {
       if (event.kind !== 'proper-choice') return event;
       const option = event.options.find(function (one) { return event.id + '/' + one.id === id; });

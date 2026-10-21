@@ -180,8 +180,9 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     )
 
   def test_sunday_catalog_links_only_installed_publications(self):
-    # The accepted 1962 Sunday 59 and postconciliar Ordinary Time 27 families were
-    # installed in 86f187baf/866b740c1 and 63c7aba00, respectively.
+    # Keep the installed full-guide families aligned with the publication source
+    # inventories and accepted catalogue installations. The inventories own the
+    # source records; this regression retains an explicit installed-PDF boundary.
     permitted_full_guides = {
       *(f"{number:02d}-{slug}.pdf" for number, slug in (
         (39, "trinity-sunday"),
@@ -192,6 +193,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
         (46, "sixth-after-pentecost"),
         (47, "seventh-after-pentecost"),
         (48, "eighth-after-pentecost"),
+        (49, "ninth-after-pentecost"),
         (50, "tenth-after-pentecost"),
         (51, "eleventh-after-pentecost"),
         (52, "twelfth-after-pentecost"),
@@ -202,10 +204,16 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
         (57, "seventeenth-after-pentecost"),
         (58, "eighteenth-after-pentecost"),
         (59, "nineteenth-after-pentecost"),
+        (60, "twentieth-after-pentecost"),
+        (61, "twenty-first-after-pentecost"),
       )),
       "57-seventeenth-after-pentecost-homily.pdf",
       "58-eighteenth-after-pentecost-homily.pdf",
       "59-nineteenth-after-pentecost-homily.pdf",
+      "60-twentieth-after-pentecost-homily.pdf",
+      "61-twenty-first-after-pentecost-homily.pdf",
+      "f01-christ-the-king.pdf",
+      "f01-christ-the-king-homily.pdf",
       *(f"pc-s{number}-{slug}-year-a.pdf" for number, slug in (
         (37, "eleventh-sunday-in-ordinary-time"),
         (38, "twelfth-sunday-in-ordinary-time"),
@@ -213,15 +221,20 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
         (40, "fourteenth-sunday-in-ordinary-time"),
         (41, "fifteenth-sunday-in-ordinary-time"),
         (42, "sixteenth-sunday-in-ordinary-time"),
+        (43, "seventeenth-sunday-in-ordinary-time"),
         (26, "most-holy-trinity"),
         (27, "most-holy-body-and-blood-of-christ"),
         (51, "twenty-fifth-sunday-in-ordinary-time"),
         (52, "twenty-sixth-sunday-in-ordinary-time"),
         (53, "twenty-seventh-sunday-in-ordinary-time"),
+        (54, "twenty-eighth-sunday-in-ordinary-time"),
+        (55, "twenty-ninth-sunday-in-ordinary-time"),
       )),
       "pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
       "pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-homily.pdf",
       "pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-homily.pdf",
+      "pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-homily.pdf",
       "pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf",
       "pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
       "pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",

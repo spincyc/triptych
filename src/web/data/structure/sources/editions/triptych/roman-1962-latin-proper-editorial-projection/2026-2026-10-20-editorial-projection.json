@@ -1,0 +1,192 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "editorial-projection",
+   "byte_size": 715,
+   "edition_owned": true,
+   "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-orations-dc4287d2",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Three Latin orations only. This artifact owns the target-controlled editorial projection, not the Schott printing or Missale Romanum1962. English bodies, chants, readings, Preface bodies, inactive seasonal-votive branches and broader coverage remain unchanged.",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "project-created",
+   "rights_basis": "Triptych offers its bounded editorial selection, normalization and collation record under CC BY 4.0 and claims no exclusive right in the underlying 1929 Latin prayers. Those words are public domain in the United States under the exact historical printing finding in src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml. Only preexisting prayer words and received conclusion formulas are retained; no page image, watermark, rubric, layout or other protected edition matter is reproduced.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "editorial-projection",
+   "byte_size": 469,
+   "edition_owned": true,
+   "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.theodore-own-orations-0c381c32",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Only the Secret and Postcommunion of the 9 November Theodore commemoration are projected. No English text, Common body, new speaker cue or broader whole-calendar assertion is supplied.",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "project-created",
+   "rights_basis": "Triptych offers the bounded editorial selection, normalization and target-relation record under CC BY 4.0 and claims no exclusive right in the underlying public-domain Latin. Those words stand in the separately registered Mame 1922 witness. No page image, layout, rubric, marginal number or other later edition matter is reproduced.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Project editorial artifact; not a Missal edition or liturgical authority",
+  "date": "2026-10-20",
+  "editors": [
+   "Triptych contributors"
+  ],
+  "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20",
+  "jurisdiction": "United States",
+  "language": "la",
+  "publication": "Triptych project-created editorial projection",
+  "title": "Roman 1962 Latin Proper Editorial Projection, 20 October 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-orations-dc4287d2",
+   "artifact_type": "editorial-projection",
+   "context": "Exact bounded project editorial projection of Christ the King Collect for the 1962 calendar.",
+   "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-collect",
+   "locus": "Christ the King,Collect; editorial projection physical lines1-4; historical Schott 1929 printed p. 1105 / PDF 1175; target1962 printed p.697 / PDF 778,no. 3939.",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The selected lines reproduce the retained calendar Unicode body hash 6af5e3a4069557becc63497526bb1e3b76fa5bb0a7eb67f4ec4fb86a27097eb4. Historical words, target comparison and declared transformations remain separately identified; no liturgical authority or source identity is assigned to the project.",
+   "readable": true,
+   "rights": "project-created",
+   "rights_basis": "Triptych offers its bounded editorial selection, normalization and collation record under CC BY 4.0 and claims no exclusive right in the underlying 1929 Latin prayers. Those words are public domain in the United States under the exact historical printing finding in src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml. Only preexisting prayer words and received conclusion formulas are retained; no page image, watermark, rubric, layout or other protected edition matter is reproduced.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-collect.json",
+   "verified_on": "2026-10-20",
+   "words": 33
+  },
+  {
+   "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-orations-dc4287d2",
+   "artifact_type": "editorial-projection",
+   "context": "Exact bounded project editorial projection of Christ the King Postcommunion for the 1962 calendar.",
+   "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-postcommunion",
+   "locus": "Christ the King,Postcommunion; editorial projection physical lines11-13; historical Schott 1929 printed p. 1108 / PDF 1178; target1962 printed p.698 / PDF 779,no.3949.",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The selected lines reproduce the retained calendar Unicode body hash d0615d75979ceaa5f7ca2b366c1b584a2b532ded87b65e5e04533a3cfd8e0b37. Historical words, target comparison and declared transformations remain separately identified; no liturgical authority or source identity is assigned to the project.",
+   "readable": true,
+   "rights": "project-created",
+   "rights_basis": "Triptych offers its bounded editorial selection, normalization and collation record under CC BY 4.0 and claims no exclusive right in the underlying 1929 Latin prayers. Those words are public domain in the United States under the exact historical printing finding in src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml. Only preexisting prayer words and received conclusion formulas are retained; no page image, watermark, rubric, layout or other protected edition matter is reproduced.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-postcommunion.json",
+   "verified_on": "2026-10-20",
+   "words": 28
+  },
+  {
+   "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-orations-dc4287d2",
+   "artifact_type": "editorial-projection",
+   "context": "Exact bounded project editorial projection of Christ the King Secret for the 1962 calendar.",
+   "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-secret",
+   "locus": "Christ the King,Secret; editorial projection physical lines6-9; historical Schott 1929 printed p. 1107 / PDF 1177; target1962 printed p.698 / PDF 779,no.3947.",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The selected lines reproduce the retained calendar Unicode body hash 406851c5d1ce570d8dd192b412ece7ef1ee85fea81135b2839ba7a22d320e0ff. Historical words, target comparison and declared transformations remain separately identified; no liturgical authority or source identity is assigned to the project.",
+   "readable": true,
+   "rights": "project-created",
+   "rights_basis": "Triptych offers its bounded editorial selection, normalization and collation record under CC BY 4.0 and claims no exclusive right in the underlying 1929 Latin prayers. Those words are public domain in the United States under the exact historical printing finding in src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml. Only preexisting prayer words and received conclusion formulas are retained; no page image, watermark, rubric, layout or other protected edition matter is reproduced.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-secret.json",
+   "verified_on": "2026-10-20",
+   "words": 34
+  },
+  {
+   "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.theodore-own-orations-0c381c32",
+   "artifact_type": "editorial-projection",
+   "context": "Exact project editorial projection of the 1962 Theodore own Postcommunion.",
+   "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.theodore-postcommunion",
+   "locus": "Theodore Postcommunion, editorial projection physical lines6-8; Mame 1922 printed pp.752-753/PDF866-867; 1962 printed p.713/PDF794,no.4056.",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The selected lines reproduce exact calendar Unicode body hash 40ac4d221ce22bfb2101d84e61f51f83495c09fe8c19a6b7af6210b2ded3f144; historical short source cue and target long conclusion remain separately owned and declared.",
+   "readable": true,
+   "rights": "project-created",
+   "rights_basis": "Triptych offers the bounded editorial selection, normalization and target-relation record under CC BY 4.0 and claims no exclusive right in the underlying public-domain Latin. Those words stand in the separately registered Mame 1922 witness. No page image, layout, rubric, marginal number or other later edition matter is reproduced.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.theodore-postcommunion.json",
+   "verified_on": "2026-10-20",
+   "words": 30
+  },
+  {
+   "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.theodore-own-orations-0c381c32",
+   "artifact_type": "editorial-projection",
+   "context": "Exact project editorial projection of the 1962 Theodore own Secret.",
+   "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.theodore-secret",
+   "locus": "Theodore Secret, editorial projection physical lines1-4; Mame 1922 printed p.752/PDF866; 1962 printed p.713/PDF794,no.4055.",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The selected lines reproduce exact calendar Unicode body hash 52a4292532f4f9eeb18101fa444e03d11a4a9f3e250b333f6f327fd800a6f094; historical short source cue and target long conclusion remain separately owned and declared.",
+   "readable": true,
+   "rights": "project-created",
+   "rights_basis": "Triptych offers the bounded editorial selection, normalization and target-relation record under CC BY 4.0 and claims no exclusive right in the underlying public-domain Latin. Those words stand in the separately registered Mame 1922 witness. No page image, layout, rubric, marginal number or other later edition matter is reproduced.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.theodore-secret.json",
+   "verified_on": "2026-10-20",
+   "words": 36
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Triptych contributors",
+  "category": "editorial-source-projection",
+  "description": "A project-created editorial source projection containing bounded Latin prayer bodies in date-specific artifacts. It is neither an edition of a historical hand missal nor an edition of the Missale Romanum. Each artifact records the transformation rule over separate public-domain antecedent and 1962 page-image witnesses; its passages let consumers cite the projected bodies without assigning Triptych's target-controlled collation choices to the antecedent printing.",
+  "id": "work.triptych.roman-1962-latin-proper-editorial-projection",
+  "languages": [
+   "la"
+  ],
+  "title": "Roman 1962 Latin Proper Editorial Projection"
+ }
+}
