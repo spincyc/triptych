@@ -34,6 +34,8 @@ from _calendars import (
     SPAN_PRINTS_FIELDS,
     SPAN_STATED,
     TAKES_FROM,
+    common_set_families_locally_overridden,
+    common_set_local_override_families,
     load_document,
     mass_index,
     partition,
@@ -44,6 +46,12 @@ from _calendars import (
     restated_identity,
     spans_of,
     validate_ordinary_disposition,
+    validate_appointment_overrides,
+    validate_proper_appointment_facts,
+    PROPER_APPOINTMENT_FACTS,
+    _appointment_rows,
+    _appointment_contract_problems,
+    ordinary_disposition_source_problems,
 )
 from _recensions import catalog_problems
 from _tooling import (
@@ -462,6 +470,13 @@ def check_reference(
                 f"{where}: {TAKES_FROM}.{COMMON_SETS} selects a whole Common "
                 "formulary and is forbidden on a single-proper reference"
             )
+    if "appointment_overrides" in reference:
+        try:
+            validate_appointment_overrides(reference["appointment_overrides"])
+        except ValueError as error:
+            problems.append(f"{where}: {error}")
+        if on_proper:
+            problems.append(f"{where}: appointment_overrides belongs only to a whole-Mass reference")
 
 
 def check_common_set_selection(
@@ -2341,7 +2356,9 @@ def check_entry(
     return key
 
 
-def common_reference_problems(masses: list[tuple[str, dict]]) -> list[str]:
+def common_reference_problems(
+    masses: list[tuple[str, dict]], *, document: dict | None = None
+) -> list[str]:
     """Join every structural Common appointment to an actual Common mass."""
     targets: dict[str, tuple[str, dict]] = {}
     for kind, mass in masses:
@@ -2380,13 +2397,28 @@ def common_reference_problems(masses: list[tuple[str, dict]]) -> list[str]:
                 f"which defines no {COMMON_SETS}"
             )
             continue
-        if not isinstance(selections, dict):
+        try:
+            local_override_families = common_set_local_override_families(mass)
+        except ValueError as error:
+            problems.append(f"mass {origin}: {error}")
+            continue
+        if COMMON_SETS not in reference and all(
+            common_set_families_locally_overridden(group, local_override_families)
+            for group in definitions.values()
+        ):
+            selections = {}
+        elif not isinstance(selections, dict) or not selections:
             problems.append(
                 f"mass {origin}: {TAKES_FROM} must disposition every "
                 f"{target_key!r} {COMMON_SETS} group"
             )
             continue
-        missing = sorted(set(definitions) - set(selections), key=repr)
+        missing = sorted(
+            (group_id for group_id, group in definitions.items()
+             if group_id not in selections
+             and not common_set_families_locally_overridden(group, local_override_families)),
+            key=repr,
+        )
         extra = sorted(set(selections) - set(definitions), key=repr)
         if missing:
             problems.append(
@@ -2504,7 +2536,7 @@ def common_reference_problems(masses: list[tuple[str, dict]]) -> list[str]:
     # borrowed formulary is a Common and really contributes the Collect that the
     # status excludes.  Resolve a copy without the exclusion: resolving the
     # original would remove the very slot this check needs to prove existed.
-    document = {
+    resolution_document = document if document is not None else {
         "sections": {
             "all": {"masses": [mass for _, mass in masses]},
         }
@@ -2542,7 +2574,7 @@ def common_reference_problems(masses: list[tuple[str, dict]]) -> list[str]:
             continue
         probe = dict(mass)
         probe.pop(TEXT_STATUS, None)
-        inherited, trouble = resolve_propers(document, probe)
+        inherited, trouble = resolve_propers(resolution_document, probe)
         if trouble:
             problems.append(
                 f"mass {origin}: {TAKES_FROM} for an unavailable proper Collect "
@@ -2606,6 +2638,11 @@ def check_file(path: Path, problems: list[str]) -> dict[str, int]:
         )
     if ATTESTED_APPOINTMENTS in document:
         check_attested_appointments(path, document, problems)
+    if PROPER_APPOINTMENT_FACTS in document:
+        try:
+            validate_proper_appointment_facts(document[PROPER_APPOINTMENT_FACTS], str(document.get("calendar") or ""), document=document)
+        except ValueError as error:
+            problems.append(f"{path}: {error}")
     sections = document.get("sections")
     if not isinstance(sections, dict) or not sections:
         problems.append(f"{path}: sections must be a nonempty mapping")
@@ -2680,7 +2717,7 @@ def check_file(path: Path, problems: list[str]) -> dict[str, int]:
             f"{path}: duplicate registry IDs: {', '.join(duplicate_registries)}"
         )
     problems.extend(
-        f"{path}: {problem}" for problem in common_reference_problems(masses)
+        f"{path}: {problem}" for problem in common_reference_problems(masses, document=document)
     )
     # Shape is not landing. `check_entry` proves a reference is well formed;
     # only resolving it proves the mass, form and proper it names exist and
@@ -3311,6 +3348,48 @@ def slot_ordinals(calendar: str) -> dict[str, int]:
     }
 
 
+def _order_source_propers(
+    document: dict, mass: dict, form: str, propers: list[dict],
+    order: dict[str, int], problems: list[str], where: str,
+) -> list[dict]:
+    """Count a validated anchored menu once, at its exact source anchor.
+
+    Alternate texts can be printed after the formulary they qualify. Every
+    candidate is statically checked here, without evaluating its predicate;
+    a false or unknown option cannot hide an invalid source group or rank.
+    The functional semantic-seat check remains owned by Ordinary seating.
+    """
+    if not any(isinstance(proper, dict)
+               and isinstance(proper.get(ORDINARY_DISPOSITION), dict)
+               and "anchor" in proper[ORDINARY_DISPOSITION] for proper in propers):
+        return propers
+    key = str(mass.get("key") or "")
+    try:
+        rows = _appointment_rows(mass, form, [p for p in propers if isinstance(p, dict)])
+    except ValueError as error:
+        problems.append(f"{where}: {error}")
+        return propers
+    trouble = ordinary_disposition_source_problems(key, form, rows)
+    trouble.extend(_appointment_contract_problems(document, key, [(form, p, None) for p in rows]))
+    if trouble:
+        problems.extend(f"{where}: {error}" for error in trouble)
+        return propers
+    groups: dict[str, list[dict]] = {}
+    for proper in rows:
+        disposition = proper.get(ORDINARY_DISPOSITION) or {}
+        if disposition.get("kind") == "alternative" and "anchor" in disposition:
+            groups.setdefault(disposition["group"], []).append(proper)
+    omitted: set[int] = set()
+    for group, members in groups.items():
+        ranks = {order.get(str(p.get("name") or "").split(SLOT_QUALIFIER)[0]) for p in members}
+        if None in ranks or len(ranks) != 1:
+            problems.append(f"{where}: anchored alternative group {group!r} does not share one edition-attested Proper order rank")
+            continue
+        anchor = members[0][ORDINARY_DISPOSITION]["anchor"]
+        omitted.update(id(p) for p in members if getattr(p, "appointment_identity", None) != anchor)
+    return [proper for proper in rows if id(proper) not in omitted]
+
+
 def order_problems(paths: list[Path]) -> list[str]:
     """Refuse a mass whose propers do not stand in the order the book prints.
 
@@ -3361,8 +3440,10 @@ def order_problems(paths: list[Path]) -> list[str]:
             for label, propers in groups:
                 if not isinstance(propers, list):
                     continue
+                where = f"{path}: {key}/{label}" if label else f"{path}: {key}"
+                candidates = _order_source_propers(document, mass, label, propers, order, problems, where)
                 seen: list[tuple[str, int]] = []
-                for proper in propers:
+                for proper in candidates:
                     if not isinstance(proper, dict):
                         continue
                     name = str(proper.get("name") or "")

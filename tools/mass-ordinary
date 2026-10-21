@@ -165,12 +165,15 @@ import argparse
 import csv
 import json
 import re
+import shutil
+import subprocess
 import sys
 import textwrap
 import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+SEATING_MODEL = ROOT / 'src/web/browser/liturgy/ordinary-seating.js'
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import _calendars  # noqa: E402
@@ -201,7 +204,7 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check --calendar roman-1962 --json",
             (
-                "{\"calendars\":[{\"absent\":10,\"calendar\":\"roman-1962\",\"elements\":196,\"exclusions\":12,\"language_coverage... [+698 chars]",
+                "{\"calendars\":[{\"absent\":10,\"calendar\":\"roman-1962\",\"elements\":196,\"exclusions\":12,\"language_coverage... [+25169 chars]",
             ),
         ),
     ),
@@ -3310,7 +3313,116 @@ def effective_ordinary_frame(mass: dict, form: dict | None, where: str) -> dict:
     return value
 
 
+def appointment_seating_required(propers: object) -> bool:
+    """New source appointments belong to the shared JavaScript owner."""
+
+    if not isinstance(propers, list):
+        return False
+    for row in propers:
+        if not isinstance(row, dict):
+            continue
+        if 'appointment_applicability' in row or 'appointment_replacement' in row:
+            return True
+        disposition = row.get('ordinary_disposition')
+        if isinstance(disposition, dict) and (
+            disposition.get('kind') == 'conditional'
+            or any(key in disposition for key in ('anchor', 'when', 'seat'))
+        ):
+            return True
+    return False
+
+
+def check_appointment_seating(ordinary: dict, forms: list[dict], facts: dict) -> list[dict]:
+    """Batch static checks through the browser's pure metadata and seat owner.
+
+    Neither the harness nor its result contains a liturgical event stream.
+    Unknown predicates are validated without pruning their source candidates.
+    """
+
+    node = shutil.which('node')
+    if node is None:
+        raise SourceError('node is not installed, so source appointment seating was not checked')
+    if not SEATING_MODEL.is_file():
+        raise SourceError('the shared Ordinary seating model is missing')
+    harness = r"""
+const S = require(process.argv[1]);
+let input = '';
+process.stdin.on('data', chunk => { input += chunk; });
+process.stdin.on('end', () => {
+  const payload = JSON.parse(input);
+  const results = payload.forms.map(form => {
+    try {
+      return {summary: S.validateProperSeating(payload.ordinary, form.propers, {
+        calendar: payload.ordinary.calendar, mass: form.mass, form_id: form.form_id,
+        full: form.full, facts: payload.facts
+      })};
+    } catch (error) { return {error: error.message}; }
+  });
+  process.stdout.write(JSON.stringify(results));
+});
+"""
+    try:
+        finished = subprocess.run(
+            [node, '-e', harness, str(SEATING_MODEL)],
+            input=json.dumps({'ordinary': ordinary, 'forms': forms, 'facts': facts}),
+            text=True, capture_output=True, timeout=60, check=False,
+        )
+    except (OSError, subprocess.TimeoutExpired) as error:
+        raise SourceError(f'the shared Ordinary seating model could not run: {error}') from error
+    if finished.returncode:
+        raise SourceError('the shared Ordinary seating model failed: ' + finished.stderr.strip()[:800])
+    try:
+        results = json.loads(finished.stdout)
+    except (ValueError, TypeError) as error:
+        raise SourceError('the shared Ordinary seating model returned malformed output') from error
+    if not isinstance(results, list) or len(results) != len(forms):
+        raise SourceError('the shared Ordinary seating model omitted a checked form')
+    summaries = []
+    for form, result in zip(forms, results):
+        if not isinstance(result, dict):
+            raise SourceError('the shared Ordinary seating model returned malformed output')
+        if set(result) == {'error'} and isinstance(result['error'], str):
+            raise SourceError(f"{form['where']}: {result['error']}")
+        summary = result.get('summary')
+        if set(result) != {'summary'} or not isinstance(summary, dict) or set(summary) != {
+            'candidates', 'conditional_rows', 'choice_groups', 'diagnostics'
+        } or any(type(summary[key]) is not int or summary[key] < 0 for key in (
+            'candidates', 'conditional_rows', 'choice_groups'
+        )) or not isinstance(summary['diagnostics'], list):
+            raise SourceError('the shared Ordinary seating model returned malformed output')
+        for diagnostic in summary['diagnostics']:
+            if not isinstance(diagnostic, dict) or set(diagnostic) - {'target_seat'} != {
+                'kind', 'sourceIndex', 'source_edition', 'target_edition'
+            } or diagnostic['kind'] != 'unsupported-foreign-source-applicability' or (
+                type(diagnostic['sourceIndex']) is not int or diagnostic['sourceIndex'] < 0
+            ) or any(not isinstance(diagnostic[key], str) or not diagnostic[key] for key in (
+                'source_edition', 'target_edition'
+            )):
+                raise SourceError('the shared Ordinary seating model returned malformed diagnostics')
+            if 'target_seat' in diagnostic:
+                target_seat = diagnostic['target_seat']
+                if not isinstance(target_seat, dict) or set(target_seat) != {'state', 'reason'} or (
+                    target_seat['state'] != 'unknown'
+                    or target_seat['reason'] != 'not-declared-in-target-ordinary'
+                ):
+                    raise SourceError('the shared Ordinary seating model returned malformed diagnostics')
+        summaries.append({'mass': form['mass'], 'form_id': form['form_id'], **summary})
+    return summaries
+
+
 def check_form_seating(
+    ordinary: dict, propers: list[dict], where: str, *, full: bool,
+    mass: str | None = None, form_id: str = 'main', facts: dict | None = None,
+) -> None:
+    if appointment_seating_required(propers):
+        check_appointment_seating(ordinary, [{
+            'mass': mass, 'form_id': form_id, 'where': where, 'full': full, 'propers': propers,
+        }], facts or {})
+        return
+    _check_legacy_form_seating(ordinary, propers, where, full=full)
+
+
+def _check_legacy_form_seating(
     ordinary: dict, propers: list[dict], where: str, *, full: bool
 ) -> None:
     """Refuse every row the browser could silently mis-seat or leave unseated.
@@ -3465,6 +3577,7 @@ def check_calendar_seating(ordinary: dict, propers_file: dict) -> dict:
     calendar = ordinary["calendar"]
     full_forms = 0
     nonfull_forms = 0
+    appointment_forms = []
     seen_masses: set[str] = set()
     for mass in propers_file["masses"]:
         if not isinstance(mass, dict):
@@ -3507,16 +3620,26 @@ def check_calendar_seating(ordinary: dict, propers_file: dict) -> dict:
             where = f"{calendar}/{key}/{form_id}"
             frame = effective_ordinary_frame(mass, form, where)
             full = frame["applicability"] == "full"
-            check_form_seating(ordinary, propers, where, full=full)
+            if appointment_seating_required(propers):
+                appointment_forms.append({
+                    'mass': key, 'form_id': form_id, 'where': where,
+                    'full': full, 'propers': propers,
+                })
+            else:
+                check_form_seating(ordinary, propers, where, full=full)
             if full:
                 full_forms += 1
             else:
                 nonfull_forms += 1
+    appointments = check_appointment_seating(
+        ordinary, appointment_forms, propers_file.get('proper_appointment_facts') or {},
+    ) if appointment_forms else []
     return {
         "calendar": calendar,
         "full_forms": full_forms,
         "nonfull_forms": nonfull_forms,
         "failures": 0,
+        "source_appointments": appointments,
     }
 
 

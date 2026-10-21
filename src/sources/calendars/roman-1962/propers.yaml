@@ -9,6 +9,84 @@ ordering: sections in christological, common, marian, sanctoral, seasonal order;
   prints them
 registry: guidance/liturgy/roman-1962-propers.md (calendar-spine filtered by kind)
 psalm_numbering: vulgate
+proper_appointment_facts:
+  roman-1962-common-chant-regime:
+    edition: roman-1962
+    values:
+    - advent
+    - regular
+    - tract
+    - paschal
+    season_values:
+      advent: advent
+      after-pentecost: regular
+      christmastide: regular
+      epiphanytide: regular
+      septuagesima: tract
+      lent: tract
+      passiontide: tract
+      paschaltide: paschal
+      triduum: null
+    basis: Held 1962 control RG73-76 (artifact14/printedXVI), RG469 (artifact31/printedXXXIII), Common
+      opening (artifact809/printed[1]) and each numbered local chant cue; BVM Advent replacement4481 at
+      artifact849/printed[41]. Triduum season alone cannot establish Easter-Vigil Mass phase.
+  roman-1962-advent-sunday-alleluia-use:
+    edition: roman-1962
+    values: [chant-present, chant-omitted]
+    usage_values:
+      own-sunday: chant-present
+      borrowed-feria: chant-omitted
+    basis: >-
+      Held Missale Romanum 1962 CMAA facsimile, Advent Sunday ferial-use clauses
+      at artifact83/printed2/L before Alleluia5, artifact84/printed3/R before
+      Alleluia15, artifact86/printed5/L before Alleluia25, and artifact95/R
+      before Alleluia92. The actual settled selected Sunday or borrowed-feria
+      use comes from the matching canonical calendar winner, candidate,
+      readable and current Mass; season or advertised formulary alone is not proof.
+  roman-1962-non-virginum-2-subject:
+    edition: roman-1962
+    values:
+    - general
+    - widow
+    mass_values:
+      s-franciscae-romanae-viduae:
+        value: widow
+        basis: 'Held 1962 CMAA facsimile, artifact p. 567, printed p. 486, R: Die 9 martii; S. Franciscae
+          Romanae Vid.; Missa Cognovi, de Communi non Virginum II loco [37], praeter orationem sequentem.
+          The dated heading proves eligibility for the optional pro Vidua reading; it does not select that
+          alternative.'
+      s-margaritae-reginae-viduae:
+        value: widow
+        basis: 'Held 1962 CMAA facsimile, artifact p. 629, printed p. 548, L: Die 10 iunii; S. Margaritae
+          Reginae, Vid.; Missa Cognovi, de Communi non Virginum II loco [37], praeter orationem sequentem.
+          The dated heading proves eligibility for the optional pro Vidua reading; it does not select that
+          alternative.'
+      s-elisabeth-reginae-viduae:
+        value: widow
+        basis: 'Held 1962 CMAA facsimile, artifact p. 663, printed p. 582, L: Die 8 iulii; S. Elisabeth
+          Reginae, Vid.; Missa Cognovi, de Communi non Virginum II loco [37], praeter orationem sequentem.
+          The dated heading proves eligibility for the optional pro Vidua reading; it does not select that
+          alternative.'
+      s-ioannae-franciscae-fremiot-chantal-viduae:
+        value: widow
+        basis: 'Held 1962 CMAA facsimile, artifact p. 713, printed p. 632, R: Die 21 augusti; S. Ioannae
+          Franciscae Fremiot de Chantal Vid.; Missa Cognovi, de Communi non Virginum II loco [37], cum orationibus
+          ut infra. The dated heading proves eligibility for the optional pro Vidua reading; it does not
+          select that alternative.'
+      s-hedwigis-viduae:
+        value: widow
+        basis: 'Held 1962 CMAA facsimile, artifact p. 768, printed p. 687, R: Die 16 octobris; S. Hedwigis
+          Viduae; Missa Cognovi, de Communi non Virginum II loco [37], praeter orationem sequentem. The
+          dated heading proves eligibility for the optional pro Vidua reading; it does not select that alternative.'
+      s-elisabeth-viduae:
+        value: widow
+        basis: 'Held 1962 CMAA facsimile, artifact p. 802, printed p. 721, L: Die 19 novembris; S. Elisabeth
+          Vid.; Missa Cognovi, de Communi non Virginum II loco [37], praeter orationem sequentem. The dated
+          heading proves eligibility for the optional pro Vidua reading; it does not select that alternative.'
+    basis: 'Held 1962 CMAA facsimile: artifact p.845/[37], Lesson4449, Proverbs31:10-31; artifact p.846/[38],
+      Item altera Epistola pro Vidua, unit4459, 1Timothy5:3-10. The second reading is an alternative restricted
+      to a source-qualified widow. Only the six separately image-proved dated headings below bind that eligibility.
+      Missing bindings remain unknown; neither source order nor a reader choice proves widow eligibility.'
 citation_convention: Vulgate book names and Vulgate psalm numbering as printed in
   the 1962 Missal
 orthography: 1962 missal Latin (j retained, ae/oe digraphs, no accent marks)
@@ -662,6 +740,15 @@ sections:
             end: {chapter: 24, verse: 4}
           ref: Psalm 24:4
       - name: Alleluia
+        ordinary_disposition:
+          kind: conditional
+          group: advent-1-alleluia-use
+          basis: >-
+            Missale Romanum 1962 CMAA facsimile, artifact p. 83, printed p.
+            2, L column, between Gradual4 and Alleluia5:
+            on Advent ferias using this Sunday Mass only the Gradual remains;
+            omit the Alleluia and its following verse. No other Proper is changed.
+          when: {fact: roman-1962-advent-sunday-alleluia-use, in: [chant-present]}
         incipit: Ostende nobis
         source: scripture
         verses:
@@ -777,6 +864,15 @@ sections:
             end: {chapter: 49, verse: 5}
           ref: Psalm 49:5
       - name: Alleluia
+        ordinary_disposition:
+          kind: conditional
+          group: advent-2-alleluia-use
+          basis: >-
+            Missale Romanum 1962 CMAA facsimile, artifact p. 84, printed p.
+            3, R column, between Gradual14 and Alleluia15:
+            on Advent ferias using this Sunday Mass only the Gradual remains;
+            omit the Alleluia and its following verse. No other Proper is changed.
+          when: {fact: roman-1962-advent-sunday-alleluia-use, in: [chant-present]}
         incipit: Laetatus sum
         source: scripture
         verses:
@@ -896,6 +992,15 @@ sections:
             end: {chapter: 79, verse: 2}
           ref: Psalm 79:2
       - name: Alleluia
+        ordinary_disposition:
+          kind: conditional
+          group: advent-3-alleluia-use
+          basis: >-
+            Missale Romanum 1962 CMAA facsimile, artifact p. 86, printed p.
+            5, L column, between Gradual24 and Alleluia25:
+            on Advent ferias using this Sunday Mass only the Gradual remains;
+            omit the Alleluia and its following verse. No other Proper is changed.
+          when: {fact: roman-1962-advent-sunday-alleluia-use, in: [chant-present]}
         incipit: Excita, Domine, potentiam tuam
         source: scripture
         verses:
@@ -1667,6 +1772,15 @@ sections:
             end: {chapter: 144, verse: 21}
           ref: Psalm 144:21
       - name: Alleluia
+        ordinary_disposition:
+          kind: conditional
+          group: advent-4-alleluia-use
+          basis: >-
+            Missale Romanum 1962 CMAA facsimile, artifact p. 95, printed p.
+            14 (sequence bounded by printed13 and15), R column, between Gradual91 and Alleluia92:
+            on Advent ferias using this Sunday Mass only the Gradual remains;
+            omit the Alleluia and its following verse. No other Proper is changed.
+          when: {fact: roman-1962-advent-sunday-alleluia-use, in: [chant-present]}
         incipit: Veni, Domine
         source: composed
         notes: >-
@@ -16983,6 +17097,17 @@ sections:
               verse: 11
           ref: 1 Peter 5:10-11
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: summorum-pontificum-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 809, printed [1];
+            raw text page line 13 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -17015,7 +17140,38 @@ sections:
               chapter: 16
               verse: 18
           ref: Matthew 16:18
+        ordinary_disposition:
+          kind: alternative
+          group: summorum-pontificum-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 809, printed
+            [1]; raw text page line 13 and the numbered local chant cues
+          anchor:
+            mass: commune-summorum-pontificum
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: summorum-pontificum-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 809, printed [1];
+            raw text page line 13 and the numbered local chant cues
+          anchor:
+            mass: commune-summorum-pontificum
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -17027,6 +17183,44 @@ sections:
               chapter: 39
               verse: 11
           ref: Psalms 39:10-11
+      - name: Alleluia (Tempore paschali)
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 16
+              verse: 18
+            end:
+              chapter: 16
+              verse: 18
+          ref: Matthew 16:18
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 17
+            end:
+              chapter: 44
+              verse: 18
+          ref: Psalm 44:17-18
+        notes: 1962 CMAA facsimile, artifact p. 810, printed [2]; raw text page line 70; Printed text unit 4184;
+          distinct Paschal appointment, with Bible reconstruction only for its cited components.
+        ordinary_disposition:
+          kind: alternative
+          group: summorum-pontificum-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 809, printed
+            [1]; raw text page line 13 and the numbered local chant cues
+          anchor:
+            mass: commune-summorum-pontificum
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
       - name: Gospel
         source: scripture
         verses:
@@ -17168,6 +17362,18 @@ sections:
           actionis gravat, beati N. Martyris tui atque Pontificis intercessio gloriosa
           nos protegat. Per Dominum.
       - name: Epistle
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-1-first-reading
+          option: printed-main
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 817, printed
+            [9]; raw text page line 33; Printed text unit 4237; Same-Common permission809/[1] paragraph1 plus
+            family-wide additional Epistle at817/[9]. Printed Common is extra tempus paschale.
+          anchor:
+            mass: commune-unius-martyris-1
+            form_id: main
+            proper: Epistle
+            occurrence: 1
         source: scripture
         verses:
         - book: James
@@ -17180,6 +17386,17 @@ sections:
               verse: 18
           ref: James 1:12-18
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: unius-martyris-1-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 812, printed [4];
+            raw text page line 1 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -17192,6 +17409,22 @@ sections:
               verse: 23
           ref: Psalms 88:21-23
       - name: Alleluia
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-1-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 812, printed [4];
+            raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-unius-martyris-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
         source: scripture
         verses:
         - book: Psalms
@@ -17204,6 +17437,21 @@ sections:
               verse: 4
           ref: Psalms 109:4
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-1-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 812, printed [4];
+            raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-unius-martyris-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -17291,6 +17539,34 @@ sections:
           cujus exsequimur cultum, intercedente beato N. Martyre tuo atque Pontifice,
           sentiamus effectum. Per Dominum nostrum Jesum Christum, Filium tuum: Qui
           tecum vivit et regnat in unitate.
+      - name: Epistle (altera in Communi unius Martyris)
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-1-first-reading
+          option: unit-4237
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 817, printed
+            [9]; raw text page line 33; Printed text unit 4237; Same-Common permission809/[1] paragraph1 plus
+            family-wide additional Epistle at817/[9]. Printed Common is extra tempus paschale.
+          anchor:
+            mass: commune-unius-martyris-1
+            form_id: main
+            proper: Epistle
+            occurrence: 1
+        source: scripture
+        verses:
+        - book: James
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 2
+            end:
+              chapter: 1
+              verse: 12
+          ref: James 1:2-12
+        notes: 'Printed appointment identity: 1962 CMAA facsimile, artifact p. 817, printed [9]; raw text page
+          line 33; Printed text unit 4237. Stored here once for the explicitly bounded Common wrappers; this
+          storage choice does not move the printed family heading into this Mass. The selected Bible representation
+          is not a new exact target-Missal wording/publication claim.'
     - key: commune-unius-martyris-2
       name: 'Commune unius Martyris extra tempus paschale, Missa II: Sacerdotes Dei'
       registry: 1962-C-unius-martyris-2
@@ -17357,6 +17633,18 @@ sections:
           protectione gaudeamus. Per Dominum nostrum Jesum Christum, Filium tuum: Qui
           tecum vivit et regnat in unitate.
       - name: Epistle
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-2-first-reading
+          option: printed-main
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 817, printed
+            [9]; raw text page line 33; Printed text unit 4237; Same-Common permission809/[1] paragraph1 plus
+            family-wide additional Epistle at817/[9]. Printed Common is extra tempus paschale.
+          anchor:
+            mass: commune-unius-martyris-2
+            form_id: main
+            proper: Epistle
+            occurrence: 1
         source: scripture
         verses:
         - book: 2 Corinthians
@@ -17369,6 +17657,17 @@ sections:
               verse: 7
           ref: 2 Corinthians 1:3-7
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: unius-martyris-2-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 813, printed [5];
+            raw text page line 42 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -17381,6 +17680,21 @@ sections:
               verse: 7
           ref: Psalms 8:6-7
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-2-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 813, printed [5];
+            raw text page line 42 and the numbered local chant cues
+          anchor:
+            mass: commune-unius-martyris-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -17392,6 +17706,33 @@ sections:
               chapter: 111
               verse: 3
           ref: Psalms 111:1-3
+      - name: Alleluia
+        incipit: Hic est sacerdos
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: 1962 CMAA facsimile, artifact p. 814, printed [6]; raw text page line 8; Printed text unit 4208;
+          uncited chant. Its exact body remains unavailable; no Bible passage substitutes for it.
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-2-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 813, printed
+            [5]; raw text page line 42 and the numbered local chant cues
+          anchor:
+            mass: commune-unius-martyris-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
       - name: Gospel
         source: scripture
         verses:
@@ -17461,6 +17802,26 @@ sections:
           Haec nos communio, Domine, purget a crimine: et, intercedente beato N.
           Martyre tuo atque Pontifice, caelestis remedii faciat esse consortes. Per
           Dominum.
+      - name: Epistle (altera in Communi unius Martyris)
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-2-first-reading
+          option: unit-4237
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 817, printed
+            [9]; raw text page line 33; Printed text unit 4237; Same-Common permission809/[1] paragraph1 plus
+            family-wide additional Epistle at817/[9]. Printed Common is extra tempus paschale.
+          anchor:
+            mass: commune-unius-martyris-2
+            form_id: main
+            proper: Epistle
+            occurrence: 1
+        takes_from:
+          mass: commune-unius-martyris-1
+          proper: Epistle (altera in Communi unius Martyris)
+          citation: 1962 CMAA facsimile, artifact p. 817, printed [9]; raw text page line 33; Printed text unit
+            4237
+          note: Exact receiving wrapper is licensed by the source scope stated in its alternative-group basis.
+            Body identity and appointment identity remain separate.
     - key: commune-unius-martyris-3
       name: 'Commune unius Martyris extra tempus paschale, Missa III: In virtute tua'
       registry: 1962-C-unius-martyris-3
@@ -17516,6 +17877,19 @@ sections:
           colimus, intercessione ejus, in tui nominis amore roboremur. Per Dominum
           nostrum.
       - name: Lesson
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-3-first-reading
+          option: printed-main
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 817, printed
+            [9]; raw text page line 33; Printed text unit 4237; Same-Common permission809/[1] paragraph1 plus
+            family-wide additional Epistle at817/[9]. Printed Common is extra tempus paschale.
+          anchor:
+            mass: commune-unius-martyris-3
+            form_id: main
+            proper: Lesson
+            occurrence: 1
+          seat: reading-1
         source: scripture
         verses:
         - book: Wisdom
@@ -17528,6 +17902,17 @@ sections:
               verse: 14
           ref: Wisdom 10:10-14
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: unius-martyris-3-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 814, printed [6];
+            raw text page line 55 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -17540,6 +17925,22 @@ sections:
               verse: 2
           ref: Psalms 111:1-2
       - name: Alleluia
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-3-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 814, printed [6];
+            raw text page line 55 and the numbered local chant cues
+          anchor:
+            mass: commune-unius-martyris-3
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
         source: scripture
         verses:
         - book: Psalms
@@ -17552,6 +17953,21 @@ sections:
               verse: 4
           ref: Psalms 20:4
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-3-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 814, printed [6];
+            raw text page line 55 and the numbered local chant cues
+          anchor:
+            mass: commune-unius-martyris-3
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -17634,6 +18050,28 @@ sections:
           Da, quaesumus, Domine Deus noster: ut, sicut tuorum commemoratione Sanctorum
           temporali gratulamur officio; ita perpetuo laetemur aspectu. Per Dominum
           nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
+      - name: Lesson (altera Epistola in Communi unius Martyris)
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-3-first-reading
+          option: unit-4237
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 817, printed
+            [9]; raw text page line 33; Printed text unit 4237; Same-Common permission809/[1] paragraph1 plus
+            family-wide additional Epistle at817/[9]. Printed Common is extra tempus paschale.
+          anchor:
+            mass: commune-unius-martyris-3
+            form_id: main
+            proper: Lesson
+            occurrence: 1
+          seat: reading-1
+        takes_from:
+          mass: commune-unius-martyris-1
+          proper: Epistle (altera in Communi unius Martyris)
+          citation: 1962 CMAA facsimile, artifact p. 817, printed [9]; raw text page line 33; Printed text unit
+            4237
+          note: Exact receiving wrapper is licensed by the source scope stated in its alternative-group basis.
+            Body identity and appointment identity remain separate. Receiving wrapper keeps its existing generic
+            Lesson seat; the appointed source identity is Epistle4237.
     - key: commune-unius-martyris-4
       name: 'Commune unius Martyris extra tempus paschale, Missa IV: Laetabitur justus'
       registry: 1962-C-unius-martyris-4
@@ -17696,6 +18134,18 @@ sections:
           mundemur in mente. Per Dominum nostrum Jesum Christum, Filium tuum: Qui
           tecum vivit et regnat in unitate.
       - name: Epistle
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-4-first-reading
+          option: printed-main
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 817, printed
+            [9]; raw text page line 33; Printed text unit 4237; Same-Common permission809/[1] paragraph1 plus
+            family-wide additional Epistle at817/[9]. Printed Common is extra tempus paschale.
+          anchor:
+            mass: commune-unius-martyris-4
+            form_id: main
+            proper: Epistle
+            occurrence: 1
         source: scripture
         verses:
         - book: 2 Timothy
@@ -17717,6 +18167,17 @@ sections:
               verse: 12
           ref: 2 Timothy 3:10-12
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: unius-martyris-4-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 816, printed [8];
+            raw text page line 3 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -17738,6 +18199,22 @@ sections:
               verse: 26
           ref: Psalms 36:26
       - name: Alleluia
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-4-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 816, printed [8];
+            raw text page line 3 and the numbered local chant cues
+          anchor:
+            mass: commune-unius-martyris-4
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
         source: scripture
         verses:
         - book: John
@@ -17750,6 +18227,21 @@ sections:
               verse: 12
           ref: John 8:12
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-4-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 816, printed [8];
+            raw text page line 3 and the numbered local chant cues
+          anchor:
+            mass: commune-unius-martyris-4
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -17824,6 +18316,26 @@ sections:
           cujus exsequimur cultum, intercedente beato N. Martyre tuo, sentiamus
           effectum. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit
           et regnat in unitate.
+      - name: Epistle (altera in Communi unius Martyris)
+        ordinary_disposition:
+          kind: alternative
+          group: unius-martyris-4-first-reading
+          option: unit-4237
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 817, printed
+            [9]; raw text page line 33; Printed text unit 4237; Same-Common permission809/[1] paragraph1 plus
+            family-wide additional Epistle at817/[9]. Printed Common is extra tempus paschale.
+          anchor:
+            mass: commune-unius-martyris-4
+            form_id: main
+            proper: Epistle
+            occurrence: 1
+        takes_from:
+          mass: commune-unius-martyris-1
+          proper: Epistle (altera in Communi unius Martyris)
+          citation: 1962 CMAA facsimile, artifact p. 817, printed [9]; raw text page line 33; Printed text unit
+            4237
+          note: Exact receiving wrapper is licensed by the source scope stated in its alternative-group basis.
+            Body identity and appointment identity remain separate.
     - key: commune-plurimorum-martyrum-1
       name: 'Commune plurimorum Martyrum extra tempus paschale, Missa I: Intret in conspectu tuo'
       registry: 1962-C-plurimorum-martyrum-1
@@ -17908,6 +18420,17 @@ sections:
               verse: 8
           ref: Wisdom 3:1-8
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: plurimorum-martyrum-1-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 818, printed [10];
+            raw text page line 1 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Exodus
@@ -17929,6 +18452,22 @@ sections:
               verse: 6
           ref: Exodus 15:6
       - name: Alleluia
+        ordinary_disposition:
+          kind: alternative
+          group: plurimorum-martyrum-1-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 818, printed [10];
+            raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-plurimorum-martyrum-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
         source: scripture
         verses:
         - book: Sirach
@@ -17941,6 +18480,21 @@ sections:
               verse: 14
           ref: Sirach 44:14
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: plurimorum-martyrum-1-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 818, printed [10];
+            raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-plurimorum-martyrum-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -17953,6 +18507,18 @@ sections:
               verse: 6
           ref: Psalms 125:5-6
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: plurimorum-martyrum-1-gospel
+          option: printed-main
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 822, printed
+            [14]; raw text page line 29; Printed text unit 4271; Same-Common permission809/[1] paragraph1 plus
+            family-wide additional Gospel at822/[14]. Printed Common is extra tempus paschale.
+          anchor:
+            mass: commune-plurimorum-martyrum-1
+            form_id: main
+            proper: Gospel
+            occurrence: 1
         source: scripture
         verses:
         - book: Luke
@@ -18040,6 +18606,34 @@ sections:
         text: |
           Quaesumus, Domine, salutaribus repleti mysteriis: ut, quorum solemnia
           celebramus, eorum orationibus adjuvemur. Per Dominum.
+      - name: Gospel (alterum in Communi plurimorum Martyrum)
+        ordinary_disposition:
+          kind: alternative
+          group: plurimorum-martyrum-1-gospel
+          option: unit-4271
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 822, printed
+            [14]; raw text page line 29; Printed text unit 4271; Same-Common permission809/[1] paragraph1 plus
+            family-wide additional Gospel at822/[14]. Printed Common is extra tempus paschale.
+          anchor:
+            mass: commune-plurimorum-martyrum-1
+            form_id: main
+            proper: Gospel
+            occurrence: 1
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 24
+              verse: 3
+            end:
+              chapter: 24
+              verse: 13
+          ref: Matthew 24:3-13
+        notes: 'Printed appointment identity: 1962 CMAA facsimile, artifact p. 822, printed [14]; raw text page
+          line 29; Printed text unit 4271. Stored here once for the explicitly bounded Common wrappers; this
+          storage choice does not move the printed family heading into this Mass. The selected Bible representation
+          is not a new exact target-Missal wording/publication claim.'
     - key: commune-plurimorum-martyrum-2
       name: 'Commune plurimorum Martyrum extra tempus paschale, Missa II: Sapientiam Sanctorum'
       registry: 1962-C-plurimorum-martyrum-2
@@ -18115,6 +18709,17 @@ sections:
               verse: 20
           ref: Wisdom 5:16-20
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: plurimorum-martyrum-2-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 819, printed [11];
+            raw text page line 47 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -18127,6 +18732,22 @@ sections:
               verse: 8
           ref: Psalms 123:7-8
       - name: Alleluia
+        ordinary_disposition:
+          kind: alternative
+          group: plurimorum-martyrum-2-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 819, printed [11];
+            raw text page line 47 and the numbered local chant cues
+          anchor:
+            mass: commune-plurimorum-martyrum-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
         source: scripture
         verses:
         - book: Psalms
@@ -18139,6 +18760,21 @@ sections:
               verse: 4
           ref: Psalms 67:4
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: plurimorum-martyrum-2-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 819, printed [11];
+            raw text page line 47 and the numbered local chant cues
+          anchor:
+            mass: commune-plurimorum-martyrum-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -18151,6 +18787,18 @@ sections:
               verse: 6
           ref: Psalms 125:5-6
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: plurimorum-martyrum-2-gospel
+          option: printed-main
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 822, printed
+            [14]; raw text page line 29; Printed text unit 4271; Same-Common permission809/[1] paragraph1 plus
+            family-wide additional Gospel at822/[14]. Printed Common is extra tempus paschale.
+          anchor:
+            mass: commune-plurimorum-martyrum-2
+            form_id: main
+            proper: Gospel
+            occurrence: 1
         source: scripture
         verses:
         - book: Luke
@@ -18214,6 +18862,26 @@ sections:
         text: |
           Praesta nobis, quaesumus, Domine: intercedentibus sanctis Martyribus tuis N.
           et N.; ut, quod ore contingimus, pura mente capiamus. Per Dominum nostrum.
+      - name: Gospel (alterum in Communi plurimorum Martyrum)
+        ordinary_disposition:
+          kind: alternative
+          group: plurimorum-martyrum-2-gospel
+          option: unit-4271
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 822, printed
+            [14]; raw text page line 29; Printed text unit 4271; Same-Common permission809/[1] paragraph1 plus
+            family-wide additional Gospel at822/[14]. Printed Common is extra tempus paschale.
+          anchor:
+            mass: commune-plurimorum-martyrum-2
+            form_id: main
+            proper: Gospel
+            occurrence: 1
+        takes_from:
+          mass: commune-plurimorum-martyrum-1
+          proper: Gospel (alterum in Communi plurimorum Martyrum)
+          citation: 1962 CMAA facsimile, artifact p. 822, printed [14]; raw text page line 29; Printed text
+            unit 4271
+          note: Exact receiving wrapper is licensed by the source scope stated in its alternative-group basis.
+            Body identity and appointment identity remain separate.
     - key: commune-plurimorum-martyrum-3
       name: 'Commune plurimorum Martyrum extra tempus paschale, Missa III: Salus autem justorum'
       registry: 1962-C-plurimorum-martyrum-3
@@ -18282,6 +18950,17 @@ sections:
               verse: 38
           ref: Hebrews 10:32-38
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: plurimorum-martyrum-3-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 820, printed [12];
+            raw text page line 67 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -18294,6 +18973,21 @@ sections:
               verse: 19
           ref: Psalms 33:18-19
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: plurimorum-martyrum-3-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 820, printed [12];
+            raw text page line 67 and the numbered local chant cues
+          anchor:
+            mass: commune-plurimorum-martyrum-3
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -18305,7 +18999,46 @@ sections:
               chapter: 125
               verse: 6
           ref: Psalms 125:5-6
+      - name: Alleluia
+        incipit: Te Martyrum candidatus
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: 1962 CMAA facsimile, artifact p. 821, printed [13]; raw text page line 27; Printed text unit
+          4264; uncited chant. Its exact body remains unavailable; no Bible passage substitutes for it.
+        ordinary_disposition:
+          kind: alternative
+          group: plurimorum-martyrum-3-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 820, printed
+            [12]; raw text page line 67 and the numbered local chant cues
+          anchor:
+            mass: commune-plurimorum-martyrum-3
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: plurimorum-martyrum-3-gospel
+          option: printed-main
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 822, printed
+            [14]; raw text page line 29; Printed text unit 4271; Same-Common permission809/[1] paragraph1 plus
+            family-wide additional Gospel at822/[14]. Printed Common is extra tempus paschale.
+          anchor:
+            mass: commune-plurimorum-martyrum-3
+            form_id: main
+            proper: Gospel
+            occurrence: 1
         source: scripture
         verses:
         - book: Luke
@@ -18366,6 +19099,26 @@ sections:
           Martyribus tuis N. et N., caelestis remedii faciat esse consortes. Per
           Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
           unitate.
+      - name: Gospel (alterum in Communi plurimorum Martyrum)
+        ordinary_disposition:
+          kind: alternative
+          group: plurimorum-martyrum-3-gospel
+          option: unit-4271
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 822, printed
+            [14]; raw text page line 29; Printed text unit 4271; Same-Common permission809/[1] paragraph1 plus
+            family-wide additional Gospel at822/[14]. Printed Common is extra tempus paschale.
+          anchor:
+            mass: commune-plurimorum-martyrum-3
+            form_id: main
+            proper: Gospel
+            occurrence: 1
+        takes_from:
+          mass: commune-plurimorum-martyrum-1
+          proper: Gospel (alterum in Communi plurimorum Martyrum)
+          citation: 1962 CMAA facsimile, artifact p. 822, printed [14]; raw text page line 29; Printed text
+            unit 4271
+          note: Exact receiving wrapper is licensed by the source scope stated in its alternative-group basis.
+            Body identity and appointment identity remain separate.
     - key: commune-martyrum-tempore-paschali-1
       name: 'Commune Martyrum tempore paschali, Missa I: Protexisti me, Deus'
       registry: 1962-C-martyrum-tempore-paschali-1
@@ -18492,6 +19245,18 @@ sections:
               verse: 4
           ref: Psalms 20:4
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: martyrum-tempore-paschali-1-gospel
+          option: printed-main
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 826, printed
+            [18]; raw text page line 56; Printed text unit 4305; Explicit family-wide In Communi Martyrum tempore
+            paschali additional-reading heading826/[18], independent of the narrower first-Epistle cross-use rule824→825.
+          anchor:
+            mass: commune-martyrum-tempore-paschali-1
+            form_id: main
+            proper: Gospel
+            occurrence: 1
         source: scripture
         verses:
         - book: John
@@ -18625,6 +19390,27 @@ sections:
           Refecti participatione muneris sacri, quaesumus, Domine Deus noster: ut,
           cujus exsequimur cultum; intercedente beato N. Martyre tuo, sentiamus
           effectum. Per Dominum.
+      - name: Gospel (alterum in Communi Martyrum tempore paschali)
+        ordinary_disposition:
+          kind: alternative
+          group: martyrum-tempore-paschali-1-gospel
+          option: unit-4305
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 826, printed
+            [18]; raw text page line 56; Printed text unit 4305; Explicit family-wide In Communi Martyrum tempore
+            paschali additional-reading heading826/[18], independent of the narrower first-Epistle cross-use
+            rule824→825.
+          anchor:
+            mass: commune-martyrum-tempore-paschali-1
+            form_id: main
+            proper: Gospel
+            occurrence: 1
+        takes_from:
+          mass: commune-martyrum-tempore-paschali-2
+          proper: Gospel (alterum in Communi Martyrum tempore paschali)
+          citation: 1962 CMAA facsimile, artifact p. 826, printed [18]; raw text page line 56; Printed text
+            unit 4305
+          note: Exact receiving wrapper is licensed by the source scope stated in its alternative-group basis.
+            Body identity and appointment identity remain separate.
     - key: commune-martyrum-tempore-paschali-2
       name: 'Commune Martyrum tempore paschali, Missa II: Sancti tui, Domine'
       registry: 1962-C-martyrum-tempore-paschali-2
@@ -18729,6 +19515,18 @@ sections:
               verse: 15
           ref: Psalms 115:15
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: martyrum-tempore-paschali-2-gospel
+          option: printed-main
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 826, printed
+            [18]; raw text page line 56; Printed text unit 4305; Explicit family-wide In Communi Martyrum tempore
+            paschali additional-reading heading826/[18], independent of the narrower first-Epistle cross-use rule824→825.
+          anchor:
+            mass: commune-martyrum-tempore-paschali-2
+            form_id: main
+            proper: Gospel
+            occurrence: 1
         source: scripture
         verses:
         - book: John
@@ -18835,6 +19633,35 @@ sections:
           Haec nos communio, Domine, purget a crimine: et, intercedentibus sanctis
           Martyribus tuis N. et N., caelestis remedii faciat esse consortes. Per
           Dominum nostrum.
+      - name: Gospel (alterum in Communi Martyrum tempore paschali)
+        ordinary_disposition:
+          kind: alternative
+          group: martyrum-tempore-paschali-2-gospel
+          option: unit-4305
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 826, printed
+            [18]; raw text page line 56; Printed text unit 4305; Explicit family-wide In Communi Martyrum tempore
+            paschali additional-reading heading826/[18], independent of the narrower first-Epistle cross-use
+            rule824→825.
+          anchor:
+            mass: commune-martyrum-tempore-paschali-2
+            form_id: main
+            proper: Gospel
+            occurrence: 1
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin:
+              chapter: 16
+              verse: 20
+            end:
+              chapter: 16
+              verse: 22
+          ref: John 16:20-22
+        notes: 'Printed appointment identity: 1962 CMAA facsimile, artifact p. 826, printed [18]; raw text page
+          line 56; Printed text unit 4305. Stored here once for the explicitly bounded Common wrappers; this
+          storage choice does not move the printed family heading into this Mass. The selected Bible representation
+          is not a new exact target-Missal wording/publication claim.'
     - key: commune-confessoris-pontificis-1
       name: 'Commune Confessoris Pontificis, Missa I: Statuit ei Dominus'
       registry: 1962-C-confessoris-pontificis-1
@@ -18917,6 +19744,17 @@ sections:
               verse: 20
           ref: Sirach 45:3-20
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: confessoris-pontificis-1-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 827, printed [19];
+            raw text page line 1 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Sirach
@@ -18948,8 +19786,39 @@ sections:
             end:
               chapter: 109
               verse: 4
-          ref: Psalms 109:4
+          ref: Psalm 109:4
+        ordinary_disposition:
+          kind: alternative
+          group: confessoris-pontificis-1-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 827, printed
+            [19]; raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-confessoris-pontificis-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: confessoris-pontificis-1-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 827, printed [19];
+            raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-confessoris-pontificis-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -18961,6 +19830,43 @@ sections:
               chapter: 111
               verse: 3
           ref: Psalms 111:1-3
+      - name: Alleluia (Tempore paschali)
+        source: mixed
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 109
+              verse: 4
+            end:
+              chapter: 109
+              verse: 4
+          ref: Psalm 109:4
+        notes: 1962 CMAA facsimile, artifact p. 827, printed [19]; raw text page line 60; Printed text unit
+          4312; distinct Paschal appointment, with Bible reconstruction only for its cited components. Its second
+          verse is the uncited Hic est sacerdos chant; the whole exact body remains unavailable. Psalm109:4
+          is a component, not the whole appointment.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        ordinary_disposition:
+          kind: alternative
+          group: confessoris-pontificis-1-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 827, printed
+            [19]; raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-confessoris-pontificis-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
       - name: Gospel
         source: scripture
         verses:
@@ -19094,6 +20000,17 @@ sections:
               verse: 27
           ref: Hebrews 7:23-27
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: confessoris-pontificis-2-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 828, printed [20];
+            raw text page line 44 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -19116,17 +20033,39 @@ sections:
             end:
               chapter: 109
               verse: 4
-          ref: Psalms 109:4
-        - book: Sirach
-          ranges:
-          - begin:
-              chapter: 45
-              verse: 9
-            end:
-              chapter: 45
-              verse: 9
-          ref: Sirach 45:9
+          ref: Psalm 109:4
+        ordinary_disposition:
+          kind: alternative
+          group: confessoris-pontificis-2-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 828, printed
+            [20]; raw text page line 44 and the numbered local chant cues
+          anchor:
+            mass: commune-confessoris-pontificis-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: confessoris-pontificis-2-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 828, printed [20];
+            raw text page line 44 and the numbered local chant cues
+          anchor:
+            mass: commune-confessoris-pontificis-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -19138,6 +20077,44 @@ sections:
               chapter: 111
               verse: 3
           ref: Psalms 111:1-3
+      - name: Alleluia (Tempore paschali)
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 109
+              verse: 4
+            end:
+              chapter: 109
+              verse: 4
+          ref: Psalm 109:4
+        - book: Sirach
+          ranges:
+          - begin:
+              chapter: 45
+              verse: 9
+            end:
+              chapter: 45
+              verse: 9
+          ref: Sirach 45:9
+        notes: 1962 CMAA facsimile, artifact p. 829, printed [21]; raw text page line 22; Printed text unit
+          4324; distinct Paschal appointment, with Bible reconstruction only for its cited components.
+        ordinary_disposition:
+          kind: alternative
+          group: confessoris-pontificis-2-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 828, printed
+            [20]; raw text page line 44 and the numbered local chant cues
+          anchor:
+            mass: commune-confessoris-pontificis-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
       - name: Gospel
         source: scripture
         verses:
@@ -19286,6 +20263,17 @@ sections:
               verse: 14
           ref: Sirach 39:6-14
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: doctorum-pontificis-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 830, printed [22];
+            raw text page line 1 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         incipit: Os justi meditabitur
         source: scripture
         verses:
@@ -19299,6 +20287,22 @@ sections:
               verse: 31
           ref: Psalm 36:30-31
       - name: Alleluia
+        ordinary_disposition:
+          kind: alternative
+          group: doctorum-pontificis-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 830, printed [22];
+            raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-doctorum-pontificis
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
         incipit: Amavit eum Dominus
         source: scripture
         verses:
@@ -19312,6 +20316,21 @@ sections:
               verse: 9
           ref: Sirach 45:9
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: doctorum-pontificis-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 830, printed [22];
+            raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-doctorum-pontificis
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         incipit: Beatus vir, qui timet Dominum
         source: scripture
         notes: Said after Septuagesima in place of the Alleluia and its verse.
@@ -19326,6 +20345,21 @@ sections:
               verse: 3
           ref: Psalm 111:1-3
       - name: Alleluia (Tempore paschali)
+        ordinary_disposition:
+          kind: alternative
+          group: doctorum-pontificis-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 830, printed [22];
+            raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-doctorum-pontificis
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
         incipit: Amavit eum Dominus
         source: scripture
         notes: In Paschaltide the Gradual is omitted and this is said in its place.
@@ -19435,6 +20469,37 @@ sections:
       takes_from:
         mass: commune-doctorum-pontificis
         citation: Commune Doctorum, printed pp. [22]-[23], nos. 4340 and 4343
+        appointment_overrides:
+        - mass: commune-doctorum-pontificis
+          form_id: main
+          group: doctorum-pontificis-gradual
+          state: replaced
+          by:
+          - mass: commune-doctorum-non-pontificis
+            form_id: main
+            proper: Gradual
+            occurrence: 1
+          basis: '1962 Common Doctor[22]-[23]: same printed Gradual in both prayer forms; retain exact local appointment
+            owner.'
+        - mass: commune-doctorum-pontificis
+          form_id: main
+          group: doctorum-pontificis-post-epistle
+          state: replaced
+          by:
+          - mass: commune-doctorum-non-pontificis
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          - mass: commune-doctorum-non-pontificis
+            form_id: main
+            proper: Tract
+            occurrence: 1
+          - mass: commune-doctorum-non-pontificis
+            form_id: main
+            proper: Alleluia (Tempore paschali)
+            occurrence: 1
+          basis: '1962 Common Doctor[22]-[23]: same complete regular/Tract/Paschal acclamation appointments in
+            both prayer forms; retain exact local appointment owners.'
       propers:
       - name: Introit
         source: scripture
@@ -19470,6 +20535,17 @@ sections:
               verse: 8
           ref: 2 Timothy 4:1-8
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: doctorum-pontificis-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 830, printed [22];
+            raw text page line 1 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -19493,16 +20569,38 @@ sections:
               chapter: 45
               verse: 9
           ref: Sirach 45:9
-        - book: Hosea
-          ranges:
-          - begin:
-              chapter: 14
-              verse: 6
-            end:
-              chapter: 14
-              verse: 6
-          ref: Hosea 14:6
+        ordinary_disposition:
+          kind: alternative
+          group: doctorum-pontificis-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 830, printed
+            [22]; raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-doctorum-non-pontificis
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: doctorum-pontificis-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 830, printed [22];
+            raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-doctorum-non-pontificis
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -19514,6 +20612,27 @@ sections:
               chapter: 111
               verse: 3
           ref: Psalms 111:1-3
+      - name: Alleluia (Tempore paschali)
+        takes_from:
+          mass: commune-doctorum-pontificis
+          proper: Alleluia (Tempore paschali)
+        notes: 1962 Common Doctor, artifacts830-831/printed[22]-[23], unit4336; identical appointment for the
+          nonbishop form, with the terminal wording owner retained.
+        ordinary_disposition:
+          kind: alternative
+          group: doctorum-pontificis-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 830, printed
+            [22]; raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-doctorum-non-pontificis
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
       - name: Gospel
         source: scripture
         verses:
@@ -19655,6 +20774,17 @@ sections:
               verse: 11
           ref: Sirach 31:8-11
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: confessoris-non-pontificis-1-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 832, printed [24];
+            raw text page line 1 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -19687,16 +20817,38 @@ sections:
               chapter: 1
               verse: 12
           ref: James 1:12
-        - book: Sirach
-          ranges:
-          - begin:
-              chapter: 45
-              verse: 9
-            end:
-              chapter: 45
-              verse: 9
-          ref: Sirach 45:9
+        ordinary_disposition:
+          kind: alternative
+          group: confessoris-non-pontificis-1-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 832, printed
+            [24]; raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-confessoris-non-pontificis-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: confessoris-non-pontificis-1-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 832, printed [24];
+            raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-confessoris-non-pontificis-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -19708,6 +20860,44 @@ sections:
               chapter: 111
               verse: 3
           ref: Psalms 111:1-3
+      - name: Alleluia (Tempore paschali)
+        source: scripture
+        verses:
+        - book: James
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 12
+            end:
+              chapter: 1
+              verse: 12
+          ref: James 1:12
+        - book: Sirach
+          ranges:
+          - begin:
+              chapter: 45
+              verse: 9
+            end:
+              chapter: 45
+              verse: 9
+          ref: Sirach 45:9
+        notes: 1962 CMAA facsimile, artifact p. 832, printed [24]; raw text page line 57; Printed text unit
+          4351; distinct Paschal appointment, with Bible reconstruction only for its cited components.
+        ordinary_disposition:
+          kind: alternative
+          group: confessoris-non-pontificis-1-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 832, printed
+            [24]; raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-confessoris-non-pontificis-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
       - name: Gospel
         source: scripture
         verses:
@@ -19849,6 +21039,17 @@ sections:
               verse: 14
           ref: 1 Corinthians 4:9-14
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: confessoris-non-pontificis-2-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 833, printed [25];
+            raw text page line 33 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -19871,17 +21072,39 @@ sections:
             end:
               chapter: 111
               verse: 1
-          ref: Psalms 111:1
-        - book: Hosea
-          ranges:
-          - begin:
-              chapter: 14
-              verse: 6
-            end:
-              chapter: 14
-              verse: 6
-          ref: Hosea 14:6
+          ref: Psalm 111:1
+        ordinary_disposition:
+          kind: alternative
+          group: confessoris-non-pontificis-2-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 833, printed
+            [25]; raw text page line 33 and the numbered local chant cues
+          anchor:
+            mass: commune-confessoris-non-pontificis-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: confessoris-non-pontificis-2-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 833, printed [25];
+            raw text page line 33 and the numbered local chant cues
+          anchor:
+            mass: commune-confessoris-non-pontificis-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -19893,6 +21116,44 @@ sections:
               chapter: 111
               verse: 3
           ref: Psalms 111:1-3
+      - name: Alleluia (Tempore paschali)
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 111
+              verse: 1
+            end:
+              chapter: 111
+              verse: 1
+          ref: Psalm 111:1
+        - book: Hosea
+          ranges:
+          - begin:
+              chapter: 14
+              verse: 6
+            end:
+              chapter: 14
+              verse: 6
+          ref: Hosea 14:6
+        notes: 1962 CMAA facsimile, artifact p. 834, printed [26]; raw text page line 13; Printed text unit
+          4363; distinct Paschal appointment, with Bible reconstruction only for its cited components.
+        ordinary_disposition:
+          kind: alternative
+          group: confessoris-non-pontificis-2-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 833, printed
+            [25]; raw text page line 33 and the numbered local chant cues
+          anchor:
+            mass: commune-confessoris-non-pontificis-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
       - name: Gospel
         source: scripture
         verses:
@@ -20028,6 +21289,17 @@ sections:
               verse: 6
           ref: Sirach 45:1-6
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: abbatum-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 835, printed [27];
+            raw text page line 1 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -20050,17 +21322,39 @@ sections:
             end:
               chapter: 91
               verse: 13
-          ref: Psalms 91:13
-        - book: Hosea
-          ranges:
-          - begin:
-              chapter: 14
-              verse: 6
-            end:
-              chapter: 14
-              verse: 6
-          ref: Hosea 14:6
+          ref: Psalm 91:13
+        ordinary_disposition:
+          kind: alternative
+          group: abbatum-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 835, printed
+            [27]; raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-abbatum
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: abbatum-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 835, printed [27];
+            raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-abbatum
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -20072,6 +21366,44 @@ sections:
               chapter: 111
               verse: 3
           ref: Psalms 111:1-3
+      - name: Alleluia (Tempore paschali)
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 91
+              verse: 13
+            end:
+              chapter: 91
+              verse: 13
+          ref: Psalm 91:13
+        - book: Hosea
+          ranges:
+          - begin:
+              chapter: 14
+              verse: 6
+            end:
+              chapter: 14
+              verse: 6
+          ref: Hosea 14:6
+        notes: 1962 CMAA facsimile, artifact p. 835, printed [27]; raw text page line 55; Printed text unit
+          4375; distinct Paschal appointment, with Bible reconstruction only for its cited components.
+        ordinary_disposition:
+          kind: alternative
+          group: abbatum-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 835, printed
+            [27]; raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-abbatum
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
       - name: Gospel
         source: scripture
         verses:
@@ -20215,6 +21547,17 @@ sections:
               verse: 12
           ref: Sirach 51:12
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: virginum-1-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 836, printed [28];
+            raw text page line 27 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -20237,17 +21580,39 @@ sections:
             end:
               chapter: 44
               verse: 16
-          ref: Psalms 44:15-16
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 44
-              verse: 5
-            end:
-              chapter: 44
-              verse: 5
-          ref: Psalms 44:5
+          ref: Psalm 44:15-16
+        ordinary_disposition:
+          kind: alternative
+          group: virginum-1-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 836, printed
+            [28]; raw text page line 27 and the numbered local chant cues
+          anchor:
+            mass: commune-virginum-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: virginum-1-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 836, printed [28];
+            raw text page line 27 and the numbered local chant cues
+          anchor:
+            mass: commune-virginum-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -20268,6 +21633,44 @@ sections:
               chapter: 44
               verse: 5
           ref: Psalms 44:5
+      - name: Alleluia (Tempore paschali)
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 15
+            end:
+              chapter: 44
+              verse: 16
+          ref: Psalm 44:15-16
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 5
+            end:
+              chapter: 44
+              verse: 5
+          ref: Psalm 44:5
+        notes: 1962 CMAA facsimile, artifact p. 837, printed [29]; raw text page line 18; Printed text unit
+          4387; distinct Paschal appointment, with Bible reconstruction only for its cited components.
+        ordinary_disposition:
+          kind: alternative
+          group: virginum-1-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 836, printed
+            [28]; raw text page line 27 and the numbered local chant cues
+          anchor:
+            mass: commune-virginum-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
       - name: Gospel
         source: scripture
         verses:
@@ -20433,6 +21836,17 @@ sections:
               verse: 17
           ref: Sirach 51:13-17
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: virginum-2-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 838, printed [30];
+            raw text page line 2 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -20454,18 +21868,43 @@ sections:
               verse: 5
           ref: Psalms 45:5
       - name: Alleluia
-        source: scripture
-        verses:
-        - book: Wisdom
-          ranges:
-          - begin:
-              chapter: 4
-              verse: 1
-            end:
-              chapter: 4
-              verse: 1
-          ref: Wisdom 4:1
+        takes_from:
+          mass: commune-virginum-4
+          proper: Alleluia
+        notes: 1962 CMAA facsimile, artifact p. 838, printed [30]; raw text page line 41; Printed text unit
+          4397; the held source appoints the same uncited chant as Common Virgin IV, no.4425.
+        ordinary_disposition:
+          kind: alternative
+          group: virginum-2-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 838, printed
+            [30]; raw text page line 2 and the numbered local chant cues
+          anchor:
+            mass: commune-virginum-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: virginum-2-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 838, printed [30];
+            raw text page line 2 and the numbered local chant cues
+          anchor:
+            mass: commune-virginum-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -20486,7 +21925,41 @@ sections:
               chapter: 44
               verse: 5
           ref: Psalms 44:5
+      - name: Alleluia (Tempore paschali)
+        takes_from:
+          mass: commune-virginum-4
+          proper: Alleluia (Tempore paschali)
+        notes: 1962 CMAA facsimile, artifact p. 838, printed [30]; raw text page line 58; Printed text unit
+          4399; the held source appoints the same complete mixed chant as Common Virgin IV, no.4427.
+        ordinary_disposition:
+          kind: alternative
+          group: virginum-2-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 838, printed
+            [30]; raw text page line 2 and the numbered local chant cues
+          anchor:
+            mass: commune-virginum-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: virginum-2-gospel
+          option: printed-main
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 839, printed
+            [31]; raw text page line 35; Printed text unit 4405; Explicit Item alterum Evangelium printed inside
+            VirginII at839/[31]. The smallest patch binds it only to this exact wrapper. Wider same-Virgin-Common
+            use remains a separate permission/pool operation.
+          anchor:
+            mass: commune-virginum-2
+            form_id: main
+            proper: Gospel
+            occurrence: 1
         source: scripture
         verses:
         - book: Matthew
@@ -20588,6 +22061,35 @@ sections:
           Praesta nobis, quaesumus, Domine: intercedentibus sanctis Virginibus et
           Martyribus tuis N. et N.; ut, quod ore contingimus, pura mente capiamus. Per
           Dominum.
+      - name: Gospel (alterum)
+        ordinary_disposition:
+          kind: alternative
+          group: virginum-2-gospel
+          option: unit-4405
+          basis: 1962 Common opening artifact809/[1] paragraph1; 1962 CMAA facsimile, artifact p. 839, printed
+            [31]; raw text page line 35; Printed text unit 4405; Explicit Item alterum Evangelium printed inside
+            VirginII at839/[31]. The smallest patch binds it only to this exact wrapper. Wider same-Virgin-Common
+            use remains a separate permission/pool operation.
+          anchor:
+            mass: commune-virginum-2
+            form_id: main
+            proper: Gospel
+            occurrence: 1
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 19
+              verse: 3
+            end:
+              chapter: 19
+              verse: 12
+          ref: Matthew 19:3-12
+        notes: 'Printed appointment identity: 1962 CMAA facsimile, artifact p. 839, printed [31]; raw text page
+          line 35; Printed text unit 4405. Stored here once for the explicitly bounded Common wrappers; this
+          storage choice does not move the printed family heading into this Mass. The selected Bible representation
+          is not a new exact target-Missal wording/publication claim.'
     - key: commune-virginum-3
       name: 'Commune Virginum, Missa III: Dilexisti justitiam'
       registry: 1962-C-virginum-3
@@ -20666,6 +22168,17 @@ sections:
               verse: 2
           ref: 2 Corinthians 11:1-2
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: virginum-3-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 840, printed [32];
+            raw text page line 17 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -20688,17 +22201,39 @@ sections:
             end:
               chapter: 44
               verse: 16
-          ref: Psalms 44:15-16
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 44
-              verse: 5
-            end:
-              chapter: 44
-              verse: 5
-          ref: Psalms 44:5
+          ref: Psalm 44:15-16
+        ordinary_disposition:
+          kind: alternative
+          group: virginum-3-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 840, printed
+            [32]; raw text page line 17 and the numbered local chant cues
+          anchor:
+            mass: commune-virginum-3
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: virginum-3-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 840, printed [32];
+            raw text page line 17 and the numbered local chant cues
+          anchor:
+            mass: commune-virginum-3
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -20737,6 +22272,44 @@ sections:
               chapter: 44
               verse: 16
           ref: Psalms 44:15-16
+      - name: Alleluia (Tempore paschali)
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 15
+            end:
+              chapter: 44
+              verse: 16
+          ref: Psalm 44:15-16
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 5
+            end:
+              chapter: 44
+              verse: 5
+          ref: Psalm 44:5
+        notes: 1962 CMAA facsimile, artifact p. 840, printed [32]; raw text page line 70; Printed text unit
+          4415; distinct Paschal appointment, with Bible reconstruction only for its cited components.
+        ordinary_disposition:
+          kind: alternative
+          group: virginum-3-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 840, printed
+            [32]; raw text page line 17 and the numbered local chant cues
+          anchor:
+            mass: commune-virginum-3
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
       - name: Gospel
         source: scripture
         verses:
@@ -20882,6 +22455,17 @@ sections:
               verse: 34
           ref: 1 Corinthians 7:25-34
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: virginum-4-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 841, printed [33];
+            raw text page line 48 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -20903,6 +22487,22 @@ sections:
               verse: 11
           ref: Psalms 44:11
       - name: Alleluia
+        ordinary_disposition:
+          kind: alternative
+          group: virginum-4-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 841, printed [33];
+            raw text page line 48 and the numbered local chant cues
+          anchor:
+            mass: commune-virginum-4
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
         incipit: 'Haec est virgo sapiens'
         source: composed
         notes: >-
@@ -20916,6 +22516,21 @@ sections:
           Alleluia, alleluia. V. Haec est virgo sapiens, et una de numero prudentum.
           Alleluia.
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: virginum-4-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 841, printed [33];
+            raw text page line 48 and the numbered local chant cues
+          anchor:
+            mass: commune-virginum-4
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -20955,6 +22570,21 @@ sections:
               verse: 16
           ref: Psalms 44:15-16
       - name: Alleluia (Tempore paschali)
+        ordinary_disposition:
+          kind: alternative
+          group: virginum-4-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 841, printed [33];
+            raw text page line 48 and the numbered local chant cues
+          anchor:
+            mass: commune-virginum-4
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
         incipit: 'Haec est virgo sapiens'
         source: mixed
         notes: >-
@@ -21141,6 +22771,17 @@ sections:
               verse: 12
           ref: Sirach 51:12
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: non-virginum-1-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 843, printed [35];
+            raw text page line 1 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -21163,8 +22804,39 @@ sections:
             end:
               chapter: 44
               verse: 5
-          ref: Psalms 44:5
+          ref: Psalm 44:5
+        ordinary_disposition:
+          kind: alternative
+          group: non-virginum-1-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 843, printed
+            [35]; raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-non-virginum-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: non-virginum-1-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 843, printed [35];
+            raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-non-virginum-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -21185,6 +22857,43 @@ sections:
               chapter: 44
               verse: 5
           ref: Psalms 44:5
+      - name: Alleluia (Tempore paschali)
+        source: mixed
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 5
+            end:
+              chapter: 44
+              verse: 5
+          ref: Psalm 44:5
+        notes: 1962 CMAA facsimile, artifact p. 843, printed [35]; raw text page line 71; Printed text unit
+          4438; distinct Paschal appointment, with Bible reconstruction only for its cited components. The two
+          liturgical segments share Psalm44:5 but differ from the regular first hemistich; the exact two-verse
+          body remains unavailable. A whole Bible verse does not encode those segments.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        ordinary_disposition:
+          kind: alternative
+          group: non-virginum-1-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 843, printed
+            [35]; raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-non-virginum-1
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
       - name: Gospel
         source: scripture
         verses:
@@ -21338,6 +23047,24 @@ sections:
           gaudemus; ita piae devotionis erudiamur affectu. Per Dominum nostrum Jesum
           Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
       - name: Lesson
+        ordinary_disposition:
+          kind: alternative
+          group: non-virginum-2-reading
+          option: principal
+          basis: Held 1962 CMAA facsimile, artifact p.845/[37], Lesson4449, and artifact p.846/[38], Item altera
+            Epistola pro Vidua, Epistle4459. These are mutually exclusive first-reading appointments; the latter
+            is eligible for a source-qualified widow. The source does not mandate that alternative for every widow.
+          anchor:
+            mass: commune-non-virginum-2
+            form_id: main
+            proper: Lesson
+            occurrence: 1
+          seat: reading-1
+          when:
+            fact: roman-1962-non-virginum-2-subject
+            in:
+            - general
+            - widow
         source: scripture
         verses:
         - book: Proverbs
@@ -21350,6 +23077,23 @@ sections:
               verse: 31
           ref: Proverbs 31:10-31
       - name: Epistle
+        ordinary_disposition:
+          kind: alternative
+          group: non-virginum-2-reading
+          option: pro-vidua
+          basis: Held 1962 CMAA facsimile, artifact p.845/[37], Lesson4449, and artifact p.846/[38], Item altera
+            Epistola pro Vidua, Epistle4459. These are mutually exclusive first-reading appointments; the latter
+            is eligible for a source-qualified widow. The source does not mandate that alternative for every widow.
+          anchor:
+            mass: commune-non-virginum-2
+            form_id: main
+            proper: Lesson
+            occurrence: 1
+          seat: reading-1
+          when:
+            fact: roman-1962-non-virginum-2-subject
+            in:
+            - widow
         source: scripture
         verses:
         - book: 1 Timothy
@@ -21362,6 +23106,17 @@ sections:
               verse: 10
           ref: 1 Timothy 5:3-10
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: non-virginum-2-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 845, printed [37];
+            raw text page line 2 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -21393,8 +23148,39 @@ sections:
             end:
               chapter: 44
               verse: 5
-          ref: Psalms 44:5
+          ref: Psalm 44:5
+        ordinary_disposition:
+          kind: alternative
+          group: non-virginum-2-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 845, printed
+            [37]; raw text page line 2 and the numbered local chant cues
+          anchor:
+            mass: commune-non-virginum-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: non-virginum-2-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 845, printed [37];
+            raw text page line 2 and the numbered local chant cues
+          anchor:
+            mass: commune-non-virginum-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -21415,6 +23201,43 @@ sections:
               chapter: 44
               verse: 5
           ref: Psalms 44:5
+      - name: Alleluia (Tempore paschali)
+        source: mixed
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 5
+            end:
+              chapter: 44
+              verse: 5
+          ref: Psalm 44:5
+        notes: 1962 CMAA facsimile, artifact p. 846, printed [38]; raw text page line 4; Printed text unit 4453;
+          distinct Paschal appointment, with Bible reconstruction only for its cited components. The two liturgical
+          segments share Psalm44:5 but differ from the regular first hemistich; the exact two-verse body remains
+          unavailable. A whole Bible verse does not encode those segments.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        ordinary_disposition:
+          kind: alternative
+          group: non-virginum-2-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 845, printed
+            [37]; raw text page line 2 and the numbered local chant cues
+          anchor:
+            mass: commune-non-virginum-2
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
       - name: Gospel
         source: scripture
         verses:
@@ -21557,6 +23380,17 @@ sections:
               verse: 5
           ref: Revelation 21:2-5
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: dedicationis-ecclesiae-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 847, printed [39];
+            raw text page line 1 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         incipit: 'Locus iste a Deo factus est'
         source: composed
         notes: >-
@@ -21570,6 +23404,22 @@ sections:
           Locus iste a Deo factus est, inaestimabile sacramentum, irreprehensibilis
           est. V. Deus, cui astat Angelorum chorus, exaudi preces servorum tuorum.
       - name: Alleluia
+        ordinary_disposition:
+          kind: alternative
+          group: dedicationis-ecclesiae-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 847, printed [39];
+            raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-dedicationis-ecclesiae
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
         source: scripture
         verses:
         - book: Psalms
@@ -21582,6 +23432,21 @@ sections:
               verse: 2
           ref: Psalms 137:2
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: dedicationis-ecclesiae-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 847, printed [39];
+            raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-dedicationis-ecclesiae
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         source: scripture
         verses:
         - book: Psalms
@@ -21594,6 +23459,21 @@ sections:
               verse: 2
           ref: Psalms 124:1-2
       - name: Alleluia (Tempore paschali)
+        ordinary_disposition:
+          kind: alternative
+          group: dedicationis-ecclesiae-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 847, printed [39];
+            raw text page line 1 and the numbered local chant cues
+          anchor:
+            mass: commune-dedicationis-ecclesiae
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
         incipit: 'Adorabo ad templum sanctum tuum'
         source: mixed
         notes: >-
@@ -21809,6 +23689,17 @@ sections:
               verse: 16
           ref: Sirach 24:14-16
       - name: Gradual
+        ordinary_disposition:
+          kind: conditional
+          group: festorum-bmv-gradual
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 849, printed [41];
+            raw text page line 31 and the numbered local chant cues
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
+            - regular
+            - tract
         incipit: 'Benedicta et venerabilis es, Virgo Maria'
         source: composed
         notes: >-
@@ -21823,6 +23714,21 @@ sections:
           mater Salvatoris. V. Virgo Dei Genetrix, quem totus non capit orbis, in tua
           se clausit viscera factus homo.
       - name: Alleluia
+        ordinary_disposition:
+          kind: alternative
+          group: festorum-bmv-post-epistle
+          option: regular
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 849, printed [41];
+            raw text page line 31 and the numbered local chant cues
+          anchor:
+            mass: commune-festorum-bmv
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - regular
         incipit: 'Post partum, Virgo'
         source: composed
         notes: >-
@@ -21836,6 +23742,21 @@ sections:
           Alleluia, alleluia. V. Post partum, Virgo, inviolata permansisti: Dei
           Genetrix, intercede pro nobis. Alleluia.
       - name: Alleluia (In Adventu)
+        ordinary_disposition:
+          kind: alternative
+          group: festorum-bmv-post-epistle
+          option: advent
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 849, printed [41];
+            raw text page line 31 and the numbered local chant cues
+          anchor:
+            mass: commune-festorum-bmv
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - advent
         incipit: 'Ave, Maria, gratia plena'
         source: scripture
         notes: 'Printed p. [41], no. 4481, in Advent in place of the preceding Alleluia.'
@@ -21850,6 +23771,21 @@ sections:
               verse: 28
           ref: Luke 1:28
       - name: Tract
+        ordinary_disposition:
+          kind: alternative
+          group: festorum-bmv-post-epistle
+          option: tract
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 849, printed [41];
+            raw text page line 31 and the numbered local chant cues
+          anchor:
+            mass: commune-festorum-bmv
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - tract
         incipit: 'Gaude, Maria Virgo'
         source: composed
         notes: >-
@@ -21864,6 +23800,21 @@ sections:
           Archangeli dictis credidisti. V. Dum Virgo Deum et hominem genuisti: et post
           partum, Virgo, inviolata permansisti. V. Dei Genetrix, intercede pro nobis.
       - name: Alleluia (Tempore paschali)
+        ordinary_disposition:
+          kind: alternative
+          group: festorum-bmv-post-epistle
+          option: paschal
+          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 849, printed [41];
+            raw text page line 31 and the numbered local chant cues
+          anchor:
+            mass: commune-festorum-bmv
+            form_id: main
+            proper: Alleluia
+            occurrence: 1
+          when:
+            fact: roman-1962-common-chant-regime
+            in:
+            - paschal
         incipit: 'Virga Iesse floruit'
         source: mixed
         notes: >-
@@ -45828,6 +47779,18 @@ sections:
       takes_from:
         mass: commune-plurimorum-martyrum-1
         citation: Commune Sanctorum [10]
+        appointment_overrides:
+        - mass: commune-plurimorum-martyrum-1
+          form_id: main
+          group: plurimorum-martyrum-1-gospel
+          state: replaced
+          by:
+          - mass: comm-ss-euphemiae-virginis-luciae-geminiani
+            form_id: main
+            proper: Gospel
+            occurrence: 1
+          basis: '1962 artifact740/printed659 explicitly appoints its own Gospel3642 Luke6:17–23: cum orationibus
+            et Evangelio ut infra.'
       notes: 'Read on 2026-08-08 from the embedded text layer of the CMAA facsimile of the controlling edition,
         at this day''s own heading, and nothing has been visually collated. Only the printed scripture citations
         are recorded: the facsimile sets each oration under a drop capital that the text layer renders as

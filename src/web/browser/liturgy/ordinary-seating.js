@@ -558,8 +558,8 @@
 
   // Producer-derived foreign applicability is independent of held body text.
   // Preserve the row for source inspection; refuse execution in this edition.
-  function assertSupportedAppointmentApplicability(proper, calendar) {
-    if (!proper || !Object.prototype.hasOwnProperty.call(proper, 'appointment_applicability')) return;
+  function appointmentApplicabilityOf(proper, calendar) {
+    if (!proper || !Object.prototype.hasOwnProperty.call(proper, 'appointment_applicability')) return null;
     const marker = proper.appointment_applicability;
     const edition = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
     if (!marker || typeof marker !== 'object' || Array.isArray(marker) ||
@@ -572,8 +572,65 @@
         typeof marker.basis !== 'string' || !marker.basis.trim()) {
       throw new Error('Proper appointment_applicability must retain exact unresolved foreign editions and source basis');
     }
+    return marker;
+  }
+
+  function assertSupportedAppointmentApplicability(proper, calendar) {
+    const marker = appointmentApplicabilityOf(proper, calendar);
+    if (!marker) return;
     throw new Error('unsupported foreign-source Proper applicability from ' + marker.source_edition +
       ' in ' + marker.target_edition + '; source condition remains unresolved: ' + marker.basis);
+  }
+
+  /** Project only positive canonical owner tuples; never resolve a calendar. */
+  function projectProperUsage(context) {
+    const owns = (record, keys) => record && typeof record === 'object' && !Array.isArray(record) &&
+      keys.every((key) => Object.prototype.hasOwnProperty.call(record, key));
+    if (!owns(context, ['calendar', 'entrance', 'branch', 'readable', 'mass', 'formId']) || !context || typeof context !== 'object' || Array.isArray(context) ||
+        typeof context.calendar !== 'string' || !context.calendar || context.entrance !== 'day' ||
+        !context.mass || typeof context.mass !== 'object' || Array.isArray(context.mass) ||
+        !owns(context.mass, ['key']) || typeof context.mass.key !== 'string' || !context.mass.key ||
+        typeof context.formId !== 'string' || !context.formId) return null;
+    if ('forms' in context.mass && !Object.prototype.hasOwnProperty.call(context.mass, 'forms')) return null;
+    const forms = context.mass.forms;
+    if (forms !== undefined && !Array.isArray(forms)) return null;
+    if (!forms || !forms.length) {
+      if (context.formId !== 'main') return null;
+    } else {
+      const matchingForms = forms.filter((form) => form && form.id === context.formId);
+      if (matchingForms.length !== 1 || !owns(matchingForms[0], ['id'])) return null;
+    }
+    const branch = context.branch;
+    const readable = context.readable;
+    if (!owns(branch, ['settled', 'choiceRequired', 'choice', 'massChoices', 'unsettled', 'readable', 'candidates', 'winner']) || branch.settled !== true || branch.choiceRequired !== false || branch.choice !== null ||
+        !Array.isArray(branch.massChoices) || branch.massChoices.length ||
+        !Array.isArray(branch.unsettled) || branch.unsettled.length ||
+        !Array.isArray(branch.readable) || !Array.isArray(branch.candidates) ||
+        !owns(readable, ['state', 'id', 'key']) || readable.state !== 'said' || readable.key !== context.mass.key ||
+        typeof readable.id !== 'string' || !readable.id) return null;
+    const said = branch.readable.filter((one) => one && (one.state === 'said' || one.id === readable.id));
+    if (said.length !== 1 || !owns(said[0], ['state', 'id', 'key']) || said[0].state !== 'said' ||
+        said[0].id !== readable.id || said[0].key !== readable.key) return null;
+    const winner = branch.winner;
+    if (!owns(winner, ['id', 'key', 'source', 'nature', 'optional', 'formulary']) || winner.id !== readable.id || winner.optional !== false) return null;
+    const candidates = branch.candidates.filter((one) => one && one.id === winner.id);
+    if (candidates.length !== 1) return null;
+    const candidate = candidates[0];
+    if (!owns(candidate, ['id', 'key', 'source', 'nature', 'competes', 'certain', 'formulary', 'rule']) || candidate.competes !== true || candidate.certain !== true ||
+        candidate.key !== winner.key || candidate.source !== winner.source || candidate.nature !== winner.nature) return null;
+    if (winner.nature === 'sunday' && winner.source === 'index' &&
+        winner.id === context.mass.key && winner.key === context.mass.key &&
+        Object.prototype.hasOwnProperty.call(winner, 'formulary') && winner.formulary === null &&
+        Object.prototype.hasOwnProperty.call(candidate, 'formulary') && candidate.formulary === null &&
+        owns(candidate.rule, ['origin', 'rule']) && candidate.rule.origin === 'temporal' &&
+        typeof candidate.rule.rule === 'string' && candidate.rule.rule) return 'own-sunday';
+    if (winner.nature !== 'feria' || winner.source !== 'implied' || winner.key !== null) return null;
+    const own = winner.formulary; const held = candidate.formulary;
+    if (!owns(own, ['kind', 'key', 'known', 'rule']) || !owns(held, ['kind', 'key', 'known', 'rule']) || own.kind !== 'borrowed' || held.kind !== 'borrowed' ||
+        own.key !== context.mass.key || held.key !== own.key || own.known !== true || held.known !== true ||
+        !owns(own.rule, ['origin', 'rule']) || !owns(held.rule, ['origin', 'rule']) || own.rule.origin !== 'ferial' || held.rule.origin !== 'ferial' ||
+        typeof own.rule.rule !== 'string' || !own.rule.rule || held.rule.rule !== own.rule.rule) return null;
+    return 'borrowed-feria';
   }
 
   /** Source predicates consume an existing owner's season; no date is derived. */
@@ -590,6 +647,8 @@
     const conditionalGroups = new Map();
     const domains = new Map();
     const facts = supplied.facts || {};
+    let usesUsage = false;
+    let usage = null;
     function domainFor(when) {
       appointmentWhen(when);
       if (domains.has(when.fact)) {
@@ -599,19 +658,31 @@
         }
         return held;
       }
-      const fact = facts[when.fact];
-      if (!fact || typeof fact !== 'object' || Array.isArray(fact) ||
-          Object.keys(fact).sort().join(',') !== 'basis,edition,season_values,values' ||
+      const fact = Object.prototype.hasOwnProperty.call(facts, when.fact) ? facts[when.fact] : undefined;
+      const selectors = fact && ['season_values', 'mass_values', 'usage_values'].filter((key) =>
+        Object.prototype.hasOwnProperty.call(fact, key));
+      const selector = selectors && selectors.length === 1 ? selectors[0] : null;
+      if (!fact || typeof fact !== 'object' || Array.isArray(fact) || !selector ||
+          Object.keys(fact).sort().join(',') !== ['basis', 'edition', selector, 'values'].sort().join(',') ||
           typeof fact.edition !== 'string' || !fact.edition || fact.edition !== supplied.calendar ||
           typeof fact.basis !== 'string' || !fact.basis.trim() ||
           !Array.isArray(fact.values) || !fact.values.length ||
           fact.values.some((value) => typeof value !== 'string' || !value) ||
           new Set(fact.values).size !== fact.values.length ||
-          !fact.season_values || typeof fact.season_values !== 'object' ||
-          Array.isArray(fact.season_values) || !Object.keys(fact.season_values).length ||
-          Object.keys(fact.season_values).some((season) => !season ||
-            (fact.season_values[season] !== null && !fact.values.includes(fact.season_values[season])))) {
+          !fact[selector] || typeof fact[selector] !== 'object' || Array.isArray(fact[selector]) ||
+          !Object.keys(fact[selector]).length || Object.keys(fact[selector]).some((key) => {
+            if (!key || key.trim() !== key) return true;
+            const entry = fact[selector][key];
+            if (selector === 'season_values') return entry !== null && !fact.values.includes(entry);
+            if (selector === 'usage_values') return !['own-sunday', 'borrowed-feria'].includes(key) || !fact.values.includes(entry);
+            return !entry || typeof entry !== 'object' || Array.isArray(entry) ||
+              Object.keys(entry).sort().join(',') !== 'basis,value' ||
+              !fact.values.includes(entry.value) || typeof entry.basis !== 'string' || !entry.basis.trim();
+          })) {
         throw new Error('Proper appointment fact is unheld, malformed or belongs to another edition');
+      }
+      if (selector === 'usage_values' && Object.keys(fact.usage_values).sort().join(',') !== 'borrowed-feria,own-sunday') {
+        throw new Error('Proper usage selector requires exactly own-sunday and borrowed-feria source bindings');
       }
       if (when.in.some((value) => !fact.values.includes(value))) {
         throw new Error('Proper condition names an unheld source fact value');
@@ -627,13 +698,28 @@
         throw new Error('date-independent Propers cannot consume a calendar season');
       }
       let value = null;
-      if (supplied.entrance === 'day' && supplied.date && supplied.season) {
+      if (selector === 'usage_values') {
+        usesUsage = true;
+        const evidence = Object.prototype.hasOwnProperty.call(supplied, 'usageContext') ? supplied.usageContext : undefined;
+        const formIds = new Set(rows.map((row) => formIdOf(row.proper)));
+        if (evidence && evidence.calendar === supplied.calendar && evidence.entrance === supplied.entrance &&
+            evidence.mass && evidence.mass.key === supplied.mass && formIds.size === 1 && formIds.has(evidence.formId)) {
+          usage = projectProperUsage(evidence);
+        }
+        if (usage !== null) value = fact.usage_values[usage];
+      } else if (selector === 'mass_values') {
+        if (supplied.mass != null && (typeof supplied.mass !== 'string' || !supplied.mass || supplied.mass.trim() !== supplied.mass)) {
+          throw new Error('Proper applicability requires an exact validated source Mass key or explicit unknown');
+        }
+        if (typeof supplied.mass === 'string' && Object.prototype.hasOwnProperty.call(fact.mass_values, supplied.mass)) value = fact.mass_values[supplied.mass].value;
+      } else if (supplied.entrance === 'day' && supplied.date && supplied.season) {
         if (!Object.prototype.hasOwnProperty.call(fact.season_values, supplied.season)) {
           throw new Error('Proper applicability received an unheld owner season');
         }
         value = fact.season_values[supplied.season];
       }
-      const held = {values: fact.values, domain: value === null ? fact.values.slice() : [value]};
+      const held = {values: fact.values, domain: value === null ? fact.values.slice() : [value],
+        selector: selector, known: value !== null};
       domains.set(when.fact, held);
       return held;
     }
@@ -682,6 +768,11 @@
       const held = domainFor(when);
       const narrowed = held.domain.filter((value) => when.in.includes(value));
       if (!narrowed.length) throw new Error('explicit Proper choice contradicts source applicability');
+      if (held.selector !== 'season_values' && !held.known && narrowed.length !== held.domain.length) {
+        throw new Error(held.selector === 'mass_values'
+          ? 'explicit Proper choice cannot establish unknown source Mass eligibility'
+          : 'explicit Proper choice cannot establish unknown source use applicability');
+      }
       held.domain = narrowed;
     });
     function stateOf(when) {
@@ -726,7 +817,7 @@
       delete proper.ordinary_disposition;
       return {proper, sourceIndex: row.sourceIndex};
     });
-    return {rows: active, selections, unresolved, inactive};
+    return Object.assign({rows: active, selections, unresolved, inactive}, usesUsage ? {usage: usage} : {});
   }
 
   /**
@@ -967,6 +1058,93 @@
     };
   }
 
+  /**
+   * Static producer gate, with every source candidate conserved. This never
+   * appoints a season, selects an option, or produces reading events. Predicate
+   * admission uses the same owner as execution, with an explicitly unknown
+   * Propers context; conditional rows then lose only that validated annotation
+   * on private copies so even an inactive candidate must have a sound seat.
+   * Foreign markers remain a typed limitation, never permission to execute.
+   */
+  function validateProperSeating(file, propers, context) {
+    const supplied = context || {};
+    if (!file || supplied.calendar !== file.calendar ||
+        typeof supplied.form_id !== 'string' || !supplied.form_id ||
+        typeof supplied.mass !== 'string' || !supplied.mass ||
+        typeof supplied.full !== 'boolean' || !Array.isArray(propers) ||
+        propers.some((proper) => !proper || typeof proper !== 'object' ||
+          Array.isArray(proper) || typeof proper.name !== 'string' || !proper.name)) {
+      throw new Error('static Proper seating requires exact calendar, Mass, form, frame and candidate rows');
+    }
+    const foreign = new Set();
+    const placeholders = new Set();
+    const diagnostics = [];
+    const copies = propers.map((proper, sourceIndex) => {
+      const copy = Object.assign({}, proper);
+      const marker = appointmentApplicabilityOf(proper, supplied.calendar);
+      if (marker) {
+        foreign.add(sourceIndex);
+        diagnostics.push({kind: 'unsupported-foreign-source-applicability', sourceIndex,
+          source_edition: marker.source_edition, target_edition: marker.target_edition});
+        delete copy.appointment_applicability;
+      }
+      if (proper.name === 'Placeholder' && !marker && !proper.ordinary_disposition) placeholders.add(copy);
+      return copy;
+    });
+    const prepared = prepareProperAppointments(copies, {
+      calendar: supplied.calendar, entrance: 'propers', date: null, season: null,
+      mass: supplied.mass,
+      facts: supplied.facts || {}, choices: {}
+    });
+    let conditionalRows = 0;
+    copies.forEach((proper) => {
+      const disposition = dispositionOf(proper);
+      if (disposition && disposition.kind === 'conditional') {
+        conditionalRows += 1;
+        delete proper.ordinary_disposition;
+      }
+    });
+    const shown = (file.sections || []).flatMap((section) =>
+      (section.elements || []).map((element) => ({section, element})));
+    const seating = supplied.full ? seats(file, shown) : null;
+    const units = properUnits(copies, seating, (proper) => placeholders.has(proper), prepared.selections);
+    let reached = -1;
+    let candidates = 0;
+    let choices = 0;
+    units.forEach((unit) => {
+      const members = unit.kind === 'proper_choice'
+        ? unit.options.flatMap((option) => option.rows) : [unit];
+      candidates += members.length;
+      if (unit.kind === 'proper_choice') choices += 1;
+      if (!supplied.full || (unit.kind === 'proper' && unit.seat && unit.seat.region)) return;
+      const ordinal = unit.kind === 'proper_choice'
+        ? unit.ordinal : usableSlotOf(seating, unit.proper.name);
+      if (ordinal < 0) {
+        const name = unit.kind === 'proper' ? unit.proper.name : null;
+        const qualifier = name && QUALIFIER.exec(name);
+        const declared = name !== null && (file.slots || []).some((slot) =>
+          (slot.propers || []).some((claim) => claim === name ||
+            (slot.qualified && qualifier && claim === qualifier[1])));
+        // Only an undeclared foreign standalone label has an unknown target
+        // seat. A declared slot with a broken anchor still fails, and choice
+        // groups retain the unchanged framed guard above.
+        if (unit.kind === 'proper' && foreign.has(unit.sourceIndex) && !declared) {
+          diagnostics.find((one) => one.sourceIndex === unit.sourceIndex).target_seat = {
+            state: 'unknown', reason: 'not-declared-in-target-ordinary'
+          };
+          return;
+        }
+        throw new Error('static Proper candidate has no usable Ordinary seat');
+      }
+      // The foreign producer retains raw diagnostic order after stripping
+      // target-inapplicable appointments. Its execution sequence is unknown.
+      if (members.some((member) => foreign.has(member.sourceIndex))) return;
+      if (ordinal < reached) throw new Error('static Proper candidate runs backward through Ordinary slots');
+      reached = ordinal;
+    });
+    return {candidates, conditional_rows: conditionalRows, choice_groups: choices, diagnostics};
+  }
+
   /** The seated frame in reading order, before either renderer presents it. */
   function massEvents(shown, placed) {
     const events = [];
@@ -1040,6 +1218,8 @@
     usableSlotOf: usableSlotOf,
     dispositionOf: dispositionOf,
     prepareProperAppointments: prepareProperAppointments,
+    projectProperUsage: projectProperUsage,
+    validateProperSeating: validateProperSeating,
     semanticProperId: semanticProperId,
     properUnits: properUnits,
     seatPropers: seatPropers,

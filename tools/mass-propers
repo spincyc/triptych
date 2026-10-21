@@ -97,7 +97,7 @@ EXAMPLES = {
                 "  key: advent-1",
                 "  name: First Sunday of Advent",
                 "  registry: '01'",
-                "... 985 more lines",
+                "... 1097 more lines",
             ),
         ),
     ),
@@ -116,8 +116,8 @@ EXAMPLES = {
             "tools/mass-propers structure --out build/example-propers",
             (
                 "postconciliar: 619 masses, 3675 citations",
-                "roman-1962: 491 masses, 4422 citations",
-                "roman-pre-1955: 489 masses, 4357 citations",
+                "roman-1962: 491 masses, 4603 citations",
+                "roman-pre-1955: 489 masses, 4539 citations",
                 "  -> build/example-propers/structure/propers/postconciliar.json",
                 "  -> build/example-propers/structure/propers/search/postconciliar.json",
                 "  -> build/example-propers/structure/propers/roman-1962.json",
@@ -130,8 +130,8 @@ EXAMPLES = {
             "tools/mass-propers structure --check",
             (
                 "postconciliar: 619 masses, 3675 citations",
-                "roman-1962: 491 masses, 4422 citations",
-                "roman-pre-1955: 489 masses, 4357 citations",
+                "roman-1962: 491 masses, 4603 citations",
+                "roman-pre-1955: 489 masses, 4539 citations",
                 "  499 tracked file(s) are current",
             ),
             "writes nothing: exits 1 naming each tracked file the sources no longer produce. The calendar-Mass check target runs this",
@@ -141,8 +141,8 @@ EXAMPLES = {
         Example(
             "tools/mass-propers census",
             (
-                "# roman-pre-1955 English orations: 1209 slots appointed, 107 public-available, 0 held rights-restricted, 1102 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
-                "# roman-1962 English orations: 1257 slots appointed, 120 public-available, 0 held rights-restricted, 1137 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# roman-pre-1955 English orations: 1214 slots appointed, 107 public-available, 0 held rights-restricted, 1107 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# roman-1962 English orations: 1262 slots appointed, 120 public-available, 0 held rights-restricted, 1142 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
                 "# postconciliar English orations: 338 slots appointed, 113 public-available, 0 held rights-restricted, 225 ledgered untranslated, 0 unaccounted; 3 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
                 "# postconciliar Latin recension: 334 unique non-scriptural slots, 0 bodies resident; 0 explicitly antecedent substitutes, 0 other bodies with antecedent-relation metadata, 0 without per-slot Latin relation; direct target-edition artifact attestation not-represented",
                 "<!-- census:begin — derived; edit nothing between these markers -->",
@@ -370,7 +370,7 @@ def appointed_propers(document: dict, mass: dict) -> list[tuple[str, dict, dict 
     the calendar-mass check, so a reference the browser resolves and a reference
     the gate accepts cannot come apart.
     """
-    entries, problems = _calendars.resolve_propers(document, mass)
+    entries, problems = _calendars.resolve_propers(document, mass, appointments=True)
     if problems:
         raise ValueError("; ".join(dict.fromkeys(problems)))
     return entries
@@ -549,6 +549,8 @@ def rights_safe_copy(value):
         copied[_calendars.ORDINARY_DISPOSITION] = public_ordinary_disposition(
             value[_calendars.ORDINARY_DISPOSITION]
         )
+    if _calendars.APPOINTMENT_APPLICABILITY in value:
+        copied[_calendars.APPOINTMENT_APPLICABILITY] = _calendars.validate_appointment_applicability(value[_calendars.APPOINTMENT_APPLICABILITY])
     return copied
 
 
@@ -921,6 +923,8 @@ def public_reference(reference: object) -> dict | None:
         projected[_calendars.COMMON_SETS] = public_common_sets(
             reference[_calendars.COMMON_SETS]
         )
+    if "appointment_overrides" in reference:
+        projected["appointment_overrides"] = _calendars.validate_appointment_overrides(reference["appointment_overrides"])
     return projected
 
 
@@ -2622,7 +2626,8 @@ def source_slot_identity(
             f"mass {owner_key!r} form {owner_form!r} has no Proper {owner_name!r}"
         )
     occurrence = next(
-        (index for index, candidate in enumerate(matches, 1) if candidate is proper),
+        (index for index, candidate in enumerate(matches, 1)
+         if getattr(candidate, "source_proper", candidate) is getattr(proper, "source_proper", proper)),
         1 if len(matches) == 1 else 0,
     )
     if occurrence < 1:
@@ -3171,6 +3176,12 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                         carried[_calendars.ORDINARY_DISPOSITION]
                     )
                 )
+            if "appointment_identity" in carried:
+                built_proper["appointment_identity"] = _calendars.validate_appointment_coordinate(carried["appointment_identity"])
+            if "appointment_replacement" in carried:
+                built_proper["appointment_replacement"] = _calendars.validate_appointment_replacement(carried["appointment_replacement"])
+            if _calendars.APPOINTMENT_APPLICABILITY in carried:
+                built_proper[_calendars.APPOINTMENT_APPLICABILITY] = _calendars.validate_appointment_applicability(carried[_calendars.APPOINTMENT_APPLICABILITY], calendar)
             built_proper["languages"] = proper_language_capabilities(built_proper)
             # Source identity and appointed occurrence are deliberately different.
             # Only this source-owning pass knows the owner of a borrowed Proper.
@@ -3346,6 +3357,8 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
             "calendar",
         ),
     }
+    if _calendars.PROPER_APPOINTMENT_FACTS in document:
+        structure[_calendars.PROPER_APPOINTMENT_FACTS] = _calendars.validate_proper_appointment_facts(document[_calendars.PROPER_APPOINTMENT_FACTS], calendar)
     # Published as exact per-state totals, not one row per expected target: the
     # rows were 1.4 MB of the 1962 file and no page reads them.
     structure["coverage"]["expected_inventory"] = _missal_coverage.published_expectations(
@@ -4706,6 +4719,8 @@ def run_show_one(arguments: argparse.Namespace) -> dict:
         raise ValueError("--mass is required")
     payload = find_mass(Path(arguments.root), arguments.calendar, arguments.mass)
     document = payload.pop("_document")
+    if _calendars.PROPER_APPOINTMENT_FACTS in document:
+        payload[_calendars.PROPER_APPOINTMENT_FACTS] = _calendars.validate_proper_appointment_facts(document[_calendars.PROPER_APPOINTMENT_FACTS], arguments.calendar)
     arguments.appointed = appointed_propers(document, payload["mass"])
     # The recorded translations are merged through the same path the browser
     # gets and then filtered through the same rights rule.
@@ -4868,10 +4883,14 @@ def run_show(arguments: argparse.Namespace) -> dict:
         return run_show_one(arguments)
 
     payloads = []
+    # Keep each reading's resolved passages and absence classes out of the payload.
+    readings = []
     for mass in masses:
         one = argparse.Namespace(**vars(arguments))
         one.mass = mass
         payloads.append(run_show_one(one))
+        readings.append(one)
+    arguments.batch_readings = readings
     return {"masses": payloads}
 
 
@@ -5357,6 +5376,15 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if "calendars" in payload:
             return render_listing(payload)
+        if "masses" in payload:
+            status = 0
+            for index, (mass, one) in enumerate(
+                zip(payload["masses"], arguments.batch_readings)
+            ):
+                if index:
+                    print()
+                status = max(status, render(mass, one))
+            return status
         return render_reading(
             payload,
             arguments.lang,

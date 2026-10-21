@@ -170,6 +170,30 @@ presentation changes retain them. The map selects groups already supplied by
 the generated source data. It creates no appointments, inferred applicability
 or allowed-path relation between source-correlated groups.
 
+The producer's exact `appointment_identity` is distinct from terminal wording
+provenance. The calendar schema owns anchored groups, optional source-qualified
+`seat: reading-1`, applicability facts and explicit inherited-group replacements.
+Shared Seating validates these before either framed or unframed execution.
+Day consumes the existing derived owner season and exact selected source Mass
+identity. Calendar-independent Propers may qualify a seasonal view by an
+explicit held option, never by inventing a date. An explicit choice cannot
+attest unknown subject eligibility; an option covering the whole unknown
+subject domain remains selectable without asserting that fact.
+Source-use facts additionally require the shared owner's exact positive
+canonical winner, candidate and selected said-readable tuple. Borrowed-winner
+context does not establish usage for a different selected commemoration.
+Propers and incomplete canonical context leave source use unknown; source
+choices and URL state cannot supply that fact.
+Unsupported inherited-recension applicability remains a text-free
+`appointment_applicability` marker and refuses execution; it is not a
+proper-body witness gap. See the
+[calendar schema](../src/sources/calendars/README.md#source-owned-applicability-and-exact-choice-anchors).
+
+Mixed owned text follows the composed-text witness/absence selector. Its
+optional `selected.scriptureComponents` carries only Bible ID, numbering and
+references; it does not replace a missing whole chant body. Pure Scripture
+continues through its existing Bible reconstruction selector.
+
 Day Compare fixes the state's civil date and a named territorial context, then
 resolves each edition side independently before comparing semantic units.
 Propers Compare fixes corresponding edition-qualified formularies and rejects

@@ -2235,9 +2235,15 @@ process.stdout.write(JSON.stringify({
             # stored P./R. letters become independently checked speaker cues.
             # Three source fragments remain two target speaker spans inside
             # one unchanged event; all source words and event order survive.
+            # Re-pinned 2026-10-21 against 1498adefe: exactly two of 67
+            # events change, only in citation apparatus. The Entrance Antiphon
+            # now carries source-checked Vulgate Psalm 69 / Hebrew Psalm 70;
+            # the Communion alternative honors John 6's existing unrecorded
+            # Hebrew-addressing stance through the shared citation owner.
+            # All event positions and every non-citation field are unchanged.
             "ot_18_text": (
                 67,
-                "08c8e30c67d3b1f86a62c44ae7183874df3043dcad9bcfb2177926359349ceb6",
+                "544006efae120118b383881b6ec7b20bd5795b8c463656c39f3c6379e5aa2d8d",
             ),
         }
         for key, (count, wanted_digest) in expected.items():
@@ -2900,16 +2906,23 @@ class FormularyPage(unittest.TestCase):
         # Re-pinned 2026-10-19 (C2 gap G3): Advent I's Collect, Secret and
         # Postcommunion English absences changed state from rights-restricted
         # to unavailable; nothing else in these rows changed.
+        # Re-pinned 2026-10-21 against 1498adefe: Advent I changes only
+        # Epistle.text and its explicit English absence, from d43007dd0's
+        # independently collated 57-word Mame reading (exact-primary fixture).
+        # OT-18 changes only its source-checked Psalm 69 numbering and the
+        # shared owner's existing John 6 Hebrew-addressing refusal, covered by
+        # the antiphon-numbering and Proper-citation-divergence regressions.
+        # Every other field in this projection and all ten/eleven rows remain.
         expected = {
             "roman-1962": (
                 "advent-1",
                 10,
-                "8e36c79bba3591bbf94933c71422f087f6a1e778b1970e4138962b36785f81ea",
+                "a56e18c2c969205706010fddf708825f488822e5ded71733dcbb4eb58606b7f3",
             ),
             "postconciliar": (
                 "ot-18",
                 11,
-                "0edc91f08a6fd5451bfe5fc53607e4ccba60e73993219e970bdbce81ba0b6ec9",
+                "e3f087b4bf34a32bff82ae866299efc0b920f686efc76cd0dd7b4e02f2f6fc70",
             ),
         }
         keys = (

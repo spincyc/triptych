@@ -75,7 +75,7 @@ INDEX_OWNED = ("edition", "edition_short")
 # evidence that the reference is the book's and not the reader's.
 TAKES_FROM = "takes_from"
 COMMON_SETS = "common_sets"
-REFERENCE_FIELDS = ("mass", "form", "proper", "citation", "note", COMMON_SETS)
+REFERENCE_FIELDS = ("mass", "form", "proper", "citation", "note", COMMON_SETS, "appointment_overrides")
 # A proper that takes its text from elsewhere holds no text of its own. Naming
 # the slot twice is the restatement this key exists to remove, so the incipit
 # comes from the resolved proper and may not be retyped beside the reference.
@@ -88,11 +88,216 @@ REFERENCE_EXCLUDES = (
 # before/after-frame material are facts about the exact appointment, including
 # a referenced appointment, rather than about a same-named slot everywhere.
 ORDINARY_DISPOSITION = "ordinary_disposition"
-ORDINARY_DISPOSITION_KINDS = frozenset({"alternative", "unplaced"})
+ORDINARY_DISPOSITION_KINDS = frozenset({"alternative", "unplaced", "conditional"})
 ORDINARY_ALTERNATIVE_FIELDS = frozenset({"kind", "group", "option", "basis"})
 ORDINARY_UNPLACED_FIELDS = frozenset({"kind", "group", "region", "basis"})
 ORDINARY_UNPLACED_REGIONS = frozenset({"before-frame", "after-frame"})
 ORDINARY_DISPOSITION_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
+PROPER_APPOINTMENT_FACTS = "proper_appointment_facts"
+APPOINTMENT_APPLICABILITY = "appointment_applicability"
+
+
+def validate_appointment_applicability(value: object, calendar: str | None = None) -> dict:
+    """A derived applicability boundary, independent of text availability."""
+    fields = {"state", "reason", "source_edition", "target_edition", "basis"}
+    if not isinstance(value, dict) or set(value) != fields:
+        raise ValueError("appointment_applicability requires exact state, reason, source_edition, target_edition, basis")
+    if value["state"] != "unresolved" or value["reason"] != "foreign-source-applicability":
+        raise ValueError("appointment_applicability has an unsupported state or reason")
+    for field in ("source_edition", "target_edition"):
+        if not isinstance(value[field], str) or not ORDINARY_DISPOSITION_ID.fullmatch(value[field]):
+            raise ValueError(f"appointment_applicability {field} must be a lowercase kebab-case edition code")
+    if value["source_edition"] == value["target_edition"]:
+        raise ValueError("appointment_applicability source and target editions must differ")
+    if calendar is not None and value["target_edition"] != calendar:
+        raise ValueError("appointment_applicability names another target edition")
+    if not isinstance(value["basis"], str) or not value["basis"].strip():
+        raise ValueError("appointment_applicability basis must be nonempty")
+    return dict(value)
+
+
+def validate_appointment_coordinate(value: object) -> dict:
+    """An exact authored source coordinate; never a display-label join."""
+    if not isinstance(value, dict) or set(value) != {"mass", "form_id", "proper", "occurrence"}:
+        raise ValueError("appointment coordinate requires exactly mass, form_id, proper, occurrence")
+    for field in ("mass", "form_id"):
+        if not isinstance(value[field], str) or not ORDINARY_DISPOSITION_ID.fullmatch(value[field]):
+            raise ValueError(f"appointment coordinate {field} must be a lowercase kebab-case id")
+    if not isinstance(value["proper"], str) or not value["proper"].strip():
+        raise ValueError("appointment coordinate proper must be a nonempty source name")
+    if type(value["occurrence"]) is not int or value["occurrence"] < 1:
+        raise ValueError("appointment coordinate occurrence must be a positive integer")
+    return dict(value)
+
+
+def validate_appointment_when(value: object) -> dict:
+    if not isinstance(value, dict) or set(value) != {"fact", "in"}:
+        raise ValueError("appointment when requires exactly fact and in")
+    if not isinstance(value["fact"], str) or not ORDINARY_DISPOSITION_ID.fullmatch(value["fact"]):
+        raise ValueError("appointment when.fact must be a lowercase kebab-case id")
+    values = value["in"]
+    if (not isinstance(values, list) or not values
+            or any(not isinstance(item, str) or not ORDINARY_DISPOSITION_ID.fullmatch(item) for item in values)
+            or len(set(values)) != len(values)):
+        raise ValueError("appointment when.in must contain distinct enum ids")
+    return {"fact": value["fact"], "in": list(values)}
+
+
+def validate_proper_appointment_facts(value: object, calendar: str, *, document: dict | None = None) -> dict:
+    if not isinstance(value, dict) or not value:
+        raise ValueError(f"{PROPER_APPOINTMENT_FACTS} must be a nonempty mapping")
+    for identifier, fact in value.items():
+        if not isinstance(identifier, str) or not ORDINARY_DISPOSITION_ID.fullmatch(identifier):
+            raise ValueError("proper appointment fact ids must be lowercase kebab-case")
+        selectors = {"season_values", "mass_values", "usage_values"} & set(fact) if isinstance(fact, dict) else set()
+        if not isinstance(fact, dict) or len(selectors) != 1 or set(fact) != {"edition", "values", "basis", *selectors}:
+            raise ValueError(f"appointment fact {identifier!r} has an unsupported shape")
+        if fact["edition"] != calendar:
+            raise ValueError(f"appointment fact {identifier!r} names a different edition")
+        values = fact["values"]
+        if (not isinstance(values, list) or not values
+                or any(not isinstance(item, str) or not ORDINARY_DISPOSITION_ID.fullmatch(item) for item in values)
+                or len(values) != len(set(values))):
+            raise ValueError(f"appointment fact {identifier!r} values must be distinct enum ids")
+        if "season_values" in fact:
+            seasons = fact["season_values"]
+            if not isinstance(seasons, dict) or not seasons:
+                raise ValueError(f"appointment fact {identifier!r} season_values must be a nonempty mapping")
+            if any(not isinstance(season, str) or not ORDINARY_DISPOSITION_ID.fullmatch(season)
+                   or (answer is not None and answer not in values) for season, answer in seasons.items()):
+                raise ValueError(f"appointment fact {identifier!r} has an unknown season value")
+        elif "mass_values" in fact:
+            bindings = fact["mass_values"]
+            if not isinstance(bindings, dict) or not bindings:
+                raise ValueError(f"appointment fact {identifier!r} mass_values must be a nonempty mapping")
+            known_masses = mass_index(document) if document is not None else None
+            for mass, binding in bindings.items():
+                if not isinstance(mass, str) or not ORDINARY_DISPOSITION_ID.fullmatch(mass):
+                    raise ValueError(f"appointment fact {identifier!r} mass_values requires exact source Mass keys")
+                if (not isinstance(binding, dict) or set(binding) != {"value", "basis"}
+                        or not isinstance(binding["value"], str) or binding["value"] not in values
+                        or not isinstance(binding["basis"], str) or not binding["basis"].strip()):
+                    raise ValueError(f"appointment fact {identifier!r} mass_values requires exact declared value and nonempty basis")
+                if known_masses is not None and mass not in known_masses:
+                    raise ValueError(f"appointment fact {identifier!r} mass_values names an unheld source Mass {mass!r}")
+        else:
+            usages = fact["usage_values"]
+            if not isinstance(usages, dict) or set(usages) != {"own-sunday", "borrowed-feria"}:
+                raise ValueError(f"appointment fact {identifier!r} usage_values requires exactly own-sunday and borrowed-feria")
+            if any(not isinstance(answer, str) or answer not in values for answer in usages.values()):
+                raise ValueError(f"appointment fact {identifier!r} usage_values requires declared enum strings")
+        if not isinstance(fact["basis"], str) or not fact["basis"].strip():
+            raise ValueError(f"appointment fact {identifier!r} requires a nonempty basis")
+    return value
+
+
+class _AppointmentProper(dict):
+    """Resolver-only metadata; dict serialization cannot leak the trace."""
+    def __init__(self, proper: dict, identity: dict | None, source_proper: dict | None = None, replacement: dict | None = None, applicability: dict | None = None):
+        super().__init__(proper)
+        self.appointment_identity = identity
+        self.source_proper = source_proper if source_proper is not None else getattr(proper, "source_proper", proper)
+        self.appointment_replacement = replacement if replacement is not None else getattr(proper, "appointment_replacement", None)
+        self.appointment_applicability = applicability if applicability is not None else getattr(proper, "appointment_applicability", None)
+
+
+def validate_appointment_replacement(value: object) -> dict:
+    if not isinstance(value, dict) or set(value) != {"source_group", "anchor", "basis"}:
+        raise ValueError("appointment_replacement requires exact source_group, anchor and basis")
+    group = value["source_group"]
+    if not isinstance(group, dict) or set(group) != {"mass", "form_id", "id"} or any(not isinstance(item, str) or not ORDINARY_DISPOSITION_ID.fullmatch(item) for item in group.values()):
+        raise ValueError("appointment_replacement source_group must name an exact source owner/form/group")
+    validate_appointment_coordinate(value["anchor"])
+    if group["mass"] != value["anchor"]["mass"] or group["form_id"] != value["anchor"]["form_id"]:
+        raise ValueError("appointment_replacement anchor belongs to another source owner/form")
+    if not isinstance(value["basis"], str) or not value["basis"].strip():
+        raise ValueError("appointment_replacement basis must be nonempty")
+    return value
+
+
+def _new_appointment(proper: dict) -> bool:
+    disposition = proper.get(ORDINARY_DISPOSITION)
+    return isinstance(disposition, dict) and (
+        disposition.get("kind") == "conditional" or "anchor" in disposition or "when" in disposition
+    )
+
+
+def _appointment_rows(mass: dict, form: str, propers: list[dict], required: list[dict] = ()) -> list[dict]:
+    form_id = "main"
+    if form:
+        held = [one for one in mass.get("forms") or [] if one.get("name") == form]
+        form_id = held[0].get("id") if len(held) == 1 else None
+    seen: dict[str, int] = {}
+    result = []
+    for proper in propers:
+        if "appointment_identity" in proper or "appointment_replacement" in proper or APPOINTMENT_APPLICABILITY in proper:
+            raise ValueError("appointment identity/replacement/applicability metadata is derived, never source-authored")
+        name = str(proper.get("name") or "")
+        seen[name] = seen.get(name, 0) + 1
+        if isinstance(proper, _AppointmentProper):
+            result.append(proper)
+            continue
+        coordinate = {"mass": mass["key"], "form_id": form_id, "proper": name, "occurrence": seen[name]}
+        if _new_appointment(proper) or coordinate in required:
+            validate_appointment_coordinate(coordinate)
+            result.append(_AppointmentProper(proper, coordinate))
+        else:
+            result.append(proper)
+    return result
+
+
+def validate_appointment_overrides(value: object) -> list[dict]:
+    if not isinstance(value, list) or not value:
+        raise ValueError("appointment_overrides must be a nonempty array")
+    seen = set()
+    for replacement in value:
+        if not isinstance(replacement, dict) or set(replacement) != {"mass", "form_id", "group", "state", "by", "basis"}:
+            raise ValueError("appointment override requires exact source group owner, state, by and basis")
+        for field in ("mass", "form_id", "group"):
+            if not isinstance(replacement[field], str) or not ORDINARY_DISPOSITION_ID.fullmatch(replacement[field]):
+                raise ValueError(f"appointment override {field} must be an exact id")
+        selector = (replacement["mass"], replacement["form_id"], replacement["group"])
+        if selector in seen:
+            raise ValueError("appointment_overrides repeats a source group")
+        seen.add(selector)
+        if replacement["state"] != "replaced":
+            raise ValueError("appointment override state must be replaced")
+        if not isinstance(replacement["basis"], str) or not replacement["basis"].strip():
+            raise ValueError("appointment override basis must be nonempty")
+        if not isinstance(replacement["by"], list) or not replacement["by"]:
+            raise ValueError("appointment override by must contain exact local coordinates")
+        coordinates = [validate_appointment_coordinate(item) for item in replacement["by"]]
+        if len({tuple(item[field] for field in ("mass", "form_id", "proper", "occurrence")) for item in coordinates}) != len(coordinates):
+            raise ValueError("appointment override by repeats a coordinate")
+    return value
+
+
+def _appointment_contract_problems(document: dict, key: str, entries: list[tuple[str, dict, dict | None]]) -> list[str]:
+    problems = []
+    facts = document.get(PROPER_APPOINTMENT_FACTS)
+    if facts is not None:
+        try:
+            validate_proper_appointment_facts(facts, str(document.get("calendar") or ""), document=document)
+        except ValueError as error:
+            return [f"mass {key}: {error}"]
+    for _, proper, _ in entries:
+        applicability = getattr(proper, APPOINTMENT_APPLICABILITY, None)
+        if applicability is not None:
+            try:
+                validate_appointment_applicability(applicability, str(document.get("calendar") or ""))
+            except ValueError as error:
+                problems.append(f"mass {key}: {error}")
+        disposition = proper.get(ORDINARY_DISPOSITION)
+        if not isinstance(disposition, dict) or "when" not in disposition:
+            continue
+        try:
+            when = validate_appointment_when(disposition["when"])
+            fact = (facts or {}).get(when["fact"])
+            if not isinstance(fact, dict) or not set(when["in"]) <= set(fact["values"]):
+                raise ValueError("appointment when references an unknown fact or enum value")
+        except ValueError as error:
+            problems.append(f"mass {key}: {error}")
+    return problems
 
 # --------------------------------------------------------------- recensions
 #
@@ -603,6 +808,91 @@ def _residence_of(mass: dict, fallback: str) -> str:
     return str(held.get("text_from") or held.get("calendar") or fallback)
 
 
+def _without_inherited_proper_appointments(mass: dict, source_edition: str, target_edition: str) -> dict:
+    """Retain foreign words while marking unsupported appointment applicability."""
+    reference = reference_of(mass)
+    replacements = (reference or {}).get("appointment_overrides")
+    if replacements is not None:
+        validate_appointment_overrides(replacements)
+    replacement_members = {
+        tuple(coordinate[field] for field in ("mass", "form_id", "proper", "occurrence")): override["basis"]
+        for override in replacements or [] for coordinate in override["by"]
+    }
+
+    def rows_copy(rows: list, label: str, form_id: str) -> list:
+        projected = []
+        new_groups = set()
+        seen = {}
+        for proper in rows:
+            if not isinstance(proper, dict):
+                projected.append(proper)
+                continue
+            if any(field in proper for field in ("appointment_identity", "appointment_replacement", APPOINTMENT_APPLICABILITY)):
+                raise ValueError("appointment identity/replacement/applicability metadata is derived, never source-authored")
+            carried = dict(proper)
+            marker = getattr(proper, APPOINTMENT_APPLICABILITY, None)
+            if marker is not None:
+                marker = validate_appointment_applicability(marker)
+                marker["target_edition"] = target_edition
+            disposition = proper.get(ORDINARY_DISPOSITION)
+            basis = None
+            if _new_appointment(proper):
+                disposition = validate_ordinary_disposition(disposition)
+                basis = disposition["basis"]
+                if disposition["kind"] == "alternative":
+                    new_groups.add(disposition["group"])
+                    carried[ORDINARY_DISPOSITION] = {field: disposition[field] for field in ("kind", "group", "option", "basis")}
+                else:
+                    carried.pop(ORDINARY_DISPOSITION, None)
+            name = str(proper.get("name") or "")
+            seen[name] = seen.get(name, 0) + 1
+            coordinate = (str(mass.get("key") or ""), form_id, name, seen[name])
+            basis = basis or replacement_members.get(coordinate)
+            if basis is not None and marker is None:
+                marker = {"state": "unresolved", "reason": "foreign-source-applicability",
+                          "source_edition": source_edition, "target_edition": target_edition, "basis": basis}
+            if marker is not None:
+                marker = validate_appointment_applicability(marker, target_edition)
+                projected.append(_AppointmentProper(carried, None, getattr(proper, "source_proper", proper), applicability=marker))
+            else:
+                projected.append(carried if carried != proper else proper)
+        # Preserve a complete valid legacy exclusive grouping for diagnosis.
+        # A formerly anchored group which cannot satisfy that old contract
+        # loses only its presentation annotation; every member stays marked.
+        for group in new_groups:
+            members = [i for i, row in enumerate(projected) if isinstance(row, dict)
+                       and isinstance(row.get(ORDINARY_DISPOSITION), dict)
+                       and row[ORDINARY_DISPOSITION].get("group") == group]
+            probe = []
+            for row in projected:
+                if not isinstance(row, dict):
+                    continue
+                candidate = dict(row)
+                if not isinstance(candidate.get(ORDINARY_DISPOSITION), dict) or candidate[ORDINARY_DISPOSITION].get("group") != group:
+                    candidate.pop(ORDINARY_DISPOSITION, None)
+                probe.append(candidate)
+            invalid = ordinary_disposition_source_problems(str(mass.get("key") or ""), label, probe)
+            marker = next(getattr(projected[i], APPOINTMENT_APPLICABILITY, None) for i in members
+                          if getattr(projected[i], APPOINTMENT_APPLICABILITY, None) is not None)
+            for i in members:
+                row = projected[i]
+                carried = dict(row)
+                if invalid:
+                    carried.pop(ORDINARY_DISPOSITION, None)
+                projected[i] = _AppointmentProper(carried, None, getattr(row, "source_proper", row), applicability=marker)
+        return projected
+
+    carried = dict(mass)
+    if isinstance(mass.get("propers"), list):
+        carried["propers"] = rows_copy(mass["propers"], "", "main")
+    if isinstance(mass.get("forms"), list):
+        carried["forms"] = [dict(form, propers=rows_copy(form.get("propers") or [], str(form.get("name") or "form"), str(form.get("id") or "")))
+                            if isinstance(form, dict) else form for form in mass["forms"]]
+    if reference is not None and "appointment_overrides" in reference:
+        carried[TAKES_FROM] = {key: value for key, value in reference.items() if key != "appointment_overrides"}
+    return carried
+
+
 def _apply_departures(document: dict, base: dict, base_name: str) -> dict:
     calendar = str(document.get("calendar") or "")
     stated: dict[str, dict] = {}
@@ -620,15 +910,16 @@ def _apply_departures(document: dict, base: dict, base_name: str) -> dict:
             if not isinstance(mass, dict):
                 continue
             key = str(mass.get("key") or "")
+            inherited_mass = _without_inherited_proper_appointments(mass, base_name, calendar)
             departure = stated.pop(key, None)
             if departure is None:
                 # A multi-hop recension must retain the calendar in which the
                 # words actually reside. Re-stamping A's text as B merely
                 # because C inherits through B creates false provenance.
                 kept.append(
-                    dict(mass)
+                    dict(inherited_mass)
                     if isinstance(mass.get(RECENSION), dict)
-                    else _stamp(mass, base_name, "", "", stated=False)
+                    else _stamp(inherited_mass, base_name, "", "", stated=False)
                 )
                 continue
             kind = str(departure.get(DEPARTURE) or "")
@@ -640,7 +931,7 @@ def _apply_departures(document: dict, base: dict, base_name: str) -> dict:
                 # absence can never be silent.
                 continue
             if kind in DEPARTURE_OVERLAYS:
-                carried = dict(mass)
+                carried = dict(inherited_mass)
                 for field in OVERLAY_FIELDS:
                     if field in departure:
                         carried[field] = departure[field]
@@ -662,7 +953,7 @@ def _apply_departures(document: dict, base: dict, base_name: str) -> dict:
                 # stops the page claiming the base's text was checked.
                 kept.append(
                     _stamp(
-                        mass,
+                        inherited_mass,
                         _residence_of(mass, base_name),
                         kind,
                         basis,
@@ -1345,12 +1636,10 @@ def validate_ordinary_disposition(value: object) -> dict:
             f"{ORDINARY_DISPOSITION}.kind must be one of "
             f"{sorted(ORDINARY_DISPOSITION_KINDS)}, got {kind!r}"
         )
-    fields = (
-        ORDINARY_ALTERNATIVE_FIELDS
-        if kind == "alternative"
-        else ORDINARY_UNPLACED_FIELDS
-    )
-    unknown = sorted(str(field) for field in set(value) - fields)
+    fields = (ORDINARY_ALTERNATIVE_FIELDS if kind == "alternative" else
+              (frozenset({"kind", "group", "basis", "when"}) if kind == "conditional" else ORDINARY_UNPLACED_FIELDS))
+    allowed = fields | ({"anchor", "when", "seat"} if kind == "alternative" else set())
+    unknown = sorted(str(field) for field in set(value) - allowed)
     missing = sorted(str(field) for field in fields - set(value))
     if unknown:
         raise ValueError(
@@ -1377,6 +1666,15 @@ def validate_ordinary_disposition(value: object) -> dict:
             f"{ORDINARY_DISPOSITION}.region must be one of "
             f"{sorted(ORDINARY_UNPLACED_REGIONS)}, got {value.get('region')!r}"
         )
+    if "anchor" in value:
+        validate_appointment_coordinate(value["anchor"])
+    if "seat" in value:
+        if "anchor" not in value:
+            raise ValueError(f"{ORDINARY_DISPOSITION}.seat requires an anchored alternative")
+        if value["seat"] != "reading-1":
+            raise ValueError(f"{ORDINARY_DISPOSITION}.seat must be exactly 'reading-1'")
+    if "when" in value:
+        validate_appointment_when(value["when"])
     # Do not normalize, enrich, or drop evidence.  Public consumers receive the
     # same closed mapping the source supplied.
     return dict(value)
@@ -1396,6 +1694,8 @@ def ordinary_disposition_group_problems(
     problems: list[str] = []
     alternatives: dict[tuple[str, str], list[dict]] = {}
     unplaced: dict[tuple[str, str], list[dict]] = {}
+    conditionals: dict[tuple[str, str], list[dict]] = {}
+    member_rows: dict[tuple[str, str], list[dict]] = {}
     for form, proper, _ in entries:
         if ORDINARY_DISPOSITION not in proper:
             continue
@@ -1413,14 +1713,17 @@ def ordinary_disposition_group_problems(
             problems.append(f"{where}: {error}")
             continue
         identity = (form, disposition["group"])
+        member_rows.setdefault(identity, []).append(proper)
         if disposition["kind"] == "alternative":
             alternatives.setdefault(identity, []).append(disposition)
-        else:
+        elif disposition["kind"] == "unplaced":
             unplaced.setdefault(identity, []).append(disposition)
+        else:
+            conditionals.setdefault(identity, []).append(disposition)
 
     for (form, group), members in alternatives.items():
         where = f"mass {key}" + (f" form {form!r}" if form else "")
-        if (form, group) in unplaced:
+        if (form, group) in unplaced or (form, group) in conditionals:
             problems.append(
                 f"{where}: {ORDINARY_DISPOSITION} group {group!r} mixes "
                 "alternative and unplaced rows"
@@ -1437,6 +1740,34 @@ def ordinary_disposition_group_problems(
                 f"{where}: alternative {ORDINARY_DISPOSITION} group {group!r} "
                 "must carry one identical basis on every member"
             )
+        seats = [("seat" in member, member.get("seat")) for member in members]
+        if any(seat != seats[0] for seat in seats):
+            problems.append(f"{where}: alternative group {group!r} must carry one identical seat presence and value on every member")
+        anchors = [member.get("anchor") for member in members]
+        if any(anchor is not None for anchor in anchors):
+            if any(anchor is None or anchor != anchors[0] for anchor in anchors):
+                problems.append(f"{where}: anchored alternative group {group!r} must carry one identical anchor")
+            elif sum(getattr(row, "appointment_identity", None) == anchors[0]
+                     for row in member_rows[(form, group)]) != 1:
+                problems.append(f"{where}: anchored alternative group {group!r} anchor must be one exact member")
+            owners = {((getattr(row, "appointment_identity", None) or {}).get("mass"),
+                       (getattr(row, "appointment_identity", None) or {}).get("form_id"))
+                      for row in member_rows[(form, group)]}
+            if len(owners) != 1 or (None, None) in owners:
+                problems.append(f"{where}: anchored alternative group {group!r} mixes source owners")
+        for option in options:
+            whens = [member.get("when") for member in members if member["option"] == option]
+            if any(when != whens[0] for when in whens):
+                problems.append(f"{where}: alternative option {option!r} must carry one identical when")
+        if any("when" in member for member in members) and any("when" not in member for member in members):
+            problems.append(f"{where}: conditional alternatives must disposition applicability for every option")
+    for (form, group), members in conditionals.items():
+        if ((form, group) in alternatives or (form, group) in unplaced
+                or any(member["basis"] != members[0]["basis"] or member["when"] != members[0]["when"] for member in members)):
+            problems.append(f"mass {key}: conditional group {group!r} must have one kind, basis and when")
+        owners = {((getattr(row, "appointment_identity", None) or {}).get("mass"), (getattr(row, "appointment_identity", None) or {}).get("form_id")) for row in member_rows[(form, group)]}
+        if len(owners) != 1 or (None, None) in owners:
+            problems.append(f"mass {key}: conditional group {group!r} mixes source owners")
     for (form, group), members in unplaced.items():
         where = f"mass {key}" + (f" form {form!r}" if form else "")
         bases = {str(member["basis"]) for member in members}
@@ -1480,6 +1811,8 @@ def ordinary_disposition_source_problems(
             continue
         kind = str(disposition["kind"])
         group = str(disposition["group"])
+        if kind == "conditional" or (kind == "alternative" and "anchor" in disposition):
+            continue
         groups.setdefault((kind, group), []).append(index)
         if kind == "alternative":
             options.setdefault((group, str(disposition["option"])), []).append(index)
@@ -1534,6 +1867,8 @@ def resolve_propers(
     document: dict,
     mass: dict,
     chain: tuple[str, ...] = (),
+    *,
+    appointments: bool = False,
 ) -> tuple[list[tuple[str, dict, dict | None]], list[str]]:
     """A mass's propers as appointed, following every `takes_from` to its text.
 
@@ -1552,48 +1887,60 @@ def resolve_propers(
     """
     key = str(mass.get("key") or "")
     problems: list[str] = []
-    local_propers = [
+    raw_local_propers = [
         proper
         for proper in (mass.get("propers") or [])
         if isinstance(proper, dict)
     ]
+    reference = reference_of(mass)
+    replacement_groups = (reference or {}).get("appointment_overrides")
+    required = []
+    if replacement_groups is not None:
+        try:
+            validate_appointment_overrides(replacement_groups)
+            required = [coordinate for replacement in replacement_groups for coordinate in replacement["by"]]
+        except ValueError as error:
+            return [], [f"mass {key}: {error}"]
+    try:
+        local_propers = _appointment_rows(mass, "", raw_local_propers, required)
+    except ValueError as error:
+        return [], [f"mass {key}: {error}"]
     problems.extend(ordinary_disposition_source_problems(key, "", local_propers))
+    appointed_forms = []
     for form in mass.get("forms") or []:
         if not isinstance(form, dict):
             continue
         label = str(form.get("name") or "form")
-        form_propers = [
-            proper
-            for proper in (form.get("propers") or [])
-            if isinstance(proper, dict)
-        ]
+        try:
+            form_propers = _appointment_rows(mass, label, [proper for proper in form.get("propers") or [] if isinstance(proper, dict)])
+        except ValueError as error:
+            problems.append(f"mass {key}: {error}")
+            continue
+        appointed_forms.append((label, form_propers))
         problems.extend(
             ordinary_disposition_source_problems(key, label, form_propers)
         )
-    reference = reference_of(mass)
     if reference is None:
         base: list[tuple[str, dict, dict | None]] = [
             ("", proper, None)
-            for proper in (mass.get("propers") or [])
-            if isinstance(proper, dict)
+            for proper in local_propers
         ]
-        for form in mass.get("forms") or []:
-            if not isinstance(form, dict):
-                continue
-            label = str(form.get("name") or "form")
+        for label, form_propers in appointed_forms:
             base.extend(
                 (label, proper, None)
-                for proper in (form.get("propers") or [])
-                if isinstance(proper, dict)
+                for proper in form_propers
             )
     else:
-        overrides = [p for p in (mass.get("propers") or []) if isinstance(p, dict)]
-        local_override_families = {
-            proper_family(str(proper.get("name") or "")) for proper in overrides
-        }
-        base, common_families, problems = _resolve_reference(
+        overrides = local_propers
+        local_override_families = common_set_local_override_families(mass, overrides)
+        base, common_families, reference_problems = _resolve_reference(
             document, mass, reference, chain, local_override_families
         )
+        problems.extend(reference_problems)
+        try:
+            base, overrides = _apply_appointment_overrides(base, overrides, replacement_groups or [])
+        except ValueError as error:
+            return [], [*problems, f"mass {key}: {error}"]
         base = _apply_overrides(base, overrides, common_families)
         # A dated Mass may appoint the Common except for an own Collect family
         # whose wording is unavailable. Apply local overrides first, then
@@ -1626,21 +1973,105 @@ def resolve_propers(
         if taken is not None:
             resolved.append((label, taken, terminal or _provenance(inner, proper)))
     problems.extend(ordinary_disposition_group_problems(key, resolved))
+    problems.extend(_appointment_contract_problems(document, key, resolved))
+    if appointments:
+        resolved = [(label, _public_appointment_proper(proper), provenance) for label, proper, provenance in resolved]
     return resolved, problems
 
 
 def _appoint_resolved_proper(found: dict, wrapper: dict, wanted: str) -> dict:
     """Borrow target wording while retaining appointment-local structure."""
 
+    if (_new_appointment(found) or getattr(found, "appointment_replacement", None) is not None
+            or getattr(found, APPOINTMENT_APPLICABILITY, None) is not None):
+        wording = dict(found)
+        wording.pop(ORDINARY_DISPOSITION, None)
+        found = _AppointmentProper(wording, None, getattr(found, "source_proper", found))
     local_name = str(wrapper.get("name") or "")
-    if local_name == wanted and ORDINARY_DISPOSITION not in wrapper:
+    if (local_name == wanted and ORDINARY_DISPOSITION not in wrapper and not hasattr(wrapper, "appointment_identity")
+            and getattr(wrapper, APPOINTMENT_APPLICABILITY, None) is None):
         return found
     appointed = dict(found)
     if local_name != wanted:
         appointed["name"] = local_name
     if ORDINARY_DISPOSITION in wrapper:
         appointed[ORDINARY_DISPOSITION] = wrapper[ORDINARY_DISPOSITION]
+    identity = getattr(wrapper, "appointment_identity", None) or getattr(found, "appointment_identity", None)
+    if identity is not None or hasattr(found, "source_proper") or getattr(wrapper, APPOINTMENT_APPLICABILITY, None) is not None:
+        appointed = _AppointmentProper(appointed, identity, getattr(found, "source_proper", found), getattr(wrapper, "appointment_replacement", None) or getattr(found, "appointment_replacement", None), getattr(wrapper, APPOINTMENT_APPLICABILITY, None))
     return appointed
+
+
+def _public_appointment_proper(proper: dict) -> dict:
+    identity = getattr(proper, "appointment_identity", None)
+    applicability = getattr(proper, APPOINTMENT_APPLICABILITY, None)
+    if identity is None and applicability is None:
+        return proper
+    projected = _AppointmentProper(proper, identity, getattr(proper, "source_proper", proper))
+    if identity is not None:
+        projected["appointment_identity"] = validate_appointment_coordinate(identity)
+    if applicability is not None:
+        projected[APPOINTMENT_APPLICABILITY] = validate_appointment_applicability(applicability)
+    if getattr(proper, "appointment_replacement", None) is not None:
+        projected["appointment_replacement"] = validate_appointment_replacement(proper.appointment_replacement)
+    return projected
+
+
+def _apply_appointment_overrides(base, local, replacements):
+    """Replace an explicitly owned group at its exact source anchor, once."""
+    groups = {}
+    for index, (_, proper, _) in enumerate(base):
+        disposition = proper.get(ORDINARY_DISPOSITION)
+        identity = getattr(proper, "appointment_identity", None)
+        if not identity or not _new_appointment(proper):
+            continue
+        selector = (identity["mass"], identity["form_id"], disposition["group"])
+        groups.setdefault(selector, []).append(index)
+    selected = {(item["mass"], item["form_id"], item["group"]) for item in replacements}
+    for selector, indices in groups.items():
+        names = {base[index][1]["name"] for index in indices}
+        if selector not in selected and any(proper.get("name") in names for proper in local):
+            raise ValueError("local override collides with a source appointment group; explicit appointment_overrides is required")
+    remove = set()
+    insert = {}
+    used_local = set()
+    for replacement in replacements:
+        selector = (replacement["mass"], replacement["form_id"], replacement["group"])
+        indices = groups.get(selector)
+        if not indices:
+            raise ValueError("appointment override names no inherited source group")
+        disposition = base[indices[0]][1][ORDINARY_DISPOSITION]
+        if disposition["kind"] == "conditional" and len(indices) != 1:
+            raise ValueError("conditional appointment override requires one exact singleton anchor")
+        anchor = disposition.get("anchor") or getattr(base[indices[0]][1], "appointment_identity")
+        anchors = [index for index in indices if getattr(base[index][1], "appointment_identity", None) == anchor]
+        if len(anchors) != 1:
+            raise ValueError("appointment override group has no exact inherited anchor")
+        chosen = []
+        positions = []
+        for coordinate in replacement["by"]:
+            matches = [(i, p) for i, p in enumerate(local) if getattr(p, "appointment_identity", None) == coordinate]
+            if len(matches) != 1 or matches[0][0] in used_local:
+                raise ValueError("appointment override by must name each exact local source row once")
+            index, proper = matches[0]
+            used_local.add(index)
+            positions.append(index)
+            metadata = {"source_group": {"mass": selector[0], "form_id": selector[1], "id": selector[2]}, "anchor": anchor, "basis": replacement["basis"]}
+            validate_appointment_replacement(metadata)
+            chosen.append((base[anchors[0]][0], _AppointmentProper(proper, proper.appointment_identity, replacement=metadata), None))
+        if positions != sorted(positions):
+            raise ValueError("appointment override by must retain local source order")
+        remove.update(indices)
+        insert[anchors[0]] = chosen
+    chosen_names = {entry[1]["name"] for entries in insert.values() for entry in entries}
+    if any(proper.get("name") in chosen_names for i, proper in enumerate(local) if i not in used_local):
+        raise ValueError("appointment override replacement collides with another local source row")
+    result = []
+    for index, entry in enumerate(base):
+        result.extend(insert.get(index, []))
+        if index not in remove:
+            result.append(entry)
+    return result, [proper for i, proper in enumerate(local) if i not in used_local]
 
 
 def _provenance(reference: dict, proper: dict) -> dict:
@@ -1676,10 +2107,13 @@ def _apply_overrides(
             ORDINARY_DISPOSITION in inherited
             and ORDINARY_DISPOSITION not in replacement
         ):
-            return {
+            appointed = {
                 **replacement,
                 ORDINARY_DISPOSITION: inherited[ORDINARY_DISPOSITION],
             }
+            if hasattr(replacement, "appointment_identity"):
+                return _AppointmentProper(appointed, replacement.appointment_identity, replacement.source_proper, replacement.appointment_replacement, getattr(replacement, APPOINTMENT_APPLICABILITY, None))
+            return appointed
         return replacement
 
     for label, proper, provenance in base:
@@ -1712,6 +2146,39 @@ def proper_family(name: str) -> str:
     return name.split(" (", 1)[0]
 
 
+def common_set_local_override_families(
+    mass: dict, local_propers: list[dict] | None = None
+) -> set[str]:
+    """Families left for ordinary overrides after exact replacements consume rows."""
+    replacements = (reference_of(mass) or {}).get("appointment_overrides")
+    required = []
+    if replacements is not None:
+        validate_appointment_overrides(replacements)
+        required = [coordinate for replacement in replacements for coordinate in replacement["by"]]
+    if local_propers is None:
+        raw = [proper for proper in (mass.get("propers") or []) if isinstance(proper, dict)]
+        local_propers = _appointment_rows(mass, "", raw, required) if required else raw
+    return {
+        proper_family(str(proper.get("name") or ""))
+        for proper in local_propers
+        if getattr(proper, "appointment_identity", None) not in required
+    }
+
+
+def common_set_families_locally_overridden(
+    group: object, local_override_families: set[str]
+) -> bool:
+    """An omitted choice is harmless only when no declared family is borrowed."""
+    families = group.get("families") if isinstance(group, dict) else None
+    return (
+        isinstance(families, list)
+        and bool(families)
+        and all(isinstance(family, str) and bool(family) for family in families)
+        and len(set(families)) == len(families)
+        and set(families) <= local_override_families
+    )
+
+
 def _common_set_propers(
     target: dict,
     reference: dict,
@@ -1722,8 +2189,9 @@ def _common_set_propers(
 
     Common catalog entries remain a flat transcription of every printed
     alternative.  A whole-Mass reference must explicitly select one option or
-    declare the choice unresolved.  In the latter case the shared formulary is
-    still useful, but no alternative member is emitted as though appointed.
+    declare the choice unresolved, unless every family in that group is locally
+    replaced.  No alternative Common wording is emitted for a wholly replaced
+    or unresolved group.
     """
 
     propers = [p for p in (target.get("propers") or []) if isinstance(p, dict)]
@@ -1745,7 +2213,12 @@ def _common_set_propers(
 
     selections = selected_by_reference if isinstance(selected_by_reference, dict) else {}
     problems: list[str] = []
-    if not isinstance(selected_by_reference, dict):
+    omitted = COMMON_SETS not in reference
+    may_omit_group = omitted or bool(selections)
+    if (not isinstance(selected_by_reference, dict) or not selections) and not (
+        omitted and all(common_set_families_locally_overridden(group, local_override_families)
+                        for group in definitions.values())
+    ):
         problems.append(
             f"{where}: {TAKES_FROM} must disposition every target {COMMON_SETS} group"
         )
@@ -1766,13 +2239,31 @@ def _common_set_propers(
         if not isinstance(options, dict):
             problems.append(f"{group_where} targets malformed options")
             continue
+        group_names: set[str] = set()
         for members in options.values():
             if isinstance(members, list):
-                grouped_names.update(
+                group_names.update(
                     member for member in members if isinstance(member, str) and member
                 )
+        grouped_names.update(group_names)
         disposition = selections.get(group_id)
         if not isinstance(disposition, dict):
+            if (group_id not in selections and may_omit_group
+                    and common_set_families_locally_overridden(group, local_override_families)):
+                # Retain exactly one positional source anchor per family. The
+                # existing override pass consumes each before exposing a row;
+                # this selects no Common option or Common wording.
+                anchors: dict[str, str] = {}
+                for proper in propers:
+                    name = str(proper.get("name") or "")
+                    family = proper_family(name)
+                    if name in group_names and family in families:
+                        anchors.setdefault(family, name)
+                if set(anchors) == set(families):
+                    selected_names.update(anchors.values())
+                else:
+                    problems.append(f"{group_where} lacks a source anchor for every locally overridden family")
+                continue
             problems.append(f"{group_where} is not dispositioned")
             continue
         state = disposition.get("state")
@@ -1863,10 +2354,16 @@ def _resolve_reference(
         chosen, trouble = _form_propers(target, form)
         if trouble:
             return [], common_families, [f"{where}: {TAKES_FROM} {trouble}"]
+        try:
+            chosen = _appointment_rows(target, form, chosen)
+        except ValueError as error:
+            return [], common_families, [f"{where}: {error}"]
         provenance = {"mass": target_key, "form": form, "proper": "", "citation": str(reference.get("citation") or "")}
         return [("", p, dict(provenance, proper=str(p.get("name") or ""))) for p in chosen], common_families, set_problems
     filtered_target = dict(target)
-    filtered_target["propers"] = chosen_propers
+    raw_target_propers = [proper for proper in target.get("propers") or [] if isinstance(proper, dict)]
+    originals = {id(raw): appointed for raw, appointed in zip(raw_target_propers, _appointment_rows(target, "", raw_target_propers))}
+    filtered_target["propers"] = [originals[id(proper)] for proper in chosen_propers]
     inherited, problems = resolve_propers(document, filtered_target, (*chain, key))
     problems = [*set_problems, *problems]
     citation = str(reference.get("citation") or "")
@@ -1929,6 +2426,10 @@ def _resolve_proper(
         candidates, trouble = _form_propers(target, form)
         if trouble:
             return None, None, [f"{where}: {TAKES_FROM} {trouble}"]
+        try:
+            candidates = _appointment_rows(target, form, candidates)
+        except ValueError as error:
+            return None, None, [f"{where}: {error}"]
         wanted = str(reference.get("proper") or name)
         for found in candidates:
             if str(found.get("name")) != wanted:

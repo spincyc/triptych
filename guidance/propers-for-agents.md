@@ -25,7 +25,8 @@ until collated against the controlling edition. Do not cite one as evidence.
 Header keys, all required: `schema`, `calendar`, `edition`, `series`, `ordering`,
 `registry`, `orthography`, `citation_convention`, `verification`. Plus
 `psalm_numbering` (`vulgate` or `hebrew`), and optionally `conventions`,
-`open_collation_items`, `citation_divergences`, `psalm_numbering_exceptions`.
+`open_collation_items`, `citation_divergences`, `psalm_numbering_exceptions`,
+`proper_appointment_facts`.
 
 `sections` is the **single canonical mass list**. A top-level `masses` key is
 rejected. Each section carries `kind` ∈ {`seasonal`, `christological`, `marian`,
@@ -67,7 +68,9 @@ A proper requires `name` and a `source`, unless it carries `takes_from`:
 | `mixed` | both | — |
 
 Optional on a proper: `incipit`, `notes`, `psalm_numbering`, `cycles`,
-`weekday_cycles`.
+`weekday_cycles`, `ordinary_disposition`. The calendar README owns source
+conditions, exact choice anchors, source-qualified seats and group overrides;
+use those instead of flattening mutually exclusive Common appointments.
 
 **The English is not in `propers.yaml`.** No proper in either calendar carries a
 `translations` key; the schema allows one and nothing uses it. Translations live
@@ -247,21 +250,26 @@ not print a formulary at all; they print a directive, e.g. for 8 August:
     Missa Os iusti, de Communi Confessoris non Pontificis I loco [24],
     praeter orationem sequentem:
 
-That is a `takes_from` and a proper Collect, nothing more, and the bracketed
-number is the Missal's own reference into the Commune Sanctorum. 187 such
-directives carry one. Join on the NUMBER, not on the Introit incipit: `Os iusti`
-heads both the Confessor-not-a-Bishop Mass and the Abbots' Mass, and `Me
-exspectaverunt` heads both a Virgins' and a non-Virgins' Mass, so the incipit
-alone is ambiguous where the number never is. The Commons are already complete,
-so a large part of what looks like missing text is a missing pointer.
+That is a `takes_from` and an own Collect. Read the complete directive,
+including retained orations or readings, the named Common, its ordinal and the
+edition's page span. Neither an incipit nor a bracket number is a unique join:
+Thomas of Villanova explicitly appoints `Statuit`, Bishop I, with interior
+page `[20]`, which also begins Bishop II. The image-checked referral record
+retains that printed page while selecting the named first Mass. A neighboring
+column's prayers or readings must not become the saint's own appointments.
 
-**The Commons are structurally populated; that is not a body-completeness claim.**
-The current Common section carries 30 Masses and 358 direct proper nodes: 214
-scripture or mixed appointments, 111 composed nodes, and 33 proper references.
-It carries zero literal Latin bodies. The composed appointments are typed
-unavailable or resolve to such a node, and six targets expose mutually exclusive
-oration options through `common_sets`. Counts of nodes or resolved occurrences
-therefore establish appointment structure, not textual availability or collation.
+**Common rows do not establish body or option completeness.** The Common
+section contains literal Latin bodies with exact publication records, typed
+body gaps, references and independently selected oration/reading/chant options.
+Use the canonical census and exact per-body ledgers for current counts.
+Source-owned seasonal choices must not print regular, Tract and Paschal chants
+cumulatively. An incomplete mixed chant retains its whole-body absence beside
+its cited Bible components; a whole Bible verse is not its missing expression.
+The bounded source records distinguish 24 printed universal Common Mass forms,
+17 prayer-option sets and four additional-reading headings from the model's
+Doctor split and the separate Saturday BVM forms. Their remaining reading
+pools and source-fixed exceptions stay explicit; no complete Common claim is
+licensed by a node count.
 
 **Why those 55 days carry a text-free `Collect`, while the census reads zero
 unaccounted.** A day that takes a Common `praeter orationem`
@@ -606,7 +614,7 @@ carries the identical block.
 | roman-1962 | christological | 8 | 96 | 0 |
 | roman-1962 | marian | 18 | 134 | 0 |
 | roman-1962 | sanctoral | 307 | 1564 | 0 |
-| roman-1962 | common | 30 | 358 | 0 |
+| roman-1962 | common | 30 | 382 | 0 |
 | postconciliar | seasonal | 390 | 2160 | 0 |
 | postconciliar | christological | 7 | 69 | 0 |
 | postconciliar | marian | 14 | 52 | 0 |
@@ -633,19 +641,19 @@ carries the identical block.
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 8 | 491 | 619 |
-| Propers | 0 | 3520 | 3051 |
+| Propers | 0 | 3544 | 3051 |
 | — named `Placeholder` | 0 | 0 | 0 |
 | — inside a `forms` block | 0 | 196 | 191 |
 | — carrying a `cycles` mapping | 0 | 0 | 295 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 410 |
 | Masses holding only placeholders | 0 | 0 | 0 |
 | Masses taking a formulary from another entry | 0 | 165 | 0 |
-| Propers taking their text from another entry | 0 | 70 | 49 |
-| Propers that are not placeholders | 0 | 3520 | 3051 |
-| — of those, scripture-bearing | 0 | 2232 | 2680 |
-| Encoded passages | 0 | 2654 | 3639 |
+| Propers taking their text from another entry | 0 | 79 | 49 |
+| Propers that are not placeholders | 0 | 3544 | 3051 |
+| — of those, scripture-bearing | 0 | 2245 | 2680 |
+| Encoded passages | 0 | 2667 | 3639 |
 | Distinct books cited | 0 | 57 | 73 |
-| Distinct slot names | 0 | 121 | 100 |
+| Distinct slot names | 0 | 126 | 100 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
 `tools/mass-propers census --write`, which is the only thing that writes the

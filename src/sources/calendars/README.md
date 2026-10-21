@@ -403,7 +403,7 @@ citation it cannot encode without guessing rather than writing a wrong range.
 - `notes` records a structural fact — a conditional element, an appointed
   alternative, a long and short form — in one short sentence.
 - `ordinary_disposition` records the exact source row's non-cumulative
-  relationship to the normal Ordinary frame. It has one of two closed shapes:
+  relationship to the normal Ordinary frame. It has three closed kinds; the existing alternative and unplaced shapes are:
 
   ```yaml
   ordinary_disposition:
@@ -429,14 +429,106 @@ citation it cannot encode without guessing rather than writing a wrong range.
   must retain at least two distinct options for the group and every member must
   carry the same basis. One option may intentionally cover several consecutive
   rows as a bundle only when those rows belong to the same semantic Ordinary
-  seat. Each group and each multi-row option is one contiguous source-order
-  run. Source order selects nothing, and names do not cause rows to be inferred
+  seat. Without an explicit anchor, each group and each multi-row option is
+  one contiguous source-order run. Source order selects nothing, and names do not cause rows to be inferred
   into a group. The union of `before-frame` rows is an exact prefix of the
   formulary and the union of `after-frame` rows is an exact suffix. Resolution
   validates the groups again, so removing an option or leaving an orphan
   annotation fails instead of silently changing the appointment.
 - `takes_from` says where a text is printed instead of printing it again. See
   the next section.
+
+
+### Source-owned applicability and exact choice anchors
+
+The optional top-level `proper_appointment_facts` maps a stable fact ID to
+`edition`, `values`, `basis` and exactly one selector: `season_values`,
+`mass_values` or `usage_values`. Values are unique nonempty source-owned enum IDs. Each owner
+season maps to one value or explicit `null`. A `mass_values` selector maps only
+positive exact source Mass keys to `{value, basis}`; each binding states its
+held source heading or rubric and one declared value. Missing keys have unknown
+eligibility, with no default. Labels, biographies and civil dates establish no
+subject binding. The edition must be this source calendar. The shared
+`ordinary-seating.js::prepareProperAppointments` consumes Day's existing derived
+season and date or the exact selected source Mass identity; it computes no
+calendar arithmetic. Unknown facts or unsupported conditions do not select a
+normal option.
+
+An explicit choice cannot attest unknown source-Mass eligibility. An option
+whose condition covers the entire unknown domain can still be selected without
+asserting a subject fact. The Common non-Virgins II principal Lesson is
+universally eligible within its source group; its additional Epistle is an
+optional `pro Vidua` reading. Six exact dated source headings establish widow
+eligibility and retain both options, never a cumulative or mandatory substitute.
+
+`usage_values` is a closed map with exactly `own-sunday` and `borrowed-feria`,
+each naming one declared value. Shared Seating derives usage once from the
+original canonical branch, selected readable, exact source Mass and form. A
+settled, said own Sunday requires matching winner/readable/candidate identities,
+an explicit absent borrowed formulary and temporal source provenance. A said
+borrowed feria requires matching borrowed-formulary and current-Mass keys,
+ferial source provenance and the same settled winner/readable/candidate checks.
+Missing or mismatched evidence, an unused advertised formulary, another
+readable, a commemoration or calendar-independent Propers leaves usage unknown.
+Neither an option nor a URL can attest usage. The CLI passes the original
+canonical context to this same owner and preserves the selected selector map
+in the adapter's fact identity; it does not implement a second usage rule.
+
+The four Advent Sunday Alleluia appointments use this selector to distinguish
+their own Sunday provision from actual ferial reuse. This does not authorize
+a general ferial chant omission or establish another season's rubric.
+
+An alternative disposition may add `anchor` and `when`. `anchor` is the exact
+source coordinate `{mass, form_id, proper, occurrence}`, with positive one-based
+occurrence and the internal single-form ID `main`. Every member carries the
+same anchor, owner, form and basis, and the anchor names exactly one member.
+This permits a distant additional reading to remain at its printed source
+position while the choice appears at its principal reading seat. Original
+source ordinals remain intact. `when` is exactly `{fact, in: [enum IDs]}`;
+every option in a conditional group states its applicability, with identical
+conditions on all members of an option. Zero applicable options refuse; one
+proved applicable option selects deterministically; multiple held options
+require an explicit choice.
+
+A conditional singleton uses exactly
+`{kind: conditional, group, basis, when}`. It has no option or anchor. A proved
+false condition makes the appointment inactive; an unknown condition remains
+a typed applicability obligation. A singleton printed acclamation must not be
+invented into an alternative group merely to record its season.
+
+New anchored alternatives must share one established semantic seat in both
+framed and unframed execution. The one source-qualified exception is optional
+`seat: reading-1`, allowed only beside `kind: alternative` and `anchor`.
+Every group member must carry the same qualification, and every known native
+role must agree: a Gospel cannot become a first reading through this field.
+The Common Single Martyr III Lesson, source unit4217, and its additional
+Epistle4237 qualify their exact anchored group this way. This neither renames
+the Lesson nor adds a global Lesson mapping, cross-edition correspondence or
+an Ember-reading rule.
+
+The resolver derives `appointment_identity` before following a wording
+reference. Its coordinate identifies the appointment; `taken_from` and the
+existing text/translation identity still identify the terminal wording owner.
+Source files may not author this derived identity. Whole-Mass inheritance
+retains appointment conditions. A single-Proper wording reference does not
+inherit a target's new applicability unless its own wrapper states it.
+
+At a foreign inherited-recension boundary, every new anchor, `when`, `seat` or
+conditional disposition receives derived, text-free `appointment_applicability`:
+`{state: unresolved, reason: foreign-source-applicability, source_edition,
+target_edition, basis}`. The editions must be distinct and the target must be
+the current calendar. Raw words, rows and provenance remain generatable;
+valid legacy `{kind, group, option, basis}` fields remain diagnostic. Pure
+legacy groups with no new metadata remain unchanged. Execution refuses this
+unsupported applicability rather than treating it as unconditional or as a
+missing text body. This marker is derived only and cannot be source-authored.
+
+The bounded 1962 source records are
+`inventories/roman-1962-common-appointments-v1.toml` and
+`inventories/roman-1962-common-reading-appointments-v1.toml` (relative to
+`src/sources/`). Their source scopes, qualified exceptions and unresolved
+reading pools remain controlling; populated choice rows do not establish a
+complete Common corpus or annual eligibility.
 
 ## A mass may say where its text is printed
 
@@ -452,7 +544,8 @@ already disagreed at `caelestis` against `coelestis`, at `Caelestibus` against
 discrete verses.
 
 `takes_from` is a mapping. On a mass it takes `mass`, optionally `form`,
-`citation` and `note`; on a proper it also takes `proper`, defaulting to the
+`citation`, `note` and mass-only `appointment_overrides`; on a proper it also
+takes `proper`, defaulting to the
 referring proper's own name. `mass` names a key in **the same file** — a
 reference never crosses calendars, because the two books print different prayers
 under the same names. `citation` records the edition's own printed pointer, which
@@ -478,6 +571,19 @@ cycles and are refused.
   third-class saint is: the Mass of the Common, with the Collect of the saint.
   A local proper the referenced formulary does not print is appended rather than
   dropped.
+- A mass's `takes_from.appointment_overrides` may replace an exact inherited
+  appointment group. Each entry is exactly `{mass, form_id, group,
+  state: replaced, by: [source coordinates], basis}`. `by` names unique local
+  appointments in their exact source order. The resolver removes the entire
+  named inherited group and inserts those rows at its declared principal
+  anchor. It refuses unreached groups, nonlocal coordinates and implicit
+  collisions. Each replacement receives derived `appointment_replacement`
+  metadata with the source group, anchor and basis; shared runtime validation
+  requires the same functional seat. Conditions are those of the local rows,
+  never silently borrowed from the replaced group. Source files may not author
+  the derived marker. This is how Euphemia's expressly appointed Gospel
+  replaces the Common Gospel menu, and the nonbishop Doctor form retains its
+  own exact chant occurrences without a second inherited chant group.
 - A mass carrying `takes_from` may not also carry `forms`; a reference into a
   mass that *is* printed in forms must name which form.
 - One narrow mass-level absence may accompany `takes_from`: `text_status` with
@@ -819,7 +925,7 @@ owns the canon. Both run inside `make check` and need PyYAML
 | roman-1962 | christological | 8 | 96 | 0 |
 | roman-1962 | marian | 18 | 134 | 0 |
 | roman-1962 | sanctoral | 307 | 1564 | 0 |
-| roman-1962 | common | 30 | 358 | 0 |
+| roman-1962 | common | 30 | 382 | 0 |
 | postconciliar | seasonal | 390 | 2160 | 0 |
 | postconciliar | christological | 7 | 69 | 0 |
 | postconciliar | marian | 14 | 52 | 0 |
@@ -846,19 +952,19 @@ owns the canon. Both run inside `make check` and need PyYAML
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 8 | 491 | 619 |
-| Propers | 0 | 3520 | 3051 |
+| Propers | 0 | 3544 | 3051 |
 | — named `Placeholder` | 0 | 0 | 0 |
 | — inside a `forms` block | 0 | 196 | 191 |
 | — carrying a `cycles` mapping | 0 | 0 | 295 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 410 |
 | Masses holding only placeholders | 0 | 0 | 0 |
 | Masses taking a formulary from another entry | 0 | 165 | 0 |
-| Propers taking their text from another entry | 0 | 70 | 49 |
-| Propers that are not placeholders | 0 | 3520 | 3051 |
-| — of those, scripture-bearing | 0 | 2232 | 2680 |
-| Encoded passages | 0 | 2654 | 3639 |
+| Propers taking their text from another entry | 0 | 79 | 49 |
+| Propers that are not placeholders | 0 | 3544 | 3051 |
+| — of those, scripture-bearing | 0 | 2245 | 2680 |
+| Encoded passages | 0 | 2667 | 3639 |
 | Distinct books cited | 0 | 57 | 73 |
-| Distinct slot names | 0 | 121 | 100 |
+| Distinct slot names | 0 | 126 | 100 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
 `tools/mass-propers census --write`, which is the only thing that writes the

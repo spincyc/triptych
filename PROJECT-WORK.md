@@ -207,6 +207,44 @@ entrance, with zero browser/network diagnostics. Four other groups remain
 required; this is no claim of a complete Vigil or annual missal. All owned
 processes and listeners closed before the source freeze was released.
 
+### Common appointments and source applicability, 2026-10-21
+
+Twenty-six Roman 1962 Common and Euphemia formularies now retain their
+source-qualified reading, chant and prayer alternatives. Exact source anchors
+keep alternatives at their Ordinary seats; explicit replacements preserve own
+exceptions. Six source-headed widow bindings offer the principal lesson or the
+optional widow Epistle. Unknown subject eligibility remains unknown. Five new
+whole-body English absences are explicit, without replacing existing bodies.
+
+Advent Alleluias now follow the canonical selected Mass and actual use. The
+four Sunday chants remain available for their own Masses and the ten source-
+appointed borrowed ferias; nine advertised but unused cases cannot assert that
+use. Date-free Propers retain the source condition instead of guessing a day.
+The shared Python and browser owners validate the same source facts.
+
+A valid foreign static description can retain an unknown target-seat notice
+when no raw target seat was declared. Execution still refuses unsupported
+foreign applicability; a broken declared anchor is an error. Structured source
+validation checks every candidate while counting exact-seat alternatives once.
+Batch text rendering preserves each requested Mass's own context, including
+order and duplicates, and still refuses a later invalid request atomically.
+
+The integrated checkpoint passes 117 new Common owner tests, 172 existing
+reader/Ordinary and foreign-seat transport tests, 17 structured source tests,
+five batch-render tests and the focused Node checks. Full source validation and
+Ordinary checks pass. All seven Bible indexes and generated Propers/census are
+current; no Bible chapter text changed. The split Read publication gate also
+accepts the known optional applicability facts while retaining exact source,
+generation, catalog and payload binding; six boundary tests pass, including
+rejection of missing or forged facts and changed anchors. Whole Common bodies,
+remaining annual source repairs and the final 5,856-render execution remain
+separate obligations.
+
+The registry, exact release bindings and locked normal preview build and
+verification pass. Exactly 501 existing site inputs were refreshed; no new
+site inputs were adopted, and unrelated bindings were preserved. Eleven
+changed CLI examples were recaptured from successful real invocations.
+
 ## Missal reader C1 truthful coverage, 2026-10-19
 
 <!-- promised-deliverable: missal-reader-c1-coverage-2026-10-19 -->

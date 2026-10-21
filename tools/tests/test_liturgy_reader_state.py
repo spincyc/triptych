@@ -2514,6 +2514,48 @@ class ParityTests(unittest.TestCase):
             assert_subset(self, expected["events"], actual["events"], name + ".events")
             self.assertEqual(actual["coverage"], expected["coverage"], name)
             self.assertEqual(actual["explicitAbsences"], expected["explicitAbsences"], name)
+            self.assertEqual(actual["unresolvedChoices"], expected["unresolvedChoices"], name)
+
+    def test_date_free_advent_keeps_source_condition_and_literal_epistle(self) -> None:
+        fixture = fixture_named("propers-roman-1962-advent-1")
+        structure = json.loads((DATA / "structure/propers/roman-1962.json").read_text())
+        mass = next(row for row in structure["masses"] if row["key"] == "advent-1")
+        actual = node_call({"op": "adapt-fixture", "fixture": fixture})
+        alleluia = mass["propers"][4]
+        self.assertEqual(alleluia["name"], "Alleluia")
+        self.assertEqual(alleluia["ordinary_disposition"]["kind"], "conditional")
+        self.assertNotIn("proper/roman-1962/advent-1/005", [row["id"] for row in actual["events"]])
+        condition, = actual["unresolvedChoices"]
+        self.assertEqual(condition["id"],
+                         "proper-condition/roman-1962/advent-1/main/advent-1-alleluia-use")
+        self.assertEqual(condition["reason"], alleluia["ordinary_disposition"]["basis"])
+        fact = structure["proper_appointment_facts"][alleluia["ordinary_disposition"]["when"]["fact"]]
+        self.assertEqual(fact["usage_values"],
+                         {"own-sunday": "chant-present", "borrowed-feria": "chant-omitted"})
+        self.assertEqual([row["id"] for row in condition["options"]], fact["values"])
+        self.assertEqual(condition["sourceHooks"], [{
+            "kind": "proper-appointment",
+            "id": json.dumps(alleluia["appointment_identity"], sort_keys=True, separators=(",", ":")),
+        }])
+        self.assertEqual(actual["coverage"], fixture["expected"]["coverage"])
+        self.assertEqual(actual["explicitAbsences"], fixture["expected"]["explicitAbsences"])
+
+        # The independently held adapted reading is the literal Missal body.
+        # Its Bible appointment remains separate apparatus, not replacement words.
+        epistle = mass["propers"][2]
+        selected = next(row["selected"] for row in actual["events"]
+                        if row["id"] == "proper/roman-1962/advent-1/003")
+        self.assertEqual(epistle["source"], "mixed")
+        self.assertEqual([row["ref"] for row in epistle["citations"]], ["Romans 13:11-14"])
+        self.assertEqual(selected["kind"], "composed")
+        self.assertEqual(selected["language"], "la")
+        self.assertEqual(selected["text"], epistle["text"])
+        self.assertEqual(hashlib.sha256(selected["text"].encode()).hexdigest(),
+                         epistle["latin"]["text_sha256"])
+        self.assertTrue(selected["text"].endswith("Christum.\n"))
+        self.assertNotIn("et carnis curam", selected["text"])
+        self.assertEqual(selected["references"], [])
+        self.assertIsNone(selected["bible"])
 
     def test_inherited_pre_1955_propers_are_partial_not_complete(self) -> None:
         recension = {
@@ -2542,38 +2584,56 @@ class ParityTests(unittest.TestCase):
             ))
             return {row["scope"]: row for row in result["coverage"]}
 
-        # Advent I's three orations are held under roman-1962 since 3f86eed68.
-        # The pre-1955 projection inherits them uncollated, so the recension
-        # gate in `_proper_latin.publication_records` withholds all three:
-        # no proper-body claim remains and the Latin is reported withheld.
-        advent = coverage("advent-1", "seasonal")
-        self.assertEqual(advent.get("formulary:advent-1"), {
-            "state": "supported",
-            "scope": "formulary:advent-1",
-            "completeness": "partial",
-            "reasons": [recension],
-        })
-        self.assertEqual(advent.get("proper-original:la"), {
-            "state": "unavailable",
-            "scope": "proper-original:la",
-            "reasons": [{"kind": "text-withheld", "count": 3}],
-        })
-
-        # St John Vianney's own Collect stays rights-withheld 1962 matter, so
-        # its proper-body claim is inherited beside the recension reason.
-        key = "s-ioannis-mariae-vianney-confessoris"
-        vianney = coverage(key, "sanctoral")
-        self.assertEqual(vianney.get("formulary:" + key), {
+        # Sacred Heart has no conditional inherited appointments. Its Collect
+        # and Secret remain unheld bodies; the held 1962 Postcommunion is
+        # withheld in the uncollated pre-1955 projection.
+        key = "sacred-heart"
+        inherited = coverage(key, "seasonal")
+        self.assertEqual(inherited.get("formulary:" + key), {
             "state": "supported",
             "scope": "formulary:" + key,
             "completeness": "partial",
             "reasons": [recension, {
                 "kind": "text-not-held",
-                "count": 1,
+                "count": 2,
                 "repositoryTerm": "proper-body",
-                "claims": [{"proper": "Collect", "cycle": None}],
+                "claims": [
+                    {"proper": "Collect", "cycle": None},
+                    {"proper": "Secret", "cycle": None},
+                ],
             }],
         })
+        self.assertEqual(inherited.get("proper-original:la"), {
+            "state": "unavailable",
+            "scope": "proper-original:la",
+            "reasons": [
+                {"kind": "text-withheld", "count": 1},
+                {"kind": "text-not-held", "count": 2},
+            ],
+        })
+
+        # New 1962 Advent-use and Common conditions cannot establish pre-1955
+        # applicability. These remain explicit refusals, not body-gap results.
+        for key, kind in (
+            ("advent-1", "seasonal"),
+            ("s-ioannis-mariae-vianney-confessoris", "sanctoral"),
+        ):
+            with self.subTest(foreign_applicability=key):
+                with self.assertRaisesRegex(
+                    AssertionError,
+                    "unsupported foreign-source Proper applicability from "
+                    "roman-1962 in roman-pre-1955; source condition remains unresolved:",
+                ):
+                    coverage(key, kind)
+
+        # The unsupported inherited Advent view is not executed, but its raw
+        # fourth Latin body must remain withheld, not a new pre-1955 attestation.
+        structure = json.loads((DATA / "structure/propers/roman-pre-1955.json").read_text())
+        advent = next(row for row in structure["masses"] if row["key"] == "advent-1")
+        withheld = [row for row in advent["propers"] if (row.get("latin") or {}).get("withheld")]
+        self.assertEqual([row["name"] for row in withheld],
+                         ["Collect", "Epistle", "Secret", "Postcommunion"])
+        self.assertTrue(all(row["text"] is None for row in withheld))
 
     def test_propers_cycles_are_structured_not_merged_or_order_selected(self) -> None:
         fixture = fixture_named("propers-postconciliar-transfiguration-cycles")
