@@ -8,7 +8,7 @@
       "id": "german-regional:salzburg",
       "label": "Salzburg local Mass books",
       "family": "latin",
-      "scope": "The 1605 Salzburg missal and later local Mass-proper printings, with the Roman basis and particular feasts kept distinct.",
+      "scope": "The 1498 pre-Tridentine Salzburg print, the 1605 Roman-based Salzburg missal and later local Mass-proper printings, with the Roman basis and particular feasts kept distinct.",
       "coverage_note": "The 1596 papal permission is reported by an archive museum; its original instrument, the 1605 body and exact replacement of preceding Salzburg texts remain to be checked."
     },
     {
@@ -120,9 +120,99 @@
       "checked_on": "2026-10-20",
       "status": "inspected",
       "limitations": "Page does not provide a collation of the second Missal edition against the first or original first-edition approval leaves."
+    },
+    {
+      "id": "german-regional:salzburg-1605-mdz",
+      "title": "Missale Salisburgense, Salzburg: Conrad Kürner 1605, Regensburg Staatliche Bibliothek 999/2Liturg.53 (MDZ bsb11057620)",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb11057620",
+      "kind": "primary-book",
+      "inspection": "Canvas 1 (title page), canvases 3–45 (front matter: Augustine testimonia, Roman general rubrics, Ritus servandus, De defectibus, preparation prayers) surveyed, and calendar canvases 46–57 with September (canvas 54) read in full, 2026-10-21.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "No archiepiscopal mandate or papal brief was found in canvases 1–56; the 1596 permission remains uninspected. Body texts uncollated."
+    },
+    {
+      "id": "german-regional:salzburg-1498-mdz",
+      "title": "Missale Salisburgense, Nuremberg: Georg Stuchs for Johann Rynman 1498, BSB 2 Inc.c.a. 3667 (MDZ bsb00032991)",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb00032991",
+      "kind": "primary-book",
+      "inspection": "Canvas 11 (Ordo for holy water according to the notula of the metropolitan church of Salzburg) and calendar canvases 13–24 with September (canvas 21) read in full, 2026-10-21.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Colophon not re-read; the 13 August 1498 date is the MDZ/GW record. End leaves carry sixteenth-century manuscript notes."
+    },
+    {
+      "id": "german-regional:notitiae-1975-697",
+      "title": "Notitiae 11 (1975), nos. 108–109, Sacred Congregation for Divine Worship decree summaries, printed pp. 230–231",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-(1975)/Notitiae-108-109-1975.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Whole issue PDF acquired 2026-10-21; PDF pp. 28–29 (printed pp. 230–231) viewed as page images and read with the text layer: under Regiones Linguae Germanicae, a particular decree of 11 July 1975, Prot. n. 697/75, confirms the proper Mass texts of twenty-three dioceses listed under Regiones Linguae Germanicae (Munich and Freising counted once; Luxembourg and Bozen-Brixen included), Cologne and Speyer among them.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "An official published summary, not the decree text or the confirmed proper books; it does not list feasts or say when the texts came into use."
+    },
+    {
+      "id": "german-regional:notitiae-2003-cologne",
+      "title": "Notitiae 39 (2003), nos. 437–438, Congregation for Divine Worship summary of 2002 decrees, printed p. 21",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-39-(2003)/Notitiae-437-438-2003.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Whole issue PDF acquired 2026-10-21; PDF p. 22 (printed p. 21) viewed: under Dioeceses, Köln is granted confirmation of the Latin and German texts of the Proprium Missarum and Liturgia Horarum on 11 November 2002, Prot. 2282/99/L.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Summary entry only; the decree text and the books are uninspected."
+    },
+    {
+      "id": "german-regional:salzburg-1506-mdz",
+      "title": "Missale Salisburgense, Vienna 1506, BSB Res/2 Liturg. 299 (MDZ bsb00022261)",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb00022261",
+      "kind": "primary-book",
+      "inspection": "Canvases 1–24 surveyed and the September calendar (canvas 13) read, 2026-10-21.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Calendar page only; printer and body not examined."
+    },
+    {
+      "id": "german-regional:notitiae-1972-2069",
+      "title": "Notitiae 8 (1972), no. 78, Sacred Congregation for Divine Worship decree summaries, printed p. 361",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-08-(1972)/Notitiae-078-1972.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Whole issue PDF acquired 2026-10-21; PDF p. 23 (printed p. 361) viewed: under Decreta circa ritus et calendaria particularia, Regiones Linguae Germanicae, 21 September 1972 (Prot. n. 2069/71) confirms the common regional calendar 'Der Regionalkalender für das Deutsche Sprachgebiet'.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Summary entry only; it concerns the common German-language regional calendar, not a Speyer-specific calendar."
     }
   ],
   "stages": [
+    {
+      "id": "german-regional:salzburg-1498",
+      "tradition_id": "german-regional:salzburg",
+      "label": "1498 Missale Salisburgense, Stuchs for Rynman",
+      "date_label": "13 August 1498 printing (catalogue colophon date)",
+      "start_year": 1498,
+      "end_year": 1498,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "One pre-Tridentine Salzburg print; Ordo for holy water and September calendar inspected.",
+      "components": [
+        "calendar",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:german-salzburg-1498-stuchs-bsb00032991"
+      ],
+      "witness_label": "BSB 2 Inc.c.a. 3667",
+      "summary": "A printed missal whose opening Ordo follows the notula of the metropolitan church of Salzburg; its calendar uses the local grading of festum, bini and ix lessons with sanctorale folio references.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "german-regional:salzburg-1498-mdz",
+          "locus": "MDZ bsb00032991 canvas 11 and canvases 13–24",
+          "claim": "Salzburg-notula Ordo and complete calendar inspected."
+        }
+      ],
+      "limitations": "The date is taken from the catalogue record; earlier Salzburg prints (1492 and others) and the body are uncollated.",
+      "reception": "Printed for Salzburg use; no parish-level reception is dated."
+    },
     {
       "id": "german-regional:salzburg-1605",
       "tradition_id": "german-regional:salzburg",
@@ -133,13 +223,30 @@
       "date_kind": "publication",
       "status": "documented",
       "scope": "Salzburg missal as a local edition with Roman basis and particular feasts, according to an archive museum account.",
-      "components": ["calendar", "propers"],
-      "witness_ids": ["western:german-salzburg-1605"],
+      "components": [
+        "calendar",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:german-salzburg-1605"
+      ],
       "witness_label": "Archive of the Archdiocese of Salzburg copy pictured by DomQuartier",
       "summary": "Wolf Dietrich printed and distributed 1,228 copies. The institutional account identifies the Roman Missal as basis and says Salzburg local feasts were added. It separately reports Clement VIII's 1596 permission.",
       "text_coverage": "not-transcribed",
-      "evidence": [{"source_id": "german-regional:salzburg-domquartier", "locus": "Wolf Dietrich räumt auf, archive-object caption and paragraphs following it", "claim": "The institution identifies the 1605 book, reports its circulation, Roman basis, local feasts and earlier papal permission."}],
-      "limitations": "The original 1596 act and full 1605 text are uninspected. Neither title nor retrospective description proves exact prayer changes or a direct descent from a particular Roman edition.",
+      "evidence": [
+        {
+          "source_id": "german-regional:salzburg-domquartier",
+          "locus": "Wolf Dietrich räumt auf, archive-object caption and paragraphs following it",
+          "claim": "The institution identifies the 1605 book, reports its circulation, Roman basis, local feasts and earlier papal permission."
+        },
+        {
+          "source_id": "german-regional:salzburg-1605-mdz",
+          "locus": "MDZ bsb11057620 canvas 1 (title), canvas 7 (Rubricae generales Missalis) and canvas 54 (September calendar)",
+          "claim": "The title states the missal was restored according to the rite and custom of the Roman Church with approval of the Apostolic See and issued by authority of Archbishop Wolf Dietrich; the calendar uses Roman grading while keeping Salzburg feasts. The front matter carries the Roman general rubrics."
+        }
+      ],
+      "limitations": "The original 1596 act is uninspected and no mandate leaf was found in the digitised copy. Apart from the September calendar, neither title nor retrospective description proves exact prayer changes or a direct descent from a particular Roman edition. The 1605 Mass bodies are uninspected.",
       "reception": "Reported publication and circulation in Salzburg, not a measured date of first or universal use."
     },
     {
@@ -152,12 +259,22 @@
       "date_kind": "publication",
       "status": "provisional",
       "scope": "Identified local proper booklet component, not a complete Missal replacement.",
-      "components": ["propers"],
-      "witness_ids": ["western:german-salzburg-propers-1642"],
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:german-salzburg-propers-1642"
+      ],
       "witness_label": "1642 Salzburg proper booklet in Austrian National Library catalogue",
       "summary": "The catalogue identifies a short printing of Salzburg saints' Mass propers with companion offices under archiepiscopal authority stated in its title.",
       "text_coverage": "not-transcribed",
-      "evidence": [{"source_id": "german-regional:salzburg-1642", "locus": "Catalogue title, date and 14-page extent", "claim": "A particular Mass-proper booklet was printed in 1642."}],
+      "evidence": [
+        {
+          "source_id": "german-regional:salzburg-1642",
+          "locus": "Catalogue title, date and 14-page extent",
+          "claim": "A particular Mass-proper booklet was printed in 1642."
+        }
+      ],
       "limitations": "Original title image, formularies and relationship to the 1605 missal have not been collated; the title claim of authority is not an inspected decree.",
       "reception": "Printing is identified; actual diocesan use remains unverified."
     },
@@ -171,12 +288,31 @@
       "date_kind": "publication",
       "status": "documented",
       "scope": "Identified Münster diocesan Missal whose title claims accommodation to Roman ceremonial and added saint offices.",
-      "components": ["rubrics", "propers", "calendar", "ordinary", "anaphoras"],
-      "witness_ids": ["western:german-muenster-1632"],
+      "components": [
+        "rubrics",
+        "propers",
+        "calendar",
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "western:german-muenster-1632"
+      ],
       "witness_label": "ULB Münster 51 FOL 13-1_2, as indexed in Usuarium 6490",
       "summary": "The indexed title attributes the book to Bishop Ferdinand's command and describes Roman ceremonial accommodation and additional saints' offices; the index locates a decree, general rubrics, calendar, Ordinary and Canon.",
       "text_coverage": "not-transcribed",
-      "evidence": [{"source_id": "german-regional:muenster-usu", "locus": "Record 6490, title/age/contents, images 7, 11, 20, 32, 280 and 337", "claim": "The title and contents identify a 1632 Münster Missal and its claimed component scope."}, {"source_id": "german-regional:muenster-archive", "locus": "PDF pp.37–38, DS 0212 and DS 1915", "claim": "Diocesan archive lists the 1632 Moretus printing in parish copies."}],
+      "evidence": [
+        {
+          "source_id": "german-regional:muenster-usu",
+          "locus": "Record 6490, title/age/contents, images 7, 11, 20, 32, 280 and 337",
+          "claim": "The title and contents identify a 1632 Münster Missal and its claimed component scope."
+        },
+        {
+          "source_id": "german-regional:muenster-archive",
+          "locus": "PDF pp.37–38, DS 0212 and DS 1915",
+          "claim": "Diocesan archive lists the 1632 Moretus printing in parish copies."
+        }
+      ],
       "limitations": "Title claims are uncollated against an earlier Münster Missal or Roman edition; original bishop's decree remains unread. The Usuarium classification retains the medieval use despite the Romanizing title.",
       "reception": "Parish copies are catalogued, including a 1673 donation inscription in DS 0212; no first-use or complete diocesan adoption date is asserted."
     },
@@ -190,12 +326,23 @@
       "date_kind": "publication",
       "status": "documented",
       "scope": "Bound diocesan supplement giving observances after the correction of the Münster Breviary, expressly for the 1632 Missal.",
-      "components": ["rubrics", "propers"],
-      "witness_ids": ["western:german-muenster-supplement-1784"],
+      "components": [
+        "rubrics",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:german-muenster-supplement-1784"
+      ],
       "witness_label": "Supplement in Münster diocesan archive copy DS 1915, printed pp.603–630",
       "summary": "The archive catalogue transcribes a supplement title that attributes the 1784 correction to Bishop Maximilian Friedrich and directs subsequent observances for the Missal of 1632.",
       "text_coverage": "not-transcribed",
-      "evidence": [{"source_id": "german-regional:muenster-archive", "locus": "PDF p.38, DS 1915–17, supplement title and pp.603–630", "claim": "The bounded supplement is addressed to the 1632 Missal and indexed in several copies."}],
+      "evidence": [
+        {
+          "source_id": "german-regional:muenster-archive",
+          "locus": "PDF p.38, DS 1915–17, supplement title and pp.603–630",
+          "claim": "The bounded supplement is addressed to the 1632 Missal and indexed in several copies."
+        }
+      ],
       "limitations": "The 1784 pages are not read; exact Mass formularies and directions cannot be specified, and no whole new Missal or substantive transition is inferred.",
       "reception": "Several archived parish copies contain the supplement; this does not establish a first-use date or uniform diocesan application."
     },
@@ -209,14 +356,55 @@
       "date_kind": "publication",
       "status": "documented",
       "scope": "German local propers and readings as adjuncts to the Roman Missal and Lectionary for German-speaking Swiss dioceses.",
-      "components": ["propers", "lectionary", "calendar"],
-      "witness_ids": ["western:german-swiss-propers-1976"],
+      "components": [
+        "propers",
+        "lectionary",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:german-swiss-propers-1976"
+      ],
       "witness_label": "1976 Einsiedeln Missal supplement and companion Lectionary cited by Diocese of St Gall",
       "summary": "The diocese names the 1976 Missal supplement as the source of official Mass texts for saints in its diocesan calendar and lists a companion Lectionary supplement.",
       "text_coverage": "not-transcribed",
-      "evidence": [{"source_id": "german-regional:stgallen", "locus": "Die offiziellen Texte für die liturgischen Feiern section", "claim": "The diocese directs readers to the 1976 Mass and Lectionary proper volumes for official local texts."}],
+      "evidence": [
+        {
+          "source_id": "german-regional:stgallen",
+          "locus": "Die offiziellen Texte für die liturgischen Feiern section",
+          "claim": "The diocese directs readers to the 1976 Mass and Lectionary proper volumes for official local texts."
+        }
+      ],
       "limitations": "The original 1976 books, approval leaves and individual feasts are uncollated; St Gall's present guidance does not certify identical reception by every German-speaking Swiss diocese in 1976.",
       "reception": "Current St Gall official-use direction is attested; initial and wider reception dates are not."
+    },
+    {
+      "id": "german-regional:cologne-1975-propers-approval",
+      "tradition_id": "german-regional:cologne",
+      "label": "Cologne proper Mass texts confirmed in the 1975 collective German decree",
+      "date_label": "11 July 1975 confirmation (Prot. 697/75)",
+      "start_year": 1975,
+      "end_year": 1975,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Roman confirmation of Cologne's proper Mass texts as one of twenty-three dioceses listed under Regiones Linguae Germanicae in a single decree.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:german-cologne-propers-1975"
+      ],
+      "witness_label": "Notitiae 11 (1975), printed pp. 230–231",
+      "summary": "The Sacred Congregation for Divine Worship's published summary lists Coloniensis among the dioceses whose proper Mass texts were confirmed by the collective decree of 11 July 1975 (Prot. 697/75).",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "german-regional:notitiae-1975-697",
+          "locus": "Printed pp. 230–231, Regiones Linguae Germanicae",
+          "claim": "Collective confirmation including Cologne."
+        }
+      ],
+      "limitations": "No 1975 Cologne proper book, feast list or prayer text was inspected; the relation of these texts to the 2002 proper is unestablished.",
+      "reception": "Approval only; first use and the printed book are undated."
     },
     {
       "id": "german-regional:cologne-2002-propers",
@@ -228,13 +416,30 @@
       "date_kind": "publication",
       "status": "documented",
       "scope": "Latin/German particular Mass propers and matching Lectionary component of the Roman books for Cologne.",
-      "components": ["propers", "lectionary", "calendar"],
-      "witness_ids": ["western:german-cologne-propers-2002"],
+      "components": [
+        "propers",
+        "lectionary",
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:german-cologne-propers-2002"
+      ],
       "witness_label": "2002 Cologne proper Missal and Lectionary named in Directorium 2026",
       "summary": "The official directorium lists the 2002 Latin/German Mass-proper book as a binding part of the archdiocesan Missal and the 2002 Lectionary proper as a binding Lectionary component.",
       "text_coverage": "not-transcribed",
-      "evidence": [{"source_id": "german-regional:cologne-directorium", "locus": "PDF p.26, printed XXVIII, item h; p.27 item m", "claim": "The 2026 authority list identifies the 2002 proper components and their binding diocesan status."}],
-      "limitations": "The original 2002 books, approval instruments, exact prayers and effective date are not inspected. This is a local component state, not a distinct whole Order of Mass or continuity claim from the historical Cologne use.",
+      "evidence": [
+        {
+          "source_id": "german-regional:cologne-directorium",
+          "locus": "PDF p.26, printed XXVIII, item h; p.27 item m",
+          "claim": "The 2026 authority list identifies the 2002 proper components and their binding diocesan status."
+        },
+        {
+          "source_id": "german-regional:notitiae-2003-cologne",
+          "locus": "Notitiae 39 (2003), printed p. 21, entry Köln",
+          "claim": "The Congregation confirmed the Latin and German Proprium Missarum and Liturgia Horarum of Cologne on 11 November 2002, Prot. 2282/99/L."
+        }
+      ],
+      "limitations": "The original 2002 books, the decree text, exact prayers and effective date are not inspected; the 11 November 2002 confirmation is known from the Congregation's published summary. This is a local component state, not a distinct whole Order of Mass or continuity claim from the historical Cologne use.",
       "reception": "Binding status is documented for the archdiocese by 2026; first-use date not established."
     },
     {
@@ -247,13 +452,35 @@
       "date_kind": "approval",
       "status": "documented",
       "scope": "Particular calendar and proper texts for the first edition of Speyer's Missal and Lectionary adjuncts, as reported in a later official book.",
-      "components": ["calendar", "propers", "lectionary"],
-      "witness_ids": ["western:german-speyer-propers-1975"],
+      "components": [
+        "calendar",
+        "propers",
+        "lectionary"
+      ],
+      "witness_ids": [
+        "western:german-speyer-propers-1975"
+      ],
       "witness_label": "Approval references on p.2 of the Diocese of Speyer's 2023 Lectionary",
       "summary": "The 2023 book reports Bishop Wetter's calendar approval on 3 November 1971, Roman confirmation on 15 November 1972 (2069/71) and Roman confirmation of Mass/Lectionary proper texts on 11 July 1975 (697/75).",
       "text_coverage": "not-transcribed",
-      "evidence": [{"source_id": "german-regional:speyer-lectionary", "locus": "PDF p.2, Approbation und Konfirmation, lines 5–14", "claim": "Official book gives the three dated and scoped approvals and protocol references."}],
-      "limitations": "These are retrospective references, not inspected original approval instruments or the first proper texts. No exact before/after change or first celebration is claimed.",
+      "evidence": [
+        {
+          "source_id": "german-regional:speyer-lectionary",
+          "locus": "PDF p.2, Approbation und Konfirmation, lines 5–14",
+          "claim": "Official book gives the three dated and scoped approvals and protocol references."
+        },
+        {
+          "source_id": "german-regional:notitiae-1975-697",
+          "locus": "Notitiae 11 (1975), printed pp. 230–231, Regiones Linguae Germanicae",
+          "claim": "Prot. 697/75 of 11 July 1975 is a collective particular decree confirming the proper Mass texts of twenty-three dioceses listed under Regiones Linguae Germanicae, Spirensis among them."
+        },
+        {
+          "source_id": "german-regional:notitiae-1972-2069",
+          "locus": "Notitiae 8 (1972), printed p. 361",
+          "claim": "The Congregation's own summary dates Prot. 2069/71 to 21 September 1972 and describes it as confirmation of the common German-language regional calendar."
+        }
+      ],
+      "limitations": "Retained conflict: the 2023 Speyer book dates Prot. 2069/71 to 15 November 1972, while Notitiae 8 (1972) p. 361 dates the same protocol to 21 September 1972 as confirmation of the common German-language regional calendar; the two entries may record different acts filed under one protocol number (the common regional calendar and Speyer's own calendar), so neither date is preferred and the conflict is not resolved here. These are retrospective references, not inspected original approval instruments or the first proper texts. No exact before/after change or first celebration is claimed.",
       "reception": "Approval is attested; actual use of the first edition is not independently dated."
     },
     {
@@ -266,25 +493,153 @@
       "date_kind": "publication",
       "status": "documented",
       "scope": "Contemporary proper Mass-book and Lectionary components, with identified feast dates and ranks.",
-      "components": ["calendar", "propers", "lectionary"],
-      "witness_ids": ["western:german-speyer-propers-2023"],
+      "components": [
+        "calendar",
+        "propers",
+        "lectionary"
+      ],
+      "witness_ids": [
+        "western:german-speyer-propers-2023"
+      ],
       "witness_label": "2023 Speyer Lectionary PDF and official page identifying the companion Missal",
       "summary": "The official page identifies a second expanded Missal edition and first Lectionary edition in 2023; the Lectionary's title and contents identify the local feast set and rank distinctions.",
       "text_coverage": "not-transcribed",
-      "evidence": [{"source_id": "german-regional:speyer-books", "locus": "Eigenfeiern page, Mass-book and Lectionary listing", "claim": "The diocese lists the 2023 paired editions."}, {"source_id": "german-regional:speyer-lectionary", "locus": "PDF pp.0, 2 and 4", "claim": "The Lectionary title, authority references and feast contents are directly checked."}],
+      "evidence": [
+        {
+          "source_id": "german-regional:speyer-books",
+          "locus": "Eigenfeiern page, Mass-book and Lectionary listing",
+          "claim": "The diocese lists the 2023 paired editions."
+        },
+        {
+          "source_id": "german-regional:speyer-lectionary",
+          "locus": "PDF pp.0, 2 and 4",
+          "claim": "The Lectionary title, authority references and feast contents are directly checked."
+        }
+      ],
       "limitations": "The companion second expanded Missal body and first edition are not collated; 2023 is not inferred to be a new approval event or a proved substantive revision.",
       "reception": "Official diocesan operative-book listing is checked; precise local first-use date is unestablished."
     }
   ],
-  "transitions": [],
+  "transitions": [
+    {
+      "id": "german-regional:salzburg-1498-1605-calendar",
+      "from_stage": "german-regional:salzburg-1498",
+      "to_stage": "german-regional:salzburg-1605",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "text-collated",
+      "summary": "The September calendar of the 1605 Roman-restored Salzburg missal replaces the local grading with Roman double and semidouble ranks, adds Roman sanctoral entries and drops several Bavarian-Salzburg saints, while keeping the Salzburg feasts of 24–26 September.",
+      "components": [
+        "calendar"
+      ],
+      "changes": [
+        {
+          "component": "calendar",
+          "before": "Grades expressed as festum, bini and ix lessons; Michael entered as Michaelis archangeli.",
+          "after": "Grades expressed as Dupl., Semidupl. and commemorations, with daily octave days of the Nativity of Mary; 29 September entered as Dedicatio S. Michaelis.",
+          "locus_before": "MDZ bsb00032991 canvas 21",
+          "locus_after": "MDZ bsb11057620 canvas 54",
+          "evidence": [
+            {
+              "source_id": "german-regional:salzburg-1498-mdz",
+              "locus": "canvas 21",
+              "claim": "September 1498."
+            },
+            {
+              "source_id": "german-regional:salzburg-1605-mdz",
+              "locus": "canvas 54",
+              "claim": "September 1605."
+            }
+          ]
+        },
+        {
+          "component": "calendar",
+          "before": "No entries for Nicholas of Tolentino (10), Januarius (19), Linus (23) or Wenceslaus (28).",
+          "after": "Entries for Nicholas of Tolentino (10), Januarius and companions (19), Linus with Thecla commemorated (23) and Wenceslaus (28).",
+          "locus_before": "MDZ bsb00032991 canvas 21",
+          "locus_after": "MDZ bsb11057620 canvas 54",
+          "evidence": [
+            {
+              "source_id": "german-regional:salzburg-1498-mdz",
+              "locus": "canvas 21",
+              "claim": "September 1498."
+            },
+            {
+              "source_id": "german-regional:salzburg-1605-mdz",
+              "locus": "canvas 54",
+              "claim": "September 1605."
+            }
+          ]
+        },
+        {
+          "component": "calendar",
+          "before": "Entries for Erentrude (4), Magnus (6), Kunigunde (9), Lambert (17), Emmeram (22) and Kunald and Gislar (24).",
+          "after": "None of these appears on the September page.",
+          "locus_before": "MDZ bsb00032991 canvas 21",
+          "locus_after": "MDZ bsb11057620 canvas 54",
+          "evidence": [
+            {
+              "source_id": "german-regional:salzburg-1498-mdz",
+              "locus": "canvas 21",
+              "claim": "September 1498."
+            },
+            {
+              "source_id": "german-regional:salzburg-1605-mdz",
+              "locus": "canvas 54",
+              "claim": "September 1605."
+            }
+          ]
+        },
+        {
+          "component": "calendar",
+          "before": "Translatio Rudberti (24), Dedicatio ecclesie Saltzburgensis (25) and Translatio Virgilii (26) in red.",
+          "after": "The same three Salzburg feasts retained as Dupl.",
+          "locus_before": "MDZ bsb00032991 canvas 21",
+          "locus_after": "MDZ bsb11057620 canvas 54",
+          "evidence": [
+            {
+              "source_id": "german-regional:salzburg-1498-mdz",
+              "locus": "canvas 21",
+              "claim": "September 1498."
+            },
+            {
+              "source_id": "german-regional:salzburg-1605-mdz",
+              "locus": "canvas 54",
+              "claim": "September 1605."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "german-regional:salzburg-1498-mdz",
+          "locus": "canvases 11, 21",
+          "claim": "Fixes the 1498 before-state."
+        },
+        {
+          "source_id": "german-regional:salzburg-1605-mdz",
+          "locus": "canvases 1, 54",
+          "claim": "Fixes the 1605 after-state and its Roman restoration claim."
+        },
+        {
+          "source_id": "german-regional:salzburg-1506-mdz",
+          "locus": "MDZ bsb00022261 canvas 13",
+          "claim": "The September page of the 1506 Vienna Salzburg missal keeps the 1498 saints and festum/bini/ix grading, so the September differences listed here are not present in that print."
+        }
+      ],
+      "limitations": "September only. The 1506 Vienna print's September page agrees with 1498, so these September differences are absent from that print; the 1507 and 1510 prints, the 1596 permission and any intervening books are uncollated, so when between 1506 and 1605 the differences entered is unknown, and this page does not show that other months or the Mass bodies changed at the same time. Absence from one calendar page does not prove absence from the sanctorale.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    }
+  ],
   "gaps": [
     {
       "id": "german-regional:salzburg-collation",
       "tradition_id": "german-regional:salzburg",
-      "period": "1596–1642",
-      "missing": "Original papal permission and 1605/1642 book text, including the exact Salzburg local formularies and their earlier equivalents.",
-      "next_source": "Salzburg archdiocesan archive 1596 Ordo Romanus and 1605 missal; BSB digital bsb11057620; Austrian National Library copy of 1642 proper booklet.",
-      "consequence": "No act station for the 1596 permission or verified 1605-to-1642 text transition."
+      "period": "1498–1642",
+      "missing": "The 1605 title and the 1498 and 1605 September calendars are inspected; the original 1596 permission, a 1605 mandate, the remaining calendar months, the Mass bodies, the 1506 print beyond its September page, the 1507 and 1510 prints and the 1642 proper booklet remain uncollated.",
+      "next_source": "Salzburg archdiocesan archive 1596 instrument; MDZ bsb00022261 (1506), bsb10147732 (1507), bsb00004363 and bsb00021963 (1510); remaining months of bsb11057620; ÖNB copy of the 1642 booklet.",
+      "consequence": "A calendar-level Roman restoration is documented for September only; no act station for the 1596 permission."
     },
     {
       "id": "german-regional:muenster-collation",
@@ -298,8 +653,8 @@
       "id": "german-regional:modern-propers",
       "tradition_id": "german-regional:speyer",
       "period": "1971–2023",
-      "missing": "Original Speyer 1971, 1972 and 1975 instruments, first proper book, 2023 second Missal body, and prayer/reading collation.",
-      "next_source": "Speyer Prot. 2069/71 and 697/75, first edition Eigenfeiern and second expanded 2023 Missal.",
+      "missing": "Prot. 697/75 is confirmed as a collective decree of 11 July 1975 for twenty-three dioceses listed under Regiones Linguae Germanicae (Notitiae 11, 1975, pp. 230–231). Original Speyer 1971 and 1972 instruments, the 1975 decree text, the first proper book, the 2023 second Missal body and prayer/reading collation remain.",
+      "next_source": "Speyer Prot. 2069/71 and the text of Prot. 697/75; first edition Eigenfeiern; second expanded 2023 Missal; Oberhirtliches Verordnungsblatt Speyer 1971–1975.",
       "consequence": "Approval and operative regional component states are distinguishable, but exact edition deltas and initial local reception remain unresolved."
     },
     {
@@ -313,10 +668,10 @@
     {
       "id": "german-regional:cologne-propers",
       "tradition_id": "german-regional:cologne",
-      "period": "2002 onward",
-      "missing": "The 2002 Cologne proper's original approval pages, complete text, first dated use and later edition changes have not been collated.",
-      "next_source": "Original 2002 Proprium des Erzbistums Köln volume and decrees; annual Cologne Directorium statements for use and later changes.",
-      "consequence": "The binding adjunct status does not establish a separate whole missal or descent from an older Cologne use."
+      "period": "1975–2026",
+      "missing": "The 1975 collective confirmation and the 11 November 2002 confirmation (Prot. 2282/99/L) are known from official Notitiae summaries; the 1975 and 2002 proper books, decree texts, feast lists, first use and later changes remain uninspected.",
+      "next_source": "The 1975 Cologne Eigenfeiern volume (if printed), the original 2002 Proprium des Erzbistums Köln and Prot. 2282/99/L; Kirchlicher Anzeiger für die Erzdiözese Köln 1975 and 2002–2003.",
+      "consequence": "Two approval events are dated; no prayer-level change between the 1975 and 2002 propers is documented. Neither approval establishes a separate whole missal or descent from the historical Cologne use."
     }
   ]
 }

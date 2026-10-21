@@ -72,7 +72,7 @@
       "title": "Missale Romanum, Rome: Typographia Vaticana 1604",
       "url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC.pdf",
       "kind": "primary-book",
-      "inspection": "Downloaded original scan for research; page images PDF 5 title, 9 Cum sanctissimum and 357 (printed 259, Ordo Missae final blessing) read.",
+      "inspection": "Downloaded original scan for research; page images PDF 5 title, 9 Cum sanctissimum and 357 (printed 259, Ordo Missae final blessing) read. Re-checked 2026-10-21 through the same Google digitization (books.google.com id aaPpAuHRY9IC): PP9 Cum sanctissimum ends at sig. ✠iij with the Vestrius Barbianus subscription and no following decree; PP10 begins De cyclo decennovennali.",
       "checked_on": "2026-10-16",
       "status": "inspected",
       "limitations": "Google digitization used for research; no new retained-publication permission inferred here. One final-blessing rubric checked against the actual Rome 1570 Ordo and separately distinguished from Venice 1570; the constitution supplies correction policy, not an exhaustive before/after apparatus."
@@ -86,6 +86,36 @@
       "checked_on": "2026-10-16",
       "status": "inspected",
       "limitations": "Later facsimile witness of the act; original Rome 1634 book not examined. A bounded 19 October 2026 search located Barcelona’s bibliographic entry for Rome 1634 and Madrid’s separate Antwerp 1634 record without a digital object, not a usable Rome scan. No 1604/1634 full-text comparison is claimed."
+    },
+    {
+      "id": "roman-stages-source-1635-vatican",
+      "title": "Missale Romanum, Rome: Ex Typographia Vaticana 1635 (Urban VIII recognition; Google Books XNC4a07qPqQC)",
+      "url": "https://books.google.com/books?id=XNC4a07qPqQC",
+      "kind": "primary-book",
+      "inspection": "Original printed copy, public full-view Google digitization; page images viewed 2026-10-21: PP7 title (Romae, Ex Typographia Vaticana, MDCXXXV; De licentia superiorum; no edition statement; manuscript ownership 'Balth. Moreti'), PP9 Quo primum (sig. †2), PP10 Clement VIII Cum sanctissimum dated 7 July 1604, PP11-PP12 Urban VIII Si quid est (sig. †3) dated at S. Maria Maggiore 2 September 1634, PP12 lower half 'Ex Registro Decretorum Sacrae Rituum Congregationis', PP13 De anno et eius partibus (sig. †4), PT3 Index nominum Sanctorum ending Finis, PT4 Regestum and colophon Romae, Ex Typographia Vaticana, MDCXXXV. Google page-sequence census: 62 preliminary images, 572 arabic, 96 roman and 8 terminal images.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "A 1635 Vatican printing, not a 1634-dated imprint; holding library not identified (stamp illegible at the served resolution; Google metadata names none). Extent is consistent with SBN UM1E008100 ([56], 572, XCVII, [3]) but item identity with that record, with Rusca L-77 'Secunda editio' or with UB [1634?] is not established. Only the listed preliminary and terminal pages were viewed; Ordinary, propers, rubrics and readings were not collated with 1604. Scratch page images only; no redistribution basis assessed."
+    },
+    {
+      "id": "roman-stages-source-aas-1951",
+      "title": "SRC decree of 9 February 1951 and Ordo Sabbati sancti rubrics, AAS 43 (1951) 128–137",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-43-1951-ocr.pdf",
+      "kind": "primary-act",
+      "inspection": "Vatican AAS PDF; page images of printed pp. 130, 131 and 137 viewed 2026-10-21 (Tit. I n. 4 Compline; Tit. II cap. I n. 1 hour; Tit. III nn. 2–3 Gloria and communion verse), with the decree pp. 128–129.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Official gazette rendition, re-typeset and OCR-layered, not a facsimile of the TPV booklet; it prints rubrics with references to the Missal rather than every booklet text or chant."
+    },
+    {
+      "id": "roman-stages-source-aas-1952",
+      "title": "SRC decree of 11 January 1952, Ordinationes and revised Easter Vigil rubrics, AAS 44 (1952) 48–63",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-44-1952-ocr.pdf",
+      "kind": "primary-act",
+      "inspection": "Vatican AAS PDF; page images of printed pp. 49, 53, 54, 62 and 63 viewed 2026-10-21: three-year extension and reservation of the edition (48–49), Ordinationes (50–52), rubrics headed as approved with the variations of 11 January 1952 (53), Tit. I nn. 1–5, Tit. II cap. I n. 1, n. 28a and Tit. III nn. 2–3.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Official gazette rendition, not the 1952 editio altera booklet itself; selected rubric loci compared with AAS 43, not a whole-text collation."
     },
     {
       "id": "roman-stages-source-1920",
@@ -545,29 +575,46 @@
       "id": "roman-stages-1634",
       "tradition_id": "roman-stages-pian",
       "label": "Urbanian corrected missal",
-      "date_label": "1634",
+      "date_label": "2 September 1634 approval (Si quid est); inspected witness printed 1635",
       "start_year": 1634,
       "end_year": 1634,
       "date_kind": "approval",
       "status": "documented",
-      "scope": "Book recension described in its issuing constitution.",
+      "scope": "Book recension described in its issuing constitution and attested by an inspected 1635 Vatican printing of the Urbanian book: title, preliminary acts and decree, register and colophon.",
       "components": [
         "rubrics",
         "lectionary",
         "propers"
       ],
-      "witness_ids": [],
-      "witness_label": "Missale Romanum ordered for publication under Urban VIII; original 1634 copy not inspected",
-      "summary": "Clarified/restored rubrics and correction of scriptural divergences against Vulgate.",
+      "witness_ids": [
+        "western:roman-modern-1635-vatican-gb-xnc4a07qpqqc"
+      ],
+      "witness_label": "Rome, Ex Typographia Vaticana, MDCXXXV (inspected original Urbanian Vatican printing carrying Si quid est); no 1634-dated imprint inspected",
+      "summary": "Clarified/restored rubrics and correction of scriptural divergences against the Vulgate, per Si quid est. The inspected Vatican printing titles the book as recognized 'nunc denuo' by Urban VIII and prints Si quid est after the Pius V and Clement VIII acts, followed by a Congregation of Rites decree extract ordered for the new Missal printing.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {
           "source_id": "roman-stages-source-1634",
           "locus": "PDF 6 left column and dateline",
           "claim": "Names prior revisions and describes corrections."
+        },
+        {
+          "source_id": "roman-stages-source-1635-vatican",
+          "locus": "PP7 title; PT4 colophon",
+          "claim": "Original Rome Vatican printing of the Urbanian recension, imprint and colophon both MDCXXXV."
+        },
+        {
+          "source_id": "roman-stages-source-1635-vatican",
+          "locus": "PP11-PP12, sig. †3",
+          "claim": "Si quid est printed in the book, entrusting the corrected Missal to Andrea Brogiotto as prefect of the Apostolic press, dated 2 September 1634."
+        },
+        {
+          "source_id": "roman-stages-source-1635-vatican",
+          "locus": "PP12 lower half",
+          "claim": "Congregation of Rites decree extract (unapproved votive Masses, pileolus, rochet, vestments taken from the altar, observance of the Missal rubrics against contrary custom), which Urban VIII ordered placed in the Missal now to be printed."
         }
       ],
-      "limitations": "2 September 1634 is approval/instrument date. Later reprint witnesses the description, not every 1634 reading; no original 1634 title-page check.",
+      "limitations": "2 September 1634 is the approval/instrument date. The inspected original is a 1635 Vatican printing; no 1634-dated title or colophon has been inspected, and whether a separately dated 1634 issue exists (Weale 1886 p. 170 lists only an undescribed 1634 Rome folio; UB holds a defective [1634?] copy) remains unresolved. Only preliminaries and terminal leaves were viewed; no reading-level or rubric-by-rubric collation with 1604 is claimed.",
       "reception": "Latin Roman use; no claim that every local church used this exact printing."
     },
     {
@@ -655,6 +702,76 @@
       ],
       "limitations": "Neither later composite nor 2004 reprint is an original 1920 impression. 1634 → 1920 is not a proven single transition; intervening editions and prescriptions remain gaps.",
       "reception": "Latin Roman use; no claim that every local church used this exact printing."
+    },
+    {
+      "id": "roman-stages-1951-vigil",
+      "tradition_id": "roman-stages-pian",
+      "label": "Experimental restored Easter Vigil (1951)",
+      "date_label": "9 February 1951 decree; optional experiment for Easter 1951",
+      "start_year": 1951,
+      "end_year": 1951,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Complementary Holy Saturday and Easter Vigil order permitted experimentally; not a whole Missal.",
+      "components": [
+        "rubrics",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:roman-modern-019"
+      ],
+      "witness_label": "Ordo Sabbati sancti quando vigilia paschalis instaurata peragitur (TPV 1951); rubrics in AAS 43 (1951) 128–137",
+      "summary": "The Congregation of Rites permits the restored night Vigil for one year at the Ordinary's judgement and prints its rubrics. Compline is still said on Holy Saturday, and after communion the verse Vespere autem sabbati is sung and read before the postcommunion.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-aas-1951",
+          "locus": "AAS 43 (1951) pp. 128–129 decree",
+          "claim": "One-year optional experiment at the Ordinary's judgement; printing reserved to licensed publishers."
+        },
+        {
+          "source_id": "roman-stages-source-aas-1951",
+          "locus": "AAS 43 (1951) p. 130 Tit. I n. 4; p. 137 Tit. III n. 3",
+          "claim": "Compline said; communion verse Vespere autem sabbati at the end of the Vigil Mass."
+        }
+      ],
+      "limitations": "AAS rubrics refer to the existing Missal and do not reproduce every booklet text; the TPV booklet's own extent is described by the inventory candidate, not re-collated here. Use was optional and local.",
+      "reception": "Optional, for 1951, where the local Ordinary chose it."
+    },
+    {
+      "id": "roman-stages-1952-vigil",
+      "tradition_id": "roman-stages-pian",
+      "label": "Extended and revised restored Easter Vigil (1952)",
+      "date_label": "11 January 1952 decree; three-year extension with rubric variations",
+      "start_year": 1952,
+      "end_year": 1952,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Complementary Easter Vigil order with Ordinationes and varied rubrics; not a whole Missal.",
+      "components": [
+        "rubrics",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:roman-modern-020"
+      ],
+      "witness_label": "Ordo Sabbati sancti, editio altera; decree, Ordinationes and rubrics in AAS 44 (1952) 48–63",
+      "summary": "The 1952 decree extends the experiment for three years, reserves the liturgical edition to the Holy See and approves rubric variations: Compline omitted, a silent Pater noster, Lauds sung within the Vigil Mass after communion, an earlier start permitted, a simple form without sacred ministers, and images unveiled at the Gloria.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-aas-1952",
+          "locus": "AAS 44 (1952) pp. 48–49 decree; pp. 50–52 Ordinationes",
+          "claim": "Three-year extension, reserved edition and Ordinationes."
+        },
+        {
+          "source_id": "roman-stages-source-aas-1952",
+          "locus": "AAS 44 (1952) p. 53 heading and Tit. I nn. 1–5; p. 63 Tit. III nn. 2–3",
+          "claim": "Rubrics approved with the variations of 11 January 1952."
+        }
+      ],
+      "limitations": "Gazette rendition; the 1952 booklet itself is not inspected here. No complete 1952 Missal and no relation to the 1955–1956 Holy Week book is inferred beyond the separately recorded 1956 stage.",
+      "reception": "Optional, three years, where the local Ordinary chose it."
     },
     {
       "id": "roman-stages-1956-holyweek",
@@ -1298,6 +1415,25 @@
               "claim": "Names comparison against Vulgate."
             }
           ]
+        },
+        {
+          "component": "rubrics",
+          "before": "Preliminary acts end with Clement VIII's Cum sanctissimum; no Congregation of Rites decree extract follows before the calendar-computation matter.",
+          "after": "After Si quid est, the book prints an extract from the Congregation of Rites decree register prohibiting unapproved votive Masses (named: St Gregory, Fifteen Helpers, Eternal Father; Rosary and Carmel excepted for certain regulars), restricting the pileolus, the rochet and vesting from the altar, and enjoining the Missal rubrics against contrary custom, by Urban VIII's order for the new printing.",
+          "locus_before": "Rome 1604, PP9 (sig. ✠iij) followed by PP10 De cyclo decennovennali",
+          "locus_after": "Rome Vatican 1635, PP12 lower half, after Si quid est (PP11-PP12)",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-1604",
+              "locus": "Google PP9-PP10 (same digitization as archive PDF)",
+              "claim": "No decree extract between Cum sanctissimum and the calendar matter."
+            },
+            {
+              "source_id": "roman-stages-source-1635-vatican",
+              "locus": "PP12",
+              "claim": "Decree extract and Urban VIII's order to place it in the Missal now to be printed."
+            }
+          ]
         }
       ],
       "evidence": [
@@ -1307,7 +1443,146 @@
           "claim": "Names Pius V and Clement VIII as predecessors."
         }
       ],
-      "limitations": "Revision is documented by the issuing act; no original 1634 book examined and no particular before/after rubric or reading established here. The listed changes express the act’s correction policy, not passage-level collation.",
+      "limitations": "The rubric and lectionary policy changes are documented by the issuing act. The decree-extract change compares the preliminary sequence of one 1604 copy with one 1635 Vatican printing of the Urbanian book; the 1604 book elsewhere was not searched for the decree, and no 1634-dated imprint was examined. No particular altered rubric or reading in the body of the Missal is collated here.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "roman-stages-revise-1951-vigil",
+      "from_stage": "roman-stages-1951-vigil",
+      "to_stage": "roman-stages-1952-vigil",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 1952 decree expressly varies the 1951 experimental Vigil rubrics; six bounded changes are compared between the two gazette texts.",
+      "components": [
+        "rubrics",
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "Compline is said on Holy Saturday at the proper hour.",
+          "after": "Compline is omitted that night.",
+          "locus_before": "AAS 43 (1951) p. 130, Tit. I n. 4",
+          "locus_after": "AAS 44 (1952) p. 53, Tit. I n. 4",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-aas-1951",
+              "locus": "p. 130 Tit. I n. 4",
+              "claim": "Compline said."
+            },
+            {
+              "source_id": "roman-stages-source-aas-1952",
+              "locus": "p. 53 Tit. I n. 4",
+              "claim": "Compline omitted."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "No silent Pater noster after Christus factus est in the Holy Saturday Office rubrics.",
+          "after": "A Pater noster said entirely in silence follows Christus factus est.",
+          "locus_before": "AAS 43 (1951) p. 130, Tit. I",
+          "locus_after": "AAS 44 (1952) p. 53, Tit. I nn. 1–3",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-aas-1951",
+              "locus": "p. 130 Tit. I",
+              "claim": "No silent Pater noster."
+            },
+            {
+              "source_id": "roman-stages-source-aas-1952",
+              "locus": "p. 53 Tit. I nn. 1–3",
+              "claim": "Silent Pater noster added."
+            }
+          ]
+        },
+        {
+          "component": "propers",
+          "before": "After the sumption the choir sings and the priest reads the communion verse Vespere autem sabbati; postcommunion and dismissal follow.",
+          "after": "At the same place the rubric prescribes the purification and then Lauds (antiphon Alleluia, Psalm 116, Benedictus with Et valde mane) before the postcommunion, naming no communion verse; Matins are omitted because the Vigil replaces the night Office.",
+          "locus_before": "AAS 43 (1951) p. 137, Tit. III n. 3",
+          "locus_after": "AAS 44 (1952) p. 53 Tit. I n. 5; p. 63 Tit. III n. 3",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-aas-1951",
+              "locus": "p. 137 Tit. III n. 3",
+              "claim": "Communion verse Vespere autem sabbati."
+            },
+            {
+              "source_id": "roman-stages-source-aas-1952",
+              "locus": "p. 63 Tit. III n. 3; p. 53 Tit. I n. 5",
+              "claim": "Lauds after the purification; Matins omitted."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "Only an hour allowing Mass about midnight is given.",
+          "after": "The Ordinary may permit an earlier start, not before 8 p.m.",
+          "locus_before": "AAS 43 (1951) p. 131, Tit. II cap. I n. 1",
+          "locus_after": "AAS 44 (1952) p. 54, Tit. II cap. I n. 1; Ordinationes n. 4 p. 50",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-aas-1951",
+              "locus": "p. 131 Tit. II cap. I n. 1",
+              "claim": "Hour about midnight."
+            },
+            {
+              "source_id": "roman-stages-source-aas-1952",
+              "locus": "p. 54; p. 50 Ordinationes n. 4",
+              "claim": "Earlier start permitted, not before 8 p.m."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "No rubrics for celebration without sacred ministers.",
+          "after": "Bracketed rubrics provide a simple form without sacred ministers.",
+          "locus_before": "AAS 43 (1951) pp. 130–137",
+          "locus_after": "AAS 44 (1952) p. 54 heading; p. 50 Ordinationes n. 6; p. 62 n. 28a",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-aas-1951",
+              "locus": "pp. 130–137",
+              "claim": "No simple-form rubrics."
+            },
+            {
+              "source_id": "roman-stages-source-aas-1952",
+              "locus": "pp. 50, 54, 62",
+              "claim": "Simple-form rubrics added."
+            }
+          ]
+        },
+        {
+          "component": "rubrics",
+          "before": "At the Gloria the bells are rung; no unveiling of images is directed.",
+          "after": "At the Gloria the images are also unveiled.",
+          "locus_before": "AAS 43 (1951) p. 137, Tit. III n. 2",
+          "locus_after": "AAS 44 (1952) p. 63, Tit. III n. 2",
+          "evidence": [
+            {
+              "source_id": "roman-stages-source-aas-1951",
+              "locus": "p. 137 Tit. III n. 2",
+              "claim": "No unveiling."
+            },
+            {
+              "source_id": "roman-stages-source-aas-1952",
+              "locus": "p. 63 Tit. III n. 2",
+              "claim": "Images unveiled."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "roman-stages-source-aas-1952",
+          "locus": "pp. 48–49 decree; p. 53 heading",
+          "claim": "The decree approves Ordinationes and rubric variations to the 1951 experimental rite."
+        }
+      ],
+      "limitations": "Compares gazette renditions of the rubrics, not the two physical booklets; only the six named loci are compared. Three of the changes (Compline, the silent Pater noster and Lauds) concern Divine Office rubrics printed in the same order, not the Mass itself. The 1952 → 1956 relation is not asserted here.",
       "comparison_ids": [],
       "historical_parentage": "established"
     },
@@ -2073,16 +2348,16 @@
       "id": "roman-stages-urbanian-to-pian-reform",
       "tradition_id": "roman-stages-pian",
       "period": "1634–1920",
-      "missing": "Complete book and calendar progression between the 1634 and 1920 recensions remains incomplete. The 1860 recitation rule and 1877 selected corrections have bounded primary evidence; they do not fill the intervening whole-book history. Independently dated original Rome 1634 title/colophon or a qualified re-identification of UB [1634?] from surviving preliminaries; complete-copy images and 1604/1634/1635 collation. Preserve UB title/Q1 defects and questioned date.",
-      "next_source": "SBN Missale exact-year 1634 query returned 0, positive 1635 control returned 10 including three Rome Vatican records. No original Rome 1634 image acquired. Remaining: Independently dated original Rome 1634 title/colophon or a qualified re-identification of UB [1634?] from surviving preliminaries; complete-copy images and 1604/1634/1635 collation. Preserve UB title/Q1 defects and questioned date.",
+      "missing": "Complete book and calendar progression between the 1634 and 1920 recensions remains incomplete. The 1860 recitation rule and 1877 selected corrections have bounded primary evidence; they do not fill the intervening whole-book history. A Rome Vatican 1635 original of the Urbanian book (title, Si quid est, decree extract, register, colophon) is now inspected, but no 1634-dated title or colophon, no explanation of UB's [1634?] copy, and no body-text collation of 1604/1634-5 or of the 1635 settings (unlabelled versus Secunda editio) exist. Preserve UB title/Q1 defects and questioned date.",
+      "next_source": "Body-text collation of Rome 1604 (archive bub_gb_aaPpAuHRY9IC) against Google XNC4a07qPqQC (rubricae generales, Ritus servandus, selected readings) once access allows; a 1634-dated Vatican copy if one exists; Rusca L-77 and SBN UM1E041839/PBEE017510 title images; editions after 1635 up to 1884/1900. archive.org was unreachable on 2026-10-21.",
       "consequence": "No 1634 → 1920 single jump pretending unchanged interval."
     },
     {
       "id": "roman-stages-holyweek-components",
       "tradition_id": "roman-stages-pian",
       "period": "1951–1962",
-      "missing": "Complete image/text collation of the 1951 booklet; exact 1952/1953 relation; original 1956 TPV Holy Week book and full content checks; complete before/after Missal reconstruction.",
-      "next_source": "1951 exact TPV booklet's whole offered scan acquired and selected original loci checked against complete AAS 128-137. 1955 March act image-read in full at AAS 218-224, including 1 January 1956 commencement. Remaining: Complete image/text collation of the 1951 booklet; exact 1952/1953 relation; original 1956 TPV Holy Week book and full content checks; complete before/after Missal reconstruction.",
+      "missing": "The 1951 → 1952 Vigil relation is now documented at six rubric loci from AAS 43/44. Still missing: complete image/text collation of the 1951 and 1952 booklets; the original 1956 TPV Ordo Hebdomadae Sanctae instauratus and full content checks; any 1953–1955 variation (AAS 45 and 46 searched without a Vigil act); complete before/after Missal reconstruction.",
+      "next_source": "Original 1956 TPV Holy Week book (HathiTrust iau.31858049248663 is a Marietti Taurinensis juxta typicam, search-only, not TPV); complete 1952 editio altera booklet; AAS 47 (1955) 838–847 already image-read for the 1955 decree.",
       "consequence": "Recorded Holy Week times do not exhaust prayer/reading/rubric changes."
     },
     {

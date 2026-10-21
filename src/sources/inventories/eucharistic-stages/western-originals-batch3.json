@@ -96,6 +96,26 @@
       "limitations": "The library copy catalogue reports first leaf a1 missing; no original title-page inspection is claimed. Only 40 of 563 offered canvas images were acquired; the full-book PDF attempt returned incomplete HTML, and no whole-source-image acquisition is claimed. The library reports copy losses; selected Canon images visibly lose lower text."
     },
     {
+      "id": "western-originals-batch3:liege-uliege-1499",
+      "title": "Missale Leodiense, Paris 1499 (Higman), ULiège copies XV.B200 and XV.A46, DONum hdl 2268.1/2440",
+      "url": "https://hdl.handle.net/2268.1/2440",
+      "kind": "primary-book",
+      "inspection": "Public-domain PDFs downloaded 2026-10-21. XV.B200: PDF 6 leaf a1 recto title blurb (Missale insignis ecclesie Leodiensis ...) with Mass of St Gregory woodcut and verse; PDF 7 a1 verso Tabula festorum mobilium; PDF 8 January calendar signed a ii; PDF 18 November calendar; PDF 540 colophon Paris, Higman's expense, 24 November 1499. XV.A46: title leaf PDF 18, tabula PDF 19, a ii PDF 20 (colophon not checked).",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Other copies of the 1499 edition; they show what a1 carries in these copies but do not prove the leaf lost from the BSB copy was identical. Body text not collated."
+    },
+    {
+      "id": "western-originals-batch3:liege-uliege-1540",
+      "title": "Missale ad usum insignis ecclesie Leodiensis, Paris 22 July 1540, ULiège R00424D, DONum hdl 2268.1/14241",
+      "url": "https://hdl.handle.net/2268.1/14241",
+      "kind": "primary-book",
+      "inspection": "Public-domain 624-page PDF downloaded 2026-10-21. PDF 8 title (recently purged of many errors; offices hitherto wanting added, declared at the end), Paris imprint 22 July 1540, sold at Liège by Olivier Boulongne, 1578 Liège Jesuit ownership; PDF 20 November calendar; PDF 605–611 appended Masses (Seven Sorrows, recollection of all feasts of the Virgin, Presentation of Mary, Holy Tear of Christ); PDF 612 register.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "One copy; body text not collated with 1499 or with the March 1540 issue that BnF records separately. Title claims of emendation and additions are the publisher's statements."
+    },
+    {
       "id": "western-originals-batch3:tarazona-source",
       "title": "Missale mixtum secundum usum ecclesie et diocesis Tirasonensis (Pamplona,Brocar,1500), Bizkaia INC-35",
       "url": "https://hdl.handle.net/20.500.11938/69046",
@@ -294,10 +314,55 @@
           "source_id": "western-originals-batch3:liege-source",
           "locus": "IIIF canvases 361–366, Canon; BSB copy record M-437,1",
           "claim": "Canon images show lower text loss. The library reports leaf 1 (a1) missing, 274 (K6) pasted, and text loss at 169 (X1), 177 (X9), 178 (X10), 180 (X12); its folio conventions are distinct from modern pencil and IIIF labels."
+        },
+        {
+          "source_id": "western-originals-batch3:liege-uliege-1499",
+          "locus": "XV.B200 PDF 6–8 (a1r title, a1v tabula, a ii calendar) and PDF 540 colophon",
+          "claim": "Other copies of the same edition preserve leaf a1 as a title leaf with a printed description of the book, followed by a movable-feast table, and confirm the 24 November 1499 Higman colophon."
         }
       ],
-      "limitations": "Copy defects prevent a complete-text or complete-Canon claim. The 1499 date is a printing event, not approval or actual local receipt. No substantive revision, exact predecessor or ancestry follows from the incipit or colophon.",
+      "limitations": "Copy defects prevent a complete-text or complete-Canon claim. The 1499 date is a printing event, not approval or actual local receipt. No substantive revision, exact predecessor or ancestry follows from the incipit or colophon. The BSB copy record reports leaf a1 missing; ULiège copies XV.B200 and XV.A46 show a title leaf and movable-feast table at that position, which is other-copy evidence only.",
       "reception": "The surviving book declares Liège use; present BSB holding is not evidence of historical use there, and receipt by any particular Liège church is unestablished."
+    },
+    {
+      "id": "western-originals-batch3:liege-1540",
+      "tradition_id": "historic-liege-use",
+      "label": "1540 Liège missal (Paris, July issue)",
+      "date_label": "22 July 1540 printing, original title imprint",
+      "start_year": 1540,
+      "end_year": 1540,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "A 1540 Liège-use missal copy with original title, imprint, November calendar, appended Masses and register inspected.",
+      "components": [
+        "calendar",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:liege-1540-uliege-r00424d"
+      ],
+      "witness_label": "Missale ad usum insignis ecclesie Leodiensis, Paris 22 July 1540, ULiège R00424D",
+      "summary": "The title says the book was newly purged of errors and adds offices hitherto wanting, listed at the end; four Masses (Seven Sorrows, recollection of the Marian feasts, Presentation of Mary, Holy Tear) are appended before the register. The November calendar keeps Columbanus on 21 November without a Presentation entry, as in the ULiège 1499 copy XV.B200.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-originals-batch3:liege-uliege-1540",
+          "locus": "PDF 8 title and imprint",
+          "claim": "Liège use, emendation and added-office claims; Paris 22 July 1540; sold at Liège by Olivier Boulongne."
+        },
+        {
+          "source_id": "western-originals-batch3:liege-uliege-1540",
+          "locus": "PDF 605–611 appended Masses; PDF 612 register; PDF 20 calendar",
+          "claim": "Four appended Masses; 21 November Columbanus."
+        },
+        {
+          "source_id": "western-originals-batch3:liege-uliege-1499",
+          "locus": "XV.B200 PDF 18 November calendar",
+          "claim": "The 1499 edition also has Columbanus on 21 November and no Presentation entry."
+        }
+      ],
+      "limitations": "The 1499 sanctoral was not searched for these Masses and the intervening Liège editions (1500–1527, March 1540) are unchecked, so no 1499 → 1540 transition is asserted. Identity with catalogue lead amiet-nonfrance-liege-1540-7223 (USTC 438087) is unresolved because BnF records two 1540 issues.",
+      "reception": "A Liège bookseller and later Liège Jesuit ownership are attested; use in any particular church is not."
     },
     {
       "id": "western-originals-batch3:tarazona-1500",
@@ -416,8 +481,8 @@
       "id": "western-originals-batch3:beauvais-predecessor-reception",
       "tradition_id": "beauvais-diocesan-missal",
       "period": "before and after 1756",
-      "missing": "Exact predecessor edition and component collation; complete native divisions and chant coverage; copy defects, actual cathedral/parish uptake and later replacement.",
-      "next_source": "Earlier Augustin Potier missal named in the mandate, exact 1520/1538/1756 witnesses, cathedral/parish inventories and local mandate reception records.",
+      "missing": "Component collation of the 1756 book against its predecessor. BnF catalogue records include a 1625 Missale Bellovacense ad formam Tridentini issued under Bishop Augustin Potier (Beauvais, Godefroy Valet; BnF B-781, undigitized), which by the bishop's name is probably the earlier Potier missal named in the mandate (an unverified match, not a catalogue statement), and 1514 Morin, 1520 Vostre and 1538 Du Pré/Lefèvre printings; a c. 1285–1290 cathedral manuscript (Beinecke MS 748.5, dispersed) is a separate lead. None is inspected. Complete native divisions, chant coverage, actual uptake and later replacement remain open.",
+      "next_source": "BnF B-781 (1625) title and mandate leaves; BnF 1514 Morin record cb36817356x; usuarium 6953/6954; Fagin Davis, Florilegium 33 (2016) on the Beauvais Missal; cathedral and parish inventories.",
       "consequence": "A 1756 publication state and scoped mandate are documented, while substantive before/after changes, actual adoption and ancestry remain open."
     },
     {
@@ -425,7 +490,7 @@
       "tradition_id": "historic-toul-use",
       "period": "Before and after 1750",
       "missing": "Exact predecessor text, full native divisions and copy condition; complete text and independent collation; the mandate’s complete recipient reach and observed local implementation.",
-      "next_source": "Collate original earlier Toul missals against the 1750 book and its complete letter; inspect cathedral/parish book inventories, visitation records and evidence of implementation.",
+      "next_source": "Collate original earlier Toul missals against the 1750 book and its complete letter; inspect cathedral/parish book inventories, visitation records and evidence of implementation. BnF catalogue leads (2026-10-21, undigitized): Toul missals 1493 Le Rouge, 1516 Vostre, 1551 Daulnois with Bishop Toussaint's elucidation, 1630 under Nicolas-François de Lorraine; Toul Missale Romanum printings 1638 and 1718; Nancy-Toul 1838 and 1860 propers revised by the Congregation of Rites.",
       "consequence": "The 1750 printing and scoped mandate attest a bounded book state, while substantive revision, uniform adoption, duration of use and ancestry remain open."
     },
     {
@@ -433,15 +498,15 @@
       "tradition_id": "historic-tournai-use",
       "period": "Before and after 1498",
       "missing": "Full copy and gathering collation, complete native text, exact predecessor or successor comparison, commissioning instruments and actual local reception.",
-      "next_source": "Collate Ghent BHSL.RES.1379 against other copies and earlier/later Tournai books; inspect local chapter or diocesan book records and any commissioning instruments.",
+      "next_source": "Collate Ghent BHSL.RES.1379 against other copies and earlier/later Tournai books; inspect local chapter or diocesan book records and any commissioning instruments. BnF records 1509 Du Rieu (ed. Charles du Hautbois) and 1540 Antwerp Hillenius printings, matching existing leads 7573 and 7575; Ghent catalogue unreachable on 2026-10-21.",
       "consequence": "A dated Tournai-use printing can be shown without a reform edge, complete-book claim or continuous use interval."
     },
     {
       "id": "western-originals-batch3:liege-text-and-reception",
       "tradition_id": "historic-liege-use",
       "period": "Before and after 1499",
-      "missing": "Unacquired original pages and a complete authenticated delivery; lost text and physical copy extent; complete native text, predecessor comparison, commissioning and local reception.",
-      "next_source": "Obtain the complete publicly offered BSB image sequence or authenticated full PDF; compare another copy to the named missing or damaged leaves; inspect Liège chapter or diocesan book records.",
+      "missing": "Content of the BSB copy's leaf a1, which its catalogue reports missing (other ULiège copies carry a title leaf and movable-feast table there); complete native text and physical extent of the 1499 edition; collation of 1499 with the 1500–1527 editions and both 1540 issues; whether the 1540 appended Masses were new; commissioning and local reception.",
+      "next_source": "Cockx-Indestege, van Thienen and Gustin, Le Missale leodiense imprimé par Jean de Westphalie (1997); BnF Liège 1509/1513/1540 (March)/1552 copies; collate ULiège 2268.1/2440 and 2268.1/14241 sanctorals; Liège chapter and diocesan book records.",
       "consequence": "The defective 1499 witness attests a printing, without repairing lost text or defining a complete Liège recension."
     },
     {
@@ -449,15 +514,15 @@
       "tradition_id": "historic-tarazona-use",
       "period": "Before and after 1500",
       "missing": "Physical losses and a copy-to-copy extent check; complete native text and collation; earlier/later textual relations, separate approval evidence and actual use.",
-      "next_source": "Compare another 1500 copy to Bizkaia INC-35, collate the original Mass divisions and the separately identified 1529 printing cluster, and inspect diocesan/chapter receiving or use records.",
+      "next_source": "Compare another 1500 copy to Bizkaia INC-35, collate the original Mass divisions and the separately identified 1529 printing cluster, and inspect diocesan/chapter receiving or use records. The 1529 Coci printing is digitized as Zaguán record 749 (Universidad de Zaragoza AN-7-1-6, about 507 MB DjVu, not opened); CCPB001012028-9 is a further undated copy at Palacio Larrinaga, Zaragoza.",
       "consequence": "A dated commissioned local-use printing is attested without claiming a complete witness, substantive version or ancestry."
     },
     {
       "id": "western-originals-batch3:huesca-text-and-reception",
       "tradition_id": "historic-huesca-use",
       "period": "Before and after 1488",
-      "missing": "Public original 1488 book images and copy extent; original calendar, bishop letter, colophon and tail; the alleged reused 1485 Zaragoza sheets; complete text, separate authority and reception.",
-      "next_source": "Obtain public original images from the GW-reported New York Hispanic Society or defective Zaragoza Cathedral copies; compare exact 1485 Zaragoza sheets and seek another copy preserving the tail.",
+      "missing": "Public original 1488 book images and copy extent (no digitization found in GW, CCPB, Europeana, Memòria Digital de Catalunya, Zaguán or the web; CCPB000111205-8 records one Spanish copy at the Seo de Zaragoza chapter archive and GW adds the Hispanic Society copy); original calendar, bishop letter, colophon and tail; complete text, separate authority and reception. The Holy Saturday archiepiscopal supplication Lambert quotes recurs verbatim in Zaragoza 1485 (BC Res. 700-Fol., printed f. CIXr col. 2 l. 3), one folio before Lambert's Huesca locus, so the sheet relationship and foliation remain unverified.",
+      "next_source": "Hispanic Society or Seo de Zaragoza copy images; a complete Zaragoza 1485 copy with foliation for sheet comparison; candidate amiet-usuarium-7335 (1504 Oscensis et Iaccensis missal, USTC 347646) for the later Huesca–Jaca sequence.",
       "consequence": "A mediated 1488 publication attestation does not become original acquisition, a verified sheet relationship, a complete recension or a parent edge."
     },
     {
@@ -465,7 +530,7 @@
       "tradition_id": "historic-besancon-use",
       "period": "Before and after 1485",
       "missing": "Complete public original facsimile and physical copy extent; the separate commissioning instrument and date; complete native divisions/text and independent collation; exact earlier/later relations and local implementation.",
-      "next_source": "Pursue a lawfully reusable complete original delivery or another copy, collate the 1485 Mass divisions and earlier/later Besançon books, and inspect archdiocesan/chapter commissioning and receiving records.",
+      "next_source": "Pursue a lawfully reusable complete original delivery or another copy, collate the 1485 Mass divisions and earlier/later Besançon books, and inspect archdiocesan/chapter commissioning and receiving records. Vesoul BM γ 130 (Besançon missal, Kerver for Jean de Turgis, 7 July 1508) is reported fully digitized via BVMM/Biblissima, unreachable on 2026-10-21; BnF records 1497 Du Pré, 1551 Boisseneau and the 1694 Grammont Missale Bisuntinum de novo recognitum.",
       "consequence": "The original 1485 publication and printed commissioning claim can be shown without inventing a dated approval, complete book, substantive revision or use interval."
     }
   ]

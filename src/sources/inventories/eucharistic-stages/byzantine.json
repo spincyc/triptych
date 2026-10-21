@@ -30,7 +30,7 @@
       "label": "Ruthenian Slavonic books and Roman revision",
       "family": "Byzantine",
       "scope": "Eucharistic rubrics and complementary books, with regional reception limits",
-      "coverage_note": "Original 1692–1695/1733 terminal comparison and 1842/1899 preparation witnesses; later 1905 reprint/1941 rules and dated local reception. Connections beyond those inspected loci are not silently supplied."
+      "coverage_note": "Original 1692–1695/1733 terminal comparison, the Univ 1740 bishop's book mandate, Supraśl 1758 and Pochaiv 1788 title and rubric leaves, and 1842/1899 preparation witnesses; later 1905 reprint/1941 rules and dated local reception. Connections beyond those inspected loci are not silently supplied, and books of different presses are not chained by date."
     },
     {
       "id": "byzantine-vulgata",
@@ -260,6 +260,46 @@
       "checked_on": "2026-10-17",
       "status": "inspected",
       "limitations": "A reported translation approval is reception metadata; it does not establish a new original-language textual stage, exact source-language edition, or universal local use."
+    },
+    {
+      "id": "byzantine-stages:univ1740-pontifical-book",
+      "title": "Служебник святительский, Univ 1740, NBUV digital copy",
+      "url": "https://irbis-nbuv.gov.ua/ulib/item/0001789",
+      "kind": "primary-book",
+      "inspection": "Complete public 314-image PDF acquired from the NBUV digital library on 2026-10-21 (SHA-256 9ad6aeb4319366cfadbbcdef26f0742b66374dd7d6bac5d9e43a88e152a423e8). Engraved title (image 3), Metropolitan Atanasii Sheptytsky's printing mandate (image 5), contents (image 7) and opening text (image 8) inspected. The title calls this the first printing, at the Univ monastery of the Order of St Basil, dated 29 March 1740; the mandate, dated Univ 24 March 1740, says the book contains nothing contrary to the Catholic faith or to the Eastern rites as corrected by the Synod of Zamość and orders it printed for uniform hierarchical celebration.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Bounded front-matter inspection; the hierarchical Liturgy text was not collated. NBUV catalogue extent [6], 300, [4] pp. was not checked leaf by leaf. Scan redistribution permission unresolved."
+    },
+    {
+      "id": "byzantine-stages:suprasl1758-book",
+      "title": "Служебник … Иоанна Златоустаго, Supraśl 1758, Russian State Library copy in the NEB viewer",
+      "url": "https://kp.rusneb.ru/item/material/sluzhebnik-v-nem-zhe-liturgia-izhe-vo-svyatyh-otca-nashego-ioanna-zlatoustago",
+      "kind": "primary-book",
+      "inspection": "All 181 offered images previously acquired by the byzantine_slavic lane. Re-inspected 2026-10-21: title (image 3), Liturgy leaf 16 recto–verso (images 21–22) and contents (images 176–177). The title describes a Chrysostom Liturgy with services for the Lord's feasts, Marian feasts and principal saints, for the convenience of priests celebrating privately without singing and while travelling. The contents list services for the Holy Eucharist (leaf 76), the Sweet Name of Jesus, the Passion, the Conception, Visitation, Compassion and Rosary of the Mother of God, and, under saints and certain patrons of Poland and Lithuania, Blessed Josaphat, Francis, Dominic, Anthony of Padua, Ignatius Loyola, John Nepomucene and Casimir, followed by votive services.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Title, one Liturgy opening and contents only; propers texts and the whole Liturgy were not read or collated. The year is read from Cyrillic numerals as catalogued (1758)."
+    },
+    {
+      "id": "byzantine-stages:pochaiv1788-book",
+      "title": "Леітоургіаріон или Служебник, Pochaiv 1788 (fourth impression), UGCC commission scan",
+      "url": "https://drive.google.com/file/d/1B_k1govwHC_v2535fdADz_qxEckipjIh/view",
+      "kind": "primary-book",
+      "inspection": "Complete 269-image PDF previously acquired by the byzantine_slavic lane (SHA-256 4af4648e63695db5da2913f80154f788302a2ed88ca73cd3be509bbfceb1a89f). Re-inspected 2026-10-21: title (image 3), Mirror for priests (image 4), folio 1 recto (image 5) and verso (image 6). The title names the liturgies of Chrysostom, Basil and Gregory the Dialogist with Sunday, festal and common services and calls itself the fourth impression, at Pochaiv, 1788.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Bounded reading of the opening rubrics only; leaf completeness against Huculak's collation not checked. The commission's link label 1798 is wrong; the title year reads 1788."
+    },
+    {
+      "id": "byzantine-stages:huculak1990",
+      "title": "Laurence Daniel Huculak, The Divine Liturgy of St. John Chrysostom in the Kievan Metropolitan Province during the Period of Union with Rome (1596–1839), Rome 1990",
+      "url": "https://osbm.info/wp-content/uploads/2022/11/47.-Huculak-D.-L.-The-Divine-Liturgy-of-St.-John-Chrysostom-in-the-Kievan-Metr.-Province-1596-1839-cjm.pdf",
+      "kind": "scholarship",
+      "inspection": "Text layer of the PDF previously extracted by the byzantine_slavic lane; chapter on preparation and vesting read, especially the passages and notes 8, 80 and 84 on the 1788 Pochaiv book.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Read in the extracted text layer only, without printed page numbers; cited here by footnote. Used to orient direct inspection of the 1788 leaves, not as the sole evidence. Its note 50 on the 1788 Pochaiv icon veneration conflicts with f. 1r as inspected and is not relied on."
     }
   ],
   "stages": [
@@ -303,7 +343,7 @@
       "date_label": "1754 publication, described in 1756 act",
       "start_year": 1754,
       "end_year": 1754,
-      "scope": "Original Greek preliminary instructions and Chrysostom intercession",
+      "scope": "Original Greek preliminary instructions, Chrysostom epiclesis approach and intercession",
       "components": [
         "rubrics",
         "ordinary"
@@ -323,6 +363,11 @@
           "source_id": "byzantine-stages:ex-quo",
           "locus": "§§ 7–9 and 44",
           "claim": "The act identifies the four monita; the third includes unction and chrism. The act traces the commemoration provision to a confirmed 1746 decision."
+        },
+        {
+          "source_id": "byzantine-stages:greek-book-1754",
+          "locus": "Printed p. 52, provider PA52 (PDF p. 68)",
+          "claim": "After the ekphonesis Τὰ σὰ ἐκ τῶν σῶν the printing passes directly to the priest's prayer; the Third Hour troparion appears only as incipits inside the deacon's rubric."
         }
       ],
       "limitations": "Short Greek excerpts and bounded image comparison only. Papal commemoration and the choir hymn are not asserted to originate in these printing years. No complete predecessor/successor collation."
@@ -758,7 +803,7 @@
       "date_label": "1873 publication",
       "start_year": 1873,
       "end_year": 1873,
-      "scope": "Original Greek preliminary instructions and Chrysostom intercession",
+      "scope": "Original Greek preliminary instructions, Chrysostom epiclesis approach and intercession",
       "components": [
         "rubrics",
         "ordinary"
@@ -767,12 +812,17 @@
         "eastern:byz-greek-1873"
       ],
       "witness_label": "Εὐχολόγιον τὸ μέγα, Rome, Propaganda Fide, 1873",
-      "summary": "The Greek preliminaries retain the commemoration instruction, and the hierarch formula retains the Roman-communion footnote. After the Marian commemoration, a Χορός rubric prints Ἄξιόν ἐστιν and Τὴν τιμιωτέραν before the deacon’s diptychs rubric.",
+      "summary": "The Greek preliminaries retain the commemoration instruction, and the hierarch formula retains the Roman-communion footnote. After the Marian commemoration, a Χορός rubric prints Ἄξιόν ἐστιν and Τὴν τιμιωτέραν before the deacon’s diptychs rubric. Earlier, after Τὰ σὰ ἐκ τῶν σῶν, a Χορός rubric prints Σὲ ὑμνοῦμεν, and the Third Hour troparion before the epiclesis is printed in full.",
       "evidence": [
         {
           "source_id": "byzantine-stages:greek-book-1873",
           "locus": "Title PP7, PDF p. 4; preliminary PP9–PP10, PDF pp. 6–7; printed pp. 65–67, PDF pp. 72–74",
           "claim": "Native title/date, instructions, choir assignment and hymn, surrounding intercession and footnote directly checked."
+        },
+        {
+          "source_id": "byzantine-stages:greek-book-1873",
+          "locus": "Printed p. 64, provider PA64 (PDF p. 71)",
+          "claim": "A Χορός rubric prints Σὲ ὑμνοῦμεν after the ekphonesis, and the Third Hour troparion and its verses are printed in full."
         }
       ],
       "limitations": "This is a printing-state observation, not the first use of the hymn or proof of a new anaphora. No full-book collation or immediate exemplar descent is established."
@@ -834,6 +884,101 @@
       ],
       "limitations": "The identified booklet ends at image 78. Unidentified appended pages 645–670 are excluded. No claim of first promulgation or direct descent from the 1842 extract.",
       "reception": "Metropolitan approval is printed in the book; actual uniform reception is not established."
+    },
+    {
+      "id": "byzantine-stages:univ1740-pontifical",
+      "tradition_id": "byzantine-ruthenian",
+      "label": "Univ bishop's service book under a Zamość-conformity mandate",
+      "date_label": "Printing mandate 24 March 1740; title dated 29 March 1740",
+      "start_year": 1740,
+      "end_year": 1740,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Complementary hierarchical-Liturgy book; front matter and mandate only",
+      "components": [
+        "rubrics",
+        "ordinary"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-slavic-univ1740-pontifical"
+      ],
+      "witness_label": "Служебник святительский, Univ 1740, NBUV copy (Україніка item 0001789)",
+      "summary": "First printing of a Ruthenian bishop's service book, issued under Metropolitan Atanasii Sheptytsky's mandate stating conformity with Catholic faith and with the Eastern rites as corrected by the Synod of Zamość.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:univ1740-pontifical-book",
+          "locus": "Images 3, 5 and 7",
+          "claim": "Original title, first-printing statement and date; dated metropolitan mandate and its stated grounds; contents."
+        }
+      ],
+      "limitations": "The mandate's conformity statement is a normative claim, not a collation against Zamość decrees or earlier pontificals. The ordinary 1740 Univ Sluzhebnik remains unlocated in digital form.",
+      "reception": "Printed for hierarchs of the Kyivan Uniate metropolia; actual episcopal use is not documented here."
+    },
+    {
+      "id": "byzantine-stages:suprasl1758",
+      "tradition_id": "byzantine-ruthenian",
+      "label": "Supraśl Chrysostom book for private celebration with Latin-origin propers",
+      "date_label": "1758 (title, Cyrillic numerals)",
+      "start_year": 1758,
+      "end_year": 1758,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Title purpose and the proper and calendar repertoire listed in the contents",
+      "components": [
+        "propers",
+        "calendar",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-slavic-suprasl1758"
+      ],
+      "witness_label": "Служебник, Supraśl 1758, Russian State Library MK Кир. 2°",
+      "summary": "A Chrysostom service book intended for priests celebrating privately without singing and while travelling, whose propers include Latin-origin feasts and saints alongside Byzantine feasts.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:suprasl1758-book",
+          "locus": "Images 3, 21–22 and 176–177",
+          "claim": "Original title and stated purpose; Liturgy text still printing deacon and choir parts at leaf 16; contents with Latin-origin feasts and Polish-Lithuanian patrons."
+        }
+      ],
+      "limitations": "The book is not a dedicated read-Liturgy order like the Univ 1733 appendix: at the inspected leaf the Liturgy keeps deacon, choir and Cherubic-hymn cues. No comparison with 1733 or 1691 is made; propers texts unread.",
+      "reception": "Basilian Supraśl printing for the Kyivan Uniate metropolia; use is not quantified."
+    },
+    {
+      "id": "byzantine-stages:pochaiv1788",
+      "tradition_id": "byzantine-ruthenian",
+      "label": "Pochaiv fourth impression with expanded priestly preparation rubrics",
+      "date_label": "1788 (title, Cyrillic numerals)",
+      "start_year": 1788,
+      "end_year": 1788,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Front exhortation, preparation and vesting rubrics",
+      "components": [
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-slavic-pochaiv1788"
+      ],
+      "witness_label": "Леітоургіаріон или Служебник, Pochaiv 1788, scanned copy with a Lviv bookseller's stamp",
+      "summary": "The book opens with patristic counsel for priests. Its first rubric requires confession, reconciliation and abstinence from food and drink from the evening, especially from midnight; the vesting order includes handwashing, a shouldercloth prayer, a note on the deacon's vesting that refers both to Greek custom and to the practice of Roman deacons, and the belt put on by present custom.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "byzantine-stages:pochaiv1788-book",
+          "locus": "Images 3–6 = title, Mirror for priests, folio 1 recto–verso",
+          "claim": "Original title and fourth-impression statement; preparation and vesting rubrics read directly."
+        },
+        {
+          "source_id": "byzantine-stages:huculak1990",
+          "locus": "Preparation and vesting chapter, notes 8, 80 and 84",
+          "claim": "Identifies the midnight-fast note and the vesting notes as distinctive within the Żochowski tradition."
+        }
+      ],
+      "limitations": "Huculak's further notes on the phelonion (folios 1v–2r and 3r) were only partly seen. The handwashing and shouldercloth prayer also appear in the Lviv extracts of 1842 and 1899; no descent between these presses is asserted. Contrary secondary report: Huculak's note 50 (1788 Pochaiv, intro prayers f. 1) says the book prescribes kissing the Marian icon only, but f. 1r as inspected prints veneration of both the Christ and the Theotokos icons; the discrepancy (copy or reading) is unresolved and that note is not relied on.",
+      "reception": "Pochaiv Basilian printing; the scanned copy's later owner entries are not dated use evidence."
     }
   ],
   "transitions": [
@@ -1217,7 +1362,7 @@
       "kind": "revision",
       "status": "documented",
       "evidence_level": "text-collated",
-      "summary": "The 1873 printing supplies an explicitly assigned choir hymn at the Marian intercession where the 1754 printing moves directly to the deacon’s diptychs rubric.",
+      "summary": "The 1873 printing supplies explicitly assigned choir texts at two anaphora points where the 1754 printing gives none: after the ekphonesis Τὰ σὰ ἐκ τῶν σῶν and at the Marian intercession.",
       "components": [
         "ordinary",
         "rubrics"
@@ -1241,6 +1386,25 @@
               "claim": "The choir rubric and hymn intervene between the corresponding neighboring items."
             }
           ]
+        },
+        {
+          "component": "ordinary",
+          "before": "After the ekphonesis Τὰ σὰ ἐκ τῶν σῶν σοὶ προσφέρομεν κατὰ πάντα καὶ διὰ πάντα, the next item is the rubric Ὁ ἱερεὺς ἐπεύχεται and the prayer Ἔτι προσφέρομέν σοι; no choir text is printed.",
+          "after": "After the same ekphonesis, Χορός introduces Σὲ ὑμνοῦμεν, σὲ εὐλογοῦμεν, σοὶ εὐχαριστοῦμεν Κύριε, καὶ δεόμεθά σου, ὁ Θεὸς ἡμῶν; the following rubric reads Ὁ Ἱερεὺς ἐπεύχεται μυστικῶς.",
+          "locus_before": "1754 printed p. 52; provider PA52; PDF p. 68",
+          "locus_after": "1873 printed p. 64; provider PA64; PDF p. 71",
+          "evidence": [
+            {
+              "source_id": "byzantine-stages:greek-book-1754",
+              "locus": "Printed p. 52",
+              "claim": "Adjacent ekphonesis, rubric and prayer delimit the bounded absence."
+            },
+            {
+              "source_id": "byzantine-stages:greek-book-1873",
+              "locus": "Printed p. 64",
+              "claim": "Choir rubric and hymn intervene before the priest's prayer."
+            }
+          ]
         }
       ],
       "evidence": [
@@ -1253,9 +1417,19 @@
           "source_id": "byzantine-stages:greek-book-1873",
           "locus": "Printed pp. 65–67, PDF pp. 72–74",
           "claim": "After witness checked with surrounding prayers and retained Roman-communion condition."
+        },
+        {
+          "source_id": "byzantine-stages:greek-book-1754",
+          "locus": "Printed p. 52, provider PA52",
+          "claim": "Epiclesis approach in the earlier printing, read from the provider page image on 2026-10-21."
+        },
+        {
+          "source_id": "byzantine-stages:greek-book-1873",
+          "locus": "Printed p. 64, provider PA64",
+          "claim": "Epiclesis approach in the later printing, read from the provider page image on 2026-10-21."
         }
       ],
-      "limitations": "Revision means added printed content at this bounded locus. The 1754 omission does not establish absence in performance, and 1873 does not date introduction of the hymn. No assertion that the acquired 1754 copy was the direct exemplar; no whole-anaphora or whole-book identity claimed.",
+      "limitations": "Revision means added printed content at this bounded locus. The 1754 omission does not establish absence in performance, and 1873 does not date introduction of the hymn. No assertion that the acquired 1754 copy was the direct exemplar; no whole-anaphora or whole-book identity claimed. At the same pages 1873 also prints the Third Hour troparion and its verses in full where 1754 cues them by incipit inside the deacon's rubric; this is fuller printing of an item already present, not a liturgical change, and cold review 2026-10-21 removed it from the changes. Intervening Roman Greek printings between 1754 and 1873 were not checked.",
       "comparison_ids": [],
       "historical_parentage": "unestablished"
     },
@@ -1321,8 +1495,8 @@
       "id": "byzantine-stages:greek-original",
       "tradition_id": "byzantine-roman-greek",
       "period": "1738–1873, beyond the bounded inspected loci",
-      "missing": "Physical completeness of the 1738 witness, exact pre-1754 exemplar relationships, and a whole-book comparison beyond the verified intercession and preliminary controls.",
-      "next_source": "All 202/488/596 offered images of the 1738/1754/1873 witnesses are now retained. The 1738 BnF catalogue extent [2]-128-100 differs from the 202-image offered roster; another copy is needed to resolve that physical extent. The 1754 p. 53 and 1873 pp. 65–66 choir-text difference is directly checked, while intervening printings and other sections remain uncollated.",
+      "missing": "Physical completeness of the 1738 witness, exact pre-1754 exemplar relationships, and a whole-book comparison beyond the verified intercession, epiclesis-approach (1754 p. 52 against 1873 p. 64) and preliminary controls; the 1738 witness at these loci.",
+      "next_source": "All 202/488/596 offered images of the 1738/1754/1873 witnesses are now retained. The 1738 BnF catalogue extent [2]-128-100 differs from the 202-image offered roster; another copy is needed to resolve that physical extent. The 1754 pp. 52–53 and 1873 pp. 64–66 differences (choir texts after the ekphonesis and at the Marian intercession; full printing of the Third Hour troparion) are directly checked, while the 1738 witness at these loci, intervening printings and other sections (prothesis, dismissal) remain uncollated.",
       "consequence": "The 1754→1873 bounded printed-content change is established; no first performance date for the hymn, complete edition-wide revision, or direct exemplar lineage follows."
     },
     {
@@ -1337,16 +1511,16 @@
       "id": "byzantine-stages:ruth-long-gap",
       "tradition_id": "byzantine-ruthenian",
       "period": "1733–1905",
-      "missing": "Original Univ supplements of 1738/1745 and variant Sluzhebniks of 1740/1747; lineage and reception between the 1733 appendix, identified Lviv extracts and the original 1905 impression.",
-      "next_source": "Nataliia Zabolotna's NBUV study identifies services for Anthony of Padua and Casimir in part of the 1740 run, and Eucharist, Compassion of the Mother of God and Josaphat supplements in 1738/1745. These are original-source acquisition targets, not verified new stages. https://conference.nbuv.gov.ua/report/view/id/2038",
-      "consequence": "The 1733 appendix and bounded 1842/1899 preparation comparison now have original-page evidence. No automatic continuous descent or first promulgation connects them."
+      "missing": "Original ordinary Univ Sluzhebniks of 1740/1747 and the 1738/1745 supplements; Lviv 1759/1780/1866 and Przemyśl 1840 full books; a direct comparison of read-Liturgy provisions between the 1733 appendix, Supraśl 1758 and the Lviv extracts; lineage and reception to the original 1905 impression.",
+      "next_source": "NBUV digital-library title searches on 2026-10-21 found only the Univ 1740 bishop's book, the Supraśl 1716 pontifical and an undated Uniate manuscript Sluzhebnik among Uniate service books; the ordinary Univ 1740/1747 books need NBUV reading-room copies (Кир.5645п, 5646п, 1268) or other holders. Zabolotna's study (https://conference.nbuv.gov.ua/report/view/id/2038) remains the guide to the supplements.",
+      "consequence": "1733, 1740 (bishop's book), 1758, 1788, 1842 and 1899 now have original-page evidence at bounded loci, but no continuous descent, first promulgation or uniform reception connects them."
     },
     {
       "id": "byzantine-stages:ruth-original-acts",
       "tradition_id": "byzantine-ruthenian",
       "period": "1905–1944",
       "missing": "Original 1905 impression and Roman 1940/1942 leaves; original Italian circulars; exact 1944/1953 Ordo text comparison.",
-      "next_source": "The UGCC commission’s alleged 1905 file is an incomplete undated Canadian reprint; its p. 320 has been inspected. The commission’s Rome 1942 Drive link requires sign-in; the historical Patronage Church Sluzebnik and Latin Ordo links return 404. OCP 8 (1942), pp. 136–143, remains an unacquired original-Italian lead; Museum Bollandianum record 123110 identifies the 133-page 1944 Ordo. A public Scribd listing for the 452-page OCP 8 (1942) volume was located, but subsequent page searches returned Client Challenge; its original circular leaves were not verified.",
+      "next_source": "The UGCC commission’s alleged 1905 file is an incomplete undated Canadian reprint; its p. 320 has been inspected. The commission’s Rome 1942 Drive link requires sign-in; the historical Patronage Church Sluzebnik and Latin Ordo links return 404. OCP 8 (1942), pp. 136–143, remains an unacquired original-Italian lead; Museum Bollandianum record 123110 identifies the 133-page 1944 Ordo. A public Scribd listing for the 452-page OCP 8 (1942) volume was located, but subsequent page searches returned Client Challenge; its original circular leaves were not verified. Google Books holds catalogue records only, without preview, for the 1944 and 1953 Ordo (ids Z5ADGwAACAAJ and HUYCkAEACAAJ; searched 2026-10-21); archive.org remained unreachable.",
       "consequence": "The predecessor rules now have direct later-reprint witnesses; Roman corrections remain primary-described through translation. No invented book-text collation or 1944-to-1953 revision."
     },
     {

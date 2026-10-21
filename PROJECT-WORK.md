@@ -47,15 +47,32 @@ candidate replay had three, and eight model/network or mutation-dependent
 examples were deliberately not run. No actual failing invocation was
 recaptured as a successful example.
 
-Publication is blocked on a maintainer terminal commit: the local secret
-scanner cannot buffer the generated-data diff, and splitting off generated
-files still exceeded its limit. No scanner bypass, commit, ref rewrite or push
-was performed. The maintainer chose to make the prepared commit locally, then
-resume publication. The maintainer approved removing exactly two
-machine-specific references from the unpublished outgoing acquisition metadata
-history before a normal fast-forward push; no published history may change.
-The disclosure audit finds only those two historical references, no credentials
-or unintended artifact paths. Backups preserve the original history and work.
+The maintainer made the prepared implementation commit after the local secret
+scanner could not buffer its generated-data diff. No scanner bypass was used.
+The maintainer then approved removing exactly two machine-specific references
+from unpublished acquisition metadata history. Verification of all 62 outgoing
+commits establishes unchanged messages and author/committer identities, correct
+parent mappings, no other tree changes, and an identical final file tree at
+sanitized checkpoint `286ac3402a66ae6788764cfd5d6509e72d617f30`.
+Backups preserve the original history and work; no published history changed.
+
+Main advanced to `c9108e350a558dbe983c85cd713858c367538680` before publication.
+The maintainer expressly approved merging that update on the workspace branch
+and resolving shared records while preserving both workstreams. The incoming
+batch-four research and promise evidence are retained byte-for-byte. The merged
+history projection contains 548 files; its 31 shared comparison fingerprints
+were regenerated from their owners, not selected from either stale side.
+The scoped release refresh changes 33 derived bindings and reports zero stale
+bindings. All 157 history, corpus-adapter, stage and reconciliation tests pass.
+Merged history-tool examples were refreshed from successful invocations.
+The sanitized-history and merged-file disclosure audit finds no credentials,
+machine-specific references or unintended artifact paths. The ledger, whitespace
+and repository-hygiene checks pass. The integrated candidate passes
+`make check-deployment-sources`, `make public-site`, and
+`public-alpha verify --deployment-target github-pages`. The final committed-range
+audit, normal fast-forward push, and automatic Pages verification remain pending.
+Earlier annual and browser results above apply to the unchanged reader
+implementation; they have not been repeated merely for this metadata merge.
 The full annual text-completeness promise remains separate and open;
 structural renderability must not stand in for missing source text.
 
@@ -1461,6 +1478,38 @@ deployment; the later documentation push triggers a separate automatic run.
 Earlier branch-only delivery statements below describe their dated batches.
 No whole-book, physical-print or full all-rite completion follows from main
 integration.
+
+**Fourth parallel batch, 21 October 2026: published to `main` and verified
+live.** Implementation `1bc263922b9637edca88e5c46a03ce0fffb5f295` reached
+`origin/main` by an ordinary fast-forward from `5f2e74718` (no rebase was
+needed). Pages run [`39661330623`](https://github.com/spincyc/triptych/actions/runs/39661330623)
+and repository hygiene `39661330405` passed. Nine live routes matched the
+locally built artifact in byte length and SHA-256: the History page and its
+assets, the catalogue and four changed comparisons. This later documentation
+commit triggers its own run. The maintainer asked for plan rows 1–5 to run in
+parallel: route coverage, the Eastern census and local reception, dossier
+gaps, originals and acts, and the permission census. The work was then to be
+rebased, reconciled and pushed to `main`. Eight lanes ran with exclusive
+route and dossier ownership. Each lane passed an independent cold review
+that could only narrow, correct or remove claims. The
+[batch review](workflows/reviews/missal-batch4-2026-10-21/REPORT.md) and the
+eight dated `*-batch4-2026-10-21.json` receipts record the scopes, the
+corrections and the access refusals.
+
+The batch moves stages from 295 to 396 (378 documented, 18 provisional),
+transitions from 77 to 107, gaps from 203 to 251 and selected-stage routes
+from 98 to 124. Routes with no mapped stage fall from 76 to 45. Three new
+dossiers hold the French dioceses and the historic Iberian uses. A new
+register holds 70 permission findings, 21 of them read in the issuing
+instrument, which falls short of the requested 30. Text coverage stays at
+zero complete whole books, and no transition grants Git ancestry or text
+inheritance.
+
+The Braga 1924 rights record's OCR-based absences and its 1955 Queenship date
+were falsified on the page images and are corrected in place. The record's
+holding is unchanged. All new acquisitions (about 2,800 hash-recorded entries)
+remain outside the repository; their retention is deferred to the maintainer.
+The all-rite project remains **in progress**.
 
 **Next phases authorized after cold review, 2026-10-20.** The maintainer
 requested execution of the outstanding phases with as many useful independent

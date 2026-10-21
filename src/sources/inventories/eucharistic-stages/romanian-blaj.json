@@ -2,14 +2,14 @@
   "schema_version": 1,
   "record_type": "eucharistic-book-stages",
   "dossier_id": "romanian-blaj",
-  "title": "Romanian Greek Catholic Blaj liturgy book witnesses of 1756 and 1775",
+  "title": "Romanian Greek Catholic Blaj Liturghier book line, 1756–2015",
   "traditions": [
     {
       "id": "romanian-blaj:historical",
       "label": "Blaj Romanian Greek Catholic book line",
       "family": "Byzantine",
-      "scope": "Two Romanian Cyrillic Eucharistic printings issued at the Holy Trinity monastery in Blaj.",
-      "coverage_note": "The original title leaves establish printed book states. They do not establish two substantive recensions, exclusive use in Romanian Greek Catholic parishes, or direct descent from a particular earlier copy."
+      "scope": "Romanian Eucharistic service books of the Blaj Greek Catholic line, from the Cyrillic printings of 1756, 1775 and 1807 to the officially adopted 2014 edition.",
+      "coverage_note": "Original title leaves establish the 1756, 1775 and 1807 printed states; bounded loci were read in all three. Later states of 1870, 1905, 1931 and 2014 rest on a contemporary comparison, a contemporary participant account, the 2015 synodal circular and the revisers' note, not on inspected copies of those books. No exclusive parish use, complete collation or exact pre-1756 exemplar is established."
     }
   ],
   "sources": [
@@ -18,8 +18,8 @@
       "title": "Dumnezeeştile Liturghii, Blaj 1756, BCU Cluj BRV 300",
       "url": "https://www.bcucluj.ro/synfilebibdigit/patrimoniu/BCUCLUJ_FCS_BRV300.pdf",
       "kind": "primary-book",
-      "inspection": "Complete 240-page scan acquired; original Cyrillic title PDF p. 1, contents p. 2 and liturgy opening p. 3 visually inspected. The title names Bishop Petru Pavel Aron and the Holy Trinity monastery at Blaj and states this printing was the first in its form. SHA-256 of acquired PDF: 5fed41bc2a35c96cec9f9bb15574274fc49007d88af4f366a1a0867bf7915fe8.",
-      "checked_on": "2026-10-20",
+      "inspection": "Complete 240-page scan acquired; original Cyrillic title PDF p. 1, contents p. 2 and liturgy opening p. 3 visually inspected. The title names Bishop Petru Pavel Aron and the Holy Trinity monastery at Blaj and states this printing was the first in its form. SHA-256 of acquired PDF: 5fed41bc2a35c96cec9f9bb15574274fc49007d88af4f366a1a0867bf7915fe8. Re-inspected 2026-10-21: printed pp. 84–85 (PDF pp. 86–87), the Little Entrance, where the singers' response Veniţi să ne închinăm follows the deacon's Cu înţelepciune drepţi at the head of p. 85.",
+      "checked_on": "2026-10-21",
       "status": "inspected",
       "limitations": "The scan was acquired but the full text and physical completeness were not collated. The title establishes a Blaj imprint, not the adoption history of every parish or a new recension."
     },
@@ -28,8 +28,8 @@
       "title": "Dumnezeeştile Liturghii, Blaj 1775, BCU Cluj BRV 391",
       "url": "https://www.bcucluj.ro/synfilebibdigit/patrimoniu/BCUCLUJ_FCS_BRV391.pdf",
       "kind": "primary-book",
-      "inspection": "Complete 118-page scan acquired; original Cyrillic title at PDF p. 3 visually inspected. It identifies the volume as a second printing. The handwritten comparison to a Râmnic 1733 book across the top is a later annotation. SHA-256 of acquired PDF: 109b66354180a43313a3fe6d67f1736c73efedf25bcc2624062baa4f00b5d6ba.",
-      "checked_on": "2026-10-20",
+      "inspection": "Complete 118-page scan acquired; original Cyrillic title at PDF p. 3 visually inspected. It identifies the volume as a second printing. The handwritten comparison to a Râmnic 1733 book across the top is a later annotation. SHA-256 of acquired PDF: 109b66354180a43313a3fe6d67f1736c73efedf25bcc2624062baa4f00b5d6ba. Re-inspected 2026-10-21: PDF p. 42, a two-page opening with printed pp. 66–67; the same Little Entrance sequence and singers' response appear on p. 67.",
+      "checked_on": "2026-10-21",
       "status": "inspected",
       "limitations": "Physical completeness and text were not collated. A second printing is not by itself a textual revision or evidence of exclusive parish use."
     },
@@ -38,10 +38,50 @@
       "title": "Ioan Bălan, Stabilirea limbei liturgice româneşti (II), Cultura Creștină 5 (1915), no. 5",
       "url": "https://dspace.bcucluj.ro/jspui/bitstream/123456789/1727/1/BCUCLUJ_FP_279432_1915_005_005.pdf",
       "kind": "scholarship",
-      "inspection": "Printed pp. 137–149 read in the acquired periodical scan. At pp. 139–140 Bălan describes the 1756, 1775 and 1807 Blaj editions as close copies of Antim's Liturghier, with limited corrections, and names specific examples against Antim's text.",
-      "checked_on": "2026-10-20",
+      "inspection": "Printed pp. 137–149 read in the acquired periodical scan. At pp. 139–140 Bălan describes the 1756, 1775 and 1807 Blaj editions as close copies of Antim's Liturghier, with limited corrections, and names specific examples against Antim's text. Re-inspected 2026-10-21 as page images: printed pp. 140, 143, 146 and 147 (PDF pp. 12, 15, 18 and 19), including the footnoted page loci for Antim, Blaj 1756, Blaj 1807 (Bob), Blaj 1870 and Blaj 1905.",
+      "checked_on": "2026-10-21",
       "status": "inspected",
       "limitations": "Contemporary comparative argument, not this project's independent page-level collation of the predecessor and the two Blaj printings. Its summary does not establish complete textual identity or exact descent."
+    },
+    {
+      "id": "romanian-blaj:book1807",
+      "title": "Dumnezeeştile Liturghii, Blaj 1807 (third printing), BCU Cluj BRV 721, parts 1–2",
+      "url": "https://www.bcucluj.ro/synfilebibdigit/patrimoniu/BCUCLUJ_FCS_BRV721_1.pdf",
+      "kind": "primary-book",
+      "inspection": "Both public PDF parts acquired (100 + 117 pages; part 2 at BCUCLUJ_FCS_BRV721_2.pdf). Original Cyrillic title at part 1 PDF p. 6 read: printed now the third time, under Emperor Francis II, with the blessing of Bishop Ioan Bob of Făgăraş, at the Blaj metropolitan seat, year 1807, seminary press. Text pages read at printed pp. 15–16 (part 1 PDF 28–29), 21 (PDF 34), 70–72 (PDF 83–85), 74–75 (PDF 87–88), 90 and 92 (part 2 PDF 3 and 5) and 97–105 (part 2 PDF 10–18). Printed page n of part 1 is PDF n+13.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Bounded page reading only; no transcription or whole-book collation. Physical completeness of BRV 721 was not checked against a bibliographic collation. Scan redistribution terms are a generic library copyright footer."
+    },
+    {
+      "id": "romanian-blaj:macaveiu1932",
+      "title": "Victor Macaveiu, Postscriptum pentru noul Liturghier, Unirea 42, no. 7 (Blaj, 14 February 1932)",
+      "url": "https://dspace.bcucluj.ro/bitstream/123456789/37771/1/BCUCLUJ_FP_P2628_1932_042_0007.pdf",
+      "kind": "scholarship",
+      "inspection": "Issue PDF previously acquired by the regional lane; article read in page images at PDF p. 3 (right columns) and PDF p. 4 (footnotes, centre column), with the OCR text layer as a finding aid. The author, a metropolitan canon who wrote the new book's preface, states that the rubric revision was made at Stâna de Vale by an interdiocesan commission on which all dioceses were represented, and that it completed rubrics only where a uniform practice existed; a footnote reports that the new book's Great Litany (its p. 63) prays simply for travellers, suppressing those who travel on waters.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "A participant's contemporary defence of the 1931 book, not an inspected copy of it. Its page references are to the 1931 book and older editions not seen here."
+    },
+    {
+      "id": "romanian-blaj:circular2015",
+      "title": "Romanian Greek Catholic Synod, circular letter of 20 May 2015 making the 2014 Liturghier the official text",
+      "url": "https://www.egco.ro/2015/05/20/scrisoare-circulara-referitoare-la-noua-editie-oficiala-a-liturghierului/",
+      "kind": "primary-act",
+      "inspection": "Whole HTML previously acquired by the regional lane (SHA-256 d2f019dcb0775a616752983229ed6a5e3cb41ea8a02541cfdead8856e5774fe8) and read in full: names the 1996 Rome edition as the last edition, states that the present edition, like 1996, keeps the linguistic choices of the 1931 Liturghier of Metropolitan Vasile Suciu with small language corrections and clarified typikon rubrics, and, by synodal decision of 18–20 May 2015 under CCEO cann. 112 and 657 §3, orders the 2014 edition to be the official text, effective on publication of the circular.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Eparchial web publication of the act; the signed original and the 2014 book itself were not inspected. It does not enumerate the changed wordings."
+    },
+    {
+      "id": "romanian-blaj:editors-note2014",
+      "title": "Francisca Băltăceanu and Monica Broșteanu, Notă asupra ediției 2014 a Liturghierului de la Blaj (e-communio, 21 May 2015)",
+      "url": "https://www.e-communio.ro/stire2882-nota-asupra-editiei-2014-a-liturghierului-de-la-blaj",
+      "kind": "scholarship",
+      "inspection": "Whole HTML previously acquired by the regional lane (SHA-256 65d67cb4f18950cbc3a59629088dc6c74792e8ee37824adc77d3a8118f868628) and read in full. The revisers, entrusted by the Synod, list classes of corrections made after comparison with the Greek, each with new and replaced wording, and state that the secret prayers were set in several paragraphs.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "The revisers do not name the edition whose wording they replaced; the circular identifies 1996 as the previous edition. Examples are selective, not a complete list of changes."
     }
   ],
   "stages": [
@@ -116,25 +156,440 @@
       ],
       "limitations": "The original title identifies a printed state; no component comparison between 1756 and 1775 has been performed. Later handwriting on the title page is not printed evidence. No reform or direct-parent transition is asserted.",
       "reception": "Blaj imprint and the Greek Catholic book line are identified. Extent and dates of actual parish use have not been proved by this copy."
+    },
+    {
+      "id": "romanian-blaj:1807-printing",
+      "tradition_id": "romanian-blaj:historical",
+      "label": "Third Blaj Romanian Cyrillic liturgies printing",
+      "date_label": "Printed at Blaj in 1807",
+      "start_year": 1807,
+      "end_year": 1807,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Third printed issue of the Blaj liturgies book, with bounded readings at named Vespers litia, Little Entrance, fervent litany, anaphora and post-communion loci.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-blaj1807"
+      ],
+      "witness_label": "BCU Cluj BRV 721, original title at part 1 PDF p. 6",
+      "summary": "Bishop Ioan Bob's Blaj printing calls itself the third. At the inspected Vespers and Liturgy loci it keeps the older Romanian wording that Bălan reports replaced in 1870.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "romanian-blaj:book1807",
+          "locus": "Part 1 PDF p. 6 (title); printed pp. 21, 70, 75 (part 1 PDF 34, 83, 88); printed pp. 90, 92, 105 (part 2 PDF 3, 5, 18)",
+          "claim": "Title, third-printing statement, episcopal blessing and date, and the named readings directly inspected."
+        },
+        {
+          "source_id": "romanian-blaj:balan1915",
+          "locus": "Printed pp. 139–140 and 143, notes",
+          "claim": "Groups 1807 with 1756 and 1775 as near-literal copies of Antim's book and cites the 1807 pages 21, 75 and 90–92 for its wording."
+        }
+      ],
+      "limitations": "Bounded readings only; no complete collation with 1756, 1775 or Antim. The printed third-printing statement is succession, not proof of textual identity. Printed pp. 15–16 and 21 belong to Vespers in the same volume. The reading of the post-communion at p. 105 is not evidence about the gifts blessing Bălan reports for 1870, whose place is unestablished.",
+      "reception": "Blaj episcopal printing; Sana reports a copy bought by a Bihor parish in 1857, but actual parish use and its extent are not established by this copy."
+    },
+    {
+      "id": "romanian-blaj:1870-revision",
+      "tradition_id": "romanian-blaj:historical",
+      "label": "Latinizing Blaj Liturghier of 1870",
+      "date_label": "Blaj 1870 (title date MDCCCLXX as cited)",
+      "start_year": 1870,
+      "end_year": 1870,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Latin-script Liturghier with Chrysostom, Basil and the Presanctified (Gregory the Dialogist), as described by a contemporary comparison with page loci.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-blaj1870"
+      ],
+      "witness_label": "Domnedieescile si sântele liturgii … Blasiu MDCCCLXX, cited by Bălan 1915, p. 143 n. 1",
+      "summary": "Bălan reports Latinizing vocabulary in the Vespers litia, litanies, anaphora and Our Father, and corp for trup at the consecration. He also reports a blessing of the people with the holy gifts first found in a Blaj edition of 1870, whose place in the Liturgy his note leaves unclear.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "romanian-blaj:balan1915",
+          "locus": "Printed pp. 140 (main text and note 6), 141–144 with notes, especially p. 143 nn. 1–9",
+          "claim": "Contemporary comparison quoting 1870 wording against the 1807 book with page loci, and reporting clerical objections published in 1885–1886."
+        }
+      ],
+      "limitations": "The 1870 book itself was not located or inspected; the readings are Bălan's, transcribed by him in modern orthography. Bălan's note for the gifts blessing reads only 'Liturghier p. 82'; if it refers to 1870, it falls before that book's consecration (p. 90), not after communion.",
+      "reception": "Bălan reports objections in the Blaj Foaia bisericească (1885, 1886); the extent of use is not established."
+    },
+    {
+      "id": "romanian-blaj:1905-revision",
+      "tradition_id": "romanian-blaj:historical",
+      "label": "Blaj Liturghier of 1905 moderating the 1870 language",
+      "date_label": "1905 printing, as reported by Bălan 1915, p. 146",
+      "start_year": 1905,
+      "end_year": 1905,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Revised Liturghier in moderated etymological orthography, described by a contemporary comparison with page loci.",
+      "components": [
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-blaj1905"
+      ],
+      "witness_label": "Liturghier, Blaj 1905, cited by Bălan 1915, pp. 146–147",
+      "summary": "Bălan reports a partial return to older vocabulary and to wording of books printed elsewhere, while corp remains at the consecration; his criticism implies that the chalice words follow the formula of the 1882 Blaj provincial council.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "romanian-blaj:balan1915",
+          "locus": "Printed pp. 146–147 with notes 5 (p. 146) and 1–5 (p. 147)",
+          "claim": "Compares 1905 with 1870 and older wording at named pages, including 1905 pp. 25, 88 and 111."
+        }
+      ],
+      "limitations": "The 1905 book was not inspected; readings are Bălan's. No complete comparison with 1870 or 1931.",
+      "reception": "Bălan notes a cool reception in the Orthodox Telegraful român; Greek Catholic parish use is not quantified."
+    },
+    {
+      "id": "romanian-blaj:1931-standardization",
+      "tradition_id": "romanian-blaj:historical",
+      "label": "1931 Liturghier with interdiocesan rubric completion",
+      "date_label": "1931 publication (Metropolitan Vasile Suciu); defended February 1932",
+      "start_year": 1931,
+      "end_year": 1931,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "New Liturghier whose rubrics were revised by an interdiocesan commission and whose language later editions retain.",
+      "components": [
+        "rubrics",
+        "ordinary"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-blaj1931"
+      ],
+      "witness_label": "Liturghier, Blaj 1931, named by the 2015 circular and discussed by Macaveiu 1932",
+      "summary": "Rubrics were completed only where the commission found uniform practice in all dioceses; the language returned toward the traditional church idiom, and the Great Litany prays simply for travellers.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "romanian-blaj:macaveiu1932",
+          "locus": "PDF p. 3, right columns; PDF p. 4, centre-column footnote on p. 63 of the new book",
+          "claim": "Participant account of the Stâna de Vale commission and its rubric method; a concrete litany wording of the new book."
+        },
+        {
+          "source_id": "romanian-blaj:circular2015",
+          "locus": "Second paragraph",
+          "claim": "Names the 1931 Liturghier of Metropolitan Vasile Suciu as the source of the linguistic choices kept in 1996 and 2014."
+        }
+      ],
+      "limitations": "No copy of the 1931 book inspected; the earlier wording replaced at the litany is not attributed by Macaveiu to a specific edition. No Roman approval decree located.",
+      "reception": "Critiques were referred to the episcopal conference of 4 November 1931; later official circulars treat 1931 as an approved base."
+    },
+    {
+      "id": "romanian-blaj:2014-official-edition",
+      "tradition_id": "romanian-blaj:historical",
+      "label": "2014 Liturghier made the official text",
+      "date_label": "2014 edition; official by synodal circular of 20 May 2015, effective on publication",
+      "start_year": 2015,
+      "end_year": 2015,
+      "date_kind": "effective",
+      "status": "documented",
+      "scope": "Official adoption of a language-corrected edition with clarified typikon rubrics.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:byzantine-regional-blaj2014"
+      ],
+      "witness_label": "Dumnezeieștile și Sfintele Liturghii … (Blaj 2014), adopted by the circular of 20 May 2015",
+      "summary": "The synod makes the 2014 edition the official liturgical text; the revisers report wording corrections checked against the Greek and new paragraphing of the secret prayers.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "romanian-blaj:circular2015",
+          "locus": "Dispositive paragraph and date clause",
+          "claim": "Orders the 2014 edition to be the official text, effective on publication; dated Blaj, 20 May 2015."
+        },
+        {
+          "source_id": "romanian-blaj:editors-note2014",
+          "locus": "Lists of replaced wordings; final paragraph on layout",
+          "claim": "Describes the classes and examples of corrections."
+        }
+      ],
+      "limitations": "The 2014 book was not inspected. The positioned date is the act's effectiveness, not the printing date or first use.",
+      "reception": "Church-wide normative adoption; actual uniform use is not demonstrated."
     }
   ],
-  "transitions": [],
+  "transitions": [
+    {
+      "id": "romanian-blaj:1756-to-1775-succession",
+      "from_stage": "romanian-blaj:1756-printing",
+      "to_stage": "romanian-blaj:1775-printing",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 1775 title calls itself the second printing of the 1756 book; the inspected Little Entrance locus agrees.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "romanian-blaj:book1775",
+          "locus": "PDF p. 3 (title); PDF p. 42, printed p. 67",
+          "claim": "Second-printing statement; same singers' response after Cu înţelepciune drepţi."
+        },
+        {
+          "source_id": "romanian-blaj:book1756",
+          "locus": "Printed pp. 84–85, PDF pp. 86–87",
+          "claim": "Corresponding earlier sequence."
+        }
+      ],
+      "limitations": "Bibliographic succession with one agreeing locus, not a collation; no substantive change is asserted or excluded.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "romanian-blaj:1775-to-1807-succession",
+      "from_stage": "romanian-blaj:1775-printing",
+      "to_stage": "romanian-blaj:1807-printing",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 1807 title calls itself the third printing; the inspected Little Entrance locus agrees with 1756 and 1775.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "romanian-blaj:book1807",
+          "locus": "Part 1 PDF p. 6 (title); printed p. 70, PDF p. 83",
+          "claim": "Third-printing statement; same entrance sequence and response."
+        },
+        {
+          "source_id": "romanian-blaj:book1775",
+          "locus": "PDF p. 42, printed p. 67",
+          "claim": "Corresponding earlier sequence."
+        }
+      ],
+      "limitations": "Bibliographic succession with one agreeing locus, not a collation.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
+    },
+    {
+      "id": "romanian-blaj:1807-to-1870-latinizing-revision",
+      "from_stage": "romanian-blaj:1807-printing",
+      "to_stage": "romanian-blaj:1870-revision",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The 1870 Blaj book, as Bălan reports it, replaces older Romanian liturgical vocabulary with Latinizing forms at the Vespers litia, the anaphora dialogue, the fervent litany and the words of institution over the bread.",
+      "components": [
+        "ordinary",
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Vespers litia petition: Cercetează lumea ta cu milă şi cu îndurări … trimite preste noi milele tale cele bogate.",
+          "after": "Cercetează lumea ta cu misericordie şi cu îndurări … trimite preste noi îndurările tale cele copioase (Bălan's modern-orthography transcription).",
+          "locus_before": "1807 printed p. 21 (part 1 PDF 34)",
+          "locus_after": "1870 p. 23 ff., as cited by Bălan p. 143 n. 1",
+          "evidence": [
+            {
+              "source_id": "romanian-blaj:book1807",
+              "locus": "Printed p. 21",
+              "claim": "Earlier wording read directly."
+            },
+            {
+              "source_id": "romanian-blaj:balan1915",
+              "locus": "Printed pp. 142–143 and p. 143 nn. 1–2",
+              "claim": "Quotes both wordings with loci."
+            }
+          ]
+        },
+        {
+          "component": "ordinary",
+          "before": "Anaphora dialogue: Mila păcii, jertfa laudei and Cu vrednicie şi cu dreptate este; litany for the cinstita preoţie.",
+          "after": "Îndurarea păcii, sacrificiul laudei; Cu cuviinţă şi cu dreptate; the priesthood called onorată.",
+          "locus_before": "1807 printed pp. 75 and 90 (part 1 PDF 88; part 2 PDF 3)",
+          "locus_after": "1870 wording as quoted by Bălan p. 143; page loci not all given",
+          "evidence": [
+            {
+              "source_id": "romanian-blaj:book1807",
+              "locus": "Printed pp. 75 and 90",
+              "claim": "Earlier wording read directly."
+            },
+            {
+              "source_id": "romanian-blaj:balan1915",
+              "locus": "Printed p. 143 and nn. 3–7",
+              "claim": "Reports the replacements."
+            }
+          ]
+        },
+        {
+          "component": "anaphoras",
+          "before": "Words of institution over the bread: acesta este Trupul mieu.",
+          "after": "Corp replaces trup at the consecration.",
+          "locus_before": "1807 printed p. 92 (part 2 PDF 5)",
+          "locus_after": "1870 p. 90, as cited by Bălan p. 143 n. 8",
+          "evidence": [
+            {
+              "source_id": "romanian-blaj:book1807",
+              "locus": "Printed p. 92",
+              "claim": "Earlier wording read directly."
+            },
+            {
+              "source_id": "romanian-blaj:balan1915",
+              "locus": "Printed p. 143 and n. 8",
+              "claim": "Gives Bob p. 92 and 1870 p. 90."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "romanian-blaj:book1807",
+          "locus": "Part 1 PDF p. 6; printed pp. 21, 75, 90–92",
+          "claim": "Earlier state read directly."
+        },
+        {
+          "source_id": "romanian-blaj:balan1915",
+          "locus": "Printed pp. 140–144",
+          "claim": "Contemporary comparison of 1870 with 1807 and older books."
+        }
+      ],
+      "limitations": "The after-state rests on Bălan's quotations; the 1870 book was not inspected. Descent from 1807 rather than another exemplar is Bălan's framing. The litia petition belongs to Vespers printed in the same Liturghier, not to the Eucharistic Liturgy. Cold review 2026-10-21 removed a fourth change that compared the 1807 post-communion (printed p. 105) with a blessing of the people with the holy gifts that Bălan (p. 140) says is first found in a Blaj edition of 1870: his only locus note ('Liturghier p. 82') falls before the 1870 consecration (p. 90), near the Great Entrance rather than after communion, and the 1807 Great Entrance (printed p. 83) already prints a commemoration 'Pre voi pre toţi să vă pomenească Domnul Dumnezeu'. The corresponding 1807 locus and the nature of the 1870 addition are therefore unestablished.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "romanian-blaj:1870-to-1905-revision",
+      "from_stage": "romanian-blaj:1870-revision",
+      "to_stage": "romanian-blaj:1905-revision",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The 1905 book moderates the 1870 vocabulary and adopts the provincial council's form of the chalice words.",
+      "components": [
+        "ordinary",
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Litia petition with misericordie and îndurările tale cele copioase.",
+          "after": "Cercetează lumea ta cu milă şi îndurări … îndurările tale cele avute.",
+          "locus_before": "1870 p. 23 ff., cited by Bălan p. 143 n. 1",
+          "locus_after": "1905 p. 25 ff., cited by Bălan p. 147 n. 2",
+          "evidence": [
+            {
+              "source_id": "romanian-blaj:balan1915",
+              "locus": "Printed pp. 143 and 147",
+              "claim": "Quotes both wordings."
+            }
+          ]
+        },
+        {
+          "component": "anaphoras",
+          "before": "Chalice words: … al legii celei nouă, carele pentru voi şi pentru mulţi se varsă spre iertarea păcatelor.",
+          "after": "… al legii celei noue, care se varsă pentru voi şi pentru mulţi spre iertarea păcatelor, the form of the 1882 Blaj provincial council (tit. V cap. 4, p. 77), which Bălan's criticism implies the 1905 book adopted.",
+          "locus_before": "1870 p. 91, cited by Bălan p. 147 n. 3",
+          "locus_after": "1905 page not given by Bălan for the chalice words (his p. 147 n. 5 cites 1905 p. 111 for the adjacent 'pentru toţi şi pentru toate'); council form at p. 147 n. 4",
+          "evidence": [
+            {
+              "source_id": "romanian-blaj:balan1915",
+              "locus": "Printed p. 147 and nn. 3–5",
+              "claim": "Quotes the 1870 form and the 1882 council form and criticizes the 1905 change at the consecration of the blood; no 1905 page is given for the chalice words."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "romanian-blaj:balan1915",
+          "locus": "Printed pp. 146–147",
+          "claim": "Contemporary comparison of 1905 with 1870."
+        }
+      ],
+      "limitations": "Neither book was inspected; both readings are Bălan's transcriptions. Not a complete comparison.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "romanian-blaj:1931-to-2014-language-revision",
+      "from_stage": "romanian-blaj:1931-standardization",
+      "to_stage": "romanian-blaj:2014-official-edition",
+      "kind": "revision",
+      "status": "provisional",
+      "evidence_level": "scholarly-description",
+      "summary": "The 2014 edition keeps the 1931 linguistic line, as continued in 1996, with wording corrections that the revisers list; the circular also reports clarified typikon rubrics, which are not itemized.",
+      "components": [
+        "ordinary"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Previous-edition wordings named by the revisers, e.g. Mila păcii, jertfa laudei; datornică închinăciune; chipul ipostasului Tău.",
+          "after": "Darul păcii, jertfa laudei; cuvenită închinare; chipul ființei Tale.",
+          "locus_before": "Wording replaced by the revisers (the circular names 1996, which kept the 1931 choices, as the previous edition)",
+          "locus_after": "2014 edition, as listed in the revisers' note",
+          "evidence": [
+            {
+              "source_id": "romanian-blaj:editors-note2014",
+              "locus": "Lists of replaced wordings",
+              "claim": "Gives new and replaced wording."
+            },
+            {
+              "source_id": "romanian-blaj:circular2015",
+              "locus": "Second paragraph",
+              "claim": "Small language corrections made to the 1931/1996 line."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "romanian-blaj:circular2015",
+          "locus": "Second paragraph and dispositive clause",
+          "claim": "States continuity with 1931 and 1996 and adopts the corrected 2014 edition."
+        },
+        {
+          "source_id": "romanian-blaj:editors-note2014",
+          "locus": "Whole note",
+          "claim": "Revisers' account of the correction method."
+        }
+      ],
+      "limitations": "The replaced wordings are those of the edition the revisers corrected, which the circular implies was 1996; their identity with the 1931 printing is not verified. Rubric changes are not itemized. No book of 1931, 1996 or 2014 was inspected. Cold review 2026-10-21: the evidence level is scholarly-description because the concrete replaced and new wordings come only from the revisers' note, while the circular states only small language corrections; the unitemized typikon-rubric clarification was removed as a change and is kept here as the circular reports it. The parentage is the circular's attribution through 1996, not an inspected succession. Provisional (cold review coordinator): the replaced wordings are attested only as those of the edition the revisers corrected, which the circular implies was 1996; no 1931 locus or description shows them, so the 1931 endpoint stands in for the previous edition by attribution only.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    }
+  ],
   "gaps": [
     {
       "id": "romanian-blaj:early-collation-gap",
       "tradition_id": "romanian-blaj:historical",
-      "period": "Before 1756 through 1807",
-      "missing": "A controlled comparison of Antim's Liturghier and the 1756, 1775 and 1807 Blaj printings, plus exact printed approval and parish-use evidence.",
-      "next_source": "Collate original prayer and rubric loci in the two acquired BCU Cluj scans against an identified Antim printing; acquire the 1807 title and text; inspect the early Blaj front matter and dated parish inventories.",
-      "consequence": "Two book states can be displayed, but substantive revision, exact textual parentage and regional adoption cannot yet be plotted as documented transitions."
+      "period": "Before 1756 (Antim exemplar) and 1756–1807 beyond the inspected loci",
+      "missing": "An identified Antim Liturghier copy (Râmnic 1706 or Târgovişte 1713) collated at Bălan's loci against 1756; whole-text comparison of 1756, 1775 and 1807 beyond the entrance, litia, anaphora and post-communion loci now read; early approval/front matter and dated parish use.",
+      "next_source": "Bălan's Antim page loci (pp. 50, 60, 67, 71, 73, 97–98, 104, 109) and Blaj 1756 pp. 79, 84–85, 113, 118, 126, 133 give the collation grid; locate a digitized Antim book (Romanian Academy Library, BAR Cluj, or Petroaia's repertoire); read the same loci in the held 1775 and 1807 scans; Sana's parish inventories for receipt dates.",
+      "consequence": "1756, 1775 and 1807 are shown as a printed succession with an agreeing entrance locus; Antim-to-Blaj changes remain attributed to Bălan and no documented Antim stage or transition is drawn."
     },
     {
       "id": "romanian-blaj:later-book-line-gap",
       "tradition_id": "romanian-blaj:historical",
-      "period": "1870 onward",
-      "missing": "Original-book and act collation of the reported 1870, 1905, 1931, 1996 and 2014 revisions.",
-      "next_source": "Acquire the original editions and compare named ordinary and rubric components; examine the 20 May 2015 official circular separately from the 2014 publication date.",
-      "consequence": "Later reported changes are retained as inventory candidates, not silently promoted to a continuous stage sequence."
+      "period": "1870–2015",
+      "missing": "Original copies of the 1870, 1905, 1931, 1996 and 2014 books; a concrete 1905-to-1931 comparison; the place and form of the blessing with the holy gifts Bălan reports for 1870 (his locus 'Liturghier p. 82'); the identity of 1996 with 1931; Acte Sinodale IV/4 (2009) approving 1931 and 1996.",
+      "next_source": "Library copies of the books (BCU Cluj and its Blaj Greek Catholic theology branch, Romanian Academy Library); Magdău and Mastan-Magdău 2007, which compares 1807, 1870, 1905 and 1931 (CEEOL, not openly accessible); the 1885–1886 Foaia bisericească articles cited by Bălan; Acte Sinodale IV/4 (2009), pp. 59–60.",
+      "consequence": "The 1870, 1905, 1931 and 2014 states and their transitions rest on contemporary comparison, participant account and official act rather than inspected books; 1996 is not drawn as a separate state."
     }
   ]
 }

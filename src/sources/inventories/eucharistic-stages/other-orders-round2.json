@@ -52,6 +52,26 @@
       "limitations": "The 1491/1496 conflict has not been reconciled against printer records or another copy. BSB marks the images Public Domain, but no scan or text is retained in this dossier."
     },
     {
+      "id": "other-orders:osa-pal500-images",
+      "title": "BAV Pal. lat. 500, Missale Romanum fratrum eremitarum sancti Augustini: DigiVatLib images",
+      "url": "https://digi.vatlib.it/view/MSS_Pal.lat.500",
+      "kind": "primary-book",
+      "inspection": "Complete 387-canvas IIIF manifest acquired. Images of ff. 85r (canvas 175), 96v (canvas 199), 183v (canvas 373) and 184r (canvas 374) downloaded at 1600 px and viewed.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Four folios only; no layer-wide collation, transcription or complete-book reading. Readings of the abbreviated colophon and rubric are visual, controlled by the holding-library description."
+    },
+    {
+      "id": "other-orders:osa-pal500-description",
+      "title": "Heidelberg Bibliotheca Palatina digital, codex description of Vatican Pal. lat. 500",
+      "url": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_lat_500.html",
+      "kind": "institutional-catalogue",
+      "inspection": "Whole description HTML fetched and read: dating, gathering structure, displaced gathering ff. 82–91, two Canon sections, colophon 183vb and dated addition 184rab.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Catalogue palaeographic dates are estimates. The description itself doubts that the 1314 colophon date fits the hand of the final gatherings."
+    },
+    {
       "id": "other-orders:osa1926",
       "title": "Proprium missarum et Officiorum Ordinis Eremitarum Sancti Augustini (1926)",
       "url": "https://media.churchmusicassociation.org/pdf/augustinian/OSA_Proper_complete_1926.pdf",
@@ -60,6 +80,16 @@
       "checked_on": "2026-10-20",
       "status": "inspected",
       "limitations": "Mass and Office proper, not a complete missal. Rights to the host's scan or transcription have not been affirmed for redistribution; only metadata and limited findings are recorded."
+    },
+    {
+      "id": "other-orders:osa1975",
+      "title": "Sacred Congregation for Divine Worship, OSA Latin and Spanish proper confirmations, Notitiae 11 (1975)",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-%281975%29/Notitiae-108-109-1975.pdf",
+      "kind": "primary-act",
+      "inspection": "Official journal printed p. 234 (PDF p. 32) rendered and viewed; text layer read. Reused prior-lane copy of the same issue, rehashed.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "A summary of decrees, not the decree text or the printed book. Publication of the confirmed Latin book is not dated by this entry."
     },
     {
       "id": "other-orders:merced1560",
@@ -92,6 +122,16 @@
       "limitations": "The original Mass folios and added formulary layer have not been read through. BAV images assert copyright; this dossier retains no image bytes."
     },
     {
+      "id": "other-orders:servite505-images",
+      "title": "BAV Pal. lat. 505, Missale Romanum ad usum fratrum servorum Mariae: DigiVatLib images",
+      "url": "https://digi.vatlib.it/view/MSS_Pal.lat.505",
+      "kind": "primary-book",
+      "inspection": "Complete 662-canvas IIIF manifest acquired (the earlier recorded gap of missing canvases no longer applies to this delivery). Images of f. 1r (canvas 5) and f. 321r (canvas 647) downloaded at 1400 px and viewed; f. 321v (canvas 648) downloaded but not read.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Two folios read; no complete Mass collation. The erasure under the Servite rubric reported by Salmon is cited from the holding-library description, not independently confirmed from the image."
+    },
+    {
       "id": "other-orders:servite1971",
       "title": "Sacred Congregation for Divine Worship, Servite calendar and Mass proper confirmations, Notitiae 9 (1973)",
       "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-09-%281973%29/Notitiae-085-1973.pdf",
@@ -120,6 +160,16 @@
       "checked_on": "2026-10-20",
       "status": "inspected",
       "limitations": "Both catalogues may depend on one copy. Original title, colophon and Mass text were not available; the catalogue year is not evidence of a reform or reception."
+    },
+    {
+      "id": "other-orders:trinitarian1529-images",
+      "title": "Provins, Bibliothèque patrimoniale, Impr. XVI a 8: IRHT/ARCA page images of the 1529 Trinitarian missal",
+      "url": "https://arca.irht.cnrs.fr/ark:/63955/md23hx121454",
+      "kind": "primary-book",
+      "inspection": "Prior-lane IRHT IIIF downloads (17 October 2026) rehashed and viewed on 21 October: canvas 4 (f. 1r title), canvas 5 (f. 2r January calendar, extracted from a partial ZIP), canvas 143 (f. 140r Preparatio ante missam), canvas 148 (ff. 144v–145r Marian preface and Canon Te igitur to Hanc igitur), canvases 275–276 (Commune prosarum to fo. lx and final 'Trinitati laus perhennis').",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Seven openings of 279 views. The IRHT image host timed out on 21 October, so no fresh download. No dated colophon was found on the title or final prose leaves inspected; the 1529 year and Paris printer Nicolaus Prevost remain catalogue statements."
     },
     {
       "id": "other-orders:trinitarian1975",
@@ -204,6 +254,116 @@
       "reception": "An intended order-use title, without a named house's adoption record."
     },
     {
+      "id": "other-orders:osa-pal500-base",
+      "tradition_id": "osa-hermits-round2",
+      "label": "Pal. lat. 500: early fourteenth-century Augustinian Hermit missal core",
+      "date_label": "First half of the fourteenth century (catalogue); colophon at 183vb reads 1314, on St Ulrich's day, but stands in later-added gatherings",
+      "start_year": 1300,
+      "end_year": 1350,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Main manuscript ff. 1ra–81vb and 92ra–173vb with its own Canon at 96va–99ra; excludes the inserted ff. 82–91 and the added final gatherings.",
+      "components": [
+        "ordinary",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:additional-orders-osa-pal500-base"
+      ],
+      "witness_label": "BAV Pal. lat. 500, base hand",
+      "summary": "An order missal of the Augustinian Hermits. Its older Canon at f. 96v has red rubrics within the Te igitur for bowing, kissing the altar and the threefold sign over host and chalice. The colophon at 183vb, in the later-added final gatherings, names Brother H. of the Hermits of St Augustine; whether it refers to the scribe of this core is unestablished.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "other-orders:osa-pal500-description",
+          "locus": "Schrift; Geschichte; contents 1ra–185ra",
+          "claim": "Dates the core hands early in the fourteenth century, distinguishes the inserted Canon gathering and the added final gatherings, and doubts that the 1314 colophon dates the last gatherings."
+        },
+        {
+          "source_id": "other-orders:osa-pal500-images",
+          "locus": "f. 96v, canvas 199",
+          "claim": "Te igitur of the older Canon with interlinear red rubrics for inclining, kissing the altar and signing three times over host and chalice; Memento includes 'pro quibus tibi offerimus vel qui tibi offerunt'."
+        },
+        {
+          "source_id": "other-orders:osa-pal500-images",
+          "locus": "f. 183v col. b, canvas 373",
+          "claim": "Black colophon dated anno domini 1314 on St Ulrich's day; red colophon names Brother H. of the Hermits of the order of St Augustine."
+        }
+      ],
+      "limitations": "Copying-date bounds are a catalogue estimate, not years of use. Because the colophon stands in later gatherings, 1314 may be copied from an exemplar or miswritten; it is not used as the stage date. No complete collation.",
+      "reception": "Order-labelled book of German provenance; no general chapter adoption or house-wide use is established."
+    },
+    {
+      "id": "other-orders:osa-pal500-canon-insert",
+      "tradition_id": "osa-hermits-round2",
+      "label": "Pal. lat. 500: inserted Canon gathering, about 1400",
+      "date_label": "About 1400, catalogue script date for ff. 85ra–88rb",
+      "start_year": 1375,
+      "end_year": 1425,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "The displaced gathering ff. 82–91, with a Canon in textura formata at 85ra–88rb.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:additional-orders-osa-pal500-layer1400"
+      ],
+      "witness_label": "BAV Pal. lat. 500, layer attributed to about 1400",
+      "summary": "A second, more formal Canon was inserted into the codex. Its Te igitur page at f. 85r carries red crosses but none of the interlinear bowing and altar-kiss rubrics written in the older Canon at f. 96v.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "other-orders:osa-pal500-description",
+          "locus": "Zusammensetzung; Schrift (85ra–88rb um 1400)",
+          "claim": "Identifies ff. 82–91 as an inserted unit and dates its Canon script about 1400."
+        },
+        {
+          "source_id": "other-orders:osa-pal500-images",
+          "locus": "f. 85r, canvas 175",
+          "claim": "Te igitur through the opening of Communicantes, with crosses in red but no interlinear gesture rubrics on this page."
+        }
+      ],
+      "limitations": "One page of each Canon compared. Whether the inserted Canon replaced the older one in use, and why it was added, is unestablished; no transition is drawn.",
+      "reception": "Insertion into an order book shows later use of this codex, not order-wide change."
+    },
+    {
+      "id": "other-orders:osa-pal500-1466",
+      "tradition_id": "osa-hermits-round2",
+      "label": "Pal. lat. 500: Mass of the Fourteen Holy Helpers added in 1466",
+      "date_label": "1466, year written in the addition's own rubric at 184r",
+      "start_year": 1466,
+      "end_year": 1466,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Addition at f. 184rab only.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:additional-orders-osa-pal500-layer1466"
+      ],
+      "witness_label": "BAV Pal. lat. 500, layer attributed to 1466",
+      "summary": "The rubric introduces a Mass of the fourteen helpers to be said in any tribulation and carries the year 1466. Its collect, secret and postcommunion name George, Blaise, Erasmus, Pantaleon, Vitus, Christopher, Denis, Cyriac, Achatius, Eustace, Giles, Magnus, Margaret, Barbara and Catherine — fifteen names under the fourteen-helpers heading.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "other-orders:osa-pal500-images",
+          "locus": "f. 184r, canvas 374",
+          "claim": "Rubric 'Sequitur missa de xiv adiutoribus pro quacumque tribulatione dicenda 1466' with the Mass formulary in two columns."
+        },
+        {
+          "source_id": "other-orders:osa-pal500-description",
+          "locus": "Schrift: Nachtrag 184rab",
+          "claim": "Accepts 1466 as the date of entry; two further additions at 184va–185ra follow later."
+        }
+      ],
+      "limitations": "A dated addition in one codex. It does not show that the Mass was absent from other OSA books or adopted by the order.",
+      "reception": "Attests use of this codex in 1466; the house is not identified here."
+    },
+    {
       "id": "other-orders:osa-1926-proper",
       "tradition_id": "osa-hermits-round2",
       "label": "1926 OSA Mass and Office proper",
@@ -231,6 +391,33 @@
       ],
       "limitations": "Mass contents and relation to the 1674, 1715, 1965 and 2006 proper leads remain uncollated; no transition is drawn.",
       "reception": "The order edition formula indicates intended use, not a census of local implementation."
+    },
+    {
+      "id": "other-orders:osa-1975-latin-proper",
+      "tradition_id": "osa-hermits-round2",
+      "label": "1975 OSA Latin Mass and Hours proper confirmation",
+      "date_label": "15 April 1975 Latin confirmation (Prot. n. 2435/74); Spanish confirmed 17 May 1975 (Prot. n. 588/75)",
+      "start_year": 1975,
+      "end_year": 1975,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "The order's postconciliar Latin proper texts of Masses and Liturgy of the Hours, as confirmed; not a printed book.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [],
+      "witness_label": "Acts only: Notitiae 11 (1975) p. 234; the Spanish-proper candidate western:additional-orders-osa-first-postconciliar (1975 Spanish confirmation, 1976 Rome missal reported) is related but not linked.",
+      "summary": "The Congregation confirmed the OSA proper Mass and Hours texts in Latin on 15 April 1975 and their Spanish version on 17 May. On 15 May the Augustinian Recollects were allowed to use the texts already confirmed for the OSA.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "other-orders:osa1975",
+          "locus": "Notitiae 11 (1975), printed p. 234, section II",
+          "claim": "Ordo Fratrum Sancti Augustini, 15 apr. 1975 (Prot. n. 2435/74): Latin proper texts of Masses and Liturgy of the Hours confirmed; 17 May 1975 (Prot. n. 588/75) Spanish version; Augustinian Recollects 15 May 1975 (Prot. n. 582/75) permitted to use them."
+        }
+      ],
+      "limitations": "This resolves the existence and date of a Latin original only at the level of the confirmation notice. The Latin book, its publication and its contents are not inspected; the 1976 Rome missal remains a report.",
+      "reception": "Confirmation for the order; house use and Recollect adoption in practice are not documented."
     },
     {
       "id": "other-orders:merced-1560",
@@ -316,9 +503,14 @@
           "source_id": "other-orders:servite505",
           "locus": "Heidelberg codex description, title, date and ff. 1ra–322v contents",
           "claim": "The main Missal and later Mass additions occupy distinguishable folio ranges."
+        },
+        {
+          "source_id": "other-orders:servite505-images",
+          "locus": "f. 1r, canvas 5",
+          "claim": "Opening rubric 'Incipit ordo missalis fratrum servorum sancte Marie secundum consuetudinem Romane curie', First Sunday of Advent station at St Mary Major, with a rubric adding a daily collect of St Mary."
         }
       ],
-      "limitations": "Catalogue-estimated copying bounds, not years of use. The original Mass text is uncollated, and the later additions are not separately dated.",
+      "limitations": "Catalogue-estimated copying bounds, not years of use. The original Mass text is uncollated, and the later additions are not separately dated. The opening rubric was read from the image on 2026-10-21; the reported erasure beneath its Servite wording is the catalogue's observation.",
       "reception": "A codex described for Servite friars; no general chapter or house adoption is established."
     },
     {
@@ -359,6 +551,40 @@
       "reception": "The approval names the order proper; actual local use and particular copies are not evidenced."
     },
     {
+      "id": "other-orders:servite-pal505-additions",
+      "tradition_id": "servite-round2",
+      "label": "Pal. lat. 505: later added Mass formularies",
+      "date_label": "Later than the main hand; undated (several later textura hands and a fifteenth-century bastarda)",
+      "start_year": null,
+      "end_year": null,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Additions at ff. 321rb–322v only.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:additional-orders-servite-pal505-additions"
+      ],
+      "witness_label": "BAV Pal. lat. 505, additional Mass formularies",
+      "summary": "After the main hand ends the Palm Sunday procession at 321rb, another hand adds a Mass for the ruler: collect Deus temporalis vitae administrator, secret Deus qui subiectas tibi glorificas potestates and complenda Fidelem famulum tuum principem nostrum.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "other-orders:servite505-images",
+          "locus": "f. 321r col. b, canvas 647",
+          "claim": "Main-hand rubrics for the Palm Sunday procession end with Gloria laus; below, a smaller later hand writes the three prayers of a Mass for the prince."
+        },
+        {
+          "source_id": "other-orders:servite505",
+          "locus": "Heidelberg description, Schrift and Nachträge 317va–322v",
+          "claim": "Assigns 321rb–322v to several later hands, including a fifteenth-century bastarda."
+        }
+      ],
+      "limitations": "Undated and unpositioned. Only the first added formulary was read; the remaining additions at 321v–322v are uncollated.",
+      "reception": "Local additions in one Servite-house codex, probably Germersheim; not an order revision."
+    },
+    {
       "id": "other-orders:trinitarian-1529",
       "tradition_id": "trinitarian-round2",
       "label": "1529 printed Trinitarian missal witness",
@@ -367,26 +593,76 @@
       "end_year": 1529,
       "date_kind": "publication",
       "status": "documented",
-      "scope": "Provins Impr. XVI a 8, a standalone printed order missal identified by catalogues, with original body not inspected.",
+      "scope": "Provins Impr. XVI a 8, a standalone printed order missal; title, January calendar, Preparatio, Canon opening and final prose leaves inspected in images.",
       "components": [
         "ordinary",
-        "propers"
+        "propers",
+        "calendar"
       ],
       "witness_ids": [
         "western:monastic-usuarium-trinitarian-2548"
       ],
       "witness_label": "Missale ad usum fratrum Ordinis Sanctae Trinitatis de Redemptione Captivorum",
-      "summary": "USUARIUM and ARCA identify one 1529 Provins copy; the metadata is a book identity, not a reform date.",
+      "summary": "USUARIUM and ARCA identify one 1529 Provins copy; the metadata is a book identity, not a reform date. The title page names the use of the friars of the Holy Trinity for the redemption of captives. The calendar keeps 28 January, St Agnes secundo, as totum duplex because of the order's foundation, and lists William of Bourges on 10 January.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {
           "source_id": "other-orders:trinitarian1529",
           "locus": "USUARIUM book 2548 title and contents index; ARCA Provins Impr. XVI a 8 object metadata",
           "claim": "The catalogues identify a 1529 printed Trinitarian missal in the Provins collection."
+        },
+        {
+          "source_id": "other-orders:trinitarian1529-images",
+          "locus": "f. 1r, canvas 4",
+          "claim": "Title 'Missale ad usum fratrum ordinis sancte Trinitatis de redemptione captivorum' above a Man of Sorrows woodcut; no date or imprint on this page."
+        },
+        {
+          "source_id": "other-orders:trinitarian1529-images",
+          "locus": "f. 2r, canvas 5 (January)",
+          "claim": "28 January 'Agnetis ij. Toti dup. propter ordi. inventionem'; 10 January Guillermi bituricensis archiepiscopi, nine lessons."
+        },
+        {
+          "source_id": "other-orders:trinitarian1529-images",
+          "locus": "f. 140r, canvas 143; f. 145r, canvas 148",
+          "claim": "Preparatio ante missam with vesting prayers; Canon from Te igitur to Hanc igitur, with 'pro quibus tibi offerimus vel qui tibi offerunt' in the Memento."
+        },
+        {
+          "source_id": "other-orders:trinitarian1529-images",
+          "locus": "Commune prosarum fo. lix–lx, canvases 275–276",
+          "claim": "The prose section ends 'Trinitati laus perhennis' without a dated colophon on these leaves."
         }
       ],
-      "limitations": "Original leaves and completeness unverified. BnF Latin 1022 is a mixed Office/Mass manuscript with later use layers, not an established ancestor.",
+      "limitations": "Seven openings inspected; completeness and text unverified. The 1529 date and Paris imprint remain catalogue statements because no dated colophon was found on the leaves read. BnF Latin 1022 is a mixed Office/Mass manuscript with later use layers, not an established ancestor.",
       "reception": "Printed title states intended order use; actual distribution and celebration remain unverified."
+    },
+    {
+      "id": "other-orders:trinitarian-1975-proper",
+      "tradition_id": "trinitarian-round2",
+      "label": "1975 Trinitarian Latin Mass and Hours proper confirmation",
+      "date_label": "18 and 27 October 1975 (Prot. CD 172/75; CD 400/75), covering the proper and the Mass of Blessed Vincent Grossi; the notice does not assign each date and protocol",
+      "start_year": 1975,
+      "end_year": 1975,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "The order's Latin proper of Masses and Liturgy of the Hours as confirmed; not a printed edition or whole missal.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:trinitarian-proper-1975"
+      ],
+      "witness_label": "Proprium Missarum et Liturgiae Horarum Ordinis SS.mae Trinitatis, Latin texts confirmed 1975",
+      "summary": "The Congregation confirmed the Latin text of the order's proper of Masses and Hours, together with the Mass of Blessed Vincent Grossi.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "other-orders:trinitarian1975",
+          "locus": "Notitiae 11 (1975), printed p. 343 (PDF p. 61), section II",
+          "claim": "Ordo Sanctissimae Trinitatis, 18 and 27 Oct. 1975 (Prot. CD 172/75; CD 400/75): Latin text of the order's proper of Masses and Hours and of the Mass of Blessed Vincent Grossi confirmed. Page image viewed 2026-10-21."
+        }
+      ],
+      "limitations": "The order-issued book, its publication year and its contents are not inspected. No descent from the 1529 missal is asserted.",
+      "reception": "Approval for the order; house use is not documented."
     },
     {
       "id": "other-orders:hosp-1553",
@@ -455,9 +731,9 @@
       "id": "other-orders:osa-gap",
       "tradition_id": "osa-hermits-round2",
       "period": "Fourteenth century–2006",
-      "missing": "Resolve 1491/1496 print identity; inspect Pal. lat. 500 layers, intervening OSA books and proper texts, and original 2006 Latin approval.",
-      "next_source": "BSB printing and colophon records, BAV Pal. lat. 500 folios, 1674/1715/1926/1965 source books and Acta OAR 2007 with the 2006 Latin proper.",
-      "consequence": "No early-to-modern OSA revision, text inheritance or continuous use is asserted."
+      "missing": "Resolve 1491/1496 print identity; collate Pal. lat. 500 layers beyond the four inspected folios; intervening OSA books and proper texts (1674, 1715, 1926 body, 1965); the printed Latin book behind the 15 April 1975 confirmation; original 2006 Latin approval.",
+      "next_source": "BSB printing and colophon records; remaining Pal. lat. 500 folios (Canons 85ra–88rb and 96va–99ra in full, additions 184va–185ra); 1674/1715/1926/1965 source books; the 1975 Latin proper volume or the 1976 Rome missal; Acta OAR 2007 with the 2006 Latin proper.",
+      "consequence": "Pal. lat. 500 core, inserted Canon and 1466 addition are separate dated attestations, and the 1975 Latin confirmation is documented; no early-to-modern OSA revision, text inheritance or continuous use is asserted."
     },
     {
       "id": "other-orders:merced-gap",
@@ -471,17 +747,17 @@
       "id": "other-orders:servite-gap",
       "tradition_id": "servite-round2",
       "period": "Medieval manuscript–1998",
-      "missing": "Pal. lat. 505 Mass and additions, 1745 bound proper and original 1972/1998 volumes remain uncollated.",
-      "next_source": "Inspect BAV Pal. lat. 505 ff. 1ra–322v, OSZK RK 182(3) and official Servite Libri Liturgici OSM 1–2 and 1–2 bis front matter and component texts.",
+      "missing": "Pal. lat. 505 Mass text beyond f. 1r and the additions after the first formulary at 321rb, the 1745 bound proper and original 1972/1998 volumes remain uncollated.",
+      "next_source": "Remaining BAV Pal. lat. 505 folios (complete manifest now delivered), OSZK RK 182(3) and official Servite Libri Liturgici OSM 1–2 and 1–2 bis front matter and component texts. Notitiae annual issues 1976–2010 gave no 1998 confirmation entry (bounded search).",
       "consequence": "No direct medieval-to-modern descent or 1972-to-1998 substantive revision edge is drawn."
     },
     {
       "id": "other-orders:trinitarian-gap",
       "tradition_id": "trinitarian-round2",
       "period": "Thirteenth century–1975",
-      "missing": "BnF Latin 1022 Mass folios and later use layers, original 1529 Provins print, and 1975 approved Latin proper and first edition.",
-      "next_source": "BnF Latin 1022 ff. 233–385, ARCA Provins Impr. XVI a 8 images, CD 172/75 decree and order-issued proper.",
-      "consequence": "Catalogue year and modern approval do not establish a single whole-missal sequence."
+      "missing": "BnF Latin 1022 Mass folios and later use layers; the 1529 Provins print beyond seven inspected openings, including any dated colophon; the order-issued book of the 1975 confirmed Latin proper.",
+      "next_source": "BnF Latin 1022 ff. 233–385; remaining ARCA Provins Impr. XVI a 8 views (host timed out on 21 October 2026); order-issued 1975 Latin proper volume.",
+      "consequence": "The 1529 title, calendar and Canon opening and the 1975 Latin confirmation are documented separately; catalogue year and modern approval do not establish a single whole-missal sequence."
     },
     {
       "id": "other-orders:hosp-gap",

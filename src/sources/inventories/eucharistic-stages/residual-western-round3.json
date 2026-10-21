@@ -90,10 +90,10 @@
       "title": "Missale Hispalense, Seville 1565 original facsimile",
       "url": "https://archive.org/details/ARes10106",
       "kind": "primary-book",
-      "inspection": "Existing reviewed acquisition inspected original PDF pages 13 and 16: title and printer's preface, including its claim of correction; the repository source record identifies this exact facsimile.",
-      "checked_on": "2026-10-20",
+      "inspection": "Existing reviewed acquisition inspected original PDF pages 13 and 16: title and printer's preface, including its claim of correction; the repository source record identifies this exact facsimile. On 2026-10-21 the same acquired file (SHA-256 192d2e12…4078, 681 PDF pages) was re-read at PDF 680: after the De defectibus rubrics, the colophon states that the missal of the rite and custom of the church of Seville was emended by order of Archbishop Fernando de Valdés, begun under the authority of the provisor Juan de Ovando and completed by Egidio (Gil) Cevadilla, and printed at Seville by Juan Gutiérrez (Gotherius) on the sixteenth day before the Kalends of September 1565 (17 August).",
+      "checked_on": "2026-10-21",
       "status": "inspected",
-      "limitations": "Only named front pages have been inspected; no original predecessor, complete body collation or competent-authority act is established."
+      "limitations": "Only the title, preface and colophon pages have been inspected. The colophon reports the archbishop's order and an emendation 'post omnes alias editiones'; no separate mandate leaf, original predecessor or complete body collation is established."
     },
     {
       "id": "residual-western-round3:toledo-card",
@@ -120,10 +120,10 @@
       "title": "Cummiskey 1861 Roman Missal for the laity, registered Latin Ordinary artifacts",
       "url": "https://archive.org/details/romanmissaltran00churgoog",
       "kind": "primary-book",
-      "inspection": "Read the repository's canonical Philadelphia 1861 edition manifest and six pre-existing native Latin Ordinary, Canon and preface artifact manifests; the earlier review verified the retained bytes against all six registered hashes and lengths.",
-      "checked_on": "2026-10-20",
+      "inspection": "Read the repository's canonical Philadelphia 1861 edition manifest and six pre-existing native Latin Ordinary, Canon and preface artifact manifests; the earlier review verified the retained bytes against all six registered hashes and lengths. On 2026-10-21 the complete PDF of the same Internet Archive item (romanmissaltran00churgoog.pdf, 801 pages, SHA-256 85034c90…8898, a prior lane acquisition) was compared at PDF pages 39, 44 and 46 (printed xxviii, xxxiii, xxxv; artifact leaves n38, n43, n45): the Latin columns match the retained rows praefatio-communis, sanctus, te-igitur, te-igitur-cultoribus, memento-domine, the opening of et-omnium-circumstantium, the close of hanc-igitur and quam-oblationem word for word, and the PDF page equals the recorded leaf plus one.",
+      "checked_on": "2026-10-21",
       "status": "inspected",
-      "limitations": "The exact remote Google scan behind the landing page was not acquired in this pass; only the retained native Latin component transcriptions and edition identity support this stage."
+      "limitations": "Sampled rows only (eight of the retained Latin rows across two artifacts); the remaining rows were not re-read against the PDF. The PDF is the host's derivative of the item whose page images the transcriptions were read from, not those exact page responses."
     },
     {
       "id": "residual-western-round3:buzuku-catalogue",
@@ -134,6 +134,26 @@
       "checked_on": "2026-10-20",
       "status": "inspected",
       "limitations": "The catalogue describes a derivative facsimile, not a directly collated surviving book; its Latin-source note is undated and does not establish a specific exemplar or approval."
+    },
+    {
+      "id": "residual-western-round3:barcelona1498-bc-images",
+      "title": "Biblioteca de Catalunya, Memòria Digital de Catalunya: Missale Barcinonense (Barcelona: Diego de Gumiel, 28 March 1498), Inc. 46-Fol. images and record",
+      "url": "https://mdc.csuc.cat/digital/collection/incunableBC/id/14914",
+      "kind": "primary-book",
+      "inspection": "Compound-object record read (266 page images; public-domain mark; missing leaves 1–87, 107, 109–110, 112, 118–119, 148–149, 152–153, 165, 167–168, 172, 174–178, 184, 204–208, 229, 233, 237–238 and 250 onward). Images viewed: f. LXXXVIIIr (first surviving leaf: end of the Easter Vigil praeconium with petitions for the pope, 'reverendo episcopo nostro N.' and 'christianissimo rege nostro N.', then the Genesis prophecy) and f. CCXXXXVIIIIv (last surviving leaf: January sanctoral including Ildefonsus of Toledo, Emerentiana and the Conversion of Paul).",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "This copy lacks its title and colophon leaves, so the 1498 imprint is the holding library's bibliographic statement, not an inspected colophon. Two leaves viewed; no component collation."
+    },
+    {
+      "id": "residual-western-round3:barcelona1521-bc-images",
+      "title": "Biblioteca de Catalunya, Memòria Digital de Catalunya: Missale secundum usum almae sedis sanctae Crucis Barcinone (Lyon: Bernard Lescuyer for Joan Trinxer and Francesc Costa, 29 April 1521), shelfmark 1-VI-35",
+      "url": "https://mdc.csuc.cat/digital/collection/llibimps16/id/273153",
+      "kind": "primary-book",
+      "inspection": "Compound-object record read (740 images; public-domain mark; signatures A10, a–z8, A8, B6, C10, D–X8). Images viewed: image 9 (title in red, 'Missale secundum usum alme sedis sancte Crucis Barcinone', woodcut of St Eulalia with saltire, 'Cum gratia et privilegio') and image 731 (register and colophon: 'Explicit missale secundum ritum ecclesie Barcinonensis peroptime correctum et emendatum: cum multis missis votivis', printed at Lyon by Bernard Lescuyer at the expense of the Barcelona booksellers Joan Trinxer and Francesc Costa, 29 April 1521).",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Title and colophon only. The colophon's correction and added votive Masses are the book's own claim; no comparison with the 1498 fragment or any other Barcelona book has been made, and no episcopal mandate was located on the viewed leaves."
     }
   ],
   "stages": [
@@ -152,9 +172,33 @@
       "witness_label": "Missale Barcinonense, Biblioteca de Catalunya Inc. 46-Fol.",
       "summary": "The catalogue identifies a 1498 Missal for the Barcelona church and warns that the surviving copy begins at Holy Saturday.",
       "text_coverage": "not-transcribed",
-      "evidence": [{"source_id": "residual-western-round3:barcelona-card", "locus": "bibliographic fields, Remark and Contents pp. 143–151", "claim": "A dated local Missal fragment contains indexed Ordinary, Canon and local sanctoral material."}],
-      "limitations": "The publication date is catalogue reported; neither missing earlier leaves nor any subsequent local use is reconstructed.",
+      "evidence": [
+        {"source_id": "residual-western-round3:barcelona-card", "locus": "bibliographic fields, Remark and Contents pp. 143–151", "claim": "A dated local Missal fragment contains indexed Ordinary, Canon and local sanctoral material."},
+        {"source_id": "residual-western-round3:barcelona1498-bc-images", "locus": "f. LXXXVIIIr and f. CCXXXXVIIIIv; holding-library record of missing leaves", "claim": "The surviving copy begins in the Easter Vigil at f. 88 and ends in the January sanctoral at f. 249, confirming the fragment's extent; its title and colophon leaves are lost."}
+      ],
+      "limitations": "The publication date is reported by the catalogues because this copy lacks title and colophon; the missing earlier leaves and any subsequent local use are not reconstructed.",
       "reception": "The title identifies intended Barcelona church use; actual local adoption and jurisdictional duration are unverified."
+    },
+    {
+      "id": "residual-western-round3:barcelona1521",
+      "tradition_id": "residual-western-round3:barcelona",
+      "label": "1521 Barcelona Missal printed at Lyon",
+      "date_label": "29 April 1521 printing (colophon inspected)",
+      "start_year": 1521,
+      "end_year": 1521,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Identity, title and colophon of a complete later Barcelona Missal printing; contents not collated.",
+      "components": ["ordinary", "propers", "calendar"],
+      "witness_ids": ["western:barcelona-1521"],
+      "witness_label": "Missale secundum usum almae sedis sanctae Crucis Barcinone, Lyon 1521; Biblioteca de Catalunya 1-VI-35",
+      "summary": "A Missal for the see of the Holy Cross of Barcelona, printed at Lyon by Bernard Lescuyer for two Barcelona booksellers. Its colophon calls it thoroughly corrected and emended, with many votive Masses.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {"source_id": "residual-western-round3:barcelona1521-bc-images", "locus": "image 9 (title); image 731 (register and colophon)", "claim": "The title names the use of the see of Barcelona and the colophon gives the correction claim, printer, booksellers and date 29 April 1521."}
+      ],
+      "limitations": "Only title and colophon were read. The correction and votive-Mass claims are the book's own and are not compared with the 1498 fragment, so no revision transition is drawn. No episcopal mandate was seen.",
+      "reception": "Printed for Barcelona booksellers under privilege for the Barcelona use; actual diocesan prescription or use is not documented."
     },
     {
       "id": "residual-western-round3:salamanca1533",
@@ -198,7 +242,7 @@
       "id": "residual-western-round3:seville1565",
       "tradition_id": "residual-western-round3:seville",
       "label": "1565 Seville Missal print",
-      "date_label": "1565 printing, original title inspected",
+      "date_label": "17 August 1565 printing (colophon inspected)",
       "start_year": 1565,
       "end_year": 1565,
       "date_kind": "publication",
@@ -207,14 +251,15 @@
       "components": ["ordinary", "propers", "calendar", "rubrics"],
       "witness_ids": ["western:seville-1565"],
       "witness_label": "Missale Hispalense, BU Sevilla A Res. 10/1/06",
-      "summary": "Original title and printer's preface identify the local 1565 book and report correction; indexed contents locate its Mass sections.",
+      "summary": "Original title, printer's preface and colophon identify the local 1565 book. The colophon states that it was emended by order of Archbishop Fernando de Valdés after all earlier editions, under the provisor Juan de Ovando and Egidio Cevadilla, and printed on 17 August 1565.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {"source_id": "residual-western-round3:seville-book", "locus": "original PDF pp. 13 and 16", "claim": "The original front pages name the local book and carry a printer's reported correction claim."},
+        {"source_id": "residual-western-round3:seville-book", "locus": "original PDF p. 680, colophon", "claim": "The colophon names the archbishop's order, the supervising officials, the emendation claim and the date XVI Kal. Sept. 1565."},
         {"source_id": "residual-western-round3:seville-card", "locus": "bibliographic fields and Contents pp. 14, 16, 35, 364, 393, 408, 682", "claim": "The catalogue dates and indexes the specific surviving copy."}
       ],
-      "limitations": "The preface is a printer's address, not a demonstrated episcopal decree; no exact corrected readings or predecessor have been collated.",
-      "reception": "The title names Seville church custom; no independent dated mandate or full diocesan use span is established."
+      "limitations": "The preface is a printer's address; the colophon reports, but does not reproduce, the archbishop's order. No exact corrected readings or predecessor have been collated.",
+      "reception": "The colophon states that the edition was made by order of the Archbishop of Seville; no separate mandate text, implementation record or diocesan use span is established."
     },
     {
       "id": "residual-western-round3:cosenza1549",
@@ -250,8 +295,9 @@
       "witness_label": "Cummiskey 1861 Philadelphia first revised lay missal",
       "summary": "A dated lay book preserves native Latin Ordinary and Canon columns that can be compared with Roman altar books.",
       "text_coverage": "partial",
-      "evidence": [{"source_id": "residual-western-round3:cummiskey-latin", "locus": "canonical 1861 edition manifest; six registered Latin component artifacts", "claim": "The identified first revised edition and checked Latin component transcriptions support a bounded comparison witness."}],
-      "limitations": "The retained columns are not a complete altar missal or proof of a distinct normative Roman recension; exact remote scan remains unresolved.",
+      "evidence": [{"source_id": "residual-western-round3:cummiskey-latin", "locus": "canonical 1861 edition manifest; six registered Latin component artifacts", "claim": "The identified first revised edition and checked Latin component transcriptions support a bounded comparison witness."},
+        {"source_id": "residual-western-round3:cummiskey-latin", "locus": "Internet Archive romanmissaltran00churgoog PDF pp. 39, 44, 46 (printed xxviii, xxxiii, xxxv)", "claim": "Sampled Latin preface and Canon rows match the printed Latin columns of the exact identified scan."}],
+      "limitations": "The retained columns are not a complete altar missal or proof of a distinct normative Roman recension. The exact Internet Archive item is now identified and sampled; the Roman altar-book exemplar behind the Latin columns is not.",
       "reception": "The title reports a Philadelphia bishop's approbation of a lay book; it does not grant authorization to celebrate from this edition."
     }
   ],
@@ -261,9 +307,9 @@
       "id": "residual-western-round3:barcelona-gaps",
       "tradition_id": "residual-western-round3:barcelona",
       "period": "before and after the 1498 printing",
-      "missing": "Original title and colophon checks, complete extent of the fragment, earlier and later Barcelona Mass books, local authority and direct text comparison.",
-      "next_source": "Inspect Biblioteca de Catalunya Inc. 46-Fol. images and find dated Barcelona missals for component-level collation.",
-      "consequence": "The catalogue's publication year does not date adoption or establish a revision sequence."
+      "missing": "Title and colophon of the 1498 printing (lost from the only digitized copy), earlier Barcelona Mass books, episcopal authority for either printing, and component-level comparison of the 1498 fragment with the 1521 Lyon printing.",
+      "next_source": "Another 1498 copy with title and colophon (ISTC census); compare matching Easter-to-January formularies, Ordinary and calendar of BC Inc. 46-Fol. and BC 1-VI-35 page by page; diocesan synodal records for missal mandates.",
+      "consequence": "Two dated Barcelona printings are documented, but the 1521 colophon's correction claim does not yet establish a revision edge or adoption date."
     },
     {
       "id": "residual-western-round3:salamanca-gaps",
@@ -277,9 +323,9 @@
       "id": "residual-western-round3:seville-gaps",
       "tradition_id": "residual-western-round3:seville",
       "period": "before and after the 1565 printing",
-      "missing": "A named predecessor, exact corrected Mass readings, full text and competent-authority permission or use record.",
-      "next_source": "Collate the acquired 1565 original against an earlier Hispalense at named Ordinary and proper loci; inspect authority leaves separately from the printer's preface.",
-      "consequence": "The correction notice supports a research lead, not a reform edge or universal-use claim."
+      "missing": "A named predecessor Seville missal, exact corrected Mass readings, the full text of Valdés's order and implementation evidence.",
+      "next_source": "An earlier Missale Hispalense (e.g. printings before 1565 listed by Weale–Bohatta) compared at named Ordinary and proper loci with the acquired 1565 file; Seville archiepiscopal records for the Valdés commission.",
+      "consequence": "The colophon reports Archbishop Valdés's order and an emendation claim, but no reform edge or universal-use claim follows without collation."
     },
     {
       "id": "residual-western-round3:toledo-gaps",
@@ -301,8 +347,8 @@
       "id": "residual-western-round3:cummiskey-gaps",
       "tradition_id": "residual-western-round3:roman-latin-lay",
       "period": "1861 comparison horizon",
-      "missing": "Exact remote scan verification of retained Latin columns, complete Roman exemplar identification and component-level comparison beyond the partial artifacts.",
-      "next_source": "Acquire the exact Philadelphia 1861 scan and compare its Latin columns at named loci with an edition-identified Roman altar Missal.",
+      "missing": "Identification of the Roman altar-book exemplar behind the Latin columns, re-reading of the remaining retained rows against the identified scan, and component-level comparison with an edition-identified Roman altar Missal.",
+      "next_source": "Compare the Latin columns at named loci with an identified mid-nineteenth-century Roman altar Missal (e.g. a Mechlin or Pustet printing) and re-check the remaining rows against romanmissaltran00churgoog.",
       "consequence": "A lay publication and partial Latin transcription cannot count as a new normative Roman version or complete service-book text."
     },
     {

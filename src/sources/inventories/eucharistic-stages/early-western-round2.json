@@ -184,6 +184,66 @@
       "checked_on": "2026-10-20",
       "status": "inspected",
       "limitations": "Institutional record dates the composite broadly to the eighth–ninth centuries; original images were not used for a textual collation."
+    },
+    {
+      "id": "early-western-round2-bav-reg-lat-316-images",
+      "title": "Biblioteca Apostolica Vaticana, DigiVatLib images and record of Reg. lat. 316, Sacramentarium Gelasianum",
+      "url": "https://digi.vatlib.it/view/MSS_Reg.lat.316",
+      "kind": "primary-book",
+      "inspection": "IIIF manifest (522 canvases; holding-library metadata title Sacramentarium Gelasianum, date 'Sec. VIII in.') read; images viewed at 1000 px: ff. 3v–4r (canvases 0018–0019: arcade and cross frontispiece; incipit 'In nomine Domini Iesu Christi Salvatoris incipit liber sacramentorum Romanae aecclesiae ordinis anni circuli' with 'Orationes et preces'), ff. 131v–132r (canvases 0274–0275: second frontispiece; 'Incipit liber secundus orationes et preces de nataliciis sanctorum'), ff. 245r–v (canvases 0507–0508: penitential prayers ending in the explicit 'Explicit liber sacramentorum. Deo gratias' and scribe's verse; 245v blank with show-through and quire signature).",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Six named folio images only; no complete page-by-page review, prayer collation or palaeographic dating by this lane. The detached Paris ff. 41–56 (BnF lat. 7193) were not reached because Gallica returned HTTP 403. The holding library's 'Sec. VIII in.' and ELMSS's VIII med. (726–775) remain competing catalogue datings."
+    },
+    {
+      "id": "early-western-round2-bav-pal-lat-493-images",
+      "title": "Biblioteca Apostolica Vaticana, DigiVatLib images of Pal. lat. 493, Missalia Gallicana vetera; Canones",
+      "url": "https://digi.vatlib.it/view/bav_pal_lat_493",
+      "kind": "primary-book",
+      "inspection": "IIIF manifest (226 canvases, ff. 1a–4a and 1–106; record title 'Missalia Gallicana Vetera; Canones') read; images viewed at 1000 px: front note (canvas 0001), f. 1r (canvas 0010: acephalous Mass for Germanus 'antestitis et confessoris', later marginal 'Missa Romana'), ff. 18r–19v (canvases 0044–0047). F. 18v ends mid-sentence in a creed exposition in a large uncial-type hand; f. 19r begins mid-prayer ('…da illi misericordiam tuam…per lavacri regenerationem') in a different script and layout and then heads 'Incipit exorcismus'.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Named images only; the scribal change at ff. 18v/19r and the textual break on both sides are direct observations, not a palaeographic dating, a binding date or a demonstration of how many leaves are lost. The Heidelberg mirror (digi.ub.uni-heidelberg.de) presented an Anubis bot challenge and was not used."
+    },
+    {
+      "id": "early-western-round2-ecodices-csg348",
+      "title": "e-codices, St. Gallen, Stiftsbibliothek, Cod. Sang. 348 (Gelasian Remedius Sacramentary): images, record and Scherrer 1875 description",
+      "url": "https://www.e-codices.unifr.ch/en/list/one/csg/0348",
+      "kind": "primary-book",
+      "inspection": "IIIF manifest metadata (Chur, around 800, 376 pages; incomplete; at St Gall by about 850) and TEI of Scherrer 1875 p. 122 read. Images viewed: p. 32 (decorated incipit 'In nomine sanctae Trinitatis incipit liber sacramentorum anni circuli Romanae ecclesiae'), p. 368 (Sanctus, Te igitur with 'una cum famulo tuo papa nostro ill. et antistite nostro ill.' and a reference mark to a red-capital foot entry 'Memento Domine famuli tui Remedii episcopi et…'), p. 10 (Masses for the vigil and feast of St Gall, by another hand within Scherrer's pp. 9–20 group).",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Three page images and the library descriptions; no complete prayer collation. The core copying date comes from catalogues (ELMSS 796–824; e-codices 'around 800'); the front St Gall Masses and later corrections are not separately dated here."
+    },
+    {
+      "id": "early-western-round2-elmss-936",
+      "title": "Earlier Latin Manuscripts, CLA 7.936, St Gallen Stiftsbibliothek 348",
+      "url": "https://elmss.universityofgalway.ie/catalogue/1398",
+      "kind": "institutional-catalogue",
+      "inspection": "Read shelfmark, Rhaetian minuscule, VIII ex–IX in (796–824) date, origin probably Chur, contemporary red-uncial Remedius commemoration at the foot of p. 368, presence at St Gall by the second half of the ninth century, and correction throughout by a St Gall scholar in that period.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Catalogue description; the attribution of corrections to Abbot Hartmut is the catalogue's probability and is not adopted as a dated event."
+    },
+    {
+      "id": "early-western-round2-bobbio-facsimile-1917",
+      "title": "E. A. Lowe (ed.), The Bobbio Missal, vol. I, Facsimile (Henry Bradshaw Society 53, 1917), registered complete scan",
+      "url": "https://archive.org/details/bobbiomissalgall01cath",
+      "kind": "primary-book",
+      "inspection": "Registered repository artifact ia-facsimile-vol-1-697f4c50 (SHA-256 697f4c50…1023, 616 PDF pages) re-read locally. Plate sequence starts at PDF 13 = f. 1r. PDF 511–512 = f. 250r–v in the main hand; PDF 513–517 = ff. 251r–253r, carrying the photographed folio numbers 251–253 and a different, more regular hand beginning 'Deus regum atque cunctorum regnorum…' with petitions for 'principem nostrum'; PDF 518 = f. 253v, a smaller cursive later hand.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "A 1917 collotype facsimile of BnF lat. 13246, not the original or current Gallica images (Gallica HTTP 403). The plate-to-folio mapping was checked at the photographed folio numbers on PDF 513–517 and assumed only between them. No prayer collation of the core or the added matter was made."
+    },
+    {
+      "id": "early-western-round2-isos-stowe-images",
+      "title": "Irish Script on Screen, RIA MS D ii 3 (Stowe Missal) page images",
+      "url": "https://www.isos.dias.ie/RIA/RIA_MS_D_ii_3.html",
+      "kind": "primary-book",
+      "inspection": "IIIF manifest (149 canvases; scribes recorded as Sonid and Máel Caích; provenance note on Tallaght/Lorrha) read; images viewed at 1000 px: f. 12r (decorated 'Peccavimus Domine' opening of the Missal with a heading added in the upper margin by another hand), f. 37r (communion antiphons with alleluia followed by the signature 'Moel Caich scripsit' in the same pointed hand), f. 37v (postcommunion 'Quos caelesti Domine dono satiasti' and thanksgiving in a larger, rounder hand).",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Three folio images only. The hand change and signature are direct observations; which leaves Máel Caích inserted or rewrote, and when, is not determined from these images."
     }
   ],
   "stages": [
@@ -210,8 +270,8 @@
       "id": "early-western-round2-old-gelasian",
       "tradition_id": "early-western-old-gelasian",
       "label": "Old Gelasian manuscript in two present holdings",
-      "date_label": "manuscript copied around the middle of the eighth century (catalogue 726–775)",
-      "start_year": 726,
+      "date_label": "manuscript copied in the early to middle eighth century (BAV record 'Sec. VIII in.'; ELMSS VIII med., 726–775)",
+      "start_year": 701,
       "end_year": 775,
       "date_kind": "attestation",
       "status": "documented",
@@ -219,13 +279,14 @@
       "components": ["propers", "rubrics"],
       "witness_ids": ["western:old-gelasian-reg-lat-316"],
       "witness_label": "Vatican Reg. lat. 316 with Paris BnF lat. 7193 ff. 41–56",
-      "summary": "The catalogue treats the Vatican and Paris portions as one eighth-century codex with sacramentary, exorcism and penitential contents.",
+      "summary": "The catalogue treats the Vatican and Paris portions as one eighth-century codex with sacramentary, exorcism and penitential contents. Original images confirm the incipit naming a liber sacramentorum Romanae aecclesiae ordinis anni circuli (f. 4r), a decorated opening of Book II for the saints (f. 132r) and the explicit of the Vatican volume (f. 245r).",
       "text_coverage": "not-transcribed",
       "evidence": [
         {"source_id": "early-western-round2-elmss-118", "locus": "Shelfmarks; Date; Contents; Origin and Provenance", "claim": "Dates and identifies the Vatican codex and its detached Paris portion."},
-        {"source_id": "early-western-round2-elmss-869", "locus": "Shelfmarks; Origin and Provenance", "claim": "Calls the Paris leaves the appendix of the same Gelasian manuscript."}
+        {"source_id": "early-western-round2-elmss-869", "locus": "Shelfmarks; Origin and Provenance", "claim": "Calls the Paris leaves the appendix of the same Gelasian manuscript."},
+        {"source_id": "early-western-round2-bav-reg-lat-316-images", "locus": "ff. 3v–4r (DigiVatLib canvases 0018–0019); ff. 131v–132r (0274–0275); f. 245r–v (0507–0508); record metadata", "claim": "Original images show the book's own title for a Roman sacramentary of the year's cycle, the separately decorated opening of its second book of saints' feasts, and the explicit closing the Vatican volume after penitential prayers; the holding library dates the codex 'Sec. VIII in.'."}
       ],
-      "limitations": "The catalogue's broad copy date remains alongside later scholarly dating claims in the candidate inventory. Neither Pope Gelasius's authorship, the date of individual prayers, nor direct descent into later Gelasian books follows from this witness. Wilson's 1894 critical edition is not an ancient stage.",
+      "limitations": "The year bounds now span both catalogue datings (BAV 'Sec. VIII in.'; ELMSS VIII med., 726–775); neither is adopted over the other. The Paris appendix leaves were not image-checked (Gallica HTTP 403). Neither Pope Gelasius's authorship, the date of individual prayers, nor direct descent into later Gelasian books follows from this witness. Wilson's 1894 critical edition is not an ancient stage.",
       "reception": "Surviving Frankish manuscript evidence; no universal Roman institution or continuous use period is inferred."
     },
     {
@@ -246,6 +307,28 @@
       "evidence": [{"source_id": "early-western-round2-gellone-catalogue", "locus": "Date; Description, contents and f. 1 addition", "claim": "Identifies the copy date, mixed sacramentary character and a ninth-century addition at f. 1."}],
       "limitations": "The codex's physical extent is not a checked transcription or a complete reconstructed missal. The 1981 edition is modern scholarship. The catalogue's mixed-text description establishes neither exact donor books nor an archetype for other Frankish Gelasian witnesses.",
       "reception": "The catalogue describes early Gellone ownership and use; no wider Frankish or Roman adoption is inferred."
+    },
+    {
+      "id": "early-western-round2-stgall348",
+      "tradition_id": "early-western-frankish-gelasian",
+      "label": "St Gall 348 (Remedius) Gelasian sacramentary",
+      "date_label": "manuscript copied at the turn of the eighth and ninth centuries (ELMSS 796–824; e-codices 'around 800')",
+      "start_year": 796,
+      "end_year": 824,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "The principal Rhaetian copy of St. Gallen, Stiftsbibliothek, Cod. Sang. 348, with its Canon; the front St Gall Masses, the Remedius commemoration and later St Gall corrections are distinguished as separate layers.",
+      "components": ["propers", "anaphoras", "rubrics"],
+      "witness_ids": ["western:gelasian-stgall348"],
+      "witness_label": "St. Gallen, Stiftsbibliothek, Cod. Sang. 348",
+      "summary": "A Frankish Gelasian sacramentary titled as a liber sacramentorum anni circuli Romanae ecclesiae (p. 32), with the Roman Canon (p. 368). A contemporary red-capital entry at the foot of p. 368 commemorates Bishop Remedius of Chur; Masses for the vigil and feast of St Gall stand in another hand at the front (p. 10).",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {"source_id": "early-western-round2-ecodices-csg348", "locus": "pp. 32, 368 and 10; IIIF metadata; Scherrer 1875 p. 122 (TEI)", "claim": "Images show the incipit, the Canon with the Remedius commemoration keyed to the Te igitur, and St Gall Masses in another hand; the record places the book at St Gall by about 850."},
+        {"source_id": "early-western-round2-elmss-936", "locus": "Date; Origin and Provenance; Script Commentary", "claim": "Dates the copying 796–824, places it probably at Chur, calls the Remedius entry contemporary, and reports correction throughout at St Gall in the second half of the ninth century."}
+      ],
+      "limitations": "The 796–824 range dates the principal copy, not the composition of its prayers or a Frankish Gelasian archetype. The St Gall Masses and corrections are later, undated layers here, and no prayer-level comparison with Gellone, Rheinau or the Old Gelasian is made. Its relationship to St Gall 350 is not asserted.",
+      "reception": "The Remedius commemoration ties the book to the church of Chur around 800; the St Gall Masses and corrections show later use at St Gall. No wider Frankish adoption is inferred."
     },
     {
       "id": "early-western-round2-cambrai",
@@ -319,8 +402,11 @@
       "witness_label": "Vatican Pal. lat. 493 ff. 1–18, ELMSS 104 / CLA 1.92",
       "summary": "ELMSS identifies these eighteen folios as a French sacramentary copied in the first half of the eighth century and bound with another, later sacramentary.",
       "text_coverage": "not-transcribed",
-      "evidence": [{"source_id": "early-western-round2-elmss-104", "locus": "Shelfmarks; Date; Origin and Provenance; Contents", "claim": "Separately identifies and dates the first sacramentary part."}],
-      "limitations": "The aggregate 675–725 date in USUARIUM 957 cannot date this entire composite. No direct images or prayer collation; original composition, relation to the later part and binding date are unknown. Mohlberg 1958 is a modern edition.",
+      "evidence": [
+        {"source_id": "early-western-round2-elmss-104", "locus": "Shelfmarks; Date; Origin and Provenance; Contents", "claim": "Separately identifies and dates the first sacramentary part."},
+        {"source_id": "early-western-round2-bav-pal-lat-493-images", "locus": "f. 1r (DigiVatLib canvas 0010); ff. 18r–18v (canvases 0044–0045)", "claim": "Original images show the first part beginning acephalously in a Mass for Germanus and ending at f. 18v mid-sentence in a creed exposition, in a large hand distinct from the following part."}
+      ],
+      "limitations": "The aggregate 675–725 date in USUARIUM 957 cannot date this entire composite. Named folio images were checked, but no prayer collation; original composition, relation to the later part and binding date are unknown. Mohlberg 1958 is a modern edition.",
       "reception": "A surviving Gallican sacramentary part; no universal Gallican rite or regional reception map follows."
     },
     {
@@ -338,8 +424,11 @@
       "witness_label": "Vatican Pal. lat. 493 ff. 19–99, ELMSS 105 / CLA 1.93",
       "summary": "ELMSS identifies a distinct French sacramentary in the same modern binding and dates its script to the second half of the eighth century.",
       "text_coverage": "not-transcribed",
-      "evidence": [{"source_id": "early-western-round2-elmss-105", "locus": "Shelfmarks; Date; Origin and Provenance; Contents", "claim": "Separately identifies and dates the second sacramentary part."}],
-      "limitations": "The later copy date does not mean this part revised the first. No direct images or prayer collation, common exemplar, binding date or complete original book extent established. The later Decretum Gelasianum folios are not a third sacramentary stage.",
+      "evidence": [
+        {"source_id": "early-western-round2-elmss-105", "locus": "Shelfmarks; Date; Origin and Provenance; Contents", "claim": "Separately identifies and dates the second sacramentary part."},
+        {"source_id": "early-western-round2-bav-pal-lat-493-images", "locus": "ff. 19r–19v (DigiVatLib canvases 0046–0047)", "claim": "Original images show the second part opening mid-prayer in a different script and layout, followed by the heading Incipit exorcismus."}
+      ],
+      "limitations": "The later copy date does not mean this part revised the first. The textual break on both sides of ff. 18v/19r shows lost leaves of unknown number, not a relationship. No prayer collation, common exemplar, binding date or complete original book extent established. The later Decretum Gelasianum folios are not a third sacramentary stage.",
       "reception": "A surviving Gallican sacramentary part; it does not establish a single uniform Gallican service book."
     },
     {
@@ -355,9 +444,12 @@
       "components": ["propers"],
       "witness_ids": ["western:bobbio-bnf13246"],
       "witness_label": "Paris BnF Latin 13246, the so-called Bobbio Missal",
-      "summary": "The manuscript catalogue identifies a Gallican sacramentary core, an inserted Mass on ff. 251–253 and added matter on other named folios.",
+      "summary": "The manuscript catalogue identifies a Gallican sacramentary core, an inserted Mass on ff. 251–253 and added matter on other named folios. The 1917 facsimile plates show that the inserted Mass is a Mass for the ruler ('principem nostrum') in a different hand, and that f. 253v carries later cursive additions.",
       "text_coverage": "not-transcribed",
-      "evidence": [{"source_id": "early-western-round2-elmss-1033", "locus": "Date; Contents; Script Commentary, ff. 251–253 and added folios", "claim": "Dates the witness and distinguishes principal script, inserted Mass and later added matter."}],
+      "evidence": [
+        {"source_id": "early-western-round2-elmss-1033", "locus": "Date; Contents; Script Commentary, ff. 251–253 and added folios", "claim": "Dates the witness and distinguishes principal script, inserted Mass and later added matter."},
+        {"source_id": "early-western-round2-bobbio-facsimile-1917", "locus": "Facsimile PDF 511–518 = ff. 250r–253v (folio numbers 251–253 photographed on PDF 513–517)", "claim": "The facsimile shows the main hand ending at f. 250v, a differently written Mass for a ruler on ff. 251r–253r beginning Deus regum atque cunctorum regnorum, and a later cursive hand on f. 253v."}
+      ],
       "limitations": "The 701–800 range is manuscript dating, not the composition of every prayer. Bobbio is the find place, while probable southeast French origin remains a catalogue judgment. Neither direct Celtic ancestry nor Besançon provenance is established. Lowe's 1917 facsimile publication is not an eighth-century stage.",
       "reception": "A manuscript later found at Bobbio; no broader regional or ecclesial reception established."
     },
@@ -378,20 +470,21 @@
       "text_coverage": "not-transcribed",
       "evidence": [
         {"source_id": "early-western-round2-elmss-587", "locus": "Shelfmarks; Date; Script Commentary", "claim": "Identifies ff. 12–67, approximate core date and later additions."},
-        {"source_id": "early-western-round2-isos-stowe", "locus": "Description, manuscript division and contents", "claim": "Distinguishes the Gospel portion from the Mass and pastoral-rite codex."}
+        {"source_id": "early-western-round2-isos-stowe", "locus": "Description, manuscript division and contents", "claim": "Distinguishes the Gospel portion from the Mass and pastoral-rite codex."},
+        {"source_id": "early-western-round2-isos-stowe-images", "locus": "ff. 12r, 37r, 37v (ISOS manifest canvases 27, 77, 78; image files 027, 077, 078)", "claim": "Original images show the Missal opening at f. 12r with a later upper-margin heading, and the signature Moel Caich scripsit closing the communion antiphons on f. 37r in a hand distinct from that of f. 37v."}
       ],
-      "limitations": "The narrower 780–820 ELMSS estimate concerns the core, whereas the aggregate inventory gives eighth–ninth centuries. The Móel-Cáich revision remains undated and uncollated. Warner 1906/1915 are facsimile and edition dates, not early liturgical dates; no universal Celtic rite is inferred.",
+      "limitations": "The narrower 780–820 ELMSS estimate concerns the core, whereas the aggregate inventory gives eighth–ninth centuries. The Máel Caích hand is now image-checked at its f. 37r signature, but the extent and date of that revision remain undetermined and uncollated. Warner 1906/1915 are facsimile and edition dates, not early liturgical dates; no universal Celtic rite is inferred.",
       "reception": "An Irish manuscript witness with later Lorrha associations; no all-Ireland or modern Catholic authorization claim."
     }
   ],
   "transitions": [],
   "gaps": [
     {"id": "early-western-round2-gap-roman-libelli", "tradition_id": "early-western-roman-libelli", "period": "Before and after the Verona copy", "missing": "Original Verona codex image review, constituent libellus chronology and folio-level separation of the seventh-century continuation.", "next_source": "Verona Biblioteca Capitolare LXXXV (80) original images or a complete institutional facsimile, checked against ELMSS 866.", "consequence": "The copying date remains one attested collection state, without a dated Roman institutional origin or complete text."},
-    {"id": "early-western-round2-gap-gelasian", "tradition_id": "early-western-old-gelasian", "period": "Old Gelasian copy and textual strata", "missing": "Direct Vatican/Paris image collation and resolution of competing copy datings and composition strata.", "next_source": "Vatican Reg. lat. 316 and BnF lat. 7193 ff. 41–56 original images, with Wilson 1894 as an edition to control rather than date the state.", "consequence": "One manuscript state is recorded; papal authorship and direct descent into Frankish Gelasian books remain unasserted."},
-    {"id": "early-western-round2-gap-frankish-gelasian", "tradition_id": "early-western-frankish-gelasian", "period": "Late eighth- and ninth-century Frankish Gelasian books", "missing": "Gellone additions and the many other Frankish Gelasian codices and fragments have no independently collated stage sequence here.", "next_source": "BnF Latin 12048 images and the named St Gall, Rheinau and Angoulême manuscript candidates, compared by exact prayer loci.", "consequence": "The Gellone state supplies a dated witness, not an archetype, reform transition or complete Frankish Gelasian line."},
+    {"id": "early-western-round2-gap-gelasian", "tradition_id": "early-western-old-gelasian", "period": "Old Gelasian copy and textual strata", "missing": "Collation of the detached Paris ff. 41–56 against the Vatican volume, prayer-level collation beyond the six image-checked Vatican folios, and resolution of the competing BAV ('Sec. VIII in.') and ELMSS (726–775) copy datings and of composition strata.", "next_source": "BnF lat. 7193 ff. 41–56 images when Gallica is reachable; further DigiVatLib Reg. lat. 316 folios (Book III opening and Canon) compared with Wilson 1894 as a control edition; current palaeographic literature on the Chelles attribution.", "consequence": "One manuscript state is recorded with image-checked book divisions and explicit; papal authorship, strata dates and direct descent into Frankish Gelasian books remain unasserted."},
+    {"id": "early-western-round2-gap-frankish-gelasian", "tradition_id": "early-western-frankish-gelasian", "period": "Late eighth- and ninth-century Frankish Gelasian books", "missing": "Gellone additions, Rheinau 30, St Gall 350, Angoulême and other Frankish Gelasian codices have no image-checked stages; St Gall 348 now has one, but no prayer-level comparison among any of these witnesses exists.", "next_source": "BnF Latin 12048 and lat. 816 images (Gallica blocked on 2026-10-21); Zürich ZB Rh. 30 images (not found on e-codices or e-manuscripta); e-codices Cod. Sang. 350; compare named prayers across witnesses.", "consequence": "Gellone and St Gall 348 supply dated witnesses, not an archetype, reform transition or complete Frankish Gelasian line."},
     {"id": "early-western-round2-gap-gregorian", "tradition_id": "early-western-gregorian", "period": "Pre-Hadrianic, Hadrianum and supplemented Gregorian transmission", "missing": "The dispatched Roman exemplar, Cambrai copy date disagreement, Padua corrector and Verona appendix, Trento supplement and exact relationships among witnesses remain unresolved.", "next_source": "Cambrai MS 164, Trento cod. 1590 and Padua D. 47 images or authoritative full manuscript catalogues; compare named components before drawing any transition.", "consequence": "The three extant codices are attested separately; no universal replacement, direct parentage or date for a particular supplementation is plotted."},
-    {"id": "early-western-round2-gap-gallicanum", "tradition_id": "early-western-gallicanum", "period": "Eighth-century parts and their later binding", "missing": "Direct image review, relation of the two sacramentary parts and binding date of Pal. lat. 493.", "next_source": "Vatican Pal. lat. 493 original images and the Heidelberg holding-library description, with Mohlberg 1958 used only as a modern edition.", "consequence": "Two copying states remain parallel, with no revision or common-archetype transition asserted."},
-    {"id": "early-western-round2-gap-bobbio", "tradition_id": "early-western-bobbio", "period": "Eighth-century core and additions", "missing": "Original image and textual comparison of the principal Bobbio sacramentary, inserted Mass and added folios.", "next_source": "BnF Latin 13246 Gallica images and Lowe/Wilmart facsimile volumes at ff. 1–8, 251–254 and 291–295.", "consequence": "The copy is attested but its added material is not turned into a dated revision or Celtic/Gallican/Roman descent edge."},
-    {"id": "early-western-round2-gap-stowe", "tradition_id": "early-western-stowe", "period": "Stowe core and later Móel-Cáich work", "missing": "Original-image collation and an independently defensible date for revisions and inserted leaves.", "next_source": "RIA D.ii.3 images through Irish Script on Screen, with Warner 1906 facsimile and 1915 edition for controlled comparison.", "consequence": "The core has an approximate copy date; later changes remain an explicitly unpositioned research gap."}
+    {"id": "early-western-round2-gap-gallicanum", "tradition_id": "early-western-gallicanum", "period": "Eighth-century parts and their later binding", "missing": "Binding date of Pal. lat. 493, the number of leaves lost on both sides of ff. 18v/19r, and any textual relation between the two image-checked sacramentary parts.", "next_source": "Heidelberg/Vatican codicological description of quiring and binding (the Heidelberg site requires an interactive bot check); Mohlberg 1958 introduction as a modern description, not a date.", "consequence": "Two copying states remain parallel; the observed scribal and textual break shows two incomplete books, not a revision or common archetype."},
+    {"id": "early-western-round2-gap-bobbio", "tradition_id": "early-western-bobbio", "period": "Eighth-century core and additions", "missing": "Prayer-level comparison of the core with the inserted ruler's Mass (ff. 251–253) and the later added matter (ff. 1–8, 253v–254, 291v–295), and any date for those additions; current original images.", "next_source": "BnF Latin 13246 Gallica images (HTTP 403 on 2026-10-21); HBS 58 edited text and HBS 61 palaeographical notes for the hands of the added leaves.", "consequence": "The inserted Mass and later additions are image-distinguished layers of one copy, not a dated revision or Celtic/Gallican/Roman descent edge."},
+    {"id": "early-western-round2-gap-stowe", "tradition_id": "early-western-stowe", "period": "Stowe core and later Móel-Cáich work", "missing": "The extent of the Máel Caích additions and rewritten or inserted leaves beyond the image-checked f. 37r signature, and an independently defensible date for them.", "next_source": "Remaining ISOS RIA D.ii.3 folios compared hand by hand with Warner 1906 facsimile and 1915 edition annotations on the inserted Moelcaich quire.", "consequence": "The core has an approximate copy date and the revising hand is image-checked; the revision remains an unpositioned layer, not a dated stage."}
   ]
 }

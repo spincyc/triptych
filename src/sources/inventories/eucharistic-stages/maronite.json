@@ -9,7 +9,7 @@
       "label": "Maronite Antiochene Qurbono",
       "family": "West Syriac / Maronite",
       "scope": "Maronite Eucharistic books in Syriac and native Syriac/Arabic composition; independent vernacular translation history excluded.",
-      "coverage_note": "First printing through 1992 with a bounded manuscript precursor and 2003–2006 synodal reception prescriptions. Dates mark attestation/publication, not continuous use. The 2005 original book remains an acquisition gap."
+      "coverage_note": "First printing through 2005 with a bounded manuscript precursor and 2003-2006 synodal reception prescriptions. Dates mark attestation/publication/approval, not continuous use. The 2005 stage rests on a reproduced decree and an approved translation; the Arabic/Syriac original remains an acquisition gap."
     }
   ],
   "sources": [
@@ -78,10 +78,20 @@
       "title": "Ketābā de-qurbānā āk ʿeyādā de-ʿidtā d-Antiukiyā de-Mārūnāye, Beirut 1908, second printing",
       "url": "https://digitale-sammlungen.ulb.uni-bonn.de/content/titleinfo/3088113",
       "kind": "primary-book",
-      "inspection": "Bonn bibliographic record read. Existing retained PDF images checked: whole-file PDF 441 title, PDF 436–440 front matter, PDF 8 calendar/computus table. PDF 441 = retained second part local 218.",
+      "inspection": "Bonn bibliographic record read. Existing retained PDF images checked: whole-file PDF 441 title, PDF 436–440 front matter, PDF 8 calendar/computus table. PDF 441 = retained second part local 218. Added 2026-10-21: anaphora section headings viewed at 300 dpi on whole-file PDF 352 (Roman Church, Syriac with Garshuni parallel heading), 330 (Peter, head of the Apostles, Syriac with Garshuni), 318 (Twelve holy Apostles), 310 (Mark), 292 (John, apostle and evangelist), 279 (Xystus), 264 (Eustathius) and 255 (John Maron, patriarch of Antioch); institution narratives in large type on PDF 347, 327, 316, 306, 289, 276, 262 and 251; Garshuni preface headed al-muqaddima on PDF 439; a first part with readings and an index by months (PDF 11-12).",
       "checked_on": "2026-10-16",
       "status": "inspected",
-      "limitations": "Title and preface images examined; no checked Syriac/Garshuni transcription or translation. Repertoire/order claims below come from named scholarship, not this visual inspection. The file called 1908-contents.png is a calendar table, not an anaphora contents list."
+      "limitations": "Title and preface images examined; no checked Syriac/Garshuni transcription or translation. Repertoire/order claims below come from named scholarship, not this visual inspection. The file called 1908-contents.png is a calendar table, not an anaphora contents list. The 2026-10-21 roster is a heading-level reading in reversed PDF order; printed page numbers were not relied on and the preface was not transcribed."
+    },
+    {
+      "id": "maronite-vat431-ms",
+      "title": "Biblioteca Apostolica Vaticana, Vat.sir.431 (digitized manuscript)",
+      "url": "https://digi.vatlib.it/view/MSS_Vat.sir.431",
+      "kind": "primary-book",
+      "inspection": "Provider image 46 of 67 (acquired whole by the 2026-10-19 lane) viewed on 2026-10-21: the opening with the leaf foliated 45 in Western numerals. Two Syriac passages of the post-institution invocation are encircled in ink with interlinear and marginal marks, and a Latin marginal note of a later hand explains the invocation of the Holy Spirit to make this bread the body of Christ, says that some over-zealous persons removed it, and defends it from the liturgies of Clement, Basil, Chrysostom and James, the Council of Florence and Bellarmine, De sacramento Eucharistiae book 4 chapter 14.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "One opening viewed; the Syriac text was not transcribed and the Latin note was read only in outline (its wording about removal is a tentative reading). The note's citation of Bellarmine places it no earlier than his treatise; the hand is not dated here. Other folios of Vat.sir.431 and the Florence parts of manuscript O were not inspected."
     },
     {
       "id": "maronite-1992-intro",
@@ -104,6 +114,36 @@
       "limitations": "Lead only. Search-index detail not promoted to an inspected stable catalogue or primary book."
     },
     {
+      "id": "maronite-onb1762-book",
+      "title": "Missale Syriacum juxta ritum Ecclesiae Antiochenae nationis Syrorum Maronitarum (Rome, Komarek, 1762), Austrian National Library 22.D.32 ALT PRUNK",
+      "url": "https://api.onb.ac.at/iiif/presentation/v3/manifest/ABO_+Z221480402",
+      "kind": "primary-book",
+      "inspection": "Provider images (acquired whole by the 2026-10-19 lane) viewed on 2026-10-21: canvas 430 Latin title (Romae MDCCLXII, Komarek); canvas 3 approbation of J. S. Assemani dated 10 April 1763; canvas 363 Imprimatur leaf; anaphora headings in red Serto on canvases 226, 196, 183, 156, 137, 116, 103 and 094, each followed by its institution narrative in large type (canvases 221/220, 192/191, 177/176, 152/151, 133/132, 113/112, 101/100, 089/088); running heads of canvases 040-416; Good Friday heading on canvas 072; Garshuni printer's note on canvas 4. Reading order runs from canvas 430 downward.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Headings, running heads and paratext were read on page images; the Syriac and Garshuni body was not transcribed or collated. The canvas 4 printer's note was only partly read: it names Rome and appears to name Pope Clement XIII, but its day, month and year words were not read with confidence. One copy only; variant issues unchecked. Images are NoC-NC provider images kept in research scratch."
+    },
+    {
+      "id": "maronite-kaufhold1988-munster1716",
+      "title": "Hubert Kaufhold, Die syrischen und christlich-arabischen Handschriften der Universitätsbibliothek in Münster, Oriens Christianus 72 (1988), 89-113, as excerpted by the Syrische Anaphoren project",
+      "url": "https://syriac-anaphoras.org/catalogue/html/kaufhold_2.html",
+      "kind": "scholarship",
+      "inspection": "Project excerpt page read in full on 2026-10-21 (HTTP 200, 5,881 bytes, SHA-256 c8d699d12e7edb59e68bc3f2f0dd0277b5782b2a79296678f307ea87e7488c41). Entry Ms. orient. 6 (Kaufhold pp. 108f): a defective copy of the Rome 1716 Propaganda Fide Missale Syriacum with Syriac and Garshuni manuscript supplements; surviving anaphoras with printed page ranges.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Secondary excerpt of a scholarly catalogue; Kaufhold's article itself and the Münster copy were not seen. The copy lacks a series of pages, so the excerpt lists only surviving anaphoras and is not a complete 1716 roster."
+    },
+    {
+      "id": "maronite-feulner-klampfl2008",
+      "title": "T. Klampfl (2008) after H.-J. Feulner, Zu den Editionen orientalischer Anaphoren (OCA 260, 2000), Syrische Anaphoren project bibliography",
+      "url": "https://syriac-anaphoras.org/catalogue/pdf/feulner_1.pdf",
+      "kind": "scholarship",
+      "inspection": "Text layer of the whole 21-page PDF (acquired by the 2026-10-19 lane) read on 2026-10-21: West Syriac edition list (Maronite missals 1592-94 with 14, Rome 1716 with 13, Beirut 1908 with 8 anaphoras) and section 2.2 on the Maronite anaphoras with per-anaphora edition loci.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Bibliographic digest of Feulner's OCA 260 article, read in its text layer only. Gives anaphora counts and selected page loci; it does not list the 1716 roster by name and is not a collation."
+    },
+    {
       "id": "maronite-synod2006-liturgy",
       "title": "Maronite Patriarchal Synod 2003–2006, Text 12: Liturgy, official Arabic text",
       "url": "https://bkerki.org/document/المجمع-البطريركي-الماروني-2003-2006/النص-الثاني-عشر-الليتورجيّا/",
@@ -112,6 +152,26 @@
       "checked_on": "2026-10-17",
       "status": "inspected",
       "limitations": "The official online synodal text attests these prescriptions during the 2003–2006 synod. It does not by itself identify the date of a particular missal decree or prove parish implementation. No modern liturgical body is imported."
+    },
+    {
+      "id": "maronite-decree1512-2005",
+      "title": "Patriarchal decree Prot. 1512/2005, Bkerke, 29 June 2005 (Nasrallah Peter Sfeir), approving the Kitab al-Quddas, as reproduced in the 2012 approved English edition",
+      "url": "https://storage.googleapis.com/msgsndr/4i0JNb0UR6ufHm8Td6cd/media/659cd443def5729e659b3923.pdf",
+      "kind": "primary-act",
+      "inspection": "PDF page 4 (English decree with patriarchal seal and signature) viewed on 2026-10-21; PDF page 6 (the 2005 patriarchal introduction, citing decree 43/1973) viewed; PDF pages 5, 7-12 read in the text layer. Whole PDF acquired by the 2026-10-19 lane (SHA-256 bcf2db1c7aca..., 1,936 pages).",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "The decree and introduction are read as reproduced (English with Arabic) in a later approved translation, not in the 2005 Arabic/Syriac original book. The decree states approval and effective dates; it does not prove uniform implementation."
+    },
+    {
+      "id": "maronite-english2012-contents",
+      "title": "Book of Offering according to the Rite of the Antiochene Syriac Maronite Church, according to the Bkerke 2005 Edition (2012), contents of the anaphoras",
+      "url": "https://storage.googleapis.com/msgsndr/4i0JNb0UR6ufHm8Td6cd/media/659cd443def5729e659b3923.pdf",
+      "kind": "primary-book",
+      "inspection": "PDF page 1552 contents list of the anaphoras read in the bilingual text layer on 2026-10-21 (English and Arabic titles with page numbers 754-897); the prior cold reviewer viewed the page image.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "An approved English translation (decree 108/2012) declaring that it follows the Bkerke 2005 edition. It witnesses the 2005 book's structure and anaphora titles, not its Syriac/Arabic wording. Translation history itself remains deferred."
     }
   ],
   "stages": [
@@ -129,7 +189,9 @@
         "ordinary",
         "anaphoras"
       ],
-      "witness_ids": [],
+      "witness_ids": [
+        "eastern:maronite-ms-vat-sir431"
+      ],
       "witness_label": "Mikhail al-Rizzi’s manuscript O: Florence BNCF Cl.III.79 and Cl.III.74, with Vatican Vat.sir.431; colophon BNCF Cl.III.74 f 154r–v.",
       "summary": "A divided 1566 missal used in preparing the first print; supplements also contributed.",
       "text_coverage": "not-transcribed",
@@ -138,9 +200,14 @@
           "source_id": "maronite-jabbour2020",
           "locus": "pp 62–65, reconstruction table p 65",
           "claim": "Reassembles gatherings of O across the three shelfmarks; the print also uses other material."
+        },
+        {
+          "source_id": "maronite-vat431-ms",
+          "locus": "Provider image 46, leaf foliated 45",
+          "claim": "The Vatican part of the reconstructed manuscript shows encircled invocation passages and a Latin marginal note on the epiclesis on the folio Jabbour cites (f. 45r); the marked Syriac was not transcribed, so its correspondence to Jabbour's correction layers is not checked here."
         }
       ],
-      "limitations": "Reconstruction attributed to Jabbour; surviving manuscripts and colophon not inspected. It is not a complete uncontested single-parent genealogy.",
+      "limitations": "Reconstruction attributed to Jabbour; surviving manuscripts and colophon not inspected. It is not a complete uncontested single-parent genealogy. 2026-10-21: one Vatican opening (f. 45) was inspected; the Florence parts and the colophon remain uninspected.",
       "reception": "Maronite manuscript provenance; date of its dispatch to Rome is disputed. The later printed uniform formula must not be projected back over all manuscript layers."
     },
     {
@@ -234,7 +301,7 @@
         "eastern:mar-1716"
       ],
       "witness_label": "Missale Syriacum iuxta ritum Ecclesiae Antiochenae nationis Maronitarum, Rome, Propaganda Fide 1716.",
-      "summary": "Fourteen anaphoras remain, but the roster changes: Roman Church added; Sharar removed as an anaphora and adapted for Good Friday.",
+      "summary": "Fourteen anaphoras remain according to Dib (Feulner counts thirteen), but the roster changes: Roman Church added; Sharar removed as an anaphora and adapted for Good Friday.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {
@@ -248,29 +315,35 @@
           "claim": "Explains adaptation of Roman Canon material to the structure of Twelve Apostles."
         }
       ],
-      "limitations": "No 1716 page images or complete roster inspected. The Roman Church anaphora should not be described merely as an unchanged translation of the Roman Canon.",
+      "limitations": "No 1716 page images or complete roster inspected. The Roman Church anaphora should not be described merely as an unchanged translation of the Roman Canon. The total is disputed: Dib and the 1992 introduction give fourteen, Feulner (maronite-feulner-klampfl2008) thirteen; neither count is adopted as settled.",
       "reception": "Publication and later reception are distinct. Synodal debates about institution wording do not independently identify a new missal state."
     },
     {
       "id": "maronite-rome1762-1763",
       "tradition_id": "maronite-antiochene",
       "label": "Reduced anaphora repertoire",
-      "date_label": "1762–1763 in Dib/Beggiani; 1763 in official introduction",
+      "date_label": "1762 title imprint; approbation 10 April 1763 (same copy); 1763 in the official introduction",
       "start_year": 1762,
       "end_year": 1763,
       "date_kind": "publication",
       "status": "documented",
       "scope": "Third Roman edition with smaller repertoire; disputed exact count retained.",
       "components": [
-        "anaphoras"
+        "anaphoras",
+        "rubrics"
       ],
       "witness_ids": [
         "eastern:mar-1763"
       ],
-      "witness_label": "Third Roman Maronite missal, 1762–1763, primary title and colophon not inspected.",
-      "summary": "Repertoire reduced from fourteen; Dib and Beggiani count nine, while the 1992 introduction counts eight. Beggiani places Second Peter first.",
+      "witness_label": "Missale Syriacum juxta ritum Ecclesiae Antiochenae nationis Syrorum Maronitarum, Rome, Komarek 1762 (approbation 10 April 1763); ONB 22.D.32 ALT PRUNK.",
+      "summary": "Repertoire reduced from the 1716 book. The inspected copy carries eight anaphora headings, each with its own institution narrative: Peter head of the Apostles, Twelve Apostles, Xystus, John, Mark, Eustathius, the holy Roman Church and John Maron. A separate Good Friday order headed as the anaphora of the signing of the holy chalice follows them. Dib and Beggiani count nine; the 1992 introduction counts eight.",
       "text_coverage": "not-transcribed",
       "evidence": [
+        {
+          "source_id": "maronite-onb1762-book",
+          "locus": "Canvas 430 title; canvas 3 approbation; anaphora headings canvases 226, 196, 183, 156, 137, 116, 103, 094; Good Friday heading canvas 072 with running heads 040-071",
+          "claim": "Title 1762 and approbation 1763 stand on one copy; the book has eight anaphoras with institution narratives and a separately headed Good Friday chalice-signing order."
+        },
         {
           "source_id": "maronite-dib1928",
           "locus": "col 129",
@@ -287,7 +360,7 @@
           "claim": "Reports eight for 1763."
         }
       ],
-      "limitations": "Count disagreement unresolved; no invented explanation that one source counted Good Friday separately. Removed titles and exact title/colophon dates require the book.",
+      "limitations": "Eight anaphoras plus the Good Friday item are what the inspected copy contains. That a count of nine includes the Good Friday item is compatible with this but is not stated by Dib or Beggiani, so it is not adopted as their reason. The approbation says the book was collated with the 1716 Propaganda missal and agrees with it; that is a doctrinal approval formula, not evidence that the repertoire was unchanged. Body text not transcribed; one copy, variant issues unchecked; the canvas 4 printer's date is unread.",
       "reception": "Subsequent Lebanese printings are reported; continuity of every wording or rubric has not been collated."
     },
     {
@@ -308,7 +381,7 @@
         "eastern:mar-dibs-1908"
       ],
       "witness_label": "Yusuf al-Dibs, Beirut missal 1888; Ketābā de-qurbānā, al-Maṭbaʿa al-Mārūnīya 1908, second printing.",
-      "summary": "Roman Church replaces Second Peter at the head of the anaphora sequence.",
+      "summary": "Roman Church replaces Peter at the head of the anaphora sequence; the 1908 printing has the same eight anaphoras as 1762 in a new order.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {
@@ -320,9 +393,14 @@
           "source_id": "maronite-1908-book",
           "locus": "Bonn title record; whole-file PDF 441",
           "claim": "Identifies the 1908 second printing and its retained title page."
+        },
+        {
+          "source_id": "maronite-1908-book",
+          "locus": "Whole-file PDF 352, 330, 318, 310, 292, 279, 264, 255 (headings, reversed PDF order)",
+          "claim": "Order in the 1908 printing: Roman Church, Peter, Twelve Apostles, Mark, John, Xystus, Eustathius, John Maron."
         }
       ],
-      "limitations": "1888/1908 differences uncollated; source-described reordering not verified by an independent reading of 1908 contents. 1888 date is revision attestation, not the duration of use.",
+      "limitations": "1888 itself not seen; 1888/1908 differences uncollated. The 1908 order is a witness to the Dibs line and cannot by itself show which reorderings Dibs made in 1888 and which came from intervening Qozhaya printings or from the 1908 second printing itself. 1888 date is revision attestation, not the duration of use.",
       "reception": "The 1908 printing is a witness to the Dibs line; it is not counted as a separately proved reform."
     },
     {
@@ -385,9 +463,14 @@
           "source_id": "maronite-beggiani1998",
           "locus": "p 20",
           "claim": "Identifies a distinct 1973 patriarchal text retaining Roman institution wording."
+        },
+        {
+          "source_id": "maronite-decree1512-2005",
+          "locus": "PDF 6 (2005 patriarchal introduction, English; the Arabic counterpart follows)",
+          "claim": "The revision proposed by the Liturgical Commission was approved by Patriarch Meouchi with the consent of the patriarchal synod, as an abbreviated ritual put into effect by decree 43/1973 of 13 April 1973 for one year as an experiment."
         }
       ],
-      "limitations": "No original 1973 book inspected. Exact identity of the single anaphora is not safely supplied from Beggiani’s description of 1972.",
+      "limitations": "No original 1973 book or decree inspected; the decree number and date come from a later patriarchal introduction reproduced in 2012. Exact identity of the single anaphora is not safely supplied from Beggiani's description of 1972.",
       "reception": "Experimental permission is not perpetual universal promulgation. Neither source establishes identical local reception everywhere."
     },
     {
@@ -426,6 +509,42 @@
       ],
       "limitations": "Primary reform explanation, not a full transcription. Comprehensive Old/New Testament lectionary was still being prepared; later complementary Gospel/Epistle books are not successive missal versions.",
       "reception": "Intro reports synodal/Congregation approval and patriarchal signature. 31 July dates the introduction, not independently the decree or universal effective date. A later 2005 edition is reported by Jabbour; 1992 is not labelled current."
+    },
+    {
+      "id": "maronite-bkerke2005",
+      "tradition_id": "maronite-antiochene",
+      "label": "Second edition of the revised Qurbono with eight anaphoras",
+      "date_label": "2005; patriarchal decree 29 June 2005, in use from the first Sunday of November 2005",
+      "start_year": 2005,
+      "end_year": 2005,
+      "date_kind": "approval",
+      "status": "documented",
+      "scope": "Patriarchal approval of the revised Mass book called its second edition; structure known from the reproduced decree, introduction and the approved 2012 translation, not from the Arabic/Syriac original.",
+      "components": [
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "eastern:maronite-bkerke-2005"
+      ],
+      "witness_label": "Kitab al-Quddas according to the rite of the Antiochene Syriac Maronite Church, Bkerke 2005 (seminary library Tl 188 Ar, 1117 pp.), read through the 2012 approved English edition.",
+      "summary": "Decree 1512/2005 approves the new edition after the Congregation for the Eastern Churches' letter 381/2003 of 17 April 2005 and synodal consent, orders its use from the first Sunday of November 2005 and forbids any other Mass book from 25 December 2005. Eight anaphoras: Twelve Apostles, Peter, James, John, Mark, Xystus, John Chrysostom and John Maron.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "maronite-decree1512-2005",
+          "locus": "PDF 4 decree; PDF 6-12 introduction",
+          "claim": "Approval chain, effective and exclusive-use dates, and the description of the book as the second edition of the revised ritual."
+        },
+        {
+          "source_id": "maronite-english2012-contents",
+          "locus": "PDF 1552 contents of the anaphoras",
+          "claim": "The edition translated from Bkerke 2005 has eight anaphoras with the names listed."
+        }
+      ],
+      "limitations": "Arabic/Syriac 2005 book not acquired; decree and contents are read in a later approved translation. The introduction does not name the first edition; equating it with the 1992 book is an inference left open. Anaphora names do not show whether texts of the same name match earlier printings.",
+      "reception": "The decree prescribes use throughout the patriarchal territory and the diaspora from November 2005 and exclusive use from 25 December 2005; actual uniform use is not established. The 2003-2006 synod separately requires the approved Mass order."
     },
     {
       "id": "maronite-synod2003-2006",
@@ -500,6 +619,11 @@
               "source_id": "maronite-dib1928",
               "locus": "col 129",
               "claim": "Describes the changed object of the epiclesis and residual older wording."
+            },
+            {
+              "source_id": "maronite-vat431-ms",
+              "locus": "Provider image 46, leaf foliated 45",
+              "claim": "Encircled invocation passages and a Latin marginal defence of the epiclesis are visible on the folio Jabbour cites."
             }
           ]
         }
@@ -511,7 +635,7 @@
           "claim": "Supplies a manuscript reconstruction and bounded examples of editing."
         }
       ],
-      "limitations": "Manuscript ancestry remains a scholarly reconstruction with supplementary sources. No direct before/after Syriac collation was performed. Do not attribute all changes solely to an editor on the strength of the approval colophon.",
+      "limitations": "Manuscript ancestry remains a scholarly reconstruction with supplementary sources. No direct before/after Syriac collation was performed. Do not attribute all changes solely to an editor on the strength of the approval colophon. 2026-10-21: the before-side folio Vat.sir.431 f. 45 was viewed, but the markings were not transcribed or collated against the print.",
       "comparison_ids": [],
       "historical_parentage": "attributed"
     },
@@ -616,7 +740,7 @@
           "claim": "Explicit comparison of the first and second printed editions."
         }
       ],
-      "limitations": "Exact 1716 text and full roster not inspected. Edge compares documented states; intermediate 1608 variants are not silently treated as its exclusive parent.",
+      "limitations": "Exact 1716 text and full roster not inspected. Edge compares documented states; intermediate 1608 variants are not silently treated as its exclusive parent. The unchanged total of fourteen is Dib's; Feulner counts fourteen for 1592-94 but thirteen for 1716, so the total after the change is unresolved.",
       "comparison_ids": [],
       "historical_parentage": "attributed"
     },
@@ -634,10 +758,10 @@
       "changes": [
         {
           "component": "anaphoras",
-          "before": "Fourteen anaphoras.",
-          "after": "A smaller selection: nine in Dib/Beggiani, eight in the official introduction.",
+          "before": "Fourteen anaphoras as counted by Dib and the 1992 introduction; Feulner counts thirteen for 1716, and the total is unresolved.",
+          "after": "Eight anaphoras with institution narratives (Peter, Twelve Apostles, Xystus, John, Mark, Eustathius, Roman Church, John Maron) plus a Good Friday chalice-signing order headed as an anaphora; Dib/Beggiani count nine, the official introduction eight.",
           "locus_before": "1716 roster reported by Dib col 129.",
-          "locus_after": "1762–63 roster not independently read.",
+          "locus_after": "ONB copy canvases 226, 196, 183, 156, 137, 116, 103, 094 and 072.",
           "evidence": [
             {
               "source_id": "maronite-dib1928",
@@ -648,6 +772,40 @@
               "source_id": "maronite-1992-intro",
               "locus": "Succeeding Editions",
               "claim": "Reports fourteen to eight."
+            },
+            {
+              "source_id": "maronite-feulner-klampfl2008",
+              "locus": "West Syriac edition list; section 2.2, Anzahl",
+              "claim": "Counts thirteen anaphoras for Rome 1716, against Dib's fourteen."
+            },
+            {
+              "source_id": "maronite-onb1762-book",
+              "locus": "Canvases 226-072 (anaphora and Good Friday headings)",
+              "claim": "Roster of the inspected 1762/1763 copy."
+            }
+          ]
+        },
+        {
+          "component": "anaphoras",
+          "before": "Scholarship places the anaphoras of James the brother of the Lord and of Matthew the Shepherd among the surviving sections of a defective 1716 copy (Kaufhold), and the anaphora of John Chrysostom at pp. 332-337 of the 1716 edition (Feulner/Klampfl).",
+          "after": "No heading for James, Matthew the Shepherd or John Chrysostom in the 1762/1763 copy.",
+          "locus_before": "Münster UB Ms. orient. 6 (Rome 1716): James pp. 182-207, Matthew the Shepherd pp. 250-263 (Kaufhold 1988 pp. 108f); John Chrysostom pp. 332-337 (Feulner/Klampfl).",
+          "locus_after": "ONB copy, heading canvases 226-094 and running heads 040-416.",
+          "evidence": [
+            {
+              "source_id": "maronite-kaufhold1988-munster1716",
+              "locus": "Ms. orient. 6 entry (Kaufhold pp. 108f)",
+              "claim": "Lists the surviving anaphoras of a defective 1716 copy with page ranges."
+            },
+            {
+              "source_id": "maronite-feulner-klampfl2008",
+              "locus": "Section 2.2, no. 6 Anaphora des Johannes Chrysostomus",
+              "claim": "Cites the Rome 1716 missal, pp. 332-337, for the Chrysostom anaphora."
+            },
+            {
+              "source_id": "maronite-onb1762-book",
+              "locus": "Heading canvases 226-094; running heads 040-416",
+              "claim": "These three anaphoras are absent from the inspected copy's headings."
             }
           ]
         }
@@ -659,7 +817,7 @@
           "claim": "Independently reports nine."
         }
       ],
-      "limitations": "Reduction is documented despite unresolved count. No list of deletions is invented. 1762/1763 are source-reported date bounds, not an inferred period of validity.",
+      "limitations": "Reduction is documented despite the disputed count; the 1716 side rests on scholarship (Dib, Kaufhold, Feulner) and the 1716 book was not inspected. The list of removed anaphoras is partial: the Münster copy lacks pages. 1762/1763 are source-reported date bounds, not an inferred period of validity.",
       "comparison_ids": [],
       "historical_parentage": "attributed"
     },
@@ -677,15 +835,44 @@
       "changes": [
         {
           "component": "anaphoras",
-          "before": "Second Peter first.",
+          "before": "Peter (head of the Apostles) first; Roman Church seventh of eight.",
           "after": "Roman Church first.",
-          "locus_before": "Pre-Dibs sequence described in Beggiani p 19.",
-          "locus_after": "1888 Dibs sequence described in Beggiani p 20.",
+          "locus_before": "1762/1763 ONB copy canvases 226 (Peter) and 103 (Roman Church); pre-Dibs sequence described in Beggiani p 19.",
+          "locus_after": "1908 printing of the Dibs line, whole-file PDF 352 (Roman Church) and 330 (Peter); 1888 sequence described in Beggiani p 20.",
           "evidence": [
             {
               "source_id": "maronite-beggiani1998",
               "locus": "pp 19–20",
               "claim": "Explicitly identifies the first anaphora before and after."
+            },
+            {
+              "source_id": "maronite-onb1762-book",
+              "locus": "Canvases 226 and 103",
+              "claim": "Peter heads the 1762/1763 roster and Roman Church is seventh."
+            },
+            {
+              "source_id": "maronite-1908-book",
+              "locus": "Whole-file PDF 352 and 330",
+              "claim": "Roman Church heads the 1908 roster, followed by Peter."
+            }
+          ]
+        },
+        {
+          "component": "anaphoras",
+          "before": "Order Peter, Twelve Apostles, Xystus, John, Mark, Eustathius, Roman Church, John Maron.",
+          "after": "Order Roman Church, Peter, Twelve Apostles, Mark, John, Xystus, Eustathius, John Maron; same eight names.",
+          "locus_before": "ONB copy canvases 226, 196, 183, 156, 137, 116, 103, 094.",
+          "locus_after": "Bonn 1908 whole-file PDF 352, 330, 318, 310, 292, 279, 264, 255.",
+          "evidence": [
+            {
+              "source_id": "maronite-onb1762-book",
+              "locus": "Heading canvases 226-094",
+              "claim": "Earlier order."
+            },
+            {
+              "source_id": "maronite-1908-book",
+              "locus": "Heading pages PDF 352-255",
+              "claim": "Later order."
             }
           ]
         }
@@ -697,7 +884,7 @@
           "claim": "Identifies the named reorder."
         }
       ],
-      "limitations": "Intervening Qozhaya printings 1816, 1838, 1855, 1872 are acknowledged witnesses; none was collated. A broad claim of identical wording across them is not adopted.",
+      "limitations": "Intervening Qozhaya printings 1816, 1838, 1855, 1872 and the 1888 book were not seen. Beggiani attributes Roman-first to Dibs 1888; the other moves (Xystus, Mark/John) are observed between the 1762 and 1908 witnesses and may have arisen in any intervening printing. The second change rests on the 1908 witness alone: the transition's 1888 endpoint does not date those moves, which could postdate 1888 if the 1908 second printing altered the order. Heading-level comparison only; no claim of identical wording.",
       "comparison_ids": [],
       "historical_parentage": "attributed"
     },
@@ -795,6 +982,49 @@
       "limitations": "The 1992 side is a contemporary primary description; the earlier side is a scholarly retrospective. The edge uses their lowest shared evidence level. No paired textual collation was performed. Sharar restoration and a twenty-four-anaphora collection were future projects, not accomplished 1992 contents.",
       "comparison_ids": [],
       "historical_parentage": "unestablished"
+    },
+    {
+      "id": "maronite-anaphoras2005",
+      "from_stage": "maronite-bkerke1992",
+      "to_stage": "maronite-bkerke2005",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The second edition adds the anaphoras of John Chrysostom and John Maron to the six of 1992.",
+      "components": [
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "anaphoras",
+          "before": "Six anaphoras: Twelve Apostles, Peter, James, John, Mark, Xystus.",
+          "after": "Eight anaphoras: the same six plus John Chrysostom and John Maron.",
+          "locus_before": "1992 introduction, Western Syriac Anaphora (the six listed as they appear in the book), taken up under Six Anaphoras of the New Text.",
+          "locus_after": "2012 edition according to Bkerke 2005, PDF 1552 (printed p. 753) contents.",
+          "evidence": [
+            {
+              "source_id": "maronite-1992-intro",
+              "locus": "Western Syriac Anaphora; Six Anaphoras of the New Text",
+              "claim": "Names the six 1992 anaphoras."
+            },
+            {
+              "source_id": "maronite-english2012-contents",
+              "locus": "PDF 1552 (printed p. 753)",
+              "claim": "Names the eight anaphoras of the edition translated from 2005."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "maronite-decree1512-2005",
+          "locus": "PDF 4, 8-10",
+          "claim": "The 2005 book is the approved second edition of the revised ritual."
+        }
+      ],
+      "limitations": "Both sides are official descriptions (a contemporary introduction and an approved translation's contents), not the Arabic/Syriac books. The 2005 introduction does not name 1992 as its first edition. Names alone do not show whether the 2005 John Maron and Chrysostom texts match those of earlier printings.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
     }
   ],
   "gaps": [
@@ -803,15 +1033,15 @@
       "tradition_id": "maronite-antiochene",
       "period": "Before 1592",
       "missing": "Oldest 1454 witness and alleged twelfth-century leaves not independently inspected; no whole twelfth-century Qurbono state established.",
-      "next_source": "Vatican Vat.sir.309; BnF syr.73 (1509), Vat.sir.434 (1541), BnF syr.78 (1573), and Jabbour’s cited folios.",
+      "next_source": "Vat.sir.309 and Vat.sir.434 (no public digi.vatlib images on 2026-10-21, HTTP 404); BnF syr. 71 (1454), syr. 73 (1509), syr. 78 (1573) via Gallica; Jabbour's cited folios.",
       "consequence": "No invented uninterrupted medieval stemma or wholesale pre-Latinization text."
     },
     {
       "id": "maronite-ms-parentage",
       "tradition_id": "maronite-antiochene",
       "period": "1566–1594",
-      "missing": "Direct folio verification of O and the supplementary blessing material.",
-      "next_source": "BNCF Cl.III.74 f 154r–v, Cl.III.79, Cl.III.75; Vatican Vat.sir.431; Jabbour pp 62–65.",
+      "missing": "Folio verification of the Florence parts of O (BNCF Cl.III.74 colophon, Cl.III.79) and the supplementary material; transcription of the corrected Vatican passages.",
+      "next_source": "BNCF Cl.III.74 f 154r-v, Cl.III.79, Cl.III.75 (no public images found); transcribe Vat.sir.431 image 46 (f. 45) and the other marked openings of the 67 acquired images; Jabbour pp 62-65.",
       "consequence": "The 1566→print edge remains attributed; it is not a sole-parent assertion."
     },
     {
@@ -826,25 +1056,25 @@
       "id": "maronite-1716-primary",
       "tradition_id": "maronite-antiochene",
       "period": "1716",
-      "missing": "Primary contents, Roman Church text, Good Friday order and relocated ablution rubric.",
-      "next_source": "Rome 1716 Missale Syriacum; Braidense GERLI.0740, SBN MILE040858.",
-      "consequence": "Strong source-described change remains unavailable for direct text comparison; dynamic catalogue redirect was not treated as inspected evidence."
+      "missing": "A 1716 copy or images: complete roster and order (Kaufhold's Münster copy lacks pages; Dib gives fourteen, Feulner thirteen), Roman Church text, Good Friday order and relocated ablution rubric.",
+      "next_source": "Münster UB Ms. orient. 6 (defective 1716 copy with manuscript supplements); Braidense GERLI.0740 (SBN MILE040858); Google Books metadata record -SIptwAACAAJ (no preview); Kaufhold, Oriens Christianus 72 (1988) pp. 108f in full.",
+      "consequence": "The partial 1716 roster comes from scholarship, so the 1716 side of the 1716-to-1762 reduction stays scholarly. The 1762 approbation's statement that the book agrees with 1716 is an approval formula and must not be read as identical contents."
     },
     {
       "id": "maronite-1763-count",
       "tradition_id": "maronite-antiochene",
       "period": "1762–1763",
-      "missing": "Exact title/colophon dates and eight-versus-nine repertoire discrepancy.",
-      "next_source": "Original third Roman missal: title, anaphora headings, contents and Good Friday section; compare Dib col 129 with 1992 introduction.",
-      "consequence": "Do not publish a settled numeric count or explain the discrepancy without checking the book."
+      "missing": "Why Dib and Beggiani count nine (the inspected copy has eight anaphoras plus a Good Friday order headed as an anaphora); day, month and year of the canvas 4 Garshuni printer's note; variant issues of 1762/1763.",
+      "next_source": "Transcribe ONB canvas 4 (Garshuni note naming Rome and Clement XIII); a second copy (NEST Beirut rare books, Biblioteca Nacional Brazil); Dib, Étude sur la liturgie maronite (Paris 1919) for his counting basis.",
+      "consequence": "Publish the copy's contents (eight plus the Good Friday item), not a settled reason for the sources' counts."
     },
     {
       "id": "maronite-lebanese-printings",
       "tradition_id": "maronite-antiochene",
       "period": "1816–1908",
-      "missing": "Gospel expansion described by Dib; full Qozhaya and Dibs contents and wording comparison.",
-      "next_source": "Qozhaya 1816, 1838, 1855, 1872; Dibs 1888 and retained 1908 Bonn scan, especially native prefaces and anaphora headings.",
-      "consequence": "Printings do not become independent reform stages solely by date. Expanded Gospel provision may be a separate substantive stage once dated to a checked witness."
+      "missing": "Qozhaya 1816, 1838, 1855, 1872 and Dibs 1888 copies; when each 1762-to-1908 reordering occurred; Dib's Gospel expansion and the content of the 1908 readings part and preface.",
+      "next_source": "Qozhaya printings (the 1855 book appears in trade listings and a 2018 Sotheby's lot); Dibs 1888; Bonn 1908 PDF 11-240 (readings with an index by months) and the Garshuni preface PDF 439-437 for transcription.",
+      "consequence": "Printings do not become independent reform stages by date. The 1908 roster now fixes the end state; expanded Gospel provision may be a separate stage once dated to a checked witness."
     },
     {
       "id": "maronite-script1959",
@@ -858,8 +1088,8 @@
       "id": "maronite-experiments",
       "tradition_id": "maronite-antiochene",
       "period": "1972–1973",
-      "missing": "Exact native books, one-year permissions and relation of Roman 1972 to patriarchal 1973.",
-      "next_source": "Congregation experimental 1972 text; patriarchal Simple Rite 1973; Beggiani p 20; 1992 official introduction.",
+      "missing": "Exact native 1972 and 1973 books; the 1973 decree itself; relation of the Roman 1972 proposal to the patriarchal 1973 ritual.",
+      "next_source": "Congregation experimental 1972 text; patriarchal Simple Rite 1973 and decree 43/1973 of 13 April 1973 (reported in the 2005 introduction); Beggiani p 20.",
       "consequence": "1972 remains provisional; no unsupported equation of the single anaphora or effective dates."
     },
     {
@@ -867,16 +1097,16 @@
       "tradition_id": "maronite-antiochene",
       "period": "1992",
       "missing": "Native title/decree pages, full rubrics, six anaphoras and annual-service inventory.",
-      "next_source": "Bkerke Syriac/Arabic Qurbono 1992 and promulgation decree; complementary Gospel/Epistle books.",
+      "next_source": "Bkerke Syriac/Arabic Qurbono 1992 (Google Books record yCSqswEACAAJ: Manshurat al-Rusul, 1992, 829 pp., Patriarchal Commission for Liturgical Affairs, no preview) and its promulgation decree (Arabic Wikipedia reports decree 479/1992, unverified); complementary Gospel/Epistle books.",
       "consequence": "Source-described reform is established, complete text/reception dates are not; protected text is not imported."
     },
     {
       "id": "maronite-later2005",
       "tradition_id": "maronite-antiochene",
       "period": "After 1992",
-      "missing": "Original 2005 Qurbono title, patriarchal decree, introduction and eight-anaphora bodies remain unacquired. The official 2003–2006 synod independently supplies book-use prescriptions.",
-      "next_source": "Maronite Patriarchal Seminary catalogue, https://seminairemaronite.org/المكتبة/page/159/, Tl 188 Ar, 1117 pages, 2005; reported decree no. 1512 of 29 June 2005 and Congregation letter 381/2003 dated 17 April 2005 require original-page confirmation. Check native book pp. 4–5, 8–9, 33–34, 1116 and distinguish the 2008 Sharar booklet Tl 191 Ar, 61 pages.",
-      "consequence": "The 2005 title is independently catalogued; exact new-anaphora and effective-date claims remain unverified until original pages are acquired. Searches in Arabic, French and English found catalogue and secondary descriptions, later parish aids and an unavailable NDU Spirit 35 PDF; none substitutes for the primary book."
+      "missing": "Original 2005 Arabic/Syriac book: title page, decree pages, introduction and the eight anaphora bodies; whether its first edition is the 1992 book.",
+      "next_source": "Maronite Patriarchal Seminary catalogue Tl 188 Ar (1117 pp., 2005), https://seminairemaronite.org/المكتبة/page/159/ ; native book pp. 4-5, 8-9, 33-34, 1116; distinguish the 2008 Sharar booklet Tl 191 Ar. An archive.org item Maronite_Missal reported in search results could not be reached (connection refused).",
+      "consequence": "Stage maronite-bkerke2005 rests on the reproduced decree and an approved translation; wording claims need the original."
     }
   ]
 }

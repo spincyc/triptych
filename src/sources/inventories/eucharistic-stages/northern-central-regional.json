@@ -83,6 +83,16 @@
       "checked_on": "2026-10-20",
       "status": "inspected",
       "limitations": "The original title image and body were not inspected; title language concerning pontifical concessions and the archbishop's mandate is not the underlying acts or local use evidence."
+    },
+    {
+      "id": "northern-central-regional:turku-doria-pdf",
+      "title": "National Library of Finland, Missale Aboense parchment composite, Doria PDF fv31282_pergamenttikooste.pdf",
+      "url": "https://www.doria.fi/handle/10024/117336",
+      "kind": "primary-book",
+      "inspection": "Whole 540-page PDF (330,077,146 bytes) acquired 2026-10-21; pp. 1–24 surveyed and pp. 6 (computus table), 7 (January), 12 (June), 18 (December) and 19 (holy-water ordo) viewed.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "A composite of leaves from several copies; the Bitz preface leaf was not found in pp. 1–24. Only selected calendar months were read."
     }
   ],
   "stages": [
@@ -96,8 +106,17 @@
       "date_kind": "publication",
       "status": "documented",
       "scope": "Printed Mass book's foreword, calendar, temporal, Order and Canon of Mass, sanctoral, commons, votives, sequences and accident rubrics as bounded by the edited copy's contents.",
-      "components": ["calendar", "propers", "ordinary", "anaphoras", "rubrics", "chant"],
-      "witness_ids": ["western:nidaros-1519"],
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "rubrics",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:nidaros-1519"
+      ],
       "witness_label": "Missale Nidrosiense, Copenhagen print of 1519",
       "summary": "Archbishop Erik Valkendorf commissioned a corrected and augmented missal following the Nidaros metropolitan rite because older missals were scarce or defective. The print foreword states a goal of common celebration across his diocese and province; the edited colophon dates printing to 25 May 1519.",
       "text_coverage": "not-transcribed",
@@ -126,8 +145,12 @@
       "date_kind": "publication",
       "status": "documented",
       "scope": "Local preface and saints' calendar in a diocesan missal printed at Lübeck; only the calendar is counted as a demonstrated local liturgical component.",
-      "components": ["calendar"],
-      "witness_ids": ["western:aboense-1488"],
+      "components": [
+        "calendar"
+      ],
+      "witness_ids": [
+        "western:aboense-1488"
+      ],
       "witness_label": "Missale Aboense, 1488 print represented by the National Library parchment composite",
       "summary": "The National Library identifies the Lübeck 1488 Missale Aboense for the Diocese of Turku, with Bishop Konrad Bitz's preface dated 17 August 1488 and a local saints' calendar. The surviving parchment object is assembled from fragments of multiple copies.",
       "text_coverage": "not-transcribed",
@@ -136,9 +159,14 @@
           "source_id": "northern-central-regional:turku-library",
           "locus": "Finna record, imprint and description paragraphs beginning 'MISSALE ABOENSE' and 'Esipuhe ja alkuun liitetty'",
           "claim": "Identifies the diocesan destination, 1488 Lübeck print, dated bishop's preface, and Finnish local calendar."
+        },
+        {
+          "source_id": "northern-central-regional:turku-doria-pdf",
+          "locus": "Doria PDF pp. 7, 12 and 18 (January, June, December calendar)",
+          "claim": "The printed calendar marks Henry bishop (20 January) and the Translation of Henry (18 June) as totum duplex, with Knut king (7 January), Eskil martyr (12 June), a church dedication (17 June) and Anne mother of Mary (9 December) as local entries."
         }
       ],
-      "limitations": "17 August is a prefatory date, not the print or use date; the exact local calendar entries and other Mass components are uncollated. Fragmentary and composite copies cannot be treated as a single physically complete witness.",
+      "limitations": "17 August is a prefatory date, not the print or use date. Only the January, June and December calendar pages were read in the composite copy; other Mass components are uncollated. Fragmentary and composite copies cannot be treated as a single physically complete witness.",
       "reception": "The book's intended Turku diocesan destination is documented by the holding library; individual parish use is not dated."
     },
     {
@@ -151,8 +179,16 @@
       "date_kind": "publication",
       "status": "documented",
       "scope": "Catalogue-attested diocesan missal with calendar, temporal and sanctoral Masses, ordinary, Canon and rubrics; the title reports a diocesan synod and chapter approval.",
-      "components": ["calendar", "propers", "ordinary", "anaphoras", "rubrics"],
-      "witness_ids": ["western:zagreb-1511"],
+      "components": [
+        "calendar",
+        "propers",
+        "ordinary",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:zagreb-1511"
+      ],
       "witness_label": "Missale Zagrabiense, Venetian print of 1511, OSZK RMK III 0176",
       "summary": "The Usuarium catalogue identifies a 1511 missal according to Zagreb's choir and rubrics; its transcribed title reports confirmation and approval in a diocesan synod and general chapter under Bishop Luke. The contents inventory identifies the major Mass components.",
       "text_coverage": "not-transcribed",
@@ -176,8 +212,12 @@
       "date_kind": "publication",
       "status": "documented",
       "scope": "Roman Missal book state whose long title advertises Bohemian saint Mass propers and pontifically conceded Masses under Archbishop Waldstein's mandate.",
-      "components": ["propers"],
-      "witness_ids": ["western:ce-prague-prague-1690"],
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:ce-prague-prague-1690"
+      ],
       "witness_label": "Missale Romano-Bohemicum, archiepiscopal seminary print, 1690",
       "summary": "A 1690 digitized-book title identifies a Roman-based missal with Bohemian local Mass propers, including texts described as pontifically conceded, issued by command of Archbishop Johann Friedrich of Waldstein.",
       "text_coverage": "not-transcribed",
@@ -206,8 +246,8 @@
       "id": "northern-central-regional:turku-copies",
       "tradition_id": "turku-aboense-missal",
       "period": "1488 and local reception",
-      "missing": "Original preface/calendar leaves, full copy collation, other Mass components and actual Turku use dates.",
-      "next_source": "National Library Missale Aboense composite images, remaining paper fragments, and Bitz preface.",
+      "missing": "January, June and December calendar pages of the National Library composite are read; the Bitz preface leaf (not in pp. 1–24 of the composite), remaining calendar months, Mass components, other copies and actual Turku use dates remain.",
+      "next_source": "Remaining pages of the acquired Doria composite PDF (pp. 25–540) for the preface woodcut leaf and Mass sections; Copenhagen parchment copy; paper copies listed by the National Library.",
       "consequence": "The diocesan book and local calendar are identified, but a full distinctive version and uptake cannot be reconstructed."
     },
     {

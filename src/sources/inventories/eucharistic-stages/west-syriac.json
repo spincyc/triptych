@@ -118,6 +118,16 @@
       "limitations": "Catalogue extent descriptions differ; complete provider file has 279 PDF pages. Its liturgical content is assessed from original pages, not catalogue pagination."
     },
     {
+      "id": "west-syriac-stages-wright1870",
+      "title": "William Wright, Catalogue of Syriac Manuscripts in the British Museum Acquired since the Year 1838, Part I (London, 1870), no. CCXC (Add. 17128)",
+      "url": "https://books.google.com/books?id=CWtoAAAAcAAJ&pg=PA226",
+      "kind": "scholarship",
+      "inspection": "Google Books full-view page image of printed p. 226 read on 2026-10-21 (the entry's shelfmark line '[Add. 17,128.]' stands at its end on p. 227; cold review read pp. 226–227 on the archive.org copy catalogueofsyria01brituoft, leaves n235–n236, on 2026-10-21); search-inside snippets for Add. 14523 (pp. 204, 293–294) and Add. 14690 (p. 207) located.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Catalogue description, not inspection of the manuscript; Wright's palaeographic dating is attributed. Only pp. 226–227 (entry CCXC) were read as images; other entries were seen as snippets only."
+    },
+    {
       "id": "west-syriac-stages-anaphora-project",
       "title": "Thomas Klampfl, Syriac Anaphoras Project: manuscript catalogue extracts",
       "url": "https://syriac-anaphoras.org/catalogue/html/katalog_britmus_1.html",
@@ -196,6 +206,11 @@
           "source_id": "west-syriac-stages-rome1843-original",
           "locus": "Printed 103, 119, 128, 138, 146, 155, 168/PDF 134, 150, 159, 169, 177, 186, 199; Presanctified printed 53/PDF 84",
           "claim": "Original headings establish the seven named anaphora sections; the Presanctified opening explicitly identifies the signing-of-the-chalice service."
+        },
+        {
+          "source_id": "west-syriac-stages-rome1843-original",
+          "locus": "Printed 29/PDF 60, centred red heading and following prayer",
+          "claim": "Under the heading prayer of the fraction the 1843 common order prints the prayer opening ܗܟܢܐ ܫܪܝܪܐܝܬ ܚܫ ܡܠܬܐ ܐܠܗܐ ܒܒܣܪ (thus truly the Word of God suffered in the flesh), preceded by a long Garshuni rubric; page image read on 2026-10-21."
         }
       ],
       "limitations": "Original title, attestation and anaphora labels are checked; entrance-prayer restoration and the derivation of the Presanctified compilation remain the 1922 editor’s descriptions. Prayer bodies are not fully transcribed. Shared author labels do not establish textual identity or historical authorship.",
@@ -290,6 +305,21 @@
           "source_id": "west-syriac-stages-decree1922",
           "locus": "PDF 8–9 printed 3–4",
           "claim": "Patriarch’s decree dated 8 December 1922 prescribes the edition for his patriarchate and wherever his rite is observed."
+        },
+        {
+          "source_id": "west-syriac-stages-missal1922",
+          "locus": "James anaphora printed 81/PDF 229",
+          "claim": "Under the red heading prayer of the fraction the formula opens ܠܚܡܐ ܫܡܝܢܐ ܩܨܝܢܢ ܒܫܡܐ ܕܐܒܐ (we break the heavenly bread in the name of the Father), with Amen and a signing cross after each divine name; page image read on 2026-10-21."
+        },
+        {
+          "source_id": "west-syriac-stages-missal1922",
+          "locus": "Printed 13 n. 1 and 14 n. 2/PDF 18–19",
+          "claim": "The editor cites British Museum Add. 17128 twice: as the older codex in which the Twelve Apostles commemorations of living and dead stand in only two prayers (he follows the later six-part arrangement instead), and as the source of the deprecatory prayers before Communion appended to James."
+        },
+        {
+          "source_id": "west-syriac-stages-wright1870",
+          "locus": "No. CCXC, printed pp. 226–227 (contents p. 226; shelfmark Add. 17,128 at the end of the entry, p. 227)",
+          "claim": "Identifies Add. 17128 as a 192-leaf vellum sacerdotal of the tenth or eleventh century containing Eucharistic prayers, anaphoras of the Twelve Apostles (fol. 11b), James (fol. 13b), Ignatius, Dionysius, Cyril of Jerusalem and Gregory Nazianzen, and benedictions of the chalice."
         }
       ],
       "limitations": "These are primary-described changes, not independent before/after Syriac collation. The editor’s authorship/confessional diagnoses are not adopted as modern critical conclusions. His statement about no alteration to institution narrative/epiclesis is narrower than “no changes to anaphoras.” The six-section Twelve Apostles diptychs are an explicitly retained feature, not a new 1922 innovation. The James manuscript-reference footnote is malformed as printed and needs shelfmark disambiguation.",
@@ -463,6 +493,70 @@
       "limitations": "The original 1843 book is acquired and its Presanctified opening inspected; the prayer-body changes here still depend on the 1922 editor’s description. Native repertoire-label comparison is recorded separately. Additional 1922 changes are not all tied to exact 1843 leaves. The 1881 minister book remains complementary, not the predecessor of the 1922 altar book.",
       "comparison_ids": [],
       "historical_parentage": "established"
+    },
+    {
+      "id": "west-syriac-stages-fraction-formula1922",
+      "from_stage": "west-syriac-stages-rome1843",
+      "to_stage": "west-syriac-stages-sharfeh1922",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "text-collated",
+      "summary": "The prayer printed under the fraction heading changes from the 'Thus truly the Word of God suffered' composition to the heavenly-bread formula with trinitarian signings.",
+      "components": [
+        "ordinary",
+        "anaphoras"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Common order: the heading prayer of the fraction is followed by the prayer opening ܗܟܢܐ ܫܪܝܪܐܝܬ ܚܫ ܡܠܬܐ ܐܠܗܐ ܒܒܣܪ (thus truly the Word of God suffered in the flesh).",
+          "after": "The fraction heading within each inspected anaphora is followed by the formula opening ܠܚܡܐ ܫܡܝܢܐ ܩܨܝܢܢ ܒܫܡܐ ܕܐܒܐ (we break the heavenly bread in the name of the Father), the Son and the living Holy Spirit, each with Amen and a signing.",
+          "locus_before": "1843 printed 29/PDF 60",
+          "locus_after": "1922 James printed 81/PDF 229; Twelve Apostles printed 134/PDF 172",
+          "evidence": [
+            {
+              "source_id": "west-syriac-stages-rome1843-original",
+              "locus": "Printed 29/PDF 60, centred red heading and following prayer",
+              "claim": "Under the heading prayer of the fraction the 1843 common order prints the prayer opening ܗܟܢܐ ܫܪܝܪܐܝܬ ܚܫ ܡܠܬܐ ܐܠܗܐ ܒܒܣܪ (thus truly the Word of God suffered in the flesh), preceded by a long Garshuni rubric; page image read on 2026-10-21."
+            },
+            {
+              "source_id": "west-syriac-stages-missal1922",
+              "locus": "James anaphora printed 81/PDF 229",
+              "claim": "Under the red heading prayer of the fraction the formula opens ܠܚܡܐ ܫܡܝܢܐ ܩܨܝܢܢ ܒܫܡܐ ܕܐܒܐ (we break the heavenly bread in the name of the Father), with Amen and a signing cross after each divine name; page image read on 2026-10-21."
+            },
+            {
+              "source_id": "west-syriac-stages-missal1922",
+              "locus": "Twelve Apostles anaphora printed 134/PDF 172",
+              "claim": "A red rubric directs the priest to break and sign while saying aloud the same heavenly-bread formula; page image read on 2026-10-21."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "west-syriac-stages-rome1843-original",
+          "locus": "Printed 29/PDF 60, centred red heading and following prayer",
+          "claim": "Under the heading prayer of the fraction the 1843 common order prints the prayer opening ܗܟܢܐ ܫܪܝܪܐܝܬ ܚܫ ܡܠܬܐ ܐܠܗܐ ܒܒܣܪ (thus truly the Word of God suffered in the flesh), preceded by a long Garshuni rubric; page image read on 2026-10-21."
+        },
+        {
+          "source_id": "west-syriac-stages-missal1922",
+          "locus": "James anaphora printed 81/PDF 229",
+          "claim": "Under the red heading prayer of the fraction the formula opens ܠܚܡܐ ܫܡܝܢܐ ܩܨܝܢܢ ܒܫܡܐ ܕܐܒܐ (we break the heavenly bread in the name of the Father), with Amen and a signing cross after each divine name; page image read on 2026-10-21."
+        },
+        {
+          "source_id": "west-syriac-stages-missal1922",
+          "locus": "Twelve Apostles anaphora printed 134/PDF 172",
+          "claim": "A red rubric directs the priest to break and sign while saying aloud the same heavenly-bread formula; page image read on 2026-10-21."
+        },
+        {
+          "source_id": "west-syriac-stages-missal1922",
+          "locus": "Printed 14/PDF 19, paragraph Quod ad fractionem",
+          "claim": "The editor states that he suppressed the fraction composition attributed to Barsalibi and restored the formula Panem coelestem frangimus."
+        }
+      ],
+      "limitations": "Only the opening words of the fraction prayers and their headings were compared, not the complete fraction rite. A Syriac OCR pass over the retained 1922 scan did not locate the 1843 composition elsewhere in the book, but OCR cannot prove its absence. Rahmani's attribution of the 1843 composition to Barsalibi and his claim of restoring an older formula are his own historical judgements.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
     }
   ],
   "gaps": [
@@ -470,16 +564,16 @@
       "id": "west-syriac-stages-early-manuscript-reception",
       "tradition_id": "syriac-catholic-celebrant",
       "period": "Before 1843; medieval antecedents",
-      "missing": "No identified sequence of Catholic received manuscript exemplars. Project entries for Add. 14523, ff. 1–7 (eighth/ninth century), and Add. 14690 (main copy 1182) are shared witnesses, not Catholic stages. Rahmani 1922 cites British Museum and patriarchal-library manuscripts; his page 12 footnote needs disambiguation; Add. 17128 is explicitly cited on pages 13–14.",
-      "next_source": "William Wright, Catalogue of Syriac Manuscripts in the British Museum I (1870), entries Add. 14523, Add. 14690 and Add. 17128; current British Library images; Sharfeh patriarchal manuscript catalogue; Rahmani 1922, pages 12–14.",
+      "missing": "No identified sequence of Catholic received manuscript exemplars before 1843. Add. 17128 is now identified as a manuscript the 1922 editor expressly used: Wright dates it to the tenth or eleventh century and lists Twelve Apostles, James, Cyril of Jerusalem and chalice-benediction texts, and Rahmani cites it for the James supplementary prayers and the older Twelve Apostles commemoration arrangement. That is editorial use in 1922, not evidence of earlier Catholic reception. Add. 14523 and Add. 14690 remain shared witnesses only, and Rahmani's p. 12 footnote still needs disambiguation.",
+      "next_source": "Current British Library images of Add. 17128 (foll. 11b–18b); Sharfeh patriarchal manuscript catalogue; Rahmani 1922 p. 12 footnote; Wright Part I entries for Add. 14523 and 14690 read as images.",
       "consequence": "Cannot draw common ancestry as Catholic reception or assign one copy date across composite manuscript layers."
     },
     {
       "id": "west-syriac-stages-rome1843-collation",
       "tradition_id": "syriac-catholic-celebrant",
       "period": "1843 → 1922",
-      "missing": "Full before/after collation of the 1843 and 1922 native prayer bodies. The original 1843 full PDF, title, patriarchal attestation and imprimaturs are now acquired and checked.",
-      "next_source": "Retained edition.syriac-catholic-church.missale-syriacum.1843-rome-propaganda; compare native entrance prayers and Presanctified form with held Sharfeh 1922.",
+      "missing": "Full before/after collation of the 1843 and 1922 native prayer bodies, especially the entrance propitiatory prayers Rahmani says 1843 shortened and the two Presanctified forms. The fraction formula change is now page-collated (1843 printed 29; 1922 printed 81 and 134), and complete Syriac OCR layers of both retained books exist in lane scratch as discovery aids.",
+      "next_source": "Retained 1843 and 1922 books: compare the 1922 entrance prayers (contents: printed 19 onward) with the 1843 ordinary (printed 1–52), and the 1843 Presanctified (printed 53/PDF 84) with the 1922 order of the signing of the chalice (contents: printed 225).",
       "consequence": "Established primary-described revision remains source-described, not an actual before/after Syriac comparison."
     },
     {
@@ -518,7 +612,7 @@
       "id": "west-syriac-stages-malankara1966-origin",
       "tradition_id": "syro-malankara-catholic",
       "period": "1966",
-      "missing": "The acquired Malayalam Taksa’s source edition and original versus translated revision content are not established.",
+      "missing": "The acquired 1966 Malayalam Taksa's source edition and the original versus translated content of any revision are not established. Its own introduction to Part Two (printed 57/PDF 93, read on 2026-10-21) says the book prints the anaphora under the name of Pope Xystus, that the custom is to use James on special days and that other anaphoras may alternate — the same Xystus/James pair Tisserant reports for Pampakuda 1934 — but it names no source edition.",
       "next_source": "Collate the 1966 Malayalam Taksa body against identified earlier Catholic service books; seek the separate hierarchical approval instrument and records of actual use of this printing. Original scan: https://archive.malankaralibrary.com/ImageUpload/c4c664b902ed1f65cd1fcd4e40c1ae9d.pdf .",
       "consequence": "The 1966 book is an approval-backed, issued Malayalam service-book witness retained in origin review pending evidence of actual use under guidance/time-machine.md §11. No substantive transition or textual parent is proven, and it does not fill the 1934 Syriac original gap."
     },

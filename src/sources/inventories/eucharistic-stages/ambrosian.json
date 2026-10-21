@@ -134,6 +134,36 @@
       "limitations": "Direct check of this bounded proper, not whole-book collation. February 4 calendar date is still supplied by Lang. Watermarked image derivatives are not redistributed; source claims record exact institutional foliation."
     },
     {
+      "id": "ambrosian-1640-book",
+      "title": "Missale Ambrosianum, Milan: Giovanni Ambrogio Sirturi with the heirs of Pontio and Piccaglia, archiepiscopal printers, 1640 (Google-digitized copy)",
+      "url": "https://archive.org/details/bub_gb_6ApfhlfCMksC",
+      "kind": "primary-book",
+      "inspection": "Complete 772-page PDF previously acquired by another lane (SHA-256 a2c349195305c12f6d7ca6428b5d84cf198bdcaaf60b2385862dba997c6a20ea, 78039485 bytes) reopened on 2026-10-21. Page images inspected: engraved title PDF 5 (Mediolani, apud Io. Ambrosium Sirturum, impress. Archiep., MDCXL); undated letter of Cesare Monti, cardinal archbishop, to the Milanese clergy, PDF 7; alphabetical saints index PDF 8-9 (V entries, PDF 9); February calendar PDF 11; Sanctoral printed p. 396, PDF 434.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Bounded page reading, not whole-book collation. The Monti letter carries no dateline in the inspected image; the 1640 date is the engraved title's. The archive.org host was unreachable on 2026-10-21, so the item page could not be re-queried; the bytes were the earlier lane's acquisition. Watermarked derivative images stay in scratch."
+    },
+    {
+      "id": "ambrosian-1954-book",
+      "title": "Missale Ambrosianum iuxta ritum sanctae Ecclesiae Mediolanensis, editio quinta post typicam, Milan: Daverio, 1954",
+      "url": "https://archive.org/details/missale-ambrosianum-1954",
+      "kind": "primary-book",
+      "inspection": "Complete 1049-page PDF previously acquired by another lane (SHA-256 3fca1ee7cbfdd2d9e252cc081384c4e777bb3be8ba3404a7c110d5d41be74da9, 113925868 bytes) reopened on 2026-10-21. Page images inspected: title PDF 7; Schuster decree PDF 9, dated 21 March 1954; Sebastian proper printed p. 465 (PDF 517); Nativity of John in die printed p. 572 (PDF 632); Decollation of John printed pp. 664-665 (PDF 724-725). A machine OCR of every page was made in scratch solely to locate these loci.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Modern book with unresolved rights; research-only scan, no tracked payload. Selected pages only; no complete collation with the 1902 typical edition, whose agreement rests on the censor's certificate printed in the decree."
+    },
+    {
+      "id": "ambrosian-1981-book",
+      "title": "Missale Ambrosianum iuxta ritum sanctae Ecclesiae Mediolanensis ex decreto Concilii Vaticani II instauratum, Milan 1981",
+      "url": "https://archive.org/details/missale-ambrosianum-1981",
+      "kind": "primary-book",
+      "inspection": "Complete 1380-page PDF previously acquired by another lane (SHA-256 ab16df74ad2e3c150c69497ed046ed8cc241a1676cc2a537872ebebd26acb277, 435984048 bytes) reopened on 2026-10-21 with its own text layer used as a finding aid. Page images inspected: title PDF 7; Colombo decree printed V-VII (PDF 9-11), dated 11 April 1976; Martini note printed VII (PDF 11), dated 8 September 1981; Prot. 2347/74 confirmation (PDF 12); Institutio nn. 7-8, printed XII-XIII (PDF 16-17, text layer read with page context); Prex eucharistica V, printed p. 527 (PDF 611); Prex eucharistica VI, printed p. 535 (PDF 619, rubric n. 214 read in text layer); MA 248/6, printed p. 579 (PDF 663); MA 329/6, printed p. 658 (PDF 742); MA 384/6, printed p. 717 (PDF 801); MA 483/2, printed p. 832 (PDF 916).",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Modern book with unresolved rights; research-only scan, no tracked payload and no complete transcription. Selected loci only. Institutio statements about earlier editions are an official retrospective, not inspection of those editions."
+    },
+    {
       "id": "ambrosian-usuarium-1594",
       "title": "USUARIUM 6041, Missale Ambrosianum 1594",
       "url": "https://usuarium.elte.hu/book/6041/view",
@@ -215,8 +245,49 @@
           "claim": "Names the 1594 comparator for removal."
         }
       ],
-      "limitations": "Printer differs from Sabbio-labelled catalogue leads; use exact shelfmark and resolve before acquisition. No claim 1594 was the first effective removal.",
+      "limitations": "Printer differs from Sabbio-labelled catalogue leads; use exact shelfmark and resolve before acquisition. No claim 1594 was the first effective removal. The 1981 Institutio n. 7 states, as an official retrospective, that the 1594 Missal is not far from the 1475 printing while taking some items from Pius V's Missal; it does not list them. The 1640 edition, directly inspected, lacks the Veronica proper, which is consistent with but does not verify the 1594 removal.",
       "reception": "Historical Latin Ambrosian use of the Milanese Church; no claim of universal Roman reception or continuous unchanged use."
+    },
+    {
+      "id": "ambrosian-1640",
+      "tradition_id": "ambrosian-milan",
+      "label": "Monti's revised Milan missal",
+      "date_label": "1640: engraved title year",
+      "start_year": 1640,
+      "end_year": 1640,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Archiepiscopal edition whose prefatory letter states its revision programme; calendar of February and the Sanctoral around 3-5 February checked.",
+      "components": [
+        "calendar",
+        "propers",
+        "chant"
+      ],
+      "witness_ids": [
+        "western:ambrosian-1640-print"
+      ],
+      "witness_label": "Missale Ambrosianum, Milan: Giovanni Ambrogio Sirturi with the heirs of Pontio and Piccaglia, archiepiscopal printers, 1640; letter of Cardinal Cesare Monti",
+      "summary": "Monti's letter says a new edition was needed, that ancient manuscripts, liturgical writers and Milanese records were consulted, that proper prayers and whole Masses of certain saints, instituted after the last edition or by Monti himself, were put in their places, and that the chant notation was restored on expert advice. The 4 February calendar entry is the Chair of Peter at Antioch; the Sanctoral passes from Blaise to that Chair (by referral) and then to Agatha, with no Veronica Mass.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ambrosian-1640-book",
+          "locus": "Engraved title, PDF 5",
+          "claim": "Identifies the Milan 1640 archiepiscopal printing."
+        },
+        {
+          "source_id": "ambrosian-1640-book",
+          "locus": "Monti letter, PDF 7",
+          "claim": "States consultation of old manuscripts, insertion of saints' prayers and Masses instituted since the last edition, and restoration of chant notation."
+        },
+        {
+          "source_id": "ambrosian-1640-book",
+          "locus": "February calendar PDF 11; Sanctoral printed p. 396, PDF 434; index PDF 9",
+          "claim": "4 February is the Chair of Peter at Antioch; no Veronica proper stands between Blaise and Agatha, and the saints index has no Veronica entry."
+        }
+      ],
+      "limitations": "The letter names the kinds of change but not each changed formulary, and does not name the edition it revises. The absence of a Veronica proper is bounded to the inspected calendar, index and Sanctoral page; it does not date the removal, which Lang reports already for 1594. No whole-book collation.",
+      "reception": "The letter commends the book to the priests of the Milanese Church. Continuous or exclusive use is not established."
     },
     {
       "id": "ambrosian-1751",
@@ -287,6 +358,40 @@
       "reception": "Historical Latin Ambrosian use of the Milanese Church; no claim of universal Roman reception or continuous unchanged use."
     },
     {
+      "id": "ambrosian-1954",
+      "tradition_id": "ambrosian-milan",
+      "label": "Schuster's fifth printing after the 1902 typical",
+      "date_label": "1954: title year; decree of 21 March 1954",
+      "start_year": 1954,
+      "end_year": 1954,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Conformed printing of the 1902 typical edition with an approved appendix of Masses for some congregations; three Sanctoral prefaces checked.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:ambrosian-1954-fifth"
+      ],
+      "witness_label": "Missale Ambrosianum, editio quinta post typicam, Milan: Daverio, 1954",
+      "summary": "Schuster's decree reports that the censor certified agreement with the 1902 typical edition and approves an appendix of Masses for some congregations adapted to the Ambrosian rite. The Sebastian preface begins Aeterne Deus. Quoniam beati Martyris tui Sebastiani; the Nativity of John preface begins Aeterne Deus: Et in die festivitatis hodiernae and reads conceptus abstersit; the Decollation preface begins Aequum et salutare and narrates the beheading.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ambrosian-1954-book",
+          "locus": "Title PDF 7; decree PDF 9",
+          "claim": "Fifth printing after the typical edition; censor certifies agreement with the 1902 typical; appendix approved; dated 21 March 1954."
+        },
+        {
+          "source_id": "ambrosian-1954-book",
+          "locus": "Printed pp. 465, 572, 664-665 (PDF 517, 632, 724-725)",
+          "claim": "Directly read Sebastian, Nativity of John and Decollation prefaces."
+        }
+      ],
+      "limitations": "A conformed printing, not a new recension; it stands for the 1902 typical text only as far as the censor's certificate reaches. The appendix contents were not inspected. Selected pages only.",
+      "reception": "Approved by the archbishop for publication for the Ambrosian rite; use in particular churches is not established."
+    },
+    {
       "id": "ambrosian-1974-approved",
       "tradition_id": "ambrosian-milan",
       "label": "Approved postconciliar source",
@@ -343,6 +448,35 @@
       "reception": "Approved Ambrosian use for the two named celebrations; no universal Roman or continuous-unchanged-use claim."
     },
     {
+      "id": "ambrosian-1976-promulgated",
+      "tradition_id": "ambrosian-milan",
+      "label": "Colombo's promulgation of the reformed missal",
+      "date_label": "11 April 1976 decree; obligatory from 14 November 1976",
+      "start_year": 1976,
+      "end_year": 1976,
+      "date_kind": "effective",
+      "status": "documented",
+      "scope": "Archiepiscopal promulgation of the reformed Missale Ambrosianum and its Institutio, as reprinted in the 1981 Latin book; no separate 1976 Latin volume inspected.",
+      "components": [
+        "propers",
+        "anaphoras",
+        "rubrics"
+      ],
+      "witness_ids": [],
+      "witness_label": "Decree of Giovanni Colombo, Milan, Palm Sunday 11 April 1976, printed V-VII in the 1981 Missale Ambrosianum",
+      "summary": "Colombo promulgates the new Missal, describes abandoned or changed older prayers, new compositions, enriched formularies and two restored or expanded anaphoras for the Holy Thursday and Easter Vigil Masses, and makes the Missal and its Institutio obligatory in all Ambrosian-rite churches and parishes of the diocese from 14 November 1976, the first Sunday of Advent.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ambrosian-1981-book",
+          "locus": "Colombo decree, printed V-VII, PDF 9-11",
+          "claim": "Dateline 11 April 1976; obligatory use from 14 November 1976; names the two anaphoras and the kinds of revision."
+        }
+      ],
+      "limitations": "The decree is read in its 1981 reprint. Its effective date is a prescription, not proof of uniform implementation. It does not identify which Latin volume, if any, was printed in 1976; the 1976 Italian book remains a deferred translation witness.",
+      "reception": "Prescribed for all churches and parishes of the Ambrosian rite in the Archdiocese of Milan; actual compliance is not established."
+    },
+    {
       "id": "ambrosian-1981-latin",
       "tradition_id": "ambrosian-milan",
       "label": "First postconciliar Latin book",
@@ -351,16 +485,17 @@
       "end_year": 1981,
       "date_kind": "publication",
       "status": "documented",
-      "scope": "Published Latin source: selected Sanctoral prefaces described by Ward; calendar organization represented only through the official Latin publisher’s retrospective replacement-and-reorganization account, not a reconstructed calendar.",
+      "scope": "Published Latin source: front matter, the two special Eucharistic prayers and selected Sanctoral prefaces directly read in an acquired scan; calendar organization represented only through the official Latin publisher's retrospective account, not a reconstructed calendar.",
       "components": [
         "propers",
-        "calendar"
+        "calendar",
+        "anaphoras"
       ],
       "witness_ids": [
         "western:ambrosian-1981-latin"
       ],
       "witness_label": "Missale Ambrosianum, Mediolani 1981, promulgated under Giovanni Colombo; Ward MA.",
-      "summary": "Printed first-reform witness.",
+      "summary": "Printed first-reform witness. It reprints Colombo's 1976 promulgation and the 1974 confirmation, and adds Martini's 8 September 1981 promulgation of changes to rite or texts introduced since 1976 with Apostolic See confirmation. Prex eucharistica V is prescribed for the Holy Thursday evening Mass and VI for the Easter Vigil.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {
@@ -377,9 +512,24 @@
           "source_id": "ambrosian-publisher-2026",
           "locus": "Description: paragraph beginning La pubblicazione della II edizione latina and following principal-changes list, especially La riorganizzazione dell’anno liturgico",
           "claim": "Identifies the first Latin edition of 1981 as the book replaced and describes the successor’s reorganization into seasons after Epiphany and Pentecost. This supplies a retrospective predecessor-calendar scope, without individual 1981 assignments."
+        },
+        {
+          "source_id": "ambrosian-1981-book",
+          "locus": "Title PDF 7; printed V-VII, PDF 9-11; Prot. 2347/74, PDF 12",
+          "claim": "Mediolani MCMLXXXI title; Colombo 1976 decree; Martini 1981 note promulgating post-1976 confirmed changes in this edition; 1974 confirmation reprinted."
+        },
+        {
+          "source_id": "ambrosian-1981-book",
+          "locus": "Printed pp. 527 and 535, PDF 611 and 619, MA 213 and 214 (opening rubrics)",
+          "claim": "Prex eucharistica V for the Holy Thursday evening Mass and VI for the Easter Vigil, matching the occasions confirmed in 1975."
+        },
+        {
+          "source_id": "ambrosian-1981-book",
+          "locus": "MA 248/6 p. 579; MA 329/6 p. 658; MA 384/6 p. 717; MA 483/2 p. 832",
+          "claim": "Directly read reformed Sebastian, Nativity of John and Passion of John prefaces and the Common of Martyrs collect."
         }
       ],
-      "limitations": "Complete book unavailable in this lane. 1974 approved exemplar and 1975 confirmations not collated; no separate 1981 reform asserted. This publication and the 1974 approval must not be counted as two independently established substantive recensions. Calendar evidence is retrospective and structural only: no 1981 calendar page, feast assignment, Sunday count or precise intermediate source state has been inspected. The evidence does not transfer the Italian 1976/1990 calendar’s exact contents into the Latin 1981 book.",
+      "limitations": "A complete scan is acquired for research only; selected pages are read and nothing is transcribed. 1974 approved exemplar and 1975 confirmations are not collated with this book: the matching occasions of Prex V and VI do not prove word-for-word identity with the 1975 exemplars. Martini's note says post-1976 changes exist without listing them; no separate 1981 reform is asserted. This publication and the 1974 approval must not be counted as two independently established substantive recensions. Calendar evidence is retrospective and structural only: no 1981 calendar page, feast assignment or Sunday count has been inspected. The evidence does not transfer the Italian 1976/1990 calendar's exact contents into the Latin 1981 book.",
       "reception": "Historical Latin Ambrosian use of the Milanese Church; no claim of universal Roman reception or continuous unchanged use."
     },
     {
@@ -472,6 +622,54 @@
       "historical_parentage": "attributed"
     },
     {
+      "id": "ambrosian-1475-to-1640-veronica",
+      "from_stage": "ambrosian-1475",
+      "to_stage": "ambrosian-1640",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "text-collated",
+      "summary": "Between the two inspected printings the Veronica proper that precedes Agatha in 1475 is no longer present in the 1640 Sanctoral, calendar or saints index.",
+      "components": [
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "propers",
+          "before": "In sancte veronice proper begins f. 35r, Gospel Mark 5:21, and ends f. 36r before In sancte agathe.",
+          "after": "After Blaise, the Sanctoral gives the Chair of Peter at Antioch by referral and then Agatha; no Veronica proper; the 4 February calendar entry is the Antioch Chair and the index has no Veronica.",
+          "locus_before": "1475 Vatican Inc. III. 420, ff. 35r-36r, IIIF canvases 76-78",
+          "locus_after": "1640 printed p. 396 (PDF 434); calendar PDF 11; index PDF 9",
+          "evidence": [
+            {
+              "source_id": "ambrosian-vatican-1475",
+              "locus": "ff. 35r-36r, canvases 76-78",
+              "claim": "Veronica proper directly read before Agatha."
+            },
+            {
+              "source_id": "ambrosian-1640-book",
+              "locus": "p. 396, PDF 434; PDF 9; PDF 11",
+              "claim": "No Veronica proper, calendar entry or index entry in the inspected places."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "ambrosian-vatican-1475",
+          "locus": "ff. 35r-36r",
+          "claim": "Before state directly inspected."
+        },
+        {
+          "source_id": "ambrosian-1640-book",
+          "locus": "p. 396; calendar; index",
+          "claim": "After state directly inspected."
+        }
+      ],
+      "limitations": "Original-to-original comparison of one proper across 165 years and unseen intervening editions (1594, 1609 and others); it neither dates the removal nor makes 1640 the first book without it. Lang's 1594 report and the 1475 calendar date remain scholarly. Not an immediate-successor edge.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    },
+    {
       "id": "ambrosian-1751-to-1902",
       "from_stage": "ambrosian-1751",
       "to_stage": "ambrosian-1902",
@@ -498,6 +696,29 @@
       "limitations": "Revision project established, but dossier lacks a checked before/after unit. Do not count this proposal as a demonstrated unit-level transition. 1877 permission is not a complete textual stage; 1913 is not a reform.",
       "comparison_ids": [],
       "historical_parentage": "attributed"
+    },
+    {
+      "id": "ambrosian-1902-to-1954",
+      "from_stage": "ambrosian-1902",
+      "to_stage": "ambrosian-1954",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 1954 printing is certified by the archdiocesan censor to agree with the 1902 typical edition and adds an approved appendix of Masses for certain religious congregations, adapted to the Ambrosian rite by authority of the Apostolic See.",
+      "components": [
+        "propers"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "ambrosian-1954-book",
+          "locus": "Decree PDF 9",
+          "claim": "Fifth printing after the typical; censor certifies full agreement with the 1902 typical edition; appendix approved."
+        }
+      ],
+      "limitations": "Certified conformity, not an independent collation of the 1902 book; the appendix is a component addition whose contents were not inspected.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
     },
     {
       "id": "ambrosian-nativity-preface-revision",
@@ -530,7 +751,7 @@
           "before": "The older Ambrosian Passion-of-John feast had its own preface.",
           "after": "The reformed Passion-of-John preface draws on the modern Roman John-the-Baptist preface, with adaptations and Ambrosian conclusion.",
           "locus_before": "Older preface described by Ward pp 241–242",
-          "locus_after": "1981 MA 84/6; Ward p 242",
+          "locus_after": "1981 MA 384/6, printed p. 717 (Ward p. 240 prints MA84/6; in the 1981 book MA 84 is a Lenten feria); Ward p. 242",
           "evidence": [
             {
               "source_id": "ambrosian-ward-1996",
@@ -561,7 +782,93 @@
           "claim": "Notes 1902/1954 variant; not exact identity."
         }
       ],
-      "limitations": "Three selected preface findings described by Ward; no complete-book inheritance or immediate 1902 → 1981 succession. Dates of first introduction within the postconciliar reform remain unresolved. Article page images were checked on 2026-10-17; the underlying old and new altar books have not been independently collated. Ward p 243 n 12 distinguishes 1902 abstersit from 1954 abstulit; the 1954 quotation must not be silently labeled 1902 wording. The Passion-of-John and Sebastian findings remain scholarly-described, including the distinction between replacement of a preface and reuse of related material as a collect.",
+      "limitations": "Three selected preface findings described by Ward; no complete-book inheritance or immediate 1902 → 1981 succession. Dates of first introduction within the postconciliar reform remain unresolved. Article page images were checked on 2026-10-17; the underlying old and new altar books have not been independently collated. Ward p 243 n 12 distinguishes 1902 abstersit from a 1954 abstulit, but the 1954 original page (p. 572) reads abstersit (and quo, not qua), so the supposed 1902/1954 variant is not supported by the inspected 1954 book; Ward's 1954 quotation is not a diplomatic transcription. The Passion-of-John and Sebastian findings remain scholarly-described, including the distinction between replacement of a preface and reuse of related material as a collect. The three findings are now also checked original-to-original from 1954 to 1981 in ambrosian-1954-to-1981-prefaces.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    },
+    {
+      "id": "ambrosian-1954-to-1981-prefaces",
+      "from_stage": "ambrosian-1954",
+      "to_stage": "ambrosian-1981-latin",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "text-collated",
+      "summary": "Page-level comparison of the 1954 printing and the 1981 reformed book confirms replacement of the Sebastian and Passion-of-John prefaces and recasting of the Nativity-of-John preface.",
+      "components": [
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "propers",
+          "before": "Sebastian preface: Aeterne Deus. Quoniam beati Martyris tui Sebastiani pro confessione nominis tui venerabilis sanguis effusus, with the clauses mirabilia manifestat and perficis in infirmitate virtutem.",
+          "after": "Sebastian preface MA 248/6 is a different text: Qui suam in nos dilectionem manifestavit in finem, naming Sebastian as a true disciple who gave the supreme testimony of love.",
+          "locus_before": "1954 printed p. 465 (PDF 517)",
+          "locus_after": "1981 MA 248/6, printed p. 579 (PDF 663)",
+          "evidence": [
+            {
+              "source_id": "ambrosian-1954-book",
+              "locus": "p. 465, PDF 517",
+              "claim": "Old Sebastian preface directly read."
+            },
+            {
+              "source_id": "ambrosian-1981-book",
+              "locus": "MA 248/6, p. 579, PDF 663",
+              "claim": "Replacement Sebastian preface directly read."
+            }
+          ]
+        },
+        {
+          "component": "propers",
+          "before": "Decollation of John preface: Aequum et salutare ... In quo beatus Joannes Baptista martyrii est coronam adeptus, narrating the beheading for forbidding an unlawful marriage and his announcing Christ's descent to the dead.",
+          "after": "Passion of John preface MA 384/6: In cuius praecursore beato Ioanne tuam magnificentiam collaudamus, with the baptism of Christ and the supreme testimony of his blood.",
+          "locus_before": "1954 printed pp. 664-665 (PDF 724-725)",
+          "locus_after": "1981 MA 384/6, printed p. 717 (PDF 801)",
+          "evidence": [
+            {
+              "source_id": "ambrosian-1954-book",
+              "locus": "pp. 664-665, PDF 724-725",
+              "claim": "Old Decollation preface directly read."
+            },
+            {
+              "source_id": "ambrosian-1981-book",
+              "locus": "MA 384/6, p. 717, PDF 801",
+              "claim": "Replacement preface directly read; agrees with Ward's displayed text."
+            }
+          ]
+        },
+        {
+          "component": "propers",
+          "before": "Nativity of John in die: Et in die festivitatis hodiernae, quo beatus Baptista Joannes exortus est, exultare; prenatal leap, conceptus abstersit and the father's loosed tongue precede the naming and filling with the Spirit.",
+          "after": "MA 329/6: Et te in hodiernae die festivitatis excolere; naming and filling with the Spirit come first, the parental-healing clauses are absent, and a new conclusion follows.",
+          "locus_before": "1954 printed p. 572 (PDF 632)",
+          "locus_after": "1981 MA 329/6, printed p. 658 (PDF 742)",
+          "evidence": [
+            {
+              "source_id": "ambrosian-1954-book",
+              "locus": "p. 572, PDF 632",
+              "claim": "Old preface directly read, including abstersit."
+            },
+            {
+              "source_id": "ambrosian-1981-book",
+              "locus": "MA 329/6, p. 658, PDF 742",
+              "claim": "Recast preface directly read."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "ambrosian-1954-book",
+          "locus": "pp. 465, 572, 664-665",
+          "claim": "Before states directly read."
+        },
+        {
+          "source_id": "ambrosian-1981-book",
+          "locus": "MA 248/6, 329/6, 384/6 (MA 483/2 for the recurrence in limitations)",
+          "claim": "After states directly read."
+        }
+      ],
+      "limitations": "Four bounded units, read on page images and not transcribed; no complete-book diff. 1954 is a conformed printing of the 1902 typical, so the change is not dated to 1954-1981 more narrowly than the 1974 approval and 1976 promulgation allow. Shared wording between the old preface and the 1981 collect does not by itself establish the route of borrowing; the Roman mediation is Ward's attribution. The Roman 1970 sources were not checked here. The old Sebastian preface's clauses sanguis effusus, mirabilia manifestat and perficis in infirmitate virtutem recur, recast, in the Common of Martyrs super populum MA 483/2 (1981 p. 832, PDF 916, directly read). Ward (pp. 266–267, nn. 71–73) attributes this to mediation through the modern Roman Common-of-Martyrs preface; because shared wording does not establish the route, the recurrence is recorded as an observation, not as a before/after change of this transition.",
       "comparison_ids": [],
       "historical_parentage": "attributed"
     },
@@ -587,6 +894,29 @@
       "limitations": "No new substantive 1981 revision claimed and no exact identity certified. 1975 Eucharistic-prayer confirmation needs separate examination.",
       "comparison_ids": [],
       "historical_parentage": "attributed"
+    },
+    {
+      "id": "ambrosian-1976-to-1981",
+      "from_stage": "ambrosian-1976-promulgated",
+      "to_stage": "ambrosian-1981-latin",
+      "kind": "witness-succession",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The 1981 Latin edition reprints the 1976 promulgation and, by Martini's note, also promulgates changes to rite or texts introduced since 1976 with Apostolic See confirmation.",
+      "components": [
+        "propers"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "ambrosian-1981-book",
+          "locus": "Printed VII, PDF 11",
+          "claim": "Martini's note of 8 September 1981 promulgates in this edition the confirmed post-1976 changes."
+        }
+      ],
+      "limitations": "The note does not list the changes, so no concrete before/after unit is asserted; the edge records the stated relationship only.",
+      "comparison_ids": [],
+      "historical_parentage": "established"
     },
     {
       "id": "ambrosian-second-recension",
@@ -663,24 +993,24 @@
       "tradition_id": "ambrosian-milan",
       "period": "1751–1902",
       "missing": "Actual 1913 parallel pages and apparatus; exact original editions and substantive departures.",
-      "next_source": "BnF cb 368140989; Gallica bpt 6 k 15031331; entire XXIV + 475-page critical edition, then original 1751 / 1902 witnesses.",
+      "next_source": "BnF cb 368140989; Gallica bpt 6 k 15031331; entire XXIV + 475-page critical edition, then original 1751 / 1902 witnesses. Gallica access was refused again on 2026-10-21 (HTTP 403 for site pages) and archive.org was unreachable; the 1981 Institutio n. 8 only states that the 1609 and 1902 editions reproduced older exemplars more faithfully.",
       "consequence": "1751 / 1902 remain identified states with only provisional transition; no fictitious 1913 stage."
     },
     {
       "id": "ambrosian-gap-1594",
       "tradition_id": "ambrosian-milan",
       "period": "1475–1751",
-      "missing": "Independent verification of Veronica removal, intervening revision stages and 1594 imprint discrepancy.",
-      "next_source": "BL IB. 25954 ff. 35 r–36 r; BL Legg 137; Alessandrina Y g 5 (Usuarium 6041); BnF 1594 Sabbio record.",
-      "consequence": "Removal is a scoped scholarly claim, not a complete 1475 → 1594 → 1751 chain."
+      "missing": "The 1594 original itself (Veronica removal, imprint discrepancy and Pius V borrowings) and the 1609 Borromeo edition named by the 1981 Institutio; concrete formulary changes between 1594, 1609, 1640, 1712 and 1751. The 1640 Monti edition is now a documented stage and lacks the Veronica proper; the 1712 Archinto edition's letter describes an emended reprint of the latest exemplar, not a stated revision.",
+      "next_source": "BL Legg 137; Alessandrina Y g 5 (Usuarium 6041); BnF 1594 Sabbio record; any 1609 Federico Borromeo printing; then compare named formularies across 1594, 1640 (PDF 434 and following) and 1712. MDZ and web searches on 2026-10-21 found no digitized 1594 or 1609 copy; archive.org and Gallica were unreachable or refused.",
+      "consequence": "The removal is bounded between 1499 (Lang) and the directly inspected 1640 book, with Lang's 1594 report still scholarly; no complete 1475 to 1751 chain."
     },
     {
       "id": "ambrosian-gap-first-reform",
       "tradition_id": "ambrosian-milan",
       "period": "1902–1981",
-      "missing": "1954 book and intervening rubrical supplements, 1974 approved exemplar, exact texts attached to the now-verified 1 September 1975 confirmation, and 1981 frontmatter.",
-      "next_source": "Ward 1996 pp. 239–244 n. 5; Notitiae 11 (1975), p. 45 and p. 346; original Latin 1981 public institutional copy if located.",
-      "consequence": "Cannot date each alteration to 1974 or treat 1981 publication as a separate reform."
+      "missing": "Intervening 1902-1954 rubrical supplements, the 1974 approved exemplar, the 1975 confirmed prayer exemplars and the specific post-1976 changes that Martini's 1981 note promulgates without listing. The 1954 book, the 1981 front matter (Colombo 1976 decree with 14 November 1976 obligation, Martini 1981 note, 1974 confirmation) and the 1981 Prex V and VI are now directly inspected.",
+      "next_source": "Any separately printed 1976 Latin Missal or fascicles; Notitiae 1976-1981 confirmation entries for post-1976 Ambrosian changes; Ward 1996 n. 5; collation of 1981 Prex V-VI against any published 1975 exemplar.",
+      "consequence": "Approval (1974), prescription (1976) and publication (1981) are now separate dated events; individual alterations are still not dated to one of them."
     },
     {
       "id": "ambrosian-gap-second",
@@ -694,17 +1024,17 @@
       "id": "ambrosian-gap-images",
       "tradition_id": "ambrosian-milan",
       "period": "All sampled transitions",
-      "missing": "Original 1902, 1954 and 1981 altar-book image comparison and independent 1594 removal check. Langp 169 and Ward pp 241–244, 266–267 scholarly images are now checked; 1475 Veronica originals are checked.",
-      "next_source": "Institutional originals of the specific altar-book editions and loci named by Lang and Ward; the remaining task is original-to-original comparison, not another OCR check of the articles.",
-      "consequence": "No text-collated transition, checked transcription, exact comparison payload or inherited liturgical text delivered."
+      "missing": "Original 1902 typical-edition images and the 1594 original. The 1954-to-1981 original comparison is now made for four units, and the 1475-to-1640 Veronica comparison is image-checked.",
+      "next_source": "Institutional 1902 typical edition (Ward cites pp. 330 and 401-402) to test the 1954 censor's conformity certificate at those loci; 1594 BL Legg 137.",
+      "consequence": "Text-collated transitions now exist for bounded units only; no checked transcription, comparison payload or inherited liturgical text is delivered."
     },
     {
       "id": "ambrosian-gap-additional-prefaces",
       "tradition_id": "ambrosian-milan",
       "period": "Postconciliar reform, attested in the 1981 Latin book",
-      "missing": "Original-book verification of the now image-checked Ward descriptions of the Passion-of-John replacement and Sebastian/common-martyrs genre transfer.",
-      "next_source": "Anthony Ward, Notitiae 32 (1996), pp. 241–242 and 266–267; source ambrosian-ward-1996. The Passion-of-John preface adapts Roman 1970 material. Two distinct Sebastian-related operations require comparison: replacement of the older Sebastian preface (1902 p. 330; 1954 p. 465) at MA 248/6, and recasting related material through the postconciliar Roman preface into the Common of Martyrs collect at MA 483/2. The Common collect is not the replacement Sebastian preface.",
-      "consequence": "Potential additional bounded comparisons within an existing transition, not additional stages or completed collations."
+      "missing": "The Roman-Missal side of Ward's account: the 1970/1975 Roman prefaces from which, according to Ward, the reformed Passion-of-John preface (MA 384/6) was adapted and through which the old Sebastian preface wording reached the Common-of-Martyrs super populum (MA 483/2). The Ambrosian old and new texts are now compared original-to-original from 1954 to 1981 (ambrosian-1954-to-1981-prefaces); the 1902 side is tracked under ambrosian-gap-images.",
+      "next_source": "Missale Romanum 1970 and 1975 typical editions: the preface of St John the Baptist and the first preface of martyrs, compared with 1981 MA 384/6 and MA 483/2; Ward, Notitiae 32 (1996), pp. 240–242 and 266–267 nn. 71–73 for his Roman loci.",
+      "consequence": "The Roman-Missal route of these borrowings remains Ward's attribution; no reception or borrowing edge from the Roman Missal to the 1981 Ambrosian book is drawn from shared wording."
     }
   ]
 }

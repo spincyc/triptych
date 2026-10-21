@@ -224,6 +224,46 @@
       "checked_on": "2026-10-20",
       "status": "inspected",
       "limitations": "Year is catalogue-reported; inspected original front leaves do not display it."
+    },
+    {
+      "id": "italian-local-round2:aquileia1494-dlib",
+      "title": "Missale Aquileiense, Augsburg: Erhard Ratdolt 1494, NUK Ljubljana copy, dLib URN:NBN:SI:DOC-GKJAQ0TO",
+      "url": "https://www.dlib.si/details/URN:NBN:SI:DOC-GKJAQ0TO",
+      "kind": "primary-book",
+      "inspection": "Whole public-domain PDF (532 pages) downloaded 2026-10-21; PDF p. 5 preface of Jacobus Gordinus naming Osvaldus Spetel of Villach and Erhard Ratdolt, p. 13 July calendar, p. 521 colophon (Augsburg, Erhard Ratdolt, x kal. Januarii 1494).",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Only the named pages viewed; body not collated."
+    },
+    {
+      "id": "italian-local-round2:aquileia1517-bsb",
+      "title": "Missale iuxta ritum Alme aquileyensis ecclesie, Venice: Jacobus Pentius de Leucho for Johannes Osvaldus 1517, BSB Res/4 Liturg. 393 (bsb10202279)",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb10202279",
+      "kind": "primary-book",
+      "inspection": "IIIF canvases viewed 2026-10-21: 5 title; 7 Gordinus preface enjoining the rite on the Aquileian province; 9–20 calendar (12 July Hermagoras and Fortunatus duplex maius in Aquileia, 13 July dedication); 249–251 offertory prayers ff. XCVIII–XCIX; 530 colophon ff. CCXXV v (Venice, Pentius, at Oswald's expense, xvi kal. Octobris 1517).",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Selected canvases; Te igitur leaf not located; no reuse basis assessed."
+    },
+    {
+      "id": "italian-local-round2:messina1480-rylands",
+      "title": "Missal secundum consuetudinem Gallicorum, Messina: Heinrich Alding 1480, John Rylands Library 18620 (IIIF)",
+      "url": "https://luna.manchester.ac.uk/luna/servlet/iiif/m/Manchester~20~20~64~188868/manifest",
+      "kind": "primary-book",
+      "inspection": "IIIF canvases viewed 2026-10-21 (manifest canvas numbers; LUNA page indices 10, 22 and 500): 11 January calendar opening; 23 incipit (Incipit ordo missalis secundum consuetudinem Gallicorum); 501 colophon (printed at Messina by Heinrich Alding under Sixtus IV and King Ferdinand, pridie kal. Junii 1480).",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "The incipit does not name Messina; the Messanense title is the catalogue's, and the colophon supplies the place of printing. Body not collated; no reuse basis assessed."
+    },
+    {
+      "id": "italian-local-round2:aosta-amiet1976",
+      "title": "Robert Amiet, L'Ordinaire de la Messe selon le rit valdôtain (Recherches 6, 1976)",
+      "url": "https://www.mgh-bibliothek.de/dokumente/b/b044359.pdf",
+      "kind": "scholarship",
+      "inspection": "PDF page images viewed 2026-10-21: printed pp. 89–91 witness list (cod. S, Aosta Biblioteca del Capitolo cod. 21, c. 1500, made for Bishop François de Prez, with complete Ordo); p. 125 apology prayer kept in cathedral codd. M and S until 1617; p. 153 offertory ritus recentior (codd. F–S) in force until the 1617 printed missal substituted the Pian Ordo Missae; p. 177 kiss of peace suppressed de facto in 1617; p. 201 rite ended 1828.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "A scholar's manuscript study; the 1617 book and its decree were not inspected by this lane."
     }
   ],
   "stages": [
@@ -231,7 +271,7 @@
       "id": "italian-local-round2:italian-aquileia-1494",
       "tradition_id": "italian-local-round2:aquileia",
       "label": "1494 Aquileian Missal print",
-      "date_label": "1494 printing, catalogue date",
+      "date_label": "23 December 1494 printing completion, original colophon",
       "start_year": 1494,
       "end_year": 1494,
       "date_kind": "publication",
@@ -256,9 +296,14 @@
           "source_id": "italian-local-round2:aquileia1494-card",
           "locus": "original title, age and NUK Ljubljana Ti II 13349 fields",
           "claim": "The catalogue assigns the 1494 printing date and identifies a physical copy."
+        },
+        {
+          "source_id": "italian-local-round2:aquileia1494-dlib",
+          "locus": "PDF p. 5 preface; p. 521 colophon",
+          "claim": "The book's own colophon dates completion at Augsburg by Erhard Ratdolt, x kal. Januarii 1494; the preface names the sponsor and printer."
         }
       ],
-      "limitations": "The inspected pages do not give the year or establish a new text compared with any predecessor.",
+      "limitations": "The 1494 date is now read from the colophon (earlier facsimile images 4–6 and 525–529 did not show it). No new text compared with any predecessor is established.",
       "reception": "Local intended book identity, not documented adoption at each church."
     },
     {
@@ -294,7 +339,7 @@
       "id": "italian-local-round2:italian-aquileia-1517",
       "tradition_id": "italian-local-round2:aquileia",
       "label": "1517 Aquileian Missal print",
-      "date_label": "1517 printing, catalogue date",
+      "date_label": "16 September 1517 printing completion, original colophon",
       "start_year": 1517,
       "end_year": 1517,
       "date_kind": "publication",
@@ -310,17 +355,22 @@
       "witness_ids": [
         "western:italian-aquileia-1517"
       ],
-      "witness_label": "Missale Aquileiense, BSB Res/4 Liturg. 393",
-      "summary": "Usuarium identifies the 1517 print and indexes its main Mass divisions and colophon.",
+      "witness_label": "Missale Aquileiense, Venice: Pentius for Oswald 1517, BSB Res/4 Liturg. 393",
+      "summary": "The BSB copy's colophon gives Venice, Jacobus Pentius de Leucho, at Johannes Osvaldus's expense, 16 September 1517 (USTC 810139); the archdeacon's preface enjoins the rite on the Aquileian province. A separate 1517 Liechtenstein edition (USTC 810138) is the one reproduced in Peressotti's 2007 facsimile.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {
           "source_id": "italian-local-round2:aquileia1517",
           "locus": "original title; contents pp.40,58,219,264,316,384,452",
           "claim": "The card identifies a local Missal printed in 1517 and its major divisions."
+        },
+        {
+          "source_id": "italian-local-round2:aquileia1517-bsb",
+          "locus": "IIIF canvas 5 title; 7 preface; 9–20 calendar; 530 colophon",
+          "claim": "Original title, Aquileian preface and calendar, and the Pentius/Oswald colophon dated xvi kal. Octobris 1517."
         }
       ],
-      "limitations": "Emendatissime in the title is not a collated revision claim.",
+      "limitations": "Emendatissime in the title is not a collated revision claim. Usuarium's printer field (Liechtenstein) conflicts with this copy's colophon; the two 1517 editions are distinct and their texts uncompared. One calendar difference (1494 has Octava apostolorum on 6 July; this copy's line is blank) is an observation, not a revision.",
       "reception": "Title names Aquileia; geographical extent of use not verified."
     },
     {
@@ -353,6 +403,35 @@
       "reception": "No actual Gorizia or wider use established by present holding."
     },
     {
+      "id": "italian-local-round2:aosta-cod21-c1500",
+      "tradition_id": "italian-local-round2:aosta",
+      "label": "Aosta cathedral missal cod. S (cod. 21), local Ordo",
+      "date_label": "c. 1500 manuscript dating reported by Amiet",
+      "start_year": 1490,
+      "end_year": 1510,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "The local Order of Mass of one cathedral missal as described in Amiet's critical study; other propers uncollated.",
+      "components": [
+        "ordinary"
+      ],
+      "witness_ids": [
+        "western:italian-aosta-cathedral-cod21-c1500"
+      ],
+      "witness_label": "Aosta, Biblioteca del Capitolo cod. 21 (Amiet's cod. S), c. 1500",
+      "summary": "Amiet lists cod. S, made for Bishop François de Prez, as a complete witness of the Aosta Ordo and among the manuscripts of the later-medieval offertory (reception of offerings, general offering prayer, special chalice offering, incensation, lavabo, request for prayer), with cathedral apology prayers retained.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "italian-local-round2:aosta-amiet1976",
+          "locus": "printed pp. 89–91 witness list; p. 125; p. 153",
+          "claim": "Cod. S identity and dating; its place among codd. F–S for the ritus recentior offertory and the apology prayers."
+        }
+      ],
+      "limitations": "Scholarly description; the manuscript itself was not inspected. The bounds express the circa dating, not a period of use.",
+      "reception": "A cathedral book made for the bishop; use elsewhere in the diocese is not established by this witness."
+    },
+    {
       "id": "italian-local-round2:italian-aosta-1617",
       "tradition_id": "italian-local-round2:aosta",
       "label": "1617 Aosta Missal print",
@@ -380,6 +459,11 @@
           "source_id": "italian-local-round2:aosta1617",
           "locus": "original title; contents pp.7,13,206,239,315",
           "claim": "A named Aosta Missal and its component locations are identified."
+        },
+        {
+          "source_id": "italian-local-round2:aosta-amiet1976",
+          "locus": "printed p. 153; p. 177",
+          "claim": "Amiet reports that the 1617 printed Aosta missal substituted the Pian Ordo Missae outright for the local Ordo, ending the cathedral apology prayers and de facto suppressing the local kiss of peace."
         }
       ],
       "limitations": "Indexed decree unread; no effective date or whole-Missal substitution claimed.",
@@ -478,12 +562,12 @@
       "id": "italian-local-round2:italian-messina-1480",
       "tradition_id": "italian-local-round2:messina",
       "label": "1480 Messina Missal print",
-      "date_label": "1480 printing, catalogue date",
+      "date_label": "31 May 1480 printing completion, original colophon",
       "start_year": 1480,
       "end_year": 1480,
       "date_kind": "publication",
       "status": "documented",
-      "scope": "Edition-identified local Missal print; original body uninspected.",
+      "scope": "Exact local Missal copy with incipit, calendar opening and colophon inspected; body uncollated.",
       "components": [
         "propers"
       ],
@@ -498,10 +582,15 @@
           "source_id": "italian-local-round2:messina1480",
           "locus": "original-title, age and shelfmark fields",
           "claim": "A specific 1480 Messina Missal copy is identified."
+        },
+        {
+          "source_id": "italian-local-round2:messina1480-rylands",
+          "locus": "IIIF canvas 23 incipit; canvas 501 colophon (LUNA page indices 22 and 500)",
+          "claim": "Order of the Missal according to the custom of the Gallici, printed at Messina by Heinrich Alding, 31 May 1480."
         }
       ],
-      "limitations": "No original page or first-use evidence; Gallicorum is title language, not ancient Gallican rite identification.",
-      "reception": "Book title names Messina; church-level reception unknown."
+      "limitations": "The incipit names the Gallici custom, not Messina; the place of printing comes from the colophon. Gallicorum is title language, not ancient Gallican rite identification. No first-use evidence.",
+      "reception": "The colophon names Messina as the place of printing and the incipit names the custom of the Gallici; church-level reception unknown."
     },
     {
       "id": "italian-local-round2:italian-messina-1499",
@@ -566,22 +655,61 @@
       "reception": "Present Naples and Acireale holdings do not prove historical use there."
     }
   ],
-  "transitions": [],
+  "transitions": [
+    {
+      "id": "italian-local-round2:aosta-pian-ordo-1617",
+      "from_stage": "italian-local-round2:aosta-cod21-c1500",
+      "to_stage": "italian-local-round2:italian-aosta-1617",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "Amiet reports that the 1617 printed Aosta missal replaced the local Order of Mass with the Pian Ordo Missae while remaining an Aosta book.",
+      "components": [
+        "ordinary"
+      ],
+      "changes": [
+        {
+          "component": "ordinary",
+          "before": "Local Aosta Ordo with the later-medieval offertory (six-part schema) and cathedral apology prayers, as in codd. F–S including cod. S.",
+          "after": "The Ordo Missae of Pius V substituted outright; apology prayers end and the local kiss of peace is suppressed de facto.",
+          "locus_before": "Amiet 1976 p. 153 (codd. F–S), p. 125, witness list pp. 89–91",
+          "locus_after": "Amiet 1976 p. 153 and p. 177 on the 1617 printed missal",
+          "evidence": [
+            {
+              "source_id": "italian-local-round2:aosta-amiet1976",
+              "locus": "pp. 125, 153, 177",
+              "claim": "Before/after Ordinary of the Aosta use across 1617."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "italian-local-round2:aosta-amiet1976",
+          "locus": "p. 153",
+          "claim": "The 1617 missal substituted the Pian Ordo for the ancient local Ordo."
+        }
+      ],
+      "limitations": "Scholarly description only; the 1617 decree and book pages were not read. The change is bounded to the Ordinary; calendar and propers of the 1617 book are not compared. The attributed parentage rests solely on Amiet 1976 p. 153, which states that the local Ordo of the later-medieval witnesses stayed in force until the 1617 printed missal replaced it; it is a scholarly attribution of succession within the Aosta use, not an exemplar relation. Cod. S is one witness of the local Ordo, not the 1617 book's exemplar.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
+    }
+  ],
   "gaps": [
     {
       "id": "italian-local-round2:aquileia-collation",
       "tradition_id": "italian-local-round2:aquileia",
       "period": "before 1494 through 1519",
-      "missing": "Original text and authority of the four identified printings, earlier manuscript relation, and actual local reception.",
-      "next_source": "Collate 1494, Braidense 1508, BSB 1517 and Gorizia 1519 original leaves, prefaces, calendars, Ordinary and propers.",
+      "missing": "Original text and authority of the identified printings beyond title, preface, calendar and colophon (1494 Ratdolt colophon and 1517 Pentius/Oswald colophon now read); the separate 1517 Liechtenstein edition and the 1508 Giunta and 1519 printings in original; earlier manuscript relation; actual local reception.",
+      "next_source": "Collate 1494 (dLib) and 1517 BSB Ordinary, Canon and sanctoral; Peressotti 2007 facsimile of the Liechtenstein 1517; Braidense 1508 (USTC 810137) and Gorizia 1519 originals.",
       "consequence": "Four publication events cannot be counted as three liturgical revisions or a use duration."
     },
     {
       "id": "italian-local-round2:aosta-authority",
       "tradition_id": "italian-local-round2:aosta",
       "period": "1617–1733",
-      "missing": "1617 bishop decree text, exact Ordinary readings, prior Aosta book, 1733 comparison and use.",
-      "next_source": "Read Arsenal FOL-Z-1397 decree and Ordinary, compare FOL-Z-1399 and Aosta manuscript witnesses.",
+      "missing": "1617 bishop decree text and the 1617 book's own Ordinary and calendar (the Ordinary substitution is now documented from Amiet's study); calendar and propers comparison with the manuscripts; 1733 comparison; the 1828 end of the Aosta rite reported by Amiet p. 201 lacks its instrument.",
+      "next_source": "Read Arsenal FOL-Z-1397 decree (p. 7) and Ordinary; USTC 4029699 (Turin, Cavalleri 1617, novissime recognitum); compare FOL-Z-1399 (1733) and the 1828 instrument.",
       "consequence": "No reform, succession edge or effective date follows from the two printed years."
     },
     {
@@ -596,8 +724,8 @@
       "id": "italian-local-round2:messina-remaining",
       "tradition_id": "italian-local-round2:messina",
       "period": "1480–1568",
-      "missing": "Original pages for 1480, 1499, 1538; exact identification and copies for catalogued 1510, 1527, 1534, 1568; approval and reception.",
-      "next_source": "Read Rylands 18620, Agatina Inc.1, Napoli S.Q.21.D21 and trace USTC 819816 plus other catalogue leads.",
+      "missing": "Original pages for 1499 and 1538 and the body of 1480 (1480 incipit and colophon now read); originals and reform claims of the USTC-identified 1510 Giunta noviter reformatum (819816), 1527 (820193), 1534 novissime reformatum (820216), 1538 (820236) and 1568 Missale Gallicanum ad consuetudinem Ecclesiarum Sicularum (819994); approval and reception.",
+      "next_source": "Read Agatina Inc. 1 (1499), Napoli S.Q.21.D21 (1538) and copies of the USTC-listed editions; collate the 1480 calendar and Ordinary.",
       "consequence": "No print sequence, correction event, or ancient Gallican ancestry is established."
     },
     {

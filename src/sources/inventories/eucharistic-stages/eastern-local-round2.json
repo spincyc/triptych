@@ -226,7 +226,7 @@
       "tradition_id": "eastern-local-round2:melkite",
       "period": "Before the 2006–2007 corpus and afterward",
       "missing": "Original Arabic title, approval and body leaves for the 1839–1900 Liturgikons, the 1992 experimental text and both parts of the approved book; component collation and eparchial implementation.",
-      "next_source": "Acquire the exact volumes named in the patriarchal letter and DLI record 47966, plus the 1991 and 2001 decrees and local use records.",
+      "next_source": "Acquire the exact volumes named in the patriarchal letter and DLI record 47966, plus the 1991 and 2001 decrees and local use records. Batch 4 (2026-10-21): An Arabic web search for the 2006 Book of the Divine Liturgy found no public scan or title leaves; OPAC SBN title searches returned nothing.",
       "consequence": "The approved book state is documented, but no predecessor or substantive transition is encoded."
     },
     {
@@ -234,23 +234,23 @@
       "tradition_id": "eastern-local-round2:roman-greek",
       "period": "1950 title / March 1952 completion onward",
       "missing": "Identified Greek exarchate or Italo-Albanian celebrant copies and adoption evidence; full collation against earlier Roman Greek books. The separate local-reception dossier now records planned Athens 2026 calendar arrangements and selected Italo-Albanian language/calendar evidence; these do not identify receiving Roman 1950/1952 altar copies.",
-      "next_source": "Inspect the Hieratikon and local exarchate or eparchial library inventories, title leaves, permissions and use records; compare bounded prayers and rubrics with the 1925 printing. Retain the distinct local-language and calendar findings in greek-italo-local-reception.json without inferring this Roman book’s adoption.",
+      "next_source": "Inspect the Hieratikon and local exarchate or eparchial library inventories, title leaves, permissions and use records; compare bounded prayers and rubrics with the 1925 printing. Retain the distinct local-language and calendar findings in greek-italo-local-reception.json without inferring this Roman book’s adoption. Batch 4 (2026-10-21): The exarchate website search API (Ιερατικόν 1 hit, Ευχολόγιον 0, λειτουργικά βιβλία 3, Τυπικόν 2) and the posts read named no receiving celebrant edition. OPAC SBN holdings of the Rome 1950 Hieratikon (PUV0933582, CSA0064106; Grottaferrata state library among them) are holdings, not reception.",
       "consequence": "The Roman edition cannot be placed as a locally received Greek, Piana or Melkite state."
     },
     {
       "id": "eastern-local-round2:italo-albanian-eparchies",
       "tradition_id": "eastern-local-round2:grottaferrata",
       "period": "After the 1601 Grottaferrata printing",
-      "missing": "Exact Greek altar books, original title/approval leaves and dated local adoption for Lungro and Piana; whole-book comparison of the 1601 and 1683 Grottaferrata printings and local manuscripts. Lungro’s named received Arbëresh book and the 2019/2026 local Ordos now have bounded evidence in greek-italo-local-reception.json; original 1967/1968 book and decree reports remain unresolved.",
-      "next_source": "Locate copies and approval leaves in Grottaferrata, Lungro and Piana collections. Lungro's official 2026 account attests occasional Liturgy of Saint James without identifying its celebrant book: https://www.eparchialungro.it/2026/02/26/leparchia-di-lungro-nella-chiesa-italiana/ Inspect original Lungro Arbëresh title/approval leaves and Bollettino 3 (1968), pp. 14–16, while keeping Piana calendar reference books distinct from Eucharistic altar books.",
+      "missing": "Exact Greek altar books, original title/approval leaves and dated local adoption for Lungro and Piana; whole-book comparison of the 1601 and 1683 Grottaferrata printings and local manuscripts. Lungro’s named received Arbëresh book and the 2019/2026 local Ordos now have bounded evidence in greek-italo-local-reception.json; original 1967/1968 book and decree reports remain unresolved. Batch 4 (2026-10-21): Piana now has an exact catalogue lead: the 2006 trilingual Ieratikon co-published by the eparchy (OPAC SBN PAL0225607; translator's bibliography). Its altar role, approval, Greek exemplar and parish use are unestablished.",
+      "next_source": "Locate copies and approval leaves in Grottaferrata, Lungro and Piana collections. Lungro's official 2026 account attests occasional Liturgy of Saint James without identifying its celebrant book: https://www.eparchialungro.it/2026/02/26/leparchia-di-lungro-nella-chiesa-italiana/ Inspect original Lungro Arbëresh title/approval leaves and Bollettino 3 (1968), pp. 14–16, while keeping Piana calendar reference books distinct from Eucharistic altar books. Batch 4 (2026-10-21): Inspect the title, approval and contents leaves of the Piana 2006 Ieratikon (copies at Piana's Biblioteca comunale Giuseppe Schirò and two other SBN libraries) and any Piana decree introducing it.",
       "consequence": "Grottaferrata printing cannot be used as a surrogate for either modern eparchy or for the unidentified Saint James book."
     },
     {
       "id": "eastern-local-round2:hungarian-use",
       "tradition_id": "eastern-local-round2:hungarian",
       "period": "Seventeenth–nineteenth-century local reception",
-      "missing": "Dated Nyírderzs ownership/use and identity of the Kriva/Krive church in the reported 1666 note. M–920 lacks its front/title and terminal leaves. A distinct museum copy now supplies a 1646-08-23 edition colophon, not local reception.",
-      "next_source": "Inspect original M–920 ownership leaves 102–109 and dated Nyírderzs parish inventories. Eger Uu.III.8 has an undated Habina signature on a 1692 title whose relation to the body is described differently in 1992 and 2015; examine its original colophon and the 1775 estate list. The later 1920/1949 states are handled in hungarian-reception.json.",
+      "missing": "Dated Nyírderzs ownership or use, and identity of the Kriva/Krive church in the reported 1666 note. M–920 lacks its front/title and terminal leaves. The college OPAC has an undated possessor entry naming Fr. István Zolcsák of Nyírderzs for M–920, without saying whether it transcribes a mark in the book or records the parish from which the copy came in 2010, and records the Nyírpazony Greek Catholic parish-office stamp at the catalogue locus 74. táblaoldal of the second 1646 copy (Ant10560); neither is dated. A distinct museum copy supplies a 1646-08-23 edition colophon, not local reception.",
+      "next_source": "Inspect original M–920 ownership leaves 102–109 and dated Nyírderzs parish inventories. Eger Uu.III.8 has an undated Habina signature on a 1692 title whose relation to the body is described differently in 1992 and 2015; examine its original colophon and the 1775 estate list. The later 1920/1949 states are handled in hungarian-reception.json. Batch 4 (2026-10-21): Inspect Ant10467 (M–920) fols. 102–109 and the possessor entry, and Ant10560 (catalogue locus 74. táblaoldal), at the Szent Atanáz college; date Fr. István Zolcsák's Nyírderzs incumbency from an eparchial schematism. The same OPAC (subject liturgikon, 106 records read) gives later located church possession: a memorial note, written after 1881, recording that a Przemyśl 1840 Sluzhebnik was offered in 1856 for the use of the Sátoraljaújhely Greek Catholic church (Ant30125), a Mikóháza copy with inserted Hungarian translations (Ant30146), and a Lviv 1780 copy from Abaújszántó with references to Hungarian page numbers (Ant30101). These are deferred origin-review inventory records hungarian-satoraljaujhely-przemysl1840-copies and hungarian-abaujszanto-lviv1780-copies; originals remain uninspected.",
       "consequence": "No early Hungarian reception edge follows from the museum imprint or either owner’s possession; the separate modern dossier provides limited later book states."
     },
     {
@@ -258,7 +258,7 @@
       "tradition_id": "eastern-local-round2:bulgarian",
       "period": "Roman Vulgata 1940–1953 through the Bulgarian books of 1985–2007",
       "missing": "Proof of Bulgarian receipt of the Roman Vulgata and title, approval and source leaves of the 1985 Eldarov Sluzhebnik and the official 2005 and 2007 local books.",
-      "next_source": "Inspect the 1985 celebrant book rather than its bookseller's contents photographs, and obtain the exarchate-listed 2005 and 2007 volumes and their source statements: https://www.kae-bg.org/?act=content&rec=136",
+      "next_source": "Inspect the 1985 celebrant book rather than its bookseller's contents photographs, and obtain the exarchate-listed 2005 and 2007 volumes and their source statements: https://www.kae-bg.org/?act=content&rec=136 Batch 4 (2026-10-21): OPAC SBN searches for Eldarov returned only his theological and historical works; Sluzhebnik title searches with 1985 returned nothing. No source edition or receipt evidence found.",
       "consequence": "An intended Bulgarian audience for Vulgata and a local publication listing do not identify a shared recension, exact Eucharistic text or local use of the Roman book."
     },
     {
@@ -266,7 +266,7 @@
       "tradition_id": "eastern-local-round2:russian",
       "period": "Roman Vulgata 1940–1953 and later Russian Catholic holdings",
       "missing": "Dated acts or parish records connecting a specific Roman Slavonic edition to Russian Catholic celebration, and original leaves resolving the 1953, 1956 and 1983 book identities.",
-      "next_source": "Match the parish library's item 1900 and other Roman books to inspected title/approval leaves and documented altar use; keep the textual Vulgata states in the existing Byzantine dossier.",
+      "next_source": "Match the parish library's item 1900 and other Roman books to inspected title/approval leaves and documented altar use; keep the textual Vulgata states in the existing Byzantine dossier. Batch 4 (2026-10-21): OPAC SBN title searches for Sluzhebnik with 1953, 1956 and 1983 returned nothing; the Roman Slavonic 1942 and 1952 Liturgikon records found there are holdings, not Russian Catholic use.",
       "consequence": "Library possession cannot create a Russian local-reception stage or a new Vulgata textual revision."
     }
   ]
