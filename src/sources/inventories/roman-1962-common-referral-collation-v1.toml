@@ -1,0 +1,23 @@
+collation_schema = 1
+record_type = "calendar-common-referral-collation"
+calendar = "roman-1962"
+target = "src/sources/calendars/roman-1962/propers.yaml"
+collated_on = "2026-10-20"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+artifact_byte_size = 82815941
+scope = "One independently viewed Thomas of Villanova Common pointer; no complete-formulary or annual appointment claim."
+method = "Directly inspected held control PDF artifact page 746, printed page 665, as a 2100-pixel whole-page raster. The literal I loco and Statuit identify the Common independently of the interior bracketed page reference."
+limits = "No text body, translation, or rights change. Existing own Collect remains unchanged. Source bracket [20] is retained exactly rather than silently normalized to the Common heading page."
+
+[[referrals]]
+mass = "s-thomae-villanova-episcopi-confessoris"
+target_mass = "commune-confessoris-pontificis-1"
+previous_target_mass = "commune-confessoris-pontificis-2"
+pdf_page = 746
+printed_page = 665
+printed_common_page = "[20]"
+literal_directive = "Missa Statuit, de Communi Confessoris Pontificis I loco [20], cum orationibus ut infra"
+operation = "correct-exact-common-target"
+qualification = "The directive explicitly prints I loco and Statuit even though the interior page reference is [20]. The same page prints proper Collect marginal 3690 marked P."
+raster_sha256 = "e336156fade0b9ae5dc331a8f20e68fecbf0a103d879e8b946819e17464060ef"

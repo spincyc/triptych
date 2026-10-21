@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-10-19"
+audited_on = "2026-10-20"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 63
 source_surface_file_count = 2017
-snapshot = "sha256:0ae6f49e59f9c36bff5ddc0cf2bcf302e3ea14013cf5270109afbfb5be00d016"
+snapshot = "sha256:5ab5ad035a56cc86e3c308970b34efb0fb41e1b5502f2fba4346d3564035d292"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -4686,7 +4686,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/research/source-bindings.toml"
-sha256 = "5b3c90f617b816550b70ac998b164cdff8cd1f8d3363b2082f5ccae759e62aa2"
+sha256 = "0819ee1b8de8b2dba52c808bbb14d91d04a169403e61162e5b9d0eeda7be1d0a"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"]
 
@@ -4836,7 +4836,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost"
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/research/source-bindings.toml"
-sha256 = "1deaa7353e4f02a1243b00850af2330bab78bd6d23a95938af5f69c6ede0c103"
+sha256 = "fedbd1dd1ca7c66b26c02e4236479f9b8e26de64ce9b56c7cad840947f2873dd"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost"]
 
@@ -4974,7 +4974,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/research/source-bindings.toml"
-sha256 = "6059f9a207bf19b7cb23831269d928da36596a1bb1dd8d3c3292bbdaf90e9f49"
+sha256 = "3aeb056849d9689214e5882c2595b1b30f226dac7f068e528f265fdde2ed2e48"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost"]
 
@@ -5130,7 +5130,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecos
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/research/source-bindings.toml"
-sha256 = "58622c2a9ed04bb118285b75135fdd7eb22ec5496b18e883b631c26dc15bb518"
+sha256 = "b2550908aab638d378e5ebc4f9d6bd2fca3bec652cb04e1cfda769ae0b8edd9c"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"]
 

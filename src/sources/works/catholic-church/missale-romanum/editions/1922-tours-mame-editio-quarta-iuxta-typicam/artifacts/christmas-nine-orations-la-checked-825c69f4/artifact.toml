@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Bounded historical Latin from the already registered public-domain Tours Mame 1922 printing. Only nine principal Christmas prayers, with their actual source conclusion cues, are retained. The parent artifact owns the United States first-publication and mechanical-reproduction basis; no new rights decision is made. Triptych claims no exclusive right in these words and does not offer them under CC BY 4.0."
+rights_jurisdiction = "United States"
+provenance = "Direct readings on 20 October 2026 from actual 200 and 400 dpi images of the exact registered whole PDF, SHA-256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005. Night Collect AP133/p19 (folio inferred), Secret AP134/p20, Postcommunion AP135/p21; Dawn principal Collect AP135-136/pp21-22, Secret and Postcommunion AP137/p23; Day Collect AP137/p23, Secret and Postcommunion AP139/p25."
+retrieved = "2026-10-20"
+sha256 = "825c69f40d0a0ff95b5f38a3b39592e908ff188100998dceea460ad3fad89122"
+byte_size = 1729
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/christmas-nine-orations-la-checked-825c69f4/christmas-nine-orations-la.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Select the principal Collect, Secret and Postcommunion from each source-authored Christmas Mass. Join ornamental initials and printed word divisions; join layout wraps and rewrap at 78 columns; collapse spaces before punctuation; represent initial small caps in ordinary title case. Preserve source accents, ligatures, pointing, every word and each actual abbreviated conclusion. The Dawn Collect contraction is represented as Dñm., with the supralinear contraction mark retained; it is not expanded. Exclude headings, Anastasia commemorations, rubrics, Ordinary and Preface bodies."
+indexable = true
+encoding = "utf-8"
+notes = "Historical source wording only. It supplies no 1962 appointment, actor assignment or later target conclusion. The Christmas opening page AP133 has no visible printed folio; p19 is inferred from adjacent printed pp18 and20."

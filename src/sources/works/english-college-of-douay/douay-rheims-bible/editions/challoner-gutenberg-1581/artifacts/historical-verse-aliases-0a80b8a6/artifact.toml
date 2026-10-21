@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-aliases-0a80b8a6"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table. It records the identity, numbering, and naming of public-domain biblical books and verses and contains no third-party text; Triptych places it under the repository licence and claims no exclusive right in the underlying facts."
+rights_jurisdiction = "United States"
+provenance = "Compiled by Triptych on 2026-10-20 from the preceding seven-row alias artifact and direct comparison of the four registered public-domain verse-text artifacts named below. The original seven rows are byte-preserved; twelve exact Thessalonian tail correspondences are added. No generic chapter offset is inferred."
+retrieved = "2026-10-20"
+sha256 = "0a80b8a62db3d1f5469eb0367447b43967709fe2009a8570c8823716ff9ddfd3"
+byte_size = 3370
+path = "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/historical-verse-aliases-0a80b8a6/verse-aliases.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-aliases-fef3f2ed"
+projected_from = ["artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-59-1-thessalonians-bb539aec", "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-60-2-thessalonians-cbd2bd34", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-59-1-thessalonians-d9f2bcea", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-60-2-thessalonians-79eff09a"]
+transformation = "Preserve the preceding seven TSV rows and append twelve independently collated canonical-to-printed locus facts. Retain the preceding payload unchanged under its historical artifact identity; add no biblical wording and infer no additional correspondence."
+notes = "Nineteen rows. Challoner 1 Thessalonians 4:11 joins Clementine 4:11 and 4:12; Clementine 4:13-18 are individually witnessed at Challoner 4:12-17. Challoner 2 Thessalonians 2:10 joins Clementine 2:10 and 2:11; Clementine 2:12-17 are individually witnessed at Challoner 2:11-16. This table deliberately adds no exact alias for an isolated half of either joined verse: whole-verse addressing cannot select only that half. Other chapters and unrecorded coordinates keep the existing identity default. This is edition alignment, not evidence of official English Lectionary wording."

@@ -1365,8 +1365,8 @@ EXAMPLES = {
         Example(
             "tools/source-reader check",
             (
-                "957 works, 1105 editions, 3051 artifacts, 5346 passages; 3103 readable here.",
-                "  passages the rights records withhold: 2243",
+                "957 works, 1105 editions, 3059 artifacts, 5373 passages; 3123 readable here.",
+                "  passages the rights records withhold: 2250",
                 "  every one of them listed with its reason: yes",
                 "  the page's own derivation, replayed: src/web/browser/sources/reader-model.js",
             ),
@@ -1414,16 +1414,16 @@ EXAMPLES = {
         Example(
             "tools/source-reader structure --out build/example-sources",
             (
-                "957 works, 1105 editions, 3051 artifacts, 5346 passages; 3103 readable here.",
-                "  -> build/example-sources/structure/sources (4209 files)",
+                "957 works, 1105 editions, 3059 artifacts, 5373 passages; 3123 readable here.",
+                "  -> build/example-sources/structure/sources (4229 files)",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
         ),
         Example(
             "tools/source-reader structure --check",
             (
-                "957 works, 1105 editions, 3051 artifacts, 5346 passages; 3103 readable here.",
-                "  src/web/data/structure/sources is current (4209 files)",
+                "957 works, 1105 editions, 3059 artifacts, 5373 passages; 3123 readable here.",
+                "  src/web/data/structure/sources is current (4229 files)",
             ),
             "writes nothing; refuses when the tracked projection has drifted from the records",
         ),

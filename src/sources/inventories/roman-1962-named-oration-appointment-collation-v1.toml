@@ -1,0 +1,80 @@
+collation_schema = 1
+record_type = "calendar-named-oration-appointment-collation"
+calendar = "roman-1962"
+target = "src/sources/calendars/roman-1962/propers.yaml"
+collated_on = "2026-10-20"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+artifact_byte_size = 82815941
+scope = "Six directly printed named Secret/Postcommunion appointments for Anthony of Padua, Bibiana, and Sabbas; plus Anthony's Common form. No complete expected-slot or annual-schedule claim."
+method = "Read the held source page images directly, with C10 independent source controls; source classifications C/P are retained separately from appointment identity and publishable wording. Anthony's June heading at PDF632/printed551 says Confessor and Doctor, not Bishop; PDF831/printed[23] expressly distinguishes Doctor nonbishop from bishop."
+limits = "No new body, translation, rights, name-substitution rule, or Common wording change. Six unavailable direct wrappers prevent false Common wording fallback. Later independently bound bodies may fill the same exact source identities."
+anthony_literal_directive = "Missa In medio, de Communi Doctorum [22], cum orationibus ut infra"
+anthony_heading_pdf_page = 632
+anthony_heading_printed_page = 551
+anthony_heading_raster_sha256 = "cfe9b6b834c9d7af321145d47d878612bc51ab28eea347fd363555ef0bdd9f66"
+doctor_form_pdf_page = 831
+doctor_form_printed_page = "[23]"
+doctor_form_raster_sha256 = "d6fcc64cb16b58068e4535517b2b572cdfc3f39b5cb8cd2d03f958cae491ad1f"
+bibiana_literal_directive = "Missa Me exspectaverunt, de Communi Virginum II loco [30], praeter orationem sequentem"
+sabbas_literal_directive = "Missa Os iusti, de Communi Abbatum [27], cum orationibus ut infra"
+
+[[appointments]]
+mass = "s-antonii-padua-confessoris-ecclesiae-doctoris"
+proper = "Secret"
+pdf_page = 633
+printed_page = 552
+marginal_number = 2777
+source_classification = "P"
+origin = "direct-named-appointment"
+raster_sha256 = "89cd57676e25f8571f3985348baf78fc7d296b96c19075eec7d3a960797193ef"
+
+[[appointments]]
+mass = "s-antonii-padua-confessoris-ecclesiae-doctoris"
+proper = "Postcommunion"
+pdf_page = 633
+printed_page = 552
+marginal_number = 2778
+source_classification = "P"
+origin = "direct-named-appointment"
+raster_sha256 = "89cd57676e25f8571f3985348baf78fc7d296b96c19075eec7d3a960797193ef"
+
+[[appointments]]
+mass = "s-bibianae-virginis-martyris"
+proper = "Secret"
+pdf_page = 511
+printed_page = 430
+marginal_number = 1824
+source_classification = "C"
+origin = "direct-named-appointment"
+raster_sha256 = "30df55d18c583b61ecb50026f2436b2fd3fa0fdafcec95c53a251b6a209dc554"
+
+[[appointments]]
+mass = "s-bibianae-virginis-martyris"
+proper = "Postcommunion"
+pdf_page = 511
+printed_page = 430
+marginal_number = 1825
+source_classification = "C"
+origin = "direct-named-appointment"
+raster_sha256 = "30df55d18c583b61ecb50026f2436b2fd3fa0fdafcec95c53a251b6a209dc554"
+
+[[appointments]]
+mass = "comm-s-sabbae-abbatis"
+proper = "Secret"
+pdf_page = 514
+printed_page = 433
+marginal_number = 1850
+source_classification = "P"
+origin = "direct-named-appointment"
+raster_sha256 = "2a0db2d9ec7fa874d89d3fa3007648b67618d388b1d53949abdfb25eea57ad62"
+
+[[appointments]]
+mass = "comm-s-sabbae-abbatis"
+proper = "Postcommunion"
+pdf_page = 515
+printed_page = 434
+marginal_number = 1851
+source_classification = "P"
+origin = "direct-named-appointment"
+raster_sha256 = "fdb993f5bdce8a3d3006e6c44721005edff4cb64accd38a408d2cab5713b42f5"

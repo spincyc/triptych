@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Bounded historical Latin from the separately registered public-domain Tours Mame 1922 printing. This derivative contains only the All Saints Introit, Collect, Secret and Postcommunion read on its page images, with their actual abbreviated cues and conclusion lengths. It adds no modern wording and makes no new rights decision. The parent artifact records the United States publication and mechanical-reproduction basis."
+rights_jurisdiction = "United States"
+provenance = "Read directly on 2026-10-20 from actual 200 and 400 dpi images of the held registered Mame 1922 PDF, SHA256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005. Introit and Collect: artifact p. 862 / printed p. 748, left column, opening page numeral suppressed. Secret and Postcommunion: artifact p. 864 / printed p. 750; Postcommunion continues from left-column foot to right-column top on the same page."
+retrieved = "2026-10-20"
+sha256 = "82edd79a9096f329601d709160bd26f60911792846a3b7c39d42fe0a8657d144"
+byte_size = 751
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-four-propers-la-checked-82edd79a/all-saints-four-propers-la.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Select the four own All Saints bodies; join line wraps, word divisions and ornamental initials; remove stress accents; expand ae/oe ligatures; use sentence case for each opening word. Retain historical words, consonantal j, pointing, the printed versicle sign before Gloria Patri and every short conclusion cue. The printed Psalm 32:1 citation is separately recorded as metadata and is not a body word. No target nostrum, expanded doxology, repeated antiphon or Bible-generated wording is inserted."
+indexable = true
+encoding = "utf-8"
+notes = "Ordered Introit, Collect, Secret, Postcommunion only. The Introit has an uncited composed antiphon, Psalm 32:1 verse, and literal abbreviated Gloria Patri cue. All three source orations end Per Dominum. The historical octave/votive rubrics, page running heads and neighbouring All Souls formulary are excluded. No actor or dialogue role is inferred."

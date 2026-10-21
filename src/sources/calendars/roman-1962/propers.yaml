@@ -22517,7 +22517,7 @@ sections:
       - name: Introit
         source: scripture
         verses:
-        - book: Psalms
+        - book: "Psalms"
           ranges:
           - begin:
               chapter: 44
@@ -22525,7 +22525,13 @@ sections:
             end:
               chapter: 44
               verse: 13
-          ref: Psalms 44:13
+          - begin:
+              chapter: 44
+              verse: 15
+            end:
+              chapter: 44
+              verse: 16
+          ref: "Psalms 44:13, 15-16"
         - book: Psalms
           ranges:
           - begin:
@@ -23397,7 +23403,13 @@ sections:
             end:
               chapter: 13
               verse: 25
-          ref: Judith 13:22-25
+          - begin:
+              chapter: 15
+              verse: 10
+            end:
+              chapter: 15
+              verse: 10
+          ref: Judith 13:22-25; 15:10
       - name: Gradual
         source: scripture
         verses:
@@ -23667,6 +23679,32 @@ sections:
               chapter: 8
               verse: 35
           ref: Proverbs 8:22-35
+      - name: "Gradual"
+        source: composed
+        notes: >-
+          Source-owned Gradual appointment visually checked 2026-10-20 at artifact p.
+          732 / printed p. 651, no. 3574, in the registered CMAA facsimile of the
+          controlling 1962 edition. The page prints no Bible citation for this chant.
+          This record carries no chant body or publication conclusion.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - name: "Alleluia"
+        source: composed
+        notes: >-
+          Source-owned Alleluia appointment visually checked 2026-10-20 at artifact p.
+          732 / printed p. 651, no. 3575, in the registered CMAA facsimile of the
+          controlling 1962 edition. The page prints no Bible citation for this chant.
+          This record carries no chant body or publication conclusion.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
       - name: "Gospel"
         source: scripture
         verses:
@@ -23679,6 +23717,19 @@ sections:
               chapter: 1
               verse: 16
           ref: "Matthew 1:1-16"
+      - name: "Offertory"
+        source: composed
+        notes: >-
+          Source-owned Offertory appointment visually checked 2026-10-20 at artifact p.
+          732 / printed p. 651, no. 3577, in the registered CMAA facsimile of the
+          controlling 1962 edition. The page prints no Bible citation for this chant.
+          This record carries no chant body or publication conclusion.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
       - name: Secret
         source: composed
         notes: >-
@@ -23691,6 +23742,19 @@ sections:
           matris integritatem non minuit, sed sacravit; in Nativitatis ejus solemniis,
           nostris nos piaculis exuens, oblationem nostram tibi faciat acceptam Jesus
           Christus Dominus noster; Qui tecum vivit et regnat in unitate.
+      - name: "Communion"
+        source: composed
+        notes: >-
+          Source-owned Communion appointment visually checked 2026-10-20 at artifact p.
+          732 / printed p. 651, no. 3580, in the registered CMAA facsimile of the
+          controlling 1962 edition. The page prints no Bible citation for this chant.
+          This record carries no chant body or publication conclusion.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
       - name: Postcommunion
         source: composed
         notes: >-
@@ -24385,6 +24449,19 @@ sections:
               chapter: 29
               verse: 2
           ref: Psalms 29:2
+      - name: Collect
+        source: composed
+        notes: >-
+          Own dated 8 December Collect, CMAA artifact PDF518/printed 437, no.1873.
+          Actual 200/400dpi word collation against the separately registered
+          public-domain Mame 1922 witness; the separate historical derivative
+          preserves its words and short cues. Target orthography, pointing and
+          conclusion lengths are declared in the project projection.
+        text: |
+          Deus, qui per immaculatam Virginis Conceptionem dignum Filio tuo habitaculum
+          praeparasti: quaesumus; ut, qui ex morte eiusdem Filii tui praevisa eam ab omni
+          labe praeservasti, nos quoque mundos eius intercessione ad te pervenire
+          concedas. Per eundem Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -24430,30 +24507,6 @@ sections:
               chapter: 4
               verse: 7
           ref: Song of Songs 4:7
-      - name: Tract
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 86
-              verse: 1
-            end:
-              chapter: 86
-              verse: 2
-          - begin:
-              chapter: 86
-              verse: 3
-            end:
-              chapter: 86
-              verse: 3
-          - begin:
-              chapter: 86
-              verse: 5
-            end:
-              chapter: 86
-              verse: 5
-          ref: Psalms 86:1-2,3,5
       - name: Gospel
         source: scripture
         verses:
@@ -24478,11 +24531,67 @@ sections:
               chapter: 1
               verse: 28
           ref: Luke 1:28
-      notes: 'Read on 2026-08-08 from the embedded text layer of the CMAA facsimile of the controlling edition,
-        at this day''s own heading, and nothing has been visually collated. Only the printed scripture citations
-        are recorded: the facsimile sets each oration under a drop capital that the text layer renders as
-        wreckage, so the orations the Missal prints here are appointed and not transcribed. Every citation
-        was re-parsed against the repository''s own canonical book list before it was written.'
+      - name: Secret
+        source: composed
+        notes: >-
+          Own dated 8 December Secret, CMAA artifact PDF519/printed 438, no.1881.
+          Actual 200/400dpi word collation against the separately registered
+          public-domain Mame 1922 witness; the separate historical derivative
+          preserves its words and short cues. Target orthography, pointing and
+          conclusion lengths are declared in the project projection. Secret
+          solemnitate feast selection only, dated 8 December; the target parenthetical
+          commemoratione alternative is not represented or graded as exact-target.
+        text: |
+          Salutarem hostiam, quam in solemnitate immaculatae Conceptionis beatae Virginis
+          Mariae tibi, Domine, offerimus, suscipe et praesta: ut, sicut illam tua gratia
+          praeveniente ab omni labe immunem profitemur; ita eius intercessione a culpis
+          omnibus liberemur. Per Dominum.
+      - name: Communion
+        source: composed
+        notes: >-
+          Own dated 8 December Communion, CMAA artifact PDF519/printed 438, no.1882.
+          Actual 200/400dpi word collation against the separately registered
+          public-domain Mame 1922 witness; the separate historical derivative
+          preserves its words and short cues. Target orthography, pointing and
+          conclusion lengths are declared in the project projection. Literal uncited
+          liturgical chant; neither witness prints a Bible citation and no Bible body
+          is substituted.
+        text: |
+          Gloriosa dicta sunt de te, Maria: quia fecit tibi magna qui potens est.
+      - name: Postcommunion
+        source: composed
+        notes: >-
+          Own dated 8 December Postcommunion, CMAA artifact PDF519/printed 438,
+          no.1883. Actual 200/400dpi word collation against the separately registered
+          public-domain Mame 1922 witness; the separate historical derivative
+          preserves its words and short cues. Target orthography, pointing and
+          conclusion lengths are declared in the project projection.
+        text: |
+          Sacramenta quae sumpsimus, Domine Deus noster: illius in nobis culpae vulnera
+          reparent; a qua immaculatam beatae Mariae Conceptionem singulariter
+          praeservasti. Per Dominum nostrum.
+      notes: >-
+        The1962 feast is Die 8 decembris, In Conceptione Immaculata Beatae Mariae
+        Virginis, I classis, PDF 518-519/printed 437-438. Four own bodies were
+        directly read at 200/400dpi and independently collated against public-domain
+        Mame 1922 on 2026-10-20. The Secret represents only the dated solemnitate
+        feast selection at conservative collated-exact grade; the full target prints
+        solemnitate (commemoratione), and the parenthetical alternative remains
+        outside this appointed body and its grade. The earlier 2026-08-08
+        citation-only embedded-layer pass and canonical-book parsing remain the
+        evidence history for the other Scripture-bearing nodes; this repair makes no
+        new word-collation claim for those bodies. The printed Tract 1877, Psalm
+        86:1-2,3,5, is expressly only In Missis votivis post Septuagesimam, omissis
+        Alleluia et versu sequenti; it is removed from the active Dec. 8 appointed
+        list, not erased from source evidence. The separate Paschal Gradual
+        alternative 1878 and the votive post-Septuagesima Offertory
+        Alleluia-omission rule also remain source-study observations; inactive
+        votive/seasonal alternatives are not represented here and require separate
+        appointment handling. Et fit commemoratio feriae 425 follows each oration
+        outside its body. Credo. and the existing BVM Preface direction remain
+        outside these four words; no new Ordinary text or appointment is supplied.
+        Mame octave directions do not govern1962. No English wording or
+        full-formulary completion claim is supplied.
   christological:
     kind: christological
     label: Christological
@@ -25599,14 +25708,7 @@ sections:
       date: 12-25
       rank: I
       kind: christological
-      notes: RGMR 518 b names the three Masses of Christmas, and the Missal prints a formulary for each.
-        The second, in aurora, carries a commemoration of S. Anastasia Martyr printed inside that formulary;
-        it is not an entry the calendar inscribes on the date and has no dated entry of its own here. Only
-        the scripture-bearing propers are recorded; the orations the Missal prints for this day are appointed
-        and not transcribed here, and neither is any proper whose text the Missal composes rather than cites.
-        Identity, rank and the printed citations were read on 2026-08-07 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 17-21 (digital 98-102), not from the
-        facsimile images, and nothing here has been visually collated.
+      notes: "RGMR 518 b names the three Masses of Christmas, and the Missal prints a formulary for each. The principal Collect, Secret and Postcommunion in each stable night/dawn/day form are now collated on 200 and 400 dpi page images of the controlling 1962 edition, printed pp. 17-22/PDF 98-103, and independently witnessed in the public-domain Mame 1922 printing. The source-faithful Mame derivative retains its actual cues; a separate project projection retains each target conclusion at its printed length, including the Day Collect full conclusion and printed response without an inferred actor. The second Mass has a separately printed Anastasia commemoration; those three prayers are excluded here. The existing scripture-bearing citations and other appointments are unchanged from their earlier records and are not newly collated by this bounded oration recovery. Each published body has its exact per-body source, target relation and publication basis in the Latin provenance inventory."
       forms:
       - id: night
         name: Ad primam Missam in nocte
@@ -25635,14 +25737,12 @@ sections:
                 chapter: 2
                 verse: 1
             ref: Psalms 2:1
-        - name: Collect
+        - name: "Collect"
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+          text: |
+            Deus, qui hanc sacratissimam noctem veri luminis fecisti illustratione
+            clarescere: da, quaesumus; ut, cujus lucis mysteria in terra cognovimus, ejus
+            quoque gaudiis in caelo perfruamur: Qui tecum vivit et regnat in unitate.
         - name: Epistle
           source: scripture
           verses:
@@ -25715,14 +25815,12 @@ sections:
                 chapter: 95
                 verse: 13
             ref: Psalms 95:11,13
-        - name: Secret
+        - name: "Secret"
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+          text: |
+            Accepta tibi sit, Domine, quaesumus, hodiernae festivitatis oblatio: ut, tua
+            gratia largiente, per haec sacrosancta commercia, in illius inveniamur forma,
+            in quo tecum est nostra substantia: Qui tecum vivit et regnat in unitate.
         - name: Communion
           source: scripture
           verses:
@@ -25735,14 +25833,12 @@ sections:
                 chapter: 109
                 verse: 3
             ref: Psalms 109:3
-        - name: Postcommunion
+        - name: "Postcommunion"
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+          text: |
+            Da nobis, quaesumus, Domine Deus noster: ut, qui Nativitatem Domini nostri
+            Jesu Christi mysteriis nos frequentare gaudemus; dignis conversationibus ad
+            ejus mereamur pervenire consortium: Qui tecum vivit et regnat in unitate.
       - id: dawn
         name: Ad secundam Missam in aurora
         ordinary_appointments:
@@ -25776,14 +25872,13 @@ sections:
                 chapter: 92
                 verse: 1
             ref: Psalms 92:1
-        - name: Collect
+        - name: "Collect"
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+          text: |
+            Da nobis, quaesumus, omnipotens Deus: ut, qui nova incarnati Verbi tui luce
+            perfundimur; hoc in nostro resplendeat opere, quod per fidem fulget in mente.
+            Per eundem Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et
+            regnat in unitate.
         - name: Epistle
           source: scripture
           verses:
@@ -25856,14 +25951,13 @@ sections:
                 chapter: 92
                 verse: 2
             ref: Psalms 92:1-2
-        - name: Secret
+        - name: "Secret"
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+          text: |
+            Munera nostra, quaesumus, Domine, Nativitatis hodiernae mysteriis apta
+            proveniant, et pacem nobis semper infundant: ut, sicut homo genitus idem
+            refulsit et Deus, sic nobis haec terrena substantia conferat, quod divinum
+            est. Per eundem Dominum nostrum Jesum Christum.
         - name: Communion
           source: scripture
           verses:
@@ -25876,14 +25970,11 @@ sections:
                 chapter: 9
                 verse: 9
             ref: Zechariah 9:9
-        - name: Postcommunion
+        - name: "Postcommunion"
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+          text: |
+            Hujus nos, Domine, sacramenti semper novitas natalis instauret: cujus
+            Nativitas singularis humanam repulit vetustatem. Per eundem Dominum.
       - id: day
         name: Ad tertiam Missam in die
         ordinary_appointments:
@@ -25911,14 +26002,13 @@ sections:
                 chapter: 97
                 verse: 1
             ref: Psalms 97:1
-        - name: Collect
+        - name: "Collect"
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+          text: |
+            Concede, quaesumus, omnipotens Deus: ut nos Unigeniti tui nova per carnem
+            Nativitas liberet; quos sub peccati jugo vetusta servitus tenet. Per eundem
+            Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+            unitate Spiritus Sancti, Deus: per omnia saecula saeculorum. ℟. Amen.
         - name: Epistle
           source: scripture
           verses:
@@ -25979,14 +26069,11 @@ sections:
                 chapter: 88
                 verse: 15
             ref: Psalms 88:12,15
-        - name: Secret
+        - name: "Secret"
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+          text: |
+            Oblata, Domine, munera, nova Unigeniti tui Nativitate sanctifica: nosque a
+            peccatorum nostrorum maculis emunda. Per eundem Dominum.
         - name: Communion
           source: scripture
           verses:
@@ -25999,14 +26086,12 @@ sections:
                 chapter: 97
                 verse: 3
             ref: Psalms 97:3
-        - name: Postcommunion
+        - name: "Postcommunion"
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-              - kind: witness-gap
-                source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+          text: |
+            Praesta, quaesumus, omnipotens Deus: ut natus hodie Salvator mundi, sicut
+            divinae nobis generationis est auctor; ita et immortalitatis sit ipse
+            largitor: Qui tecum vivit et regnat in unitate.
   sanctoral:
     kind: sanctoral
     label: Saints
@@ -31703,6 +31788,15 @@ sections:
               chapter: 63
               verse: 3
           ref: Psalms 63:3
+        - book: "Psalms"
+          ranges:
+          - begin:
+              chapter: 63
+              verse: 2
+            end:
+              chapter: 63
+              verse: 2
+          ref: "Psalm 63:2"
       - name: Collect
         source: composed
         notes: >-
@@ -32284,6 +32378,15 @@ sections:
               chapter: 63
               verse: 3
           ref: Psalms 63:3
+        - book: "Psalms"
+          ranges:
+          - begin:
+              chapter: 63
+              verse: 2
+            end:
+              chapter: 63
+              verse: 2
+          ref: "Psalm 63:2"
       - name: Collect
         source: composed
         notes: >-
@@ -32308,6 +32411,27 @@ sections:
               chapter: 1
               verse: 14
           ref: "Ezekiel 1:10-14"
+      - name: "Alleluia"
+        source: scripture
+        verses:
+        - book: "Psalms"
+          ranges:
+          - begin:
+              chapter: 88
+              verse: 6
+            end:
+              chapter: 88
+              verse: 6
+          ref: "Psalm 88:6"
+        - book: "Psalms"
+          ranges:
+          - begin:
+              chapter: 20
+              verse: 4
+            end:
+              chapter: 20
+              verse: 4
+          ref: "Psalm 20:4"
       - name: Gospel
         source: scripture
         verses:
@@ -32618,6 +32742,15 @@ sections:
               chapter: 63
               verse: 3
           ref: Psalms 63:3
+        - book: "Psalms"
+          ranges:
+          - begin:
+              chapter: 63
+              verse: 2
+            end:
+              chapter: 63
+              verse: 2
+          ref: "Psalm 63:2"
       - name: Collect
         source: composed
         notes: >-
@@ -32648,6 +32781,27 @@ sections:
               chapter: 3
               verse: 12
           ref: "2 Timothy 2:8-10; 3:10-12"
+      - name: "Alleluia"
+        source: scripture
+        verses:
+        - book: "Psalms"
+          ranges:
+          - begin:
+              chapter: 88
+              verse: 6
+            end:
+              chapter: 88
+              verse: 6
+          ref: "Psalm 88:6"
+        - book: "Psalms"
+          ranges:
+          - begin:
+              chapter: 20
+              verse: 4
+            end:
+              chapter: 20
+              verse: 4
+          ref: "Psalm 20:4"
       - name: Gospel
         source: scripture
         verses:
@@ -34650,28 +34804,23 @@ sections:
           reasons:
           - kind: witness-gap
             source_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
-      notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
-        carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
-        CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
-        itself prints -- Commune unius aut plurium Summorum Pontificum -- which is unambiguous where the
-        Introit incipit is not, two Commons sharing `Os iusti` and two more sharing `Me exspectaverunt`.
-        THE DAY''S OWN COLLECT IS NOT TRANSCRIBED. The Missal prints one and this pass read it, but the
-        facsimile sets each oration under a drop capital that the text layer renders as wreckage and glues
-        marginal section numbers to the words -- `Cyrilluui`, `quivere earn`, `Ecclesise2517` -- so what
-        was read is not of publishable quality and is not recorded. The Collect slot therefore carries a typed unavailable proper-body state
-        while every other slot is the Common''s, which is what the Missal appoints. Nothing here has been
-        visually collated. The day''s own Collect was read on 2026-08-08 from the PAGE IMAGE of leaf n534
-        of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862 printing the source library
-        already tracks as public domain, and not from any optical text layer -- that printing''s own OCR
-        corrupts roughly one word in three. The wording is the 1862''s; the 1962 Missal is not quoted for
-        it, and the two books are not asserted to agree.'
+      notes: >-
+        The held controlling edition at artifact PDF p. 616, printed p. 535,
+        marginal 2643A, expressly selects Papal orations II loco. The existing
+        own Collect is retained: the same page prints Urban's Collect 2639
+        with virtute, where Common second Collect 4178 at artifact PDF p. 810,
+        printed p. [2], has veritate. It is not safely replaced by the Common
+        wording. This correction changes only the inherited oration selection;
+        no prayer body, translation, or publication permission is added. See
+        src/sources/inventories/roman-1962-urban-oration-selection-v1.toml.
       takes_from:
         mass: commune-summorum-pontificum
         common_sets:
           orations:
             state: selected
-            option: c1-singular
-        citation: Commune unius aut plurium Summorum Pontificum
+            option: c2-singular
+        citation: Missa Si diligis me, de Communi unius aut plurium Summorum
+          Pontificum [1], cum orationibus II loco.
     - key: s-philippi-nerii-confessoris
       name: S. Philippi Nerii Confessoris
       registry: '1962-05-26'
@@ -35906,7 +36055,13 @@ sections:
             end:
               chapter: 11
               verse: 26
-          ref: Acts 11:21-26
+          - begin:
+              chapter: 13
+              verse: 1
+            end:
+              chapter: 13
+              verse: 3
+          ref: Acts 11:21-26; 13:1-3
       - name: Gradual
         source: scripture
         verses:
@@ -36206,24 +36361,46 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-      notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
-        carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
-        CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
-        itself prints -- Commune Doctorum, pro Doctore Pontifice -- which is unambiguous where the Introit
-        incipit is not, two Commons sharing `Os iusti` and two more sharing `Me exspectaverunt`. THE DAY''S
-        OWN COLLECT IS NOT TRANSCRIBED. The Missal prints one and this pass read it, but the facsimile sets
-        each oration under a drop capital that the text layer renders as wreckage and glues marginal section
-        numbers to the words -- `Cyrilluui`, `quivere earn`, `Ecclesise2517` -- so what was read is not
-        of publishable quality and is not recorded. The Collect slot therefore carries a typed unavailable proper-body state while
-        every other slot is the Common''s, which is what the Missal appoints. Nothing here has been visually
-        collated. The day''s own Collect was read on 2026-08-08 from the PAGE IMAGE of leaf n543 of Internet
-        Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862 printing the source library already tracks
-        as public domain, and not from any optical text layer -- that printing''s own OCR corrupts roughly
-        one word in three. The wording is the 1862''s; the 1962 Missal is not quoted for it, and the two
-        books are not asserted to agree.'
+      - name: Secret
+        source: composed
+        notes: >-
+          Direct named appointment, printed p. 552, no. 2777, marked P;
+          artifact PDF p. 633. Classification P describes the source origin,
+          not the speaker or permission to publish its wording. See
+          src/sources/inventories/roman-1962-named-oration-appointment-collation-v1.toml.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - name: Postcommunion
+        source: composed
+        notes: >-
+          Direct named appointment, printed p. 552, no. 2778, marked P;
+          artifact PDF p. 633. Classification P describes the source origin,
+          not the speaker or permission to publish its wording. See
+          src/sources/inventories/roman-1962-named-oration-appointment-collation-v1.toml.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      notes: >-
+        The held controlling edition, artifact PDF pp. 632-633, printed pp.
+        551-552, appoints Missa In medio from the Common of Doctors [22], with
+        orations printed below for Anthony, Confessor and Doctor. The Doctor
+        Common distinguishes bishop and nonbishop forms at printed p. [23];
+        this feast takes the nonbishop form. Own Collect 2776 remains unchanged;
+        own Secret 2777 and Postcommunion 2778 are represented as named
+        appointments with typed unavailable wording. No Common prayer body is
+        silently substituted for either printed own prayer. The appointment
+        collation makes no new wording, translation, or rights determination.
       takes_from:
-        mass: commune-doctorum-pontificis
-        citation: Commune Doctorum, pro Doctore Pontifice
+        mass: commune-doctorum-non-pontificis
+        citation: Missa In medio, de Communi Doctorum [22], cum orationibus ut
+          infra
     - key: s-basilii-magni-episcopi-confessoris-ecclesiae
       name: S. Basilii Magni Episcopi, Confessoris et Ecclesiae Doctoris
       registry: '1962-06-14'
@@ -37219,6 +37396,15 @@ sections:
               chapter: 1
               verse: 14
           ref: Luke 1:13, 15, 14
+        - book: "Psalms"
+          ranges:
+          - begin:
+              chapter: 20
+              verse: 2
+            end:
+              chapter: 20
+              verse: 2
+          ref: "Psalm 20:2"
       - name: Collect
         source: composed
         notes: >-
@@ -37453,6 +37639,18 @@ sections:
           celebrantes, qui Salvatorem mundi et cecinit adfuturum, et adesse
           monstravit, Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et
           regnat in unitate.
+      - name: "Communion"
+        source: scripture
+        verses:
+        - book: "Luke"
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 76
+            end:
+              chapter: 1
+              verse: 76
+          ref: "Luke 1:76"
       - name: Postcommunion
         source: composed
         notes: >-
@@ -38276,7 +38474,13 @@ sections:
             end:
               chapter: 3
               verse: 17
-          ref: 2 Timothy 3:14-17
+          - begin:
+              chapter: 4
+              verse: 1
+            end:
+              chapter: 4
+              verse: 5
+          ref: 2 Timothy 3:14-17; 4:1-5
       - name: Gradual
         source: scripture
         verses:
@@ -39757,6 +39961,15 @@ sections:
               chapter: 2
               verse: 11
           ref: Lamentations 2:11
+        - book: 'Psalms'
+          ranges:
+          - begin:
+              chapter: 112
+              verse: 1
+            end:
+              chapter: 112
+              verse: 1
+          ref: 'Psalm 112:1'
       - name: Collect
         source: composed
         notes: >-
@@ -39794,6 +40007,15 @@ sections:
               chapter: 5
               verse: 16
           ref: Proverbs 5:16
+        - book: 'Psalms'
+          ranges:
+          - begin:
+              chapter: 111
+              verse: 5
+            end:
+              chapter: 111
+              verse: 6
+          ref: 'Psalm 111:5-6'
       - name: Alleluia
         source: scripture
         verses:
@@ -39843,6 +40065,22 @@ sections:
           Hieronymo creare dignatus es: da, per merita ipsius; ut nos, pariter
           renovati, hanc placationis hostiam in odorem tibi suavissimum offeramus. Per
           Dominum.
+      - name: 'Communion'
+        source: scripture
+        notes: >-
+          Directly printed in the 1962 Vatican typical edition at printed p.
+          594, marginal no. 3114; CMAA facsimile artifact PDF p. 675.
+          Citation and position visually collated on 2026-10-20.
+        verses:
+        - book: 'James'
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 27
+            end:
+              chapter: 1
+              verse: 27
+          ref: 'James 1:27'
       - name: Postcommunion
         source: composed
         notes: >-
@@ -40092,7 +40330,13 @@ sections:
             end:
               chapter: 3
               verse: 5
-          ref: Song of Songs 3:2-5
+          - begin:
+              chapter: 8
+              verse: 6
+            end:
+              chapter: 8
+              verse: 7
+          ref: Song of Songs 3:2-5; 8:6-7
       - name: Gradual
         source: scripture
         verses:
@@ -40842,7 +41086,13 @@ sections:
             end:
               chapter: 10
               verse: 18
-          ref: 2 Corinthians 10:17-18
+          - begin:
+              chapter: 11
+              verse: 1
+            end:
+              chapter: 11
+              verse: 2
+          ref: 2 Corinthians 10:17-18; 11:1-2
       - name: Gradual
         source: scripture
         verses:
@@ -41149,7 +41399,13 @@ sections:
             end:
               chapter: 2
               verse: 10
-          ref: 2 Timothy 2:8-10
+          - begin:
+              chapter: 3
+              verse: 10
+            end:
+              chapter: 3
+              verse: 12
+          ref: 2 Timothy 2:8-10; 3:10-12
       - name: Gradual
         source: scripture
         verses:
@@ -42467,6 +42723,20 @@ sections:
               chapter: 20
               verse: 4
           ref: Psalms 20:3-4
+      - name: "Alleluia"
+        source: composed
+        notes: >-
+          Direct ordinary-feast Alleluia appointment visually collated on 2026-10-20 to
+          the registered CMAA facsimile, artifact p. 703 / printed p. 622, no. 3341. No
+          Bible citation is printed. Only the appointment is represented; no body or new
+          publication-rights decision is supplied. The separately printed votive Tract
+          requires its own source-context selection and is not a simultaneous chant.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
       - name: Gospel
         source: scripture
         verses:
@@ -43985,6 +44255,28 @@ sections:
               chapter: 1
               verse: 19
           ref: "Jeremiah 1:17-19"
+      - name: 'Gradual'
+        source: scripture
+        notes: >-
+          Directly printed in the 1962 Vatican typical edition at printed p.
+          642, marginal no. 3498; CMAA facsimile artifact PDF p. 723.
+          Citation and position visually collated on 2026-10-20.
+        verses:
+        - book: 'Psalms'
+          ranges:
+          - begin:
+              chapter: 91
+              verse: 13
+            end:
+              chapter: 91
+              verse: 14
+          - begin:
+              chapter: 91
+              verse: 3
+            end:
+              chapter: 91
+              verse: 3
+          ref: 'Psalm 91:13-14, 3'
       - name: Alleluia
         source: scripture
         verses:
@@ -44583,6 +44875,31 @@ sections:
               chapter: 91
               verse: 14
           ref: Psalms 91:13, 14
+        - book: 'Psalms'
+          ranges:
+          - begin:
+              chapter: 91
+              verse: 3
+            end:
+              chapter: 91
+              verse: 3
+          ref: 'Psalm 91:3'
+      - name: 'Alleluia'
+        source: scripture
+        notes: >-
+          Directly printed in the 1962 Vatican typical edition at printed p.
+          647, marginal no. 3549; CMAA facsimile artifact PDF p. 728.
+          Citation and position visually collated on 2026-10-20.
+        verses:
+        - book: 'James'
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 12
+            end:
+              chapter: 1
+              verse: 12
+          ref: 'James 1:12'
       - name: Gospel
         source: scripture
         verses:
@@ -45560,6 +45877,18 @@ sections:
               chapter: 1
               verse: 14
           ref: "Ezekiel 1:10-14"
+      - name: "Gradual"
+        source: "scripture"
+        verses:
+        - book: "Psalms"
+          ranges:
+          - begin:
+              chapter: 111
+              verse: 1
+            end:
+              chapter: 111
+              verse: 2
+          ref: "Psalms 111:1-2"
       - name: Tract
         source: scripture
         verses:
@@ -45572,6 +45901,20 @@ sections:
               chapter: 20
               verse: 4
           ref: Psalms 20:3-4
+      - name: "Alleluia"
+        source: composed
+        notes: >-
+          Direct ordinary-feast Alleluia appointment visually collated on 2026-10-20 to
+          the registered CMAA facsimile, artifact p. 745 / printed p. 664, no. 3683. No
+          Bible citation is printed. Only the appointment is represented; no body or new
+          publication-rights decision is supplied. The separately printed votive Tract
+          requires its own source-context selection and is not a simultaneous chant.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
       - name: Gospel
         source: scripture
         verses:
@@ -45654,8 +45997,9 @@ sections:
           deprecantur, divitias misericordiae tuae benignus effundas. Per Dominum
           nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
       takes_from:
-        mass: commune-confessoris-pontificis-2
-        citation: Commune Sanctorum [20]
+        mass: commune-confessoris-pontificis-1
+        citation: Missa Statuit, de Communi Confessoris Pontificis I loco [20], cum
+          orationibus ut infra
       notes: 'Read on 2026-08-08 from the embedded text layer of the CMAA facsimile of the controlling edition,
         at this day''s own heading, and that reading was not visually collated; the facsimile sets
         each oration under a drop capital that the text layer renders as
@@ -46429,6 +46773,15 @@ sections:
               chapter: 4
               verse: 9
           ref: Song of Songs 4:8-9
+        - book: "Psalms"
+          ranges:
+          - begin:
+              chapter: 112
+              verse: 1
+            end:
+              chapter: 112
+              verse: 1
+          ref: "Psalms 112:1"
       - name: Collect
         source: composed
         text_status:
@@ -46461,6 +46814,15 @@ sections:
               chapter: 11
               verse: 25
           ref: Matthew 11:25
+        - book: "Psalms"
+          ranges:
+          - begin:
+              chapter: 70
+              verse: 5
+            end:
+              chapter: 70
+              verse: 5
+          ref: "Psalms 70:5"
       - name: Alleluia
         source: scripture
         verses:
@@ -46891,6 +47253,18 @@ sections:
               chapter: 44
               verse: 5
           ref: Psalms 44:3, 5
+      - name: "Alleluia"
+        source: "scripture"
+        verses:
+        - book: "Psalms"
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 5
+            end:
+              chapter: 44
+              verse: 5
+          ref: "Psalms 44:5"
       - name: Gospel
         source: scripture
         verses:
@@ -46926,6 +47300,18 @@ sections:
           Accepta tibi sit, Domine, sacratae plebis oblatio pro tuorum honore
           Sanctorum: quorum se meritis de tribulatione percepisse cognoscit auxilium.
           Per Dominum.
+      - name: "Communion"
+        source: "scripture"
+        verses:
+        - book: "Psalms"
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 8
+            end:
+              chapter: 44
+              verse: 8
+          ref: "Psalms 44:8"
       - name: Postcommunion
         source: composed
         notes: >-
@@ -48034,6 +48420,22 @@ sections:
               chapter: 12
               verse: 40
           ref: Luke 12:35-40
+      - name: "Offertory"
+        source: scripture
+        notes: >-
+          Visually collated 2026-10-20 at registered CMAA artifact p. 774 / printed p.
+          693, no. 3910: Ant. ad Offertorium; Iob 29, 14-16. The directly printed
+          Offertory follows the end of the feast's Gospel and precedes its Secret.
+        verses:
+        - book: "Job"
+          ranges:
+          - begin:
+              chapter: 29
+              verse: 14
+            end:
+              chapter: 29
+              verse: 16
+          ref: "Job 29:14-16"
       - name: Secret
         source: composed
         notes: >-
@@ -48210,18 +48612,6 @@ sections:
               chapter: 12
               verse: 15
           ref: Tobit 12:7-15
-      - name: Epistle
-        source: scripture
-        verses:
-        - book: Colossians
-          ranges:
-          - begin:
-              chapter: 1
-              verse: 12
-            end:
-              chapter: 1
-              verse: 20
-          ref: Colossians 1:12-20
       - name: Gradual
         source: scripture
         verses:
@@ -48518,18 +48908,6 @@ sections:
               chapter: 4
               verse: 13
           ref: Ephesians 4:7-13
-      - name: Lesson
-        source: scripture
-        verses:
-        - book: Revelation
-          ranges:
-          - begin:
-              chapter: 7
-              verse: 2
-            end:
-              chapter: 7
-              verse: 12
-          ref: Revelation 7:2-12
       - name: Gradual
         source: scripture
         verses:
@@ -48631,6 +49009,47 @@ sections:
       rank: I
       kind: sanctoral
       propers:
+      - name: Introit
+        source: mixed
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 32
+              verse: 1
+            end:
+              chapter: 32
+              verse: 1
+          ref: Psalms 32:1
+        notes: >-
+          Own All Saints Introit, printed p. 702, no. 3974;
+          artifact PDF p. 783. Every bounded word was image-collated
+          on 2026-10-20 against the public-domain Mame 1922 witness at printed
+          p. 748, artifact PDF p. 862. The separate
+          editorial projection records declared orthography, target pointing
+          and the exact printed conclusion or cue length.
+          Gaudeamus through Filium Dei is an uncited composed antiphon;
+          only Exsultate through collaudatio is cited Psalm 32:1. Gloria Patri
+          remains the literal abbreviated cue, preceded by its versicle marker.
+          No Bible text replaces the Missal body and no doxology is expanded.
+        text: |
+          Gaudeamus omnes in Domino, diem festum celebrantes sub honore Sanctorum omnium:
+          de quorum solemnitate gaudent Angeli, et collaudant Filium Dei. Exsultate,
+          justi, in Domino: rectos decet collaudatio. V. Gloria Patri.
+      - name: Collect
+        source: composed
+        notes: >-
+          Own All Saints Collect, printed p. 702, no. 3975;
+          artifact PDF p. 783. Every bounded word was image-collated
+          on 2026-10-20 against the public-domain Mame 1922 witness at printed
+          p. 748, artifact PDF p. 862. The separate
+          editorial projection records declared orthography, target pointing
+          and the exact printed conclusion or cue length.
+        text: |
+          Omnipotens sempiterne Deus, qui nos omnium Sanctorum tuorum merita sub una
+          tribuisti celebritate venerari: quaesumus; ut desideratam nobis tuae
+          propitiationis abundantiam, multiplicatis intercessoribus, largiaris. Per
+          Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -48691,6 +49110,19 @@ sections:
               chapter: 3
               verse: 3
           ref: Wisdom 3:1-3
+      - name: Secret
+        source: composed
+        notes: >-
+          Own All Saints Secret, printed p. 703, no. 3981;
+          artifact PDF p. 784. Every bounded word was image-collated
+          on 2026-10-20 against the public-domain Mame 1922 witness at printed
+          p. 750, artifact PDF p. 864. The separate
+          editorial projection records declared orthography, target pointing
+          and the exact printed conclusion or cue length.
+        text: |
+          Munera tibi, Domine, nostrae devotionis offerimus: quae et pro cunctorum tibi
+          grata sint honore justorum, et nobis salutaria, te miserante, reddantur. Per
+          Dominum.
       - name: Communion
         source: scripture
         verses:
@@ -48703,11 +49135,33 @@ sections:
               chapter: 5
               verse: 10
           ref: Matthew 5:8-10
-      notes: 'Read on 2026-08-08 from the embedded text layer of the CMAA facsimile of the controlling edition,
-        at this day''s own heading, and nothing has been visually collated. Only the printed scripture citations
-        are recorded: the facsimile sets each oration under a drop capital that the text layer renders as
-        wreckage, so the orations the Missal prints here are appointed and not transcribed. Every citation
-        was re-parsed against the repository''s own canonical book list before it was written.'
+      - name: Postcommunion
+        source: composed
+        notes: >-
+          Own All Saints Postcommunion, printed p. 703, no. 3983;
+          artifact PDF p. 784. Every bounded word was image-collated
+          on 2026-10-20 against the public-domain Mame 1922 witness at printed
+          p. 750, artifact PDF p. 864. The separate
+          editorial projection records declared orthography, target pointing
+          and the exact printed conclusion or cue length.
+          Mame prints Per Dominum.; the target prints Per Dominum nostrum.
+          The historical derivative retains its shorter source cue separately.
+        text: |
+          Da, quaesumus, Domine, fidelibus populis omnium Sanctorum semper veneratione
+          laetari: et eorum perpetua supplicatione muniri. Per Dominum nostrum.
+      notes: >-
+        The controlling 1962 feast begins at artifact PDF p. 783 / printed p. 702,
+        under 1 November, In Festo Omnium Sanctorum, I classis. It prints ten own
+        proper slots in the order retained here. The Introit, Collect, Secret and
+        Postcommunion bodies were directly image-collated on 2026-10-20 with the
+        independently registered public-domain Mame 1922 witness, with declared
+        orthography, target pointing and printed conclusion lengths. The other
+        six Scripture-bearing nodes and citations retain their existing source
+        facts; this bounded body repair makes no new wording claim for them.
+        Credo. is printed after the Gospel; it is outside the four body extents.
+        No Preface appointment is inferred. The separate Missa votiva de omnibus
+        Sanctis begins at artifact PDF p. 785 / printed p. 704 and contributes no
+        words or appointments to this feast. No English body is supplied.
     - key: commemoratione-omnium-fidelium-defunctorum
       name: In Commemoratione Omnium Fidelium Defunctorum
       registry: '1962-11-02'
@@ -49818,6 +50272,15 @@ sections:
               chapter: 44
               verse: 27
           ref: Sirach 44:16-27
+        - book: "Sirach"
+          ranges:
+          - begin:
+              chapter: 45
+              verse: 3
+            end:
+              chapter: 45
+              verse: 20
+          ref: "Sirach 45:3-20"
       - name: Gradual
         source: scripture
         verses:
@@ -49830,6 +50293,30 @@ sections:
               chapter: 44
               verse: 16
           ref: Sirach 44:16
+        - book: "Sirach"
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 20
+            end:
+              chapter: 44
+              verse: 20
+          ref: "Sirach 44:20"
+      - name: "Alleluia"
+        source: composed
+        notes: >-
+          The ordinary Alleluia appointment is visually checked 2026-10-20 at registered
+          CMAA artifact p. 797 / printed p. 716, no. 4078. The page prints no Bible
+          citation for this saint-specific chant. This node identifies only no. 4078;
+          the separately printed Paschal votive replacement at no. 4079 retains its
+          independent conditional appointment and is not folded into this node. No body
+          or publication conclusion is supplied.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
       - name: "Gospel"
         source: scripture
         verses:
@@ -50231,8 +50718,17 @@ sections:
               verse: 16
             end:
               chapter: 44
-              verse: 16
-          ref: Sirach 44:16
+              verse: 27
+          ref: Sirach 44:16-27
+        - book: Sirach
+          ranges:
+          - begin:
+              chapter: 45
+              verse: 3
+            end:
+              chapter: 45
+              verse: 20
+          ref: Sirach 45:3-20
       - name: Gradual
         source: scripture
         verses:
@@ -50583,6 +51079,15 @@ sections:
               chapter: 3
               verse: 21
           ref: Philippians 3:17-21
+        - book: Philippians
+          ranges:
+          - begin:
+              chapter: 4
+              verse: 1
+            end:
+              chapter: 4
+              verse: 3
+          ref: Philippians 4:1-3
       - name: Gradual
         source: scripture
         verses:
@@ -51100,14 +51605,15 @@ sections:
       date: 12-02
       rank: III
       kind: sanctoral
-      notes: The Missal gives this day the second Mass of the Common of Virgins except
-        for the Collect, which it prints in full with the saint’s name supplied and
-        which is transcribed below; its Secret and Postcommunion are marked C, of the
-        Common. Both the pointer and the Collect were read on 2026-08-01 from the page
-        image of the CMAA facsimile of the controlling edition at printed p. 430
-        (digital p. 511), rendered at 140 dpi from the tracked PDF whose sha256 is
-        648fdb8f. The orthography is this file’s, not the typica’s, which prints i where
-        this writes j.
+      notes: >-
+        The controlling edition at artifact PDF p. 511, printed p. 430,
+        appoints the second Virgin Mass [30] except for the following Collect.
+        Its printed Secret 1824 and Postcommunion 1825 are classified C but
+        expressly name Bibiana; their exact dated appointments are represented
+        locally, separately from Common wording origin. Own Collect remains
+        unchanged. The additional rows carry typed unavailable wording pending
+        a source-owned publication binding; no body or translation is supplied
+        by this appointment collation.
       takes_from:
         mass: commune-virginum-2
         common_sets:
@@ -51127,6 +51633,32 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+      - name: Secret
+        source: composed
+        notes: >-
+          Direct named appointment, printed p. 430, no. 1824, marked C;
+          artifact PDF p. 511. Classification C describes the source origin,
+          not the speaker or permission to publish its wording. See
+          src/sources/inventories/roman-1962-named-oration-appointment-collation-v1.toml.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - name: Postcommunion
+        source: composed
+        notes: >-
+          Direct named appointment, printed p. 430, no. 1825, marked C;
+          artifact PDF p. 511. Classification C describes the source origin,
+          not the speaker or permission to publish its wording. See
+          src/sources/inventories/roman-1962-named-oration-appointment-collation-v1.toml.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
     - key: s-francisci-xaverii-confessoris
       name: S. Francisci Xaverii Confessoris
       registry: '1962-12-03'
@@ -51459,18 +51991,44 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+      - name: Secret
+        source: composed
+        notes: >-
+          Direct named appointment, printed p. 433, no. 1850, marked P;
+          artifact PDF p. 514. Classification P describes the source origin,
+          not the speaker or permission to publish its wording. See
+          src/sources/inventories/roman-1962-named-oration-appointment-collation-v1.toml.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - name: Postcommunion
+        source: composed
+        notes: >-
+          Direct named appointment, printed p. 434, no. 1851, marked P;
+          artifact PDF p. 515. Classification P describes the source origin,
+          not the speaker or permission to publish its wording. See
+          src/sources/inventories/roman-1962-named-oration-appointment-collation-v1.toml.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
       takes_from:
         mass: commune-abbatum
-        citation: Commune Sanctorum [27]
-      notes: 'Read on 2026-08-08 from the embedded text layer of the CMAA facsimile of the controlling edition,
-        at this day''s own heading, and nothing has been visually collated. Only the printed scripture citations
-        are recorded: the facsimile sets each oration under a drop capital that the text layer renders as
-        wreckage, so the orations the Missal prints here are appointed and not transcribed. Every citation
-        was re-parsed against the repository''s own canonical book list before it was written. The day''s
-        own Collect was read on 2026-08-08 from the PAGE IMAGE of leaf n453 of Internet Archive item bub_gb_E7sPAAAAIAAJ,
-        the Pustet Ratisbon 1862 printing the source library already tracks as public domain, and not from
-        any optical text layer -- that printing''s own OCR corrupts roughly one word in three. The wording
-        is the 1862''s; the 1962 Missal is not quoted for it, and the two books are not asserted to agree.'
+        citation: Missa Os iusti, de Communi Abbatum [27], cum orationibus ut
+          infra
+      notes: >-
+        The controlling edition at artifact PDF pp. 514-515, printed pp.
+        433-434, appoints Missa Os iusti from the Common of Abbots [27], with
+        orations printed below. The existing own Collect 1849 is unchanged;
+        Secret 1850 and Postcommunion 1851 are printed named appointments,
+        classified P, and do not retain the Common wording's Abbas designation.
+        Their rows carry typed unavailable wording; no body, translation, or
+        rights determination is supplied by this appointment collation.
     - key: s-nicolai-episcopi-confessoris
       name: S. Nicolai Episcopi et Confessoris
       registry: '1962-12-06'
@@ -51518,6 +52076,21 @@ sections:
           Deus, qui beatum Nicolaum Pontificem innumeris decorasti miraculis: tribue,
           quaesumus; ut ejus meritis et precibus a gehennae incendiis liberemur. Per
           Dominum.
+      - name: Epistle
+        source: scripture
+        notes: Printed p. 434, no. 1854; headed Lectio Epistolae beati Pauli Apostoli ad Hebraeos. Appointment,
+          printed numeric bounds and complete two-column continuation visually checked against the controlling
+          1962 facsimile at artifact p. 515.
+        verses:
+        - book: Hebrews
+          ranges:
+          - begin:
+              chapter: 13
+              verse: 7
+            end:
+              chapter: 13
+              verse: 17
+          ref: Hebrews 13:7-17
       - name: Gradual
         source: scripture
         verses:

@@ -123,7 +123,7 @@ class TrackedIndexTests(unittest.TestCase):
         )
 
     def test_advent_isaiah_rends_the_heavens_and_ends_in_the_potters_hands(self) -> None:
-        text = self.douay["Isaiah 63:16b-17, 19b; 64:2-7"]
+        text = self.douay["Isaiah 63:16b-17, 19b; 64:2b-7"]
         self.assertIn("rend the heavens", text)
         self.assertTrue(text.endswith("we all are the works of thy hands."))
 

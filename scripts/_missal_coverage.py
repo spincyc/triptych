@@ -503,8 +503,17 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
                             "requires calendar_mass_key; a parent reference is parent_id"
                         )
                     proper_name = row.get("calendar_proper_name")
+                    proper_occurrence = row.get("calendar_proper_occurrence")
                     appointment = row.get("calendar_ordinary_appointment")
                     option = row.get("calendar_ordinary_option")
+                    if "calendar_proper_occurrence" in row and (
+                        not proper_name or type(proper_occurrence) is not int
+                        or proper_occurrence < 1
+                    ):
+                        raise ValueError(
+                            "expected Missal calendar_proper_occurrence requires "
+                            "calendar_proper_name and a positive integer"
+                        )
                     if any(value is not None for value in (proper_name, appointment, option)):
                         if row["kind"] != "text-slot" or bool(proper_name) == bool(appointment):
                             raise ValueError("expected Missal text-slot requires one calendar unit join")
@@ -580,8 +589,14 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
                 if form_id and forms:
                     selected_propers = next((form.get("propers") or [] for form in forms
                                              if form.get("id") == form_id), [])
-                if sum(proper.get("name") == target["calendar_proper_name"]
-                       for proper in selected_propers) != 1:
+                matching_propers = [proper for proper in selected_propers
+                                    if proper.get("name") == target["calendar_proper_name"]]
+                occurrence = target.get("calendar_proper_occurrence")
+                if occurrence is not None:
+                    # Source-qualified ordinal among all exact-name nodes in
+                    # this joined form, not a body-only provenance ordinal.
+                    matching_propers = matching_propers[occurrence - 1:occurrence]
+                if len(matching_propers) != 1:
                     state = "not-represented"
             elif target.get("calendar_ordinary_appointment"):
                 appointed = (mass.get("ordinary_appointments") or {}).get(

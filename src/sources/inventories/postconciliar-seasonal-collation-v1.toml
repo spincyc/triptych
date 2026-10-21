@@ -762,3 +762,582 @@ english_disposition = "One exact main/all/body/occurrence-1 untranslated identit
 editorial_relationship = "Matthew 17:5 remains an explicitly editorial, nonappointed scriptural relationship in this audit only. OLM n. 25 prints no such reference. This statement does not create an appointment, Bible reconstruction, target text, translation, option, or cycle owner."
 prior_snapshot = "This correction supersedes the live inferred-reference defect recorded in what_remains.one_verse_note; its earlier dated counts remain historical measurements. All other Lent II units, including the distinct Communion Antiphon citation Matthew 17:5, retain their current identities and data."
 scope = "Exact source-local 1981 OLM unit/referrals only. This correction supplies no protected body, no missing-cycle expansion, no new registry identity, no full 2008/territorial Lectionary collation, and no whole-book denominator."
+
+
+[seasonal_scriptural_short_forms_2026_10_20]
+recorded_on = "2026-10-20"
+witness = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+witness_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+witness_byte_size = 21487058
+method = "The complete already-held exact registered PDF was hash-checked in the bounded source audit. Each listed short citation was read as a page image rendered at 200 dpi, preserving its source-local course, cycle and part letters. No protected words, pericope titles, psalm responses, acclamation wording or modern translations are reproduced."
+implementation = "Keep each existing full primary byte-for-byte apart from adding its ordinary_disposition alternative relation; insert one adjacent Scripture-owned shorter row in the same group, with options longer/shorter. Short rows keep sparse source cycles. Existing unrelated groups, IDs, full readings, optional-year provisions and ritual substitutions are unchanged."
+qualification = "These are factual appointments in OLM 1981. This recovery is not full target-2008 or approved territorial Lectionary correspondence, is not exact liturgical wording, supplies no Latin/English body, and grants no publication right. Public-domain selected Bible output remains Bible reconstruction."
+deferred = "Ascension Vigil's short-form prose lead is not recovered: OLM 1981 n. 58 supplies the Day source only and does not establish a distinct Vigil or an exact Day-to-Vigil reuse warrant. Common-versus-B/C options, Year A ritual substitutions, and non-scriptural Exsultet or Sequence extents are outside this patch."
+
+[[seasonal_scriptural_short_forms_2026_10_20.rows]]
+mass = "palm-sunday"
+form = "main"
+proper = "Passion of the Lord"
+group = "passion-of-the-lord"
+artifact_page = 80
+printed_page = 26
+marginal_number = 38
+shorts = { "A" = "Matthew 27:11-54", "B" = "Mark 15:1-39", "C" = "Luke 23:1-49" }
+
+[[seasonal_scriptural_short_forms_2026_10_20.rows]]
+mass = "lent-1"
+form = "main"
+proper = "Second Reading"
+group = "second-reading"
+artifact_page = 73
+printed_page = 19
+marginal_number = 22
+shorts = { "A" = "Romans 5:12, 17-19" }
+
+[[seasonal_scriptural_short_forms_2026_10_20.rows]]
+mass = "lent-2"
+form = "main"
+proper = "Second Reading"
+group = "second-reading"
+artifact_page = 74
+printed_page = 20
+marginal_number = 27
+shorts = { "C" = "Philippians 3:20-4:1" }
+
+[[seasonal_scriptural_short_forms_2026_10_20.rows]]
+mass = "lent-3"
+form = "main"
+proper = "First Reading"
+group = "first-reading"
+artifact_page = 75
+printed_page = 21
+marginal_number = 29
+shorts = { "B" = "Exodus 20:1-3, 7-8, 12-17" }
+
+[[seasonal_scriptural_short_forms_2026_10_20.rows]]
+mass = "lent-3"
+form = "main"
+proper = "Gospel"
+group = "gospel"
+artifact_page = 75
+printed_page = 21
+marginal_number = 28
+shorts = { "A" = "John 4:5-15, 19b-26, 39a, 40-42" }
+
+[[seasonal_scriptural_short_forms_2026_10_20.rows]]
+mass = "lent-4"
+form = "main"
+proper = "Gospel"
+group = "gospel"
+artifact_page = 76
+printed_page = 22
+marginal_number = 31
+shorts = { "A" = "John 9:1, 6-9, 13-17, 34-38" }
+
+[[seasonal_scriptural_short_forms_2026_10_20.rows]]
+mass = "lent-5"
+form = "main"
+proper = "Gospel"
+group = "gospel"
+artifact_page = 78
+printed_page = 24
+marginal_number = 34
+shorts = { "A" = "John 11:3-7, 17, 20-27, 33b-45" }
+
+[[seasonal_scriptural_short_forms_2026_10_20.rows]]
+mass = "holy-family"
+form = "main"
+proper = "Gospel"
+group = "gospel"
+artifact_page = 67
+printed_page = 13
+marginal_number = 17
+shorts = { "B" = "Luke 2:22, 39-40" }
+
+[[seasonal_scriptural_short_forms_2026_10_20.rows]]
+mass = "easter-3"
+form = "main"
+proper = "Gospel"
+group = "gospel"
+artifact_page = 88
+printed_page = 34
+marginal_number = 48
+shorts = { "C" = "John 21:1-14" }
+
+[[seasonal_scriptural_short_forms_2026_10_20.rows]]
+mass = "lent-5-monday"
+form = "main"
+proper = "First Reading"
+group = "first-reading"
+artifact_page = 192
+printed_page = 138
+marginal_number = 251
+shorts = { "all" = "Daniel 13:41c-62" }
+
+[[seasonal_scriptural_short_forms_2026_10_20.rows]]
+mass = "ascension"
+form = "day"
+proper = "Second Reading"
+group = "second-reading"
+artifact_page = 93
+printed_page = 39
+marginal_number = 58
+shorts = { "B" = "Ephesians 4:1-7, 11-13" }
+
+[ordinary_time_short_forms_2026_10_20]
+recorded_on = "2026-10-20"
+witness = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+witness_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+method = "The exact held PDF hash was checked; the listed artifact pages were read as page images at 200 dpi. Only appointment and citation facts were retained; no source body, pericope title, incipit, or response was transcribed."
+scope = "Only the listed already-cataloged Ordinary Time Sunday identities and shorter readings are covered. Long primary citations, other cycles, IDs and antiphon numbering are preserved. This 1981 appointment evidence does not establish 2002/2008 Missal wording, official English Lectionary text, rights, annual occurrence, or whole-book completeness."
+regression = "tools/tests/test_postconciliar_ordinary_time_short_forms.py"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-3"
+proper = "Second Reading"
+cycle = "C"
+short_reference = "1 Corinthians 12:12-14, 27"
+long_references = ["1 Corinthians 12:12-30"]
+artifact_page = 100
+printed_page = 46
+lectionary_number = 69
+group = "second-reading"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-3"
+proper = "Gospel"
+cycle = "A"
+short_reference = "Matthew 4:12-17"
+long_references = ["Matthew 4:12-23"]
+artifact_page = 100
+printed_page = 46
+lectionary_number = 67
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-4"
+proper = "Second Reading"
+cycle = "C"
+short_reference = "1 Corinthians 13:4-13"
+long_references = ["1 Corinthians 12:31-13:13"]
+artifact_page = 102
+printed_page = 48
+lectionary_number = 72
+group = "second-reading"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-5"
+proper = "Second Reading"
+cycle = "C"
+short_reference = "1 Corinthians 15:3-8, 11"
+long_references = ["1 Corinthians 15:1-11"]
+artifact_page = 103
+printed_page = 49
+lectionary_number = 75
+group = "second-reading"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-6"
+proper = "Gospel"
+cycle = "A"
+short_reference = "Matthew 5:20-22a, 27-28, 33-34a, 37"
+long_references = ["Matthew 5:17-37"]
+artifact_page = 104
+printed_page = 50
+lectionary_number = 76
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-9"
+proper = "Gospel"
+cycle = "B"
+short_reference = "Mark 2:23-28"
+long_references = ["Mark 2:23-3:6"]
+artifact_page = 107
+printed_page = 53
+lectionary_number = 86
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-11"
+proper = "Gospel"
+cycle = "C"
+short_reference = "Luke 7:36-50"
+long_references = ["Luke 7:36-8:3"]
+artifact_page = 110
+printed_page = 56
+lectionary_number = 93
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-13"
+proper = "Gospel"
+cycle = "B"
+short_reference = "Mark 5:21-24, 35b-43"
+long_references = ["Mark 5:21-43"]
+artifact_page = 112
+printed_page = 58
+lectionary_number = 98
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-14"
+proper = "Gospel"
+cycle = "C"
+short_reference = "Luke 10:1-9"
+long_references = ["Luke 10:1-12, 17-20"]
+artifact_page = 114
+printed_page = 60
+lectionary_number = 102
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-15"
+proper = "Second Reading"
+cycle = "B"
+short_reference = "Ephesians 1:3-10"
+long_references = ["Ephesians 1:3-14"]
+artifact_page = 115
+printed_page = 61
+lectionary_number = 104
+group = "second-reading"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-15"
+proper = "Gospel"
+cycle = "A"
+short_reference = "Matthew 13:1-9"
+long_references = ["Matthew 13:1-23"]
+artifact_page = 115
+printed_page = 61
+lectionary_number = 103
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-16"
+proper = "Gospel"
+cycle = "A"
+short_reference = "Matthew 13:24-30"
+long_references = ["Matthew 13:24-43"]
+artifact_page = 116
+printed_page = 62
+lectionary_number = 106
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-17"
+proper = "Gospel"
+cycle = "A"
+short_reference = "Matthew 13:44-46"
+long_references = ["Matthew 13:44-52"]
+artifact_page = 117
+printed_page = 63
+lectionary_number = 109
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-19"
+proper = "Second Reading"
+cycle = "C"
+short_reference = "Hebrews 11:1-2, 8-12"
+long_references = ["Hebrews 11:1-2, 8-19"]
+artifact_page = 120
+printed_page = 66
+lectionary_number = 117
+group = "second-reading"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-19"
+proper = "Gospel"
+cycle = "C"
+short_reference = "Luke 12:35-40"
+long_references = ["Luke 12:32-48"]
+artifact_page = 120
+printed_page = 66
+lectionary_number = 117
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-24"
+proper = "Gospel"
+cycle = "C"
+short_reference = "Luke 15:1-10"
+long_references = ["Luke 15:1-32"]
+artifact_page = 125
+printed_page = 71
+lectionary_number = 132
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-25"
+proper = "Gospel"
+cycle = "C"
+short_reference = "Luke 16:10-13"
+long_references = ["Luke 16:1-13"]
+artifact_page = 127
+printed_page = 73
+lectionary_number = 135
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-26"
+proper = "Second Reading"
+cycle = "A"
+short_reference = "Philippians 2:1-5"
+long_references = ["Philippians 2:1-11"]
+artifact_page = 128
+printed_page = 74
+lectionary_number = 136
+group = "second-reading"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-27"
+proper = "Gospel"
+cycle = "B"
+short_reference = "Mark 10:2-12"
+long_references = ["Mark 10:2-16"]
+artifact_page = 130
+printed_page = 76
+lectionary_number = 140
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-28"
+proper = "Gospel"
+cycle = "A"
+short_reference = "Matthew 22:1-10"
+long_references = ["Matthew 22:1-14"]
+artifact_page = 131
+printed_page = 77
+lectionary_number = 142
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-28"
+proper = "Gospel"
+cycle = "B"
+short_reference = "Mark 10:17-27"
+long_references = ["Mark 10:17-30"]
+artifact_page = 131
+printed_page = 77
+lectionary_number = 143
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-29"
+proper = "Gospel"
+cycle = "B"
+short_reference = "Mark 10:42-45"
+long_references = ["Mark 10:35-45"]
+artifact_page = 133
+printed_page = 79
+lectionary_number = 146
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-32"
+proper = "Second Reading"
+cycle = "A"
+short_reference = "1 Thessalonians 4:13-14"
+long_references = ["1 Thessalonians 4:13-18"]
+artifact_page = 139
+printed_page = 85
+lectionary_number = 154
+group = "second-reading"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-32"
+proper = "Gospel"
+cycle = "B"
+short_reference = "Mark 12:41-44"
+long_references = ["Mark 12:38-44"]
+artifact_page = 139
+printed_page = 85
+lectionary_number = 155
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-32"
+proper = "Gospel"
+cycle = "C"
+short_reference = "Luke 20:27, 34-38"
+long_references = ["Luke 20:27-38"]
+artifact_page = 140
+printed_page = 86
+lectionary_number = 156
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.rows]]
+mass = "ot-33"
+proper = "Gospel"
+cycle = "A"
+short_reference = "Matthew 25:14-15, 19-21"
+long_references = ["Matthew 25:14-30"]
+artifact_page = 141
+printed_page = 87
+lectionary_number = 157
+group = "gospel"
+
+[[ordinary_time_short_forms_2026_10_20.unconfirmed_leads]]
+mass = "ot-21"
+proper = "Second Reading"
+cycle = "B"
+lead_reference = "Ephesians 5:2a, 25-32"
+artifact_page = 122
+printed_page = 68
+lectionary_number = 122
+observed_reference = "Ephesians 5:21-32"
+disposition = "The cited page and entry print no shorter alternative. The prose lead is preserved as unconfirmed; no structured option is added from this witness."
+
+
+[ascension_day_principal_optional_recovery_2026_10_20]
+recorded_on = "2026-10-20"
+mass = "ascension"
+form_id = "day"
+proper = "Second Reading"
+witness = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+witness_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+artifact_page = 93
+printed_page = 39
+marginal_number = 58
+method = "The exact registered held OLM PDF was hash-checked in the annual source audit; the page image was visually read at 200 dpi and independently reinspected. Only appointment/citation/option facts are retained here; no liturgical wording is transcribed."
+principal = "Ephesians 1:17-23 has no source year restriction and remains available in A, B, C. It is not an A-only appointment."
+optional_b = "Under the explicit optional B/C heading, B has Ephesians 4:1-13 (longer) or 4:1-7, 11-13 (shorter). Existing longer/shorter option IDs are preserved; both remain B-only."
+optional_c = "Under that heading, C has Hebrews 9:24-28; 10:19-23 as an optional Second Reading. It remains C-only."
+model = "All four options occupy one semantic Second Reading seat through the existing adjacent alternative group second-reading. No cross-seat selection relation or new schema is introduced. Common is source-given principal provision; no enacted celebration is inferred."
+prior_snapshot = "This bounded recovery supersedes only the Ascension Day cycle-folding defect within structural_findings.ad_libitum_folded_into_cycles. Earlier dated counts and the independent Holy Family/Baptism/Pentecost findings remain historical evidence or unresolved work."
+boundary = "OLM 1981 n. 58 establishes this source-local appointment run. It does not establish a distinct Ascension Vigil, Day-to-Vigil reuse, complete 2008 form/option correspondence, protected Lectionary wording, English publication rights or a whole-book denominator. Existing Vigil, source coverage, appointments and all other source rows are unchanged."
+regression = "tools/tests/test_postconciliar_ascension_options.py"
+
+
+[advent_primary_boundary_2026_10_20]
+verified = "2026-10-20"
+artifact_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+artifact_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+artifact_page = 59
+printed_page = 5
+lectionary_number = 2
+mass = "advent-1"
+form = "main"
+proper = "First Reading"
+cycle = "B"
+source_reference = "Isaiah 63:16b-17, 19b; 64:2b-7"
+previous_reference = "Isaiah 63:16b-17, 19b; 64:2-7"
+method = "Read the held source page image, including the opening part b on Isaiah 64:2. Correct only the source endpoint and exact divergence lookup key."
+numbering_boundary = "The existing Vulgate whole-verse destination Isaiah 63:16b-17; 64:1, 3-8 is retained unchanged. This source-citation repair does not establish textual subverse alignment or divide rendered Bible verses."
+negative_control = "The same page n. 3 prints Vulgate Psalm 24:4bc-5ab; the existing 2026-10-01 collation expressly identifies 4bc with the whole of Hebrew 25:4. Its canonical Hebrew whole-verse begin is retained."
+scope = "Factual 1981 source appointment only. No 2008 correspondence, protected body, translation, target identity or publication-rights status is promoted."
+
+
+[easter2_psalms_2026_10_20]
+verified = "2026-10-20"
+artifact_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+artifact_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+artifact_page = 86
+printed_page = 32
+lectionary_numbers = [43, 44, 45]
+mass = "easter-2"
+proper = "Responsorial Psalm"
+scope = "Factual1981source appointments read in held page images; no2008target wording, body or publication-rights promotion."
+source_reference_A = "Psalm 117:2-4, 13-15, 22-24"
+source_reference_B = "Psalm 117:2-4, 16ab-18, 22-24"
+source_reference_C = "Psalm 117:2-4, 22-24, 25-27a"
+method = "Replace the flattened all-cycle YearA Psalm with the three source-cycle appointments. Convert every sourceVulgate range through the existing scripts/_psalms owner; retain all endpoints, joins and part letters."
+
+[lent_easter_primary_appointments_2026_10_20]
+status = "bounded-page-image-factual-appointment-correction"
+reviewed_on = "2026-10-20"
+witness = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+witness_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+artifact_page = 188
+printed_page = 134
+number = 237
+mass = "lent-3-monday"
+proper = "Responsorial Psalm"
+occurrence = 2
+printed_psalm_cue = "Ps 42, 2. 3. 4"
+corrected_citation = "Psalm 43:2, 3, 4"
+correction = "Restore the source-appointed verse2 omitted from the second Psalm citation. The existing scripts/_psalms concordance maps Vulgate42:2 to Hebrew43:2. Retain both Psalm nodes, their source order, the first Psalm, acclamation and Gospel."
+negative_controls = "EasterIV Monday n279 at artifact205 prints Vulgate42:3,4 and remains unchanged. LentIII Tuesday n238 at artifact188 retains the recorded 2026-10-01 relation from Vulgate24:4bc to whole Hebrew25:4; no false Hebrew part letter is restored."
+boundary = "Appointment facts only. No protected wording, target2008 correspondence, language body, rights state, Common selection, or optional source path is promoted."
+
+
+[second_nativity_short_2026_10_20]
+verified = "2026-10-20"
+artifact_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+artifact_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+artifact_page = 69
+printed_page = 15
+lectionary_numbers = [19]
+mass = "second-sunday-after-nativity"
+proper = "Gospel"
+scope = "Factual1981source appointments read in held page images; no2008target wording, body or publication-rights promotion."
+long_reference = "John 1:1-18"
+short_reference = "John 1:1-5, 9-14"
+method = "Retain the existing long primary and add one adjacent exclusive shorter option through the existing ordinary_disposition contract."
+
+
+[ot15_year_c_psalm_alternative_2026_10_20]
+verified = "2026-10-20"
+artifact_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+artifact_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+artifact_page = 115
+printed_page = 61
+lectionary_number = 105
+mass = "ot-15"
+proper = "Responsorial Psalm"
+cycle = "C"
+source_reference = "Psalm 18:8, 9, 10, 11"
+source_numbering = "vulgate"
+canonical_reference = "Psalm 19:8, 9, 10, 11"
+canonical_numbering = "hebrew"
+method = "Read the held page image: the alternative follows vel. Convert each of its four disjoint source ranges through scripts/_psalms. Retain the principal appointment and add one exclusive sparse-YearC option in the existing same-slot contract."
+scope = "Factual1981 appointment only; no 2008 target wording, body, rights or cross-role option relation is established."
+
+[easter_vigil_same_seat_scripture_options_2026_10_20]
+status = "bounded-page-image-factual-appointment-recovery"
+reviewed_on = "2026-10-20"
+witness = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+witness_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+artifact_page = 84
+printed_page = 30
+number = 41
+mass = "easter-vigil"
+form_id = "main"
+source_cues = ["Gen 1, 1. 26-31a", "Gen 22, 1-2. 9a. 10-13. 15-18", "Ps 32, 4-5. 6-7. 12-13. 20 et 22"]
+canonical_citations = ["Genesis 1:1, 26-31a", "Genesis 22:1-2, 9a, 10-13, 15-18", "Psalm 33:4-5, 6-7, 12-13, 20, 22"]
+structure = "Three independent source-adjacent single-seat groups through the existing ordinary_disposition owner: first-reading longer/shorter, second-reading longer/shorter, and responsorial-psalm-after-the-first-reading psalm-103/psalm-32. Existing full primaries and all other source units are retained. No source-appointed option is made a display default."
+numbering = "Source Psalm 32 is read through the existing Psalm concordance as Hebrew 33; the actual mass-propers owner projects all five source ranges back to Vulgate 32 unchanged."
+boundary = "Factual 1981 Scripture appointments only. No protected body, rights promotion, target 2008 correspondence, reading-reduction path, Baptism-dependent post-Seventh Reading substitution or optional weekwide Lent Mass path is encoded."
+
+[ordinary_time_week18_tuesday_option_2026_10_20]
+recorded_on = "2026-10-20"
+witness_artifact_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+witness_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+artifact_page = 270
+printed_page = 216
+lectionary_number = 408
+mass = "ot-18-tuesday"
+proper = "Gospel"
+principal_reference = "Matthew 14:22-36"
+optional_reference = "Matthew 15:1-2, 10-14"
+source_standing = "ad-libitum-option"
+source_preference = "Especially when the principal Gospel was actually read on the preceding day in Year A; this is a preference, not a required condition."
+implementation = "Adjacent principal/ad-libitum options retain one semantic Gospel seat through the existing ordinary_disposition owner. The principal reference is unchanged."
+boundary = "Text-free 1981 source-local appointment metadata only. No protected wording, publication basis, complete target-2008 correspondence, or enacted prior reading is inferred. The distinct Monday n.407 actual-prior-Sunday conditional substitute remains a shared source-predicate obligation."
+
+[ordinary_time_week19_friday_option_2026_10_20]
+recorded_on = "2026-10-20"
+witness_artifact_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+witness_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+artifact_page = 275
+printed_page = 221
+lectionary_number = 417
+mass = "ot-19-friday"
+proper = "First Reading"
+cycle = "II"
+principal_reference = "Ezekiel 16:1-15, 60, 63"
+optional_reference = "Ezekiel 16:59-63"
+source_standing = "ad-libitum-option"
+implementation = "Adjacent principal/ad-libitum rows retain one semantic first-reading seat through the existing ordinary_disposition owner. The new member carries weekday_cycles II only; both original principal I/II readings remain unchanged."
+boundary = "Text-free 1981 source-local appointment metadata only. No Year I alternative, protected wording, publication basis, complete target-2008 correspondence, or enacted celebration is inferred."

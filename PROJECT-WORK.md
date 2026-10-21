@@ -79,8 +79,59 @@ tests and three Common-repair tests. Exact English absence records leave zero
 unaccounted oration slots in all three inherited calendar reports. All seven
 Bible indexes, Propers structures and census are current; source validation,
 the reviewed catalog checkpoint and the locked normal preview build/verify
-pass. Six focused browser cases are the next check; no full-year textual
-completion or deployment is claimed.
+pass. All six focused native browser cases now pass on that checkpoint, with no
+console, network or HTTP diagnostics; seven captured images were reviewed and
+all owned processes and listeners closed. This proves those reading paths,
+not full-year textual completion or deployment.
+
+
+### Further annual source corrections, 2026-10-20
+
+The next bounded repair restores eight truncated TLM primary readings, removes
+Raphael's and Simon and Jude's extra readings copied from neighboring
+formularies, and supplies Nicholas's appointed Hebrews reading. Twenty-two
+chant-citation corrections and seven explicit uncited chant appointments also
+retain their controlling page evidence. Thomas of Villanova now uses Bishop I;
+Anthony uses the nonbishop Doctor Common with his named own orations, and Urban
+uses the printed second Papal prayer set while retaining his distinct Collect.
+These are source appointment repairs, not a claim that all chant words are held.
+
+Seventeen further Latin bodies are recovered from separately identified
+historical witnesses: All Saints four, Immaculate Conception four, and Christmas
+nine. Immaculate Conception's Secret retains the conservative collated grade
+for the dated feast selection; its parenthetical alternative is unrepresented.
+Historical short conclusions remain separate from target conclusions, including
+the Christmas Day Collect's printed response. The source-reviewed Schott record
+now permits only seven additional enumerated Latin prayer blocks, supported by
+its original contents, continuous pagination and matching library catalog;
+appendix attribution is a corroborated bibliographic inference. The complete
+scan and all other excluded material remain restricted.
+
+Novus Ordo repairs add source-printed shorter readings and alternatives, restore
+the cycle-specific Easter II Psalms and Lent III Monday's missing Psalm verse,
+and qualify Advent I B's Isaiah endpoint. Seven dated Common referrals now
+carry an explicit uncited acclamation body gap instead of dropping the role;
+two permitted Common-derived short Gospels retain that source qualification.
+The Ordinary slot inventory explicitly seats the new shorter Second Reading
+label at its existing second-reading position. The same citation owner records Haggai and Thessalonian verse correspondences.
+Four isolated halves of joined held verses refuse with the actual addressing
+reason; no words or part boundaries are invented. Full source, generated-data
+and reader verification is recorded with each validated checkpoint; remaining
+source/body gaps and coupled reading-path work still prevent a full annual
+text-completeness claim.
+
+
+This source checkpoint passes 167 affected owner tests, 25 Latin-provenance
+tests, six exact-seat tests, the repaired citation-owner module, all new bounded
+NO source tests, and the English coverage checks. All seven Bible indexes and
+numbering projections are current; no Bible chapter text changed. Propers,
+source structures and census are generated, all three English reports have
+zero unaccounted slots, full source validation and the locked normal preview
+build/verification pass. Exactly 528 reviewed site inputs were refreshed,
+including 20 new bounded text fragments; unrelated bindings are preserved.
+The source-family review remains 162 pending and zero screened. Conditional
+Common selection, coupled NO paths, remaining chant appointments and bodies,
+and a fresh integrated four-year reader run remain active work.
 
 ## Missal reader C1 truthful coverage, 2026-10-19
 
