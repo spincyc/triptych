@@ -960,9 +960,10 @@
       choices[group] = parts[2];
     }
     const prepared = Seating.prepareProperAppointments(properRows, {
-      calendar: request.edition.id, entrance: request.entrance,
+      calendar: request.edition.id, entrance: request.entrance, mass: mass.key,
       date: dayContext && dayContext.date || null,
       season: dayContext && dayContext.season || null,
+      usageContext: dayContext && dayContext.usageContext,
       facts: structure.proper_appointment_facts || {}, choices: choices
     });
     prepared.activeRows = prepared.rows.filter(function (row) {
@@ -1988,7 +1989,10 @@
         date: derived.date,
         anchors: derived.liturgicalYear && derived.liturgicalYear.anchors || null,
         appointments: formularyAppointments(mass, formSelection.form, branch.winner)
-      }), {date: derived.date, season: derived.season}
+      }), {date: derived.date, season: derived.season, usageContext: {
+        calendar: derived.calendar, entrance: request.entrance, branch: branch, readable: readable,
+        mass: mass, formId: formSelection.id || 'main'
+      }}
     );
     const events = seated.events;
     assertExplicitWitnesses(events, adaptedRequest, input.structure);
@@ -2012,6 +2016,7 @@
       },
       resolved: resolved,
       events: events,
+      ...(hasOwn(seated.prepared, 'usage') ? {properAppointmentUsage: seated.prepared.usage} : {}),
       coverage: coverageFor(
         input.structure, mass, seated.prepared.activeRows.map(function (row) { return row.proper; }),
         adaptedRequest, ordinary, events, seated.ordinaryUnresolved, formSelection.form, seated.prepared.unresolved
@@ -2105,6 +2110,7 @@
       calendarResult: null,
       resolved: resolved,
       events: events,
+      ...(hasOwn(seated.prepared, 'usage') ? {properAppointmentUsage: seated.prepared.usage} : {}),
       coverage: coverageFor(
         input.structure, mass, seated.prepared.activeRows.map(function (row) { return row.proper; }),
         request, ordinary, events, seated.ordinaryUnresolved, formSelection.form, seated.prepared.unresolved
@@ -2129,13 +2135,16 @@
   }
 
   function appointmentFactIdentity(facts) {
-    return Object.keys(facts || {}).sort().map(function (id) {
-      const fact = facts[id];
-      return [id, Object.keys(fact).sort(), fact.edition, fact.basis, fact.values,
-        Object.keys(fact.season_values || {}).sort().map(function (season) {
-          return [season, fact.season_values[season]];
-        })];
-    });
+    // Compare every source selector and binding proof, independent of mapping
+    // insertion order. Neither missing bindings nor per-Mass bases disappear.
+    function identity(value) {
+      if (Array.isArray(value)) return ['array', value.map(identity)];
+      if (value && typeof value === 'object') return ['object', Object.keys(value).sort().map(function (key) {
+        return [key, identity(value[key])];
+      })];
+      return [typeof value, value];
+    }
+    return identity(facts || {});
   }
 
   function cliLanguageMaterial(proper, request, generated) {
@@ -2396,8 +2405,15 @@
     }
     const adaptedRequest = Object.assign({}, request, { lectionary: lectionary });
     const prepared = prepareAppointments(generatedMass, generatedRows, adaptedRequest, input.structure, {
-      date: input.derived.date, season: input.derived.season
+      date: input.derived.date, season: input.derived.season, usageContext: {
+        calendar: input.derived.calendar, entrance: request.entrance, branch: branch, readable: readable,
+        mass: generatedMass, formId: formSelection.id || 'main'
+      }
     });
+    if (hasOwn(mass, 'proper_appointment_usage') !== hasOwn(prepared, 'usage') ||
+        !sameJson(mass.proper_appointment_usage, prepared.usage)) {
+      throw new Error('mass-today Proper usage context disagrees with the original calendar owner');
+    }
     const payloadBySourceIndex = new Map();
     generatedRows.forEach(function (generatedRow, cliIndex) {
       payloadBySourceIndex.set(generatedRow.sourceIndex, {
@@ -2529,6 +2545,7 @@
       },
       resolved: resolved,
       events: events,
+      ...(hasOwn(prepared, 'usage') ? {properAppointmentUsage: prepared.usage} : {}),
       coverage: coverageFor(
         input.structure, generatedMass,
         prepared.activeRows.map(function (row) { return row.proper; }), adaptedRequest,

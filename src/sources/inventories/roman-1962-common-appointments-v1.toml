@@ -1,0 +1,302 @@
+appointment_collation_schema = 1
+calendar = "roman-1962"
+collated_on = "2026-10-20"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+artifact_byte_size = 82815941
+scope = "Source-owned post-Epistle chant appointments in the universal Commons, artifacts809-850/printed[1]-[42]; no complete reader, whole Common body, historical-recension or annual applicability certificate."
+method = "Direct inspection of the held controlling page images and numbered local chant cues, with RG73-76, RG469 and the Common opening rules. Biblical component citations remain Bible reconstructions; no new exact liturgical wording or publication permission is supplied."
+limits = "The printed24 Common Mass forms,17 prayer-option sets,4 additional-reading headings and314 numbered own units are distinct denominators. The model splits the Doctor prayer forms. Saturday BVM forms, local Commons, votives and Dead are separate scopes. Non-Paschal Martyr forms do not acquire a Paschal chant option from the general adaptation rubric. A civil Triduum token does not locate the Easter Vigil Mass phase."
+foreign_recension_boundary = "These source-owned conditions establish only roman-1962 applicability. No pre-1955 applicability is inferred from inherited wording."
+
+[[repairs]]
+mass = "commune-summorum-pontificum"
+proper = "Alleluia (Tempore paschali)"
+target_id = "roman-1962:body:common-popes:alleluia:2"
+source_unit = 4184
+source_locus = "1962 CMAA facsimile, artifact p. 810, printed [2]; raw text page line 70; Printed text unit 4184"
+finding = "missing-paschal-identity"
+body_boundary = "No new exact liturgical body or rights judgment is supplied. Citation sets identify appointments; adapted Missal wording must not be replaced by a whole Bible verse and presented as exact Missal text."
+
+[[repairs]]
+mass = "commune-unius-martyris-2"
+proper = "Alleluia"
+target_id = "roman-1962:body:common-martyr-bishop-2:alleluia:1"
+source_unit = 4208
+source_locus = "1962 CMAA facsimile, artifact p. 814, printed [6]; raw text page line 8; Printed text unit 4208"
+finding = "missing-regular-identity"
+body_boundary = "No new exact liturgical body or rights judgment is supplied. Citation sets identify appointments; adapted Missal wording must not be replaced by a whole Bible verse and presented as exact Missal text."
+
+[[repairs]]
+mass = "commune-plurimorum-martyrum-3"
+proper = "Alleluia"
+target_id = "roman-1962:body:common-martyrs-3:alleluia:1"
+source_unit = 4264
+source_locus = "1962 CMAA facsimile, artifact p. 821, printed [13]; raw text page line 27; Printed text unit 4264"
+finding = "missing-regular-identity"
+body_boundary = "No new exact liturgical body or rights judgment is supplied. Citation sets identify appointments; adapted Missal wording must not be replaced by a whole Bible verse and presented as exact Missal text."
+
+[[repairs]]
+mass = "commune-confessoris-pontificis-1"
+proper = "Alleluia (Tempore paschali)"
+target_id = "roman-1962:body:common-confessor-bishop-1:alleluia:2"
+source_unit = 4312
+source_locus = "1962 CMAA facsimile, artifact p. 827, printed [19]; raw text page line 60; Printed text unit 4312"
+finding = "missing-paschal-identity"
+body_boundary = "No new exact liturgical body or rights judgment is supplied. Citation sets identify appointments; adapted Missal wording must not be replaced by a whole Bible verse and presented as exact Missal text."
+
+[[repairs]]
+mass = "commune-confessoris-pontificis-2"
+proper = "Alleluia (Tempore paschali)"
+target_id = "roman-1962:body:common-confessor-bishop-2:alleluia:2"
+source_unit = 4324
+source_locus = "1962 CMAA facsimile, artifact p. 829, printed [21]; raw text page line 22; Printed text unit 4324"
+finding = "regular-paschal-conflation"
+body_boundary = "No new exact liturgical body or rights judgment is supplied. Citation sets identify appointments; adapted Missal wording must not be replaced by a whole Bible verse and presented as exact Missal text."
+
+[[repairs]]
+mass = "commune-confessoris-non-pontificis-1"
+proper = "Alleluia (Tempore paschali)"
+target_id = "roman-1962:body:common-confessor-1:alleluia:2"
+source_unit = 4351
+source_locus = "1962 CMAA facsimile, artifact p. 832, printed [24]; raw text page line 57; Printed text unit 4351"
+finding = "regular-paschal-conflation"
+body_boundary = "No new exact liturgical body or rights judgment is supplied. Citation sets identify appointments; adapted Missal wording must not be replaced by a whole Bible verse and presented as exact Missal text."
+
+[[repairs]]
+mass = "commune-confessoris-non-pontificis-2"
+proper = "Alleluia (Tempore paschali)"
+target_id = "roman-1962:body:common-confessor-2:alleluia:2"
+source_unit = 4363
+source_locus = "1962 CMAA facsimile, artifact p. 834, printed [26]; raw text page line 13; Printed text unit 4363"
+finding = "regular-paschal-conflation"
+body_boundary = "No new exact liturgical body or rights judgment is supplied. Citation sets identify appointments; adapted Missal wording must not be replaced by a whole Bible verse and presented as exact Missal text."
+
+[[repairs]]
+mass = "commune-abbatum"
+proper = "Alleluia (Tempore paschali)"
+target_id = "roman-1962:body:common-abbots:alleluia:2"
+source_unit = 4375
+source_locus = "1962 CMAA facsimile, artifact p. 835, printed [27]; raw text page line 55; Printed text unit 4375"
+finding = "regular-paschal-conflation"
+body_boundary = "No new exact liturgical body or rights judgment is supplied. Citation sets identify appointments; adapted Missal wording must not be replaced by a whole Bible verse and presented as exact Missal text."
+
+[[repairs]]
+mass = "commune-virginum-1"
+proper = "Alleluia (Tempore paschali)"
+target_id = "roman-1962:body:common-virgin-martyr-1:alleluia:2"
+source_unit = 4387
+source_locus = "1962 CMAA facsimile, artifact p. 837, printed [29]; raw text page line 18; Printed text unit 4387"
+finding = "regular-paschal-conflation"
+body_boundary = "No new exact liturgical body or rights judgment is supplied. Citation sets identify appointments; adapted Missal wording must not be replaced by a whole Bible verse and presented as exact Missal text."
+
+[[repairs]]
+mass = "commune-virginum-2"
+proper = "Alleluia (Tempore paschali)"
+target_id = "roman-1962:body:common-virgin-martyr-2:alleluia:2"
+source_unit = 4399
+source_locus = "1962 CMAA facsimile, artifact p. 838, printed [30]; raw text page line 58; Printed text unit 4399"
+finding = "missing-form-reading-choice"
+body_boundary = "No new exact liturgical body or rights judgment is supplied. Citation sets identify appointments; adapted Missal wording must not be replaced by a whole Bible verse and presented as exact Missal text."
+
+[[repairs]]
+mass = "commune-virginum-3"
+proper = "Alleluia (Tempore paschali)"
+target_id = "roman-1962:body:common-virgin-1:alleluia:2"
+source_unit = 4415
+source_locus = "1962 CMAA facsimile, artifact p. 840, printed [32]; raw text page line 70; Printed text unit 4415"
+finding = "regular-paschal-conflation"
+body_boundary = "No new exact liturgical body or rights judgment is supplied. Citation sets identify appointments; adapted Missal wording must not be replaced by a whole Bible verse and presented as exact Missal text."
+
+[[repairs]]
+mass = "commune-non-virginum-1"
+proper = "Alleluia (Tempore paschali)"
+target_id = "roman-1962:body:common-woman-martyr:alleluia:2"
+source_unit = 4438
+source_locus = "1962 CMAA facsimile, artifact p. 843, printed [35]; raw text page line 71; Printed text unit 4438"
+finding = "missing-paschal-identity"
+body_boundary = "No new exact liturgical body or rights judgment is supplied. Citation sets identify appointments; adapted Missal wording must not be replaced by a whole Bible verse and presented as exact Missal text."
+
+[[repairs]]
+mass = "commune-non-virginum-2"
+proper = "Alleluia (Tempore paschali)"
+target_id = "roman-1962:body:common-woman:alleluia:2"
+source_unit = 4453
+source_locus = "1962 CMAA facsimile, artifact p. 846, printed [38]; raw text page line 4; Printed text unit 4453"
+finding = "missing-paschal-identity"
+body_boundary = "No new exact liturgical body or rights judgment is supplied. Citation sets identify appointments; adapted Missal wording must not be replaced by a whole Bible verse and presented as exact Missal text."
+
+[[bindings]]
+mass = "commune-summorum-pontificum"
+source_appointment_owner = "commune-summorum-pontificum"
+source_units = [4181, 4182, 4183, 4184]
+source_loci = ["1962 CMAA facsimile, artifact p. 810, printed [2]; raw text page line 50; Printed text unit 4181", "1962 CMAA facsimile, artifact p. 810, printed [2]; raw text page line 55; Printed text unit 4182", "1962 CMAA facsimile, artifact p. 810, printed [2]; raw text page line 60; Printed text unit 4183", "1962 CMAA facsimile, artifact p. 810, printed [2]; raw text page line 70; Printed text unit 4184"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-unius-martyris-1"
+source_appointment_owner = "commune-unius-martyris-1"
+source_units = [4196, 4197, 4198]
+source_loci = ["1962 CMAA facsimile, artifact p. 812, printed [4]; raw text page line 40; Printed text unit 4196", "1962 CMAA facsimile, artifact p. 812, printed [4]; raw text page line 47; Printed text unit 4197", "1962 CMAA facsimile, artifact p. 812, printed [4]; raw text page line 52; Printed text unit 4198"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-unius-martyris-2"
+source_appointment_owner = "commune-unius-martyris-2"
+source_units = [4207, 4208, 4209]
+source_loci = ["1962 CMAA facsimile, artifact p. 814, printed [6]; raw text page line 4; Printed text unit 4207", "1962 CMAA facsimile, artifact p. 814, printed [6]; raw text page line 8; Printed text unit 4208", "1962 CMAA facsimile, artifact p. 814, printed [6]; raw text page line 12; Printed text unit 4209"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-unius-martyris-3"
+source_appointment_owner = "commune-unius-martyris-3"
+source_units = [4218, 4219, 4220]
+source_loci = ["1962 CMAA facsimile, artifact p. 815, printed [7]; raw text page line 16; Printed text unit 4218", "1962 CMAA facsimile, artifact p. 815, printed [7]; raw text page line 21; Printed text unit 4219", "1962 CMAA facsimile, artifact p. 815, printed [7]; raw text page line 26; Printed text unit 4220"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-unius-martyris-4"
+source_appointment_owner = "commune-unius-martyris-4"
+source_units = [4229, 4230, 4231]
+source_loci = ["1962 CMAA facsimile, artifact p. 816, printed [8]; raw text page line 44; Printed text unit 4229", "1962 CMAA facsimile, artifact p. 816, printed [8]; raw text page line 50; Printed text unit 4230", "1962 CMAA facsimile, artifact p. 816, printed [8]; raw text page line 56; Printed text unit 4231"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-plurimorum-martyrum-1"
+source_appointment_owner = "commune-plurimorum-martyrum-1"
+source_units = [4241, 4242, 4243]
+source_loci = ["1962 CMAA facsimile, artifact p. 818, printed [10]; raw text page line 44; Printed text unit 4241", "1962 CMAA facsimile, artifact p. 818, printed [10]; raw text page line 50; Printed text unit 4242", "1962 CMAA facsimile, artifact p. 818, printed [10]; raw text page line 56; Printed text unit 4243"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-plurimorum-martyrum-2"
+source_appointment_owner = "commune-plurimorum-martyrum-2"
+source_units = [4252, 4253, 4254]
+source_loci = ["1962 CMAA facsimile, artifact p. 820, printed [12]; raw text page line 2; Printed text unit 4252", "1962 CMAA facsimile, artifact p. 820, printed [12]; raw text page line 8; Printed text unit 4253", "1962 CMAA facsimile, artifact p. 820, printed [12]; raw text page line 13; Printed text unit 4254"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-plurimorum-martyrum-3"
+source_appointment_owner = "commune-plurimorum-martyrum-3"
+source_units = [4263, 4264, 4265]
+source_loci = ["1962 CMAA facsimile, artifact p. 821, printed [13]; raw text page line 21; Printed text unit 4263", "1962 CMAA facsimile, artifact p. 821, printed [13]; raw text page line 27; Printed text unit 4264", "1962 CMAA facsimile, artifact p. 821, printed [13]; raw text page line 32; Printed text unit 4265"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-martyrum-tempore-paschali-1"
+source_appointment_owner = "commune-martyrum-tempore-paschali-1"
+source_units = [4278]
+source_loci = ["1962 CMAA facsimile, artifact p. 823, printed [15]; raw text page line 62; Printed text unit 4278"]
+selection_boundary = "A single printed Paschal acclamation remains a singleton, not an invented alternative group."
+
+[[bindings]]
+mass = "commune-martyrum-tempore-paschali-2"
+source_appointment_owner = "commune-martyrum-tempore-paschali-2"
+source_units = [4295]
+source_loci = ["1962 CMAA facsimile, artifact p. 825, printed [17]; raw text page line 57; Printed text unit 4295"]
+selection_boundary = "A single printed Paschal acclamation remains a singleton, not an invented alternative group."
+
+[[bindings]]
+mass = "commune-confessoris-pontificis-1"
+source_appointment_owner = "commune-confessoris-pontificis-1"
+source_units = [4309, 4310, 4311, 4312]
+source_loci = ["1962 CMAA facsimile, artifact p. 827, printed [19]; raw text page line 41; Printed text unit 4309", "1962 CMAA facsimile, artifact p. 827, printed [19]; raw text page line 46; Printed text unit 4310", "1962 CMAA facsimile, artifact p. 827, printed [19]; raw text page line 51; Printed text unit 4311", "1962 CMAA facsimile, artifact p. 827, printed [19]; raw text page line 60; Printed text unit 4312"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-confessoris-pontificis-2"
+source_appointment_owner = "commune-confessoris-pontificis-2"
+source_units = [4321, 4322, 4323, 4324]
+source_loci = ["1962 CMAA facsimile, artifact p. 829, printed [21]; raw text page line 2; Printed text unit 4321", "1962 CMAA facsimile, artifact p. 829, printed [21]; raw text page line 7; Printed text unit 4322", "1962 CMAA facsimile, artifact p. 829, printed [21]; raw text page line 13; Printed text unit 4323", "1962 CMAA facsimile, artifact p. 829, printed [21]; raw text page line 22; Printed text unit 4324"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-doctorum-pontificis"
+source_appointment_owner = "commune-doctorum-pontificis"
+source_units = [4333, 4334, 4335, 4336]
+source_loci = ["1962 CMAA facsimile, artifact p. 830, printed [22]; raw text page line 43; Printed text unit 4333", "1962 CMAA facsimile, artifact p. 830, printed [22]; raw text page line 48; Printed text unit 4334", "1962 CMAA facsimile, artifact p. 830, printed [22]; raw text page line 53; Printed text unit 4335", "1962 CMAA facsimile, artifact p. 830, printed [22]; raw text page line 62; Printed text unit 4336"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-doctorum-non-pontificis"
+source_appointment_owner = "commune-doctorum-pontificis"
+source_units = [4333, 4334, 4335, 4336]
+source_loci = ["1962 CMAA facsimile, artifact p. 830, printed [22]; raw text page line 43; Printed text unit 4333", "1962 CMAA facsimile, artifact p. 830, printed [22]; raw text page line 48; Printed text unit 4334", "1962 CMAA facsimile, artifact p. 830, printed [22]; raw text page line 53; Printed text unit 4335", "1962 CMAA facsimile, artifact p. 830, printed [22]; raw text page line 62; Printed text unit 4336"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-confessoris-non-pontificis-1"
+source_appointment_owner = "commune-confessoris-non-pontificis-1"
+source_units = [4348, 4349, 4350, 4351]
+source_loci = ["1962 CMAA facsimile, artifact p. 832, printed [24]; raw text page line 36; Printed text unit 4348", "1962 CMAA facsimile, artifact p. 832, printed [24]; raw text page line 42; Printed text unit 4349", "1962 CMAA facsimile, artifact p. 832, printed [24]; raw text page line 48; Printed text unit 4350", "1962 CMAA facsimile, artifact p. 832, printed [24]; raw text page line 57; Printed text unit 4351"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-confessoris-non-pontificis-2"
+source_appointment_owner = "commune-confessoris-non-pontificis-2"
+source_units = [4360, 4361, 4362, 4363]
+source_loci = ["1962 CMAA facsimile, artifact p. 833, printed [25]; raw text page line 73; Printed text unit 4360", "1962 CMAA facsimile, artifact p. 833, printed [25]; raw text page line 78; Printed text unit 4361", "1962 CMAA facsimile, artifact p. 834, printed [26]; raw text page line 4; Printed text unit 4362", "1962 CMAA facsimile, artifact p. 834, printed [26]; raw text page line 13; Printed text unit 4363"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-abbatum"
+source_appointment_owner = "commune-abbatum"
+source_units = [4372, 4373, 4374, 4375]
+source_loci = ["1962 CMAA facsimile, artifact p. 835, printed [27]; raw text page line 35; Printed text unit 4372", "1962 CMAA facsimile, artifact p. 835, printed [27]; raw text page line 41; Printed text unit 4373", "1962 CMAA facsimile, artifact p. 835, printed [27]; raw text page line 46; Printed text unit 4374", "1962 CMAA facsimile, artifact p. 835, printed [27]; raw text page line 55; Printed text unit 4375"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-virginum-1"
+source_appointment_owner = "commune-virginum-1"
+source_units = [4384, 4385, 4386, 4387]
+source_loci = ["1962 CMAA facsimile, artifact p. 836, printed [28]; raw text page line 75; Printed text unit 4384", "1962 CMAA facsimile, artifact p. 836, printed [28]; raw text page line 79; Printed text unit 4385", "1962 CMAA facsimile, artifact p. 837, printed [29]; raw text page line 6; Printed text unit 4386", "1962 CMAA facsimile, artifact p. 837, printed [29]; raw text page line 18; Printed text unit 4387"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-virginum-2"
+source_appointment_owner = "commune-virginum-2"
+source_units = [4396, 4397, 4398, 4399]
+source_loci = ["1962 CMAA facsimile, artifact p. 838, printed [30]; raw text page line 35; Printed text unit 4396", "1962 CMAA facsimile, artifact p. 838, printed [30]; raw text page line 41; Printed text unit 4397", "1962 CMAA facsimile, artifact p. 838, printed [30]; raw text page line 46; Printed text unit 4398", "1962 CMAA facsimile, artifact p. 838, printed [30]; raw text page line 58; Printed text unit 4399"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-virginum-3"
+source_appointment_owner = "commune-virginum-3"
+source_units = [4412, 4413, 4414, 4415]
+source_loci = ["1962 CMAA facsimile, artifact p. 840, printed [32]; raw text page line 46; Printed text unit 4412", "1962 CMAA facsimile, artifact p. 840, printed [32]; raw text page line 52; Printed text unit 4413", "1962 CMAA facsimile, artifact p. 840, printed [32]; raw text page line 58; Printed text unit 4414", "1962 CMAA facsimile, artifact p. 840, printed [32]; raw text page line 70; Printed text unit 4415"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-virginum-4"
+source_appointment_owner = "commune-virginum-4"
+source_units = [4424, 4425, 4426, 4427]
+source_loci = ["1962 CMAA facsimile, artifact p. 842, printed [34]; raw text page line 17; Printed text unit 4424", "1962 CMAA facsimile, artifact p. 842, printed [34]; raw text page line 22; Printed text unit 4425", "1962 CMAA facsimile, artifact p. 842, printed [34]; raw text page line 27; Printed text unit 4426", "1962 CMAA facsimile, artifact p. 842, printed [34]; raw text page line 38; Printed text unit 4427"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-non-virginum-1"
+source_appointment_owner = "commune-non-virginum-1"
+source_units = [4435, 4436, 4437, 4438]
+source_loci = ["1962 CMAA facsimile, artifact p. 843, printed [35]; raw text page line 50; Printed text unit 4435", "1962 CMAA facsimile, artifact p. 843, printed [35]; raw text page line 54; Printed text unit 4436", "1962 CMAA facsimile, artifact p. 843, printed [35]; raw text page line 59; Printed text unit 4437", "1962 CMAA facsimile, artifact p. 843, printed [35]; raw text page line 71; Printed text unit 4438"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-non-virginum-2"
+source_appointment_owner = "commune-non-virginum-2"
+source_units = [4450, 4451, 4452, 4453]
+source_loci = ["1962 CMAA facsimile, artifact p. 845, printed [37]; raw text page line 63; Printed text unit 4450", "1962 CMAA facsimile, artifact p. 845, printed [37]; raw text page line 69; Printed text unit 4451", "1962 CMAA facsimile, artifact p. 845, printed [37]; raw text page line 74; Printed text unit 4452", "1962 CMAA facsimile, artifact p. 846, printed [38]; raw text page line 4; Printed text unit 4453"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-dedicationis-ecclesiae"
+source_appointment_owner = "commune-dedicationis-ecclesiae"
+source_units = [4464, 4465, 4466, 4467]
+source_loci = ["1962 CMAA facsimile, artifact p. 847, printed [39]; raw text page line 52; Printed text unit 4464", "1962 CMAA facsimile, artifact p. 847, printed [39]; raw text page line 57; Printed text unit 4465", "1962 CMAA facsimile, artifact p. 847, printed [39]; raw text page line 62; Printed text unit 4466", "1962 CMAA facsimile, artifact p. 847, printed [39]; raw text page line 71; Printed text unit 4467"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."
+
+[[bindings]]
+mass = "commune-festorum-bmv"
+source_appointment_owner = "commune-festorum-bmv"
+source_units = [4479, 4480, 4481, 4482, 4483]
+source_loci = ["1962 CMAA facsimile, artifact p. 849, printed [41]; raw text page line 63; Printed text unit 4479", "1962 CMAA facsimile, artifact p. 849, printed [41]; raw text page line 69; Printed text unit 4480", "1962 CMAA facsimile, artifact p. 849, printed [41]; raw text page line 74; Printed text unit 4481", "1962 CMAA facsimile, artifact p. 850, printed [42]; raw text page line 4; Printed text unit 4482", "1962 CMAA facsimile, artifact p. 850, printed [42]; raw text page line 14; Printed text unit 4483"]
+selection_boundary = "Gradual applicability and alternative acclamation members are source-owned; exact source coordinates retain their appointment owners independently of terminal wording references."

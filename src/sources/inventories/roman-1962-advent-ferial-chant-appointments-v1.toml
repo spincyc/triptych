@@ -1,0 +1,84 @@
+appointment_collation_schema = 1
+calendar = "roman-1962"
+collated_on = "2026-10-20"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+artifact_byte_size = 82815941
+scope = "Exactly four Advent Sunday Alleluia appointments and their printed ferial-use omission clauses; no whole-body, full-year, other season, historical-recension or Mass-category certificate."
+method = "Direct inspection of the four held controlling page images; source wording is preserved and the factual omission rule is paraphrased. Actual use is the canonical settled selected-winner/readable/current-Mass provenance, never season, weekday, a key prefix or advertised ferial availability alone."
+body_boundary = "No new liturgical body, translation, Bible reconstruction or rights judgment. Existing words, citations, source order and source indices remain unchanged. No replacement Tract is appointed."
+fact_id = "roman-1962-advent-sunday-alleluia-use"
+source_fact_values = ["chant-present", "chant-omitted"]
+own_sunday_value = "chant-present"
+borrowed_feria_value = "chant-omitted"
+unknown_use = "Unresolved applicability; neither a default omission nor a manual choice that attests calendar use."
+foreign_recension_boundary = "These target rubrics establish roman-1962 applicability only. Inherited wording does not attest pre-1955 source applicability."
+
+[[appointments]]
+mass = "advent-1"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+source_index = 4
+source_unit = 5
+gradual_source_unit = 4
+artifact_page = 83
+printed_page = "2"
+column = "L"
+page_image_sha256 = "e58f31e277f06f1c1d8b1410cc13cd2d9de34b2e4a69578bbded2416fb75e900"
+source_locus = "Held 1962 CMAA facsimile, artifact p. 83, printed p. 2, L column, omission clause between Gradual4 and Alleluia5."
+finding = "During Advent ferial reuse of this Sunday Mass, retain only the Gradual and omit the Alleluia with its following verse. The Sunday use retains its printed Alleluia."
+
+[[appointments]]
+mass = "advent-2"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+source_index = 4
+source_unit = 15
+gradual_source_unit = 14
+artifact_page = 84
+printed_page = "3"
+column = "R"
+page_image_sha256 = "759d135197c2ce75db61f5200eab418310e1fa42b679c1565e30f6df6672e0c9"
+source_locus = "Held 1962 CMAA facsimile, artifact p. 84, printed p. 3, R column, omission clause between Gradual14 and Alleluia15."
+finding = "During Advent ferial reuse of this Sunday Mass, retain only the Gradual and omit the Alleluia with its following verse. The Sunday use retains its printed Alleluia."
+
+[[appointments]]
+mass = "advent-3"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+source_index = 4
+source_unit = 25
+gradual_source_unit = 24
+artifact_page = 86
+printed_page = "5"
+column = "L"
+page_image_sha256 = "54ea4f4e4ee8c0d26df4ad2b0d94afd77fce05b80ea7cca45ea39bcc4f924ef8"
+source_locus = "Held 1962 CMAA facsimile, artifact p. 86, printed p. 5, L column, omission clause between Gradual24 and Alleluia25."
+finding = "During Advent ferial reuse of this Sunday Mass, retain only the Gradual and omit the Alleluia with its following verse. The Sunday use retains its printed Alleluia."
+
+[[appointments]]
+mass = "advent-4"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+source_index = 4
+source_unit = 92
+gradual_source_unit = 91
+artifact_page = 95
+printed_page = "14 (sequence bounded by printed13 and15)"
+column = "R"
+page_image_sha256 = "7668f1762bc93ae5517dbfca3e3c8f4f9cdb22be3ec633032f73c08688e3f4dd"
+source_locus = "Held 1962 CMAA facsimile, artifact p. 95, printed p. 14 (sequence bounded by printed13 and15), R column, omission clause between Gradual91 and Alleluia92."
+finding = "During Advent ferial reuse of this Sunday Mass, retain only the Gradual and omit the Alleluia with its following verse. The Sunday use retains its printed Alleluia."
+
+[[source_contrasts]]
+scope = "Sundays after Pentecost"
+artifact_page = 459
+printed_page = "378"
+column = "L"
+page_image_sha256 = "7066ed6e2d0aa02ef524f23e42e1d560cc576838ff35685c3cd281788f74551a"
+source_locus = "Held 1962 CMAA facsimile, artifact p.459, printed p.378, L column after Alleluia1446."
+finding = "The printed general rule retains the Alleluia and its verse even when these Sunday Masses are reused on ferias; no global borrowed-feria omission is authorized."

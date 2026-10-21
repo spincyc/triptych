@@ -120,8 +120,10 @@ class PublicAlphaTest(unittest.TestCase):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
 
-    def make_propers_read_fixture(self, *, rights: str = "public-domain") -> dict:
-        """A tiny source with two Masses binds every Read projection by hash."""
+    def make_propers_read_fixture(
+        self, *, rights: str = "public-domain", current_appointments: bool = False,
+    ) -> dict:
+        """Bind a tiny projection, optionally using a real appointed Mass."""
         prefix = "src/web/data/structure/propers/"
         masses = [
             {
@@ -141,6 +143,19 @@ class PublicAlphaTest(unittest.TestCase):
             "numbering": {}, "translations": [], "languages": [],
             "coverage": {}, "masses": masses,
         }
+        if current_appointments:
+            # Reuse generated source-owned facts and an anchored choice rather
+            # than creating a second opinion about their semantic contract.
+            generated = json.loads((
+                REPOSITORY_ROOT / prefix / "roman-1962.json"
+            ).read_bytes())
+            masses[:] = [next(
+                mass for mass in generated["masses"]
+                if any(isinstance(proper.get("ordinary_disposition"), dict)
+                       and "anchor" in proper["ordinary_disposition"]
+                       for proper in mass["propers"])
+            )]
+            structure["proper_appointment_facts"] = generated["proper_appointment_facts"]
         raw = (json.dumps(structure, sort_keys=True) + "\n").encode()
         self.write(prefix + "roman-1962.json", raw)
         generation = digest(raw)
@@ -162,8 +177,10 @@ class PublicAlphaTest(unittest.TestCase):
             "structure": {key: value for key, value in structure.items()
                           if key != "masses"},
             "masses": [{
-                field: mass[field] for field in
-                ("key", "name", "kind", "season", "date", "coverage", "forms")
+                **{field: mass[field] for field in
+                   ("key", "name", "kind", "season", "date", "coverage")},
+                "forms": [{field: form.get(field) for field in ("id", "name", "ordinal")}
+                          for form in mass.get("forms") or []],
             } for mass in masses],
         }
         self.write(prefix + "catalog/roman-1962.json",
@@ -2013,6 +2030,79 @@ class PublicAlphaTest(unittest.TestCase):
         mass_path.symlink_to(self.root / (prefix + "roman-1962.json"))
         with self.assertRaisesRegex(self.tool.ReleaseError, "symlink in split source"):
             self.tool.validate_propers_read_payload_sources(data_root)
+
+    def test_1962_read_split_accepts_current_generated_source(self) -> None:
+        self.tool.validate_propers_read_payload_sources(
+            REPOSITORY_ROOT / "src/web/data"
+        )
+
+    def test_1962_read_split_binds_appointment_facts_and_choice_anchors(self) -> None:
+        prefix = "src/web/data/structure/propers/"
+        data_root = self.root / "src/web/data"
+        cases = ("missing-catalog-facts", "forged-catalog-facts",
+                 "dropped-source-facts", "changed-choice-anchor", "dropped-choice-anchor")
+        for label in cases:
+            with self.subTest(label=label):
+                fixture = self.make_propers_read_fixture(current_appointments=True)
+                self.tool.validate_propers_read_payload_sources(data_root)
+                if label == "missing-catalog-facts":
+                    del fixture["catalog"]["structure"]["proper_appointment_facts"]
+                    self.write_json(prefix + "catalog/roman-1962.json", fixture["catalog"])
+                elif label == "forged-catalog-facts":
+                    facts = fixture["catalog"]["structure"]["proper_appointment_facts"]
+                    facts[next(iter(facts))]["edition"] = "forged-edition"
+                    self.write_json(prefix + "catalog/roman-1962.json", fixture["catalog"])
+                elif label == "dropped-source-facts":
+                    del fixture["structure"]["proper_appointment_facts"]
+                    self.write_json(prefix + "roman-1962.json", fixture["structure"])
+                    # Even a matching replacement generation cannot hide a
+                    # catalog retaining facts absent from its public source.
+                    generation = digest((self.root / (prefix + "roman-1962.json")).read_bytes())
+                    fixture["catalog"]["generation"] = generation
+                    self.write_json(prefix + "catalog/roman-1962.json", fixture["catalog"])
+                else:
+                    key = fixture["structure"]["masses"][0]["key"]
+                    relative = prefix + f"mass/roman-1962/{key}.json"
+                    envelope = json.loads((self.root / relative).read_bytes())
+                    proper = next(proper for proper in envelope["mass"]["propers"]
+                                  if "anchor" in (proper.get("ordinary_disposition") or {}))
+                    disposition = proper["ordinary_disposition"]
+                    if label == "changed-choice-anchor":
+                        disposition["anchor"]["occurrence"] += 1
+                    else:
+                        del disposition["anchor"]
+                    self.write_json(relative, envelope)
+                expected = "envelope differs" if "choice-anchor" in label else "catalog structure differs"
+                with self.assertRaisesRegex(self.tool.ReleaseError, expected):
+                    self.tool.validate_propers_read_payload_sources(data_root)
+
+    def test_1962_read_split_rejects_unbound_source_fields(self) -> None:
+        prefix = "src/web/data/structure/propers/"
+        for label in ("unknown-top-level", "missing-required", "unknown-mass-field"):
+            with self.subTest(label=label):
+                fixture = self.make_propers_read_fixture()
+                structure = fixture["structure"]
+                if label == "unknown-top-level":
+                    structure["private_source"] = "unbound"
+                elif label == "missing-required":
+                    del structure["translations"]
+                else:
+                    # This field is not emitted by the current generator. A
+                    # matching payload/generation must not license it either.
+                    structure["masses"][0]["proper_choice_overrides"] = {}
+                self.write_json(prefix + "roman-1962.json", structure)
+                if label == "unknown-mass-field":
+                    generation = digest((self.root / (prefix + "roman-1962.json")).read_bytes())
+                    fixture["catalog"]["generation"] = generation
+                    self.write_json(prefix + "catalog/roman-1962.json", fixture["catalog"])
+                    for mass in structure["masses"]:
+                        relative = prefix + f"mass/roman-1962/{mass['key']}.json"
+                        envelope = json.loads((self.root / relative).read_bytes())
+                        envelope.update(generation=generation, mass=mass)
+                        self.write_json(relative, envelope)
+                expected = "unbound fields" if label == "unknown-mass-field" else "invalid schema"
+                with self.assertRaisesRegex(self.tool.ReleaseError, expected):
+                    self.tool.validate_propers_read_payload_sources(self.root / "src/web/data")
 
     def test_1962_read_split_requires_index_binding(self) -> None:
         fixture = self.make_propers_read_fixture()

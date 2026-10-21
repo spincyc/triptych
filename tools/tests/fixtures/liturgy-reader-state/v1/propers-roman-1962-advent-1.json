@@ -27,9 +27,8 @@
     "events": [
       {"id": "proper/roman-1962/advent-1/001", "kind": "proper", "semanticSlot": {"state": "mapped", "identity": {"id": "entrance-antiphon"}}, "editionSlotLabel": "Introit", "selected": {"kind": "scripture", "bible": "douay-rheims", "numbering": "vulgate", "cycle": null, "references": ["Psalm 24:1-3", "Psalm 24:4"], "availability": "held", "rights": null}, "sourceHooks": [{"kind": "proper-structure", "id": "roman-1962/advent-1/001"}]},
       {"id": "proper/roman-1962/advent-1/002", "kind": "proper", "semanticSlot": {"state": "mapped", "identity": {"id": "collect"}}, "editionSlotLabel": "Collect", "selected": {"kind": "composed", "language": "la", "sourceId": null, "rights": null, "missing": false, "availability": "held", "reason": null, "unavailableState": null}, "sourceHooks": [{"kind": "proper-structure", "id": "roman-1962/advent-1/002"}]},
-      {"id": "proper/roman-1962/advent-1/003", "kind": "proper", "semanticSlot": {"state": "mapped", "identity": {"id": "reading-1"}}, "editionSlotLabel": "Epistle", "selected": {"kind": "scripture", "bible": "douay-rheims", "numbering": "vulgate", "cycle": null, "references": ["Romans 13:11-14"], "availability": "held", "rights": null}, "sourceHooks": [{"kind": "proper-structure", "id": "roman-1962/advent-1/003"}]},
+      {"id": "proper/roman-1962/advent-1/003", "kind": "proper", "semanticSlot": {"state": "mapped", "identity": {"id": "reading-1"}}, "editionSlotLabel": "Epistle", "selected": {"kind": "composed", "language": "la", "sourceId": null, "rights": null, "missing": false, "availability": "held", "reason": null, "unavailableState": null}, "sourceHooks": [{"kind": "proper-structure", "id": "roman-1962/advent-1/003"}]},
       {"id": "proper/roman-1962/advent-1/004", "kind": "proper", "semanticSlot": {"state": "mapped", "identity": {"id": "gradual"}}, "editionSlotLabel": "Gradual", "selected": {"kind": "scripture", "bible": "douay-rheims", "numbering": "vulgate", "cycle": null, "references": ["Psalm 24:3", "Psalm 24:4"], "availability": "held", "rights": null}, "sourceHooks": [{"kind": "proper-structure", "id": "roman-1962/advent-1/004"}]},
-      {"id": "proper/roman-1962/advent-1/005", "kind": "proper", "semanticSlot": {"state": "mapped", "identity": {"id": "gospel-acclamation"}}, "editionSlotLabel": "Alleluia", "selected": {"kind": "scripture", "bible": "douay-rheims", "numbering": "vulgate", "cycle": null, "references": ["Psalm 84:8"], "availability": "held", "rights": null}, "sourceHooks": [{"kind": "proper-structure", "id": "roman-1962/advent-1/005"}]},
       {"id": "proper/roman-1962/advent-1/006", "kind": "proper", "semanticSlot": {"state": "mapped", "identity": {"id": "gospel"}}, "editionSlotLabel": "Gospel", "selected": {"kind": "scripture", "bible": "douay-rheims", "numbering": "vulgate", "cycle": null, "references": ["Luke 21:25-33"], "availability": "held", "rights": null}, "sourceHooks": [{"kind": "proper-structure", "id": "roman-1962/advent-1/006"}]},
       {"id": "proper/roman-1962/advent-1/007", "kind": "proper", "semanticSlot": {"state": "mapped", "identity": {"id": "offertory-chant"}}, "editionSlotLabel": "Offertory", "selected": {"kind": "scripture", "bible": "douay-rheims", "numbering": "vulgate", "cycle": null, "references": ["Psalm 24:1-3"], "availability": "held", "rights": null}, "sourceHooks": [{"kind": "proper-structure", "id": "roman-1962/advent-1/007"}]},
       {"id": "proper/roman-1962/advent-1/008", "kind": "proper", "semanticSlot": {"state": "mapped", "identity": {"id": "prayer-over-offerings"}}, "editionSlotLabel": "Secret", "selected": {"kind": "composed", "language": "la", "sourceId": null, "rights": null, "missing": false, "availability": "held", "reason": null, "unavailableState": null}, "sourceHooks": [{"kind": "proper-structure", "id": "roman-1962/advent-1/008"}]},
@@ -37,16 +36,16 @@
       {"id": "proper/roman-1962/advent-1/010", "kind": "proper", "semanticSlot": {"state": "mapped", "identity": {"id": "prayer-after-communion"}}, "editionSlotLabel": "Postcommunion", "selected": {"kind": "composed", "language": "la", "sourceId": null, "rights": null, "missing": false, "availability": "held", "reason": null, "unavailableState": null}, "sourceHooks": [{"kind": "proper-structure", "id": "roman-1962/advent-1/010"}]}
     ],
     "coverage": [
-      {"state": "supported", "scope": "formulary:advent-1", "reasons": [], "completeness": "complete"}
+      {"state": "supported", "scope": "formulary:advent-1", "reasons": [{"kind": "unresolved-choice", "count": 1, "repositoryTerm": "proper-appointment"}], "completeness": "partial"}
     ],
     "explicitAbsences": [
       {"kind": "explicit-semantic-absence", "scope": "civil-date-and-calendar-result", "repositoryTerm": "semantic-absence", "reason": "propers-entrance-is-date-independent"}
     ],
-    "unresolvedChoices": [],
+    "unresolvedChoices": [{"kind": "unresolved-authorized-choice", "id": "proper-condition/roman-1962/advent-1/main/advent-1-alleluia-use", "reason": "Missale Romanum 1962 CMAA facsimile, artifact p. 83, printed p. 2, L column, between Gradual4 and Alleluia5: on Advent ferias using this Sunday Mass only the Gradual remains; omit the Alleluia and its following verse. No other Proper is changed.", "options": [{"id": "chant-present", "identity": {"id": "roman-1962-advent-sunday-alleluia-use/chant-present"}, "sourceHooks": []}, {"id": "chant-omitted", "identity": {"id": "roman-1962-advent-sunday-alleluia-use/chant-omitted"}, "sourceHooks": []}], "sourceHooks": [{"kind": "proper-appointment", "id": "{\"form_id\":\"main\",\"mass\":\"advent-1\",\"occurrence\":1,\"proper\":\"Alleluia\"}"}]}],
     "url": {
       "legacy": "#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims",
       "canonical": "#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims&orations=la&mode=read"
     },
-    "semanticHash": "dfe5d99e6b6f16a04a504938dbfcd1f75dffd50ac93fefe4a53f4cffe451f609"
+    "semanticHash": "705c2e64ae1132ec85f615ed81023d6aacb3cf1bc8c2c09fbff3cad6e2918324"
   }
 }

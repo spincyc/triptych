@@ -1,0 +1,83 @@
+appointment_collation_schema = 1
+calendar = "roman-1962"
+collated_on = "2026-10-20"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+artifact_byte_size = 82815941
+scope = "Four additional reading identities and ten exact receiving Common wrappers; not the complete Common reading/referral pool or an annual eligibility certificate."
+method = "Direct held control image inspection of817/[9],822/[14],826/[18],839/[31] with809/[1] same-Common permission and740/659 own-Gospel exception; endpoint heads and bounds independently checked against the held images."
+body_boundary = "Citation metadata supplies Bible reconstruction only. No exact target-Missal wording or new publication permission is claimed."
+permission_boundary = "The Common opening retains its specially appointed Mass-as-stands/Epistle/Gospel exception. Widow, plural-subject, first-Epistle cross-use and wider same-Common pools remain separate qualified source obligations; no option is inferred from a saint label or array order."
+
+[[readings]]
+source_unit = 4237
+target_id = "roman-1962:body:common-martyr-readings:epistle:1"
+printed_parent_id = "roman-1962:body:common-martyr-readings"
+storage_mass = "commune-unius-martyris-1"
+storage_proper = "Epistle (altera in Communi unius Martyris)"
+source_locus = "1962 CMAA facsimile, artifact p. 817, printed [9]; raw text page line 33; Printed text unit 4237"
+source_scope = "Same-Common permission809/[1] paragraph1 plus family-wide additional Epistle at817/[9]. Printed Common is extra tempus paschale."
+receiving_masses = ["commune-unius-martyris-1", "commune-unius-martyris-2", "commune-unius-martyris-3", "commune-unius-martyris-4"]
+
+[[readings]]
+source_unit = 4271
+target_id = "roman-1962:body:common-martyrs-readings:gospel:1"
+printed_parent_id = "roman-1962:body:common-martyrs-readings"
+storage_mass = "commune-plurimorum-martyrum-1"
+storage_proper = "Gospel (alterum in Communi plurimorum Martyrum)"
+source_locus = "1962 CMAA facsimile, artifact p. 822, printed [14]; raw text page line 29; Printed text unit 4271"
+source_scope = "Same-Common permission809/[1] paragraph1 plus family-wide additional Gospel at822/[14]. Printed Common is extra tempus paschale."
+receiving_masses = ["commune-plurimorum-martyrum-1", "commune-plurimorum-martyrum-2", "commune-plurimorum-martyrum-3"]
+
+[[readings]]
+source_unit = 4305
+target_id = "roman-1962:body:common-martyrs-paschal:gospel:2"
+printed_parent_id = "roman-1962:body:common-martyrs-paschal"
+storage_mass = "commune-martyrum-tempore-paschali-2"
+storage_proper = "Gospel (alterum in Communi Martyrum tempore paschali)"
+source_locus = "1962 CMAA facsimile, artifact p. 826, printed [18]; raw text page line 56; Printed text unit 4305"
+source_scope = "Explicit family-wide In Communi Martyrum tempore paschali additional-reading heading826/[18], independent of the narrower first-Epistle cross-use rule824\u2192825."
+receiving_masses = ["commune-martyrum-tempore-paschali-2", "commune-martyrum-tempore-paschali-1"]
+
+[[readings]]
+source_unit = 4405
+target_id = "roman-1962:body:common-virgin-martyr-2:gospel:2"
+printed_parent_id = "roman-1962:body:common-virgin-martyr-2"
+storage_mass = "commune-virginum-2"
+storage_proper = "Gospel (alterum)"
+source_locus = "1962 CMAA facsimile, artifact p. 839, printed [31]; raw text page line 35; Printed text unit 4405"
+source_scope = "Explicit Item alterum Evangelium printed inside VirginII at839/[31]. The smallest patch binds it only to this exact wrapper. Wider same-Virgin-Common use remains a separate permission/pool operation."
+receiving_masses = ["commune-virginum-2"]
+
+[first_reading_seat_qualification]
+mass = "commune-unius-martyris-3"
+form_id = "main"
+principal_proper = "Lesson"
+principal_source_unit = 4217
+source_locus = "1962 control artifact814/printed[6], unit4217, Lectio libri Isaiae prophetae, Isaiah43:1-5; additional Epistle4237 at817/[9] under the same Common permission809/[1]."
+seat = "reading-1"
+limits = "Exact anchored group qualification only. No generic Lesson mapping, renaming, cross-edition correspondence or Ember-reading inference."
+
+[[remaining_obligations]]
+id = "larger-same-common-pools"
+meaning = "Opening809 permits same-Common readings beyond these four units. Binding all existing primary readings and referrals requires exact wrapper aliases/groups and any specific source exceptions; this four-unit patch does not exhaust that denominator."
+
+[[remaining_obligations]]
+id = "paschal-local-memor-esto"
+meaning = "Keep source823 local alternative Epistle attached to One-Martyr Paschal wrapper;824\u2192825 first-Epistle cross-use does not itself prove transfer of that alternative. Familywide826 extras have explicit separate support."
+
+[[remaining_obligations]]
+id = "widow-epistle4459"
+meaning = "Do not materialize as an unconditional Nonvirgin-family choice; source846/[38] explicitly pro Vidua. No widow fact is inferred."
+
+[[remaining_obligations]]
+id = "plural-virgin-prayer-set"
+meaning = "Source839 specifically appoints VirginIV Epistle for plural virgin-martyr prayer use over VirginII; no fifth printed Mass or automatic plural-subject choice is inferred."
+
+[[remaining_obligations]]
+id = "wider-virgin4405-use"
+meaning = "Opening809 supports consideration of wider same-Common use, but the smallest patch adds4405 only to its locally printed VirginII wrapper; broader binding remains explicit source-owned pool work."
+
+[[remaining_obligations]]
+id = "fixed-mass-exception"
+meaning = "Keep opening809 prout iacet/specially appointed exception explicit; neither blanket refusal nor blanket permission for every annual saint-day wrapper is established by current model names alone."

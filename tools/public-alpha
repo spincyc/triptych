@@ -1849,8 +1849,11 @@ def validate_propers_read_payload_sources(data_root: Path) -> None:
 
     monolith_path = proper_root / "roman-1962.json"
     monolith, monolith_raw = read(monolith_path)
+    # Source-owned appointment facts are optional generator output. The exact
+    # catalog structure comparison below binds their complete value; this
+    # transport gate does not redefine or evaluate the source fact contract.
     if (not isinstance(monolith, dict)
-            or set(monolith) != {
+            or set(monolith) - {"proper_appointment_facts"} != {
                 "schema", "calendar", "edition", "edition_short", "numbering",
                 "translations", "languages", "coverage", "masses",
             }
