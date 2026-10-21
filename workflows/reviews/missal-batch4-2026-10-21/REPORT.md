@@ -1,7 +1,9 @@
 # Missal timeline: fourth parallel batch, 21 October 2026
 
 **Integrated after independent cold review; published to `main` under the
-maintainer's 21 October authorization.** This batch executes plan rows 1–5 of
+maintainer's 21 October authorization.** Implementation `1bc263922` deployed
+through Pages run `39661330623`, and nine changed or core live routes matched
+the local build byte for byte. This batch executes plan rows 1–5 of
 the continuation plan: route coverage, the Eastern census and local
 reception, dossier gaps, originals and acts, and the permission census. The
 all-rite project remains in progress. No whole-book text, generated-history

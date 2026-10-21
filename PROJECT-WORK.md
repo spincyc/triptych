@@ -87,8 +87,14 @@ Earlier branch-only delivery statements below describe their dated batches.
 No whole-book, physical-print or full all-rite completion follows from main
 integration.
 
-**Fourth parallel batch, 21 October 2026: integrated after cold review, for
-publication to `main`.** The maintainer asked for plan rows 1–5 to run in
+**Fourth parallel batch, 21 October 2026: published to `main` and verified
+live.** Implementation `1bc263922b9637edca88e5c46a03ce0fffb5f295` reached
+`origin/main` by an ordinary fast-forward from `5f2e74718` (no rebase was
+needed). Pages run [`39661330623`](https://github.com/spincyc/triptych/actions/runs/39661330623)
+and repository hygiene `39661330405` passed. Nine live routes matched the
+locally built artifact in byte length and SHA-256: the History page and its
+assets, the catalogue and four changed comparisons. This later documentation
+commit triggers its own run. The maintainer asked for plan rows 1–5 to run in
 parallel: route coverage, the Eastern census and local reception, dossier
 gaps, originals and acts, and the permission census. The work was then to be
 rebased, reconciled and pushed to `main`. Eight lanes ran with exclusive
