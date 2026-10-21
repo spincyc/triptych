@@ -21,6 +21,38 @@ The [vision](liturgy-browser-vision.md) still owns the product contract. The
 maintainer requested this plan's persistence on `feature/missal-reader`;
 recording it does not mark its implementation milestones accepted.
 
+### Current priority: complete annual minimum reader, 2026-10-20
+
+The maintainer explicitly puts correctness and completeness of Propers and
+Commons first: one full TLM year and one full Novus Ordo year for **each**
+Sunday cycle A, B and C. This supersedes the previous next-action ordering.
+The minimum reader uses the existing Day/Propers reading path and source model.
+
+| Audit | Inclusive dates | Scope |
+| --- | --- | --- |
+| Roman 1962 TLM | 2026-01-01–2026-12-31 | 365 civil dates |
+| Novus Ordo A | 2025-11-30–2026-11-28 | 364 dates, weekday cycle II where applicable |
+| Novus Ordo B | 2026-11-29–2027-11-27 | 364 dates, weekday cycle I where applicable |
+| Novus Ordo C | 2027-11-28–2028-12-02 | 371 dates, weekday cycle II where applicable |
+
+The Novus Ordo intervals are complete liturgical years, including their own
+Advent, derived through the existing calendar owner under
+[calendar computation](liturgy/calendar-computation.md). Preserve territorial
+transfer branches and source-owned choices; do not invent precedence or a
+local calendar. Audit every date, appointed formulary, Common referral,
+commemoration, form, reading cycle and alternative. Repair source/data and basic
+reading failures before adding capabilities. Track appointment correctness,
+exact wording, available language/witness and publication separately; a typed
+gap or successful structural dump does not establish complete liturgical text.
+
+Startup optimization, further print/visual refinements, advanced modes,
+pre-1955 expansion and final review-package work are subsequent features.
+Their completed checkpoints and dormant proposals remain historical evidence.
+No speech synthesis, WAV/audio capture, Orca/service setup or audio test
+pipeline is required or planned. Existing browser semantic, keyboard, DOM and
+AX checks remain relevant to the basic reader; unrelated feature acceptance
+matrices do not hold up this annual content-first implementation.
+
 ### Recovered baseline and acceptance boundaries
 
 Recovery baseline: `c6da24eda429337fe13d59420a3c489a98a16e66`, inspected on
