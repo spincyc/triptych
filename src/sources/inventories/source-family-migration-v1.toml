@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-10-20"
+audited_on = "2026-10-21"
 inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:0489ad3144269040a30ddaa0d661a1ac03cbd2f2520ba18ce78970959b878a0f"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:6ed335d8da72bef42e08cfe75d6d126d301cac9be075e0a5976736ec938cb94f"
-canonical_catalog_snapshot = "sha256:b91bb16f76239e1ed9baedcf8f92ba95bffd2f23b38fc6b21ee363ba6fd10c0c"
+canonical_catalog_snapshot = "sha256:b3d9bb96e9cba55c4674aba72c05ddb8840bfc5a6efb4e981bb76e0ed7b60965"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:69f6beb6bc1b84477b078ef500e4c3d224f20481b9c1fafb7c96719e55761a3f"
+snapshot = "sha256:f3cd9e203e1f588135bec3e8e8f817a92022359d9d7fb3dfabd0846ec36a4ec5"
 families = []
 
 [[review_units]]

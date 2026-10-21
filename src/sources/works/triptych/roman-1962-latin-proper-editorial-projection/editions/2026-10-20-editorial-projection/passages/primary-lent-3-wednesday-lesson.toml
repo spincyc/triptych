@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.primary-lent-3-wednesday-lesson"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.adapted-primary-readings-76d61000"
+artifact_sha256 = "76d610008540bce0bd1f72a7f0977945a9bb56f0a2d2283f89cd2df080c387f8"
+locus = "lent-3-wednesday Lesson; projection physical lines [70, 84]. Mame 1922 source locus: [{\"absolute_page\": 235, \"body_region\": \"left column after Lectio heading through right column, stopping before Graduale\", \"printed_page\": \"121\"}]. 1962 CMAA target locus: [{\"absolute_page\": 177, \"body_region\": \"right column item 637, stopping before Graduale 638\", \"printed_page\": \"96\"}]."
+physical_line_ranges = [[70, 84]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-20"
+context = "Complete literal source-owned reading, 178 spoken words. Retain Haec dicit Dominus Deus and the complete printed selection from Honora patrem through in omni loco in quo memoria fuerit nominis mei. No continuation of the broad terminal Bible verse is added."
+notes = "Exact wrapped calendar Unicode body SHA256 5452e7f8d1ab7be215c8a1b71cde7b914433b4acabd5e3e057fa0b5aa6328efc. Expand ae/oe ligatures and strip stress/diaeresis marks; retain source j, source words, source word order and source pointing. Printed line wraps and discretionary hyphens already joined in the diplomatic transcript; opening display capitals expanded to sentence case. Retain Haec dicit Dominus Deus and the complete printed selection from Honora patrem through in omni loco in quo memoria fuerit nominis mei. No continuation of the broad terminal Bible verse is added."

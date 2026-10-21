@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-21.september-ember-wednesday-collect-7124589a"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-21"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Triptych offers its bounded selection, normalization and target-relation metadata under CC BY 4.0. The historical Latin petition has the separately registered Mame 1922 United States public-domain basis. The preexisting conclusion formula is carried only at the target's visible extent; no exclusive right in the underlying words or whole-target-edition clearance is claimed."
+provenance = "Independent whole-body page-image comparison of registered Mame 1922 PDF page 565 and exact Vatican 1962 control PDF page 481, printed page 400, number 1613, on 2026-10-21 at 200 and 400 dpi. Neither OCR nor the superseded project payload controls the corrected word."
+retrieved = "2026-10-21"
+sha256 = "7124589a58d990e82bde57e5490109b76db17d82ab7d9af302f13b94d51f8793"
+byte_size = 158
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-21-editorial-projection/artifacts/september-ember-wednesday-collect-7124589a/september-ember-wednesday-collect.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.september-ember-wednesday-collect-la-checked-ddf31f59", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join printed layout wraps; remove stress accents; expand ae ligatures; adopt the target's received condicione spelling and punctuation; carry its explicitly printed Per Dominum nostrum. conclusion; retain the calendar's existing three physical lines and final LF. Replace legacy dementia with source-and-target clementia. No other spoken word, actor, rubric or translation is generated."
+indexable = true
+encoding = "utf-8"
+notes = "Mame prints conditione and Per Dominum.; the target prints condicione and Per Dominum nostrum. The sixteen petition words agree under that received spelling; the historical two-word conclusion cue and target three-word conclusion remain distinct. Both images read clementia; the legacy dementia is a transcription error, not a declared spelling normalization. Exact projected Unicode body with final LF SHA256 7124589a58d990e82bde57e5490109b76db17d82ab7d9af302f13b94d51f8793. Only the September Ember Wednesday Collect petition is corrected. The preceding Kyrie, Oremus, Flectamus genua and Levate context is outside this body; no actor, frame or new appointment is inferred. Secret, Postcommunion and the separately owned Oratio 1616 are not newly verified here."

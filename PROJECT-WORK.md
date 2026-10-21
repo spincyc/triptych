@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-20.
+Last reconciled: 2026-10-21.
 
 ## Missal reader current priority: annual Propers and Commons
 
@@ -176,6 +176,36 @@ preview build/verification pass. The binding review covers 560 inputs and
 43 new bounded source-text fragments, preserving unrelated bindings. The
 source-family ledger still records 162 pending and zero screened units.
 Native choice-flow and final annual execution proofs remain separate work.
+
+### Exact TLM readings and Collect correction, 2026-10-21
+
+Eleven dated Latin readings now retain the Missal's complete appointed words,
+including its introductions, internal cuts and terminal clauses. Independent
+review checked all 1,733 words against Mame; the separately documented 1962
+target comparisons retain their own scope and disclosed variants. Scripture
+references remain separate apparatus. Eleven exact English body absences stay
+explicit; expanding a Bible does not supply the missing Missal translation.
+The separately proved Common Ecce body is outside this increment.
+
+September Ember Wednesday's Collect reads `clementia`, correcting `dementia`.
+Both source images support the correction. A new bounded historical witness
+and dated projection replace the erroneous ownership claim while preserving
+the old payload and its other 77 users. No other prayer body changes.
+
+The 38 body/provenance checks and 17 damage-screen checks pass. The screen
+retains confirmed OCR damage and accepts genuine printed questions followed by
+lowercase; no source punctuation was changed to satisfy it. Source validation,
+Propers/source projection freshness, exact release bindings and the locked
+normal preview build/verification pass. The binding review covers 527 inputs,
+including 25 new bounded text fragments and one edition projection, preserving
+unrelated bindings. The source-family ledger remains 162 pending, zero screened.
+The full 5,856-render annual execution and remaining source repairs are pending.
+
+The prior `6cbc1b34e` checkpoint also has focused native Day and Propers proof:
+two independent source choices survive history and shared-link reload in each
+entrance, with zero browser/network diagnostics. Four other groups remain
+required; this is no claim of a complete Vigil or annual missal. All owned
+processes and listeners closed before the source freeze was released.
 
 ## Missal reader C1 truthful coverage, 2026-10-19
 

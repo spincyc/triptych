@@ -1,0 +1,11 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.vatican-typica-1962.primary-epiphany-2-epistle-word-collation-2026-10-20"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+locus = "1962 CMAA target locus: {\"artifact_pages\": [125], \"end_column\": \"left\", \"following_node\": \"Graduale 299\", \"heading\": \"Léctio Epístolæ beáti Pauli Apóstoli ad Romános.\", \"marginal_number\": 298, \"printed_folios\": [44], \"printed_reference\": \"Rom. 12, 6-16\", \"start_column\": \"left\"}."
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-20"
+context = "Independent complete target-body 200/400 dpi image comparison against Mame 1922; all 95 spoken words agree under the declared spelling/pointing transformations. The Epistle ends at humilibus consentientes. Its printed Romans 12:6-16 reference includes 16 without a part letter. The following Sunday begins at a different clause of the same printed verse number; do not append that clause here or invent an a/b division."
+notes = "Join physical line/column breaks and suppress line-end hyphens; normalize word-separating and punctuation spacing; remove stress accents; expand æ/œ to ae/oe; retain Mame consonantal j; apply target pointing and case. No lexical word or biblical continuation is supplied from the later edition. The Epistle ends at humilibus consentientes. Its printed Romans 12:6-16 reference includes 16 without a part letter. The following Sunday begins at a different clause of the same printed verse number; do not append that clause here or invent an a/b division. Headings, broad numeric appointments and layout do not supply missing clauses. No target-only word, actor, part-verse letter or whole-edition publication permission follows."

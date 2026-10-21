@@ -1,0 +1,73 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "editorial-projection",
+   "byte_size": 158,
+   "edition_owned": true,
+   "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-21.september-ember-wednesday-collect-7124589a",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Mame prints conditione and Per Dominum.; the target prints condicione and Per Dominum nostrum. The sixteen petition words agree under that received spelling; the historical two-word conclusion cue and target three-word conclusion remain distinct. Both images read clementia; the legacy dementia is a transcription error, not a declared spelling normalization. Exact projected Unicode body with final LF SHA256 7124589a58d990e82bde57e5490109b76db17d82ab7d9af302f13b94d51f8793. Only the September Ember Wednesday Collect petition is corrected. The preceding Kyrie, Oremus, Flectamus genua and Levate context is outside this body; no actor, frame or new appointment is inferred. Secret, Postcommunion and the separately owned Oratio 1616 are not newly verified here.",
+   "page_count": null,
+   "retrieved": "2026-10-21",
+   "rights": "project-created",
+   "rights_basis": "Triptych offers its bounded selection, normalization and target-relation metadata under CC BY 4.0. The historical Latin petition has the separately registered Mame 1922 United States public-domain basis. The preexisting conclusion formula is carried only at the target's visible extent; no exclusive right in the underlying words or whole-target-edition clearance is claimed.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Project editorial artifact; not a Missal edition or liturgical authority",
+  "date": "2026-10-21",
+  "editors": [
+   "Triptych contributors"
+  ],
+  "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-21",
+  "jurisdiction": "United States",
+  "language": "la",
+  "publication": "Triptych project-created editorial projection",
+  "title": "Roman 1962 Latin Proper Editorial Projection, 21 October 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-21.september-ember-wednesday-collect-7124589a",
+   "artifact_type": "editorial-projection",
+   "context": "Exact corrected project-created target projection. Mame prints conditione and Per Dominum.; the target prints condicione and Per Dominum nostrum. The sixteen petition words agree under that received spelling; the historical two-word conclusion cue and target three-word conclusion remain distinct. Both images read clementia; the legacy dementia is a transcription error, not a declared spelling normalization.",
+   "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-21.september-ember-wednesday-collect",
+   "locus": "September Ember Wednesday Collect; projection physical lines 1-3. Mame printed page 451, PDF page 565 R foot; target printed page 400, PDF page 481 L, number 1613.",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Exact Unicode body SHA256 with LF 7124589a58d990e82bde57e5490109b76db17d82ab7d9af302f13b94d51f8793. Supersedes the erroneous dementia span in the 2026-09-03 project passage; the old artifact bytes and other owners are preserved. Only the September Ember Wednesday Collect petition is corrected. The preceding Kyrie, Oremus, Flectamus genua and Levate context is outside this body; no actor, frame or new appointment is inferred. Secret, Postcommunion and the separately owned Oratio 1616 are not newly verified here.",
+   "readable": true,
+   "rights": "project-created",
+   "rights_basis": "Triptych offers its bounded selection, normalization and target-relation metadata under CC BY 4.0. The historical Latin petition has the separately registered Mame 1922 United States public-domain basis. The preexisting conclusion formula is carried only at the target's visible extent; no exclusive right in the underlying words or whole-target-edition clearance is claimed.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-21.september-ember-wednesday-collect.json",
+   "verified_on": "2026-10-21",
+   "words": 19
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Triptych contributors",
+  "category": "editorial-source-projection",
+  "description": "A project-created editorial source projection containing bounded Latin prayer bodies in date-specific artifacts. It is neither an edition of a historical hand missal nor an edition of the Missale Romanum. Each artifact records the transformation rule over separate public-domain antecedent and 1962 page-image witnesses; its passages let consumers cite the projected bodies without assigning Triptych's target-controlled collation choices to the antecedent printing.",
+  "id": "work.triptych.roman-1962-latin-proper-editorial-projection",
+  "languages": [
+   "la"
+  ],
+  "title": "Roman 1962 Latin Proper Editorial Projection"
+ }
+}

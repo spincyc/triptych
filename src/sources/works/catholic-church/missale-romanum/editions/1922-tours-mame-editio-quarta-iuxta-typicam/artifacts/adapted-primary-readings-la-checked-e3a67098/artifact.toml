@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.adapted-primary-readings-la-checked-e3a67098"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Bounded historical Latin from the registered public-domain Tours Mame 1922 conformed printing. Its parent owns the established United States 1922 publication and faithful-mechanical-reproduction finding. No new rights decision is made; Triptych claims no exclusive right in the underlying words."
+provenance = "Direct source-producer page-image collation at 200 and 400 dpi on 2026-10-20 of the exact registered whole PDF SHA256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005. Source loci and full-body qualifications are recorded in the per-body passages."
+retrieved = "2026-10-20"
+sha256 = "e3a67098717cbea591040e4b7e96207d9b983dc1c739bc7dfcb73b6aea275463"
+byte_size = 12287
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/adapted-primary-readings-la-checked-e3a67098/adapted-primary-readings-la.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Select eleven complete historical Lesson/Epistle bodies in their actual printed order within each reading; join layout wraps and discretionary line-break hyphens; render display initials in sentence case; regularize typographic spaces before punctuation; wrap at 80 columns with final LF and blank block separators. Preserve every historical word, pointing mark, accent, ligature, and i/j spelling. No target-only word or reconstructed Bible clause is inserted."
+indexable = true
+encoding = "utf-8"
+notes = "Twelve exact target reading addresses, eleven distinct whole body blocks; the independently verified Common I and Gregory targets share one word-identical retained block. Headings, printed references, rubrics, page images, and page arrangement are outside the retained bodies. The source is a Tours 1922 conformed printing, not an authenticated Vatican 1920 impression. Source position may differ from target position and does not alter authorship or wording."

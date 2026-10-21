@@ -1,10 +1,10 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3061,
-  "editions": 1105,
-  "passages": 5418,
-  "readable": 3166,
+  "artifacts": 3065,
+  "editions": 1106,
+  "passages": 5456,
+  "readable": 3191,
   "works": 957
  },
  "facets": {
@@ -3486,7 +3486,7 @@
     "id": "en"
    },
    {
-    "editions": 321,
+    "editions": 322,
     "id": "la"
    },
    {
@@ -3626,14 +3626,14 @@
     "label": "20th century"
    },
    {
-    "editions": 607,
+    "editions": 608,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1718,
+    "artifacts": 1720,
     "editions": 405,
     "id": "public-domain"
    },
@@ -3653,8 +3653,8 @@
     "id": "licensed"
    },
    {
-    "artifacts": 81,
-    "editions": 13,
+    "artifacts": 83,
+    "editions": 14,
     "id": "project-created"
    },
    {
@@ -9247,8 +9247,8 @@
      "file": "1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
      "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
      "language": "la",
-     "passages": 78,
-     "readable": 21,
+     "passages": 90,
+     "readable": 33,
      "rights": [
       "public-domain"
      ],
@@ -9286,7 +9286,7 @@
      "file": "1962-vatican-typica-1962.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
      "language": "la",
-     "passages": 460,
+     "passages": 473,
      "readable": 0,
      "rights": [
       "unresolved"
@@ -30672,12 +30672,25 @@
      "file": "2026-2026-10-20-editorial-projection.json",
      "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20",
      "language": "la",
-     "passages": 48,
-     "readable": 48,
+     "passages": 60,
+     "readable": 60,
      "rights": [
       "project-created"
      ],
      "title": "Roman 1962 Latin Proper Editorial Projection, 20 October 2026",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-21",
+     "file": "2026-2026-10-21-editorial-projection.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-21",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 21 October 2026",
      "year": 2026
     }
    ],

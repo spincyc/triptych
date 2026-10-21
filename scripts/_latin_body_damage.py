@@ -11,8 +11,8 @@ The families, with the readings that produced them:
 
     D6minum, parit£rque, cael6stis    a printed stress accent read as a digit
                                       or a currency sign
-    qusesumus, quxsumus, beatse       the ae ligature read as se, as x, or --
-    tua?                              as a question mark
+    qusesumus, quxsumus, beatse       the ae ligature read as se or as x
+    qua? et sanctificationem         the same ligature read as a question mark
     potiique, siipplices, commiinio   u read as ii before a consonant
     TJraesta, "eus > *l u keato"      an ornamental initial dropped or mangled
     IoannemOr                         two words welded across a line break
@@ -57,13 +57,12 @@ DAMAGED_SEQUENCE = re.compile(
     re.I,
 )
 WELDED_WORDS = re.compile(r"^[A-Za-zÆæ]+[a-zæ][A-ZÆ][A-Za-zÆæ]*$")
-# The recogniser also prints the ae ligature as a question mark, so "quae et"
-# becomes "qua? et". A real question ends a sentence and the next word is
-# capitalised or the text stops; damage sits mid-clause and is followed by a
-# lower-case word. That distinction is what lets the mark stay allowed at all:
-# "Quare, Domine, irasceris in populo tuo? Parce irae animae tuae" is a genuine
-# question the Missal asks, and refusing every ? cost five false positives.
-QUESTION_MARK_MID_CLAUSE = re.compile(r"\S\?\s+[a-zæ]")
+# The recogniser printed "quae et sanctificationem" as the damaged phrase
+# below. Case after ? cannot distinguish that damage from a genuine question:
+# the page-read Lessons have "animam suam? numquid" and "vestimenta tua?
+# veniat". Keep the observed corrupt phrase, without guessing from sentence
+# punctuation or changing the source's capitalization.
+KNOWN_QUESTION_MARK_DAMAGE = re.compile(r"\bqua\?\s+et\s+sanctificationem\b", re.I)
 KNOWN_GOOD = frozenset(
     {
         "remedii", "mysteriis", "gaudii", "auxilii", "ministerii", "sacrificii",
@@ -91,7 +90,7 @@ def body_damage(text: str) -> list[str]:
     control = sorted({character for character in text if CONTROL_CHARACTERS.match(character)})
     if control:
         found.append("control characters: " + " ".join(repr(one) for one in control))
-    for hit in QUESTION_MARK_MID_CLAUSE.finditer(text):
+    for hit in KNOWN_QUESTION_MARK_DAMAGE.finditer(text):
         found.append(f"ae read as a question mark: {hit.group(0).strip()!r}")
     impossible = sorted({character for character in text if IMPOSSIBLE_CHARACTERS.match(character)})
     if impossible:
