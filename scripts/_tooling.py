@@ -62,8 +62,8 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     (
         "acquisition",
         "Retrieval from outside the project. This is the only group that "
-        "reaches outside your machine at all, and no tool in any other group "
-        "makes a network call or calls a model. knox-bible fetches licensed "
+        "reaches outside your machine at all. Browser acceptance in the release "
+        "group uses local browser services. knox-bible fetches licensed "
         "text and what it writes never enters the repository: every verb of it "
         "refuses a destination inside this checkout. harvest spends on a model "
         "in one verb, `ask`, and what comes back lands in a dated ledger that "
@@ -138,6 +138,7 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
             "check-web-edition",
             "complete-missal",
             "document-library",
+            "history-browser-acceptance",
             "pdf-review",
             "proper-study-run-archive",
             "public-alpha",
@@ -163,10 +164,11 @@ GROUP_OF = {name: group for group, _, names in GROUPS for name in names}
 # current answer is that exactly one does either, and both sit in the same
 # group so the listing answers the question by where a tool appears.
 #
-# `knox-bible` is the only tool that opens a socket: it retrieves the licensed
-# Knox text from its publisher, one chapter a request, and refuses to write
-# anywhere inside the repository. Nothing else in tools/ contains urlopen,
-# urllib.request, a requests call, http.client or a socket.
+# `knox-bible` alone retrieves from the external network: licensed Knox text
+# from its publisher, one chapter a request. It refuses to write
+# anywhere inside the repository. `history-browser-acceptance` instead uses
+# loopback HTTP for its preview and WebDriver services; its URL gate rejects
+# external targets. That local service reach is declared separately.
 #
 # `harvest` is the only tool that calls a model, and only in its `ask` verb,
 # which runs the `claude` CLI once per passage per run. Everything else it does
@@ -182,6 +184,7 @@ GROUP_OF = {name: group for group, _, names in GROUPS for name in names}
 # patterns above and fails when a body and its declaration disagree.
 NETWORK = "network"
 MODEL = "model"
+LOCAL = "local"
 NOTHING = "nothing"
 
 REACHES: dict[str, str] = {
@@ -206,6 +209,7 @@ REACHES: dict[str, str] = {
     "complete-missal": NOTHING,
     "document-library": NOTHING,
     "harvest": MODEL,
+    "history-browser-acceptance": LOCAL,
     "index-bible": NOTHING,
     "knox-bible": NETWORK,
     "mass-ordinary": NOTHING,
@@ -232,8 +236,9 @@ REACHES: dict[str, str] = {
 }
 
 REACH_LABEL = {
-    NETWORK: "reaches the network",
+    NETWORK: "reaches the external network",
     MODEL: "calls a model",
+    LOCAL: "uses local browser services",
     NOTHING: "",
 }
 

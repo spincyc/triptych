@@ -2238,6 +2238,22 @@ whole = true
 locator = "Notitiae, volume 44, numbers 503-504: artifact pp. 50-69"
 basis = "segment segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387: The complete titled Latin variation list and its Supplementum, from the heading on printed p. 368 through the final Guadalupe collect on printed p. 387."
 
+[[containers.constituents]]
+author = "Consilium ad exsequendam Constitutionem de sacra Liturgia"
+title = "De nonnullis in novis precibus eucharisticis definiendis"
+work_id = "work.consilium-ad-exsequendam-constitutionem-de-sacra-liturgia.de-nonnullis-in-novis-precibus-eucharisticis-definiendis"
+whole = true
+locator = "Notitiae, volume 4, number 43: printed p. 356 / artifact p. 32"
+basis = "segment segment.consilium-ad-exsequendam-constitutionem-de-sacra-liturgia.de-nonnullis-in-novis-precibus-eucharisticis-definiendis.1968-latin-notitiae-4.notitiae-4-page-356: Complete one-page declaration dated 6 November 1968, bounded by its own heading and signature; neighboring printed 355 and 357 are separate items."
+
+[[containers.constituents]]
+author = "Anthony Ward, S.M."
+title = "Entry-point to the Rotulus of Ravenna"
+work_id = "work.anthony-ward.entry-point-to-the-rotulus-of-ravenna"
+whole = true
+locator = "Notitiae, volume 25 (1989), number 273: printed pp. 351–382 / artifact pp. 43–74"
+basis = "segment segment.anthony-ward.entry-point-to-the-rotulus-of-ravenna.1989-notitiae-273.notitiae-pages-351-382: The complete article from its own heading on printed p. 351 / artifact p. 43 through Anthony Ward’s signature in the upper portion of printed p. 382 / artifact p. 74. The page-based extent also contains a separate Missale Romanum notice below the article’s conclusion on the last page; that notice is not part of Ward’s work. Complete article containment does not establish a complete original Rotulus, a diplomatic transcription, 42 complete prayers, an annual Mass book or Ravenna receiving use."
+
 [[containers]]
 id = "work.catholic-church.missale-romanum"
 manifest_sha256 = "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd"
@@ -3704,22 +3720,22 @@ basis = "Segment segment.anonymous.karlsruhe-aug253-palimpsest-elmss-1570.mediev
 
 [[not_containers]]
 id = "artifact.lviv-orthodox-eparchy.leiturgiarion.1646-lviv-mihail-sliozka.google-jr1n-pa1-jpeg-bf777130"
-manifest_sha256 = "cd7301623abfdbaeef7d41b160232619f2cc77cbe051324e9d9a61e5a9cba75f"
+manifest_sha256 = "0bfa70c26fd5780e116978fe929e3df8c06aa9170b4cf7b141bfbee7d1817257"
 reason = "One 82,681-byte JPEG of provider page PA1, 575 by 703 pixels, shows a single printed service-heading leaf of the owning Leiturgiarion. It is neither the publication title nor a colophon and contains no separately identified work. The unchanged artifact notes explicitly deny whole-volume acquisition; that denial triggers the container-shape pattern but does not describe additional works inside this one-page image. No conclusion about the unacquired book's remaining constituents is made."
 
 [[not_containers]]
 id = "artifact.lviv-orthodox-eparchy.leiturgiarion.1646-lviv-mihail-sliozka.google-jr1n-pp3-jpeg-e3923f79"
-manifest_sha256 = "dead57a8ab6c85a1d2d771655fa73fc18f4d55a8e1252f079860d20d01f5941e"
+manifest_sha256 = "3e4ee0315dfa25526b754f984369a864b6e92a576d21d79fd1e7a1efafbfdf5b"
 reason = "One 31,888-byte JPEG of provider page PP3, 575 by 689 pixels, shows a single blank preliminary leaf, with no separately identified work, historical title or publication-date evidence. The unchanged artifact notes explicitly deny whole-volume acquisition; that denial triggers the container-shape pattern but does not describe additional works inside this one-page image. No conclusion about the unacquired book's remaining constituents is made."
 
 [[not_containers]]
 id = "artifact.lviv-orthodox-eparchy.leiturgiarion.1646-lviv-mihail-sliozka.google-jr1n-pp4-jpeg-ab3d69a8"
-manifest_sha256 = "3502d269d8006cc1ab8e8a1def05ca14b7d38d30e1e281d1bcc7690bcbf652ee"
+manifest_sha256 = "aaff368ee9dc5e576b9f5cb4833a9c1e0c4509cbe832db100a2d660ed28274b5"
 reason = "One 30,439-byte JPEG of provider page PP4, 575 by 676 pixels, shows a single blank preliminary leaf, with no separately identified work, historical title or publication-date evidence. The unchanged artifact notes explicitly deny whole-volume acquisition; that denial triggers the container-shape pattern but does not describe additional works inside this one-page image. No conclusion about the unacquired book's remaining constituents is made."
 
 [[not_containers]]
 id = "artifact.lviv-orthodox-eparchy.leiturgiarion.1646-lviv-mihail-sliozka.google-jr1n-pp7-jpeg-9d467f01"
-manifest_sha256 = "177e6244b41acffa051dcda192c6eecfda441dd47db1b7f95085e5db1c787a13"
+manifest_sha256 = "99e2db3c123dfc45f52ceef2b4fe2b034ed70a28603ab78fabe5760b8cf926e7"
 reason = "One 39,880-byte JPEG of provider page PP7, 575 by 689 pixels, shows a single blank preliminary leaf, with no separately identified work, historical title or publication-date evidence. The unchanged artifact notes explicitly deny whole-volume acquisition; that denial triggers the container-shape pattern but does not describe additional works inside this one-page image. No conclusion about the unacquired book's remaining constituents is made."
 
 # Bounded Cistercian Canon source acquisition reviewed 2026-10-20.
@@ -3740,3 +3756,16 @@ reason = "This project-created ZIP contains eighteen complete page-image derivat
 id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-indirect-index-08cff013"
 manifest_sha256 = "d2b5e23234e52db2d10091fad1ccc006c373d0fa665702b8dc014b5f2c4ca88a"
 reason = "The exact 813-byte indirect DjVu directory references the separately delivered pages of the one identified Paris 1657 Cistercian missal. It contains directory metadata rather than embedded page imagery or a whole-volume facsimile; the accepted decoder report identifies 740 referenced positions with isBundled=0. The whole-volume phrase explicitly denies a whole-volume facsimile. This index is neither an anthology nor a second textual work, and no physical-volume or complete-book textual coverage is inferred."
+
+[[containers]]
+id = "work.bulletin-hispanique.volume-12"
+manifest_sha256 = "0a0e8ae0744aeef9d36adeb0176f2832843c1f959258fc9d812198ea7d5249d3"
+status = "partial"
+basis = "Container original 1910 inner title and article first/last pages establish Lambert's complete article at printed 23-48; separate segment pins all 26 pages in its exact retained derivative."
+unresolved = "Other articles, reviews, notices and tables in the complete 1910 annual volume remain unenumerated. The 1970 cover is explicitly excluded from retained bytes; this registration asserts no exhaustive constituent or commentary coverage."
+constituents = [{ "author" = "Dom A. Lambert, O.S.B.", "title" = "Notes sur divers incunables d'Aragon inédits ou peu connus", "work_id" = "work.aime-lambert.notes-sur-divers-incunables-d-aragon", "whole" = true, "locator" = "printed 23-48; complete source PDF 29-54; all 26 pages of retainedarticle PDF", "basis" = "1910 article first-page heading and last-page author signature; complete 26-page span pinned by segment segment.aime-lambert.notes-sur-divers-incunables-d-aragon.1970-facsimile-of-1910-article.complete-article." }]
+
+[[not_containers]]
+id = "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115"
+manifest_sha256 = "b1bb5978d2bc87bb48987bbf7eda2138d0e7c0088c10fc0899b60c6216a5c986"
+reason = "Five complete photographed pages from one Paris 1606 Cistercian missal, not an anthology or a container of separately registered works. The main Order tail and appended Suffragium are parts of that same work. The whole-volume wording refers only to the already acquired remote parent; selected native scope is four photographed pages and the fifth is outside-constituent Sanctorale boundary context."

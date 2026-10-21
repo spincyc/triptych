@@ -548,6 +548,10 @@
 .comparison-diff pre { overflow-wrap: anywhere; }
 .history-page [hidden] { display: none !important; }
 @media (max-width: 40rem) {
+  /* Enlarged text must not spend its reading measure on nested rem gutters.
+     Keep the source's complete title and let words use the narrow viewport. */
+  .history-page { padding-inline: 0.5rem; }
+  .history-page #catalogue-detail { padding-inline: 0.25rem; }
   .catalogue-entry,
   .catalogue-facts { grid-template-columns: minmax(0, 1fr); }
   .catalogue-facts dd { margin-bottom: 0.6rem; }

@@ -1,0 +1,597 @@
+{
+  "schema": "triptych-bounded-browser-acceptance-public-derivative/v1",
+  "status": "scoped-pass-with-recorded-limitations",
+  "derivative_notice": "Final public-safe derivative. Original actual runs, failures, reconciliations and images remain immutable and hash-bound. Current work replaces affected navigation/raw-input checks and transfers only specifically proved unchanged reading behavior. No machine/session/loopback/profile values are included.",
+  "final_scope": {
+    "root_freeze_sha256": "707bbed2a9acf04cddbb3f6eb5685456a2cf2a8fd181ebb12a12c9417ddcb93a",
+    "root_files": 45128,
+    "root_bytes": 5071708165,
+    "catalogue_sha256": "bc57597f8754bf3a0974c74f19abf0be340ce1dbe1a966a125fc14c3b28157bf",
+    "catalogue_bytes": 9805843,
+    "counts": {
+      "candidates": 1903,
+      "entries": 1962,
+      "presentation_groups": 233,
+      "relationship_entities": 28,
+      "relationships": 62,
+      "substantive_established": 44,
+      "text_sets": 26,
+      "unmapped_families": 0,
+      "witnesses": 221
+    },
+    "stage_history_counts": {
+      "documented_recension_branches": 0,
+      "documented_receptions": 5,
+      "documented_revisions": 58,
+      "documented_stages": 284,
+      "documented_transitions": 74,
+      "documented_witness_successions": 11,
+      "dossiers": 36,
+      "gaps": 203,
+      "provisional_stages": 11,
+      "provisional_transitions": 3,
+      "sources": 399,
+      "stages": 295,
+      "traditions": 156,
+      "transitions": 77
+    },
+    "snapshot_entries_sha256": "528a6596bfb4b6823be8500cd52c3791922181e584c580b645f7f2d467d29acf",
+    "snapshot_files": 45388,
+    "snapshot_bytes": 5352223044,
+    "artifact_sha256sums_sha256": "7599026c3a16a5fa20acf9aa5d61172fa5c92e56e10cd453d0477812b6783595",
+    "publication_manifest_sha256": "dda755ebd090c1f67d6236bb5601790d20eef3b1a3244fe5c2fc5f2723686135"
+  },
+  "runtime_and_build": {
+    "runtime": {
+      "python_version": "3.14.8",
+      "markdown_version": "3.10.3",
+      "interpreter": ".scratch/public-alpha-venv/bin/python",
+      "interpreter_sha256": "375532f83be620283ab780c14ca6bcc5907dc379d2b621de0c5d0a112cf5458b",
+      "lock_sha256": "59bd4c5252324612c6ce5a27f4a4ba4e62aa4cc76bc3d974a29b45491c97c762",
+      "markdown_code_sha256": "7f83c6779109a552125582f32308ba64f5defad299ed19917a24d23937cc4512",
+      "nested_env_python3_matches": true
+    },
+    "driver": {
+      "path": ".scratch/batch3-20261020/reader/post-nav-site-snapshot.py",
+      "sha256": "cde8d0b619bef40ae0aa16dac7c838f9125beaa4e165adfb07aa715ca657055b",
+      "bytes": 16596
+    },
+    "build_and_verify": {
+      "path": ".scratch/batch3-20261020/reader/post-nav-run/20261021T054829Z-site-preview-result.json",
+      "sha256": "7ae5c2c6ce3bbce743903bbf23c20bc01d4558dfe69287f765cdef7d164ee2c1",
+      "bytes": 1126
+    },
+    "actual_registered_commands": [
+      {
+        "command": [
+          ".scratch/public-alpha-venv/bin/python",
+          "-B",
+          "tools/public-alpha",
+          "build",
+          "--preview"
+        ],
+        "exit_status": 0,
+        "log": ".scratch/batch3-20261020/reader/post-nav-run/20261021T054829Z-site-preview-build.log"
+      },
+      {
+        "command": [
+          ".scratch/public-alpha-venv/bin/python",
+          "-B",
+          "tools/public-alpha",
+          "verify",
+          "--preview"
+        ],
+        "exit_status": 0,
+        "log": ".scratch/batch3-20261020/reader/post-nav-run/20261021T054829Z-site-preview-verify.log"
+      }
+    ],
+    "copied_artifact_parity": {
+      "path": ".scratch/batch3-20261020/reader/post-nav-run/20261021T054829Z-site-preview-artifact-parity.json",
+      "sha256": "6aad930b62db1e4c9b45575bdd2d7a92ced2581c4a93a60df4684283602523a3",
+      "bytes": 9770412
+    },
+    "registered_pdf_manifest": {
+      "path": ".scratch/batch3-20261020/reader/post-nav-run/registered-pdf-manifest.json",
+      "sha256": "6e17429b03decd96486137659f68cd7185032f36b7ef0cae1c7237a5dca1ad21",
+      "bytes": 61809
+    },
+    "registered_pdf_counts": {
+      "total": 266,
+      "git": 6,
+      "additional_registered": 260
+    },
+    "new_source_snapshot_postproof_and_hold_release": {
+      "path": ".scratch/batch3-20261020/reader/post-nav-run/postproof-and-read-hold-release.json",
+      "sha256": "6b937b76dac6cd80cb29ab902c3c8a401363520cf08605966a750475fbe41b70",
+      "bytes": 2000
+    }
+  },
+  "dependency_and_transfer": {
+    "source_and_model_proof": {
+      "path": ".scratch/batch3-20261020/reader/post-nav-run/transfer-proof.json",
+      "sha256": "fb4a027a5a09fe098e90d9b68cc65d589ceed78182339b29ab7df7a8f1aea7e6",
+      "bytes": 52920
+    },
+    "complete_artifact_member_proof": {
+      "path": ".scratch/batch3-20261020/reader/post-nav-run/artifact-transfer-proof.json",
+      "sha256": "b667d360f0e7150f6e285673c267d63eddf3e2803f63586ed818c0f7f0fc79f5",
+      "bytes": 10830
+    },
+    "exact_unchanged": {
+      "root_files": 45091,
+      "browser_files": 802,
+      "source_work_files": 13428,
+      "sources_projection_files": 4581,
+      "native_payloads": 11,
+      "native_units": 235,
+      "artifact_members": 23121
+    },
+    "precise_deltas": [
+      "Two entry presentation-group assignments, group definitions/membership/counts and routing provenance; all entry source_record/title/dates/acquisition/text/version qualifiers unchanged.",
+      "All 31 comparison raw JSON payloads change only the routing inventory SHA256 and byte_size. Literal members, joined sides, dates, source claims, caveats and unified diffs remain exact.",
+      "Full artifact members change only catalogue, 31 comparison provenance payloads and PUBLICATION-MANIFEST (33 members); SHA256SUMS itself changes separately. All HTML/JS/CSS/font/OFL/native/Sources/PDF bytes remain exact.",
+      "The reconciliation CLI changes one stored EXAMPLES constant; its executable AST outside EXAMPLES is unchanged. Release binding changes and coverage fingerprint are recorded in the full 37-file delta."
+    ],
+    "transferred_observations": [
+      "Original 235-unit native literal/order/language/direction/locus checks, independent constituent extents/rights/partial coverage and no-ancestry boundaries.",
+      "Original selected keyboard, AX, contrast, spacing, forced-colors/reduced-motion, actual400%, long-title, RTL and hosted-glyph/source-arrival reading observations, supported by exact executable/style/font/HTML/payload/resources.",
+      "Original 35-image qualitative reading judgments and Firefox rendering/cache reconciliation retain their complete limitations."
+    ],
+    "not_transferred": [
+      "Old raw catalogue/source-owner/comparison hashes: replaced by fresh source/snapshot/build/parity and actual new scoped guards.",
+      "Old two unmapped group filters and target entry group facts: replaced by new Chromium/Firefox navigation and new independent visual judgment.",
+      "Old revised overview/group-option/count pixels are not represented as fresh final captures.",
+      "No claim that the old 290-check browser run executed again on final bytes."
+    ]
+  },
+  "original_reconciled_browser_proof": {
+    "public_receipt": {
+      "path": ".scratch/batch3-20261020/reader/final-run/original-public-browser-summary.json",
+      "sha256": "2883a76aa798178a2603ff0a7778f519a1d581a6b40618e66183654c7d0e908e",
+      "bytes": 24866
+    },
+    "actual_chromium_scope": "Original registered 290/0; accessibility v2 has39 passing checks and one preserved timing failure resolved by separate actual400 Enter/Tab/Enter/Back 6/0; Sources observability 11/0 and narrow RTL 5/0. See original receipt for all exact runs and exception dispositions.",
+    "firefox_reconciliation": {
+      "path": ".scratch/batch3-20261020/reader/second-engine/final-firefox-reconciliation-20261021.json",
+      "sha256": "02f7a65c0dde9c34c480886901f2e3f4cecba80cd906e1cd7a0e77cd8ff52a0a",
+      "bytes": 4267
+    },
+    "firefox_reconciliation_observed_verification": {
+      "path": ".scratch/batch3-20261020/reader/second-engine/reconciliation-verification-process-20261021.json",
+      "sha256": "0c6dad7eb8fe91bef568bd731ae9e3f35139742e4efd9d733953d4052354de2b",
+      "bytes": 1156
+    },
+    "original_firefox_failures_preserved": true,
+    "original_independent_review": {
+      "path": ".scratch/batch3-20261020/reader/independent-reader/review.json",
+      "sha256": "f7f4e508c6e88308346773a231319c849dd0407653696e6abb50ba85b9e86041",
+      "bytes": 46853
+    },
+    "original_independent_visual_addendum": {
+      "path": ".scratch/batch3-20261020/reader/independent-reader/review-addendum.json",
+      "sha256": "a6c016ba4346e19f69e3e528b2d09e852f223517cc71543f4c8c54fc3765375c",
+      "bytes": 7115
+    }
+  },
+  "fresh_chromium_runs": [
+    {
+      "label": "chromium",
+      "process_exit_status": 0,
+      "checks": 16,
+      "failures": 0,
+      "receipt": {
+        "path": ".scratch/batch3-20261020/reader/post-nav-run/chromium/summary.json",
+        "sha256": "7cd595d4b7c57d29a67623a19ceaf7313d9cb6cf03c39e33d28b40105d60e00b",
+        "bytes": 237
+      }
+    },
+    {
+      "label": "navigation",
+      "process_exit_status": 0,
+      "checks": 18,
+      "failures": 0,
+      "receipt": {
+        "path": ".scratch/batch3-20261020/reader/post-nav-run/navigation/summary.json",
+        "sha256": "592dc1abae0954c254d981ae3efcfc49d7d773e36d681e58042bcdd70bcca592",
+        "bytes": 339
+      }
+    }
+  ],
+  "fresh_firefox": {
+    "evidence_index": {
+      "path": ".scratch/batch3-20261020/reader/second-engine/post-nav-20261021/evidence-index.json",
+      "sha256": "09517a473657936fd5832d577c0622507fcfdf79617cfa62b7b0af8b1241d6d2",
+      "bytes": 3919
+    },
+    "observed_browser_process_exit_status": 0,
+    "checks": 80,
+    "failures": 0,
+    "trusted_pointer_activations": 7,
+    "runner_sha256": "74b2bf25dd08612b7476ce42ce0d3b6675bc3415582a9673182b16f891d45ef7",
+    "driver_sha256": "e0a040dc0b95d1d16cb1205b8d2f3edee9b8d9ed7f9e1db229e29b0b134ae21e",
+    "limitations_preserved": "Firefox 158 headless native button/disclosure keyboard activation and focus-visible remain unverified. Actual trusted pointer activation is recorded; Chromium supplies actual keyboard acceptance.",
+    "portable_actual_argv": [
+      "node",
+      ".scratch/batch3-20261020/reader/second-engine/post-nav-20261021/post-nav-firefox.mjs",
+      "--root",
+      ".",
+      "--catalogue",
+      "src/web/data/structure/act-history/catalogue.json",
+      "--site",
+      ".scratch/batch3-20261020/reader/post-nav-site-snapshot/build/public-alpha/preview",
+      "--old-site",
+      ".scratch/batch3-20261020/reader/final-site-snapshot/build/public-alpha/preview",
+      "--out",
+      ".scratch/batch3-20261020/reader/second-engine/post-nav-20261021/run",
+      "--change-proof",
+      ".scratch/batch3-20261020/reader/post-nav-run/transfer-proof.json",
+      "--expected-build-sums",
+      "7599026c3a16a5fa20acf9aa5d61172fa5c92e56e10cd453d0477812b6783595",
+      "--expected-manifest",
+      "dda755ebd090c1f67d6236bb5601790d20eef3b1a3244fe5c2fc5f2723686135"
+    ],
+    "raw_invocation_receipt": {
+      "path": ".scratch/batch3-20261020/reader/second-engine/post-nav-20261021/run/invocation.json",
+      "sha256": "67826c97072f148fdc3a8ab7f3b6abd4357c1a78ba439950c06c98fbdfb727ce",
+      "bytes": 948
+    }
+  },
+  "fresh_qualitative_review": {
+    "receipt": {
+      "path": ".scratch/batch3-20261020/reader/independent-reader/post-nav/review-addendum-v1.json",
+      "sha256": "625b34f989580c0c0de20a40fefa09cd05a772f10309bde30b1f7df0e0a17a79",
+      "bytes": 14986
+    },
+    "actual_fresh_chromium_images_viewed": 9,
+    "result": "Bounded pass, no blocking or contrary findings. Five attributed-fragment records preserve the Ravenna-use warning and the selected two-strip/catalogue-date limits. One modern-proper announcement retains uninspected book/decree/effective-year limits and no complete-Missal/independent-rite/ancestry implication. Current Pater comparison visibly preserves prior first-chant caveats.",
+    "old_native_bodies_not_rereviewed": true
+  },
+  "native_manifest": [
+    {
+      "binding": "native-book:cistercian-1606-canon",
+      "units": 35,
+      "projection_sha256": "af5b78084a768d924bef3c625d1aab3c1c55540a5be3d3fbe182cbe654d57638",
+      "whole_book_complete": false
+    },
+    {
+      "binding": "native-book:cistercian-1606-offertory",
+      "units": 7,
+      "projection_sha256": "898466341960df64aaeece8bc706d33337db38c7a89fe33974b8169a6b8921e6",
+      "whole_book_complete": false
+    },
+    {
+      "binding": "native-book:cistercian-1606-post-canon",
+      "units": 64,
+      "projection_sha256": "987a07bcd669de502921a90b97d787062da0cf5ba41e04a05071eee02ec8069a",
+      "whole_book_complete": false
+    },
+    {
+      "binding": "native-book:cistercian-1657-canon",
+      "units": 52,
+      "projection_sha256": "5d4ea4bcf2d491f77390bf5f0213f9ee5b68e91db6fad46f5b470d33d663d50a",
+      "whole_book_complete": false
+    },
+    {
+      "binding": "native-book:cistercian-1657-offertory",
+      "units": 25,
+      "projection_sha256": "e95853fbe4c38667c33299f23f64ab76c34ca645a0054e2ce44ab47192286a91",
+      "whole_book_complete": false
+    },
+    {
+      "binding": "native-book:cistercian-1657-pater-noster",
+      "units": 8,
+      "projection_sha256": "de9994565f3bff7414259afde0a519bea8cca1cf1ee79726a55187d177586e07",
+      "whole_book_complete": false
+    },
+    {
+      "binding": "native-book:mozarabic-1500-benedictio-panis",
+      "units": 9,
+      "projection_sha256": "d87d555fb0e9148eb9198b18820dd686537495c47b046fba86fb3d257033f947",
+      "whole_book_complete": false
+    },
+    {
+      "binding": "native-book:mozarabic-1755-benedictio-panis",
+      "units": 9,
+      "projection_sha256": "551dd395b385da4162858ecb512da6b0219f116271bc16731d724ecd5e73ccd0",
+      "whole_book_complete": false
+    },
+    {
+      "binding": "native-book:mozarabic-1804-benedictio-panis",
+      "units": 9,
+      "projection_sha256": "38e5cf8b5aefa6e6e8806482e7e3ed48437a02b8cb379b86f43a0588306f1f51",
+      "whole_book_complete": false
+    },
+    {
+      "binding": "native-book:roman-1570-canon-missae",
+      "units": 16,
+      "projection_sha256": "b9f9f10d5c8a457bff72b340517a333702c6bcf706a7b85f301289bad6f4e2b4",
+      "whole_book_complete": false
+    },
+    {
+      "binding": "native-book:tuki-1736-arabic-creed",
+      "units": 1,
+      "projection_sha256": "48e95b3360d139cb2fa05636b532317c0d088722b9778d79c3a35f4d26f7fcce",
+      "whole_book_complete": false
+    }
+  ],
+  "actual_commands": [
+    {
+      "label": "snapshot-freeze",
+      "portable_argv": [
+        ".scratch/public-alpha-venv/bin/python",
+        "-B",
+        ".scratch/batch3-20261020/reader/post-nav-site-snapshot.py",
+        "freeze",
+        "--extras-json",
+        ".scratch/batch3-20261020/reader/post-nav-run/intended-new-files.json"
+      ],
+      "observed_process_exit_status": 0
+    },
+    {
+      "label": "preview-driver",
+      "portable_argv": [
+        ".scratch/public-alpha-venv/bin/python",
+        "-B",
+        ".scratch/batch3-20261020/reader/post-nav-site-snapshot.py",
+        "build"
+      ],
+      "observed_process_exit_status": 0
+    },
+    {
+      "label": "initial-transfer-analysis",
+      "portable_argv": [
+        "python3",
+        ".scratch/batch3-20261020/reader/post_nav_transfer.py"
+      ],
+      "observed_process_exit_status": 1
+    },
+    {
+      "label": "corrected-transfer-analysis",
+      "portable_argv": [
+        "python3",
+        ".scratch/batch3-20261020/reader/post_nav_transfer_v2.py"
+      ],
+      "observed_process_exit_status": 0
+    },
+    {
+      "label": "registered-chromium",
+      "portable_argv": [
+        "tools/history-browser-acceptance",
+        "--url",
+        "<owned-local-history-url>",
+        "--catalogue",
+        "src/web/data/structure/act-history/catalogue.json",
+        "--out",
+        ".scratch/batch3-20261020/reader/post-nav-run/chromium",
+        "--plan",
+        ".scratch/batch3-20261020/reader/post-nav-run/registered-plan.json",
+        "--site",
+        ".scratch/batch3-20261020/reader/post-nav-site-snapshot/build/public-alpha/preview",
+        "--json"
+      ],
+      "observed_process_exit_status": 0
+    },
+    {
+      "label": "chromium-group-journeys",
+      "portable_argv": [
+        "python3",
+        ".scratch/batch3-20261020/reader/post_nav_navigation.py"
+      ],
+      "observed_process_exit_status": 0
+    },
+    {
+      "label": "final-input-postproof",
+      "portable_argv": [
+        ".scratch/public-alpha-venv/bin/python",
+        "-B",
+        ".scratch/batch3-20261020/reader/post-nav-site-snapshot.py",
+        "parity"
+      ],
+      "observed_process_exit_status": 0
+    }
+  ],
+  "command_serialization": "Repository-relative path tokens retained; executable basename normalized and owned local URL redacted. Exact raw argv and observed exits remain hash-bound in scratch.",
+  "raw_invocations": {
+    "path": ".scratch/batch3-20261020/reader/post-nav-run/raw-invocations.json",
+    "sha256": "99dd28c052636f642e7b9bed27963fb851d6ebd57b7e0d7ec43fab4b3f5d193a",
+    "bytes": 2045
+  },
+  "analysis_failure_disposition": {
+    "initial_transfer_analysis_exit_status": 1,
+    "reason": "Scratch AST analysis initially assumed the EXAMPLES dictionary was literal-only; it contains Example constructors. The preserved corrected script compares the AST with EXAMPLES excluded and constants separately, with one expected delta, and exits 0. No source or browser change was used to resolve this analysis error."
+  },
+  "historical_index_disposition": {
+    "owning_record": {
+      "path": ".scratch/batch3-20261020/root/navigation-index-disposition-v1.json",
+      "sha256": "077093b89edd61d6cd4374fdad11287e6ec327a6d0fa9fe6c598dcbbc7605a09",
+      "bytes": 2553
+    },
+    "scope": "An earlier reconciliation raw-index discrepancy remains recorded; its original pre-command raw bytes/semantic entries were not retained, so no attribution or historical raw-index stability is invented. Snapshot Git reads use GIT_OPTIONAL_LOCKS=0. The final source/index audit is owned separately by root."
+  },
+  "selected_screenshots": [
+    {
+      "path": ".scratch/batch3-20261020/reader/post-nav-run/navigation/ravenna-attributed-fragments-qualified-note-320-text200.png",
+      "sha256": "c7f8ef1754f8c579b165c090ef3ac98dde3b552ef203bfc22f11b1671b9e339f",
+      "bytes": 52488,
+      "width_px": 320,
+      "height_px": 900,
+      "state": "ravenna-attributed-fragments: New group qualification at 320 CSS px / 200% text.",
+      "evidence_scope": "Fresh final 707bbed2/bc57597f navigation evidence.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/post-nav-run/navigation/ravenna-attributed-fragments-record-320-text200.png",
+      "sha256": "1fbd7f562d648dc288c5f5d56693cfe7ae30b7d0d3a2ae552c4e07e93d535cd4",
+      "bytes": 52771,
+      "width_px": 320,
+      "height_px": 900,
+      "state": "ravenna-attributed-fragments: Fresh selected record, exact title/date/status/group.",
+      "evidence_scope": "Fresh final 707bbed2/bc57597f navigation evidence.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/post-nav-run/navigation/ravenna-attributed-fragments-original-qualification-desktop.png",
+      "sha256": "8e1d9faf20cee00a1c5361c43575cdeecc7ecc348aafeb547bf88bf3a8287b24",
+      "bytes": 128025,
+      "width_px": 1440,
+      "height_px": 900,
+      "state": "ravenna-attributed-fragments: Visible unchanged original source qualification.",
+      "evidence_scope": "Fresh final 707bbed2/bc57597f navigation evidence.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/post-nav-run/navigation/roman-diocesan-propers-modern-qualified-note-320-text200.png",
+      "sha256": "afad0a9312f3c87506482b2a646c86669c1b124a13450da3d9a862d47be91441",
+      "bytes": 59700,
+      "width_px": 320,
+      "height_px": 900,
+      "state": "roman-diocesan-propers-modern: New group qualification at 320 CSS px / 200% text.",
+      "evidence_scope": "Fresh final 707bbed2/bc57597f navigation evidence.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/post-nav-run/navigation/roman-diocesan-propers-modern-record-320-text200.png",
+      "sha256": "a38af1ed75aeb4e10c6f6ee97c0a7fc90534488d9621fd81d0340ab527ca2fc7",
+      "bytes": 52965,
+      "width_px": 320,
+      "height_px": 900,
+      "state": "roman-diocesan-propers-modern: Fresh selected record, exact title/date/status/group.",
+      "evidence_scope": "Fresh final 707bbed2/bc57597f navigation evidence.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/post-nav-run/navigation/roman-diocesan-propers-modern-original-qualification-desktop.png",
+      "sha256": "5e1750314974ce59c939b96abba8836ff750223e03982d6f303264147dfab8fe",
+      "bytes": 122251,
+      "width_px": 1440,
+      "height_px": 900,
+      "state": "roman-diocesan-propers-modern: Visible unchanged original source qualification.",
+      "evidence_scope": "Fresh final 707bbed2/bc57597f navigation evidence.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/post-nav-run/chromium/comparison-cistercian-1606-1657-pater-noster-first-chant.png",
+      "sha256": "6e75a0e7e1a7c1f44c7ddfca5a6a80d535d156d4b8187933b6371ff01d5aa344",
+      "bytes": 306444,
+      "width_px": 842,
+      "height_px": 1200,
+      "state": "Fresh Pater comparison arrival with literal sides and first-chant-only caveat.",
+      "evidence_scope": "Fresh final comparison; only routing input SHA/size differs from original.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/final-run/accessibility-v2/catalogue-320-text200-title.png",
+      "sha256": "5ab338c111326270221f36f752f713e497a75cf9881ccedb71994828d019b5ad",
+      "bytes": 56538,
+      "width_px": 320,
+      "height_px": 900,
+      "state": "Complete Armenian title at 320 / 200%.",
+      "evidence_scope": "Transferred original reading observation through exact body/code/style/font/served-HTML/resources identity; not a fresh final screenshot of revised group options/counts.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/final-run/accessibility-v2/native1606-post-canon-punctus-320-text200.png",
+      "sha256": "ffaad5f4f2d1e9b9d8ffc0fb0537cea2eb7a61fcc7c118b42676de54d240cff6",
+      "bytes": 57201,
+      "width_px": 320,
+      "height_px": 900,
+      "state": "Literal Et ne nos⹎ with hosted font at 320 / 200%.",
+      "evidence_scope": "Transferred original reading observation through exact body/code/style/font/served-HTML/resources identity; not a fresh final screenshot of revised group options/counts.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/final-run/accessibility-v2/communicantes-current-three-paragraphs.png",
+      "sha256": "2ac700c79baf168856610dff7335783fe3b9ce7bdf0eee48cc6b1bae8187dcd0",
+      "bytes": 75879,
+      "width_px": 320,
+      "height_px": 900,
+      "state": "Retained Canon unit15 three visible paragraphs.",
+      "evidence_scope": "Transferred original reading observation through exact body/code/style/font/served-HTML/resources identity; not a fresh final screenshot of revised group options/counts.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/final-run/accessibility-v2/native1657-pater-bounded-scope-and-probable-accent.png",
+      "sha256": "3b59f4b3dea4c10e36c7e87aec1653a1fa31447fc86c7f2c0ac6518509ce5b9a",
+      "bytes": 88826,
+      "width_px": 320,
+      "height_px": 900,
+      "state": "New Pater extent and explicit probable acute / crease condition.",
+      "evidence_scope": "Transferred original reading observation through exact body/code/style/font/served-HTML/resources identity; not a fresh final screenshot of revised group options/counts.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/final-run/source-observability-v3/source-library1657-pater-final-amen-actual400-visible.png",
+      "sha256": "5635d491daf9fda22122d19eeac8185bf94bc934247524b26431873d4b398359",
+      "bytes": 131893,
+      "width_px": 1440,
+      "height_px": 900,
+      "state": "Actual 400% visible Source Library Pater text/controller.",
+      "evidence_scope": "Transferred original reading observation through exact body/code/style/font/served-HTML/resources identity; not a fresh final screenshot of revised group options/counts.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/final-run/actual400-v3/native1657-actual400-real-tab-link.png",
+      "sha256": "452f9e18bd98d30a449470aed8c85dd0a4ab67de7f9a923861466014bf6c7014",
+      "bytes": 114963,
+      "width_px": 1440,
+      "height_px": 757,
+      "state": "Actual 400% native citation with real Tab focus.",
+      "evidence_scope": "Transferred original reading observation through exact body/code/style/font/served-HTML/resources identity; not a fresh final screenshot of revised group options/counts.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/final-run/narrow-rtl/tuki-arabic-literal-320-text200.png",
+      "sha256": "72f3fa0ba278dba76faf9713e6df49257e0ac34ce3479c6d6a15543ad8ed02d4",
+      "bytes": 37648,
+      "width_px": 320,
+      "height_px": 900,
+      "state": "Actual connected/right-aligned Arabic opening at 320 / 200%.",
+      "evidence_scope": "Transferred original reading observation through exact body/code/style/font/served-HTML/resources identity; not a fresh final screenshot of revised group options/counts.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/second-engine/post-nav-20261021/run/browser/ravenna-attributed-fragments-record-date-status-320-text200.png",
+      "sha256": "2acde0fce4f11daa34ddd25d8fbf3a67d9e06788991fb3cd4dacc7911b6d4b4a",
+      "bytes": 61319,
+      "width_px": 320,
+      "height_px": 900,
+      "state": "Firefox new Ravenna fragment record/date/status.",
+      "evidence_scope": "Fresh Firefox 158 final navigation through trusted pointer actions; button/disclosure keyboard remains unverified.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/second-engine/post-nav-20261021/run/browser/roman-diocesan-propers-modern-record-date-status-320-text200.png",
+      "sha256": "71b1a1b88bf3c3fe2efc5ea79c613612eecad3c69f640546e3e319ae2fbcba01",
+      "bytes": 61048,
+      "width_px": 320,
+      "height_px": 900,
+      "state": "Firefox new modern-propers record/date/status.",
+      "evidence_scope": "Fresh Firefox 158 final navigation through trusted pointer actions; button/disclosure keyboard remains unverified.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    },
+    {
+      "path": ".scratch/batch3-20261020/reader/second-engine/post-nav-20261021/run/browser/Patercomparison-arrival-320-text200.png",
+      "sha256": "22246094436397c41abfd7e2f1844c177e888fd653b235f67540c45c6aeb31eb",
+      "bytes": 70833,
+      "width_px": 320,
+      "height_px": 900,
+      "state": "Firefox fresh Pater comparison arrival.",
+      "evidence_scope": "Fresh Firefox 158 final navigation through trusted pointer actions; button/disclosure keyboard remains unverified.",
+      "attribution": "Actual Triptych UI capture. Displayed source rights and qualifications remain controlling. U+2E4E font derivative: Peter S. Baker, SIL OFL 1.1; no new source-image collation or language proofreading."
+    }
+  ],
+  "selected_screenshot_manifest": {
+    "path": ".scratch/batch3-20261020/reader/post-nav-run/selected-screenshots.json",
+    "sha256": "277f1e398da8073a12986dd96d80f7ef7954cbfeafd294548da83368bba48ff0",
+    "bytes": 12257
+  },
+  "browser_processes_closed": true,
+  "limits": [
+    "Bounded technical and independent visual acceptance only. No spoken human screen-reader use, full WCAG certification, language proofreading, new source-image collation, print/physical acceptance, production deployment or whole-project completeness is claimed.",
+    "Current Firefox pointer/navigation success does not retroactively turn its original failed process exits into passes or establish headless native keyboard activation.",
+    "Chromium CDP proves hosted glyph use in original accepted reading states. Firefox loaded-face/network/screenshot evidence does not identify its platform glyph renderer.",
+    "Selected AX/contrast/spacing/media/keyboard/actual400% states are not every route or every source unit at every scale.",
+    "Remaining catalogue/history/map/full-text completeness and blocked wider 1657 post-Canon source extent are outside this acceptance; all source limitations remain.",
+    "Subsequent operational documentation may be added only under root-recorded additive scope with browser/source/projection/release equality; this record remains bound to the exact 707bbed2 final runtime freeze."
+  ]
+}

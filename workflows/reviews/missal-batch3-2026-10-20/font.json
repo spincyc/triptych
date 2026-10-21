@@ -1,0 +1,406 @@
+{
+  "record_type": "labelled-public-font-implementation-derivative/v1",
+  "derivative_notice": "Public documentary derivative from exact accepted receipts. Original records remain authoritative; no check, font build, browser navigation or source review was rerun here.",
+  "originals": [
+    {
+      "review_provenance": ".scratch/batch3-20261020/font-implementation-independent-review/acceptance-v2.json",
+      "sha256": "56fc2102632dcc612b9a8897be8a7ef9acc37a228690478c116482238906f9c6",
+      "byte_size": 13161
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/reader/glyph-portability/implementation-freeze-v2/receipt.json",
+      "sha256": "830a35a45817ceb3381e3842f08b103e342b85af88f3ad974c68411a90f8e075",
+      "byte_size": 4772
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/reader/glyph-portability/implementation-freeze/receipt.json",
+      "sha256": "318ccff83cf693c697d81d0704e4a89aff75ab42de43753f86abc99c159c61c1",
+      "byte_size": 5423
+    }
+  ],
+  "disclosure_method": {
+    "selection": "Independent v2 judgment and corrected freeze retained verbatim as structured records. Prior relevant command records selected unchanged; one private executable locator omitted explicitly.",
+    "command_normalization": "None. Public commands below retain their original recorded spelling. Omitted private command is identified by original receipt and command-record hash.",
+    "raw_runtime_payloads": "Not copied; isolated runtime result and screenshots remain proof locators, not final real-source/site acceptance."
+  },
+  "independent_acceptance_record": {
+    "schema_version": 1,
+    "record_type": "independent-font-implementation-acceptance",
+    "reviewed_on": "2026-10-21",
+    "verdict": "accept-exact-corrected-implementation; final-source-site-acceptance-remains-separate",
+    "implementation_freeze": {
+      "path": ".scratch/batch3-20261020/reader/glyph-portability/implementation-freeze-v2/receipt.json",
+      "sha256": "830a35a45817ceb3381e3842f08b103e342b85af88f3ad974c68411a90f8e075",
+      "byte_size": 4772
+    },
+    "prior_freeze": {
+      "path": ".scratch/batch3-20261020/reader/glyph-portability/implementation-freeze/receipt.json",
+      "sha256": "318ccff83cf693c697d81d0704e4a89aff75ab42de43753f86abc99c159c61c1",
+      "byte_size": 5423
+    },
+    "reviewed_installed_files": [
+      {
+        "path": "src/web/browser/shared/fonts/triptych-punctus-elevatus.woff2",
+        "sha256": "93fdffe7318755b04f77de90b1bec035513b60a8c4315369344ea9aee9b4abac",
+        "byte_size": 1536
+      },
+      {
+        "path": "src/web/browser/shared/fonts/OFL-Junicode.txt",
+        "sha256": "6078ed582d53a416f761fd2fdeb384320b69191bf316234c21aabe71e2416822",
+        "byte_size": 4356
+      },
+      {
+        "path": "src/web/browser/shared/fonts/README.md",
+        "sha256": "0e0886bf397483b9e4be2d76c4a0281723fd04262ad415506a74338ce7f4db4b",
+        "byte_size": 11081
+      },
+      {
+        "path": "src/web/browser/shared/browser-core.css",
+        "sha256": "2646ae7f51761fa117fe5c8c6284bcf1b36ca9e08d61ac7bedb781ca59c89129",
+        "byte_size": 28223
+      },
+      {
+        "path": "tools/public-alpha",
+        "sha256": "51a8705ba9d84c89cc4d82b9d8ef4507c1a439983bb0d6099a23c9563acd8376",
+        "byte_size": 231895
+      },
+      {
+        "path": "tools/tests/test_public_alpha_fonts.py",
+        "sha256": "41665d60a8b5c651608ef4f17e20c04390e82be19156a2112088538788cefe64",
+        "byte_size": 7745
+      }
+    ],
+    "resolved_findings": [
+      {
+        "id": "F1-prior-monospace-stack",
+        "finding_receipt": {
+          "path": ".scratch/batch3-20261020/font-implementation-independent-review/initial-findings-v1.json",
+          "sha256": "21e53cca77933576c7ffeceb6663c703c96daa3209893274fac58e1b7f570f81",
+          "byte_size": 3785
+        },
+        "resolution": "The generic History diff/original rule preserves standalone monospace. Only the actual published page-browser/history-page wrapper prepends the face to the exact existing ui-monospace, SFMono-Regular, Consolas, monospace stack. Reconstruction of the pre-correction CSS matches its frozen hash; only the shared CSS changed across the six-file freeze.",
+        "exact_additive_patch": {
+          "path": ".scratch/batch3-20261020/reader/glyph-portability/implementation-freeze-v2/additive-css.patch",
+          "sha256": "67e449861f29cbb8e914cae216b827099734475591256c57074b1b8a54f29473",
+          "byte_size": 754
+        },
+        "status": "resolved"
+      }
+    ],
+    "unresolved_implementation_findings": [],
+    "code_assessment": [
+      "The face declares only U+2E4E, and the separately pinned font has exactly one encoded codepoint plus mandatory .notdef. No source Unicode substitution or native-text change occurs in the reviewed patch.",
+      "Family prefixes are restricted to History held/standing text, normalization prose, comparison/original pre and Sources literal/context. Existing serif/sans fallbacks and the corrected two-mode monospace fallbacks remain controlling for all nonmark glyphs; no unrelated route receives a selector.",
+      "WEB_BROWSER_FONT_ASSETS contains exactly the WOFF2 and verbatim OFL file. The existing nonrecursive browser scan remains unchanged; README, recipes, arbitrary binaries, unlisted font/text files and nested font directories do not join the copy map.",
+      "The WOFF2 admission is an exact path exception in both artifact-type guards, not a suffix-wide allowance. File-set validation still refuses unexpected members. Symlink/hardlink/special-file output guards remain ahead of content parsing.",
+      "Active CSS requires both explicit regular inputs; every relative source path component is checked for symlinks. Empty inputs are refused and WOFF2 signature is checked. This header guard is intentionally a signature check; structural validity is supplied by the exact font proof and approved source hashes.",
+      "Both assets flow through the same web_data_files map to site_source_paths, expected_artifact_files, assembly and source-byte parity. Source-input SHA substitution and copied font/licence tampering remain rejected even when artifact-local checksums are refreshed.",
+      "The relative CSS URL resolves beside shared/browser-core.css in standalone, custom-domain-root and project-path layouts; no preload, root-relative font link, framework, global font installation or alternate copy tuple was added."
+    ],
+    "rights_and_recipe_assessment": {
+      "verbatim_licence": {
+        "path": "src/web/browser/shared/fonts/OFL-Junicode.txt",
+        "sha256": "6078ed582d53a416f761fd2fdeb384320b69191bf316234c21aabe71e2416822",
+        "byte_size": 4356
+      },
+      "font_internal_proof_reused": {
+        "path": ".scratch/batch3-20261020/reader/glyph-portability/rename-review/verification.json",
+        "sha256": "34fe5c0a9a225a256f12232ae694b1170fff77d9226db7579d8888345d5da0d7",
+        "byte_size": 22001
+      },
+      "checks_reused": 254,
+      "upstream_commit": "180ce3c94bf051f9457422b87e87e9b1cb41107e",
+      "tag": "v2.218",
+      "embedded_version": "2.003",
+      "reserved_font_names_specified": false,
+      "derivative_identity": "Triptych Punctus Elevatus / TriptychPunctusElevatus-Regular; origin/version/OFL metadata retained. Copyright embedded1998–2023 and accompanying licence-file2025 are distinguished.",
+      "recipe_comparison": "README rename recipe is byte-identical to the independently verified script. Subset-generation code through font-byte output is identical to the recorded script; only three explanatory metadata strings gain spacing. No subset/rename/compression or upstream acquisition was repeated.",
+      "recipe_controller_pins": [
+        {
+          "path": ".scratch/batch3-20261020/reader/glyph-portability/subset_font_v2.py",
+          "sha256": "eb26e6e111e38e24cd2a7a547d6d13c3239b6da36fdcb188fa8cc3502586a42a",
+          "byte_size": 2247
+        },
+        {
+          "path": ".scratch/batch3-20261020/reader/glyph-portability/rename-review/rename_sfnt.py",
+          "sha256": "4a9db4524edac1e75e4aa3431fe12261787d88298111f7fcf6d6bdb8f5a7142b",
+          "byte_size": 5734
+        },
+        {
+          "path": ".scratch/batch3-20261020/reader/glyph-portability/subset-generation-v2.json",
+          "sha256": "ded4a3cb88ddfe181b9814f533c3353dfe5b149e4f9326d48bfae33bce442470",
+          "byte_size": 692
+        }
+      ],
+      "third_party_notice": {
+        "path": ".scratch/batch3-20261020/reader/glyph-portability/THIRD_PARTY.final-notice.md",
+        "sha256": "5d4679c9d6909013dbd5f7041b345142ca852ddf3f5e7de9acc5790b9c282782",
+        "byte_size": 1310
+      },
+      "exact_notice_present_in_canonical_third_party_at_review": true,
+      "architecture_exception": {
+        "path": "guidance/corpus-browser-implementation.md",
+        "sha256": "bc85b014a388a6e061d6fc02bd0f1e680e13270b0c80a91de72d55f31acee59e",
+        "byte_size": 165201
+      }
+    },
+    "independent_targeted_commands": [
+      {
+        "command": "PUBLIC_ALPHA_FONT_TEST_SCRATCH=.scratch/batch3-20261020/font-implementation-independent-review/tests PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -B -m unittest tools.tests.test_public_alpha_fonts",
+        "exit_status": 0,
+        "tests": 8,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "command": "PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -B .scratch/batch3-20261020/font-implementation-independent-review/check-guards-v2.py",
+        "exit_status": 0,
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "script": {
+          "path": ".scratch/batch3-20261020/font-implementation-independent-review/check-guards-v2.py",
+          "sha256": "c8c5bcde9d3e13e188db94c13a5650cda0ef8ce6f3bdb5777f0daf7a8c0abb75",
+          "byte_size": 2971
+        },
+        "additional_coverage": [
+          "Unlisted nested/font/text/README inputs do not enter the copied set.",
+          "Ancestor source-directory symlink is refused.",
+          "Exact admitted output path still rejects symlink, unsafe hardlink and FIFO.",
+          "Modified font/licence source is rejected by approved SHA even when the WOFF2 signature remains valid."
+        ]
+      }
+    ],
+    "earlier_independent_test_harness_result": {
+      "script": {
+        "path": ".scratch/batch3-20261020/font-implementation-independent-review/check-guards-v1.py",
+        "sha256": "c1914f36e9363422540d5416bf165d32e0ff004a48e3250e73f4f23caad45a87",
+        "byte_size": 2908
+      },
+      "exit_status": 1,
+      "tests": 12,
+      "failures": 1,
+      "errors": 0,
+      "disposition": "The independent assertion expected one error; the production guard correctly emitted the SHA mismatch plus its existing refresh instruction. The assertion now requires both. Importing the fixture TestCase also redundantly discovered its eight already passed tests; v2 uses a module-qualified fixture and runs only the four independent cases. No production guard or test was relaxed."
+    },
+    "expanded_runtime_evidence": {
+      "receipt": {
+        "path": ".scratch/batch3-20261020/reader/glyph-portability/context-runtime-v2/result.json",
+        "sha256": "700f529a43922a429cbe5b7ce11969573ba321d6c66c49575d871bc460b656ee",
+        "byte_size": 36633
+      },
+      "producer_checks": 44,
+      "producer_exit_status": 0,
+      "producer_failures": 0,
+      "independent_semantic_audit": "Read the probe and independently checked the result payload: two contexts/five surfaces, identical ordinary platform-font records and text/size/width/height, exact prior diff/original stacks plus the new face, no hosted glyph before and eight hosted U+2E4E glyphs after per surface.",
+      "source_pins_verified": {
+        "src/web/browser/shared/browser-core.css": "2646ae7f51761fa117fe5c8c6284bcf1b36ca9e08d61ac7bedb781ca59c89129",
+        "src/web/browser/history/history.css": "69d7f6e9d4f8af892d14b01f1477f4986c7f7291e119e307c7ec16cf284e11c6",
+        "release/public-alpha/assets/site.css": "a1b950bccf1a471660fc7e7b7b1d5c6a0ce3afc08114ecf207a52d99c62202d2",
+        "src/web/browser/shared/fonts/triptych-punctus-elevatus.woff2": "93fdffe7318755b04f77de90b1bec035513b60a8c4315369344ea9aee9b4abac"
+      },
+      "screenshots": [
+        {
+          "path": ".scratch/batch3-20261020/reader/glyph-portability/context-runtime-v2/browser/standalone-before.png",
+          "sha256": "5110d8d04ca0fd12c27d8a81a0f75407a2b05d9d2fc85637214884925e5279b0",
+          "byte_size": 90304,
+          "visually_inspected": false
+        },
+        {
+          "path": ".scratch/batch3-20261020/reader/glyph-portability/context-runtime-v2/browser/standalone-after.png",
+          "sha256": "90f0958a1e6b7ef193ba21a57722f20ad01f3b30371d219c2c17de7c574e43d2",
+          "byte_size": 91348,
+          "visually_inspected": true
+        },
+        {
+          "path": ".scratch/batch3-20261020/reader/glyph-portability/context-runtime-v2/browser/published-before.png",
+          "sha256": "0f86e29de7e81db58884709cf7e4f5658acad64b06b3a0ef74d4cf287e8f4c2f",
+          "byte_size": 258961,
+          "visually_inspected": false
+        },
+        {
+          "path": ".scratch/batch3-20261020/reader/glyph-portability/context-runtime-v2/browser/published-after.png",
+          "sha256": "dcacdf1a88495f71f356d25fe4110f5261576e66261fee9a59be9f6455638e5d",
+          "byte_size": 259949,
+          "visually_inspected": true
+        }
+      ],
+      "visual_scope": "Both after screenshots were independently viewed; marks are visible with ordinary text retained. Synthetic contexts only; no final real-source reading or full-site visual acceptance claimed."
+    },
+    "remaining_final_site_conditions": [
+      "Root must freeze the final source projections and refresh the mechanical release/site-source bindings for these exact CSS, generator, font, licence and notice inputs.",
+      "The final public-alpha artifact must be built and verified under its release authorization, with both exact assets copied at the mapped paths and current source-byte parity. No broad build or release-binding mutation was run in this review.",
+      "Final browser acceptance must use actual incoming source text and applicable History/Sources literal, normalization, original and comparison states, including actual U+2E4E, ordinary nonmark controls, project-path loading, console/network/font loading and relevant narrow/reflow/print/performance evidence. Synthetic glyph proof does not establish that final-source coverage.",
+      "The exact notice and architecture exception are present now; the final release freeze must retain them and their licence boundary. Root owns the final site/release acceptance and any publication action."
+    ],
+    "limits": [
+      "No duplicate upstream font acquisition or font-internals reconstruction; the pinned254-check independent font proof is reused.",
+      "Only the assigned scratch review directory was written; no canonical/index/commit/push edits or broad site gates were performed.",
+      "This acceptance is limited to exact corrected implementation freeze830a35a4…8e075 and does not close the source/site milestone."
+    ]
+  },
+  "corrected_freeze_record": {
+    "status": "corrected_implementation_frozen_pending_final_source_site_acceptance",
+    "supersedes": {
+      "path": ".scratch/batch3-20261020/reader/glyph-portability/implementation-freeze/receipt.json",
+      "sha256": "318ccff83cf693c697d81d0704e4a89aff75ab42de43753f86abc99c159c61c1",
+      "scope": "Only its shared CSS pin and completeness of synthetic typography proof are superseded. Original receipt and all evidence remain byte-identical."
+    },
+    "finding": "The initial diff/original fallback used an unset --mono variable and dropped the production ui-monospace,SFMono-Regular,Consolas stack. Its synthetic proof had not separately exercised both contexts and both mono surfaces.",
+    "correction": "Standalone History pre keeps its prior monospace role. The actual published .page-browser.history-page wrapper retains the exact site ui-monospace,SFMono-Regular,Consolas,monospace stack, with only the U+2E4E-only face prefixed.",
+    "files": {
+      "src/web/browser/shared/fonts/triptych-punctus-elevatus.woff2": {
+        "sha256": "93fdffe7318755b04f77de90b1bec035513b60a8c4315369344ea9aee9b4abac",
+        "bytes": 1536
+      },
+      "src/web/browser/shared/fonts/OFL-Junicode.txt": {
+        "sha256": "6078ed582d53a416f761fd2fdeb384320b69191bf316234c21aabe71e2416822",
+        "bytes": 4356
+      },
+      "src/web/browser/shared/fonts/README.md": {
+        "sha256": "0e0886bf397483b9e4be2d76c4a0281723fd04262ad415506a74338ce7f4db4b",
+        "bytes": 11081
+      },
+      "src/web/browser/shared/browser-core.css": {
+        "sha256": "2646ae7f51761fa117fe5c8c6284bcf1b36ca9e08d61ac7bedb781ca59c89129",
+        "bytes": 28223
+      },
+      "tools/public-alpha": {
+        "sha256": "51a8705ba9d84c89cc4d82b9d8ef4507c1a439983bb0d6099a23c9563acd8376",
+        "bytes": 231895
+      },
+      "tools/tests/test_public_alpha_fonts.py": {
+        "sha256": "41665d60a8b5c651608ef4f17e20c04390e82be19156a2112088538788cefe64",
+        "bytes": 7745
+      }
+    },
+    "only_changed_tracked_path_since_prior_freeze": "src/web/browser/shared/browser-core.css",
+    "unchanged_history_css_sha256": "69d7f6e9d4f8af892d14b01f1477f4986c7f7291e119e307c7ec16cf284e11c6",
+    "unchanged_applied_guidance_sha256": "bc85b014a388a6e061d6fc02bd0f1e680e13270b0c80a91de72d55f31acee59e",
+    "new_actual_checks": {
+      "argv": [
+        "/usr/bin/python3",
+        ".scratch/batch3-20261020/reader/glyph-portability/probe_contexts.py"
+      ],
+      "exit_status": 0,
+      "checks": 44,
+      "failures": 0,
+      "receipt": {
+        "path": ".scratch/batch3-20261020/reader/glyph-portability/context-runtime-v2/result.json",
+        "sha256": "700f529a43922a429cbe5b7ce11969573ba321d6c66c49575d871bc460b656ee"
+      },
+      "coverage": [
+        "Standalone and published before/after, loading actual shared/History CSS and actual site CSS in published context.",
+        "Diff and original JSON each: exact prior computed fallback stack preserved; ordinary Latin/e-cauda platform-font records and text size/width/height unchanged.",
+        "Native, normalization and Sources also preserve ordinary platform-font records and text size/width/height.",
+        "All five surfaces in both contexts use custom Triptych Punctus Elevatus for all8 test marks after; no custom font before."
+      ],
+      "limits": [
+        "Synthetic strings and fixtures, not final source/site acceptance.",
+        "No globally installed fonts changed; isolated set includes common serif/sans/mono fonts and excludes Junicode."
+      ]
+    },
+    "checks_transferred_unchanged_from_prior_freeze": [
+      "Eight asset-publication unit tests, two existing browser binding/tamper regressions and registry check remain valid for exact unchanged tool/test/asset/licence/README bytes; not rerun for this CSS-only correction."
+    ],
+    "new_diff_check": {
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "src/web/browser/shared/browser-core.css",
+        "tools/public-alpha",
+        "tools/tests/test_public_alpha_fonts.py",
+        "src/web/browser/shared/fonts"
+      ],
+      "exit_status": 0
+    },
+    "additive_patch": {
+      "path": ".scratch/batch3-20261020/reader/glyph-portability/implementation-freeze-v2/additive-css.patch",
+      "sha256": "67e449861f29cbb8e914cae216b827099734475591256c57074b1b8a54f29473"
+    },
+    "full_patch": {
+      "path": ".scratch/batch3-20261020/reader/glyph-portability/implementation-freeze-v2/full-code-and-css.patch",
+      "sha256": "1bde0cc4d6f6956b282702f96f8da7cbc74b00676752e3e5b01212614c16c9c6"
+    },
+    "third_party_notice_sha256": "5d4679c9d6909013dbd5f7041b345142ca852ddf3f5e7de9acc5790b9c282782",
+    "limits": [
+      "Final source/projection/release freeze and fresh public-alpha build/browser acceptance remain pending.",
+      "No source, glyph asset, font licence/name, generator, native text or History CSS/JS was changed by this correction."
+    ]
+  },
+  "prior_relevant_command_records_unchanged": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "tools.tests.test_public_alpha_fonts"
+      ],
+      "environment": {
+        "PUBLIC_ALPHA_FONT_TEST_SCRATCH": ".scratch/batch3-20261020/reader/font-tests"
+      },
+      "exit_status": 0,
+      "tests": 8,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "tools.tests.test_public_alpha.PublicAlphaTest.test_site_source_graph_keeps_every_copied_browser_and_data_input",
+        "tools.tests.test_public_alpha.PublicAlphaTest.test_verifier_rejects_tampered_copied_browser_asset_with_fresh_checksums"
+      ],
+      "exit_status": 0,
+      "tests": 2,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        ".scratch/batch3-20261020/reader/glyph-portability/probe_renamed_final.py"
+      ],
+      "exit_status": 0,
+      "scope": "Synthetic isolated-font runtime; separate before/after navigations; no final source/site acceptance."
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "src/web/browser/shared/fonts/triptych-punctus-elevatus.woff2",
+        "src/web/browser/shared/fonts/OFL-Junicode.txt",
+        "src/web/browser/shared/fonts/README.md",
+        "src/web/browser/shared/browser-core.css",
+        "tools/public-alpha",
+        "tools/tests/test_public_alpha_fonts.py"
+      ],
+      "exit_status": 0
+    }
+  ],
+  "prior_author_fixture_failure_disposition": {
+    "tests": 8,
+    "errors": 2,
+    "exit_status": 1,
+    "disposition": "Fixture omitted the existing governing postconciliar quarantine ledger. It now copies that unchanged ledger; no validation bypass or production change was used to resolve the two setup errors."
+  },
+  "explicit_private_command_omissions": [
+    {
+      "original_array_index": 3,
+      "command_record_sha256": "d2568407efe2593a6a90802d6c0584f441091bdd2b71c812c430cfb5278c7681",
+      "exit_status": 0,
+      "reason": "Machine-private executable locator; original argv retained by original receipt hash only. No rewritten executed-command claim.",
+      "public_boundary_categories": [
+        "private absolute path"
+      ]
+    }
+  ],
+  "source_site_boundary": "Exact implementation acceptance only. Final source projection, authorized preview/source parity, actual glyph states and final browser/print acceptance remain separate. The font/OFL/recipe identities are exact; no source Unicode substitution is authorized."
+}

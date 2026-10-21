@@ -1,0 +1,72 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "project-created-factual-metadata-extract",
+   "byte_size": 957,
+   "edition_owned": true,
+   "id": "artifact.deutsche-nationalbibliothek.liturgical-book-catalogue-records.2026-10-20-response-states.facts-opendata-notice-e0b0a1a6",
+   "media_type": "application/json",
+   "notes": "Individual licence name, scope and exception facts from the complete HTML preamble; no original wording or list arrangement.",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "project-created",
+   "rights_basis": "Project-created selection of individual bibliographic facts, dates, identifiers, page numbers and access flags. No liturgical body, original catalogue prose, scan typography, database arrangement or host UI is copied. Distributed under Triptych CC BY 4.0; factual source values remain attributed.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://data.dnb.de/opendata/",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "catalogue-or-service-response",
+   "byte_size": 50773,
+   "edition_owned": true,
+   "id": "artifact.deutsche-nationalbibliothek.liturgical-book-catalogue-records.2026-10-20-response-states.raw-opendata-notice-bd437ec2",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://data.dnb.de/opendata/",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "catalogue-or-service-response",
+   "byte_size": 37804,
+   "edition_owned": true,
+   "id": "artifact.deutsche-nationalbibliothek.liturgical-book-catalogue-records.2026-10-20-response-states.sru-holyweek-11-records-e5669939",
+   "media_type": "application/xml",
+   "notes": "Whole SRU response: numberOfRecords=11, requested maximumRecords=50, all 11 returned. Record 453655165: 1956 Pustet, Editio iuxta typicam vaticanam, 142 S., 1 Taf., 4°. Record 453655173: same edition designation, 158 S., kl.8°. Record 577308688: Lipsiae 1956, XVI, 144 S. Records include later books and German adaptations; this is not 11 liturgical versions.",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "licensed",
+   "rights_basis": "DNB bibliographic metadata is supplied under CC0 1.0, as confirmed in the acquired open-data preamble. The response is bibliographic metadata, not any linked contents PDF or book. Rights-notice facts artifact: artifact.deutsche-nationalbibliothek.liturgical-book-catalogue-records.2026-10-20-response-states.facts-opendata-notice-e0b0a1a6.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=Ordo%20hebdomadae%20sanctae%20instauratus&recordSchema=MARC21-xml&maximumRecords=50",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-10-20",
+  "editors": [],
+  "id": "edition.deutsche-nationalbibliothek.liturgical-book-catalogue-records.2026-10-20-response-states",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Deutsche Nationalbibliothek public catalogue interfaces",
+  "title": "Deutsche Nationalbibliothek liturgical-book catalogue records: responses of 20 October 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Deutsche Nationalbibliothek",
+  "category": "catalogue-metadata",
+  "description": "Bibliographic metadata and dated public service responses; no service-book body.",
+  "id": "work.deutsche-nationalbibliothek.liturgical-book-catalogue-records",
+  "languages": [
+   "en"
+  ],
+  "title": "Deutsche Nationalbibliothek liturgical-book catalogue records"
+ }
+}

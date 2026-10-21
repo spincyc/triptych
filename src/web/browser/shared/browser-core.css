@@ -864,3 +864,40 @@ body:not(:has(> .site-header)) {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+
+/* The 1606 source's punctus elevatus is absent from common system fonts.
+   This OFL subset supplies only that character; all other glyphs keep their
+   existing reading face. Its licence and provenance are beside the font. */
+@font-face {
+  font-family: "Triptych Punctus Elevatus";
+  src: url("fonts/triptych-punctus-elevatus.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+2E4E;
+}
+
+.history-page .held-text,
+.history-page .standing-text {
+  font-family: "Triptych Punctus Elevatus", var(--serif);
+}
+
+.history-page .native-text-normalization > p,
+.sources-page .passage-text,
+.sources-page .passage-context {
+  font-family: "Triptych Punctus Elevatus", var(--sans);
+}
+
+/* Standalone pre keeps the browser's monospace role; the published wrapper
+   keeps the site's explicit stack. Only the source mark uses the added face. */
+.history-page .comparison-diff pre,
+.history-page .catalogue-original pre {
+  font-family: "Triptych Punctus Elevatus", monospace;
+}
+
+.page-browser.history-page .comparison-diff pre,
+.page-browser.history-page .catalogue-original pre {
+  font-family: "Triptych Punctus Elevatus", ui-monospace, SFMono-Regular,
+    Consolas, monospace;
+}

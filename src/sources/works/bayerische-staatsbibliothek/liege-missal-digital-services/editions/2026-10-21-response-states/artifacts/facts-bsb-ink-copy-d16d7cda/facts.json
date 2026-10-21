@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "record_type": "bounded-institutional-factual-extract",
+  "id": "bsb-ink-copy-2026-10-21",
+  "source_url": "https://inkunabeln.digitale-sammlungen.de/Exemplar_M-437,1.html",
+  "source_sha256": "06d0d1a22366e62afab148d1ac1741b881deb7f02ef7cde33b0dcc6529c0905d",
+  "source_byte_size": 9322,
+  "retrieved_on": "2026-10-21",
+  "project_licence": "CC BY 4.0",
+  "selection_method": "Declared factual fields selected from the exact acquired response and checked against it; source-native prose, layout, navigation and database expression are omitted.",
+  "facts": {
+    "copy_id": "M-437,1",
+    "call_number": "2 Inc.c.a. 3785",
+    "missing_leaf": {
+      "bibliographic_number": 1,
+      "signature": "a1"
+    },
+    "pasted_leaf": {
+      "bibliographic_number": 274,
+      "signature": "K6",
+      "support": "bound-in leaf"
+    },
+    "small_text_loss_leaves": [
+      {
+        "bibliographic_number": 169,
+        "signature": "X1"
+      },
+      {
+        "bibliographic_number": 177,
+        "signature": "X9"
+      },
+      {
+        "bibliographic_number": 178,
+        "signature": "X10"
+      },
+      {
+        "bibliographic_number": 180,
+        "signature": "X12"
+      }
+    ],
+    "digital_object": "bsb00075725",
+    "limitation": "Bibliographic leaf references are not silently equated with current pencil or IIIF labels."
+  }
+}

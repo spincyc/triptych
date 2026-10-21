@@ -1,0 +1,40 @@
+{
+  "schema": "triptych-source-factual-extract-v1",
+  "rights_notice": "Project-created factual selection under the repository CC BY 4.0 terms. Only individual bibliographic facts, short titles, dates, identifiers, quantities, signatures, fingerprints, copy-condition facts and access/rights flags are retained. No blanket database, catalogue-prose, site-layout or journal redistribution licence is inferred. Exact retained official U.S. Copyright Office rights sources and loci are pinned in the accompanying research receipt.",
+  "source_artifact_id": "artifact.ministerio-de-cultura.ccpb.2026-10-21-response-state.raw-ccpb-holding2069186-2ed95400",
+  "source_sha256": "2ed95400944512d9262642d67d349bbd8720de4a43d6689577dd2569cdf21619",
+  "source_bytes": 6407,
+  "source_url": "https://ccpbe.cultura.gob.es/CCPBOPAC/cgi-ccpbopac/abnetop?ACC=DOSEARCH&xsqf99=CCPB000821832-3",
+  "source_url_role": "stable public catalogue entry point; response identified separately by exact hash and control",
+  "facts": {
+    "copy_control": "CCPH002069693-0",
+    "fields": [
+      {
+        "field": "holding_localization",
+        "value": "B-BU",
+        "locus": "copy detail HTML displayed Localización"
+      },
+      {
+        "field": "usable_shelfmark",
+        "value": "86/3/20",
+        "locus": "copy detail HTML explicitly labelled Signatura topográfica"
+      },
+      {
+        "field": "copy_defects_exact",
+        "value": "ex. sense port., f. Q1 arrencat",
+        "locus": "copy detail HTML explicitly labelled Estado del ejemplar"
+      },
+      {
+        "field": "other_copy_condition_paraphrase",
+        "value": "Leather binding with gilt fillets and Carmelite arms on both covers; back cover loose; gilt edges; damp stains and insect holes; manuscript Carmelite ownership question at front guards.",
+        "locus": "copy detail HTML Estado del ejemplar"
+      },
+      {
+        "field": "copy_public_note",
+        "value": "940413 -- Carmelites de Gràcia",
+        "qualification": "Preserve the recorded string; do not assign an event/date role to 940413 without provider evidence.",
+        "locus": "copy detail HTML Nota pública"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606"
+artifact_type = "facsimile-pdf-derivative"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "permission"
+rights_jurisdiction = "United States"
+rights_basis = "The identified 1606 printed text is public domain by expiration of its publication term. The Bayerische Staatsbibliothek digital images are supplied under No Copyright - Non-Commercial Use Only 1.0, https://rightsstatements.org/vocab/NoC-NC/1.0/ ; this is a rights statement, not a Creative Commons license. Noncommercial copying and redistribution retain that condition and attribution: München, Bayerische Staatsbibliothek, 2 Liturg. 205 a, bsb10496382. These source images and their lossless PDF derivative are excluded from Triptych’s CC BY 4.0 license. No unrestricted image reuse is asserted; the image condition is distinct from the public-domain historical Latin."
+source_url = "https://www.digitale-sammlungen.de/en/view/bsb10496382?page=251"
+provenance = "Reused the exact previously acquired and registered complete BSB provider PDF; no network refetch. Five complete photographed pages extracted without cropping or raster recompression on 2026-10-20. All selected original embedded JPEGs match the prior exact-parent extractions; source-image collation and independent scope/literal acceptance are pinned separately. Whole-volume acquisition does not imply whole-volume reading."
+retrieved = "2026-10-20"
+sha256 = "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358"
+byte_size = 8056679
+path = "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/post-canon-facsimile-ed5fd115/facsimile.pdf"
+page_count = 5
+indexable = false
+derived_from = "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-whole-pdf-1032ee07"
+transformation = "pdfseparate -f 252 -l 256 of the existing exact provider PDF, followed by pdfunite in ascending order. Derivative pages 1–5 correspond to provider PDF pages 252–256, BSB canvases 251–255, printed pp. 197–201. Only pages 1–4 carry selected literal text; page 5 is excluded Sanctorale boundary context. Embedded JPEG bytes are unchanged."
+notes = "Complete bounded post-Canon tail plus printed appendix only. The first page also retains earlier strict-Canon text above the selected Orémus as out-of-scope context; that earlier wording is not re-exported. The main Order closes on p. 199, and the p. 200 Suffragium explicitly gives its different recitation position after Pater noster. Source images retain BSB attribution and noncommercial conditions separately from the public-domain historical Latin."

@@ -38,7 +38,7 @@
       "title": "Missale Cisterciense iuxta Romani recogniti correctionem (Paris, 1657)",
       "url": "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content",
       "kind": "primary-book",
-      "inspection": "FIDES 3755: page-file 0005 title; 0007–0008 Vaussin mandate; 0009 Monitum; 0045 Ritus celebrandi; 0231 printed p. 169; 0234–0236 printed pp. 172–174; 0230 Holy Saturday p. 168; 0350 printed p. 284. Holy Saturday p. 168 specifically compared against 1606 p. 115. First Sunday after Pentecost printed pp. 264–265, page-files 0330–0331, visually compared with 1606 pp. 149–150. On 2026-10-20 the complete declared Canon constituent was independently collated: five Communicantes and two Hanc igitur proper forms with their heading and usage cues on printed 176, 177, 181, 183, 184; title/crucifix FIDES 0263–0264; main Canon printed 203–213, FIDES 0265–0275, ending after Amen/Iungit manus before Oremus/Pater. A separate full preface census covers printed 175–200 and excludes all other preface text. Forty original native DjVu pages 237–276 and the index retain source/context evidence; the selected facsimile has 18 pages. These 52 units and the separate offertory are complete declared constituents, not a complete Ordinary or Missal.",
+      "inspection": "FIDES 3755: page-file 0005 title; 0007–0008 Vaussin mandate; 0009 Monitum; 0045 Ritus celebrandi; 0231 printed p. 169; 0234–0236 printed pp. 172–174; 0230 Holy Saturday p. 168; 0350 printed p. 284. Holy Saturday p. 168 specifically compared against 1606 p. 115. First Sunday after Pentecost printed pp. 264–265, page-files 0330–0331, visually compared with 1606 pp. 149–150. On 2026-10-20 the complete declared Canon constituent was independently collated: five Communicantes and two Hanc igitur proper forms with their heading and usage cues on printed 176, 177, 181, 183, 184; title/crucifix FIDES 0263–0264; main Canon printed 203–213, FIDES 0265–0275, ending after Amen/Iungit manus before Oremus/Pater. A separate full preface census covers printed 175–200 and excludes all other preface text. Forty original native DjVu pages 237–276 and the index retain source/context evidence; the selected facsimile has 18 pages. These 52 units and the separate offertory are complete declared constituents, not a complete Ordinary or Missal. On 20 October 2026 a separate complete functional Pater constituent was independently source-read in both printed chant forms, from Orémus on FIDES raw 0275 / printed 213 to final Amén. on raw 0277 / printed 215 left, before Deinde/Libera. Its eight units preserve fifteen source blocks over three complete-page witness images; final Amén. remains an independently preferred probable acute at a crease/worn area, with an explicit source-condition reservation. Wider post-Canon text through raw 0285 / printed 219 remains blocked by concealed letters and punctuation at raw 0278, 0281 and 0282. Context raw 0286 is a Resurrection engraving and raw 0287 / printed 221 opens Dominica Resurrectionis. The repeated printed 214–217 labels retain offered file order; their physical cause is unestablished. The title-confirmed Google/Lyon1657 alternate has different typesetting and supplies no concealed readings. Earlier offertory 25 and Canon 52, partial whole-book status and unknown textual parents remain unchanged.",
       "checked_on": "2026-10-20",
       "status": "inspected",
       "limitations": "Selected pages inspected; no complete-book collation."
@@ -155,13 +155,19 @@
           "source_id": "cistercian-1606-1657-1606-book",
           "locus": "Canon printed sequence 190–197 (fourth page misnumbered 192); BSB canvases 244–251; provider PDF 245–252",
           "claim": "Complete declared Canon constituent independently collated in 35 ordered units, including five seasonal Communicantes forms, Easter/Pentecost Hanc igitur and rubrics; excludes the following Oremus and Pater noster. Whole-book coverage remains partial."
+        },
+        {
+          "source_id": "cistercian-1606-1657-1606-book",
+          "locus": "Printed pp. 197–200; BSB canvases 251–254; provider PDF 252–255; p. 201 boundary context retained separately",
+          "claim": "The separate complete bounded post-Canon tail and appended Suffragium are independently collated in 64 source-order units: Orémus/Præcéptis after the excluded strict Canon final Amen on printed p. 197, the main Order closure on p. 199, and the p. 200 Suffragium through final Amen before Sanctorale p. 201. The appendix is physically printed after the main closure but its own rubric assigns recitation after Pater noster Canonis; it is retained in physical source order. A five-page lossless facsimile retains printed pp. 197–201, with p. 201 outside the constituent as boundary evidence. Earlier offertory and Canon IDs and literal bytes remain unchanged. This complete bounded composite selection does not complete the Ordinary or whole Missal, imply uninterrupted printed chapter divisions, establish monastery reception or supply ancestry."
         }
       ],
       "limitations": "This is already a revised state, not a proxy for all medieval Cistercian practice. The exact 1606 witness has now been split from the earlier broad printed-witness cluster. No claim that every decree of 1601 or 1605 was fully received locally.",
       "reception": "The book identifies itself as for the Cistercian Order and invokes chapter authority; no monastery-by-monastery reception census has been made.",
       "text_bindings": [
         "native-book:cistercian-1606-offertory",
-        "native-book:cistercian-1606-canon"
+        "native-book:cistercian-1606-canon",
+        "native-book:cistercian-1606-post-canon"
       ]
     },
     {
@@ -220,7 +226,8 @@
       "reception": "The Cistercian superior authorizes the edition and printing monopoly; this is evidence of intended order use, not uniform local implementation.",
       "text_bindings": [
         "native-book:cistercian-1657-offertory",
-        "native-book:cistercian-1657-canon"
+        "native-book:cistercian-1657-canon",
+        "native-book:cistercian-1657-pater-noster"
       ]
     }
   ],
@@ -431,6 +438,14 @@
       "missing": "Local reception chronology and binding effective-date instruments.",
       "next_source": "Cistercian general chapter acts from 1651 onward, house book inventories, and correction orders.",
       "consequence": "Publication does not prove instant uniform replacement throughout the Order."
+    },
+    {
+      "id": "cistercian-1606-1657-post-canon-source-damage",
+      "tradition_id": "cistercian",
+      "period": "1657 printing, wider post-Canon continuation",
+      "missing": "A complete literal collation of the wider post-Canon continuation after the accepted functional Pater. Paper repairs/folds hide right-column conclusion/fraction line ends at FIDES raw 0278 / printed 216, left-column Perceptio baselines 17–19 at raw 0281 / repeated printed 215, and terminal Amen punctuation at raw 0282 / repeated printed 216.",
+      "next_source": "Lawful repair imaging of this exact FIDES copy, or a demonstrated same-setting alternate exposing all concealed spans. The inspected Lyon/Google volume confirms a 1657 Cramoisy title but has a differently set prayer page printed 293 and supplies no FIDES readings.",
+      "consequence": "The complete two-form Pater is separately bounded at raw 0277 left before Deinde/Libera; later untranscribed prayers are unknown, not absent. The wider physical endpoint is the final departure/thanksgiving referral on raw 0285 / printed 219, followed by raw 0286 engraving and raw 0287 Easter Sunday. Source file order is retained despite repeated 214–217 labels; no physical misprint or binding history is inferred. Final Pater Amén. remains qualified as a probable acute at wear/crease."
     }
   ]
 }

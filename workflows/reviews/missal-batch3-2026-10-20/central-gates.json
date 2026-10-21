@@ -1,0 +1,311 @@
+{
+  "schema": "missal-batch3-public-central-gate-summary/v1",
+  "status": "Current post-navigation source gate, canonical projections and mechanical release bindings pass within their exact scopes. Project, documentation and delivery states remain distinct.",
+  "derivation": "Explicit public selection from owning receipts. Hashes, lengths, actual exit results and historical limits retained; raw environment/process/session/cache paths and operational bodies omitted. No command, test, export or gate rerun by this summary.",
+  "current_freeze": {
+    "sha256": "707bbed2a9acf04cddbb3f6eb5685456a2cf2a8fd181ebb12a12c9417ddcb93a",
+    "byte_size": 10943008,
+    "input_label": "final-runtime-input-freeze-v2",
+    "files": 45128,
+    "bytes": 5071708165,
+    "intended_new_files": 701
+  },
+  "current_source_gate": {
+    "public_addendum_identity": {
+      "sha256": "475eb5b75968e623af7fe5db73722e51627df12a620c837f4db2f0e2b063714f",
+      "byte_size": 3434,
+      "input_label": "current-full-source-gate-public-addendum"
+    },
+    "owning_receipt_identity": {
+      "sha256": "4e03c324ce8c253cbf547990ecb1d3d3df33982b727e620f2ab9d4c31838f521",
+      "byte_size": 5553,
+      "input_label": "current-full-source-gate-raw-receipt"
+    },
+    "exact_public_addendum": {
+      "cache_policy": "Fresh private cache bound to exact validator bytes and exact current library tree; other caches disabled.",
+      "canonical_or_index_writes": 0,
+      "command": [
+        "make",
+        "check-sources"
+      ],
+      "current_frozen_inputs": {
+        "all_exact_hashes_and_sizes_unchanged": true,
+        "bytes": 5071708165,
+        "files": 45128,
+        "manifest_sha256": "707bbed2a9acf04cddbb3f6eb5685456a2cf2a8fd181ebb12a12c9417ddcb93a"
+      },
+      "current_index_proof": {
+        "GIT_OPTIONAL_LOCKS_was_0_before_all_Git_reads": true,
+        "HEAD_and_current_cached_diff_equal": true,
+        "actual_raw_and_Git_semantic_copies_retained": true,
+        "cached_diff_empty_before_after": true,
+        "exact_mode_blob_path_stage_and_flags_equal": true,
+        "raw_after_sha256": "8174d32e7604c6f9cc85b45160f0f0c60f3a973df1b836d396b4ecd8072631f0",
+        "raw_before_sha256": "8174d32e7604c6f9cc85b45160f0f0c60f3a973df1b836d396b4ecd8072631f0",
+        "raw_identical": true,
+        "semantic_entries": 44427,
+        "writer_attribution": "No writer or cause is inferred."
+      },
+      "elapsed_seconds": 172.064,
+      "evidence_sha256": {
+        "gate_log": "107e5d2008e0d5f7cdc5f1ee897fb0a325fa74076629037bd477c259fc8b7674",
+        "input_stability_proof": "d632c75639515139c00a125551b32cc80016b52350ca7ffdd1a4c2680719a37d",
+        "raw_and_semantic_index_proof": "9554ceb51688937f6c436eacbaa93b76ccd66eaf821eed7ac33002e5682706cf",
+        "raw_receipt": "4e03c324ce8c253cbf547990ecb1d3d3df33982b727e620f2ab9d4c31838f521"
+      },
+      "exit_code": 0,
+      "family_review": {
+        "accepted_families": 0,
+        "atomic_citation_coverage": false,
+        "pending": 161,
+        "units": 161
+      },
+      "finished_at_utc": "2026-10-21T05:53:11.875653+00:00",
+      "prior_bounded_passes_and_limits": {
+        "CLI_capture_v1": {
+          "entries_with_stat_changes": 514,
+          "observed_changes": "Retained pair differs only in recorded ctime/mtime/inode fields and trailing checksum.",
+          "proof_sha256": "cb1cfc5e3d56247c727898a5e689677e6d60da67cfbefc20888ca1ca7d1223e3",
+          "raw_bytes_differed": 7624,
+          "semantic_entries_and_flags_and_extensions_equal": true,
+          "writer": "unknown"
+        },
+        "CLI_capture_v2": {
+          "proof_sha256": "901686cc5f12a910bd713ccc6bc8bad4b683f77c8a8ba99d258b882a0778ee8b",
+          "raw_and_semantic_identity_verified": true
+        },
+        "navigation_reconciliation": {
+          "actual_exit_code": 0,
+          "findings": 0,
+          "limit": "Pre-command raw bytes and semantic entries were absent. The raw-index change writer and nature remain unproven; current proof does not reconstruct them.",
+          "ordinary_file_guard_changes": 0,
+          "root_disposition_sha256": "077093b89edd61d6cd4374fdad11287e6ec327a6d0fa9fe6c598dcbbc7605a09"
+        },
+        "source_gate_v1": {
+          "exit_code": 0,
+          "freeze_sha256": "a5b98d71d2be41f6b270518cea16716243b5c1cdfcaaea1b788e5bb7e7c258c6",
+          "limit": "Prior semantic-digest proof did not retain raw index copies or full flags; it does not prove prior raw-index identity.",
+          "receipt_sha256": "c689a9df91a12519d907f3dec0c7f89200520f59cd5fa8fed73a240707b81b51"
+        }
+      },
+      "record_type": "post-navigation-source-gate-public-safe-addendum",
+      "retries": 0,
+      "run_count_under_new_grant": 1,
+      "schema_version": 1,
+      "scope_limit": "Current full source-gate proof only. Earlier bounded findings remain preserved; unrelated inherited publication preflight was not retested.",
+      "started_at_utc": "2026-10-21T05:50:19.811410+00:00",
+      "status": "pass"
+    },
+    "library_counts": {
+      "artifacts": 3586,
+      "corpora": 5,
+      "editions": 1236,
+      "passages": 5694,
+      "segments": 113,
+      "works": 1054,
+      "bindings": 3955
+    },
+    "inherited_publications_unchanged": {
+      "gpt_publications": 149,
+      "gpt_surfaces": 2649,
+      "claude_publications": 61,
+      "claude_surfaces": 1846
+    },
+    "inherited_qualifications": "Known Psalm/calendar and five-agree/one-disagree or missing-standing rows remain logged. The unrelated Claude-55 annotation preflight was not rerun and is not represented as passed."
+  },
+  "canonical_sources": {
+    "receipt": {
+      "sha256": "7d3ed263d8805b602a952c08c854651e9f21d316dac40377314e315ffbafa489",
+      "byte_size": 1034,
+      "input_label": "canonical-sources-generation"
+    },
+    "exit_code": 0,
+    "works": 1054,
+    "editions": 1236,
+    "artifacts": 3586,
+    "passages": 5694,
+    "readable_items": 3344,
+    "files": 4581,
+    "finished_at_utc": "2026-10-21T04:58:03.888198+00:00",
+    "finished_at_america_chicago": "2026-10-20T23:58:03.888198-05:00"
+  },
+  "canonical_history": {
+    "current_receipt": {
+      "sha256": "27479238c1175f014b7b4f65770e65f67a67081add0b23f8ef3dab762dd75bac",
+      "byte_size": 1085,
+      "input_label": "post-navigation-history-generation-v3"
+    },
+    "exit_code": 0,
+    "files": 548,
+    "updated_files_this_run": 32,
+    "finished_at_utc": "2026-10-21T05:34:39.032630+00:00",
+    "finished_at_america_chicago": "2026-10-21T00:34:39.032630-05:00",
+    "earlier_successful_pre_navigation_receipt": {
+      "sha256": "1787fed8fde4a9c5a656f6294e25b7bf1268721bdc6990c6d61ca2411ac58c34",
+      "byte_size": 1085,
+      "input_label": "historical-pre-navigation-history-v2"
+    },
+    "earlier_uncached_cancellation": {
+      "origin": {
+        "sha256": "8cc377a62de2effc93dc4f7911f2b9219e14727aa193d3e98c87c3176dcfb738",
+        "byte_size": 123157,
+        "input_label": "historical-uncached-history-cancellation"
+      },
+      "exit_code": 143,
+      "reason": "Root intentionally terminated repeated uncached full-graph work for slowness; all owned processes were absent and all 545 old canonical files remained unchanged before fresh-cache recovery.",
+      "scope": "This labelled public derivative omits raw process identifiers and snapshots. The cancellation remains an actual cancelled attempt, not a passed generation."
+    }
+  },
+  "release": {
+    "current_scope_receipt": {
+      "sha256": "4f665b3378824ff65408140e14223893e61c0879453c97092cc3c247ce40ba89",
+      "byte_size": 1268,
+      "input_label": "post-navigation-release-scope-review"
+    },
+    "only_scope": "src/web/data/structure/act-history",
+    "changed_site_sources": 32,
+    "new_or_removed_site_sources": 0,
+    "authorization_and_publication_values_unchanged": true,
+    "actual_command_receipts": [
+      {
+        "sha256": "445d352579704ced69ca4d459dbcd836a4a5971d12c9d060f5b4ba8ac50bfc88",
+        "byte_size": 981,
+        "input_label": "release-status-before-v2"
+      },
+      {
+        "sha256": "aa3a099503b147a051a455ceba61b73574d111aeb999482c607c0072ebc2b5c1",
+        "byte_size": 1026,
+        "input_label": "release-refresh-v2"
+      },
+      {
+        "sha256": "0a1dcf1fce39010d8ef3beee7b8a4518642d79278b5e4668258276dfcf009342",
+        "byte_size": 977,
+        "input_label": "release-status-after-v2"
+      }
+    ],
+    "final_release": [
+      {
+        "path": "release/public-alpha.json",
+        "sha256": "263ec89fb464cb837dead71a3a113718374fab1721b0d73db97489ebb198618e",
+        "byte_size": 3686528
+      },
+      {
+        "path": "release/rights/public-alpha-2026-07-15.md",
+        "sha256": "c86d83414dbd55529db43d892d1da101041fd02b91e34f390667069f93f5eb45",
+        "byte_size": 3728501
+      }
+    ],
+    "current_stale_binding_count": 0,
+    "historical_first_refresh": {
+      "origin": {
+        "sha256": "ddafcea6356622915ddbd56ef1239acb05ccfd36f32e5190d8429a6ad2036520",
+        "byte_size": 1813,
+        "input_label": "historical-nine-root-release-refresh"
+      },
+      "roots": 9,
+      "before_exit": 1,
+      "expected_before_divergences": 167,
+      "refresh_exit": 0,
+      "after_exit": 0,
+      "changed": 167,
+      "new": 126,
+      "removed": 0,
+      "authorization_and_publication_values_unchanged": true
+    }
+  },
+  "coverage": {
+    "current_audit": {
+      "sha256": "a8ca6be712970faff60bb0bac9827dbbace35781088d7fd87eb82d71d1a6b465",
+      "byte_size": 1667617,
+      "path": "src/sources/inventories/eucharistic-stage-coverage-v1.json"
+    },
+    "historical_first_passing_reconciliation": {
+      "sha256": "194a4f878c4a40b190821ff6accd31504218e7a20b52f09a75276818fb7e8a1e",
+      "byte_size": 4988,
+      "input_label": "coverage-run-three-first-pass"
+    },
+    "actual_prior_schema_failures": [
+      {
+        "sha256": "8721a0fe275f9049143f0b3afc3a5e92d472f4bbb1eeb70e1844ec944097a7d6",
+        "byte_size": 3569
+      },
+      {
+        "sha256": "48684ea2531d604fe5e19a2f8af85c2cb495581456309496443339696d85427d",
+        "byte_size": 4914
+      }
+    ],
+    "schema_correction_scope": {
+      "cistercian": "Remove unsupported gap review_path only; literal/scope unchanged. Independent bounded delta of 100 checks accepted.",
+      "greek_italo": "Two rows expressed in allowed closed fields/kind with selected-page and bibliographic-only qualifications preserved; exact inverse restores prior accepted owner."
+    },
+    "current_navigation_reconciliation": {
+      "root_disposition": {
+        "sha256": "077093b89edd61d6cd4374fdad11287e6ec327a6d0fa9fe6c598dcbbc7605a09",
+        "byte_size": 2553,
+        "input_label": "navigation-reconciliation-index-disposition"
+      },
+      "owning_exit_code": 0,
+      "findings": 0,
+      "ordinary_file_guard_changes": 0,
+      "all_direct_and_native_metadata_inputs_stable": true,
+      "raw_index_stability": "Unproven for this event. Only the before hash survives; neither writer nor nature nor absence of transient mutation is established. The later full source gate proves its own current raw/semantic stability only."
+    },
+    "current_counts_owner": "source.json"
+  },
+  "navigation_and_cli": {
+    "historical_twenty_one_command_owner": "cli.json",
+    "later_navigation_and_three_index_events_owner": "navigation.json",
+    "current_supersession": "The unchanged navigation receipt records then-pending final-gate requirements. Current source-gate-v2, corpus, browser and print receipts now close those bounded requirements; it is not rewritten as a fresh 21-command replay or a reconstruction of the first unknown-writer index event.",
+    "declared_groups": 233,
+    "unmapped_families": 0,
+    "catalogue_entries": 1962,
+    "correction": "The earlier 234 generated groups/two unmapped observation is preserved historically. The final route adds the Ravenna-fragment alias to its existing qualified group and one distinct Roman diocesan proper group, without changing source/use/status/rights/parent/text identities."
+  },
+  "family_freshness": {
+    "status": "accepted freshness-only refresh",
+    "audited_on": "2026-10-20",
+    "timezone": "America/Chicago",
+    "registered_command_exit_code": 0,
+    "owned_ledger": {
+      "path": "src/sources/inventories/source-family-migration-v1.toml",
+      "sha256": "677cc087f15c369d070bc75074ca1c0fe053a1e2b9022a454879e3baf8e87ca7",
+      "byte_size": 35220
+    },
+    "changed_scalars": {
+      "canonical_catalog_snapshot": {
+        "after": "sha256:9bb902bbf1395f87bc30f6544ddd1d4eec4272063ce0ff91f8ac3d2b87154ac3",
+        "before": "sha256:1a74838ed56605b1cd93396619a53d6cd2e95e7c07c8a5487bbf0e8aa2c5802c"
+      },
+      "snapshot": {
+        "after": "sha256:5af5c4317a6b50972b9cc8c0f6689b3e46a36ebbf91c7f29213a0d2bf0b66037",
+        "before": "sha256:7ab4fbc1108f4d06d8e00046b1da8f27e2d50c451abb20ae5e905d1da6671345"
+      }
+    },
+    "review_units_pending": 161,
+    "review_unit_tables_unchanged": true,
+    "review_unit_table_sha256": "15ceed1ffce6059ef8db4e2d3ac0b34db90dde8ceb9f5187d6773d6696e8872e",
+    "accepted_semantic_families": 0,
+    "atomic_citation_coverage": false,
+    "provider_owners_unchanged": true
+  },
+  "focused_fixtures": {
+    "public_origin": {
+      "sha256": "b7c51e5b4b3b23665484085283e408eb3712e4d1f6fd95ad176014465e296208",
+      "byte_size": 1812,
+      "input_label": "focused-backend-fixtures-public-summary"
+    },
+    "raw_origin": {
+      "sha256": "1ac523b65004c3c6d01f4f3b4188534d44e618525b0c351723e3a0cc97be0353",
+      "byte_size": 3091,
+      "input_label": "focused-backend-fixtures-owning-receipt"
+    },
+    "passed_tests": 161,
+    "scope": "Focused tests over five synthetic fixtures. Does not claim a broad final-source integration pass; that is separately proved by the actual current source gate."
+  },
+  "documentation_and_delivery": {
+    "status": "Pending at this proposal; verified runtime/source/corpus/browser/digital-print inputs are ready.",
+    "future_owning_record": "documentation.json",
+    "required": "Root records the actual additive 45,128-input comparison and actual ledger-validator outcome, distinguishing the 32 inherited missing-installed-PDF findings. Outgoing disclosure, implementation commit/push and immutable directory/ZIP transport require later actual receipts.",
+    "all_rite_state": "in_progress"
+  }
+}

@@ -1,0 +1,372 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "provider-iiif-metadata",
+   "byte_size": 537667,
+   "edition_owned": true,
+   "id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.bsb-iiif-manifest-8eb1ecae",
+   "media_type": "application/json",
+   "notes": "563 referenced canvases; only the 40 independently enumerated JPEG responses were acquired.",
+   "page_count": null,
+   "retrieved": "2026-10-21",
+   "rights": "public-domain",
+   "rights_basis": "Exact mechanically delivered factual bibliographical and image-service metadata: short title, date, identifiers, extent, image URLs, attribution and Public Domain Mark. These facts and mechanical JSON encoding do not add a new copyright in the historical source. The manifest explicitly assigns Public Domain Mark 1.0 to the digitized object. Attribution as stated in the manifest is preserved.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "project-created-rebuild-recipe",
+   "byte_size": 2698,
+   "edition_owned": true,
+   "id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.offline-rebuild-recipe-fdc564bf",
+   "media_type": "text/plain",
+   "notes": "Run with --pdf, --index, --manifest, --output and --expect-sha arguments naming the exact retained artifacts and the remote ZIP manifest SHA-256. Proven by an independent reconstruction from the retained PDF during author validation.",
+   "page_count": null,
+   "retrieved": "2026-10-21",
+   "rights": "project-created",
+   "rights_basis": "Project-created Python recipe under CC BY 4.0; no source prose or liturgical transcription.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "project-created-facsimile-selection",
+   "byte_size": 23705230,
+   "edition_owned": true,
+   "id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.selected-original-images-pdf-295b8faf",
+   "media_type": "application/pdf",
+   "notes": "Selected facsimile only. Calendar headings and bounded Ordinary/Canon/colophon loci inspected; several leaves have actual text loss. Complete-volume acquisition, complete text, physical-copy completeness, textual recension and local reception remain unproved.",
+   "page_count": 40,
+   "retrieved": "2026-10-21",
+   "rights": "public-domain",
+   "rights_basis": "The underlying 1499 printing is public domain in the United States. The holding-library IIIF manifest explicitly assigns Public Domain Mark 1.0 to bsb00075725. BSB FAQ #9 permits copying, modification, distribution and performance, including commercial uses, without permission for PDM digital copies. Credit: Bayerische Staatsbibliothek München, 2 Inc.c.a. 3785, identified canvas/folio, urn:nbn:de:bvb:12-bsb00075725-7. Source image rights are distinct from Triptych’s CC BY 4.0 terms. No modern wrapper HTML is cleared by this statement.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "project-created-source-stream-index",
+   "byte_size": 18878,
+   "edition_owned": true,
+   "id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.selected-source-stream-index-a6aff5a9",
+   "media_type": "application/json",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-21",
+   "rights": "project-created",
+   "rights_basis": "Project-created factual provenance and sequence record under CC BY 4.0. It contains no transcribed liturgical body and no protected modern source prose.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "project-assembled-exact-source-response-package",
+   "byte_size": 24247801,
+   "edition_owned": true,
+   "id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.source-response-selection-zip-ffa855aa",
+   "media_type": "application/zip",
+   "notes": "The 24247801-byte ZIP duplicates the exact JPEG streams already retained in the 23705230-byte 40-page PDF. It is remote solely to avoid retaining a second approximately 24 MB representation of those same image bytes. Its exact bytes are reconstructible offline from the retained PDF using Poppler pdfimages, the retained index and holding-library manifest, and the retained rebuild-source-selection.py recipe. The recipe verifies every member and the final ZIP SHA-256. The source_url identifies the acquisition manifest, not a publicly hosted ZIP. Reopen direct image URLs only if source reacquisition is needed. No whole-book PDF was acquired or hashed.",
+   "page_count": 40,
+   "retrieved": "2026-10-21",
+   "rights": "public-domain",
+   "rights_basis": "The underlying 1499 printing is public domain in the United States. The holding-library IIIF manifest explicitly assigns Public Domain Mark 1.0 to bsb00075725. BSB FAQ #9 permits copying, modification, distribution and performance, including commercial uses, without permission for PDM digital copies. Credit: Bayerische Staatsbibliothek München, 2 Inc.c.a. 3785, identified canvas/folio, urn:nbn:de:bvb:12-bsb00075725-7. Source image rights are distinct from Triptych’s CC BY 4.0 terms. No modern wrapper HTML is cleared by this statement.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": "Surviving incipit names the use of the insignis ecclesia Leodiensis; no separately identified approval or adoption act",
+  "date": "1499-11-24",
+  "editors": [],
+  "id": "edition.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Paris, sumptibus Ioannis Higman, completed 24 November 1499",
+  "title": "Missale Leodiense: Paris, 24 November 1499, BSB 2 Inc.c.a. 3785",
+  "translators": [],
+  "year": 1499
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.selected-original-images-pdf-295b8faf",
+   "artifact_type": "project-created-facsimile-selection",
+   "id": "passage.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.local-use-incipit",
+   "locus": "BSB canvas 23; current label 8r; first printed Temporale leaf 1r",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-21",
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.selected-original-images-pdf-295b8faf",
+   "artifact_type": "project-created-facsimile-selection",
+   "id": "passage.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.sanctoral-opening",
+   "locus": "BSB canvas 399",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-21",
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.selected-original-images-pdf-295b8faf",
+   "artifact_type": "project-created-facsimile-selection",
+   "id": "passage.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.colophon",
+   "locus": "BSB canvas 553; current label 273r",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-21",
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.selected-original-images-pdf-295b8faf",
+   "artifact_type": "project-created-facsimile-selection",
+   "id": "passage.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.water-blessing-boundary",
+   "locus": "BSB canvases 21–22",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-21",
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.selected-original-images-pdf-295b8faf",
+   "artifact_type": "project-created-facsimile-selection",
+   "id": "passage.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.ordinary-preface-boundaries",
+   "locus": "BSB canvases 330–334; Ordinary starts on printed f.155r at canvas 331",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-21",
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.selected-original-images-pdf-295b8faf",
+   "artifact_type": "project-created-facsimile-selection",
+   "id": "passage.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.visible-text-loss",
+   "locus": "BSB canvases 332, 362, 363, 365–366",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-21",
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.selected-original-images-pdf-295b8faf",
+   "artifact_type": "project-created-facsimile-selection",
+   "id": "passage.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.preface-canon-opening",
+   "locus": "BSB canvases 359–361; Canon starts printed f.170r at canvas 361",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-21",
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.selected-original-images-pdf-295b8faf",
+   "artifact_type": "project-created-facsimile-selection",
+   "id": "passage.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.canon-selected-image-block",
+   "locus": "BSB canvases 361–366",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-21",
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.selected-original-images-pdf-295b8faf",
+   "artifact_type": "project-created-facsimile-selection",
+   "id": "passage.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.common-opening",
+   "locus": "BSB canvases 367–369; reset printed f.1r at 367",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-21",
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.selected-original-images-pdf-295b8faf",
+   "artifact_type": "project-created-facsimile-selection",
+   "id": "passage.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.preparation-boundary",
+   "locus": "BSB canvases 392–393; preparation begins printed f.14r at 393",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-21",
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.selected-original-images-pdf-295b8faf",
+   "artifact_type": "project-created-facsimile-selection",
+   "id": "passage.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.accidents-boundary",
+   "locus": "BSB canvases 396–398; accidents printed f.16r–16v",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-21",
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.selected-original-images-pdf-295b8faf",
+   "artifact_type": "project-created-facsimile-selection",
+   "id": "passage.diocese-of-liege.missale-leodiense.1499-paris-higman-bsb00075725.calendar-month-sequence",
+   "locus": "Calendar, BSB canvases 9–20, current labels 1r–6v",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-21",
+   "withheld": "no-transcription"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Missale insignis ecclesie Leodiensis",
+   "Missale secundum usum insignis ecclesie Leodiensis"
+  ],
+  "author": "Diocese of Liège; historical local-use attribution",
+  "category": "liturgical-book",
+  "description": "Historical Liège-use missal witnesses. This work identity does not assert a single textual recension, a diocesan approval act, continuous local reception, or composition of the medieval texts in 1499.",
+  "id": "work.diocese-of-liege.missale-leodiense",
+  "languages": [
+   "la"
+  ],
+  "title": "Missale Leodiense"
+ }
+}

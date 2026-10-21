@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756.numelyo-metadata-responses-401aca16"
+edition_id = "edition.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756"
+artifact_type = "source-metadata-response-package"
+media_type = "application/zip"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "Numelyo official conditions https://numelyo.bm-lyon.fr/conditions_utilisation section1 explicitly place associated-work metadata under CC0. These minimal JSON responses contain factual image positions, URLs, page labels and count, without modern UI or descriptions. This separate metadata dedication does not replace the historical-image Licence Ouverte grant. Exact source responses are preserved unchanged."
+rights_jurisdiction = "United States"
+license = "CC0-1.0"
+source_url = "https://numelyo.bm-lyon.fr/livres-numerises/REST_info.php?pid=BML:BML_00GOO0100137001102132797&num_vue=1&Getimage=true&GetimageType=web&nb_vue=1000&dsID=IMG00000001"
+retrieved = "2026-10-20"
+sha256 = "401aca16c23994414fa28aedc6ebfd3bd26f67bc5d3b54c987d7a67804d383f6"
+byte_size = 29808
+path = "src/sources/works/diocese-of-beauvais/missale-bellovacense/editions/1756-paris-beauvais-desaint/artifacts/numelyo-metadata-responses-401aca16/beauvais-1756-numelyo-metadata-responses.zip"
+indexable = false
+provenance = "Project-created deterministic ZIP package preserving the complete exact image-map and sommaire JSON responses; NOTICE.txt states the830-image source boundary and malformed beyond-end metadata. No source bytes changed."
+notes = "The sommaire response URL is https://numelyo.bm-lyon.fr/livres-numerises/REST_info.php?pid=BML:BML_00GOO0100137001102132797&GetSommaire=true . Provider labels are not accepted as printed pagination; initial null and170 beyond-end metadata records are explicitly distinguished from830 real images."

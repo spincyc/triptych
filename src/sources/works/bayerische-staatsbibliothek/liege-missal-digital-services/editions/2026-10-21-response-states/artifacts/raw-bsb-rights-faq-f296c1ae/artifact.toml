@@ -1,0 +1,17 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.bayerische-staatsbibliothek.liege-missal-digital-services.2026-10-21-response-states.raw-bsb-rights-faq-f296c1ae"
+edition_id = "edition.bayerische-staatsbibliothek.liege-missal-digital-services.2026-10-21-response-states"
+artifact_type = "institutional-html-response"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "unresolved"
+rights_jurisdiction = "United States"
+rights_basis = "Modern institutional wrapper HTML; no affirmative basis for wholesale Git redistribution was established. Public access is separate from redistribution rights. Factual identity, rights-category, quantity and access observations are retained as a separate project-created derivative."
+source_url = "https://www.digitale-sammlungen.de/en/faq"
+retrieved = "2026-10-21"
+sha256 = "f296c1ae679c81b53844997d4a5f68d16a32090a343210809df091fbedc4411c"
+byte_size = 60844
+indexable = false
+provenance = "Exact whole response fetched directly, except the explicitly incomplete whole-PDF generation HTML. Used only at the stated factual loci; no credentials used."
+notes = "Exact wrapper HTML bytes remain outside the public source tree because a redistribution basis for this modern presentation was not established, not because of size. Offline readers have the hash-bound small factual derivative and, for the book, the retained original image selection and primary IIIF manifest. Exact modern wording requires reopening the public URL. Reconsider if the institution supplies an applicable licence or the public terms change."

@@ -1,0 +1,132 @@
+{
+  "schema": "missal-batch3-operational-documentation-acceptance/v1",
+  "status": "pass",
+  "runtime_scope": "Documentation-only additions to the accepted final runtime; no source, browser code, projection, release, corpus or render change.",
+  "input_freeze": {
+    "input_label": "accepted-final-runtime-freeze",
+    "sha256": "707bbed2a9acf04cddbb3f6eb5685456a2cf2a8fd181ebb12a12c9417ddcb93a",
+    "byte_size": 10943008
+  },
+  "independent_documentation_review": {
+    "input_label": "exact-fifteen-target-independent-acceptance",
+    "sha256": "82ab7d391a59ea08cd1bd266cc5c7521bfefb80f790205899262bbc366a73f93",
+    "byte_size": 14048
+  },
+  "installed_proposal": {
+    "input_label": "exact-reviewed-document-proposal",
+    "sha256": "e76df54d8a6ee2fbf3e9ecd86f04b28e00426a2bd313f103711e5c8176210968",
+    "byte_size": 9919
+  },
+  "actual_additive_input_comparison": {
+    "receipt": {
+      "input_label": "root-full-byte-additive-proof",
+      "sha256": "a99306e08b4e5ebf2be3995a93c36305698ae096a7b34feec9c9ae487d97dc0e",
+      "byte_size": 4181
+    },
+    "frozen_files": 45128,
+    "unchanged_files": 45126,
+    "only_existing_operational_changes": [
+      "PROJECT-WORK.md",
+      "promised-deliverables.toml"
+    ],
+    "new_review_documents_checked": 13,
+    "source_code_projection_release_changes": 0,
+    "index_bytes_unchanged_during_readonly_check": true,
+    "new_documentary_pins": [
+      {
+        "path": "workflows/reviews/missal-batch3-2026-10-20/REPORT.md",
+        "sha256": "9f6b562525a814f67e8185759f85f3f98c973498d76b5ae4c8f948bb539aa42a",
+        "byte_size": 10144
+      },
+      {
+        "path": "workflows/reviews/missal-batch3-2026-10-20/browser-screenshots.json",
+        "sha256": "277f1e398da8073a12986dd96d80f7ef7954cbfeafd294548da83368bba48ff0",
+        "byte_size": 12257
+      },
+      {
+        "path": "workflows/reviews/missal-batch3-2026-10-20/browser.json",
+        "sha256": "78abd42a9b13aba7a207d2b00a05b87e81fc1e2799998dfcabade8f45dd22608",
+        "byte_size": 32134
+      },
+      {
+        "path": "workflows/reviews/missal-batch3-2026-10-20/central-gates.json",
+        "sha256": "07a5dfa9f8941d82f8cd687122bb049905960990832b867244fd61b777128377",
+        "byte_size": 14322
+      },
+      {
+        "path": "workflows/reviews/missal-batch3-2026-10-20/cli.json",
+        "sha256": "f029baa9ad039d149ee133135fe5cf8a32c2c667f0d51df58dbca02b63792107",
+        "byte_size": 33477
+      },
+      {
+        "path": "workflows/reviews/missal-batch3-2026-10-20/corpus.json",
+        "sha256": "1831ea60a5f68c1659520c71e2fb8eb0f4ab3bbaded9615c8525e728fc42dd46",
+        "byte_size": 12881
+      },
+      {
+        "path": "workflows/reviews/missal-batch3-2026-10-20/font.json",
+        "sha256": "8f52835babb7b8459499bba69057ae38042be8a908e3fa8cb3ba6e1bf8a22e1d",
+        "byte_size": 22808
+      },
+      {
+        "path": "workflows/reviews/missal-batch3-2026-10-20/implementation.json",
+        "sha256": "8ffd1d87d4478a6344a94d41eadb6b61a9369290e723bab01d4c8ecde19f01eb",
+        "byte_size": 15593
+      },
+      {
+        "path": "workflows/reviews/missal-batch3-2026-10-20/navigation.json",
+        "sha256": "05cb126110fad30e455024b05d1fc9adad7e59c1fca61a995d568079b8925ef3",
+        "byte_size": 16632
+      },
+      {
+        "path": "workflows/reviews/missal-batch3-2026-10-20/print-pages.json",
+        "sha256": "a919c64203a6fc99a41b421d1de6addffda16c4c6d6173672f53ed8ab9b2fce1",
+        "byte_size": 565672
+      },
+      {
+        "path": "workflows/reviews/missal-batch3-2026-10-20/print.json",
+        "sha256": "65bebf83d1bfb2debb99e34933d6f941cc04c2a4f933a96194aa7d659b1ab4fd",
+        "byte_size": 8484
+      },
+      {
+        "path": "workflows/reviews/missal-batch3-2026-10-20/registered-pdfs.json",
+        "sha256": "6e17429b03decd96486137659f68cd7185032f36b7ef0cae1c7237a5dca1ad21",
+        "byte_size": 61809
+      },
+      {
+        "path": "workflows/reviews/missal-batch3-2026-10-20/source.json",
+        "sha256": "30890405d1af53d01a7ef2f311d7652e75486439ce53f383836e901373e6fbaa",
+        "byte_size": 15682
+      }
+    ],
+    "self_exclusion": "This receipt is the fourteenth new operational document. Its own bytes are separately scanned and bound by staging/commit and final outgoing-object verification; it does not claim a self hash."
+  },
+  "actual_ledger_validation": {
+    "command": [
+      "tools/tpt",
+      "check-promised-deliverables"
+    ],
+    "exit_code": 0,
+    "stdout": "Promised-deliverable ledger valid: 74 tracked, 62 complete.",
+    "stderr_bytes": 0,
+    "receipt": {
+      "input_label": "actual-owning-ledger-command",
+      "sha256": "b5b77252c8343f2e7bb2a1793d530f5622b1af4e914dc441c26e96544a6dea1c",
+      "byte_size": 951
+    },
+    "historical_discrepancies": "Earlier snapshots recorded 32 missing installed PDFs. This actual current invocation reports no errors; no current 32-error result or causal restoration claim is inferred.",
+    "all_rite_deliverable_state": "in_progress",
+    "all_rite_requirements": {
+      "total": 20,
+      "pass": 14,
+      "open": 6
+    },
+    "scope": "Ledger validity does not satisfy the six open all-rite criteria. No require-complete assertion for the all-rite deliverable was made."
+  },
+  "final_first_chant_independent_addendum": {
+    "input_label": "current-generated-first-chant-comparison-independent-acceptance",
+    "sha256": "53007e4f2abc9b85d90f57c1267b36a9ad0e5a0aa5afd3fc3d280c954c9c78ff",
+    "byte_size": 10135
+  },
+  "publication_and_delivery": "Implementation commit, exact committed-object and full-patch disclosure, feature push and immutable main transport are recorded by the later delivery record. This receipt does not infer them."
+}

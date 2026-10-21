@@ -1,0 +1,416 @@
+{
+  "adapter_id": "native-book:cistercian-1657-pater-noster",
+  "binding_sha256": "22bf58d344f284e32c2ee540d6d7a3135f3412f259a7cbc1c22883fe1b9e6013",
+  "catalogue_witness_ids": [
+    "western:cistercian-1657"
+  ],
+  "counts": {
+    "languages": {
+      "la": 8
+    },
+    "units": 8,
+    "whitespace_tokens": 152
+  },
+  "id": "cistercian-1657-pater-noster",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Complete functional Pater constituent in offered source order: FIDES page-file 0275 (printed p.213), right column from Orémus after the earlier Canon/Iungit manus, through the introduction and adjacent Extendit manus; all page-file 0276 (printed p.214) body text, including the first complete Pater and response/Amen, the governing alternative-cantus rubric for three-lesson feasts, ferial days and Masses for the dead, the separately printed Per omnia/Amen and second introduction/Pater; and page-file 0277 (printed p.215), left column through Sacerdos submissâ voce dicit / Amén. It stops before the right-column Deinde accipit Patenam and Libera nos. Both complete printed chant forms and all governing rubrics are included. Final Amén. preserves the independently preferred probable printed acute over e in a worn/folded area; the hooked mark meets a crease, so that diacritic retains an explicit source-condition reservation. This complete declared functional constituent has partial whole-book and partial post-Canon text coverage. The wider continuation through page-file 0285 remains blocked by concealed source letters and punctuation; no alternate-setting words fill those gaps.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 3,
+    "known_extent_units": 8,
+    "omitted_book_divisions": [
+      "All front matter, calendar, Temporale, Sanctorale, Commons, propers and other book divisions outside this functional Pater selection",
+      "The earlier accepted 25-unit offertory and 52-unit Canon, including raw 0275 entire left column and right-column words before Orémus",
+      "Raw 0277 entire right column beginning Deinde accipit Patenam and Libera nos, and every later post-Canon prayer, rubric, chant and Last Gospel/thanksgiving direction",
+      "Raw 0278–0287, retained only for wider endpoint/gap and following-division evidence; no complete wider post-Canon text is claimed",
+      "Chant staff notation and pitches as a Latin text payload; the exact notation remains visible in the retained complete-page facsimile"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-facsimile-995d68b0",
+      "record_type": "artifact",
+      "rights_basis": "The original Latin Paris Cramoisy 1657 printing has an expired United States publication term. These are exact native mechanical page deliveries, faithful mechanical viewing derivatives or the independently checked historical Latin they carry. The previously accepted FIDES 3755 holding/rights control inspection of 20 October 2026 records Domena publiczna (Public domain) and Dla wszystkich bez ograniczeń; no new provider fetch is asserted here. Historical text and mechanical images are excluded from Triptych’s CC BY 4.0 grant. No modern translation, reconstruction or contemporary ritual authorization is supplied.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Every JPEG stream embedded unchanged as RGB PDF DCTDecode; original image pixel dimensions are MediaBox points. No additional resampling, crop, text overlay, repair or timestamp."
+    },
+    {
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "record_type": "artifact",
+      "rights_basis": "The original Latin Paris Cramoisy 1657 printing has an expired United States publication term. These are exact native mechanical page deliveries, faithful mechanical viewing derivatives or the independently checked historical Latin they carry. The previously accepted FIDES 3755 holding/rights control inspection of 20 October 2026 records Domena publiczna (Public domain) and Dla wszystkich bez ograniczeń; no new provider fetch is asserted here. Historical text and mechanical images are excluded from Triptych’s CC BY 4.0 grant. No modern translation, reconstruction or contemporary ritual authorization is supplied.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "NFC UTF-8; long s becomes s; unambiguous abbreviation signs expand only as individually documented; horizontal chant syllable spacing and physical line-end division hyphens join into words. Source u/v, i/j, ligatures, accents, case including display initials, punctuation, printed referrals, rubric wording and response markers remain. A printed pilcrow remains ¶ and response cue becomes ℟. Each stored LF is one consecutive source block distinguished by source wording, voice or ink; it is not newly inferred prayer paragraphing. Staff notation and pitches remain in the facsimile, not the Latin payload. No explanatory wrapper or source-completing wording is inserted."
+    },
+    {
+      "authority": "Cistercian Order",
+      "date": "1657",
+      "id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "language": "la",
+      "publication": "Parisiis, Sumptibus Sebastiani Cramoisy et Gabrielis Cramoisy, 1657",
+      "record_type": "edition",
+      "title": "Missale Cisterciense iuxta Romani recogniti correctionem. Primo editum. Authoritate Superiorum"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-amen",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-introduction",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-per-omnia",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-prayer-response",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-usage",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-first-amen",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-first-introduction",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-first-prayer-response",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "cistercian-1606-1657-1657"
+  ],
+  "title": "Cistercian missal 1657: Pater noster in its two chant forms",
+  "units": [
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-and-interleaved-rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-first-introduction"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-first-introduction",
+      "source_locator": "FIDES raw0275 (printed213); exact column, full-body baseline convention and physical fragments in the extent census.",
+      "source_order": 1,
+      "text": "Orémus. Præcéptis salutáribus móniti, & diuína institutióne formáti audémus\nExtendit manus.\ndícere.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "4e687873d31783fd198a8d8c213e787dc19ba54c9e9440e297cf71d5f70be07a",
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-first-introduction",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "chant-prayer-and-response",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-first-prayer-response"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-first-prayer-response",
+      "source_locator": "FIDES raw0276 (printed214); exact column, full-body baseline convention and physical fragments in the extent census.",
+      "source_order": 2,
+      "text": "PAter noster, qui es in cælis: Sanctificétur nomen tuum: Aduéniat regnum tuum: Fiat volúntas tua, sicut in cælo, & in terra. Panem nostrum quotidiánum da nobis hódie: Et dimítte nobis débita nostra, sicut & nos dimíttimus debitóribus nostris. Et ne nos indúcas in tentatiónem.\n℟. Sed líbera nos à malo.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "2645b4aa5103e6f95d995efd9c5f19a32b29d9593a057911770000b9fe854898",
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-first-prayer-response",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "rubric-and-spoken-response",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-first-amen"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-first-amen",
+      "source_locator": "FIDES raw0276 (printed214); exact column, full-body baseline convention and physical fragments in the extent census.",
+      "source_order": 3,
+      "text": "Sacerdos secretè dicit,\nAmen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "322d659d6d4085a5bb82f744e93e53fb3361f5d3b98812bc4e47c0f80da08303",
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-first-amen",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-alternative-usage"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-usage",
+      "source_locator": "FIDES raw0276 (printed214); exact column, full-body baseline convention and physical fragments in the extent census.",
+      "source_order": 4,
+      "text": "¶ Sequens cantus dicitur in Festis iij. Lectionum, & diebus ferialibus, & in Missis Defunctorum.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "ccffa6f101dcc8bc23ad8e95bf5434090b73d052f3345a60a0b0526e5ff7d7b0",
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-alternative-usage",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "chant-and-response",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-alternative-per-omnia"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-per-omnia",
+      "source_locator": "FIDES raw0276 (printed214); exact column, full-body baseline convention and physical fragments in the extent census.",
+      "source_order": 5,
+      "text": "PEr ómnia sæcula sæculórum.\n℟. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "8ad55fe2422f21c65e8632ab3ceb3efa7171cfe3e9f78ff05c770b34d6f56b08",
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-alternative-per-omnia",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "chant-introduction",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-alternative-introduction"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-introduction",
+      "source_locator": "FIDES raw0276 (printed214); exact column, full-body baseline convention and physical fragments in the extent census.",
+      "source_order": 6,
+      "text": "Orémus. Præcéptis salutáribus móniti, & diuína institutióne formáti audémus dícere.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "09c3a63912f388b1ba017b6341baa975f859566a13a712e2a4361604646d8baa",
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-alternative-introduction",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "chant-prayer-and-response",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-alternative-prayer-response"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-prayer-response",
+      "source_locator": "FIDES raw0276 (printed214); FIDES raw0277 (printed215); exact column, full-body baseline convention and physical fragments in the extent census.",
+      "source_order": 7,
+      "text": "PAter noster, qui es in cælis: Sanctificétur nomen tuum: Aduéniat regnum tuum: Fiat volúntas tua, sicut in cælo, & in terra. Panem nostrum quotidiánum da nobis hódie: Et dimitte nobis débita nostra, sicut & nos dimíttimus debitóribus nostris. Et ne nos indúcas in tentatiónem.\n℟. Sed líbera nos à malo.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "a986d4659045c63acda349408cd5d961e914a7e9030366784cc1aeb4af5e0fb9",
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-alternative-prayer-response",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "rubric-and-spoken-response",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-alternative-amen"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-normalized-latin-d84644c4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-amen",
+      "source_locator": "FIDES raw0277 (printed215); exact column, full-body baseline convention and physical fragments in the extent census.",
+      "source_order": 8,
+      "text": "Sacerdos submissâ voce dicit,\nAmén.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "text_sha256": "85ca6158ba52ab42724fdb3832c6766992898348e23b8a2c21c06ae4892fad2b",
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-alternative-amen",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-facsimile-995d68b0",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "id": "cistercian-1657-pater-noster-pages",
+      "scope_pages": [
+        [
+          1,
+          3
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "triptych-source-factual-extract-v1",
+  "rights_notice": "Project-created mechanical selection of individual factual metadata, short titles, dates, identifiers, quantities, signatures, fingerprints and access flags under the repository CC BY 4.0 terms. No full-response or database-expression licence is inferred from public access. The already retained official U.S. Copyright Office database and 37 CFR 202.1 guidance supplies the factual-expression distinction.",
+  "source_artifact_id": "artifact.universitat-de-barcelona.catalogue-and-digital-services.2026-10-21-response-states.raw-bipadi-search-register-bd423816",
+  "source_sha256": "bd423816ec503419e56bb61b80a5b104ade6150be079fb5e6514d98b0c86da01",
+  "source_bytes": 6682,
+  "source_url": "https://bipadi.ub.edu/digital/api/search/searchterm/25980/field/all/mode/all/conn/and/order/nosort/ad/asc/maxRecords/200",
+  "method": "GET",
+  "facts": {
+    "query_term": "25980",
+    "field": "all",
+    "mode": "all",
+    "collection": "all",
+    "max_records": 200,
+    "page": 1,
+    "total_results": 1,
+    "returned_result_count": 1,
+    "items": [
+      {
+        "collectionAlias": "catlib",
+        "itemId": "7418",
+        "filetype": "cpd",
+        "itemLink": "/compoundobject/collection/catlib/id/7418",
+        "title": "Biblioteca hispánica : catálogo de libros españoles o relativos a España antiguos y modernos : suplemento "
+      }
+    ]
+  }
+}

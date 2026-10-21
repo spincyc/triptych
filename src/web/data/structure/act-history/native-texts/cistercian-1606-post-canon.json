@@ -1,0 +1,2768 @@
+{
+  "adapter_id": "native-book:cistercian-1606-post-canon",
+  "binding_sha256": "bffe8231ccded6bad30b8200e60eb58b2e8b4fa099169e5403cc74c220eecdca",
+  "catalogue_witness_ids": [
+    "western:cistercian-1606"
+  ],
+  "counts": {
+    "languages": {
+      "la": 64
+    },
+    "units": 64,
+    "whitespace_tokens": 706
+  },
+  "id": "cistercian-1606-post-canon",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Complete bounded printed post-Canon tail and appended Suffragium of the Paris 1606 Cistercian missal. It begins with Orémus/Præcéptis on printed p. 197 left, immediately after and excluding the accepted strict Canon’s final Per omnia/Amen. The main Ordinary tail closes on printed p. 199 right with the departure rubric Sicque signans se, & inclinans recedat. The appended Suffragium pro pace Ecclesiastica & temporali on printed p. 200 is included through its final Amen before INCIPIT SANCTORALE on p. 201. The appendix is printed after the main closure but its own rubric assigns recitation after the Canon’s Pater noster; units retain physical source order rather than silently relocating it. This is a bounded composite functional selection, not an assertion of an uninterrupted printed chapter or complete Ordinary. All in-scope prayers, abbreviated incipits, rubrics, response cues, crosses and sung words are included under the disclosed normalization. The prior 7-unit offertory and 35-unit Canon remain unchanged. Whole-Missal and complete-Ordinary text coverage remain partial; no wording or ancestry is inherited.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 4,
+    "known_extent_units": 64,
+    "omitted_book_divisions": [
+      "All material before the initial post-Canon Orémus on printed p. 197, including the strict Canon’s final Per omnia/Amen and all earlier Canon text",
+      "Earlier preparations, offertory, prefaces and all other Ordinary portions outside the declared post-Canon tail",
+      "Sanctorale beginning printed p. 201, calendar, propers, lectionary and all remaining book divisions",
+      "Repeated running heads, foliation, catchwords, signatures, ornament, ink colour, imposed line/column geometry and musical notation; all sung words inside the bounds remain included"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded reading transcription of original Latin from the identified Paris 1606 printing, whose United States publication term has expired. No modern translation, critical reconstruction or wording from another edition is imported. The historical wording is separate from the BSB image-specific No Copyright - Non-Commercial Use Only 1.0 condition and attribution to München, Bayerische Staatsbibliothek, 2 Liturg. 205 a, bsb10496382. Third-party historical text is excluded from Triptych’s CC BY 4.0 license. Scholarly availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Direct original-image normalized reading transcription, not a glyph-diplomatic or musical edition. Long s becomes s; detached display initials join the word in sentence case; source wraps and line-end word divisions join within semantic blocks. Clear nasal suspensions, standard -us and -que brevigraphs expand without adding unprinted accents. Printed u/v, j, æ/œ, e-cauda ę, actual accents (including glóriósa, pręséntibus, déxterę and eleíson), punctuation, ampersands and abbreviated prayer endings remain. Distinct source prayer, rubric, response, incipit and paragraph blocks are separate source-order units; inline source boundaries are mapped in the census. The printed red crosses serialize as ✠ and the actual crossed-R cues as ℟. with their source period; no response cue is added where none is printed. Eight repeated raised hook/zigzag-over-dot signs in the p.200 appendix serialize as U+2E4E ⹎ (PUNCTUS ELEVATUS MARK), a disclosed normalized codepoint mapping from the observed source form, without claiming exact typeface identity, prosody or historical function. Repeated Agnus forms and short Psalmus/Lætatus sum/Gloria/Kyrie/Pater incipits remain as actually printed, without supplied continuations. All selected sung words remain; musical notes/staves, repeated running heads, foliation, signatures, catchwords including INCIPIT, ornament, ink colour, imposed line/column geometry and detached ink specks are excluded. The appendix remains in physical printing order after the p.199 main Order closure, although its rubric directs recitation after Pater noster Canonis. Every unit occupies one UTF-8 NFC physical payload line, ending with LF in the artifact; each unit text hash excludes that LF. No OCR, other-edition wording, familiar Roman wording or unprinted ending is supplied."
+    },
+    {
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "record_type": "artifact",
+      "rights_basis": "The identified 1606 printed text is public domain by expiration of its publication term. The Bayerische Staatsbibliothek digital images are supplied under No Copyright - Non-Commercial Use Only 1.0, https://rightsstatements.org/vocab/NoC-NC/1.0/ ; this is a rights statement, not a Creative Commons license. Noncommercial copying and redistribution retain that condition and attribution: München, Bayerische Staatsbibliothek, 2 Liturg. 205 a, bsb10496382. These source images and their lossless PDF derivative are excluded from Triptych’s CC BY 4.0 license. No unrestricted image reuse is asserted; the image condition is distinct from the public-domain historical Latin.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "permission",
+      "source_url": "https://www.digitale-sammlungen.de/en/view/bsb10496382?page=251",
+      "transformation": "pdfseparate -f 252 -l 256 of the existing exact provider PDF, followed by pdfunite in ascending order. Derivative pages 1–5 correspond to provider PDF pages 252–256, BSB canvases 251–255, printed pp. 197–201. Only pages 1–4 carry selected literal text; page 5 is excluded Sanctorale boundary context. Embedded JPEG bytes are unchanged."
+    },
+    {
+      "authority": "Cistercian Order",
+      "date": "1606",
+      "id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "language": "la",
+      "publication": "Parisiis, In Officina H. de Marnef, apud Dionysiam Cauellat, 1606",
+      "record_type": "edition",
+      "title": "Missale ad vsum sacri Ordinis Cisterciensis. Iuxta decreta Capituli Generalis dicti ordinis, Romano conformius redditum, primo accentibus ornatum & auctum"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-agnus-defunctorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-agnus-defunctorum-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-agnus-dei-first",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-agnus-dei-second",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-agnus-dei-tertius",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-antequam-sumat-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-corpus-domini",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-corpus-tuum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-deinde-sumat-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-domine-iesu-christe-fili",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-domine-iesu-christe-pacem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-domine-non-sum-dignus",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-dum-miscetur-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-et-ne-nos-inducas",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-hae-orationes-addi-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-haec-sacrosancta-commixtio",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-libera-nos",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-libera-per-omnia",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-libera-per-omnia-amen",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-meritis-et-precibus",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-oremus-post-canon",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-panem-coelestem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pater-noster",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pater-noster-amen",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-dans-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-domini",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-prayer-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-response",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-response-communion",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-tecum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-perceptio-corporis",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-placeat-tibi",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-post-finitam-missam-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-post-sumptionem-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-praeceptis-salutaribus",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-qui-tecum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-quid-retribuam",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-quod-ore-sumpsimus",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-sanguis-domini",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-sed-libera-nos-response",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-sicque-signans-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-signando-se-calice-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-amen",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-domine-exaudi",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-domine-saluos",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-dominus-vobiscum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-ecclesiae-tuae",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-abundantia",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-clamor",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-cum-spiritu",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-exaudi",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-ne-nos",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-rege",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-fiat-pax",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-gloria-patri",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-heading-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-hostium",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-kyrie",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-laetatus-sum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-oremus",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-pater-noster",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-psalmus-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-saluum-fac",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-tunc-erigens-rubric",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "cistercian-1606-1657-1606"
+  ],
+  "title": "Cistercian 1606: post-Canon Ordinary tail and appended Suffragium",
+  "units": [
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "invocation",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "oremus-post-canon"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-oremus-post-canon",
+      "source_locator": "Printed 197; BSB canvas 251; provider PDF 252; retained facsimile 1; normalized physical lines 1–1.",
+      "source_order": 1,
+      "text": "Orémus.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "a8b6cea0cfa689e9adb92abd42ccfb9458c1e42c4d079fe12d521a3a9da0a64e",
+      "unit_id": "unit.cistercian-1606.post-canon.oremus-post-canon",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-invitation",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "praeceptis-salutaribus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-praeceptis-salutaribus",
+      "source_locator": "Printed 197; BSB canvas 251; provider PDF 252; retained facsimile 1; normalized physical lines 2–2.",
+      "source_order": 2,
+      "text": "Præcéptis salutáribus móniti, & diuína institutióne formáti, audémus dícere.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "e2b7aaa020b345d08da83a02c9fae20250276c594b0061a396f231f80935c8cd",
+      "unit_id": "unit.cistercian-1606.post-canon.praeceptis-salutaribus",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-noster"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pater-noster",
+      "source_locator": "Printed 197; BSB canvas 251; provider PDF 252; retained facsimile 1; normalized physical lines 3–3.",
+      "source_order": 3,
+      "text": "Pater noster, qui es in cœlis, sanctificétur nomen tuum. Aduéniat regnum tuum. Fiat volúntas tua, sicut in cœlo, & in terra. Panem nostrum quotidiánum da nobis hódie. Et dimítte nobis débita nostra, sicut & nos dimíttimus debitóribus nostris.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "26920c81e2619aecb6cf52301886dffb770d57d5af715f649fde2e5e2c45510c",
+      "unit_id": "unit.cistercian-1606.post-canon.pater-noster",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-fragment",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "et-ne-nos-inducas"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-et-ne-nos-inducas",
+      "source_locator": "Printed 197; BSB canvas 251; provider PDF 252; retained facsimile 1; normalized physical lines 4–4.",
+      "source_order": 4,
+      "text": "Et ne nos indúcas in tentatiónem.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "893bc0ed4c892e3c7b243caa19646ff0469227af8fbce83010e410277ebea611",
+      "unit_id": "unit.cistercian-1606.post-canon.et-ne-nos-inducas",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "response",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "sed-libera-nos-response"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-sed-libera-nos-response",
+      "source_locator": "Printed 197; BSB canvas 251; provider PDF 252; retained facsimile 1; normalized physical lines 5–5.",
+      "source_order": 5,
+      "text": "℟. Sed líbera nos à malo.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "b6170812c43c2671eab7e9fe6d511db521c15ad978381bd3d4bfb534bedca81b",
+      "unit_id": "unit.cistercian-1606.post-canon.sed-libera-nos-response",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "response",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-noster-amen"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pater-noster-amen",
+      "source_locator": "Printed 197; BSB canvas 251; provider PDF 252; retained facsimile 1; normalized physical lines 6–6.",
+      "source_order": 6,
+      "text": "Amen",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "8ff6fd77382d182e963fd3f322dddc3bc062d441675ae64cef5d58d73538467b",
+      "unit_id": "unit.cistercian-1606.post-canon.pater-noster-amen",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "libera-nos"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-libera-nos",
+      "source_locator": "Printed 198; BSB canvas 252; provider PDF 253; retained facsimile 2; normalized physical lines 7–7.",
+      "source_order": 7,
+      "text": "Líbera nos, quæsumus Dómine, ab ómnibus malis, prætéritis, pręséntibus, & futúris, & intercedente beáta & glóriósa semper vírgine Dei genitríce María, & beátis Apóstolis tuis Petro, & Paulo, atque Andréa, cum ómnibus Sanctis, da propítius pacem in diébus nostris, vt ope misericórdiæ tuæ adiúti, & à peccáto simus semper líberi, & ab omni perturbatióne secúri. Per eúndem Dóminum nostrum Iésum Christum Fílium tuum.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "2d2c1afa89d73150cdc45b4cb9269ed45be02dd9bfc0f460c580a62586ec2d67",
+      "unit_id": "unit.cistercian-1606.post-canon.libera-nos",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-continuation",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "qui-tecum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-qui-tecum",
+      "source_locator": "Printed 198; BSB canvas 252; provider PDF 253; retained facsimile 2; normalized physical lines 8–8.",
+      "source_order": 8,
+      "text": "Qui tecum viuit, & regnat in vnitáte Spíritus Sancti Deus",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "f5a822d63597cc443d9e840f38cd696527f96758818f717b47910e29f0a2ef82",
+      "unit_id": "unit.cistercian-1606.post-canon.qui-tecum",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "dialogue-call",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "libera-per-omnia"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-libera-per-omnia",
+      "source_locator": "Printed 198; BSB canvas 252; provider PDF 253; retained facsimile 2; normalized physical lines 9–9.",
+      "source_order": 9,
+      "text": "Per ómnia sǽcula sæculórum.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "d2e3c234304ed68f587bcba28a7d8efb2649d2b7e6a08fd400ecb68b57135201",
+      "unit_id": "unit.cistercian-1606.post-canon.libera-per-omnia",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "response",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "libera-per-omnia-amen"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-libera-per-omnia-amen",
+      "source_locator": "Printed 198; BSB canvas 252; provider PDF 253; retained facsimile 2; normalized physical lines 10–10.",
+      "source_order": 10,
+      "text": "Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "d07a178bc193c1910055e2cfd1e2c19eece00b6cd3368d5e96308f79539eaad3",
+      "unit_id": "unit.cistercian-1606.post-canon.libera-per-omnia-amen",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "dialogue-call",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pax-domini"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-domini",
+      "source_locator": "Printed 198; BSB canvas 252; provider PDF 253; retained facsimile 2; normalized physical lines 11–11.",
+      "source_order": 11,
+      "text": "Pax Dómini ✠ sit semper ✠ vobíscum. ✠",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "cb061beaa22a8278c84b139cc205452d80b7ba4ccd52eeba24b8e45534198d18",
+      "unit_id": "unit.cistercian-1606.post-canon.pax-domini",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "response",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pax-response"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-response",
+      "source_locator": "Printed 198; BSB canvas 252; provider PDF 253; retained facsimile 2; normalized physical lines 12–12.",
+      "source_order": 12,
+      "text": "Et cum spíritu tuo.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "0c3c344f7a32a067692f65f2a861e4116fd70f1aae800e0ee03e450fe3ecfff5",
+      "unit_id": "unit.cistercian-1606.post-canon.pax-response",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "dum-miscetur-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-dum-miscetur-rubric",
+      "source_locator": "Printed 198; BSB canvas 252; provider PDF 253; retained facsimile 2; normalized physical lines 13–13.",
+      "source_order": 13,
+      "text": "Dum miscetur corpus sanguini.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "d6f747c355cbfbdeecc4fc4e33c5bb4cffe872c8018db130eabaa7d58b09eb0a",
+      "unit_id": "unit.cistercian-1606.post-canon.dum-miscetur-rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "haec-sacrosancta-commixtio"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-haec-sacrosancta-commixtio",
+      "source_locator": "Printed 198; BSB canvas 252; provider PDF 253; retained facsimile 2; normalized physical lines 14–14.",
+      "source_order": 14,
+      "text": "Hæc sacrosáncta commíxtio córporis, & sánguinis Dómini nostri Iésu Christi fiat mihi, & ómnibus suméntibus, salus mentis, & córporis, & ad vitam ætérnam promeréndam, & capesséndam, præparátio salutáris. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "1e2efa952810c5d710bc2e320fb2a5e594e1a857f0a5268b2a867829b879734a",
+      "unit_id": "unit.cistercian-1606.post-canon.haec-sacrosancta-commixtio",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "invocation",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "agnus-dei-first"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-agnus-dei-first",
+      "source_locator": "Printed 198; BSB canvas 252; provider PDF 253; retained facsimile 2; normalized physical lines 15–15.",
+      "source_order": 15,
+      "text": "Agnus Dei, qui tollis peccáta mundi, miserére nobis.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "f97e69dbfa68afa477c847cc9d99ed66c4d9c553780d9edf6549c77dbbee8675",
+      "unit_id": "unit.cistercian-1606.post-canon.agnus-dei-first",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "invocation",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "agnus-dei-second"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-agnus-dei-second",
+      "source_locator": "Printed 198; BSB canvas 252; provider PDF 253; retained facsimile 2; normalized physical lines 16–16.",
+      "source_order": 16,
+      "text": "Agnus Dei, qui tollis peccáta mundi, miserére nobis.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "f97e69dbfa68afa477c847cc9d99ed66c4d9c553780d9edf6549c77dbbee8675",
+      "unit_id": "unit.cistercian-1606.post-canon.agnus-dei-second",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "agnus-dei-tertius"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-agnus-dei-tertius",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 17–17.",
+      "source_order": 17,
+      "text": "Agnus Dei qui tollis peccáta mundi, dona nobis pacem.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "af099a048921cb84fa8e779ddf325a0b18cedd35ea7942fe153b0607c58cecf2",
+      "unit_id": "unit.cistercian-1606.post-canon.agnus-dei-tertius",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "agnus-defunctorum-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-agnus-defunctorum-rubric",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 18–18.",
+      "source_order": 18,
+      "text": "In Missis defunctorum ter dicitur",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "9e4e88de40ab3b3ba3acf4f57d01b8926a01630675cfaa3ef9d6417c44928eb9",
+      "unit_id": "unit.cistercian-1606.post-canon.agnus-defunctorum-rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer-variant",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "agnus-defunctorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-agnus-defunctorum",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 19–19.",
+      "source_order": 19,
+      "text": "Agnus Dei, qui tollis peccáta mundi, dona eis réquiem.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "be5bf8530687959386907b532448047896f28557ec5bb3ac197233957c4c1169",
+      "unit_id": "unit.cistercian-1606.post-canon.agnus-defunctorum",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pax-prayer-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-prayer-rubric",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 20–20.",
+      "source_order": 20,
+      "text": "Si danda sit pax. (nunquam autem datur in Missis defunctorum) potest præmitti hæc Oratio.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "5dad7355e35d9a0e48530a6cfb4a64929c8e0a8c044927c782c0405cf511ff69",
+      "unit_id": "unit.cistercian-1606.post-canon.pax-prayer-rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "domine-iesu-christe-pacem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-domine-iesu-christe-pacem",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 21–21.",
+      "source_order": 21,
+      "text": "Dómine Iésu Christe, qui dixísti Apóstolis tuis, pacem relínquo vobis, pacem meam do vobis, ne respícias peccáta mea, sed fidem Ecclesiæ tuæ, eámque secúndum voluntátem tuam pacificáre & coadunáre dignéris. Qui viuis & regnas.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "01dfdb5d7adf4cf7ec60b4345eefe420324595c5e11c149c460aed3c2fafa6be",
+      "unit_id": "unit.cistercian-1606.post-canon.domine-iesu-christe-pacem",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pax-dans-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-dans-rubric",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 22–22.",
+      "source_order": 22,
+      "text": "dans dicat",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "668d19323b49cac16cc2cf6ae8ecd2d56c01d331933b74a976614cbc2dd52550",
+      "unit_id": "unit.cistercian-1606.post-canon.pax-dans-rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "versicle",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pax-tecum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-tecum",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 23–23.",
+      "source_order": 23,
+      "text": "Pax tecum.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "b9ff9141bdd1c75bfa9769a686b6e801e3c05e8e2f154baa466a7980e3b6b4e4",
+      "unit_id": "unit.cistercian-1606.post-canon.pax-tecum",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "response",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pax-response-communion"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-pax-response-communion",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 24–24.",
+      "source_order": 24,
+      "text": "℟. Et cum spíritu tuo.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "0b2e0b1209007da2ba1777bb285684474edf90410965b2bb7317e597956f374c",
+      "unit_id": "unit.cistercian-1606.post-canon.pax-response-communion",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "antequam-sumat-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-antequam-sumat-rubric",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 25–25.",
+      "source_order": 25,
+      "text": "Antequam sumat corpus & sanguinem dicat.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "2a408ff7e8e774cf39875a650e00b7ed02abbd299b9ac320ad98bcc854082dc8",
+      "unit_id": "unit.cistercian-1606.post-canon.antequam-sumat-rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "domine-iesu-christe-fili"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-domine-iesu-christe-fili",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 26–26.",
+      "source_order": 26,
+      "text": "Dómine Iésu Christe Fili Dei viui, qui ex voluntáte Patris, cooperánte Spíritu Sancto per mortem tuam mundum viuificásti, líbera me, quæso, per hoc sacrosánctum corpus, & sánguinem tuum à cunctis iniquitátibus meis, & ab vniuérsis malis, & fac me tuis semper obedíre mandátis, & nunquam in perpétuum à te separári permíttas. Qui viuis & regnas Deus. Per ómnia sǽcula sæculórum. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "9ce08ae6e7fb5cab8e8ad743e531cb3d179099a6e35c82586260d0cb9b868757",
+      "unit_id": "unit.cistercian-1606.post-canon.domine-iesu-christe-fili",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "hae-orationes-addi-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-hae-orationes-addi-rubric",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 27–27.",
+      "source_order": 27,
+      "text": "Hæ orationes addi possunt.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "939ae4db6edb75f6f8d516cecad34635b9215391b22b5995262f5e12bf4f2d59",
+      "unit_id": "unit.cistercian-1606.post-canon.hae-orationes-addi-rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "perceptio-corporis"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-perceptio-corporis",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 28–28.",
+      "source_order": 28,
+      "text": "Percéptio córporis tui, Dómine Iésu Christe, quod ego indígnus súmere præsúmo, non mihi prouéniat in iudícium & condemnatiónem, sed, pro tua pietáte, prosit mihi ad tutaméntum, córporis & ánimæ & medélam percipiéndam. Qui viuis.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "e1d674ebfc8d1f20fcd835d2cf1725af3449085643e22135ca5448e8746951f0",
+      "unit_id": "unit.cistercian-1606.post-canon.perceptio-corporis",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "panem-coelestem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-panem-coelestem",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 29–29.",
+      "source_order": 29,
+      "text": "Panem cœléstem accípiam, & nomen Dómini inuocábo.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "d527a70be6ba3bfdd1b6e8281dea2cc8099bbf1bca35a64cbfd167a3ac240f8d",
+      "unit_id": "unit.cistercian-1606.post-canon.panem-coelestem",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "domine-non-sum-dignus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-domine-non-sum-dignus",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 30–30.",
+      "source_order": 30,
+      "text": "Dómine, non sum dignus, vt intres sub tectum meum: sed tantum dic verbo, & sanábitur ánima mea.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "a0e25a259c8cb98f35941feab78b024b134879973ef6e6ce2924187930a7ea3d",
+      "unit_id": "unit.cistercian-1606.post-canon.domine-non-sum-dignus",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "corpus-domini"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-corpus-domini",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 31–31.",
+      "source_order": 31,
+      "text": "Corpus Dómini nostri Iésu Christi custódiat ánimam meam in vitam ætérnam. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "32a00d60f96ad14d0157db29a91bf34cf9758601193adf07b0e8ddc61cd89e06",
+      "unit_id": "unit.cistercian-1606.post-canon.corpus-domini",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "deinde-sumat-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-deinde-sumat-rubric",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 32–32.",
+      "source_order": 32,
+      "text": "Deinde sumat corpus Domini, quo sumpto dicat.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "c1f20e85c7a097f5d54591488d015e4334a88449c2f63efb6a0f49f6a52c635f",
+      "unit_id": "unit.cistercian-1606.post-canon.deinde-sumat-rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "quid-retribuam"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-quid-retribuam",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 33–33.",
+      "source_order": 33,
+      "text": "Quid retríbuam Dómino, pro ómnibus quæ retríbuit mihi? Cálicem salutáris accípiam, & nomen Dómini inuocábo. Laudans inuocábo Dóminum, & ab inimícis meis saluus ero:",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "980f39590b76680a87b711e7fd7b8d8360ac232b31cf01b9ec3884aa889fb016",
+      "unit_id": "unit.cistercian-1606.post-canon.quid-retribuam",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "signando-se-calice-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-signando-se-calice-rubric",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 34–34.",
+      "source_order": 34,
+      "text": "Signando se Calice dicat.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "ebe40d53642dbbcb76714bdf58e04ab5f3ffd8cf3e42f76599a7d492874ea48d",
+      "unit_id": "unit.cistercian-1606.post-canon.signando-se-calice-rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "sanguis-domini"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-sanguis-domini",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 35–35.",
+      "source_order": 35,
+      "text": "Sanguis Dómini nostri Iésu Christi custódiat ánimam meam in vitam ætérnam. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "f978cc2bfb7c86805d428f12c4e116369e758b7aa4f2959411ed913bf47f8477",
+      "unit_id": "unit.cistercian-1606.post-canon.sanguis-domini",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "post-sumptionem-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-post-sumptionem-rubric",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 36–36.",
+      "source_order": 36,
+      "text": "Post sumptionem",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "b2fac3c62fa38edb4ed02ec4d49c87fe0e2b7e902f85058599776a7ce447158a",
+      "unit_id": "unit.cistercian-1606.post-canon.post-sumptionem-rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "quod-ore-sumpsimus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-quod-ore-sumpsimus",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 37–37.",
+      "source_order": 37,
+      "text": "Quod ore súmpsimus, Dómine, pura mente capiámus: & de múnere temporáli fiat nobis remédium sempitérnum.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "2dc30499c97ff58dec1e6585fc3b0302642027eb1eb1d691c53ac16db4923c72",
+      "unit_id": "unit.cistercian-1606.post-canon.quod-ore-sumpsimus",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "corpus-tuum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-corpus-tuum",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 38–38.",
+      "source_order": 38,
+      "text": "Corpus tuum, Dómine, quod súmpsi, & sanguis, quem potáui, adhǽreat viscéribus meis, & nulla remáneat in me, scélerum mácula, quem tam sancta refecérunt sacraménta. Qui viuis.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "204f90d8da68c37ebbc2b7c3bf4d9463310a533f50b74a1a130bd26b764f349a",
+      "unit_id": "unit.cistercian-1606.post-canon.corpus-tuum",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "post-finitam-missam-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-post-finitam-missam-rubric",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 39–39.",
+      "source_order": 39,
+      "text": "Post finitam Missam dicat.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "7c7e2f4f0b4ba0f42fb9894565c31259692af5c42056894294246893511315d7",
+      "unit_id": "unit.cistercian-1606.post-canon.post-finitam-missam-rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "placeat-tibi"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-placeat-tibi",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 40–40.",
+      "source_order": 40,
+      "text": "Pláceat tibi sancta Trínitas vnus Deus obséquium seruitútis meæ: & præsta, vt hoc sacrifícium, quod óculis tuæ maiestátis indígnus óbtuli, tibi sit acceptábile, mihíque, & ómnibus, pro quibus illud óbtuli sit, te miseránte, propitiábile. Qui viuis & regnas Deus. Per ómnia sǽcula sæculórum. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "87afcf27c1ef89e7ec6ce8157271a6b6a531cd357c4ef3949f0c3dba9ca40e52",
+      "unit_id": "unit.cistercian-1606.post-canon.placeat-tibi",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "tunc-erigens-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-tunc-erigens-rubric",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 41–41.",
+      "source_order": 41,
+      "text": "Tunc erigens se & osculans labium altaris dicat.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "80f23f3012cadd7cb98dd63ee1834a7a88a6a7d235c5928c96c8cf7b73f8f5cb",
+      "unit_id": "unit.cistercian-1606.post-canon.tunc-erigens-rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "meritis-et-precibus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-meritis-et-precibus",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 42–42.",
+      "source_order": 42,
+      "text": "Méritis & précibus istórum, & ómnium Sanctórum suórum misereátur nostri omnípotens Dóminus. Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "4ed5d7278a63af025d7ff3c7007fdded04977c356a7277b330f11d799ada6d25",
+      "unit_id": "unit.cistercian-1606.post-canon.meritis-et-precibus",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "sicque-signans-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-sicque-signans-rubric",
+      "source_locator": "Printed 199; BSB canvas 253; provider PDF 254; retained facsimile 3; normalized physical lines 43–43.",
+      "source_order": 43,
+      "text": "Sicque signans se, & inclinans recedat.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "0d7252c88fd944682b416116fa3bfcc3de87900b2f3f03ecfd2920db232b451d",
+      "unit_id": "unit.cistercian-1606.post-canon.sicque-signans-rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-heading-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-heading-rubric",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 44–44.",
+      "source_order": 44,
+      "text": "Suffragium pro pace Ecclesiastica & temporali dicendum post Pater noster. Canonis. pro quo concessi sunt xx. dies indulgentiarum.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "81815cc58dd95b241647320be1ace4e37f30bab315095c0f816521244d8fa521",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-heading-rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-psalmus-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-psalmus-rubric",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 45–45.",
+      "source_order": 45,
+      "text": "Psalmus.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "a5bea2b8175dc220c20fd332292b2e5b89f5c8cb2fa804f894a675cc84ca5be6",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-psalmus-rubric",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "incipit",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-laetatus-sum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-laetatus-sum",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 46–46.",
+      "source_order": 46,
+      "text": "Lætátus sum.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "260a36a5ff27b45771688532a8a0ded17c2e3a768315b77ec2a5024bb13006bc",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-laetatus-sum",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "incipit",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-gloria-patri"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-gloria-patri",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 47–47.",
+      "source_order": 47,
+      "text": "Glória Patri.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "fb9a6f884bb545e1fe7b4b7160eb9a3cbaeb7f09f13a70780890e13d29e79c8d",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-gloria-patri",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "incipit",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-kyrie"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-kyrie",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 48–48.",
+      "source_order": 48,
+      "text": "Kýrie eleíson.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "67f833e34fcab90ecfdf195b9f87485468dd292ef7f9b452d4af6781f1f35937",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-kyrie",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "incipit",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-pater-noster"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-pater-noster",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 49–49.",
+      "source_order": 49,
+      "text": "Pater noster.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "c907ba915737cbf6da58c081e6851b1c6e5f9529eb1e2571176f3ac59cef8028",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-pater-noster",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "versicle-fragment",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-et-ne-nos"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-ne-nos",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 50–50.",
+      "source_order": 50,
+      "text": "Et ne nos⹎",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "11e7eb6adaca24dbf5032a43ce10ceab70f113665643316b5d7f91b776e34663",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-ne-nos",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "versicle",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-domine-saluos"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-domine-saluos",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 51–51.",
+      "source_order": 51,
+      "text": "Dómine saluos fac Reges⹎",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "9f22f2488ab396c7b3934a5386afaeb17be57a60ecf67a9e6cf8ff94bf813369",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-domine-saluos",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "response",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-et-exaudi"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-exaudi",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 52–52.",
+      "source_order": 52,
+      "text": "Et exaúdi nos in die qua inuocauérimus te.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "56f836f768d9820bfde36f4449fc1f9fa0f7ee030b9a587e502098fa9e402212",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-exaudi",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "versicle",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-saluum-fac"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-saluum-fac",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 53–53.",
+      "source_order": 53,
+      "text": "Saluum fac pópulum tuum Dómine, & bénedic hæreditáti tuæ⹎",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "513db2bb941149e81804450b0577a9a5af44643810427aedb72dd5a517c60494",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-saluum-fac",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "response",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-et-rege"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-rege",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 54–54.",
+      "source_order": 54,
+      "text": "Et rege eos, & extólle illos vsque in ætérnum.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "67cb95ad5ca311608a5cead36d5f0ceecc11f9ddf96ae0ce84df533574085b11",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-rege",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "versicle",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-fiat-pax"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-fiat-pax",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 55–55.",
+      "source_order": 55,
+      "text": "Fiat pax in virtúte tua⹎",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "504d826dbda80eea7d1894c892cf7fa2de232fe66ae067779fad14c0c933cca1",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-fiat-pax",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "response",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-et-abundantia"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-abundantia",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 56–56.",
+      "source_order": 56,
+      "text": "Et abundántia in túrribus tuis.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "f376266e3eb9ababf2698a14976064f28383cb6112de6dbb440a8c6d5b9f6da0",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-abundantia",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "versicle",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-domine-exaudi"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-domine-exaudi",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 57–57.",
+      "source_order": 57,
+      "text": "Dómine exaúdi oratiónem meam⹎",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "de97eff3ed355df70155b9fcd24e430f57cb46a568222d659b4e93495f2b2674",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-domine-exaudi",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "response",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-et-clamor"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-clamor",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 58–58.",
+      "source_order": 58,
+      "text": "Et clamor meus ad te véniat.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "04c4c5077d33e7f8c14da52813146f8964c3e0e8286dc0156c3a083220c6d473",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-clamor",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "versicle",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-dominus-vobiscum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-dominus-vobiscum",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 59–59.",
+      "source_order": 59,
+      "text": "Dóminus vobíscum⹎",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "e1d3f72a67075e4c1c5928c8f26c42c033fdd4212c314af0b62b0aa4107788fc",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-dominus-vobiscum",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "response",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-et-cum-spiritu"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-et-cum-spiritu",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 60–60.",
+      "source_order": 60,
+      "text": "Et cum spíritu tuo.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "0c3c344f7a32a067692f65f2a861e4116fd70f1aae800e0ee03e450fe3ecfff5",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-cum-spiritu",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "invitation",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-oremus"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-oremus",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 61–61.",
+      "source_order": 61,
+      "text": "Orémus.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "a8b6cea0cfa689e9adb92abd42ccfb9458c1e42c4d079fe12d521a3a9da0a64e",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-oremus",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-ecclesiae-tuae"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-ecclesiae-tuae",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 62–62.",
+      "source_order": 62,
+      "text": "Ecclésiæ tuæ Dómine preces benígnus admítte: vt destrúctis aduersitátibus & erróribus vniuérsis, secúra tibi séruiat libertáte⹎",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "8d827db63a115c43e0f3e0c204aeecf04a1716bd3a116ecc577c9bf925071c75",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-ecclesiae-tuae",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-hostium"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-hostium",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 63–63.",
+      "source_order": 63,
+      "text": "Hóstium nostrórum, quǽsumus, Dómine elíde supérbiam, eorúmque contumáciam déxterę tuæ virtúte prostérne. Per Christum Dóminum nostrum⹎",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "f92e415d889a91389d4d5a70d7013d895399866365490fe55cdea7d0671e9fcf",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-hostium",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "acclamation",
+      "language": "la",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "suffragium-amen"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "source_id": "passage.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-suffragium-amen",
+      "source_locator": "Printed 200; BSB canvas 254; provider PDF 255; retained facsimile 4; normalized physical lines 64–64.",
+      "source_order": 64,
+      "text": "Amen.",
+      "text_edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "text_sha256": "d07a178bc193c1910055e2cfd1e2c19eece00b6cd3368d5e96308f79539eaad3",
+      "unit_id": "unit.cistercian-1606.post-canon.suffragium-amen",
+      "witness_id": "cistercian-1606-bsb-post-canon",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "id": "cistercian-1606-bsb-post-canon",
+      "scope_pages": [
+        [
+          1,
+          4
+        ]
+      ]
+    }
+  ]
+}

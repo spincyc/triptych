@@ -1,0 +1,192 @@
+{
+  "accepted_expectations_sha256": "d0e4fa740d7f135f5d9211acad2303ae38ab2ee63ef724db867afc235337a5d7",
+  "actual_reachable_commits_each": 37,
+  "bundle": {
+    "byte_size": 2124988,
+    "file": "accepted-corpus.bundle",
+    "sha256": "f4ad45bb950fe3770a34314075590c03859825d086451c0d522933fb2be6a952"
+  },
+  "checked_input_records_each": 2839,
+  "checked_tool_records_each": 307,
+  "child_specific_literal_units": [
+    {
+      "child_literal_sha256": "809ad94e107dfebffdb029b4fa86c11fefa1de0418ada0f64946a8a615e14038",
+      "parent_literal_sha256": "1c01a3d41bb44c1ad76f7a529b1055fd48aa8e862f8f19060fc3719ee22e7671",
+      "path": "text/native/benedictio-panis/closing-greeting.txt"
+    },
+    {
+      "child_literal_sha256": "40ef017cdc47ca1a7d1eb49338631cf9a5fc80215a8b5a60414ae385dd750921",
+      "parent_literal_sha256": "5a8e6e16448ac1b863d4da1d8a68c5c0e51327c4ec9a3f135ee84e02544a3148",
+      "path": "text/native/benedictio-panis/opening-greeting.txt"
+    }
+  ],
+  "findings": [],
+  "frozen_input_manifest_sha256": "707bbed2a9acf04cddbb3f6eb5685456a2cf2a8fd181ebb12a12c9417ddcb93a",
+  "full_strict_fsck_each": "pass",
+  "independent_acceptance_sha256": "5d3ba52d561af041ee331db715c0ceefe0c0cd92e40f29eaa450b2b52787044e",
+  "limits": [
+    "Native coverage is complete only within each declared constituent; whole-book coverage remains partial.",
+    "The wider 1657 post-Canon continuation remains excluded and blocked; source-condition qualifications remain in its canonical review.",
+    "The sole republication edge authorizes Git parentage and does not identify a donor copy or supply inherited child text.",
+    "Prior visual collation transfers only through exact independently accepted canonical source pins; this is no new visual collation.",
+    "The bundle contains Git refs and objects; the corpus ownership marker is external and separately verified.",
+    "This receipt does not replace browser, font, print or release acceptance."
+  ],
+  "native_roots": 10,
+  "native_units": 235,
+  "native_versions": 11,
+  "new_native_constituents": {
+    "cistercian-1606-post-canon": {
+      "canonical_source_pins": {
+        "binding": {
+          "byte_size": 179360,
+          "path": "src/sources/inventories/eucharistic-books/cistercian-1606-post-canon.json",
+          "sha256": "bffe8231ccded6bad30b8200e60eb58b2e8b4fa099169e5403cc74c220eecdca"
+        },
+        "extent": {
+          "byte_size": 66041,
+          "path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-post-canon-extent.json",
+          "sha256": "b198c826ab9619b776aff684461b92e515cb891b820c91016309fe76a1cdf4f0"
+        },
+        "review": {
+          "byte_size": 17781,
+          "path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-post-canon-review.json",
+          "sha256": "a9071ea94a7aef2facd58a121b4b4ee5dcb8227b1ac6a79cde762aebf7a68d64"
+        }
+      },
+      "extent_kind": "constituent",
+      "parents": [],
+      "units": 64,
+      "whole_book_complete": false
+    },
+    "cistercian-1657-pater-noster": {
+      "canonical_source_pins": {
+        "binding": {
+          "byte_size": 9070,
+          "path": "src/sources/inventories/eucharistic-books/cistercian-1657-pater-noster.json",
+          "sha256": "22bf58d344f284e32c2ee540d6d7a3135f3412f259a7cbc1c22883fe1b9e6013"
+        },
+        "extent": {
+          "byte_size": 76722,
+          "path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-pater-noster-extent.json",
+          "sha256": "3bc63fc6120834a723e398e8e646165943563d6d56beaaabc121dbe62da7d105"
+        },
+        "review": {
+          "byte_size": 10188,
+          "path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-pater-noster-review.json",
+          "sha256": "b0c1df5a3d6319d32ea48ca8d9ed32d7332579eded33e80ac7ebcd49ea17d29a"
+        }
+      },
+      "extent_kind": "constituent",
+      "parents": [],
+      "units": 8,
+      "whole_book_complete": false
+    }
+  },
+  "object_manifest_sha256": "dbc0a9e7a718ceabe5138a8c2cfdc1546a75e74296f1f136fcb5e42fe6300f52",
+  "objects_each": 6310,
+  "parent_edges": [
+    {
+      "child": "mozarabic-1755-benedictio-panis",
+      "evidence": {
+        "byte_size": 2809,
+        "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-1755-benedictio-panis-parentage.json",
+        "sha256": "2f01535b1935b644da6b06b28dc802047a22a1efb82890e077267d0a7ea1852e"
+      },
+      "parent": "mozarabic-1500-benedictio-panis"
+    }
+  ],
+  "preserved_old_native_json_files": 28,
+  "preserved_old_native_units": 163,
+  "preserved_old_reconstruction_units": 1367,
+  "preserved_old_reconstructions": 24,
+  "reconstruction_units": 1439,
+  "reconstructions": 26,
+  "refs": {
+    "refs/heads/reconstruction/brightman-1896-greek-basil": "b9008d5975e994168902209644ab2d6dc64911b0",
+    "refs/heads/reconstruction/brightman-1896-greek-chrysostom": "a76307d5471001e2ab0feb81be06cf23f8b12c4a",
+    "refs/heads/reconstruction/brightman-1896-greek-james": "48506c1d12d71273d58b998bd50840e3010ba806",
+    "refs/heads/reconstruction/carmelite-1574-october-calendar": "f3bc422165ac3460374ee78283ab6000b2a7af1b",
+    "refs/heads/reconstruction/carmelite-1621-october-calendar": "47739bfa9f859780c8470efbefb901d198c4666b",
+    "refs/heads/reconstruction/cistercian-1606-canon": "225af8ff87617be86cf1a85640238ec5b9c4f20d",
+    "refs/heads/reconstruction/cistercian-1606-latin-ordinary": "586d3aea2d160f77b3ff7aed46fe7b2b96b675dd",
+    "refs/heads/reconstruction/cistercian-1606-offertory": "e80ca0e5ac5dfb796a5547e069b99627b607d96e",
+    "refs/heads/reconstruction/cistercian-1606-post-canon": "40e555641eacd9b75c0c8bdf09c68498464f37c3",
+    "refs/heads/reconstruction/cistercian-1657-canon": "cbe3c0df59da4c4f0088988a34cbf02aa540865a",
+    "refs/heads/reconstruction/cistercian-1657-latin-ordinary": "fa390b4910db923e77784894256c43be46243fad",
+    "refs/heads/reconstruction/cistercian-1657-offertory": "eca664ee0945aab200af50a808e7dcb5bae51d9e",
+    "refs/heads/reconstruction/cistercian-1657-pater-noster": "79dba44a8e45a5ce481307755a8696e93893f024",
+    "refs/heads/reconstruction/cummiskey-1861-latin-ordinary": "75909c9b4daa5c59b041c547b41d6fe7f29f72a4",
+    "refs/heads/reconstruction/dominican-1550-suscepimus": "16f455e672233c6c770a362312355815545f9251",
+    "refs/heads/reconstruction/dominican-1604-suscepimus": "e90d9b6871e39e7617ac5f89ba9a1fac278a22f1",
+    "refs/heads/reconstruction/mozarabic-1500-benedictio-panis": "3880434f73a656e1fff634353949af6ee3ceea50",
+    "refs/heads/reconstruction/mozarabic-1755-benedictio-panis": "fe2d98ce01032a2243696bac7322dbf311b39623",
+    "refs/heads/reconstruction/mozarabic-1804-benedictio-panis": "5ce84b4d098574a24646a08a62cd6ea5645e04e2",
+    "refs/heads/reconstruction/roman-1570-canon-missae": "222d807f86fad16647392d659097fab758ad27de",
+    "refs/heads/reconstruction/roman-1962-proper-projection": "fc907bc97f1bc791ccd65772dbd5a5c922789865",
+    "refs/heads/reconstruction/tuki-1736-arabic-creed": "1f214eb4be8b0d44b24e7507c67b5513427e7007",
+    "refs/heads/reconstruction/warner-1915-stowe-mass-prayers": "b494a6d83c6e75448493f2fadf7d521293a54b35",
+    "refs/heads/reconstruction/wilson-1894-gelasian-canon-prayers": "8cfdb3428758662eb54141edd28f5bf04a95bab3",
+    "refs/heads/reconstruction/wilson-1915-gregorian-canon-memento": "ed55805d2230c03df3f60b704ebc071fd282dc3d",
+    "refs/heads/reconstruction/wilson-1915-gregorian-canon-prayers": "c93308be6ce0f91a46584b64274d6bd60e323dac",
+    "refs/heads/version/cistercian-1606-canon": "db82f1f2763ebe21d71101c273a3574679a4ba1d",
+    "refs/heads/version/cistercian-1606-offertory": "b350290965528f678c06390481fd53814ac9d8d9",
+    "refs/heads/version/cistercian-1606-post-canon": "d4dc4fa647e4174bbd9fc397bca60fe3bd14dc93",
+    "refs/heads/version/cistercian-1657-canon": "0429271acb6e7d6427c5d6ddb57571a2df39a2da",
+    "refs/heads/version/cistercian-1657-offertory": "5fcb629fcbd6cb15204ec035c13dd8942a992120",
+    "refs/heads/version/cistercian-1657-pater-noster": "cf157512ddd968f60404b123a378b1146827ffe0",
+    "refs/heads/version/mozarabic-1500-benedictio-panis": "c3f53be9b6aa91d78c5f02675994682cc75da487",
+    "refs/heads/version/mozarabic-1755-benedictio-panis": "38c2714d43448c77d0dc2a2b92fef82f64468d64",
+    "refs/heads/version/mozarabic-1804-benedictio-panis": "04a9477f783cbeb86b6fb93bdefb62569f044450",
+    "refs/heads/version/roman-1570-canon-missae": "558ee4c0fa7810313e709f6a3229e3c4b3ee2306",
+    "refs/heads/version/tuki-1736-arabic-creed": "12f01d1a63825197526cc99872659d24de841e45"
+  },
+  "refs_each": 37,
+  "repositories_identical": true,
+  "restored_exact_git_identity": true,
+  "restored_full_strict_fsck": "pass",
+  "schema": "public-independent-corpus-acceptance/v1",
+  "scope": "Two fresh registered corpus exports after final navigation integration, independently inspected",
+  "status": "pass",
+  "symbolic_head": "refs/heads/reconstruction/brightman-1896-greek-basil",
+  "trees": {
+    "refs/heads/reconstruction/brightman-1896-greek-basil": "3a20f4a275cd2a8234014ff53c9a5baa6ce439d8",
+    "refs/heads/reconstruction/brightman-1896-greek-chrysostom": "9d14de3bd87e9c204a97e27329556616d574c216",
+    "refs/heads/reconstruction/brightman-1896-greek-james": "60b630d7462c45c16b595f750fd1266d4c6745a1",
+    "refs/heads/reconstruction/carmelite-1574-october-calendar": "5bc16d908eae467dcbb9f70ada4f14effe6c0717",
+    "refs/heads/reconstruction/carmelite-1621-october-calendar": "ede0e1b32d78fb49f25a490bca5b4ef9353b1f12",
+    "refs/heads/reconstruction/cistercian-1606-canon": "36834d4eff20904050659c8e6f69e115c6b0476c",
+    "refs/heads/reconstruction/cistercian-1606-latin-ordinary": "57b3a8fa962526c92c71fa893aa1caca24c7a350",
+    "refs/heads/reconstruction/cistercian-1606-offertory": "d7431df2798423878fe83eea54002b78906e1b54",
+    "refs/heads/reconstruction/cistercian-1606-post-canon": "6860f545e6bae01d6119ad460bd6dd2e0a1581bd",
+    "refs/heads/reconstruction/cistercian-1657-canon": "482087327b02719b83967d27575a8e1a953ee9ff",
+    "refs/heads/reconstruction/cistercian-1657-latin-ordinary": "c56f1d83a71b31311aaa7b4d82fc8fb4fc7b5932",
+    "refs/heads/reconstruction/cistercian-1657-offertory": "a31c0f1d7031a042d7e0af935e520991660cdde8",
+    "refs/heads/reconstruction/cistercian-1657-pater-noster": "0f8157175d4cf5b4553ae5432b82d7c91170bd71",
+    "refs/heads/reconstruction/cummiskey-1861-latin-ordinary": "65316964738b00536bf81bb5d67563ad59741a6a",
+    "refs/heads/reconstruction/dominican-1550-suscepimus": "aed0d72ca72e268ef7a16eb2a25f2099611cbad0",
+    "refs/heads/reconstruction/dominican-1604-suscepimus": "230f29a974a774278c7002ed01724f53e0b0d5b9",
+    "refs/heads/reconstruction/mozarabic-1500-benedictio-panis": "209ab59e470cadc305c6fd2394fc63c8e2205019",
+    "refs/heads/reconstruction/mozarabic-1755-benedictio-panis": "5413f6d2aa483384ab5353f0e4a2bdfc41e04bd2",
+    "refs/heads/reconstruction/mozarabic-1804-benedictio-panis": "6e21f72a0b2c65eb262df73b37eb2dc5034fc941",
+    "refs/heads/reconstruction/roman-1570-canon-missae": "2f21b3865cbf40c6ab97a44b812957313f24e363",
+    "refs/heads/reconstruction/roman-1962-proper-projection": "d9aa336ba57ecc1e7e5754761e349269e340eab9",
+    "refs/heads/reconstruction/tuki-1736-arabic-creed": "a28d578ab6eb2a25667eaeb4ef87159fbcc4aa8f",
+    "refs/heads/reconstruction/warner-1915-stowe-mass-prayers": "4540ae3d2c07c8b5fbf77942d780c0908f0f2faf",
+    "refs/heads/reconstruction/wilson-1894-gelasian-canon-prayers": "e5e34cd08d88122f9ec3af63e625749bd91a0d7a",
+    "refs/heads/reconstruction/wilson-1915-gregorian-canon-memento": "fa761fb8eb7df08975be232fbf1e0cd0ef74ce9f",
+    "refs/heads/reconstruction/wilson-1915-gregorian-canon-prayers": "874bf88cd81add962136bcf7b007aba0ea81dda4",
+    "refs/heads/version/cistercian-1606-canon": "431bace1a031d72f6025f53fd70c679b2b6eed33",
+    "refs/heads/version/cistercian-1606-offertory": "d99b6640146c3c2797e204f745f27dcc5292bced",
+    "refs/heads/version/cistercian-1606-post-canon": "1ec2469970bda008a993e30b1f85168f5029f03b",
+    "refs/heads/version/cistercian-1657-canon": "115b39fe7e2aca1a24279ee804c020c929357ffb",
+    "refs/heads/version/cistercian-1657-offertory": "3f68ccc255123b11bc693ce7c5534db46fa06841",
+    "refs/heads/version/cistercian-1657-pater-noster": "67b019468f4d02354ac591801c83d2dd78c1390e",
+    "refs/heads/version/mozarabic-1500-benedictio-panis": "318c6f556d5874776659e43798a52643f34b5a00",
+    "refs/heads/version/mozarabic-1755-benedictio-panis": "d7cf1c0101ae86157187c3ee195d16ded549b780",
+    "refs/heads/version/mozarabic-1804-benedictio-panis": "fb0ca9f9b54137578d4013834f30e244ee0b2f32",
+    "refs/heads/version/roman-1570-canon-missae": "daa8415e15f69082bfc42a9a921cfedc0f6bf6e2",
+    "refs/heads/version/tuki-1736-arabic-creed": "9c590b49b31ec2e0c7aa280f53975a51a98907f7"
+  },
+  "verifier_sha256": "bcafefb25e064ac525ee9908778ac31645791a8cb00bb17f7a6649447264fffd"
+}

@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.open-library.liturgical-book-catalogue-records.2026-10-20-response-states.raw-catalogue-licence-faq-ad191e79"
+edition_id = "edition.open-library.liturgical-book-catalogue-records.2026-10-20-response-states"
+artifact_type = "catalogue-or-service-response"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "The catalogue-data dedication does not itself clear the complete FAQ HTML wrapper, navigation or policy prose for repository redistribution. A selected factual notice is retained; the exact full FAQ response remains identifiable outside Git. Reopen if exact-surface permission is established."
+rights_jurisdiction = "United States"
+source_url = "https://openlibrary.org/help/faq/using"
+provenance = "Whole received bytes acquired by direct curl GET on 2026-10-20, then hashed locally. Source text did not pass through a model retrieval route."
+retrieved = "2026-10-20"
+sha256 = "ad191e79e7d3c1a95735df3a37d329e10fa10991172621be663e4105e086d975"
+byte_size = 51148
+indexable = false
+notes = "Complete FAQ HTML; checked Who owns the Open Library catalog? and the API/small-record export sections."

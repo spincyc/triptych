@@ -1,0 +1,619 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "ravenna-batch3-2026-10-20",
+  "title": "Ravenna batch 3: Munich identity separation, bounded Rotulus edition, and modern Proper lead",
+  "lane": "ravenna",
+  "side": "western",
+  "checked_on": "2026-10-21",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "source_record_index_sha256": "405fd7a7d74ecf83f2cc74a24698eb232094be9ebd1d27ff627bd05d5e6cda9d",
+    "inventory_proposal_sha256": "dda45af82b5f1d54f59bd80b14d06a4a681c4fe8dd579638b2aa3d0f2e8bed80",
+    "dossier_proposal_sha256": "29e8619d21fb57a8bcd8fbbcfc6f898a7b0e77368e1260be1c49c7d7b561cdb8",
+    "acquisition_dispositions_sha256": "cff2b12eea1555b012b61ac0952db9b2a4477e2e359a749f339c7545f4c40d58",
+    "correction_dispositions_sha256": "077a524b77d1ef12209c4d774628db7aa1138ba63ea71e999436ddfc3b3c3059"
+  },
+  "coverage_rows": [
+    "italian-ravenna"
+  ],
+  "uses": [
+    {
+      "id": "italian-ravenna",
+      "disposition": "historical-local-use-gap-preserved; one bounded fragment stage proposed to root; modern-local-proper-announcement-separated",
+      "evidence_checks": [
+        {
+          "id": "italian-ravenna-hauke1994",
+          "url": "https://www.digitale-sammlungen.de/en/view/bsb00106368",
+          "type": "holding-library-manuscript-catalogue",
+          "title": "Hermann Hauke, BSB Latin fragments catalogue I (1994), pp. 91 and 187",
+          "inspection": "Complete 477-page generated PDF acquired. Printed pp. 91 and 187 original images directly inspected. Clm 29270(8 is a ninth-century Salzburg Gospel fragment collection; Clm 29303(1 is a sixth-century northern Italian Comes duplex surviving as two strips. The old Clm 29155 c alias is not unique enough to merge the records.",
+          "limitations": "Catalogue identity and contents evidence, not independent palaeographic dating, Ravenna copying, local use or complete annual-book evidence.",
+          "inspected_on": "2026-10-21"
+        },
+        {
+          "id": "italian-ravenna-bsb29270-8",
+          "url": "https://www.digitale-sammlungen.de/en/view/bsb00001710",
+          "type": "holding-library-digital-manuscript",
+          "title": "BSB Clm 29270(8, current 16-canvas Gospel-fragment digitization",
+          "inspection": "Complete IIIF manifest and all 16 full-resolution canvases acquired. Canvas 1 shelfmark, canvas 3 identification slip and canvas 7 Mark 14 Gospel narrative directly inspected. Manifest assigns first-half ninth-century Salzburg origin and PDM images. This is the object linked by Usuarium 6411, not the CLA IX 1334 lectionary strips. Retention and interpretation qualification after independent review: the object-level PDM does not clear modern calibration canvas1, which is excluded from public retention. Auxiliary canvases2–5 and14 are short identification metadata. Canvas4 retains an older tentative VIII-century / John XII25–41 label, distinct from the current first-half ninth-century Salzburg assignment; no single-codex identity for every label is inferred.",
+          "limitations": "Only canvases 1, 3 and 7 directly viewed; no full literal Gospel collation. The Last Supper narrative is not a Canon or Eucharistic prayer. Fifteen image canvases are proposed retained, distinguished by content; canvas1 is private. All16 were acquired. Older labels are not harmonized with current dating.",
+          "inspected_on": "2026-10-21"
+        },
+        {
+          "id": "italian-ravenna-ward1989",
+          "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-25-%281989%29/Notitiae-273-1989.pdf",
+          "type": "scholarly-edition-and-concordance",
+          "title": "Anthony Ward, Entry-point to the Rotulus of Ravenna, Notitiae 25/273 (1989), pp. 351–382",
+          "inspection": "Whole 80-page issue acquired; pp. 351–352 / PDF pp. 43–44 directly image inspected. Ward numbers a 42-text collection but omits unusably fragmentary no. 1 from his practical reconstruction and combines nos. 40/41; his orthography and concordance are adapted. Modern liturgical reuse is reported by the author.",
+          "limitations": "No diplomatic manuscript collation, 42-complete-prayer claim, annual Mass-book extent or ancient Ravenna local-use inference.",
+          "inspected_on": "2026-10-21"
+        },
+        {
+          "id": "italian-ravenna-proprio2025-notice",
+          "url": "https://www.diocesiravennacervia.it/rinnovato-il-proprio-delle-messe-della-diocesi/",
+          "type": "official-diocesan-book-announcement",
+          "title": "Ravenna-Cervia official diocesan Proper announcement, 18 October 2025",
+          "inspection": "Complete official HTML and published cover image inspected. The diocese reports a renewed volume of Mass formularies and readings for its local saints and blesseds entering force on 23 July, as an appendix to the Roman Missal. The body does not state the year; publication metadata is 18 October 2025.",
+          "limitations": "Only an announcement and cover were acquired. No full book, decree or text collation. This narrow modern local-use report does not establish the ancient fragments as local Ravenna books.",
+          "inspected_on": "2026-10-21"
+        }
+      ],
+      "selected_local_use_stage_ids": [],
+      "proposed_associated_fragment_stage_ids": [
+        "ravenna-fragments:munich-clm29303-1"
+      ],
+      "actual_modern_scope": "The official news source reports a diocesan Proper entering force, but its body omits the year and no book/decree was acquired. It is separate from ancient reception."
+    }
+  ],
+  "searches": [
+    {
+      "scope": "Bounded publicly reachable institutional/library catalogue and digital-source search, not an exhaustive Ravenna census.",
+      "aliases_tried": [
+        "Cod. fragm. 100 / 100A / HB VII 10",
+        "Ink.15370 b om",
+        "Clm 29270(8 / Clm 29303(1 / Clm 29155 c / CLA IX 1334 / CLLA 1201",
+        "Rotulus / Rotolo di Ravenna / Rotolo opistografo / Der Rotulus von Ravenna",
+        "Ravenna archive 011 / missale 1454 / Proprio delle Messe"
+      ],
+      "repositories": [
+        "Württembergische Landesbibliothek and LEO-BW",
+        "Bayerische Staatsbibliothek / MDZ / Manuscripta Mediaevalia / Earlier Latin Manuscripts",
+        "Official Dicastery Notitiae archive",
+        "Official Ravenna-Cervia website",
+        "Aschendorff publisher",
+        "IRHT Iter liturgicum italicum"
+      ],
+      "failed_routes": [
+        {
+          "url": "https://digital.wlb-stuttgart.de/purl/kxp1885492847",
+          "result": "anti-bot challenge HTML; no content access"
+        },
+        {
+          "url": "https://download.digitale-sammlungen.de/pdf/1784696846bsb00106368.pdf",
+          "result": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.leo-bw.de/en-GB/detail/-/Detail/details/DOKUMENT/wlb_digitalisate/digibib-kxp18854928472/Vetus-Latina-Fragmente%20-%20Codfragm100",
+          "result": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://liturgicum.irht.cnrs.fr/manuscrit/620300",
+          "result": "<urlopen error timed out>"
+        },
+        {
+          "url": "https://liturgicum.irht.cnrs.fr/manuscrit/599830",
+          "result": "<urlopen error timed out>"
+        }
+      ],
+      "unexamined_ranges": [
+        "All original sides of Munich Clm 29303(1; complete original surviving texts and any missing Canon leaves",
+        "Original lower-text extent of Stuttgart 100A / Ink.15370 / Montecassino 271 beyond accepted samples",
+        "Ravenna Archive 011 calendar/colophon/Canon and actual-use evidence",
+        "Benz full text: publisher link yields download/login landing HTML, not a publicly acquired PDF",
+        "Modern Ravenna-Cervia Proper interior, calendar, decree, legal effective-year instrument and literal prayer texts"
+      ],
+      "queries_and_material_results": [
+        {
+          "query": "\"Cod. fragm. 100\" Stuttgart digital",
+          "endpoint": "public web search",
+          "result": "LEO-BW institutional digitization metadata found; actual WLB viewer returns an anti-bot challenge, not manuscript content."
+        },
+        {
+          "query": "\"Ink. 15370\" Fragment Sakramentar",
+          "endpoint": "public web search",
+          "result": "No directly acquired original fragment surfaced in the returned results."
+        },
+        {
+          "query": "\"Clm 29270\" \"8\" Sakramentar",
+          "endpoint": "public web search",
+          "result": "Led to current BSB and Hauke identity cross-checks, not a new Mass-book identification."
+        },
+        {
+          "query": "site.digitale-sammlungen.de \"Clm 29270(8\"",
+          "endpoint": "public web search",
+          "result": "No separately verified sixth-century manuscript established by the returned current-shelfmark hits."
+        },
+        {
+          "query": "\"Clm 29303/1\" \"digitale\"",
+          "endpoint": "public web search",
+          "result": "Hauke catalogue and ELMSS/IRHT references found; no complete original object scan acquired."
+        },
+        {
+          "query": "\"Clm 29303(1\" BSB",
+          "endpoint": "public web search",
+          "result": "Hauke primary catalogue supplied object separation. The linked bsb00001710 is the different Salzburg Gospel object."
+        },
+        {
+          "query": "\"Ravenna\" \"Frammenti di anafora\" Caronti 1922",
+          "endpoint": "public web search",
+          "result": "Bibliographic title and original-journal index found; original Caronti article not acquired."
+        },
+        {
+          "query": "\"Der Rotulus von Ravenna\" pdf Benz",
+          "endpoint": "public web search and publisher download link",
+          "result": "Publisher identifies a PDF ebook, but the public download link returned HTML/login interface, not an acquired full text. No purchase or credentials attempted."
+        },
+        {
+          "query": "\"Rotolo di Ravenna\" Ambrosiana digitale",
+          "endpoint": "public web search",
+          "result": "Institutional IRHT metadata located; no complete original roll facsimile acquired."
+        },
+        {
+          "query": "site.bibliotecaambrosiana.it \"Rotolo\" \"Ravenna\"",
+          "endpoint": "public web search",
+          "result": "No verified complete original roll facsimile acquired."
+        },
+        {
+          "query": "Ravenna \"messale\" \"1454\" \"Ursiana\"",
+          "endpoint": "public web search",
+          "result": "No original archive-011 calendar/colophon/Canon or identity link acquired."
+        },
+        {
+          "query": "site.manus.iccu.sbn.it \"Ravenna\" \"1454\"",
+          "endpoint": "public web search",
+          "result": "No original archive-011 leaf or exact new identity acquired."
+        },
+        {
+          "query": "site.beweb.chiesacattolica.it \"messale\" \"Ravenna\"",
+          "endpoint": "public web search",
+          "result": "No verified whole historical Ravenna Mass book acquired; official diocesan Proper announcement surfaced among related results."
+        },
+        {
+          "query": "\"Fragmenta liturgica\" Gamber 1966 pdf",
+          "endpoint": "public web search",
+          "result": "Bibliographic leads only; no authenticated public original article acquired."
+        },
+        {
+          "query": "Notitiae-273-1989.pdf (source URL found among the returned Rotulus/Benz search results)",
+          "endpoint": "official Dicastery full issue reached from returned Notitiae PDF lead",
+          "result": "Whole 80-page issue acquired; Ward pp. 351–352 directly image checked."
+        }
+      ]
+    }
+  ],
+  "versions": [
+    {
+      "id": "italian-ravenna-munich-clm29303-1",
+      "family": "ravenna-attributed-lectionary-fragment",
+      "title": "Munich Clm 29303(1: northern Italian Holy Week lectionary strips, Ravenna use unproved",
+      "date": "Late-sixth-century catalogue interpretation: ELMSS 576–600; Hauke sixth century; Usuarium 575–600 with a conflicting current shelfmark/link",
+      "kind": "manuscript-fragment-witness",
+      "status": "bounded-fragment-local-use-unproved",
+      "sources": [
+        "italian-ravenna-fragments-munich",
+        "italian-ravenna-hauke1994",
+        "italian-ravenna-bsb29270-8"
+      ],
+      "source_locus": "Hauke 1994 printed p. 187 versus p. 91; ELMSS 1835 / CLA IX 1334 complete delivered sample; Usuarium 6411 card and its linked BSB bsb00001710.",
+      "qualification": "Two strips, not a complete annual lectionary, sacramentary or Canon. Northern Italy is a qualified catalogue origin, not Ravenna use. Do not merge the sixth-century Comes duplex with the ninth-century Salzburg Gospel fragments.",
+      "scope_disposition": "in-scope-original-book-or-historical-witness",
+      "version_status": "fragment-attestation-not-recension-proof",
+      "date_role": "copying-of-surviving-fragment-catalogue-interpretation",
+      "chronology_start": 576,
+      "chronology_end": 600,
+      "chronology_kind": "manuscript-witness-date",
+      "chronology_certainty": "catalogue-reported-uncertain-origin",
+      "acquisition_status": "bounded-original-sample-and-full-catalogue-acquired",
+      "transcription_status": "no-verified-complete-transcription",
+      "collation_status": "not-fully-collated"
+    },
+    {
+      "id": "italian-ravenna-cervia-proprio-2025-announced",
+      "family": "roman-diocesan-proper-modern",
+      "title": "Renewed Proprio delle Messe of Ravenna-Cervia, officially announced 2025",
+      "date": "Official announcement published 18 October 2025; reports entry into force 23 July without explicit body year",
+      "kind": "officially-announced-local-proper-book",
+      "status": "official-announcement-book-uninspected",
+      "sources": [
+        "italian-ravenna-proprio2025-notice"
+      ],
+      "source_locus": "Official diocesan article body and published book-cover title; publication/modification metadata.",
+      "qualification": "A narrow modern local Mass-proper appendix and readings, not an independent Ravenna rite or complete annual Missal. No book interior, decree, exact effective-year act, Canon, textual revision, ancestry or connection to the ancient fragments was established.",
+      "scope_disposition": "in-scope-original-book-or-historical-witness",
+      "version_status": "reported-local-proper-book-not-collated",
+      "date_role": "official-notice-publication-not-verified-book-or-effective-date",
+      "chronology_start": 2025,
+      "chronology_end": 2025,
+      "chronology_kind": "documentary-attestation-date",
+      "chronology_certainty": "publication-date-metadata-only",
+      "acquisition_status": "official-notice-and-cover-only",
+      "transcription_status": "no-text-acquired",
+      "collation_status": "not-collated"
+    }
+  ],
+  "acquisitions": [
+    {
+      "sha256": "4abb8e07b87a560612f11839fabe7c066afeffc8bdb8816c755f7e47fa07dbf2",
+      "byte_size": 115541,
+      "source_url": "https://www.copyright.gov/circs/circ33.pdf",
+      "canonical_artifact_id": "artifact.united-states-copyright-office.works-not-protected-by-copyright-circular-33.2026-10-21-web-delivery.official-pdf-4abb8e07",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "United States federal Copyright Office publication, public domain as a United States government work. Retained complete six-page official PDF.",
+      "offline_limit": "",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "28b3199d4df73c35c3593b1b42b41300fdfbd9a22ca851fd18e1c87a506f43ff",
+      "byte_size": 31377,
+      "source_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "canonical_artifact_id": "artifact.creative-commons.public-domain-mark-1-0-deed.2026-10-21-web-state.complete-html-28b3199d",
+      "storage": "tracked",
+      "rights_status": "licensed",
+      "reason": "The complete deed webpage states that site content, except where otherwise noted, is licensed CC BY 4.0. Attribution: Creative Commons, Public Domain Mark 1.0 Universal deed. Linked external fonts, styles and icons are not acquired or bundled.",
+      "offline_limit": "",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "5ba0e3de82102ee447444ca90729f45078aa1e9e4d7420da4173ce98a8df8479",
+      "byte_size": 245469393,
+      "source_url": "https://download.digitale-sammlungen.de/pdf/17925441168888bsb00106368.pdf",
+      "canonical_artifact_id": "artifact.hermann-hauke.katalog-der-lateinischen-fragmente-band-1.1994-harrassowitz.bsb-complete-pdf-5ba0e3de",
+      "storage": "restricted",
+      "rights_status": "restricted",
+      "reason": "The holding-library IIIF manifest explicitly marks this modern catalogue In Copyright (https://rightsstatements.org/vocab/InC/1.0/). No redistribution license was located.",
+      "offline_limit": "Complete generated 477-page PDF: one generated title sheet plus all 476 canvases named in the official manifest, 245469393 bytes. Copyrighted prose/page images are not retained in Git. Offline readers can open the separately retained bounded factual table for printed pp. 91 and 187, not the full catalogue. Reopen the BSB viewer and its complete-PDF download to read the original.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "319f96e240fdac4b363323a1d47b282dad54513a801936eeb44763a7ff7ec838",
+      "byte_size": 1648,
+      "source_url": "https://www.digitale-sammlungen.de/en/view/bsb00106368",
+      "canonical_artifact_id": "artifact.hermann-hauke.katalog-der-lateinischen-fragmente-band-1.1994-harrassowitz.bounded-factual-metadata-319f96e2",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Unprotected individual bibliographic names, titles, dates, identifiers, measurements and source-local factual assertions, retained in a project-created factual table without copying modern prose or layout. The table is bounded to the stated loci; it does not make the catalogue assertions historical truth. United States basis: Copyright Office Circular 33, https://www.copyright.gov/circs/circ33.pdf.",
+      "offline_limit": "Two entries only, preserving the different shelfmarks, dates, genres and physical extent. No original copyrighted description is reproduced.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "bb89d675af23e9eb355f495085c2155d0b7e36f1f03efb91b3fa18b2ca2b9f10",
+      "byte_size": 20582,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00001710/manifest",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.iiif-manifest-bb89d675",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Complete institutional IIIF manifest of individual bibliographic facts and 16 exact canvas/image identifiers. Retain as identity/extent/rights evidence, distinct from the photographic image bytes. Attribution: Bayerische Staatsbibliothek München.",
+      "offline_limit": "All16 named full-resolution images were acquired and hashed. Retention distinguishes ten medieval image canvases, five factual auxiliary surfaces and one restricted modern calibration canvas. Direct author image review initially1/3/7, subsequently2/4/5/6/14; independent review covers all16. No complete literal Gospel collation or single-codex identity for every auxiliary surface is asserted.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "e87a5cd6a4650f0b974f901155c704a2f11d3d02abdbdee382973aa75780ba67",
+      "byte_size": 576006,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00001/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-01-e87a5cd6",
+      "storage": "restricted",
+      "rights_status": "unresolved",
+      "reason": "The object-level IIIF manifest declares PDM, but this canvas is a modern 2005 shelfmark sheet plus a calibration target visibly carrying a separate Copyright 4/1999 XyxMaster GmbH notice. No affirmative clearance for that ancillary graphic was established. The medieval-handwriting/mechanical-reproduction rationale does not clear the chart. Keep this exact canvas private; no crop or altered source image is manufactured.",
+      "offline_limit": "Full canvas acquired and directly inspected, but excluded from Git and public handoff. The retained institutional manifest and factual metadata preserve the current shelfmark offline. Reopen the source image URL for the actual calibration/shelfmark surface; this restriction does not dispute the separate underlying medieval-text status.",
+      "reopening_condition": "Reopen original URL for identity verification; retention would require affirmative clearance for the separate modern calibration graphic, not the medieval manuscript’s age or object PDM alone."
+    },
+    {
+      "sha256": "c1182e11f8c7227bc025c971224bfa3353e61b2b2d3f276eca415ce9783a0b27",
+      "byte_size": 2299679,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00002/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-02-c1182e11",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "This exact canvas is an auxiliary identification surface consisting of short bibliographic titles, old/current shelfmarks, Bible loci, tentative date notations and/or brief custody notes, with no separately identified creative graphic or extended authored essay. Its factual text and ordinary lettering are unprotected under the repository’s factual-metadata/mechanical-reproduction basis; it is not classified as medieval handwriting. The object-level institutional PDM declaration is additional source context. Attribution: Bayerische Staatsbibliothek München, Clm 29270(8), bsb00001710. United States Copyright Office Circular 33: https://www.copyright.gov/circs/circ33.pdf.",
+      "offline_limit": "Complete delivered auxiliary image, distinct from the ten manuscript-image canvases and the separately restricted calibration canvas1. Old labels are historical metadata, not controlling dates or proof of one codex. Canvas4’s tentative VIII-century label is not harmonized into the current BSB first-half ninth-century assignment. No literal full-gallery collation is claimed.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "8c2c563410c02f348a8a90efdaab9251af92667e1a7c578013d088a494c260df",
+      "byte_size": 159613,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00003/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-03-8c2c5634",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "This exact canvas is an auxiliary identification surface consisting of short bibliographic titles, old/current shelfmarks, Bible loci, tentative date notations and/or brief custody notes, with no separately identified creative graphic or extended authored essay. Its factual text and ordinary lettering are unprotected under the repository’s factual-metadata/mechanical-reproduction basis; it is not classified as medieval handwriting. The object-level institutional PDM declaration is additional source context. Attribution: Bayerische Staatsbibliothek München, Clm 29270(8), bsb00001710. United States Copyright Office Circular 33: https://www.copyright.gov/circs/circ33.pdf.",
+      "offline_limit": "Complete delivered auxiliary image, distinct from the ten manuscript-image canvases and the separately restricted calibration canvas1. Old labels are historical metadata, not controlling dates or proof of one codex. Canvas4’s tentative VIII-century label is not harmonized into the current BSB first-half ninth-century assignment. No literal full-gallery collation is claimed.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "292c794ce23eff61a5f162e759501fd31c9d2308ac5f738d62bbb52c87215bc0",
+      "byte_size": 1183168,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00004/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-04-292c794c",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "This exact canvas is an auxiliary identification surface consisting of short bibliographic titles, old/current shelfmarks, Bible loci, tentative date notations and/or brief custody notes, with no separately identified creative graphic or extended authored essay. Its factual text and ordinary lettering are unprotected under the repository’s factual-metadata/mechanical-reproduction basis; it is not classified as medieval handwriting. The object-level institutional PDM declaration is additional source context. Attribution: Bayerische Staatsbibliothek München, Clm 29270(8), bsb00001710. United States Copyright Office Circular 33: https://www.copyright.gov/circs/circ33.pdf.",
+      "offline_limit": "Complete delivered auxiliary image, distinct from the ten manuscript-image canvases and the separately restricted calibration canvas1. Old labels are historical metadata, not controlling dates or proof of one codex. Canvas4’s tentative VIII-century label is not harmonized into the current BSB first-half ninth-century assignment. No literal full-gallery collation is claimed.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "070425e086786cc0dc02e44e9d33398f59e436e56523e03c464dd4c1b9ebfbde",
+      "byte_size": 1008208,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00005/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-05-070425e0",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "This exact canvas is an auxiliary identification surface consisting of short bibliographic titles, old/current shelfmarks, Bible loci, tentative date notations and/or brief custody notes, with no separately identified creative graphic or extended authored essay. Its factual text and ordinary lettering are unprotected under the repository’s factual-metadata/mechanical-reproduction basis; it is not classified as medieval handwriting. The object-level institutional PDM declaration is additional source context. Attribution: Bayerische Staatsbibliothek München, Clm 29270(8), bsb00001710. United States Copyright Office Circular 33: https://www.copyright.gov/circs/circ33.pdf.",
+      "offline_limit": "Complete delivered auxiliary image, distinct from the ten manuscript-image canvases and the separately restricted calibration canvas1. Old labels are historical metadata, not controlling dates or proof of one codex. Canvas4’s tentative VIII-century label is not harmonized into the current BSB first-half ninth-century assignment. No literal full-gallery collation is claimed.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "f9b8afbd8001c8eaa3f923f5f443c932fe661aa4fb1f86114b25ce82f30fdb2b",
+      "byte_size": 833839,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00006/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-06-f9b8afbd",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Holding-library IIIF manifest identifies the object images with Public Domain Mark 1.0. The underlying medieval handwriting is public domain; faithful photographic reproduction is not a newly authored text. Attribution: Bayerische Staatsbibliothek München, Clm 29270(8), digital object bsb00001710. PDM is a status declaration, not an invented license; https://creativecommons.org/publicdomain/mark/1.0/.",
+      "offline_limit": "Complete delivered medieval manuscript-image canvas; image canvases6–13 and15–16 are ten image surfaces, not a count of original codex leaves. The missing whole codex, every gallery label’s historical identity and complete literal text were not reconstructed.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "c184ced9cb770c0caa971c717f363c0fda60301609c1dc0c013745dcf8097ad3",
+      "byte_size": 809842,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00007/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-07-c184ced9",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Holding-library IIIF manifest identifies the object images with Public Domain Mark 1.0. The underlying medieval handwriting is public domain; faithful photographic reproduction is not a newly authored text. Attribution: Bayerische Staatsbibliothek München, Clm 29270(8), digital object bsb00001710. PDM is a status declaration, not an invented license; https://creativecommons.org/publicdomain/mark/1.0/.",
+      "offline_limit": "Complete delivered medieval manuscript-image canvas; image canvases6–13 and15–16 are ten image surfaces, not a count of original codex leaves. The missing whole codex, every gallery label’s historical identity and complete literal text were not reconstructed.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "93e1d14c121c7bcec0d87f94f281fd3c1f8867412dfacb4514bb243621b58dbe",
+      "byte_size": 1369903,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00008/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-08-93e1d14c",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Holding-library IIIF manifest identifies the object images with Public Domain Mark 1.0. The underlying medieval handwriting is public domain; faithful photographic reproduction is not a newly authored text. Attribution: Bayerische Staatsbibliothek München, Clm 29270(8), digital object bsb00001710. PDM is a status declaration, not an invented license; https://creativecommons.org/publicdomain/mark/1.0/.",
+      "offline_limit": "Complete delivered medieval manuscript-image canvas; image canvases6–13 and15–16 are ten image surfaces, not a count of original codex leaves. The missing whole codex, every gallery label’s historical identity and complete literal text were not reconstructed.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "3ae62811a95dd5d30957e8c648ab34bf46803e5afb08c9ca6c352640b95471b3",
+      "byte_size": 1224792,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00009/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-09-3ae62811",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Holding-library IIIF manifest identifies the object images with Public Domain Mark 1.0. The underlying medieval handwriting is public domain; faithful photographic reproduction is not a newly authored text. Attribution: Bayerische Staatsbibliothek München, Clm 29270(8), digital object bsb00001710. PDM is a status declaration, not an invented license; https://creativecommons.org/publicdomain/mark/1.0/.",
+      "offline_limit": "Complete delivered medieval manuscript-image canvas; image canvases6–13 and15–16 are ten image surfaces, not a count of original codex leaves. The missing whole codex, every gallery label’s historical identity and complete literal text were not reconstructed.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "06656f6615557dbca564d9c945f9da3b3c10276199a762b5b43a51b78dc4e847",
+      "byte_size": 1319246,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00010/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-10-06656f66",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Holding-library IIIF manifest identifies the object images with Public Domain Mark 1.0. The underlying medieval handwriting is public domain; faithful photographic reproduction is not a newly authored text. Attribution: Bayerische Staatsbibliothek München, Clm 29270(8), digital object bsb00001710. PDM is a status declaration, not an invented license; https://creativecommons.org/publicdomain/mark/1.0/.",
+      "offline_limit": "Complete delivered medieval manuscript-image canvas; image canvases6–13 and15–16 are ten image surfaces, not a count of original codex leaves. The missing whole codex, every gallery label’s historical identity and complete literal text were not reconstructed.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "9ef10406514b625d7d5a835c79850eb97e3ef4dccdf3bfb793f5b2263b582634",
+      "byte_size": 1519066,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00011/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-11-9ef10406",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Holding-library IIIF manifest identifies the object images with Public Domain Mark 1.0. The underlying medieval handwriting is public domain; faithful photographic reproduction is not a newly authored text. Attribution: Bayerische Staatsbibliothek München, Clm 29270(8), digital object bsb00001710. PDM is a status declaration, not an invented license; https://creativecommons.org/publicdomain/mark/1.0/.",
+      "offline_limit": "Complete delivered medieval manuscript-image canvas; image canvases6–13 and15–16 are ten image surfaces, not a count of original codex leaves. The missing whole codex, every gallery label’s historical identity and complete literal text were not reconstructed.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "de352909342f5294ac14f0337846b1886bde1d17485390bddff600d760ba79bc",
+      "byte_size": 1042315,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00012/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-12-de352909",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Holding-library IIIF manifest identifies the object images with Public Domain Mark 1.0. The underlying medieval handwriting is public domain; faithful photographic reproduction is not a newly authored text. Attribution: Bayerische Staatsbibliothek München, Clm 29270(8), digital object bsb00001710. PDM is a status declaration, not an invented license; https://creativecommons.org/publicdomain/mark/1.0/.",
+      "offline_limit": "Complete delivered medieval manuscript-image canvas; image canvases6–13 and15–16 are ten image surfaces, not a count of original codex leaves. The missing whole codex, every gallery label’s historical identity and complete literal text were not reconstructed.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "2d60ce3359c4b43856b0958719ff1ea0caa9610eaeb89f2806e7c847c92a76b0",
+      "byte_size": 1089773,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00013/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-13-2d60ce33",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Holding-library IIIF manifest identifies the object images with Public Domain Mark 1.0. The underlying medieval handwriting is public domain; faithful photographic reproduction is not a newly authored text. Attribution: Bayerische Staatsbibliothek München, Clm 29270(8), digital object bsb00001710. PDM is a status declaration, not an invented license; https://creativecommons.org/publicdomain/mark/1.0/.",
+      "offline_limit": "Complete delivered medieval manuscript-image canvas; image canvases6–13 and15–16 are ten image surfaces, not a count of original codex leaves. The missing whole codex, every gallery label’s historical identity and complete literal text were not reconstructed.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "174320c5f618cfa6e276c93acab2ce170f54120a865c3ba33ca67855777fd71a",
+      "byte_size": 312551,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00014/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-14-174320c5",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "This exact canvas is an auxiliary identification surface consisting of short bibliographic titles, old/current shelfmarks, Bible loci, tentative date notations and/or brief custody notes, with no separately identified creative graphic or extended authored essay. Its factual text and ordinary lettering are unprotected under the repository’s factual-metadata/mechanical-reproduction basis; it is not classified as medieval handwriting. The object-level institutional PDM declaration is additional source context. Attribution: Bayerische Staatsbibliothek München, Clm 29270(8), bsb00001710. United States Copyright Office Circular 33: https://www.copyright.gov/circs/circ33.pdf.",
+      "offline_limit": "Complete delivered auxiliary image, distinct from the ten manuscript-image canvases and the separately restricted calibration canvas1. Old labels are historical metadata, not controlling dates or proof of one codex. Canvas4’s tentative VIII-century label is not harmonized into the current BSB first-half ninth-century assignment. No literal full-gallery collation is claimed.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "e7dacb1d29d8f33eff6ac745b6269c48cb83c959f76b0d55df19b05428763747",
+      "byte_size": 187739,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00015/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-15-e7dacb1d",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Holding-library IIIF manifest identifies the object images with Public Domain Mark 1.0. The underlying medieval handwriting is public domain; faithful photographic reproduction is not a newly authored text. Attribution: Bayerische Staatsbibliothek München, Clm 29270(8), digital object bsb00001710. PDM is a status declaration, not an invented license; https://creativecommons.org/publicdomain/mark/1.0/.",
+      "offline_limit": "Complete delivered medieval manuscript-image canvas; image canvases6–13 and15–16 are ten image surfaces, not a count of original codex leaves. The missing whole codex, every gallery label’s historical identity and complete literal text were not reconstructed.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "9870378815280826c59ab844d1c94759b894bb4b73c8bb9cba6f3beef28f4825",
+      "byte_size": 184286,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00001710_00016/full/full/0/default.jpg",
+      "canonical_artifact_id": "artifact.anonymous.salzburg-gospel-fragments-clm-29270-8.0801-0850-salzburg-manuscript.bsb00001710-canvas-16-98703788",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Holding-library IIIF manifest identifies the object images with Public Domain Mark 1.0. The underlying medieval handwriting is public domain; faithful photographic reproduction is not a newly authored text. Attribution: Bayerische Staatsbibliothek München, Clm 29270(8), digital object bsb00001710. PDM is a status declaration, not an invented license; https://creativecommons.org/publicdomain/mark/1.0/.",
+      "offline_limit": "Complete delivered medieval manuscript-image canvas; image canvases6–13 and15–16 are ten image surfaces, not a count of original codex leaves. The missing whole codex, every gallery label’s historical identity and complete literal text were not reconstructed.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "9796875f3ce3c20787427ff3e8a9757edacbc44a056d98f9de5b07fdade920c1",
+      "byte_size": 1438219,
+      "source_url": "https://elmss.universityofgalway.ie/storage/images/catalogue/full/9/1835.jpg",
+      "canonical_artifact_id": "artifact.anonymous.northern-italian-lectionary-strips-clm-29303-1.0576-0600-manuscript-witness.cla-sample-facsimile-9796875f",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Faithful two-dimensional facsimile of public-domain sixth-century handwriting; no separately identified creative modern annotation. Apply the same established United States mechanical-reproduction basis as the already accepted Stuttgart/Montecassino CLA sample images. Attribution: Earlier Latin Manuscripts, University of Galway, CLA IX 1334. No PDM declaration by Galway is invented.",
+      "offline_limit": "Complete delivered sample image, showing the first strip verso and only part of the second strip verso. Neither all original sides nor the missing whole lectionary was acquired or collated. Visible John/Jeremiah text confirms reading-fragment extent without establishing Ravenna origin or use.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "f5c59bcbb3868cc74e039ee1cafcefea9f2ccb361c561fa3044e9f337281a920",
+      "byte_size": 7831533,
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-25-%281989%29/Notitiae-273-1989.pdf",
+      "canonical_artifact_id": "artifact.holy-see.notitiae.1989-volume-25-number-273.official-complete-pdf-f5c59bcb",
+      "storage": "restricted",
+      "rights_status": "restricted",
+      "reason": "Exact modern periodical issue is publicly delivered by its responsible Holy See dicastery, but includes modern editorial, liturgical and scholarly material; no artifact-level redistribution license was located.",
+      "offline_limit": "Complete 80-page PDF acquired. No source PDF, page images or Latin reconstructed text is proposed for Git. Offline users can open the bounded factual table of Ward pp. 351–352; reading the original article requires reopening the official source URL.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "896d3376558f6b325c64cfed6b3d81ac89745311352b2d03f14b1179f0864623",
+      "byte_size": 1081,
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-25-%281989%29/Notitiae-273-1989.pdf",
+      "canonical_artifact_id": "artifact.holy-see.notitiae.1989-volume-25-number-273.ward-bounded-factual-metadata-896d3376",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Unprotected individual bibliographic names, titles, dates, identifiers, measurements and source-local factual assertions, retained in a project-created factual table without copying modern prose or layout. The table is bounded to the stated loci; it does not make the catalogue assertions historical truth. United States basis: Copyright Office Circular 33, https://www.copyright.gov/circs/circ33.pdf.",
+      "offline_limit": "Bounded editorial-method and bibliographic facts only; no reconstructed Latin prayer or modern article prose is copied.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "2496dcd6cbe0f0acb8cc891791118ad09592ea1af2ea58d3f470ec760f13afc1",
+      "byte_size": 80064,
+      "source_url": "https://www.diocesiravennacervia.it/rinnovato-il-proprio-delle-messe-della-diocesi/",
+      "canonical_artifact_id": "artifact.archdiocese-of-ravenna-cervia.rinnovato-il-proprio-delle-messe-della-diocesi.2025-10-18-official-web-notice.complete-html-2496dcd6",
+      "storage": "restricted",
+      "rights_status": "unresolved",
+      "reason": "Modern diocesan news HTML and its expressive article are publicly readable, but no artifact-level redistribution license was located. Public access is not a license to republish the full article or site wrapper.",
+      "offline_limit": "Complete HTML retained only in private research scratch; factual bibliographic/source-local metadata is retained separately. No full Proper, decree, imprimatur, colophon, contents, calendar or prayer text was acquired. Offline readers have only the fact table.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "d923fdeaae4b79db436dd49f2e0c4540c04a25c322e8ec6921fb940faec3629d",
+      "byte_size": 526351,
+      "source_url": "https://www.diocesiravennacervia.it/wp-content/uploads/sites/11/2025/10/proprio-messe-diocesi.jpg",
+      "canonical_artifact_id": "artifact.archdiocese-of-ravenna-cervia.rinnovato-il-proprio-delle-messe-della-diocesi.2025-10-18-official-web-notice.published-cover-image-d923fdea",
+      "storage": "restricted",
+      "rights_status": "unresolved",
+      "reason": "Modern published cover photograph; no explicit artifact-level redistribution grant located. Its title may identify the announced book, but the photograph is not treated as public-domain merely because the title is factual.",
+      "offline_limit": "Complete delivered cover photo directly inspected. It identifies the diocesan Proper title, not its year, contents, legal instrument, full book or reception history. Photo excluded from Git/public handoff; title retained in factual metadata.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "12dd6ce8afee7fc25cdec25abd9c0972d8c697961f046a391c449af2ab3fad86",
+      "byte_size": 1048,
+      "source_url": "https://www.diocesiravennacervia.it/rinnovato-il-proprio-delle-messe-della-diocesi/",
+      "canonical_artifact_id": "artifact.archdiocese-of-ravenna-cervia.rinnovato-il-proprio-delle-messe-della-diocesi.2025-10-18-official-web-notice.factual-metadata-12dd6ce8",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Unprotected individual bibliographic names, titles, dates, identifiers, measurements and source-local factual assertions, retained in a project-created factual table without copying modern prose or layout. The table is bounded to the stated loci; it does not make the catalogue assertions historical truth. United States basis: Copyright Office Circular 33, https://www.copyright.gov/circs/circ33.pdf.",
+      "offline_limit": "Whole article bibliographic and book-identity facts, with no copyrighted article text or cover photo. Effective year remains explicitly unverified.",
+      "reopening_condition": "Reopen the same public source URL and compare its exact bytes; changed bytes need a new artifact identity."
+    },
+    {
+      "sha256": "9fc301000cbe28ccef4711ca7a369547d1720b42cd0cdd0d099821cc876c38fb",
+      "byte_size": 586675,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00106368/manifest",
+      "canonical_artifact_id": "artifact.hermann-hauke.katalog-der-lateinischen-fragmente-band-1.1994-harrassowitz.bsb-iiif-metadata-9fc30100",
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "reason": "Retain the complete institutional IIIF list of individual bibliographic metadata, section labels and exact canvas identifiers; it contains no catalogue page images or description paragraphs. The InC declaration identifies the modern catalogue images and is preserved as a bibliographic fact; no distribution permission for the book is inferred. Individual names, titles and identifiers are unprotected factual metadata. Attribution: Bayerische Staatsbibliothek München; Copyright Office Circular 33, https://www.copyright.gov/circs/circ33.pdf.",
+      "offline_limit": "Complete 476-canvas metadata/extent/identity/rights declaration retained offline. This does not retain or license the modern catalogue image/text payloads, whose separate generated full PDF is restricted.",
+      "reopening_condition": "Reopen exact URL and compare bytes; changed bytes require a new identity."
+    }
+  ],
+  "remaining_gaps": [
+    "Ancient and medieval Ravenna receiving-use/copying-place evidence remains unestablished for the associated fragments.",
+    "Complete original sides, literal text census, annual book and Canon/anaphora extent remain uncollated.",
+    "Archive 011 remains holding-only; no original colophon/calendar/Canon verified.",
+    "The modern Proper announcement lacks the original book, decree and explicit effective year in its body.",
+    "The present bounded research is not an exhaustive Ravenna manuscript or book census."
+  ],
+  "semantics": "One sixth-century northern Italian lectionary fragment is distinct from the ninth-century Salzburg Gospel digitization linked in Usuarium. Rotulus numbering/reconstruction is not complete-prayer or annual-book proof. A modern official diocesan Proper announcement does not prove use of ancient fragments.",
+  "rights_limit": "Retain ten PDM medieval image canvases, five specifically classified factual auxiliary identification images, the faithful CLA sample, bounded fact tables, complete factual IIIF metadata and lawful rights supports. Exclude modern calibration canvas1, all modern copyrighted catalogue/article/notice/cover source bytes and all request-token/challenge deliveries. Existing accepted CC BY-NC4.0 ELMSS catalogue body is explicitly reused, not copied into a new artifact identity.",
+  "independent_review": {
+    "status": "independently-accepted-bounded-source-research",
+    "verdict_sha256": "9011abde9efa079c02a644c97cd8f615be1d580a3e95bc6366ef449b053ffe14",
+    "verdict_byte_size": 32856,
+    "reviewed_author_entrypoint_sha256": "b683391adbbbec6af591680a1675da35fb6a68368b80e838c48c43beffbab253",
+    "accepted_scope": "Corrected source manifests,payloads,reused catalogue evidence,retention,inventory proposals and bounded historical judgments. Optional associated-fragment stage remains root decision; no historical receiving-use,annual-book,Canon,recension,ancestry,native text or transition accepted.",
+    "prior_verdict_sha256": "9e5d414d04a3a1f0f19ab85570b3c47dfe25255efd037398c65cc64f52f6642e",
+    "correction_ids": [
+      "C1-gallery-mixed-content-rights-and-description",
+      "C2-elmss-source-dependency-and-reuse"
+    ]
+  },
+  "existing_source_reuse": {
+    "artifact_id": "artifact.mark-stansbury.earlier-latin-manuscripts.2026-10-20-web-state.elmss-1835-without-request-token-f113d87b",
+    "sha256": "f113d87b2eff27ff18d8a7bd7baa33cce7ac8f1e237f28c93815de4fcc36e1a9",
+    "byte_size": 17131,
+    "source_url": "https://elmss.universityofgalway.ie/catalogue/1835",
+    "license": "CC-BY-NC-4.0",
+    "identity_transfer_sha256": "2d366e0d5461195fec0e1c7ea8b298a1fe9195186732c92e892e4883f2bc22d4",
+    "scope": "Existing exact retained licensed catalogue body controls date/origin/shelfmark/sample-caption evidence; new token-bearing raw HTML is not public."
+  },
+  "inspection_scope_final": {
+    "author_initial_bsb_canvases": [
+      1,
+      3,
+      7
+    ],
+    "author_supplementary_bsb_canvases": [
+      2,
+      4,
+      5,
+      6,
+      14
+    ],
+    "independent_bsb_canvases": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "complete_literal_collation": false,
+    "qualification": "The inventory’s preserved Only1/3/7 wording records initial author scope. It is not a claim that the final independent review omitted the other canvases. Six auxiliary image surfaces include the restricted calibration canvas; ten manuscript-image canvases are not ten leaves."
+  }
+}

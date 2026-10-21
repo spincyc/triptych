@@ -34,7 +34,7 @@ state = "in_progress"
   id = "execution-through-completion"
   criterion = "The continuation executes the underlying historical, text, generated-history and reader requirements; completed implementation and source work are integrated and verified, and any genuinely unavailable external input is documented separately from runnable unfinished work. The clean-agent handoff requested on 2026-10-20 is a transfer checkpoint and does not satisfy the underlying completion requirements."
   status = "open"
-  evidence = ["PROJECT-WORK.md", "src/sources/inventories/missal-timeline-handoff-2026-10-20.md"]
+  evidence = ["PROJECT-WORK.md", "src/sources/inventories/missal-timeline-handoff-2026-10-20.md", "workflows/reviews/missal-batch3-2026-10-20/REPORT.md"]
 
   [[deliverables.requirements]]
   id = "clean-agent-handoff-2026-10-20"
@@ -71,19 +71,19 @@ state = "in_progress"
   id = "bounded-corpus-emitter"
   criterion = "The generated corpus exports permitted, hash-checked text as isolated typed reconstructions, preserves source and serialized hashes separately, uses stable liturgical paths and the owning clause-line serializer, repeats deterministically, and refuses fabricated historical parents or unsafe output replacement."
   status = "pass"
-  evidence = ["tools/act-history", "scripts/_eucharistic_history.py", "scripts/_eucharistic_texts.py", "tools/tests/test_eucharistic_history.py", "tools/tests/test_eucharistic_texts.py", "tools/tests/test_act_history_inheritance.py", "guidance/act-histories.md"]
+  evidence = ["tools/act-history", "scripts/_eucharistic_history.py", "scripts/_eucharistic_texts.py", "tools/tests/test_eucharistic_history.py", "tools/tests/test_eucharistic_texts.py", "tools/tests/test_act_history_inheritance.py", "guidance/act-histories.md", "workflows/reviews/missal-batch3-2026-10-20/corpus.json"]
 
   [[deliverables.requirements]]
   id = "bounded-native-constituents"
   criterion = "Independently checked native constituents declare their complete bounded extent, excluded divisions, normalization, exact source identities and hashes, rights, and literal structured text; their deterministic version exports retain partial whole-book coverage and refuse unsupported parentage or inheritance."
   status = "pass"
-  evidence = ["PROJECT-WORK.md", "src/sources/inventories/eucharistic-books", "scripts/_eucharistic_history.py", "tools/act-history", "tools/tests/test_eucharistic_history.py", "tools/tests/test_act_history_inheritance.py", "workflows/reviews/missal-batch2-2026-10-20/source.json", "workflows/reviews/missal-batch2-2026-10-20/corpus.json"]
+  evidence = ["PROJECT-WORK.md", "src/sources/inventories/eucharistic-books", "scripts/_eucharistic_history.py", "tools/act-history", "tools/tests/test_eucharistic_history.py", "tools/tests/test_act_history_inheritance.py", "workflows/reviews/missal-batch2-2026-10-20/source.json", "workflows/reviews/missal-batch2-2026-10-20/corpus.json", "workflows/reviews/missal-batch3-2026-10-20/source.json", "workflows/reviews/missal-batch3-2026-10-20/corpus.json"]
 
   [[deliverables.requirements]]
   id = "coverage-reconciliation"
   criterion = "The coverage audit preserves every current Eastern and Western discovery row, verifies exact owner fingerprints and candidate, witness, stage, artifact and segment identities, and refuses stale or inconsistent mappings without treating gaps as completed research."
   status = "pass"
-  evidence = ["src/sources/inventories/eucharistic-stage-coverage-v1.json", "tools/missal-coverage-reconciliation", "tools/tests/test_missal_coverage_reconciliation.py", "workflows/reviews/missal-batch2-2026-10-20/central-gates.json"]
+  evidence = ["src/sources/inventories/eucharistic-stage-coverage-v1.json", "tools/missal-coverage-reconciliation", "tools/tests/test_missal_coverage_reconciliation.py", "workflows/reviews/missal-batch2-2026-10-20/central-gates.json", "workflows/reviews/missal-batch3-2026-10-20/central-gates.json", "workflows/reviews/missal-batch3-2026-10-20/navigation.json"]
 
   [[deliverables.requirements]]
   id = "bounded-witness-comparison"
@@ -107,25 +107,25 @@ state = "in_progress"
   id = "historical-catalogue"
   criterion = "A reviewed, source-cited inventory covers the agreed historical boundary and every Catholic rite and materially distinct recension or edition, with explicit distinctness criteria, dating uncertainty, witness identities, and documented parentage; unresolved coverage is enumerated without a false completeness claim."
   status = "open"
-  evidence = ["PROJECT-WORK.md", "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml", "src/sources/inventories/western-eucharistic-books-timeline-v1.toml"]
+  evidence = ["PROJECT-WORK.md", "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml", "src/sources/inventories/western-eucharistic-books-timeline-v1.toml", "workflows/reviews/missal-batch3-2026-10-20/source.json"]
 
   [[deliverables.requirements]]
   id = "full-research-acquisition-cold-review-2026-10-19"
   criterion = "A full research and acquisition pass covers every existing Church and use plus discovered omissions; independent cold reviews reconcile expected versions against the canonical inventories, every known applicable version or unresolved bibliographic lead retains an explicit label even without an acquired source, and complete accessible repertoires, whole-source acquisition receipts, rights, exact external gaps and limits to historical completeness are durably recorded and checked."
   status = "open"
-  evidence = ["PROJECT-WORK.md", "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml", "src/sources/inventories/western-eucharistic-books-timeline-v1.toml", "src/sources/inventories/eucharistic-research-reviews"]
+  evidence = ["PROJECT-WORK.md", "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml", "src/sources/inventories/western-eucharistic-books-timeline-v1.toml", "src/sources/inventories/eucharistic-research-reviews", "workflows/reviews/missal-batch3-2026-10-20/source.json"]
 
   [[deliverables.requirements]]
   id = "evidenced-book-stages"
   criterion = "Source-owned dossiers distinguish dated book states from witness succession and substantive revisions, record exact component changes and inspected evidence, enumerate historical gaps, and project deterministically without granting Git ancestry or claiming complete texts."
   status = "pass"
-  evidence = ["PROJECT-WORK.md", "guidance/time-machine.md", "src/sources/inventories/eucharistic-stages", "src/sources/inventories/eucharistic-stage-coverage-v1.json", "scripts/_eucharistic_stages.py", "tools/tests/test_eucharistic_stages.py"]
+  evidence = ["PROJECT-WORK.md", "guidance/time-machine.md", "src/sources/inventories/eucharistic-stages", "src/sources/inventories/eucharistic-stage-coverage-v1.json", "scripts/_eucharistic_stages.py", "tools/tests/test_eucharistic_stages.py", "workflows/reviews/missal-batch3-2026-10-20/source.json"]
 
   [[deliverables.requirements]]
   id = "chronological-reader-revision"
   criterion = "The primary interactive and printable views let a reader follow one named recension on a common year axis, understand concrete changes and their evidence locally, distinguish uncertain dates from duration and coexistence from descent, and reach exact witness and text records; functional and reader review cover those tasks."
   status = "pass"
-  evidence = ["PROJECT-WORK.md", "guidance/time-machine.md", "workflows/reviews/missal-next-phases-2026-10-20/browser.json", "workflows/reviews/missal-next-phases-2026-10-20/print.json", "workflows/reviews/missal-batch2-2026-10-20/browser.json", "workflows/reviews/missal-batch2-2026-10-20/print.json"]
+  evidence = ["PROJECT-WORK.md", "guidance/time-machine.md", "workflows/reviews/missal-next-phases-2026-10-20/browser.json", "workflows/reviews/missal-next-phases-2026-10-20/print.json", "workflows/reviews/missal-batch2-2026-10-20/browser.json", "workflows/reviews/missal-batch2-2026-10-20/print.json", "workflows/reviews/missal-batch3-2026-10-20/browser.json", "workflows/reviews/missal-batch3-2026-10-20/print.json"]
 
   [[deliverables.requirements]]
   id = "chronology-cold-review-corrections"
@@ -137,19 +137,19 @@ state = "in_progress"
   id = "witnesses-and-texts"
   criterion = "Each temporal version has organized source witnesses and complete structured contents checked against those witnesses, with acquisition, transcription, collation, rights, and missing-book states recorded separately; metadata-only stations are never presented as complete missals."
   status = "open"
-  evidence = ["PROJECT-WORK.md", "src/sources/inventories/missal-timeline-text-reuse-2026-10-16.md", "src/sources/inventories/missal-timeline-holdings-v1.toml"]
+  evidence = ["PROJECT-WORK.md", "src/sources/inventories/missal-timeline-text-reuse-2026-10-16.md", "src/sources/inventories/missal-timeline-holdings-v1.toml", "workflows/reviews/missal-batch3-2026-10-20/source.json", "workflows/reviews/missal-batch3-2026-10-20/corpus.json"]
 
   [[deliverables.requirements]]
   id = "git-history"
   criterion = "The generated repository reconstructs the sourced contents of each version with deterministic commits, stable liturgical unit identities, true dates, evidence-backed parentage, and verified minimal honest diffs across representative changes in each covered tradition."
   status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/missal-batch3-2026-10-20/corpus.json"]
 
   [[deliverables.requirements]]
   id = "map"
   criterion = "The interactive subway map and printable counterpart derive from the same catalogue and text history, distinguish coexistence from reception and evidence gaps from absent texts, expose source and text comparisons, and pass functional and visual review."
   status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/missal-batch3-2026-10-20/browser.json", "workflows/reviews/missal-batch3-2026-10-20/print.json"]
 
 [[deliverables]]
 id = "claude-1962-twenty-first-three-documents-2026-10-15"

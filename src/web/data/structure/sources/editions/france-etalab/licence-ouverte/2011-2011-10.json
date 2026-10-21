@@ -1,0 +1,72 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "official-dataset-metadata",
+   "byte_size": 11935,
+   "edition_owned": true,
+   "id": "artifact.france-etalab.licence-ouverte.2011-10.official-dataset-metadata-e3b111a9",
+   "media_type": "application/json",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.data.gouv.fr/api/1/datasets/licence-ouverte-2-0/",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "official-reuse-licence-pdf",
+   "byte_size": 540249,
+   "edition_owned": true,
+   "id": "artifact.france-etalab.licence-ouverte.2011-10.official-pdf-44ff23ae",
+   "media_type": "application/pdf",
+   "notes": "Source licence text is third-party material excluded from Triptych CC BY 4.0. Its 2011 operative wording controls Numelyo image-reuse conditions; its independently established LO 2.0 distribution grant permits retaining the full unchanged PDF.",
+   "page_count": 3,
+   "retrieved": "2026-10-20",
+   "rights": "licensed",
+   "rights_basis": "The official data.gouv.fr dataset https://www.data.gouv.fr/datasets/licence-ouverte-2-0 applies Licence Ouverte 2.0 (LO 2.0) to its resource titled FR : Licence Ouverte/Open License Version 1.0. Exact API metadata names resource 6a95a2c8-a0a2-4d89-9710-9b5a901211d6, size 540249 bytes, SHA-1 d17b3f37081f90efb1db01290f157961ff423ab8 and resource update 2026-09-11. The whole direct official download https://static.data.gouv.fr/resources/licence-ouverte-2-0/20240711-152120/licence-ouverte.pdf is byte-identical. Retain Etalab/data.gouv.fr attribution, dataset/resource source, update 11 September 2026 and the operative LO 2.0 text link https://github.com/etalab/licence-ouverte/blob/master/LO.md ; do not imply official status or endorsement. The printed October 2011 v1.0 content is distinct from this independently established current LO 2.0 redistribution grant.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "factual-metadata-derivative",
+   "byte_size": 1189,
+   "edition_owned": true,
+   "id": "artifact.france-etalab.licence-ouverte.2011-10.resource-facts-5a71f766",
+   "media_type": "application/json",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "licensed",
+   "rights_basis": "Project-created factual metadata selection licensed CC BY 4.0; individual catalogue and license facts are not claimed as original authored expression.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.data.gouv.fr/api/1/datasets/licence-ouverte-2-0/",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Etalab",
+  "date": "2011-10",
+  "editors": [],
+  "id": "edition.france-etalab.licence-ouverte.2011-10",
+  "jurisdiction": null,
+  "language": "fr",
+  "publication": "Etalab, October 2011",
+  "title": "Licence Ouverte / Open Licence, version 1.0, October 2011",
+  "translators": [],
+  "year": 2011
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Etalab, French government",
+  "category": "reuse-licence",
+  "description": "French public-information reuse licence. The October 2011 content version and the separate current resource-redistribution grant remain identified independently.",
+  "id": "work.france-etalab.licence-ouverte",
+  "languages": [
+   "fr"
+  ],
+  "title": "Licence Ouverte / Open Licence"
+ }
+}

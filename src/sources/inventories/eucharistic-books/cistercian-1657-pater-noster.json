@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "cistercian-1657-pater-noster",
+  "title": "Cistercian missal 1657: Pater noster in its two chant forms",
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "All front matter, calendar, Temporale, Sanctorale, Commons, propers and other book divisions outside this functional Pater selection",
+    "The earlier accepted 25-unit offertory and 52-unit Canon, including raw 0275 entire left column and right-column words before Orémus",
+    "Raw 0277 entire right column beginning Deinde accipit Patenam and Libera nos, and every later post-Canon prayer, rubric, chant and Last Gospel/thanksgiving direction",
+    "Raw 0278–0287, retained only for wider endpoint/gap and following-division evidence; no complete wider post-Canon text is claimed",
+    "Chant staff notation and pitches as a Latin text payload; the exact notation remains visible in the retained complete-page facsimile"
+  ],
+  "scope": "Complete functional Pater constituent in offered source order: FIDES page-file 0275 (printed p.213), right column from Orémus after the earlier Canon/Iungit manus, through the introduction and adjacent Extendit manus; all page-file 0276 (printed p.214) body text, including the first complete Pater and response/Amen, the governing alternative-cantus rubric for three-lesson feasts, ferial days and Masses for the dead, the separately printed Per omnia/Amen and second introduction/Pater; and page-file 0277 (printed p.215), left column through Sacerdos submissâ voce dicit / Amén. It stops before the right-column Deinde accipit Patenam and Libera nos. Both complete printed chant forms and all governing rubrics are included. Final Amén. preserves the independently preferred probable printed acute over e in a worn/folded area; the hooked mark meets a crease, so that diacritic retains an explicit source-condition reservation. This complete declared functional constituent has partial whole-book and partial post-Canon text coverage. The wider continuation through page-file 0285 remains blocked by concealed source letters and punctuation; no alternate-setting words fill those gaps.",
+  "transcribed_by": "AI source transcription coordinator (1657 Cistercian Pater constituent)",
+  "stage_ids": [
+    "cistercian-1606-1657-1657"
+  ],
+  "catalogue_witness_ids": [
+    "western:cistercian-1657"
+  ],
+  "components": [
+    "ordinary",
+    "rubrics"
+  ],
+  "languages": [
+    "la"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "Paris Cramoisy printing1657; distinct from Vaussin mandate1655",
+    "start_year": 1657,
+    "end_year": 1657,
+    "evidence": [
+      {
+        "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.title-and-imprint",
+        "locus": "FIDES raw0005 original title and1657 imprint"
+      }
+    ]
+  },
+  "witnesses": [
+    {
+      "id": "cistercian-1657-pater-noster-pages",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657",
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-facsimile-995d68b0",
+      "completeness_evidence": [
+        {
+          "source_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-extent",
+          "locus": "Complete bounded functional Pater, both chant forms"
+        }
+      ],
+      "scope_pages": [
+        [
+          1,
+          3
+        ]
+      ]
+    }
+  ],
+  "extent_path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-pater-noster-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/cistercian-1657-pater-noster-review.json",
+  "units": [
+    {
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-first-introduction",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-first-introduction"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer-and-interleaved-rubric",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-first-introduction",
+      "text_sha256": "4e687873d31783fd198a8d8c213e787dc19ba54c9e9440e297cf71d5f70be07a"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-first-prayer-response",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-first-prayer-response"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "chant-prayer-and-response",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-first-prayer-response",
+      "text_sha256": "2645b4aa5103e6f95d995efd9c5f19a32b29d9593a057911770000b9fe854898"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-first-amen",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-first-amen"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "rubric-and-spoken-response",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-first-amen",
+      "text_sha256": "322d659d6d4085a5bb82f744e93e53fb3361f5d3b98812bc4e47c0f80da08303"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-alternative-usage",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-alternative-usage"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-usage",
+      "text_sha256": "ccffa6f101dcc8bc23ad8e95bf5434090b73d052f3345a60a0b0526e5ff7d7b0"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-alternative-per-omnia",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-alternative-per-omnia"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "chant-and-response",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-per-omnia",
+      "text_sha256": "8ad55fe2422f21c65e8632ab3ceb3efa7171cfe3e9f78ff05c770b34d6f56b08"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-alternative-introduction",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-alternative-introduction"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "chant-introduction",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-introduction",
+      "text_sha256": "09c3a63912f388b1ba017b6341baa975f859566a13a712e2a4361604646d8baa"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-alternative-prayer-response",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-alternative-prayer-response"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "chant-prayer-and-response",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          2,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-prayer-response",
+      "text_sha256": "a986d4659045c63acda349408cd5d961e914a7e9030366784cc1aeb4af5e0fb9"
+    },
+    {
+      "unit_id": "unit.cistercian-1657.pater-noster.pater-alternative-amen",
+      "native_path": [
+        "ordinary",
+        "post-canon",
+        "pater-alternative-amen"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "rubric-and-spoken-response",
+      "witness_id": "cistercian-1657-pater-noster-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.cistercian-order.missale-cisterciense.paris-cramoisy-1657.pater-pater-alternative-amen",
+      "text_sha256": "85ca6158ba52ab42724fdb3832c6766992898348e23b8a2c21c06ae4892fad2b"
+    }
+  ]
+}

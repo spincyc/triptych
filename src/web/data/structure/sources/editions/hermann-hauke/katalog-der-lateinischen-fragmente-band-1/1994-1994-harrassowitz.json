@@ -1,0 +1,73 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "factual-metadata",
+   "byte_size": 1648,
+   "edition_owned": true,
+   "id": "artifact.hermann-hauke.katalog-der-lateinischen-fragmente-band-1.1994-harrassowitz.bounded-factual-metadata-319f96e2",
+   "media_type": "application/json",
+   "notes": "Two entries only, preserving the different shelfmarks, dates, genres and physical extent. No original copyrighted description is reproduced.",
+   "page_count": null,
+   "retrieved": "2026-10-21",
+   "rights": "public-domain",
+   "rights_basis": "Unprotected individual bibliographic names, titles, dates, identifiers, measurements and source-local factual assertions, retained in a project-created factual table without copying modern prose or layout. The table is bounded to the stated loci; it does not make the catalogue assertions historical truth. United States basis: Copyright Office Circular 33, https://www.copyright.gov/circs/circ33.pdf.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.digitale-sammlungen.de/en/view/bsb00106368",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "catalogue-pdf",
+   "byte_size": 245469393,
+   "edition_owned": true,
+   "id": "artifact.hermann-hauke.katalog-der-lateinischen-fragmente-band-1.1994-harrassowitz.bsb-complete-pdf-5ba0e3de",
+   "media_type": "application/pdf",
+   "page_count": 477,
+   "retrieved": "2026-10-21",
+   "rights": "restricted",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://download.digitale-sammlungen.de/pdf/17925441168888bsb00106368.pdf",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "iiif-bibliographic-metadata",
+   "byte_size": 586675,
+   "edition_owned": true,
+   "id": "artifact.hermann-hauke.katalog-der-lateinischen-fragmente-band-1.1994-harrassowitz.bsb-iiif-metadata-9fc30100",
+   "media_type": "application/json",
+   "notes": "Complete 476-canvas metadata/extent/identity/rights declaration retained offline. This does not retain or license the modern catalogue image/text payloads, whose separate generated full PDF is restricted.",
+   "page_count": null,
+   "retrieved": "2026-10-21",
+   "rights": "public-domain",
+   "rights_basis": "Retain the complete institutional IIIF list of individual bibliographic metadata, section labels and exact canvas identifiers; it contains no catalogue page images or description paragraphs. The InC declaration identifies the modern catalogue images and is preserved as a bibliographic fact; no distribution permission for the book is inferred. Individual names, titles and identifiers are unprotected factual metadata. Attribution: Bayerische Staatsbibliothek München; Copyright Office Circular 33, https://www.copyright.gov/circs/circ33.pdf.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00106368/manifest",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1994",
+  "editors": [],
+  "id": "edition.hermann-hauke.katalog-der-lateinischen-fragmente-band-1.1994-harrassowitz",
+  "jurisdiction": null,
+  "language": "de",
+  "publication": "Hauke, Katalog der lateinischen Fragmente, Band 1: Clm 29202–29311 (Wiesbaden: Harrassowitz, 1994)",
+  "title": "Hauke, Katalog der lateinischen Fragmente, Band 1: Clm 29202–29311 (Wiesbaden: Harrassowitz, 1994)",
+  "translators": [],
+  "year": 1994
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Hermann Hauke",
+  "category": "manuscript-catalogue",
+  "description": null,
+  "id": "work.hermann-hauke.katalog-der-lateinischen-fragmente-band-1",
+  "languages": [
+   "de",
+   "la"
+  ],
+  "title": "Katalog der lateinischen Fragmente der Bayerischen Staatsbibliothek München, Band 1"
+ }
+}

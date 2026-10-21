@@ -1,0 +1,99 @@
+{
+  "schema": "triptych-source-factual-extract-v1",
+  "rights_notice": "Project-created factual selection under the repository CC BY 4.0 terms. Only individual bibliographic facts, short titles, dates, identifiers, quantities, signatures, fingerprints, copy-condition facts and access/rights flags are retained. No blanket database, catalogue-prose, site-layout or journal redistribution licence is inferred. Exact retained official U.S. Copyright Office rights sources and loci are pinned in the accompanying research receipt.",
+  "source_artifact_id": "artifact.ministerio-de-cultura.ccpb.2026-10-21-response-state.raw-ccpb-821832-stable-1-60949cd0",
+  "source_sha256": "60949cd021b95bbcabde7ae56e14c4d2b8bf6fd6bb64d4325b53dea29a42d48c",
+  "source_bytes": 130142,
+  "source_url": "https://ccpbe.cultura.gob.es/CCPBOPAC/cgi-ccpbopac/abnetop?ACC=DOSEARCH&xsqf99=CCPB000821832-3",
+  "source_url_role": "stable public catalogue entry point; response identified separately by exact hash and control",
+  "facts": {
+    "bibliographic_control": "CCPB000821832-3",
+    "fields": [
+      {
+        "field": "title",
+        "value": "[Missale Romanum].",
+        "locus": "detail HTML .js-doc_title and .js-ntitl"
+      },
+      {
+        "field": "main_publication",
+        "value": "[S.l. : s.n., s.a.]",
+        "locus": "detail HTML .js-nedit; displayed Publicación; hidden .js-T260ab/.js-T260a/.js-T260b/.js-T260c"
+      },
+      {
+        "field": "extent",
+        "value": "[51], 563, XCV, [3] p., [11] : il.",
+        "locus": "detail HTML displayed Descripción física"
+      },
+      {
+        "field": "probable_imprint_basis_exact",
+        "value": "Probable pie de imprenta deducido de los preliminares",
+        "locus": "detail HTML displayed Nota a la publicación"
+      },
+      {
+        "field": "probable_imprint_components",
+        "value": {
+          "place": "Roma",
+          "printer_publisher": "Andrea Brogiotto",
+          "press": "Typographia Vaticana",
+          "year": "1634"
+        },
+        "qualification": "A note explicitly labels this imprint probable and deduced from preliminaries; the main publication statement remains unknown. The displayed note ends with a closing square bracket after 1634, with an opening round parenthesis before Roma. Do not silently present this as title-page transcription.",
+        "locus": "detail HTML displayed Nota a la publicación"
+      },
+      {
+        "field": "typographical_identifier",
+        "value": "m.s. 3130 isé- tide(3) 1634? Q",
+        "locus": "detail HTML displayed Id. tipográfica"
+      },
+      {
+        "field": "collation",
+        "value": "+-++8, +++10, A-Z, Aa-Ll8, Mm10, a-e8, f10.",
+        "locus": "detail HTML displayed Nota a la descripción física, Sign."
+      },
+      {
+        "field": "blank_leaf",
+        "value": "f10",
+        "locus": "detail HTML displayed Nota a la descripción física, H. f10 en blanco."
+      },
+      {
+        "field": "illustrator_signature",
+        "value": "Wolf Kilian fecit in Augusta",
+        "qualification": "Reported on some illustrations; not a sufficient inference of printing place.",
+        "locus": "detail HTML displayed Nota a la descripción física"
+      },
+      {
+        "field": "related_bound_item",
+        "value": {
+          "title": "Die XV julii Missa in festo S. Camilli",
+          "place": "Barcinone",
+          "printer": "ex typ. Mariae Angelae Martí viduae",
+          "year": 1764,
+          "pages": 2
+        },
+        "qualification": "A separately printed later bound item, not the Missal publication date.",
+        "locus": "detail HTML displayed Nota Con"
+      },
+      {
+        "field": "indexed_year",
+        "value": "1634",
+        "qualification": "The record indexes 1634 although its main publication field is unknown and its fingerprint questions 1634. This is not independent verification of a printed date.",
+        "locus": "detail HTML .js-FEPU and .js-T008"
+      },
+      {
+        "field": "authority_names",
+        "value": [
+          "Kilian, Wolfgang (1581-1662)",
+          "Brugiotti, Andrea",
+          "Stamperia Camerale, imp."
+        ],
+        "qualification": "Authority entries are distinct from the probable imprint wording Andrea Brogiotto/Typographia Vaticana.",
+        "locus": "detail HTML displayed Otros responsables"
+      },
+      {
+        "field": "holding_institution",
+        "value": "Universidad de Barcelona, CRAI Biblioteca de Fondo Antiguo",
+        "locus": "detail HTML holdings institution .js-ccpb_sudesc, data-codesuc=22008"
+      }
+    ]
+  }
+}

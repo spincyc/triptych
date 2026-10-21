@@ -379,7 +379,7 @@ def native_reading_fixture():
                    description="Two constructed units only.", omitted_book_divisions=["The rest of the constructed book"], known_extent_units=2),
         counts=dict(units=2), witnesses=[dict(id="copy", edition_id="edition.fixture", artifact_id="artifact.scan")],
         sources=[dict(id="edition.fixture",record_type="edition",title="Constructed edition",date="1200"),
-                 dict(id="artifact.scan",record_type="artifact",source_url="https://example.org/source"),
+                 dict(id="artifact.scan",record_type="artifact",edition_id="edition.fixture",source_url="https://example.org/source"),
                  dict(id="artifact.text",record_type="artifact",edition_id="edition.fixture",rights_status="public-domain",rights_jurisdiction="United States",
                       rights_basis="Synthetic test rights statement; no historical source asserted.",transformation="No new paragraph divisions."),
                  dict(id="passage.first",record_type="passage",edition_id="edition.fixture",artifact_id="artifact.text"),
@@ -575,6 +575,84 @@ class TimelineControllerTests(unittest.TestCase):
                 self.assertTrue(any(e["attrs"].get("role")=="status" and e["text"]=="Source text loaded." for e in shown["elements"]))
                 self.assertTrue(any(e["attrs"].get("aria-busy")=="false" for e in shown["elements"]))
 
+    def test_retained_1657_canon_links_every_unit_to_its_exact_source_passage(self):
+        payload = json.loads((ROOT / "src/web/data/structure/act-history/native-texts/cistercian-1657-canon.json").read_text())
+        history = json.loads((ROOT / "src/web/data/structure/act-history/catalogue.json").read_text())["stage_history"]
+        path = "structure/act-history/native-texts/cistercian-1657-canon.json"
+        for mobile in (False, True):
+            with self.subTest(mobile=mobile):
+                shown = self.drive(history, mobile=mobile, hash="#stage=" + payload["stage_ids"][0],
+                                   fragments={path: payload}, actions=[dict(do="native-text", binding=payload["adapter_id"])])["timeline-detail"]
+                links = [link for link in shown["links"] if link["text"].endswith(" — Source Library passage")]
+                self.assertEqual(len(payload["units"]), len(links))
+                self.assertEqual([unit["text"] for unit in payload["units"]], [unit["text"] for unit in shown["nativeTexts"]])
+                for unit, link in zip(payload["units"], links):
+                    self.assertEqual("../sources/#edition=" + quote(unit["text_edition_id"], safe="") +
+                                     "&passage=" + quote(unit["source_id"], safe=""), link["href"])
+                    self.assertIn(unit["source_locator"], shown["text"])
+                    # The existing destination identifies the very same text artifact,
+                    # rather than a title-matched edition or an invented provider URL.
+                    source = json.loads((ROOT / "src/web/data/structure/sources/text" / (unit["source_id"] + ".json")).read_text())
+                    self.assertEqual(unit["text_edition_id"], source["edition_id"])
+                    self.assertEqual(unit["source_artifact_id"], source["artifact_id"])
+
+    def test_native_source_links_preserve_upstream_or_use_exact_passage_fallback(self):
+        for upstream, edition in (("https://example.org/source", "edition.fixture"),
+                                  (None, "edition.fixture"), ("javascript:alert(1)", "edition.fixture"),
+                                  ("//example.org/source", "edition.fixture"),
+                                  ("https://user:password@example.org/source", "edition.fixture"),
+                                  ("../sources/#edition=edition.other", "edition.fixture"),
+                                  ("https://example.org/different-copy", "edition.other")):
+            with self.subTest(upstream=upstream, edition=edition):
+                history, fragments = native_reading_fixture()
+                payload = next(iter(fragments.values()))
+                payload["sources"][1].update(source_url=upstream, edition_id=edition)
+                shown = self.drive(history, fragments=fragments, hash="#stage=second", actions=[dict(do="native-text")])["timeline-detail"]
+                links = [link for link in shown["links"] if link["text"].startswith("Constructed edition (1200)")]
+                self.assertEqual(2, len(links))
+                if upstream == "https://example.org/source":
+                    self.assertEqual([upstream] * 2, [link["href"] for link in links])
+                    self.assertTrue(all("Source Library passage" not in link["text"] for link in links))
+                else:
+                    self.assertEqual(["../sources/#edition=edition.fixture&passage=" + unit["source_id"] for unit in payload["units"]],
+                                     [link["href"] for link in links])
+                    self.assertTrue(all(link["text"].endswith(" — Source Library passage") for link in links))
+                self.assertEqual([unit["text"] for unit in payload["units"]], [unit["text"] for unit in shown["nativeTexts"]])
+                for unit in payload["units"]:
+                    self.assertIn(unit["source_locator"], shown["text"])
+
+    def test_native_source_links_refuse_malformed_passage_ids_without_losing_text(self):
+        for identifier in ("passage.first\n", "passage.first\r\n", "passage.first\u2028", "passage.first\u2029",
+                           "../passage.first", "//example.org/passage.first", "passage.first&edition=edition.other",
+                           "passage.first?remote=1", "passage.%66irst", "edition.first"):
+            with self.subTest(identifier=identifier):
+                history, fragments = native_reading_fixture()
+                payload = next(iter(fragments.values()))
+                payload["sources"][1].pop("source_url")
+                payload["sources"][3]["id"] = identifier
+                payload["units"][0]["source_id"] = identifier
+                shown = self.drive(history, fragments=fragments, hash="#stage=second", actions=[dict(do="native-text")])["timeline-detail"]
+                links = [link for link in shown["links"] if link["text"].startswith("Constructed edition (1200)")]
+                self.assertEqual(["../sources/#edition=edition.fixture&passage=passage.second"], [link["href"] for link in links])
+                self.assertIn("Constructed edition (1200) — link unavailable", shown["text"])
+                self.assertEqual([unit["text"] for unit in payload["units"]], [unit["text"] for unit in shown["nativeTexts"]])
+
+    def test_native_source_links_refuse_malformed_edition_ids_without_using_upstream(self):
+        for identifier in ("edition.fixture\n", "edition.fixture&passage=passage.other", "../edition.fixture", "edition.%66ixture"):
+            with self.subTest(identifier=identifier):
+                history, fragments = native_reading_fixture()
+                payload = next(iter(fragments.values()))
+                payload["sources"][0]["id"] = identifier
+                for source in payload["sources"][1:]:
+                    source["edition_id"] = identifier
+                payload["witnesses"][0]["edition_id"] = identifier
+                for unit in payload["units"]:
+                    unit["text_edition_id"] = identifier
+                shown = self.drive(history, fragments=fragments, hash="#stage=second", actions=[dict(do="native-text")])["timeline-detail"]
+                self.assertFalse(any(link["text"].startswith("Constructed edition (1200)") for link in shown["links"]))
+                self.assertEqual(2, shown["text"].count("Constructed edition (1200) — link unavailable"))
+                self.assertEqual([unit["text"] for unit in payload["units"]], [unit["text"] for unit in shown["nativeTexts"]])
+
     def test_multiple_native_constituents_are_separate_ordered_lazy_disclosures(self):
         history, fragments = multiple_native_reading_fixture()
         bindings = history["stages"][1]["text_bindings"]
@@ -663,7 +741,7 @@ class TimelineControllerTests(unittest.TestCase):
     def test_native_text_refuses_wrong_binding_extent_rights_and_unit_order_before_display(self):
         history,fragments=native_reading_fixture()
         path=next(iter(fragments))
-        for defect in ("binding","stale-binding","stage","extent","rights","unit-order","wrong-source-type","wrong-source-edition","wrong-witness-type"):
+        for defect in ("binding","stale-binding","stage","extent","rights","unit-order","wrong-source-type","wrong-source-edition","wrong-source-artifact","wrong-artifact-edition","wrong-witness-type"):
             with self.subTest(defect=defect):
                 changed=copy.deepcopy(fragments)
                 payload=changed[path]
@@ -674,6 +752,8 @@ class TimelineControllerTests(unittest.TestCase):
                 elif defect=="rights": payload["sources"][2]["rights_status"]="unresolved"
                 elif defect=="wrong-source-type": payload["units"][0]["source_id"]="artifact.scan"
                 elif defect=="wrong-source-edition": payload["sources"][3]["edition_id"]="edition.different"
+                elif defect=="wrong-source-artifact": payload["sources"][3]["artifact_id"]="artifact.scan"
+                elif defect=="wrong-artifact-edition": payload["sources"][2]["edition_id"]="edition.different"
                 elif defect=="wrong-witness-type": payload["witnesses"][0]["artifact_id"]="passage.first"
                 else: payload["units"].reverse()
                 got=self.drive(history,fragments=changed,hash="#stage=second",actions=[dict(do="native-text")])

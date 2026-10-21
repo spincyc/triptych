@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "cistercian-1606-post-canon-admission-2026-10-20",
+  "title": "Independent admission review of the Paris 1606 Cistercian post-Canon source packet",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "installation_manifest_sha256": "c87f8043355e7836ba12b411d3df02b16948e26f51509362e8ed4d6af7ab469e",
+    "installation_manifest_byte_size": 730746,
+    "rejected_prior_manifest_sha256": "5a97e28ef41d53ebd0e42b63282af89da7dac254e4ffa1a643449c83a22e866f",
+    "independent_final_closure_sha256": "a43e9cbe776542f98d38b878eec39ef9189b78b68288326b8562efa3de7fe11b",
+    "independent_final_closure_byte_size": 24274,
+    "native_binding_path": "src/sources/inventories/eucharistic-books/cistercian-1606-post-canon.json",
+    "native_binding_sha256": "bffe8231ccded6bad30b8200e60eb58b2e8b4fa099169e5403cc74c220eecdca",
+    "extent_path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-post-canon-extent.json",
+    "extent_sha256": "b198c826ab9619b776aff684461b92e515cb891b820c91016309fe76a1cdf4f0",
+    "independent_literal_review_path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-post-canon-review.json",
+    "independent_literal_review_sha256": "a9071ea94a7aef2facd58a121b4b4ee5dcb8227b1ac6a79cde762aebf7a68d64",
+    "source_research_receipt_path": "src/sources/inventories/eucharistic-research-reviews/cistercian-1606-post-canon-2026-10-20.json",
+    "source_research_receipt_sha256": "7a38e8ff99f0a8ecad429f32727f16aadb8b74d014d041aaf22348e3ab757424",
+    "isolated_final_validation_sha256": "33ab3d5ce9f625fbd07a03786f88ba3a8fe8ad9d7be8e37c103cb5fcad946e3f",
+    "isolated_final_validation_byte_size": 28947,
+    "record_set_sha256": "5a9ff862625869ef074abcfefff12cb86c3c3f6b18ed61f76e383f6409954e4e",
+    "change_set_sha256": "baa5fc63ab4dfc956d38f0d0afc205a20e6fcba233e41b0c97a4dc2857027d57",
+    "accepted_source_metadata_manifest_sha256": "8d2ccb3b8a8c102390e303c85aa0d9362d18b626dc17e4d54ee3a93dcdcb9cf6",
+    "independent_transport_review_sha256": "4122da2064707c7c9d94f30dd27efc9ed5574ff100945b17a1bc9f8d19e54a11",
+    "independent_transport_review_byte_size": 3521,
+    "superseded_uninstalled_admission_sha256": "788514e18f3aeaa3c1e6e213176a50f18f530965963f5122c0715acf37ae0278"
+  },
+  "coverage_rows": [
+    "cistercian"
+  ],
+  "uses": [
+    {
+      "id": "cistercian-1606-post-canon-independent-admission",
+      "binding_id": "cistercian-1606-post-canon",
+      "state": "accepted-for-source-integration",
+      "role": "Independent final rights, integrity, manifest and owner-change closure",
+      "scope": "Printed p. 197 Orémus after the excluded strict Canon final Amen through the p. 199 main Order closure, plus the p. 200 appended Suffragium through its final Amen. Printed p. 201 is excluded Sanctorale boundary context. Physical printing order and the appendix’s instructed recitation after Pater noster remain distinct.",
+      "basis": "All 71 final record strings and file hashes, both payload hashes, exact binding/census/literal-review pins, current owner preimages, ordered unions and the three agreed metadata addenda were independently checked. Prior source-rights and dependency findings remain preserved in the separately pinned source research receipt.",
+      "limits": "This admission reviewer did not repeat the complete source-image collation. The distinct independent literal reviewer supplies the complete-extent attestation and all 64 unit hashes. No new extraction, network fetch, full-parent payload rehash or rights research was performed."
+    }
+  ],
+  "searches": [],
+  "versions": [
+    {
+      "id": "cistercian-1606-post-canon",
+      "adapter": "native-book:cistercian-1606-post-canon",
+      "parents": [],
+      "text_inheritance": false,
+      "date_role": "publication",
+      "date": "1606",
+      "complete_declared_extent": true,
+      "whole_book_complete": false,
+      "complete_ordinary": false
+    }
+  ],
+  "acquisitions": [],
+  "admission": {
+    "verdict": "accepted",
+    "reviewer": "Independent rights, integrity and source-manifest metadata reviewer",
+    "independent_of_transcription": true,
+    "accepted_record_count": 71,
+    "accepted_owner_changes": 10,
+    "accepted_payload_count": 2,
+    "accepted_payloads": [
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+        "canonical_payload": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/post-canon-facsimile-ed5fd115/facsimile.pdf",
+        "sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+        "byte_size": 8056679
+      },
+      {
+        "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+        "canonical_payload": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/post-canon-checked-latin-89a7bff4/text.txt",
+        "sha256": "89a7bff491a488493934fc94db4c22a63fa34b469a48f6253ee57bfdf15d9047",
+        "byte_size": 4964
+      }
+    ],
+    "literal_receipt_status": "Distinct reviewer affirms verified independent complete-extent collation, with no unresolved findings; exact binding, census, witness and all 64 unit hashes agree.",
+    "checked_owner_changes": [
+      {
+        "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+        "table": "candidates",
+        "owner_id": "cistercian-1606",
+        "field": "source_library_artifact_ids",
+        "old_value_sha256": "a18eccafb370a1fc99b03006b6ee25a49da21faf14dbd92a6839bcecd80b3a8a",
+        "new_value_sha256": "e8e31396feb91e1a9b01633f6a317d725f8285700dd682f0f74e2f76325ab43c"
+      },
+      {
+        "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+        "table": "candidates",
+        "owner_id": "cistercian-1606",
+        "field": "source_library_checked_text_artifact_ids",
+        "old_value_sha256": "1f171d8e58ea63f7ede77b2de9f851b27ebef9a1f72fafb9c30c3bd772b5c434",
+        "new_value_sha256": "508befb19cb3c513293a0a583246f69b588de3c1a5965fc792adddf41c932789"
+      },
+      {
+        "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+        "table": "candidates",
+        "owner_id": "cistercian-1606",
+        "field": "source_library_passage_ids",
+        "old_value_sha256": "2b634904616c9b99fc076a581d76cbac8025220432d84e60f4566507faa54825",
+        "new_value_sha256": "c5c56bb086483f7b8a771b381471a5365c8d5cc5b838fc05b1a70bc826234475"
+      },
+      {
+        "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+        "table": "candidates",
+        "owner_id": "cistercian-1606",
+        "field": "qualification",
+        "old_value_sha256": "a911e045d10745ed8c8c4e44bec44c9176546d1654d3e332edbe860d3616e68f",
+        "new_value_sha256": "7b2d7d5bbb1add6f184b7005f031ef05296b435430c090f188a87ae9bb2c6c8f"
+      },
+      {
+        "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+        "table": "candidates",
+        "owner_id": "cistercian-1606",
+        "field": "source_library_evidence_relation",
+        "old_value_sha256": "3ad5f94eb9b5054b10cabdbfb5da5109406f6dea8e6fb130c09ad31e053a2573",
+        "new_value_sha256": "9504ba6d78e4a20db21a81965a8a97fef17b40ee0b387758627bba4202aea1f7"
+      },
+      {
+        "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+        "table": "candidates",
+        "owner_id": "cistercian-1606",
+        "field": "transcription_status",
+        "old_value_sha256": "6e85d052276d0edb83b83eaecb5ab91f0cd1b0deaa1ebda14934525af06ed981",
+        "new_value_sha256": "09ee4cb94b3e4f4bedee837a45b42e098af5ea6646593e4d2471016dbbe6db2a"
+      },
+      {
+        "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+        "table": "candidates",
+        "owner_id": "cistercian-1606",
+        "field": "collation_status",
+        "old_value_sha256": "19dcf88acc2bc5375384c8b4214583b4e1963e62161b0642c29e5b918eed39b5",
+        "new_value_sha256": "283b8f6a25a79acc9cdbfe7190aee09d954791801dabe99b9b6b5c490c0b1570"
+      },
+      {
+        "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+        "table": "sources",
+        "owner_id": "cistercian-1606-bsb-primary",
+        "field": "inspection",
+        "old_value_sha256": "036db04a6a03cbd4f91a47be9b3166be9822abbfdb72d9c1e6ec98a61d4e5194",
+        "new_value_sha256": "1fb293323b564bb52379e337fe00813776a6227acf6025c9b3428f7dd5f4c48a"
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/edition.toml",
+        "table": null,
+        "owner_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+        "field": "notes",
+        "old_value_sha256": "bdbc9262aad68491055037fb7fc2d5dd9b48f731c70b66855f6e5b0b293920ec",
+        "new_value_sha256": "4bad2505b0e3ba9a4f985184a799bcf0a6651b927cc8cf9388d630707d0faeb6"
+      },
+      {
+        "path": "src/sources/inventories/source-containment-v1.toml",
+        "table": "not_containers",
+        "action": "append",
+        "row_sha256": "6655cdedb15e00410c7bc4c7989416a5e14165d8b85cd0c94b975d3f3f73d31a"
+      }
+    ],
+    "existing_owner_preimages": "All nine scalar or array preimages matched their current canonical owners immediately before admission. The tenth change appends the exact independently reviewed containment row to an inventory in which that ID was absent.",
+    "ordered_unions": "Artifact IDs 12 to 14, checked text artifact IDs 5 to 6, passage IDs 45 to 110; all prior IDs and ordering preserved with no duplicates.",
+    "prior_qualifications": "Existing scalar qualification, evidence, inspection and edition-note wording is preserved verbatim before the bounded append, including the French250/Numelyo same-printing qualification.",
+    "integrity": "Binding, census, literal payload and facsimile payload remain byte-identical to the accepted candidate. Only the explicitly approved facsimile passage locus changed among its 67 source records.",
+    "append_only_successor": "An installation successor may append this admission receipt as one additional canonical record while preserving the 71 accepted record bytes, all ten owner changes and both payload identities. That append does not retrospectively change the installation manifest pinned above.",
+    "transport": "All nine private installation locators are now repository-relative and resolve to the identical existing files. Their exact hashes and byte sizes were independently checked. The 71 canonical records, ten owner changes and both payload identities are unchanged from the accepted source metadata packet.",
+    "supersession": "This receipt supersedes the earlier uninstalled admission pinned to the source metadata packet. Install only this receipt with the same stable ID and filename; the prior receipt remains uninstalled audit history."
+  },
+  "findings_resolved": [
+    {
+      "id": "facsimile-locus-coordinate-clarity",
+      "resolution": "The exact conditionally accepted replacement separately states retained printed 197–201 / provider PDF 252–256 / canvases 251–255 / facsimile 1–5 and selected literal pages 197–200 / facsimile 1–4, with page 5 outside the constituent."
+    },
+    {
+      "id": "explicit-latin-retention",
+      "resolution": "The exact 4,964-byte normalized Latin artifact now has its own retain-tracked decision, United States public-domain rationale and bounded offline scope."
+    },
+    {
+      "id": "containment-classification",
+      "resolution": "The exact independently reviewed not_containers row pins facsimile manifest b1bb5978d2bc87bb48987bbf7eda2138d0e7c0088c10fc0899b60c6216a5c986 and explains the same-work bounded derivative. The existing parent row remains unchanged."
+    },
+    {
+      "id": "final-rights-url-repair",
+      "resolution": "The prior final packet was withheld because the new public envelope and private retention metadata introduced whitespace into the provider rights statement domain. The accepted packet repairs the single public occurrence to https://rightsstatements.org/vocab/NoC-NC/1.0/ and the corresponding retention value. Its other 70 canonical records, ten owner changes and both payloads are unchanged. This correction preserves the accepted image condition and the separate public-domain Latin basis."
+    },
+    {
+      "id": "repository-relative-installation-locators",
+      "resolution": "The exact nine locator conversions were independently checked by resolved-file identity and content hashes; all other operational content and canonical evidence remain unchanged. Private prior-packet and transport-audit metadata account for the remaining manifest delta."
+    }
+  ],
+  "validation": {
+    "independent_metadata_closure": "passed; zero unresolved admission findings",
+    "source_library_and_native_adapter": "The pinned isolated final validation report passes, with zero source-library errors, 64 units, 706 whitespace tokens, complete_declared_extent true and whole_book_complete false.",
+    "prior_constituents": "The coordinator’s pinned isolated report verifies 55 prior source/native files unchanged from base e2267fdeb417d99b03d8cefea05fc30397bdf816; this reviewer independently checked the 7/35-unit bindings and 49 prior Canon/offertory source files during the initial metadata review.",
+    "privacy": "All 71 canonical record strings and this admission receipt were checked for private absolute paths, transient workspace locations and session data.",
+    "transport": "passed; nine equivalent repository-relative locators, no canonical/source/payload change and all ten current owner preimages rechecked."
+  },
+  "remaining_limits": [
+    "Whole-Missal and complete-Ordinary text coverage remain partial.",
+    "The native selection is a bounded composite functional extent; no uninterrupted source chapter, text ancestry, monastery reception or contemporary liturgical authorization is inferred.",
+    "This admission authorizes only the reviewed source packet and the append-only admission receipt; root-owned routing, stage projection and integration remain the coordinator’s responsibility."
+  ],
+  "digest_recipe": "record_set_sha256 covers ordered objects containing path, sha256 and byte_size for the 71 reviewed records. change_set_sha256 covers the exact ten reviewed change objects. Both use UTF-8 JSON with sorted object keys, ensure_ascii=false, separators comma/colon and no terminal LF."
+}

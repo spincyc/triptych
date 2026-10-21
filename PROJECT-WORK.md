@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-20.
+Last reconciled: 2026-10-21.
 
 ## Missal chronology acceptance review, 2026-10-17
 
@@ -74,7 +74,54 @@ with independent source and literal-text review before integration. All work
 remains on `feature/missal-timeline`; the all-rite completion criteria remain
 open, and neither a new hosted corpus nor deployment is part of this phase.
 
-**Current parallel batch, 2026-10-20: verified checkpoint.** The
+**Third parallel batch, 20–21 October 2026: verified inputs ready; commit/package pending.**
+The [batch review](workflows/reviews/missal-batch3-2026-10-20/REPORT.md) and
+public source, central, corpus, browser and print receipts record the exact
+accepted scopes. The current catalogue has 1,962 entries in 233 declared groups
+with zero unmapped families. The inventories contain 446 Eastern and 1,457
+Western candidates. The 174-row audit has 98 selected sequences and 76 routes
+without selected stages; its 36 dossiers have 156 traditions, 295 stages,
+77 transitions and 203 gaps. Text coverage is 279 not transcribed, sixteen
+partial and zero complete whole books.
+
+Seven bounded Western publication attestations have seven focused gaps and no
+transitions, all not transcribed. Original-image acquisition does not certify
+physical completeness, substantive recension or actual uptake. Besançon's forty
+images were privately inspected with zero public image payloads; Liège's copy
+catalogue reports first leaf a1 missing without identifying its absent contents;
+Huesca remains a scholarly direct-copy description of an unacquired original.
+The distinct Lungro Roma 1967 setting is acquired; dated decree, receiving-copy
+and Greek-exemplar questions remain open.
+
+The complete bounded 1606 continuation adds 64 units while distinguishing main
+order from appended Suffragium. Eight 1657 units include both Pater chant forms;
+concealed wider wording remains blocked. Two fresh corpus exports and the
+restorable bundle agree on 6,310 objects, 37 refs/trees and 37 reachable commits.
+There are 26 reconstruction branches with 1,439 units and eleven native versions
+with 235 units; ten native roots remain, with only the evidenced 1500→1755
+Mozarabic republication parent.
+
+The final source gate passes against the exact 45,128-file runtime freeze with
+raw and semantic index stability. Sources generation has 4,581 files and History
+548. Direct native-source links and narrow titles are corrected; fresh Chromium
+16 registered/eighteen navigation and Firefox eighty checks pass, with nine
+fresh independently reviewed images and precisely bounded earlier-byte transfers.
+Digital metadata-print review covers all 595 pages through 61 baseline
+identities, 406 approved bounded-equivalence transfers and 128 direct page
+reviews. No spoken human screen-reader, physical-printer or production-sheet
+acceptance is claimed. Earlier schema failures, interrupted attempts and the
+first unknown-writer navigation index event remain recorded, without retrospective
+proof. All 161 source-family review units remain pending.
+
+Root will record actual additive-document and ledger checks in
+`workflows/reviews/missal-batch3-2026-10-20/documentation.json`. Outgoing disclosure,
+implementation commit/push and immutable delivery remain pending. The all-rite
+project remains **in progress**.
+
+**Second parallel batch, 20 October 2026: verified historical checkpoint.** The
+measurements and completed transport below identify that immutable batch2
+snapshot; its “current” and “now” descriptions are historical, superseded by the
+third-batch measurements above. The
 [batch review](workflows/reviews/missal-batch2-2026-10-20/REPORT.md) records the
 independent source, implementation, browser, print and canonical Git acceptance.
 All 678 offered Amiet rows are accounted for: 250 French, 271 complementary,
@@ -135,7 +182,7 @@ the delivery bookkeeping. The full project remains **in progress**.
 | Original sources | Acquire and verify missing original books, exact editions and applicable reuse permissions; catalogue-card review is not book acquisition. |
 | Complete texts | Transcribe and independently collate complete edition-level books in their original languages. Complete bounded constituents do not close whole-book gaps. |
 | Textual ancestry | Establish the remaining exact edition or textual-state bridges. Similarity and institutional continuity alone do not select a native parent. |
-| Reader follow-up | Improve direct unit-source access and long-title narrow presentation; broaden accessibility and cross-browser review. |
+| Reader follow-up | Direct unit-source links and narrow titles are corrected. Extend spoken-screen-reader, accessibility and browser coverage beyond the recorded states, preserving Firefox headless keyboard/focus limits. |
 | Production acceptance | Complete production-sheet and physical-printer proof. |
 
 **Preceding verified checkpoint, 2026-10-20.** The measurements and acceptance
@@ -800,30 +847,31 @@ The [agreed scope and reader criteria](guidance/time-machine.md#11-historical-an
 still control substantive version boundaries, coexistence, descent and local
 visibility of evidence limits.
 
-**Remaining work after the 2026-10-20 integration checkpoint:** reconcile the
-unexamined historical repertoires and unresolved version boundaries, including
-the named Eastern census and Albanian classification; identify original books
-and dated receiving-copy evidence for Albanian, Macedonian and other local
-routes; and acquire and collate the missing Roman and other full-book witnesses.
-The Rome 1634 original, questioned UB imprint and defective copy, complete
-1956/1965/1968 Roman components, original Hungarian books and circulars, original
-Lungro book/decree, exact Greek receiving editions and Ravenna local use remain
-specific open inputs. A holding, permission, catalogue entry or service programme
-cannot substitute for an identified received book.
+**Remaining work after the 20–21 October 2026 third-batch checkpoint:**
+reconcile the unexamined historical repertoires and unresolved version boundaries,
+including the current named Eastern census and Albanian classification; identify
+original books and dated receiving-copy evidence for Albanian, Macedonian and
+other local routes; and acquire and collate missing Roman and other full-book
+witnesses. The Rome 1634 original, questioned UB imprint and defective copy,
+complete 1956/1965/1968 Roman components, original Hungarian books and circulars,
+dated Lungro decree and unresolved reported settings/receiving copies, exact
+Greek exemplar and Ravenna local use remain specific open inputs. The distinct
+Roma 1967 Lungro setting is already acquired. A holding, permission, catalogue
+entry or service programme cannot substitute for an identified received book.
 
 No stage yet has complete whole-book native text. Transcribe and independently
 check complete books in their native divisions, establish textual ancestry only
-from exact evidence, and preserve the eight remaining native roots until such
+from exact evidence, and preserve the ten remaining native roots until such
 evidence exists; the bounded 1500→1755 republication is the sole authorized
-native parent. The 44 book/source classifications are bounded positive
-findings; unclassified witnesses and unexamined ranges remain open. Modern full
-text needs a defensible basis for each proposed distribution surface. All 161
-source-family review units remain pending. The current digital source, browser
-and print gates pass; maintainer reader judgment, production and physical-print
-proof remain open, and spoken screen-reader use remains untested. The all-rite historical census, whole-book
-corpus and complete textual Git history remain **in progress**. Work stays on
-`feature/missal-timeline`; no new hosted corpus repository or site deployment is
-part of this continuation.
+native parent. The 44 book/source classifications are bounded positive findings;
+unclassified witnesses and unexamined ranges remain open. Modern full text needs
+a defensible basis for each proposed distribution surface. All 161 source-family
+review units remain pending. The current scoped source, corpus, browser and
+digital metadata-print proofs pass; final maintainer reader judgment, production
+and physical-print proof remain open, and spoken human screen-reader use remains
+untested. The all-rite historical census, whole-book corpus and complete textual
+Git history remain **in progress**. Work stays on `feature/missal-timeline`;
+no new hosted corpus repository or site deployment is part of this continuation.
 
 ## Missale Gothicum volume mismatch identified, 2026-10-19
 

@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "record_type": "public-documentary-print-acceptance",
+  "derivation": "Explicit whitelist of the sealed coordinator receipt and existing actual artifact pins. No render/export, source edit, package assembly or publication performed.",
+  "result": "pass-with-explicit-preview-limits",
+  "reviewed_at_utc": "2026-10-21T06:00:29.077155+00:00",
+  "final_input_freeze": {
+    "sha256": "707bbed2a9acf04cddbb3f6eb5685456a2cf2a8fd181ebb12a12c9417ddcb93a",
+    "byte_size": 10943008,
+    "regular_files_verified_before_and_after": 45128,
+    "file_bytes_verified_each_side": 5071708165
+  },
+  "runtime_pins": {
+    "tools/act-history": {
+      "sha256": "346f5ffed7028f26d060b31e1dd9a82e3c64b9310bdabf84981e75d1f0594d96",
+      "byte_size": 255818
+    },
+    "tools/pdf-review": {
+      "sha256": "0e6f688778216faeb02b3335e4467eb476c878cf94bd89e31af93f86e3a3ad3e",
+      "byte_size": 63025
+    },
+    "scripts/_act_history_preview.py": {
+      "sha256": "7dd9c0b871fe1f2103bde5d49175b2e0700e01e07b6ae8088242e06c1532bdf9",
+      "byte_size": 93464
+    },
+    "src/web/browser/history/history.js": {
+      "sha256": "5859fd6086ab24cd5d79bd63103e251d55e8cc5dfe1fcc03969580f205b271fa",
+      "byte_size": 182816
+    }
+  },
+  "actual_operations": [
+    {
+      "operation": "catalogue",
+      "actual_argv": [
+        "tools/act-history",
+        "catalogue",
+        "--out",
+        ".scratch/batch3-20261020/print/run-002/catalogue-render.json",
+        "--json"
+      ],
+      "started_utc": "2026-10-21T05:45:30.420696+00:00",
+      "finished_utc": "2026-10-21T05:45:39.959321+00:00",
+      "runtime_seconds": 9.53862880601082,
+      "exit_status": 0
+    },
+    {
+      "operation": "plate-preview",
+      "actual_argv": [
+        "tools/act-history",
+        "plate",
+        "--source",
+        "src/sources/inventories/latin-missal-acts-v1.toml",
+        "--out",
+        ".scratch/batch3-20261020/print/run-002/render",
+        "--preview",
+        "--json"
+      ],
+      "started_utc": "2026-10-21T05:45:40.099822+00:00",
+      "finished_utc": "2026-10-21T05:46:18.593273+00:00",
+      "runtime_seconds": 38.49345296699903,
+      "exit_status": 0
+    },
+    {
+      "operation": "fresh-raster-recovery",
+      "actual_argv": [
+        "tools/pdf-review",
+        "--output",
+        ".scratch/batch3-20261020/print/run-002/rasters-resume-001",
+        "--cache",
+        ".scratch/batch3-20261020/print/run-002/cache-resume-001",
+        "--jobs",
+        "2",
+        ".scratch/batch3-20261020/print/run-002/render/latin-missal-preview.pdf",
+        ".scratch/batch3-20261020/print/run-002/render/latin-missal-catalogue.pdf"
+      ],
+      "started_utc": "2026-10-21T05:50:32.919369+00:00",
+      "finished_utc": "2026-10-21T05:52:56.261569+00:00",
+      "runtime_seconds": 143.34220059399377,
+      "exit_status": 0
+    }
+  ],
+  "actual_final_PDFs": [
+    {
+      "kind": "chronology",
+      "filename": "latin-missal-preview.pdf",
+      "sha256": "1de6a82a3e331e602ee56077780dad9004d073b49faf15337c16029abdce7044",
+      "byte_size": 4928039,
+      "page_count": 174
+    },
+    {
+      "kind": "evidence",
+      "filename": "latin-missal-catalogue.pdf",
+      "sha256": "0a7efd185f737b5719c2afb425cc59a2533407499b1acd3203486b47cb63921e",
+      "byte_size": 11160639,
+      "page_count": 421
+    }
+  ],
+  "coverage": {
+    "pages": 595,
+    "chronology": 174,
+    "evidence": 421,
+    "exact_original_SVG_and_fresh_fullPNG_identity": 595,
+    "underlying_exact_baseline_identity": 61,
+    "underlying_approved_equivalence": 406,
+    "underlying_individual_final_visual_inspection": 128,
+    "duplicates": 0,
+    "unreviewed": 0,
+    "blockers": 0
+  },
+  "equivalence_scope": "Only the exact independently audited and root-approved406 page pairs:116 chronology and290 evidence. Complete H-reference closure, protected row identity, XML geometry/literal text, recomputed exact word masks and outside-mask pixels are pinned; generic producer routines are not approved for other inputs.",
+  "E073_disposition": "Excluded from equivalence because its H-sheet references changed complete Cistercian1606/1657 rows. Independently inspected directly; belongs to128, never406.",
+  "final_identity_scope": "All595 final SVG and fresh full-page PNG bytes equal completely accepted original pages. Allfive complete ORDERED canonical record arrays and generated-key associations equal. All595 partPDF bytes differ; actual new merged PDFs/partPDFs are separately pinned, with no PDF-byte identity claim.",
+  "actual_catalogue_counts": {
+    "candidates": 1903,
+    "entries": 1962,
+    "presentation_groups": 233,
+    "relationship_entities": 28,
+    "relationships": 62,
+    "substantive_established": 44,
+    "text_sets": 26,
+    "unmapped_families": 0,
+    "witnesses": 221
+  },
+  "actual_stage_history_counts": {
+    "traditions": 156,
+    "stages": 295,
+    "transitions": 77,
+    "gaps": 203,
+    "sources": 399,
+    "dossiers": 36
+  },
+  "whole_book_complete_stages": [],
+  "observations_and_dispositions": {
+    "positive_visual_observations": 45,
+    "minor_findings": [
+      {
+        "kind": "evidence",
+        "physical_page": 288,
+        "severity": "minor",
+        "description": "G091/G092 source-prose omits some word/number spaces; readable, within margins, no clipping or collision.",
+        "disposition": "Retained as a nonblocking preview limitation; no source edit."
+      }
+    ],
+    "blockers": []
+  },
+  "interruption": {
+    "launcher_exit_status": 143,
+    "cause": "unknown",
+    "interrupted_child_exit_status": null,
+    "disposition": "Original logs retained. Explicitly authorized raster-only recovery used new output/cache paths; one completed invocation exit0. Catalogue/plate were reused after full freeze/tool/PDF checks."
+  },
+  "actual_pdf_glyph_counts": {
+    "chronology": {
+      "U+0119": 0,
+      "U+0118": 0,
+      "U+2E4E": 0
+    },
+    "evidence": {
+      "U+0119": 7,
+      "U+0118": 0,
+      "U+2E4E": 0
+    }
+  },
+  "glyph_scope": "Allseven U+0119 occurrences are the Polish author name Pałęcki in evidence metadata. U+0118 and U+2E4E zero; no incoming native-body proof.",
+  "proof_anchors": {
+    "coordinator_acceptance": {
+      "name": "final-acceptance.json",
+      "sha256": "03b687c05953a3e3efc6f696aff9992af020142972e99192ed3868c5a980371d",
+      "byte_size": 1573350
+    },
+    "complete_original_acceptance": {
+      "name": "final-acceptance.json",
+      "sha256": "7f0b270aca8cdf4ba0add1e3edc2f3a00066dd62c189ccbd8e687842b6a69f06",
+      "byte_size": 3157025
+    },
+    "root_exact406_approval": {
+      "name": "print-exact406-approval-v1.json",
+      "sha256": "9c4320c0bc87ecd37e6a4bdee6e537dc15facfcad3941571228192b28744dc72",
+      "byte_size": 2388
+    },
+    "independent_exact406_verdict": {
+      "name": "verdict.json",
+      "sha256": "3d47d38e44e707303ba04ba4128c8e28b4ff995e96aecea967268461fe3cc655",
+      "byte_size": 147771
+    },
+    "exact406_set": {
+      "name": "accepted-set.json",
+      "sha256": "d23c14c283ca8df6c3e90445c83e4ac4fa854fbcf357ef845ac464bc1dd88aa1",
+      "byte_size": 1797197
+    },
+    "direct128_coverage": {
+      "name": "direct-review-coverage.json",
+      "sha256": "a6f84cb1838557d99e0d7557dbe6be1486241abfed006ccde8c536459455d84e",
+      "byte_size": 740324
+    },
+    "final595_identity": {
+      "name": "navigation-output-identity.json",
+      "sha256": "9946144e6101ef44bd6d52dde5fc09f25d23400b70d8f93b3e42cd8b072ddc29",
+      "byte_size": 4332505
+    },
+    "independent_final595_identity": {
+      "name": "verdict.json",
+      "sha256": "c1e22941270f803647db54b128fa1396283708edac4912eedd01dc7d73d05340",
+      "byte_size": 59416
+    },
+    "actual_render": {
+      "name": "render-receipt.json",
+      "sha256": "a80c9cc0177200ec281ead4fb4f6fe06b7e15ba6963309c8d164b9c56fe0f2c0",
+      "byte_size": 8906
+    },
+    "full_page_manifest": {
+      "name": "public-print-pages.json",
+      "sha256": "a919c64203a6fc99a41b421d1de6addffda16c4c6d6173672f53ed8ab9b2fce1",
+      "byte_size": 565672
+    }
+  },
+  "limits": [
+    "Existing-browser-geometry on-screen review preview only.",
+    "No source/history/rights/language collation, native-body print proof, physical-printer or final production-plate certification.",
+    "Final PDFs render stage and evidence metadata; U+2E4E occurs zero times. Synthetic eight-sign glyph proof is separate.",
+    "Scratch artifacts are ephemeral. Transport/publication assembly is separately root-authorized."
+  ]
+}

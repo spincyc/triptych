@@ -1,0 +1,442 @@
+{
+  "schema_version": 1,
+  "record_type": "exact-source-stream-sequence",
+  "id": "liege-1499-bsb-selected-original-streams",
+  "title": "Exact source JPEGs embedded in the 40-page project-created Liège selection PDF",
+  "source_manifest_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00075725/manifest",
+  "retrieved_on": "2026-10-21",
+  "credit": "Bayerische Staatsbibliothek München, 2 Inc.c.a. 3785, exact canvases and folio labels below, urn:nbn:de:bvb:12-bsb00075725-7",
+  "rights_statement": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "retained_pdf": {
+    "sha256": "295b8faf61ffb0ef7ce541458aa75318cfbcc1e189380eaabc26cdde424f24da",
+    "byte_size": 23705230,
+    "page_count": 40,
+    "provider_delivered": false
+  },
+  "holding_library_manifest": {
+    "member": "support/iiif-manifest.json",
+    "sha256": "8eb1ecae9ba7e267922f850b2a46f019ceeebc59af51eacee88aed2f24604af7",
+    "byte_size": 537667
+  },
+  "assembly": {
+    "format": "ZIP_STORED",
+    "member_order": "lexicographic ASCII member path",
+    "timestamp": [
+      1980,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "create_system": 3,
+    "external_attr": 2175008768,
+    "extra": "",
+    "comment": "",
+    "archive_comment": "",
+    "sequence_member": "sequence.json"
+  },
+  "extent": "40 selected complete 1500-pixel-width page-image responses from a 563-canvas object. The 40 images are not the whole volume and do not establish a complete physical copy.",
+  "pages": [
+    {
+      "pdf_page": 1,
+      "member": "images/canvas-0009.jpg",
+      "canvas_number": 9,
+      "canvas_label": "1r (0009)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00009/full/1500,/0/default.jpg",
+      "sha256": "65c2f0e50555ef135f399ce24f89297d26f08d87c5f00bab84933b05d37f6292",
+      "byte_size": 568093,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 2,
+      "member": "images/canvas-0010.jpg",
+      "canvas_number": 10,
+      "canvas_label": "1v (0010)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00010/full/1500,/0/default.jpg",
+      "sha256": "33ac1bf4ab70e14cb35f0b27d27b0b05db3be2c2bd209fc59889a0e2c0f2b573",
+      "byte_size": 464203,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 3,
+      "member": "images/canvas-0011.jpg",
+      "canvas_number": 11,
+      "canvas_label": "2r (0011)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00011/full/1500,/0/default.jpg",
+      "sha256": "ce3339a676d3d52ba69bc563e43af8299c5006e6774a038b29f76d7ea61a030c",
+      "byte_size": 424726,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 4,
+      "member": "images/canvas-0012.jpg",
+      "canvas_number": 12,
+      "canvas_label": "2v (0012)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00012/full/1500,/0/default.jpg",
+      "sha256": "7a2cb061e5b13b5398950c71ebf31cecb0808ca01889c647c24183df63625a77",
+      "byte_size": 432430,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 5,
+      "member": "images/canvas-0013.jpg",
+      "canvas_number": 13,
+      "canvas_label": "3r (0013)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00013/full/1500,/0/default.jpg",
+      "sha256": "97048d1fcac534a81a3f28d5680679fc14c0eb1db29ef6164d48d7c567ea805c",
+      "byte_size": 453844,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 6,
+      "member": "images/canvas-0014.jpg",
+      "canvas_number": 14,
+      "canvas_label": "3v (0014)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00014/full/1500,/0/default.jpg",
+      "sha256": "cb55c130f087ddedcfd331076f55ae199c45e8f5408320eddaffd153212be7dc",
+      "byte_size": 501092,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 7,
+      "member": "images/canvas-0015.jpg",
+      "canvas_number": 15,
+      "canvas_label": "4r (0015)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00015/full/1500,/0/default.jpg",
+      "sha256": "5c65a06c0941ec1e6b1cfc118426fc65e5cb45d85fe44668bce4434cce49800d",
+      "byte_size": 528338,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 8,
+      "member": "images/canvas-0016.jpg",
+      "canvas_number": 16,
+      "canvas_label": "4v (0016)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00016/full/1500,/0/default.jpg",
+      "sha256": "64bbf13d4ab0296fc4ad82d322a61b48dc1cfa71ed61a5bf4cff93ffd4ec1fc0",
+      "byte_size": 536334,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 9,
+      "member": "images/canvas-0017.jpg",
+      "canvas_number": 17,
+      "canvas_label": "5r (0017)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00017/full/1500,/0/default.jpg",
+      "sha256": "a318db504e0e2c573368ec20bdfc85e10ebe8d11a56aeb54532f57c6bd94ba49",
+      "byte_size": 501922,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 10,
+      "member": "images/canvas-0018.jpg",
+      "canvas_number": 18,
+      "canvas_label": "5v (0018)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00018/full/1500,/0/default.jpg",
+      "sha256": "84fc52c07bd562417802e6aa80696c79a591513925c0f174a2a023cee3a95c65",
+      "byte_size": 480169,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 11,
+      "member": "images/canvas-0019.jpg",
+      "canvas_number": 19,
+      "canvas_label": "6r (0019)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00019/full/1500,/0/default.jpg",
+      "sha256": "6d4030ecc223b309932fd65246e23baef0e9703a122ea49aae4c2ab05f5076eb",
+      "byte_size": 531203,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 12,
+      "member": "images/canvas-0020.jpg",
+      "canvas_number": 20,
+      "canvas_label": "6v (0020)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00020/full/1500,/0/default.jpg",
+      "sha256": "f2ee22574c98697a5466a3df5a11da02b424156ee7040446709c0cf903ef8d9d",
+      "byte_size": 449573,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 13,
+      "member": "images/canvas-0021.jpg",
+      "canvas_number": 21,
+      "canvas_label": "7r (0021)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00021/full/1500,/0/default.jpg",
+      "sha256": "17e579ae12e48a9724f9e9540a2d565a598b32a88e41f9df38245bd13f3ff072",
+      "byte_size": 629092,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 14,
+      "member": "images/canvas-0022.jpg",
+      "canvas_number": 22,
+      "canvas_label": "7v (0022)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00022/full/1500,/0/default.jpg",
+      "sha256": "8a32b50fed78db00b9b3123f5ae80eec499f429eb495a3a36f33ab0bacac0fc9",
+      "byte_size": 635308,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 15,
+      "member": "images/canvas-0023.jpg",
+      "canvas_number": 23,
+      "canvas_label": "8r (0023)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00023/full/1500,/0/default.jpg",
+      "sha256": "108d9f1e31674c3b3e9c394163dfdb4889a8a075ba1fbb74bbf7190fa7456cf9",
+      "byte_size": 783308,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 16,
+      "member": "images/canvas-0330.jpg",
+      "canvas_number": 330,
+      "canvas_label": "161v (0330)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00330/full/1500,/0/default.jpg",
+      "sha256": "89f5439e9fbf2568bb09960f87e3349a87b55aa011e419cee1284f965990551a",
+      "byte_size": 661846,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 17,
+      "member": "images/canvas-0331.jpg",
+      "canvas_number": 331,
+      "canvas_label": "162r (0331)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00331/full/1500,/0/default.jpg",
+      "sha256": "cdd0e756895d6dfc7c1ab5034848b8feedb045f459cc605d9679c41265ed30b7",
+      "byte_size": 539495,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 18,
+      "member": "images/canvas-0332.jpg",
+      "canvas_number": 332,
+      "canvas_label": "162v (0332)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00332/full/1500,/0/default.jpg",
+      "sha256": "c1cbab18c7a206bc64ab1de47a86e02c42706da0a94dfc4ef85ebfcdbc8b153a",
+      "byte_size": 689920,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 19,
+      "member": "images/canvas-0333.jpg",
+      "canvas_number": 333,
+      "canvas_label": "163r (0333)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00333/full/1500,/0/default.jpg",
+      "sha256": "0cf655e2cb6b12d61b1cfcf85f7d6a9073205dcf3594765465592858b292884e",
+      "byte_size": 697440,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 20,
+      "member": "images/canvas-0334.jpg",
+      "canvas_number": 334,
+      "canvas_label": "163v (0334)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00334/full/1500,/0/default.jpg",
+      "sha256": "2c7ca1bb7d2f12b9db42f5fedc03e0c85f93c970f0de4cc856ec4952c20af752",
+      "byte_size": 604706,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 21,
+      "member": "images/canvas-0359.jpg",
+      "canvas_number": 359,
+      "canvas_label": "176r (0359)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00359/full/1500,/0/default.jpg",
+      "sha256": "eca330ddf508bc56e8412344f8bc4582daeabca92fb8cb6f302bd59448a22b24",
+      "byte_size": 573542,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 22,
+      "member": "images/canvas-0360.jpg",
+      "canvas_number": 360,
+      "canvas_label": "176v (0360)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00360/full/1500,/0/default.jpg",
+      "sha256": "2c4104fcb46454479733b001956f1dc32ae2b4e9491065c5656d79511ef45bd4",
+      "byte_size": 753150,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 23,
+      "member": "images/canvas-0361.jpg",
+      "canvas_number": 361,
+      "canvas_label": "177r (0361)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00361/full/1500,/0/default.jpg",
+      "sha256": "a3628a1d4f0ffdcc4ae5b58409aca4b371765ba5c2c2b5436fd2bf0f075c6b6c",
+      "byte_size": 690642,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 24,
+      "member": "images/canvas-0362.jpg",
+      "canvas_number": 362,
+      "canvas_label": "177v (0362)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00362/full/1500,/0/default.jpg",
+      "sha256": "08639d3b3fc8ed6dd80273cabae830a2968073a33b4a94dcc7d7c7a4329c21c6",
+      "byte_size": 696038,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 25,
+      "member": "images/canvas-0363.jpg",
+      "canvas_number": 363,
+      "canvas_label": "178r (0363)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00363/full/1500,/0/default.jpg",
+      "sha256": "0927f537c01cd828b4c247b1213970f2cbf25ad5bf83b2e42205245db419d5bd",
+      "byte_size": 712657,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 26,
+      "member": "images/canvas-0364.jpg",
+      "canvas_number": 364,
+      "canvas_label": "178v (0364)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00364/full/1500,/0/default.jpg",
+      "sha256": "6a1167f915072c6409be73ccaa41a5fd61f4dc69a0f5d2cfba7b50d307ceaba7",
+      "byte_size": 561328,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 27,
+      "member": "images/canvas-0365.jpg",
+      "canvas_number": 365,
+      "canvas_label": "179r (0365)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00365/full/1500,/0/default.jpg",
+      "sha256": "1698922934201981968db866604711b5f90770b40d8cd6705777619c3f5338d0",
+      "byte_size": 631585,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 28,
+      "member": "images/canvas-0366.jpg",
+      "canvas_number": 366,
+      "canvas_label": "179v (0366)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00366/full/1500,/0/default.jpg",
+      "sha256": "2db385c2dab38ea04a034b0265416dacbed16af222d6adb4e8a0ee08f0887af6",
+      "byte_size": 729683,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 29,
+      "member": "images/canvas-0367.jpg",
+      "canvas_number": 367,
+      "canvas_label": "180r (0367)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00367/full/1500,/0/default.jpg",
+      "sha256": "7c5049f197ff40462c47cb89e28b150284c1755ef1cd516401a5daba63764649",
+      "byte_size": 787555,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 30,
+      "member": "images/canvas-0368.jpg",
+      "canvas_number": 368,
+      "canvas_label": "180v (0368)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00368/full/1500,/0/default.jpg",
+      "sha256": "8e97703221ecf4372b3b83de8890f894128db8fe264eb83f507bdf98dd7a0119",
+      "byte_size": 658536,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 31,
+      "member": "images/canvas-0369.jpg",
+      "canvas_number": 369,
+      "canvas_label": "181r (0369)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00369/full/1500,/0/default.jpg",
+      "sha256": "4efdb5f720e7b43487413ed5f57987c885bb2b547c3e0b3f43225f957e136e0e",
+      "byte_size": 663855,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 32,
+      "member": "images/canvas-0392.jpg",
+      "canvas_number": 392,
+      "canvas_label": "192v (0392)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00392/full/1500,/0/default.jpg",
+      "sha256": "5a8e55afe36270fdbf530004fa920665599dbb4bbbc5447dfb23cb65d2c2ede0",
+      "byte_size": 666657,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 33,
+      "member": "images/canvas-0393.jpg",
+      "canvas_number": 393,
+      "canvas_label": "193r (0393)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00393/full/1500,/0/default.jpg",
+      "sha256": "ffb92d79d10bd8615c10f43658a49170b302e3cf7ffe4bb3a40266ab7c3a66e8",
+      "byte_size": 662224,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 34,
+      "member": "images/canvas-0396.jpg",
+      "canvas_number": 396,
+      "canvas_label": "194v (0396)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00396/full/1500,/0/default.jpg",
+      "sha256": "a290e9993ba7140de095b769d08bd61b6c1f6a2170364f4a78c2fd842902c7c0",
+      "byte_size": 632276,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 35,
+      "member": "images/canvas-0397.jpg",
+      "canvas_number": 397,
+      "canvas_label": "195r (0397)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00397/full/1500,/0/default.jpg",
+      "sha256": "fbcbb17dae762c87505df8127668c47eeae595959596a95cc4d9166a19d7b703",
+      "byte_size": 659800,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 36,
+      "member": "images/canvas-0398.jpg",
+      "canvas_number": 398,
+      "canvas_label": "195v (0398)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00398/full/1500,/0/default.jpg",
+      "sha256": "e5de9d1efe63542d89f90b0338ba16b9efe4f2f05b6466c0b2463ea0247a4b63",
+      "byte_size": 683986,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 37,
+      "member": "images/canvas-0399.jpg",
+      "canvas_number": 399,
+      "canvas_label": "196r (0399)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00399/full/1500,/0/default.jpg",
+      "sha256": "e5970b39ca6911713f999c6bda6b991f49f43014904b1c55f1d86d11f014bf21",
+      "byte_size": 702349,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 38,
+      "member": "images/canvas-0553.jpg",
+      "canvas_number": 553,
+      "canvas_label": "273r (0553)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00553/full/1500,/0/default.jpg",
+      "sha256": "8a5d30627f72605df32c14b099299ddfff4028f0c5806c9f7843e55c88c13c6a",
+      "byte_size": 617699,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 39,
+      "member": "images/canvas-0554.jpg",
+      "canvas_number": 554,
+      "canvas_label": "273v (0554)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00554/full/1500,/0/default.jpg",
+      "sha256": "891b72f10d5107b2b3ff3425d146d51c42ca2a861aca7c150b82bc2d51967e50",
+      "byte_size": 232337,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    },
+    {
+      "pdf_page": 40,
+      "member": "images/canvas-0556.jpg",
+      "canvas_number": 556,
+      "canvas_label": "(0556)",
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00075725_00556/full/1500,/0/default.jpg",
+      "sha256": "f07fe5a6c448210835a79053fdcf983fc833be63cc4dc64b6243bb9f17aa0e8d",
+      "byte_size": 257263,
+      "extent": "one complete page at 1500-pixel width; not a crop"
+    }
+  ]
+}

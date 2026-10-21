@@ -1,0 +1,16 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.raw-marc-html-c7ed6911"
+edition_id = "edition.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538"
+artifact_type = "raw-catalogue-html"
+media_type = "text/html; charset=utf-8"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "SLK catalogue DATA are CC0-1.0; this whole HTML response also contains ExLibris software, markup, navigation and session-specific wrappers. The database-data grant is not treated as a grant for those presentation components. Raw response is excluded; its complete catalogue DATA are retained in the separately linked licensed JSON derivative."
+source_url = "https://aleph.nkp.cz/F/?func=direct&doc_number=000577538&local_base=SLK&format=001"
+provenance = "Exact whole public catalogue HTML delivery acquired before deterministic extraction. Its exact SHA-256 and byte length identify the excluded parent; no private transport or session URL is published."
+retrieved = "2026-10-20"
+sha256 = "c7ed691158626b00ce7db5f667053cde345c646f4149215911c934930e1c3e88"
+byte_size = 24479
+indexable = false
+notes = "Metadata-only restricted parent for the complete displayed-record JSON derivative. Offline checkout can inspect all 34 catalogue data fields through the derivative; original raw HTML requires a separately available permitted source. This is not a service-book image or reception document."

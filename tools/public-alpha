@@ -245,6 +245,15 @@ WEB_BROWSER_DIRECTORIES = ("shared",) + WEB_BROWSER_ENTRANCES
 # the artifact refuse to build the moment a page gained or renamed one, which
 # says nothing about whether the page is publishable.
 WEB_BROWSER_SUFFIXES = (".html", ".css", ".js")
+# Explicit, rights-reviewed single-character fallback and its verbatim licence.
+# Subdirectories and arbitrary webfonts are not admitted by the browser scan.
+WEB_BROWSER_FONT_FAMILY = "Triptych Punctus Elevatus"
+WEB_BROWSER_FONT_ASSETS = {
+    "shared/fonts/triptych-punctus-elevatus.woff2":
+        PurePosixPath("src/web/browser/shared/fonts/triptych-punctus-elevatus.woff2"),
+    "shared/fonts/OFL-Junicode.txt":
+        PurePosixPath("src/web/browser/shared/fonts/OFL-Junicode.txt"),
+}
 # Fragments stay beside the edition that owns them, where index-bible checks
 # them for staleness and orphans; copying them into src/web/data as well would
 # put the same verse text in the tree twice.
@@ -1698,6 +1707,28 @@ def web_data_files() -> dict[str, Path]:
     return dict(held[key])
 
 
+def browser_font_files() -> dict[str, Path]:
+    """Bind the explicit font and licence when the shared CSS uses this face."""
+    core = ROOT / WEB_BROWSER_ROOT_RELATIVE / "shared/browser-core.css"
+    if not core.is_file() or WEB_BROWSER_FONT_FAMILY not in core.read_text(encoding="utf-8"):
+        return {}
+    files: dict[str, Path] = {}
+    for artifact, relative in WEB_BROWSER_FONT_ASSETS.items():
+        source = ROOT
+        for component in relative.parts:
+            source /= component
+            if source.is_symlink():
+                raise ReleaseError(f"browser font input is a symlink: {relative.as_posix()}")
+        if not source.is_file():
+            raise ReleaseError(f"browser font input is missing: {relative.as_posix()}")
+        if source.suffix == ".woff2" and source.read_bytes()[:4] != b"wOF2":
+            raise ReleaseError(f"browser font input is not WOFF2: {relative.as_posix()}")
+        if not source.stat().st_size:
+            raise ReleaseError(f"browser font input is empty: {relative.as_posix()}")
+        files[artifact] = source
+    return files
+
+
 def _scan_web_data_files() -> dict[str, Path]:
     """Walk the repository for the copied data inputs, validating every one."""
     if not web_data_manifest_path().is_file():
@@ -1721,6 +1752,7 @@ def _scan_web_data_files() -> dict[str, Path]:
             if page.suffix == ".html":
                 continue
             files[f"{directory}/{page.name}"] = page
+    files.update(browser_font_files())
     data_root = ROOT / WEB_DATA_ROOT_RELATIVE
     for path in sorted(data_root.rglob("*")):
         if path.is_symlink() or not path.is_file():
@@ -4194,6 +4226,7 @@ def _artifact_topology_errors(
             if (
                 path.name not in {".nojekyll", "SHA256SUMS", "robots.txt", "_headers"}
                 and path.suffix not in TEXT_SUFFIXES | {".pdf", ".png"}
+                and relative not in WEB_BROWSER_FONT_ASSETS
             ):
                 errors.append(f"artifact contains an unexpected file type: {relative}")
         elif not stat.S_ISDIR(entry.st_mode):
@@ -4405,7 +4438,11 @@ def _verify_snapshot_contents(
             actual_file_paths.add(relative)
             if path.suffix == ".pdf":
                 actual_pdf_paths.add(relative)
-            elif path.name not in {".nojekyll", "SHA256SUMS", "robots.txt", "_headers"} and path.suffix not in TEXT_SUFFIXES | {".png"}:
+            elif (
+                path.name not in {".nojekyll", "SHA256SUMS", "robots.txt", "_headers"}
+                and path.suffix not in TEXT_SUFFIXES | {".png"}
+                and relative not in WEB_BROWSER_FONT_ASSETS
+            ):
                 errors.append(f"artifact contains an unexpected file type: {relative}")
         elif not path.is_dir():
             error = f"artifact contains a special file: {relative}"

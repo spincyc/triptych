@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "record_type": "bounded-institutional-factual-extract",
+  "id": "bsb-rights-faq-2026-10-21",
+  "source_url": "https://www.digitale-sammlungen.de/en/faq",
+  "source_sha256": "f296c1ae679c81b53844997d4a5f68d16a32090a343210809df091fbedc4411c",
+  "source_byte_size": 60844,
+  "retrieved_on": "2026-10-21",
+  "project_licence": "CC BY 4.0",
+  "selection_method": "Declared factual fields selected from the exact acquired response and checked against it; source-native prose, layout, navigation and database expression are omitted.",
+  "facts": {
+    "rights_category": "Public Domain Mark 1.0",
+    "policy_locus": "FAQ #9",
+    "permitted_actions": [
+      "copy",
+      "modify",
+      "distribute",
+      "perform"
+    ],
+    "commercial_use_permitted": true,
+    "permission_request_required": false,
+    "credit_policy_locus": "FAQ #13",
+    "requested_credit_fields": [
+      "holding library",
+      "call number",
+      "page or folio",
+      "URN"
+    ],
+    "inference_limit": "The PDM permission governs marked digital copies, not every modern HTML wrapper."
+  }
+}

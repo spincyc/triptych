@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.biblioteca-foral-de-bizkaia.lau-haizeetara-catalogue.2026-10-20-item-states.facts-680ca1de"
+edition_id = "edition.biblioteca-foral-de-bizkaia.lau-haizeetara-catalogue.2026-10-20-item-states"
+artifact_type = "factual-metadata-derivative"
+media_type = "application/json"
+storage = "tracked"
+path = "src/sources/works/biblioteca-foral-de-bizkaia/lau-haizeetara-catalogue/editions/2026-10-20-item-states/artifacts/facts-680ca1de/facts.json"
+sha256 = "680ca1de4c1aa8a1c80fcf93ca35d062d3821df9a19a740cf32915387b757459"
+byte_size = 4710
+source_url = "https://liburutegibiltegi.bizkaia.eus/handle/20.500.11938/69046?show=full"
+retrieved = "2026-10-20"
+indexable = false
+rights_status = "project-created"
+rights_basis = "Individual catalogue facts, names, titles, identifiers, factual physical descriptions and functional rights designations are treated as unprotected facts and short labels in the United States. The project’s selection/provenance metadata is offered under CC BY 4.0; no rights over the source database, modern website wrapper or underlying ancient text are claimed. The exact source Public Domain Mark notice is preserved as rights evidence, not as a new grant from Triptych."
+rights_jurisdiction = "United States"
+derived_from = "artifact.biblioteca-foral-de-bizkaia.lau-haizeetara-catalogue.2026-10-20-item-states.raw-item-full-a7322d36"
+provenance = "Project-created metadata projection from the full raw HTML parent. Python HTMLParser preserved all DC/DCTERMS/citation meta-tag names/values in order; html entities decoded by parser. Copy-control fields record inspected PDF page 1, not an independent physical collation."
+notes = "The whole full HTML response was acquired before metadata extraction. Its exact parent hash is recorded and its wrapper is restricted. The complete original PDF remains a separate retained artifact."
+transformation = "Project-created metadata projection from the full raw HTML parent. Python HTMLParser preserved all DC/DCTERMS/citation meta-tag names/values in order; html entities decoded by parser. Copy-control fields record inspected PDF page 1, not an independent physical collation."

@@ -1,0 +1,319 @@
+{
+  "record_type": "labelled-public-implementation-checkpoint-derivative/v1",
+  "derivative_notice": "Documentary public derivative of the exact independently accepted implementation checkpoint and its bounded source-link/registry judgments. No new implementation acceptance or final site gate is performed here.",
+  "originals": [
+    {
+      "review_provenance": ".scratch/batch3-20261020/root/implementation-accepted-checkpoint-v1.json",
+      "sha256": "6b91473d612277c08455c2aa597cf7681b10d0a2667ca136b3f1df6ef32913d5",
+      "byte_size": 3706
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/independent-review/final-implementation-acceptance.json",
+      "sha256": "60beb871c8c5f5bb8f834545fde4afd2ea58fec06460d6cb01acfc85ff21bbf7",
+      "byte_size": 6433
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/independent-review/registry-final-acceptance.json",
+      "sha256": "ec04539f22300d0c5265676709af49ddba5364b221d9cf96f41cf02b7efeb305",
+      "byte_size": 2952
+    }
+  ],
+  "checkpoint_record": {
+    "schema": "missal-batch3-implementation-checkpoint/v1",
+    "status": "implementation independently accepted; final built site and source-data acceptance pending",
+    "files": [
+      {
+        "path": "src/web/browser/history/history.js",
+        "sha256": "5859fd6086ab24cd5d79bd63103e251d55e8cc5dfe1fcc03969580f205b271fa",
+        "byte_size": 182816
+      },
+      {
+        "path": "src/web/browser/history/history.css",
+        "sha256": "69d7f6e9d4f8af892d14b01f1477f4986c7f7291e119e307c7ec16cf284e11c6",
+        "byte_size": 25747
+      },
+      {
+        "path": "scripts/_tooling.py",
+        "sha256": "d6097913cc5cb8990eebe324b660303f61fb50344fa4140fbd2915906111bc71",
+        "byte_size": 33436
+      },
+      {
+        "path": "tools/tpt",
+        "sha256": "4c878f57138854459caab257936ab60673dfc40795841af2ca2dcea6739bedca",
+        "byte_size": 29250
+      },
+      {
+        "path": "tools/tests/test_tool_registry.py",
+        "sha256": "0d826fa79d874592ac494586667a409a58861d1f589d2ede6f2089f4d386e9f7",
+        "byte_size": 29397
+      },
+      {
+        "path": "tools/tests/test_history_catalogue.py",
+        "sha256": "cbe3a95606ec6cf66a89105287786ac474e1cfc13256261dea60473b17447d10",
+        "byte_size": 97939
+      },
+      {
+        "path": "tools/tests/test_history_narrow_browser.py",
+        "sha256": "4e38e1407cd229ea3ac28403d2d12f14b13ce9acd11092ba09769d1d1619c4c3",
+        "byte_size": 4235
+      },
+      {
+        "path": "src/web/browser/shared/fonts/triptych-punctus-elevatus.woff2",
+        "sha256": "93fdffe7318755b04f77de90b1bec035513b60a8c4315369344ea9aee9b4abac",
+        "byte_size": 1536
+      },
+      {
+        "path": "src/web/browser/shared/fonts/OFL-Junicode.txt",
+        "sha256": "6078ed582d53a416f761fd2fdeb384320b69191bf316234c21aabe71e2416822",
+        "byte_size": 4356
+      },
+      {
+        "path": "src/web/browser/shared/fonts/README.md",
+        "sha256": "0e0886bf397483b9e4be2d76c4a0281723fd04262ad415506a74338ce7f4db4b",
+        "byte_size": 11081
+      },
+      {
+        "path": "src/web/browser/shared/browser-core.css",
+        "sha256": "2646ae7f51761fa117fe5c8c6284bcf1b36ca9e08d61ac7bedb781ca59c89129",
+        "byte_size": 28223
+      },
+      {
+        "path": "tools/public-alpha",
+        "sha256": "51a8705ba9d84c89cc4d82b9d8ef4507c1a439983bb0d6099a23c9563acd8376",
+        "byte_size": 231895
+      },
+      {
+        "path": "tools/tests/test_public_alpha_fonts.py",
+        "sha256": "41665d60a8b5c651608ef4f17e20c04390e82be19156a2112088538788cefe64",
+        "byte_size": 7745
+      },
+      {
+        "path": "guidance/corpus-browser-implementation.md",
+        "sha256": "bc85b014a388a6e061d6fc02bd0f1e680e13270b0c80a91de72d55f31acee59e",
+        "byte_size": 165201
+      }
+    ],
+    "independent_acceptance_identities": {
+      "prior_code_and_source_links": "60beb871c8c5f5bb8f834545fde4afd2ea58fec06460d6cb01acfc85ff21bbf7",
+      "font_v2": "56fc2102632dcc612b9a8897be8a7ef9acc37a228690478c116482238906f9c6",
+      "registry_capture_addendum": "9ee23429e4e6990bc95a029d88d1aa585aee91797ba46afa4427f398f9a674ca"
+    },
+    "font_attribution_notice_sha256": "5d4679c9d6909013dbd5f7041b345142ca852ddf3f5e7de9acc5790b9c282782",
+    "bounded_checks": {
+      "controller": {
+        "run": 67,
+        "pass": 66,
+        "optional_skip": 1
+      },
+      "registry": 12,
+      "browser_input": 10,
+      "narrow_layout": 2,
+      "source_link_independent_cases": 71,
+      "old_native_link_destinations": 163,
+      "font_asset_authored": 8,
+      "font_existing_binding_and_tamper": 2,
+      "font_independent_guard_cases": 4,
+      "font_internal_checks": 254,
+      "font_dual_context_runtime": 44
+    },
+    "remaining": [
+      "Final recognized release-source binding refresh",
+      "Actual preview build/verification and source parity",
+      "Real-source Chromium/Firefox and visual acceptance"
+    ]
+  },
+  "source_link_and_registry_acceptance_record": {
+    "status": "accepted-frozen-implementation-and-existing-destinations",
+    "base_commit": "e2267fdeb417d99b03d8cefea05fc30397bdf816",
+    "accepted_files": [
+      {
+        "path": "src/web/browser/history/history.js",
+        "sha256": "5859fd6086ab24cd5d79bd63103e251d55e8cc5dfe1fcc03969580f205b271fa",
+        "byte_size": 182816
+      },
+      {
+        "path": "src/web/browser/history/history.css",
+        "sha256": "69d7f6e9d4f8af892d14b01f1477f4986c7f7291e119e307c7ec16cf284e11c6",
+        "byte_size": 25747
+      },
+      {
+        "path": "scripts/_tooling.py",
+        "sha256": "d6097913cc5cb8990eebe324b660303f61fb50344fa4140fbd2915906111bc71",
+        "byte_size": 33436
+      },
+      {
+        "path": "tools/tpt",
+        "sha256": "4c878f57138854459caab257936ab60673dfc40795841af2ca2dcea6739bedca",
+        "byte_size": 29250
+      },
+      {
+        "path": "tools/tests/test_tool_registry.py",
+        "sha256": "0d826fa79d874592ac494586667a409a58861d1f589d2ede6f2089f4d386e9f7",
+        "byte_size": 29397
+      },
+      {
+        "path": "tools/tests/test_history_catalogue.py",
+        "sha256": "cbe3a95606ec6cf66a89105287786ac474e1cfc13256261dea60473b17447d10",
+        "byte_size": 97939
+      },
+      {
+        "path": "tools/tests/test_history_narrow_browser.py",
+        "sha256": "4e38e1407cd229ea3ac28403d2d12f14b13ce9acd11092ba09769d1d1619c4c3",
+        "byte_size": 4235
+      }
+    ],
+    "independent_receipts": [
+      {
+        "path": ".scratch/batch3-20261020/independent-review/acceptance-criteria.json",
+        "sha256": "23b1004061f8836002fb8126631288a923cdfc1ce338e39784156f6f181e35a1",
+        "byte_size": 3607
+      },
+      {
+        "path": ".scratch/batch3-20261020/independent-review/baseline-citation-repro.json",
+        "sha256": "20a5282e699ede9e6cb032dfe037bdec56e5627084194898c5619e1f625aaf96",
+        "byte_size": 497
+      },
+      {
+        "path": ".scratch/batch3-20261020/independent-review/native-citation-acceptance.json",
+        "sha256": "e6279198aadc6f4547f0f2cb38efd10eaba23b5bbc17409bcf55e2c9cb23c4f1",
+        "byte_size": 7275
+      },
+      {
+        "path": ".scratch/batch3-20261020/independent-review/source-destination-acceptance.json",
+        "sha256": "f7e37c4cb8cc0cc4d5132e48f6a1f4178e4d19c9e196957dd4502be43691ca47",
+        "byte_size": 51546
+      },
+      {
+        "path": ".scratch/batch3-20261020/independent-review/css-preliminary-review.json",
+        "sha256": "d27bac72cfe807d6531d2c43a408a703a65163804af97fba5bed5be51ef8830e",
+        "byte_size": 1518
+      },
+      {
+        "path": ".scratch/batch3-20261020/independent-review/registry-semantic-review.json",
+        "sha256": "50b3a34b70db7ea71bcf5f81a06594db0854e43e65a862d1e6eebd6ccf33d1cb",
+        "byte_size": 1753
+      },
+      {
+        "path": ".scratch/batch3-20261020/independent-review/registry-final-acceptance.json",
+        "sha256": "ec04539f22300d0c5265676709af49ddba5364b221d9cf96f41cf02b7efeb305",
+        "byte_size": 2952
+      }
+    ],
+    "findings": [],
+    "resolved_findings": [
+      "Old 1657 native citations had52 unavailable links because the derived facsimile had no upstream URL. New exact typed passage fallback repairs them without changing native text.",
+      "Two changed listing captures and two inherited stale gate captures were corrected by guarded retained-output addenda; exact final tuples and unchanged runtime bytes independently accepted."
+    ],
+    "independent_commands": [
+      {
+        "command": "node .scratch/batch3-20261020/independent-review/native-citation-audit.cjs",
+        "exit_status": 0,
+        "result": "Actual before 1657 payload: 52 unavailable citations, all 52 literal bodies exact."
+      },
+      {
+        "command": "node .scratch/batch3-20261020/independent-review/final-native-citation-audit.cjs",
+        "exit_status": 0,
+        "result": "71 cases pass; all 163 actual units retain native wording/paragraphs/language/direction/locus;77 typed fallback links, 86 upstream links."
+      },
+      {
+        "command": "/usr/bin/python3 -B .scratch/batch3-20261020/independent-review/source-destination-audit.py",
+        "exit_status": 0,
+        "result": "163 exact destination bodies/controllers/loci/paragraphs;77 fallback destination languages match;180 existing files pinned. Initial stricter language assertion disposition is retained in its receipt."
+      },
+      {
+        "command": "/usr/bin/python3 -B .scratch/batch3-20261020/independent-review/registry-capture-acceptance.py",
+        "exit_status": 0,
+        "result": "Four retained actual stdout comparisons pass; exact original/middle/final tuple boundaries account for all capture edits."
+      },
+      {
+        "command": "git diff --check -- src/web/browser/history/history.js src/web/browser/history/history.css scripts/_tooling.py tools/tpt tools/tests/test_tool_registry.py tools/tests/test_history_catalogue.py",
+        "exit_status": 0,
+        "result": "pass"
+      }
+    ],
+    "semantic_and_visual_review": [
+      "Generic URL guards, native binding validation/lazy/stale/rights paths and every other JS byte outside the citation helper/call are unchanged, including all print geometry.",
+      "CSS differs only by two padding-inline declarations and a comment under the existing narrow media query. Both actual 320×900 before/candidate images were independently viewed at original resolution; full title and 38.4px enlarged font retained; reading measure136.625→255.",
+      "Registry consumers accept the explicit local browser-services reach; all prior external/model reach declarations remain exact. Independent 16-case starting-URL check passes."
+    ],
+    "inherited_limitations": [
+      "Existing Tuki Sources destination inherits cop-ar edition language while the native Arabic unit correctly declares ar. Its unchanged upstream path and exact literal body remain; all 77 new fallback destinations have matching unit language."
+    ],
+    "pending_separate_acceptance": [
+      "Fresh-site keyboard navigation, responsive/400% zoom, focus/AX and actual Sources arrival belong to reader_review; this receipt does not claim those runs.",
+      "Planned post-Canon source integration requires its own frozen body/range and eventual corpus review."
+    ],
+    "corpus_dependency_note": "The registry fix changes scripts/_tooling.py, explicitly pinned by native TOOL_INPUT_PATHS. Prior source-body/parentage acceptance transfers by source identity; prior corpus tool/input object identity does not transfer across that hash. No corpus rerun/export performed.",
+    "tracked_or_index_writes": false,
+    "source_or_projection_writes": false
+  },
+  "registry_final_captured_output_record": {
+    "status": "accepted-final-registry-and-captures",
+    "final_tpt_sha256": "4c878f57138854459caab257936ab60673dfc40795841af2ca2dcea6739bedca",
+    "implementation_pre_capture_sha256": "d8971719745a5725174b3e985c7717aa2aab09514d1c0f2e1573760a00d97b10",
+    "all_runtime_bytes_outside_four_output_tuples_identical": true,
+    "exact_retained_output_checks": [
+      {
+        "command": "tools/tpt --list",
+        "retained_stdout": ".scratch/batch3-20261020/examples/tpt-attempt-1/01.stdout",
+        "sha256": "451b18ff23871637167b5f1117b8417700a0eb53d17fae042fb1b8e4b2f22ed6",
+        "framework_comparison": "pass",
+        "owner_exit_status": 0
+      },
+      {
+        "command": "tools/tpt --list --json",
+        "retained_stdout": ".scratch/batch3-20261020/examples/tpt-attempt-1/02.stdout",
+        "sha256": "d3238ace37ea1e9b33f8790d0181c60f9796663ae0f43d464154e73080a7a6b6",
+        "framework_comparison": "pass",
+        "owner_exit_status": 0
+      },
+      {
+        "command": "tools/tpt --check",
+        "retained_stdout": ".scratch/batch3-20261020/examples/tpt-attempt-2/01.stdout",
+        "sha256": "4f2f8135800605870d555e1e5b21de7504cb4965b615ca38fa36483f5360c593",
+        "framework_comparison": "pass",
+        "owner_exit_status": 0
+      },
+      {
+        "command": "tools/tpt --check --json",
+        "retained_stdout": ".scratch/batch3-20261020/examples/tpt-attempt-2/02.stdout",
+        "sha256": "4f2f8135800605870d555e1e5b21de7504cb4965b615ca38fa36483f5360c593",
+        "framework_comparison": "pass",
+        "owner_exit_status": 0
+      }
+    ],
+    "owner_guard_summaries": [
+      {
+        "path": ".scratch/batch3-20261020/examples/tpt-attempt-1/summary.json",
+        "sha256": "91828f8c68ab78d88d52765af24bfadd5df3f97332adb3a27c6b016572c1d00f"
+      },
+      {
+        "path": ".scratch/batch3-20261020/examples/tpt-attempt-2/summary.json",
+        "sha256": "392a49a7e31d65b47a879a59e09a51e15c845412d426b243e8ebec01d59425e3"
+      }
+    ],
+    "semantic_review": {
+      "path": ".scratch/batch3-20261020/independent-review/registry-semantic-review.json",
+      "sha256": "50b3a34b70db7ea71bcf5f81a06594db0854e43e65a862d1e6eebd6ccf33d1cb"
+    },
+    "resolved_findings": [
+      "Changed listing prose and JSON elision are exact again.",
+      "Inherited stale 43-tool gate transcripts now truthfully report 45 tools."
+    ],
+    "intermediate_review_disposition": "A two-tuple-only scratch assertion stopped when the root-authorized second capture pair landed. The final four-tuple proof independently accounts for both released addenda; no source or runtime defect was implicated.",
+    "commands_run_by_this_addendum": [
+      "/usr/bin/python3 -B .scratch/batch3-20261020/independent-review/registry-capture-acceptance.py"
+    ],
+    "limits": [
+      "No command replay, browser session, corpus export or source generation was needed; exact retained real output was checked using the owning framework.",
+      "The local reach declaration describes preview/WebDriver services, not browser-network isolation."
+    ]
+  },
+  "font_implementation_public_derivative": {
+    "review_provenance": ".scratch/batch3-20261020/transport/public-preparation-v2/font-implementation.public-v1.json",
+    "sha256": "8f52835babb7b8459499bba69057ae38042be8a908e3fa8cb3ba6e1bf8a22e1d",
+    "byte_size": 22808
+  },
+  "qualification": "The 163 native destination units and 71 independent citation cases refer to the existing input scope recorded by the code reviewer. Newly admitted source/native data and final runtime acceptance use separate owning receipts. The final CLI tools are released separately and are not part of the 14-file checkpoint.",
+  "private_runtime_boundary": "No raw browser profiles, runtime endpoints, session data or environment/cache directories are copied. No executed-command spelling was normalized."
+}

@@ -1,0 +1,2430 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "cistercian-1606-post-canon-2026-10-20",
+  "title": "Paris 1606 Cistercian post-Canon Ordinary tail and appended Suffragium: complete bounded original-image reading",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "native_binding_path": "src/sources/inventories/eucharistic-books/cistercian-1606-post-canon.json",
+    "native_binding_sha256": "bffe8231ccded6bad30b8200e60eb58b2e8b4fa099169e5403cc74c220eecdca",
+    "extent_path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-post-canon-extent.json",
+    "extent_sha256": "b198c826ab9619b776aff684461b92e515cb891b820c91016309fe76a1cdf4f0",
+    "independent_literal_review_path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-post-canon-review.json",
+    "independent_literal_review_sha256": "a9071ea94a7aef2facd58a121b4b4ee5dcb8227b1ac6a79cde762aebf7a68d64",
+    "independent_source_integrity_review_sha256": "a36eebc85d3e3b782f054fb9c69268815e34adc1a7b0ab2691a46c9b8b3c08b3",
+    "independent_source_integrity_review_byte_size": 60074,
+    "independent_dependency_review_sha256": "a40c84dd13274c1315db9b063be2bc19349c4d243846c3943c5383b6d8baf4c6",
+    "independent_dependency_review_byte_size": 22457,
+    "independent_containment_review_sha256": "ffba54fbb81080819093cd83ca12751fbd10a8e1e74165fa3b3742d7acf79bff",
+    "independent_containment_review_byte_size": 3593,
+    "isolated_validation_sha256": "ae461289bdcfdbd67b7581fb05d5477ac49c84eda1b67b606b9c96fa73927560",
+    "accepted_candidate_manifest_sha256": "7d5cc7e354c1498ede59b0d8ceef53fafff18734756377a7201642afd0fe0cda"
+  },
+  "coverage_rows": [
+    "cistercian"
+  ],
+  "uses": [
+    {
+      "id": "cistercian-1606-post-canon-bounded-source",
+      "source_id": "cistercian-1606-bsb-primary",
+      "edition_id": "edition.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606",
+      "binding_id": "cistercian-1606-post-canon",
+      "state": "complete-declared-constituent-independently-collated",
+      "locus": "Printed 197 left Orémus after excluded strict Canon final Amen through main Order closure on 199 right; appended Suffragium on 200 through final Amen; 201 Sanctorale outside.",
+      "facts": {
+        "source_order_units": 64,
+        "source_image_lines": 169,
+        "normalized_payload_lines": 64,
+        "whitespace_tokens": 706,
+        "crosses": 3,
+        "printed_response_cues": 2,
+        "normalized_punctus_elevatus_signs": 8,
+        "retained_pages": 5,
+        "selected_literal_pages": 4
+      },
+      "scope": "Complete bounded printed post-Canon tail and appended Suffragium of the Paris 1606 Cistercian missal. It begins with Orémus/Præcéptis on printed p. 197 left, immediately after and excluding the accepted strict Canon’s final Per omnia/Amen. The main Ordinary tail closes on printed p. 199 right with the departure rubric Sicque signans se, & inclinans recedat. The appended Suffragium pro pace Ecclesiastica & temporali on printed p. 200 is included through its final Amen before INCIPIT SANCTORALE on p. 201. The appendix is printed after the main closure but its own rubric assigns recitation after the Canon’s Pater noster; units retain physical source order rather than silently relocating it. This is a bounded composite functional selection, not an assertion of an uninterrupted printed chapter or complete Ordinary. All in-scope prayers, abbreviated incipits, rubrics, response cues, crosses and sung words are included under the disclosed normalization. The prior 7-unit offertory and 35-unit Canon remain unchanged. Whole-Missal and complete-Ordinary text coverage remain partial; no wording or ancestry is inherited.",
+      "contrary_findings": [
+        "The continuing Canon Missæ running head through p.200 does not extend the strict Canon beyond its accepted final Amen on p.197.",
+        "The main Order closes on p.199; the p. 200 Suffragium is appended physically but its rubric orders recitation after Pater noster Canonis.",
+        "The post-Canon Pater and appendix Pater incipit are distinct source forms; no full text is supplied for the latter."
+      ],
+      "resolved_readings": [
+        "pręséntibus and déxterę preserve actual e-cauda; eleíson preserves the printed acute.",
+        "All eight raised hook-over-dot signs serialize as disclosed U+2E4E ⹎ mapping without an exact typeface or prosody claim.",
+        "quem tam sancta and actual abbreviated endings/incipits retained without familiar Roman replacement.",
+        "Detached ink speck before Antequam and INCIPIT catchword excluded as source furniture."
+      ],
+      "limitations": "The separate complete bounded post-Canon tail and appended Suffragium are independently collated in 64 source-order units: Orémus/Præcéptis after the excluded strict Canon final Amen on printed p. 197, the main Order closure on p. 199, and the p. 200 Suffragium through final Amen before Sanctorale p. 201. The appendix is physically printed after the main closure but its own rubric assigns recitation after Pater noster Canonis; it is retained in physical source order. A five-page lossless facsimile retains printed pp. 197–201, with p. 201 outside the constituent as boundary evidence. Earlier offertory and Canon IDs and literal bytes remain unchanged. This complete bounded composite selection does not complete the Ordinary or whole Missal, imply uninterrupted printed chapter divisions, establish monastery reception or supply ancestry."
+    }
+  ],
+  "searches": [],
+  "versions": [
+    {
+      "id": "cistercian-1606-post-canon",
+      "adapter": "native-book:cistercian-1606-post-canon",
+      "date_role": "publication",
+      "date": "1606",
+      "parents": [],
+      "text_inheritance": false,
+      "scope": "Complete bounded printed post-Canon tail and appended Suffragium of the Paris 1606 Cistercian missal. It begins with Orémus/Præcéptis on printed p. 197 left, immediately after and excluding the accepted strict Canon’s final Per omnia/Amen. The main Ordinary tail closes on printed p. 199 right with the departure rubric Sicque signans se, & inclinans recedat. The appended Suffragium pro pace Ecclesiastica & temporali on printed p. 200 is included through its final Amen before INCIPIT SANCTORALE on p. 201. The appendix is printed after the main closure but its own rubric assigns recitation after the Canon’s Pater noster; units retain physical source order rather than silently relocating it. This is a bounded composite functional selection, not an assertion of an uninterrupted printed chapter or complete Ordinary. All in-scope prayers, abbreviated incipits, rubrics, response cues, crosses and sung words are included under the disclosed normalization. The prior 7-unit offertory and 35-unit Canon remain unchanged. Whole-Missal and complete-Ordinary text coverage remain partial; no wording or ancestry is inherited.",
+      "whole_book_complete": false,
+      "complete_ordinary": false,
+      "existing_native_constituents_unchanged": [
+        "cistercian-1606-offertory",
+        "cistercian-1606-canon"
+      ]
+    }
+  ],
+  "acquisitions": [
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+      "byte_size": 8056679,
+      "source_url": "https://www.digitale-sammlungen.de/en/view/bsb10496382?page=251",
+      "decision": "retain-tracked",
+      "extent": "Five complete photographed pages: printed 197–201 / provider PDF 252–256 / canvases 251–255; selected literal pages 197–200, final page 201 outside boundary context.",
+      "rights_status": "permission",
+      "rights_basis": "The identified 1606 printed text is public domain by expiration of its publication term. The Bayerische Staatsbibliothek digital images are supplied under No Copyright - Non-Commercial Use Only 1.0, https://rightsstatements.org/vocab/NoC-NC/1.0/ ; this is a rights statement, not a Creative Commons license. Noncommercial copying and redistribution retain that condition and attribution: München, Bayerische Staatsbibliothek, 2 Liturg. 205 a, bsb10496382. These source images and their lossless PDF derivative are excluded from Triptych’s CC BY 4.0 license. No unrestricted image reuse is asserted; the image condition is distinct from the public-domain historical Latin.",
+      "offline_limit": "All selected text and next-division boundary images reopen offline; the rest of the 415-page parent remains remote-only canonical metadata."
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+      "sha256": "89a7bff491a488493934fc94db4c22a63fa34b469a48f6253ee57bfdf15d9047",
+      "byte_size": 4964,
+      "decision": "retain-tracked",
+      "extent": "Complete bounded selected original Latin: 64 units, 64 normalized physical lines, 706 whitespace tokens.",
+      "rights_status": "public-domain",
+      "rights_jurisdiction": "United States",
+      "rights_basis": "United States public domain by expiration of the 1606 publication term; no modern translation or reconstructed wording imported.",
+      "offline_limit": "Only the declared post-Canon tail and appended Suffragium; no complete Ordinary or whole Missal."
+    },
+    {
+      "artifact_id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-whole-pdf-1032ee07",
+      "sha256": "1032ee07465cdfb103b64572cd44de729a6e3aa2412eb31a38b69a090e01b2af",
+      "byte_size": 672254859,
+      "source_url": "https://download.digitale-sammlungen.de/pdf/17922362108888bsb10496382.pdf",
+      "decision": "reuse-existing-remote-canonical-metadata",
+      "extent": "Existing complete 415-page acquired providerPDF; no whole-volume visual reading claimed.",
+      "rights_status": "permission",
+      "reason": "Preserve exact accepted measured-size exception (672,254,859 bytes exceeds 100 MiB); no duplicate whole-volume blob, fresh retrieval or whole-volume rehash.",
+      "offline_limit": "Five selected complete photographed pages are retained; all other parent pages require lawful source reacquisition or the separately retained acquisition.",
+      "reopening_condition": "A separately reviewed lawful and practical whole-volume retention decision, without changing the existing measured identity."
+    },
+    {
+      "id": "reused-bsb-iiif-manifest",
+      "sha256": "5026f4bcbcc205348f384859d9646fe99fe9798dca5fbdb8ba31ecca7cabfb2b",
+      "byte_size": 392719,
+      "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10496382/manifest",
+      "retrieved_on": "2026-10-20",
+      "decision": "reuse-prior-identity-and-rights-evidence; retain-factual-selection-in-this-receipt",
+      "extent": "Item identity, 1606 date, shelfmark, attribution, NoC-NC 1.0 rights statement and canvas coordinates, with exact whole-response fingerprint.",
+      "rights_basis": "Retained bibliographic facts, identifiers, source fingerprints and rights-condition names are project-selected factual evidence. The full provider JSON wrapper is not newly republished or licensed by this review.",
+      "offline_limit": "Selected controlling identity and rights facts are recorded here; complete provider response is not a new canonical payload.",
+      "reopening_condition": "A separately reviewed whole-wrapper redistribution basis or additional source-specific need."
+    },
+    {
+      "id": "inspection-original-jpeg-1",
+      "sha256": "11f5ff81c01f5184d4c5668fe92ee8c0c5dfdb86165bb34de8fc3e9c6227639c",
+      "byte_size": 1564526,
+      "decision": "do-not-duplicate-payload",
+      "reason": "Original embedded image bytes are present unchanged inside the retained five-page facsimile; JPEG extractions and one-page PDFs are inspection duplicates.",
+      "source_provider_pdf_page": 252,
+      "bsb_canvas": 251,
+      "printed_page": 197
+    },
+    {
+      "id": "inspection-original-jpeg-2",
+      "sha256": "0920a63bd7c7dcef1a96da6b260e8777057bea585d83263dce11449b2ae0f566",
+      "byte_size": 1654242,
+      "decision": "do-not-duplicate-payload",
+      "reason": "Original embedded image bytes are present unchanged inside the retained five-page facsimile; JPEG extractions and one-page PDFs are inspection duplicates.",
+      "source_provider_pdf_page": 253,
+      "bsb_canvas": 252,
+      "printed_page": 198
+    },
+    {
+      "id": "inspection-original-jpeg-3",
+      "sha256": "cfe515f8d9f622121786be442ed9fb0d07377eb4e7d24d3a95d27afe57bdbb28",
+      "byte_size": 1727238,
+      "decision": "do-not-duplicate-payload",
+      "reason": "Original embedded image bytes are present unchanged inside the retained five-page facsimile; JPEG extractions and one-page PDFs are inspection duplicates.",
+      "source_provider_pdf_page": 254,
+      "bsb_canvas": 253,
+      "printed_page": 199
+    },
+    {
+      "id": "inspection-original-jpeg-4",
+      "sha256": "6fc9c1842837560c0f58272af6292a55d69326cc2b25eba1aae47d5a2c0746f9",
+      "byte_size": 1311624,
+      "decision": "do-not-duplicate-payload",
+      "reason": "Original embedded image bytes are present unchanged inside the retained five-page facsimile; JPEG extractions and one-page PDFs are inspection duplicates.",
+      "source_provider_pdf_page": 255,
+      "bsb_canvas": 254,
+      "printed_page": 200
+    },
+    {
+      "id": "inspection-original-jpeg-5",
+      "sha256": "1ff90c08b2eebffe3b8da3497bbb28255670cae6fce5ee9dff1f5c2fe7746fc4",
+      "byte_size": 1689598,
+      "decision": "do-not-duplicate-payload",
+      "reason": "Original embedded image bytes are present unchanged inside the retained five-page facsimile; JPEG extractions and one-page PDFs are inspection duplicates.",
+      "source_provider_pdf_page": 256,
+      "bsb_canvas": 255,
+      "printed_page": 201
+    },
+    {
+      "id": "four-page-intermediate",
+      "sha256": "b5b88220035e8c3b00a89a19fb985d0d9965af668f3a1ce405e4081e175b7515",
+      "byte_size": 6345089,
+      "decision": "scratch-only-superseded-retention-proposal",
+      "reason": "Five-page derivative adds consequential outside-constituent p.201 endpoint context; preserve the earlier proposal without proposing duplicate retained bytes."
+    }
+  ],
+  "metadata_corrections": [
+    {
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-facsimile.toml",
+      "field": "locus",
+      "old": "Printed pp. 197–200; BSB canvases 251–254; provider PDF pages 252–255; retained facsimile pages 1–5 (page 5 outside constituent). Selected wording begins at Orémus below the prior Canon Amen and ends at the p. 200 appendix Amen before Sanctorale.",
+      "new": "Retained printed pp. 197–201; BSB canvases 251–255; provider PDF pages 252–256; facsimile pages 1–5. Selected literal scope is printed pp. 197–200 / canvases 251–254 / PDF 252–255 / facsimile pages 1–4, from Orémus below the excluded prior Canon Amen through the p. 200 appendix Amen. Printed p. 201 / facsimile page 5 is outside-constituent Sanctorale endpoint context.",
+      "literal_bytes_unchanged": true,
+      "reason": "Distinguish five retained source pages from four pages of selected constituent wording."
+    }
+  ],
+  "metadata_addenda_resolution": {
+    "locus_clarification": "Exact reviewed replacement is present in the final facsimile passage record.",
+    "latin_retention": "The exact 4,964-byte normalized Latin payload has an explicit tracked public-domain retention decision.",
+    "independent_final_closure": "Separate immutable pin-only closure reviews these exact final addenda before integration."
+  },
+  "validation": {
+    "status": "passed",
+    "method": "Isolated regular-file source dependency closure; no shared outputs or broad gates",
+    "source_library_errors": [],
+    "native_counts": {
+      "units": 64,
+      "whitespace_tokens": 706,
+      "languages": {
+        "la": 64
+      }
+    },
+    "complete_declared_extent": true,
+    "whole_book_complete": false,
+    "old_constituent_files_unchanged": 55,
+    "containment": {
+      "classifier_errors": [],
+      "new_artifacts": [
+        {
+          "id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+          "reasons": [
+            "artifact notes match '\\\\bwhole[- ]volume\\\\b'"
+          ]
+        },
+        {
+          "id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-checked-latin-89a7bff4",
+          "reasons": []
+        }
+      ],
+      "existing_parent_unchanged": true
+    }
+  },
+  "remaining_gaps": [
+    "Whole Missal and complete Ordinary source-image collation",
+    "Historical textual parentage and exact 1606-to1657 post-Canon comparison",
+    "Monastery-by-monastery reception; contemporary permission for use",
+    "Chant notation and typeface/colour/geometry reproduction"
+  ],
+  "public_boundary": "All source controllers and accepted literal bytes are portable. This project-created review retains bibliographic facts and bounded original analysis; no private installation paths, account/session URLs or transport headers are public.",
+  "source_integrity_review": {
+    "schema_version": 1,
+    "record_type": "independent-native-book-metadata-review",
+    "book_id": "cistercian-1606-post-canon",
+    "checked_on": "2026-10-20",
+    "reviewer": "Independent rights, integrity and source-manifest metadata reviewer",
+    "independent_of_transcription": true,
+    "status": "checks-pass-with-metadata-addenda-required",
+    "candidate_manifest": {
+      "label": "candidate-v1/draft-manifest.json",
+      "sha256": "7d5cc7e354c1498ede59b0d8ceef53fafff18734756377a7201642afd0fe0cda",
+      "byte_size": 275811
+    },
+    "candidate_files": [
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/post-canon-facsimile-ed5fd115/artifact.toml",
+        "sha256": "b1bb5978d2bc87bb48987bbf7eda2138d0e7c0088c10fc0899b60c6216a5c986",
+        "byte_size": 2862
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/post-canon-checked-latin-89a7bff4/artifact.toml",
+        "sha256": "4adc4b113a37b422938d8bf7c4082687f4ecd89c940faaa1e1ed88815876b25a",
+        "byte_size": 4904
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-facsimile.toml",
+        "sha256": "fb3519311f124e76656bdb39707f82b22458791588e82878b5b2d8995149c648",
+        "byte_size": 2154
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-oremus-post-canon.toml",
+        "sha256": "cd50a91b14011656c0b84d0010b8f12493356a1c69a109ba671faf89369753d0",
+        "byte_size": 3692
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-praeceptis-salutaribus.toml",
+        "sha256": "eabcdc1ea4f24ddc38fad557208224feb6d81b3c6ac125dadce28ec61fef41a1",
+        "byte_size": 3704
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pater-noster.toml",
+        "sha256": "2b6eba56431ce19bde77dc548d6ca407aaf78ca34494d4fa42bd16b0f4e339b2",
+        "byte_size": 3683
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-et-ne-nos-inducas.toml",
+        "sha256": "54db62b7b6c9066ad049128d3c25be0d0804453e2b9bc17bdd814da8b7689901",
+        "byte_size": 3697
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-sed-libera-nos-response.toml",
+        "sha256": "8f0cd4b7628ba1d0859de205612b80373d12198876cf3b32cbf8817bc8f1a75d",
+        "byte_size": 3696
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pater-noster-amen.toml",
+        "sha256": "c4e5d5ec2e6a0de24a1ef18b837f5609b129bb4c7228371f2677a9595aa9e4de",
+        "byte_size": 3690
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-libera-nos.toml",
+        "sha256": "4d5b2d4d3d7217094033a246ba17a6a3e93acbc5d421ac822db9da35f2072e16",
+        "byte_size": 3681
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-qui-tecum.toml",
+        "sha256": "60b5cf3921989130f4d1609c1045c07e187331c232af1ee6cafb723d294f4d2d",
+        "byte_size": 3693
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-libera-per-omnia.toml",
+        "sha256": "fa36c8279afe2e2ce4a511bb797310bbfc4b2d626a2eec53cb87f96f39608a60",
+        "byte_size": 3694
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-libera-per-omnia-amen.toml",
+        "sha256": "6c11421621ecfe46956cc72ae3fdee075ade5acd58e3eb99231e76f9bd2a513a",
+        "byte_size": 3699
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pax-domini.toml",
+        "sha256": "aab0a32c19f2459ea67307d7303adc3643d0c8a0cfba1ed51feec1431bd965e3",
+        "byte_size": 3693
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pax-response.toml",
+        "sha256": "39da0e000be7714059bb19ae643b6c436f8787aa123f01e44b01200803c6808e",
+        "byte_size": 3690
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-dum-miscetur-rubric.toml",
+        "sha256": "c4d224493d9cd382a12676d6d977154a22fec3f0929da7b16a0b7e67bd2c78f0",
+        "byte_size": 3695
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-haec-sacrosancta-commixtio.toml",
+        "sha256": "83daca9bc0c00a48ee4df9f857d35bb6310f743d717d1d29b2a4e9455e7216ce",
+        "byte_size": 3702
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-agnus-dei-first.toml",
+        "sha256": "530b9615b1bfaa97988eb0a79624e609add01445c289580d97fe2cadd0eba407",
+        "byte_size": 3695
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-agnus-dei-second.toml",
+        "sha256": "ecb2bbe3f83717ae809450f5f9f313d8aa5ead4337e31e9bcc5992371186a3b4",
+        "byte_size": 3696
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-agnus-dei-tertius.toml",
+        "sha256": "f695555faedf974022be989d85984e67c5f8f7301b6ba93b7aa33956bb96749e",
+        "byte_size": 3693
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-agnus-defunctorum-rubric.toml",
+        "sha256": "920b2eed1b818a0ef79fb7e9ba62e6b12153b19382bdf33d382a375f8482a789",
+        "byte_size": 3700
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-agnus-defunctorum.toml",
+        "sha256": "edc8fc75de62124bc820709b07997483b66b5754e81d2452365473da64903df5",
+        "byte_size": 3701
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pax-prayer-rubric.toml",
+        "sha256": "f7a747f12ef240bfd724ae796dc0124376602501f5495eb216f91bf2c4117d39",
+        "byte_size": 3693
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-domine-iesu-christe-pacem.toml",
+        "sha256": "da3d97c7e7bd2f90b11b5d9b8703b534a40ac991735c76d46394e3197f595a12",
+        "byte_size": 3701
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pax-dans-rubric.toml",
+        "sha256": "0daa7c52979e15f7765a87007de40cf6332e59db787382458ec0026163927019",
+        "byte_size": 3691
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pax-tecum.toml",
+        "sha256": "546b26d8b231439e1477ba73dd89df693aad17c679606b925d9d68882ee62015",
+        "byte_size": 3687
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pax-response-communion.toml",
+        "sha256": "3459548a2d923d507ed432411433d16f92743bb8b6a0a15792eaed391e40ccf4",
+        "byte_size": 3700
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-antequam-sumat-rubric.toml",
+        "sha256": "28cac6397f835f680d6d0fb9cf07820087211048974abff4bc19fbb627abb69b",
+        "byte_size": 3697
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-domine-iesu-christe-fili.toml",
+        "sha256": "1152116956069fc40186d839cfa162e9f8bc66c862051b3698317037e721b605",
+        "byte_size": 3700
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-hae-orationes-addi-rubric.toml",
+        "sha256": "8744aa131d21c4c99efc81665b8ec0e5e70362cfd297d5dd0fb11719e59afdaa",
+        "byte_size": 3701
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-perceptio-corporis.toml",
+        "sha256": "862cb35636aca85936d3250011733a0b99e752a27779c9007de79c46511fbb81",
+        "byte_size": 3694
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-panem-coelestem.toml",
+        "sha256": "b0b1d20addbadcdaa2ba2f2033f31aa64975ea71a9115ff078e8696dbcf72341",
+        "byte_size": 3691
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-domine-non-sum-dignus.toml",
+        "sha256": "38c1e5671773822e83351385cdb07b83d44f4368d61a161b1777400ebbe5ad50",
+        "byte_size": 3697
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-corpus-domini.toml",
+        "sha256": "b2cee6031c1139e0fe21c86e0917d499a7b83437a87f594eecd6613b3dd2338f",
+        "byte_size": 3689
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-deinde-sumat-rubric.toml",
+        "sha256": "44e822c65621e3ce7335dfcd576ab10ec133818716585e532218e495430e9550",
+        "byte_size": 3695
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-quid-retribuam.toml",
+        "sha256": "dd3dc517bdba9595944bf8372e7d1e7d754530cb08b0e5589eb74251cbd6f65a",
+        "byte_size": 3690
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-signando-se-calice-rubric.toml",
+        "sha256": "3d25eff71d2e819c6e68d9295faf2bd9bc51c40988802dff16eaf2c35b21b128",
+        "byte_size": 3701
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-sanguis-domini.toml",
+        "sha256": "4946dad96a364467d28a9e48bef6092b23525dab3929008d5f0288a96e702d74",
+        "byte_size": 3690
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-post-sumptionem-rubric.toml",
+        "sha256": "08476098b06ad2204f622c00015f3339ce3db2104188773403c2ac9a557e04b7",
+        "byte_size": 3698
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-quod-ore-sumpsimus.toml",
+        "sha256": "4b5af0f289c964ad8a55e84570a13feea694909029c3bcf4914e38f08d24749d",
+        "byte_size": 3694
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-corpus-tuum.toml",
+        "sha256": "17a40bf7301b5a5e2850223050fcb0d1529e3c2a9cd1835a6640660beb710726",
+        "byte_size": 3687
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-post-finitam-missam-rubric.toml",
+        "sha256": "315e91ec83312ab2e795b3b70f3b8ca0f3e9f9bc16fae79e5d65696ebdcd370c",
+        "byte_size": 3702
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-placeat-tibi.toml",
+        "sha256": "f3e997844578af861a67bb4b61ba7a620df19c1f434c8e69f67892bb7c4aa7bf",
+        "byte_size": 3688
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-tunc-erigens-rubric.toml",
+        "sha256": "32db6de6c3610ef4833ea3d6f8e5cf1424aad64cb20913a5cec2fbc2ac492b9c",
+        "byte_size": 3695
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-meritis-et-precibus.toml",
+        "sha256": "3daf45d3673e38c6c0aa95b72136b5d091a6a4d40b4749444e83fe29ec4242cd",
+        "byte_size": 3695
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-sicque-signans-rubric.toml",
+        "sha256": "e2680592a85f564898c8184d697457faa23f4dd9689b12f8070607c90a76f165",
+        "byte_size": 3697
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-heading-rubric.toml",
+        "sha256": "30ade38fc3a6889154155927c2201fe3f150de122d24bfc8d7a07025a1d17040",
+        "byte_size": 3701
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-psalmus-rubric.toml",
+        "sha256": "c59017c4b608eaba491e44e5dd79e536258aca1163c6c46c0eb50180ba09096e",
+        "byte_size": 3701
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-laetatus-sum.toml",
+        "sha256": "75b13b2300b607b6a1a8a9266350288ec6ca3fa173714ab2a9d2fb85325d9cb5",
+        "byte_size": 3700
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-gloria-patri.toml",
+        "sha256": "b97d0d1563b79465a722a3e624e34f6f3b36cd54efcecf8f7fe69fdb374bbce7",
+        "byte_size": 3700
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-kyrie.toml",
+        "sha256": "2983f0b474744bfd3e25794e0bd7c5fe9d8de942325c0d6d2c3971ea522a4aac",
+        "byte_size": 3693
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-pater-noster.toml",
+        "sha256": "8b26881763ed412cb042b96bae1c0a70d757e5a5ccd6a17f7db22a76c10dc05d",
+        "byte_size": 3700
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-et-ne-nos.toml",
+        "sha256": "5194d54bae39855cf7f1b34c34c8debc83262a81e85b79a84e880c5240efd0bd",
+        "byte_size": 3707
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-domine-saluos.toml",
+        "sha256": "709692c47567df855f6f4fa56dcf58c508694e1fbfa7ebc4129a1278922ea1d9",
+        "byte_size": 3702
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-et-exaudi.toml",
+        "sha256": "6589d8157869f71a3f4c5b0c94980b06f9c73379a75295d534642a648bfafc4f",
+        "byte_size": 3698
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-saluum-fac.toml",
+        "sha256": "5ac482f85bbdf732556f54c4eb5f07e8772ab42fad2bf8a1c2ba0c23b067e546",
+        "byte_size": 3699
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-et-rege.toml",
+        "sha256": "f25f347aa32dc23da65ee7db47726167d426c1be61ddb6b732246c18ddc87fd6",
+        "byte_size": 3696
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-fiat-pax.toml",
+        "sha256": "22bbf590222ef21e4f31d402bfa1ea1bae0db31ec59ecf58251db444e97f1101",
+        "byte_size": 3697
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-et-abundantia.toml",
+        "sha256": "e1979652c7d79d5ffe46751c5c51c86094941fe197c978b2532327ddc9c262a1",
+        "byte_size": 3702
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-domine-exaudi.toml",
+        "sha256": "6f08f4053d526bbb0a2cb92a3f39bb6073e2df3b83ab22d88b5c1af12d68c026",
+        "byte_size": 3702
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-et-clamor.toml",
+        "sha256": "fd6a7711f46a15150a87e907a47747f86717a6dbd73e0c5dee79df66ce4835cb",
+        "byte_size": 3698
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-dominus-vobiscum.toml",
+        "sha256": "20ce477b4a4c17728225875af272aa7046ba8e95e9db59cfe7c57fa0f1ae497a",
+        "byte_size": 3705
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-et-cum-spiritu.toml",
+        "sha256": "486682622130bd1f51c7dc974f5d633ae83ddee4f8f94d44233ae189ba031057",
+        "byte_size": 3703
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-oremus.toml",
+        "sha256": "eba61d6417625a6245bcc34ffd99c70fdea9a1406c373d1731e8732b214e9840",
+        "byte_size": 3697
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-ecclesiae-tuae.toml",
+        "sha256": "2b119a20244fa4e0b1ed9bcbaede7dd3385152d3a4accdf0f3455a79efc967fc",
+        "byte_size": 3701
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-hostium.toml",
+        "sha256": "6b60053d57dad70c1b7c151a0be0e85268efcf3025d2f64589ea14619004b53f",
+        "byte_size": 3694
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-amen.toml",
+        "sha256": "b9b2a7a4980780663cb4eb240fe24173f7ef547edd15f70c04494b16ac1b84df",
+        "byte_size": 3696
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/cistercian-1606-post-canon.json",
+        "sha256": "bffe8231ccded6bad30b8200e60eb58b2e8b4fa099169e5403cc74c220eecdca",
+        "byte_size": 179360
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/support/cistercian-1606-post-canon-extent.json",
+        "sha256": "b198c826ab9619b776aff684461b92e515cb891b820c91016309fe76a1cdf4f0",
+        "byte_size": 66041
+      }
+    ],
+    "payloads": [
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/post-canon-facsimile-ed5fd115/facsimile.pdf",
+        "sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+        "byte_size": 8056679
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/post-canon-checked-latin-89a7bff4/text.txt",
+        "sha256": "89a7bff491a488493934fc94db4c22a63fa34b469a48f6253ee57bfdf15d9047",
+        "byte_size": 4964
+      }
+    ],
+    "unit_pins": [
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.oremus-post-canon",
+        "text_sha256": "a8b6cea0cfa689e9adb92abd42ccfb9458c1e42c4d079fe12d521a3a9da0a64e",
+        "physical_line_ranges": [
+          [
+            1,
+            1
+          ]
+        ],
+        "witness_pages": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.praeceptis-salutaribus",
+        "text_sha256": "e2b7aaa020b345d08da83a02c9fae20250276c594b0061a396f231f80935c8cd",
+        "physical_line_ranges": [
+          [
+            2,
+            2
+          ]
+        ],
+        "witness_pages": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.pater-noster",
+        "text_sha256": "26920c81e2619aecb6cf52301886dffb770d57d5af715f649fde2e5e2c45510c",
+        "physical_line_ranges": [
+          [
+            3,
+            3
+          ]
+        ],
+        "witness_pages": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.et-ne-nos-inducas",
+        "text_sha256": "893bc0ed4c892e3c7b243caa19646ff0469227af8fbce83010e410277ebea611",
+        "physical_line_ranges": [
+          [
+            4,
+            4
+          ]
+        ],
+        "witness_pages": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.sed-libera-nos-response",
+        "text_sha256": "b6170812c43c2671eab7e9fe6d511db521c15ad978381bd3d4bfb534bedca81b",
+        "physical_line_ranges": [
+          [
+            5,
+            5
+          ]
+        ],
+        "witness_pages": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.pater-noster-amen",
+        "text_sha256": "8ff6fd77382d182e963fd3f322dddc3bc062d441675ae64cef5d58d73538467b",
+        "physical_line_ranges": [
+          [
+            6,
+            6
+          ]
+        ],
+        "witness_pages": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.libera-nos",
+        "text_sha256": "2d2c1afa89d73150cdc45b4cb9269ed45be02dd9bfc0f460c580a62586ec2d67",
+        "physical_line_ranges": [
+          [
+            7,
+            7
+          ]
+        ],
+        "witness_pages": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.qui-tecum",
+        "text_sha256": "f5a822d63597cc443d9e840f38cd696527f96758818f717b47910e29f0a2ef82",
+        "physical_line_ranges": [
+          [
+            8,
+            8
+          ]
+        ],
+        "witness_pages": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.libera-per-omnia",
+        "text_sha256": "d2e3c234304ed68f587bcba28a7d8efb2649d2b7e6a08fd400ecb68b57135201",
+        "physical_line_ranges": [
+          [
+            9,
+            9
+          ]
+        ],
+        "witness_pages": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.libera-per-omnia-amen",
+        "text_sha256": "d07a178bc193c1910055e2cfd1e2c19eece00b6cd3368d5e96308f79539eaad3",
+        "physical_line_ranges": [
+          [
+            10,
+            10
+          ]
+        ],
+        "witness_pages": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.pax-domini",
+        "text_sha256": "cb061beaa22a8278c84b139cc205452d80b7ba4ccd52eeba24b8e45534198d18",
+        "physical_line_ranges": [
+          [
+            11,
+            11
+          ]
+        ],
+        "witness_pages": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.pax-response",
+        "text_sha256": "0c3c344f7a32a067692f65f2a861e4116fd70f1aae800e0ee03e450fe3ecfff5",
+        "physical_line_ranges": [
+          [
+            12,
+            12
+          ]
+        ],
+        "witness_pages": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.dum-miscetur-rubric",
+        "text_sha256": "d6f747c355cbfbdeecc4fc4e33c5bb4cffe872c8018db130eabaa7d58b09eb0a",
+        "physical_line_ranges": [
+          [
+            13,
+            13
+          ]
+        ],
+        "witness_pages": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.haec-sacrosancta-commixtio",
+        "text_sha256": "1e2efa952810c5d710bc2e320fb2a5e594e1a857f0a5268b2a867829b879734a",
+        "physical_line_ranges": [
+          [
+            14,
+            14
+          ]
+        ],
+        "witness_pages": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.agnus-dei-first",
+        "text_sha256": "f97e69dbfa68afa477c847cc9d99ed66c4d9c553780d9edf6549c77dbbee8675",
+        "physical_line_ranges": [
+          [
+            15,
+            15
+          ]
+        ],
+        "witness_pages": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.agnus-dei-second",
+        "text_sha256": "f97e69dbfa68afa477c847cc9d99ed66c4d9c553780d9edf6549c77dbbee8675",
+        "physical_line_ranges": [
+          [
+            16,
+            16
+          ]
+        ],
+        "witness_pages": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.agnus-dei-tertius",
+        "text_sha256": "af099a048921cb84fa8e779ddf325a0b18cedd35ea7942fe153b0607c58cecf2",
+        "physical_line_ranges": [
+          [
+            17,
+            17
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.agnus-defunctorum-rubric",
+        "text_sha256": "9e4e88de40ab3b3ba3acf4f57d01b8926a01630675cfaa3ef9d6417c44928eb9",
+        "physical_line_ranges": [
+          [
+            18,
+            18
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.agnus-defunctorum",
+        "text_sha256": "be5bf8530687959386907b532448047896f28557ec5bb3ac197233957c4c1169",
+        "physical_line_ranges": [
+          [
+            19,
+            19
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.pax-prayer-rubric",
+        "text_sha256": "5dad7355e35d9a0e48530a6cfb4a64929c8e0a8c044927c782c0405cf511ff69",
+        "physical_line_ranges": [
+          [
+            20,
+            20
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.domine-iesu-christe-pacem",
+        "text_sha256": "01dfdb5d7adf4cf7ec60b4345eefe420324595c5e11c149c460aed3c2fafa6be",
+        "physical_line_ranges": [
+          [
+            21,
+            21
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.pax-dans-rubric",
+        "text_sha256": "668d19323b49cac16cc2cf6ae8ecd2d56c01d331933b74a976614cbc2dd52550",
+        "physical_line_ranges": [
+          [
+            22,
+            22
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.pax-tecum",
+        "text_sha256": "b9ff9141bdd1c75bfa9769a686b6e801e3c05e8e2f154baa466a7980e3b6b4e4",
+        "physical_line_ranges": [
+          [
+            23,
+            23
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.pax-response-communion",
+        "text_sha256": "0b2e0b1209007da2ba1777bb285684474edf90410965b2bb7317e597956f374c",
+        "physical_line_ranges": [
+          [
+            24,
+            24
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.antequam-sumat-rubric",
+        "text_sha256": "2a408ff7e8e774cf39875a650e00b7ed02abbd299b9ac320ad98bcc854082dc8",
+        "physical_line_ranges": [
+          [
+            25,
+            25
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.domine-iesu-christe-fili",
+        "text_sha256": "9ce08ae6e7fb5cab8e8ad743e531cb3d179099a6e35c82586260d0cb9b868757",
+        "physical_line_ranges": [
+          [
+            26,
+            26
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.hae-orationes-addi-rubric",
+        "text_sha256": "939ae4db6edb75f6f8d516cecad34635b9215391b22b5995262f5e12bf4f2d59",
+        "physical_line_ranges": [
+          [
+            27,
+            27
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.perceptio-corporis",
+        "text_sha256": "e1d674ebfc8d1f20fcd835d2cf1725af3449085643e22135ca5448e8746951f0",
+        "physical_line_ranges": [
+          [
+            28,
+            28
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.panem-coelestem",
+        "text_sha256": "d527a70be6ba3bfdd1b6e8281dea2cc8099bbf1bca35a64cbfd167a3ac240f8d",
+        "physical_line_ranges": [
+          [
+            29,
+            29
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.domine-non-sum-dignus",
+        "text_sha256": "a0e25a259c8cb98f35941feab78b024b134879973ef6e6ce2924187930a7ea3d",
+        "physical_line_ranges": [
+          [
+            30,
+            30
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.corpus-domini",
+        "text_sha256": "32a00d60f96ad14d0157db29a91bf34cf9758601193adf07b0e8ddc61cd89e06",
+        "physical_line_ranges": [
+          [
+            31,
+            31
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.deinde-sumat-rubric",
+        "text_sha256": "c1f20e85c7a097f5d54591488d015e4334a88449c2f63efb6a0f49f6a52c635f",
+        "physical_line_ranges": [
+          [
+            32,
+            32
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.quid-retribuam",
+        "text_sha256": "980f39590b76680a87b711e7fd7b8d8360ac232b31cf01b9ec3884aa889fb016",
+        "physical_line_ranges": [
+          [
+            33,
+            33
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.signando-se-calice-rubric",
+        "text_sha256": "ebe40d53642dbbcb76714bdf58e04ab5f3ffd8cf3e42f76599a7d492874ea48d",
+        "physical_line_ranges": [
+          [
+            34,
+            34
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.sanguis-domini",
+        "text_sha256": "f978cc2bfb7c86805d428f12c4e116369e758b7aa4f2959411ed913bf47f8477",
+        "physical_line_ranges": [
+          [
+            35,
+            35
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.post-sumptionem-rubric",
+        "text_sha256": "b2fac3c62fa38edb4ed02ec4d49c87fe0e2b7e902f85058599776a7ce447158a",
+        "physical_line_ranges": [
+          [
+            36,
+            36
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.quod-ore-sumpsimus",
+        "text_sha256": "2dc30499c97ff58dec1e6585fc3b0302642027eb1eb1d691c53ac16db4923c72",
+        "physical_line_ranges": [
+          [
+            37,
+            37
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.corpus-tuum",
+        "text_sha256": "204f90d8da68c37ebbc2b7c3bf4d9463310a533f50b74a1a130bd26b764f349a",
+        "physical_line_ranges": [
+          [
+            38,
+            38
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.post-finitam-missam-rubric",
+        "text_sha256": "7c7e2f4f0b4ba0f42fb9894565c31259692af5c42056894294246893511315d7",
+        "physical_line_ranges": [
+          [
+            39,
+            39
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.placeat-tibi",
+        "text_sha256": "87afcf27c1ef89e7ec6ce8157271a6b6a531cd357c4ef3949f0c3dba9ca40e52",
+        "physical_line_ranges": [
+          [
+            40,
+            40
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.tunc-erigens-rubric",
+        "text_sha256": "80f23f3012cadd7cb98dd63ee1834a7a88a6a7d235c5928c96c8cf7b73f8f5cb",
+        "physical_line_ranges": [
+          [
+            41,
+            41
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.meritis-et-precibus",
+        "text_sha256": "4ed5d7278a63af025d7ff3c7007fdded04977c356a7277b330f11d799ada6d25",
+        "physical_line_ranges": [
+          [
+            42,
+            42
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.sicque-signans-rubric",
+        "text_sha256": "0d7252c88fd944682b416116fa3bfcc3de87900b2f3f03ecfd2920db232b451d",
+        "physical_line_ranges": [
+          [
+            43,
+            43
+          ]
+        ],
+        "witness_pages": [
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-heading-rubric",
+        "text_sha256": "81815cc58dd95b241647320be1ace4e37f30bab315095c0f816521244d8fa521",
+        "physical_line_ranges": [
+          [
+            44,
+            44
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-psalmus-rubric",
+        "text_sha256": "a5bea2b8175dc220c20fd332292b2e5b89f5c8cb2fa804f894a675cc84ca5be6",
+        "physical_line_ranges": [
+          [
+            45,
+            45
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-laetatus-sum",
+        "text_sha256": "260a36a5ff27b45771688532a8a0ded17c2e3a768315b77ec2a5024bb13006bc",
+        "physical_line_ranges": [
+          [
+            46,
+            46
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-gloria-patri",
+        "text_sha256": "fb9a6f884bb545e1fe7b4b7160eb9a3cbaeb7f09f13a70780890e13d29e79c8d",
+        "physical_line_ranges": [
+          [
+            47,
+            47
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-kyrie",
+        "text_sha256": "67f833e34fcab90ecfdf195b9f87485468dd292ef7f9b452d4af6781f1f35937",
+        "physical_line_ranges": [
+          [
+            48,
+            48
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-pater-noster",
+        "text_sha256": "c907ba915737cbf6da58c081e6851b1c6e5f9529eb1e2571176f3ac59cef8028",
+        "physical_line_ranges": [
+          [
+            49,
+            49
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-ne-nos",
+        "text_sha256": "11e7eb6adaca24dbf5032a43ce10ceab70f113665643316b5d7f91b776e34663",
+        "physical_line_ranges": [
+          [
+            50,
+            50
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-domine-saluos",
+        "text_sha256": "9f22f2488ab396c7b3934a5386afaeb17be57a60ecf67a9e6cf8ff94bf813369",
+        "physical_line_ranges": [
+          [
+            51,
+            51
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-exaudi",
+        "text_sha256": "56f836f768d9820bfde36f4449fc1f9fa0f7ee030b9a587e502098fa9e402212",
+        "physical_line_ranges": [
+          [
+            52,
+            52
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-saluum-fac",
+        "text_sha256": "513db2bb941149e81804450b0577a9a5af44643810427aedb72dd5a517c60494",
+        "physical_line_ranges": [
+          [
+            53,
+            53
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-rege",
+        "text_sha256": "67cb95ad5ca311608a5cead36d5f0ceecc11f9ddf96ae0ce84df533574085b11",
+        "physical_line_ranges": [
+          [
+            54,
+            54
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-fiat-pax",
+        "text_sha256": "504d826dbda80eea7d1894c892cf7fa2de232fe66ae067779fad14c0c933cca1",
+        "physical_line_ranges": [
+          [
+            55,
+            55
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-abundantia",
+        "text_sha256": "f376266e3eb9ababf2698a14976064f28383cb6112de6dbb440a8c6d5b9f6da0",
+        "physical_line_ranges": [
+          [
+            56,
+            56
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-domine-exaudi",
+        "text_sha256": "de97eff3ed355df70155b9fcd24e430f57cb46a568222d659b4e93495f2b2674",
+        "physical_line_ranges": [
+          [
+            57,
+            57
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-clamor",
+        "text_sha256": "04c4c5077d33e7f8c14da52813146f8964c3e0e8286dc0156c3a083220c6d473",
+        "physical_line_ranges": [
+          [
+            58,
+            58
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-dominus-vobiscum",
+        "text_sha256": "e1d3f72a67075e4c1c5928c8f26c42c033fdd4212c314af0b62b0aa4107788fc",
+        "physical_line_ranges": [
+          [
+            59,
+            59
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-et-cum-spiritu",
+        "text_sha256": "0c3c344f7a32a067692f65f2a861e4116fd70f1aae800e0ee03e450fe3ecfff5",
+        "physical_line_ranges": [
+          [
+            60,
+            60
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-oremus",
+        "text_sha256": "a8b6cea0cfa689e9adb92abd42ccfb9458c1e42c4d079fe12d521a3a9da0a64e",
+        "physical_line_ranges": [
+          [
+            61,
+            61
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-ecclesiae-tuae",
+        "text_sha256": "8d827db63a115c43e0f3e0c204aeecf04a1716bd3a116ecc577c9bf925071c75",
+        "physical_line_ranges": [
+          [
+            62,
+            62
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-hostium",
+        "text_sha256": "f92e415d889a91389d4d5a70d7013d895399866365490fe55cdea7d0671e9fcf",
+        "physical_line_ranges": [
+          [
+            63,
+            63
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "unit_id": "unit.cistercian-1606.post-canon.suffragium-amen",
+        "text_sha256": "d07a178bc193c1910055e2cfd1e2c19eece00b6cd3368d5e96308f79539eaad3",
+        "physical_line_ranges": [
+          [
+            64,
+            64
+          ]
+        ],
+        "witness_pages": [
+          [
+            4,
+            4
+          ]
+        ]
+      }
+    ],
+    "third_party_notice": {
+      "label": "candidate-v1/THIRD_PARTY-addition.md",
+      "sha256": "3062782472860d3ce8bfcfb4a4408ba700566382b997ef2664dd73d08a3331b5",
+      "byte_size": 1173
+    },
+    "acquisition": {
+      "label": "acquisition-v2.json",
+      "sha256": "651c65dd7b6d0faf03993d9ddae968d4ef0c70d4334aee97d8ee1d377d796fd9",
+      "byte_size": 5047
+    },
+    "rights_evidence": [
+      {
+        "label": "Retained BSB IIIF manifest",
+        "source_url": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10496382/manifest",
+        "sha256": "5026f4bcbcc205348f384859d9646fe99fe9798dca5fbdb8ba31ecca7cabfb2b",
+        "byte_size": 392719,
+        "observed_rights_statement": "https://rightsstatements.org/vocab/NoC-NC/1.0/",
+        "scope": "Reused dated evidence, without network refresh; shelfmark, attribution and date checked in its metadata."
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-whole-pdf-1032ee07/artifact.toml",
+        "sha256": "fb0c138857940a250deb72fe65cbb9a078aba82bb802e83e78c996b094377b0b",
+        "byte_size": 2254
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/canon-facsimile-dc62364f/artifact.toml",
+        "sha256": "cbe6ab5b5fe542648c66f781a8147612bfb79a7e13b5e19c543cbe65c359949a",
+        "byte_size": 2757
+      }
+    ],
+    "checks": {
+      "record_manifest_strings_and_file_pins": 67,
+      "payload_file_hashes_and_sizes": 2,
+      "new_artifact_lineage": "normalized Latin -> five-page facsimile -> existing exact whole-PDF parent; all one edition",
+      "parent_raw_hash_recomputed": false,
+      "facsimile_pages_from_pdfinfo": 5,
+      "selected_scope_pages": [
+        [
+          1,
+          4
+        ]
+      ],
+      "excluded_context_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "nfc_unit_hashes_and_exact_physical_line_ranges": 64,
+      "ordered_unit_and_page_censuses": true,
+      "crosses": 3,
+      "response_cues": 2,
+      "normalized_punctus_mappings": 8,
+      "canonical_privacy_scan": true,
+      "old_bindings_unit_ids_not_reused": true,
+      "old_offertory_and_canon_sources_match_base": 49,
+      "rights_image_and_historical_latin_distinguished": true,
+      "image_basis_matches_existing_accepted_basis_exactly": true,
+      "no_ancestry_or_whole_ordinary_claim": "Scope explicitly refuses both; historical date is 1606 publication with exact title-passage evidence.",
+      "source_order_vs_recitation_order": "Binding, census, normalization and notice retain appendix physical printing order and disclose its after-Pater recitation instruction."
+    },
+    "old_binding_pins": [
+      {
+        "path": "src/sources/inventories/eucharistic-books/cistercian-1606-offertory.json",
+        "sha256": "7dc837f08ecfca3eadd8c423bfe7f7907c13823bf5a8af7fedb8a4d3b5868e61",
+        "byte_size": 17971,
+        "unit_count": 7
+      },
+      {
+        "path": "src/sources/inventories/eucharistic-books/cistercian-1606-canon.json",
+        "sha256": "78aacfe63bc9e2306147439eb89c5f2ff5db136b6a6c102c04f8aacff7210a69",
+        "byte_size": 95620,
+        "unit_count": 35
+      }
+    ],
+    "unchanged_old_source_pins": [
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/canon-checked-latin-ffa3e1be/artifact.toml",
+        "sha256": "22c2b766ffa54c7cee3d6ea66d7a6b44763aa338d56768ea26525db21fb8d234",
+        "byte_size": 3903
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/canon-checked-latin-ffa3e1be/text.txt",
+        "sha256": "ffa3e1be8edb198a983a22e69ffb9fc5a4d30de38f6d79bb17ebeb39c310a83f",
+        "byte_size": 6134
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/canon-facsimile-dc62364f/artifact.toml",
+        "sha256": "cbe6ab5b5fe542648c66f781a8147612bfb79a7e13b5e19c543cbe65c359949a",
+        "byte_size": 2757
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/canon-facsimile-dc62364f/facsimile.pdf",
+        "sha256": "dc62364f94cd72a6017cc1f0fc1f0a57eb96e22ca2bbbbcbbf4e3710dc640d3c",
+        "byte_size": 12067925
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/offertory-checked-latin-9c003023/artifact.toml",
+        "sha256": "3640cb3326728a7c67428fa4a03d40c493b36429abb3b7a03037fd39751aa0c5",
+        "byte_size": 3962
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/offertory-checked-latin-9c003023/text.txt",
+        "sha256": "9c003023910561e31e5c59c4e37aa5550994cf04633e856dbb3d5222b728d537",
+        "byte_size": 684
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-communicantes-ascension-rubric.toml",
+        "sha256": "e8ac76f8c1fca53a40356317805ddc476963f09556b6ee959ab363d719165a15",
+        "byte_size": 3522
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-communicantes-ascension.toml",
+        "sha256": "56df9865abd6378546aca1ba9b25f83d7720eafa1f560c14f6fc102b1fedd692",
+        "byte_size": 3508
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-communicantes-continuation.toml",
+        "sha256": "b7542013b6d7dab179c20a7725924087cc018e516be955501ade94fb7c4d5ecd",
+        "byte_size": 3528
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-communicantes-easter-rubric.toml",
+        "sha256": "df002569302186fcb1b7ad8191771b689ad21e232f365799784a96d06fca0350",
+        "byte_size": 3511
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-communicantes-easter.toml",
+        "sha256": "7a0e9d9f96cf8543cda732e974505c97ae4acb1fc3e11fd1411b3c3965e64378",
+        "byte_size": 3502
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-communicantes-epiphany-rubric.toml",
+        "sha256": "331ae3f15bc238d9fff96d46a28e66697d3831bbe7b8ff286328283af54bbb34",
+        "byte_size": 3515
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-communicantes-epiphany.toml",
+        "sha256": "577fe4557bed0ba82b8ca9478e507c4ca56b8749462af1d2a2630621f42effcb",
+        "byte_size": 3501
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-communicantes-nativity-rubric.toml",
+        "sha256": "2cf02e7212a2d23ae75d22b6769909e4b34c8d074ed066579bb1c897a60f516b",
+        "byte_size": 3515
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-communicantes-nativity.toml",
+        "sha256": "0eab70687a34089a66082b1395c6f7006921ef21fcad695b71f52d1d4c0492a0",
+        "byte_size": 3501
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-communicantes-opening.toml",
+        "sha256": "404de06ac09f7f421388550c46e8e2a9d3049972a7f173091092c990e7215937",
+        "byte_size": 3499
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-communicantes-pentecost-rubric.toml",
+        "sha256": "95eec0976910c88dfcee252559ebae99527c05abb79d2f31002df92a81b1be1d",
+        "byte_size": 3522
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-communicantes-pentecost.toml",
+        "sha256": "edda847b6fb080e90b88ebb85a7e963e716e36cc54b98d23aff6c8b0de6ae4e1",
+        "byte_size": 3508
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-facsimile.toml",
+        "sha256": "15d2af09dfc94d180801651b6079a00eb36fdc21abf9d55a4981f800f734cd8e",
+        "byte_size": 1813
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-haec-quotiescumque.toml",
+        "sha256": "16d09c67767ea965c7e68e29ffe94f20c8d23ccf69c52a57e92924de4dd9e230",
+        "byte_size": 3498
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-hanc-igitur-easter-pentecost-rubric.toml",
+        "sha256": "3d4b68f75ec5b5503d8cede626a3a8192e0969e7dc2f02db2da537cebeba5e54",
+        "byte_size": 3532
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-hanc-igitur-easter-pentecost.toml",
+        "sha256": "820c967d28dc4e77b2743e49dcc5c36a1e295afe08a021e6415f815f69dde86c",
+        "byte_size": 3518
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-hanc-igitur.toml",
+        "sha256": "7030e56e0262104afa4af49cef0ab17e5ba9edd709fadbbe0086652c308679cf",
+        "byte_size": 3484
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-heading.toml",
+        "sha256": "54d99d9eb4c7b9d6a97df60683ad3b0a207af886e4b5c6fc3ec76e67c3230edf",
+        "byte_size": 3471
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-hic-est-enim.toml",
+        "sha256": "621a73760dae3c2608171f4d55e5e012d953a92b42b8d63f1ed82ead5d6cd2ca",
+        "byte_size": 3486
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-hoc-est-enim.toml",
+        "sha256": "4c5f8b23b2f623250b1f697680bf926ca77df826fd8d18fbfe5a40816a9e56d0",
+        "byte_size": 3509
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-intra-quorum.toml",
+        "sha256": "74680b26678542611937e25d7e26b830cc50484d77cbc6c40498b2707c35c80f",
+        "byte_size": 3486
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-ipsis-domine.toml",
+        "sha256": "b8d2947dd0abd8c00ee12aaf63c20c96605b7991f659720e28875b58a30f6dc7",
+        "byte_size": 3500
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-memento-defunctorum.toml",
+        "sha256": "26e9f60c0aded353d40b2f31b31d4cb5addc994db66042c14fbf236642b9c70c",
+        "byte_size": 3500
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-memento-vivorum.toml",
+        "sha256": "517bf226cf2204992f7d5ec432d398e6af2fe6cac01a09147a0b820ba33c0340",
+        "byte_size": 3501
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-nobis-quoque.toml",
+        "sha256": "0cc1f38f8c38d476bb73d620aac0a19cd003c73c937a9521948c10f8f6a85318",
+        "byte_size": 3486
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-omnis-honor.toml",
+        "sha256": "70d65818f48b1fec466fabdf449098c7652ef785211f9b12b0287ac62bae9928",
+        "byte_size": 3484
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-per-ipsum.toml",
+        "sha256": "add51f0a0e8ce0e831de8a94ce6eba6b0fa83910a547b1984dc74bb0ad2a4d5f",
+        "byte_size": 3480
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-per-omnia-amen.toml",
+        "sha256": "b1f080231ede96b598a8543f1b1d6808accab4d410d2bcb6869a3311b3ec2d76",
+        "byte_size": 3490
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-per-quem.toml",
+        "sha256": "f4d6ab1b3862e014ec059a3f3472facc4f4476f403267b906274bb264aaa1daf",
+        "byte_size": 3492
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-quam-oblationem.toml",
+        "sha256": "3e3c43c50b1d896c170aa0c4f6fc427a781cc6b70bd81c15e7455ce6c34b6e92",
+        "byte_size": 3529
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-qui-pridie.toml",
+        "sha256": "3cde131041858317328792d110d3bd6e719d7c24284528548ad5789b44f6de84",
+        "byte_size": 3505
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-simili-modo.toml",
+        "sha256": "68ed05e79f6a4b8b0d85d446b6f60466d44101298cbde74f21b74fbfd85d37c7",
+        "byte_size": 3507
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-supplices.toml",
+        "sha256": "7e13129153d8d4e0f7cfacc1662336dbd13900b47e5546477e488e5f2857b078",
+        "byte_size": 3480
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-supra-quae.toml",
+        "sha256": "8e2e0fd3e995d38fe0bcd5800e8d1eddb104531768340f48e2df7e8c691bb2a8",
+        "byte_size": 3496
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-te-igitur.toml",
+        "sha256": "1cb2b2182bcaaa37cb36f26f2e202bb44c2e382b3ac04dcccee268a6eb0b6476",
+        "byte_size": 3475
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/canon-unde-et-memores.toml",
+        "sha256": "7e6c0f05f1ac4bce4fc18885e1042a5bfe4bb4988345d8445afbb036803e51be",
+        "byte_size": 3492
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/offertory-dominus-response.toml",
+        "sha256": "bad37d4c2a5f31b6db286a46c12353ef73ada411ee6f9e40e79002d109b82c6a",
+        "byte_size": 2473
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/offertory-facsimile.toml",
+        "sha256": "68317d6b8070bc7bd44094de5e141e24d28f2b68e60f373ef8fbc89ec0c3e8e0",
+        "byte_size": 1539
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/offertory-in-spiritu-humilitatis.toml",
+        "sha256": "9c6d95116840c95966351be3dacd6872a9f7c4710366a25fc6b42f47dc76ea37",
+        "byte_size": 2485
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/offertory-in-spiritu-rubric.toml",
+        "sha256": "1e63d56d2250585e9506b985d61d97bea834e4ffd6ea34062f9e52b1c4d1c9a6",
+        "byte_size": 2475
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/offertory-opening-rubric.toml",
+        "sha256": "45b105f85f80f111e9a23d8ca3233f32ced06528748f38ae0b835b0b0f76f20e",
+        "byte_size": 2467
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/offertory-orate-invitation.toml",
+        "sha256": "48e1e4f21c1c4ca66827b5339c2d876a9537dd137105e85dd6fcacdd7c0df179",
+        "byte_size": 2473
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/offertory-orate-rubric.toml",
+        "sha256": "3b8deb97dcb926ccb6273be1c5e2ba0390547d56e8f04eda1afd893985530336",
+        "byte_size": 2465
+      }
+    ],
+    "required_addenda": [
+      {
+        "id": "explicit-latin-retention",
+        "severity": "metadata-closure",
+        "finding": "The retention array omits a separate explicit decision for the normalized Latin payload, although its artifact correctly records tracked storage and an affirmative United States public-domain basis.",
+        "recommendation": "Add a retain decision keyed by the exact text artifact/hash/bytes and its original-witness public-domain rationale."
+      },
+      {
+        "id": "facsimile-locus-coordinate-clarity",
+        "severity": "clarity",
+        "finding": "The facsimile passage ranges 1-5 but its locus begins with selected printed 197-200 / PDF 252-255 / canvases 251-254. The excluded fifth page is disclosed, so scope is not false, but retained and selected coordinates should be explicitly separated.",
+        "recommendation": "State retained printed 197-201 / PDF 252-256 / canvases 251-255, then identify selected literal 197-200 / derivative 1-4 and derivative page 5 as excluded context."
+      }
+    ],
+    "limitations": [
+      "This metadata review does not perform or attest complete source-image literal/extent collation; that distinct acceptance receipt is pending.",
+      "No source extraction, whole-parent PDF rehash, network fetch or broad/shared validation gate was run.",
+      "Embedded-JPEG identity claims are carried by the pinned acquisition record; this review checks declared image pins against the source census, without repeating extraction.",
+      "Inventory edits, the public portable review envelope, final collation receipt and final integrator manifest have not yet been supplied; final closure requires checking their exact pins and metadata addenda.",
+      "The existing remote parent measured-size disposition is reused rather than reopened; the retained derivative permits offline review only of these five pages."
+    ]
+  },
+  "source_integrity_dependency_addendum": {
+    "schema_version": 1,
+    "record_type": "independent-native-book-metadata-review-addendum",
+    "book_id": "cistercian-1606-post-canon",
+    "checked_on": "2026-10-20",
+    "reviewer": "Independent rights, integrity and source-manifest metadata reviewer",
+    "status": "supplemental-checks-pass",
+    "candidate_manifest": {
+      "label": "candidate-v1/draft-manifest.json",
+      "sha256": "7d5cc7e354c1498ede59b0d8ceef53fafff18734756377a7201642afd0fe0cda",
+      "byte_size": 275811
+    },
+    "checks": {
+      "all_five_acquisition_image_pins_and_source_coordinates_match_census": true,
+      "all_unit_witness_pages_match_census": 64,
+      "exact_source_dependency_closure_records": 72,
+      "isolated_source_library_validation_errors": [],
+      "isolated_source_library_record_count": 72
+    },
+    "checked_dependency_files": [
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00001-44b8ddf4/artifact.toml",
+        "sha256": "3aaa8f0ba26f824cd95f1e02f2d34fa828ad39b1cac2acfe75e7d6db76c0ec16",
+        "byte_size": 2228
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-canvas-00001-44b8ddf4/1606-page-1.jpg",
+        "sha256": "44b8ddf44781e3c23c318ae95cf2bfd3eb75c891ac269e67719fef483808cd30",
+        "byte_size": 617354
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/bsb-whole-pdf-1032ee07/artifact.toml",
+        "sha256": "fb0c138857940a250deb72fe65cbb9a078aba82bb802e83e78c996b094377b0b",
+        "byte_size": 2254
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/post-canon-checked-latin-89a7bff4/artifact.toml",
+        "sha256": "4adc4b113a37b422938d8bf7c4082687f4ecd89c940faaa1e1ed88815876b25a",
+        "byte_size": 4904
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/post-canon-checked-latin-89a7bff4/text.txt",
+        "sha256": "89a7bff491a488493934fc94db4c22a63fa34b469a48f6253ee57bfdf15d9047",
+        "byte_size": 4964
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/post-canon-facsimile-ed5fd115/artifact.toml",
+        "sha256": "b1bb5978d2bc87bb48987bbf7eda2138d0e7c0088c10fc0899b60c6216a5c986",
+        "byte_size": 2862
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/post-canon-facsimile-ed5fd115/facsimile.pdf",
+        "sha256": "ed5fd115a2d4c3cbc7441d5be817b0c344cd9d3e41041eb7b6342a58d64cf358",
+        "byte_size": 8056679
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/edition.toml",
+        "sha256": "cd4d016bb377c3d2bb0c4a78dda5d0f2d8ef348b70c2b4551fb6c9781c7e0046",
+        "byte_size": 1805
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-agnus-defunctorum.toml",
+        "sha256": "edc8fc75de62124bc820709b07997483b66b5754e81d2452365473da64903df5",
+        "byte_size": 3701
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-agnus-defunctorum-rubric.toml",
+        "sha256": "920b2eed1b818a0ef79fb7e9ba62e6b12153b19382bdf33d382a375f8482a789",
+        "byte_size": 3700
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-agnus-dei-first.toml",
+        "sha256": "530b9615b1bfaa97988eb0a79624e609add01445c289580d97fe2cadd0eba407",
+        "byte_size": 3695
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-agnus-dei-second.toml",
+        "sha256": "ecb2bbe3f83717ae809450f5f9f313d8aa5ead4337e31e9bcc5992371186a3b4",
+        "byte_size": 3696
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-agnus-dei-tertius.toml",
+        "sha256": "f695555faedf974022be989d85984e67c5f8f7301b6ba93b7aa33956bb96749e",
+        "byte_size": 3693
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-antequam-sumat-rubric.toml",
+        "sha256": "28cac6397f835f680d6d0fb9cf07820087211048974abff4bc19fbb627abb69b",
+        "byte_size": 3697
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-corpus-domini.toml",
+        "sha256": "b2cee6031c1139e0fe21c86e0917d499a7b83437a87f594eecd6613b3dd2338f",
+        "byte_size": 3689
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-corpus-tuum.toml",
+        "sha256": "17a40bf7301b5a5e2850223050fcb0d1529e3c2a9cd1835a6640660beb710726",
+        "byte_size": 3687
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-deinde-sumat-rubric.toml",
+        "sha256": "44e822c65621e3ce7335dfcd576ab10ec133818716585e532218e495430e9550",
+        "byte_size": 3695
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-domine-iesu-christe-fili.toml",
+        "sha256": "1152116956069fc40186d839cfa162e9f8bc66c862051b3698317037e721b605",
+        "byte_size": 3700
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-domine-iesu-christe-pacem.toml",
+        "sha256": "da3d97c7e7bd2f90b11b5d9b8703b534a40ac991735c76d46394e3197f595a12",
+        "byte_size": 3701
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-domine-non-sum-dignus.toml",
+        "sha256": "38c1e5671773822e83351385cdb07b83d44f4368d61a161b1777400ebbe5ad50",
+        "byte_size": 3697
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-dum-miscetur-rubric.toml",
+        "sha256": "c4d224493d9cd382a12676d6d977154a22fec3f0929da7b16a0b7e67bd2c78f0",
+        "byte_size": 3695
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-et-ne-nos-inducas.toml",
+        "sha256": "54db62b7b6c9066ad049128d3c25be0d0804453e2b9bc17bdd814da8b7689901",
+        "byte_size": 3697
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-facsimile.toml",
+        "sha256": "fb3519311f124e76656bdb39707f82b22458791588e82878b5b2d8995149c648",
+        "byte_size": 2154
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-hae-orationes-addi-rubric.toml",
+        "sha256": "8744aa131d21c4c99efc81665b8ec0e5e70362cfd297d5dd0fb11719e59afdaa",
+        "byte_size": 3701
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-haec-sacrosancta-commixtio.toml",
+        "sha256": "83daca9bc0c00a48ee4df9f857d35bb6310f743d717d1d29b2a4e9455e7216ce",
+        "byte_size": 3702
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-libera-nos.toml",
+        "sha256": "4d5b2d4d3d7217094033a246ba17a6a3e93acbc5d421ac822db9da35f2072e16",
+        "byte_size": 3681
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-libera-per-omnia.toml",
+        "sha256": "fa36c8279afe2e2ce4a511bb797310bbfc4b2d626a2eec53cb87f96f39608a60",
+        "byte_size": 3694
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-libera-per-omnia-amen.toml",
+        "sha256": "6c11421621ecfe46956cc72ae3fdee075ade5acd58e3eb99231e76f9bd2a513a",
+        "byte_size": 3699
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-meritis-et-precibus.toml",
+        "sha256": "3daf45d3673e38c6c0aa95b72136b5d091a6a4d40b4749444e83fe29ec4242cd",
+        "byte_size": 3695
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-oremus-post-canon.toml",
+        "sha256": "cd50a91b14011656c0b84d0010b8f12493356a1c69a109ba671faf89369753d0",
+        "byte_size": 3692
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-panem-coelestem.toml",
+        "sha256": "b0b1d20addbadcdaa2ba2f2033f31aa64975ea71a9115ff078e8696dbcf72341",
+        "byte_size": 3691
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pater-noster.toml",
+        "sha256": "2b6eba56431ce19bde77dc548d6ca407aaf78ca34494d4fa42bd16b0f4e339b2",
+        "byte_size": 3683
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pater-noster-amen.toml",
+        "sha256": "c4e5d5ec2e6a0de24a1ef18b837f5609b129bb4c7228371f2677a9595aa9e4de",
+        "byte_size": 3690
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pax-dans-rubric.toml",
+        "sha256": "0daa7c52979e15f7765a87007de40cf6332e59db787382458ec0026163927019",
+        "byte_size": 3691
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pax-domini.toml",
+        "sha256": "aab0a32c19f2459ea67307d7303adc3643d0c8a0cfba1ed51feec1431bd965e3",
+        "byte_size": 3693
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pax-prayer-rubric.toml",
+        "sha256": "f7a747f12ef240bfd724ae796dc0124376602501f5495eb216f91bf2c4117d39",
+        "byte_size": 3693
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pax-response.toml",
+        "sha256": "39da0e000be7714059bb19ae643b6c436f8787aa123f01e44b01200803c6808e",
+        "byte_size": 3690
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pax-response-communion.toml",
+        "sha256": "3459548a2d923d507ed432411433d16f92743bb8b6a0a15792eaed391e40ccf4",
+        "byte_size": 3700
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-pax-tecum.toml",
+        "sha256": "546b26d8b231439e1477ba73dd89df693aad17c679606b925d9d68882ee62015",
+        "byte_size": 3687
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-perceptio-corporis.toml",
+        "sha256": "862cb35636aca85936d3250011733a0b99e752a27779c9007de79c46511fbb81",
+        "byte_size": 3694
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-placeat-tibi.toml",
+        "sha256": "f3e997844578af861a67bb4b61ba7a620df19c1f434c8e69f67892bb7c4aa7bf",
+        "byte_size": 3688
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-post-finitam-missam-rubric.toml",
+        "sha256": "315e91ec83312ab2e795b3b70f3b8ca0f3e9f9bc16fae79e5d65696ebdcd370c",
+        "byte_size": 3702
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-post-sumptionem-rubric.toml",
+        "sha256": "08476098b06ad2204f622c00015f3339ce3db2104188773403c2ac9a557e04b7",
+        "byte_size": 3698
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-praeceptis-salutaribus.toml",
+        "sha256": "eabcdc1ea4f24ddc38fad557208224feb6d81b3c6ac125dadce28ec61fef41a1",
+        "byte_size": 3704
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-qui-tecum.toml",
+        "sha256": "60b5cf3921989130f4d1609c1045c07e187331c232af1ee6cafb723d294f4d2d",
+        "byte_size": 3693
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-quid-retribuam.toml",
+        "sha256": "dd3dc517bdba9595944bf8372e7d1e7d754530cb08b0e5589eb74251cbd6f65a",
+        "byte_size": 3690
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-quod-ore-sumpsimus.toml",
+        "sha256": "4b5af0f289c964ad8a55e84570a13feea694909029c3bcf4914e38f08d24749d",
+        "byte_size": 3694
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-sanguis-domini.toml",
+        "sha256": "4946dad96a364467d28a9e48bef6092b23525dab3929008d5f0288a96e702d74",
+        "byte_size": 3690
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-sed-libera-nos-response.toml",
+        "sha256": "8f0cd4b7628ba1d0859de205612b80373d12198876cf3b32cbf8817bc8f1a75d",
+        "byte_size": 3696
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-sicque-signans-rubric.toml",
+        "sha256": "e2680592a85f564898c8184d697457faa23f4dd9689b12f8070607c90a76f165",
+        "byte_size": 3697
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-signando-se-calice-rubric.toml",
+        "sha256": "3d25eff71d2e819c6e68d9295faf2bd9bc51c40988802dff16eaf2c35b21b128",
+        "byte_size": 3701
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-amen.toml",
+        "sha256": "b9b2a7a4980780663cb4eb240fe24173f7ef547edd15f70c04494b16ac1b84df",
+        "byte_size": 3696
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-domine-exaudi.toml",
+        "sha256": "6f08f4053d526bbb0a2cb92a3f39bb6073e2df3b83ab22d88b5c1af12d68c026",
+        "byte_size": 3702
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-domine-saluos.toml",
+        "sha256": "709692c47567df855f6f4fa56dcf58c508694e1fbfa7ebc4129a1278922ea1d9",
+        "byte_size": 3702
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-dominus-vobiscum.toml",
+        "sha256": "20ce477b4a4c17728225875af272aa7046ba8e95e9db59cfe7c57fa0f1ae497a",
+        "byte_size": 3705
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-ecclesiae-tuae.toml",
+        "sha256": "2b119a20244fa4e0b1ed9bcbaede7dd3385152d3a4accdf0f3455a79efc967fc",
+        "byte_size": 3701
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-et-abundantia.toml",
+        "sha256": "e1979652c7d79d5ffe46751c5c51c86094941fe197c978b2532327ddc9c262a1",
+        "byte_size": 3702
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-et-clamor.toml",
+        "sha256": "fd6a7711f46a15150a87e907a47747f86717a6dbd73e0c5dee79df66ce4835cb",
+        "byte_size": 3698
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-et-cum-spiritu.toml",
+        "sha256": "486682622130bd1f51c7dc974f5d633ae83ddee4f8f94d44233ae189ba031057",
+        "byte_size": 3703
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-et-exaudi.toml",
+        "sha256": "6589d8157869f71a3f4c5b0c94980b06f9c73379a75295d534642a648bfafc4f",
+        "byte_size": 3698
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-et-ne-nos.toml",
+        "sha256": "5194d54bae39855cf7f1b34c34c8debc83262a81e85b79a84e880c5240efd0bd",
+        "byte_size": 3707
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-et-rege.toml",
+        "sha256": "f25f347aa32dc23da65ee7db47726167d426c1be61ddb6b732246c18ddc87fd6",
+        "byte_size": 3696
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-fiat-pax.toml",
+        "sha256": "22bbf590222ef21e4f31d402bfa1ea1bae0db31ec59ecf58251db444e97f1101",
+        "byte_size": 3697
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-gloria-patri.toml",
+        "sha256": "b97d0d1563b79465a722a3e624e34f6f3b36cd54efcecf8f7fe69fdb374bbce7",
+        "byte_size": 3700
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-heading-rubric.toml",
+        "sha256": "30ade38fc3a6889154155927c2201fe3f150de122d24bfc8d7a07025a1d17040",
+        "byte_size": 3701
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-hostium.toml",
+        "sha256": "6b60053d57dad70c1b7c151a0be0e85268efcf3025d2f64589ea14619004b53f",
+        "byte_size": 3694
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-kyrie.toml",
+        "sha256": "2983f0b474744bfd3e25794e0bd7c5fe9d8de942325c0d6d2c3971ea522a4aac",
+        "byte_size": 3693
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-laetatus-sum.toml",
+        "sha256": "75b13b2300b607b6a1a8a9266350288ec6ca3fa173714ab2a9d2fb85325d9cb5",
+        "byte_size": 3700
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-oremus.toml",
+        "sha256": "eba61d6417625a6245bcc34ffd99c70fdea9a1406c373d1731e8732b214e9840",
+        "byte_size": 3697
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-pater-noster.toml",
+        "sha256": "8b26881763ed412cb042b96bae1c0a70d757e5a5ccd6a17f7db22a76c10dc05d",
+        "byte_size": 3700
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-psalmus-rubric.toml",
+        "sha256": "c59017c4b608eaba491e44e5dd79e536258aca1163c6c46c0eb50180ba09096e",
+        "byte_size": 3701
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-suffragium-saluum-fac.toml",
+        "sha256": "5ac482f85bbdf732556f54c4eb5f07e8772ab42fad2bf8a1c2ba0c23b067e546",
+        "byte_size": 3699
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/post-canon-tunc-erigens-rubric.toml",
+        "sha256": "32db6de6c3610ef4833ea3d6f8e5cf1424aad64cb20913a5cec2fbc2ac492b9c",
+        "byte_size": 3695
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/passages/title-and-imprint.toml",
+        "sha256": "c2ad4286672e48d90e71cf7bdaf54195ebc9e30dd1afb8e3cad3ce13407d0817",
+        "byte_size": 1005
+      },
+      {
+        "path": "src/sources/works/cistercian-order/missale-cisterciense/work.toml",
+        "sha256": "0a20612dcc68b398e30947dd780fca1072e9fb84e01b0fda56798a473449ea1a",
+        "byte_size": 476
+      }
+    ],
+    "conditional_scalar_approval": {
+      "target": "post-canon-facsimile passage locus",
+      "accepted_exact_value": "Retained printed pp. 197–201; BSB canvases 251–255; provider PDF pages 252–256; facsimile pages 1–5. Selected literal scope is printed pp. 197–200 / canvases 251–254 / PDF 252–255 / facsimile pages 1–4, from Orémus below the excluded prior Canon Amen through the p. 200 appendix Amen. Printed p. 201 / facsimile page 5 is outside-constituent Sanctorale endpoint context.",
+      "condition": "Final immutable record and manifest pins must match this scalar; no literal, witness, binding or census alteration is authorized by this approval."
+    },
+    "limitations": [
+      "Source-library validation covers only the isolated exact dependency closure, not the full shared checkout.",
+      "Native adapter acceptance is pending the distinct independent complete literal/extent receipt; no substitute receipt was generated.",
+      "No full literal source collation, source extraction, network refresh, full-parent payload rehash or broad/shared gate was run."
+    ]
+  },
+  "independent_containment_review": {
+    "schema_version": 1,
+    "record_type": "independent-native-book-containment-review-addendum",
+    "book_id": "cistercian-1606-post-canon",
+    "checked_on": "2026-10-20",
+    "reviewer": "Independent rights, integrity and source-manifest metadata reviewer",
+    "status": "conditionally-accepted-exact-additive-row",
+    "inventory_path": "src/sources/inventories/source-containment-v1.toml",
+    "manifest": {
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/post-canon-facsimile-ed5fd115/artifact.toml",
+      "sha256": "b1bb5978d2bc87bb48987bbf7eda2138d0e7c0088c10fc0899b60c6216a5c986",
+      "byte_size": 2862
+    },
+    "accepted_row": {
+      "id": "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115",
+      "manifest_sha256": "b1bb5978d2bc87bb48987bbf7eda2138d0e7c0088c10fc0899b60c6216a5c986",
+      "reason": "Five complete photographed pages from one Paris 1606 Cistercian missal, not an anthology or a container of separately registered works. The main Order tail and appended Suffragium are parts of that same work. The whole-volume wording refers only to the already acquired remote parent; selected native scope is four photographed pages and the fifth is outside-constituent Sanctorale boundary context."
+    },
+    "accepted_toml_fragment": "[[not_containers]]\nid = \"artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115\"\nmanifest_sha256 = \"b1bb5978d2bc87bb48987bbf7eda2138d0e7c0088c10fc0899b60c6216a5c986\"\nreason = \"Five complete photographed pages from one Paris 1606 Cistercian missal, not an anthology or a container of separately registered works. The main Order tail and appended Suffragium are parts of that same work. The whole-volume wording refers only to the already acquired remote parent; selected native scope is four photographed pages and the fifth is outside-constituent Sanctorale boundary context.\"\n",
+    "accepted_toml_fragment_sha256": "a108dfbfb6de3ecee9fe144fb121aeec026676db485ba425753b76e452133b2d",
+    "accepted_toml_fragment_byte_size": 626,
+    "checks": {
+      "matching_shape_patterns": [
+        "\\bwhole[- ]volume\\b"
+      ],
+      "classifier_inputs": "Artifact notes and provenance; the whole-volume phrase describes the existing acquired parent, not another work inside this bounded derivative.",
+      "same_work_parts": "The native post-Canon tail, Suffragium appendix and retained Sanctorale boundary are divisions of one identified Cistercian missal; the metadata supplies no second registered work or cross-work segment.",
+      "five_retained_pages_four_selected_pages": true,
+      "existing_parent_row_matches_base": "e2267fdeb417d99b03d8cefea05fc30397bdf816",
+      "parent_manifest_pin_matches_existing_row": true,
+      "row_fields": "id, manifest_sha256, reason match the not_containers schema.",
+      "canonical_mutation_performed": false
+    },
+    "approval_conditions": [
+      "Append this exact row without changing the existing parent row.",
+      "Recheck the final artifact manifest SHA-256 before installation; any manifest change requires renewed pin review.",
+      "This disposition classifies this exact derivative only; it does not establish whole-book collation, a whole-book denominator, source ancestry, textual acceptance or broader findings about other volumes."
+    ],
+    "limits": [
+      "No new source images were collated or extracted in this metadata addendum.",
+      "The final manifest, Latin retention decision and literal acceptance receipt still require final packet closure."
+    ]
+  }
+}

@@ -1,0 +1,959 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "french-originals-north-batch3-2026-10-20",
+  "title": "Amiens original-access bounds and Beauvais 1756 original missal inspection",
+  "lane": "french-originals-north-batch3",
+  "side": "western",
+  "checked_on": "2026-10-20",
+  "reviewed_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "source_boundary": {
+    "base_head": "e2267fdeb417d99b03d8cefea05fc30397bdf816",
+    "scope": "The existing french-amiens and french-beauvais coverage routes, their exact printing/copy identities and reachable holding-library originals. Previously completed Amiet catalogue accounting is preserved.",
+    "beauvais_copy": "Lyon SJ L 013/12, Numelyo BML:BML_00GOO0100137001102132797; existing candidate french-beauvais-usuarium-7099. BnF B-225 / source6955 remains a separately uncollated copy in the existing catalogue cluster.",
+    "digital_extent": "All 830 offered web JPEG images acquired unchanged; 143177599 image-response bytes. Two deterministic project-created ZIP_STORED transports each contain415 source images. Exact member URLs, SHA-256 and lengths are retained in the source index and package indexes. The source master and physical-volume completeness are not established.",
+    "text_boundary": "Provider OCR is unverified discovery material. There is no literal native-text unit, source binding, complete textual constituent, whole-book transcription, substantive revision transition or inherited textual parentage.",
+    "date_roles": "The Beauvais original title bears1756; the separately read mandate ends19April1756. Amiens6887 preserves BnF catalogue publication attribution [1552] and its catalogue-reported November1551 colophon as separate roles, without direct original reading or numeric chronology correction."
+  },
+  "review_files": {
+    "frozen_source_packet": {
+      "sha256": "34590d0ec99890da954f700f000de0ccaa543d700ed30d4b13b736389a0f5280",
+      "byte_size": 90088
+    },
+    "independent_acceptance": {
+      "sha256": "e27e6fb7573c90f5f9e5bf105301444dcf67da54a1b4d9608a227a7f63cc6ab6",
+      "byte_size": 6867,
+      "decision": "accepted"
+    },
+    "root_dossier_suggestion": {
+      "sha256": "1f52bd88186e642dba8643cb535f41760e878e4aa480c3177b4078772ccfae18",
+      "byte_size": 5837
+    },
+    "isolated_source_validation": {
+      "sha256": "151a70b54d2dfb8d69a455cb73913e84dc322561428a4c4920f2f23b0e72bdd6",
+      "byte_size": 178
+    },
+    "isolated_stage_validation": {
+      "sha256": "c7cded7688f2aa7f291e724c9b387bb351f2a6a7fce36d81b261a60ef8385aee",
+      "byte_size": 541
+    },
+    "complete_image_decode": {
+      "sha256": "e476acacb8fce10cbf1c4022c28e52137500a6ab199480a1c084d3fdae2d4022",
+      "byte_size": 61414
+    },
+    "reviewer_acquisition_dispositions": {
+      "sha256": "63feba6f45e6e76597db44c6899af5f7b434354f923986b8157a1544315431e5",
+      "byte_size": 7932
+    }
+  },
+  "coverage_rows": [
+    "french-amiens",
+    "french-beauvais"
+  ],
+  "uses": [
+    {
+      "coverage_row": "french-beauvais",
+      "candidate_id": "french-beauvais-usuarium-7099",
+      "basis": "Complete original mandate read at offered images11–14. The mandate directs all churches, chapters, colleges, monasteries and orders of his diocese, and all priests who are bound by law or custom to celebrate or recite the Beauvais Office, to use this missal henceforth.",
+      "recipient_syntax": "The qui…tenentur clause immediately follows Presbyteris; preserve the institution list and qualified priest clause separately.",
+      "limits": "This does not establish actual uniform uptake, a first effective date, universal jurisdiction over religious orders or a new independent rite."
+    }
+  ],
+  "searches": [
+    {
+      "repository": "Internet Archive advanced-search",
+      "query": "title:(missale) AND (Ambianensis OR Ambianense OR Amiens)",
+      "source_url": "https://archive.org/advancedsearch.php?q=title%3A%28missale%29+AND+%28Ambianensis+OR+Ambianense+OR+Amiens%29&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=year&rows=100&output=json",
+      "sha256": "6e806ec36879eec6d565d093134ad4c13ed108137034137371b301444321ec71",
+      "byte_size": 533,
+      "result": "One unrelated Limoges/Castres item; bounded query only, not a world absence."
+    },
+    {
+      "repository": "BnF Catalogue général",
+      "query": "Amiens / Ambianensis / Missale and exactholdingB-27909/B-766",
+      "result": "Exact records cb36817272w and cb368172690 reached; dates and original-access limitations retained."
+    },
+    {
+      "repository": "Numelyo search",
+      "result": "Two attempted query parameter forms returned broad unfiltered catalogue pages; no negative content finding is based on them."
+    },
+    {
+      "url": "https://usuarium.elte.hu/book/70/pdf",
+      "result": "HTTP401; no original PDF bytes obtained; no credentials used"
+    },
+    {
+      "url": "https://gallica.bnf.fr/ark:/12148/bpt6k8708386b/f1.highres",
+      "result": "HTTP403 Cloudflare response; no original source image obtained"
+    },
+    {
+      "url": "https://gallica.bnf.fr/ark:/12148/bpt6k110637z/f1.highres",
+      "result": "HTTP403 Cloudflare response; no original source image obtained"
+    },
+    {
+      "url": "https://numelyo.bm-lyon.fr/imprimer_page.php?pid=BML:BML_00GOO0100137001102132797&mode=document",
+      "result": "60second limit, zero bytes; complete830webimage sequence acquired instead"
+    },
+    {
+      "url": "https://numelyo.bm-lyon.fr/telecharger_zip.php?pid=BML:BML_00GOO0100137001102132797",
+      "result": "50second limit, zero bytes; complete830webimage sequence acquired instead"
+    },
+    {
+      "url": "https://numelyo.bm-lyon.fr/epubgenerator.php?pid=BML:BML_00GOO0100137001102132797",
+      "result": "50second limit, zero bytes; all830textURLpositions queried;825text bodies retained and5hosterrorbodies excluded"
+    },
+    {
+      "url": "https://numelyo.bm-lyon.fr/f_eserv/BML:BML_00GOO0100137001102132797/JPG00000009.jpg",
+      "result": "Empty response; source-master bytes not acquired; this does not establish globalmasterunavailability"
+    }
+  ],
+  "versions": [
+    {
+      "coverage_row": "french-beauvais",
+      "candidate_id": "french-beauvais-usuarium-7099",
+      "result": "One source-grounded documented publication state proposed; zero transitions.",
+      "source_loci": {
+        "title_imprint": "Offered image9: Missale Bellovacense, MDCCLVI; Paris/Beauvais Fratres Desaint; Étienne-René Potier de Gesvres authority and chapter consent.",
+        "mandate": "Complete images11–14; date19April1756 at14. The prefatory account of selection and additions is a contemporary claim; no before/after textual collation is supplied.",
+        "calendar": "Images16/24: January and September. Local calendar cues do not prove exclusive calendar use or a fully collated sanctoral.",
+        "rubrics": "Images28/50 and Ordo267.",
+        "mass_order": "Image267, checked printedp193.",
+        "canon": "Image303, checked printedp229; context310–315 and concluding313/p239.",
+        "chant": "Image292/p218 left column has notated preface material; right-column Advent text is unnotated. Image313/p239 has notated Per omnia/Amen and Pater. Images73–74/pp47–48 are Modus cantandi lectiones.",
+        "division_context": "Images632/633,769–771 and830 inspected as bounded boundary context; no exhaustive whole-book collation."
+      },
+      "copy_limits": "Lyon and BnF1756 copies remain uncollated; catalogue printing membership is preserved. Provider sommaire labels often differ from printed pagination; cited printed pages were visually checked."
+    },
+    {
+      "coverage_row": "french-amiens",
+      "candidate_ids": [
+        "french-amiens-usuarium-6887",
+        "french-amiens-1487-bnf-witness"
+      ],
+      "result": "Catalogue evidence only; no original acquired and no publication stage proposed.",
+      "identity": "1487 BnF B-766, cb368172690, CIBN M-404, ISTC im00644070; Paris [Jean Du Pré] and206 leaves are catalogue assertions. Existing6887 BnF B-27909, cb36817272w, retains the distinct1551 colophon-report/[1552] publication-attribution roles.",
+      "limits": "No title, colophon, calendar, Ordo, mandate, physical completeness or original liturgical wording was directly checked for Amiens."
+    }
+  ],
+  "acquisitions": [
+    {
+      "id": "artifact.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756.numelyo-images-part-1-f09e8850",
+      "edition_id": "edition.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756",
+      "artifact_type": "page-image-package",
+      "media_type": "application/zip",
+      "source_url": "https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001102132797/IMG00000001",
+      "retrieved": "2026-10-20",
+      "sha256": "f09e8850fdc2739bb26deebbd236c35766b107592cf373864ee14b43083237db",
+      "byte_size": 71949138,
+      "page_count": 415,
+      "storage": "tracked",
+      "path": "src/sources/works/diocese-of-beauvais/missale-bellovacense/editions/1756-paris-beauvais-desaint/artifacts/numelyo-images-part-1-f09e8850/beauvais-1756-numelyo-images-part-1-of-2.zip",
+      "rights_status": "public-domain",
+      "rights_jurisdiction": "United States",
+      "rights_basis": "1756 first publication is outside the United States publication term. These are faithful flat-page mechanical reproductions of that historical book, without new authorship in the source content. The holding library also explicitly labels this exact object Domaine public and Licence Ouverte-Open Licence on its full viewer page; the linked licence is October 2011 v 1. Provider attribution, source/date and no-endorsement conditions are carried in ATTRIBUTION.txt inside each archive. This basis does not derive from mere successful retrieval and does not relicense source matter as project CC BY 4.0.",
+      "provenance": "Project-created deterministic ZIP_STORED archive, part 1 of 2, not a provider-delivered archive. Exact offered images 1–415 retained unchanged with individual URL/SHA/byte receipts in IMAGE-INDEX.json. The complete 830 individual responses total 143177599 bytes; each part remains below Git 100 MiB. Source REST requests identify exact URLs, including mixed JPG/TIF delivery basenames; every response passed JPEG magic and decoding checks. Full PDF, ZIP and EPUB generator routes returned no bytes before their recorded 60/50/50 second bounds; the whole offered web-image sequence was acquired instead.",
+      "notes": "Offered image numbers are not printed pagination. This package establishes digital-sequence acquisition only; no whole-book transcription, physical completeness, uniform local adoption or exact textual ancestry."
+    },
+    {
+      "id": "artifact.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756.numelyo-images-part-2-d07819b9",
+      "edition_id": "edition.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756",
+      "artifact_type": "page-image-package",
+      "media_type": "application/zip",
+      "source_url": "https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001102132797/IMG00000001",
+      "retrieved": "2026-10-20",
+      "sha256": "d07819b95651a598e0f56371b8660ad8fc24b20853320900de0b2e7a400ef1b5",
+      "byte_size": 71577890,
+      "page_count": 415,
+      "storage": "tracked",
+      "path": "src/sources/works/diocese-of-beauvais/missale-bellovacense/editions/1756-paris-beauvais-desaint/artifacts/numelyo-images-part-2-d07819b9/beauvais-1756-numelyo-images-part-2-of-2.zip",
+      "rights_status": "public-domain",
+      "rights_jurisdiction": "United States",
+      "rights_basis": "1756 first publication is outside the United States publication term. These are faithful flat-page mechanical reproductions of that historical book, without new authorship in the source content. The holding library also explicitly labels this exact object Domaine public and Licence Ouverte-Open Licence on its full viewer page; the linked licence is October 2011 v 1. Provider attribution, source/date and no-endorsement conditions are carried in ATTRIBUTION.txt inside each archive. This basis does not derive from mere successful retrieval and does not relicense source matter as project CC BY 4.0.",
+      "provenance": "Project-created deterministic ZIP_STORED archive, part 2 of 2, not a provider-delivered archive. Exact offered images 416–830 retained unchanged with individual URL/SHA/byte receipts in IMAGE-INDEX.json. The complete 830 individual responses total 143177599 bytes; each part remains below Git 100 MiB. Source REST requests identify exact URLs, including mixed JPG/TIF delivery basenames; every response passed JPEG magic and decoding checks. Full PDF, ZIP and EPUB generator routes returned no bytes before their recorded 60/50/50 second bounds; the whole offered web-image sequence was acquired instead.",
+      "notes": "Offered image numbers are not printed pagination. This package establishes digital-sequence acquisition only; no whole-book transcription, physical completeness, uniform local adoption or exact textual ancestry."
+    },
+    {
+      "id": "artifact.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756.numelyo-source-index-8ea8d92d",
+      "edition_id": "edition.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756",
+      "artifact_type": "source-acquisition-index",
+      "media_type": "application/json",
+      "source_url": "https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001102132797/IMG00000001",
+      "retrieved": "2026-10-20",
+      "sha256": "8ea8d92db5991b7078deb25d003ad476578f0b2c8a6916a4d4b1870a58ce9989",
+      "byte_size": 260451,
+      "storage": "tracked",
+      "path": "src/sources/works/diocese-of-beauvais/missale-bellovacense/editions/1756-paris-beauvais-desaint/artifacts/numelyo-source-index-8ea8d92d/beauvais-1756-source-index.json",
+      "rights_status": "licensed",
+      "rights_jurisdiction": "United States",
+      "license": "CC-BY-4.0",
+      "rights_basis": "Project-created factual acquisition/assembly map, CC BY 4.0 for original selection and metadata; individual facts and historical source matter are not claimed as authored expression.",
+      "provenance": "Exact per-image response hashes, byte sizes, source URLs, offered positions and provider-reported page labels, without host UI or descriptions. The index explicitly discloses the 830 declared source-image boundary and the bad out-of-bound metadata positions."
+    },
+    {
+      "id": "artifact.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756.numelyo-ocr-responses-8fa1464f",
+      "edition_id": "edition.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756",
+      "artifact_type": "unverified-ocr-response-package",
+      "media_type": "application/zip",
+      "source_url": "https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001102132797/IMG00000001",
+      "retrieved": "2026-10-20",
+      "sha256": "8fa1464f3e3d634e674721dba514844c4a6d7cb16a22e39ee6b290372e674cf3",
+      "byte_size": 1347100,
+      "storage": "tracked",
+      "path": "src/sources/works/diocese-of-beauvais/missale-bellovacense/editions/1756-paris-beauvais-desaint/artifacts/numelyo-ocr-responses-8fa1464f/beauvais-1756-numelyo-ocr-responses.zip",
+      "rights_status": "public-domain",
+      "rights_jurisdiction": "United States",
+      "rights_basis": "Machine OCR of the identified 1756 public-domain book adds no human authorship in the United States; the exact source object is also labelled Domaine public/Licence Ouverte by the holding library. Attribution/notice retained; no corrected liturgical text or modern translation is introduced.",
+      "provenance": "Project-created deterministic archive of 825 exact textual responses obtained from all 830 offered text URLs. Five requests returned modern HTMLerror pages at positions 4,5,769,825,827, each 8990 bytes; those bytes are withheld, individually hashed in OCR-INDEX.json, and are not OCR. All other 825 responses are unchanged.",
+      "notes": "Discovery aid only. Host OCR may omit chant and misread letters; it controls no native unit, checked passage text, complete-book claim or semantic negative result."
+    },
+    {
+      "id": "artifact.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756.numelyo-viewer-html-f800850b",
+      "edition_id": "edition.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756",
+      "artifact_type": "institutional-viewer-html",
+      "media_type": "text/html",
+      "source_url": "https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001102132797/IMG00000001",
+      "retrieved": "2026-10-20",
+      "sha256": "f800850bd1147158c318879ab7f21734767badeac7e24cec16028dcc6a3fbfdf",
+      "byte_size": 58397,
+      "storage": "restricted",
+      "rights_status": "unresolved",
+      "rights_basis": "No affirmative redistribution basis for the complete modern website wrapper, UI code, navigation and potentially third-party assets was established. Its exact source-specific factual notice is retained separately; the complete historical images are retained in two source packages. Offline readers can inspect the factual rights notice and all 830 source images without this wrapper.",
+      "notes": "Modern full HTML is withheld; historical image content remains retained under its independent basis."
+    },
+    {
+      "id": "artifact.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756.library-facts-7a65e7f0",
+      "edition_id": "edition.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756",
+      "artifact_type": "factual-metadata-derivative",
+      "media_type": "application/json",
+      "source_url": "https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001102132797/IMG00000001",
+      "retrieved": "2026-10-20",
+      "sha256": "7a65e7f0566ffb431046c704c20b7d08b9bbfa10c3fb918750e36d3b5160ff0b",
+      "byte_size": 1016,
+      "storage": "tracked",
+      "path": "src/sources/works/diocese-of-beauvais/missale-bellovacense/editions/1756-paris-beauvais-desaint/artifacts/library-facts-7a65e7f0/beauvais-1756-library-facts.json",
+      "rights_status": "licensed",
+      "rights_jurisdiction": "United States",
+      "license": "CC-BY-4.0",
+      "rights_basis": "Project-created bounded factual selection licensed CC BY 4.0; no exclusive claim over individual bibliographic facts or historical title, and no modern host UI or description retained.",
+      "derived_from": "artifact.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756.numelyo-viewer-html-f800850b",
+      "transformation": "Select exact factual identity, holding and source-object rights fields from complete hash-pinned viewer HTML; omit host UI, navigation, JavaScript, descriptions and unrelated content."
+    },
+    {
+      "id": "artifact.diocese-of-amiens.missale-ambianense.paris-du-pre-1487.bnf-catalogue-html-f68811b9",
+      "edition_id": "edition.diocese-of-amiens.missale-ambianense.paris-du-pre-1487",
+      "artifact_type": "institutional-catalogue-html",
+      "media_type": "text/html",
+      "source_url": "https://catalogue.bnf.fr/ark:/12148/cb368172690",
+      "retrieved": "2026-10-20",
+      "sha256": "f68811b92a5fe39895aca08d6fc64c6684e77532122282cfe65870fe8ed975d5",
+      "byte_size": 78179,
+      "storage": "restricted",
+      "rights_status": "unresolved",
+      "rights_basis": "No affirmative redistribution basis for this complete modern catalogue HTML, UI or descriptions was established. A factual identity/date selection is retained separately; the original facsimile remains unavailable within recorded public retrieval attempts.",
+      "notes": "Exact modern HTML is withheld; offline factual selection states the title, copy identifiers, source URLs and dual date roles where present."
+    },
+    {
+      "id": "artifact.diocese-of-amiens.missale-ambianense.paris-du-pre-1487.library-facts-2de10f90",
+      "edition_id": "edition.diocese-of-amiens.missale-ambianense.paris-du-pre-1487",
+      "artifact_type": "factual-metadata-derivative",
+      "media_type": "application/json",
+      "source_url": "https://catalogue.bnf.fr/ark:/12148/cb368172690",
+      "retrieved": "2026-10-20",
+      "sha256": "2de10f90aa0688e5f36e2fd59cdc3d291a12dda3889841ef7b7e33cb16e702a1",
+      "byte_size": 933,
+      "storage": "tracked",
+      "path": "src/sources/works/diocese-of-amiens/missale-ambianense/editions/1487-paris-du-pre/artifacts/library-facts-2de10f90/amiens-1487-library-facts.json",
+      "rights_status": "licensed",
+      "rights_jurisdiction": "United States",
+      "license": "CC-BY-4.0",
+      "rights_basis": "Project-created factual selection licensed CC BY 4.0; individual facts and historical source titles are not claimed as original authorship. No modern catalogue description, editorial prose or UI is reproduced.",
+      "derived_from": "artifact.diocese-of-amiens.missale-ambianense.paris-du-pre-1487.bnf-catalogue-html-f68811b9",
+      "transformation": "Select bounded bibliographic facts and reported-date roles from complete hash-pinned catalogue HTML; exclude modern UI and descriptions. No original book text acquired."
+    },
+    {
+      "id": "artifact.diocese-of-amiens.missale-ambianense.paris-regnault-colophon-1551.bnf-catalogue-html-74722543",
+      "edition_id": "edition.diocese-of-amiens.missale-ambianense.paris-regnault-colophon-1551",
+      "artifact_type": "institutional-catalogue-html",
+      "media_type": "text/html",
+      "source_url": "https://catalogue.bnf.fr/ark:/12148/cb36817272w",
+      "retrieved": "2026-10-20",
+      "sha256": "74722543a4b7a0b517a5c926e47aa177c5531aadcb17249bc2746fdb45189850",
+      "byte_size": 76973,
+      "storage": "restricted",
+      "rights_status": "unresolved",
+      "rights_basis": "No affirmative redistribution basis for this complete modern catalogue HTML, UI or descriptions was established. A factual identity/date selection is retained separately; the original facsimile remains unavailable within recorded public retrieval attempts.",
+      "notes": "Exact modern HTML is withheld; offline factual selection states the title, copy identifiers, source URLs and dual date roles where present."
+    },
+    {
+      "id": "artifact.diocese-of-amiens.missale-ambianense.paris-regnault-colophon-1551.library-facts-008212e1",
+      "edition_id": "edition.diocese-of-amiens.missale-ambianense.paris-regnault-colophon-1551",
+      "artifact_type": "factual-metadata-derivative",
+      "media_type": "application/json",
+      "source_url": "https://catalogue.bnf.fr/ark:/12148/cb36817272w",
+      "retrieved": "2026-10-20",
+      "sha256": "008212e17b31178899d1ac1bf50dcd8e1bcd297ce31da1a55c9c1be8f5a3bacd",
+      "byte_size": 1141,
+      "storage": "tracked",
+      "path": "src/sources/works/diocese-of-amiens/missale-ambianense/editions/1551-paris-regnault-colophon/artifacts/library-facts-008212e1/amiens-1551-1552-library-facts.json",
+      "rights_status": "licensed",
+      "rights_jurisdiction": "United States",
+      "license": "CC-BY-4.0",
+      "rights_basis": "Project-created factual selection licensed CC BY 4.0; individual facts and historical source titles are not claimed as original authorship. No modern catalogue description, editorial prose or UI is reproduced.",
+      "derived_from": "artifact.diocese-of-amiens.missale-ambianense.paris-regnault-colophon-1551.bnf-catalogue-html-74722543",
+      "transformation": "Select bounded bibliographic facts and reported-date roles from complete hash-pinned catalogue HTML; exclude modern UI and descriptions. No original book text acquired."
+    },
+    {
+      "id": "artifact.france-etalab.licence-ouverte.2011-10.official-pdf-44ff23ae",
+      "edition_id": "edition.france-etalab.licence-ouverte.2011-10",
+      "artifact_type": "official-reuse-licence-pdf",
+      "media_type": "application/pdf",
+      "source_url": "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
+      "retrieved": "2026-10-20",
+      "sha256": "44ff23ae2b5cce0d729d1b53b20d17aae625189b131c2dd9cb98d1fe0d0a2a90",
+      "byte_size": 540249,
+      "page_count": 3,
+      "storage": "tracked",
+      "path": "src/sources/works/france-etalab/licence-ouverte/editions/2011-10/artifacts/official-pdf-44ff23ae/licence-ouverte.pdf",
+      "rights_status": "licensed",
+      "rights_jurisdiction": "United States",
+      "license": "Licence-Ouverte-2.0",
+      "rights_basis": "The official data.gouv.fr dataset https://www.data.gouv.fr/datasets/licence-ouverte-2-0 applies Licence Ouverte 2.0 (LO 2.0) to its resource titled FR : Licence Ouverte/Open License Version 1.0. Exact API metadata names resource 6a95a2c8-a0a2-4d89-9710-9b5a901211d6, size 540249 bytes, SHA-1 d17b3f37081f90efb1db01290f157961ff423ab8 and resource update 2026-09-11. The whole direct official download https://static.data.gouv.fr/resources/licence-ouverte-2-0/20240711-152120/licence-ouverte.pdf is byte-identical. Retain Etalab/data.gouv.fr attribution, dataset/resource source, update 11 September 2026 and the operative LO 2.0 text link https://github.com/etalab/licence-ouverte/blob/master/LO.md ; do not imply official status or endorsement. The printed October 2011 v1.0 content is distinct from this independently established current LO 2.0 redistribution grant.",
+      "provenance": "Complete exact official PDF retrieved 20 October 2026. Independent review retrieved the same exact official dataset resource, verified byte identity and the API SHA 1/size, and read the exact dataset license and producer fields.",
+      "notes": "Source licence text is third-party material excluded from Triptych CC BY 4.0. Its 2011 operative wording controls Numelyo image-reuse conditions; its independently established LO 2.0 distribution grant permits retaining the full unchanged PDF."
+    },
+    {
+      "id": "artifact.france-etalab.licence-ouverte.2011-10.official-dataset-metadata-e3b111a9",
+      "edition_id": "edition.france-etalab.licence-ouverte.2011-10",
+      "artifact_type": "official-dataset-metadata",
+      "media_type": "application/json",
+      "source_url": "https://www.data.gouv.fr/api/1/datasets/licence-ouverte-2-0/",
+      "retrieved": "2026-10-20",
+      "sha256": "e3b111a97f450d17aaa3d4f80be1cc46b68d35d2ed31aabe843452313b5beeaa",
+      "byte_size": 11935,
+      "storage": "restricted",
+      "rights_status": "unresolved",
+      "rights_basis": "The exact full modern API response includes account/organization and unrelated resource metadata beyond the factual evidence needed here; it is withheld to preserve a bounded public factual selection. The retained facts derivative identifies the exact resource/producer/license/update and raw response hash, and the whole exact licensed PDF is retained.",
+      "notes": "Full modern API bytes withheld; exact resource facts and full 2011 PDF are retained for offline review."
+    },
+    {
+      "id": "artifact.france-etalab.licence-ouverte.2011-10.resource-facts-5a71f766",
+      "edition_id": "edition.france-etalab.licence-ouverte.2011-10",
+      "artifact_type": "factual-metadata-derivative",
+      "media_type": "application/json",
+      "source_url": "https://www.data.gouv.fr/api/1/datasets/licence-ouverte-2-0/",
+      "retrieved": "2026-10-20",
+      "sha256": "5a71f766ad5d04e7575d7973b3a531cfab32611457530da00fe78d5d97667591",
+      "byte_size": 1189,
+      "storage": "tracked",
+      "path": "src/sources/works/france-etalab/licence-ouverte/editions/2011-10/artifacts/resource-facts-5a71f766/etalab-2011-resource-facts.json",
+      "rights_status": "licensed",
+      "rights_jurisdiction": "United States",
+      "license": "CC-BY-4.0",
+      "rights_basis": "Project-created factual metadata selection licensed CC BY 4.0; individual catalogue and license facts are not claimed as original authored expression.",
+      "derived_from": "artifact.france-etalab.licence-ouverte.2011-10.official-dataset-metadata-e3b111a9",
+      "transformation": "Select dataset license, producer, exact v 1 PDF resource ID/title/URL/size/checksum/update from the full hash-pinned official API response; omit account and unrelated-resource metadata."
+    },
+    {
+      "id": "artifact.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756.licence-facts-96a1cb0f",
+      "edition_id": "edition.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756",
+      "artifact_type": "factual-rights-notice",
+      "media_type": "application/json",
+      "source_url": "https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001102132797/IMG00000001",
+      "retrieved": "2026-10-20",
+      "sha256": "96a1cb0f5297eb919497f1845760379b5f987f8fe125fb02da469d2c1e09decd",
+      "byte_size": 1866,
+      "storage": "tracked",
+      "path": "src/sources/works/diocese-of-beauvais/missale-bellovacense/editions/1756-paris-beauvais-desaint/artifacts/licence-facts-96a1cb0f/numelyo-licence-facts.json",
+      "rights_status": "licensed",
+      "rights_jurisdiction": "United States",
+      "license": "CC-BY-4.0",
+      "rights_basis": "Project-created bounded factual rights notice licensed CC BY 4.0. No modern policy prose, UI or artwork is copied; short exact source-object credit and license label are retained to satisfy source attribution.",
+      "provenance": "Independent rights reviewer read complete official object/conditions/culture-libre sources; raw exact source hashes are recorded, and underlying image and license PDF bases remain separate."
+    },
+    {
+      "id": "artifact.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756.numelyo-metadata-responses-401aca16",
+      "edition_id": "edition.diocese-of-beauvais.missale-bellovacense.paris-beauvais-desaint-1756",
+      "artifact_type": "source-metadata-response-package",
+      "media_type": "application/zip",
+      "source_url": "https://numelyo.bm-lyon.fr/livres-numerises/REST_info.php?pid=BML:BML_00GOO0100137001102132797&num_vue=1&Getimage=true&GetimageType=web&nb_vue=1000&dsID=IMG00000001",
+      "retrieved": "2026-10-20",
+      "sha256": "401aca16c23994414fa28aedc6ebfd3bd26f67bc5d3b54c987d7a67804d383f6",
+      "byte_size": 29808,
+      "storage": "tracked",
+      "path": "src/sources/works/diocese-of-beauvais/missale-bellovacense/editions/1756-paris-beauvais-desaint/artifacts/numelyo-metadata-responses-401aca16/beauvais-1756-numelyo-metadata-responses.zip",
+      "rights_status": "licensed",
+      "rights_jurisdiction": "United States",
+      "license": "CC0-1.0",
+      "rights_basis": "Numelyo official conditions https://numelyo.bm-lyon.fr/conditions_utilisation section1 explicitly place associated-work metadata under CC0. These minimal JSON responses contain factual image positions, URLs, page labels and count, without modern UI or descriptions. This separate metadata dedication does not replace the historical-image Licence Ouverte grant. Exact source responses are preserved unchanged.",
+      "provenance": "Project-created deterministic ZIP package preserving the complete exact image-map and sommaire JSON responses; NOTICE.txt states the830-image source boundary and malformed beyond-end metadata. No source bytes changed.",
+      "notes": "The sommaire response URL is https://numelyo.bm-lyon.fr/livres-numerises/REST_info.php?pid=BML:BML_00GOO0100137001102132797&GetSommaire=true . Provider labels are not accepted as printed pagination; initial null and170 beyond-end metadata records are explicitly distinguished from830 real images."
+    },
+    {
+      "id": "artifact.france-etalab.licence-ouverte.2017-04.official-pdf-df600a2f",
+      "edition_id": "edition.france-etalab.licence-ouverte.2017-04",
+      "artifact_type": "official-reuse-licence-pdf",
+      "media_type": "application/pdf",
+      "source_url": "https://static.data.gouv.fr/resources/licence-ouverte-2-0/20260909-072646/etalab-licence-ouverte-v2.0.pdf",
+      "retrieved": "2026-10-20",
+      "sha256": "df600a2fd08b887716612ac57fffbbe10c9e678961064c72214cebb89c90cbb6",
+      "byte_size": 237693,
+      "page_count": 4,
+      "storage": "tracked",
+      "path": "src/sources/works/france-etalab/licence-ouverte/editions/2017-04/artifacts/official-pdf-df600a2f/etalab-licence-ouverte-v2.0.pdf",
+      "rights_status": "licensed",
+      "license": "Licence-Ouverte-2.0",
+      "rights_basis": "The official dataset https://www.data.gouv.fr/datasets/licence-ouverte-2-0 expressly assigns Licence Ouverte 2.0 (API token lov2) to resource 020d3d44-26a9-4d90-84dd-b07ae55184d8. Its exact French v2.0 PDF has 237693 bytes and API SHA-1 828cd2ae49ae549622c584080f8910842ff9d193; independently retrieved bytes match. Retain Etalab/data.gouv.fr source attribution, resource update 11 September 2026, dataset/resource/LO2.0 links, and no-endorsement qualification. The complete four-page licence is retained unchanged and excluded from project CC BY4.0.",
+      "provenance": "Complete exact official resource retrieved during independent rights review. The internal footer Avril2017 identifies the content date; API resource update is 2026-09-11T07:22:19.820000+00:00. Exact dataset API response is hash-pinned in the retained source facts and the independent fetch receipt.",
+      "notes": "This whole source provides offline access to the operative v2.0 redistribution grant. It does not replace the separate October2011v1.0 content/Numelyo image grant."
+    },
+    {
+      "id": "artifact.united-states-copyright-office.compendium-chapter-900-visual-art-works.2021-01-28.official-pdf-78b39443",
+      "edition_id": "edition.united-states-copyright-office.compendium-chapter-900-visual-art-works.2021-01-28",
+      "artifact_type": "official-government-guidance-pdf",
+      "media_type": "application/pdf",
+      "source_url": "https://www.copyright.gov/comp3/chap900/ch900-visual-art.pdf",
+      "retrieved": "2026-10-20",
+      "sha256": "78b39443e5760867102d55666e3eecd73ae5c5ac13f05203a1e23deb7e74b265",
+      "byte_size": 1094916,
+      "page_count": 63,
+      "storage": "restricted",
+      "rights_status": "unresolved",
+      "rights_basis": "Government-authored U.S. guidance prose is public domain in the United States under17U.S.C.105. The exact fullPDF also contains five embedded image objects on artifactpages10(two),48,55,56 whose separate third-party status was not established in this bounded review. Consequently the fullPDF is not redistributed; its complete text-only derivative retains all63pages of extracted government guidance and legal quotations without any image objects. Offline readers can inspect all cited section909.3(A) wording in that derivative.",
+      "notes": "Complete originalPDF acquired; no claim that all illustrative images are publicdomain. Reopen fullPDF retention when the provenance/permission for each embeddedexample is established."
+    },
+    {
+      "id": "artifact.united-states-copyright-office.compendium-chapter-900-visual-art-works.2021-01-28.government-text-4e92938e",
+      "edition_id": "edition.united-states-copyright-office.compendium-chapter-900-visual-art-works.2021-01-28",
+      "artifact_type": "government-guidance-text-derivative",
+      "media_type": "text/plain",
+      "source_url": "https://www.copyright.gov/comp3/chap900/ch900-visual-art.pdf",
+      "retrieved": "2026-10-20",
+      "sha256": "4e92938e28a78c28bd9e3e964110fd3d52d7cf8148ff629f3ce333c9ba3e800b",
+      "byte_size": 244523,
+      "storage": "tracked",
+      "path": "src/sources/works/united-states-copyright-office/compendium-chapter-900-visual-art-works/editions/2021-01-28/artifacts/government-text-4e92938e/compendium-chapter900.txt",
+      "rights_status": "public-domain",
+      "rights_jurisdiction": "United States",
+      "rights_basis": "The text-only derivative contains U.S. Copyright Office government-authored guidance and cited U.S. statutes/judicial material, publicdomain under17U.S.C.105 and the government-edicts basis. All five embedded visualexamples are excluded; no claim over those unassessed images is made. This officialguidance is third-partysource content excluded from Triptych CC BY4.0.",
+      "derived_from": "artifact.united-states-copyright-office.compendium-chapter-900-visual-art-works.2021-01-28.official-pdf-78b39443",
+      "transformation": "pdftotext -layout over the exact complete63-page sourcePDF; preserve extracted text from every page, pageformfeeds and layout whitespace. All imageobjects are omitted by the text extraction. No wording correction, translation or substitute example is introduced. Parent SHA-256 78b39443e5760867102d55666e3eecd73ae5c5ac13f05203a1e23deb7e74b265.",
+      "provenance": "The independent reviewer inspected section909.3(A), printedchapterp22, and the extractedwholechapter extent. This is a complete63-page text extraction, not a complete visualchapter or the wholeCompendium.",
+      "notes": "All cited photographic-copying guidance is retained offline; visual illustrations remain outside this artifact."
+    }
+  ],
+  "retention": {
+    "retained_payload_count": 13,
+    "retained_payload_bytes": 146192997,
+    "source_image_responses": 830,
+    "source_image_bytes": 143177599,
+    "source_ocr_text_responses": 825,
+    "source_ocr_error_responses": 5,
+    "source_ocr_error_decision": "Defer modern host HTML error bodies at positions4,5,769,825,827; each8990bytes; exact hashes/URLs inside OCR package index.",
+    "source_raw_wrappers": "Three complete modern BnF/Numelyo HTML wrappers and one exact modern dataset API response are hash-registered restricted with bounded factual derivatives.",
+    "source_license_pdf": "artifact.france-etalab.licence-ouverte.2011-10.official-pdf-44ff23ae",
+    "supporting_raw_policy_sources": [
+      {
+        "url": "https://numelyo.bm-lyon.fr/conditions_utilisation",
+        "sha256": "eaf6e70740e3c7c13d3b8c674cf3dd35406310f846f54c3494c78abd618c15e9",
+        "byte_size": 27325,
+        "decision": "defer; modern website wrapper/policy HTML has no separately established redistribution basis; complete factual permission/credit findings retained in licence-facts artifact"
+      },
+      {
+        "url": "https://bm-lyon.fr/culture-libre-des-donnees-ouvertes",
+        "sha256": "e83b3a00dbf43fe4be96a759680ba7817a743dfb01847f132ffcba2f14ac4358",
+        "byte_size": 322827,
+        "decision": "defer; modern wrapper/policy HTML basis not established; factual no-prior-contact/credit finding retained"
+      }
+    ],
+    "retained_exact_metadata_responses": 2,
+    "supporting_reviewer_fetch_dispositions": {
+      "schema_version": 1,
+      "record_type": "reviewer-source-acquisition-dispositions",
+      "checked_on": "2026-10-20",
+      "responses": [
+        {
+          "filename": "licence-ouverte-dataset.pdf",
+          "source_url": "https://static.data.gouv.fr/resources/licence-ouverte-2-0/20240711-152120/licence-ouverte.pdf",
+          "sha256": "44ff23ae2b5cce0d729d1b53b20d17aae625189b131c2dd9cb98d1fe0d0a2a90",
+          "byte_size": 540249,
+          "role": "material-exact-2011-license-resource",
+          "proposed_disposition": "retain-exact-pdf",
+          "reason": "Official dataset expressly licenses this exact resource LO2.0; bytes equal the Numelyo-linked 2011 PDF."
+        },
+        {
+          "filename": "etalab-licence-ouverte-v2.0.pdf",
+          "source_url": "https://static.data.gouv.fr/resources/licence-ouverte-2-0/20260909-072646/etalab-licence-ouverte-v2.0.pdf",
+          "sha256": "df600a2fd08b887716612ac57fffbbe10c9e678961064c72214cebb89c90cbb6",
+          "byte_size": 237693,
+          "role": "material-offline-operative-lo2-grant",
+          "proposed_disposition": "retain-exact-pdf",
+          "reason": "Official dataset expressly licenses this exact resource LO2.0; four pages, April2017 content version, resource updated11September2026."
+        },
+        {
+          "filename": "licence-ouverte-dataset.json",
+          "source_url": "https://www.data.gouv.fr/api/1/datasets/licence-ouverte-2-0/",
+          "sha256": "e3b111a97f450d17aaa3d4f80be1cc46b68d35d2ed31aabe843452313b5beeaa",
+          "byte_size": 11935,
+          "role": "material-resource-license-producer-update-proof",
+          "proposed_disposition": "defer-exact-raw-api-retain-factual-derivative",
+          "reason": "The public record retains exact source/resource/license/checksum/update facts. Full modern API carries unrelated resource/account metadata whose separate redistribution scope was not assessed; do not copy the entire response into public artifacts. This independent fetch can differ from the lane fetch in mutable metrics; core resource facts match."
+        },
+        {
+          "filename": "numelyo-conditions.html",
+          "source_url": "https://numelyo.bm-lyon.fr/conditions_utilisation",
+          "sha256": "eaf6e70740e3c7c13d3b8c674cf3dd35406310f846f54c3494c78abd618c15e9",
+          "byte_size": 27325,
+          "role": "material-image-grant-metadata-cc0-and-credit",
+          "proposed_disposition": "defer-full-modern-wrapper-retain-factual-rights-notice",
+          "reason": "Exact image/license/metadata rights findings and source hash retained. Full UI/navigation/policy wrapper distribution was not independently cleared."
+        },
+        {
+          "filename": "bmlyon-culture-libre.html",
+          "source_url": "https://bm-lyon.fr/culture-libre-des-donnees-ouvertes",
+          "sha256": "e83b3a00dbf43fe4be96a759680ba7817a743dfb01847f132ffcba2f14ac4358",
+          "byte_size": 322827,
+          "role": "material-no-prior-contact-and-credit-corroboration",
+          "proposed_disposition": "defer-full-modern-wrapper-retain-factual-rights-notice",
+          "reason": "Exact factual permission/credit findings retained; full modern wrapper and unrelated article/visual material not independently cleared."
+        },
+        {
+          "filename": "compendium-chapter900.pdf",
+          "source_url": "https://www.copyright.gov/comp3/chap900/ch900-visual-art.pdf",
+          "sha256": "78b39443e5760867102d55666e3eecd73ae5c5ac13f05203a1e23deb7e74b265",
+          "byte_size": 1094916,
+          "role": "material-us-scanning-originality-rule-909.3A",
+          "proposed_disposition": "defer-full-pdf-retain-complete-text-only-derivative",
+          "reason": "Government-authored chapter prose is separately retainable. The whole PDF embeds five illustrations whose thirdparty status was not fully established; do not infer that section105 clears those images."
+        },
+        {
+          "filename": "compendium-chapter900.txt",
+          "source_url": "https://www.copyright.gov/comp3/chap900/ch900-visual-art.pdf",
+          "sha256": "4e92938e28a78c28bd9e3e964110fd3d52d7cf8148ff629f3ce333c9ba3e800b",
+          "byte_size": 244523,
+          "role": "material-extracted-government-prose-909.3A",
+          "proposed_disposition": "retain-derived-text",
+          "reason": "Mechanical pdftotext -layout extraction of all63chapterPDFpages, with all embedded image objects omitted. Government-authored guidance prose and cited US statutory/judicial material have defensible U.S.public-domain basis. This is complete textual extraction of the chapter, not a complete visual reproduction or the entire Compendium."
+        },
+        {
+          "filename": "LO2.md",
+          "source_url": "https://raw.githubusercontent.com/etalab/licence-ouverte/master/LO.md",
+          "sha256": "a1deb9d7554ad10e041dbd7440b3dec0ac0d3679f9e1655ee9d850908b015995",
+          "byte_size": 8026,
+          "role": "superseded-operative-grant-route",
+          "proposed_disposition": "defer-superseded-github-route",
+          "reason": "Official whole French2017LO2PDF under express dataset grant now supplies the offline operative grant. No self-licensing inference is needed for this Github file."
+        },
+        {
+          "filename": "etalab-licence-ouverte-v2.0.txt",
+          "source_url": "https://static.data.gouv.fr/resources/licence-ouverte-2-0/20260909-072646/etalab-licence-ouverte-v2.0.pdf",
+          "sha256": "df8682f5cdde0be93866c12e9187c6e074da7333d682a36193e8f77bdd16c166",
+          "byte_size": 9031,
+          "role": "inspection-only-extraction-of-retained-whole-pdf",
+          "proposed_disposition": "do-not-retain-redundant-extraction",
+          "reason": "The entire original PDF is retained and extraction is reproducible; this inspection derivative supplies no independent source bytes."
+        },
+        {
+          "filename": "etalab1-html.html",
+          "source_url": "https://www.data.gouv.fr/pages/legal/licences/etalab-1.0",
+          "sha256": "576f895c956f9b7a17d31fcdb4c8c1c600431380ff1ddd44bf066cba56fde180",
+          "byte_size": 81305,
+          "role": "superseded-official-html-alternative",
+          "proposed_disposition": "defer-full-modern-wrapper",
+          "reason": "Alternative shorter2011text route investigated before exact wholePDFdataset clearance; not needed for final grant. Whole2011PDF retained instead."
+        },
+        {
+          "filename": "etalab-github-contents.json",
+          "source_url": "https://api.github.com/repos/etalab/licence-ouverte/contents/",
+          "sha256": "4884426033a35991f64d8f8e4a205b6a23b08ce833f77cc921f34656bbedd2bd",
+          "byte_size": 4501,
+          "role": "discovery-only-alternative-search",
+          "proposed_disposition": "defer-unneeded-discovery-response",
+          "reason": "This search alternative supplies no final publication claim or permission basis; final exact official dataset and resource supersede it."
+        },
+        {
+          "filename": "etalab-readme.org",
+          "source_url": "https://raw.githubusercontent.com/etalab/licence-ouverte/master/README.org",
+          "sha256": "2438115e37ae7c3e1661e9f5afdc477e353a0a989e95e8c508a898bc11774886",
+          "byte_size": 687,
+          "role": "discovery-only-alternative-search",
+          "proposed_disposition": "defer-unneeded-discovery-response",
+          "reason": "This alternative was inspected only to identify official repository versions; no final permission claim depends on it."
+        },
+        {
+          "filename": "data-gouv-organization.json",
+          "source_url": "https://www.data.gouv.fr/api/1/organizations/data-gouv-fr/",
+          "sha256": "ec32382fec18b1b38d1b070a8b966f88c05b250784ee98cdf54102ca2a6f7da9",
+          "byte_size": 13468,
+          "role": "discovery-only-producer-crosscheck",
+          "proposed_disposition": "defer-unneeded-organization-response",
+          "reason": "Final dataset resource metadata itself identifies the producer; organization profile introduces no separate material finding."
+        }
+      ],
+      "scope": "Exact local response/derivative files acquired by independent reviewer. Parent-owned original viewer/catalogue/image/OCR/metadata fetches remain in the parent retention ledger. No failed search rendering or model-transcribed source text is treated as acquired bytes."
+    },
+    "diagnostic_url_limitations": "Six unused early diagnostics lack an exact preserved clean request URL: Beauvais first-page, OAI and full delivery; Numelyo initial not-found route; BnF search; guessed title-path diagnostic. Their exact saved bytes are hash-identified here; provider/object context is preserved without fabricated endpoints or session-bearing links."
+  },
+  "consultation_acquisitions": [
+    {
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb36817359z",
+      "sha256": "d79d0fdcda4b6347ae74225ebf56fab0f235ee321e1794cce7bf1770ac86209b",
+      "byte_size": 79041,
+      "decision": "defer restricted modern catalogue UI; existing1756copy relation retained in factualselection, bookoriginal separatelyacquired",
+      "offline_substitute": "Retained source images, exact metadata, full2011licensePDF or bounded factualselection as specified."
+    },
+    {
+      "url": "https://usuarium.elte.hu/book/6887/view",
+      "sha256": "c313a9f61bf6b0048b443da184318f2286fee1690f42f54443b91f6c59a00ac9",
+      "byte_size": 16898,
+      "decision": "defer duplicate metadata consultation; existingcanonical source controls6887; BnF factualderivative retains new dual-date finding",
+      "offline_substitute": "Retained source images, exact metadata, full2011licensePDF or bounded factualselection as specified."
+    },
+    {
+      "url": "https://usuarium.elte.hu/book/7099/view",
+      "sha256": "7d535581d1af2da3318ecc51089345267a463f276a9a7be0bceed06aa0aee83d",
+      "byte_size": 17106,
+      "decision": "defer duplicate catalogue UI; existing7099source remains; exactoriginal nowretained",
+      "offline_substitute": "Retained source images, exact metadata, full2011licensePDF or bounded factualselection as specified."
+    },
+    {
+      "url": "https://usuarium.elte.hu/book/70/view",
+      "sha256": "3a1e8659c4bca99fb3618eccce686bb182d43a581f684b60bdf84e5fe37b2102",
+      "byte_size": 58266,
+      "decision": "defer modern catalogue UI; no affirmative wholeHTML redistributionbasis assessed; factual1487sourceidentity and PDF401bound retained",
+      "offline_substitute": "Retained source images, exact metadata, full2011licensePDF or bounded factualselection as specified."
+    },
+    {
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb36817272w",
+      "sha256": "74722543a4b7a0b517a5c926e47aa177c5531aadcb17249bc2746fdb45189850",
+      "byte_size": 76973,
+      "decision": "restricted registered parent; factualderivative retained",
+      "offline_substitute": "Retained source images, exact metadata, full2011licensePDF or bounded factualselection as specified."
+    },
+    {
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb368172690",
+      "sha256": "f68811b92a5fe39895aca08d6fc64c6684e77532122282cfe65870fe8ed975d5",
+      "byte_size": 78179,
+      "decision": "restricted registered parent; factualderivative retained",
+      "offline_substitute": "Retained source images, exact metadata, full2011licensePDF or bounded factualselection as specified."
+    },
+    {
+      "url": "https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001102132797/IMG00000001",
+      "sha256": "f800850bd1147158c318879ab7f21734767badeac7e24cec16028dcc6a3fbfdf",
+      "byte_size": 58397,
+      "decision": "restricted registered modern UIparent; objectfacts/rights notice retained",
+      "offline_substitute": "Retained source images, exact metadata, full2011licensePDF or bounded factualselection as specified."
+    },
+    {
+      "url": "https://numelyo.bm-lyon.fr/livres-numerises/REST_info.php?pid=BML:BML_00GOO0100137001102132797&num_vue=1&Getimage=true&GetimageType=web&nb_vue=1000&dsID=IMG00000001",
+      "sha256": "084805a28399a67635d9885a15269a581570ff9c94b91a942281e30735747e29",
+      "byte_size": 440775,
+      "decision": "retained exactmetadata package; source830bound excludes170null-order entries",
+      "offline_substitute": "Retained source images, exact metadata, full2011licensePDF or bounded factualselection as specified."
+    },
+    {
+      "url": "https://numelyo.bm-lyon.fr/livres-numerises/REST_info.php?pid=BML:BML_00GOO0100137001102132797&GetSommaire=true",
+      "sha256": "407bcb6d492eaedb0e54c8b0ac515da7b144244fa1b7b793c2e8cd44ff3da9db",
+      "byte_size": 32115,
+      "decision": "retained exactmetadata package; providerlabels distinctfromprintedpages",
+      "offline_substitute": "Retained source images, exact metadata, full2011licensePDF or bounded factualselection as specified."
+    },
+    {
+      "url": "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
+      "sha256": "44ff23ae2b5cce0d729d1b53b20d17aae625189b131c2dd9cb98d1fe0d0a2a90",
+      "byte_size": 540249,
+      "decision": "retained exactfullPDF under independent officialdatasetLO2.0grant",
+      "offline_substitute": "Retained source images, exact metadata, full2011licensePDF or bounded factualselection as specified."
+    },
+    {
+      "url": "https://numelyo.bm-lyon.fr/livres-numerises/REST_info.php?pid=BML:BML_00GOO0100137001102132797&num_vue=1&Getimage=true&GetimageType=high&nb_vue=2&dsID=IMG00000009",
+      "sha256": "63557ad93909d43f23daf6c9949e215425eff8942baf42303a0b853b422ef41a",
+      "byte_size": 649,
+      "decision": "defer redundant diagnosticmetadata; does not establish masterimageavailability; published sourceindex and fullwebsequence retain usableview identity",
+      "offline_substitute": "Retained source images, exact metadata, full2011licensePDF or bounded factualselection as specified."
+    }
+  ],
+  "search_response_dispositions": [
+    {
+      "source_url": "https://archive.org/advancedsearch.php?q=title%3A%28missale%29+AND+%28Ambianensis+OR+Ambianense+OR+Amiens%29&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=year&rows=100&output=json",
+      "sha256": "6e806ec36879eec6d565d093134ad4c13ed108137034137371b301444321ec71",
+      "byte_size": 533,
+      "decision": "defer diagnostic search response; the bounded query and contrary item finding are recorded here. No redistributable original-book bytes were supplied by this response."
+    }
+  ],
+  "independent_review": {
+    "decision": "accepted",
+    "subject": {
+      "candidate_version": 7,
+      "base_head": "e2267fdeb417d99b03d8cefea05fc30397bdf816",
+      "packet": {
+        "sha256": "34590d0ec99890da954f700f000de0ccaa543d700ed30d4b13b736389a0f5280",
+        "byte_size": 90088
+      },
+      "dossier": {
+        "sha256": "1f52bd88186e642dba8643cb535f41760e878e4aa480c3177b4078772ccfae18",
+        "byte_size": 5837
+      },
+      "source_records": 28,
+      "retained_payloads": 13,
+      "retained_payload_bytes": 146192997,
+      "inventory_changes": 19
+    },
+    "source_findings": [
+      "Every manifest and payload hash/size/ownership pin matched; all19 inventory preimages matched the stated base commit. Existing Beauvais7099/6955 source memberships and old candidate identities are preserved.",
+      "The two unchanged415-image archives contain exactly830 distinct offered positions. Every retained image equals its fetched source response, source-map URL and individual receipt; total source-image bytes143177599. Independent djpeg decoding succeeded for all830 exact archived JPEGs.",
+      "All825 textual OCR members equal the fetched responses. The five8990-byte modern HTML errors at4,5,769,825,827 are individually hash-identified and excluded. OCR remains unverified discovery material and supplies no literal native-text unit.",
+      "Both exact small metadata responses are retained unchanged, including the GetCountPage830 bound, initial sommaire null and170 malformed beyond-end image-map entries. Their CC0 metadata basis is distinct from the image Licence Ouverte basis.",
+      "The Amiens1487 record is catalogue metadata only, with BnF B-766/CIBN M-404/ISTC im00644070 preserved; no Amiens stage is proposed. The1551/1552 record preserves the catalogue publication attribution and reported colophon date as distinct roles, with no direct original reading or numeric chronology correction."
+    ],
+    "stage_findings": [
+      "The title directly establishes1756 printing and bishop/chapter attribution. The mandate is dated19April1756; publication and command are separate events.",
+      "The final dossier preserves the printed recipient structure: diocesan churches, chapters, colleges, monasteries and orders, followed by the qualified priests clause. It does not extend the priest-relative clause over the institutional list or infer universal religious-order jurisdiction or actual uptake.",
+      "All six modest component labels are supported: selected calendar16/24, general rubrics28/50 and Ordo rubrics267, Mass Order267/p193, Canon303/p229 and313/p239, the prefatory account of propers11–13, and visible chant notation292left/313. The unnotated Advent preface is292right/p218.",
+      "One documented publication state, zero transitions and one research gap are accepted. Text coverage is not-transcribed, with no native-text binding, complete literal text, predecessor ancestry, physical completeness or uniform reception claim."
+    ],
+    "rights_findings": [
+      "The Beauvais source object expressly carries Domaine public/Licence Ouverte and shelfmark SJ L013/12. Official library conditions support reuse on any medium and prescribe BmLyon | numelyo (SJ L013/12); notification is encouraged rather than required. This provider grant is separate from the U.S.public-domain reading of the1756 work and faithful flat-page copying.",
+      "The complete exact October2011 three-page PDF is independently distributed as an official data.gouv.fr dataset resource under LO2.0. Exact resource SHA-1, SHA-256, size, producer and last-update facts were independently checked. This does not rely on self-licensing or foreign-government section105 reasoning.",
+      "The complete exact April2017 four-page LO2.0 PDF is also retained under the same explicit dataset resource grant and matches the independently fetched resource. Content-version dates and September2026 resource-update dates remain distinct.",
+      "The USCO63-page chapter PDF is hash-registered without distributing its unassessed embedded images. The full244523-byte text-only extraction is reproducible from that exact source, retains all63 formfeed page boundaries and section909.3(A), and has a defensible U.S.government-prose/statutory-judicial public-domain basis. No whole-visual-PDF clearance is asserted.",
+      "Source material remains outside project CC BY4.0; original factual selections do not claim copyright over individual facts. Modern wrappers/API/error bodies have explicit bounded factual derivatives or deferral records rather than being copied into source payloads."
+    ],
+    "public_private_boundary": {
+      "textual_members_screened": 843,
+      "private_local_path_or_auth_header_hits": 0,
+      "scope": "Reviewed the13 proposed payloads and source manifests; scratch packet locators and review acquisitions are not proposed public payloads. The later root-owned public research envelope is outside this frozen acceptance and can be checked separately."
+    },
+    "scope": "Acceptance covers the exact frozen source packet and bounded dossier suggestion. Canonical integration and this subsequent factual envelope are separate operations."
+  },
+  "counts": {
+    "new_candidates": 1,
+    "updated_candidates": 2,
+    "new_inventory_sources": 3,
+    "retained_source_image_responses": 830,
+    "retained_image_response_bytes": 143177599,
+    "retained_ocr_responses": 825,
+    "withheld_ocr_host_errors": 5,
+    "new_native_text_units": 0,
+    "whole_book_text_complete": 0,
+    "source_library_records": 28,
+    "retained_payloads": 13,
+    "retained_payload_bytes": 146192997,
+    "documented_publication_stages_proposed": 1,
+    "transitions_proposed": 0,
+    "amiens_originals_acquired": 0
+  },
+  "remaining_work": [
+    "Reach an authorized Amiens original delivery: Gallica bpt6k8708386b and bpt6k110637z returned403; USUARIUM70 PDF returned401. No credentials were used. Then inspect original title/colophon and scoped local-use evidence before any stage admission.",
+    "Collate exact Beauvais1756 Lyon and BnF copies and division/leaf extent before physical completeness, copy-defect or substantive textual-difference claims.",
+    "A complete independently checked literal-text extent, immutable binding and separate text review would be required before native-text or whole-book admission.",
+    "Reopen restricted modern wrappers or the USCO visual PDF only with a specific redistribution basis for the excluded modern/third-party material; lawful images, metadata, factual notices and government prose are already retained.",
+    "Master downloads timed out or returned no bytes within the recorded attempt bounds; no global unavailability claim is made."
+  ],
+  "third_party_notice": "Beauvais 1756: BmLyon | numelyo (SJ L 013/12). Source https://numelyo.bm-lyon.fr/f_view/BML:BML_00GOO0100137001102132797/IMG00000001 . All 830 offered web JPEG images are preserved unchanged in two project-created packages, under the library's Domaine public / Licence Ouverte-Open Licence notice and the separate U.S. public-domain basis for the 1756 work and faithful flat-page reproductions. Retain producer/source/date, licence link and no-endorsement qualifications; no physical completeness, checked liturgical text or whole-book transcription is implied. Exact October2011 Etalab licence PDF is retained unchanged under the independent data.gouv.fr dataset LO2.0 grant, resource last updated11September2026; its operative content remains v1.0. The source matter is excluded from Triptych CC BY4.0. Factual selections and acquisition metadata are project-created CC BY4.0; they do not claim ownership of individual facts. The exact four-page April 2017 LO2.0 French licence is also retained under the official dataset grant, separately from the older v1.0 content. Complete U.S. Copyright Office chapter900 government text is retained under its U.S. public-domain basis; five unassessed embedded images are excluded and the complete originalPDF remains hash-registered without retained bytes.",
+  "integration_boundary": "This owner records bounded research and independently accepted proposals. It does not itself assert that source installation, stage integration, final repository gates, commits or publication occurred.",
+  "saved_diagnostic_response_dispositions": [
+    {
+      "response_label": "amiens-f1.response",
+      "sha256": "a4251ed38c770cc2d84f7b4fd1c42e9ad7a076b3289063f77e652906ed77d48a",
+      "byte_size": 5487,
+      "retrieved": "2026-10-20",
+      "context": "Attempted original first-page image for the named Gallica book.",
+      "result": "Saved Cloudflare block HTML, not a source image.",
+      "decision": "defer exact body",
+      "reason": "Modern anti-bot response has no assessed redistribution basis and no original historical content.",
+      "request_url_precision": "exact request URL preserved",
+      "offline_limit": "The factual access/search outcome is preserved; this diagnostic does not supply original-book content or establish a global absence.",
+      "reopen_when": "Needed for a material claim and exact request identity plus a specific redistribution basis are established.",
+      "source_url": "https://gallica.bnf.fr/ark:/12148/bpt6k8708386b/f1.highres"
+    },
+    {
+      "response_label": "amiens1487-f1.response",
+      "sha256": "78cb8671c9237010aebdbc39cb02e675e734d059535650a4307e9c28525e0b5e",
+      "byte_size": 5487,
+      "retrieved": "2026-10-20",
+      "context": "Attempted original first-page image for the named Gallica book.",
+      "result": "Saved Cloudflare block HTML, not a source image.",
+      "decision": "defer exact body",
+      "reason": "Modern anti-bot response has no assessed redistribution basis and no original historical content.",
+      "request_url_precision": "exact request URL preserved",
+      "offline_limit": "The factual access/search outcome is preserved; this diagnostic does not supply original-book content or establish a global absence.",
+      "reopen_when": "Needed for a material claim and exact request identity plus a specific redistribution basis are established.",
+      "source_url": "https://gallica.bnf.fr/ark:/12148/bpt6k110637z/f1.highres"
+    },
+    {
+      "response_label": "beauvais-f1.response",
+      "sha256": "3474b2b29845e7c3b4b1b91f82434bc3fbac1c1f2b838df093a90b8c5182ebfd",
+      "byte_size": 5487,
+      "retrieved": "2026-10-20",
+      "context": "Attempted first-page image for Beauvais Gallica bpt6k56984743.",
+      "result": "Saved Cloudflare block HTML, not a source image.",
+      "decision": "defer exact body",
+      "reason": "Modern anti-bot response has no assessed redistribution basis and no original historical content.",
+      "request_url_precision": "Exact early diagnostic request URL was not preserved; only provider/object/attempt context is known. No endpoint is reconstructed from the filename.",
+      "offline_limit": "The factual access/search outcome is preserved; this diagnostic does not supply original-book content or establish a global absence.",
+      "reopen_when": "Needed for a material claim and exact request identity plus a specific redistribution basis are established.",
+      "provider_url": "https://gallica.bnf.fr"
+    },
+    {
+      "response_label": "beauvais-oai.response",
+      "sha256": "e744475923b66604d4efc5c09c1e926f238ba303dc72589a1ad4ecfadb9bc7f1",
+      "byte_size": 5487,
+      "retrieved": "2026-10-20",
+      "context": "Attempted Gallica OAI identity metadata for Beauvais bpt6k56984743.",
+      "result": "Saved Cloudflare block HTML, not source metadata or a book.",
+      "decision": "defer exact body",
+      "reason": "Modern block response is unnecessary for original-book reading and has no assessed redistribution basis.",
+      "request_url_precision": "Exact early diagnostic request URL was not preserved; only provider/object/attempt context is known. No endpoint is reconstructed from the filename.",
+      "offline_limit": "The factual access/search outcome is preserved; this diagnostic does not supply original-book content or establish a global absence.",
+      "reopen_when": "Needed for a material claim and exact request identity plus a specific redistribution basis are established.",
+      "provider_url": "https://gallica.bnf.fr"
+    },
+    {
+      "response_label": "beauvais-full.response",
+      "sha256": "525ac172de35d3a65fe3b737db7f5e97c99a7e5ec15059ef2b30153160ae296f",
+      "byte_size": 4549,
+      "retrieved": "2026-10-20",
+      "context": "Attempted Gallica full-book delivery for Beauvais bpt6k56984743.",
+      "result": "Saved Cloudflare block HTML, not source metadata or a book.",
+      "decision": "defer exact body",
+      "reason": "Modern block response is unnecessary for original-book reading and has no assessed redistribution basis.",
+      "request_url_precision": "Exact early diagnostic request URL was not preserved; only provider/object/attempt context is known. No endpoint is reconstructed from the filename.",
+      "offline_limit": "The factual access/search outcome is preserved; this diagnostic does not supply original-book content or establish a global absence.",
+      "reopen_when": "Needed for a material claim and exact request identity plus a specific redistribution basis are established.",
+      "provider_url": "https://gallica.bnf.fr"
+    },
+    {
+      "response_label": "numelyo-amiens-query.html",
+      "sha256": "865c6722d140dc9097db23f3981f6b22ca722572a326166298b6d74d31c1981f",
+      "byte_size": 85505,
+      "retrieved": "2026-10-20",
+      "context": "Amiens original-discovery query; the response itself preserves this request path.",
+      "result": "Broad unfiltered catalogue output; not a semantic negative for Amiens.",
+      "decision": "defer exact body",
+      "reason": "Modern search/UI body is not needed for the retained bounded finding and its redistribution basis is unassessed.",
+      "request_url_precision": "exact request URL preserved",
+      "offline_limit": "The factual access/search outcome is preserved; this diagnostic does not supply original-book content or establish a global absence.",
+      "reopen_when": "Needed for a material claim and exact request identity plus a specific redistribution basis are established.",
+      "source_url": "https://numelyo.bm-lyon.fr/list?search_keys%5B0%5D=Missale%20Ambianensis&rows=25"
+    },
+    {
+      "response_label": "numelyo-amiens-results.html",
+      "sha256": "0e8db9e5f27fcfe10be0ba3521c9cde3aec9828ed65d171322e2741b190a37a3",
+      "byte_size": 53243,
+      "retrieved": "2026-10-20",
+      "context": "Amiens original-discovery query; the response itself preserves this request path.",
+      "result": "Broad unfiltered catalogue output; not a semantic negative for Amiens.",
+      "decision": "defer exact body",
+      "reason": "Modern search/UI body is not needed for the retained bounded finding and its redistribution basis is unassessed.",
+      "request_url_precision": "exact request URL preserved",
+      "offline_limit": "The factual access/search outcome is preserved; this diagnostic does not supply original-book content or establish a global absence.",
+      "reopen_when": "Needed for a material claim and exact request identity plus a specific redistribution basis are established.",
+      "source_url": "https://numelyo.bm-lyon.fr/list?search_keys%5Bcore_14%5D=Missale%20Ambianensis"
+    },
+    {
+      "response_label": "numelyo-results.html",
+      "sha256": "e491397cd0cec8385afb34fe88423671b69b168b5c84ccf8efc65b9bac29fa07",
+      "byte_size": 2897,
+      "retrieved": "2026-10-20",
+      "context": "Early Numelyo discovery route.",
+      "result": "Saved Page non trouvée HTML; no book content.",
+      "decision": "defer exact body",
+      "reason": "Unused modern error page with no assessed redistribution basis.",
+      "request_url_precision": "Exact early diagnostic request URL was not preserved; provider is known. No endpoint is reconstructed.",
+      "offline_limit": "The factual access/search outcome is preserved; this diagnostic does not supply original-book content or establish a global absence.",
+      "reopen_when": "Needed for a material claim and exact request identity plus a specific redistribution basis are established.",
+      "provider_url": "https://numelyo.bm-lyon.fr"
+    },
+    {
+      "response_label": "bnf-amiens-results.html",
+      "sha256": "d733673062f9c37eda28d437b204ace484aeb2d0cdc87d3c70c7072f39f1db98",
+      "byte_size": 251651,
+      "retrieved": "2026-10-20",
+      "context": "Early BnF Amiens missal catalogue search, superseded by exact cb368172690 and cb36817272w records.",
+      "result": "Modern search-results wrapper, unused as direct original-book evidence.",
+      "decision": "defer exact body",
+      "reason": "Exact catalogue records and their bounded factual selections supply the material identity findings. The full search/UI body may carry session metadata; it is not published.",
+      "request_url_precision": "Exact original search URL was not preserved in a clean request receipt. Session-bearing embedded links are neither copied nor treated as exact request evidence.",
+      "offline_limit": "The factual access/search outcome is preserved; this diagnostic does not supply original-book content or establish a global absence.",
+      "reopen_when": "Needed for a material claim and exact request identity plus a specific redistribution basis are established.",
+      "provider_url": "https://catalogue.bnf.fr"
+    },
+    {
+      "response_label": "title-test.jpg",
+      "sha256": "81c54642511b511b2efc863be9341e846ca583db14ece3661a7b472703e2751a",
+      "byte_size": 891,
+      "retrieved": "2026-10-20",
+      "context": "Early guessed Numelyo image-path diagnostic.",
+      "result": "891-byte HTML response saved under a .jpg filename; not JPEG source content.",
+      "decision": "defer exact body",
+      "reason": "Unused modern error response, not admitted as an image; correct title image and the whole830-image sequence are retained.",
+      "request_url_precision": "Exact early guessed URL was not preserved; no endpoint is reconstructed.",
+      "offline_limit": "The factual access/search outcome is preserved; this diagnostic does not supply original-book content or establish a global absence.",
+      "reopen_when": "Needed for a material claim and exact request identity plus a specific redistribution basis are established.",
+      "provider_url": "https://numelyo.bm-lyon.fr"
+    },
+    {
+      "response_label": "title9.jpg",
+      "source_url": "https://numelyo.bm-lyon.fr/f_eserv/BML:BML_00GOO0100137001102132797/web_JPG00000009.jpg",
+      "sha256": "ebc861b13e630f2a976a22075613a752c2a299848bf074e061107cc2bb608008",
+      "byte_size": 114462,
+      "decision": "reuse exact retained member; do not retain a duplicate payload",
+      "retained_member": "images/0009.jpg in image part1",
+      "rights_basis": "The identical response is already retained under the accepted historical-image or unverified OCR source basis."
+    },
+    {
+      "response_label": "text11.txt",
+      "source_url": "https://numelyo.bm-lyon.fr/BML:BML_00GOO0100137001102132797/TXT00000011.txt",
+      "sha256": "e5807c2b6f84f0dc314b9ec2805b8d8b7d28f76cbd1aa78e5f7d1b1b72058768",
+      "byte_size": 1635,
+      "decision": "reuse exact retained member; do not retain a duplicate payload",
+      "retained_member": "ocr/0011.txt in the OCR package",
+      "rights_basis": "The identical response is already retained under the accepted historical-image or unverified OCR source basis."
+    },
+    {
+      "response_label": "text12.txt",
+      "source_url": "https://numelyo.bm-lyon.fr/BML:BML_00GOO0100137001102132797/TXT00000012.txt",
+      "sha256": "50ce7df2d8a87131df4a21b9fd8a703d94e4cd42cde1a82e04fc31b3287b04c3",
+      "byte_size": 2476,
+      "decision": "reuse exact retained member; do not retain a duplicate payload",
+      "retained_member": "ocr/0012.txt in the OCR package",
+      "rights_basis": "The identical response is already retained under the accepted historical-image or unverified OCR source basis."
+    },
+    {
+      "response_label": "text13.txt",
+      "source_url": "https://numelyo.bm-lyon.fr/BML:BML_00GOO0100137001102132797/TXT00000013.txt",
+      "sha256": "b64792d189e98390dc4a3362e4f5cc3b5cf3b238d0e49a75be641b80f0cc2b61",
+      "byte_size": 2310,
+      "decision": "reuse exact retained member; do not retain a duplicate payload",
+      "retained_member": "ocr/0013.txt in the OCR package",
+      "rights_basis": "The identical response is already retained under the accepted historical-image or unverified OCR source basis."
+    },
+    {
+      "response_label": "text14.txt",
+      "source_url": "https://numelyo.bm-lyon.fr/BML:BML_00GOO0100137001102132797/TXT00000014.txt",
+      "sha256": "d9f327f82b9de0993d3ad99717afd4d9a4d729fee3b54aa3ad4a71ec41475346",
+      "byte_size": 1739,
+      "decision": "reuse exact retained member; do not retain a duplicate payload",
+      "retained_member": "ocr/0014.txt in the OCR package",
+      "rights_basis": "The identical response is already retained under the accepted historical-image or unverified OCR source basis."
+    },
+    {
+      "response_label": "licence-ouverte.txt",
+      "sha256": "002dc6140d021447e70f55d586b3780ed81392696c3f9c4b4f0f658d361d653f",
+      "byte_size": 8130,
+      "source_url": "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
+      "derived_from_sha256": "44ff23ae2b5cce0d729d1b53b20d17aae625189b131c2dd9cb98d1fe0d0a2a90",
+      "decision": "defer redundant inspection-only text extraction; retain exact whole PDF instead",
+      "reason": "The whole three-page2011 licence PDF and separate four-page operative2017 grant are retained. This local extraction is reproducible and supplies no unique source content."
+    },
+    {
+      "response_label": "beauvais-title-high.jpg",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_size": 0,
+      "source_url": "https://numelyo.bm-lyon.fr/f_eserv/BML:BML_00GOO0100137001102132797/JPG00000009.jpg",
+      "decision": "defer empty diagnostic file; no source bytes acquired",
+      "reason": "Empty response does not establish global master-image unavailability; exact web title image is retained."
+    }
+  ],
+  "handoff_correction": "The final envelope records all saved blocked/search/error and redundant inspection responses separately. No source record, payload, inventory change or stage claim differs from independently accepted v7."
+}

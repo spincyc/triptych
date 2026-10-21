@@ -1,0 +1,955 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "macedonian-exact-book-batch3-2026-10-20",
+  "title": "Macedonian celebrant-book research: new public API bounds, contrary controls and unresolved exact-book evidence",
+  "lane": "macedonian-exact-book-batch3",
+  "side": "eastern",
+  "checked_on": "2026-10-21",
+  "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+  "coverage_rows": [
+    "macedonian"
+  ],
+  "review_files": {
+    "evidence_manifest_sha256": "72bf57b0a8ab7bc70ab598b0fb928860cf49bf3e53370d0e6eadd528a0138fd2",
+    "expected_list_sha256": "2cc3cec6ae337abee9b639c792d45e379d321e5ce5045784c41b90f7faa83f80",
+    "findings_sha256": "89e188fced41581aafbab927fd6f89c0a1663aeb8300a29a0f9d961442f6b906",
+    "retention_proposals_sha256": "ceceb3578d7d204cd3b02105199cdb14a17b0593c4ef4bbb6a52549bc3e8b0af",
+    "prior_accepted_review_sha256": "b8d9ae3695af0660a886e1229dab270631ddb204ac471d072ba37a27fc8b7867",
+    "independent_review_status": "accepted-bounded-research-metadata-only",
+    "independent_review_sha256": "b1f738ff2a74bc795af85f11bfe23529f66490983ee5065c54c6161ed650490e",
+    "reviewed_author_manifest_sha256": "92ab0c73e9fd56f476da6c6b5b2c0573d1fded2cc4fc4ca5237b5831488c726b"
+  },
+  "semantics": "Zero source-candidate, stage, transition, ancestry, operative-use or completeness promotions. Existing approval-only coverage, memberships, rights and unauthenticated mixed-rite title leads remain unchanged. Search result rows are neither books nor recensions.",
+  "uses": [
+    {
+      "id": "macedonian",
+      "disposition": "exact-book-exemplar-receiving-copy-and-tied-operative-use-still-unresolved",
+      "expected_list": [
+        {
+          "target": "Original 2009 Литургикон title and imprint",
+          "disposition": "unresolved",
+          "required_input": "Authenticated original title and imprint leaves, publisher/place/pagination and holding-copy identity."
+        },
+        {
+          "target": "Approval leaf tied to that printed book",
+          "disposition": "unresolved",
+          "required_input": "Original book approbation/decree leaf or equivalent exact-book authority record; 9 December2009 notice alone is insufficient."
+        },
+        {
+          "target": "Greek or Church Slavonic exemplar",
+          "disposition": "unresolved",
+          "required_input": "Translator/publisher/authority statement identifying exact source edition, with original pages or equivalent primary documentation."
+        },
+        {
+          "target": "Local Catholic receiving copy",
+          "disposition": "unresolved",
+          "required_input": "Public holding record or identifiable Catholic celebrant copy linked to exact title/imprint; local event reports do not identify the book."
+        },
+        {
+          "target": "Dated operative use of the approved wording",
+          "disposition": "unresolved",
+          "required_input": "Dated implementation or celebration evidence identifying the exact book/wording; the2022 event report names neither language nor book."
+        },
+        {
+          "target": "Complete celebrant-book/component extent",
+          "disposition": "unresolved",
+          "required_input": "Complete source or authenticated contents/page census covering named liturgies, preparation, rubrics, thanksgiving, propers and complementary books as applicable."
+        },
+        {
+          "target": "Independent substantive state or transmission edge",
+          "disposition": "not established",
+          "required_input": "Concrete component-level checked before/after or reception evidence; no parent or stage follows from permission, dates, titles or photographs."
+        }
+      ],
+      "fresh_findings": [
+        {
+          "id": "exact-title-controls",
+          "sources": [
+            "katolici-post-49558-roman-controls.json",
+            "katolici-post-22297-child-missal.json"
+          ],
+          "loci": [
+            "extracted lines1–6, especially3–4",
+            "extracted lines1–5"
+          ],
+          "finding": "Both delivered exact-title search hits were read completely and concern Roman/historical missal contexts. The local word Литургикон alone is not a Byzantine-book identity."
+        },
+        {
+          "id": "explicit-roman-gift",
+          "sources": [
+            "katolici-post-14702-cirimotic.json"
+          ],
+          "locus": "extracted lines1–2; report published15June2015, celebration13June2015",
+          "finding": "The donated liturgical set is explicitly a Roman Missal and evangeliary. It is not evidence of receipt of the Macedonian Byzantine2009 book."
+        },
+        {
+          "id": "planned-papal-mass",
+          "sources": [
+            "katolici-post-33063-stojanov-interview.json"
+          ],
+          "locus": "extracted lines concerning the scheduled papal liturgy on Skopje square; article published22March2019",
+          "finding": "The bishop describes the planned papal Mass in Latin and Macedonian and participant booklets. This is neither a complete celebrant book nor actual Byzantine implementation evidence."
+        },
+        {
+          "id": "local-event-bound",
+          "sources": [
+            "radovo-2022-maria-feast.html"
+          ],
+          "locus": "extracted lines8–15; event/publication9October2022",
+          "finding": "A parish report describes an actual Catholic celebration and clergy from both jurisdictions. It names no celebrant edition, language, source exemplar or approved wording. Rite cannot be inferred solely from the term Liturgy or mixed clergy. The unrelated footer includes obvious theme placeholders and is not evidence of parish location or service languages."
+        },
+        {
+          "id": "media-title-bound",
+          "sources": [
+            "katolici-wp-media-liturgikon.json",
+            "katolici-post-39922-year2020.json",
+            "katolici-media-39930-pope-missal.jpeg"
+          ],
+          "locus": "media39930; complete parent article line9; complete1000×563 photograph",
+          "finding": "The single media hit is captioned as the Pope with a new Liturgikon in August2020. The photograph shows open pages, not an authenticated target title or approval leaf. No exact edition is assigned from the image."
+        },
+        {
+          "id": "other-local-leads",
+          "sources": [
+            "katolici-post-31976-byzantine-history.json",
+            "katolici-post-11224-paljurci-interview.json",
+            "katolici-post-22336-book-recommendations.json",
+            "katolici-post-27239-roman-miz.json"
+          ],
+          "finding": "The inspected historical/language passages, publication paragraph and15-title recommendation list do not supply the requested2009 title/imprint/approval or exact exemplar. General historical language testimony and devotional publishing are not service-book authentication."
+        },
+        {
+          "id": "catalogue-barriers",
+          "sources": [
+            "nub-public-catalogue.html",
+            "nub-bibliography-service.html",
+            "nub-library-users.html",
+            "nub-library-catalogue-services.html"
+          ],
+          "locus": "Anubis challenge body/version1.25.0-izum; DLIB anchor on all three National Library service pages",
+          "finding": "The direct title-field COBISS request delivered an HTTP200 proof-of-work challenge, not catalogue results. National Library pages are publisher/user/librarian services, not annual bibliography volumes; DLIB is literally href=#. No annual volume was searched. No challenge was bypassed."
+        },
+        {
+          "id": "failed-routes",
+          "sources": [],
+          "finding": "https://biskupija.mk/ failed DNS resolution; https://www.dlib.mk/ timed out. No source bytes or holding results were obtained from either route."
+        }
+      ]
+    }
+  ],
+  "searches": [
+    {
+      "checked_on": "2026-10-21",
+      "method": "Public web discovery followed by complete direct HTTP response acquisition. Search-rendered snippets were leads only, never source wording.",
+      "material_queries": [
+        "\"Литургикон\" \"2009\" \"егзархија\"",
+        "\"25 години епископство\" \"Костов\"",
+        "\"Македонска библиографија\" \"2009\" книги PDF",
+        "\"Киро Стојанов\" \"литургикон\" \"грчки\"",
+        "site:katolici.mk \"Светлина\" pdf",
+        "\"Литургиите\" \"Василиј\" \"Стојанов\"",
+        "\"литургикон\" \"апостолски\" \"2009\"",
+        "\"Божествена литургија\" \"католичка\" \"превод\"",
+        "\"Литургикон\" \"католички\" -scribd -promacedonia -kroraina -preminportal -dejanzapasa -markmallett",
+        "\"Католичка црква\" \"служебник\"",
+        "\"Литургикон\" \"2009\" -scribd -kroraina -promacedonia",
+        "site:nubsk.edu.mk \"Библиографија\" \"2009\"",
+        "\"Литургикон\" \"COBISS.MK-ID\"",
+        "\"Дигитална\" \"библиографија\" \"НУБ\"",
+        "\"25 godini\" \"Stojanov\"",
+        "\"Стојанов\" \"1999-2024\" \"ISBN\"",
+        "\"Литургикон\" \"Струмичко\"",
+        "\"Циримотиќ\" \"литурги\" \"превод\"",
+        "\"католичка\" \"Литургикон\" \"македонски\" книга",
+        "\"Струмичко-скопска\" \"Светлина\" списание",
+        "\"Macedonian\" \"Liturgikon\" Catholic \"translation\" -scribd",
+        "\"makedonski\" \"liturgikon\" katolička -scribd",
+        "\"грчки\" \"литургикон\" \"Стојанов\""
+      ],
+      "limit": "Queries were sent in batches. No per-query zero-hit claims; no exhaustive web, library, national bibliography or Church archive census. Non-primary summaries and the current project-derived Domus Dei page were not used as independent evidence."
+    },
+    {
+      "method": "Whole direct public WordPress search/media responses; delivered rows reconciled individually.",
+      "api_results": [
+        {
+          "request_url": "https://katolici.mk/wp-json/wp/v2/search?search=%D0%9B%D0%B8%D1%82%D1%83%D1%80%D0%B3%D0%B8%D0%BA%D0%BE%D0%BD&per_page=100",
+          "sha256": "ec19b39e84e374a92cf0ab00c80f651a26ac1bfd6b3801f4488d595d2afa7660",
+          "byte_size": 1514,
+          "returned_rows": 2,
+          "pagination_headers": {},
+          "pagination_limit": "Exact acquired response. Where original headers were not retained, the delivered row count is stated without an independent total-page assertion. No claim about unregistered uploads or the whole website.",
+          "rows": [
+            {
+              "id": 49558,
+              "title": "Папата Фрањо појасни две точки од „Traditionis custodes“",
+              "url": "https://katolici.mk/%d0%bf%d0%b0%d0%bf%d0%b0%d1%82%d0%b0-%d1%84%d1%80%d0%b0%d1%9a%d0%be-%d0%bf%d0%be%d1%98%d0%b0%d1%81%d0%bd%d0%b8-%d0%b4%d0%b2%d0%b5-%d1%82%d0%be%d1%87%d0%ba%d0%b8-%d0%be%d0%b4-traditionis-custo/",
+              "disposition": "Complete body inspected: Roman1962/Traditionis custodes context, not the reported Macedonian2009 book."
+            },
+            {
+              "id": 22297,
+              "title": "Што посакал 7-годишниот Јозеф Рацингер за Божиќ?",
+              "url": "https://katolici.mk/%d1%88%d1%82%d0%be-%d0%bf%d0%be%d1%81%d0%b0%d0%ba%d0%b0%d0%bb-7-%d0%b3%d0%be%d0%b4%d0%b8%d1%88%d0%bd%d0%b8%d0%be%d1%82-%d1%98%d0%be%d0%b7%d0%b5%d1%84-%d1%80%d0%b0%d1%86%d0%b8%d0%bd%d0%b3%d0%b5%d1%80/",
+              "disposition": "Complete body inspected: Ratzinger1934 child-missal request, not the reported Macedonian2009 book."
+            }
+          ]
+        },
+        {
+          "request_url": "https://katolici.mk/wp-json/wp/v2/media?search=%D0%B5%D0%BF%D0%B8%D1%81%D0%BA%D0%BE%D0%BF%D1%81%D1%82%D0%B2%D0%BE&per_page=100",
+          "sha256": "e7526f9a4360fd590555d5b3a1107042f18a6ace66a09cbbfd266f86621266fb",
+          "byte_size": 3,
+          "returned_rows": 0,
+          "pagination_headers": {},
+          "pagination_limit": "Exact acquired response. Where original headers were not retained, the delivered row count is stated without an independent total-page assertion. No claim about unregistered uploads or the whole website.",
+          "rows": []
+        },
+        {
+          "request_url": "https://katolici.mk/wp-json/wp/v2/media?mime_type=application%2Fpdf&per_page=100",
+          "sha256": "e7526f9a4360fd590555d5b3a1107042f18a6ace66a09cbbfd266f86621266fb",
+          "byte_size": 3,
+          "returned_rows": 0,
+          "pagination_headers": {
+            "X-WP-Total": "0",
+            "X-WP-TotalPages": "0"
+          },
+          "pagination_limit": "Exact acquired response. Where original headers were not retained, the delivered row count is stated without an independent total-page assertion. No claim about unregistered uploads or the whole website.",
+          "rows": []
+        },
+        {
+          "request_url": "https://katolici.mk/wp-json/wp/v2/search?search=%D0%B8%D0%B7%D0%B4%D0%B0%D0%B2%D0%B0%D1%88%D1%82%D0%B2%D0%BE&per_page=100",
+          "sha256": "6082b2905248e0b3e4fd0e4957f9b7bd1760174d0e4a0d76d52f8d0c02034c46",
+          "byte_size": 7509,
+          "returned_rows": 9,
+          "pagination_headers": {
+            "X-WP-Total": "9",
+            "X-WP-TotalPages": "1"
+          },
+          "pagination_limit": "Exact acquired response. Where original headers were not retained, the delivered row count is stated without an independent total-page assertion. No claim about unregistered uploads or the whole website.",
+          "rows": [
+            {
+              "id": 60242,
+              "title": "Папата ги охрабри монахињите од Ќерките на Свети Павле да пронајдат нови начини за пренесување на верата",
+              "url": "https://katolici.mk/%d0%bf%d0%b0%d0%bf%d0%b0%d1%82%d0%b0-%d0%b3%d0%b8-%d0%be%d1%85%d1%80%d0%b0%d0%b1%d1%80%d0%b8-%d0%bc%d0%be%d0%bd%d0%b0%d1%85%d0%b8%d1%9a%d0%b8%d1%82%d0%b5-%d0%be%d0%b4-%d1%9c%d0%b5%d1%80%d0%ba%d0%b8/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 52577,
+              "title": "Струмица: Промовирана книгата „Секој миг е дар“ од Кјара Лубик",
+              "url": "https://katolici.mk/%d1%81%d1%82%d1%80%d1%83%d0%bc%d0%b8%d1%86%d0%b0-%d0%bf%d1%80%d0%be%d0%bc%d0%be%d0%b2%d0%b8%d1%80%d0%b0%d0%bd%d0%b0-%d0%ba%d0%bd%d0%b8%d0%b3%d0%b0%d1%82%d0%b0-%d1%81%d0%b5%d0%ba%d0%be%d1%98/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 52509,
+              "title": "Во Струмица ќе биде промовирана книгата „Секој миг е дар“",
+              "url": "https://katolici.mk/%d0%b2%d0%be-%d1%81%d1%82%d1%80%d1%83%d0%bc%d0%b8%d1%86%d0%b0-%d1%9c%d0%b5-%d0%b1%d0%b8%d0%b4%d0%b5-%d0%bf%d1%80%d0%be%d0%bc%d0%be%d0%b2%d0%b8%d1%80%d0%b0%d0%bd%d0%b0-%d0%ba%d0%bd%d0%b8%d0%b3%d0%b0/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 50872,
+              "title": "Папата: Јубилејната 2025 година е повод за општествена преродба",
+              "url": "https://katolici.mk/%d0%bf%d0%b0%d0%bf%d0%b0%d1%82%d0%b0-%d1%98%d1%83%d0%b1%d0%b8%d0%bb%d0%b5%d1%98%d0%bd%d0%b0%d1%82%d0%b0-2025-%d0%b3%d0%be%d0%b4%d0%b8%d0%bd%d0%b0-%d0%b5-%d0%bf%d0%be%d0%b2%d0%be%d0%b4-%d0%b7%d0%b0/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 49851,
+              "title": "Во Скопје одбележна годишнината од смртта на Кјара Лубик",
+              "url": "https://katolici.mk/49851-2/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 27768,
+              "title": "Папата: Важно е да се обезбеди постоењето на католичкиот печат",
+              "url": "https://katolici.mk/%d0%bf%d0%b0%d0%bf%d0%b0%d1%82%d0%b0-%d0%b2%d0%b0%d0%b6%d0%bd%d0%be-%d0%b5-%d0%b4%d0%b0-%d1%81%d0%b5-%d0%be%d0%b1%d0%b5%d0%b7%d0%b1%d0%b5%d0%b4%d0%b8-%d0%bf%d0%be%d1%81%d1%82%d0%be%d0%b5%d1%9a%d0%b5/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 27239,
+              "title": "Почина отец Роман Миз",
+              "url": "https://katolici.mk/%d0%bf%d0%be%d1%87%d0%b8%d0%bd%d0%b0-%d0%be%d1%82%d0%b5%d1%86-%d1%80%d0%be%d0%bc%d0%b0%d0%bd-%d0%bc%d0%b8%d0%b7/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 23365,
+              "title": "Промоција на монографијата „Денови на света Мајка Тереза“",
+              "url": "https://katolici.mk/%d0%bf%d1%80%d0%be%d0%bc%d0%be%d1%86%d0%b8%d1%98%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bd%d0%be%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d1%98%d0%b0%d1%82%d0%b0-%d0%b4%d0%b5%d0%bd%d0%be%d0%b2%d0%b8-%d0%bd/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 23020,
+              "title": "Биксупот Стојанов на папата Фрањо му ја подари монографијата „Денови на света Мајка Тереза“",
+              "url": "https://katolici.mk/%d0%b1%d0%b8%d0%ba%d1%81%d1%83%d0%bf%d0%be%d1%82-%d1%81%d1%82%d0%be%d1%98%d0%b0%d0%bd%d0%be%d0%b2-%d1%98%d0%b0-%d0%bf%d1%80%d0%b5%d1%82%d1%81%d1%82%d0%b0%d0%b2%d0%b8-%d0%bc%d0%be%d0%bd%d0%be%d0%b3/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            }
+          ]
+        },
+        {
+          "request_url": "https://katolici.mk/wp-json/wp/v2/search?search=%D0%BB%D0%B8%D1%82%D1%83%D1%80%D0%B3%D0%B8%D1%81%D0%BA%D0%B8%20%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8&per_page=100",
+          "sha256": "a160db6183f304f686c65773965b5615f78b75a78c1961fcf83f3138ffd365ad",
+          "byte_size": 21058,
+          "returned_rows": 25,
+          "pagination_headers": {
+            "X-WP-Total": "25",
+            "X-WP-TotalPages": "1"
+          },
+          "pagination_limit": "Exact acquired response. Where original headers were not retained, the delivered row count is stated without an independent total-page assertion. No claim about unregistered uploads or the whole website.",
+          "rows": [
+            {
+              "id": 57399,
+              "title": "Света Мајка Тереза е запишана во Општиот римски календар",
+              "url": "https://katolici.mk/%d1%81%d0%b2%d0%b5%d1%82%d0%b0-%d0%bc%d0%b0%d1%98%d0%ba%d0%b0-%d1%82%d0%b5%d1%80%d0%b5%d0%b7%d0%b0-%d0%b5-%d0%b7%d0%b0%d0%bf%d0%b8%d1%88%d0%b0%d0%bd%d0%b0-%d0%b2%d0%be-%d0%be%d0%bf%d1%88%d1%82%d0%b8/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 29862,
+              "title": "Белодробни крила на Европа",
+              "url": "https://katolici.mk/%d0%b1%d0%b5%d0%bb%d0%be%d0%b4%d1%80%d0%be%d0%b1%d0%bd%d0%b8-%d0%ba%d1%80%d0%b8%d0%bb%d0%b0-%d0%bd%d0%b0-%d0%b5%d0%b2%d1%80%d0%be%d0%bf%d0%b0/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 14702,
+              "title": "Монсињор Циримотиќ прослави 50 години свештенство",
+              "url": "https://katolici.mk/%d0%bc%d0%be%d0%bd%d1%81%d0%b8%d1%9a%d0%be%d1%80-%d1%86%d0%b8%d1%80%d0%b8%d0%bc%d0%be%d1%82%d0%b8%d1%9c-%d0%bf%d1%80%d0%be%d1%81%d0%bb%d0%b0%d0%b2%d0%b8-50-%d0%b3%d0%be%d0%b4%d0%b8%d0%bd%d0%b8-%d1%81/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 64632,
+              "title": "Генерална аудиенција: Активното учество во Литургијата нè води до однос со Бога",
+              "url": "https://katolici.mk/%d0%b3%d0%b5%d0%bd%d0%b5%d1%80%d0%b0%d0%bb%d0%bd%d0%b0-%d0%b0%d1%83%d0%b4%d0%b8%d0%b5%d0%bd%d1%86%d0%b8%d1%98%d0%b0-%d0%b0%d0%ba%d1%82%d0%b8%d0%b2%d0%bd%d0%be%d1%82%d0%be-%d1%83%d1%87%d0%b5%d1%81/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 64527,
+              "title": "Генерална аудиенција: Сакралната музика е за слава Божја и осветување на верниците",
+              "url": "https://katolici.mk/%d0%b3%d0%b5%d0%bd%d0%b5%d1%80%d0%b0%d0%bb%d0%bd%d0%b0-%d0%b0%d1%83%d0%b4%d0%b8%d0%b5%d0%bd%d1%86%d0%b8%d1%98%d0%b0-%d1%81%d0%b0%d0%ba%d1%80%d0%b0%d0%bb%d0%bd%d0%b0%d1%82%d0%b0-%d0%bc%d1%83%d0%b7/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 63817,
+              "title": "Дали денес има повеќе маченици отколку во раната Црква",
+              "url": "https://katolici.mk/%d0%b4%d0%b0%d0%bb%d0%b8-%d0%b4%d0%b5%d0%bd%d0%b5%d1%81-%d0%b8%d0%bc%d0%b0-%d0%bf%d0%be%d0%b2%d0%b5%d1%9c%d0%b5-%d0%bc%d0%b0%d1%87%d0%b5%d0%bd%d0%b8%d1%86%d0%b8-%d0%be%d1%82%d0%ba%d0%be%d0%bb%d0%ba/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 58186,
+              "title": "По повод Апостолската посета на папата Фрањо на Скопје – Македонија Католици.мк направи опширно интервју со Н.В.П. монс. д-р Киро Стојанов, Скопски бискуп и Струмичко-скопски епарх",
+              "url": "https://katolici.mk/%d0%bf%d0%be-%d0%bf%d0%be%d0%b2%d0%be%d0%b4-%d0%b0%d0%bf%d0%be%d1%81%d1%82%d0%be%d0%bb%d1%81%d0%ba%d0%b0%d1%82%d0%b0-%d0%bf%d0%be%d1%81%d0%b5%d1%82%d0%b0-%d0%bd%d0%b0-%d0%bf%d0%b0%d0%bf%d0%b0%d1%82/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 52276,
+              "title": "Генерална аудиенција: Свети Кирил и Методиј, „Апостоли на Словените“",
+              "url": "https://katolici.mk/%d0%b3%d0%b5%d0%bd%d0%b5%d1%80%d0%b0%d0%bb%d0%bd%d0%b0-%d0%b0%d1%83%d0%b4%d0%b8%d0%b5%d0%bd%d1%86%d0%b8%d1%98%d0%b0-%d1%81%d0%b2%d0%b5%d1%82%d0%b8-%d0%ba%d0%b8%d1%80%d0%b8%d0%bb-%d0%b8-%d0%bc%d0%b5/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 26837,
+              "title": "Свети Иван Павле II",
+              "url": "https://katolici.mk/%d1%81%d0%b2%d0%b5%d1%82%d0%b8-%d0%b8%d0%b2%d0%b0%d0%bd-%d0%bf%d0%b0%d0%b2%d0%bb%d0%b5-ii/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 47215,
+              "title": "Домородните народи и бабите се скапоцени богатства на Црквата",
+              "url": "https://katolici.mk/%d0%b4%d0%be%d0%bc%d0%be%d1%80%d0%be%d0%b4%d0%bd%d0%b8%d1%82%d0%b5-%d0%bd%d0%b0%d1%80%d0%be%d0%b4%d0%b8-%d0%b8-%d0%b1%d0%b0%d0%b1%d0%b8%d1%82%d0%b5-%d1%81%d0%b5-%d1%81%d0%ba%d0%b0%d0%bf%d0%be%d1%86/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 46775,
+              "title": "Хомилија на Неговата Ексцеленција надбискупот Пол Ричард Галагер",
+              "url": "https://katolici.mk/%d1%85%d0%be%d0%bc%d0%b8%d0%bb%d0%b8%d1%98%d0%b0-%d0%bd%d0%b0-%d0%bd%d0%b5%d0%b3%d0%be%d0%b2%d0%b0%d1%82%d0%b0-%d0%b5%d0%ba%d1%81%d1%86%d0%b5%d0%bb%d0%b5%d0%bd%d1%86%d0%b8%d1%98%d0%b0-%d0%bd%d0%b0/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 40455,
+              "title": "Папата воведе нови празници во Општиот римски календар",
+              "url": "https://katolici.mk/%d0%bf%d0%b0%d0%bf%d0%b0%d1%82%d0%b0-%d0%b2%d0%be%d0%b2%d0%b5%d0%b4%d0%b5-%d0%bd%d0%be%d0%b2%d0%b8-%d0%bf%d1%80%d0%b0%d0%b7%d0%bd%d0%b8%d1%86%d0%b8-%d0%b2%d0%be-%d0%be%d0%bf%d1%88%d1%82%d0%b8%d0%be/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 39784,
+              "title": "Насоки за славење на Неделата на Божјото Слово",
+              "url": "https://katolici.mk/%d0%bd%d0%b0%d1%81%d0%be%d0%ba%d0%b8-%d0%b7%d0%b0-%d1%81%d0%bb%d0%b0%d0%b2%d0%b5%d1%9a%d0%b5-%d0%bd%d0%b0-%d0%bd%d0%b5%d0%b4%d0%b5%d0%bb%d0%b0%d1%82%d0%b0-%d0%bd%d0%b0-%d0%b1%d0%be%d0%b6%d1%98%d0%be/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 39243,
+              "title": "Порака на папата Фрањо по повод Светскиот ден на сиромашните",
+              "url": "https://katolici.mk/%d0%bf%d0%be%d1%80%d0%b0%d0%ba%d0%b0-%d0%bd%d0%b0-%d0%bf%d0%b0%d0%bf%d0%b0%d1%82%d0%b0-%d1%84%d1%80%d0%b0%d1%9a%d0%be-%d0%bf%d0%be-%d0%bf%d0%be%d0%b2%d0%be%d0%b4-%d1%81%d0%b2%d0%b5%d1%82%d1%81%d0%ba/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 38612,
+              "title": "Кардинал Сарах: Виртуелната света Литургија не може да го замени личното присуство",
+              "url": "https://katolici.mk/%d0%ba%d0%b0%d1%80%d0%b4%d0%b8%d0%bd%d0%b0%d0%bb-%d1%81%d0%b0%d1%80%d0%b0%d1%85-%d0%b2%d0%b8%d1%80%d1%82%d1%83%d0%b5%d0%bb%d0%bd%d0%b0%d1%82%d0%b0-%d1%81%d0%b2%d0%b5%d1%82%d0%b0-%d0%bb%d0%b8%d1%82/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 33519,
+              "title": "Пресвета Богородица пример за вера и надеж",
+              "url": "https://katolici.mk/33519-2/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 33063,
+              "title": "По повод Апостолската посета на папата Фрањо на Скопје – Македонија Католици.мк направи опширно интервју со Н.В.П. монс. д-р Киро Стојанов, Скопски бискуп и Струмичко-скопски епарх",
+              "url": "https://katolici.mk/%d0%bf%d0%be-%d0%bf%d0%be%d0%b2%d0%be%d0%b4-%d0%b0%d0%bf%d0%be%d1%81%d1%82%d0%be%d0%bb%d1%81%d0%ba%d0%b0%d1%82%d0%b0-%d0%bf%d0%be%d1%81%d0%b5%d1%82%d0%b0-%d0%bd%d0%b0-%d0%bf%d0%b0%d0%bf%d0%b0-%d1%84/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 31861,
+              "title": "Татковците се свештеници во своите семејства",
+              "url": "https://katolici.mk/%d1%82%d0%b0%d1%82%d0%ba%d0%be%d0%b2%d1%86%d0%b8%d1%82%d0%b5-%d1%81%d0%b5-%d1%81%d0%b2%d0%b5%d1%88%d1%82%d0%b5%d0%bd%d0%b8%d1%86%d0%b8-%d0%b2%d0%be-%d1%81%d0%b2%d0%be%d0%b8%d1%82%d0%b5-%d1%81%d0%b5/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 28378,
+              "title": "Генерална аудиенција: Бог зборува преку Словото",
+              "url": "https://katolici.mk/%d0%b3%d0%b5%d0%bd%d0%b5%d1%80%d0%b0%d0%bb%d0%bd%d0%b0-%d0%b0%d1%83%d0%b4%d0%b8%d0%b5%d0%bd%d1%86%d0%b8%d1%98%d0%b0-%d0%b1%d0%be%d0%b3-%d0%b7%d0%b1%d0%be%d1%80%d1%83%d0%b2%d0%b0-%d0%bf%d1%80%d0%b5/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 27451,
+              "title": "Идеолошката колонизација го брише сеќавањето",
+              "url": "https://katolici.mk/%d0%b8%d0%b4%d0%b5%d0%be%d0%bb%d0%be%d1%88%d0%ba%d0%b0%d1%82%d0%b0-%d0%ba%d0%be%d0%bb%d0%be%d0%bd%d0%b8%d0%b7%d0%b0%d1%86%d0%b8%d1%98%d0%b0-%d0%b3%d0%be-%d0%b1%d1%80%d0%b8%d1%88%d0%b5-%d1%81%d0%b5/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 24972,
+              "title": "Во Скопската катедрала прославен празникот на Евхаристијата",
+              "url": "https://katolici.mk/%d0%b2%d0%be-%d1%81%d0%ba%d0%be%d0%bf%d1%81%d0%ba%d0%b0%d1%82%d0%b0-%d0%ba%d0%b0%d1%82%d0%b5%d0%b4%d1%80%d0%b0%d0%bb%d0%b0-%d0%bf%d1%80%d0%be%d1%81%d0%bb%d0%b0%d0%b2%d0%b5%d0%bd-%d0%bf%d1%80%d0%b0/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 24642,
+              "title": "Свети Кирил и Методиј",
+              "url": "https://katolici.mk/%d1%81%d0%b2%d0%b5%d1%82%d0%b8-%d0%ba%d0%b8%d1%80%d0%b8%d0%bb-%d0%b8-%d0%bc%d0%b5%d1%82%d0%be%d0%b4%d0%b8%d1%98/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 22740,
+              "title": "Како да молите со својот сопруг?",
+              "url": "https://katolici.mk/%d0%ba%d0%b0%d0%ba%d0%be-%d0%b4%d0%b0-%d1%81%d0%b5-%d0%bc%d0%be%d0%bb%d0%b8%d1%82%d0%b5-%d1%81%d0%be-%d1%81%d0%b2%d0%be%d1%98%d0%be%d1%82-%d1%81%d0%be%d0%bf%d1%80%d1%83%d0%b3/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 13463,
+              "title": "Предавање на Н.В.П. монс. д-р Киро Стојанов во Годината на Богопосветениот живот",
+              "url": "https://katolici.mk/%d0%bf%d1%80%d0%b5%d0%b4%d0%b0%d0%b2%d0%b0%d1%9a%d0%b5-%d0%bd%d0%b0-%d0%bd-%d0%b2-%d0%bf-%d0%bc%d0%be%d0%bd%d1%81-%d0%b4-%d1%80-%d0%ba%d0%b8%d1%80%d0%be-%d1%81%d1%82%d0%be%d1%98%d0%b0%d0%bd%d0%be-2/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 12876,
+              "title": "Седум начини за да имате добар пост",
+              "url": "https://katolici.mk/%d1%81%d0%b5%d0%b4%d1%83%d0%bc-%d0%bd%d0%b0%d1%87%d0%b8%d0%bd%d0%b8-%d0%b7%d0%b0-%d0%b4%d0%b0-%d0%b8%d0%bc%d0%b0%d1%82%d0%b5-%d0%b4%d0%be%d0%b1%d0%b0%d1%80-%d0%bf%d0%be%d1%81%d1%82/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            }
+          ]
+        },
+        {
+          "request_url": "https://katolici.mk/wp-json/wp/v2/search?search=%D0%BC%D0%B0%D0%BA%D0%B5%D0%B4%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%20%D1%98%D0%B0%D0%B7%D0%B8%D0%BA%20%D0%BE%D0%B1%D1%80%D0%B5%D0%B4&per_page=100",
+          "sha256": "4a80505db2444c6f866f457766526a0164f73dcb24ac2cd99ed8d5038c443c91",
+          "byte_size": 11690,
+          "returned_rows": 13,
+          "pagination_headers": {
+            "X-WP-Total": "13",
+            "X-WP-TotalPages": "1"
+          },
+          "pagination_limit": "Exact acquired response. Where original headers were not retained, the delivered row count is stated without an independent total-page assertion. No claim about unregistered uploads or the whole website.",
+          "rows": [
+            {
+              "id": 46195,
+              "title": "Промовирана монографијата „Историска посета на Светиот Отец – прво македонско добредојде за папата Франциск“",
+              "url": "https://katolici.mk/%d0%bf%d1%80%d0%be%d0%bc%d0%be%d0%b2%d0%b8%d1%80%d0%b0%d0%bd%d0%b0-%d0%bc%d0%be%d0%bd%d0%be%d0%b3%d1%80%d0%b0%d1%84%d0%b8%d1%98%d0%b0%d1%82%d0%b0-%d0%b8%d1%81%d1%82%d0%be%d1%80%d0%b8%d1%81/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 31976,
+              "title": "Македонската Католичка црква од византиски обред – Низ годините",
+              "url": "https://katolici.mk/%d0%bc%d0%b0%d0%ba%d0%b5%d0%b4%d0%be%d0%bd%d1%81%d0%ba%d0%b0%d1%82%d0%b0-%d0%ba%d0%b0%d1%82%d0%be%d0%bb%d0%b8%d1%87%d0%ba%d0%b0-%d1%86%d1%80%d0%ba%d0%b2%d0%b0-%d0%be%d0%b4-%d0%b2%d0%b8%d0%b7%d0%b0/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 54385,
+              "title": "Бискупот Стојанов го прими брат Ришар од Заедницата Тезе",
+              "url": "https://katolici.mk/%d0%b1%d0%b8%d1%81%d0%ba%d1%83%d0%bf%d0%be%d1%82-%d1%81%d1%82%d0%be%d1%98%d0%b0%d0%bd%d0%be%d0%b2-%d0%b3%d0%be-%d0%bf%d1%80%d0%b8%d0%bc%d0%b8-%d0%b1%d1%80%d0%b0%d1%82-%d1%80%d0%b8%d1%88%d0%b0%d1%80/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 54118,
+              "title": "Папата го именува отец Петко Валов за епископ на епархијата „Свети Иван XXIII“ во Бугарија",
+              "url": "https://katolici.mk/%d0%bf%d0%b0%d0%bf%d0%b0%d1%82%d0%b0-%d0%b3%d0%be-%d0%b8%d0%bc%d0%b5%d0%bd%d1%83%d0%b2%d0%b0-%d0%be%d1%82%d0%b5%d1%86-%d0%bf%d0%b5%d1%82%d0%ba%d0%be-%d0%b2%d0%b0%d0%bb%d0%be%d0%b2-%d0%b7%d0%b0-%d0%b5/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 39069,
+              "title": "Почина монсињор Антун Циримотиќ",
+              "url": "https://katolici.mk/%d0%bf%d0%be%d1%87%d0%b8%d0%bd%d0%b0-%d0%bc%d0%be%d0%bd%d1%81%d0%b8%d1%9a%d0%be%d1%80-%d0%b0%d0%bd%d1%82%d1%83%d0%bd-%d1%86%d0%b8%d1%80%d0%b8%d0%bc%d0%be%d1%82%d0%b8%d1%9c/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 33297,
+              "title": "Бискупот Стојанов го благослови отворањето на порталот Ватикан њуз",
+              "url": "https://katolici.mk/%d0%b1%d0%b8%d1%81%d0%ba%d1%83%d0%bf%d0%be%d1%82-%d1%81%d1%82%d0%be%d1%98%d0%b0%d0%bd%d0%be%d0%b2-%d0%b3%d0%be-%d0%b1%d0%bb%d0%b0%d0%b3%d0%be%d1%81%d0%bb%d0%be%d0%b2%d0%b8-%d0%be%d1%82%d0%b2%d0%be/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 31987,
+              "title": "Устоличен првиот епарх на новосонованата епархија Струмичко – скопска",
+              "url": "https://katolici.mk/%d1%83%d1%81%d1%82%d0%be%d0%bb%d0%b8%d1%87%d0%b5%d0%bd-%d0%bf%d1%80%d0%b2%d0%b8%d0%be%d1%82-%d0%b5%d0%bf%d0%b0%d1%80%d1%85-%d0%bd%d0%b0-%d0%bd%d0%be%d0%b2%d0%be%d1%81%d0%be%d0%bd%d0%be%d0%b2%d0%b0/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 29949,
+              "title": "Отец Јосиф: Апостол меѓу македонското население",
+              "url": "https://katolici.mk/%d0%be%d1%82%d0%b5%d1%86-%d1%98%d0%be%d1%81%d0%b8%d1%84-%d0%b0%d0%bf%d0%be%d1%81%d1%82%d0%be%d0%bb-%d0%bc%d0%b5%d1%93%d1%83-%d0%bc%d0%b0%d0%ba%d0%b5%d0%b4%d0%be%d0%bd%d1%81%d0%ba%d0%be%d1%82%d0%be/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 22336,
+              "title": "Католици.мк ви препорачува 15 книги кои можете да ги подарете за Божиќ",
+              "url": "https://katolici.mk/%d0%ba%d0%b0%d1%82%d0%be%d0%bb%d0%b8%d1%86%d0%b8-%d0%bc%d0%ba-%d0%b2%d0%b8-%d0%bf%d1%80%d0%b5%d0%bf%d0%be%d1%80%d0%b0%d1%87%d1%83%d0%b2%d0%b0-15-%d0%ba%d0%bd%d0%b8%d0%b3%d0%b8-%d0%ba%d0%be%d0%b8/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 21840,
+              "title": "Промоција на книгата „Благородното дело на отец Јосиф и сестра Еврозија Алоати“ во Струмица",
+              "url": "https://katolici.mk/%d0%bf%d1%80%d0%be%d0%bc%d0%be%d1%86%d0%b8%d1%98%d0%b0-%d0%bd%d0%b0-%d0%ba%d0%bd%d0%b8%d0%b3%d0%b0%d1%82%d0%b0-%d0%b1%d0%bb%d0%b0%d0%b3%d0%be%d1%80%d0%be%d0%b4%d0%bd%d0%be%d1%82%d0%be-%d0%b4-2/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 18496,
+              "title": "Бискупот Стојанов ја прими претседателката на Хрватска Колинда Грабар Китаровиќ",
+              "url": "https://katolici.mk/%d0%b1%d0%b8%d1%81%d0%ba%d1%83%d0%bf%d0%be%d1%82-%d1%81%d1%82%d0%be%d1%98%d0%b0%d0%bd%d0%be%d0%b2-%d1%98%d0%b0-%d0%bf%d1%80%d0%b8%d0%bc%d0%b8-%d0%bf%d1%80%d0%b5%d1%82%d1%81%d0%b5%d0%b4%d0%b0%d1%82/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 14225,
+              "title": "Бискупот Стојанов и монс. Јуришиќ остварија средба со Архиепископот на МПЦ-ОА г.г. Стефан",
+              "url": "https://katolici.mk/%d0%b1%d0%b8%d1%81%d0%ba%d1%83%d0%bf%d0%be%d1%82-%d1%81%d1%82%d0%be%d1%98%d0%b0%d0%bd%d0%be%d0%b2-%d0%b8-%d0%bc%d0%be%d0%bd%d1%81-%d1%98%d1%83%d1%80%d0%b8%d1%88%d0%b8%d1%9c-%d0%be%d1%81%d1%82%d0%b2/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 11224,
+              "title": "Интервју: Паљурци е светилиште на Македонецот (1 дел)",
+              "url": "https://katolici.mk/%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%b2%d1%98%d1%83-%d0%bf%d0%b0%d1%99%d1%83%d1%80%d1%86%d0%b8-%d0%b5-%d1%81%d0%b2%d0%b5%d1%82%d0%b8%d0%bb%d0%b8%d1%88%d1%82%d0%b5-%d0%bd%d0%b0-%d0%bc%d0%b0%d0%ba%d0%b5/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            }
+          ]
+        },
+        {
+          "request_url": "https://katolici.mk/wp-json/wp/v2/media?search=%D0%BB%D0%B8%D1%82%D1%83%D1%80%D0%B3%D0%B8%D0%BA%D0%BE%D0%BD&per_page=100",
+          "sha256": "b276a556d10d2b131bdc3d3c3240d7dfd45d8b64876f484a119c735144e9d675",
+          "byte_size": 3151,
+          "returned_rows": 1,
+          "pagination_headers": {
+            "X-WP-Total": "1",
+            "X-WP-TotalPages": "1"
+          },
+          "pagination_limit": "Exact acquired response. Where original headers were not retained, the delivered row count is stated without an independent total-page assertion. No claim about unregistered uploads or the whole website.",
+          "rows": [
+            {
+              "id": 39930,
+              "title": "8",
+              "url": "https://katolici.mk/%d0%b4%d0%b2%d0%b0%d0%bd%d0%b0%d0%b5%d1%81%d0%b5%d1%82-%d1%87%d0%b5%d0%ba%d0%be%d1%80%d0%b8-%d1%81%d0%be-%d1%81%d0%b2%d0%b5%d1%82%d0%b8%d0%be%d1%82-%d0%be%d1%82%d0%b5%d1%86-%d0%b2%d0%be-2020-%d0%b3/attachment/8/",
+              "disposition": "Complete media metadata, complete parent article and full-size photograph inspected: Pope2020 caption, without target title/imprint/approbation leaf; no Macedonian2009 identification."
+            }
+          ]
+        },
+        {
+          "request_url": "https://katolici.mk/wp-json/wp/v2/search?search=%D1%86%D1%80%D0%BA%D0%BE%D0%B2%D0%BD%D0%BE%D1%81%D0%BB%D0%BE%D0%B2%D0%B5%D0%BD%D1%81%D0%BA%D0%B8&per_page=100",
+          "sha256": "b12ac6d088b12d2e4d53b3c251c53542b99f7aa6cedfa0ae365cfde636144d8f",
+          "byte_size": 3394,
+          "returned_rows": 4,
+          "pagination_headers": {
+            "X-WP-Total": "4",
+            "X-WP-TotalPages": "1"
+          },
+          "pagination_limit": "Exact acquired response. Where original headers were not retained, the delivered row count is stated without an independent total-page assertion. No claim about unregistered uploads or the whole website.",
+          "rows": [
+            {
+              "id": 55126,
+              "title": "Епископот Стојанов сослужуваше на хиротонијата на монсињор Петко Валов",
+              "url": "https://katolici.mk/%d0%b1%d0%b8%d1%81%d0%ba%d1%83%d0%bf%d0%be%d1%82-%d1%81%d1%82%d0%be%d1%98%d0%b0%d0%bd%d0%be%d0%b2-%d0%bf%d1%80%d0%b8%d1%81%d1%83%d1%81%d1%82%d0%b2%d1%83%d0%b2%d0%b0%d1%88%d0%b5-%d0%bd%d0%b0-%d1%85-3/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 54118,
+              "title": "Папата го именува отец Петко Валов за епископ на епархијата „Свети Иван XXIII“ во Бугарија",
+              "url": "https://katolici.mk/%d0%bf%d0%b0%d0%bf%d0%b0%d1%82%d0%b0-%d0%b3%d0%be-%d0%b8%d0%bc%d0%b5%d0%bd%d1%83%d0%b2%d0%b0-%d0%be%d1%82%d0%b5%d1%86-%d0%bf%d0%b5%d1%82%d0%ba%d0%be-%d0%b2%d0%b0%d0%bb%d0%be%d0%b2-%d0%b7%d0%b0-%d0%b5/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 43957,
+              "title": "Папата Фрањо го прими во аудиенција претседателот на Република Хрватска",
+              "url": "https://katolici.mk/43957-2/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            },
+            {
+              "id": 24666,
+              "title": "Македонија во чест на светите Кирил и Методиј",
+              "url": "https://katolici.mk/%d0%bc%d0%b0%d0%ba%d0%b5%d0%b4%d0%be%d0%bd%d0%b8%d1%98%d0%b0-%d0%b2%d0%be-%d1%87%d0%b5%d1%81%d1%82-%d0%bd%d0%b0-%d1%81%d0%b2%d0%b5%d1%82%d0%b8%d1%82%d0%b5-%d0%ba%d0%b8%d1%80%d0%b8%d0%bb-%d0%b8-%d0%bc/",
+              "disposition": "Result title/metadata screened; body not inspected unless separately acquired; no target-book admission."
+            }
+          ]
+        }
+      ],
+      "unexamined_ranges": [
+        "Original2009service-book and2024monograph title/imprint/approbation/contents leaves",
+        "National bibliography annual volumes and blocked COBISS catalogue results",
+        "Unregistered media uploads and the whole Church website",
+        "Bodies of API hits not separately acquired",
+        "Any exact source-language donor edition or authenticated receiving copy"
+      ]
+    }
+  ],
+  "versions": [
+    {
+      "reported_title": "Литургикон",
+      "reported_year_unverified": "2009",
+      "disposition": "unchanged unauthenticated prior discovery lead; not a candidate, stage, native text or chronology coordinate",
+      "prior_review_id": "macedonian-exact-book-next-phase-2026-10-20"
+    },
+    {
+      "reported_title": "Евангелие и Апостол за литургиската година",
+      "reported_year_unverified": "2009",
+      "disposition": "unchanged unauthenticated prior discovery lead; not a candidate, stage, native text or chronology coordinate",
+      "prior_review_id": "macedonian-exact-book-next-phase-2026-10-20"
+    },
+    {
+      "reported_title": "Обредник",
+      "reported_year_unverified": "2009",
+      "disposition": "unchanged unauthenticated prior discovery lead; not a candidate, stage, native text or chronology coordinate",
+      "prior_review_id": "macedonian-exact-book-next-phase-2026-10-20"
+    },
+    {
+      "reported_title": "Божествена литургија за народот",
+      "reported_year_unverified": "2010",
+      "disposition": "unchanged unauthenticated prior discovery lead; not a candidate, stage, native text or chronology coordinate",
+      "prior_review_id": "macedonian-exact-book-next-phase-2026-10-20"
+    },
+    {
+      "reported_title": "Тропари и кондаци",
+      "reported_year_unverified": "2022",
+      "disposition": "unchanged unauthenticated prior discovery lead; not a candidate, stage, native text or chronology coordinate",
+      "prior_review_id": "macedonian-exact-book-next-phase-2026-10-20"
+    },
+    {
+      "reported_title": "Велигденско тродневие",
+      "reported_year_unverified": "2020",
+      "disposition": "unchanged unauthenticated prior discovery lead; not a candidate, stage, native text or chronology coordinate",
+      "prior_review_id": "macedonian-exact-book-next-phase-2026-10-20"
+    }
+  ],
+  "acquisitions": [
+    {
+      "source_url": "https://nubsk.edu.mk/?page_id=1612",
+      "final_url": "https://nubsk.edu.mk/?page_id=1612",
+      "retrieved_at_utc": "2026-10-21T00:53:44.255324+00:00",
+      "sha256": "fb7fc34fe450240839ac3b96714b62d41708a4a905d25e4580f06c35dd36794d",
+      "byte_size": 117764,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "National Library public bibliography service and catalogue routes",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "Modern National Library instructional prose and site markup bear a copyright footer; no express redistribution grant was found in these exact service pages. Only factual navigation/barrier metadata is proposed. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/search?search=%D0%9B%D0%B8%D1%82%D1%83%D1%80%D0%B3%D0%B8%D0%BA%D0%BE%D0%BD&per_page=100",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/search?search=%D0%9B%D0%B8%D1%82%D1%83%D1%80%D0%B3%D0%B8%D0%BA%D0%BE%D0%BD&per_page=100",
+      "retrieved_at_utc": "2026-10-21T00:53:44.923840+00:00",
+      "sha256": "ec19b39e84e374a92cf0ab00c80f651a26ac1bfd6b3801f4488d595d2afa7660",
+      "byte_size": 1514,
+      "retrieved_extent": "complete HTTP response body; query first page requested up to100 results",
+      "source_role": "Exact title discovery in official Church public search API",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "This exact response has no express licence for its modern article/media descriptions or REST wrapper; the separate on-host articles14702,22297 and22336 carry explicit no-reuse notices, whose force is not silently extended to factual metadata. Only source identities, result counts, own observations and bounded findings are proposed; the complete article/search wrapper is not. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy.",
+      "acquisition_receipt_limit": "Original pagination headers were not retained; status, final URL and byte hashes were preserved in actual command output. Timestamp is completed-file mtime. No duplicate retrieval was performed."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/media?search=%D0%B5%D0%BF%D0%B8%D1%81%D0%BA%D0%BE%D0%BF%D1%81%D1%82%D0%B2%D0%BE&per_page=100",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/media?search=%D0%B5%D0%BF%D0%B8%D1%81%D0%BA%D0%BE%D0%BF%D1%81%D1%82%D0%B2%D0%BE&per_page=100",
+      "retrieved_at_utc": "2026-10-21T00:53:46.308153+00:00",
+      "sha256": "e7526f9a4360fd590555d5b3a1107042f18a6ace66a09cbbfd266f86621266fb",
+      "byte_size": 3,
+      "retrieved_extent": "complete HTTP response body; query first page requested up to100 results",
+      "source_role": "Original jubilee monograph page/image media discovery",
+      "storage_decision": "retain-exact-trivial-response-in-public-review-metadata",
+      "rights_and_offline_limit": "Exact response is only LF plus an empty JSON array; it has no source prose or image. Its whole byte representation is retained losslessly inside the project-created public search receipt; no standalone duplicate payload is proposed. The exact three-byte response can be reconstructed from response_body_utf8 in the public review. Request identity and limits remain essential.",
+      "response_body_utf8": "\n[]",
+      "acquisition_receipt_limit": "Original pagination headers were not retained; status, final URL and byte hashes were preserved in actual command output. Timestamp is completed-file mtime. No duplicate retrieval was performed."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/media?mime_type=application%2Fpdf&per_page=100",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/media?mime_type=application%2Fpdf&per_page=100",
+      "retrieved_at_utc": "2026-10-21T00:55:18.040240+00:00",
+      "sha256": "e7526f9a4360fd590555d5b3a1107042f18a6ace66a09cbbfd266f86621266fb",
+      "byte_size": 3,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Offered public PDF media catalogue, first page up to100 records; examine pagination before completeness claim",
+      "storage_decision": "retain-exact-trivial-response-in-public-review-metadata",
+      "rights_and_offline_limit": "Exact response is only LF plus an empty JSON array; it has no source prose or image. Its whole byte representation is retained losslessly inside the project-created public search receipt; no standalone duplicate payload is proposed. The exact three-byte response can be reconstructed from response_body_utf8 in the public review. Request identity and limits remain essential.",
+      "response_body_utf8": "\n[]"
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/search?search=%D0%B8%D0%B7%D0%B4%D0%B0%D0%B2%D0%B0%D1%88%D1%82%D0%B2%D0%BE&per_page=100",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/search?search=%D0%B8%D0%B7%D0%B4%D0%B0%D0%B2%D0%B0%D1%88%D1%82%D0%B2%D0%BE&per_page=100",
+      "retrieved_at_utc": "2026-10-21T00:55:18.967029+00:00",
+      "sha256": "6082b2905248e0b3e4fd0e4957f9b7bd1760174d0e4a0d76d52f8d0c02034c46",
+      "byte_size": 7509,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Official publishing keyword search to locate original book identities",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "This exact response has no express licence for its modern article/media descriptions or REST wrapper; the separate on-host articles14702,22297 and22336 carry explicit no-reuse notices, whose force is not silently extended to factual metadata. Only source identities, result counts, own observations and bounded findings are proposed; the complete article/search wrapper is not. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/search?search=%D0%BB%D0%B8%D1%82%D1%83%D1%80%D0%B3%D0%B8%D1%81%D0%BA%D0%B8%20%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8&per_page=100",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/search?search=%D0%BB%D0%B8%D1%82%D1%83%D1%80%D0%B3%D0%B8%D1%81%D0%BA%D0%B8%20%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8&per_page=100",
+      "retrieved_at_utc": "2026-10-21T00:55:20.140891+00:00",
+      "sha256": "a160db6183f304f686c65773965b5615f78b75a78c1961fcf83f3138ffd365ad",
+      "byte_size": 21058,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Official compound search for liturgical books",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "This exact response has no express licence for its modern article/media descriptions or REST wrapper; the separate on-host articles14702,22297 and22336 carry explicit no-reuse notices, whose force is not silently extended to factual metadata. Only source identities, result counts, own observations and bounded findings are proposed; the complete article/search wrapper is not. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://nubsk.edu.mk/?page_id=1608",
+      "final_url": "https://nubsk.edu.mk/?page_id=1608",
+      "retrieved_at_utc": "2026-10-21T00:55:21.298305+00:00",
+      "sha256": "eb44e5c564d3ecfaf5083821c857b7b3809b86a03680d79b9c4cd480b1fea5f4",
+      "byte_size": 98665,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Actual user services and catalogue/digital holdings routes",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "Modern National Library instructional prose and site markup bear a copyright footer; no express redistribution grant was found in these exact service pages. Only factual navigation/barrier metadata is proposed. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/posts/14702",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/posts/14702",
+      "retrieved_at_utc": "2026-10-21T00:55:59.622515+00:00",
+      "sha256": "7ce51981d503a5815b1baaa5195ad2491bb2394b78e68ed67ace64646cb492d1",
+      "byte_size": 53302,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Official50-year priesthood retrospective: possible liturgical translator and publication facts",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "The complete article itself expressly forbids reuse without written editorial permission. Only source identities, result counts, own observations and bounded findings are proposed; the complete article/search wrapper is not. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/posts/27239",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/posts/27239",
+      "retrieved_at_utc": "2026-10-21T00:56:01.951416+00:00",
+      "sha256": "e5bf4c965a50eea5e645892bfa918216fbad6cafcbb1eb88d6dc001cc0f42a32",
+      "byte_size": 24723,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Official obituary publishing lead; identify whether any Macedonian liturgical edition is actually named",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "This exact response has no express licence for its modern article/media descriptions or REST wrapper; the separate on-host articles14702,22297 and22336 carry explicit no-reuse notices, whose force is not silently extended to factual metadata. Only source identities, result counts, own observations and bounded findings are proposed; the complete article/search wrapper is not. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/posts/33063",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/posts/33063",
+      "retrieved_at_utc": "2026-10-21T00:56:00.790638+00:00",
+      "sha256": "fd052af73984f52ee77c4c79f0f374546ad22cc24c3c0d46cf2ef2a1c9706365",
+      "byte_size": 181595,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Bishop interview concerning local Catholic Church and liturgical books before2019 papal visit",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "This exact response has no express licence for its modern article/media descriptions or REST wrapper; the separate on-host articles14702,22297 and22336 carry explicit no-reuse notices, whose force is not silently extended to factual metadata. Only source identities, result counts, own observations and bounded findings are proposed; the complete article/search wrapper is not. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://nubsk.edu.mk/?page_id=1610",
+      "final_url": "https://nubsk.edu.mk/?page_id=1610",
+      "retrieved_at_utc": "2026-10-21T00:56:02.778029+00:00",
+      "sha256": "285d705cfa2776e5ea66a515109c53655c391d56248f27e8997f8fb0074b487d",
+      "byte_size": 94790,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Library services for librarians and explicit bibliography/catalogue routes",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "Modern National Library instructional prose and site markup bear a copyright footer; no express redistribution grant was found in these exact service pages. Only factual navigation/barrier metadata is proposed. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://www.radovo.mk/",
+      "final_url": "https://www.radovo.mk/",
+      "retrieved_at_utc": "2026-10-21T00:56:54.214405+00:00",
+      "sha256": "b2a7dbd7db5fadd09b71b75b4ad5e5fa1338ea44a26ee0755f86120eb25ecfa4",
+      "byte_size": 50002,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Local Catholic parish receiving/use context and publicly linked service-book resources",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "Modern parish/news prose, homily and site wrapper have no express redistribution grant in the acquired pages; the event report credits k.mk. Only project-created event identity and limits are proposed, with no copied homily or wrapper. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/search?search=%D0%BC%D0%B0%D0%BA%D0%B5%D0%B4%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%20%D1%98%D0%B0%D0%B7%D0%B8%D0%BA%20%D0%BE%D0%B1%D1%80%D0%B5%D0%B4&per_page=100",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/search?search=%D0%BC%D0%B0%D0%BA%D0%B5%D0%B4%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%20%D1%98%D0%B0%D0%B7%D0%B8%D0%BA%20%D0%BE%D0%B1%D1%80%D0%B5%D0%B4&per_page=100",
+      "retrieved_at_utc": "2026-10-21T00:56:55.293951+00:00",
+      "sha256": "4a80505db2444c6f866f457766526a0164f73dcb24ac2cd99ed8d5038c443c91",
+      "byte_size": 11690,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Official local language and rite evidence; distinguish planned Latin bilingualMass from Byzantine celebrant edition",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "This exact response has no express licence for its modern article/media descriptions or REST wrapper; the separate on-host articles14702,22297 and22336 carry explicit no-reuse notices, whose force is not silently extended to factual metadata. Only source identities, result counts, own observations and bounded findings are proposed; the complete article/search wrapper is not. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://plus.cobiss.net/cobiss/mk/mk/bib/search?q=TI%3D%D0%9B%D0%B8%D1%82%D1%83%D1%80%D0%B3%D0%B8%D0%BA%D0%BE%D0%BD&db=cobib&mat=allmaterials",
+      "final_url": "https://plus.cobiss.net/cobiss/mk/mk/bib/search?q=TI%3D%D0%9B%D0%B8%D1%82%D1%83%D1%80%D0%B3%D0%B8%D0%BA%D0%BE%D0%BD&db=cobib&mat=allmaterials",
+      "retrieved_at_utc": "2026-10-21T00:56:56.459424+00:00",
+      "sha256": "a847ce28e2e19a7e8452ac76d25914df4986423119c6bcd1949bfee5a08c65ce",
+      "byte_size": 6015,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Exact title-field public catalogue route; diagnose current direct-access boundary without solving or bypassing access control",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "This is an ephemeral challenge wrapper with generated runtime identifiers, not a catalogue record. Preserve project-created challenge/version/URL/hash observations, not the transient wrapper or its identifiers. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://www.radovo.mk/proslaven-praznikot-marija-od-nazaret/",
+      "final_url": "https://www.radovo.mk/proslaven-praznikot-marija-od-nazaret/",
+      "retrieved_at_utc": "2026-10-21T00:58:09.580032+00:00",
+      "sha256": "dea8b3b19d0326d981b2eaa4e742f1098155983372e3311a1a83fd24442d1840",
+      "byte_size": 32999,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Dated local Catholic parish report; inspect exact rite/book/language claims without inferring reception",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "Modern parish/news prose, homily and site wrapper have no express redistribution grant in the acquired pages; the event report credits k.mk. Only project-created event identity and limits are proposed, with no copied homily or wrapper. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/posts/31976",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/posts/31976",
+      "retrieved_at_utc": "2026-10-21T00:58:27.592212+00:00",
+      "sha256": "84dbbc0863d26acb452c043c0c79d6d574687f5b5bc551a5c354a9c1a79984e8",
+      "byte_size": 66187,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Official local Byzantine Catholic historical account: language and liturgical-book identity leads",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "This exact response has no express licence for its modern article/media descriptions or REST wrapper; the separate on-host articles14702,22297 and22336 carry explicit no-reuse notices, whose force is not silently extended to factual metadata. Only source identities, result counts, own observations and bounded findings are proposed; the complete article/search wrapper is not. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/posts/11224",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/posts/11224",
+      "retrieved_at_utc": "2026-10-21T00:58:28.527137+00:00",
+      "sha256": "4d4e138340ff29593aa3979840bd165a22499f20b4d9f0bef09938cf9fa640d1",
+      "byte_size": 78157,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Local Catholic sanctuary interview: possible celebrant-book and receiving context",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "This exact response has no express licence for its modern article/media descriptions or REST wrapper; the separate on-host articles14702,22297 and22336 carry explicit no-reuse notices, whose force is not silently extended to factual metadata. Only source identities, result counts, own observations and bounded findings are proposed; the complete article/search wrapper is not. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/posts/22336",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/posts/22336",
+      "retrieved_at_utc": "2026-10-21T00:58:29.688067+00:00",
+      "sha256": "cb12ef7ce1483ede2ffafadae36f36c70852cfa0328b75db134cb42739b2ba07",
+      "byte_size": 58570,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Official Church recommended-title list; inspect whether any target liturgy book or publication route is authenticated",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "The complete article itself expressly forbids reuse without written editorial permission. Only source identities, result counts, own observations and bounded findings are proposed; the complete article/search wrapper is not. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/media?search=%D0%BB%D0%B8%D1%82%D1%83%D1%80%D0%B3%D0%B8%D0%BA%D0%BE%D0%BD&per_page=100",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/media?search=%D0%BB%D0%B8%D1%82%D1%83%D1%80%D0%B3%D0%B8%D0%BA%D0%BE%D0%BD&per_page=100",
+      "retrieved_at_utc": "2026-10-21T00:59:30.211258+00:00",
+      "sha256": "b276a556d10d2b131bdc3d3c3240d7dfd45d8b64876f484a119c735144e9d675",
+      "byte_size": 3151,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Official media exact-title catalogue to seek original title/imprint/approval images",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "This exact response has no express licence for its modern article/media descriptions or REST wrapper; the separate on-host articles14702,22297 and22336 carry explicit no-reuse notices, whose force is not silently extended to factual metadata. Only source identities, result counts, own observations and bounded findings are proposed; the complete article/search wrapper is not. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/search?search=%D1%86%D1%80%D0%BA%D0%BE%D0%B2%D0%BD%D0%BE%D1%81%D0%BB%D0%BE%D0%B2%D0%B5%D0%BD%D1%81%D0%BA%D0%B8&per_page=100",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/search?search=%D1%86%D1%80%D0%BA%D0%BE%D0%B2%D0%BD%D0%BE%D1%81%D0%BB%D0%BE%D0%B2%D0%B5%D0%BD%D1%81%D0%BA%D0%B8&per_page=100",
+      "retrieved_at_utc": "2026-10-21T00:59:31.375000+00:00",
+      "sha256": "b12ac6d088b12d2e4d53b3c251c53542b99f7aa6cedfa0ae365cfde636144d8f",
+      "byte_size": 3394,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Official Church source-language exemplar terminology discovery; no generic language claim substitutes for exact edition",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "This exact response has no express licence for its modern article/media descriptions or REST wrapper; the separate on-host articles14702,22297 and22336 carry explicit no-reuse notices, whose force is not silently extended to factual metadata. Only source identities, result counts, own observations and bounded findings are proposed; the complete article/search wrapper is not. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/posts/39922",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/posts/39922",
+      "retrieved_at_utc": "2026-10-21T01:00:39.860006+00:00",
+      "sha256": "86349fcf098c08c2990bc481e2320df701d373a685e028f6e491ef4ffda69d6a",
+      "byte_size": 36129,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Resolve exact-title media false positive against its complete parent article; no Macedonian book identity inferred",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "This exact response has no express licence for its modern article/media descriptions or REST wrapper; the separate on-host articles14702,22297 and22336 carry explicit no-reuse notices, whose force is not silently extended to factual metadata. Only source identities, result counts, own observations and bounded findings are proposed; the complete article/search wrapper is not. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-content/uploads/2020/12/8.jpeg",
+      "final_url": "https://katolici.mk/wp-content/uploads/2020/12/8.jpeg",
+      "retrieved_at_utc": "2026-10-21T01:00:41.028272+00:00",
+      "sha256": "200920b985d4c411c4438b7d2fdc05a5134f54c4b165d8cd3006c82a949f6ec0",
+      "byte_size": 81527,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Inspect complete original-size photograph for book-title identity of media caption calling it Liturgikon",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "Modern full-size photograph has no identified redistribution licence or reliably identified rights holder in the media metadata. No source image, crop or image derivative is proposed for Git or public delivery. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/posts/49558",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/posts/49558",
+      "retrieved_at_utc": "2026-10-21T01:01:17.603659+00:00",
+      "sha256": "7b9cd1316ae0e165a47de7709339162b15911aa12b363ea01d19e3d48a25d71b",
+      "byte_size": 29400,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Complete first exact-title search hit to adjudicate its Roman context",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "This exact response has no express licence for its modern article/media descriptions or REST wrapper; the separate on-host articles14702,22297 and22336 carry explicit no-reuse notices, whose force is not silently extended to factual metadata. Only source identities, result counts, own observations and bounded findings are proposed; the complete article/search wrapper is not. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/posts/22297",
+      "final_url": "https://katolici.mk/wp-json/wp/v2/posts/22297",
+      "retrieved_at_utc": "2026-10-21T01:01:18.397169+00:00",
+      "sha256": "f77ef0a606c75466d67dda2da2474069cae06a074e315fc320e4b6973d52c7bd",
+      "byte_size": 29962,
+      "retrieved_extent": "complete-HTTP-response-body",
+      "source_role": "Complete second exact-title search hit to adjudicate historical child missal context",
+      "storage_decision": "defer-raw-source-payload",
+      "rights_and_offline_limit": "The complete article itself expressly forbids reuse without written editorial permission. Only source identities, result counts, own observations and bounded findings are proposed; the complete article/search wrapper is not. The canonical project-created review retains factual identity, exact hashes, observed bounds and findings. It does not permit an offline reader to reopen protected source wording or photographs; those require a lawful external copy."
+    }
+  ],
+  "access_failures": [
+    {
+      "source_url": "https://biskupija.mk/",
+      "retrieved_at_utc": "2026-10-21T00:53:42.894456+00:00",
+      "outcome": "transport-failure",
+      "error": "<urlopen error [Errno -2] Name or service not known>"
+    },
+    {
+      "source_url": "https://www.dlib.mk/",
+      "retrieved_at_utc": "2026-10-21T00:59:29.051187+00:00",
+      "outcome": "transport-failure",
+      "error": "<urlopen error timed out>"
+    }
+  ],
+  "independent_review": {
+    "status": "accepted-bounded-research-metadata-only",
+    "independent": true,
+    "reviewer": "independent Macedonian source reviewer; distinct from primary author and central integrator",
+    "checked_on": "2026-10-21",
+    "acceptance_sha256": "b1f738ff2a74bc795af85f11bfe23529f66490983ee5065c54c6161ed650490e",
+    "accepted_author_manifest_sha256": "92ab0c73e9fd56f476da6c6b5b2c0573d1fded2cc4fc4ca5237b5831488c726b",
+    "accepted_author_public_review_sha256": "49f0cc15a014b61a059b1b73b5f571d4aef03c0228e3ada1a543a812de01fe8c",
+    "scope": "Source claims and zero-promotion proposal accepted. This separate envelope adds the acceptance identity and disambiguated response-event/unique-body counts without changing source facts or dispositions."
+  },
+  "remaining_gaps": [
+    "Authenticated original title and imprint leaves, publisher/place/pagination and holding-copy identity.",
+    "Original book approbation/decree leaf or equivalent exact-book authority record; 9 December2009 notice alone is insufficient.",
+    "Translator/publisher/authority statement identifying exact source edition, with original pages or equivalent primary documentation.",
+    "Public holding record or identifiable Catholic celebrant copy linked to exact title/imprint; local event reports do not identify the book.",
+    "Dated implementation or celebration evidence identifying the exact book/wording; the2022 event report names neither language nor book.",
+    "Complete source or authenticated contents/page census covering named liturgies, preparation, rubrics, thanksgiving, propers and complementary books as applicable.",
+    "Concrete component-level checked before/after or reception evidence; no parent or stage follows from permission, dates, titles or photographs."
+  ],
+  "limits": "The source-owned7-target list is bounded research, not an all-book or Church census. Fresh obstacles do not establish historical absence. A celebration report without an exact book/wording is not adoption of the2009translations. Protected source bodies and transient challenge identifiers are not redistributed; the public receipt contains project-created factual metadata only.",
+  "reviewed_on": "2026-10-21",
+  "retention_counts": {
+    "response_events": 24,
+    "unique_sha256": 23,
+    "response_event_bytes": 1088109,
+    "unique_body_bytes": 1088106,
+    "standalone_source_payloads_proposed": 0
+  }
+}

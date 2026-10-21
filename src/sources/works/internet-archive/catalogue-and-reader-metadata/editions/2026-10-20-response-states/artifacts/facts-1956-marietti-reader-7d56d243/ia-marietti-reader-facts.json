@@ -1,0 +1,35 @@
+{
+  "schema": "triptych-source-factual-extract-v1",
+  "rights_notice": "Project-created selection of individual bibliographic facts, dates, identifiers, page numbers and access flags. No liturgical body, original catalogue prose, scan typography, database arrangement or host UI is copied. Distributed under Triptych CC BY 4.0; factual source values remain attributed.",
+  "source_artifact_id": "artifact.internet-archive.catalogue-and-reader-metadata.2026-10-20-response-states.raw-1956-marietti-reader-0fbf26d6",
+  "source_sha256": "0fbf26d6111417bfce5d721d91e7126a56bb428590da3b310898220c86bbbe60",
+  "source_bytes": 55560,
+  "source_url": "https://archive.org/details/ordohebdomadaesa0000cath",
+  "source_loci": [
+    "data.data.isRestricted",
+    "data.data.downloadUrls",
+    "data.metadata.imagecount",
+    "data.brOptions.data[].viewable",
+    "data.brOptions.titleLeaf"
+  ],
+  "facts": {
+    "identifier": "ordohebdomadaesa0000cath",
+    "isRestricted": true,
+    "downloadUrls": [],
+    "imagecount": "140",
+    "page_descriptor_count": 138,
+    "titleLeaf": 9,
+    "public_viewable_leaves": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9,
+      138
+    ],
+    "readable_title_image_obtained": false,
+    "title_response_result": "The public preview endpoint returned undecodable non-image bytes; no protected-image decoding or access bypass attempted."
+  }
+}

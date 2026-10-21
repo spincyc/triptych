@@ -2,6 +2,21 @@
  "artifacts": [
   {
    "artifact_type": "project-created-factual-metadata-extract",
+   "byte_size": 1387,
+   "edition_owned": true,
+   "id": "artifact.internet-archive.catalogue-and-reader-metadata.2026-10-20-response-states.facts-1956-marietti-reader-7d56d243",
+   "media_type": "application/json",
+   "notes": "Only selected access flags, counts, public viewable leaf numbers and bounded retrieval result. No accounts, operator/uploader, loan details or book body.",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "project-created",
+   "rights_basis": "Project-created selection of individual bibliographic facts, dates, identifiers, page numbers and access flags. No liturgical body, original catalogue prose, scan typography, database arrangement or host UI is copied. Distributed under Triptych CC BY 4.0; factual source values remain attributed.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/details/ordohebdomadaesa0000cath",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "project-created-factual-metadata-extract",
    "byte_size": 16558,
    "edition_owned": true,
    "id": "artifact.internet-archive.catalogue-and-reader-metadata.2026-10-20-response-states.facts-ia-concelebration-bookreader-673593f3",
@@ -89,6 +104,19 @@
    "rights_jurisdiction": "United States",
    "source_url": "https://archive.org/download/ordo-sabbati-sancti/Ordo%20Sabbati%20Sancti_scandata.xml",
    "storage": "tracked"
+  },
+  {
+   "artifact_type": "catalogue-or-service-response",
+   "byte_size": 55560,
+   "edition_owned": true,
+   "id": "artifact.internet-archive.catalogue-and-reader-metadata.2026-10-20-response-states.raw-1956-marietti-reader-0fbf26d6",
+   "media_type": "application/json",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://ia801907.us.archive.org/BookReader/BookReaderJSIA.php?id=ordohebdomadaesa0000cath&itemPath=/16/items/ordohebdomadaesa0000cath&server=ia801907.us.archive.org&format=jsonp&subPrefix=ordohebdomadaesa0000cath",
+   "storage": "restricted"
   },
   {
    "artifact_type": "catalogue-or-service-response",

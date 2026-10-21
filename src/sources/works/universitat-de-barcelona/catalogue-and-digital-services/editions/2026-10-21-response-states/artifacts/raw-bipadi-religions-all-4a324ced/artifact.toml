@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.universitat-de-barcelona.catalogue-and-digital-services.2026-10-21-response-states.raw-bipadi-religions-all-4a324ced"
+edition_id = "edition.universitat-de-barcelona.catalogue-and-digital-services.2026-10-21-response-states"
+artifact_type = "digital-library-search-response"
+media_type = "application/json"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "No complete-response redistribution basis established for these exact catalogue/service bytes. Public access is not treated as a blanket licence; the exact raw response remains restricted research evidence. Selected factual fields may be retained separately."
+source_url = "https://bipadi.ub.edu/digital/api/search/collection/religions/searchterm//field/all/mode/all/conn/and/order/title/ad/asc/maxRecords/200"
+provenance = "Complete response acquired directly over HTTPS on 21 October 2026 UTC. Exact SHA-256 and byte size recomputed; no model retrieval in byte acquisition."
+retrieved = "2026-10-21"
+sha256 = "4a324ced61952d40ea73d7cd143e0739096c0c53d93aeb7c4fd0f4279c51677a"
+byte_size = 18705
+indexable = false
+notes = "BiPaDi Textos Sagrats/religions collection: 20 returned of 20. Biblia query is positive search control; full browse shows 20 listed works, not all UB ancient books. Offline checkout can inspect retained factual derivatives, where provided, but cannot reopen these complete raw bytes. Reconsider after a licence or reviewed exact-response distribution basis is established."

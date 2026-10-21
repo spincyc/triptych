@@ -8,7 +8,7 @@
       "id": "ravenna-fragments:associated-fragments",
       "label": "Mass-book fragments attributed to Ravenna: local use unproved",
       "family": "latin",
-      "scope": "Three physically identified fragmentary Mass-book states associated with Ravenna in scholarship. A research grouping, not one local recension or a lineage.",
+      "scope": "Four physically identified fragmentary Eucharistic-book states associated with Ravenna in scholarship or origin catalogues, including northern Italian lectionary strips whose Ravenna use is unproved. A research grouping, not one local recension or lineage.",
       "coverage_note": "None establishes a Ravenna annual Missal, continuous local use, a complete Eucharistic prayer, or a textual transition. Independent dates and origin qualifications control each witness."
     }
   ],
@@ -82,6 +82,26 @@
       "checked_on": "2026-10-20",
       "status": "inspected",
       "limitations": "Critical discussion does not independently date or locate the fragment scriptoria. No Ravenna archetype is promoted to a surviving book or historical stage. PDF figures carry separate rights."
+    },
+    {
+      "id": "ravenna-fragments:munich-cla",
+      "title": "Earlier Latin Manuscripts, CLA IX 1334, Munich Clm 29303(1",
+      "url": "https://elmss.universityofgalway.ie/catalogue/1835",
+      "kind": "institutional-catalogue",
+      "inspection": "Complete record and complete delivered facsimile sample inspected; exact current shelfmark, 576–600 date and northern Italian probable origin checked against Hauke p. 187. Photograph shows first-strip verso and part of second-strip verso, with visible John/Jeremiah reading material.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Sample only, not all manuscript sides, independent palaeographic judgment or Ravenna use."
+    },
+    {
+      "id": "ravenna-fragments:hauke1994",
+      "title": "Hermann Hauke, BSB Latin fragments catalogue I (1994), pp. 91, 187",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb00106368",
+      "kind": "institutional-catalogue",
+      "inspection": "Complete 477-page generated PDF acquired. Printed pp. 91 and 187 original images directly inspected. Clm 29270(8 is a ninth-century Salzburg Gospel fragment collection; Clm 29303(1 is a sixth-century northern Italian Comes duplex surviving as two strips. The old Clm 29155 c alias is not unique enough to merge the records.",
+      "checked_on": "2026-10-21",
+      "status": "inspected",
+      "limitations": "Catalogue identity and contents evidence, not independent palaeographic dating, Ravenna copying, local use or complete annual-book evidence."
     }
   ],
   "stages": [
@@ -197,6 +217,40 @@
       ],
       "limitations": "Numeric date is one catalogue's interpretation, not a new palaeographic judgment; Usuarium gives 675-700. Complete original undertext, exact Canon scope and Ravenna use remain unproved. ELMSS 715 supplies the plotted 680–720 copying interpretation; Usuarium 6351 gives 675–700, while the indexed IRHT 599830 view gives 691–710 and Ravenna(?). The live IRHT delivery was inaccessible (https://liturgicum.irht.cnrs.fr/manuscrit/599830). These are qualified catalogue disagreements, not one harmonized date or a new palaeographic judgment.",
       "reception": "No Ravenna church's actual use is established. The present holdings and scholarly attribution do not establish local reception."
+    },
+    {
+      "id": "ravenna-fragments:munich-clm29303-1",
+      "tradition_id": "ravenna-fragments:associated-fragments",
+      "label": "Munich Clm 29303(1 northern Italian lectionary strips",
+      "date_label": "Late-sixth-century ELMSS catalogue range 576–600; not a local-use chronology",
+      "start_year": 576,
+      "end_year": 600,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Two horizontal strips from successive leaves of a Comes duplex. Hauke identifies partial Holy Week John 12:8–36 and Jeremiah 11:18–20; the CLA sample shows only selected verso surfaces. No annual-book extent is reconstructed.",
+      "components": [
+        "lectionary"
+      ],
+      "witness_ids": [
+        "western:italian-ravenna-munich-clm29303-1"
+      ],
+      "witness_label": "Munich Clm 29303(1, formerly Clm 29155 c, CLA IX 1334",
+      "summary": "A physically identified northern Italian Mass-reading fragment; Usuarium’s linked current shelfmark points to a different Salzburg Gospel object.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ravenna-fragments:munich-cla",
+          "locus": "ELMSS 1835, CLA IX 1334, complete delivered sample image",
+          "claim": "Late-sixth-century northern Italian lectionary fragments are identified; only selected original verso surfaces are shown."
+        },
+        {
+          "source_id": "ravenna-fragments:hauke1994",
+          "locus": "printed pp. 187 and 91",
+          "claim": "The sixth-century two-strip Comes duplex Clm 29303(1 is distinct from ninth-century Salzburg Gospel fragments Clm 29270(8."
+        }
+      ],
+      "limitations": "The plotted 576–600 range is ELMSS’s catalogue interpretation; Hauke gives sixth century and Usuarium 575–600. The sample is not all surviving sides or a complete literal transcription. No Canon, annual Missal, distinct recension, historical parent, transition or text inheritance is asserted.",
+      "reception": "No Ravenna church’s actual use of these strips is established. A scholarly origin-table attribution, an old shelfmark alias and present Munich custody do not establish local reception."
     }
   ],
   "transitions": [],
@@ -230,7 +284,7 @@
       "tradition_id": "ravenna-fragments:associated-fragments",
       "period": "late antique to medieval",
       "missing": "The Rotulus is bounded Advent prayer evidence with Office-use interpretation; sermon, diptychon, ritual and lectionary leads do not identify annual Mass books.",
-      "next_source": "Read Benz 1967 pp. 20–31 and prayer analysis, Olivar 1969 pp. 40-58, Mohlberg appendix pp. 173-178; obtain Caronti 1922 pp. 114-118 and physical identity for Usuarium 6346. Resolve Munich current shelfmark with BSB, and Ravenna-held IRHT fragments from their original leaves.",
+      "next_source": "Read Benz 1967 pp. 20–31 and prayer analysis, Olivar 1969 pp. 40-58, Mohlberg appendix pp. 173-178; obtain Caronti 1922 pp. 114-118 and physical identity for Usuarium 6346. Munich’s current-object distinction is now checked against BSB/Hauke/ELMSS: the sixth-century northern Italian Comes duplex strips Clm 29303(1 (former Clm 29155 c, CLA IX 1334 / CLLA 1201) are distinct from the linked current Clm 29270(8 / bsb00001710 Gospel-fragment collection, which BSB assigns to first-half ninth-century Salzburg. Usuarium 6411’s conflicting current label/link remains recorded. Obtain all surviving original sides of Clm 29303(1 and seek object-provenance and actual receiving-use evidence. Resolve Ravenna-held IRHT fragments from their original leaves. Ward 1989 printed pp. 351–352 / PDF pp. 43–44 is now inspected: numbering to 42 includes fragmentary no. 1 and combined nos. 40/41; orthography is adapted. The separate official modern diocesan Proper announcement does not establish ancient Rotulus or fragment use.",
       "consequence": "No Rotulus, sermon collection, diptychon or unspecified Exultet roll is admitted as a complete annual Eucharistic book."
     }
   ]

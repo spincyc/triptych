@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ministerio-de-cultura.ccpb.2026-10-21-response-state.facts-ccpb-821832-stable-1-400d51bb"
+edition_id = "edition.ministerio-de-cultura.ccpb.2026-10-21-response-state"
+artifact_type = "project-created-factual-metadata-extract"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Project-created factual selection under the repository CC BY 4.0 terms. Only individual bibliographic facts, short titles, dates, identifiers, quantities, signatures, fingerprints, copy-condition facts and access/rights flags are retained. No blanket database, catalogue-prose, site-layout or journal redistribution licence is inferred. Exact retained official U.S. Copyright Office rights sources and loci are pinned in the accompanying research receipt."
+rights_jurisdiction = "United States"
+source_url = "https://ccpbe.cultura.gob.es/CCPBOPAC/cgi-ccpbopac/abnetop?ACC=DOSEARCH&xsqf99=CCPB000821832-3"
+provenance = "Mechanical selection of individual factual fields and explicit source uncertainty from exact input named by derived_from; no original-book body or provider layout copied."
+retrieved = "2026-10-21"
+sha256 = "400d51bb2e4fd79a42ee5521046e1ef678245f78cf85509cefb35c49627223a5"
+byte_size = 4605
+path = "src/sources/works/ministerio-de-cultura/ccpb/editions/2026-10-21-response-state/artifacts/facts-ccpb-821832-stable-1-400d51bb/facts.json"
+derived_from = "artifact.ministerio-de-cultura.ccpb.2026-10-21-response-state.raw-ccpb-821832-stable-1-60949cd0"
+transformation = "Select individual bibliographic/control/rights fields at declared source loci; preserve exact short field strings, fingerprints, signatures and the journal's mixed extent notation. Omit scripts, layout, unrelated descriptions, session routing, headers and restricted page images."
+encoding = "utf-8"
+indexable = false
+notes = "Catalogue metadata only; no authenticated missal printing date, second UB copy, original-book acquisition, complete text or ancestry assertion."

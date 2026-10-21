@@ -1,0 +1,57 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "factual-metadata-selection",
+   "byte_size": 1444,
+   "edition_owned": true,
+   "id": "artifact.staatsbibliothek-zu-berlin.gesamtkatalog-der-wiegendrucke.web-2026-10-20.m24589-facts",
+   "media_type": "application/json",
+   "notes": "Selection preserves exact public identifiers and reported holding qualifier; excludes modern wrapper, scripts, tracking code, and all handwritten-card images.",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "project-created",
+   "rights_basis": "Project-created factual selection and provenance under CC BY 4.0; individual bibliographic facts and short labels are unprotected in the United States. No licence over the source database, website wrapper or handwritten cards is asserted.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M24589.htm",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "catalogue-html",
+   "byte_size": 6554,
+   "edition_owned": true,
+   "id": "artifact.staatsbibliothek-zu-berlin.gesamtkatalog-der-wiegendrucke.web-2026-10-20.m24589-html",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-10-20",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M24589.htm",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-10-20",
+  "editors": [],
+  "id": "edition.staatsbibliothek-zu-berlin.gesamtkatalog-der-wiegendrucke.web-2026-10-20",
+  "jurisdiction": null,
+  "language": "de",
+  "publication": "Staatsbibliothek zu Berlin, public online catalogue.",
+  "title": "Gesamtkatalog der Wiegendrucke, public state retrieved 20 October 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Staatsbibliothek zu Berlin",
+  "category": "institutional-catalogue",
+  "description": "Institutional bibliographic catalogue of incunabula; individual records identify titles, imprints, reference numbers and reported holdings. A catalogue is not an original book or current physical holding inspection.",
+  "id": "work.staatsbibliothek-zu-berlin.gesamtkatalog-der-wiegendrucke",
+  "languages": [
+   "de"
+  ],
+  "title": "Gesamtkatalog der Wiegendrucke"
+ }
+}

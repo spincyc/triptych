@@ -1,0 +1,2824 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "hungarian-original-source-batch3-2026-10-20",
+  "title": "Hungarian original-book title, exact receiving-copy routes and bounded circular search",
+  "lane": "hungarian-original-source-batch3",
+  "side": "eastern",
+  "checked_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "proposal_core_sha256": "03ff987e76bb2825a3301afe4d2ef6970a81dc8c16821dbd868625fe961feee0",
+    "early_source_review_sha256": "b1142a63c4bd4a937f249bb1688af19d0f7a175cd08c23c9115b4aa6794cdb3a",
+    "modern_source_review_sha256": "75f12183a7e2daea9e764a0fc4d0a5746a5d20b56c8d9cdd9be92796d8bc4a06",
+    "circular_search_review_sha256": "6ee1804fc0a7ff0ed4639798c2a5fb1ac8f546efab84093839b8e41778127a93",
+    "status": "independently-accepted-source-and-rights",
+    "complete_modern_acquisition_manifest_sha256": "342ba0bf60dc6fa81d4bf6571dba106bb09b2945b2c7a52f0de6419770c7fb1e",
+    "cc0_data_derivative_sha256": "610c6573af7d640ceb940620d076ee40e7be6b416df0530eae681d9d9090b97e",
+    "cc0_declaration_sha256": "64f1e0b4d4100c298a4332550a7cc59e3aaca3ba1c95642c9c5a8585948bc1fc",
+    "independent_review_sha256": "f91633a8a810f213f3cc108ecbd106e7c73c1de7d838433769cd62c81aa9e767",
+    "independent_review_byte_size": 19622,
+    "frozen_factual_packet_sha256": "368694188e68a817ddf50fc94fdcb87305c79ecdf3c2d91dce22905a76819509"
+  },
+  "coverage_rows": [
+    "hungarian"
+  ],
+  "uses": [
+    {
+      "use": "Hungarian early received-book research",
+      "disposition": "Source and copy-identity clarification; no stage or reception added",
+      "candidate_id": "byz-lviv1646-nyirderzs",
+      "limitation": "A different Czech incomplete copy supplies no dated Nyírderzs use or restoration of M–920."
+    },
+    {
+      "id": "hungarian",
+      "disposition": "bounded-primary-title-plus-copy-routes",
+      "result": "A photographed 1920-imprint title is directly inspected; exact physical impression and complete book remain unauthenticated/unacquired. College catalogue identifies exact copies of both books and corroborates one 1949 permission reading. No new substantive recension, complete text, historical parent or operative-use event is established.",
+      "remaining_inputs": [
+        "Complete authenticated 1920 impression including dated permission verso, contents, Greek canonical parts, terminal pagination and Emlékezetül pp.309–310",
+        "Original title/permission leaves and complete scans of both 1949 physical formats",
+        "Original images of M-1637's preparatory annotations and of the Hajdúböszörmény ownership stamps",
+        "Independent assessment of 1949 printed permission against both secondary readings",
+        "Original circular acquisition owned by coordinator; not duplicated here"
+      ]
+    },
+    {
+      "id": "hungarian-reception",
+      "disposition": "original-circular-gap-narrowed-no-new-reception-event",
+      "result": "No original circular or contemporary issue scan acquired. Current institutional finding aids identify exact series and parish-box routes without silently treating scholarship quotations as original documents."
+    }
+  ],
+  "sources": [
+    {
+      "id": "hungarian-batch3-src-nkp1646",
+      "url": "https://aleph.nkp.cz/F/?func=direct&doc_number=000577538&local_base=SLK&format=001",
+      "checked_on": "2026-10-20",
+      "title": "National Library of the Czech Republic, Slovanská knihovna catalogue SLK000577538: [Služebnik] / [Leiturgiarion], A 003340",
+      "evidence_type": "holding-library-copy-catalogue-and-explicit-digital-copy-link",
+      "inspection": "Complete standard and MARC display responses acquired and read. MARC 245/246 supplies bracketed titles; 264 bracketed [Lvov], [typ. M. Sljozka], [1646]; 300 gives 305 surviving folios and 21 cm; 500 supplies the first-folio incipit and Arsenij Želiborskij as editor; 562 explicitly describes missing and damaged leaves; 563 gives the 1962 rebinding. The standard display and item list identify shelfmark A 003340. MARC 856 links the barcode NKP:3186213823, and the acquired barcode viewer resolves to jr1nAAAAcAAJ.",
+      "locus": "SLK000577538 MARC 245, 246, 264, 300, 500, 561, 562, 563, 856; standard display Signatura and Google fields; item list A 003340 / barcode 3186213823",
+      "full_contents_examined": true,
+      "limitation": "Full catalogue records were read, not the full book. The copy lacks its title/preliminary and terminal leaves. MARC 562 says eleven missing folios but enumerates [1–6] at the beginning, 306, 307 and [1–2] at the end (ten enumerated); this discrepancy remains unresolved. It also reports only the lower half of folio 304 surviving. The catalogue’s attribution and extent do not restore those leaves. Its undated marginal prayer-name note at folio 146v was reported by the catalogue, not independently identified in the bounded image check, and establishes no Hungarian ownership or Catholic reception.",
+      "text_acquisition": "complete-served-catalogue-responses-acquired; historical-book-still-bounded-images-only",
+      "hash_state": "sha256-computed",
+      "sha256": "c7ed691158626b00ce7db5f667053cde345c646f4149215911c934930e1c3e88",
+      "byte_size": 24479,
+      "rights_note": "The SLK catalogue DATA are expressly available under CC0-1.0 Universal (official NK ČR declaration approved 29 August 2023). The complete 34-field displayed catalogue-data JSON transport is retained separately as artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.displayed-marc-data-json-610c6573, with exact parent HTML SHA and declared entity/whitespace conversion. ExLibris software, navigation, session links and raw catalogue HTML remain excluded; this data grant does not clear historical book images or modern photographs. Original factual paraphrases and edition/copy limits remain as stated."
+    },
+    {
+      "id": "hungarian-next-src-google1646",
+      "url": "https://books.google.com/books?id=jr1nAAAAcAAJ",
+      "checked_on": "2026-10-20",
+      "title": "Leiturgiarion, Google Books jr1nAAAAcAAJ, digitized National Library of the Czech Republic copy",
+      "evidence_type": "library-copy-digital-discovery-and-bounded-page-inspection",
+      "inspection": "Public Google bibliographic page identifies typ. M. Sljozka, 1646, original from National Library of the Czech Republic, digitized 2 May 2016. Previously inspected PA1 and PP3/PP4/PP7 are preserved unchanged. Follow-up: the holding-library SLK000577538 catalogue and its barcode link now identify this Google copy as A 003340, barcode 3186213823. Additional exact signed images PA303, PT1 and PT2 were acquired and visually inspected: PA303 and PT1 continue dismissal text, while PT2 is blank. PA303 bears a pencil 302, so viewer page labels are not silently treated as the printed foliation. The complete offered PDF was tried once again and returned HTTP 429. Two additional previously acquired faithful flat liturgy-page images, provider labels PA146-IA1 and PA147-IA1, are also inspected and retained. Their physical folios and the catalogue-reported f146v annotation remain unidentified; they support no annotation or use claim.",
+      "locus": "Google Books jr1nAAAAcAAJ pages PA1, PP3, PP4, PP7 (previously retained); PA303, PT1, PT2 (new bounded inspection); linked holding catalogue SLK000577538, A 003340",
+      "full_contents_examined": false,
+      "limitation": "A bounded digital copy of a physically incomplete holding. Czech catalogue MARC562 explicitly describes missing preliminary/title and terminal leaves; its count eleven versus ten enumerated leaves is unresolved. No original printed title or colophon of this Czech copy was inspected. The three additional page images do not make a whole-volume acquisition or prove physical completeness. No relation to Nyírderzs M–920 or a Hungarian use event is established.",
+      "text_acquisition": "bounded-displayed-images-only; offered-whole-pdf-rate-limited-twice-in-separate-passes",
+      "hash_state": "sha256-computed-for-acquired-pages-only",
+      "rights_note": "Only the separately reviewed faithful flat old-content images may be retained under their artifact-specific United States public-domain/originality basis; preserve provider marks. Modern Google HTML, placeholders and unavailable whole-PDF response remain scratch-only. The 1962 material-cover image remains excluded."
+    },
+    {
+      "id": "hungarian-modern-src-title1920-photo",
+      "url": "https://pictures.abebooks.com/inventory/32188629463_4._SL1500_.jpg",
+      "checked_on": "2026-10-20",
+      "title": "1920-imprint Liturgikon title leaf photographed in AbeBooks item 32188629463 (Time-Honored Books)",
+      "evidence_type": "primary-book-title-photograph; physical-impression-not-authenticated",
+      "inspection": "All four offered photographs acquired and visually inspected. Photograph 4 shows the unnumbered title leaf with 1235/1920 private-use permission, revised/expanded statement, Hajdúdorog episcopal office and Jóba Elek printer line 1723–1920. Photographs 1–3 show binding and endpapers only.",
+      "locus": "Photograph 4: unnumbered title leaf; seller listing https://www.abebooks.it/prima-edizione/Hungarian-Litourgikon-Priests-Altar-Book-Liturgy/32188629463/bd",
+      "full_contents_examined": false,
+      "limitation": "Four offered seller photographs acquired and inspected: front cover, spine/cover, endpapers, and an unnumbered title leaf. Only the fourth photograph carries printed book text. It verifies the reproduced title, 1235/1920 private-use permission, revised/expanded editorial statement and Jóba Elek printer line 1723–1920. No permission-date verso, contents, Greek anaphora pages, terminal leaves or Emlékezetül pp. 309–310 are shown. The seller calls the book a 1920 first edition, but the physical impression cannot be independently authenticated from these four photographs: the known 1984 facsimile retains the 1920 imprint. No full 1920 book or complete textual state is acquired. A binding appearance cannot establish a print date.",
+      "text_acquisition": "four-offered-photographs-only; whole-book-not-acquired",
+      "hash_state": "sha256-computed",
+      "sha256": "9ac45a8eac5435bf228bff5595c5b9058ea60f467405b42be5edf43cfecee3e4",
+      "byte_size": 103707,
+      "rights_note": "Underlying 1920 title text and bibliographic facts are distinct from modern seller photographs and the commercial wrapper. No artifact-specific reproduction licence for the photographs or wrapper was inspected. Photographs and exact HTML remain scratch-only; only identity metadata, hashes and original paraphrases are proposed for Git. No modern photograph is cleared by the underlying edition's age."
+    },
+    {
+      "id": "hungarian-modern-src-opac1920",
+      "url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=marc&recnum=448",
+      "checked_on": "2026-10-20",
+      "title": "Szent Atanáz college library catalogue, bibNY56K501 / recnum 448: revised and expanded Liturgikon (1920)",
+      "evidence_type": "holding-library-copy-catalogue",
+      "inspection": "Complete MARC and long-with-holdings records read. MARC 001 identifies bibNY56K501; 250 gives revised/expanded; 260 gives Jóba Elek, Nyíregyháza, 1920; 300 gives 311 pages, illustrations, 24 cm. Holdings are Ant10911/M-1638, Ant10792/M-1637 and Ant101011/M-1891. The M-1637 copy lacks pp. 273–311; its catalogued front annotations include Melles's 16 August 1920 presentation and Szemerszky's August 1920 note about preparation and Greek-text correction. Ant101011/M-1891 bears Hajdúböszörmény Greek Catholic parish stamps. M-1638 was re-bound in 2019.",
+      "locus": "MARC 001, 245, 250, 260, 300, 500, 541, 546, 561–562 and 949; long record's holdings table",
+      "full_contents_examined": false,
+      "limitation": "Full catalogue records read, original physical copies and annotations not inspected. The catalogue lists three separate copies, including an incomplete annotated copy; they must not be merged with the seller copy. No digital object or MARC 856 field is present in the returned record. Parish stamps and ownership annotations do not by themselves date liturgical use. Catalogue transcription is an acquisition route, not a replacement for original-book collation.",
+      "text_acquisition": "complete-offered-catalogue-records-acquired; original-book-not-acquired",
+      "hash_state": "sha256-computed",
+      "sha256": "3f131ad54d1c18211bc9b730dad3560d79a3b1e49941f6a231ccff48d834cdf5",
+      "byte_size": 19816,
+      "rights_note": "Modern holding catalogue and Monguz presentation; no repository redistribution licence inspected. Exact HTML stays scratch-only. Factual bibliographic/copy metadata and original paraphrases may be proposed; no original-book or catalogue image/text payload is proposed."
+    },
+    {
+      "id": "hungarian-modern-src-opac1949",
+      "url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=marc&recnum=10613",
+      "checked_on": "2026-10-20",
+      "title": "Szent Atanáz college library catalogue, bibNY56K11755 / recnum 10613: Aranyszájú Szent János liturgy (1949)",
+      "evidence_type": "holding-library-copy-catalogue",
+      "inspection": "Complete MARC and long-with-holdings records read. MARC 246 transcribes private-use permission 1650/1949; 260 names Orosz Károly, Nyíregyháza, 1949; 300 gives 59 pages plus 5 typed pages. Holdings are D 442, DT 399, DT 484 and C 12647. Copy DT 484 has typed additions numbered 60–80; copy 104641/C 12647 has five typed pages with prayers for the sick, petitions and Communion prayers. These are explicitly copy-specific additions.",
+      "locus": "MARC 001, 245–246, 260, 300, 500, 541 and 949; long record's holdings table",
+      "full_contents_examined": false,
+      "limitation": "Full catalogue records read; no original title image or full 1949 book acquired. MARC 246 transcribes 1650/1949 private-use permission and corroborates Ivancsó 2003, but does not independently resolve its disagreement with Ivancsó 2008's 1235/1920. Copy-specific typed supplements are not part of the printed 59-page extent and do not establish another printed recension. No digital object or MARC 856 field is present in the returned record.",
+      "text_acquisition": "complete-offered-catalogue-records-acquired; original-book-not-acquired",
+      "hash_state": "sha256-computed",
+      "sha256": "71b351482f2d7fb6482a1623a7288f20d534ac264c7485bae2ff05b37889f16b",
+      "byte_size": 16916,
+      "rights_note": "Modern holding catalogue and Monguz presentation; no repository redistribution licence inspected. Exact HTML stays scratch-only. Factual bibliographic/copy metadata and original paraphrases may be proposed. The rights of the 1949 printing's edition-specific matter are not settled by this catalogue, nor by permission to print privately."
+    }
+  ],
+  "searches": [
+    {
+      "repositories": [
+        "National Library of the Czech Republic Aleph NKC and SLK",
+        "NDK Kramerius public v5 search",
+        "Google Books jr1nAAAAcAAJ",
+        "public web index for Szent Atanáz / Nyírderzs M–920"
+      ],
+      "aliases_tried": [
+        "Leiturgiarion",
+        "Sluzebnik",
+        "Sljozka",
+        "Sliozka",
+        "Леитургиарион",
+        "Служебник",
+        "Lvov",
+        "Львов",
+        "Lemberg",
+        "Ant10467",
+        "M–920",
+        "Nyírderzs"
+      ],
+      "results": "SLK query Leiturgiarion returned five catalogue records, including SLK000577538. NKC query did not locate this title. NDK Leiturgiarion full-text query returned seventeen page hits in later catalogues/reference works, while the same query restricted to monograph records returned zero. The ASCII Sluzebnik monograph query returned unrelated modern Czech-title hits, not an identified 1646 scan. Google whole PDF retry returned429; bounded signed image routes succeeded. No M–920 ownership-leaf scan was located in these recorded web-index queries.",
+      "bound": "No exhaustive Manuscriptorium or archive census is claimed. NDK later catalogue images/full text were not acquired; no inference from its search hits beyond discovery. Whole Google image roster was extracted from viewer metadata but no bulk image acquisition was run.",
+      "unexamined": "Original M–920 pp.102–109; dated Nyírderzs inventories; exact identity of Kriva/Krive; complete 1646 exemplar title/preliminaries/colophon. The Czech catalogue reports a prayer-name marginal note at f146v, but selected Google PA146-IA1/PA147-IA1 images did not independently identify that locus; no annotation claim uses them."
+    },
+    {
+      "repertoire": "Public web index",
+      "queries": [
+        "\"A görög szertartásu\" \"1920\" liturgiája",
+        "\"Aranyszájú Szent János\" \"1949\"",
+        "\"Liturgikon\" \"1920\" \"pdf\" magyar",
+        "site.szentatanaz.hu \"1920\" \"liturgiája\"",
+        "\"A görög szertartásu katholikus egyház\" liturgiája digitális",
+        "\"A görög szertartású\" \"liturgiája\" \"1920\" könyvtár",
+        "\"Aranyszájú\" \"1949\" \"liturgiája\" pdf",
+        "\"liturgikon\" \"1920\" digital",
+        "\"Hungarian Litourgikon\" \"1920\"",
+        "\"Liturgikon\" \"1920\" site:mek.oszk.hu",
+        "\"liturgiája\" \"1920\" site:antikvarium.hu",
+        "\"liturgiája\" \"1949\" site:antikvarium.hu",
+        "\"liturgiája\" \"1920\" site:books.google.com",
+        "\"liturgiája\" \"1920\" site:catalog.hathitrust.org",
+        "\"liturgiája\" \"1949\" site:books.google.com",
+        "\"liturgiája\" \"1920\" site:oszk.hu -filetype:pdf",
+        "\"liturgikon\" \"1920\" filetype:pdf -\"Athanasiana\" -\"Folia\" -\"Pilipkó\" -\"Roskovics\"",
+        "\"szent és isteni liturgiája\" \"1920\" -site:epa.oszk.hu -site:real.mtak.hu -site:szentatanaz.synergyfox.app",
+        "\"szent és isteni liturgiája\" \"1949\" -site:epa.oszk.hu",
+        "\"A görög szertartásu katholikus egyház\" -filetype:pdf",
+        "\"Aranyszájú Szent János egyházatya\" \"1949\"",
+        "\"Déli isteni tisztelet\" \"1949\"",
+        "\"liturgiája\" \"1235/1920\"",
+        "\"görögszertartásu\" \"liturgiája\" \"1920\"",
+        "\"liturgikon\" \"nyiregyhaza\" download",
+        "\"liturgikon1920\"",
+        "\"liturgikon\" \"1920\" \"scan\"",
+        "\"Liturgiája\" \"Magánhasználatra\"",
+        "\"Liturgikon\" \"letöltés\" \"görögkatolikus\"",
+        "\"Liturgikon\" \"pdf\" \"Hajdúdorog\"",
+        "\"Nyíregyházán\" \"Orosz\" \"liturgiája\""
+      ],
+      "result": "Located seller's 1920-imprint title photograph and holding-library catalogue routes; no complete exact 1920/1949 scan located in these returned result sets.",
+      "bounds": "Ranked search results only, not an exhaustive host or archive census. Modern scholarship and a modern musical score were not substituted for the target originals."
+    },
+    {
+      "repertoire": "Szent Atanáz college Corvina OPAC",
+      "queries": [
+        "TITL: görög szertartásu katholikus egyház",
+        "TITL: Liturgikon",
+        "TITL: Aranyszájú Szent János",
+        "TITL: Aranyszájú",
+        "TITL: Déli isteni tisztelet"
+      ],
+      "result": "Exact records bibNY56K501 and bibNY56K11755 inspected in full MARC and long-with-holdings formats. Title1920 query returned one result; Liturgikon query returned 38 (only its displayed first 12 rows inspected); Aranyszájú Szent János query returned 97 (only displayed first 12 inspected); Déli isteni tisztelet returned no result.",
+      "bounds": "No 856 digital link in either exact returned MARC. Unshown broad-query ranges are unexamined; there is no claim that the library holds no other copies or digitizations."
+    },
+    {
+      "repertoire": "MEK live simple-title search",
+      "queries": [
+        "dc_title=Liturgikon",
+        "dc_title=görög szertartásu katholikus egyház",
+        "dc_title=Aranyszájú Szent János"
+      ],
+      "url": "https://mek.oszk.hu/hu/search/elfull/",
+      "result": "First two returned 0; third returned one entry, MEK14083, Orosz István's musical score. Its full landing page was acquired and inspected; it is not the 1949 service book. No score PDF was needed or acquired.",
+      "bounds": "Title metadata search only, not MEK full-text search or a census of other OSZK services."
+    },
+    {
+      "repertoire": "Internet Archive advancedsearch",
+      "queries": [
+        "title:(liturgiaja) AND year:1920",
+        "title:(liturgiaja) AND year:1949",
+        "title:(liturgiája) AND year:1920",
+        "title:(liturgiája) AND year:1949",
+        "(liturgikon OR litourgikon OR leiturgikon) AND (Hungarian OR magyar OR Nyiregyhaza)",
+        "(gorog OR katholikus OR hajdudorogi) AND year:1920"
+      ],
+      "result": "Each exact query returned numFound=0; complete JSON responses acquired and hashed.",
+      "bounds": "Metadata-index query results only. No title, language or transliteration completeness is asserted."
+    },
+    {
+      "repertoire": "Google Books volumes API",
+      "queries": [
+        "\"görög szertartásu\" \"liturgiája\"",
+        "\"Aranyszájú\" \"liturgiája\" \"1949\""
+      ],
+      "result": "Both attempts returned HTTP429; no source-book bytes acquired.",
+      "bounds": "Access failure, not a negative holding result."
+    },
+    {
+      "repertoire": "Hungaricana library search",
+      "queries": [
+        "\"liturgikon\" \"1920\"",
+        "\"A görög szertartásu katholikus egyház\"",
+        "\"Aranyszájú Szent János\" \"1949\""
+      ],
+      "result": "All three exact search URLs returned HTTP403 to direct retrieval; web-tool open also failed for the Liturgikon query.",
+      "bounds": "Unsearched holdings due to access failure; no absence conclusion."
+    },
+    {
+      "repertoire": "Institutional publication/holding pages",
+      "urls": [
+        "https://lib.atanaz.hu/",
+        "https://lib.atanaz.hu/katalogusok",
+        "https://szentatanaz.hu/kiadvanyaink",
+        "https://szentatanaz.hu/kiadvanyaink/liturgia-tanszek-kiadvanyai",
+        "https://szentatanaz.hu/kiadvanyaink/liturgikus-oroksegunk",
+        "https://byzhun.hu/kiadvanyaink/tudomanyos-konyvek",
+        "https://byzantinohungarica.com/"
+      ],
+      "result": "Complete displayed pages acquired. Found live college OPAC and catalogue of Dokumentáció I (2006), but no offered original 1920/1949 whole-book link on these pages. The Liturgikus örökségünk page offers symposium volumes, not the target books; no unrelated symposium download acquired. Byzantinohungarica root is a small 404 page despite HTTP200.",
+      "bounds": "Only these exact pages and their relevant displayed catalogue links, not all files on the institutional domains."
+    },
+    {
+      "repertoire": "OSZK NEKTÁR public quick-search entry",
+      "queries": [
+        "A görög szertartásu katholikus egyház",
+        "Aranyszájú Szent János szent és isteni liturgiája"
+      ],
+      "result": "Quick-search wrapper acquired; it forwards through a login-form mechanism. No login form submitted and no complete results inspected.",
+      "bounds": "Unexamined route; not a negative search. The college's exact public records provide the stronger copy route for this lane."
+    },
+    {
+      "checked_on": "2026-10-20",
+      "scope": "Public unauthenticated routes to original circulars 1021/1921,1195/1921,2351/1949,819/1954 and contemporary Liturgikon announcements; no account/paywall/archival request sent",
+      "queries": [
+        "Hajdúdorog körlevél 1921 1021 liturgikon",
+        "\"2351\" \"1949\" \"liturgi\" görög",
+        "\"1195\" \"1921\" \"liturgikon\"",
+        "Hajdúdorogi egyházmegye körlevelei 1921 digitalizált",
+        "\"Hajdúdorogegyházmegyei Körlevelek\" \"1921\"",
+        "\"Hajdúdorogi\" \"Körlevelek\" \"digitaliz\"",
+        "\"Liturgikon új kiadása\" \"2351\"",
+        "\"Hajdúdorogi\" \"körlevelek\" filetype:pdf 1949",
+        "\"Görögkatholikus Tudósító\" \"1921\" digitalizált",
+        "site:epa.oszk.hu \"Görögkatholikus Tudósító\"",
+        "\"Görögkatholikus Tudósító\" \"liturgikon\"",
+        "site:byzantinohungarica.hu \"Tudósító\"",
+        "site:byzhun.hu \"digitalizált\" \"Tudósító\"",
+        "\"Görögkatholikus Tudósító\" \"1921\" pdf",
+        "\"digitalizált\" \"Görögkatholikus\" \"Tudósító\"",
+        "\"görögkatolikus sajtótermékek\" gyűjtemény",
+        "\"byzantinohungarica\" \"periodikák\"",
+        "\"Görögkatholikus Tudósító\" site:matarka.hu",
+        "\"Görögkatholikus Tudósító\" \"pdf\" -\"Athanasiana\" -\"örökségünk\" -\"Studia\" -\"scribd\"",
+        "\"Hajdúdorogegyházmegyei\" \"1921\" körlevelek digitalizált",
+        "\"Körlevelek\" \"2351\" \"1949\" \"pdf\"",
+        "\"Görög\" \"1921\" site:archive.org/details/ liturgikon",
+        "\"1021\" \"1921\" \"Liturgikus\" \"körlevél\"",
+        "\"Liturgikon\" \"1921\" \"Tudósító\"",
+        "\"Forrásgyűjtemény\" \"magyar görögkatolikusság\" Ivancsó pdf",
+        "\"Ivancsó\" \"forrásgyűjteménye\" \"1998\" pdf",
+        "\"A magyar görögkatolikusság körlevélben\" filetype:pdf -site:epa.oszk.hu -site:epa.hu -site:scribd.com",
+        "\"Forrásgyűjtemény\" \"ivancso\" site:szentatanaz.hu",
+        "\"Görögkatholikus Tudósító\" \"1921\" \"liturgia\"",
+        "\"Hajdúdorogegyházmegyei Körlevelek\" digitális",
+        "\"Hajdúdorogi\" \"1921\" \"Körlevelek\" \"levéltár\"",
+        "site:byzhun.hu \"Tudósító\" 1921",
+        "\"gorogkatolikus-tudosito-01\"",
+        "\"Görögkatholikus Tudósító\" \"1921\" \"április\"",
+        "\"Tudósító\" \"Liturgikon\" \"1922\""
+      ],
+      "finding": "No original circular or contemporary issue payload acquired through these exact routes. Search snippets quoting circulars are scholarship, not new original inspection. Official current archival finding aids identify concrete repositories/series/parish boxes; archive research desk requires prior arrangement. Historical periodical collection indexes recoverable via Internet Archive but three linked1921issuepages had no200capture in exact CDX queries; no issue was read.",
+      "limits": "Bounded route failure is not a claim that no scan, book, circular or evidence exists. No full-text search of unavailable newspaper issues. No inference about exact publication or altar use."
+    },
+    {
+      "repository": "Görögkatolikus Metropóliai és Főegyházmegyei Levéltár",
+      "url": "https://hd.gorogkatolikus.hu/leveltar/fond_es_allagjegyzek.pdf",
+      "locus": "2025- finding aid, PDF p1 I–1–h and p7 IX; 10 January2025 date at end",
+      "result": "Current official finding aid lists episcopal circulars as GMFL I–1–h, 4.886 linear metres, within the1837–2014 episcopal-office fonds. The separately identified IX digital fonds is marked closed. Arca HU GMFL I.01.h and EAD export independently agree on title/extent, but have no item-level date or original-circular digital object. This is a concrete archival target, not inspection of1021/1921,1195/1921,2351/1949 or819/1954.",
+      "limits": "No claim that the circular series itself is legally closed or unavailable on request. Digital-fonds restriction applies only to IX as printed. No paid copy or archive request sent."
+    },
+    {
+      "repository": "Nyíregyházi Egyházmegye Levéltár parish finding aids",
+      "urls": [
+        "https://leveltar.nyirgorkat.hu/2014/03/nyiregyhaza/",
+        "https://leveltar.nyirgorkat.hu/2013/06/peneszlek/"
+      ],
+      "loci": [
+        "Nyíregyháza box28: Munkács/Hajdúdorog circulars1903–1989",
+        "Penészlek box15: Hajdúdorog circulars1913–1967"
+      ],
+      "result": "Additional named parish collections cover the target years at series level. Exact volumes/folios and completeness unexamined; the finding aids supply no original circular images."
+    },
+    {
+      "repository": "Archived official Byzantinohungarica periodical index",
+      "url": "https://web.archive.org/web/20211027231920id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-miskolc",
+      "result": "Recovered index lists1921April/August Miskolc issues; Nyíregyháza index lists1921December25. Exact corresponding issuepage CDX queries returned empty200capture sets; attempted nearest snapshots returned404. The2023periodical index and current byzhun2017project report establish the historical digitization route, not current access to these issues. No contemporary text was read.",
+      "limits": "The unrelated current byzantinohungarica.hu domain was not treated as the research group archive. No issue-level absence or exhaustive collection search claimed."
+    },
+    {
+      "repository": "Institutional access information",
+      "urls": [
+        "https://hd.gorogkatolikus.hu/leveltar/kutatasi_szabalyzat.pdf",
+        "https://hd.gorogkatolikus.hu/leveltar/?p=kutatoi_tajekoztato",
+        "https://matricula.hu/publica"
+      ],
+      "loci": [
+        "Research rules signed31January2025, pp2–5 (p6blank)",
+        "Research information page",
+        "Matricula Publica collection listing"
+      ],
+      "result": "The archive rules require researcher registration and approval and describe reading-room access for materials unavailable online; copying is a separate archive service. Public information asks advance arrangement. Matricula Publica says free access requires registration and displayed collection list did not offer the Greek Catholic target. No account, request, payment or message was made.",
+      "limits": "These current access rules do not govern unrelated source hosts or establish copyright of historical circulars."
+    }
+  ],
+  "versions": [
+    {
+      "id": "byz-lviv1646-nyirderzs",
+      "disposition": "existing-record-source-note-refined",
+      "date": "1646-08-23 remains controlled by the earlier distinct museum colophon; Czech original title/imprint absent",
+      "whole_book_acquisition": false,
+      "transcription_status": "not-transcribed",
+      "collation_status": "not-collated"
+    },
+    {
+      "id": "byzantine-regional-hung1920",
+      "new_candidate": false,
+      "new_substantive_version": false,
+      "acquisition_status": "partial",
+      "transcription_status": "not-transcribed",
+      "collation_status": "not-collated",
+      "source_ids": [
+        "byzantine-regional-src-ivancso2007",
+        "byzantine-regional-src-ivancso2008",
+        "byzantine-regional-src-light2020",
+        "hungarian-modern-src-title1920-photo",
+        "hungarian-modern-src-opac1920"
+      ],
+      "proposed_changes": {
+        "evidence": "church-academic-studies-quoting-primary-circulars; photographed-title; holding-library-catalogue",
+        "source_ids": [
+          "byzantine-regional-src-ivancso2007",
+          "byzantine-regional-src-ivancso2008",
+          "byzantine-regional-src-light2020",
+          "hungarian-modern-src-title1920-photo",
+          "hungarian-modern-src-opac1920"
+        ],
+        "source_urls": [
+          "https://epa.oszk.hu/05200/05207/00026/pdf/EPA05207_athanasiana_2007_26.pdf",
+          "https://epa.oszk.hu/05200/05207/00027/pdf/EPA05207_athanasiana_2008_27.pdf",
+          "https://real.mtak.hu/123184/1/orcad_vilagossaga_angol.pdf",
+          "https://pictures.abebooks.com/inventory/32188629463_4._SL1500_.jpg",
+          "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=marc&recnum=448"
+        ],
+        "note": "Revised against the Greek and expanded edition combining the 1882 and 1890 volumes, with the offices of the liturgical day, the Great Canon, dismissals, Sunday propers, calendar and a paschalion for 1921–1960. Its preface states that the canonical parts of the liturgies were printed in Greek as well, so that clergy could celebrate the essential part in the Church's original language until Greek liturgikons could be obtained from Rome (Athanasiana 27 (2008), printed p. 20, quoting the book's 'Emlékezetül', pp. 309–310). Distribution was announced by circular 1195 and the text made binding by circular 1021 of 1921. Open: do not date all public use from the private-use permission alone; book not acquired. Follow-up 2026-10-20: Ivancsó 2007, pp. 69–73, and Ivancsó 2008, pp. 19–25, re-inspected. The approval formula is permission for private use and must remain explicit. Dated circular 1021/1921 directs the revised book’s wording; circular 2351/1949 describes the heavily worn Chrysostom section of 1920 copies and orders a replacement extract. This documents operative local reception without establishing papal approval, public-use permission from 1920 alone, first celebration or universal compliance. The 1984 printing is reported as an unchanged reprint, not a new recension. Batch 3 follow-up (2026-10-20): all four offered photographs of seller item 32188629463 inspected. The unnumbered title leaf directly controls the reproduced 1920 title, private-use formula 1235/1920, revised/expanded statement and Jóba Elek printer line 1723–1920, but original-impression authentication is unresolved because the 1984 facsimile retains that imprint. Whole contents, dated approval verso and Emlékezetül remain unacquired. College record bibNY56K501 supplies exact separate copies Ant10911/M-1638, Ant10792/M-1637 (missing pp. 273–311, with catalogued August 1920 preparatory annotations), and Ant101011/M-1891 (Hajdúböszörmény parish stamps); annotations and stamps were not seen. No first-use or public-altar-use claim follows.",
+        "text_acquisition": "bounded-title-photograph-only; whole-book-not-acquired",
+        "acquisition_status": "partial",
+        "source_title_status": "1920-imprint title directly inspected in seller photograph; physical impression not independently authenticated",
+        "approval_note": "Hajdúdorog authority no. 1235/1920, approved and printing permitted 22 August 1920, printed as permitted for private use; circulars 1195 and 1021 of 1921 Follow-up: the 1235/1920 private-use formula is directly legible on seller photograph 4. The 22 August date is not shown there and remains secondary. The photograph does not exclude the known later facsimile retaining this imprint.",
+        "extent": "311 pages in college catalogue; seller describes 310 pages; terminal pagination uninspected",
+        "witness_limit": "Four offered seller photographs acquired and inspected: front cover, spine/cover, endpapers, and an unnumbered title leaf. Only the fourth photograph carries printed book text. It verifies the reproduced title, 1235/1920 private-use permission, revised/expanded editorial statement and Jóba Elek printer line 1723–1920. No permission-date verso, contents, Greek anaphora pages, terminal leaves or Emlékezetül pp. 309–310 are shown. The seller calls the book a 1920 first edition, but the physical impression cannot be independently authenticated from these four photographs: the known 1984 facsimile retains the 1920 imprint. No full 1920 book or complete textual state is acquired. A binding appearance cannot establish a print date. Full catalogue records read, original physical copies and annotations not inspected. The catalogue lists three separate copies, including an incomplete annotated copy; they must not be merged with the seller copy. No digital object or MARC 856 field is present in the returned record. Parish stamps and ownership annotations do not by themselves date liturgical use. Catalogue transcription is an acquisition route, not a replacement for original-book collation."
+      }
+    },
+    {
+      "id": "byzantine-regional-hung1949",
+      "new_candidate": false,
+      "new_substantive_version": false,
+      "acquisition_status": "not-acquired",
+      "transcription_status": "not-transcribed",
+      "collation_status": "not-collated",
+      "source_ids": [
+        "byzantine-regional-src-ivancso2008",
+        "byzantine-regional-src-ivancso2003",
+        "byzantine-regional-src-ivancso2007",
+        "hungarian-modern-src-opac1949"
+      ],
+      "proposed_changes": {
+        "evidence": "church-academic-studies with title transcription; holding-library-catalogue",
+        "source_ids": [
+          "byzantine-regional-src-ivancso2008",
+          "byzantine-regional-src-ivancso2003",
+          "byzantine-regional-src-ivancso2007",
+          "hungarian-modern-src-opac1949"
+        ],
+        "source_urls": [
+          "https://epa.oszk.hu/05200/05207/00027/pdf/EPA05207_athanasiana_2008_27.pdf",
+          "https://epa.oszk.hu/05200/05207/00016/pdf/EPA05207_athanasiana_2003_16_041-074.pdf",
+          "https://epa.oszk.hu/05200/05207/00026/pdf/EPA05207_athanasiana_2007_26.pdf",
+          "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=marc&recnum=10613"
+        ],
+        "note": "An extract of the 1920 Liturgikon containing only the Chrysostom liturgy, issued in two variants (one beginning with the midday service for binding into worn 1920 copies, one with its own title page) and omitting the variable intention formularies; 59 pages (Ivancsó 2008, printed pp. 21–22 and 24). The retained text is not a new full recension (Ivancsó 2003 and 2008). Open: book not acquired; the title-page permission number differs between Ivancsó 2003 and 2008; Dokumentáció I (2006), pp. 53–54, not seen. Follow-up 2026-10-20: Ivancsó 2007, pp. 69–73, and Ivancsó 2008, pp. 19–25, re-inspected. The approval formula is permission for private use and must remain explicit. Dated circular 1021/1921 directs the revised book’s wording; circular 2351/1949 describes the heavily worn Chrysostom section of 1920 copies and orders a replacement extract. This documents operative local reception without establishing papal approval, public-use permission from 1920 alone, first celebration or universal compliance. The 1984 printing is reported as an unchanged reprint, not a new recension. Batch 3 follow-up (2026-10-20): the college catalogue bibNY56K11755 / recnum 10613 identifies four copies (D 442, DT 399, DT 484 and C 12647) and independently catalogues the permission as 1650/1949. This is catalogue corroboration of Ivancsó 2003, not original-title verification or adjudication of the 2008 discrepancy. DT 484 contains typed pp. 60–80 and C 12647 five typed prayer pages; neither supplement creates a new printed edition or full recension. No full original 1949 book acquired.",
+        "source_title_status": "Scholarly title transcription corroborated by holding-library MARC; original title image uninspected",
+        "approval_note": "Private-use permission printed on the title page: no. 1650/1949 according to Ivancsó 2003 (printed p. 47, note 20), no. 1235/1920 according to Ivancsó 2008 (printed p. 24 table); unresolved without the book. Announced by circular 2351 of 1949. Holding-library MARC 246 (bibNY56K11755) also transcribes 1650/1949, corroborating the 2003 reading. Original title remains uninspected, so the conflict is not independently resolved.",
+        "extent": "59 printed pages reported by scholarship and college catalogue; copy-specific typed additions are separately described",
+        "witness_limit": "Full catalogue records read; no original title image or full 1949 book acquired. MARC 246 transcribes 1650/1949 private-use permission and corroborates Ivancsó 2003, but does not independently resolve its disagreement with Ivancsó 2008's 1235/1920. Copy-specific typed supplements are not part of the printed 59-page extent and do not establish another printed recension. No digital object or MARC 856 field is present in the returned record."
+      }
+    }
+  ],
+  "acquisitions": [
+    {
+      "artifact_label": "google-PA146-IA1-signed.jpg",
+      "sha256": "4ff83748413dd8e713faf05d3ea49e536fbfc8f8fbc4dddc01b813a99baa7487",
+      "byte_size": 89531,
+      "source_url": "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA146-IA1",
+      "distribution": "historical-flat-page-retained; physical locus unmapped; no annotation claim",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "google-PA146-IA1.html",
+      "sha256": "7d3779d4b6ad1be6c84324a9d8b8ccb4b4dd9bc7c55de96b75236fbf719186cc",
+      "byte_size": 59406,
+      "source_url": "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA146-IA1",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "google-PA147-IA1-signed.jpg",
+      "sha256": "2c31310bd208aa08b674b0ffe62e26ec432e821d47a8fc2537fbe98b6bc07ee3",
+      "byte_size": 87488,
+      "source_url": "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA147-IA1",
+      "distribution": "historical-flat-page-retained; physical locus unmapped; no annotation claim",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "google-PA147-IA1.html",
+      "sha256": "a9917627b9dd9e30fe53c446bb247c1ea1e49b1824b925c2bbaea0a2809818df",
+      "byte_size": 59406,
+      "source_url": "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA147-IA1",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "google-PA303-signed.jpg",
+      "sha256": "0fd18adb2899968907fa4dbf632df0ae88aa4b9c5843e53e171857ecde54bdaf",
+      "byte_size": 91515,
+      "source_url": "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA303",
+      "distribution": "proposed-historical-flat-page-retention-pending-review",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "google-PA303-view.html",
+      "sha256": "cd906401c74543d1d85fa87e9d8ac401bb05a8d9398846f8b7bd649c2fcd4e2b",
+      "byte_size": 67,
+      "source_url": "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA303&jscmd=SearchWithinVolume2&q=",
+      "distribution": "search-response; not-page-image",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "google-PA303.html",
+      "sha256": "2d53580c0fbeb32531b5bcb71f20a650eb21081c3b248b707d43d4c12b74c7a0",
+      "byte_size": 59366,
+      "source_url": "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA303",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "google-PA303.jpg",
+      "sha256": "12557f8948b8bdc6af436e3a8b3adddd45f7f7d2b67c5832e799cdf4686f72bb",
+      "byte_size": 15567,
+      "source_url": "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA303",
+      "distribution": "placeholder-or-unmapped-inspection; not-used-for-source-claims",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "google-PT1-signed.jpg",
+      "sha256": "7bfc3299999bff79133be601369d891e9918b90ec7da59e00081458a9d722184",
+      "byte_size": 96091,
+      "source_url": "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PT1",
+      "distribution": "proposed-historical-flat-page-retention-pending-review",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "google-PT1-zoom3-unsigned.jpg",
+      "sha256": "3efa8c43e5b4348f303a528c81adf435f0111ea752fe9f0f6241478b60987fa6",
+      "byte_size": 9103,
+      "source_url": "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PT1",
+      "distribution": "placeholder-or-unmapped-inspection; not-used-for-source-claims",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "google-PT1.html",
+      "sha256": "3289a033b756d216b3e59f0073c5d8d5b44ac4aa1fddaedcb2f86b92b24d07da",
+      "byte_size": 59339,
+      "source_url": "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PT1",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "google-PT1.jpg",
+      "sha256": "12557f8948b8bdc6af436e3a8b3adddd45f7f7d2b67c5832e799cdf4686f72bb",
+      "byte_size": 15567,
+      "source_url": "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PT1",
+      "distribution": "placeholder-or-unmapped-inspection; not-used-for-source-claims",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "google-PT2-signed.jpg",
+      "sha256": "af2e3904b731c715bee18155e215e4589f612a078fa22041e0e7a16c95fbd657",
+      "byte_size": 36427,
+      "source_url": "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PT2",
+      "distribution": "proposed-historical-flat-page-retention-pending-review",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "google-PT2.html",
+      "sha256": "ae726aa62acf2c6c911c24b8e50c04a1f2ec04d6bb79ade418c3f9ac4a3f723c",
+      "byte_size": 59337,
+      "source_url": "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PT2",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "google-whole-response",
+      "sha256": "eea0f07d102e0cbfc25425e65d59f4a1cb24d96e56f44483e5b372c1b29d07e6",
+      "byte_size": 3488,
+      "source_url": "https://books.google.com/books/download/Leiturgiarion.pdf?id=jr1nAAAAcAAJ&output=pdf",
+      "distribution": "HTTP429-interstitial-not-PDF-not-source",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "ndk-catalogue-item.json",
+      "sha256": "fa09de81ebe6bf851cbb4ac29622983e6a2a534b544543d72183839eb0ceca45",
+      "byte_size": 815,
+      "source_url": "https://ndk.cz/search/api/v5.0/item/uuid:7c3d80c0-fdf0-11e2-9439-005056825209",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "ndk-monograph-search.json",
+      "sha256": "84f4112de4381390f9664c2860ad44bb2a65e864c0e141464dffb4df0b8d82e8",
+      "byte_size": 180,
+      "source_url": "https://ndk.cz/search/api/v5.0/search?q=Leiturgiarion%20AND%20fedora.model:monograph&rows=100&wt=json",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "ndk-search.json",
+      "sha256": "a75828937a125828a72b362d0e1bd910dc51c595fdeb71e546ddeaa62ba31432",
+      "byte_size": 29686,
+      "source_url": "https://ndk.cz/search/api/v5.0/search?q=Leiturgiarion&rows=100",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "ndk-sluzebnik-monograph.json",
+      "sha256": "675353cbd81f5f3f980eab83e5e7531dd8c7a6ed57d06a355ddaea07bf0f0acc",
+      "byte_size": 13967,
+      "source_url": "https://ndk.cz/search/api/v5.0/search?q=%22Sluzebnik%22%20AND%20fedora.model:monograph&rows=100&wt=json",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "nkp-1646-google-link.html",
+      "sha256": "03ef04009705ed5a832bfaec6dfe3837cfb5f0da72ba6a15309bc219dc58bf89",
+      "byte_size": 2135,
+      "source_url": "https://aleph.nkp.cz/F/?func=service&doc_library=SLK01&doc_number=000577538&line_number=0001&func_code=WEB-FULL&service_type=MEDIA",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "nkp-1646-items.html",
+      "sha256": "a856d26c40066d03ab5d99ffb515a23ffd8d130afd653d211b75c91f1b025620",
+      "byte_size": 16614,
+      "source_url": "https://aleph.nkp.cz/F/?func=item-global&doc_library=SLK01&doc_number=000577538&local_base=SLK",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "nkp-1646-marc.html",
+      "sha256": "c7ed691158626b00ce7db5f667053cde345c646f4149215911c934930e1c3e88",
+      "byte_size": 24479,
+      "source_url": "https://aleph.nkp.cz/F/?func=direct&doc_number=000577538&local_base=SLK&format=001",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "nkp-1646.html",
+      "sha256": "07027e311037574f5a2dfdbfdcc1dcff30cd902fce1db92565927c4b1a2dd461",
+      "byte_size": 26208,
+      "source_url": "https://aleph.nkp.cz/F/?func=direct&doc_number=000577538&local_base=SLK&format=999",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "nkp-google-barcode.html",
+      "sha256": "0dae16f85c7bc30fe2a98d3db9af01db2b6e8329fc017217324548c5a0ec992e",
+      "byte_size": 54760,
+      "source_url": "https://books.google.cz/books?vid=NKP:3186213823&printsec=frontcover",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "nkp-search.html",
+      "sha256": "6cba7d7d0aae538c0ef7550bc0f2e859a0428315091ff8de2766c93970ec805e",
+      "byte_size": 18390,
+      "source_url": "https://aleph.nkp.cz/F/?func=find-b&find_code=WRD&request=Leiturgiarion",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "artifact_label": "nkp-slk-search.html",
+      "sha256": "8b0b2fb590cc0615e54c05ce4bd6df491d878f63fe5d0e77bb63ee33e0d85a20",
+      "byte_size": 29367,
+      "source_url": "https://aleph.nkp.cz/F/?func=find-b&local_base=SLK&find_code=WRD&request=leiturgiarion",
+      "distribution": "research-wrapper-not-approved-for-distribution",
+      "research_partition": "early1646"
+    },
+    {
+      "url": "https://www.abebooks.it/prima-edizione/Hungarian-Litourgikon-Priests-Altar-Book-Liturgy/32188629463/bd",
+      "sha256": "0989dbba251f22f63658e5d54ba3564dc9f4e074443cc24dc5ea2b6a17848d43",
+      "byte_size": 300693,
+      "complete_offered_artifact": true,
+      "complete_source_book": false,
+      "verified_locus": "Seller wrapper or binding/endpapers photograph; no liturgical pages",
+      "proposed_storage": "restricted",
+      "rights_status": "unresolved",
+      "rights_note": "Modern photograph or HTML presentation has no inspected redistribution licence; metadata and original paraphrases only.",
+      "research_partition": "modern-books",
+      "artifact_label": "abebooks-1920"
+    },
+    {
+      "url": "https://pictures.abebooks.com/inventory/32188629463._SL1500_.jpg",
+      "sha256": "01951ba9b6b43aacd147aeae6c218a69d477fb1e9e61c21403ac612f45a32ff8",
+      "byte_size": 356336,
+      "complete_offered_artifact": true,
+      "complete_source_book": false,
+      "verified_locus": "Seller wrapper or binding/endpapers photograph; no liturgical pages",
+      "proposed_storage": "restricted",
+      "rights_status": "unresolved",
+      "rights_note": "Modern photograph or HTML presentation has no inspected redistribution licence; metadata and original paraphrases only.",
+      "research_partition": "modern-books",
+      "artifact_label": "abebooks-1920-1"
+    },
+    {
+      "url": "https://pictures.abebooks.com/inventory/32188629463_2._SL1500_.jpg",
+      "sha256": "b90a2f121ca33c50c1b9adda95340c02390ef1887198fa2d7d8df49b90691182",
+      "byte_size": 320141,
+      "complete_offered_artifact": true,
+      "complete_source_book": false,
+      "verified_locus": "Seller wrapper or binding/endpapers photograph; no liturgical pages",
+      "proposed_storage": "restricted",
+      "rights_status": "unresolved",
+      "rights_note": "Modern photograph or HTML presentation has no inspected redistribution licence; metadata and original paraphrases only.",
+      "research_partition": "modern-books",
+      "artifact_label": "abebooks-1920-2"
+    },
+    {
+      "url": "https://pictures.abebooks.com/inventory/32188629463_3._SL1500_.jpg",
+      "sha256": "f731e374c319c4a66e11bfc73600e50f7c12b66950df5a5e2cc9fb2d5797cf56",
+      "byte_size": 382715,
+      "complete_offered_artifact": true,
+      "complete_source_book": false,
+      "verified_locus": "Seller wrapper or binding/endpapers photograph; no liturgical pages",
+      "proposed_storage": "restricted",
+      "rights_status": "unresolved",
+      "rights_note": "Modern photograph or HTML presentation has no inspected redistribution licence; metadata and original paraphrases only.",
+      "research_partition": "modern-books",
+      "artifact_label": "abebooks-1920-3"
+    },
+    {
+      "url": "https://pictures.abebooks.com/inventory/32188629463_4._SL1500_.jpg",
+      "sha256": "9ac45a8eac5435bf228bff5595c5b9058ea60f467405b42be5edf43cfecee3e4",
+      "byte_size": 103707,
+      "complete_offered_artifact": true,
+      "complete_source_book": false,
+      "verified_locus": "Unnumbered title leaf",
+      "proposed_storage": "restricted",
+      "rights_status": "unresolved",
+      "rights_note": "Modern photograph or HTML presentation has no inspected redistribution licence; metadata and original paraphrases only.",
+      "research_partition": "modern-books",
+      "artifact_label": "abebooks-1920-4"
+    },
+    {
+      "url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=448",
+      "sha256": "b6d706350fa535be201d21995093d3663396dc6687a9b5f58009ab0fa98b1d3b",
+      "byte_size": 20237,
+      "complete_offered_artifact": true,
+      "complete_source_book": false,
+      "verified_locus": "MARC or long-with-holdings catalogue record",
+      "proposed_storage": "restricted",
+      "rights_status": "unresolved",
+      "rights_note": "Modern photograph or HTML presentation has no inspected redistribution licence; metadata and original paraphrases only.",
+      "research_partition": "modern-books",
+      "artifact_label": "atanaz-1920-longlong"
+    },
+    {
+      "url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=marc&recnum=448",
+      "sha256": "3f131ad54d1c18211bc9b730dad3560d79a3b1e49941f6a231ccff48d834cdf5",
+      "byte_size": 19816,
+      "complete_offered_artifact": true,
+      "complete_source_book": false,
+      "verified_locus": "MARC or long-with-holdings catalogue record",
+      "proposed_storage": "restricted",
+      "rights_status": "unresolved",
+      "rights_note": "Modern photograph or HTML presentation has no inspected redistribution licence; metadata and original paraphrases only.",
+      "research_partition": "modern-books",
+      "artifact_label": "atanaz-1920-marc"
+    },
+    {
+      "url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=10613",
+      "sha256": "6d42365d039f622b3d58290749d9c02b5b589ff867a56d63c6aa2e4830c3b552",
+      "byte_size": 16997,
+      "complete_offered_artifact": true,
+      "complete_source_book": false,
+      "verified_locus": "MARC or long-with-holdings catalogue record",
+      "proposed_storage": "restricted",
+      "rights_status": "unresolved",
+      "rights_note": "Modern photograph or HTML presentation has no inspected redistribution licence; metadata and original paraphrases only.",
+      "research_partition": "modern-books",
+      "artifact_label": "atanaz-1949-longlong"
+    },
+    {
+      "url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=marc&recnum=10613",
+      "sha256": "71b351482f2d7fb6482a1623a7288f20d534ac264c7485bae2ff05b37889f16b",
+      "byte_size": 16916,
+      "complete_offered_artifact": true,
+      "complete_source_book": false,
+      "verified_locus": "MARC or long-with-holdings catalogue record",
+      "proposed_storage": "restricted",
+      "rights_status": "unresolved",
+      "rights_note": "Modern photograph or HTML presentation has no inspected redistribution licence; metadata and original paraphrases only.",
+      "research_partition": "modern-books",
+      "artifact_label": "atanaz-1949-marc"
+    },
+    {
+      "sha256": "b6a309c1b571265a9818bc553fce851792e81b539afbb5767351e5d5b898f6cb",
+      "byte_size": 32483,
+      "status": 200,
+      "extent": "whole offered HTML response",
+      "rights": "modern archival/project finding aid; metadata facts only; HTML retained scratch-only pending specific reuse basis",
+      "source_url": "https://arca.melte.hu/index.php/korlevelek-12",
+      "artifact_label": "arca-korlevelek.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "sha256": "c9b3e578aa322c4a8d275bc1c34bfde5ab1abb643241d41edc2d4ebd9734f055",
+      "byte_size": 175562,
+      "status": 200,
+      "extent": "whole offered HTML response",
+      "rights": "modern archival/project finding aid; metadata facts only; HTML retained scratch-only pending specific reuse basis",
+      "source_url": "https://leveltar.nyirgorkat.hu/fond-es-allagjegyzek/",
+      "artifact_label": "nyiregyhaza-fondlist.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "sha256": "822fa8328f2699673d95b2605d4300c00242a850d4d3ad0e46263fd69b752c4a",
+      "byte_size": 174885,
+      "status": 200,
+      "extent": "whole offered HTML response",
+      "rights": "modern archival/project finding aid; metadata facts only; HTML retained scratch-only pending specific reuse basis",
+      "source_url": "https://leveltar.nyirgorkat.hu/2014/03/nyiregyhaza/",
+      "artifact_label": "nyiregyhaza-parish.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "sha256": "3e1f723dd2faeb4ff8e1e605676b6b55901bbf303cfa7e574d3615e112bc9f51",
+      "byte_size": 167809,
+      "status": 200,
+      "extent": "whole offered HTML response",
+      "rights": "modern archival/project finding aid; metadata facts only; HTML retained scratch-only pending specific reuse basis",
+      "source_url": "https://leveltar.nyirgorkat.hu/2013/06/peneszlek/",
+      "artifact_label": "peneszlek-parish.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "sha256": "f867e5ec56fdfa9daaa65b52d5347ed5bb3fac9b393e11d63b28a2b4e4abeba5",
+      "byte_size": 42232,
+      "status": 200,
+      "extent": "whole offered HTML response",
+      "rights": "modern archival/project finding aid; metadata facts only; HTML retained scratch-only pending specific reuse basis",
+      "source_url": "https://byzhun.hu/nfkih-k108780",
+      "artifact_label": "byzhun-project.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "byte_size": 3,
+      "extent": "whole archive index response",
+      "source_url": "https://web.archive.org/cdx/search/cdx?url=byzantinohungarica.com/index.php/gorogkatolikus-tudosito-01&output=json&filter=statuscode:200&collapse=digest",
+      "artifact_label": "cdx-tudosito1921-01.json",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "byte_size": 3,
+      "extent": "whole archive index response",
+      "source_url": "https://web.archive.org/cdx/search/cdx?url=byzantinohungarica.com/index.php/gorogkatolikus-tudosito-02&output=json&filter=statuscode:200&collapse=digest",
+      "artifact_label": "cdx-tudosito1921-02.json",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "byte_size": 3,
+      "extent": "whole archive index response",
+      "source_url": "https://web.archive.org/cdx/search/cdx?url=byzantinohungarica.com/index.php/gorogkatolikus-tudosito-03&output=json&filter=statuscode:200&collapse=digest",
+      "artifact_label": "cdx-tudosito1921-03.json",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "sha256": "edfd5103eefd67e0efe519cdc4f07feb0759cf4929729231717b1ad1d5183363",
+      "byte_size": 540,
+      "extent": "whole archive index response",
+      "source_url": "https://web.archive.org/cdx/search/cdx?url=byzantinohungarica.com/index.php/gorogkatolikus-tudosito-nyiregyhaza&output=json&filter=statuscode:200&collapse=digest",
+      "artifact_label": "cdx-tudosito-nyiregyhaza.json",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "sha256": "7108bf41605c1eddf9feb3aa77cbcfaf01b7177dc556960e6711b4e08c8e2b9b",
+      "byte_size": 524,
+      "extent": "whole archive index response",
+      "source_url": "https://web.archive.org/cdx/search/cdx?url=byzantinohungarica.com/index.php/gorogkatolikus-tudosito-miskolc&output=json&filter=statuscode:200&collapse=digest",
+      "artifact_label": "cdx-tudosito-miskolc.json",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "http_status": 200,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "byte_size": 3,
+      "extent": "whole bounded archive index response",
+      "source_url": "https://web.archive.org/cdx/search/cdx?url=byzantinohungarica.com/*1921*&output=json&filter=statuscode:200&filter=mimetype:application/pdf&collapse=urlkey&filter=!urlkey:.*node.*",
+      "artifact_label": "cdx1921pdf.json",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://arca.melte.hu/index.php/korlevelek-12;ead?sf_format=xml",
+      "http_status": 200,
+      "sha256": "99f44db66988343d4e9b471d6ba534c524e5a06635dc8b218b472b182934d5ff",
+      "byte_size": 2791,
+      "extent": "whole HTTP response",
+      "source_url": "https://arca.melte.hu/index.php/korlevelek-12;ead?sf_format=xml",
+      "artifact_label": "arca-korlevelek.ead.xml",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://arca.melte.hu/index.php/informationobject/browse?collection=52023&topLod=0",
+      "http_status": 200,
+      "sha256": "4a7922d032e1a05347d483e9a99d040bade41474f64f54e93d73db182d4036dc",
+      "byte_size": 141303,
+      "extent": "whole HTTP response",
+      "source_url": "https://arca.melte.hu/index.php/informationobject/browse?collection=52023&topLod=0",
+      "artifact_label": "arca-children.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://byzantinohungarica.com/index.php/gorogkatolikus-sajtotermekek",
+      "http_status": 404,
+      "sha256": "cc0b4e42510d49c6decd464123ecf3b14ae9b47f9b4ed2ee64893e2d6520a264",
+      "byte_size": 355,
+      "extent": "whole HTTP response",
+      "source_url": "https://byzantinohungarica.com/index.php/gorogkatolikus-sajtotermekek",
+      "artifact_label": "legacy-periodicals.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://web.archive.org/cdx/search/cdx?url=byzantinohungarica.com/index.php/gorogkatolikus-sajtotermekek&output=json&filter=statuscode:200&filter=mimetype:text/html&collapse=timestamp:4&filter=timestamp:202[0-9]",
+      "http_status": 200,
+      "sha256": "48f0f8775a7282ae03648355ce4600e34f0dce5147902e6d250b13ecceeef822",
+      "byte_size": 1389,
+      "extent": "whole HTTP response",
+      "source_url": "https://web.archive.org/cdx/search/cdx?url=byzantinohungarica.com/index.php/gorogkatolikus-sajtotermekek&output=json&filter=statuscode:200&filter=mimetype:text/html&collapse=timestamp:4&filter=timestamp:202[0-9]",
+      "artifact_label": "wayback-periodicals-cdx.json",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://hd.gorogkatolikus.hu/leveltar/fond_es_allagjegyzek.pdf",
+      "http_status": 200,
+      "sha256": "3bfefd5377c1f57be650d9415d9ad97f7c408be786e3e7f595d23867e718363e",
+      "byte_size": 556821,
+      "extent": "whole offered response",
+      "source_url": "https://hd.gorogkatolikus.hu/leveltar/fond_es_allagjegyzek.pdf",
+      "artifact_label": "gmfl-fondlist2025.pdf",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://hd.gorogkatolikus.hu/leveltar/kutatasi_szabalyzat.pdf",
+      "http_status": 200,
+      "sha256": "e3c916c4c693e6004039b07d8e9dae377ddf70e693e9ed28e07432354af0e86f",
+      "byte_size": 5662963,
+      "extent": "whole offered response",
+      "source_url": "https://hd.gorogkatolikus.hu/leveltar/kutatasi_szabalyzat.pdf",
+      "artifact_label": "gmfl-research-rules.pdf",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://web.archive.org/web/20211027000000id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-01",
+      "http_status": 404,
+      "sha256": "5e6a522fbb223ef73287aa0c0977bb8ae531a4f7dab2eacafdb819f27539dbb2",
+      "byte_size": 4653,
+      "extent": "whole offered response",
+      "source_url": "https://web.archive.org/web/20211027000000id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-01",
+      "artifact_label": "tudosito1921-apr-index.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://web.archive.org/web/20211027000000id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-02",
+      "http_status": 404,
+      "sha256": "88ce3f0d7ddd49f9153bd06bdfa892165fd6c29d6cc987a705bb40fc3be49b66",
+      "byte_size": 4653,
+      "extent": "whole offered response",
+      "source_url": "https://web.archive.org/web/20211027000000id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-02",
+      "artifact_label": "tudosito1921-aug-index.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://web.archive.org/web/20211027000000id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-03",
+      "http_status": 404,
+      "sha256": "f01f1251c587f36c7dec3e068478e0641035161e14fd45da3398bd48bfb206a8",
+      "byte_size": 4653,
+      "extent": "whole offered response",
+      "source_url": "https://web.archive.org/web/20211027000000id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-03",
+      "artifact_label": "tudosito1921-dec-index.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://hd.gorogkatolikus.hu/leveltar/?p=kutatoi_tajekoztato",
+      "http_status": 200,
+      "sha256": "b0482ca52b4c3954c5f9b8a3feeb307e0b237c023449c66ef6efc8e413738d7b",
+      "byte_size": 7539,
+      "extent": "whole offered HTML response",
+      "rights": "modern institutional web page; only factual paraphrase/provenance proposed; payload scratch-only, no inspected redistribution grant",
+      "source_url": "https://hd.gorogkatolikus.hu/leveltar/?p=kutatoi_tajekoztato",
+      "artifact_label": "gmfl-research-info.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://szentatanaz.hu/kiadvanyaink/liturgia-tanszek-kiadvanyai",
+      "http_status": 200,
+      "sha256": "c13bc1a721896b90dd97443f2aa0730046c564162a37c5af37d90c41a493e990",
+      "byte_size": 65782,
+      "extent": "whole offered HTML response",
+      "rights": "modern institutional web page; only factual paraphrase/provenance proposed; payload scratch-only, no inspected redistribution grant",
+      "source_url": "https://szentatanaz.hu/kiadvanyaink/liturgia-tanszek-kiadvanyai",
+      "artifact_label": "liturgia-publications.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://matricula.hu/publica",
+      "http_status": 200,
+      "sha256": "0ce434fb355275bcdb9eb37e8bb4962cbc53b82f8c2ca7be958e709fd2b0e80c",
+      "byte_size": 28922,
+      "extent": "whole offered HTML response",
+      "rights": "modern institutional web page; only factual paraphrase/provenance proposed; payload scratch-only, no inspected redistribution grant",
+      "source_url": "https://matricula.hu/publica",
+      "artifact_label": "matricula-publica.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://web.archive.org/web/20230605034904id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-nyiregyhaza",
+      "http_status": 200,
+      "sha256": "7e0db2a6013f70331747f58ef83bd63b9a550d86e4a85ca7dc90d6c44f8e005d",
+      "byte_size": 1139,
+      "extent": "whole archived collection HTML response",
+      "source_url": "https://web.archive.org/web/20230209000000id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-nyiregyhaza",
+      "artifact_label": "wayback-tudosito-nyiregyhaza.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://web.archive.org/web/20230605035523id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-miskolc",
+      "http_status": 200,
+      "sha256": "7e0db2a6013f70331747f58ef83bd63b9a550d86e4a85ca7dc90d6c44f8e005d",
+      "byte_size": 1139,
+      "extent": "whole archived collection HTML response",
+      "source_url": "https://web.archive.org/web/20230209000000id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-miskolc",
+      "artifact_label": "wayback-tudosito-miskolc.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://web.archive.org/web/20211027231218id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-nyiregyhaza",
+      "sha256": "f00c8db3b66601a10407793fa9cd6c95e2cd36c9e6929fbf9b5e4fd48545c77c",
+      "byte_size": 47080,
+      "extent": "whole archived HTML response",
+      "source_url": "https://web.archive.org/web/20211027231218id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-nyiregyhaza",
+      "artifact_label": "wayback2021-tudosito-nyiregyhaza.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://web.archive.org/web/20211027231920id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-miskolc",
+      "sha256": "a15f6609f725b14cf1b3ce2777cce14d05d07e1357e1354c42771b9f480ae2dd",
+      "byte_size": 21664,
+      "extent": "whole archived HTML response",
+      "source_url": "https://web.archive.org/web/20211027231920id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-miskolc",
+      "artifact_label": "wayback2021-tudosito-miskolc.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "final_url": "https://web.archive.org/web/20230209123302id_/https://byzantinohungarica.com/index.php/gorogkatolikus-sajtotermekek",
+      "http_status": 200,
+      "sha256": "75fe0d81d8e016b2963f63be465ba8d5e201753aba841c6e3a49ad1e91895853",
+      "byte_size": 32455,
+      "extent": "whole archived HTML response",
+      "source_url": "https://web.archive.org/web/20230209123302id_/https://byzantinohungarica.com/index.php/gorogkatolikus-sajtotermekek",
+      "artifact_label": "wayback-periodicals2023.html",
+      "rights_status": "unresolved-modern-presentation",
+      "storage_decision": "scratch-only; public metadata and original paraphrase",
+      "offline_limit": "Exact modern finding aid/page image or transport response is not distributed; public checkout preserves its URL/hash/extent and checked findings.",
+      "reopening_condition": "New exact-artifact public-domain or permission basis, or a newly offered original circular/periodical scan, requires separate inspection and review.",
+      "research_partition": "circulars"
+    },
+    {
+      "artifact_label": "atanaz-deli1949.html",
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=find&index0=TITL&text0=D%C3%A9li+isteni+tisztelet&whichform=simplesearchpage&currentpage=simplesearchpage",
+      "sha256": "c80b2cd47f924e24e894060f97523f5bdd0708f410129938d9c32432dc5f60cc",
+      "byte_size": 15144,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "atanaz-liturgikon.html",
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=find&index0=TITL&text0=Liturgikon&whichform=simplesearchpage&currentpage=simplesearchpage",
+      "sha256": "c3c7c1f00b6720d426bcad657cfdb7fd60aece0a93493da2f382722722be5510",
+      "byte_size": 31910,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "atanaz-main.js",
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/script/main.js?v=8997",
+      "sha256": "e550bc7bdaff05edd2a3ef77a0c25631fb51149edd8ef94a65cb597bdd5573e6",
+      "byte_size": 174306,
+      "http_status": "not-recorded",
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "atanaz-opac.html",
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/",
+      "sha256": "59526261cf83ad8d42a463f0b355d05d0382c8c86dcda85e29543a63164a614f",
+      "byte_size": 14985,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "atanaz-title1920.html",
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=find&index0=TITL&text0=g%C3%B6r%C3%B6g+szertart%C3%A1su+katholikus+egyh%C3%A1z&whichform=simplesearchpage&currentpage=simplesearchpage",
+      "sha256": "101aa34d1c6015a4043fcd1fb9062358112c58f6d154b8259fccc738c7e95c8b",
+      "byte_size": 19753,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "atanaz-title1949.html",
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=find&index0=TITL&text0=Aranysz%C3%A1j%C3%BA+Szent+J%C3%A1nos&whichform=simplesearchpage&currentpage=simplesearchpage",
+      "sha256": "2f4cf1610cc2a3e4753aff96f1fe9e5905c69763fa0b316a69299bd694102c4f",
+      "byte_size": 32336,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "atanaz-title1949short.html",
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=find&index0=TITL&text0=Aranysz%C3%A1j%C3%BA&whichform=simplesearchpage&currentpage=simplesearchpage",
+      "sha256": "29f70ca527aef5395de20bd08f299311b4825932517937a5e8ed9f75afb0a289",
+      "byte_size": 32451,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "byzantinohungarica.html",
+      "source_url": "https://byzantinohungarica.com/",
+      "sha256": "7277f02803992769ae0e1f4f68f32da186dec1c1fc550de5dcf9a4c25173c713",
+      "byte_size": 1713,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "byzhun-books.html",
+      "source_url": "https://byzhun.hu/kiadvanyaink/tudomanyos-konyvek",
+      "sha256": "51ca5ec488902e3e401c3bf513a76870ead4abd81658c5a5f77dfa5b0aa6ccff",
+      "byte_size": 53674,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "byzhun.html",
+      "source_url": "https://byzhun.hu/",
+      "sha256": "c1ddc58aa26e3568119bc4dc5fb65eabbe31fcc450b2ff9ad58cba0dd960c426",
+      "byte_size": 40255,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "ia-hungarian1920.json",
+      "source_url": "https://archive.org/advancedsearch.php?q=%28gorog+OR+katholikus+OR+hajdudorogi%29+AND+year%3A1920&output=json&rows=100&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date",
+      "sha256": "297a3e2af1bbfbf1d45353f836d383f73e6019876b20fcdafe5d0ec284568263",
+      "byte_size": 440,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "ia-liturgikon.json",
+      "source_url": "https://archive.org/advancedsearch.php?q=%28liturgikon+OR+litourgikon+OR+leiturgikon%29+AND+%28Hungarian+OR+magyar+OR+Nyiregyhaza%29&output=json&rows=100&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date",
+      "sha256": "9b302ad4ee8a61521be162ee8dfaf52274b5e05a8f10a803220ea2603082a0bb",
+      "byte_size": 672,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "ia-native1920.json",
+      "source_url": "https://archive.org/advancedsearch.php?q=title%3A%28liturgi%C3%A1ja%29+AND+year%3A1920&output=json&rows=100&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date",
+      "sha256": "836fba1dbab951e0fe21a8c864a2f92497c5b9b1a5213a117e98fabe7882ed78",
+      "byte_size": 262,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "ia-native1949.json",
+      "source_url": "https://archive.org/advancedsearch.php?q=title%3A%28liturgi%C3%A1ja%29+AND+year%3A1949&output=json&rows=100&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date",
+      "sha256": "64e41bc9ade4f6607bdd2d6ac2752081d7853ba14e8c2a1e7c9924d5cdb06e72",
+      "byte_size": 261,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "ia-title1920.json",
+      "source_url": "https://archive.org/advancedsearch.php?q=title%3A%28liturgiaja%29+AND+year%3A1920&output=json&rows=100&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date",
+      "sha256": "3d835e690fc278998687e662ddaf1b39eb817c062d14f0ceab03873090a54f77",
+      "byte_size": 248,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "ia-title1949.json",
+      "source_url": "https://archive.org/advancedsearch.php?q=title%3A%28liturgiaja%29+AND+year%3A1949&output=json&rows=100&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date",
+      "sha256": "57600a4b79d70feb79b78060c2761265c018cce817794403ee5425c2292f8073",
+      "byte_size": 248,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "library-catalogues.html",
+      "source_url": "https://lib.atanaz.hu/katalogusok",
+      "sha256": "49b1fda9b109156a4f46379322e5666b4955540752f7393b1ef9c2fd7ee46010",
+      "byte_size": 30281,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "library.html",
+      "source_url": "https://lib.atanaz.hu/",
+      "sha256": "27a8398b49b2d8ea0e7c8c957be30bc373aabbda89245160ab658492d0c451e4",
+      "byte_size": 44438,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "liturgikus-oroksegunk.html",
+      "source_url": "https://szentatanaz.hu/kiadvanyaink/liturgikus-oroksegunk",
+      "sha256": "a2074ccae509deb434b293c7570c994a0ead594bbc3f43b9af3b5d7f23fed42a",
+      "byte_size": 69595,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "mek-14083.html",
+      "source_url": "https://mek.oszk.hu/14000/14083/",
+      "sha256": "4894a0e1e841bea66398d48e0e56a6326386f67b88e69cb3adb297e726da3f16",
+      "byte_size": 16064,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "mek-front.html",
+      "source_url": "https://mek.oszk.hu/",
+      "sha256": "8b9b7937f1895d13245cba4920ed4d022ebb93a28d504a7d9a81fc837b377818",
+      "byte_size": 18651,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "mek-liturgikon.html",
+      "source_url": "https://mek.oszk.hu/hu/search/elfull/",
+      "sha256": "1fa9cd0d3ac5b5bf2852204fb9d645c4d61cbf178d705cc4e3e22b6303b514e3",
+      "byte_size": 13920,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "mek-search.html",
+      "source_url": "https://mek.oszk.hu/hu/search/elfull/",
+      "sha256": "e7a5d2b5a9c44ce13e4c602b6feb649b41613fc053a398bb1d0c9fef1a4dcdf4",
+      "byte_size": 13573,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "mek-title1920.html",
+      "source_url": "https://mek.oszk.hu/hu/search/elfull/",
+      "sha256": "98c6d6fa2eb4ecfea653a9e77405cf56f230fc6706aa91db0000c07c407aa41d",
+      "byte_size": 13949,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "mek-title1949.html",
+      "source_url": "https://mek.oszk.hu/hu/search/elfull/",
+      "sha256": "8efd8abd0dd7d77bb2f9551bae4c153771c04a6289504b90fffef40fc5d701ee",
+      "byte_size": 18213,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "nektar-active.html",
+      "source_url": "https://nektar2.oszk.hu/librivision_hun.html",
+      "sha256": "5789d710bdf85c903e546930aa4b3c40c0456c5773570c8b3fcd0b52dad43765",
+      "byte_size": 12492,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "nektar-frame.html",
+      "source_url": "https://nektar.oszk.hu/librivision_hun.html",
+      "sha256": "ae934665366c24093eb10b99845bade7eff7bb4dc2d9846b9c6d405419b7217f",
+      "byte_size": 273,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "nektar.html",
+      "source_url": "https://nektar.oszk.hu/",
+      "sha256": "33dc09dd6a505b320063cf0ec890106bfcb9ec5edcadf7540ad094186a04d23f",
+      "byte_size": 270,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "oszk-title1920.html",
+      "source_url": "https://link.oszk.hu/libriurl.php?SRE=A+g%C3%B6r%C3%B6g+szertart%C3%A1su+katholikus+egyh%C3%A1z&LN=hu&SRY=bk&DB=oszk",
+      "sha256": "ce99fa411aefd6e2cded5d5e9eb4d4dc7cb9fad539b7cba230ea02121572ae72",
+      "byte_size": 1332,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "oszk-title1949.html",
+      "source_url": "https://link.oszk.hu/libriurl.php?SRE=Aranysz%C3%A1j%C3%BA+Szent+J%C3%A1nos+szent+%C3%A9s+isteni+liturgi%C3%A1ja&LN=hu&SRY=bk&DB=oszk",
+      "sha256": "9d155cf27b1ac2264fda5810c704792b39b39520c5759493651a7088ee83290b",
+      "byte_size": 1345,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "szentatanaz-publications.html",
+      "source_url": "https://szentatanaz.hu/kiadvanyaink",
+      "sha256": "8236457c943a771d9bc217a83b9f4948e6520c238c22cb4f353b9ba5f88e9a73",
+      "byte_size": 76191,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "artifact_label": "szentatanaz.html",
+      "source_url": "https://www.szentatanaz.hu/",
+      "sha256": "5463e1416e7fbdf6b6484e18446b48da4935378e3e522655d3d7756f848d4698",
+      "byte_size": 85425,
+      "http_status": 200,
+      "extent": "whole offered response",
+      "research_partition": "modern-books",
+      "distribution": "modern search/catalogue/institutional response or access failure; scratch-only; facts and negative bounds only"
+    },
+    {
+      "source_url": "https://www.nkp.cz/o-knihovne/odborne-cinnosti/otevrena-data",
+      "sha256": "c0d9d82fbad8a001de1860d18ec0d36ec4373779de360faf91c2d615b0c5cb1d",
+      "byte_size": 80985,
+      "extent": "whole official HTML response",
+      "artifact_label": "open-data",
+      "research_partition": "cc0-rights-addendum",
+      "storage_decision": "raw modern rights-page/PDF scratch-only; exact URL/SHA/extent and grant facts preserved; grant applies to catalogue data"
+    },
+    {
+      "source_url": "https://www.nkp.cz/file/9bf1384644a5a479ff11ae4a517cfc3b/2688/cc0_srpen_2023.pdf",
+      "sha256": "64f1e0b4d4100c298a4332550a7cc59e3aaca3ba1c95642c9c5a8585948bc1fc",
+      "byte_size": 1331534,
+      "extent": "whole6pageofficialPDF; pages1–2ministryapproval29Aug2023, page3declaration8Aug2023 explicitlySLK, page4approvalclause, page5CC0attachmentexcerpt, page6approvalclause",
+      "artifact_label": "declaration",
+      "research_partition": "cc0-rights-addendum",
+      "storage_decision": "raw modern rights-page/PDF scratch-only; exact URL/SHA/extent and grant facts preserved; grant applies to catalogue data"
+    }
+  ],
+  "retention": [
+    {
+      "sha256": "4ff83748413dd8e713faf05d3ea49e536fbfc8f8fbc4dddc01b813a99baa7487",
+      "byte_size": 89531,
+      "extent": "One exact flat old-content image, provider page PA146-IA1; physical folio unresolved.",
+      "storage": "tracked",
+      "artifact_id": "artifact.lviv-orthodox-eparchy.leiturgiarion.1646-lviv-mihail-sliozka.google-jr1n-pa146-ia1-jpeg-4ff83748",
+      "rights_basis": "United States: the exact historical printed liturgical text is historical printed matter from the holding-library-attributed Lviv 1646 volume and is public domain by expired term; the image is a faithful flat page scan, with no independently original modern photographic composition. Each exact image is a faithful flat reproduction without an independently original photographic composition. The public-domain/originality basis is artifact-specific, consistent with U.S. Copyright Office Compendium 313.4(A) and the repository reasoning for mechanical facsimiles; it does not clear modern perspective photographs, an undated material cover or provider HTML. The unchanged Google watermark is retained and treated under src/sources/inventories/google-usage-guidelines-rights-v1.toml, not as historical text and not under Triptych’s CC BY 4.0 grant. Google Books additional terms section 2, checked 2026-10-20, introduces purchased Digital Content; its statutory-use saving is contextual corroboration only, neither an affirmative licence nor proof of a contract governing these freely displayed images. The independent old-flat-content/originality basis controls. No claim is made for other jurisdictions.",
+      "offline_limit": "Exact bounded image retained; no annotation identification, title/colophon recovery or complete-volume claim.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA146-IA1"
+      ]
+    },
+    {
+      "sha256": "7d3779d4b6ad1be6c84324a9d8b8ccb4b4dd9bc7c55de96b75236fbf719186cc",
+      "byte_size": 59406,
+      "extent": "google-PA146-IA1.html",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA146-IA1"
+      ]
+    },
+    {
+      "sha256": "2c31310bd208aa08b674b0ffe62e26ec432e821d47a8fc2537fbe98b6bc07ee3",
+      "byte_size": 87488,
+      "extent": "One exact flat old-content image, provider page PA147-IA1; physical folio unresolved.",
+      "storage": "tracked",
+      "artifact_id": "artifact.lviv-orthodox-eparchy.leiturgiarion.1646-lviv-mihail-sliozka.google-jr1n-pa147-ia1-jpeg-2c31310b",
+      "rights_basis": "United States: the exact historical printed liturgical text is historical printed matter from the holding-library-attributed Lviv 1646 volume and is public domain by expired term; the image is a faithful flat page scan, with no independently original modern photographic composition. Each exact image is a faithful flat reproduction without an independently original photographic composition. The public-domain/originality basis is artifact-specific, consistent with U.S. Copyright Office Compendium 313.4(A) and the repository reasoning for mechanical facsimiles; it does not clear modern perspective photographs, an undated material cover or provider HTML. The unchanged Google watermark is retained and treated under src/sources/inventories/google-usage-guidelines-rights-v1.toml, not as historical text and not under Triptych’s CC BY 4.0 grant. Google Books additional terms section 2, checked 2026-10-20, introduces purchased Digital Content; its statutory-use saving is contextual corroboration only, neither an affirmative licence nor proof of a contract governing these freely displayed images. The independent old-flat-content/originality basis controls. No claim is made for other jurisdictions.",
+      "offline_limit": "Exact bounded image retained; no annotation identification, title/colophon recovery or complete-volume claim.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA147-IA1"
+      ]
+    },
+    {
+      "sha256": "a9917627b9dd9e30fe53c446bb247c1ea1e49b1824b925c2bbaea0a2809818df",
+      "byte_size": 59406,
+      "extent": "google-PA147-IA1.html",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA147-IA1"
+      ]
+    },
+    {
+      "sha256": "0fd18adb2899968907fa4dbf632df0ae88aa4b9c5843e53e171857ecde54bdaf",
+      "byte_size": 91515,
+      "extent": "google-PA303-signed.jpg",
+      "storage": "tracked",
+      "artifact_id": "artifact.lviv-orthodox-eparchy.leiturgiarion.1646-lviv-mihail-sliozka.google-jr1n-pa303-jpeg-0fd18adb",
+      "rights_basis": "Artifact-specific faithful flat1646-content reproduction and United States public-domain/originality basis; unchanged Google mark preserved; exact manifest controls.",
+      "offline_limit": "Exact bounded image retained, without a complete-book claim.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA303"
+      ]
+    },
+    {
+      "sha256": "cd906401c74543d1d85fa87e9d8ac401bb05a8d9398846f8b7bd649c2fcd4e2b",
+      "byte_size": 67,
+      "extent": "google-PA303-view.html",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA303&jscmd=SearchWithinVolume2&q="
+      ]
+    },
+    {
+      "sha256": "2d53580c0fbeb32531b5bcb71f20a650eb21081c3b248b707d43d4c12b74c7a0",
+      "byte_size": 59366,
+      "extent": "google-PA303.html",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA303"
+      ]
+    },
+    {
+      "sha256": "12557f8948b8bdc6af436e3a8b3adddd45f7f7d2b67c5832e799cdf4686f72bb",
+      "byte_size": 15567,
+      "extent": "google-PA303.jpg",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PA303",
+        "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PT1"
+      ]
+    },
+    {
+      "sha256": "7bfc3299999bff79133be601369d891e9918b90ec7da59e00081458a9d722184",
+      "byte_size": 96091,
+      "extent": "google-PT1-signed.jpg",
+      "storage": "tracked",
+      "artifact_id": "artifact.lviv-orthodox-eparchy.leiturgiarion.1646-lviv-mihail-sliozka.google-jr1n-pt1-jpeg-7bfc3299",
+      "rights_basis": "Artifact-specific faithful flat1646-content reproduction and United States public-domain/originality basis; unchanged Google mark preserved; exact manifest controls.",
+      "offline_limit": "Exact bounded image retained, without a complete-book claim.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PT1"
+      ]
+    },
+    {
+      "sha256": "3efa8c43e5b4348f303a528c81adf435f0111ea752fe9f0f6241478b60987fa6",
+      "byte_size": 9103,
+      "extent": "google-PT1-zoom3-unsigned.jpg",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PT1"
+      ]
+    },
+    {
+      "sha256": "3289a033b756d216b3e59f0073c5d8d5b44ac4aa1fddaedcb2f86b92b24d07da",
+      "byte_size": 59339,
+      "extent": "google-PT1.html",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PT1"
+      ]
+    },
+    {
+      "sha256": "af2e3904b731c715bee18155e215e4589f612a078fa22041e0e7a16c95fbd657",
+      "byte_size": 36427,
+      "extent": "google-PT2-signed.jpg",
+      "storage": "tracked",
+      "artifact_id": "artifact.lviv-orthodox-eparchy.leiturgiarion.1646-lviv-mihail-sliozka.google-jr1n-pt2-jpeg-af2e3904",
+      "rights_basis": "Artifact-specific faithful flat1646-content reproduction and United States public-domain/originality basis; unchanged Google mark preserved; exact manifest controls.",
+      "offline_limit": "Exact bounded image retained, without a complete-book claim.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PT2"
+      ]
+    },
+    {
+      "sha256": "ae726aa62acf2c6c911c24b8e50c04a1f2ec04d6bb79ade418c3f9ac4a3f723c",
+      "byte_size": 59337,
+      "extent": "google-PT2.html",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://books.google.com/books?id=jr1nAAAAcAAJ&pg=PT2"
+      ]
+    },
+    {
+      "sha256": "eea0f07d102e0cbfc25425e65d59f4a1cb24d96e56f44483e5b372c1b29d07e6",
+      "byte_size": 3488,
+      "extent": "google-whole-response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://books.google.com/books/download/Leiturgiarion.pdf?id=jr1nAAAAcAAJ&output=pdf"
+      ]
+    },
+    {
+      "sha256": "fa09de81ebe6bf851cbb4ac29622983e6a2a534b544543d72183839eb0ceca45",
+      "byte_size": 815,
+      "extent": "ndk-catalogue-item.json",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://ndk.cz/search/api/v5.0/item/uuid:7c3d80c0-fdf0-11e2-9439-005056825209"
+      ]
+    },
+    {
+      "sha256": "84f4112de4381390f9664c2860ad44bb2a65e864c0e141464dffb4df0b8d82e8",
+      "byte_size": 180,
+      "extent": "ndk-monograph-search.json",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://ndk.cz/search/api/v5.0/search?q=Leiturgiarion%20AND%20fedora.model:monograph&rows=100&wt=json"
+      ]
+    },
+    {
+      "sha256": "a75828937a125828a72b362d0e1bd910dc51c595fdeb71e546ddeaa62ba31432",
+      "byte_size": 29686,
+      "extent": "ndk-search.json",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://ndk.cz/search/api/v5.0/search?q=Leiturgiarion&rows=100"
+      ]
+    },
+    {
+      "sha256": "675353cbd81f5f3f980eab83e5e7531dd8c7a6ed57d06a355ddaea07bf0f0acc",
+      "byte_size": 13967,
+      "extent": "ndk-sluzebnik-monograph.json",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://ndk.cz/search/api/v5.0/search?q=%22Sluzebnik%22%20AND%20fedora.model:monograph&rows=100&wt=json"
+      ]
+    },
+    {
+      "sha256": "03ef04009705ed5a832bfaec6dfe3837cfb5f0da72ba6a15309bc219dc58bf89",
+      "byte_size": 2135,
+      "extent": "nkp-1646-google-link.html",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Raw HTML/search wrapper excluded. SLK database DATA grant is CC0-1.0; the complete inspected record data are separately retained as artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.displayed-marc-data-json-610c6573. ExLibris software and navigation/session wrappers are outside that grant.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://aleph.nkp.cz/F/?func=service&doc_library=SLK01&doc_number=000577538&line_number=0001&func_code=WEB-FULL&service_type=MEDIA"
+      ]
+    },
+    {
+      "sha256": "a856d26c40066d03ab5d99ffb515a23ffd8d130afd653d211b75c91f1b025620",
+      "byte_size": 16614,
+      "extent": "nkp-1646-items.html",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Raw HTML/search wrapper excluded. SLK database DATA grant is CC0-1.0; the complete inspected record data are separately retained as artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.displayed-marc-data-json-610c6573. ExLibris software and navigation/session wrappers are outside that grant.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://aleph.nkp.cz/F/?func=item-global&doc_library=SLK01&doc_number=000577538&local_base=SLK"
+      ]
+    },
+    {
+      "sha256": "c7ed691158626b00ce7db5f667053cde345c646f4149215911c934930e1c3e88",
+      "byte_size": 24479,
+      "extent": "nkp-1646-marc.html",
+      "storage": "restricted",
+      "artifact_id": "artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.raw-marc-html-c7ed6911",
+      "rights_basis": "Raw HTML/search wrapper excluded. SLK database DATA grant is CC0-1.0; the complete inspected record data are separately retained as artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.displayed-marc-data-json-610c6573. ExLibris software and navigation/session wrappers are outside that grant.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://aleph.nkp.cz/F/?func=direct&doc_number=000577538&local_base=SLK&format=001"
+      ]
+    },
+    {
+      "sha256": "07027e311037574f5a2dfdbfdcc1dcff30cd902fce1db92565927c4b1a2dd461",
+      "byte_size": 26208,
+      "extent": "nkp-1646.html",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Raw HTML/search wrapper excluded. SLK database DATA grant is CC0-1.0; the complete inspected record data are separately retained as artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.displayed-marc-data-json-610c6573. ExLibris software and navigation/session wrappers are outside that grant.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://aleph.nkp.cz/F/?func=direct&doc_number=000577538&local_base=SLK&format=999"
+      ]
+    },
+    {
+      "sha256": "0dae16f85c7bc30fe2a98d3db9af01db2b6e8329fc017217324548c5a0ec992e",
+      "byte_size": 54760,
+      "extent": "nkp-google-barcode.html",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://books.google.cz/books?vid=NKP:3186213823&printsec=frontcover"
+      ]
+    },
+    {
+      "sha256": "6cba7d7d0aae538c0ef7550bc0f2e859a0428315091ff8de2766c93970ec805e",
+      "byte_size": 18390,
+      "extent": "nkp-search.html",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Raw HTML/search wrapper excluded. SLK database DATA grant is CC0-1.0; the complete inspected record data are separately retained as artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.displayed-marc-data-json-610c6573. ExLibris software and navigation/session wrappers are outside that grant.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://aleph.nkp.cz/F/?func=find-b&find_code=WRD&request=Leiturgiarion"
+      ]
+    },
+    {
+      "sha256": "8b0b2fb590cc0615e54c05ce4bd6df491d878f63fe5d0e77bb63ee33e0d85a20",
+      "byte_size": 29367,
+      "extent": "nkp-slk-search.html",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Raw HTML/search wrapper excluded. SLK database DATA grant is CC0-1.0; the complete inspected record data are separately retained as artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.displayed-marc-data-json-610c6573. ExLibris software and navigation/session wrappers are outside that grant.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://aleph.nkp.cz/F/?func=find-b&local_base=SLK&find_code=WRD&request=leiturgiarion"
+      ]
+    },
+    {
+      "sha256": "0989dbba251f22f63658e5d54ba3564dc9f4e074443cc24dc5ea2b6a17848d43",
+      "byte_size": 300693,
+      "extent": "abebooks-1920",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://www.abebooks.it/prima-edizione/Hungarian-Litourgikon-Priests-Altar-Book-Liturgy/32188629463/bd"
+      ]
+    },
+    {
+      "sha256": "01951ba9b6b43aacd147aeae6c218a69d477fb1e9e61c21403ac612f45a32ff8",
+      "byte_size": 356336,
+      "extent": "abebooks-1920-1",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://pictures.abebooks.com/inventory/32188629463._SL1500_.jpg"
+      ]
+    },
+    {
+      "sha256": "b90a2f121ca33c50c1b9adda95340c02390ef1887198fa2d7d8df49b90691182",
+      "byte_size": 320141,
+      "extent": "abebooks-1920-2",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://pictures.abebooks.com/inventory/32188629463_2._SL1500_.jpg"
+      ]
+    },
+    {
+      "sha256": "f731e374c319c4a66e11bfc73600e50f7c12b66950df5a5e2cc9fb2d5797cf56",
+      "byte_size": 382715,
+      "extent": "abebooks-1920-3",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://pictures.abebooks.com/inventory/32188629463_3._SL1500_.jpg"
+      ]
+    },
+    {
+      "sha256": "9ac45a8eac5435bf228bff5595c5b9058ea60f467405b42be5edf43cfecee3e4",
+      "byte_size": 103707,
+      "extent": "abebooks-1920-4",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://pictures.abebooks.com/inventory/32188629463_4._SL1500_.jpg"
+      ]
+    },
+    {
+      "sha256": "b6d706350fa535be201d21995093d3663396dc6687a9b5f58009ab0fa98b1d3b",
+      "byte_size": 20237,
+      "extent": "atanaz-1920-longlong",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=448"
+      ]
+    },
+    {
+      "sha256": "3f131ad54d1c18211bc9b730dad3560d79a3b1e49941f6a231ccff48d834cdf5",
+      "byte_size": 19816,
+      "extent": "atanaz-1920-marc",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=marc&recnum=448"
+      ]
+    },
+    {
+      "sha256": "6d42365d039f622b3d58290749d9c02b5b589ff867a56d63c6aa2e4830c3b552",
+      "byte_size": 16997,
+      "extent": "atanaz-1949-longlong",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=10613"
+      ]
+    },
+    {
+      "sha256": "71b351482f2d7fb6482a1623a7288f20d534ac264c7485bae2ff05b37889f16b",
+      "byte_size": 16916,
+      "extent": "atanaz-1949-marc",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=marc&recnum=10613"
+      ]
+    },
+    {
+      "sha256": "b6a309c1b571265a9818bc553fce851792e81b539afbb5767351e5d5b898f6cb",
+      "byte_size": 32483,
+      "extent": "whole offered HTML response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://arca.melte.hu/index.php/korlevelek-12"
+      ]
+    },
+    {
+      "sha256": "c9b3e578aa322c4a8d275bc1c34bfde5ab1abb643241d41edc2d4ebd9734f055",
+      "byte_size": 175562,
+      "extent": "whole offered HTML response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://leveltar.nyirgorkat.hu/fond-es-allagjegyzek/"
+      ]
+    },
+    {
+      "sha256": "822fa8328f2699673d95b2605d4300c00242a850d4d3ad0e46263fd69b752c4a",
+      "byte_size": 174885,
+      "extent": "whole offered HTML response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://leveltar.nyirgorkat.hu/2014/03/nyiregyhaza/"
+      ]
+    },
+    {
+      "sha256": "3e1f723dd2faeb4ff8e1e605676b6b55901bbf303cfa7e574d3615e112bc9f51",
+      "byte_size": 167809,
+      "extent": "whole offered HTML response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://leveltar.nyirgorkat.hu/2013/06/peneszlek/"
+      ]
+    },
+    {
+      "sha256": "f867e5ec56fdfa9daaa65b52d5347ed5bb3fac9b393e11d63b28a2b4e4abeba5",
+      "byte_size": 42232,
+      "extent": "whole offered HTML response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://byzhun.hu/nfkih-k108780"
+      ]
+    },
+    {
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "byte_size": 3,
+      "extent": "whole archive index response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://web.archive.org/cdx/search/cdx?url=byzantinohungarica.com/index.php/gorogkatolikus-tudosito-01&output=json&filter=statuscode:200&collapse=digest",
+        "https://web.archive.org/cdx/search/cdx?url=byzantinohungarica.com/index.php/gorogkatolikus-tudosito-02&output=json&filter=statuscode:200&collapse=digest",
+        "https://web.archive.org/cdx/search/cdx?url=byzantinohungarica.com/index.php/gorogkatolikus-tudosito-03&output=json&filter=statuscode:200&collapse=digest",
+        "https://web.archive.org/cdx/search/cdx?url=byzantinohungarica.com/*1921*&output=json&filter=statuscode:200&filter=mimetype:application/pdf&collapse=urlkey&filter=!urlkey:.*node.*"
+      ]
+    },
+    {
+      "sha256": "edfd5103eefd67e0efe519cdc4f07feb0759cf4929729231717b1ad1d5183363",
+      "byte_size": 540,
+      "extent": "whole archive index response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://web.archive.org/cdx/search/cdx?url=byzantinohungarica.com/index.php/gorogkatolikus-tudosito-nyiregyhaza&output=json&filter=statuscode:200&collapse=digest"
+      ]
+    },
+    {
+      "sha256": "7108bf41605c1eddf9feb3aa77cbcfaf01b7177dc556960e6711b4e08c8e2b9b",
+      "byte_size": 524,
+      "extent": "whole archive index response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://web.archive.org/cdx/search/cdx?url=byzantinohungarica.com/index.php/gorogkatolikus-tudosito-miskolc&output=json&filter=statuscode:200&collapse=digest"
+      ]
+    },
+    {
+      "sha256": "99f44db66988343d4e9b471d6ba534c524e5a06635dc8b218b472b182934d5ff",
+      "byte_size": 2791,
+      "extent": "whole HTTP response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://arca.melte.hu/index.php/korlevelek-12;ead?sf_format=xml"
+      ]
+    },
+    {
+      "sha256": "4a7922d032e1a05347d483e9a99d040bade41474f64f54e93d73db182d4036dc",
+      "byte_size": 141303,
+      "extent": "whole HTTP response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://arca.melte.hu/index.php/informationobject/browse?collection=52023&topLod=0"
+      ]
+    },
+    {
+      "sha256": "cc0b4e42510d49c6decd464123ecf3b14ae9b47f9b4ed2ee64893e2d6520a264",
+      "byte_size": 355,
+      "extent": "whole HTTP response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://byzantinohungarica.com/index.php/gorogkatolikus-sajtotermekek"
+      ]
+    },
+    {
+      "sha256": "48f0f8775a7282ae03648355ce4600e34f0dce5147902e6d250b13ecceeef822",
+      "byte_size": 1389,
+      "extent": "whole HTTP response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://web.archive.org/cdx/search/cdx?url=byzantinohungarica.com/index.php/gorogkatolikus-sajtotermekek&output=json&filter=statuscode:200&filter=mimetype:text/html&collapse=timestamp:4&filter=timestamp:202[0-9]"
+      ]
+    },
+    {
+      "sha256": "3bfefd5377c1f57be650d9415d9ad97f7c408be786e3e7f595d23867e718363e",
+      "byte_size": 556821,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://hd.gorogkatolikus.hu/leveltar/fond_es_allagjegyzek.pdf"
+      ]
+    },
+    {
+      "sha256": "e3c916c4c693e6004039b07d8e9dae377ddf70e693e9ed28e07432354af0e86f",
+      "byte_size": 5662963,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://hd.gorogkatolikus.hu/leveltar/kutatasi_szabalyzat.pdf"
+      ]
+    },
+    {
+      "sha256": "5e6a522fbb223ef73287aa0c0977bb8ae531a4f7dab2eacafdb819f27539dbb2",
+      "byte_size": 4653,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://web.archive.org/web/20211027000000id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-01"
+      ]
+    },
+    {
+      "sha256": "88ce3f0d7ddd49f9153bd06bdfa892165fd6c29d6cc987a705bb40fc3be49b66",
+      "byte_size": 4653,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://web.archive.org/web/20211027000000id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-02"
+      ]
+    },
+    {
+      "sha256": "f01f1251c587f36c7dec3e068478e0641035161e14fd45da3398bd48bfb206a8",
+      "byte_size": 4653,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://web.archive.org/web/20211027000000id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-03"
+      ]
+    },
+    {
+      "sha256": "b0482ca52b4c3954c5f9b8a3feeb307e0b237c023449c66ef6efc8e413738d7b",
+      "byte_size": 7539,
+      "extent": "whole offered HTML response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://hd.gorogkatolikus.hu/leveltar/?p=kutatoi_tajekoztato"
+      ]
+    },
+    {
+      "sha256": "c13bc1a721896b90dd97443f2aa0730046c564162a37c5af37d90c41a493e990",
+      "byte_size": 65782,
+      "extent": "whole offered HTML response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://szentatanaz.hu/kiadvanyaink/liturgia-tanszek-kiadvanyai"
+      ]
+    },
+    {
+      "sha256": "0ce434fb355275bcdb9eb37e8bb4962cbc53b82f8c2ca7be958e709fd2b0e80c",
+      "byte_size": 28922,
+      "extent": "whole offered HTML response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://matricula.hu/publica"
+      ]
+    },
+    {
+      "sha256": "7e0db2a6013f70331747f58ef83bd63b9a550d86e4a85ca7dc90d6c44f8e005d",
+      "byte_size": 1139,
+      "extent": "whole archived collection HTML response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://web.archive.org/web/20230209000000id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-nyiregyhaza",
+        "https://web.archive.org/web/20230209000000id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-miskolc"
+      ]
+    },
+    {
+      "sha256": "f00c8db3b66601a10407793fa9cd6c95e2cd36c9e6929fbf9b5e4fd48545c77c",
+      "byte_size": 47080,
+      "extent": "whole archived HTML response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://web.archive.org/web/20211027231218id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-nyiregyhaza"
+      ]
+    },
+    {
+      "sha256": "a15f6609f725b14cf1b3ce2777cce14d05d07e1357e1354c42771b9f480ae2dd",
+      "byte_size": 21664,
+      "extent": "whole archived HTML response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://web.archive.org/web/20211027231920id_/https://byzantinohungarica.com/index.php/gorogkatolikus-tudosito-miskolc"
+      ]
+    },
+    {
+      "sha256": "75fe0d81d8e016b2963f63be465ba8d5e201753aba841c6e3a49ad1e91895853",
+      "byte_size": 32455,
+      "extent": "whole archived HTML response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern wrapper, catalogue/search response, modern seller photograph, or unsuccessful/unmapped delivery: no inspected exact-artifact repository redistribution basis; only factual paraphrase and cryptographic provenance proposed.",
+      "offline_limit": "Public checkout retains metadata/hash/extent and checked factual paraphrase; exact acquired response or photograph is excluded.",
+      "reopening_condition": "New exact source rendition or rights evidence requires separate review; no inference of whole-book availability.",
+      "source_urls": [
+        "https://web.archive.org/web/20230209123302id_/https://byzantinohungarica.com/index.php/gorogkatolikus-sajtotermekek"
+      ]
+    },
+    {
+      "source_urls": [
+        "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=find&index0=TITL&text0=D%C3%A9li+isteni+tisztelet&whichform=simplesearchpage&currentpage=simplesearchpage"
+      ],
+      "sha256": "c80b2cd47f924e24e894060f97523f5bdd0708f410129938d9c32432dc5f60cc",
+      "byte_size": 15144,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=find&index0=TITL&text0=Liturgikon&whichform=simplesearchpage&currentpage=simplesearchpage"
+      ],
+      "sha256": "c3c7c1f00b6720d426bcad657cfdb7fd60aece0a93493da2f382722722be5510",
+      "byte_size": 31910,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://corvina.monguz.hu/WebPac.sahfdb/script/main.js?v=8997"
+      ],
+      "sha256": "e550bc7bdaff05edd2a3ef77a0c25631fb51149edd8ef94a65cb597bdd5573e6",
+      "byte_size": 174306,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://corvina.monguz.hu/WebPac.sahfdb/"
+      ],
+      "sha256": "59526261cf83ad8d42a463f0b355d05d0382c8c86dcda85e29543a63164a614f",
+      "byte_size": 14985,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=find&index0=TITL&text0=g%C3%B6r%C3%B6g+szertart%C3%A1su+katholikus+egyh%C3%A1z&whichform=simplesearchpage&currentpage=simplesearchpage"
+      ],
+      "sha256": "101aa34d1c6015a4043fcd1fb9062358112c58f6d154b8259fccc738c7e95c8b",
+      "byte_size": 19753,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=find&index0=TITL&text0=Aranysz%C3%A1j%C3%BA+Szent+J%C3%A1nos&whichform=simplesearchpage&currentpage=simplesearchpage"
+      ],
+      "sha256": "2f4cf1610cc2a3e4753aff96f1fe9e5905c69763fa0b316a69299bd694102c4f",
+      "byte_size": 32336,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=find&index0=TITL&text0=Aranysz%C3%A1j%C3%BA&whichform=simplesearchpage&currentpage=simplesearchpage"
+      ],
+      "sha256": "29f70ca527aef5395de20bd08f299311b4825932517937a5e8ed9f75afb0a289",
+      "byte_size": 32451,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://byzantinohungarica.com/"
+      ],
+      "sha256": "7277f02803992769ae0e1f4f68f32da186dec1c1fc550de5dcf9a4c25173c713",
+      "byte_size": 1713,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://byzhun.hu/kiadvanyaink/tudomanyos-konyvek"
+      ],
+      "sha256": "51ca5ec488902e3e401c3bf513a76870ead4abd81658c5a5f77dfa5b0aa6ccff",
+      "byte_size": 53674,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://byzhun.hu/"
+      ],
+      "sha256": "c1ddc58aa26e3568119bc4dc5fb65eabbe31fcc450b2ff9ad58cba0dd960c426",
+      "byte_size": 40255,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://archive.org/advancedsearch.php?q=%28gorog+OR+katholikus+OR+hajdudorogi%29+AND+year%3A1920&output=json&rows=100&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date"
+      ],
+      "sha256": "297a3e2af1bbfbf1d45353f836d383f73e6019876b20fcdafe5d0ec284568263",
+      "byte_size": 440,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://archive.org/advancedsearch.php?q=%28liturgikon+OR+litourgikon+OR+leiturgikon%29+AND+%28Hungarian+OR+magyar+OR+Nyiregyhaza%29&output=json&rows=100&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date"
+      ],
+      "sha256": "9b302ad4ee8a61521be162ee8dfaf52274b5e05a8f10a803220ea2603082a0bb",
+      "byte_size": 672,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://archive.org/advancedsearch.php?q=title%3A%28liturgi%C3%A1ja%29+AND+year%3A1920&output=json&rows=100&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date"
+      ],
+      "sha256": "836fba1dbab951e0fe21a8c864a2f92497c5b9b1a5213a117e98fabe7882ed78",
+      "byte_size": 262,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://archive.org/advancedsearch.php?q=title%3A%28liturgi%C3%A1ja%29+AND+year%3A1949&output=json&rows=100&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date"
+      ],
+      "sha256": "64e41bc9ade4f6607bdd2d6ac2752081d7853ba14e8c2a1e7c9924d5cdb06e72",
+      "byte_size": 261,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://archive.org/advancedsearch.php?q=title%3A%28liturgiaja%29+AND+year%3A1920&output=json&rows=100&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date"
+      ],
+      "sha256": "3d835e690fc278998687e662ddaf1b39eb817c062d14f0ceab03873090a54f77",
+      "byte_size": 248,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://archive.org/advancedsearch.php?q=title%3A%28liturgiaja%29+AND+year%3A1949&output=json&rows=100&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date"
+      ],
+      "sha256": "57600a4b79d70feb79b78060c2761265c018cce817794403ee5425c2292f8073",
+      "byte_size": 248,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://lib.atanaz.hu/katalogusok"
+      ],
+      "sha256": "49b1fda9b109156a4f46379322e5666b4955540752f7393b1ef9c2fd7ee46010",
+      "byte_size": 30281,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://lib.atanaz.hu/"
+      ],
+      "sha256": "27a8398b49b2d8ea0e7c8c957be30bc373aabbda89245160ab658492d0c451e4",
+      "byte_size": 44438,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://szentatanaz.hu/kiadvanyaink/liturgikus-oroksegunk"
+      ],
+      "sha256": "a2074ccae509deb434b293c7570c994a0ead594bbc3f43b9af3b5d7f23fed42a",
+      "byte_size": 69595,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://mek.oszk.hu/14000/14083/"
+      ],
+      "sha256": "4894a0e1e841bea66398d48e0e56a6326386f67b88e69cb3adb297e726da3f16",
+      "byte_size": 16064,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://mek.oszk.hu/"
+      ],
+      "sha256": "8b9b7937f1895d13245cba4920ed4d022ebb93a28d504a7d9a81fc837b377818",
+      "byte_size": 18651,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://mek.oszk.hu/hu/search/elfull/"
+      ],
+      "sha256": "1fa9cd0d3ac5b5bf2852204fb9d645c4d61cbf178d705cc4e3e22b6303b514e3",
+      "byte_size": 13920,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://mek.oszk.hu/hu/search/elfull/"
+      ],
+      "sha256": "e7a5d2b5a9c44ce13e4c602b6feb649b41613fc053a398bb1d0c9fef1a4dcdf4",
+      "byte_size": 13573,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://mek.oszk.hu/hu/search/elfull/"
+      ],
+      "sha256": "98c6d6fa2eb4ecfea653a9e77405cf56f230fc6706aa91db0000c07c407aa41d",
+      "byte_size": 13949,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://mek.oszk.hu/hu/search/elfull/"
+      ],
+      "sha256": "8efd8abd0dd7d77bb2f9551bae4c153771c04a6289504b90fffef40fc5d701ee",
+      "byte_size": 18213,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://nektar2.oszk.hu/librivision_hun.html"
+      ],
+      "sha256": "5789d710bdf85c903e546930aa4b3c40c0456c5773570c8b3fcd0b52dad43765",
+      "byte_size": 12492,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://nektar.oszk.hu/librivision_hun.html"
+      ],
+      "sha256": "ae934665366c24093eb10b99845bade7eff7bb4dc2d9846b9c6d405419b7217f",
+      "byte_size": 273,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://nektar.oszk.hu/"
+      ],
+      "sha256": "33dc09dd6a505b320063cf0ec890106bfcb9ec5edcadf7540ad094186a04d23f",
+      "byte_size": 270,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://link.oszk.hu/libriurl.php?SRE=A+g%C3%B6r%C3%B6g+szertart%C3%A1su+katholikus+egyh%C3%A1z&LN=hu&SRY=bk&DB=oszk"
+      ],
+      "sha256": "ce99fa411aefd6e2cded5d5e9eb4d4dc7cb9fad539b7cba230ea02121572ae72",
+      "byte_size": 1332,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://link.oszk.hu/libriurl.php?SRE=Aranysz%C3%A1j%C3%BA+Szent+J%C3%A1nos+szent+%C3%A9s+isteni+liturgi%C3%A1ja&LN=hu&SRY=bk&DB=oszk"
+      ],
+      "sha256": "9d155cf27b1ac2264fda5810c704792b39b39520c5759493651a7088ee83290b",
+      "byte_size": 1345,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://szentatanaz.hu/kiadvanyaink"
+      ],
+      "sha256": "8236457c943a771d9bc217a83b9f4948e6520c238c22cb4f353b9ba5f88e9a73",
+      "byte_size": 76191,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://www.szentatanaz.hu/"
+      ],
+      "sha256": "5463e1416e7fbdf6b6484e18446b48da4935378e3e522655d3d7756f848d4698",
+      "byte_size": 85425,
+      "extent": "whole offered response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Modern search, catalogue or institutional response, or access-failure transport: no inspected exact-artifact repository redistribution basis; factual paraphrase and exact provenance only.",
+      "offline_limit": "Exact response excluded; its query URL/hash/extent/status and bounded findings retained as metadata.",
+      "reopening_condition": "New public source payload or exact-artifact reuse basis requires separate inspection and review."
+    },
+    {
+      "source_urls": [
+        "https://www.nkp.cz/o-knihovne/odborne-cinnosti/otevrena-data"
+      ],
+      "sha256": "c0d9d82fbad8a001de1860d18ec0d36ec4373779de360faf91c2d615b0c5cb1d",
+      "byte_size": 80985,
+      "extent": "whole official HTML response",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Supporting modern institutional page/declaration about the catalogue-data grant; no claim that the grant licenses this HTML/PDF wrapper itself. Raw policy payload excluded; exact source identity and grant facts retained.",
+      "offline_limit": "Offline checkout includes grant facts/URL/hash/extent but not raw policyHTML/PDF.",
+      "reopening_condition": "Specific exact-document redistribution basis would permit separate retention review."
+    },
+    {
+      "source_urls": [
+        "https://www.nkp.cz/file/9bf1384644a5a479ff11ae4a517cfc3b/2688/cc0_srpen_2023.pdf"
+      ],
+      "sha256": "64f1e0b4d4100c298a4332550a7cc59e3aaca3ba1c95642c9c5a8585948bc1fc",
+      "byte_size": 1331534,
+      "extent": "whole6pageofficialPDF; pages1–2ministryapproval29Aug2023, page3declaration8Aug2023 explicitlySLK, page4approvalclause, page5CC0attachmentexcerpt, page6approvalclause",
+      "storage": "restricted",
+      "artifact_id": null,
+      "rights_basis": "Supporting modern institutional page/declaration about the catalogue-data grant; no claim that the grant licenses this HTML/PDF wrapper itself. Raw policy payload excluded; exact source identity and grant facts retained.",
+      "offline_limit": "Offline checkout includes grant facts/URL/hash/extent but not raw policyHTML/PDF.",
+      "reopening_condition": "Specific exact-document redistribution basis would permit separate retention review."
+    },
+    {
+      "source_urls": [
+        "https://aleph.nkp.cz/F/?func=direct&doc_number=000577538&local_base=SLK&format=001"
+      ],
+      "sha256": "610c6573af7d640ceb940620d076ee40e7be6b416df0530eae681d9d9090b97e",
+      "byte_size": 5030,
+      "extent": "All 34 ordered displayed catalogue fields, LDR through SYS, including repeated 562 and 650 fields and FMT/PSP/SYS local fields; not a machine-exported MARC21 record.",
+      "storage": "tracked",
+      "artifact_id": "artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.displayed-marc-data-json-610c6573",
+      "rights_basis": "Raw HTML/search wrapper excluded. SLK database DATA grant is CC0-1.0; the complete inspected record data are separately retained as artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.displayed-marc-data-json-610c6573. ExLibris software and navigation/session wrappers are outside that grant.",
+      "offline_limit": "Complete declared 34-field catalogue-data transport retained, without wrapper or book-completeness claim.",
+      "reopening_condition": "Changed catalogue snapshot or transformation requires a new exact artifact and review."
+    }
+  ],
+  "counts": {
+    "new_sources": 4,
+    "updated_existing_candidates": 3,
+    "new_candidates": 0,
+    "new_stages": 0,
+    "new_transitions": 0,
+    "new_substantive_recensions": 0,
+    "new_native_texts": 0,
+    "new_retained_page_images": 5,
+    "new_retained_payload_bytes": 406082,
+    "old_retained_images_preserved": 4,
+    "old_retained_payload_bytes": 184888,
+    "acquisition_rows": 97,
+    "unique_acquired_sha256": 92,
+    "failed_acquisition_requests_without_payload": 6,
+    "new_retained_catalogue_data_artifacts": 1,
+    "new_catalogue_data_payload_bytes": 5030,
+    "new_source_library_works": 1,
+    "new_source_library_editions": 1,
+    "project_created_derivatives": 1,
+    "unique_acquired_and_derived_sha256": 93,
+    "new_retained_page_image_bytes": 401052,
+    "new_restricted_parent_artifacts": 1
+  },
+  "semantics": [
+    "1920-imprint title photograph does not authenticate original impression against unchanged1984facsimile.",
+    "1949private-use permission1650/1949 is catalogue transcription corroborating2003, not original-title resolution of disagreement with2008.",
+    "Neither complete original1920/1949book nor original1021/1921,1195/1921,2351/1949 or819/1954circular acquired.",
+    "Czech A003340 is physically incomplete; original title and terminal colophon cannot be recovered from its missing leaves; catalogue eleven-versus-ten omission arithmetic remains unresolved.",
+    "No new dated altar-use event, Catholic reception edge, first celebration, substantive recension, historical parent or text inheritance proposed."
+  ],
+  "next_inputs": [
+    "Original Hajdúdorog circular1021/1921, I p1, including issue date/heading, all text and authority signature; photographed by holding archive, not merely a later quotation.",
+    "Original1195/1921, II: cited pagination1versus3 differs among studies; original issue needed for date and exact locus.",
+    "Original2351/1949, Liturgikon új kiadása, including date and two replacement-format order wording.",
+    "Original819/1954, XIII, rubric directive; named receiving copies and dated parish-use entries.",
+    "Inspect GMFL I–1–h (Arca HU GMFL I.01.h); separately Nyíregyháza parish box28 and Penészlek box15. Ask institution to identify exact 1921/1949/1954issue holdings before assuming a shelfcode concordance with earlier NYEL/GKPL citations.",
+    "Recover original1921Tudósító April/August/December25issues from the institution’s digital periodical collection or authenticated offered source.",
+    "A public complete 1646 exemplar with original title/preliminaries/terminal colophon, and independently original M–920 ownership leaves102–109 plus dated Nyírderzs use evidence. The Czech copy explicitly cannot supply its own missing leaves.",
+    "Complete authenticated 1920 impression including dated permission verso, contents, Greek canonical parts, terminal pagination and Emlékezetül pp.309–310",
+    "Original title/permission leaves and complete scans of both 1949 physical formats",
+    "Original images of M-1637's preparatory annotations and of the Hajdúböszörmény ownership stamps",
+    "Independent assessment of 1949 printed permission against both secondary readings",
+    "Original circular acquisition owned by coordinator; not duplicated here"
+  ],
+  "prior_checkpoint": {
+    "path": "src/sources/inventories/eucharistic-research-reviews/hungarian-reception-next-phase-2026-10-20.json",
+    "sha256": "153407f15df0b98b2fa42237e8e5171ceae331ba55cb6136a8695374a10c204f",
+    "policy": "Prior frozen receipt retained unchanged; this batch records additive source inspections and narrows its remaining inputs."
+  },
+  "failed_acquisitions": [
+    {
+      "source_url": "https://www.googleapis.com/books/v1/volumes?q=%22g%C3%B6r%C3%B6g+szertart%C3%A1su%22+%22liturgi%C3%A1ja%22&maxResults=40",
+      "error": "HTTP Error 429: Too Many Requests",
+      "retrieved_on": "2026-10-20",
+      "source_bytes_acquired": false
+    },
+    {
+      "source_url": "https://www.googleapis.com/books/v1/volumes?q=%22Aranysz%C3%A1j%C3%BA%22+%22liturgi%C3%A1ja%22+%221949%22&maxResults=40",
+      "error": "HTTP Error 429: Too Many Requests",
+      "retrieved_on": "2026-10-20",
+      "source_bytes_acquired": false
+    },
+    {
+      "source_url": "https://library.hungaricana.hu/hu/search/?query=%22liturgikon%22+%221920%22",
+      "error": "HTTP Error 403: Forbidden",
+      "retrieved_on": "2026-10-20",
+      "source_bytes_acquired": false
+    },
+    {
+      "source_url": "https://library.hungaricana.hu/hu/search/?query=%22A+g%C3%B6r%C3%B6g+szertart%C3%A1su+katholikus+egyh%C3%A1z%22",
+      "error": "HTTP Error 403: Forbidden",
+      "retrieved_on": "2026-10-20",
+      "source_bytes_acquired": false
+    },
+    {
+      "source_url": "https://library.hungaricana.hu/hu/search/?query=%22Aranysz%C3%A1j%C3%BA+Szent+J%C3%A1nos%22+%221949%22",
+      "error": "HTTP Error 403: Forbidden",
+      "retrieved_on": "2026-10-20",
+      "source_bytes_acquired": false
+    },
+    {
+      "source_url": "https://mek.oszk.hu/html/kereses.html",
+      "error": "HTTP Error 404: Not Found",
+      "retrieved_on": "2026-10-20",
+      "source_bytes_acquired": false
+    }
+  ],
+  "derivatives": [
+    {
+      "artifact_label": "slk000577538-catalogue-data.json",
+      "source_url": "https://aleph.nkp.cz/F/?func=direct&doc_number=000577538&local_base=SLK&format=001",
+      "sha256": "610c6573af7d640ceb940620d076ee40e7be6b416df0530eae681d9d9090b97e",
+      "byte_size": 5030,
+      "parent_sha256": "c7ed691158626b00ce7db5f667053cde345c646f4149215911c934930e1c3e88",
+      "parent_byte_size": 24479,
+      "extent": "All 34 ordered displayed catalogue fields, LDR through SYS, including repeated 562 and 650 fields and FMT/PSP/SYS local fields; not a machine-exported MARC21 record.",
+      "transformation": "Extract every two-cell data row from the complete HTML table id=record; decode HTML character entities, strip display markup and collapse HTML layout whitespace to single spaces inside each cell; preserve order, displayed field/indicator labels and literal subfield separators. No correction of catalogue text or missing-leaf arithmetic. Excludes navigation, software, JavaScript, catalogue wrapper, CSS, footer and session URLs.",
+      "license": "CC0-1.0",
+      "storage": "tracked",
+      "artifact_id": "artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.displayed-marc-data-json-610c6573",
+      "derived_from": "artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.raw-marc-html-c7ed6911"
+    }
+  ],
+  "rights_addendum": {
+    "finding": "CC0 grant for SLK DATA confirmed independently of ExLibris software footer; complete record-data transport retained. Earlier child raw-wrapper exclusion stands, while any broad no-data-grant suggestion is superseded by this exact declaration.",
+    "policy_url": "https://www.nkp.cz/o-knihovne/odborne-cinnosti/otevrena-data",
+    "declaration_url": "https://www.nkp.cz/file/9bf1384644a5a479ff11ae4a517cfc3b/2688/cc0_srpen_2023.pdf",
+    "declaration_sha256": "64f1e0b4d4100c298a4332550a7cc59e3aaca3ba1c95642c9c5a8585948bc1fc",
+    "declaration_byte_size": 1331534,
+    "data_artifact_id": "artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.displayed-marc-data-json-610c6573"
+  },
+  "retention_addendum": {
+    "reason": "All five acquired faithful flat old-content pages are retained; unmapped physical foliation prevents annotation claims, not lawful retention. The complete catalogue-data derivative now names a canonical metadata-only restricted raw-HTML parent.",
+    "new_page_ids": [
+      "PA146-IA1",
+      "PA147-IA1"
+    ],
+    "raw_parent_artifact_id": "artifact.national-library-czech-republic.slavonic-library-catalogue.2026-10-20-slk000577538.raw-marc-html-c7ed6911",
+    "book_stage_reception_claims_added": 0
+  }
+}

@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.fides-page-0285-djvu-1a6c6994"
+edition_id = "edition.cistercian-order.missale-cisterciense.paris-cramoisy-1657"
+artifact_type = "facsimile-djvu"
+media_type = "image/vnd.djvu"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The original Latin Paris Cramoisy 1657 printing has an expired United States publication term. These are exact native mechanical page deliveries, faithful mechanical viewing derivatives or the independently checked historical Latin they carry. The previously accepted FIDES 3755 holding/rights control inspection of 20 October 2026 records Domena publiczna (Public domain) and Dla wszystkich bez ograniczeń; no new provider fetch is asserted here. Historical text and mechanical images are excluded from Triptych’s CC BY 4.0 grant. No modern translation, reconstruction or contemporary ritual authorization is supplied."
+retrieved = "2026-10-17"
+sha256 = "1a6c6994eb12dba5ca3644b932e1334253116b0e2cec2ce2441f7da706786f63"
+byte_size = 931067
+path = "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/fides-page-0285-djvu-1a6c6994/1657-page-0285.djvu"
+indexable = false
+page_count = 1
+source_url = "https://digital.fides.org.pl/Content/3755/DjVu/DJVU/KrzeszowOSB_Missale_Cisterciense_1657_0285.djvu"
+support_artifacts = [{ artifact_id = "artifact.cistercian-order.missale-cisterciense.paris-cramoisy-1657.djvu-shared-annotation-af707c77", embedded_reference = "shared_anno.iff" }]
+provenance = "Exact complete native FIDES page delivery, matched by SHA and length to the recovered acquisition receipt dated 17 October 2026. Reused and rehashed locally on 20 October 2026; no fresh network acquisition asserted. Only the independently declared source blocks enter the Pater native constituent."
+notes = "One complete provider page delivery. Later contextual pages support the explicitly blocked wider post-Canon and following-division review."

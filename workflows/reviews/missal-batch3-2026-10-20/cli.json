@@ -1,0 +1,884 @@
+{
+  "record_type": "labelled-public-cli-capture-derivative/v1",
+  "derivative_notice": "Public derivative of exact executed-command, capture-summary and guard-proof records. This lane rehashed saved stdout and final tools; it did not replay a command, generate a corpus/projection or execute a gate.",
+  "originals": [
+    {
+      "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/summary.json",
+      "sha256": "c27c3dbbb7652d01f46e7c6f8dacbc59489259ea443bb94514f8212908d1f0fb",
+      "byte_size": 3246
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/executed-commands.json",
+      "sha256": "a61c9801b3e6f1ea2146e01c5e08f46b4085c55369b54b5a7cf06a852843c85c",
+      "byte_size": 18967
+    },
+    {
+      "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/guard-proof.json",
+      "sha256": "306ab27c6441db6817aff8d1fe8fde5ec0cadeccced09c6a305472052a26399d",
+      "byte_size": 333
+    }
+  ],
+  "summary_record": {
+    "status": "RELEASED: 21 real commands completed; captured stdout reconciled",
+    "executed": 21,
+    "all_exit_statuses_zero": true,
+    "pre_refresh_matches": 12,
+    "pre_refresh_divergences": 9,
+    "captured_stdout_comparisons_after_refresh": 21,
+    "tracked_writes_during_replay": 0,
+    "final_tracked_writes": [
+      "tools/act-history",
+      "tools/missal-coverage-reconciliation"
+    ],
+    "rewritten_commands": [
+      "tools/act-history compare --comparison roman-canon-memento-wilson-r-and-cummiskey-1861",
+      "tools/act-history catalogue --out .scratch/history-engine-expansion/example-catalogue.json",
+      "tools/act-history catalogue --out .scratch/history-engine-expansion/example-catalogue.json --check",
+      "tools/act-history corpus --out .scratch/history-engine-expansion/example-corpus",
+      "tools/act-history corpus --source src/sources/inventories/catholic-eucharistic-history-v1.toml --out .scratch/history-engine-expansion/example-corpus-explicit",
+      "tools/act-history structure --out .scratch/history-engine-expansion/example-browser-data",
+      "tools/act-history structure --check --out .scratch/history-engine-expansion/example-browser-data",
+      "tools/missal-coverage-reconciliation",
+      "tools/missal-coverage-reconciliation --json"
+    ],
+    "before_tools": {
+      "act-history": {
+        "sha256": "d353fcef509d79657525767e613e733b8f44a40525235f13552e3ec5c77f75c4",
+        "byte_size": 255816
+      },
+      "missal-coverage-reconciliation": {
+        "sha256": "55082a21ce97241d5a1d0c3c33eb46d740cf9f62607c16f57a618829e4421fb9",
+        "byte_size": 28949
+      }
+    },
+    "after_tools": {
+      "act-history": {
+        "sha256": "346f5ffed7028f26d060b31e1dd9a82e3c64b9310bdabf84981e75d1f0594d96",
+        "byte_size": 255818
+      },
+      "missal-coverage-reconciliation": {
+        "sha256": "2b35040cee4ca6c13ee6038751b3b5535bd2513dc53e0aff15902341ddff467b",
+        "byte_size": 28949
+      }
+    },
+    "registry_unchanged": true,
+    "outside_captured_output_bytes_unchanged": true,
+    "outside_captured_output_semantic_ast_unchanged": true,
+    "runtime_dependency_count": 97,
+    "runtime_dependencies_except_authorized_stdout_unchanged": true,
+    "scoped_diff_check_exit_status": 0,
+    "path_map": null,
+    "exact_declared_argv_and_stdout_preserved": true,
+    "exclusions": [
+      "Only the 21 selected captures ran; no whole-registry examples or broad tests.",
+      "No path, count, hash, wording, Unicode, whitespace, or error normalization; exact declared argv and raw stdout retained.",
+      "Existing editorial prefix/line elisions use the unmodified framework comparison and recapture helpers.",
+      "No second command pass or post-refresh regeneration: source fingerprints in generated scratch artifacts predate final EXAMPLES byte changes; root must generate canonical corpora/projections after this final tool hash release.",
+      "Normal tracked guard excludes untracked artifacts; all 586 source-manifest resources were independently rehashed before and after replay.",
+      "Authorized declared .scratch/history-engine-expansion outputs were regenerated. Immutable prior batch2/batch3 receipts, shared caches, canonical projections, registry, annotations, implementation, commits, and refs were untouched."
+    ],
+    "failed_or_superseded_attempts": []
+  },
+  "guard_proof_record": {
+    "scope": "normal replay whole-checkout tracked guard, plus unchanged staged index and 586 source-owned files",
+    "guard_calls": 23,
+    "tracked_writes": [],
+    "tracked_state_before_after_equal": true,
+    "index_before_after_equal": true,
+    "registry_before_after_equal": true,
+    "source_manifest_records_before_after_equal": 586
+  },
+  "commands": [
+    {
+      "number": 1,
+      "command": "tools/act-history compare --comparison roman-canon-memento-wilson-r-and-cummiskey-1861 --out .scratch/history-engine-expansion/memento-comparison.json",
+      "canonical_argv": [
+        "tools/act-history",
+        "compare",
+        "--comparison",
+        "roman-canon-memento-wilson-r-and-cummiskey-1861",
+        "--out",
+        ".scratch/history-engine-expansion/memento-comparison.json"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "compare",
+        "--comparison",
+        "roman-canon-memento-wilson-r-and-cummiskey-1861",
+        "--out",
+        ".scratch/history-engine-expansion/memento-comparison.json"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 9.801,
+      "raw_bytes": 288,
+      "raw_sha256": "239dd8e0613d5ee590fdde79289feed4aafd32eb3e5575147f435b9025a7c092"
+    },
+    {
+      "number": 2,
+      "command": "tools/act-history compare --comparison roman-canon-memento-wilson-r-and-cummiskey-1861",
+      "canonical_argv": [
+        "tools/act-history",
+        "compare",
+        "--comparison",
+        "roman-canon-memento-wilson-r-and-cummiskey-1861"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "compare",
+        "--comparison",
+        "roman-canon-memento-wilson-r-and-cummiskey-1861"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 3.598,
+      "raw_bytes": 209338,
+      "raw_sha256": "d3eef2ab334170ec0a1dbab2a45ee3612b8e629660f7c399acaf2e261b9e65a4"
+    },
+    {
+      "number": 3,
+      "command": "tools/act-history catalogue --out .scratch/history-engine-expansion/example-catalogue.json",
+      "canonical_argv": [
+        "tools/act-history",
+        "catalogue",
+        "--out",
+        ".scratch/history-engine-expansion/example-catalogue.json"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "catalogue",
+        "--out",
+        ".scratch/history-engine-expansion/example-catalogue.json"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 2.91,
+      "raw_bytes": 92,
+      "raw_sha256": "03f596039e892c3f7b0c4d7fd1f5f6bf1a2beee6391340a62e48711e2cbaf9f1"
+    },
+    {
+      "number": 4,
+      "command": "tools/act-history catalogue --out .scratch/history-engine-expansion/example-catalogue.json --check",
+      "canonical_argv": [
+        "tools/act-history",
+        "catalogue",
+        "--out",
+        ".scratch/history-engine-expansion/example-catalogue.json",
+        "--check"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "catalogue",
+        "--out",
+        ".scratch/history-engine-expansion/example-catalogue.json",
+        "--check"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 3.07,
+      "raw_bytes": 94,
+      "raw_sha256": "0984c5e6cf060aa43e94e17d0ca613d33466db1f939108b37b86155d0ef5f707"
+    },
+    {
+      "number": 5,
+      "command": "tools/act-history corpus --out .scratch/history-engine-expansion/example-corpus",
+      "canonical_argv": [
+        "tools/act-history",
+        "corpus",
+        "--out",
+        ".scratch/history-engine-expansion/example-corpus"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "corpus",
+        "--out",
+        ".scratch/history-engine-expansion/example-corpus"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 11.612,
+      "raw_bytes": 149,
+      "raw_sha256": "deb91ecbac4e353cc1b52140f3cfdc0cac5caca6cbeecff82338ccc6a07e8a30"
+    },
+    {
+      "number": 6,
+      "command": "tools/act-history corpus --source src/sources/inventories/catholic-eucharistic-history-v1.toml --out .scratch/history-engine-expansion/example-corpus-explicit",
+      "canonical_argv": [
+        "tools/act-history",
+        "corpus",
+        "--source",
+        "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+        "--out",
+        ".scratch/history-engine-expansion/example-corpus-explicit"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "corpus",
+        "--source",
+        "src/sources/inventories/catholic-eucharistic-history-v1.toml",
+        "--out",
+        ".scratch/history-engine-expansion/example-corpus-explicit"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 12.071,
+      "raw_bytes": 158,
+      "raw_sha256": "4ae1b0dd7a9656755601e3a64db8b2d482f43a03210898cf40b685bcbf165012"
+    },
+    {
+      "number": 7,
+      "command": "tools/act-history structure --out .scratch/history-engine-expansion/example-browser-data",
+      "canonical_argv": [
+        "tools/act-history",
+        "structure",
+        "--out",
+        ".scratch/history-engine-expansion/example-browser-data"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "structure",
+        "--out",
+        ".scratch/history-engine-expansion/example-browser-data"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 124.832,
+      "raw_bytes": 153,
+      "raw_sha256": "61c3d7947a39ae0359a5a263efba92e8c8adb524ac59413696e2b65b9e406bf5"
+    },
+    {
+      "number": 8,
+      "command": "tools/act-history structure --check --out .scratch/history-engine-expansion/example-browser-data",
+      "canonical_argv": [
+        "tools/act-history",
+        "structure",
+        "--check",
+        "--out",
+        ".scratch/history-engine-expansion/example-browser-data"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "structure",
+        "--check",
+        "--out",
+        ".scratch/history-engine-expansion/example-browser-data"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 127.595,
+      "raw_bytes": 140,
+      "raw_sha256": "27090f11ef7d9d095246acf16943af834020b2f595569afbdd59f981890cd924"
+    },
+    {
+      "number": 9,
+      "command": "tools/act-history structure --source src/sources/inventories/latin-missal-acts-v1.toml --out .scratch/history-engine-expansion/example-structure-latin-missal",
+      "canonical_argv": [
+        "tools/act-history",
+        "structure",
+        "--source",
+        "src/sources/inventories/latin-missal-acts-v1.toml",
+        "--out",
+        ".scratch/history-engine-expansion/example-structure-latin-missal"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "structure",
+        "--source",
+        "src/sources/inventories/latin-missal-acts-v1.toml",
+        "--out",
+        ".scratch/history-engine-expansion/example-structure-latin-missal"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 0.517,
+      "raw_bytes": 289,
+      "raw_sha256": "825fceb53163f473d10b7076d575c02dccd437bacadd76d16ddc9ab4b547a977"
+    },
+    {
+      "number": 10,
+      "command": "tools/act-history commonality --repo .scratch/history-engine-expansion/example-roman-holy-week",
+      "canonical_argv": [
+        "tools/act-history",
+        "commonality",
+        "--repo",
+        ".scratch/history-engine-expansion/example-roman-holy-week"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "commonality",
+        "--repo",
+        ".scratch/history-engine-expansion/example-roman-holy-week"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 0.508,
+      "raw_bytes": 281,
+      "raw_sha256": "0e4a290cec9ffa81b8a207f6320e7a5dcce53d0a32d2680b2347913091d9986b"
+    },
+    {
+      "number": 11,
+      "command": "tools/act-history commonality typica exempt-uses --repo .scratch/history-engine-expansion/example-roman-holy-week --json",
+      "canonical_argv": [
+        "tools/act-history",
+        "commonality",
+        "typica",
+        "exempt-uses",
+        "--repo",
+        ".scratch/history-engine-expansion/example-roman-holy-week",
+        "--json"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "commonality",
+        "typica",
+        "exempt-uses",
+        "--repo",
+        ".scratch/history-engine-expansion/example-roman-holy-week",
+        "--json"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 0.469,
+      "raw_bytes": 2826,
+      "raw_sha256": "85d492c3d4cb4f8c513bb317adb8707fae759e4ade4f15850557cac9702306f5"
+    },
+    {
+      "number": 12,
+      "command": "tools/act-history plate --source src/sources/inventories/latin-missal-acts-v1.toml --out .scratch/history-engine-expansion/example-plate",
+      "canonical_argv": [
+        "tools/act-history",
+        "plate",
+        "--source",
+        "src/sources/inventories/latin-missal-acts-v1.toml",
+        "--out",
+        ".scratch/history-engine-expansion/example-plate"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "plate",
+        "--source",
+        "src/sources/inventories/latin-missal-acts-v1.toml",
+        "--out",
+        ".scratch/history-engine-expansion/example-plate"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 0.508,
+      "raw_bytes": 436,
+      "raw_sha256": "85861f8ce60bf8f665ee68b1ba66d459c2480504f1b6038af013fe8800b75b5f"
+    },
+    {
+      "number": 13,
+      "command": "tools/act-history plate --out .scratch/history-engine-expansion/example-plate",
+      "canonical_argv": [
+        "tools/act-history",
+        "plate",
+        "--out",
+        ".scratch/history-engine-expansion/example-plate"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "plate",
+        "--out",
+        ".scratch/history-engine-expansion/example-plate"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 0.48,
+      "raw_bytes": 442,
+      "raw_sha256": "a6ee9c8368b7ed750af1bfe31dbc67b6c976a146f3e698168bebca6fd0658215"
+    },
+    {
+      "number": 14,
+      "command": "tools/act-history check",
+      "canonical_argv": [
+        "tools/act-history",
+        "check"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "check"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 0.488,
+      "raw_bytes": 253,
+      "raw_sha256": "bd51441b6ef2872f54f068d222f652064866a7e20eb20a2bb15ee6c3bac57729"
+    },
+    {
+      "number": 15,
+      "command": "tools/act-history check --source src/sources/inventories/latin-missal-acts-v1.toml",
+      "canonical_argv": [
+        "tools/act-history",
+        "check",
+        "--source",
+        "src/sources/inventories/latin-missal-acts-v1.toml"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "check",
+        "--source",
+        "src/sources/inventories/latin-missal-acts-v1.toml"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 0.507,
+      "raw_bytes": 306,
+      "raw_sha256": "902489e10b09e0ea299330a77c6acb7aa6dee44d3ad280bf46eb0445d8203f8e"
+    },
+    {
+      "number": 16,
+      "command": "tools/act-history graph",
+      "canonical_argv": [
+        "tools/act-history",
+        "graph"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "graph"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 0.073,
+      "raw_bytes": 1263,
+      "raw_sha256": "26043eec9071e23c898c8bfe243d133760f555adf6a636c5b3b04b5b90d4fdc4"
+    },
+    {
+      "number": 17,
+      "command": "tools/act-history graph --json",
+      "canonical_argv": [
+        "tools/act-history",
+        "graph",
+        "--json"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "graph",
+        "--json"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 0.069,
+      "raw_bytes": 2706,
+      "raw_sha256": "358ffd61a8f9ef6316905ac0bc5e5e85a9b9da1d711e9d52054402cc56ad8f28"
+    },
+    {
+      "number": 18,
+      "command": "tools/act-history emit --out .scratch/history-engine-expansion/example-roman-holy-week",
+      "canonical_argv": [
+        "tools/act-history",
+        "emit",
+        "--out",
+        ".scratch/history-engine-expansion/example-roman-holy-week"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "emit",
+        "--out",
+        ".scratch/history-engine-expansion/example-roman-holy-week"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 0.923,
+      "raw_bytes": 92,
+      "raw_sha256": "5aed3fe89d8257c3afa50058b940d3be01bcfceeebd97415506766e6d48f11f6"
+    },
+    {
+      "number": 19,
+      "command": "tools/act-history emit --source src/sources/inventories/latin-missal-acts-v1.toml --out .scratch/history-engine-expansion/example-latin-missal",
+      "canonical_argv": [
+        "tools/act-history",
+        "emit",
+        "--source",
+        "src/sources/inventories/latin-missal-acts-v1.toml",
+        "--out",
+        ".scratch/history-engine-expansion/example-latin-missal"
+      ],
+      "executed_argv": [
+        "tools/act-history",
+        "emit",
+        "--source",
+        "src/sources/inventories/latin-missal-acts-v1.toml",
+        "--out",
+        ".scratch/history-engine-expansion/example-latin-missal"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 2.006,
+      "raw_bytes": 90,
+      "raw_sha256": "b56950a35364af4a69ae3362b5109f29f688eb1a2b5a74e855ca1120d01f63ed"
+    },
+    {
+      "number": 20,
+      "command": "tools/missal-coverage-reconciliation",
+      "canonical_argv": [
+        "tools/missal-coverage-reconciliation"
+      ],
+      "executed_argv": [
+        "tools/missal-coverage-reconciliation"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 79.204,
+      "raw_bytes": 367,
+      "raw_sha256": "f748c1c5b3ed25f15d357d53c46f4d97326c9d681323c0a326d39fdb6f04e87c"
+    },
+    {
+      "number": 21,
+      "command": "tools/missal-coverage-reconciliation --json",
+      "canonical_argv": [
+        "tools/missal-coverage-reconciliation",
+        "--json"
+      ],
+      "executed_argv": [
+        "tools/missal-coverage-reconciliation",
+        "--json"
+      ],
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 78.753,
+      "raw_bytes": 63712,
+      "raw_sha256": "9f95ea6bbfffd69497210cb10ab9f4175fe3bd1f28bc63e8cbc3199d68bea69e"
+    }
+  ],
+  "saved_stdout_identity_verification": [
+    {
+      "command_number": 1,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/01.stdout",
+        "sha256": "239dd8e0613d5ee590fdde79289feed4aafd32eb3e5575147f435b9025a7c092",
+        "byte_size": 288
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/01.path-mapped.stdout",
+        "sha256": "239dd8e0613d5ee590fdde79289feed4aafd32eb3e5575147f435b9025a7c092",
+        "byte_size": 288
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 2,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/02.stdout",
+        "sha256": "d3eef2ab334170ec0a1dbab2a45ee3612b8e629660f7c399acaf2e261b9e65a4",
+        "byte_size": 209338
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/02.path-mapped.stdout",
+        "sha256": "d3eef2ab334170ec0a1dbab2a45ee3612b8e629660f7c399acaf2e261b9e65a4",
+        "byte_size": 209338
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 3,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/03.stdout",
+        "sha256": "03f596039e892c3f7b0c4d7fd1f5f6bf1a2beee6391340a62e48711e2cbaf9f1",
+        "byte_size": 92
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/03.path-mapped.stdout",
+        "sha256": "03f596039e892c3f7b0c4d7fd1f5f6bf1a2beee6391340a62e48711e2cbaf9f1",
+        "byte_size": 92
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 4,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/04.stdout",
+        "sha256": "0984c5e6cf060aa43e94e17d0ca613d33466db1f939108b37b86155d0ef5f707",
+        "byte_size": 94
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/04.path-mapped.stdout",
+        "sha256": "0984c5e6cf060aa43e94e17d0ca613d33466db1f939108b37b86155d0ef5f707",
+        "byte_size": 94
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 5,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/05.stdout",
+        "sha256": "deb91ecbac4e353cc1b52140f3cfdc0cac5caca6cbeecff82338ccc6a07e8a30",
+        "byte_size": 149
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/05.path-mapped.stdout",
+        "sha256": "deb91ecbac4e353cc1b52140f3cfdc0cac5caca6cbeecff82338ccc6a07e8a30",
+        "byte_size": 149
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 6,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/06.stdout",
+        "sha256": "4ae1b0dd7a9656755601e3a64db8b2d482f43a03210898cf40b685bcbf165012",
+        "byte_size": 158
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/06.path-mapped.stdout",
+        "sha256": "4ae1b0dd7a9656755601e3a64db8b2d482f43a03210898cf40b685bcbf165012",
+        "byte_size": 158
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 7,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/07.stdout",
+        "sha256": "61c3d7947a39ae0359a5a263efba92e8c8adb524ac59413696e2b65b9e406bf5",
+        "byte_size": 153
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/07.path-mapped.stdout",
+        "sha256": "61c3d7947a39ae0359a5a263efba92e8c8adb524ac59413696e2b65b9e406bf5",
+        "byte_size": 153
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 8,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/08.stdout",
+        "sha256": "27090f11ef7d9d095246acf16943af834020b2f595569afbdd59f981890cd924",
+        "byte_size": 140
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/08.path-mapped.stdout",
+        "sha256": "27090f11ef7d9d095246acf16943af834020b2f595569afbdd59f981890cd924",
+        "byte_size": 140
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 9,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/09.stdout",
+        "sha256": "825fceb53163f473d10b7076d575c02dccd437bacadd76d16ddc9ab4b547a977",
+        "byte_size": 289
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/09.path-mapped.stdout",
+        "sha256": "825fceb53163f473d10b7076d575c02dccd437bacadd76d16ddc9ab4b547a977",
+        "byte_size": 289
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 10,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/10.stdout",
+        "sha256": "0e4a290cec9ffa81b8a207f6320e7a5dcce53d0a32d2680b2347913091d9986b",
+        "byte_size": 281
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/10.path-mapped.stdout",
+        "sha256": "0e4a290cec9ffa81b8a207f6320e7a5dcce53d0a32d2680b2347913091d9986b",
+        "byte_size": 281
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 11,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/11.stdout",
+        "sha256": "85d492c3d4cb4f8c513bb317adb8707fae759e4ade4f15850557cac9702306f5",
+        "byte_size": 2826
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/11.path-mapped.stdout",
+        "sha256": "85d492c3d4cb4f8c513bb317adb8707fae759e4ade4f15850557cac9702306f5",
+        "byte_size": 2826
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 12,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/12.stdout",
+        "sha256": "85861f8ce60bf8f665ee68b1ba66d459c2480504f1b6038af013fe8800b75b5f",
+        "byte_size": 436
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/12.path-mapped.stdout",
+        "sha256": "85861f8ce60bf8f665ee68b1ba66d459c2480504f1b6038af013fe8800b75b5f",
+        "byte_size": 436
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 13,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/13.stdout",
+        "sha256": "a6ee9c8368b7ed750af1bfe31dbc67b6c976a146f3e698168bebca6fd0658215",
+        "byte_size": 442
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/13.path-mapped.stdout",
+        "sha256": "a6ee9c8368b7ed750af1bfe31dbc67b6c976a146f3e698168bebca6fd0658215",
+        "byte_size": 442
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 14,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/14.stdout",
+        "sha256": "bd51441b6ef2872f54f068d222f652064866a7e20eb20a2bb15ee6c3bac57729",
+        "byte_size": 253
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/14.path-mapped.stdout",
+        "sha256": "bd51441b6ef2872f54f068d222f652064866a7e20eb20a2bb15ee6c3bac57729",
+        "byte_size": 253
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 15,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/15.stdout",
+        "sha256": "902489e10b09e0ea299330a77c6acb7aa6dee44d3ad280bf46eb0445d8203f8e",
+        "byte_size": 306
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/15.path-mapped.stdout",
+        "sha256": "902489e10b09e0ea299330a77c6acb7aa6dee44d3ad280bf46eb0445d8203f8e",
+        "byte_size": 306
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 16,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/16.stdout",
+        "sha256": "26043eec9071e23c898c8bfe243d133760f555adf6a636c5b3b04b5b90d4fdc4",
+        "byte_size": 1263
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/16.path-mapped.stdout",
+        "sha256": "26043eec9071e23c898c8bfe243d133760f555adf6a636c5b3b04b5b90d4fdc4",
+        "byte_size": 1263
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 17,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/17.stdout",
+        "sha256": "358ffd61a8f9ef6316905ac0bc5e5e85a9b9da1d711e9d52054402cc56ad8f28",
+        "byte_size": 2706
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/17.path-mapped.stdout",
+        "sha256": "358ffd61a8f9ef6316905ac0bc5e5e85a9b9da1d711e9d52054402cc56ad8f28",
+        "byte_size": 2706
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 18,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/18.stdout",
+        "sha256": "5aed3fe89d8257c3afa50058b940d3be01bcfceeebd97415506766e6d48f11f6",
+        "byte_size": 92
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/18.path-mapped.stdout",
+        "sha256": "5aed3fe89d8257c3afa50058b940d3be01bcfceeebd97415506766e6d48f11f6",
+        "byte_size": 92
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 19,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/19.stdout",
+        "sha256": "b56950a35364af4a69ae3362b5109f29f688eb1a2b5a74e855ca1120d01f63ed",
+        "byte_size": 90
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/19.path-mapped.stdout",
+        "sha256": "b56950a35364af4a69ae3362b5109f29f688eb1a2b5a74e855ca1120d01f63ed",
+        "byte_size": 90
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 20,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/20.stdout",
+        "sha256": "f748c1c5b3ed25f15d357d53c46f4d97326c9d681323c0a326d39fdb6f04e87c",
+        "byte_size": 367
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/20.path-mapped.stdout",
+        "sha256": "f748c1c5b3ed25f15d357d53c46f4d97326c9d681323c0a326d39fdb6f04e87c",
+        "byte_size": 367
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    },
+    {
+      "command_number": 21,
+      "raw_stdout": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/21.stdout",
+        "sha256": "9f95ea6bbfffd69497210cb10ab9f4175fe3bd1f28bc63e8cbc3199d68bea69e",
+        "byte_size": 63712
+      },
+      "path_mapped_stdout_identity": {
+        "review_provenance": ".scratch/batch3-20261020/examples/history-attempt-1/21.path-mapped.stdout",
+        "sha256": "9f95ea6bbfffd69497210cb10ab9f4175fe3bd1f28bc63e8cbc3199d68bea69e",
+        "byte_size": 63712
+      },
+      "raw_and_mapped_bytes_equal": true,
+      "raw_stdout_public_guard_matches": 0,
+      "transport_copy": false
+    }
+  ],
+  "command_and_stdout_disclosure": "Executed argv are unchanged and repository-relative. Original summary records no path map; all21 raw/mapped stdout pairs hash and byte size match. Helper prefix-accounting fields remain in the pinned original command record and do not establish a transport rewrite. Raw stdout, generated corpora and environment/cache payloads are not copied.",
+  "acceptance_boundary": "All21 actual selected commands exit0 and all21 captured stdout comparisons pass after nine authorized refreshes. Generated scratch source fingerprints predate the final EXAMPLES byte changes. Final canonical projections, fresh deterministic corpus and runtime gates must use the released final tool hashes and their own receipts."
+}

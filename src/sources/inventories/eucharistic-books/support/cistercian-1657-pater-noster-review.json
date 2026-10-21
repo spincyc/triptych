@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "cistercian-1657-pater-noster",
+  "title": "Independent complete literal source-image collation of the 1657 Cistercian Pater in both printed chant forms",
+  "status": "verified",
+  "reviewer": "Independent AI literal source-image reviewer (1657 Cistercian complete Pater constituent)",
+  "checked_on": "2026-10-20",
+  "independent": true,
+  "complete_extent_verified": true,
+  "binding_sha256": "22bf58d344f284e32c2ee540d6d7a3135f3412f259a7cbc1c22883fe1b9e6013",
+  "extent_sha256": "3bc63fc6120834a723e398e8e646165943563d6d56beaaabc121dbe62da7d105",
+  "witness_sha256": {
+    "cistercian-1657-pater-noster-pages": "995d68b0f623dad1b2a37407857fa5cb8497f8873ec12ad5c15dd87af64a76bc"
+  },
+  "unit_sha256": {
+    "unit.cistercian-1657.pater-noster.pater-first-introduction": "4e687873d31783fd198a8d8c213e787dc19ba54c9e9440e297cf71d5f70be07a",
+    "unit.cistercian-1657.pater-noster.pater-first-prayer-response": "2645b4aa5103e6f95d995efd9c5f19a32b29d9593a057911770000b9fe854898",
+    "unit.cistercian-1657.pater-noster.pater-first-amen": "322d659d6d4085a5bb82f744e93e53fb3361f5d3b98812bc4e47c0f80da08303",
+    "unit.cistercian-1657.pater-noster.pater-alternative-usage": "ccffa6f101dcc8bc23ad8e95bf5434090b73d052f3345a60a0b0526e5ff7d7b0",
+    "unit.cistercian-1657.pater-noster.pater-alternative-per-omnia": "8ad55fe2422f21c65e8632ab3ceb3efa7171cfe3e9f78ff05c770b34d6f56b08",
+    "unit.cistercian-1657.pater-noster.pater-alternative-introduction": "09c3a63912f388b1ba017b6341baa975f859566a13a712e2a4361604646d8baa",
+    "unit.cistercian-1657.pater-noster.pater-alternative-prayer-response": "a986d4659045c63acda349408cd5d961e914a7e9030366784cc1aeb4af5e0fb9",
+    "unit.cistercian-1657.pater-noster.pater-alternative-amen": "85ca6158ba52ab42724fdb3832c6766992898348e23b8a2c21c06ae4892fad2b"
+  },
+  "literal_sha256": "d84644c461efd1de17ba4398a4f6932c6651fe597af25e0bbf99aa3e151c796c",
+  "literal_bytes": 1053,
+  "scope": "Complete bounded functional Pater constituent: raw0275 (printed213) RIGHT Orémus through the introduction, interleaved Extendit manus and dícere; all raw0276 (printed214) body text in both columns; raw0277 (printed215) LEFT through Sacerdos submissâ voce dicit, Amén. Both printed chant forms, the alternative-cantus governing rubric, its separately printed Per omnia/Amen, all responses and both final priest rubrics are included. The preceding Canon and raw0277 RIGHT Deinde/Libera are excluded.",
+  "reviewed_counts": {
+    "units": 8,
+    "source_blocks": 15,
+    "source_baselines": 42,
+    "facsimile_pages": 3
+  },
+  "method": "Direct visual collation against the named source rasters and close crops, checked word by word across the complete bounded constituent. The candidate normalized bodies and their source-specific accents, spellings, punctuation, response cues and rubrics agree with the observed source under the declared normalization. Prior-review suggestions were independently tested against the images; no familiar prayer, OCR or other edition controlled a reading. Binding, extent, literal payload, all eight passage-selected unit bodies, facsimile witness and source JPEG/DjVu hashes were recomputed from actual bytes, rather than accepted from the neutral pin input.",
+  "source_images": [
+    {
+      "page_file": "0275",
+      "printed_page": 213,
+      "jpeg_sha256": "f8cc5ad48a21cbd0ee2f000d2c9f05fe4452dde6c261fd978a1565fdf8c0a5cb",
+      "native_djvu_sha256": "2b1ce57e4b96df444b07eacc88a24850aa0fdfa291705b5aa6972863a200abd5"
+    },
+    {
+      "page_file": "0276",
+      "printed_page": 214,
+      "jpeg_sha256": "fb0e7ca4438aa810580727ba34cca2a73eb9b7084f4399db31e9da86952ec643",
+      "native_djvu_sha256": "34a9ced2d6b12f42d0d45f4810ef74c379655bff174b3803f7daf41b76be7a81"
+    },
+    {
+      "page_file": "0277",
+      "printed_page": 215,
+      "jpeg_sha256": "b0ea986f623ad8566b7bbb71a120df7de82eb8a34b9fab154be33051a9bac829",
+      "native_djvu_sha256": "3fe7cf90567d89562faa6f30a40900c1c454693585f8b574337f0014ace26af0"
+    }
+  ],
+  "viewed_source_representations": [
+    {
+      "sha256": "39c9842ab37e58271b15d24fd2340b7d66cf6d0ba57970b5ba1d282a36f4d11d",
+      "byte_size": 2965628,
+      "input_label": "raw0275-post-canon.png"
+    },
+    {
+      "sha256": "b3e37c63a56cc30fa8b0bf67bf1f1ddf74f21fea6f6a262e4d9c2f55fd525223",
+      "byte_size": 703658,
+      "input_label": "raw0275-dicere.png"
+    },
+    {
+      "sha256": "3608d653178f0035892498cf222f212de48e6e76e95f80661b0016230c06d81a",
+      "byte_size": 6499287,
+      "input_label": "raw0276-full.png"
+    },
+    {
+      "sha256": "e8ef372c54b02f10e18df157f7f6303f9f7fc381cbee351db415b35010965be9",
+      "byte_size": 3517825,
+      "input_label": "raw0276-left-top.png"
+    },
+    {
+      "sha256": "12ada99a29133416acf23a4cb2184c5f7a6fbf5a5cd74542d8eda77f15a105c2",
+      "byte_size": 4235711,
+      "input_label": "raw0276-left-bottom.png"
+    },
+    {
+      "sha256": "f5bba38a8afd23190ab9e916a42e5a1f7e6ca643327df599c391458b84e86f7f",
+      "byte_size": 2506275,
+      "input_label": "raw0276-right-top.png"
+    },
+    {
+      "sha256": "9e19a4422ccb241cea9152be984e1a9b7c1754665b126e9aae1426e15ccc3656",
+      "byte_size": 4262068,
+      "input_label": "raw0276-right-bottom.png"
+    },
+    {
+      "sha256": "1342f133745492645791bd45a67ceb0656806cd983607fd8bac581da48ccef2d",
+      "byte_size": 6554025,
+      "input_label": "raw0277-full.png"
+    },
+    {
+      "sha256": "a5777aa61aef6ab325b33f57f9584839e60f972d3985e94c832edc6c1c8e1c78",
+      "byte_size": 3919772,
+      "input_label": "raw0277-left-top.png"
+    },
+    {
+      "sha256": "ab15f1934f7d5bd6c9a845a8e1e7b994637800d34913285d956ff836ee87f0a5",
+      "byte_size": 3675586,
+      "input_label": "raw0277-left-bottom.png"
+    },
+    {
+      "sha256": "519475218013632f30a0f75c5f69e87be8bd35fdb65f74439163bc8721fdc38a",
+      "byte_size": 1056949,
+      "input_label": "raw0277-final-amen.png"
+    }
+  ],
+  "findings_resolved": [
+    {
+      "id": "first-introduction-dicere",
+      "resolution": "The close source crop supports dícere. with an acute on the first i only. No final e acute is read. The intervening red Extendit manus. remains between audémus and dícere in the stored source-block order."
+    },
+    {
+      "id": "two-pater-dimitte",
+      "resolution": "The first Pater has dimítte; the second has dimitte without that acute. Both retain dimíttimus. The actual difference is preserved rather than harmonized."
+    },
+    {
+      "id": "governing-rubric-and-display",
+      "resolution": "The black pilcrow before Sequens is visible and retained as ¶. The printed iij. Lectionum and complete alternative-use rubric are retained, as are display initial cases PAter and PEr under the disclosed case-preserving normalization."
+    },
+    {
+      "id": "response-cues-and-priest-rubrics",
+      "resolution": "Both Sed líbera nos à malo. responses and the separately printed Per omnia response retain their actual crossed-R cue. The first closing rubric reads Sacerdos secretè dicit, with unaccented Amen.; the second reads Sacerdos submissâ voce dicit, followed by the qualified Amén. reading."
+    },
+    {
+      "id": "final-amen-accent",
+      "resolution": "The final crop shows a dark raised hooked mark directly over the e of Amen where it meets a crease. I independently prefer the probable printed-acute reading Amén. The disclosed crease/wear reservation is necessary and adequate; this acceptance does not upgrade that diacritic to unqualified certainty."
+    },
+    {
+      "id": "complete-functional-boundary",
+      "resolution": "The selected images contain both complete printed chant forms and their governing words. The final priest Amen closes the declared Pater selection on raw0277 left; the right-column Deinde/Libera belongs to the excluded wider continuation."
+    }
+  ],
+  "final_accent_qualification": "Final Amén. is an accepted probable source reading: the dark mark above e is consistent with a printed acute but touches a crease in a worn area. This local uncertainty is explicitly retained in the binding and extent and does not conceal missing in-scope wording.",
+  "unresolved": [],
+  "normalization_limit": "NFC UTF-8; long s becomes s; unambiguous abbreviation signs expand only as individually documented; horizontal chant syllable spacing and physical line-end division hyphens join into words. Source u/v, i/j, ligatures, accents, case including display initials, punctuation, printed referrals, rubric wording and response markers remain. A printed pilcrow remains ¶ and response cue becomes ℟. Each stored LF is one consecutive source block distinguished by source wording, voice or ink; it is not newly inferred prayer paragraphing. Staff notation and pitches remain in the facsimile, not the Latin payload. No explanatory wrapper or source-completing wording is inserted.",
+  "review_limit": "Complete only for this declared functional Pater constituent. All selected sung words are included; chant notes, staves and pitches are excluded from the Latin payload and remain in the facsimile. Whole-book, complete-Ordinary and wider post-Canon coverage remain partial. No acceptance of the concealed wider tail, reconstruction from another setting, historical ancestry, exact typeface geometry or contemporary liturgical authorization is supplied.",
+  "whole_book_complete": false,
+  "wider_post_canon_complete": false,
+  "notation_excluded_from_latin_payload": true,
+  "ancestry_authorized": false,
+  "public_record_derivation": {
+    "source_review_sha256": "32c1a071b3edde3e96707504bf791c2591866a52c4ca74f3dcd379c3fd4d192a",
+    "source_review_bytes": 10071,
+    "prepared_by": "Coordinating integrator; mechanical publication metadata transformation only",
+    "transformation": "Replace eleven private working-location fields in viewed_source_representations with portable input basename labels. Preserve every independent source judgment, qualification, scope, source representation hash/size, binding/extent/witness/literal and unit hash unchanged.",
+    "source_judgment_changed": false,
+    "source_or_native_bytes_changed": false
+  }
+}

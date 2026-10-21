@@ -1,0 +1,504 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "roman-1956-originals-batch3-2026-10-20",
+  "title": "1956 restored Holy Week: original TPV book remains missing; conformed-print identity and bounded contents review",
+  "side": "western",
+  "lane": "roman-transitional-1956",
+  "checked_on": "2026-10-20",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
+  "review_files": {
+    "research_core_sha256": "467d60482ec4b50eda7a46ccc7f65864ab9dd26e05d32eda7b56bc5d0975d88b",
+    "retention_manifest_sha256": "315fefc9ce499e00d8b8d58ffd700cdd56863542823e0d0b2aaa689b7d46f7f1",
+    "independent_review": "accepted-for-bounded-source-integration",
+    "independent_review_sha256": "0b4f95c3fb54907627aad316515972c9d2be099f2763133639c06f7be3213ef1",
+    "independent_review_id": "roman-1956-independent-1968-v1",
+    "independent_reviewer": "roman-1968-independent-reviewer",
+    "independent_reviewed_on": "2026-10-20",
+    "accepted_source_entry_sha256": "5bd1f004fbcd423b468781c67dae889b2193e1ff0e30cff9d190a27657b7ab66",
+    "accepted_formatting_addendum_sha256": "e13127366e88cb9dd2569b30172636bba73bec7188f80a9724b4e1f78a406326",
+    "independent_review_scope": "Catalogue identities, four bounded contents pages, exact metadata payloads and acquisition hashes, artifact-specific rights and retention, audit/inventory preimages, public disclosure, and the checked whitespace-only overlay. The original TPV book remains unacquired; no native text, stage, transition or ancestry is accepted."
+  },
+  "coverage_rows": [
+    "roman-modern"
+  ],
+  "uses": [
+    {
+      "source_id": "roman-1956-tpv-loc-catalogue",
+      "artifact_ids": [
+        "artifact.library-of-congress.liturgical-book-catalogue-records.2026-10-20-response-states.item-89185968-bdef03cf",
+        "artifact.open-library.liturgical-book-catalogue-records.2026-10-20-response-states.facts-ol-1789541-158ddf64"
+      ],
+      "role": "bibliographic",
+      "loci": [
+        "LoC item.created_published,medium,digitized; resources",
+        "OL1789541M edition_name,pagination,publishers"
+      ],
+      "finding": "TPV/Wagner 1956 Editio typica is catalogued as xvi, 144 pages. LoC digitized=false and resources empty. No title/imprint or book body was inspected."
+    },
+    {
+      "source_id": "roman-1956-marietti-ol-catalogue",
+      "artifact_ids": [
+        "artifact.open-library.liturgical-book-catalogue-records.2026-10-20-response-states.facts-ol-27785604-e2e2ec26",
+        "artifact.internet-archive.catalogue-and-reader-metadata.2026-10-20-response-states.facts-1956-marietti-reader-7d56d243"
+      ],
+      "role": "bibliographic-and-access",
+      "loci": [
+        "OL27785604M edition_name,pagination,ocaid",
+        "IA public reader access and viewable-page fields"
+      ],
+      "finding": "Marietti conformed printing, xi, 108 pages+plate, 140 image metadata. Only leaves 1–6, 9, 138 marked viewable; title request yielded undecodable non-image bytes. Whole book not acquired."
+    },
+    {
+      "source_id": "roman-1956-pustet-bounded-contents",
+      "artifact_ids": [
+        "artifact.catholic-church.ordo-hebdomadae-sanctae-instauratus.1956-ratisbon-pustet-folio.selected-contents-facts-6898b12c",
+        "artifact.catholic-church.ordo-hebdomadae-sanctae-instauratus.1956-ratisbon-pustet-octavo.selected-contents-facts-aecae3ec",
+        "artifact.deutsche-nationalbibliothek.liturgical-book-catalogue-records.2026-10-20-response-states.sru-holyweek-11-records-e5669939"
+      ],
+      "role": "bounded-structure",
+      "loci": [
+        "DNB SRU records 453655165/453655173",
+        "Each linked contents PDF: pages 1–2,complete offered extent"
+      ],
+      "finding": "Separate 142/158-page Pustet conformed formats have different page locations. The 158-page format contents lists an additional Thursday Office appendix at 150. No body wording, signed decree or full service-book collation."
+    }
+  ],
+  "searches": [
+    {
+      "repository": "Prior repository holdings and scratch research",
+      "queries": [
+        "ordohebdomadaesa0000cath",
+        "Ordo Hebdomadae Sanctae instauratus",
+        "ordo-hebdomadae-sanctae-1956"
+      ],
+      "bound": "Existing Roman modern full-research packets, metadata and source manifests checked before new retrievals. Prior metadata reused as leads; prior payloads/rights left unchanged.",
+      "result": "No original TPV 1956 body found in this bounded prior packet search."
+    },
+    {
+      "repository": "Internet Archive advancedsearch",
+      "query": "(title:hebdomadae OR title:hebdomade) AND year:[1955 TO1957]",
+      "source_url": "https://archive.org/advancedsearch.php?q=%28title%3Ahebdomadae%20OR%20title%3Ahebdomade%29%20AND%20year%3A%5B1955%20TO%201957%5D&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=publisher&fl%5B%5D=access-restricted-item&rows=100&output=json",
+      "sha256": "f677ae922e782d904fbb171788849ce84e6010f12395118ec641cfd00ff51cb9",
+      "byte_size": 1185,
+      "returned": 3,
+      "requested_maximum": 100,
+      "finding": "Marietti 1956, Dessain 1956 and Desclee 1957; all three access-restricted. No original TPV within this result set."
+    },
+    {
+      "repository": "Internet Archive advancedsearch",
+      "query": "\"Ordo Hebdomadae Sanctae\"",
+      "source_url": "https://archive.org/advancedsearch.php?q=%22Ordo%20Hebdomadae%20Sanctae%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=year&fl%5B%5D=publisher&fl%5B%5D=access-restricted-item&rows=100&output=json",
+      "sha256": "0584589a8d3cc7e93ce71fce9dd3329e0901d6979349af20e6b784a22cd6c7a8",
+      "byte_size": 553,
+      "returned": 1,
+      "requested_maximum": 100,
+      "finding": "Restricted Marietti 1956 only; no date filter. This is an endpoint-bounded negative, not universal absence."
+    },
+    {
+      "repository": "DNB SRU",
+      "query": "Ordo hebdomadae sanctae instauratus",
+      "source_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=Ordo%20hebdomadae%20sanctae%20instauratus&recordSchema=MARC21-xml&maximumRecords=50",
+      "sha256": "e5669939dcafeb10487d32a6d1ae9a5b6711592450f0642f47de42ed89e53f06",
+      "byte_size": 37804,
+      "returned": 11,
+      "requested_maximum": 50,
+      "finding": "Metadata and two linked complete contents extracts reached; no whole original TPV scan supplied. Later adaptations/formats not counted as liturgical revisions."
+    },
+    {
+      "repository": "Web discovery search",
+      "queries": [
+        "\"Ordo Hebdomadae Sanctae instauratus\" \"1956\" pdf",
+        "\"Ordo Hebdomadae Sanctae instauratus\" \"Typis\" scan",
+        "\"ordohebdomadae\" pdf",
+        "\"ordo hebdomadae sanctae\" site:musicasacra.com OR site:ccwatershed.org OR site:sanctamissa.org",
+        "\"Ordo Hebdomadae Sanctae instauratus\" digital"
+      ],
+      "bound": "Search results used for discovery only; primary metadata and offered PDFs fetched whole by curl. Candidate original-book PDFs not found in these result pages.",
+      "rejected_or_deferred": [
+        "1956 Bugnini/Braga commentary: different work",
+        "1961 Monastic Ordo: different rite-use book",
+        "1957 Polish bilingual publication: deferred translation witness",
+        "1923 chant book: unreformed book",
+        "Generic keyword PDFs without primary original identity: unverified leads",
+        "Google Mame 1956 page: conformed-print catalogue only"
+      ]
+    }
+  ],
+  "versions": [
+    {
+      "title": "Ordo Hebdomadae Sanctae instauratus, TPV Editio typica",
+      "edition_id": "edition.catholic-church.ordo-hebdomadae-sanctae-instauratus.1956-vatican-typica",
+      "date": "1956",
+      "date_role": "printing, distinct from approval 16 November 1955 and effectiveness 25 March 1956",
+      "disposition": "catalogue-identified-original; full-scan-and-text-unacquired",
+      "substantive_version_claim": false
+    },
+    {
+      "title": "Marietti 1956 Editio Taurinensis juxta typicam",
+      "edition_id": "edition.catholic-church.ordo-hebdomadae-sanctae-instauratus.1956-turin-marietti-iuxta-typicam",
+      "disposition": "restricted-conformed-printing; catalogue-only identity correction",
+      "substantive_version_claim": false
+    },
+    {
+      "title": "Pustet 1956 formats 142/158 pages",
+      "disposition": "two-conformed-format-witnesses; two-page-contents-deliveries-only; no substantive revision established",
+      "substantive_version_claim": false
+    },
+    {
+      "title": "Dessain 1956 Officium; 1957 Ritus pontificalis; 1962 Missal",
+      "disposition": "distinct works/printings remain separate; none substituted for original 1956 TPV",
+      "substantive_version_claim": false
+    }
+  ],
+  "acquisitions": [
+    {
+      "artifact_id": "artifact.library-of-congress.liturgical-book-catalogue-records.2026-10-20-response-states.item-89185968-bdef03cf",
+      "source_url": "https://www.loc.gov/item/89185968/?fo=json",
+      "sha256": "bdef03cf0883914130cc36ce30b820a59122367d080f585a0a37c4ec1b6b9d95",
+      "byte_size": 24416,
+      "storage": "tracked",
+      "rights_status": "public-domain",
+      "extent": "Complete item JSON response. Checked item.title, item.created_published, item.medium, item.digitized=false and resources=[]. It identifies TPV/Wagner 1956, xvi, 144 pages; it is not a digitized book and grants no rights in that book.",
+      "rights_basis": "United States federal bibliographic metadata created by the Library of Congress; this response describes an item and contains no book body. Same narrow basis as the existing Library of Congress catalogue artifact records."
+    },
+    {
+      "artifact_id": "artifact.open-library.liturgical-book-catalogue-records.2026-10-20-response-states.raw-catalogue-licence-faq-ad191e79",
+      "source_url": "https://openlibrary.org/help/faq/using",
+      "sha256": "ad191e79e7d3c1a95735df3a37d329e10fa10991172621be663e4105e086d975",
+      "byte_size": 51148,
+      "storage": "restricted",
+      "rights_status": "unresolved",
+      "extent": "Complete FAQ HTML; checked Who owns the Open Library catalog? and the API/small-record export sections.",
+      "rights_basis": "The catalogue-data dedication does not itself clear the complete FAQ HTML wrapper, navigation or policy prose for repository redistribution. A selected factual notice is retained; the exact full FAQ response remains identifiable outside Git. Reopen if exact-surface permission is established."
+    },
+    {
+      "artifact_id": "artifact.open-library.liturgical-book-catalogue-records.2026-10-20-response-states.facts-catalogue-licence-4c7f8383",
+      "source_url": "https://openlibrary.org/help/faq/using",
+      "sha256": "4c7f83837146a328878e48119ac21da57522d99e864cc672d5ce2a571f720aaf",
+      "byte_size": 1197,
+      "storage": "tracked",
+      "rights_status": "project-created",
+      "extent": "Factual scope and licence-name selection. No policy paragraphs, host UI or book body.",
+      "rights_basis": "Project-created selection of individual bibliographic facts, dates, identifiers, page numbers and access flags. No liturgical body, original catalogue prose, scan typography, database arrangement or host UI is copied. Distributed under Triptych CC BY 4.0; factual source values remain attributed."
+    },
+    {
+      "artifact_id": "artifact.open-library.liturgical-book-catalogue-records.2026-10-20-response-states.raw-ol-1789541-3e722944",
+      "source_url": "https://openlibrary.org/books/OL1789541M.json",
+      "sha256": "3e722944a98e0a44f549da9dd89a2a428790f3bb215130c4501e4841c3401354",
+      "byte_size": 1323,
+      "storage": "tracked",
+      "rights_status": "licensed",
+      "extent": "Complete single-edition JSON; catalogue evidence only, no book pages. Full small response retained under the catalogue-data CC0 basis.",
+      "rights_basis": "Open Library official Using Open Library Data FAQ states donated catalogue data is public-domain dedicated and contributions use CC0 1.0 Universal, with API and small-record export routes. The separate developer licensing page warns of possible rights issues in contributions; these exact small edition responses contain bibliographic fields and short catalogue notes, with no book body or protected substantial extract. The narrow catalogue-data basis is adopted for these responses only, not linked scans or external source records. Policy facts: artifact.open-library.liturgical-book-catalogue-records.2026-10-20-response-states.facts-catalogue-licence-4c7f8383."
+    },
+    {
+      "artifact_id": "artifact.open-library.liturgical-book-catalogue-records.2026-10-20-response-states.facts-ol-1789541-158ddf64",
+      "source_url": "https://openlibrary.org/books/OL1789541M.json",
+      "sha256": "158ddf647c13b9bae827d4d36561046625e14efcefbe30cb5a6b4869ffb729c0",
+      "byte_size": 1328,
+      "storage": "tracked",
+      "rights_status": "project-created",
+      "extent": "Exactly the listed bibliographic fields; no prose notes, contributor or account data.",
+      "rights_basis": "Project-created selection of individual bibliographic facts, dates, identifiers, page numbers and access flags. No liturgical body, original catalogue prose, scan typography, database arrangement or host UI is copied. Distributed under Triptych CC BY 4.0; factual source values remain attributed."
+    },
+    {
+      "artifact_id": "artifact.open-library.liturgical-book-catalogue-records.2026-10-20-response-states.raw-ol-27785604-10178da4",
+      "source_url": "https://openlibrary.org/books/OL27785604M.json",
+      "sha256": "10178da4735c46d01cd29d63c5b016f6be9aae07f98dfa690c67210ff61e229f",
+      "byte_size": 1403,
+      "storage": "tracked",
+      "rights_status": "licensed",
+      "extent": "Complete single-edition JSON; catalogue evidence only, no book pages. Full small response retained under the catalogue-data CC0 basis.",
+      "rights_basis": "Open Library official Using Open Library Data FAQ states donated catalogue data is public-domain dedicated and contributions use CC0 1.0 Universal, with API and small-record export routes. The separate developer licensing page warns of possible rights issues in contributions; these exact small edition responses contain bibliographic fields and short catalogue notes, with no book body or protected substantial extract. The narrow catalogue-data basis is adopted for these responses only, not linked scans or external source records. Policy facts: artifact.open-library.liturgical-book-catalogue-records.2026-10-20-response-states.facts-catalogue-licence-4c7f8383."
+    },
+    {
+      "artifact_id": "artifact.open-library.liturgical-book-catalogue-records.2026-10-20-response-states.facts-ol-27785604-e2e2ec26",
+      "source_url": "https://openlibrary.org/books/OL27785604M.json",
+      "sha256": "e2e2ec263c82de61cdff0ce18aa36e26e5cd80830b34fd10585fc50267787ee4",
+      "byte_size": 1338,
+      "storage": "tracked",
+      "rights_status": "project-created",
+      "extent": "Exactly the listed bibliographic fields; no prose notes, contributor or account data.",
+      "rights_basis": "Project-created selection of individual bibliographic facts, dates, identifiers, page numbers and access flags. No liturgical body, original catalogue prose, scan typography, database arrangement or host UI is copied. Distributed under Triptych CC BY 4.0; factual source values remain attributed."
+    },
+    {
+      "artifact_id": "artifact.deutsche-nationalbibliothek.liturgical-book-catalogue-records.2026-10-20-response-states.raw-opendata-notice-bd437ec2",
+      "source_url": "https://data.dnb.de/opendata/",
+      "sha256": "bd437ec2fefb143cc35e6d8698edde355f6ca316a14179f61dceda267643dc27",
+      "byte_size": 50773,
+      "storage": "restricted",
+      "rights_status": "unresolved",
+      "extent": "Complete open-data index HTML. The CC0 statement concerns metadata, not a blanket licence for this HTML wrapper, contents scans or liturgical books.",
+      "rights_basis": "No redistribution basis was established for this exact complete host response. The retained factual derivative supplies the individual facts used here. Offline readers cannot reopen the full original response; an exact-byte licence or independently reviewed full-response basis would reopen that decision."
+    },
+    {
+      "artifact_id": "artifact.deutsche-nationalbibliothek.liturgical-book-catalogue-records.2026-10-20-response-states.facts-opendata-notice-e0b0a1a6",
+      "source_url": "https://data.dnb.de/opendata/",
+      "sha256": "e0b0a1a6d1b3a50dea35a5bd939bb109823661d50579b26591c20258a190d30a",
+      "byte_size": 957,
+      "storage": "tracked",
+      "rights_status": "project-created",
+      "extent": "Individual licence name, scope and exception facts from the complete HTML preamble; no original wording or list arrangement.",
+      "rights_basis": "Project-created selection of individual bibliographic facts, dates, identifiers, page numbers and access flags. No liturgical body, original catalogue prose, scan typography, database arrangement or host UI is copied. Distributed under Triptych CC BY 4.0; factual source values remain attributed."
+    },
+    {
+      "artifact_id": "artifact.deutsche-nationalbibliothek.liturgical-book-catalogue-records.2026-10-20-response-states.sru-holyweek-11-records-e5669939",
+      "source_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=Ordo%20hebdomadae%20sanctae%20instauratus&recordSchema=MARC21-xml&maximumRecords=50",
+      "sha256": "e5669939dcafeb10487d32a6d1ae9a5b6711592450f0642f47de42ed89e53f06",
+      "byte_size": 37804,
+      "storage": "tracked",
+      "rights_status": "licensed",
+      "extent": "Whole SRU response: numberOfRecords=11, requested maximumRecords=50, all 11 returned. Record 453655165: 1956 Pustet, Editio iuxta typicam vaticanam, 142 S., 1 Taf., 4°. Record 453655173: same edition designation, 158 S., kl.8°. Record 577308688: Lipsiae 1956, XVI, 144 S. Records include later books and German adaptations; this is not 11 liturgical versions.",
+      "rights_basis": "DNB bibliographic metadata is supplied under CC0 1.0, as confirmed in the acquired open-data preamble. The response is bibliographic metadata, not any linked contents PDF or book. Rights-notice facts artifact: artifact.deutsche-nationalbibliothek.liturgical-book-catalogue-records.2026-10-20-response-states.facts-opendata-notice-e0b0a1a6."
+    },
+    {
+      "artifact_id": "artifact.catholic-church.ordo-hebdomadae-sanctae-instauratus.1956-ratisbon-pustet-folio.dnb-contents-pdf-3f36b6a1",
+      "source_url": "https://d-nb.info/453655165/04",
+      "sha256": "3f36b6a1310d3e45b6c9a27c0b35dc3650b23cee419955633e498b1d77cfb437",
+      "byte_size": 142473,
+      "storage": "restricted",
+      "rights_status": "unresolved",
+      "extent": "Complete offered contents PDF, 2 artifact pages; both rendered and image-inspected. The underlying book is catalogued as 142 pages. The other book pages are unavailable in this delivery. No copyright leaf or signed decree body is included.",
+      "rights_basis": "The exact two-page scan reproduces the contents typography/arrangement of a 1956 commercial conformed liturgical book. Both acquired pages carry no explicit copyright notice, but the book copyright leaf and affirmative scan redistribution terms were not acquired. DNB metadata CC0 does not clear linked book scans. Public distribution of these images is not established. Offline readers can inspect the retained selected page-location facts. Reopen on an exact-surface licence or independent rights review."
+    },
+    {
+      "artifact_id": "artifact.catholic-church.ordo-hebdomadae-sanctae-instauratus.1956-ratisbon-pustet-folio.selected-contents-facts-6898b12c",
+      "source_url": "https://d-nb.info/453655165/04",
+      "sha256": "6898b12c21a17eab2f0aa951dd836ba640078946c81cf4dd86fae455d7ea81e9",
+      "byte_size": 1521,
+      "storage": "tracked",
+      "rights_status": "project-created",
+      "extent": "Selected short-title/location facts checked against both page images, preserving this exact conformed printing and page map. Not the TPV typical book and not a body-text collation.",
+      "rights_basis": "Project-created selection of individual bibliographic facts, dates, identifiers, page numbers and access flags. No liturgical body, original catalogue prose, scan typography, database arrangement or host UI is copied. Distributed under Triptych CC BY 4.0; factual source values remain attributed."
+    },
+    {
+      "artifact_id": "artifact.catholic-church.ordo-hebdomadae-sanctae-instauratus.1956-ratisbon-pustet-octavo.dnb-contents-pdf-a7630541",
+      "source_url": "https://d-nb.info/453655173/04",
+      "sha256": "a7630541d32db0edef04372e32c666ae97d6c295cfccbd62de8bd9ef2f09f5ee",
+      "byte_size": 153137,
+      "storage": "restricted",
+      "rights_status": "unresolved",
+      "extent": "Complete offered contents PDF, 2 artifact pages; both rendered and image-inspected. The underlying book is catalogued as 158 pages. The other book pages are unavailable in this delivery. No copyright leaf or signed decree body is included.",
+      "rights_basis": "The exact two-page scan reproduces the contents typography/arrangement of a 1956 commercial conformed liturgical book. Both acquired pages carry no explicit copyright notice, but the book copyright leaf and affirmative scan redistribution terms were not acquired. DNB metadata CC0 does not clear linked book scans. Public distribution of these images is not established. Offline readers can inspect the retained selected page-location facts. Reopen on an exact-surface licence or independent rights review."
+    },
+    {
+      "artifact_id": "artifact.catholic-church.ordo-hebdomadae-sanctae-instauratus.1956-ratisbon-pustet-octavo.selected-contents-facts-aecae3ec",
+      "source_url": "https://d-nb.info/453655173/04",
+      "sha256": "aecae3ec18f0ed2eb3da1f820342fd6f02589668ba891bd26d852e795d792bb7",
+      "byte_size": 1590,
+      "storage": "tracked",
+      "rights_status": "project-created",
+      "extent": "Selected short-title/location facts checked against both page images, preserving this exact conformed printing and page map. Not the TPV typical book and not a body-text collation.",
+      "rights_basis": "Project-created selection of individual bibliographic facts, dates, identifiers, page numbers and access flags. No liturgical body, original catalogue prose, scan typography, database arrangement or host UI is copied. Distributed under Triptych CC BY 4.0; factual source values remain attributed."
+    },
+    {
+      "artifact_id": "artifact.internet-archive.catalogue-and-reader-metadata.2026-10-20-response-states.raw-1956-marietti-reader-0fbf26d6",
+      "source_url": "https://ia801907.us.archive.org/BookReader/BookReaderJSIA.php?id=ordohebdomadaesa0000cath&itemPath=/16/items/ordohebdomadaesa0000cath&server=ia801907.us.archive.org&format=jsonp&subPrefix=ordohebdomadaesa0000cath",
+      "sha256": "0fbf26d6111417bfce5d721d91e7126a56bb428590da3b310898220c86bbbe60",
+      "byte_size": 55560,
+      "storage": "restricted",
+      "rights_status": "unresolved",
+      "extent": "Whole reader JSON, 138 page descriptors, metadata imagecount 140; no downloadable book body. Access flags are current only at retrieval.",
+      "rights_basis": "Exact reader response includes operator/uploader, lending-service and loan/account-status fields. No need or basis was established to republish those fields or the complete host response; it stays outside Git. Offline readers can inspect the minimal factual access derivative. Reopen only after complete-response licence and privacy review."
+    },
+    {
+      "artifact_id": "artifact.internet-archive.catalogue-and-reader-metadata.2026-10-20-response-states.facts-1956-marietti-reader-7d56d243",
+      "source_url": "https://archive.org/details/ordohebdomadaesa0000cath",
+      "sha256": "7d56d2433858940a7a67856c8a36eafaf717a972af87fd1172590e2564373f98",
+      "byte_size": 1387,
+      "storage": "tracked",
+      "rights_status": "project-created",
+      "extent": "Only selected access flags, counts, public viewable leaf numbers and bounded retrieval result. No accounts, operator/uploader, loan details or book body.",
+      "rights_basis": "Project-created selection of individual bibliographic facts, dates, identifiers, page numbers and access flags. No liturgical body, original catalogue prose, scan typography, database arrangement or host UI is copied. Distributed under Triptych CC BY 4.0; factual source values remain attributed."
+    },
+    {
+      "sha256": "57d2cbfe8c8fb5a09ee8a762b1880a7e7271b6e2a0cc582f7cd0618ffcf91401",
+      "byte_size": 20042,
+      "source_url": "https://www.alcuinus.org/?action=show_item&display=tools&id=67874",
+      "derived_from_sha256": null,
+      "disposition": "scratch-only",
+      "rights": "unresolved",
+      "reason": "Complete source page includes a Copyright Fr Dominik Ostrowski notice. No exact-page redistribution licence was established. This is a discovery lead only; LoC and Open Library control the retained bibliographic identity finding.",
+      "extent": "Whole received HTTP response or complete explicitly bounded offered source, as described by the acquisition record; no range truncation.",
+      "offline_alternative": "Published factual metadata and bounded receipt; no protected source-book image or body. No original TPV 1956 book is supplied.",
+      "reopening": "Exact-surface permission or independently reviewed rights basis; an unrestricted original scan would reopen acquisition.",
+      "record_status": "research-delivery-or-local-review-derivative-only; no canonical payload proposed"
+    },
+    {
+      "sha256": "d41b4beb8f3190f18504c27512c7aad1c9a3a8fdc128094c5d9b16cf043db603",
+      "byte_size": 150251,
+      "source_url": "https://d-nb.info/453655165/04",
+      "derived_from_sha256": "3f36b6a1310d3e45b6c9a27c0b35dc3650b23cee419955633e498b1d77cfb437",
+      "disposition": "scratch-only",
+      "rights": "unresolved",
+      "reason": "Search lead, host presentation, protected/non-image preview response or local review derivative; no public payload proposed. Selected independently justified factual values appear in the receipt only.",
+      "extent": "Local page raster or pdftotext derivative of the complete two-page contents PDF. Raster filenames identify page 1 or page 2; extracted text covers both pages. No derivative is proposed publicly.",
+      "offline_alternative": "Published factual metadata and bounded receipt; no protected source-book image or body. No original TPV 1956 book is supplied.",
+      "reopening": "Exact-surface permission or independently reviewed rights basis; an unrestricted original scan would reopen acquisition.",
+      "record_status": "research-delivery-or-local-review-derivative-only; no canonical payload proposed"
+    },
+    {
+      "sha256": "e61a151e2b62fda1704dbf4b6801b5e761cfa7dc456bbd5cd524195d4863ddd5",
+      "byte_size": 93293,
+      "source_url": "https://d-nb.info/453655165/04",
+      "derived_from_sha256": "3f36b6a1310d3e45b6c9a27c0b35dc3650b23cee419955633e498b1d77cfb437",
+      "disposition": "scratch-only",
+      "rights": "unresolved",
+      "reason": "Search lead, host presentation, protected/non-image preview response or local review derivative; no public payload proposed. Selected independently justified factual values appear in the receipt only.",
+      "extent": "Local page raster or pdftotext derivative of the complete two-page contents PDF. Raster filenames identify page 1 or page 2; extracted text covers both pages. No derivative is proposed publicly.",
+      "offline_alternative": "Published factual metadata and bounded receipt; no protected source-book image or body. No original TPV 1956 book is supplied.",
+      "reopening": "Exact-surface permission or independently reviewed rights basis; an unrestricted original scan would reopen acquisition.",
+      "record_status": "research-delivery-or-local-review-derivative-only; no canonical payload proposed"
+    },
+    {
+      "sha256": "c7d3f9bb3c7a334cb10b9efd0d3786ddbc486fbdb2cd23f3f5fe73324d697b1a",
+      "byte_size": 6784,
+      "source_url": "https://d-nb.info/453655165/04",
+      "derived_from_sha256": "3f36b6a1310d3e45b6c9a27c0b35dc3650b23cee419955633e498b1d77cfb437",
+      "disposition": "scratch-only",
+      "rights": "unresolved",
+      "reason": "Search lead, host presentation, protected/non-image preview response or local review derivative; no public payload proposed. Selected independently justified factual values appear in the receipt only.",
+      "extent": "Local page raster or pdftotext derivative of the complete two-page contents PDF. Raster filenames identify page 1 or page 2; extracted text covers both pages. No derivative is proposed publicly.",
+      "offline_alternative": "Published factual metadata and bounded receipt; no protected source-book image or body. No original TPV 1956 book is supplied.",
+      "reopening": "Exact-surface permission or independently reviewed rights basis; an unrestricted original scan would reopen acquisition.",
+      "record_status": "research-delivery-or-local-review-derivative-only; no canonical payload proposed"
+    },
+    {
+      "sha256": "48b5f455583af7943930849f2dfe72559dded4405b42c3da62f631396eeddbc4",
+      "byte_size": 108041,
+      "source_url": "https://d-nb.info/453655173/04",
+      "derived_from_sha256": "a7630541d32db0edef04372e32c666ae97d6c295cfccbd62de8bd9ef2f09f5ee",
+      "disposition": "scratch-only",
+      "rights": "unresolved",
+      "reason": "Search lead, host presentation, protected/non-image preview response or local review derivative; no public payload proposed. Selected independently justified factual values appear in the receipt only.",
+      "extent": "Local page raster or pdftotext derivative of the complete two-page contents PDF. Raster filenames identify page 1 or page 2; extracted text covers both pages. No derivative is proposed publicly.",
+      "offline_alternative": "Published factual metadata and bounded receipt; no protected source-book image or body. No original TPV 1956 book is supplied.",
+      "reopening": "Exact-surface permission or independently reviewed rights basis; an unrestricted original scan would reopen acquisition.",
+      "record_status": "research-delivery-or-local-review-derivative-only; no canonical payload proposed"
+    },
+    {
+      "sha256": "4d6f7d384438d72c2fd648f4b635f0ad6c31c75f1c4c48d2161b38e64d40b8fc",
+      "byte_size": 71293,
+      "source_url": "https://d-nb.info/453655173/04",
+      "derived_from_sha256": "a7630541d32db0edef04372e32c666ae97d6c295cfccbd62de8bd9ef2f09f5ee",
+      "disposition": "scratch-only",
+      "rights": "unresolved",
+      "reason": "Search lead, host presentation, protected/non-image preview response or local review derivative; no public payload proposed. Selected independently justified factual values appear in the receipt only.",
+      "extent": "Local page raster or pdftotext derivative of the complete two-page contents PDF. Raster filenames identify page 1 or page 2; extracted text covers both pages. No derivative is proposed publicly.",
+      "offline_alternative": "Published factual metadata and bounded receipt; no protected source-book image or body. No original TPV 1956 book is supplied.",
+      "reopening": "Exact-surface permission or independently reviewed rights basis; an unrestricted original scan would reopen acquisition.",
+      "record_status": "research-delivery-or-local-review-derivative-only; no canonical payload proposed"
+    },
+    {
+      "sha256": "8418e0863d0e617e66e63d1e90971a944513557a7b7eeb63a3f4dc4cc4635067",
+      "byte_size": 2382,
+      "source_url": "https://d-nb.info/453655173/04",
+      "derived_from_sha256": "a7630541d32db0edef04372e32c666ae97d6c295cfccbd62de8bd9ef2f09f5ee",
+      "disposition": "scratch-only",
+      "rights": "unresolved",
+      "reason": "Search lead, host presentation, protected/non-image preview response or local review derivative; no public payload proposed. Selected independently justified factual values appear in the receipt only.",
+      "extent": "Local page raster or pdftotext derivative of the complete two-page contents PDF. Raster filenames identify page 1 or page 2; extracted text covers both pages. No derivative is proposed publicly.",
+      "offline_alternative": "Published factual metadata and bounded receipt; no protected source-book image or body. No original TPV 1956 book is supplied.",
+      "reopening": "Exact-surface permission or independently reviewed rights basis; an unrestricted original scan would reopen acquisition.",
+      "record_status": "research-delivery-or-local-review-derivative-only; no canonical payload proposed"
+    },
+    {
+      "sha256": "e84c970c91bd7f4f0c1c77391e58b63ea051ee9508d6d466e1704901400abde8",
+      "byte_size": 39396,
+      "source_url": "https://books.google.com/books?id=m6jMBHjRynQC&printsec=frontcover",
+      "derived_from_sha256": null,
+      "disposition": "scratch-only",
+      "rights": "unresolved",
+      "reason": "Complete Google Books bibliographic HTML wrapper for a different Mame conformed printing; no full original TPV book or licence for this wrapper was obtained. Used only to reject an identity substitution, not as a source of liturgical words.",
+      "extent": "Whole received HTTP response or complete explicitly bounded offered source, as described by the acquisition record; no range truncation.",
+      "offline_alternative": "Published factual metadata and bounded receipt; no protected source-book image or body. No original TPV 1956 book is supplied.",
+      "reopening": "Exact-surface permission or independently reviewed rights basis; an unrestricted original scan would reopen acquisition.",
+      "record_status": "research-delivery-or-local-review-derivative-only; no canonical payload proposed"
+    },
+    {
+      "sha256": "86bf56c203eb13470dbe36b3e4de0c3eda05cef53fbe4fb96fc886c415ec3b46",
+      "byte_size": 217618,
+      "source_url": "https://archive.org/details/ordohebdomadaesa0000cath",
+      "derived_from_sha256": null,
+      "disposition": "scratch-only",
+      "rights": "unresolved",
+      "reason": "Complete IA item HTML includes navigation, host UI and unselected metadata. The retained minimal reader facts contain the access evidence used; no complete-page distribution basis was established.",
+      "extent": "Whole received HTTP response or complete explicitly bounded offered source, as described by the acquisition record; no range truncation.",
+      "offline_alternative": "Published factual metadata and bounded receipt; no protected source-book image or body. No original TPV 1956 book is supplied.",
+      "reopening": "Exact-surface permission or independently reviewed rights basis; an unrestricted original scan would reopen acquisition.",
+      "record_status": "research-delivery-or-local-review-derivative-only; no canonical payload proposed"
+    },
+    {
+      "sha256": "4eaf81cc442c3ad4ffe5a76aad9d8ba378dafab23f124ae9eca08341e5d21285",
+      "byte_size": 373744,
+      "source_url": "https://ia801907.us.archive.org/BookReader/BookReaderPreview.php?id=ordohebdomadaesa0000cath&subPrefix=ordohebdomadaesa0000cath&itemPath=/16/items/ordohebdomadaesa0000cath&server=ia801907.us.archive.org&page=leaf9&fail=preview&",
+      "derived_from_sha256": null,
+      "disposition": "scratch-only",
+      "rights": "unresolved",
+      "reason": "Exact public preview response is undecodable non-image bytes; not a facsimile and not evidence of title-page wording. Protected-image decoding was not attempted. No public payload is proposed.",
+      "extent": "Whole received HTTP response or complete explicitly bounded offered source, as described by the acquisition record; no range truncation.",
+      "offline_alternative": "Published factual metadata and bounded receipt; no protected source-book image or body. No original TPV 1956 book is supplied.",
+      "reopening": "Exact-surface permission or independently reviewed rights basis; an unrestricted original scan would reopen acquisition.",
+      "record_status": "research-delivery-or-local-review-derivative-only; no canonical payload proposed"
+    },
+    {
+      "sha256": "f677ae922e782d904fbb171788849ce84e6010f12395118ec641cfd00ff51cb9",
+      "byte_size": 1185,
+      "source_url": "https://archive.org/advancedsearch.php?q=%28title%3Ahebdomadae%20OR%20title%3Ahebdomade%29%20AND%20year%3A%5B1955%20TO%201957%5D&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=date&fl%5B%5D=publisher&fl%5B%5D=access-restricted-item&rows=100&output=json",
+      "derived_from_sha256": null,
+      "disposition": "scratch-only",
+      "rights": "unresolved",
+      "reason": "Complete bounded search response retained in scratch as a query receipt. Selected query, result count, identifiers and access flags are recorded in the public review envelope; no whole-host-response redistribution basis or unnecessary response-header republication is assumed.",
+      "extent": "Whole received HTTP response or complete explicitly bounded offered source, as described by the acquisition record; no range truncation.",
+      "offline_alternative": "Published factual metadata and bounded receipt; no protected source-book image or body. No original TPV 1956 book is supplied.",
+      "reopening": "Exact-surface permission or independently reviewed rights basis; an unrestricted original scan would reopen acquisition.",
+      "record_status": "research-delivery-or-local-review-derivative-only; no canonical payload proposed"
+    },
+    {
+      "sha256": "0584589a8d3cc7e93ce71fce9dd3329e0901d6979349af20e6b784a22cd6c7a8",
+      "byte_size": 553,
+      "source_url": "https://archive.org/advancedsearch.php?q=%22Ordo%20Hebdomadae%20Sanctae%22&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=year&fl%5B%5D=publisher&fl%5B%5D=access-restricted-item&rows=100&output=json",
+      "derived_from_sha256": null,
+      "disposition": "scratch-only",
+      "rights": "unresolved",
+      "reason": "Complete bounded search response retained in scratch as a query receipt. Selected query, result count, identifiers and access flags are recorded in the public review envelope; no whole-host-response redistribution basis or unnecessary response-header republication is assumed.",
+      "extent": "Whole received HTTP response or complete explicitly bounded offered source, as described by the acquisition record; no range truncation.",
+      "offline_alternative": "Published factual metadata and bounded receipt; no protected source-book image or body. No original TPV 1956 book is supplied.",
+      "reopening": "Exact-surface permission or independently reviewed rights basis; an unrestricted original scan would reopen acquisition.",
+      "record_status": "research-delivery-or-local-review-derivative-only; no canonical payload proposed"
+    },
+    {
+      "sha256": "2c3e37790608b5783dc6e6b6029ab513eca51041a4fba870516369015bd98173",
+      "byte_size": 21633,
+      "source_url": "https://forum.musicasacra.com/forum/discussion/5023/pdf-holy-week-mass-and-offices/p1",
+      "derived_from_sha256": null,
+      "disposition": "scratch-only",
+      "rights": "unresolved",
+      "reason": "Complete discussion page contains contributors original prose; it offered a different Monastic 1961 book and a 1923 chant book. No full-page redistribution basis was established; only those short edition/title facts are recorded as rejected leads.",
+      "extent": "Whole received HTTP response or complete explicitly bounded offered source, as described by the acquisition record; no range truncation.",
+      "offline_alternative": "Published factual metadata and bounded receipt; no protected source-book image or body. No original TPV 1956 book is supplied.",
+      "reopening": "Exact-surface permission or independently reviewed rights basis; an unrestricted original scan would reopen acquisition.",
+      "record_status": "research-delivery-or-local-review-derivative-only; no canonical payload proposed"
+    },
+    {
+      "sha256": "f198190eb3e59f441b4d486789ea7ab8b264b8b97226c1d62a70beced6aa39e3",
+      "byte_size": 47483,
+      "source_url": "https://openlibrary.org/developers/licensing",
+      "derived_from_sha256": null,
+      "disposition": "scratch-only",
+      "rights": "unresolved",
+      "reason": "Complete developer policy HTML was read for the caution about existing contribution rights. The catalogue-data CC0 policy does not itself clear this page wrapper or its prose; the narrow material caution is recorded in the retained catalogue licence facts.",
+      "extent": "Whole received HTTP response or complete explicitly bounded offered source, as described by the acquisition record; no range truncation.",
+      "offline_alternative": "Published factual metadata and bounded receipt; no protected source-book image or body. No original TPV 1956 book is supplied.",
+      "reopening": "Exact-surface permission or independently reviewed rights basis; an unrestricted original scan would reopen acquisition.",
+      "record_status": "research-delivery-or-local-review-derivative-only; no canonical payload proposed"
+    }
+  ],
+  "remaining_gaps": [
+    "Original 1956 TPV title/imprint, copyright/decree leaves, contents and entire 144-page component body remain unacquired.",
+    "No signed decree in the 1956 book inspected. Existing 1955 AAS act evidence remains separately controlled by its existing exact artifact; this packet adds no act or effect.",
+    "No 1956-to-1962 prayer/rubric collation, no original-book literal payload, no new stage/transition, parentage or text inheritance.",
+    "Pustet contents locate components but do not establish original typical wording; appendix listed does not prove substantive liturgical revision."
+  ]
+}
