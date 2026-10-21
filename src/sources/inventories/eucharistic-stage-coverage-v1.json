@@ -3,7 +3,7 @@
   "record_type": "eucharistic-book-stage-coverage-audit",
   "audit_id": "stage-coverage-v1",
   "title": "Coverage limits and next evidence for the Eucharistic book-stage chronology",
-  "checked_on": "2026-10-20",
+  "checked_on": "2026-10-21",
   "scope": "Coverage crosswalk of the canonical candidate inventories and stage dossiers at the input hashes below. This audit reconciles their declared evidence, witnesses and gaps; it creates no stages, transitions, local reception claims or text-completion claims.",
   "inputs": [
     {
@@ -35180,17 +35180,16 @@
   "stages": [],
   "transitions": [],
   "validation": {
-    "result": "canonical-owner-crosswalk-refreshed; registered-reconciliation-receipt-recorded-separately; broad-gates-owned-separately",
+    "result": "canonical-owner-crosswalk-refreshed-after-batch4; registered-reconciliation-receipt-recorded-separately; broad-gates-owned-separately",
     "checks": [
-      "All 174 existing route IDs retained exactly once; candidate memberships and supplied numeric chronology reconcile to frozen inventories",
-      "All 40 direct input fingerprints identify the frozen inventories, routing, legacy acts and dossiers",
-      "All 36 dossier snapshots and 156 canonical tradition references follow their exact owners",
-      "Seven bounded publication-state selections retain earlier broad copy, predecessor, text and reception gaps; Huesca remains original-unacquired",
-      "Ravenna retains four associated fragment IDs with empty selected and canonical-local-use stage arrays",
-      "Complete declared Cistercian constituents remain partial whole-book text coverage, and the wider 1657 source-damage gap is explicitly referenced",
-      "All 708 preserved or newly admitted source routes match the owning source IDs, factual URLs and source types",
-      "Historical batch 2, pre-batch 2 and pre-batch 3 checkpoints remain distinguishable from current measured results",
-      "This audit creates no stages, transitions, source inspections, whole-book text or ancestry permissions; final broader gates remain separate"
+      "All 174 existing route IDs retained exactly once; candidate memberships and supplied numeric chronology reconcile to the batch-4 inventories",
+      "All 43 direct input fingerprints identify the inventories, routing, legacy acts and dossiers, including the three new batch-4 dossiers",
+      "All 39 dossier snapshots and 202 canonical tradition references follow their exact owners",
+      "Each batch-4 lane edited only its assigned route rows and dossiers; route rows were merged by owner and every lane passed independent cold review before integration",
+      "Provisional-only routes keep status no-new-researched-stage-sequence with their provisional stage IDs listed; provisional stages are not counted as selected sequences",
+      "All 708 preserved source routes match the owning source IDs, factual URLs and source types",
+      "Historical batch 2, pre-batch 3 and pre-batch 4 checkpoints remain distinguishable from current measured results",
+      "This audit records lane stages, transitions and gaps but creates none itself; no whole-book text, ancestry permission or local reception follows from a mapping, and final broader gates remain separate"
     ],
     "coverage_status_counts": {
       "no-new-researched-stage-sequence": 47,
@@ -35558,6 +35557,38 @@
       ],
       "new_cistercian_gap_id": "cistercian-1606-1657-post-canon-source-damage",
       "historical_review_limit": "validation.batch2_review remains the unchanged dated earlier checkpoint; its unselected-route census is not a current count."
+    },
+    "pre_batch4_checkpoint": {
+      "scope": "Historical pre-batch4 validation statements (batch 3 / main integration, 2026-10-20 to 2026-10-21); preserved without being asserted as current counts.",
+      "result": "canonical-owner-crosswalk-refreshed; registered-reconciliation-receipt-recorded-separately; broad-gates-owned-separately",
+      "checks": [
+        "All 174 existing route IDs retained exactly once; candidate memberships and supplied numeric chronology reconcile to frozen inventories",
+        "All 40 direct input fingerprints identify the frozen inventories, routing, legacy acts and dossiers",
+        "All 36 dossier snapshots and 156 canonical tradition references follow their exact owners",
+        "Seven bounded publication-state selections retain earlier broad copy, predecessor, text and reception gaps; Huesca remains original-unacquired",
+        "Ravenna retains four associated fragment IDs with empty selected and canonical-local-use stage arrays",
+        "Complete declared Cistercian constituents remain partial whole-book text coverage, and the wider 1657 source-damage gap is explicitly referenced",
+        "All 708 preserved or newly admitted source routes match the owning source IDs, factual URLs and source types",
+        "Historical batch 2, pre-batch 2 and pre-batch 3 checkpoints remain distinguishable from current measured results",
+        "This audit creates no stages, transitions, source inspections, whole-book text or ancestry permissions; final broader gates remain separate"
+      ]
+    },
+    "batch4_review": {
+      "date": "2026-10-21",
+      "lane_receipts": [
+        "src/sources/inventories/eucharistic-research-reviews/french-a-batch4-2026-10-21.json",
+        "src/sources/inventories/eucharistic-research-reviews/french-b-batch4-2026-10-21.json",
+        "src/sources/inventories/eucharistic-research-reviews/eastern-census-batch4-2026-10-21.json",
+        "src/sources/inventories/eucharistic-research-reviews/eastern-gaps-batch4-2026-10-21.json",
+        "src/sources/inventories/eucharistic-research-reviews/western-gaps-batch4-2026-10-21.json",
+        "src/sources/inventories/eucharistic-research-reviews/western-regional-batch4-2026-10-21.json",
+        "src/sources/inventories/eucharistic-research-reviews/originals-batch4-2026-10-21.json",
+        "src/sources/inventories/eucharistic-research-reviews/permissions-batch4-2026-10-21.json"
+      ],
+      "routes_moved_to_selected_stages": 26,
+      "routes_without_any_mapped_stage_before": 76,
+      "routes_without_any_mapped_stage_after": 45,
+      "limit": "Counts describe owner records, not historical completeness. Stage additions rest on inspected leaves, primary acts or exact-locus scholarship as each stage states; text coverage remains not-transcribed or partial, with zero complete whole books."
     }
   }
 }

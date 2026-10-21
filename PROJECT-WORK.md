@@ -87,6 +87,32 @@ Earlier branch-only delivery statements below describe their dated batches.
 No whole-book, physical-print or full all-rite completion follows from main
 integration.
 
+**Fourth parallel batch, 21 October 2026: integrated after cold review, for
+publication to `main`.** The maintainer asked for plan rows 1–5 to run in
+parallel: route coverage, the Eastern census and local reception, dossier
+gaps, originals and acts, and the permission census. The work was then to be
+rebased, reconciled and pushed to `main`. Eight lanes ran with exclusive
+route and dossier ownership. Each lane passed an independent cold review
+that could only narrow, correct or remove claims. The
+[batch review](workflows/reviews/missal-batch4-2026-10-21/REPORT.md) and the
+eight dated `*-batch4-2026-10-21.json` receipts record the scopes, the
+corrections and the access refusals.
+
+The batch moves stages from 295 to 396 (378 documented, 18 provisional),
+transitions from 77 to 107, gaps from 203 to 251 and selected-stage routes
+from 98 to 124. Routes with no mapped stage fall from 76 to 45. Three new
+dossiers hold the French dioceses and the historic Iberian uses. A new
+register holds 70 permission findings, 21 of them read in the issuing
+instrument, which falls short of the requested 30. Text coverage stays at
+zero complete whole books, and no transition grants Git ancestry or text
+inheritance.
+
+The Braga 1924 rights record's OCR-based absences and its 1955 Queenship date
+were falsified on the page images and are corrected in place. The record's
+holding is unchanged. All new acquisitions (about 2,800 hash-recorded entries)
+remain outside the repository; their retention is deferred to the maintainer.
+The all-rite project remains **in progress**.
+
 **Next phases authorized after cold review, 2026-10-20.** The maintainer
 requested execution of the outstanding phases with as many useful independent
 lanes as can work safely in parallel. The cold review reconciled the current

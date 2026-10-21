@@ -384,7 +384,7 @@ EXAMPLES = {
         Example(
             "tools/act-history compare --comparison roman-canon-memento-wilson-r-and-cummiskey-1861",
             (
-                "{\"apparatus_caveat\":\"Wilson page 2 note 6 already reports pro quibus tibi offerimus vel in O (Ottobonianus 313). Its presence in Cummiskey and absence from Wilson's main text do not establish a nineteenth-century introduction. Printed editi... [+209079 chars]",
+                "{\"apparatus_caveat\":\"Wilson page 2 note 6 already reports pro quibus tibi offerimus vel in O (Ottobonianus 313). Its presence in Cummiskey and absence from Wilson's main text do not establish a nineteenth-century introduction. Printed editi... [+209616 chars]",
             ),
             note="Omitting --out prints the complete comparison, including its source members, diff and apparatus caveat.",
         ),
@@ -393,7 +393,7 @@ EXAMPLES = {
         Example(
             "tools/act-history catalogue --out .scratch/history-engine-expansion/example-catalogue.json",
             (
-                "wrote: 1962 catalogue records",
+                "wrote: 2008 catalogue records",
                 "  -> .scratch/history-engine-expansion/example-catalogue.json",
             ),
             note="Derived discovery records; no new normative station or ancestry is admitted.",
@@ -401,7 +401,7 @@ EXAMPLES = {
         Example(
             "tools/act-history catalogue --out .scratch/history-engine-expansion/example-catalogue.json --check",
             (
-                "current: 1962 catalogue records",
+                "current: 2008 catalogue records",
                 "  -> .scratch/history-engine-expansion/example-catalogue.json",
             ),
             note="Checks the preceding projection against its current sources without writing.",
