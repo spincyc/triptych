@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-orations-dc4287d2"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers its bounded editorial selection, normalization and collation record under CC BY 4.0 and claims no exclusive right in the underlying 1929 Latin prayers. Those words are public domain in the United States under the exact historical printing finding in src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml. Only preexisting prayer words and received conclusion formulas are retained; no page image, watermark, rubric, layout or other protected edition matter is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Created on 2026-10-20 from the separately registered checked three-prayer Schott 1929 derivative and actual 1962 CMAA page-image comparison at 200 and 400 dpi: Collect no. 3939 / PDF 778/p. 697; Secret3947 and Postcommunion3949 / PDF 779/p. 698. All lexical body words agree; differences are pointing, capitalisation, consonantal i/j and conclusion length."
+retrieved = "2026-10-20"
+sha256 = "dc4287d2d8c1cc5c97c3b9c9b85b9fd097751fb756d66cf20cb010af7d8ab081"
+byte_size = 715
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/christ-the-king-orations-dc4287d2/christ-the-king-orations.txt"
+projected_from = ["artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Select the independently public-domain historical words of only Collect, Secret and Postcommunion; join line wraps; remove stress accents; expand ligatures; apply the calendar consonantal j orthography, the 1962 punctuation and capitalisation, and each target conclusion at exactly its printed length. Historical Collect ends Qui tecum.; historical Secret/Postcommunion end Qui tecum vivit.; target prints Qui tecum vivit et regnat in unitate. in each. No petition, proper name or clause is supplied from later new matter. Exclude all headings, rubrics and commemoration directions."
+indexable = true
+encoding = "utf-8"
+notes = "Three Latin orations only. This artifact owns the target-controlled editorial projection, not the Schott printing or Missale Romanum1962. English bodies, chants, readings, Preface bodies, inactive seasonal-votive branches and broader coverage remain unchanged."

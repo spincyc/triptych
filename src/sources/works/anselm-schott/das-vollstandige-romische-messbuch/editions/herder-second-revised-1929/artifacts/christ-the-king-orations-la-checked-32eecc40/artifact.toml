@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40"
+edition_id = "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The identified historical Latin wording is public domain in the United States by the bounded 1929-printing finding in src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml. This derivative contains only the three inspected Latin orations, not the modern watermark, digital packaging, German translation, images, rubrics or later matter. It does not grant republication of the complete PDF."
+rights_jurisdiction = "United States"
+provenance = "Three Latin orations of Christ the King read from actual 200 and 400 dpi page images of the exact registered 1929 Schott/Bihlmeyer facsimile on 2026-10-20. Collect: printed p. 1105 / PDF 1175; Secret: p. 1107 / PDF 1177; Postcommunion: p. 1108 / PDF 1178. The 1927 host label is not the printing date. Each printed conclusion cue is preserved at its own length."
+retrieved = "2026-10-20"
+sha256 = "32eecc403c48f085aa8a195c963c6939b221102a8811d846eb84f7b6095915c4"
+byte_size = 643
+path = "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/christ-the-king-orations-la-checked-32eecc40/christ-the-king-orations-la.txt"
+derived_from = "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.facsimile-4511fa92"
+transformation = "Select only the three inspected historical Latin oration blocks; join printed line wraps and remove line-end word division; remove stress accents; expand ae/oe ligatures; retain source pointing and capitalisation, including Quem, Ipse and Gentium/Gentibus; retain each printed Qui tecum conclusion cue without expansion. No words are supplied from the 1962 target in this derivative."
+indexable = true
+encoding = "utf-8"
+notes = "This bounded normalized derivative is independently publishable historical wording. Complete source facsimile remains restricted and is not retained as a payload here. No active or inactive Mass branch, rubric, actor assignment or whole-book completeness is established by this three-prayer extent."

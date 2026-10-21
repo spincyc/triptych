@@ -26,6 +26,17 @@ Computation is a finding aid, never an authority. The competent General, territo
 
 Worked anchors, checked against the Gregorian computus:
 
+**Scope of the Sunday-transfer alternatives.** Universal Norms 7 governs the
+postconciliar calendar; it is not a source for a 1962 Sunday transfer. The held
+1962 temporal inventory assigns the Ascension to Easter +39, the Sunday after
+the Ascension to +42, and Corpus Christi to +60 (Thursday after Trinity):
+`src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/40-temporale.tex`,
+the temporal-cycle table. The 1962 computation therefore emits those universal
+assignments, without a competing Ascension at +42 or Corpus Christi at +63.
+No competent 1962 local transfer or external-solemnity decision is established
+here; it remains unsupported until its own governing source is recorded.
+Neither a postconciliar territorial preference nor arithmetic establishes one.
+
 | Civil year | Easter | Ash Wednesday | Septuagesima | Pentecost | Trinity | First Sunday of Advent | Sunday before Advent |
 | ---: | --- | --- | --- | --- | --- | --- | --- |
 | 2024 | March 31 | February 14 | January 28 | May 19 | May 26 | December 1 | November 24 |

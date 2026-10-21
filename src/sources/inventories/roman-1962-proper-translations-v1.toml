@@ -14,6 +14,12 @@ calendar = "roman-1962"
 target = "src/sources/calendars/roman-1962/propers.yaml"
 recorded_on = "2026-08-02"
 merge = """
+MVP own-orations repair, 2026-10-20. The newly explicit Secret and Postcommunion
+of comm-s-theodori-martyris have no exact English body/publication binding in
+this ledger. Two no-exemplar records account for those own seats; they do not
+borrow the Common prayers or assert that no historical English translation
+exists. Roman-pre-1955 inherits these exact absence identities from this owner.
+
 C3 Pentecost structure lane, 2026-10-19 (C2 gap G14). The `no-exemplar` row for
 the Alleluia of `pentecost` became a positive Lasance entry, read on its page
 image at printed p. 599; its inline genuflection direction is marked a rubric
@@ -18440,3 +18446,27 @@ extent = "body"
 availability = "unavailable"
 reason = { kind = "witness-gap", source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.christ-the-king-appointments" }
 note = "The Latin-only target witness establishes this appointment at printed p. 698, no. 3949, artifact PDF p. 779. The appointment review of 2026-10-19 supplies no English wording; no English exemplar or publication basis is bound to this calendar slot. This is a bounded witness gap, not a claim that an English translation does not exist."
+
+[[untranslated]]
+mass = "comm-s-theodori-martyris"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "no-exemplar" }
+note = "The own Theodore Secret is source-established at Missale Romanum1962 printed p.713,artifact PDF p.794,no.4055; its Latin words are independently collated against Mame1922. That Latin-only repair supplies no English wording. No exact English body or publication binding is attached to this own target; the Common English prayer cannot substitute for it. The existing Collect witness note records an adjacent Cummiskey1861 lead, which remains a lead for separate source checking, not a published English body or a claim that no translation exists."
+
+[[untranslated]]
+mass = "comm-s-theodori-martyris"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "no-exemplar" }
+note = "The own Theodore Postcommunion is source-established at Missale Romanum1962 printed p.713,artifact PDF p.794,no.4056; its Latin words are independently collated against Mame1922. That Latin-only repair supplies no English wording. No exact English body or publication binding is attached to this own target; the Common English prayer cannot substitute for it. The existing Collect witness note records an adjacent Cummiskey1861 lead, which remains a lead for separate source checking, not a published English body or a claim that no translation exists."

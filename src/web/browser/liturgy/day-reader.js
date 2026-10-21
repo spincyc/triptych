@@ -801,7 +801,9 @@
           return T.titleCase(String(option.id).replace(/[-_]+/g, ' '));
         }).join(' or ') + ')';
     });
-    return 'Selected formulary: ' + (mass.name || mass.key) +
+    const selected = result.request && result.request.selectedReadableFormulary;
+    return (resolved.standing === 'unresolved' && !selected
+      ? 'Readable formulary: ' : 'Selected formulary: ') + (mass.name || mass.key) +
       (resolved.form ? '; form: ' + (form ? form.name : resolved.form) : '') + '.' +
       (open.length ? ' Still to be chosen: ' + open.join('; ') + '. No option is selected silently.' : '');
   }
@@ -1618,7 +1620,8 @@
     const hasUnresolved = rows.some(function (row) {
       return row.unresolved || Boolean(
         row.result && ((row.result.unresolvedChoices || []).length ||
-          (row.result.ordinaryUnresolved || []).length)
+          (row.result.ordinaryUnresolved || []).length ||
+          row.result.resolved && row.result.resolved.standing === 'unresolved')
       );
     });
     const documentFragment = document.createDocumentFragment();
@@ -1678,7 +1681,13 @@
       : title.textContent + ' — Day — Triptych';
     refreshDetailsAfterOutcome();
 
-    const notices = rows.map(function (row) { return row.notice; }).filter(Boolean);
+    const notices = rows.flatMap(function (row) {
+      const unsettled = row.result && row.result.resolved &&
+        row.result.resolved.standing === 'unresolved' ? (row.branch.unsettled || []) : [];
+      return [row.notice].concat(unsettled.filter(function (one) {
+        return one.scope === 'oration-owner';
+      }).map(function (one) { return [one.what, one.why].filter(Boolean).join(': '); }));
+    }).filter(Boolean);
     const uncompiled = rows.map(function (row) { return row.uncompiled; }).filter(Boolean);
     // Said once for the structure every branch reads, and printed with the notices.
     const firstResult = rows.map(function (row) { return row.result; }).find(Boolean) || null;

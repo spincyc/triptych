@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.theodore-own-orations-0c381c32"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers the bounded editorial selection, normalization and target-relation record under CC BY 4.0 and claims no exclusive right in the underlying public-domain Latin. Those words stand in the separately registered Mame 1922 witness. No page image, layout, rubric, marginal number or other later edition matter is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Two own Theodore orations collated on actual 200 and 400 dpi page images of the registered public-domain Mame 1922 and the 1962 CMAA control on 2026-10-20. Target PDF794/p713, nos.4055 and4056. This projection replaces the previously false Common-prayer substitution with the target witnessed own prayers."
+retrieved = "2026-10-20"
+sha256 = "0c381c3216bddd7e41508682bb8d46cefc20323e183f952a15b6f78c0d4d61ec"
+byte_size = 469
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/theodore-own-orations-0c381c32/theodore-own-orations.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Select the two independently public-domain historical petitions; join line wraps; remove accents; expand ligatures; apply the calendar consonantal j orthography, target punctuation and target conclusion at its printed length. Each historical Per Dominum. cue becomes the target printed Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate. within the received conclusion-length allowance. Exclude headings, classification marker P, surrounding prayers and all rubrics."
+indexable = true
+encoding = "utf-8"
+notes = "Only the Secret and Postcommunion of the 9 November Theodore commemoration are projected. No English text, Common body, new speaker cue or broader whole-calendar assertion is supplied."

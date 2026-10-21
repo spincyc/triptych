@@ -316,8 +316,8 @@ the calendars, and nothing else on this page states a figure it gives.
 | roman-pre-1955 | sanctoral | 1 | 0 | 0 |
 | roman-1962 | seasonal | 128 | 1354 | 0 |
 | roman-1962 | christological | 8 | 96 | 0 |
-| roman-1962 | marian | 18 | 125 | 0 |
-| roman-1962 | sanctoral | 307 | 1530 | 0 |
+| roman-1962 | marian | 18 | 127 | 0 |
+| roman-1962 | sanctoral | 307 | 1542 | 0 |
 | roman-1962 | common | 30 | 358 | 0 |
 | postconciliar | seasonal | 390 | 2116 | 0 |
 | postconciliar | christological | 7 | 69 | 0 |
@@ -351,7 +351,7 @@ the calendars, and nothing else on this page states a figure it gives.
 | — carrying a `cycles` mapping | 0 | 0 | 258 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 409 |
 | Masses holding only placeholders | 0 | 0 | 0 |
-| Masses taking a formulary from another entry | 0 | 164 | 0 |
+| Masses taking a formulary from another entry | 0 | 165 | 0 |
 | Propers taking their text from another entry | 0 | 70 | 49 |
 | Propers that are not placeholders | 0 | 3445 | 2998 |
 | — of those, scripture-bearing | 0 | 2193 | 2635 |

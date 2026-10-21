@@ -87,7 +87,12 @@ verification: four tiers; the seasonal Sundays, the Triduum and Palm Sunday carr
   they are the only entries of the text-layer tier that do. Every remaining entry in
   those three sections was still a placeholder skeleton at the end of those
   passes. Later source and slot-identity work is represented by the current
-  entries and their typed status nodes, not by that intermediate count
+  entries and their typed status nodes, not by that intermediate count.
+  Later bounded page-image work recovered missing primary reading appointments
+  in the sanctoral and marian sections; its exact scope and source facts are
+  recorded in src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+  That record qualifies the earlier text-layer tier for those appointments
+  only and does not establish complete formularies or complete text coverage.
 conventions:
 - every Introit concludes with the Gloria Patri and the repeated antiphon; the
   doxology is not repeated per entry
@@ -16046,10 +16051,11 @@ sections:
         appointment order and scripture citations were visually checked on 2026-10-19 in the controlling
         CMAA facsimile, printed pp. 697-698, artifact PDF pp. 778-779, nos. 3938-3949; the source-local
         record is passage.catholic-church.missale-romanum.vatican-typica-1962.christ-the-king-appointments.
-        No Sunday commemoration is made. The three appointed orations have text-free witness-gap
-        records pending a separately established publishable wording witness. The proper Preface is
-        appointed at printed p. 698 and printed at p. 291, artifact PDF p. 372, no. 1080; Prefaces remain
-        outside this index. Inactive seasonal-votive alternatives, not October appointments: after
+        No Sunday commemoration is made. The three appointed Latin orations were word-collated on 2026-10-20 against the independently
+        publishable 1929 Schott/Bihlmeyer witness; the per-body provenance ledger records the exact
+        project projections, source loci and publication basis. English wording is not supplied. The proper Preface is
+        appointed at printed p. 698 and printed at p. 291, artifact PDF p. 372, no. 1080; Preface bodies remain
+        outside this Proper list. Inactive seasonal-votive alternatives, not October appointments: after
         Septuagesima the Tract, Psalms 88:27-28,30 (no. 3943), replaces the Alleluia and verse; in
         Paschal time the Gradual is omitted and the double Alleluia uses Daniel 7:14 and Revelation
         19:16 (no. 3944). Those alternatives remain source evidence, not extra propers of this feast.'
@@ -16086,13 +16092,16 @@ sections:
           ref: Psalms 71:1
       - name: 'Collect'
         source: composed
-        notes: 'Printed p. 697, no. 3939; artifact PDF p. 778. Appointment verified; no body retained.'
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: passage.catholic-church.missale-romanum.vatican-typica-1962.christ-the-king-appointments
+        notes: '1962 control: printed p. 697, no. 3939; artifact PDF p. 778. Wording independently
+          witnessed in Schott/Bihlmeyer 1929, printed p. 1105, artifact PDF p. 1175; page-image
+          word collation 2026-10-20. Target punctuation, declared orthography and printed conclusion
+          length are owned by the separate project editorial projection; the underlying historical
+          words have the bounded public-domain basis recorded in the per-body Latin ledger.'
+        text: |
+          Omnipotens sempiterne Deus, qui in dilecto Filio tuo, universorum Rege, omnia
+          instaurare voluisti: concede propitius; ut cunctae familiae gentium, peccati
+          vulnere disgregatae, ejus suavissimo subdantur imperio: Qui tecum vivit et
+          regnat in unitate.
       - name: Epistle
         source: scripture
         verses:
@@ -16161,13 +16170,16 @@ sections:
           ref: Psalms 2:8
       - name: 'Secret'
         source: composed
-        notes: 'Printed p. 698, no. 3947; artifact PDF p. 779. Appointment verified; no body retained.'
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: passage.catholic-church.missale-romanum.vatican-typica-1962.christ-the-king-appointments
+        notes: '1962 control: printed p. 698, no. 3947; artifact PDF p. 779. Wording independently
+          witnessed in Schott/Bihlmeyer 1929, printed p. 1107, artifact PDF p. 1177; page-image
+          word collation 2026-10-20. Target punctuation, declared orthography and printed conclusion
+          length are owned by the separate project editorial projection; the underlying historical
+          words have the bounded public-domain basis recorded in the per-body Latin ledger.'
+        text: |
+          Hostiam tibi, Domine, humanae reconciliationis offerimus: praesta, quaesumus;
+          ut, quem sacrificiis praesentibus immolamus, ipse cunctis gentibus unitatis et
+          pacis dona concedat, Jesus Christus, Filius tuus, Dominus noster: Qui tecum
+          vivit et regnat in unitate.
       - name: Communion
         source: scripture
         verses:
@@ -16182,13 +16194,15 @@ sections:
           ref: Psalms 28:10-11
       - name: 'Postcommunion'
         source: composed
-        notes: 'Printed p. 698, no. 3949; artifact PDF p. 779. Appointment verified; no body retained.'
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: passage.catholic-church.missale-romanum.vatican-typica-1962.christ-the-king-appointments
+        notes: '1962 control: printed p. 698, no. 3949; artifact PDF p. 779. Wording independently
+          witnessed in Schott/Bihlmeyer 1929, printed p. 1108, artifact PDF p. 1178; page-image
+          word collation 2026-10-20. Target punctuation, declared orthography and printed conclusion
+          length are owned by the separate project editorial projection; the underlying historical
+          words have the bounded public-domain basis recorded in the per-body Latin ledger.'
+        text: |
+          Immortalitatis alimoniam consecuti, quaesumus, Domine: ut, qui sub Christi Regis
+          vexillis militare gloriamur, cum ipso, in caelesti sede, jugiter regnare
+          possimus: Qui tecum vivit et regnat in unitate.
     - key: resumed-epiphany-3
       name: Third Sunday after the Epiphany, resumed after Pentecost
       registry: '64'
@@ -22495,7 +22509,10 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 495 (digital p.
         576), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. The Lesson
+        appointment is a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -22530,6 +22547,18 @@ sections:
           carnem suscipere voluisti: praesta supplicibus tuis; ut, qui vere eam
           Genetricem Dei credimus, ejus apud te intercessionibus adjuvemur. Per eundem
           Dominum nostrum Jesum Christum, Filium tuum: Qui tecum.
+      - name: "Lesson"
+        source: scripture
+        verses:
+        - book: "Isaiah"
+          ranges:
+          - begin:
+              chapter: 7
+              verse: 10
+            end:
+              chapter: 7
+              verse: 15
+          ref: "Isaiah 7:10-15"
       - name: Gradual
         source: scripture
         verses:
@@ -23598,7 +23627,10 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 650 (digital p.
         731), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. The Gospel
+        appointment is a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -23635,6 +23667,18 @@ sections:
               chapter: 8
               verse: 35
           ref: Proverbs 8:22-35
+      - name: "Gospel"
+        source: scripture
+        verses:
+        - book: "Matthew"
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 1
+            end:
+              chapter: 1
+              verse: 16
+          ref: "Matthew 1:1-16"
       - name: Secret
         source: composed
         notes: >-
@@ -31642,7 +31686,10 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 504 (digital p.
         585), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. The Gospel
+        appointment is a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -31680,6 +31727,18 @@ sections:
               chapter: 5
               verse: 5
           ref: Wisdom 5:1-5
+      - name: "Gospel"
+        source: scripture
+        verses:
+        - book: "Luke"
+          ranges:
+          - begin:
+              chapter: 14
+              verse: 26
+            end:
+              chapter: 14
+              verse: 33
+          ref: "Luke 14:26-33"
       - name: Offertory
         source: scripture
         verses:
@@ -32208,7 +32267,10 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 510 (digital p.
         591), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. The Lesson
+        appointment is a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -32234,6 +32296,18 @@ sections:
           Deus, qui beatum Marcum Evangelistam tuum evangelicae praedicationis gratia
           sublimasti: tribue, quaesumus; ejus nos semper et eruditione proficere, et
           oratione defendi. Per Dominum nostrum.
+      - name: "Lesson"
+        source: scripture
+        verses:
+        - book: "Ezekiel"
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 10
+            end:
+              chapter: 1
+              verse: 14
+          ref: "Ezekiel 1:10-14"
       - name: Gospel
         source: scripture
         verses:
@@ -32527,7 +32601,10 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 514 (digital p.
         595), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. The Epistle
+        appointment is a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -32553,6 +32630,24 @@ sections:
           Praesta, quaesumus, omnipotens Deus: ut beati Petri Martyris tui fidem
           congrua devotione sectemur; qui, pro ejusdem fidei dilatatione, martyrii
           palmam meruit obtinere. Per Dominum.
+      - name: "Epistle"
+        source: scripture
+        verses:
+        - book: "2 Timothy"
+          ranges:
+          - begin:
+              chapter: 2
+              verse: 8
+            end:
+              chapter: 2
+              verse: 10
+          - begin:
+              chapter: 3
+              verse: 10
+            end:
+              chapter: 3
+              verse: 12
+          ref: "2 Timothy 2:8-10; 3:10-12"
       - name: Gospel
         source: scripture
         verses:
@@ -37095,7 +37190,10 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 561 (digital p.
         642), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. The Lesson and Gospel
+        appointments are a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -37133,6 +37231,18 @@ sections:
           incedat; et, beati Joannis Praecursoris hortamenta sectando, ad eum, quem
           praedixit, secura perveniat, Dominum nostrum Jesum Christum, Filium tuum:
           Qui tecum vivit et regnat.
+      - name: "Lesson"
+        source: scripture
+        verses:
+        - book: "Jeremiah"
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 4
+            end:
+              chapter: 1
+              verse: 10
+          ref: "Jeremiah 1:4-10"
       - name: Gradual
         source: scripture
         verses:
@@ -37145,6 +37255,18 @@ sections:
               chapter: 1
               verse: 7
           ref: John 1:6-7
+      - name: "Gospel"
+        source: scripture
+        verses:
+        - book: "Luke"
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 5
+            end:
+              chapter: 1
+              verse: 17
+          ref: "Luke 1:5-17"
       - name: Offertory
         source: scripture
         verses:
@@ -37203,7 +37325,10 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 563 (digital p.
         644), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. The Lesson
+        appointment is a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -37243,6 +37368,24 @@ sections:
           Deus, qui praesentem diem honorabilem nobis in beati Joannis nativitate
           fecisti: da populis tuis spiritualium gratiam gaudiorum; et omnium fidelium
           mentes dirige in viam salutis aeternae. Per Dominum.
+      - name: "Lesson"
+        source: scripture
+        verses:
+        - book: "Isaiah"
+          ranges:
+          - begin:
+              chapter: 49
+              verse: 1
+            end:
+              chapter: 49
+              verse: 3
+          - begin:
+              chapter: 49
+              verse: 5
+            end:
+              chapter: 49
+              verse: 7
+          ref: "Isaiah 49:1-3, 5-7"
       - name: Gradual
         source: scripture
         verses:
@@ -39597,7 +39740,10 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 593 (digital p.
         674), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. The Lesson
+        appointment is a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -39624,6 +39770,18 @@ sections:
           quem orphanis adjutorem et patrem esse voluisti: concede; ut spiritum
           adoptionis, quo filii tui nominamur et sumus, fideliter custodiamus. Per
           Dominum.
+      - name: "Lesson"
+        source: scripture
+        verses:
+        - book: "Isaiah"
+          ranges:
+          - begin:
+              chapter: 58
+              verse: 7
+            end:
+              chapter: 58
+              verse: 11
+          ref: "Isaiah 58:7-11"
       - name: Gradual
         source: scripture
         verses:
@@ -42235,7 +42393,10 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 621 (digital p.
         702), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. The Epistle
+        appointment is a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -42270,6 +42431,18 @@ sections:
           Da nobis, quaesumus, omnipotens Deus: vitiorum nostrorum flammas
           exstinguere; qui beato Laurentio tribuisti tormentorum suorum incendia
           superare. Per Dominum.
+      - name: "Epistle"
+        source: scripture
+        verses:
+        - book: "2 Corinthians"
+          ranges:
+          - begin:
+              chapter: 9
+              verse: 6
+            end:
+              chapter: 9
+              verse: 10
+          ref: "2 Corinthians 9:6-10"
       - name: Gradual
         source: scripture
         verses:
@@ -43762,7 +43935,10 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 641 (digital p.
         722), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. The Lesson
+        appointment is a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -43797,6 +43973,18 @@ sections:
           Sancti Joannis Baptistae Praecursoris et Martyris tui, quaesumus, Domine,
           veneranda festivitas: salutaris auxilii nobis praestet effectum: Qui vivis
           et regnas cum Deo Patre in unitate.
+      - name: "Lesson"
+        source: scripture
+        verses:
+        - book: "Jeremiah"
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 17
+            end:
+              chapter: 1
+              verse: 19
+          ref: "Jeremiah 1:17-19"
       - name: Alleluia
         source: scripture
         verses:
@@ -44327,7 +44515,10 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 647 (digital p.
         728), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. The Lesson
+        appointment is a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -44362,6 +44553,18 @@ sections:
           Concede, quaesumus, Ecclesiae tuae, omnipotens Deus: ut beatum Stephanum
           Confessorem tuum, quem regnantem in terris propagatorem habuit,
           propugnatorem habere mereatur gloriosum in caelis. Per Dominum.
+      - name: "Lesson"
+        source: scripture
+        verses:
+        - book: "Sirach"
+          ranges:
+          - begin:
+              chapter: 31
+              verse: 8
+            end:
+              chapter: 31
+              verse: 11
+          ref: "Sirach 31:8-11"
       - name: Gradual
         source: scripture
         verses:
@@ -45307,7 +45510,10 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 664 (digital p.
         745), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. The Lesson
+        appointment is a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -45342,6 +45548,18 @@ sections:
           quod possibilitas nostra non obtinet, ejus nobis intercessione donetur. Per
           Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
           unitate.
+      - name: "Lesson"
+        source: scripture
+        verses:
+        - book: "Ezekiel"
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 10
+            end:
+              chapter: 1
+              verse: 14
+          ref: "Ezekiel 1:10-14"
       - name: Tract
         source: scripture
         verses:
@@ -46189,12 +46407,15 @@ sections:
       date: 10-03
       rank: III
       kind: sanctoral
-      notes: Only the scripture-bearing propers are recorded; the orations the Missal
+      notes: 'Only the scripture-bearing propers are recorded; the orations the Missal
         prints for this day are appointed and not transcribed here. Identity, rank and
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 674 (digital p.
         755), not from the facsimile images, and nothing here has been visually
-        collated.
+        collated. The Lesson
+        appointment is a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -46216,6 +46437,18 @@ sections:
           reasons:
             - kind: witness-gap
               source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - name: "Lesson"
+        source: scripture
+        verses:
+        - book: "Isaiah"
+          ranges:
+          - begin:
+              chapter: 66
+              verse: 12
+            end:
+              chapter: 66
+              verse: 14
+          ref: "Isaiah 66:12-14"
       - name: Gradual
         source: scripture
         verses:
@@ -46585,7 +46818,10 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 679 (digital p.
         760), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. The Epistle
+        appointment is a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -46625,6 +46861,18 @@ sections:
           Domine Deus noster, qui beatae Birgittae per Filium tuum unigenitum secreta
           caelestia revelasti: ipsius pia intercessione da nobis famulis tuis; in
           revelatione sempiternae gloriae tuae gaudere laetantes. Per eundem Dominum.
+      - name: "Epistle"
+        source: scripture
+        verses:
+        - book: "1 Timothy"
+          ranges:
+          - begin:
+              chapter: 5
+              verse: 3
+            end:
+              chapter: 5
+              verse: 10
+          ref: "1 Timothy 5:3-10"
       - name: Gradual
         source: scripture
         verses:
@@ -47700,7 +47948,10 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 692 (digital p.
         773), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. The Epistle
+        appointment is a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -47735,6 +47986,18 @@ sections:
           scientia Sanctorum proficientes atque aliis misericordiam exhibentes; ejus
           meritis, indulgentiam apud te consequamur. Per Dominum nostrum Jesum
           Christum.
+      - name: "Epistle"
+        source: scripture
+        verses:
+        - book: "James"
+          ranges:
+          - begin:
+              chapter: 2
+              verse: 12
+            end:
+              chapter: 2
+              verse: 17
+          ref: "James 2:12-17"
       - name: Gradual
         source: scripture
         verses:
@@ -49279,6 +49542,31 @@ sections:
           protegis: praesta nobis ex ejus imitatione proficere, et oratione fulciri.
           Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
           in unitate.
+      - name: 'Secret'
+        source: composed
+        notes: >-
+          Source-established own oration, not the Common prayer. The 1962 control,
+          printed p.713/PDF794,no.4055, was word-collated on 2026-10-20 with the
+          public-domain Mame 1922 witness at printed p.752/PDF866.
+          Only declared orthography, target pointing and printed conclusion length
+          are supplied by the separate project editorial projection.
+        text: |
+          Suscipe, Domine, fidelium preces cum oblationibus hostiarum: et, intercedente
+          beato Theodoro Martyre tuo, per haec piae devotionis officia ad caelestem
+          gloriam transeamus. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum
+          vivit et regnat in unitate.
+      - name: 'Postcommunion'
+        source: composed
+        notes: >-
+          Source-established own oration, not the Common prayer. The 1962 control,
+          printed p.713/PDF794,no.4056, was word-collated on 2026-10-20 with the
+          public-domain Mame 1922 witness at printed pp.752-753/PDF866-867.
+          Only declared orthography, target pointing and printed conclusion length
+          are supplied by the separate project editorial projection.
+        text: |
+          Praesta nobis, quaesumus, Domine: intercedente beato Theodoro Martyre tuo; ut,
+          quod ore contingimus, pura mente capiamus. Per Dominum nostrum Jesum Christum,
+          Filium tuum: Qui tecum vivit et regnat in unitate.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
         carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
         CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
@@ -49288,9 +49576,11 @@ sections:
         read it, but the facsimile sets each oration under a drop capital that the text layer renders as
         wreckage and glues marginal section numbers to the words -- `Cyrilluui`, `quivere earn`, `Ecclesise2517`
         -- so what this pass read was not of publishable quality and was not recorded. The Collect
-        slot now carries a published Latin body collated to the controlling 1962 edition, while every
-        other slot is the Common''s, which is what the Missal appoints. This pass''s reading of the
-        directive was not visually collated. The day''s own Collect was read on 2026-08-08 from the
+        slot now carries a published Latin body collated to the controlling 1962 edition. A later
+        page-image check of printed p. 713 (artifact PDF p. 794) establishes the day''s own Secret
+        and Postcommunion, nos. 4055 and 4056, both marked P. Their own Latin bodies were word-collated on 2026-10-20 against Mame 1922
+        and now override the Common''s prayers; English bodies remain absent. The remaining slots are the Common''s. The earlier pass''s
+        reading of the directive was not visually collated. The day''s own Collect was read on 2026-08-08 from the
         PAGE IMAGE of leaf n658 of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862 printing
         the source library already tracks as public domain, and not from any optical text layer -- that
         printing''s own OCR corrupts roughly one word in three. The body now published is not quoted
@@ -49305,36 +49595,23 @@ sections:
       date: 11-10
       rank: III
       kind: sanctoral
-      notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the Missal
-        prints for this day, the Collect, the Secret and the Postcommunion, carry published Latin
-        bodies collated to the controlling 1962 edition, each on the public-domain witness its row in
-        src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 713 (digital p.
-        794), not from the facsimile images, and that reading was not visually
-        collated.'
+      notes: >-
+        The controlling 1962 source at artifact PDF p. 794, printed p. 713,
+        appoints Missa Os iusti from Common Confessor non-Pontiff I [24], except
+        for the following own Collect (no. 4057, marked P). The five former
+        direct scripture nodes were misjoined from the distinct commemoration
+        of Ss. Tryphon, Respicius and Nympha beginning in the right column of
+        artifact p. 795, printed p. 714, and continuing on artifact p. 796,
+        printed p. 715 (nos. 4063, 4065, 4066, 4067 and 4071);
+        they are replaced by the source-appointed Common referral, not copied
+        Bible text. The already collated Secret and Postcommunion remain
+        separate source appointments: the controlling edition prints their
+        Common formulas as nos. 4059 and 4061, marked C, in the left column of
+        that page, before the separate commemoration's formulas. Their existing
+        body and publication owners, and the own Collect's, remain unchanged.
+        Seasonal Common chant appointments and reading alternatives retain
+        their separately recorded source/model qualifications.
       propers:
-      - name: Introit
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 33
-              verse: 18
-            end:
-              chapter: 33
-              verse: 18
-          ref: Psalms 33:18
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 33
-              verse: 2
-            end:
-              chapter: 33
-              verse: 2
-          ref: Psalms 33:2
       - name: Collect
         source: composed
         notes: >-
@@ -49348,48 +49625,6 @@ sections:
           concede nobis, ipsius meritis et intercessione, ita ejusdem gratiae
           participes fieri; ut, perfectiora semper exsequentes, ad gloriae tuae
           fastigium feliciter perducamur. Per Dominum.
-      - name: Epistle
-        source: scripture
-        verses:
-        - book: Romans
-          ranges:
-          - begin:
-              chapter: 8
-              verse: 18
-            end:
-              chapter: 8
-              verse: 23
-          ref: Romans 8:18-23
-      - name: Gradual
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 78
-              verse: 10
-            end:
-              chapter: 78
-              verse: 10
-          - begin:
-              chapter: 78
-              verse: 2
-            end:
-              chapter: 78
-              verse: 2
-          ref: Psalms 78:10, 2
-      - name: Alleluia
-        source: scripture
-        verses:
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 115
-              verse: 15
-            end:
-              chapter: 115
-              verse: 15
-          ref: Psalms 115:15
       - name: Secret
         source: composed
         notes: >-
@@ -49401,18 +49636,6 @@ sections:
           Laudis tibi, Domine, hostias immolamus in tuorum commemoratione Sanctorum:
           quibus nos et praesentibus exui malis confidimus et futuris. Per Dominum
           nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
-      - name: Communion
-        source: scripture
-        verses:
-        - book: Matthew
-          ranges:
-          - begin:
-              chapter: 12
-              verse: 50
-            end:
-              chapter: 12
-              verse: 50
-          ref: Matthew 12:50
       - name: Postcommunion
         source: composed
         notes: >-
@@ -49424,6 +49647,9 @@ sections:
           Refecti cibo potuque caelesti, Deus noster, te supplices exoramus: ut, in
           cujus haec commemoratione percepimus, ejus muniamur et precibus. Per Dominum
           nostrum.
+      takes_from:
+        mass: commune-confessoris-non-pontificis-1
+        citation: 'Missa Os iusti, de Communi Confessoris non Pontificis I loco [24], praeter orationem sequentem'
     - key: comm-ss-tryphonis-respicii-nymphae-virginis
       name: Comm. Ss. Tryphonis, Respicii et Nymphae Virginis, Martyrum
       registry: 1962-11-10-comm
@@ -49542,7 +49768,10 @@ sections:
         the printed citations were read on 2026-08-01 from the embedded text layer of
         the CMAA facsimile of the controlling edition at printed p. 715 (digital p.
         796), not from the facsimile images, and that reading was not visually
-        collated.'
+        collated. The Gospel
+        appointment is a later exception: visually collated on 2026-10-20;
+        see src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml.
+        That bounded reading does not collate the remaining appointments.'
       propers:
       - name: Introit
         source: scripture
@@ -49601,6 +49830,18 @@ sections:
               chapter: 44
               verse: 16
           ref: Sirach 44:16
+      - name: "Gospel"
+        source: scripture
+        verses:
+        - book: "Luke"
+          ranges:
+          - begin:
+              chapter: 11
+              verse: 33
+            end:
+              chapter: 11
+              verse: 36
+          ref: "Luke 11:33-36"
       - name: Offertory
         source: scripture
         verses:

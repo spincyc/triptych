@@ -28,6 +28,42 @@ Propers freshness and source checks pass. Generated structures and their exact
 basic Read selection corrections remain active; this checkpoint does not
 claim a complete annual missal.
 
+### Annual appointments and basic Read repair, 2026-10-20
+
+Seventeen missing primary Scripture appointments across sixteen 1962 Masses
+are restored from the controlling page images, including discontinuous
+Timothy and Isaiah ranges. Andrew Avellino now refers to its appointed
+Confessor Common instead of carrying five Scripture nodes from the neighboring
+martyrs' commemoration. Theodore's own Secret and Postcommunion replace the
+incorrect Common fallback. Five checked Latin bodies are supplied: those two
+prayers and Christ the King's three orations, with separate historical
+witnesses and project projections. Existing Andrew prayer bodies remain intact.
+
+The 1962 calendar uses its sourced universal Thursday assignments for Ascension
+and Corpus Christi; unsupported Sunday transfers are no longer offered under
+a postconciliar rule. The official 2018 notification resolves Mother of the
+Church against a coinciding saint's memorial, preserving higher ranks. Lent
+II's uncited acclamation remains an explicit composed-text gap instead of an
+inferred Matthew appointment.
+
+Basic Read admits a sole unresolved weekday reading course with its uncertainty
+still visible, omits cycle-inapplicable authored alternatives, preserves source
+choice identities and refuses unsupported typed territories. The earlier
+candidate proof covered all 1,464 dates and 75,467 assertions; final integrated
+annual and browser results remain separately required. Source review confirms
+these bounded repairs, not full-year word completeness. Additional Ember
+orations, seasonal Common appointments, short forms and missing bodies are
+being repaired from their own source evidence.
+
+Integrated checks pass: 77 reader-state tests, 76 calendar/selection tests,
+109 citation/content tests, 22 Latin provenance tests, six primary-appointment
+tests and three Common-repair tests. Exact English absence records leave zero
+unaccounted oration slots in all three inherited calendar reports. All seven
+Bible indexes, Propers structures and census are current; source validation,
+the reviewed catalog checkpoint and the locked normal preview build/verify
+pass. Six focused browser cases are the next check; no full-year textual
+completion or deployment is claimed.
+
 ## Missal reader C1 truthful coverage, 2026-10-19
 
 <!-- promised-deliverable: missal-reader-c1-coverage-2026-10-19 -->

@@ -143,6 +143,24 @@ def permitted_nonexact_fields() -> list[str]:
 
 
 class ProductionLedgerTests(unittest.TestCase):
+    def test_theodore_own_orations_do_not_fall_back_to_common_prayers(self):
+        document = _calendars.load_document(CALENDARS, "roman-1962")
+        mass = next(row for _, _, row in _calendars.departures_of(document)
+                    if row["key"] == "comm-s-theodori-martyris")
+        appointed, problems = _calendars.resolve_propers(document, mass)
+        self.assertEqual([], problems)
+        expected = {'Secret': '52a4292532f4f9eeb18101fa444e03d11a4a9f3e250b333f6f327fd800a6f094', 'Postcommunion': '40ac4d221ce22bfb2101d84e61f51f83495c09fe8c19a6b7af6210b2ded3f144'}
+        found = {proper["name"]: (proper, origin)
+                 for _, proper, origin in appointed if proper["name"] in expected}
+        self.assertEqual(set(expected), set(found))
+        for name, digest in expected.items():
+            proper, origin = found[name]
+            self.assertIsNone(origin, name)
+            self.assertNotIn("text_status", proper)
+            self.assertEqual(digest, text_sha256(proper["text"]))
+            self.assertIn("beato Theodoro Martyre tuo", proper["text"])
+            self.assertTrue(proper["text"].rstrip().endswith("et regnat in unitate."))
+
     def test_cold_review_repairs_are_bound_to_the_read_target_pages(self) -> None:
         document = yaml.safe_load(
             (CALENDARS / "roman-1962/propers.yaml").read_text(encoding="utf-8")
@@ -217,7 +235,8 @@ class ProductionLedgerTests(unittest.TestCase):
             # Postcommunion, new slots, each with a new collated row.
             # 1120 since 2026-10-20 (C3): St Lucy's Communion carries the
             # Missal antiphon rather than a Bible reconstruction.
-            "roman-1962": (1120, 5),
+            # +3 on 2026-10-20: source-backed Christ-the-King orations.
+            "roman-1962": (1128, 5),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -238,7 +257,7 @@ class ProductionLedgerTests(unittest.TestCase):
     def test_publication_loader_validates_production_source_metadata(self) -> None:
         # 1114 since 2026-10-01: St Angela Merici's Secret and Postcommunion.
         # 1120 since 2026-10-20 (C3): St Lucy's Communion has its own body.
-        expected = {"postconciliar": 329, "roman-1962": 1120, "roman-pre-1955": 1120}
+        expected = {"postconciliar": 329, "roman-1962": 1128, "roman-pre-1955": 1128}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -280,8 +299,8 @@ class ProductionLedgerTests(unittest.TestCase):
         # read on the 1962 page image and on the 1862 Pustet's (and the Mame's).
         # 1074 since 2026-10-20 (C3): St Lucy's Communion is independently
         # collated on the 1962 and public-domain Mame 1922 page images.
-        self.assertEqual(1074, len(permitted))
-        self.assertEqual(1074, len(roman))
+        self.assertEqual(1082, len(permitted))
+        self.assertEqual(1082, len(roman))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -343,6 +362,13 @@ class ProductionLedgerTests(unittest.TestCase):
                     "1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
                     target_artifact,
                 },
+            },
+            # The dated MVP recovery binds three Christ-the-King prayers to
+            # a bounded, independently publishable 1929 Schott derivative.
+            "editorial-projection-2026-10-20": {
+                "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-orations-dc4287d2",
+                "publication_source_ids": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5"},
+                "projected_from": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", target_artifact, "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5"},
             },
         }
 

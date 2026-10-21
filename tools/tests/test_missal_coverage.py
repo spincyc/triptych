@@ -497,6 +497,61 @@ class RealCorpusCoverageTests(unittest.TestCase):
         sequence = bodies("postconciliar")["Sequence"][1]
         self.assertEqual(sequence["relationship"], "historical-antecedent")
 
+    def test_christ_the_king_checked_orations_preserve_other_wording_and_conditional_gaps(self):
+        document = self.files["roman-1962"]
+        mass = next(row for row in document["masses"] if row["key"] == "christ-the-king")
+        propers = {row["name"]: row for row in mass["propers"]}
+        prefix = "roman-1962:sanctoral-form:p778-l1"
+        report = coverage.expectations(
+            ROOT / "src/sources/inventories/missal-expected-targets-v1.toml",
+            "roman-1962", [mass])
+        states = {row["id"]: row["state"] for row in report["targets"]
+                  if row["id"].startswith(prefix)}
+        self.assertEqual(states[prefix], "represented")
+        # F01 established these three appointments. The bounded MVP recovery
+        # supplies only their independently witnessed Latin prayer words.
+        for suffix, name in (("slot:p778-l15:collect", "Collect"),
+                             ("slot:p779-l60:secret", "Secret"),
+                             ("slot:p779-l74:postcommunion", "Postcommunion")):
+            with self.subTest(proper=name):
+                self.assertEqual(states[f"{prefix}:{suffix}"], "represented")
+                proper = propers[name]
+                self.assertEqual(proper["source"], "composed")
+                self.assertIsNone(proper["text_status"])
+                self.assertTrue(proper["text"])
+                self.assertFalse(proper["translations"])
+                languages = {row["lang"]: row for row in proper["coverage"]["languages"]}
+                self.assertEqual((languages["la"]["availability"],
+                                  languages["la"]["relationship"]),
+                                 ("available", "exact-target"))
+                self.assertEqual(languages["en"]["availability"], "unresolved")
+                self.assertEqual(languages["en"]["witnesses"], [])
+                self.assertEqual(hashlib.sha256(proper["text"].encode()).hexdigest(), {
+                    "Collect": "6af5e3a4069557becc63497526bb1e3b76fa5bb0a7eb67f4ec4fb86a27097eb4",
+                    "Secret": "406851c5d1ce570d8dd192b412ece7ef1ee85fea81135b2839ba7a22d320e0ff",
+                    "Postcommunion": "d0615d75979ceaa5f7ca2b366c1b584a2b532ded87b65e5e04533a3cfd8e0b37",
+                }[name])
+                self.assertNotIn("Et non fit commemoratio", proper["text"])
+        # The source still inventories the seasonal-votive Tract, but it is
+        # not appointed in October: its old represented join is removed.
+        self.assertNotIn("Tract", propers)
+        self.assertEqual(states[f"{prefix}:slot:p779-l19:tract"], "not-represented")
+        # Neither printed Alleluia alternative is joined to the held October
+        # Alleluia. The held Preface appointment likewise supplies no new join.
+        self.assertEqual(sum(row["name"] == "Alleluia" for row in mass["propers"]), 1)
+        self.assertEqual(mass["ordinary_appointments"]["preface"]["option"], "christo-rege")
+        self.assertEqual({key for key, value in states.items() if value == "unresolved"}, {
+            f"{prefix}:slot:p779-l12:alleluia",
+            f"{prefix}:slot:p779-l29:alleluia",
+            f"{prefix}:preface:p779-l69",
+        })
+        bounded = next(row for row in coverage.bounded_form_text_slots(report)
+                       if row["mass"] == "christ-the-king")
+        self.assertEqual((bounded["lower_bound"], bounded["represented"],
+                          bounded["not_represented"], bounded["unresolved"]), (13, 9, 1, 3))
+        self.assertEqual((bounded["denominator_state"], bounded["expected"],
+                          bounded["whole_form_state"]), ("unresolved", None, "unresolved"))
+
     def test_cummiskey_and_lasance_rows_declare_the_evidenced_antecedent_relation(self):
         """C3: every date-bound hand-missal row is typed as Caswall's is."""
         import tomllib
@@ -928,6 +983,36 @@ state = "unenumerated"
                                  proper["latin"]["text_sha256"])
                 self.assertEqual(proper["latin"]["provenance"]["relationship"],
                                  "editorial-projection-exact-to-target")
+
+    def test_theodore_own_orations_have_shared_english_absences(self):
+        propers = tool("mass-propers")
+        root = ROOT / "src/sources/calendars"
+        ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml")
+                               .read_text())
+        for name in ("Secret", "Postcommunion"):
+            with self.subTest(proper=name):
+                rows = [row for row in ledger["untranslated"]
+                        if (row["mass"], row["form_id"], row["proper"], row["cycle"],
+                            row["occurrence"], row["lang"], row["extent"]) ==
+                        ("comm-s-theodori-martyris", "main", name, "all", 1, "en", "body")]
+                self.assertEqual(len(rows), 1)
+                self.assertEqual(rows[0]["reason"], {"kind": "no-exemplar"})
+                self.assertEqual(rows[0]["availability"], "unavailable")
+                self.assertNotIn("text", rows[0])
+                self.assertFalse([row for row in ledger["entries"]
+                                  if row["mass"] == "comm-s-theodori-martyris"
+                                  and row["proper"] == name])
+        for calendar in ("roman-1962", "roman-pre-1955"):
+            with self.subTest(calendar=calendar):
+                report = propers.english_coverage(root, calendar)
+                self.assertEqual(report["unaccounted"], 0)
+                self.assertEqual(report["unmatched_records"], 0)
+                self.assertEqual(report["stale_translation_records"], 0)
+                absent = tomllib.loads((ROOT / "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml")
+                                       .read_text()).get("untranslated", [])
+                self.assertFalse([row for row in absent
+                                  if row["mass"] == "comm-s-theodori-martyris"
+                                  and row["proper"] in {"Secret", "Postcommunion"}])
 
     def test_st_thomas_english_body_is_ledgered_for_both_calendars(self):
         propers = tool("mass-propers")

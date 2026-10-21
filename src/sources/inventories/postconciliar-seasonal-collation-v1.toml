@@ -741,3 +741,24 @@ printed_psalm_cue = "Psalm 72:28"
 numbering = "vulgate"
 calendar_references = ["Psalm 72:28"]
 reason = "An existing explicit Vulgate owner already keeps the printed cue on its source psalm."
+
+
+[uncited_gospel_acclamation_correction_2026_10_20]
+recorded_on = "2026-10-20"
+mass = "lent-2"
+form_id = "main"
+proper = "Verse Before the Gospel"
+cycle = "all"
+occurrence = 1
+witness = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+witness_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+witness_byte_size = 21487058
+artifact_page = 74
+printed_page = 20
+marginal_numbers = [25, 26, 27]
+method = "The exact complete already-held registered OLM PDF was hash-checked in the bounded source audit and artifact page 74 read as a 200 dpi page image. The page prints one uncited composed acclamation at n. 25 and referrals to that unit at nn. 26-27. No protected wording is transcribed here."
+correction = "Retain the existing singleton unit at its existing position. Replace source: scripture and the inferred Matthew 17:5 verses with source: composed and a source-identified unavailable proper-body witness-gap. Its body was never held in the index, so no removed-body hash or Latin provenance row is created."
+english_disposition = "One exact main/all/body/occurrence-1 untranslated identity records no-exemplar for approved English. The known Latin OLM page establishes neither an English exemplar nor an English publication basis."
+editorial_relationship = "Matthew 17:5 remains an explicitly editorial, nonappointed scriptural relationship in this audit only. OLM n. 25 prints no such reference. This statement does not create an appointment, Bible reconstruction, target text, translation, option, or cycle owner."
+prior_snapshot = "This correction supersedes the live inferred-reference defect recorded in what_remains.one_verse_note; its earlier dated counts remain historical measurements. All other Lent II units, including the distinct Communion Antiphon citation Matthew 17:5, retain their current identities and data."
+scope = "Exact source-local 1981 OLM unit/referrals only. This correction supplies no protected body, no missing-cycle expansion, no new registry identity, no full 2008/territorial Lectionary collation, and no whole-book denominator."

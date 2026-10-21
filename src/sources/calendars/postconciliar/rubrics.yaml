@@ -29,7 +29,7 @@ latin_text_status:
 # publication on the postconciliar calendar, which read the Universal Norms and
 # the Table of Liturgical Days complete in a registered reproduction of the 2002
 # editio typica tertia and the General Instruction at the articles it cites.
-# This file adds no rule that publication does not carry.
+# Later source-bound notifications listed below supplement that publication.
 # ---------------------------------------------------------------------------
 derived_from:
   publication: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar
@@ -54,6 +54,12 @@ derived_from:
   - id: passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-occurrentia-memoriae-immaculati-cordis-1998.latin-notitiae-392-393.operative-occurrence-rule
     role: governing later notification, official periodical state
     what: the same operative paragraph at Notitiae 35 (1999), 157, artifact page 63
+
+  - id: passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notification-memorial-mary-mother-church-2018.english-press-office-web-2026-10-20.operative-occurrence-rule
+    role: governing later notification, official English web state
+    what: >-
+      the specific Mother of the Church collision rule in the notification
+      dated 24 March 2018, published 27 March; final operative paragraph
 
 # ---------------------------------------------------------------------------
 # Decision two. Thirteen numbered places, in three parts which are not three
@@ -127,6 +133,17 @@ precedence:
     decides_the_mass: false
 
 overrides:
+- id: mother-of-church-prevails-over-saint-memorial
+  key: blessed-virgin-mary-mother-church
+  over_key_matches: '^(saints?-|blessed-(?!virgin-mary-))'
+  when_same_row: true
+  locus: 'CDWDS, Notification on the Memorial of Mary, Mother of the Church, 24 March 2018, final operative paragraph'
+  why: >-
+    The notification gives this memorial preference over a coinciding memorial
+    of a saint or blessed. The key pattern identifies the current catalogue's
+    saint/blessed identities and excludes Marian identities. The same-row guard
+    leaves feasts, solemnities and their proper-calendar rank intact. This does
+    not apply the 1998 Immaculate Heart reduction or select a local calendar.
 - id: immaculate-heart-and-obligatory-memorials-become-optional
   key: immaculate-heart-blessed-virgin-mary
   when_with_basis: place-10-obligatory-memorial
@@ -861,18 +878,6 @@ not_decided_here:
 # below, which now asserts the Mass is offered and never ranked.
 
 unsettled:
-- what: 'the precedence of the Blessed Virgin Mary, Mother of the Church, when
-    another obligatory memorial of a saint or blessed occurs on the same date'
-  when:
-    candidate_key: 'blessed-virgin-mary-mother-church'
-    with_basis: 'place-10-obligatory-memorial'
-  scope: 'precedence'
-  why: >-
-    A notification of 24 March 2018 is reported to make this movable memorial
-    prevail in that collision, but the act is not centrally bound to this
-    source. The ordinary table leaves the two candidates at the same place, so
-    the model must refuse the collision instead of inventing either the later
-    preference or an ordinary tie.
 - what: 'the oration owner for an Ordinary Time weekday'
   when:
     candidate_key_matches: '^ot-\d+-(monday|tuesday|wednesday|thursday|friday|saturday)$'
@@ -902,6 +907,19 @@ unsettled:
     declared beside it and does not choose a basis either.'
 
 worked_cases:
+- id: mother-of-church-prevails-over-boniface-2028
+  source: 'CDWDS, Notification on the Memorial of Mary, Mother of the Church, 24 March 2018, final operative paragraph; NUALC 59-60'
+  date: '2028-06-05'
+  why: >-
+    Both universal-calendar memorials occupy table place 10. The source-bound
+    notification resolves this collision in favor of Mother of the Church;
+    Saint Boniface is omitted, not reduced to an optional memorial. This is a
+    universal-calendar finding aid, not a claim about a particular church.
+  expect:
+    winner: blessed-virgin-mary-mother-church
+    winner_row: 10
+    settled: true
+    omitted: [saint-boniface-bishop-martyr, ot-9-monday]
 - id: immaculate-heart-and-boniface-are-options
   source: >-
     CDWDS, Notification Prot. n. 2671/98/L, 8 December 1998; Notitiae 35
