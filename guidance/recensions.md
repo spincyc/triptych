@@ -751,11 +751,19 @@ this prose. Its boundaries are:
 - structural-only ceremonial evidence; and
 - uncollated mechanical inheritance for the remainder.
 
-The open records name the work required for a true corpus rather than allowing
-the phrase *pre-1955* to imply it: register and page-collate the whole 1920
-typical edition; attach per-Proper witness attestations; transcribe the target
-kalendarium from page images; implement the criteria directly; locate the 1900
-typical edition; distinguish the restricted 1956–1960 Holy Week state; and keep
-the Pontifical's oil blessing outside the Missal claim until an identified
-edition is read. No one of those tasks authorizes text to be synthesized from
-the current projection.
+The maintainer's 2026-10-19 decision accepts the Bonn 2004 reimpressio of the
+conformed 28th edition of about 1954 as the pre-1955 witness, with the 1922 Mame
+conformed printing as the control for later additions. The
+[section-body inventory](../src/sources/inventories/missal-expected-targets-review-2026-10-19.md#the-pre-1955-witness-section-body-inventory)
+establishes source identities; it does not collate inherited wording or join
+every text slot. An exact Vatican 1920 impression remains unauthenticated,
+but acquiring it is no longer a prerequisite under that decision. Neither the
+whole modern reprint nor post-1930 additions acquire a new publication basis.
+
+The open records require page collation against the accepted witness and
+per-Proper attestations; runtime transcription of the target kalendarium from
+page images; direct implementation of the criteria; the 1900 typical edition;
+a distinct account of the restricted 1956–1960 Holy Week state; and exclusion
+of the Pontifical's oil blessing until an identified edition is read. The C1
+identity inventory does not complete any of those wording or runtime tasks.
+No one of them authorizes text to be synthesized from the current projection.

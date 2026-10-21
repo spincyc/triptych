@@ -543,6 +543,27 @@ An exemplar passes C2 when:
 pericope-incipit, English and Ordinary-variable texts. Postconciliar is
 accepted only as a partial-state exemplar.
 
+Bounded acceptance audit, 2026-10-20 (source snapshot `60b69ee46`):
+
+| Pentecost exemplar | Checks already established | Acceptance still required |
+| --- | --- | --- |
+| 1962, main form | Thirteen inventoried text slots joined and represented; ten Proper Latin bodies exact-target; English available for nine Proper roles with the Lesson a typed witness gap; appointed Holy Spirit Preface, proper Communicantes and Hanc igitur; recorded 179-event CLI/structure/Day/Propers parity | Whole-form extent remains unresolved. Preserve the English Lesson and Communicantes variant gaps, the Preface's conditional words, and source-local Ordinary qualifications in the final language/witness, responsive and print review. |
+| Pre-1955, main form | Accepted Bonn witness identities are inventoried; source-owned Pentecost appointments and recorded 181-event CLI/structure/Day/Propers parity | Its thirteen inventoried text slots remain unresolved: zero represented, zero not-represented. The inherited 1962 Proper bodies have no pre-1955 target attestation. Join and collate the bounded witness slots; acquiring an exact Vatican 1920 impression is not a prerequisite. |
+| Postconciliar, Day form | Recorded 71-event CLI/structure/Day parity, the entrance-antiphon choice and explicit Day form; date-free Propers retains the two unresolved Gloria/Creed appointments | No bounded Pentecost text-slot report is joined. Establish that scoped source accounting and retain Bible reconstruction, study translation, unavailable Latin and approved-English limits. Acceptance is for a partial-state exemplar. |
+
+The owning checks are `tools/tests/test_ordinary_appointments.py`,
+`test_complete_missal_report.py`, `test_proper_text_structure.py` and
+`test_ordinary_held_prefaces.py`, with the recorded live parity contract in
+`test_missal_exemplar_parity.py`. Structural equality is not wording collation.
+The later Ordinary source checkpoint has 120 held Latin occurrences, 118
+collated and 97 word-exact; nine Prefaces remain explicitly partial and two
+source-only rows uncollated. These are represented Ordinary occurrences, not a
+whole-book denominator. C2 and C3 remain in progress until the applicable
+acceptance matrix is dispositioned; no independent human acceptance is claimed.
+F01 source changes must be regenerated and checked before this snapshot's
+results are applied to the merged inputs. Repeat the annual gate when its
+consumed calendar, CLI or model inputs change.
+
 #### C3: source and translation completion lanes
 
 - **1962:** recover remaining Latin and historical English against exact target
@@ -555,10 +576,11 @@ accepted only as a partial-state exemplar.
   exact exemplar and a permitted publication route. The existing
   [publication policy](liturgical-text-publication-policy.md) owns that decision;
   a live daily-readings feed is not an arbitrary-date downloadable Lectionary.
-- **Pre-1955:** retain honest partial access while acquiring and collating an
-  authenticated target witness and historical calendar. Do not relabel the
-  1922 Mame conformed printing as the 1920 Vatican impression or treat inherited
-  1962 wording as independent evidence of its ancestor.
+- **Pre-1955:** retain honest partial access while joining and collating the
+  accepted Bonn witness and historical calendar, with the 1922 Mame conformed
+  printing as control. Do not relabel either as the 1920 Vatican impression or
+  treat inherited 1962 wording as independent evidence of its ancestor. The
+  completed C1 identity inventory does not establish wording agreement.
 
 The existing [participation-aid review record](../src/sources/inventories/day-reader-participation-aid-review-v1.toml)
 requires review to begin by **2026-11-15** and complete before **2026-11-29**.
