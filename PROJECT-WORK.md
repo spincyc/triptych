@@ -37,8 +37,9 @@ Four parallel lanes then enumerated the whole Bonn witness: 45 slices and 8,274
 targets, every artifact page owned by a section slice or an extent boundary.
 322 targets sit in post-1922-additions slices, each absence confirmed on 1922
 Mame page images. The two older pre-1955 Holy Week slices, 42 rows each mapped
-one-to-one to a new row, are superseded. The inventory now holds 18,915 targets
-in 115 slices with 107 boundaries. All three whole-book universes stay
+one-to-one to a new row, are superseded. After current-main integration and the
+bounded postconciliar Pentecost accounting, the inventory holds 18,947 targets
+in 118 slices with 108 boundaries. All three whole-book universes stay
 `unresolved`: 1962's text slots and other dimensions, pre-1955's
 not-yet-reviewed whole-book dimensions, and the deferred 2008 book. No
 denominator is asserted beyond what the slices state.
@@ -968,6 +969,21 @@ functional AX names. No automated result was suppressed. This diagnostic
 checkpoint does not establish representative human screen-reader use, manual
 touch, WCAG conformance or final reader acceptance. Actual AT control setup,
 source completion, startup value and the final immutable review remain open.
+
+The postconciliar Pentecost source checkpoint adds 28 text-free targets in
+three partial slices: five antiphon alternatives, eleven headed Lectionary
+roles and twelve prayer/Ordinary appointments. The official Antiphonary
+positively scopes its antiphons to 2002/2008; the older Lectionary and 2002
+Missal evidence retain unresolved 2008 correspondence. Day has a lower bound
+of 15 slots with one represented and fourteen unresolved; Vigil has thirteen
+with two represented and eleven unresolved. Both exact denominators and
+whole-form states remain unresolved. Ambiguous alternatives receive no invented
+join, the extended Vigil stays separate, and no prayer words, English rights or
+approved translation are added. All three new Sources passages remain
+rights-withheld without text payloads. Independent page/semantic review and
+46 focused tests pass; generated Proper/Source outputs and source validation
+are current. Catalog fingerprints refresh without changing any of the 162
+pending source-family review states. C2/C3 whole-form completion remains open.
 
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 
