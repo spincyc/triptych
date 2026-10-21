@@ -26,6 +26,274 @@ from typing import NamedTuple
 
 ROOT = Path(__file__).resolve().parents[1]
 
+from _psalms import PSALMS
+
+# How a refusal reads when it is the edition's own verse-alias table speaking
+# rather than a gap. The distinction is load-bearing: a recorded refusal is
+# settled data about the edition, and nothing downstream should read it as a
+# correction that has gone stale.
+NOT_CARRIED = "is recorded as not carried by this edition"
+
+
+DIVERGENCES = "citation_divergences"
+
+# The numbering every recorded resolution is written in. Each one was derived by
+# reading the cited words out of a Vulgate-numbered edition, so it says where a
+# Vulgate-numbered edition carries them and nothing more.
+RESOLVED_IN = "vulgate"
+
+
+# What a divergent locus says about an edition in some other numbering. The
+# three are not interchangeable and the difference is the whole point: a book
+# the Lectionary and a Greek-numbered New Testament divide alike wants the
+# citation left exactly as it stands, and "correcting" it onto the Vulgate is
+# the same silent mis-resolution in the other direction.
+RESOLVED = "resolved"  # divides the book as the Vulgate does; use the resolution
+AS_CITED = "as-cited"  # divides the book as the calendar cites it; leave it alone
+UNRECORDED = "unrecorded"  # neither is established; refuse rather than guess
+STANCES = (RESOLVED, AS_CITED, UNRECORDED)
+STANCE = "numbering"
+
+
+def chapters_touched(entry: dict) -> set[int]:
+    """Every chapter a citation's ranges reach into, boundary-crossers included."""
+    chapters: set[int] = set()
+    for span in entry.get("ranges") or []:
+        if not isinstance(span, dict):
+            continue
+        begin = span.get("begin") or {}
+        end = span.get("end") or begin
+        first = begin.get("chapter")
+        if first is None:
+            continue
+        last = end.get("chapter")
+        chapters.update(range(int(first), int(first if last is None else last) + 1))
+    return chapters
+
+
+class Divergences:
+    """One calendar's declared numbering divergences, validated as they load.
+
+    A declaration is worth only as much as its upkeep, so each one is checked
+    against the citations the calendar actually makes. A resolution for a
+    reference no longer cited, a resolution landing in another book, and a
+    declared chapter nothing cites are all errors: dead entries that still read
+    as coverage are how a table stops matching the thing it describes.
+
+    What is deliberately *not* an error is a citation inside a declared locus
+    with no resolution recorded. That one refuses, and the citation goes
+    unindexed. Returning whatever verse the edition happens to print at those
+    numbers is the defect this machinery exists to stop, and a refusal is the
+    only answer that cannot be mistaken for the text.
+
+    `numbering` is the numbering of the edition being indexed. The recorded
+    resolutions are written in `RESOLVED_IN`; every other numbering an indexed
+    edition may be in must be ruled on per locus under `STANCE`, because a book
+    two systems divide alike wants no correction at all.
+    """
+
+    def __init__(
+        self,
+        calendar: str,
+        document: dict,
+        entries: list[dict],
+        canon,
+        numbering: str = RESOLVED_IN,
+        *,
+        numberings: tuple[str, ...],
+    ) -> None:
+        self.calendar = calendar
+        self.canon = canon
+        self.numbering = numbering
+        self.numberings = numberings
+        self.loci: list[tuple[str, frozenset[int], str, dict[str, str]]] = []
+        self.resolved: dict[str, tuple[str, str, list]] = {}
+        # Absent and empty both mean the calendar claims no divergence; a value
+        # of any other shape is a mistake, and reading it as "none" would drop
+        # the declaration silently, which is the failure mode being fixed here.
+        declared = document.get(DIVERGENCES)
+        declared = [] if declared is None else declared
+        if not isinstance(declared, list):
+            raise ValueError(f"{calendar}: {DIVERGENCES} must be a list of divergent loci")
+        self.cited: dict[str, tuple[str, set[int]]] = {}
+        for entry in entries:
+            ref = str(entry["ref"])
+            if ref not in self.cited:
+                self.cited[ref] = (str(entry.get("book") or ""), chapters_touched(entry))
+        for locus in declared:
+            self._declare(locus)
+
+    def _declare(self, locus: object) -> None:
+        where = f"{self.calendar}: {DIVERGENCES}"
+        if not isinstance(locus, dict):
+            raise ValueError(f"{where}: each divergent locus must be a mapping")
+        book = locus.get("book")
+        if not isinstance(book, str) or not book:
+            raise ValueError(f"{where}: a divergent locus must name a book")
+        if book == PSALMS:
+            # The psalter has a tracked verse-level concordance and converts
+            # through it; a second mechanism here could only contradict it.
+            raise ValueError(f"{where}: {book} numbering is owned by the psalm concordance")
+        reason = locus.get("divergence")
+        if not isinstance(reason, str) or not reason.strip():
+            raise ValueError(f"{where}: {book} must say how the numbering diverges")
+        chapters = self._chapters(where, book, locus.get("chapters"))
+        stances = self._stances(where, book, locus.get(STANCE))
+        resolutions = locus.get("citations")
+        if not isinstance(resolutions, dict) or not resolutions:
+            raise ValueError(f"{where}: {book} declares no citations; remove the locus instead")
+        covered: set[int] = set()
+        for ref, target in sorted(resolutions.items()):
+            covered |= self._resolve(where, book, chapters, str(ref), target)
+        stale = sorted(chapters - covered) if chapters else []
+        if stale:
+            raise ValueError(
+                f"{where}: {book} declares chapters {stale} that no listed citation reaches"
+            )
+        self.loci.append((book, chapters, reason.strip(), stances))
+
+    def _stances(self, where: str, book: str, declared: object) -> dict[str, str]:
+        """Where each other numbering stands on this book, ruled on one by one.
+
+        A default would be the wrong shape for this question: the two answers
+        are opposites, one correcting a citation and the other leaving it
+        untouched, and whichever were the default would be applied silently to
+        the books nobody had thought about yet.
+        """
+        wanted = self.numberings
+        if not isinstance(declared, dict):
+            raise ValueError(
+                f"{where}: {book} must say under {STANCE} where each of "
+                f"{list(wanted)} stands, one of {list(STANCES)}"
+            )
+        for numbering in wanted:
+            stance = declared.get(numbering)
+            if stance not in STANCES:
+                raise ValueError(
+                    f"{where}: {book} {STANCE} for {numbering!r} is {stance!r}; "
+                    f"it must be one of {list(STANCES)}"
+                )
+        extra = sorted(set(declared) - set(wanted))
+        if extra:
+            raise ValueError(
+                f"{where}: {book} {STANCE} rules on {extra}, which no indexed edition "
+                f"is in ({RESOLVED_IN} always takes the resolution and is not listed)"
+            )
+        return {numbering: str(declared[numbering]) for numbering in wanted}
+
+    def _chapters(self, where: str, book: str, declared: object) -> frozenset[int]:
+        """The chapters this book diverges in; empty means the whole book."""
+        if declared is None:
+            return frozenset()
+        if not isinstance(declared, list) or not declared:
+            raise ValueError(f"{where}: {book} chapters must be a non-empty list")
+        for chapter in declared:
+            if not isinstance(chapter, int) or isinstance(chapter, bool) or chapter < 1:
+                raise ValueError(f"{where}: {book} chapter {chapter!r} is not a chapter number")
+        return frozenset(declared)
+
+    def _resolve(
+        self, where: str, book: str, chapters: frozenset[int], ref: str, target: object
+    ) -> set[int]:
+        """Validate one recorded resolution and keep it. Returns what it covers."""
+        if not isinstance(target, str) or not target.strip():
+            raise ValueError(f"{where}: {book} resolution for {ref!r} must be a reference string")
+        if ref in self.resolved:
+            raise ValueError(f"{where}: {ref!r} is resolved twice")
+        found = self.cited.get(ref)
+        if found is None:
+            raise ValueError(f"{where}: {ref!r} is resolved but no longer cited by this calendar")
+        home, touched = found
+        if home != book:
+            raise ValueError(f"{where}: {ref!r} is cited under {home!r}, not {book!r}")
+        if chapters and not touched & chapters:
+            raise ValueError(f"{where}: {ref!r} reaches no divergent chapter of {book}")
+        try:
+            passage = self.canon.parse_citation(target.strip())
+        except self.canon.CitationError as error:
+            raise ValueError(
+                f"{where}: {ref!r} resolves to an unreadable reference: {error}"
+            ) from error
+        if passage["book"] != book:
+            # An override may correct the numbering, never the book: a citation
+            # that resolves into another book is a different citation.
+            raise ValueError(
+                f"{where}: {ref!r} resolves into {passage['book']}, outside {book}"
+            )
+        self.resolved[ref] = (book, target.strip(), passage["ranges"])
+        return touched & chapters if chapters else touched
+
+    def locus_of(self, book: str, touched: set[int]) -> tuple[str, dict[str, str]] | None:
+        """The declared locus this citation falls in: how it diverges, and stances."""
+        for declared, chapters, reason, stances in self.loci:
+            if declared == book and (not chapters or touched & chapters):
+                return reason, stances
+        return None
+
+    def stance(self, stances: dict[str, str]) -> str:
+        """What this locus says about the edition being indexed."""
+        if self.numbering == RESOLVED_IN:
+            return RESOLVED
+        return stances.get(self.numbering, UNRECORDED)
+
+    def apply(self, entry: dict, ranges: list) -> tuple[list, str]:
+        """The ranges that select this citation's text here, or why it refuses."""
+        book = str(entry.get("book") or "")
+        found = self.locus_of(book, chapters_touched(entry))
+        if found is None:
+            return ranges, ""
+        reason, stances = found
+        stance = self.stance(stances)
+        if stance == AS_CITED:
+            # This edition divides the book the way the calendar cites it, so
+            # the citation already names the verses it means.
+            return ranges, ""
+        if stance == UNRECORDED:
+            return [], (
+                f"{self.calendar} numbers {book} divergently ({reason}); this edition is "
+                f"in {self.numbering} numbering and the locus records no ruling for it "
+                f"beyond {UNRECORDED!r}"
+            )
+        recorded = self.resolved.get(str(entry["ref"]))
+        if recorded is not None:
+            return recorded[2], ""
+        return [], (
+            f"{self.calendar} numbers {book} divergently ({reason}) and records no "
+            f"resolution for this citation; add one under {DIVERGENCES}"
+        )
+
+    def confirm(self, bible: "Bible") -> None:
+        """Every resolution must reach real text in an edition holding its book.
+
+        A citation the edition cannot address is ordinary — a calendar may cite
+        a book this edition never printed. A hand-written resolution that
+        cannot be addressed is not: it is a correction that has stopped
+        correcting, and it fails the build rather than joining the unresolved
+        tally where a reader would read it as the calendar's problem.
+
+        An edition the resolutions do not apply to is not asked to address
+        them: it never uses one, and failing its build over a correction meant
+        for another numbering would report the wrong edition's problem. Neither
+        is an edition that has recorded, in its own verse aliases, that it does
+        not carry the locus. That refusal is the edition speaking about itself,
+        and it belongs in the unresolved tally rather than stopping the build.
+        """
+        for ref, (book, target, ranges) in sorted(self.resolved.items()):
+            token = bible.token(book)
+            if token is None:
+                continue
+            found = self.locus_of(book, self.cited[ref][1])
+            if found is None or self.stance(found[1]) != RESOLVED:
+                continue
+            _, problem = bible.passage(token, ranges)
+            if problem and not problem.endswith(NOT_CARRIED):
+                raise ValueError(
+                    f"{self.calendar}: {DIVERGENCES} resolves {ref!r} to {target!r}, "
+                    f"which this edition cannot address: {problem}"
+                )
+
+
+
 
 def range_to_loci(begin: dict, end: dict) -> list[dict]:
     """One locus per chapter the range touches, in reading order."""

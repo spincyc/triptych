@@ -12,7 +12,9 @@ already supports a typed structural absence.
 from __future__ import annotations
 
 import hashlib
+import json
 import re
+import shutil
 import subprocess
 import sys
 import tomllib
@@ -32,6 +34,17 @@ COMMON_POINTER_SOURCE = (
     "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary."
     "antiphonary-pdf"
 )
+COMMON_REFERRAL_FORMULARY_STATUS = {
+    "state": "partial",
+    "scope": "missal-formulary",
+    "reasons": [{
+        "kind": "witness-gap",
+        "source_id": (
+            "edition.catholic-church.missale-romanum."
+            "vatican-typica-tertia-reimpressio-emendata-2008"
+        ),
+    }],
+}
 COMMON_HEADING_MASSES = {
     "our-lady-fatima",
     "our-lady-guadalupe",
@@ -475,7 +488,9 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
             self.assertEqual(mass.get("rank"), "Optional memorial", key)
             self.assertEqual(mass.get("kind"), "sanctoral", key)
             self.assertNotIn("forms", mass, key)
-            self.assertNotIn("text_status", mass, key)
+            self.assertEqual(
+                mass.get("text_status"), COMMON_REFERRAL_FORMULARY_STATUS, key
+            )
 
             notes = str(mass.get("notes") or "")
             self.assertIn(
@@ -496,6 +511,73 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
                 self.assertEqual(len(verses), 1, (key, proper))
                 observed.append((proper.get("name"), verses[0].get("ref")))
             self.assertEqual(observed, refs, key)
+
+    @unittest.skipUnless(shutil.which("node"), "node is required for reader adapters")
+    def test_common_referral_readings_do_not_claim_a_complete_missal(self):
+        """A real four-reading excerpt retains its events and declares its gap."""
+        key = "saint-thomas-aquinas-priest-doctor-church"
+        source = next(mass for _, _, mass in self.rows if mass["key"] == key)
+        self.assertEqual(source.get("text_status"), COMMON_REFERRAL_FORMULARY_STATUS)
+        public_status = propers_tool.public_text_status(source["text_status"])
+        self.assertEqual(
+            public_status, {"state": "partial", "scope": "missal-formulary"}
+        )
+        structure = json.loads(
+            (ROOT / "src/web/data/structure/propers/postconciliar.json").read_text()
+        )
+        # Use this Mass's actual public reading events, with the source-owned
+        # status projected by the same function used by calendar_structure.
+        structure["masses"] = [mass for mass in structure["masses"] if mass["key"] == key]
+        self.assertEqual(len(structure["masses"]), 1)
+        bridge = r"""
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const C = require('./src/web/browser/liturgy/reader-state.js');
+const A = require('./src/web/browser/liturgy/reader-state-adapters.js');
+const input = JSON.parse(fs.readFileSync(0, 'utf8'));
+const mass = input.structure.masses[0];
+const results = [];
+for (const language of ['la', 'en']) {
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'propers', civilDate: null,
+    edition: {id: 'postconciliar'}, formulary: {id: mass.key, type: mass.kind},
+    bible: {id: 'douay-rheims', numbering: 'vulgate'},
+    languages: {orations: language}, requestedMode: 'read',
+    options: {ordinary: false, legitimate: {}}, coverage: [],
+    unresolvedChoices: [], sourceHooks: []
+  };
+  delete mass.text_status;
+  const before = A.adaptPropers({request, structure: input.structure});
+  mass.text_status = input.status;
+  const after = A.adaptPropers({request, structure: input.structure});
+  assert.deepEqual(after.events, before.events);
+  const scope = 'formulary:' + mass.key;
+  results.push({language, events: after.events.length,
+    before: before.coverage.find(row => row.scope === scope),
+    after: after.coverage.find(row => row.scope === scope)});
+}
+process.stdout.write(JSON.stringify(results));
+"""
+        completed = subprocess.run(
+            ["node", "-e", bridge], cwd=ROOT, check=True, capture_output=True,
+            text=True, input=json.dumps({"structure": structure, "status": public_status}),
+        )
+        results = json.loads(completed.stdout)
+        self.assertEqual([row["language"] for row in results], ["la", "en"])
+        for row in results:
+            with self.subTest(language=row["language"]):
+                self.assertEqual(row["events"], 4)
+                self.assertEqual(row["before"], {
+                    "state": "supported", "scope": "formulary:" + key,
+                    "completeness": "complete", "reasons": [],
+                })
+                self.assertEqual(row["after"], {
+                    "state": "supported", "scope": "formulary:" + key,
+                    "completeness": "partial", "reasons": [{
+                        "kind": "text-not-held", "sourceKind": "source-declared-partial",
+                        "sourceId": None,
+                    }],
+                })
 
     def test_exceptional_rites_state_and_project_nonfull_ordinary_frames(self):
         """Non-Mass and branch-sensitive rites never inherit a full Mass frame."""
