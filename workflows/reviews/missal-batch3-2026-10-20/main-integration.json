@@ -183,7 +183,7 @@
       "exit_status": 0
     },
     {
-      "suite": "public-alpha and live reception-browser tests",
+      "suite": "public-alpha and locally served reception-browser tests",
       "tests": 135,
       "failures": 0,
       "errors": 0,
@@ -240,7 +240,8 @@
     "Initial 576-test run: 8 failure entries, 23 error entries and one optional skip. The pinned Markdown rerun resolves dependency errors; a shorter owned scratch path resolves four Chromium startup failures; scoped tooling and URL-contract repairs resolve the four inherited gate failures.",
     "Initial public-site attempt selected pinned PYTHON but its executable children still used system Markdown 3.11.2. Corrected PATH and PYTHON together passed the build and verification.",
     "An accidentally selected broad shell-smoke run was stopped with exit 143; its owned process group was verified empty. Shared cache mtimes during concurrent gates do not identify a unique writer.",
-    "Initial tmt check rejected the undeclared act-history input dependency in the acceptance CLI examples. The explicit catalogue dependency was registered, and tmt check and all ten launcher examples then passed without recapture."
+    "Initial tmt check rejected the undeclared act-history input dependency in the acceptance CLI examples. The explicit catalogue dependency was registered, and tmt check and all ten launcher examples then passed without recapture.",
+    "Initial normal main push exited 1 after HTTP 500 and disconnect; an actual remote read confirmed main unchanged. A temporary transport ref with the identical reviewed tree and published feature ancestry reduced redundant object traversal. The following ordinary main push succeeded; the helper ref was deleted and its transport commit is not an ancestor of main. The HTTP error alone does not establish its cause."
   ],
   "review_proof_pins": {
     "root/three-way-tree-preservation.json": {
@@ -274,11 +275,320 @@
     "disclosure/rebased-20fc-intermediate-review.json": {
       "sha256": "046993509892e143b404625c086271c69c4fb430048566a8104069fb7620afbc",
       "bytes": 57252
+    },
+    "root/publication-observed.json": {
+      "sha256": "e77a55469156c033214cbd7136a419930bf5bcdf8634aafe4ac0b84bdb1ed964",
+      "bytes": 755
+    },
+    "root/live-route-plan.json": {
+      "sha256": "0226457fbae3eec442dbdd085f7de24a6c77b1a135bf255adfd3581641536bb8",
+      "bytes": 6229
+    },
+    "root/live-route-verification.json": {
+      "sha256": "17edeee0260bdad2da1116f7148d8fb628cd4b489140fadfe8ff163077947064",
+      "bytes": 20376
+    },
+    "root/pages-status-latest.json": {
+      "sha256": "de76dfc152e84ef2846c5a35fc4c0ddf914a4a547e1283c3fa1a1448aeffe57d",
+      "bytes": 6794
+    },
+    "root/hygiene-status-final.json": {
+      "sha256": "896823cf6036faad9c71b7c0759caa79f380096aafbc12f56c87b558bfb78b98",
+      "bytes": 1850
+    },
+    "deployment-watch/result.json": {
+      "sha256": "0aeb3556c15fedc1a96c99c7d6e7f9cc847298a5ccabb5a25fb279ddc79808c0",
+      "bytes": 765
+    },
+    "disclosure/final-191d-disclosure-review.json": {
+      "sha256": "de9c7ef05c617a3438daf339529118ee2f7ed6579a1627a1453378774be9ec3c",
+      "bytes": 39069
+    },
+    "transport-plan/transport-commit-review.json": {
+      "sha256": "d3e6bf13021fcfc08a57fb50fb97538f7bc2548e759aacaba7f334c32db647f7",
+      "bytes": 1710
     }
   },
   "completion_limits": [
     "All-rite deliverable remains in_progress with its existing six open requirements.",
     "No complete whole-book transcription, spoken screen-reader review, production-sheet proof or physical-printer certification is established.",
-    "This is a pre-push verification record; a commit or local site build alone does not establish a successful live deployment."
-  ]
+    "The original record in implementation commit 191d2fa187df1ea7c02dd01a2ec67fa8d37e7dc0 was explicitly pre-push. The publication observations added here supersede only that deployment limit for the named implementation and twenty-two verified routes; all wider project and reader-acceptance limits remain."
+  ],
+  "publication": {
+    "implementation_commit": "191d2fa187df1ea7c02dd01a2ec67fa8d37e7dc0",
+    "remote": "origin",
+    "destination": "refs/heads/main",
+    "main_before": "edab7fee54e76daac24a1ec6c69141935c32f4c2",
+    "main_push_exit_status": 0,
+    "fast_forward": true,
+    "force_push": false,
+    "verified_at": "2026-10-21T08:05:22.367593+00:00",
+    "original_feature_ref_preserved": "fe1cf06ac976875a546890709934c7c69c5a6068",
+    "workspace_branch": "feature/missal-timeline",
+    "workspace_upstream": "origin/main",
+    "worktree_clean_at_main_push_verification": true,
+    "transport": {
+      "commit": "fb8ba6ef8d290a3b208d9e4b9c1b0733530567a8",
+      "ref": "refs/heads/feature/codex/missal/main-transfer-20261021",
+      "push_exit": 0,
+      "deleted": true,
+      "main_ancestor": false,
+      "same_tree_as_main": true,
+      "header_objects": 1606,
+      "ordinary_header_objects": 5562
+    },
+    "pages": {
+      "run_id": 39566362084,
+      "url": "https://github.com/spincyc/triptych/actions/runs/39566362084",
+      "head_sha": "191d2fa187df1ea7c02dd01a2ec67fa8d37e7dc0",
+      "status": "completed",
+      "conclusion": "success",
+      "deploy_step_completed_at": "2026-10-21T08:17:57Z",
+      "verified_steps": [
+        "Verify deployable sources and inventories",
+        "Build public artifact",
+        "Verify artifact and GitHub Pages compatibility",
+        "Upload verified artifact",
+        "Deploy"
+      ]
+    },
+    "repository_hygiene": {
+      "run_id": 39566362149,
+      "url": "https://github.com/spincyc/triptych/actions/runs/39566362149",
+      "head_sha": "191d2fa187df1ea7c02dd01a2ec67fa8d37e7dc0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "live_routes": {
+      "started_at": "2026-10-21T08:18:30.198776+00:00",
+      "finished_at": "2026-10-21T08:18:31.154379+00:00",
+      "passed": 22,
+      "failed": 0,
+      "bytes": 15132214,
+      "scope": "Twenty-two selected production routes compared with the locally verified public artifact: HTTP 200, exact byte length and SHA-256 for each. This is served-byte verification, not new interactive-browser acceptance or a claim about all site routes.",
+      "routes": [
+        {
+          "path": "index.html",
+          "url": "https://mystago.gy/index.html",
+          "sha256": "5f3e80dea6029c5e291adc5df51acf9ae06e41463ae9897a9dc09f014d5eaacc",
+          "bytes": 6232,
+          "http_status": 200,
+          "observed_sha256": "5f3e80dea6029c5e291adc5df51acf9ae06e41463ae9897a9dc09f014d5eaacc",
+          "observed_bytes": 6232,
+          "matches": true
+        },
+        {
+          "path": "assets/site.css",
+          "url": "https://mystago.gy/assets/site.css",
+          "sha256": "004f8a18f127c2fbced58190c458b7b2819f12da065431c13fd69abf927dcb47",
+          "bytes": 27308,
+          "http_status": 200,
+          "observed_sha256": "004f8a18f127c2fbced58190c458b7b2819f12da065431c13fd69abf927dcb47",
+          "observed_bytes": 27308,
+          "matches": true
+        },
+        {
+          "path": "history/index.html",
+          "url": "https://mystago.gy/history/index.html",
+          "sha256": "7784e354a802a45dff9af2f22a41505f567c228bf3db90972de0bbfbafa53b62",
+          "bytes": 15790,
+          "http_status": 200,
+          "observed_sha256": "7784e354a802a45dff9af2f22a41505f567c228bf3db90972de0bbfbafa53b62",
+          "observed_bytes": 15790,
+          "matches": true
+        },
+        {
+          "path": "history/history.css",
+          "url": "https://mystago.gy/history/history.css",
+          "sha256": "69d7f6e9d4f8af892d14b01f1477f4986c7f7291e119e307c7ec16cf284e11c6",
+          "bytes": 25747,
+          "http_status": 200,
+          "observed_sha256": "69d7f6e9d4f8af892d14b01f1477f4986c7f7291e119e307c7ec16cf284e11c6",
+          "observed_bytes": 25747,
+          "matches": true
+        },
+        {
+          "path": "history/history.js",
+          "url": "https://mystago.gy/history/history.js",
+          "sha256": "5859fd6086ab24cd5d79bd63103e251d55e8cc5dfe1fcc03969580f205b271fa",
+          "bytes": 182816,
+          "http_status": 200,
+          "observed_sha256": "5859fd6086ab24cd5d79bd63103e251d55e8cc5dfe1fcc03969580f205b271fa",
+          "observed_bytes": 182816,
+          "matches": true
+        },
+        {
+          "path": "browse/structure/act-history/catalogue.json",
+          "url": "https://mystago.gy/browse/structure/act-history/catalogue.json",
+          "sha256": "bc57597f8754bf3a0974c74f19abf0be340ce1dbe1a966a125fc14c3b28157bf",
+          "bytes": 9805843,
+          "http_status": 200,
+          "observed_sha256": "bc57597f8754bf3a0974c74f19abf0be340ce1dbe1a966a125fc14c3b28157bf",
+          "observed_bytes": 9805843,
+          "matches": true
+        },
+        {
+          "path": "browse/structure/act-history/native-texts/cistercian-1606-post-canon.json",
+          "url": "https://mystago.gy/browse/structure/act-history/native-texts/cistercian-1606-post-canon.json",
+          "sha256": "987a07bcd669de502921a90b97d787062da0cf5ba41e04a05071eee02ec8069a",
+          "bytes": 128130,
+          "http_status": 200,
+          "observed_sha256": "987a07bcd669de502921a90b97d787062da0cf5ba41e04a05071eee02ec8069a",
+          "observed_bytes": 128130,
+          "matches": true
+        },
+        {
+          "path": "browse/structure/act-history/native-texts/cistercian-1657-pater-noster.json",
+          "url": "https://mystago.gy/browse/structure/act-history/native-texts/cistercian-1657-pater-noster.json",
+          "sha256": "de9994565f3bff7414259afde0a519bea8cca1cf1ee79726a55187d177586e07",
+          "bytes": 21893,
+          "http_status": 200,
+          "observed_sha256": "de9994565f3bff7414259afde0a519bea8cca1cf1ee79726a55187d177586e07",
+          "observed_bytes": 21893,
+          "matches": true
+        },
+        {
+          "path": "browse/structure/act-history/comparisons/cistercian-1606-1657-pater-noster-first-chant.json",
+          "url": "https://mystago.gy/browse/structure/act-history/comparisons/cistercian-1606-1657-pater-noster-first-chant.json",
+          "sha256": "4c7db51ea770d3487a1ac2cef430bf79927f8f2c35f0f2852a7571f92a9899fa",
+          "bytes": 346520,
+          "http_status": 200,
+          "observed_sha256": "4c7db51ea770d3487a1ac2cef430bf79927f8f2c35f0f2852a7571f92a9899fa",
+          "observed_bytes": 346520,
+          "matches": true
+        },
+        {
+          "path": "sources/index.html",
+          "url": "https://mystago.gy/sources/index.html",
+          "sha256": "0bf4015ab2ac885f8d8c83e8a43ebcb961e188a19604eb3944a595254d74359c",
+          "bytes": 7968,
+          "http_status": 200,
+          "observed_sha256": "0bf4015ab2ac885f8d8c83e8a43ebcb961e188a19604eb3944a595254d74359c",
+          "observed_bytes": 7968,
+          "matches": true
+        },
+        {
+          "path": "sources/sources.js",
+          "url": "https://mystago.gy/sources/sources.js",
+          "sha256": "45c86252478782dd5a0cae6bf11c278b2c2fcdfb3aa9f303f9f93ee684fe7d2c",
+          "bytes": 33787,
+          "http_status": 200,
+          "observed_sha256": "45c86252478782dd5a0cae6bf11c278b2c2fcdfb3aa9f303f9f93ee684fe7d2c",
+          "observed_bytes": 33787,
+          "matches": true
+        },
+        {
+          "path": "browse/structure/sources/index.json",
+          "url": "https://mystago.gy/browse/structure/sources/index.json",
+          "sha256": "e6082b953db827c28b564cfc1e8865e7868a8f9ec40ca174b6db7d44a2e9fe3d",
+          "bytes": 984761,
+          "http_status": 200,
+          "observed_sha256": "e6082b953db827c28b564cfc1e8865e7868a8f9ec40ca174b6db7d44a2e9fe3d",
+          "observed_bytes": 984761,
+          "matches": true
+        },
+        {
+          "path": "browse/structure/sources/editions/cistercian-order/missale-cisterciense/1606-paris-marnef-cavellat-1606.json",
+          "url": "https://mystago.gy/browse/structure/sources/editions/cistercian-order/missale-cisterciense/1606-paris-marnef-cavellat-1606.json",
+          "sha256": "77468b4650ef8b0d712b312e6909ea828ce16ace1c9c2ff68b02115090521e30",
+          "bytes": 498479,
+          "http_status": 200,
+          "observed_sha256": "77468b4650ef8b0d712b312e6909ea828ce16ace1c9c2ff68b02115090521e30",
+          "observed_bytes": 498479,
+          "matches": true
+        },
+        {
+          "path": "browse/structure/sources/editions/cistercian-order/missale-cisterciense/1657-1657-paris-cramoisy-lyon-google-observed-setting.json",
+          "url": "https://mystago.gy/browse/structure/sources/editions/cistercian-order/missale-cisterciense/1657-1657-paris-cramoisy-lyon-google-observed-setting.json",
+          "sha256": "04a169491a361cec8a56662477849af21a4369ae0f57c98b3c15c17747a46c55",
+          "bytes": 5505,
+          "http_status": 200,
+          "observed_sha256": "04a169491a361cec8a56662477849af21a4369ae0f57c98b3c15c17747a46c55",
+          "observed_bytes": 5505,
+          "matches": true
+        },
+        {
+          "path": "browse/structure/sources/editions/catholic-church/sacramentarium-veronense/1896-feltoe-1896.json",
+          "url": "https://mystago.gy/browse/structure/sources/editions/catholic-church/sacramentarium-veronense/1896-feltoe-1896.json",
+          "sha256": "bfc878e3652991dd3fee8f5b34a0395481e8a8d0f69c8cc82620cdc75fa01535",
+          "bytes": 5323,
+          "http_status": 200,
+          "observed_sha256": "bfc878e3652991dd3fee8f5b34a0395481e8a8d0f69c8cc82620cdc75fa01535",
+          "observed_bytes": 5323,
+          "matches": true
+        },
+        {
+          "path": "browse/structure/documents/corpus.json",
+          "url": "https://mystago.gy/browse/structure/documents/corpus.json",
+          "sha256": "534aaf87be1d4d00d969e0d49f562b26db5f944a96d956bd1da0f86ec8f30fdb",
+          "bytes": 1008672,
+          "http_status": 200,
+          "observed_sha256": "534aaf87be1d4d00d969e0d49f562b26db5f944a96d956bd1da0f86ec8f30fdb",
+          "observed_bytes": 1008672,
+          "matches": true
+        },
+        {
+          "path": "shared/fonts/triptych-punctus-elevatus.woff2",
+          "url": "https://mystago.gy/shared/fonts/triptych-punctus-elevatus.woff2",
+          "sha256": "93fdffe7318755b04f77de90b1bec035513b60a8c4315369344ea9aee9b4abac",
+          "bytes": 1536,
+          "http_status": 200,
+          "observed_sha256": "93fdffe7318755b04f77de90b1bec035513b60a8c4315369344ea9aee9b4abac",
+          "observed_bytes": 1536,
+          "matches": true
+        },
+        {
+          "path": "shared/fonts/OFL-Junicode.txt",
+          "url": "https://mystago.gy/shared/fonts/OFL-Junicode.txt",
+          "sha256": "6078ed582d53a416f761fd2fdeb384320b69191bf316234c21aabe71e2416822",
+          "bytes": 4356,
+          "http_status": 200,
+          "observed_sha256": "6078ed582d53a416f761fd2fdeb384320b69191bf316234c21aabe71e2416822",
+          "observed_bytes": 4356,
+          "matches": true
+        },
+        {
+          "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
+          "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
+          "sha256": "a02a5ab3821cf20d311d110a92db1fc645970954e17598a7322d167cb1b90017",
+          "bytes": 459060,
+          "http_status": 200,
+          "observed_sha256": "a02a5ab3821cf20d311d110a92db1fc645970954e17598a7322d167cb1b90017",
+          "observed_bytes": 459060,
+          "matches": true
+        },
+        {
+          "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
+          "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
+          "sha256": "f4ad1882125c8f7bfc0984c4ba347b2bd5662d5b0dbd43f424d3dc5bd77a625e",
+          "bytes": 608213,
+          "http_status": 200,
+          "observed_sha256": "f4ad1882125c8f7bfc0984c4ba347b2bd5662d5b0dbd43f424d3dc5bd77a625e",
+          "observed_bytes": 608213,
+          "matches": true
+        },
+        {
+          "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.pdf",
+          "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.pdf",
+          "sha256": "d51e0a4fb26291b9066d5dec99690bf75e9e2b7f10648a12360805407947be94",
+          "bytes": 480091,
+          "http_status": 200,
+          "observed_sha256": "d51e0a4fb26291b9066d5dec99690bf75e9e2b7f10648a12360805407947be94",
+          "observed_bytes": 480091,
+          "matches": true
+        },
+        {
+          "path": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.pdf",
+          "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.pdf",
+          "sha256": "444c7e0c622e97a87146cd7553db1fc40f6d416638cc700bc2c75b1879dc17cc",
+          "bytes": 474184,
+          "http_status": 200,
+          "observed_sha256": "444c7e0c622e97a87146cd7553db1fc40f6d416638cc700bc2c75b1879dc17cc",
+          "observed_bytes": 474184,
+          "matches": true
+        }
+      ]
+    },
+    "bookkeeping_boundary": "These observations establish publication and live verification of implementation commit 191d2fa187df1ea7c02dd01a2ec67fa8d37e7dc0. The later documentation-only commit carrying this receipt triggers a separate automatic Pages attempt; this receipt does not claim that later run has succeeded."
+  }
 }

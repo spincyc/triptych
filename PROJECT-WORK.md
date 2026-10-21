@@ -62,7 +62,7 @@ authorized rebasing this work and pushing it to `main`, including the automatic
 Pages deployment attempt that a main push triggers.
 The full project remains **in progress**.
 
-**Main integration authorized, 21 October 2026.** The 35-commit feature line
+**Main integration published and verified live, 21 October 2026.** The 35-commit feature line
 was rebased onto `edab7fee54e76daac24a1ec6c69141935c32f4c2`, preserving the
 concurrent publication work. The combined source library keeps main's canonical
 Feltoe facsimile and redirects the feature's duplicate identity to the identical
@@ -70,9 +70,22 @@ Feltoe facsimile and redirects the feature's duplicate identity to the identical
 their evidence states, loci and consumer interpretations remain unchanged.
 The combined inventories retain 162 pending source-family review units and zero
 accepted families. The [integration record](workflows/reviews/missal-batch3-2026-10-20/main-integration.json)
-records this reconciliation and the publication checks. Earlier branch-only
-delivery statements below describe their dated batches. No whole-book,
-physical-print or full all-rite completion follows from main integration.
+records this reconciliation and the publication checks. Implementation
+`191d2fa187df1ea7c02dd01a2ec67fa8d37e7dc0` reached `origin/main` through an
+ordinary fast-forward push. Pages run
+[`39566362084`](https://github.com/spincyc/triptych/actions/runs/39566362084)
+and repository hygiene passed for that commit. All 22 selected live routes
+returned HTTP 200 and matched the verified local artifact in byte length and
+SHA-256, covering History, native texts and comparison, Sources, document data,
+font assets and four affected PDFs. The workspace remains on
+`feature/missal-timeline`, now tracking `origin/main`; the original published
+feature ref is retained. The initial HTTP 500 push left main unchanged; its
+successful retry used a temporary transport ref, now removed, whose transport
+commit is not an ancestor of main. This receipt concerns the implementation
+deployment; the later documentation push triggers a separate automatic run.
+Earlier branch-only delivery statements below describe their dated batches.
+No whole-book, physical-print or full all-rite completion follows from main
+integration.
 
 **Next phases authorized after cold review, 2026-10-20.** The maintainer
 requested execution of the outstanding phases with as many useful independent
