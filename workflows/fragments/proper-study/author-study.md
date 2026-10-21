@@ -14,7 +14,7 @@ two to five coherent whole-formulary interpretations, each with its own four
 senses, and a short concluding comparison. Develop the actual exegetical moves
 of multiple checked Fathers or saints, as the three-document profile defines
 them, within each interpretation. Reader-first
-titles describe what the readings find, not their technical manifest keys.
+titles describe what the interpretations find, not their technical manifest keys.
 
 Use `research/interpretations.md` as the evidence map. Preserve material
 qualifications and disagreements where they change a claim. Do not invent a
@@ -31,7 +31,13 @@ do not return each reading to the same application through different headings.
 Teach the question, the appointed words that raise it, and the witness's
 inference before drawing its consequence, as the profile's pedagogy standard
 requires. Concrete textual detail should carry the exposition; repeated
-abstract conclusions do not deepen it.
+abstract conclusions do not deepen it. Show each element's contribution where
+the argument uses it, and do not open or close an interpretation with a claim
+or a roll call that every element takes its place in one movement; the
+profile's expansive-study section says why. Write every reader sentence to
+`guidance/editorial.md`, "Say what the texts say, plainly": no maxim closers,
+asserted significance, antitheses against positions nobody holds, texts
+credited with the study's inferences, or production vocabulary in reader prose.
 
 Create or revise the full schema-2 `proper-components.toml`, declaring future
 synthesis and homily components as well as the actual research files. The
@@ -43,7 +49,7 @@ the future concise opening roles. Declare
 `authority_contract = "authority-standing-v1"` and give each lane
 `carrying_authors`: the authors, drawn from its `authors` and named as
 `src/sources/inventories/author-standing-v1.toml` names them, whose standing
-lets them carry the reading. Follow the checker and owning profile for exact
+qualifies them to support the interpretation. Follow the checker and owning profile for exact
 fields. Each interpretive lane
 is a separate component. Keep shared source ownership and references explicit.
 Declare `chronology_presentation = "orientation-v2"` for the concise table.

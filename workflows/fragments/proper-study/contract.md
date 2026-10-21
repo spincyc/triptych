@@ -10,7 +10,9 @@ quotas do not apply to this workflow, and nothing in it reinstates them; a
 gallery or a proposal appendix is no substitute for an interpretation's
 argument. Read the applicable 1962 or postconciliar profile for identity, text
 control, rights, source research, and branches. Universal editorial and
-repository guidance continues to govern. The canonical leaf is `DOCUMENT_ROOT`
+repository guidance continues to govern. Read `guidance/editorial.md`, "Say
+what the texts say, plainly", before writing or reviewing any reader-facing
+sentence. The canonical leaf is `DOCUMENT_ROOT`
 in this packet.
 
 Produce one expansive source-first study, one concise study, and one standalone

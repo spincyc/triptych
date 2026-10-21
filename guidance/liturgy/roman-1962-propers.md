@@ -442,6 +442,13 @@ and both are revised there and not here. Four deltas apply to this genre.
   Possibilities` are qualification by design, and the declarative rule does
   not reach them. What it reaches is their register leaking into the body.
 
+The register rule, "Say what the texts say, plainly" in
+[`guidance/editorial.md`](../editorial.md#say-what-the-texts-say-plainly),
+governs the same reader-facing words and has no delta for this genre. In `The
+Propers: Themes and Movement` in particular, real synthesis is textual detail
+and the Fathers' reasoning; a connecting sentence saying that a text turns,
+sharpens, measures or orders the Mass is not synthesis.
+
 **The two paragraphs on `Notable and Quotable` and the two on `Interpretive Possibilities` below govern proper guides in *both* collections.** [The postconciliar profile](postconciliar-propers.md) carried them verbatim until 2026-08-01 and now states only its option-branch deltas against them; revise them here and nowhere else.
 
 `The Propers: Notable and Quotable` is a required compact gallery of three to five non-obvious afterlives of wording from the scriptural propers. Each entry pairs a short exact phrase from an appointed biblical text with a documented later use that changes its register or force: cultural, humorous, ironic, idiomatic, literary, political, institutional, visual, scientific, commercial, or another surprising reuse. Identify the proper, later user or work, context and exact locus; then explain the turn in meaning. Prefer a varied gallery and include humorous, ironic, or deliberate reversal where a verified example exists.

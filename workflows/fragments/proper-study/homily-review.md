@@ -7,9 +7,17 @@ pertinent pedagogy, concrete pastoral fruit and hope. A fluent generic sermon
 that could fit any Sunday fails. So does a lecture assembled from quotations.
 
 Apply the three-document profile's text-substitution test to the argument's
-actual movement, not merely its quotations. Identify whether the decisive turn
-comes from the text and changes the listener's understanding. Judge meaningful
-selection; do not require a sermon to enumerate every minor proper.
+actual movement, not merely its quotations. Identify what the text changes in
+the listener's understanding and whether the speech states it as what the text
+says. Judge meaningful selection; do not require a sermon to enumerate every
+minor proper. Listen for the devices the profile excludes: maxim closers, a
+recurring tag or motif, relatable inventories of the listeners' lives,
+slogans and stock calls, emphatic fragments, and questions answered in the
+next breath. A sermon built on them fails as surely as a generic one; a
+device the text itself supplies, used once, does not. Listen equally for the
+opposite failure: a speech that hands every point to a named authority,
+strings Latin a listener cannot follow, dates its sources aloud, or stops
+without concluding is a lecture assembled from quotations.
 
 Check adult-parish language, sentence length, oral transitions, recoverable
 images and precise theological claims. The body must be speakable verbatim

@@ -761,3 +761,70 @@ The driver's staging of the installed web edition, of the new source
 projection file and of this stage's other tracked writes; the terminal
 publication gates; and, after acceptance, the driver's refresh of the Claude
 publication inventory and the source-family ledger.
+
+## Register revision, 21 October 2026 (outside a workflow run)
+
+The maintainer judged the three documents to read with unearned profundity,
+empty significance, jargon and hokey application. The cause, the guidance and
+`proper-study` version-14 changes, and the verification are recorded in
+`workflows/reviews/register-remediation-2026-10-21/RECORD.md`. This entry
+records what changed in this leaf. No workflow run produced it; the
+generation record keeps run `7397c12187517ff2` as the provenance of the
+documents and adds a contribution for the revision.
+
+- **Scope.** Wording of reader prose only, in the study's sections 00, 05, 10,
+  20, 30, 40, 50 and the notes of 80; the concise study's 03 (one phrase), 04,
+  10 and 90; the homily's spoken body and terminal note; and the subtitle and
+  PDF subject strings of the three entrypoints. The interpretations are called
+  interpretations in reader prose. The closing walks of the three
+  interpretations no longer certify that every text takes its place; they say
+  what each text says and which author bears on it. The homily's Monday
+  device, maxim closers and stock call are gone; it makes one response, in the
+  second person, from Augustine's two places for the kings.
+- **Preserved.** Every quotation, Latin phrase, work, locus and page reference
+  of the accepted text, except the comparison's catalogue of which Father
+  contributes to which interpretation (those works are cited elsewhere) and
+  six quoted table-column labels in the date notes. No generated chronology
+  row, row id, date or chronology macro changed.
+- **Corrections found in review.** An independent fidelity review found
+  three errors the first revision introduced (an inference credited to
+  Augustine, the study's "bounded by place" gloss credited to Aquinas, two
+  stale cross-references in the homily note) and twelve imprecisions; a second
+  cold review of the corrections found five residues and three further
+  instances, all corrected. Two inaccuracies older than the revision were also
+  corrected: Pilate's first question inside the hall is "Art thou the king of
+  the Jews?" (Jn 18:33), and the Secret asks that the Son give unity and peace
+  (*ipse… concedat*).
+- **Extent.** Reader-prose words, before and after: expansive study sections
+  00–50, about 15,600 → 15,700; concise themes and commentary, about 6,500 →
+  6,450; homily spoken body about 1,460 → 1,440 (about 11 to 12 minutes at an
+  unhurried 120 to 130 words a minute, by arithmetic alone).
+- **Builds.** 33, 12 and 4 physical pages, no undefined references or
+  overfull boxes. Concise pages 1–5 keep the fixed opening; pages 3–4 are full.
+  Every page of the three PDFs was inspected as a raster; no blocking defect.
+- **Checks.** `check-proper-components --phase artifacts` passes for the three
+  editions. `check-content-preflight` reports the same errors as before the
+  revision in every edition: the chronology record and annotations are no
+  longer what the chronology corpus produces, an owner matter that predates
+  this revision. house-voice, structural-meta-labels and references-used pass.
+  The web edition is regenerated under Markdown 3.10.3;
+  `check-web-editions-current`, `check-release-bindings`,
+  `check-document-catalogue`, `check-web-edition` and the scoped
+  `public-alpha check` pass.
+- **Not done.** No push, merge or deployment.
+
+### The homily and themes pages replaced, 21 October 2026
+
+At the maintainer's direction the homily's spoken body and note and the
+concise study's themes pages were replaced by drafts written from scratch
+under the final guidance (`workflows/reviews/register-remediation-2026-10-21/`,
+"Installing the from-scratch homily and themes pages"). The homily follows the
+second interpretation with the first's consenting prisoner and the third's
+Communion verse; its one response is a prayer, from the Introit's verse, over
+whatever charge each hearer holds. It runs to about 1,530 spoken words, some
+11.8 to 12.8 minutes at 120 to 130 words a minute by arithmetic alone; it has
+not been delivered or timed. The concise commentary was trimmed where it
+repeated the new themes pages. Two fidelity reviews checked the installed
+texts; their findings are corrected. The PDFs are 33, 12 and 4 pages; the
+checks named above give the same results.
+

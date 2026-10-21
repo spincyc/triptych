@@ -10,7 +10,7 @@ available for legacy schema-1 work. The current three-document contract
 restores the established first four pages for the concise companion, while
 its remaining argument and the expansive study follow their distinct roles. Read
 `guidance/liturgy/propers-three-documents.md` for the owning standard. The
-`proper-study` workflow is at version 13. The version paragraphs below say what
+`proper-study` workflow is at version 14. The version paragraphs below say what
 each bump changed.
 
 The driver grammar is unchanged:
@@ -309,6 +309,23 @@ page ranges, stage order, effort and cold reviews remain required. This is a
 different authorized publication scope, not a way to retry rejected text
 generation. Seed a fresh version-13 run; preserve historical accepted and
 blocked runs and their original verdicts. No acceptance transfers from them.
+
+Version 14 applies the 21 October 2026 register correction. The maintainer
+found the Claude 1962 Christ the King study, concise study and homily still
+written with unearned profundity, empty significance, jargon and hokey
+application, after every stage had passed them. `guidance/editorial.md`,
+"Say what the texts say, plainly", now names the defect, and the contract,
+the three authoring fragments and the shared review fragment point every
+author and reviewer at it; `review.md` makes register a reviewed criterion,
+with a recurring pattern blocking. `author-study` and `study-review` stop
+treating a closing roll call of every element as coverage, `derive-synthesis`
+and `synthesis-review` refuse thematic pages filled with coherence claims, and
+`derive-homily` and `homily-review` replace the old list of rhetorical devices
+with the profile's plain-teaching rule. No screen or gate changed. Stage
+order, effort, page ranges and source requirements are unchanged. Seed a
+fresh version-14 run to adopt it; preserve historical runs and their verdicts.
+The evidence and the decisions are in
+`workflows/reviews/register-remediation-2026-10-21/RECORD.md`.
 
 A driver archives a terminal run into its leaf with
 `tools/proper-study-run-archive <run-id> --cycles <cycles-record>`, which

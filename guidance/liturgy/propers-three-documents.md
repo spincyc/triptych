@@ -296,7 +296,7 @@ and, in postconciliar work, the public-domain study translation rather than the
 approved proclaimed wording. Titles name the Missal and Sunday precisely.
 
 Develop two to five substantial interpretations in sequence, with descriptive
-titles that say what each reading finds. Each must:
+titles that say what each interpretation finds. Each must:
 
 - state a unifying interpretation of the whole formulary;
 - explain the literal contexts and the actual reasoning of its principal
@@ -306,6 +306,19 @@ titles that say what each reading finds. Each must:
 - address the strongest relevant difficulty or alternative; and
 - conclude with its own distinct distillation of the literal, allegorical,
   moral, and anagogical senses.
+
+An element's contribution is shown where the argument uses it: what the text
+says, keeps or omits, and which Father's reasoning bears on it. A text the
+interpretation touches lightly gets a clause, not a manufactured role. Do not
+open or close an interpretation by declaring that every element takes its
+place in one movement, and do not certify coverage with a closing roll call
+that gives each text a part. All three interpretations of the Claude 1962
+Christ the King study ended in such a roll call ("The **Offertory** is the
+reading's centre", "The **Preface** gives the reading its order"), and those
+pages carried most of the study's asserted significance and texts credited
+with its own inferences. In reader prose these are interpretations: "the
+first reading" already names the Epistle. The register of every sentence is
+governed by [Say what the texts say, plainly](../editorial.md#say-what-the-texts-say-plainly).
 
 The literal sense concerns what the texts assert in context; the allegorical
 sense their fulfillment in Christ and his body; the moral sense the life of
@@ -443,8 +456,14 @@ historical evidence in the expansive study, not in microscopic table cells.
 
 Physical pages 3 and 4 contain **The Propers: Themes and Movement**, a substantive
 two-page source-grounded argument. Open with a direct thesis and develop the
-whole formulary's movement. Both pages must earn their extent through readable
-argument rather than decorative space or displaced apparatus. Physical page 5
+Mass's movement through its texts. Both pages must earn their extent through readable
+argument rather than decorative space or displaced apparatus. Fill them with
+textual detail and the Fathers' reasoning — what each text says, keeps and
+omits, and who reads it how — not with connecting sentences that say a text
+turns, sharpens, measures or orders the Mass. Orient the reader: follow the
+Mass in an order the reader can track, translate Latin, give a Father's point
+plainly where his exact words are not needed, and keep one argument to a
+sentence. Two pages of authorities with one-line verdicts orient no one. Physical page 5
 begins the developed interleaved commentary. Its cross-proper questions deepen
 and compare the earlier movement instead of repeating it. This restores only
 the opening sequence; the remaining pages follow this three-document contract.
@@ -498,14 +517,36 @@ appointed texts say and why, including a meaningful relation between Gospel,
 other Scripture, and the Mass's prayer. Let the larger research inform the
 whole without reciting an inventory of every minor proper.
 
-Use pedagogical techniques where they serve this text and this audience:
-concrete imagery, a well-formed question, narrative development, contrast,
-analogy with its limits, plain explanation of a difficult word, measured
-repetition, a return to the opening image, and a specific practicable response.
-The requirement is pertinent pedagogy, not every technique in every homily.
-Move from attention through understanding toward conversion and hope. Do not
-manufacture anecdotes, quotations, personal experiences, miraculous events,
-clerical identity, or a Father's approval of the editor's application.
+Teach plainly. Tell the scene, explain a difficult word, set side by side the
+texts the Mass sets side by side, and give the Fathers' arguments in the
+preacher's own plain speech. The preacher's voice carries the argument:
+quotations are few and short, chosen where the listener needs the words
+themselves; a Latin word appears only when the speech explains it; dates and
+credentials of authorities belong in the note. Speak to the assembly and end
+on the conclusion the argument has reached; a speech that hands every point to
+an authority is a lecture assembled from quotations, however plain its
+sentences. Write for one hearing: a sentence carries one idea a listener can
+hold, and a paragraph one step. Gloss only what a congregation that hears this
+Mass every year would not know; explaining the Gradual to it is condescension.
+The response grows out of the argument already made: if introducing it needs a
+subject the speech has not been about, it is the wrong response. It is spoken
+to the people present, in the second person, not described in the third
+("anyone who holds authority can…"). Move from attention through understanding toward conversion and
+hope. One practicable response may close the application; it comes from the
+text and is said once, in ordinary words. A device the text supplies, such as
+the Gospel's own question or the Introit's acclamation recalled at the end, may
+be used once. Rhetorical devices are not requirements to collect. Until
+21 October 2026 this paragraph listed them (a well-formed question, contrast,
+measured repetition, a return to the opening image, a specific practicable
+response); both providers' Christ the King homilies worked through that list
+as a checklist and closed on the same "This week, choose one place…" formula.
+The speech uses no maxim closers, recurring tag or motif, relatable inventory
+of the listeners' lives, slogan, or stock call such as "take one thing out of
+this church", and the universal register rule,
+[Say what the texts say, plainly](../editorial.md#say-what-the-texts-say-plainly),
+governs every sentence of it. Do not manufacture anecdotes, quotations,
+personal experiences, miraculous events, clerical identity, or a Father's
+approval of the editor's application.
 
 Separate a brief source-and-delivery note from the spoken body. Keep inline
 scholarly apparatus and reader instructions out of the speech; name a Father
@@ -522,9 +563,10 @@ daily life. This governs the homily's movement without turning it into a
 scholarly lecture. It supplies no claim that an AI has prayed, heard this
 congregation, or exercised the ordained ministry.
 
-The homily's governing question, image and decisive turn should grow from the
-appointed texts. A familiar pastoral problem may open it, but the exegesis must
-change how that problem is understood and answered. In the production audit,
+The homily's governing question and image should grow from the appointed
+texts. A familiar pastoral problem may open it, but the exegesis must change
+how that problem is understood and answered; the speech states that change as
+what the text says, not as a staged turn. In the production audit,
 identify that change and the textual detail that makes it possible. Review
 whether the argument would substantially survive replacing this Sunday's
 readings with unrelated ones; merely naming the proper or adding a verse does
@@ -647,7 +689,9 @@ Manifests accepted without the declaration keep their original validation.
 Cold reviewers decide those semantic questions. Acceptance requires real
 source support, coherent and distinct interpretations, truthful comparisons,
 four senses for each interpretation, meaningful whole-formulary coverage,
-genuine concision, a speakable exegetical homily, and satisfactory composition.
+genuine concision, a speakable exegetical homily, prose that meets
+[Say what the texts say, plainly](../editorial.md#say-what-the-texts-say-plainly),
+and satisfactory composition.
 The research and study reviewers must test a consequential textual difficulty
 on which an interpretation turns against the actual cited witness, including
 the reasoning that makes the

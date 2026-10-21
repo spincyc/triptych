@@ -7,6 +7,29 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-21.
 
+## Register remediation, 2026-10-21
+
+<!-- promised-deliverable: register-remediation-2026-10-21 -->
+
+**In progress: installing the from-scratch homily and themes pages, then pushing to main at the maintainer's direction.** The maintainer reported that produced
+documents still fall into unearned profundity, empty significance, jargon,
+ham-fisted hokiness and little subtlety, naming the Claude 1962 Christ the King
+documents, and asked for the cause, a remediation, its execution on those
+documents, a sanity check and a cold review. Decisions taken on 21 October
+2026: revise the published documents in place and also test generation from
+scratch; reframe the homily's device list rather than keep it; bump
+`proper-study` to version 14 so review fragments carry a register criterion;
+call a study's interpretations interpretations, not readings, in reader prose.
+The guidance and version-14 workflow are written, the three Christ the King
+documents are revised and their web edition, catalogue and release bindings
+regenerated, and the verification — version-14 reviews, from-scratch
+generation, blind comparisons, two fidelity reviews and the mechanical gates
+— is in [the remediation record](workflows/reviews/register-remediation-2026-10-21/RECORD.md).
+Open for the maintainer: whether to install the from-scratch homily and
+themes pages that every final judge preferred, and whether to revise other
+leaves with the same defect. No push, merge or deployment is part of this
+work.
+
 ## Missal reader interrupted-work recovery, 2026-10-21
 
 <!-- promised-deliverable: missal-reader-interrupted-recovery-2026-10-21 -->
@@ -73,6 +96,19 @@ and repository-hygiene checks pass. The integrated candidate passes
 audit, normal fast-forward push, and automatic Pages verification remain pending.
 Earlier annual and browser results above apply to the unchanged reader
 implementation; they have not been repeated merely for this metadata merge.
+The final fast-forward guard then found four additional published commits
+through `90e13e78fd107e3649fe97870f8a76da39e52c5a`. Their editorial and workflow
+guidance, reviewed Claude Christ the King revisions, and separate register
+remediation promise are retained without changing those source documents.
+Both workstreams' register sections and requirements survive the merge.
+The combined publication-inventory snapshot and document-catalogue binding are
+reconciled from the merged owners. The three incoming PDFs rebuilt at 33, 12
+and 4 pages with settled logs and no final layout or reference warnings.
+All three publication gates pass again for this later candidate. Outgoing
+whitespace and repository hygiene pass; the incoming production-review record
+retains its already-published blank line at EOF. No reader-model code changed
+in this additional delta. Final range disclosure and remote verification still
+control publication.
 The full annual text-completeness promise remains separate and open;
 structural renderability must not stand in for missing source text.
 

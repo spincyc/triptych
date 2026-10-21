@@ -7,11 +7,20 @@ combination. The speech need not inventory every minor proper, but its
 exegetical argument must meaningfully join the Gospel, other appointed
 Scripture, and the Mass's prayer.
 
-Explain what the texts say and why it matters. Move from attention and
-understanding toward conversion and hope. Use pertinent teaching techniques:
-concrete imagery, a question, narrative development, lucid explanation,
-measured repetition, a return to an opening image, or a practicable response.
-Use only those this argument needs. Do not manufacture anecdotes, personal
+Explain what the texts say and what follows from them for this assembly. Move
+from attention and understanding toward conversion and hope. Teach plainly:
+tell the scene, explain a difficult word, set side by side the texts the Mass
+sets side by side. One practicable response may close the application, drawn
+from the text and said once. Devices are not requirements; follow the
+profile's homily section and `guidance/editorial.md`, "Say what the texts say,
+plainly". The speech has no maxim closers, recurring tag or motif, relatable
+inventory of the listeners' lives, slogan, stock call, emphatic fragment, or
+question answered in the next breath. Nor is it a lecture: the preacher's own
+voice carries the argument, quotations are few and short, Latin appears only
+where the speech explains it, authorities' dates stay in the note, and the
+speech ends on its conclusion, spoken to the assembly. Write for one hearing,
+gloss only what a regular congregation would not know, and let the one
+response grow from the argument the speech has made. Do not manufacture anecdotes, personal
 experience, clerical identity, miraculous stories, or attributed quotations.
 
 Apply the three-document profile's test of how the appointed text changes the

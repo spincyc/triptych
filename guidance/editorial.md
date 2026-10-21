@@ -154,7 +154,9 @@ The same sentence is the defect when its subject is the guide, the reading, or
 an evidence class: "this guide does not press the typology", "the reading is
 documented reception, not a replacement for the literal sense". The first
 tells the reader something about the material; the second tells the reader
-something about the writer.
+something about the writer. A text made the subject still takes only the verbs
+of what a text does; [Say what the texts say, plainly](#say-what-the-texts-say-plainly)
+owns that boundary.
 
 ## Reader-first structure
 
@@ -209,7 +211,7 @@ another, the internal decision rules followed, the research process
 undertaken, the interpretive policy applied, the boundaries of the production
 workflow, or why the writer is entitled to make the claim at all.
 
-Write "The Introit establishes exile as the formulary's opening condition" and
+Write "The Introit sings the angels' acclamation of the slain Lamb" and
 "Augustine reads the psalm as the cry of the pilgrim Church". Do not write "It
 is important to distinguish", "The guiding principle here is",
 "Methodologically, this section", "We have chosen to emphasize", or "This
@@ -288,6 +290,117 @@ against the Latin bodies once ended with a worker deleting `es`, `Da`, `O` and
 false positives in its tests and why this screen carries a negative corpus in
 `tools/tests/test_house_voice.py`. Add a rule to it only with the prose it must
 not refuse.
+
+## Say what the texts say, plainly
+
+Reader prose holds attention with facts, sources and inferences. It does not
+borrow the sound of insight. The defect this section names is fluent and often
+handsome, and it is the habit AI drafting falls into most readily: paragraphs
+built to land on a maxim, contrasts drawn against positions nobody holds,
+claims that a text is central or that everything coheres, and the production's
+own vocabulary used as if the reader shared it. On 21 October 2026 the
+maintainer named it — "unearned profundity, empty significance, jargon,
+ham-fisted hokiness, little subtlety" — in the Claude 1962 Christ the King
+study, concise study and homily, which every rule, screen and review then in
+force had passed
+(`workflows/reviews/register-remediation-2026-10-21/RECORD.md`).
+
+The tests below apply to every sentence written in the work's own voice.
+Quotation is never the defect, and neither is a source's own paradox or
+antithesis reported as the source's.
+
+- **Each sentence adds something.** It gives the reader a fact, a source's
+  argument, or a step of inference not already on the page. A paragraph ends
+  when its information ends. A closing sentence that restates the paragraph
+  as a maxim, paradox, chiasmus or pun is cut, not polished. Delete the last
+  sentence of a paragraph: if nothing is lost, it was the defect. "Victorinus
+  … it was just that he be appointed heir and possess the human members. The
+  Lamb receives an inheritance by dying, and the inheritance is mankind" ends
+  one sentence late. So does "That is how a bound prisoner can claim the whole
+  earth. There is no Monday outside his kingdom."
+- **Show significance; do not assert it.** Do not tell the reader that a text
+  is central, that a feast turns on it, that it gives the Mass its order, that
+  every text takes its place in one movement, or that a verse is the whole in
+  miniature. Where importance is a real claim, its evidence is the sentence:
+  say what the text does and who reads it that way. "Then the words on which
+  the feast turns:" is "Jesus answers:".
+- **Deny only what someone holds.** A "not X but Y" needs an X that a source,
+  the text, or a reader with good reason puts forward; otherwise state Y.
+  "The inheritance is not territory. It is the nations baptized and taught"
+  is "The inheritance is the nations baptized and taught." The rule under
+  [Evidence and claims](#evidence-and-claims) against staging a weak claim
+  to reject it governs the same habit at the scale of an argument.
+- **A text does what texts do.** A liturgical or biblical text may be the
+  subject of what it actually does: say, ask, sing, quote, keep, omit,
+  repeat, address. It does not give an interpretation its order, supply a
+  moment, carry a reading, hold two ideas together, or name a connection that
+  someone else draws. When a link between texts is a Father's, name the
+  Father. When it is the study's own inference, state it once as an
+  inference — "taken this way, the Secret's offering is the asking of Ps 2:8"
+  — rather than crediting it to the Secret, and never by crediting it to a
+  Father instead: moving an inference from a text to a named author is the
+  same defect, and the fidelity reviews of the Christ the King revision found
+  it more than once. "The Preface gives the reading its
+  order" is "The Preface puts the events in this order: the Son is anointed,
+  offers himself on the cross, and only then hands over the kingdom." A homily
+  is the exception to the marker, not to the rule: the preacher draws such a
+  link in his own voice and the terminal note records it as the homily's own,
+  so "we may take that unity as the healing of the wound" is a footnote spoken
+  aloud.
+- **Use the reader's words.** The production's working vocabulary is not the
+  reader's: "formulary", "element", "lane", "witness" as a term of art,
+  "carry", "join", "govern", "movement", "grammar" as a metaphor, and
+  "reading" for one of a study's interpretations, which collides with the
+  Mass's own readings. Write "the Mass", "the texts", "the Collect", "this
+  interpretation", or the Father's name. Terms of art the subject needs —
+  Introit, Secret, pericope, anagogical, hypostatic union — stay, explained
+  once where they first matter. Apparatus may use the precise term.
+- **Say it once.** Do not paraphrase a quotation the reader has just read,
+  restate a thesis in a lead, a closer and a summary, or carry a phrase from
+  section to section as a refrain. A closing comparison compares; it does not
+  re-argue each section.
+- **Let emphasis come from content.** No emphatic fragments ("From hence."),
+  no italics for stress unless the argument is about that word, no "think
+  what follows", "listen", or "notice", and no question answered in the next
+  breath. A question belongs where the text raises it and the paragraph then
+  works it out.
+- **Earn the application.** Direct address and a concrete response belong in
+  a homily where the text supports them. A relatable inventory of the
+  listeners' lives, a recurring tag, a slogan or a stock call does not. The
+  [three-document profile](liturgy/propers-three-documents.md#the-homily)
+  owns the homily's rule.
+- **Plain is not flat.** The cure for ornament is argument, not a stack of
+  authorities. The writer still makes the argument in the work's own voice:
+  states the difficulty, says what a Father saw in the words and why it
+  answers, and draws the conclusion. Quote where the reader needs the words
+  themselves, no longer than the step needs, and otherwise give the Father's
+  point in plain sentences. Translate Latin when it first appears and leave
+  none for the reader to construe; keep dates and credentials for the
+  apparatus. One idea to a sentence. Keep concrete scenes, a question the
+  text itself raises, and an ending that concludes rather than stops. A run of
+  names with one-line verdicts, prose that hands every point to an authority,
+  and Latin tags strung through a sentence are the opposite failure, and a
+  reviewer reports them under the same criterion. A reviser who cuts an
+  inflated connecting sentence replaces it with the plain connection it was
+  gesturing at — the reason one text or Father bears on another — and does not
+  leave the quotations side by side. Mark an inference in ordinary words where
+  it is drawn; a fixed formula such as "Taken this way" repeated from paragraph
+  to paragraph is a new tic. The first from-scratch
+  homily and themes pages written to this section fell into it, and both
+  blind judges preferred the ornamented originals.
+
+These are judgements, not a word list. "Not of this world … not from hence" is
+the Gospel's own antithesis. One "formulary" in a definition or in the
+apparatus is accurate. A homily may open on the question the Gospel itself
+asks. A reviewer applies the tests by asking what each sentence tells the
+reader and whose inference it states.
+
+No screen refuses these forms, by decision. A lexical screen refuses fixed
+phrases and a writer routes around them; the house-voice screen's own repair,
+changing a sentence's grammatical subject, is part of how liturgical texts came
+to be credited with the study's inferences. The
+`proper-study` review fragments carry this section as a criterion from
+version 14, and register defects are judged and reported there.
 
 ## Illustration and page composition
 
