@@ -1,0 +1,207 @@
+collation_schema = 1
+record_type = "calendar-named-oration-appointment-collation"
+calendar = "roman-1962"
+target = "src/sources/calendars/roman-1962/propers.yaml"
+collated_on = "2026-10-20"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+artifact_byte_size = 82815941
+scope = "Twelve missing own oration appointments in the July–September sanctoral, plus the Eusebius referral and Sabina prayer-set selection needed by commemoration roles. No full-Mass chant or wording completeness claim."
+method = "The source appointments, classifications and boundaries were read directly from held 1962 page images. A Common terminal remains an inherited source identity; a printed own oration remains local even while its exact wording is unavailable."
+limits = "No body wording, translation, rights, calendar eligibility, execution mode, Ordinary, votive predicate or Common model is changed. Existing local wording is preserved."
+
+[eusebius_referral]
+mass = "comm-s-eusebii-confessoris"
+target_mass = "s-pauli-primi-eremitae-confessoris"
+pdf_page = 707
+printed_page = 626
+target_printed_page = 443
+own_collect_marginal_number = 3377
+terminal_oration_pdf_page = 525
+terminal_oration_marginal_numbers = [1932, 1935]
+qualifier = "praeter orationem sequentem"
+raster_sha256 = "a10c5eaf56413ac8b5f081fc2874facc5e70a6b56dadf520c556d47946e1ed40"
+terminal_raster_sha256 = "7fa84f426497462fcc6dff0579f86e92f378f8d86dc7cfdc734616f94b3d3ed8"
+
+[sabina_selection]
+mass = "comm-s-sabinae-martyris"
+common_mass = "commune-non-virginum-1"
+selected_option = "c1-singular"
+local_collect_pdf_page = 724
+local_collect_printed_page = 643
+local_collect_marginal_number = 3507
+local_collect_classification = "C"
+common_collect_pdf_page = 843
+common_collect_printed_page = "[35]"
+common_collect_marginal_number = 4433
+basis = "The local C-classified Collect is the singular Common Collect with the named saint; the own Secret and Postcommunion are separately marked P."
+raster_sha256 = "e1ac670dc7fbd566c4097af45fe531e0cc179d19fc95e3ab4f7a1c2f41d89800"
+common_raster_sha256 = "61287edc00d9bdc36a71195314a526a5524570f2bbf2a077f9a958ead592604f"
+
+[[appointments]]
+mass = "comm-s-nicomedis-martyris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+pdf_page = 739
+printed_page = 658
+column = "R"
+marginal_number = 3633
+source_classification = "P"
+origin = "direct-own-oration"
+next_boundary = "Postcommunio 3634"
+raster_sha256 = "b39141e8f0273f5ff83f94aa96a9ff702d1bc89dfd0003653547e9b55185fe57"
+
+[[appointments]]
+mass = "comm-s-nicomedis-martyris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+pdf_page = 739
+printed_page = 658
+column = "R"
+marginal_number = 3634
+source_classification = "P"
+origin = "direct-own-oration"
+next_boundary = "Die 16 septembris heading"
+raster_sha256 = "b39141e8f0273f5ff83f94aa96a9ff702d1bc89dfd0003653547e9b55185fe57"
+
+[[appointments]]
+mass = "comm-s-sabinae-martyris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+pdf_page = 724
+printed_page = 643
+column = "L"
+marginal_number = 3508
+source_classification = "P"
+origin = "direct-own-oration"
+next_boundary = "Postcommunio 3509"
+raster_sha256 = "e1ac670dc7fbd566c4097af45fe531e0cc179d19fc95e3ab4f7a1c2f41d89800"
+
+[[appointments]]
+mass = "comm-s-sabinae-martyris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+pdf_page = 724
+printed_page = 643
+column = "L"
+marginal_number = 3509
+source_classification = "P"
+origin = "direct-own-oration"
+next_boundary = "end of S. Sabinae block; next right column begins Die30augusti"
+raster_sha256 = "e1ac670dc7fbd566c4097af45fe531e0cc179d19fc95e3ab4f7a1c2f41d89800"
+
+[[appointments]]
+mass = "comm-ss-euphemiae-virginis-luciae-geminiani"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+pdf_page = 740
+printed_page = 659
+column = "R"
+marginal_number = 3641
+source_classification = "P"
+origin = "direct-own-oration"
+next_boundary = "Gospel 3642"
+raster_sha256 = "8e2d6d72befb403de8e84dc85047d98183bb61ad42cea1a621a083e2016949df"
+
+[[appointments]]
+mass = "comm-ss-euphemiae-virginis-luciae-geminiani"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+pdf_page = 741
+printed_page = 660
+column = "L"
+marginal_number = 3643
+source_classification = "P"
+origin = "direct-own-oration"
+next_boundary = "Postcommunio 3644"
+raster_sha256 = "d9322f8e1754e4d9363090e3f3c24262c48388e57606e88ae7dd8792eee7133e"
+
+[[appointments]]
+mass = "comm-ss-euphemiae-virginis-luciae-geminiani"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+pdf_page = 741
+printed_page = 660
+column = "L"
+marginal_number = 3644
+source_classification = "P"
+origin = "direct-own-oration"
+next_boundary = "Die 17 septembris heading"
+raster_sha256 = "d9322f8e1754e4d9363090e3f3c24262c48388e57606e88ae7dd8792eee7133e"
+
+[[appointments]]
+mass = "comm-ss-felicis-simplicii-faustini-beatricis"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+pdf_page = 687
+printed_page = 606
+column = "R"
+marginal_number = 3212
+source_classification = "P"
+origin = "direct-own-oration"
+next_boundary = "Postcommunio 3213"
+raster_sha256 = "663ebfabd33c20e5af76c62b3bba8aca61e23a055b169f01f469ba2bfa96dbcf"
+
+[[appointments]]
+mass = "comm-ss-felicis-simplicii-faustini-beatricis"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+pdf_page = 687
+printed_page = 606
+column = "R"
+marginal_number = 3213
+source_classification = "P"
+origin = "direct-own-oration"
+next_boundary = "Die 30 iulii heading on artifact688"
+raster_sha256 = "663ebfabd33c20e5af76c62b3bba8aca61e23a055b169f01f469ba2bfa96dbcf"
+
+[[appointments]]
+mass = "s-annae-matris-beatae-mariae-virginis"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+pdf_page = 683
+printed_page = 602
+column = "L"
+marginal_number = 3175
+source_classification = "unmarked"
+origin = "direct-own-oration"
+next_boundary = "Lectio 3176"
+raster_sha256 = "6e315f80351d0eae9a3c5be62aeaf6844669006f5ddff8e851e2ab95a2350fb8"
+
+[[appointments]]
+mass = "s-annae-matris-beatae-mariae-virginis"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+pdf_page = 684
+printed_page = 603
+column = "L"
+marginal_number = 3181
+source_classification = "unmarked"
+origin = "direct-own-oration"
+next_boundary = "Communion 3182 in right column"
+raster_sha256 = "e707bda30d262404f476057d23d7eef973dccbba9e473404ae2338b83c9580db"
+
+[[appointments]]
+mass = "s-annae-matris-beatae-mariae-virginis"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+pdf_page = 684
+printed_page = 603
+column = "R"
+marginal_number = 3183
+source_classification = "unmarked"
+origin = "direct-own-oration"
+next_boundary = "explicitly votive-only clause before Alleluia3184"
+raster_sha256 = "e707bda30d262404f476057d23d7eef973dccbba9e473404ae2338b83c9580db"

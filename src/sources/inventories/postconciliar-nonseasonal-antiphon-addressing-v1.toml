@@ -1,0 +1,192 @@
+schema = 1
+calendar = "postconciliar"
+record_type = "bounded-exact-citation-carrier-evidence"
+verified_on = "2026-10-21"
+source_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+source_artifact_sha256 = "e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml"
+scope = "Three exact source-reference decisions through the existing citation_divergences owner. Whole-verse Bible carriers only; no generic offset or locus-policy change."
+publication_boundary = "No modern antiphon text, part cuts, exact 2008 body, or publication-rights promotion is established."
+
+[[decisions]]
+mass = "saint-irenaeus-bishop-martyr-doctor-church"
+form_id = "main"
+proper = "Entrance Antiphon"
+source_ref = "Malachi 2:6"
+artifact_page = 117
+printed_page = 109
+source_locator_prefix = "none"
+evidence = "Source label and context read in the exact held page image; all seven held Bible wordings compared directly."
+part_cuts = "unverified"
+exact_antiphon_wording = "unverified"
+exact_2008_body = "unverified"
+rights_promotion = false
+english_bible_cue = "law of truth"
+latin_bible_cue = "lex veritatis"
+[decisions.targets]
+vulgate = "Malachi 2:6"
+hebrew = "Malachi 2:6"
+[[decisions.carriers]]
+edition = "douay-rheims"
+numbering = "vulgate"
+ref = "Malachi 2:6"
+text_sha256 = "59e90a4c82f940536c0ba3e25496fba9e61cd861d1c4dc2e1da06864bb7d8584"
+word_count = 31
+[[decisions.carriers]]
+edition = "douay-rheims-american-1899"
+numbering = "vulgate"
+ref = "Malachi 2:6"
+text_sha256 = "59e90a4c82f940536c0ba3e25496fba9e61cd861d1c4dc2e1da06864bb7d8584"
+word_count = 31
+[[decisions.carriers]]
+edition = "clementine-vulgate"
+numbering = "vulgate"
+ref = "Malachi 2:6"
+text_sha256 = "c35f5b546b3f73490b74347c6b87e4a441c869238759cb508edd861a0b385968"
+word_count = 26
+[[decisions.carriers]]
+edition = "king-james-version"
+numbering = "hebrew"
+ref = "Malachi 2:6"
+text_sha256 = "67dd3517d2564dad69ac1a028c20cd01ce367b6de3da8643ab17672e0e93a056"
+word_count = 31
+[[decisions.carriers]]
+edition = "world-english-bible-catholic"
+numbering = "hebrew"
+ref = "Malachi 2:6"
+text_sha256 = "8aaeaeffaf52722baf2d557fb23153181fdb06e879e42144bbc8e196ff4d2f2f"
+word_count = 30
+[[decisions.carriers]]
+edition = "catholic-public-domain-version"
+numbering = "vulgate"
+ref = "Malachi 2:6"
+text_sha256 = "29b3b140ccc11e6bea9b03338cb2a7f04836b11f12886213e59986e65af9ad12"
+word_count = 31
+[[decisions.carriers]]
+edition = "revised-version-1895"
+numbering = "hebrew"
+ref = "Malachi 2:6"
+text_sha256 = "9553b36fc83bb2e7fd7e3b93ea129eebd85588fc0295a178f6a7e908928a7827"
+word_count = 31
+
+[[decisions]]
+mass = "dedication-basilicas-saints-peter-paul-apostles"
+form_id = "main"
+proper = "Communion Antiphon"
+source_ref = "John 6:69, 70"
+artifact_page = 146
+printed_page = 138
+source_locator_prefix = "Cf."
+evidence = "Source label and context read in the exact held page image; all seven held Bible wordings compared directly."
+part_cuts = "unverified"
+exact_antiphon_wording = "unverified"
+exact_2008_body = "unverified"
+rights_promotion = false
+english_bible_cue = "words of eternal life"
+latin_bible_cue = "verba vitae aeternae"
+[decisions.targets]
+vulgate = "John 6:69, 70"
+hebrew = "John 6:68, 69"
+[[decisions.carriers]]
+edition = "douay-rheims"
+numbering = "vulgate"
+ref = "John 6:69, 70"
+text_sha256 = "0daa486f1dc213b52cff68441b4e9084ceab8176a13b9eb187daa83dce9e414e"
+word_count = 34
+[[decisions.carriers]]
+edition = "douay-rheims-american-1899"
+numbering = "vulgate"
+ref = "John 6:69, 70"
+text_sha256 = "195ffebb74527aff4d05f54d39c74f447a5de5da0a89c099144f2979266eca91"
+word_count = 34
+[[decisions.carriers]]
+edition = "clementine-vulgate"
+numbering = "vulgate"
+ref = "John 6:69, 70"
+text_sha256 = "a17ce29992c95a5f34dc543901f8a5b64ab82e5b3e1ed9d1aed9914f15be95af"
+word_count = 24
+[[decisions.carriers]]
+edition = "king-james-version"
+numbering = "hebrew"
+ref = "John 6:68, 69"
+text_sha256 = "369d6580efed0d95903991b9f12f3aed565060caf8b1259cb2549b3eaf22b0e4"
+word_count = 35
+[[decisions.carriers]]
+edition = "world-english-bible-catholic"
+numbering = "hebrew"
+ref = "John 6:68, 69"
+text_sha256 = "79e3e6abac4e5121b888b30612f295a37f72ee004398d84b2542c007b2139e70"
+word_count = 35
+[[decisions.carriers]]
+edition = "catholic-public-domain-version"
+numbering = "vulgate"
+ref = "John 6:69, 70"
+text_sha256 = "cc380be301880a9884b1c094146b57dd09ec764756ed2920d4ba41f7c2b96c7e"
+word_count = 34
+[[decisions.carriers]]
+edition = "revised-version-1895"
+numbering = "hebrew"
+ref = "John 6:68, 69"
+text_sha256 = "8b4760cfbff901f97214f20f41460d9929636b79e4bcebc0afecf89d293ae169"
+word_count = 31
+
+[[decisions]]
+mass = "saint-stephen-first-martyr"
+form_id = "main"
+proper = "Communion Antiphon"
+source_ref = "Acts 7:58"
+artifact_page = 150
+printed_page = 142
+source_locator_prefix = "none"
+evidence = "Source label and context read in the exact held page image; all seven held Bible wordings compared directly."
+part_cuts = "unverified"
+exact_antiphon_wording = "unverified"
+exact_2008_body = "unverified"
+rights_promotion = false
+english_bible_cue = "receive my spirit"
+latin_bible_cue = "suscipe spiritum meum"
+[decisions.targets]
+vulgate = "Acts 7:58"
+hebrew = "Acts 7:59"
+[[decisions.carriers]]
+edition = "douay-rheims"
+numbering = "vulgate"
+ref = "Acts 7:58"
+text_sha256 = "3d0a4a25e8ff5ed0482bd3120bff798851a9544867ccafa8a612a093a1093a50"
+word_count = 12
+[[decisions.carriers]]
+edition = "douay-rheims-american-1899"
+numbering = "vulgate"
+ref = "Acts 7:58"
+text_sha256 = "9a178f0aa8e7139b5762cfe5644a4e07e87a03874d8525741aa7fe3f1a1fbb05"
+word_count = 12
+[[decisions.carriers]]
+edition = "clementine-vulgate"
+numbering = "vulgate"
+ref = "Acts 7:58"
+text_sha256 = "5c0b5a7c206229e2dd200cf64df81045c5e45a294e6171caf8776e9bcf4f2210"
+word_count = 11
+[[decisions.carriers]]
+edition = "king-james-version"
+numbering = "hebrew"
+ref = "Acts 7:59"
+text_sha256 = "67b4d25bf4e52d55394e9ffe0d63e14861b4cc35c375263499df9acc4e833319"
+word_count = 14
+[[decisions.carriers]]
+edition = "world-english-bible-catholic"
+numbering = "hebrew"
+ref = "Acts 7:59"
+text_sha256 = "6c292b2bb3eb4b2e2ac2e3da335a042c810096306d8aed9e320a2fd6f09cab5e"
+word_count = 13
+[[decisions.carriers]]
+edition = "catholic-public-domain-version"
+numbering = "vulgate"
+ref = "Acts 7:58"
+text_sha256 = "9d992d3d89a87ce8c33226f79f36b3a25173cf3156dc039c69145a2a57c5cac8"
+word_count = 16
+[[decisions.carriers]]
+edition = "revised-version-1895"
+numbering = "hebrew"
+ref = "Acts 7:59"
+text_sha256 = "5a973278adaa8cd49567bcf3ab5fb838523a8fbeb25148effd7ad66e208625f5"
+word_count = 15

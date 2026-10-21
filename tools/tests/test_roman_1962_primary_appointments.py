@@ -20,6 +20,7 @@ from _calendars import resolve_propers
 
 DATA = ROOT / 'src/sources/calendars/roman-1962/propers.yaml'
 RECORD = ROOT / 'src/sources/inventories/roman-1962-primary-appointment-collation-v1.toml'
+EXPECTED_TARGETS = ROOT / 'src/sources/inventories/missal-expected-targets-v1.toml'
 ARTIFACT = ROOT / ('src/sources/works/catholic-church/missale-romanum/editions/'
                    'vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml')
 
@@ -85,6 +86,7 @@ class Roman1962PrimaryAppointmentTest(unittest.TestCase):
     def setUpClass(cls):
         cls.document = yaml.safe_load(DATA.read_text())
         cls.record = tomllib.loads(RECORD.read_text())
+        cls.expected_targets = tomllib.loads(EXPECTED_TARGETS.read_text())
         cls.by_key = masses(cls.document)
 
     def test_the_collated_direct_primary_readings_resolve_exactly(self):
@@ -100,13 +102,90 @@ class Roman1962PrimaryAppointmentTest(unittest.TestCase):
                 if name != 'Gospel':
                     self.assertLess(slot, names.index('Gospel'))
 
-    def test_the_additions_are_citation_facts_without_body_or_referral(self):
+    def assert_citation_facts(self, document):
+        by_key = masses(document)
+        self.assertEqual(self.record['target'], DATA.relative_to(ROOT).as_posix())
+        self.assertEqual(self.record['calendar'], 'roman-1962')
         for key, name, *_ in EXPECTED:
-            with self.subTest(mass=key, proper=name):
-                proper = next(p for p in self.by_key[key]['propers'] if p['name'] == name)
-                self.assertEqual(set(proper), {'name', 'source', 'verses'})
-                self.assertIn('roman-1962-primary-appointment-collation-v1.toml', self.by_key[key]['notes'])
+            propers = [p for p in by_key[key]['propers'] if p['name'] == name]
+            self.assertEqual(len(propers), 1, (key, name))
+            self.assertEqual(set(propers[0]), {'name', 'source', 'verses'}, (key, name))
+            records = [row for row in self.record['appointments']
+                       if (row['mass'], row['proper']) == (key, name)]
+            self.assertEqual(len(records), 1, (key, name))
+            self.assertEqual(records[0]['origin'], 'direct', (key, name))
+
+    def assert_hermenegild_source_join(self, document, inventory):
+        # This is the one repaired primary slot with a canonical printed-slot
+        # join. The other sixteen additions retain their collation evidence;
+        # this fixture does not invent expected-target joins for them.
+        targets = {row['id']: row for row in inventory['targets']}
+        target_id = 'roman-1962:sanctoral-form:p585-l24:slot:p585-l68:gospel'
+        self.assertIn(target_id, targets)
+        target = targets[target_id]
+        parent_id = 'roman-1962:sanctoral-form:p585-l24'
+        expected = {
+            'kind': 'text-slot', 'identity_state': 'established',
+            'parent_id': parent_id, 'calendar_proper_name': 'Gospel',
+            'source_record': ARTIFACT.relative_to(ROOT).as_posix(),
+            'source_locus': 'artifact p. 585 / printed p. 504, raw page-local line 68',
+        }
+        self.assertEqual({field: target.get(field) for field in expected}, expected)
+        parent = targets[parent_id]
+        self.assertEqual(parent['kind'], 'form')
+        self.assertEqual(parent['identity_state'], 'established')
+        key = 's-hermenegildi-martyris'
+        self.assertEqual(parent['calendar_mass_key'], key)
+        self.assertEqual(target.get('calendar_mass_key', key), key)
+        self.assertEqual(target.get('form_id', parent.get('form_id', 'main')), 'main')
+        self.assertEqual(target.get('calendar_proper_occurrence', 1), 1)
+        own = [p for p in masses(document)[key]['propers'] if p['name'] == 'Gospel']
+        self.assertEqual(len(own), 1)
+        self.assertEqual(set(own[0]), {'name', 'source', 'verses'})
+        self.assertEqual(own[0]['source'], 'scripture')
+        self.assertEqual(bounds(own[0]), [('Luke', [(14, 26, 14, 33)])])
+        row = next(row for row in self.record['appointments']
+                   if (row['mass'], row['proper']) == (key, 'Gospel'))
+        self.assertEqual((row['pdf_pages'], row['printed_pages'], row['marginal_number']),
+                         ([585, 586], [504, 505], 2396))
+
+    def test_the_additions_are_citation_facts_without_body_or_referral(self):
+        self.assert_citation_facts(self.document)
+        self.assert_hermenegild_source_join(self.document, self.expected_targets)
         self.assertNotIn('s-andreae-avellini-confessoris', {row[0] for row in EXPECTED})
+
+    def test_the_source_join_rejects_wrong_coordinates_and_occurrence(self):
+        target_id = 'roman-1962:sanctoral-form:p585-l24:slot:p585-l68:gospel'
+        for field, wrong in (
+            ('source_locus', 'artifact p. 586 / printed p. 505, raw page-local line 68'),
+            ('source_record', RECORD.relative_to(ROOT).as_posix()),
+            ('calendar_proper_occurrence', 2),
+        ):
+            with self.subTest(field=field):
+                changed = copy.deepcopy(self.expected_targets)
+                target = next(row for row in changed['targets'] if row['id'] == target_id)
+                target[field] = wrong
+                with self.assertRaises(AssertionError):
+                    self.assert_hermenegild_source_join(self.document, changed)
+
+    def test_referral_body_and_lost_own_gospel_remain_detected(self):
+        key = 's-hermenegildi-martyris'
+        for defect in ('referral', 'body', 'omission'):
+            with self.subTest(defect=defect):
+                changed = copy.deepcopy(self.document)
+                mass = masses(changed)[key]
+                gospel = next(p for p in mass['propers'] if p['name'] == 'Gospel')
+                if defect == 'referral':
+                    gospel['takes_from'] = {
+                        'mass': 'common-martyr-outside-easter-3', 'proper': 'Gospel'}
+                elif defect == 'body':
+                    gospel['body'] = 'An uncollated body must not enter this citation fact.'
+                else:
+                    mass['propers'].remove(gospel)
+                with self.assertRaises(AssertionError):
+                    self.assert_citation_facts(changed)
+                with self.assertRaises(AssertionError):
+                    self.assert_hermenegild_source_join(changed, self.expected_targets)
 
     def test_the_evidence_preserves_the_exact_appointment_loci(self):
         record_rows = {(r['mass'], r['proper']): r for r in self.record['appointments']}

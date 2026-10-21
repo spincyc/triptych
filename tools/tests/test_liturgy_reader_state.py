@@ -1162,7 +1162,8 @@ class FixtureTests(unittest.TestCase):
         mutations = []
         for mutate in ("duplicate", "mismatch", "material", "hooks", "default"):
             fixture = copy.deepcopy(base)
-            selected = fixture["expected"]["events"][-1]["selected"]
+            selected = next(row["selected"] for row in fixture["expected"]["events"]
+                            if row["editionSlotLabel"] == "Gospel")
             if mutate == "duplicate":
                 selected["alternatives"][1]["id"] = "A"
                 selected["alternatives"][1]["cycle"] = "A"
@@ -2938,7 +2939,9 @@ class ParityTests(unittest.TestCase):
         cases = (
             ("2026-12-25", "nativitate-domini-octave", "night", 10),
             ("2026-12-25", "nativitate-domini-octave", "dawn", 10),
-            ("2026-12-25", "nativitate-domini-octave", "day", 9),
+            # Held 1962 AP102/p21 R, units131-140 include Alleluia135
+            # between Gradual134 and Gospel136 in this distinct day form.
+            ("2026-12-25", "nativitate-domini-octave", "day", 10),
             ("2026-11-02", "commemoratione-omnium-fidelium-defunctorum", "first", 11),
             ("2026-11-02", "commemoratione-omnium-fidelium-defunctorum", "second", 11),
             ("2026-11-02", "commemoratione-omnium-fidelium-defunctorum", "third", 11),
@@ -2988,6 +2991,12 @@ class ParityTests(unittest.TestCase):
                     if event["kind"] == "proper"
                 ]
                 self.assertEqual(len(proper_events), proper_count)
+                if mass == "nativitate-domini-octave" and form == "day":
+                    self.assertEqual(
+                        [event["editionSlotLabel"] for event in proper_events],
+                        ["Introit", "Collect", "Epistle", "Gradual", "Alleluia",
+                         "Gospel", "Offertory", "Secret", "Communion", "Postcommunion"],
+                    )
                 if mass == "commemoratione-omnium-fidelium-defunctorum":
                     labels = [event["editionSlotLabel"] for event in proper_events]
                     self.assertLess(labels.index("Tract"), labels.index("Sequence"))
@@ -3127,14 +3136,30 @@ class ParityTests(unittest.TestCase):
                          if row["scope"] == f"formulary:{lawrence_key}")
         self.assertEqual((formulary["state"], formulary["completeness"]),
                          ("supported", "partial"))
-        self.assertTrue(any(
+        # The own appointment is known; its body remains text-free and withheld.
+        self.assertFalse(any(
             row["scope"].endswith("/main/collect")
             and row["repositoryTerm"] == "proper-collect"
             for row in lawrence["explicitAbsences"]
         ))
-        self.assertFalse(any(
-            event.get("editionSlotLabel") == "Collect"
-            for event in lawrence["events"]
+        collect, = (event for event in lawrence["events"]
+                    if event.get("editionSlotLabel") == "Collect")
+        self.assertEqual(collect["id"], f"proper/roman-1962/{lawrence_key}/002")
+        self.assertEqual(collect["semanticSlot"]["identity"]["id"], "collect")
+        selected = collect["selected"]
+        self.assertEqual(
+            (selected["kind"], selected["language"], selected["availability"],
+             selected["unavailableState"], selected["reason"]),
+            ("composed", "la", "unavailable", "unavailable", "latin-withheld"))
+        self.assertEqual((selected["missing"], selected["held"], selected["text"]),
+                         (True, False, None))
+        self.assertEqual(selected["references"], [])
+        self.assertIsNone(selected["bible"])
+        self.assertTrue(any(
+            reason["kind"] == "text-not-held"
+            and reason.get("repositoryTerm") == "proper-body"
+            and {"cycle": None, "proper": "Collect"} in reason.get("claims", [])
+            for reason in formulary["reasons"]
         ))
 
         boniface = node_call({

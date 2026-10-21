@@ -14,4 +14,31 @@ sha256 = "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7"
 byte_size = 3333382
 page_count = 828
 indexable = false
-notes = "Two acquisitions in this review were byte-identical. Artifact pagination and the edition's printed pagination diverge; every registered passage therefore records physical PDF pages separately from any printed locus. Only the registered page ranges were inspected, and no claim is made that every digitally typeset word reproduces the printed edition without error."
+notes = """
+Two acquisitions in the 2026-07-23 review were byte-identical. Artifact
+pagination and the edition's printed pagination diverge; every registered
+passage therefore records physical PDF pages separately from any printed locus.
+That review inspected only its registered page ranges and made no claim that
+every digitally typeset word reproduces the printed edition without error.
+
+A further bounded page-image check on 2026-10-21 found that artifact page 1
+declares A.D. MMII and ends its printing history with the 2002 third typical
+edition. Artifact page 792 retains Appendix VI, the Eucharistic Prayers for
+Masses with Children; the final index leaf, artifact page 828, still lists
+all three at original printed pages 1271, 1277 and 1283. The official 2008
+Notitiae notice, artifact page 49 / printed page 367, states that those prayers
+were omitted; the Supplementum begins at artifact page 62 / printed page 380,
+with target Missal page 1271. That controlling official artifact is
+artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174;
+its separately registered notice and Variationes/Supplementum segments retain
+their own scope.
+
+These positive differences prevent this secondary file from serving as a
+complete authenticated 2008 altar-book witness. Individual checked readings
+that match 2008 replacements do not establish the file's overall edition
+state, fidelity at uninspected loci, or a blanket unchanged 2002-to-2008
+correspondence. The file remains a secondary reproduction self-identified
+with 2002, of unestablished whole-file fidelity; no separately authenticated
+hybrid recension is identified. No source words, rights basis or identity
+are promoted by this clarification.
+"""

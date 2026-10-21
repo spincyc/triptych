@@ -556,6 +556,262 @@
     return value;
   }
 
+  // Enumerate held source material, without appointing a calendar course.
+  function properCycleSelections(proper) {
+    const selections = [];
+    [['cycles', 'sunday', ['A', 'B', 'C']], ['weekday_cycles', 'weekday', ['I', 'II']]].forEach((definition) => {
+      const family = definition[0];
+      const owners = proper && proper[family] || {};
+      if (typeof owners !== 'object' || Array.isArray(owners)) {
+        throw new Error(family + ' must carry a mapping of authored Lectionary cycles');
+      }
+      const keys = Object.keys(owners);
+      const invalid = keys.filter((key) => !definition[2].includes(key));
+      if (invalid.length) throw new Error(family + ' carries unsupported Lectionary cycle keys: ' + invalid.join(', '));
+      keys.sort().forEach((key) => {
+        const owner = owners[key];
+        if (!owner || typeof owner !== 'object' || Array.isArray(owner)) {
+          throw new Error(family + ' must retain each authored Lectionary cycle owner mapping');
+        }
+        if ((owner.citations || owner.verses || []).length || owner.text ||
+            (owner.translations || []).some((one) => one && one.text) ||
+            (owner.unavailable_translations || []).length || (owner.untranslated || []).length ||
+            owner.latin && owner.latin.withheld || owner.text_status) {
+          selections.push({key, dimension: definition[1], family});
+        }
+      });
+    });
+    return selections;
+  }
+
+  function sourcePathRelationOf(proper) {
+    if (!proper || !Object.prototype.hasOwnProperty.call(proper, 'source_path_relation')) return null;
+    const id = proper.source_path_relation;
+    if (typeof id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)) {
+      throw new Error('source_path_relation must identify one exact producer-derived source relation');
+    }
+    appointmentCoordinate(proper.appointment_identity);
+    return id;
+  }
+
+  function prepareSourcePaths(rows, supplied, groups, choices, staticMarkers) {
+    const definitions = supplied.sourcePaths === undefined ? [] : supplied.sourcePaths;
+    if (!Array.isArray(definitions)) throw new Error('proper_source_paths must be a source-owned relation list');
+    if (definitions.length && !['day', 'propers'].includes(supplied.entrance)) {
+      throw new Error('source paths require an explicit reader entrance');
+    }
+    const calendarCycles = supplied.calendarCycles === undefined ? {} : supplied.calendarCycles;
+    if (definitions.length && (!calendarCycles || typeof calendarCycles !== 'object' || Array.isArray(calendarCycles) ||
+        Object.keys(calendarCycles).some((family) => !['sunday', 'weekday'].includes(family) ||
+          calendarCycles[family] !== null && !(family === 'sunday' ? ['A', 'B', 'C'] : ['I', 'II']).includes(calendarCycles[family])))) {
+      throw new Error('source path received an unheld owner calendar cycle');
+    }
+    const result = {owned: new Map(), admitted: new Map(), pathIds: new Set(), ownedGroups: new Map(),
+      selections: {}, unresolved: [], availability: {}, plans: []};
+    const byCoordinate = new Map();
+    rows.forEach((row) => {
+      const selections = properCycleSelections(row.proper);
+      if (definitions.length && new Set(selections.map((one) => one.family)).size > 1) {
+        throw new Error('Proper carries both Sunday and weekday Lectionary cycle families');
+      }
+      if (row.proper.appointment_identity) byCoordinate.set(appointmentCoordinate(row.proper.appointment_identity), row);
+      sourcePathRelationOf(row.proper);
+    });
+    const stable = (value) => typeof value === 'string' && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
+    const exact = (value, keys) => value && typeof value === 'object' && !Array.isArray(value) &&
+      Object.keys(value).sort().join(',') === keys.slice().sort().join(',');
+    const facts = supplied.conditionFacts === undefined ? {} : supplied.conditionFacts;
+    if (!facts || typeof facts !== 'object' || Array.isArray(facts) ||
+        Object.keys(facts).some((id) => !stable(id) || ![true, false, null].includes(facts[id]))) {
+      throw new Error('source path condition facts must be trusted boolean values or explicit unknown');
+    }
+    const declaredFacts = new Set();
+    const relationIds = new Set();
+    definitions.forEach((relation) => {
+      if (!exact(relation, ['id', 'form_id', 'basis', 'paths', 'source_edition']) ||
+          !stable(relation.id) || !stable(relation.form_id) ||
+          typeof relation.basis !== 'string' || !relation.basis.trim() ||
+          !stable(relation.source_edition) || !Array.isArray(relation.paths) || !relation.paths.length) {
+        throw new Error('source path relation must retain its exact source owner, basis and declared paths');
+      }
+      const foreignRelation = relation.source_edition !== supplied.calendar;
+      if (foreignRelation && !staticMarkers) {
+        throw new Error('unsupported foreign-source path applicability from ' + relation.source_edition + ' in ' + supplied.calendar);
+      }
+      const id = relation.form_id + '/' + relation.id;
+      if (relationIds.has(id) || groups.has(id)) throw new Error('source relation id repeats or collides with an actual Proper group');
+      relationIds.add(id);
+      if (relation.form_id !== supplied.formId) return;
+      result.pathIds.add(id);
+      const pathIds = new Set();
+      const options = new Map();
+      const relationExtent = new Set();
+      relation.paths.forEach((path) => {
+        const fields = ['id', 'standing', 'calendar_cycles', 'choices', 'members'];
+        if (path && Object.prototype.hasOwnProperty.call(path, 'when')) fields.push('when');
+        if (!exact(path, fields) || !stable(path.id) || pathIds.has(path.id) ||
+            !['principal', 'optional'].includes(path.standing) ||
+            !exact(path.calendar_cycles, ['family', 'in']) ||
+            !['sunday', 'weekday'].includes(path.calendar_cycles.family) ||
+            !Array.isArray(path.calendar_cycles.in) || !path.calendar_cycles.in.length ||
+            new Set(path.calendar_cycles.in).size !== path.calendar_cycles.in.length ||
+            path.calendar_cycles.in.some((cycle) => !(path.calendar_cycles.family === 'sunday'
+              ? ['A', 'B', 'C'] : ['I', 'II']).includes(cycle)) ||
+            !path.choices || typeof path.choices !== 'object' || Array.isArray(path.choices) ||
+            !Array.isArray(path.members) || !path.members.length) {
+          throw new Error('source path must be one exact declared tuple with source standing and cycle scope');
+        }
+        pathIds.add(path.id);
+        let condition = true;
+        if (path.when) {
+          if (!exact(path.when, ['fact', 'is']) || !stable(path.when.fact) || typeof path.when.is !== 'boolean') {
+            throw new Error('source path condition must name one source-owned boolean fact');
+          }
+          declaredFacts.add(path.when.fact);
+          const value = Object.prototype.hasOwnProperty.call(facts, path.when.fact) ? facts[path.when.fact] : undefined;
+          condition = value === undefined || value === null ? null : value === path.when.is;
+        }
+        const memberRows = new Map();
+        path.members.forEach((member) => {
+          if (!exact(member, ['appointment', 'material_cycle'])) throw new Error('source path member must name exact appointment and material cycle');
+          const coordinate = appointmentCoordinate(member.appointment);
+          if (member.appointment.mass !== supplied.mass || member.appointment.form_id !== relation.form_id ||
+              memberRows.has(coordinate) || !byCoordinate.has(coordinate)) {
+            throw new Error('source path names a duplicate, foreign or missing appointment');
+          }
+          const row = byCoordinate.get(coordinate);
+          if (sourcePathRelationOf(row.proper) !== relation.id || row.proper.name !== member.appointment.proper ||
+              formIdOf(row.proper) !== member.appointment.form_id) {
+            throw new Error('source path member guard disagrees with its exact relation or appointment');
+          }
+          if (foreignRelation) {
+            const marker = staticMarkers.get(row.sourceIndex);
+            if (!marker || marker.source_edition !== relation.source_edition || marker.target_edition !== supplied.calendar) {
+              throw new Error('foreign source path requires every original unsupported applicability marker');
+            }
+          }
+          const selector = member.material_cycle;
+          const held = properCycleSelections(row.proper);
+          if (!exact(selector, ['family', 'cycle']) ||
+              (selector.family === null ? selector.cycle !== 'all' || held.length !== 0 :
+                !held.some((one) => one.family === selector.family && one.key === selector.cycle))) {
+            throw new Error('source path material cycle is not held on its exact source appointment');
+          }
+          memberRows.set(coordinate, {row, selector,
+            owner: selector.family === null ? null : row.proper[selector.family][selector.cycle]});
+          relationExtent.add(coordinate);
+          const disposition = dispositionOf(row.proper);
+          if (disposition && disposition.kind === 'alternative' && path.choices[disposition.group] !== disposition.option) {
+            throw new Error('source path member contradicts its exact actual-group option tuple');
+          }
+        });
+        Object.keys(path.choices).forEach((group) => {
+          const scoped = relation.form_id + '/' + group;
+          const option = path.choices[group];
+          if (!stable(group) || !stable(option) || !groups.has(scoped) || !groups.get(scoped).has(option)) {
+            throw new Error('source path tuple names an unheld actual group or option');
+          }
+          const bundle = rows.filter((row) => {
+            const disposition = dispositionOf(row.proper);
+            return disposition && disposition.kind === 'alternative' && formIdOf(row.proper) === relation.form_id &&
+              disposition.group === group && disposition.option === option;
+          });
+          if (!bundle.length || bundle.some((row) => !row.proper.appointment_identity ||
+              !memberRows.has(appointmentCoordinate(row.proper.appointment_identity)))) {
+            throw new Error('source path must conserve the complete selected source option bundle');
+          }
+          if (result.ownedGroups.has(scoped) && result.ownedGroups.get(scoped) !== id) {
+            throw new Error('source path relations cannot share an actual Proper group');
+          }
+          result.ownedGroups.set(scoped, id);
+        });
+        const cycles = supplied.calendarCycles || {};
+        const course = cycles[path.calendar_cycles.family];
+        if (course !== undefined && course !== null && !(path.calendar_cycles.family === 'sunday'
+            ? ['A', 'B', 'C'] : ['I', 'II']).includes(course)) {
+          throw new Error('source path received an unheld owner calendar cycle');
+        }
+        const calendar = course === undefined || course === null ? null : path.calendar_cycles.in.includes(course);
+        const applicable = calendar === false || condition === false ? false :
+          calendar === true && condition === true ? true : null;
+        options.set(path.id, {path, members: memberRows, applicable, condition,
+          calendar, reason: condition === null ? 'source-condition-unresolved' :
+            calendar === null ? 'calendar-cycle-unresolved' : applicable === false ? 'source-path-inapplicable' : null});
+      });
+      relationExtent.forEach((coordinate) => {
+        if (result.owned.has(coordinate)) throw new Error('source path relation extents overlap');
+        result.owned.set(coordinate, id);
+      });
+      result.ownedGroups.forEach((owner, groupId) => {
+        if (owner !== id) return;
+        rows.forEach((row) => {
+          const disposition = dispositionOf(row.proper);
+          if (disposition && disposition.kind === 'alternative' &&
+              formIdOf(row.proper) + '/' + disposition.group === groupId &&
+              (!row.proper.appointment_identity || !relationExtent.has(appointmentCoordinate(row.proper.appointment_identity)))) {
+            throw new Error('source path relation must own the complete raw extent of each coupled actual group');
+          }
+        });
+      });
+      result.plans.push({relation: relation, paths: Array.from(options.values()).map((option) => ({
+        path: option.path, members: new Set(Array.from(option.members.values(), (member) => member.row.sourceIndex))
+      }))});
+      const requested = choices[id];
+      if (requested !== undefined && !options.has(requested)) throw new Error('explicit source relation path is not held');
+      const possible = Array.from(options).filter((entry) => entry[1].applicable !== false);
+      const selected = requested !== undefined ? options.get(requested) :
+        possible.length === 1 && possible[0][1].applicable === true ? possible[0][1] : null;
+      if (selected && (selected.applicable === false || selected.condition === null ||
+          selected.calendar === null && supplied.entrance === 'day')) {
+        throw new Error(selected.reason || 'source path applicability remains unresolved');
+      }
+      result.selections[id] = {state: selected ? 'selected' : 'required', option: selected ? selected.path.id : null};
+      result.availability[id] = Object.fromEntries(Array.from(options, ([key, option]) => [key, {
+        state: option.applicable === true ? 'applicable' : option.applicable === false ? 'inapplicable' :
+          option.condition === true && supplied.entrance === 'propers' ? 'applicable' : 'unresolved',
+        reason: option.reason
+      }]));
+      if (!selected) result.unresolved.push({kind: 'source-path-required', relation: relation.id,
+        form_id: relation.form_id, basis: relation.basis,
+        conditions: Array.from(options.values()).filter((one) => one.condition === null).map((one) => one.path.when)});
+      result.ownedGroups.forEach((owner, groupId) => {
+        if (owner === id && Object.prototype.hasOwnProperty.call(choices, groupId) &&
+            (!selected || !Object.prototype.hasOwnProperty.call(selected.path.choices, groupId.slice(relation.form_id.length + 1)))) {
+          throw new Error('correlated Proper group choices require their complete selected source path');
+        }
+      });
+      if (selected) {
+        Object.keys(selected.path.choices).forEach((group) => {
+          const scoped = relation.form_id + '/' + group;
+          if (choices[scoped] !== undefined && choices[scoped] !== selected.path.choices[group]) {
+            throw new Error('explicit Proper choices mix incompatible correlated source paths');
+          }
+          choices[scoped] = selected.path.choices[group];
+        });
+        selected.members.forEach((member) => result.admitted.set(member.row.sourceIndex, member));
+      }
+    });
+    Object.keys(facts).forEach((id) => { if (!declaredFacts.has(id)) throw new Error('source path received an undeclared condition fact'); });
+    rows.forEach((row) => {
+      const guard = sourcePathRelationOf(row.proper);
+      if (guard && (!row.proper.appointment_identity ||
+          result.owned.get(appointmentCoordinate(row.proper.appointment_identity)) !== formIdOf(row.proper) + '/' + guard)) {
+        throw new Error('source_path_relation has no exact held relation membership');
+      }
+    });
+    if (definitions.length) {
+      const shapeRows = rows.map((row) => {
+        const proper = Object.assign({}, row.proper);
+        delete proper.source_path_relation;
+        if (proper.ordinary_disposition && proper.ordinary_disposition.kind === 'conditional') delete proper.ordinary_disposition;
+        return {proper, sourceIndex: row.sourceIndex};
+      });
+      const shapeSelections = Object.fromEntries(Array.from(groups.keys(), (id) => [id, {state: 'required', option: null}]));
+      properUnits(shapeRows, null, null, shapeSelections);
+    }
+    return result;
+  }
+
   // Producer-derived foreign applicability is independent of held body text.
   // Preserve the row for source inspection; refuse execution in this edition.
   function appointmentApplicabilityOf(proper, calendar) {
@@ -637,10 +893,11 @@
   function prepareProperAppointments(propers, context) {
     const rows = (propers || []).map(properRow);
     const supplied = context || {};
-    const choices = supplied.choices || {};
-    if (!choices || typeof choices !== 'object' || Array.isArray(choices)) {
+    const requestedChoices = supplied.choices || {};
+    if (!requestedChoices || typeof requestedChoices !== 'object' || Array.isArray(requestedChoices)) {
       throw new Error('Proper appointment choices must be a mapping');
     }
+    const choices = Object.assign({}, requestedChoices);
     const groups = new Map();
     const coordinates = new Set();
     const conditions = [];
@@ -758,7 +1015,9 @@
       }
       options.set(disposition.option, disposition.when || null);
     });
+    const sourcePaths = prepareSourcePaths(rows, supplied, groups, choices);
     Object.keys(choices).forEach((id) => {
+      if (sourcePaths.pathIds.has(id)) return;
       const options = groups.get(id);
       if (!options || typeof choices[id] !== 'string' || !options.has(choices[id])) {
         throw new Error('explicit Proper choice is not held by the exact formulary and form');
@@ -799,6 +1058,9 @@
     const inactive = [];
     const byIndex = new Map(conditions.map((condition) => [condition.row.sourceIndex, condition]));
     const active = rows.filter((row) => {
+      if (row.proper.appointment_identity &&
+          sourcePaths.owned.has(appointmentCoordinate(row.proper.appointment_identity)) &&
+          !sourcePaths.admitted.has(row.sourceIndex)) return false;
       const condition = byIndex.get(row.sourceIndex);
       if (!condition) return true;
       const disposition = condition.disposition;
@@ -812,12 +1074,25 @@
       if (state === false) inactive.push(Object.assign({reason: 'predicate-false'}, record));
       return state === true;
     }).map((row) => {
-      if (!byIndex.has(row.sourceIndex)) return row;
+      const material = sourcePaths.admitted.get(row.sourceIndex);
+      if (!byIndex.has(row.sourceIndex) && !material) return row;
       const proper = Object.assign({}, row.proper);
-      delete proper.ordinary_disposition;
-      return {proper, sourceIndex: row.sourceIndex};
+      if (byIndex.has(row.sourceIndex) || material && proper.ordinary_disposition &&
+          proper.ordinary_disposition.kind === 'alternative') delete proper.ordinary_disposition;
+      if (material) delete proper.source_path_relation;
+      return Object.assign({proper, sourceIndex: row.sourceIndex}, material
+        ? {materialCycle: material.selector, materialOwner: material.owner} : {});
     });
-    return Object.assign({rows: active, selections, unresolved, inactive}, usesUsage ? {usage: usage} : {});
+    const materialSelections = {};
+    sourcePaths.admitted.forEach((material, index) => {
+      if (!active.some((row) => row.sourceIndex === index)) {
+        throw new Error('selected source path conflicts with another appointment condition');
+      }
+      materialSelections[index] = material.selector;
+    });
+    return Object.assign({rows: active, selections, unresolved, inactive, materialSelections,
+      sourcePathSelections: sourcePaths.selections, sourcePathUnresolved: sourcePaths.unresolved,
+      sourcePathAvailability: sourcePaths.availability}, usesUsage ? {usage: usage} : {});
   }
 
   /**
@@ -831,6 +1106,7 @@
   function properUnits(propers, seating, isPlaceholder, selections) {
     const rows = (propers || []).map(properRow).filter(function (row) {
       assertSupportedAppointmentApplicability(row.proper);
+      if (sourcePathRelationOf(row.proper)) throw new Error('source path membership must be prepared before Proper seating');
       return !(isPlaceholder && isPlaceholder(row.proper));
     });
     const units = [];
@@ -1077,6 +1353,7 @@
       throw new Error('static Proper seating requires exact calendar, Mass, form, frame and candidate rows');
     }
     const foreign = new Set();
+    const foreignMarkers = new Map();
     const placeholders = new Set();
     const diagnostics = [];
     const copies = propers.map((proper, sourceIndex) => {
@@ -1084,12 +1361,31 @@
       const marker = appointmentApplicabilityOf(proper, supplied.calendar);
       if (marker) {
         foreign.add(sourceIndex);
+        foreignMarkers.set(sourceIndex, marker);
         diagnostics.push({kind: 'unsupported-foreign-source-applicability', sourceIndex,
           source_edition: marker.source_edition, target_edition: marker.target_edition});
         delete copy.appointment_applicability;
       }
       if (proper.name === 'Placeholder' && !marker && !proper.ordinary_disposition) placeholders.add(copy);
       return copy;
+    });
+    // Validate the complete exact relation before structural copies may lose
+    // their guard. Calendar and actual-use facts stay explicitly unknown.
+    const groups = new Map();
+    copies.forEach((proper) => {
+      const disposition = dispositionOf(proper);
+      if (!disposition || disposition.kind !== 'alternative') return;
+      const id = formIdOf(proper) + '/' + disposition.group;
+      if (!groups.has(id)) groups.set(id, new Map());
+      groups.get(id).set(disposition.option, disposition.when || null);
+    });
+    const sourcePlans = prepareSourcePaths(copies.map(properRow), {
+      calendar: supplied.calendar, mass: supplied.mass, formId: supplied.form_id,
+      entrance: 'propers', sourcePaths: supplied.sourcePaths,
+      calendarCycles: {}, conditionFacts: {}
+    }, groups, {}, foreignMarkers);
+    copies.forEach((proper) => {
+      if (Object.prototype.hasOwnProperty.call(proper, 'source_path_relation')) delete proper.source_path_relation;
     });
     const prepared = prepareProperAppointments(copies, {
       calendar: supplied.calendar, entrance: 'propers', date: null, season: null,
@@ -1108,17 +1404,33 @@
       (section.elements || []).map((element) => ({section, element})));
     const seating = supplied.full ? seats(file, shown) : null;
     const units = properUnits(copies, seating, (proper) => placeholders.has(proper), prepared.selections);
-    let reached = -1;
     let candidates = 0;
     let choices = 0;
+    function membersOf(unit) {
+      return unit.kind === 'proper_choice' ? unit.options.flatMap((option) => option.rows) : [unit];
+    }
+    function ordinalOf(unit) {
+      return unit.kind === 'proper_choice' ? unit.ordinal : usableSlotOf(seating, unit.proper.name);
+    }
+    function checkOrder(projected) {
+      let reached = -1;
+      projected.forEach((unit) => {
+        if (!supplied.full || (unit.kind === 'proper' && unit.seat && unit.seat.region)) return;
+        const ordinal = ordinalOf(unit);
+        // Target foreign execution order remains unknown, while each original
+        // candidate still has to pass the independent target-seat check.
+        if (membersOf(unit).some((member) => foreign.has(member.sourceIndex))) return;
+        if (ordinal < reached) throw new Error('static Proper candidate runs backward through Ordinary slots');
+        reached = ordinal;
+      });
+    }
     units.forEach((unit) => {
       const members = unit.kind === 'proper_choice'
         ? unit.options.flatMap((option) => option.rows) : [unit];
       candidates += members.length;
       if (unit.kind === 'proper_choice') choices += 1;
       if (!supplied.full || (unit.kind === 'proper' && unit.seat && unit.seat.region)) return;
-      const ordinal = unit.kind === 'proper_choice'
-        ? unit.ordinal : usableSlotOf(seating, unit.proper.name);
+      const ordinal = ordinalOf(unit);
       if (ordinal < 0) {
         const name = unit.kind === 'proper' ? unit.proper.name : null;
         const qualifier = name && QUALIFIER.exec(name);
@@ -1136,12 +1448,37 @@
         }
         throw new Error('static Proper candidate has no usable Ordinary seat');
       }
-      // The foreign producer retains raw diagnostic order after stripping
-      // target-inapplicable appointments. Its execution sequence is unknown.
-      if (members.some((member) => foreign.has(member.sourceIndex))) return;
-      if (ordinal < reached) throw new Error('static Proper candidate runs backward through Ordinary slots');
-      reached = ordinal;
     });
+    if (!sourcePlans.plans.length) checkOrder(units);
+    else {
+      const owned = (index) => copies[index].appointment_identity &&
+        sourcePlans.owned.has(appointmentCoordinate(copies[index].appointment_identity));
+      function project(memberIndices) {
+        const rows = copies.flatMap((proper, sourceIndex) => {
+          if (owned(sourceIndex) && !memberIndices.has(sourceIndex)) return [];
+          if (!owned(sourceIndex)) return [{proper, sourceIndex}];
+          const copy = Object.assign({}, proper);
+          if (copy.ordinary_disposition && copy.ordinary_disposition.kind === 'alternative') delete copy.ordinary_disposition;
+          if (placeholders.has(proper)) placeholders.add(copy);
+          return [{proper: copy, sourceIndex}];
+        });
+        checkOrder(properUnits(rows, seating, (proper) => placeholders.has(proper), prepared.selections));
+      }
+      sourcePlans.plans.forEach((relation) => relation.paths.forEach((path) => project(path.members)));
+      // Pairwise constraints prove independent relations can coexist in the
+      // frame. This emits no new source tuple, selected path or reading event.
+      for (let first = 0; first < sourcePlans.plans.length; first += 1) {
+        for (let second = first + 1; second < sourcePlans.plans.length; second += 1) {
+          sourcePlans.plans[first].paths.forEach((left) => sourcePlans.plans[second].paths.forEach((right) => {
+            const a = left.path; const b = right.path;
+            if (a.calendar_cycles.family === b.calendar_cycles.family &&
+                !a.calendar_cycles.in.some((cycle) => b.calendar_cycles.in.includes(cycle))) return;
+            if (a.when && b.when && a.when.fact === b.when.fact && a.when.is !== b.when.is) return;
+            project(new Set([...left.members, ...right.members]));
+          }));
+        }
+      }
+    }
     return {candidates, conditional_rows: conditionalRows, choice_groups: choices, diagnostics};
   }
 
@@ -1220,6 +1557,7 @@
     prepareProperAppointments: prepareProperAppointments,
     projectProperUsage: projectProperUsage,
     validateProperSeating: validateProperSeating,
+    properCycleSelections: properCycleSelections,
     semanticProperId: semanticProperId,
     properUnits: properUnits,
     seatPropers: seatPropers,

@@ -1,0 +1,2931 @@
+collation_schema = 1
+record_type = "calendar-full-proper-appointment-collation"
+calendar = "roman-1962"
+target = "src/sources/calendars/roman-1962/propers.yaml"
+collated_on = "2026-10-20"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+forms = 24
+physical_units = 139
+physical_nonprimary_units = 121
+primary_bounds_reused = 18
+whole_form_referrals = 15
+covered_source_addresses = 154
+unchecked_source_addresses = 0
+scope = "All normal-form local numbered units and whole-form referrals of these 24 active 2026 formularies. These physical-unit counts include Common-labelled local reprintings but do not duplicate their inherited logical obligations."
+method = "Independent enumeration from actually inspected images of the held controlling 1962 PDF; OCR, current target inventories and generated rows were leads only. Primary bounds reuse the separate complete primary collation."
+limits = "No exact body wording, rights decision, annual execution or inherited Common source closure is claimed. Canonical owner source rows and calendar role occurrences have separate denominators. Printed commemoration prayers inside another Mass belong to their separate celebration identities."
+
+[[appointments]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+marginal_number = 2358
+pdf_page = 580
+printed_page = 499
+column = "right"
+printed_heading = "Ant.ad Introitum"
+identifier = "Stabant iuxta Crucem"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 580
+end_column = "right"
+next_boundary = "Collect 2359"
+raster_sha256 = ["790d348208cf7870550def015ae36b566aa9d542cc6615b5b6b1611e2e6ab425"]
+verdict = "represented"
+printed_reference = "Io. 19,25; Ibid.,26-27"
+
+[[appointments]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 2359
+pdf_page = 580
+printed_page = 499
+column = "right"
+printed_heading = "Oratio"
+identifier = "Deus in cuius passione"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 580
+end_column = "right"
+next_boundary = "Feria commemoration Oratio2360"
+raster_sha256 = ["790d348208cf7870550def015ae36b566aa9d542cc6615b5b6b1611e2e6ab425"]
+verdict = "represented"
+
+[[appointments]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form_id = "main"
+proper = "Lesson"
+occurrence = 1
+marginal_number = 2361
+pdf_page = 581
+printed_page = 500
+column = "left"
+printed_heading = "Lesson"
+identifier = "Lectio libri Iudith"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 581
+end_column = "left"
+next_boundary = "Gradual 2362"
+raster_sha256 = ["7f84cea92a4a81629fd91d8591209e0e560905a41e7c54070ec693f9131ae804"]
+verdict = "primary-bounds-reused"
+printed_reference = "Iudith13,22 et23-25"
+
+[[appointments]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+marginal_number = 2362
+pdf_page = 581
+printed_page = 500
+column = "left"
+printed_heading = "Graduale"
+identifier = "Dolorosa et lacrimabilis"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 581
+end_column = "left"
+next_boundary = "Tract 2363"
+raster_sha256 = ["7f84cea92a4a81629fd91d8591209e0e560905a41e7c54070ec693f9131ae804"]
+verdict = "represented"
+
+[[appointments]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form_id = "main"
+proper = "Tract"
+occurrence = 1
+marginal_number = 2363
+pdf_page = 581
+printed_page = 500
+column = "left"
+printed_heading = "Tractus"
+identifier = "Stabat sancta Maria"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 581
+end_column = "left"
+next_boundary = "Sequence 2364"
+raster_sha256 = ["7f84cea92a4a81629fd91d8591209e0e560905a41e7c54070ec693f9131ae804"]
+verdict = "represented"
+printed_reference = "V.Thren.1,12"
+
+[[appointments]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form_id = "main"
+proper = "Sequence"
+occurrence = 1
+marginal_number = 2364
+pdf_page = 581
+printed_page = 500
+column = "right"
+printed_heading = "Sequentia"
+identifier = "Stabat Mater dolorosa"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 582
+end_column = "left"
+next_boundary = "Gospel 2365"
+raster_sha256 = ["7f84cea92a4a81629fd91d8591209e0e560905a41e7c54070ec693f9131ae804", "a18f3a22a59a7286e7f8e93333f83afa8834a6a1327b1dd1833129fc4a8e65f8"]
+verdict = "represented"
+
+[[appointments]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form_id = "main"
+proper = "Gospel"
+occurrence = 1
+marginal_number = 2365
+pdf_page = 582
+printed_page = 501
+column = "left"
+printed_heading = "Gospel"
+identifier = "Secundum Ioannem"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 582
+end_column = "left"
+next_boundary = "Offertory 2366"
+raster_sha256 = ["a18f3a22a59a7286e7f8e93333f83afa8834a6a1327b1dd1833129fc4a8e65f8"]
+verdict = "primary-bounds-reused"
+printed_reference = "Io.19,25-27"
+
+[[appointments]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+marginal_number = 2366
+pdf_page = 582
+printed_page = 501
+column = "left"
+printed_heading = "Offertory"
+identifier = "Recordare Virgo Mater Dei"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 582
+end_column = "left"
+next_boundary = "Secret 2367"
+raster_sha256 = ["a18f3a22a59a7286e7f8e93333f83afa8834a6a1327b1dd1833129fc4a8e65f8"]
+verdict = "source-repair"
+printed_reference = "Ierem.18,20"
+
+[[appointments]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 2367
+pdf_page = 582
+printed_page = 501
+column = "right"
+printed_heading = "Secreta"
+identifier = "Offerimus tibi preces"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 582
+end_column = "right"
+next_boundary = "Feria commemoration Secreta2368"
+raster_sha256 = ["a18f3a22a59a7286e7f8e93333f83afa8834a6a1327b1dd1833129fc4a8e65f8"]
+verdict = "represented"
+
+[[appointments]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+marginal_number = 2369
+pdf_page = 582
+printed_page = 501
+column = "right"
+printed_heading = "Ant.ad Communionem"
+identifier = "Felices sensus"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 582
+end_column = "right"
+next_boundary = "Postcommunion 2370"
+raster_sha256 = ["a18f3a22a59a7286e7f8e93333f83afa8834a6a1327b1dd1833129fc4a8e65f8"]
+verdict = "represented"
+
+[[appointments]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 2370
+pdf_page = 582
+printed_page = 501
+column = "right"
+printed_heading = "Postcommunio"
+identifier = "Sacrificia quae sumpsimus"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 582
+end_column = "right"
+next_boundary = "Feria commemoration Postcommunio2371"
+raster_sha256 = ["a18f3a22a59a7286e7f8e93333f83afa8834a6a1327b1dd1833129fc4a8e65f8"]
+verdict = "represented"
+
+[[appointments]]
+mass = "commemoratione-baptismatis-domini-nostri-iesu-christi"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+marginal_number = 286
+pdf_page = 123
+printed_page = 42
+column = "right"
+printed_heading = "Ant.ad Introitum"
+identifier = "Ecce advenit"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 123
+end_column = "right"
+next_boundary = "Collect 287"
+raster_sha256 = ["b4976fd63a42885e0a83cc9e61fa749752d91d1696089c374fa494e236c57ea0"]
+verdict = "represented"
+printed_reference = "Mal.3,1;1Par.29,12;Ps.71,1"
+
+[[appointments]]
+mass = "commemoratione-baptismatis-domini-nostri-iesu-christi"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 287
+pdf_page = 123
+printed_page = 42
+column = "right"
+printed_heading = "Oratio"
+identifier = "Deus cuius Unigenitus"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 123
+end_column = "right"
+next_boundary = "Lesson 288"
+raster_sha256 = ["b4976fd63a42885e0a83cc9e61fa749752d91d1696089c374fa494e236c57ea0"]
+verdict = "represented"
+
+[[appointments]]
+mass = "commemoratione-baptismatis-domini-nostri-iesu-christi"
+form_id = "main"
+proper = "Lesson"
+occurrence = 1
+marginal_number = 288
+pdf_page = 123
+printed_page = 42
+column = "right"
+printed_heading = "Lesson"
+identifier = "Lectio Isaiae"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 124
+end_column = "left"
+next_boundary = "Gradual 289"
+raster_sha256 = ["b4976fd63a42885e0a83cc9e61fa749752d91d1696089c374fa494e236c57ea0", "8215daff6b5edbfc30be3bcdb34e0e64ce3da2c55d089c1aaa8721d91d1e1a4b"]
+verdict = "primary-bounds-reused"
+printed_reference = "Isai.60,1-6"
+
+[[appointments]]
+mass = "commemoratione-baptismatis-domini-nostri-iesu-christi"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+marginal_number = 289
+pdf_page = 124
+printed_page = 43
+column = "left"
+printed_heading = "Graduale"
+identifier = "Omnes de Saba"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 124
+end_column = "left"
+next_boundary = "Alleluia 290"
+raster_sha256 = ["8215daff6b5edbfc30be3bcdb34e0e64ce3da2c55d089c1aaa8721d91d1e1a4b"]
+verdict = "represented"
+printed_reference = "Ibid.,6 et1"
+
+[[appointments]]
+mass = "commemoratione-baptismatis-domini-nostri-iesu-christi"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+marginal_number = 290
+pdf_page = 124
+printed_page = 43
+column = "left"
+printed_heading = "Alleluia"
+identifier = "Vidimus stellam"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 124
+end_column = "left"
+next_boundary = "Gospel 291"
+raster_sha256 = ["8215daff6b5edbfc30be3bcdb34e0e64ce3da2c55d089c1aaa8721d91d1e1a4b"]
+verdict = "represented"
+printed_reference = "Matth.2,2"
+
+[[appointments]]
+mass = "commemoratione-baptismatis-domini-nostri-iesu-christi"
+form_id = "main"
+proper = "Gospel"
+occurrence = 1
+marginal_number = 291
+pdf_page = 124
+printed_page = 43
+column = "left"
+printed_heading = "Gospel"
+identifier = "Secundum Ioannem"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 124
+end_column = "right"
+next_boundary = "Offertory 292"
+raster_sha256 = ["8215daff6b5edbfc30be3bcdb34e0e64ce3da2c55d089c1aaa8721d91d1e1a4b"]
+verdict = "primary-bounds-reused"
+printed_reference = "Io.1,29-34"
+
+[[appointments]]
+mass = "commemoratione-baptismatis-domini-nostri-iesu-christi"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+marginal_number = 292
+pdf_page = 124
+printed_page = 43
+column = "right"
+printed_heading = "Offertory"
+identifier = "Reges Tharsis"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 124
+end_column = "right"
+next_boundary = "Secret 293"
+raster_sha256 = ["8215daff6b5edbfc30be3bcdb34e0e64ce3da2c55d089c1aaa8721d91d1e1a4b"]
+verdict = "represented"
+printed_reference = "Ps.71,10-11"
+
+[[appointments]]
+mass = "commemoratione-baptismatis-domini-nostri-iesu-christi"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 293
+pdf_page = 124
+printed_page = 43
+column = "right"
+printed_heading = "Secreta"
+identifier = "Hostias tibi Domine"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 124
+end_column = "right"
+next_boundary = "Communion 294"
+raster_sha256 = ["8215daff6b5edbfc30be3bcdb34e0e64ce3da2c55d089c1aaa8721d91d1e1a4b"]
+verdict = "represented"
+
+[[appointments]]
+mass = "commemoratione-baptismatis-domini-nostri-iesu-christi"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+marginal_number = 294
+pdf_page = 124
+printed_page = 43
+column = "right"
+printed_heading = "Ant.ad Communionem"
+identifier = "Vidimus stellam"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 124
+end_column = "right"
+next_boundary = "Postcommunion 295"
+raster_sha256 = ["8215daff6b5edbfc30be3bcdb34e0e64ce3da2c55d089c1aaa8721d91d1e1a4b"]
+verdict = "represented"
+printed_reference = "Mt.2,2"
+
+[[appointments]]
+mass = "commemoratione-baptismatis-domini-nostri-iesu-christi"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 295
+pdf_page = 124
+printed_page = 43
+column = "right"
+printed_heading = "Postcommunio"
+identifier = "Caelesti lumine"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 124
+end_column = "right"
+next_boundary = "TEMPUS PER ANNUM / DOMINICA SECUNDA post Epiphaniam heading"
+raster_sha256 = ["8215daff6b5edbfc30be3bcdb34e0e64ce3da2c55d089c1aaa8721d91d1e1a4b"]
+verdict = "represented"
+
+[[appointments]]
+mass = "epiphania-domini"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+marginal_number = 251
+pdf_page = 118
+printed_page = 37
+column = "left"
+printed_heading = "Ant.ad Introitum"
+identifier = "Ecce advenit"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 118
+end_column = "left"
+next_boundary = "Collect 252"
+raster_sha256 = ["da0b3ef8265e8a6bf0459e301277bc13bdf3f908aa0ef6441f050a35c54e7576"]
+verdict = "represented"
+printed_reference = "Mal.3,1;1Par.29,12;Ps.71,1"
+
+[[appointments]]
+mass = "epiphania-domini"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 252
+pdf_page = 118
+printed_page = 37
+column = "left"
+printed_heading = "Oratio"
+identifier = "Deus qui hodierna die"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 118
+end_column = "left"
+next_boundary = "Lesson 253"
+raster_sha256 = ["da0b3ef8265e8a6bf0459e301277bc13bdf3f908aa0ef6441f050a35c54e7576"]
+verdict = "represented"
+
+[[appointments]]
+mass = "epiphania-domini"
+form_id = "main"
+proper = "Lesson"
+occurrence = 1
+marginal_number = 253
+pdf_page = 118
+printed_page = 37
+column = "right"
+printed_heading = "Lesson"
+identifier = "Lectio Isaiae"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 119
+end_column = "left"
+next_boundary = "Gradual 254"
+raster_sha256 = ["da0b3ef8265e8a6bf0459e301277bc13bdf3f908aa0ef6441f050a35c54e7576", "49b4942e63e259cb08afee7c6c864dd5bb49e1e0afdc29bd7745840c993407ba"]
+verdict = "primary-bounds-reused"
+printed_reference = "Isai.60,1-6"
+
+[[appointments]]
+mass = "epiphania-domini"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+marginal_number = 254
+pdf_page = 119
+printed_page = 38
+column = "left"
+printed_heading = "Graduale"
+identifier = "Omnes de Saba"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 119
+end_column = "left"
+next_boundary = "Alleluia 255"
+raster_sha256 = ["49b4942e63e259cb08afee7c6c864dd5bb49e1e0afdc29bd7745840c993407ba"]
+verdict = "represented"
+printed_reference = "Ibid.,6 et1"
+
+[[appointments]]
+mass = "epiphania-domini"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+marginal_number = 255
+pdf_page = 119
+printed_page = 38
+column = "left"
+printed_heading = "Alleluia"
+identifier = "Vidimus stellam"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 119
+end_column = "left"
+next_boundary = "Gospel 256"
+raster_sha256 = ["49b4942e63e259cb08afee7c6c864dd5bb49e1e0afdc29bd7745840c993407ba"]
+verdict = "represented"
+printed_reference = "Matth.2,2"
+
+[[appointments]]
+mass = "epiphania-domini"
+form_id = "main"
+proper = "Gospel"
+occurrence = 1
+marginal_number = 256
+pdf_page = 119
+printed_page = 38
+column = "left"
+printed_heading = "Gospel"
+identifier = "Secundum Matthaeum"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 119
+end_column = "right"
+next_boundary = "Offertory 257"
+raster_sha256 = ["49b4942e63e259cb08afee7c6c864dd5bb49e1e0afdc29bd7745840c993407ba"]
+verdict = "primary-bounds-reused"
+printed_reference = "Mt.2,1-12"
+
+[[appointments]]
+mass = "epiphania-domini"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+marginal_number = 257
+pdf_page = 119
+printed_page = 38
+column = "right"
+printed_heading = "Offertory"
+identifier = "Reges Tharsis"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 119
+end_column = "right"
+next_boundary = "Secret 258"
+raster_sha256 = ["49b4942e63e259cb08afee7c6c864dd5bb49e1e0afdc29bd7745840c993407ba"]
+verdict = "represented"
+printed_reference = "Ps.71,10-11"
+
+[[appointments]]
+mass = "epiphania-domini"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 258
+pdf_page = 119
+printed_page = 38
+column = "right"
+printed_heading = "Secreta"
+identifier = "Ecclesiae tuae"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 119
+end_column = "right"
+next_boundary = "Communion 259"
+raster_sha256 = ["49b4942e63e259cb08afee7c6c864dd5bb49e1e0afdc29bd7745840c993407ba"]
+verdict = "represented"
+
+[[appointments]]
+mass = "epiphania-domini"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+marginal_number = 259
+pdf_page = 119
+printed_page = 38
+column = "right"
+printed_heading = "Ant.ad Communionem"
+identifier = "Vidimus stellam"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 119
+end_column = "right"
+next_boundary = "Postcommunion 260"
+raster_sha256 = ["49b4942e63e259cb08afee7c6c864dd5bb49e1e0afdc29bd7745840c993407ba"]
+verdict = "represented"
+printed_reference = "Mt.2,2"
+
+[[appointments]]
+mass = "epiphania-domini"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 260
+pdf_page = 119
+printed_page = 38
+column = "right"
+printed_heading = "Postcommunio"
+identifier = "Praesta quaesumus"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 119
+end_column = "right"
+next_boundary = "Mass closing at artifact119 right-column foot"
+raster_sha256 = ["49b4942e63e259cb08afee7c6c864dd5bb49e1e0afdc29bd7745840c993407ba"]
+verdict = "represented"
+
+[[appointments]]
+mass = "octava-nativitatis-domini"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+marginal_number = 226
+pdf_page = 114
+printed_page = 33
+column = "left"
+printed_heading = "Ant.ad Introitum"
+identifier = "Puer natus"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 114
+end_column = "left"
+next_boundary = "Collect 227"
+raster_sha256 = ["df7cae19fd734a3b4a51d0fa9e27456dd21594970af634a2467b331b0a29c3da"]
+verdict = "represented"
+printed_reference = "Isai.9,6;Ps.97,1"
+
+[[appointments]]
+mass = "octava-nativitatis-domini"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 227
+pdf_page = 114
+printed_page = 33
+column = "left"
+printed_heading = "Oratio"
+identifier = "Deus qui salutis aeternae"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 114
+end_column = "left"
+next_boundary = "Epistle 228"
+raster_sha256 = ["df7cae19fd734a3b4a51d0fa9e27456dd21594970af634a2467b331b0a29c3da"]
+verdict = "represented"
+
+[[appointments]]
+mass = "octava-nativitatis-domini"
+form_id = "main"
+proper = "Epistle"
+occurrence = 1
+marginal_number = 228
+pdf_page = 114
+printed_page = 33
+column = "right"
+printed_heading = "Epistle"
+identifier = "Ad Titum"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 114
+end_column = "right"
+next_boundary = "Gradual 229"
+raster_sha256 = ["df7cae19fd734a3b4a51d0fa9e27456dd21594970af634a2467b331b0a29c3da"]
+verdict = "primary-bounds-reused"
+printed_reference = "Tit.2,11-15"
+
+[[appointments]]
+mass = "octava-nativitatis-domini"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+marginal_number = 229
+pdf_page = 114
+printed_page = 33
+column = "right"
+printed_heading = "Graduale"
+identifier = "Viderunt omnes"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 115
+end_column = "left"
+next_boundary = "Alleluia 230"
+raster_sha256 = ["df7cae19fd734a3b4a51d0fa9e27456dd21594970af634a2467b331b0a29c3da", "630769427029f00f7013eaf2e999c10b8c6d8959a1ef991e9153e642392f6c28"]
+verdict = "represented"
+printed_reference = "Ps.97,3-4 et2"
+
+[[appointments]]
+mass = "octava-nativitatis-domini"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+marginal_number = 230
+pdf_page = 115
+printed_page = 34
+column = "left"
+printed_heading = "Alleluia"
+identifier = "Multifarie olim Deus"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 115
+end_column = "left"
+next_boundary = "Gospel 231"
+raster_sha256 = ["630769427029f00f7013eaf2e999c10b8c6d8959a1ef991e9153e642392f6c28"]
+verdict = "represented"
+printed_reference = "Hebr.1,1-2"
+
+[[appointments]]
+mass = "octava-nativitatis-domini"
+form_id = "main"
+proper = "Gospel"
+occurrence = 1
+marginal_number = 231
+pdf_page = 115
+printed_page = 34
+column = "left"
+printed_heading = "Gospel"
+identifier = "Secundum Lucam"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 115
+end_column = "left"
+next_boundary = "Offertory 232"
+raster_sha256 = ["630769427029f00f7013eaf2e999c10b8c6d8959a1ef991e9153e642392f6c28"]
+verdict = "primary-bounds-reused"
+printed_reference = "Luc.2,21"
+
+[[appointments]]
+mass = "octava-nativitatis-domini"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+marginal_number = 232
+pdf_page = 115
+printed_page = 34
+column = "left"
+printed_heading = "Offertory"
+identifier = "Tui sunt caeli"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 115
+end_column = "left"
+next_boundary = "Secret 233"
+raster_sha256 = ["630769427029f00f7013eaf2e999c10b8c6d8959a1ef991e9153e642392f6c28"]
+verdict = "represented"
+printed_reference = "Ps.88,12 et15"
+
+[[appointments]]
+mass = "octava-nativitatis-domini"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 233
+pdf_page = 115
+printed_page = 34
+column = "left"
+printed_heading = "Secreta"
+identifier = "Muneribus nostris"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 115
+end_column = "left"
+next_boundary = "Communion 234"
+raster_sha256 = ["630769427029f00f7013eaf2e999c10b8c6d8959a1ef991e9153e642392f6c28"]
+verdict = "represented"
+
+[[appointments]]
+mass = "octava-nativitatis-domini"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+marginal_number = 234
+pdf_page = 115
+printed_page = 34
+column = "left"
+printed_heading = "Ant.ad Communionem"
+identifier = "Viderunt omnes"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 115
+end_column = "left"
+next_boundary = "Postcommunion 235"
+raster_sha256 = ["630769427029f00f7013eaf2e999c10b8c6d8959a1ef991e9153e642392f6c28"]
+verdict = "represented"
+printed_reference = "Ps.97,3"
+
+[[appointments]]
+mass = "octava-nativitatis-domini"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 235
+pdf_page = 115
+printed_page = 34
+column = "left"
+printed_heading = "Postcommunio"
+identifier = "Haec nos communio"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 115
+end_column = "left"
+next_boundary = "Jan2-5 feria rubric and HolyName heading in right column"
+raster_sha256 = ["630769427029f00f7013eaf2e999c10b8c6d8959a1ef991e9153e642392f6c28"]
+verdict = "represented"
+
+[[appointments]]
+mass = "s-andreae-corsini-episcopi-confessoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 2121
+pdf_page = 549
+printed_page = 468
+column = "right"
+printed_heading = "Oratio"
+identifier = "Missa Statuit, de Communi Confessoris Pontificis I loco [19], praeter orationem sequentem"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 549
+end_column = "right"
+next_boundary = "Secret 2122"
+raster_sha256 = ["6c4397ba34fbb4f99877f0dad0c0c95885773726aa5e4bceae3ee97c7befaa3e"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[appointments]]
+mass = "s-andreae-corsini-episcopi-confessoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 2122
+pdf_page = 549
+printed_page = 468
+column = "right"
+printed_heading = "Secreta"
+identifier = "C/S/PC C"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 549
+end_column = "right"
+next_boundary = "Postcommunion 2123"
+raster_sha256 = ["6c4397ba34fbb4f99877f0dad0c0c95885773726aa5e4bceae3ee97c7befaa3e"]
+verdict = "represented"
+printed_orations_classification = "C"
+
+[[appointments]]
+mass = "s-andreae-corsini-episcopi-confessoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 2123
+pdf_page = 549
+printed_page = 468
+column = "right"
+printed_heading = "Postcommunio"
+identifier = "C/S/PC C"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 549
+end_column = "right"
+next_boundary = "Die5februarii S.Agathae heading on artifact550"
+raster_sha256 = ["6c4397ba34fbb4f99877f0dad0c0c95885773726aa5e4bceae3ee97c7befaa3e"]
+verdict = "represented"
+printed_orations_classification = "C"
+
+[[referrals]]
+mass = "s-andreae-corsini-episcopi-confessoris"
+form_id = "main"
+target_mass = "commune-confessoris-pontificis-1"
+printed_referral = "Missa Statuit, de Communi Confessoris Pontificis I loco [19], praeter orationem sequentem"
+pdf_page = 549
+printed_page = 468
+column = "right"
+raster_sha256 = ["6c4397ba34fbb4f99877f0dad0c0c95885773726aa5e4bceae3ee97c7befaa3e"]
+condition = "Normal-form referral; local printed P orations retained, C/C1/C2 markings identify Common selection."
+
+[[appointments]]
+mass = "s-anselmi-episcopi-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 2422
+pdf_page = 589
+printed_page = 508
+column = "left"
+printed_heading = "Oratio"
+identifier = "Missa In medio, de Communi Doctorum [22]"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 589
+end_column = "left"
+next_boundary = "Secret 2423"
+raster_sha256 = ["2abc94b74ba636cae43bb45ab84290df822dd334c6362af3d5b0a32937b39bf3"]
+verdict = "represented"
+printed_orations_classification = "C"
+
+[[appointments]]
+mass = "s-anselmi-episcopi-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 2423
+pdf_page = 589
+printed_page = 508
+column = "left"
+printed_heading = "Secreta"
+identifier = "C/S/PC C1"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 589
+end_column = "left"
+next_boundary = "Postcommunion 2424"
+raster_sha256 = ["2abc94b74ba636cae43bb45ab84290df822dd334c6362af3d5b0a32937b39bf3"]
+verdict = "represented"
+printed_orations_classification = "C1"
+
+[[appointments]]
+mass = "s-anselmi-episcopi-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 2424
+pdf_page = 589
+printed_page = 508
+column = "left"
+printed_heading = "Postcommunio"
+identifier = "C/S/PC C1"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 589
+end_column = "left"
+next_boundary = "Die22aprilis Ss.Soteris et Caii heading"
+raster_sha256 = ["2abc94b74ba636cae43bb45ab84290df822dd334c6362af3d5b0a32937b39bf3"]
+verdict = "represented"
+printed_orations_classification = "C1"
+
+[[referrals]]
+mass = "s-anselmi-episcopi-confessoris-ecclesiae-doctoris"
+form_id = "main"
+target_mass = "commune-doctorum-pontificis"
+printed_referral = "Missa In medio, de Communi Doctorum [22]"
+pdf_page = 589
+printed_page = 508
+column = "left"
+raster_sha256 = ["2abc94b74ba636cae43bb45ab84290df822dd334c6362af3d5b0a32937b39bf3"]
+condition = "Normal-form referral; local printed P orations retained, C/C1/C2 markings identify Common selection."
+
+[[appointments]]
+mass = "s-antonii-abbatis"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+marginal_number = 1940
+pdf_page = 526
+printed_page = 445
+column = "left"
+printed_heading = "Ant.ad Introitum"
+identifier = "Os iusti"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 526
+end_column = "left"
+next_boundary = "Collect 1941"
+raster_sha256 = ["b719020cf7953b978764671fa04477b11cc943f92b3dd5cae8c6f5233d9a4bfd"]
+verdict = "represented"
+printed_reference = "Ps.36,30-31;Ibid.,1"
+
+[[appointments]]
+mass = "s-antonii-abbatis"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 1941
+pdf_page = 526
+printed_page = 445
+column = "left"
+printed_heading = "Oratio"
+identifier = "Intercessio nos"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 526
+end_column = "left"
+next_boundary = "Lesson 1942"
+raster_sha256 = ["b719020cf7953b978764671fa04477b11cc943f92b3dd5cae8c6f5233d9a4bfd"]
+verdict = "represented"
+
+[[appointments]]
+mass = "s-antonii-abbatis"
+form_id = "main"
+proper = "Lesson"
+occurrence = 1
+marginal_number = 1942
+pdf_page = 526
+printed_page = 445
+column = "right"
+printed_heading = "Lesson"
+identifier = "Lectio libri Sapientiae"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 526
+end_column = "right"
+next_boundary = "Gradual 1943"
+raster_sha256 = ["b719020cf7953b978764671fa04477b11cc943f92b3dd5cae8c6f5233d9a4bfd"]
+verdict = "primary-bounds-reused"
+printed_reference = "Eccli.45,1-6"
+
+[[appointments]]
+mass = "s-antonii-abbatis"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+marginal_number = 1943
+pdf_page = 526
+printed_page = 445
+column = "right"
+printed_heading = "Graduale"
+identifier = "Domine praevenisti"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 526
+end_column = "right"
+next_boundary = "Alleluia 1944"
+raster_sha256 = ["b719020cf7953b978764671fa04477b11cc943f92b3dd5cae8c6f5233d9a4bfd"]
+verdict = "represented"
+printed_reference = "Ps.20,4-5"
+
+[[appointments]]
+mass = "s-antonii-abbatis"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+marginal_number = 1944
+pdf_page = 526
+printed_page = 445
+column = "right"
+printed_heading = "Alleluia"
+identifier = "Iustus ut palma"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 526
+end_column = "right"
+next_boundary = "Gospel 1945"
+raster_sha256 = ["b719020cf7953b978764671fa04477b11cc943f92b3dd5cae8c6f5233d9a4bfd"]
+verdict = "represented"
+printed_reference = "Ps.91,13"
+
+[[appointments]]
+mass = "s-antonii-abbatis"
+form_id = "main"
+proper = "Gospel"
+occurrence = 1
+marginal_number = 1945
+pdf_page = 526
+printed_page = 445
+column = "right"
+printed_heading = "Gospel"
+identifier = "Secundum Lucam"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 527
+end_column = "left"
+next_boundary = "Offertory 1946"
+raster_sha256 = ["b719020cf7953b978764671fa04477b11cc943f92b3dd5cae8c6f5233d9a4bfd", "9e71d56f92473b1c789f848c10e93411425b59250d6beaaf75f3b0d91cc79f6f"]
+verdict = "primary-bounds-reused"
+printed_reference = "Luc.12,35-40"
+
+[[appointments]]
+mass = "s-antonii-abbatis"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+marginal_number = 1946
+pdf_page = 527
+printed_page = 446
+column = "left"
+printed_heading = "Offertory"
+identifier = "Desiderium animae"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 527
+end_column = "left"
+next_boundary = "Secret 1947"
+raster_sha256 = ["9e71d56f92473b1c789f848c10e93411425b59250d6beaaf75f3b0d91cc79f6f"]
+verdict = "represented"
+printed_reference = "Ps.20,3 et4"
+
+[[appointments]]
+mass = "s-antonii-abbatis"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 1947
+pdf_page = 527
+printed_page = 446
+column = "left"
+printed_heading = "Secreta"
+identifier = "Sacris altaribus"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 527
+end_column = "left"
+next_boundary = "Communion 1948"
+raster_sha256 = ["9e71d56f92473b1c789f848c10e93411425b59250d6beaaf75f3b0d91cc79f6f"]
+verdict = "represented"
+
+[[appointments]]
+mass = "s-antonii-abbatis"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+marginal_number = 1948
+pdf_page = 527
+printed_page = 446
+column = "left"
+printed_heading = "Ant.ad Communionem"
+identifier = "Fidelis servus"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 527
+end_column = "left"
+next_boundary = "Postcommunion 1949"
+raster_sha256 = ["9e71d56f92473b1c789f848c10e93411425b59250d6beaaf75f3b0d91cc79f6f"]
+verdict = "represented"
+printed_reference = "Luc.12,42"
+
+[[appointments]]
+mass = "s-antonii-abbatis"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 1949
+pdf_page = 527
+printed_page = 446
+column = "left"
+printed_heading = "Postcommunio"
+identifier = "Protegat nos"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 527
+end_column = "left"
+next_boundary = "Die18ianuarii S.Priscae heading"
+raster_sha256 = ["9e71d56f92473b1c789f848c10e93411425b59250d6beaaf75f3b0d91cc79f6f"]
+verdict = "represented"
+
+[[appointments]]
+mass = "s-catharinae-senensis-virginis"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 2479
+pdf_page = 596
+printed_page = 515
+column = "right"
+printed_heading = "Oratio"
+identifier = "Missa Dilexisti, de Communi Virginum III loco [32], cum orationibus ut infra"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 596
+end_column = "right"
+next_boundary = "Secret 2480"
+raster_sha256 = ["63de94b614a1a06b3f927a595f42a6d4ba276c22935944c02d18a53ccde9db6e"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[appointments]]
+mass = "s-catharinae-senensis-virginis"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 2480
+pdf_page = 596
+printed_page = 515
+column = "right"
+printed_heading = "Secreta"
+identifier = "C/S/PC P"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 596
+end_column = "right"
+next_boundary = "Postcommunion 2481"
+raster_sha256 = ["63de94b614a1a06b3f927a595f42a6d4ba276c22935944c02d18a53ccde9db6e"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[appointments]]
+mass = "s-catharinae-senensis-virginis"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 2481
+pdf_page = 596
+printed_page = 515
+column = "right"
+printed_heading = "Postcommunio"
+identifier = "C/S/PC P"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 596
+end_column = "right"
+next_boundary = "FESTA MAII heading on artifact597"
+raster_sha256 = ["63de94b614a1a06b3f927a595f42a6d4ba276c22935944c02d18a53ccde9db6e"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[referrals]]
+mass = "s-catharinae-senensis-virginis"
+form_id = "main"
+target_mass = "commune-virginum-3"
+printed_referral = "Missa Dilexisti, de Communi Virginum III loco [32], cum orationibus ut infra"
+pdf_page = 596
+printed_page = 515
+column = "right"
+raster_sha256 = ["63de94b614a1a06b3f927a595f42a6d4ba276c22935944c02d18a53ccde9db6e"]
+condition = "Normal-form referral; local printed P orations retained, C/C1/C2 markings identify Common selection."
+
+[[appointments]]
+mass = "s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 2155
+pdf_page = 553
+printed_page = 472
+column = "right"
+printed_heading = "Oratio"
+identifier = "Missa In medio, de Communi Doctorum [22], cum orationibus ut infra"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 553
+end_column = "right"
+next_boundary = "S.Apollonia commemoration Oratio2156"
+raster_sha256 = ["f34f2576a941945238c0d62a83917b291e61296241de49e545d210deec1b12d6"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[appointments]]
+mass = "s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 2157
+pdf_page = 554
+printed_page = 473
+column = "left"
+printed_heading = "Secreta"
+identifier = "C/S/PC P"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 554
+end_column = "left"
+next_boundary = "Pro S.Apollonia Secreta2158"
+raster_sha256 = ["a33bc98200448807a2701b07afbe0d93d0aca5d70d36616ffe4c0e9e5eff69ef"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[appointments]]
+mass = "s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 2159
+pdf_page = 554
+printed_page = 473
+column = "left"
+printed_heading = "Postcommunio"
+identifier = "C/S/PC P"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 554
+end_column = "left"
+next_boundary = "Pro S.Apollonia Postcommunio2160"
+raster_sha256 = ["a33bc98200448807a2701b07afbe0d93d0aca5d70d36616ffe4c0e9e5eff69ef"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[referrals]]
+mass = "s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae"
+form_id = "main"
+target_mass = "commune-doctorum-pontificis"
+printed_referral = "Missa In medio, de Communi Doctorum [22], cum orationibus ut infra"
+pdf_page = 553
+printed_page = 472
+column = "right"
+raster_sha256 = ["f34f2576a941945238c0d62a83917b291e61296241de49e545d210deec1b12d6"]
+condition = "Normal-form referral; local printed P orations retained, C/C1/C2 markings identify Common selection."
+
+[[appointments]]
+mass = "s-francisci-salesii-episcopi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 2065
+pdf_page = 541
+printed_page = 460
+column = "right"
+printed_heading = "Oratio"
+identifier = "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 541
+end_column = "right"
+next_boundary = "Secret 2066"
+raster_sha256 = ["9f4d2fdd84d3af2959a682e7c4ff4cc91c7ab269706c094f59bdae53fcb8b01f"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[appointments]]
+mass = "s-francisci-salesii-episcopi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 2066
+pdf_page = 542
+printed_page = 461
+column = "left"
+printed_heading = "Secreta"
+identifier = "C/S/PC C1"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 542
+end_column = "left"
+next_boundary = "Postcommunion 2067"
+raster_sha256 = ["89e79c5fa5e3993cf333ec346230f749db5eed71e4a75af1b658eb179aca090a"]
+verdict = "represented"
+printed_orations_classification = "C1"
+
+[[appointments]]
+mass = "s-francisci-salesii-episcopi-confessoris-ecclesiae"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 2067
+pdf_page = 542
+printed_page = 461
+column = "left"
+printed_heading = "Postcommunio"
+identifier = "C/S/PC C1"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 542
+end_column = "left"
+next_boundary = "Die30ianuarii S.Martinae heading"
+raster_sha256 = ["89e79c5fa5e3993cf333ec346230f749db5eed71e4a75af1b658eb179aca090a"]
+verdict = "represented"
+printed_orations_classification = "C1"
+
+[[referrals]]
+mass = "s-francisci-salesii-episcopi-confessoris-ecclesiae"
+form_id = "main"
+target_mass = "commune-doctorum-pontificis"
+printed_referral = "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem"
+pdf_page = 541
+printed_page = 460
+column = "right"
+raster_sha256 = ["9f4d2fdd84d3af2959a682e7c4ff4cc91c7ab269706c094f59bdae53fcb8b01f"]
+condition = "Normal-form referral; local printed P orations retained, C/C1/C2 markings identify Common selection."
+
+[[appointments]]
+mass = "s-hilarii-episcopi-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 1915
+pdf_page = 523
+printed_page = 442
+column = "right"
+printed_heading = "Oratio"
+identifier = "Missa In medio, de Communi Doctorum [22]"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 523
+end_column = "right"
+next_boundary = "S.Felix commemoration Oratio1916"
+raster_sha256 = ["9340e8242fe929ec4ac168d6d9b24838a1e6b4286455e34a8c26de35ccd6671e"]
+verdict = "represented"
+printed_orations_classification = "C"
+
+[[appointments]]
+mass = "s-hilarii-episcopi-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 1917
+pdf_page = 523
+printed_page = 442
+column = "right"
+printed_heading = "Secreta"
+identifier = "C/S/PC C1"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 523
+end_column = "right"
+next_boundary = "Pro S.Felice Secreta1918"
+raster_sha256 = ["9340e8242fe929ec4ac168d6d9b24838a1e6b4286455e34a8c26de35ccd6671e"]
+verdict = "represented"
+printed_orations_classification = "C1"
+
+[[appointments]]
+mass = "s-hilarii-episcopi-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 1919
+pdf_page = 524
+printed_page = 443
+column = "left"
+printed_heading = "Postcommunio"
+identifier = "C/S/PC C1"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 524
+end_column = "left"
+next_boundary = "Pro S.Felice Postcommunio1920"
+raster_sha256 = ["ca1051a8bd85e20d169ec22778ccf9b6224e4d3538cc0edef331c66dd58df946"]
+verdict = "represented"
+printed_orations_classification = "C1"
+
+[[referrals]]
+mass = "s-hilarii-episcopi-confessoris-ecclesiae-doctoris"
+form_id = "main"
+target_mass = "commune-doctorum-pontificis"
+printed_referral = "Missa In medio, de Communi Doctorum [22]"
+pdf_page = 523
+printed_page = 442
+column = "right"
+raster_sha256 = ["9340e8242fe929ec4ac168d6d9b24838a1e6b4286455e34a8c26de35ccd6671e"]
+condition = "Normal-form referral; local printed P orations retained, C/C1/C2 markings identify Common selection."
+
+[[appointments]]
+mass = "s-marcelli-i-papae-martyris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 1937
+pdf_page = 526
+printed_page = 445
+column = "left"
+printed_heading = "Oratio"
+identifier = "Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1], praeter orationem sequentem"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 526
+end_column = "left"
+next_boundary = "Secret 1938"
+raster_sha256 = ["b719020cf7953b978764671fa04477b11cc943f92b3dd5cae8c6f5233d9a4bfd"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[appointments]]
+mass = "s-marcelli-i-papae-martyris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 1938
+pdf_page = 526
+printed_page = 445
+column = "left"
+printed_heading = "Secreta"
+identifier = "C/S/PC C1"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 526
+end_column = "left"
+next_boundary = "Postcommunion 1939"
+raster_sha256 = ["b719020cf7953b978764671fa04477b11cc943f92b3dd5cae8c6f5233d9a4bfd"]
+verdict = "represented"
+printed_orations_classification = "C1"
+
+[[appointments]]
+mass = "s-marcelli-i-papae-martyris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 1939
+pdf_page = 526
+printed_page = 445
+column = "left"
+printed_heading = "Postcommunio"
+identifier = "C/S/PC C1"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 526
+end_column = "left"
+next_boundary = "Die17ianuarii S.Antonii heading"
+raster_sha256 = ["b719020cf7953b978764671fa04477b11cc943f92b3dd5cae8c6f5233d9a4bfd"]
+verdict = "represented"
+printed_orations_classification = "C1"
+
+[[referrals]]
+mass = "s-marcelli-i-papae-martyris"
+form_id = "main"
+target_mass = "commune-summorum-pontificum"
+printed_referral = "Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1], praeter orationem sequentem"
+pdf_page = 525
+printed_page = 444
+column = "right"
+raster_sha256 = ["a750949bf6280df0b647df210fc6d5b9d15a8647a8c097ddbfc6091c383963ab"]
+condition = "Normal-form referral; local printed P orations retained, C/C1/C2 markings identify Common selection."
+
+[[appointments]]
+mass = "s-martinae-virginis-martyris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 2068
+pdf_page = 542
+printed_page = 461
+column = "left"
+printed_heading = "Oratio"
+identifier = "Missa Loquebar, de Communi Virginum I loco [28]"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 542
+end_column = "left"
+next_boundary = "Secret 2069"
+raster_sha256 = ["89e79c5fa5e3993cf333ec346230f749db5eed71e4a75af1b658eb179aca090a"]
+verdict = "represented"
+printed_orations_classification = "C"
+
+[[appointments]]
+mass = "s-martinae-virginis-martyris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 2069
+pdf_page = 542
+printed_page = 461
+column = "left"
+printed_heading = "Secreta"
+identifier = "C/S/PC C"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 542
+end_column = "left"
+next_boundary = "Postcommunion 2070"
+raster_sha256 = ["89e79c5fa5e3993cf333ec346230f749db5eed71e4a75af1b658eb179aca090a"]
+verdict = "represented"
+printed_orations_classification = "C"
+
+[[appointments]]
+mass = "s-martinae-virginis-martyris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 2070
+pdf_page = 542
+printed_page = 461
+column = "left"
+printed_heading = "Postcommunio"
+identifier = "C/S/PC C"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 542
+end_column = "left"
+next_boundary = "Die31ianuarii S.Ioannis Bosco heading in right column"
+raster_sha256 = ["89e79c5fa5e3993cf333ec346230f749db5eed71e4a75af1b658eb179aca090a"]
+verdict = "represented"
+printed_orations_classification = "C"
+
+[[referrals]]
+mass = "s-martinae-virginis-martyris"
+form_id = "main"
+target_mass = "commune-virginum-1"
+printed_referral = "Missa Loquebar, de Communi Virginum I loco [28]"
+pdf_page = 542
+printed_page = 461
+column = "left"
+raster_sha256 = ["89e79c5fa5e3993cf333ec346230f749db5eed71e4a75af1b658eb179aca090a"]
+condition = "Normal-form referral; local printed P orations retained, C/C1/C2 markings identify Common selection."
+
+[[appointments]]
+mass = "s-pauli-primi-eremitae-confessoris"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+marginal_number = 1924
+pdf_page = 524
+printed_page = 443
+column = "right"
+printed_heading = "Ant.ad Introitum"
+identifier = "Iustus ut palma"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 524
+end_column = "right"
+next_boundary = "Collect 1925"
+raster_sha256 = ["ca1051a8bd85e20d169ec22778ccf9b6224e4d3538cc0edef331c66dd58df946"]
+verdict = "represented"
+printed_reference = "Ps.91,13-14;Ibid.,2"
+
+[[appointments]]
+mass = "s-pauli-primi-eremitae-confessoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 1925
+pdf_page = 524
+printed_page = 443
+column = "right"
+printed_heading = "Oratio"
+identifier = "Deus qui nos beati Pauli"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 524
+end_column = "right"
+next_boundary = "S.Maurus commemoration Oratio1926"
+raster_sha256 = ["ca1051a8bd85e20d169ec22778ccf9b6224e4d3538cc0edef331c66dd58df946"]
+verdict = "represented"
+
+[[appointments]]
+mass = "s-pauli-primi-eremitae-confessoris"
+form_id = "main"
+proper = "Epistle"
+occurrence = 1
+marginal_number = 1927
+pdf_page = 524
+printed_page = 443
+column = "right"
+printed_heading = "Epistle"
+identifier = "Ad Philippenses"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 525
+end_column = "left"
+next_boundary = "Gradual 1928"
+raster_sha256 = ["ca1051a8bd85e20d169ec22778ccf9b6224e4d3538cc0edef331c66dd58df946", "a750949bf6280df0b647df210fc6d5b9d15a8647a8c097ddbfc6091c383963ab"]
+verdict = "primary-bounds-reused"
+printed_reference = "Philipp.3,7-12"
+
+[[appointments]]
+mass = "s-pauli-primi-eremitae-confessoris"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+marginal_number = 1928
+pdf_page = 525
+printed_page = 444
+column = "left"
+printed_heading = "Graduale"
+identifier = "Iustus ut palma"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 525
+end_column = "left"
+next_boundary = "Alleluia 1929"
+raster_sha256 = ["a750949bf6280df0b647df210fc6d5b9d15a8647a8c097ddbfc6091c383963ab"]
+verdict = "source-repair"
+printed_reference = "Ps.91,13 et14;V.Ibid.,3"
+
+[[appointments]]
+mass = "s-pauli-primi-eremitae-confessoris"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+marginal_number = 1929
+pdf_page = 525
+printed_page = 444
+column = "left"
+printed_heading = "Alleluia"
+identifier = "Iustus germinabit"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 525
+end_column = "left"
+next_boundary = "Gospel 1930"
+raster_sha256 = ["a750949bf6280df0b647df210fc6d5b9d15a8647a8c097ddbfc6091c383963ab"]
+verdict = "represented"
+printed_reference = "Osee14,6"
+
+[[appointments]]
+mass = "s-pauli-primi-eremitae-confessoris"
+form_id = "main"
+proper = "Gospel"
+occurrence = 1
+marginal_number = 1930
+pdf_page = 525
+printed_page = 444
+column = "left"
+printed_heading = "Gospel"
+identifier = "Secundum Matthaeum"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 525
+end_column = "left"
+next_boundary = "Offertory 1931"
+raster_sha256 = ["a750949bf6280df0b647df210fc6d5b9d15a8647a8c097ddbfc6091c383963ab"]
+verdict = "primary-bounds-reused"
+printed_reference = "Mt.11,25-30"
+
+[[appointments]]
+mass = "s-pauli-primi-eremitae-confessoris"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+marginal_number = 1931
+pdf_page = 525
+printed_page = 444
+column = "left"
+printed_heading = "Offertory"
+identifier = "In virtute tua"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 525
+end_column = "left"
+next_boundary = "Secret 1932"
+raster_sha256 = ["a750949bf6280df0b647df210fc6d5b9d15a8647a8c097ddbfc6091c383963ab"]
+verdict = "represented"
+printed_reference = "Ps.20,2-3"
+
+[[appointments]]
+mass = "s-pauli-primi-eremitae-confessoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 1932
+pdf_page = 525
+printed_page = 444
+column = "right"
+printed_heading = "Secreta"
+identifier = "Laudis tibi"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 525
+end_column = "right"
+next_boundary = "Pro S.Mauro Secreta1933"
+raster_sha256 = ["a750949bf6280df0b647df210fc6d5b9d15a8647a8c097ddbfc6091c383963ab"]
+verdict = "represented"
+
+[[appointments]]
+mass = "s-pauli-primi-eremitae-confessoris"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+marginal_number = 1934
+pdf_page = 525
+printed_page = 444
+column = "right"
+printed_heading = "Ant.ad Communionem"
+identifier = "Laetabitur iustus"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 525
+end_column = "right"
+next_boundary = "Postcommunion 1935"
+raster_sha256 = ["a750949bf6280df0b647df210fc6d5b9d15a8647a8c097ddbfc6091c383963ab"]
+verdict = "represented"
+printed_reference = "Ps.63,11"
+
+[[appointments]]
+mass = "s-pauli-primi-eremitae-confessoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 1935
+pdf_page = 525
+printed_page = 444
+column = "right"
+printed_heading = "Postcommunio"
+identifier = "Refecti cibo potuque"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 525
+end_column = "right"
+next_boundary = "Pro S.Mauro Postcommunio1936"
+raster_sha256 = ["a750949bf6280df0b647df210fc6d5b9d15a8647a8c097ddbfc6091c383963ab"]
+verdict = "represented"
+
+[[appointments]]
+mass = "s-petri-canisii-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 2455
+pdf_page = 593
+printed_page = 512
+column = "left"
+printed_heading = "Oratio"
+identifier = "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 593
+end_column = "left"
+next_boundary = "Secret 2456"
+raster_sha256 = ["9aa5048f0db4849b65e74c84478d6920daa86b5170f719d71c6c294e3a998547"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[appointments]]
+mass = "s-petri-canisii-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 2456
+pdf_page = 593
+printed_page = 512
+column = "left"
+printed_heading = "Secreta"
+identifier = "C/S/PC C2"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 593
+end_column = "right"
+next_boundary = "Postcommunion 2457"
+raster_sha256 = ["9aa5048f0db4849b65e74c84478d6920daa86b5170f719d71c6c294e3a998547"]
+verdict = "represented"
+printed_orations_classification = "C2"
+
+[[appointments]]
+mass = "s-petri-canisii-confessoris-ecclesiae-doctoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 2457
+pdf_page = 593
+printed_page = 512
+column = "right"
+printed_heading = "Postcommunio"
+identifier = "C/S/PC C2"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 593
+end_column = "right"
+next_boundary = "Die28aprilis S.Pauli a Cruce heading"
+raster_sha256 = ["9aa5048f0db4849b65e74c84478d6920daa86b5170f719d71c6c294e3a998547"]
+verdict = "represented"
+printed_orations_classification = "C2"
+
+[[referrals]]
+mass = "s-petri-canisii-confessoris-ecclesiae-doctoris"
+form_id = "main"
+target_mass = "commune-doctorum-non-pontificis"
+printed_referral = "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem"
+pdf_page = 593
+printed_page = 512
+column = "left"
+raster_sha256 = ["9aa5048f0db4849b65e74c84478d6920daa86b5170f719d71c6c294e3a998547"]
+condition = "Normal-form referral; local printed P orations retained, C/C1/C2 markings identify Common selection."
+
+[[appointments]]
+mass = "s-petri-nolasci-confessoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 2048
+pdf_page = 539
+printed_page = 458
+column = "right"
+printed_heading = "Oratio"
+identifier = "Missa Iustus, de Communi Confessoris non Pontificis II loco [25], cum orationibus ut infra"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 539
+end_column = "right"
+next_boundary = "S.Agnes II commemoration Oratio2049"
+raster_sha256 = ["82f83417cb896fd7713b5543a021a30fe29c121ccf605126bc1ac80807c78c9a"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[appointments]]
+mass = "s-petri-nolasci-confessoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 2050
+pdf_page = 540
+printed_page = 459
+column = "left"
+printed_heading = "Secreta"
+identifier = "C/S/PC P"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 540
+end_column = "left"
+next_boundary = "Pro S.Agnete Secreta2051"
+raster_sha256 = ["3e37e3d7de38f3358912b76f5b881a2c1eaef61dc6dba8e7f9c2d3b678ac7c5b"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[appointments]]
+mass = "s-petri-nolasci-confessoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 2052
+pdf_page = 540
+printed_page = 459
+column = "left"
+printed_heading = "Postcommunio"
+identifier = "C/S/PC P"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 540
+end_column = "left"
+next_boundary = "Pro S.Agnete Postcommunio2053"
+raster_sha256 = ["3e37e3d7de38f3358912b76f5b881a2c1eaef61dc6dba8e7f9c2d3b678ac7c5b"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[referrals]]
+mass = "s-petri-nolasci-confessoris"
+form_id = "main"
+target_mass = "commune-confessoris-non-pontificis-2"
+printed_referral = "Missa Iustus, de Communi Confessoris non Pontificis II loco [25], cum orationibus ut infra"
+pdf_page = 539
+printed_page = 458
+column = "right"
+raster_sha256 = ["82f83417cb896fd7713b5543a021a30fe29c121ccf605126bc1ac80807c78c9a"]
+condition = "Normal-form referral; local printed P orations retained, C/C1/C2 markings identify Common selection."
+
+[[appointments]]
+mass = "s-polycarpi-episcopi-martyris"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+marginal_number = 2026
+pdf_page = 537
+printed_page = 456
+column = "left"
+printed_heading = "Ant.ad Introitum"
+identifier = "Sacerdotes Dei"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 537
+end_column = "left"
+next_boundary = "Collect 2027"
+raster_sha256 = ["b1781e9db2994213ae3f91170b619499eed1e0e5737798f8fb8c31a64006bea8"]
+verdict = "source-repair"
+printed_reference = "Dan.3,84 et87;Ibid.,57"
+
+[[appointments]]
+mass = "s-polycarpi-episcopi-martyris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 2027
+pdf_page = 537
+printed_page = 456
+column = "left"
+printed_heading = "Oratio"
+identifier = "Deus qui nos beati Polycarpi"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 537
+end_column = "left"
+next_boundary = "Epistle 2028"
+raster_sha256 = ["b1781e9db2994213ae3f91170b619499eed1e0e5737798f8fb8c31a64006bea8"]
+verdict = "represented"
+
+[[appointments]]
+mass = "s-polycarpi-episcopi-martyris"
+form_id = "main"
+proper = "Epistle"
+occurrence = 1
+marginal_number = 2028
+pdf_page = 537
+printed_page = 456
+column = "left"
+printed_heading = "Epistle"
+identifier = "Epistola beati Ioannis"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 537
+end_column = "right"
+next_boundary = "Gradual 2029"
+raster_sha256 = ["b1781e9db2994213ae3f91170b619499eed1e0e5737798f8fb8c31a64006bea8"]
+verdict = "primary-bounds-reused"
+printed_reference = "1Ioann.3,10-16"
+
+[[appointments]]
+mass = "s-polycarpi-episcopi-martyris"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+marginal_number = 2029
+pdf_page = 537
+printed_page = 456
+column = "right"
+printed_heading = "Graduale"
+identifier = "Gloria et honore"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 537
+end_column = "right"
+next_boundary = "Alleluia 2030"
+raster_sha256 = ["b1781e9db2994213ae3f91170b619499eed1e0e5737798f8fb8c31a64006bea8"]
+verdict = "represented"
+printed_reference = "Ps.8,6-7"
+
+[[appointments]]
+mass = "s-polycarpi-episcopi-martyris"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+marginal_number = 2030
+pdf_page = 537
+printed_page = 456
+column = "right"
+printed_heading = "Alleluia"
+identifier = "Hic est sacerdos"
+representation = "local-own"
+condition = "Normal Alleluia, replaced after Septuagesima by printed Tract."
+end_pdf_page = 537
+end_column = "right"
+next_boundary = "Tract 2031"
+raster_sha256 = ["b1781e9db2994213ae3f91170b619499eed1e0e5737798f8fb8c31a64006bea8"]
+verdict = "source-repair"
+
+[[appointments]]
+mass = "s-polycarpi-episcopi-martyris"
+form_id = "main"
+proper = "Tract"
+occurrence = 1
+marginal_number = 2031
+pdf_page = 537
+printed_page = 456
+column = "right"
+printed_heading = "Tractus"
+identifier = "Beatus vir"
+representation = "local-own"
+condition = "Post Septuagesimam, omissis Alleluia et versu sequenti, dicitur."
+end_pdf_page = 537
+end_column = "right"
+next_boundary = "Gospel 2032"
+raster_sha256 = ["b1781e9db2994213ae3f91170b619499eed1e0e5737798f8fb8c31a64006bea8"]
+verdict = "source-repair"
+printed_reference = "Ps.111,1-3"
+
+[[appointments]]
+mass = "s-polycarpi-episcopi-martyris"
+form_id = "main"
+proper = "Gospel"
+occurrence = 1
+marginal_number = 2032
+pdf_page = 537
+printed_page = 456
+column = "right"
+printed_heading = "Gospel"
+identifier = "Secundum Matthaeum"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 538
+end_column = "left"
+next_boundary = "Offertory 2033"
+raster_sha256 = ["b1781e9db2994213ae3f91170b619499eed1e0e5737798f8fb8c31a64006bea8", "7add30be09dc42ae82907f2aaa2eee431513c4c2ad04b9dfe2d27586865ed08d"]
+verdict = "primary-bounds-reused"
+printed_reference = "Mt.10,26-32"
+
+[[appointments]]
+mass = "s-polycarpi-episcopi-martyris"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+marginal_number = 2033
+pdf_page = 538
+printed_page = 457
+column = "left"
+printed_heading = "Offertory"
+identifier = "Inveni David"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 538
+end_column = "left"
+next_boundary = "Secret 2034"
+raster_sha256 = ["7add30be09dc42ae82907f2aaa2eee431513c4c2ad04b9dfe2d27586865ed08d"]
+verdict = "represented"
+printed_reference = "Ps.88,21-22"
+
+[[appointments]]
+mass = "s-polycarpi-episcopi-martyris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 2034
+pdf_page = 538
+printed_page = 457
+column = "left"
+printed_heading = "Secreta"
+identifier = "Munera tibi"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 538
+end_column = "left"
+next_boundary = "Communion 2035"
+raster_sha256 = ["7add30be09dc42ae82907f2aaa2eee431513c4c2ad04b9dfe2d27586865ed08d"]
+verdict = "represented"
+
+[[appointments]]
+mass = "s-polycarpi-episcopi-martyris"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+marginal_number = 2035
+pdf_page = 538
+printed_page = 457
+column = "left"
+printed_heading = "Ant.ad Communionem"
+identifier = "Posuisti Domine"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 538
+end_column = "left"
+next_boundary = "Postcommunion 2036"
+raster_sha256 = ["7add30be09dc42ae82907f2aaa2eee431513c4c2ad04b9dfe2d27586865ed08d"]
+verdict = "represented"
+printed_reference = "Ps.20,4"
+
+[[appointments]]
+mass = "s-polycarpi-episcopi-martyris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 2036
+pdf_page = 538
+printed_page = 457
+column = "left"
+printed_heading = "Postcommunio"
+identifier = "Refecti participatione"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 538
+end_column = "left"
+next_boundary = "Die27ianuarii S.Ioannis Chrysostomi heading"
+raster_sha256 = ["7add30be09dc42ae82907f2aaa2eee431513c4c2ad04b9dfe2d27586865ed08d"]
+verdict = "represented"
+
+[[appointments]]
+mass = "s-raymundi-penafort-confessoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 1995
+pdf_page = 533
+printed_page = 452
+column = "left"
+printed_heading = "Oratio"
+identifier = "Missa Os iusti, de Communi Confessoris non Pontificis I loco [24], praeter orationem sequentem"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 533
+end_column = "left"
+next_boundary = "S.Emerentiana commemoration Oratio1996"
+raster_sha256 = ["632a2d5de2efad6eac92d5c13903bb471b4ff021f1b60114c3a8ef7d61cb1072"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[appointments]]
+mass = "s-raymundi-penafort-confessoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 1997
+pdf_page = 533
+printed_page = 452
+column = "left"
+printed_heading = "Secreta"
+identifier = "C/S/PC C"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 533
+end_column = "left"
+next_boundary = "Pro S.Emerentiana Secreta1998"
+raster_sha256 = ["632a2d5de2efad6eac92d5c13903bb471b4ff021f1b60114c3a8ef7d61cb1072"]
+verdict = "represented"
+printed_orations_classification = "C"
+
+[[appointments]]
+mass = "s-raymundi-penafort-confessoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 1999
+pdf_page = 533
+printed_page = 452
+column = "left"
+printed_heading = "Postcommunio"
+identifier = "C/S/PC C"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 533
+end_column = "right"
+next_boundary = "Pro S.Emerentiana Postcommunio2000"
+raster_sha256 = ["632a2d5de2efad6eac92d5c13903bb471b4ff021f1b60114c3a8ef7d61cb1072"]
+verdict = "represented"
+printed_orations_classification = "C"
+
+[[referrals]]
+mass = "s-raymundi-penafort-confessoris"
+form_id = "main"
+target_mass = "commune-confessoris-non-pontificis-1"
+printed_referral = "Missa Os iusti, de Communi Confessoris non Pontificis I loco [24], praeter orationem sequentem"
+pdf_page = 533
+printed_page = 452
+column = "left"
+raster_sha256 = ["632a2d5de2efad6eac92d5c13903bb471b4ff021f1b60114c3a8ef7d61cb1072"]
+condition = "Normal-form referral; local printed P orations retained, C/C1/C2 markings identify Common selection."
+
+[[appointments]]
+mass = "s-romualdi-abbatis"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 2149
+pdf_page = 553
+printed_page = 472
+column = "left"
+printed_heading = "Oratio"
+identifier = "Missa Os iusti, de Communi Abbatum [27]"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 553
+end_column = "left"
+next_boundary = "Secret 2150"
+raster_sha256 = ["f34f2576a941945238c0d62a83917b291e61296241de49e545d210deec1b12d6"]
+verdict = "represented"
+printed_orations_classification = "C"
+
+[[appointments]]
+mass = "s-romualdi-abbatis"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 2150
+pdf_page = 553
+printed_page = 472
+column = "left"
+printed_heading = "Secreta"
+identifier = "C/S/PC C"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 553
+end_column = "left"
+next_boundary = "Postcommunion 2151"
+raster_sha256 = ["f34f2576a941945238c0d62a83917b291e61296241de49e545d210deec1b12d6"]
+verdict = "represented"
+printed_orations_classification = "C"
+
+[[appointments]]
+mass = "s-romualdi-abbatis"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 2151
+pdf_page = 553
+printed_page = 472
+column = "left"
+printed_heading = "Postcommunio"
+identifier = "C/S/PC C"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 553
+end_column = "left"
+next_boundary = "Die8februarii S.Ioannis de Matha heading"
+raster_sha256 = ["f34f2576a941945238c0d62a83917b291e61296241de49e545d210deec1b12d6"]
+verdict = "represented"
+printed_orations_classification = "C"
+
+[[referrals]]
+mass = "s-romualdi-abbatis"
+form_id = "main"
+target_mass = "commune-abbatum"
+printed_referral = "Missa Os iusti, de Communi Abbatum [27]"
+pdf_page = 553
+printed_page = 472
+column = "left"
+raster_sha256 = ["f34f2576a941945238c0d62a83917b291e61296241de49e545d210deec1b12d6"]
+condition = "Normal-form referral; local printed P orations retained, C/C1/C2 markings identify Common selection."
+
+[[appointments]]
+mass = "s-scholasticae-virginis"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 2161
+pdf_page = 554
+printed_page = 473
+column = "right"
+printed_heading = "Oratio"
+identifier = "Missa Dilexisti, de Communi Virginum III loco [32], praeter orationem sequentem"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 554
+end_column = "right"
+next_boundary = "Secret 2162"
+raster_sha256 = ["a33bc98200448807a2701b07afbe0d93d0aca5d70d36616ffe4c0e9e5eff69ef"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[appointments]]
+mass = "s-scholasticae-virginis"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 2162
+pdf_page = 554
+printed_page = 473
+column = "right"
+printed_heading = "Secreta"
+identifier = "C/S/PC C"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 554
+end_column = "right"
+next_boundary = "Postcommunion 2163"
+raster_sha256 = ["a33bc98200448807a2701b07afbe0d93d0aca5d70d36616ffe4c0e9e5eff69ef"]
+verdict = "represented"
+printed_orations_classification = "C"
+
+[[appointments]]
+mass = "s-scholasticae-virginis"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 2163
+pdf_page = 554
+printed_page = 473
+column = "right"
+printed_heading = "Postcommunio"
+identifier = "C/S/PC C"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 554
+end_column = "right"
+next_boundary = "Die11februarii In Apparitione B.Mariae heading"
+raster_sha256 = ["a33bc98200448807a2701b07afbe0d93d0aca5d70d36616ffe4c0e9e5eff69ef"]
+verdict = "represented"
+printed_orations_classification = "C"
+
+[[referrals]]
+mass = "s-scholasticae-virginis"
+form_id = "main"
+target_mass = "commune-virginum-3"
+printed_referral = "Missa Dilexisti, de Communi Virginum III loco [32], praeter orationem sequentem"
+pdf_page = 554
+printed_page = 473
+column = "left"
+raster_sha256 = ["a33bc98200448807a2701b07afbe0d93d0aca5d70d36616ffe4c0e9e5eff69ef"]
+condition = "Normal-form referral; local printed P orations retained, C/C1/C2 markings identify Common selection."
+
+[[appointments]]
+mass = "s-timothei-episcopi-martyris"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+marginal_number = 2001
+pdf_page = 533
+printed_page = 452
+column = "right"
+printed_heading = "Ant.ad Introitum"
+identifier = "Statuit ei Dominus"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 533
+end_column = "right"
+next_boundary = "Collect 2002"
+raster_sha256 = ["632a2d5de2efad6eac92d5c13903bb471b4ff021f1b60114c3a8ef7d61cb1072"]
+verdict = "represented"
+printed_reference = "Eccli.45,30;Ps.131,1"
+
+[[appointments]]
+mass = "s-timothei-episcopi-martyris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 2002
+pdf_page = 533
+printed_page = 452
+column = "right"
+printed_heading = "Oratio"
+identifier = "Infirmitatem nostram"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 533
+end_column = "right"
+next_boundary = "Epistle 2003"
+raster_sha256 = ["632a2d5de2efad6eac92d5c13903bb471b4ff021f1b60114c3a8ef7d61cb1072"]
+verdict = "represented"
+
+[[appointments]]
+mass = "s-timothei-episcopi-martyris"
+form_id = "main"
+proper = "Epistle"
+occurrence = 1
+marginal_number = 2003
+pdf_page = 533
+printed_page = 452
+column = "right"
+printed_heading = "Epistle"
+identifier = "Ad Timotheum"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 534
+end_column = "left"
+next_boundary = "Gradual 2004"
+raster_sha256 = ["632a2d5de2efad6eac92d5c13903bb471b4ff021f1b60114c3a8ef7d61cb1072", "79e7d3bffa7f4ad80715d1c49aa420d3bd108b5e3b4b3cab914010188df20ada"]
+verdict = "primary-bounds-reused"
+printed_reference = "1Tim.6,11-16"
+
+[[appointments]]
+mass = "s-timothei-episcopi-martyris"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+marginal_number = 2004
+pdf_page = 534
+printed_page = 453
+column = "left"
+printed_heading = "Graduale"
+identifier = "Inveni David"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 534
+end_column = "left"
+next_boundary = "Alleluia 2005"
+raster_sha256 = ["79e7d3bffa7f4ad80715d1c49aa420d3bd108b5e3b4b3cab914010188df20ada"]
+verdict = "represented"
+printed_reference = "Ps.88,21-23"
+
+[[appointments]]
+mass = "s-timothei-episcopi-martyris"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+marginal_number = 2005
+pdf_page = 534
+printed_page = 453
+column = "left"
+printed_heading = "Alleluia"
+identifier = "Tu es sacerdos"
+representation = "local-own"
+condition = "Normal Alleluia, replaced after Septuagesima by printed Tract."
+end_pdf_page = 534
+end_column = "left"
+next_boundary = "Tract 2006"
+raster_sha256 = ["79e7d3bffa7f4ad80715d1c49aa420d3bd108b5e3b4b3cab914010188df20ada"]
+verdict = "source-repair"
+printed_reference = "Ps.109,4"
+
+[[appointments]]
+mass = "s-timothei-episcopi-martyris"
+form_id = "main"
+proper = "Tract"
+occurrence = 1
+marginal_number = 2006
+pdf_page = 534
+printed_page = 453
+column = "left"
+printed_heading = "Tractus"
+identifier = "Desiderium animae"
+representation = "local-own"
+condition = "Post Septuagesimam, omissis Alleluia et versu sequenti, dicitur."
+end_pdf_page = 534
+end_column = "left"
+next_boundary = "Gospel 2007"
+raster_sha256 = ["79e7d3bffa7f4ad80715d1c49aa420d3bd108b5e3b4b3cab914010188df20ada"]
+verdict = "source-repair"
+printed_reference = "Ps.20,3-4"
+
+[[appointments]]
+mass = "s-timothei-episcopi-martyris"
+form_id = "main"
+proper = "Gospel"
+occurrence = 1
+marginal_number = 2007
+pdf_page = 534
+printed_page = 453
+column = "left"
+printed_heading = "Gospel"
+identifier = "Secundum Lucam"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 534
+end_column = "right"
+next_boundary = "Offertory 2008"
+raster_sha256 = ["79e7d3bffa7f4ad80715d1c49aa420d3bd108b5e3b4b3cab914010188df20ada"]
+verdict = "primary-bounds-reused"
+printed_reference = "Luc.14,26-33"
+
+[[appointments]]
+mass = "s-timothei-episcopi-martyris"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+marginal_number = 2008
+pdf_page = 534
+printed_page = 453
+column = "right"
+printed_heading = "Offertory"
+identifier = "Veritas mea"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 534
+end_column = "right"
+next_boundary = "Secret 2009"
+raster_sha256 = ["79e7d3bffa7f4ad80715d1c49aa420d3bd108b5e3b4b3cab914010188df20ada"]
+verdict = "represented"
+printed_reference = "Ps.88,25"
+
+[[appointments]]
+mass = "s-timothei-episcopi-martyris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 2009
+pdf_page = 534
+printed_page = 453
+column = "right"
+printed_heading = "Secreta"
+identifier = "Hostias tibi"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 534
+end_column = "right"
+next_boundary = "Communion 2010"
+raster_sha256 = ["79e7d3bffa7f4ad80715d1c49aa420d3bd108b5e3b4b3cab914010188df20ada"]
+verdict = "represented"
+
+[[appointments]]
+mass = "s-timothei-episcopi-martyris"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+marginal_number = 2010
+pdf_page = 534
+printed_page = 453
+column = "right"
+printed_heading = "Ant.ad Communionem"
+identifier = "Semel iuravi"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 534
+end_column = "right"
+next_boundary = "Postcommunion 2011"
+raster_sha256 = ["79e7d3bffa7f4ad80715d1c49aa420d3bd108b5e3b4b3cab914010188df20ada"]
+verdict = "represented"
+printed_reference = "Ps.88,36 et37-38"
+
+[[appointments]]
+mass = "s-timothei-episcopi-martyris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 2011
+pdf_page = 535
+printed_page = 454
+column = "left"
+printed_heading = "Postcommunio"
+identifier = "Refecti participatione"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 535
+end_column = "left"
+next_boundary = "Die25ianuarii In Conversione S.Pauli heading"
+raster_sha256 = ["51cd4dae0f6c20de940a1292bcb53cfd658bced6a62e073024aeccd431d020b3"]
+verdict = "represented"
+
+[[appointments]]
+mass = "s-titi-episcopi-confessoris"
+form_id = "main"
+proper = "Introit"
+occurrence = 1
+marginal_number = 2135
+pdf_page = 551
+printed_page = 470
+column = "left"
+printed_heading = "Ant.ad Introitum"
+identifier = "Statuit ei Dominus"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 551
+end_column = "left"
+next_boundary = "Collect 2136"
+raster_sha256 = ["24efb423e8cc56bb017fd33a0bb2ac291e9e1bd2e59007f7c29b502d4618a4f8"]
+verdict = "represented"
+printed_reference = "Eccli.45,30;Ps.131,1"
+
+[[appointments]]
+mass = "s-titi-episcopi-confessoris"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 2136
+pdf_page = 551
+printed_page = 470
+column = "right"
+printed_heading = "Oratio"
+identifier = "Deus qui beatum Titum"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 551
+end_column = "right"
+next_boundary = "S.Dorothea commemoration Oratio2137"
+raster_sha256 = ["24efb423e8cc56bb017fd33a0bb2ac291e9e1bd2e59007f7c29b502d4618a4f8"]
+verdict = "represented"
+
+[[appointments]]
+mass = "s-titi-episcopi-confessoris"
+form_id = "main"
+proper = "Lesson"
+occurrence = 1
+marginal_number = 2138
+pdf_page = 551
+printed_page = 470
+column = "right"
+printed_heading = "Lesson"
+identifier = "Lectio libri Sapientiae"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 551
+end_column = "right"
+next_boundary = "Gradual 2139"
+raster_sha256 = ["24efb423e8cc56bb017fd33a0bb2ac291e9e1bd2e59007f7c29b502d4618a4f8"]
+verdict = "primary-bounds-reused"
+printed_reference = "Eccli.44,16-27 et45,3-20"
+
+[[appointments]]
+mass = "s-titi-episcopi-confessoris"
+form_id = "main"
+proper = "Gradual"
+occurrence = 1
+marginal_number = 2139
+pdf_page = 552
+printed_page = 471
+column = "left"
+printed_heading = "Graduale"
+identifier = "Ecce sacerdos"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 552
+end_column = "left"
+next_boundary = "Alleluia 2140"
+raster_sha256 = ["af9770f58e777b66ad4d65f61facc66e92ddf6b8681b90d52b9d779ec7a0741f"]
+verdict = "source-repair"
+printed_reference = "Eccli.44,16;V.Ibid.,20"
+
+[[appointments]]
+mass = "s-titi-episcopi-confessoris"
+form_id = "main"
+proper = "Alleluia"
+occurrence = 1
+marginal_number = 2140
+pdf_page = 552
+printed_page = 471
+column = "left"
+printed_heading = "Alleluia"
+identifier = "Tu es sacerdos"
+representation = "local-own"
+condition = "Normal Alleluia, replaced after Septuagesima by printed Tract."
+end_pdf_page = 552
+end_column = "left"
+next_boundary = "Tract 2141"
+raster_sha256 = ["af9770f58e777b66ad4d65f61facc66e92ddf6b8681b90d52b9d779ec7a0741f"]
+verdict = "source-repair"
+printed_reference = "Ps.109,4"
+
+[[appointments]]
+mass = "s-titi-episcopi-confessoris"
+form_id = "main"
+proper = "Tract"
+occurrence = 1
+marginal_number = 2141
+pdf_page = 552
+printed_page = 471
+column = "left"
+printed_heading = "Tractus"
+identifier = "Beatus vir"
+representation = "local-own"
+condition = "Post Septuagesimam, omissis Alleluia et versu sequenti, dicitur."
+end_pdf_page = 552
+end_column = "left"
+next_boundary = "Gospel 2142"
+raster_sha256 = ["af9770f58e777b66ad4d65f61facc66e92ddf6b8681b90d52b9d779ec7a0741f"]
+verdict = "source-repair"
+printed_reference = "Ps.111,1-3"
+
+[[appointments]]
+mass = "s-titi-episcopi-confessoris"
+form_id = "main"
+proper = "Gospel"
+occurrence = 1
+marginal_number = 2142
+pdf_page = 552
+printed_page = 471
+column = "left"
+printed_heading = "Gospel"
+identifier = "Secundum Lucam"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 552
+end_column = "right"
+next_boundary = "Offertory 2143"
+raster_sha256 = ["af9770f58e777b66ad4d65f61facc66e92ddf6b8681b90d52b9d779ec7a0741f"]
+verdict = "primary-bounds-reused"
+printed_reference = "Luc.10,1-9"
+
+[[appointments]]
+mass = "s-titi-episcopi-confessoris"
+form_id = "main"
+proper = "Offertory"
+occurrence = 1
+marginal_number = 2143
+pdf_page = 552
+printed_page = 471
+column = "right"
+printed_heading = "Offertory"
+identifier = "Inveni David"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 552
+end_column = "right"
+next_boundary = "Secret 2144"
+raster_sha256 = ["af9770f58e777b66ad4d65f61facc66e92ddf6b8681b90d52b9d779ec7a0741f"]
+verdict = "represented"
+printed_reference = "Ps.88,21-22"
+
+[[appointments]]
+mass = "s-titi-episcopi-confessoris"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 2144
+pdf_page = 552
+printed_page = 471
+column = "right"
+printed_heading = "Secreta"
+identifier = "Sancti tui"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 552
+end_column = "right"
+next_boundary = "Pro S.Dorothea Secreta2145"
+raster_sha256 = ["af9770f58e777b66ad4d65f61facc66e92ddf6b8681b90d52b9d779ec7a0741f"]
+verdict = "represented"
+
+[[appointments]]
+mass = "s-titi-episcopi-confessoris"
+form_id = "main"
+proper = "Communion"
+occurrence = 1
+marginal_number = 2146
+pdf_page = 552
+printed_page = 471
+column = "right"
+printed_heading = "Ant.ad Communionem"
+identifier = "Fidelis servus"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 552
+end_column = "right"
+next_boundary = "Postcommunion 2147"
+raster_sha256 = ["af9770f58e777b66ad4d65f61facc66e92ddf6b8681b90d52b9d779ec7a0741f"]
+verdict = "represented"
+printed_reference = "Luc.12,42"
+
+[[appointments]]
+mass = "s-titi-episcopi-confessoris"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 2147
+pdf_page = 552
+printed_page = 471
+column = "right"
+printed_heading = "Postcommunio"
+identifier = "Praesta quaesumus"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 552
+end_column = "right"
+next_boundary = "Pro S.Dorothea Postcommunio2148"
+raster_sha256 = ["af9770f58e777b66ad4d65f61facc66e92ddf6b8681b90d52b9d779ec7a0741f"]
+verdict = "represented"
+
+[[appointments]]
+mass = "ss-soteris-caii-paparum-martyrum"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 2425
+pdf_page = 589
+printed_page = 508
+column = "right"
+printed_heading = "Oratio"
+identifier = "Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1]"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 589
+end_column = "right"
+next_boundary = "Secret 2426"
+raster_sha256 = ["2abc94b74ba636cae43bb45ab84290df822dd334c6362af3d5b0a32937b39bf3"]
+verdict = "represented"
+printed_orations_classification = "C1"
+
+[[appointments]]
+mass = "ss-soteris-caii-paparum-martyrum"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 2426
+pdf_page = 589
+printed_page = 508
+column = "right"
+printed_heading = "Secreta"
+identifier = "C/S/PC C1"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 589
+end_column = "right"
+next_boundary = "Postcommunion 2427"
+raster_sha256 = ["2abc94b74ba636cae43bb45ab84290df822dd334c6362af3d5b0a32937b39bf3"]
+verdict = "represented"
+printed_orations_classification = "C1"
+
+[[appointments]]
+mass = "ss-soteris-caii-paparum-martyrum"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 2427
+pdf_page = 589
+printed_page = 508
+column = "right"
+printed_heading = "Postcommunio"
+identifier = "C/S/PC C1"
+representation = "inherited-Common"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 589
+end_column = "right"
+next_boundary = "Die23aprilis S.Georgii heading"
+raster_sha256 = ["2abc94b74ba636cae43bb45ab84290df822dd334c6362af3d5b0a32937b39bf3"]
+verdict = "represented"
+printed_orations_classification = "C1"
+
+[[referrals]]
+mass = "ss-soteris-caii-paparum-martyrum"
+form_id = "main"
+target_mass = "commune-summorum-pontificum"
+printed_referral = "Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1]"
+pdf_page = 589
+printed_page = 508
+column = "left"
+raster_sha256 = ["2abc94b74ba636cae43bb45ab84290df822dd334c6362af3d5b0a32937b39bf3"]
+condition = "Normal-form referral; local printed P orations retained, C/C1/C2 markings identify Common selection."
+
+[[appointments]]
+mass = "ss-vincentii-anastasii-martyrum"
+form_id = "main"
+proper = "Collect"
+occurrence = 1
+marginal_number = 1992
+pdf_page = 532
+printed_page = 451
+column = "right"
+printed_heading = "Oratio"
+identifier = "Missa Intret, de Communi plurimorum Martyrum I loco [10], cum orationibus ut infra"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 532
+end_column = "right"
+next_boundary = "Secret 1993"
+raster_sha256 = ["261155fa9361b8f9955057ec87fdc5da2919a02783c06a3e442c2942014b38ff"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[appointments]]
+mass = "ss-vincentii-anastasii-martyrum"
+form_id = "main"
+proper = "Secret"
+occurrence = 1
+marginal_number = 1993
+pdf_page = 532
+printed_page = 451
+column = "right"
+printed_heading = "Secreta"
+identifier = "C/S/PC P"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 532
+end_column = "right"
+next_boundary = "Postcommunion 1994"
+raster_sha256 = ["261155fa9361b8f9955057ec87fdc5da2919a02783c06a3e442c2942014b38ff"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[appointments]]
+mass = "ss-vincentii-anastasii-martyrum"
+form_id = "main"
+proper = "Postcommunion"
+occurrence = 1
+marginal_number = 1994
+pdf_page = 532
+printed_page = 451
+column = "right"
+printed_heading = "Postcommunio"
+identifier = "C/S/PC P"
+representation = "local-own"
+condition = "Unconditioned local unit in the printed normal form."
+end_pdf_page = 532
+end_column = "right"
+next_boundary = "Die23ianuarii S.Raymundi heading on artifact533"
+raster_sha256 = ["261155fa9361b8f9955057ec87fdc5da2919a02783c06a3e442c2942014b38ff"]
+verdict = "represented"
+printed_orations_classification = "P"
+
+[[referrals]]
+mass = "ss-vincentii-anastasii-martyrum"
+form_id = "main"
+target_mass = "commune-plurimorum-martyrum-1"
+printed_referral = "Missa Intret, de Communi plurimorum Martyrum I loco [10], cum orationibus ut infra"
+pdf_page = 532
+printed_page = 451
+column = "right"
+raster_sha256 = ["261155fa9361b8f9955057ec87fdc5da2919a02783c06a3e442c2942014b38ff"]
+condition = "Normal-form referral; local printed P orations retained, C/C1/C2 markings identify Common selection."

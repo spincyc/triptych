@@ -226,7 +226,7 @@ languages = ["la", "en"]
 date_range = "Historical edition snapshot; no civil-year occurrence claim"
 source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml", "src/sources/inventories/missal-expected-targets-review-2026-10-19.md", "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"]
 enumeration_state = "complete-within-slice"
-basis = "All explicit printed options in the five core proper roles of the sixty Common forms, plus their thirteen explicit Preface appointments: 94 entrance antiphons, 78 Collects, 63 offering prayers, 93 Communion antiphons, 62 postcommunions and 13 Preface appointments. The 403 entries are contextual appointments, not 403 distinct texts or assembled Masses. References and applicability follow their source loci; unprinted/general-rubric appointments, additional Preface choices within a reference and exact 2008 correspondence remain unresolved. The official 2008 variation list (Notitiae 44, printed pp. 368-380) positively names eight of these appointments; those rows carry established 2008 identity, with no claim of unchanged wording. The list's silence establishes nothing for the other rows, whose 2008 correspondence remains unresolved."
+basis = "All explicit printed options in the five core proper roles of the sixty Common forms, plus their thirteen explicit Preface appointments: 94 entrance antiphons, 78 Collects, 63 offering prayers, 93 Communion antiphons, 62 postcommunions and 13 Preface appointments. The 403 entries are contextual appointments, not 403 distinct texts or assembled Masses. References and applicability follow their source loci; unprinted/general-rubric appointments, additional Preface choices within a reference and exact 2008 correspondence remain unresolved. The official 2008 variation list (Notitiae 44, printed pp. 368-380) positively names nine of these appointments; those rows carry established 2008 identity, with no claim of unchanged wording. The list's silence establishes nothing for the other rows, whose 2008 correspondence remains unresolved."
 
 [[slices]]
 id = "postconciliar-2002-solemn-blessings"
@@ -13789,8 +13789,8 @@ slice_id = "postconciliar-2002-common-appointed-slots"
 kind = "text-slot"
 label = "Several martyrs, outside Easter 5 — postcommunion option 1"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
-source_locus = "2002 digital reproduction, artifact p. 554; web text line 21787; Common martyrs-several-outside-easter-5; postcommunion option 1"
-identity_state = "target-correspondence-unresolved"
+source_locus = "Variationes in reimpressione emendata (2008), Notitiae 44, printed p. 375 / artifact p. 57; entry p. 915, p.c. (2002 typical-edition pagination): postcommunion wording corrected. Independently matched in the registered secondary 2002 reproduction, artifact pp. 553-554: numbered several-martyr form 5 begins on p. 553; its postcommunion on p. 554 precedes the following one-martyr form 1. The official old fragment uniquely matches that preceding prayer in the 828-page reproduction, before the following one-martyr form 1. Prior 2002 locator: 2002 digital reproduction, artifact p. 554; web text line 21787; Common martyrs-several-outside-easter-5; postcommunion option 1. Attests that this appointment is present in 2008; it asserts no unchanged wording, whole-form correspondence, applicability join, or unlisted neighbouring appointment."
+identity_state = "established"
 source_form_key = "martyrs-several-outside-easter-5"
 
 [[targets]]
@@ -33071,6 +33071,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 102, printed p. 21, marginal unit 135"
 identity_state = "established"
 parent_id = "roman-1962.temporal.nativity-day"
+calendar_proper_name = "Alleluia"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962.temporal.nativity-day:gospel:1"
@@ -33277,6 +33279,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 104, printed p. 23, marginal unit 152"
 identity_state = "established"
 parent_id = "roman-1962.temporal.stephen"
+calendar_proper_name = "Collect"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962.temporal.stephen:nativity-octave-commemoration-collect:1"
@@ -33372,6 +33376,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 106, printed p. 25, marginal unit 161"
 identity_state = "established"
 parent_id = "roman-1962.temporal.stephen"
+calendar_proper_name = "Secret"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962.temporal.stephen:nativity-octave-commemoration-secret:1"
@@ -33403,6 +33409,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 106, printed p. 25, marginal unit 164"
 identity_state = "established"
 parent_id = "roman-1962.temporal.stephen"
+calendar_proper_name = "Postcommunion"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962.temporal.stephen:nativity-octave-commemoration-postcommunion:1"
@@ -33444,6 +33452,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 106, printed p. 25, marginal unit 167"
 identity_state = "established"
 parent_id = "roman-1962.temporal.john-apostle"
+calendar_proper_name = "Collect"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962.temporal.john-apostle:nativity-octave-commemoration-collect:1"
@@ -33539,6 +33549,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 107, printed p. 26, marginal unit 176"
 identity_state = "established"
 parent_id = "roman-1962.temporal.john-apostle"
+calendar_proper_name = "Secret"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962.temporal.john-apostle:nativity-octave-commemoration-secret:1"
@@ -33570,6 +33582,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 107, printed p. 26, marginal unit 179"
 identity_state = "established"
 parent_id = "roman-1962.temporal.john-apostle"
+calendar_proper_name = "Postcommunion"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962.temporal.john-apostle:nativity-octave-commemoration-postcommunion:1"
@@ -33611,6 +33625,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 108, printed p. 27, marginal unit 182"
 identity_state = "established"
 parent_id = "roman-1962.temporal.holy-innocents"
+calendar_proper_name = "Collect"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962.temporal.holy-innocents:nativity-octave-commemoration-collect:1"
@@ -33706,6 +33722,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 109, printed p. 28, marginal unit 191"
 identity_state = "established"
 parent_id = "roman-1962.temporal.holy-innocents"
+calendar_proper_name = "Secret"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962.temporal.holy-innocents:nativity-octave-commemoration-secret:1"
@@ -33737,6 +33755,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 109, printed p. 28, marginal unit 194"
 identity_state = "established"
 parent_id = "roman-1962.temporal.holy-innocents"
+calendar_proper_name = "Postcommunion"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962.temporal.holy-innocents:nativity-octave-commemoration-postcommunion:1"
@@ -33868,6 +33888,7 @@ label = "S. Thomae Episcopi et Martyris — proper Mass where I class"
 source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml"
 source_locus = "1962 Proprium de tempore, artifact PDF pp. 111–112, printed pp. 30–31; numbered units 206–219"
 identity_state = "established"
+calendar_mass_key = "comm-s-thomae-episcopi-martyris"
 
 [[targets]]
 id = "roman-1962.temporal.thomas-canterbury:introit:1"
@@ -33888,6 +33909,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 111, printed p. 30, marginal unit 207"
 identity_state = "established"
 parent_id = "roman-1962.temporal.thomas-canterbury"
+calendar_proper_name = "Collect"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962.temporal.thomas-canterbury:nativity-octave-commemoration-collect:1"
@@ -33958,6 +33981,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 112, printed p. 31, marginal unit 214"
 identity_state = "established"
 parent_id = "roman-1962.temporal.thomas-canterbury"
+calendar_proper_name = "Secret"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962.temporal.thomas-canterbury:nativity-octave-commemoration-secret:1"
@@ -33988,6 +34013,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Proprium de tempore, artifact PDF p. 112, printed p. 31, marginal unit 217"
 identity_state = "established"
 parent_id = "roman-1962.temporal.thomas-canterbury"
+calendar_proper_name = "Postcommunion"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962.temporal.thomas-canterbury:nativity-octave-commemoration-postcommunion:1"
@@ -40790,6 +40817,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 107; PDF physical p. 188; numbered text 697; semantic slot super-populum"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:feria-2-post-dominicam-4-in-quadragesima"
+calendar_proper_name = "Oratio super populum"
 
 [[targets]]
 id = "roman-1962:temporal:slot:feria-2-post-dominicam-4-in-quadragesima:preface"
@@ -40919,6 +40947,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 109; PDF physical p. 190; numbered text 707; semantic slot super-populum"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:feria-3-post-dominicam-4-in-quadragesima"
+calendar_proper_name = "Oratio super populum"
 
 [[targets]]
 id = "roman-1962:temporal:slot:feria-3-post-dominicam-4-in-quadragesima:preface"
@@ -40960,6 +40989,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 109; PDF physical p. 190; numbered text 709; semantic slot collect-before-lesson-1"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:feria-4-post-dominicam-4-in-quadragesima"
+calendar_proper_name = "Collect"
 
 [[targets]]
 id = "roman-1962:temporal:text-710"
@@ -40970,6 +41000,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 109; PDF physical p. 190; numbered text 710; semantic slot lesson-1"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:feria-4-post-dominicam-4-in-quadragesima"
+calendar_proper_name = "First Lesson"
 
 [[targets]]
 id = "roman-1962:temporal:text-711"
@@ -40980,6 +41011,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 110; PDF physical p. 191; numbered text 711; semantic slot gradual-1"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:feria-4-post-dominicam-4-in-quadragesima"
+calendar_proper_name = "First Gradual"
 
 [[targets]]
 id = "roman-1962:temporal:text-712"
@@ -40990,7 +41022,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 110; PDF physical p. 191; numbered text 712; semantic slot collect"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:feria-4-post-dominicam-4-in-quadragesima"
-calendar_proper_name = "Collect"
+calendar_proper_name = "Oratio"
 
 [[targets]]
 id = "roman-1962:temporal:text-713"
@@ -41001,6 +41033,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 110; PDF physical p. 191; numbered text 713; semantic slot lesson-2"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:feria-4-post-dominicam-4-in-quadragesima"
+calendar_proper_name = "Second Lesson"
 
 [[targets]]
 id = "roman-1962:temporal:text-714"
@@ -41011,6 +41044,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 110; PDF physical p. 191; numbered text 714; semantic slot gradual-2"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:feria-4-post-dominicam-4-in-quadragesima"
+calendar_proper_name = "Second Gradual"
 
 [[targets]]
 id = "roman-1962:temporal:text-715"
@@ -41087,6 +41121,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 112; PDF physical p. 193; numbered text 721; semantic slot super-populum"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:feria-4-post-dominicam-4-in-quadragesima"
+calendar_proper_name = "Oratio super populum"
 
 [[targets]]
 id = "roman-1962:temporal:slot:feria-4-post-dominicam-4-in-quadragesima:preface"
@@ -41356,6 +41391,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 116; PDF physical p. 197; numbered text 742; semantic slot super-populum"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:feria-6-post-dominicam-4-in-quadragesima"
+calendar_proper_name = "Oratio super populum"
 
 [[targets]]
 id = "roman-1962:temporal:slot:feria-6-post-dominicam-4-in-quadragesima:preface"
@@ -41485,6 +41521,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 117; PDF physical p. 198; numbered text 752; semantic slot super-populum"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:sabbato-post-dominicam-4-in-quadragesima"
+calendar_proper_name = "Oratio super populum"
 
 [[targets]]
 id = "roman-1962:temporal:slot:sabbato-post-dominicam-4-in-quadragesima:preface"
@@ -41765,6 +41802,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 121; PDF physical p. 202; numbered text 773; semantic slot super-populum"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:feria-2-post-dominicam-1-passionis"
+calendar_proper_name = "Oratio super populum"
 
 [[targets]]
 id = "roman-1962:temporal:slot:feria-2-post-dominicam-1-passionis:preface"
@@ -41894,6 +41932,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 122; PDF physical p. 203; numbered text 783; semantic slot super-populum"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:feria-3-post-dominicam-1-passionis"
+calendar_proper_name = "Oratio super populum"
 
 [[targets]]
 id = "roman-1962:temporal:slot:feria-3-post-dominicam-1-passionis:preface"
@@ -42163,6 +42202,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 126; PDF physical p. 207; numbered text 804; semantic slot super-populum"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:feria-5-post-dominicam-1-passionis"
+calendar_proper_name = "Oratio super populum"
 
 [[targets]]
 id = "roman-1962:temporal:slot:feria-5-post-dominicam-1-passionis:preface"
@@ -42303,6 +42343,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 127; PDF physical p. 208; numbered text 815; semantic slot super-populum"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:feria-6-post-dominicam-1-passionis"
+calendar_proper_name = "Oratio super populum"
 
 [[targets]]
 id = "roman-1962:temporal:slot:feria-6-post-dominicam-1-passionis:preface"
@@ -42432,6 +42473,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "1962 Vatican typical-edition facsimile; printed p. 129; PDF physical p. 210; numbered text 825; semantic slot super-populum"
 identity_state = "established"
 parent_id = "roman-1962:temporal:form:sabbato-post-dominicam-1-passionis"
+calendar_proper_name = "Oratio super populum"
 
 [[targets]]
 id = "roman-1962:temporal:slot:sabbato-post-dominicam-1-passionis:preface"
@@ -42950,6 +42992,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 216; printed p. 135; printed marginal item 844"
 identity_state = "established"
 parent_id = "roman-1962-hw-palm-mass"
+calendar_proper_name = "Introit"
 
 [[targets]]
 id = "roman-1962-hw-palm-mass-collect"
@@ -42960,6 +43003,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 216; printed p. 135; printed marginal item 845"
 identity_state = "established"
 parent_id = "roman-1962-hw-palm-mass"
+calendar_proper_name = "Collect"
 
 [[targets]]
 id = "roman-1962-hw-palm-mass-epistle"
@@ -42970,6 +43014,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF pp. 216–217; printed pp. 135–136; printed marginal item 846"
 identity_state = "established"
 parent_id = "roman-1962-hw-palm-mass"
+calendar_proper_name = "Epistle"
 
 [[targets]]
 id = "roman-1962-hw-palm-mass-gradual"
@@ -42980,6 +43025,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 217; printed p. 136; printed marginal item 847"
 identity_state = "established"
 parent_id = "roman-1962-hw-palm-mass"
+calendar_proper_name = "Gradual"
 
 [[targets]]
 id = "roman-1962-hw-palm-mass-tract"
@@ -42990,6 +43036,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 217; printed p. 136; printed marginal item 848"
 identity_state = "established"
 parent_id = "roman-1962-hw-palm-mass"
+calendar_proper_name = "Tract"
 
 [[targets]]
 id = "roman-1962-hw-palm-mass-passion"
@@ -43000,6 +43047,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF pp. 218–221; printed pp. 137–140; printed marginal item 850"
 identity_state = "established"
 parent_id = "roman-1962-hw-palm-mass"
+calendar_proper_name = "Passion according to Matthew"
 
 [[targets]]
 id = "roman-1962-hw-palm-mass-gospel-alternative"
@@ -43020,6 +43068,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 221; printed p. 140; printed marginal item 852"
 identity_state = "established"
 parent_id = "roman-1962-hw-palm-mass"
+calendar_proper_name = "Offertory"
 
 [[targets]]
 id = "roman-1962-hw-palm-mass-secret"
@@ -43030,6 +43079,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 221; printed p. 140; printed marginal item 853"
 identity_state = "established"
 parent_id = "roman-1962-hw-palm-mass"
+calendar_proper_name = "Secret"
 
 [[targets]]
 id = "roman-1962-hw-palm-mass-preface"
@@ -43050,6 +43100,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 222; printed p. 141; printed marginal item 854"
 identity_state = "established"
 parent_id = "roman-1962-hw-palm-mass"
+calendar_proper_name = "Communion"
 
 [[targets]]
 id = "roman-1962-hw-palm-mass-postcommunion"
@@ -43060,6 +43111,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 222; printed p. 141; printed marginal item 855"
 identity_state = "established"
 parent_id = "roman-1962-hw-palm-mass"
+calendar_proper_name = "Postcommunion"
 
 [[targets]]
 id = "roman-1962-hw-palm-mass-last-gospel"
@@ -43100,6 +43152,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 222; printed p. 141; printed marginal item 857"
 identity_state = "established"
 parent_id = "roman-1962-hw-monday-mass"
+calendar_proper_name = "Introit"
 
 [[targets]]
 id = "roman-1962-hw-monday-mass-collect"
@@ -43110,6 +43163,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 222; printed p. 141; printed marginal item 858"
 identity_state = "established"
 parent_id = "roman-1962-hw-monday-mass"
+calendar_proper_name = "Collect"
 
 [[targets]]
 id = "roman-1962-hw-monday-mass-lesson"
@@ -43120,6 +43174,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF pp. 222–223; printed pp. 141–142; printed marginal item 859"
 identity_state = "established"
 parent_id = "roman-1962-hw-monday-mass"
+calendar_proper_name = "Lesson"
 
 [[targets]]
 id = "roman-1962-hw-monday-mass-gradual"
@@ -43130,6 +43185,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 223; printed p. 142; printed marginal item 860"
 identity_state = "established"
 parent_id = "roman-1962-hw-monday-mass"
+calendar_proper_name = "Gradual"
 
 [[targets]]
 id = "roman-1962-hw-monday-mass-tract"
@@ -43140,6 +43196,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 223; printed p. 142; printed marginal item 861"
 identity_state = "established"
 parent_id = "roman-1962-hw-monday-mass"
+calendar_proper_name = "Tract"
 
 [[targets]]
 id = "roman-1962-hw-monday-mass-gospel"
@@ -43150,6 +43207,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 223; printed p. 142; printed marginal item 862"
 identity_state = "established"
 parent_id = "roman-1962-hw-monday-mass"
+calendar_proper_name = "Gospel"
 
 [[targets]]
 id = "roman-1962-hw-monday-mass-offertory"
@@ -43160,6 +43218,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 223; printed p. 142; printed marginal item 863"
 identity_state = "established"
 parent_id = "roman-1962-hw-monday-mass"
+calendar_proper_name = "Offertory"
 
 [[targets]]
 id = "roman-1962-hw-monday-mass-secret"
@@ -43170,6 +43229,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 223; printed p. 142; printed marginal item 864"
 identity_state = "established"
 parent_id = "roman-1962-hw-monday-mass"
+calendar_proper_name = "Secret"
 
 [[targets]]
 id = "roman-1962-hw-monday-mass-preface"
@@ -43190,6 +43250,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 223; printed p. 142; printed marginal item 865"
 identity_state = "established"
 parent_id = "roman-1962-hw-monday-mass"
+calendar_proper_name = "Communion"
 
 [[targets]]
 id = "roman-1962-hw-monday-mass-postcommunion"
@@ -43200,6 +43261,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 223; printed p. 142; printed marginal item 866"
 identity_state = "established"
 parent_id = "roman-1962-hw-monday-mass"
+calendar_proper_name = "Postcommunion"
 
 [[targets]]
 id = "roman-1962-hw-monday-mass-super-populum"
@@ -43210,6 +43272,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 224; printed p. 143; printed marginal item 867"
 identity_state = "established"
 parent_id = "roman-1962-hw-monday-mass"
+calendar_proper_name = "Oratio super populum"
 
 [[targets]]
 id = "roman-1962-hw-tuesday-mass"
@@ -43230,6 +43293,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 224; printed p. 143; printed marginal item 868"
 identity_state = "established"
 parent_id = "roman-1962-hw-tuesday-mass"
+calendar_proper_name = "Introit"
 
 [[targets]]
 id = "roman-1962-hw-tuesday-mass-collect"
@@ -43240,6 +43304,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 224; printed p. 143; printed marginal item 869"
 identity_state = "established"
 parent_id = "roman-1962-hw-tuesday-mass"
+calendar_proper_name = "Collect"
 
 [[targets]]
 id = "roman-1962-hw-tuesday-mass-lesson"
@@ -43250,6 +43315,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 224; printed p. 143; printed marginal item 870"
 identity_state = "established"
 parent_id = "roman-1962-hw-tuesday-mass"
+calendar_proper_name = "Lesson"
 
 [[targets]]
 id = "roman-1962-hw-tuesday-mass-gradual"
@@ -43260,6 +43326,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 224; printed p. 143; printed marginal item 871"
 identity_state = "established"
 parent_id = "roman-1962-hw-tuesday-mass"
+calendar_proper_name = "Gradual"
 
 [[targets]]
 id = "roman-1962-hw-tuesday-mass-passion"
@@ -43270,6 +43337,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF pp. 224–227; printed pp. 143–146; printed marginal item 872"
 identity_state = "established"
 parent_id = "roman-1962-hw-tuesday-mass"
+calendar_proper_name = "Passion according to Mark"
 
 [[targets]]
 id = "roman-1962-hw-tuesday-mass-offertory"
@@ -43280,6 +43348,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 227; printed p. 146; printed marginal item 873"
 identity_state = "established"
 parent_id = "roman-1962-hw-tuesday-mass"
+calendar_proper_name = "Offertory"
 
 [[targets]]
 id = "roman-1962-hw-tuesday-mass-secret"
@@ -43290,6 +43359,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 227; printed p. 146; printed marginal item 874"
 identity_state = "established"
 parent_id = "roman-1962-hw-tuesday-mass"
+calendar_proper_name = "Secret"
 
 [[targets]]
 id = "roman-1962-hw-tuesday-mass-preface"
@@ -43310,6 +43380,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 227; printed p. 146; printed marginal item 875"
 identity_state = "established"
 parent_id = "roman-1962-hw-tuesday-mass"
+calendar_proper_name = "Communion"
 
 [[targets]]
 id = "roman-1962-hw-tuesday-mass-postcommunion"
@@ -43320,6 +43391,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 227; printed p. 146; printed marginal item 876"
 identity_state = "established"
 parent_id = "roman-1962-hw-tuesday-mass"
+calendar_proper_name = "Postcommunion"
 
 [[targets]]
 id = "roman-1962-hw-tuesday-mass-super-populum"
@@ -43330,6 +43402,7 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact PDF p. 227; printed p. 146; printed marginal item 877"
 identity_state = "established"
 parent_id = "roman-1962-hw-tuesday-mass"
+calendar_proper_name = "Oratio super populum"
 
 [[targets]]
 id = "roman-1962-hw-wednesday-mass"
@@ -48546,6 +48619,9 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "Missale Romanum 1962, physical PDF p. 448, printed p. 367; numbered text 1377; collect 2; owning form heading physical PDF p. 447, printed p. 366"
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost-ember-sat-long"
+calendar_proper_name = "Oratio"
+calendar_proper_occurrence = 1
+
 
 [[targets]]
 id = "roman-1962.temporal.pentecost-ember-sat-long:reading:2"
@@ -48576,6 +48652,9 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "Missale Romanum 1962, physical PDF p. 448, printed p. 367; numbered text 1380; collect 3; owning form heading physical PDF p. 447, printed p. 366"
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost-ember-sat-long"
+calendar_proper_name = "Oratio"
+calendar_proper_occurrence = 2
+
 
 [[targets]]
 id = "roman-1962.temporal.pentecost-ember-sat-long:reading:3"
@@ -48606,6 +48685,9 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "Missale Romanum 1962, physical PDF p. 449, printed p. 368; numbered text 1383; collect 4; owning form heading physical PDF p. 447, printed p. 366"
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost-ember-sat-long"
+calendar_proper_name = "Oratio"
+calendar_proper_occurrence = 3
+
 
 [[targets]]
 id = "roman-1962.temporal.pentecost-ember-sat-long:reading:4"
@@ -48636,6 +48718,9 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "Missale Romanum 1962, physical PDF p. 449, printed p. 368; numbered text 1386; collect 5; owning form heading physical PDF p. 447, printed p. 366"
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost-ember-sat-long"
+calendar_proper_name = "Oratio"
+calendar_proper_occurrence = 4
+
 
 [[targets]]
 id = "roman-1962.temporal.pentecost-ember-sat-long:reading:5"
@@ -48666,6 +48751,9 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "Missale Romanum 1962, physical PDF p. 450, printed p. 369; numbered text 1389; collect 6; owning form heading physical PDF p. 447, printed p. 366"
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost-ember-sat-long"
+calendar_proper_name = "Oratio"
+calendar_proper_occurrence = 5
+
 
 [[targets]]
 id = "roman-1962.temporal.pentecost-ember-sat-long:reading:6"
@@ -48845,6 +48933,9 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "Missale Romanum 1962, physical PDF p. 451, printed p. 370; numbered text 1402; collect 2; owning form heading physical PDF p. 451, printed p. 370"
 identity_state = "established"
 parent_id = "roman-1962.temporal.pentecost-ember-sat-short"
+calendar_proper_name = "Oratio"
+calendar_proper_occurrence = 1
+
 
 [[targets]]
 id = "roman-1962.temporal.pentecost-ember-sat-short:reading:2"
@@ -51633,6 +51724,9 @@ source_locus = "Missale Romanum 1962, physical PDF p. 481, printed p. 400; numbe
 identity_state = "established"
 parent_id = "roman-1962.temporal.september-ember-wed"
 
+calendar_proper_name = "Oratio"
+calendar_proper_occurrence = 1
+
 [[targets]]
 id = "roman-1962.temporal.september-ember-wed:reading:2"
 slice_id = "roman-1962-temporal-easter-through-last-sunday"
@@ -51878,6 +51972,9 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "Missale Romanum 1962, physical PDF p. 485, printed p. 404; numbered text 1637; collect 2; owning form heading physical PDF p. 484, printed p. 403"
 identity_state = "established"
 parent_id = "roman-1962.temporal.september-ember-sat-long"
+calendar_proper_name = "Oratio"
+calendar_proper_occurrence = 1
+
 
 [[targets]]
 id = "roman-1962.temporal.september-ember-sat-long:reading:2"
@@ -51908,6 +52005,9 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "Missale Romanum 1962, physical PDF p. 486, printed p. 405; numbered text 1640; collect 3; owning form heading physical PDF p. 484, printed p. 403"
 identity_state = "established"
 parent_id = "roman-1962.temporal.september-ember-sat-long"
+calendar_proper_name = "Oratio"
+calendar_proper_occurrence = 2
+
 
 [[targets]]
 id = "roman-1962.temporal.september-ember-sat-long:reading:3"
@@ -51938,6 +52038,9 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "Missale Romanum 1962, physical PDF p. 486, printed p. 405; numbered text 1643; collect 4; owning form heading physical PDF p. 484, printed p. 403"
 identity_state = "established"
 parent_id = "roman-1962.temporal.september-ember-sat-long"
+calendar_proper_name = "Oratio"
+calendar_proper_occurrence = 3
+
 
 [[targets]]
 id = "roman-1962.temporal.september-ember-sat-long:reading:4"
@@ -51968,6 +52071,9 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "Missale Romanum 1962, physical PDF p. 486, printed p. 405; numbered text 1646; collect 5; owning form heading physical PDF p. 484, printed p. 403"
 identity_state = "established"
 parent_id = "roman-1962.temporal.september-ember-sat-long"
+calendar_proper_name = "Oratio"
+calendar_proper_occurrence = 4
+
 
 [[targets]]
 id = "roman-1962.temporal.september-ember-sat-long:reading:5"
@@ -51998,6 +52104,9 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "Missale Romanum 1962, physical PDF p. 487, printed p. 406; numbered text 1649; collect 6; owning form heading physical PDF p. 484, printed p. 403"
 identity_state = "established"
 parent_id = "roman-1962.temporal.september-ember-sat-long"
+calendar_proper_name = "Oratio"
+calendar_proper_occurrence = 5
+
 
 [[targets]]
 id = "roman-1962.temporal.september-ember-sat-long:reading:6"
@@ -52137,6 +52246,9 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "Missale Romanum 1962, physical PDF p. 489, printed p. 408; numbered text 1661; collect 2; owning form heading physical PDF p. 489, printed p. 408"
 identity_state = "established"
 parent_id = "roman-1962.temporal.september-ember-sat-short"
+calendar_proper_name = "Oratio"
+calendar_proper_occurrence = 1
+
 
 [[targets]]
 id = "roman-1962.temporal.september-ember-sat-short:reading:2"
@@ -64764,6 +64876,7 @@ source_locus = "artifact p. 560 / printed p. 479, raw page-local line 62"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p560-l59"
 calendar_proper_name = "Introit"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p560-l59:slot:p560-l71:collect"
@@ -64830,6 +64943,7 @@ source_locus = "artifact p. 561 / printed p. 480, raw page-local line 71"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p560-l59"
 calendar_proper_name = "Offertory"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p560-l59:slot:p561-l76:secret"
@@ -64852,6 +64966,7 @@ source_locus = "artifact p. 562 / printed p. 481, raw page-local line 2"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p560-l59"
 calendar_proper_name = "Communion"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p560-l59:slot:p562-l6:postcommunion"
@@ -66711,6 +66826,7 @@ source_locus = "artifact p. 585 / printed p. 504, raw page-local line 28"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p585-l24"
 calendar_proper_name = "Introit"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p585-l24:slot:p585-l38:collect"
@@ -66733,6 +66849,7 @@ source_locus = "artifact p. 585 / printed p. 504, raw page-local line 46"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p585-l24"
 calendar_proper_name = "Lesson"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p585-l24:slot:p585-l62:alleluia"
@@ -66744,6 +66861,7 @@ source_locus = "artifact p. 585 / printed p. 504, raw page-local line 62"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p585-l24"
 calendar_proper_name = "Alleluia"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p585-l24:slot:p585-l68:gospel"
@@ -66766,6 +66884,7 @@ source_locus = "artifact p. 586 / printed p. 505, raw page-local line 10"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p585-l24"
 calendar_proper_name = "Offertory"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p585-l24:slot:p586-l15:secret"
@@ -66777,6 +66896,7 @@ source_locus = "artifact p. 586 / printed p. 505, raw page-local line 15"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p585-l24"
 calendar_proper_name = "Secret"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p585-l24:slot:p586-l20:communion-antiphon"
@@ -66788,6 +66908,7 @@ source_locus = "artifact p. 586 / printed p. 505, raw page-local line 20"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p585-l24"
 calendar_proper_name = "Communion"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p585-l24:slot:p586-l24:postcommunion"
@@ -66799,6 +66920,7 @@ source_locus = "artifact p. 586 / printed p. 505, raw page-local line 24"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p585-l24"
 calendar_proper_name = "Postcommunion"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p586-l34:slot:p586-l37:introit"
@@ -70555,6 +70677,7 @@ source_locus = "artifact p. 629 / printed p. 548, raw page-local line 49"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p629-l45"
 calendar_proper_name = "Introit"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p629-l45:slot:p629-l57:collect"
@@ -70599,6 +70722,7 @@ source_locus = "artifact p. 630 / printed p. 549, raw page-local line 17"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p629-l45"
 calendar_proper_name = "Alleluia"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p629-l45:slot:p630-l21:gospel"
@@ -70621,6 +70745,7 @@ source_locus = "artifact p. 630 / printed p. 549, raw page-local line 43"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p629-l45"
 calendar_proper_name = "Offertory"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p629-l45:slot:p630-l48:secret"
@@ -70643,6 +70768,7 @@ source_locus = "artifact p. 630 / printed p. 549, raw page-local line 55"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p629-l45"
 calendar_proper_name = "Communion"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p629-l45:slot:p630-l59:postcommunion"
@@ -73393,6 +73519,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact p. 664 / printed p. 583, raw page-local line 16"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p663-l27"
+calendar_proper_name = "Alleluia"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p663-l27:slot:p664-l22:alleluia"
@@ -77975,6 +78103,7 @@ source_locus = "artifact p. 716 / printed p. 635, raw page-local line 45"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p716-l42"
 calendar_proper_name = "Introit"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p716-l42:slot:p716-l54:collect"
@@ -78041,6 +78170,7 @@ source_locus = "artifact p. 717 / printed p. 636, raw page-local line 33"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p716-l42"
 calendar_proper_name = "Offertory"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p716-l42:slot:p717-l37:secret"
@@ -78063,6 +78193,7 @@ source_locus = "artifact p. 717 / printed p. 636, raw page-local line 46"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p716-l42"
 calendar_proper_name = "Communion"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p716-l42:slot:p717-l50:postcommunion"
@@ -81260,6 +81391,8 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/vati
 source_locus = "artifact p. 754 / printed p. 673, raw page-local line 15"
 identity_state = "established"
 parent_id = "roman-1962:sanctoral-form:p753-l55"
+calendar_proper_name = "Alleluia"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-1962:sanctoral-form:p753-l55:slot:p754-l22:tract"
@@ -193506,3 +193639,562 @@ kind = "text-slots"
 state = "unenumerated"
 source_refs = ["src/sources/inventories/postconciliar-pentecost-source-accounting-2026-10-20.md", "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/passages/pentecost-vigil-and-day-appointments.toml"]
 basis = "The two Day Entrance alternatives lack distinct option joins in v1. Positive source appointment identity does not establish Latin/approved-English public bodies, compiler psalm suggestions as Missal appointments, a complete rite, or complete target-book text coverage."
+
+[[slices]]
+id = "postconciliar-special-role-source-gaps-2026-10-21"
+calendar = "postconciliar"
+recension_id = "roman-2008-reimpressio-emendata"
+territory = "universal"
+languages = ["la", "en"]
+date_range = "Held source2002/2010 and bounded official2008 appointment evidence; no civil-year or enacted-use claim"
+source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml", "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml", "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml", "src/sources/inventories/postconciliar-special-roles-source-accounting-2026-10-21.md"]
+enumeration_state = "partial"
+basis = "Forty-five positive source role anchors:37 own Lenten weekday Prayers over the People, four AshWednesday distribution chants, three Presentation candle/procession chants and the Chrism renewal dialogue. The37 weekday forms are credited to the registered2002 body-form inventory joined to the freshly viewed general Lent rubric3, not37 new individual prayer/body collations. Eight appointments have positive structural2008 identity;36 other weekday prayers and the Chrism renewal retain unresolved target correspondence. No exact body, permission, choice-universe, whole-form or normative annual denominator is inferred."
+
+[[targets]]
+id = "postconciliar:source-role-gap:ash-wednesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "ash-wednesday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-ash-wednesday (artifact p. 122; Proprium de tempore > Lent; web text L5558); one own optional ferial prayer role, not an individually re-collated body; own prayer role additionally viewed at artifact125"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "ash-wednesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:thursday-after-ash-wednesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "thursday-after-ash-wednesday: Prayer over the People"
+source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-after-ashes-thursday (artifact p. 125; Proprium de tempore > Lent; web text L5666); one own optional ferial prayer role, not an individually re-collated body; actual Thursday form begins artifact125 and its prayer is above the Friday heading at126; official2008 Notitiae artifact52/printed370, target Missal p202, explicitly corrects this prayer; text/context match, not unchanged-wording proof"
+identity_state = "established"
+calendar_mass_key = "thursday-after-ash-wednesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:friday-after-ash-wednesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "friday-after-ash-wednesday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-after-ashes-friday (artifact p. 126; Proprium de tempore > Lent; web text L5699); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "friday-after-ash-wednesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:saturday-after-ash-wednesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "saturday-after-ash-wednesday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-after-ashes-saturday (artifact p. 127; Proprium de tempore > Lent; web text L5730); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "saturday-after-ash-wednesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-1-monday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-1-monday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-1-monday (artifact p. 130; Proprium de tempore > Lent; web text L5825); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-1-monday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-1-tuesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-1-tuesday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-1-tuesday (artifact p. 130; Proprium de tempore > Lent; web text L5860); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-1-tuesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-1-wednesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-1-wednesday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-1-wednesday (artifact p. 131; Proprium de tempore > Lent; web text L5892); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-1-wednesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-1-thursday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-1-thursday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-1-thursday (artifact p. 132; Proprium de tempore > Lent; web text L5925); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-1-thursday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-1-friday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-1-friday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-1-friday (artifact p. 133; Proprium de tempore > Lent; web text L5959); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-1-friday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-1-saturday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-1-saturday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-1-saturday (artifact p. 134; Proprium de tempore > Lent; web text L5989); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-1-saturday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-2-monday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-2-monday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-2-monday (artifact p. 136; Proprium de tempore > Lent; web text L6075); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-2-monday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-2-tuesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-2-tuesday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-2-tuesday (artifact p. 137; Proprium de tempore > Lent; web text L6105); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-2-tuesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-2-wednesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-2-wednesday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-2-wednesday (artifact p. 138; Proprium de tempore > Lent; web text L6138); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-2-wednesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-2-thursday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-2-thursday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-2-thursday (artifact p. 139; Proprium de tempore > Lent; web text L6169); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-2-thursday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-2-friday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-2-friday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-2-friday (artifact p. 140; Proprium de tempore > Lent; web text L6199); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-2-friday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-2-saturday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-2-saturday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-2-saturday (artifact p. 140; Proprium de tempore > Lent; web text L6230); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-2-saturday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-3-monday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-3-monday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-3-monday (artifact p. 143; Proprium de tempore > Lent; web text L6335); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-3-monday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-3-tuesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-3-tuesday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-3-tuesday (artifact p. 144; Proprium de tempore > Lent; web text L6366); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-3-tuesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-3-wednesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-3-wednesday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-3-wednesday (artifact p. 145; Proprium de tempore > Lent; web text L6399); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-3-wednesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-3-thursday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-3-thursday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-3-thursday (artifact p. 146; Proprium de tempore > Lent; web text L6430); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-3-thursday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-3-friday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-3-friday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-3-friday (artifact p. 147; Proprium de tempore > Lent; web text L6464); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-3-friday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-3-saturday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-3-saturday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-3-saturday (artifact p. 148; Proprium de tempore > Lent; web text L6498); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-3-saturday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-4-monday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-4-monday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-4-monday (artifact p. 151; Proprium de tempore > Lent; web text L6609); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-4-monday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-4-tuesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-4-tuesday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-4-tuesday (artifact p. 152; Proprium de tempore > Lent; web text L6643); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-4-tuesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-4-wednesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-4-wednesday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-4-wednesday (artifact p. 153; Proprium de tempore > Lent; web text L6678); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-4-wednesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-4-thursday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-4-thursday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-4-thursday (artifact p. 153; Proprium de tempore > Lent; web text L6712); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-4-thursday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-4-friday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-4-friday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-4-friday (artifact p. 154; Proprium de tempore > Lent; web text L6748); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-4-friday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-4-saturday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-4-saturday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-4-saturday (artifact p. 155; Proprium de tempore > Lent; web text L6781); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-4-saturday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-5-monday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-5-monday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-5-monday (artifact p. 158; Proprium de tempore > Lent; web text L6884); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-5-monday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-5-tuesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-5-tuesday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-5-tuesday (artifact p. 159; Proprium de tempore > Lent; web text L6921); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-5-tuesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-5-wednesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-5-wednesday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-5-wednesday (artifact p. 160; Proprium de tempore > Lent; web text L6951); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-5-wednesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-5-thursday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-5-thursday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-5-thursday (artifact p. 161; Proprium de tempore > Lent; web text L6984); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-5-thursday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-5-friday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-5-friday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-5-friday (artifact p. 162; Proprium de tempore > Lent; web text L7019); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-5-friday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:lent-5-saturday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "lent-5-saturday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-lent-5-saturday (artifact p. 163; Proprium de tempore > Lent; web text L7060); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "lent-5-saturday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:holy-monday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "holy-monday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-holy-week-monday (artifact p. 174; Proprium de tempore > Holy Week; web text L7500); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "holy-monday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:holy-tuesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "holy-tuesday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-holy-week-tuesday (artifact p. 175; Proprium de tempore > Holy Week; web text L7537); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "holy-tuesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:holy-wednesday:prayer-over-the-people"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "holy-wednesday: Prayer over the People"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact122, general Lent rubric3; source-form heading credited from pc2002-temporal-holy-week-wednesday (artifact p. 176; Proprium de tempore > Holy Week; web text L7570); one own optional ferial prayer role, not an individually re-collated body"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "holy-wednesday"
+form_id = "main"
+calendar_proper_name = "Prayer over the People"
+
+[[targets]]
+id = "postconciliar:source-role-gap:ash-wednesday:antiphon-at-the-distribution-of-ashes-1"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "ash-wednesday: Antiphon at the Distribution of Ashes 1"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml"
+source_locus = "ICEL2010 Antiphonary artifact27/printed19, AshWednesday distribution: Antiphon at the Distribution of Ashes 1; foreword scope MR2002/2008 at artifact6–7; suitable-chant permission, not an exhaustive performed sequence; MR2002 artifact124 is corroborating older-source context"
+identity_state = "established"
+calendar_mass_key = "ash-wednesday"
+form_id = "main"
+calendar_proper_name = "Antiphon at the Distribution of Ashes 1"
+
+[[targets]]
+id = "postconciliar:source-role-gap:ash-wednesday:antiphon-at-the-distribution-of-ashes-2"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "ash-wednesday: Antiphon at the Distribution of Ashes 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml"
+source_locus = "ICEL2010 Antiphonary artifact27/printed19, AshWednesday distribution: Antiphon at the Distribution of Ashes 2; foreword scope MR2002/2008 at artifact6–7; suitable-chant permission, not an exhaustive performed sequence; MR2002 artifact124 is corroborating older-source context"
+identity_state = "established"
+calendar_mass_key = "ash-wednesday"
+form_id = "main"
+calendar_proper_name = "Antiphon at the Distribution of Ashes 2"
+
+[[targets]]
+id = "postconciliar:source-role-gap:ash-wednesday:antiphon-at-the-distribution-of-ashes-3"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "ash-wednesday: Antiphon at the Distribution of Ashes 3"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml"
+source_locus = "ICEL2010 Antiphonary artifact27/printed19, AshWednesday distribution: Antiphon at the Distribution of Ashes 3; foreword scope MR2002/2008 at artifact6–7; suitable-chant permission, not an exhaustive performed sequence; MR2002 artifact124 is corroborating older-source context"
+identity_state = "established"
+calendar_mass_key = "ash-wednesday"
+form_id = "main"
+calendar_proper_name = "Antiphon at the Distribution of Ashes 3"
+
+[[targets]]
+id = "postconciliar:source-role-gap:ash-wednesday:responsory-at-the-distribution-of-ashes"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "ash-wednesday: Responsory at the Distribution of Ashes"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml"
+source_locus = "ICEL2010 Antiphonary artifact27/printed19, AshWednesday distribution: Responsory at the Distribution of Ashes; foreword scope MR2002/2008 at artifact6–7; suitable-chant permission, not an exhaustive performed sequence; MR2002 artifact124 is corroborating older-source context"
+identity_state = "established"
+calendar_mass_key = "ash-wednesday"
+form_id = "main"
+calendar_proper_name = "Responsory at the Distribution of Ashes"
+
+[[targets]]
+id = "postconciliar:source-role-gap:presentation-lord:antiphon-while-candles-are-lit"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "presentation-lord: Antiphon while Candles are Lit"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml"
+source_locus = "ICEL2010 Antiphonary artifact101–102/printed93–94, Presentation candle blessing/procession and solemn-entrance contexts: Antiphon while Candles are Lit; foreword scope MR2002/2008 at artifact6–7; suitable-chant permission and ritual-context qualifications retained; MR2002 artifact422–424 corroborates older-source structure"
+identity_state = "established"
+calendar_mass_key = "presentation-lord"
+form_id = "main"
+calendar_proper_name = "Antiphon while Candles are Lit"
+
+[[targets]]
+id = "postconciliar:source-role-gap:presentation-lord:procession-chant-1-with-canticle"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "presentation-lord: Procession Chant 1 with Canticle"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml"
+source_locus = "ICEL2010 Antiphonary artifact101–102/printed93–94, Presentation candle blessing/procession and solemn-entrance contexts: Procession Chant 1 with Canticle; foreword scope MR2002/2008 at artifact6–7; suitable-chant permission and ritual-context qualifications retained; MR2002 artifact422–424 corroborates older-source structure"
+identity_state = "established"
+calendar_mass_key = "presentation-lord"
+form_id = "main"
+calendar_proper_name = "Procession Chant 1 with Canticle"
+
+[[targets]]
+id = "postconciliar:source-role-gap:presentation-lord:procession-chant-2"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "presentation-lord: Procession Chant 2"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml"
+source_locus = "ICEL2010 Antiphonary artifact101–102/printed93–94, Presentation candle blessing/procession and solemn-entrance contexts: Procession Chant 2; foreword scope MR2002/2008 at artifact6–7; suitable-chant permission and ritual-context qualifications retained; MR2002 artifact422–424 corroborates older-source structure"
+identity_state = "established"
+calendar_mass_key = "presentation-lord"
+form_id = "main"
+calendar_proper_name = "Procession Chant 2"
+
+[[targets]]
+id = "postconciliar:source-role-gap:chrism-mass:renewal-of-priestly-promises"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slot"
+label = "chrism-mass: Renewal of Priestly Promises"
+source_record = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml"
+source_locus = "MR2002 artifact178–179, Chrism Mass n9, renewal dialogue; prior rite identity pc2002-temporal-chrism-promises; one text-role anchor, not a second rite identity; exact2008 correspondence and referred Pontifical bodies unresolved"
+identity_state = "target-correspondence-unresolved"
+calendar_mass_key = "chrism-mass"
+form_id = "main"
+calendar_proper_name = "Renewal of Priestly Promises"
+
+[[boundaries]]
+id = "postconciliar-special-role-source-gaps-2026-10-21-whole-form-options-and-bodies"
+slice_id = "postconciliar-special-role-source-gaps-2026-10-21"
+kind = "text-slots"
+state = "unenumerated"
+source_refs = ["src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml", "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml", "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml", "src/sources/inventories/postconciliar-special-roles-source-accounting-2026-10-21.md"]
+basis = "This partial source-role slice does not exhaust any whole2008 Mass/rite, internal alternatives, subturns, suitable-chant universe, referred Pontifical body or approved translation. General-rubric source appointments and prior form headings are not fresh individual body collations. Optional/source-context standing is not enacted applicability. Direct unit joins do not create joined parent-form summaries; no whole-form expected count or body/rights/availability promotion follows. The separate official2008 extended Pentecost Vigil remains outside this slice."

@@ -95,6 +95,291 @@ ORDINARY_UNPLACED_REGIONS = frozenset({"before-frame", "after-frame"})
 ORDINARY_DISPOSITION_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 PROPER_APPOINTMENT_FACTS = "proper_appointment_facts"
 APPOINTMENT_APPLICABILITY = "appointment_applicability"
+PROPER_SOURCE_PATHS = "proper_source_paths"
+SOURCE_PATH_RELATION = "source_path_relation"
+
+
+def _source_path_id(value: object, where: str) -> None:
+    if not isinstance(value, str) or not ORDINARY_DISPOSITION_ID.fullmatch(value):
+        raise ValueError(f"{where} must be a lowercase kebab-case id")
+
+
+def validate_source_path_relation(value: object) -> str:
+    """Validate the derived row guard without adding source semantics."""
+    _source_path_id(value, "derived source_path_relation")
+    return value
+
+
+def validate_material_cycle(value: object) -> dict:
+    if not isinstance(value, dict) or set(value) != {"family", "cycle"}:
+        raise ValueError("source path material_cycle requires exactly family and cycle")
+    families = {"cycles": ("A", "B", "C"), "weekday_cycles": ("I", "II"), None: ("all",)}
+    family = value["family"]
+    if not (family is None or isinstance(family, str)) or family not in families or value["cycle"] not in families[family]:
+        raise ValueError("source path material_cycle family and cycle must be paired")
+    return dict(value)
+
+
+def validate_proper_source_paths(value: object) -> list[dict]:
+    """Validate authored relation syntax; origin and held landing are derived."""
+    if not isinstance(value, list) or not value:
+        raise ValueError("proper_source_paths must be a nonempty array")
+    relations = set()
+    for relation in value:
+        if not isinstance(relation, dict) or set(relation) != {"id", "form_id", "basis", "paths"}:
+            raise ValueError("source path relation requires exactly id, form_id, basis, paths; source_edition is derived")
+        for field in ("id", "form_id"):
+            _source_path_id(relation[field], "source path relation " + field)
+        identity = (relation["form_id"], relation["id"])
+        if identity in relations:
+            raise ValueError("proper_source_paths repeats a relation id on one form")
+        relations.add(identity)
+        if not isinstance(relation["basis"], str) or not relation["basis"].strip():
+            raise ValueError("source path relation basis must be nonempty")
+        if not isinstance(relation["paths"], list) or not relation["paths"]:
+            raise ValueError("source path relation paths must be a nonempty array")
+        paths = set()
+        for path in relation["paths"]:
+            required = {"id", "standing", "calendar_cycles", "choices", "members"}
+            if not isinstance(path, dict) or not required <= set(path) or set(path) - required - {"when"}:
+                raise ValueError("source path requires exact id, standing, calendar_cycles, choices, members and optional when")
+            _source_path_id(path["id"], "source path id")
+            if path["id"] in paths:
+                raise ValueError("source path relation repeats a path id")
+            paths.add(path["id"])
+            if path["standing"] not in ("principal", "optional"):
+                raise ValueError("source path standing must be principal or optional")
+            course = path["calendar_cycles"]
+            if not isinstance(course, dict) or set(course) != {"family", "in"}:
+                raise ValueError("source path calendar_cycles requires exactly family and in")
+            allowed = {"sunday": ("A", "B", "C"), "weekday": ("I", "II")}
+            values = course["in"]
+            if (not isinstance(course["family"], str) or course["family"] not in allowed
+                    or not isinstance(values, list) or not values
+                    or any(not isinstance(item, str) or item not in allowed[course["family"]] for item in values)
+                    or len(set(values)) != len(values)):
+                raise ValueError("source path calendar_cycles must contain distinct paired course values")
+            choices = path["choices"]
+            if not isinstance(choices, dict):
+                raise ValueError("source path choices must be a mapping")
+            for group, option in choices.items():
+                _source_path_id(group, "source path choice group")
+                _source_path_id(option, "source path choice option")
+            if "when" in path:
+                when = path["when"]
+                if not isinstance(when, dict) or set(when) != {"fact", "is"}:
+                    raise ValueError("source path when requires exactly fact and is")
+                _source_path_id(when["fact"], "source path when.fact")
+                if type(when["is"]) is not bool:
+                    raise ValueError("source path when.is must be a boolean")
+            if not isinstance(path["members"], list) or not path["members"]:
+                raise ValueError("source path members must be a nonempty array")
+            members = set()
+            for member in path["members"]:
+                if not isinstance(member, dict) or set(member) != {"appointment", "material_cycle"}:
+                    raise ValueError("source path member requires exactly appointment and material_cycle")
+                coordinate = validate_appointment_coordinate(member["appointment"])
+                token = _appointment_token(coordinate)
+                if token in members:
+                    raise ValueError("source path repeats an appointment member")
+                members.add(token)
+                if coordinate["form_id"] != relation["form_id"]:
+                    raise ValueError("source path member belongs to another authored form")
+                validate_material_cycle(member["material_cycle"])
+    return value
+
+
+def _appointment_token(coordinate: dict) -> tuple:
+    return tuple(coordinate[field] for field in ("mass", "form_id", "proper", "occurrence"))
+
+
+class _SourcePathRelation(dict):
+    """Original source edition survives shallow Mass copies and foreign merges."""
+    def __init__(self, relation: dict, source_edition: str):
+        super().__init__(relation)
+        self.source_edition = getattr(relation, "source_edition", source_edition)
+
+
+def _source_path_relations(mass: dict, calendar: str) -> list[dict]:
+    if PROPER_SOURCE_PATHS not in mass:
+        return []
+    relations = validate_proper_source_paths(mass[PROPER_SOURCE_PATHS])
+    carried = [_SourcePathRelation(relation, calendar) for relation in relations]
+    for relation in carried:
+        _source_path_id(relation.source_edition, "derived source path source_edition")
+    return carried
+
+
+def public_proper_source_paths(document: dict, mass: dict) -> list[dict]:
+    """Project validated relations with their derived original edition."""
+    relations = _source_path_relations(mass, str(document.get("calendar") or ""))
+    if not relations:
+        return []
+    _, problems = resolve_propers(document, mass)
+    if problems:
+        raise ValueError("; ".join(problems))
+    return [{**relation, "source_edition": relation.source_edition} for relation in relations]
+
+
+def _source_path_authored_rows(mass: dict) -> dict[tuple, dict]:
+    owned = {}
+    forms = [("main", mass.get("propers") or [])]
+    authored_ids = [form.get("id") for form in mass.get("forms") or [] if isinstance(form, dict)]
+    for form_id in authored_ids:
+        _source_path_id(form_id, "source path authored form")
+    if len(set(authored_ids)) != len(authored_ids) or "main" in authored_ids:
+        raise ValueError("source path authored form id must be unique and cannot be main")
+    forms.extend((form.get("id"), form.get("propers") or []) for form in mass.get("forms") or [] if isinstance(form, dict))
+    for form_id, rows in forms:
+        seen = {}
+        for proper in rows:
+            if not isinstance(proper, dict):
+                continue
+            name = str(proper.get("name") or "")
+            seen[name] = seen.get(name, 0) + 1
+            coordinate = {"mass": mass.get("key"), "form_id": form_id, "proper": name, "occurrence": seen[name]}
+            validate_appointment_coordinate(coordinate)
+            token = _appointment_token(coordinate)
+            if token in owned:
+                raise ValueError("source path authored appointment coordinate is ambiguous")
+            owned[token] = proper
+    return owned
+
+
+def validate_source_path_material(proper: dict) -> None:
+    """Admit every authored cycle owner before any path can suppress it."""
+    families = {"cycles": ("A", "B", "C"), "weekday_cycles": ("I", "II")}
+    present = [family for family in families if family in proper]
+    if len(present) > 1:
+        raise ValueError("source path Proper carries both Sunday and weekday cycle families")
+    for family in present:
+        owners = proper[family]
+        if not isinstance(owners, dict) or not owners:
+            raise ValueError("source path cycle family must be a nonempty mapping")
+        if any(not isinstance(key, str) or key not in families[family] for key in owners):
+            raise ValueError("source path material has unsupported authored cycle keys")
+        if any(field in proper for field in ("text", "verses", "translations")):
+            raise ValueError("source path cyclic Proper cannot also carry top-level material")
+        for owner in owners.values():
+            fields = {"source", "verses", "text", "incipit", "notes", "psalm_numbering", "translations", "text_status"}
+            if not isinstance(owner, dict) or not owner or set(owner) - fields:
+                raise ValueError("source path authored cycle owner is malformed")
+            source = owner.get("source", proper.get("source"))
+            if source not in ("scripture", "mixed", "composed"):
+                raise ValueError("source path cycle owner has no held source kind")
+            if "text" in owner and (not isinstance(owner["text"], str) or not owner["text"].strip()):
+                raise ValueError("source path cycle owner text must be nonempty")
+            if source in ("scripture", "mixed") and (not isinstance(owner.get("verses"), list) or not owner["verses"] or any(not isinstance(verse, dict) for verse in owner["verses"])):
+                raise ValueError("source path Scripture cycle owner must retain its verses")
+            if source == "scripture" and "text" in owner or source == "composed" and "verses" in owner:
+                raise ValueError("source path cycle owner contradicts its source kind")
+            if source in ("composed", "mixed") and "text" not in owner and "text_status" not in owner:
+                raise ValueError("source path cycle owner must retain its body or typed absence")
+            if "text_status" in owner:
+                status = owner["text_status"]
+                if (not isinstance(status, dict) or set(status) != {"state", "scope", "reasons"}
+                        or status["state"] != "unavailable" or status["scope"] != "proper-body"
+                        or not isinstance(status["reasons"], list) or not status["reasons"]
+                        or "text" in owner):
+                    raise ValueError("source path cycle owner has a malformed body absence")
+                for reason in status["reasons"]:
+                    if (not isinstance(reason, dict) or reason.get("kind") not in ("witness-gap", "rights-withheld", "no-exemplar")
+                            or set(reason) - {"kind", "source_id"}
+                            or (reason["kind"] == "no-exemplar" and "source_id" in reason)
+                            or (reason["kind"] != "no-exemplar" and (not isinstance(reason.get("source_id"), str) or not reason["source_id"].strip()))):
+                        raise ValueError("source path cycle owner has a malformed body absence reason")
+
+
+def _proper_source_path_problems(document: dict, mass: dict, entries: list) -> list[str]:
+    try:
+        relations = _source_path_relations(mass, str(document.get("calendar") or ""))
+        guards = [proper for _, proper, _ in entries if getattr(proper, SOURCE_PATH_RELATION, None) is not None]
+        if not relations:
+            if guards:
+                raise ValueError("whole-Mass source path inheritance requires the exact authored relation owner and form")
+            return []
+        owned = _source_path_authored_rows(mass)
+        # Validate all source branches, including rows outside the union and
+        # every unselected material cycle, before checking concrete selectors.
+        for proper in owned.values():
+            validate_source_path_material(proper)
+        resolved = {}
+        for _, proper, _ in entries:
+            validate_source_path_material(proper)
+            coordinate = getattr(proper, "appointment_identity", None)
+            if coordinate is not None:
+                token = _appointment_token(coordinate)
+                if token in resolved:
+                    raise ValueError("source path resolved appointment coordinate is ambiguous")
+                resolved[token] = proper
+        groups = {}
+        group_names = set()
+        for token, proper in owned.items():
+            disposition = proper.get(ORDINARY_DISPOSITION)
+            if not isinstance(disposition, dict):
+                continue
+            disposition = validate_ordinary_disposition(disposition)
+            group_names.add((token[1], disposition["group"]))
+            if disposition["kind"] == "alternative":
+                groups.setdefault((token[1], disposition["group"]), {}).setdefault(disposition["option"], set()).add(token)
+        extents = set()
+        expected_guards = {}
+        held_forms = {str(form.get("id")) for form in mass.get("forms") or [] if isinstance(form, dict)} if mass.get("forms") else {"main"}
+        for relation in relations:
+            form_id, relation_id = relation["form_id"], relation["id"]
+            if form_id not in held_forms:
+                raise ValueError("source path relation names an unheld authored form")
+            if (form_id, relation_id) in group_names:
+                raise ValueError("source path relation id collides with an actual Proper group")
+            union = set()
+            for path in relation["paths"]:
+                members = {_appointment_token(member["appointment"]) for member in path["members"]}
+                for member in path["members"]:
+                    coordinate = member["appointment"]
+                    token = _appointment_token(coordinate)
+                    if coordinate["mass"] != mass.get("key") or token not in owned or token not in resolved:
+                        raise ValueError("source path member must land on one exact same-Mass authored appointment")
+                    proper = resolved[token]
+                    selector = member["material_cycle"]
+                    family, cycle = selector["family"], selector["cycle"]
+                    if family is None:
+                        if "cycles" in proper or "weekday_cycles" in proper:
+                            raise ValueError("source path noncyclic selector cannot select a cyclic Proper")
+                        if not (proper.get("text") or proper.get("verses") or proper.get("text_status")):
+                            raise ValueError("source path noncyclic selector has no held material owner")
+                    elif not isinstance((proper.get(family) or {}).get(cycle), dict):
+                        raise ValueError("source path material selector is not held on its exact terminal row")
+                    if relation.source_edition != document.get("calendar"):
+                        marker = getattr(proper, APPOINTMENT_APPLICABILITY, None)
+                        if marker is None or marker.get("source_edition") != relation.source_edition:
+                            raise ValueError("foreign source path union requires its original unsupported applicability marker")
+                    disposition = proper.get(ORDINARY_DISPOSITION)
+                    if isinstance(disposition, dict) and disposition.get("kind") == "alternative" and path["choices"].get(disposition["group"]) != disposition["option"]:
+                        raise ValueError("source path member requires its exact actual group option")
+                for group, option in path["choices"].items():
+                    options = groups.get((form_id, group))
+                    if not options or option not in options:
+                        raise ValueError("source path choice names an unknown actual group or option")
+                    selected = options[option]
+                    full_group = set().union(*options.values())
+                    if members & full_group != selected:
+                        raise ValueError("source path must include the complete selected actual option bundle")
+                union.update(members)
+            owned_groups = {group for path in relation["paths"] for group in path["choices"]}
+            for group in owned_groups:
+                if not set().union(*groups[(form_id, group)].values()) <= union:
+                    raise ValueError("source path relation must own every raw member of each actual group")
+            if union & extents:
+                raise ValueError("source path relation extents must be disjoint")
+            extents.update(union)
+            for token in union:
+                expected_guards[token] = relation_id
+        actual_guards = {_appointment_token(proper.appointment_identity): getattr(proper, SOURCE_PATH_RELATION) for proper in guards}
+        if actual_guards != expected_guards:
+            raise ValueError("source path relation membership lost its exact appointment guard")
+    except (ValueError, TypeError, KeyError) as error:
+        return [f"mass {mass.get('key', '')}: {error}"]
+    return []
 
 
 def validate_appointment_applicability(value: object, calendar: str | None = None) -> dict:
@@ -193,12 +478,13 @@ def validate_proper_appointment_facts(value: object, calendar: str, *, document:
 
 class _AppointmentProper(dict):
     """Resolver-only metadata; dict serialization cannot leak the trace."""
-    def __init__(self, proper: dict, identity: dict | None, source_proper: dict | None = None, replacement: dict | None = None, applicability: dict | None = None):
+    def __init__(self, proper: dict, identity: dict | None, source_proper: dict | None = None, replacement: dict | None = None, applicability: dict | None = None, source_path_relation: str | None = None):
         super().__init__(proper)
         self.appointment_identity = identity
         self.source_proper = source_proper if source_proper is not None else getattr(proper, "source_proper", proper)
         self.appointment_replacement = replacement if replacement is not None else getattr(proper, "appointment_replacement", None)
         self.appointment_applicability = applicability if applicability is not None else getattr(proper, "appointment_applicability", None)
+        self.source_path_relation = source_path_relation if source_path_relation is not None else getattr(proper, SOURCE_PATH_RELATION, None)
 
 
 def validate_appointment_replacement(value: object) -> dict:
@@ -229,8 +515,17 @@ def _appointment_rows(mass: dict, form: str, propers: list[dict], required: list
         form_id = held[0].get("id") if len(held) == 1 else None
     seen: dict[str, int] = {}
     result = []
+    relation_members = {}
+    if PROPER_SOURCE_PATHS in mass:
+        for relation in validate_proper_source_paths(mass[PROPER_SOURCE_PATHS]):
+            for path in relation["paths"]:
+                for member in path["members"]:
+                    token = _appointment_token(member["appointment"])
+                    if token in relation_members and relation_members[token] != relation["id"]:
+                        raise ValueError("source path relation extents must be disjoint")
+                    relation_members[token] = relation["id"]
     for proper in propers:
-        if "appointment_identity" in proper or "appointment_replacement" in proper or APPOINTMENT_APPLICABILITY in proper:
+        if "appointment_identity" in proper or "appointment_replacement" in proper or APPOINTMENT_APPLICABILITY in proper or SOURCE_PATH_RELATION in proper:
             raise ValueError("appointment identity/replacement/applicability metadata is derived, never source-authored")
         name = str(proper.get("name") or "")
         seen[name] = seen.get(name, 0) + 1
@@ -238,9 +533,10 @@ def _appointment_rows(mass: dict, form: str, propers: list[dict], required: list
             result.append(proper)
             continue
         coordinate = {"mass": mass["key"], "form_id": form_id, "proper": name, "occurrence": seen[name]}
-        if _new_appointment(proper) or coordinate in required:
+        relation_id = relation_members.get(_appointment_token(coordinate))
+        if _new_appointment(proper) or coordinate in required or relation_id is not None:
             validate_appointment_coordinate(coordinate)
-            result.append(_AppointmentProper(proper, coordinate))
+            result.append(_AppointmentProper(proper, coordinate, source_path_relation=relation_id))
         else:
             result.append(proper)
     return result
@@ -810,6 +1106,11 @@ def _residence_of(mass: dict, fallback: str) -> str:
 
 def _without_inherited_proper_appointments(mass: dict, source_edition: str, target_edition: str) -> dict:
     """Retain foreign words while marking unsupported appointment applicability."""
+    relations = _source_path_relations(mass, source_edition)
+    source_path_members = {
+        _appointment_token(member["appointment"]): relation
+        for relation in relations for path in relation["paths"] for member in path["members"]
+    }
     reference = reference_of(mass)
     replacements = (reference or {}).get("appointment_overrides")
     if replacements is not None:
@@ -827,7 +1128,7 @@ def _without_inherited_proper_appointments(mass: dict, source_edition: str, targ
             if not isinstance(proper, dict):
                 projected.append(proper)
                 continue
-            if any(field in proper for field in ("appointment_identity", "appointment_replacement", APPOINTMENT_APPLICABILITY)):
+            if any(field in proper for field in ("appointment_identity", "appointment_replacement", APPOINTMENT_APPLICABILITY, SOURCE_PATH_RELATION)):
                 raise ValueError("appointment identity/replacement/applicability metadata is derived, never source-authored")
             carried = dict(proper)
             marker = getattr(proper, APPOINTMENT_APPLICABILITY, None)
@@ -847,13 +1148,17 @@ def _without_inherited_proper_appointments(mass: dict, source_edition: str, targ
             name = str(proper.get("name") or "")
             seen[name] = seen.get(name, 0) + 1
             coordinate = (str(mass.get("key") or ""), form_id, name, seen[name])
+            relation = source_path_members.get(coordinate)
+            if relation is not None:
+                basis = basis or relation["basis"]
             basis = basis or replacement_members.get(coordinate)
             if basis is not None and marker is None:
                 marker = {"state": "unresolved", "reason": "foreign-source-applicability",
-                          "source_edition": source_edition, "target_edition": target_edition, "basis": basis}
+                          "source_edition": relation.source_edition if relation is not None else source_edition, "target_edition": target_edition, "basis": basis}
             if marker is not None:
                 marker = validate_appointment_applicability(marker, target_edition)
-                projected.append(_AppointmentProper(carried, None, getattr(proper, "source_proper", proper), applicability=marker))
+                identity = dict(zip(("mass", "form_id", "proper", "occurrence"), coordinate)) if relation is not None else None
+                projected.append(_AppointmentProper(carried, identity, getattr(proper, "source_proper", proper), applicability=marker, source_path_relation=relation["id"] if relation is not None else None))
             else:
                 projected.append(carried if carried != proper else proper)
         # Preserve a complete valid legacy exclusive grouping for diagnosis.
@@ -879,10 +1184,12 @@ def _without_inherited_proper_appointments(mass: dict, source_edition: str, targ
                 carried = dict(row)
                 if invalid:
                     carried.pop(ORDINARY_DISPOSITION, None)
-                projected[i] = _AppointmentProper(carried, None, getattr(row, "source_proper", row), applicability=marker)
+                projected[i] = _AppointmentProper(carried, getattr(row, "appointment_identity", None), getattr(row, "source_proper", row), applicability=marker, source_path_relation=getattr(row, SOURCE_PATH_RELATION, None))
         return projected
 
     carried = dict(mass)
+    if relations:
+        carried[PROPER_SOURCE_PATHS] = relations
     if isinstance(mass.get("propers"), list):
         carried["propers"] = rows_copy(mass["propers"], "", "main")
     if isinstance(mass.get("forms"), list):
@@ -1675,8 +1982,8 @@ def validate_ordinary_disposition(value: object) -> dict:
             raise ValueError(f"{ORDINARY_DISPOSITION}.seat must be exactly 'reading-1'")
     if "when" in value:
         validate_appointment_when(value["when"])
-    # Do not normalize, enrich, or drop evidence.  Public consumers receive the
-    # same closed mapping the source supplied.
+    # Source validation and resolution retain the exact authored evidence.
+    # The public producer separately withholds protected study prose.
     return dict(value)
 
 
@@ -1974,6 +2281,7 @@ def resolve_propers(
             resolved.append((label, taken, terminal or _provenance(inner, proper)))
     problems.extend(ordinary_disposition_group_problems(key, resolved))
     problems.extend(_appointment_contract_problems(document, key, resolved))
+    problems.extend(_proper_source_path_problems(document, mass, resolved))
     if appointments:
         resolved = [(label, _public_appointment_proper(proper), provenance) for label, proper, provenance in resolved]
     return resolved, problems
@@ -1983,9 +2291,12 @@ def _appoint_resolved_proper(found: dict, wrapper: dict, wanted: str) -> dict:
     """Borrow target wording while retaining appointment-local structure."""
 
     if (_new_appointment(found) or getattr(found, "appointment_replacement", None) is not None
-            or getattr(found, APPOINTMENT_APPLICABILITY, None) is not None):
+            or getattr(found, APPOINTMENT_APPLICABILITY, None) is not None
+            or getattr(found, SOURCE_PATH_RELATION, None) is not None):
         wording = dict(found)
-        wording.pop(ORDINARY_DISPOSITION, None)
+        if (_new_appointment(found) or getattr(found, "appointment_replacement", None) is not None
+                or getattr(found, APPOINTMENT_APPLICABILITY, None) is not None):
+            wording.pop(ORDINARY_DISPOSITION, None)
         found = _AppointmentProper(wording, None, getattr(found, "source_proper", found))
     local_name = str(wrapper.get("name") or "")
     if (local_name == wanted and ORDINARY_DISPOSITION not in wrapper and not hasattr(wrapper, "appointment_identity")
@@ -1998,7 +2309,7 @@ def _appoint_resolved_proper(found: dict, wrapper: dict, wanted: str) -> dict:
         appointed[ORDINARY_DISPOSITION] = wrapper[ORDINARY_DISPOSITION]
     identity = getattr(wrapper, "appointment_identity", None) or getattr(found, "appointment_identity", None)
     if identity is not None or hasattr(found, "source_proper") or getattr(wrapper, APPOINTMENT_APPLICABILITY, None) is not None:
-        appointed = _AppointmentProper(appointed, identity, getattr(found, "source_proper", found), getattr(wrapper, "appointment_replacement", None) or getattr(found, "appointment_replacement", None), getattr(wrapper, APPOINTMENT_APPLICABILITY, None))
+        appointed = _AppointmentProper(appointed, identity, getattr(found, "source_proper", found), getattr(wrapper, "appointment_replacement", None) or getattr(found, "appointment_replacement", None), getattr(wrapper, APPOINTMENT_APPLICABILITY, None), getattr(wrapper, SOURCE_PATH_RELATION, None))
     return appointed
 
 
@@ -2012,6 +2323,9 @@ def _public_appointment_proper(proper: dict) -> dict:
         projected["appointment_identity"] = validate_appointment_coordinate(identity)
     if applicability is not None:
         projected[APPOINTMENT_APPLICABILITY] = validate_appointment_applicability(applicability)
+    relation = getattr(proper, SOURCE_PATH_RELATION, None)
+    if relation is not None:
+        projected[SOURCE_PATH_RELATION] = validate_source_path_relation(relation)
     if getattr(proper, "appointment_replacement", None) is not None:
         projected["appointment_replacement"] = validate_appointment_replacement(proper.appointment_replacement)
     return projected
@@ -2112,7 +2426,7 @@ def _apply_overrides(
                 ORDINARY_DISPOSITION: inherited[ORDINARY_DISPOSITION],
             }
             if hasattr(replacement, "appointment_identity"):
-                return _AppointmentProper(appointed, replacement.appointment_identity, replacement.source_proper, replacement.appointment_replacement, getattr(replacement, APPOINTMENT_APPLICABILITY, None))
+                return _AppointmentProper(appointed, replacement.appointment_identity, replacement.source_proper, replacement.appointment_replacement, getattr(replacement, APPOINTMENT_APPLICABILITY, None), getattr(replacement, SOURCE_PATH_RELATION, None))
             return appointed
         return replacement
 

@@ -204,7 +204,7 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check --calendar roman-1962 --json",
             (
-                "{\"calendars\":[{\"absent\":10,\"calendar\":\"roman-1962\",\"elements\":196,\"exclusions\":12,\"language_coverage... [+25169 chars]",
+                "{\"calendars\":[{\"absent\":10,\"calendar\":\"roman-1962\",\"elements\":196,\"exclusions\":12,\"language_coverage... [+29021 chars]",
             ),
         ),
     ),
@@ -3313,15 +3313,19 @@ def effective_ordinary_frame(mass: dict, form: dict | None, where: str) -> dict:
     return value
 
 
-def appointment_seating_required(propers: object) -> bool:
+def appointment_seating_required(propers: object, source_mass: dict | None = None) -> bool:
     """New source appointments belong to the shared JavaScript owner."""
 
+    if source_mass is not None and 'proper_source_paths' in source_mass:
+        return True
     if not isinstance(propers, list):
         return False
     for row in propers:
         if not isinstance(row, dict):
             continue
-        if 'appointment_applicability' in row or 'appointment_replacement' in row:
+        if any(key in row for key in (
+            'appointment_applicability', 'appointment_replacement', 'source_path_relation'
+        )):
             return True
         disposition = row.get('ordinary_disposition')
         if isinstance(disposition, dict) and (
@@ -3352,10 +3356,14 @@ process.stdin.on('end', () => {
   const payload = JSON.parse(input);
   const results = payload.forms.map(form => {
     try {
-      return {summary: S.validateProperSeating(payload.ordinary, form.propers, {
+      const context = {
         calendar: payload.ordinary.calendar, mass: form.mass, form_id: form.form_id,
         full: form.full, facts: payload.facts
-      })};
+      };
+      if (Object.prototype.hasOwnProperty.call(form, 'source_paths')) {
+        context.sourcePaths = form.source_paths;
+      }
+      return {summary: S.validateProperSeating(payload.ordinary, form.propers, context)};
     } catch (error) { return {error: error.message}; }
   });
   process.stdout.write(JSON.stringify(results));
@@ -3413,11 +3421,15 @@ process.stdin.on('end', () => {
 def check_form_seating(
     ordinary: dict, propers: list[dict], where: str, *, full: bool,
     mass: str | None = None, form_id: str = 'main', facts: dict | None = None,
+    source_mass: dict | None = None,
 ) -> None:
-    if appointment_seating_required(propers):
-        check_appointment_seating(ordinary, [{
+    if appointment_seating_required(propers, source_mass):
+        form = {
             'mass': mass, 'form_id': form_id, 'where': where, 'full': full, 'propers': propers,
-        }], facts or {})
+        }
+        if source_mass is not None and 'proper_source_paths' in source_mass:
+            form['source_paths'] = source_mass['proper_source_paths']
+        check_appointment_seating(ordinary, [form], facts or {})
         return
     _check_legacy_form_seating(ordinary, propers, where, full=full)
 
@@ -3620,11 +3632,14 @@ def check_calendar_seating(ordinary: dict, propers_file: dict) -> dict:
             where = f"{calendar}/{key}/{form_id}"
             frame = effective_ordinary_frame(mass, form, where)
             full = frame["applicability"] == "full"
-            if appointment_seating_required(propers):
-                appointment_forms.append({
+            if appointment_seating_required(propers, mass):
+                appointment_form = {
                     'mass': key, 'form_id': form_id, 'where': where,
                     'full': full, 'propers': propers,
-                })
+                }
+                if 'proper_source_paths' in mass:
+                    appointment_form['source_paths'] = mass['proper_source_paths']
+                appointment_forms.append(appointment_form)
             else:
                 check_form_seating(ordinary, propers, where, full=full)
             if full:

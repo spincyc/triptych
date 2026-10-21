@@ -2168,6 +2168,33 @@ class PublicAlphaTest(unittest.TestCase):
                 )
                 copied.write_bytes(approved)
 
+    def test_public_disposition_withholds_study_basis_without_weakening_release_guard(self) -> None:
+        loader = importlib.machinery.SourceFileLoader(
+            "_public_basis_mass_propers", str(REPOSITORY_ROOT / "tools/mass-propers")
+        )
+        spec = importlib.util.spec_from_loader(loader.name, loader)
+        producer = importlib.util.module_from_spec(spec)
+        loader.exec_module(producer)
+        source = {"kind": "alternative", "group": "entrance-antiphon", "option": "source-first",
+                  "basis": "ICEL source-study evidence remains in the source record."}
+        projected = producer.public_ordinary_disposition(source)
+        relative = "src/web/data/structure/propers/test.json"
+        def validate(value):
+            self.write(relative, (json.dumps(value) + "\n").encode())
+            self.tool.validate_liturgical_public_data(self.root / relative)
+        validate({"ordinary_disposition": projected})
+        self.assertEqual({**projected, "basis": source["basis"]}, source)
+        # Neither a nested basis nor any other string position is exempt.
+        for value in (
+            {"ordinary_disposition": source},
+            {"forms": [{"propers": [{"ordinary_disposition": source}]}]},
+            {"notes": "ELLC study metadata"},
+            {"notes": "international-commission-on-english-in-the-liturgy"},
+        ):
+            with self.subTest(value=value):
+                with self.assertRaisesRegex(self.tool.ReleaseError, "restricted-authority metadata"):
+                    validate(value)
+
     def test_liturgy_quarantine_rejects_generic_licensed_source_identity(
         self,
     ) -> None:

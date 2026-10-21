@@ -53,6 +53,34 @@
         "semanticSlot": {
           "state": "mapped",
           "identity": {
+            "id": "entrance-antiphon"
+          }
+        },
+        "editionSlotLabel": "Entrance Antiphon",
+        "selected": {
+          "kind": "scripture",
+          "bible": "douay-rheims",
+          "numbering": "vulgate",
+          "cycle": null,
+          "references": [
+            "Matthew 17:5"
+          ],
+          "availability": "held",
+          "rights": null
+        },
+        "sourceHooks": [
+          {
+            "kind": "proper-structure",
+            "id": "postconciliar/transfiguration-lord/001"
+          }
+        ]
+      },
+      {
+        "id": "proper/postconciliar/transfiguration-lord/002",
+        "kind": "proper",
+        "semanticSlot": {
+          "state": "mapped",
+          "identity": {
             "id": "reading-1"
           }
         },
@@ -71,12 +99,12 @@
         "sourceHooks": [
           {
             "kind": "proper-structure",
-            "id": "postconciliar/transfiguration-lord/001"
+            "id": "postconciliar/transfiguration-lord/002"
           }
         ]
       },
       {
-        "id": "proper/postconciliar/transfiguration-lord/002",
+        "id": "proper/postconciliar/transfiguration-lord/003",
         "kind": "proper",
         "semanticSlot": {
           "state": "mapped",
@@ -99,12 +127,12 @@
         "sourceHooks": [
           {
             "kind": "proper-structure",
-            "id": "postconciliar/transfiguration-lord/002"
+            "id": "postconciliar/transfiguration-lord/003"
           }
         ]
       },
       {
-        "id": "proper/postconciliar/transfiguration-lord/003",
+        "id": "proper/postconciliar/transfiguration-lord/004",
         "kind": "proper",
         "semanticSlot": {
           "state": "mapped",
@@ -127,12 +155,12 @@
         "sourceHooks": [
           {
             "kind": "proper-structure",
-            "id": "postconciliar/transfiguration-lord/003"
+            "id": "postconciliar/transfiguration-lord/004"
           }
         ]
       },
       {
-        "id": "proper/postconciliar/transfiguration-lord/004",
+        "id": "proper/postconciliar/transfiguration-lord/005",
         "kind": "proper",
         "semanticSlot": {
           "state": "mapped",
@@ -155,12 +183,12 @@
         "sourceHooks": [
           {
             "kind": "proper-structure",
-            "id": "postconciliar/transfiguration-lord/004"
+            "id": "postconciliar/transfiguration-lord/005"
           }
         ]
       },
       {
-        "id": "proper/postconciliar/transfiguration-lord/005",
+        "id": "proper/postconciliar/transfiguration-lord/006",
         "kind": "proper",
         "semanticSlot": {
           "state": "mapped",
@@ -192,11 +220,11 @@
               "sourceHooks": [
                 {
                   "kind": "proper-structure",
-                  "id": "postconciliar/transfiguration-lord/005"
+                  "id": "postconciliar/transfiguration-lord/006"
                 },
                 {
                   "kind": "proper-cycle",
-                  "id": "postconciliar/transfiguration-lord/005/A"
+                  "id": "postconciliar/transfiguration-lord/006/A"
                 }
               ]
             },
@@ -217,11 +245,11 @@
               "sourceHooks": [
                 {
                   "kind": "proper-structure",
-                  "id": "postconciliar/transfiguration-lord/005"
+                  "id": "postconciliar/transfiguration-lord/006"
                 },
                 {
                   "kind": "proper-cycle",
-                  "id": "postconciliar/transfiguration-lord/005/B"
+                  "id": "postconciliar/transfiguration-lord/006/B"
                 }
               ]
             },
@@ -242,11 +270,11 @@
               "sourceHooks": [
                 {
                   "kind": "proper-structure",
-                  "id": "postconciliar/transfiguration-lord/005"
+                  "id": "postconciliar/transfiguration-lord/006"
                 },
                 {
                   "kind": "proper-cycle",
-                  "id": "postconciliar/transfiguration-lord/005/C"
+                  "id": "postconciliar/transfiguration-lord/006/C"
                 }
               ]
             }
@@ -255,7 +283,35 @@
         "sourceHooks": [
           {
             "kind": "proper-structure",
-            "id": "postconciliar/transfiguration-lord/005"
+            "id": "postconciliar/transfiguration-lord/006"
+          }
+        ]
+      },
+      {
+        "id": "proper/postconciliar/transfiguration-lord/007",
+        "kind": "proper",
+        "semanticSlot": {
+          "state": "mapped",
+          "identity": {
+            "id": "communion-antiphon"
+          }
+        },
+        "editionSlotLabel": "Communion Antiphon",
+        "selected": {
+          "kind": "scripture",
+          "bible": "douay-rheims",
+          "numbering": "vulgate",
+          "cycle": null,
+          "references": [
+            "1 John 3:2"
+          ],
+          "availability": "held",
+          "rights": null
+        },
+        "sourceHooks": [
+          {
+            "kind": "proper-structure",
+            "id": "postconciliar/transfiguration-lord/007"
           }
         ]
       }
@@ -278,6 +334,6 @@
     ],
     "unresolvedChoices": [],
     "url": null,
-    "semanticHash": "4660c0653678344dc227600e67f5b84a748bddbcd98713f37224f9fa4947fedd"
+    "semanticHash": "b23925371f56901a4800f08a099023d3a9ac554943b592d5547382eee416503f"
   }
 }

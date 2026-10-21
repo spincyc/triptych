@@ -20,6 +20,7 @@ page.
 """
 
 from collections import Counter
+from copy import deepcopy
 
 import hashlib
 import importlib.machinery
@@ -765,6 +766,107 @@ class OrdinaryTool(unittest.TestCase):
             payload["seating"]["nonfull_forms"],
             sum(row["nonfull_forms"] for row in payload["seating"]["calendars"]),
         )
+
+    def matthias_seating_case(self):
+        ordinary = load("roman-1962")
+        payload = json.loads((PROPERS / "roman-1962.json").read_text(encoding="utf-8"))
+        mass = next(row for row in payload["masses"]
+                    if row["key"] == "s-matthiae-apostoli")
+        # Keep the real published candidates and source facts; scope only the
+        # calendar input to the single Mass whose cross-layer join regressed.
+        calendar = {**payload, "masses": [mass]}
+        form = {"mass": mass["key"], "form_id": "main",
+                "where": "roman-1962/s-matthiae-apostoli/main",
+                "full": True, "propers": mass["propers"]}
+        return ordinary, calendar, form
+
+    def test_matthias_normal_paschal_candidates_have_exact_ordinary_seats(self) -> None:
+        tool = self.tool_module
+        ordinary, calendar, form = self.matthias_seating_case()
+        facts = calendar["proper_appointment_facts"]
+        summary = {"mass": "s-matthiae-apostoli", "form_id": "main",
+                   "candidates": 14, "conditional_rows": 1,
+                   "choice_groups": 4, "diagnostics": []}
+        self.assertEqual(tool.check_appointment_seating(ordinary, [form], facts), [summary])
+        self.assertEqual(tool.check_calendar_seating(ordinary, calendar), {
+            "calendar": "roman-1962", "full_forms": 1, "nonfull_forms": 0,
+            "failures": 0, "source_appointments": [summary]})
+        rows = form["propers"]
+        self.assertEqual([row["name"] for row in rows], [
+            "Introit", "Introit", "Collect", "Epistle", "Gradual", "Tract",
+            "Alleluia (Tempore paschali)", "Gospel", "Offertory", "Offertory",
+            "Secret", "Communion", "Communion", "Postcommunion"])
+        regime = "roman-1962-common-chant-regime"
+        outside = {"fact": regime, "in": ["advent", "regular", "tract"]}
+        paschal = {"fact": regime, "in": ["paschal"]}
+        common = "commune-martyrum-tempore-paschali-1"
+        for role in ["Introit", "Offertory", "Communion"]:
+            with self.subTest(role=role):
+                own, borrowed = [row for row in rows if row["name"] == role]
+                anchor = {"mass": form["mass"], "form_id": "main",
+                          "proper": role, "occurrence": 1}
+                self.assertEqual(own["appointment_identity"], anchor)
+                self.assertEqual(borrowed["appointment_identity"],
+                                 {**anchor, "occurrence": 2})
+                self.assertIsNone(own["taken_from"])
+                # AP562/p481/L, after2225, explicitly appoints these normal
+                # Paschal chants from Protexisti, Common Martyrs I[15]. The
+                # preceding2225 paragraph is a separate votive-only direction.
+                self.assertEqual(borrowed["taken_from"], {
+                    "mass": common, "form": "", "proper": role,
+                    "citation": "Missale Romanum1962 artifact562/printed481 left, "
+                    "after2225: tempore paschali, ex Missa Protexisti de Communi "
+                    "Martyrum I loco[15]"})
+                basis = own["ordinary_disposition"]["basis"]
+                for row, option, when in [(own, "outside-paschal", outside),
+                                          (borrowed, "paschal", paschal)]:
+                    self.assertEqual(row["ordinary_disposition"], {
+                        "kind": "alternative", "group": "seasonal-" + role.lower(),
+                        "option": option, "basis": basis, "anchor": anchor,
+                        "when": when})
+        groups = {}
+        for row in rows:
+            disposition = row.get("ordinary_disposition") or {}
+            if disposition.get("kind") == "alternative":
+                groups.setdefault(disposition["group"], set()).add(disposition["option"])
+        self.assertEqual(groups, {"seasonal-" + role: {"outside-paschal", "paschal"}
+                                  for role in ["introit", "acclamation", "offertory", "communion"]})
+        conditional = [row for row in rows
+                       if (row.get("ordinary_disposition") or {}).get("kind") == "conditional"]
+        self.assertEqual([row["name"] for row in conditional], ["Gradual"])
+        self.assertEqual(conditional[0]["ordinary_disposition"]["when"], outside)
+        alleluia = next(row for row in rows if row["name"] == "Alleluia (Tempore paschali)")
+        self.assertEqual(alleluia["taken_from"]["mass"], common)
+        self.assertEqual(alleluia["taken_from"]["proper"], "Alleluia")
+        self.assertEqual(alleluia["ordinary_disposition"]["when"], paschal)
+
+    def test_matthias_inactive_or_unknown_options_cannot_evade_exact_seat_guards(self) -> None:
+        tool = self.tool_module
+        ordinary, calendar, form = self.matthias_seating_case()
+        original_facts = calendar["proper_appointment_facts"]
+        regime = "roman-1962-common-chant-regime"
+        false_facts = deepcopy(original_facts)
+        held = false_facts[regime]
+        # Synthetic negative-control fact: the Paschal options are known false.
+        # The unmodified publisher facts leave season explicitly unknown here.
+        held.pop("season_values")
+        held["mass_values"] = {form["mass"]: {
+            "value": "regular", "basis": "Synthetic known non-Paschal guard control."}}
+        for state, facts in [("unknown", original_facts), ("false", false_facts)]:
+            for role in ["Introit", "Offertory", "Communion", "mixed-seat"]:
+                with self.subTest(applicability=state, corruption=role):
+                    bad = deepcopy(form)
+                    group = "seasonal-" + ("introit" if role == "mixed-seat" else role.lower())
+                    row = next(one for one in bad["propers"]
+                               if (one.get("ordinary_disposition") or {}).get("group") == group
+                               and one["ordinary_disposition"]["option"] == "paschal")
+                    row["name"] = ("Communion" if role == "mixed-seat"
+                                   else role + " (Tempore paschali)")
+                    message = ("anchored Proper group must share one established semantic seat"
+                               if role == "mixed-seat" else
+                               "alternative Proper group must share one usable semantic Ordinary seat")
+                    with self.assertRaisesRegex(tool.SourceError, message):
+                        tool.check_appointment_seating(ordinary, [bad], facts)
 
     def test_cross_layer_seating_refuses_unknown_backward_and_stale_rows(self) -> None:
         tool = self.tool_module
@@ -2223,9 +2325,14 @@ process.stdout.write(JSON.stringify({
         # cues. Kyrie translation glosses remain exact, named nonspoken notes.
         # Every source word and semantic event position is unchanged.
         expected = {
+            # The 1962 Missal p. 389 (artifact p. 470, n. 1532) specifies
+            # Psalm 54:17-18, 20, 23 and 54:2 for this Introit. The held
+            # 4b0d33fb baseline reproduces the old pin; only event 26's
+            # citation bounds change. All 178 event positions, body words,
+            # translation fields and the postconciliar stream stay identical.
             "pentecost_10_text": (
                 178,
-                "c5b11f528425b4a3e6039ba647522f46514d4e67f55ffef687db63fcd63a8b0f",
+                "1737e8921fd5a83e74e69e022d34cdd17bf101b150cc0fe0ed450e55dc522207",
             ),
             # Re-pinned 2026-10-19 (C4 step 2), diffed against HEAD 1107fdc1a:
             # the sequence is unchanged and only the Preface dialogue and the
@@ -2253,6 +2360,24 @@ process.stdout.write(JSON.stringify({
             ).hexdigest()
             self.assertEqual(len(rows), count, key)
             self.assertEqual(digest, wanted_digest, key)
+
+    def test_explicit_source_paths_are_prepared_before_ordinary_seating(self) -> None:
+        report = self.run_harness()["source_path_controls"]
+        self.assertEqual(report["principal"], {
+            "main/easter-day-second-reading": {"state": "selected", "option": "colossians-3"},
+            "main/easter-day-gospel": {"state": "selected", "option": "john-20"},
+        })
+        self.assertEqual(report["primary_names"].count("Second Reading"), 1)
+        self.assertEqual(report["primary_names"].count("Gospel"), 1)
+        self.assertEqual(report["vigil_material"], {"family": "cycles", "cycle": "A"})
+        for key, reason in {
+            "raw": "source path membership must be prepared",
+            "missing": "fixture requires explicit resolved source appointments",
+            "mixed": "mix incompatible correlated source paths",
+            "unknown_evening": "source-condition-unresolved",
+            "wrong_cycle": "source-path-inapplicable",
+        }.items():
+            self.assertIn(reason, report["refused"][key], key)
 
     def test_the_page_states_what_it_withholds(self) -> None:
         report = self.run_harness()
@@ -3279,10 +3404,13 @@ function dialogueReport(rendered) {
    exactly as reader-state-adapters builds it: the formulary's own printed
    Ordinary appointments (the form's replacing the Mass's), the date and the
    owning liturgical year's anchors from the tracked calendar layer. */
-function dayPredicates(calendar, mass, form, date) {
+function liturgicalYear(calendar, date) {
   const year = read('src/web/data/structure/calendar/' + calendar + '/' +
     date.slice(0, 4) + '.json');
-  const owner = year.liturgical_years.find((one) => one.begins <= date && date <= one.ends);
+  return year.liturgical_years.find((one) => one.begins <= date && date <= one.ends);
+}
+function dayPredicates(calendar, mass, form, date) {
+  const owner = liturgicalYear(calendar, date);
   const appointments = {};
   [mass.ordinary_appointments, form && form.ordinary_appointments].forEach((rows) => {
     Object.keys(rows || {}).forEach((variable) => { appointments[variable] = rows[variable].option; });
@@ -3291,17 +3419,38 @@ function dayPredicates(calendar, mass, form, date) {
     date: date, anchors: owner && owner.anchors || null, appointments: appointments
   });
 }
-function pour(file, calendar, key, formId, date) {
-  const mass = read('src/web/data/structure/propers/' + calendar + '.json')
-    .masses.find((m) => m.key === key);
+/* The production reader prepares source-owned appointments before framing.
+   These renderer probes must cross that same shared boundary, with explicit
+   fixture choices rather than a default for a source relation. */
+function prepare(file, calendar, mass, form, date, choices) {
+  const owner = date && liturgicalYear(calendar, date);
+  const lectionary = owner && owner.lectionary || {};
+  const prepared = window.OrdinarySeating.prepareProperAppointments(
+    (form ? form.propers : mass.propers) || [], {
+      calendar: calendar, entrance: 'day', mass: mass.key,
+      formId: form ? form.id : 'main', sourcePaths: mass.proper_source_paths || [],
+      calendarCycles: {sunday: lectionary.sunday || null, weekday: lectionary.weekday || null},
+      date: date, season: owner && (owner.seasons || []).find(
+        (one) => one.from <= date && date <= one.to)?.season || null,
+      facts: file.proper_appointment_facts || {}, choices: choices || {}
+    });
+  if (prepared.unresolved.length || prepared.sourcePathUnresolved.length) {
+    throw new Error('renderer fixture requires explicit resolved source appointments');
+  }
+  return prepared;
+}
+function pour(file, calendar, key, formId, date, choices) {
+  const structure = read('src/web/data/structure/propers/' + calendar + '.json');
+  const mass = structure.masses.find((m) => m.key === key);
   const form = formId && (mass.forms || []).find((one) => one.id === formId);
   if (formId && !form) throw new Error('missing stable form ' + key + '/' + formId);
-  const propers = form ? form.propers : mass.propers;
+  const prepared = prepare(structure, calendar, mass, form, date, choices);
   const frame = date
     ? global.window.OrdinarySeating.resolveElements(
       file, {}, dayPredicates(calendar, mass, form, date)).shown
     : P.shownElements(file);
-  const placed = P.seatPropers(propers || [], P.seats(file, frame));
+  const placed = window.OrdinarySeating.seatPropers(
+    prepared.rows, P.seats(file, frame), window.Triptych.isPlaceholder, prepared.selections);
   const events = P.massEvents(frame, placed);
   const out = [];
   for (const event of events) {
@@ -3376,7 +3525,38 @@ const ot18 = pour(pc, 'postconciliar', 'ot-18', null, '2026-08-02');
 const nativity = ['vigil', 'night', 'dawn', 'day'].map((id) => ({
   id: id, result: pour(pc, 'postconciliar', 'nativity', id, '2026-12-25')
 }));
-const collect = pour(pc, 'postconciliar', 'easter-sunday', null, '2026-04-05').order;
+const easterChoices = {
+  'main/easter-day-second-reading': 'colossians-3',
+  'main/easter-day-gospel': 'john-20'
+};
+const collect = pour(pc, 'postconciliar', 'easter-sunday', null, '2026-04-05', easterChoices).order;
+const easterStructure = read('src/web/data/structure/propers/postconciliar.json');
+const easterMass = easterStructure.masses.find((one) => one.key === 'easter-sunday');
+const principal = prepare(easterStructure, 'postconciliar', easterMass, null, '2026-04-05', easterChoices);
+const vigil = prepare(easterStructure, 'postconciliar', easterMass, null, '2026-04-05', {
+  ...easterChoices, 'main/easter-day-gospel': 'easter-vigil-a'
+});
+function refuses(action) {
+  try { action(); return ''; } catch (error) { return error.message; }
+}
+const sourcePathControls = {
+  principal: principal.sourcePathSelections,
+  primary_names: principal.rows.map((row) => row.proper.name),
+  vigil_material: vigil.rows.find((row) => row.proper.name === 'Gospel').materialCycle,
+  refused: {
+    raw: refuses(() => P.seatPropers(easterMass.propers, P.seats(pc, P.shownElements(pc)))),
+    missing: refuses(() => prepare(easterStructure, 'postconciliar', easterMass, null, '2026-04-05')),
+    mixed: refuses(() => prepare(easterStructure, 'postconciliar', easterMass, null, '2026-04-05', {
+      ...easterChoices, 'main/gospel': 'easter-vigil'
+    })),
+    unknown_evening: refuses(() => prepare(easterStructure, 'postconciliar', easterMass, null, '2026-04-05', {
+      ...easterChoices, 'main/easter-day-gospel': 'evening-emmaus'
+    })),
+    wrong_cycle: refuses(() => prepare(easterStructure, 'postconciliar', easterMass, null, '2026-04-05', {
+      ...easterChoices, 'main/easter-day-gospel': 'easter-vigil-b'
+    }))
+  }
+};
 const seat = collect.indexOf('ritus-initiales/collecta');
 
 /* The same element read in each language the file declares, which is what the
@@ -3562,6 +3742,7 @@ process.stdout.write(JSON.stringify({
     total: one.result.seated + one.result.before + one.result.after
   })),
   postconciliar_collect: collect.slice(seat, seat + 2),
+  source_path_controls: sourcePathControls,
   event_kinds: easter.kinds,
   pentecost_10_sequence: pentecost10.sequence,
   pentecost_10_text: pentecost10.text,

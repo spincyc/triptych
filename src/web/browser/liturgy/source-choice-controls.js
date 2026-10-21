@@ -28,7 +28,7 @@
       type: held.formulary && held.formulary.type,
       mass: held.formulary && held.formulary.id ||
         held.selectedReadableFormulary && held.selectedReadableFormulary.id,
-      form: held.form
+      form: held.form, cycle: held.cycle
     };
     const removed = removals || [];
     const changed = Object.keys(identity).some(function (key) {
@@ -118,6 +118,90 @@
     return wrapper;
   }
 
+  function attachSourcePathChoices(input) {
+    const T = input.T;
+    const first = input.root.firstChild;
+    const prefix = input.prefix || '';
+    function label(id) { return T.titleCase(String(id).replace(/[-_]+/g, ' ')); }
+    function condition(path) {
+      const when = path && path.condition;
+      const status = path && path.applicability;
+      const text = when ? ' Source condition: ' + label(when.fact) +
+        ' in ' + (when.in || []).map(label).join(', ') + '.' : '';
+      return text + (status && status.state !== 'applicable'
+        ? ' Applicability ' + status.state + ': ' + label(status.reason || status.state) + '.' : '');
+    }
+    (input.result.sourcePathChoices || []).forEach(function (relation) {
+      const wrapper = T.el('section', 'source-path-choice');
+      wrapper.dataset.sourcePathChoice = relation.id;
+      const selected = relation.paths.find(function (path) { return path.id === relation.selection.option; });
+      wrapper.appendChild(T.el('p', 'composed-note source-path-note',
+        (selected ? 'Source reading path: ' + label(selected.id) + ' (' + selected.standing + ').'
+          : 'Choose one source reading path; none is selected.') +
+        ' Source basis: ' + relation.basis + condition(selected)));
+      const controls = T.el('fieldset', 'ordinary-choice source-path-controls');
+      controls.dataset.optionGroup = relation.id;
+      controls.dataset.optionBranch = prefix;
+      controls.appendChild(T.el('legend', null, 'Source reading path: ' + label(relation.id.split('/').pop())));
+      const options = T.el('div', 'ordinary-choice-options');
+      relation.paths.forEach(function (path) {
+        const option = T.el('label', 'ordinary-choice-option');
+        const radio = root.document.createElement('input');
+        radio.type = 'radio';
+        radio.name = 'reader-source-path-' + prefix + relation.id;
+        radio.value = path.id;
+        radio.checked = relation.selection.state === 'selected' && relation.selection.option === path.id;
+        function candidate() {
+          const request = properChoiceRequest(input.state, relation.id, path.id);
+          relation.ownedChoiceIds.forEach(function (id) { delete request.properChoices[id]; });
+          Object.assign(request.properChoices, path.choices, { [relation.id]: path.id });
+          const result = input.adapt(request);
+          const choice = (result.sourcePathChoices || []).find(function (row) { return row.id === relation.id; });
+          const actual = choice && choice.paths.find(function (row) { return row.id === path.id; });
+          if (!choice || choice.selection.state !== 'selected' || choice.selection.option !== path.id ||
+              !actual || actual.applicability.state !== 'applicable') {
+            throw new Error('source path is not admitted by the owning adapter');
+          }
+          if (choice.focusEventId && !(result.events || []).some(function (event) { return event.id === choice.focusEventId; })) {
+            throw new Error('source path focus is absent from its admitted semantic events');
+          }
+          return { request: request, choice: choice };
+        }
+        radio.disabled = path.applicability.state !== 'applicable';
+        if (!radio.disabled) {
+          try { candidate(); } catch (_error) { radio.disabled = true; }
+        }
+        radio.addEventListener('change', function () {
+          if (!radio.checked || radio.disabled) return;
+          let next;
+          try { next = candidate(); } catch (_error) { return; }
+          const event = next.choice.focusEventId && prefix + next.choice.focusEventId;
+          input.navigate({ 'proper-choices': JSON.stringify(next.request.properChoices) },
+            ['alternative', '_candidate-alternative'], {
+              location: event ? { kind: 'event', id: event } : null,
+              focus: event ? { kind: 'proper-choice-result', event: event } : {
+                kind: 'source-path-option', group: relation.id, option: path.id, branch: prefix
+              }
+            });
+        });
+        option.appendChild(radio);
+        option.appendChild(root.document.createTextNode(label(path.id) + ' (' + path.standing + ')' +
+          (radio.disabled ? ' — unavailable for this context' + condition(path) : '')));
+        options.appendChild(option);
+      });
+      controls.appendChild(options);
+      wrapper.appendChild(controls);
+      if (relation.beforeEventId) {
+        const target = Array.from(input.root.querySelectorAll('[data-semantic-event-id]')).find(
+          function (node) { return node.dataset.semanticEventId === relation.beforeEventId; }
+        );
+        if (!target) throw new Error('source path has no existing rendering placement');
+        target.before(wrapper);
+      } else input.root.insertBefore(wrapper, first);
+    });
+  }
+
   return Object.freeze({ renderProperChoice: renderProperChoice,
+    attachSourcePathChoices: attachSourcePathChoices,
     properChoiceRemovals: properChoiceRemovals });
 }));

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.ember-pentecost-september-5fdd4f00"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers this bounded editorial selection, normalization and collation under CC BY 4.0, claiming no exclusive right in the preexisting Latin independently witnessed by the registered public-domain Mame 1922 derivative. Under 17 U.S.C. 103(b), no exclusive right in these preexisting words arises from their later 1962 printing. Existing canonical rights records govern; no new rights decision or whole-edition clearance follows."
+rights_jurisdiction = "United States"
+provenance = "Created on 2026-10-20 from the separately retained checked Mame 1922 derivative and direct 200/400 dpi 1962 page-image collation. Pentecost forms: printed pp.366-371/PDF447-452, nos.1373-1410. September forms: pp.403-410/PDF484-491, nos.1633-1668. Each of twenty-six retained target occurrences is directly printed under its own source form; no form-level borrowing directive or actor assignment is inferred."
+retrieved = "2026-10-20"
+sha256 = "5fdd4f0011a7efe02d41e71c0b6e624a2026d551cc16d43cdc4fddaa38297240"
+byte_size = 4228
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/ember-pentecost-september-5fdd4f00/ember-pentecost-september.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ember-pentecost-september-la-checked-ea162251", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Project only twenty-four checked oration occurrences and two complete Veni Alleluia occurrences; join printed word divisions; remove stress accents; expand ae/oe ligatures; use calendar consonantal j; apply each actual target occurrence punctuation and printed conclusion length. Keep the actual versicle marker and parenthetical Hic genuflectitur in each chant, separately typed as a rubric action by the calendar. Source-heading Oratio becomes a repeated literal Proper name; it does not assert a semantic Ordinary seat."
+indexable = true
+encoding = "utf-8"
+notes = "Twenty-six source-owned direct bodies only. Every longer form has five additional Oratio prayers and every shorter form one; their source positions precede the correct following reading. Equal or differing wording across forms is documented from actual reprints. No protected page image, new modern composition, inferred actor, English text, or whole-Missal completeness is supplied."

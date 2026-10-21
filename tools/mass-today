@@ -46,6 +46,7 @@ for.
 from __future__ import annotations
 
 import argparse
+import copy
 import datetime as dt
 import json
 import subprocess
@@ -152,7 +153,7 @@ EXAMPLES = {
                 "",
                 "  S. Ignatii Confessoris (III)",
                 "",
-                "    Introit — Philippians 2:10-11",
+                "    Introit — Philippians 2:10-11; Psalms 5:12-13",
                 "",
                 "    Collect",
                 "      Deus, qui ad majorem tui nominis gloriam propagandam, novo per beatum Ignatium",
@@ -162,7 +163,9 @@ EXAMPLES = {
                 "",
                 "    Epistle — 2 Timothy 2:8-10; 3:10-12",
                 "",
-                "    Gradual — Psalms 91:13, 14",
+                "    Gradual — Psalms 91:13-14; Psalms 91:3",
+                "",
+                "    Alleluia — James 1:12",
                 "",
                 "    Gospel — Luke 10:1-9",
                 "",
@@ -220,6 +223,10 @@ class Refused(RuntimeError):
 
 class _SourceMass(dict):
     """Keep the original Day tuple privately while projecting a public Mass."""
+
+
+class _ProperAppointmentContext(dict):
+    """Keep Bible projection inputs out of the shared admission payload."""
 
 
 def invoke(tool: str, argv: list[str]) -> dict:
@@ -452,6 +459,15 @@ def select_untranslated_records(proper: dict, cycle: str | None) -> None:
         proper["untranslated"] = selected
     else:
         proper.pop("untranslated", None)
+
+
+def attach_passages(owner: dict, passages: dict) -> None:
+    """Attach words already resolved by the existing Bible owner."""
+    owner["verses"] = [
+        dict(verse, **{k: v for k, v in (passages.get(str(verse.get("ref"))) or {}).items()})
+        for verse in (owner.get("verses") or [])
+        if isinstance(verse, dict)
+    ]
 
 
 def validated_text_status(value: object) -> dict | None:
@@ -729,7 +745,8 @@ def language_projection(proper: dict, lang: str, bible: dict | None) -> dict:
 
 
 def language_account(
-    days: list[dict], requested: str | None, bible: dict | None
+    days: list[dict], requested: str | None, bible: dict | None,
+    source_path_rows: dict[int, list[dict]] | None = None,
 ) -> dict:
     """Add explicit selection metadata and summarize actual day-level support."""
     counts = {
@@ -756,6 +773,7 @@ def language_account(
             if isinstance(mass, dict)
         ]
         for mass in masses:
+            admitted = (source_path_rows or {}).get(id(mass))
             # A form manifest is the canonical partition.  The flat `propers`
             # member is only the selected compatibility projection and may be
             # empty, so traverse the nested forms exactly once when present.
@@ -770,6 +788,8 @@ def language_account(
                 if mass.get("forms")
                 else mass.get("propers") or []
             )
+            if admitted is not None:
+                propers = [row["proper"] for row in admitted]
             for proper in propers:
                 selected = None
                 for lang in SUPPORTED_LANGUAGES:
@@ -790,6 +810,20 @@ def language_account(
                 # payload would turn a consumer projection back into an audit
                 # export.
                 proper.pop("untranslated", None)
+            if admitted is not None:
+                # These rows were admitted by the shared runtime before any
+                # material/language selection. Raw source rows stay intact;
+                # only their selected-language account is published by index.
+                raw_by_index = dict(zip(
+                    mass.get("_proper_source_indices") or [],
+                    mass.get("propers") or [],
+                ))
+                for row in admitted:
+                    raw = raw_by_index.get(row["sourceIndex"])
+                    if raw is not None and "language_selection" in row["proper"]:
+                        raw["language_selection"] = row["proper"]["language_selection"]
+                for raw in mass.get("propers") or []:
+                    raw.pop("untranslated", None)
 
     available = [counts[lang] for lang in SUPPORTED_LANGUAGES]
     return {
@@ -893,18 +927,19 @@ def propers_of(
     for source_index, row in enumerate(payload.get("appointed") or []):
         if not isinstance(row, dict) or not isinstance(row.get("proper"), dict):
             continue
-        proper = dict(row["proper"])
+        proper = copy.deepcopy(row["proper"]) if mass.get("proper_source_paths") else dict(row["proper"])
         selected_cycle = None
-        for variants, cycle in (
-            (proper.get("cycles") or {}, (lectionary or {}).get("sunday")),
-            (proper.get("weekday_cycles") or {}, (lectionary or {}).get("weekday")),
-        ):
-            selected = variants.get(cycle) if cycle else None
-            if isinstance(selected, dict):
-                proper.update(selected)
-                selected_cycle = str(cycle)
-                break
-        select_untranslated_records(proper, selected_cycle)
+        if _calendars.SOURCE_PATH_RELATION not in proper:
+            for variants, cycle in (
+                (proper.get("cycles") or {}, (lectionary or {}).get("sunday")),
+                (proper.get("weekday_cycles") or {}, (lectionary or {}).get("weekday")),
+            ):
+                selected = variants.get(cycle) if cycle else None
+                if isinstance(selected, dict):
+                    proper.update(selected)
+                    selected_cycle = str(cycle)
+                    break
+            select_untranslated_records(proper, selected_cycle)
         form_name = row.get("form")
         form_id = row.get("form_id")
         if forms:
@@ -939,11 +974,8 @@ def propers_of(
         # The words behind each citation, from the resolution `mass-propers`
         # performed. A verse the bible does not carry keeps its reference and
         # says so where the text would have been.
-        proper["verses"] = [
-            dict(verse, **{k: v for k, v in (passages.get(str(verse.get("ref"))) or {}).items()})
-            for verse in (proper.get("verses") or [])
-            if isinstance(verse, dict)
-        ]
+        if _calendars.SOURCE_PATH_RELATION not in proper:
+            attach_passages(proper, passages)
         if forms:
             form = forms_by_id[str(form_id)]
             if is_placeholder(proper):
@@ -1042,6 +1074,12 @@ def propers_of(
     }
     if _calendars.PROPER_APPOINTMENT_FACTS in payload:
         result[_calendars.PROPER_APPOINTMENT_FACTS] = _calendars.validate_proper_appointment_facts(payload[_calendars.PROPER_APPOINTMENT_FACTS], calendar)
+    if "proper_source_paths" in mass:
+        # mass-propers owns source validation and derived origin transport;
+        # shared preparation validates the exact public relation before use.
+        result["proper_source_paths"] = copy.deepcopy(mass["proper_source_paths"])
+        result["_calendar_cycles"] = dict(lectionary or {})
+        result["_source_path_passages"] = passages
     if forms and selected_form is None:
         # Absence here is the typed choice-required state, not the no-form
         # sentinel.  It prevents a null from being mistaken for `main`.
@@ -1505,14 +1543,48 @@ def run_show(arguments: argparse.Namespace) -> dict:
     machine_events = arguments.expanded and (
         arguments.json or arguments.format in {"json", "yaml"}
     )
+    source_path_rows: dict[int, list[dict]] = {}
     for row in days:
-        for mass in row.get("masses") or []:
-            source_indices = mass.pop("_proper_source_indices", [])
-            if not (arguments.json or arguments.format in {"json", "yaml"}):
-                mass["_proper_source_indices"] = source_indices
+        readable = row.get("masses") or [
+            mass for branch in row.get("branches") or []
+            for mass in branch.get("masses") or []
+        ]
+        for mass in readable:
+            source_indices = mass.get("_proper_source_indices", [])
+            path_resolution = None
+            if mass.get("proper_source_paths") or any(_calendars.SOURCE_PATH_RELATION in proper for proper in mass.get("propers") or []):
+                source_path_rows[id(mass)] = []
+                if not mass.get("form_choice_required"):
+                    selected = mass.get("key") == row.get("selected_mass")
+                    held_ordinary = row.get("ordinary")
+                    path_ordinary = (
+                        held_ordinary if selected and arguments.expanded
+                        and not row.get("ordinary_suppressed")
+                        and isinstance(held_ordinary, dict)
+                        and not held_ordinary.get("refused") else None
+                    )
+                    predicates = ordinary_predicate_context_for(row, mass, when)
+                    path_resolution = mass_events(
+                        path_ordinary,
+                        [{"proper": proper, "sourceIndex": index}
+                         for proper, index in zip(mass.get("propers") or [], source_indices)],
+                        arguments.ordinary_variant if path_ordinary is not None else None,
+                        predicates,
+                        proper_appointment_context_for(
+                            str(row["calendar"]), mass, predicates,
+                            getattr(arguments, "proper_choice", None) if selected else None,
+                        ),
+                    )
+                    publish_appointment_resolution(mass, path_resolution)
+                    source_path_rows[id(mass)] = path_resolution["_prepared_rows"]
+                    publish_admitted_passages(mass, path_resolution)
+                    if not (arguments.json or arguments.format in {"json", "yaml"}):
+                        mass["_source_path_resolution"] = path_resolution
             if mass.get("key") != row.get("selected_mass"):
                 continue
             if not machine_events:
+                if path_resolution is not None:
+                    continue
                 if not (arguments.json or arguments.format in {"json", "yaml"}):
                     continue
                 facts = mass.get(_calendars.PROPER_APPOINTMENT_FACTS) or {}
@@ -1528,9 +1600,7 @@ def run_show(arguments: argparse.Namespace) -> dict:
                     None, [{"proper": proper, "sourceIndex": index} for proper, index in zip(mass.get("propers") or [], source_indices)],
                     None, predicates, proper_appointment_context_for(str(row["calendar"]), mass, predicates),
                 )
-                for field in ("proper_appointment_usage", "proper_appointment_selections", "proper_appointment_unresolved", "proper_appointment_inactive"):
-                    if field in resolution and (field == "proper_appointment_usage" or resolution[field]):
-                        mass[field] = resolution[field]
+                publish_appointment_resolution(mass, resolution)
                 continue
             ordinary = row.get("ordinary")
             if (
@@ -1538,17 +1608,31 @@ def run_show(arguments: argparse.Namespace) -> dict:
                 or not isinstance(ordinary, dict)
                 or ordinary.get("refused")
             ):
-                if not any("appointment_identity" in proper or "appointment_replacement" in proper or _calendars.APPOINTMENT_APPLICABILITY in proper for proper in mass.get("propers") or []) and not getattr(arguments, "proper_choice", None):
+                if not mass.get("proper_source_paths") and not any("appointment_identity" in proper or "appointment_replacement" in proper or _calendars.APPOINTMENT_APPLICABILITY in proper or _calendars.SOURCE_PATH_RELATION in proper for proper in mass.get("propers") or []) and not getattr(arguments, "proper_choice", None):
                     continue
                 ordinary = None
             mass["expanded_events"] = expanded_event_projection(
                 str(row["calendar"]), mass, ordinary, source_indices,
                 ordinary_predicate_context_for(row, mass, when),
                 getattr(arguments, "proper_choice", None),
+                prepared_resolution=path_resolution,
             )
 
     bible = chosen_bible or indexed_bible(arguments.bible)
-    language = language_account(days, arguments.lang, bible)
+    language = language_account(days, arguments.lang, bible, source_path_rows)
+    if arguments.json or arguments.format in {"json", "yaml"}:
+        for row in days:
+            # Branches share their Mass objects with the selected projection;
+            # clean each identity once, including unselected alternatives.
+            masses = [*row.get("masses", []), *[
+                mass for branch in row.get("branches") or []
+                for mass in branch.get("masses") or []
+            ]]
+            for mass in masses:
+                if mass.get("proper_source_paths") or any(mass is one for one in row.get("masses") or []):
+                    mass.pop("_proper_source_indices", None)
+                mass.pop("_calendar_cycles", None)
+                mass.pop("_source_path_passages", None)
 
     return {
         "status": "partial" if problems else "ok",
@@ -1696,7 +1780,12 @@ def mass_events(
         "    proper_appointment_selections: appointments.selections,\n"
         "    proper_appointment_unresolved: appointments.unresolved,\n"
         "    proper_appointment_inactive: appointments.inactive,\n"
-        "    proper_appointment_usage: appointments.usage\n"
+        "    proper_appointment_usage: appointments.usage,\n"
+        "    prepared_rows: appointments.rows,\n"
+        "    material_selections: appointments.materialSelections,\n"
+        "    source_path_selections: appointments.sourcePathSelections,\n"
+        "    source_path_unresolved: appointments.sourcePathUnresolved,\n"
+        "    source_path_availability: appointments.sourcePathAvailability\n"
         "  }));\n"
         "});\n"
     )
@@ -1729,7 +1818,64 @@ def mass_events(
         result.get("unresolved"), list
     ):
         raise Refused("the Ordinary seating model returned no typed resolution")
+    if (proper_appointment_context or {}).get("sourcePaths"):
+        # The shared owner chose exact material owners before any body,
+        # language or Scripture selection. This is the existing CLI merge
+        # operation, consuming that admitted child without choosing a cycle.
+        projected = {}
+        for row in result.pop("prepared_rows", []):
+            proper = copy.deepcopy(row["proper"])
+            selector = row.get("materialCycle")
+            if selector is not None:
+                owner = row.get("materialOwner")
+                if owner is not None:
+                    proper.update(owner)
+                select_untranslated_records(
+                    proper, None if selector["cycle"] == "all" else selector["cycle"]
+                )
+                attach_passages(proper, getattr(proper_appointment_context, "_bible_passages", {}))
+            projected[row["sourceIndex"]] = {"proper": proper, "sourceIndex": row["sourceIndex"]}
+        result["_prepared_rows"] = list(projected.values())
+        for event in result["events"]:
+            if event.get("kind") == "proper":
+                event["proper"] = projected[event["sourceIndex"]]["proper"]
+            elif event.get("kind") == "proper_choice":
+                for option in event["options"]:
+                    option["rows"] = [projected[row["sourceIndex"]] for row in option["rows"]]
+    else:
+        result.pop("prepared_rows", None)
+        for field in SOURCE_PATH_RESOLUTION_FIELDS:
+            result.pop(field, None)
     return result
+
+
+SOURCE_PATH_RESOLUTION_FIELDS = (
+    "material_selections", "source_path_selections", "source_path_unresolved",
+    "source_path_availability",
+)
+
+
+def publish_appointment_resolution(mass: dict, resolution: dict) -> None:
+    for field in ("proper_appointment_selections", "proper_appointment_unresolved", "proper_appointment_inactive"):
+        if resolution.get(field):
+            mass[field] = resolution[field]
+    if "proper_appointment_usage" in resolution:
+        mass["proper_appointment_usage"] = resolution["proper_appointment_usage"]
+    if mass.get("proper_source_paths"):
+        for field in SOURCE_PATH_RESOLUTION_FIELDS:
+            mass[field] = resolution[field]
+
+
+def publish_admitted_passages(mass: dict, resolution: dict) -> None:
+    """Transport only the exact JS-admitted owner's resolved verse metadata."""
+    raw_by_index = dict(zip(mass.get("_proper_source_indices") or [], mass.get("propers") or []))
+    for row in resolution["_prepared_rows"]:
+        raw = raw_by_index[row["sourceIndex"]]
+        if _calendars.SOURCE_PATH_RELATION not in raw:
+            continue
+        selector = resolution["material_selections"][str(row["sourceIndex"])]
+        owner = raw if selector["family"] is None else raw[selector["family"]][selector["cycle"]]
+        owner["verses"] = copy.deepcopy(row["proper"]["verses"])
 
 
 def proper_appointment_context_for(calendar: str, mass: dict, predicate_context: dict, wanted=None) -> dict:
@@ -1746,6 +1892,14 @@ def proper_appointment_context_for(calendar: str, mass: dict, predicate_context:
             raise Refused("--proper-choice repeats an appointment group")
         choices[scope] = option
     context = {"calendar": calendar, "mass": mass["key"], "entrance": "day", "date": predicate_context.get("date"), "season": predicate_context.get("season"), "facts": mass.get(_calendars.PROPER_APPOINTMENT_FACTS) or {}, "choices": choices}
+    if mass.get("proper_source_paths"):
+        context = _ProperAppointmentContext(context)
+        context._bible_passages = mass.get("_source_path_passages") or {}
+        context.update(
+            formId=mass.get("selected_form"), sourcePaths=mass["proper_source_paths"],
+            calendarCycles=mass.get("_calendar_cycles") or {},
+            conditionFacts=predicate_context.get("condition_facts", {}),
+        )
     if isinstance(mass, _SourceMass) and mass.get("selected") is True and getattr(mass, "_source_calendar", None) == calendar:
         context["usageContext"] = {
             "calendar": calendar,
@@ -1786,6 +1940,7 @@ def expanded_event_projection(
     source_indices: list[int],
     predicate_context: dict,
     proper_choices=None,
+    *, prepared_resolution: dict | None = None,
 ) -> list[dict]:
     """Publish only the ordered identities of the CLI's seated event stream."""
     propers = mass.get("propers") or []
@@ -1799,14 +1954,11 @@ def expanded_event_projection(
         {"proper": proper, "sourceIndex": index}
         for proper, index in zip(propers, source_indices)
     ]
-    resolution = mass_events(ordinary, rows, None, predicate_context,
-                             proper_appointment_context_for(calendar, mass, predicate_context, proper_choices))
+    resolution = prepared_resolution if prepared_resolution is not None else mass_events(
+        ordinary, rows, None, predicate_context,
+        proper_appointment_context_for(calendar, mass, predicate_context, proper_choices))
     stream = resolution["events"]
-    for field in ("proper_appointment_selections", "proper_appointment_unresolved", "proper_appointment_inactive"):
-        if resolution.get(field):
-            mass[field] = resolution[field]
-    if "proper_appointment_usage" in resolution:
-        mass["proper_appointment_usage"] = resolution["proper_appointment_usage"]
+    publish_appointment_resolution(mass, resolution)
     mass_key = str(mass["key"])
 
     def proper_id(index: int) -> str:
@@ -1895,6 +2047,36 @@ def proper_lines(
     if why and seat:
         lines.append(body + style.note(f"seated here by {seat.get('locus')}"))
 
+    # A verified language-only whole-body absence does not turn the cited
+    # Bible excerpt into that missing antiphon. The producer already validated
+    # the exact source target and registered witness before projecting this row.
+    language_body_gap = any(
+        isinstance(row, dict) and row.get("lang") == lang
+        and isinstance(row.get("target"), dict)
+        and row["target"].get("extent") == "body"
+        for row in (proper.get("untranslated") or []) + (proper.get("unavailable_translations") or [])
+    )
+    has_language_body = proper.get("source") == "scripture" and language_body_gap
+    selection = language_projection(proper, lang, None) if has_language_body else {}
+    selected_whole_body_held = selection.get("status") == "full-text" and any(
+        isinstance(row, dict) and row.get("lang") == lang and row.get("text")
+        and (witness is None or row.get("source_id") == witness)
+        for row in selection.get("texts") or []
+    )
+    if has_language_body and selected_whole_body_held:
+        lines.append(body + style.note(
+            "Bible component only — shown separately from the selected antiphon body"
+        ))
+    if has_language_body and not selected_whole_body_held:
+        lines.append(body + style.note(
+            "Bible component only — the whole requested-language antiphon body is unavailable"
+        ))
+        states = {str(row.get("state") or "unavailable")
+                  for row in (proper.get("untranslated") or []) +
+                  (proper.get("unavailable_translations") or [])
+                  if isinstance(row, dict) and row.get("lang") == lang}
+        label = "rights restricted" if "rights-restricted" in states else "unavailable"
+        lines.append(body + style.note(f"{lang} antiphon body unavailable: {label}"))
     for verse in proper.get("verses") or []:
         if not isinstance(verse, dict) or not verse.get("ref"):
             continue
@@ -1921,7 +2103,17 @@ def proper_lines(
     latin_note = latin_availability_note(proper, lang)
     if latin_note:
         lines.append(body + style.note(latin_note))
-    for note in untranslated_notes(proper):
+    notes_owner = proper
+    if has_language_body and selected_whole_body_held:
+        # A restriction on another witness does not withdraw selected public
+        # wording. Keep notes about other languages/extents unchanged.
+        notes_owner = dict(proper, untranslated=[
+            row for row in proper.get("untranslated") or []
+            if not (isinstance(row, dict) and row.get("lang") == lang
+                    and isinstance(row.get("target"), dict)
+                    and row["target"].get("extent") == "body")
+        ])
+    for note in untranslated_notes(notes_owner):
         lines.append(body + style.note(f"[{note}]"))
     return lines
 
@@ -2071,10 +2263,10 @@ def render_expanded_mass(
                 "the Ordinary is printed once, above; this formulary's propers "
                 "are set out here in the missal's own order."
             )
-        if not any(_calendars.ORDINARY_DISPOSITION in proper or "appointment_replacement" in proper or _calendars.APPOINTMENT_APPLICABILITY in proper for proper in propers) and not appointment_context["choices"]:
+        if not mass.get("proper_source_paths") and not any(_calendars.ORDINARY_DISPOSITION in proper or "appointment_replacement" in proper or _calendars.APPOINTMENT_APPLICABILITY in proper or _calendars.SOURCE_PATH_RELATION in proper for proper in propers) and not appointment_context["choices"]:
             pour([(proper, None) for proper in propers])
             return
-        resolution = mass_events(None, source_rows, None, predicate_context, appointment_context)
+        resolution = mass.get("_source_path_resolution") or mass_events(None, source_rows, None, predicate_context, appointment_context)
         for event in resolution["events"]:
             if event["kind"] == "proper_choice":
                 pour_choice(event)
@@ -2082,9 +2274,11 @@ def render_expanded_mass(
                 pour([(event["proper"], None)])
         for unresolved in resolution["proper_appointment_unresolved"]:
             aside("Proper appointment unresolved: " + str(unresolved.get("basis") or unresolved.get("group")))
+        for unresolved in resolution.get("source_path_unresolved") or []:
+            aside("Source path required: " + str(unresolved["relation"]))
         return
 
-    resolution = mass_events(
+    resolution = mass.get("_source_path_resolution") or mass_events(
         ordinary, source_rows, arguments.ordinary_variant, predicate_context, appointment_context
     )
     for unresolved in resolution["unresolved"]:
@@ -2096,6 +2290,8 @@ def render_expanded_mass(
         )
     for unresolved in resolution["proper_appointment_unresolved"]:
         aside("Proper appointment unresolved: " + str(unresolved.get("basis") or unresolved.get("group")))
+    for unresolved in resolution.get("source_path_unresolved") or []:
+        aside("Source path required: " + str(unresolved["relation"]))
 
     announced: set[str] = set()
     for event in resolution["events"]:
@@ -2275,10 +2471,10 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                 print(f"    refused: {mass['refused']}")
             render_unresolved_formulary(mass, "    ", style)
             displayed_propers = mass["propers"]
-            if any(_calendars.ORDINARY_DISPOSITION in proper or "appointment_replacement" in proper or _calendars.APPOINTMENT_APPLICABILITY in proper for proper in displayed_propers):
+            if mass.get("proper_source_paths") or any(_calendars.ORDINARY_DISPOSITION in proper or "appointment_replacement" in proper or _calendars.APPOINTMENT_APPLICABILITY in proper or _calendars.SOURCE_PATH_RELATION in proper for proper in displayed_propers):
                 context = ordinary_predicate_context_for(day, mass, str(payload.get("date")))
                 source_rows = [{"proper": proper, "sourceIndex": index} for proper, index in zip(displayed_propers, mass.get("_proper_source_indices") or range(len(displayed_propers)))]
-                prepared = mass_events(None, source_rows, None, context, proper_appointment_context_for(str(day["calendar"]), mass, context))
+                prepared = mass.get("_source_path_resolution") or mass_events(None, source_rows, None, context, proper_appointment_context_for(str(day["calendar"]), mass, context))
                 displayed_propers = []
                 for event in prepared["events"]:
                     if event["kind"] == "proper":
@@ -2292,6 +2488,8 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                             displayed_propers.extend(row["proper"] for row in selected["rows"])
                 for unresolved in prepared["proper_appointment_unresolved"]:
                     print("    Proper appointment unresolved: " + str(unresolved.get("basis") or unresolved["group"]))
+                for unresolved in prepared.get("source_path_unresolved") or []:
+                    print("    Source path required: " + str(unresolved["relation"]))
             for proper in displayed_propers:
                 # A scripture proper carries its reference rather than its
                 # words: printing the name alone would show an empty slot

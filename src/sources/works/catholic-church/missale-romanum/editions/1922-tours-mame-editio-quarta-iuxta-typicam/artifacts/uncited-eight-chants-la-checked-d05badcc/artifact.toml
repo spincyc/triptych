@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.uncited-eight-chants-la-checked-d05badcc"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Eight bounded historical Latin chant bodies read directly in the already registered public-domain Tours Mame 1922 printing. The parent artifact owns the existing United States publication-date and mechanical-reproduction basis. This derivative preserves the historical wording, accents, ligatures, pointing and literal cues, and makes no new rights determination or target-edition clearance."
+rights_jurisdiction = "United States"
+provenance = "Actual 200 dpi whole-page and 400 dpi bounded image readings on 2026-10-20 of the held whole Mame PDF SHA256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005. Nativity BVM Introit artifact p.822 / printed p.708; Gradual and Alleluia p.823 / p.709; Offertory and Communion p.824 / p.710. Laurence Alleluia p.801 / p.687. Matthew Alleluia p.835 / p.721. Martin ordinary Alleluia p.868 / p.754."
+retrieved = "2026-10-20"
+sha256 = "d05badcc137eed18b8d4b4653e81d6560e0e6071c1dafea0aeee7f45c25547c4"
+byte_size = 1140
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/uncited-eight-chants-la-checked-d05badcc/uncited-eight-chants-la.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Select only the eight bounded chants; join printed line wraps and divided words, restore ornamental capitals, and wrap each retained body to project physical lines. Keep historical accents, ligatures, Alleluja, Genitrix, lower-case regem/regi, pointing and the printed versicle siglum represented as ℣. Metadata separately preserves headings, Sedulius attribution and Psalm 44:2 before Eructavit. No new word, expanded doxology, inferred repetition, actor or conditional additional verse is inserted."
+indexable = true
+encoding = "utf-8"
+notes = "Ordered Nativity BVM Introit, Gradual, Alleluia, Offertory, Communion; Laurence Alleluia; Matthew Alleluia; Martin ordinary Alleluia. The seven uncited chants carry no invented Scripture label. The mixed Introit preserves Salve through saeculorum, Psalm 44:2 Eructavit through regi, and the literal Gloria Patri cue. Excludes source headings, labels, neighbouring prayers and rubrics, and the additional Martin paschal votive verse. Mame printed p754 is correctly read from the image; OCR764 is rejected."

@@ -6,9 +6,9 @@ collated_on = "2026-10-20"
 artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
 artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
 artifact_byte_size = 82815941
-scope = "Six directly printed named Secret/Postcommunion appointments for Anthony of Padua, Bibiana, and Sabbas; plus Anthony's Common form. No complete expected-slot or annual-schedule claim."
-method = "Read the held source page images directly, with C10 independent source controls; source classifications C/P are retained separately from appointment identity and publishable wording. Anthony's June heading at PDF632/printed551 says Confessor and Doctor, not Bishop; PDF831/printed[23] expressly distinguishes Doctor nonbishop from bishop."
-limits = "No new body, translation, rights, name-substitution rule, or Common wording change. Six unavailable direct wrappers prevent false Common wording fallback. Later independently bound bodies may fill the same exact source identities."
+scope = "Twenty-eight directly printed named oration appointments: six Secret/Postcommunion appointments for Anthony of Padua, Bibiana, and Sabbas, plus twenty-two own prayers required by fourth-quarter 2026 commemorations; also Anthony's Common form. No complete expected-slot or annual-schedule claim."
+method = "The original six named appointments were checked independently against the held source page images. The additional twenty-two fourth-quarter own prayers were each read directly in the held page images; their C/P or unmarked classification is retained separately from appointment identity and publishable wording. Anthony's June heading at PDF632/printed551 says Confessor and Doctor, not Bishop; PDF831/printed[23] expressly distinguishes Doctor nonbishop from bishop."
+limits = "No new body, translation, rights, name-substitution rule, or Common wording change. Unavailable direct wrappers prevent false Common wording fallback or absent prayer appointments. Later independently bound bodies may fill the same exact source identities."
 anthony_literal_directive = "Missa In medio, de Communi Doctorum [22], cum orationibus ut infra"
 anthony_heading_pdf_page = 632
 anthony_heading_printed_page = 551
@@ -78,3 +78,223 @@ marginal_number = 1851
 source_classification = "P"
 origin = "direct-named-appointment"
 raster_sha256 = "fdb993f5bdce8a3d3006e6c44721005edff4cb64accd38a408d2cab5713b42f5"
+
+[[appointments]]
+mass = "comm-s-chrysogoni-martyris"
+proper = "Secret"
+pdf_page = 807
+printed_page = 726
+marginal_number = 4163
+source_classification = "unmarked"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "fddf23ac92d2fd54bfb356e1a88f4c7ea4bb481136854d1a191f66fefc780e41"
+
+[[appointments]]
+mass = "comm-s-chrysogoni-martyris"
+proper = "Postcommunion"
+pdf_page = 807
+printed_page = 726
+marginal_number = 4165
+source_classification = "unmarked"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "fddf23ac92d2fd54bfb356e1a88f4c7ea4bb481136854d1a191f66fefc780e41"
+
+[[appointments]]
+mass = "comm-s-felicitatis-martyris"
+proper = "Secret"
+pdf_page = 806
+printed_page = 725
+marginal_number = 4158
+source_classification = "P"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "e63f6bfc7ba8081b3d35f6833182544d60d5f102871907ef8fc90ab629827882"
+
+[[appointments]]
+mass = "comm-s-felicitatis-martyris"
+proper = "Postcommunion"
+pdf_page = 806
+printed_page = 725
+marginal_number = 4159
+source_classification = "P"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "e63f6bfc7ba8081b3d35f6833182544d60d5f102871907ef8fc90ab629827882"
+
+[[appointments]]
+mass = "comm-s-mennae-martyris"
+proper = "Secret"
+pdf_page = 798
+printed_page = 717
+marginal_number = 4088
+source_classification = "P"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "1bb1c9cca99d9acbf41fc50e08a3a4a7aadf450280ecaffc864d374114184193"
+
+[[appointments]]
+mass = "comm-s-mennae-martyris"
+proper = "Postcommunion"
+pdf_page = 798
+printed_page = 717
+marginal_number = 4089
+source_classification = "P"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "1bb1c9cca99d9acbf41fc50e08a3a4a7aadf450280ecaffc864d374114184193"
+
+[[appointments]]
+mass = "comm-s-thomae-episcopi-martyris"
+proper = "Collect"
+pdf_page = 111
+printed_page = 30
+marginal_number = 207
+source_classification = "unmarked"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "53536188a354dccb8a42d2139a238bae32e03ca12093f105c7e225b0996680e4"
+
+[[appointments]]
+mass = "comm-s-thomae-episcopi-martyris"
+proper = "Secret"
+pdf_page = 112
+printed_page = 31
+marginal_number = 214
+source_classification = "unmarked"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "f971497f87de24fc33097602e3b03e8401b8d9fee21065982afd2f3f4010d9d4"
+
+[[appointments]]
+mass = "comm-s-thomae-episcopi-martyris"
+proper = "Postcommunion"
+pdf_page = 112
+printed_page = 31
+marginal_number = 217
+source_classification = "unmarked"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "f971497f87de24fc33097602e3b03e8401b8d9fee21065982afd2f3f4010d9d4"
+
+[[appointments]]
+mass = "comm-ss-sergii-bacchi-marcelli-apuleii"
+proper = "Secret"
+pdf_page = 762
+printed_page = 681
+marginal_number = 3816
+source_classification = "P"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "1b6765d91bc6190584e8dd2096d5283e21ba727dd60c32f85be1c23a1f87bb88"
+
+[[appointments]]
+mass = "comm-ss-sergii-bacchi-marcelli-apuleii"
+proper = "Postcommunion"
+pdf_page = 762
+printed_page = 681
+marginal_number = 3817
+source_classification = "P"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "1b6765d91bc6190584e8dd2096d5283e21ba727dd60c32f85be1c23a1f87bb88"
+
+[[appointments]]
+mass = "comm-ss-tryphonis-respicii-nymphae-virginis"
+proper = "Collect"
+pdf_page = 795
+printed_page = 714
+marginal_number = 4064
+source_classification = "unmarked"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "c6b7f382cc7246d569e85f9af0cb1a5327759c044bbbe40d54b7a3acbe1abc47"
+
+[[appointments]]
+mass = "comm-ss-tryphonis-respicii-nymphae-virginis"
+proper = "Secret"
+pdf_page = 796
+printed_page = 715
+marginal_number = 4070
+source_classification = "unmarked"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "efe16b23a8c71eddbb06f095540652bfb289c8836296ef7f086c565bc69e7689"
+
+[[appointments]]
+mass = "comm-ss-tryphonis-respicii-nymphae-virginis"
+proper = "Postcommunion"
+pdf_page = 796
+printed_page = 715
+marginal_number = 4072
+source_classification = "unmarked"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "efe16b23a8c71eddbb06f095540652bfb289c8836296ef7f086c565bc69e7689"
+
+[[appointments]]
+mass = "comm-ss-ursulae-ac-sociarum-virginum"
+proper = "Secret"
+pdf_page = 775
+printed_page = 694
+marginal_number = 3921
+source_classification = "P"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "052368c10fe5648c582ea5081b0aede8cccd3b7dcb924d3c9eb15277e4e100c9"
+
+[[appointments]]
+mass = "comm-ss-ursulae-ac-sociarum-virginum"
+proper = "Postcommunion"
+pdf_page = 775
+printed_page = 694
+marginal_number = 3922
+source_classification = "P"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "052368c10fe5648c582ea5081b0aede8cccd3b7dcb924d3c9eb15277e4e100c9"
+
+[[appointments]]
+mass = "comm-ss-vitalis-agricolae-martyrum"
+proper = "Collect"
+pdf_page = 792
+printed_page = 711
+marginal_number = 4035
+source_classification = "unmarked"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "3c0c0b1c4b88d1e8f0f57b189754c68ea9d0a0cf90f3d4d3bfa1931043504208"
+
+[[appointments]]
+mass = "comm-ss-vitalis-agricolae-martyrum"
+proper = "Secret"
+pdf_page = 792
+printed_page = 711
+marginal_number = 4041
+source_classification = "unmarked"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "3c0c0b1c4b88d1e8f0f57b189754c68ea9d0a0cf90f3d4d3bfa1931043504208"
+
+[[appointments]]
+mass = "comm-ss-vitalis-agricolae-martyrum"
+proper = "Postcommunion"
+pdf_page = 792
+printed_page = 711
+marginal_number = 4043
+source_classification = "unmarked"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "3c0c0b1c4b88d1e8f0f57b189754c68ea9d0a0cf90f3d4d3bfa1931043504208"
+
+[[appointments]]
+mass = "third-day-within-octave-s-ioannis"
+proper = "Collect"
+pdf_page = 106
+printed_page = 25
+marginal_number = 167
+source_classification = "unmarked"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "19a80434cd99fdbe886f7e0cc806137d2a753f0a4c89776efe7745bca3e60ce0"
+
+[[appointments]]
+mass = "third-day-within-octave-s-ioannis"
+proper = "Secret"
+pdf_page = 107
+printed_page = 26
+marginal_number = 176
+source_classification = "unmarked"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "d190da86ee6a54d78441c00a8e3a05f91a3228a97d698af0a533b9e78967156d"
+
+[[appointments]]
+mass = "third-day-within-octave-s-ioannis"
+proper = "Postcommunion"
+pdf_page = 107
+printed_page = 26
+marginal_number = 179
+source_classification = "unmarked"
+origin = "direct-own-oration-appointment"
+raster_sha256 = "d190da86ee6a54d78441c00a8e3a05f91a3228a97d698af0a533b9e78967156d"

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-souls-twelve-bodies-la-checked-4a41c7e8"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Twelve bounded historical Latin bodies read directly in the already registered public-domain Tours Mame 1922 printing. The parent artifact records the existing United States publication-date and mechanical-reproduction basis. This derivative retains source words, accents, ligatures, pointing, chant marks and abbreviated conclusions. It makes no new rights determination or target-edition clearance."
+provenance = "Actual 200 and 400 dpi page-image readings on 2026-10-20 of the exact held Mame PDF SHA256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005. Mame November 2 artifact p. 864 / printed p. 750 refers to the three All Souls Masses at artifact pp. 1002-1006 / printed pp. 124*-128*. The opening 124* numeral is suppressed and established by the referral and following 125*. First form: Collect p. 1002; Tract and Sequence pp. 1003-1004; Offertory and Secret p. 1004; Postcommunion p. 1005. Second form proper orations p. 1005 override its Anniversary referral, whose Tract and Offertory were independently checked at pp. 1010-1011 / printed pp. 132*-133*. Third form proper orations pp. 1005-1006 override its daily Requiem referral, whose Tract and Offertory were independently checked at pp. 1012-1013 / printed pp. 134*-135*."
+retrieved = "2026-10-20"
+sha256 = "4a41c7e84507299a829be1359dd51d5bf19447277e1aace8714d08740979349c"
+byte_size = 4359
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-souls-twelve-bodies-la-checked-4a41c7e8/all-souls-twelve-bodies-la.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+indexable = true
+encoding = "utf-8"
+transformation = "Select the twelve unique source bodies in source order: first Collect, Tract, Sequence, Offertory, Secret, Postcommunion; second Collect, Secret, Postcommunion; third Collect, Secret, Postcommunion. Join line wraps and divided words, restore ornamental initials, normalize spacing, represent incipit small capitals as uppercase, and rewrap project physical lines. Preserve Sequence verse and stanza order, source accents and ligatures, sepulchra, consonantal j, pointing, two Tract verse glyphs as ℣., Offertory asterisk and verse glyph as ℣., its full written-out Quam olim repeat, closing Sequence Amen, and every original short prayer conclusion. No referred chant is editorially repeated in this source artifact; no new word, actor or Ordinary body is supplied."
+notes = "The exact source referral routes are metadata, not body words. Second form takes non-oration bodies from the Anniversary; third takes them from the daily Mass, with proper orations expressly substituted in both forms and a separate Dies irae reference for the third. The complete first-form Sequence supplies the lawful historical body; the clipped edge of the Anniversary Sequence is not silently reconstructed. Mame proper third-form prayers already have the general faithful-departed petitions. Different 1920 composite-source variant notes do not describe Mame. Excludes ritual directions, headings, Scripture readings, Introit, Gradual, Communion and Preface."

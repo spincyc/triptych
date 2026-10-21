@@ -118,7 +118,12 @@ class HeldAnselmTargetTests(unittest.TestCase):
             self.assertEqual(structured['loci'][addressing], [{'chapter': 6, 'first': 63, 'last': 63},
                                                              {'chapter': 6, 'first': 68, 'last': 68}])
         self.assertEqual(ENTRY['ranges'][0]['begin']['part'], 'b')
-        self.assertEqual(set(tables['hebrew'].addressed), {(REF, 'hebrew')})
+        self.assertEqual(set(tables['hebrew'].addressed), {
+            (REF, 'hebrew'),
+            ('Malachi 2:6', 'hebrew'),
+            ('John 6:69, 70', 'hebrew'),
+            ('Acts 7:58', 'hebrew'),
+        })
         other = canon.parse_citation('John 6:51')
         self.assertIn('unrecorded', propers.citation_structure(other, 'hebrew', propers.book_tokens(), tables)['refused']['hebrew'])
 

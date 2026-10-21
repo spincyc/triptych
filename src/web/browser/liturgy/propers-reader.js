@@ -690,7 +690,7 @@
   }
 
   function focusCommittedResult(intent, location) {
-    if (intent && intent.kind === 'ordinary-option') {
+    if (intent && ['ordinary-option', 'source-path-option'].indexOf(intent.kind) >= 0) {
       const fieldset = Array.from(reading.querySelectorAll('[data-option-group]')).find(
         function (node) { return node.dataset.optionGroup === intent.group; }
       );
@@ -703,7 +703,7 @@
       }
       return;
     }
-    if (intent === 'event' && eventLocation(location)) {
+    if ((intent === 'event' || intent && intent.kind === 'proper-choice-result') && eventLocation(location)) {
       const target = Array.from(reading.querySelectorAll('[data-semantic-event-id]')).find(
         function (row) { return row.dataset.semanticEventId === eventLocation(location); }
       );
@@ -928,6 +928,13 @@
       });
     });
     }
+    Shell.attachSourcePathChoices({ T: T, root: fragment, result: result,
+      state: state, navigate: navigate,
+      adapt: function (request) {
+        return Adapters.adaptPropers({ request: request, structure: runtime.structure,
+          ordinary: runtime.ordinary });
+      }
+    });
     if (state.requestedMode === 'study') Study.attach({ result: result,
       fragment: fragment, contents: contents });
     const semanticIds = renderedSemanticInventory(contents, fragment);

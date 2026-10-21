@@ -92,6 +92,7 @@ ENTRY_FIELDS = frozenset(
     }
 )
 REMOVED_BODY_STATUS = "removed"
+HELD_UNPUBLISHED_BODY_STATUS = "held-unpublished"
 REMOVED_TEXT_STATUS = {
     "state": "unavailable",
     "scope": "proper-body",
@@ -223,14 +224,33 @@ def text_sha256(text: str) -> str:
     return sha256(text.encode("utf-8")).hexdigest()
 
 
+def _is_held_unpublished_body_owner(proper: Mapping[str, object]) -> bool:
+    """A privately held source body that never became a local transcription.
+
+    Calendar validation owns the exact-witness/reason constraints.  This marker
+    creates no former text hash or Latin-ledger owner and grants no publication.
+    """
+    status = proper.get("text_status")
+    # Treat even a malformed use of the private marker as nonpublishable.
+    # The source checker rejects its scope/reason/text contradictions; none
+    # can turn this marker into a route around the publication boundary.
+    return (
+        isinstance(status, dict)
+        and status.get("body_status") == HELD_UNPUBLISHED_BODY_STATUS
+    )
+
+
 def _is_removed_body_owner(proper: Mapping[str, object]) -> bool:
     """Whether a text-free proper is an explicit rights quarantine.
 
     This is deliberately narrower than a generic unavailable status.  A
     witness gap has no former body for the provenance ledger to retain, while
-    a rights-withheld proper does.  The ledger records the former exact hash;
-    it never reconstructs the removed wording.
+    an unmarked rights-withheld proper does.  An explicitly held-unpublished
+    source body never entered this local ledger.  Legacy removed owners retain
+    their former exact hash; it never reconstructs the removed wording.
     """
+    if _is_held_unpublished_body_owner(proper):
+        return False
     status = proper.get("text_status")
     if not isinstance(status, dict) or any(
         status.get(field) != value for field, value in REMOVED_TEXT_STATUS.items()
@@ -250,6 +270,8 @@ def body_owners(
 
     Occurrence is assigned across both states, so deleting one of several
     same-named bodies cannot renumber or collapse the retained sidecar rows.
+    Held-unpublished source bodies have no local Unicode text/hash and do not
+    enter this ledger or shift its existing occurrence ordinals.
     """
     sections = document.get("sections")
     if not isinstance(sections, dict):
@@ -1035,7 +1057,12 @@ def sanitize_proper(
     copied = copy.deepcopy(dict(proper))
 
     def sanitize(owner: dict, key: LatinKey) -> None:
-        if _is_removed_body_owner(owner):
+        unpublished = _is_held_unpublished_body_owner(owner)
+        if unpublished or _is_removed_body_owner(owner):
+            if unpublished:
+                # Invalid resident text is rejected by the source checker;
+                # this boundary still cannot emit it before validation.
+                owner.pop("text", None)
             # No retained hash, witness, reason source, or wording crosses the
             # public boundary.  `withheld` records only the public-safe cause
             # of this typed absence, allowing readers to distinguish it from a

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from copy import deepcopy
 import sys
 import unittest
 from importlib.machinery import SourceFileLoader
@@ -77,6 +78,38 @@ class ClosedShapeTests(unittest.TestCase):
                     _calendars.validate_ordinary_disposition(value), value
                 )
                 self.assertEqual(propers_tool.public_ordinary_disposition(value), value)
+
+    def test_private_basis_projection_preserves_all_appointment_semantics(self) -> None:
+        basis = "ICEL source-study evidence, retained only in the source record."
+        anchor = {"mass": "synthetic-mass", "form_id": "main", "proper": "Gospel", "occurrence": 1}
+        when = {"fact": "season", "in": ["paschal"]}
+        values = (
+            {**alternative("long", basis=basis), "anchor": anchor, "when": when, "seat": "reading-1"},
+            {**unplaced(), "basis": basis},
+            {"kind": "conditional", "group": "source-condition", "basis": basis, "when": when},
+        )
+        for value in values:
+            with self.subTest(kind=value["kind"]):
+                before = deepcopy(value)
+                projected = propers_tool.public_ordinary_disposition(value)
+                self.assertEqual(_calendars.validate_ordinary_disposition(value), before)
+                self.assertEqual(value, before)
+                self.assertNotIn("ICEL", projected["basis"])
+                self.assertTrue(projected["basis"].strip())
+                self.assertEqual({**projected, "basis": basis}, before)
+                nested = {"forms": [{"propers": [{"ordinary_disposition": value}]}]}
+                self.assertEqual(
+                    propers_tool.rights_safe_copy(nested)["forms"][0]["propers"][0]["ordinary_disposition"],
+                    projected,
+                )
+
+    def test_different_private_group_bases_are_refused_before_projection(self) -> None:
+        mass = {"key": "synthetic-mass", "propers": [
+            composed("Gospel", "Long", alternative("long", basis="ICEL evidence one.")),
+            composed("Gospel (shorter)", "Short", alternative("short", basis="ICEL evidence two.")),
+        ]}
+        with self.assertRaisesRegex(ValueError, "one identical basis"):
+            propers_tool.appointed_propers(document([mass]), mass)
 
     def test_unknown_missing_and_mistyped_fields_are_refused(self) -> None:
         malformed = (
