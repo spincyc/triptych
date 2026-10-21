@@ -7,6 +7,24 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-20.
 
+## Missal reader current priority: annual Propers and Commons
+
+The maintainer redirects implementation to a minimal viable reader with
+correct, complete Propers and Commons: Roman 1962 for civil 2026, plus complete
+Novus Ordo liturgical years A/2026, B/2027 and C/2028, including Advent.
+The [current roadmap priority](guidance/liturgy-browser-roadmap.md#current-priority-complete-annual-minimum-reader-2026-10-20)
+owns the exact intervals and scope. Calendar/reading selection, Common
+referrals, missing or incorrect bodies, source wording and the basic reading
+path come first. Existing typed gaps must be repaired or remain explicit;
+coverage totals and structural tests alone do not prove textual completeness.
+
+Parallel annual, Commons and held-source repair lanes are active. Performance,
+print refinements, advanced modes, pre-1955 expansion and review packaging are
+deferred. The unnecessary speech/WAV/Orca lane is canceled; its processes are
+closed and no audio pipeline or speech proof is a completion requirement.
+Earlier implementation records retain their dated scopes. The latest pushed
+checkpoint at this redirect is `a60f87e1a1bbc08f09b3570000af40b267be67e9`.
+
 ## Missal reader C1 truthful coverage, 2026-10-19
 
 <!-- promised-deliverable: missal-reader-c1-coverage-2026-10-19 -->
@@ -967,8 +985,9 @@ own scrollport, no unresolved item; the minimum computed foreground/backdrop
 ratio is 5.3471. The 28 symbolic Close-label observations retain their actual
 functional AX names. No automated result was suppressed. This diagnostic
 checkpoint does not establish representative human screen-reader use, manual
-touch, WCAG conformance or final reader acceptance. Actual AT control setup,
-source completion, startup value and the final immutable review remain open.
+touch, WCAG conformance or final reader acceptance. The later maintainer
+priority above cancels speech/AT-service setup and defers startup and final
+review work while annual Propers/Common correctness proceeds.
 
 The postconciliar Pentecost source checkpoint adds 28 text-free targets in
 three partial slices: five antiphon alternatives, eleven headed Lectionary
