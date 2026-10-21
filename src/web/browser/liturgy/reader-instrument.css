@@ -362,6 +362,10 @@ body:has(.reader-instrument) > .site-footer,
   letter-spacing: 0.01em;
   text-align: left;
 }
+/* The cycle heading is a preceding label, so its claim stays below it. */
+.reader-instrument .reader-document .cycle-name + .unit-claim {
+  margin-top: 0.35rem;
+}
 /* Checked internal structure (C2 G14). A Sequence's strophes are the
  * printed groups of one body, so they stand apart without a heading each; a
  * rubric printed inside a prayer is set as a rubric -- italic as well as red,

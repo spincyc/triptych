@@ -1,0 +1,11 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.vatican-typica-1962.advent-1-lasance-three-orations-collation-2026-10-21"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+locus = "Advent I Collect, Secret and Postcommunion; marginal2,8,10; opening unnumbered folio then printed2."
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-21"
+context = "Text-free normalized-petition comparison control only for the first three checked Lasance Advent English orations; no raw target diacritic oracle, target English or protected Latin payload. Exact page loci82–83 remain human-readable because the existing schema1 control artifact has no machine page_count; its metadata is not changed."
+notes = "Frozen proof sha256 f500b33a8c0ec2a5847349041ade7897c2938f6e843db40f1e095004fdb11755. Collect: marginal2, PDF82; petition token identity confirmed, source/target conclusion lengths differ. Identical Latin petition words after accents/ligatures/case normalization. Lasance has no commas after Excita/quaesumus/Domine, and a full stop before Qui vivis.; target adds those commas and a colon before the printed fuller conclusion. Lasance English and its paired Latin both print only the abbreviated ending Who livest./Qui vivis. No ending expansion supplied. Secret: marginal8, PDF83; petition token identity confirmed, source/target conclusion lengths differ. Identical Latin petition words. Lasance omits commas around Domine; target prints them. Lasance paired Latin ends Per Dominum.; target prints the fuller conclusion. Exact English remains Through our Lord. Postcommunion: marginal10, PDF83; petition token identity confirmed, source/target conclusion lengths differ. Identical Latin petition words after case/accents/ligatures. Lasance omits commas around Domine; target has them. Lasance Latin ends Per Dominum.; target prints Per Dominum nostrum. English remains exactly Through our Lord. Physical bilingual columns reverse here: English L, paired Latin R."

@@ -173,7 +173,8 @@ def _validate_proper_material(material: object, path: str) -> None:
         _validate_citation(citation, f"{path}.verses[{verse_index}]")
 
 
-def _validate_proper(proper: object, case: DumpCase, path: str) -> None:
+def _validate_proper(proper: object, case: DumpCase, path: str,
+                     *, raw_source_member: bool = False) -> None:
     _require(isinstance(proper, dict), path, "an object")
     assert isinstance(proper, dict)
     _require(
@@ -187,18 +188,23 @@ def _validate_proper(proper: object, case: DumpCase, path: str) -> None:
         "a non-empty string",
     )
     selection = proper.get("language_selection")
-    _require(isinstance(selection, dict), f"{path}.language_selection", "an object")
-    assert isinstance(selection, dict)
-    _require(
-        selection.get("requested") == case.language,
-        f"{path}.language_selection.requested",
-        case.language,
-    )
-    _require(
-        isinstance(selection.get("status"), str) and bool(selection.get("status")),
-        f"{path}.language_selection.status",
-        "a non-empty string",
-    )
+    if raw_source_member:
+        # Admission precedes language projection. Retained, unadmitted source
+        # alternatives are not selected readings or available language units.
+        _require(selection is None, f"{path}.language_selection", "no unadmitted projection")
+    else:
+        _require(isinstance(selection, dict), f"{path}.language_selection", "an object")
+        assert isinstance(selection, dict)
+        _require(
+            selection.get("requested") == case.language,
+            f"{path}.language_selection.requested",
+            case.language,
+        )
+        _require(
+            isinstance(selection.get("status"), str) and bool(selection.get("status")),
+            f"{path}.language_selection.status",
+            "a non-empty string",
+        )
     _validate_proper_material(proper, path)
 
     for field, allowed in (("cycles", {"A", "B", "C"}),
@@ -391,7 +397,32 @@ def validate_dump(payload: object, case: DumpCase) -> None:
         mass_keys.append(key)
         _require(isinstance(mass.get("propers"), list), f"{mass_path}.propers", "an array")
         for proper_index, proper in enumerate(mass["propers"]):
-            _validate_proper(proper, case, f"{mass_path}.propers[{proper_index}]")
+            raw_source_member = False
+            if isinstance(proper, dict) and proper.get("source_path_relation"):
+                relation = proper["source_path_relation"]
+                identity = proper.get("appointment_identity") or {}
+                form_id = identity.get("form_id")
+                declared = next((
+                    row for row in mass.get("proper_source_paths") or []
+                    if row.get("id") == relation and row.get("form_id") == form_id
+                ), None)
+                selection = (mass.get("source_path_selections") or {}).get(
+                    f"{form_id}/{relation}", {})
+                selected_path = next((
+                    row for row in (declared or {}).get("paths", [])
+                    if row.get("id") == selection.get("option")
+                ), {})
+                selected_member = any(
+                    row.get("appointment") == identity
+                    for row in selected_path.get("members", [])
+                )
+                raw_source_member = (
+                    declared is not None and identity.get("mass") == key
+                    and (selection.get("state") == "required"
+                         or (selection.get("state") == "selected" and not selected_member))
+                )
+            _validate_proper(proper, case, f"{mass_path}.propers[{proper_index}]",
+                             raw_source_member=raw_source_member)
     _require(len(mass_keys) == len(set(mass_keys)), "$.days[0].masses", "unique mass keys")
 
 
@@ -521,6 +552,45 @@ def _synthetic_payload(case: DumpCase) -> dict:
 
 
 class CompleteMissalYearContractTests(unittest.TestCase):
+    def test_unadmitted_source_members_require_an_exact_declared_relation(self) -> None:
+        case = audit_matrix()[0]
+        payload = _synthetic_payload(case)
+        mass = payload["days"][0]["masses"][0]
+        proper = mass["propers"][0]
+        proper.pop("language_selection")
+        proper.pop("verses")
+        proper.update(
+            source_path_relation="technical-reading-set",
+            appointment_identity={"mass": mass["key"], "form_id": "main",
+                                  "proper": proper["name"], "occurrence": 1},
+        )
+        mass["proper_source_paths"] = [{"id": "technical-reading-set", "form_id": "main"}]
+        mass["source_path_selections"] = {
+            "main/technical-reading-set": {"state": "required", "option": None}
+        }
+        mass["material_selections"] = {}
+        validate_dump(payload, case)
+        for mutation in ("undeclared", "admitted", "wrong-owner", "projected-language"):
+            changed = copy.deepcopy(payload)
+            changed_mass = changed["days"][0]["masses"][0]
+            changed_proper = changed_mass["propers"][0]
+            if mutation == "undeclared":
+                changed_mass["proper_source_paths"] = []
+            elif mutation == "admitted":
+                changed_mass["proper_source_paths"][0]["paths"] = [{
+                    "id": "technical-path",
+                    "members": [{"appointment": changed_proper["appointment_identity"]}]
+                }]
+                changed_mass["source_path_selections"]["main/technical-reading-set"] = {
+                    "state": "selected", "option": "technical-path"}
+            elif mutation == "wrong-owner":
+                changed_proper["appointment_identity"]["mass"] = "another-mass"
+            else:
+                changed_proper["language_selection"] = {
+                    "requested": case.language, "status": "scripture-delegated"}
+            with self.subTest(mutation=mutation), self.assertRaises(ValueError):
+                validate_dump(changed, case)
+
     def test_fixed_interval_and_matrix_are_complete_and_unique(self) -> None:
         self.assertEqual(
             [(span.label, span.calendar, span.first.isoformat(), span.last.isoformat(), span.expected_days)

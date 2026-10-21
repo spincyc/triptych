@@ -151,28 +151,27 @@ class CountingKeyTests(unittest.TestCase):
         )
         counted = propers.census_of(document)
 
-        # 1513, 3443 and 3443 since 2026-10-01: St Angela Merici's own Secret
-        # and Postcommunion, which the 1962 prints at nos. 2698 and 2699, are
-        # proper slots of her own instead of the Common's showing through.
+        # The annual source repair includes alternative forms and explicit
+        # source-established slots even where the body remains unavailable.
         self.assertEqual(
             {
                 row["kind"]: (row["masses"], row["propers"])
                 for row in counted["sections"]
             },
             {
-                "seasonal": (128, 1352),
-                "christological": (8, 96),
-                "marian": (18, 124),
-                "sanctoral": (307, 1513),
-                "common": (30, 358),
+                "seasonal": (128, 1424),
+                "christological": (8, 99),
+                "marian": (18, 156),
+                "sanctoral": (307, 1669),
+                "common": (30, 382),
             },
         )
         self.assertEqual(counted["masses"], 491)
-        self.assertEqual(counted["propers"], 3443)
-        self.assertEqual(counted["substantive_propers"], 3443)
-        self.assertEqual(counted["propers_in_forms"], 182)
-        self.assertEqual(counted["scripture_bearing_propers"], 2194)
-        self.assertEqual(counted["slot_names"], 120)
+        self.assertEqual(counted["propers"], 3730)
+        self.assertEqual(counted["substantive_propers"], 3730)
+        self.assertEqual(counted["propers_in_forms"], 211)
+        self.assertEqual(counted["scripture_bearing_propers"], 2263)
+        self.assertEqual(counted["slot_names"], 128)
 
 
 class RankCensusTests(unittest.TestCase):
@@ -520,7 +519,7 @@ class EnglishCoverageTests(unittest.TestCase):
         )
         self.assertTrue(rows["roman-pre-1955"]["translation_ledger_inherited"])
         self.assertEqual(
-            rows["roman-pre-1955"]["inherited_inapplicable_records"], 48
+            rows["roman-pre-1955"]["inherited_inapplicable_records"], 49
         )
 
     def test_translation_ledger_inheritance_follows_a_recension_chain(self) -> None:
@@ -770,6 +769,10 @@ class EnglishCoverageTests(unittest.TestCase):
             / "src/sources/inventories/roman-1962-proper-translations-v1.toml"
         )
         document = tomllib.loads(path.read_text(encoding="utf-8"))
+        witnesses = {
+            row["source_id"]: row for row in document["sources"]
+            if "source_id" in row
+        }
         # These nine prayers previously had historical English leads but no
         # complete publication binding. The 15th Sunday Secret prints no
         # conclusion; recovery must preserve that witness extent.
@@ -813,6 +816,19 @@ class EnglishCoverageTests(unittest.TestCase):
                 for translation in row.get("translations") or []
             )
         ]
+        lasance_advent_first_three = [
+            row for row in document.get("entries") or []
+            if row.get("witness") == "lasance-1945"
+            and row.get("mass") == "advent-1"
+            and row.get("proper") in {"Collect", "Secret", "Postcommunion"}
+        ]
+        self.assertEqual(
+            {(row["mass"], row["form_id"], row["proper"], row["cycle"], row["occurrence"])
+             for row in lasance_advent_first_three},
+            {("advent-1", "main", proper, "all", 1)
+             for proper in ("Collect", "Secret", "Postcommunion")},
+        )
+        expected += lasance_advent_first_three
         self.assertEqual(
             {
                 (
@@ -834,7 +850,7 @@ class EnglishCoverageTests(unittest.TestCase):
                 )
                 for row in expected
             },
-            "every deliberate Cummiskey positive must have a publication binding",
+            "every deliberate Cummiskey positive and the first three Lasance Advent bodies must have a publication binding",
         )
         for row in rows:
             with self.subTest(
@@ -850,7 +866,7 @@ class EnglishCoverageTests(unittest.TestCase):
                     [("en", "public-domain")],
                 )
                 propers.validate_translation_publication_binding(
-                    row, propers.DEFAULT_ROOT, path
+                    row, propers.DEFAULT_ROOT, path, witnesses
                 )
         source_root = (
             ROOT

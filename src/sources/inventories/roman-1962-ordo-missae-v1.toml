@@ -4,7 +4,10 @@ title = "The Ordinary of the Mass"
 
 advisory = """
 A pre-1955 lay hand missal's Ordinary, and never a book to celebrate from. \
-The English here is the anonymous translation an 1861 Philadelphia printing \
+The opening prayers and selected Oblatio, Canon, Communion and conclusion prayers \
+carry checked historical English of the Lasance 1945 revision in its later \
+1955-56 printing, each with its own source-specific turns. Other \
+base English remains the anonymous translation an 1861 Philadelphia printing \
 made for the laity to follow the Mass with; it is not an approved liturgical \
 translation, it was never an altar book, and nothing in it may be used for \
 recitation. It is carried under the 1962 Missal because the Ordinary is \
@@ -48,7 +51,13 @@ about an element's order, kind, speaker, page or wording is restated in this \
 file: it names the artifacts and the order they stand in, and the artifacts \
 carry the words and the hashes. The three additional Latin prayer sides \
 are joined by explicit additional_texts entries to the Mame 1922 checked artifact; \
-they add no element and change none of Cummiskey's source findings or English.
+they add no element and change none of Cummiskey's source findings. Explicit \
+English replacements select independently checked Lasance bodies from the opening, \
+Oblatio, Canon, Communion and conclusion, \
+binding the old projected body by exact witness, artifact and text hash; \
+the original 1861 artifacts, target Latin, frame order and conditions remain intact. \
+The Oblatio Gloria Patri retains its complete earlier English rather than the \
+Lasance source's local abbreviation; unsupported English remains absent.
 """
 
 slots_derived_from = """
@@ -145,9 +154,14 @@ id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
 lang = "en"
 label = "The New Roman Missal in Latin and English, by F. X. Lasance and F. A. Walsh (New York: Benziger Brothers), revised edition of 1945, in a printing of about 1955-56"
 rights = "public-domain"
-caution = "A publisher's hand missal, not an approved liturgical translation and never an altar book; nothing here may be used for recitation. Used only for the proper Hanc igitur of Easter and Pentecost, whose English was read against the 1962 Latin clause by clause; it prints no rubric for the joining of the hands."
+caution = "A publisher's hand missal, not an approved liturgical translation and never an altar book; nothing here may be used for recitation. Supplies checked historical English for the opening, selected Oblatio, Canon, Communion and conclusion prayers, and the proper Hanc igitur of Easter and Pentecost. Historical renderings are not exact 1962 witnesses; the Hanc igitur alone was read against 1962 Latin clause by clause and prints no rubric for the joining of the hands."
 artifacts = [
   "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.hanc-igitur-easter-pentecost-checked-english",
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1",
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1",
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1",
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1",
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1",
 ]
 
 # This separate witness supplies only three missing Latin prayer bodies.
@@ -988,6 +1002,342 @@ collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962
 target_wording = "word-exact"
 note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 32, printed p. xix, IA leaf 29), collated word by word on 2026-10-19 with the 1962 typical edition, rubric after n. 1025, printed p. 219, artifact PDF p. 300, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Formula printed inside the rubric."
 
+[[sections.english_replacements]]
+element = "in-nomine-patris"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "172a741cdd43dc09a8b9b54131510b737b71b1efa0e87990b31d77544265d8ae" }
+english_turns = [{ key = "priest-1", seq = [3], speaker = "priest" }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "in-nomine-patris"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 756 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "introibo-ad-altare-dei"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "b87f3dcd2f6314f2f0ce983b5aaccd3621b82cadbd36a6541880f8c9f4499544" }
+english_turns = [{ key = "priest-1", seq = [401], speaker = "priest", printed_marker = "P." }, { key = "server-1", seq = [402], speaker = "server", printed_marker = "R." }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "introibo-ad-altare-dei"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 756 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "judica-me-deus"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "b5eba2fc42349b0b9202433ce9fad981088c85248eb656aeb08a1a5630dd2e71" }
+english_turns = [{ key = "priest-1", seq = [601], speaker = "priest", printed_marker = "P." }, { key = "server-1", seq = [602], speaker = "server", printed_marker = "R." }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "judica-me-deus"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 756 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "emitte-lucem-tuam"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "3bb1283cd6a042ac6bbc76c37b009f385e4e26632c8108942d0fa34f6bb8c066" }
+english_turns = [{ key = "priest-1", seq = [701], speaker = "priest", printed_marker = "P." }, { key = "server-1", seq = [702], speaker = "server", printed_marker = "R." }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "emitte-lucem-tuam"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 756 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "confitebor-tibi-in-cithara"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "82a03051646df2c803289a6f8848c32bca90176938a69808a239aee8d2d954ae" }
+english_turns = [{ key = "priest-1", seq = [801], speaker = "priest", printed_marker = "P." }, { key = "server-1", seq = [802], speaker = "server", printed_marker = "R." }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "confitebor-tibi-in-cithara"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 757 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "gloria-patri"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "7bd5791f7005ef7ff1d03ff3a47339e62d22a072c08644a3e472d4b8ea1d7980" }
+english_turns = [{ key = "priest-1", seq = [901], speaker = "priest", printed_marker = "P." }, { key = "server-1", seq = [902], speaker = "server", printed_marker = "R." }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "gloria-patri"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 757 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "introibo-ad-altare-dei-repetitio"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "1d9d2cba8cb8258e29f22c5985ad280ca2b39c19a8f7683cdc0ab89d1446b230" }
+english_turns = [{ key = "priest-1", seq = [1001], speaker = "priest", printed_marker = "P." }, { key = "server-1", seq = [1002], speaker = "server", printed_marker = "R.", dialogue_role = "response" }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "introibo-ad-altare-dei-repetitio"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 757 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "adjutorium-nostrum"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "39770b260d8fe749015b133b58ee6bcc87e0a2e6f664eb7f9fa0ada9683f35e7" }
+english_turns = [{ key = "priest-1", seq = [1101], speaker = "priest", printed_marker = "P.", dialogue_role = "versicle" }, { key = "server-1", seq = [1102], speaker = "server", printed_marker = "R.", dialogue_role = "response" }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "adjutorium-nostrum"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 757 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "confiteor-sacerdotis"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "7e75bcc56170f4ed7f28ebdc7347d066c40ba3e534e8caa046537725efa43a7a" }
+english_turns = [{ key = "confiteor-sacerdotis", seq = [12], speaker = "priest" }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "confiteor-sacerdotis"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 758 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "misereatur-tui"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "1e90dc8b60a72d2f99df7398113edd85e145758476a17d281527c712322a9891" }
+english_turns = [{ key = "server-1", seq = [1301], speaker = "server", printed_marker = "R." }, { key = "priest-1", seq = [1302], speaker = "priest", printed_marker = "P." }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "misereatur-tui"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 758 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "confiteor-ministrorum"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "fef750145da2171c6aaa192d2c0349539ccc12a85260b62df872f5bf83f7a5c1" }
+english_turns = [{ key = "confiteor-ministrorum", seq = [14], speaker = "server" }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "confiteor-ministrorum"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 758, 759 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "misereatur-vestri"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "a8f1b6a01ba848ea8f973c30a8404899ed589588c8f2361441d05c55d93a039b" }
+english_turns = [{ key = "priest-1", seq = [1501], speaker = "priest", printed_marker = "P." }, { key = "server-1", seq = [1502], speaker = "server", printed_marker = "R.", dialogue_role = "response" }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "misereatur-vestri"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 759 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "indulgentiam"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "2a183c5dde1b1d2762572fa7452404c6c0a9a56b4b4e540e1819ce7fb7bfeacd" }
+english_turns = [{ key = "priest-1", seq = [1601], speaker = "priest", printed_marker = "P." }, { key = "server-1", seq = [1602], speaker = "server", printed_marker = "R.", dialogue_role = "response" }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "indulgentiam"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 759 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "deus-tu-conversus"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "1b41424e87343e734d42c0153c58c4b3494ad331e14bd7dc1ed6c4befa1e0187" }
+english_turns = [{ key = "priest-1", seq = [1701], speaker = "priest", printed_marker = "P.", dialogue_role = "versicle" }, { key = "server-1", seq = [1702], speaker = "server", printed_marker = "R.", dialogue_role = "response" }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "deus-tu-conversus"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 759 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "ostende-nobis"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "d130f85a32f310244c597ab14506d97051f063b972e727d9186366ffedd84bb3" }
+english_turns = [{ key = "priest-1", seq = [1801], speaker = "priest", printed_marker = "P.", dialogue_role = "versicle" }, { key = "server-1", seq = [1802], speaker = "server", printed_marker = "R.", dialogue_role = "response" }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "ostende-nobis"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 759 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "domine-exaudi"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "87854b8ca99d25ee78d71526ebe0dec8825b6481a3bb690296d7e19756e86660" }
+english_turns = [{ key = "priest-1", seq = [1901], speaker = "priest", printed_marker = "P.", dialogue_role = "versicle" }, { key = "server-1", seq = [1902], speaker = "server", printed_marker = "R.", dialogue_role = "response" }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "domine-exaudi"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 759 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "dominus-vobiscum"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "dcce90abba3ee61e74fba0d20c22b9dfbb1b04744315f77ca6e3ed25ef13edb4" }
+english_turns = [{ key = "priest-1", seq = [2001], speaker = "priest", printed_marker = "P.", dialogue_role = "versicle" }, { key = "server-1", seq = [2002], speaker = "server", printed_marker = "R.", dialogue_role = "response" }, { key = "priest-2", seq = [2003], speaker = "priest", printed_marker = "P." }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "dominus-vobiscum"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 759 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "aufer-a-nobis"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "559fd6e9281b59f7514d5489a5fac8302e3fae2fd22c10a8fb9bdbf835b0e253" }
+english_turns = [{ key = "priest-1", seq = [22], speaker = "priest" }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "aufer-a-nobis"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 759 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "oramus-te-domine"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "e29fa84d3d7a95f3270de2a0df1daa223a4d5ffc7d267d17dac1e923f8272082" }
+english_turns = [{ key = "priest-1", seq = [24], speaker = "priest" }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "oramus-te-domine"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 760 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "kyrie-eleison"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "824251eb31a2763f7ed1d47665f2fbccbc641a9cba9b3b021b979eb32a223be3" }
+english_turns = [{ key = "priest-1", seq = [2601], speaker = "priest", printed_marker = "P." }, { key = "server-1", seq = [2602], speaker = "server", printed_marker = "R." }, { key = "priest-2", seq = [2603], speaker = "priest", printed_marker = "P." }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "kyrie-eleison"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 761 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "christe-eleison"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "3c8ae8fc92ea4531229d7b904bd1a7b3736fa1cad06767773724ae3c2cb466b9" }
+english_turns = [{ key = "server-1", seq = [2701], speaker = "server", printed_marker = "R." }, { key = "priest-1", seq = [2702], speaker = "priest", printed_marker = "P." }, { key = "server-2", seq = [2703], speaker = "server", printed_marker = "R." }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "christe-eleison"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 761 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "kyrie-eleison-repetitio"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "824251eb31a2763f7ed1d47665f2fbccbc641a9cba9b3b021b979eb32a223be3" }
+english_turns = [{ key = "priest-1", seq = [2801], speaker = "priest", printed_marker = "P." }, { key = "server-1", seq = [2802], speaker = "server", printed_marker = "R." }, { key = "priest-2", seq = [2803], speaker = "priest", printed_marker = "P." }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "kyrie-eleison-repetitio"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 761 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "gloria-in-excelsis"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "2d0bd80c6c953a84c3e3d13262e82c08231ea494c04782cfb285d7bff7ff4f12" }
+english_turns = [{ key = "priest-1", seq = [30], speaker = "priest" }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "gloria-in-excelsis"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 762 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "dominus-vobiscum-post-gloriam"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20", text_sha256 = "36ab6ac0c0692438977ad5d69dd2a4e2f615d35ca25571a90159f948eeef7531" }
+english_turns = [{ key = "priest-1", seq = [3201], speaker = "priest", printed_marker = "P.", dialogue_role = "versicle" }, { key = "server-1", seq = [3202], speaker = "server", printed_marker = "R.", dialogue_role = "response" }]
+turns_basis = "Lasance actual printed756–762/PDF754–760, image-word/marker review receipt. Source P./barred-R letters and absent markers are Lasance-specific. Functional dialogue_role only where separately verified on actual1962CMAA AP297/298/300, as recorded by target-dialogue-role-receipt.json; no automatic P./R. inheritance. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+element = "dominus-vobiscum-post-gloriam"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH. The checked English on printed pages 762 of the registered 1945 revision in a later printing; exact source words and source actors, not an approved 1962 English translation. No full English-to-target clause collation or exact-target relationship is asserted. The original 1861source body and all 1962 Latin/frame/conditions remain unchanged."
+
 [[sections]]
 key = "oblatio"
 name = "The Lessons and the Offertory"
@@ -1487,6 +1837,441 @@ collation = "collated"
 collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.praefatio-de-spiritu-sancto; n. 1081, printed p. 292, artifact PDF p. 373"
 target_wording = "word-exact"
 note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 5901-5906, printed p. xxvii, IA leaf 37), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1081, printed p. 292, artifact PDF p. 373, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing. Also n. 1080, artifact p. 372."
+
+
+[[sections.english_replacements]]
+element = "munda-cor-meum"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "9795abb5ee80608cd235e6edc42a2315a46bc5a1493585435ae1507538c646e4" }
+english_turns = [{ key = "priest-1", seq = [1], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "munda-cor-meum"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed763 / artifact761 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "dominus-sit-in-corde-meo"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "b0aa16172318b85fe0bd35e967b34eedfc8ad40c9519be6968eb68e698a24183" }
+english_turns = [{ key = "priest-1", seq = [2], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "dominus-sit-in-corde-meo"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed763,764 / artifact761,762 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "dominus-vobiscum-ante-evangelium"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "37fac631b0a20a8bc5604d8fc73271e35c4df119ca5d4937a587ba45d921824f" }
+english_turns = [{ key = "priest-1", seq = [3], speaker = "priest", printed_marker = "P.", dialogue_role = "versicle" }, { key = "response-1", seq = [4], printed_marker = "R.", dialogue_role = "response" }, { key = "priest-2", seq = [5], speaker = "priest", printed_marker = "P." }, { key = "response-2", seq = [6], printed_marker = "R." }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey. Functional V./R. roles are separately reused from the captured1962target-mark finding for the same functional turns: Source 1861 Cummiskey printed p. xxi, IA leaf n31, artifact PDF p. 32, read at 200 and 400 dpi on 2026-10-20. Target 1962 Ordo Missae, rubrics after n. 1027 and n. 1028, right column, printed p. 219, artifact PDF p. 300, read at both resolutions on 2026-10-20. Both solemn and priest-without-sacred-ministers Gospel greetings visibly carry V./R. marks. The announcement follows Et pronuntians without a mark. Gloria tibi, Domine occurs in the solemn rubric after ministri respondent without a response mark. Do not infer marks for the third or fourth source turn. Only that target-mark evidence is reused; no1861source actor or cue is inherited."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "dominus-vobiscum-ante-evangelium"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed764,765 / artifact762,763 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "laus-tibi-christe"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "770e5ffc28ac57c5c28536b29e6474a73a56528a68db0ae6575c78110ddf1f79" }
+english_turns = [{ key = "server-1", seq = [7], speaker = "server", printed_marker = "R." }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "laus-tibi-christe"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed765 / artifact763 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "per-evangelica-dicta"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "115fb2169fcf770b4aa05915a79101403243298fbba642ffd37c1f42b46527b2" }
+english_turns = [{ key = "priest-1", seq = [8], speaker = "priest", printed_marker = "P." }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "per-evangelica-dicta"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed765 / artifact763 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "credo-in-unum-deum"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "9c1b4a10bf9b0eb5da65c2c2451f6da468cae1c2610bf1f7e82b41369536f3f6" }
+english_turns = [{ key = "priest-1", seq = [9], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "credo-in-unum-deum"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed765,766 / artifact763,764 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "et-in-unum-dominum"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "b9b3f2fad4bbb6a7be2cde09729e11f12b0a9667361bf57511790a9281254276" }
+english_turns = [{ key = "priest-1", seq = [10], speaker = "priest" }, { key = "source-action", seq = [11], action = true }, { key = "priest-2", seq = [12], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "et-in-unum-dominum"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed766 / artifact764 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged. Here genuflect is an actual inline source action, not a spoken word or priest/server speech turn."
+
+[[sections.english_replacements]]
+element = "et-in-spiritum-sanctum"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "281e75f9c9cb4a9dc222fed5fd53935cc33c83c54ca0131f076d5f25a7695821" }
+english_turns = [{ key = "priest-1", seq = [13], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "et-in-spiritum-sanctum"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed766 / artifact764 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "dominus-vobiscum-ante-offertorium"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "36ab6ac0c0692438977ad5d69dd2a4e2f615d35ca25571a90159f948eeef7531" }
+english_turns = [{ key = "priest-1", seq = [14], speaker = "priest", printed_marker = "P.", dialogue_role = "versicle" }, { key = "response-1", seq = [15], printed_marker = "R.", dialogue_role = "response" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey. Functional V./R. roles are separately reused from the captured1962target-mark finding for the same functional turns: Source 1861 Cummiskey printed p. xxii, IA leaf n32, artifact PDF p. 33, read at 200 and 400 dpi on 2026-10-20. Target 1962 Ordo Missae, rubric after n. 1029, right column, printed p. 220, artifact PDF p. 301, read at both resolutions on 2026-10-20. The greeting and answer visibly carry V./R. marks. The following Oremus after Postea dicit is unmarked, and belongs to the already separate source seq 20 rather than this parent block. Only that target-mark evidence is reused; no1861source actor or cue is inherited."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "dominus-vobiscum-ante-offertorium"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed766 / artifact764 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "oremus-ante-offertorium"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "5788e6d65d17a1c9ec5ae3c40f535736840ac79cfeee6329692fc256f44b5f54" }
+english_turns = [{ key = "priest-1", seq = [16], speaker = "priest", printed_marker = "P." }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "oremus-ante-offertorium"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed766 / artifact764 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "suscipe-sancte-pater"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "a0706098735cad8b20048313dacd64625ede933aa8d9518117829cd67d157f79" }
+english_turns = [{ key = "priest-1", seq = [17], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "suscipe-sancte-pater"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed767,768 / artifact765,766 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "deus-qui-humanae-substantiae"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "d99ac5a1f213fab37a1911169477d8bedf75e5582310331d9d297057bcab6b07" }
+english_turns = [{ key = "priest-1", seq = [18], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "deus-qui-humanae-substantiae"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed768 / artifact766 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "offerimus-tibi-domine"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "e7beb12498a278290b7340c4922278c8e645ea2ec018a2a8c7da72632913aad2" }
+english_turns = [{ key = "priest-1", seq = [19], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "offerimus-tibi-domine"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed768 / artifact766 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "in-spiritu-humilitatis"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "21b8e62e5264185c7049624a498793b2a23972a43c834aaf4e1bdb92f5e0a4f7" }
+english_turns = [{ key = "priest-1", seq = [20], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "in-spiritu-humilitatis"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed769 / artifact767 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "veni-sanctificator"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "ca1fad43d7789d5b0526be0be55a86d4245a4b68c421962dbf98397a8e974b52" }
+english_turns = [{ key = "priest-1", seq = [21], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "veni-sanctificator"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed769 / artifact767 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "per-intercessionem"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "26df5064baa0af80d74b3de5653bacfac71ebdfe03f582163a8b3b5e827b063b" }
+english_turns = [{ key = "priest-1", seq = [22], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "per-intercessionem"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed769 / artifact767 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "incensum-istud"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "cc121d9062e44568d522ead9afc40384113cd63838f778b2317f316270ce2a7b" }
+english_turns = [{ key = "priest-1", seq = [23], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "incensum-istud"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed769 / artifact767 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "dirigatur-domine"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "1ae448d8f63f70bdd40bf6e38f82c14afadfbef8506239dc6ebc1f0d6feab43a" }
+english_turns = [{ key = "priest-1", seq = [24], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "dirigatur-domine"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed769 / artifact767 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "accendat-in-nobis"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "cadb38a41291d89a166dff613757d3924da3034f9762a82b69e991a9aa093db7" }
+english_turns = [{ key = "priest-1", seq = [25], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "accendat-in-nobis"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed769 / artifact767 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "lavabo-inter-innocentes"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "769dda965ff312b2d19b1dcafca409a04a39d8bb021ceec48f456f2f39322c7b" }
+english_turns = [{ key = "priest-1", seq = [26], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "lavabo-inter-innocentes"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed770 / artifact768 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "ut-audiam-vocem-laudis"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "cdf53fa01734b77d7015aeed45a70ea6a9a11493fb4084346578562b6e5199c3" }
+english_turns = [{ key = "priest-1", seq = [27], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "ut-audiam-vocem-laudis"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed770 / artifact768 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "domine-dilexi-decorem"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "7da0f0519b1845529cd505253d0fee7bb78ffd69abb366b25ff0cac6b86f7486" }
+english_turns = [{ key = "priest-1", seq = [28], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "domine-dilexi-decorem"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed770 / artifact768 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "ne-perdas-cum-impiis"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "d3b5be86c6ec4a012ac8b94862d2ef32bdc8ebc25d0b45614424054a77f63f36" }
+english_turns = [{ key = "priest-1", seq = [29], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "ne-perdas-cum-impiis"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed770 / artifact768 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "in-quorum-manibus"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "4aca292341200502c05124ffa43593848edeb320d7fd6267266a710885bf8020" }
+english_turns = [{ key = "priest-1", seq = [30], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "in-quorum-manibus"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed770 / artifact768 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "ego-autem-in-innocentia"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "2d499b661ef511638514c522307bcd815e97bef047ea3f30242a1d81d1f59998" }
+english_turns = [{ key = "priest-1", seq = [31], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "ego-autem-in-innocentia"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed771 / artifact769 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "pes-meus-stetit"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "17d9e1338417e2be5cbb005c399d080764b19370bef87b4ca1a3923789e069a3" }
+english_turns = [{ key = "priest-1", seq = [32], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "pes-meus-stetit"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed771 / artifact769 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "suscipe-sancta-trinitas"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "2688e718d2610f069bb3ee762154d8177339dfe553138371263b3bb2733996f5" }
+english_turns = [{ key = "priest-1", seq = [34], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "suscipe-sancta-trinitas"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed771 / artifact769 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "orate-fratres"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "866da250cd1142e827a259faf0fb81b15381b1684daca63b540723e7a62c938c" }
+english_turns = [{ key = "priest-1", seq = [35], speaker = "priest" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "orate-fratres"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed771 / artifact769 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "suscipiat-dominus"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "c55ce40705067ef72931db0593d013beb7e96d31c76c5441f6b52f2d4b236a36" }
+english_turns = [{ key = "response-1", seq = [36], printed_marker = "R." }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "suscipiat-dominus"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed771,772 / artifact769,770 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged. Source ends Holy Church. without Amen; no Amen is supplied."
+
+[[sections.english_replacements]]
+element = "per-omnia-saecula"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "6b1002e5f3cc3a61728d679e5ce5538d70dad28ea19fdad249a53664803c05ec" }
+english_turns = [{ key = "priest-1", seq = [37], speaker = "priest", printed_marker = "P.", dialogue_role = "versicle" }, { key = "response-1", seq = [38], printed_marker = "R.", dialogue_role = "response" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey. Functional V./R. roles are separately reused from the captured1962target-mark finding for the same functional turns: 1962 Praefationes sine cantu, read on the page images on 2026-10-19: each Preface prints its dialogue with the versicle mark before every line of the priest and the response mark before every answer (n. 1080, printed p. 291, artifact PDF p. 372; n. 1081, the Holy Spirit Preface, printed p. 292, artifact PDF p. 373). Only that target-mark evidence is reused; no1861source actor or cue is inherited."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "per-omnia-saecula"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed772 / artifact770 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "sursum-corda"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided-complete-2026-10-20", text_sha256 = "37eaf8a708485ca5eb01f02aaaa7a5498f584530466191555a8a1fbc8ef600f0" }
+english_turns = [{ key = "priest-1", seq = [39], speaker = "priest", printed_marker = "P.", dialogue_role = "versicle" }, { key = "response-1", seq = [40], printed_marker = "R.", dialogue_role = "response" }, { key = "priest-2", seq = [41], speaker = "priest", printed_marker = "P.", dialogue_role = "versicle" }, { key = "response-2", seq = [42], printed_marker = "R.", dialogue_role = "response" }, { key = "priest-3", seq = [43], speaker = "priest", printed_marker = "P.", dialogue_role = "versicle" }, { key = "response-3", seq = [44], printed_marker = "R.", dialogue_role = "response" }]
+turns_basis = "Lasance AP761–770 / printed763–772 actual source-image all-word and marker review, independently repeated in oblatio-independent-review. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1. Source P./barred-R are witness-specific cues; actors are not borrowed from Cummiskey. Functional V./R. roles are separately reused from the captured1962target-mark finding for the same functional turns: 1962 Praefationes sine cantu, read on the page images on 2026-10-19: each Preface prints its dialogue with the versicle mark before every line of the priest and the response mark before every answer (n. 1080, printed p. 291, artifact PDF p. 372; n. 1081, the Holy Spirit Preface, printed p. 292, artifact PDF p. 373). Only that target-mark evidence is reused; no1861source actor or cue is inherited."
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+element = "sursum-corda"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH. Exact checked source words from printed772 / artifact770 in the registered1945revision, later ca1955–56printing. Source actors only where positively established; unknown actors remain null. No complete English-to-target clause collation or exact-target wording claim. Original1861source bytes and target Latin/frame/order/conditions remain unchanged."
 
 [[sections]]
 key = "praefatio"
@@ -2191,6 +2976,286 @@ target_wording = "word-exact"
 note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C26 common Hanc igitur). The 1861 Cummiskey facing Latin (canon-missae-la seq 10, unchanged in canon-missae-la-turn-divided-2026-10-20, printed pp. xxxiv-xxxv, IA leaves n44-n45, artifact PDF pp. 45-46) was collated in full, Hanc through Amen, on 2026-10-20 with the 1962 typical edition, n. 1091, printed p. 303, artifact PDF p. 384, both read on page images at 200 and 400 dpi. All 39 spoken words agree exactly under the declared orthography; no prayer word is added, omitted or substituted. Differences are transformations only: ligatures, stress accents, capitals, jubeas/iubeas and pointing, including the source em rule between nostrum. and Amen., which is retained. The target Iungit manus. after numerari. and before Per Christum is an inline hand-joining rubric, absent from this source Latin row and separately accounted as ritual action, not a spoken wording variant. This finding establishes prayer wording only and supplies no target rubric, source change, new role or rights basis."
 
 
+
+[[sections.english_replacements]]
+element = "te-igitur"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "6721e2048795c5a9d50c7baf359f02ca83b589d428177162ef3797ca12de37bb" }
+english_turns = [{ key = "priest-1", seq = [201], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 2; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "te-igitur"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+[[sections.english_replacements]]
+element = "te-igitur-cultoribus"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "b39427e99781a822d47094cac236b828c5563eaf92dc3bf53a909260ca43fa50" }
+english_turns = [{ key = "priest-1", seq = [301], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 3; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "te-igitur-cultoribus"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "memento-domine"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "11bd16fde2e30060d392af4840493b9ba11e101b7705b5fabcd816c5541ab073" }
+english_turns = [{ key = "priest-1", seq = [501], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 5; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "memento-domine"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "et-omnium-circumstantium"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "204b369e0a1d0960fe2f72205181261040084517bb2084c6f1040cee95dd2bcd" }
+english_turns = [{ key = "priest-1", seq = [601], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 6; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "et-omnium-circumstantium"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "hanc-igitur"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "a0c9c14fe80d5fd7f939187b535f178c8bf95c12774722809cc5e1f9c93e578f" }
+english_turns = [{ key = "priest-1", seq = [901], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 9; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "hanc-igitur"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "quam-oblationem"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "de8c857982440143ee199d9c87d2ed49a7b4d0af182d83139aff6cfaf33f5199" }
+english_turns = [{ key = "priest-1", seq = [1001], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 10; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "quam-oblationem"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "qui-pridie"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "e4c0f765a8d30e1a66cb2228354b556b243ed99b73b1db0f0b93a11f0cd99c00" }
+english_turns = [{ key = "priest-1", seq = [1101, 1102], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 11,11; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "qui-pridie"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "forma-corporis"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "9914280d6bf359703b5a8bf5e6879aafce21cb497f8b807e52ec0a275479a1ee" }
+english_turns = [{ key = "priest-1", seq = [1201], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 12; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "forma-corporis"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "simili-modo"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "5c50aa75efce17c70bbf7e1ddc9256f58d825b38370bcfe631efb3f089f3e577" }
+english_turns = [{ key = "priest-1", seq = [1401], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 14; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "simili-modo"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged. The separately printed invitatory paragraph is selected with the chalice form to match the existing paired Latin extents; every checked source word appears once across the two neighboring targets."
+
+[[sections.english_replacements]]
+element = "forma-sanguinis"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "2263732bdefd34826a9de24979b2b84b81efc15bcba8e32087492e8e30c9ec6e" }
+english_turns = [{ key = "priest-1", seq = [1402], speaker = "priest" }, { key = "priest-2", seq = [1501], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 14,15; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+elements = ["forma-sanguinis-invitation", "forma-sanguinis"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged. The separately printed invitatory paragraph is selected with the chalice form to match the existing paired Latin extents; every checked source word appears once across the two neighboring targets."
+
+[[sections.english_replacements]]
+element = "haec-quotiescumque"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "3264dbcf2cd563a91bd4fd810b0f78b4f9addbd79d16e99cf376005e8db112a4" }
+english_turns = [{ key = "priest-1", seq = [1601], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 16; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "haec-quotiescumque"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "unde-et-memores"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "f0f45deb1d8f91f3d5f10210c53a5c49a28b149720069a791b585f8111ed3378" }
+english_turns = [{ key = "priest-1", seq = [1801], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 18; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "unde-et-memores"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "supra-quae"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "8f58f8cf485a9e1a080823f7e10e5fd8da2eea11a45be98f861287f3a4f31114" }
+english_turns = [{ key = "priest-1", seq = [1901], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 19; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "supra-quae"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "supplices"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "b9f70f4c2a8b104be930970942fa5e3c79693ca1527fbe632c7885b51f5aad91" }
+english_turns = [{ key = "priest-1", seq = [2001], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 20; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "supplices"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "memento-etiam"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "8dc3219877fb32407f00e6f5f4e1d41907e2fbf14754df708310ded0330429ae" }
+english_turns = [{ key = "priest-1", seq = [2201], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 22; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "memento-etiam"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "ipsis-domine"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "06ad3a99a47ca098dfd3bdcbe376446a19446f1f6eed54cb9e23eaeebf74143c" }
+english_turns = [{ key = "priest-1", seq = [2301], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 23; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "ipsis-domine"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "nobis-quoque"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "f574c8ce9ac9ba9052e257b747a26018f6024d63b0a44397050b5a7f34365016" }
+english_turns = [{ key = "priest-1", seq = [2501], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 25; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "nobis-quoque"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "per-quem"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "64fadca9ae64a2ed9f669c0badd70b6774959f00a054ae34b43a51b5ce02fa79" }
+english_turns = [{ key = "priest-1", seq = [2601], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 26; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "per-quem"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "per-ipsum"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "3d4c8c8a05612ddcfc431aecfcfb105d031d67d6810e1fa70cf68500453fc8c1" }
+english_turns = [{ key = "priest-1", seq = [2701], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 27; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "per-ipsum"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "per-omnia-saecula"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20", text_sha256 = "e609ce68e04b240f4a40067e53fb5157c8edb79bd31c3d8fae88d28efdfb31a7" }
+english_turns = [{ key = "priest-1", seq = [2801], speaker = "priest" }, { key = "server-1", seq = [2901], speaker = "server", printed_marker = "R." }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 28,29; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+element = "per-omnia-saecula"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
 [[sections]]
 key = "communio"
 name = "The Communion"
@@ -2429,6 +3494,217 @@ collation = "collated"
 collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1129, printed p. 321, artifact PDF p. 402"
 target_wording = "word-exact"
 note = "ANTECEDENT WORDING, COLLATED WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 24, printed p. xlii, IA leaf 52), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1129, printed p. 321, artifact PDF p. 402, read on the page image: the words agree. The differences are transformations under the 2026-09-03 words rule only: j, ae/oe ligatures, accents, capitals, pointing."
+
+
+[[sections.english_replacements]]
+element = "oremus-ante-pater-noster"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20", text_sha256 = "5788e6d65d17a1c9ec5ae3c40f535736840ac79cfeee6329692fc256f44b5f54" }
+english_turns = [{ key = "priest-1", seq = [3001], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 30; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+element = "oremus-ante-pater-noster"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "praeceptis-salutaribus"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20", text_sha256 = "60f115de0b3471c1d34d36ee281cae211ed02b64ce1e71816f29a4c2377844ef" }
+english_turns = [{ key = "priest-1", seq = [3101], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 31; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+element = "praeceptis-salutaribus"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "pater-noster"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20", text_sha256 = "81ab8297455497c57fb7ce75e7a5b8fea97ace5f37bfdea92e8e6fd6bbba1a9b" }
+english_turns = [{ key = "priest-1", seq = [3201], speaker = "priest" }, { key = "server-1", seq = [3301], speaker = "server", printed_marker = "R." }, { key = "priest-2", seq = [3401], speaker = "priest", printed_marker = "P." }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 32,33,34; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+element = "pater-noster"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "libera-nos"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20", text_sha256 = "2dfdb57a11da46ee32c095407710f6396a578a61f07b80474b507f9106acdbaf" }
+english_turns = [{ key = "priest-1", seq = [3501, 3502, 3503], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 35,35,35; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+element = "libera-nos"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "per-omnia-saecula-post-libera-nos"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20", text_sha256 = "6b1002e5f3cc3a61728d679e5ce5538d70dad28ea19fdad249a53664803c05ec" }
+english_turns = [{ key = "priest-1", seq = [3601], speaker = "priest" }, { key = "server-1", seq = [3701], speaker = "server", printed_marker = "R." }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 36,37; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+element = "per-omnia-saecula-post-libera-nos"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "pax-domini"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20", text_sha256 = "0461fd60879a61bac7609b3a264f4ff1d62088a3a610540fff4476649ec93b36" }
+english_turns = [{ key = "priest-1", seq = [3801], speaker = "priest", printed_marker = "P." }, { key = "server-1", seq = [3901], speaker = "server", printed_marker = "R." }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 38,39; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+element = "pax-domini"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "agnus-dei"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20", text_sha256 = "2b1f3862c537ec0be0a8bf32f173d2ec5b5d2a56e5c5fcec581e109b27a529d5" }
+english_turns = [{ key = "priest-1", seq = [4201, 4202, 4203], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 42,42,42; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+element = "agnus-dei"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "domine-jesu-christe-qui-dixisti"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20", text_sha256 = "12689cb3dfee6da8f8a7329c9f8680959d4aeed8e248fccf50e19da6e4261e07" }
+english_turns = [{ key = "priest-1", seq = [4401], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 44; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+element = "domine-jesu-christe-qui-dixisti"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "domine-jesu-christe-fili-dei-vivi"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20", text_sha256 = "281070694c9d71c56c05c6a606097c722f536d0ba4dc76483242f3aa34148521" }
+english_turns = [{ key = "priest-1", seq = [4501], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 45; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+element = "domine-jesu-christe-fili-dei-vivi"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "perceptio-corporis-tui"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20", text_sha256 = "b899075fdfe32ca8dd654f21306636a377e43d5ce68fbe89e1e7d8570e395d22" }
+english_turns = [{ key = "priest-1", seq = [4601], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 46; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+element = "perceptio-corporis-tui"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "panem-coelestem"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20", text_sha256 = "fa7a2ad53b7e6afdf2380471da5246a7a09f6e0d774475a6589f4c3996f9d032" }
+english_turns = [{ key = "priest-1", seq = [4801], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 48; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+element = "panem-coelestem"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "domine-non-sum-dignus"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20", text_sha256 = "e98d6930f08c2b6b2a8b37a123af4afe7a04cadcff2e87fb54a82098c5a19bdf" }
+english_turns = [{ key = "priest-1", seq = [5001], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 50; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+element = "domine-non-sum-dignus"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "corpus-domini-nostri"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20", text_sha256 = "5704094e3b911b0af55185b5caeddf63f63c1f08280ea9e7f198c13b7f1c36e4" }
+english_turns = [{ key = "priest-1", seq = [5201], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 52; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+element = "corpus-domini-nostri"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "quid-retribuam-domino"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20", text_sha256 = "ca42c125e844cd1185dcc6f27ebe1fca309a95306d4460deb6a70a6b7e562e6b" }
+english_turns = [{ key = "priest-1", seq = [5401], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 54; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+element = "quid-retribuam-domino"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "sanguis-domini-nostri"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided-complete-2026-10-20", text_sha256 = "0595f627e7a6e83ae9a4942d37d756d8e7c8c53e7f3d2485bef72f6fda65491d" }
+english_turns = [{ key = "priest-1", seq = [5601], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 56; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+element = "sanguis-domini-nostri"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
 
 [[sections]]
 key = "conclusio"
@@ -2771,3 +4047,157 @@ after = "conclusio/dominus-vobiscum-ante-postcommunionem"
 propers = ["Postcommunion"]
 qualified = true
 locus = "Ritus servandus XI, 1, which appoints the prayers after Communion `eisdem modo, numero et ordine` as the orations at the beginning of Mass"
+
+[[sections.english_replacements]]
+element = "quod-ore-sumpsimus"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided-complete-2026-10-20", text_sha256 = "3873e7d213c176ea9de9855a6b327485274b9e80f574b20acd13e408fdfdf85d" }
+english_turns = [{ key = "priest-1", seq = [5701], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 57; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+element = "quod-ore-sumpsimus"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "corpus-tuum-domine"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided-complete-2026-10-20", text_sha256 = "ae8cc2a2521d827728883a6aa7e4cb06f69e4ef888590beec944751f41199543" }
+english_turns = [{ key = "priest-1", seq = [5901], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 59; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+element = "corpus-tuum-domine"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "dominus-vobiscum-ante-postcommunionem"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided-complete-2026-10-20", text_sha256 = "bbfe38fde27a21ff81d7f3f154de0cd687eca453283ae34457e810c8b56e209a" }
+english_turns = [{ key = "priest-1", seq = [6101], speaker = "priest", printed_marker = "P." }, { key = "server-1", seq = [6201], speaker = "server", printed_marker = "R." }, { key = "priest-2", seq = [6301], speaker = "priest", printed_marker = "P." }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 61,62,63; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+element = "dominus-vobiscum-ante-postcommunionem"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "requiescant-in-pace"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided-complete-2026-10-20", text_sha256 = "f4a6d01fee531a99d218165dc9358e6484f3e473b45aff3eaaeafda9a8bcdf2f" }
+english_turns = [{ key = "priest-1", seq = [6801], speaker = "priest" }, { key = "server-1", seq = [6901], speaker = "server" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 68,69; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+element = "requiescant-in-pace"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "placeat-tibi-sancta-trinitas"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided-complete-2026-10-20", text_sha256 = "2705fbf1b21b365e8fda80957c5106e0508cbb7c74be19c89184ac6706f7191f" }
+english_turns = [{ key = "priest-1", seq = [7101], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 71; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+element = "placeat-tibi-sancta-trinitas"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "benedicat-vos-omnipotens-deus"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided-complete-2026-10-20", text_sha256 = "c2baf624da94f33de87f12d69e0bd2b0e6b70df56525f0c791810a889a6aeb11" }
+english_turns = [{ key = "priest-1", seq = [7301], speaker = "priest" }, { key = "server-1", seq = [7401], speaker = "server", printed_marker = "R." }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 73,74; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+element = "benedicat-vos-omnipotens-deus"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged. The priest formula and following independently marked response retain separate source turns."
+
+[[sections.english_replacements]]
+element = "initium-sancti-evangelii"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided-complete-2026-10-20", text_sha256 = "1571721d3ea0dd933c075e4cf1182ae57c1693ed6269e4c436277d243f15ab4c" }
+english_turns = [{ key = "priest-1", seq = [7501], speaker = "priest", printed_marker = "P." }, { key = "server-1", seq = [7601], speaker = "server", printed_marker = "R." }, { key = "priest-2", seq = [7701], speaker = "priest", printed_marker = "P." }, { key = "server-2", seq = [7801], speaker = "server", printed_marker = "R." }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 75,76,77,78; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+element = "initium-sancti-evangelii"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "in-principio-erat-verbum"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided-complete-2026-10-20", text_sha256 = "1ecd4424ef43702920190d6560193220bf921886670835f4a64360ffa637c101" }
+english_turns = [{ key = "priest-1", seq = [7901], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 79; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+element = "in-principio-erat-verbum"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "fuit-homo-missus-a-deo"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided-complete-2026-10-20", text_sha256 = "5c1c99db7c72698cf8a3d87736a2ef3419afa9be99f4d36319d870a5437f96d2" }
+english_turns = [{ key = "priest-1", seq = [8001], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 80; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+element = "fuit-homo-missus-a-deo"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "in-mundo-erat"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided-complete-2026-10-20", text_sha256 = "3457fbeae7f92d21deef3380a2da571e61f1ef3580558778badec511af47d221" }
+english_turns = [{ key = "priest-1", seq = [8101, 8102], speaker = "priest" }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 81,81; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+element = "in-mundo-erat"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.english_replacements]]
+element = "deo-gratias"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en-turn-divided-complete-2026-10-20", text_sha256 = "fa1530111c17a356c2920765d88ebbc2d05c014b645bf1157bda6ff757cfef62" }
+english_turns = [{ key = "server-1", seq = [8201], speaker = "server", printed_marker = "R." }]
+turns_basis = "Actual registered Lasance English source page images, independently checked in the frozen source-word review. Source sequence 82; exact actor turns and printed cue presence only. Printed actor cues do not create functional versicle roles; no functional dialogue role is inferred from either the former witness or the target. passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+[sections.english_replacements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-conclusio-checked-english-v1"
+element = "deo-gratias"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."

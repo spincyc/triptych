@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The controlling lasance-new-roman-missal-rights-v1.toml establishes nonrenewal of the registered 1945 English edition. These ordinary numbered pages 756-762 precede both excluded later inserts. Only the checked historical English is retained, without illustrations or scan-host matter."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "The held facsimile was hash-verified as 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70. Every proposed English word, marker and actor was read on actual source page images; a second review checked all spoken words on the same seven source pages. OCR was a locator only. Functional versicle/response roles were checked separately against actual 1962 page images, not inferred from source P./response letters."
+retrieved = "2026-10-21"
+sha256 = "db17b99005f277fe5d8471fe89aa0378c5145f65713604d55cd41f69d5eacb3b"
+byte_size = 8573
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ordo-praeparatio-checked-english-v1/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "Spoken English source rows only, from artifact pages 754-760 / printed 756-762. Join physical wraps and discretionary line-end hyphens; close letterspacing and normalize spacing. Preserve printed words and pointing. Printed P. and barred-R cues are represented as P. and R. prefixes with the original glyph separately recorded; exact structured turns remove the prefix once. Crosses, footnote numerals, inline actions and adjacent rubrics are documented source apparatus, not spoken words. No 1861 body or later Lasance insert is copied into this artifact."
+notes = "Source historical Low Mass English, not approved 1962 English and not an exact-target wording claim. Source-specific ceremonial matter is not transferred to the target frame. The priest's and ministers' Confiteors, Gloria Patri, nine English Kyrie turns and Gloria are complete within their declared source extents. The Oremus after the greeting is an actual source turn; 1962 Ordo printed 217/AP298 prints the corresponding priest's Oremus after 1021/before 1022."

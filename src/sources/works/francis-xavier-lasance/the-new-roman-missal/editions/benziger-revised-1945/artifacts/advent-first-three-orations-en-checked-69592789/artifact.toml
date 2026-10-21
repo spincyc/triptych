@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.advent-first-three-orations-en-checked-69592789"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded transcription of original English of the Lasance/Walsh registered1945 revision, ordinary printed103,105,106, outside excluded1298a–1298n and1302a–1302d. Existing affirmative nonrenewal basis is settled at src/sources/inventories/lasance-new-roman-missal-rights-v1.toml and corroborated by the separately retained insert-excluded public-domain artifact artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759 (sha256 80b34759fb18ec60f6205460c2ac24dc9e4a861938a94ef1f8e04a08a398ac9a). The exact whole PDF remains mixed/unresolved and private; its availability supplies no publication right. No later insert, host watermark, artwork or new1945-external matter is reproduced."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "Image transcription from the already held registered PDF sha256 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70, via frozen three-body proof sha256 f500b33a8c0ec2a5847349041ade7897c2938f6e843db40f1e095004fdb11755 of2026-10-21. Source English and paired Latin were read at200/400dpi; target1962 Latin independently checked at200/400dpi. OCR only located the pages and is not claimed as the derivation parent or wording authority. Independent review reopened actual source pages104,106,107 and control pages82–83 before this candidate."
+transformation = "Retain only three first-Sunday-of-Advent English prayer bodies in source order Collect, Secret, Postcommunion. Join print layout wraps and end-line hyphenation; preserve exact case, punctuation and short conclusions Who livest./Through our Lord. Omit headings, superscript Collect footnote marker1, second/third prayers, rubric directions, facing Latin and page furniture. The Postcommunion stands above the separate Second Sunday opening despite its running header. Add target identity/page columns and one header; no supplied ending, Amen, actor, name or generated English."
+retrieved = "2026-10-21"
+sha256 = "6959278995fd1b8747e7ad2bd529ab84256e5c5c4ebedee456852a43ea356d42"
+byte_size = 759
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/advent-first-three-orations-en-checked-69592789/advent-first-three-orations-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Historical antecedent English, not official English of1962. All three Latin petitions agree; source and target conclusion extents differ and remain unexpanded. The source controls expression, while text-free target comparison records only the appointment and collation. The1945 date is the registered revision, not a physical dating of this later printing."

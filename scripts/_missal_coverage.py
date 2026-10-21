@@ -103,7 +103,7 @@ def source_absence(kinds: object) -> str | None:
 
 def witness(row: dict, witnesses: dict) -> dict:
     source_id = str(row.get("source_id") or "")
-    metadata = witnesses.get(source_id) or {}
+    metadata = witnesses.get((row.get("lang"), source_id)) or witnesses.get(source_id) or {}
     canonical = str(metadata.get("source_id") or source_id)
     # Only identifiers on surviving public translation rows may be offered.
     # Metadata can identify a restricted artifact for internal resolution.

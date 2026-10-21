@@ -1126,7 +1126,7 @@ rights = "public-domain"
 rights_jurisdiction = "United States"
 rights_basis = "Public domain in the United States by failure to renew, on the affirmative registration-number record established at src/sources/inventories/lasance-new-roman-missal-rights-v1.toml: A 110108, copyright 15 July 1937, renewal window closed 15 July 1965; A 192159, copyright 1 November 1945, renewal window closed 1 November 1973. That holding is the repository's own and is recorded there with its citations, its controls, and what would overturn it; nothing here re-argues it. It does not cover the lettered inserts at printed pages 1298a-1298n or 1302a-1302d. The tracked publication artifact removes both complete page-bounded ranges, and no entry below quotes either."
 caution = "A lay hand missal of the 1945 revision, printed about 1955-56, not an approved liturgical translation and never an altar book. Its Holy Week is the pre-1955 rite, its sanctoral is not the 1962 sanctoral, and its second and third orations are not those of 1962. It is carried only where a 1962 formulary is the same prayer, and nothing here may be used for recitation."
-role = "Second English witness alongside cummiskey-1861, and independent of it in every way that matters: a different translator, a different publisher, a different century, and a book that keeps feasts and Commons the 1861 printing is older than. Where the two witnesses cover the same slot the 1861 entry stands and this one is not added; every entry below is for a slot that had no English at all. From 2026-10-19 an entry bound to the 1861 may also name this book's page as a text-free second reading in its `witness_note`, as the Pentecost Collect and Secret do: an entry bound to a publication passage serves exactly one witness's translation."
+role = "Preferred traditional English witness for Roman 1962 where its actual body has been verified against the appointed Latin prayer and has a verified source binding and lawful publication basis. Maintainer direction of 2026-10-21 supersedes the former gap-fill-only practice that retained Cummiskey wherever both books printed the prayer and did not add Lasance. Preserve independently verified Cummiskey and other translations as separately identified alternatives; prefer Lasance only where its own body is available and proved. Partial Lasance coverage must not force a Mass-wide selection that hides other held witness bodies, and an explicitly selected absent witness remains absent. A text-free second reading does not supply English wording, and each publication binding serves exactly one witness's translation. This preference changes no edition identity, historical-antecedent qualification, source words, insert exclusion or publication right."
 
 [[sources]]
 id = "caswall-1849"
@@ -2075,6 +2075,81 @@ lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = "May the efficacy of these divine mysteries, O Lord, possess both our souls and bodies: that their effects, not our own sensuality, may always take the lead in us. Thro'."
+
+[[entries]]
+mass = "advent-1"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "103"
+ia_leaf = 103
+ia_leaf_range = [103, 103]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.verify-advent-1--main--collect--all--1"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.advent-first-three-orations-en-checked-69592789"
+publication_artifact_sha256 = "6959278995fd1b8747e7ad2bd529ab84256e5c5c4ebedee456852a43ea356d42"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-advent-1--main--collect--all--1"
+collated = "page-image and tracked transcription, 2026-10-21"
+collation_result = "confirmed"
+witness_note = "Lasance/Walsh1945 revision in its later ca1955–56 printing, actual source printed103. Frozen source body is exact, including opening capitals and short Who livest. conclusion. Identical Latin petition words after accents/ligatures/case normalization. Lasance has no commas after Excita/quaesumus/Domine, and a full stop before Qui vivis.; target adds those commas and a colon before the printed fuller conclusion. Lasance English and its paired Latin both print only the abbreviated ending Who livest./Qui vivis. No ending expansion supplied. Former Cummiskey1861 lead remains unbound and quarantined; this Lasance body does not supply or clear that alternative. Historical antecedent English only; no generated ending, Amen or official English. Target comparison: passage.catholic-church.missale-romanum.vatican-typica-1962.advent-1-lasance-three-orations-collation-2026-10-21."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "BESTIR, O Lord, Thy might, we pray Thee and come; That, defended by Thee, we may deserve rescue from approaching dangers brought on by our sins, and being set free by Thee, obtain our salvation. Who livest."
+
+[[entries]]
+mass = "advent-1"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "105"
+ia_leaf = 105
+ia_leaf_range = [105, 105]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.verify-advent-1--main--secret--all--1"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.advent-first-three-orations-en-checked-69592789"
+publication_artifact_sha256 = "6959278995fd1b8747e7ad2bd529ab84256e5c5c4ebedee456852a43ea356d42"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-advent-1--main--secret--all--1"
+collated = "page-image and tracked transcription, 2026-10-21"
+collation_result = "confirmed"
+witness_note = "Lasance/Walsh1945 revision in its later ca1955–56 printing, actual source printed105. Frozen source body is exact, including opening capitals and short Through our Lord. conclusion. Identical Latin petition words. Lasance omits commas around Domine; target prints them. Lasance paired Latin ends Per Dominum.; target prints the fuller conclusion. Exact English remains Through our Lord. Former Cummiskey1861 lead remains unbound and quarantined; this Lasance body does not supply or clear that alternative. Historical antecedent English only; no generated ending, Amen or official English. Target comparison: passage.catholic-church.missale-romanum.vatican-typica-1962.advent-1-lasance-three-orations-collation-2026-10-21."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "CLEANSING us by their mighty power, may these Holy Mysteries, O Lord, make us come more pure before Thee who art their author. Through our Lord."
+
+[[entries]]
+mass = "advent-1"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "106"
+ia_leaf = 106
+ia_leaf_range = [106, 106]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.verify-advent-1--main--postcommunion--all--1"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.advent-first-three-orations-en-checked-69592789"
+publication_artifact_sha256 = "6959278995fd1b8747e7ad2bd529ab84256e5c5c4ebedee456852a43ea356d42"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-advent-1--main--postcommunion--all--1"
+collated = "page-image and tracked transcription, 2026-10-21"
+collation_result = "confirmed"
+witness_note = "Lasance/Walsh1945 revision in its later ca1955–56 printing, actual source printed106. Frozen source body is exact, including opening capitals and short Through our Lord. conclusion. Identical Latin petition words after case/accents/ligatures. Lasance omits commas around Domine; target has them. Lasance Latin ends Per Dominum.; target prints Per Dominum nostrum. English remains exactly Through our Lord. Physical bilingual columns reverse here: English L, paired Latin R. Former Cummiskey1861 lead remains unbound and quarantined; this Lasance body does not supply or clear that alternative. Historical antecedent English only; no generated ending, Amen or official English. Target comparison: passage.catholic-church.missale-romanum.vatican-typica-1962.advent-1-lasance-three-orations-collation-2026-10-21."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "MAY we receive Thy mercy, O Lord, in the midst of Thy temple, that with due reverence we may prepare for the coming festival of our redemption. Through our Lord."
 
 [[untranslated]]
 mass = "s-ioannis-mariae-vianney-confessoris"
@@ -4525,42 +4600,6 @@ extent = "body"
 availability = "unavailable"
 reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
 note = "Cummiskey printed p. 509 supplies the plain Beata viscera Communion used outside Paschaltide. The complete 1962 Saturday Mass IV target includes its final Alleluia, absent from that body, so the shorter form is not attached here."
-
-[[untranslated]]
-mass = "advent-1"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
-
-[[untranslated]]
-mass = "advent-1"
-form_id = "main"
-proper = "Secret"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
-
-[[untranslated]]
-mass = "advent-1"
-form_id = "main"
-proper = "Postcommunion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
 [[untranslated]]
 mass = "advent-2"

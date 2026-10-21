@@ -1,0 +1,47 @@
+seq	element_key	kind	speaker	printed_marker	source_marker_glyph	printed_page	artifact_page	english	notes
+3	in-nomine-patris	prayer	priest			756	754	IN THE name of the Father, and of the Son, and of the Holy Ghost. Amen.	Printed cross after Father, before and; cross is nonspoken sign, stored separately in source-markers.json. Initial I is ornamental; IN THE small capitals retained as capitals. No P. marker on this body; priest supplied by preceding source rubric.
+401	introibo-ad-altare-dei	dialogue	priest	P.	P.	756	754	P. I will go in to the altar of God.	
+402	introibo-ad-altare-dei	dialogue	server	R.	℟.	756	754	R. To God, Who giveth joy to my youth.	
+601	judica-me-deus	dialogue	priest	P.	P.	756	754	P. JUDGE me, O God, and distinguish my cause from the nation that is not holy; deliver me from the unjust and deceitful man.	
+602	judica-me-deus	dialogue	server	R.	℟.	756	754	R. For Thou art, God, my strength: why hast Thou cast me off? and why do I go sorrowful whilst the enemy afflicteth me?	
+701	emitte-lucem-tuam	dialogue	priest	P.	P.	756	754	P. Send forth Thy light and Thy truth: they have conducted me and brought me unto Thy holy hill, and into Thy tabernacles.	
+702	emitte-lucem-tuam	dialogue	server	R.	℟.	756	754	R. And I will go in to the altar of God: to God Who giveth joy to my youth.	
+801	confitebor-tibi-in-cithara	dialogue	priest	P.	P.	757	755	P. To Thee, O God, my God, I will give praise upon the harp: why art thou sad, O my soul, and why dost thou disquiet me?	
+802	confitebor-tibi-in-cithara	dialogue	server	R.	℟.	757	755	R. Hope in God, for I will still give praise to Him, the salvation of my countenance and my God.	
+901	gloria-patri	dialogue	priest	P.	P.	757	755	P. Glory be to the Father, and to the Son, and to the Holy Ghost.	Complete printed priest half; no abbreviation or expansion from another source.
+902	gloria-patri	dialogue	server	R.	℟.	757	755	R. As it was in the beginning, is now, and ever shall be, world without end. Amen.	
+1001	introibo-ad-altare-dei-repetitio	dialogue	priest	P.	P.	757	755	P. I will go in to the altar of God.	
+1002	introibo-ad-altare-dei-repetitio	dialogue	server	R.	℟.	757	755	R. To God, Who giveth joy to my youth.	
+1101	adjutorium-nostrum	dialogue	priest	P.	P.	757	755	P. Our help is in the name of the Lord.	Printed star before P. is omission-return locator; cross between help and is is nonspoken.
+1102	adjutorium-nostrum	dialogue	server	R.	℟.	757	755	R. Who made heaven and earth.	
+12	confiteor-sacerdotis	prayer	priest			758	756	I CONFESS to almighty God, to blessed Mary ever virgin, to blessed Michael the archangel, to blessed John the Baptist, to the holy apostles Peter and Paul, to all the saints, and to you, brethren, that I have sinned exceedingly in thought, word, and deed; through my fault, through my fault, through my most grievous fault. Therefore I beseech the blessed Mary ever virgin, blessed Michael the archangel, blessed John the Baptist, the holy apostles Peter and Paul, all the saints, and you, brethren, to pray to the Lord our God for me.	Full actual priest body, not expanded from &c. No P. on the body; preceding source rubric states priest. Parenthetical breast-striking direction excluded from spoken text and preserved in source-markers.json.
+1301	misereatur-tui	prayer	server	R.	℟.	758	756	R. May almighty God have mercy on thee and, having forgiven thee thy sins, bring thee to life everlasting.	
+1302	misereatur-tui	prayer	priest	P.	P.	758	756	P. Amen.	
+14	confiteor-ministrorum	prayer	server			758-759	756-757	I CONFESS to almighty God, to blessed Mary ever virgin, to blessed Michael the archangel, to blessed John the Baptist, to the holy apostles Peter and Paul, to all the saints, and to thee, Father, that I have sinned exceedingly in thought, word, and deed: through my fault, through my fault, through my most grievous fault. Therefore I beseech the blessed Mary ever virgin, blessed Michael the archangel, blessed John the Baptist, the holy apostles Peter and Paul, all the saints, and thee, Father, to pray to the Lord our God for me.	Source body begins without R.; server established by preceding priest Confiteor/response, source bilingual tibi Pater, and following priest Misereatur. Source page break after blessed Michael; continuation starts the archangel. Inline Now strike your breast direction is not spoken text. Role is witness-specific source interpretation, not imported 1861 R. marker.
+1501	misereatur-vestri	prayer	priest	P.	P.	759	757	P. May almighty God have mercy on you and, having forgiven you your sins, bring you to life everlasting.	
+1502	misereatur-vestri	prayer	server	R.	℟.	759	757	R. Amen.	
+1601	indulgentiam	prayer	priest	P.	P.	759	757	P. May the almighty and merciful Lord grant us pardon, absolution, and remission of our sins.	Nonspoken cross after pardon, before absolution.
+1602	indulgentiam	prayer	server	R.	℟.	759	757	R. Amen.	
+1701	deus-tu-conversus	dialogue	priest	P.	P.	759	757	P. Thou wilt turn again, O God, and quicken us.	
+1702	deus-tu-conversus	dialogue	server	R.	℟.	759	757	R. And Thy people will rejoice in Thee.	
+1801	ostende-nobis	dialogue	priest	P.	P.	759	757	P. Show us, O Lord, Thy mercy.	
+1802	ostende-nobis	dialogue	server	R.	℟.	759	757	R. And grant us Thy salvation.	
+1901	domine-exaudi	dialogue	priest	P.	P.	759	757	P. O Lord, hear my prayer.	
+1902	domine-exaudi	dialogue	server	R.	℟.	759	757	R. And let my cry come unto Thee.	
+2001	dominus-vobiscum	dialogue	priest	P.	P.	759	757	P. The Lord be with you.	
+2002	dominus-vobiscum	dialogue	server	R.	℟.	759	757	R. And with thy spirit.	
+2003	dominus-vobiscum	dialogue	priest	P.	P.	759	757	P. Let us pray.	Real separately printed P. Oremus / P. Let us pray. additional source turn, absent from existing 1861 row group; candidate preserves it instead of inventing a new element key. Target 1962 AP298 rubric explicitly prints Oremus after this dialogue.
+22	aufer-a-nobis	prayer	priest			759	757	TAKE away from us our iniquities, we beseech Thee, O Lord; that, being made pure in heart we may be worthy to enter into the Holy of Holies. Through Christ our Lord. Amen.	Actual full source conclusion, no Thro. expansion. No printed P.; priest supplied by preceding Lasance rubric.
+24	oramus-te-domine	prayer	priest			760	758	WE BESEECH Thee, O Lord, by the merits of those of Thy saints whose relics are here, and of all the saints, that Thou wouldst vouchsafe to pardon me all my sins. Amen.	Superscript footnote 1 after Amen is apparatus; no printed P.; speaker from preceding Lasance rubric.
+2601	kyrie-eleison	dialogue	priest	P.	P.	761	759	P. LORD, have mercy on us.	
+2602	kyrie-eleison	dialogue	server	R.	℟.	761	759	R. Lord, have mercy on us.	
+2603	kyrie-eleison	dialogue	priest	P.	P.	761	759	P. Lord, have mercy on us.	
+2701	christe-eleison	dialogue	server	R.	℟.	761	759	R. Christ, have mercy on us.	
+2702	christe-eleison	dialogue	priest	P.	P.	761	759	P. Christ, have mercy on us.	
+2703	christe-eleison	dialogue	server	R.	℟.	761	759	R. Christ, have mercy on us.	
+2801	kyrie-eleison-repetitio	dialogue	priest	P.	P.	761	759	P. Lord, have mercy on us.	
+2802	kyrie-eleison-repetitio	dialogue	server	R.	℟.	761	759	R. Lord, have mercy on us.	
+2803	kyrie-eleison-repetitio	dialogue	priest	P.	P.	761	759	P. Lord, have mercy on us.	
+30	gloria-in-excelsis	prayer	priest			762	760	GLORY be to God on high, and on earth peace to men of good will. We praise Thee; we bless Thee; we adore Thee; we glorify Thee. We give Thee thanks for Thy great glory, O Lord God, heavenly King, God the Father almighty, O Lord Jesus Christ, the only-begotten Son. O Lord God, Lamb of God, Son of the Father, Who takest away the sins of the world, have mercy on us. Who takest away the sins of the world, receive our prayer. Who sittest at the right hand of the Father, have mercy on us. For Thou alone art holy; Thou alone art the Lord; Thou alone, O Jesus Christ, together with the Holy Ghost, art most high in the glory of God the Father. Amen.	No printed P. on body; source priest instruction on p761 identifies Low-Mass speaker. Full Holy Ghost, singular our prayer, alone, and only-begotten are actual Lasance readings. No expansion or substitution from 1861. Source Gloria condition is actual when-to-be-said rubric, not an assertion it is always said.
+3201	dominus-vobiscum-post-gloriam	dialogue	priest	P.	P.	762	760	P. The Lord be with you.	Adjacent closing dialogue on same inspected page; retained for coherent praeparatio boundary handoff.
+3202	dominus-vobiscum-post-gloriam	dialogue	server	R.	℟.	762	760	R. And with thy spirit.	

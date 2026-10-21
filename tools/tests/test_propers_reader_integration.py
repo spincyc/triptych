@@ -123,10 +123,15 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         ):
             self.assertIn(token, source)
         for forbidden in (
-            "MassAssembly", "adaptPropers", "renderProper", "fetchFragments",
+            "MassAssembly", "adaptPropers", "fetchFragments",
             "calendar/", "formulary", "cycle", "geolocation",
         ):
             self.assertNotIn(forbidden, source)
+        self.assertNotRegex(source, r"\brenderProper\b")
+        self.assertIn(
+            "return root.TriptychSourceChoiceControls.renderProperChoice(input);",
+            source,
+        )
         self.assertIn("captureSemanticLocation", source)
         self.assertIn("restoreSemanticLocation", source)
 

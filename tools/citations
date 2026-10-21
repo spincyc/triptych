@@ -65,8 +65,8 @@ EXAMPLES = {
         Example(
             "tools/citations encode --root build/example-cal",
             (
-                "build/example-cal/postconciliar/propers.yaml\t3590 already_encoded\t0 encoded",
-                "build/example-cal/roman-1962/propers.yaml\t2620 already_encoded\t0 encoded",
+                "build/example-cal/postconciliar/propers.yaml\t4004 already_encoded\t0 encoded",
+                "build/example-cal/roman-1962/propers.yaml\t2748 already_encoded\t0 encoded",
                 "build/example-cal/roman-pre-1955/propers.yaml\t0 already_encoded\t0 encoded",
             ),
             "WRITES. --root here is an untracked copy; with no --root this rewrites the tracked src/sources/calendars YAML in place",
@@ -74,7 +74,7 @@ EXAMPLES = {
         Example(
             "tools/citations encode --root build/example-cal --json",
             (
-                "{\"files\":{\"build/example-cal/postconciliar/propers.yaml\":{\"already_encoded\":3590,\"encoded\":0},\"b... [+196 chars]",
+                "{\"files\":{\"build/example-cal/postconciliar/propers.yaml\":{\"already_encoded\":4004,\"encoded\":0},\"b... [+196 chars]",
             ),
             "WRITES. Rerun on the same tree: everything is already encoded, so nothing changes",
         ),
@@ -84,8 +84,8 @@ EXAMPLES = {
             "tools/citations check",
             (
                 "citation excepted: src/sources/calendars/postconciliar/propers.yaml: ot-24-saturday/Responsorial... [+74 chars]",
-                "src/sources/calendars/postconciliar/propers.yaml\t73 books\t3590 passages",
-                "src/sources/calendars/roman-1962/propers.yaml\t57 books\t2620 passages",
+                "src/sources/calendars/postconciliar/propers.yaml\t73 books\t4004 passages",
+                "src/sources/calendars/roman-1962/propers.yaml\t57 books\t2748 passages",
                 "src/sources/calendars/roman-pre-1955/propers.yaml\t0 books\t0 passages",
             ),
             "exit 1: the tracked postconciliar propers really do cite verses past the end of their hebrew-numbered psalms, and check refuses rather than clamping",

@@ -492,16 +492,6 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                     "Renewal of Baptismal Promises",
                     "Litany of the Saints, second part",
                 },
-                "comm-s-telesphori-papae-martyris": {
-                    "Collect",
-                    "Secret",
-                    "Postcommunion",
-                },
-                "comm-s-hygini-papae-martyris": {
-                    "Collect",
-                    "Secret",
-                    "Postcommunion",
-                },
                 "comm-s-sabinae-martyris": {"Collect"},
                 "ss-cornelii-papae-cypriani-episcopi-martyrum": {"Collect"},
                 "comm-ss-placidi-sociorum-martyrum": {
@@ -636,6 +626,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         absent |= cls.main_identities(
             {
                 "s-ioseph-opificis-sponsi-beatae-mariae": {
+                    "Alleluia",
                     "Collect",
                     "Secret",
                     "Postcommunion",
@@ -698,11 +689,15 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         # Pentecost Lesson, a newly text-bearing slot, gained its typed
         # witness gap: 949 -> 947. The same day the Pentecost Alleluia became
         # a page-bound Lasance entry (G14 lane): 947 -> 946.
-        self.assertEqual(len(source_established), 65)
-        self.assertEqual(len(expected), 136)
+        # The annual source repairs remove unsupported Latin bodies and add
+        # explicit appointments. Telesphorus and Hyginus now use their checked
+        # Common pointers rather than six duplicate gaps. Three Advent gaps
+        # gained Lasance bindings; Christ the King retains its source gaps.
+        self.assertEqual(len(source_established), 161)
+        self.assertEqual(len(expected), 226)
         self.assertTrue(expected.issubset(typed))
         quarantined = set(typed) - expected
-        self.assertEqual(len(quarantined), 946)
+        self.assertEqual(len(quarantined), 1078)
         self.assertEqual(
             {
                 (
@@ -726,8 +721,9 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                 # 934 and 13 since 2026-10-19 (C3): three Pentecost orations
                 # were bound, and the Pentecost Lesson gained a witness gap;
                 # 933 once the Pentecost Alleluia was bound (G14 lane).
-                ("no-exemplar", None): 933,
+                ("no-exemplar", None): 1062,
                 ("witness-gap", CUMMISKEY_SOURCE): 13,
+                ("witness-gap", "passage.catholic-church.missale-romanum.vatican-typica-1962.christ-the-king-appointments"): 3,
             },
         )
         self.assertEqual(len(typed), len(self.base["untranslated"]))
@@ -969,7 +965,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         rows = self.child["inherited_inapplicable"]
         actual = {(row["record"], self.identity(row)) for row in rows}
         expected = self.exact_child_exclusions()
-        self.assertEqual(len(expected), 48)
+        self.assertEqual(len(expected), 49)
         self.assertEqual(actual, expected)
         self.assertEqual(len(actual), len(rows))
         self.assertEqual({row["record"] for row in rows}, {"entry", "untranslated"})
@@ -977,7 +973,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             sum(row["record"] == "entry" for row in rows), 13
         )
         self.assertEqual(
-            sum(row["record"] == "untranslated" for row in rows), 35
+            sum(row["record"] == "untranslated" for row in rows), 36
         )
         for row in rows:
             with self.subTest(record=row["record"], identity=self.identity(row)):
@@ -1025,7 +1021,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                     self.assertEqual(row[field], 0)
         self.assertEqual(rows["roman-1962"]["inherited_inapplicable_records"], 0)
         self.assertEqual(
-            rows["roman-pre-1955"]["inherited_inapplicable_records"], 48
+            rows["roman-pre-1955"]["inherited_inapplicable_records"], 49
         )
         self.assertTrue(rows["roman-pre-1955"]["translation_ledger_inherited"])
 

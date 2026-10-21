@@ -1107,8 +1107,8 @@
   }
 
   /** A witness's acknowledgement, printed where its words are, never in a footer. */
-  function witnessNote(file, sourceId) {
-    return (file.translations || []).find((one) => one.source_id === sourceId) || null;
+  function witnessNote(file, sourceId, lang) {
+    return (file.translations || []).find((one) => one.source_id === sourceId && one.lang === lang) || null;
   }
 
   /** The languages this Ordinary speaks of, as its own file declares them. */
@@ -1465,7 +1465,7 @@
       const raw = selected.availability === 'held' && (element.translations || []).find(function (row) {
         return row.lang === lang && (row.source_id || row.source || null) === selected.sourceId && row.text === selected.text;
       });
-      const witness = raw && witnessNote(file, raw.source_id);
+      const witness = raw && witnessNote(file, raw.source_id, raw.lang);
       const side = T.textSide(lang, {
         sourceId: selected.sourceId, rights: selected.rights,
         relationship: raw && (raw.coverage_relationship || raw.relation),
@@ -1524,7 +1524,7 @@
       section.appendChild(body);
       markConditionalWords(section, body, held);
 
-      const witness = witnessNote(file, held.source_id);
+      const witness = witnessNote(file, held.source_id, held.lang);
       if (witness) {
         // The condition the licence attaches travels with the words it
         // licenses. Printing it once at the foot of the page would let the two

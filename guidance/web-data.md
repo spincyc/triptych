@@ -663,6 +663,21 @@ the renderer must never inherit the base witness's actor for the new language.
 This is an additive Ordinary-v1 inventory field; generated JSON continues to use
 the existing translation/turn fields and source-library schemas are unchanged.
 
+**A complete English source can replace an abbreviated witness.** An
+artifact-backed section may declare `english_replacements` for an existing
+spoken element. Each entry carries exactly `element`, `replaces`, `english`,
+`english_turns`, and `turns_basis`. The closed `replaces` block binds the base
+`witness`, `artifact`, and lowercase SHA-256 `text_sha256` of the existing
+projected English, after any declared junction cut. The new `english` block
+uses the same explicit source, rights, relation and exact-row partition contract
+as additional text. The original artifact remains unchanged and is not
+misrepresented as the replacement's source. A source-specific repeated or cut
+element needs its own exact declaration. The join cannot create or reorder an
+element, resolve a missing side, change Latin, or inherit the base English's
+provenance or actors; conditional phrases are checked against the new body.
+Any claimed correspondence to the target edition still needs its own source
+finding. No missing phrase may be composed or silently borrowed.
+
 **Source fragments remain language-local.** An optional `turns` list partitions
 already selected artifact rows in their source order; it adds no text or
 semantic destination. `gloss = true` in the Ordinary v1 model identifies a

@@ -452,6 +452,70 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertIn("{ label: 'The Code, Canon by Canon', href: '../law/' }", source)
         self.assertIn("{ label: 'Every Document', href: '../texts/' }", source)
 
+    def test_held_weekday_readings_have_a_scoped_heading_without_settling_orations(self) -> None:
+        script = r"""
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const root=process.argv[1],source=fs.readFileSync(process.argv[2],'utf8');
+const begin=source.indexOf('  function resultHeading('),end=source.indexOf('  function commitResultDocuments(',begin);
+assert(begin>=0&&end>begin,'readable-course heading owner is present');
+const heading=eval('('+source.slice(begin,end).trim()+')');
+const read=relative=>JSON.parse(fs.readFileSync(path.join(root,relative),'utf8'));
+const C=require(path.join(root,'src/web/browser/liturgy/reader-state.js'));
+const A=require(path.join(root,'src/web/browser/liturgy/reader-state-adapters.js'));
+const M=require(path.join(root,'src/web/browser/liturgy/assembly-model.js'));
+const structure=read('src/web/data/structure/propers/postconciliar.json');
+const year=read('src/web/data/structure/calendar/postconciliar/2026.json');
+const rubrics=read('src/web/data/structure/rubrics/postconciliar.json');
+let cases=0,negatives=0,settled=0;
+for(const [date,key,name]of [
+ ['2026-10-20','ot-29-tuesday','Tuesday of the Twenty-ninth Week in Ordinary Time'],
+ ['2026-10-21','ot-29-wednesday','Wednesday of the Twenty-ninth Week in Ordinary Time']]){
+ const derived=M.derive({date,year,rubrics}),branch=derived.options[0];
+ assert.equal(derived.options.length,1);assert.equal(branch.winner,null);
+ assert.deepEqual(branch.unsettled.map(row=>row.scope),['oration-owner']);
+ const context=A.validationContext({entrance:'day',bibles:read('src/web/data/bibles.json'),
+  properIndex:read('src/web/data/structure/propers/index.json'),rubricsIndex:read('src/web/data/structure/rubrics/index.json'),
+  ordinaryIndex:{calendars:[]},structures:{postconciliar:structure},ordinaries:{},derived});
+ const normalized=C.normalizeLegacy(C.parseLegacy('day','#'+new URLSearchParams({date,missal:'postconciliar',bible:'douay-rheims',orations:'en',mode:'read'})),{context});
+ assert(normalized.ok,JSON.stringify(normalized.errors));
+ const result=A.adaptDay({request:normalized.state,derived,structure,ordinary:null});
+ assert.equal(result.resolved.formulary,key);assert.equal(result.resolved.standing,'unresolved');
+ assert.equal(result.events.length,4);assert(result.events.every(event=>event.selected.kind==='scripture'));
+ const row={result,branch},before=JSON.stringify({row,structure});
+ assert.equal(heading(row,structure),'Readings for '+name);
+ assert.equal(JSON.stringify({row,structure}),before,'heading cannot alter source/assembly/standing');cases++;
+ for(const mutate of [
+  r=>{r.result.resolved.formulary='not-held';},
+  r=>{r.result.resolved.standing='said';},
+  r=>{r.branch.readable[0].key='other-course';},
+  r=>{r.branch.readable.push({...r.branch.readable[0]});},
+  r=>{r.branch.readable[0].state='said';},
+  r=>{r.branch.unsettled=[];},
+  r=>{r.branch.unsettled.push({scope:'other-uncertainty'});},
+  r=>{delete r.branch.winner;},
+  r=>{r.branch.winner=false;},
+  r=>{r.branch.settled=true;},
+  r=>{delete r.branch.settled;},
+  r=>{r.branch.choice={among:[{id:'other'}]};},
+  r=>{r.branch.massChoices=[{id:'other'}];}
+ ]){const candidate=structuredClone(row);mutate(candidate);assert.equal(heading(candidate,structure),'No day is settled here');negatives++;}
+ const winner=structuredClone(row);winner.branch.winner={name:'Settled source celebration'};
+ assert.equal(heading(winner,structure),'Settled source celebration');settled++;
+}
+console.log(JSON.stringify({cases,negatives,settled}));
+"""
+        run = subprocess.run(
+            ["node", "-e", script, str(ROOT), str(DAY_JS)], cwd=ROOT,
+            text=True, capture_output=True, check=False,
+        )
+        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+        self.assertEqual(json.loads(run.stdout), {"cases": 2, "negatives": 26, "settled": 2})
+        instrument = text(LITURGY / "reader-instrument.css")
+        self.assertIn(
+            ".reader-instrument .reader-document .cycle-name + .unit-claim {\n"
+            "  margin-top: 0.35rem;\n}", instrument,
+        )
+
     def test_complete_notice_and_machine_envelope_boundaries_are_encoded(self) -> None:
         source = text(DAY_JS)
         self.assertIn("row.completeness === 'complete'", source)

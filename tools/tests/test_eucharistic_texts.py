@@ -712,6 +712,32 @@ sections:
         with self.assertRaisesRegex(texts.AdapterError, "stale text hash"):
             self.load()
 
+    def test_collated_selection_keeps_nonexact_target_qualification(self):
+        self.proper_fixture()
+        entry = self.entries[0]
+        entry.update(relationship="collated-exact",
+                     transformations=["Select feast wording; parenthetical target alternative not represented"],
+                     provenance_evidence="Synthetic bounded selection, not exact to the complete target")
+        self.write_ledger()
+        result = self.load()
+        unit = result["units"][0]
+        self.assertEqual(2, len(result["units"]))
+        self.assertEqual("Idem textus.", unit["text"])
+        for field in ("relationship", "transformations", "provenance_evidence"):
+            self.assertEqual(entry[field], unit["provenance"][field])
+        self.assertFalse(unit["diplomatic"])
+        self.assertFalse(result["scope"]["whole_book_complete"])
+        self.assertEqual([], result["omitted_body_owners"])
+
+    def test_collated_selection_still_checks_owning_projection(self):
+        self.proper_fixture()
+        self.entries[0]["relationship"] = "collated-exact"
+        self.path.write_text(self.path.read_text().replace("Idem textus.", "Mutatus textus.", 1))
+        self.entries[0]["text_sha256"] = sha("Mutatus textus.")
+        self.write_ledger()
+        with self.assertRaisesRegex(texts.AdapterError, "differs from owning projection"):
+            self.load()
+
     def test_rehashed_calendar_cannot_drift_from_owning_projection(self):
         self.proper_fixture()
         self.path.write_text(self.path.read_text().replace("Idem textus.", "Mutatus textus.", 1))

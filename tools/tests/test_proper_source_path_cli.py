@@ -102,6 +102,17 @@ class ProperSourcePathCliTests(unittest.TestCase):
         self.assertNotIn('text', mass['propers'][0]['cycles']['A']['verses'][0])
         self.assertEqual(mass['_calendar_cycles'], {'sunday': 'B', 'weekday': 'II'})
 
+    def test_calendar_explanation_stays_out_of_closed_cycle_admission(self):
+        lectionary = {'sunday': 'B', 'weekday': 'II',
+                      'note': 'The weekday course is resolved independently.'}
+        before = copy.deepcopy(lectionary)
+        mass = TODAY.propers_of('postconciliar', 'fixture', arguments(),
+                               lectionary, payload=raw_payload())
+        mass.update(key='fixture', name='Technical Mass')
+        self.assertEqual(mass['_calendar_cycles'], {'sunday': 'B', 'weekday': 'II'})
+        self.assertEqual(prepared(mass, [selection()])['material_selections']['0']['cycle'], 'A')
+        self.assertEqual(lectionary, before)
+
     def test_authorized_material_a_does_not_change_calendar_b(self):
         mass = mass_of(); snapshot = copy.deepcopy(mass)
         for ordinary in (None, ORDINARY):

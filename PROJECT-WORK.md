@@ -7,6 +7,76 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-21.
 
+## Missal reader interrupted-work recovery, 2026-10-21
+
+<!-- promised-deliverable: missal-reader-interrupted-recovery-2026-10-21 -->
+
+The maintainer requests recovery of the interrupted reader work, completion of
+its implementation and validation, and publication to `main`. Commits remain on
+the workspace branch; publication must be a normal fast-forward, never a
+force-push. The recovered work includes generic unresolved-prayer/readings
+labels, explicit verse/response presentation, 101 checked Lasance Ordinary
+English replacements, three Advent orations, and repaired source-path transport.
+The saved annual failure is repaired: explanatory Lectionary metadata stays
+outside the closed cycle-only admission boundary in both CLI and browser.
+The complete annual check passes seven tests across 1,464 date/calendar
+coordinates, 2,928 language states and 5,856 JSON/text renders. The affected
+suite passes 237 tests with eight optional skips. Final Day and Propers browser
+checks pass 57/57 and 69/69; visual checks pass 33/33, share/print 7/7 and study
+25/25, without console, request or HTTP diagnostics. The 18-case native
+dialogue check passes and its six screenshots were inspected.
+
+Source validation, deployment-source validation, the public artifact build and
+GitHub Pages artifact verification pass. Final corpus replay exposed a
+conservatively graded `collated-exact` selection; the adapter now preserves its
+qualifications without falsely upgrading it to exact-target. Its 103 adapter
+and history tests pass, and the real corpus export succeeds. Changed-tool
+examples were recaptured from successful invocations. The unified browser gate
+passes all twelve harnesses and their 257 assertions with no diagnostics.
+All non-example dependencies of `make -k check` pass. The final full replay
+reported 38 stale example outputs; seventeen successful transcripts were then
+recaptured. A focused replay confirms the remaining 21 output divergences,
+with no tracked writes. Those same invocations already diverged at published
+baseline `5f2e74718d3fb010a3700765bd44496c75fa458a`, whose replay reported
+54 divergences. The remaining examples belong to public-alpha preparation,
+research staleness, Scripture chronology, source-library counts, calendar-spine,
+generation metadata, Proper components, web-edition declarations and harvest.
+This compares failing invocations and failure class, not identical output
+bytes. The baseline had twelve locally unrunnable captures; the final full
+candidate replay had three, and eight model/network or mutation-dependent
+examples were deliberately not run. No actual failing invocation was
+recaptured as a successful example.
+
+Publication is blocked on a maintainer terminal commit: the local secret
+scanner cannot buffer the generated-data diff, and splitting off generated
+files still exceeded its limit. No scanner bypass, commit, ref rewrite or push
+was performed. The maintainer chose to make the prepared commit locally, then
+resume publication. The maintainer approved removing exactly two
+machine-specific references from the unpublished outgoing acquisition metadata
+history before a normal fast-forward push; no published history may change.
+The disclosure audit finds only those two historical references, no credentials
+or unintended artifact paths. Backups preserve the original history and work.
+The full annual text-completeness promise remains separate and open;
+structural renderability must not stand in for missing source text.
+
+## Missal reader current priority: annual Propers and Commons
+
+The maintainer redirects implementation to a minimal viable reader with
+correct, complete Propers and Commons: Roman 1962 for civil 2026, plus complete
+Novus Ordo liturgical years A/2026, B/2027 and C/2028, including Advent.
+The [current roadmap priority](guidance/liturgy-browser-roadmap.md#current-priority-complete-annual-minimum-reader-2026-10-20)
+owns the exact intervals and scope. Calendar/reading selection, Common
+referrals, missing or incorrect bodies, source wording and the basic reading
+path come first. Existing typed gaps must be repaired or remain explicit;
+coverage totals and structural tests alone do not prove textual completeness.
+
+Parallel annual, Commons and held-source repair lanes are active. Performance,
+print refinements, advanced modes, pre-1955 expansion and review packaging are
+deferred. The unnecessary speech/WAV/Orca lane is canceled; its processes are
+closed and no audio pipeline or speech proof is a completion requirement.
+Earlier implementation records retain their dated scopes. The latest pushed
+checkpoint at this redirect is `a60f87e1a1bbc08f09b3570000af40b267be67e9`.
+
 ### First annual correctness repair, 2026-10-20
 
 The official antiphonary's numbering statement and individual page checks
@@ -159,6 +229,145 @@ preview build/verification pass. The binding review covers 560 inputs and
 source-family ledger still records 162 pending and zero screened units.
 Native choice-flow and final annual execution proofs remain separate work.
 
+### Exact TLM readings and Collect correction, 2026-10-21
+
+Eleven dated Latin readings now retain the Missal's complete appointed words,
+including its introductions, internal cuts and terminal clauses. Independent
+review checked all 1,733 words against Mame; the separately documented 1962
+target comparisons retain their own scope and disclosed variants. Scripture
+references remain separate apparatus. Eleven exact English body absences stay
+explicit; expanding a Bible does not supply the missing Missal translation.
+The separately proved Common Ecce body is outside this increment.
+
+September Ember Wednesday's Collect reads `clementia`, correcting `dementia`.
+Both source images support the correction. A new bounded historical witness
+and dated projection replace the erroneous ownership claim while preserving
+the old payload and its other 77 users. No other prayer body changes.
+
+The 38 body/provenance checks and 17 damage-screen checks pass. The screen
+retains confirmed OCR damage and accepts genuine printed questions followed by
+lowercase; no source punctuation was changed to satisfy it. Source validation,
+Propers/source projection freshness, exact release bindings and the locked
+normal preview build/verification pass. The binding review covers 527 inputs,
+including 25 new bounded text fragments and one edition projection, preserving
+unrelated bindings. The source-family ledger remains 162 pending, zero screened.
+The full 5,856-render annual execution and remaining source repairs are pending.
+
+The prior `6cbc1b34e` checkpoint also has focused native Day and Propers proof:
+two independent source choices survive history and shared-link reload in each
+entrance, with zero browser/network diagnostics. Four other groups remain
+required; this is no claim of a complete Vigil or annual missal. All owned
+processes and listeners closed before the source freeze was released.
+
+### Common appointments and source applicability, 2026-10-21
+
+Twenty-six Roman 1962 Common and Euphemia formularies now retain their
+source-qualified reading, chant and prayer alternatives. Exact source anchors
+keep alternatives at their Ordinary seats; explicit replacements preserve own
+exceptions. Six source-headed widow bindings offer the principal lesson or the
+optional widow Epistle. Unknown subject eligibility remains unknown. Five new
+whole-body English absences are explicit, without replacing existing bodies.
+
+Advent Alleluias now follow the canonical selected Mass and actual use. The
+four Sunday chants remain available for their own Masses and the ten source-
+appointed borrowed ferias; nine advertised but unused cases cannot assert that
+use. Date-free Propers retain the source condition instead of guessing a day.
+The shared Python and browser owners validate the same source facts.
+
+A valid foreign static description can retain an unknown target-seat notice
+when no raw target seat was declared. Execution still refuses unsupported
+foreign applicability; a broken declared anchor is an error. Structured source
+validation checks every candidate while counting exact-seat alternatives once.
+Batch text rendering preserves each requested Mass's own context, including
+order and duplicates, and still refuses a later invalid request atomically.
+
+The integrated checkpoint passes 117 new Common owner tests, 172 existing
+reader/Ordinary and foreign-seat transport tests, 17 structured source tests,
+five batch-render tests and the focused Node checks. Full source validation and
+Ordinary checks pass. All seven Bible indexes and generated Propers/census are
+current; no Bible chapter text changed. The split Read publication gate also
+accepts the known optional applicability facts while retaining exact source,
+generation, catalog and payload binding; six boundary tests pass, including
+rejection of missing or forged facts and changed anchors. Whole Common bodies,
+remaining annual source repairs and the final 5,856-render execution remain
+separate obligations.
+
+The registry, exact release bindings and locked normal preview build and
+verification pass. Exactly 501 existing site inputs were refreshed; no new
+site inputs were adopted, and unrelated bindings were preserved. Eleven
+changed CLI examples were recaptured from successful real invocations.
+
+### Integrated annual source repair, 2026-10-21
+
+The next integration restores source-appointed Novus Ordo antiphons, Common
+referrals, alternate Entrance options and coupled reading courses. Shared
+source-path selection preserves every candidate and its source identity;
+English-only whole-antiphon absences do not change Latin Scripture eligibility
+or turn Bible components into a complete Missal body. Three unpublished held
+Collects remain unavailable, with their exact source and provenance state.
+The seasonal increment supplies 213 antiphon appointments across 106 Masses,
+with two exact verse-number correspondences. Its 125 source-proven English
+whole-body gaps retain 111 reviewed records and fourteen accepted additions;
+the unsupported Lent V Wednesday Entrance inference is withdrawn. These are
+English qualifications and do not infer Latin body gaps. All sixteen focused
+seasonal tests pass on the integrated source; final index and annual gates
+remain separate.
+
+The Roman 1962 source review covers the allocated 295 full formularies and
+104 commemorations. Its appointment and referral repairs preserve existing
+body words while adding precise English absence records. Hermenegild's nine
+own Paschal units and the outside-Paschal Common course are alternatives.
+Chantal's prayers follow their printed order; obsolete order exceptions are
+removed. Jerome's Postcommunion incipit is corrected to `Repleti alimonia
+caelesti`. Gregory Barbarigo, Laurence of Brindisi and Claret retain explicitly
+held-unpublished Collect gaps; no formerly published body or removal hash is
+invented for them.
+
+Six English whole-wording obligations remain open, each at main/all,
+occurrence 1, English body: Joseph spouse of Mary
+(`s-ioseph-sponsi-beatae-mariae-virginis`), `Alleluia (Tempore paschali)` and
+`Offertory`; Justin (`s-iustini-martyris`), `Alleluia (Tempore paschali)`,
+`Gradual` and `Introit`; Paul of the Cross
+(`s-pauli-a-cruce-confessoris`), `Alleluia`. These Scripture-delegated targets
+need whole-wording and ownership evidence. Their Bible components do not close
+those obligations, and unsupported composed-body absence rows are not added.
+
+The complete 2008 Latin altar-book artifact is not held. The registered
+secondary PDF identifies 2002 on its title and printing history and retains
+the children's Eucharistic Prayer appendix and index entries omitted in 2008;
+individual readings matching later corrections do not establish its whole-file
+2008 identity. Exact 2008 whole-form and internal-option correspondence
+therefore remains open. Work continues with the held official Notitiae
+corrections and Supplementum, the ICEL Antiphonary's explicitly bounded
+2002/2008 antiphon evidence, and exact source-owned Common, role and referral
+joins. No complete annual/body denominator, unchanged wording, publication
+right or human acceptance is inferred. The source-family review remains
+162 pending and zero screened.
+
+Twenty-six checked Latin bodies are now supplied for the Pentecost and
+September Ember Saturdays, including fourteen newly explicit appointments.
+Longer and shorter forms retain their separate Oratio occurrences and the
+Veni chants retain their genuflection rubrics. Existing English words are
+unchanged; fourteen exact English absences are added. The historical source,
+1962 target comparison and project projection remain separately identified.
+Eight complete chant bodies and sixteen All Souls body owners bring this
+increment to fifty checked Latin bodies. All Souls retains its two Sequence
+references and eighteen appointed occurrences. Its sixteen formerly removed
+body records now have separately proved publication sources; no English words
+are added. The integrated body and coverage suite passes all 94 tests.
+
+The full Ordinary gate exposed three Matthias Paschal wrappers using a season
+as part of their seat name. Their exact role names and own occurrence joins
+are repaired, with season, source anchors and Common ownership preserved.
+All calendars now pass the Ordinary check. The distinct votive-only unit 2225
+remains unrepresented. On the maintainer's latest instruction, the publication
+target is now `main` after coherent commits, reconciliation, rebase and gates;
+this changes the earlier feature-only publication hold.
+
+Final integrated gates and the complete 5,856-render execution are still
+pending at this source integration. Earlier checkpoints and private candidate
+proofs retain their own source epochs and do not certify this merged tree.
+
 ## Missal reader C1 truthful coverage, 2026-10-19
 
 <!-- promised-deliverable: missal-reader-c1-coverage-2026-10-19 -->
@@ -189,8 +398,9 @@ Four parallel lanes then enumerated the whole Bonn witness: 45 slices and 8,274
 targets, every artifact page owned by a section slice or an extent boundary.
 322 targets sit in post-1922-additions slices, each absence confirmed on 1922
 Mame page images. The two older pre-1955 Holy Week slices, 42 rows each mapped
-one-to-one to a new row, are superseded. The inventory now holds 18,915 targets
-in 115 slices with 107 boundaries. All three whole-book universes stay
+one-to-one to a new row, are superseded. After current-main integration and the
+bounded postconciliar Pentecost accounting, the inventory holds 18,947 targets
+in 118 slices with 108 boundaries. All three whole-book universes stay
 `unresolved`: 1962's text slots and other dimensions, pre-1955's
 not-yet-reviewed whole-book dimensions, and the deferred 2008 book. No
 denominator is asserted beyond what the slices state.
@@ -374,11 +584,9 @@ the 1962 typica's printed marks, and headings without printed cues.
 
 Remaining:
 
-- Introibo/Judica, Sursum corda, Pax and the dismissal need reviewed per-turn
-  source rows and dialogue roles. The postconciliar dismissal holds no text in
-  either language.
-- Element headings still print P./R. from their incipits.
+- Twenty opaque dialogue blocks still need review and division.
 - ℣/℟ typography and turn-row layout belong to later C4 steps.
+- The postconciliar dismissal still has no sourced text.
 
 ## Missal reader C3 1962 Pentecost text, 2026-10-19
 
@@ -393,11 +601,14 @@ Joseph clause as a short phrase. That basis is recorded once in
 `src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml` and
 reaches only that clause.
 
-**In progress: texts, structure and Ordinary collation done; the C2 acceptance
-pass remains.**
+**In progress: the bounded Pentecost source repairs are implemented; the C2
+acceptance pass remains.** The 2026-10-20 source audit preserves the English
+Lesson and Communicantes variant gaps and the Ordinary's explicit partial
+extents. It does not claim whole-book text completion or independent human
+acceptance.
 
 - Pentecost Latin is 10/10 exact-target.
-- English is bound for 8 of 10 units, with the Lesson a typed gap.
+- English is bound for 9 of 10 units, with the Lesson a typed gap.
 - Missal mode seats the whole Holy Spirit Preface and the proper Hanc igitur
   and Communicantes.
 
@@ -447,8 +658,9 @@ Pre-1955 keeps 206 stand-in days until commemorations and octaves are modelled.
 The formulary-level expected-target join (step 2) is done: 488 1962 and 463
 pre-1955 formularies are joined. A read-only real-browser audit chose Pentecost Sunday,
 2026-05-24, for all three missals and audited every unit against the six-part
-pattern. The pre-1955 audit is provisional until its witness inventory lands.
-It found 22 gaps, now recorded in the
+pattern. The accepted Bonn pre-1955 witness inventory has since landed;
+its Pentecost text slots still need their source joins and wording collation.
+The initial audit found 22 gaps, now recorded in the
 [roadmap](guidance/liturgy-browser-roadmap.md#c2-exemplars-and-execution-plan-2026-10-19).
 The most serious are:
 
@@ -461,6 +673,679 @@ Two open questions were settled from existing guidance: the 2026-09-03
 word-agreement rule makes collated word-exact projections `exact-target`, and
 the vision's stable semantic anchors make Read-mode Contents jumps URL
 `location`.
+
+The 2026-10-20 continuation joined the 1962 Pentecost exemplar's ten Proper
+and three appointed Ordinary text slots to their independently inventoried
+targets. The coverage check reports all thirteen represented and marks a
+removed Lesson or mismatched Preface option `not-represented`. This does not
+join the remaining whole-book slots or close the C2 acceptance pass.
+Fresh source-served Chromium runs passed 55 Day and 49 Propers assertion
+groups with no console or request failures. The 1962 exemplar was captured
+at 1440, 393 and 320 CSS pixels without horizontal overflow, and its print
+was inspected. Both English Read prints occupy ten pages; the Latin Day
+Missal print occupies 25. A follow-up print background correction removed the
+final-page tinted frame bleed without changing those page counts. Long
+translation notes still dominate English print. C4 print work and the full
+C2 acceptance matrix remain open.
+
+The next 2026-10-20 checkpoint expands the Roman 1962 expected text-slot join:
+the served structure now classifies 3,182 of 6,285 slots represented, 178 not
+represented, and 2,925 unresolved. The 178 are effective Sanctoral role gaps;
+229 raw Mass gaps resolve from appointed Commons. Three page-checked Scripture
+appointments and seven Common oration joins closed ten gaps; St Stanislaus's
+printed C 2 selection also reduces inherited unresolved Common choices in
+both 1962 and pre-1955 from seven to six. Structural joins do not
+establish word agreement. A focused C2 test matches all 179 generated Pentecost
+Missal events to browser order and checks thirteen CLI landmarks; exhaustive
+CLI event-ID parity and independent acceptance remain open. Ordinary absence
+notices now use concise reader labels instead of storage keys. A print pass
+reduced both 1962 Pentecost English Read PDFs from ten to seven pages without
+changing their extracted text; long witness notes remain for C4 composition.
+The CLI now exposes text-free expanded event IDs from the same seating model.
+A source-served Chromium probe checks full event-ID and kind order against
+Day and Propers for the 1962 Pentecost (179 events) and pre-1955 Pentecost
+(181 events) examples, and against Day for postconciliar Pentecost (71 events).
+Date-free postconciliar Propers intentionally omits two unresolved Ordinary
+appointments. These checks establish representative semantic parity; source
+wording and independent C2 acceptance still require review.
+The bounded 2026-10-20 acceptance audit against `60b69ee46` separates those
+completed technical checks from the remaining source and product acceptance:
+1962 Pentecost has 13/13 inventoried text slots represented, pre-1955 has 0/13
+represented with all thirteen unresolved, and postconciliar has no joined
+bounded Pentecost text-slot report. All three whole-form extents remain
+unresolved. Pre-1955's current work is bounded Bonn/Mame collation and
+attestation, not acquisition of an exact Vatican 1920 impression. The later
+Ordinary checkpoint has 120 held Latin occurrences, 118 collated and 97
+word-exact, with nine partial Prefaces and two source-only uncollated rows.
+The existing source/model checks and historical browser/print receipts are
+technical evidence; the final exemplar acceptance matrix is not dispositioned.
+F01 source inputs require regeneration and checks before inheriting these
+results, including a new annual run when its consumed inputs change. C2 and C3
+remain in progress; the source-family review and rights boundaries are unchanged.
+The 400% Contents jump now leaves its Canon destination wholly in the readable
+band above the bottom action dock. The source-served ritual-flow harness passes
+28/28 assertions after accounting for the intentional C2 claim typography;
+the later seven-harness built-preview gate passes. Independent visual
+disposition remains open.
+Day and Propers now share validated missal, Bible and oration-language
+preferences, written only after successful Date or Browse Apply. URLs retain
+precedence, and bad or blocked storage falls back without affecting explicit
+state. A dedicated source-served Chromium run passes 11/11; Day and Propers
+regressions pass 55/55 and 49/49. This is a bounded C5 capability, with
+independent acceptance and the remaining modes still open.
+The English witness chooser now identifies itself as a Mass-wide choice
+beside the first Proper. Pentecost Chromium checks pass for the chooser and
+for Caswall's explicit Introit gap and held Sequence in Day and Propers;
+partial-witness deep links remain valid.
+An independently page-checked twelve-role Sanctoral batch brings the effective
+Roman 1962 text-slot inventory to 3,194 represented, 166 not represented and
+2,925 unresolved; all 7,990 target kinds now classify 4,017 / 167 / 3,806.
+These Gospel and chant citations remain labelled Bible reconstructions where
+Missal wording is unestablished. Eight other proposed chant joins were held
+back after printed wording checks; Gabriel's printed Luke locator discrepancy
+also remains open. An Adjutorium derivative now divides the printed 1962
+priest/answer dialogue into source-bound ℣/℟ turns without changing its words.
+A print-only pagination rule keeps a short translation credit beside its
+witness account; source-served Day and Propers English Read remain seven pages
+with identical extracted text, and checked Latin layouts are unchanged.
+St Lucy's Communion now has a hash-bound exact 1962 Latin antiphon collated
+with the public-domain 1922 Mame witness; its Psalm citation remains separate.
+Roman 1962 exact-target Latin Proper availability rises to 1,074 of 1,203
+represented composed targets. A further page-checked St Thomas Apostle
+Introit uses the complete 1922 Mame antiphon, Psalm verse and Gloria Patri cue,
+collated against the 1962 typica. It raises that bounded count to 1,075 of
+1,204; English remains an explicit no-exemplar gap. The Missal prints
+`honorati` where the Bible verse has `honorificati`, so the Bible body is not
+substituted. Proposed St Anthony Offertory and St Michael Introit Scripture
+joins were held for the same wording reason. Neither result resolves the
+whole-family text denominator. The CLI now labels Bible reconstructions and
+separately shown Bible text. A generated, form-qualified Propers search index
+and a pure two-side semantic Compare core are checked data foundations; their
+reader controls and independent acceptance remain open.
+The subsequent source collation recovers those two held chants from exact
+Missal wording: St Anthony's Offertory and St Michael's Introit agree with
+page-checked public-domain Mame passages, including their appointed context.
+Both retain Bible citations as structural references, exact-target Latin
+provenance, and typed English no-exemplar rows. Effective 1962 target states
+are now 4,020 represented, 164 not represented and 3,806 unresolved;
+source-inventoried joined slots are 2,965 represented and 392 not represented.
+The complete-Missal check reports 1,077 exact-target Latin Proper texts out
+of 1,206 represented composed targets.
+This remains bounded source coverage, not whole-book text completion.
+
+The next C5 integration seats Propers Missal over the same source-backed
+Ordinary and Proper events as Day. The 1962 Pentecost fixture yields 179
+ordered events: 163 Ordinary events, six divisions and ten Propers. The view
+retains explicit alternatives and date-unknown applicability, preserves
+ordinary language and option choices through URL and Read/Missal changes, and
+keeps source-authored non-Mass frames explicit. Its source-served Chromium
+suite passes 56/56 assertions, including a same-document Ordinary-location
+navigation regression. Independent source-served Chromium QA passed 9/9
+checks at narrow and 400% reflow widths, exercised postconciliar Day/Vigil
+and Ordinary choices, and inspected the first page of the 24-page 1962 print.
+The built-preview visual harness passes 28/28, the production Propers browser
+suite passes 56/56, and the private preview verifies. Full C5 acceptance
+remains open.
+The next C5 source run makes the form-qualified Propers index searchable from
+both entrances, loading it on demand and linking to exact edition/form
+results with its coverage boundary visible. Day Compare now resolves each
+edition's calendar outcome independently on a fixed date and territory before
+pairing functional Proper slots. Propers Compare holds one date-independent
+formulary and Bible fixed while adapting two oration languages independently.
+Explicit URL state, Contents location, focus return, absent events and
+unavailable text have source-served browser checks: 10/10 Day Compare and
+63/63 Propers Read/Missal/Search/Compare. The shared view and state contract
+pass focused tests. The private preview verifies and all seven registered
+built-preview browser harnesses pass; the focused source/UI suite passes 230
+tests. Study and independent C5 acceptance remain open.
+The Study continuation attaches a contextual apparatus to the same Read DOM
+and semantic event IDs in both entrances. Day shows its actual calendar
+result, coverage and source/availability facts; Propers states its
+date-independent boundary. Source-served Chromium passed 10/10 Day Study and
+66/66 Propers Read/Missal/Search/Compare/Study checks, with preserved text,
+Contents, location and print. Day `mode=study&ordinary=0` is live; an explicit
+`ordinary=1` remains deferred without partial rendering. The shared adjunct
+passes five focused tests. All seven registered built-preview browser
+harnesses pass after the Study integration. Independent C5 acceptance remains
+open.
+Independent private-preview QA covered 29 responsive Study/Compare states and
+ten Search variants without horizontal overflow or browser errors. At 400%
+zoom, the Day Compare Calendar-results Contents jump now lands visibly; Mode
+dialogs keep keyboard focus inside and restore it on Escape. The built-preview
+visual harness locks those regressions at 30/30. Print keeps short Coverage,
+Study-note and unavailable-Compare groups together; inspected PDFs are ten
+pages for Day Study, eight for Propers Study and twelve for Day Compare. The
+long Day Study print remains C4 composition work, and this review does not
+establish full C5 acceptance.
+
+A source-inventoried bounded form report now keeps its parent form identity and
+counts the 1962 Pentecost Day appointments at 13 expected and 13 represented.
+Missing Lesson or changed Preface negative controls fall to 11/13. A partial
+source slice reports only a lower bound. Whole-form extent remains unresolved,
+as do all 39 whole-family completeness cells. The printed 1962 closing
+`Deo gratias` also now carries the English and Latin response role without
+changing the source words.
+
+St Lucy's collated Communion is now explicitly marked as lacking an English
+antiphon witness in the translation inventory; inherited pre-1955 coverage
+carries the same typed absence. Both English inventories have zero unaccounted
+Proper slots. The Latin substitution audit exempts only the source-verified
+`gratis` in that Communion, leaving zero page-image candidates; it does not
+substitute the differing Bible expansion for the Missal wording.
+The C4 cue pass enlarges and colors the printed ℣/℟ turns while preserving
+their accessible and copied text, 320-pixel reflow and print. A print rule
+keeps a short Collect translation credit beside its witness note. The
+source-served Day integration harness passed its new glyph case; the built
+preview and independent C4 matrix remain separate checks.
+
+Independent C2 review of the three Pentecost exemplars confirms the event
+order and appointed seats. The 1962 example has ten exact-target Latin
+Propers, while its English Lesson and two Communicantes passages remain
+unwitnessed. Postconciliar Day is accepted only as a partial state: target
+Latin and approved English cannot be inferred from the study Collect,
+Caswall Sequence or Bible reconstructions. Pre-1955 remains a structural
+projection with two typed proper-Canon absences and no collated full 1920
+target witness. Event parity therefore closes the ordering check, not
+word-exact or rights acceptance.
+
+A read-only C6 lab probe of committed preview `eb8ac428b` measured narrow
+cold LCP at 12.5–12.9 seconds for Day and Propers on a Slow-4G/4×-CPU
+profile, versus the 2.5-second vision target. Warm narrow loads were below
+0.61 seconds; desktop cold loads were 1.56–1.62 seconds. The 1962 Proper
+structure contributes about 1.23 MB gzipped and dominates the cold
+transfer. These are two-run lab samples, not field percentiles.
+
+The first C6 load-time change is committed and pushed as `f671358ba`.
+Eligible resolved Roman 1962 Read links on Day and Propers now fetch a
+validated catalog and one of 491 exact Mass envelopes; unresolved choices,
+cross-Mass dependencies, other modes and editions, and split-data failures
+use the existing complete structure. The generator test reconstructs every
+Mass exactly, the public-preview gate checks generation, rights and source
+parity for all 491 files, and the built Chromium suite passed seven tests.
+The private preview was rebuilt and verified; this is not a production
+deployment or C6 release acceptance.
+
+On the same two-run Slow-4G/4×-CPU lab profile, cold mobile LCP became
+7.68–7.74 s for canonical Day Read and 7.01–7.02 s for Propers Read. Transfer
+fell from 1.49 MB to 319 KB on Day and from 1.43 MB to 269 KB on Propers;
+cold desktop LCP was 0.69–0.75 s. The Day comparison removes an explicit
+`mass=` parameter because a derived, settled Day choice is the safe split
+path; both links resolve to the same `pentecost-10` Mass. These lab samples
+remain above the 2.5 s mobile target and do not establish field p75. The
+remaining C6 work is page startup and request sequencing, followed by the
+complete C5/print/accessibility and independent release review.
+
+The next C5 checkpoint adds shared Mode-radio keyboard behavior and secondary
+Share/Print actions on both entrances. The selected radio is the group's single
+Tab stop; Arrow, Home/End, Space and Enter use the same controller choices.
+Share sends a canonical reader URL and identity title without liturgical text,
+with a local-copy fallback. Oration-language comparisons name the peer
+language, while recension comparisons name the peer edition. Print uses the
+browser dialog and excludes the controls. The keyboard probe passes eighteen
+checks across both entrances; the built Chromium gate passes all seven tests.
+
+The second C6 change overlaps safe 1962 Read catalog loading with existing
+manifest/rubric requests and fetches the selected Mass alongside that catalog.
+Generation, path, identity and fallback validation still govern the result.
+On the same two-run Slow-4G/4×-CPU lab profile, cold mobile LCP is 7.34–7.35 s
+for Day and 6.36–6.37 s for Propers; cold desktop samples are 0.60–0.70 s.
+The added controls bring transfer to about 325 KB and 274 KB. These samples
+remain above the 2.5 s mobile target and do not establish field p75 or
+independent C5/C6 acceptance.
+
+The next C5 usability slice replaces the dock's Details action with direct
+Study on both entrances. Details remains in Mode and keeps source context,
+Share and Print reachable. Direct Study preserves the held semantic place and
+returns focus to its dock command; moving between modal surfaces returns to
+the visible Mode command. A native 100–200% text-size control remembers valid
+display preferences independently of semantic URL state, works without
+storage, preserves place and focus, and leaves print at its own size. Combined
+reduced-motion testing caught and fixed stale scroll restoration through
+Mode → enlargement → Details → close. The integrated focused probes pass
+eighteen keyboard checks, twelve direct-Study checks, three text-size cases
+and four Share/Print cases, with clean browser diagnostics.
+
+The print continuation tightens Study fact spacing and gives Compare paired
+columns while preserving unavailable-side protection and the final semantic
+pair. The four checked PDFs change from 10/12/8/9 pages to 7/9/7/6 for Day
+Study, Day Compare, Propers Study and Propers Compare. Extracted liturgical
+and source content is preserved; representative long-reading and final-page
+rasters were inspected. This bounded print evidence does not close the full
+C4 composition matrix or independent C5 acceptance.
+
+The next C5 slice enables Day Study with `ordinary=1` through the existing
+Missal renderer. Seven full-order fixtures preserve text, event order,
+branches, choices, absences, coverage and semantic place across Missal and
+Study; moving to Read maps to the nearest Proper event. The expanded Day
+Study Chromium probe passes 25 checks, including missing-resource refusal.
+
+Propers Compare now supports an explicitly chosen held lectionary cycle for
+the same formulary. The Transfiguration fixture pairs its recorded A/B/C
+Gospels while holding edition, form, Bible and language choices fixed. These
+remain Bible reconstructions; neither exact Missal wording nor civil-year
+applicability is inferred. Eight contract checks and eight Chromium checks
+cover coequal selection, invalid peers, source boundaries and peer-state
+cleanup. A print regression also keeps source credits with the preceding
+text tail without preventing long readings from paginating. Independent
+C5 acceptance and the remaining comparison axes are still open.
+
+The next C6 startup slice moves bounded response hints immediately after the
+shared browser core on the four modern reader entrances. Only explicit eligible
+1962 Read URLs qualify, using the core's existing data-root policy. Hints warm
+responses; the normal generation, identity, rights and fallback checks still
+admit them. The unchanged Ordinary presenter now loads only when validated
+state requests it, including Day Study with the Ordinary. Concurrent requests
+share one load; failure permits Read recovery and a later Missal retry, and an
+old response cannot replace a newer selection. Retained eager visual oracles
+remain supported. Focused Chromium probes pass nine startup-hint checks and
+eleven Ordinary-loading checks with no unexpected diagnostics. A first Missal
+visit can pay an additional code request after state validation; this tradeoff
+and cold Read timing are measured separately from semantic correctness.
+
+On a frozen C9 baseline versus the combined startup change, two cold HTTP/2
+samples per entrance at 562.5 ms latency, 1.47456 Mbps down and 4× CPU give
+Day LCP 5.328/5.360 → 4.600/4.668 s and Propers 4.552/4.368 → 4.000/3.880 s.
+Transfer falls 330,659 → 303,215 bytes and 280,651 → 253,210 bytes respectively.
+The earlier 7.34/6.36 s samples above used HTTP/1.1; transport and the newly
+frozen baseline are explicit here. State, text and semantic hashes agree, with
+no unexpected browser diagnostics. One first Day Missal switch changes from
+8.650 to 9.322 s, deferring 29,252 code bytes to that action. The selected
+All Souls/Caswall Propers fixture refuses Missal in the baseline and supplies
+no valid advanced-mode timing comparison. Neither these local samples nor
+their improvement establishes field p75 or meets the 2.5 s cold mobile target.
+
+The following C5 slice compares explicit source reading alternatives. The
+Presentation Gospel's held longer Luke 2:22–40 and shorter Luke 2:22–32 choices
+use their existing option IDs, preserving the other source evidence and holding
+all other axes fixed. Eight Node checks and six Chromium checks cover coequal
+selection, invalid peers, location/focus, narrow stacking and independent print.
+The partial-witness Missal refusal found during timing was an implementation
+bug: its Proper-witness probe omitted the already loaded Ordinary. Supplying
+that input preserves Caswall's held All Souls Sequence and each other Proper's
+typed gap; five Node checks and four Chromium checks cover the corrected path.
+
+The next C6 payload slice reuses the existing exact catalog/Mass envelopes for
+conservative 1962 Missal and Day Study-with-Ordinary states with explicit Latin
+orations. Cross-Mass references, commemorations, forms/choices, exceptional
+frames and other languages retain full-source loading. Five durable test groups
+include 2,044 exact state/result comparisons; forty Chromium groups preserve
+text, events, source/coverage context, controls and race ownership. Old Read
+request/result paths agree across 365 dates and 491 Masses. Gzip6 Proper data
+for the Tenth Sunday is 41,404 bytes and Pentecost 51,149, replacing the
+1,225,510-byte monolith; an eligible Read→Missal transition already holds those
+Proper inputs. The full Ordinary remains separate. These byte counts establish
+neither new latency nor field performance or release acceptance.
+
+This checkpoint passes the full tracked-source gate: 259 captured examples,
+250 replayed, no divergence and no tracked writes. The registered browser
+contracts pass across full runs and focused corrections: two obsolete monolith
+expectations were migrated to bounded Missal plus real fallback cases; a
+same-document witness test now waits for the requested committed selection
+instead of a previous ready flag. The corrected payload contracts pass 9/9 and
+69/69 in the second full run; its only remaining witness wait failure passes
+5/5 after the test-only correction, with empty diagnostic arrays. This records
+the actual rerun sequence, not a claim that either earlier full run was green.
+
+The next source checkpoint divides the remaining nineteen explicit mixed-speaker
+1962 blocks in both held languages: 38 exact parent cells become 97 fragments,
+including three English nonspoken Kyrie glosses. Ten new immutable Cummiskey
+1861 derivatives retain every parent word; source speakers and independently
+checked target roles stay distinct. The Ordinary keeps 196 elements and its
+semantic event order. A separate postconciliar doxology slice adds checked
+speaker spans; Pater noster records the source-only Amen and unresolved target
+turn mapping. Source-library validation and `make check-sources` pass; catalog
+review admits exactly ten new artifact identities, with no existing manifest
+change or family-screening promotion. The source projection changes apparatus
+metadata only. The integrated browser probe passes all 36 checks, including
+native clipboard and real accessibility trees. All 69 source/Ordinary tests,
+the owning shell test and 29 affected captured examples pass. The public
+qualification uses readable edition/locus citations; protected artifact IDs and
+hashes remain in the owning study evidence. Representative AT and final
+print/independent acceptance remain open.
+
+A further shared-capability checkpoint adds explicit Latin accompaniment at
+existing Proper/cycle/Ordinary and citation boundaries, with independent prayer
+and Bible controls. Each language keeps its own source, rights, turns and precise
+gaps; a citation's Bible sides use their own generated numbering/refusal records.
+The selected Latin Bible appears once. Default state, requests and DOM remain
+unchanged, including actual English/Latin non-liturgy Scripture tracks.
+Date-free Propers Compare additionally supports explicit same-language witnesses
+and Bible editions, with exact source-occurrence coordinates for the held All
+Souls Sequence and Psalm-numbering refusal cases. Other selections stay fixed;
+cross-edition semantic-slot guards remain strict. The combined tree passes 63
+adjacent Node checks without skips, all four feature browser wrappers, the
+36-check dialogue probe and five Share/Print browser groups.
+
+Print composition temporarily keeps bounded source directions with their next
+short Ordinary text and short paired bodies with their source notes, restoring
+the exact screen DOM after printing or rerendering. Long readings remain free
+to paginate. Current-input print review preserves the full ordered extracted
+text; final built-artifact all-page review awaits source freeze. Direct declared
+script/style gzip6 sums grow by 9,252 bytes for Day and 10,645 for Propers against
+`aa39475c5`, with the same 29 resources per entrance. These are byte counts,
+not latency results; C6 and independent C4/C5 acceptance remain open.
+
+The integrated checkpoint passes all seven full browser tests and all 206
+selected static tests. `make check` reports 259 captured examples, 250 replayed,
+zero divergence and zero tracked writes. The preview build and integrity
+verification also pass. These checks cover the combined implementation; final
+source-frozen print review and performance measurements remain pending.
+
+The next source checkpoint fills three existing Latin prayer gaps from the
+registered Mame 1922 witness: Munda cor meum, Dominus sit in corde meo and Per
+evangelica dicta. Two immutable artifacts and three bounded passages retain
+the checked source pages and transcription. The additive inventory join
+requires independent witness, rights, extent and exact spoken-turn accounting;
+it cannot replace an existing language or inherit another witness's actor.
+The 196-element frame and English wording stay unchanged. Latin availability
+rises from 117 to 120 elements; Cummiskey's own facing-column absences remain
+true. Munda's priest cue is limited to the source's explicit Low Mass reuse;
+Latin Per evangelica is Priest while the English witness assigns it to the
+priest with assistants. A separate one-turn English partition now exposes that
+source's All cue, without changing its words or assigning a target dialogue
+role.
+
+Eleven further Latin collation findings cover ten held Prefaces and the common
+Hanc igitur. Only the complete Common Preface and common Hanc receive new
+word-agreement findings. Trinity and eight other abbreviated Prefaces retain
+their literal source cues, variants and missing assembly, without a whole-row
+target-wording grade. No new Trinity opening event or ritual placement is
+inferred. The source-only Gloria heading and unplaced pre-Postcommunion
+greeting remain uncollated. The catalog audit checks all 10,516 existing
+canonical records unchanged and exactly five additions; family screening stays
+at zero completed and 161 pending units. The general source reader lists the
+three structured TSV passages as non-prose; it does not turn row keys and
+pagination into prayer text.
+
+The integrated source stack passes 80 focused tests, the stable Ordinary CLI
+shell gate, source/publication checks, and preview integrity. The extended real
+Chromium probe passes 44 groups with 38 accessibility-tree and 38 native-copy
+records, including the independent Latin Priest / English All cues. Its waits
+now check the requested selection and committed render. Rubrics-off assertions
+apply to Day; Propers has no such URL control. The older summary/count pins
+were migrated to the reviewed source findings, retaining grade refusals and
+explicitly prohibiting exact-target promotion of the nine partial Prefaces.
+
+All seven full browser tests and 217 static tests pass on this stack. The
+first full example replay found only two research-staleness elision counts,
+each increased by the five new canonical records; the six owning examples
+pass after actual recapture, without rebaselining any research disposition.
+The annual module passes all six tests in 524.598 seconds: 4,380 matrix renders
+plus six language sentinels. Its broader recorder correctly fails its worktree
+freeze guard because a root scratch-capture helper unexpectedly wrote those
+two example constants through the owning API's global tool directory. That
+failed guard is retained. A separate audit hashes all 34,830 scoped files,
+confirms the other 34,829 blobs and modes unchanged, proves executable AST
+parity outside EXAMPLES, and confirms that tool is outside the annual runtime
+path. The annual result is therefore qualified against unchanged consumed
+inputs; it is not a pass of the broader frozen-worktree wrapper. All annual
+descendants are closed. The final full `make check` rerun passes: 259 captured
+examples, 250 replayed, zero divergence and zero tracked writes.
+
+The next frozen HTTP/2 lab comparison measures the first eligible Missal
+transition at 1.94 s for Day and 1.92 s for Propers, down from 9.35 s and
+9.29 s. Each final transition reuses its Proper body; only the Ordinary and
+its presenter are transferred. Cold Read remains above budget: Day LCP is
+4.644/4.664 s and Propers 3.916/4.116 s on the same 562.5 ms latency,
+1.47456 Mbps down, 4× CPU mobile profile. These samples identify an internal
+implementation improvement; field p75 and the 2.5 s release target remain open.
+
+A separate two-year early-loading pilot reduces Day LCP to 3.488–3.532 s,
+gaining 1.144–1.176 s across four adjacent pairs. Every sample nevertheless
+fails its predeclared 3.0 s integration limit, so the pilot remains outside
+the branch and its 101-year expansion is held. Helper completion near
+1.89 s and authenticated sidecar admission near 2.77 s dominate the measured
+path. Exact Mass/chapter hints each have one response body, but Bible metadata
+is transferred twice; complete metadata reuse is not claimed. Source, text,
+state, semantic events and URL parity pass, with no unexpected diagnostics.
+The original negative result and original thresholds remain authoritative.
+
+The following bounded startup change defers the shared Compare and Study
+presentation modules through the existing validated-state optional loader.
+Read and open Mode need none of those modules; explicit Compare/Study await
+their own APIs, preserve semantic location and focus, and retain failure,
+retry, shared requests and stale-render protection. The eager visual oracles
+remain supported. Ten Node contracts and 23 real Chromium groups pass on the
+scratch candidate. Direct script/style gzip6 sums fall from 204,960 to 192,881
+bytes for Day and 172,948 to 160,850 for Propers, with 29 to 26 initial
+resources. Integrated verification passes all seven full browser tests and
+205 focused tests (one separate browser opt-in skipped). Preview build,
+integrity, bindings, registry and promise checks pass. The first broad check
+used system Markdown 3.11.2 instead of locked 3.10.3 and failed that dependency
+guard; the corrected locked-environment run passes all 250 example replays
+with zero divergence or tracked writes. These are byte and correctness
+measurements; new timing remains pending.
+
+The subsequent twelve-sample HTTP/2 run holds this mode-loading change fixed
+across committed, original-pilot and priority-revised variants. For August 2,
+Day LCP medians are 4.582 / 3.442 / 4.092 s; for the independently selected
+September 5 fixture they are 4.600 / 3.452 / 4.100 s. Chromium honors the
+revised one-High-helper/fourteen-Low-body priorities. The helper arrives
+about 345 ms sooner, but mandatory core/controller responses arrive about
+one second later. A second 571-byte gzip Bible manifest finishes near 4.0 s
+and becomes the final wait. All twelve samples retain exact text, state,
+semantic-event and URL parity, clean diagnostics and frozen response bytes;
+all experiment processes close. The priority revision fails both the 3.0 s
+limit and 1.0 s gain test and remains excluded. The original pilot still
+fails 3.0 s; neither permits the 101-year expansion. Shared Bible-response
+reuse is a measured next investigation, but its roughly 570 ms wait alone
+cannot rescue the revision or establish the 2.5 s release target. Another
+priority mix has no supporting measurement; the next architectural proposal
+must address the serial authenticated data path or its competing transfers.
+
+A further scratch prototype places the canonical resource owner and an
+authenticated two-year request kernel in the initial Day HTML. Its complete
+kernel is 3,986 gzip6 bytes and authentication metadata 280 bytes. The final
+source-derived generation passes 2,770 topology/fault checks, 14,452 facade
+comparisons, 66 build-boundary checks and 43 browser groups. Pending/completed
+Bible reads share one raw response while normal admission stays authoritative.
+These correctness and size results do not establish a performance improvement.
+
+The eight-sample HTTP/2 comparison rejects this prototype: baseline/inline LCP
+medians are 4.574/9.726 s for 2026-08-02 and 4.586/9.710 s for 2027-09-05.
+The owner publishes near 0.60 s, directed appends finish near 1.86 s, and the
+selected Mass plus seven chapters finish by 2.52 s. No full Proper monolith
+or duplicate response body is requested. The normal body scripts are instead
+discovered serially, delaying the controller response to about 9.58 s.
+Text/state/events/URL and all 108 served-body identities agree; diagnostics
+and foreign-browser boundary counts are zero. The completed run and analysis
+exit 0, and all experiment processes close. An earlier single-baseline attempt
+failed a process-census parser, is retained separately, and is excluded from
+the paired result; its two-line harness repair changed no served bytes.
+The failed prototype remains off branch. A separate scratch revision will
+test build-derived preloads for exactly the existing Day scripts without
+changing their execution order or priorities. Its value and the unchanged
+3.0 s / 1.0 s gain integration limits and 2.5 s release budget remain unproved.
+
+The native-preload revision restores concurrent requests for all fifteen
+existing scripts, retaining execution order and one response per script.
+Its 58 static checks and 44 browser groups pass; complete Day HTML grows by
+93 gzip bytes (92 for the alias). The next eight-sample comparison measures
+LCP medians 3.054 and 3.072 s, against 4.600 and 4.594 s. All four gains exceed
+1.5 s, but every candidate misses both unchanged absolute performance limits.
+Table responses finish near 2.27 s and directed data near 2.96–2.99 s while
+core/catalog transfers also compete. Preflight, probe and analysis exit 0;
+all experiment processes close. Late icon request events remain qualified;
+script/data response and exact reader-parity checks are complete. This
+revision remains unintegrated. A bounded catalog/presentation prototype must
+prove its net initial-byte saving and preserved contracts before browser work.
+
+A separate native Chromium 400% Day Read smoke passes against the existing
+verified C29 artifact. The tabs API reports 3.9999999999999996 with automatic
+browser scaling, fixed physical window/pixel dimensions, quarter CSS width,
+fourfold DPR, unchanged CSS zoom/font and no emulation. After actual smooth
+scroll settlement, Contents exposes the target heading and Mode restores
+visible focus/place without horizontal overflow. All four images are reviewed,
+diagnostics are empty and processes close. Two earlier harness failures remain
+retained. The portable [native-zoom regression](tools/tests/test_reader_native_zoom.py)
+now registers the eight entrance/mode cases behind an explicit artifact-bound
+opt-in; its default checks pass two tests and explicitly skip Chromium. Its
+full eight-case final-artifact run and review remain pending. This smoke does
+not establish assistive-technology, manual-touch or WCAG acceptance.
+
+The final evidence audit retains the planned 88 captures and identifies 44
+additional existing ritual-flow representatives requiring fresh artifact-bound
+images and geometry. Historical images have different consumed inputs. The
+registered visual helper now exposes its existing fixture rows, capture and
+measurement functions for a selective artifact-bound adapter; its default CLI
+path remains intact. Eleven offline adapter checks pass. Final capture, every
+image's inspection and current-row/scroller, focus and source assertions remain
+pending; capture counts alone do not close the ritual-flow promise.
+
+The bounded catalog/presentation startup prototype saves 18,579 gzip6 bytes
+across each of four complete 45-response ledgers, retaining the 4,000/300-byte
+kernel/authentication caps. Its corrected browser run passes 81 of 84 groups,
+including all ten native Retry focus boundaries and full-outline visibility.
+The run then finds an inherited shared Text Size defect: native enlargement
+to 200% keeps the Mode select active but moves it outside the visible dialog.
+The run is partial, all processes are closed, and timing and integration stay
+pending; earlier passing groups do not discharge the remaining three.
+
+The Text Size correction is integrated separately. Its existing coalesced
+layout callback now reveals the still-focused select within Mode's own scroll
+port after enlargement or shrinkage, preserving the existing semantic reading
+restore. Open/connected/active and held-location guards prevent a closed,
+reopened or moved-focus visit from claiming the reveal. Actual outline and
+sticky-header geometry determine the visible interval, with one nominal CSS
+pixel for scroll rounding. Seven Node tests pass. The native browser regression
+reproduces the original clipping and then passes all five groups on both
+entrances, with full outline, URL, reading-place, Escape, print and narrow
+reflow checks. All eight corrected screenshots are inspected; diagnostics are
+empty and browser resources close. An earlier regression setup failure lacked
+Enter's character text and is retained separately from the actual reproduction.
+This source-served result does not close the final-artifact zoom or independent
+accessibility gates. Startup generation, byte and timing proofs must be renewed
+with this shared correction present in both comparison variants.
+
+Both startup variants were then regenerated with the committed Text Size fix.
+All 5,540 actual-kernel checks pass, preserving equal paths and the six genuine
+source gaps per side. The four staged 45-route ledgers save
+18,574 / 18,574 / 18,577 / 18,577 gzip6 bytes; the shared fix is charged equally.
+The corrected browser run passes all 84 groups. All ten Retry focus images are
+individually inspected, fourteen native completion records are reviewed, and
+all three browser phases close. A preceding 39/84 run is retained separately:
+its supplemental harness compared four traversed trees with a five-tree
+admission map before allocating that phase. The bounded comparison correction
+preserves complete five-tree admission and every browser assertion.
+
+The subsequent eight cold HTTP/2 samples reject this candidate too. Against
+committed runtime `a29df844d`, August 2 LCP is 4.592/4.588 → 3.048/3.016 s and
+September 5 is 4.600/4.592 → 3.028/3.032 s. Median gains are 1.558 and 1.566 s,
+but every candidate misses the unchanged 3.0 s pilot and 2.5 s release limits.
+Reader text/state/events/URL, response identity and script/Bible/warm reuse
+checks pass; diagnostics and foreign-browser boundaries are clean. Preflight,
+probe, analysis and closure exit 0, with all sixteen driver/server handles and
+observed browser descendants closed. Neither this lossless catalog/presentation
+prototype nor the 101-year expansion is integrated. Final C1–C5 visual, native
+zoom and print review proceeds against the verified committed reader; the
+performance failure does not close C6 or block those other review gates.
+The candidate traces contain 46 bodies across 45 unique routes: the icon is
+fetched twice, adding 229 gzip bytes beyond each staged route ledger. Data,
+scripts and Bible responses are not duplicated. Measured totals retain that
+extra icon body; the untimed R2 cost control does not establish matching icon
+multiplicity, so the staged net is not a complete paired measured-transfer net.
+
+The first artifact-bound review of committed `a29df844d` then finds a desktop
+Compare defect on both entrances: the centered 70rem body crosses the fixed
+action rail. All eight native 400% cases pass their machine guards, but actual
+inspection of all 48 images catches the 100% baseline collision; the separate
+88-image review confirms six affected wide Compare frames. A screen-only rule
+now reserves the unchanged rail at widths of at least 72rem, retaining Compare's
+70rem cap where it fits and limiting its width to the available viewport.
+Paired-language rail placement, the narrow dock and print rules stay scoped to
+their existing owners. The new browser geometry check reproduces seven text
+collisions before the fix and passes afterward; the full 33-group visual
+harness, default registry checks, locked preview build and integrity checks
+pass. Two browser-launch setup failures and a corrected viewport-versus-shell
+dock measurement remain separate from the actual reproduction. Final screen,
+print and independent acceptance are still open; the first captures remain
+diagnostic evidence, and bounded print attachment defects are being repaired.
+
+A parallel witness audit found no publishable English witness for the 1962
+Pentecost Lesson's printed `discipuli` wording. [Cabrol 1921](https://catalog.hathitrust.org/Record/100567132)
+is an inaccessible page-image lead, not a text source. An
+[ExtraordinaryForm.org Whit Thursday sheet](https://extraordinaryform.org/masses/PentecostWhitThursdayM20.pdf)
+has promising Communicantes wording but no verified republication grant or
+translation provenance; both English gaps remain typed as unwitnessed.
+For the authentic 1920 Vatican impression, [Verona](https://www.capitolareverona.it/catalogo/pmb/opac_css/index.php?id=6774&lvl=publisher_see)
+lists inventory 31843, shelf Gal B 1 5, and [Nicolet](https://archivesseminairenicolet.wordpress.com/wp-content/uploads/2020/11/liste-des-livres-par-ordre-alphabetique-auteur.pdf)
+lists call number 264.023 T964m. Neither is an inspected complete scan;
+pre-1955 remains a structural projection pending page images and reuse terms.
+
+The feature branch also integrates current main through `edab7fee5`, retaining
+both accepted Christ the King publications and their source repairs. The
+combined calendar keeps the verified October appointments, the feature's proper
+Preface appointment, and explicit unavailable oration bodies; the seasonal
+Tract remains inventoried but is not rendered as an October appointment. All
+490 other 1962 Masses preserve the feature's source model. The four Bible
+indexes retain their semantic three-way union without another source-text
+acquisition. The combined source-family ledger has 162 pending review units and
+zero screened units. No screening or reader acceptance is inferred from this
+merge. Owner-generated Propers and source projections, scoped release bindings,
+source validation and the 82-entry promised-deliverable ledger pass. The focused
+coverage/Proper/recension suite passes 115 tests, including explicit F01
+appointment-versus-wording assertions. Thirty shell/visual static checks pass
+after replacing stale global action counts with exact owning-surface checks and
+preserving the historical oracle hashes through their one recorded dependency
+exception. Six affected CLI transcripts were recaptured from actual runs.
+Final print, accessibility, performance and independent acceptance remain open.
+
+The next print repair measures the physical Letter content width rather than
+the wide screen reader width during `beforeprint`. Compare keeps only a
+source-owned, measured short responsorial Psalm together; Study keeps the
+selected language's text tail and source credit with its own labelled evidence.
+The preceding Latin companion can paginate separately. Long bodies remain free
+to fragment. The rejected broad keep strategy produced 173 Study pages and
+37 nonfinal pages ending above 400 points; that result remains a failure.
+The narrower repair produces 143 Study pages, nine recension-Compare pages
+and four Presentation-Compare pages. All 156 pages were individually inspected;
+the independent attachment/pagination checks pass, with every nonfinal page
+reaching at least 400 points down the page. This page-count cost is explicit, not a claim of unchanged
+pagination. Text-character multiset and ordered semantic DOM parity hold;
+raw PDF extraction order can differ across paired columns.
+
+The registered Share/Print browser gate now passes all seven groups, including
+real Presentation and paired-Study PDF regressions. Its first expanded run
+stopped on a harness-only Propers snapshot error after the original five groups
+passed; the one-line correction collects Ordinary owners only for Day and
+preserves strict Day data checks. A separate rerender probe passes both late
+`afterprint` orders with exact restored DOM and no remaining browser resources.
+Thirty shell/visual static tests and the seven-test registry pass (two explicit
+browser opt-in skips). The locked preview build and integrity verification pass
+after six already published F01 PDFs were recovered against their tracked
+deployment hashes. Final eight-PDF and complete artifact review remain open.
+
+The accompanying accessibility repair removes unsupported `aria-expanded`
+from Compare radio controls, tags the hidden English verse/response cues with
+their own language, and maps Instrument's faint ink to its existing accessible
+color token. A separately copied, hash-verified artifact passes the 36-state
+AX/axe diagnostic with zero automated violations, zero unnamed selected
+interactive nodes across 1,056 inspected AX nodes, and no browser or network
+diagnostics. All 36 original screenshots were individually inspected. All 28
+contrast incompletes retain their raw results and have measured dispositions:
+25 fully visible, two below their own scrollport, one partially clipped by its
+own scrollport, no unresolved item; the minimum computed foreground/backdrop
+ratio is 5.3471. The 28 symbolic Close-label observations retain their actual
+functional AX names. No automated result was suppressed. This diagnostic
+checkpoint does not establish representative human screen-reader use, manual
+touch, WCAG conformance or final reader acceptance. The later maintainer
+priority above cancels speech/AT-service setup and defers startup and final
+review work while annual Propers/Common correctness proceeds.
+
+The postconciliar Pentecost source checkpoint adds 28 text-free targets in
+three partial slices: five antiphon alternatives, eleven headed Lectionary
+roles and twelve prayer/Ordinary appointments. The official Antiphonary
+positively scopes its antiphons to 2002/2008; the older Lectionary and 2002
+Missal evidence retain unresolved 2008 correspondence. Day has a lower bound
+of 15 slots with one represented and fourteen unresolved; Vigil has thirteen
+with two represented and eleven unresolved. Both exact denominators and
+whole-form states remain unresolved. Ambiguous alternatives receive no invented
+join, the extended Vigil stays separate, and no prayer words, English rights or
+approved translation are added. All three new Sources passages remain
+rights-withheld without text payloads. Independent page/semantic review and
+46 focused tests pass; generated Proper/Source outputs and source validation
+are current. Catalog fingerprints refresh without changing any of the 162
+pending source-family review states. C2/C3 whole-form completion remains open.
 
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 

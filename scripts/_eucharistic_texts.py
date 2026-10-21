@@ -749,7 +749,8 @@ def _proper_units(sources: _Sources) -> dict:
         permission = decision.projection({"public-git", "corpus-data"})
         if not decision.permits({"public-git", "corpus-data"}):
             raise AdapterError(f"Present body lacks export permission: {key.label()}: {permission['reason']}")
-        if decision.provenance_status != "collated" or decision.relationship != "editorial-projection-exact-to-target":
+        if decision.provenance_status != "collated" or decision.relationship not in {
+                "editorial-projection-exact-to-target", "collated-exact"}:
             raise AdapterError(f"Unsupported provenance relationship: {key.label()}")
         source = sources.use(decision.source_id)
         target = sources.use(decision.verification_source_id)
@@ -781,7 +782,7 @@ def _proper_units(sources: _Sources) -> dict:
             "omitted_book_divisions": ["front matter", "calendar and computus", "general rubrics and Ritus servandus",
                 "Ordinary and Canon", "complete Preface series", "unrepresented ritual/votive/dead/local formularies",
                 "literal Scripture readings and chants represented only by citations", "unavailable and quarantined Proper bodies"],
-            "text_identity": "Project editorial projection with 1962 target verification; not a diplomatic historical antecedent",
+            "text_identity": "Project editorial projection with per-unit 1962 target collation and explicit qualifications; not a diplomatic historical antecedent",
         },
         "omitted_body_owners": omitted,
         "counts": {"units": len(units), "unique_text_hashes": len({u["text_sha256"] for u in units}),

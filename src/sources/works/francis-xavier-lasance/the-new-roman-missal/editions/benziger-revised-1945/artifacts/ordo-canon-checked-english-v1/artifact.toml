@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The existing lasance-new-roman-missal-rights-v1.toml establishes the affirmative United States basis for the underlying registered 1945 English edition. These checked ordinary numbered pages precede both excluded later lettered inserts. This derivative retains only selected historical spoken English, without illustrations or scan-host matter."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "The registered facsimile is hash-verified as 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70. A source transcription and independent whole-word page-image review establish every selected English word and source cut. This artifact is a mechanical derivative of those frozen checked source paragraphs, not a fresh transcription or an inference from optical text."
+retrieved = "2026-10-21"
+sha256 = "55c7210fa56733adb3920dc7447647926871a3dd25c12d15fa08727935f95ada"
+byte_size = 10782
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ordo-canon-checked-english-v1/text.tsv"
+encoding = "utf-8"
+indexable = true
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "Select only complete current spoken target extents from the checked historical source. Split already reviewed source paragraphs into physical TSV rows; join layout wraps only. Preserve source words, pointing and source actors. Reattach only checked P. or barred-response cues as P. or R. prefixes, recording original glyph separately. Remove printed crosses as nonspoken signs, recording their code-point positions in the original checked paragraph; close only resulting punctuation spacing. In the Canon, the separately printed invitatory paragraph is selected with the chalice form so the existing paired Latin extents remain intact; no word is duplicated or dropped. No absent variant, partial mixed rubric, or source-only ceremony is expanded."
+notes = "Source historical hand-missal English only, not approved 1962 English or an exact-target English wording claim. One physical TSV line per checked source paragraph or turn. Source row hashes and paragraph ordinals preserve the exact mechanical lineage. Old Cummiskey artifacts and the existing special Hanc artifact remain unchanged."

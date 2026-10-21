@@ -1623,6 +1623,25 @@
     return { node: heading, titleId: resultTitle.id, identity: identity };
   }
 
+  function resultHeading(row, structure) {
+    const branch = row && row.branch || {};
+    if (branch.winner && branch.winner.name) return branch.winner.name;
+    const resolved = row && row.result && row.result.resolved;
+    const readable = branch.readable || [];
+    const unsettled = branch.unsettled || [];
+    const course = resolved && (structure.masses || []).find(function (mass) {
+      return mass.key === resolved.formulary;
+    });
+    if (branch.winner === null && branch.settled === false && !branch.choice &&
+        !(branch.massChoices || []).length && resolved && resolved.standing === 'unresolved' &&
+        readable.length === 1 && readable[0].key === resolved.formulary &&
+        readable[0].state === 'unresolved' && unsettled.length === 1 &&
+        unsettled[0].scope === 'oration-owner' && course && course.name) {
+      return 'Readings for ' + course.name;
+    }
+    return 'No day is settled here';
+  }
+
   function commitResultDocuments(rows, assembled, state, showWhy) {
     const multiple = rows.length > 1;
     const hasUnresolved = rows.some(function (row) {
@@ -1664,7 +1683,7 @@
     const bible = rows[0] && rows[0].bible;
     title.textContent = multiple
       ? 'Held territorial branches'
-      : (rows[0].branch.winner && rows[0].branch.winner.name || 'No day is settled here');
+      : resultHeading(rows[0], assembled.structure);
     dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
     const metadata = [
       missal && (missal.edition || missal.label),

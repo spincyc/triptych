@@ -21,10 +21,10 @@ const execFileAsync = promisify(execFile);
 const SHORT_ORDINARY_PRINT = [
   ['psalmus-xlii-heading', null, 'Psalm xlii.'],
   ['judica-me-deus', 'dum affligit me inimicus?', 'whilst the enemy afflicteth me?'],
-  ['emitte-lucem-tuam', 'ad Deum qui lætificat juventutem meam.', 'to God who giveth joy to my youth.'],
+  ['emitte-lucem-tuam', 'ad Deum qui lætificat juventutem meam.', 'to God Who giveth joy to my youth.'],
   ['confitebor-tibi-in-cithara', 'salutare vultus mei, et Deus meus.', 'the salvation of my countenance and my God.'],
-  ['kyrie-eleison', 'Kyrie eleison.', 'Lord, have mercy upon us.'],
-  ['christe-eleison', 'Christe eleison.', 'Christ, have mercy upon us.']
+  ['kyrie-eleison', 'Kyrie eleison.', 'Lord, have mercy on us.'],
+  ['christe-eleison', 'Christe eleison.', 'Christ, have mercy on us.']
 ];
 const compactPdfText = text => text.normalize('NFKC').replace(/[\s\u00ad]+/gu, '');
 
@@ -71,7 +71,7 @@ function assertAlternativePdf(pages, bbox) {
     'both Gospel citations and first words must share a page');
   assert.ok(gospelPage < pages.length - 1, 'the long Gospel remains fragmentable');
   const interiorWordBottoms = assertNoSparseInteriorPages(pages, bbox, 'Compare');
-  for (const id of ['001', '002', '003', '004', '005', '006']) {
+  for (const id of ['001', '002', '003', '004', '005', '006', '007', '008']) {
     assert.ok(pages.join('\n').includes('postconciliar/presentation-lord/' + id),
       'printed alternative source ' + id + ' survives');
   }
@@ -398,7 +398,7 @@ try {
     const expectedPrint = await evaluate(cdp, `(() => ({
       mode: document.querySelector('.reader-instrument').dataset.readerMode,
       studyNotes: document.querySelectorAll('#reader-document .study-event').length,
-      studySources: [...document.querySelectorAll('#reader-document .study-event dt')]
+      studySources: [...document.querySelectorAll('#reader-document .study-event dt, #reader-document .study-overview dt')]
         .filter((node) => node.textContent.trim() === 'Source record').length,
       compareSources: [...document.querySelectorAll('#reader-document .compare-evidence')]
         .filter((node) => node.textContent.trim().startsWith('Source records:')).length
@@ -445,6 +445,9 @@ try {
         assert.match(pdfText, /Territorial context: universal/);
         assert.match(pdfText, /Calendar results on this date/);
       } else assert.match(pdfText, /Calendar result/);
+    } else if (state.requestedMode === 'compare') {
+      assert.match(pdfText, /Trinity Sunday/);
+      assert.match(pdfText, /trinity/);
     } else {
       assert.match(pdfText, /First Sunday of Advent/);
       assert.match(pdfText, /advent-1/);
@@ -628,7 +631,7 @@ try {
     '&mode=study&ordinary=0');
   assertions.push({ name: activeCase, status: 'pass' });
   activeCase = 'propers-compare-print-composition';
-  await check('propers', '#missal=roman-1962&type=seasonal&mass=advent-1' +
+  await check('propers', '#missal=roman-1962&type=seasonal&mass=trinity' +
     '&bible=douay-rheims&orations=la&mode=compare&compare=oration-language&peer-orations=en');
   assertions.push({ name: activeCase, status: 'pass' });
   activeCase = 'day-missal-print-pagination';
@@ -642,8 +645,8 @@ try {
     '&peer-alternative=proper-choice%2Fpostconciliar%2Fpresentation-lord%2Fmain%2Fgospel%2Fshorter' +
     '&location=compare%2Fproper%2Fgospel', activeCase);
   assert.equal(alternativePrint.before.state.comparison.dimension, 'reading-alternative');
-  assert.deepEqual(alternativePrint.before.ids, ['reading-1','responsorial-psalm','reading-2',
-    'gospel-acclamation','gospel'].map(id => 'compare/proper/' + id));
+  assert.deepEqual(alternativePrint.before.ids, ['entrance-antiphon','reading-1','responsorial-psalm','reading-2',
+    'gospel-acclamation','gospel','communion-antiphon'].map(id => 'compare/proper/' + id));
   const alternativeProof = assertAlternativePdf(alternativePrint.pages, alternativePrint.bbox);
   assertions.push({ name: activeCase, status: 'pass', pdf:alternativeProof });
 

@@ -35,7 +35,7 @@ function inputs(mass,relation,cycle,selected,framed,entrance){
   properChoices:{[qualified(mass,relation)]:selected.id}};
  if(entrance==='day')request.calendar={id:structure.calendar};else{request.formulary={id:mass.key,type:mass.kind};request.cycle=cycle;}
  if((mass.forms||[]).length>1){request.form=relation.form_id;if(entrance==='day')request.selectedReadableFormulary={id:mass.key};}
- const derived={calendar:structure.calendar,date:request.civilDate,weekday:'sunday',season:'lent',liturgicalYear:{lectionary:{sunday:cycle,weekday:'II'},anchors:{}},
+ const derived={calendar:structure.calendar,date:request.civilDate,weekday:'sunday',season:'lent',liturgicalYear:{lectionary:{sunday:cycle,weekday:'II',note:'Technical calendar explanation, not a source-admission field.'},anchors:{}},
   options:[{option:null,winner:{id:mass.key,nature:'sunday'},settled:true,readable:[{key:mass.key,state:'said'}],absent:[]}]};
  const conditionFacts=selected.when?{[selected.when.fact]:selected.when.is}:{};
  return{request,structure,ordinary,derived,conditionFacts};
@@ -45,7 +45,10 @@ test('all actual source paths retain exact material, original ordinals and calen
  for(const mass of relationMasses)for(const relation of mass.proper_source_paths)for(const selected of relation.paths)for(const cycle of selected.calendar_cycles.in)for(const framed of [false,true])for(const entrance of ['day','propers']){
   const input=inputs(mass,relation,cycle,selected,framed,entrance);
   const result=entrance==='day'?A.adaptDay(input):A.adaptPropers(input);
-  if(entrance==='day')assert.equal(result.calendarResult.lectionary.sunday,cycle);else assert.equal(result.calendarResult,null);
+  if(entrance==='day'){
+   assert.equal(result.calendarResult.lectionary.sunday,cycle);
+   assert.equal(result.calendarResult.lectionary.note,input.derived.liturgicalYear.lectionary.note);
+  }else assert.equal(result.calendarResult,null);
   const control=result.sourcePathChoices.find((one)=>one.id===qualified(mass,relation));assert(control);assert.equal(control.selection.option,selected.id);
   for(const member of selected.members){
    const sourceIndex=mass.propers.findIndex((proper)=>sameCoordinate(proper.appointment_identity,member.appointment));assert(sourceIndex>=0);

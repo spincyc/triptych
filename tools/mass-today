@@ -133,13 +133,13 @@ EXAMPLES = {
                 "      Latin incipit only; no en rendering recorded: Ad te levavi…",
                 "",
                 "    Collect",
-                "      Excita, quaesumus, Domine, potentiam tuam, et veni: ut ab imminentibus peccatorum",
-                "      nostrorum periculis, te mereamur protegente eripi, te liberante salvari: Qui vivis",
-                "      et regnas cum Deo Patre in unitate Spiritus Sancti, Deus: per omnia saecula",
-                "      saeculorum. R. Amen.",
-                "      (no en translation recorded; showing Latin)",
+                "      BESTIR, O Lord, Thy might, we pray Thee and come; That, defended by Thee, we may",
+                "      deserve rescue from approaching dangers brought on by our sins, and being set free",
+                "      by Thee, obtain our salvation. Who livest.",
                 "",
-                "... 59 more lines",
+                "    Epistle — Romans 13:11-14",
+                "      Fratres: Scientes quia hora est jam nos de somno surgere. Nunc enim propior est",
+                "... 55 more lines",
             ),
             "read-only; with no --date it resolves today. Two Masses fall on this "
             "date and both are listed",
@@ -206,7 +206,7 @@ EXAMPLES = {
                 "",
                 "      THE ORDINARY OF THE MASS.",
                 "      -------------------------",
-                "... 860 more lines",
+                "... 888 more lines",
             ),
             "the whole Mass in one piece: scripture in words under a named "
             "edition, and the propers set into the Ordinary at the slots the "
@@ -1078,7 +1078,11 @@ def propers_of(
         # mass-propers owns source validation and derived origin transport;
         # shared preparation validates the exact public relation before use.
         result["proper_source_paths"] = copy.deepcopy(mass["proper_source_paths"])
-        result["_calendar_cycles"] = dict(lectionary or {})
+        result["_calendar_cycles"] = {
+            family: lectionary[family]
+            for family in ("sunday", "weekday")
+            if family in (lectionary or {})
+        }
         result["_source_path_passages"] = passages
     if forms and selected_form is None:
         # Absence here is the typed choice-required state, not the no-form

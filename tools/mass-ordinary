@@ -163,6 +163,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import re
 import shutil
@@ -225,10 +226,10 @@ EXAMPLES = {
                 "    [ The Priest at the Foot of the Altar, beginning, saith, ]",
                 "",
                 "  In Nomine Patris, et Filii (priest)",
-                "    IN the Name of the Father, and of the Son, and of the Holy Ghost. Amen.",
+                "    Priest: IN THE name of the Father, and of the Son, and of the Holy Ghost. Amen.",
                 "",
                 "  Introibo ad altare Dei (priest)",
-                "... 647 more lines",
+                "... 674 more lines",
             ),
             "read-only; prints the same assembly `structure` writes for the browser",
         ),
@@ -281,8 +282,8 @@ EXAMPLES = {
                 "  en provenance: antecedent/uncollated 185",
                 "  la provenance: antecedent/collated 118",
                 "  la provenance: antecedent/uncollated 2",
-                "  en  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  185 elements  public-domain",
-                "  en  edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945  1 elements  public-domain",
+                "  en  edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945  102 elements  public-domain",
+                "  en  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  84 elements  public-domain",
                 "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  114 elements  public-domain",
                 "  la  edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam  3 elements  public-domain",
                 "  la  edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19  3 elements  project-created",
@@ -526,6 +527,14 @@ ADDITIONAL_TEXT_FIELDS = {"element", "english", "latin", "english_turns",
 ADDITIONAL_SIDE_FIELDS = {"witness", "artifact", "element", "elements", "column",
                           "relation", "collation", "collation_finding",
                           "target_wording", "note"}
+
+# A complete, separately witnessed English body may replace a defective or
+# abbreviated base rendering. The old source artifact remains immutable, and
+# the exact existing projected body must be named and hash-bound. This is not
+# a fallback or a licence to rewrite an edition's own words.
+ENGLISH_REPLACEMENT_FIELDS = {"element", "replaces", "english", "english_turns",
+                              "turns_basis"}
+ENGLISH_REPLACES_FIELDS = {"witness", "artifact", "text_sha256"}
 
 # Words the book prints as conditional inside a row -- the 1861 and 1962
 # Holy Spirit Preface's "hodierna die", said only from the vigil of Pentecost
@@ -2134,6 +2143,77 @@ def artifact_additional_texts(
         element["absent"][side] = None
 
 
+def artifact_english_replacements(
+    section: dict, source_keys: set[str], elements: list[dict], witnesses: dict, restricted: dict,
+    library: dict, name: str,
+) -> dict[str, dict]:
+    """Resolve exact, source-owned English substitutions without changing frame.
+
+    Entries name an existing emitted body, including a source-backed repeat or
+    junction prefix. They cannot create an element, resolve an absence, replace
+    Latin, or inherit the old witness's turn partition. Application follows the
+    base source's cuts and precedes conditional-span validation, so a replacement
+    must still contain every declared conditional phrase exactly once.
+    """
+    declared = section.get("english_replacements")
+    if declared is None:
+        return {}
+    where = f"{name}: section {section['key']} english_replacements"
+    if not isinstance(declared, list) or not declared:
+        raise SourceError(f"{where} must be a nonempty table array")
+    by_key = {element["key"].split("/", 1)[1]: element for element in elements}
+    held = {}
+    for entry in declared:
+        if not isinstance(entry, dict) or set(entry) != ENGLISH_REPLACEMENT_FIELDS:
+            raise SourceError(f"{where} entries carry exactly "
+                              f"{', '.join(sorted(ENGLISH_REPLACEMENT_FIELDS))}")
+        local = entry.get("element")
+        if not isinstance(local, str) or local not in by_key or local in held:
+            raise SourceError(f"{where} must name each existing emitted element once")
+        element = by_key[local]
+        if (local not in source_keys and element.get("occurrence_of") not in
+                {section["key"] + "/" + key for key in source_keys}):
+            raise SourceError(f"{where} for {local} is not backed by the base English artifact")
+        if element["kind"] not in ("prayer", "dialogue", "form"):
+            raise SourceError(f"{where} for {local} must replace a spoken body")
+        replaces = entry.get("replaces")
+        if not isinstance(replaces, dict) or set(replaces) != ENGLISH_REPLACES_FIELDS:
+            raise SourceError(f"{where} for {local} replaces carries exactly "
+                              f"{', '.join(sorted(ENGLISH_REPLACES_FIELDS))}")
+        if (replaces.get("witness") != section.get("witness") or
+                replaces.get("artifact") != section.get("artifact")):
+            raise SourceError(f"{where} for {local} does not name the base English witness and artifact")
+        digest = replaces.get("text_sha256")
+        if not isinstance(digest, str) or re.fullmatch(r"[0-9a-f]{64}", digest) is None:
+            raise SourceError(f"{where} for {local} needs an exact lowercase text_sha256")
+        block = entry.get("english")
+        if not isinstance(block, dict) or not block or set(block) - ADDITIONAL_SIDE_FIELDS:
+            raise SourceError(f"{where} for {local} has unknown or malformed English source fields")
+        for field in ("witness", "artifact", "column"):
+            if not isinstance(block.get(field), str) or not block[field].strip():
+                raise SourceError(f"{where} for {local} needs explicit {field}")
+        selectors = [field for field in ("element", "elements") if field in block]
+        if len(selectors) != 1:
+            raise SourceError(f"{where} for {local} needs exactly one source element selector")
+        selected = [block["element"]] if selectors[0] == "element" else block["elements"]
+        if (not isinstance(selected, list) or not selected or
+                any(not isinstance(one, str) or not one.strip() for one in selected) or
+                len(selected) != len(set(selected))):
+            raise SourceError(f"{where} for {local} needs distinct nonempty source element keys")
+        if block.get("relation") not in RELATIONS:
+            raise SourceError(f"{where} for {local} needs an explicit source relation")
+        if not isinstance(entry.get("turns_basis"), str) or not entry["turns_basis"].strip():
+            raise SourceError(f"{where} for {local} needs a source-specific turns_basis")
+        translation = side_text(entry, "en", witnesses, restricted, library, element["key"], name)
+        if translation is None or not translation.get("turns"):
+            raise SourceError(f"{where} for {local} needs an exact English source-row turn partition")
+        if not any(not turn.get("action") and not turn.get("gloss")
+                   for turn in translation["turns"]):
+            raise SourceError(f"{where} for {local} needs at least one spoken source turn")
+        held[local] = {"replaces": replaces, "translation": translation}
+    return held
+
+
 def from_artifact(
     section: dict, witnesses: dict, restricted: dict, absences: dict,
     library: dict, name: str, options: dict | None = None,
@@ -2349,6 +2429,9 @@ def from_artifact(
             element["locus"] = held["locus"]
             if element["note"] is None:
                 element["note"] = held["note"]
+    replacements = artifact_english_replacements(
+        section, set(source_groups), elements, witnesses, restricted, library, name,
+    )
     prefix = section["key"] + "/"
     for element in elements:
         local = element["key"][len(prefix):]
@@ -2362,6 +2445,19 @@ def from_artifact(
         if markers is not None:
             element["translations"] = cut_through(
                 element["translations"] or [], markers, where, name)
+        replacement = replacements.pop(local, None)
+        if replacement is not None:
+            if (local, "en") in element_provenance:
+                raise SourceError(f"{name}: {where} cannot inherit English provenance over a replacement")
+            old = [row for row in element["translations"] or [] if row["lang"] == "en"]
+            if (len(old) != 1 or old[0]["source_id"] != replacement["replaces"]["witness"] or
+                    hashlib.sha256(old[0]["text"].encode("utf-8")).hexdigest() !=
+                    replacement["replaces"]["text_sha256"]):
+                raise SourceError(f"{name}: {where} replacement does not match the exact existing English body")
+            element["translations"] = [
+                replacement["translation"] if row["lang"] == "en" else row
+                for row in element["translations"] or []
+            ]
         for lang in ("en", "la"):
             block = element_provenance.pop((local, lang), None)
             if block is None:
@@ -2392,6 +2488,8 @@ def from_artifact(
                         "exactly once in its text"
                     )
             rows[0]["conditional_spans"] = spans
+    if replacements:
+        raise SourceError(f"{name}: section {section['key']} leaves English replacements unapplied")
     if element_provenance or conditional_spans:
         left = sorted(set(element_provenance) | set(conditional_spans))[0]
         raise SourceError(f"{name}: section {section['key']} leaves {left} unapplied")
@@ -2937,7 +3035,7 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
             for field in (
                 "exclusions", "turn_partitions", "absent_latin_by_element",
                 "element_conditions", "inserted", "junctions", "incipit_markers",
-                "element_provenance", "conditional_spans", "additional_texts",
+                "element_provenance", "conditional_spans", "additional_texts", "english_replacements",
             ):
                 if field in section:
                     raise SourceError(
@@ -3102,7 +3200,7 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         "model-gap": "unresolved", "outside-layer": "inapplicable",
         "not-applicable": "inapplicable",
     }
-    coverage_witnesses = {row["source_id"]: row for row in manifest}
+    coverage_witnesses = {(row["lang"], row["source_id"]): row for row in manifest}
     for section in sections:
         for element in section["elements"]:
             disposition = {}

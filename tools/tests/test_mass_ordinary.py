@@ -353,6 +353,18 @@ class OrdinaryStructure(unittest.TestCase):
         # C26 optional source presentation: English has one source-grounded
         # priest-with-assistants turn; the separate Latin remains priest only.
         expected.add(("roman-1962", "oblatio/per-evangelica-dicta", "en"))
+        # Each checked Lasance replacement has its own exact, language-local
+        # source partition, including single-actor prayers.
+        inventory = tomllib.loads(ROMAN_1962_INVENTORY.read_text())
+        replacements = [
+            (section["key"], row)
+            for section in inventory["sections"]
+            for row in section.get("english_replacements", [])
+        ]
+        self.assertEqual(len(replacements), 101)
+        replacement_keys = {("roman-1962", section + "/" + row["element"], "en")
+                            for section, row in replacements}
+        expected |= replacement_keys
         self.assertEqual(reached, expected)
         # Postconciliar: speakers priest/all; roles only where the 2002
         # Praefationes print versicle and response marks, none for the Pax.
@@ -407,7 +419,8 @@ class OrdinaryStructure(unittest.TestCase):
                 continue
             # The divided dialogue blocks are held to their partitions by
             # tests/tools/mass-ordinary.test; these are the single-row turns.
-            if calendar.startswith("roman-") and key in roman_elements:
+            if (calendar.startswith("roman-") and key in roman_elements
+                    and (calendar, key, lang) not in replacement_keys):
                 self.assertEqual(len(turns), 1, (calendar, key, lang))
                 self.assertEqual(turns[0]["speaker"], roman_elements[key])
                 self.assertEqual(
@@ -2332,7 +2345,7 @@ process.stdout.write(JSON.stringify({
             # translation fields and the postconciliar stream stay identical.
             "pentecost_10_text": (
                 178,
-                "1737e8921fd5a83e74e69e022d34cdd17bf101b150cc0fe0ed450e55dc522207",
+                "7a67fe1856d2089fd3995d7ad6dddbc6b9776a1cadeb0fabc16878040f1e1d75",
             ),
             # Re-pinned 2026-10-19 (C4 step 2), diffed against HEAD 1107fdc1a:
             # the sequence is unchanged and only the Preface dialogue and the
@@ -2386,8 +2399,8 @@ process.stdout.write(JSON.stringify({
         self.assertIn("Approved English text is not published here", report["kyrie"])
         self.assertNotIn(ICEL_SOURCE_ID, report["kyrie"])
         self.assertNotIn(ICEL_ACKNOWLEDGEMENT, report["kyrie"])
-        self.assertIn("WE therefore, humbly pray", report["te_igitur_1861"])
-        self.assertNotIn("used by permission", report["te_igitur_1861"])
+        self.assertIn("Wherefore, we humbly pray and beseech Thee", report["te_igitur_1962"])
+        self.assertNotIn("used by permission", report["te_igitur_1962"])
 
     def test_the_propers_are_read_in_the_order_the_mass_is_said(self) -> None:
         """The whole point of the frame, over the real Easter Sunday formulary.
@@ -2519,8 +2532,8 @@ process.stdout.write(JSON.stringify({
         # Held: the facing column was read, so the Latin stands in its own right
         # and no reason is offered for a silence there is not.
         canon = report["te_igitur_in_each"]
-        self.assertIn("WE therefore, humbly pray", canon["en"])
-        self.assertNotIn("WE therefore, humbly pray", canon["la"])
+        self.assertIn("Wherefore, we humbly pray and beseech Thee", canon["en"])
+        self.assertNotIn("Wherefore, we humbly pray and beseech Thee", canon["la"])
         self.assertIn("TE igitur, clementissime Pater", canon["la"])
         self.assertNotIn("Not shown: its Latin.", canon["la"])
         self.assertNotIn("The 1861 witness prints this block only in English", canon["la"])
@@ -2831,35 +2844,54 @@ process.stdout.write(JSON.stringify({
         antiphon = dialogues["roman-1962 praeparatio/introibo-ad-altare-dei la"]
         self.assertTrue(antiphon["rendered_turns"][0]["texts"][0]["text"].startswith("Ant. "))
         antiphon = dialogues["roman-1962 praeparatio/introibo-ad-altare-dei en"]
-        self.assertTrue(antiphon["rendered_turns"][0]["texts"][0]["text"].startswith("Anth. "))
+        self.assertTrue(antiphon["rendered_turns"][0]["texts"][0]["text"].startswith("I will go in"))
         for name, dialogue in dialogues.items():
             calendar, key, lang = name.split(" ")
             rows = [row for row in dialogue["rendered_turns"] if row.get("gloss") != "true"]
+            spoken_source = [turn for turn in dialogue["source_turns"] if turn.get("gloss") is not True]
+            wanted = expected_cues[key]
+            if calendar == "roman-1962" and lang == "en":
+                # The new witness supplies its own actors and roles. An
+                # unassigned printed R. must not inherit the old Server.
+                speakers = {"priest": ("P", "Priest"), "server": ("S", "Server"),
+                            "all": ("All", "All")}
+                roles = {"versicle": ("℣", "Versicle"), "response": ("℟", "Response")}
+                wanted = []
+                for source in spoken_source:
+                    speaker = speakers.get(source["speaker"])
+                    role = roles.get(source["dialogue_role"])
+                    mark = role[0] if role else speaker[0] if speaker else None
+                    label = (role[1] + (" — " + speaker[1] if speaker else "")
+                             if role else speaker[1] if speaker else None)
+                    wanted.append((mark, label, source["printed_marker"] if mark else None))
             with self.subTest(dialogue=name):
                 self.assertEqual(
                     [
                         (
-                            [cue["mark"] for cue in row["cues"]][0],
-                            row["labels"][0],
+                            row["cues"][0]["mark"] if row["cues"] else None,
+                            row["labels"][0] if row["labels"] else None,
                             row["printed_marker"],
                         )
                         for row in rows
                     ],
-                    expected_cues[key],
+                    wanted,
                 )
-                spoken_source = [turn for turn in dialogue["source_turns"] if turn.get("gloss") is not True]
+                self.assertEqual(len(rows), len(spoken_source))
                 for row, source in zip(rows, spoken_source):
-                    self.assertEqual(len(row["cues"]), 1, "one visible cue")
-                    self.assertEqual(row["cues"][0]["aria_hidden"], "true")
-                    self.assertEqual(len(row["labels"]), 1, "one accessible label")
+                    cued = bool(source["speaker"] or source["dialogue_role"])
+                    self.assertEqual(len(row["cues"]), int(cued), "one cue only for a known actor or role")
+                    if cued:
+                        self.assertEqual(row["cues"][0]["aria_hidden"], "true")
+                    self.assertEqual(len(row["labels"]), int(cued), "one accessible label per cue")
                     self.assertEqual(row["texts"][0]["lang"], lang)
                     body = row["texts"][0]["text"]
                     # No printed cue letter survives in the spoken words, and
                     # the source row is recovered exactly from marker + body.
-                    self.assertNotRegex(body, r"^(?:[PRVS]\.|[℣℟])")
+                    if cued:
+                        self.assertNotRegex(body, r"^(?:[PRVS]\.|[℣℟])")
                     marker = row["printed_marker"]
                     self.assertEqual(
-                        (marker + " " if marker else "") + body, source["text"]
+                        (marker + " " if marker and cued else "") + body, source["text"]
                     )
                     self.assertEqual(row["received"], body)
 
@@ -2907,24 +2939,30 @@ process.stdout.write(JSON.stringify({
     def test_source_gloss_is_a_note_after_three_spoken_acclamations(self) -> None:
         report = self.run_harness()
         for key in ("kyrie-eleison", "christe-eleison", "kyrie-eleison-repetitio"):
-            english = report["real_dialogues"]["roman-1962 praeparatio/" + key + " en"]
+            lasance = report["real_dialogues"]["roman-1962 praeparatio/" + key + " en"]
+            self.assertEqual(len(lasance["rendered_turns"]), 3)
+            self.assertTrue(all(not row.get("gloss") for row in lasance["source_turns"]))
             latin = report["real_dialogues"]["roman-1962 praeparatio/" + key + " la"]
-            self.assertEqual(len(english["rendered_turns"]), 4)
             self.assertEqual(len(latin["rendered_turns"]), 3)
-            gloss = english["rendered_turns"][-1]
-            source = english["source_turns"][-1]
-            self.assertTrue(source["gloss"])
-            self.assertEqual((gloss["gloss"], gloss["note_role"], gloss["note_label"]),
-                             ("true", "note", "Source translation"))
-            self.assertEqual((gloss["speaker"], gloss["dialogue_role"], gloss["printed_marker"], gloss["action"]),
-                             (None, None, None, None))
-            self.assertEqual(gloss["cues"], [])
-            self.assertEqual(gloss["labels"], [])
-            self.assertEqual(gloss["texts"], [{"lang": "en", "text": source["text"]}])
-            self.assertEqual(gloss["received"], source["text"])
-            self.assertIsNone(gloss["id"])
-            self.assertIsNone(gloss["semantic_id"])
-            self.assertTrue(all(row["dialogue_role"] is None for row in english["rendered_turns"] + latin["rendered_turns"]))
+            self.assertTrue(all(row["dialogue_role"] is None for row in lasance["rendered_turns"] + latin["rendered_turns"]))
+        # Lasance now prints the acclamations in English without a gloss.
+        # Keep the nonspoken-gloss renderer contract with a technical fixture;
+        # test_ordinary_source_gloss independently checks the old source rows.
+        english = report["synthetic_gloss"]
+        self.assertEqual(len(english["rendered_turns"]), 4)
+        gloss = english["rendered_turns"][-1]
+        source = english["source_turns"][-1]
+        self.assertTrue(source["gloss"])
+        self.assertEqual((gloss["gloss"], gloss["note_role"], gloss["note_label"]),
+                         ("true", "note", "Source translation"))
+        self.assertEqual((gloss["speaker"], gloss["dialogue_role"], gloss["printed_marker"], gloss["action"]),
+                         (None, None, None, None))
+        self.assertEqual(gloss["cues"], [])
+        self.assertEqual(gloss["labels"], [])
+        self.assertEqual(gloss["texts"], [{"lang": "en", "text": source["text"]}])
+        self.assertEqual(gloss["received"], source["text"])
+        self.assertIsNone(gloss["id"])
+        self.assertIsNone(gloss["semantic_id"])
 
     def run_harness(self) -> dict:
         run = subprocess.run(
@@ -3042,7 +3080,7 @@ class FormularyPage(unittest.TestCase):
             "roman-1962": (
                 "advent-1",
                 10,
-                "a56e18c2c969205706010fddf708825f488822e5ded71733dcbb4eb58606b7f3",
+                "79c653c1a959ef53d7ce772bd6cf38ebee7296b1069dc26780ef723512de572c",
             ),
             "postconciliar": (
                 "ot-18",
@@ -3663,6 +3701,18 @@ function realTurns(file, key, lang) {
   return { source_turns: held.turns, rendered_turns: dialogueReport(rendered) };
 }
 const realDialogues = {};
+const glossTurns = ['priest', 'server', 'priest'].map((speaker, index) => ({
+  key: 'invocation-' + index, speaker: speaker, dialogue_role: null,
+  action: null, printed_marker: null, text: 'Technical invocation.'
+}));
+glossTurns.push({key: 'source-gloss', speaker: null, dialogue_role: null,
+  action: null, printed_marker: null, gloss: true, text: 'Technical translation.'});
+const glossFile = {...syntheticFile, sections: [{elements: [{
+  ...structured, key: 'synthetic/gloss',
+  translations: [{lang: 'en', source_id: 'synthetic-en', rights: 'project-created',
+    text: glossTurns.map((row) => row.text).join('\n'), turns: glossTurns}]
+}]}]};
+const syntheticGloss = realTurns(glossFile, 'synthetic/gloss', 'en');
 for (const lang of ['en', 'la']) {
   for (const key of ['praeparatio/confiteor-sacerdotis',
     'praeparatio/confiteor-ministrorum', 'oblatio/suscipiat-dominus',
@@ -3733,7 +3783,7 @@ process.stdout.write(JSON.stringify({
   versicles_1861: P.renderElement(
     all(tlm).find((e) => e.key === 'praeparatio/dominus-vobiscum'), tlm).text(),
   kyrie: P.renderElement(all(pc).find((e) => e.key.endsWith('/kyrie')), pc).text(),
-  te_igitur_1861: P.renderElement(all(tlm).find((e) => e.key === 'canon/te-igitur'), tlm).text(),
+  te_igitur_1962: P.renderElement(all(tlm).find((e) => e.key === 'canon/te-igitur'), tlm).text(),
   easter_1962: easter.order.filter((one) => MARKS.has(one) || one.indexOf('/') < 0),
   nativity_forms: nativity.map((one) => ({
     id: one.id, broke: one.result.broke,
@@ -3769,6 +3819,7 @@ process.stdout.write(JSON.stringify({
     received: markedRendered.receivedText()
   },
   real_dialogues: realDialogues,
+  synthetic_gloss: syntheticGloss,
   opaque_all: opaqueAll,
   real_orate_latin: {
     source_text: orateLatin && orateLatin.text,

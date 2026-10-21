@@ -1006,7 +1006,10 @@
       mass: mass.key,
       formId: properRows.length ? properRows[0].proper.form_id || 'main' : request.form || 'main',
       sourcePaths: hasOwn(mass, 'proper_source_paths') ? mass.proper_source_paths : [],
-      calendarCycles: request.lectionary || {
+      calendarCycles: request.lectionary ? {
+        sunday: request.lectionary.sunday,
+        weekday: request.lectionary.weekday
+      } : {
         sunday: SUNDAY_CYCLE_KEYS.indexOf(request.cycle) >= 0 ? request.cycle : null,
         weekday: WEEKDAY_CYCLE_KEYS.indexOf(request.cycle) >= 0 ? request.cycle : null
       },

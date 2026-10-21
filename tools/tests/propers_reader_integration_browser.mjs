@@ -293,6 +293,7 @@ const MULTIPLE_TRANSLATION_WITNESS =
   'edition.edward-caswall.lyra-catholica.london-1849';
 const STATES = Object.freeze({
   roman: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la' }),
+  romanTrinity: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'trinity', bible: 'douay-rheims', orations: 'la' }),
   post: hash({ missal: 'postconciliar', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la' }),
   cycles: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'la' }),
   cycleA: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'la', cycle: 'A' }),
@@ -310,15 +311,16 @@ const STATES = Object.freeze({
   fast: hash({ missal: 'postconciliar', type: 'marian', mass: 'visitation-blessed-virgin-mary', bible: 'douay-rheims', orations: 'la' }),
   englishMultiple: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'commemoratione-omnium-fidelium-defunctorum', form: 'first', bible: 'douay-rheims', orations: 'en' }),
   englishWitness: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'commemoratione-omnium-fidelium-defunctorum', form: 'first', bible: 'douay-rheims', orations: 'en', 'translation-witness': MULTIPLE_TRANSLATION_WITNESS }),
-  englishOne: hash({ missal: 'roman-1962', type: 'common', mass: 'commune-virginum-4', bible: 'douay-rheims', orations: 'en' }),
+  englishOne: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'comm-ss-alexandri-eventii-theoduli-martyrum', bible: 'douay-rheims', orations: 'en' }),
   englishNone: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 's-hilarii-episcopi-confessoris-ecclesiae-doctoris', bible: 'douay-rheims', orations: 'en' }),
   romanChristmasForms: hash({ missal: 'roman-1962', type: 'christological', mass: 'nativitate-domini-octave', bible: 'douay-rheims', orations: 'la' }),
   romanChristmasNight: hash({ missal: 'roman-1962', type: 'christological', mass: 'nativitate-domini-octave', bible: 'douay-rheims', orations: 'la', form: 'night' }),
   postPentecostDay: hash({ missal: 'postconciliar', type: 'seasonal', mass: 'pentecost', bible: 'douay-rheims', orations: 'la', form: 'day' }),
   romanPentecost: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'pentecost', bible: 'douay-rheims', orations: 'la' }),
   romanPentecostEnglish: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'pentecost', bible: 'douay-rheims', orations: 'en' }),
-  englishWithoutLatinBody: hash({ missal: 'roman-1962', type: 'common', mass: 'commune-virginum-4', bible: 'douay-rheims', orations: 'en' }),
+  englishWithoutLatinBody: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'comm-ss-alexandri-eventii-theoduli-martyrum', bible: 'douay-rheims', orations: 'en' }),
   pre1955Advent: hash({ missal: 'roman-pre-1955', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la' }),
+  pre1955Trinity: hash({ missal: 'roman-pre-1955', type: 'seasonal', mass: 'trinity', bible: 'douay-rheims', orations: 'la' }),
   pre1955Palm: hash({ missal: 'roman-pre-1955', type: 'seasonal', mass: 'palm-sunday', bible: 'douay-rheims', orations: 'la' }),
   pre1955Supper: hash({ missal: 'roman-pre-1955', type: 'seasonal', mass: 'mass-of-the-lords-supper', bible: 'douay-rheims', orations: 'la' }),
   formWithoutMass: hash({ missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', form: 'vigil' }),
@@ -785,9 +787,12 @@ async function assertions(cdp, base) {
       await latinExactIncomplete(cdp, 'roman-1962'), value.notice);
     assert.match(value.notice, /Bible reconstructions/);
     assert.deepEqual(value.semantic.coverage.map(row => [row.scope, row.completeness]),
-      [['formulary:advent-1', 'complete']]);
+      [['formulary:advent-1', 'partial']]);
     assert.equal(value.semantic.resolved.formulary, 'advent-1');
-    assert.equal(value.semantic.events.length, 10);
+    // A date-free Advent formulary cannot resolve the Sunday/feria Alleluia.
+    assert.equal(value.semantic.events.length, 9);
+    assert.deepEqual(value.semantic.unresolvedChoices.map(row => row.id),
+      ['proper-condition/roman-1962/advent-1/main/advent-1-alleluia-use']);
     assert.equal(await evaluate(cdp, 'location.pathname'), CURRENT);
     const semanticOrder = await evaluate(cdp, `(() => ({
       events: propersReaderDebug.semantic.events.filter(row => row.kind === 'proper').map(row => row.id),
@@ -821,7 +826,10 @@ async function assertions(cdp, base) {
     const withheld = await snapshot(cdp);
     assert.equal(withheld.outcome, 'ready');
     assert.equal(withheld.noticeHidden, false);
-    assert.match(withheld.notice, /Proper text is unavailable/i);
+    assert.match(withheld.notice, /Latin Propers: 2\/3 represented texts/);
+    assert.match(await evaluate(cdp, `[...document.querySelectorAll('#reader-document .proper')]
+      .find(row => row.querySelector('.proper-name')?.textContent === 'Collect')?.textContent`),
+      /Latin text unavailable/);
     assert.deepEqual(withheld.semantic.coverage.map(row => [row.scope, row.state]),
       [['formulary:s-ioannis-mariae-vianney-confessoris', 'supported'],
         ['proper-original:la', 'unavailable']]);
@@ -877,10 +885,10 @@ async function assertions(cdp, base) {
   });
 
   await check('Proper search states the inherited recension limit and rejects civil-date inference', async () => {
-    await candidate(cdp, base, STATES.pre1955Advent);
+    await candidate(cdp, base, STATES.pre1955Trinity);
     await click(cdp, '[data-reader-action="browse"]');
     await evaluate(cdp, `(() => {
-      document.querySelector('#proper-search-input').value = 'advent-1';
+      document.querySelector('#proper-search-input').value = 'trinity';
       document.querySelector('#proper-search-form').requestSubmit();
     })()`);
     await waitFor(cdp, `document.querySelectorAll('.proper-search-results a').length > 0`,
@@ -982,6 +990,10 @@ async function assertions(cdp, base) {
 
   await check('pre-1955 coverage, inheritance, and departures remain visible and print-safe', async () => {
     await candidate(cdp, base, STATES.pre1955Advent);
+    assert.equal((await snapshot(cdp)).outcome, 'invalid');
+    assert.match(await evaluate(cdp, 'propersReaderDebug.error[0].message'),
+      /foreign-source Proper applicability.*source condition remains unresolved/);
+    await candidate(cdp, base, STATES.pre1955Trinity);
     let value = await snapshot(cdp);
     assert.equal(value.sourceHidden, false);
     assert.match(value.source, /Recension coverage: Structural-only finding aid/);
@@ -1100,8 +1112,8 @@ async function assertions(cdp, base) {
     assert.match(value.source, /Rights: Public Domain/);
     const row = await evaluate(cdp, `(() => {
       const event = propersReaderDebug.semantic.events.find(one =>
-        one.kind === 'proper' && one.editionSlotLabel === 'Alleluia');
-      if (!event) throw new Error('Alleluia semantic event is absent');
+        one.kind === 'proper' && one.editionSlotLabel === 'Postcommunion');
+      if (!event) throw new Error('Postcommunion semantic event is absent');
       const node = document.querySelector('[data-semantic-event-id="' + event.id + '"]');
       const composed = node && node.querySelector('.composed');
       return {
@@ -1110,7 +1122,7 @@ async function assertions(cdp, base) {
         lang: composed && composed.lang
       };
     })()`);
-    assert.match(row.composed, /This is a wise virgin, and one of the number of the prudent/);
+    assert.match(row.composed, /Being refreshed by the participation of these sacred mysteries/);
     assert.equal(row.lang, 'en');
     assert.doesNotMatch(row.text, /Latin text unavailable|No English body is held/i);
   });
@@ -1215,8 +1227,8 @@ async function assertions(cdp, base) {
     })()`);
     const expectedIds = [
       'proper-choice/postconciliar/pentecost/day/entrance-antiphon',
-      ...Array.from({ length: 10 }, (_row, index) =>
-        'proper/postconciliar/pentecost/' + String(index + 17).padStart(3, '0'))
+      ...[17, 18, 19, 21, 22, 24, 25, 26].map(index =>
+        'proper/postconciliar/pentecost/' + String(index).padStart(3, '0'))
     ];
     assert.equal(value.outcome, 'ready');
     assert.equal(value.formulary, 'pentecost');
@@ -1232,17 +1244,19 @@ async function assertions(cdp, base) {
         { id: 'caritas-dei', events: ['proper/postconciliar/pentecost/016'] }
       ]
     });
-    assert.deepEqual(value.unresolved, [{
-      id: value.choice.id, options: ['spiritus-domini', 'caritas-dei']
-    }]);
+    assert.deepEqual(value.unresolved, [
+      { id: 'proper-choice/postconciliar/pentecost/day/pentecost-day-readings',
+        options: ['common', 'year-b-optional', 'year-c-optional'] },
+      { id: value.choice.id, options: ['spiritus-domini', 'caritas-dei'] }
+    ]);
     assert.deepEqual(value.domChoice, {
       group: 'entrance-antiphon', state: 'required',
       options: [['spiritus-domini', 'available'], ['caritas-dei', 'available']],
       members: ['proper/postconciliar/pentecost/015', 'proper/postconciliar/pentecost/016'],
       note: 'The source appoints one of these alternatives here. None is selected; the option groups below are not cumulative.'
     });
-    assert.ok(value.semanticIds.indexOf('proper/postconciliar/pentecost/020') <
-      value.semanticIds.indexOf('proper/postconciliar/pentecost/021'));
+    assert.ok(!value.semanticIds.includes('proper/postconciliar/pentecost/020'));
+    assert.ok(!value.semanticIds.includes('proper/postconciliar/pentecost/023'));
     assert.ok(value.semanticIds.indexOf('proper/postconciliar/pentecost/021') <
       value.semanticIds.indexOf('proper/postconciliar/pentecost/022'));
 
@@ -1293,7 +1307,7 @@ async function assertions(cdp, base) {
   });
 
   await check('C6 bounded Missal uses one Mass while language, form, and source dependencies keep the monolith', async () => {
-    await candidate(cdp, base, STATES.roman + '&mode=missal');
+    await candidate(cdp, base, STATES.romanTrinity + '&mode=missal');
     const missal = await evaluate(cdp, `({ outcome: propersReaderDebug.outcome,
       state: propersReaderDebug.state, loads: propersReaderDebug.loads,
       ordinary: document.querySelectorAll('#reader-document .ordinary-element').length })`);
@@ -1301,7 +1315,7 @@ async function assertions(cdp, base) {
     assert.equal(missal.state.requestedMode, 'missal');
     assert.equal(missal.state.options.ordinary, true);
     assert.equal(missal.loads['structure/propers/catalog/roman-1962.json'], 1);
-    assert.equal(missal.loads['structure/propers/mass/roman-1962/advent-1.json'], 1);
+    assert.equal(missal.loads['structure/propers/mass/roman-1962/trinity.json'], 1);
     assert.equal(missal.loads['structure/propers/roman-1962.json'] || 0, 0);
     assert.equal(missal.loads['structure/ordinary/roman-1962.json'], 1);
     assert.ok(missal.ordinary > 0);
@@ -1309,7 +1323,8 @@ async function assertions(cdp, base) {
       [STATES.missing, 'browse'],
       [STATES.romanPentecostEnglish + '&mode=missal', 'ready'],
       [STATES.roman + '&mode=study', 'ready'],
-      [STATES.roman + '&mode=compare&compare=oration-language&peer-orations=en', 'ready'],
+      [STATES.romanTrinity + '&mode=compare&compare=oration-language&peer-orations=en', 'ready'],
+      [STATES.roman + '&mode=missal', 'ready'],
       [STATES.romanChristmasForms, 'unresolved'],
       [STATES.romanChristmasForms + '&mode=missal', 'unresolved'],
       [STATES.romanChristmasNight + '&mode=missal', 'ready'],
@@ -1325,7 +1340,7 @@ async function assertions(cdp, base) {
   });
 
   await check('C5 Propers Compare independently resolves two languages on one date-free formulary', async () => {
-    const route = STATES.roman + '&mode=compare&compare=oration-language&peer-orations=en';
+    const route = STATES.romanTrinity + '&mode=compare&compare=oration-language&peer-orations=en';
     await candidate(cdp, base, route);
     const value = await evaluate(cdp, `(() => ({
       outcome: propersReaderDebug.outcome,
@@ -1344,7 +1359,7 @@ async function assertions(cdp, base) {
     assert.equal(value.outcome, 'ready');
     assert.equal(value.state.requestedMode, 'compare');
     assert.equal(value.state.civilDate, null);
-    assert.equal(value.semantic.anchor.correspondingFormulary, 'advent-1');
+    assert.equal(value.semantic.anchor.correspondingFormulary, 'trinity');
     assert.equal(value.semantic.calendarResults, null);
     assert.equal(value.semantic.units.length, 10);
     assert.deepEqual(value.semantic.sides.map(row => row.id), ['la', 'en']);
@@ -1362,9 +1377,9 @@ async function assertions(cdp, base) {
   });
 
   await check('C5 Propers Compare controls retain the Proper location on return to Read', async () => {
-    await candidate(cdp, base, STATES.roman + '&location=proper%2Froman-1962%2Fadvent-1%2F002');
+    await candidate(cdp, base, STATES.romanTrinity + '&location=proper%2Froman-1962%2Ftrinity%2F002');
     await waitFor(cdp,
-      `window.TriptychReaderShell && document.querySelector('#reader-document [data-semantic-location="proper/roman-1962/advent-1/002"]')?.getBoundingClientRect().top <= 300`,
+      `window.TriptychReaderShell && document.querySelector('#reader-document [data-semantic-location="proper/roman-1962/trinity/002"]')?.getBoundingClientRect().top <= 300`,
       'initial Proper location scroll');
     await click(cdp, '[data-reader-action="mode"]');
     await click(cdp, '[data-mode="compare"]');
@@ -1394,19 +1409,22 @@ async function assertions(cdp, base) {
       active: document.activeElement?.dataset.readerAction
     })`);
     assert.equal(read.outcome, 'ready');
-    assert.equal(read.location, 'proper/roman-1962/advent-1/002');
+    assert.equal(read.location, 'proper/roman-1962/trinity/002');
     assert.doesNotMatch(read.hash, /(?:compare|peer-orations)=/);
     assert.equal(read.active, 'mode');
   });
 
   await check('C5 Propers Compare rejects absent locations and unresolved source choices', async () => {
-    await candidate(cdp, base, STATES.roman +
+    await candidate(cdp, base, STATES.romanTrinity +
       '&mode=compare&compare=oration-language&peer-orations=en&location=compare%2Fproper%2Fnot-held');
     assert.equal(await evaluate(cdp, 'propersReaderDebug.outcome'), 'invalid');
     assert.equal(await evaluate(cdp, 'propersReaderDebug.error?.[0]?.code'), 'invalid-semantic-location');
     await candidate(cdp, base, STATES.postPentecostDay +
       '&mode=compare&compare=oration-language&peer-orations=en');
     assert.equal(await evaluate(cdp, 'propersReaderDebug.outcome'), 'invalid');
+    assert.equal(await evaluate(cdp, 'propersReaderDebug.error?.[0]?.code'), 'unsupported-comparison');
+    await candidate(cdp, base, STATES.roman +
+      '&mode=compare&compare=oration-language&peer-orations=en');
     assert.equal(await evaluate(cdp, 'propersReaderDebug.error?.[0]?.code'), 'unsupported-comparison');
   });
 
@@ -1488,7 +1506,7 @@ async function assertions(cdp, base) {
     await click(cdp, '[data-mode="read"]');
     await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state?.requestedMode === 'read'`, 'Read return from Study');
     assert.equal(await evaluate(cdp, 'propersReaderDebug.state.semanticLocation?.eventId'), proper);
-    await candidate(cdp, base, STATES.roman +
+    await candidate(cdp, base, STATES.romanTrinity +
       '&mode=compare&compare=oration-language&peer-orations=en&location=compare%2Fproper%2Fcollect');
     await waitFor(cdp,
       `document.querySelector('#reader-document [data-semantic-location="compare/proper/collect"]')?.getBoundingClientRect().top <= 300`,
@@ -1497,7 +1515,7 @@ async function assertions(cdp, base) {
     await click(cdp, '[data-mode="study"]');
     await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state?.requestedMode === 'study'`, 'Study from Compare');
     assert.equal(await evaluate(cdp, 'propersReaderDebug.state.semanticLocation?.eventId'),
-      'proper/roman-1962/advent-1/002');
+      'proper/roman-1962/trinity/002');
   });
 
   await check('C5 Propers Study rejects absent locations and annotates unresolved source choices', async () => {
@@ -1622,7 +1640,8 @@ async function assertions(cdp, base) {
       outcome: propersReaderDebug.outcome,
       form: propersReaderDebug.semantic?.resolved?.form,
       ordinary: propersReaderDebug.semantic?.events.filter(row => row.kind === 'ordinary-element').length,
-      choices: [...document.querySelectorAll('#reader-document .ordinary-choice')].map(row => row.dataset.optionGroup),
+      choices: [...document.querySelectorAll('#reader-document .ordinary-choice')].map(row => row.dataset.optionGroup)
+        .filter(id => id && !id.startsWith('proper-choice/')),
       unresolved: (propersReaderDebug.semantic?.ordinaryUnresolved || []).map(row => row.element),
       properChoice: propersReaderDebug.semantic?.events.some(row => row.kind === 'proper-choice'),
       calendarResult: propersReaderDebug.semantic?.calendarResult
@@ -2342,7 +2361,7 @@ async function assertions(cdp, base) {
     });
     await candidate(cdp, base, STATES.roman);
     assert.equal(await evaluate(cdp, `document.querySelectorAll('.reader-actions [data-reader-action]').length`), 4);
-    assert.equal(await evaluate(cdp, `document.querySelectorAll('#reader-document .proper').length`), 10);
+    assert.equal(await evaluate(cdp, `document.querySelectorAll('#reader-document .proper').length`), 9);
     await openSurface(cdp, 'details');
     assert.equal(await evaluate(cdp, `document.querySelector('[data-reader-surface="details"]').contains(document.activeElement)`), true);
     await escape(cdp);

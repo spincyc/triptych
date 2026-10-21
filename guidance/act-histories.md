@@ -1659,8 +1659,12 @@ between witnesses. The configured adapter families are:
 
 - `roman-1962-propers`: direct Latin proper bodies from the existing calendar
   owner, admitted only by its exact text hash, target-verification provenance
-  and existing publication decision. These are modern editorial projections
-  verified to the target, not diplomatic transcriptions of an older antecedent.
+  and existing publication decision. These are modern editorial projections,
+  not diplomatic transcriptions of an older antecedent. A `collated-exact`
+  selection retains its per-unit transformations, evidence and nonexact-target
+  qualifications; it is not promoted to `editorial-projection-exact-to-target`.
+  Both relationships still require the exact owning projection and identified
+  1962 verification target.
 - `cummiskey-1861-latin-ordinary`: the held facing-language Ordinary columns of
   that identified lay witness, including its bounded Canon division. This is
   not an altar book, complete missal, or established 1920/1962 Ordinary.

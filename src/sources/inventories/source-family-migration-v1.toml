@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-10-21"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:4cea2e5b7ad18382d18cd956f916172bf103b9bee2c04d8bc6c8295254d0fc1b"
+inventory_snapshot = "sha256:9ddea8b5c9f0e240f8d6e378b9ca15d88f2e0dff0a140f8fa9dfc3e59aad08af"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:6ed335d8da72bef42e08cfe75d6d126d301cac9be075e0a5976736ec938cb94f"
-canonical_catalog_snapshot = "sha256:d9fae842a48358d588545b40a560a96c274932bce690c5d13ec2233731edb99c"
+canonical_catalog_snapshot = "sha256:0c21c075fb31f2789b2a20eddccbf27acd49c486bc264d6fff6df8fc08ef3a29"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:02892c90580574f7a0550bae20ac51b99b772f19211c79317c0d2d6f94aea30f"
+snapshot = "sha256:3d2b045d781ec691de29771cdf4f01d56a00c0d4f52bea5975be86790df06ed6"
 families = []
 
 [[review_units]]
@@ -73,7 +73,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/last-supper-calvary-and-the-mass"
-surface_snapshot = "sha256:2b7ebb442642c906d7526587bc0f2e27467fc63c9914ce80eea55d01b5896f1c"
+surface_snapshot = "sha256:a438598a6017ff2c1c71518130dc5d1e0129b4593e7f2a8eca0ffefb736d45dd"
 review_state = "pending"
 
 [[review_units]]
@@ -448,12 +448,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost"
-surface_snapshot = "sha256:060ea6ba6967d3c44495996d0668c3d5d260f514ab76a9066aeaa79f08dc2389"
+surface_snapshot = "sha256:e2534be3ac5f16ab05a3787e06c22be8517c5873af6150c6614ccaa55de53315"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost"
-surface_snapshot = "sha256:1e31b1df4bce2a1e4fa0ba735771114099ec0e5dd2364fdb0b6086a7d25b3217"
+surface_snapshot = "sha256:425630364e5bda494b5d93795cc9616d043295dee92641421088437ef082965a"
 review_state = "pending"
 
 [[review_units]]
@@ -593,57 +593,57 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a"
-surface_snapshot = "sha256:1463bf6f2f664cf9399ea40fbb2384f0c4c3fdeddd3b87571776075de8336ee1"
+surface_snapshot = "sha256:b97af9dc12c4a8424699d5467ee759399a1518c8715db5b3b6145aa0e4539a96"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a"
-surface_snapshot = "sha256:a01a0cf9dcc101b09e78ee5a8e5ad1d193d172fa2aede0fa1c2a87027d0c20e2"
+surface_snapshot = "sha256:c44a647664a05ee0d3c5f5fdcee0736933bfb8453c89fe5bf7561972969c1de2"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:d8caecedf6aea0cff94800d41df5a87696738d27c9729e1e12a9aabd7c3b740c"
+surface_snapshot = "sha256:12a404e0bcdefe28219c3bfe8736c7a7cd2937c9de68857ae45ab01324378092"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-twelfth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:c5dddfbd4ba0f8e126e6682bc357572b971b0643632a8997aa994e56cefa9675"
+surface_snapshot = "sha256:09f36e95df06ba50c1f08978288c1fca326424b1be7c1ea0fc92877f3cfbf25d"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-thirteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:e1d54377f7184a52f8d67e83a352fac305d47832c9b4b8a6d59dd488ee306820"
+surface_snapshot = "sha256:e73da272666a09aba993bfc9ebc80adc11ea8e6e3e054719adb9d838af465678"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-fourteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:8ba9191f37e391a600d5cafebe71d8d9ebd86eb9263000150b32470f6a7c67a2"
+surface_snapshot = "sha256:00bb2d1bf9d1644b98e6e9d3e3d7e04694728a7fd38946585043ca352b184dd0"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-fifteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:15478d4a769e33ed5a2bd2f168654a0f0d2ccd2df968d4a896d17b32a13e4413"
+surface_snapshot = "sha256:fa9361e6fe980885cf332950a7a00f5a5f2d49b288243bb1b8138b3459c0e62a"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:7dbbd177ec16f3f1b7439785eee05b3dbb5097bde97222781b962da2c47b9a61"
+surface_snapshot = "sha256:e5258df7de12d5c6d3e72f6eadefa55d8d3a1acf718483324e98d125990257fe"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:4cf72ecb3c77255ba43e6e3a4b9c3f216ca23d023e7058b242c89425e317ccde"
+surface_snapshot = "sha256:1e278c604ec837c76f4258e85d7f1223a79eb20a6442b34fdeb462ba1c04c9cb"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:3e2d4e05a32d6dc02546f8737d74861af0e662ac0345e85298e9bda9d7bf856f"
+surface_snapshot = "sha256:ecaf6b237fe6524d91ddb60f9ac8af736a4c7208bae26025045939be5d76c350"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b"
-surface_snapshot = "sha256:6af06695a449840e650fd2c8d654374fd97c217707746387c8ceb276f6f76a1f"
+surface_snapshot = "sha256:70fb44f861981a1ec86cf961e7f41b6faadcff729ac63bd6a6b37cef035e5f1f"
 review_state = "pending"
 
 [[review_units]]
@@ -658,22 +658,22 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:bea4d4caab0cd5f017fdc15b8111a899ee7b2bba1078e895a2d113dc70303c46"
+surface_snapshot = "sha256:06381ea3c972db509123b43cf23edf35594658c7333465f4a7ff8e5d2e4654ad"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:d4ef619b53053ab86aef50deab04310742a04d10709b794a3cd7244774f04084"
+surface_snapshot = "sha256:f5cbd84030fd0ce5ac68ae032ff9272ffa7d40685394f658b75cb6b65adafa2c"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:a138007786fe34dc888405690ee920e6d287d26d8f96c290da66ec0ddbfb6438"
+surface_snapshot = "sha256:2dbaac3e391ad3cf25703a960164216b2a5213874ddc26bb6a86d5cb0342100e"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
-surface_snapshot = "sha256:d87dfdd7d31c398dd2588b101c3d2e8418dc877523869edbace21447e04efe7c"
+surface_snapshot = "sha256:dcbcc71c7f0cdf2e03515a80498702817978292e6c288ce115360c59f9910069"
 review_state = "pending"
 
 [[review_units]]

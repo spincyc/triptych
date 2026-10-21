@@ -501,7 +501,9 @@ async function compareRailGeometry(cdp) {
 async function runCompareRailAssertions(cdp, base) {
   const cases = [
     ['day', STATES.dayCompare],
-    ['propers', STATES.propers + '&mode=compare&compare=oration-language&peer-orations=en']
+    // Advent's date-free Sunday/feria condition is intentionally unresolved.
+    ['propers', STATES.propers.replace('mass=advent-1', 'mass=trinity') +
+      '&mode=compare&compare=oration-language&peer-orations=en']
   ];
   await check('production Compare body and rendered left content clear the unchanged wide action rail', async () => {
     for (const [width, height] of [[1280, 900], [1440, 900], [1024, 768]]) {

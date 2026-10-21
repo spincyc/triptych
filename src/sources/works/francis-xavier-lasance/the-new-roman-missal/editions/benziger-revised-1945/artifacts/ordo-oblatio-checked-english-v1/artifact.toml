@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Existing lasance-new-roman-missal-rights-v1.toml establishes nonrenewal of the registered1945English edition in the United States. These ordinary numbered printed763–772pages precede the excluded1298a–n and1302a–d later inserts. Only checked historical English and its inline source action are retained, without illustrations, scan-host matter or whole-PDF redistribution."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "Held facsimile SHA2566cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70. The source owner read all selected words on actual AP761–770images; an independent review read every mapped spoken word/cut/turn and inline Creed action on all ten images. OCR is a finding aid only. No source actor is inherited from the1861base."
+retrieved = "2026-10-21"
+sha256 = "2db0e8ae78380927e05cc60fe8d1f976144c858e90e47dde0d169bfe102c5493"
+byte_size = 15831
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ordo-oblatio-checked-english-v1/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "Select the32existing spoken Ordinary keys from the image-checked source packet. Preserve all source words, pointing, intrinsic hyphens and source crosses. Join physical wraps/discretionary line-end hyphens and close letterspacing as in the reviewed packet. Normalize barred-R cue to R. mechanically, keeping source glyph separately; P. remains P. Exact turns remove these prefixes once. Split the actual inline Here genuflect instruction into a nonspoken action row without adding/deleting words. Adjacent rubrics, illustrations, headers, host watermarks and unmatched prayer units are outside this derivative."
+notes = "Historical hand-missal English, not approved1962English or an exact-target claim. Source32keys include the locally abbreviated Glory, etc.; that row is explicitly not a complete target-English doxology. Unknown response actors are empty in TSV and omitted/null in structured turns. Suscipiat has no added Amen. Source-context conditions remain distinct from target1962rules."

@@ -384,7 +384,7 @@ EXAMPLES = {
         Example(
             "tools/act-history compare --comparison roman-canon-memento-wilson-r-and-cummiskey-1861",
             (
-                "{\"apparatus_caveat\":\"Wilson page 2 note 6 already reports pro quibus tibi offerimus vel in O (Ottobonianus 313). Its presence in Cummiskey and absence from Wilson's main text do not establish a nineteenth-century introduction. Printed editi... [+209079 chars]",
+                "{\"apparatus_caveat\":\"Wilson page 2 note 6 already reports pro quibus tibi offerimus vel in O (Ottobonianus 313). Its presence in Cummiskey and absence from Wilson's main text do not establish a nineteenth-century introduction. Printed editi... [+209080 chars]",
             ),
             note="Omitting --out prints the complete comparison, including its source members, diff and apparatus caveat.",
         ),
@@ -411,14 +411,14 @@ EXAMPLES = {
         Example(
             "tools/act-history corpus --out .scratch/history-engine-expansion/example-corpus",
             (
-                "wrote 1439 text units on 26 isolated reconstruction branches and 11 native text version branches to .scratch/history-engine-expansion/example-corpus",
+                "wrote 1557 text units on 26 isolated reconstruction branches and 11 native text version branches to .scratch/history-engine-expansion/example-corpus",
             ),
             note="Writes isolated, bounded reconstructions and native text versions whose parents require checked evidence receipts.",
         ),
         Example(
             "tools/act-history corpus --source src/sources/inventories/catholic-eucharistic-history-v1.toml --out .scratch/history-engine-expansion/example-corpus-explicit",
             (
-                "wrote 1439 text units on 26 isolated reconstruction branches and 11 native text version branches to .scratch/history-engine-expansion/example-corpus-explicit",
+                "wrote 1557 text units on 26 isolated reconstruction branches and 11 native text version branches to .scratch/history-engine-expansion/example-corpus-explicit",
             ),
             note="Names the routing inventory explicitly and writes a separate disposable copy for reproducibility checks.",
         ),

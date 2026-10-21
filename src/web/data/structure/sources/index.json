@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3620,
-  "editions": 1250,
-  "passages": 5699,
-  "readable": 3344,
-  "works": 1062
+  "artifacts": 3685,
+  "editions": 1255,
+  "passages": 6067,
+  "readable": 3501,
+  "works": 1064
  },
  "facets": {
   "authors": [
@@ -535,7 +535,7 @@
    },
    {
     "id": "Congregation for Divine Worship and the Discipline of the Sacraments",
-    "works": 16
+    "works": 17
    },
    {
     "id": "Congregation for the Doctrine of the Faith",
@@ -2143,7 +2143,7 @@
    },
    {
     "id": "Triptych contributors",
-    "works": 1
+    "works": 2
    },
    {
     "id": "U2 / U2.com",
@@ -2616,6 +2616,10 @@
     "works": 3
    },
    {
+    "id": "official-liturgical-notification",
+    "works": 3
+   },
+   {
     "id": "papal-catechesis",
     "works": 3
    },
@@ -2708,6 +2712,10 @@
     "works": 2
    },
    {
+    "id": "editorial-source-projection",
+    "works": 2
+   },
+   {
     "id": "encyclopedia",
     "works": 2
    },
@@ -2777,10 +2785,6 @@
    },
    {
     "id": "official-government-copyright-reference",
-    "works": 2
-   },
-   {
-    "id": "official-liturgical-notification",
     "works": 2
    },
    {
@@ -3205,10 +3209,6 @@
    },
    {
     "id": "edited-source-collection",
-    "works": 1
-   },
-   {
-    "id": "editorial-source-projection",
     "works": 1
    },
    {
@@ -3978,11 +3978,11 @@
   ],
   "languages": [
    {
-    "editions": 630,
+    "editions": 632,
     "id": "en"
    },
    {
-    "editions": 368,
+    "editions": 371,
     "id": "la"
    },
    {
@@ -4178,20 +4178,20 @@
     "label": "20th century"
    },
    {
-    "editions": 650,
+    "editions": 655,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 2008,
-    "editions": 479,
+    "artifacts": 2052,
+    "editions": 480,
     "id": "public-domain"
    },
    {
-    "artifacts": 872,
-    "editions": 431,
+    "artifacts": 874,
+    "editions": 433,
     "id": "restricted"
    },
    {
@@ -4205,8 +4205,8 @@
     "id": "licensed"
    },
    {
-    "artifacts": 121,
-    "editions": 30,
+    "artifacts": 140,
+    "editions": 33,
     "id": "project-created"
    },
    {
@@ -6556,9 +6556,10 @@
      "file": "1929-herder-second-revised-1929.json",
      "id": "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929",
      "language": "la-de",
-     "passages": 0,
-     "readable": 0,
+     "passages": 2,
+     "readable": 1,
      "rights": [
+      "public-domain",
       "restricted"
      ],
      "title": "Das vollständige Römische Meßbuch, second revised edition, 1929 printing",
@@ -10603,7 +10604,7 @@
      "file": "1862-pustet-ratisbon-1862.json",
      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
      "language": "la",
-     "passages": 377,
+     "passages": 380,
      "readable": 345,
      "rights": [
       "public-domain"
@@ -10655,8 +10656,8 @@
      "file": "1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
      "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
      "language": "la",
-     "passages": 48,
-     "readable": 0,
+     "passages": 93,
+     "readable": 36,
      "rights": [
       "public-domain"
      ],
@@ -10707,7 +10708,7 @@
      "file": "1962-vatican-typica-1962.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
      "language": "la",
-     "passages": 447,
+     "passages": 477,
      "readable": 0,
      "rights": [
       "unresolved"
@@ -10772,7 +10773,7 @@
      "file": "2002-vatican-typica-tertia-2002.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
      "language": "la",
-     "passages": 34,
+     "passages": 35,
      "readable": 0,
      "rights": [
       "restricted"
@@ -10809,7 +10810,7 @@
      "file": "2010-2010-english-icel-antiphonary.json",
      "id": "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary",
      "language": "en",
-     "passages": 9,
+     "passages": 143,
      "readable": 0,
      "rights": [
       "restricted"
@@ -10829,6 +10830,19 @@
       "unresolved"
      ],
      "title": "The Roman Missal, third edition — English excerpts published by the Liturgy Office of the Bishops' Conference of England and Wales",
+     "year": 2011
+    },
+    {
+     "date": "2011",
+     "file": "2011-2011-english-us-catholic-book-publishing.json",
+     "id": "edition.catholic-church.missale-romanum.2011-english-us-catholic-book-publishing",
+     "language": "en",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "The Roman Missal, English translation according to the third typical edition, for use in the dioceses of the United States of America — Catholic Book Publishing altar edition, 2011",
      "year": 2011
     }
    ],
@@ -10910,7 +10924,7 @@
      "file": "1981-latin-editio-typica-altera-1981.json",
      "id": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
      "language": "la",
-     "passages": 24,
+     "passages": 28,
      "readable": 0,
      "rights": [
       "restricted"
@@ -11247,7 +11261,7 @@
      "file": "1861-philadelphia-1861.json",
      "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
      "language": "en",
-     "passages": 440,
+     "passages": 447,
      "readable": 22,
      "rights": [
       "public-domain",
@@ -13050,6 +13064,32 @@
     "la"
    ],
    "title": "Notificatio de ritu Exorcismi"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Congregation for Divine Worship and the Discipline of the Sacraments",
+   "category": "official-liturgical-notification",
+   "directory": "editions/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/notification-memorial-mary-mother-church-2018/",
+   "editions": [
+    {
+     "date": "2026-10-20",
+     "file": "2026-2026-english-press-office-web-2026-10-20.json",
+     "id": "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notification-memorial-mary-mother-church-2018.english-press-office-web-2026-10-20",
+     "language": "en",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Notification on the Memorial of the Blessed Virgin Mary, Mother of the Church — official English Press Office web state",
+     "year": 2026
+    }
+   ],
+   "id": "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notification-memorial-mary-mother-church-2018",
+   "languages": [
+    "en"
+   ],
+   "title": "Notification on the Memorial of the Blessed Virgin Mary, Mother of the Church"
   },
   {
    "alternate_titles": [
@@ -16242,7 +16282,7 @@
      "file": "1945-benziger-revised-1945.json",
      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
      "language": "en",
-     "passages": 33,
+     "passages": 53,
      "readable": 0,
      "rights": [
       "public-domain",
@@ -34406,12 +34446,38 @@
      "file": "2026-2026-09-03-editorial-projection.json",
      "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03",
      "language": "la",
-     "passages": 1055,
-     "readable": 1055,
+     "passages": 1064,
+     "readable": 1064,
      "rights": [
       "project-created"
      ],
      "title": "Roman 1962 Latin Proper Editorial Projection, 3 September 2026",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-20",
+     "file": "2026-2026-10-20-editorial-projection.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20",
+     "language": "la",
+     "passages": 110,
+     "readable": 110,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 20 October 2026",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-21",
+     "file": "2026-2026-10-21-editorial-projection.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-21",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 21 October 2026",
      "year": 2026
     }
    ],
@@ -34420,6 +34486,32 @@
     "la"
    ],
    "title": "Roman 1962 Latin Proper Editorial Projection"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Triptych contributors",
+   "category": "editorial-source-projection",
+   "directory": "editions/triptych/roman-1962-ordinary-editorial-projection/",
+   "editions": [
+    {
+     "date": "2026-10-19",
+     "file": "2026-2026-10-19-editorial-projection.json",
+     "id": "edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Ordinary Editorial Projection, 19 October 2026",
+     "year": 2026
+    }
+   ],
+   "id": "work.triptych.roman-1962-ordinary-editorial-projection",
+   "languages": [
+    "la"
+   ],
+   "title": "Roman 1962 Ordinary Editorial Projection"
   },
   {
    "alternate_titles": [

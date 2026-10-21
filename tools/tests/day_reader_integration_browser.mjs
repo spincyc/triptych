@@ -1312,6 +1312,14 @@ async function c4Step2DialogueTurns(cdp, base) {
       'oblatio/per-omnia-saecula', 'oblatio/sursum-corda',
       'communio/per-omnia-saecula-post-libera-nos', 'communio/pax-domini'
     ];
+    // Lasance's held English does not name an actor for these responses,
+    // and prints no versicle/response role in the Pax dialogue.
+    const englishSpec = {
+      ...spec['roman-1962'],
+      'oblatio/per-omnia-saecula': [V, ['℟', 'Response']],
+      'oblatio/sursum-corda': [V, ['℟', 'Response'], V, ['℟', 'Response'], V, ['℟', 'Response']],
+      'communio/pax-domini': [P, S]
+    };
     const data = {};
     for (const calendar of Object.keys(spec)) {
       const file = JSON.parse(await readFile(
@@ -1352,7 +1360,7 @@ async function c4Step2DialogueTurns(cdp, base) {
             assert.doesNotMatch(text, /^(?:[PRVS]\.|[℣℟])/, headed[index] + ' heading prints no cue');
           });
         }
-        for (const [key, cues] of Object.entries(spec[calendar])) {
+        for (const [key, cues] of Object.entries(lang === 'en' ? englishSpec : spec[calendar])) {
           const eventId = 'ordinary-element/' + key;
           const expected = sourceTurns(calendar, key, lang);
           assert.equal(expected.length, cues.length, eventId + ' reviewed turn count');
@@ -1443,7 +1451,7 @@ async function c4Step2DialogueTurns(cdp, base) {
             assert.equal(turn.selected.replace(/\s+/g, ' ').trim(), label + ' ' + turn.words,
               where + ' selected text');
           });
-          if (key === 'praeparatio/introibo-ad-altare-dei') {
+          if (key === 'praeparatio/introibo-ad-altare-dei' && lang === 'la') {
             // The antiphon label is printed matter, not a cue: it stays.
             assert.match(observed.turns[0].words, /^Anth?\. /, eventId + ' keeps its antiphon label');
           }
@@ -2026,7 +2034,7 @@ async function runAssertions(cdp, base) {
             ?.textContent.trim() || '')
       };
     })()`);
-    const emberIds = Array.from({ length: 19 }, (_row, index) =>
+    const emberIds = Array.from({ length: 24 }, (_row, index) =>
       'proper/roman-1962/advent-ember-saturday/' + String(index + 1).padStart(3, '0'));
     assert.equal(ember.outcome, 'ready');
     assert.equal(ember.mode, 'missal');
@@ -2043,10 +2051,10 @@ async function runAssertions(cdp, base) {
     assert.deepEqual(ember.frame.reasons.map(row => [row.kind, row.applicability]),
       [['text-not-held', 'unavailable']]);
     assert.ok(ember.frame.reasons[0].basis.trim().length > 0);
-    assert.deepEqual(ember.visibleNames.slice(2, 15), [
-      'First Lesson', 'First Gradual', 'Second Lesson', 'Second Gradual',
-      'Third Lesson', 'Third Gradual', 'Fourth Lesson', 'Fourth Gradual',
-      'Fifth Lesson', 'Hymn (Benedictus es)', 'Epistle', 'Tract', 'Gospel'
+    assert.deepEqual(ember.visibleNames.slice(2, 20), [
+      'First Lesson', 'First Gradual', 'Oratio', 'Second Lesson', 'Second Gradual',
+      'Oratio', 'Third Lesson', 'Third Gradual', 'Oratio', 'Fourth Lesson', 'Fourth Gradual',
+      'Oratio', 'Fifth Lesson', 'Hymn (Benedictus es)', 'Oratio', 'Epistle', 'Tract', 'Gospel'
     ]);
   });
 
@@ -2138,6 +2146,8 @@ async function runAssertions(cdp, base) {
           '.proper-unplaced-before-frame .proper-unplaced-note')].map(row =>
             row.textContent.replace(/\\s+/g, ' ').trim()),
         ordinary: events.filter(row => row.kind.startsWith('ordinary-')).length,
+        frame: dayReaderDebug.semantic.coverage.find(row => row.scope === 'ordinary-frame:roman-1962'),
+        limitation: document.querySelector('.missal-frame-limitation')?.textContent || '',
         domIds: [...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
           .map(row => row.dataset.semanticEventId)
       };
@@ -2151,7 +2161,10 @@ async function runAssertions(cdp, base) {
       row.basis.trim().length > 0));
     assert.equal(ash.notes.length, 5);
     assert.ok(ash.notes.every(row => /before the ordinary Mass frame.*no Ordinary seat is invented/i.test(row)));
-    assert.ok(ash.ordinary > 0);
+    assert.equal(ash.ordinary, 0);
+    assert.equal(ash.frame.state, 'unavailable');
+    assert.match(ash.frame.reasons[0].basis, /Oratio super populum/i);
+    assert.match(ash.limitation, /Ordinary frame is unavailable/i);
     assert.deepEqual(ash.domIds,
       await evaluate(cdp, 'dayReaderDebug.semantic.events.map(row => row.id)'));
   });
@@ -2487,7 +2500,7 @@ async function runAssertions(cdp, base) {
       })`);
       assert.equal(committed.open, true);
       assert.match(committed.text, /epiphany-january-6; epiphany-transferred-to-sunday/);
-      assert.match(committed.text, /rendered territorial results.*branch-local formulary choice.*unresolved/i);
+      assert.match(committed.text, /current request is validated, but no formulary outcome has been selected/i);
       assert.deepEqual(committed.headings,
         ['Selection', 'Reader outcome', 'Related reader', 'Elsewhere in Triptych']);
       await escape(cdp);
@@ -3365,10 +3378,11 @@ async function runAssertions(cdp, base) {
     try {
       const cases = [
         [STATES.romanMissal, 'en', [
-          ['praeparatio/confiteor-sacerdotis', [['P', 'Priest', 'P.', 'I confess to Almighty God, &c.']]],
-          ['praeparatio/confiteor-ministrorum', [['S', 'Server', 'R.', 'I confess to Almighty God, to blessed Mary']]],
-          ['oblatio/suscipiat-dominus', [['S', 'Server', 'R.', 'May the Lord receive the sacrifice']]],
-          ['conclusio/deo-gratias', [['℟', 'Response — Server', 'R.', 'Thanks be to God.']]]
+          ['praeparatio/confiteor-sacerdotis', [['P', 'Priest', null, 'I CONFESS to almighty God, to blessed Mary']]],
+          ['praeparatio/confiteor-ministrorum', [['S', 'Server', null, 'I CONFESS to almighty God, to blessed Mary']]],
+          // The printed R. alone does not establish an actor or structured role.
+          ['oblatio/suscipiat-dominus', [[null, null, null, 'R. MAY the Lord receive this sacrifice']]],
+          ['conclusio/deo-gratias', [['S', 'Server', 'R.', 'Thanks be to God.']]]
         ]],
         [STATES.romanLatinMissal, 'la', [
           ['praeparatio/confiteor-sacerdotis', [['P', 'Priest', 'P.', 'Confiteor Deo omnipotenti, &c.']]],
@@ -3468,23 +3482,23 @@ async function runAssertions(cdp, base) {
           observed.turns.forEach((turn, index) => {
             const [glyph, label, marker, opening] = expected[index];
             const where = `${eventId} ${lang} turn ${index}`;
-            assert.deepEqual(turn.generated, [glyph], where + ' sets exactly one visible cue');
-            assert.deepEqual(turn.cueHidden, ['true'], where + ' hides the decorative glyph');
+            assert.deepEqual(turn.generated, glyph ? [glyph] : [], where + ' source-qualified cue');
+            assert.deepEqual(turn.cueHidden, glyph ? ['true'] : [], where + ' hides the decorative glyph');
             assert.equal(turn.label, label, where + ' accessible cue');
-            assert.equal(turn.cueLang, 'en', where + ' cue language');
+            assert.equal(turn.cueLang, glyph ? 'en' : null, where + ' cue language');
             assert.equal(turn.wordsLang, lang, where + ' spoken language');
             assert.equal(turn.printedMarker, marker, where + ' separated printed marker');
             assert.ok(turn.words.startsWith(opening), where + ' spoken words: ' + turn.words);
-            assert.doesNotMatch(turn.words, /^(?:[PRVS]\.|[℣℟])/, where + ' no printed cue');
-            assert.deepEqual(announced[index], [label, turn.words], where + ' announcement');
+            if (glyph) assert.doesNotMatch(turn.words, /^(?:[PRVS]\.|[℣℟])/, where + ' no duplicate printed cue');
+            assert.deepEqual(announced[index], label ? [label, turn.words] : [turn.words], where + ' announcement');
             assert.equal(announced[index].join(' ').match(/[℣℟]/g), null, where + ' glyph silent');
-            assert.equal(turn.selected.replace(/\s+/g, ' ').trim(), label + ' ' + turn.words,
+            assert.equal(turn.selected.replace(/\s+/g, ' ').trim(), (label ? label + ' ' : '') + turn.words,
               where + ' selected text');
           });
           assert.equal(observed.copiedOk, true, eventId + ' copy command');
           assert.equal(
             observed.copied.replace(/\s+/g, ' ').trim(),
-            observed.turns.map((turn) => turn.label + ' ' + turn.words).join(' '),
+            observed.turns.map((turn) => (turn.label ? turn.label + ' ' : '') + turn.words).join(' '),
             eventId + ' copied text holds one cue per turn'
           );
         }

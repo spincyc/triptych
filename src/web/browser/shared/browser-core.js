@@ -1802,7 +1802,8 @@ window.Triptych = (function () {
   const VERSICLE_MARKS = { V: '℣', R: '℟' };
   const VERSICLE_NAMES = { V: 'Versicle.', R: 'Response.' };
 
-  const VERSICLE_CANDIDATE = /([VR])\.(?=\s|$)/g;
+  const VERSICLE_CANDIDATE = /([VR])\.(?=\s|$)|([℣℟])\.?(?=\s|$)/g;
+  const PRINTED_ROLE_LETTERS = { '℣': 'V', '℟': 'R' };
   // Start of text; after sentence or clause punctuation; at the head of a line,
   // whatever ended the one above — liturgical verse is set a colon to the line
   // and most lines end in no punctuation at all; and just inside a bracket,
@@ -1833,17 +1834,23 @@ window.Triptych = (function () {
     while ((found = VERSICLE_CANDIDATE.exec(source)) !== null) {
       const before = source.slice(0, found.index);
       if (!OPENS_A_CLAUSE.test(before) || AN_INITIAL_BEFORE.test(before)) continue;
-      marks.push({ start: found.index, end: found.index + found[0].length, letter: found[1] });
+      marks.push({ start: found.index, end: found.index + found[0].length,
+        letter: found[1] || PRINTED_ROLE_LETTERS[found[2]] });
     }
     return marks;
   }
 
-  /** One stretch [from, to) of `source`, its marks set, appended to `target`. */
-  function appendVersicled(target, source, from, to, marks) {
+  /** One stretch [from, to); `lineStart` survives inline rubric splits. */
+  function appendVersicled(target, source, from, to, marks, lineStart) {
+    const opening = lineStart === undefined ? from : lineStart;
     let at = from;
     marks.forEach(function (mark) {
       if (mark.start < from || mark.end > to) return;
       if (mark.start > at) target.appendChild(document.createTextNode(source.slice(at, mark.start)));
+      // The source explicitly opens another versicle or response here. Give
+      // it a line of its own even when the artifact stores the exchange in
+      // one paragraph. Hard wraps and P./R. speaker letters create no turns.
+      if (source.slice(opening, mark.start).trim()) target.appendChild(el('br'));
       target.appendChild(versicleMark(mark.letter));
       at = mark.end;
     });
@@ -1910,11 +1917,11 @@ window.Triptych = (function () {
     let at = from;
     actions.forEach(function (action) {
       if (action.start < from || action.end > to) return;
-      appendVersicled(target, source, at, action.start, marks);
+      appendVersicled(target, source, at, action.start, marks, from);
       target.appendChild(inlineRubric(source, action, marks));
       at = action.end;
     });
-    appendVersicled(target, source, at, to, marks);
+    appendVersicled(target, source, at, to, marks, from);
   }
 
   /**

@@ -64,6 +64,14 @@ from _tooling import (
     with_examples,
 )
 from _latin_body_damage import body_damage
+from _lasance_publication import (
+    LASANCE_1945_EDITION,
+    LASANCE_1945_RIGHTS_ARTIFACT,
+    LASANCE_1945_RIGHTS_SHA256,
+    LASANCE_1945_PAGE_ARTIFACT,
+    LASANCE_1945_PAGE_SHA256,
+    approved_lasance_publication,
+)
 from _proper_latin import (
     EXACT_WITNESS_TYPES,
     HELD_UNPUBLISHED_BODY_STATUS,
@@ -1656,7 +1664,9 @@ def overlay_entry_source_problems(
     return problems
 
 
-def overlay_entry_publication_problems(where: str, entry: dict) -> list[str]:
+def overlay_entry_publication_problems(
+    where: str, entry: dict, witnesses: dict[str, dict] | None = None,
+) -> list[str]:
     """Validate the independently publishable body behind an exact collation.
 
     The page-image artifact proves what was inspected, even when those exact
@@ -1764,16 +1774,23 @@ def overlay_entry_publication_problems(where: str, entry: dict) -> list[str]:
     edition_id = artifact_data.get("edition_id")
     edition = records.get(edition_id) if isinstance(edition_id, str) else None
     edition_date = edition.data.get("date") if edition is not None else None
-    if (
-        edition is None
-        or edition.record_type != "edition"
-        or not isinstance(edition_date, str)
-        or re.fullmatch(r"[0-9]{4}", edition_date) is None
-        or int(edition_date) >= 1931
-    ):
+    pre_1931 = (
+        edition is not None
+        and edition.record_type == "edition"
+        and isinstance(edition_date, str)
+        and re.fullmatch(r"[0-9]{4}", edition_date) is not None
+        and int(edition_date) < 1931
+    )
+    lasance_1945 = (
+        edition is not None
+        and edition.record_type == "edition"
+        and edition_date == "1945"
+        and approved_lasance_publication(entry, artifact_data, records, witnesses)
+    )
+    if not (pre_1931 or lasance_1945):
         problems.append(
-            f"{where}: publication artifact must resolve to a pre-1931 edition; "
-            "that publication date is the public-domain basis"
+            f"{where}: publication artifact must resolve to a pre-1931 edition "
+            "or the registered Lasance1945 original-expression rights witness"
         )
 
     # The scan proof and the distributable transcription witness the same
@@ -3752,7 +3769,7 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
                         f"{source_row.get('rights')!r}"
                     )
             problems.extend(overlay_entry_source_problems(where, entry, source_rows))
-            problems.extend(overlay_entry_publication_problems(where, entry))
+            problems.extend(overlay_entry_publication_problems(where, entry, source_rows))
             found, verdict = witness_problems(where, entry, payload)
             problems.extend(found)
             if verdict is not None:

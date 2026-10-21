@@ -1,6 +1,30 @@
 schema_version = 1
 
 [[deliverables]]
+id = "missal-reader-interrupted-recovery-2026-10-21"
+owner = "guidance/liturgy-browser-roadmap.md"
+promise = "Recover the interrupted reader and checked-source work, repair reproducible implementation failures, validate the annual rendering and publication gates, and publish the reviewed result to main without claiming full annual text completeness."
+state = "blocked"
+
+  [[deliverables.requirements]]
+  id = "missal-recovery-implementation"
+  criterion = "Recovered generic display, source-marked dialogue, checked English replacements and Advent source bindings pass their regressions; Lectionary explanatory metadata cannot invalidate otherwise supported source-path cycles."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "tools/tests/test_proper_source_path_cli.py", "tools/tests/test_mass_ordinary_english_replacements.py", "tools/tests/test_roman_1962_lasance_advent_first_three.py", "tools/tests/test_proper_dialogue.py"]
+
+  [[deliverables.requirements]]
+  id = "missal-recovery-validation"
+  criterion = "The complete 5,856-render annual matrix, affected source and reader checks, deployment-source checks, public artifact build and GitHub Pages verification pass, or any unchanged inherited failure is explicitly compared and recorded."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/liturgy-browser-roadmap.md", "tools/tests/test_complete_missal_year.py"]
+
+  [[deliverables.requirements]]
+  id = "missal-recovery-publication"
+  criterion = "The exact outgoing objects are reviewed for public disclosure, the coherent result is committed on the workspace branch and fast-forward pushed to main, and remote and automatic deployment outcomes are reported accurately."
+  status = "blocked"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "missal-reader-c1-coverage-2026-10-19"
 owner = "guidance/liturgy-browser-roadmap.md"
 promise = "Complete C1 of the 2026-10-19 Missal reader plan: source-grounded expected-target inventory, one typed coverage report, truthful language and witness controls and selected-Mass notices, consistent browser/generated-data/CLI results, and validated regular checkpoints published on feature/missal-reader."

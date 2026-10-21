@@ -43785,13 +43785,13 @@
      {
       "availability": {
        "absent-in-witness": 0,
-       "available": 0,
+       "available": 3,
        "inapplicable": 0,
        "not-publishable": 0,
-       "not-sourced": 4,
+       "not-sourced": 1,
        "unresolved": 0
       },
-      "available": 0,
+      "available": 3,
       "exact_target": 0,
       "lang": "en",
       "occurrences": 4,
@@ -43856,7 +43856,13 @@
    "kind": "seasonal",
    "name": "First Sunday of Advent",
    "season": "advent",
-   "witnesses": []
+   "witnesses": [
+    {
+     "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+     "label": "The New Roman Missal in Latin and English, revised edition, by F. X. Lasance and Francis Augustine Walsh (New York: Benziger Brothers, 1945), ca. 1955-56 printing (Internet Archive delivery locator fr-lasance-missal-1937; locator mislabelled)",
+     "lang": "en"
+    }
+   ]
   },
   {
    "citations": [
@@ -61250,12 +61256,6 @@
     {
      "cycle": null,
      "cycle_family": null,
-     "ref": "Psalms 88:27-28,30",
-     "slot": "Tract"
-    },
-    {
-     "cycle": null,
-     "cycle_family": null,
      "ref": "John 18:33-37",
      "slot": "Gospel"
     },
@@ -61268,7 +61268,7 @@
     {
      "cycle": null,
      "cycle_family": null,
-     "ref": "Psalms 28:10",
+     "ref": "Psalms 28:10-11",
      "slot": "Communion"
     }
    ],
@@ -61282,13 +61282,13 @@
        "inapplicable": 0,
        "not-publishable": 0,
        "not-sourced": 0,
-       "unresolved": 0
+       "unresolved": 3
       },
       "available": 0,
       "exact_target": 0,
       "lang": "la",
-      "occurrences": 0,
-      "scripture_occurrences": 8
+      "occurrences": 3,
+      "scripture_occurrences": 7
      },
      {
       "availability": {
@@ -61297,13 +61297,13 @@
        "inapplicable": 0,
        "not-publishable": 0,
        "not-sourced": 0,
-       "unresolved": 0
+       "unresolved": 3
       },
       "available": 0,
       "exact_target": 0,
       "lang": "en",
-      "occurrences": 0,
-      "scripture_occurrences": 8
+      "occurrences": 3,
+      "scripture_occurrences": 7
      }
     ]
    },
