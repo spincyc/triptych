@@ -15,8 +15,8 @@
     {
       "id": "western",
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "1d3cebf3198ed070cfc012fba80fe1e0d3796bac426b234efb7230a7e343e924",
-      "byte_size": 2737321
+      "sha256": "5411a12f2953a8bf86724f3dbe04471c906accb46a3c570d8690e837f2b469ae",
+      "byte_size": 2741941
     },
     {
       "id": "presentation",
@@ -105,8 +105,8 @@
     {
       "id": "dossier:regional-variants",
       "path": "src/sources/inventories/eucharistic-stages/regional-variants.json",
-      "sha256": "1b8d0c5b530452d6ad2c107f315f546b1ea38ff10239b27443045f290f25c8ab",
-      "byte_size": 26727
+      "sha256": "ea9ce5e7a346a3b90ef8aa88d877e108103bc3c0d79968613f89cbb52100ecd6",
+      "byte_size": 37745
     },
     {
       "id": "dossier:slavonic-roman",
@@ -9593,10 +9593,10 @@
           "label": "Divine Worship: The Missal for the personal ordinariates"
         }
       ],
-      "documented_stage_count": 5,
+      "documented_stage_count": 6,
       "provisional_stage_count": 2,
       "text_coverage_counts": {
-        "not-transcribed": 7
+        "not-transcribed": 8
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -14768,7 +14768,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "The reviewed Roman adaptations receipt adds 26 bounded regional book, component, translation and lead candidates. Compare original books and acts for Zaire, Divine Worship, India, Brazil, Switzerland and other named uses before asserting textual succession or local adoption. The 1991 Brazilian entry is a Portuguese common-formula translation witness, not a dated original-anaphora revision. Four leads in the receipt lack a secure finite chronology coordinate. Harley 5512 remains a cross-lane contact witness without an established Catholic reception and is not routed here.",
+      "missing_stage_chain": "The reviewed Roman adaptations receipt adds 26 bounded regional book, component, translation and lead candidates. Compare original books and acts for Zaire, Divine Worship, India, Brazil, Switzerland and other named uses before asserting textual succession or local adoption. The 1991 Brazilian entry is a Portuguese common-formula translation witness, not a dated original-anaphora revision. Four leads in the receipt lack a secure finite chronology coordinate. Harley 5512 remains a cross-lane contact witness without an established Catholic reception and is not routed here. Batch 4: a 23 April 1988 papal address calls the Zairean form ad experimentum and not yet in a missal; a 2019 papal Congolese-Rite Mass is attested; no 2015 Divine Worship decree located. Further regional permissions are in receipt permissions-batch4-2026-10-21 only.",
       "next_sources": {
         "inventory_source_ids": [
           "ordinariate-dwm",
@@ -14798,7 +14798,9 @@
           "permissions-followup-src-broome-use2026",
           "permissions-followup-src-india1970-use",
           "permissions-followup-src-india1970-clarification",
-          "permissions-followup-src-india1973-report"
+          "permissions-followup-src-india1973-report",
+          "zaire-src-aas1988-address",
+          "zaire-src-papal-message-2020"
         ],
         "source_urls": [
           "https://www.ordinariate.net/divine-worship-missal",
@@ -14828,7 +14830,9 @@
           "https://www.e-periodica.ch/cntmng?pid=zfk-001%3A1977%3A71%3A%3A533",
           "https://www.cccb.ca/wp-content/uploads/2017/11/168-Celebrating-the-Canadian-Liturgical-Books-Part-One.pdf",
           "https://www.chiesadigenova.it/liturgico/nuovo-messale-romano-e-un-dono-alla-chiesa/",
-          "https://www.dbk.de/fileadmin/redaktion/diverse_downloads/presse_2024/2024-023-Anlage2-Pressebericht-Hochgebet-in-Leichter-Sprache.pdf"
+          "https://www.dbk.de/fileadmin/redaktion/diverse_downloads/presse_2024/2024-023-Anlage2-Pressebericht-Hochgebet-in-Leichter-Sprache.pdf",
+          "https://www.vatican.va/archive/aas/documents/AAS-80-1988-ocr.pdf",
+          "https://press.vatican.va/content/francesco/it/messages/pont-messages/2020/documents/papa-francesco_20201201_videomessaggio-volume-lev.pdf"
         ],
         "inspection": "Owning inventory and dated research-receipt metadata reviewed for this crosswalk; direct source inspection and limits remain in their source records.",
         "target": "Zaire French adaptation established by primary decree and selected rubrics; complete approved exemplar remains missing. Divine Worship substantive adaptation established by official descriptions; original decree, 2003/2015 comparison and dated later sanctoral updates remain open. Survey other authorized original adaptations. The reviewed Roman adaptations receipt adds 26 bounded regional book, component, translation and lead candidates. Compare original books and acts for Zaire, Divine Worship, India, Brazil, Switzerland and other named uses before asserting textual succession or local adoption. The 1991 Brazilian entry is a Portuguese common-formula translation witness, not a dated original-anaphora revision. Four leads in the receipt lack a secure finite chronology coordinate. Harley 5512 remains a cross-lane contact witness without an established Catholic reception and is not routed here. The reviewed follow-up establishes India ceremonial use on 15 February 1970 and Broome adaptation use at Pentecost 2026; neither authenticates an exact complete local Missal or supplies missing approval annexes. India English Roman-book implementation and experimental anaphora remain distinct; Broome Roman recognitio remains unverified."
@@ -17236,7 +17240,7 @@
       "id": "lyon",
       "label": "Lyon trajectory",
       "coverage_unit": "trajectory-or-discovery-bucket",
-      "inventory_status": "44-entry diocesan repertoire screened; 1866 Roman-based Lyon component substitutions identified; wider revision census open",
+      "inventory_status": "44-entry diocesan repertoire screened; 1866 Roman-based Lyon component substitutions identified; 1902 Roman approval of a new Roman-Lyonese edition documented; wider revision census open",
       "candidate_ids": [
         "lyon-medieval",
         "lyon-later-series",
@@ -17270,16 +17274,18 @@
           "regional-variants"
         ],
         "stage_ids": [
-          "regional-variants:lyon1866"
+          "regional-variants:lyon1866",
+          "regional-variants:lyon1902"
         ],
-        "scope": "One 1866 Roman-based Lyon state with three title-named substitutions; prior Lyon descent and exact text changes remain open.",
+        "scope": "One 1866 Roman-based Lyon state with three title-named substitutions and the 1902 Roman approval of a new Roman–Lyonese edition, whose two named blessings are added as customary; prior Lyon descent, the 1864 permission, distinctness from 1866 and exact text changes remain open.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 1
+          "not-transcribed": 2
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
-          "regional-variants:lyon-gap"
+          "regional-variants:lyon-gap",
+          "regional-variants:lyon-1902-gap"
         ],
         "reception_limit": "A selected book stage does not prove first local use, whole-book textual descent, or uniform uptake."
       },
@@ -17455,7 +17461,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Read the original permission behind the 1866 title and collate its final Triduum, Order of Mass and Pentecost Vigil against the Roman and prior Lyon books. Read Amiet 1979 and Buenner pp.294–296; acquire original 1771/1825/1844/1868/1904/1956 books, resolve 1844/1846 alias and distinguish Lyon use from Roman, monastic and printing-place contexts.",
+      "missing_stage_chain": "Read the original permission behind the 1866 title and collate its final Triduum, Order of Mass and Pentecost Vigil against the Roman and prior Lyon books. Read Amiet 1979 and Buenner pp.294–296; acquire original 1771/1825/1844/1868/1904/1956 books, resolve 1844/1846 alias and distinguish Lyon use from Roman, monastic and printing-place contexts. Batch 4: the 1866 front matter (views 5–10) holds only Roman bulls, Rites decrees and a Paris printing licence of 13 January 1864; the Lyon-specific approval is still unread. The SRC decree of 1 May 1902 is documented as an approval stage; its printed exemplar (reported 1904) must be compared with 1866 before any transition.",
       "next_sources": {
         "inventory_source_ids": [
           "lyon-usuarium",
@@ -17480,7 +17486,8 @@
           "french-census-7256-usuarium",
           "french-census-7257-usuarium",
           "french-census-7082-usuarium",
-          "french-census-7260-usuarium"
+          "french-census-7260-usuarium",
+          "lyon-src-src-decree-1902"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origin/211/view",
@@ -17505,7 +17512,8 @@
           "https://usuarium.elte.hu/book/7256/view",
           "https://usuarium.elte.hu/book/7257/view",
           "https://usuarium.elte.hu/book/7082/view",
-          "https://usuarium.elte.hu/book/7260/view"
+          "https://usuarium.elte.hu/book/7260/view",
+          "https://www.vatican.va/archive/ass/documents/ASS-35-1902-3-ocr.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
         "target": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Read Amiet 1979 and Buenner pp.294–296; acquire original 1771/1825/1844/1868/1904/1956 books; compare to 802-page 1866 scan; resolve 1844/1846 alias and Lyon use versus Roman, monastic and printing-place contexts. Current owning route limit: Read the original permission behind the 1866 title and collate its final Triduum, Order of Mass and Pentecost Vigil against the Roman and prior Lyon books. Read Amiet 1979 and Buenner pp.294–296; acquire original 1771/1825/1844/1868/1904/1956 books, resolve 1844/1846 alias and distinguish Lyon use from Roman, monastic and printing-place contexts."
@@ -23091,7 +23099,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Shared Cracow titles and Gniezno-received copies must not disappear under Cracow-only grouping; full PietrasIII reconciliation outstanding. Full1510/1532/1545 changes not collated; bibliography duplicates/false-date records remain;1556 question cannot be silently omitted. No complete manuscript/modern local-proper census established;1520 known copy incompleteness must be recorded. The 1481 Strasbourg Poznań attribution still needs extant-copy/ISTC reconciliation. The 1491 Strasbourg Missale Posnaniense is bibliographically attested as GW M2463210, but its described BN Warsaw exemplar was destroyed; text, other copies, local reception, and substantive relation to later editions remain unexamined. 1587 relation to Roman missal and actual local changes need contents; breviary and agenda dates cannot become Mass-book editions. False 1483 colophon may conceal a second edition; 1505 A/B/C are not three automatic substantive states. For 1738, collate the original contents and local proper Masses, relation among NIFC/Jeseník/Jelenia Góra/BN copies, and any later propers; the title itself is attested. The 1986 Polish diocesan Roman Missal is a separate approved operative book state documented by contemporary Notitiae; inspect its original book and 1983/1984 approval acts before relating it textually to older local uses or later printings.",
+      "missing_stage_chain": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Shared Cracow titles and Gniezno-received copies must not disappear under Cracow-only grouping; full PietrasIII reconciliation outstanding. Full1510/1532/1545 changes not collated; bibliography duplicates/false-date records remain;1556 question cannot be silently omitted. No complete manuscript/modern local-proper census established;1520 known copy incompleteness must be recorded. The 1481 Strasbourg Poznań attribution still needs extant-copy/ISTC reconciliation. The 1491 Strasbourg Missale Posnaniense is bibliographically attested as GW M2463210, but its described BN Warsaw exemplar was destroyed; text, other copies, local reception, and substantive relation to later editions remain unexamined. 1587 relation to Roman missal and actual local changes need contents; breviary and agenda dates cannot become Mass-book editions. False 1483 colophon may conceal a second edition; 1505 A/B/C are not three automatic substantive states. For 1738, collate the original contents and local proper Masses, relation among NIFC/Jeseník/Jelenia Góra/BN copies, and any later propers; the title itself is attested. The 1986 Polish diocesan Roman Missal is a separate approved operative book state documented by contemporary Notitiae; the 1984 Roman confirmation (Prot. CD 151/84) and November 1984 anaphora concessions are now read in official decree summaries; inspect its original book, the 1983 bishops' act and full 1984 decrees before relating it textually to older local uses or later printings.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-700",
@@ -23139,7 +23147,8 @@
           "ce-src-wroclaw1738-upol-index",
           "ce-src-wroclaw1738-nifc",
           "ce-src-wroclaw1738-jbc",
-          "polish-1986-notitiae-1987"
+          "polish-1986-notitiae-1987",
+          "polish-src-notitiae-1984-decrees"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origins?offset=700",
@@ -23187,7 +23196,8 @@
           "https://library.upol.cz/arl-upol/cs/csg/?key=64865514643&repo=upolrepo",
           "https://repozytorium.nifc.pl/islandora/object/pl-wrzno%3A15498",
           "https://jbc.jelenia-gora.pl/dlibra/publication/10987/edition/10650",
-          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-23-(1987)/Notitiae-257-1987.pdf"
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-23-(1987)/Notitiae-257-1987.pdf",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-20-%281984%29/Notitiae-214-1984.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
         "target": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Shared Cracow titles and Gniezno-received copies must not disappear under Cracow-only grouping; full PietrasIII reconciliation outstanding. Full1510/1532/1545 changes not collated; bibliography duplicates/false-date records remain;1556 question cannot be silently omitted. No complete manuscript/modern local-proper census established;1520 known copy incompleteness must be recorded. The 1481 Strasbourg Poznań attribution still needs extant-copy/ISTC reconciliation. The 1491 Strasbourg Missale Posnaniense is bibliographically attested as GW M2463210, but its described BN Warsaw exemplar was destroyed; text, other copies, local reception, and substantive relation to later editions remain unexamined. 1587 relation to Roman missal and actual local changes need contents; breviary and agenda dates cannot become Mass-book editions. False 1483 colophon may conceal a second edition; 1505 A/B/C are not three automatic substantive states. For 1738, collate the original contents and local proper Masses, relation among NIFC/Jeseník/Jelenia Góra/BN copies, and any later propers; the title itself is attested. Current owning route limit: Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Shared Cracow titles and Gniezno-received copies must not disappear under Cracow-only grouping; full PietrasIII reconciliation outstanding. Full1510/1532/1545 changes not collated; bibliography duplicates/false-date records remain;1556 question cannot be silently omitted. No complete manuscript/modern local-proper census established;1520 known copy incompleteness must be recorded. The 1481 Strasbourg Poznań attribution still needs extant-copy/ISTC reconciliation. The 1491 Strasbourg Missale Posnaniense is bibliographically attested as GW M2463210, but its described BN Warsaw exemplar was destroyed; text, other copies, local reception, and substantive relation to later editions remain unexamined. 1587 relation to Roman missal and actual local changes need contents; breviary and agenda dates cannot become Mass-book editions. False 1483 colophon may conceal a second edition; 1505 A/B/C are not three automatic substantive states. For 1738, collate the original contents and local proper Masses, relation among NIFC/Jeseník/Jelenia Góra/BN copies, and any later propers; the title itself is attested. The 1986 Polish diocesan Roman Missal is a separate approved operative book state documented by contemporary Notitiae; inspect its original book and 1983/1984 approval acts before relating it textually to older local uses or later printings."
