@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.primary-epiphany-2-epistle"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.adapted-primary-readings-76d61000"
+artifact_sha256 = "76d610008540bce0bd1f72a7f0977945a9bb56f0a2d2283f89cd2df080c387f8"
+locus = "epiphany-2 Epistle; projection physical lines [125, 135]. Mame 1922 source locus: {\"artifact_pages\": [167], \"end_column\": \"right\", \"following_node\": \"Graduale. Ps. 106, 20-21.\", \"heading\": \"Léctio Epístolæ beáti Pauli Apóstoli ad Romános\", \"printed_folios\": [53], \"printed_reference\": \"Rom. 12, 6-16\", \"start_column\": \"left\"}. 1962 CMAA target locus: {\"artifact_pages\": [125], \"end_column\": \"left\", \"following_node\": \"Graduale 299\", \"heading\": \"Léctio Epístolæ beáti Pauli Apóstoli ad Romános.\", \"marginal_number\": 298, \"printed_folios\": [44], \"printed_reference\": \"Rom. 12, 6-16\", \"start_column\": \"left\"}."
+physical_line_ranges = [[125, 135]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-20"
+context = "Complete literal source-owned reading, 95 spoken words. The Epistle ends at humilibus consentientes. Its printed Romans 12:6-16 reference includes 16 without a part letter. The following Sunday begins at a different clause of the same printed verse number; do not append that clause here or invent an a/b division."
+notes = "Exact wrapped calendar Unicode body SHA256 ad18dbdd81bba84ddeaf13ac4a4aef3c6b4db85de7b684e2b6fb58b8f3bb0de9. Join physical line/column breaks and suppress line-end hyphens; normalize word-separating and punctuation spacing; remove stress accents; expand æ/œ to ae/oe; retain Mame consonantal j; apply target pointing and case. No lexical word or biblical continuation is supplied from the later edition. The Epistle ends at humilibus consentientes. Its printed Romans 12:6-16 reference includes 16 without a part letter. The following Sunday begins at a different clause of the same printed verse number; do not append that clause here or invent an a/b division."

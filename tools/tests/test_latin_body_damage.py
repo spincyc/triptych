@@ -35,10 +35,19 @@ class DamageIsRefused(unittest.TestCase):
         self.assertTrue(found)
 
     def test_ae_read_as_a_question_mark_mid_clause(self):
-        # "quae et" printed as "qua? et". A real question ends a sentence, so
-        # the mark is judged by what follows it rather than refused outright.
+        # This recogniser corruption was actually stored as a prayer body.
         found = body_damage("benedictio copiosa descendat: qua? et sanctificationem")
         self.assertTrue(any("question mark" in one for one in found), found)
+
+    def test_a_printed_question_does_not_hide_actual_damage(self):
+        question = "Quare scidisti vestimenta tua? veniat ad me. "
+        for corruption in (
+            "benedictio copiosa descendat: qua? et\nsanctificationem",
+            "D6minum nostrum",
+            "piissime siipplices",
+        ):
+            with self.subTest(corruption=corruption):
+                self.assertTrue(body_damage(question + corruption))
 
     def test_a_control_character_is_refused(self):
         # A page separator carried into a provenance note once made the whole
@@ -94,6 +103,19 @@ class LegitimateTextSurvives(unittest.TestCase):
             [], body_damage("Quare, Domine, irasceris in populo tuo? Parce irae animae tuae.")
         )
         self.assertEqual([], body_damage("Quam dilecta tabernacula tua, Domine virtutum!"))
+
+    def test_printed_questions_can_be_followed_by_lowercase(self):
+        # The complete Mame-collated Friday-after-Ash and Lent III Monday
+        # Lessons print these question marks and lower-case continuations.
+        for question in (
+            "per diem affligere hominem animam suam? numquid contorquere",
+            "et saccum et cinerem sternere? numquid istud vocabis jejunium",
+            "Nonne hoc est magis jejunium, quod elegi? dissolve colligationes",
+            "ut curem hominem a lepra sua? animadvertite, et videte",
+            "Quare scidisti vestimenta tua? veniat ad me, et sciat",
+        ):
+            with self.subTest(question=question):
+                self.assertEqual([], body_damage(question))
 
     def test_liturgical_marks_and_quotation(self):
         self.assertEqual([], body_damage("Gloria, laus / et honor + tibi «Hosanna» ℣. ℟."))

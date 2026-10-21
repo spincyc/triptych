@@ -212,7 +212,7 @@ esac
 cycled="$(run_tool show --date 2026-11-29 --calendar postconciliar \
 	--bible douay-rheims --expanded --plain)"
 for want in \
-	"First Reading -- Isaiah 63:16b-17, 19b; 64:2-7" \
+	"First Reading -- Isaiah 63:16b-17, 19b; 64:2b-7" \
 	"Second Reading -- 1 Corinthians 1:3-9" \
 	"Gospel -- Mark 13:33-37" \
 	"The Nicene Creed (all)" \
@@ -529,14 +529,17 @@ assert "selected_form" not in mass
 assert mass["propers"] == []
 assert "ordinary" not in unselected["days"][0]
 assert [(form["id"], len(form["propers"])) for form in mass["forms"]] == [
-    ("longer", 19), ("shorter", 11),
+    ("longer", 24), ("shorter", 12),
 ]
-for payload, wanted, count in ((longer, "longer", 19), (shorter, "shorter", 11)):
+for payload, wanted, count, oratio_count in (
+    (longer, "longer", 24, 5), (shorter, "shorter", 12, 1),
+):
     selected = payload["days"][0]["masses"][0]
     assert selected["selected_form"] == wanted
     assert selected["form_choice_required"] is False
     assert len(selected["propers"]) == count
     assert {proper["form_id"] for proper in selected["propers"]} == {wanted}
+    assert sum(proper["name"] == "Oratio" for proper in selected["propers"]) == oratio_count
 PY
 
 # The postconciliar Good Friday service has no Mass frame; the Easter Vigil has

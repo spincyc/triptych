@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.adapted-primary-readings-76d61000"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Triptych offers only its bounded selection, normalization and target-relation metadata under CC BY 4.0. All spoken words stand independently in Mame 1922 and retain that separately recorded public-domain basis. No exclusive right in the historical words or whole-target-edition clearance is claimed."
+provenance = "Source-producer independent whole-body 200/400 dpi page-image comparisons on 2026-10-20 of Mame 1922 and the 1962 CMAA control SHA256 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a. Each target body has its own dated verified passage and exact Unicode-body hash."
+retrieved = "2026-10-20"
+sha256 = "76d610008540bce0bd1f72a7f0977945a9bb56f0a2d2283f89cd2df080c387f8"
+byte_size = 11620
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/adapted-primary-readings-76d61000/adapted-primary-readings.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.adapted-primary-readings-la-checked-e3a67098", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Select historically attested complete reading bodies, including their printed introductions, liturgical adaptations, internal cuts, cento order and terminal clauses. Remove stress/diaeresis accents and expand ae/oe ligatures; retain calendar-declared j and received source spellings. The first three Isaiah/Exodus proof proposals and Advent I retain historical pointing; the other proposals adopt target pointing, with the missing source point after plebem suam disclosed. Join layout wraps and wrap at 80 columns with final LF. No words, ellipses, part-verse letters, actors or English translation are generated."
+indexable = true
+encoding = "utf-8"
+notes = "Twelve exact target reading addresses, eleven distinct whole body blocks; the independently verified Common I and Gregory targets share one word-identical retained block. Headings, printed references, rubrics, page images, and page arrangement are outside the retained bodies. Scripture references remain appointment apparatus and cannot reconstruct these literal bodies. Selected-Bible text is separate apparatus and is not the exact Missal text or an English rendering of it."

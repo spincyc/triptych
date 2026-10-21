@@ -436,7 +436,7 @@ class ProductionLedgerTests(unittest.TestCase):
             # 1120 since 2026-10-20 (C3): St Lucy's Communion carries the
             # Missal antiphon rather than a Bible reconstruction.
             # +3 on 2026-10-20: source-backed Christ-the-King orations.
-            "roman-1962": (1171, 15),
+            "roman-1962": (1182, 15),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -458,7 +458,7 @@ class ProductionLedgerTests(unittest.TestCase):
     def test_publication_loader_validates_production_source_metadata(self) -> None:
         # 1114 since 2026-10-01: St Angela Merici's Secret and Postcommunion.
         # 1120 since 2026-10-20 (C3): St Lucy's Communion has its own body.
-        expected = {"postconciliar": 329, "roman-1962": 1171, "roman-pre-1955": 1171}
+        expected = {"postconciliar": 329, "roman-1962": 1182, "roman-pre-1955": 1182}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -500,8 +500,8 @@ class ProductionLedgerTests(unittest.TestCase):
         # read on the 1962 page image and on the 1862 Pustet's (and the Mame's).
         # 1074 since 2026-10-20 (C3): St Lucy's Communion is independently
         # collated on the 1962 and public-domain Mame 1922 page images.
-        self.assertEqual(1125, len(permitted))
-        self.assertEqual(1125, len(roman))
+        self.assertEqual(1136, len(permitted))
+        self.assertEqual(1136, len(roman))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -568,8 +568,14 @@ class ProductionLedgerTests(unittest.TestCase):
             # a bounded, independently publishable 1929 Schott derivative.
             "editorial-projection-2026-10-20": {
                 "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christ-the-king-orations-dc4287d2",
-                "publication_source_ids": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-lent-ember-orations-la-checked-39b0b0aa'},
-                "projected_from": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", target_artifact, "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-lent-ember-orations-la-checked-39b0b0aa'},
+                "publication_source_ids": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-lent-ember-orations-la-checked-39b0b0aa', 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.adapted-primary-readings-la-checked-e3a67098'},
+                "projected_from": {"artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.christ-the-king-orations-la-checked-32eecc40", target_artifact, "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-orations-la-checked-638fc0c5", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.immaculate-conception-four-propers-la-checked-18084e74', "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.christmas-nine-orations-la-checked-825c69f4", 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-lent-ember-orations-la-checked-39b0b0aa', 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.adapted-primary-readings-la-checked-e3a67098'},
+            },
+            # One source-proved correction; existing permission count is unchanged.
+            "editorial-projection-2026-10-21": {
+                "artifact_id": 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-21.september-ember-wednesday-collect-7124589a',
+                "publication_source_ids": {'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.september-ember-wednesday-collect-la-checked-ddf31f59'},
+                "projected_from": {'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.september-ember-wednesday-collect-la-checked-ddf31f59', target_artifact},
             },
         }
 

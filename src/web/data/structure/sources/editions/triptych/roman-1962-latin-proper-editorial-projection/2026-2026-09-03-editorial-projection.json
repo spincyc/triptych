@@ -351,7 +351,7 @@
    "edition_owned": true,
    "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120",
    "media_type": "text/plain; charset=utf-8",
-   "notes": "Scope is closed at the 82 orations listed in the passages of this edition bearing the gap-seasonal-2 prefix. The separate Pustet 1862 and 1962 passages remain the historical and target witnesses; this project-created artifact owns only the editorial projection. The 1862's ornamental drop capitals are destroyed by that scan's recogniser, so the opening word of many antecedent readings is reconstructed from the visible tail and from the 1570 or 1604 at the same place; every such reconstruction is named in its own ledger row and is never absorbed silently into a reading.",
+   "notes": "Bounded correction 2026-10-21: only the September Ember Wednesday Collect span, physical lines 107-109, is identified here as erroneous (dementia for source-and-target clementia). Its legacy passage verification is withdrawn and current body superseded by passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-21.september-ember-wednesday-collect. Preserve this immutable payload, SHA256, rights basis and all other owners; no other span is newly checked or withdrawn. Scope is closed at the 82 orations listed in the passages of this edition bearing the gap-seasonal-2 prefix. The separate Pustet 1862 and 1962 passages remain the historical and target witnesses; this project-created artifact owns only the editorial projection. The 1862's ornamental drop capitals are destroyed by that scan's recogniser, so the opening word of many antecedent readings is reconstructed from the visible tail and from the 1570 or 1604 at the same place; every such reconstruction is named in its own ledger row and is never absorbed silently into a reading.",
    "page_count": null,
    "retrieved": "2026-09-03",
    "rights": "project-created",
@@ -26071,11 +26071,11 @@
   {
    "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-seasonal-2-orations-7f669120",
    "artifact_type": "editorial-projection",
-   "context": "Exact project-created editorial-projection passage for the Roman-1962 september-ember-wednesday Collect.",
+   "context": "Superseded erroneous project span for the September Ember Wednesday Collect; preserved immutable bytes are not exact target wording.",
    "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.september-ember-wednesday-collect",
    "locus": "september-ember-wednesday, Collect; editorial-projection artifact physical lines 107-109; antecedent printed p. 343; text-layer lines 50844-50852; target printed p. 400, no. 1613; artifact PDF p. 481",
    "media_type": "text/plain; charset=utf-8",
-   "notes": "The selected lines hash as the retained calendar body 23d28d075d70b7c294fbb9b8d048261bd27fb69335b792df9c01230316a8c099. The artifact manifest owns every 1862-to-target transformation; the separate historical and target passages remain the witnesses.",
+   "notes": "Correction 2026-10-21: physical lines 107-109 retain dementia, SHA256 75bc8b97a9a395ce0e034a2a62b198bec2d819b8572cfbe5fa514ca284569b78. Both directly inspected Mame 1922 and 1962 target pages read clementia. The previous Exact wording/verification claim and unsupported 23d28d075d70b7c294fbb9b8d048261bd27fb69335b792df9c01230316a8c099 selected-body hash claim are withdrawn. Corrected current body is owned by passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-21.september-ember-wednesday-collect. Controller, artifact hash and physical range remain unchanged; no other span is rechecked or withdrawn here.",
    "readable": true,
    "rights": "project-created",
    "rights_basis": "Triptych created the bounded selection, transcription layout, normalization decisions, and collation record and offers those editorial contributions under CC BY 4.0. The underlying Latin prayers are public domain in the United States because the separately registered Pustet printing was published at Ratisbon in 1862. Triptych claims no exclusive right in those underlying words. The target-edition comparison selects only mechanical punctuation, project orthography, and the conclusion as printed, within the preexisting formulas; no page image, layout, rubric, marginal number, or other 1962-only matter is reproduced.",
@@ -26086,12 +26086,11 @@
    "states": [
     "cataloged",
     "acquired",
-    "inspected",
-    "verified"
+    "inspected"
    ],
    "storage": "tracked",
    "text_path": "structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.september-ember-wednesday-collect.json",
-   "verified_on": "2026-09-03",
+   "verified_on": null,
    "words": 19
   },
   {

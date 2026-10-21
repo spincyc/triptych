@@ -50,5 +50,5 @@ for family in report["families"]:
 
 gate = report["scope"]["runtime_year_gate"]
 assert gate["included"] is False, gate
-assert gate["expected_renders"] == 4380, gate
+assert gate["expected_renders"] == 5856, gate
 PY

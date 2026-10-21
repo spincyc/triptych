@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.september-ember-wednesday-collect-la-checked-ddf31f59"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Bounded historical Latin from the registered public-domain Tours Mame 1922 conformed printing. The parent owns the established United States 1922 publication and faithful mechanical reproduction finding. No new rights decision or exclusive right in the historical words is claimed."
+provenance = "Whole prayer directly read on the registered Mame PDF page 565, printed page 451, right-column foot, at 200 and 400 dpi on 2026-10-21. The PDF SHA256 is 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005."
+retrieved = "2026-10-21"
+sha256 = "ddf31f59d694ac6c7873d657d3ff89f28d0e0be682f321eeaa20710a6178b0a1"
+byte_size = 160
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/september-ember-wednesday-collect-la-checked-ddf31f59/september-ember-wednesday-collect-la.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Select the complete printed Collect, join layout wraps and the discretionary cle-mentia line break, sentence-case the display initial, regularize typographic spaces before punctuation and terminate with LF. Preserve all source words, accents, ligatures, spelling, punctuation and the short Per Dominum. cue. No target-only word is inserted."
+indexable = true
+encoding = "utf-8"
+notes = "Mame prints conditione and Per Dominum.; the target prints condicione and Per Dominum nostrum. The sixteen petition words agree under that received spelling; the historical two-word conclusion cue and target three-word conclusion remain distinct. Both images read clementia; the legacy dementia is a transcription error, not a declared spelling normalization. The source is a Tours 1922 conformed printing, not an authenticated Vatican 1920 impression. Only the September Ember Wednesday Collect petition is corrected. The preceding Kyrie, Oremus, Flectamus genua and Levate context is outside this body; no actor, frame or new appointment is inferred. Secret, Postcommunion and the separately owned Oratio 1616 are not newly verified here."
