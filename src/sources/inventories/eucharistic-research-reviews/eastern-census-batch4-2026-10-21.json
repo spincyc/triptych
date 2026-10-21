@@ -1,0 +1,2278 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "eastern-census-batch4-2026-10-21",
+  "lane": "eastern-census-batch4",
+  "title": "Eastern census and local-reception lane, batch 4: dated Dicastery tables of contents, Albanian and Piana catalogue leads, Hungarian copy provenance",
+  "side": "eastern",
+  "checked_on": "2026-10-21",
+  "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml; src/sources/inventories/eucharistic-stages/eastern-local-round2.json; src/sources/inventories/eucharistic-stages/greek-italo-local-reception.json; src/sources/inventories/eucharistic-stages/hungarian-reception.json; src/sources/inventories/eucharistic-stage-coverage-v1.json",
+  "review_files": {
+    "lane_worklog_sha256": "67793809b4a1009d863411eaaa27c753c7a02aea4ae6da11e26bfba8e6ffdba6",
+    "independent_review_sha256": "adc70e3c9e70d26688740e76694bd873baa1ec001143a826609cd259aeb02074"
+  },
+  "coverage_rows": [
+    "albanian",
+    "macedonian",
+    "greek",
+    "italo-albanian",
+    "hungarian",
+    "bulgarian",
+    "russian",
+    "melkite"
+  ],
+  "uses": [
+    {
+      "id": "albanian",
+      "disposition": "catalogue-title-lead-added; census-placement-bounded; no-stage",
+      "finding": "OPAC SBN IT\\ICCU\\BVE\\0501507 (Grottaferrata state library) catalogues an Albanian–Italian Chrysostom booklet, 55 p., [S.n.t.], [1979?], whose title names the Kisha katolike-bizantine e Shen Pjetrit, Elbasan. It is recorded as origin-review lead albanian-elbasan-mesha-hyjnore-sbn; the Albanian candidate slot stays empty. For census classification, the Dicastery's Oriente Cattolico Sommario (2017, ch. 34) and The Catholic East contents (2019, ch. 35) place the Apostolic Administration of Southern Albania among Eastern Catholics without their own hierarchy, with Russia/Harbin, Belarus, the ordinariates and (2019) Kazakhstan.",
+      "limit": "The booklet's title leaf, issuer, role (celebrant or people's book), approval, Greek exemplar and any use are uninspected; its bracketed date falls within Albania's 1967–1990 worship ban, so it cannot evidence celebration at Elbasan then. The Dicastery placement is a dated chapter grouping in a reference work, not a sui iuris ruling, personal-ascription decision or current 2026 census; it contrasts with the 2010 and November 2016 lists that name an Albanian Church.",
+      "next_sources": "Grottaferrata state-library copy of BVE0501507 (title, imprint, approbation, contents); The Catholic East (2019) ch. 35 text; ACCO Prot. 441/28 and other archival targets already recorded; a current named Annuario or Dicastery enumeration."
+    },
+    {
+      "id": "macedonian",
+      "disposition": "unchanged-searched; dated celebration report added as source",
+      "finding": "katolici.mk post 44725 reports that Bishop Kiro Stojanov served the Chrysostom Liturgy at the Mother Teresa shrine, Skopje, on 11 January 2022. The Dicastery's 2017 Sommario lists the Apostolic Exarchate of Macedonia (ch. 27) and the 2019 contents the Eparchy of Strumica-Skopje (ch. 25).",
+      "limit": "The report names neither language nor book, so neither the 2009-approved Macedonian translation nor any edition is tied to the celebration. No title, imprint, approval leaf or exemplar of the reported 2009 Литургикон was found; COBISS was not retried because of its earlier proof-of-work challenge.",
+      "next_sources": "Original 2009 Литургикон title, imprint, approval and contents leaves; the 2024 jubilee monograph's publications section; a dated celebration report naming the book."
+    },
+    {
+      "id": "greek",
+      "disposition": "unchanged-searched",
+      "finding": "The Athens exarchate website search API and two posts read (2019 catechesis; 2020 Holy Week pastoral indications pointing the faithful to small Μεγάλη Εβδομάδα booklets) name no receiving celebrant edition. OPAC SBN holdings of the Rome 1950 Hieratikon (PUV0933582, CSA0064106) are library holdings only.",
+      "limit": "No receiving edition, adoption act or completed dated celebration with an identified book; Istanbul untouched.",
+      "next_sources": "The 2014 Papadimitriou Euchologion's title and approbation leaves; exarchate sacristy or library inventories; Istanbul records."
+    },
+    {
+      "id": "italo-albanian",
+      "disposition": "piana-ieratikon-catalogue-lead-added; lungro-publisher-record-added; no-stage",
+      "finding": "OPAC SBN PAL0225607 catalogues a 288-page trilingual Ieratikon co-published in 2006 by the Comune and the Eparchy of Piana degli Albanesi (editor Papas Jani Pecoraro; Arbëresh translation Giuseppe Schirò Di Maggio; Italian translation Tommaso Federici); the translator's bibliography (p. 3, image viewed) describes it as the Chrysostom and Basil liturgies with feast troparia and hymns. OPAC SBN PAL0225860 records a 1967 Greek–Albanian Liturgjia Hyjnore (catalogue title e atit tone shetrat Joan Hrysostomit) as published in Rome by the Associazione Cattolica Italiana per l'Oriente Cristiano, 182 p., with copies at Padua and Piana. OPAC SBN PAL0135089 records Paolo Schirò's 1964 Palermo Albanian Chrysostom translation.",
+      "limit": "None of these books was seen. The Piana Ieratikon's altar role, approval, Greek exemplar and parish use are unestablished, so it is an origin-review lead and not a documented Piana altar-book stage. The 1967 SBN record is compatible with the inspected Roma 1967 setting (spread 91 printed pp. 180–181) but not proved identical. Two SBN title queries found the Lungro Bollettino only as the 2012– series, so the 1968 decree issue was not located. Grottaferrata's 1960 Greek–Italian Chrysostom (SBN BVE1001462) was noted but not added (Italian layer deferred).",
+      "next_sources": "Piana 2006 Ieratikon title, approval and contents leaves and any introducing decree; Bollettino 3 (1968), pp. 14–16; Grottaferrata and Piana library shelf lists."
+    },
+    {
+      "id": "hungarian",
+      "disposition": "copy-provenance-leads-added-as-deferred-origin-review; no-gap-narrowed; no-stage",
+      "finding": "The Szent Atanáz college Corvina OPAC (106 subject-liturgikon long records read) has an undated possessor entry naming Fr. István Zolcsák of Nyírderzs for the 1646 copy M–920 (possibly recording only the 2010 transfer) and records the Nyírpazony Greek Catholic parish-office stamp at the catalogue locus 74. táblaoldal of the second 1646 copy; it transcribes a memorial note, written after 1881, recording that a Przemyśl 1840 Sluzhebnik was offered in 1856 for the use of the Sátoraljaújhely Greek Catholic church, a Mikóháza copy of that edition with inserted Hungarian translations, and a Lviv 1780 copy from Abaújszántó with manuscript references to Hungarian page numbers (Kótaj provenance for another copy). Two copy-provenance records were added; after cold review they are deferred origin-review records on the Hungarian route, not candidates. The OPAC also lists a Hungarian–Romani (Cerhari) Chrysostom liturgy with the cataloguer-supplied imprint [Nyíregyháza]: [Hajdúdorogi Egyházmegye], [2012].",
+      "limit": "All are catalogue transcriptions of ownership marks and notes; no original was inspected. The 1646 possessor entry and stamp are undated, so dated Nyírderzs ownership or use is still missing. The memorial note, written after 1881, reports an 1856 donation for church use, not approval or first celebration; the Hungarian page references are undated and their companion book unidentified. The 2012 Romani book is a deferred translation lead. No fuller 1646 copy, title or colophon image was found.",
+      "next_sources": "Szent Atanáz copies Ant10467, Ant10560, Ant30125, Ant30146 and Ant30101; a schematism dating Zolcsák's Nyírderzs incumbency; the Hajdúdorog circulars already listed."
+    },
+    {
+      "id": "bulgarian",
+      "disposition": "unchanged-searched",
+      "finding": "OPAC SBN searches for Eldarov returned only his theological and historical works; Sluzhebnik title searches with 1985 returned nothing.",
+      "limit": "No title, approval or source leaf of the 1985 Eldarov Sluzhebnik or the 2005/2007 books; no Vulgata receipt evidence.",
+      "next_sources": "The 1985 book's title and approval leaves; the exarchate's 2005 and 2007 volumes."
+    },
+    {
+      "id": "russian",
+      "disposition": "unchanged-searched",
+      "finding": "OPAC SBN Sluzhebnik title searches with 1953, 1956 and 1983 returned nothing; Rome 1942 and 1952 Slavonic Liturgikon records there are holdings.",
+      "limit": "No act or parish record ties a Roman Slavonic edition to Russian Catholic celebration.",
+      "next_sources": "Title and approval leaves of the 1953, 1956 and 1983 books; parish use records."
+    },
+    {
+      "id": "melkite",
+      "disposition": "unchanged-searched",
+      "finding": "An Arabic web search found no public scan or title leaves of the 2006/2007 Book of the Divine Liturgy; OPAC SBN title searches returned nothing. liturgicaloffice.org proved to be the Latin Patriarchate of Jerusalem's office and was excluded.",
+      "limit": "Original Arabic volumes and predecessor texts remain unacquired.",
+      "next_sources": "The volumes named in the patriarchal letter and DLI record 47966; the 1991 and 2001 decrees."
+    },
+    {
+      "id": "current-named-eastern-census",
+      "disposition": "dated-official-tables-of-contents-obtained; current-census-unobtained",
+      "finding": "The dated tables of contents of two official Dicastery reference works were obtained and inspected: the Oriente Cattolico Sommario (preface 1 December 2017; statistics from the Annuario Pontificio 2017) and The Catholic East contents (preface 14 October 2019). They group 6 patriarchal, 4 major archiepiscopal and 4 metropolitan chapters (5 Churches, Ethiopia and Eritrea sharing one), 9 chapters on Eastern eparchies and exarchates, and 4 (2017) or 5 (2019) on Eastern Catholics without their own hierarchy. Roberson's Annuario-based 2016 chart and 2017 tables give 19 Church or group headings without Albanian, Russian or Belarusian entries. Crosswalk: 20 of the 23 slots map to hierarchical chapters (Croatia-Serbia to Križevci plus Serbia; Ruthenian to the US metropolitan and Mukachevo chapters); Albanian, Russian and Belarusian map to the without-hierarchy section. The Czech exarchate, Kazakhstan, the ordinariates and Grottaferrata have chapters but no slot. The 2019 chart reuses the Annuario 2017 figures under a 2019 title.",
+      "limit": "Chapter headings are jurisdictions and categories, not a canonical list of Churches sui iuris, and neither work is a 2026 census. CNEWA's statistics pages returned HTTP 403, archive.org timed out, Google Books API returned a quota error and books.google.com an automated-traffic challenge (not attempted). The 23 slots are unchanged; a census of Churches is not a count of books.",
+      "next_sources": "Annuario Pontificio 2026 named section (print or authenticated digital); chapter 3 of Oriente Cattolico / The Catholic East on categories of Churches; a dated Dicastery list."
+    }
+  ],
+  "searches": [
+    {
+      "repository": "OPAC SBN (Italian union catalogue), public JSON gateway opacmobilegw",
+      "queries": [
+        "liturgjia",
+        "liturgjia hrysostomit",
+        "liturgjia shqip",
+        "Elbasan liturgia",
+        "Elbasan bizantine",
+        "Shen Pjetrit Elbasan",
+        "Gojartit",
+        "Joan Gojartit mesha",
+        "katolike-bizantine",
+        "liturgia albanese bizantina",
+        "meshari bizantin",
+        "liturgjia e shenjte",
+        "sherbesa hyjnore",
+        "Scarpelli Albania",
+        "Albania meridionale amministrazione apostolica",
+        "bollettino eparchia lungro",
+        "bollettino ecclesiastico lungro",
+        "hieratikon",
+        "ieratikon",
+        "liturgia greco-albanese",
+        "eparchia piana albanesi liturgia",
+        "Associazione Cattolica Italiana Oriente Cristiano liturgia",
+        "liturgikon",
+        "liturgikon Struga",
+        "Литургикон",
+        "Hajdudorog liturgia",
+        "gorog katolikus liturgia",
+        "Eldarov",
+        "sluzebnik 1985",
+        "sluzhebnik bulgar",
+        "Sluzebnik 1956",
+        "Sluzebnik 1953",
+        "Sluzebnik 1983",
+        "liturgiyat ilahiyah",
+        "Jounieh liturgie"
+      ],
+      "url": "https://opac.sbn.it/opacmobilegw/search.json",
+      "checked_on": "2026-10-21",
+      "outcome": "New: BVE0501507 (Elbasan-titled Albanian–Italian Chrysostom, [1979?]), PAL0225607 (Piana 2006 Ieratikon), PAL0225860 (Rome 1967 ACIOC Greek–Albanian Liturgjia Hyjnore), PAL0135089 (Palermo 1964 Schirò Albanian Chrysostom), BVE0792797 (Solano 1965 note on an Albanian liturgy translation), BVE1001462 (Grottaferrata 1960 Greek–Italian Chrysostom). Macedonian, Bulgarian, Russian and Melkite queries found no target book.",
+      "extent_examined": "First 40–80 brief records per query; full records for the nine records listed in acquisitions.",
+      "unexamined_range": "Results beyond the first page of broad queries (katolike-bizantine 1109 hits, liturgia greco-albanese 118 hits); non-SBN Italian catalogues; library shelf lists; the books themselves."
+    },
+    {
+      "repository": "Dicastery for the Eastern Churches website and linked official PDFs",
+      "queries": [
+        "homepage, Dicastero, Pubblicazioni pages read; linked PDFs fetched"
+      ],
+      "url": "https://www.orientchurch.va/pubblicazioni.html",
+      "checked_on": "2026-10-21",
+      "outcome": "Oriente Cattolico 2017 Sommario extract and The Catholic East 2019 contents extract found (not used by earlier lanes) and inspected; centenary brochure and English Jubilee guide extract read with no named list.",
+      "extent_examined": "All offered pages of the four PDFs in the text layer; images viewed for Sommario/contents pages, the 2019 chart and selected preface/editorial pages.",
+      "unexamined_range": "Full Oriente Cattolico / The Catholic East volumes (commercial), including chapter 3 and the Southern Albania chapter."
+    },
+    {
+      "repository": "CNEWA and Roberson statistics",
+      "queries": [
+        "CNEWA Eastern Catholic Churches statistics Roberson Annuario Pontificio pdf",
+        "\"The Eastern Catholic Churches\" Roberson \"Source: Annuario Pontificio\" 2022 OR 2023 OR 2024 OR 2025 pdf statistics"
+      ],
+      "url": "https://cnewa.org/eastern-christian-churches/eastern-catholic-churches-statistics/",
+      "checked_on": "2026-10-21",
+      "outcome": "cnewa.org pages and its wp-content PDF returned HTTP 403 to curl and to the web-fetch tool; archive.org Wayback timed out. The 2017 tables (CatholicsandCultures.org host) and the 2016 chart (USCCB host) were acquired. No compilation later than 2017 was found.",
+      "extent_examined": "Two web searches; four direct retrieval attempts.",
+      "unexamined_range": "CNEWA pages for 2018–2021; any later Roberson compilation."
+    },
+    {
+      "repository": "Szent Atanáz Greek Catholic college library, Corvina OPAC",
+      "queries": [
+        "title: liturgikon (12 hits)",
+        "subject: liturgikon (106 hits, all long records read)"
+      ],
+      "url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "checked_on": "2026-10-21",
+      "outcome": "Provenance details for both 1646 copies; a post-1881 memorial note recording an 1856 church-use donation of a Przemyśl 1840 Sluzhebnik (Sátoraljaújhely); Mikóháza copy with Hungarian insertions; Lviv 1780 copy with Hungarian page references; a 1900 printed donation in a Lviv 1866 copy to an unidentified Kéty church; Makó parish-office stamp in a Lviv 1666 copy; a 2012 Hungarian–Romani Chrysostom. No later Greek Catholic Hungarian Liturgikon than 1949 among the subject results.",
+      "extent_examined": "All 106 subject-liturgikon long records with holdings and notes.",
+      "unexamined_range": "Records not indexed under the subject liturgikon; the physical copies; MARC views."
+    },
+    {
+      "repository": "katolici.mk WordPress API (Macedonian Catholic news site)",
+      "queries": [
+        "Златоуст",
+        "Служебник",
+        "литургиски книги",
+        "Евхологион",
+        "превод на литургијата",
+        "Литургија на свети Јован Златоуст"
+      ],
+      "url": "https://katolici.mk/wp-json/wp/v2/search",
+      "checked_on": "2026-10-21",
+      "outcome": "52, 0, 25, 0, 17 and 0 rows; post 44725 (2022 Chrysostom celebration) read in full. No book title, imprint or approval found.",
+      "extent_examined": "All returned titles screened; one post body read.",
+      "unexamined_range": "Bodies of the other returned posts; media library; print issues."
+    },
+    {
+      "repository": "Greek Catholic exarchate website (elcathex.gr) WordPress API",
+      "queries": [
+        "Ιερατικόν",
+        "Ευχολόγιον",
+        "λειτουργικά βιβλία",
+        "Τυπικόν",
+        "Λειτουργικόν",
+        "Θεία Λειτουργία βιβλίο"
+      ],
+      "url": "https://elcathex.gr/wp-json/wp/v2/search",
+      "checked_on": "2026-10-21",
+      "outcome": "1, 0, 3, 2, 0 and 9 rows; posts 1147 and 1344 read in full; no receiving celebrant edition named.",
+      "extent_examined": "All returned titles screened; two post bodies read.",
+      "unexamined_range": "Other post bodies; non-indexed pages and images."
+    },
+    {
+      "repository": "General web search",
+      "queries": [
+        "Elbasan Byzantine Catholic liturgy book Albanian translation Liturgjia Hyjnore katolike bizantine",
+        "Kisha katolike bizantine Elbasan liturgjia shqip libri meshës Shën Gjon Gojarti katolik 1930 Skarpeli",
+        "\"Mesha hyjnore\" \"Gojartit\" Elbasan",
+        "\"Shën Pjetri\" Elbasan \"rit bizantin\" OR \"ritit bizantin\" meshë OR liturgji katolike",
+        "Литургикон 2009 Македонска католичка црква ...",
+        "\"Oriente cattolico\" 2017 ... \"senza gerarchia propria\" Albanesi",
+        "Dicastery for the Eastern Churches list of 23 Eastern Catholic Churches sui iuris names 2025 Jubilee Albanian Russian Belarusian",
+        "\"Ieratikon\" Piana degli Albanesi 2006 Pecoraro Schirò Di Maggio Federici",
+        "\"Zolcsák István\" görögkatolikus parókus Nyírderzs",
+        "كتاب الليترجيات الإلهية المقدسة 2006 ..."
+      ],
+      "url": "https://www.google.com/",
+      "checked_on": "2026-10-21",
+      "outcome": "Located the Dicastery TOC route context, the translator bibliography and secondary pages (Wikipedia, tourism, news, diocesan lists); secondary lists of 23 Churches were not used as evidence.",
+      "extent_examined": "Returned result lists; linked pages fetched only where named in acquisitions.",
+      "unexamined_range": "Unindexed archives; paywalled and commercial texts."
+    }
+  ],
+  "versions": [
+    {
+      "id": "albanian-elbasan-mesha-hyjnore-sbn",
+      "label": "Mesha hyjnore e atit tonë ndër shenjtorët Joan Gojartit : Kisha katolike-bizantine e Shen Pjetrit Elbasan",
+      "tradition_or_use": "Albanian Greek Catholic (Elbasan) — title reference only",
+      "date_label": "[1979?] (catalogue); citation export 1978",
+      "date_role": "catalogue-bracketed-publication-date",
+      "record_class": "catalogue-reported-local-title-lead",
+      "distinctness_basis": "None established; contents uninspected.",
+      "existing_candidate_ids": [],
+      "source_refs": [
+        "albanian-src-sbn-elbasan-mesha"
+      ],
+      "unresolved": "Issuer, role, approval, exemplar, relation to the Lungro text, any use."
+    },
+    {
+      "id": "italo-albanian-piana-ieratikon2006",
+      "label": "Ieratikon (Piana degli Albanesi, 2006), Greek–Arbëresh–Italian",
+      "tradition_or_use": "Eparchy of Piana degli Albanesi",
+      "date_label": "2006",
+      "date_role": "catalogue-publication-year",
+      "record_class": "eparchial-ieratikon-catalogue-lead",
+      "distinctness_basis": "None established; contents described only by the translator's bibliography.",
+      "existing_candidate_ids": [],
+      "source_refs": [
+        "italo-albanian-src-sbn-piana-ieratikon2006",
+        "italo-albanian-src-schiro-di-maggio-bibliography"
+      ],
+      "unresolved": "Approval, Greek exemplar, contents, parish use, relation to the Rome 1950 Hieratikon."
+    },
+    {
+      "id": "italo-albanian-palermo1964-schiro-chrysostom",
+      "label": "Liturgia di S. Giovanni Crisostomo tradotta in albanese da mons. Paolo Schirò (Palermo 1964)",
+      "tradition_or_use": "Italo-Albanian (Sicily) translation",
+      "date_label": "1964",
+      "date_role": "catalogue-publication-year",
+      "record_class": "deferred-translation-component",
+      "distinctness_basis": "None established.",
+      "existing_candidate_ids": [],
+      "source_refs": [
+        "italo-albanian-src-sbn-palermo1964-schiro"
+      ],
+      "unresolved": "Approval, liturgical role, use."
+    },
+    {
+      "id": "hungarian-satoraljaujhely-przemysl1840-copies",
+      "label": "Przemyśl 1840 Sluzhebnik, Szent Atanáz copies (Sátoraljaújhely, Mikóháza, Hajdúdorog Basilians)",
+      "tradition_or_use": "Greek Catholic parishes now in Hungary",
+      "date_label": "1840 imprint; 1856 donation reported in a memorial note written after 1881",
+      "date_role": "catalogue-imprint-year; separate provenance date",
+      "record_class": "copy-provenance-reception-lead",
+      "distinctness_basis": "Copy provenance; no textual version.",
+      "existing_candidate_ids": [
+        "byzantine-slavic-przemysl1840"
+      ],
+      "source_refs": [
+        "hungarian-src-szentatanaz-opac-1840-copies"
+      ],
+      "unresolved": "Original notes uninspected; extent of use."
+    },
+    {
+      "id": "hungarian-abaujszanto-lviv1780-copies",
+      "label": "Lviv 1780 Sluzhebnik, Szent Atanáz copies (Abaújszántó, Kótaj)",
+      "tradition_or_use": "Greek Catholic parishes now in Hungary",
+      "date_label": "1780 imprint",
+      "date_role": "catalogue-imprint-year",
+      "record_class": "copy-provenance-reception-lead",
+      "distinctness_basis": "Copy provenance; no textual version.",
+      "existing_candidate_ids": [
+        "byzantine-slavic-lviv1780"
+      ],
+      "source_refs": [
+        "hungarian-src-szentatanaz-opac-1780-copies"
+      ],
+      "unresolved": "Undated marks; identity of the cited Hungarian book."
+    },
+    {
+      "id": "hungarian-romani-2012-chrysostom-lead",
+      "label": "Aranyszájú Szent János szent és isteni liturgiája, Hungarian–Romani (Cerhari), [Hajdúdorog eparchy], [2012]",
+      "tradition_or_use": "Hungarian Greek Catholic Church (Romani pastoral translation)",
+      "date_label": "[2012]",
+      "date_role": "catalogue-publication-year",
+      "record_class": "deferred-translation-lead (not added to the inventory)",
+      "distinctness_basis": "Translation; deferred scope.",
+      "existing_candidate_ids": [],
+      "source_refs": [
+        "Corvina OPAC recnum 395399 (scratch acq/hu/recs/395399.html)"
+      ],
+      "unresolved": "Approval and use."
+    }
+  ],
+  "gap_dispositions": [
+    {
+      "gap_id": "eastern-local-round2:hungarian-use",
+      "disposition": "unchanged-searched",
+      "evidence": "College OPAC (106 subject records) gives an undated possessor entry naming Fr. István Zolcsák of Nyírderzs for M–920, possibly recording only the 2010 transfer, and an undated Nyírpazony stamp in the other 1646 copy; neither dates Nyírderzs ownership or use. Cold review reclassified this from narrowed: no part of the gap is resolved.",
+      "remaining": "Dated Nyírderzs ownership or use; Kriva/Krive identity; inspected originals."
+    },
+    {
+      "gap_id": "hungarian-reception:early-local-reception",
+      "disposition": "unchanged-searched",
+      "evidence": "Same OPAC: a catalogue-transcribed memorial note, written after 1881, recording an 1856 donation of a Przemyśl 1840 Sluzhebnik for Sátoraljaújhely church use, and two undated copies with Hungarian insertions or page references; recorded as deferred origin-review copy records. Cold review reclassified this from narrowed: catalogue transcriptions do not resolve any part of the missing supported sequence.",
+      "remaining": "A supported sequence of exact books in use; inspected notes; any approval."
+    },
+    {
+      "gap_id": "hungarian-reception:later-operative-sequence",
+      "disposition": "unchanged-searched",
+      "evidence": "Subject-liturgikon OPAC results show no Greek Catholic Hungarian Liturgikon after 1949; 2012 Hungarian–Romani translation noted as deferred lead.",
+      "remaining": "1954 directive, later revisions and current editions."
+    },
+    {
+      "gap_id": "hungarian-reception:originals-and-approval",
+      "disposition": "not-attempted",
+      "evidence": "No new circular or original-book route found beyond batch 3 routes.",
+      "remaining": "As before."
+    },
+    {
+      "gap_id": "greek-italo-local-reception:piana-altar-book",
+      "disposition": "unchanged-searched",
+      "evidence": "Catalogue lead only: an eparchial 2006 Ieratikon (SBN PAL0225607; translator's bibliography) whose altar role, approval and use are unestablished. Cold review reclassified this from narrowed and restored the exact-book remainder in the gap row.",
+      "remaining": "The exact Piana celebrant book in use; the 2006 Ieratikon's altar role, approval, exemplar, contents and parish use; earlier Piana books."
+    },
+    {
+      "gap_id": "greek-italo-local-reception:lungro-original",
+      "disposition": "unchanged-searched",
+      "evidence": "SBN PAL0225860 adds the 1967 Rome publisher record; the 1968 Bollettino was not found in SBN.",
+      "remaining": "Original 1968 decree; identity of printings; Greek exemplar."
+    },
+    {
+      "gap_id": "greek-italo-local-reception:greek-receiving-editions",
+      "disposition": "unchanged-searched",
+      "evidence": "Exarchate API search and two posts read.",
+      "remaining": "Receiving editions, adoption acts, completed dated celebrations."
+    },
+    {
+      "gap_id": "eastern-local-round2:italo-albanian-eparchies",
+      "disposition": "unchanged-searched",
+      "evidence": "Piana 2006 Ieratikon catalogue lead only. Cold review reclassified this from narrowed: no Lungro or Piana altar book, approval or dated adoption is resolved.",
+      "remaining": "Lungro/Piana Greek altar books with approval and dated adoption."
+    },
+    {
+      "gap_id": "eastern-local-round2:greek-reception",
+      "disposition": "unchanged-searched",
+      "evidence": "Exarchate API search; SBN holdings of Rome 1950 are holdings only.",
+      "remaining": "Receiving copies and adoption evidence."
+    },
+    {
+      "gap_id": "eastern-local-round2:bulgarian-receipt",
+      "disposition": "unchanged-searched",
+      "evidence": "SBN searches.",
+      "remaining": "As before."
+    },
+    {
+      "gap_id": "eastern-local-round2:russian-use",
+      "disposition": "unchanged-searched",
+      "evidence": "SBN searches.",
+      "remaining": "As before."
+    },
+    {
+      "gap_id": "eastern-local-round2:melkite-sequence",
+      "disposition": "unchanged-searched",
+      "evidence": "Arabic web search; SBN searches.",
+      "remaining": "As before."
+    }
+  ],
+  "remaining_gaps": [
+    "Albanian: exact Elbasan Catholic celebrant book, its approval and dated use; inspection of SBN BVE0501507; current named census classification.",
+    "Macedonian: the 2009 Литургикон title, imprint, approval and exemplar; dated use tied to the book.",
+    "Greek: receiving edition and adoption at Athens and Istanbul.",
+    "Italo-Albanian: approval and use of the Piana 2006 Ieratikon; original 1968 Lungro decree; Grottaferrata local books.",
+    "Hungarian: dated Nyírderzs use; inspected originals of the 1646, 1780 and 1840 copy notes; later operative editions after 1949.",
+    "Bulgarian, Russian, Melkite: as recorded in eastern-local-round2.json.",
+    "Census: a current 2026 named enumeration (Annuario Pontificio or Dicastery)."
+  ],
+  "limits": "No stage, transition or gap row was added: every new item rests on catalogue records, a translator's self-description, an official table of contents or a celebration report without a book, and the evidence rules allow those only as inventory leads or gap narrowing. Copy-provenance records add no textual version. The Dicastery works are dated 2017 and 2019 chapter groupings, not legal classifications or a current census. Rendered page images used for viewing (acq/dco/render, acq/piana/gsp-3.png) are derivatives kept in scratch and not listed separately. No outreach, account, purchase or access-control bypass was made; HTTP 403, HTTP 999, a Google quota error and an automated-traffic challenge were recorded and not circumvented.",
+  "acquisitions": [
+    {
+      "source_url": "https://elcathex.gr/wp-json/wp/v2/posts/1147",
+      "retrieved_at_utc": "2026-10-21T15:55:15Z",
+      "sha256": "a32cf6da2ec93cb5f912e54a91c3b6291cc9a738f1963f5f09c4375a715d609e",
+      "byte_size": 155848,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Greek Catholic exarchate post via WordPress API",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/athens/post1147.json"
+    },
+    {
+      "source_url": "https://elcathex.gr/wp-json/wp/v2/posts/1344",
+      "retrieved_at_utc": "2026-10-21T15:55:13Z",
+      "sha256": "7d8453cc060172f41473d2220f080f7733c8f5ba49ca1dfd579f2220ff241860",
+      "byte_size": 65340,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Greek Catholic exarchate post via WordPress API",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/athens/post1344.json"
+    },
+    {
+      "source_url": "https://elcathex.gr/wp-json/wp/v2/search",
+      "retrieved_at_utc": "2026-10-21T15:54:41Z",
+      "sha256": "37a84f50b6216838e7299320d34b6d7ba1fa90b2cd64e7b6045d42939faac154",
+      "byte_size": 694,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Greek Catholic exarchate WordPress search API response",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/athens/wp_12452.json"
+    },
+    {
+      "source_url": "https://elcathex.gr/wp-json/wp/v2/search",
+      "retrieved_at_utc": "2026-10-21T15:54:45Z",
+      "sha256": "313a858279ffa11b449d7f8b373ad63886b4555977b627cb408893438bfbede1",
+      "byte_size": 2416,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Greek Catholic exarchate WordPress search API response",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/athens/wp_23333.json"
+    },
+    {
+      "source_url": "https://elcathex.gr/wp-json/wp/v2/search",
+      "retrieved_at_utc": "2026-10-21T15:54:50Z",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "byte_size": 2,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Greek Catholic exarchate WordPress search API response",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/athens/wp_32126.json"
+    },
+    {
+      "source_url": "https://elcathex.gr/wp-json/wp/v2/search",
+      "retrieved_at_utc": "2026-10-21T15:54:48Z",
+      "sha256": "78179d9d896dc451558ff46021e41de3442cf79eb16118adc370dec138dcc276",
+      "byte_size": 1418,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Greek Catholic exarchate WordPress search API response",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/athens/wp_3871.json"
+    },
+    {
+      "source_url": "https://elcathex.gr/wp-json/wp/v2/search",
+      "retrieved_at_utc": "2026-10-21T15:54:53Z",
+      "sha256": "cf85216676bba677ee9802541de02a5d8d38d88284a1fe9170d4b63ddf70b7b6",
+      "byte_size": 7046,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Greek Catholic exarchate WordPress search API response",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/athens/wp_6448.json"
+    },
+    {
+      "source_url": "https://elcathex.gr/wp-json/wp/v2/search",
+      "retrieved_at_utc": "2026-10-21T15:54:43Z",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "byte_size": 2,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Greek Catholic exarchate WordPress search API response",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/athens/wp_9987.json"
+    },
+    {
+      "source_url": "https://www.CatholicsandCultures.org/sites/default/files/documents/eastcatholic-stat17.pdf",
+      "retrieved_at_utc": "2026-10-21T15:42:23Z",
+      "sha256": "9f10575e29e35a987521b7bf75999ee2c132eeea50b387908b0fdf2f8713d816",
+      "byte_size": 619884,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Roberson 2017 Annuario-derived jurisdiction statistics",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/cnewa/eastcatholic-stat17.pdf"
+    },
+    {
+      "source_url": "https://www.usccb.org/resources/Eastern-Catholic-Churches-Worldwide-2016-Pie-Chart.pdf",
+      "retrieved_at_utc": "2026-10-21T15:42:23Z",
+      "sha256": "47b293c8f86855d27d6b28c1107d62c00bf0588f3056c811aa55889250a11d44",
+      "byte_size": 343125,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Roberson 2016 Annuario-derived membership chart",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/cnewa/Eastern-Catholic-Churches-Worldwide-2016-Pie-Chart.pdf"
+    },
+    {
+      "source_url": "https://irp-cdn.multiscreensite.com/7391a56a/files/uploaded/BROCHURE_CENTENARIO_ITA_VERSION_28032019.pdf",
+      "retrieved_at_utc": "2026-10-21T15:45:47Z",
+      "sha256": "56772cc2e8078ab77307a3571f66a4186d4c86ffd2f0f66430f26b615bdf4625",
+      "byte_size": 12154170,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Dicastery centenary brochure (describes Oriente Cattolico sections; no named list)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/dco/BROCHURE_CENTENARIO_ITA_VERSION_28032019.pdf"
+    },
+    {
+      "source_url": "https://www.orientchurch.va/images/2025.02.26_DCO_GIUBILEO_ENGLISH__-_ESTRATTO.pdf",
+      "retrieved_at_utc": "2026-10-21T15:48:28Z",
+      "sha256": "e2d5d0f113c8e126d7ae4d54853b45407e60cedced82b0b0cc84a35f5b2a5390",
+      "byte_size": 12641289,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Dicastery English Jubilee 2025 pastoral guide extract (Rome-focused; negative for global census)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/dco/DCO_GIUBILEO_ENGLISH_ESTRATTO.pdf"
+    },
+    {
+      "source_url": "https://www.orientchurch.va/dicastero.html",
+      "retrieved_at_utc": "2026-10-21T15:45:24Z",
+      "sha256": "78711de27cee30c9d328a084162bfb1fd7a9cc05699d0188bd6d92a3eaa57ac3",
+      "byte_size": 25646,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Dicastery about page (no named list)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/dco/dicastero.html"
+    },
+    {
+      "source_url": "https://www.orientchurch.va/",
+      "retrieved_at_utc": "2026-10-21T15:45:18Z",
+      "sha256": "531e8b4819dbc1d0d5c32b85e72c00b120480caa28c5fb2b08089381ed5c9ff6",
+      "byte_size": 19298,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Dicastery homepage (navigation)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/dco/home.html"
+    },
+    {
+      "source_url": "https://irp-cdn.multiscreensite.com/e911e6a9/files/uploaded/O_C_COVER_SOMMARIO_WEB_2018_.pdf",
+      "retrieved_at_utc": "2026-10-21T15:46:24Z",
+      "sha256": "1de0a5787dc32267fd250e142c9f39051437cf952650732dedd76578e8bfd807",
+      "byte_size": 10121912,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Dicastery Oriente Cattolico 2017 official cover/Sommario extract (dated chapter list by category)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/dco/O_C_COVER_SOMMARIO_WEB_2018_.pdf"
+    },
+    {
+      "source_url": "https://www.orientchurch.va/pubblicazioni.html",
+      "retrieved_at_utc": "2026-10-21T15:46:15Z",
+      "sha256": "0c2bfc563ab0995a01958aca1bab223210767219ab8b88320aae8a80225ef664",
+      "byte_size": 33914,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Dicastery publications page (links to official TOC extracts)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/dco/pubblicazioni.html"
+    },
+    {
+      "source_url": "https://irp-cdn.multiscreensite.com/7391a56a/files/uploaded/THE_CATHOLIC_EAST_TABLE_CONTENTS_26102019.pdf",
+      "retrieved_at_utc": "2026-10-21T15:46:24Z",
+      "sha256": "578de59915fdf836eee7ac2cd3aea715d5319f40019a4f70d05dba4764fb9dc3",
+      "byte_size": 8806835,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Dicastery The Catholic East 2019 contents and chart extract (dated chapter list by category)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/dco/THE_CATHOLIC_EAST_TABLE_CONTENTS_26102019.pdf"
+    },
+    {
+      "source_url": "https://valoreitalianobookstore.com/products/oriente-cattolico-congregazione-per-le-chiese-orientali",
+      "retrieved_at_utc": "2026-10-21T15:46:15Z",
+      "sha256": "0ec7c86826cec431a83671d4bf4567fa84cec97ce34ef2e373adc1254ad65ee7",
+      "byte_size": 255544,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Publisher product page for Oriente Cattolico (locating lead)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/dco/valore.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:56:23Z",
+      "sha256": "e0a2d0616054e4b34cc49ef80c739b257ce67b930802f4137284e6f9a0b953db",
+      "byte_size": 14985,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/c0.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:56:09Z",
+      "sha256": "d583cf6359e7555ea72b017c9b05ef3055ac4821f6f409a5db1d6bd908f7c4f9",
+      "byte_size": 14995,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/c1.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:56:24Z",
+      "sha256": "3f73d3fb948f008b84e13f14ae55c3ace2754064416627596507002d111b192a",
+      "byte_size": 30722,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/c2.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:57:42Z",
+      "sha256": "3289e55e47260d93620be64a3ae945ecc2d8d6c10d253bf01c56a38e4631ff2c",
+      "byte_size": 15052,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/c2p2.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:57:45Z",
+      "sha256": "3289e55e47260d93620be64a3ae945ecc2d8d6c10d253bf01c56a38e4631ff2c",
+      "byte_size": 15052,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/c2p3.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:57:46Z",
+      "sha256": "3289e55e47260d93620be64a3ae945ecc2d8d6c10d253bf01c56a38e4631ff2c",
+      "byte_size": 15052,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/c2p4.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:56:53Z",
+      "sha256": "86793037bebed02ce47a71ff4040044141bef19f5d0319e0d658c340b65d7863",
+      "byte_size": 14203,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/marc395399.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:56:55Z",
+      "sha256": "8b4a380f71628032b64e96052d7ddabd7ed5a17ca12ab4ed12ed7bcada6ed012",
+      "byte_size": 31612,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/marc7936.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:56:52Z",
+      "sha256": "b89be2582850918abb0368166fcd7251f8f98380aaa86f6f4d7256160e233f14",
+      "byte_size": 15227,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/rec395399.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:56:54Z",
+      "sha256": "bbcd04347d38422af6633aa9e400c669c6d7e8db769c0b486d6c1f9d1730c930",
+      "byte_size": 26126,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/rec7936.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=10031",
+      "retrieved_at_utc": "2026-10-21T16:01:11Z",
+      "sha256": "d7803fa75ed0cbae893ab5f16fe93f44cf9ed2094e5d9b3dcc541c08c0b21fb7",
+      "byte_size": 15715,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/10031.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=10044",
+      "retrieved_at_utc": "2026-10-21T16:01:16Z",
+      "sha256": "a713a97dab732e57c2db6f8a9c2d8f872168b968318d35b895de0cc8bb7e1eb8",
+      "byte_size": 15077,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/10044.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=10613",
+      "retrieved_at_utc": "2026-10-21T16:01:18Z",
+      "sha256": "d7128e61d87fdd94c2b015f0cb73fd995bf576d7aff9105fbe99835e82a92417",
+      "byte_size": 16999,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/10613.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=11700",
+      "retrieved_at_utc": "2026-10-21T16:01:19Z",
+      "sha256": "097b526dd485b7b3426f2f7f11dd5a54c6aa638cafddfafa7e01b183711da6fa",
+      "byte_size": 14314,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/11700.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=1184",
+      "retrieved_at_utc": "2026-10-21T15:59:05Z",
+      "sha256": "7153ed1bab2961e3931204bc5fe6e7fc1773928500c510309095a16d26694dfa",
+      "byte_size": 14246,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/1184.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=16098",
+      "retrieved_at_utc": "2026-10-21T16:01:21Z",
+      "sha256": "3c11c5ea2a236f635abde113dbfe49485158bcecf809026a78009c0067745201",
+      "byte_size": 15028,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/16098.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=16534",
+      "retrieved_at_utc": "2026-10-21T16:01:24Z",
+      "sha256": "1aec8ac3c8a0cc66ca54aab548ec93683a4ca708ad5fd309c05e10a42d7b82a3",
+      "byte_size": 16255,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/16534.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=1940",
+      "retrieved_at_utc": "2026-10-21T15:59:07Z",
+      "sha256": "e5fe353c4d6c8805fd7358283fa26410023ea7b089b707bf3a46bff2ddf43d69",
+      "byte_size": 15773,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/1940.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2021",
+      "retrieved_at_utc": "2026-10-21T15:59:08Z",
+      "sha256": "71f0cc0240bcf6ffb0e7352a229fe62a97f9e6a9aae3a45ae8e6e765a44dbc75",
+      "byte_size": 15829,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2021.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2037",
+      "retrieved_at_utc": "2026-10-21T15:59:11Z",
+      "sha256": "f7aa4a28cc06f8e07275c0b3cea3ac7796d2efc05b12c6b4b461108bcaaacdb1",
+      "byte_size": 15088,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2037.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2085",
+      "retrieved_at_utc": "2026-10-21T15:59:12Z",
+      "sha256": "bfdab0906fc42fe4b7052b077a1da86cc586134cbe6aa5c0258b54223ee1201b",
+      "byte_size": 15000,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2085.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2116",
+      "retrieved_at_utc": "2026-10-21T15:59:14Z",
+      "sha256": "434ebfb6fffca8ce5c0f655d4079abe8f41d53a510de978440e5730a8cb730ef",
+      "byte_size": 16173,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2116.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2124",
+      "retrieved_at_utc": "2026-10-21T15:59:16Z",
+      "sha256": "2b07fcde14883c8a20e85b29c1940611c8f2fc3dc11d4fdb118ae46c70bf56c4",
+      "byte_size": 14720,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2124.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2171",
+      "retrieved_at_utc": "2026-10-21T15:59:18Z",
+      "sha256": "c2f4e118464b0e223c77ce7df74ececfc4129726dc41c277d4b539c55bd42ceb",
+      "byte_size": 14933,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2171.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2185",
+      "retrieved_at_utc": "2026-10-21T15:59:19Z",
+      "sha256": "8d7c9efb1146f56f98e3763bfb432c06534a5c78160cde8146015d984e583dc1",
+      "byte_size": 15446,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2185.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2196",
+      "retrieved_at_utc": "2026-10-21T15:59:21Z",
+      "sha256": "e749a7adb1ecbdc5f033b5cfe6b7a43df5250d5d498f6e7e7143d1f335270416",
+      "byte_size": 15054,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2196.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2216",
+      "retrieved_at_utc": "2026-10-21T15:59:23Z",
+      "sha256": "a5f0f4ffd83d1a17b10bf10064469462d6b36fcea134a2c0f2497a75d8d1d0e9",
+      "byte_size": 16354,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2216.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2234",
+      "retrieved_at_utc": "2026-10-21T15:59:24Z",
+      "sha256": "4269847dc0cb3159949c1c22a1bc5081ae603be2ad1c19e947d058e83a366cb9",
+      "byte_size": 14206,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2234.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2235",
+      "retrieved_at_utc": "2026-10-21T15:59:26Z",
+      "sha256": "6a2684221ad7200f8ea759b158dc0dd2fc483e794935c468e2544ae8659568e3",
+      "byte_size": 14763,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2235.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2236",
+      "retrieved_at_utc": "2026-10-21T15:59:28Z",
+      "sha256": "efeaed3e64fdb6e9982be1ca2c82fcb0f763783dd19d8368e90a952b8da39f84",
+      "byte_size": 14272,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2236.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2237",
+      "retrieved_at_utc": "2026-10-21T15:59:30Z",
+      "sha256": "97296c0836ff3ef5e06b9de59e017c767b0a27f91bc3ae088c5bf47618720f0d",
+      "byte_size": 14392,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2237.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2246",
+      "retrieved_at_utc": "2026-10-21T15:59:32Z",
+      "sha256": "8e7d0f23895eae8a69afad4c24b5a95ce0e35784100558b4a5aa834ac6b07c04",
+      "byte_size": 14411,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2246.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2301",
+      "retrieved_at_utc": "2026-10-21T15:59:34Z",
+      "sha256": "7c71f609f03f5bf7bc5adc523388db48904faa57d5f6d37e6441aa0ac0e37d3b",
+      "byte_size": 14737,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2301.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2323",
+      "retrieved_at_utc": "2026-10-21T15:59:35Z",
+      "sha256": "fc6d612f7195c5352d67bf15aa094b2f8e307ca8329ffa389a5e2e2e30e7d137",
+      "byte_size": 21921,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2323.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2327",
+      "retrieved_at_utc": "2026-10-21T15:59:37Z",
+      "sha256": "2affd342aa4465303c8108af6acb2ae609607acfdb6ee946c9f7403faeba933e",
+      "byte_size": 14796,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2327.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2335",
+      "retrieved_at_utc": "2026-10-21T15:59:38Z",
+      "sha256": "89714f585cd0e60d212f6091c136394e3bf6532abd43fb326e85ecfebb6e51f2",
+      "byte_size": 14510,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2335.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2356",
+      "retrieved_at_utc": "2026-10-21T15:59:40Z",
+      "sha256": "8d497435287a806421700975ddb628954f76313d82a2ddc164b6d0a637a9b76d",
+      "byte_size": 14367,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2356.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2454",
+      "retrieved_at_utc": "2026-10-21T15:59:43Z",
+      "sha256": "8209b30c86e9efc04811cdd1c3ef243e5e2a73e76c23f92cb2292cf3ff20c15c",
+      "byte_size": 14857,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2454.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2475",
+      "retrieved_at_utc": "2026-10-21T15:59:45Z",
+      "sha256": "c7f852b198dcf6a2a1b55916ccc08c44d381fe3a4502b155aad7490e6c961dbd",
+      "byte_size": 14506,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2475.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2478",
+      "retrieved_at_utc": "2026-10-21T15:59:46Z",
+      "sha256": "5796e6a19ccb2f02d211a4fc429db2075097a57fc62e72bcbdc713551b0830d3",
+      "byte_size": 13969,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2478.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2482",
+      "retrieved_at_utc": "2026-10-21T15:59:48Z",
+      "sha256": "cef4754b7d3ef12a6c11a10e835d29ad971b96727f458147497e42fb7c096e67",
+      "byte_size": 14349,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2482.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2483",
+      "retrieved_at_utc": "2026-10-21T15:59:50Z",
+      "sha256": "c89eaf4c8715c13ee991fe3e0c4491b7810199b78ed77586c60a7b78ddc6306d",
+      "byte_size": 14197,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2483.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2484",
+      "retrieved_at_utc": "2026-10-21T15:59:51Z",
+      "sha256": "f730a738b85e0e2cc344cc57374abdece5d1dad6ddc429210dd1b63c550358e1",
+      "byte_size": 14337,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2484.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2494",
+      "retrieved_at_utc": "2026-10-21T15:59:53Z",
+      "sha256": "3523350c45e931982030e4d03af0fadb29d6323248e123823fe67451168eb4e5",
+      "byte_size": 14448,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2494.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=24955",
+      "retrieved_at_utc": "2026-10-21T16:01:26Z",
+      "sha256": "4bdc763d676746c9189186fe8a8adf5b9567e459bab3e34e59d22fcad7b7a795",
+      "byte_size": 15101,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/24955.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=2517",
+      "retrieved_at_utc": "2026-10-21T15:59:55Z",
+      "sha256": "c28b7411dccd03902c31c4954db4cd6f9cce5081a765961f064ffd292f061860",
+      "byte_size": 14928,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/2517.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=27899",
+      "retrieved_at_utc": "2026-10-21T16:01:28Z",
+      "sha256": "3a5146686962feedbd9746d27e154d88d62e4c69199c1efb88ffad13f962005d",
+      "byte_size": 21833,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/27899.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=3149",
+      "retrieved_at_utc": "2026-10-21T15:59:56Z",
+      "sha256": "f6faa192969c98bad4c940615f35919ab12d44004418afb024b175dcea4f8737",
+      "byte_size": 14181,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/3149.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=3162",
+      "retrieved_at_utc": "2026-10-21T15:59:59Z",
+      "sha256": "4a80328e6e5749c47fcecab67e1daebc9fa1b5c765e27245b405d64eda06a9d7",
+      "byte_size": 14833,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/3162.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=33069",
+      "retrieved_at_utc": "2026-10-21T16:01:30Z",
+      "sha256": "0cb38371a3df9f927de59106d84288589fe6f961df4964167470f5bf3fa53e2c",
+      "byte_size": 19251,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/33069.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=3466",
+      "retrieved_at_utc": "2026-10-21T16:00:01Z",
+      "sha256": "5dbaa6f9582807bd1d1b8035dd6de38b4bcdaa49416ee9caade9b4a1947bddb8",
+      "byte_size": 15008,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/3466.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=3575",
+      "retrieved_at_utc": "2026-10-21T16:00:03Z",
+      "sha256": "0d7308861946fc65dc45bdb38bd71880de4c988589c5f359962d2b4781aa35cd",
+      "byte_size": 14920,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/3575.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=3659",
+      "retrieved_at_utc": "2026-10-21T16:00:05Z",
+      "sha256": "06e32bcc6bdb65a1c824a50f3e229b26e4dab0b0e30fdefbc7a840c1130bba57",
+      "byte_size": 14901,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/3659.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=36665",
+      "retrieved_at_utc": "2026-10-21T16:01:34Z",
+      "sha256": "1892a95baddbadf1262dbce1f83094f3b57e443d2a7615057877625aedb814d8",
+      "byte_size": 14789,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/36665.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=3693",
+      "retrieved_at_utc": "2026-10-21T16:00:07Z",
+      "sha256": "3189c7d297361d5e399d847a3f03add79a27a9675e96fd40cd0b3e634f33bc4a",
+      "byte_size": 14586,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/3693.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=3695",
+      "retrieved_at_utc": "2026-10-21T16:00:09Z",
+      "sha256": "3dd96975cfa4f02166b867338519e8dabd8800cba05bc16d3526b07b3c9d7aa1",
+      "byte_size": 16191,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/3695.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=371852",
+      "retrieved_at_utc": "2026-10-21T16:02:20Z",
+      "sha256": "849a4f55f9cd8ae6f973a47289d6de4d88b8a63ce02aa6504b953a16c3a3b891",
+      "byte_size": 17030,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/371852.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=372146",
+      "retrieved_at_utc": "2026-10-21T16:02:21Z",
+      "sha256": "7ee262e0ef79dbc2d35f3c2a4454ac63a91c215aab47e9a1da7882bdb3501e39",
+      "byte_size": 14568,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/372146.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=378641",
+      "retrieved_at_utc": "2026-10-21T16:02:23Z",
+      "sha256": "a6171b52569a2dc13b6a04502f58914fa05e7666535f35255d1719fbfebbb1e9",
+      "byte_size": 14578,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/378641.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=3821",
+      "retrieved_at_utc": "2026-10-21T16:00:11Z",
+      "sha256": "8b0fa5d8a0853cd9b3b9c88998fb82dd918990de863ee4f0825979f40de24306",
+      "byte_size": 17602,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/3821.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=383581",
+      "retrieved_at_utc": "2026-10-21T16:02:25Z",
+      "sha256": "3db5ad00ec5271cc1fd34c25b141f40641e7fc39be0115faa62406338334ba3d",
+      "byte_size": 14720,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/383581.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=383749",
+      "retrieved_at_utc": "2026-10-21T16:02:27Z",
+      "sha256": "4020519f1d31bd01cb134420cde8266290126f7acf505328f07b5f6561b5aa6a",
+      "byte_size": 14219,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/383749.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=3849",
+      "retrieved_at_utc": "2026-10-21T16:00:13Z",
+      "sha256": "6397c09fe4315d44e8d4d0c394db2bea1ae7e65503197fc5f22ababbdcfa0f75",
+      "byte_size": 17450,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/3849.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=389641",
+      "retrieved_at_utc": "2026-10-21T16:02:28Z",
+      "sha256": "480cd4ce23b7e8bf52139194fc9488c788e0ce552a35edd2249216dafeeeb1ab",
+      "byte_size": 15748,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/389641.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=391684",
+      "retrieved_at_utc": "2026-10-21T16:02:30Z",
+      "sha256": "32d264f4c8c25d6928ebfd52fc177cb6a5a1517deed7cb84ec0ed1bd9d8bd7f4",
+      "byte_size": 18768,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/391684.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=395399",
+      "retrieved_at_utc": "2026-10-21T16:02:32Z",
+      "sha256": "808754dd34639ab4bea15cbbbca3fc1babd5abc24c2cabf5955c3bda55b9b3c8",
+      "byte_size": 15225,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/395399.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=448",
+      "retrieved_at_utc": "2026-10-21T15:59:03Z",
+      "sha256": "f00cfbe481291eeead108b6059997064bc8f54a37d7cd5b658cb4100671d5b20",
+      "byte_size": 20237,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/448.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=52701",
+      "retrieved_at_utc": "2026-10-21T16:01:40Z",
+      "sha256": "a3342bdde33a721a83b253adaf2df6c6b7eb705b28bdafb3e06622d25bf22c21",
+      "byte_size": 14247,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/52701.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=56288",
+      "retrieved_at_utc": "2026-10-21T16:01:43Z",
+      "sha256": "6205551d0c4233e3e106db5bdc746afec15a2389d1663983b0528079edaaf1cb",
+      "byte_size": 19198,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/56288.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=56289",
+      "retrieved_at_utc": "2026-10-21T16:01:45Z",
+      "sha256": "687ac3046396b94ae2c80a36eadd51f18bd3315dfcbc671dbb84f8161df12747",
+      "byte_size": 17080,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/56289.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=63670",
+      "retrieved_at_utc": "2026-10-21T16:01:49Z",
+      "sha256": "fd7dc0928f78d59ae6fe4cbdb1bad2e7eac39ec633ae09d31b9fc2f91611939a",
+      "byte_size": 17248,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/63670.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=63674",
+      "retrieved_at_utc": "2026-10-21T16:01:51Z",
+      "sha256": "ad1047fefb11f5e5fa86f5c514a1361f572f66ce1090b05fd1a46dd8ae18d8a0",
+      "byte_size": 16938,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/63674.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=64828",
+      "retrieved_at_utc": "2026-10-21T16:01:54Z",
+      "sha256": "bfb1d8f839e10406141e641ca2e6c87b362dbe1ba8be78cfcba3cd8288d32271",
+      "byte_size": 15291,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/64828.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=66233",
+      "retrieved_at_utc": "2026-10-21T16:01:56Z",
+      "sha256": "9ff5049a70ed52f62f8ec8994daeb101440a5c31193e1646e83d7a2a8d7e3cc4",
+      "byte_size": 16809,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/66233.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=66282",
+      "retrieved_at_utc": "2026-10-21T16:01:58Z",
+      "sha256": "8e8c7e141c2339c450faed152138234fce6b1279d783c3a56c8298b21dbab30d",
+      "byte_size": 20043,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/66282.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=66671",
+      "retrieved_at_utc": "2026-10-21T16:02:00Z",
+      "sha256": "2e75bba06588aaf7b632d90a8cff14c5b209e130e97c830bfbf60049da5ff93b",
+      "byte_size": 16360,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/66671.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=66738",
+      "retrieved_at_utc": "2026-10-21T16:02:01Z",
+      "sha256": "024c61d488b3b74483ed4a728a02a2893b90d7535a3558a0db865e18f14877bc",
+      "byte_size": 16384,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/66738.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=66820",
+      "retrieved_at_utc": "2026-10-21T16:02:03Z",
+      "sha256": "72eb1349c400f29684c7ff6c7824ec680d7f6c14a30399ee7095158e1e804ddd",
+      "byte_size": 18175,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/66820.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=67836",
+      "retrieved_at_utc": "2026-10-21T16:02:05Z",
+      "sha256": "9e7f35d6f4a8d143e2e0bbd6f488e1a27664deefafa14b39901367554c6cf1a9",
+      "byte_size": 15626,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/67836.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=67858",
+      "retrieved_at_utc": "2026-10-21T16:02:07Z",
+      "sha256": "9705fdb87b6f62c8b6800c4ac71fe4322f16a9a271284c690d2dd4bddfc709ac",
+      "byte_size": 15146,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/67858.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=69560",
+      "retrieved_at_utc": "2026-10-21T16:02:10Z",
+      "sha256": "a39a39e85ff4caed05a21fe604b55e1b7b489bef61084f6ed7d4d5acbb2d227b",
+      "byte_size": 16426,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/69560.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=71009",
+      "retrieved_at_utc": "2026-10-21T16:02:12Z",
+      "sha256": "b6145df0314669c9cedf1353a38e637a8eb641e92f004207d3feabcd2b945ff3",
+      "byte_size": 14769,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/71009.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=71010",
+      "retrieved_at_utc": "2026-10-21T16:02:14Z",
+      "sha256": "d99445ff7c22ac065e0dbd572908c4b35a2190283eda258bcc90a37bebf6e984",
+      "byte_size": 14877,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/71010.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=71087",
+      "retrieved_at_utc": "2026-10-21T16:02:16Z",
+      "sha256": "7324bda0ad6c17fa3b61d703e3367c77ba5601d810a2936ddd88b0e4029a95da",
+      "byte_size": 14855,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/71087.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=71089",
+      "retrieved_at_utc": "2026-10-21T16:02:18Z",
+      "sha256": "175e8877048dcb9f186bb3754076d96571906a1366e5368f6cd08ab8e1252c90",
+      "byte_size": 14376,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/71089.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7742",
+      "retrieved_at_utc": "2026-10-21T16:00:15Z",
+      "sha256": "9a4c4e932d20092a39fab9464b7b709f8c9952aec5ca12ff435d21dd1ee9a5b3",
+      "byte_size": 17930,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7742.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7898",
+      "retrieved_at_utc": "2026-10-21T16:00:17Z",
+      "sha256": "3a16ecd0ede07efe7fe37494edf0ce8c2453e82e3d886ad5bf2534d538b1dc14",
+      "byte_size": 17139,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7898.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7921",
+      "retrieved_at_utc": "2026-10-21T16:00:19Z",
+      "sha256": "c37d30f1e5c34c6fe635d122d0036e32a4c45c065854a6225e3ed4d7e4f63b55",
+      "byte_size": 18685,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7921.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7922",
+      "retrieved_at_utc": "2026-10-21T16:00:21Z",
+      "sha256": "ad629446b71980025cb701228d55a52087448e298ec4ab9204ae802a040335b1",
+      "byte_size": 17894,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7922.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7923",
+      "retrieved_at_utc": "2026-10-21T16:00:23Z",
+      "sha256": "0ea65b0fa4af062c242b69619df9de4af12cdd6d4fd325a8877f3eaed5782583",
+      "byte_size": 17164,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7923.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7925",
+      "retrieved_at_utc": "2026-10-21T16:00:24Z",
+      "sha256": "913e14b1d736bcd326bff44c043a364e3c6d3eb5509a5b27faedffd5c5eb37eb",
+      "byte_size": 15888,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7925.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7926",
+      "retrieved_at_utc": "2026-10-21T16:00:26Z",
+      "sha256": "b86d46e24d9d3a1f80b2fe192b0786067607c54367c603d85d496a0d6497a383",
+      "byte_size": 17395,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7926.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7927",
+      "retrieved_at_utc": "2026-10-21T16:00:28Z",
+      "sha256": "1d02eede6e0e919a8b483860a0e7788bf8b7b9e1fe7a164868e950eb820a6417",
+      "byte_size": 18375,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7927.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7928",
+      "retrieved_at_utc": "2026-10-21T16:00:29Z",
+      "sha256": "e9240666c05d18bc4bdedaf1e28e4cf206067eb87986d9b45c4a4a9704be845c",
+      "byte_size": 17998,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7928.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7929",
+      "retrieved_at_utc": "2026-10-21T16:00:31Z",
+      "sha256": "153641f7ae0d71e3ffa2026ed69658d4a3806085ca6b6cb6a871e47836215b6a",
+      "byte_size": 19250,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7929.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7930",
+      "retrieved_at_utc": "2026-10-21T16:00:33Z",
+      "sha256": "5624d6e670b9c1d0609b9baa3792366bd8d86aec5477dd82f681e6a6ff594449",
+      "byte_size": 17320,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7930.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7932",
+      "retrieved_at_utc": "2026-10-21T16:00:34Z",
+      "sha256": "53fad106d430b752aed59f4c5f7bfc5d43abd279a79103d6ca66aaac4a8e3a66",
+      "byte_size": 19865,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7932.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7933",
+      "retrieved_at_utc": "2026-10-21T16:00:36Z",
+      "sha256": "fd893696624fbe57a814cc6c5f01a05acb507d0090838f87a2b193c9c444a187",
+      "byte_size": 19853,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7933.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7934",
+      "retrieved_at_utc": "2026-10-21T16:00:38Z",
+      "sha256": "4506f33d6039de03783194d1a4321ec3bd4a604701e0c9ffb3ce28d216240980",
+      "byte_size": 18036,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7934.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7935",
+      "retrieved_at_utc": "2026-10-21T16:00:39Z",
+      "sha256": "120cc65ed6f7a2ed704c62f6179db7d5244dcb5c94102378a312a128b54e8117",
+      "byte_size": 19518,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7935.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7936",
+      "retrieved_at_utc": "2026-10-21T16:00:41Z",
+      "sha256": "d98a5012b4549152f8a55e255befe8cbba486e67dfa9742ef923357a49d20ce7",
+      "byte_size": 26126,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7936.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7939",
+      "retrieved_at_utc": "2026-10-21T16:00:43Z",
+      "sha256": "2ddb9d96b9fc3709800cdc284935073cafd071bd9d67fc44b8dadaf9ab0042e9",
+      "byte_size": 17216,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7939.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7940",
+      "retrieved_at_utc": "2026-10-21T16:00:45Z",
+      "sha256": "31da775033dfae364c84d74d8fd69484a6152112624d507b8fa33240101eda3b",
+      "byte_size": 16564,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7940.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7941",
+      "retrieved_at_utc": "2026-10-21T16:00:46Z",
+      "sha256": "43cfd77230b4d4fe745a74123f0c809cf321556b2f203910600d597db33d0030",
+      "byte_size": 16127,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7941.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7942",
+      "retrieved_at_utc": "2026-10-21T16:00:48Z",
+      "sha256": "8071dc27a3f956ee6e523cb279191bc3a9da392a571110268f487c85e6ca17e7",
+      "byte_size": 16445,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7942.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7943",
+      "retrieved_at_utc": "2026-10-21T16:00:50Z",
+      "sha256": "e54d254b012b03802628b59b31ff4f654ed530ca04b9d4a0a451ca74425fcb92",
+      "byte_size": 16711,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7943.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=7952",
+      "retrieved_at_utc": "2026-10-21T16:00:52Z",
+      "sha256": "5893c3a64e701c7ff0ce4224ee74d7378c3283b6f612b4d43ae043948cf1ccbd",
+      "byte_size": 15708,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/7952.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=8047",
+      "retrieved_at_utc": "2026-10-21T16:00:53Z",
+      "sha256": "d4b995732dac7e6afbbeb00d38aef856dce5b97caae7a8a91b11e6f878561fdb",
+      "byte_size": 15753,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/8047.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=8156",
+      "retrieved_at_utc": "2026-10-21T16:00:55Z",
+      "sha256": "c5ad941ee8c769e08a1be229f5b37ab5413f3bb64992bd2a23038d8ed6f94c02",
+      "byte_size": 15354,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/8156.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=8157",
+      "retrieved_at_utc": "2026-10-21T16:00:57Z",
+      "sha256": "cef294e3a9b7c87670677db89a2692a4e894a6a97d8dca714e70e25a9aa42676",
+      "byte_size": 17898,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/8157.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=8159",
+      "retrieved_at_utc": "2026-10-21T16:00:59Z",
+      "sha256": "768554cc562e511835c110bef9e0c3e5ff1575e0ce50348b136e3bc686ddfacd",
+      "byte_size": 16066,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/8159.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=8180",
+      "retrieved_at_utc": "2026-10-21T16:01:00Z",
+      "sha256": "bb78a6a622a8ae3102c209672a54a9ba489433319270680c6fd4ddff47750027",
+      "byte_size": 16332,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/8180.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=9404",
+      "retrieved_at_utc": "2026-10-21T16:01:02Z",
+      "sha256": "14d109b42d33f8024489a14c699afa4a775cd6d98bbc8e4d9858aa560214f555",
+      "byte_size": 18628,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/9404.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=9412",
+      "retrieved_at_utc": "2026-10-21T16:01:04Z",
+      "sha256": "7b4ee827937a330ebb11b0ed3bb5e3f8de68386d66d5f61ff3c4529f3774a7b9",
+      "byte_size": 14851,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/9412.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=9421",
+      "retrieved_at_utc": "2026-10-21T16:01:06Z",
+      "sha256": "01916622ab4a75b95e1fba36da8119e33f4a9c8058fefb008a929315ae3da2ff",
+      "byte_size": 17410,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/9421.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb?action=onelong&showtype=longlong&recnum=9751",
+      "retrieved_at_utc": "2026-10-21T16:01:10Z",
+      "sha256": "45f003016faba5af895ffc105e344a59b7e0c91f32f06400afe42033dfd4863f",
+      "byte_size": 20425,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC long record (subject liturgikon)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/recs/9751.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:58:00Z",
+      "sha256": "806e610fa9b8bf172ba48ce867bda1a400e3778e3bcb2d22c560b5152f5659f3",
+      "byte_size": 14985,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/s0.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:58:01Z",
+      "sha256": "0129e2676b47c667ab549eb781c228380c09e9ed0f8fa138aa8fa74448836347",
+      "byte_size": 31154,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/s1.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:58:54Z",
+      "sha256": "4fe21ae8b8d05f0a3700d62da1111a23e469943a0420b5bf6d928dd150ce66ed",
+      "byte_size": 31806,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/s1p1.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:58:22Z",
+      "sha256": "9b94f7ecf3fea60a2593bd561d7f33a7c514c6f5ac577980299d6484c5d097e0",
+      "byte_size": 30584,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/s1p2.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:58:23Z",
+      "sha256": "10c66015e0db069c89bbeff79639076611d53accd4982eab0e9c892a5485dc37",
+      "byte_size": 30377,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/s1p3.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:58:25Z",
+      "sha256": "d839ffa448b230decc4777ccb6bd384915205cd451537d98bc5cfbf91a17f0cd",
+      "byte_size": 29687,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/s1p4.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:58:27Z",
+      "sha256": "253fbf0885ad0110473fb25b4d574dadff4291b39128619e8b86ca656d1bffa5",
+      "byte_size": 29452,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/s1p5.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:58:30Z",
+      "sha256": "4f50725f23cbbf4d83f80cd38280ccf6629e2d6ae4eecd8bf08847bf4d33275f",
+      "byte_size": 28702,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/s1p6.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:58:31Z",
+      "sha256": "21f93144fbe09cecc9d5eb65633f79fd8d44889d01b8ea22e2340275a1dff504",
+      "byte_size": 29224,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/s1p7.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:58:34Z",
+      "sha256": "95b7ae4c48760eb706001c47ec5916512a60a641c37041f8560dcb1449a1749f",
+      "byte_size": 27670,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/s1p8.html"
+    },
+    {
+      "source_url": "https://corvina.monguz.hu/WebPac.sahfdb/CorvinaWeb",
+      "retrieved_at_utc": "2026-10-21T15:58:35Z",
+      "sha256": "df190eb53df04619bc710010708225cc7cc7cbd59e88dc1b9bf08b4679f49c11",
+      "byte_size": 15138,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Szent Atanáz college Corvina OPAC search or record page",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/hu/s1p9.html"
+    },
+    {
+      "source_url": "https://liturgicaloffice.org/",
+      "retrieved_at_utc": "2026-10-21T16:05:11Z",
+      "sha256": "37c98e0cd9234044de491ccbb2e73b3a1d37dfd707fb769a88cbabbcf1f034f8",
+      "byte_size": 189345,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "liturgicaloffice.org homepage (Latin Patriarchate office; excluded)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/melkite/lo.html"
+    },
+    {
+      "source_url": "https://mk.wikipedia.org/w/api.php",
+      "retrieved_at_utc": "2026-10-21T15:51:57Z",
+      "sha256": "8046e76212e6fcc9d5a8292558ce86d5cf6b6d139197f6c476389e37ad03ada7",
+      "byte_size": 10579,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Macedonian Wikipedia eparchy article wikitext (context only)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/mk/mkwiki.json"
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/posts/44725",
+      "retrieved_at_utc": "2026-10-21T15:52:41Z",
+      "sha256": "957fe27297e2144d42442857ae8dc7a8302ecee2831f137cbb8c2d069e710493",
+      "byte_size": 32995,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "katolici.mk post 44725 (11 January 2022 Chrysostom celebration report)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/mk/post44725.json"
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+      "retrieved_at_utc": "2026-10-21T15:52:25Z",
+      "sha256": "e7526f9a4360fd590555d5b3a1107042f18a6ace66a09cbbfd266f86621266fb",
+      "byte_size": 3,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "katolici.mk WordPress search API response",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/mk/wp_D095D0B2D185D0BED0BBD0BED0B3D0.json"
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+      "retrieved_at_utc": "2026-10-21T15:52:12Z",
+      "sha256": "05d28863cafe916939be2d1a5b6f38bb04a8385fa030b5c4ec8ed3227c4f7a8c",
+      "byte_size": 38678,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "katolici.mk WordPress search API response",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/mk/wp_D097D0BBD0B0D182D0BED183D181D1.json"
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+      "retrieved_at_utc": "2026-10-21T15:52:32Z",
+      "sha256": "e7526f9a4360fd590555d5b3a1107042f18a6ace66a09cbbfd266f86621266fb",
+      "byte_size": 3,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "katolici.mk WordPress search API response",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/mk/wp_D09BD0B8D182D183D180D0B3D0B8D1.json"
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+      "retrieved_at_utc": "2026-10-21T15:52:16Z",
+      "sha256": "e7526f9a4360fd590555d5b3a1107042f18a6ace66a09cbbfd266f86621266fb",
+      "byte_size": 3,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "katolici.mk WordPress search API response",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/mk/wp_D0A1D0BBD183D0B6D0B5D0B1D0BDD0.json"
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+      "retrieved_at_utc": "2026-10-21T15:52:20Z",
+      "sha256": "a160db6183f304f686c65773965b5615f78b75a78c1961fcf83f3138ffd365ad",
+      "byte_size": 21058,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "katolici.mk WordPress search API response",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/mk/wp_D0BBD0B8D182D183D180D0B3D0B8D1.json"
+    },
+    {
+      "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+      "retrieved_at_utc": "2026-10-21T15:52:29Z",
+      "sha256": "262b308ac3caa5ce9fc0c45b2a9370a3b3901385137675a96be96b19831467a7",
+      "byte_size": 12866,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "katolici.mk WordPress search API response",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/mk/wp_D0BFD180D0B5D0B2D0BED0B420D0BD.json"
+    },
+    {
+      "source_url": "https://www.orientecattolico.com/",
+      "retrieved_at_utc": "2026-10-21T15:47:34Z",
+      "sha256": "0ecedffa5c1924d4a18535ff937e62b26ed0c3387b02fdada42b06905d3633c3",
+      "byte_size": 47055,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "orientecattolico.com pages (commercial edition; 404 subpages)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/oc-site/formato-cartaceo.html"
+    },
+    {
+      "source_url": "https://www.orientecattolico.com/",
+      "retrieved_at_utc": "2026-10-21T15:47:33Z",
+      "sha256": "0ecedffa5c1924d4a18535ff937e62b26ed0c3387b02fdada42b06905d3633c3",
+      "byte_size": 47055,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "orientecattolico.com pages (commercial edition; 404 subpages)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/oc-site/Formato-digitale.html"
+    },
+    {
+      "source_url": "https://www.orientecattolico.com/",
+      "retrieved_at_utc": "2026-10-21T15:47:32Z",
+      "sha256": "b684f54503805af3281db2968b1ee59d936dde41e0e964cfd26ca2f5110af665",
+      "byte_size": 61074,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "orientecattolico.com pages (commercial edition; 404 subpages)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/oc-site/index.html"
+    },
+    {
+      "source_url": "https://www.accademiasicilianamitici.org/curr/g_schiro.pdf",
+      "retrieved_at_utc": "2026-10-21T15:53:50Z",
+      "sha256": "5bf82e193e2764d1ed380b095c99ca55d3b9e8078c9f531f79b41376b939cb62",
+      "byte_size": 4560,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "HTTP 999 error page returned to direct retrieval (not evidence)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/piana/g_schiro_http999_error.html"
+    },
+    {
+      "source_url": "https://www.accademiasicilianamitici.org/curr/g_schiro.pdf",
+      "retrieved_at_utc": "2026-10-21T15:54:14Z",
+      "sha256": "a572d26fc2ca2da167121e20aaf7042235220375e69f0b5aa2ae9b3c2d89d5ac",
+      "byte_size": 222104,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "Translator bibliography (Schirò Di Maggio), Piana 2006 Ieratikon entry",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/piana/g_schiro.pdf"
+    },
+    {
+      "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CBVE%5C0501507",
+      "retrieved_at_utc": "2026-10-21T15:50:07Z",
+      "sha256": "4e84dbd67850aa7ed3ae839a7d4cf8da203d9eac23645404b5bfd7b8fd511eb0",
+      "byte_size": 1157,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "OPAC SBN full record via public JSON service",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/sbn/full_IT_ICCU_BVE_0501507.json"
+    },
+    {
+      "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CBVE%5C0792797",
+      "retrieved_at_utc": "2026-10-21T15:53:24Z",
+      "sha256": "6bb12ad86979dbf90930a11035d5084220e32b817c81277eacef0d14fb5c562d",
+      "byte_size": 1091,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "OPAC SBN full record via public JSON service",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/sbn/full_IT_ICCU_BVE_0792797.json"
+    },
+    {
+      "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CBVE%5C1001462",
+      "retrieved_at_utc": "2026-10-21T15:53:23Z",
+      "sha256": "45fcaeba1b900206e6c209c5fc55429e7f742b6ee1d3d1f31b2a695ede25edfa",
+      "byte_size": 1311,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "OPAC SBN full record via public JSON service",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/sbn/full_IT_ICCU_BVE_1001462.json"
+    },
+    {
+      "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CCSA%5C0064106",
+      "retrieved_at_utc": "2026-10-21T15:53:20Z",
+      "sha256": "f1b2308999cb8c6d72fbfea8719db937a953d8e0c92122ed6c57307d2a0efb31",
+      "byte_size": 2407,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "OPAC SBN full record via public JSON service",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/sbn/full_IT_ICCU_CSA_0064106.json"
+    },
+    {
+      "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CPAL%5C0135089",
+      "retrieved_at_utc": "2026-10-21T15:50:08Z",
+      "sha256": "5b7873fe075ab43e48f5b8ad4eda66be00cffbd0b67d5cc503e85ba8bd068c69",
+      "byte_size": 2355,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "OPAC SBN full record via public JSON service",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/sbn/full_IT_ICCU_PAL_0135089.json"
+    },
+    {
+      "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CPAL%5C0225607",
+      "retrieved_at_utc": "2026-10-21T15:53:18Z",
+      "sha256": "3ccbb275ce8042726836d0574d1d484c13240d7dcdb755c7b1e50c97ce42d710",
+      "byte_size": 1641,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "OPAC SBN full record via public JSON service",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/sbn/full_IT_ICCU_PAL_0225607.json"
+    },
+    {
+      "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CPAL%5C0225860",
+      "retrieved_at_utc": "2026-10-21T15:50:08Z",
+      "sha256": "4f7f4524f23e56f783f3521d430be3ebccd874645639f9f933461aefeba490b9",
+      "byte_size": 1199,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "OPAC SBN full record via public JSON service",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/sbn/full_IT_ICCU_PAL_0225860.json"
+    },
+    {
+      "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CPUV%5C0933582",
+      "retrieved_at_utc": "2026-10-21T15:53:21Z",
+      "sha256": "647edc443821dbf677bd23ac95c7fdf788358a4c8299058293bc91826bdca147",
+      "byte_size": 2296,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "OPAC SBN full record via public JSON service",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/sbn/full_IT_ICCU_PUV_0933582.json"
+    },
+    {
+      "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CVIA%5C0344104",
+      "retrieved_at_utc": "2026-10-21T15:53:26Z",
+      "sha256": "3f74b6901008a323cafcf9e14c52335638e035241200257f45af6ef1a2002374",
+      "byte_size": 917,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "OPAC SBN full record via public JSON service",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/sbn/full_IT_ICCU_VIA_0344104.json"
+    },
+    {
+      "source_url": "https://opac.sbn.it/opacmobilegw/search.json?any=liturgjia",
+      "retrieved_at_utc": "2026-10-21T15:49:47Z",
+      "sha256": "2ae0136fdd43caee400002c9eea902bbdd4e08330ec5e69fc17eff7223651df9",
+      "byte_size": 1778,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "OPAC SBN search result via public JSON service",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/sbn/m1.json"
+    },
+    {
+      "source_url": "https://opac.sbn.it/risultati-ricerca-avanzata",
+      "retrieved_at_utc": "2026-10-21T15:49:38Z",
+      "sha256": "c87d87227e58e006f9bab0a92be3213cde538e44e77750ccb9c12d1bfb54b902",
+      "byte_size": 203752,
+      "retrieved_extent": "complete response as delivered",
+      "source_role": "OPAC SBN HTML advanced-search shell (JS-rendered; no results)",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase. Offline readers have the factual notes, not the source.",
+      "scratch_path": ".scratch/batch4-20261021/eastern-census/acq/sbn/s1.html"
+    }
+  ],
+  "independent_review": {
+    "status": "accepted-with-corrections",
+    "independent": true,
+    "reviewer": "independent batch-4 cold reviewer, distinct from the lane author and the coordinator",
+    "checked_on": "2026-10-21",
+    "verdict_sha256": "adc70e3c9e70d26688740e76694bd873baa1ec001143a826609cd259aeb02074",
+    "scope": "Reviewed lane commit 62f42abf1 against base 5f2e74718; the lane added no stages, transitions or traditions. Re-fetched 19 sources independently (15 byte-identical to the lane copies; 4 Corvina records differing only in session markup) and viewed the Oriente Cattolico Sommario and editorial-note pages, The Catholic East contents and 2019 chart, and the translator-bibliography page; compared all 19 chart figures with Roberson's 2017 totals; read all seven SBN full records, four Corvina long records, the 106-record Corvina subject list, the katolici.mk post and both elcathex posts; spot-checked SBN negative searches; checked all 170 acquisition hashes, the worklog hash, ownership and path hygiene. Corrections: the two Hungarian copy-provenance records moved from candidate_ids to deferred origin review; the Sátoraljaújhely note re-dated as a post-1881 memorial note reporting the 1856 donation; the Zolcsák possessor entry qualified; four narrowed gap dispositions reset to unchanged-searched and the Piana exact-book remainder restored; the SBN PAL0225860 catalogue title restored; the Piana Ieratikon's altar role and the 1964 Schirò translation's Church link marked unestablished; census wording, bracketed imprints, undated copy marks and a search-bounded Bollettino statement narrowed. Not checked: original book leaves (none were available to the lane), the chapter texts of the Dicastery works, the Melkite and Athens negative searches beyond their recorded text, and generated browser data."
+  }
+}
