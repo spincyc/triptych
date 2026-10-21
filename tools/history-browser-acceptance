@@ -5,7 +5,40 @@ import sys
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
+from _tooling import Example
 from _history_browser_acceptance import main
 
+# Both invocations were run without the required plan and rejected before
+# creating evidence or starting a browser. These are not acceptance passes.
+EXAMPLES = {
+    "": (
+        Example(
+            "tools/history-browser-acceptance --url http://127.0.0.1:0/history/ "
+            "--catalogue src/web/data/structure/act-history/catalogue.json "
+            "--plan .scratch/history-browser-example/plan.json "
+            "--site .scratch/history-browser-example/site "
+            "--out .scratch/history-browser-example/owned-server --json",
+            (
+                '{"code": "invalid-input", "error": "[Errno 2] No such file or directory: \'<repo>/.scratch/history-browser-example/plan.json\'", "exit_status": 2, "status": "error", "v": 1}',
+            ),
+            "Requires a fresh built site and an explicit plan pinned to the catalogue SHA256. "
+            "Starts an owned loopback server and writes scratch evidence; the --out directory must be new or empty. "
+            "Recorded run rejected the missing plan before browser startup; no acceptance pass is claimed.",
+        ),
+        Example(
+            "tools/history-browser-acceptance --url http://127.0.0.1:8000/history/ "
+            "--catalogue src/web/data/structure/act-history/catalogue.json "
+            "--plan .scratch/history-browser-example/plan.json "
+            "--out .scratch/history-browser-example/existing-server --json",
+            (
+                '{"code": "invalid-input", "error": "[Errno 2] No such file or directory: \'<repo>/.scratch/history-browser-example/plan.json\'", "exit_status": 2, "status": "error", "v": 1}',
+            ),
+            "Requires an existing loopback preview serving the fresh catalogue and runtime, "
+            "plus an explicit plan pinned to that catalogue. Writes scratch evidence; the --out directory must be new or empty. "
+            "Recorded run rejected the missing plan before browser startup; no acceptance pass is claimed.",
+        ),
+    ),
+}
+
 if __name__ == '__main__':
-    raise SystemExit(main())
+    raise SystemExit(main(examples=EXAMPLES[""]))

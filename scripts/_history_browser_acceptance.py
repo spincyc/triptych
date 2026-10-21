@@ -294,8 +294,9 @@ def exercise(b,catalogue,raw,plan,source):
     b.check('no-local-http-errors',not [r for r in b.requests if isinstance(r['status'],int) and r['status']>=400 and urllib.parse.urlsplit(r['path']).path!='/favicon.ico'])
     b.save('served-resources',b.resources)
 
-def main(argv=None):
-    parser=argparse.ArgumentParser(description=__doc__)
+def main(argv=None, *, examples=()):
+    from _tooling import with_examples
+    parser=with_examples(argparse.ArgumentParser(description=__doc__), examples)
     parser.add_argument('--url',required=True,help='loopback URL ending /history/; port0 starts an owned --site server')
     parser.add_argument('--catalogue',required=True,type=Path)
     parser.add_argument('--out',required=True,type=Path,help='new or empty repository .scratch directory')

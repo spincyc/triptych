@@ -550,7 +550,7 @@ context = "One chant page of the gregorien.info database, read for the Alleluia 
 source_id = "corpus.catholic-church.ancient-sacramentaries-2026-08-01"
 role = "corpus-boundary"
 states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:104d47aadea51817303166e18d9e32dabebffd328f710cc0531575ead3a681b4"
+source_fingerprint = "sha256:1ff568800d5e53fe3a4d927ec4d9746d0c85ee762858c160db36f58a7a38d9ca"
 context = "The declared corpus over which the guide's bounded negative on the three orations was run: the Veronense in two independent scans, Ferotin's Liber mozarabicus sacramentorum, Bannister's Missale Gothicum and Lowe's Bobbio Missal, beside the two Wilson layers that are the positive control. Fourteen distinctive strings were searched after de-hyphenation, accent stripping and letter folding, returning zero in all five negative layers and hitting twelve of fourteen in Wilson. It is bound as a boundary and not as a search receipt: at the time of that search the layers were not registered as indexable, and no replayable receipt was recorded. The four bounds the guide publishes with the negative -- literal search cannot see a paraphrase, printed abbreviations can conceal expanded wording, including those Feltoe selectively retains (preface p. vi), the ae-ligature failure mode is demonstrated on this very material, and the corpus excludes every eighth-century Gelasian and every later Roman book -- travel with it. Source impact reviewed 2026-10-17: the Ferotin OCR is now retained and indexable after review of the actual historical edition and provider additions. Its SHA-256 and byte count exactly match the previously registered remote artifact; the corpus membership and source wording are unchanged. This metadata/storage rebind neither repeats the historical search nor upgrades uncorrected OCR to verified text. Source impact reviewed 2026-10-19: the changed Veronense work description and Feltoe edition notes were checked against the retained 1896 preface and introduction, pp. vi-viii. Feltoe selectively retains manuscript spellings and abbreviations and supplies punctuation; his printed edition is not an exact manuscript reproduction. The bound artifact bytes and loci are unchanged. This use concerns the identified printing, with its existing verification and search limits; it does not establish the manuscript's place of origin or promote OCR to a manuscript collation."
 
 # --- Patristic, medieval and later reception ---
@@ -996,10 +996,10 @@ source_fingerprint = "sha256:61274d4f0cbf4c26b52c31cdd32db77ef225ab7b5043c6fc078
 context = "Parliament's own historic digitisation of the Official Report, read as continuous text with the column fixed from the page's per-column permalink anchors, and not collated against the printed bound volume. It carries the speech quoting Gal. 6:2 and 6:5 against each other, the interruption from the Labour benches and the lexical reply. The Greek argument in that speech is the speaker's, attributed by him to another man, and the guide reports it as his and keeps it apart from the independent finding about Paul's two Greek nouns."
 
 [[bindings]]
-source_id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-pdf-3b991b13"
+source_id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13"
 loci = ["printed preface p. vi and introduction pp. vii-viii; PDF pages 10-12"]
 role = "context"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-10-19"
-source_fingerprint = "sha256:cb86ef2c164ea3c98830ea45bcb17efe76f1a953a7a4fdd8b7a509c1c5513d95"
+source_fingerprint = "sha256:14df5bc7eea6cf5ffc8e03551879bfc5c87418e96a0b1f09b3188945256a33fc"
 context = "Page images checked for Feltoe's selective spellings and abbreviations, supplied punctuation and explicit disclaimer of exact manuscript reproduction, and for the introduction's fragmentary extent and distinction between present locality and origin. This establishes the correction to the search-limit description; no prayer-text collation or new whole-corpus search is claimed."

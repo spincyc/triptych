@@ -1,6 +1,6 @@
 #!/bin/sh
 # Stable input/evidence-preservation tests; actual browser acceptance is separate.
 set -eu
-tool_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+tool_dir=$(CDPATH= cd -- "$(dirname -- "$0")/../../tools" && pwd)
 "$tool_dir/history-browser-acceptance" --help >/dev/null
 exec /usr/bin/python3 -B -m unittest discover -s "$tool_dir/tests" -p test_history_browser_acceptance.py

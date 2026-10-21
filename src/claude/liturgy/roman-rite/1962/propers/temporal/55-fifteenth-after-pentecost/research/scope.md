@@ -2601,7 +2601,7 @@ assert more than that.
 
 The work description and Feltoe edition notes changed after the historical
 search. The retained 1896 facsimile
-`artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-pdf-3b991b13`
+`artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13`
 (SHA-256 `3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a`)
 was inspected on PDF pages 10–12, printed pp. vi–viii. The preface expressly
 describes selective manuscript spellings and abbreviations, editorial

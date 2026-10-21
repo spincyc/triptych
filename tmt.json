@@ -267,7 +267,9 @@
       "mutates": true,
       "origin": "local",
       "purpose": "Run scoped, source-pinned Chromium checks of the liturgical chronology reader.",
-      "requires": [],
+      "requires": [
+        "act-history"
+      ],
       "stage": "draft",
       "usage": "tools/history-browser-acceptance --url URL --catalogue PATH --out SCRATCH --plan JSON [--root DIR] [--site DIR]"
     },

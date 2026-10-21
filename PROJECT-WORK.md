@@ -57,8 +57,22 @@ historical inventory of sufficiently distinct Eucharistic service-book versions
 for every rite in communion with Rome, organized witnesses and structured texts,
 a generated Git repository whose commits expose the actual textual changes,
 and a subway-map visualizer over the same evidence. The workspace target is
-`feature/missal-timeline`; this does not authorize changing the default branch.
+`feature/missal-timeline`. On 21 October 2026 the maintainer explicitly
+authorized rebasing this work and pushing it to `main`, including the automatic
+Pages deployment attempt that a main push triggers.
 The full project remains **in progress**.
+
+**Main integration authorized, 21 October 2026.** The 35-commit feature line
+was rebased onto `edab7fee54e76daac24a1ec6c69141935c32f4c2`, preserving the
+concurrent publication work. The combined source library keeps main's canonical
+Feltoe facsimile and redirects the feature's duplicate identity to the identical
+19,868,448-byte PDF. Fourteen dependent review fingerprints were reconciled;
+their evidence states, loci and consumer interpretations remain unchanged.
+The combined inventories retain 162 pending source-family review units and zero
+accepted families. The [integration record](workflows/reviews/missal-batch3-2026-10-20/main-integration.json)
+records this reconciliation and the publication checks. Earlier branch-only
+delivery statements below describe their dated batches. No whole-book,
+physical-print or full all-rite completion follows from main integration.
 
 **Next phases authorized after cold review, 2026-10-20.** The maintainer
 requested execution of the outstanding phases with as many useful independent

@@ -145,6 +145,21 @@ PREPARE: dict[str, tuple[object, ...]] = {
 # checked. Every entry is printed on every run: an exemption nobody sees is the
 # failure this replay exists to end.
 EXEMPT: dict[str, str] = {
+    "tools/history-browser-acceptance --url http://127.0.0.1:0/history/ "
+    "--catalogue src/web/data/structure/act-history/catalogue.json "
+    "--plan .scratch/history-browser-example/plan.json "
+    "--site .scratch/history-browser-example/site "
+    "--out .scratch/history-browser-example/owned-server --json":
+        "starts a browser and owned loopback server, and writes non-overwritable evidence; "
+        "requires a reviewed frozen plan and fresh built site, so replay must not turn "
+        "the captured missing-plan rejection into an artifact-dependent acceptance run",
+    "tools/history-browser-acceptance --url http://127.0.0.1:8000/history/ "
+    "--catalogue src/web/data/structure/act-history/catalogue.json "
+    "--plan .scratch/history-browser-example/plan.json "
+    "--out .scratch/history-browser-example/existing-server --json":
+        "starts a browser against an existing loopback service and writes non-overwritable "
+        "evidence; requires a reviewed frozen plan and fresh preview, so replay must not "
+        "turn the captured missing-plan rejection into an artifact-dependent acceptance run",
     "tools/harvest ask --passage 'Psalms 24' --runs 1 --top 5 --out build/example-harvest":
         "calls a model, once a passage a run; the only invocation in tools/ that spends",
     "tools/harvest record --ledger build/example-harvest/ledger.yaml"

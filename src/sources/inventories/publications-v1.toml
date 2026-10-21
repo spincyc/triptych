@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-10-20"
+audited_on = "2026-10-21"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 150
 source_surface_file_count = 2747
-snapshot = "sha256:519e864d416ac05b23475d2f3132ee6adda22b8c27819c20af99c780e34b241d"
+snapshot = "sha256:4cea2e5b7ad18382d18cd956f916172bf103b9bee2c04d8bc6c8295254d0fc1b"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -9036,7 +9036,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/research/source-bindings.toml"
-sha256 = "2f44df97f851ddd36f92af313bb6047130f3c65feb796a313a208d07dcd4e71e"
+sha256 = "f89a026cef3dcd183e3f3c12e7c98c0b33cd824fb31fd4cd6914386e1ed4ee15"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost"]
 
@@ -9150,7 +9150,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecos
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/research/source-bindings.toml"
-sha256 = "5bca6fb54e0f8dd5f39db02a543e4eccd33d118ae6e9166718f939d2f6541e7b"
+sha256 = "645b9f83d5e363b77bc96f9d3d1d8d92e033b7b5df1c5c50a755ceefff172071"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"]
 

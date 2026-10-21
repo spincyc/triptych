@@ -453,6 +453,23 @@ const PROBES = {
     return { expression, value };
   },
 
+  /** History's typed literal controller, with the real source-link guards. */
+  historySourceLink(request) {
+    const text = source('history/history.js');
+    const scope = {
+      T: { el(tag, className, text) { return { tag, text }; } },
+      URL, encodeURIComponent
+    };
+    const link = new Function('scope', 'unit', 'sources', 'witnesses',
+      'with (scope) {' + ['catalogueText', 'catalogueURL', 'catalogueLink',
+        'nativeTextSourceLink'].map((name) => extractFunction(text, name)).join('\n') +
+      '; return nativeTextSourceLink(unit, sources, witnesses); }'
+    )(scope, request.unit,
+      new Map(request.sources.map((row) => [row.id, row])),
+      new Map((request.witnesses || []).map((row) => [row.id, row])));
+    return link;
+  },
+
   /** One function's source text, for the assertions that must read it. */
   functionSource(request) {
     return { text: extractFunction(source(request.file), request.name) };
@@ -1082,8 +1099,43 @@ class CrossInstrumentLinkTest(unittest.TestCase):
     )
     self.assertEqual(answer["hash"], "#edition=migne-pl-32&passage=conf%2F1")
 
-  def test_the_only_cross_entrance_deep_link_in_the_browser_is_that_one(self):
-    """A second one would need its own two-sided test; this catches its arrival.
+  def test_history_links_its_literal_controller_to_the_source_library_passage(self):
+    edition = "edition.fixture-native.1657"
+    passage = "passage.fixture-native.1657.canon-1"
+    artifact = "artifact.fixture-native.1657.text"
+    written = probe(
+      probe="historySourceLink",
+      unit={"text_edition_id": edition, "source_id": passage,
+            "source_artifact_id": artifact},
+      sources=[
+        {"id": edition, "record_type": "edition", "title": "Fixture edition"},
+        {"id": passage, "record_type": "passage", "edition_id": edition,
+         "artifact_id": artifact},
+        {"id": artifact, "record_type": "artifact", "edition_id": edition},
+      ],
+    )
+    self.assertEqual(written["tag"], "a")
+    url = written["href"]
+    self.assertEqual(url, "../sources/#edition=" + edition + "&passage=" + passage)
+
+    arriving = probe(probe="core", hash=url[len("../sources/"):])["read"]
+    self.assertEqual(arriving, {"edition": edition, "passage": passage})
+    self.assertLessEqual(set(arriving), set(hash_keys_read_by("sources/sources.js")))
+    reader_side = probe(probe="writtenKeys", file="sources/sources.js")["literal"][0]
+    self.assertEqual(set(arriving), set(reader_side))
+    reopened = probe(
+      probe="replay", file="sources/sources.js", extract=["writeHash"], call="writeHash",
+      hash=url[len("../sources/"):],
+      bindings={
+        "open": {"edition": {"id": edition}, "at": 0,
+                 "payload": {"passages": [{"id": passage}]}},
+        "state": {},
+      },
+    )
+    self.assertEqual(reopened["hash"], url[len("../sources/"):])
+
+  def test_every_cross_entrance_deep_link_has_its_two_sided_contract_above(self):
+    """Another link needs its own two-sided test; this catches its arrival.
 
     WEAK: a source scan. It exists so that a new deep link cannot be added
     without either this failing or a contract being written for it.
@@ -1095,8 +1147,9 @@ class CrossInstrumentLinkTest(unittest.TestCase):
       for line in script.read_text(encoding="utf-8").splitlines():
         if re.search(r"""\.href\s*=\s*['"]\.\./""", line):
           found.append((script.relative_to(BROWSER).as_posix(), line.strip()))
-    self.assertEqual(len(found), 1, found)
-    self.assertEqual(found[0][0], "catena/catena.js")
+    self.assertEqual(len(found), 2, found)
+    self.assertCountEqual([relative for relative, _ in found],
+                          ["catena/catena.js", "history/history.js"])
 
 
 @needs_node

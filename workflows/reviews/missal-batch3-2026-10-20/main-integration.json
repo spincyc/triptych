@@ -1,0 +1,284 @@
+{
+  "schema": "triptych-missal-main-integration/v1",
+  "date": "2026-10-21",
+  "authority": "The maintainer explicitly requested rebasing the completed missal-timeline work and pushing it to main on 2026-10-21; the workspace branch remains feature/missal-timeline.",
+  "original_feature": "fe1cf06ac976875a546890709934c7c69c5a6068",
+  "main_base": "edab7fee54e76daac24a1ec6c69141935c32f4c2",
+  "rebased_feature": "20fc6a908257960c6128e05d30f04145347b7033",
+  "replayed_commits": 35,
+  "tree_preservation": {
+    "nonconflicting_paths": 45744,
+    "divergent_shared_paths": 14,
+    "unexpected_changes": 0
+  },
+  "source_identity": {
+    "canonical_artifact": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+    "retired_duplicate_artifact": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-pdf-3b991b13",
+    "pdf_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+    "pdf_bytes": 19868448,
+    "canonical_main_manifest_unchanged": true,
+    "canonical_pdf_unchanged": true,
+    "duplicate_manifest_and_payload_removed": true,
+    "locator_migration": "Only the Feltoe edition note locator, Fifteenth Sunday research scope locator, and its duplicate-artifact binding identity were redirected. Original records remain in the published feature history.",
+    "dependent_fingerprints": [
+      {
+        "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/research/source-bindings.toml",
+        "binding": 21,
+        "source_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariuml00feltgoog",
+        "before": "sha256:19d844459c803523db9aa1ab901f7a6e5de6952a6274262fc415ac8519733c08",
+        "after": "sha256:be123962c4dd4832ae4f841fa7bd040ea1914ff912ce9112c349ec9f076bef6c"
+      },
+      {
+        "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/research/source-bindings.toml",
+        "binding": 41,
+        "source_id": "corpus.catholic-church.ancient-sacramentaries-2026-08-01",
+        "before": "sha256:104d47aadea51817303166e18d9e32dabebffd328f710cc0531575ead3a681b4",
+        "after": "sha256:1ff568800d5e53fe3a4d927ec4d9746d0c85ee762858c160db36f58a7a38d9ca"
+      },
+      {
+        "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/research/source-bindings.toml",
+        "binding": 89,
+        "source_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "before": "sha256:cb86ef2c164ea3c98830ea45bcb17efe76f1a953a7a4fdd8b7a509c1c5513d95",
+        "after": "sha256:14df5bc7eea6cf5ffc8e03551879bfc5c87418e96a0b1f09b3188945256a33fc"
+      },
+      {
+        "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/research/source-bindings.toml",
+        "binding": 66,
+        "source_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariuml00feltgoog",
+        "before": "sha256:19d844459c803523db9aa1ab901f7a6e5de6952a6274262fc415ac8519733c08",
+        "after": "sha256:be123962c4dd4832ae4f841fa7bd040ea1914ff912ce9112c349ec9f076bef6c"
+      },
+      {
+        "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/source-bindings.toml",
+        "binding": 60,
+        "source_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariumle00cath",
+        "before": "sha256:130ff2ea82bfd836c46709642054dcbe320f9c0e28a77f26a79c8f7599098e2b",
+        "after": "sha256:694da7943e823966aeaba01dbc8beb31253719ef5cc699752af2179983a26eb5"
+      },
+      {
+        "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/source-bindings.toml",
+        "binding": 8,
+        "source_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariumle00cath",
+        "before": "sha256:130ff2ea82bfd836c46709642054dcbe320f9c0e28a77f26a79c8f7599098e2b",
+        "after": "sha256:694da7943e823966aeaba01dbc8beb31253719ef5cc699752af2179983a26eb5"
+      },
+      {
+        "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/source-bindings.toml",
+        "binding": 72,
+        "source_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariuml00feltgoog",
+        "before": "sha256:19d844459c803523db9aa1ab901f7a6e5de6952a6274262fc415ac8519733c08",
+        "after": "sha256:be123962c4dd4832ae4f841fa7bd040ea1914ff912ce9112c349ec9f076bef6c"
+      },
+      {
+        "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a/research/source-bindings.toml",
+        "binding": 73,
+        "source_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariumle00cath",
+        "before": "sha256:130ff2ea82bfd836c46709642054dcbe320f9c0e28a77f26a79c8f7599098e2b",
+        "after": "sha256:694da7943e823966aeaba01dbc8beb31253719ef5cc699752af2179983a26eb5"
+      },
+      {
+        "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a/research/source-bindings.toml",
+        "binding": 43,
+        "source_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.julio-xviiii-item-alia-maiestatem-tuam",
+        "before": "sha256:1dccf7c528a9ef43b3b57d0763629cce71c6eebdfd16601fe2e76604c73c3713",
+        "after": "sha256:670d79c8edaf3353dc94c23ebc5e1bd6267c5bbb78b039f4712ed46536630d61"
+      },
+      {
+        "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/source-bindings.toml",
+        "binding": 47,
+        "source_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariumle00cath",
+        "before": "sha256:0141699efaeccd0efa1e387773fbeee1a2eb2ad30124ab0dfbc4d49186fabd40",
+        "after": "sha256:694da7943e823966aeaba01dbc8beb31253719ef5cc699752af2179983a26eb5"
+      },
+      {
+        "path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a/research/source-bindings.toml",
+        "binding": 51,
+        "source_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "before": "sha256:9474850b229927bfaed058d442ae76fcde5552b4accb329d2f963549b1a63fa7",
+        "after": "sha256:14df5bc7eea6cf5ffc8e03551879bfc5c87418e96a0b1f09b3188945256a33fc"
+      },
+      {
+        "path": "src/claude/theology/angelology/research/source-bindings.toml",
+        "binding": 261,
+        "source_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariumle00cath",
+        "before": "sha256:130ff2ea82bfd836c46709642054dcbe320f9c0e28a77f26a79c8f7599098e2b",
+        "after": "sha256:694da7943e823966aeaba01dbc8beb31253719ef5cc699752af2179983a26eb5"
+      },
+      {
+        "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/research/source-bindings.toml",
+        "binding": 13,
+        "source_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariuml00feltgoog",
+        "before": "sha256:19d844459c803523db9aa1ab901f7a6e5de6952a6274262fc415ac8519733c08",
+        "after": "sha256:be123962c4dd4832ae4f841fa7bd040ea1914ff912ce9112c349ec9f076bef6c"
+      },
+      {
+        "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/research/source-bindings.toml",
+        "binding": 22,
+        "source_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariuml00feltgoog",
+        "before": "sha256:19d844459c803523db9aa1ab901f7a6e5de6952a6274262fc415ac8519733c08",
+        "after": "sha256:be123962c4dd4832ae4f841fa7bd040ea1914ff912ce9112c349ec9f076bef6c"
+      }
+    ],
+    "binding_fields_preserved": "Apart from fourteen source_fingerprint fields and the one duplicate-artifact source_id, all binding loci, roles, states, dates and contexts are unchanged.",
+    "independent_checks": 37,
+    "independent_findings": 0,
+    "corpus_membership_and_snapshot_unchanged": true
+  },
+  "combined_source_graph": {
+    "works": 1062,
+    "editions": 1250,
+    "artifacts": 3620,
+    "passages": 5699,
+    "segments": 113,
+    "corpora": 5,
+    "bindings": 4159,
+    "readable_passages": 3344,
+    "source_projection_files": 4595
+  },
+  "source_family_review": {
+    "pending_units": 162,
+    "screened_units": 0,
+    "accepted_families": 0,
+    "atomic_citation_coverage": false
+  },
+  "pdf_prerequisites": {
+    "copied_accepted_files": 13,
+    "copied_bytes": 5519507,
+    "missing_files_added": 9,
+    "stale_files_replaced": 4,
+    "installed_pdf_count": 275,
+    "fresh_typesetting": false,
+    "donor_bytes_verified_against_tracked_main_evidence": true
+  },
+  "release_bindings": {
+    "refreshed_site_source_paths": [
+      "THIRD_PARTY.md",
+      "release/public-alpha/assets/site.css",
+      "src/web/data/structure/documents/corpus.json",
+      "src/web/data/structure/sources/editions/catholic-church/institutio-generalis-missalis-romani/2011-english-us-2011-emended-2021.json",
+      "src/web/data/structure/sources/editions/catholic-church/missale-romanum/1962-vatican-typica-1962.json",
+      "src/web/data/structure/sources/editions/catholic-church/missale-romanum/2002-vatican-typica-tertia-2002.json",
+      "src/web/data/structure/sources/editions/catholic-church/ordo-lectionum-missae/1981-latin-editio-typica-altera-1981.json",
+      "src/web/data/structure/sources/editions/catholic-church/sacramentarium-gelasianum-vetus/1894-wilson-1894.json",
+      "src/web/data/structure/sources/editions/catholic-church/sacramentarium-veronense/1896-feltoe-1896.json",
+      "src/web/data/structure/sources/editions/ildefonso-schuster/the-sacramentary/1927-burns-oates-washbourne-english-1927.json",
+      "src/web/data/structure/sources/index.json"
+    ],
+    "publication_approval_values_preserved": true
+  },
+  "verification": [
+    {
+      "command": "make check-sources",
+      "exit_status": 0,
+      "includes": "make check-deployment-sources"
+    },
+    {
+      "command": "make public-site",
+      "exit_status": 0,
+      "environment": "Pinned Markdown 3.10.3 selected in both PYTHON and child executable PATH"
+    },
+    {
+      "command": "tools/tpt public-alpha verify --deployment-target github-pages",
+      "exit_status": 0
+    },
+    {
+      "suite": "public-alpha and live reception-browser tests",
+      "tests": 135,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "suite": "browser URL contracts",
+      "tests": 62,
+      "failures": 0
+    },
+    {
+      "suite": "history acceptance input/evidence gates",
+      "tests": 10,
+      "failures": 0
+    },
+    {
+      "suite": "worked examples and named smoke-registration checks",
+      "tests": 6,
+      "failures": 0
+    },
+    {
+      "suite": "relocated history-browser-acceptance shell smoke",
+      "tests": 10,
+      "failures": 0
+    },
+    {
+      "command": "tmt check --json",
+      "exit_status": 0,
+      "failures": 0,
+      "warnings": 0
+    },
+    {
+      "command": "tools/tpt check-promised-deliverables",
+      "exit_status": 0,
+      "tracked": 79,
+      "complete": 67
+    },
+    {
+      "command": "tools/tpt release-bindings status",
+      "exit_status": 0,
+      "stale_bindings": 0
+    },
+    {
+      "command": "replay_examples.py --tool tpt --json",
+      "matched_examples": 10
+    },
+    {
+      "command": "replay_examples.py --tool history-browser-acceptance --json",
+      "exact_explicit_exemptions": 2,
+      "problems": 0
+    }
+  ],
+  "preserved_failed_attempts": [
+    "Initial 576-test run: 8 failure entries, 23 error entries and one optional skip. The pinned Markdown rerun resolves dependency errors; a shorter owned scratch path resolves four Chromium startup failures; scoped tooling and URL-contract repairs resolve the four inherited gate failures.",
+    "Initial public-site attempt selected pinned PYTHON but its executable children still used system Markdown 3.11.2. Corrected PATH and PYTHON together passed the build and verification.",
+    "An accidentally selected broad shell-smoke run was stopped with exit 143; its owned process group was verified empty. Shared cache mtimes during concurrent gates do not identify a unique writer.",
+    "Initial tmt check rejected the undeclared act-history input dependency in the acceptance CLI examples. The explicit catalogue dependency was registered, and tmt check and all ten launcher examples then passed without recapture."
+  ],
+  "review_proof_pins": {
+    "root/three-way-tree-preservation.json": {
+      "sha256": "f4f8c9673a4ef65be62fe49c56e120a34599036d79a32833a3f3ec8efe51bd6f",
+      "bytes": 1115
+    },
+    "review/source-identity-review.json": {
+      "sha256": "d313d5a2e5f0afbb335cc8fa1307961bf71088ca577ca75a775a46f9686df8b7",
+      "bytes": 12230
+    },
+    "root/veronense-fingerprint-migration.json": {
+      "sha256": "d1d6c29966c00247bd532f6278d44df6ea3fd2564843e0e31e2cdb6faf289482",
+      "bytes": 6522
+    },
+    "tests/result.json": {
+      "sha256": "356b2ec61d2203434715f09f7976b8d74617bb94a6fba4dccc97517948bb375f",
+      "bytes": 67692
+    },
+    "tests/environment-rerun/result.json": {
+      "sha256": "d855cc1f7164cd3b82a74dfcb0ed569d37c3be48e08e503db0b909af4b96c8d2",
+      "bytes": 186
+    },
+    "tooling-fix/tmt-check-corrected.json": {
+      "sha256": "f1048c380613ffee64de04e1fd666036b7b58cdc83befb148c533796dc3fc84b",
+      "bytes": 50
+    },
+    "tooling-fix/tpt-replay-before-recapture.json": {
+      "sha256": "92291a00abac1741041c6785c8853a9d3a9c6b9c654b068a1d4f1a3ec3cd75d3",
+      "bytes": 1567
+    },
+    "disclosure/rebased-20fc-intermediate-review.json": {
+      "sha256": "046993509892e143b404625c086271c69c4fb430048566a8104069fb7620afbc",
+      "bytes": 57252
+    }
+  },
+  "completion_limits": [
+    "All-rite deliverable remains in_progress with its existing six open requirements.",
+    "No complete whole-book transcription, spoken screen-reader review, production-sheet proof or physical-printer certification is established.",
+    "This is a pre-push verification record; a commit or local site build alone does not establish a successful live deployment."
+  ]
+}
