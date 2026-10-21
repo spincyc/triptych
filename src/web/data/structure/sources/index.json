@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3037,
-  "editions": 1095,
-  "passages": 5332,
+  "artifacts": 3046,
+  "editions": 1103,
+  "passages": 5333,
   "readable": 3096,
-  "works": 952
+  "works": 956
  },
  "facets": {
   "authors": [
@@ -27,6 +27,10 @@
    },
    {
     "id": "Alcuin of York",
+    "works": 1
+   },
+   {
+    "id": "Alexander Roberts and James Donaldson",
     "works": 1
    },
    {
@@ -159,6 +163,10 @@
    },
    {
     "id": "Anonymous; traditionally ascribed to Jonathan ben Uzziel",
+    "works": 1
+   },
+   {
+    "id": "Anselm Schott; Pius Bihlmeyer, editor",
     "works": 1
    },
    {
@@ -1074,6 +1082,10 @@
     "works": 1
    },
    {
+    "id": "Joseph Husslein, S.J.",
+    "works": 1
+   },
+   {
     "id": "Joseph L. Mankiewicz",
     "works": 1
    },
@@ -1371,7 +1383,7 @@
    },
    {
     "id": "Pius XI",
-    "works": 1
+    "works": 2
    },
    {
     "id": "Pius XII",
@@ -1969,7 +1981,7 @@
    },
    {
     "id": "patristic-translation-anthology",
-    "works": 26
+    "works": 27
    },
    {
     "id": "liturgical-book",
@@ -1996,6 +2008,10 @@
     "works": 14
    },
    {
+    "id": "liturgical-commentary",
+    "works": 13
+   },
+   {
     "id": "museum-object",
     "works": 13
    },
@@ -2012,12 +2028,8 @@
     "works": 12
    },
    {
-    "id": "liturgical-commentary",
-    "works": 12
-   },
-   {
     "id": "encyclical",
-    "works": 11
+    "works": 12
    },
    {
     "id": "philosophical-dialogue",
@@ -2072,6 +2084,10 @@
     "works": 6
    },
    {
+    "id": "hand-missal",
+    "works": 6
+   },
+   {
     "id": "homily-collection",
     "works": 6
    },
@@ -2109,10 +2125,6 @@
    },
    {
     "id": "dictionary",
-    "works": 5
-   },
-   {
-    "id": "hand-missal",
     "works": 5
    },
    {
@@ -3470,7 +3482,7 @@
   ],
   "languages": [
    {
-    "editions": 598,
+    "editions": 603,
     "id": "en"
    },
    {
@@ -3478,11 +3490,11 @@
     "id": "la"
    },
    {
-    "editions": 44,
+    "editions": 45,
     "id": "mul"
    },
    {
-    "editions": 36,
+    "editions": 37,
     "id": "fr"
    },
    {
@@ -3540,6 +3552,10 @@
    {
     "editions": 1,
     "id": "hr"
+   },
+   {
+    "editions": 1,
+    "id": "la-de"
    },
    {
     "editions": 1,
@@ -3605,30 +3621,30 @@
     "label": "19th century"
    },
    {
-    "editions": 235,
+    "editions": 238,
     "id": "1900",
     "label": "20th century"
    },
    {
-    "editions": 600,
+    "editions": 605,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1710,
-    "editions": 402,
+    "artifacts": 1712,
+    "editions": 404,
     "id": "public-domain"
    },
    {
-    "artifacts": 806,
-    "editions": 406,
+    "artifacts": 811,
+    "editions": 410,
     "id": "restricted"
    },
    {
-    "artifacts": 332,
-    "editions": 163,
+    "artifacts": 334,
+    "editions": 165,
     "id": "unresolved"
    },
    {
@@ -3819,6 +3835,35 @@
     "lat"
    ],
    "title": "Interrogationes et responsiones in Genesim"
+  },
+  {
+   "alternate_titles": [
+    "ANF07",
+    "ANF 7"
+   ],
+   "author": "Alexander Roberts and James Donaldson",
+   "category": "patristic-translation-anthology",
+   "directory": "editions/ante-nicene-fathers/volume-7/",
+   "editions": [
+    {
+     "date": "2026-10-19",
+     "file": "2026-2026-10-19-ccel-web.json",
+     "id": "edition.ante-nicene-fathers.volume-7.ccel-web-2026-10-19",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Ante-Nicene Fathers VII, complete CCEL English text",
+     "year": 2026
+    }
+   ],
+   "id": "work.ante-nicene-fathers.volume-7",
+   "languages": [
+    "en"
+   ],
+   "title": "The Ante-Nicene Fathers, Volume VII"
   },
   {
    "alternate_titles": [
@@ -5610,6 +5655,33 @@
     "arc"
    ],
    "title": "Targum Pseudo-Jonathan"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Anselm Schott; Pius Bihlmeyer, editor",
+   "category": "hand-missal",
+   "directory": "editions/anselm-schott/das-vollstandige-romische-messbuch/",
+   "editions": [
+    {
+     "date": "1929",
+     "file": "1929-herder-second-revised-1929.json",
+     "id": "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929",
+     "language": "la-de",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Das vollständige Römische Meßbuch, second revised edition, 1929 printing",
+     "year": 1929
+    }
+   ],
+   "id": "work.anselm-schott.das-vollstandige-romische-messbuch",
+   "languages": [
+    "la",
+    "de"
+   ],
+   "title": "Das vollständige Römische Meßbuch"
   },
   {
    "alternate_titles": [
@@ -9213,7 +9285,7 @@
      "file": "1962-vatican-typica-1962.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
      "language": "la",
-     "passages": 452,
+     "passages": 453,
      "readable": 0,
      "rights": [
       "unresolved"
@@ -14176,6 +14248,19 @@
      ],
      "title": "Ordo du mois, October 2026 state inspected 12 October 2026",
      "year": 2026
+    },
+    {
+     "date": "2026-10-19",
+     "file": "2026-2026-10-19-web.json",
+     "id": "edition.fssp-france.ordo-du-mois.web-2026-10-19",
+     "language": "fr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Ordo du mois, October 2026 state inspected 19 October 2026",
+     "year": 2026
     }
    ],
    "id": "work.fssp-france.ordo-du-mois",
@@ -15867,6 +15952,19 @@
      ],
      "title": "Acta Apostolicae Sedis, volume 4",
      "year": 1912
+    },
+    {
+     "date": "1925",
+     "file": "1925-volume-17-1925.json",
+     "id": "edition.holy-see.acta-apostolicae-sedis.volume-17-1925",
+     "language": "mul",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Acta Apostolicae Sedis, volume 17",
+     "year": 1925
     },
     {
      "date": "1930",
@@ -19493,6 +19591,32 @@
    "title": "A Greek-English Lexicon of the New Testament, being Grimm's Wilke's Clavis Novi Testamenti"
   },
   {
+   "alternate_titles": [],
+   "author": "Joseph Husslein, S.J.",
+   "category": "liturgical-commentary",
+   "directory": "editions/joseph-husslein/christ-the-king/",
+   "editions": [
+    {
+     "date": "1926",
+     "file": "1926-america-press-1926-seventh-printing.json",
+     "id": "edition.joseph-husslein.christ-the-king.america-press-1926-seventh-printing",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Christ the King, seventh printing of the 1926 work",
+     "year": 1926
+    }
+   ],
+   "id": "work.joseph-husslein.christ-the-king",
+   "languages": [
+    "en"
+   ],
+   "title": "Christ the King"
+  },
+  {
    "alternate_titles": [
     "All About Eve Revised Final"
    ],
@@ -22813,6 +22937,32 @@
     "grc"
    ],
    "title": "Quis rerum divinarum heres sit"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Pius XI",
+   "category": "encyclical",
+   "directory": "editions/pius-xi/quas-primas/",
+   "editions": [
+    {
+     "date": "2026-10-19",
+     "file": "2026-2026-10-19-official-english-web.json",
+     "id": "edition.pius-xi.quas-primas.official-english-web-2026-10-19",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Quas primas, official Vatican English web delivery",
+     "year": 2026
+    }
+   ],
+   "id": "work.pius-xi.quas-primas",
+   "languages": [
+    "la"
+   ],
+   "title": "Quas primas"
   },
   {
    "alternate_titles": [],
@@ -30968,6 +31118,32 @@
      "id": "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-10-05",
      "language": "en",
      "passages": 1,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "New American Bible, Revised Edition: USCCB web state",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-19",
+     "file": "2026-english-usccb-web-2026-10-19.json",
+     "id": "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-10-19",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "NABRE, USCCB web state inspected 19 October 2026",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-20",
+     "file": "2026-2026-10-20-english-usccb-web.json",
+     "id": "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-10-20",
+     "language": "en",
+     "passages": 0,
      "readable": 0,
      "rights": [
       "restricted"

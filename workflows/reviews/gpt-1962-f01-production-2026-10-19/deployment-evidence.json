@@ -1,0 +1,75 @@
+{
+  "record_type": "deployment-verification",
+  "verified_on": "2026-10-20",
+  "publication_commit": "632b2b48746d54e968add5e91a1f88f15c887a8b",
+  "main_base": "6dad4a7a301d285ae3f6be2162ec83b6df819610",
+  "integration": "fast-forward push from feature/propers/codex to origin/main; no default-branch checkout, rebase or force push",
+  "workflow_run": "https://github.com/spincyc/triptych/actions/runs/39447388106",
+  "workflow_conclusion": "success",
+  "repository_hygiene_run": "https://github.com/spincyc/triptych/actions/runs/39447388716",
+  "repository_hygiene_conclusion": "success",
+  "local_checks": [
+    "native proper-study v13 run 095fe00a9fe8cfee ACCEPTED and archived",
+    "make check-deployment-sources: pass",
+    "make check-sources: pass",
+    "make check-promised-deliverables: pass",
+    "make public-site: pass",
+    "tools/tpt public-alpha verify --deployment-target github-pages: pass"
+  ],
+  "local_public_site_build_log_sha256": "0d4d0a4f34b8b83191a0aa3d6b4fefec83c7251ce56e7faf90cf6008dd47f21e",
+  "local_public_site_verify_log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14",
+  "publication": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+  "provider": "gpt",
+  "live_verified_at_utc": "2026-10-20T15:28:08.767459+00:00",
+  "routes": [
+    {
+      "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.pdf",
+      "http_status": 200,
+      "sha256": "d51e0a4fb26291b9066d5dec99690bf75e9e2b7f10648a12360805407947be94",
+      "expected_sha256": "d51e0a4fb26291b9066d5dec99690bf75e9e2b7f10648a12360805407947be94",
+      "bytes": 480091,
+      "match": true
+    },
+    {
+      "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.pdf",
+      "http_status": 200,
+      "sha256": "995bdbb133024e9856b9a48b2a41fc3e0ee7591840d863fd7f124beee002eeed",
+      "expected_sha256": "995bdbb133024e9856b9a48b2a41fc3e0ee7591840d863fd7f124beee002eeed",
+      "bytes": 406508,
+      "match": true
+    },
+    {
+      "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.pdf",
+      "http_status": 200,
+      "sha256": "6fd2de7f383669af1dec0db71f8b2530a2b66793ae00927032e0abdbe70df724",
+      "expected_sha256": "6fd2de7f383669af1dec0db71f8b2530a2b66793ae00927032e0abdbe70df724",
+      "bytes": 246082,
+      "match": true
+    },
+    {
+      "url": "https://mystago.gy/web/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.html",
+      "http_status": 200,
+      "sha256": "83c32bab0c5eb0b8bb44c460f5f0dc248e08cbed3c5542d81441b7a06d3d0fbc",
+      "expected_sha256": "83c32bab0c5eb0b8bb44c460f5f0dc248e08cbed3c5542d81441b7a06d3d0fbc",
+      "bytes": 97377,
+      "match": true
+    },
+    {
+      "url": "https://mystago.gy/library/traditional-latin-mass.html",
+      "http_status": 200,
+      "sha256": "fd5fee456883cfbd99db60b5f4098718cb11b2d4c2d54a195ae44b4c458ca0f8",
+      "expected_sha256": "fd5fee456883cfbd99db60b5f4098718cb11b2d4c2d54a195ae44b4c458ca0f8",
+      "bytes": 32439,
+      "match": true
+    },
+    {
+      "url": "https://mystago.gy/browse/structure/documents/corpus.json",
+      "http_status": 200,
+      "sha256": "334c19e169274c13b21ad12f4df281ad9fa8f86d0f0ec85810730148493b354f",
+      "expected_sha256": "334c19e169274c13b21ad12f4df281ad9fa8f86d0f0ec85810730148493b354f",
+      "bytes": 1008270,
+      "match": true
+    }
+  ],
+  "disclosure": "Reviewed outgoing catalog/release diff and the archived run files; credential-pattern scan found no match. The existing Claude F01 links were preserved."
+}

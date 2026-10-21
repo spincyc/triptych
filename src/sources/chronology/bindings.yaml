@@ -5,8 +5,35 @@ schema: triptych-chronology-bindings/v1
 # scripts/_projection.py projects into. Declared here so that no row's
 # numbering is a thing the reader assumed.
 numbering: vulgate
-updated: '2026-10-05'
+updated: '2026-10-19'
 bindings:
+  - relation: traditional-attribution
+    event: israel.monarchy.david-traditional-era
+    scope:
+      - {book: Ps, chapter: 2, first: 8, last: 8}
+      - {book: Ps, chapter: 28, first: 10, last: 11}
+      - {book: Ps, chapter: 71, first: 1, last: 1}
+      - {book: Ps, chapter: 71, first: 8, last: 8}
+      - {book: Ps, chapter: 71, first: 11, last: 11}
+    note: >-
+      Bounded to the F01 appointments inspected on 19 October 2026. Psalm 28's
+      Douay title explicitly names David and a tabernacle completion; the title
+      supplies no year and does not identify a dated building project. Psalm 2
+      has no author in the inspected Douay title, but Acts 4:25 attributes its
+      opening to David and Bellarmine's exposition identifies David as the
+      prophetic speaker. For Psalm 71, the Douay title concerns Solomon, while
+      Bellarmine's exposition of verse 1 identifies the prayer as David's for
+      his newly anointed son; that is a received commentary attribution, not a
+      claim that the superscription itself names David as author. The shared
+      Davidic regnal era identifies the attributed figure only. It dates
+      neither these verses' composition nor their historical occasion. The
+      tabernacle and accession readings remain qualified contextual evidence,
+      not independently dated events. Psalm numbering here is Vulgate.
+    sources:
+      - bible:douay-rheims:Ps.28.1
+      - bible:douay-rheims:Ps.71.1
+      - bible:douay-rheims:Acts.4.25
+      - artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1
   - relation: prophecy-given
     event: israel.exile.second-isaias-oracles
     scope: [{book: Is, chapter: 40, through: 55}]

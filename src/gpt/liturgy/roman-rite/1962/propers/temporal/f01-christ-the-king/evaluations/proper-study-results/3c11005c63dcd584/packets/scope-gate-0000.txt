@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v12
+WORKFLOW_DIGEST: e6d49782e4c62eb282fbb9ce1e18a27f1e74c81170f26533f5efea288ebf4ff5
+RUN_ID: 3c11005c63dcd584
+COMMIT: dbaed43763020c5deea78e4cf4fcbba124edf58a
+STAGE: scope-gate
+ITERATION: 0
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-10-25","proper":"liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king","provider":"gpt","research_handoff":"none"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: []
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

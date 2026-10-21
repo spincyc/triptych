@@ -1,0 +1,348 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
+provider = "claude"
+run_id = "7397c12187517ff2"
+workflow = "proper-study"
+workflow_version = 12
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+standing = 0
+accepted_count = 2
+advisory_count = 15
+observation_count = 16
+
+[[stages]]
+stage = "homily-review"
+iteration = 0
+disposition = "PASS"
+run_id = "7397c12187517ff2"
+workflow = "proper-study"
+workflow_version = 12
+standing = 0
+accepted_count = 0
+advisory_count = 5
+observation_count = 0
+
+[[stages]]
+stage = "research-review"
+iteration = 2
+disposition = "PASS"
+run_id = "7397c12187517ff2"
+workflow = "proper-study"
+workflow_version = 12
+standing = 0
+accepted_count = 0
+advisory_count = 3
+observation_count = 6
+
+[[stages]]
+stage = "study-review"
+iteration = 1
+disposition = "PASS"
+run_id = "7397c12187517ff2"
+workflow = "proper-study"
+workflow_version = 12
+standing = 0
+accepted_count = 1
+advisory_count = 4
+observation_count = 2
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 1
+disposition = "PASS"
+run_id = "7397c12187517ff2"
+workflow = "proper-study"
+workflow_version = 12
+standing = 0
+accepted_count = 1
+advisory_count = 1
+observation_count = 5
+
+[[stages]]
+stage = "visual-review"
+iteration = 0
+disposition = "PASS"
+run_id = "7397c12187517ff2"
+workflow = "proper-study"
+workflow_version = 12
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 1
+
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+run_id = "7397c12187517ff2"
+workflow = "proper-study"
+workflow_version = 12
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 2
+
+[[accepted]]
+stage = "study-review"
+id = "STU-010"
+severity = "accepted"
+location = "research/interpretations.md section 5: table row 'Witness against it, kept' (l.621, Reading C cell); 'What they share' (l.623-628); 'Where their answers differ' (l.638-642)"
+problem = "The research record's comparison still carries the wording that STU-002 found untrue of the readings as written. It says all three 'place the cross at the centre', with B 'as the place where the king testifies before Pilate'. It says Hilary contributes 'to A and C' only. It puts the third reading's internal differences in the column of witnesses against it. And it says 'The difference between A and B is real at Jn 18:37'. The study no longer follows any of this (50-comparison.tex l.37-70 and l.79-100), and research/production-review.md l.165-174 records the discrepancy. The record now disagrees with the study it supports."
+required_result = "Whenever the research of this leaf is next reopened, rewrite research/interpretations.md section 5 so that it agrees with sections/50-comparison.tex: the cross per reading, Hilary in all three readings, the third reading's objection as the teaching that the reign ends, its internal differences under their own label, and the A/B difference at the Gospel with the Jn 18:37 split inside the second reading."
+accepted_because = "No reader-facing text now repeats the record's wording, and the production record already names the discrepancy for the concise and homily authors. Correcting it would mean reopening the research seal and rerunning research review and every dependent stage, all to change a planning paragraph that the reviewed study has superseded."
+
+[[accepted]]
+stage = "synthesis-review"
+id = "SYN-006"
+severity = "accepted"
+location = "sections/concise/04-themes.tex l.55-60 (physical p. 3, paragraph 'The two chants after the Epistle measure that kingdom')"
+problem = "'The Alleluia sings the second half of Daniel's vision of one like a son of man' is loose. The vision is Dan 7:13-14, and the Alleluia sings only the last clauses of verse 14. The commentary states it exactly ('the possessing half of Dan 7:14', p. 6)."
+required_result = "If the page is touched again, write 'the second half of Dan 7:14, the close of Daniel's vision of one like a son of man'."
+accepted_because = "The quotation and its citation (Dan 7:14) follow at once, and the next sentence names 'the words that begin the verse', so no reader mistakes what is sung. A repair would reopen settled page-3 prose for a phrase."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-001"
+severity = "advisory"
+location = "sections/homily/10-homily.tex l.86 ('Christ was born a King, as Chrysostom insists.') and l.93 ('The kingdom is his by birth. As man, he wins the nations')"
+problem = "Chrysostom's 'If then He was born a king, all His other attributes are by Generation' (Hom. in Io. 83.4) means the eternal generation. The reviewed study states that Augustine reads 'For this was I born' of the birth from the Virgin and Chrysostom of the eternal generation (sections/30 l.216-218). The speech never says which birth. A parish hearer will naturally take 'born a King' as Bethlehem, which is Augustine's sense, and so hear it credited to Chrysostom. Heard that way, 'his by birth' against 'As man' loses the contrast the paragraph turns on: King by nature, and the dominion won as man by the passion. The intervening 'Why should the eternal Son ask?' helps a careful listener. The doctrine stays true on either hearing, but the speech does not make the claim precise."
+required_result = "Name the birth in the Chrysostom sentence, for example 'born a King from the Father before all ages, as Chrysostom insists'. Make 'The kingdom is his by birth' audibly that birth, for example 'his by his eternal birth', so that 'As man, he wins the nations' is heard as the second title."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-002"
+severity = "advisory"
+location = "sections/homily/90-note.tex l.48-51 ('The difference that matters to the argument is kept: Chrysostom's King, born a king and receiving nothing in addition, stands beside ...'); research/production-review.md, Derive-homily, 'Bounds kept', first bullet ('the speech says, with Chrysostom, that Christ was born a King and received nothing in addition')"
+problem = "The speech says only 'Christ was born a King, as Chrysostom insists. Yet this Mass says that he receives.' It never voices Chrysostom's 'He has nothing which He received in addition'. The production record's statement that the speech says this is untrue of the text. The note's sentence implies the same by saying the difference 'is kept' in those terms. These are records of what the speech contains, and both overstate it."
+required_result = "Make the note and the production record describe what the speech actually says. Either have the speech voice Chrysostom's denial in a clause, which HOM-001's repair could include, or correct the note's sentence and the production-review bullet to say that the speech gives Chrysostom's premise, that Christ was born a King, against the Mass's receiving, and places the receiving in the humanity with Aquinas and Augustine."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-003"
+severity = "advisory"
+location = "sections/homily/10-homily.tex l.128-130 ('soldiers, a few minutes after a Gospel in which the King says that his servants do not fight for him')"
+problem = "Between the Gospel and the Postcommunion stand this 11-12-minute homily, the Credo, the Offertory, the Canon and the Communion. At any form of the 1962 Mass that is well over half an hour, not 'a few minutes'. The point is that the same Mass sets the two texts side by side, and that is true. The measure of time given for it is not, and a hearer sitting through the Mass will notice."
+required_result = "Replace 'a few minutes after a Gospel' with a true expression of the same nearness, for example 'in the same Mass as a Gospel' or 'within the hour of a Gospel'."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-004"
+severity = "advisory"
+location = "sections/homily/10-homily.tex l.145 ('We shall not see this kingdom complete.')"
+problem = "The movement of hope opens with an unqualified negative in the future tense. Taken literally, it denies the faithful the sight of the completed kingdom that the next sentences promise: all give him homage at the judgment, he sits king for ever, and the Postcommunion asks to reign with him. The sense intended is 'not in this life' or 'not yet' (Theodoret's 'some willingly in the present life, but all after the resurrection'). The speech does not say so, and the anagogical claim it makes at this point is imprecise."
+required_result = "Qualify the sentence so that it says 'not yet' or 'not in this life', for example 'We do not yet see this kingdom complete', consistent with the judgment and the eternal reign the paragraph then announces."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-005"
+severity = "advisory"
+location = "sections/homily/10-homily.tex l.133-134 ('Blessed Ildefonso Schuster, on this prayer, ...') and l.145-152 (the hope paragraph, especially the 47-word sentence 'The Alleluia sang ... but peace in himself.')"
+problem = "Schuster is named twice and never identified. An adult parish assembly in 2026 will mostly not know who he is, or why his word on this Mass's prayers carries weight; the other witnesses are household names. His second mention falls in the densest stretch of the speech. Three sentences carry the Alleluia's quotation, the Communion's quotation (with a printed ellipsis the speaker cannot voice), Augustine's gloss on peace and then Schuster's quotation. The longest of them runs to 47 words. At the climax of hope, the listener receives four quotations and two names faster than he can place them."
+required_result = "At Schuster's first mention, identify him in a few words his own book supports, for example 'Blessed Ildefonso Schuster, who wrote a commentary on the Masses of the Missal', or let the attributed sentence stand without the name. Split the 47-word sentence at the Communion so that each quotation is heard as one unit, quoting one half-verse or giving the two halves as separate sentences, with no ellipsis to read aloud."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-012"
+severity = "advisory"
+location = "research/scope.md section 3.5 (Theodoret bullet; 'Held work whose holding does not reach Colossians'; 'Bounded negatives'), section 3.7 ('Bounded search'), section 3.8, section 4 (Theodoret of Cyrus row), section 7 ('Unopened leads') and section 10 ('Unregistered witnesses read in iteration 1')"
+problem = "Four statements about holdings and registration are wrong or incomplete. (a) Section 3.7 says Cornelius a Lapide is 'held' for Jn 18:33-37. Section 3.5's own iteration-2 finding gives the reason discover reports him held: its only Lapide records are the Pauline commentary (Antwerp 1614, which stops at Galatians), joined by title, and the Commentaria in Pentateuchum, joined by identity. Neither reaches John, as 'tools/tpt commentary-work-index discover --passage \"John 18:33-37\"' shows. Section 3.7 therefore contradicts section 3.5. (b) discover over Col 1:12-20 reports Theophylact's In omnes D. Pauli epistolas as held-in-container. The source-containment-v1.toml row for the remote PG 124 OCR artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.ia-djvu-ocr-9a1fc730 gives its scripture as Romans through 2 Thessalonians, Colossians included. Section 3.7 already lists that same artifact as held for John, but sections 3.5 and 7 never mention Theophylact on Colossians. (c) discover over Ps 2:8 also reports Athanasius, Expositiones in Psalmos (PG 27), as held, but sections 3.8 and 7 account for that work only on Ps 28:10-11. (d) Sections 3.5, 4 and 10 call the PG 82 Commons PDF (SHA-256 7d6dd76e...3b25) unregistered. The same bytes are registered as artifact.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas.1864-migne-pg82-paris.wikimedia-pdf-7d6dd76e (sha256 7d6dd76e75775d12dde39ce83dbc5b3c6dd3f7ed97b8335df8d30d44d3dc3b25, equal to the research stage's copy). What the library lacks is a work or edition record for the Colossians commentary, not a record of the bytes. No reading rests on any of the four. Theophylact and Theodoret are ecclesiastical writers, and Athanasius's PG 27 is held only as an OCR whose record forbids quotation."
+required_result = "Section 3.7 says that Lapide on John is not held, giving section 3.5's reason. Sections 3.5, 3.8 and 7 list among the held, unread leads Theophylact on Colossians (PG 124 remote OCR; ecclesiastical writer) and Athanasius on Ps 2 (PG 27; no page image held). Sections 3.5, 4 and 10 describe the PG 82 PDF as registered under the Galatians edition and not bound here, and section 10 reports only the missing Colossians work or edition record."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-013"
+severity = "advisory"
+location = "research/interpretations.md section 4 (Reading C, 'Strongest difficulty') and research/scope.md section 5.3 ('Disagreement within it'); research/interpretations.md section 5 ('Editorial synthesis, labelled'); research/interpretations.md preamble (Hilary bullet of the witness's-own-connection list) and research/scope.md section 3.8 (Hilary)"
+problem = "(a) Both records quote Hilary, De Trin. XI.40, with two phrases spliced in reverse order behind an ellipsis: 'God only ... that no trace of the nature of His earthly body may remain in Him' (interpretations.md) and 'must now become God only ... that no trace ...' (scope section 5.3). The tracked NPNF II.9 text (ccel-complete-859ba34c source.txt, lines 24977-24980) prints them the other way: 'The end of the subjection is then simply that God may be all in all, that no trace of the nature of His earthly body may remain in Him. Although before this time the two were combined within Him, He must now become God only; not, however, by casting off the body ...'. The sense is unchanged, but a study that copies the record would misquote Hilary. (b) interpretations.md section 5 says that Schuster 'comments on' this Mass's Collect, Secret, Postcommunion and Preface. Scope sections 3.1 and 3.12 rightly record that he gives the Secret's text without comment (p. 204, checked on the OCR). (c) The preamble gives Hilary's link between the Epistle and the Offertory psalm only as 'the vocabulary of Col 1:13 and 1:18 in expounding Ps 2:8 (Tract. in Ps. 2.31)'. At 2.28, on the decree of Ps 2:7, Hilary quotes Col 1:15-16 and 1:18 outright: 'primogenitus omnis creaturae, quia in ipso creata sunt omnia in caelis et in terra ... primogenitus ex mortuis, ut fieret ipse in omnibus primatum habens'. Zingerle footnotes it 'Coloss. I, 15 sq.'. This is CSEL 22 p. 58, read on IA page image n87 (copy in the research-0000 scratch area, SHA-256 c91f371f...00b) and in the registered OCR (6b39d974..., matched), immediately before the 2.29-33 the record read. That is a witness's own connection of an appointed passage to the Offertory psalm's immediate context, and the record omits it."
+required_result = "Quote the two Hilary XI.40 phrases in their printed order, or as two separate quotations. Say in interpretations.md section 5 that Schuster gives the Secret without comment. Add Hilary, Tract. in Ps. 2.28 (CSEL 22 p. 58; Col 1:15-18 quoted on Ps 2:7) to the witness's-own-connection list and to scope section 3.8, after reading it on the page image and recording its digest."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-014"
+severity = "advisory"
+location = "research/scope.md section 8.4 (row-3bd03395c37c5ada) and section 8.2"
+problem = "The page-2 gate must print the Tract's own row: 'Historical setting: Jerusalem's destruction under Sedecias', A.M. 3416 preferred, with 586, 587 and 588 B.C. as alternatives. For this row, section 8.4 says only that the lament of Ps 88:39-45 'is the setting the corpus dates', and it records no qualification. The corpus's own binding (src/sources/chronology/bindings.yaml, the Ps 88 historical-setting binding at lines 937-961) and the Haydock record it cites (passage psalm-88-ethan-attribution-and-reproach) show more. The Babylonian setting is one proposal, marked to Calmet. Against it the same Haydock note preserves Worthington's proposal that David wrote in the person of Ethan or Idithun, and adds that 'most of the Fathers explain the Psalm of Christ's kingdom'. The alternatives that reach the row are alternative dates for the destruction, not alternatives to the setting. Section 8.4 gives the expansive appendix the qualification it owes for Daniel, but none for this row. A reader of page 2 would take a Babylonian occasion for Ps 88 as the received answer. The Tract is not said, and section 8.2's label limits the effect."
+required_result = "Section 8.4 records, for the historical appendix, three things: the corpus binds Calmet's Babylonian-captive proposal as Ps 88's occasion; the Haydock note it cites keeps Worthington's Davidic alternative and the Fathers' reading of Christ's kingdom beside it; and whether the concise row needs a short pointer to the appendix, as stated for Daniel."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-005"
+severity = "advisory"
+location = "sections/10-each-element.tex against sections/40-kingdom-handed-over.tex: the Communion's witnesses (10 l.313-328, Aquinas's plain sense and mystical readings, Augustine En. in Ps. 28.10, Basil, Cassiodorus, Theodoret, Bellarmine; 40 l.77-81 and l.132-159); Chrysostom Hom. in Col. 3 and Theodoret In Col. 1 on Eph 1:10 (10 l.71-75; 40 l.194-199); Schuster's Postcommunion standard (quoted 10 l.343-346; restated 20 l.257-258, 30 l.274-275, 50 l.59-61); Augustine/Chrysostom on 'For this was I born' (10 l.218-224; 30 l.216-218; 50 l.88-90)"
+problem = "Partly cleared since iteration 0. The element section now points forward for Schuster on the Gradual, Augustine's 'Carnal thyself' and Jerome on Dan 7:13-14. But the Communion paragraph of the element section still surveys, witness by witness, the readings of the flood and the session that the third reading then develops again with the same witnesses. Chrysostom and Theodoret on Eph 1:10 are also given twice, and the Postcommunion standard and the natus sum split recur three times. It reads as recapitulation, not padding."
+required_result = "Give each repeated witness one fullest home. In the element section's Communion paragraph, name the witnesses and the two placings of the session in a clause and point to the third reading, leaving the quotations and readings to it; treat the Eph 1:10 pair the same way."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-007"
+severity = "advisory"
+location = "sections/80-date-location.tex l.19 (row-3bd03395c37c5ada) and l.57-65 (the Tract's historical-setting note)"
+problem = "(a) and (b) are cleared: the shared psalm phrase now reads 'Psalms of a king and of the Lord as King', and the Daniel appositive reads 'The book that presents Daniel'. (c) stands. The Tract's historical-setting row and note still give the destruction under Sedecias as the setting of Ps 88:39-45 with no qualification. The corpus binding takes that occasion from Calmet's proposal, and the Haydock note it cites keeps Worthington's Davidic alternative and the Fathers' reading of Christ's kingdom beside it (research-review advisory RES-014). research/scope.md section 8.4 still does not record that qualification, so the appendix cannot cite it. The rubric's label on the row, which says the Tract is never said on the feast, limits the effect."
+required_result = "(c) Once research/scope.md section 8.4 records the qualification, state it briefly in the Tract's note."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-008"
+severity = "advisory"
+location = "sections/50-comparison.tex l.86-87 (the A/B summary sentence) and l.50-51 (third column of the row 'Differences among its witnesses')"
+problem = "Two precision points in the repaired comparison. (a) 'The first reading speaks of a dominion received, the second of a dominion that needs nothing given.' The phrase the sentence rests on is Chrysostom's 'sufficient for itself, needing nothing' (Hom. in Io. 83.4, quoted at 30 l.80-83), and in his homily it means that Christ's kingdom needs no servants. Read against 'a dominion received', the sentence suggests that the second reading denies that the dominion is given. The second reading holds no such thing: its Offertory 'gives the nations as inheritance' (30 l.233-236), and the comparison itself says, three sentences later, that 'either birth serves it'. So the summary sentence overstates the difference between two compatible emphases. (b) In the new row the first two cells state the positions (for example 'Hilary reads the resurrection, Augustine the eternal generation'). The third cell names only the topics: 'Hilary and Augustine on the Son's subjection; Augustine and Bellarmine on when he sits'. A reader of the table cannot learn from it what the differences are."
+required_result = "(a) Say what the second reading's power needs nothing of: for example, a power from above that needs no servants and takes nothing from this world. The contrast should be a dominion received as man against a power whose origin and means are not from the world. (b) State the third reading's two differences briefly: on the subjection, the servant's form subject (Augustine) or the body translated so that he becomes 'God only' (Hilary); on the session, begun now in the saints and continuing (Augustine) or after the judgment (Bellarmine)."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-009"
+severity = "advisory"
+location = "sections/20-lamb-receives-the-kingdom.tex l.98-100 (Aquinas, Super Ps. 2 n. 6); sections/30-kingdom-not-from-hence.tex l.126-130 (Augustine, En. in Ps. 2.9)"
+problem = "Two small source-precision points, in passages unchanged since iteration 0 but inside files under review. (a) The study quotes 'et hoc exemplum voluit ostendere per Christum'. The cited text (Corpus Thomisticum page cps02, matched to the registered artifact ...cps02-html-73a0a0c2) reads 'hoc exemplum voluit ostendere per Christum', without 'et'. The insertion comes from research/scope.md l.641. (b) 'On the second psalm he speaks to the kings directly: \"now that I am set as King, be ye not sad, kings of the earth ...\"' (2.9). In the tracked NPNF I.8 text Augustine introduces those words as an alternative: 'It can also be taken thus'. His first reading of 'And now understand, ye kings' (2.8) takes the kings as the spiritual, 'able now to govern all that is servile and brutish in you'. The second reading's case for the kings' office rests chiefly on Letter 185 and En. in Ps. 71.13-14, so the effect is small. Even so, the sentence states as Augustine's reading what he offers as a possible one."
+required_result = "(a) Quote Aquinas exactly: 'hoc exemplum voluit ostendere per Christum'. (b) Mark the 2.9 address as the reading Augustine also allows, for example 'he also allows the verse to be spoken to the kings of the earth: ...', and keep the quotation."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-007"
+severity = "advisory"
+location = "sections/concise/90-apparatus.tex l.94-96 (Lasance entry of the References, rendered p. 12)"
+problem = "The concise References give the Lasance New Roman Missal at 'pp. 813-814 (Preface of Jesus Christ, King) and 1257-1260 (Feast of Our Lord Jesus Christ, King)'. The concise uses the Lasance only for the Preface's goods (p. 4, and the scope appendix: 'The English of the Preface's goods is the Lasance'). propers/verified.md places those at printed pp. 813-814. The orations are described from the Latin, not quoted in the Lasance English, so pp. 1257-1260 support nothing in this document. That range is a locus carried over from the expansive entry, and the profile keeps unused material out of References. The v12 references-used check does not reach a page range of this kind."
+required_result = "Drop 'and 1257-1260 (Feast of Our Lord Jesus Christ, King)' from the concise Lasance entry, or cite those pages where the concise relies on them."
+
+[[advisories]]
+stage = "visual-review"
+id = "VIS-001"
+severity = "advisory"
+location = "study PDF pp. 3-4, the appointed-elements map table (sections/00-opening.tex, maptable l.98-148)"
+problem = "The eleven-row map of the appointed elements is split 10/1 across the page break. Page 3 ends after the Communion row with no closing rule. Page 4 repeats the header for the single Postcommunion row, then continues with the opening's last paragraph. The compact map of the whole formulary cannot be seen whole on one page. No content is lost or clipped, and the reader is not misled. Page 3 ends at about 705 pt of a 738 pt text block, so the row misses by one or two lines. Two cells end with a near-empty line: the Introit 'What it says' cell's fourth line holds only 'Son.', and the Communion reference cell's third line holds only '(29:10-11)'."
+required_result = "Whenever the study opening is next revised, the map appears whole on one page with its closing rule, by tightening real content (for example those two near-empty cell lines or a line of the preceding prose), and without reducing type, adding forced space or leaving a half-empty page 3."
+
+[[advisories]]
+stage = "visual-review"
+id = "VIS-002"
+severity = "advisory"
+location = "src/common/propers-format.tex l.49-62 (\\runninghead / \\sectionmark with \\rightmark in the right head); visible on study pp. 4, 9, 14, 23, 31 and 32 and on concise p. 11"
+problem = "The right running head takes LaTeX's first mark on the page, so a page on which a new section begins lower down carries that section's head while the page opens with the previous section. Examples: study p. 23 opens with the second reading's Allegorical, Moral and Anagogical senses under 'The Kingdom Handed Over'; p. 14 opens with the element section's Communion under 'The Lamb Receives the Kingdom'; p. 32 opens with the Scope appendix under 'References'; concise p. 11 opens with the commentary's last paragraph under 'Scope and References'. This is the standard LaTeX right-head convention, it is applied consistently, and the head always names a section that does appear on the page, so it does not block. For a study that readers navigate by section, though, the head does not say which section the top of the page belongs to. The behaviour belongs to the shared format, not to this leaf, and changing it would alter every propers-format-v1 consumer."
+required_result = "If the maintainer revises the shared format, choose one documented right-head rule, either the section in force at the top of the page (topmark-based) or the convention kept deliberately and recorded in src/common/propers-format.tex, then rebuild and review every affected consumer. No change to this leaf alone is required."
+
+[[observations]]
+stage = "research-review"
+location = "research/source-bindings.toml, catalog-level bindings, and research/scope.md sections 4 and 10"
+note = "As at iteration 1, several witnesses that carry or support a reading rest on bytes whose digests are recorded only in scope.md and the binding context, outside the research seal: Schuster vol. V, Augustine Letter 185 and De Trinitate, Chrysostom Hom. in Io. 83-84, the Bede OCRs, the Hilary CSEL page images, the Basil PG 29 leaves, Aquinas Super Col. and the monumenta Cassiodorus pages. The profile permits this. The scratch copies this review checked match the recorded digests: Schuster PDF and OCR, New Advent 240183, 240184, 130101 and 1102185. The PG 82 PDF is the exception: it is registered (RES-012)."
+
+[[observations]]
+stage = "research-review"
+location = "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/edition.toml (publication, date)"
+note = "Still as observed at iteration 1. The edition record gives 'London: Burns Oates & Washbourne, 1927, in five volumes'. The volume V imprint, which scope section 3.1 now records, reads 'First published 1930'. Section 10 does not report the shared record's date to its owner."
+
+[[observations]]
+stage = "research-review"
+location = "research/scope.md section 8.1; research/review-dependencies.toml comment 'A chronology audit record'"
+note = "Still present. The page-2 instructions rest on tools/check-content-preflight (_orientation_tables), which the engine does not seal: only the chronology computation inputs are sealed. A change to that gate would not stale this research. This is a seal-coverage gap in the tooling, not a leaf defect."
+
+[[observations]]
+stage = "research-review"
+location = "tools/tpt commentary-work-index discover (holdings line)"
+note = "Iteration 1 observed this for Hugh of Saint-Cher, and it now recurs. discover reports Cornelius a Lapide as 'held' for Jn 18, Dan 7, Apoc 1 and 5 and Col 1, through title and identity joins to the Pauline (to Galatians) and Pentateuch records. It reports Athanasius as 'held' for Ps 2 and Ps 28 through a whole-volume OCR whose record forbids quotation. The holdings line does not say whether a held artifact reaches the passage or can be used, so every research stage must re-derive this by hand (RES-010, RES-012). This is a missing criterion in the tool, not a fact about this leaf."
+
+[[observations]]
+stage = "research-review"
+location = "research/chronology-annotations.tex, rows row-6c43dd5e0531017f and row-7fbe70097919820b (Passage cell)"
+note = "Still present, as observed at iterations 0 and 1. The generator labels the composite Introit's psalm 'Ps 71:1' but the single-citation elements 'Psalms 71:8,11' and 'Psalms 2:8' in the same cell. This is a presentation inconsistency in tools/tpt proper-chronology annotations."
+
+[[observations]]
+stage = "research-review"
+location = "src/sources/calendars/roman-1962/propers.yaml, mass christ-the-king, notes field"
+note = "Still present. The entry's own notes say it 'carries no fixed date and a synthetic registry id' and that 'Nothing of its formulary has been read'. Both are stale against registry 'F01' and this run's collation, and research/scope.md section 10 reports only the file-header note."
+
+[[observations]]
+stage = "study-review"
+location = "rendered study (own build, SHA-256 0af471dc...699f), physical pages 14, 23, 31 and 32"
+note = "The first-mark running-head behaviour observed at iteration 0 persists at new page positions. Each of these pages carries the head of a section that begins lower on the page, while the page opens with the previous section's text: p. 14 opens with the element section's Communion under 'The Lamb Receives the Kingdom', and p. 31 opens with the date-location notes under 'Scope and References'. This is behaviour of the shared head and is left to the visual evaluation."
+
+[[observations]]
+stage = "study-review"
+location = "workflows/pipelines/proper-study.json, routing of study-review findings that need a research-record change"
+note = "Two defects in research records are known in this run and the study-review advisories cannot route them: STU-007 (c), which waits on RES-014, and STU-010. Once the research seal is set, the only reviser that receives ADVISORY_FINDINGS is author-study, which may not write research. So a research-owned defect too small to block has no route to an owner within the run. This looks like a missing route in the pipeline, not a fact about this leaf."
+
+[[observations]]
+stage = "synthesis-review"
+location = "rendered concise study p. 2, row-3bd03395c37c5ada (Tract: Ps 88:27-28,30, historical setting)"
+note = "The Tract's row still prints the generated A.M. 3416 / B.C. 586-588 setting under the rubric's label. It lacks the Haydock qualification (Calmet's Babylonian proposal, Worthington's Davidic alternative), which research/scope.md section 8.4 does not record. This is the standing research advisory RES-014 and study advisory STU-007(c), left in this run by the driver's decision."
+
+[[observations]]
+stage = "synthesis-review"
+location = "rendered concise study p. 11 (running head)"
+note = "Page 11 opens with the last paragraph of the commentary under the head 'Scope and References', the head of the appendix that begins lower on that page. This is the shared first-mark running-head behaviour, and it is left to the visual evaluation."
+
+[[observations]]
+stage = "synthesis-review"
+location = "rendered concise study p. 2, Passage cells of row-6c43dd5e0531017f and row-7fbe70097919820b"
+note = "The generator writes 'Ps 71:1 (Vulgate numbering ...)' for the Introit but 'Psalms 71:8,11', 'Psalms 2:8' and 'Psalms 28:10-11' for the other elements in the same cell. The Introit's '71:1' is the Missal's count, not the Clementine's, which numbers the title as verse 1 (sections/05-appointed-texts.tex l.62-64). This is a presentation inconsistency in tools/tpt proper-chronology annotations."
+
+[[observations]]
+stage = "synthesis-review"
+location = "sections/concise/04-themes.tex l.105-112 (p. 4), carried from sections/10-each-element.tex l.271-280 and sections/00-opening.tex l.48"
+note = "Both studies render the Preface's central sentence clause by clause in the editor's own English ('offering himself on the altar of the cross as a spotless and peace-making victim, he might accomplish the mysteries of man's redemption ...'). They quote the Lasance English, which propers/verified.md holds for the whole Preface, only for the goods. The study review accepted this form, and the concise inherits it. No gate tests where description of an oration ends and the guide's own translation begins, and the 1962 profile's English rule ('never composed, translated, adapted, or paraphrased by the guide') reaches that line. That boundary looks like a missing criterion rather than a defect of this leaf."
+
+[[observations]]
+stage = "synthesis-review"
+location = "tools/check-content-preflight, references-used check (synthesis edition)"
+note = "The v12 check holds Bible-list loci and commentary divisions to citations in the body. It does not test a printed page range on a non-commentary entry (SYN-007's Lasance pp. 1257-1260 passes), and it does not test whether the listed loci exist in the witness's own versification. Locus hygiene for such entries is still left to the reviewer."
+
+[[observations]]
+stage = "visual-review"
+location = "workflows/fragments/proper-study/visual-review.md (whole fragment) and the visual-review packet header"
+note = "The fragment tells the reviewer to open the contact sheets and full-size rasters, but it names no destination for rasters the reviewer generates itself, although guidance/repository.md requires a dedicated stage-iteration raster directory. This review used the build-artifacts-0000 rasters, verified against the sealed PDF hashes, and wrote only crops to its own scratch directory."
+
+[[observations]]
+stage = "web-review"
+location = "release/public-alpha/assets/site.css (shared `table { display: block; overflow-x: auto }` at the 760px query), as it renders the opening element map under sec:opening and the comparison table under sec:comparison"
+note = "At 390 px the three-column map is 425 px wide in a 342 px measure, so its 'What it says' column (131 px, two or three words a line) is partly behind a horizontal scroll. The four-column comparison is 498 px wide, so the third reading's column is off-screen until scrolled. The published Claude Twenty-first Sunday edition measures the same, so this is shared site styling and not this conversion. The no-clip treatment decided for the dossier on 2026-09-23 does not reach the proper-study map or comparison tables, which may be a missing criterion for those tables."
+
+[[observations]]
+stage = "web-review"
+location = "Scriptural Date and Location table, Passage cells (generated by the shared chronology projection; research/chronology-annotations.tex, identical in the PDF)"
+note = "The generated Passage labels mix 'Ps 71:1' with 'Psalms 71:8,11', 'Psalms 2:8' and 'Psalms 28:10–11', and set verse lists without a space after the comma. The study prose writes 'Ps 71:8, 11'. The same mix appears in the published Claude Twenty-first Sunday edition, so this is a cosmetic matter of the shared generator, not of this leaf."

@@ -1,0 +1,56 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+      "pagination_evidence": {
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.aux": "fc869f5656388d79f742546941ab414e9338201a0da760450138901cfa54054a",
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.aux": "72e72819ec010d919c72642fcd6a1eb2059e3755df492dd2fc5c751b8ab46f56"
+      },
+      "pdfs": {
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.pdf": "1ad22ec21d738d3028a7252b9d2d92b6b7f3dc9eac80249c87bc7116a7eb1af2",
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.pdf": "83c42115ed6da2431b78001ad25435b0694fa25ea0f2b80879223cd0d8dde27b",
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.pdf": "4d9f5a521974fe6d12d072832362a5f1769e8f26e270209acf6c06e1d5ffa767"
+      },
+      "provider": "gpt",
+      "render_inputs": {
+        "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+        "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+        "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/generation-metadata.tex": "b5ec576fd3db8e3541c62f2e8c446e2a96d90e69f86c88e7c60573496925de1d",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/homily.tex": "dd4ec5204788387d38668079ab2d7bf878e544a14d4ff372982851749fd93871",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/main.tex": "f2a150d833d8af17c32755241a7da312c15b0fccfc80512081fe93217e14a4ed",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/proper-components.toml": "22583cafd18bb7e8017e921403f5d9d28040883ade2428e4100b95d8a4ade181",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology-annotations.tex": "52a148e587cf657c2dea5a9f43214ba2b34f05eb7474589e37d9d18f53eda78e",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/00-opening.tex": "1e6dccdd87dc4ff6e3c9031afb57e4e47b0fec9c8dd7a9f741bac9e4b0f93357",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/10-appointed-text.tex": "3b1db20796e369879efe4757391f6538d016ab57bccf7925e5ad84523a1d9940",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/20-commentary.tex": "8e13b4369762454cad041fe7ab7cfe2b0bbaf8d470846a79bfa02b46930fd9ed",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/30-hearing-king.tex": "a16d5a3b55749fe7f5c3fb08ef96f470b7a19752102a871e4de1d460c49338e3",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/40-reconciled-creation.tex": "5aa191b3fa59ffdf4e5781c657b4e8a40b0ca748ca803ca376e25cca3326cdda",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/50-comparison.tex": "8253e334965466bfaf54bb2705b447d365e8426b348832321e818475a704989e",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/70-history.tex": "e54d0d5bcaf3bd139fb7fd222a8cc26689c88379303f368831a1cf5a6efeef8d",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/85-seasonal-witnesses.tex": "37a69871418be120681b311947f1df27f6ee674f2685e98d6945cd6e8ced8622",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/90-study-apparatus.tex": "fe3a9b40aa94e493b2295fdabad37db31d0e025914f7ff7cbd38252e08f481f7",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/01-inventory.tex": "6ebea41b61d82cc24af055b75df0ac27c76c7c115b3f6bede4db12a6430c48f2",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/02-overview.tex": "21320ca0e7ad09cfd33b7eee7689f2431179b5471740f27b93b4bbf0e7b7a37f",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/03-chronology.tex": "9295cce45350e013530e6377029623e517da0cac611e7d8e8361b79695a10b11",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/04-themes.tex": "08e812695223ed488c3f3e62d528e33bb3acae844b4b7fcb9e885ea595d3e7ef",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/10-commentary.tex": "525d8e6965cd8a5b59c4b02b1ef24376f255e7a5a47c3fd1e51d4ab9758d670e",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/90-apparatus.tex": "6c1dd9f3d7bacd55e5f2d0545e2f47a45662b0c7cc64d15eac95c04b6099655a",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/homily/10-body.tex": "1651248ce817cd35bb535a57c3131a76956e0731ebdfbc8b915caa51d08c606f",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/homily/90-apparatus.tex": "03b148286ea371fea5832c56a68af9dcf1825db10e7b6aceadc48507a0419609",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/synthesis.tex": "aaf4d6946f99466bc8241c26be5cdd95a72c11bcf8d01a0ea808c31e91e2d10b"
+      },
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+    "files": {},
+    "provider": "gpt",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "PASS after independently opening all four generated contact sheets and every full-page raster: build/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.pdf, receipt SHA-256 4d9f5a521974fe6d12d072832362a5f1769e8f26e270209acf6c06e1d5ffa767, physical pages 1\u201323; build/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.pdf, receipt SHA-256 83c42115ed6da2431b78001ad25435b0694fa25ea0f2b80879223cd0d8dde27b, physical pages 1\u201310; and build/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.pdf, receipt SHA-256 1ad22ec21d738d3028a7252b9d2d92b6b7f3dc9eac80249c87bc7116a7eb1af2, physical pages 1\u20133; research/artifacts.json equals the immutable artifact seal, and all 31 sealed PDF, pagination-evidence and render-input files retain their specified hashes. The shared Latin Modern 11-point article and 0.75-inch-margin monochrome baseline, embedded fonts, extractable text, PDF metadata, unclipped tables and footnotes, navigable study headings, substantial exposition, distinct four-senses blocks, meaningful page breaks and compact final-page rights colophons are satisfactory; the concise PDF visibly places all eleven active elements and exactly four overview senses on page 1, chronology alone on page 2, substantive Themes and Movement on pages 3\u20134, and developed interleaved commentary on page 5 in agreement with the settled absolute-page markers; at ordinary 816\u00d71056-pixel display size, the page-2 Colossians 1:12\u201320 row directly pairs the letter\u2019s composition with traditional Roman captivity, distinguishes Colossae as the recipients\u2019 city, and displays the disputed A.D. 61 / A.D. 61\u201363 alternatives without searching a separate explanatory paragraph; the adjoining John 18:33\u201337 rows also clearly distinguish the Jerusalem trial with unresolved event date from Gospel composition at traditional Ephesus; the homily has a full-width title, readable two-column speech on pages 1\u20132 with recoverable paragraphs, and separate full-width source-and-delivery apparatus on page 3; this verdict covers the rendered artifacts and their sealed inputs, without claiming a new source-critical review, a physical print inspection, or a timed spoken rehearsal."
+}

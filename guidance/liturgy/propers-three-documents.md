@@ -80,6 +80,38 @@ Shared evidence and exact quotations have one owner; a prose passage belongs to 
 output whose reader it serves. Do not pad a short work with the full study's
 appendices or duplicate the full study verbatim to make a companion.
 
+### Appointed-text publication mode
+
+Schema 2 declares `appointed_text_completeness`: `complete` uses the canonical
+label `Full PDF`; `rights-limited` uses `Research PDF` when an actual rights
+limit prevents complete reproduction. From `proper-study` version 13,
+`reference-only` also uses `Research PDF`: all three documents contain original
+commentary with precise citations and source links, without reproduced full
+Latin or English propers. It requires the exact provider-and-identity
+authorization and source-record exception in the
+[1962 profile](roman-1962-propers.md#authorized-reference-only-studies).
+It does not change the postconciliar or schema-1 contract.
+
+For reference-only work, begin `research/context.md` and `research/scope.md`
+with exactly one bare, unfenced first-line declaration
+`appointed_text_completeness = "reference-only"`; the two appointed-source
+records carry the same declaration. The study manifest must agree with this
+reviewed research. Retain exactly one research-only `appointed-text` component
+covering every element: it contains element-specific source locators instead
+of full texts, with the usual unique web anchors. State the omission of full
+liturgical texts in the terminal scope appendix. The reader can follow each
+element to its identified edition and locus; a generic missal link is not
+enough. No translation or close paraphrase may replace the omitted text.
+
+This mode changes retained text and publication scope, never the complete
+appointment inventory, source verification, reception research, analytical
+depth, chronology, page ranges, three outputs or cold review. Research review
+checks authorization and the declared source-record mode; study review checks
+agreement with the manifest and actual prose. Reviewers still verify the
+evidence at its exact loci. Rights findings remain independent of operational
+limits. Earlier accepted and blocked runs keep their original records and
+dispositions; adopt this mode only through a fresh version-13-or-later run.
+
 ## Research before interpretation
 
 Resolve the celebration, edition, territory, civil date, and applicable branches
@@ -257,8 +289,9 @@ decisions behind this subsection, and their reasoning, are recorded in
 ## The expansive study
 
 Open with substantive prose introducing the Sunday's question and a compact
-map of its appointed elements. Give the lawful study texts or rights-safe
-locators in a convenient reading position. Clearly identify historical English
+map of its appointed elements. Give the lawful study texts or element-specific
+locators under the declared publication mode in a convenient reading position.
+Clearly identify historical English
 and, in postconciliar work, the public-domain study translation rather than the
 approved proclaimed wording. Titles name the Missal and Sunday precisely.
 

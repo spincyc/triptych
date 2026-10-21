@@ -10,7 +10,7 @@ available for legacy schema-1 work. The current three-document contract
 restores the established first four pages for the concise companion, while
 its remaining argument and the expansive study follow their distinct roles. Read
 `guidance/liturgy/propers-three-documents.md` for the owning standard. The
-`proper-study` workflow is at version 12. The version paragraphs below say what
+`proper-study` workflow is at version 13. The version paragraphs below say what
 each bump changed.
 
 The driver grammar is unchanged:
@@ -292,6 +292,23 @@ The fragment and gate change the pinned workflow digest. Seed a new version-12
 run to adopt them; do not alter historical terminal records, restamp accepted
 verdicts or try to resume a terminal blocked run. Existing schema-1 conversion
 and historical publication validation are unchanged.
+
+Version 13 adds explicitly authorized reference-only 1962 studies under
+`guidance/liturgy/propers-three-documents.md`, "Appointed-text publication mode".
+The production plan must separately authorize the exact provider and identity.
+Context, scope and the two appointed-source records declare `reference-only`;
+the schema-2 manifest must agree and label the canonical output `Research PDF`.
+The appointed-text component holds precise element-specific source locators,
+and the 1962 profile defines locator and inspection records in the existing
+`retrieved.txt` and `verified.md` filenames. No full proper-body reproduction,
+new transcription, substitute translation or close paraphrase is requested.
+Operational limitations remain distinct from publication rights.
+
+The source examination, complete inventory, analytical depth, chronology,
+page ranges, stage order, effort and cold reviews remain required. This is a
+different authorized publication scope, not a way to retry rejected text
+generation. Seed a fresh version-13 run; preserve historical accepted and
+blocked runs and their original verdicts. No acceptance transfers from them.
 
 A driver archives a terminal run into its leaf with
 `tools/proper-study-run-archive <run-id> --cycles <cycles-record>`, which

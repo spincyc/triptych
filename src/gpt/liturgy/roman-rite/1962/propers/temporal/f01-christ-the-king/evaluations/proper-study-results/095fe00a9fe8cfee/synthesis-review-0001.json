@@ -1,0 +1,278 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 1,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "concise-chronology",
+          "kind": "front-matter",
+          "path": "sections/concise/03-chronology.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml",
+            "research/chronology-notes.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Jerome",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Jerome"
+          ],
+          "component_keys": [
+            "hearing-king"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "hearing-king",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/reception-verification.md"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Augustine of Hippo"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "reconciled-creation"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "reconciled-creation",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/reception-verification.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology-annotations.tex": "52a148e587cf657c2dea5a9f43214ba2b34f05eb7474589e37d9d18f53eda78e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology-notes.md": "4332cb00a32b926d092e84ca95f91b74245380a31632ffa55e63bffff847cf59",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology.toml": "144544a0893a38c2d1ff4d2c22c566b2c18400fa9cfe6e69d24a3f5437055906",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/interpretations.md": "9928e8e45f2b12ddfd0ffa79954433ec5a90350a3eabc9de54b6bc3f48a5b5df",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/scope.md": "b33670b85cdaee91866529916cf32b9ec8ab3439ebb048292229a0b8ba65d065",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/source-bindings.toml": "82c23329ebe0357e896e2585d310c46a443e498527e91995de73aa783405f146",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/01-inventory.tex": "6ebea41b61d82cc24af055b75df0ac27c76c7c115b3f6bede4db12a6430c48f2",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/02-overview.tex": "21320ca0e7ad09cfd33b7eee7689f2431179b5471740f27b93b4bbf0e7b7a37f",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/03-chronology.tex": "9295cce45350e013530e6377029623e517da0cac611e7d8e8361b79695a10b11",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/04-themes.tex": "08e812695223ed488c3f3e62d528e33bb3acae844b4b7fcb9e885ea595d3e7ef",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/10-commentary.tex": "525d8e6965cd8a5b59c4b02b1ef24376f255e7a5a47c3fd1e51d4ab9758d670e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/90-apparatus.tex": "6c1dd9f3d7bacd55e5f2d0545e2f47a45662b0c7cc64d15eac95c04b6099655a",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/synthesis.tex": "aaf4d6946f99466bc8241c26be5cdd95a72c11bcf8d01a0ea808c31e91e2d10b"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "13",
+            "7568a7728ef8a16e5a7c65475e9a3ae0d24c695caab6faa5d0c0c7ec52621d16",
+            "095fe00a9fe8cfee",
+            "5b48292320cc04c0f174b6bb96ce1342c554d8a1",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "PASS on the sealed ten-page Hearing and Peace concise study: independent reading recovered both distinct interpretations, comparison with the expansive study preserved their qualifications and four senses, and direct checks of Augustine John 115.1\u20134 and Psalms 2.7/28.10\u201311/71.1\u20132, Jerome Daniel VII, Chrysostom Colossians II\u2013III, Bellarmine Psalms 71/28, and received Victorinus Apocalypse 5 supported the arguments; all ten rendered pages and settled page markers satisfy the opening sequence, developed comparison, and concise apparatus. The concrete page-2 lookup correctly pairs John 18:33\u201337 with the Jerusalem interrogation and unresolved event date, separately from qualified Ephesus composition and its two ranges, and Colossians with traditional Roman captivity, Colossae recipients, and qualified composition alternatives; H1\u2013H5 resolve to the canonical historical appendix, shared Psalm answers and Daniel\u2019s duration remain distinct, and this bounded review claims no new patristic facsimile collation or downstream publication acceptance."
+}

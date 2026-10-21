@@ -1,0 +1,33 @@
+rights_schema = 1
+record_type = "christ-the-king-early-witnesses-rights"
+recorded_on = "2026-10-19"
+jurisdiction = "United States"
+legal_source = "https://www.copyright.gov/title17/92chap3.html"
+legal_locus = "17 USC 304(b), 305; official Copyright Office text inspected 19 October 2026"
+holding = """
+The bounded historical text of Joseph Husslein's Christ the King, copyrighted
+1926 in New York by America Press, and the Latin formulary in the 1929 Herder
+printing of Schott/Bihlmeyer's second revised Meßbuch are public domain in the
+United States by expiry of the maximum 95-year published-work term. Even if
+renewed, a 1926 copyright expired at the end of 2021 and a 1929 copyright at the
+end of 2024. This finding concerns the identified historical wording. It is
+not a whole-delivery license and does not depend on the absence of a renewal.
+"""
+
+[[witnesses]]
+work_id = "work.joseph-husslein.christ-the-king"
+edition_id = "edition.joseph-husslein.christ-the-king.america-press-1926-seventh-printing"
+source_url = "https://distantreader.org/stacks/pamphlets/pdf/005197412.pdf"
+sha256 = "473775a5455cbbeeb5c8d88080c8c97239c08024fa6a2a27c2fcc6d77f689bb2"
+evidence = "PDF 1 identifies Husslein, America Press, New York, seventh printing; PDF 2 prints copyright 1926 and the 20 September 1926 imprimatur. Printed pp. 29–31 identify and carry his English Proper of Mass; pp. 28–29 explain that the author renders it. These pages were independently read in images."
+allowed = "The 1926 prose and human English rendering, specifically the Proper of Mass on pp. 29–31. Retained transcription may normalize line breaks and repair OCR only by inspected page images."
+excluded = "No established date for seventh printing itself. No claim that later advertisements, cover artwork rights, scan packaging or subsequently added matter are licensed. Complete PDF remains metadata-only. No 1962 rubric authority follows from this earlier witness."
+
+[[witnesses]]
+work_id = "work.anselm-schott.das-vollstandige-romische-messbuch"
+edition_id = "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929"
+source_url = "https://missale.online/assets/liturgia/downloads/schott-1927-messbuch.pdf"
+sha256 = "4511fa924e0f260185576b220e25f24d4d130b8af64700fb720e0b03f1b07f92"
+evidence = "PDF 2 title and PDF 3 printer establish 1929 printing, with 1927 approvals. Printed pp. 1104–1108 / PDF 1174–1178 independently read; all active Latin proper bodies and proper Preface occur there."
+allowed = "Historical Latin wording on the inspected pages; preexisting wording may be collated against the 1962 controller. Transcription may normalize typography but must disclose that normalization."
+excluded = "Modern watermark, digital packaging, and any scan reconstruction are not covered. Complete PDF remains metadata-only. The host's 1927 label is not the printing date. No inactive seasonal branch is established by these pages. Older Sunday commemorations and last Gospel do not govern 1962."

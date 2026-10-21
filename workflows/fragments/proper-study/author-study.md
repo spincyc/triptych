@@ -1,5 +1,12 @@
 # Author the expansive study
 
+Match the manifest's appointed-text publication mode to the reviewed research.
+In reference-only mode, use `Research PDF` and retain the complete appointed-text
+component as element-specific source locators with unique anchors, not full
+liturgical bodies. Explain the texts through original scholarship without
+substitute translation or close paraphrase, and state the omitted full texts
+once in the terminal scope appendix.
+
 Write the canonical `main.tex` and research-mode components only from reviewed
 research. Author the complete source-first study: substantive opening and map,
 lawful study texts or locators, detailed explanation of each appointed element,

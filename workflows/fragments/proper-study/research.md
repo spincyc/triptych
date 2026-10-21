@@ -1,5 +1,12 @@
 # Establish the evidence and defensible interpretations
 
+Preserve the context's authorized publication mode. For reference-only work,
+declare it in `research/scope.md` and both appointed-source records; follow the
+1962 profile's locator/audit record contract instead of retaining full pulls or
+transcriptions. Record actual inspection outcomes and unresolved checks, never
+infer collation from a locator. The complete appointment and reception research
+remain required, and every claim must rest on evidence actually inspected.
+
 Read and verify `research/context.md`; correct a contextual error from evidence.
 Complete the governing edition's source records, rights audit, and every
 appointed element's bounded reception search. Read complete biblical contexts,

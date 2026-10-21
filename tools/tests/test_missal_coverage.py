@@ -497,6 +497,55 @@ class RealCorpusCoverageTests(unittest.TestCase):
         sequence = bodies("postconciliar")["Sequence"][1]
         self.assertEqual(sequence["relationship"], "historical-antecedent")
 
+    def test_christ_the_king_appointments_keep_wording_and_conditional_slots_unresolved(self):
+        document = self.files["roman-1962"]
+        mass = next(row for row in document["masses"] if row["key"] == "christ-the-king")
+        propers = {row["name"]: row for row in mass["propers"]}
+        prefix = "roman-1962:sanctoral-form:p778-l1"
+        report = coverage.expectations(
+            ROOT / "src/sources/inventories/missal-expected-targets-v1.toml",
+            "roman-1962", [mass])
+        states = {row["id"]: row["state"] for row in report["targets"]
+                  if row["id"].startswith(prefix)}
+        self.assertEqual(states[prefix], "represented")
+        # F01's page-image collation establishes these three appointments,
+        # adding three joins without supplying any publishable prayer words.
+        for suffix, name in (("slot:p778-l15:collect", "Collect"),
+                             ("slot:p779-l60:secret", "Secret"),
+                             ("slot:p779-l74:postcommunion", "Postcommunion")):
+            with self.subTest(proper=name):
+                self.assertEqual(states[f"{prefix}:{suffix}"], "represented")
+                proper = propers[name]
+                self.assertEqual(proper["source"], "composed")
+                self.assertEqual(proper["text_status"],
+                                 {"state": "unavailable", "scope": "proper-body"})
+                self.assertFalse(proper["text"])
+                self.assertFalse(proper["translations"])
+                self.assertEqual({row["lang"]: row["availability"]
+                                  for row in proper["coverage"]["languages"]},
+                                 {"la": "unresolved", "en": "unresolved"})
+                self.assertTrue(all(not row["witnesses"]
+                                    for row in proper["coverage"]["languages"]))
+        # The source still inventories the seasonal-votive Tract, but it is
+        # not appointed in October: its old represented join is removed.
+        self.assertNotIn("Tract", propers)
+        self.assertEqual(states[f"{prefix}:slot:p779-l19:tract"], "not-represented")
+        # Neither printed Alleluia alternative is joined to the held October
+        # Alleluia. The held Preface appointment likewise supplies no new join.
+        self.assertEqual(sum(row["name"] == "Alleluia" for row in mass["propers"]), 1)
+        self.assertEqual(mass["ordinary_appointments"]["preface"]["option"], "christo-rege")
+        self.assertEqual({key for key, value in states.items() if value == "unresolved"}, {
+            f"{prefix}:slot:p779-l12:alleluia",
+            f"{prefix}:slot:p779-l29:alleluia",
+            f"{prefix}:preface:p779-l69",
+        })
+        bounded = next(row for row in coverage.bounded_form_text_slots(report)
+                       if row["mass"] == "christ-the-king")
+        self.assertEqual((bounded["lower_bound"], bounded["represented"],
+                          bounded["not_represented"], bounded["unresolved"]), (13, 9, 1, 3))
+        self.assertEqual((bounded["denominator_state"], bounded["expected"],
+                          bounded["whole_form_state"]), ("unresolved", None, "unresolved"))
+
     def test_cummiskey_and_lasance_rows_declare_the_evidenced_antecedent_relation(self):
         """C3: every date-bound hand-missal row is typed as Caswall's is."""
         import tomllib
@@ -722,7 +771,7 @@ state = "unenumerated"
         current = {row["id"]: row["state"] for row in coverage.expectations(
             path, "roman-1962", masses)["targets"]}
         self.assertEqual(Counter(current[row["id"]] for row in joined),
-                         {"represented": 2965, "not-represented": 392})
+                         {"represented": 2967, "not-represented": 390})
         gap_id = "roman-1962:sanctoral-form:p511-l46:slot:p511-l62:secret"
         self.assertEqual(current[gap_id], "not-represented")
 
@@ -795,7 +844,7 @@ state = "unenumerated"
                     self.assertEqual([row["ref"] for row in held[0]["citations"]], [citation])
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4020, "not-represented": 164, "unresolved": 3806})
+                         {"represented": 4022, "not-represented": 162, "unresolved": 3806})
         self.assertEqual({row["id"] for row in published["not_represented"]} & joins.keys(), set())
         self.assertIn("roman-1962:sanctoral-form:p518-l3:slot:p518-l21:collect",
                       {row["id"] for row in published["not_represented"]})
@@ -836,7 +885,7 @@ state = "unenumerated"
                 self.assertLess(order.index(role), order.index(after))
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4020, "not-represented": 164, "unresolved": 3806})
+                         {"represented": 4022, "not-represented": 162, "unresolved": 3806})
         gaps = {row["id"] for row in published["not_represented"]}
         self.assertTrue(all(f"roman-1962:sanctoral-form:{locus}" not in gaps
                             for locus, *_ in rows))
@@ -971,7 +1020,7 @@ state = "unenumerated"
         self.assertEqual([row["id"] for row in missing],
                          ["roman-1962:commemoration:1962-12-25-comm"])
         published = coverage.published_expectations(report)
-        self.assertEqual(len(published["not_represented"]), 393)
+        self.assertEqual(len(published["not_represented"]), 391)
         self.assertEqual([row["id"] for row in published["not_represented"]
                           if row["slice_id"] == "roman-1962-universal-fixed-calendar"],
                          ["roman-1962:commemoration:1962-12-25-comm"])

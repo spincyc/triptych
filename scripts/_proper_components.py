@@ -638,8 +638,12 @@ def outputs(data: dict) -> dict[str, str]:
         if result.get(mode) != expected:
             raise ValueError(f"outputs.{mode} must equal {expected!r}")
     completeness = data.get("appointed_text_completeness")
-    if completeness not in {"complete", "rights-limited"}:
-        raise ValueError("appointed_text_completeness must be 'complete' or 'rights-limited'")
+    allowed_completeness = {"complete", "rights-limited"}
+    if data["schema"] == 2 and data.get("calendar") == "roman-1962":
+        allowed_completeness.add("reference-only")
+    if completeness not in allowed_completeness:
+        raise ValueError("appointed_text_completeness must be "
+                         + " or ".join(repr(value) for value in sorted(allowed_completeness)))
     labels = {"canonical_label": "Full PDF" if completeness == "complete" else "Research PDF",
               "synthesis_label": "Synthesis PDF"}
     if data.get("schema") == 2:

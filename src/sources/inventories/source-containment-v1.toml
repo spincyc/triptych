@@ -3561,3 +3561,17 @@ title = "Three Rosaries of Our Lady"
 locator = "Printed pp. 157–222"
 extent_unresolved = "Bibliographic authorship and relation to an independent work unestablished."
 basis = "Explicit contents and section title in the retained OCR; no separate author identity is inferred from the volume title."
+
+[[containers]]
+id = "work.ante-nicene-fathers.volume-7"
+manifest_sha256 = "468f41c23e50c3f6e0aadb7f7837ede92bb44ee9de74f51d8e8ca2d74288cfc9"
+status = "partial"
+basis = "On 2026-10-20, the registered CCEL ANF VII delivery's Victorinus constituent was independently read at chapter 1 comments on 1 and 4–7, chapter 5, chapter 19 comment on 11, and the supplied elucidations. The work manifest's named anthology contents were also read."
+unresolved = "Other named constituents (including Lactantius, Venantius, Asterius, Dionysius, Apostolic Teaching and Constitutions, homily and liturgies) have not been individually bounded in this audit. Uninspected portions of the received Victorinus commentary are not assigned a verified extent. The anthology's elucidations raise interpolation and attribution issues; this row does not settle recension history."
+
+[[containers.constituents]]
+author = "Victorinus of Pettau"
+title = "Commentarius in Apocalypsin"
+scripture = ["Revelation 1:1", "Revelation 1:4-1:7", "Revelation 5:1-5:9", "Revelation 19:11"]
+locator = "CCEL ANF VII, artifact ccel-text-b69327af: From the First Chapter, comments on 1 and 4–7; From the Fifth Chapter; From the Nineteenth Chapter, comment on 11; accompanying Elucidations"
+basis = "Actual received English commentary inspected, not inferred from the anthology title. Chapter 5's argument supplies context for Revelation 5:12, but its printed comments do not separately expound verse 12; chapter 19's inspected comment is on 11, not 16. The listed author/title are the commentary index's traditional identity, retained with the anthology's attribution caution."

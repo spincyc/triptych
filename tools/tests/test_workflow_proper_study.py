@@ -151,6 +151,117 @@ class RegistryTests(unittest.TestCase):
                     study.scope(root, provider, document)
 
 
+class ReferenceOnlyTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.leaf = self.root / "src/gpt" / TLM
+        self.plan = self.root / "guidance/liturgy/propers-production-plan.md"
+        self.plan.parent.mkdir(parents=True)
+        self.authorize()
+        for name in study.REFERENCE_ONLY_RECORDS:
+            path = self.leaf / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(study.REFERENCE_ONLY_DECLARATION + "\nChecked edition and loci.\n")
+
+    def authorize(self, provider="gpt", document=TLM, mode="reference-only "):
+        self.plan.write_text(
+            f"- Authorized {mode}2026-10-19: provider `{provider}`, identity `{document}`.\n")
+
+    def manifest(self, completeness="reference-only", schema=2):
+        (self.leaf / "proper-components.toml").write_text(
+            f'schema = {schema}\nappointed_text_completeness = "{completeness}"\n')
+
+    def check(self, require_manifest=False):
+        study.reference_only_contract(self.root, "gpt", TLM, require_manifest=require_manifest)
+
+    def test_authorized_research_records_pass_before_manifest_exists(self):
+        self.check()
+
+    def test_reference_only_permission_does_not_alone_authorize_production(self):
+        with patch.object(study, "identity", return_value="library/traditional-latin-mass.md"), \
+                self.assertRaisesRegex(ValueError, "no authorization"):
+            study.scope(self.root, "gpt", TLM)
+
+    def test_authorized_later_stages_require_matching_schema_two_manifest(self):
+        with self.assertRaisesRegex(ValueError, "matching schema-2"):
+            self.check(require_manifest=True)
+        for mode, schema in (("complete", 2), ("rights-limited", 2), ("reference-only", 1)):
+            with self.subTest(mode=mode, schema=schema):
+                self.manifest(mode, schema)
+                with self.assertRaisesRegex(ValueError, "matching schema-2"):
+                    self.check(require_manifest=True)
+        self.manifest()
+        self.check(require_manifest=True)
+
+    def test_an_existing_manifest_must_agree_already_during_research(self):
+        self.manifest("complete")
+        with self.assertRaisesRegex(ValueError, "matching schema-2"):
+            self.check()
+
+    def test_authorization_is_exact_and_separate_from_production_permission(self):
+        for provider, document, mode in (("claude", TLM, "reference-only "),
+                                         ("gpt", PC, "reference-only "), ("gpt", TLM, "")):
+            with self.subTest(provider=provider, document=document, mode=mode):
+                self.authorize(provider, document, mode)
+                with self.assertRaisesRegex(ValueError, "exact provider and identity"):
+                    self.check()
+        self.plan.unlink()
+        with self.assertRaisesRegex(ValueError, "exact provider and identity"):
+            self.check()
+
+    def test_manifest_cannot_request_reference_only_without_authorization(self):
+        self.authorize(mode="")
+        self.manifest()
+        for name in study.REFERENCE_ONLY_RECORDS:
+            (self.leaf / name).write_text("Ordinary research record.\n")
+        with self.assertRaisesRegex(ValueError, "exact provider and identity"):
+            self.check(require_manifest=True)
+
+    def test_every_record_requires_exactly_one_literal_first_line(self):
+        marker = study.REFERENCE_ONLY_DECLARATION
+        for name in study.REFERENCE_ONLY_RECORDS:
+            path = self.leaf / name
+            original = path.read_text()
+            for text in ("", "Checked loci.\n", marker.replace("reference-only", "complete"),
+                         "Notes.\n" + original, "```toml\n" + marker + "\n```\n",
+                         original + marker + "\n", original + 'appointed_text_completeness = "complete"\n'):
+                with self.subTest(name=name, text=text):
+                    path.write_text(text)
+                    with self.assertRaisesRegex(ValueError, name):
+                        self.check()
+            path.unlink()
+            with self.assertRaisesRegex(ValueError, name):
+                self.check()
+            path.write_text(original)
+
+    def test_reference_only_does_not_change_postconciliar_profile(self):
+        self.authorize(document=PC)
+        with self.assertRaisesRegex(ValueError, "1962 proper profile"):
+            study.reference_only_contract(self.root, "gpt", PC, require_manifest=False)
+
+    def test_existing_modes_and_incidental_prose_do_not_activate_the_contract(self):
+        self.authorize(mode="")
+        for name in study.REFERENCE_ONLY_RECORDS:
+            (self.leaf / name).write_text(
+                "A note discusses reference-only as a possible future mode.\n"
+                + study.REFERENCE_ONLY_DECLARATION + "\n")
+        for mode in ("complete", "rights-limited"):
+            with self.subTest(mode=mode):
+                self.manifest(mode)
+                self.check(require_manifest=True)
+
+    def test_all_production_gates_check_the_contract_before_downstream_work(self):
+        (self.leaf / "propers/verified.md").unlink()
+        for phase in ("research", "content", "artifacts", "publication"):
+            with self.subTest(phase=phase), patch.object(study, "scope"), \
+                    patch.object(study, "run") as run, \
+                    self.assertRaisesRegex(ValueError, "propers/verified.md"):
+                study.check(self.root, "gpt", TLM, phase, None)
+            run.assert_not_called()
+
+
 class LauncherTests(unittest.TestCase):
     def setUp(self):
         self.engine = WorkflowEngine(ROOT, ROOT / "workflows")

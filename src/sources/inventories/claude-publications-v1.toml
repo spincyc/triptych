@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-10-16"
+audited_on = "2026-10-19"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 62
-source_surface_file_count = 1949
-snapshot = "sha256:07aa9be56eb543bc4f931a5f0521a612ab2c991b296e9c4650759ff10f2968a7"
+publication_count = 63
+source_surface_file_count = 2017
+snapshot = "sha256:0ae6f49e59f9c36bff5ddc0cf2bcf302e3ea14013cf5270109afbfb5be00d016"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -545,6 +545,17 @@ inventory_state = "sources-categorized"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
+relationship = "local"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
+main = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
 relationship = "local"
 
 [[documents]]
@@ -8278,6 +8289,414 @@ path = "src/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-afte
 sha256 = "8ab4d2a57773b51f2f7967f235795e16775dd9954fb0c4bf3374c89750208335"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/blocking-findings-v1.toml"
+sha256 = "565f3fb43a316f64cfe26505c5375222ac6e28da86a6e4c2d8e849567c0f3f4f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/artifact-gates-0000.txt"
+sha256 = "a8d5d14564bafa578b058bec71617bc808a12351d4bc0f718a5a900a6b3cdaf7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/author-study-0000.txt"
+sha256 = "8c2c5dde11f73d1b76e6856fa5fd5228d5895f10687868c14dbced7c25d0f868"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/author-study-0001.txt"
+sha256 = "77ea8265a4b428d861b14b7bdd6ea00f3a3b9865b9446970dd3c29e5dc6ea81c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/build-artifacts-0000.txt"
+sha256 = "f272cb682b41829cf7946835e7473b426b4565a98174c1f78c67f41cbaff49cd"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/derive-homily-0000.txt"
+sha256 = "7f6104d12fb1b48293826a78bfd662ad5d64539875f50f4b525b75801946e814"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/derive-synthesis-0000.txt"
+sha256 = "d43f7cc20455a14d1f38c2fc687ce4e237436f7d725e3cf8f72468b7ac5b7c1c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/derive-synthesis-0001.txt"
+sha256 = "e793b3890eb92f8d8dd72c9f8bff8888e00d650623150bfcb897be109a70725b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/generate-web-0000.txt"
+sha256 = "d09d82076d850bae1b54a78ec744c6263269f151c5d303fdb6da4f2ff4b7a252"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/homily-preflight-0000.txt"
+sha256 = "d28adca9cd49d77e84a974323f11ecc7236cdb3ec4f262392d8bbc3793f63b4e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/homily-review-0000.txt"
+sha256 = "cb7ddafa1d877259d0dab68df94b183f342f1d7679b44decdc53afda7f982e76"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/install-publication-0000.txt"
+sha256 = "12d8cc94316b6388c14184c8a0a1e8d88a72c7cdb596edd7f16c6f2732626aad"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/publication-gates-0000.txt"
+sha256 = "e304c2e0877966ada7108e1ac9bd25841e1a202449f66553d1016e5141940a44"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/research-0000.txt"
+sha256 = "d4da02a23bb838af41923bd8af29450e938f7f002d84e84696a09bce380c4815"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/research-0001.txt"
+sha256 = "0be98c5e9479c1b70aa71317089f52d12d801183956a4c3f41c4a30bf1457492"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/research-0002.txt"
+sha256 = "2187fef01cd7d53a09ce4c5d0909eefcd140aae1f0ea5e0503174c48e62bc5f8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/research-preflight-0000.txt"
+sha256 = "7d8c7ba785e2e792f0934316db3fc9703ca08e9ed6a681ae202146db1b2f9f0c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/research-preflight-0001.txt"
+sha256 = "badbde7c649be9654bb7154211a31691f24c3043ccbd1f635adb820541903082"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/research-preflight-0002.txt"
+sha256 = "5690bc514699c2ac813a9fb9580ddc353c7055c1ccfbb30cdc656c67f8734957"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/research-review-0000.txt"
+sha256 = "32f3ff747d105bcc907577ceac88fd5a2ae0e8e7cea7e939871c08ef4402523a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/research-review-0001.txt"
+sha256 = "87f52fc0110361048f4d12718628153d5e3f47dcbddb675d37060684ad1d9464"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/research-review-0002.txt"
+sha256 = "32f32718c42fd3b5cb6f3e49f80495f3c419aa764ff2200b94c71fa43515cb68"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/resolve-context-0000.txt"
+sha256 = "e469d5e68aab2f54b3fb6f8b13fd96e8d3acae6613aabdd1fd81b727442ca652"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/scope-gate-0000.txt"
+sha256 = "a21c9f05d722d52d01e50770fca3cc252978f3a055a930d13c8b2c6cddd03d6e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/study-preflight-0000.txt"
+sha256 = "2228fdd2a974427357512076ac26fbacdb478734035c788cb39a5fb399bcdc86"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/study-preflight-0001.txt"
+sha256 = "b218dcad524c80c9cee055635fe2bd9ca6a2a920cdbae11ef7aa4861406d6082"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/study-review-0000.txt"
+sha256 = "d82135dfda9ae221fed090bb52f3031cc07a0d77a45b605d3e2b83e4492c6c4a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/study-review-0001.txt"
+sha256 = "f5662321cbe9cd90ba0b186a8da4351f9b9b7bdd69a35b83a495643b58927444"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/synthesis-preflight-0000.txt"
+sha256 = "c984a8a820884d39725fe43ba8b3756d60cbc0369a7a733cc7aa8e6cd5971d8a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/synthesis-preflight-0001.txt"
+sha256 = "4363c833797eaf7628465b9ee7f9a57773d81f64ba249ea35c2ffebf81952c7a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/synthesis-review-0000.txt"
+sha256 = "88e76127ff35019b33616af8019ad6d2a7f36ebf7ae9ae0a3892709331c3162c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/synthesis-review-0001.txt"
+sha256 = "02477796eee3aad43af7ff92e1a53bd02ff5c249deb54fe1d1337cfc70dad375"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/visual-review-0000.txt"
+sha256 = "6774804f54bf2cf330304ebfff59645b2fafa1d299a9db0feb59a2fdfc0bbae5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/packets/web-review-0000.txt"
+sha256 = "aa36dcce876dcc263797bd3ffb83cb172fd85d0344cc06b3eb67aed11b21cd9c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/7397c12187517ff2/record.md"
+sha256 = "aae09e242d31e0b0daf664b4d532801683dab9a8ffe9ab861f01c938d40786af"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/format.tex"
+sha256 = "cc33d5765188cce6fa31b8e4dc43155d4532bac6751ac97dfb9b8aaf5ca72e99"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/homily.tex"
+sha256 = "a38a37c1a088bcb8274e44cf777d554cca4aed21116bd232ad978c296c8928ef"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/main.tex"
+sha256 = "313f962fc7d34bf77ba4f6345407b3f6dc5415e2e1dc446e58ed139d7b8093ee"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/proper-components.toml"
+sha256 = "e3b55c78d6e1a9b8f6ddac810cfaa4e9db6b20b1e22c898b3e6d6cf274c44619"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/propers/retrieved.txt"
+sha256 = "084e4eb3b8ce0a70ddc2c1f01f75e1106f2d1ec35e166a8e4bfacfe9584c2cd1"
+kind = "local-evidence-payload"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/propers/verified.md"
+sha256 = "9143952738783440066980eb86f88120339fb9adbf345bec4917acdd15867082"
+kind = "proper-verification"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology-annotations.tex"
+sha256 = "af2c35d8036178cb960e10ecd6b0aa4257bda8546627fad01626cde3d19b99ac"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/chronology.toml"
+sha256 = "27873806725ed5b4bc8b87f199400f654b42689ec1a4afb95c5e8e94919d50cb"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/context.md"
+sha256 = "72e53b7b2d0f6faae9e7664eaf9f3fea9782ba2a4af6f000edec205bed9b532b"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/interpretations.md"
+sha256 = "6240046d9e42933f0635eb030ba6176fc8885d40bff415655658b4e09462034d"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/production-review.md"
+sha256 = "7a59d0c752e7ebf76c8e3bc0b6ee5cfd9ea4f5eb2a717cee36f28495d76ad3b5"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/review-dependencies.toml"
+sha256 = "5b264e46cdfeb116eb0a75b78e8b1be54bee9a6b4b515ca3427241f4901793a9"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/scope.md"
+sha256 = "1d7d17bd9b988011888eb261ea23de73b5812a893e8902de1c34a44bd4a6f405"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/source-bindings.toml"
+sha256 = "c866c1f0d020bcce4110578ff89d7e81b3e6be2087d8a0e7b603af0ab408602f"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/00-opening.tex"
+sha256 = "8971343959096f53bfd05224d88eecc84cb9a7a5a2edce7a475c193963b8383d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/05-appointed-texts.tex"
+sha256 = "cea43837f14d27d14f7877e0dee53ba1d332e872e2e6bba60dd0bfec34050aa1"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/10-each-element.tex"
+sha256 = "6b1aa605cf78a5bc51871720468ab04d9c4c11247e43ff6e5ac471b876f00295"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/20-lamb-receives-the-kingdom.tex"
+sha256 = "52ea5f631f808199e2d395c326576b0f15f8b91f11a1c1790d50fd7fefecdc5c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/30-kingdom-not-from-hence.tex"
+sha256 = "2c8200f3e045100441ec02b1897ade1272a15a52ae41afaf2010dd0640e61583"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/40-kingdom-handed-over.tex"
+sha256 = "f5038950de26fc098e5512be41c485c7470c049cad3fdfe30a59a5853b442b5f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/50-comparison.tex"
+sha256 = "4609dbf54e1116b78c12f784394cf35002ce5d4278660ab1054604afd4e3d41b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/80-date-location.tex"
+sha256 = "68edd8c04205c5ccf761ffc99d78484043a6c2ce2c44d2400ca67a306fad2e26"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/90-apparatus.tex"
+sha256 = "e1520d4540f9ff9368a6c50297e8bd18f2181113f18a854aa926d6fde1595db0"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/01-inventory.tex"
+sha256 = "9c7c72f6d0539b10e46e98053ac901c618e50d100c0340622e382522be4729c7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/02-overview.tex"
+sha256 = "e9c4c92434eaf41d457cdbd992ba9fb0bb275a77b7e0a4d040ae51ba5656059a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/03-date-location.tex"
+sha256 = "c337229a243246e9aa6cd7b570968a1ab41dada032eb9d5df56f28cbea63dc2a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/04-themes.tex"
+sha256 = "9c0e718454a709dd7f24d9e6cba416a2f38e95234e1a635843666dae6eb7758f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/10-commentary.tex"
+sha256 = "85cc8015ad247320dbb5c315292790ac64e66d8255a6b6f71ddca288ed96a376"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/concise/90-apparatus.tex"
+sha256 = "752a6eec06a8070bb7afd193fa9e71c866172eee4c19a383df8293ee0a0ce363"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/homily/10-homily.tex"
+sha256 = "b060471832debec8aca6dd5a0544e9135670337b93aef0a43dbbe3d38a36769e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/homily/90-note.tex"
+sha256 = "503a5fb8bd41ce51a0f3370cbe7f78577ea082822b99777d4d31264a574b4e28"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/synthesis.tex"
+sha256 = "a9c31163c48452c6741a42c5f4ed2472a5ac77000a59b8dc17724e7277ba2441"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/web-edition.toml"
+sha256 = "55f886f1d853393423d639789e8d119b782c1f3434067a27c3da12654c1ba52a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/format.tex"

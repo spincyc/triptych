@@ -892,6 +892,24 @@ lists inventory 31843, shelf Gal B 1 5, and [Nicolet](https://archivesseminairen
 lists call number 264.023 T964m. Neither is an inspected complete scan;
 pre-1955 remains a structural projection pending page images and reuse terms.
 
+The feature branch also integrates current main through `edab7fee5`, retaining
+both accepted Christ the King publications and their source repairs. The
+combined calendar keeps the verified October appointments, the feature's proper
+Preface appointment, and explicit unavailable oration bodies; the seasonal
+Tract remains inventoried but is not rendered as an October appointment. All
+490 other 1962 Masses preserve the feature's source model. The four Bible
+indexes retain their semantic three-way union without another source-text
+acquisition. The combined source-family ledger has 162 pending review units and
+zero screened units. No screening or reader acceptance is inferred from this
+merge. Owner-generated Propers and source projections, scoped release bindings,
+source validation and the 82-entry promised-deliverable ledger pass. The focused
+coverage/Proper/recension suite passes 115 tests, including explicit F01
+appointment-versus-wording assertions. Thirty shell/visual static checks pass
+after replacing stale global action counts with exact owning-surface checks and
+preserving the historical oracle hashes through their one recorded dependency
+exception. Six affected CLI transcripts were recaptured from actual runs.
+Final print, accessibility, performance and independent acceptance remain open.
+
 ## Daily Missal reader recovery and completion plan, 2026-10-19
 
 <!-- promised-deliverable: missal-reader-completion-plan-2026-10-19 -->
@@ -926,6 +944,161 @@ pass. The full promise-ledger validation reports the same 32 missing generated
 PDF/evidence findings as the unchanged baseline in a source-only checkout,
 with zero added or removed findings. No unrelated publication rebuild or
 browser implementation is part of this planning change.
+
+## GPT Christ the King three documents, 2026-10-19
+
+<!-- promised-deliverable: gpt-1962-christ-the-king-2026-10-19 -->
+
+The maintainer requested the upcoming Sunday's 1962 propers workflow through
+completion and publication to `main`, with subagents permitted. The target is
+25 October 2026, Christ the King, provider `gpt`, canonical identity
+`liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king`.
+The calendar computation places this feast ahead of the Twenty-second Sunday
+after Pentecost; the workflow must verify the appointment in the governing
+Missal and a dated occurrence witness. No unspecified local overlay is assumed.
+
+State: the GPT full-material `proper-study` v13 run `095fe00a9fe8cfee` is
+`ACCEPTED` and archived. The complete Latin and historical English texts,
+expansive study, concise study, homily and canonical web edition are reviewed,
+installed and cataloged with exact artifact bytes. The workspace remains on
+`feature/propers/codex`; accepted publication commit `632b2b487` was
+fast-forwarded to `origin/main`. The automatic Pages workflow succeeded and
+all six checked live routes match the verified local site byte for byte.
+
+The original version-12 run `3c11005c63dcd584` passed scope and context but
+terminated BLOCKED after repeated research-response output rejection. Its partial
+research, calendar correction and native archive are preserved. The complete
+witness PDFs have been acquired and inspected. The rejection occurred during
+research, not source acquisition, and the rejected text is not exposed in the
+diagnostic. It does not establish a rights finding.
+
+The maintainer temporarily approved a reference-only commentary edition. The
+version-13 contract and validators passed independent internal review and
+focused tests and were committed and feature-pushed as `e8d76b126`. Fresh run
+`78d1516ca75da9df` passed scope and context. Before research completed, the
+maintainer explicitly withdrew that scope: full sourced material is required,
+and a locator-only substitute is unacceptable. The worker was stopped with no
+tracked research edits or live operations. The native run is terminal BLOCKED
+and archived; neither blocked run supplies acceptance or can be resumed.
+
+The production plan now withdraws only the reference-only exception, retaining
+ordinary authorization. The promise ledger preserves the prior dispositions
+and adds the restored full-material requirement. The failure evidence identifies
+an output rejection but exposes no rejected passage or failed tool command;
+the earlier claim that all source-text work or all progress was blocked was
+too broad. The sources are acquired. The complete checked appointed-text
+records remain missing. Independent reception verification, source-binding
+reconciliation and interpretation corrections are now recorded in the leaf's
+`research/reception-verification.md`, `scope.md`, `source-bindings.toml` and
+`interpretations.md`, without retrying or reconstructing the rejected output.
+The audit distinguishes full readings from partially inspected passages and
+corrects the Bellarmine comment/verse numbering and unsupported prayer dating.
+This preparatory work is not a resumed terminal run, a locator-only publication
+or native acceptance. The repeated output rejection has no verified resolution.
+Full appointed Latin and independently sourced historical English,
+all three documents, canonical web edition, source verification, independent
+reviews, installation, main publication and live verification remain required.
+The driver record is
+`workflows/reviews/gpt-1962-f01-production-2026-10-19/CYCLES.md`.
+
+On 20 October the maintainer renewed the instruction to complete the GPT
+production and push it to `main`. Current `main` through `6dad4a7a3` was merged
+into this workspace at `0b318d400`; it includes an independently accepted Claude
+F01 publication and a registered 1925 first-printing witness. Those are source
+leads, not acceptance of the GPT leaf. A fresh GPT `proper-study` v13 run,
+`8d637d6f2f9160aa`, used full-material scope. Its scope and context stages
+passed. Research independently inspected the authenticated AAS microfilm,
+1962 Missal and historical English page images, but a second
+`regurg plugin blocked the output stream` rejection occurred before complete
+appointed-text records were saved. The rejected content is unavailable; no
+reconstruction or replay was attempted. The worker returned BLOCKED and the
+native run terminated BLOCKED, archived in the GPT leaf. Its only tracked
+research changes were current chronology projections, committed and
+feature-pushed as `6f7a45b4d`. No authoring, review or publication stage
+passed in that run. The separate Claude F01 edition remains accepted and
+published on `main`; it is not GPT acceptance. Full GPT source material and
+its three deliverables still require a safe path consistent with the
+maintainer's rejection of locator-only output.
+
+A further full-material v13 run `095fe00a9fe8cfee` independently checked the
+1962 Missal, AAS 1925, Lasance historical English and contextual witnesses,
+using the already published Claude collation only as a disclosed source-data
+lead. It completed all thirteen printed Latin units and their historical
+English counterparts, including the two inactive seasonal variants, with
+source and rights evidence. Fresh research, study, concise, homily, visual
+and web reviews resolved their blocking findings. The 23-page study, ten-page
+concise work, three-page homily and canonical web edition were installed with
+accepted hashes; native publication gates passed. Its fifty-stage-result
+archive is at
+`src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/proper-study-results/095fe00a9fe8cfee/`.
+The detailed repair and production chronology is in the driver record above.
+Post-archive `make check-deployment-sources` and `make check-sources` passed
+after the owning inventory and migration-ledger refreshes. The local public
+site built and verified for the GitHub Pages target. The outgoing publication
+was committed as `632b2b487` and pushed to `main` without rewriting history.
+The automatic [Pages run](https://github.com/spincyc/triptych/actions/runs/39447388106)
+and repository-hygiene run succeeded for that commit. Live GPT study,
+concise and homily PDFs, the canonical web edition, catalog page and document
+data all returned HTTP 200 and matched the locally verified site bytes. The
+route hashes and comparison evidence are in
+`workflows/reviews/gpt-1962-f01-production-2026-10-19/deployment-evidence.json`.
+
+## Claude 1962 Christ the King three documents, 2026-10-19
+
+<!-- promised-deliverable: claude-1962-f01-christ-the-king-three-documents-2026-10-19 -->
+
+The maintainer asked on 2026-10-19 for the TLM propers workflow for the
+upcoming Sunday, 25 October 2026, to be driven to completion and pushed to
+`main`, with subagents permitted. The maintainer also confirmed the provider
+authorization explicitly. `tools/mass-today --date 2026-10-25 --calendar
+roman-1962` resolves the feast of Our Lord Jesus Christ the King
+(*D. N. Iesu Christi Regis*), first class, which the general rubrics assign
+perpetually to the last Sunday of October. It displaces the Twenty-second
+Sunday after Pentecost (Easter 5 April 2026, Pentecost 24 May, twenty-two
+weeks to 25 October), and `tools/calendar-rubrics day` also lists the
+commemoration of Ss. Chrysanthus and Daria as displaced. The target is
+provider `claude`, identity
+`liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king`. That is the
+profile's `F01`, the first `F`-series leaf either provider has produced. It
+runs under the current `proper-study` three-document contract: a 20–50-page
+expansive study, a 10–12-page concise study, a standalone homily for an
+adult parish assembly, and the canonical study's web edition. The production
+plan records this exact scope opening. No GPT publication existed when that
+independent Claude production began,
+and this independent Claude production borrows from no other leaf.
+
+**Complete: accepted, pushed to `main` and verified live.** Run
+`7397c12187517ff2` (`proper-study` v12) reached ACCEPTED at its publication
+gates with no escalation: 33 packets, 33 accepted results, four
+interventions. Every agent stage ran as a fresh `claude-opus-5-5[1m]` subagent
+at its packet's declared effort, and every review was a fresh worker. Four
+cycles were real defects that cold reviews found and repaired. Two were in
+research: held commentaries not read, Augustine's own Ps 71 reading omitted
+and the not-said Tract's page-2 rows unaccounted for; then Schuster credited
+with links he never makes. One was in the study, where research instructions
+reached reader prose and the comparison misstated the readings. One was in the
+concise study, which misplaced the Communion's unsung flood clause. The Latin
+of this 1925 formulary rests on its first printing in *Acta Apostolicae Sedis*
+17 (1925), collated against the 1962 pages; the orations and Preface take the
+Lasance 1945 English. Before research sealed it, the driver corrected the
+shared calendar's Communion citation to Ps 28:10–11, with the maintainer's
+authorization. The driver's verification of that change missed the four Bible
+indexes and two release bindings it staled. Both were repaired within the
+production. The installed family is a 33-page expansive study, a 12-page
+concise study, a four-page homily (about 1,460 spoken words) and the canonical
+web edition. The run is archived in the leaf under
+`evaluations/proper-study-results/7397c12187517ff2/`. The driver's account
+covers every cycle, the 15 standing advisories and 2 accepted findings, and
+what is left for other owners, notably the calendar's inability to say when a
+proper is said:
+[CYCLES.md](workflows/reviews/claude-1962-f01-production-2026-10-19/CYCLES.md).
+The three local deploy gates passed, and `c71314375` reached `main` by
+fast-forward. Pages run 39345282406 succeeded. The three PDFs, their catalog
+aliases, the web edition, the Traditional Latin Mass catalog page and the
+browser's corpus and 1962 propers data are each byte-identical live to the
+verified local site, as
+[deployment-evidence.json](workflows/reviews/claude-1962-f01-production-2026-10-19/deployment-evidence.json)
+records.
 
 ## Claude postconciliar Twenty-ninth Sunday revision, 2026-10-16
 

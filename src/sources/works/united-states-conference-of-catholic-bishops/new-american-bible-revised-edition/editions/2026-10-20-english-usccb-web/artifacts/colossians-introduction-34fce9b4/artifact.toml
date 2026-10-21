@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-10-20.colossians-introduction-34fce9b4"
+edition_id = "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-10-20"
+artifact_type = "official-html"
+media_type = "text/html; charset=utf-8"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The acquired page carries Copyright 2019-2026 USCCB. Public access supplies no repository redistribution grant for this modern introduction or website presentation. Only factual metadata, source locators and bounded independent analysis are retained."
+rights_jurisdiction = "United States"
+source_url = "https://bible.usccb.org/bible/colossians/0?bk=Colossians&ch="
+provenance = "Repository file-path searches for colossians, intro and new-american-bible identified the existing NABRE work and dated editions, but no Colossians introduction artifact. A browser open of the query-free URL returned 403; the official query-string URL opened successfully. The complete HTML response at that URL was then fetched directly on 2026-10-20, hashed, and its entire introduction and division list read."
+retrieved = "2026-10-20"
+sha256 = "34fce9b4270228a5242a54cb6c51915ff41089f5b76c53676c13bbfe67b707cf"
+byte_size = 53966
+indexable = false
+notes = "Extent: complete 745-line HTML response through closing html tag. Five prose paragraphs and the five-item division list occupy HTML lines 618-636. The confinement and unnamed-place discussion is paragraph 2, line 620; authorship and writing-place alternatives are in paragraph 5, line 626. A browser text view splits this last paragraph into two. The page states no truncation or completeness guarantee; the introduction heading, all paragraphs, divisions and following Address heading were inspected. This is the complete introduction page, not the separately linked letter chapters. Protected bytes are not redistributed. An offline reader can inspect metadata and the consumer's bounded analysis but needs the public URL to recheck wording; the mutable site may not reproduce this exact hash."

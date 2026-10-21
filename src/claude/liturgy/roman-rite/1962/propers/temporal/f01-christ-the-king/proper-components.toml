@@ -1,0 +1,254 @@
+schema = 2
+format_contract = "propers-format-v1"
+authority_contract = "authority-standing-v1"
+record_type = "proper-components"
+document = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
+calendar = "roman-1962"
+entrypoint = "main.tex"
+synthesis_entrypoint = "synthesis.tex"
+homily_entrypoint = "homily.tex"
+appointed_text_completeness = "complete"
+presentation_contract = "interpretive-pagination-v1"
+chronology_presentation = "orientation-v2"
+
+# The eleven elements said in the Mass of 25 October 2026, in liturgical
+# order, the proper Preface (printed p. 291, no. 1080) among them. The Missal
+# also prints, at nos. 3943-3944, a Tract for votive Masses after Septuagesima
+# and an Alleluia for Paschaltide. The feast is kept on the last Sunday of
+# October, which falls in neither season, so neither is ever said on the feast
+# and neither is an element of this Mass: the study sets both out under their
+# rubrics as printed text for other days (sections/05-appointed-texts.tex) and
+# gives them no proper anchor. The chronology projection, which reads the
+# shared calendar entry, still carries the Tract's two rows; the study's
+# Scriptural Date and Location appendix and the concise page 2 print them
+# with the rubric's label (research/scope.md section 8.2).
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+
+[outputs]
+research = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
+synthesis = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis"
+homily = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily"
+web = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
+canonical_label = "Full PDF"
+synthesis_label = "Synthesis PDF"
+homily_label = "Homily PDF"
+
+# Physical-page roles of the concise companion's fixed opening
+# (guidance/liturgy/propers-three-documents.md), all written by the concise
+# author. The chronology role prints the orientation-v2 rows of
+# research/chronology-annotations.tex. Their reviewed home in the study is the
+# terminal Scriptural Date and Location appendix (component
+# scriptural-date-location), which prints every generated row once with its
+# occurrence-and-place phrase and gives each passage its fuller evidence
+# beneath. The research entrypoint imports the generated definitions in its
+# preamble; the concise page-2 owner imports them itself, once.
+[presentation]
+inventory = "concise-inventory"
+overview = "concise-overview"
+chronology = "concise-date-location"
+themes = "concise-themes"
+commentary = "concise-commentary"
+
+# --- Research study (main.tex) ------------------------------------------------
+
+[[components]]
+key = "opening"
+kind = "front-matter"
+path = "sections/00-opening.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["format.tex", "propers/verified.md", "research/context.md", "research/scope.md", "research/interpretations.md"]
+
+[[components]]
+key = "appointed-texts"
+kind = "appointed-text"
+path = "sections/05-appointed-texts.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["format.tex", "propers/verified.md", "research/context.md"]
+
+[[components]]
+key = "each-element"
+kind = "proper-treatment"
+path = "sections/10-each-element.tex"
+modes = ["research"]
+depends_on = ["appointed-texts"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["format.tex", "propers/verified.md", "research/context.md", "research/scope.md"]
+
+[[components]]
+key = "lamb-receives-the-kingdom"
+kind = "interpretive-lane"
+path = "sections/20-lamb-receives-the-kingdom.tex"
+modes = ["research"]
+depends_on = ["each-element"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "kingdom-not-from-hence"
+kind = "interpretive-lane"
+path = "sections/30-kingdom-not-from-hence.tex"
+modes = ["research"]
+depends_on = ["each-element"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "kingdom-handed-over"
+kind = "interpretive-lane"
+path = "sections/40-kingdom-handed-over.tex"
+modes = ["research"]
+depends_on = ["each-element"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "comparison"
+kind = "front-matter"
+path = "sections/50-comparison.tex"
+modes = ["research"]
+depends_on = ["lamb-receives-the-kingdom", "kingdom-not-from-hence", "kingdom-handed-over"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+# The study's terminal historical appendix: the reviewed home of the
+# chronology the concise page 2 will reprint.
+[[components]]
+key = "scriptural-date-location"
+kind = "front-matter"
+path = "sections/80-date-location.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/scope.md"]
+
+[[components]]
+key = "study-apparatus"
+kind = "terminal-apparatus"
+path = "sections/90-apparatus.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["propers/verified.md", "research/context.md", "research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
+
+# --- Concise study (synthesis.tex), written by the concise author -------------
+
+[[components]]
+key = "concise-inventory"
+kind = "front-matter"
+path = "sections/concise/01-inventory.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["format.tex", "propers/verified.md"]
+
+[[components]]
+key = "concise-overview"
+kind = "front-matter"
+path = "sections/concise/02-overview.tex"
+modes = ["synthesis"]
+depends_on = ["concise-inventory"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md"]
+
+[[components]]
+key = "concise-date-location"
+kind = "front-matter"
+path = "sections/concise/03-date-location.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml"]
+
+[[components]]
+key = "concise-themes"
+kind = "front-matter"
+path = "sections/concise/04-themes.tex"
+modes = ["synthesis"]
+depends_on = ["concise-overview"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md"]
+
+[[components]]
+key = "concise-commentary"
+kind = "integrated-commentary"
+path = "sections/concise/10-commentary.tex"
+modes = ["synthesis"]
+depends_on = ["concise-themes"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "concise-apparatus"
+kind = "terminal-apparatus"
+path = "sections/concise/90-apparatus.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["propers/verified.md", "research/scope.md", "research/interpretations.md"]
+
+# --- Homily (homily.tex), written by the homily author --------------------------
+
+[[components]]
+key = "homily-body"
+kind = "homily"
+path = "sections/homily/10-homily.tex"
+modes = ["homily"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["format.tex", "propers/verified.md", "research/interpretations.md"]
+
+[[components]]
+key = "homily-note"
+kind = "terminal-apparatus"
+path = "sections/homily/90-note.tex"
+modes = ["homily"]
+depends_on = ["homily-body"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["propers/verified.md", "research/interpretations.md", "research/scope.md"]
+
+# --- Interpretive readings of the whole formulary ------------------------------
+#
+# `authors` names every author a reading draws on; `carrying_authors` names the
+# ones who carry it, each a Father, a canonized saint or one of the Blessed in
+# src/sources/inventories/author-standing-v1.toml, at least one a Father or a
+# canonized saint (guidance/liturgy/propers-three-documents.md, "Liturgical
+# commentators"). Cassiodorus and Theodoret of Cyrus stand there as
+# ecclesiastical writers, and Cyril of Alexandria, Cyril of Jerusalem,
+# Hippolytus (the Daniel scholia transmitted under his name) and Victorinus of
+# Pettau have no standing row: each supports claims his checked locus makes and
+# carries no reading. Blessed Ildefonso Schuster is the one witness read to
+# this Mass as a Mass; he is cited element by element and carries none of the
+# three readings here. Pius XI's Quas primas is the instituting act, cited by
+# number for the second reading's difficulty. The evidence map for every lane
+# is research/interpretations.md, sections 2-4.
+
+[[lanes]]
+key = "lamb-receives-the-kingdom"
+authors = ["Hilary of Poitiers", "Thomas Aquinas", "Bede", "Augustine of Hippo", "Robert Bellarmine", "Jerome", "John Chrysostom", "Cyril of Alexandria", "Cassiodorus", "Theodoret of Cyrus", "Victorinus of Pettau", "Alfredo Ildefonso Schuster", "Pius XI"]
+carrying_authors = ["Hilary of Poitiers", "Thomas Aquinas", "Bede"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+component_keys = ["lamb-receives-the-kingdom"]
+
+[[lanes]]
+key = "kingdom-not-from-hence"
+authors = ["Augustine of Hippo", "John Chrysostom", "Robert Bellarmine", "Thomas Aquinas", "Hilary of Poitiers", "Cyril of Alexandria", "Theodoret of Cyrus", "Cassiodorus", "Alfredo Ildefonso Schuster", "Pius XI"]
+carrying_authors = ["Augustine of Hippo", "John Chrysostom", "Robert Bellarmine"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+component_keys = ["kingdom-not-from-hence"]
+
+[[lanes]]
+key = "kingdom-handed-over"
+authors = ["Augustine of Hippo", "Hilary of Poitiers", "Basil of Caesarea", "Robert Bellarmine", "Thomas Aquinas", "Jerome", "John Chrysostom", "Cyril of Jerusalem", "Hippolytus", "Cassiodorus", "Theodoret of Cyrus", "Alfredo Ildefonso Schuster"]
+carrying_authors = ["Augustine of Hippo", "Hilary of Poitiers"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+component_keys = ["kingdom-handed-over"]

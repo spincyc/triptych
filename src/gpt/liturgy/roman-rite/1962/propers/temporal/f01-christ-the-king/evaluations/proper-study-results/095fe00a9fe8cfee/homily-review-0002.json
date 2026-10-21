@@ -1,0 +1,177 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 2,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-body.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "homily-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Jerome",
+            "Robert Bellarmine"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Jerome"
+          ],
+          "component_keys": [
+            "hearing-king"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "hearing-king",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/reception-verification.md"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Augustine of Hippo"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "reconciled-creation"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "reconciled-creation",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/reception-verification.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/homily.tex": "dd4ec5204788387d38668079ab2d7bf878e544a14d4ff372982851749fd93871",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/interpretations.md": "9928e8e45f2b12ddfd0ffa79954433ec5a90350a3eabc9de54b6bc3f48a5b5df",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/scope.md": "b33670b85cdaee91866529916cf32b9ec8ab3439ebb048292229a0b8ba65d065",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/research/source-bindings.toml": "82c23329ebe0357e896e2585d310c46a443e498527e91995de73aa783405f146",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/homily/10-body.tex": "1651248ce817cd35bb535a57c3131a76956e0731ebdfbc8b915caa51d08c606f",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/sections/homily/90-apparatus.tex": "d1569e9bf75823063ab77c58ed6c22a50b17c5704c12ace7c90f39697375ddb7"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "13",
+            "7568a7728ef8a16e5a7c65475e9a3ae0d24c695caab6faa5d0c0c7ec52621d16",
+            "095fe00a9fe8cfee",
+            "5b48292320cc04c0f174b6bb96ce1342c554d8a1",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "PASS: independently read Learning to Hear the King continuously, checked its revised terminal note against the speech and study interpretations, and found a speakable adult-parish argument whose decisive movement from the kingdom's origin to grace-enabled hearing and received reconciliation depends on John 18:36\u201337, Colossians 1:12\u201320 and the appointed prayers. Verification covered the retained 1962 Missal page images at printed pages 697\u2013698, particularly the Collect, Secret, Communion and Postcommunion; [Augustine, Tractate 115.1\u20134](https://www.newadvent.org/fathers/1701115.htm), [Psalm 28.10\u201311 under the English Psalm 29 heading](https://www.newadvent.org/fathers/1801029.htm), and Chrysostom's [Colossians II on 1:12\u201315](https://www.ccel.org/ccel/schaff/npnf113.iv.iv.ii.html) and [III on creation, reconciliation and feuds](https://www.ccel.org/ccel/schaff/npnf113.iv.iv.iii.html); the prose-only component counts 1,280 words, yielding the stated 10.2\u201311.6 minutes at 110\u2013125 words per minute, with silent textual review only and no claim of audible rehearsal, timed human delivery or final visual acceptance."
+}

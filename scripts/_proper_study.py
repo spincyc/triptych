@@ -53,6 +53,10 @@ POSTCONCILIAR_CHRONOLOGY_INPUTS = (
     "scripts/_proper_chronology_inputs.py", "tools/citations",
     "guidance/liturgy/postconciliar-propers-registry.md",
 )
+REFERENCE_ONLY_RECORDS = (
+    "research/context.md", "research/scope.md", "propers/retrieved.txt", "propers/verified.md",
+)
+REFERENCE_ONLY_DECLARATION = 'appointed_text_completeness = "reference-only"'
 
 
 def run(root: Path, *arguments: str) -> None:
@@ -112,7 +116,8 @@ def scope(root: Path, provider: str, document: str) -> str:
     leaf_path(root, provider, document)
     plan = (root / "guidance/liturgy/propers-production-plan.md").read_text()
     needle = f"provider `{provider}`, identity `{document}`."
-    if not any(line.startswith("- Authorized ") and needle in line
+    if not any(line.startswith("- Authorized ")
+               and not line.startswith("- Authorized reference-only ") and needle in line
                for line in plan.splitlines()):
         raise ValueError("production plan has no authorization for this exact provider and identity")
     if "/postconciliar/" in document:
@@ -127,6 +132,39 @@ def manifest(leaf: Path) -> dict:
     if data.get("schema") != 2:
         raise ValueError("proper-study requires component schema 2; use legacy proper for schema 1")
     return data
+
+
+def reference_only_contract(root: Path, provider: str, document: str, *,
+                            require_manifest: bool) -> None:
+    """Bind an explicitly authorized locator-only production to its audit records."""
+    leaf = leaf_path(root, provider, document)
+    plan = root / "guidance/liturgy/propers-production-plan.md"
+    authorization = re.compile(
+        r"- Authorized reference-only \d{4}-\d{2}-\d{2}: provider `"
+        + re.escape(provider) + r"`, identity `" + re.escape(document) + r"`\.")
+    authorized = plan.is_file() and any(
+        authorization.fullmatch(line) for line in plan.read_text().splitlines())
+    records = {name: (leaf / name).read_text().splitlines() if (leaf / name).is_file() else []
+               for name in REFERENCE_ONLY_RECORDS}
+    path = leaf / "proper-components.toml"
+    data = tomllib.loads(path.read_text()) if path.is_file() else {}
+    requested = data.get("appointed_text_completeness") == "reference-only" or any(
+        lines and lines[0] == REFERENCE_ONLY_DECLARATION for lines in records.values())
+    if not authorized and not requested:
+        return
+    if not authorized:
+        raise ValueError("reference-only requires production-plan authorization for this exact provider and identity")
+    if not document.startswith("liturgy/roman-rite/1962/propers/"):
+        raise ValueError("reference-only production requires the 1962 proper profile")
+    declaration = re.compile(r"appointed_text_completeness\s*=")
+    for name, lines in records.items():
+        declarations = [line for line in lines if declaration.match(line)]
+        if (not lines or lines[0] != REFERENCE_ONLY_DECLARATION
+                or declarations != [REFERENCE_ONLY_DECLARATION]):
+            raise ValueError(f"reference-only requires one literal first-line declaration in {name}")
+    if require_manifest or path.is_file():
+        if data.get("schema") != 2 or data.get("appointed_text_completeness") != "reference-only":
+            raise ValueError("reference-only requires a matching schema-2 component manifest")
 
 
 def components(root: Path, provider: str, document: str, phase: str,
@@ -642,6 +680,7 @@ def check(root: Path, provider: str, document: str, phase: str,
     leaf = leaf_path(root, provider, document)
     if phase == "scope":
         return
+    reference_only_contract(root, provider, document, require_manifest=phase != "research")
     if phase == "research":
         for name in ("research/context.md", "research/scope.md", "research/interpretations.md",
                      "research/source-bindings.toml"):
