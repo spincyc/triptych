@@ -62,7 +62,7 @@ advisory: >-
 
 recension_coverage:
   schema: triptych-recension-coverage/v1
-  as_of: '2026-08-27'
+  as_of: '2026-10-20'
   status: structural-only
   domains:
     calendar:
@@ -167,22 +167,19 @@ recension_coverage:
     witnesses:
     - missale-romanum-later-composite-pre-1955-body
   blockers:
-  - id: register-1920-typical-edition
-    kind: unregistered-artifact
-    status: open
-    record: src/sources/inventories/missal-acquisition-audit-v1.toml#missale-romanum-1920-typica
-    requirement: >-
-      Register and fingerprint one complete page-image artifact of the 1920
-      Vatican typical edition before its wording or page loci become corpus
-      evidence.
-  - id: collate-1920-typical-edition
+  - id: collate-accepted-pre-1955-witness
     kind: page-image-collation
     status: open
-    record: src/sources/inventories/missal-acquisition-audit-v1.toml#missale-romanum-1920-typica
+    record: src/sources/inventories/missal-expected-targets-review-2026-10-19.md#the-pre-1955-witness-section-body-inventory
     requirement: >-
-      Transcribe and page-collate the target edition's calendar, Propers,
-      Commons, Ordinary, and Holy Week. OCR may locate text but may not supply
-      it; the measured correction rate was 38 of 99 orations.
+      Page-collate inherited wording and its calendar joins against the
+      accepted Bonn 2004 reimpressio of the conformed 28th edition of about
+      1954, with the 1922 Mame conformed printing as the control for later
+      additions. The completed section-body inventory establishes identities,
+      not wording agreement or per-Proper attestation. An exact Vatican 1920
+      impression remains unauthenticated; acquiring it is not a prerequisite
+      under the maintainer's 2026-10-19 witness decision. OCR may locate text
+      but may not supply it.
   - id: record-per-proper-attestation
     kind: provenance-gap
     status: open

@@ -20200,7 +20200,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/propers/mass/roman-1962/visitatione-beatae-mariae-virginis.json` | `ad68a16ca5207eac6bc4a90af068441d5d7244baab95983fa1dff1b3dcc5c7dc` |
 | `src/web/data/structure/propers/postconciliar.json` | `0f19657026001c5cf92de24823d5c76d2123e353e0228cbf4fa39b8eeeeeb981` |
 | `src/web/data/structure/propers/roman-1962.json` | `7f8b3f3d3a877d51e51dccb1403796f8e89294b1690ac163e4fcdd444af4a55c` |
-| `src/web/data/structure/propers/roman-pre-1955.json` | `1cd10dd54475ea44aadccf6b66f1038f656513e6f14a33ce4699a9c18286b772` |
+| `src/web/data/structure/propers/roman-pre-1955.json` | `c75cd35871d02e2e85421979af9fe40c0584c94ab719a9f5e40c20e71d0b5803` |
 | `src/web/data/structure/propers/search/postconciliar.json` | `1cce16203e3fca4690bb952143cded574c3e63596b92a218a656bdd62802add5` |
 | `src/web/data/structure/propers/search/roman-1962.json` | `092404e6bffdcf7528c5b55b3f01d4245b0dd7e5e2d0d90fc0a2ded1edacb710` |
 | `src/web/data/structure/propers/search/roman-pre-1955.json` | `d0b19fae59b0052eda9ad15795913856903365285c27f64bb7bd4c82ece011b4` |

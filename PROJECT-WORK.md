@@ -239,8 +239,11 @@ Joseph clause as a short phrase. That basis is recorded once in
 `src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml` and
 reaches only that clause.
 
-**In progress: texts, structure and Ordinary collation done; the C2 acceptance
-pass remains.**
+**In progress: the bounded Pentecost source repairs are implemented; the C2
+acceptance pass remains.** The 2026-10-20 source audit preserves the English
+Lesson and Communicantes variant gaps and the Ordinary's explicit partial
+extents. It does not claim whole-book text completion or independent human
+acceptance.
 
 - Pentecost Latin is 10/10 exact-target.
 - English is bound for 9 of 10 units, with the Lesson a typed gap.
@@ -293,8 +296,9 @@ Pre-1955 keeps 206 stand-in days until commemorations and octaves are modelled.
 The formulary-level expected-target join (step 2) is done: 488 1962 and 463
 pre-1955 formularies are joined. A read-only real-browser audit chose Pentecost Sunday,
 2026-05-24, for all three missals and audited every unit against the six-part
-pattern. The pre-1955 audit is provisional until its witness inventory lands.
-It found 22 gaps, now recorded in the
+pattern. The accepted Bonn pre-1955 witness inventory has since landed;
+its Pentecost text slots still need their source joins and wording collation.
+The initial audit found 22 gaps, now recorded in the
 [roadmap](guidance/liturgy-browser-roadmap.md#c2-exemplars-and-execution-plan-2026-10-19).
 The most serious are:
 
@@ -342,6 +346,20 @@ Day and Propers for the 1962 Pentecost (179 events) and pre-1955 Pentecost
 Date-free postconciliar Propers intentionally omits two unresolved Ordinary
 appointments. These checks establish representative semantic parity; source
 wording and independent C2 acceptance still require review.
+The bounded 2026-10-20 acceptance audit against `60b69ee46` separates those
+completed technical checks from the remaining source and product acceptance:
+1962 Pentecost has 13/13 inventoried text slots represented, pre-1955 has 0/13
+represented with all thirteen unresolved, and postconciliar has no joined
+bounded Pentecost text-slot report. All three whole-form extents remain
+unresolved. Pre-1955's current work is bounded Bonn/Mame collation and
+attestation, not acquisition of an exact Vatican 1920 impression. The later
+Ordinary checkpoint has 120 held Latin occurrences, 118 collated and 97
+word-exact, with nine partial Prefaces and two source-only uncollated rows.
+The existing source/model checks and historical browser/print receipts are
+technical evidence; the final exemplar acceptance matrix is not dispositioned.
+F01 source inputs require regeneration and checks before inheriting these
+results, including a new annual run when its consumed inputs change. C2 and C3
+remain in progress; the source-family review and rights boundaries are unchanged.
 The 400% Contents jump now leaves its Canon destination wholly in the readable
 band above the bottom action dock. The source-served ritual-flow harness passes
 28/28 assertions after accounting for the intentional C2 claim typography;
