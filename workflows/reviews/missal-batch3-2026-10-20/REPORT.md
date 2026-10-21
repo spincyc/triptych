@@ -1,6 +1,6 @@
 # Missal timeline: third parallel batch, 20–21 October 2026
 
-**Verified inputs ready; commit/package pending.** This batch advances source,
+**Reviewed implementation pushed; review transport verified.** This batch advances source,
 model, native-text and reader work on `feature/missal-timeline`. The all-rite
 project remains in progress. No default-branch integration, deployment or final
 maintainer acceptance is claimed. The public receipts below identify the exact
@@ -127,12 +127,24 @@ authorized fresh recovery exits zero. [Print acceptance](print.json) covers
 on-screen metadata previews, with no native-body U+2E4E print proof, physical
 printer or final production-sheet certification.
 
-Root will record the actual additive documentation comparison and ledger result
-in `documentation.json`; those checks are pending at this proposal. The inherited
-32 missing-installed-PDF ledger findings must remain distinguished from new
-findings. Outgoing disclosure, implementation commit, feature push, immutable
-review directory/ZIP and delivery bookkeeping remain pending. None is inferred
-from the verified inputs above.
+The [actual documentation receipt](documentation.json) verifies 45,126 unchanged
+frozen inputs, only two operational-owner changes and thirteen new review files.
+The actual ledger validator exits zero: 74 tracked deliverables, 62 complete;
+the all-rite entry stays in progress with fourteen passing and six open criteria.
+Earlier snapshots' 32 missing-installed-PDF findings are historical, not this
+invocation's result. Reviewed implementation
+`dd5b0c779d4ee39025685524a17ff48ce3411d20` is pushed and confirmed at
+`origin/feature/missal-timeline`. The exact committed-object/full-patch disclosure
+review passes its bounded checks. The fresh immutable directory and sibling
+31,275,666-byte ZIP are created and independently verified: all 75 unique members,
+CRC, exact member set, every member's bytes, 73 artifact-inventory entries and
+74 checksum entries pass. The [delivery record](DELIVERY.md) and
+[public receipt](delivery.json) bind the exact paths, archive digest and owning
+and independent proofs. This later four-file bookkeeping update preserves the
+reviewed runtime and ledger; the package remains the immutable implementation
+snapshot. A separate scratch-only finalizer assertion stopped before output
+writes; its corrected direct three-field comparison exits zero without changing
+the package, source or index. The all-rite project remains in progress.
 
 ## Remaining work
 
@@ -145,4 +157,4 @@ from the verified inputs above.
 | Textual ancestry | Establish exact textual-state bridges before changing the ten native roots or implying inherited text. |
 | Reader acceptance | Extend spoken-screen-reader, accessibility and browser coverage beyond the recorded states; current native-link and narrow-title defects are corrected. |
 | Production acceptance | Complete production-sheet and physical-printer proof; digital metadata previews are the accepted scope. |
-| Delivery | Complete additive/ledger checks, outgoing disclosure, commit/push and immutable transport with actual recorded results. |
+| Maintainer disposition | Final reader judgment and the substantive work above remain open; bounded batch transport is verified in [DELIVERY.md](DELIVERY.md). |

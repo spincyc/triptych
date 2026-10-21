@@ -1,0 +1,159 @@
+{
+  "schema": "missal-batch3-delivery-bookkeeping/v1",
+  "status": "Reviewed implementation pushed; fresh immutable directory/ZIP created and independently verified.",
+  "reviewed_implementation": "dd5b0c779d4ee39025685524a17ff48ce3411d20",
+  "base_commit": "e2267fdeb417d99b03d8cefea05fc30397bdf816",
+  "branch": "feature/missal-timeline",
+  "implementation_push": {
+    "input_label": "actual-implementation-push",
+    "sha256": "822a0327a029749e97adccf8bcccb2e04a390ff9320c0db7e9c6df0c7f8cf0e9",
+    "byte_size": 978,
+    "exit_code": 0
+  },
+  "remote_confirmation": {
+    "input_label": "actual-implementation-remote-confirmation",
+    "sha256": "38370681e21b9aaddf443cad1c42844f6bc26e66039cbceeee1d4b55293d1919",
+    "byte_size": 985,
+    "exit_code": 0,
+    "ref": "refs/heads/feature/missal-timeline",
+    "confirmed_commit": "dd5b0c779d4ee39025685524a17ff48ce3411d20"
+  },
+  "documentation_acceptance": {
+    "path": "workflows/reviews/missal-batch3-2026-10-20/documentation.json",
+    "sha256": "91abb123e426f384eed19cbb05b523be06b7f89f9ffbbf7fc2c54abedc1d8e79",
+    "byte_size": 5707
+  },
+  "independent_documentation_acceptance": {
+    "input_label": "independent-fifteen-target-document-review",
+    "sha256": "82ab7d391a59ea08cd1bd266cc5c7521bfefb80f790205899262bbc366a73f93",
+    "byte_size": 14048
+  },
+  "installed_documentation_companion": {
+    "input_label": "installed-documentation-independent-companion",
+    "sha256": "147a8f2597a1c64b76e6315b9879dc158def621b811d494c289923c9ab4e8ef4",
+    "byte_size": 5771
+  },
+  "committed_object_and_patch_disclosure": {
+    "input_label": "exact-committed-object-and-full-patch-public-disclosure",
+    "sha256": "ca6deef58e2a68dd280e01307ada0c0be3a949e185ef88d1d6c88ba977fc164d",
+    "byte_size": 5187
+  },
+  "transport": {
+    "status": "pass",
+    "directory": ".scratch/agent-handoffs/20261021T064940Z-missal-batch3/",
+    "directory_created": true,
+    "directory_files": 75,
+    "directory_bytes": 72024078,
+    "zip": ".scratch/agent-handoffs/20261021T064940Z-missal-batch3.zip",
+    "zip_created_and_verified": true,
+    "zip_sha256": "c0170a7bdfa9ac41ac0c891fa2908c1c73f3a7603f3b2ebed239eb824c99735a",
+    "zip_bytes": 31275666,
+    "exact_unique_members": 75,
+    "artifact_inventory_entries": 73,
+    "artifact_inventory": {
+      "filename": "artifact-inventory.json",
+      "sha256": "d25c4629865daabc198dad2c15a91683319481aa37ad4f8999f65455e4b5c009",
+      "byte_size": 129166
+    },
+    "checksum_entries": 74,
+    "checksums": {
+      "filename": "SHA256SUMS",
+      "sha256": "f8b1f0d3621b751565862c06d47c9fde37b0826e75b0cdf2298786190d9c9434",
+      "byte_size": 8292
+    },
+    "crc_pass": true,
+    "exact_member_set_pass": true,
+    "member_byte_equality_pass": true,
+    "inventory_hashes_and_lengths_pass": true,
+    "checksum_inventory_pass": true,
+    "readonly_modes": {
+      "regular_files": "0444",
+      "directories": "0555",
+      "zip": "0444"
+    },
+    "readonly_reverification": "pass",
+    "owning_verification": {
+      "input_label": "actual-producer-transport-verification",
+      "sha256": "345ee78a5644c420948099f5a2772d116a52cb66b5e9407094c71a31d49940d8",
+      "byte_size": 1321
+    },
+    "independent_acceptance": {
+      "input_label": "actual-independent-final-transport-acceptance",
+      "sha256": "9b43544f28e96a27ce8ed34bf3a3d5730277e148079939e3b603310a1371acfe",
+      "byte_size": 3075
+    },
+    "independent_final_receipt": {
+      "input_label": "independent-final-main-package-acceptance",
+      "sha256": "f7c0428a08a430616a81d4d1fb9e52f0fa916e763ef5d42cda2895841924a862",
+      "byte_size": 2198
+    },
+    "independent_disclosure_addendum": {
+      "input_label": "independent-exact-patch-and-disclosure-addendum",
+      "sha256": "54a00942d06991e6924d1cddffe66602d93a3f99fdce5090774d10b8c50442f6",
+      "byte_size": 6010
+    },
+    "authorized_manifest": {
+      "input_label": "exact-root-authorized-assembly-input",
+      "sha256": "9db363c6cecc0182d71d3f8f115e1ff4b35c4549d622862bfc3ec3d8695d2be7",
+      "byte_size": 159522
+    },
+    "exact_complete_patch": {
+      "filename": "changes.patch",
+      "sha256": "ec09b193f48b37a7521aca640ed2bed004acfcdc6842e6af7a66b73372af63f2",
+      "byte_size": 42271122
+    }
+  },
+  "preservation": {
+    "all_rite_state": "in_progress",
+    "requirements": 20,
+    "pass": 14,
+    "open": 6,
+    "bookkeeping_changes_only": [
+      "PROJECT-WORK.md",
+      "workflows/reviews/missal-batch3-2026-10-20/REPORT.md",
+      "workflows/reviews/missal-batch3-2026-10-20/DELIVERY.md",
+      "workflows/reviews/missal-batch3-2026-10-20/delivery.json"
+    ],
+    "scope": "Delivery bookkeeping does not change source, code, projection, release, corpus or render inputs; it grants no default-branch integration, deployment or final maintainer acceptance."
+  },
+  "derivation": "Explicit public selection from actual producer and independent transport receipts. Exact identities, counts, judgments and scope retained; raw absolute machine paths and operational environment/process details omitted. No assembly, gate or test was rerun by this bookkeeping preparation.",
+  "assembly_grant": {
+    "input_label": "root-explicit-exact-assembly-grant",
+    "sha256": "231968e47cd9cc5597a75d4ac605e16ce25190a568f985b64b9c0f95d9c39f64",
+    "byte_size": 2067
+  },
+  "verification_history": {
+    "core_transport_first_attempt": "pass",
+    "separate_scratch_finalizer_assertion": {
+      "origin": {
+        "input_label": "preserved-scratch-finalizer-assertion-disposition",
+        "sha256": "bab32a91e2ed522056d36a09508b0a7e7a784a6da8f8636901cd762a35293ae2",
+        "byte_size": 707
+      },
+      "assertion": "grant.permitted_manifest_changes expected raw field names; actual root grant uses three prose controls",
+      "correction": "Check exact authorized-vs-reviewed changed key set directly and bind the unchanged root grant pin, without relaxing allowed values.",
+      "scope": "Stopped before final output writes. Actual core transport attempt remains pass; package/source/index untouched.",
+      "corrected_direct_three_field_finalizer_exit": 0
+    },
+    "current_index_identity_scope": "Exact across the independent verification interval only. No earlier unknown-writer/index-preimage gap is reconstructed.",
+    "new_product_or_source_gates_or_exports": 0
+  },
+  "replay_and_scope": {
+    "registered_pdf_prerequisites": {
+      "total": 266,
+      "tracked": 6,
+      "separately_supplied": 260,
+      "separately_supplied_bytes": 280514879
+    },
+    "package_contents": {
+      "print_pdfs": 2,
+      "browser_images": 17,
+      "print_images": 5,
+      "complete_original_source_page_images": 5,
+      "restorable_corpus_bundles": 1
+    },
+    "omitted": "The 260 separately supplied installed PDFs and unselected/restricted original images, private source-only packages, raw private operational logs and transport/session wrappers are excluded. Exact accepted source-payload omissions and replay prerequisites remain identified in the package.",
+    "snapshot_boundary": "Package report/operational snapshots identify reviewed implementation dd5b0c779d4ee39025685524a17ff48ce3411d20 before this later delivery bookkeeping. The finished pair is not modified; this record does not identify a later bookkeeping commit or its push.",
+    "limits": "Transport integrity does not supply new historical findings, whole-book completion, human spoken-screen-reader or physical/production-print acceptance, deployment, default-branch integration or final maintainer judgment."
+  }
+}
