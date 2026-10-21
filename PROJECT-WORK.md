@@ -74,7 +74,7 @@ with independent source and literal-text review before integration. All work
 remains on `feature/missal-timeline`; the all-rite completion criteria remain
 open, and neither a new hosted corpus nor deployment is part of this phase.
 
-**Third parallel batch, 20–21 October 2026: verified inputs ready; commit/package pending.**
+**Third parallel batch, 20–21 October 2026: implementation pushed; review transport verified.**
 The [batch review](workflows/reviews/missal-batch3-2026-10-20/REPORT.md) and
 public source, central, corpus, browser and print receipts record the exact
 accepted scopes. The current catalogue has 1,962 entries in 233 declared groups
@@ -113,10 +113,19 @@ acceptance is claimed. Earlier schema failures, interrupted attempts and the
 first unknown-writer navigation index event remain recorded, without retrospective
 proof. All 161 source-family review units remain pending.
 
-Root will record actual additive-document and ledger checks in
-`workflows/reviews/missal-batch3-2026-10-20/documentation.json`. Outgoing disclosure,
-implementation commit/push and immutable delivery remain pending. The all-rite
-project remains **in progress**.
+The [documentation receipt](workflows/reviews/missal-batch3-2026-10-20/documentation.json)
+records actual additive-input equality and a valid ledger: 74 tracked, 62
+complete. The all-rite entry retains twenty requirements: fourteen pass and six
+open. Reviewed implementation `dd5b0c779d4ee39025685524a17ff48ce3411d20` is
+pushed and confirmed at `origin/feature/missal-timeline`; exact committed-object
+and full-patch disclosure review passes. The
+[delivery record](workflows/reviews/missal-batch3-2026-10-20/DELIVERY.md) binds the
+fresh `20261021T064940Z-missal-batch3` directory and sibling ZIP: all 75 unique
+members pass CRC, exact membership, byte equality, 73 inventory entries and
+74 checksums. The 31,275,666-byte archive's SHA-256 is
+`c0170a7bdfa9ac41ac0c891fa2908c1c73f3a7603f3b2ebed239eb824c99735a`.
+The pair remains immutable; this later bookkeeping update changes only four
+operational documentation paths. The all-rite project remains **in progress**.
 
 **Second parallel batch, 20 October 2026: verified historical checkpoint.** The
 measurements and completed transport below identify that immutable batch2
