@@ -99,9 +99,9 @@
    "version": "7"
   },
   {
-   "digest": "7568a7728ef8a16e5a7c65475e9a3ae0d24c695caab6faa5d0c0c7ec52621d16",
+   "digest": "ef61cf2a22095178605237cbf5e93101381da858b11879b4106e35e534256ae8",
    "id": "proper-study",
-   "version": "13"
+   "version": "14"
   },
   {
    "digest": "a6bfeaa2f1d269297a9d4ff956950214ef946318e4db6c99eed16d180b4e25ad",
@@ -7815,14 +7815,14 @@
        "kind": "synthesis",
        "pages": 12,
        "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.pdf",
-       "subject": "Concise study of the 1962 Missale Romanum proper of the feast of Our Lord Jesus Christ the King, last Sunday of October, as said on 25 October 2026: the appointed elements, four overview senses, the scriptural date and location of each passage, the movement of the formulary, and a commentary comparing three readings of the whole Mass",
+       "subject": "Concise study of the 1962 Missale Romanum proper of the feast of Our Lord Jesus Christ the King, last Sunday of October, as said on 25 October 2026: the appointed texts, four overview senses, the scriptural date and location of each passage, the themes of the propers, and a commentary comparing three interpretations of the whole Mass",
        "title": "Our Lord Jesus Christ the King: A Concise Study of the Proper in the 1962 Roman Missal"
       },
       {
        "kind": "homily",
        "pages": 4,
        "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.pdf",
-       "subject": "A homily for an adult parish assembly on the 1962 Missale Romanum proper of the feast of Our Lord Jesus Christ the King, last Sunday of October, as said on 25 October 2026: the King bound before Pilate and the Lamb upon the throne, a kingdom not of this world and not from hence and therefore everywhere, entered by hearing the truth, won as man by the passion and offered at the altar, the office every one holds under it, the soldiers of the Postcommunion under the standard of the Cross, and the King who shall sit for ever",
+       "subject": "A homily for an adult parish assembly on the 1962 Missale Romanum proper of the feast of Our Lord Jesus Christ the King, last Sunday of October, as said on 25 October 2026: the King bound before Pilate and the Lamb upon the throne; Augustine on a kingdom not of this world and not from hence; those who hear the truth; the kingdom received as man through the passion and offered at the altar; the Gradual's kings and the use of authority; the soldiers of the Postcommunion under the standard of the Cross; and the King who shall sit for ever",
        "title": "Our Lord Jesus Christ the King: The Kingdom Not from Hence"
       }
      ],
@@ -7842,6 +7842,11 @@
        "model": "claude-opus-5-5[1m]",
        "qualifiers": "dispatched-reasoning-effort=high; unexposed: sampling configuration",
        "runtime": "Anthropic Claude Code harness subagent (derive-homily stage of proper-study v12, run 7397c12187517ff2, iteration 0: the homily derived from the expansive and concise studies as their reviews accepted them, comprising the homily entrypoint with its full-width title; the spoken body, on the second reading's kingdom not from hence and therefore everywhere with the first reading's King made captive by consenting, the Offertory's asking and the Secret's victim, for an adult parish assembly; the terminal note on sources and delivery with its References; the production audit entry; and author proof checks); installed Claude Code CLI 2.1.303, the running build not separately exposed; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5[1m]",
+       "qualifiers": "dispatched-reasoning-effort=high; unexposed: sampling configuration",
+       "runtime": "Anthropic Claude Code harness subagents and coordinating session (register revision of 21 October 2026, outside a workflow run, under guidance/editorial.md \"Say what the texts say, plainly\" and the proper-study version-14 review criteria: version-14 register reviews of the expansive study, concise study and homily; two revision passes on each, changing wording only, with the study's interpretations called interpretations, the closing roll calls rewritten, and the homily's devices replaced by one response; an independent fidelity review against the reviewed study and research records, and the coordinator's corrections of its findings; blind comparisons recorded in workflows/reviews/register-remediation-2026-10-21); installed Claude Code CLI 2.1.304, the running build not separately exposed; unexposed: server revision"
       }
      ],
      "eligibility": "eligible",
@@ -7859,9 +7864,9 @@
      },
      "provider": "claude",
      "reviewed": "2026-10-19",
-     "revised": "2026-10-19T20:36:47Z",
+     "revised": "2026-10-21T18:29:00Z",
      "status": "alpha",
-     "subject": "Expansive study of the 1962 Missale Romanum proper of the feast of Our Lord Jesus Christ the King, last Sunday of October, as said on 25 October 2026: appointed texts, each element in its setting, three readings of the whole formulary with their four senses, a comparison, and the scriptural date and location of its passages",
+     "subject": "Expansive study of the 1962 Missale Romanum proper of the feast of Our Lord Jesus Christ the King, last Sunday of October, as said on 25 October 2026: appointed texts, each text in its setting, three interpretations of the whole Mass with their four senses, a comparison, and the scriptural date and location of its passages",
      "title": "Our Lord Jesus Christ the King: A Study of the Proper in the 1962 Roman Missal",
      "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/main.tex",
      "web": "web/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.html"

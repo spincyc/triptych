@@ -7,6 +7,29 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-21.
 
+## Register remediation, 2026-10-21
+
+<!-- promised-deliverable: register-remediation-2026-10-21 -->
+
+**Complete on `feature/jargon`; not pushed.** The maintainer reported that produced
+documents still fall into unearned profundity, empty significance, jargon,
+ham-fisted hokiness and little subtlety, naming the Claude 1962 Christ the King
+documents, and asked for the cause, a remediation, its execution on those
+documents, a sanity check and a cold review. Decisions taken on 21 October
+2026: revise the published documents in place and also test generation from
+scratch; reframe the homily's device list rather than keep it; bump
+`proper-study` to version 14 so review fragments carry a register criterion;
+call a study's interpretations interpretations, not readings, in reader prose.
+The guidance and version-14 workflow are written, the three Christ the King
+documents are revised and their web edition, catalogue and release bindings
+regenerated, and the verification — version-14 reviews, from-scratch
+generation, blind comparisons, two fidelity reviews and the mechanical gates
+— is in [the remediation record](workflows/reviews/register-remediation-2026-10-21/RECORD.md).
+Open for the maintainer: whether to install the from-scratch homily and
+themes pages that every final judge preferred, and whether to revise other
+leaves with the same defect. No push, merge or deployment is part of this
+work.
+
 ## Missal chronology acceptance review, 2026-10-17
 
 <!-- promised-deliverable: missal-chronology-acceptance-review-2026-10-17 -->

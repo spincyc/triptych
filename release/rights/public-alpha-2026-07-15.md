@@ -14176,7 +14176,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-4.json` | `7f1956b102a7b765dc36210f5557ad25f07d075c8edcc87a3acc85cd3a03473d` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-5.json` | `61abb15daa555ada778b2eeb6137cbc6114102586c9cc2a27d5e4863521de0e3` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-6.json` | `54408d9f5e1c8b684850b05976d6e3ac9ee3b88b6194c37c7e1cf83d52256d28` |
-| `src/web/data/structure/documents/corpus.json` | `8af8711269ea201f32f782fd4013233a377efbcea0be7246c5741a20253e08e7` |
+| `src/web/data/structure/documents/corpus.json` | `bcb5a0a08e3ea86b376e717810516b2ac91be554406123b857e370ea5956a495` |
 | `src/web/data/structure/ordinary/index.json` | `b248eefcc0b073e43dd4c0d168007cd8d09fc5f28bd2fc633d98e2f4ba9e4846` |
 | `src/web/data/structure/ordinary/postconciliar.json` | `7714e4f1c328e4adad95afb3387e81b0cc44731977bfe5866a2ae2a2a597c2b6` |
 | `src/web/data/structure/ordinary/roman-1962.json` | `7d8eeba961c7e8ffa46f9fc57a486d6a4ddf7df23d011a0bbba015e87c404000` |
@@ -24375,7 +24375,7 @@ release attachment, announcement, or promotion.
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md` | `14f5d48375abdd14f89073701f9b044b00b4fd7eae0a1ad5ed2df5634093b433` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.md` | `071cf8ce54ed16ad029e2817d7ab00b89bd92133de94c2ae73b0302bce4f0717` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md` | `9681daa54a44cab5fb3e11f4128da27bbc7a284e4eaa04e31af2924ab771eb3f` |
-| `web/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.md` | `e7bc1c594ffc3f63b40493237770ab232ad338a46ef6c9a3000abefe4041af22` |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.md` | `bdda90a1285b6681b0c47d88befb0638f08e94877e5e06216d67af6e6cf574be` |
 | `web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.md` | `ef892eb0c8f223b354c86d5f3a1a1ec4494ad9a0125b7898f9e1c2b35c59808b` |
 | `web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.md` | `8058a5409b0e29f5468e27667fc99e68cf528dda13a3b8ba12b09c5c6d571b1a` |
 | `web/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.md` | `1c657ac2ad531ce52d4e33816a9052820916f30158442d5af885e8d0668ce351` |

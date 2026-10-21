@@ -1,6 +1,57 @@
 schema_version = 1
 
 [[deliverables]]
+id = "register-remediation-2026-10-21"
+owner = "PROJECT-WORK.md"
+promise = "Find why AI-written proper studies still read with unearned profundity, empty significance, jargon, ham-fisted hokiness and little subtlety, remediate the guidance and the proper-study workflow, and prove the remediation by revising the Claude 1962 Christ the King study, concise study and homily under it, with mechanical sanity checks, a review-side test, a from-scratch generation test and independent cold review; work stays on feature/jargon, and no push, merge or deployment is part of it."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "register-causes"
+  criterion = "The defect census of the three documents, the comparison with GPT and older Claude leaves, and the ranked causes with their evidence are recorded."
+  status = "pass"
+  evidence = ["workflows/reviews/register-remediation-2026-10-21/RECORD.md"]
+  check = "contains"
+  path = "workflows/reviews/register-remediation-2026-10-21/RECORD.md"
+  needle = "## Causes"
+
+  [[deliverables.requirements]]
+  id = "register-guidance"
+  criterion = "guidance/editorial.md names the register defect once, with tests a writer can apply; the three-document and 1962 profiles cross-reference it and remove the incentives the causes identify (the closing roll call, coherence-filled thematic pages, the homily device list)."
+  status = "pass"
+  evidence = ["guidance/editorial.md", "guidance/liturgy/propers-three-documents.md", "guidance/liturgy/roman-1962-propers.md"]
+  check = "contains"
+  path = "guidance/editorial.md"
+  needle = "## Say what the texts say, plainly"
+
+  [[deliverables.requirements]]
+  id = "register-workflow-v14"
+  criterion = "proper-study version 14 points every author and reviewer at the rule, makes register a reviewed criterion, and is documented in workflows/OPERATOR.md; the workflow test suites' failure sets are unchanged from the baseline."
+  status = "pass"
+  evidence = ["workflows/pipelines/proper-study.json", "workflows/OPERATOR.md", "workflows/fragments/proper-study/review.md"]
+  check = "contains"
+  path = "workflows/OPERATOR.md"
+  needle = "Version 14 applies the 21 October 2026 register correction"
+
+  [[deliverables.requirements]]
+  id = "register-ctk-revision"
+  criterion = "The Claude 1962 Christ the King study, concise study and homily are revised to the rule with every quotation, locus, attribution and fact kept; all three build within their page contracts, their component and content preflight results match the baseline, the web edition is regenerated, and the generation record and production audit are updated."
+  status = "pass"
+  evidence = ["workflows/reviews/register-remediation-2026-10-21/RECORD.md"]
+  check = "contains"
+  path = "workflows/reviews/register-remediation-2026-10-21/RECORD.md"
+  needle = "### The revised documents"
+
+  [[deliverables.requirements]]
+  id = "register-verification"
+  criterion = "A version-14 register review of the original documents, a from-scratch generation under the new guidance, a fidelity review of the revision and blind cold comparisons are recorded with their outcomes, including any contrary result."
+  status = "pass"
+  evidence = ["workflows/reviews/register-remediation-2026-10-21/RECORD.md"]
+  check = "contains"
+  path = "workflows/reviews/register-remediation-2026-10-21/RECORD.md"
+  needle = "## Verification"
+
+[[deliverables]]
 id = "missal-chronology-acceptance-review-2026-10-17"
 owner = "guidance/time-machine.md"
 promise = "Execute the corrected chronology handoff's bounded acceptance review for the Roman, Ruthenian and Cistercian progressions, repair reproducible in-scope findings, and deliver a durable disposition and current review transport without claiming wider corpus completion or maintainer approval."
