@@ -1091,14 +1091,14 @@ class ContractTests(unittest.TestCase):
             day["hash"],
             ["date", "missal", "bible", "orations", "why", "ordinary",
              "ordinary-lang", "rubrics", "mass", "form", "translation-witness",
-             "mode", "location", "text-display", "scripture-companion", "compare", "peer-missal", "territory",
+             "mode", "location", "text-display", "scripture-companion", "compare", "peer-missal", "territory", "proper-choices",
              "eucharistic-prayer"],
         )
         self.assertEqual(
             propers["hash"],
             ["missal", "type", "mass", "bible", "orations", "form", "cycle",
              "alternative", "translation-witness", "mode", "location", "text-display", "scripture-companion",
-             "ordinary-lang", "compare", "peer-orations", "peer-cycle", "peer-alternative", "peer-witness", "peer-bible", "penitential-act",
+             "ordinary-lang", "compare", "peer-orations", "peer-cycle", "peer-alternative", "peer-witness", "peer-bible", "proper-choices", "penitential-act",
              "creed", "eucharistic-prayer"],
         )
         self.assertEqual(day["query"], ["data"])
@@ -2942,9 +2942,9 @@ class ParityTests(unittest.TestCase):
                     for event in proper_events
                 ))
 
-        for form, proper_count, first_index in (
-            ("longer", 19, 1),
-            ("shorter", 11, 20),
+        for form, proper_count, first_index, oratio_ordinals in (
+            ("longer", 24, 1, [5, 8, 11, 14, 17]),
+            ("shorter", 12, 25, [5]),
         ):
             with self.subTest(date="2026-12-19", mass="advent-ember-saturday", form=form):
                 result = node_call({
@@ -2965,6 +2965,13 @@ class ParityTests(unittest.TestCase):
                     event["kind"] == "proper" and event["seat"] is None
                     for event in result["events"]
                 ))
+                # Independently collated Oratio appointments retain their
+                # source order in each form; no generic frame seat is inferred.
+                self.assertEqual(
+                    [index for index, event in enumerate(result["events"], 1)
+                     if event["editionSlotLabel"] == "Oratio"],
+                    oratio_ordinals,
+                )
                 placement = next(
                     row for row in result["coverage"]
                     if row["scope"] == "ordinary-placement:roman-1962"

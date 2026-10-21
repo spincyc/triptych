@@ -752,13 +752,13 @@ citation_divergences:
     "Isaiah 2:1-5": "Isaiah 2:1-5"      # stated even where nothing moves
 ```
 
-The left side is the citation as this calendar prints it; the right side is the
-reference addressing the same text in Vulgate numbering, parsed by
+The left side is the citation as this calendar prints it; a scalar right side
+is the reference addressing the same text in Vulgate numbering, parsed by
 `tools/tpt citations`, so the two cannot drift apart. A correspondence that
 holds unchanged is written out rather than omitted: inside a divergent locus,
 silence is not evidence that anyone checked.
 
-Every resolution is written in Vulgate numbering, because that is the text each
+Every scalar resolution is written in Vulgate numbering, because that is the text each
 was read out of. Not every indexed edition is in that numbering, and the answer
 is not the same for every book: the English Bibles keep the Vulgate's division
 in the prophets, where only the Hebrew differs, but follow the Greek through the
@@ -771,6 +771,13 @@ as it stands), or `unrecorded` (neither is established, or this file's citations
 for the book do not all speak one system, so the citation refuses there). There
 is no default: whichever it were would be applied silently to the books nobody
 had thought about yet, and the two live answers are opposites.
+
+A citation target may instead be a map of numbering keys to reference strings.
+`vulgate` remains required; optional keys must name registered numberings. An
+explicit alternate applies only to that exact source reference before its
+locus stance; omitted targets retain the stance, including refusals. Parts
+remain source coordinates: selecting containing whole Bible verses establishes
+no translated part cuts.
 
 `tools/tpt index-bible` validates the list against the citations actually made
 before it indexes anything, and fails the build on a resolution for a reference
@@ -808,7 +815,7 @@ owns the canon. Both run inside `make check` and need PyYAML
 | roman-pre-1955 | seasonal | 6 | 0 | 0 |
 | roman-pre-1955 | marian | 1 | 0 | 0 |
 | roman-pre-1955 | sanctoral | 1 | 0 | 0 |
-| roman-1962 | seasonal | 128 | 1354 | 0 |
+| roman-1962 | seasonal | 128 | 1368 | 0 |
 | roman-1962 | christological | 8 | 96 | 0 |
 | roman-1962 | marian | 18 | 134 | 0 |
 | roman-1962 | sanctoral | 307 | 1564 | 0 |
@@ -839,19 +846,19 @@ owns the canon. Both run inside `make check` and need PyYAML
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 8 | 491 | 619 |
-| Propers | 0 | 3506 | 3051 |
+| Propers | 0 | 3520 | 3051 |
 | — named `Placeholder` | 0 | 0 | 0 |
-| — inside a `forms` block | 0 | 182 | 191 |
+| — inside a `forms` block | 0 | 196 | 191 |
 | — carrying a `cycles` mapping | 0 | 0 | 295 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 410 |
 | Masses holding only placeholders | 0 | 0 | 0 |
 | Masses taking a formulary from another entry | 0 | 165 | 0 |
 | Propers taking their text from another entry | 0 | 70 | 49 |
-| Propers that are not placeholders | 0 | 3506 | 3051 |
+| Propers that are not placeholders | 0 | 3520 | 3051 |
 | — of those, scripture-bearing | 0 | 2232 | 2680 |
 | Encoded passages | 0 | 2654 | 3639 |
 | Distinct books cited | 0 | 57 | 73 |
-| Distinct slot names | 0 | 120 | 100 |
+| Distinct slot names | 0 | 121 | 100 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
 `tools/mass-propers census --write`, which is the only thing that writes the

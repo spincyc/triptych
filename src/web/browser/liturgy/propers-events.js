@@ -194,54 +194,26 @@
     const wrapper = T.el('section', 'proper-choice');
     wrapper.dataset.semanticLocation = event.id;
     wrapper.dataset.semanticEventId = event.id;
-    wrapper.dataset.properChoice = event.group;
-    wrapper.dataset.choiceState = event.selection.state;
     wrapper.tabIndex = -1;
-    if (selected) wrapper.dataset.choiceSelection = selected;
-    const heading = T.el('h2', 'proper-choice-title', properChoiceLabel(event));
-    heading.id = 'proper-choice-title-' + event.id.replace(/[^a-z0-9]+/gi, '-');
-    wrapper.setAttribute('aria-labelledby', heading.id);
-    wrapper.appendChild(heading);
-    wrapper.appendChild(T.el('p', 'proper-choice-note', selected
-      ? 'The selected source option is shown first. Other source options remain collapsed and are not cumulative.'
-      : 'The source appoints one of these alternatives here. None is selected; the option groups below are not cumulative.'));
-    wrapper.appendChild(T.el('p', 'composed-note proper-choice-basis',
-      'Source basis: ' + event.choiceBasis));
-    const options = T.el('div', 'proper-choice-options');
-    const displayed = selected ? event.options.filter(function (option) { return option.id === selected; })
-      .concat(event.options.filter(function (option) { return option.id !== selected; })) : event.options;
-    displayed.forEach(function (option) {
-      const isSelected = selected === option.id;
-      const optionName = T.titleCase(String(option.id).replace(/[-_]+/g, ' '));
-      const optionNode = selected && !isSelected
-        ? document.createElement('details') : T.el('section', 'proper-choice-option');
-      optionNode.classList.add('proper-choice-option');
-      optionNode.dataset.properChoiceOption = option.id;
-      optionNode.dataset.choiceStatus = isSelected ? 'selected' :
-        (selected ? 'not-selected' : 'available');
-      if (isSelected) optionNode.setAttribute('aria-current', 'true');
-      const label = (isSelected ? 'Selected option: ' :
-        (selected ? 'Other source option: ' : 'Option: ')) + optionName;
-      if (optionNode.tagName === 'DETAILS') {
-        optionNode.appendChild(T.el('summary', 'proper-choice-option-title', label + ' (not selected)'));
-      } else {
-        optionNode.appendChild(T.el('h3', 'proper-choice-option-title', label));
-      }
-      (option.events || []).forEach(function (member) {
+    return window.TriptychReaderShell.renderProperChoice({
+      T: T, event: event, selected: selected, wrapper: wrapper,
+      titleId: 'proper-choice-title-' + event.id.replace(/[^a-z0-9]+/gi, '-'),
+      heading: 'h2', optionHeading: 'h3', label: properChoiceLabel(event),
+      state: state, navigate: navigate,
+      location: { kind: 'event', id: event.id }, focus: 'event',
+      adapt: function (request) {
+        return window.LiturgyReaderStateAdapters.adaptPropers({ request: request,
+          structure: runtime.structure, ordinary: runtime.ordinary });
+      },
+      renderMember: function (member) {
         const index = sourceIndex(member);
         const proper = index === null ? null : (mass.propers || [])[index];
         if (!proper || T.isPlaceholder(proper)) {
           throw new Error('Proper choice member has no production Proper at ' + member.id);
         }
-        const node = renderProperMaterial(member, proper, bible, fragments, state, 'h4', event);
-        node.classList.add('proper-choice-member');
-        node.dataset.properChoiceMemberEvent = member.id;
-        optionNode.appendChild(node);
-      });
-      options.appendChild(optionNode);
+        return renderProperMaterial(member, proper, bible, fragments, state, 'h4', event);
+      }
     });
-    wrapper.appendChild(options);
-    return wrapper;
   }
 
   function semanticNode(node, event, ordinal) {

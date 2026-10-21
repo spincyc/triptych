@@ -133,6 +133,50 @@ The source-family review remains 162 pending and zero screened. Conditional
 Common selection, coupled NO paths, remaining chant appointments and bodies,
 and a fresh integrated four-year reader run remain active work.
 
+### Ember bodies and shared reader selection, 2026-10-20
+
+Twenty-six Latin prayer bodies are independently collated from the registered
+Mame witness and supplied through separate historical and target-projection
+records. Advent and Lent Ember Saturdays retain their longer and shorter forms
+and each repeated Oratio occurrence. Fourteen newly explicit prayer appointments
+have exact English no-exemplar records; existing English bodies are preserved.
+The source punctuation correction was independently checked against the image,
+and the historical artifact and all dependent hashes were updated together.
+
+The shared reader now preserves concurrent independent Proper choices through
+native controls, URLs, sharing and Print. It validates exact source anchors,
+conditional applicability and source-qualified seats, and refuses unsupported
+foreign applicability. The new source Common models and correlated reading
+sets remain separate pending work. A mixed Proper's Bible components cannot
+stand in for its missing whole chant body. The CLI likewise retains a requested
+English body gap instead of advertising its diagnostic Latin incipit as English
+availability; an actually held English translation still takes precedence.
+
+Anselm's exact John acclamation now has a source-owned alternate numbering
+target, without changing the unrecorded-locus refusals or asserting translated
+verse-part cuts. The Ordinary Time 21 Communion cue is corrected to John 6:54,
+retaining the same Vulgate 6:55 destination and historical option identity.
+The official correction's printed abbreviation error is recorded explicitly;
+its intended book is corroborated by the separately identified antiphonary.
+
+The durable annual structural gate now covers the requested TLM civil year and
+all three complete NO liturgical years: 1,464 date/calendar coordinates,
+2,928 English/Latin states and 5,856 JSON/text renderings. Its full live run is
+pending. Earlier 4,380-render results retain their historical scope. Neither a
+structural pass nor an honestly typed gap establishes annual text completeness.
+
+This checkpoint passes 137 shared-reader tests, 115 affected owner tests (the
+expensive annual run remains skipped), the citation-owner checks and four new
+NO antiphon regressions. All seven Bible indexes and numbering projections are
+current; Bible chapter fragments are unchanged. The fourteen new exact source
+joins conserve all inventory identities and correct two former Collect joins
+to their actual Oratio occurrences. Source validation, generated-data and
+Ordinary gates, registry checks, exact release bindings, and the locked normal
+preview build/verification pass. The binding review covers 560 inputs and
+43 new bounded source-text fragments, preserving unrelated bindings. The
+source-family ledger still records 162 pending and zero screened units.
+Native choice-flow and final annual execution proofs remain separate work.
+
 ## Missal reader C1 truthful coverage, 2026-10-19
 
 <!-- promised-deliverable: missal-reader-c1-coverage-2026-10-19 -->

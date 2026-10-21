@@ -336,8 +336,12 @@ class ReaderCoverageTests(unittest.TestCase):
         witness = english["witnesses"][0]["id"]
         data["masses"] = [{"key": mass["key"], "kind": "contract", "propers": [mixed]}]
         result = node(op="adapt", structure=data, witness=witness)
-        self.assertEqual(result["result"]["events"][0]["selected"]["kind"], "scripture")
-        self.assertTrue(node(op="oration", proper=mixed, witness=witness)["text"])
+        selected = result["result"]["events"][0]["selected"]
+        self.assertEqual(selected["kind"], "composed")
+        self.assertEqual(selected["availability"], "held")
+        self.assertEqual(selected["text"], node(op="oration", proper=mixed, witness=witness)["text"])
+        self.assertEqual(selected["scriptureComponents"]["references"],
+                         [row["ref"] for row in mixed["citations"]])
         self.assertEqual(result["report"]["languages"][1]["available"], 1)
         self.assertEqual(result["report"]["languages"][1]["scripture_occurrences"], 1)
 
@@ -398,6 +402,24 @@ class ReaderCoverageTests(unittest.TestCase):
         self.assertNotIn("Other witness words", json.dumps(rows))
         self.assertEqual(self.by_class(rows, "unit-absence")[0]["attrs"]["data-unit-absence"],
                          "en:absent-in-witness")
+
+    def test_mixed_body_gap_keeps_absence_beside_cited_bible_reconstruction(self):
+        mixed = {"name": "Alleluia", "source": "mixed", "text": None,
+                 "text_status": {"state": "unavailable", "scope": "proper-body"},
+                 "citations": [CITATION], "translations": [],
+                 "untranslated": [{"lang": "en", "state": "unavailable"}],
+                 "coverage": unit_record(la=("not-sourced", "unresolved"),
+                     en=("not-sourced", "unresolved"), scripture_component={
+                         "relationship": "bible-reconstruction", "availability": "unresolved"})}
+        for language in ("la", "en"):
+            with self.subTest(language=language):
+                rows = render(mixed, language)
+                self.assertEqual(self.by_class(rows, "composed"), [])
+                self.assertTrue(self.by_class(rows, "unit-absence"))
+                claim = self.by_class(rows, "unit-claim")
+                self.assertEqual(len(claim), 1)
+                self.assertEqual(claim[0]["attrs"]["data-unit-claim"], "bible-reconstruction")
+                self.assertIn("Missal wording not established", claim[0]["text"])
 
     def test_withheld_original_is_never_shown_as_a_fallback(self):
         withheld = {"name": "Collect", "source": "composed", "text": "protected Latin words",

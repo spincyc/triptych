@@ -28,7 +28,7 @@
   const STATE_FIELDS = Object.freeze([
     'schema', 'entrance', 'civilDate', 'edition', 'calendar', 'formulary', 'browse',
     'bible', 'languages', 'selectedReadableFormulary', 'requestedMode', 'options',
-    'apparatus', 'form', 'cycle', 'alternative', 'semanticLocation', 'sourceHooks',
+    'apparatus', 'form', 'cycle', 'alternative', 'properChoices', 'semanticLocation', 'sourceHooks',
     'coverage', 'unresolvedChoices', 'explicitAbsences', 'comparison', 'textDisplay', 'scriptureCompanion'
   ]);
 
@@ -67,12 +67,12 @@
   const DAY_KEYS = Object.freeze([
     'date', 'missal', 'bible', 'orations', 'why', 'ordinary',
     'ordinary-lang', 'rubrics', 'mass', 'form', 'translation-witness', 'mode', 'location', 'text-display', 'scripture-companion',
-    'compare', 'peer-missal', 'territory'
+    'compare', 'peer-missal', 'territory', 'proper-choices'
   ]);
   const PROPERS_KEYS = Object.freeze([
     'missal', 'type', 'mass', 'bible', 'orations',
     'form', 'cycle', 'alternative', 'translation-witness', 'mode', 'location', 'text-display', 'scripture-companion',
-    'ordinary-lang', 'compare', 'peer-orations', 'peer-cycle', 'peer-alternative', 'peer-witness', 'peer-bible'
+    'ordinary-lang', 'compare', 'peer-orations', 'peer-cycle', 'peer-alternative', 'peer-witness', 'peer-bible', 'proper-choices'
   ]);
   const URL_INVENTORY = Object.freeze({
     day: Object.freeze({
@@ -271,6 +271,27 @@
       ));
     } else if (value.rights !== null && !nonempty(value.rights)) {
       errors.push(issue('selected-rights-id', at + '.rights', 'rights identity must be stable'));
+    }
+    if (has(value, 'scriptureComponents')) {
+      const components = value.scriptureComponents;
+      if (['composed', 'incipit-only', 'absent'].indexOf(value.kind) < 0 ||
+          !object(components) ||
+          Object.keys(components).sort().join('|') !== 'bible|numbering|references|unresolved' ||
+          (components.bible !== null && !nonempty(components.bible)) ||
+          (components.numbering !== null && !nonempty(components.numbering)) ||
+          !Array.isArray(components.references) ||
+          components.references.some(function (one) { return !nonempty(one); }) ||
+          !Array.isArray(components.unresolved) ||
+          components.unresolved.some(function (one) {
+            return !object(one) || Object.keys(one).sort().join('|') !== 'reason|reference' ||
+              !nonempty(one.reference) || !nonempty(one.reason) ||
+              components.references.indexOf(one.reference) < 0;
+          })) {
+        errors.push(issue(
+          'selected-scripture-components', at + '.scriptureComponents',
+          'mixed-body scripture components must be text-free references separate from body availability'
+        ));
+      }
     }
     if (value.kind === 'cycle-alternatives') {
       if (value.availability !== 'choice-required' || value.cycle !== null) {
@@ -741,6 +762,20 @@
         'alternative-identity', 'alternative',
         'an explicitly present alternative must carry a stable identity'
       ));
+    }
+    if (has(value, 'properChoices') && (!object(value.properChoices) ||
+        !Object.keys(value.properChoices).length ||
+        Object.keys(value.properChoices).some(function (key) {
+          return !/^proper-choice\/[^/]+\/[^/]+\/[^/]+\/[^/]+$/.test(key) ||
+            typeof value.properChoices[key] !== 'string' ||
+            !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value.properChoices[key]);
+        }))) {
+      errors.push(issue('proper-choices', 'properChoices',
+        'Proper choices require exact edition-qualified group ids and stable option ids'));
+    }
+    if (has(value, 'properChoices') && value.entrance === 'propers' && !value.formulary) {
+      errors.push(issue('proper-choices-formulary', 'properChoices',
+        'explicit Proper choices require an exact formulary'));
     }
     if (has(value, 'selectedReadableFormulary')) {
       assertIdentity(errors, value.selectedReadableFormulary, 'selectedReadableFormulary');
@@ -1340,6 +1375,15 @@
       }
     }
 
+    if (has(parsed.recognized, 'proper-choices')) {
+      try {
+        state.properChoices = JSON.parse(parsed.recognized['proper-choices']);
+      } catch (error) {
+        errors.push(issue('proper-choices-json', 'proper-choices',
+          'explicit Proper choices must be one JSON mapping', 'url'));
+      }
+    }
+
     // Compare peers are never taken from preferences or manifest order. A
     // shared URL identifies the left side with the existing entrance keys and
     // names the second side and comparison anchor with these additive keys.
@@ -1606,6 +1650,13 @@
       });
     }
     if (has(state, 'textDisplay')) pairs.push(['text-display', state.textDisplay]);
+    if (state.properChoices) {
+      const ordered = {};
+      Object.keys(state.properChoices).sort().forEach(function (key) {
+        ordered[key] = state.properChoices[key];
+      });
+      pairs.push(['proper-choices', JSON.stringify(ordered)]);
+    }
     if (has(state, 'scriptureCompanion')) pairs.push(['scripture-companion', state.scriptureCompanion.id]);
     for (const row of normalized.legacy.unknown || []) pairs.push([row.key, row.value]);
     return '#' + pairs.filter(function (one) {
@@ -1801,12 +1852,14 @@
               ));
             }
             if (!stableId.test(event.group || '') || !object(event.selection) ||
-                event.selection.state !== 'required' || event.selection.option !== null ||
+                !['required', 'selected'].includes(event.selection.state) ||
+                (event.selection.state === 'required' ? event.selection.option !== null :
+                  !stableId.test(event.selection.option || '')) ||
                 Object.keys(event.selection || {}).sort().join(',') !== 'option,state' ||
                 !nonempty(event.choiceBasis)) {
               errors.push(issue(
                 'fixture-proper-choice-selection', at + '.selection',
-                'a Proper choice needs its source basis, kebab-case group, and exact unresolved selection'
+                'a Proper choice needs its source basis, group and exact selected or required state'
               ));
             }
             if (!Array.isArray(event.options) || event.options.length < 2) {
@@ -1852,6 +1905,11 @@
                   'fixture-proper-choice-option-ids', at + '.options',
                   'Proper choice option ids must be distinct'
                 ));
+              }
+              if (event.selection && event.selection.state === 'selected' &&
+                  !optionIds.includes(event.selection.option)) {
+                errors.push(issue('fixture-proper-choice-selection', at + '.selection',
+                  'a selected Proper option must belong to the exact source group'));
               }
             }
           }

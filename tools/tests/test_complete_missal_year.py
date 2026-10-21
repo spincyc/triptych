@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Structural regression gate for a complete year of ``mass-today`` dumps.
+"""Structural gate for one Roman 1962 year and each A/B/C Novus Ordo year.
 
 The ordinary test run checks the fixed matrix, the ``tpt`` registration, and
 the validator without retaining any liturgical text.  The expensive live pass
@@ -8,10 +8,15 @@ is deliberately opt-in::
     TRIPTYCH_COMPLETE_MISSAL_YEAR=1 \
       python -m unittest tools.tests.test_complete_missal_year
 
-That pass asks ``tools/tpt mass-today`` for one JSON dump and one plain-text
-dump per date, calendar, and language.  It validates each in memory and
-immediately discards it.  It records neither copyrighted prose nor a volatile
-snapshot of known corpus gaps.
+The fixed intervals follow guidance/liturgy-browser-roadmap.md: Roman 1962
+uses civil 2026; Novus Ordo uses the complete liturgical years ending in 2026,
+2027 and 2028.  Their 1,464 date/calendar coordinates yield 2,928 English/Latin
+states and 5,856 JSON/text renderings.  Pre-1955 expansion is deferred.
+
+That pass asks ``tools/tpt mass-today`` for both representations, validates
+each in memory and immediately discards it.  It records neither copyrighted
+prose nor a volatile snapshot of known corpus gaps.  Passing proves structural
+renderability, not appointment correctness, exact wording or text completeness.
 """
 
 from __future__ import annotations
@@ -31,18 +36,31 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 TPT = ROOT / "tools" / "tpt"
 
-FIRST_DATE = dt.date(2026, 8, 26)
-LAST_DATE = dt.date(2027, 8, 25)
-# The audit's first date is an intentionally unsettled postconciliar feria: the
-# held source offers several oration owners without selecting one.  Its terse
-# English and Latin projections are therefore correctly identical.  Use a
-# source-settled Sunday when checking that the human renderer actually projects
-# the requested language rather than treating ``--lang`` as a silent no-op.
+@dataclass(frozen=True)
+class AuditInterval:
+    """One explicitly scoped annual calendar interval, including both ends."""
+
+    label: str
+    calendar: str
+    first: dt.date
+    last: dt.date
+    expected_days: int
+
+
+AUDIT_INTERVALS = (
+    AuditInterval("Roman 1962", "roman-1962", dt.date(2026, 1, 1), dt.date(2026, 12, 31), 365),
+    AuditInterval("Novus Ordo A", "postconciliar", dt.date(2025, 11, 30), dt.date(2026, 11, 28), 364),
+    AuditInterval("Novus Ordo B", "postconciliar", dt.date(2026, 11, 29), dt.date(2027, 11, 27), 364),
+    AuditInterval("Novus Ordo C", "postconciliar", dt.date(2027, 11, 28), dt.date(2028, 12, 2), 371),
+)
+# Some unsettled ferias correctly have identical English and Latin projections.
+# Keep a source-settled Sunday as the explicit language sentinel rather than
+# treating a difference on every audit date as a requirement.
 TEXT_LANGUAGE_SENTINEL_DATE = dt.date(2026, 11, 29)
-CALENDARS = ("postconciliar", "roman-1962", "roman-pre-1955")
+CALENDARS = ("roman-1962", "postconciliar")
 LANGUAGES = ("en", "la")
-EXPECTED_DAYS = 365
-EXPECTED_DUMPS = EXPECTED_DAYS * len(CALENDARS) * len(LANGUAGES)
+EXPECTED_DATE_COORDINATES = 1464
+EXPECTED_DUMPS = EXPECTED_DATE_COORDINATES * len(LANGUAGES)
 EXPECTED_RENDERS = EXPECTED_DUMPS * 2
 
 FULL_RUN_ENV = "TRIPTYCH_COMPLETE_MISSAL_YEAR"
@@ -64,22 +82,22 @@ class DumpCase:
         return f"{self.date.isoformat()} {self.calendar} {self.language}"
 
 
-def audit_dates() -> tuple[dt.date, ...]:
-    """Return the inclusive, fixed audit interval."""
+def audit_dates(interval: AuditInterval) -> tuple[dt.date, ...]:
+    """Return one inclusive, fixed audit interval."""
 
     return tuple(
-        FIRST_DATE + dt.timedelta(days=offset)
-        for offset in range((LAST_DATE - FIRST_DATE).days + 1)
+        interval.first + dt.timedelta(days=offset)
+        for offset in range((interval.last - interval.first).days + 1)
     )
 
 
 def audit_matrix() -> tuple[DumpCase, ...]:
-    """Return every date/calendar/language coordinate in stable order."""
+    """Return every interval/date/language coordinate in stable order."""
 
     return tuple(
-        DumpCase(date, calendar, language)
-        for date in audit_dates()
-        for calendar in CALENDARS
+        DumpCase(date, interval.calendar, language)
+        for interval in AUDIT_INTERVALS
+        for date in audit_dates(interval)
         for language in LANGUAGES
     )
 
@@ -504,26 +522,42 @@ def _synthetic_payload(case: DumpCase) -> dict:
 
 class CompleteMissalYearContractTests(unittest.TestCase):
     def test_fixed_interval_and_matrix_are_complete_and_unique(self) -> None:
-        dates = audit_dates()
-        self.assertEqual(len(dates), EXPECTED_DAYS)
-        self.assertEqual((dates[0], dates[-1]), (FIRST_DATE, LAST_DATE))
-        self.assertIn(TEXT_LANGUAGE_SENTINEL_DATE, dates)
-        self.assertTrue(all(right - left == dt.timedelta(days=1)
-                            for left, right in zip(dates, dates[1:])))
+        self.assertEqual(
+            [(span.label, span.calendar, span.first.isoformat(), span.last.isoformat(), span.expected_days)
+             for span in AUDIT_INTERVALS],
+            [
+                ("Roman 1962", "roman-1962", "2026-01-01", "2026-12-31", 365),
+                ("Novus Ordo A", "postconciliar", "2025-11-30", "2026-11-28", 364),
+                ("Novus Ordo B", "postconciliar", "2026-11-29", "2027-11-27", 364),
+                ("Novus Ordo C", "postconciliar", "2027-11-28", "2028-12-02", 371),
+            ],
+        )
+        for span in AUDIT_INTERVALS:
+            dates = audit_dates(span)
+            self.assertEqual(len(dates), span.expected_days)
+            self.assertEqual((dates[0], dates[-1]), (span.first, span.last))
+            self.assertTrue(all(right - left == dt.timedelta(days=1)
+                                for left, right in zip(dates, dates[1:])))
 
         matrix = audit_matrix()
+        self.assertEqual(EXPECTED_DATE_COORDINATES, 1464)
+        self.assertEqual(EXPECTED_DUMPS, 2928)
+        self.assertEqual(EXPECTED_RENDERS, 5856)
         self.assertEqual(len(matrix), EXPECTED_DUMPS)
         self.assertEqual(len(set(matrix)), EXPECTED_DUMPS)
-        for date in dates:
-            coordinates = {
-                (case.calendar, case.language)
-                for case in matrix
-                if case.date == date
-            }
-            self.assertEqual(
-                coordinates,
-                {(calendar, language) for calendar in CALENDARS for language in LANGUAGES},
-            )
+        coordinates: dict[tuple[str, dt.date], set[str]] = {}
+        for case in matrix:
+            coordinates.setdefault((case.calendar, case.date), set()).add(case.language)
+        self.assertEqual(len(coordinates), EXPECTED_DATE_COORDINATES)
+        self.assertTrue(all(languages == set(LANGUAGES) for languages in coordinates.values()))
+        self.assertEqual({calendar for calendar, _ in coordinates}, set(CALENDARS))
+        self.assertEqual(
+            {calendar: sum(owner == calendar for owner, _ in coordinates) for calendar in CALENDARS},
+            {"roman-1962": 365, "postconciliar": 1099},
+        )
+        for calendar in CALENDARS:
+            self.assertIn((calendar, TEXT_LANGUAGE_SENTINEL_DATE), coordinates)
+        self.assertIn(("postconciliar", dt.date(2028, 2, 29)), coordinates)
 
     def test_every_command_uses_tpt_and_requests_the_complete_json_surface(self) -> None:
         for case in audit_matrix():

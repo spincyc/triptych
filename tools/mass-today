@@ -160,7 +160,7 @@ EXAMPLES = {
                 "      certantes in terris, coronari cum ipso mereamur in caelis. Per Dominum.",
                 "      (no en translation recorded; showing Latin)",
                 "",
-                "    Epistle — 2 Timothy 2:8-10",
+                "    Epistle — 2 Timothy 2:8-10; 3:10-12",
                 "",
                 "    Gradual — Psalms 91:13, 14",
                 "",
@@ -684,6 +684,20 @@ def language_projection(proper: dict, lang: str, bible: dict | None) -> dict:
                 "resolved": resolved,
                 "complete": complete,
             },
+        }
+
+    if lang != "la" and (body_unavailable or latin.get("withheld")):
+        # A Latin fragment is diagnostic when the whole body is unavailable;
+        # it does not change the absence of a requested-language body.
+        return {
+            "requested": lang,
+            "status": "absent",
+            "held": False,
+            "available": False,
+            "complete": False,
+            "reason": (
+                untranslated_reason(proper) if proper.get("untranslated") else "not-recorded"
+            ),
         }
 
     if proper.get("incipit"):

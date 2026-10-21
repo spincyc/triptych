@@ -155,6 +155,21 @@ alternative. The shared contract validates their nonempty identities; whether
 the selected production formulary holds them remains adapter-owned and fails
 closed when it does not.
 
+The optional `properChoices` map names complete source group identities
+(`proper-choice/<edition>/<mass>/<form>/<group>`) and their option IDs. Both
+entrances serialize it as sorted JSON in `proper-choices`. The Propers scalar
+`alternative` remains compatible for one group; declaring the same group in
+both forms refuses. Adapters reject stale groups, options not held by their
+source group and incompatible cycle selections. A valid source option may
+still carry a typed body or translation gap; selecting it does not make its
+words held.
+
+Native controls accumulate independent group selections and preserve their
+semantic focus. Date, edition, type, Mass or form changes clear stale choices;
+presentation changes retain them. The map selects groups already supplied by
+the generated source data. It creates no appointments, inferred applicability
+or allowed-path relation between source-correlated groups.
+
 Day Compare fixes the state's civil date and a named territorial context, then
 resolves each edition side independently before comparing semantic units.
 Propers Compare fixes corresponding edition-qualified formularies and rejects
@@ -213,8 +228,8 @@ The v1 inventory is:
 
 | Route | Hash keys | Query keys |
 | --- | --- | --- |
-| Day | `date`, `missal`, `bible`, `orations`, `why`, `ordinary`, `ordinary-lang`, `rubrics`, `mass`, `form`, `translation-witness`, `mode`, `location`, `text-display`, `scripture-companion`, `compare`, `peer-missal`, `territory`, and manifest-declared Ordinary variant keys | `data` |
-| Propers | `missal`, `type`, `mass`, `bible`, `orations`, `form`, `cycle`, `alternative`, `translation-witness`, `mode`, `location`, `text-display`, `scripture-companion`, `ordinary-lang`, `compare`, `peer-orations`, `peer-cycle`, `peer-alternative`, `peer-witness`, `peer-bible` | `data`, `missals` |
+| Day | `date`, `missal`, `bible`, `orations`, `why`, `ordinary`, `ordinary-lang`, `rubrics`, `mass`, `form`, `translation-witness`, `mode`, `location`, `text-display`, `scripture-companion`, `compare`, `peer-missal`, `territory`, `proper-choices`, and manifest-declared Ordinary variant keys | `data` |
+| Propers | `missal`, `type`, `mass`, `bible`, `orations`, `form`, `cycle`, `alternative`, `translation-witness`, `mode`, `location`, `text-display`, `scripture-companion`, `ordinary-lang`, `compare`, `peer-orations`, `peer-cycle`, `peer-alternative`, `peer-witness`, `peer-bible`, `proper-choices` | `data`, `missals` |
 
 The contract preserves current spelling and canonical route order. Unknown
 legacy pairs remain in a compatibility envelope and round-trip with both key

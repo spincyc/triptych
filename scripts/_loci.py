@@ -89,7 +89,11 @@ class Divergences:
     `numbering` is the numbering of the edition being indexed. The recorded
     resolutions are written in `RESOLVED_IN`; every other numbering an indexed
     edition may be in must be ruled on per locus under `STANCE`, because a book
-    two systems divide alike wants no correction at all.
+    two systems divide alike wants no correction at all. A citation's scalar
+    target retains that contract. An explicit target map must include `vulgate`
+    and may add only registered numberings; each alternate applies to that
+    exact source reference before the locus-wide stance. An omitted target
+    retains that stance, including its unrecorded refusal.
     """
 
     def __init__(
@@ -108,6 +112,9 @@ class Divergences:
         self.numberings = numberings
         self.loci: list[tuple[str, frozenset[int], str, dict[str, str]]] = []
         self.resolved: dict[str, tuple[str, str, list]] = {}
+        # Exact alternate-numbering targets are additive. The public Vulgate
+        # resolution table and every unruled locus fallback keep their shape.
+        self.addressed: dict[tuple[str, str], tuple[str, str, list]] = {}
         # Absent and empty both mean the calendar claims no divergence; a value
         # of any other shape is a mistake, and reading it as "none" would drop
         # the declaration silently, which is the failure mode being fixed here.
@@ -196,8 +203,18 @@ class Divergences:
         self, where: str, book: str, chapters: frozenset[int], ref: str, target: object
     ) -> set[int]:
         """Validate one recorded resolution and keep it. Returns what it covers."""
-        if not isinstance(target, str) or not target.strip():
-            raise ValueError(f"{where}: {book} resolution for {ref!r} must be a reference string")
+        targets = target if isinstance(target, dict) else {RESOLVED_IN: target}
+        if RESOLVED_IN not in targets:
+            raise ValueError(f"{where}: {ref!r} target map must include {RESOLVED_IN!r}")
+        extra = set(targets) - {RESOLVED_IN, *self.numberings}
+        if extra:
+            raise ValueError(
+                f"{where}: {ref!r} targets unregistered numberings "
+                f"{sorted(extra, key=repr)!r}"
+            )
+        for value in targets.values():
+            if not isinstance(value, str) or not value.strip():
+                raise ValueError(f"{where}: {book} resolution for {ref!r} must be a reference string")
         if ref in self.resolved:
             raise ValueError(f"{where}: {ref!r} is resolved twice")
         found = self.cited.get(ref)
@@ -208,19 +225,23 @@ class Divergences:
             raise ValueError(f"{where}: {ref!r} is cited under {home!r}, not {book!r}")
         if chapters and not touched & chapters:
             raise ValueError(f"{where}: {ref!r} reaches no divergent chapter of {book}")
-        try:
-            passage = self.canon.parse_citation(target.strip())
-        except self.canon.CitationError as error:
-            raise ValueError(
-                f"{where}: {ref!r} resolves to an unreadable reference: {error}"
-            ) from error
-        if passage["book"] != book:
-            # An override may correct the numbering, never the book: a citation
-            # that resolves into another book is a different citation.
-            raise ValueError(
-                f"{where}: {ref!r} resolves into {passage['book']}, outside {book}"
-            )
-        self.resolved[ref] = (book, target.strip(), passage["ranges"])
+        for numbering, value in targets.items():
+            try:
+                passage = self.canon.parse_citation(value.strip())
+            except self.canon.CitationError as error:
+                raise ValueError(
+                    f"{where}: {ref!r} resolves to an unreadable reference: {error}"
+                ) from error
+            if passage["book"] != book:
+                # An override may correct the numbering, never the book.
+                raise ValueError(
+                    f"{where}: {ref!r} resolves into {passage['book']}, outside {book}"
+                )
+            resolution = (book, value.strip(), passage["ranges"])
+            if numbering == RESOLVED_IN:
+                self.resolved[ref] = resolution
+            else:
+                self.addressed[(ref, numbering)] = resolution
         return touched & chapters if chapters else touched
 
     def locus_of(self, book: str, touched: set[int]) -> tuple[str, dict[str, str]] | None:
@@ -243,6 +264,9 @@ class Divergences:
         if found is None:
             return ranges, ""
         reason, stances = found
+        exact = self.addressed.get((str(entry["ref"]), self.numbering))
+        if exact is not None:
+            return exact[2], ""
         stance = self.stance(stances)
         if stance == AS_CITED:
             # This edition divides the book the way the calendar cites it, so
@@ -283,7 +307,10 @@ class Divergences:
             if token is None:
                 continue
             found = self.locus_of(book, self.cited[ref][1])
-            if found is None or self.stance(found[1]) != RESOLVED:
+            exact = self.addressed.get((ref, self.numbering))
+            if exact is not None:
+                _, target, ranges = exact
+            elif found is None or self.stance(found[1]) != RESOLVED:
                 continue
             _, problem = bible.passage(token, ranges)
             if problem and not problem.endswith(NOT_CARRIED):

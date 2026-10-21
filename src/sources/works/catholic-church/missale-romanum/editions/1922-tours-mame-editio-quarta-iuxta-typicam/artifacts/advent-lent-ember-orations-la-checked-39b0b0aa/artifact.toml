@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.advent-lent-ember-orations-la-checked-39b0b0aa"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Bounded historical Latin from the separately registered public-domain Tours Mame 1922 printing. Seventeen printed prayer blocks are retained independently of the target edition, including source accents, ligatures, j spelling, pointing and actual abbreviated conclusions. The parent artifact owns the United States publication and mechanical-reproduction basis; no new rights decision is made."
+rights_jurisdiction = "United States"
+provenance = "Direct actual 200 and 400 dpi page-image reading and word collation on 2026-10-20 from registered whole Mame PDF SHA256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005. Advent Ember Saturday: physical PDF 125-130, printed 11-16; Lent Ember Saturday: physical PDF 207-212, printed 93-98. The Advent Postcommunion crosses PDF 129-130."
+retrieved = "2026-10-20"
+sha256 = "39b0b0aa30f03ed3ecad53520b095c551ffc1fe28237635d8d16cea35160eab1"
+byte_size = 2661
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/advent-lent-ember-orations-la-checked-39b0b0aa/advent-lent-ember-orations-la.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Select the seventeen directly printed prayer blocks in historical Mass order. Join printed line divisions and ornamental initials; render opening small capitals as sentence case; normalize punctuation spacing; retain source stress accents, ae/oe ligatures, j spelling and every conclusion at its printed length, including Dm with its contraction mark and the literal Per. cue. Wrap paragraphs at 80 columns with final LF. Exclude headings, chants, readings and rubrics. No target wording, target conclusion expansion or English is inserted."
+indexable = true
+encoding = "utf-8"
+notes = "This is a source-faithful historical derivative, not a target-edition transcription or appointment authority. The same Deus qui tribus pueris prayer is separately printed in both historical Masses, with its actual distinct punctuation. Source pre-reform extra-orations and ordination directions are outside this payload."

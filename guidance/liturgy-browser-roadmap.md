@@ -35,6 +35,12 @@ The minimum reader uses the existing Day/Propers reading path and source model.
 | Novus Ordo B | 2026-11-29–2027-11-27 | 364 dates, weekday cycle I where applicable |
 | Novus Ordo C | 2027-11-28–2028-12-02 | 371 dates, weekday cycle II where applicable |
 
+The durable [annual structural gate](../tools/tests/test_complete_missal_year.py)
+uses these four intervals: 1,464 date/calendar coordinates, 2,928 English/Latin
+states and 5,856 JSON/text renderings. The full run remains opt-in and has not
+been run for this scope. Its structural checks do not establish correct
+appointments, literal wording or complete text availability.
+
 The Novus Ordo intervals are complete liturgical years, including their own
 Advent, derived through the existing calendar owner under
 [calendar computation](liturgy/calendar-computation.md). Preserve territorial
@@ -246,7 +252,7 @@ selected-Mass notices. Partial witnesses remain selectable with explicit gaps;
 mixed components and nested cycles retain separate accounting. Independent
 review fixes passed 279 regression tests (six existing skips), all nineteen
 affected captured examples, source checks, and strict public-data admission.
-The full-year gate passes all 4,380 JSON/text renderings; final source-snapshot
+The historical three-calendar, 365-date gate passed all 4,380 JSON/text renderings; final source-snapshot
 coverage checks pass 53 tests. Corrected real-browser fixtures now exercise
 alias deduplication and genuinely partial witnesses; their offline/static
 regression checks pass, with live browser runs still skipped or blocked.
@@ -948,6 +954,17 @@ now records this one-script dependency repair; the 30-check visual suite
 passes. This records a changed dependency baseline, not external re-acceptance
 of the earlier prototype.
 
+Retained-oracle source-choice dependency exception, 2026-10-20: the maintainer
+authorized one `source-choice-controls.js` include immediately before
+`reader-shell.js` in each retained Day and Propers oracle. The dedicated helper
+owns the existing native source choice controls and restores the unchanged
+18 KiB shell cap. The prior Day Study and current Propers events dependencies
+remain. Hash guards remove only this new include and, where already specified,
+the earlier Day Study include before comparing the unchanged original hashes.
+Every other oracle byte and all earlier frozen packages remain preserved.
+This dependency repair and its source/DOM checks do not confer browser, visual
+or independent C7 acceptance; the combined r4 revision requires separate review.
+
 The next internal C5 slice supersedes the explicit Day Study Ordinary defer:
 `mode=study&ordinary=1` now uses the existing full Missal renderer, attaching
 the same source/coverage facts to its semantic events. Seven full-order
@@ -1257,11 +1274,12 @@ the stable Ordinary shell contract, 44 Chromium dialogue groups (38 actual
 AX-tree and native-copy records each), all seven full browser tests, 217
 static tests, source/publication checks, preview integrity, and the final full
 `make check` replay (250 examples, zero divergence or tracked writes). The
-annual module passes 4,380 matrix renders plus six language sentinels. Its
+prior three-calendar, 365-date annual module passed 4,380 matrix renders plus six language sentinels. Its
 broader worktree-freeze wrapper remains failed because two example-count
 constants were edited during the run; an independent full-blob audit confirms
 unchanged consumed CLI/source/data inputs and executable AST. This is a
-qualified annual result, not a pass of that broader wrapper. Final print,
+qualified historical annual result, not a pass of that broader wrapper or of
+the current four-interval annual gate. Final print,
 performance and independent acceptance remain open.
 
 Recovery checks actually run on the baseline:
@@ -1280,10 +1298,11 @@ Recovery checks actually run on the baseline:
 
 Implementation gates extend these existing tools and fixtures rather than
 creating a second liturgical resolver. Run affected source, rights, generated
-data, and seating checks; the opt-in 4,380-render year matrix; Sunday A/B/C
+data, and seating checks; the opt-in 5,856-render four-interval year matrix; Sunday A/B/C
 and weekday I/II selections; Holy Week; multiple-Mass days; commemorations;
 territorial choices; long/short alternatives; and every distinct absence.
-The year matrix was not run during this recovery.
+The current four-interval year matrix has not been run. The earlier 4,380-render
+results above belong to the superseded interval/calendar matrix.
 
 Its existing opt-in invocation is:
 

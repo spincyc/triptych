@@ -78,6 +78,7 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
                 "day.js",
                 "reader-state.js",
                 "reader-state-adapters.js",
+                "source-choice-controls.js",
                 "reader-shell.js",
                 "day-study.js",
                 "day-reader.js",
@@ -98,6 +99,7 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
                 "day.js",
                 "reader-state.js",
                 "reader-state-adapters.js",
+                "source-choice-controls.js",
                 "reader-shell.js",
                 "propers-events.js",
                 "propers-reader.js",
@@ -407,6 +409,13 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
         }
         for name, digest in expected.items():
             source = (LITURGY / name).read_bytes()
+            if name in {"reader-visual-reset-day.html", "reader-visual-reset-propers.html"}:
+                # Only the newly authorized source-choice include is removed;
+                # the original hashes and earlier Day Study exception stay put.
+                dependency = b'<script src="source-choice-controls.js"></script>\n'
+                self.assertEqual(source.count(dependency), 1, name)
+                self.assertIn(dependency + b'<script src="reader-shell.js"></script>', source, name)
+                source = source.replace(dependency, b"", 1)
             if name == "reader-visual-reset-day.html":
                 # f88c657866b6 added this one required dependency; the bounded
                 # exception is recorded in the roadmap at 033769e96e95.

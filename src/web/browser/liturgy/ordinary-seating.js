@@ -432,12 +432,19 @@
     const wanted = disposition.kind === 'alternative'
       ? ['basis', 'group', 'kind', 'option']
       : disposition.kind === 'unplaced'
-        ? ['basis', 'group', 'kind', 'region'] : [];
+        ? ['basis', 'group', 'kind', 'region']
+        : disposition.kind === 'conditional' ? ['basis', 'group', 'kind', 'when'] : [];
+    if (disposition.kind === 'alternative') {
+      if (Object.prototype.hasOwnProperty.call(disposition, 'anchor')) wanted.push('anchor');
+      if (Object.prototype.hasOwnProperty.call(disposition, 'when')) wanted.push('when');
+      if (Object.prototype.hasOwnProperty.call(disposition, 'seat')) wanted.push('seat');
+      wanted.sort();
+    }
     if (!wanted.length || keys.length !== wanted.length ||
         keys.some((key, index) => key !== wanted[index])) {
       throw new Error('Proper ordinary_disposition carries an unsupported shape');
     }
-    for (const key of wanted.filter((one) => one !== 'kind')) {
+    for (const key of wanted.filter((one) => !['kind', 'anchor', 'when'].includes(one))) {
       if (typeof disposition[key] !== 'string' || !disposition[key].trim()) {
         throw new Error('Proper ordinary_disposition fields must be nonempty strings');
       }
@@ -451,6 +458,16 @@
         ['before-frame', 'after-frame'].indexOf(disposition.region) < 0) {
       throw new Error('unplaced Proper must name the before-frame or after-frame region');
     }
+    if (Object.prototype.hasOwnProperty.call(disposition, 'anchor')) {
+      appointmentCoordinate(disposition.anchor);
+    }
+    if (Object.prototype.hasOwnProperty.call(disposition, 'seat') &&
+        (!disposition.anchor || disposition.seat !== 'reading-1')) {
+      throw new Error('Proper explicit seat must be reading-1 on an anchored alternative group');
+    }
+    if (Object.prototype.hasOwnProperty.call(disposition, 'when')) {
+      appointmentWhen(disposition.when);
+    }
     return disposition;
   }
 
@@ -462,25 +479,379 @@
     return proper && proper.form_id || 'main';
   }
 
+  const SEMANTIC_SLOTS = Object.freeze({
+    'Introit': 'entrance-antiphon',
+    'Entrance Antiphon': 'entrance-antiphon',
+    'Collect': 'collect',
+    'Epistle': 'reading-1',
+    'First Reading': 'reading-1',
+    'Gradual': 'gradual',
+    'Responsorial Psalm': 'responsorial-psalm',
+    'Second Reading': 'reading-2',
+    'Alleluia': 'gospel-acclamation',
+    'Tract': 'gospel-acclamation',
+    'Gospel Acclamation': 'gospel-acclamation',
+    'Gospel': 'gospel',
+    'Offertory': 'offertory-chant',
+    'Secret': 'prayer-over-offerings',
+    'Prayer over the Offerings': 'prayer-over-offerings',
+    'Communion': 'communion-antiphon',
+    'Communion Antiphon': 'communion-antiphon',
+    'Postcommunion': 'prayer-after-communion',
+    'Prayer after Communion': 'prayer-after-communion'
+  });
+
+  function semanticProperId(proper, qualified) {
+    const name = proper && proper.name || '';
+    if (SEMANTIC_SLOTS[name]) return SEMANTIC_SLOTS[name];
+    if (!qualified) return null;
+    const family = /^(.+?) \(.+\)$/.exec(name);
+    return family && SEMANTIC_SLOTS[family[1]] || null;
+  }
+
+  function validateAppointmentReplacement(proper) {
+    const replacement = proper && proper.appointment_replacement;
+    if (replacement === null || replacement === undefined) return;
+    const source = replacement && replacement.source_group;
+    const anchor = replacement && replacement.anchor;
+    if (!replacement || typeof replacement !== 'object' || Array.isArray(replacement) ||
+        Object.keys(replacement).sort().join(',') !== 'anchor,basis,source_group' ||
+        !source || typeof source !== 'object' || Array.isArray(source) ||
+        Object.keys(source).sort().join(',') !== 'form_id,id,mass' ||
+        !['mass', 'form_id', 'id'].every((key) => typeof source[key] === 'string' && source[key]) ||
+        !anchor || anchor.mass !== source.mass || anchor.form_id !== source.form_id ||
+        typeof replacement.basis !== 'string' || !replacement.basis.trim()) {
+      throw new Error('Proper replacement must retain its exact derived source group and anchor');
+    }
+    appointmentCoordinate(anchor);
+    appointmentCoordinate(proper.appointment_identity);
+    const originalSeat = semanticProperId({name: anchor.proper}, true);
+    const replacementSeat = semanticProperId(proper, true);
+    if (!originalSeat || !replacementSeat || originalSeat !== replacementSeat) {
+      throw new Error('explicit Proper replacement has no matching established semantic seat');
+    }
+  }
+
+  function appointmentCoordinate(value) {
+    const keys = value && typeof value === 'object' && !Array.isArray(value)
+      ? Object.keys(value).sort() : [];
+    if (keys.join(',') !== 'form_id,mass,occurrence,proper' ||
+        !['mass', 'form_id', 'proper'].every((key) =>
+          typeof value[key] === 'string' && value[key].trim()) ||
+        !Number.isInteger(value.occurrence) || value.occurrence < 1) {
+      throw new Error('Proper appointment coordinate must name exact mass, form_id, proper and occurrence');
+    }
+    return JSON.stringify([value.mass, value.form_id, value.proper, value.occurrence]);
+  }
+
+  function appointmentWhen(value) {
+    if (!value || typeof value !== 'object' || Array.isArray(value) ||
+        Object.keys(value).sort().join(',') !== 'fact,in' ||
+        typeof value.fact !== 'string' || !value.fact ||
+        !Array.isArray(value.in) || !value.in.length ||
+        value.in.some((one) => typeof one !== 'string' || !one) ||
+        new Set(value.in).size !== value.in.length) {
+      throw new Error('Proper appointment when must name one source fact and unique allowed values');
+    }
+    return value;
+  }
+
+  // Producer-derived foreign applicability is independent of held body text.
+  // Preserve the row for source inspection; refuse execution in this edition.
+  function assertSupportedAppointmentApplicability(proper, calendar) {
+    if (!proper || !Object.prototype.hasOwnProperty.call(proper, 'appointment_applicability')) return;
+    const marker = proper.appointment_applicability;
+    const edition = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+    if (!marker || typeof marker !== 'object' || Array.isArray(marker) ||
+        Object.keys(marker).sort().join(',') !== 'basis,reason,source_edition,state,target_edition' ||
+        marker.state !== 'unresolved' || marker.reason !== 'foreign-source-applicability' ||
+        typeof marker.source_edition !== 'string' || !edition.test(marker.source_edition) ||
+        typeof marker.target_edition !== 'string' || !edition.test(marker.target_edition) ||
+        marker.source_edition === marker.target_edition ||
+        (calendar !== undefined && marker.target_edition !== calendar) ||
+        typeof marker.basis !== 'string' || !marker.basis.trim()) {
+      throw new Error('Proper appointment_applicability must retain exact unresolved foreign editions and source basis');
+    }
+    throw new Error('unsupported foreign-source Proper applicability from ' + marker.source_edition +
+      ' in ' + marker.target_edition + '; source condition remains unresolved: ' + marker.basis);
+  }
+
+  /** Source predicates consume an existing owner's season; no date is derived. */
+  function prepareProperAppointments(propers, context) {
+    const rows = (propers || []).map(properRow);
+    const supplied = context || {};
+    const choices = supplied.choices || {};
+    if (!choices || typeof choices !== 'object' || Array.isArray(choices)) {
+      throw new Error('Proper appointment choices must be a mapping');
+    }
+    const groups = new Map();
+    const coordinates = new Set();
+    const conditions = [];
+    const conditionalGroups = new Map();
+    const domains = new Map();
+    const facts = supplied.facts || {};
+    function domainFor(when) {
+      appointmentWhen(when);
+      if (domains.has(when.fact)) {
+        const held = domains.get(when.fact);
+        if (when.in.some((value) => !held.values.includes(value))) {
+          throw new Error('Proper condition names an unheld source fact value');
+        }
+        return held;
+      }
+      const fact = facts[when.fact];
+      if (!fact || typeof fact !== 'object' || Array.isArray(fact) ||
+          Object.keys(fact).sort().join(',') !== 'basis,edition,season_values,values' ||
+          typeof fact.edition !== 'string' || !fact.edition || fact.edition !== supplied.calendar ||
+          typeof fact.basis !== 'string' || !fact.basis.trim() ||
+          !Array.isArray(fact.values) || !fact.values.length ||
+          fact.values.some((value) => typeof value !== 'string' || !value) ||
+          new Set(fact.values).size !== fact.values.length ||
+          !fact.season_values || typeof fact.season_values !== 'object' ||
+          Array.isArray(fact.season_values) || !Object.keys(fact.season_values).length ||
+          Object.keys(fact.season_values).some((season) => !season ||
+            (fact.season_values[season] !== null && !fact.values.includes(fact.season_values[season])))) {
+        throw new Error('Proper appointment fact is unheld, malformed or belongs to another edition');
+      }
+      if (when.in.some((value) => !fact.values.includes(value))) {
+        throw new Error('Proper condition names an unheld source fact value');
+      }
+      if (!['day', 'propers'].includes(supplied.entrance)) {
+        throw new Error('Proper applicability requires an explicit reader entrance');
+      }
+      if ((supplied.date != null && (typeof supplied.date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(supplied.date))) ||
+          (supplied.season != null && (typeof supplied.season !== 'string' || !supplied.season))) {
+        throw new Error('Proper applicability requires a held owner date and season or explicit absence');
+      }
+      if (supplied.entrance === 'propers' && (supplied.date || supplied.season)) {
+        throw new Error('date-independent Propers cannot consume a calendar season');
+      }
+      let value = null;
+      if (supplied.entrance === 'day' && supplied.date && supplied.season) {
+        if (!Object.prototype.hasOwnProperty.call(fact.season_values, supplied.season)) {
+          throw new Error('Proper applicability received an unheld owner season');
+        }
+        value = fact.season_values[supplied.season];
+      }
+      const held = {values: fact.values, domain: value === null ? fact.values.slice() : [value]};
+      domains.set(when.fact, held);
+      return held;
+    }
+    rows.forEach((row) => {
+      const proper = row.proper;
+      assertSupportedAppointmentApplicability(proper, supplied.calendar);
+      validateAppointmentReplacement(proper);
+      if (proper && Object.prototype.hasOwnProperty.call(proper, 'appointment_identity')) {
+        const coordinate = appointmentCoordinate(proper.appointment_identity);
+        if (coordinates.has(coordinate)) throw new Error('duplicate Proper appointment coordinate');
+        coordinates.add(coordinate);
+      }
+      const disposition = dispositionOf(proper);
+      if (!disposition) return;
+      if (disposition.when || disposition.anchor || disposition.kind === 'conditional') {
+        appointmentCoordinate(proper.appointment_identity);
+      }
+      if (disposition.when) domainFor(disposition.when);
+      if (disposition.kind === 'conditional') {
+        const id = proper.appointment_identity.mass + '/' + proper.appointment_identity.form_id + '/' + disposition.group;
+        const definition = JSON.stringify([disposition.basis, disposition.when]);
+        if (conditionalGroups.has(id) && conditionalGroups.get(id) !== definition) {
+          throw new Error('conditional Proper group must retain one source basis and condition');
+        }
+        conditionalGroups.set(id, definition);
+        conditions.push({row, disposition});
+        return;
+      }
+      if (disposition.kind !== 'alternative') return;
+      const id = formIdOf(proper) + '/' + disposition.group;
+      if (!groups.has(id)) groups.set(id, new Map());
+      const options = groups.get(id);
+      const prior = options.get(disposition.option);
+      if (options.has(disposition.option) && JSON.stringify(prior || null) !== JSON.stringify(disposition.when || null)) {
+        throw new Error('Proper option members disagree about source applicability');
+      }
+      options.set(disposition.option, disposition.when || null);
+    });
+    Object.keys(choices).forEach((id) => {
+      const options = groups.get(id);
+      if (!options || typeof choices[id] !== 'string' || !options.has(choices[id])) {
+        throw new Error('explicit Proper choice is not held by the exact formulary and form');
+      }
+      const when = options.get(choices[id]);
+      if (!when) return;
+      const held = domainFor(when);
+      const narrowed = held.domain.filter((value) => when.in.includes(value));
+      if (!narrowed.length) throw new Error('explicit Proper choice contradicts source applicability');
+      held.domain = narrowed;
+    });
+    function stateOf(when) {
+      if (!when) return true;
+      const domain = domainFor(when).domain;
+      const included = domain.filter((value) => when.in.includes(value));
+      return included.length === domain.length ? true : included.length === 0 ? false : null;
+    }
+    const selections = {};
+    groups.forEach((options, id) => {
+      const conditional = Array.from(options.values()).filter(Boolean).length;
+      if (conditional && conditional !== options.size) {
+        throw new Error('Proper group must disposition applicability for every option');
+      }
+      let option = choices[id] || null;
+      if (!option && conditional) {
+        const applicable = Array.from(options).filter((entry) => stateOf(entry[1]) !== false);
+        if (!applicable.length) throw new Error('source applicability appoints no Proper option');
+        if (applicable.length === 1 && stateOf(applicable[0][1]) === true) option = applicable[0][0];
+      }
+      selections[id] = {state: option ? 'selected' : 'required', option};
+    });
+    const unresolved = [];
+    const inactive = [];
+    const byIndex = new Map(conditions.map((condition) => [condition.row.sourceIndex, condition]));
+    const active = rows.filter((row) => {
+      const condition = byIndex.get(row.sourceIndex);
+      if (!condition) return true;
+      const disposition = condition.disposition;
+      const state = stateOf(disposition.when);
+      const record = {
+        kind: 'conditional-proper-appointment', group: disposition.group,
+        appointment: row.proper.appointment_identity, sourceIndex: row.sourceIndex,
+        basis: disposition.basis, when: disposition.when
+      };
+      if (state === null) unresolved.push(record);
+      if (state === false) inactive.push(Object.assign({reason: 'predicate-false'}, record));
+      return state === true;
+    }).map((row) => {
+      if (!byIndex.has(row.sourceIndex)) return row;
+      const proper = Object.assign({}, row.proper);
+      delete proper.ordinary_disposition;
+      return {proper, sourceIndex: row.sourceIndex};
+    });
+    return {rows: active, selections, unresolved, inactive};
+  }
+
   /**
    * Collapse only source-authored alternative annotations.  Every source row
    * survives inside exactly one unit with its original sourceIndex; a group is
    * atomic only after all of its members independently resolve to the same
-   * Ordinary slot.  No array position selects an option.
+   * Ordinary slot. An explicit reading-1 qualification belongs only to this
+   * anchored source group and cannot override a known native semantic role.
+   * No array position selects an option.
    */
-  function properUnits(propers, seating, isPlaceholder) {
+  function properUnits(propers, seating, isPlaceholder, selections) {
     const rows = (propers || []).map(properRow).filter(function (row) {
+      assertSupportedAppointmentApplicability(row.proper);
       return !(isPlaceholder && isPlaceholder(row.proper));
     });
     const units = [];
     const alternativeGroups = new Set();
     const unplacedGroups = new Map();
+    const anchored = new Map();
+    const coordinates = new Map();
+    rows.forEach((row) => {
+      if (row.proper && row.proper.appointment_identity) {
+        const coordinate = appointmentCoordinate(row.proper.appointment_identity);
+        if (coordinates.has(coordinate)) throw new Error('duplicate Proper appointment coordinate');
+        coordinates.set(coordinate, row);
+      }
+      const disposition = dispositionOf(row.proper);
+      if (!disposition || !disposition.anchor) return;
+      const id = formIdOf(row.proper) + '/' + disposition.group;
+      if (!anchored.has(id)) anchored.set(id, []);
+      anchored.get(id).push({proper: row.proper, sourceIndex: row.sourceIndex, option: disposition.option});
+    });
+    anchored.forEach((members, id) => {
+      const principal = dispositionOf(members[0].proper);
+      const anchor = appointmentCoordinate(principal.anchor);
+      members.forEach((member) => {
+        const disposition = dispositionOf(member.proper);
+        const identity = member.proper.appointment_identity;
+        appointmentCoordinate(identity);
+        if (identity.mass !== principal.anchor.mass || identity.form_id !== principal.anchor.form_id ||
+            appointmentCoordinate(disposition.anchor) !== anchor || disposition.basis !== principal.basis ||
+            disposition.seat !== principal.seat) {
+          throw new Error('anchored Proper group must retain one exact owner, anchor, source basis and seat qualification');
+        }
+      });
+      if (!members.some((member) => appointmentCoordinate(member.proper.appointment_identity) === anchor)) {
+        throw new Error('Proper group anchor must be an exact member of the same source group');
+      }
+      rows.forEach((row) => {
+        const disposition = dispositionOf(row.proper);
+        if (disposition && disposition.kind === 'alternative' &&
+            formIdOf(row.proper) + '/' + disposition.group === id && !disposition.anchor) {
+          throw new Error('anchored Proper group cannot mix anchored and contiguous members');
+        }
+      });
+    });
+
+    function appendChoice(members, disposition, sourceIndex) {
+      const byOption = new Map();
+      const formIds = new Set(members.map((member) => formIdOf(member.proper)));
+      if (formIds.size !== 1) throw new Error('alternative Proper group must belong to one stable Mass form');
+      members.forEach((member) => {
+        if (!byOption.has(member.option)) byOption.set(member.option, []);
+        const bundle = byOption.get(member.option);
+        if (bundle.length && bundle[bundle.length - 1].sourceIndex >= member.sourceIndex) {
+          throw new Error('Proper option bundle must preserve original source order');
+        }
+        bundle.push({proper: member.proper, sourceIndex: member.sourceIndex});
+      });
+      if (byOption.size < 2) throw new Error('alternative Proper group must carry at least two distinct options');
+      if (disposition.anchor) {
+        const semanticIds = new Set(members.map((member) => semanticProperId(member.proper, true)));
+        const explicitSeat = disposition.seat;
+        if (explicitSeat
+            ? Array.from(semanticIds).some((id) => id !== null && id !== explicitSeat)
+            : semanticIds.size !== 1 || semanticIds.has(null)) {
+          throw new Error('anchored Proper group must share one established semantic seat');
+        }
+      }
+      let ordinal = null;
+      if (seating) members.forEach((member) => {
+        const found = usableSlotOf(seating, member.proper && member.proper.name);
+        if (found < 0 || (ordinal !== null && found !== ordinal)) {
+          throw new Error('alternative Proper group must share one usable semantic Ordinary seat');
+        }
+        ordinal = found;
+      });
+      const formId = Array.from(formIds)[0];
+      const id = formId + '/' + disposition.group;
+      const selection = selections && selections[id];
+      if (members.some((member) => dispositionOf(member.proper).when) && !selection) {
+        throw new Error('source applicability must be prepared before Proper seating');
+      }
+      if (selection && (Object.keys(selection).sort().join(',') !== 'option,state' ||
+          !['selected', 'required'].includes(selection.state) ||
+          (selection.state === 'selected' ? !byOption.has(selection.option) : selection.option !== null))) {
+        throw new Error('Proper selection does not name one exact held source option');
+      }
+      units.push({
+        kind: 'proper_choice', group: disposition.group, basis: disposition.basis,
+        formId, sourceIndex, ordinal, seat: ordinal === null ? null : seating.slots[ordinal],
+        options: Array.from(byOption, (entry) => ({id: entry[0], rows: entry[1]})),
+        selection: selection || {state: 'required', option: null}
+      });
+    }
 
     for (let index = 0; index < rows.length;) {
       const row = rows[index];
       const disposition = dispositionOf(row.proper);
       if (!disposition) {
         units.push({ kind: 'proper', proper: row.proper, sourceIndex: row.sourceIndex, seat: null });
+        index += 1;
+        continue;
+      }
+      if (disposition.kind === 'conditional') {
+        throw new Error('conditional Proper applicability must be prepared before seating');
+      }
+      if (disposition.anchor) {
+        if (appointmentCoordinate(row.proper.appointment_identity) === appointmentCoordinate(disposition.anchor)) {
+          if (alternativeGroups.has(disposition.group) || unplacedGroups.has(disposition.group)) {
+            throw new Error('Proper group cannot repeat or mix alternative and unplaced rows');
+          }
+          alternativeGroups.add(disposition.group);
+          appendChoice(anchored.get(formIdOf(row.proper) + '/' + disposition.group), disposition, row.sourceIndex);
+        }
         index += 1;
         continue;
       }
@@ -528,42 +899,7 @@
         });
         index += 1;
       }
-      const byOption = new Map();
-      const formIds = new Set(members.map(function (member) {
-        return formIdOf(member.proper);
-      }));
-      if (formIds.size !== 1) {
-        throw new Error('alternative Proper group must belong to one stable Mass form');
-      }
-      members.forEach(function (member) {
-        if (!byOption.has(member.option)) byOption.set(member.option, []);
-        byOption.get(member.option).push({
-          proper: member.proper, sourceIndex: member.sourceIndex
-        });
-      });
-      if (byOption.size < 2) {
-        throw new Error('alternative Proper group must carry at least two distinct options');
-      }
-      let ordinal = null;
-      if (seating) {
-        members.forEach(function (member) {
-          const found = usableSlotOf(seating, member.proper && member.proper.name);
-          if (found < 0 || (ordinal !== null && found !== ordinal)) {
-            throw new Error('alternative Proper group must share one usable semantic Ordinary seat');
-          }
-          ordinal = found;
-        });
-      }
-      units.push({
-        kind: 'proper_choice', group: disposition.group, basis: disposition.basis,
-        formId: Array.from(formIds)[0],
-        sourceIndex: members[0].sourceIndex,
-        ordinal: ordinal,
-        seat: ordinal === null ? null : seating.slots[ordinal],
-        options: Array.from(byOption, function (entry) {
-          return { id: entry[0], rows: entry[1] };
-        })
-      });
+      appendChoice(members, disposition, members[0].sourceIndex);
     }
 
     // "before" and "after" are source prefix/suffix claims, not permission
@@ -583,14 +919,14 @@
     return units;
   }
 
-  function seatPropers(propers, seating, isPlaceholder) {
+  function seatPropers(propers, seating, isPlaceholder, selections) {
     const before = [];
     const buckets = new Map();
     const after = [];
     let reached = -1;
     let riding = null;
     let broke = false;
-    const units = properUnits(propers, seating, isPlaceholder);
+    const units = properUnits(propers, seating, isPlaceholder, selections);
     for (const unit of units) {
       if (unit.kind === 'proper' && unit.seat && unit.seat.region) {
         (unit.seat.region === 'before-frame' ? before : after).push(unit);
@@ -640,6 +976,7 @@
           kind: 'proper_choice', group: row.group, basis: row.basis,
           formId: row.formId,
           sourceIndex: row.sourceIndex, options: row.options,
+          selection: row.selection,
           seat: row.seat, placement: placement
         });
         return;
@@ -668,13 +1005,14 @@
   }
 
   /** Source-order Proper events when no Ordinary frame is being rendered. */
-  function unframedEvents(propers, isPlaceholder) {
-    return properUnits(propers, null, isPlaceholder).map(function (unit) {
+  function unframedEvents(propers, isPlaceholder, selections) {
+    return properUnits(propers, null, isPlaceholder, selections).map(function (unit) {
       if (unit.kind === 'proper_choice') {
         return {
           kind: 'proper_choice', group: unit.group, basis: unit.basis,
           formId: unit.formId,
           sourceIndex: unit.sourceIndex, options: unit.options,
+          selection: unit.selection,
           seat: null, placement: null
         };
       }
@@ -701,6 +1039,8 @@
     slotOf: slotOf,
     usableSlotOf: usableSlotOf,
     dispositionOf: dispositionOf,
+    prepareProperAppointments: prepareProperAppointments,
+    semanticProperId: semanticProperId,
     properUnits: properUnits,
     seatPropers: seatPropers,
     massEvents: massEvents,

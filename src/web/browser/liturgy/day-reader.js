@@ -1903,55 +1903,26 @@
       heading, memberHeading, prefix, result, ordinal, requireSeat) {
     const selected = validateProperChoiceEvent(event, requireSeat);
     const wrapper = semanticNode(T.el('section', 'proper-choice'), event, ordinal, prefix);
-    wrapper.dataset.properChoice = event.group;
-    wrapper.dataset.choiceState = event.selection.state;
-    if (selected) wrapper.dataset.choiceSelection = selected;
-    const title = T.el(heading, 'proper-choice-title', properChoiceLabel(event));
-    title.id = wrapper.id + '-title';
-    wrapper.setAttribute('aria-labelledby', title.id);
-    wrapper.appendChild(title);
-    wrapper.appendChild(T.el('p', 'proper-choice-note', selected
-      ? 'The selected source option is shown first. Other source options remain collapsed and are not cumulative.'
-      : 'The source appoints one of these alternatives here. None is selected; the option groups below are not cumulative.'));
-    wrapper.appendChild(T.el('p', 'composed-note proper-choice-basis',
-      'Source basis: ' + event.choiceBasis));
-    const options = T.el('div', 'proper-choice-options');
-    event.options.forEach(function (option) {
-      const isSelected = selected === option.id;
-      const optionName = T.titleCase(String(option.id).replace(/[-_]+/g, ' '));
-      const optionNode = selected && !isSelected
-        ? document.createElement('details') : T.el('section', 'proper-choice-option');
-      optionNode.classList.add('proper-choice-option');
-      optionNode.dataset.properChoiceOption = option.id;
-      optionNode.dataset.choiceStatus = isSelected ? 'selected' :
-        (selected ? 'not-selected' : 'available');
-      if (isSelected) optionNode.setAttribute('aria-current', 'true');
-      const label = (isSelected ? 'Selected option: ' :
-        (selected ? 'Other source option: ' : 'Option: ')) + optionName;
-      if (optionNode.tagName === 'DETAILS') {
-        optionNode.appendChild(T.el('summary', 'proper-choice-option-title', label + ' (not selected)'));
-      } else {
-        optionNode.appendChild(T.el('h' + String(Math.min(Number(memberHeading.slice(1)) - 1, 6)),
-          'proper-choice-option-title', label));
-      }
-      (option.events || []).forEach(function (member) {
+    const location = { kind: 'event', id: (prefix || '') + event.id };
+    return Shell.renderProperChoice({ T: T, event: event, selected: selected,
+      wrapper: wrapper, titleId: wrapper.id + '-title', heading: heading,
+      optionHeading: 'h' + String(Math.min(Number(memberHeading.slice(1)) - 1, 6)),
+      label: properChoiceLabel(event), state: state, navigate: navigate,
+      location: location, focus: { kind: 'proper-choice-result', event: location.id },
+      adapt: function (request) {
+        return Adapters.adaptDay({ request: request, derived: runtime.derived,
+          structure: structure, ordinary: runtime.ordinary });
+      },
+      renderMember: function (member) {
         const index = sourceIndex(member);
         const proper = index === null ? null : (mass.propers || [])[index];
         if (!proper || T.isPlaceholder(proper)) {
           throw new Error('Proper choice member has no production Proper at ' + member.id);
         }
-        const node = renderProperMaterial(
-          member, proper, structure, bible, fragments, state, memberHeading,
-          prefix, result, event
-        );
-        node.classList.add('proper-choice-member');
-        node.dataset.properChoiceMemberEvent = member.id;
-        optionNode.appendChild(node);
-      });
-      options.appendChild(optionNode);
+        return renderProperMaterial(member, proper, structure, bible, fragments, state,
+          memberHeading, prefix, result, event);
+      }
     });
-    wrapper.appendChild(options);
-    return wrapper;
   }
 
   function nonFullOrdinaryFrameCoverage(result, state) {
@@ -2666,6 +2637,7 @@
   }
 
   function navigate(updates, removals) {
+    removals = Shell.properChoiceRemovals(runtime.normalized && runtime.normalized.state, updates, removals);
     const navigation = arguments.length > 2 && arguments[2] || {};
     runtime.pendingPreferences = navigation.rememberPreferences === true;
     const currentLocation = readerShell.captureSemanticLocation();
@@ -2764,7 +2736,7 @@
     } else if (held.focus && held.focus.kind === 'day-choice-result') {
       const target = reading.querySelector('[data-semantic-event-id]');
       if (target) target.focus({ preventScroll: true });
-    } else if (held.focus && held.focus.kind === 'translation-witness-result') {
+    } else if (held.focus && ['translation-witness-result', 'proper-choice-result'].indexOf(held.focus.kind) >= 0) {
       const target = Array.from(reading.querySelectorAll('[data-semantic-location]')).find(
         function (node) { return node.dataset.semanticLocation === held.focus.event; }
       );
