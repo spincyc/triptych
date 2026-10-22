@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-21.
+Last reconciled: 2026-10-22.
 
 ## Register remediation, 2026-10-21
 
@@ -131,6 +131,20 @@ It changes no served or publication-building input; the previously passing
 publication gates remain applicable. The merged ledger validates 86 tracked,
 70 complete, and release bindings remain exact. Recovery publication stays
 blocked until an actual remote ref includes the prepared workspace checkpoint.
+
+The maintainer's later terminal push
+`37531cbc2..690fa1b5f` is now independently confirmed on `origin/main`.
+Repository hygiene run `39750900750` passed. Automatic Pages run
+[`39750900781`](https://github.com/spincyc/triptych/actions/runs/39750900781)
+passed for exact commit `690fa1b5f5ae8e7bc227e47540ae4c9fb884c185`.
+On 22 October, all sixteen checked live reader pages, scripts, styles and data
+files at `https://mystago.gy/` returned HTTP 200 and matched the validated local
+artifact in byte length and SHA-256. The
+[publication receipt](workflows/reviews/missal-reader-recovery-2026-10-22/publication.json)
+records the exact routes, hashes, verification time and successful workflow
+identities. The terminal-push blocker was resolved, not bypassed. This recovery
+promise is complete. This documentation-only receipt changes no publication
+input; its own automatic deployment must still be checked after pushing.
 The full annual text-completeness promise remains separate and open;
 structural renderability must not stand in for missing source text.
 

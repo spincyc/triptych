@@ -73,7 +73,7 @@ state = "complete"
 id = "missal-reader-interrupted-recovery-2026-10-21"
 owner = "guidance/liturgy-browser-roadmap.md"
 promise = "Recover the interrupted reader and checked-source work, repair reproducible implementation failures, validate the annual rendering and publication gates, and publish the reviewed result to main without claiming full annual text completeness."
-state = "blocked"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "missal-recovery-implementation"
@@ -90,8 +90,9 @@ state = "blocked"
   [[deliverables.requirements]]
   id = "missal-recovery-publication"
   criterion = "The exact outgoing objects are reviewed for public disclosure, the coherent result is committed on the workspace branch and fast-forward pushed to main, and remote and automatic deployment outcomes are reported accurately."
-  status = "blocked"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/missal-reader-recovery-2026-10-22/publication.json"]
+  check = "path_exists"
 
 [[deliverables]]
 id = "missal-reader-c1-coverage-2026-10-19"

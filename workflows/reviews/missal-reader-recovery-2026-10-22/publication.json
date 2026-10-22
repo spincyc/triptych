@@ -1,0 +1,175 @@
+{
+  "schema": "triptych-missal-reader-publication-verification/v1",
+  "deployment_commit": "690fa1b5f5ae8e7bc227e47540ae4c9fb884c185",
+  "base_url": "https://mystago.gy/",
+  "verified_at": "2026-10-22T09:08:54+00:00",
+  "checks": [
+    {
+      "path": "liturgy/day-reader.html",
+      "local_bytes": 12022,
+      "local_sha256": "d834edb6d27bab800e1ce49813605488efdfa23617b04f06aff8c7c807bbfa5b",
+      "status": 200,
+      "live_bytes": 12022,
+      "live_sha256": "d834edb6d27bab800e1ce49813605488efdfa23617b04f06aff8c7c807bbfa5b",
+      "matches": true
+    },
+    {
+      "path": "liturgy/propers-reader.html",
+      "local_bytes": 14310,
+      "local_sha256": "c6eca4a23466210682a01237d11d89f05e4d5ca5245e07a2fe19704ad0a7aa2f",
+      "status": 200,
+      "live_bytes": 14310,
+      "live_sha256": "c6eca4a23466210682a01237d11d89f05e4d5ca5245e07a2fe19704ad0a7aa2f",
+      "matches": true
+    },
+    {
+      "path": "liturgy/day-reader.js",
+      "local_bytes": 126638,
+      "local_sha256": "ec5e3fdf707e4074a8a9e112909288ad7b7601ee74db1315ad0f3a84590c9be4",
+      "status": 200,
+      "live_bytes": 126638,
+      "live_sha256": "ec5e3fdf707e4074a8a9e112909288ad7b7601ee74db1315ad0f3a84590c9be4",
+      "matches": true
+    },
+    {
+      "path": "liturgy/propers-reader.js",
+      "local_bytes": 74052,
+      "local_sha256": "014cf603034f9181fe65bd9f23158e2be553ce4ddf9d1a0ba64e5a96fd2cf0a1",
+      "status": 200,
+      "live_bytes": 74052,
+      "live_sha256": "014cf603034f9181fe65bd9f23158e2be553ce4ddf9d1a0ba64e5a96fd2cf0a1",
+      "matches": true
+    },
+    {
+      "path": "liturgy/day.js",
+      "local_bytes": 102435,
+      "local_sha256": "fbebb7f5a455f0560f5e5cef4774df127bbecf6e82c8791eed39cdf2acc2399c",
+      "status": 200,
+      "live_bytes": 102435,
+      "live_sha256": "fbebb7f5a455f0560f5e5cef4774df127bbecf6e82c8791eed39cdf2acc2399c",
+      "matches": true
+    },
+    {
+      "path": "liturgy/reader-state-adapters.js",
+      "local_bytes": 128695,
+      "local_sha256": "ec79661d37ae44bfb775f73371657302fe63fb1be23672810f3e3c32c5bf49bc",
+      "status": 200,
+      "live_bytes": 128695,
+      "live_sha256": "ec79661d37ae44bfb775f73371657302fe63fb1be23672810f3e3c32c5bf49bc",
+      "matches": true
+    },
+    {
+      "path": "shared/browser-core.js",
+      "local_bytes": 118998,
+      "local_sha256": "896aeda1e845dff65a2003d894667ddff7b775661a468d3286baf77b9eaa41c8",
+      "status": 200,
+      "live_bytes": 118998,
+      "live_sha256": "896aeda1e845dff65a2003d894667ddff7b775661a468d3286baf77b9eaa41c8",
+      "matches": true
+    },
+    {
+      "path": "shared/browser-core.css",
+      "local_bytes": 28223,
+      "local_sha256": "2646ae7f51761fa117fe5c8c6284bcf1b36ca9e08d61ac7bedb781ca59c89129",
+      "status": 200,
+      "live_bytes": 28223,
+      "live_sha256": "2646ae7f51761fa117fe5c8c6284bcf1b36ca9e08d61ac7bedb781ca59c89129",
+      "matches": true
+    },
+    {
+      "path": "liturgy/reader-instrument.css",
+      "local_bytes": 46722,
+      "local_sha256": "c0d94bfe7345257b8423729f9ce56a6c36ab784ca2cd48699aa0521a2e84472a",
+      "status": 200,
+      "live_bytes": 46722,
+      "live_sha256": "c0d94bfe7345257b8423729f9ce56a6c36ab784ca2cd48699aa0521a2e84472a",
+      "matches": true
+    },
+    {
+      "path": "browse/structure/ordinary/roman-1962.json",
+      "local_bytes": 755408,
+      "local_sha256": "6a131ccc5603941bc76b20159d03197315f2f2575b9bc4313e91c642faf7cf43",
+      "status": 200,
+      "live_bytes": 755408,
+      "live_sha256": "6a131ccc5603941bc76b20159d03197315f2f2575b9bc4313e91c642faf7cf43",
+      "matches": true
+    },
+    {
+      "path": "browse/structure/ordinary/roman-pre-1955.json",
+      "local_bytes": 617702,
+      "local_sha256": "6b2b0e9457f2a02f5d0d8d11c24f03dbd0b5cb8aa0ef797283c119f81de62938",
+      "status": 200,
+      "live_bytes": 617702,
+      "live_sha256": "6b2b0e9457f2a02f5d0d8d11c24f03dbd0b5cb8aa0ef797283c119f81de62938",
+      "matches": true
+    },
+    {
+      "path": "browse/structure/propers/roman-1962.json",
+      "local_bytes": 17149787,
+      "local_sha256": "a887b2c87242b7583a38976c1462b17cf07f99586777d377c34320c6e916a2b7",
+      "status": 200,
+      "live_bytes": 17149787,
+      "live_sha256": "a887b2c87242b7583a38976c1462b17cf07f99586777d377c34320c6e916a2b7",
+      "matches": true
+    },
+    {
+      "path": "browse/structure/propers/postconciliar.json",
+      "local_bytes": 8291887,
+      "local_sha256": "38b7cd3477d6132b7f930d8702ee07cd4f01d39e5316304da3a597a4af6556d9",
+      "status": 200,
+      "live_bytes": 8291887,
+      "live_sha256": "38b7cd3477d6132b7f930d8702ee07cd4f01d39e5316304da3a597a4af6556d9",
+      "matches": true
+    },
+    {
+      "path": "browse/structure/act-history/catalogue.json",
+      "local_bytes": 10736514,
+      "local_sha256": "013fd6f79a00a3955e0d292f239a4f5c96eb5f3113378c32162e47c8435ffcb7",
+      "status": 200,
+      "live_bytes": 10736514,
+      "live_sha256": "013fd6f79a00a3955e0d292f239a4f5c96eb5f3113378c32162e47c8435ffcb7",
+      "matches": true
+    },
+    {
+      "path": "browse/structure/act-history/comparisons/roman-canon-memento-wilson-r-and-cummiskey-1861.json",
+      "local_bytes": 236103,
+      "local_sha256": "7446a8d2ec8be6395e34df1410cdb37da08e90d6844ba452e2eca504b1eaa3a1",
+      "status": 200,
+      "live_bytes": 236103,
+      "live_sha256": "7446a8d2ec8be6395e34df1410cdb37da08e90d6844ba452e2eca504b1eaa3a1",
+      "matches": true
+    },
+    {
+      "path": "browse/structure/documents/corpus.json",
+      "local_bytes": 1010183,
+      "local_sha256": "f31d0d3c8cca38ae338f70d34d025e4d8a972678375ad7ec9f32a62e68d1970c",
+      "status": 200,
+      "live_bytes": 1010183,
+      "live_sha256": "f31d0d3c8cca38ae338f70d34d025e4d8a972678375ad7ec9f32a62e68d1970c",
+      "matches": true
+    }
+  ],
+  "publication": {
+    "method": "maintainer-terminal normal fast-forward",
+    "from_commit": "37531cbc22ca16a1b4107dd3496c5b18d6730236",
+    "to_commit": "690fa1b5f5ae8e7bc227e47540ae4c9fb884c185",
+    "force_push": false
+  },
+  "workflows": [
+    {
+      "name": "Publish GitHub Pages",
+      "run_id": 39750900781,
+      "head_sha": "690fa1b5f5ae8e7bc227e47540ae4c9fb884c185",
+      "conclusion": "success",
+      "url": "https://github.com/spincyc/triptych/actions/runs/39750900781"
+    },
+    {
+      "name": "Repository hygiene",
+      "run_id": 39750900750,
+      "head_sha": "690fa1b5f5ae8e7bc227e47540ae4c9fb884c185",
+      "conclusion": "success",
+      "url": "https://github.com/spincyc/triptych/actions/runs/39750900750"
+    }
+  ],
+  "verification_scope": "Exact deployed bytes at the listed routes. This is not a new visual review or proof of complete annual source wording."
+}
