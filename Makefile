@@ -75,6 +75,11 @@ ARCH_DEPENDENCY_PACKAGES := $(ARCH_CORE_PACKAGES) $(ARCH_PYTHON_PACKAGES) \
 # harnesses launch `--headless=new --disable-gpu`, so no display is involved
 # and a headless host is not a limitation. Point TRIPTYCH_CHROME at the binary.
 ARCH_BROWSER_PACKAGES := chromium
+# The terminal reader, `tools/lectern`, and only it. Like the browser it is not in
+# the list above: a clone that builds PDFs or runs the checks does not need it,
+# and its tests say by name that they did not run where it is absent. The pin
+# in requirements-tui.txt is the version this package ships.
+ARCH_TUI_PACKAGES := python-textual
 ARCH_CANONICAL_COMMANDS := make:/usr/bin/make sh:/usr/bin/sh \
 	env:/usr/bin/env id:/usr/bin/id find:/usr/bin/find sort:/usr/bin/sort \
 	comm:/usr/bin/comm cmp:/usr/bin/cmp \
@@ -259,7 +264,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-curriculum-structure check-source-reader source-projection \
 	check-document-catalogue document-catalogue \
 	public-site public-preview \
-	dependencies-arch dependencies-arch-browser install-dependencies-arch \
+	dependencies-arch dependencies-arch-browser dependencies-arch-tui install-dependencies-arch \
 	verify-public-site verify-public-preview \
 	check-mass-ordinary check-scripture-chronology \
 	check-release-bindings refresh-release-bindings approve-release \
@@ -346,6 +351,9 @@ dependencies-arch:
 # answer a reader can run, rather than a comment they have to find.
 dependencies-arch-browser:
 	@printf '%s\n' $(ARCH_BROWSER_PACKAGES)
+
+dependencies-arch-tui:
+	@printf '%s\n' $(ARCH_TUI_PACKAGES)
 
 # Arch does not support partial upgrades: synchronize and upgrade the system in
 # the same transaction that installs the canonical repository packages. This
@@ -605,6 +613,7 @@ help:
 		'make dependencies-arch  List canonical Arch package dependencies' \
 		'make install-dependencies-arch  Run a full Arch upgrade and install canonical packages' \
 		'make dependencies-arch-browser  List the browser package the harnesses need and this installer omits' \
+		'make dependencies-arch-tui  List the package the terminal reader (tools/lectern) needs and this installer omits' \
 		'make check-pdf-review  Test memory-bounded PDF inspection tooling' \
 		'make check-sources  Validate the source library, inventory, and migration ledger' \
 		'make check-deployment-sources  Validate deployable sources, generated structures, and publication inventories' \

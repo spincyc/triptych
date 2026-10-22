@@ -1,0 +1,183 @@
+#!/usr/bin/env python3
+"""Read the published missal, catena and corpus in a terminal.
+
+A reader for the same structure the browser pages read, laid out as a
+dashboard: eight surfaces, one per page of the site, each reached by its digit.
+
+This tool derives nothing. Every view is read from `src/web/data/` or asked
+of the browser's own models and renderers, run under node in one process set
+up as a page's realm (`scripts/lectern/bridge.js`), so what a reader sees here
+and what the site renders cannot disagree about anything but layout.
+
+TWO VERBS.
+
+`open` is the interactive reader. It needs a terminal and the Textual library
+(`requirements-tui.txt`, or `pacman -S python-textual`).
+
+`snapshot` renders the same reader headlessly at a fixed size, once every
+pending load has settled, and prints the screen: as plain text, as text with
+ANSI colour, or as SVG. It is how the reader is checked without a terminal, and
+the transcripts below are its output.
+"""
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    run_verb_cli,
+    with_examples,
+)
+
+SURFACES = ("day", "propers", "catena", "scripture", "texts", "sources", "history", "law")
+THEMES = ("triptych", "triptych-vellum", "triptych-compline")
+DEPENDENCY = "the reader needs Textual: pacman -S python-textual, or pip install -r requirements-tui.txt"
+
+EXAMPLES = {
+    "open": (
+        Example(
+            "tools/lectern open --surface day --date 2026-12-25",
+            note="interactive; needs a terminal, so it is not replayed",
+        ),
+        Example(
+            "tools/lectern open --surface catena --ref 'John 1'",
+            note="interactive; needs a terminal, so it is not replayed",
+        ),
+    ),
+    "snapshot": (
+        Example(
+            "tools/lectern snapshot --surface day --date 2026-10-22 --size 120x36",
+            ("",),
+        ),
+        Example(
+            "tools/lectern snapshot --surface catena --ref 'Gen 1' --size 120x36",
+            ("",),
+        ),
+    ),
+}
+
+
+class InputRefused(ValueError):
+    """An argument the reader cannot act on."""
+
+
+def _size(value: str) -> tuple[int, int]:
+    match = re.fullmatch(r"(\d+)x(\d+)", value)
+    if not match:
+        raise argparse.ArgumentTypeError("size is WIDTHxHEIGHT, e.g. 120x40")
+    width, height = int(match.group(1)), int(match.group(2))
+    if width < 60 or height < 16:
+        raise argparse.ArgumentTypeError("the reader needs at least 60x16")
+    return width, height
+
+
+def _date(value: str) -> str:
+    try:
+        return dt.date.fromisoformat(value).isoformat()
+    except ValueError as error:
+        raise argparse.ArgumentTypeError(f"not a date: {value!r} ({error})") from error
+
+
+def _common(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument("--surface", choices=SURFACES, default="day",
+                        help="the surface to open on (default: day)")
+    parser.add_argument("--date", type=_date, help="the civil date for the day surface (default: today)")
+    parser.add_argument("--calendar", help="the calendar to show first, e.g. roman-1962")
+    parser.add_argument("--mass", help="a Mass key for the propers surface")
+    parser.add_argument("--ref", help="a book and chapter for catena or scripture, e.g. 'Gen 1'")
+    parser.add_argument("--theme", choices=THEMES, default="triptych", help="palette (default: triptych)")
+
+
+def _intent(arguments: argparse.Namespace) -> dict[str, str]:
+    found = {}
+    for name in ("date", "calendar", "mass", "ref"):
+        value = getattr(arguments, name, None)
+        if value:
+            found[name] = value
+    return found
+
+
+def open_reader(arguments: argparse.Namespace) -> int:
+    if not sys.stdout.isatty():
+        raise InputRefused("open needs a terminal; use `lectern snapshot` to render without one")
+    from lectern.app import TriptychApp
+
+    # A drawn reader cannot be ASCII; asked for plain, it drops colour instead.
+    style = getattr(arguments, "style_resolved", None)
+    theme = "triptych-compline" if style and style.plain else arguments.theme
+    TriptychApp(start=arguments.surface, intent=_intent(arguments), theme=theme).run()
+    return 0
+
+
+def snapshot(arguments: argparse.Namespace) -> str:
+    from lectern.snapshot import render
+
+    keys = [key for key in (arguments.keys or "").split(",") if key]
+    style = getattr(arguments, "style_resolved", None)
+    plain = bool(style and style.plain)
+    if plain and arguments.format == "svg":
+        raise InputRefused("an SVG drawing is not plain text; drop --plain or ask for --format text")
+    return render(
+        surface=arguments.surface,
+        intent=_intent(arguments),
+        size=arguments.size,
+        keys=keys,
+        form=arguments.format,
+        theme="triptych-compline" if plain else arguments.theme,
+        plain=plain,
+    )
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        prog="lectern",
+        description="Read the published missal, catena and corpus in a terminal.",
+    )
+    verbs = parser.add_subparsers(dest="command")
+    opened = with_examples(
+        verbs.add_parser("open", help="the interactive reader (the default)"),
+        EXAMPLES["open"],
+    )
+    _common(opened)
+    shot = with_examples(
+        verbs.add_parser("snapshot", help="render the reader headlessly and print the screen"),
+        EXAMPLES["snapshot"],
+    )
+    _common(shot)
+    shot.add_argument("--size", type=_size, default=(120, 40), help="WIDTHxHEIGHT (default: 120x40)")
+    shot.add_argument("--keys", help="comma-separated keys to press once loaded, e.g. 'right,e'")
+    shot.add_argument("--format", choices=("text", "ansi", "svg"), default="text",
+                      help="plain text, text with ANSI colour, or SVG (default: text)")
+    # A bare `lectern` opens the reader, so the verb's defaults must hold
+    # without its subparser having run.
+    parser.set_defaults(surface="day", date=None, calendar=None, mass=None, ref=None, theme="triptych")
+    examples_live_on_the_verbs(parser, "lectern")
+
+    def render(payload: object, arguments: argparse.Namespace) -> int:
+        if isinstance(payload, int):
+            return payload
+        sys.stdout.write(str(payload))
+        return 0
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={"open": open_reader, "snapshot": snapshot},
+        renderer=render,
+        prefix="lectern",
+        argv=argv,
+        default_verb="open",
+        dependency_message=DEPENDENCY,
+        mapped_errors={InputRefused: ("input", 2)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

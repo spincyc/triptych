@@ -314,6 +314,17 @@
       "stage": "draft",
       "usage": "knox-bible {plan,fetch,build} --root DIR [--pace SECONDS] [--limit N] [--verbose]"
     },
+    "lectern": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Read the published missal, catena and corpus in a terminal.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "lectern {open,snapshot} [--surface NAME] [--date ISO] [--calendar NAME] [--ref REF] [--size WxH] [--format {text,ansi,svg}]"
+    },
     "mass-ordinary": {
       "idempotent": true,
       "json": true,
