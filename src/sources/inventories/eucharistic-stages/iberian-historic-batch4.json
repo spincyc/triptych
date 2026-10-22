@@ -22,15 +22,15 @@
       "id": "historic-tarragona-use",
       "label": "Tarragona local missal",
       "family": "latin",
-      "scope": "Tarragona missal editions identified bibliographically; no original leaf inspected.",
-      "coverage_note": "No stage: the 1499 Rosembach copy could not be viewed and the 1550 Lyon printing is uninspected."
+      "scope": "Tarragona missal editions: the 1499 Rosembach printing as described with exact loci by Altés i Aguiló (2011) and catalogued by USUARIUM; no original leaf inspected by this lane.",
+      "coverage_note": "One documented 1499 publication state resting on scholarly description and catalogue contents, not on an inspected original leaf (the BVPB copy refused access with HTTP 429 on 21 and 22 October 2026). The c. 1396 Reus manuscript, the 1550 Lyon printing, archiepiscopal authority and Roman adoption remain open."
     },
     {
       "id": "historic-urgell-use",
       "label": "Urgell local missal",
       "family": "latin",
-      "scope": "Urgell missal leads only; no incunable and no digitization located.",
-      "coverage_note": "No stage: bounded searches found no Urgell incunable or inspectable printing."
+      "scope": "Urgell missal editions of 1509 (Venice) and 1535–1536 (Zaragoza, Coci), documented through scholarly descriptions with exact loci, a reproduced title page and a transcribed 1535 printing contract; manuscript missals and the 1557 Lyon printing remain catalogue witnesses.",
+      "coverage_note": "Two documented publication states; no original leaf of either printing was inspected directly except the 1535–1536 title page reproduced in Pallarés Jiménez (2015). No transition between them is documented: the 1535 contract and Altés describe correction of the texts but name no changed formulary."
     }
   ],
   "sources": [
@@ -52,7 +52,7 @@
       "inspection": "Whole 613-page CC BY 4.0 PDF acquired 2026-10-21; PDF p. 8 title with archiepiscopal arms; p. 9 Juan Sobrarias's letter to Archbishop Juan de Aragón dated xii kal. Aprilis 1522, saying the archbishop had the diocesan books, especially breviary and missal, made most correct and the chapter gave them, put in order and 'most closely joined' (coniunctissimos) to the holy Roman church, to Georgius Coci to print, followed by Festivitates colende in diocesi Cesaraugustana; p. 606 colophon: printed in Coci's shop in 1522, xv kalendas martias.",
       "checked_on": "2026-10-21",
       "status": "inspected",
-      "limitations": "The holding record dates this copy 1540 (citing Sánchez 224) with [48], CCLXXVI leaves, while CCPB000017862-4 records the 1522 Coci edition as 17 + 310 leaves; copy-to-edition identity is unresolved. Body text not collated."
+      "limitations": "The holding record dates this copy 1540 (Sánchez 224) with [48], CCLXXVI leaves. Re-checked 2026-10-22: the copy ends at f. CCLXXVI (signature M), matching the 276-leaf edition that USTC 336798 and Sánchez 224 date 1540, not the [24] + CCX leaves that USTC 348443 gives for the 1522 edition; yet its own colophon prints 1522. Edition date unresolved. Body text not collated."
     },
     {
       "id": "iberian-historic-batch4:valencia-1509-roderic",
@@ -73,6 +73,76 @@
       "checked_on": "2026-10-21",
       "status": "inspected",
       "limitations": "Low-resolution images; selected leaves only. The colophon day formula is ambiguous. No bishop named in the leaves seen."
+    },
+    {
+      "id": "iberian-historic-batch4:altes-2011-tarragona",
+      "title": "Francesc Xavier Altés i Aguiló, introductory study to Ordinarium Sacramentorum Tarraconense 1530, facsimile edition (Barcelona: Institut d'Estudis Catalans, Biblioteca Litúrgica Catalana, 2011)",
+      "url": "https://publicacions.iec.cat/repository/pdf/00000493/00000017.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete 384-page IEC PDF acquired 2026-10-22 (59,986,549 bytes). Printed p. 5 (PDF 9) with n. 1 and printed p. 12 (PDF 16) with nn. 34–36 viewed as page images; the born-digital text layer was used only to locate them.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "A scholar's account resting on Sánchez Real 1950, Altés 1994 and Escobedo 1991; the missal's title and colophon are reported, not reproduced. No original leaf of the 1499 missal was seen by this lane."
+    },
+    {
+      "id": "iberian-historic-batch4:usuarium-tarragona-1499",
+      "title": "USUARIUM 59: Missale Tarraconense 1499 (Biblioteca Pública de Tarragona I/132)",
+      "url": "https://usuarium.elte.hu/book/59/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Public book card retrieved 2026-10-22: original title Missale secundum consuetudinem ecclesie Tarraconensis; printer Ioannes Rosembach; Weale-Bohatta 1527; contents index (temporal from page 3 (1r), Ash Wednesday 39 (26r), Holy Week 118–163, Ordinary and prefaces 334–338, Canon Te igitur 356, sanctoral 363 (1r), common 527, votives 543); online link to BVPB 397105.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Catalogue transcription and index only; page images were not consulted. The index does not show the colophon or any episcopal authority."
+    },
+    {
+      "id": "iberian-historic-batch4:altes-2007-urgell",
+      "title": "Francesc Xavier Altés i Aguiló, El processoner de la Seu d'Urgell imprès l'any 1527, facsimile edition with introduction (Barcelona: Institut d'Estudis Catalans, Biblioteca Litúrgica Catalana 4, 2007)",
+      "url": "https://publicacions.iec.cat/repository/pdf/00000400/00000074.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete 294-page IEC PDF acquired 2026-10-22 (32,867,663 bytes). Printed pp. 7–8 with n. 1, p. 17 with nn. 39–41 and p. 40 with n. 91 viewed as page images (PDF 7, 8, 17, 40).",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Introduction to a processional facsimile, not a missal study. The 1509 and 1536 missals are described in passing; the 1509 printing is qualified 'if it had not already been printed before'. The cathedral-archive copies are cited, not reproduced."
+    },
+    {
+      "id": "iberian-historic-batch4:pallares-2015-urgell",
+      "title": "Miguel Ángel Pallarés Jiménez, Contratos de impresión de libros litúrgicos catalanes publicados en el taller zaragozano de Jorge Coci, Turiaso XXII (2014–2015), pp. 341–362",
+      "url": "https://ifc.dpz.es/recursos/publicaciones/35/30/14pallares.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete 22-page PDF acquired 2026-10-22 (707,107 bytes). Printed pp. 348–351 (PDF 8–11) and appendix doc. 7, pp. 360–361 (PDF 20–21) read; pp. 349–350 and 359–360 viewed as page images; fig. 1 on p. 351, a reproduction of the title page of the Urgell missal, extracted and viewed (Missale secundum ritum ac consuetudinem insignis ecclesie Urgellen., with episcopal arms).",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "The contract is read in the author's transcription of the notarial original (Archivo Histórico de Protocolos de Zaragoza, Juan Arruego, 1535, f. 19); the holding copy of the reproduced title page is not named. A printing contract is a commission, not proof of completion."
+    },
+    {
+      "id": "iberian-historic-batch4:bnf-urgell-1509",
+      "title": "BnF catalogue record FRBNF36818031: Incipit feriale missarum secundum ordinem Urgellensis Ecclesie, Venice 1509 (Réserve, Vélins 788)",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb368180310",
+      "kind": "institutional-catalogue",
+      "inspection": "UNIMARC record retrieved 2026-10-22 through the BnF SRU API (6,366 bytes): transcribed colophon (Venice, Bernardinus de Tridino, at the expense of Calminius Ferrerius, Barcelona bookseller, 15 January 1509), CCXIX folio leaves, signatures, Weale-Bohatta 1611, shelfmark VELINS-788 and microfilm M-10186.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Catalogue transcription only; no digitization is linked and no original leaf was seen. Gallica refused access (HTTP 403 Cloudflare) on 2026-10-22."
+    },
+    {
+      "id": "iberian-historic-batch4:usuarium-urgell",
+      "title": "USUARIUM La Seu d'Urgell origin 110 and book cards 588 (1509), 1254 (Ms. III), 1390 (Vic Ms. 075) and 7002 (1536)",
+      "url": "https://usuarium.elte.hu/origin/110/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Public origin table and book cards retrieved 2026-10-22. Card 588 gives the 1509 original titles Feriale missarum secundum ordinem Urgellensis ecclesiae and Missale cum tabula secundum novam regulam Urgellinae sedis per honorabile capitulum ordinatum et correctum, printer Stagnino, BnF Vélins 788, with a contents index (temporal 1r, Ordinary 133r, Canon 141r, sanctoral 157r, table 219v). Card 7002 (Montserrat XVI*8º*628) indexes the 1536 Coci book: incipit Sacrosanctae Urgellensis ecclesiae missalis ordo, private and sung Ordinaries, prefaces, Canon, sanctoral, votives, colophon on page 549. Card 1254 describes Arch. Cap. La Seu d'Urgell Ms. III as the missal of Bishop Galcerán de Vilanova, 1388–1415, with a contents index; card 1390 lists Vic Ms. 075, 1400–1500, Janini 831.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Catalogue transcriptions and indexes; page images are not publicly served and were not consulted. Manuscript dates are catalogue ranges."
+    },
+    {
+      "id": "iberian-historic-batch4:zaragoza-edition-catalogues",
+      "title": "Edition records for the Coci Missale Caesaraugustanum: Zaguán MARC 74837 (H-1-152), USTC 348443 (1522) and USTC 336798 (1540)",
+      "url": "https://zaguan.unizar.es/record/74837/export/xm",
+      "kind": "institutional-catalogue",
+      "inspection": "Records retrieved 2026-10-22. Zaguán: [48], CCLXXVI leaves, [1] blank, quarto, signatures through M6, Sánchez 224, dated 1540. USTC 336798 (Sánchez 224, CCPB000017863-2): ff. [24] 276 [1], 1540, copies BNE R/31834 and Zaragoza Seo. USTC 348443 (Sánchez 109, CCPB000017862-4): ff. [24] CCX, signatures +8 ++8 A-P8 Q6, 1522, copies including BNE R/6096 and Biblioteca de Catalunya Res. 173-4. The H-1-152 page images at PDF pp. 600–605 (foliation CCLXXV–CCLXXVI, final signature M) were re-viewed.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Catalogue descriptions; the basis of Sánchez's 1540 date is not stated in these records. The CCPB catalogue (HTTP 403) and BNE digital (HTTP 403) refused access on 2026-10-22, so no 1522-edition copy was compared."
     }
   ],
   "stages": [
@@ -136,9 +206,14 @@
           "source_id": "iberian-historic-batch4:zaragoza-buz-h-1-152",
           "locus": "PDF p. 8 title; p. 9 letter and Festivitates colende; p. 606 colophon",
           "claim": "Archiepiscopal correction and chapter commissioning; 1522 colophon; diocesan holy days including Matthias and Barnabas."
+        },
+        {
+          "source_id": "iberian-historic-batch4:zaragoza-edition-catalogues",
+          "locus": "Zaguán 300 and 597 fields; USTC 336798 and 348443 pagination; H-1-152 PDF pp. 600–605 foliation",
+          "claim": "The copy's 276-leaf collation agrees with the edition catalogued as 1540, while its colophon prints 1522."
         }
       ],
-      "limitations": "The bounds 1522–1540 express the unresolved conflict between the copy's colophon and the library's 1540 dating; they are not a period of use. The letter, a humanist's address to the archbishop rather than a mandate, describes correction in general terms; its coniunctissimos phrase does not establish textual conformity to the Roman Missal. Only the holy-day list is compared with 1498. A 1573 manuscript note shows possession, not celebration.",
+      "limitations": "The bounds 1522–1540 express the unresolved conflict between the copy's colophon and the library's 1540 dating; they are not a period of use. The copy's collation (CCLXXVI leaves, final gathering M) matches the edition catalogued as 1540 (USTC 336798, Sánchez 224), not the 1522 record (USTC 348443, [24] + CCX leaves); whether that edition reprints a 1522 colophon or was misdated by its cataloguers is unresolved. The letter, a humanist's address to the archbishop rather than a mandate, describes correction in general terms; its coniunctissimos phrase does not establish textual conformity to the Roman Missal. Only the holy-day list is compared with 1498. A 1573 manuscript note shows possession, not celebration.",
       "reception": "Chapter-commissioned diocesan book under the archbishop; parish reception not established."
     },
     {
@@ -210,6 +285,134 @@
       ],
       "limitations": "Selected leaves only; colophon day uncertain. No episcopal authority leaf seen.",
       "reception": "Printed for the observance of the Valencian cathedral; church-level use not established."
+    },
+    {
+      "id": "iberian-historic-batch4:tarragona-1499",
+      "tradition_id": "historic-tarragona-use",
+      "label": "1499 Tarragona missal (Rosembach)",
+      "date_label": "26 June 1499 colophon date, as reported by Altés i Aguiló; original leaf not seen",
+      "start_year": 1499,
+      "end_year": 1499,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "The archdiocesan missal printed at Tarragona by Johann Rosembach, identified through a scholarly account with exact loci and a catalogue contents index; not a reconstruction of its text.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:iberian-tarragona-1499"
+      ],
+      "witness_label": "Missale secundum consuetudinem ecclesie Tarraconensis, Tarragona: Johann Rosembach 1499 (Biblioteca Pública de Tarragona I/132)",
+      "summary": "Altés reports that the cathedral chapter, under Archbishop Gonzalo Fernández de Heredia, commissioned Rosembach in 1498/1499 to print the diocesan missal, breviary and diurnal, and that the missal, of which some copies were printed on vellum, carries a colophon dated 26 June. USUARIUM indexes a complete Mass book: temporal, Ordinary and prefaces, Canon, sanctoral, common and votive Masses.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "iberian-historic-batch4:altes-2011-tarragona",
+          "locus": "printed p. 5 (PDF 9) and n. 1",
+          "claim": "Chapter commission of 1498/1499 under Archbishop Fernández de Heredia; missal title; vellum copies; colophon dated 26 June 1499."
+        },
+        {
+          "source_id": "iberian-historic-batch4:altes-2011-tarragona",
+          "locus": "printed p. 12 (PDF 16) and n. 34",
+          "claim": "On 7 February 1521 the chapter resolved to ask the archbishop's leave to sell the remaining copies of the 1499 missal held by the chapter since 1502."
+        },
+        {
+          "source_id": "iberian-historic-batch4:usuarium-tarragona-1499",
+          "locus": "book card 59: original title, printer, shelfmark and contents index",
+          "claim": "Identifies the Tarragona I/132 copy and the divisions of the book."
+        }
+      ],
+      "limitations": "No original leaf was viewed: the digitized Tarragona copy (BVPB 397105) refused access with HTTP 429 on 21 and 22 October 2026, and batch 4's thumbnail showed that copy beginning at a temporal leaf, so it may lack its opening leaves. The colophon date rests on Altés's report. No archiepiscopal mandate is reported, and no change from any manuscript predecessor is established.",
+      "reception": "A chapter-commissioned archdiocesan book. In 1521 unsold copies were still in the chapter's hands; this shows stock, not use in particular churches."
+    },
+    {
+      "id": "iberian-historic-batch4:urgell-1509",
+      "tradition_id": "historic-urgell-use",
+      "label": "1509 Urgell missal (Venice, Stagnino)",
+      "date_label": "15 January 1509 colophon date, as transcribed in the BnF catalogue; original leaf not seen",
+      "start_year": 1509,
+      "end_year": 1509,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "The Urgell diocesan missal printed at Venice in 1509, identified through a scholarly account with exact loci and institutional catalogue transcriptions; one temporal ordering claim, not a reconstructed text.",
+      "components": [
+        "propers"
+      ],
+      "witness_ids": [
+        "western:iberian-urgell-1509"
+      ],
+      "witness_label": "Feriale missarum secundum ordinem Urgellensis ecclesie / Missale cum tabula secundum novam regulam Urgellinae sedis, Venice: Bernardinus Stagninus 1509 (BnF Vélins 788)",
+      "summary": "Altés reports that the Urgell missal was printed at Venice in 1509, with an Ordinarium, under Bishop Pere de Cardona, whose arms stand on the title page, and that in the Urgell missals (citing the 1509 book at f. 102) Trinity Sunday follows Pentecost, whereas the fifteenth-century cathedral consueta places it as the last Sunday after Pentecost. The catalogued title describes the missal as set out by the chapter according to a new rule of the see.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "iberian-historic-batch4:altes-2007-urgell",
+          "locus": "printed pp. 7–8 and n. 1",
+          "claim": "Venice 1509 printing of the Urgell missal under Bishop Pere de Cardona, with his arms on the title."
+        },
+        {
+          "source_id": "iberian-historic-batch4:altes-2007-urgell",
+          "locus": "printed p. 40 and n. 91 (Missale Urgellense, Venice 1509, f. 102)",
+          "claim": "Trinity Sunday follows Pentecost in the Urgell missals, unlike the fifteenth-century cathedral consueta."
+        },
+        {
+          "source_id": "iberian-historic-batch4:bnf-urgell-1509",
+          "locus": "UNIMARC 200, 210/214, 215 and 930 fields",
+          "claim": "Title, Venice imprint for a Barcelona bookseller, 15 January 1509 colophon date, CCXIX leaves, Vélins 788."
+        },
+        {
+          "source_id": "iberian-historic-batch4:usuarium-urgell",
+          "locus": "book card 588: original titles and contents index",
+          "claim": "The book's titles name the Urgell see's new rule as ordered and corrected by the chapter; the index shows temporal, Ordinary, Canon and sanctoral."
+        }
+      ],
+      "limitations": "No original leaf was viewed; title and colophon are catalogue transcriptions and the Trinity claim is Altés's description. Altés qualifies the 1509 book as the first printed Urgell missal only 'if it had not been printed before'. The 'new rule' wording is not a list of changes, and no comparison with the manuscript missals is made.",
+      "reception": "Printed for the Urgell see under its bishop and chapter; use in particular churches is not established."
+    },
+    {
+      "id": "iberian-historic-batch4:urgell-1536",
+      "tradition_id": "historic-urgell-use",
+      "label": "1535–1536 Urgell missal (Zaragoza, Coci), commissioned for Bishop Francisco de Urriés",
+      "date_label": "Undated imprint: printing contract 7 January 1535; Altés and Amiet give 1536; Sánchez reports a reference to 1535 in the book",
+      "start_year": 1535,
+      "end_year": 1536,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "The Urgell missal printed by Jorge Coci in folio and quarto under a 1535 contract, identified through the transcribed contract, a reproduced title page, a scholarly account and a catalogue contents index; not a reconstructed text.",
+      "components": [
+        "propers",
+        "ordinary"
+      ],
+      "witness_ids": [
+        "western:iberian-urgell-1536"
+      ],
+      "witness_label": "Missale secundum ritum ac consuetudinem insignis ecclesie Urgellensis, Zaragoza: Jorge Coci (Montserrat XVI*8º*628 and other copies)",
+      "summary": "By a contract of 7 January 1535 the procurator of Bishop Francisco de Urriés engaged Coci to print 600 large missals, 600 quarto missals and 600 manuals or ordinaries according to the rite and order of the Urgell diocese, from originals examined, corrected and ordered by Perot Moluer, beneficiary of the cathedral. Altés reports that the double edition, in quarto and large folio, came from Coci's shop in 1536, with Molner absent from the see to direct the printing. The reproduced title names the rite and custom of the Urgell church under episcopal arms; USUARIUM indexes the book from its incipit Sacrosanctae Urgellensis ecclesiae missalis ordo through private and sung Ordinaries, prefaces, Canon and sanctoral to the colophon.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "iberian-historic-batch4:pallares-2015-urgell",
+          "locus": "appendix doc. 7, pp. 360–361 (contract of 7 January 1535, AHPZ Juan Arruego 1535 f. 19)",
+          "claim": "Commission of folio and quarto missals and manuals according to the Urgell rite from originals corrected by Perot Moluer."
+        },
+        {
+          "source_id": "iberian-historic-batch4:pallares-2015-urgell",
+          "locus": "pp. 349–350 and fig. 1, p. 351",
+          "claim": "Sánchez no. 203 quarto missal with Coci's mark and a reference to 1535; reproduced title page Missale secundum ritum ac consuetudinem insignis ecclesie Urgellen."
+        },
+        {
+          "source_id": "iberian-historic-batch4:altes-2007-urgell",
+          "locus": "printed p. 17 and n. 39",
+          "claim": "Double edition of the Missale Urgellense in quarto and large folio issued by Coci in 1536, with Molner directing the printing."
+        },
+        {
+          "source_id": "iberian-historic-batch4:usuarium-urgell",
+          "locus": "book card 7002: incipit, Ordinaries, prefaces, Canon, sanctoral and colophon rows",
+          "claim": "Contents of the Montserrat copy."
+        }
+      ],
+      "limitations": "The 1535–1536 bounds express uncertainty in one printing event between the contract and the year Altés and Amiet give; they are not a period of use. The copy behind the reproduced title page is not named, and whether the folio and quarto issues differ in text is unknown. The contract and Altés say the texts were corrected but name no changed formulary, so no transition from 1509 is drawn.",
+      "reception": "Commissioned by the bishop for delivery at Lleida; distribution to particular churches is not established."
     }
   ],
   "transitions": [
@@ -329,8 +532,8 @@
       "id": "iberian-historic-batch4:zaragoza-sequence",
       "tradition_id": "historic-zaragoza-use",
       "period": "1485–1598",
-      "missing": "Zaragoza 1485 (GW M24301; BC Res. 700-Fol. lacks calendar, title, colophon and the opening and closing gatherings) cannot supply a dated first state; the 1522/1540 dating of BUZ H-1-152 is unresolved; the 1531, 1540, 1552 Bernuz (Zaguán 3148, incomplete DjVu) and 1598 printings, Roman adoption and actual reception are uninspected; only the holy-day list is collated.",
-      "next_source": "Another 1485 copy (Ripoll, Teruel or Zaragoza cathedral) with title and colophon; CCPB000017862-4 1522 copies to settle the 1522/1540 question; Zaguán 3148 (1552); the archdiocese's adoption of the Roman Missal.",
+      "missing": "Zaragoza 1485 (GW M24301; BC Res. 700-Fol. lacks calendar, title, colophon and the opening and closing gatherings) cannot supply a dated first state; BUZ H-1-152 prints a 1522 colophon but collates with the 276-leaf edition catalogued as 1540 (USTC 336798, Sánchez 224), not with the CCX-leaf 1522 record (USTC 348443, Sánchez 109), so the edition's date is unresolved; the 1531, 1540, 1552 Bernuz (Zaguán 3148, incomplete DjVu) and 1598 printings, Roman adoption and actual reception are uninspected; only the holy-day list is collated.",
+      "next_source": "Another 1485 copy (Ripoll, Teruel or Zaragoza cathedral) with title and colophon; a copy of the CCX-leaf 1522 edition (BNE R/6096 or Biblioteca de Catalunya Res. 173-4) and of the 1540 edition (BNE R/31834), compared with H-1-152's colophon and collation, to settle the 1522/1540 question; Zaguán 3148 (1552); the archdiocese's adoption of the Roman Missal.",
       "consequence": "Two dated states and one bounded calendar change; no continuous sequence or Roman-adoption date is plotted."
     },
     {
@@ -344,18 +547,18 @@
     {
       "id": "iberian-historic-batch4:tarragona-originals",
       "tradition_id": "historic-tarragona-use",
-      "period": "1499–1550 and later",
-      "missing": "Original leaves of the 1499 Rosembach missal (GW M24774; BVPB 397105 copy, Tarragona Biblioteca Pública I/132, unreachable: HTTP 429 throughout 2026-10-21; only a cached thumbnail of f. XI seen) and of the 1550 Lyon Septgranges printing (CCPB001399849-8; candidate iberian-tarragona-1550); title, colophon, archiepiscopal authority and reception.",
-      "next_source": "Retry BVPB grupo path 11000715; Hispanic Society and Tarragona cathedral copies; the Girona seminary copy of 1550.",
-      "consequence": "No Tarragona stage is documented; candidates remain catalogue witnesses."
+      "period": "c. 1396–1550 and later",
+      "missing": "Original leaves of the 1499 Rosembach missal (title, colophon of 26 June 1499 and any archiepiscopal authority): the BVPB 397105 copy (Tarragona Biblioteca Pública I/132) refused access with HTTP 429 on 21 and 22 October 2026, and its batch-4 thumbnail suggests the opening leaves are missing. The vellum copies discussed by Escobedo (1991); the c. 1396 Tarragona missal at the Museu Municipal de Reus (USUARIUM 4480, Janini 629); the 1550 Lyon Septgranges printing (candidate iberian-tarragona-1550); component comparison and Roman adoption.",
+      "next_source": "BVPB grupo path 11000715 when not throttled; Escobedo, Gutenberg-Jahrbuch 1991, pp. 149–156; Sánchez Real, Boletín Arqueológico 50 (1950), pp. 59–65; Hispanic Society copy; Reus manuscript; Girona S/51 copy of 1550.",
+      "consequence": "The 1499 state is documented from scholarship and a catalogue index only; no Tarragona transition, Roman-adoption date or manuscript stage is plotted."
     },
     {
       "id": "iberian-historic-batch4:urgell-originals",
       "tradition_id": "historic-urgell-use",
-      "period": "fifteenth–sixteenth centuries",
-      "missing": "No Urgell incunable is recorded in GW (Ucetiense M24821 is followed by Upsalense M24824); CCPB, Memòria Digital de Catalunya, Europeana and Zaguán returned none; the existing 1536 and 1557 candidates are uninspected; printed missals of 1509 and 1527 reported in the Seu d'Urgell chapter archive have unspecified use.",
-      "next_source": "Seu d'Urgell chapter archive inventory (IEC chronicle, Pujol report p. 837); USTC/Amiet copies of the 1536 and 1557 printings.",
-      "consequence": "No Urgell stage is documented; absence from these repertories does not show that no Urgell missal was printed."
+      "period": "c. 1388–1557",
+      "missing": "Original leaves of the 1509 Venice missal (BnF Vélins 788; no digitization linked) and of the 1535–1536 Coci folio and quarto issues (Montserrat XVI*8º*628 and the copy reproduced by Pallarés); any concrete formulary change between 1509 and 1536; the 1557 Lyon printing (Paris, Beaux-Arts, Masson 882); the manuscript missals Arch. Cap. La Seu d'Urgell Ms. III (Bishop Galcerán de Vilanova, 1388–1415) and Vic Ms. 075; Roman adoption.",
+      "next_source": "Gallica or BnF reading-room images of Vélins 788 (f. 102 and colophon); Montserrat copy of 1536; Sánchez, Bibliografía aragonesa no. 203; Odriozola, Catálogo de libros litúrgicos nos. 83, 290–291, 544; Janini, Manuscritos litúrgicos de las bibliotecas de España, for Ms. III and Vic 075; Moliné, Urgellia 10 (1990–1991), on the sixteenth-century synods.",
+      "consequence": "Two publication states are documented from scholarship and catalogue evidence; no Urgell transition, manuscript stage or Roman-adoption date is plotted."
     }
   ]
 }

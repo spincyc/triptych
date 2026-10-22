@@ -6744,8 +6744,8 @@ research_review = "src/sources/inventories/eucharistic-research-reviews/roman-ad
 id = "ambrosian"
 title = "Ambrosian sacramentaries, missals and reform stages"
 status = "bounded-repertoire-and-selected-primary-acts-reviewed; full-recension-census-open"
-sources = ["milan-publisher-2024", "ambrosian-latin-approval-1974", "ambrosian-second-approval-2023", "ambrosian-promulgation-excerpt-2024", "ambrosian-latin-publisher-2026", "ambrosian-src-amiet-1960", "ambrosian-src-amiet-1995", "ambrosian-src-usuarium-404", "ambrosian-src-notitiae-1965", "ambrosian-src-1981", "ambrosian-frontmatter-route-2024", "amiet-census-usuarium-6032", "amiet-census-usuarium-6033", "amiet-census-usuarium-6035", "amiet-census-usuarium-6036", "amiet-census-usuarium-6037", "amiet-census-usuarium-6038", "amiet-census-usuarium-6039", "amiet-census-usuarium-6042", "amiet-census-usuarium-6044", "amiet-census-usuarium-6045", "amiet-census-usuarium-6048", "amiet-census-usuarium-6497"]
-candidate_ids = ["ambrosian-1475", "ambrosian-1751-1902", "ambrosian-1976", "ambrosian-1981-latin", "ambrosian-1990", "ambrosian-2008-lectionary", "ambrosian-2020-ordo", "ambrosian-2024", "ambrosian-1974-latin-reform", "ambrosian-2026-latin", "ambrosian-1499-print", "ambrosian-1640-print", "ambrosian-1954-fifth", "ambrosian-1965-latin-italian", "ambrosian-1975-prayers", "ambrosian-2010-sanctoral", "ambrosian-2011-evangeliario", "ambrosian-2016-short-readings", "ambrosian-1986-update", "amiet-usuarium-6032", "amiet-usuarium-6033", "amiet-usuarium-6035", "amiet-usuarium-6036", "amiet-usuarium-6037", "amiet-usuarium-6038", "amiet-usuarium-6039", "amiet-usuarium-6042", "amiet-usuarium-6044", "amiet-usuarium-6045", "amiet-usuarium-6048", "amiet-usuarium-6497"]
+sources = ["milan-publisher-2024", "ambrosian-latin-approval-1974", "ambrosian-second-approval-2023", "ambrosian-promulgation-excerpt-2024", "ambrosian-latin-publisher-2026", "ambrosian-src-amiet-1960", "ambrosian-src-amiet-1995", "ambrosian-src-usuarium-404", "ambrosian-src-notitiae-1965", "ambrosian-src-1981", "ambrosian-frontmatter-route-2024", "amiet-census-usuarium-6032", "amiet-census-usuarium-6033", "amiet-census-usuarium-6035", "amiet-census-usuarium-6036", "amiet-census-usuarium-6037", "amiet-census-usuarium-6038", "amiet-census-usuarium-6039", "amiet-census-usuarium-6042", "amiet-census-usuarium-6044", "amiet-census-usuarium-6045", "amiet-census-usuarium-6048", "amiet-census-usuarium-6497", "ambrosian-src-1609-prague", "ambrosian-src-1712-bsb"]
+candidate_ids = ["ambrosian-1475", "ambrosian-1751-1902", "ambrosian-1976", "ambrosian-1981-latin", "ambrosian-1990", "ambrosian-2008-lectionary", "ambrosian-2020-ordo", "ambrosian-2024", "ambrosian-1974-latin-reform", "ambrosian-2026-latin", "ambrosian-1499-print", "ambrosian-1640-print", "ambrosian-1954-fifth", "ambrosian-1965-latin-italian", "ambrosian-1975-prayers", "ambrosian-2010-sanctoral", "ambrosian-2011-evangeliario", "ambrosian-2016-short-readings", "ambrosian-1986-update", "amiet-usuarium-6032", "amiet-usuarium-6033", "amiet-usuarium-6035", "amiet-usuarium-6036", "amiet-usuarium-6037", "amiet-usuarium-6038", "amiet-usuarium-6039", "amiet-usuarium-6042", "amiet-usuarium-6044", "amiet-usuarium-6045", "amiet-usuarium-6048", "amiet-usuarium-6497", "ambrosian-1609-prague-33b22", "ambrosian-1712-bsb-liturg-182"]
 remaining_work = "2026-10-21 batch4: 1640 Monti letter, 1954 decree and selected pages, and 1981 front matter, Prex V-VI and reformed Sanctoral units inspected; 1712 Archinto letter describes an emended reprint. Remaining: 1594, 1609 and 1902 originals; pre-1902 and post-typical front matter; 1965 book/fascicles and possible 1966 printing; 1972 experiment; 1975 prayers; 1981 changed passages; original 1986 update and 1990 updated reprint; 2008–2016 lectionary parts; 2020 order; Latin 1981/2026 collation. 2024 Italian files are consultation only."
 scope = "western-original-source-trajectory"
 existing_inventory = "src/sources/inventories/missal-acquisition-audit-v1.toml"
@@ -19230,6 +19230,70 @@ chronology_end = 1640
 chronology_kind = "publication-or-component-year"
 chronology_certainty = "source-qualified"
 
+[[sources]]
+id = "ambrosian-src-1609-prague"
+url = "http://www.manuscriptorium.com/apps/index.php?direct=record&pid=NKCR__-NKCR__33_B_000022_2Y1YFN1-cs"
+type = "original-book-digitization"
+title = "Missale Ambrosianum, Venice 1609 (Federico Borromeo), Národní knihovna Praha 33 B 22"
+checked_on = "2026-10-22"
+inspection = "IIIF images viewed: IMG 9 title; IMG 11 Federico Borromeo's letter; IMG 16 February calendar; IMG 290 Sanctoral; IMG 444 colophon (Venice, Zanettus, 1609)."
+limitations = "Selected images; NoC-NC rights; found through Europeana record 92004/object_NKCR__33_B_000022_2Y1YFN1."
+status = "inspected"
+
+[[candidates]]
+id = "ambrosian-1609-prague-33b22"
+family = "ambrosian"
+title = "Missale Ambrosianum Federici Card. Borromaei iussu recognitum et editum, Venice 1609 (Praha NK 33 B 22)"
+date = "1609"
+kind = "printing-witness"
+status = "original-title-letter-calendar-and-colophon-inspected"
+sources = ["ambrosian-src-1609-prague"]
+route = "http://www.manuscriptorium.com/object/NKCR__33_B_000022_2Y1YFN1"
+qualification = "Exact copy of the 1609 Federico Borromeo edition; engraved frame names Io. Iacobus Comus, colophon Ioannes Zanettus. Letter states restored or amplified prefaces, moved Gospels and Epistles and corrected rubrics; documents stage ambrosian-1609. A 1611 Milan Missa S. Caroli is bound in. The existing catalogue witness amiet-usuarium-6042 (USUARIUM 6042, Amiet 42: Missale Ambrosianum 1609, BnF B-112, remark F. Borromeo) probably records another copy of this edition; the copies are not compared, and the two records stay separate."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "documented-publication-state; stated-revision-kinds-without-collated-formularies"
+date_role = "publication-year-on-title-and-colophon"
+acquisition_status = "selected-original-iiif-images-viewed-scratch-only"
+transcription_status = "not-transcribed"
+collation_status = "veronica-proper-compared-with-1475"
+holding = "Praha, Národní knihovna České republiky, 33 B 22"
+chronology_start = 1609
+chronology_end = 1609
+chronology_kind = "publication"
+chronology_certainty = "original-title-and-colophon-inspected"
+
+[[sources]]
+id = "ambrosian-src-1712-bsb"
+url = "https://www.digitale-sammlungen.de/en/view/bsb10869665"
+type = "original-book-digitization"
+title = "Missale Ambrosianum, Milan 1712 (Archinto), Bayerische Staatsbibliothek Res/2 Liturg. 182 (bsb10869665; archive.org 10869665bsb)"
+checked_on = "2026-10-22"
+inspection = "BSB IIIF manifest read (call number Res/2 Liturg. 182, BV001456535); canvas 5 handwritten shelfmark Liturg. 182, canvas 11 title (Mediolani MDCCXII, Beniamin & Fratres de Sirturis) and canvas 13 Archinto's undated letter viewed."
+limitations = "The prior lane's 625-page PDF is this BSB digitization via archive.org; body not collated."
+status = "inspected"
+
+[[candidates]]
+id = "ambrosian-1712-bsb-liturg-182"
+family = "ambrosian"
+title = "Missale Ambrosianum novissime Ioseph Cardinalis Archinti auctoritate recognitum, Milan 1712 (BSB Res/2 Liturg. 182)"
+date = "1712"
+kind = "printing-witness"
+status = "original-title-and-letter-inspected"
+sources = ["ambrosian-src-1712-bsb"]
+route = "https://www.digitale-sammlungen.de/en/view/bsb10869665"
+qualification = "Exact copy of the 1712 Archinto edition. Archinto's letter describes a new printing needed because copies were worn, emended to the latest exemplar; no revision programme is stated, so it is a reprint witness without a stage. Other copies: BNE (Europeana bdh0000214667) and archive.org missale-ambrosianum-1712 (holding unstated)."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "reprint-witness; substantive-difference-not-established"
+date_role = "publication-year-on-title"
+acquisition_status = "whole-digitization-acquired-by-prior-lane-scratch-only"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+holding = "München, Bayerische Staatsbibliothek, Res/2 Liturg. 182"
+chronology_start = 1712
+chronology_end = 1712
+chronology_kind = "publication"
+chronology_certainty = "original-title-inspected"
+
 [[candidates]]
 id = "ambrosian-1954-fifth"
 family = "ambrosian"
@@ -22199,20 +22263,20 @@ family = "aquileiense"
 title = "Missale Aquileiense, 1494 printing"
 date = "1494"
 kind = "printed-local-missal-witness"
-status = "reviewed-bounded-metadata"
+status = "original-colophon-and-selected-leaves-inspected"
 sources = ["italian-aquileia-1494-ia", "italian-usuarium-aquileia", "italian-batch4-aquileia-1494-dlib"]
 source_locus = "Usuarium origin 393, book 6908 (1494 catalogue date); Internet Archive metadata identifies dLib URN:NBN:SI:DOC-GKJAQ0TO; exact facsimile PDF images 4–6 and 525–529 inspected. Those images do not display a year or colophon."
-qualification = "1494 is catalogue attributed. Frontispiece names Aquileian church; do not infer independent approval or substantive difference. Batch 4 read the colophon at dLib PDF p. 521: Augsburg, Erhard Ratdolt, 23 December 1494; the year is no longer only catalogue attributed."
+qualification = "1494 is catalogue attributed. Frontispiece names Aquileian church; do not infer independent approval or substantive difference. Batch 4 read the colophon at dLib PDF p. 521: Augsburg, Erhard Ratdolt, 23 December 1494; the year is no longer only catalogue attributed. South batch 5 (2026-10-22) re-viewed the colophon image (dLib PDF p. 521) and the Canon (PDF pp. 277–282); status fields now record the colophon reading. The Canon's Communicantes and Libera nos carry the Roman saint lists."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-state-not-independently-established"
-date_role = "publication-witness-date"
+date_role = "printing-completion-date-read-in-original-colophon"
 chronology_start = 1494
 chronology_end = 1494
-chronology_kind = "publication-witness-date"
-chronology_certainty = "catalogue-reported-or-scholarly-description"
+chronology_kind = "publication"
+chronology_certainty = "original-colophon-page-image-inspected"
 acquisition_status = "exact-facsimile-acquired"
 transcription_status = "no-verified-complete-transcription"
-collation_status = "not-fully-collated"
+collation_status = "canon-saint-lists-read-not-collated"
 
 [[sources]]
 id = "italian-batch4-aquileia-1494-dlib"
@@ -22249,18 +22313,18 @@ family = "aquileiense"
 title = "Missale Aquileiense, 1517 printing"
 date = "1517"
 kind = "printed-local-missal-witness"
-status = "reviewed-bounded-metadata"
+status = "original-colophon-and-selected-leaves-inspected"
 sources = ["italian-usuarium-aquileia", "italian-batch4-aquileia-1517-bsb"]
 source_locus = "Usuarium book 164: original-title field, age 1517, printer Petrus Liechtenstein, BSB Res/4 Liturg. 393; contents index marks colophon at scan p. 452."
-qualification = "Book card and contents index checked; no independent original-page or approval check. Batch 4 read the BSB copy's colophon: Venice, Jacobus Pentius for Johannes Osvaldus, 16 September 1517 (USTC 810139), which contradicts Usuarium's Liechtenstein printer field; the Liechtenstein 1517 edition (USTC 810138) is a separate book."
+qualification = "Book card and contents index checked; no independent original-page or approval check. Batch 4 read the BSB copy's colophon: Venice, Jacobus Pentius for Johannes Osvaldus, 16 September 1517 (USTC 810139), which contradicts Usuarium's Liechtenstein printer field; the Liechtenstein 1517 edition (USTC 810138) is a separate book. South batch 5 (2026-10-22) re-viewed the BSB colophon image (canvas 530); status fields now record the colophon reading of the Pentius/Oswald edition. The Canon leaves were not located in canvases 252–315."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-state-not-independently-established"
-date_role = "publication-witness-date"
+date_role = "printing-completion-date-read-in-original-colophon"
 chronology_start = 1517
 chronology_end = 1517
-chronology_kind = "publication-witness-date"
-chronology_certainty = "catalogue-reported-or-scholarly-description"
-acquisition_status = "not-acquired-in-this-pass"
+chronology_kind = "publication"
+chronology_certainty = "original-colophon-page-image-inspected"
+acquisition_status = "selected-original-iiif-images-viewed"
 transcription_status = "no-verified-complete-transcription"
 collation_status = "not-fully-collated"
 
@@ -22364,9 +22428,9 @@ title = "Benevento VI 33 missal manuscript"
 date = "1000–1025"
 kind = "manuscript-missal-witness"
 status = "reviewed-bounded-metadata"
-sources = ["italian-usuarium-benevento"]
+sources = ["italian-usuarium-benevento", "italian-benevento-vi33-pm20"]
 source_locus = "Usuarium origin 545 IDs 938, 1299, 6276: one Benevento VI 33 manuscript; displayed dates about 1000, 1000–1025, and 900–1100 respectively."
-qualification = "1000–1025 is a catalogue preference, not a verified exact copying range; one physical manuscript."
+qualification = "1000–1025 is a catalogue preference, not a verified exact copying range; one physical manuscript. South batch 5 (2026-10-22): the 1983 Paléographie musicale XX critical facsimile dates the manuscript to the early eleventh century from script and notation (earlier authors: late tenth) and infers Beneventan Benedictine origin; it confirms one manuscript and a plenary-missal structure."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-state-not-independently-established"
 date_role = "manuscript-witness-date"
@@ -22377,6 +22441,16 @@ chronology_certainty = "catalogue-reported-or-scholarly-description"
 acquisition_status = "not-acquired-in-this-pass"
 transcription_status = "no-verified-complete-transcription"
 collation_status = "not-fully-collated"
+
+[[sources]]
+id = "italian-benevento-vi33-pm20"
+url = "https://archive.org/details/palographiemusic20macq"
+type = "critical-facsimile-edition"
+title = "Le missel de Bénévent VI-33, Paléographie musicale XX (Peter Lang, 1983)"
+checked_on = "2026-10-22"
+inspection = "Introduction pp. 12*, 17*–18* read as page images: plenary Romano-Frankish missal lacking its opening; Preface and Canon at the Easter Vigil f. 80; no colophon or calendar; dated to the early eleventh century by script and notation; Beneventan, probably Benedictine, origin inferred from the Bartholomew embolism and sanctoral."
+limitations = "Copyright facsimile; loci only. archive.org metadata mislabels the year."
+status = "inspected"
 
 [[candidates]]
 id = "italian-benevento-vi29"
@@ -22405,18 +22479,18 @@ family = "messina-local"
 title = "Missale Messanense, 1480 printing"
 date = "1480"
 kind = "printed-local-missal-witness"
-status = "reviewed-bounded-metadata"
+status = "original-colophon-and-selected-leaves-inspected"
 sources = ["italian-usuarium-messina", "italian-batch4-messina-1480-rylands"]
 source_locus = "Usuarium book 7272/origin 403: Missale Messanense secundum consuetudinem Gallicorum, 1480; John Rylands Library Manchester 18620."
-qualification = "Catalogue publication witness; text and approval uncollated. Batch 4 read the Rylands copy's incipit and colophon: printed at Messina by Heinrich Alding, 31 May 1480; the incipit names the custom of the Gallici, not Messina."
+qualification = "Catalogue publication witness; text and approval uncollated. Batch 4 read the Rylands copy's incipit and colophon: printed at Messina by Heinrich Alding, 31 May 1480; the incipit names the custom of the Gallici, not Messina. South batch 5 (2026-10-22) re-viewed the Rylands colophon image (canvas 501): Messina, Heinrich Alding, pridie kalendas Junii 1480; status fields now record the colophon reading."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "witness-state-not-independently-established"
-date_role = "publication-witness-date"
+date_role = "printing-completion-date-read-in-original-colophon"
 chronology_start = 1480
 chronology_end = 1480
-chronology_kind = "publication-witness-date"
-chronology_certainty = "catalogue-reported-or-scholarly-description"
-acquisition_status = "not-acquired-in-this-pass"
+chronology_kind = "publication"
+chronology_certainty = "original-colophon-page-image-inspected"
+acquisition_status = "selected-original-iiif-images-viewed"
 transcription_status = "no-verified-complete-transcription"
 collation_status = "not-fully-collated"
 
@@ -22576,7 +22650,7 @@ scope = "western-original-source-trajectory"
 id = "italian-benevento"
 title = "Benevento local Mass-book witnesses"
 status = "selected-witnesses-documented"
-sources = ["italian-usuarium-benevento", "italian-benevento-vi29-return", "italian-benevento-vi29-case"]
+sources = ["italian-usuarium-benevento", "italian-benevento-vi29-return", "italian-benevento-vi29-case", "italian-benevento-vi33-pm20"]
 candidate_ids = ["italian-benevento-vi33", "italian-benevento-vi29"]
 remaining_work = "Acquire original manuscripts or facsimiles; map Latin prayers and chant strata separately; resolve unnamed missal entries and current VI 29 holding."
 scope = "western-original-source-trajectory"
@@ -22603,8 +22677,8 @@ scope = "western-original-source-trajectory"
 id = "italian-ravenna"
 title = "Ravenna Eucharistic-book discovery"
 status = "bounded-fragment-identities-local-use-unproved"
-sources = ["italian-usuarium-ravenna", "italian-ravenna-011-irht", "italian-ravenna-roman-irht", "italian-ravenna-fragments-stockholm", "italian-ravenna-fragments-wroclaw", "latin-early-elmss-cat-346", "latin-early-elmss-cat-1862", "latin-early-elmss-cat-715-cold", "italian-ravenna-fragments-suski", "latin-early-westwell2024", "italian-ravenna-fragments-sodi-suski", "italian-ravenna-fragments-rotulus-ceriani", "italian-ravenna-fragments-rotulus-rozein", "italian-ravenna-fragments-munich", "italian-ravenna-fragments-catalogue6347", "italian-ravenna-fragments-catalogue6348", "italian-ravenna-fragments-catalogue6349", "italian-ravenna-fragments-catalogue6351", "italian-ravenna-hauke1994", "italian-ravenna-bsb29270-8", "italian-ravenna-ward1989", "italian-ravenna-proprio2025-notice"]
-candidate_ids = ["italian-ravenna-archive-011", "italian-ravenna-stockholm-wroclaw", "italian-ravenna-stuttgart-100a", "italian-ravenna-montecassino-271-lower2", "italian-ravenna-stuttgart-ink15370", "italian-ravenna-munich-clm29303-1", "italian-ravenna-cervia-proprio-2025-announced"]
+sources = ["italian-usuarium-ravenna", "italian-ravenna-011-irht", "italian-ravenna-roman-irht", "italian-ravenna-fragments-stockholm", "italian-ravenna-fragments-wroclaw", "latin-early-elmss-cat-346", "latin-early-elmss-cat-1862", "latin-early-elmss-cat-715-cold", "italian-ravenna-fragments-suski", "latin-early-westwell2024", "italian-ravenna-fragments-sodi-suski", "italian-ravenna-fragments-rotulus-ceriani", "italian-ravenna-fragments-rotulus-rozein", "italian-ravenna-fragments-munich", "italian-ravenna-fragments-catalogue6347", "italian-ravenna-fragments-catalogue6348", "italian-ravenna-fragments-catalogue6349", "italian-ravenna-fragments-catalogue6351", "italian-ravenna-hauke1994", "italian-ravenna-bsb29270-8", "italian-ravenna-ward1989", "italian-ravenna-proprio2025-notice", "italian-ravenna-wlb-codfragm-list", "italian-ravenna-hsp-codfragm5"]
+candidate_ids = ["italian-ravenna-archive-011", "italian-ravenna-stockholm-wroclaw", "italian-ravenna-stuttgart-100a", "italian-ravenna-montecassino-271-lower2", "italian-ravenna-stuttgart-ink15370", "italian-ravenna-munich-clm29303-1", "italian-ravenna-cervia-proprio-2025-announced", "italian-ravenna-stuttgart-codfragm5"]
 remaining_work = "Collate exact surviving fragment and lower-text loci before assigning Canon scope or Ravenna use. Resolve 100A type disagreements and the 700-725 versus 701-750 Stockholm-Wroclaw dating. Archive 011 still requires original colophon/calendar/Canon and actual-use evidence. Rotulus Advent Office prayers and later archival letters do not define an annual Mass book; proposed fragment stages are associated witnesses, not a Ravenna local recension. New bounded checks: the Munich shelfmark/link conflict is resolved at object level by Hauke and the BSB digitization; retain the contrary source-card label. Ward’s modern reconstructed Rotulus text is not a diplomatic witness or 42 complete prayers. The official 2025 Ravenna-Cervia Proper announcement is a separate modern local-use lead; obtain its book and act before a station or exact effective-year claim. It does not close ancient or medieval fragment reception."
 scope = "western-original-source-trajectory"
 
@@ -30339,9 +30413,9 @@ title = "Stuttgart Ink.15370 b om: separately identified votive-Mass fragment"
 date = "Tenth-century catalogue date 0900-1000"
 kind = "manuscript-fragment-witness"
 status = "bounded-fragment-local-use-unproved"
-sources = ["italian-ravenna-fragments-sodi-suski", "italian-ravenna-fragments-catalogue6349"]
+sources = ["italian-ravenna-fragments-sodi-suski", "italian-ravenna-fragments-catalogue6349", "italian-ravenna-wlb-codfragm-list"]
 source_locus = "Usuarium 6349/Gamber CLLA 659; Sodi-Suski 2022 p. 65; Gamber 1966 pp. 246-250; Catella-Dell'Oro-Martini 2005 pp. 522-525."
-qualification = "Separate from palimpsest 100A. Sodi-Suski attributes Ravenna and calls it pre-Hadrian Gregorian; Usuarium explicitly says uncertain origin. No original fragment image or prayer transcription inspected; no stage proposed until component extent is read."
+qualification = "Separate from palimpsest 100A. Sodi-Suski attributes Ravenna and calls it pre-Hadrian Gregorian; Usuarium explicitly says uncertain origin. No original fragment image or prayer transcription inspected; no stage proposed until component extent is read. South batch 5 (2026-10-22): the WLB holding list (July 2026) records Cod. fragm. 4, a sacramentary fragment removed from Inc. 15370b, dated 11th/12th century; if it is this object, the dating conflicts with the 900–1000 catalogue range retained here."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "fragment-attestation-not-recension-proof"
 date_role = "copying-of-surviving-lower-text-or-fragment"
@@ -30352,6 +30426,49 @@ chronology_certainty = "catalogue-reported-uncertain-origin"
 acquisition_status = "bounded-original-images-or-catalogue-acquired"
 transcription_status = "no-verified-complete-transcription"
 collation_status = "not-fully-collated"
+
+[[sources]]
+id = "italian-ravenna-wlb-codfragm-list"
+url = "https://wiki.wlb-stuttgart.de/images/f/f0/Cod_fragm_Bestandsliste.pdf"
+type = "institutional-holding-list"
+title = "Württembergische Landesbibliothek, Bestandsübersicht Cod. fragm. (July 2026)"
+checked_on = "2026-10-22"
+inspection = "PDF p. 1 read as an image: Cod. fragm. 4 Sakramentar, 11th/12th century, from Inc. 15370b; Cod. fragm. 5 Plenarmissale, second quarter 10th century, from Inc. fol. 8774, central Italy (Ravenna?)."
+limitations = "Holding list; no images or contents."
+status = "inspected"
+
+[[sources]]
+id = "italian-ravenna-hsp-codfragm5"
+url = "https://handschriftenportal.de/api/tei/HSP-6c730b55-84b8-312d-b3de-de6cbbfee063"
+type = "institutional-catalogue-record"
+title = "Handschriftenportal TEI: Stuttgart WLB Cod. fragm. 5"
+checked_on = "2026-10-22"
+inspection = "TEI read: Plenarmissale fragment, 2 leaves, parchment, 33.5 x 23 cm, 926–950, origin Ravenna (?)."
+limitations = "No content description or image."
+status = "inspected"
+
+[[candidates]]
+id = "italian-ravenna-stuttgart-codfragm5"
+family = "ravenna-attributed-fragment"
+title = "Stuttgart WLB Cod. fragm. 5: plenary-missal fragment, origin queried as Ravenna"
+date = "926-950"
+kind = "manuscript-fragment-witness"
+status = "catalogue-metadata-inspected-local-use-unproved"
+sources = ["italian-ravenna-wlb-codfragm-list", "italian-ravenna-hsp-codfragm5"]
+route = "https://handschriftenportal.de/api/tei/HSP-6c730b55-84b8-312d-b3de-de6cbbfee063"
+catalogue_id = "WLB Cod. fragm. 5 (from Inc. fol. 8774, GW 12897)"
+qualification = "Two leaves of a plenary missal removed from an incunable binding; the holding list and Handschriftenportal give second quarter of the tenth century and origin 'Ravenna (?)'. Catalogue metadata only: no image, contents or Ravenna use established; no stage."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "fragment-attestation-not-recension-proof"
+date_role = "catalogue-copying-range"
+acquisition_status = "catalogue-records-acquired; original-not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+holding = "Stuttgart, Württembergische Landesbibliothek, Cod. fragm. 5"
+chronology_start = 926
+chronology_end = 950
+chronology_kind = "catalogue-attributed-manuscript-copying"
+chronology_certainty = "inspected-catalogue-metadata; original-uninspected; origin-queried"
 
 [[sources]]
 id = "roman-next-1951-original-tpv"
@@ -39902,6 +40019,82 @@ chronology_kind = "publication-witness-date"
 chronology_certainty = "inspected-catalogue-metadata; original-imprint-uninspected"
 
 [[sources]]
+id = "iberian-usuarium-59"
+url = "https://usuarium.elte.hu/book/59/view"
+type = "institutional-research-catalogue"
+title = "USUARIUM 59: Missale Tarraconense"
+checked_on = "2026-10-22"
+inspection = "Public book card retrieved 2026-10-22 (SHA-256 recorded in the south batch-5 receipt). Original title: Missale secundum consuetudinem ecclesie Tarraconensis; Origin: Tarragona; Age: 1499; Printer: Rosembach, Ioannes; Shelfmark: Bibl. Públ. Tarragona, I/132; Catalogue: Weale-Bohatta 1527; contents index from temporal 1r to votive Masses; online link to BVPB 397105."
+limitations = "Catalogue metadata and index only; no original page image consulted."
+status = "inspected"
+
+[[sources]]
+id = "iberian-batch5-altes-2011-tarragona"
+url = "https://publicacions.iec.cat/repository/pdf/00000493/00000017.pdf"
+type = "scholarship"
+title = "Altés i Aguiló, introductory study to the 1530 Ordinarium Tarraconense facsimile (IEC 2011)"
+checked_on = "2026-10-22"
+inspection = "Printed pp. 5 and 12 with nn. 1 and 34 viewed as page images: 1498/1499 chapter commission to Rosembach under Archbishop Fernández de Heredia; missal colophon 26 June 1499; vellum copies; unsold 1499 missals held by the chapter in 1502 and 1521."
+limitations = "Scholarly report; the original title and colophon are not reproduced."
+status = "inspected"
+
+[[candidates]]
+id = "iberian-tarragona-1499"
+family = "historic-tarragona-use"
+title = "Missale secundum consuetudinem ecclesie Tarraconensis, Tarragona: Johann Rosembach 1499"
+date = "26 June 1499"
+kind = "historic-local-use-scholarly-described-edition"
+status = "scholarly-description-and-catalogue-index-inspected"
+sources = ["iberian-usuarium-59", "iberian-batch5-altes-2011-tarragona"]
+route = "https://usuarium.elte.hu/book/59/view"
+catalogue_id = "GW M24774; ISTC im00726000; IBE 3985; Weale-Bohatta 1527; Usuarium 59; BVPB 397105"
+qualification = "Edition identified by catalogues and described by Altés i Aguiló (2011, p. 5): chapter commission of 1498/1499, colophon dated 26 June, some copies on vellum. The Tarragona I/132 copy is digitized at BVPB 397105, which refused access (HTTP 429) on 21 and 22 October 2026; no original leaf was viewed. Documents stage iberian-historic-batch4:tarragona-1499 from scholarship and catalogue evidence."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "documented-publication-state-from-scholarship; substantive-difference-not-established"
+date_role = "colophon-date-reported-by-scholarship"
+acquisition_status = "catalogue-card-and-scholarship-acquired; original-book-not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+holding = "Bibl. Públ. Tarragona, I/132"
+chronology_start = 1499
+chronology_end = 1499
+chronology_kind = "publication"
+chronology_certainty = "colophon-date-reported-by-scholarship; original-leaf-uninspected"
+
+[[sources]]
+id = "iberian-usuarium-4480"
+url = "https://usuarium.elte.hu/book/4480/view"
+type = "institutional-research-catalogue"
+title = "USUARIUM 4480: Tarragona missal, Reus Museu Municipal Ms. without shelfmark"
+checked_on = "2026-10-22"
+inspection = "Public book card retrieved 2026-10-22: Origin Tarragona; Genre Missal; Age 1396 (about); manuscript; Mus. Mun. Reus, Ms. sin sign.; Catalogue Janini 629."
+limitations = "Catalogue metadata only; no contents index or image."
+status = "inspected"
+
+[[candidates]]
+id = "iberian-tarragona-reus-ms-c1396"
+family = "historic-tarragona-use"
+title = "Tarragona missal manuscript, Reus Museu Municipal (without shelfmark)"
+date = "about 1396"
+kind = "historic-local-use-catalogue-witness"
+status = "checked-individual-research-catalogue"
+sources = ["iberian-usuarium-4480"]
+route = "https://usuarium.elte.hu/book/4480/view"
+catalogue_id = "Usuarium 4480; Janini 629"
+qualification = "Catalogue-only manuscript witness assigned to Tarragona by USUARIUM after Janini. Origin, date and Mass-book contents are unchecked; no stage."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "catalogue-witness-only; substantive-difference-not-established"
+date_role = "manuscript-date-reported-by-catalogue"
+acquisition_status = "catalogue-card-acquired; original-book-not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+holding = "Reus, Museu Municipal, Ms. without shelfmark"
+chronology_start = 1396
+chronology_end = 1396
+chronology_kind = "manuscript-witness-date"
+chronology_certainty = "inspected-catalogue-metadata; approximate-date; original-uninspected"
+
+[[sources]]
 id = "iberian-usuarium-58"
 url = "https://usuarium.elte.hu/book/58/view"
 type = "institutional-research-catalogue"
@@ -40004,12 +40197,12 @@ title = "Missale Urgellense"
 date = "1536"
 kind = "historic-local-use-catalogue-witness"
 status = "checked-individual-research-catalogue"
-sources = ["iberian-usuarium-7002", "iberian-usuarium-7623"]
+sources = ["iberian-usuarium-7002", "iberian-usuarium-7623", "iberian-batch5-pallares-2015-urgell", "iberian-batch5-altes-2007-urgell"]
 route = "https://usuarium.elte.hu/book/7002/view"
 catalogue_id = "Usuarium 7002: Amiet, 1612; Usuarium 7623: Amiet, 1612 USTC, 344667"
-qualification = "Amiet 1612 and 1536 agree. Record 7002 names Georgius Coci and Montserrat XVI*8º*628; 7623 supplies USTC 344667 but no holding/printer. These may be duplicate or copy records of one printing; distinct physical copy for 7623 is unestablished. Original complete books and substantive text comparison uninspected. New witness metadata does not establish a reform, independent recension, permission or adoption."
+qualification = "Amiet 1612 and 1536 agree. Record 7002 names Georgius Coci and Montserrat XVI*8º*628; 7623 supplies USTC 344667 but no holding/printer. These may be duplicate or copy records of one printing; distinct physical copy for 7623 is unestablished. Original complete books and substantive text comparison uninspected. New witness metadata does not establish a reform, independent recension, permission or adoption. South batch 5 (2026-10-22): Pallarés Jiménez (2015) transcribes the 7 January 1535 contract for 600 folio and 600 quarto Urgell missals and reproduces a title page Missale secundum ritum ac consuetudinem insignis ecclesie Urgellen. (copy unnamed); Sánchez no. 203 reports a quarto with Coci's mark and a reference to 1535; Altés i Aguiló (2007, p. 17) dates the folio and quarto double edition 1536. Documents stage iberian-historic-batch4:urgell-1536 with 1535–1536 bounds; whether folio and quarto differ in text is unknown."
 scope_disposition = "in-scope-original-book-or-historical-witness"
-version_status = "catalogue-witness-only; substantive-difference-not-established"
+version_status = "documented-publication-state-from-scholarship-and-contract; substantive-difference-not-established"
 date_role = "publication-year-reported-by-catalogue"
 acquisition_status = "whole-catalogue-responses-acquired; original-book-not-acquired"
 transcription_status = "not-transcribed"
@@ -40054,6 +40247,135 @@ chronology_kind = "publication-witness-date"
 chronology_certainty = "inspected-catalogue-metadata; original-imprint-uninspected"
 
 [[sources]]
+id = "iberian-usuarium-588"
+url = "https://usuarium.elte.hu/book/588/view"
+type = "institutional-research-catalogue"
+title = "USUARIUM 588: Missale Urgellense 1509"
+checked_on = "2026-10-22"
+inspection = "Public book card retrieved 2026-10-22: original titles Feriale missarum secundum ordinem Urgellensis ecclesiae | Missale cum tabula secundum novam regulam Urgellinae sedis per honorabile capitulum ordinatum et correctum; Age 1509; Printer Stagnino, Bernardinus I.; BnF Paris, Velins 788; Weale-Bohatta 1611; contents index from temporal 1r to table 219v."
+limitations = "Catalogue metadata and index only; no original page image consulted."
+status = "inspected"
+
+[[sources]]
+id = "iberian-batch5-bnf-urgell-1509"
+url = "https://catalogue.bnf.fr/ark:/12148/cb368180310"
+type = "institutional-catalogue-record"
+title = "BnF FRBNF36818031: Incipit feriale missarum secundum ordinem Urgellensis Ecclesie (Venice 1509)"
+checked_on = "2026-10-22"
+inspection = "UNIMARC record via the BnF SRU API: transcribed colophon, Venice, Bernardinus de Tridino for the Barcelona bookseller Calminius Ferrerius, 15 January 1509; CCXIX leaves; Vélins 788; microfilm M-10186."
+limitations = "Catalogue transcription only; no digitization linked."
+status = "inspected"
+
+[[sources]]
+id = "iberian-batch5-altes-2007-urgell"
+url = "https://publicacions.iec.cat/repository/pdf/00000400/00000074.pdf"
+type = "scholarship"
+title = "Altés i Aguiló, El processoner de la Seu d'Urgell imprès l'any 1527 (IEC 2007)"
+checked_on = "2026-10-22"
+inspection = "Printed pp. 7–8 (n. 1), 17 (n. 39) and 40 (n. 91) viewed as page images: Venice 1509 missal under Bishop Pere de Cardona; 1536 Coci double edition in quarto and folio; Trinity Sunday after Pentecost in the 1509 missal, f. 102."
+limitations = "Introduction to a processional facsimile; missals described in passing."
+status = "inspected"
+
+[[sources]]
+id = "iberian-batch5-pallares-2015-urgell"
+url = "https://ifc.dpz.es/recursos/publicaciones/35/30/14pallares.pdf"
+type = "scholarship-with-transcribed-primary-act"
+title = "Pallarés Jiménez, Contratos de impresión de libros litúrgicos catalanes ... Jorge Coci, Turiaso XXII (2014–2015), 341–362"
+checked_on = "2026-10-22"
+inspection = "Pp. 348–351 and appendix doc. 7 (pp. 360–361) read, with pp. 349–350 and 359–360 and the fig. 1 title-page reproduction viewed as images: 7 January 1535 contract for 600 folio and 600 quarto Urgell missals and 600 manuals from originals corrected by Perot Moluer."
+limitations = "Contract read in the author's transcription; the reproduced copy is not named."
+status = "inspected"
+
+[[candidates]]
+id = "iberian-urgell-1509"
+family = "historic-urgell-use"
+title = "Feriale missarum secundum ordinem Urgellensis ecclesie (Missale Urgellense), Venice: Bernardinus Stagninus 1509"
+date = "15 January 1509"
+kind = "historic-local-use-scholarly-described-edition"
+status = "scholarly-description-and-catalogue-transcription-inspected"
+sources = ["iberian-usuarium-588", "iberian-batch5-bnf-urgell-1509", "iberian-batch5-altes-2007-urgell"]
+route = "https://catalogue.bnf.fr/ark:/12148/cb368180310"
+catalogue_id = "BnF FRBNF36818031 (Vélins 788); Weale-Bohatta 1611; Usuarium 588"
+qualification = "Exact BnF copy known through its catalogue transcription and the USUARIUM index; Altés i Aguiló (2007) describes the 1509 Venice printing under Bishop Pere de Cardona and cites the La Seu d'Urgell chapter-archive copy at f. 102. No original leaf viewed. Documents stage iberian-historic-batch4:urgell-1509."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "documented-publication-state-from-scholarship; substantive-difference-not-established"
+date_role = "colophon-date-transcribed-by-catalogue"
+acquisition_status = "catalogue-records-and-scholarship-acquired; original-book-not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+holding = "BnF Paris, Réserve, Vélins 788; La Seu d'Urgell, Arxiu Capitular (cited by Altés)"
+chronology_start = 1509
+chronology_end = 1509
+chronology_kind = "publication"
+chronology_certainty = "colophon-date-from-catalogue-transcription; original-leaf-uninspected"
+
+[[sources]]
+id = "iberian-usuarium-1254"
+url = "https://usuarium.elte.hu/book/1254/view"
+type = "institutional-research-catalogue"
+title = "USUARIUM 1254: Arch. Cap. La Seu d'Urgell Ms. III"
+checked_on = "2026-10-22"
+inspection = "Public book card retrieved 2026-10-22: original title Officium secundum usum ecclesiae Urgellensis; Missal; Age 1388-1415; manuscript; Arch. Cap. La Seu d'Urgell, Ms. III; remark Missal of bishop Galcerán de Vilanova; contents index (calendar, temporal, Ordinary for a bishop, prefaces, Canon, sanctoral, votive and common Masses)."
+limitations = "Catalogue metadata and index only; no image."
+status = "inspected"
+
+[[candidates]]
+id = "iberian-urgell-ms-iii-galceran"
+family = "historic-urgell-use"
+title = "Missal of Bishop Galcerán de Vilanova, La Seu d'Urgell Arxiu Capitular Ms. III"
+date = "1388-1415"
+kind = "historic-local-use-catalogue-witness"
+status = "checked-individual-research-catalogue"
+sources = ["iberian-usuarium-1254"]
+route = "https://usuarium.elte.hu/book/1254/view"
+catalogue_id = "Usuarium 1254"
+qualification = "Catalogue-only manuscript witness; the date range is the bishop's tenure as given by the catalogue, not an inspected copying date. Altés i Aguiló (2007, p. 40 n. 91) cites it for the placement of Trinity Sunday without a folio. No stage."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "catalogue-witness-only; substantive-difference-not-established"
+date_role = "manuscript-date-range-reported-by-catalogue"
+acquisition_status = "catalogue-card-acquired; original-book-not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+holding = "La Seu d'Urgell, Arxiu Capitular, Ms. III"
+chronology_start = 1388
+chronology_end = 1415
+chronology_kind = "manuscript-witness-date"
+chronology_certainty = "inspected-catalogue-metadata; original-uninspected"
+
+[[sources]]
+id = "iberian-usuarium-1390"
+url = "https://usuarium.elte.hu/book/1390/view"
+type = "institutional-research-catalogue"
+title = "USUARIUM 1390: Vic, Arxiu i Biblioteca Episcopal Ms. 075"
+checked_on = "2026-10-22"
+inspection = "Public book card retrieved 2026-10-22: Missale Urgellense; Missal; Age 1400-1500; Arx. Bibl. Ep. Vic, Ms. 075; Catalogue Janini 831; origin assigned to La Seu d'Urgell."
+limitations = "Catalogue metadata only; no contents index or image."
+status = "inspected"
+
+[[candidates]]
+id = "iberian-urgell-vic-ms-075"
+family = "historic-urgell-use"
+title = "Missale Urgellense, Vic Arxiu i Biblioteca Episcopal Ms. 075"
+date = "1400-1500"
+kind = "historic-local-use-catalogue-witness"
+status = "checked-individual-research-catalogue"
+sources = ["iberian-usuarium-1390"]
+route = "https://usuarium.elte.hu/book/1390/view"
+catalogue_id = "Usuarium 1390; Janini 831"
+qualification = "Catalogue-only manuscript witness assigned to Urgell by USUARIUM after Janini; origin and contents unchecked. No stage."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "catalogue-witness-only; substantive-difference-not-established"
+date_role = "manuscript-date-range-reported-by-catalogue"
+acquisition_status = "catalogue-card-acquired; original-book-not-acquired"
+transcription_status = "not-transcribed"
+collation_status = "not-collated"
+holding = "Vic, Arxiu i Biblioteca Episcopal, Ms. 075"
+chronology_start = 1400
+chronology_end = 1500
+chronology_kind = "manuscript-witness-date"
+chronology_certainty = "inspected-catalogue-metadata; original-uninspected"
+
+[[sources]]
 id = "iberian-usuarium-7625"
 url = "https://usuarium.elte.hu/book/7625/view"
 type = "institutional-research-catalogue"
@@ -40079,22 +40401,22 @@ family = "historic-valencia-use"
 title = "Missale Valentinum"
 date = "1509"
 kind = "historic-local-use-catalogue-witness"
-status = "checked-individual-research-catalogue"
+status = "original-title-calendar-colophon-and-table-inspected"
 sources = ["iberian-usuarium-7625", "iberian-usuarium-6999", "iberian-batch4-valencia-1509-roderic"]
 route = "https://usuarium.elte.hu/book/7625/view"
 catalogue_id = "Usuarium 7625: Amiet, 1617 USTC, 813222; Usuarium 6999: Amiet, 1617"
-qualification = "Matching original title, year 1509 and Amiet 1617 identify two catalogue copies of the same listed printing: Valencia BH R-1/018 (USTC 813222) and Catalunya 1 VI 26. Original imprints and copy differences remain uncollated. Original complete books and substantive text comparison uninspected. New witness metadata does not establish a reform, independent recension, permission or adoption. Batch 4 inspected title, January calendar, colophon and table of the Universitat de València digitization (Roderic 10550/7813), which documents stage iberian-historic-batch4:valencia-1509; its shelfmark is not displayed, so copy identity with BH R-1/018 is unchecked."
+qualification = "Matching original title, year 1509 and Amiet 1617 identify two catalogue copies of the same listed printing: Valencia BH R-1/018 (USTC 813222) and Catalunya 1 VI 26. Original imprints and copy differences remain uncollated. Original complete books and substantive text comparison uninspected. New witness metadata does not establish a reform, independent recension, permission or adoption. Batch 4 inspected title, January calendar, colophon and table of the Universitat de València digitization (Roderic 10550/7813), which documents stage iberian-historic-batch4:valencia-1509; its shelfmark is not displayed, so copy identity with BH R-1/018 is unchecked. South batch 5 (2026-10-22) requalified the status fields from batch 4's accepted evidence after re-viewing the Roderic colophon image (0727): the edition's 19 May 1509 colophon date is read in the original, but the Roderic copy's shelfmark is not displayed, so its identity with BH R-1/018 or Catalunya 1 VI 26 remains unchecked."
 scope_disposition = "in-scope-original-book-or-historical-witness"
-version_status = "catalogue-witness-only; substantive-difference-not-established"
-date_role = "publication-year-reported-by-catalogue"
-acquisition_status = "whole-catalogue-responses-acquired; original-book-not-acquired"
+version_status = "documented-publication-state; substantive-difference-bounded-to-january-calendar"
+date_role = "printing-completion-date-read-in-original-colophon"
+acquisition_status = "selected-original-page-images-acquired-scratch-only; catalogue-responses-acquired"
 transcription_status = "not-transcribed"
-collation_status = "not-collated"
+collation_status = "january-calendar-and-tables-compared-with-1528"
 holding = "BU Valencia, BH R-1/018; Bibl. Catalunya Barcelona, 1 VI 26"
 chronology_start = 1509
 chronology_end = 1509
-chronology_kind = "publication-witness-date"
-chronology_certainty = "inspected-catalogue-metadata; original-imprint-uninspected"
+chronology_kind = "publication"
+chronology_certainty = "original-colophon-page-image-inspected-in-roderic-copy; copy-identity-with-listed-holdings-unchecked"
 
 [[sources]]
 id = "iberian-batch4-valencia-1509-roderic"
@@ -40120,22 +40442,22 @@ family = "historic-valencia-use"
 title = "Missale Valentinum"
 date = "1528"
 kind = "historic-local-use-catalogue-witness"
-status = "checked-individual-research-catalogue"
+status = "original-title-calendar-colophon-and-table-inspected"
 sources = ["iberian-usuarium-7626", "iberian-batch4-valencia-1528-roderic"]
 route = "https://usuarium.elte.hu/book/7626/view"
 catalogue_id = "Usuarium 7626: Amiet, 1618 USTC, 338425"
-qualification = "Valencia 1528 missal: BU Valencia BH R-2/152, Amiet 1618 / USTC 338425. Different date alone does not establish revision. Original complete books and substantive text comparison uninspected. New witness metadata does not establish a reform, independent recension, permission or adoption. Batch 4 inspected title, January calendar, colophon and table of the digitization (Roderic 10550/52560), which documents stage iberian-historic-batch4:valencia-1528 and a bounded calendar change from 1509."
+qualification = "Valencia 1528 missal: BU Valencia BH R-2/152, Amiet 1618 / USTC 338425. Different date alone does not establish revision. Original complete books and substantive text comparison uninspected. New witness metadata does not establish a reform, independent recension, permission or adoption. Batch 4 inspected title, January calendar, colophon and table of the digitization (Roderic 10550/52560), which documents stage iberian-historic-batch4:valencia-1528 and a bounded calendar change from 1509. South batch 5 (2026-10-22) requalified the status fields from batch 4's accepted evidence after re-viewing the colophon image (0532): Zaragoza, Coci, 1528 is read in the original; the day formula remains ambiguous. The Roderic record gives BH R-2/150–152, of which the listed BH R-2/152 is part."
 scope_disposition = "in-scope-original-book-or-historical-witness"
-version_status = "catalogue-witness-only; substantive-difference-not-established"
-date_role = "publication-year-reported-by-catalogue"
-acquisition_status = "whole-catalogue-responses-acquired; original-book-not-acquired"
+version_status = "documented-publication-state; substantive-difference-bounded-to-january-calendar"
+date_role = "printing-completion-date-read-in-original-colophon"
+acquisition_status = "selected-original-page-images-acquired-scratch-only; catalogue-responses-acquired"
 transcription_status = "not-transcribed"
-collation_status = "not-collated"
+collation_status = "january-calendar-and-tables-compared-with-1509"
 holding = "BU Valencia, BH R-2/152"
 chronology_start = 1528
 chronology_end = 1528
-chronology_kind = "publication-witness-date"
-chronology_certainty = "inspected-catalogue-metadata; original-imprint-uninspected"
+chronology_kind = "publication"
+chronology_certainty = "original-colophon-page-image-inspected; day-formula-ambiguous"
 
 [[sources]]
 id = "iberian-batch4-valencia-1528-roderic"
@@ -40224,11 +40546,11 @@ date = "1522"
 kind = "historic-local-use-original-book-witness"
 status = "inspected-original-title-letter-and-colophon"
 sources = ["iberian-batch4-zaragoza-buz-h-1-152"]
-catalogue_id = "Zaguán 74837; compare CCPB000017862-4 (1522) and USTC 336798 / Amiet 222 (1540)"
-qualification = "Exact digitized copy whose colophon dates printing to 15 February 1522 and whose preface letter (21 March 1522) describes archiepiscopal correction and chapter commissioning. The holding library dates it 1540, so it is kept separate from the catalogue witnesses iberian-zaragoza-1522 and iberian-zaragoza-1540 until edition identity is settled. Documents stage iberian-historic-batch4:zaragoza-1522 with 1522–1540 date bounds."
+catalogue_id = "Zaguán 74837; collation matches USTC 336798 / Sánchez 224 / Amiet 222 (dated 1540); differs from USTC 348443 / Sánchez 109 / CCPB000017862-4 (1522)"
+qualification = "Exact digitized copy whose colophon dates printing to 15 February 1522 and whose preface letter (21 March 1522) describes archiepiscopal correction and chapter commissioning. The holding library dates it 1540, so it is kept separate from the catalogue witnesses iberian-zaragoza-1522 and iberian-zaragoza-1540 until edition identity is settled. Documents stage iberian-historic-batch4:zaragoza-1522 with 1522–1540 date bounds. South batch 5 (2026-10-22): the copy ends at f. CCLXXVI with final signature M (PDF pp. 600–605 re-viewed), matching the [24] + 276-leaf edition that USTC 336798 and Sánchez 224 date 1540 (as does the Zaguán record), not the [24] + CCX-leaf edition that USTC 348443 and Sánchez 109 date 1522. Its leaf count and final signature thus agree with the edition catalogued as iberian-zaragoza-1540, yet it prints a 1522 colophon; whether that edition reprints the 1522 colophon or is misdated could not be settled because CCPB and BNE refused access."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "documented-publication-state; substantive-difference-bounded-to-holy-day-list"
-date_role = "colophon-1522; holding-catalogue-1540; unresolved"
+date_role = "colophon-1522; edition-collation-matches-catalogue-1540; unresolved"
 acquisition_status = "whole-pdf-acquired-scratch-only"
 transcription_status = "not-transcribed"
 collation_status = "holy-day-list-compared-with-1498"
@@ -40292,7 +40614,7 @@ status = "checked-individual-research-catalogue"
 sources = ["iberian-usuarium-6997"]
 route = "https://usuarium.elte.hu/book/6997/view"
 catalogue_id = "Usuarium 6997: Amiet, 222 USTC, 336798"
-qualification = "1540 Missale Caesaraugustanum catalogue witness; no collation against 1522/1531 or adoption act examined. Original complete books and substantive text comparison uninspected. New witness metadata does not establish a reform, independent recension, permission or adoption."
+qualification = "1540 Missale Caesaraugustanum catalogue witness; no collation against 1522/1531 or adoption act examined. Original complete books and substantive text comparison uninspected. New witness metadata does not establish a reform, independent recension, permission or adoption. South batch 5 (2026-10-22): the Universidad de Zaragoza digitized copy H-1-152 (candidate iberian-zaragoza-buz-h-1-152) has this edition's 276-leaf collation but a colophon dated 1522; the 1540 date of the edition is therefore questioned, not confirmed."
 scope_disposition = "in-scope-original-book-or-historical-witness"
 version_status = "catalogue-witness-only; substantive-difference-not-established"
 date_role = "publication-year-reported-by-catalogue"
@@ -40374,9 +40696,9 @@ id = "historic-tarragona-use"
 title = "Tarragona local Mass-book catalogue witnesses"
 status = "bounded-assigned-amiet-catalogue-witness-census"
 scope = "western-original-source-trajectory"
-sources = ["iberian-usuarium-1783", "iberian-usuarium-9036"]
-candidate_ids = ["iberian-tarragona-1550"]
-remaining_work = "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage.\n\nBatch 4 originals 2026-10-21: the 1499 Rosembach missal (GW M24774) is digitized at BVPB 397105 but was unreachable (HTTP 429); no stage. Gap iberian-historic-batch4:tarragona-originals."
+sources = ["iberian-usuarium-1783", "iberian-usuarium-9036", "iberian-usuarium-59", "iberian-batch5-altes-2011-tarragona", "iberian-usuarium-4480"]
+candidate_ids = ["iberian-tarragona-1550", "iberian-tarragona-1499", "iberian-tarragona-reus-ms-c1396"]
+remaining_work = "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage.\n\nBatch 4 originals 2026-10-21: the 1499 Rosembach missal (GW M24774) is digitized at BVPB 397105 but was unreachable (HTTP 429); no stage. Gap iberian-historic-batch4:tarragona-originals.\n\nSouth batch 5 2026-10-22: BVPB still refused (HTTP 429). Stage iberian-historic-batch4:tarragona-1499 is documented from Altés i Aguiló (2011) pp. 5 and 12 and the USUARIUM 59 index, without an original leaf; the Reus manuscript (c. 1396) is added as a catalogue witness."
 
 [[coverage]]
 id = "historic-tarazona-use"
@@ -40392,9 +40714,9 @@ id = "historic-urgell-use"
 title = "La Seu D'Urgell local Mass-book catalogue witnesses"
 status = "bounded-assigned-amiet-catalogue-witness-census"
 scope = "western-original-source-trajectory"
-sources = ["iberian-usuarium-7002", "iberian-usuarium-7623", "iberian-usuarium-7624"]
-candidate_ids = ["iberian-urgell-1536", "iberian-urgell-1557"]
-remaining_work = "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage.\n\nBatch 4 originals 2026-10-21: GW records no Urgell incunable; bounded CCPB, MDC, Europeana and Zaguán searches found no digitization; no stage. Gap iberian-historic-batch4:urgell-originals."
+sources = ["iberian-usuarium-7002", "iberian-usuarium-7623", "iberian-usuarium-7624", "iberian-usuarium-588", "iberian-batch5-bnf-urgell-1509", "iberian-batch5-altes-2007-urgell", "iberian-batch5-pallares-2015-urgell", "iberian-usuarium-1254", "iberian-usuarium-1390"]
+candidate_ids = ["iberian-urgell-1536", "iberian-urgell-1557", "iberian-urgell-1509", "iberian-urgell-ms-iii-galceran", "iberian-urgell-vic-ms-075"]
+remaining_work = "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage.\n\nBatch 4 originals 2026-10-21: GW records no Urgell incunable; bounded CCPB, MDC, Europeana and Zaguán searches found no digitization; no stage. Gap iberian-historic-batch4:urgell-originals.\n\nSouth batch 5 2026-10-22: the 1509 Venice printing (BnF Vélins 788) and the 1535–1536 Coci printing are documented from Altés i Aguiló (2007), Pallarés Jiménez (2015, with the transcribed 1535 contract and a reproduced title page), the BnF record and USUARIUM indexes, without direct original-leaf inspection of either book. Manuscript missals Ms. III (Galcerán de Vilanova) and Vic Ms. 075 are added as catalogue witnesses."
 
 [[coverage]]
 id = "historic-valencia-use"
@@ -40403,7 +40725,7 @@ status = "bounded-assigned-amiet-catalogue-witness-census"
 scope = "western-original-source-trajectory"
 sources = ["iberian-usuarium-7625", "iberian-usuarium-6999", "iberian-usuarium-7626", "iberian-batch4-valencia-1509-roderic", "iberian-batch4-valencia-1528-roderic"]
 candidate_ids = ["iberian-valencia-1509", "iberian-valencia-1528"]
-remaining_work = "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage.\n\nBatch 4 originals 2026-10-21: 1509 and 1528 originals inspected at title, January calendar and colophon; stages and a bounded calendar change are in dossier iberian-historic-batch4. The 1492 incunable remains unseen."
+remaining_work = "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage.\n\nBatch 4 originals 2026-10-21: 1509 and 1528 originals inspected at title, January calendar and colophon; stages and a bounded calendar change are in dossier iberian-historic-batch4. The 1492 incunable remains unseen.\n\nSouth batch 5 2026-10-22: candidate status, date-role, collation and chronology-certainty fields requalified to the inspected colophons; copy identity of the 1509 Roderic copy remains unchecked."
 
 [[coverage]]
 id = "historic-zaragoza-use"
@@ -40412,7 +40734,7 @@ status = "bounded-assigned-amiet-catalogue-witness-census"
 scope = "western-original-source-trajectory"
 sources = ["iberian-usuarium-6995", "iberian-usuarium-6996", "iberian-usuarium-6997", "iberian-usuarium-6998", "iberian-batch4-zaragoza-1498-toledo", "iberian-batch4-zaragoza-buz-h-1-152"]
 candidate_ids = ["iberian-zaragoza-1522", "iberian-zaragoza-1531", "iberian-zaragoza-1540", "iberian-zaragoza-1598", "iberian-zaragoza-1498", "iberian-zaragoza-buz-h-1-152"]
-remaining_work = "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage.\n\nBatch 4 originals 2026-10-21: original 1498 Hurus and 1522 Coci copies inspected at title, holy-day list and colophon; stages and one holy-day-list change are in dossier iberian-historic-batch4. The 1522 copy is catalogued 1540 by its library; that conflict remains open."
+remaining_work = "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage.\n\nBatch 4 originals 2026-10-21: original 1498 Hurus and 1522 Coci copies inspected at title, holy-day list and colophon; stages and one holy-day-list change are in dossier iberian-historic-batch4. The 1522 copy is catalogued 1540 by its library; that conflict remains open.\n\nSouth batch 5 2026-10-22: H-1-152 collates with the 276-leaf edition catalogued as 1540 (USTC 336798), not with the CCX-leaf 1522 record (USTC 348443), while printing a 1522 colophon. The edition date stays unresolved pending a copy of each edition."
 
 [[coverage]]
 id = "historic-huesca-use"

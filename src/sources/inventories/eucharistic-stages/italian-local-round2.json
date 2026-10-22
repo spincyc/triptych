@@ -230,8 +230,8 @@
       "title": "Missale Aquileiense, Augsburg: Erhard Ratdolt 1494, NUK Ljubljana copy, dLib URN:NBN:SI:DOC-GKJAQ0TO",
       "url": "https://www.dlib.si/details/URN:NBN:SI:DOC-GKJAQ0TO",
       "kind": "primary-book",
-      "inspection": "Whole public-domain PDF (532 pages) downloaded 2026-10-21; PDF p. 5 preface of Jacobus Gordinus naming Osvaldus Spetel of Villach and Erhard Ratdolt, p. 13 July calendar, p. 521 colophon (Augsburg, Erhard Ratdolt, x kal. Januarii 1494).",
-      "checked_on": "2026-10-21",
+      "inspection": "Whole public-domain PDF (532 pages) downloaded 2026-10-21; PDF p. 5 preface of Jacobus Gordinus naming Osvaldus Spetel of Villach and Erhard Ratdolt, p. 13 July calendar, p. 521 colophon (Augsburg, Erhard Ratdolt, x kal. Januarii 1494). On 2026-10-22 the Canon section (PDF pp. 277–282, ff. XXII–XXIIII) was read as page images from the hash-verified batch-4 copy.",
+      "checked_on": "2026-10-22",
       "status": "inspected",
       "limitations": "Only the named pages viewed; body not collated."
     },
@@ -264,6 +264,16 @@
       "checked_on": "2026-10-21",
       "status": "inspected",
       "limitations": "A scholar's manuscript study; the 1617 book and its decree were not inspected by this lane."
+    },
+    {
+      "id": "italian-local-round2:benevento33-pm20",
+      "title": "Le missel de Bénévent VI-33, Paléographie musicale XX (Bern: Peter Lang, 1983), introduction by J. Hourlier, tables by J. Froger, with complete facsimile",
+      "url": "https://archive.org/details/palographiemusic20macq",
+      "kind": "critical-edition",
+      "inspection": "Complete University of Ottawa digitization acquired 2026-10-22 (32,313,093 bytes). Introduction pp. 12*, 17* and 18* (PDF 16, 21, 22) read as page images: plenary missal of Romano-Frankish liturgy, beginning lost up to the Christmas Vigil, Preface and Canon at the Easter Vigil (f. 80); no title, colophon or calendar; dated by script and notation to the early eleventh century, earlier authors having proposed the late tenth; Communicantes adds Hilary, Martin, Jerome, Ambrose, Augustine, Gregory, Benedict and Isidore; the Pater embolism names Bartholomew after Peter, Paul and Andrew; the editors conclude Beneventan origin in the early eleventh century, probably for a Benedictine monastery, with long later use shown by corrections. Facsimile plates ff. 80r–81r (PDF 231–233) viewed by the research fork.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Modern critical facsimile, copyright Peter Lang; loci cited only. The archive.org metadata mislabels the year as 1889. Origin is the editors' inference from the embolism and sanctoral; they state that presence in the episcopal library alone does not prove Beneventan origin. No literal transcription made here."
     }
   ],
   "stages": [
@@ -278,13 +288,14 @@
       "status": "documented",
       "scope": "Local Missal book identity from inspected front leaves; text extent not collated.",
       "components": [
-        "propers"
+        "propers",
+        "anaphoras"
       ],
       "witness_ids": [
         "western:italian-aquileia-1494"
       ],
       "witness_label": "Missale Aquileiense, 1494 facsimile",
-      "summary": "The facsimile frontispiece names the Aquileian church; its date is catalogue attributed.",
+      "summary": "The facsimile frontispiece names the Aquileian church; the colophon dates completion at Augsburg, 23 December 1494. The Canon's Communicantes and Libera nos carry the Roman saint lists without local additions.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {
@@ -301,9 +312,14 @@
           "source_id": "italian-local-round2:aquileia1494-dlib",
           "locus": "PDF p. 5 preface; p. 521 colophon",
           "claim": "The book's own colophon dates completion at Augsburg by Erhard Ratdolt, x kal. Januarii 1494; the preface names the sponsor and printer."
+        },
+        {
+          "source_id": "italian-local-round2:aquileia1494-dlib",
+          "locus": "Canon, separately foliated: f. XXII Te igitur (PDF p. 277); Communicantes (PDF p. 278); Nobis quoque (PDF p. 281); Libera nos (PDF p. 282)",
+          "claim": "The Canon's Communicantes list runs from Mary through Cosmas and Damian and the Libera nos names Mary, Peter, Paul and Andrew only: the Roman forms, with no Aquileian saint added."
         }
       ],
-      "limitations": "The 1494 date is now read from the colophon (earlier facsimile images 4–6 and 525–529 did not show it). No new text compared with any predecessor is established.",
+      "limitations": "The 1494 date is now read from the colophon (earlier facsimile images 4–6 and 525–529 did not show it). No new text compared with any predecessor is established. The Canon pages were read as images on 2026-10-22; the 1517 Canon leaves were not located in the BSB copy, so no 1494–1517 Canon comparison is made.",
       "reception": "Local intended book identity, not documented adoption at each church."
     },
     {
@@ -517,16 +533,21 @@
         "western:italian-benevento-vi33"
       ],
       "witness_label": "Benevento Chapter Library Cod. VI.33",
-      "summary": "Usuarium identifies the shelfmarked manuscript and its indexed Mass components.",
+      "summary": "Usuarium identifies the shelfmarked manuscript and its indexed Mass components. The 1983 Paléographie musicale facsimile describes a plenary missal of Romano-Frankish liturgy with Preface and Canon placed at the Easter Vigil, a Communicantes extended with Hilary, Martin, Jerome, Ambrose, Augustine, Gregory, Benedict and Isidore, and a Pater embolism naming Bartholomew, and attributes it to Benevento in the early eleventh century, probably for a Benedictine monastery.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {
           "source_id": "italian-local-round2:benevento33",
           "locus": "shelfmark, age and contents rows pp.61,71,83,197–279",
           "claim": "A single VI.33 manuscript is attested, with a catalogue preference for early eleventh-century date."
+        },
+        {
+          "source_id": "italian-local-round2:benevento33-pm20",
+          "locus": "introduction pp. 12*, 17*–18* (PDF 16, 21–22)",
+          "claim": "Critical facsimile edition describes a plenary Romano-Frankish missal lacking its opening, with Preface and Canon at the Easter Vigil, an extended Communicantes and a Bartholomew embolism, and dates it to the early eleventh century from script and notation."
         }
       ],
-      "limitations": "Catalogue aliases 938/1299/6276 are not separate books; no complete text or rite-wide use established.",
+      "limitations": "Catalogue aliases 938/1299/6276 are not separate books; no complete text or rite-wide use established. The 1000–1025 bounds follow the catalogue and agree with the editors' 'first decades of the eleventh century'; earlier authors proposed the late tenth century. Beneventan origin and monastic destination are the editors' inference from the embolism and sanctoral, not a colophon.",
       "reception": "Benevento holding and apparent origin do not prove every local church used its text."
     },
     {
@@ -700,8 +721,8 @@
       "id": "italian-local-round2:aquileia-collation",
       "tradition_id": "italian-local-round2:aquileia",
       "period": "before 1494 through 1519",
-      "missing": "Original text and authority of the identified printings beyond title, preface, calendar and colophon (1494 Ratdolt colophon and 1517 Pentius/Oswald colophon now read); the separate 1517 Liechtenstein edition and the 1508 Giunta and 1519 printings in original; earlier manuscript relation; actual local reception.",
-      "next_source": "Collate 1494 (dLib) and 1517 BSB Ordinary, Canon and sanctoral; Peressotti 2007 facsimile of the Liechtenstein 1517; Braidense 1508 (USTC 810137) and Gorizia 1519 originals.",
+      "missing": "Original text and authority of the identified printings beyond title, preface, calendar and colophon (1494 Ratdolt colophon and 1517 Pentius/Oswald colophon now read); the separate 1517 Liechtenstein edition and the 1508 Giunta and 1519 printings in original; earlier manuscript relation; actual local reception. The 1494 Canon (ff. XXII–XXIIII) is now read: its Communicantes and Libera nos give the Roman saint lists; the 1517 BSB copy's Canon leaves were not located in canvases 252–315, so no Canon comparison exists.",
+      "next_source": "Locate the 1517 BSB Canon (beyond canvas 315 or a missing gathering) and collate it with 1494 dLib PDF pp. 277–282; then Ordinary and sanctoral; Peressotti 2007 facsimile of the Liechtenstein 1517; Braidense 1508 (USTC 810137) and Gorizia 1519 originals.",
       "consequence": "Four publication events cannot be counted as three liturgical revisions or a use duration."
     },
     {
@@ -716,8 +737,8 @@
       "id": "italian-local-round2:benevento-identity",
       "tradition_id": "italian-local-round2:benevento",
       "period": "eleventh–twelfth centuries",
-      "missing": "Physical dating, component readings and liturgical provenance of VI.33 and VI.29.",
-      "next_source": "Inspect original manuscripts or full facsimiles, colophons, calendar, Canon and additions; separate script from use.",
+      "missing": "VI.29's physical dating, component readings and liturgical provenance; literal collation of VI.33 against its facsimile; actual use of either book. VI.33's dating, contents and probable Beneventan Benedictine origin are now described in the 1983 Paléographie musicale XX critical facsimile.",
+      "next_source": "Read the remaining Paléographie musicale XX introduction and tables (Holy Week, the f. 68v secundum ambrosianum rubric, Sunday readings) against the plates; locate a facsimile or description of VI.29 (formerly BL Egerton 3511).",
       "consequence": "The two shelfmarks and their custody do not define one Beneventan recension."
     },
     {

@@ -182,6 +182,46 @@
       "checked_on": "2026-10-17",
       "status": "inspected",
       "limitations": "Official confirmation entry identifies language and liturgical occasions; neither prayer text nor approved exemplar is printed in this entry."
+    },
+    {
+      "id": "ambrosian-1609-book",
+      "title": "Missale Ambrosianum Federici Card. Borromaei iussu recognitum et editum, Venice: Ioannes Zanettus (engraved frame: Io. Iacobus Comus), 1609; Národní knihovna České republiky, 33 B 22 (Manuscriptorium)",
+      "url": "http://www.manuscriptorium.com/apps/index.php?direct=record&pid=NKCR__-NKCR__33_B_000022_2Y1YFN1-cs",
+      "kind": "primary-book",
+      "inspection": "Institutional IIIF images retrieved 2026-10-22 and viewed: IMG 9 engraved title (Missale Ambrosianum ... Federici Card. Borromaei ... Iussu recognitum, & editum; frame imprint Venetiis apud Io. Iacobum Comum M.D.C.IX; Prague ownership inscription of 1630); IMG 11 Federico Borromeo's letter to the Milanese clergy (no dateline); IMG 16 February calendar; IMG 290 Sanctoral for early February; IMG 444, fol. 202v, register and colophon Venetiis apud Ioannem Zanettum M.DC.IX.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Selected images only; NoC-NC rights statement; images retained in scratch. Frame and colophon name different Venetian printers. A Missa S. Caroli printed at Milan in 1611 is bound in after fol. 202 and is not part of the 1609 book."
+    },
+    {
+      "id": "ambrosian-2026-book",
+      "title": "Missale Ambrosianum iuxta ritum sanctae Ecclesiae Mediolanensis, editio typica altera 2026, pre-press PDF (archive.org missale-ambrosianum-2026)",
+      "url": "https://archive.org/details/missale-ambrosianum-2026",
+      "kind": "primary-book",
+      "inspection": "Complete 904-page born-digital PDF acquired 2026-10-22 (12,973,596 bytes); colophon p. IV (Editio typica 1981 / Editio typica altera 2026, ISBN 978-88-6894-862-7) and pp. 237–238, 378, 669–670 (PDF 313–314, 454, 745–746) viewed as rendered page images.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "A pre-press file with typesetting headers dated February 2026, uploaded by the typesetter; identity with the printed book is likely but not verified. Text rights reserved; scratch only, no wording reproduced beyond incipits."
+    },
+    {
+      "id": "ambrosian-roman-1970",
+      "title": "Missale Romanum ex decreto Sacrosancti Oecumenici Concilii Vaticani II instauratum, editio typica 1970 (prior lane scan)",
+      "url": "https://archive.org/details/missale-romanum-pauli-pp-vi-1970-concilii-vaticno-ii",
+      "kind": "primary-book",
+      "inspection": "Prior acquisition (21,886,942 bytes) reopened 2026-10-22; printed p. 430 (PDF 421, preface of holy martyrs) and p. 605 (PDF 590, preface of the Passion of John the Baptist) viewed as page images and compared with 1981 MA 483/2 (p. 832) and MA 384/6 (p. 717).",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Comparison of two prefaces only; the 1975 Roman edition was not checked. Shared wording does not establish the route or direction of borrowing."
+    },
+    {
+      "id": "ambrosian-notitiae-1976-1978",
+      "title": "Notitiae 12 (1976) p. 432 and 14 (1978) p. 69: Congregation for Divine Worship decrees concerning the Ambrosian Missal",
+      "url": "https://www.cultodivino.va/it/rivista-notitiae.html",
+      "kind": "primary-act",
+      "inspection": "Official issue PDFs acquired 2026-10-22; printed 1976 p. 432 (issue 124–125, PDF 22) and 1978 p. 69 (issue 139, PDF 19) viewed as page images: Lugano, 23 November 1976, Prot. CD 1422/76, use of the new Ambrosian Missal granted for certain parishes; Milan, 7 February 1978, Prot. CD 1946/77, Latin proper text of certain saints' Masses confirmed.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Summary entries; neither names the saints or prints the texts. Notitiae 1976–1981 were searched by the research fork by text layer and OCR; other hits were translations, the Breviary or funeral rite."
     }
   ],
   "stages": [
@@ -245,8 +285,49 @@
           "claim": "Names the 1594 comparator for removal."
         }
       ],
-      "limitations": "Printer differs from Sabbio-labelled catalogue leads; use exact shelfmark and resolve before acquisition. No claim 1594 was the first effective removal. The 1981 Institutio n. 7 states, as an official retrospective, that the 1594 Missal is not far from the 1475 printing while taking some items from Pius V's Missal; it does not list them. The 1640 edition, directly inspected, lacks the Veronica proper, which is consistent with but does not verify the 1594 removal.",
+      "limitations": "Printer differs from Sabbio-labelled catalogue leads; use exact shelfmark and resolve before acquisition. No claim 1594 was the first effective removal. The 1981 Institutio n. 7 states, as an official retrospective, that the 1594 Missal is not far from the 1475 printing while taking some items from Pius V's Missal; it does not list them. The 1640 edition, directly inspected, lacks the Veronica proper, which is consistent with but does not verify the 1594 removal. The 1609 letter (ambrosian-1609) says that Archbishop Gaspar (Visconti) had the missal emended, printed and promulgated and that Federico kept the changes of the latest, commonly received edition; it names no year, so it does not itself date that edition to 1594. The 1609 book already lacks the Veronica proper.",
       "reception": "Historical Latin Ambrosian use of the Milanese Church; no claim of universal Roman reception or continuous unchanged use."
+    },
+    {
+      "id": "ambrosian-1609",
+      "tradition_id": "ambrosian-milan",
+      "label": "Federico Borromeo's revised Milan missal",
+      "date_label": "1609: engraved title and Venetian colophon",
+      "start_year": 1609,
+      "end_year": 1609,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Archiepiscopal edition whose prefatory letter states the kinds of revision made to the preceding edition; title, letter, February calendar, early-February Sanctoral and colophon inspected.",
+      "components": [
+        "calendar",
+        "propers",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:ambrosian-1609-prague-33b22"
+      ],
+      "witness_label": "Missale Ambrosianum, Venice 1609, Federico Borromeo; Národní knihovna Praha 33 B 22",
+      "summary": "Federico Borromeo's letter says that the missal Charles Borromeo had planned to revise was emended, printed and promulgated by his successor Gaspar (Visconti); that, although he would have preferred to follow the old Ambrosian rite more closely, he kept the changes of the latest, commonly received edition; and that he nevertheless restored several notable prefaces whole to their places, amplified others, moved some Gospels and Epistles, corrected the rubrics and set out some offices more fully. On 4 February the calendar has the Chair of Peter at Antioch, and the Sanctoral passes from Blaise to that Chair by referral and then to Agatha, with no Veronica Mass.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "ambrosian-1609-book",
+          "locus": "IMG 9 engraved title; IMG 444, fol. 202v colophon",
+          "claim": "Milan missal recognized and edited by order of Federico Borromeo, printed at Venice in 1609."
+        },
+        {
+          "source_id": "ambrosian-1609-book",
+          "locus": "IMG 11, Federico Borromeo's letter",
+          "claim": "Names Archbishop Gaspar's emended, printed and promulgated edition (no year given) and the kinds of change: prefaces restored or amplified, Gospels and Epistles moved, rubrics corrected."
+        },
+        {
+          "source_id": "ambrosian-1609-book",
+          "locus": "IMG 16 February calendar; IMG 290 Sanctoral",
+          "claim": "4 February is the Chair of Peter at Antioch; no Veronica proper between Blaise and Agatha."
+        }
+      ],
+      "limitations": "The letter names kinds of change but no individual formulary, and gives no date. Only the named images were read; no collation with 1594 or 1640. Frame and colophon name different printers (Comus, Zanettus).",
+      "reception": "The letter urges the priests of the Milanese Church to use the book; actual use is not established. The copy was in Prague by 1630."
     },
     {
       "id": "ambrosian-1640",
@@ -471,10 +552,15 @@
           "source_id": "ambrosian-1981-book",
           "locus": "Colombo decree, printed V-VII, PDF 9-11",
           "claim": "Dateline 11 April 1976; obligatory use from 14 November 1976; names the two anaphoras and the kinds of revision."
+        },
+        {
+          "source_id": "ambrosian-notitiae-1976-1978",
+          "locus": "Notitiae 12 (1976) p. 432",
+          "claim": "Use of the new Ambrosian Missal granted for certain Lugano parishes, 23 November 1976."
         }
       ],
       "limitations": "The decree is read in its 1981 reprint. Its effective date is a prescription, not proof of uniform implementation. It does not identify which Latin volume, if any, was printed in 1976; the 1976 Italian book remains a deferred translation witness.",
-      "reception": "Prescribed for all churches and parishes of the Ambrosian rite in the Archdiocese of Milan; actual compliance is not established."
+      "reception": "Prescribed for all churches and parishes of the Ambrosian rite in the Archdiocese of Milan; actual compliance is not established. On 23 November 1976 the Congregation granted certain parishes of the Swiss diocese of Lugano the use of the new Ambrosian Missal (Notitiae 12 (1976) p. 432, Prot. CD 1422/76)."
     },
     {
       "id": "ambrosian-1981-latin",
@@ -622,6 +708,54 @@
       "historical_parentage": "attributed"
     },
     {
+      "id": "ambrosian-1475-to-1609-veronica",
+      "from_stage": "ambrosian-1475",
+      "to_stage": "ambrosian-1609",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "text-collated",
+      "summary": "Between the two inspected printings the Veronica proper that precedes Agatha in 1475 is absent from the 1609 Sanctoral; the 1609 calendar gives 4 February to the Chair of Peter at Antioch.",
+      "components": [
+        "propers"
+      ],
+      "changes": [
+        {
+          "component": "propers",
+          "before": "In sancte veronice proper begins f. 35r, Gospel Mark 5:21, and ends f. 36r before In sancte agathe.",
+          "after": "After Blaise, the Sanctoral gives the Chair of Peter at Antioch by referral to fol. 119 and then Agatha; no Veronica proper.",
+          "locus_before": "1475 Vatican Inc. III. 420, ff. 35r-36r, IIIF canvases 76-78",
+          "locus_after": "1609 Prague 33 B 22, IMG 290",
+          "evidence": [
+            {
+              "source_id": "ambrosian-vatican-1475",
+              "locus": "ff. 35r-36r, canvases 76-78",
+              "claim": "Veronica proper directly read before Agatha."
+            },
+            {
+              "source_id": "ambrosian-1609-book",
+              "locus": "IMG 290",
+              "claim": "No Veronica proper between Blaise and Agatha."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "ambrosian-vatican-1475",
+          "locus": "ff. 35r-36r",
+          "claim": "Before state directly inspected."
+        },
+        {
+          "source_id": "ambrosian-1609-book",
+          "locus": "IMG 16, 290",
+          "claim": "After state directly inspected."
+        }
+      ],
+      "limitations": "Original-to-original for the proper only; the 1475 calendar entry is Lang's description and is not counted as a collated change. The 1594 edition between them is still unseen, so the removal is bounded between 1499 (Lang) and 1609, not dated. Not an immediate-successor edge. Cold review (2026-10-22) re-read IMG 290 and all twelve calendar months (IMG 15–26): no Veronica entry appears anywhere in the 1609 calendar.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    },
+    {
       "id": "ambrosian-1475-to-1640-veronica",
       "from_stage": "ambrosian-1475",
       "to_stage": "ambrosian-1640",
@@ -665,7 +799,7 @@
           "claim": "After state directly inspected."
         }
       ],
-      "limitations": "Original-to-original comparison of one proper across 165 years and unseen intervening editions (1594, 1609 and others); it neither dates the removal nor makes 1640 the first book without it. Lang's 1594 report and the 1475 calendar date remain scholarly. Not an immediate-successor edge.",
+      "limitations": "Original-to-original comparison of one proper across 165 years and unseen intervening editions (1594, 1609 and others); it neither dates the removal nor makes 1640 the first book without it. Lang's 1594 report and the 1475 calendar date remain scholarly. Not an immediate-successor edge. The 1609 Federico Borromeo printing (ambrosian-1475-to-1609-veronica) already lacks the Veronica proper, so 1640 is not the earliest inspected book without it.",
       "comparison_ids": [],
       "historical_parentage": "unestablished"
     },
@@ -982,7 +1116,7 @@
           "claim": "Full decree names calendar/lectionary 20 March 2008, saints calendar 27 March 2010, saints lectionary 1 April 2010 and Vigil book 29 June 2015 as intervening changes incorporated in the second missal."
         }
       ],
-      "limitations": "Full 2023 confirmation and 2024 promulgation now checked; exact before/after Latin prayer units remain uncollated. The decree explicitly retrospectively identifies 2008, 2010 and 2015 component changes: they are not asserted to be separate whole-missal editions. 2020 Italian translation changes are not independent Latin source revisions. Sunday-count discrepancy 32 (decree) versus 34 (publisher) remains explicit.",
+      "limitations": "Full 2023 confirmation and 2024 promulgation now checked; exact before/after Latin prayer units remain uncollated. The decree explicitly retrospectively identifies 2008, 2010 and 2015 component changes: they are not asserted to be separate whole-missal editions. 2020 Italian translation changes are not independent Latin source revisions. Sunday-count discrepancy 32 (decree) versus 34 (publisher) remains explicit. Three named propers items (Trinity preface 181/6b, the 16 December Joseph commemoration MA 295 and Ecclesia ex gentibus MA 694) are located in a 2026 Latin pre-press PDF and read against the 1981 scan, but that file's identity with the printed 2026 book is unverified, so cold review (2026-10-22) moved them to gap ambrosian-gap-second instead of counting them as documented changes here.",
       "comparison_ids": [],
       "historical_parentage": "established"
     }
@@ -1000,24 +1134,24 @@
       "id": "ambrosian-gap-1594",
       "tradition_id": "ambrosian-milan",
       "period": "1475–1751",
-      "missing": "The 1594 original itself (Veronica removal, imprint discrepancy and Pius V borrowings) and the 1609 Borromeo edition named by the 1981 Institutio; concrete formulary changes between 1594, 1609, 1640, 1712 and 1751. The 1640 Monti edition is now a documented stage and lacks the Veronica proper; the 1712 Archinto edition's letter describes an emended reprint of the latest exemplar, not a stated revision.",
-      "next_source": "BL Legg 137; Alessandrina Y g 5 (Usuarium 6041); BnF 1594 Sabbio record; any 1609 Federico Borromeo printing; then compare named formularies across 1594, 1640 (PDF 434 and following) and 1712. MDZ and web searches on 2026-10-21 found no digitized 1594 or 1609 copy; archive.org and Gallica were unreachable or refused.",
-      "consequence": "The removal is bounded between 1499 (Lang) and the directly inspected 1640 book, with Lang's 1594 report still scholarly; no complete 1475 to 1751 chain."
+      "missing": "The 1594 original itself (Veronica removal, imprint discrepancy and Pius V borrowings); concrete formulary changes among 1594, 1609, 1640, 1712 and 1751. The 1609 Federico Borromeo edition is now a documented stage (Prague 33 B 22): its letter says that Archbishop Gaspar, Charles Borromeo's successor, had the missal emended, printed and promulgated (the letter gives no year; equating that edition with the 1594 printing rests on Gaspare Visconti's tenure and Lang's 1594 report) and lists the kinds of 1609 change, and the book lacks the Veronica proper. The 1712 Archinto edition is identified in an exact copy (BSB Res/2 Liturg. 182) whose letter describes an emended reprint.",
+      "next_source": "BL Legg 137 or Alessandrina Y g 5 (1594); the 1609 prefaces named as restored, compared with 1594 and 1640; 1751 title photographs on archive.org (exsultet-1669, unidentified copy) are a lead only. B3Kat, archive.org and Europeana searches on 2026-10-22 found no 1594, 1751 or 1902 digitization.",
+      "consequence": "The Veronica removal is bounded between 1499 (Lang) and the inspected 1609 book; no complete 1475 to 1751 chain."
     },
     {
       "id": "ambrosian-gap-first-reform",
       "tradition_id": "ambrosian-milan",
       "period": "1902–1981",
-      "missing": "Intervening 1902-1954 rubrical supplements, the 1974 approved exemplar, the 1975 confirmed prayer exemplars and the specific post-1976 changes that Martini's 1981 note promulgates without listing. The 1954 book, the 1981 front matter (Colombo 1976 decree with 14 November 1976 obligation, Martini 1981 note, 1974 confirmation) and the 1981 Prex V and VI are now directly inspected.",
-      "next_source": "Any separately printed 1976 Latin Missal or fascicles; Notitiae 1976-1981 confirmation entries for post-1976 Ambrosian changes; Ward 1996 n. 5; collation of 1981 Prex V-VI against any published 1975 exemplar.",
+      "missing": "Intervening 1902-1954 rubrical supplements, the 1974 approved exemplar, the 1975 confirmed prayer exemplars and the specific post-1976 changes that Martini's 1981 note promulgates without listing. The 1954 book, the 1981 front matter (Colombo 1976 decree with 14 November 1976 obligation, Martini 1981 note, 1974 confirmation) and the 1981 Prex V and VI are now directly inspected. Notitiae 1976–1981 searched (2026-10-22): the only Latin Missal confirmation found is that of 7 February 1978 (Prot. CD 1946/77) for the Latin proper texts of certain saints' Masses, which does not name them.",
+      "next_source": "Any separately printed 1976 Latin Missal or fascicles; Notitiae 1976-1981 were searched on 2026-10-22 by text layer and OCR (one unnamed 1978 Latin-propers confirmation found), and the OCR-only issues could still be re-read as images; Ward 1996 n. 5; collation of 1981 Prex V-VI against any published 1975 exemplar.",
       "consequence": "Approval (1974), prescription (1976) and publication (1981) are now separate dated events; individual alterations are still not dated to one of them."
     },
     {
       "id": "ambrosian-gap-second",
       "tradition_id": "ambrosian-milan",
       "period": "1981–2026",
-      "missing": "Exact Latin before/after units and original 2008/2010/2015 component books. Full 2023 decree, 2024 frontmatter and promulgation are acquired and inspected; 1990 is now verified as updated reprint. Named Joseph 16 December, second Trinity preface and Church-from-the-nations Mass still require exact Latin loci.",
-      "next_source": "Original Latin 1981 and 2026 altar-book contents and named changed loci; separate 2008 calendar/lectionary, 2010 saints calendar/lectionary and 2015 Vigil book. Official 2024 frontmatter printed VI supplies exact promulgation dates and scope.",
+      "missing": "Original 2008/2010/2015 component books and the complete Latin 1981–2026 collation. The named Joseph (16 December), second Trinity preface and Ecclesia ex gentibus items are located in a 2026 Latin pre-press PDF (archive.org missale-ambrosianum-2026: typesetter's proof headers dated February 2026; colophon with ISBN 978-88-6894-862-7 and a March 2026 printing note) and read against the 1981 scan. 1981 p. 391 has the single Trinity preface 166/6, while PDF pp. 237–238 keep it as 181/6a and add 181/6b; 1981 p. 798 gives 16 December to John of Kęty (MA 465: super populum and referral to the Commons), while PDF p. 378 has a full Mass In commemoratione annuntiationis ad s. Ioseph (MA 295) with preface 295/6; 1981 p. 993 has one Pro Ecclesia locali formulary (MA 540, fourth prayer headed Ad complendam liturgiam verbi), while PDF pp. 669–670 have formulary 1 (MA 693, fourth prayer Super sindonem) and a new formulary 2, Ecclesia ex gentibus (MA 694), with preface 694/6. Because the PDF's identity with the printed book is unverified, these are located readings, not documented changes.",
+      "next_source": "A printed copy of the 2026 Latin book (or publisher-issued pages) at pp. 237–238, 378 and 669–670, to confirm the pre-press PDF before the three located items become documented changes; original Latin 1981 and 2026 altar-book contents and named changed loci; separate 2008 calendar/lectionary, 2010 saints calendar/lectionary and 2015 Vigil book. Official 2024 frontmatter printed VI supplies exact promulgation dates and scope. The Milan chancery's 2011 Evangeliario decree (Rivista Diocesana 2011 pp. 579–580, read in text layer only by the research fork) cites the de tempore lectionary recognitio of 16 March 2008 (Prot. 1515/06/L) and the de sanctis recognitio of 19 March 2010 (Prot. 433/09/L); inspect it as images.",
       "consequence": "Second-recension structural changes have full-act evidence; no exact Latin wording, complete diff or extra reform for each publication/reprint is inferred."
     },
     {
@@ -1032,9 +1166,9 @@
       "id": "ambrosian-gap-additional-prefaces",
       "tradition_id": "ambrosian-milan",
       "period": "Postconciliar reform, attested in the 1981 Latin book",
-      "missing": "The Roman-Missal side of Ward's account: the 1970/1975 Roman prefaces from which, according to Ward, the reformed Passion-of-John preface (MA 384/6) was adapted and through which the old Sebastian preface wording reached the Common-of-Martyrs super populum (MA 483/2). The Ambrosian old and new texts are now compared original-to-original from 1954 to 1981 (ambrosian-1954-to-1981-prefaces); the 1902 side is tracked under ambrosian-gap-images.",
-      "next_source": "Missale Romanum 1970 and 1975 typical editions: the preface of St John the Baptist and the first preface of martyrs, compared with 1981 MA 384/6 and MA 483/2; Ward, Notitiae 32 (1996), pp. 240–242 and 266–267 nn. 71–73 for his Roman loci.",
-      "consequence": "The Roman-Missal route of these borrowings remains Ward's attribution; no reception or borrowing edge from the Roman Missal to the 1981 Ambrosian book is drawn from shared wording."
+      "missing": "The direction and route of the borrowings Ward describes. The comparison itself is now made on page images: the 1981 Passion-of-John preface MA 384/6 agrees with the Roman 1970 preface (p. 605) apart from 'hic et ubique', 'perhibere' for 'exhibere' and its own conclusion; the 1981 Common-of-Martyrs super populum MA 483/2 shares 'in fragilitate' and 'ad testimonium' with the Roman martyrs' preface (1970 p. 430) against the 1954 Sebastian preface's 'in infirmitate'. The 1975 Roman edition is unchecked.",
+      "next_source": "Missale Romanum 1975 at the same prefaces; Ward 1996 nn. 71–73; reform working papers (e.g. Biffi, Notitiae 13 (1977) 12–33) for the route of adoption.",
+      "consequence": "Shared wording with the Roman 1970 text is now directly attested; no borrowing or reception edge is drawn, because shared wording alone does not establish its route."
     }
   ]
 }
