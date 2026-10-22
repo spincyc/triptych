@@ -15,8 +15,8 @@
     {
       "id": "western",
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "30c05b21b7ca9dcca555da83373946c845711b62f8b498344f97522df1ff04a9",
-      "byte_size": 2937060
+      "sha256": "bc628a6e336bb3ea5a62952af775da2817e6c05d07dbfcc3a9916b5b3ab12056",
+      "byte_size": 2947058
     },
     {
       "id": "presentation",
@@ -147,14 +147,14 @@
     {
       "id": "dossier:german-regional",
       "path": "src/sources/inventories/eucharistic-stages/german-regional.json",
-      "sha256": "640ae986d80980966db1cf5f2d65859580c9456e95ad32710d352655ac71b3b4",
-      "byte_size": 39748
+      "sha256": "c024ecce07e46718a341ff57587546005b483c03a48f056ba83ab4ac3de8d668",
+      "byte_size": 108092
     },
     {
       "id": "dossier:northern-central-regional",
       "path": "src/sources/inventories/eucharistic-stages/northern-central-regional.json",
-      "sha256": "b0e489ef2f53ab3293980b7916fe6581d486c3ec4f1506cc402f12180e3b633c",
-      "byte_size": 17048
+      "sha256": "daefb3fe5b535ee2659414f834c50b4e9609fdbf3cd38ece5a438bc31a0cccc3",
+      "byte_size": 31318
     },
     {
       "id": "dossier:romanian-blaj",
@@ -165,8 +165,8 @@
     {
       "id": "dossier:central-europe-round3",
       "path": "src/sources/inventories/eucharistic-stages/central-europe-round3.json",
-      "sha256": "d2083f95c9ff946d8fb0bf833477484ab370a318dfbc481973ca52abc6b9de5a",
-      "byte_size": 73571
+      "sha256": "cf91e28ee2ad00e44a48055618f57b489531194cab987fa41f3c3c0fcfb41c90",
+      "byte_size": 80871
     },
     {
       "id": "dossier:early-western-round2",
@@ -201,8 +201,8 @@
     {
       "id": "dossier:northwest-round2",
       "path": "src/sources/inventories/eucharistic-stages/northwest-round2.json",
-      "sha256": "5d13abbb9e35948d145852e27a1bfdde219a7ecaf5f202a6d923cca136b565d2",
-      "byte_size": 63056
+      "sha256": "9aada22cd59dce4e5c001bc03a4495f144b967789c5a29f9ce7e55051a6f0ecc",
+      "byte_size": 66541
     },
     {
       "id": "dossier:other-orders",
@@ -261,15 +261,15 @@
     {
       "id": "dossier:western-originals-batch3",
       "path": "src/sources/inventories/eucharistic-stages/western-originals-batch3.json",
-      "sha256": "b5198ec28c46cb3491a1e68cd48130130e695dbf9d3df6c7f042a540ffad4fef",
-      "byte_size": 43702
+      "sha256": "41da4bfbd5bf9bc9948ba0aa44430514ed698c86fdbcaaa6ef9c2c535deaccd0",
+      "byte_size": 49343
     }
   ],
   "count_semantics": {
     "eastern_census_slots": 23,
     "western_coverage_trajectories": 151,
     "eastern_candidates": 455,
-    "western_candidates": 1508,
+    "western_candidates": 1510,
     "presentation_groups": 233,
     "eastern_empty_candidate_slots_at_input": [
       "albanian",
@@ -8332,6 +8332,116 @@
       "dossier_id": "german-regional"
     },
     {
+      "id": "german-regional:aachen-propers",
+      "label": "Aachen postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:augsburg-propers",
+      "label": "Augsburg postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:bamberg-propers",
+      "label": "Bamberg postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:bozen-brixen-propers",
+      "label": "Bozen-Brixen postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:eichstatt-propers",
+      "label": "Eichstätt postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:essen-propers",
+      "label": "Essen postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:freiburg-propers",
+      "label": "Freiburg im Breisgau postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:fulda-propers",
+      "label": "Fulda postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:hildesheim-propers",
+      "label": "Hildesheim postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:limburg-propers",
+      "label": "Limburg postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:luxembourg-propers",
+      "label": "Luxembourg postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:mainz-propers",
+      "label": "Mainz postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:munich-freising-propers",
+      "label": "Munich and Freising postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:muenster-propers",
+      "label": "Münster postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:paderborn-propers",
+      "label": "Paderborn postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:osnabrueck-propers",
+      "label": "Osnabrück postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:passau-propers",
+      "label": "Passau postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:regensburg-propers",
+      "label": "Regensburg postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:rottenburg-propers",
+      "label": "Rottenburg postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:trier-propers",
+      "label": "Trier postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:wuerzburg-propers",
+      "label": "Würzburg postconciliar propers",
+      "dossier_id": "german-regional"
+    },
+    {
+      "id": "german-regional:austrian-calendars",
+      "label": "Austrian diocesan postconciliar proper calendars",
+      "dossier_id": "german-regional"
+    },
+    {
       "id": "greek-italo-local-reception:lungro",
       "label": "Eparchy of Lungro: received liturgical language and local Ordo",
       "dossier_id": "greek-italo-local-reception"
@@ -8499,6 +8609,21 @@
     {
       "id": "prague-romano-bohemian-missal",
       "label": "Roman-Bohemian missal",
+      "dossier_id": "northern-central-regional"
+    },
+    {
+      "id": "northern-central-regional:halberstadt",
+      "label": "Halberstadt diocesan missal",
+      "dossier_id": "northern-central-regional"
+    },
+    {
+      "id": "northern-central-regional:lubeck",
+      "label": "Lübeck diocesan missal",
+      "dossier_id": "northern-central-regional"
+    },
+    {
+      "id": "northern-central-regional:merseburg",
+      "label": "Merseburg diocesan missal",
       "dossier_id": "northern-central-regional"
     },
     {
@@ -9489,12 +9614,100 @@
         {
           "id": "german-regional:speyer",
           "label": "Speyer postconciliar propers"
+        },
+        {
+          "id": "german-regional:aachen-propers",
+          "label": "Aachen postconciliar propers"
+        },
+        {
+          "id": "german-regional:augsburg-propers",
+          "label": "Augsburg postconciliar propers"
+        },
+        {
+          "id": "german-regional:bamberg-propers",
+          "label": "Bamberg postconciliar propers"
+        },
+        {
+          "id": "german-regional:bozen-brixen-propers",
+          "label": "Bozen-Brixen postconciliar propers"
+        },
+        {
+          "id": "german-regional:eichstatt-propers",
+          "label": "Eichstätt postconciliar propers"
+        },
+        {
+          "id": "german-regional:essen-propers",
+          "label": "Essen postconciliar propers"
+        },
+        {
+          "id": "german-regional:freiburg-propers",
+          "label": "Freiburg im Breisgau postconciliar propers"
+        },
+        {
+          "id": "german-regional:fulda-propers",
+          "label": "Fulda postconciliar propers"
+        },
+        {
+          "id": "german-regional:hildesheim-propers",
+          "label": "Hildesheim postconciliar propers"
+        },
+        {
+          "id": "german-regional:limburg-propers",
+          "label": "Limburg postconciliar propers"
+        },
+        {
+          "id": "german-regional:luxembourg-propers",
+          "label": "Luxembourg postconciliar propers"
+        },
+        {
+          "id": "german-regional:mainz-propers",
+          "label": "Mainz postconciliar propers"
+        },
+        {
+          "id": "german-regional:munich-freising-propers",
+          "label": "Munich and Freising postconciliar propers"
+        },
+        {
+          "id": "german-regional:muenster-propers",
+          "label": "Münster postconciliar propers"
+        },
+        {
+          "id": "german-regional:paderborn-propers",
+          "label": "Paderborn postconciliar propers"
+        },
+        {
+          "id": "german-regional:osnabrueck-propers",
+          "label": "Osnabrück postconciliar propers"
+        },
+        {
+          "id": "german-regional:passau-propers",
+          "label": "Passau postconciliar propers"
+        },
+        {
+          "id": "german-regional:regensburg-propers",
+          "label": "Regensburg postconciliar propers"
+        },
+        {
+          "id": "german-regional:rottenburg-propers",
+          "label": "Rottenburg postconciliar propers"
+        },
+        {
+          "id": "german-regional:trier-propers",
+          "label": "Trier postconciliar propers"
+        },
+        {
+          "id": "german-regional:wuerzburg-propers",
+          "label": "Würzburg postconciliar propers"
+        },
+        {
+          "id": "german-regional:austrian-calendars",
+          "label": "Austrian diocesan postconciliar proper calendars"
         }
       ],
-      "documented_stage_count": 9,
+      "documented_stage_count": 35,
       "provisional_stage_count": 1,
       "text_coverage_counts": {
-        "not-transcribed": 10
+        "not-transcribed": 36
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -9737,12 +9950,24 @@
         {
           "id": "prague-romano-bohemian-missal",
           "label": "Roman-Bohemian missal"
+        },
+        {
+          "id": "northern-central-regional:halberstadt",
+          "label": "Halberstadt diocesan missal"
+        },
+        {
+          "id": "northern-central-regional:lubeck",
+          "label": "Lübeck diocesan missal"
+        },
+        {
+          "id": "northern-central-regional:merseburg",
+          "label": "Merseburg diocesan missal"
         }
       ],
-      "documented_stage_count": 4,
-      "provisional_stage_count": 0,
+      "documented_stage_count": 6,
+      "provisional_stage_count": 1,
       "text_coverage_counts": {
-        "not-transcribed": 4
+        "not-transcribed": 7
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -10133,9 +10358,9 @@
         }
       ],
       "documented_stage_count": 8,
-      "provisional_stage_count": 0,
+      "provisional_stage_count": 1,
       "text_coverage_counts": {
-        "not-transcribed": 8
+        "not-transcribed": 9
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -18527,17 +18752,19 @@
       "dossier_coverage": {
         "status": "selected-stages-available",
         "dossier_ids": [
-          "central-europe-round3"
+          "central-europe-round3",
+          "german-regional"
         ],
         "stage_ids": [
           "central-europe-round3:stage-mainz-ms",
           "central-europe-round3:stage-mainz-1482",
-          "central-europe-round3:stage-mainz-c1503"
+          "central-europe-round3:stage-mainz-c1503",
+          "german-regional:mainz-1975-propers-approval"
         ],
         "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 3
+          "not-transcribed": 4
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -18581,7 +18808,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "The 1482 mandate is read and an April calendar revision to the c.1502–1504 Prüss print is documented; the Frankfurt manuscript and the 1486–1497 and later prints remain uncollated, so the introducing edition is unknown.",
+      "missing_stage_chain": "The 1482 mandate is read and January and April–June calendar additions in the c.1502–1504 Prüss print are documented (seven April, six May and six June entries); the Frankfurt manuscript, the 1486–1497 prints and July–December remain uncollated, so the introducing edition is unknown. The 11 July 1975 Roman confirmation of Mainz proper Mass texts (Prot. 697/75) is a separate postconciliar approval stage with no claimed continuity.",
       "next_sources": {
         "inventory_source_ids": [
           "mainz-usuarium",
@@ -18589,7 +18816,8 @@
           "german-swiss-weale1928",
           "mainz-usuarium-book-28",
           "wr-mdz-bsb00032958",
-          "wr-mdz-bsb00002033"
+          "wr-mdz-bsb00002033",
+          "wr-notitiae-1975-697"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origin/57/view",
@@ -18597,10 +18825,11 @@
           "https://archive.org/download/bwb_T5-AGR-382/bwb_T5-AGR-382.pdf",
           "https://usuarium.elte.hu/book/28/view",
           "http://digital.wlb-stuttgart.de/purl/bsz346625017",
-          "https://nbn-resolving.de/urn:nbn:de:gbv:32-1-10016082521"
+          "https://nbn-resolving.de/urn:nbn:de:gbv:32-1-10016082521",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-(1975)/Notitiae-108-109-1975.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Collate the April calendar and named Mass formularies in the 1486, c.1488, 1493 and 1497 Mainz prints to locate the introduction, and read Frankfurt Ms. Barth. 118."
+        "target": "Collate April–June in the 1486, c.1488, 1493 and 1497 Mainz prints to locate the introduction, compare July–December of the 1482 and c.1503 calendars, read Frankfurt Ms. Barth. 118, and find the Mainz Amtsblatt for the 1975 propers."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "canonical_tradition_ids": []
@@ -18623,7 +18852,8 @@
         "ce-prague-prague-1522-leipzig-lotter",
         "ce-prague-prague-ms",
         "ce-prague-prague-1690",
-        "ce-prague-prague-1735"
+        "ce-prague-prague-1735",
+        "ce-prague-romano-bohemicum-1845"
       ],
       "proposed_tradition_ids": [
         "prague"
@@ -18638,9 +18868,11 @@
           "northern-central-regional:prague1690"
         ],
         "scope": "The 1690 Roman-Bohemian title names local saint propers and archiepiscopal mandate; original concessions and page-level text remain uninspected.",
-        "provisional_stage_ids": [],
+        "provisional_stage_ids": [
+          "northern-central-regional:prague1845"
+        ],
         "text_coverage_counts": {
-          "not-transcribed": 1
+          "not-transcribed": 2
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -18752,11 +18984,19 @@
           "end_year": 1735,
           "date_role": "printed-witness-publication",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "ce-prague-romano-bohemicum-1845",
+          "label": "Missale Romano-Bohemicum, 1845 issue (described)",
+          "start_year": 1845,
+          "end_year": 1845,
+          "date_role": "publication year reported by a later description",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Utraquist/Hussite original-language witnesses and later Latin/modern original local propers remain unexamined; no claim complete Prague liturgical history.",
+      "missing_stage_chain": "1690 Romano-Bohemian printing documented from catalogue title evidence; an 1845 Missale Romano-Bohemicum is a provisional stage known only from Pazour's 1881 remark on one rubric (it lacks the 1759 Sunday Trinity-preface rubric). Original 1690, 1735 and 1845 books, concession acts, medieval printed witnesses and local reception remain uninspected; no claim of a complete Prague liturgical history.",
       "next_sources": {
         "inventory_source_ids": [
           "prague-usuarium",
@@ -18775,7 +19015,8 @@
           "ce-src-usuarium-book-4606",
           "ce-src-usuarium-book-4607",
           "ce-src-usuarium-book-4610",
-          "ce-src-usuarium-book-5311"
+          "ce-src-usuarium-book-5311",
+          "prague-pazour-1881"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origin/2/view",
@@ -18794,7 +19035,8 @@
           "https://usuarium.elte.hu/book/4606/view",
           "https://usuarium.elte.hu/book/4607/view",
           "https://usuarium.elte.hu/book/4610/view",
-          "https://usuarium.elte.hu/book/5311/view"
+          "https://usuarium.elte.hu/book/5311/view",
+          "https://kramerius5.nkp.cz/search/img?pid=uuid:a783cbf8-7618-418e-baca-f94131d6ddbf&stream=IMG_FULL"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
         "target": "Deduplicate Prague witnesses; inspect original-language Utraquist/Hussite books, the 1690 Roman-Bohemian title and later local propers; collate text and approval before identifying a revision sequence. Current owning route limit: Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Utraquist/Hussite original-language witnesses and later Latin/modern original local propers remain unexamined; no claim complete Prague liturgical history."
@@ -19965,14 +20207,15 @@
         ],
         "stage_ids": [
           "german-regional:salzburg-1605",
-          "german-regional:salzburg-1498"
+          "german-regional:salzburg-1498",
+          "german-regional:austrian-1972-calendars-approval"
         ],
         "scope": "The Roman-based 1605 Salzburg book is source-described and a 1642 proper booklet is provisional; neither supplies a verified 1596 instrument or text-level revision edge.",
         "provisional_stage_ids": [
           "german-regional:salzburg-1642-propers"
         ],
         "text_coverage_counts": {
-          "not-transcribed": 3
+          "not-transcribed": 4
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -20032,7 +20275,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "A September calendar revision from the 1498 Salzburg print to the 1605 Roman-restored missal is documented from MDZ originals; the 1596 permission, the 1506 print beyond its September page, the 1507 and 1510 prints, the remaining calendar months and Mass bodies remain uncollated.",
+      "missing_stage_chain": "January and September calendar revisions from the 1498 Salzburg print to the 1605 Roman-restored missal are documented from MDZ originals; the 1596 permission, the 1506 print beyond its September page, the 1507 and 1510 prints, the remaining months and Mass bodies remain uncollated. The proper calendars of Salzburg, Gurk and Graz-Seckau were confirmed with the other Austrian diocesan calendars on 15 November 1972 (Notitiae 9, 1973, pp. 126–127); no Austrian diocese appears in the 1975 proper-Mass decree.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-0",
@@ -20046,7 +20289,8 @@
           "german-regional-salzburg-domquartier",
           "german-regional-salzburg-1642",
           "wr-mdz-bsb00032991",
-          "wr-mdz-bsb11057620"
+          "wr-mdz-bsb11057620",
+          "wr-notitiae-1973-2069-calendars"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origins",
@@ -20060,7 +20304,8 @@
           "https://www.domquartier.at/musik/dom-zu-salzburg/",
           "https://books.google.com/books/about/Missae_Propriae_Cum_Propriis_Sanctorvm_A.html?id=uNdJAAAAcAAJ",
           "https://www.digitale-sammlungen.de/en/view/bsb00022261",
-          "https://www.digitale-sammlungen.de/en/view/bsb10147732"
+          "https://www.digitale-sammlungen.de/en/view/bsb10147732",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-09-(1973)/Notitiae-082-1973.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
         "target": "Compare the 1506/1507/1510 Salzburg prints' calendars with 1498 and 1605 to narrow when Roman grading entered, and obtain the 1596 permission."
@@ -20090,12 +20335,13 @@
           "german-regional"
         ],
         "stage_ids": [
-          "german-regional:swiss-1976-propers"
+          "german-regional:swiss-1976-propers",
+          "german-regional:swiss-1972-calendars-approval"
         ],
         "scope": "The 1976 German-speaking Swiss Mass and lectionary propers are official regional adjuncts, not six separate whole missals.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 1
+          "not-transcribed": 2
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -20163,7 +20409,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence. The 2026-10-20 regional dossier records selected book and proper states only; acquire the named original acts, front matter and paired component leaves before a revision or adoption edge.",
+      "missing_stage_chain": "The 1976 German-language Swiss Mass and Lectionary supplements are attested by current St Gall direction; the proper calendars of Basel, Chur, St Gall, Sion, Lausanne–Geneva–Fribourg and Lugano were confirmed on 15 November 1972 (Notitiae 9, 1973, pp. 126–127). Original approval instruments, the 1976 volumes and medieval Swiss witnesses remain uninspected.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-0",
@@ -20175,7 +20421,8 @@
           "german-swiss-usuarium-origin-27",
           "german-swiss-usuarium-origin-31",
           "german-swiss-usuarium-origin-30",
-          "german-regional-stgallen"
+          "german-regional-stgallen",
+          "wr-notitiae-1973-2069-calendars"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origins",
@@ -20187,7 +20434,8 @@
           "https://usuarium.elte.hu/origin/27/view",
           "https://usuarium.elte.hu/origin/31/view",
           "https://usuarium.elte.hu/origin/30/view",
-          "https://www.bistum-stgallen.ch/bistum/heilige/"
+          "https://www.bistum-stgallen.ch/bistum/heilige/",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-09-(1973)/Notitiae-082-1973.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
         "target": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence. Current owning route limit: Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence. The 2026-10-20 regional dossier records selected book and proper states only; acquire the named original acts, front matter and paired component leaves before a revision or adoption edge."
@@ -20339,7 +20587,8 @@
       "dossier_coverage": {
         "status": "selected-stages-available",
         "dossier_ids": [
-          "central-europe-round3"
+          "central-europe-round3",
+          "german-regional"
         ],
         "stage_ids": [
           "central-europe-round3:stage-augsburg-1510",
@@ -20349,7 +20598,10 @@
           "central-europe-round3:stage-augsburg-1555",
           "central-europe-round3:stage-bamberg-1499",
           "central-europe-round3:stage-eichstatt-1494",
-          "central-europe-round3:stage-eichstatt-1517"
+          "central-europe-round3:stage-eichstatt-1517",
+          "german-regional:augsburg-1975-propers-approval",
+          "german-regional:bamberg-1975-propers-approval",
+          "german-regional:eichstatt-1975-propers-approval"
         ],
         "scope": "Selected bounded book states and earlier dossier stages; no continuous chronology or full regional adoption is established.",
         "provisional_stage_ids": [
@@ -20357,7 +20609,7 @@
           "central-europe-round3:stage-augsburg-1496"
         ],
         "text_coverage_counts": {
-          "not-transcribed": 10
+          "not-transcribed": 13
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -20484,7 +20736,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Bamberg 1490→1499 and Eichstätt 1486→1494→1517 calendar revisions are documented from MDZ originals; Augsburg 1496, both 1510 editions and 1555 are dated by inspected mandates without an observed calendar change; the 1496 and Basel 1510 stages are provisional because no distinct textual state is shown. Mass bodies, Bamberg 1507, Augsburg 1489, Eichstätt 1556 and the Bremen manuscripts remain uncollated.",
+      "missing_stage_chain": "Bamberg 1490→1499 and Eichstätt 1486→1494→1517 calendar revisions are documented from MDZ originals (Eichstätt extended to July–December on 2026-10-22: Praxedis dropped by 1494; Visitation octave, Christopher, Transfiguration and Nativity octave added by 1517); Augsburg 1496, both 1510 editions and 1555 are dated by inspected mandates without an observed calendar change; the 1496 and Basel 1510 stages stay provisional because no distinct textual state is shown (the Basel colophon, read 2026-10-22, is undated). The 1975 Roman confirmations of the Augsburg, Bamberg and Eichstätt proper Mass texts (Prot. 697/75) are separate postconciliar approval stages. Mass bodies, Bamberg 1507, Augsburg 1489, Eichstätt 1556 and the Bremen manuscripts remain uncollated.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-0",
@@ -20506,7 +20758,8 @@
           "wr-mdz-bsb00084486",
           "wr-mdz-bsb00032901",
           "wr-mdz-bsb00032906",
-          "wr-mdz-bsb00013027"
+          "wr-mdz-bsb00013027",
+          "wr-notitiae-1975-697"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origins",
@@ -20521,7 +20774,8 @@
           "https://usuarium.elte.hu/book/106/view",
           "https://usuarium.elte.hu/book/22/view",
           "https://www.digitale-sammlungen.de/en/view/bsb00030055",
-          "https://www.digitale-sammlungen.de/en/view/bsb00032906"
+          "https://www.digitale-sammlungen.de/en/view/bsb00032906",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-(1975)/Notitiae-108-109-1975.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
         "target": "Collate paired Mass-body leaves of the dated MDZ copies (Bamberg 1490/1499; Augsburg 1496/1510/1555 against the 1510 title's added Masses; Eichstätt January–September calendars), locate Bamberg 1507 and Eichstätt 1556 copies, and inspect Bremen manuscripts."
@@ -20548,12 +20802,13 @@
         ],
         "stage_ids": [
           "german-regional:cologne-2002-propers",
-          "german-regional:cologne-1975-propers-approval"
+          "german-regional:cologne-1975-propers-approval",
+          "german-regional:cologne-2002-propers-approval"
         ],
         "scope": "The 2002 Latin/German Cologne proper is officially named a binding adjunct to the Roman missal; earlier local-use descent is unproved.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 2
+          "not-transcribed": 3
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -20589,7 +20844,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Roman confirmations of 11 July 1975 (collective Prot. 697/75) and 11 November 2002 (Prot. 2282/99/L) are dated from Notitiae summaries; the proper books and their texts remain uninspected.",
+      "missing_stage_chain": "Roman confirmations of 11 July 1975 (collective Prot. 697/75) and 11 November 2002 (Prot. 2282/99/L, Latin and German Proprium Missarum with Liturgia Horarum) are approval stages from Notitiae summaries; the 2002 publication stage cites the 2002 confirmation as its approval basis. The proper books, decree texts, feast lists and the Lectionary's approval remain uninspected.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-100",
@@ -20608,14 +20863,14 @@
           "https://www.erzbistum-koeln.de/export/sites/ebkportal/seelsorge_und_glaube/gottesdienst_liturgie/.content/.galleries/downloads/DIRECTORIUM_Einleitung_2026.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Obtain the 1975 and 2002 Cologne proper books and decree texts and compare their feast lists."
+        "target": "Obtain the 1975 and 2002 Cologne proper books, the decree texts and the Kirchlicher Anzeiger for 1975 and 2002–2003, and compare the feast lists."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "canonical_tradition_ids": []
     },
     {
       "id": "german-diocesan-uses",
-      "label": "Brixen, Freising, Hildesheim, Konstanz, Magdeburg, Meissen, Münster, Passau, Regensburg, Speyer, Trier and Würzburg",
+      "label": "Brixen, Freising, Hildesheim, Konstanz, Magdeburg, Meissen, Münster, Passau, Regensburg, Speyer, Trier and Würzburg, with the postconciliar propers of other German-language dioceses",
       "coverage_unit": "trajectory-or-discovery-bucket",
       "inventory_status": "selected-catalogue-witness-census-documented",
       "candidate_ids": [
@@ -20647,12 +20902,31 @@
           "german-regional:muenster-1632",
           "german-regional:muenster-1784-supplement",
           "german-regional:speyer-1975-propers-approval",
-          "german-regional:speyer-2023-propers"
+          "german-regional:speyer-2023-propers",
+          "german-regional:speyer-1972-calendar-approval",
+          "german-regional:aachen-1975-propers-approval",
+          "german-regional:bozen-brixen-1975-propers-approval",
+          "german-regional:essen-1975-propers-approval",
+          "german-regional:essen-2002-gross-collect-approval",
+          "german-regional:freiburg-1975-propers-approval",
+          "german-regional:fulda-1975-propers-approval",
+          "german-regional:hildesheim-1975-propers-approval",
+          "german-regional:limburg-1975-propers-approval",
+          "german-regional:luxembourg-1975-propers-approval",
+          "german-regional:munich-freising-1975-propers-approval",
+          "german-regional:muenster-1975-propers-approval",
+          "german-regional:paderborn-1975-propers-approval",
+          "german-regional:osnabrueck-1975-propers-approval",
+          "german-regional:passau-1975-propers-approval",
+          "german-regional:regensburg-1975-propers-approval",
+          "german-regional:rottenburg-1975-propers-approval",
+          "german-regional:trier-1975-propers-approval",
+          "german-regional:wuerzburg-1975-propers-approval"
         ],
-        "scope": "Selected Münster print and supplement states and Speyer approval/modern proper states; no complete German diocesan chronology or uninspected first use is inferred.",
+        "scope": "Selected Münster print and supplement states; Speyer calendar, propers-approval and modern proper states; and the 11 July 1975 Roman confirmation (Prot. 697/75) of the proper Mass texts of each German-language diocese it names that has no route of its own. No complete German diocesan chronology, proper book or first use is inferred.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 4
+          "not-transcribed": 23
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -20793,7 +21067,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence. The 2026-10-20 regional dossier records selected book and proper states only; acquire the named original acts, front matter and paired component leaves before a revision or adoption edge.",
+      "missing_stage_chain": "Batch 5: every diocese named in Prot. 697/75 (Notitiae 11, 1975, pp. 230–231) now has an approval stage citing its entry; the Speyer date clash is resolved (21 September 1972 = common regional calendar; 15 November 1972 = diocesan proper calendars, Notitiae 9, 1973, pp. 126–127). No proper book, decree text or prayer of any of these dioceses has been inspected; the medieval and early-modern witness clusters remain unresolved catalogue entries. Acquire the named original acts, front matter and paired component leaves before a revision or adoption edge.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-100",
@@ -20815,7 +21089,8 @@
           "german-regional-muenster-usu",
           "german-regional-muenster-archive",
           "german-regional-speyer-lectionary",
-          "german-regional-speyer-books"
+          "german-regional-speyer-books",
+          "wr-notitiae-1973-2069-calendars"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origins?offset=100",
@@ -20837,10 +21112,11 @@
           "https://usuarium.elte.hu/book/6490/view",
           "https://www.bistum-muenster.de/fileadmin/user_upload/Website/Downloads/Bistum/BGV/S300-Kirche-in-Gesellschaft/320-KuK/Findbuecher-Bistumsarchiv/Pfarrarchive/findbuch-pfa-handschriften-und-druckschriften.pdf",
           "https://www.bistum-speyer.de/fileadmin/user_upload/1-0-0/Hauptabteilung_I/Downloads/Liturgie/Messlektionar.Eigenfeiern_Bistum_Speyer.pdf",
-          "https://www.bistum-speyer.de/seelsorge/seelsorge-vor-ort/liturgie/eigenfeiern/"
+          "https://www.bistum-speyer.de/seelsorge/seelsorge-vor-ort/liturgie/eigenfeiern/",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-09-(1973)/Notitiae-082-1973.pdf"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Identify Eucharistic book holdings and authority context. Index name alone does not establish distinctive source versions, dates or completeness. Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence. Current owning route limit: Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence. The 2026-10-20 regional dossier records selected book and proper states only; acquire the named original acts, front matter and paired component leaves before a revision or adoption edge."
+        "target": "Diocesan gazettes (Amtsblatt, Verordnungsblatt) 1972–1976 for the promulgation of the confirmed calendars and propers and the first printed Eigenfeiern; Speyer Oberhirtliches Verordnungsblatt 1971–1975; the Münster 1632 decree and 1784 supplement pages; originals for the medieval witness clusters."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "canonical_tradition_ids": []
@@ -20947,7 +21223,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Printed and fragmentary witnesses are identified for named Danish uses; the independent Ribe missal gap remains. Original approval, local reception, full text and relationships between copies remain uncollated. Copenhagen is a printing/title place, not a separate medieval diocese.",
+      "missing_stage_chain": "Printed and fragmentary witnesses are identified for named Danish uses; the 1510 Copenhagen colophon and one c.1484 Roskilde fragment leaf were read from Internet Archive images on 2026-10-22. The independent Ribe missal gap remains; original approval, local reception, full text and relationships between copies remain uncollated. Copenhagen is a printing/title place, not a separate medieval diocese.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-100",
@@ -27156,7 +27432,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Acquire authorized Vatican item record or facsimile access, inspect actual surviving Mass sections and leaf losses, compare Latin exemplars, establish printer/place, formal authorization and reception. Do not infer full missal, separate source recension, normative state or Byzantine Albanian ownership from geographic label.",
+      "missing_stage_chain": "Control under the deferred independent-translation scope; no stage sequence is constructed. Acquire authorized Vatican item record or facsimile access, inspect actual surviving Mass sections and leaf losses, compare Latin exemplars, establish printer/place, formal authorization and reception. The Vatican OPAC and DigiVatLib searches for Buzuku returned HTTP 403 on 2026-10-22. Do not infer full missal, separate source recension, normative state or Byzantine Albanian ownership from geographic label.",
       "next_sources": {
         "inventory_source_ids": [
           "roman-adaptations-src-buzuku-bksh92035",
@@ -27469,7 +27745,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "January, June and December calendar pages of the National Library composite are now read (Henry, Translation of Henry, Knut, Eskil, Anne); the Bitz preface leaf, other months and Mass components remain uncollated.",
+      "missing_stage_chain": "January, June and December calendar pages of the National Library composite are read; pp. 25–540 were thumbnailed on 2026-10-22 without finding the Bitz preface leaf, and the Canon facsimile leaves there have an unidentified source copy. Other months and Mass components remain uncollated.",
       "next_sources": {
         "inventory_source_ids": [
           "aboense1488-scan",
@@ -29152,16 +29428,18 @@
           "french-beauvais-6953-usuarium",
           "french-beauvais-6954-usuarium",
           "french-beauvais-7099-usuarium",
-          "french-beauvais-6955-usuarium"
+          "french-beauvais-6955-usuarium",
+          "beauvais-noyon-bibliography-1877"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/6953/view",
           "https://usuarium.elte.hu/book/6954/view",
           "https://usuarium.elte.hu/book/7099/view",
-          "https://usuarium.elte.hu/book/6955/view"
+          "https://usuarium.elte.hu/book/6955/view",
+          "https://books.google.com/books?id=0ho6AQAAMAAJ&pg=PP31"
         ],
         "inspection": "Owning accepted catalogue review and source metadata reconciled only; this audit adds no external inspection event.",
-        "target": "This entry covers the assigned frozen Amiet-table records only. Broader manuscripts, printings and complementary books remain outside this bounded review; acquire and inspect originals with an affirmative rights basis, resolve exact copy identity and compare prayers, calendar, Order and rubrics before asserting substantive revisions or reception."
+        "target": "BnF B-781 (1625 Potier missal) title and mandate leaves; Gignoux's 1857 mandate replacing the Noyon liturgy by the Roman (diocesan archives, BnF mandement collections); the date at which the 1756 Beauvais books were themselves replaced."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
       "inventory_status": "bounded-assigned-amiet-rows-reviewed",
@@ -34092,9 +34370,11 @@
         "stage_ids": [
           "western-originals-batch3:huesca-1488"
         ],
-        "provisional_stage_ids": [],
+        "provisional_stage_ids": [
+          "western-originals-batch3:huesca-jaca-1504"
+        ],
         "text_coverage_counts": {
-          "not-transcribed": 1
+          "not-transcribed": 2
         },
         "gap_ids": [
           "western-originals-batch3:huesca-text-and-reception"
@@ -34111,6 +34391,14 @@
           "end_year": 1488,
           "date_role": "publication-year-reported-by-catalogue",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "amiet-usuarium-7335",
+          "label": "Missale secundum ritum insignium ecclesiarum Oscensis et Iaccensi",
+          "start_year": 1504,
+          "end_year": 1504,
+          "date_role": "catalogue-attributed witness year; not approval, composition, reception or new recension date",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
@@ -34119,22 +34407,25 @@
         "inventory_source_ids": [
           "iberian-usuarium-7334",
           "iberian-huesca-gw-m24589-original-followup",
-          "iberian-huesca-lambert-1910-original-followup"
+          "iberian-huesca-lambert-1910-original-followup",
+          "huesca-jaca-1504-ustc"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/7334/view",
           "https://www.gesamtkatalogderwiegendrucke.de/docs/M24589.htm",
-          "https://doi.org/10.3406/hispa.1910.1638"
+          "https://doi.org/10.3406/hispa.1910.1638",
+          "https://www.ustc.ac.uk/editions/347646"
         ],
         "inspection": "Owning accepted catalogue review and source metadata reconciled only; this audit adds no external inspection event.",
-        "target": "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage. Current owning route limit: Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage. Huesca 1488 follow-up locates GW-reported New York Hispanic Society and defective Zaragoza Cathedral copies, but acquires no originalbook. Obtain public original title/pastoral letter, calendar, colophon and tail evidence; collate the alleged reused 1485 Zaragoza sheets and resolve whether a local supplement existed, which Lambert's defective copy could not settle."
+        "target": "Images of the Hispanic Society or Seo de Zaragoza 1488 copy and of the Barbastro cathedral 1504 copies (title, colophon, calendar); Norton no. 610 and Martín Abad no. 1054 descriptions of 1504."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
       "inventory_status": "bounded-assigned-amiet-catalogue-witness-census",
       "candidate_ids": [
-        "iberian-huesca-1488"
+        "iberian-huesca-1488",
+        "amiet-usuarium-7335"
       ],
-      "missing_stage_chain": "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage. Batch 3 selected-state gap: Public original 1488 book images and copy extent; original calendar, bishop letter, colophon and tail; the alleged reused 1485 Zaragoza sheets; complete text, separate authority and reception."
+      "missing_stage_chain": "The 1488 book is documented only from Lambert's scholarly copy description; the 1504 missal for the churches of Huesca and Jaca (Zaragoza, Coci; USTC 347646; amiet-usuarium-7335) is a provisional catalogue stage. No original page of either book has been seen; authority, complete text, the relation between the two books and local reception remain open."
     },
     {
       "id": "central-amiet-additional-german-uses",
@@ -34144,13 +34435,24 @@
       "canonical_tradition_ids": [],
       "mapping_strength": "catalogue-witness-links-only-no-canonical-stage-assigned",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "northern-central-regional"
+        ],
+        "stage_ids": [
+          "northern-central-regional:halberstadt-c1498",
+          "northern-central-regional:halberstadt-1511"
+        ],
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
-        "gap_ids": [],
-        "scope": "Exact bounded catalogue witnesses; no original-book stage sequence has been established for this route.",
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
+        "gap_ids": [
+          "northern-central-regional:halberstadt-collation",
+          "northern-central-regional:lubeck-original",
+          "northern-central-regional:merseburg-original"
+        ],
+        "scope": "Halberstadt c. 1498 and 1511 printed missals documented from BSB originals; Lübeck and Merseburg remain catalogue witnesses with named gaps.",
         "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
         "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
       },
@@ -34178,6 +34480,14 @@
           "end_year": 1502,
           "date_role": "catalogue-attributed printing/publication or object age; inspect title and colophon for exact date",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "central-halberstadt-1511-bsb00017961",
+          "label": "Missale celeberrimi Halberstattensis episcopatus",
+          "start_year": 1511,
+          "end_year": 1511,
+          "date_role": "publication year stated in the inspected closing address (anno ... millesimum quingentesimum undecimo)",
+          "status": "inventory-witness-candidate-not-a-stage"
         }
       ],
       "component_profile": "western",
@@ -34187,25 +34497,30 @@
           "central-amiet-usuarium-5818",
           "central-amiet-usuarium-7238",
           "central-amiet-usuarium-7271",
-          "central-halberstadt-1498-bsb-google-original"
+          "central-halberstadt-1498-bsb-google-original",
+          "central-halberstadt-1498-mdz",
+          "central-halberstadt-1511-mdz"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/5818/view",
           "https://usuarium.elte.hu/book/7238/view",
           "https://usuarium.elte.hu/book/7271/view",
-          "https://books.google.com/books?id=xhKLX-OS2c0C"
+          "https://books.google.com/books?id=xhKLX-OS2c0C",
+          "https://www.digitale-sammlungen.de/en/view/bsb00032887",
+          "https://www.digitale-sammlungen.de/en/view/bsb00017961"
         ],
-        "inspection": "Batch 4 lane B inspected the Halberstadt mandate leaf (Google Books xhKLX-OS2c0C PP7) on 2026-10-21. Google Books full-view searches found no Lübeck or Merseburg missal ('missale lubicense', 'missale lubecense', 'missale merseburgense'). This index row keeps its catalogue character; no book sequence is constructed.",
-        "target": "Index row: individual Halberstadt, Lübeck and Merseburg routes would own any book sequence. Next: Halberstadt colophon and the 1511 Halberstadt missal (Google _t1SAAAAcAAJ), Lübeck 1505 and Merseburg 1502 originals."
+        "inspection": "Batch 5 central-north viewed MDZ bsb00032887 canvases 7–8 and bsb00017961 canvases 5, 7 and 534 on 2026-10-22; Lübeck and Merseburg searches were negative (MDZ metadata search, web search; Google Books API quota refusal).",
+        "target": "Collate the remaining Halberstadt calendar months and Mass sections (MDZ bsb00032887 and bsb00017961); locate originals of the Lübeck (USTC 741258/676212) and Merseburg (UB Leipzig III/243) missals."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
       "inventory_status": "selected-catalogue-witnesses-documented",
       "candidate_ids": [
         "central-halberstadt-usuarium-5818",
         "central-lubeck-usuarium-7238",
-        "central-merseburg-usuarium-7271"
+        "central-merseburg-usuarium-7271",
+        "central-halberstadt-1511-bsb00017961"
       ],
-      "missing_stage_chain": "Single catalogue witnesses only. Inspect holding catalogues, exact titles, colophons, contents, rights and complete extents; resolve the Lübeck USTC references. No continuous local-use chronology, normative revision, original-book completeness or modern survival is established."
+      "missing_stage_chain": "Batch 5: Halberstadt c. 1498 (Archbishop Ernst's mandate, January calendar) and 1511 (title, dated closing address, January calendar) are documented from MDZ originals; their January calendars agree, so no transition is drawn. Lübeck about 1505 and Merseburg 1502 have no located original copy; their named gaps hold the next steps. No local reception, complete text or normative revision is established."
     },
     {
       "id": "amiet-unassigned-eucharistic-witnesses",
@@ -34526,7 +34841,7 @@
         "amiet-usuarium-7330",
         "amiet-usuarium-7335"
       ],
-      "missing_stage_chain": "Resolve exact use, physical-copy and edition identities from original imprints and holding-library records; inspect contents, rights and reception before any recension, Catholic affiliation or geographical mapping. Repeated catalogue rows in a cluster are not independent edition counts."
+      "missing_stage_chain": "Resolve exact use, physical-copy and edition identities from original imprints and holding-library records; inspect contents, rights and reception before any recension, Catholic affiliation or geographical mapping. Repeated catalogue rows in a cluster are not independent edition counts. Batch 5: amiet-usuarium-7335 is identified by USTC 347646 as a 1504 Zaragoza (Coci) missal for the churches of Huesca and Jaca and is also listed under historic-huesca-use, where it witnesses a provisional stage; it stays in this index because its USUARIUM origin field is blank."
     },
     {
       "id": "tournai",
@@ -35398,9 +35713,9 @@
       "This audit records lane stages, transitions and gaps but creates none itself; no whole-book text, ancestry permission or local reception follows from a mapping, and final broader gates remain separate"
     ],
     "coverage_status_counts": {
-      "selected-stages-available": 126,
+      "no-new-researched-stage-sequence": 44,
       "related-dossier-only-local-reception-unresearched": 3,
-      "no-new-researched-stage-sequence": 45
+      "selected-stages-available": 127
     },
     "limit": "Dossier presence is a canonical file snapshot. Exact tradition and stage references resolve, but no count is a completeness score or proof of local reception.",
     "batch2_review": {

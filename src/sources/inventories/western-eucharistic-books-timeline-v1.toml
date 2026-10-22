@@ -5377,6 +5377,33 @@ chronology_kind = "printed-witness-publication"
 chronology_certainty = "bibliographic-or-catalogue-year; see qualification"
 source_locus = "Per-ID source refs and inspected loci in pinned Central Europe research packet and cold addenda; no full-text collation"
 
+[[sources]]
+id = "prague-pazour-1881"
+url = "https://kramerius5.nkp.cz/search/img?pid=uuid:a783cbf8-7618-418e-baca-f94131d6ddbf&stream=IMG_FULL"
+type = "periodical-pastoral-note"
+checked_on = "2026-10-22"
+inspection_status = "inspected"
+inspection = "Pastýř duchovní (1881), printed p. 382, page image read 2026-10-22: Karel Pazour reports that the Missale Romano-Bohemicum issued in 1845, the most widespread missal in Bohemia, omits the rubric (after Clement XIII's bull of 3 January 1759) assigning the Trinity preface to Sundays without a proper preface."
+limitations = "Contemporary practitioner's passing report of one rubric in a pastoral column, not a bibliographic description; the 1845 book itself is uninspected."
+full_contents_examined = false
+
+[[candidates]]
+id = "ce-prague-romano-bohemicum-1845"
+family = "historic-prague-use"
+title = "Missale Romano-Bohemicum, 1845 issue (described)"
+date = "1845"
+kind = "roman-local-adaptation"
+status = "mentioned-in-later-periodical-original-uninspected"
+qualification = "Known from Pazour, Pastýř duchovní 1881, p. 382, which dates the issue to 1845, calls it the most widespread missal in Bohemia and reports that it lacks the 1759 Sunday Trinity-preface rubric. Title page, imprint, approval and contents uninspected; no independent recension inferred. Cold review 2026-10-22: the stage northern-central-regional:prague1845 is provisional because the only evidence is this passing remark."
+scope_disposition = "in-scope-original-book-or-historical-witness"
+version_status = "witness-or-revision-candidate-not-yet-collated"
+date_role = "publication year reported by a later description"
+sources = ["prague-pazour-1881"]
+chronology_start = 1845
+chronology_end = 1845
+chronology_kind = "printed-witness-publication"
+chronology_certainty = "reported-by-later-description; original-imprint-uninspected"
+
 [[candidates]]
 id = "ce-zagreb-zagreb-gussing"
 family = "historic-zagreb-use"
@@ -6862,8 +6889,8 @@ scope = "western-original-source-trajectory"
 id = "prague"
 title = "Prague trajectory"
 status = "selected-witness-census-documented"
-sources = ["prague-usuarium", "ce-src-voit", "ce-src-prague1690", "ce-src-prague1735", "ce-src-holyface", "usuarium-origins-0", "ce-src-bsb-prague1498", "ce-src-usuarium-book-123", "ce-src-usuarium-book-124", "ce-src-usuarium-book-4178", "ce-src-usuarium-book-4181", "ce-src-usuarium-book-4516", "ce-src-usuarium-book-4532", "ce-src-usuarium-book-4606", "ce-src-usuarium-book-4607", "ce-src-usuarium-book-4610", "ce-src-usuarium-book-5311"]
-candidate_ids = ["prague-printed-series", "ce-prague-prague-1479-plzen", "ce-prague-prague-1489-bamberg", "ce-prague-prague-1497-leipzig-kachelofen", "ce-prague-prague-1498-leipzig-kachelofen", "ce-prague-prague-1498-nuremberg-stuchs", "ce-prague-prague-1503-nuremberg-stuchs", "ce-prague-prague-1507-venice-liechtenstein", "ce-prague-prague-1508-nuremberg-stuchs", "ce-prague-prague-1522-leipzig-lotter", "ce-prague-prague-ms", "ce-prague-prague-1690", "ce-prague-prague-1735"]
+sources = ["prague-usuarium", "ce-src-voit", "ce-src-prague1690", "ce-src-prague1735", "ce-src-holyface", "usuarium-origins-0", "ce-src-bsb-prague1498", "ce-src-usuarium-book-123", "ce-src-usuarium-book-124", "ce-src-usuarium-book-4178", "ce-src-usuarium-book-4181", "ce-src-usuarium-book-4516", "ce-src-usuarium-book-4532", "ce-src-usuarium-book-4606", "ce-src-usuarium-book-4607", "ce-src-usuarium-book-4610", "ce-src-usuarium-book-5311", "prague-pazour-1881"]
+candidate_ids = ["prague-printed-series", "ce-prague-prague-1479-plzen", "ce-prague-prague-1489-bamberg", "ce-prague-prague-1497-leipzig-kachelofen", "ce-prague-prague-1498-leipzig-kachelofen", "ce-prague-prague-1498-nuremberg-stuchs", "ce-prague-prague-1503-nuremberg-stuchs", "ce-prague-prague-1507-venice-liechtenstein", "ce-prague-prague-1508-nuremberg-stuchs", "ce-prague-prague-1522-leipzig-lotter", "ce-prague-prague-ms", "ce-prague-prague-1690", "ce-prague-prague-1735", "ce-prague-romano-bohemicum-1845"]
 remaining_work = "Deduplicate catalogue records, extend witness census, acquire cleared complete witnesses and compare prayers, rubrics, calendar and order before promoting distinct versions. Utraquist/Hussite original-language witnesses and later Latin/modern original local propers remain unexamined; no claim complete Prague liturgical history."
 scope = "western-original-source-trajectory"
 
@@ -6987,7 +7014,7 @@ scope = "western-original-source-trajectory"
 id = "german-diocesan-uses"
 title = "Brixen, Freising, Hildesheim, Konstanz, Magdeburg, Meissen, Münster, Passau, Regensburg, Speyer, Trier and Würzburg"
 status = "selected-catalogue-witness-census-documented"
-sources = ["usuarium-origins-100", "german-swiss-usuarium-origin-44", "german-swiss-weale1886", "german-swiss-weale1928", "german-swiss-usuarium-origin-52", "german-swiss-usuarium-origin-54", "german-swiss-usuarium-origin-4", "german-swiss-usuarium-origin-58", "german-swiss-usuarium-origin-61", "german-swiss-usuarium-origin-68", "german-swiss-usuarium-origin-70", "german-swiss-usuarium-origin-73", "german-swiss-usuarium-origin-75", "german-swiss-usuarium-origin-78", "german-swiss-usuarium-origin-6", "german-swiss-neustift-catalogue2021", "german-regional-muenster-usu", "german-regional-muenster-archive", "german-regional-speyer-lectionary", "german-regional-speyer-books", "wr-notitiae-1975-697", "wr-notitiae-1972-2069"]
+sources = ["usuarium-origins-100", "german-swiss-usuarium-origin-44", "german-swiss-weale1886", "german-swiss-weale1928", "german-swiss-usuarium-origin-52", "german-swiss-usuarium-origin-54", "german-swiss-usuarium-origin-4", "german-swiss-usuarium-origin-58", "german-swiss-usuarium-origin-61", "german-swiss-usuarium-origin-68", "german-swiss-usuarium-origin-70", "german-swiss-usuarium-origin-73", "german-swiss-usuarium-origin-75", "german-swiss-usuarium-origin-78", "german-swiss-usuarium-origin-6", "german-swiss-neustift-catalogue2021", "german-regional-muenster-usu", "german-regional-muenster-archive", "german-regional-speyer-lectionary", "german-regional-speyer-books", "wr-notitiae-1975-697", "wr-notitiae-1972-2069", "wr-notitiae-1973-2069-calendars"]
 candidate_ids = ["german-swiss-freising-witness-cluster", "german-swiss-hildesheim-witness-cluster", "german-swiss-konstanz-witness-cluster", "german-swiss-magdeburg-witness-cluster", "german-swiss-meissen-witness-cluster", "german-swiss-munster-witness-cluster", "german-swiss-passau-witness-cluster", "german-swiss-regensburg-witness-cluster", "german-swiss-speyer-witness-cluster", "german-swiss-trier-witness-cluster", "german-swiss-wurzburg-witness-cluster", "german-swiss-brixen-witness-cluster", "german-muenster-1632", "german-muenster-supplement-1784", "german-speyer-propers-1975", "german-speyer-propers-2023"]
 remaining_work = "Resolve duplicate and disputed catalogue entries; acquire/inspect whole witnesses, compare prayers, readings, chants, Ordinary, calendar and rubrics; read approval and local reception evidence. The 2026-10-20 regional dossier records selected book and proper states only; acquire the named original acts, front matter and paired component leaves before a revision or adoption edge."
 scope = "western-original-source-trajectory"
@@ -29989,13 +30016,19 @@ inspection = "PDF p.26, printed XXVIII, h and p.27 m: 2002 Latin/German Eigenfei
 id = "wr-notitiae-1975-697"
 url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-11-(1975)/Notitiae-108-109-1975.pdf"
 type = "official-retrospective"
-inspection = "Notitiae 11 (1975) printed pp. 230–231 viewed 2026-10-21: Prot. 697/75 of 11 July 1975 confirms proper Mass texts of twenty-three dioceses listed under Regiones Linguae Germanicae, including Cologne and Speyer."
+inspection = "Notitiae 11 (1975) printed pp. 230–231 viewed 2026-10-21 and again 2026-10-22: Prot. 697/75 of 11 July 1975 confirms proper Mass texts of twenty-three dioceses listed under Regiones Linguae Germanicae (Aachen, Augsburg, Bamberg, Bozen-Brixen, Cologne, Eichstätt, Essen, Freiburg, Fulda, Hildesheim, Limburg, Luxembourg, Mainz, Munich and Freising, Münster, Paderborn, Osnabrück, Passau, Regensburg, Rottenburg, Speyer, Trier, Würzburg)."
 
 [[sources]]
 id = "wr-notitiae-1972-2069"
 url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-08-(1972)/Notitiae-078-1972.pdf"
 type = "official-retrospective"
 inspection = "Notitiae 8 (1972) printed p. 361 viewed 2026-10-21: Prot. 2069/71 of 21 September 1972 confirms the common German-language regional calendar."
+
+[[sources]]
+id = "wr-notitiae-1973-2069-calendars"
+url = "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-09-(1973)/Notitiae-082-1973.pdf"
+type = "official-retrospective"
+inspection = "Notitiae 9 (1973) no. 82, printed pp. 126–127 viewed 2026-10-22 as page images (no text layer): Regiones linguae Germanicae, 15 November 1972 (Prot. n. 2069), confirmation of the proper calendars of 41 German-language dioceses (42 comma-separated names; Lausanne, Geneva and Fribourg is one see), including Speyer, Cologne, Salzburg, Gurk, Graz-Seckau and the Swiss sees."
 
 [[sources]]
 id = "wr-notitiae-2003-cologne"
@@ -30164,9 +30197,9 @@ title = "Speyer particular calendar and Mass/Lectionary proper confirmations"
 date = "1971/1972/1975"
 kind = "diocesan-propers-approval-state"
 status = "official-later-book-reports-distinct-approvals"
-sources = ["german-regional-speyer-lectionary", "wr-notitiae-1975-697", "wr-notitiae-1972-2069"]
+sources = ["german-regional-speyer-lectionary", "wr-notitiae-1975-697", "wr-notitiae-1972-2069", "wr-notitiae-1973-2069-calendars"]
 source_locus = "2023 Lectionary PDF p.2, Approbation und Konfirmation, calendar 1971/1972 and proper texts 1975, Prot.697/75."
-qualification = "Bishop approved calendar 3 November 1971; Roman congregation confirmed it 15 November 1972, Prot.2069/71; confirmed Mass/Lectionary proper texts 11 July 1975, Prot.697/75. Original acts, first-edition book, first use and texts uninspected. Notitiae 8 (1972) p. 361 dates Prot. 2069/71 to 21 September 1972 as confirmation of the common German-language regional calendar; the discrepancy is retained on the dossier stage."
+qualification = "Bishop approved calendar 3 November 1971; Roman congregation confirmed it 15 November 1972, Prot.2069/71; confirmed Mass/Lectionary proper texts 11 July 1975, Prot.697/75. Original acts, first-edition book, first use and texts uninspected. Batch 5 (2026-10-22) resolves the former date clash: Notitiae 8 (1972) p. 361 dates the confirmation of the common German-language regional calendar to 21 September 1972 under Prot. 2069/71, while Notitiae 9 (1973) pp. 126–127 dates the confirmation of the German-language diocesan proper calendars, Speyer included, to 15 November 1972 (Prot. n. 2069). The Congregation's summary of Prot. 697/75 names only proper Mass texts, so the Lectionary part of the 1975 claim rests on the 2023 book alone; the dossier carries the calendar and propers approvals as separate stages."
 date_role = "1975 proper-text confirmation; 1971/1972 calendar acts distinct"
 chronology_start = 1975
 chronology_end = 1975
@@ -33933,14 +33966,24 @@ sources = ["french-troyes-7584-usuarium", "french-troyes-7585-usuarium", "french
 candidate_ids = ["french-troyes-usuarium-7584", "french-troyes-usuarium-7585", "french-troyes-usuarium-7586", "french-troyes-usuarium-7587", "french-troyes-usuarium-7588", "french-troyes-usuarium-7589", "french-troyes-1696-orationes-addendae"]
 remaining_work = "1497, 1525, 1580, 1696 (Roman Missal with Troyes supplement) and 1736 (Bossuet) states documented from Lalore. Open: originals, 1492/1514/1533 editions, the 1738 corrected state, the 1830 supplement and the Roman restoration (mandement 14 June 1847; 1846 in an 1868 decree)."
 
+[[sources]]
+id = "beauvais-noyon-bibliography-1877"
+url = "https://books.google.com/books?id=0ho6AQAAMAAJ&pg=PP31"
+type = "secondary-bibliography"
+checked_on = "2026-10-22"
+inspection_status = "inspected"
+inspection = "Page image PP31 (acquired by the batch-4 french-b lane, SHA-256 de08954fbb22cb44043e7519cca368d292f83f3aff584456bdf02ad2a481edb8) re-viewed 2026-10-22: footnote to the Liturgie section says the old Noyon liturgy was replaced by the Roman liturgy from Pentecost 1857 (mandement of Mgr Gignoux)."
+limitations = "Secondary footnote; the mandate's own text and date are unverified, and its cross-reference number does not match the bibliography's item 181."
+full_contents_examined = false
+
 [[coverage]]
 id = "french-beauvais"
 title = "Beauvais catalogue-origin Mass-book candidates"
 status = "bounded-assigned-amiet-rows-reviewed"
 scope = "western-original-source-trajectory"
-sources = ["french-beauvais-6953-usuarium", "french-beauvais-6954-usuarium", "french-beauvais-7099-usuarium", "french-beauvais-6955-usuarium"]
+sources = ["french-beauvais-6953-usuarium", "french-beauvais-6954-usuarium", "french-beauvais-7099-usuarium", "french-beauvais-6955-usuarium", "beauvais-noyon-bibliography-1877"]
 candidate_ids = ["french-beauvais-usuarium-6953", "french-beauvais-usuarium-6954", "french-beauvais-usuarium-7099"]
-remaining_work = "This entry covers the assigned frozen Amiet-table records only. Broader manuscripts, printings and complementary books remain outside this bounded review; acquire and inspect originals with an affirmative rights basis, resolve exact copy identity and compare prayers, calendar, Order and rubrics before asserting substantive revisions or reception."
+remaining_work = "This entry covers the assigned frozen Amiet-table records only. Broader manuscripts, printings and complementary books remain outside this bounded review; acquire and inspect originals with an affirmative rights basis, resolve exact copy identity and compare prayers, calendar, Order and rubrics before asserting substantive revisions or reception. Batch 5 central-north (2026-10-22): Bibliographie noyonnaise (1877) p. 31 n. 1 dates the replacement of the old Noyon liturgy by the Roman liturgy to Pentecost 1857 under a mandate of Bishop Gignoux; the mandate itself and the date at which the Beauvais books were replaced remain unverified."
 
 [[coverage]]
 id = "french-nantes"
@@ -40704,6 +40747,16 @@ inspection = "Whole individual detail HTTP response retained in research scratch
 limitations = "Metadata inspection only. No original scan, linked prayer text or conspectus fetched; no title-page/colophon collation, full-book completeness, rights clearance, distinct recension or normative chronology established."
 status = "inspected"
 
+[[sources]]
+id = "huesca-jaca-1504-ustc"
+url = "https://www.ustc.ac.uk/editions/347646"
+type = "union-catalogue-edition-record"
+checked_on = "2026-10-22"
+inspection_status = "inspected"
+inspection = "Edition record read 2026-10-22: heading 'Ecclesia Catholica - Missale - Huesca'; title 'Missale secundum ritum insignium ecclesiarum Oscensis et Iaccensi, admodum completum'; Zaragoza, Jorge Coci, 1504; folio; Latin; copies Barbastro Catedral 1-10 and 305-22; references Wilkinson IB 6341, Martín Abad 1054, Norton 610; no digitisation."
+limitations = "Catalogue record only; no original page seen."
+full_contents_examined = false
+
 [[candidates]]
 id = "iberian-huesca-1488"
 family = "historic-huesca-use"
@@ -40776,9 +40829,9 @@ id = "historic-huesca-use"
 title = "Huesca local Mass-book catalogue witnesses"
 status = "bounded-assigned-amiet-catalogue-witness-census"
 scope = "western-original-source-trajectory"
-sources = ["iberian-usuarium-7334", "iberian-huesca-gw-m24589-original-followup", "iberian-huesca-lambert-1910-original-followup"]
-candidate_ids = ["iberian-huesca-1488"]
-remaining_work = "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage. Huesca 1488 follow-up locates GW-reported New York Hispanic Society and defective Zaragoza Cathedral copies, but acquires no originalbook. Obtain public original title/pastoral letter, calendar, colophon and tail evidence; collate the alleged reused 1485 Zaragoza sheets and resolve whether a local supplement existed, which Lambert's defective copy could not settle."
+sources = ["iberian-usuarium-7334", "iberian-huesca-gw-m24589-original-followup", "iberian-huesca-lambert-1910-original-followup", "amiet-census-usuarium-7335", "huesca-jaca-1504-ustc"]
+candidate_ids = ["iberian-huesca-1488", "amiet-usuarium-7335"]
+remaining_work = "Only assigned records from the fixed2026-10-20 Amiet table are covered. Duplicate/copy relationships remain qualified per candidate; broader manuscripts, printings, original text, authority, reception and substantive revisions remain open. Not complete historical coverage. Huesca 1488 follow-up locates GW-reported New York Hispanic Society and defective Zaragoza Cathedral copies, but acquires no originalbook. Obtain public original title/pastoral letter, calendar, colophon and tail evidence; collate the alleged reused 1485 Zaragoza sheets and resolve whether a local supplement existed, which Lambert's defective copy could not settle. Batch 5 central-north (2026-10-22): the 1504 missal for the churches of Huesca and Jaca (Zaragoza, Coci; USTC 347646; amiet-usuarium-7335) is added as a provisional catalogue stage; no digitised copy of 1488 or 1504 was found."
 
 [[sources]]
 id = "central-amiet-usuarium-5832"
@@ -40822,8 +40875,8 @@ date_role = "catalogue-attributed printing/publication or object age; inspect ti
 kind = "catalogued-printed-missal-witness"
 status = "researched-witness-proposal"
 route = "https://usuarium.elte.hu/book/5818/view"
-sources = ["central-amiet-usuarium-5818", "central-halberstadt-1498-bsb-google-original"]
-qualification = "USUARIUM bibliographic witness only; printer not supplied in the inspected table. Local reception, original contents, completeness, independent recension and normative approval unverified. Halberstadt origin, BSB München 2 Inc.s.a. 879 f, catalogue age 1498; linked GW M24400 and BSB bsb00032887 not separately inspected. Batch 4 lane B, re-identified by cold review: this BSB holding (2 Inc.s.a. 879 f; the BSB incunable catalogue, BSB-Ink M-434, lists no other BSB copy) is digitised by MDZ (bsb00032887) and by Google Books (xhKLX-OS2c0C), whose leaf PP7 matches MDZ canvas 7. That leaf carries the printed, undated mandate ('Datum Halberstadt') of Ernst, archbishop of Magdeburg and administrator of Halberstadt: diocesan missals were variously ordered, corrupted by scribes and age and at odds with the true rubric, and he authorised missals printed according to the order and rubric of Halberstadt from emended exemplars. The year remains catalogue/provider metadata (BSB: 'ca. 1498'); no colophon was located. Index row: no stage is constructed."
+sources = ["central-amiet-usuarium-5818", "central-halberstadt-1498-bsb-google-original", "central-halberstadt-1498-mdz"]
+qualification = "USUARIUM bibliographic witness only; printer not supplied in the inspected table. Local reception, original contents, completeness, independent recension and normative approval unverified. Halberstadt origin, BSB München 2 Inc.s.a. 879 f, catalogue age 1498; linked GW M24400 and BSB bsb00032887 not separately inspected. Batch 4 lane B, re-identified by cold review: this BSB holding (2 Inc.s.a. 879 f; the BSB incunable catalogue, BSB-Ink M-434, lists no other BSB copy) is digitised by MDZ (bsb00032887) and by Google Books (xhKLX-OS2c0C), whose leaf PP7 matches MDZ canvas 7. That leaf carries the printed, undated mandate ('Datum Halberstadt') of Ernst, archbishop of Magdeburg and administrator of Halberstadt: diocesan missals were variously ordered, corrupted by scribes and age and at odds with the true rubric, and he authorised missals printed according to the order and rubric of Halberstadt from emended exemplars. The year remains catalogue/provider metadata (BSB: 'ca. 1498'); no colophon was located. Index row: no stage is constructed. Batch 5 central-north (2026-10-22): MDZ bsb00032887 canvases 7 (mandate) and 8 (January calendar) read; the copy now witnesses the documented stage northern-central-regional:halberstadt-c1498, whose date bounds 1493–1500 keep the catalogue attributions (BSB ca. 1498; Fuchs ca. 1493–1500) because no colophon was read; the BSB note also records Proctor's sixteenth-century placing (BMC III p. 861), so the 1500 upper bound is not secure."
 version_status = "witness-or-component-candidate-not-proven-recension"
 scope_disposition = "in-scope-original-book-or-historical-witness"
 acquisition_status = "source-metadata-acquired-original-book-not-certified"
@@ -40833,6 +40886,51 @@ chronology_start = 1498
 chronology_end = 1498
 chronology_kind = "catalogue-attributed-printed-object-age"
 chronology_certainty = "catalogue-attribution"
+
+[[sources]]
+id = "central-halberstadt-1498-mdz"
+title = "Missale Halberstatense with the mandate of Ernst of Saxony, BSB 2 Inc.s.a. 879 f (MDZ bsb00032887; GW M24400)"
+url = "https://www.digitale-sammlungen.de/en/view/bsb00032887"
+type = "library-digital-facsimile"
+checked_on = "2026-10-22"
+inspection_status = "inspected"
+inspection = "MDZ IIIF canvases 1–24 surveyed; canvas 7 (printed undated mandate of Archbishop Ernst as administrator of Halberstadt) and canvas 8 (January calendar) read at full size on 2026-10-22. BSB metadata: [Strasbourg: Johann Grüninger, prefaces and Canon with Peter Schöffer's types, for Peter Drach the middle, Speyer], ca. 1498, 284 leaves."
+limitations = "Two pages read; no colophon; Mass bodies uncollated."
+full_contents_examined = false
+rights_note = "Pre-1800 printed book; page images consulted on the provider site and kept only as scratch research copies; no image or text is tracked or proposed for publication."
+
+[[sources]]
+id = "central-halberstadt-1511-mdz"
+title = "Missale celeberrimi Halberstattensis episcopatus, [Speyer] 1511, BSB 2 Liturg. 223 (MDZ bsb00017961 and bsb10942166; VD16 M 5577)"
+url = "https://www.digitale-sammlungen.de/en/view/bsb00017961"
+type = "library-digital-facsimile"
+checked_on = "2026-10-22"
+inspection_status = "inspected"
+inspection = "MDZ IIIF canvases 1–24 and 520–543 surveyed; canvas 5 (title), canvas 7 (January calendar) and canvas 534 (closing address Ad clerum Halberstattensem, dating the corrected printing to 1511 under Archbishop Ernst, Pope Julius II and Emperor Maximilian) read at full size on 2026-10-22."
+limitations = "Three pages read; Mass bodies and other calendar months uncollated. The MDZ title adds 'Acc. Promptuarium ... ecclesiae Verdensis', not checked in the volume."
+full_contents_examined = false
+rights_note = "Pre-1800 printed book; page images consulted on the provider site and kept only as scratch research copies; no image or text is tracked or proposed for publication."
+
+[[candidates]]
+id = "central-halberstadt-1511-bsb00017961"
+family = "historic-halberstadt-use"
+title = "Missale celeberrimi Halberstattensis episcopatus"
+date = "1511"
+date_role = "publication year stated in the inspected closing address (anno ... millesimum quingentesimum undecimo)"
+kind = "printed-missal-witness"
+status = "researched-witness-original-pages-inspected"
+route = "https://www.digitale-sammlungen.de/en/view/bsb00017961"
+sources = ["central-halberstadt-1511-mdz"]
+qualification = "BSB 2 Liturg. 223, digitised twice by MDZ (bsb00017961 and bsb10942166, one BSB record). Title, closing address and January calendar inspected 2026-10-22; the January calendar agrees with the c. 1498 edition. The title's claim of correction is not shown to change content; no independent recension or normative act is inferred. Printer and place ([Speyer]) are catalogue attributions."
+version_status = "witness-or-component-candidate-not-proven-recension"
+scope_disposition = "in-scope-original-book-or-historical-witness"
+acquisition_status = "selected-original-pages-viewed-original-book-not-acquired"
+transcription_status = "no-new-verified-transcription"
+collation_status = "january-calendar-compared-only"
+chronology_start = 1511
+chronology_end = 1511
+chronology_kind = "publication-year-from-inspected-colophon-address"
+chronology_certainty = "inspected-original-page"
 
 [[sources]]
 id = "central-amiet-usuarium-7238"
@@ -40904,9 +41002,9 @@ chronology_certainty = "catalogue-attribution"
 id = "central-amiet-additional-german-uses"
 title = "Halberstadt, Lübeck and Merseburg: selected Amiet missal witnesses"
 status = "selected-catalogue-witnesses-documented"
-sources = ["central-amiet-usuarium-5818", "central-amiet-usuarium-7238", "central-amiet-usuarium-7271", "central-halberstadt-1498-bsb-google-original"]
-candidate_ids = ["central-halberstadt-usuarium-5818", "central-lubeck-usuarium-7238", "central-merseburg-usuarium-7271"]
-remaining_work = "Single catalogue witnesses only. Inspect holding catalogues, exact titles, colophons, contents, rights and complete extents; resolve the Lübeck USTC references. No continuous local-use chronology, normative revision, original-book completeness or modern survival is established."
+sources = ["central-amiet-usuarium-5818", "central-amiet-usuarium-7238", "central-amiet-usuarium-7271", "central-halberstadt-1498-bsb-google-original", "central-halberstadt-1498-mdz", "central-halberstadt-1511-mdz"]
+candidate_ids = ["central-halberstadt-usuarium-5818", "central-lubeck-usuarium-7238", "central-merseburg-usuarium-7271", "central-halberstadt-1511-bsb00017961"]
+remaining_work = "Single catalogue witnesses only. Inspect holding catalogues, exact titles, colophons, contents, rights and complete extents; resolve the Lübeck USTC references. No continuous local-use chronology, normative revision, original-book completeness or modern survival is established. Batch 5 central-north (2026-10-22): Halberstadt c. 1498 and 1511 are documented stages in northern-central-regional from MDZ originals (mandate, title, dated closing address, January calendars, which agree); Lübeck and Merseburg have named gaps because no original copy was located online."
 scope = "western-original-source-trajectory"
 
 [[sources]]
@@ -42090,7 +42188,7 @@ status = "bounded-primary-catalogue-metadata-inspected"
 route = "https://usuarium.elte.hu/book/7335/view"
 sources = ["amiet-census-usuarium-7335"]
 source_locus = "Individual book-card bibliographic fields; USUARIUM book IDs 7335; Amiet catalogue number(s) 692"
-qualification = "Positive catalogue witness only. Original book, imprint/colophon, complete physical-copy extent, actual language, authority and local reception uncollated; no distinct source recension inferred. Raw country/origin blank; primary Origin is Irrelevant(None). Church, rite, country and geographical use remain unknown; Latin-looking titles are not used to assign them. Batch 4 lane B: the catalogue-recorded title (USUARIUM 'Original title' field; the book itself was not inspected) names the churches of Huesca (Osca) and Jaca; the USUARIUM origin field reads 'Irrelevant (None)' in the existing source locus, and a live recheck of the USUARIUM page timed out on 2026-10-21. Origin by title only; no reassignment from this index row."
+qualification = "Positive catalogue witness only. Original book, imprint/colophon, complete physical-copy extent, actual language, authority and local reception uncollated; no distinct source recension inferred. Raw country/origin blank; primary Origin is Irrelevant(None). Church, rite, country and geographical use remain unknown; Latin-looking titles are not used to assign them. Batch 4 lane B: the catalogue-recorded title (USUARIUM 'Original title' field; the book itself was not inspected) names the churches of Huesca (Osca) and Jaca; the USUARIUM origin field reads 'Irrelevant (None)' in the existing source locus, and a live recheck of the USUARIUM page timed out on 2026-10-21. Origin by title only; no reassignment from this index row. Batch 5 central-north (2026-10-22): USTC 347646 records the edition under the heading 'Ecclesia Catholica - Missale - Huesca', title ending 'admodum completum', imprint Zaragoza, Jorge Coci, 1504, folio, two copies at Barbastro cathedral (1-10, 305-22), no digitisation. On that catalogue basis the candidate is also listed under coverage row historic-huesca-use and witnesses the provisional stage western-originals-batch3:huesca-jaca-1504; it stays in this country-blank index because the USUARIUM origin field is unchanged. Title, colophon and authority remain uninspected."
 version_status = "catalogue-witness-or-cluster; independent-recension-unestablished"
 scope_disposition = "in-scope-eucharistic-witness-metadata; rite-and-Church-unassigned-where-source-silent"
 acquisition_status = "whole-metadata-card-acquired; original-book-not-acquired"

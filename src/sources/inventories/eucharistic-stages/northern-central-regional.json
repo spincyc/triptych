@@ -31,6 +31,27 @@
       "family": "latin",
       "scope": "The 1690 Roman-based missal printed at the Prague archiepiscopal seminary with Bohemian saints' proper Masses named on its title.",
       "coverage_note": "A digitized-book title transcription identifies the edition. Papal concession documents, original title image, complete propers, and reception remain uninspected. This is not assigned as a successor to the medieval Prague-use core."
+    },
+    {
+      "id": "northern-central-regional:halberstadt",
+      "label": "Halberstadt diocesan missal",
+      "family": "latin",
+      "scope": "Printed missals for the diocese of Halberstadt issued under Archbishop Ernst of Magdeburg as administrator: the c. 1498 edition with his mandate and the 1511 edition.",
+      "coverage_note": "Mandate, title, colophon and January calendars are inspected in BSB copies; Mass bodies, other months and local reception remain uncollated."
+    },
+    {
+      "id": "northern-central-regional:lubeck",
+      "label": "Lübeck diocesan missal",
+      "family": "latin",
+      "scope": "The Missale Lubicense catalogued for about 1505.",
+      "coverage_note": "No original copy was located online; catalogue witness only."
+    },
+    {
+      "id": "northern-central-regional:merseburg",
+      "label": "Merseburg diocesan missal",
+      "family": "latin",
+      "scope": "The Missale Merseburgense catalogued for 1502.",
+      "coverage_note": "No original copy was located online; catalogue witness only."
     }
   ],
   "sources": [
@@ -93,6 +114,46 @@
       "checked_on": "2026-10-21",
       "status": "inspected",
       "limitations": "A composite of leaves from several copies; the Bitz preface leaf was not found in pp. 1–24. Only selected calendar months were read."
+    },
+    {
+      "id": "northern-central-regional:halberstadt-1498-mdz",
+      "title": "Missale Halberstatense with the mandate of Ernst of Saxony, [Strasbourg: Johann Grüninger for Peter Drach, ca. 1498], BSB 2 Inc.s.a. 879 f (MDZ bsb00032887; GW M24400)",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb00032887",
+      "kind": "primary-book",
+      "inspection": "Canvases 1–24 surveyed as thumbnails; canvas 7 (printed mandate) and canvas 8 (January calendar) read at full size, 2026-10-22. The mandate of Ernst, archbishop of Magdeburg and administrator of the church of Halberstadt, to the clergy of the city and diocese of Halberstadt says that the missals in use vary among themselves and depart from the true rubric, and that he has therefore granted missals to be printed according to the order and true rubric of Halberstadt from the most corrected exemplars, urging churches to buy them; it ends 'Datum Halberstadt' without a date. Calendar canvases 8–19.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "No colophon was read; the date ca. 1498 and the printer are the BSB/GW attribution (the BSB note also cites Fuchs ca. 1493–1500, BM STC 1500? and Proctor's sixteenth-century placing). Body uncollated."
+    },
+    {
+      "id": "northern-central-regional:halberstadt-1511-mdz",
+      "title": "Missale celeberrimi Halberstattensis episcopatus, [Speyer], 1511, BSB 2 Liturg. 223 (MDZ bsb00017961; VD16 M 5577)",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb00017961",
+      "kind": "primary-book",
+      "inspection": "Canvases 1–24 and 520–543 surveyed as thumbnails; canvas 5 (title), canvas 7 (January calendar) and canvas 534 (address Ad clerum Halberstattensem) read at full size, 2026-10-22. The red title calls the book the missal of the most celebrated Halberstadt bishopric, carefully corrected at the instance of the clergy and printed in more pleasing type; the closing address praises Archbishop Ernst of Magdeburg under Pope Julius II and Emperor Maximilian and dates the corrected printing to the year 1511 ('millesimum quingentesimum undecimo'). A second MDZ object, bsb10942166, describes the same BSB copy.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Printer and place are catalogue attributions; Mass bodies and other calendar months are uncollated."
+    },
+    {
+      "id": "northern-central-regional:lubeck-merseburg-usuarium",
+      "title": "USUARIUM 7238 (Missale Lubicense) and 7271 (Missale Merseburgense) book records",
+      "url": "https://usuarium.elte.hu/book/7271/view",
+      "kind": "institutional-catalogue",
+      "inspection": "Both records read 2026-10-22: 7238 Lübeck, age 'about 1505', Amiet 543, USTC 741258 (more copies USTC 676212); 7271 Merseburg, age 1502, original-title incipit 'Ex quo missalium diversitas in dioecesi Merszburgensi ...', UB Leipzig III/243, Amiet 591.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Catalogue metadata only; no original page seen."
+    },
+    {
+      "id": "northern-central-regional:prague-pazour-1881",
+      "title": "Karel Pazour, 'Zkušenosti ze správy duchovní: 1. Potřeba doplňků v starších misálech', Pastýř duchovní (1881), printed p. 382 (Czech National Library Kramerius)",
+      "url": "https://kramerius5.nkp.cz/search/img?pid=uuid:a783cbf8-7618-418e-baca-f94131d6ddbf&stream=IMG_FULL",
+      "kind": "scholarship",
+      "inspection": "Page image (printed p. 382) acquired and read 2026-10-22 after a Kramerius full-text search for 'missale romano bohemicum': a parish priest reports that the rubric placing the Trinity preface on Sundays without a proper preface, by Clement XIII's bull of 3 January 1759, is printed in his missal of 1869 but is ignored by the 'Missale Romano-Bohemicum' issued in 1845, which he calls doubtless the most widespread missal in Bohemia; he also lists later additions (St Joseph in the A cunctis prayer, 1871) to be entered by hand.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "A contemporary practitioner's remark in a pastoral column ('Zkušenosti ze správy duchovní'), not a bibliographic description and not an inspection of the 1845 book by this project; the claim concerns one rubric. Publisher, imprint and approval of the 1845 edition are not stated."
     }
   ],
   "stages": [
@@ -230,6 +291,101 @@
       ],
       "limitations": "The original title and body, each concession, calendar, diocesan adoption and relation to the 1735 printing remain unchecked; the 1690 print is not made a descendant of the medieval Prague-use core.",
       "reception": "A named archiepiscopal mandate on the title is not proof of reception at every Bohemian church or a first effective date."
+    },
+    {
+      "id": "northern-central-regional:prague1845",
+      "tradition_id": "prague-romano-bohemian-missal",
+      "label": "1845 Missale Romano-Bohemicum as described in 1881",
+      "date_label": "1845 issue reported by Pazour (1881); title and imprint uninspected",
+      "start_year": 1845,
+      "end_year": 1845,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "One rubric state of the 1845 Romano-Bohemian missal, as described by a Bohemian parish priest in 1881.",
+      "components": [
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:ce-prague-romano-bohemicum-1845"
+      ],
+      "witness_label": "1845 Missale Romano-Bohemicum, known from Pastýř duchovní 1881, p. 382",
+      "summary": "Pazour reports that the 1845 Missale Romano-Bohemicum, then the most widespread missal in Bohemia, does not carry the rubric, based on Clement XIII's bull of 3 January 1759, that assigns the Trinity preface to Sundays without a proper preface, whereas his 1869 missal prints it.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northern-central-regional:prague-pazour-1881",
+          "locus": "Pastýř duchovní 1881, printed p. 382, section 1, paragraphs 2–3",
+          "claim": "The 1845 Missale Romano-Bohemicum lacks the 1759 Sunday Trinity-preface rubric and was widely used in Bohemia."
+        }
+      ],
+      "limitations": "Provisional after cold review (2026-10-22): the only evidence is a parish priest's passing remark in a pastoral column about one rubric, not a bibliographic or liturgical-historical description of the book, so it does not meet the scholarly-description standard for a documented book state; the edition's title page, imprint, publisher and approval are unidentified. Known only from a later description of one rubric; the book's title page, imprint, approval and the rest of its contents are uninspected, and its relation to the 1690 and 1735 editions is not established. The absence is the author's report, not this project's check.",
+      "reception": "Described in 1881 as the most widespread missal in Bohemia; no dated adoption."
+    },
+    {
+      "id": "northern-central-regional:halberstadt-c1498",
+      "tradition_id": "northern-central-regional:halberstadt",
+      "label": "Missale Halberstatense with Archbishop Ernst's mandate",
+      "date_label": "ca. 1498 printing (BSB/GW attribution; mandate undated)",
+      "start_year": 1493,
+      "end_year": 1500,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "A printed Halberstadt diocesan missal with its prefatory mandate and calendar.",
+      "components": [
+        "calendar",
+        "rubrics",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:central-halberstadt-usuarium-5818"
+      ],
+      "witness_label": "BSB 2 Inc.s.a. 879 f (MDZ bsb00032887; USUARIUM 5818; Google Books xhKLX-OS2c0C)",
+      "summary": "The administrator of Halberstadt, Archbishop Ernst of Magdeburg, prefaces the book with a mandate that justifies a printed missal by the divergence and corruption of the diocese's manuscript missals and orders it to follow the order and rubric of Halberstadt; the calendar follows.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northern-central-regional:halberstadt-1498-mdz",
+          "locus": "MDZ bsb00032887 canvases 7 (mandate) and 8 (January calendar)",
+          "claim": "Mandate identifying the diocese, the authority and the reason for printing; Halberstadt calendar."
+        }
+      ],
+      "limitations": "The date bounds 1493–1500 record the incunable-catalogue attributions (BSB ca. 1498; Fuchs ca. 1493–1500; BM STC 1500?), not an inspected colophon; the same BSB note records Proctor's sixteenth-century placing (BMC III p. 861), so the 1500 upper bound is not secure. The mandate is undated. Mass bodies are uncollated.",
+      "reception": "The mandate urges every church of the diocese to acquire the book; actual uptake is undated."
+    },
+    {
+      "id": "northern-central-regional:halberstadt-1511",
+      "tradition_id": "northern-central-regional:halberstadt",
+      "label": "Missale celeberrimi Halberstattensis episcopatus",
+      "date_label": "1511 printing (closing address dated 1511)",
+      "start_year": 1511,
+      "end_year": 1511,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "A corrected Halberstadt diocesan missal printed under Archbishop Ernst.",
+      "components": [
+        "calendar",
+        "propers"
+      ],
+      "witness_ids": [
+        "western:central-halberstadt-1511-bsb00017961"
+      ],
+      "witness_label": "BSB 2 Liturg. 223 (MDZ bsb00017961 / bsb10942166; VD16 M 5577)",
+      "summary": "The title presents the book as carefully corrected at the clergy's instance and newly printed; the closing address to the Halberstadt clergy dates the corrected printing to 1511 under Archbishop Ernst. Its January calendar agrees with that of the c. 1498 edition in feasts, grades and rubrics.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "northern-central-regional:halberstadt-1511-mdz",
+          "locus": "MDZ bsb00017961 canvases 5 (title), 7 (January calendar) and 534 (Ad clerum Halberstattensem)",
+          "claim": "Title, dated closing address and calendar of the 1511 edition."
+        },
+        {
+          "source_id": "northern-central-regional:halberstadt-1498-mdz",
+          "locus": "MDZ bsb00032887 canvas 8",
+          "claim": "The c. 1498 January calendar, compared entry by entry with the 1511 page: same feasts, grades and octave rubrics."
+        }
+      ],
+      "limitations": "The title's claim of correction is not shown to change content: the only compared page (January) agrees with the earlier edition, so no transition is drawn. Other months and Mass bodies are uncollated.",
+      "reception": "Addressed to the Halberstadt clergy; first use undated."
     }
   ],
   "transitions": [],
@@ -246,8 +402,8 @@
       "id": "northern-central-regional:turku-copies",
       "tradition_id": "turku-aboense-missal",
       "period": "1488 and local reception",
-      "missing": "January, June and December calendar pages of the National Library composite are read; the Bitz preface leaf (not in pp. 1–24 of the composite), remaining calendar months, Mass components, other copies and actual Turku use dates remain.",
-      "next_source": "Remaining pages of the acquired Doria composite PDF (pp. 25–540) for the preface woodcut leaf and Mass sections; Copenhagen parchment copy; paper copies listed by the National Library.",
+      "missing": "January, June and December calendar pages of the National Library composite are read; pp. 25–540 were thumbnailed on 2026-10-22 without finding the Bitz preface leaf. They include the Canon woodcut (p. 300) and photographic facsimile leaves (about pp. 290–291, 301–302 and 311–312, the Te igitur on p. 301 numbered 249) whose source copy is unidentified. Remaining calendar months, Mass components, other copies and actual Turku use dates remain.",
+      "next_source": "Identification of the facsimile leaves' source copy; the Copenhagen parchment copy and paper copies listed by the National Library for the Bitz preface; remaining months at pp. 8–11 and 13–17 of the Doria composite.",
       "consequence": "The diocesan book and local calendar are identified, but a full distinctive version and uptake cannot be reconstructed."
     },
     {
@@ -261,10 +417,34 @@
     {
       "id": "northern-central-regional:prague-original",
       "tradition_id": "prague-romano-bohemian-missal",
-      "period": "1690 and later Roman-Bohemian editions",
-      "missing": "Original printed title and propers, separate concession acts, local use and comparison with 1735 and medieval Prague materials.",
-      "next_source": "National Library of the Czech Republic digitized 1690 copy and original archiepiscopal decree or approbation leaves.",
+      "period": "1690–1845 Roman-Bohemian editions",
+      "missing": "Original printed title and propers of 1690, separate concession acts, local use and comparison with 1735, 1845 and medieval Prague materials. Batch 5 adds an 1845 edition known from Pazour (1881, p. 382) by one rubric, as a provisional stage after cold review; no Romano-Bohemicum title was found by title search in Kramerius (2026-10-22).",
+      "next_source": "National Library of the Czech Republic digitized 1690, 1735 and 1845 copies (Kramerius, Manuscriptorium) and original archiepiscopal decree or approbation leaves; Pastýř duchovní and Časopis katolického duchovenstva for further descriptions.",
       "consequence": "The Roman-local book state is identifiable, but neither its exact prayer variants nor historical parentage is established."
+    },
+    {
+      "id": "northern-central-regional:halberstadt-collation",
+      "tradition_id": "northern-central-regional:halberstadt",
+      "period": "c. 1498–1511",
+      "missing": "Only the January calendars of the two Halberstadt editions are compared (no difference); the other months, the Mass bodies, the c. 1498 colophon and the 1511 title's claimed corrections are uncollated; earlier manuscripts and later editions are unlocated.",
+      "next_source": "MDZ bsb00032887 calendar canvases 9–19 and Mass sections against bsb00017961 canvases 8–18 and matching sections; final leaves of bsb00032887 for a colophon.",
+      "consequence": "Two documented Halberstadt book states with no established textual difference."
+    },
+    {
+      "id": "northern-central-regional:lubeck-original",
+      "tradition_id": "northern-central-regional:lubeck",
+      "period": "about 1505",
+      "missing": "No original copy of the Missale Lubicense was found online (MDZ metadata search, web search, 2026-10-22; the Google Books API refused with a quota error); title, colophon, date and contents are known only from USUARIUM 7238 and its Amiet and USTC references.",
+      "next_source": "USTC 741258 and 676212 copy lists; Stadtbibliothek Lübeck and Kiel/Rostock holdings; GW/VD16 entries for Lübeck missals.",
+      "consequence": "The route has no Lübeck stage; the catalogue witness stays a candidate."
+    },
+    {
+      "id": "northern-central-regional:merseburg-original",
+      "tradition_id": "northern-central-regional:merseburg",
+      "period": "1502",
+      "missing": "No digitised copy of the Missale Merseburgense was found (MDZ metadata search, web search, 2026-10-22). USUARIUM 7271 cites UB Leipzig III/243 and a title beginning 'Ex quo missalium diversitas in dioecesi Merszburgensi', which suggests a mandate on divergent missals; neither has been seen.",
+      "next_source": "UB Leipzig III/243 (Leipzig digital collections); VD16 entry for the 1502 Merseburg missal; Merseburg cathedral library holdings.",
+      "consequence": "The route has no Merseburg stage; the catalogue witness stays a candidate."
     }
   ]
 }
