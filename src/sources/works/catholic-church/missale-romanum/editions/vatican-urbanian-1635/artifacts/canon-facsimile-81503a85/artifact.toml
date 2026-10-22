@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85"
+edition_id = "edition.catholic-church.missale-romanum.vatican-urbanian-1635"
+artifact_type = "facsimile-pdf-derivative"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The Rome 1635 Typographia Vaticana printing is public domain in the United States by publication date (first published abroad before the pre-1931 line derived for 2026). The page images are Google's public full-view digitization of an original copy (Google Books XNC4a07qPqQC), faithful mechanical reproductions that add no original authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)); no Google front-matter text is included in the retained bytes. Mechanical extraction, resampling and a faithful bounded reading transcription add no separately claimed rights. Excluded from the Triptych CC BY 4.0 grant."
+rights_jurisdiction = "United States"
+source_url = "https://books.google.com/books?id=XNC4a07qPqQC"
+provenance = "10 complete provider page images in provider order from the exact retained page-image package. PDF 1 = Google page PP7 (title page), sha256 16a11fb5762fe8483a6228184edc118c1dae6ae28b8ec57d2356ea7b0c62e29d; PDF 2 = Google page PP10 (Cum sanctissimum), sha256 eee191563e914086cb8f6b9530e9bc3dac74207218604391a46cd208586c435e; PDF 3 = Google page PP11 (Si quid est, sig. dagger-3), sha256 b0aa0684dce95f7571d3e7c691595728e070fbc29fdaf9192051f30e4e11f4ab; PDF 4 = Google page PP12 (Si quid est end and Congregation of Rites decree extract), sha256 d3ac642440a9e77bce93e1cd0ddf25089433d7ac4f57934e5c5a15bcf65a25f8; PDF 5 = Google page PA245 (printed p. 245), sha256 ba64e3eac0bc969fefc2b55939dbaea83029e49092938492d2fa732c6f9752a4; PDF 6 = Google page PA246 (printed p. 246), sha256 8b51fdcb56b54c86dac3b52c71d5384e4354ebd2698b1a732c9ebb63fc3505ae; PDF 7 = Google page PA247 (printed p. 247), sha256 c532ede8e90067cea5ab2a1cadd3d1a829d3b3e2278f5f1a8e508a0bb54fcb3f; PDF 8 = Google page PA248 (printed p. 248), sha256 76d8355b8aefe84639042cfd0937f5f5629331fe53977a927857611c594f15b7; PDF 9 = Google page PA249 (printed p. 249), sha256 d6445c52713b16e0c8d46724a56788d4cfd147903a899d96af8714c3340fb439; PDF 10 = Google page PT4 (Regestum and colophon), sha256 03e9cb5ad704d6f3e453309ffd508d46121ff4b6e85a5f8b451f7e329780e86e."
+retrieved = "2026-10-22"
+sha256 = "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+byte_size = 6043091
+path = "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/artifacts/canon-facsimile-81503a85/canon-pages.pdf"
+indexable = false
+page_count = 10
+derived_from = "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-pages-5822dfde"
+transformation = "ImageMagick decoded each exact package member, resized it to at most 2000 px on the long side, stripped metadata and embedded it as a colour quality-85 JPEG page of a PDF in package order. Colour is kept because red and black ink distinguish rubrics from spoken text. JPEG is lossy; the exact provider images remain in the parent package. No crop, page omission, OCR or editorial text."

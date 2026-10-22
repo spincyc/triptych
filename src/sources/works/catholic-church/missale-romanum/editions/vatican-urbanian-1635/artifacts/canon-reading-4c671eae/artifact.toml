@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae"
+edition_id = "edition.catholic-church.missale-romanum.vatican-urbanian-1635"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The Rome 1635 Typographia Vaticana printing is public domain in the United States by publication date (first published abroad before the pre-1931 line derived for 2026). The page images are Google's public full-view digitization of an original copy (Google Books XNC4a07qPqQC), faithful mechanical reproductions that add no original authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)); no Google front-matter text is included in the retained bytes. Mechanical extraction, resampling and a faithful bounded reading transcription add no separately claimed rights. Excluded from the Triptych CC BY 4.0 grant."
+rights_jurisdiction = "United States"
+source_url = "https://books.google.com/books?id=XNC4a07qPqQC"
+provenance = "Bounded 17-unit Canon reading transcribed by an AI source transcriber from the retained page images, word by word on the image; the provider OCR text layer was used only to locate pages. Every physical line was then independently collated against the exact provider page images on 2026-10-22 (review receipt src/sources/inventories/eucharistic-books/support/roman-1635-canon-missae-review.json). The collator corrected two punctuation readings in the Supplices (line 55, no comma after quotquot; line 58, comma after Calicem); this artifact replaces the transcriber's reading b4b0564e."
+retrieved = "2026-10-22"
+sha256 = "4c671eae9178c75966d1bcb10a77a9a2bd3e4a5bcecbba4bc62e9a310e83a9cb"
+byte_size = 6924
+path = "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/artifacts/canon-reading-4c671eae/canon-reading.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-pages-5822dfde"
+transformation = "Render the 17-unit reading into 83 sequential UTF-8 LF lines. The display title, each red heading, each red rubric and each spoken or read block occupy their own lines in source order. Letter-form normalization uses the conventions of the roman-1570-canon-missae reading so that dated Roman Canon states can be compared word for word: long s becomes s; ae/oe ligatures and e-caudata become ae/oe; u/v are regularized (u vowel, v consonant) and j becomes i (final ij as ii); the ampersand becomes et; enclitic q. becomes que; nasal bars and other printed contractions are expanded (Dne Domine, Dni Domini, final -um/-em/-am, cum, -tum); acute and grave accents are omitted; display initials and spaced capitals are merged in sentence case; line-end word divisions are joined and one space follows punctuation. Unlike the roman-1570-canon-missae reading, whose capitalization does not consistently follow its print, spelling, capitalization and punctuation are otherwise kept as printed, so case differences against that reading are not evidence of change (for example eumdem, coenatum, saecula, Thadaei/Thaddaei, Matthia/Mathia). Printed crosses are rendered as U+2720 at their source positions; printed N. is kept; the printed response sign is R. Running heads, page numbers, signatures, catchwords, ornaments and chant notes are excluded. This is a normalized reading transcription, not a glyph-diplomatic facsimile. The native extent record classifies every physical line as heading, red-heading, red-rubric or reading without duplicating the literal wording."

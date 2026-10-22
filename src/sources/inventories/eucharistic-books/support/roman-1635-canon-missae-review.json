@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "roman-1635-canon-missae",
+  "title": "Rome 1635 (Urbanian) strict Canon native serialization independent review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "Independent AI source reviewer (batch-5 text-roman original-image collation), distinct from the transcriber and the coordinator",
+  "checked_on": "2026-10-22",
+  "binding_sha256": "318f418bfc3c49faee1e60659f0344c29bd8757ad1199bd4a8c4352fe0525f87",
+  "extent_sha256": "244a5b42a088e9b4dadd528ef4fc436641d5f41d6c7c416c4732cf42de97dbf7",
+  "witness_sha256": {
+    "rome-1635-canon-pages": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+  },
+  "unit_sha256": {
+    "unit.rome-1635.canon.heading": "70d0ade9cefbb09038134c3a892d793218d0a32c213d4401170a3abc337ebcba",
+    "unit.rome-1635.canon.opening-rubric": "4469e89e6991fbbd4cef65d60a898c7885f471712d17b89329836ffb8c50065c",
+    "unit.rome-1635.canon.te-igitur": "a6bb25b24952482c71f8a056c244193fe2345e6aec392d9bb5b843bfe4968021",
+    "unit.rome-1635.canon.memento-vivorum": "0c29b33d3e4a85cfae975b533404ad89719184407fae2332ac8dc30786d8801d",
+    "unit.rome-1635.canon.communicantes": "84d8bbf331fe877d88af4d97bcc59600edb777867fadbe2b0a03e186b1cebcad",
+    "unit.rome-1635.canon.hanc-igitur": "e1f7abd74486185b1997f39566fd95dbc84e50eac41b451fbc543e4ed1de7cb1",
+    "unit.rome-1635.canon.quam-oblationem": "1f72e6acafa4255d98c913ba0ffb594a5680a0004a15e01dda9725221e9d9f1a",
+    "unit.rome-1635.canon.qui-pridie": "f7443bcb01ed084194368ec6b764fefb5289b283b80cb16112430e387ce8dd76",
+    "unit.rome-1635.canon.simili-modo": "149d534f44dcb3e5275505a157a4ac47762b0ad72ced14c1781a3598520a8ffa",
+    "unit.rome-1635.canon.unde-et-memores": "f739ec4361fa60c4dfc6333ca1d3c7654b45ce86398769753148a1034cd9550f",
+    "unit.rome-1635.canon.supra-quae": "7c19bf675ea732405654289ef846bee07a0b15da9f79250674b7fd507a894ac9",
+    "unit.rome-1635.canon.supplices": "0fbd8e05e21c20d9f1b672b6cc851c86e69d2efdc4a3d8cb30f0f9849243ce17",
+    "unit.rome-1635.canon.memento-defunctorum": "7fe173cc98b09eb97a8458aec6fdbece13f0aa5223ce3ec2686ac948048505af",
+    "unit.rome-1635.canon.nobis-quoque": "18eebd0cf3eed27039612e8549bfb27ee58f2cc9b9e6401d6b18ab23912bff2a",
+    "unit.rome-1635.canon.per-quem": "48467e938a299340646359026274fb0cf1923bb8b029dbff361baca404f2e283",
+    "unit.rome-1635.canon.per-ipsum": "60bb6b36104294c3a9ecab9066805757f9aded47557418ceb443d241970f00f0",
+    "unit.rome-1635.canon.concluding-response": "b6c63e5befb9914114f651c55901e635b93601f5e234374db7105d4a979761e5"
+  },
+  "literal_sha256": "4c671eae9178c75966d1bcb10a77a9a2bd3e4a5bcecbba4bc62e9a310e83a9cb",
+  "scope": "All 17 units of the complete declared strict Canon constituent on printed pp. 245-249 (Google Books XNC4a07qPqQC PA245-PA249; retained PDF pp. 5-9): the display title CANON MISSAE and red Sacerdos rubric through Per omnia saecula saeculorum, R. Amen and the red Iungit manus beside the staff, before Oremus. 83 physical lines (1 display heading, 3 red headings, 37 red rubric lines, 42 reading lines), 25 printed crosses and 6 N. placeholders. The title page (PP7, ROMAE, Ex Typographia Vaticana. MDCXXXV), Cum sanctissimum (PP10), Si quid est (PP11-PP12, dated die secunda Septembris M. DC. XXXIIII at S. Maria Maggiore, signed M. A. Maraldus) and the register and colophon (PT4, MDCXXXV) were verified on the images as identity and promulgation evidence only. Prefaces and Sanctus, the Crucifixion plate, the Oremus and Pater noster onward and page furniture are excluded. The whole Missal is not claimed.",
+  "method": "One distinct reviewer read every physical line on the exact provider images (Google page JPEGs) in full-resolution column bands, with 250-600% zooms and pixel maps for every uncertain mark, and only then compared each line word by word with the reading; the transcriber's uncertain readings were checked first. Google page images PP7, PA246 and PA248 were re-fetched at w=2000 on 2026-10-22 and are byte-identical to the retained package members. Every retained page-image package member matches its sequence.json and artifact provenance hash; every PDF page matches its package member in order (grayscale RMSE about 1%, JPEG recompression only); the facsimile, package and reading hashes match their artifact records. Unit hashes were recomputed from the selected physical lines and the census page incidence was checked in both directions. The loci that carry the 1570-1604 and 1604-1634 transition claims were also read on the Rome 1570 and the other book's images. Per-line collation record SHA 8f45ab1facdcb5a7d07a7fbb384aa7037157722b4db122f73eb0e250414017ba.",
+  "normalization_limit": "Declared selective Latin reading. Letter forms follow the conventions of the roman-1570-canon-missae reading (long s, ligatures and e-caudata, u/v, i/j, ampersand, enclitic q., printed contractions expanded, accents omitted, display initials merged); unlike that reading, capitalization and punctuation are kept as printed. Not a glyph-diplomatic, colour or chant-pitch transcription.",
+  "findings_resolved": [
+    "248 right column, line 55 (Supplices): ut quotquot, -> ut quotquot. The line ends against the column rule with no mark; the red osculatur Altare follows on the next line.",
+    "248 right column, line 58 (Supplices rubric): Calicem. -> Calicem, . The mark after licem has a head on the baseline and a tapering tail, unlike the round red period after dicit. on the same page; Rome 1604 also prints a comma here."
+  ],
+  "reading_decisions": [
+    "Line 2: a small red hyphen-like sort after oculos, is a displaced non-text mark and is not transcribed.",
+    "Lines 38 and 40 (Calicem., eum.): periods, confirmed at full resolution.",
+    "Line 43 Calix: the initial is a small-capital C form and is read as a capital.",
+    "Line 83 Iungit manus: the red rubric beside the Per omnia staff, before Oremus, is inside the source-defined extent."
+  ],
+  "counts": {
+    "source_pages_directly_viewed": 10,
+    "constituent_pages": 5,
+    "semantic_units": 17,
+    "literal_lf_lines": 83,
+    "inline_crosses": 25,
+    "N_placeholders": 6,
+    "corrections": 2
+  },
+  "source_images": [
+    {
+      "witness_page": 1,
+      "provider_page": "PP7",
+      "printed_page": null,
+      "member": "XNC4a07qPqQC-PP7.jpg",
+      "member_sha256": "16a11fb5762fe8483a6228184edc118c1dae6ae28b8ec57d2356ea7b0c62e29d",
+      "role": "identity-evidence"
+    },
+    {
+      "witness_page": 2,
+      "provider_page": "PP10",
+      "printed_page": null,
+      "member": "XNC4a07qPqQC-PP10.jpg",
+      "member_sha256": "eee191563e914086cb8f6b9530e9bc3dac74207218604391a46cd208586c435e",
+      "role": "identity-evidence"
+    },
+    {
+      "witness_page": 3,
+      "provider_page": "PP11",
+      "printed_page": null,
+      "member": "XNC4a07qPqQC-PP11.jpg",
+      "member_sha256": "b0aa0684dce95f7571d3e7c691595728e070fbc29fdaf9192051f30e4e11f4ab",
+      "role": "identity-evidence"
+    },
+    {
+      "witness_page": 4,
+      "provider_page": "PP12",
+      "printed_page": null,
+      "member": "XNC4a07qPqQC-PP12.jpg",
+      "member_sha256": "d3ac642440a9e77bce93e1cd0ddf25089433d7ac4f57934e5c5a15bcf65a25f8",
+      "role": "identity-evidence"
+    },
+    {
+      "witness_page": 5,
+      "provider_page": "PA245",
+      "printed_page": 245,
+      "member": "XNC4a07qPqQC-PA245.jpg",
+      "member_sha256": "ba64e3eac0bc969fefc2b55939dbaea83029e49092938492d2fa732c6f9752a4",
+      "role": "constituent"
+    },
+    {
+      "witness_page": 6,
+      "provider_page": "PA246",
+      "printed_page": 246,
+      "member": "XNC4a07qPqQC-PA246.jpg",
+      "member_sha256": "8b51fdcb56b54c86dac3b52c71d5384e4354ebd2698b1a732c9ebb63fc3505ae",
+      "role": "constituent"
+    },
+    {
+      "witness_page": 7,
+      "provider_page": "PA247",
+      "printed_page": 247,
+      "member": "XNC4a07qPqQC-PA247.jpg",
+      "member_sha256": "c532ede8e90067cea5ab2a1cadd3d1a829d3b3e2278f5f1a8e508a0bb54fcb3f",
+      "role": "constituent"
+    },
+    {
+      "witness_page": 8,
+      "provider_page": "PA248",
+      "printed_page": 248,
+      "member": "XNC4a07qPqQC-PA248.jpg",
+      "member_sha256": "76d8355b8aefe84639042cfd0937f5f5629331fe53977a927857611c594f15b7",
+      "role": "constituent"
+    },
+    {
+      "witness_page": 9,
+      "provider_page": "PA249",
+      "printed_page": 249,
+      "member": "XNC4a07qPqQC-PA249.jpg",
+      "member_sha256": "d6445c52713b16e0c8d46724a56788d4cfd147903a899d96af8714c3340fb439",
+      "role": "constituent"
+    },
+    {
+      "witness_page": 10,
+      "provider_page": "PT4",
+      "printed_page": null,
+      "member": "XNC4a07qPqQC-PT4.jpg",
+      "member_sha256": "03e9cb5ad704d6f3e453309ffd508d46121ff4b6e85a5f8b451f7e329780e86e",
+      "role": "identity-evidence"
+    }
+  ],
+  "checks": {
+    "binding_extent_literal_pdf_hashes": "passed",
+    "all_unit_hashes_and_binding_pins": "passed",
+    "package_members_equal_sequence_hashes": "passed",
+    "pdf_pages_match_members_in_order": "passed",
+    "source_refetch_byte_identity": "passed",
+    "page_unit_census_incidence": "passed",
+    "NFC_LF_lines": "passed"
+  },
+  "unresolved": [],
+  "review_limit": "Complete declared constituent of one identified copy only; neither the whole Missal nor another copy or setting is claimed. The roman-1570-canon-missae reading departs from its own images at several Canon loci (recorded in the text-roman batch-5 independent review), so word differences against it are not evidence of change until that reading is re-collated. Historical parentage and text inheritance are not authorized by this receipt."
+}

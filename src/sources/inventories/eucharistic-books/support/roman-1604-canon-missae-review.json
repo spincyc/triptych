@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "roman-1604-canon-missae",
+  "title": "Rome 1604 strict Canon native serialization independent review",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "Independent AI source reviewer (batch-5 text-roman original-image collation), distinct from the transcriber and the coordinator",
+  "checked_on": "2026-10-22",
+  "binding_sha256": "2a64dcd109240a5391b699c49e128704e4d7a3e0cfdb04bf5f5e35dc71615ee7",
+  "extent_sha256": "d208abe5f54adde80330df20388a79b655802b76d5bd1616254cd1307e332f08",
+  "witness_sha256": {
+    "rome-1604-canon-pages": "68d68bc261098e977131e965130007ed1c3bb8c1de4cd25cd39389446fa5fc5d"
+  },
+  "unit_sha256": {
+    "unit.rome-1604.canon.heading": "70d0ade9cefbb09038134c3a892d793218d0a32c213d4401170a3abc337ebcba",
+    "unit.rome-1604.canon.opening-rubric": "4469e89e6991fbbd4cef65d60a898c7885f471712d17b89329836ffb8c50065c",
+    "unit.rome-1604.canon.te-igitur": "63ee3ab7b418bf1a2ff30f82247c2bf16eeba648b276695f56aa37a80d52eb76",
+    "unit.rome-1604.canon.memento-vivorum": "0c29b33d3e4a85cfae975b533404ad89719184407fae2332ac8dc30786d8801d",
+    "unit.rome-1604.canon.communicantes": "b7f2cf179a6501e27bb0317846da0c7c9c1c62970b252ee8387085398f2d977c",
+    "unit.rome-1604.canon.hanc-igitur": "e1f7abd74486185b1997f39566fd95dbc84e50eac41b451fbc543e4ed1de7cb1",
+    "unit.rome-1604.canon.quam-oblationem": "426a45ba3b2387e7f9f7f7685ecdd991d30fd361490a8cc16814592aa07734e0",
+    "unit.rome-1604.canon.qui-pridie": "62e814c869395191e48321812eaf1fe5f3c1efe0fbff4ed1edaaf2657dcd9982",
+    "unit.rome-1604.canon.simili-modo": "f7fff72ee5774e5855e05f915131c2a9680c160259a6df22acf5b1367a84162d",
+    "unit.rome-1604.canon.unde-et-memores": "432122d6bfed79cff66240cef1398efe6f35c672a95039e3759c1be37cb39396",
+    "unit.rome-1604.canon.supra-quae": "7c19bf675ea732405654289ef846bee07a0b15da9f79250674b7fd507a894ac9",
+    "unit.rome-1604.canon.supplices": "5df6647b87474ed6ca536b025f42da68eb52661d67016ea01298a0f8b96ea7f4",
+    "unit.rome-1604.canon.memento-defunctorum": "5abf041adfd5e6f30e058648683c4234e74adc79336b15eca257639f813975df",
+    "unit.rome-1604.canon.nobis-quoque": "2cafbf097166f008e1adf2e371aae5f56958b4f432dfed54bb1ae4a87235ae77",
+    "unit.rome-1604.canon.per-quem": "48467e938a299340646359026274fb0cf1923bb8b029dbff361baca404f2e283",
+    "unit.rome-1604.canon.per-ipsum": "60bb6b36104294c3a9ecab9066805757f9aded47557418ceb443d241970f00f0",
+    "unit.rome-1604.canon.concluding-response": "b6c63e5befb9914114f651c55901e635b93601f5e234374db7105d4a979761e5"
+  },
+  "literal_sha256": "38b1f81b65a25c776dec864395ce6f32517f9191ac16f47dd8aff4d05577fe8e",
+  "scope": "All 17 units of the complete declared strict Canon constituent on printed pp. 251-254 (Internet Archive bub_gb_aaPpAuHRY9IC leaves 0348-0351; retained PDF pp. 3-6): the display title CANON MISSAE and red Sacerdos rubric through Per omnia saecula saeculorum, R. Amen and the red Iungit manus beside the staff, before Oremus. 83 physical lines (1 display heading, 3 red headings, 37 red rubric lines, 42 reading lines), 25 printed crosses and 6 N. placeholders. The title page (leaf 0004, ROMAE, Ex Typographia Vaticana. MDCIIII) and Cum sanctissimum (leaf 0008, dated die vij. Iulij MDCIIII at S. Marco, signed M. Vestrius Barbianus) were verified on the images as identity and promulgation evidence only. Prefaces and Sanctus, the Crucifixion plate, the Oremus and Pater noster onward and page furniture are excluded. The whole Missal is not claimed.",
+  "method": "One distinct reviewer read every physical line on the exact provider images (Internet Archive JPEG2000 leaves) in full-resolution column bands, with 250-600% zooms and pixel maps for every uncertain mark, and only then compared each line word by word with the reading; the transcriber's uncertain readings were checked first. Internet Archive leaves 0004, 0348 and 0350 were re-fetched from the jp2 package URLs on 2026-10-22 and are byte-identical to the retained package members. Every retained page-image package member matches its sequence.json and artifact provenance hash; every PDF page matches its package member in order (grayscale RMSE about 1%, JPEG recompression only); the facsimile, package and reading hashes match their artifact records. Unit hashes were recomputed from the selected physical lines and the census page incidence was checked in both directions. The loci that carry the 1570-1604 and 1604-1634 transition claims were also read on the Rome 1570 and the other book's images. Per-line collation record SHA 70822fa9307ec0978076e793553e98cee6c1e06bc8ba255c2e215f06f5e429eb.",
+  "normalization_limit": "Declared selective Latin reading. Letter forms follow the conventions of the roman-1570-canon-missae reading (long s, ligatures and e-caudata, u/v, i/j, ampersand, enclitic q., printed contractions expanded, accents omitted, display initials merged); unlike that reading, capitalization and punctuation are kept as printed. Not a glyph-diplomatic, colour or chant-pitch transcription.",
+  "findings_resolved": [],
+  "reading_decisions": [
+    "Line 2 Altare: the letters after Altar are lost in a paper defect on leaf 0348; the word is supplied from the same book's super Altare positis on p. 253. dicit is faint but legible.",
+    "Line 15 Thadaei: a single d, divided Tha-/daei across the line; kept as printed.",
+    "Lines 27, 34, 39, 41, 53 and 65 (pateretur, secrete, agens, dixit, habere, Domine): each mark is a comma. Faint specks, show-through or ticks above them sit at ascender height or are far wider apart than the same type's colon, so no semicolon is read.",
+    "Line 74 sancti✠ficas: a displaced black mark stands between sancti and the red cross inside the word; it is not a word-level punctuation of the text and is not transcribed.",
+    "Line 83 Iungit manus: the red rubric beside the Per omnia staff, before Oremus, is inside the source-defined extent. Rome 1570 prints the same rubric at the same place (p. 286), although the roman-1570-canon-missae reading omits it.",
+    "The 1604 leaves 0348 and 0350 are grayscale captures; red is inferred from the lighter tone and the line classes agree with the colour leaves 0349 and 0351."
+  ],
+  "counts": {
+    "source_pages_directly_viewed": 6,
+    "constituent_pages": 4,
+    "semantic_units": 17,
+    "literal_lf_lines": 83,
+    "inline_crosses": 25,
+    "N_placeholders": 6,
+    "corrections": 0
+  },
+  "source_images": [
+    {
+      "witness_page": 1,
+      "provider_page": "0004",
+      "printed_page": null,
+      "member": "bub_gb_aaPpAuHRY9IC_0004.jp2",
+      "member_sha256": "9d4c62d4a3715dc50577687686ac6ba8f1a3a596f83712504537a9792889c987",
+      "role": "identity-evidence"
+    },
+    {
+      "witness_page": 2,
+      "provider_page": "0008",
+      "printed_page": null,
+      "member": "bub_gb_aaPpAuHRY9IC_0008.jp2",
+      "member_sha256": "f4763a299b821d93f189b2c1cdeff8239147c55c9fb402b57e4aac54db3f1a63",
+      "role": "identity-evidence"
+    },
+    {
+      "witness_page": 3,
+      "provider_page": "0348",
+      "printed_page": 251,
+      "member": "bub_gb_aaPpAuHRY9IC_0348.jp2",
+      "member_sha256": "8c30be5b9ac75a007d94fb080c26cba45e8d98703e4b2c97f71136baf4dd4a91",
+      "role": "constituent"
+    },
+    {
+      "witness_page": 4,
+      "provider_page": "0349",
+      "printed_page": 252,
+      "member": "bub_gb_aaPpAuHRY9IC_0349.jp2",
+      "member_sha256": "6c056bb87e122ab4d9bf1419042483def744c99fac40f927a8d0726a1ff35ffa",
+      "role": "constituent"
+    },
+    {
+      "witness_page": 5,
+      "provider_page": "0350",
+      "printed_page": 253,
+      "member": "bub_gb_aaPpAuHRY9IC_0350.jp2",
+      "member_sha256": "5ae90b277b8b1654f5133af560532b0ef25b4c4c128adf8821640fe8a461796d",
+      "role": "constituent"
+    },
+    {
+      "witness_page": 6,
+      "provider_page": "0351",
+      "printed_page": 254,
+      "member": "bub_gb_aaPpAuHRY9IC_0351.jp2",
+      "member_sha256": "acf21524f5f4072fbea23191808f9625b7e8b1065b4d261cc888491dcf492198",
+      "role": "constituent"
+    }
+  ],
+  "checks": {
+    "binding_extent_literal_pdf_hashes": "passed",
+    "all_unit_hashes_and_binding_pins": "passed",
+    "package_members_equal_sequence_hashes": "passed",
+    "pdf_pages_match_members_in_order": "passed",
+    "source_refetch_byte_identity": "passed",
+    "page_unit_census_incidence": "passed",
+    "NFC_LF_lines": "passed"
+  },
+  "unresolved": [],
+  "review_limit": "Complete declared constituent of one identified copy only; neither the whole Missal nor another copy or setting is claimed. The roman-1570-canon-missae reading departs from its own images at several Canon loci (recorded in the text-roman batch-5 independent review), so word differences against it are not evidence of change until that reading is re-collated. Historical parentage and text inheritance are not authorized by this receipt."
+}

@@ -1,0 +1,527 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "text-roman-batch5-2026-10-22",
+  "lane": "text-roman-batch5",
+  "title": "Batch 5 text-roman lane: Rome 1604 and Rome 1635 Canon constituents, exact 1604 witness, Rome 1634 search",
+  "side": "western",
+  "checked_on": "2026-10-22",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml; src/sources/inventories/eucharistic-stages/roman.json; src/sources/inventories/eucharistic-stage-coverage-v1.json; src/sources/inventories/eucharistic-books/roman-1604-canon-missae.json; src/sources/inventories/eucharistic-books/roman-1635-canon-missae.json",
+  "review_files": {
+    "lane_worklog_sha256": "b2864d178a3ec3bf39ab47e6a35dddb13be9ed40a8352936a4d9341bf1a12857",
+    "independent_review_sha256": "f418cd80eb7428436d1ca3e498eab71e44c5f69de7b37517d9dc1814fb4db26c"
+  },
+  "coverage_rows": [
+    "roman-modern"
+  ],
+  "uses": [
+    {
+      "id": "roman-modern",
+      "disposition": "witness-added-stages-strengthened-texts-prepared",
+      "finding": "Added the exact Rome Typographia Vaticana 1604 copy (National Central Library of Rome, Internet Archive bub_gb_aaPpAuHRY9IC) as candidate roman-1604-rome-vatican-bncr-aappauhry9ic and as the witness of roman-stages-1604; title, Cum sanctissimum (dated 7 July 1604) and the complete Canon (printed pp. 251-254) were read on the original images. The Canon of the Rome Vatican 1635 Urbanian printing (Google XNC4a07qPqQC, printed pp. 245-249) was read likewise. Both Canons are transcribed as bounded native constituents (17 units each) with retained page images. Checked on the images of all three books, the 1604 Canon against Rome 1570 prints N. et N. in the Memento of the living, Amen after the Communicantes and Hanc igitur conclusions, Iungit manus before the Memento of the dead conclusion, and reorders the chalice elevation after a secret Haec quotiescumque, with further rubric changes; against 1604 the 1635 Canon adds only the head bow 'Iungit manus, et caput inclinat' at the end of the Memento of the dead. [Cold review: the lane's further claims Et quotquot to ut quotquot, a reordered doxology and an added Amen after the Memento of the dead rested on misreadings in the roman-1570-canon-missae reading and were removed.]",
+      "limit": "Both readings were independently collated and activated on 2026-10-22; one copy per edition. No whole-book collation; orthography, capitalization and punctuation differences are not counted as changes. The roman-1570-canon-missae reading needs re-collation before its wording is diffed.",
+      "next_sources": "Re-collation of the roman-1570-canon-missae reading against its images; Ordo Missae (before the Canon) for 1570, 1604 and 1635; a 1634-dated Rome issue, if any."
+    },
+    {
+      "id": "roman-curial",
+      "disposition": "not-attempted",
+      "finding": "Owned route not changed. The 1474 Milan stage remains witnessed only through Lippe's 1899 critical edition; no digitized copy of the 1474 incunable itself was sought in this lane, so no 1474 Canon binding was attempted (the coordinator ranked it last).",
+      "limit": "A 1474 binding needs the exact incunable, not Lippe.",
+      "next_sources": "Digitized copies of the Milan 1474 Missale Romanum (ISTC census) for a Canon constituent."
+    }
+  ],
+  "searches": [
+    {
+      "repository": "Internet Archive advancedsearch",
+      "queries": [
+        "title:(missale) AND year:[1630 TO 1640]"
+      ],
+      "url": "https://archive.org/advancedsearch.php",
+      "checked_on": "2026-10-22",
+      "outcome": "3 hits: Wroclaw Antwerp Plantin/Moretus 1634 (dbc.wroc.pl XVII-20336), two Milan Ambrosian 1640 items; no Rome 1634 issue",
+      "extent_examined": "all items with 'missale' in title and year 1630-1640",
+      "unexamined_range": "items without a year or with other title forms"
+    },
+    {
+      "repository": "Google Books legacy volumes feed",
+      "queries": [
+        "missale romanum 1634 romae",
+        "missale romanum urbani octavi recognitum",
+        "missale romanum typographia vaticana 1634"
+      ],
+      "url": "https://www.google.com/books/feeds/volumes",
+      "checked_on": "2026-10-22",
+      "outcome": "Only catalogue-only Rome 1635 Vatican records p8mhygEACAAJ (688 pp.) and Ym4gzwEACAAJ (580 pp.), plus Antwerp Moretus 1634 674JoAEACAAJ; no Rome 1634-dated record and no new full view",
+      "extent_examined": "first 30 results per query, filtered for 1633-1636",
+      "unexamined_range": "records beyond 30 results; non-Google catalogues"
+    },
+    {
+      "repository": "HathiTrust catalog",
+      "queries": [
+        "missale romanum 1634"
+      ],
+      "url": "https://catalog.hathitrust.org/Search/Home",
+      "checked_on": "2026-10-22",
+      "outcome": "access-failure: HTTP 403 (not circumvented)",
+      "extent_examined": "none",
+      "unexamined_range": "entire catalogue"
+    },
+    {
+      "repository": "Gallica SRU",
+      "queries": [
+        "gallica all \"missale romanum\" and dc.date all \"1634\""
+      ],
+      "url": "https://gallica.bnf.fr/SRU",
+      "checked_on": "2026-10-22",
+      "outcome": "access-failure: HTTP 403 Cloudflare challenge (not circumvented)",
+      "extent_examined": "none",
+      "unexamined_range": "entire repository"
+    },
+    {
+      "repository": "SBN OPAC",
+      "queries": [
+        "Titolo: missale romanum; Data: 1634"
+      ],
+      "url": "https://opac.sbn.it/risultati-ricerca-avanzata",
+      "checked_on": "2026-10-22",
+      "outcome": "results rendered only by JavaScript; no machine-readable result list obtained",
+      "extent_examined": "none",
+      "unexamined_range": "entire catalogue"
+    },
+    {
+      "repository": "Google Books search within volume XNC4a07qPqQC",
+      "queries": [
+        "clementissime",
+        "CANON MISSAE",
+        "igitur",
+        "Communicantes",
+        "Supplices",
+        "Canon",
+        "memores"
+      ],
+      "url": "https://books.google.com/books?id=XNC4a07qPqQC",
+      "checked_on": "2026-10-22",
+      "outcome": "located the Canon at PA244 (plate) to PA249; all six Canon pages then viewed as images",
+      "extent_examined": "whole volume OCR index",
+      "unexamined_range": "none for locating the Canon"
+    },
+    {
+      "repository": "Internet Archive item bub_gb_aaPpAuHRY9IC (hOCR page index and search text)",
+      "queries": [
+        "igitur + clemen",
+        "Canon Mi"
+      ],
+      "url": "https://archive.org/details/bub_gb_aaPpAuHRY9IC",
+      "checked_on": "2026-10-22",
+      "outcome": "located the Canon at leaves 0348-0351 (0347 plate); all pages then viewed as images",
+      "extent_examined": "whole-item OCR",
+      "unexamined_range": "none for locating the Canon"
+    }
+  ],
+  "versions": [
+    {
+      "id": "roman-1604-rome-vatican-bncr-aappauhry9ic",
+      "label": "Missale Romanum, Rome Typographia Vaticana 1604 (Clementine)",
+      "tradition_or_use": "roman-stages-pian",
+      "date_label": "1604 imprint; Cum sanctissimum 7 July 1604",
+      "date_role": "publication",
+      "record_class": "exact-original-copy-witness",
+      "distinctness_basis": "Witness of the documented 1604 Clementine recension stage; not a new version. Its Canon differs concretely from Rome 1570 (see transition roman-stages-clementine-correction).",
+      "existing_candidate_ids": [
+        "roman-modern-003"
+      ],
+      "source_refs": [
+        "roman-stages-source-1604",
+        "roman-1604-rome-vatican-bncr-copy"
+      ],
+      "unresolved": "Single copy; the Canon reading is independently collated, the rest of the book is not."
+    },
+    {
+      "id": "roman-modern-1635-vatican-gb-xnc4a07qpqqc",
+      "label": "Missale Romanum, Rome Typographia Vaticana 1635 (Urbanian)",
+      "tradition_or_use": "roman-stages-pian",
+      "date_label": "1635 imprint and colophon; Si quid est 2 September 1634",
+      "date_role": "publication",
+      "record_class": "exact-original-copy-witness",
+      "distinctness_basis": "Witness of the 1634 Urbanian recension stage; its Canon adds the head-bow rubric against Rome 1604.",
+      "existing_candidate_ids": [
+        "roman-modern-004",
+        "roman-modern-1635-vatican-witness-lead"
+      ],
+      "source_refs": [
+        "roman-stages-source-1635-vatican"
+      ],
+      "unresolved": "Identity with SBN UM1E008100, Rusca L-77 Secunda editio and UB [1634?]; no 1634-dated imprint."
+    }
+  ],
+  "acquisitions": [
+    {
+      "source_url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_djvu.txt",
+      "retrieved_at_utc": "2026-10-22T04:58:00Z",
+      "sha256": "6d12feef4fe19166d274ecf3129d91a2a2945fb9f5b801b602a0f10e203fa838",
+      "byte_size": 2025007,
+      "retrieved_extent": "whole-item derivative metadata/OCR file (finding aid only)",
+      "source_role": "provider-ocr-or-index-finding-aid",
+      "storage_decision": "already tracked as artifact.catholic-church.missale-romanum.vatican-typica-1604.missale-romanum-1604-text-6d12feef; scratch copy deferred",
+      "rights_and_offline_limit": "Machine OCR and metadata of a public-domain book; used only to locate pages, never as a reading.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1604-ia/bub_gb_aaPpAuHRY9IC_djvu.txt"
+    },
+    {
+      "source_url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_hocr_pageindex.json.gz",
+      "retrieved_at_utc": "2026-10-22T04:58:00Z",
+      "sha256": "aa7a3f56211c9ce4962f5312f3fd79b3bb49938da149fc980daecb3332317aa5",
+      "byte_size": 8567,
+      "retrieved_extent": "whole-item derivative metadata/OCR file (finding aid only)",
+      "source_role": "provider-ocr-or-index-finding-aid",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Machine OCR and metadata of a public-domain book; used only to locate pages, never as a reading.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1604-ia/bub_gb_aaPpAuHRY9IC_hocr_pageindex.json.gz"
+    },
+    {
+      "source_url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_hocr_searchtext.txt.gz",
+      "retrieved_at_utc": "2026-10-22T04:58:00Z",
+      "sha256": "73a6ccf5cd6b182c45b2cd77db962a8f21695be70f418e16e48f4b530ecd73a0",
+      "byte_size": 963844,
+      "retrieved_extent": "whole-item derivative metadata/OCR file (finding aid only)",
+      "source_role": "provider-ocr-or-index-finding-aid",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Machine OCR and metadata of a public-domain book; used only to locate pages, never as a reading.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1604-ia/bub_gb_aaPpAuHRY9IC_hocr_searchtext.txt.gz"
+    },
+    {
+      "source_url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_meta.xml",
+      "retrieved_at_utc": "2026-10-22T04:58:00Z",
+      "sha256": "182c18dd8beba628a88d387d9e4aa8083c1eb3fe5017770bec5f9cbd59b3e76b",
+      "byte_size": 2126,
+      "retrieved_extent": "whole-item derivative metadata/OCR file (finding aid only)",
+      "source_role": "provider-ocr-or-index-finding-aid",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Machine OCR and metadata of a public-domain book; used only to locate pages, never as a reading.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1604-ia/bub_gb_aaPpAuHRY9IC_meta.xml"
+    },
+    {
+      "source_url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_page_numbers.json",
+      "retrieved_at_utc": "2026-10-22T04:58:00Z",
+      "sha256": "507c325c5464e7a64f09897ab73b1d93e220ff39aa2120508517a8fbfa132468",
+      "byte_size": 119630,
+      "retrieved_extent": "whole-item derivative metadata/OCR file (finding aid only)",
+      "source_role": "provider-ocr-or-index-finding-aid",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Machine OCR and metadata of a public-domain book; used only to locate pages, never as a reading.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1604-ia/bub_gb_aaPpAuHRY9IC_page_numbers.json"
+    },
+    {
+      "source_url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_scandata.xml",
+      "retrieved_at_utc": "2026-10-22T04:58:00Z",
+      "sha256": "c9065c0d5288298c0499b3ff583a57b8636456b5a3db7b68e60073cf59be1ba1",
+      "byte_size": 214558,
+      "retrieved_extent": "whole-item derivative metadata/OCR file (finding aid only)",
+      "source_role": "provider-ocr-or-index-finding-aid",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Machine OCR and metadata of a public-domain book; used only to locate pages, never as a reading.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1604-ia/bub_gb_aaPpAuHRY9IC_scandata.xml"
+    },
+    {
+      "source_url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_jp2.zip/bub_gb_aaPpAuHRY9IC_jp2%2Fbub_gb_aaPpAuHRY9IC_0004.jp2",
+      "retrieved_at_utc": "2026-10-22T09:59:10Z",
+      "sha256": "9d4c62d4a3715dc50577687686ac6ba8f1a3a596f83712504537a9792889c987",
+      "byte_size": 283697,
+      "retrieved_extent": "single original JPEG2000 page image, archive leaf 0004",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-typica-1604.canon-pages-6d3538f8; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1604 printing public domain in the United States; faithful mechanical Google scan served by Internet Archive.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1604-ia/jp2/bub_gb_aaPpAuHRY9IC_0004.jp2"
+    },
+    {
+      "source_url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_jp2.zip/bub_gb_aaPpAuHRY9IC_jp2%2Fbub_gb_aaPpAuHRY9IC_0008.jp2",
+      "retrieved_at_utc": "2026-10-22T09:59:11Z",
+      "sha256": "f4763a299b821d93f189b2c1cdeff8239147c55c9fb402b57e4aac54db3f1a63",
+      "byte_size": 1181904,
+      "retrieved_extent": "single original JPEG2000 page image, archive leaf 0008",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-typica-1604.canon-pages-6d3538f8; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1604 printing public domain in the United States; faithful mechanical Google scan served by Internet Archive.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1604-ia/jp2/bub_gb_aaPpAuHRY9IC_0008.jp2"
+    },
+    {
+      "source_url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_jp2.zip/bub_gb_aaPpAuHRY9IC_jp2%2Fbub_gb_aaPpAuHRY9IC_0346.jp2",
+      "retrieved_at_utc": "2026-10-22T09:59:12Z",
+      "sha256": "cda79f347bdba90850099960631bbe450a36333fafc32d23b24c5505a57ac6dc",
+      "byte_size": 450086,
+      "retrieved_extent": "single original JPEG2000 page image, archive leaf 0346",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1604 printing public domain in the United States; faithful mechanical Google scan served by Internet Archive.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1604-ia/jp2/bub_gb_aaPpAuHRY9IC_0346.jp2"
+    },
+    {
+      "source_url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_jp2.zip/bub_gb_aaPpAuHRY9IC_jp2%2Fbub_gb_aaPpAuHRY9IC_0347.jp2",
+      "retrieved_at_utc": "2026-10-22T09:59:13Z",
+      "sha256": "92fc57bd31d24fa27ba56caae0a14fe24269aa35c305e6b10ffb42ceb4cc520e",
+      "byte_size": 442900,
+      "retrieved_extent": "single original JPEG2000 page image, archive leaf 0347",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1604 printing public domain in the United States; faithful mechanical Google scan served by Internet Archive.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1604-ia/jp2/bub_gb_aaPpAuHRY9IC_0347.jp2"
+    },
+    {
+      "source_url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_jp2.zip/bub_gb_aaPpAuHRY9IC_jp2%2Fbub_gb_aaPpAuHRY9IC_0348.jp2",
+      "retrieved_at_utc": "2026-10-22T09:59:14Z",
+      "sha256": "8c30be5b9ac75a007d94fb080c26cba45e8d98703e4b2c97f71136baf4dd4a91",
+      "byte_size": 533947,
+      "retrieved_extent": "single original JPEG2000 page image, archive leaf 0348",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-typica-1604.canon-pages-6d3538f8; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1604 printing public domain in the United States; faithful mechanical Google scan served by Internet Archive.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1604-ia/jp2/bub_gb_aaPpAuHRY9IC_0348.jp2"
+    },
+    {
+      "source_url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_jp2.zip/bub_gb_aaPpAuHRY9IC_jp2%2Fbub_gb_aaPpAuHRY9IC_0349.jp2",
+      "retrieved_at_utc": "2026-10-22T09:59:14Z",
+      "sha256": "6c056bb87e122ab4d9bf1419042483def744c99fac40f927a8d0726a1ff35ffa",
+      "byte_size": 716456,
+      "retrieved_extent": "single original JPEG2000 page image, archive leaf 0349",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-typica-1604.canon-pages-6d3538f8; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1604 printing public domain in the United States; faithful mechanical Google scan served by Internet Archive.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1604-ia/jp2/bub_gb_aaPpAuHRY9IC_0349.jp2"
+    },
+    {
+      "source_url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_jp2.zip/bub_gb_aaPpAuHRY9IC_jp2%2Fbub_gb_aaPpAuHRY9IC_0350.jp2",
+      "retrieved_at_utc": "2026-10-22T09:59:15Z",
+      "sha256": "5ae90b277b8b1654f5133af560532b0ef25b4c4c128adf8821640fe8a461796d",
+      "byte_size": 742799,
+      "retrieved_extent": "single original JPEG2000 page image, archive leaf 0350",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-typica-1604.canon-pages-6d3538f8; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1604 printing public domain in the United States; faithful mechanical Google scan served by Internet Archive.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1604-ia/jp2/bub_gb_aaPpAuHRY9IC_0350.jp2"
+    },
+    {
+      "source_url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_jp2.zip/bub_gb_aaPpAuHRY9IC_jp2%2Fbub_gb_aaPpAuHRY9IC_0351.jp2",
+      "retrieved_at_utc": "2026-10-22T09:59:16Z",
+      "sha256": "acf21524f5f4072fbea23191808f9625b7e8b1065b4d261cc888491dcf492198",
+      "byte_size": 549897,
+      "retrieved_extent": "single original JPEG2000 page image, archive leaf 0351",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-typica-1604.canon-pages-6d3538f8; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1604 printing public domain in the United States; faithful mechanical Google scan served by Internet Archive.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1604-ia/jp2/bub_gb_aaPpAuHRY9IC_0351.jp2"
+    },
+    {
+      "source_url": "https://archive.org/download/bub_gb_aaPpAuHRY9IC/bub_gb_aaPpAuHRY9IC_jp2.zip/bub_gb_aaPpAuHRY9IC_jp2%2Fbub_gb_aaPpAuHRY9IC_0352.jp2",
+      "retrieved_at_utc": "2026-10-22T09:59:17Z",
+      "sha256": "266f4e743c4a95ed6dc82dd15ded188ad08845a0aab7e19c62b79f423c7f5b43",
+      "byte_size": 504691,
+      "retrieved_extent": "single original JPEG2000 page image, archive leaf 0352",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1604 printing public domain in the United States; faithful mechanical Google scan served by Internet Archive.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1604-ia/jp2/bub_gb_aaPpAuHRY9IC_0352.jp2"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PA243",
+      "retrieved_at_utc": "2026-10-22T10:01:16Z",
+      "sha256": "2dc248bc5f4dc5a03afd6b2e0dca3fc131101ba303487ee8bb7fb53dca2afef4",
+      "byte_size": 495050,
+      "retrieved_extent": "single page image PA243 (served at w=2000)",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1635 printing public domain in the United States; faithful mechanical Google scan, no Google front matter in the bytes.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1635-gb/PA243.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PA244",
+      "retrieved_at_utc": "2026-10-22T10:01:19Z",
+      "sha256": "6cd79e0a406e8c99ab0cebccc5b529a98890eb1f530d5c6831810809620fdb4e",
+      "byte_size": 796250,
+      "retrieved_extent": "single page image PA244 (served at w=2000)",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1635 printing public domain in the United States; faithful mechanical Google scan, no Google front matter in the bytes.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1635-gb/PA244.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PA245",
+      "retrieved_at_utc": "2026-10-22T10:01:21Z",
+      "sha256": "ba64e3eac0bc969fefc2b55939dbaea83029e49092938492d2fa732c6f9752a4",
+      "byte_size": 738440,
+      "retrieved_extent": "single page image PA245 (served at w=2000)",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-pages-5822dfde; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1635 printing public domain in the United States; faithful mechanical Google scan, no Google front matter in the bytes.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1635-gb/PA245.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PA246",
+      "retrieved_at_utc": "2026-10-22T10:01:24Z",
+      "sha256": "8b51fdcb56b54c86dac3b52c71d5384e4354ebd2698b1a732c9ebb63fc3505ae",
+      "byte_size": 658856,
+      "retrieved_extent": "single page image PA246 (served at w=2000)",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-pages-5822dfde; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1635 printing public domain in the United States; faithful mechanical Google scan, no Google front matter in the bytes.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1635-gb/PA246.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PA247",
+      "retrieved_at_utc": "2026-10-22T10:01:26Z",
+      "sha256": "c532ede8e90067cea5ab2a1cadd3d1a829d3b3e2278f5f1a8e508a0bb54fcb3f",
+      "byte_size": 611209,
+      "retrieved_extent": "single page image PA247 (served at w=2000)",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-pages-5822dfde; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1635 printing public domain in the United States; faithful mechanical Google scan, no Google front matter in the bytes.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1635-gb/PA247.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PA248",
+      "retrieved_at_utc": "2026-10-22T10:01:29Z",
+      "sha256": "76d8355b8aefe84639042cfd0937f5f5629331fe53977a927857611c594f15b7",
+      "byte_size": 643256,
+      "retrieved_extent": "single page image PA248 (served at w=2000)",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-pages-5822dfde; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1635 printing public domain in the United States; faithful mechanical Google scan, no Google front matter in the bytes.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1635-gb/PA248.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PA249",
+      "retrieved_at_utc": "2026-10-22T10:01:31Z",
+      "sha256": "d6445c52713b16e0c8d46724a56788d4cfd147903a899d96af8714c3340fb439",
+      "byte_size": 601119,
+      "retrieved_extent": "single page image PA249 (served at w=2000)",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-pages-5822dfde; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1635 printing public domain in the United States; faithful mechanical Google scan, no Google front matter in the bytes.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1635-gb/PA249.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PA250",
+      "retrieved_at_utc": "2026-10-22T10:01:33Z",
+      "sha256": "ecd597a202131ab52ea10299d97b0c2f3e7135a7736babf6102bf62e7ab70987",
+      "byte_size": 578625,
+      "retrieved_extent": "single page image PA250 (served at w=2000)",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1635 printing public domain in the United States; faithful mechanical Google scan, no Google front matter in the bytes.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1635-gb/PA250.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PP10",
+      "retrieved_at_utc": "2026-10-22T10:01:46Z",
+      "sha256": "eee191563e914086cb8f6b9530e9bc3dac74207218604391a46cd208586c435e",
+      "byte_size": 733948,
+      "retrieved_extent": "single page image PP10 (served at w=2000)",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-pages-5822dfde; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1635 printing public domain in the United States; faithful mechanical Google scan, no Google front matter in the bytes.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1635-gb/PP10.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PP11",
+      "retrieved_at_utc": "2026-10-22T10:01:48Z",
+      "sha256": "b0aa0684dce95f7571d3e7c691595728e070fbc29fdaf9192051f30e4e11f4ab",
+      "byte_size": 732441,
+      "retrieved_extent": "single page image PP11 (served at w=2000)",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-pages-5822dfde; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1635 printing public domain in the United States; faithful mechanical Google scan, no Google front matter in the bytes.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1635-gb/PP11.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PP12",
+      "retrieved_at_utc": "2026-10-22T10:01:51Z",
+      "sha256": "d3ac642440a9e77bce93e1cd0ddf25089433d7ac4f57934e5c5a15bcf65a25f8",
+      "byte_size": 584276,
+      "retrieved_extent": "single page image PP12 (served at w=2000)",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-pages-5822dfde; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1635 printing public domain in the United States; faithful mechanical Google scan, no Google front matter in the bytes.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1635-gb/PP12.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PP7",
+      "retrieved_at_utc": "2026-10-22T10:01:43Z",
+      "sha256": "16a11fb5762fe8483a6228184edc118c1dae6ae28b8ec57d2356ea7b0c62e29d",
+      "byte_size": 680574,
+      "retrieved_extent": "single page image PP7 (served at w=2000)",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-pages-5822dfde; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1635 printing public domain in the United States; faithful mechanical Google scan, no Google front matter in the bytes.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1635-gb/PP7.jpg"
+    },
+    {
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC&pg=PT4",
+      "retrieved_at_utc": "2026-10-22T10:01:53Z",
+      "sha256": "03e9cb5ad704d6f3e453309ffd508d46121ff4b6e85a5f8b451f7e329780e86e",
+      "byte_size": 417271,
+      "retrieved_extent": "single page image PT4 (served at w=2000)",
+      "source_role": "original-book-page-image",
+      "storage_decision": "bytes retained byte-for-byte in tracked page-image package artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-pages-5822dfde; scratch copy deferred to the coordinator",
+      "rights_and_offline_limit": "Rome 1635 printing public domain in the United States; faithful mechanical Google scan, no Google front matter in the bytes.",
+      "scratch_path": ".scratch/batch5-20261022/text-roman/acq/rome1635-gb/PT4.jpg"
+    }
+  ],
+  "gap_dispositions": [
+    {
+      "gap_id": "roman-stages-urbanian-to-pian-reform",
+      "disposition": "narrowed",
+      "evidence": "The strict Canon of Rome 1604 and Rome Vatican 1635 is now read, independently collated and word-compared on the original images (one head-bow rubric change); a bounded search again found no 1634-dated Rome issue. Only the 1604/1634-5 Canon-comparison item listed in the row is narrowed; the 1634-1920 progression itself is unchanged.",
+      "remaining": "Gap row rewritten: no 1634-dated title or colophon, no body collation outside the Canon, no collation of the 1635 settings, and the 1635-1920 progression."
+    },
+    {
+      "gap_id": "roman-stages-curial-descent",
+      "disposition": "not-attempted",
+      "evidence": "Out of this text lane's time budget.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "roman-stages-pre-pian-delta",
+      "disposition": "not-attempted",
+      "evidence": "1474 Canon not attempted (coordinator priority).",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "roman-stages-holyweek-components",
+      "disposition": "not-attempted",
+      "evidence": "Not in this lane's text target.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "roman-stages-transitional-books",
+      "disposition": "not-attempted",
+      "evidence": "Not in this lane's text target.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "roman-stages-later-books",
+      "disposition": "not-attempted",
+      "evidence": "Not in this lane's text target.",
+      "remaining": "Unchanged."
+    },
+    {
+      "gap_id": "roman-stages-gap-2020-saints",
+      "disposition": "not-attempted",
+      "evidence": "Not in this lane's text target.",
+      "remaining": "Unchanged."
+    }
+  ],
+  "remaining_gaps": [
+    "Re-collation of the activated roman-1570-canon-missae reading, which departs from its images at the Supplices, doxology and Memento-of-the-dead loci and in capitalization.",
+    "Ordo Missae before the Canon for Rome 1570, 1604 and 1635 (stretch target not attempted).",
+    "A 1634-dated Rome Vatican issue, if any; UB [1634?] identity.",
+    "1474 Milan Canon from the exact incunable; 1920 typical edition original (no witness).",
+    "Body collation of 1604/1635 outside the Canon."
+  ],
+  "limits": "Every Canon word was read on the page images; provider OCR only located pages. The readings share the letter-form conventions of the Rome 1570 Canon reading (orthographic regularization, accents omitted) but keep printed capitalization and punctuation, so they are not diplomatic. Transition changes compare single copies and claim no first introduction. HathiTrust and Gallica refused access (403); SBN OPAC returned no machine-readable list.",
+  "independent_review": {
+    "status": "accepted-with-corrections",
+    "independent": true,
+    "reviewer": "independent batch-5 cold reviewer, distinct from the lane author and the coordinator",
+    "checked_on": "2026-10-22",
+    "verdict_sha256": "f418cd80eb7428436d1ca3e498eab71e44c5f69de7b37517d9dc1814fb4db26c",
+    "scope": "Read on the original page images, independently of the lane: every line of both new Canon readings (Rome 1604 IA leaves 0348-0351; Rome 1635 Google PA245-PA249), the 1604 title and Cum sanctissimum (including its dating clause die vij. Iulij MDCIIII) and the 1635 title, Cum sanctissimum, Si quid est and colophon; re-fetched three images per book from the source URLs (byte-identical) and matched every PDF page to its package member. Every transition claim was checked on the images of the books on both sides, including the retained Rome 1570 Canon openings 169-172. Corrections: two 1635 punctuation readings; three 1570->1604 anaphora sub-claims removed or narrowed because they rested on misreadings in the activated roman-1570-canon-missae reading rather than on its print (Ut quotquot, et in ipso before the doxology rubric, Amen already printed after the Memento of the dead); normalization wording narrowed (the 1570 reading does not keep printed capitals); a contradiction in the Urbanian transition text removed; gap evidence narrowed. Both native books were then activated. The 1570 reading itself was not corrected and needs re-collation. The IA 1630-1640 search was re-run (3 hits, no Rome 1634); the Google feed, HathiTrust, Gallica and SBN searches were not re-run. No body text outside the strict Canon was collated."
+  }
+}

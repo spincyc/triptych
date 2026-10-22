@@ -1365,6 +1365,14 @@ id = "roman-1570-canon-missae"
 adapter = "native-book:roman-1570-canon-missae"
 
 [[text_sets]]
+id = "roman-1604-canon-missae"
+adapter = "native-book:roman-1604-canon-missae"
+
+[[text_sets]]
+id = "roman-1635-canon-missae"
+adapter = "native-book:roman-1635-canon-missae"
+
+[[text_sets]]
 id = "tuki-1736-arabic-creed"
 adapter = "native-book:tuki-1736-arabic-creed"
 
@@ -1435,6 +1443,16 @@ unit_ids = ["mozarabic.1804.benedictio.heading", "mozarabic.1804.benedictio.open
 [[text_versions]]
 id = "roman-1570-canon-missae"
 text_set = "roman-1570-canon-missae"
+parents = []
+
+[[text_versions]]
+id = "roman-1604-canon-missae"
+text_set = "roman-1604-canon-missae"
+parents = []
+
+[[text_versions]]
+id = "roman-1635-canon-missae"
+text_set = "roman-1635-canon-missae"
 parents = []
 
 [[text_versions]]

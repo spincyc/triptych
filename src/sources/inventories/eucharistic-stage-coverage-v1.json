@@ -15,14 +15,14 @@
     {
       "id": "western",
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "6c05204d7ffd035492e8166bcf738176e853943ead472664ccd66c7a87a36a43",
-      "byte_size": 2931496
+      "sha256": "da1b8a71ca4e58af2ea273213989a08a38d4c6fd5ff81bab97de469f7202bb6d",
+      "byte_size": 2936700
     },
     {
       "id": "presentation",
       "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
-      "sha256": "b985610e6530f6b34d1a9e02d8e892bef08b5bbcf64e69521c07e3587f060f9f",
-      "byte_size": 189448
+      "sha256": "1dd889988fb8f0f8165db99c8a6bdbbb2f5aa29717025ec918ba3fd0e65b9913",
+      "byte_size": 189836
     },
     {
       "id": "legacy_latin",
@@ -111,8 +111,8 @@
     {
       "id": "dossier:roman-stages",
       "path": "src/sources/inventories/eucharistic-stages/roman.json",
-      "sha256": "190871701d3d2bcbc942173c8d8cc41f4e9a798ce8c51bc32398be696c9e0538",
-      "byte_size": 125276
+      "sha256": "597f9842e5f9ab4773e4c4a7bcb0595727624869c9706e529dcdb632a173c7ff",
+      "byte_size": 135937
     },
     {
       "id": "dossier:regional-variants",
@@ -269,7 +269,7 @@
     "eastern_census_slots": 23,
     "western_coverage_trajectories": 151,
     "eastern_candidates": 451,
-    "western_candidates": 1507,
+    "western_candidates": 1508,
     "presentation_groups": 233,
     "eastern_empty_candidate_slots_at_input": [
       "albanian",
@@ -10024,8 +10024,8 @@
       "documented_stage_count": 26,
       "provisional_stage_count": 1,
       "text_coverage_counts": {
-        "not-transcribed": 26,
-        "partial": 1
+        "not-transcribed": 24,
+        "partial": 3
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -13823,6 +13823,7 @@
         "roman-modern-001",
         "roman-modern-002",
         "roman-modern-003",
+        "roman-1604-rome-vatican-bncr-aappauhry9ic",
         "roman-modern-004",
         "roman-modern-005",
         "roman-modern-006",
@@ -13972,8 +13973,8 @@
         "scope": "General Roman books, separately dated component books, corrigenda and optional supplementary rules; the 1965–1968 components are not complete typical missals.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "partial": 1,
-          "not-transcribed": 22
+          "not-transcribed": 20,
+          "partial": 3
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -14063,6 +14064,14 @@
           "start_year": null,
           "end_year": null,
           "date_role": "typical-book-publication",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "roman-1604-rome-vatican-bncr-aappauhry9ic",
+          "label": "Missale Romanum, Rome: Ex Typographia Vaticana 1604, Clementine recognition (National Central Library of Rome copy; Internet Archive bub_gb_aaPpAuHRY9IC)",
+          "start_year": 1604,
+          "end_year": 1604,
+          "date_role": "imprint-year; witness to the 1604 recension",
           "status": "inventory-witness-candidate-not-a-stage"
         },
         {
@@ -14924,7 +14933,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Batch 4 inspected an original Rome Vatican 1635 Urbanian printing (Google XNC4a07qPqQC: title, Si quid est, Congregation of Rites decree extract, register, colophon) and now witnesses roman-stages-1634; no 1634-dated imprint has been inspected and its body text is uncollated. Request reproductions of the surviving preliminaries and any colophon for UB Alma MMS 991002308499706708, whose probable Rome imprint is dated [1634?] and whose title page and Q1 are missing; seek an independently dated complete Rome copy. Obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station.",
+      "missing_stage_chain": "Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Batch 4 inspected an original Rome Vatican 1635 Urbanian printing (Google XNC4a07qPqQC: title, Si quid est, Congregation of Rites decree extract, register, colophon) and now witnesses roman-stages-1634; no 1634-dated imprint has been inspected and its body text is uncollated. Request reproductions of the surviving preliminaries and any colophon for UB Alma MMS 991002308499706708, whose probable Rome imprint is dated [1634?] and whose title page and Q1 are missing; seek an independently dated complete Rome copy. Obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station. Batch 5 text-roman 2026-10-22: the exact Rome Vatican 1604 copy (Internet Archive bub_gb_aaPpAuHRY9IC) now witnesses roman-stages-1604, and the complete strict Canon of it and of the Rome Vatican 1635 Urbanian printing is transcribed as two bounded native constituents, independently collated on 2026-10-22 and bound to roman-stages-1604 and roman-stages-1634; their image-checked Canon changes against Rome 1570 and each other are recorded on the 1570-1604 and 1604-1634 transitions. A further bounded search found no 1634-dated Rome issue.",
       "next_sources": {
         "inventory_source_ids": [
           "notitiae-book-bibliography-1985",
@@ -14945,7 +14954,8 @@
           "roman-next-1635-sbn-um1e008100",
           "roman-transitional-1968-november-declaration",
           "western-roman-concelebration-1965-aas-act",
-          "western-roman-concelebration-1965-cccb-colophon"
+          "western-roman-concelebration-1965-cccb-colophon",
+          "roman-1604-rome-vatican-bncr-copy"
         ],
         "source_urls": [
           "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-21-(1985)/Notitiae-228-229-1985.pdf",
@@ -14965,10 +14975,11 @@
           "https://opac.sbn.it/bid/UM1E008100",
           "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-04-%281968%29/Notitiae-043-1968.pdf",
           "https://www.vatican.va/archive/aas/documents/AAS-57-1965-ocr.pdf",
-          "https://www.cccb.ca/wp-content/uploads/2018/03/003-Communion-under-Both-Kinds-General-Decree-The-Rites-of-Mass-Concelebration-April-10-1965.pdf"
+          "https://www.cccb.ca/wp-content/uploads/2018/03/003-Communion-under-Both-Kinds-General-Decree-The-Rites-of-Mass-Concelebration-April-10-1965.pdf",
+          "https://archive.org/details/bub_gb_aaPpAuHRY9IC"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Use the dated Roman modern research receipt and its acquisition references to inspect missing exact originals, delimit component books and reprints, and collate named text changes before extending stages or text parentage. Prioritize the experimental/restored Holy Week books, 1965–1968 components, 1971/1975/2008 books and 2020 Supplementum; resolve the adjacent Communion-outside-Mass ritual's scope separately. Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. A separately reviewed 1635 bibliographic witness lead adds one more, for 115 current candidates. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Request surviving preliminaries, any colophon and usable shelfmark for UB Alma MMS 991002308499706708, whose probable Rome imprint is dated [1634?] and whose title page and Q1 are missing; seek an independently dated complete Rome copy. Obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station. The 1951 offered booklet and complete March 1955 act are now inspected within their recorded bounds; Rome 1634, whole 1956, complete 1965 concelebration and separate 1968 Preces books remain exact acquisition/collation targets. Current owning route limit: Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Request reproductions of the surviving preliminaries and any colophon for UB Alma MMS 991002308499706708, whose probable Rome imprint is dated [1634?] and whose title page and Q1 are missing; seek an independently dated complete Rome copy. Obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station."
+        "target": "Use the dated Roman modern research receipt and its acquisition references to inspect missing exact originals, delimit component books and reprints, and collate named text changes before extending stages or text parentage. Prioritize the experimental/restored Holy Week books, 1965–1968 components, 1971/1975/2008 books and 2020 Supplementum; resolve the adjacent Communion-outside-Mass ritual's scope separately. Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. A separately reviewed 1635 bibliographic witness lead adds one more, for 115 current candidates. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Request surviving preliminaries, any colophon and usable shelfmark for UB Alma MMS 991002308499706708, whose probable Rome imprint is dated [1634?] and whose title page and Q1 are missing; seek an independently dated complete Rome copy. Obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station. The 1951 offered booklet and complete March 1955 act are now inspected within their recorded bounds; Rome 1634, whole 1956, complete 1965 concelebration and separate 1968 Preces books remain exact acquisition/collation targets. Current owning route limit: Review the bounded Roman modern research receipt for 117 book, component, witness and lead dispositions; its 107 new in-scope candidate IDs join the seven baseline IDs here. The Communion-outside-Mass adjacent ritual roman-modern-extra-035 remains outside this coverage row. Complete the packet-listed original acquisitions, rights review and before/after collation before treating any candidate as a substantive revision or adding a station. The exact 1884 typical-edition claim, 1900 original impression, 1975 altar book, 1965 Latin Order, 1965 concelebration, 1968 Preces and 2020 Supplementum still have the receipt-specific limitations. Request reproductions of the surviving preliminaries and any colophon for UB Alma MMS 991002308499706708, whose probable Rome imprint is dated [1634?] and whose title page and Q1 are missing; seek an independently dated complete Rome copy. Obtain Rusca L-77 original images and resolve Asachiana pagination before comparing any 1635 text with 1634. The 1635 lead is a witness, not a new recension or station. Batch 5 text-roman 2026-10-22: the exact Rome Vatican 1604 copy (Internet Archive bub_gb_aaPpAuHRY9IC) now witnesses roman-stages-1604, and the complete strict Canon of it and of the Rome Vatican 1635 Urbanian printing is transcribed as two bounded native constituents, independently collated on 2026-10-22 and bound to roman-stages-1604 and roman-stages-1634; their image-checked Canon changes against Rome 1570 and each other are recorded on the 1570-1604 and 1604-1634 transitions. A further bounded search found no 1634-dated Rome issue."
       },
       "caveat": "The 115 current research candidates include whole books, components, print witnesses and unresolved leads. Catalogue or receipt placement does not make them distinct revisions, stages, a complete chronological sequence, or evidence of local adoption; roman-modern-extra-035 remains outside this coverage row pending scope review.",
       "canonical_tradition_ids": [
