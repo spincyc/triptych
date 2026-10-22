@@ -9,7 +9,7 @@
       "label": "Dominican use",
       "family": "latin",
       "scope": "Latin missals of the Order of Preachers; the selected original Latin printings, not a translation history.",
-      "coverage_note": "Two page-collated states bracket intervening revisions; the 1604 printing witnesses a reform already described in 1602 and 1603."
+      "coverage_note": "Page-collated states 1550, 1553, 1603 and 1604 bracket the Suscepimus Deus recombination. The 1985 postconciliar Proprium (Missal and Lectionary) is documented from its front matter as a supplement to the Roman Missal, which the Order was permitted to assume on 2 June 1969; the preconciliar 1933–1965 missals and the 1604–1985 interval are not staged."
     },
     {
       "id": "carmelite",
@@ -30,7 +30,7 @@
       "label": "Carthusian use",
       "family": "latin",
       "scope": "Carthusian Latin missals and the complementary Ordinarium; chapter and publication dates are distinguished.",
-      "coverage_note": "The 1582 preparation and 1603 Gloria are reported through page-checked scholarship; the 1627 title and three Ordinary pages are directly image-checked. No complete-book reconstruction is asserted."
+      "coverage_note": "The 1582 preparation and 1603 Gloria are reported through page-checked scholarship; the 1627 title and three Ordinary pages are directly image-checked. No complete-book reconstruction is asserted. An undated incunable missal (BSB-Ink [1496]; GW not after 1496) is recorded as a provisional stage; it prints the same oblation prayer, with word-order variants, and the same Gloria reading as 1561."
     },
     {
       "id": "sarum",
@@ -213,6 +213,16 @@
       "status": "inspected"
     },
     {
+      "id": "latin-uses:carthusian1496",
+      "title": "Missale Cartusiense ([Speyer: Peter Drach the younger, for Henrick Eckert van Homberch of Delft, about 1496]), BSB 2 Inc.s.a. 879 (bsb00030081)",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb00030081",
+      "kind": "primary-book",
+      "inspection": "BSB IIIF images viewed 2026-10-22: thumbnail sweeps of canvases 1–11, 150–400 and 560–572; canvases 230–232 at 1800 px (SHA-256 b4a17798…, c73bbfb3…, e6f07dec…) and 233–234 at 1000 px. Canvas 231 (printed folio xxix): the chalice oblation In spiritu humilitatis ending in nomine Patris et Filii et Spiritus sancti, then the Gloria (propter gloriam tuam magnam) and the Creed; canvases 232–234: Credo and prefaces; canvas 236: Canon picture. Cold review 2026-10-22: the text ends on canvas 560 (BSB fol. 263v) without a colophon or register, and canvases 561–570 are blank; the lane's 'register at canvas 570' was a misreading.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Printer, place and year are bracketed catalogue attributions: BSB-Ink M-423 gives [1496], while GW M24135 gives 'not after 1496'; the copy is shelved in the undated series (Inc.s.a.) and no dated colophon or title leaf was found in it. Only the Ordinary block before the Canon was read."
+    },
+    {
       "id": "latin-uses:carthusian1561",
       "title": "Missale Carthusiense (Pavia: in Cartusia Papiae, 28 September 1561), BSB",
       "url": "https://www.digitale-sammlungen.de/en/view/bsb10197405",
@@ -331,6 +341,36 @@
       "checked_on": "2026-10-21",
       "status": "inspected",
       "limitations": "The full digital file represents an incomplete physical copy: BNP identifies missing initial leaves and other losses. Whole acquisition does not reconstruct missing leaves or establish full collation. Provider public-copy terms identify public-domain historical scans as freely reusable under Public Domain Mark."
+    },
+    {
+      "id": "latin-uses:notitiae1969-op",
+      "title": "Notitiae 5 (1969), no. 48, pp. 359–360: Order of Preachers, 2 June 1969 (Prot. n. 98/69), Roman Missal and calendar",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-05-%281969%29/Notitiae-048-1969.pdf",
+      "kind": "primary-act",
+      "inspection": "Page images of printed pp. 359–360 (PDF 33–34) viewed 2026-10-22 from a prior-lane copy of the whole issue (SHA-256 f31becd3…). Under section III (Decreta circa ritus et calendaria particularia) the Order of Preachers is granted, for the whole Order, the restored Missale Romanum of Paul VI and the Universal Norms with the new General Roman Calendar and Litany; after adoption the Master General (for the Order) or a provincial (for his subjects) may license priests to celebrate according to the Dominican rite then in force; until a definitive Order calendar is approved, first-class Dominican feasts (Rosary, Dominic, Thomas Aquinas, Catherine of Siena) become solemnities, second-class feasts become feasts, third-class saints obligatory memorials and the rest optional memorials. A following paragraph gives pastoral reasons and the difficulty of printing proper books for this and a Cistercian request.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Published decree summary, not the signed rescript or its ASOP 39 (1969) pp. 250–251 printing. It grants permission; it does not date the Order's actual changeover or any house's licensed continuation of the Dominican rite."
+    },
+    {
+      "id": "latin-uses:notitiae1972-op",
+      "title": "Notitiae 8 (1972), no. 69, pp. 14 and 17–18: Dominican chapter decree confirmed (1971) and A. Dirks, De ritu dominicano",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-08-%281972%29/Notitiae-069-1972.pdf",
+      "kind": "official-retrospective",
+      "inspection": "Page images of printed pp. 14, 17 and 18 (PDF 20, 27–28) viewed 2026-10-22 (copy SHA-256 0ccd64a2…). P. 14: 7 October 1971 (Prot. n. 1725/71) confirmation of the general chapters' (1968, 1971) decree adopting the restored Office for the whole Dominican family. Pp. 17–18: Ansgarius Dirks OP states that the 1968 general chapter decreed adoption of the restored Roman rite, cites the 1969 concession at Notitiae 5 (1969) p. 359, and gives as examples the Dominican offertory (bread and wine offered together with the single prayer Suscipe sancta Trinitas) and the shorter Dominican Confiteor.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "An official-journal commentary by a Dominican, not the chapter acts; the Office decree concerns the Liturgy of the Hours. The examples describe the former rite in general terms, not a collation of named editions."
+    },
+    {
+      "id": "latin-uses:op1985",
+      "title": "Proprium Ordinis Praedicatorum: Missale et Lectionarium, editio typica (Rome: ad Sanctae Sabinae, 1985)",
+      "url": "https://www.op.org/wp-content/uploads/2026/05/TL-01-Missale-et-Lectionarium-OP-1985.pdf",
+      "kind": "primary-book",
+      "inspection": "Whole PDF acquired 2026-10-22 (604 pages, 49,872,759 bytes, SHA-256 ea5f25d6…); page images viewed at PDF 1–14: title (PDF 1); mandate of Master Damian Byrne, Rome, 3 April 1985, Prot. 50/85/310 (PDF 2); decrees CD 671/76 of 25 July 1977 (peculiar elements ad libitum), CD 1590/77 of 18 February 1978 (Latin Proprium Missarum and Ordo Lectionum Missae confirmed), CD 998/80 of 7 November 1980 (Masses of the Order's Blessed) and the list of further grants CD 670/76, 194/83, 524/83, 1165/83 (PDF 3–6); promulgation letter of Master Vincent de Couesnongle, printed pp. IX–XIX (PDF 7–17; the lane read PDF 7–14, the cold review 2026-10-22 read PDF 15–17 with n. 23, promulgating the volume and declaring the Latin edition typical, and the dating clause Rome, Santa Sabina, 15 August 1983), including n. 2 (the Roman Mass lectionary adopted from the early seventeenth century), n. 3 and note 5 (River Forest chapter 1968; CD 98/69 of 2 June 1969, ASOP 39 (1969) pp. 250–251), n. 4 (the new Roman Order of Mass adopted), n. 5 (the volume as a supplement to the Roman Missal) and nn. 7–12 (contents: proper of time ritual elements, proper of saints, lectionary of saints, chant appendix). Cold review 2026-10-22 also saw the printed Calendarium Ordinis Praedicatorum at PDF 48–53 (pp. L–LV).",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Order-hosted PDF without a text layer; only front matter and promulgation letter were read. Body texts, calendars and chant appendix are not collated."
     }
   ],
   "stages": [
@@ -753,6 +793,41 @@
       "reception": "The inserts carry their own approbations: Sacred Congregation of Rites concordats, Turin archdiocesan concordats or imprimaturs, and Braga archiepiscopal imprimaturs. Not every leaf carries Braga approval: the Christ the King leaf has only a Turin concordat and imprimatur (7 April 1927) with a Marietti imprint, and the final page of the 1929 Sacred Heart leaf has only the Rites concordat. Binding into this Braga altar copy shows they were supplied for use with it; actual use in a named church is not established."
     },
     {
+      "id": "latin-uses:carthusian-1496",
+      "tradition_id": "carthusian",
+      "label": "Early printed Carthusian missal with a brief Ordinary block before the Canon",
+      "date_label": "[1496] as attributed by BSB-Ink M-423 (GW M24135: not after 1496); no printed date in the edition or the inspected copy",
+      "start_year": 1496,
+      "end_year": 1496,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "The Ordinary block before the Canon (oblation prayer, Gloria, Creed, prefaces) in an incunable Carthusian missal.",
+      "components": [
+        "ordinary",
+        "rubrics"
+      ],
+      "witness_ids": [
+        "western:carthusian-1496-speyer"
+      ],
+      "witness_label": "Missale Cartusiense, [Speyer, about 1496], BSB bsb00030081",
+      "summary": "Before the Canon the book prints the oblation prayer In spiritu humilitatis, closing with In nomine Patris et Filii et Spiritus sancti, without accompanying rubric, followed by the Gloria (propter gloriam tuam magnam), the Creed and the prefaces.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "latin-uses:carthusian1496",
+          "locus": "BSB canvases 231–234 (printed folio xxix and following)",
+          "claim": "Oblation, Gloria, Creed and prefaces read from the page images."
+        },
+        {
+          "source_id": "latin-uses:carthusian1496",
+          "locus": "BSB manifest metadata (2 Inc.s.a. 879); BSB-Ink M-423; GW M24135; canvases 1–11 and 560–572",
+          "claim": "Bracketed attribution [Speyer, Peter Drach the younger for Henrick Eckert van Homberch, 1496] (BSB-Ink); GW gives 'not after 1496'. The text ends on canvas 560 (fol. 263v) without a colophon; canvases 561–570 are blank."
+        }
+      ],
+      "limitations": "Provisional (cold review 2026-10-22): the year is a catalogue attribution, not read in the book, and the catalogues differ in precision (BSB-Ink [1496]; GW not after 1496); the inspected block shows no textual difference from Pavia 1561 that is encoded as a change. The year is a catalogue attribution, not read in the book. Only the block before the Canon was read; the water prayer, incensation and Orate fratres were not found on canvases 230–234, which bounds a search of this block, not of the whole book. A complementary Ordinarium may have carried such rubrics.",
+      "reception": "Printed for the Delft bookseller Eckert van Homberch; ownership and use in a named charterhouse are not established."
+    },
+    {
       "id": "latin-uses:carthusian-1561",
       "tradition_id": "carthusian",
       "label": "Pavia charterhouse printing licensed by the Prior General",
@@ -1164,109 +1239,67 @@
       ],
       "limitations": "The 1484 book is not identified as the moment when all differences first arose. Déri expressly requires more complex relationships than a single subtraction/addition sequence; the Pálóczi comparator already shares much of the later state. The absent intervening preparation texts could be a copying omission or assumed memorized text, not a proven ritual abolition.",
       "reception": "The colophon identifies Esztergom use and the vicar and chapter’s assent; survival of a printing does not demonstrate uniform implementation."
-    }
-  ],
-  "transitions": [
+    },
     {
-      "id": "latin-uses:dominican-suscepimus-recombination",
-      "from_stage": "latin-uses:dominican-1550",
-      "to_stage": "latin-uses:dominican-1604",
-      "kind": "revision",
+      "id": "latin-uses:dominican-1985-proprium",
+      "tradition_id": "dominican",
+      "label": "1985 Dominican Proprium: Missal and Lectionary as a supplement to the Roman Missal",
+      "date_label": "Rome, ad Sanctae Sabinae, 1985; promulgation letter of Master Vincent de Couesnongle dated 15 August 1983; printing mandate of Master Damian Byrne, 3 April 1985 (Prot. 50/85/310)",
+      "start_year": 1985,
+      "end_year": 1985,
+      "date_kind": "publication",
       "status": "documented",
-      "evidence_level": "text-collated",
-      "summary": "The Suscepimus Deus formulary has a changed collect and Gospel and a different position in the printed Sunday sequence.",
+      "scope": "The Order's postconciliar proper for Mass in one typical volume: ritual elements of the proper of time, the proper of saints, the lectionary of saints and chant indications, for use with the restored Roman Missal. It is not a complete independent Dominican Missal.",
       "components": [
         "propers",
         "lectionary",
-        "calendar"
+        "calendar",
+        "rubrics",
+        "chant"
       ],
-      "changes": [
-        {
-          "component": "propers",
-          "before": "Collect: Deus cuius providentia.",
-          "after": "Collect: Largire nobis.",
-          "locus_before": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus",
-          "locus_after": "1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
-          "evidence": [
-            {
-              "source_id": "latin-uses:dom1550",
-              "locus": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus",
-              "claim": "The earlier Suscepimus formulary is inspected directly."
-            },
-            {
-              "source_id": "latin-uses:dom1604",
-              "locus": "1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
-              "claim": "The later Suscepimus formulary is inspected directly."
-            }
-          ]
-        },
-        {
-          "component": "lectionary",
-          "before": "Gospel: Attendite a falsis prophetis, Matthew 7.",
-          "after": "Gospel: Homo quidam erat dives qui habebat villicum, Luke 16.",
-          "locus_before": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus",
-          "locus_after": "1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
-          "evidence": [
-            {
-              "source_id": "latin-uses:dom1550",
-              "locus": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus",
-              "claim": "The earlier Suscepimus formulary is inspected directly."
-            },
-            {
-              "source_id": "latin-uses:dom1604",
-              "locus": "1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
-              "claim": "The later Suscepimus formulary is inspected directly."
-            }
-          ]
-        },
-        {
-          "component": "calendar",
-          "before": "Heading: Dominica octava in the sequence after Trinity.",
-          "after": "Heading: Dominica sexta in the sequence after the octave of Trinity.",
-          "locus_before": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus",
-          "locus_after": "1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
-          "evidence": [
-            {
-              "source_id": "latin-uses:dom1550",
-              "locus": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus",
-              "claim": "The earlier Suscepimus formulary is inspected directly."
-            },
-            {
-              "source_id": "latin-uses:dom1604",
-              "locus": "1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
-              "claim": "The later Suscepimus formulary is inspected directly."
-            }
-          ]
-        }
+      "witness_ids": [
+        "western:mendicant-op-1985"
       ],
+      "witness_label": "Proprium Ordinis Praedicatorum: Missale et Lectionarium, editio typica, Rome 1985 (order-hosted facsimile)",
+      "summary": "The 1968 River Forest chapter decided to adopt the restored Roman rite, and on 2 June 1969 the Order received leave to assume the restored Roman Missal and calendar. Master Vincent de Couesnongle promulgated this Missal and Lectionary of the Order's proper and declared the Latin edition typical by a letter dated 15 August 1983; Master Damian Byrne ordered it printed on 3 April 1985, and it was published in 1985. Its front matter prints the confirmations of the retained peculiar elements (1977), the Latin proper and lectionary texts (1978) and the Masses of the Order's Blessed (1980).",
+      "text_coverage": "not-transcribed",
       "evidence": [
         {
-          "source_id": "latin-uses:dom1550",
-          "locus": "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus",
-          "claim": "The earlier Suscepimus formulary is inspected directly."
+          "source_id": "latin-uses:op1985",
+          "locus": "Title PDF 1; mandate PDF 2 (3 April 1985, Prot. 50/85/310)",
+          "claim": "Typical edition of the Order's Missale et Lectionarium, printed at Santa Sabina in 1985 and made the norm for vernacular editions."
         },
         {
-          "source_id": "latin-uses:dom1604",
-          "locus": "1604 pp. 238–239 (PDF 314–315), Suscepimus Deus",
-          "claim": "The later Suscepimus formulary is inspected directly."
+          "source_id": "latin-uses:op1985",
+          "locus": "Decrees I–IV, printed pp. V–VIII (PDF 3–6)",
+          "claim": "CD 671/76 (25 July 1977) allows the Order's peculiar elements ad libitum; CD 1590/77 (18 February 1978) confirms the Latin Proprium Missarum and lectionary texts; CD 998/80 (7 November 1980) confirms the Latin Masses of the Order's Blessed; later grants follow."
         },
         {
-          "source_id": "latin-uses:dom1604",
-          "locus": "Brief PDF 5–6 and Xavierre letter PDF 7",
-          "claim": "The instruments authorize and describe aligning Epistles and Gospels with Roman use while retaining the Order’s ancient rite."
+          "source_id": "latin-uses:op1985",
+          "locus": "Promulgation letter nn. 3–5 and note 5, printed pp. X–XI (PDF 8–9)",
+          "claim": "The 1968 chapter sought adoption of the restored Roman rite, the Roman Missal and then the new Roman Order of Mass were adopted, and the volume is presented as a supplement to the Roman Missal; note 5 cites CD 98/69 of 2 June 1969."
         },
         {
-          "source_id": "latin-uses:bonniwell",
-          "locus": "pp. 320–321, PDF 167",
-          "claim": "Explains the recombination of the Sunday Masses and the retained chant elements."
+          "source_id": "latin-uses:op1985",
+          "locus": "Promulgation letter n. 23 and dating clause, printed pp. XVIII–XIX (PDF 16–17)",
+          "claim": "Couesnongle promulgates the Missal and Lectionary for the whole Order and declares the Latin edition typical; the letter is dated Rome, Santa Sabina, 15 August 1983, before the 1985 printing mandate."
+        },
+        {
+          "source_id": "latin-uses:notitiae1969-op",
+          "locus": "Notitiae 5 (1969) pp. 359–360 (PDF 33–34)",
+          "claim": "The Congregation's 2 June 1969 concession of the Roman Missal and calendar to the whole Order, with licences for the former rite and interim feast grades."
+        },
+        {
+          "source_id": "latin-uses:notitiae1972-op",
+          "locus": "Notitiae 8 (1972) pp. 14, 17–18 (PDF 20, 27–28)",
+          "claim": "Confirmation of the chapter decree on the Office and Dirks's account of the 1968 decision to adopt the Roman rite."
         }
       ],
-      "limitations": "This pairs the Suscepimus formulary, not an asserted identical modern Sunday. Introit, Debitores sumus epistle, Esto mihi gradual, Populum humilem offertory and Gustate communion persist in the inspected pair; secret and postcommunion also differ but are not encoded here. Intermediate Bettini and Castrucci revisions prevent an unsupported immediate 1550→1604 printing genealogy. Batch 4 (2026-10-21): the 1553 Venice printing keeps the 1550 collect and Gospel and the 1603 Rome printing already has the revised combination, so this endpoint pair is bracketed more narrowly by those two stages.",
-      "comparison_ids": [
-        "dominican-1550-1604-suscepimus-collect"
-      ],
-      "historical_parentage": "unestablished"
-    },
+      "limitations": "Only the front matter and promulgation letter were read; the body is not collated against the 1604 printing or the 1933, 1939 and 1965 Dominican missals, so no transition is drawn from any earlier Dominican stage. The 1969 Roman adoption and interim calendar, the 1971 Office confirmation and the 1983 promulgation are recorded as evidence here, not as separate book states; the stage date is the 1985 publication.",
+      "reception": "The 1969 concession allowed superiors to license priests to keep the Dominican rite then in force; the date of each house's changeover and any licensed continuation are not evidenced. The 1985 mandate directs vernacular editions to conform to this typical edition; actual use of the Latin volume in named houses is not established."
+    }
+  ],
+  "transitions": [
     {
       "id": "latin-uses:dominican-1550-1553-heading",
       "from_stage": "latin-uses:dominican-1550",
@@ -1408,9 +1441,14 @@
           "source_id": "latin-uses:dom1604",
           "locus": "Brief PDF 5–6 and Xavierre letter PDF 7",
           "claim": "The 1602 brief and 1603 letter describe aligning Epistles and Gospels with Roman use."
+        },
+        {
+          "source_id": "latin-uses:bonniwell",
+          "locus": "pp. 320–321, PDF 167",
+          "claim": "Explains the recombination of the Sunday Masses and the retained chant elements."
         }
       ],
-      "limitations": "The Bettini 1576 and Castrucci 1596/1600 printings remain unchecked, so the change may predate the Xavierre revision. The heading change is a one-Sunday reassignment, not a renaming: 1603 starts the post-octave series one formulary later than 1553. The epistle Debitores sumus is unchanged. The secret (1553 Deus qui legalium → 1603 Suscipe … de tua largitate) and postcommunion (Tua nos → Sit nobis Domine reparatio) also differ but are not encoded.",
+      "limitations": "The Bettini 1576 and Castrucci 1596/1600 printings remain unchecked, so the change may predate the Xavierre revision. The heading change is a one-Sunday reassignment, not a renaming: 1603 starts the post-octave series one formulary later than 1553. The epistle Debitores sumus is unchanged. The secret (1553 Deus qui legalium → 1603 Suscipe … de tua largitate) and postcommunion (Tua nos → Sit nobis Domine reparatio) also differ but are not encoded. Batch 5 (2026-10-22): this edge now carries the Suscepimus recombination alone. The former endpoint transition latin-uses:dominican-suscepimus-recombination (1550→1604) restated the same collect, Gospel and Sunday-position changes across the whole chain and was removed; its 1550 loci remain on latin-uses:dominican-1550-1553-heading, its 1604 loci on latin-uses:dominican-1603-1604-witnesses, and its Bonniwell citation is carried here. The checked collect-only comparison dominican-1550-1604-suscepimus-collect (1550 fols 125r–125v against 1604 pp. 238–239) remains configured in the catalogue; its endpoints are the 1550 and 1604 witnesses, so it cannot be linked to this 1553→1603 edge.",
       "comparison_ids": [],
       "historical_parentage": "unestablished"
     },
@@ -1439,7 +1477,7 @@
           "claim": "Same combination in 1604."
         }
       ],
-      "limitations": "Only the selected formulary agrees; other differences between the two settings are not examined.",
+      "limitations": "Only the selected formulary agrees; other differences between the two settings are not examined. The 1604 Suscepimus loci (pp. 238–239, PDF 314–315) are the right-hand side of the configured collect comparison dominican-1550-1604-suscepimus-collect, whose earlier endpoint is the 1550 book; the intervening collect change is localized by latin-uses:dominican-1553-1603-recombination.",
       "comparison_ids": [],
       "historical_parentage": "unestablished"
     },
@@ -1730,6 +1768,34 @@
       "historical_parentage": "established"
     },
     {
+      "id": "latin-uses:carthusian-1496-1561-ordinary-agreement",
+      "from_stage": "latin-uses:carthusian-1496",
+      "to_stage": "latin-uses:carthusian-1561",
+      "kind": "witness-succession",
+      "status": "provisional",
+      "evidence_level": "primary-description",
+      "summary": "The incunable and the Pavia 1561 printing print the same oblation prayer In spiritu humilitatis and the same Gloria reading propter gloriam tuam magnam. The oblation wording differs slightly (1496 'et animo contrito suscipiamur a te domine'; 1561 'et in animo contrito suscipiamur domine a te'), and In nomine Patris, run on in 1496, is introduced in 1561 by a rubric for the cross made with the chalice.",
+      "components": [
+        "ordinary"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "latin-uses:carthusian1496",
+          "locus": "BSB canvas 231 (folio xxix)",
+          "claim": "Earlier oblation and Gloria read from the page image."
+        },
+        {
+          "source_id": "latin-uses:carthusian1561",
+          "locus": "Fols 106v–107v, BSB canvases 254 and 256 (re-viewed at 1600 px on 2026-10-22)",
+          "claim": "Later Gloria and oblation read from the page images."
+        }
+      ],
+      "limitations": "Provisional (cold review 2026-10-22) because the earlier stage's date is a catalogue attribution. The lane's reading of 'agreement' at the oblation was narrowed to the same prayer with word-order variants; these variants are not encoded as changes. Agreement at two loci only; it does not establish direct descent from this printing. The 1561 openings also print matter not found in the 1496 block on canvases 230–234: Gloria intonations with notation, a Credo-day rubric listing excluded feasts (Stephen, Innocents, Benedict, Mary Magdalene, Hugh and Bruno), and a rubricated section headed Documenta quedam with the Gospel blessings, De latere for the water, the cross made with the chalice before In nomine Patris, the incensation with Dirigatur, and Orate fratres pro me peccatore. These are not encoded as changes, because the incunable's other sections and any complementary Ordinarium were not searched; the difference may be one of book distribution rather than practice.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    },
+    {
       "id": "latin-uses:carthusian-1561-1627-ordinary-agreement",
       "from_stage": "latin-uses:carthusian-1561",
       "to_stage": "latin-uses:carthusian-1627",
@@ -1860,7 +1926,7 @@
       "tradition_id": "dominican",
       "period": "1553–1603",
       "missing": "The printing or act between 1553 and 1603 that first carried the Largire nobis collect and Luke 16 Gospel for Suscepimus Deus; the components changed by the 1551 Salamanca chapter beyond this formulary.",
-      "next_source": "Bettini's revised missal of 1576; Castrucci edition titled 1596 (B3Kat lists a Venice 1596 Sessa and Baretius printing under Beccaria, not digitized by BSB) and its 1600 successor; Bonniwell pp. 308–325. B3Kat search on 2026-10-21 found BSB digitizations of 1553 (bsb10869682) and 1603 (bsb10164238, bsb11057591) only within 1550–1604.",
+      "next_source": "Bettini's revised missal of 1576; Castrucci edition titled 1596 (B3Kat lists a Venice 1596 Sessa and Baretius printing under Beccaria, not digitized by BSB) and its 1600 successor; Bonniwell pp. 308–325. B3Kat search on 2026-10-21 found BSB digitizations of 1553 (bsb10869682) and 1603 (bsb10164238, bsb11057591) only within 1550–1604. 2026-10-22: BSB API searches 'missale ordinis praedicatorum' and 'missale praedicatorum' (first 100 rows each) and an Internet Archive title search found no Dominican missal printed 1554–1602.",
       "consequence": "The recombination is now bounded between the 1553 and 1603 printings; it is still not assigned to a single act or printing."
     },
     {
@@ -1868,7 +1934,7 @@
       "tradition_id": "carmelite",
       "period": "1574–1621",
       "missing": "The chapter acts or intermediate printings introducing Teresa and changing the October patriarch entries; full sanctoral coverage.",
-      "next_source": "Gregory XIII brief of 26 September 1584 as reprinted in 1621 PDF 5; intervening Carmelite missals and chapter acts; collate calendars and sanctoral in original Latin. 2026-10-21: the Gregory XIII brief (1621 PDF 5) was read in full: it concerns Prior General Caffardo's request after the chapter restored the Breviary to the reformed Roman Breviary, and grants a printing privilege for that Breviary and a Missal arranged to its prescription; it names no feast. B3Kat lists further Carmelite missals of 1504, 1509, 1512 (BSB bsb11289293), 1516, 1733 and 1760; none between 1574 and 1621 was found.",
+      "next_source": "Gregory XIII brief of 26 September 1584 as reprinted in 1621 PDF 5; intervening Carmelite missals and chapter acts; collate calendars and sanctoral in original Latin. 2026-10-21: the Gregory XIII brief (1621 PDF 5) was read in full: it concerns Prior General Caffardo's request after the chapter restored the Breviary to the reformed Roman Breviary, and grants a printing privilege for that Breviary and a Missal arranged to its prescription; it names no feast. B3Kat lists further Carmelite missals of 1504, 1509, 1512 (BSB bsb11289293), 1516, 1733 and 1760; none between 1574 and 1621 was found. 2026-10-22: Internet Archive title search returns only the 1574 and 1621 missals and an undated, unattributed 'Missale Carmelitarum' item; the BSB API 'missale carmelitarum' search returned no Carmelite missal in its first 100 rows.",
       "consequence": "Calendar difference is established; the 1584 brief shows Breviary-led Romanizing reform and a privilege for the missal, but neither the date nor mechanism of the Teresa and October entries. The surviving copy’s handwritten additions need a separate reception study."
     },
     {
@@ -1876,7 +1942,7 @@
       "tradition_id": "braga",
       "period": "1538–1558",
       "missing": "Primary-page acquisition and collation of the 1558 Ordo and Palm Sunday against the now-acquired 1538 file.",
-      "next_source": "1538 BNP RES-1633-A is now acquired from https://purl.pt/14877/4/res-1633-a_PDF/res-1633-a_PDF_24-C-R0150/res-1633-a_0000_capa-capa_t24-C-R0150.pdf . Palm blessing is fol. 42r–v (PDF 97–98); colophon is fol. 184v (PDF 364), resolving the previous 183v discrepancy. For 1558 BnF B-1478, https://gallica.bnf.fr/ark:/12148/bpt6k993722f.pdf , public IIIF f165 image and f165.highres all returned HTTP 403 on 17 October 2026. The original comparison remains J. O. Bragança, “A reforma litúrgica de D. Frei Baltasar Limpo”, Actas do III Congresso Histórico de Guimarães II (2004), p. 197. Re-checked 2026-10-21: Gallica pages and IIIF manifests return HTTP 403 from this host; a web search for another digitized 1558 copy (BNP, BDH, Google Books) found none. The 1924 Palm blessing (pp. 146–149) now gives a later controlled comparator for any 1558 reading.",
+      "next_source": "1538 BNP RES-1633-A is now acquired from https://purl.pt/14877/4/res-1633-a_PDF/res-1633-a_PDF_24-C-R0150/res-1633-a_0000_capa-capa_t24-C-R0150.pdf . Palm blessing is fol. 42r–v (PDF 97–98); colophon is fol. 184v (PDF 364), resolving the previous 183v discrepancy. For 1558 BnF B-1478, https://gallica.bnf.fr/ark:/12148/bpt6k993722f.pdf , public IIIF f165 image and f165.highres all returned HTTP 403 on 17 October 2026. The original comparison remains J. O. Bragança, “A reforma litúrgica de D. Frei Baltasar Limpo”, Actas do III Congresso Histórico de Guimarães II (2004), p. 197. Re-checked 2026-10-21: Gallica pages and IIIF manifests return HTTP 403 from this host; a web search for another digitized 1558 copy (BNP, BDH, Google Books) found none. The 1924 Palm blessing (pp. 146–149) now gives a later controlled comparator for any 1558 reading. Gallica page and IIIF manifest routes for bpt6k993722f again returned HTTP 403 on 2026-10-22 (10:27 UTC).",
       "consequence": "The earlier prayer count and 1538 editorial program now have direct evidence. The endpoint transition remains scholarly-description until the 1558 pages can be checked."
     },
     {
@@ -1884,7 +1950,7 @@
       "tradition_id": "braga",
       "period": "1558–1924",
       "missing": "Specific ordinary, proper, lectionary or rubric changes made by the 1924 revisers relative to 1558. The 1924 Palm blessing now has direct evidence and agrees with Bragança's 1558 count; modern feasts in the 1924 body are recorded as contents, not dated changes.",
-      "next_source": "Pinheiro 2019 thesis, repository handle 10400.14/29449; advertised comparisons with MB1558, MR-S1886 and MR1921. Download route yielded anti-bot HTML, not the thesis. Compare primary 1558 book with dated 1924 leaves after leaf mapping. On 17 October 2026 the current DSpace entity c7cfc454-4efc-4735-be4c-a41b9795c233/full was also located through public discovery, but both the entity request and handle delivery failed (403 or connection refused); no actual thesis PDF was retrieved. 2026-10-21: handle and bitstream routes (bitstreams/19d2210e-bb76-4098-8372-a267621f492e/download) returned an Anubis bot-check page and were not bypassed; BnF B-1478 remains HTTP 403 from this host. With 1558 pages, compare first the Ordo (Carvalho p. 164 additions) and Palm blessing incipits against 1924 pp. 146–149 and the Ordo Missae pp. 244–249.",
+      "next_source": "Pinheiro 2019 thesis, repository handle 10400.14/29449; advertised comparisons with MB1558, MR-S1886 and MR1921. Download route yielded anti-bot HTML, not the thesis. Compare primary 1558 book with dated 1924 leaves after leaf mapping. On 17 October 2026 the current DSpace entity c7cfc454-4efc-4735-be4c-a41b9795c233/full was also located through public discovery, but both the entity request and handle delivery failed (403 or connection refused); no actual thesis PDF was retrieved. 2026-10-21: handle and bitstream routes (bitstreams/19d2210e-bb76-4098-8372-a267621f492e/download) returned an Anubis bot-check page and were not bypassed; BnF B-1478 remains HTTP 403 from this host. With 1558 pages, compare first the Ordo (Carvalho p. 164 additions) and Palm blessing incipits against 1924 pp. 146–149 and the Ordo Missae pp. 244–249. 2026-10-22: the UCP repository handle again served an Anubis bot-check page; not bypassed.",
       "consequence": "The 1558→1924 edge remains witness-succession; the Palm blessing has a separate 1538→1924 endpoint comparison that does not date its change to 1924."
     },
     {
@@ -1899,8 +1965,8 @@
       "id": "latin-uses:carthusian-revisions",
       "tradition_id": "carthusian",
       "period": "1481–1679",
-      "missing": "Direct collation of the Kerver/Lyon early missals against 1561, the complete 1582 Ordinarium and 1603 missal, and the complete 1677 ordinance reprinted in 1679. The 1561 Pavia printing is now directly inspected at licence, colophon and Ordinary.",
-      "next_source": "USUARIUM 8356 links Google Books UxFlAAAAcAAJ (download HTTP 429 on 17 October 2026). Gallica bpt6k9127828m manifest, text and page routes returned HTTP 403. The 1679 title cites chapter 1677; read the full prefatory ordinance and named changed passages before asserting a revision. 2026-10-21: B3Kat lists BSB digitizations of 1496 (bsb00030081), 1509 (bsb11105495), 1561 (bsb10197405, inspected), 1627 and a 1679 excerpt (bsb11019136: title, Masses for the dead and Canon only, catalogued [1603]); BSB holds 1679 Favratii and 1713 Lyon copies without digitization links. Next: 1496 or 1509 Ordinary against 1561 fols 106v–107v.",
+      "missing": "Direct collation of the Kerver and Lyon early missals against 1561, the complete 1582 Ordinarium and 1603 missal, and the complete 1677 ordinance reprinted in 1679. Narrowed 2026-10-22: an undated incunable (BSB bsb00030081; BSB-Ink [1496], GW not after 1496) is now a provisional stage; its Ordinary block before the Canon has the same oblation prayer, with word-order variants, and the same Gloria reading as 1561, while the rubricated offertory section of 1561 (water, chalice cross, incensation, Orate) is not printed in that block.",
+      "next_source": "Kerver (Paris) and Lyon printings named by the 1561 licence (Gallica bpt6k9127828m returned HTTP 403 again on 2026-10-22); the rest of BSB bsb00030081 and a complementary Ordinarium for the 1561 offertory rubrics; the 1509 Venice Giunta copy (BSB bsb11105495) lacks its opening and has manuscript leaves at the end, so its date is not read from the book; the 1677 ordinance.",
       "consequence": "Four Ordinary loci agree from 1561 to 1627, while the same openings show uncollated 1627 additions (In nomine Patris after the water, Lavabo, revised Credo rubric); substantive changes and their dates before 1679 remain unreconstructed."
     },
     {
@@ -1908,7 +1974,7 @@
       "tradition_id": "carthusian",
       "period": "Postconciliar revision; reported 1981 printing; 2018 calendar; 2021 missal",
       "missing": "The missal's own approval instrument and date, the reported 1981 first printing, and a comparison of 1981 with 2021. The 2018 calendar confirmation and the 2021 missal's described changes are now documented.",
-      "next_source": "Notitiae decree lists for the Carthusian missal recognition (the 1965-1975 index lists only a 1973 note on blue vestments; sub-lane searches of 1976-2000 final indexes found no missal decree); the Order's 1981 printing if a public copy is located; chartreux.org official texts page.",
+      "next_source": "Notitiae decree lists for the Carthusian missal recognition (the 1965-1975 index lists only a 1973 note on blue vestments; sub-lane searches of 1976-2000 final indexes found no missal decree); the Order's 1981 printing if a public copy is located; chartreux.org official texts page. 2026-10-22: a full-text search of the OCR text layers of every Notitiae issue 1965–1995 finds no Carthusian missal confirmation; it records only a 25 April 1974 meeting on the restoration of the Carthusian liturgy (Notitiae 10 (1974) p. 288), a Latin rite of consecration of virgins for Carthusian nuns (16 March 1978) and the 2018 calendar (these entries read in the text layer only). Later issues were read only in their annual index numbers.",
       "consequence": "The calendar approval is dated; no detailed missal revision is dated from a catalogue year, and no protected modern text is imported."
     },
     {

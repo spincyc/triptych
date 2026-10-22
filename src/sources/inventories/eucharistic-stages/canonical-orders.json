@@ -72,6 +72,16 @@
       "limitations": "Modern protected source: retain metadata and concise findings only in canonical material. Historical original missals/ordinarii and chapter acts remain distinct witnesses."
     },
     {
+      "id": "canonical-orders:premon1530-primary",
+      "title": "Missale Praemonstratense, catalogued Paris 1530, BSB (bsb10164241)",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb10164241",
+      "kind": "primary-book",
+      "inspection": "BSB IIIF images viewed 2026-10-22: thumbnail sweep of canvases 220–320; Canon canvases 274–277 at 700 px and 276–277 at 1400 px (SHA-256 dece2bdf…, 046f97ac…). Canvas 276: rubric Hic eleuet patenam dicens sub silentio before Libera nos, and Hic osculetur patenam faciendo crucem at da propitius pacem; canvas 277: Hic signet se cum patena in fronte at ab omni perturbatione securi. 1578 canvas 314 re-viewed at 1400 px for the comparison.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Place and year are the BSB catalogue's; the title and colophon of this copy were not found among canvases 1–7 and 505–510 (binding, manuscript added collects), so the date is unverified in the book. Only the embolism rubrics were read."
+    },
+    {
       "id": "canonical-orders:premon1578-primary",
       "title": "Missale Praemonstratense, Paris, 1578, BSB Res/2 Liturg. 235 (bsb10197414)",
       "url": "https://www.digitale-sammlungen.de/en/view/bsb10197414",
@@ -80,6 +90,16 @@
       "checked_on": "2026-10-21",
       "status": "inspected",
       "limitations": "Three Canon pages only; the title leaf and colophon were not re-read in this pass, and no complete collation was made."
+    },
+    {
+      "id": "canonical-orders:premon1622-primary",
+      "title": "Missale ad usum sacri et canonici Ordinis Praemonstratensis (Paris: Sebastien Cramoisy, 1622), BSB Res/2 Liturg. 235 m (bsb10869683)",
+      "url": "https://www.digitale-sammlungen.de/en/view/bsb10869683",
+      "kind": "primary-book",
+      "inspection": "BSB IIIF images viewed 2026-10-22: engraved title canvas 7 at 1600 px (SHA-256 c8beb166…), abbot's privilege canvas 9 (SHA-256 6552fc12…) and royal privilege canvas 11; Canon canvases 316–321 at 500 px and printed p. 269, canvas 321, at 1600 px (SHA-256 d2ed87e9…). Title: by authority of Abbot Pierre Gosset and the General Chapter, newly corrected and emended, M.DC.XXII. P. 269: the priest takes the paten between index and middle finger and says Libera nos; he signs himself with the paten from forehead to breast at da propitius pacem; no kiss of the paten and no later forehead signing at ab omni perturbatione securi.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Title, privileges and the Canon embolism only; the Ordinary, Requiem readings and sequence repertory that King describes were not collated."
     },
     {
       "id": "canonical-orders:windesheim-pal479-catalogue",
@@ -140,6 +160,16 @@
       "checked_on": "2026-10-19",
       "status": "inspected",
       "limitations": "Approximate typographic publication date, not a dated approval. Complete scan download pending at initial proposal creation."
+    },
+    {
+      "id": "canonical-orders:notitiae1974-1976-canons",
+      "title": "Notitiae 11 (1975) pp. 13, 42, 86 and 12 (1976) p. 307: postconciliar Latin propers and calendars of Canons Regular",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-12-%281976%29/Notitiae-121-122-1976.pdf",
+      "kind": "primary-act",
+      "inspection": "Page images viewed 2026-10-22: 1975 p. 13, 20 June 1974 (Prot. n. 1443/74) Latin proper texts of Mass and Hours of the Confederation of Canons Regular of St Augustine confirmed; 1975 p. 42, under the heading of proper-calendar confirmations, the Canons Regular of St Augustine, Windesheim-Victorine Congregation, 18 June 1974 (Prot. n. 1604/74); 1975 p. 86, note 6 lists Missae Propriae Confoederationis Canonicorum regularium S. Augustini, Romae 1974; 1976 p. 307, 14 June 1976 (Prot. CD 660/76) Latin Proprium Missarum and Liturgy of the Hours of the Windesheim-Victorine Congregation confirmed, and 6 July 1976 (Prot. CD 215/76) a German version of the Austrian Lateran congregation's Proprium Missarum.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Published summaries and a bibliography note, not the books. The modern Windesheim-Victorine Congregation's institutional continuity with the medieval Windesheim chapter is not established here."
     }
   ],
   "stages": [
@@ -316,11 +346,12 @@
       "end_year": 1622,
       "date_kind": "publication",
       "status": "documented",
-      "scope": "Mass Ordinary, Requiem readings and sequence selection.",
+      "scope": "Mass Ordinary, embolism rubric, Requiem readings and sequence selection.",
       "components": [
         "ordinary",
         "lectionary",
-        "propers"
+        "propers",
+        "rubrics"
       ],
       "witness_ids": [
         "western:premon-1622"
@@ -333,9 +364,14 @@
           "source_id": "canonical-orders:king1955-canonical",
           "locus": "pp. 176–177 (PDF 200–201)",
           "claim": "King connects publication with 1618 chapter instructions."
+        },
+        {
+          "source_id": "canonical-orders:premon1622-primary",
+          "locus": "Title canvas 7; printed p. 269, canvas 321",
+          "claim": "The title dates the edition 1622 and names the abbot's and General Chapter's authority for its correction; the embolism rubric has the priest take the paten between index and middle finger and sign himself with it from forehead to breast at da propitius pacem, without a kiss of the paten."
         }
       ],
-      "limitations": "Publication and chapter instruction are distinct; original 1622 book not acquired.",
+      "limitations": "Publication and chapter instruction are distinct. The original 1622 book is now located and its title and embolism rubric are read; the Ordinary, Requiem readings and sequence selection still rest on King.",
       "reception": "Publication or witness survival does not establish uniform reception across houses."
     },
     {
@@ -702,33 +738,86 @@
       "text_inheritance": false
     },
     {
-      "id": "canonical-orders:premon-paten-rubric",
+      "id": "canonical-orders:premon-1578-1622-paten-rubric",
       "from_stage": "canonical-orders:premon-1578-embolism",
-      "to_stage": "canonical-orders:premon-1739",
+      "to_stage": "canonical-orders:premon-1622",
       "kind": "revision",
       "status": "documented",
-      "evidence_level": "scholarly-description",
-      "summary": "The paten gesture at the embolism changes.",
+      "evidence_level": "text-collated",
+      "summary": "Between the 1578 and 1622 printings the embolism rubrics change from the order's older paten ceremonial to the form printed in 1622, which King (p. 177) places within the Order's acceptance of the Ordinary of the Mass in its Pian form.",
       "components": [
         "rubrics"
       ],
       "changes": [
         {
           "component": "rubrics",
-          "before": "Kiss and later forehead sign.",
+          "before": "The paten is raised in silence before Libera nos, kissed with a sign of the cross at da propitius pacem, and used to sign the forehead at ab omni perturbatione securi.",
+          "after": "The priest takes the paten between index and middle finger at Libera nos and signs himself with it from forehead to breast at da propitius pacem; neither the kiss nor the later forehead signing is printed.",
+          "locus_before": "1578 Canon fol. 146v, BSB bsb10197414 canvas 314",
+          "locus_after": "1622 printed p. 269, BSB bsb10869683 canvas 321",
+          "evidence": [
+            {
+              "source_id": "canonical-orders:premon1578-primary",
+              "locus": "Canon fol. 146v, BSB canvas 314 (re-viewed at 1400 px on 2026-10-22)",
+              "claim": "Earlier rubrics read from the page image."
+            },
+            {
+              "source_id": "canonical-orders:premon1622-primary",
+              "locus": "Printed p. 269, BSB canvas 321",
+              "claim": "Later rubrics read from the page image."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "source_id": "canonical-orders:premon1578-primary",
+          "locus": "Canon fol. 146v, BSB canvas 314",
+          "claim": "Earlier embolism rubrics."
+        },
+        {
+          "source_id": "canonical-orders:premon1622-primary",
+          "locus": "Title canvas 7; printed p. 269, canvas 321",
+          "claim": "Later embolism rubrics in the chapter-corrected 1622 missal."
+        },
+        {
+          "source_id": "canonical-orders:king1955-canonical",
+          "locus": "p. 177 (PDF 201)",
+          "claim": "King states that in the 1622 missal the Order accepted the Ordinary of the Mass in its Pian form."
+        }
+      ],
+      "limitations": "One rubric unit compared on two original pages. The same older rubrics stand in the BSB copy catalogued Paris 1530 (canvases 276–277). Intervening Premonstratensian printings between 1578 and 1622 were not searched, so the change is bounded, not dated; the 1618 chapter instructions King mentions are not inspected. The 'Pian' characterization rests on King p. 177 (cold review 2026-10-22); the 1570 Roman Missal itself was not collated, so no borrowing from a named Roman edition is asserted.",
+      "comparison_ids": [],
+      "historical_parentage": "unestablished"
+    },
+    {
+      "id": "canonical-orders:premon-paten-rubric",
+      "from_stage": "canonical-orders:premon-1622",
+      "to_stage": "canonical-orders:premon-1739",
+      "kind": "revision",
+      "status": "documented",
+      "evidence_level": "scholarly-description",
+      "summary": "The paten gesture at the embolism changes again, from the form printed in 1622 to the Urban VIII Roman rubric with the kiss of the paten reported for the 1739 ordinal.",
+      "components": [
+        "rubrics"
+      ],
+      "changes": [
+        {
+          "component": "rubrics",
+          "before": "The priest signs himself with the paten from forehead to breast at da propitius pacem, without kissing it.",
           "after": "Roman pacem rubric.",
-          "locus_before": "1578 Canon fol. 146v (BSB bsb10197414, canvas 314); King, p. 218, quoting 1578",
+          "locus_before": "1622 printed p. 269 (BSB bsb10869683, canvas 321)",
           "locus_after": "King, p. 217, 1739",
           "evidence": [
             {
               "source_id": "canonical-orders:king1955-canonical",
-              "locus": "pp. 217–218 (PDF 241–242)",
-              "claim": "Explicit comparison of the earlier and later ritual."
+              "locus": "p. 217 (PDF 241)",
+              "claim": "King's description of the 1739 ordinal's embolism rubric."
             },
             {
-              "source_id": "canonical-orders:premon1578-primary",
-              "locus": "Canon fol. 146v, BSB canvas 314",
-              "claim": "Directly confirms the earlier state: paten kissed with a cross at da propitius pacem and the forehead signed with the paten at ab omni perturbatione securi."
+              "source_id": "canonical-orders:premon1622-primary",
+              "locus": "Printed p. 269, BSB canvas 321",
+              "claim": "Earlier rubric read from the page image."
             }
           ]
         }
@@ -737,10 +826,15 @@
         {
           "source_id": "canonical-orders:king1955-canonical",
           "locus": "pp. 217–218 (PDF 241–242)",
-          "claim": "Explicit comparison of the earlier and later ritual."
+          "claim": "King compares the earlier ritual with the 1739 ordinal."
+        },
+        {
+          "source_id": "canonical-orders:premon1622-primary",
+          "locus": "Printed p. 269, BSB canvas 321",
+          "claim": "The 1622 missal already prints the changed embolism rubric (sign from forehead to breast, no kiss)."
         }
       ],
-      "limitations": "The 1578 side is now checked on the original page; the 1739 side remains King's description. Intervening history and immediate book ancestry remain unestablished.",
+      "limitations": "Re-founded 2026-10-22: this edge formerly ran from 1578 and combined two changes; the 1622 original now shows that the older paten ceremonial (1530, 1578) had already given way by 1622 to the form King (p. 177) associates with the Pian Ordinary (separate edge canonical-orders:premon-1578-1622-paten-rubric). The 1739 side remains King's description; whether the kiss of the paten entered before 1739 in an intervening missal (for example 1663) is not established.",
       "historical_parentage": "unestablished",
       "comparison_ids": [],
       "git_ancestry": false,
@@ -832,8 +926,8 @@
       "id": "canonical-orders:premon-original-comparison",
       "tradition_id": "premonstratensian",
       "period": "1578–1739",
-      "missing": "Original 1622 and 1663 missals, the 1739 ordinal and chapter acts have not been collated. The 1578 embolism and peace rubrics are now read in the BSB original.",
-      "next_source": "Alternate lawful scans of the 1622 and 1663 missals and the 1739 ordinal (the Norbertine canonesses' 1622 PDF returned HTTP 403 in the earlier recorded attempt); the 1530 Paris printing (BSB bsb10164241) for the pre-1578 rubric.",
+      "missing": "The original 1663 missal, the 1739 ordinal and the chapter acts (1618, 1660) are uncollated; the 1622 Ordinary, Requiem readings and sequence tables are not yet compared with King's account. Narrowed 2026-10-22: the BSB 1622 missal is now located and its title and embolism rubric read; the older paten rubrics stand in the BSB copies catalogued 1530 and 1578, and the changed form is printed by 1622.",
+      "next_source": "1663 missal and 1739 ordinal (no BSB digitization found by the BSB API searches 'missale praemonstratense' and 'praemonstratensis' on 2026-10-22; the BSB Liber ordinarius [not after 1483], bsb00039896, is a medieval control); 1622 sequence tables and Ordinary in bsb10869683; title leaf of bsb10164241.",
       "consequence": "Only the 1578 side of the paten change has primary evidence; the transition stays scholarly-description and no exact first implementation is claimed."
     },
     {
@@ -849,15 +943,15 @@
       "tradition_id": "pauline",
       "period": "Circa 1490–1537 and later Roman reception",
       "missing": "Complete originals from circa 1490, 1514 and 1537, and a dated instrument for Roman adoption.",
-      "next_source": "GW M23909; OSZK Inc 176 and RMK III 0196; Cambridge Inc.2.G.8.3[839]; Zagreb RI-4°-63.",
+      "next_source": "GW M23909; OSZK Inc 176 and RMK III 0196; Cambridge Inc.2.G.8.3[839]; Zagreb RI-4°-63. 2026-10-22: a search of the OCR text layers of Notitiae 1965–1995 found only postconciliar Pauline items (1965 decree list; 1980 Latin profession rite and Masses of Our Lady of Leśna and Leśniów; 1981 Polish version of the Leśniów Mass; the 1980 and 1981 items were read on page images in the cold review), nothing on the date of Roman adoption. This bounds the search; it does not show that no such record exists.",
       "consequence": "No complete Pauline revision chain or exact Roman replacement date established."
     },
     {
       "id": "canonical-orders:regular-canonical-diversity",
       "tradition_id": "windesheim",
       "period": "medieval–modern",
-      "missing": "Other congregations of Canons Regular and complete comparisons of the Windesheim Mass books.",
-      "next_source": "The Pal. lat. 479 facsimile and Deventer 1521 printing; keep the local Frankenthal missal fragment separate.",
+      "missing": "Other congregations of Canons Regular and complete comparisons of the Windesheim Mass books. Narrowed 2026-10-22: postconciliar books of two further Canons Regular bodies are dated from Notitiae: the Confederation's Latin Mass and Office propers (confirmed 20 June 1974; Missae Propriae printed Rome 1974) and the Windesheim-Victorine Congregation's calendar (18 June 1974) and Latin Proprium Missarum (14 June 1976). Their books are uninspected and no medieval-to-modern continuity is asserted.",
+      "next_source": "The Pal. lat. 479 facsimile and Deventer 1521 printing; keep the local Frankenthal missal fragment separate. The Rome 1974 Missae Propriae of the Confederation and the 1976 Windesheim-Victorine Proprium Missarum (title and approval leaves).",
       "consequence": "Windesheim is one congregation, not a universal Augustinian rite. Breviaries remain outside the Mass census."
     },
     {
@@ -865,7 +959,7 @@
       "tradition_id": "teutonic",
       "period": "1244–1903",
       "missing": "Original 1244 and 1257 acts, and a dated change from the order’s Mass book to the Roman Missal with a proper.",
-      "next_source": "Innocent IV, 13 February 1244; Alexander IV, 27 February 1257; the circa 1499 missal and Pustet 1903 proper.",
+      "next_source": "Innocent IV, 13 February 1244; Alexander IV, 27 February 1257; the circa 1499 missal and Pustet 1903 proper. 2026-10-22: the BSB incunable bsb00032846 is undated ([ca. 1499], GW M24184); a search of the Notitiae 1965–1995 OCR text layers found only postconciliar items (German version of the proper Masses, 7 December 1966, Prot. 3455/66; Slovene version, 26 April 1967; a calendar listing of 2 March 1978, Prot. CD 3/78; all three read on page images in the cold review).",
       "consequence": "The abandonment of the order’s Office in 1624 cannot supply a missal replacement date; chronology alone establishes no ancestry."
     }
   ]

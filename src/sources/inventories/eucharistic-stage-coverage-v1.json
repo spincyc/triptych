@@ -15,14 +15,14 @@
     {
       "id": "western",
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "bd9c3c9ce5fa3df8c28c93cfb5a6f045ff6f8a68948a805a76ed9f64f5723e12",
-      "byte_size": 2900398
+      "sha256": "cbeb0e3711c351a71b582209592a639dfa91764d92e06754d6525ea28c5f846e",
+      "byte_size": 2906397
     },
     {
       "id": "presentation",
       "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
-      "sha256": "c7ad7391e840149524b9053910bbd36c92f98845a204e4afa052e1e8132c4bb7",
-      "byte_size": 189449
+      "sha256": "b985610e6530f6b34d1a9e02d8e892bef08b5bbcf64e69521c07e3587f060f9f",
+      "byte_size": 189448
     },
     {
       "id": "legacy_latin",
@@ -57,8 +57,8 @@
     {
       "id": "dossier:canonical-orders",
       "path": "src/sources/inventories/eucharistic-stages/canonical-orders.json",
-      "sha256": "d4673fc8991b695ce08ac7424578d96741b8b9d9bafdb9cc5b010b4808f338ba",
-      "byte_size": 42123
+      "sha256": "8c34c172637db0ba0d03bb3cfd93feace9a39312cd2e541f43bb7c42ae765ab4",
+      "byte_size": 51637
     },
     {
       "id": "dossier:chaldean-east-syriac",
@@ -69,8 +69,8 @@
     {
       "id": "dossier:cistercian-1606-1657",
       "path": "src/sources/inventories/eucharistic-stages/cistercian.json",
-      "sha256": "7f544773dad30c20f5831ff860e6955edd637ed68a0e87d9c759abc32531ff55",
-      "byte_size": 45402
+      "sha256": "c4391b5fdfa82cc46858101f3ad7a0928ba4358da223b7b08f8763bc7660b1c1",
+      "byte_size": 45776
     },
     {
       "id": "dossier:french-dioceses-b-batch4",
@@ -87,8 +87,8 @@
     {
       "id": "dossier:latin-uses",
       "path": "src/sources/inventories/eucharistic-stages/latin-uses.json",
-      "sha256": "5d39634aa6f58127e2f2ce5244b750751ea8982a0b29f8f065a4a6679ef8680a",
-      "byte_size": 116866
+      "sha256": "c4dca1e99fb193adfa54c2dccdfed7cf259e6299bf9d081552a23884fdf35cc7",
+      "byte_size": 130484
     },
     {
       "id": "dossier:stages-malabar",
@@ -207,14 +207,14 @@
     {
       "id": "dossier:other-orders",
       "path": "src/sources/inventories/eucharistic-stages/other-orders-round2.json",
-      "sha256": "8dd7ff30444beb671f69d76425ede9385cc05866b0c814a3b44ccf8796657304",
-      "byte_size": 47328
+      "sha256": "69cda0e877870bc88b1d72bd55ccb561d3a2078d89f6a23463c47b6cdfd89ed2",
+      "byte_size": 48794
     },
     {
       "id": "dossier:residual-orders-round3",
       "path": "src/sources/inventories/eucharistic-stages/residual-orders-round3.json",
-      "sha256": "c4da2c200e0ca914ef4e6bc561a381d15b9b5f39e2d87a1b4f8b1138e9516cb7",
-      "byte_size": 35328
+      "sha256": "c8a3c4806149480e5772cc7d659ac3e150d5c0ec826e4adc0e60892f0cbe150c",
+      "byte_size": 35821
     },
     {
       "id": "dossier:residual-western-round3",
@@ -243,8 +243,8 @@
     {
       "id": "dossier:ocso-next",
       "path": "src/sources/inventories/eucharistic-stages/ocso-next.json",
-      "sha256": "a86a7745a12bc3da1a25dbc9c286fa8755fdaef9b21aae32e7ce3b9f23a3de75",
-      "byte_size": 22949
+      "sha256": "a97391b153584caae42a11d43e6ef6103296bf5a479a6e871d02bb6cb7749df3",
+      "byte_size": 29199
     },
     {
       "id": "dossier:padua-local-round3",
@@ -269,7 +269,7 @@
     "eastern_census_slots": 23,
     "western_coverage_trajectories": 151,
     "eastern_candidates": 451,
-    "western_candidates": 1498,
+    "western_candidates": 1499,
     "presentation_groups": 233,
     "eastern_empty_candidate_slots_at_input": [
       "albanian",
@@ -9620,11 +9620,11 @@
           "label": "Esztergom use"
         }
       ],
-      "documented_stage_count": 22,
-      "provisional_stage_count": 0,
+      "documented_stage_count": 23,
+      "provisional_stage_count": 1,
       "text_coverage_counts": {
-        "not-transcribed": 13,
-        "partial": 9
+        "partial": 9,
+        "not-transcribed": 15
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -19053,6 +19053,7 @@
       "inventory_status": "selected-witnesses-and-scoped-textual-relationships-documented",
       "candidate_ids": [
         "carthusian-medieval",
+        "carthusian-1496-speyer",
         "carthusian-1561-pavia",
         "carthusian-1603-1627",
         "carthusian-1981",
@@ -19079,9 +19080,11 @@
         ],
         "assigned_family": "Carthusian use",
         "scope": "Selected bounded states in the named canonical tradition; source evidence and text coverage remain independent.",
-        "provisional_stage_ids": [],
+        "provisional_stage_ids": [
+          "latin-uses:carthusian-1496"
+        ],
         "text_coverage_counts": {
-          "not-transcribed": 3,
+          "not-transcribed": 4,
           "partial": 2
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
@@ -19097,6 +19100,14 @@
           "start_year": 1275,
           "end_year": 1300,
           "date_role": "manuscript-copying",
+          "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "carthusian-1496-speyer",
+          "label": "Missale Cartusiense, [Speyer: Peter Drach the younger, for Henrick Eckert van Homberch of Delft; BSB-Ink 1496, GW not after 1496], BSB",
+          "start_year": 1496,
+          "end_year": 1496,
+          "date_role": "catalogue-attributed publication year",
           "status": "inventory-witness-candidate-not-a-stage"
         },
         {
@@ -19158,22 +19169,24 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "The 2021 titled missal PDF has Praenotanda-described changes, but its Roman recognition date, effective date and relation to 1981 remain uncollated; the 2018 calendar approval is separate. Recover the 1679 original through an institutional viewer after Gallica PDF 403, complete the intervening Cartusiana bibliography lines and compare early editions against reprints. 2026-10-21 batch 4: 1561 Pavia printing documented (licence, colophon, four Ordinary loci agreeing with 1627, while the same openings show 1627 additions (Lavabo, In nomine Patris after the water) and a changed Credo rubric); 2018 proper-calendar confirmation documented; 1679 BSB excerpt lacks the ordinance; missal recognition date and 1981 printing still open.",
+      "missing_stage_chain": "The 2021 titled missal PDF has Praenotanda-described changes, but its Roman recognition date, effective date and relation to 1981 remain uncollated; the 2018 calendar approval is separate. Recover the 1679 original through an institutional viewer after Gallica PDF 403, complete the intervening Cartusiana bibliography lines and compare early editions against reprints. 2026-10-21 batch 4: 1561 Pavia printing documented (licence, colophon, four Ordinary loci agreeing with 1627, while the same openings show 1627 additions (Lavabo, In nomine Patris after the water) and a changed Credo rubric); 2018 proper-calendar confirmation documented; 1679 BSB excerpt lacks the ordinance; missal recognition date and 1981 printing still open. 2026-10-22 orders batch5: an undated incunable Carthusian missal (BSB bsb00030081; BSB-Ink [1496], GW not after 1496) is a provisional stage (cold review: catalogue-attributed date); its Ordinary block before the Canon has the same oblation prayer, with word-order variants, and the same Gloria reading as Pavia 1561 (provisional witness succession), and the 1561 rubricated offertory section is not in that block. Notitiae 1965–1995 (text layers) holds no Carthusian missal confirmation.",
       "next_sources": {
         "inventory_source_ids": [
           "carthusian-usuarium",
           "palecki-carthusian-2015",
           "monastic-src-carthusian-2021",
-          "western-carthusian1561-bsb"
+          "western-carthusian1561-bsb",
+          "orders-src-carthusian-1496-bsb"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origin/227/view",
           "https://repozytorium.kul.pl/bitstreams/1781a58a-e2ce-4358-bc6f-fc4d9ff9f2c2/download",
           "https://cartusialover.wordpress.com/wp-content/uploads/2023/04/missale-cartusiense-2021-1.pdf",
-          "https://www.digitale-sammlungen.de/en/view/bsb10197405"
+          "https://www.digitale-sammlungen.de/en/view/bsb10197405",
+          "https://www.digitale-sammlungen.de/en/view/bsb00030081"
         ],
         "inspection": "Owning inventory and dated research-receipt metadata reviewed for this crosswalk; direct source inspection and limits remain in their source records.",
-        "target": "The alleged 1620 copy is identified as Lyon 1627. Complete earlier/later missal and Ordinarium comparisons, the full 1677 ordinance and the modern original book/approval record remain open. The 2021 titled missal PDF has Praenotanda-described changes, but its Roman recognition date, effective date and relation to 1981 remain uncollated; the 2018 calendar approval is separate. Recover the 1679 original through an institutional viewer after Gallica PDF 403, complete the intervening Cartusiana bibliography lines and compare early editions against reprints."
+        "target": "The alleged 1620 copy is identified as Lyon 1627. Complete earlier/later missal and Ordinarium comparisons, the full 1677 ordinance and the modern original book/approval record remain open. The 2021 titled missal PDF has Praenotanda-described changes, but its Roman recognition date, effective date and relation to 1981 remain uncollated; the 2018 calendar approval is separate. Recover the 1679 original through an institutional viewer after Gallica PDF 403, complete the intervening Cartusiana bibliography lines and compare early editions against reprints. 2026-10-22 orders batch5: an undated incunable Carthusian missal (BSB bsb00030081; BSB-Ink [1496], GW not after 1496) is a provisional stage (cold review: catalogue-attributed date); its Ordinary block before the Canon has the same oblation prayer, with word-order variants, and the same Gloria reading as Pavia 1561 (provisional witness succession), and the 1561 rubricated offertory section is not in that block. Notitiae 1965–1995 (text layers) holds no Carthusian missal confirmation."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "existing_catalogue_ids": [
@@ -19204,18 +19217,20 @@
       "dossier_coverage": {
         "status": "selected-stages-available",
         "dossier_ids": [
-          "cistercian-1606-1657"
+          "cistercian-1606-1657",
+          "ocso-next"
         ],
         "stage_ids": [
           "cistercian-1606-1657-1487",
           "cistercian-1606-1657-1606",
-          "cistercian-1606-1657-1657"
+          "cistercian-1606-1657-1657",
+          "ocso-next:ordo-particularities-1971"
         ],
         "assigned_family": "Cistercian",
         "scope": "The 1606 stage binds complete bounded offertory, strict Canon and six-unit post-Canon constituents. The 1657 stage binds complete bounded offertory, strict Canon and eight-unit two-form Pater constituents; its wider post-Canon continuation is blocked by the named source-damage gap. Both whole Missals remain partially transcribed; no complete Ordinary, continuous local-use interval or whole-book ancestry follows.",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 1,
+          "not-transcribed": 2,
           "partial": 2
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
@@ -19287,7 +19302,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "The acquired 1590 witness still needs a verified title; the 1617 title claims General Chapter decrees, Roman conformity and augmentation without a collated change set. Extend post-1657 and local-congregation repertoires, compare complete books, and seek original Latin proper additions after 1983. 2026-10-21: the 1487→1606 transition now also pairs the Confiteor, Misereatur, Indulgentiam and following rubric (the different placement of the preparation is recorded as book arrangement only), and the 1606→1657 revision pairs the March calendar; the 1606 offertory prayers were not found in the inspected 1487 Ordinary sequence, the 1601/1605 chapter acts remain uninspected and eleven calendar months remain uncompared.",
+      "missing_stage_chain": "The acquired 1590 witness still needs a verified title; the 1617 title claims General Chapter decrees, Roman conformity and augmentation without a collated change set. Extend post-1657 and local-congregation repertoires, compare complete books, and seek original Latin proper additions after 1983. 2026-10-21: the 1487→1606 transition now also pairs the Confiteor, Misereatur, Indulgentiam and following rubric (the different placement of the preparation is recorded as book arrangement only), and the 1606→1657 revision pairs the March calendar; the 1606 offertory prayers were not found in the inspected 1487 Ordinary sequence, the 1601/1605 chapter acts remain uninspected and eleven calendar months remain uncompared. Cross-reference 2026-10-22 (orders batch5): the joint reply of 8 June 1971 (Prot. 525/71) confirming four optional Cistercian Ordo Missae particularities was addressed to both the Cistercian Order (OCist) and the OCSO; it is recorded once, as stage ocso-next:ordo-particularities-1971, and is mapped here as well. The OCist Latin proper (confirmed 9 May 1977, CD 452/77; Latin supplement confirmed 11 March 1980, CD 375/80) and the Rome 1983 Missae propriae with Lectionarium are recorded on ocso-next:shared-book1983 and remain unstaged for the OCist line itself.",
       "next_sources": {
         "inventory_source_ids": [
           "cistercian-usuarium",
@@ -19302,7 +19317,7 @@
           "https://archive.org/download/bub_gb_412omUJ0W3EC/bub_gb_412omUJ0W3EC.pdf"
         ],
         "inspection": "Owning inventory and dated research-receipt metadata reviewed for this crosswalk; direct source inspection and limits remain in their source records.",
-        "target": "The 1487 witness now has direct title, imprint and bounded page evidence. Complete its native transcription and compare full 1487/1606/1657 contents; selected 1606/1657 readings do not establish whole-book reconstruction. The acquired 1590 witness still needs a verified title; the 1617 title claims General Chapter decrees, Roman conformity and augmentation without a collated change set. Extend post-1657 and local-congregation repertoires, compare complete books, and seek original Latin proper additions after 1983. Wider post-Canon source-damage gap: A complete literal collation of the wider post-Canon continuation after the accepted functional Pater. Paper repairs/folds hide right-column conclusion/fraction line ends at FIDES raw 0278 / printed 216, left-column Perceptio baselines 17–19 at raw 0281 / repeated printed 215, and terminal Amen punctuation at raw 0282 / repeated printed 216. Lawful repair imaging of this exact FIDES copy, or a demonstrated same-setting alternate exposing all concealed spans. The inspected Lyon/Google volume confirms a 1657 Cramoisy title but has a differently set prayer page printed 293 and supplies no FIDES readings."
+        "target": "The 1487 witness now has direct title, imprint and bounded page evidence. Complete its native transcription and compare full 1487/1606/1657 contents; selected 1606/1657 readings do not establish whole-book reconstruction. The acquired 1590 witness still needs a verified title; the 1617 title claims General Chapter decrees, Roman conformity and augmentation without a collated change set. Extend post-1657 and local-congregation repertoires, compare complete books, and seek original Latin proper additions after 1983. Wider post-Canon source-damage gap: A complete literal collation of the wider post-Canon continuation after the accepted functional Pater. Paper repairs/folds hide right-column conclusion/fraction line ends at FIDES raw 0278 / printed 216, left-column Perceptio baselines 17–19 at raw 0281 / repeated printed 215, and terminal Amen punctuation at raw 0282 / repeated printed 216. Lawful repair imaging of this exact FIDES copy, or a demonstrated same-setting alternate exposing all concealed spans. The inspected Lyon/Google volume confirms a 1657 Cramoisy title but has a differently set prayer page printed 293 and supplies no FIDES readings. Cross-reference 2026-10-22 (orders batch5): the joint reply of 8 June 1971 (Prot. 525/71) confirming four optional Cistercian Ordo Missae particularities was addressed to both the Cistercian Order (OCist) and the OCSO; it is recorded once, as stage ocso-next:ordo-particularities-1971, and is mapped here as well. The OCist Latin proper (confirmed 9 May 1977, CD 452/77; Latin supplement confirmed 11 March 1980, CD 375/80) and the Rome 1983 Missae propriae with Lectionarium are recorded on ocso-next:shared-book1983 and remain unstaged for the OCist line itself."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "canonical_tradition_ids": [
@@ -19355,13 +19370,15 @@
           "latin-uses:dominican-1550",
           "latin-uses:dominican-1553",
           "latin-uses:dominican-1603",
-          "latin-uses:dominican-1604"
+          "latin-uses:dominican-1604",
+          "latin-uses:dominican-1985-proprium"
         ],
         "assigned_family": "Dominican use",
         "scope": "only identified uses and components; not other local uses",
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "partial": 4
+          "partial": 4,
+          "not-transcribed": 1
         },
         "date_limit": "Stage dates are the canonical dossier values, not an uninterrupted period of use or local adoption. Complementary-volume completion dates remain distinct from first-volume publication.",
         "gap_ids": [
@@ -19524,9 +19541,9 @@
         {
           "candidate_id": "mendicant-op-1969-control",
           "label": "De Missali Romano et novo calendario pro O.F.P.",
-          "start_year": null,
-          "end_year": null,
-          "date_role": "decree date cited in 1985 promulgation letter",
+          "start_year": 1969,
+          "end_year": 1969,
+          "date_role": "approval: decree summary read in Notitiae 5 (1969) pp. 359–360",
           "status": "inventory-witness-candidate-not-a-stage"
         },
         {
@@ -19580,7 +19597,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Documented 1256 reform context and shared Temporal pericopes. Still need component-level prototype revisions, 1267 instrument, pre-Humbert witnesses and substantive boundaries of printed series. Added medieval, printed and modern book/component candidates include the cited 1969 control, 1977 and 1983 decisions and 1985 proper/lectionary. Inspect original instruments and local reception, collate exact component changes, and do not infer a complete predecessor chain. 2026-10-21 batch 4: BSB 1553 (Salamanca 1551 reform) and Rome 1603 Xavierre printings are documented stages; the Suscepimus collect/Gospel recombination is bounded between them; Bettini 1576 and Castrucci 1596/1600 remain unchecked.",
+      "missing_stage_chain": "Documented 1256 reform context and shared Temporal pericopes. Still need component-level prototype revisions, 1267 instrument, pre-Humbert witnesses and substantive boundaries of printed series. Added medieval, printed and modern book/component candidates include the cited 1969 control, 1977 and 1983 decisions and 1985 proper/lectionary. Inspect original instruments and local reception, collate exact component changes, and do not infer a complete predecessor chain. 2026-10-21 batch 4: BSB 1553 (Salamanca 1551 reform) and Rome 1603 Xavierre printings are documented stages; the Suscepimus collect/Gospel recombination is bounded between them; Bettini 1576 and Castrucci 1596/1600 remain unchecked. 2026-10-22 orders batch5: the duplicate 1550→1604 Suscepimus transition was removed in favour of the 1550→1553→1603→1604 chain (its collect comparison remains configured in the catalogue). Notitiae 5 (1969) pp. 359–360 confirms the 2 June 1969 concession (Prot. n. 98/69) of the Roman Missal and calendar to the whole Order, with licences for the former rite and interim feast grades; the 1985 Proprium Missale et Lectionarium is now a documented stage from its title, mandate, decrees and promulgation letter. Still open: Bettini 1576 and Castrucci 1596/1600; the 1933, 1939 and 1965 missals as stages; body collation of 1985; actual house changeovers after 1969.",
       "next_sources": {
         "inventory_source_ids": [
           "dominican-usuarium",
@@ -19597,7 +19614,8 @@
           "mendicant-src-op-add2006",
           "mendicant-src-op-calendar",
           "mendicant-src-op-claverie2019",
-          "french-census-7100-usuarium"
+          "french-census-7100-usuarium",
+          "orders-src-notitiae-1969-op"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origin/231/view",
@@ -19613,10 +19631,11 @@
           "https://www.op.org/wp-content/uploads/2026/05/AD-01-Additamenta-OP-2006.pdf",
           "https://www.op.org/calendar-ordinis-praedicatorum/",
           "https://www.op.org/wp-content/uploads/2026/05/AD-02-Beatorum-Petri-Caverie-et-Sociorum-LT-FR.pdf",
-          "https://usuarium.elte.hu/book/7100/view"
+          "https://usuarium.elte.hu/book/7100/view",
+          "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-05-%281969%29/Notitiae-048-1969.pdf"
         ],
         "inspection": "Owning inventory and dated research-receipt metadata reviewed for this crosswalk; direct source inspection and limits remain in their source records.",
-        "target": "Documented 1256 reform context and shared Temporal pericopes. Still need component-level prototype revisions, 1267 instrument, pre-Humbert witnesses and substantive boundaries of printed series. Added medieval, printed and modern book/component candidates include the cited 1969 control, 1977 and 1983 decisions and 1985 proper/lectionary. Inspect original instruments and local reception, collate exact component changes, and do not infer a complete predecessor chain."
+        "target": "Documented 1256 reform context and shared Temporal pericopes. Still need component-level prototype revisions, 1267 instrument, pre-Humbert witnesses and substantive boundaries of printed series. Added medieval, printed and modern book/component candidates include the cited 1969 control, 1977 and 1983 decisions and 1985 proper/lectionary. Inspect original instruments and local reception, collate exact component changes, and do not infer a complete predecessor chain. 2026-10-22 orders batch5: the duplicate 1550→1604 Suscepimus transition was removed in favour of the 1550→1553→1603→1604 chain (its collect comparison remains configured in the catalogue). Notitiae 5 (1969) pp. 359–360 confirms the 2 June 1969 concession (Prot. n. 98/69) of the Roman Missal and calendar to the whole Order, with licences for the former rite and interim feast grades; the 1985 Proprium Missale et Lectionarium is now a documented stage from its title, mandate, decrees and promulgation letter. Still open: Bettini 1576 and Castrucci 1596/1600; the 1933, 1939 and 1965 missals as stages; body collation of 1985; actual house changeovers after 1969."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "existing_catalogue_ids": [
@@ -19699,18 +19718,20 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "2026-10-21 western-gaps batch4: the 1578 embolism paten rubric and peace rubrics are read on the BSB original (Canon fol. 146v). The 1936 title and preface establish a printed witness and describe added Masses and changes in text and chant; compare it with the unresolved 1900/1902 predecessor books, inspect chapter acts and house reception, and collate the original 1622/1663 missals and 1739 ordinal. Catalogue and dated print records do not establish an exhaustive revision genealogy or complete text.",
+      "missing_stage_chain": "2026-10-21 western-gaps batch4: the 1578 embolism paten rubric and peace rubrics are read on the BSB original (Canon fol. 146v). The 1936 title and preface establish a printed witness and describe added Masses and changes in text and chant; compare it with the unresolved 1900/1902 predecessor books, inspect chapter acts and house reception, and collate the original 1622/1663 missals and 1739 ordinal. Catalogue and dated print records do not establish an exhaustive revision genealogy or complete text. 2026-10-22 orders batch5: the 1622 missal is located at BSB (bsb10869683) and its title (Abbot Gosset and General Chapter, 1622) and embolism rubric read; the older paten ceremonial printed in the copies catalogued 1530 and 1578 has given way by 1622 to the rubric King (p. 177) associates with the Pian Ordinary (new documented transition 1578→1622); the 1739 kiss of the paten remains King's description.",
       "next_sources": {
         "inventory_source_ids": [
           "premonstratensian-usuarium",
-          "canonical-premon-1936-book"
+          "canonical-premon-1936-book",
+          "orders-src-premon-1622-bsb"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/origin/232/view",
-          "https://drive.google.com/file/d/1PJrIXNaELcBcBl3zgorq-eUzzoxandRW/view"
+          "https://drive.google.com/file/d/1PJrIXNaELcBcBl3zgorq-eUzzoxandRW/view",
+          "https://www.digitale-sammlungen.de/en/view/bsb10869683"
         ],
         "inspection": "Owning inventory and dated research-receipt metadata reviewed for this crosswalk; direct source inspection and limits remain in their source records.",
-        "target": "The 1936 title and preface establish a printed witness and describe added Masses and changes in text and chant; compare it with the unresolved 1900/1902 predecessor books, inspect chapter acts and house reception, and collate the original 1622/1663 missals and 1739 ordinal. Catalogue and dated print records do not establish an exhaustive revision genealogy or complete text."
+        "target": "The 1936 title and preface establish a printed witness and describe added Masses and changes in text and chant; compare it with the unresolved 1900/1902 predecessor books, inspect chapter acts and house reception, and collate the original 1622/1663 missals and 1739 ordinal. Catalogue and dated print records do not establish an exhaustive revision genealogy or complete text. 2026-10-22 orders batch5: the 1622 missal is located at BSB (bsb10869683) and its title (Abbot Gosset and General Chapter, 1622) and embolism rubric read; the older paten ceremonial printed in the copies catalogued 1530 and 1578 has given way by 1622 to the rubric King (p. 177) associates with the Pian Ordinary (new documented transition 1578→1622); the 1739 kiss of the paten remains King's description."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "existing_catalogue_ids": [
@@ -24298,7 +24319,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "Inspect the missing Ms. 08 folios and compare its Mass texts and calendar with neighboring diocesan and Canons Regular witnesses before naming a distinct local recension. Preserve Windesheim and other Canons Regular congregations as separate uses; no complete genealogy or reception sequence is established.",
+      "missing_stage_chain": "Inspect the missing Ms. 08 folios and compare its Mass texts and calendar with neighboring diocesan and Canons Regular witnesses before naming a distinct local recension. Preserve Windesheim and other Canons Regular congregations as separate uses; no complete genealogy or reception sequence is established. 2026-10-22 orders batch5: Notitiae dates the Canons Regular Confederation's postconciliar Latin Mass proper (confirmed 20 June 1974; Rome 1974 printing listed) and the Windesheim-Victorine Congregation's calendar (1974) and Latin Proprium Missarum (14 June 1976); books uninspected; no medieval continuity asserted.",
       "next_sources": {
         "inventory_source_ids": [
           "usuarium-origins-600",
@@ -24313,7 +24334,7 @@
           "https://usuarium.elte.hu/book/4064/view"
         ],
         "inspection": "Owning inventory and dossier metadata reviewed for this crosswalk; underlying source inspection and limits remain in their dated source records.",
-        "target": "Inspect the Windesheim originals and complete Mass comparisons; identify other Canons Regular congregations separately. Windesheim evidence cannot fill the broader discovery bucket. Inspect the missing Ms. 08 folios and compare its Mass texts and calendar with neighboring diocesan and Canons Regular witnesses before naming a distinct local recension. Preserve Windesheim and other Canons Regular congregations as separate uses; no complete genealogy or reception sequence is established."
+        "target": "Inspect the Windesheim originals and complete Mass comparisons; identify other Canons Regular congregations separately. Windesheim evidence cannot fill the broader discovery bucket. Inspect the missing Ms. 08 folios and compare its Mass texts and calendar with neighboring diocesan and Canons Regular witnesses before naming a distinct local recension. Preserve Windesheim and other Canons Regular congregations as separate uses; no complete genealogy or reception sequence is established. 2026-10-22 orders batch5: Notitiae dates the Canons Regular Confederation's postconciliar Latin Mass proper (confirmed 20 June 1974; Rome 1974 printing listed) and the Windesheim-Victorine Congregation's calendar (1974) and Latin Proprium Missarum (14 June 1976); books uninspected; no medieval continuity asserted."
       },
       "caveat": "A catalogue witness, indexed use, component relationship or dossier does not establish a complete chronological sequence.",
       "canonical_tradition_ids": [
@@ -25900,9 +25921,9 @@
         {
           "candidate_id": "additional-orders-osa-1491",
           "label": "Missale Ordinis Fratrum Eremitarum Sancti Augustini de observantia",
-          "start_year": null,
-          "end_year": null,
-          "date_role": "publication-conflict",
+          "start_year": 1491,
+          "end_year": 1491,
+          "date_role": "publication",
           "status": "inventory-witness-candidate-not-a-stage"
         },
         {
@@ -25955,7 +25976,7 @@
         },
         {
           "candidate_id": "additional-orders-osa-first-postconciliar",
-          "label": "1975-approved Spanish Augustinian Mass proper; source-language antecedent unresolved",
+          "label": "Spanish version of the OSA postconciliar Mass proper, confirmed 17 May 1975; its Latin original was confirmed 15 April 1975",
           "start_year": null,
           "end_year": null,
           "date_role": "Spanish-confirmation-and-publication",
@@ -25972,7 +25993,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "Medieval manuscript layers, printed missals and later Mass propers identified; complete textual sequence unverified.",
-      "missing_stage_chain": "2026-10-21 western-gaps batch4: Pal. lat. 500 core (early fourteenth century; 1314 colophon in later gatherings), inserted Canon about 1400 and 1466 Fourteen Helpers addition are documented from four inspected folios, and the 15 April 1975 Latin proper confirmation is documented from Notitiae. The other displayed origin-408 records beyond genre labels, each underlying manuscript or print beyond retained pages, and the entire non-USUARIUM OSA manuscript and print bibliography. Order-level presentation groups are catalogue routes for heterogeneous books and components. Print date, ownership, translation and title do not establish textual parentage, independent recension or a complete chronology. The reviewed receipt records rights and access limits. Augustinian Hermits are outside the Canons Regular and Windesheim coverage row. These retained packet statuses label evidence-bounded candidate records; cold acceptance integrates bibliographic metadata only, without asserting an independent recension, a completed textual stage, or book-wide collation.",
+      "missing_stage_chain": "2026-10-21 western-gaps batch4: Pal. lat. 500 core (early fourteenth century; 1314 colophon in later gatherings), inserted Canon about 1400 and 1466 Fourteen Helpers addition are documented from four inspected folios, and the 15 April 1975 Latin proper confirmation is documented from Notitiae. The other displayed origin-408 records beyond genre labels, each underlying manuscript or print beyond retained pages, and the entire non-USUARIUM OSA manuscript and print bibliography. Order-level presentation groups are catalogue routes for heterogeneous books and components. Print date, ownership, translation and title do not establish textual parentage, independent recension or a complete chronology. The reviewed receipt records rights and access limits. Augustinian Hermits are outside the Canons Regular and Windesheim coverage row. These retained packet statuses label evidence-bounded candidate records; cold acceptance integrates bibliographic metadata only, without asserting an independent recension, a completed textual stage, or book-wide collation. 2026-10-22 orders batch5: the 1491/1496 conflict is resolved for 1491 from the printed colophon (the red 1496 is an added entry); the postconciliar Spanish-proper candidate is retitled as the Spanish version of the 1975 Latin proper.",
       "next_sources": {
         "inventory_source_ids": [
           "additional-orders-src-augustinian-2007",
@@ -26004,7 +26025,7 @@
           "https://digi.vatlib.it/iiif/MSS_Pal.lat.500/manifest.json"
         ],
         "inspection": "USUARIUM OSA origin 408 and BAV Pal. lat. 500 attest order-labelled witnesses; 2007 Augustinian Acta reports the Spanish confirmation of 17 May 1975 and 1976 missal. Keep Hermits separate from Canons Regular and Windesheim.",
-        "target": "The other displayed origin-408 records beyond genre labels, each underlying manuscript or print beyond retained pages, and the entire non-USUARIUM OSA manuscript and print bibliography. Current owning route limit: The other displayed origin-408 records beyond genre labels, each underlying manuscript or print beyond retained pages, and the entire non-USUARIUM OSA manuscript and print bibliography. Order-level presentation groups are catalogue routes for heterogeneous books and components. Print date, ownership, translation and title do not establish textual parentage, independent recension or a complete chronology. The reviewed receipt records rights and access limits. Augustinian Hermits are outside the Canons Regular and Windesheim coverage row. These retained packet statuses label evidence-bounded candidate records; cold acceptance integrates bibliographic metadata only, without asserting an independent recension, a completed textual stage, or book-wide collation."
+        "target": "The other displayed origin-408 records beyond genre labels, each underlying manuscript or print beyond retained pages, and the entire non-USUARIUM OSA manuscript and print bibliography. Current owning route limit: The other displayed origin-408 records beyond genre labels, each underlying manuscript or print beyond retained pages, and the entire non-USUARIUM OSA manuscript and print bibliography. Order-level presentation groups are catalogue routes for heterogeneous books and components. Print date, ownership, translation and title do not establish textual parentage, independent recension or a complete chronology. The reviewed receipt records rights and access limits. Augustinian Hermits are outside the Canons Regular and Windesheim coverage row. These retained packet statuses label evidence-bounded candidate records; cold acceptance integrates bibliographic metadata only, without asserting an independent recension, a completed textual stage, or book-wide collation. 2026-10-22 orders batch5: the 1491/1496 conflict is resolved for 1491 from the printed colophon (the red 1496 is an added entry); the postconciliar Spanish-proper candidate is retitled as the Spanish version of the 1975 Latin proper."
       },
       "caveat": "Order-level presentation groups are catalogue routes for heterogeneous books and components. Print date, ownership, translation and title do not establish textual parentage, independent recension or a complete chronology. The reviewed receipt records rights and access limits.",
       "canonical_tradition_ids": []
@@ -26969,7 +26990,7 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "The distinct OCSO branch's 1892–1971 book sequence, approvals and named-house reception remain an explicit unresolved interval; obtain original post-1892 chapter records and exact preconciliar books without backdating OCSO identity. Acquire the original signed CD 83/75 and its attached Latin prayers/reading indications, OCist CD 452/77, and DLI 83442's Rome 1983 proper plus lectionary (128, 96 pages). Collate their branch scopes and relationship; do not turn the current overview's reported 1983 approval into a general decree date against the 1975/1977 confirmations and 1983 publication evidence. Authenticate and render the undated official Latin DOC and determine whether it derives from the printed Lectionarium. Original later-addition decrees and actual use of exact editions remain open. Vitorchiano's 2014 Mass celebration supplies bounded house reception of Maria Gabriella's observance, not use of a named Latin book or universal reception. Medieval Cistercian witnesses remain shared ancestry, not medieval OCSO institutional identity. Batch 4 adds the published 8 June 1971 Ordo particularities and 31 August 1972 calendar confirmations from Notitiae, and 1966–1969 confirmations of OCSO vernacular proper texts that presuppose Latin Missale cisterciense and Supplementum books still unidentified.",
+      "missing_stage_chain": "The distinct OCSO branch's 1892–1971 book sequence, approvals and named-house reception remain an explicit unresolved interval; obtain original post-1892 chapter records and exact preconciliar books without backdating OCSO identity. Acquire the original signed CD 83/75 and its attached Latin prayers/reading indications, OCist CD 452/77, and DLI 83442's Rome 1983 proper plus lectionary (128, 96 pages). Collate their branch scopes and relationship; do not turn the current overview's reported 1983 approval into a general decree date against the 1975/1977 confirmations and 1983 publication evidence. Authenticate and render the undated official Latin DOC and determine whether it derives from the printed Lectionarium. Original later-addition decrees and actual use of exact editions remain open. Vitorchiano's 2014 Mass celebration supplies bounded house reception of Maria Gabriella's observance, not use of a named Latin book or universal reception. Medieval Cistercian witnesses remain shared ancestry, not medieval OCSO institutional identity. Batch 4 adds the published 8 June 1971 Ordo particularities and 31 August 1972 calendar confirmations from Notitiae, and 1966–1969 confirmations of OCSO vernacular proper texts that presuppose Latin Missale cisterciense and Supplementum books still unidentified. 2026-10-22 orders batch5: a search of the OCR text layers of every Notitiae issue 1965–1995 (bounded; OCR misses possible) found no general OCSO Latin proper approval after CD 83/75; the 1983 entries found concern Blessed Maria Gabriella, including the Latin collect confirmed by CD 124/83 (already staged), calendar grants and vernacular versions. Confirmations of French (1976), Spanish, Dutch and English (1979–1980) and Irish (1981) versions of the Proprium Missarum date the order's requests for vernacular versions by language region, not use of the Latin texts; house-level grants (1980) and the 2011 Latin collect and memorial for Blessed John Paul II are recorded.",
       "next_sources": {
         "inventory_source_ids": [
           "monastic-src-ocso-official-liturgy",
@@ -26994,7 +27015,7 @@
           "https://www.ocso.org/resources/liturgy/"
         ],
         "inspection": "Dated independent review of exact official notice images, later shared Ritual, catalogue and house testimony; original signed instruments and exact printed books remain open.",
-        "target": "The distinct OCSO branch's 1892–1971 book sequence, approvals and named-house reception remain an explicit unresolved interval; obtain original post-1892 chapter records and exact preconciliar books without backdating OCSO identity. Acquire the original signed CD 83/75 and its attached Latin prayers/reading indications, OCist CD 452/77, and DLI 83442's Rome 1983 proper plus lectionary (128, 96 pages). Collate their branch scopes and relationship; do not turn the current overview's reported 1983 approval into a general decree date against the 1975/1977 confirmations and 1983 publication evidence. Authenticate and render the undated official Latin DOC and determine whether it derives from the printed Lectionarium. Original later-addition decrees and actual use of exact editions remain open. Vitorchiano's 2014 Mass celebration supplies bounded house reception of Maria Gabriella's observance, not use of a named Latin book or universal reception. Medieval Cistercian witnesses remain shared ancestry, not medieval OCSO institutional identity."
+        "target": "The distinct OCSO branch's 1892–1971 book sequence, approvals and named-house reception remain an explicit unresolved interval; obtain original post-1892 chapter records and exact preconciliar books without backdating OCSO identity. Acquire the original signed CD 83/75 and its attached Latin prayers/reading indications, OCist CD 452/77, and DLI 83442's Rome 1983 proper plus lectionary (128, 96 pages). Collate their branch scopes and relationship; do not turn the current overview's reported 1983 approval into a general decree date against the 1975/1977 confirmations and 1983 publication evidence. Authenticate and render the undated official Latin DOC and determine whether it derives from the printed Lectionarium. Original later-addition decrees and actual use of exact editions remain open. Vitorchiano's 2014 Mass celebration supplies bounded house reception of Maria Gabriella's observance, not use of a named Latin book or universal reception. Medieval Cistercian witnesses remain shared ancestry, not medieval OCSO institutional identity. 2026-10-22 orders batch5: a search of the OCR text layers of every Notitiae issue 1965–1995 (bounded; OCR misses possible) found no general OCSO Latin proper approval after CD 83/75; the 1983 entries found concern Blessed Maria Gabriella, including the Latin collect confirmed by CD 124/83 (already staged), calendar grants and vernacular versions. Confirmations of French (1976), Spanish, Dutch and English (1979–1980) and Irish (1981) versions of the Proprium Missarum date the order's requests for vernacular versions by language region, not use of the Latin texts; house-level grants (1980) and the 2011 Latin collect and memorial for Blessed John Paul II are recorded."
       },
       "caveat": "Three bounded component states and one undated delivery do not establish a whole OCSO Missal or universal reception; 1892–1971 remains open.",
       "canonical_tradition_ids": [
