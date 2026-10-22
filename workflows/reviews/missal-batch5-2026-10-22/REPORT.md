@@ -1,6 +1,13 @@
 # Missal timeline: fifth parallel batch, 22 October 2026
 
-**Integrated after independent cold review and collation.** This batch
+**Integrated after independent cold review and collation; published to `main`
+under the maintainer's 22 October request and verified live.** Implementation
+`0a1b78eb3` reached `origin/main` by an ordinary fast-forward from `7d74f617e`.
+Main's lectern work was merged in first; no history was rewritten. Pages
+run `39860724845` and repository hygiene `39860724875` passed. Eighteen
+selected live routes matched the verified local build byte for byte: the
+History assets, the catalogue, all nine new native texts and the Sources
+pages. The routes are listed in [publication.json](publication.json). This batch
 continues plan rows 1–5 of the continuation plan: route coverage, the
 Eastern census, dossier gaps, originals and acts, and the permission
 census. It also starts row 6 with bounded native-text constituents. The

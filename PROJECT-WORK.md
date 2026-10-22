@@ -1611,7 +1611,13 @@ Earlier branch-only delivery statements below describe their dated batches.
 No whole-book, physical-print or full all-rite completion follows from main
 integration.
 
-**Fifth parallel batch, 22 October 2026: integrated after cold review.** The
+**Fifth parallel batch, 22 October 2026: published to `main` and verified
+live.** Implementation `0a1b78eb3` reached `origin/main` by an ordinary
+fast-forward. Main's lectern commits were merged in, not rebased. Pages run
+[`39860724845`](https://github.com/spincyc/triptych/actions/runs/39860724845)
+and repository hygiene passed, and 18 live routes matched the local build
+([receipt](workflows/reviews/missal-batch5-2026-10-22/publication.json)).
+This documentation commit triggers its own run. The
 maintainer asked for all possible parallel work in sub-agents and a cold
 review after each phase. On 22 October they asked for a coherent stop, the
 work plan persisted, and a push to `main`.
