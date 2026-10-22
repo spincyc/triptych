@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.order-of-preachers.missale.1553-venice-giunta.canon-pages-da53ecc3"
+edition_id = "edition.order-of-preachers.missale.1553-venice-giunta"
+artifact_type = "page-image-package"
+media_type = "application/zip"
+storage = "tracked"
+rights_status = "permission"
+rights_jurisdiction = "United States"
+rights_basis = "The identified 1553 printed text is public domain in the United States by expiration of its publication term. The Bayerische Staatsbibliothek digital images are supplied under No Copyright - Non-Commercial Use Only 1.0, https://rightsstatements.org/vocab/NoC-NC/1.0/ ; this is a rights statement, not a Creative Commons license. Noncommercial copying and redistribution retain that condition and attribution: München, Bayerische Staatsbibliothek, Res/2 Liturg. 232, bsb10869682. These source images and their derivative are excluded from Triptych’s CC BY 4.0 license. No unrestricted image reuse is asserted; the image condition is distinct from the public-domain historical Latin."
+source_url = "https://www.digitale-sammlungen.de/en/view/bsb10869682"
+provenance = "Exact BSB IIIF full-size default JPEG deliveries fetched 2026-10-22, copied byte-for-byte into a ZIP_STORED package with fixed member timestamps and a SHA-256-bearing sequence.json that records each image URL and the IIIF manifest https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10869682/manifest (SHA-256 4750c0798611b7dc2ec1e89f5ee02378607e6b3ed32be3a4f625535b97e33f47): package page 1 = BSB canvas 5 (title page), sha256 3112491f8d3d52d50d22c4e13d20a1ce40ed2ac66d111b3ec4b6994accbdd3b3; package page 2 = BSB canvas 6 (Franciscus Romaeus letter on the 1551 Salamanca chapter reform and Julius III brief (dated 1552)), sha256 86714d624b74b34e95d27471d2773d6e1b0c6b763bad94e80227793ab6d8e9b8; package page 3 = BSB canvas 219 (Canon fol. 89r), sha256 4589ddb4b6a430cae45481b805453cc54b070a549b80a6d48040259bdc164bc1; package page 4 = BSB canvas 220 (Canon fol. 89v), sha256 a20e1cd8eaae9429f10143f403427e5d96a4fbce2c1eca139d60051689ed7be5; package page 5 = BSB canvas 221 (Canon fol. 90r), sha256 b9d0333ce0dbdf94ce6a0163e8974051b2660fff946e7cc1a0318158a373cbfd. Only the identity, revision-basis and Canon pages are retained; the whole book remains with the provider."
+retrieved = "2026-10-22"
+sha256 = "da53ecc32b1a4e4e3c78e62eb3ca24f3acd09e35d8bd81d1eb59b8c94a858b8d"
+byte_size = 7963253
+path = "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/artifacts/canon-pages-da53ecc3/canon-pages.zip"
+indexable = false
+page_count = 5
+notes = "Byte-for-byte selection of exact provider page images; no resampling, OCR or editorial text."

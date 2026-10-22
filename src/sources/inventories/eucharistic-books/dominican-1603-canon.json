@@ -1,0 +1,408 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "dominican-1603-canon",
+  "title": "Dominican Missal 1603: complete Canon constituent",
+  "scope": "Complete Dominican Canon constituent as the 1603 book prints it: from p. 195 (canvas 265) display title CANON SACROSANCTI INCRUENTI SACRIFICII MISSAE and Te igitur through p. 198 (canvas 268) omnis honor et gloria, before the red heading Cantus Solemnis. 15 source-order units, 26 printed crosses, no rubrics printed within these bounds. The book sets the concluding Per omnia saecula saeculorum. Amen only in the following notated chant block, which is excluded with it. Whole-book and complete-Ordinary coverage remain partial; no wording is inherited from another edition.",
+  "transcribed_by": "AI source transcriber (batch-5 text-dominican original-image reading)",
+  "stage_ids": [
+    "latin-uses:dominican-1603"
+  ],
+  "catalogue_witness_ids": [
+    "western:dominican-1603-rome-ciacconi"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "la"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Front matter, including the title page and revision-basis instruments retained in the same facsimile only as identity and revision evidence",
+    "Prefaces with their seasonal proper Communicantes and Hanc igitur forms printed in the preface section, the Sanctus and the full-page crucifixion woodcut before the Canon",
+    "Everything after omnis honor et gloria: the Cantus Solemnis heading and the notated Per omnia saecula saeculorum, Amen, Oremus, Praeceptis and Pater on p. 198 and after",
+    "All propers, calendar, lectionary, offertory and other Ordinary outside the Canon",
+    "Running heads, folio and page numbers, signatures, catchwords, woodcuts, ornaments, ink colour and chant notation"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1603 Rome publication",
+    "start_year": 1603,
+    "end_year": 1603,
+    "evidence": [
+      {
+        "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.title",
+        "locus": "Title page; BSB canvas 7; facsimile PDF page 1"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/dominican-1603-canon-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/dominican-1603-canon-review.json",
+  "witnesses": [
+    {
+      "id": "dominican-1603-canon-pages",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "scope_pages": [
+        [
+          5,
+          8
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile",
+          "locus": "Facsimile PDF pages 5-8, complete Canon from Te igitur through omnis honor et gloria"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.dominican-1603.canon.heading",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "heading"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "heading",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-heading",
+      "text_sha256": "7e937e95fb39b733fa34051e60c0540e1efae5caebed1602f1ee48471ebb1f16",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "verified_against_artifact_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.te-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-te-igitur",
+      "text_sha256": "8eee3c060aaaced4cb7fcb47d7d278b739ad5c4b3eda585aec1743cce878a34d",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "verified_against_artifact_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.memento-vivorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-memento-vivorum",
+      "text_sha256": "354a0aa1444ed22ff1c9ac9c6bd634031cc33c7996d2f2c843bc91f5088f5c73",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "verified_against_artifact_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.communicantes",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          6
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-communicantes",
+      "text_sha256": "0be888e3ac83f3168a3389f8000ad11c66f2a6f75e6f10c0e11b0f027fe1e167",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "verified_against_artifact_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.hanc-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-hanc-igitur",
+      "text_sha256": "e1c984aae2fbc680e8310a26deaee9346bf6418dd306264aa66b32b0aba8a52a",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "verified_against_artifact_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.quam-oblationem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-quam-oblationem",
+      "text_sha256": "fbba6df26e68f674940ab86446f5d30d0520e62571b6437ee7e724350f248952",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "verified_against_artifact_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.qui-pridie",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-qui-pridie",
+      "text_sha256": "92e4f58e6748dfe608a5c31349dbe070f367bc3425033707214605acb3635a23",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "verified_against_artifact_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.simili-modo",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          7
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-simili-modo",
+      "text_sha256": "f8f84cc15e569600f2f850ad27f5cfbe1d4b0414d74037561ed65d1ad439eb2a",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "verified_against_artifact_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.unde-et-memores",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "source_order": 9,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-unde-et-memores",
+      "text_sha256": "e10d04715a71747e6d0fe8c8d4fe29f37e3838db3098dfb3e804b4faad5aaab5",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "verified_against_artifact_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.supra-quae",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "source_order": 10,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-supra-quae",
+      "text_sha256": "1244e88039d993914c550d5f7e71c0d213b20fb4e9c6f830a80d3e9cd10bce6d",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "verified_against_artifact_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.supplices",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "source_order": 11,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          8
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-supplices",
+      "text_sha256": "904851b61012d22df8ab323f9ed81e0414fc4e208e2b16aa306d8b387413fbad",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "verified_against_artifact_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.memento-defunctorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-defunctorum"
+      ],
+      "source_order": 12,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-memento-defunctorum",
+      "text_sha256": "17d276a99f3a3a5bbc7d5f2729000d6c31a8a9bc8450946c839399bf0cbd39a5",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "verified_against_artifact_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.nobis-quoque",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "source_order": 13,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-nobis-quoque",
+      "text_sha256": "40e51f3ae005536cadeb8341387bf06e079824b1064efb34ab79ac27fc0140f6",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "verified_against_artifact_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.per-quem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "source_order": 14,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-per-quem",
+      "text_sha256": "b256eeff65489aef1292e213252560b00ef2cb7c12e6f653693a44bd7dc9ce16",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "verified_against_artifact_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.per-ipsum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "source_order": 15,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "doxology",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-per-ipsum",
+      "text_sha256": "2e52dfb355f7036a190674f37fc46ee774fff4866b1ad4642d65635ac4970cef",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "verified_against_artifact_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    }
+  ]
+}

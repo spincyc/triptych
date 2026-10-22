@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a"
+edition_id = "edition.order-of-preachers.missale.1603-rome-ciacconi"
+artifact_type = "facsimile-pdf-derivative"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "permission"
+rights_jurisdiction = "United States"
+rights_basis = "The identified 1603 printed text is public domain in the United States by expiration of its publication term. The Bayerische Staatsbibliothek digital images are supplied under No Copyright - Non-Commercial Use Only 1.0, https://rightsstatements.org/vocab/NoC-NC/1.0/ ; this is a rights statement, not a Creative Commons license. Noncommercial copying and redistribution retain that condition and attribution: München, Bayerische Staatsbibliothek, Res/2 Liturg. 234, bsb10164238. These source images and their derivative are excluded from Triptych’s CC BY 4.0 license. No unrestricted image reuse is asserted; the image condition is distinct from the public-domain historical Latin."
+source_url = "https://www.digitale-sammlungen.de/en/view/bsb10164238"
+provenance = "8 complete provider page images in package order from the exact parent package: PDF 1 = BSB canvas 7 (title page); PDF 2 = BSB canvas 9 (Clement VIII brief, first page); PDF 3 = BSB canvas 10 (Clement VIII brief, conclusion dated 2 April 1602); PDF 4 = BSB canvas 11 (Xavierre letter dated 17 February 1603); PDF 5 = BSB canvas 265 (Canon p. 195); PDF 6 = BSB canvas 266 (Canon p. 196); PDF 7 = BSB canvas 267 (Canon p. 197); PDF 8 = BSB canvas 268 (Canon p. 198)."
+retrieved = "2026-10-22"
+sha256 = "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+byte_size = 4674989
+path = "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/artifacts/canon-facsimile-8a76918a/canon-pages.pdf"
+indexable = false
+page_count = 8
+derived_from = "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-pages-6c9665c8"
+transformation = "ImageMagick decoded each exact package member, converted it to grayscale, resized it to at most 2000 px on the long side, stripped metadata and re-encoded it as quality-85 JPEG; a small deterministic writer embedded each JPEG stream unchanged as one PDF page (MediaBox in pixels) in package order. JPEG is lossy and colour is dropped; the exact colour provider images remain in the parent package. No crop, page omission, OCR or editorial text."

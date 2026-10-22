@@ -1,0 +1,408 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "dominican-1604-canon",
+  "title": "Dominican Missal 1604: complete Canon constituent",
+  "scope": "Complete Dominican Canon constituent as the 1604 book prints it: from p. 181 (PDF 245) display title CANON SACROSANCTI INCRUENTI SACRIFICII MISSAE and Te igitur through p. 185 (PDF 249) omnis honor et gloria, left column, immediately before the heading Cantus Solemnis. 15 source-order units, 26 printed crosses, no rubrics printed within these bounds. The book sets the concluding Per omnia saecula saeculorum. Amen only in the following notated chant block, which is excluded with it. Whole-book and complete-Ordinary coverage remain partial; no wording is inherited from another edition.",
+  "transcribed_by": "AI source transcriber (batch-5 text-dominican original-image reading)",
+  "stage_ids": [
+    "latin-uses:dominican-1604"
+  ],
+  "catalogue_witness_ids": [
+    "latin-missal:praedicatorum-xavierre-1604"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "la"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Front matter, including the title page and revision-basis instruments retained in the same facsimile only as identity and revision evidence",
+    "Prefaces with their seasonal proper Communicantes and Hanc igitur forms printed in the preface section, the Sanctus and the full-page crucifixion woodcut before the Canon",
+    "Everything after omnis honor et gloria: the Cantus Solemnis heading and the notated Per omnia saecula saeculorum, Amen, Oremus in the left column of p. 185, the notated Praeceptis and Pater in its right column, and everything after",
+    "All propers, calendar, lectionary, offertory and other Ordinary outside the Canon",
+    "Running heads, folio and page numbers, signatures, catchwords, woodcuts, ornaments, ink colour and chant notation"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1604 Rome publication",
+    "start_year": 1604,
+    "end_year": 1604,
+    "evidence": [
+      {
+        "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.title",
+        "locus": "Title page; source PDF page 3"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/dominican-1604-canon-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/dominican-1604-canon-review.json",
+  "witnesses": [
+    {
+      "id": "dominican-1604-canon-pages",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "scope_pages": [
+        [
+          5,
+          9
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile",
+          "locus": "Facsimile PDF pages 5-9, complete Canon from Te igitur through omnis honor et gloria"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.dominican-1604.canon.heading",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "heading"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "heading",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-heading",
+      "text_sha256": "7e937e95fb39b733fa34051e60c0540e1efae5caebed1602f1ee48471ebb1f16",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "verified_against_artifact_sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    },
+    {
+      "unit_id": "unit.dominican-1604.canon.te-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-te-igitur",
+      "text_sha256": "8eee3c060aaaced4cb7fcb47d7d278b739ad5c4b3eda585aec1743cce878a34d",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "verified_against_artifact_sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    },
+    {
+      "unit_id": "unit.dominican-1604.canon.memento-vivorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-memento-vivorum",
+      "text_sha256": "aa1e7066b1a8c449c99e440d1ac73f02c096c74e9661f9781b806ff8f8a1c68a",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "verified_against_artifact_sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    },
+    {
+      "unit_id": "unit.dominican-1604.canon.communicantes",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          6
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-communicantes",
+      "text_sha256": "e24b33d89465c67bda445ed1f0bf1c156f80f74435c7d1f1516d559982c4a6f9",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "verified_against_artifact_sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    },
+    {
+      "unit_id": "unit.dominican-1604.canon.hanc-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-hanc-igitur",
+      "text_sha256": "e1c984aae2fbc680e8310a26deaee9346bf6418dd306264aa66b32b0aba8a52a",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "verified_against_artifact_sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    },
+    {
+      "unit_id": "unit.dominican-1604.canon.quam-oblationem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-quam-oblationem",
+      "text_sha256": "18e038ebdec0cb2498166a06dae8007bc54ac40c8b1108181889fc26c6a55b95",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "verified_against_artifact_sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    },
+    {
+      "unit_id": "unit.dominican-1604.canon.qui-pridie",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          7
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-qui-pridie",
+      "text_sha256": "a81ddb39e80a5d31e928091ac55046562c20404a21476c397108b488e6cd1788",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "verified_against_artifact_sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    },
+    {
+      "unit_id": "unit.dominican-1604.canon.simili-modo",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-simili-modo",
+      "text_sha256": "680487b9865f0f9958b99a4156a689dbf06c0fbb3da6f68d9eec31a32da94880",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "verified_against_artifact_sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    },
+    {
+      "unit_id": "unit.dominican-1604.canon.unde-et-memores",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "source_order": 9,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-unde-et-memores",
+      "text_sha256": "a6425c12e347a59567a9c3740a4e6ce28d6c660b1cbbed9ff498006204266844",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "verified_against_artifact_sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    },
+    {
+      "unit_id": "unit.dominican-1604.canon.supra-quae",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "source_order": 10,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          8
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-supra-quae",
+      "text_sha256": "1c4a96248599d99d81d2b1ca2c74b83da591fc79a9ba9ffbf4f4c50c02ac01b1",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "verified_against_artifact_sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    },
+    {
+      "unit_id": "unit.dominican-1604.canon.supplices",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "source_order": 11,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-supplices",
+      "text_sha256": "f6d99343af422d37075cf8c43d4c44c08576eb9299b5d727546855353ac2db79",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "verified_against_artifact_sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    },
+    {
+      "unit_id": "unit.dominican-1604.canon.memento-defunctorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-defunctorum"
+      ],
+      "source_order": 12,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-memento-defunctorum",
+      "text_sha256": "289e8997b487ef2412e3a1dc3fedf6faf224726f8a6c25bb939e5348d35f4ef4",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "verified_against_artifact_sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    },
+    {
+      "unit_id": "unit.dominican-1604.canon.nobis-quoque",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "source_order": 13,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          9
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-nobis-quoque",
+      "text_sha256": "6f350681782578a2e143a232f76449f4e8e90935efc848c81f8ed10b7bfcc6f9",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "verified_against_artifact_sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    },
+    {
+      "unit_id": "unit.dominican-1604.canon.per-quem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "source_order": 14,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          9
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-per-quem",
+      "text_sha256": "b256eeff65489aef1292e213252560b00ef2cb7c12e6f653693a44bd7dc9ce16",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "verified_against_artifact_sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    },
+    {
+      "unit_id": "unit.dominican-1604.canon.per-ipsum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "source_order": 15,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "doxology",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          9
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-per-ipsum",
+      "text_sha256": "192f38ca35623120d2d63bbdf290dd6bb4a33f3caec4245ca5325792393a26e8",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "verified_against_artifact_sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    }
+  ]
+}

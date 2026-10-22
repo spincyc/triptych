@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "dominican-1603-canon",
+  "title": "Dominican 1603 Canon complete constituent page/unit census",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.dominican-1603.canon.heading",
+    "unit.dominican-1603.canon.te-igitur",
+    "unit.dominican-1603.canon.memento-vivorum",
+    "unit.dominican-1603.canon.communicantes",
+    "unit.dominican-1603.canon.hanc-igitur",
+    "unit.dominican-1603.canon.quam-oblationem",
+    "unit.dominican-1603.canon.qui-pridie",
+    "unit.dominican-1603.canon.simili-modo",
+    "unit.dominican-1603.canon.unde-et-memores",
+    "unit.dominican-1603.canon.supra-quae",
+    "unit.dominican-1603.canon.supplices",
+    "unit.dominican-1603.canon.memento-defunctorum",
+    "unit.dominican-1603.canon.nobis-quoque",
+    "unit.dominican-1603.canon.per-quem",
+    "unit.dominican-1603.canon.per-ipsum"
+  ],
+  "scope": "Complete Dominican Canon constituent as the 1603 book prints it: from p. 195 (canvas 265) display title CANON SACROSANCTI INCRUENTI SACRIFICII MISSAE and Te igitur through p. 198 (canvas 268) omnis honor et gloria, before the red heading Cantus Solemnis. 15 source-order units, 26 printed crosses, no rubrics printed within these bounds. The book sets the concluding Per omnia saecula saeculorum. Amen only in the following notated chant block, which is excluded with it. Whole-book and complete-Ordinary coverage remain partial; no wording is inherited from another edition.",
+  "pages": [
+    {
+      "witness_id": "dominican-1603-canon-pages",
+      "ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "BSB canvas 7 title page: Missale iuxta ritum sacri Ordinis Praedicatorum S. P. N. Dominici, sub R.mo P. F. Hieronymo Xavierre ... recognitum et emendatum, et auctoritate Apostolica approbatum et confirmatum; Romae, in officina Alfonsi Ciacconi, apud Carolum Vulliettum, MDCIII. Retained for edition identity and stated revision basis only."
+    },
+    {
+      "witness_id": "dominican-1603-canon-pages",
+      "ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "BSB canvas 9: brief of Clement VIII (Dilecte fili), first page, on the revision of the Order's choir books, Missal, Breviary and Diurnal resolved by a general chapter of the Order held in Rome (the year printed in the brief is not transcribed here). Revision-basis evidence only; not transcribed."
+    },
+    {
+      "witness_id": "dominican-1603-canon-pages",
+      "ranges": [
+        [
+          3,
+          3
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "BSB canvas 10: conclusion of the Clement VIII brief, dated Rome at St Peter's 2 April 1602, address to Hieronymus Xavierre, and the calendrical table De anno et eius partibus. Revision-basis evidence only; not transcribed."
+    },
+    {
+      "witness_id": "dominican-1603-canon-pages",
+      "ranges": [
+        [
+          4,
+          4
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "BSB canvas 11: letter of Frater Hieronymus Xavierre, Master General, to the Order, dated Rome, S. Maria sopra Minerva, 17 February 1603, describing the emended Missal and the conformity of Epistles and Gospels to Roman use. Revision-basis evidence only; not transcribed."
+    },
+    {
+      "witness_id": "dominican-1603-canon-pages",
+      "ranges": [
+        [
+          5,
+          5
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.dominican-1603.canon.heading",
+        "unit.dominican-1603.canon.te-igitur",
+        "unit.dominican-1603.canon.memento-vivorum",
+        "unit.dominican-1603.canon.communicantes"
+      ],
+      "description": "Facsimile PDF page 5, p. 195 (BSB canvas 265); only Canon text within the declared bounds belongs to this constituent. Woodcuts, running heads and any following chant block are outside it."
+    },
+    {
+      "witness_id": "dominican-1603-canon-pages",
+      "ranges": [
+        [
+          6,
+          6
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.dominican-1603.canon.communicantes",
+        "unit.dominican-1603.canon.hanc-igitur",
+        "unit.dominican-1603.canon.quam-oblationem",
+        "unit.dominican-1603.canon.qui-pridie",
+        "unit.dominican-1603.canon.simili-modo"
+      ],
+      "description": "Facsimile PDF page 6, p. 196 (canvas 266); only Canon text within the declared bounds belongs to this constituent. Woodcuts, running heads and any following chant block are outside it."
+    },
+    {
+      "witness_id": "dominican-1603-canon-pages",
+      "ranges": [
+        [
+          7,
+          7
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.dominican-1603.canon.simili-modo",
+        "unit.dominican-1603.canon.unde-et-memores",
+        "unit.dominican-1603.canon.supra-quae",
+        "unit.dominican-1603.canon.supplices"
+      ],
+      "description": "Facsimile PDF page 7, p. 197 (canvas 267); only Canon text within the declared bounds belongs to this constituent. Woodcuts, running heads and any following chant block are outside it."
+    },
+    {
+      "witness_id": "dominican-1603-canon-pages",
+      "ranges": [
+        [
+          8,
+          8
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.dominican-1603.canon.supplices",
+        "unit.dominican-1603.canon.memento-defunctorum",
+        "unit.dominican-1603.canon.nobis-quoque",
+        "unit.dominican-1603.canon.per-quem",
+        "unit.dominican-1603.canon.per-ipsum"
+      ],
+      "description": "Facsimile PDF page 8, p. 198 (canvas 268); only Canon text within the declared bounds belongs to this constituent. Woodcuts, running heads and any following chant block are outside it."
+    }
+  ],
+  "source_boundary_audit": {
+    "start": "p. 195 (canvas 265) display title CANON SACROSANCTI INCRUENTI SACRIFICII MISSAE and Te igitur",
+    "end": "p. 198 (canvas 268) omnis honor et gloria, before the red heading Cantus Solemnis",
+    "unit_count": 15,
+    "printed_crosses": 26,
+    "facsimile_sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541",
+    "reading_sha256": "ba2478994fb023899be640404cd3d52089e8f6d4fa4a7d3ae920dd7a47f85615"
+  },
+  "serialization_line_classes": [
+    {
+      "unit_id": "unit.dominican-1603.canon.heading",
+      "physical_lines": [
+        {
+          "line": 1,
+          "type": "heading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 0
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.te-igitur",
+      "physical_lines": [
+        {
+          "line": 2,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 3,
+      "printed_crosses": 3
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.memento-vivorum",
+      "physical_lines": [
+        {
+          "line": 3,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 2,
+      "printed_crosses": 0
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.communicantes",
+      "physical_lines": [
+        {
+          "line": 4,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 0
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.hanc-igitur",
+      "physical_lines": [
+        {
+          "line": 5,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 0
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.quam-oblationem",
+      "physical_lines": [
+        {
+          "line": 6,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 5
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.qui-pridie",
+      "physical_lines": [
+        {
+          "line": 7,
+          "type": "reading"
+        },
+        {
+          "line": 8,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 1
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.simili-modo",
+      "physical_lines": [
+        {
+          "line": 9,
+          "type": "reading"
+        },
+        {
+          "line": 10,
+          "type": "reading"
+        },
+        {
+          "line": 11,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 1
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.unde-et-memores",
+      "physical_lines": [
+        {
+          "line": 12,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 5
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.supra-quae",
+      "physical_lines": [
+        {
+          "line": 13,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 0
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.supplices",
+      "physical_lines": [
+        {
+          "line": 14,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 3
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.memento-defunctorum",
+      "physical_lines": [
+        {
+          "line": 15,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 2,
+      "printed_crosses": 0
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.nobis-quoque",
+      "physical_lines": [
+        {
+          "line": 16,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 0
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.per-quem",
+      "physical_lines": [
+        {
+          "line": 17,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 3
+    },
+    {
+      "unit_id": "unit.dominican-1603.canon.per-ipsum",
+      "physical_lines": [
+        {
+          "line": 18,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 5
+    }
+  ]
+}

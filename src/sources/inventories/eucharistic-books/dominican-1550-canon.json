@@ -1,0 +1,385 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "dominican-1550-canon",
+  "title": "Dominican Missal 1550: complete Canon constituent",
+  "scope": "Complete Dominican Canon constituent as the 1550 book prints it: from fol. 94r (PDF 228) Te igitur under the woodcut through fol. 95v (PDF 231) omnis honor et gloria, immediately before the heading Cantus solennis. 14 source-order units, 26 printed crosses, no rubrics printed within these bounds. The book sets the concluding Per omnia saecula saeculorum. Amen only in the following notated chant block, which is excluded with it. Whole-book and complete-Ordinary coverage remain partial; no wording is inherited from another edition.",
+  "transcribed_by": "AI source transcriber (batch-5 text-dominican original-image reading)",
+  "stage_ids": [
+    "latin-uses:dominican-1550"
+  ],
+  "catalogue_witness_ids": [
+    "latin-missal:praedicatorum-venetiis-1550"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "la"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Front matter, including the title page and revision-basis instruments retained in the same facsimile only as identity and revision evidence",
+    "Prefaces with their seasonal proper Communicantes and Hanc igitur forms printed in the preface section, the Sanctus and the full-page crucifixion woodcut before the Canon",
+    "Everything after omnis honor et gloria: the Cantus solennis heading on fol. 95v and the notated Per omnia saecula saeculorum, Oremus, Praeceptis and Pater that follow from fol. 96r",
+    "All propers, calendar, lectionary, offertory and other Ordinary outside the Canon",
+    "Running heads, folio and page numbers, signatures, catchwords, woodcuts, ornaments, ink colour and chant notation"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1550 Venice publication",
+    "start_year": 1550,
+    "end_year": 1550,
+    "evidence": [
+      {
+        "source_id": "passage.order-of-preachers.missale.1550-venice.title",
+        "locus": "Title page; source PDF page 5"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/dominican-1550-canon-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/dominican-1550-canon-review.json",
+  "witnesses": [
+    {
+      "id": "dominican-1550-canon-pages",
+      "edition_id": "edition.order-of-preachers.missale.1550-venice",
+      "artifact_id": "artifact.order-of-preachers.missale.1550-venice.canon-facsimile-d8bccdc6",
+      "scope_pages": [
+        [
+          2,
+          5
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.order-of-preachers.missale.1550-venice.canon-facsimile",
+          "locus": "Facsimile PDF pages 2-5, complete Canon from Te igitur through omnis honor et gloria"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.dominican-1550.canon.te-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1550-canon-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1550-venice.canon-te-igitur",
+      "text_sha256": "b6cc3e77420778face6300bcaf58a699f20a6e86bfd5e6ba9e77b958aba146c6",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1550-venice.canon-facsimile-d8bccdc6",
+      "verified_against_artifact_sha256": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+    },
+    {
+      "unit_id": "unit.dominican-1550.canon.memento-vivorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1550-canon-pages",
+      "witness_pages": [
+        [
+          2,
+          3
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1550-venice.canon-memento-vivorum",
+      "text_sha256": "ee5735e26030c7e8d2f56e1dabbd331d3f22b78577e5687a778a2d8cc3953817",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1550-venice.canon-facsimile-d8bccdc6",
+      "verified_against_artifact_sha256": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+    },
+    {
+      "unit_id": "unit.dominican-1550.canon.communicantes",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1550-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1550-venice.canon-communicantes",
+      "text_sha256": "d6d20ccc7b7445e5d4fb8ee607ba355cf50585ad797e080700fe67ac1f315d0a",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1550-venice.canon-facsimile-d8bccdc6",
+      "verified_against_artifact_sha256": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+    },
+    {
+      "unit_id": "unit.dominican-1550.canon.hanc-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1550-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1550-venice.canon-hanc-igitur",
+      "text_sha256": "c2bc7892a3eee87a5d836b2ea9ab7c707a5c6c1fa198f1183a723b79dbd732b3",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1550-venice.canon-facsimile-d8bccdc6",
+      "verified_against_artifact_sha256": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+    },
+    {
+      "unit_id": "unit.dominican-1550.canon.quam-oblationem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1550-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1550-venice.canon-quam-oblationem",
+      "text_sha256": "cdcf15e68616c45079ddeb128213b438c22993fdb10865cf8d68c700e203e510",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1550-venice.canon-facsimile-d8bccdc6",
+      "verified_against_artifact_sha256": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+    },
+    {
+      "unit_id": "unit.dominican-1550.canon.qui-pridie",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "dominican-1550-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          4
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1550-venice.canon-qui-pridie",
+      "text_sha256": "94b8981977fabb2eeaa673361d0016603e31caeea954f3a91b3dff8701266921",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1550-venice.canon-facsimile-d8bccdc6",
+      "verified_against_artifact_sha256": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+    },
+    {
+      "unit_id": "unit.dominican-1550.canon.simili-modo",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative",
+      "witness_id": "dominican-1550-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1550-venice.canon-simili-modo",
+      "text_sha256": "0433697007754b410ccf9cf5d833970e0e00c1c2efaabef97af8e9f8b4149dc6",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1550-venice.canon-facsimile-d8bccdc6",
+      "verified_against_artifact_sha256": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+    },
+    {
+      "unit_id": "unit.dominican-1550.canon.unde-et-memores",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1550-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1550-venice.canon-unde-et-memores",
+      "text_sha256": "1a48f1e3e9989d32c8225e34c9d4e2249e48a1f461c08e113cf98757c01e8171",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1550-venice.canon-facsimile-d8bccdc6",
+      "verified_against_artifact_sha256": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+    },
+    {
+      "unit_id": "unit.dominican-1550.canon.supra-quae",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "source_order": 9,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1550-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1550-venice.canon-supra-quae",
+      "text_sha256": "9cd332c8244bae34cfb10a4b83a5af0d311c93f5fcd2959ccdaac2daad0604b4",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1550-venice.canon-facsimile-d8bccdc6",
+      "verified_against_artifact_sha256": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+    },
+    {
+      "unit_id": "unit.dominican-1550.canon.supplices",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "source_order": 10,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1550-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          5
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1550-venice.canon-supplices",
+      "text_sha256": "ab193a1b00f64b9081ff840fb16e94c48103de451bc13934877bb20f7e1d4357",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1550-venice.canon-facsimile-d8bccdc6",
+      "verified_against_artifact_sha256": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+    },
+    {
+      "unit_id": "unit.dominican-1550.canon.memento-defunctorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-defunctorum"
+      ],
+      "source_order": 11,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1550-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1550-venice.canon-memento-defunctorum",
+      "text_sha256": "8e3f306cdc46d12a3a963178708e2ded44bc0fc0b321d4007e5074ab78a8ac35",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1550-venice.canon-facsimile-d8bccdc6",
+      "verified_against_artifact_sha256": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+    },
+    {
+      "unit_id": "unit.dominican-1550.canon.nobis-quoque",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "source_order": 12,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1550-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1550-venice.canon-nobis-quoque",
+      "text_sha256": "d93847468acef9f5082188aaa397d8f81d5a1e558c02f8563b6a9035cb70ab8d",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1550-venice.canon-facsimile-d8bccdc6",
+      "verified_against_artifact_sha256": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+    },
+    {
+      "unit_id": "unit.dominican-1550.canon.per-quem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "source_order": 13,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "dominican-1550-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1550-venice.canon-per-quem",
+      "text_sha256": "def69d5389b03c5a2ba5dd0eff2043dc112bb990568ee96ee0a2b4f0d44afd64",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1550-venice.canon-facsimile-d8bccdc6",
+      "verified_against_artifact_sha256": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+    },
+    {
+      "unit_id": "unit.dominican-1550.canon.per-ipsum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "source_order": 14,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "doxology",
+      "witness_id": "dominican-1550-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.order-of-preachers.missale.1550-venice.canon-per-ipsum",
+      "text_sha256": "8470aeae2a9fd2bb0c57ca88f2f385d7a3a27a47f5a13051b503a5965e7d11af",
+      "verified_against_artifact_id": "artifact.order-of-preachers.missale.1550-venice.canon-facsimile-d8bccdc6",
+      "verified_against_artifact_sha256": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+    }
+  ]
+}
