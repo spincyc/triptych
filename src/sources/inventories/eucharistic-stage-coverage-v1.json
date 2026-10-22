@@ -15,8 +15,8 @@
     {
       "id": "western",
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "bc628a6e336bb3ea5a62952af775da2817e6c05d07dbfcc3a9916b5b3ab12056",
-      "byte_size": 2947058
+      "sha256": "49f445f1371e88fa9436384c4201223febf0e6382a3ed8104cbbb0d43e049d7e",
+      "byte_size": 2958279
     },
     {
       "id": "presentation",
@@ -75,8 +75,8 @@
     {
       "id": "dossier:french-dioceses-b-batch4",
       "path": "src/sources/inventories/eucharistic-stages/french-dioceses-b-batch4.json",
-      "sha256": "2506af4b0a203275265554e0277533dd9fa7e790359083d9497ab01f4773e662",
-      "byte_size": 119568
+      "sha256": "108308882a21c82b6294ec74bd33f0460bb58d380fb7b7511c593afc346e509d",
+      "byte_size": 177511
     },
     {
       "id": "dossier:iberian-historic-batch4",
@@ -189,8 +189,8 @@
     {
       "id": "dossier:french-local-round2",
       "path": "src/sources/inventories/eucharistic-stages/french-local-round2.json",
-      "sha256": "5dac610a6b496519d6d525f2d6e06e077513092c5b9eeeac2cb4858cfcf5c3b4",
-      "byte_size": 47930
+      "sha256": "e7c51443fb14caba666a701058cdfe145b63d302e72e3fd654ad725d3562b81d",
+      "byte_size": 67400
     },
     {
       "id": "dossier:italian-local-round2",
@@ -269,7 +269,7 @@
     "eastern_census_slots": 23,
     "western_coverage_trajectories": 151,
     "eastern_candidates": 455,
-    "western_candidates": 1510,
+    "western_candidates": 1513,
     "presentation_groups": 233,
     "eastern_empty_candidate_slots_at_input": [
       "albanian",
@@ -8307,6 +8307,41 @@
       "dossier_id": "french-local-round2"
     },
     {
+      "id": "french-local-round2-saint-ruf",
+      "label": "Saint-Ruf (Valence) canons regular missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "french-local-round2-saint-victor",
+      "label": "Saint-Victor (Paris) canons regular missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "french-local-round2-chezal-benoit",
+      "label": "Chezal-Benoît congregation missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "french-local-round2-la-chaise-dieu",
+      "label": "La Chaise-Dieu abbey missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "french-local-round2-marmoutier",
+      "label": "Marmoutier abbey missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "french-local-round2-vendome",
+      "label": "Vendôme Trinité abbey missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
+      "id": "french-local-round2-saint-remi",
+      "label": "Saint-Remi (Reims) abbey missal",
+      "dossier_id": "french-local-round2"
+    },
+    {
       "id": "german-regional:salzburg",
       "label": "Salzburg local Mass books",
       "dossier_id": "german-regional"
@@ -9087,6 +9122,11 @@
       "dossier_id": "french-dioceses-b-batch4"
     },
     {
+      "id": "french-dioceses-b-batch4:tours-saint-martin",
+      "label": "Saint-Martin of Tours (collegiate church) missal",
+      "dossier_id": "french-dioceses-b-batch4"
+    },
+    {
       "id": "historic-evreux-use",
       "label": "Évreux diocesan missal",
       "dossier_id": "french-dioceses-a-batch4"
@@ -9583,12 +9623,40 @@
         {
           "id": "french-local-round2-sens",
           "label": "Sens diocesan missal"
+        },
+        {
+          "id": "french-local-round2-saint-ruf",
+          "label": "Saint-Ruf (Valence) canons regular missal"
+        },
+        {
+          "id": "french-local-round2-saint-victor",
+          "label": "Saint-Victor (Paris) canons regular missal"
+        },
+        {
+          "id": "french-local-round2-chezal-benoit",
+          "label": "Chezal-Benoît congregation missal"
+        },
+        {
+          "id": "french-local-round2-la-chaise-dieu",
+          "label": "La Chaise-Dieu abbey missal"
+        },
+        {
+          "id": "french-local-round2-marmoutier",
+          "label": "Marmoutier abbey missal"
+        },
+        {
+          "id": "french-local-round2-vendome",
+          "label": "Vendôme Trinité abbey missal"
+        },
+        {
+          "id": "french-local-round2-saint-remi",
+          "label": "Saint-Remi (Reims) abbey missal"
         }
       ],
-      "documented_stage_count": 13,
+      "documented_stage_count": 18,
       "provisional_stage_count": 0,
       "text_coverage_counts": {
-        "not-transcribed": 13
+        "not-transcribed": 18
       },
       "status": "canonical-bounded-dossier-snapshot"
     },
@@ -10456,6 +10524,10 @@
           "label": "Tours diocesan missal"
         },
         {
+          "id": "french-dioceses-b-batch4:tours-saint-martin",
+          "label": "Saint-Martin of Tours (collegiate church) missal"
+        },
+        {
           "id": "french-dioceses-b-batch4:tarbes",
           "label": "Tarbes diocesan missal"
         },
@@ -10488,10 +10560,10 @@
           "label": "Saintes diocesan missal"
         }
       ],
-      "documented_stage_count": 28,
-      "provisional_stage_count": 6,
+      "documented_stage_count": 40,
+      "provisional_stage_count": 8,
       "text_coverage_counts": {
-        "not-transcribed": 34
+        "not-transcribed": 48
       },
       "status": "canonical-bounded-dossier-snapshot"
     }
@@ -28634,7 +28706,7 @@
       "id": "french-pamiers",
       "label": "Pamiers local Mass books",
       "coverage_unit": "trajectory-or-discovery-bucket",
-      "inventory_status": "bounded-amiet-table-witness-census-documented",
+      "inventory_status": "bounded-original-stage-evidence-documented",
       "candidate_ids": [
         "french-pamiers-usuarium-6904",
         "french-pamiers-usuarium-6905"
@@ -28643,19 +28715,25 @@
       "canonical_tradition_ids": [
         "french-dioceses-b-batch4:pamiers"
       ],
-      "mapping_strength": "exact-repertoire-record-membership; edition-equivalence-and-local-use-unproved",
+      "mapping_strength": "selected-bounded-publication-attestation-no-recension-or-actual-reception-inference",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
+        "status": "selected-stages-available",
         "dossier_ids": [
           "french-dioceses-b-batch4"
         ],
-        "stage_ids": [],
+        "stage_ids": [
+          "french-dioceses-b-batch4:pamiers-1782"
+        ],
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "gap_ids": [
           "french-dioceses-b-batch4:pamiers-gaps"
         ],
-        "scope": "Exact bounded catalogue witnesses; no original-book or described stage could be supported for this route."
+        "scope": "One original-inspected state: the 1782 Missale Appamiense (title; Lévis's letter of 1 June 1781 keeping the Roman order and Canon apart from two restored readings and mandating the book).",
+        "reception_limit": "The letter mandates exclusive use; uptake is not established.",
+        "date_limit": "1782 is the title-page imprint; the letter is dated 1 June 1781."
       },
       "witnesses": [
         {
@@ -28664,7 +28742,7 @@
           "start_year": 1782,
           "end_year": 1782,
           "date_role": "printed-witness-publication",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         },
         {
           "candidate_id": "french-pamiers-usuarium-6905",
@@ -28677,22 +28755,26 @@
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
-      "missing_stage_chain": "No stage. Reason: no original or edition-specific description was reachable. Any inspected Pamiers missal (1782, 1845). The 1849 survey (p. 343 note, citing the Nouvelles ecclésiastiques of 18 September 1777 and 20 November 1781) says Pamiers refused the Toulouse breviary and later had its own variety of the Paris liturgy, edited under a canon's supervision in Paris; it lists Pamiers as Parisian. L'épiscopat français (p. 446) says Bishop Bélaval (1858–1881) established the Roman liturgy, without a year.",
+      "missing_stage_chain": "Documented: 1782 (original). Missing: the pre-1781 Roman phase as a book, the 1845 Delsol missal, and the Roman restoration (Easter 1862 per Bergier; 'in principle' about 1864 per Maurain).",
       "next_sources": {
         "inventory_source_ids": [
           "french-pamiers-6904-usuarium",
           "french-pamiers-6905-usuarium",
           "french-b-liturgie-romaine-1849",
-          "french-b-episcopat-1907"
+          "french-b-episcopat-1907",
+          "french-pamiers-1782-tolosana-original",
+          "french-b5-bergier-1860-etudes-liturgiques"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/6904/view",
           "https://usuarium.elte.hu/book/6905/view",
           "https://books.google.com/books?id=ngdTayagE3UC",
-          "https://books.google.com/books?id=jcozAQAAMAAJ"
+          "https://books.google.com/books?id=jcozAQAAMAAJ",
+          "https://tolosana.univ-toulouse.fr/fr/notice/164509283",
+          "https://archive.org/details/tudesliturgique00abbgoog"
         ],
-        "inspection": "Batch 4 lane B on 2026-10-21: Google Books feed ('missale appamiense', 'missale appamiense Levis'), Europeana and Numelyo found no full-view or reachable original. Gallica SRU/IIIF returned HTTP 403 (Cloudflare challenge); archive.org and BVMM timed out.",
-        "target": "An original of the 1782 missal and its mandate; the Roman-adoption act under Bélaval."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Lane helpers read archive.org scholarship and Tolosana originals; the owner re-viewed the cited key pages.",
+        "target": "Inspect the 1845 Missale Appamiense and the Roman restoration act (1862 or later)."
       },
       "caveat": "An exact catalogue ID link is a research crosswalk, not semantic edition identity or evidence for substantive revision, ancestry, first use or a complete local chronology."
     },
@@ -28824,18 +28906,39 @@
       "label": "Selected French monastery and regular-canons missal printings",
       "coverage_unit": "trajectory-or-discovery-bucket",
       "proposed_tradition_ids": [],
-      "canonical_tradition_ids": [],
-      "mapping_strength": "catalogue-witness-links-only-no-canonical-stage-assigned",
+      "canonical_tradition_ids": [
+        "french-local-round2-chezal-benoit",
+        "french-local-round2-la-chaise-dieu",
+        "french-local-round2-saint-victor",
+        "french-local-round2-saint-remi",
+        "french-local-round2-marmoutier",
+        "french-local-round2-vendome"
+      ],
+      "mapping_strength": "selected-bounded-publication-attestation-no-recension-or-actual-reception-inference",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "french-local-round2"
+        ],
+        "stage_ids": [
+          "french-local-round2:chezal-benoit-1513",
+          "french-local-round2:la-chaise-dieu-1527",
+          "french-local-round2:saint-victor-1529",
+          "french-local-round2:saint-remi-1556"
+        ],
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
-        "gap_ids": [],
-        "scope": "Exact bounded catalogue witnesses; no original-book stage sequence has been established for this route.",
-        "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
-        "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
+        "text_coverage_counts": {
+          "not-transcribed": 4
+        },
+        "gap_ids": [
+          "french-local-round2-saint-victor:sequence-gap",
+          "french-local-round2-marmoutier:gap",
+          "french-local-round2-vendome:gap",
+          "french-local-round2:monastic-house-prints-remaining"
+        ],
+        "scope": "Four separate institutional states, one per house: Chezal-Benoît 1513, La Chaise-Dieu 1527 and Saint-Remi 1556 as collated Analecta hymnica sequence witnesses, and Saint-Victor 1529 by a rubric reported by Legg. They are not one sequence and no relation between them is asserted.",
+        "reception_limit": "Each title designates one house or congregation; uptake and use elsewhere are not established.",
+        "date_limit": "Years are those given by the citing scholars and bibliographies; no title leaf was inspected."
       },
       "witnesses": [
         {
@@ -28844,7 +28947,7 @@
           "start_year": 1529,
           "end_year": 1529,
           "date_role": "printed-witness-publication",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         },
         {
           "candidate_id": "french-chezal-benoit-usuarium-8264",
@@ -28852,7 +28955,7 @@
           "start_year": 1513,
           "end_year": 1513,
           "date_role": "printed-witness-publication",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         },
         {
           "candidate_id": "french-la-chaise-dieu-usuarium-5830",
@@ -28860,7 +28963,7 @@
           "start_year": 1527,
           "end_year": 1527,
           "date_role": "printed-witness-publication",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         },
         {
           "candidate_id": "french-marmoutier-usuarium-5831",
@@ -28876,7 +28979,7 @@
           "start_year": 1556,
           "end_year": 1556,
           "date_role": "printed-witness-publication",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         },
         {
           "candidate_id": "french-vendome-trinite-usuarium-5834",
@@ -28897,7 +29000,10 @@
           "french-census-5830-usuarium",
           "french-census-5831-usuarium",
           "french-census-5833-usuarium",
-          "french-census-5834-usuarium"
+          "french-census-5834-usuarium",
+          "french-b5-legg-1905-ecclesiological-essays",
+          "french-b5-analecta-hymnica-54",
+          "french-b5-weale-bohatta-1928"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/5826/view",
@@ -28906,13 +29012,16 @@
           "https://usuarium.elte.hu/book/5830/view",
           "https://usuarium.elte.hu/book/5831/view",
           "https://usuarium.elte.hu/book/5833/view",
-          "https://usuarium.elte.hu/book/5834/view"
+          "https://usuarium.elte.hu/book/5834/view",
+          "https://archive.org/details/ecclesiologicale00legguoft",
+          "https://archive.org/details/analectahymnica54blumuoft",
+          "https://archive.org/details/bwb_T5-AGR-382"
         ],
-        "inspection": "Batch 4 lane B on 2026-10-21: Google Books full-view feed ('missale sancti victoris parisiensis', 'missale casalis benedicti', 'missale casae dei', 'missale maioris monasterii', 'missale sancti remigii remensis', 'missale vindocino') returned only Weale's 1886 bibliography; Numelyo searches ('Sancti Victoris', 'Casalis Benedicti', 'Casae Dei', 'Majoris Monasterii', 'Sancti Remigii', 'Vindocino') found no missal.",
-        "target": "These are monastic and canonical house books (Saint-Victor, Chezal-Benoît, La Chaise-Dieu, Marmoutier, Saint-Remi, Vendôme), not a diocesan sequence; inspect each house's original title and colophon, and check that the order-level routes do not already hold them."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Analecta hymnica 54 witness lists and Legg (1905) p. 167 read.",
+        "target": "Inspect title leaves and abbatial authority of all six printings; Marmoutier 1508 and Vendôme 1536 need any first-hand evidence."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
-      "inventory_status": "bounded-amiet-table-witness-census-documented",
+      "inventory_status": "bounded-scholarly-stage-evidence-documented",
       "candidate_ids": [
         "french-saint-victor-paris-usuarium-5826",
         "french-chezal-benoit-usuarium-8264",
@@ -28921,7 +29030,7 @@
         "french-saint-remi-reims-usuarium-5833",
         "french-vendome-trinite-usuarium-5834"
       ],
-      "missing_stage_chain": "No stage, and no diocesan sequence applies. Reason: none of the six house missals (1508–1556) was reachable in the searched repositories; Gallica was blocked. Missing: inspected originals with their house authority statements."
+      "missing_stage_chain": "Documented: Chezal-Benoît 1513, La Chaise-Dieu 1527, Saint-Victor 1529, Saint-Remi 1556 (scholarship). Named gaps: Marmoutier 1508, Vendôme 1536. Missing for all: front matter, authority, later books and Roman or Missale monasticum adoption."
     },
     {
       "id": "french-angers",
@@ -29603,17 +29712,19 @@
           "french-perigueux-7908-usuarium",
           "french-perigueux-7392-usuarium",
           "french-b-perigord-bulletin-1888",
-          "french-b-episcopat-1907"
+          "french-b-episcopat-1907",
+          "french-b5-bergier-1860-etudes-liturgiques"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/7907/view",
           "https://usuarium.elte.hu/book/7908/view",
           "https://usuarium.elte.hu/book/7392/view",
           "https://books.google.com/books?id=bHfOAAAAMAAJ",
-          "https://books.google.com/books?id=jcozAQAAMAAJ"
+          "https://books.google.com/books?id=jcozAQAAMAAJ",
+          "https://archive.org/details/tudesliturgique00abbgoog"
         ],
-        "inspection": "Batch 4 lane B on 2026-10-21: Google Books feed ('missale petrocorense', 'missale petrocorense Flamarens', 'missale petrocoricense'), Europeana and Numelyo found no full-view or reachable original. Gallica SRU/IIIF returned HTTP 403 (Cloudflare challenge); archive.org and BVMM timed out.",
-        "target": "An original of the 1782 missal and the 1 May 1781 letters; the 1844 Roman restoration act."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Lane helpers read archive.org scholarship and Tolosana originals; the owner re-viewed the cited key pages.",
+        "target": "Inspect the 1782 missal and the 1781 letters; Georges's mandements of 1 December 1844 and 23 May 1847."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
       "inventory_status": "bounded-assigned-amiet-rows-reviewed",
@@ -29622,7 +29733,7 @@
         "french-perigueux-usuarium-7908",
         "french-perigueux-usuarium-7392"
       ],
-      "missing_stage_chain": "No stage. Reason: no original or edition-specific description was reachable. Any inspected Périgueux missal (1525 report, 1541, 1782). A library list in the 1888 Bulletin records letters of Bishop Grossolles de Flamarens to the clergy on the new missal dated 1 May 1781 (title only). The 1849 survey dates the return to the Roman to 1844 (pp. 380–381, 413); L'épiscopat français (p. 470) calls Bishop Georges one of the first to adopt it, without a year."
+      "missing_stage_chain": "No stage. Missing: any inspected Périgueux missal (1525, 1541, 1782); the Roman restoration is dated (decision 14 November 1844, mandement 1 December 1844, Proper 11 August 1845, mandement 23 May 1847, effective June 1847) in the gap row."
     },
     {
       "id": "french-vienne",
@@ -30039,11 +30150,13 @@
       "next_sources": {
         "inventory_source_ids": [
           "french-macon-7267-usuarium",
-          "french-b-notes-autun-chalon-macon-1883"
+          "french-b-notes-autun-chalon-macon-1883",
+          "french-b5-evenou-2009-missel-de-paris"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/7267/view",
-          "https://books.google.com/books?id=O0JDAAAAYAAJ"
+          "https://books.google.com/books?id=O0JDAAAAYAAJ",
+          "https://archive.org/details/sacris-erudiri"
         ],
         "inspection": "Batch 4 lane B viewed the 1883 Notes pp. 48–49, 125, 134–135, 143–144 on 2026-10-21; Google Books feed searches for 'missale matisconense' found no full-view copy.",
         "target": "Inspect the c.1494 and 1532 missals; Dinet's 1601 acts; Autun's 1856 restoration mandement."
@@ -30064,21 +30177,25 @@
       "canonical_tradition_ids": [
         "french-dioceses-b-batch4:saint-papoul"
       ],
-      "mapping_strength": "catalogue-witness-links-only-no-canonical-stage-assigned",
+      "mapping_strength": "selected-bounded-publication-attestation-no-recension-or-actual-reception-inference",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
+        "status": "selected-stages-available",
         "dossier_ids": [
           "french-dioceses-b-batch4"
         ],
-        "stage_ids": [],
+        "stage_ids": [
+          "french-dioceses-b-batch4:saint-papoul-1774"
+        ],
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "gap_ids": [
           "french-dioceses-b-batch4:saint-papoul-gaps"
         ],
-        "scope": "Exact bounded catalogue witnesses; no original-book or described stage could be supported for this route.",
-        "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
-        "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
+        "scope": "One original-inspected state: the 1774 Missale Sanpapulense (title; Langle's letter of 15 August 1773 on the sources of its chants and orations).",
+        "reception_limit": "Not established.",
+        "date_limit": "1774 is the title-page imprint; the letter is dated 15 August 1773."
       },
       "witnesses": [
         {
@@ -30087,7 +30204,7 @@
           "start_year": 1774,
           "end_year": 1774,
           "date_role": "catalogue-attributed-printed-witness-publication",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         }
       ],
       "component_profile": "western",
@@ -30095,21 +30212,23 @@
       "next_sources": {
         "inventory_source_ids": [
           "french-saint-papoul-7480-usuarium",
-          "french-b-liturgie-romaine-1849"
+          "french-b-liturgie-romaine-1849",
+          "french-saint-papoul-1774-tolosana-original"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/7480/view",
-          "https://books.google.com/books?id=ngdTayagE3UC"
+          "https://books.google.com/books?id=ngdTayagE3UC",
+          "https://tolosana.univ-toulouse.fr/fr/notice/060318996"
         ],
-        "inspection": "Batch 4 lane B on 2026-10-21: Google Books feed ('missale sanpapulense', 'missale sanpapulense Langle'), Europeana and Numelyo found no full-view or reachable original. Gallica SRU/IIIF returned HTTP 403 (Cloudflare challenge); archive.org and BVMM timed out.",
-        "target": "An original of the 1774 missal and its mandate."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Lane helpers read archive.org scholarship and Tolosana originals; the owner re-viewed the cited key pages.",
+        "target": "Locate the earlier Roman books and the 1772 breviary; the territory's books after 1801."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
-      "inventory_status": "bounded-assigned-amiet-rows-reviewed",
+      "inventory_status": "bounded-original-stage-evidence-documented",
       "candidate_ids": [
         "french-saint-papoul-usuarium-7480"
       ],
-      "missing_stage_chain": "No stage. Reason: no original or edition-specific description was reachable. Any inspected Saint-Papoul missal, including the 1774 Missale Sanpapulense (Langle). The Nouvelles ecclésiastiques of 16 April 1772, quoted in the 1849 survey (p. 295), name Saint-Papoul among the dioceses that took a Paris-type breviary 'last year'; nothing on the missal. The Carcassonne mandement of 1842 (p. 346) notes surviving local rites in its former parishes."
+      "missing_stage_chain": "Documented: 1774 (original). Missing: the Roman phase before 1772 and the post-1801 books of the territory."
     },
     {
       "id": "french-sisteron",
@@ -30175,18 +30294,28 @@
       "label": "Valence: Saint-Ruf abbey missal candidate",
       "coverage_unit": "trajectory-or-discovery-bucket",
       "proposed_tradition_ids": [],
-      "canonical_tradition_ids": [],
-      "mapping_strength": "catalogue-witness-links-only-no-canonical-stage-assigned",
+      "canonical_tradition_ids": [
+        "french-local-round2-saint-ruf"
+      ],
+      "mapping_strength": "selected-bounded-publication-attestation-no-recension-or-actual-reception-inference",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
-        "dossier_ids": [],
-        "stage_ids": [],
+        "status": "selected-stages-available",
+        "dossier_ids": [
+          "french-local-round2"
+        ],
+        "stage_ids": [
+          "french-local-round2:saint-ruf-1508"
+        ],
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
-        "gap_ids": [],
-        "scope": "Exact bounded catalogue witnesses; no original-book stage sequence has been established for this route.",
-        "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
-        "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
+        "gap_ids": [
+          "french-local-round2-saint-ruf:sequence-gap"
+        ],
+        "scope": "One state of the Saint-Ruf canons regular missal (Valence, Belon and de Mole, last day of April 1508) documented from Chevalier's transcription of its subscription and description of its abbatial ceremonial.",
+        "reception_limit": "Abbey and order use is designated by the title; use in dependent priories is not established. No generic Valence diocesan use follows.",
+        "date_limit": "The subscription date as transcribed by Chevalier; the original was not viewed by this lane."
       },
       "witnesses": [
         {
@@ -30195,27 +30324,29 @@
           "start_year": 1508,
           "end_year": 1508,
           "date_role": "catalogue-attributed-printed-witness-publication",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
       "next_sources": {
         "inventory_source_ids": [
-          "french-valence-5825-usuarium"
+          "french-valence-5825-usuarium",
+          "french-b5-chevalier-1858-saint-ruf"
         ],
         "source_urls": [
-          "https://usuarium.elte.hu/book/5825/view"
+          "https://usuarium.elte.hu/book/5825/view",
+          "https://archive.org/details/bulletindubibli12techgoog"
         ],
-        "inspection": "Batch 4 lane B on 2026-10-21: Google Books feed ('missale valentinum' gave a catalogue-only 1509 record; full-view 'missale sancti rufi' and 'missale sancti ruphi' found nothing relevant), Europeana ('missale AND ruphi': 0; 'missale AND rufi': unrelated manuscripts), Numelyo searches found no Saint-Ruf missal.",
-        "target": "Locate a holding-library copy of the 1508 Saint-Ruf (canons regular) missal and inspect its title, colophon and any abbatial authority; this route is an order/abbey use, not a diocesan sequence."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Chevalier's 1858 notice read at pp. 192–193.",
+        "target": "Inspect the Valence or Mazarine copy of the 1508 missal and later Saint-Ruf books; locate the order's adoption of the Roman Missal."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
-      "inventory_status": "bounded-assigned-amiet-rows-reviewed",
+      "inventory_status": "bounded-scholarly-stage-evidence-documented",
       "candidate_ids": [
         "french-valence-usuarium-5825"
       ],
-      "missing_stage_chain": "No stage. Reason: the 1508 missal of the abbey of canons regular of Saint-Ruf at Valence was not reachable in any searched repository (Google Books, Europeana, Numelyo; Gallica blocked). Missing: an inspected original, its authority statement and any later Saint-Ruf editions."
+      "missing_stage_chain": "Documented: 1508 (Belon and de Mole; transcribed subscription). Missing: the manuscript ordinaries Chevalier names, later Saint-Ruf missals and the Roman adoption."
     },
     {
       "id": "french-besancon",
@@ -31285,25 +31416,27 @@
       "canonical_tradition_ids": [
         "french-dioceses-b-batch4:nimes"
       ],
-      "mapping_strength": "provisional-scholarly-report-only",
+      "mapping_strength": "selected-bounded-publication-attestation-no-recension-or-actual-reception-inference",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
+        "status": "selected-stages-available",
         "dossier_ids": [
           "french-dioceses-b-batch4"
         ],
-        "stage_ids": [],
+        "stage_ids": [
+          "french-dioceses-b-batch4:nimes-1511"
+        ],
         "provisional_stage_ids": [
           "french-dioceses-b-batch4:nimes-1827"
         ],
         "text_coverage_counts": {
-          "not-transcribed": 1
+          "not-transcribed": 2
         },
         "gap_ids": [
           "french-dioceses-b-batch4:nimes-gaps"
         ],
-        "scope": "One provisional reported change (1827); no documented state.",
-        "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
-        "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
+        "scope": "One original-inspected state (Lyon, Jean Moylin, 22 October 1511: title, almanac, April calendar, colophon) and one provisional reported change (the 1827 Larèche liturgy).",
+        "reception_limit": "The 1511 colophon records the bishop's command and addresses the priests of Nîmes; actual adoption is not established. The 1827 change is a survey statement.",
+        "date_limit": "1511 is the colophon date (22 October). The 1827 stage dates a reported change, not a book."
       },
       "witnesses": [
         {
@@ -31312,7 +31445,7 @@
           "start_year": 1831,
           "end_year": 1831,
           "date_role": "catalogue-attributed-printed-object-age",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         }
       ],
       "component_profile": "western",
@@ -31321,22 +31454,26 @@
         "inventory_source_ids": [
           "french-nimes-7325-usuarium",
           "french-b-liturgie-romaine-1849",
-          "french-b-episcopat-1907"
+          "french-b-episcopat-1907",
+          "french-nimes-1511-bsg-original",
+          "french-b5-weale-bohatta-1928"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/7325/view",
           "https://books.google.com/books?id=ngdTayagE3UC",
-          "https://books.google.com/books?id=jcozAQAAMAAJ"
+          "https://books.google.com/books?id=jcozAQAAMAAJ",
+          "https://archive.org/details/FOLBB90INV99RES",
+          "https://archive.org/details/bwb_T5-AGR-382"
         ],
-        "inspection": "Batch 4 lane B viewed the 1849 survey pp. 251, 413 and L'épiscopat français p. 417 on 2026-10-21; Google Books feed ('missale nemausense') found only catalogue records.",
-        "target": "Inspect the 1831 Missale Nemausense and its mandate; the 1851 synod."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. The BSG copy of the 1511 Nîmes missal (archive.org FOLBB90INV99RES) was read at title, almanac, calendar and colophon.",
+        "target": "Inspect the 1831 Missale Nemausense and its mandate, Nîmes books between 1511 and 1790, and the instrument of the Roman replacement."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
       "inventory_status": "bounded-amiet-table-witness-census-documented",
       "candidate_ids": [
         "french-nimes-usuarium-7325"
       ],
-      "missing_stage_chain": "No documented stage. Provisional: 1827 Larèche liturgy. Missing: the 1831 missal as an inspected state, its mandate, and the 1851 Roman replacement's effective date."
+      "missing_stage_chain": "Documented: Lyon 1511 (Moylin; original). Provisional: 1827 Larèche liturgy. Missing: Nîmes missals 1511–1790, an inspected copy of the 1831 missal, and the Roman replacement."
     },
     {
       "id": "french-saint-pol-de-leon",
@@ -31382,12 +31519,14 @@
         "inventory_source_ids": [
           "french-saint-pol-de-leon-6499-usuarium",
           "french-b-duine-1906-breton-missals",
-          "french-b-liturgie-romaine-1849"
+          "french-b-liturgie-romaine-1849",
+          "french-b5-bergier-1860-etudes-liturgiques"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/6499/view",
           "https://books.google.com/books?id=W5x3Cfx-_2QC",
-          "https://books.google.com/books?id=ngdTayagE3UC"
+          "https://books.google.com/books?id=ngdTayagE3UC",
+          "https://archive.org/details/tudesliturgique00abbgoog"
         ],
         "inspection": "Batch 4 lane B viewed Duine 1906 pp. 43, 171 and the 1849 survey pp. 245–246 on 2026-10-21.",
         "target": "Inspect BnF Rés. B.27804; establish later Léon books and the liturgy in use c.1780."
@@ -31438,21 +31577,25 @@
       "next_sources": {
         "inventory_source_ids": [
           "french-tarbes-7551-usuarium",
-          "french-b-episcopat-1907"
+          "french-b-episcopat-1907",
+          "french-b5-evenou-2009-missel-de-paris",
+          "french-b5-bergier-1860-etudes-liturgiques"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/7551/view",
-          "https://books.google.com/books?id=jcozAQAAMAAJ"
+          "https://books.google.com/books?id=jcozAQAAMAAJ",
+          "https://archive.org/details/sacris-erudiri",
+          "https://archive.org/details/tudesliturgique00abbgoog"
         ],
-        "inspection": "Batch 4 lane B on 2026-10-21: Google Books feed ('missale tarbiense') and Europeana found no record; Numelyo 'Tarbiense': 0. Gallica SRU/IIIF returned HTTP 403 (Cloudflare challenge); archive.org and BVMM timed out.",
-        "target": "An original of the 1836 missal and its mandate; the 1847 ordinance."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Lane helpers read archive.org scholarship and Tolosana originals; the owner re-viewed the cited key pages.",
+        "target": "Inspect the 1836 Missale Tarbiense and Laurence's mandement of 2 February 1849."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
       "inventory_status": "bounded-amiet-table-witness-census-documented",
       "candidate_ids": [
         "french-tarbes-usuarium-7551"
       ],
-      "missing_stage_chain": "No stage. Reason: no original or edition-specific description was reachable. Any inspected Tarbes missal, including the catalogue's 1836 Missale Tarbiense. L'épiscopat français (p. 612) says ordinances of 24 September 1847, 2 February 1849 and 21 November 1866 made obligatory the Roman rite, which had been the diocese's rite before the Revolution; the 1849 survey dates the return to 1847."
+      "missing_stage_chain": "No stage. Missing: any inspected Tarbes missal (1836 Auch print); the pre-Revolution Roman use with Paris books authorised; the Roman restoration (chapter vote 27 November 1848, mandement 2 February 1849, Easter 1850, against ordinances of 1847 and 1866)."
     },
     {
       "id": "french-rennes",
@@ -31572,7 +31715,8 @@
           "french-rennes-7435-usuarium",
           "french-rennes-7436-usuarium",
           "french-b-duine-1906-breton-missals",
-          "french-b-liturgie-romaine-1849"
+          "french-b-liturgie-romaine-1849",
+          "french-b5-borderie-1891-bibliophiles-bretons"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/7428/view",
@@ -31584,7 +31728,8 @@
           "https://usuarium.elte.hu/book/7435/view",
           "https://usuarium.elte.hu/book/7436/view",
           "https://books.google.com/books?id=W5x3Cfx-_2QC",
-          "https://books.google.com/books?id=ngdTayagE3UC"
+          "https://books.google.com/books?id=ngdTayagE3UC",
+          "https://archive.org/details/bulletin05bretgoog"
         ],
         "inspection": "Batch 4 lane B viewed Duine 1906 pp. 7, 35–47 and the 1849 survey pp. 245–246, 381 on 2026-10-21.",
         "target": "Inspect BnF Vélins 201, Arsenal 2742 and later originals; the 1786 missal and mandate; resolve the 1846/1848 Roman adoption by the mandement. Records 7437 and 7438 remain withheld from this route because their Rennes origin conflicts with Remensis titles (decision carried forward from the earlier census slice)."
@@ -31602,7 +31747,7 @@
         "french-rennes-usuarium-7436",
         "french-rennes-1588-duine-hennequin"
       ],
-      "missing_stage_chain": "Documented (scholarly description): 1492, 1523, 1531, 1588. Missing: originals, c.1485/1500/1533/1557 entries, 1776/1786/1830/1831 missals, the 1780 cathedral-only Tours liturgy, and the Roman adoption act (1846 vs 1848 in sources). Records 7437 and 7438 remain withheld from this route because their Rennes origin conflicts with Remensis titles (decision carried forward from the earlier census slice)."
+      "missing_stage_chain": "Documented: 1492/1493 (Guibé), 1523, 1531 and 1588 (Duine; 1531 also La Borderie). No transition is recorded: La Borderie's statement that 1531 reproduces the 1493 text with rare variants and some important additions names no change. Missing: originals, the c.1485 print, the 1731 Fougères missal (Legg: Gallican colours), the 1776/1786 and 1830/1831 missals, and the Roman adoption (1846 vs 1848)."
     },
     {
       "id": "french-amiens",
@@ -31736,21 +31881,26 @@
       "canonical_tradition_ids": [
         "french-dioceses-b-batch4:mende"
       ],
-      "mapping_strength": "catalogue-witness-links-only-no-canonical-stage-assigned",
+      "mapping_strength": "selected-bounded-publication-attestation-no-recension-or-actual-reception-inference",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
+        "status": "selected-stages-available",
         "dossier_ids": [
           "french-dioceses-b-batch4"
         ],
-        "stage_ids": [],
+        "stage_ids": [
+          "french-dioceses-b-batch4:mende-1766",
+          "french-dioceses-b-batch4:mende-1840"
+        ],
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 2
+        },
         "gap_ids": [
           "french-dioceses-b-batch4:mende-gaps"
         ],
-        "scope": "Exact bounded catalogue witnesses; no original-book or described stage could be supported for this route.",
-        "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
-        "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
+        "scope": "Two states from scholarship: the 1766 Paris-printed missal (Legg: Gallican colours) and the 1840 missal announced by the mandement of 25 March 1840 with named added Masses (Bergier).",
+        "reception_limit": "Not established; the 1840 book was superseded by the Roman liturgy from 1 January 1860 according to Bergier.",
+        "date_limit": "1766 is Legg's imprint year; 1840 dates the announcing mandement (catalogue printing 1841)."
       },
       "witnesses": [
         {
@@ -31775,7 +31925,7 @@
           "start_year": 1766,
           "end_year": 1766,
           "date_role": "printed-witness-publication",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         },
         {
           "candidate_id": "french-mende-usuarium-7284",
@@ -31791,7 +31941,7 @@
           "start_year": 1841,
           "end_year": 1841,
           "date_role": "printed-witness-publication",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         }
       ],
       "component_profile": "western",
@@ -31804,7 +31954,8 @@
           "french-mende-7284-usuarium",
           "french-mende-7285-usuarium",
           "french-b-mende-history-1859",
-          "french-b-episcopat-1907"
+          "french-b-episcopat-1907",
+          "french-b5-bergier-1860-etudes-liturgiques"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/749/view",
@@ -31813,13 +31964,14 @@
           "https://usuarium.elte.hu/book/7284/view",
           "https://usuarium.elte.hu/book/7285/view",
           "https://books.google.com/books?id=7z0Zx4hrpCoC",
-          "https://books.google.com/books?id=jcozAQAAMAAJ"
+          "https://books.google.com/books?id=jcozAQAAMAAJ",
+          "https://archive.org/details/tudesliturgique00abbgoog"
         ],
-        "inspection": "Batch 4 lane B on 2026-10-21: Google Books feed ('missale mimatense', 'missale mimatense Choiseul'), Europeana and Numelyo found no full-view or reachable original. Gallica SRU/IIIF returned HTTP 403 (Cloudflare challenge); archive.org and BVMM timed out.",
-        "target": "Originals of the 1764/1766 missals and their mandates; the 1860 Roman adoption mandement."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Lane helpers read archive.org scholarship and Tolosana originals; the owner re-viewed the cited key pages.",
+        "target": "Inspect the 1764/1766 and 1840/1841 missals and their mandates; Foulquier's mandement of 16 July 1859."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
-      "inventory_status": "selected-witness-census-documented",
+      "inventory_status": "bounded-scholarly-stage-evidence-documented",
       "candidate_ids": [
         "french-mende-usuarium-749",
         "french-mende-usuarium-7282",
@@ -31827,7 +31979,7 @@
         "french-mende-usuarium-7284",
         "french-mende-usuarium-7285"
       ],
-      "missing_stage_chain": "No stage. Reason: no original or edition-specific description was reachable. Any inspected Mende missal (1530, 1764, 1766, 1825, 1841). The 1859 Mende history says Bishop de Choiseul introduced the Paris liturgy 'vers l'an 1768' but gives his death as 7 July 1767 on the same page (p. 195); the 1849 survey lists Mende as Parisian; L'épiscopat français (pp. 353–354) dates the Roman adoption to 1860 after synods of 1853–1855, and the 1859 history (p. 228) says the 1850 Albi provincial council prescribed the return."
+      "missing_stage_chain": "Documented: 1766 (Legg) and 1840 (Bergier). Missing: originals, the 1530 and 1825 books, the 1763 Paris-type change as a missal, and the 1859/1860 Roman restoration instrument; no transition is asserted between the two states."
     },
     {
       "id": "french-sees",
@@ -31844,16 +31996,17 @@
           "french-dioceses-b-batch4"
         ],
         "stage_ids": [
+          "french-dioceses-b-batch4:sees-1500",
           "french-dioceses-b-batch4:sees-1742"
         ],
         "provisional_stage_ids": [],
         "text_coverage_counts": {
-          "not-transcribed": 1
+          "not-transcribed": 2
         },
         "gap_ids": [
           "french-dioceses-b-batch4:sees-gaps"
         ],
-        "scope": "One bounded publication attestation (1742) from diocesan historians; originals not viewed.",
+        "scope": "Two states: the 1500 Rouen print for Sées (original colophon and calendar) and the 1742 missal (scholarly description).",
         "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
         "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
       },
@@ -31897,6 +32050,14 @@
           "end_year": 1841,
           "date_role": "printed-witness-publication",
           "status": "inventory-witness-candidate-not-a-stage"
+        },
+        {
+          "candidate_id": "french-sees-1500-bsg-regnault",
+          "label": "Missale ad usum ecclesie Sagiensis, Rouen, for Pierre Regnault, 1500 (BSG OEXV 486 RES)",
+          "start_year": 1500,
+          "end_year": 1500,
+          "date_role": "colophon-dated-publication",
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         }
       ],
       "component_profile": "western",
@@ -31910,7 +32071,8 @@
           "french-sees-7474-usuarium",
           "french-b-hommey-1900-sees",
           "french-b-marais-beaudouin-1878-sees",
-          "french-b-liturgie-romaine-1849"
+          "french-b-liturgie-romaine-1849",
+          "french-sees-1500-bsg-original"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/7467/view",
@@ -31920,21 +32082,23 @@
           "https://usuarium.elte.hu/book/7474/view",
           "https://books.google.com/books?id=ALdCAAAAYAAJ",
           "https://books.google.com/books?id=ds9LAAAAYAAJ",
-          "https://books.google.com/books?id=ngdTayagE3UC"
+          "https://books.google.com/books?id=ngdTayagE3UC",
+          "https://archive.org/details/OEXV486"
         ],
         "inspection": "Batch 4 lane B viewed Hommey 1900 pp. 55–56, 408–410, Marais and Beaudouin 1878 pp. 180–181, 217, 220, and the 1849 survey p. 412 on 2026-10-21.",
         "target": "Inspect the 1742 and 1841 originals and mandates; the 1608/1676 decrees; the 1864 ordinance."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
-      "inventory_status": "bounded-scholarly-stage-evidence-documented",
+      "inventory_status": "bounded-original-and-scholarly-stage-evidence-documented",
       "candidate_ids": [
         "french-sees-usuarium-7467",
         "french-sees-usuarium-7468",
         "french-sees-usuarium-7471",
         "french-sees-usuarium-7472",
-        "french-sees-usuarium-7474"
+        "french-sees-usuarium-7474",
+        "french-sees-1500-bsg-regnault"
       ],
-      "missing_stage_chain": "Documented (scholarship): 1742. Missing: 1488/1496/1500/1548 prints, Suarez's adoption of Roman books (confirmed by decrees of 10 May 1608 and 21 March 1676), the 1841 missal, and the ordinance making the Roman liturgy obligatory from 15 May 1864."
+      "missing_stage_chain": "Documented: 1500 (original colophon) and 1742 (scholarship). Missing: the 1488/1496/1548 originals, the Suarez Roman adoption and its 1608/1676 confirmations, the 1841 missal and the 1864 Roman restoration."
     },
     {
       "id": "french-bazas",
@@ -32316,7 +32480,7 @@
       "canonical_tradition_ids": [
         "french-dioceses-b-batch4:noyon"
       ],
-      "mapping_strength": "provisional-scholarly-report-only",
+      "mapping_strength": "selected-bounded-publication-attestation-no-recension-or-actual-reception-inference",
       "dossier_coverage": {
         "status": "no-new-researched-stage-sequence",
         "dossier_ids": [
@@ -32324,17 +32488,18 @@
         ],
         "stage_ids": [],
         "provisional_stage_ids": [
+          "french-dioceses-b-batch4:noyon-1631",
           "french-dioceses-b-batch4:noyon-broglie"
         ],
         "text_coverage_counts": {
-          "not-transcribed": 1
+          "not-transcribed": 2
         },
         "gap_ids": [
           "french-dioceses-b-batch4:noyon-gaps"
         ],
-        "scope": "One provisional attestation (Broglie missal, by 1774); no documented state.",
-        "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
-        "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
+        "scope": "Two provisional states: the 1631 Sonnius missal, which Legg examined but for which he reports only the absence of a mixing rubric, and the Broglie missal (1770 per Legg and Weale).",
+        "reception_limit": "No adoption or uptake is established for either book.",
+        "date_limit": "1631 is the year Legg gives (Weale–Bohatta: 15 March 1631); the Broglie stage keeps its 1774 attestation date while Legg and Weale give the imprint 1770. No title leaf was inspected."
       },
       "witnesses": [
         {
@@ -32351,7 +32516,15 @@
           "start_year": 1770,
           "end_year": 1770,
           "date_role": "printed-witness-publication",
-          "status": "inventory-witness-candidate-cited-by-provisional-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
+        },
+        {
+          "candidate_id": "french-noyon-1631-sonnius",
+          "label": "Missale Noviomense, Noyon, Michel and Claude Sonnius, 1631",
+          "start_year": 1631,
+          "end_year": 1631,
+          "date_role": "scholar-reported-publication",
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         }
       ],
       "component_profile": "western",
@@ -32362,25 +32535,30 @@
           "french-noyon-7328-usuarium",
           "french-b-bibliographie-noyonnaise",
           "french-b-ledouble-1880-soissons",
-          "french-b-liturgie-romaine-1849"
+          "french-b-liturgie-romaine-1849",
+          "french-b5-legg-1905-ecclesiological-essays",
+          "french-b5-weale-bohatta-1928"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/7327/view",
           "https://usuarium.elte.hu/book/7328/view",
           "https://books.google.com/books?id=0ho6AQAAMAAJ",
           "https://books.google.com/books?id=3UUAAAAAMAAJ",
-          "https://books.google.com/books?id=ngdTayagE3UC"
+          "https://books.google.com/books?id=ngdTayagE3UC",
+          "https://archive.org/details/ecclesiologicale00legguoft",
+          "https://archive.org/details/bwb_T5-AGR-382"
         ],
-        "inspection": "Batch 4 lane B viewed the Bibliographie noyonnaise pp. 31–34, Ledouble 1880 pp. 383–385 and the 1849 survey pp. 390–391 on 2026-10-21; Google Books feed ('missale noviomense', 'missale noviomense Broglie', full view) found no original; Gallica (1506 copy) 403.",
-        "target": "Inspect the 1506 Gallica copy and a Broglie missal; establish Bourzac's 1764 books and the 1857 Roman adoption mandate."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Legg (1905) pp. 144–145 read for the Noyon 1631 and 1770 missals.",
+        "target": "Inspect the title leaves and mandates of the 1631 and 1770 Noyon missals (Amiens, London BM), the 1506 Rouen missal and Gignoux's 1857 mandate."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
       "inventory_status": "selected-witness-census-documented",
       "candidate_ids": [
         "french-noyon-usuarium-7327",
-        "french-noyon-usuarium-7328"
+        "french-noyon-usuarium-7328",
+        "french-noyon-1631-sonnius"
       ],
-      "missing_stage_chain": "No documented stage. Provisional: Broglie missal attested by 1774. Missing: inspected 1506, 1541, 1631 and Broglie missals; the Roman phase after 1583; the 1764 neo-Gallican books; the Roman adoption from Pentecost 1857."
+      "missing_stage_chain": "No documented stage. Provisional: 1631 (Legg's negative observation; imprint from Weale–Bohatta) and the Broglie missal (1770). Missing: the 1506 and 1541 missals, any inspected Noyon original, the 1764 Bourzac books and the 1857 Roman restoration; no transition is asserted because Legg's 1631 observation is negative."
     },
     {
       "id": "french-frejus",
@@ -32484,25 +32662,25 @@
       "canonical_tradition_ids": [
         "french-dioceses-b-batch4:rieux"
       ],
-      "mapping_strength": "provisional-scholarly-report-only",
+      "mapping_strength": "selected-bounded-publication-attestation-no-recension-or-actual-reception-inference",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
+        "status": "selected-stages-available",
         "dossier_ids": [
           "french-dioceses-b-batch4"
         ],
-        "stage_ids": [],
-        "provisional_stage_ids": [
+        "stage_ids": [
           "french-dioceses-b-batch4:rieux-paris-books"
         ],
+        "provisional_stage_ids": [],
         "text_coverage_counts": {
           "not-transcribed": 1
         },
         "gap_ids": [
           "french-dioceses-b-batch4:rieux-gaps"
         ],
-        "scope": "One provisional reported change (Roman to Paris books, reported 1778); no documented state.",
-        "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
-        "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
+        "scope": "One original-inspected state: the 1776 Missale Rivense, the Paris missal issued for Rieux with Vintimille's 1738 letter, and the 1778 periodical report of the change from the Roman books.",
+        "reception_limit": "The periodical reports chapter and clergy dissatisfaction; uptake is not established.",
+        "date_limit": "1776 is the title-page imprint; the report is dated 6 March 1778."
       },
       "witnesses": [
         {
@@ -32511,7 +32689,7 @@
           "start_year": 1776,
           "end_year": 1776,
           "date_role": "printed-witness-publication",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         }
       ],
       "component_profile": "western",
@@ -32519,21 +32697,23 @@
       "next_sources": {
         "inventory_source_ids": [
           "french-rieux-7439-usuarium",
-          "french-b-nouvelles-ecclesiastiques-1778"
+          "french-b-nouvelles-ecclesiastiques-1778",
+          "french-rieux-1776-tolosana-original"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/7439/view",
-          "https://books.google.com/books?id=9UkTAAAAQAAJ"
+          "https://books.google.com/books?id=9UkTAAAAQAAJ",
+          "https://tolosana.univ-toulouse.fr/fr/notice/164509542"
         ],
-        "inspection": "Batch 4 lane B viewed the Nouvelles ecclésiastiques 1778 pp. 37, 39 on 2026-10-21; Google Books feed ('missale rivense', 'missale rivense Lastic'), Europeana and Numelyo found no original.",
-        "target": "Inspect the 1776 Missale Rivense and its mandate."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Lane helpers read archive.org scholarship and Tolosana originals; the owner re-viewed the cited key pages.",
+        "target": "Examine the Rieux proper sections of the 1776 book and the preceding Roman books."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
-      "inventory_status": "selected-witness-census-documented",
+      "inventory_status": "bounded-original-stage-evidence-documented",
       "candidate_ids": [
         "french-rieux-usuarium-7439"
       ],
-      "missing_stage_chain": "No documented stage. Provisional: Paris books adopted under Lastic (reported 6 March 1778). Missing: the 1776 missal as an inspected state and its mandate."
+      "missing_stage_chain": "Documented: 1776 (original; upgraded from the provisional 1778 report). Missing: the preceding Roman books and any Rieux proper."
     },
     {
       "id": "french-saintes",
@@ -32543,21 +32723,25 @@
       "canonical_tradition_ids": [
         "french-dioceses-b-batch4:saintes"
       ],
-      "mapping_strength": "catalogue-witness-links-only-no-canonical-stage-assigned",
+      "mapping_strength": "selected-bounded-publication-attestation-no-recension-or-actual-reception-inference",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
+        "status": "selected-stages-available",
         "dossier_ids": [
           "french-dioceses-b-batch4"
         ],
-        "stage_ids": [],
+        "stage_ids": [
+          "french-dioceses-b-batch4:saintes-1491"
+        ],
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "gap_ids": [
           "french-dioceses-b-batch4:saintes-gaps"
         ],
-        "scope": "Exact bounded catalogue witnesses; no original-book or described stage could be supported for this route.",
-        "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
-        "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
+        "scope": "One state: the 1491 Paris (Higman) Saintes missal as a collated Analecta hymnica witness of two sequences.",
+        "reception_limit": "Not established.",
+        "date_limit": "1491 is the year cited by the editors; no leaf inspected."
       },
       "witnesses": [
         {
@@ -32566,27 +32750,29 @@
           "start_year": 1491,
           "end_year": 1491,
           "date_role": "printed-witness-publication",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         }
       ],
       "component_profile": "western",
       "component_coverage": "incomplete-not-certified",
       "next_sources": {
         "inventory_source_ids": [
-          "french-saintes-7657-usuarium"
+          "french-saintes-7657-usuarium",
+          "french-b5-analecta-hymnica-sequence-editions"
         ],
         "source_urls": [
-          "https://usuarium.elte.hu/book/7657/view"
+          "https://usuarium.elte.hu/book/7657/view",
+          "https://archive.org/details/analectahymnica54blumuoft"
         ],
-        "inspection": "Batch 4 lane B on 2026-10-21: Google Books feed ('intitle:missale intitle:santonense', 'intitle:missale intitle:xanctonense', full-view 'missale xanctonense', 'missale santonense 1491', 'missel de Saintes liturgie'), Europeana ('missale AND santonense/xanctonense': 0; 'santonensis': unrelated manuscripts), Numelyo ('Santonense': 0) found no original or description. Gallica SRU/IIIF returned HTTP 403 (Cloudflare challenge); archive.org and BVMM timed out.",
-        "target": "A holding-library copy of the 1491 missal (ISTC unreachable behind a bot challenge); Saintes diocesan histories."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Lane helpers read archive.org scholarship and Tolosana originals; the owner re-viewed the cited key pages.",
+        "target": "Inspect the Cambridge 1491 copy; examine the undated Paris-type Santonense (BMC VIII 229–230) and later Saintes books."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
-      "inventory_status": "selected-witness-census-documented",
+      "inventory_status": "bounded-scholarly-stage-evidence-documented",
       "candidate_ids": [
         "french-saintes-usuarium-7657"
       ],
-      "missing_stage_chain": "No stage. Reason: no original or edition-specific description was reachable. Any inspected Saintes missal, including the 1491 Missale Xanctonense; no edition-specific description was found (Weale 1886 in-volume searches for 'Xanctonense', 'Xanctonensis' and 'Santonensis' returned 0 hits). Later Saintes missals, the see's suppression in 1790/1801 and the books used in its territory (La Rochelle) are also open."
+      "missing_stage_chain": "Documented: 1491 (sequence witness). Missing: originals, later Saintes missals and the books of the territory after 1790."
     },
     {
       "id": "french-tarentaise",
@@ -32596,21 +32782,25 @@
       "canonical_tradition_ids": [
         "french-dioceses-b-batch4:tarentaise"
       ],
-      "mapping_strength": "catalogue-witness-links-only-no-canonical-stage-assigned",
+      "mapping_strength": "selected-bounded-publication-attestation-no-recension-or-actual-reception-inference",
       "dossier_coverage": {
         "status": "no-new-researched-stage-sequence",
         "dossier_ids": [
           "french-dioceses-b-batch4"
         ],
         "stage_ids": [],
-        "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "provisional_stage_ids": [
+          "french-dioceses-b-batch4:tarentaise-1520"
+        ],
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "gap_ids": [
           "french-dioceses-b-batch4:tarentaise-gaps"
         ],
-        "scope": "Exact bounded catalogue witnesses; no original-book or described stage could be supported for this route.",
-        "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
-        "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
+        "scope": "One provisional state: an undated printed Tarentaise missal, assigned to Lyon about 1520–1521 by Analecta hymnica, as a collated sequence witness (incl. the proper sequence for St James of Tarentaise); not linked to a witness because its identity with catalogue witness 7552 is unresolved.",
+        "reception_limit": "Not established; Archbishop Germonio later substituted the Roman missal (undated).",
+        "date_limit": "1520–1521 expresses the editors' attributed dates for an undated print without place."
       },
       "witnesses": [
         {
@@ -32627,21 +32817,23 @@
       "next_sources": {
         "inventory_source_ids": [
           "french-tarentaise-7552-usuarium",
-          "french-b-episcopat-1907"
+          "french-b-episcopat-1907",
+          "french-b5-analecta-hymnica-sequence-editions"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/7552/view",
-          "https://books.google.com/books?id=jcozAQAAMAAJ"
+          "https://books.google.com/books?id=jcozAQAAMAAJ",
+          "https://archive.org/details/analectahymnica54blumuoft"
         ],
-        "inspection": "Batch 4 lane B on 2026-10-21: Google Books feed ('missale tarentasiense', 'missale tharentasie'), Europeana ('missale AND tarentasiense/tharentasie': 0), Numelyo ('Tarentasiense': 0), e-rara ('missale' list) found nothing. Gallica SRU/IIIF returned HTTP 403 (Cloudflare challenge); archive.org and BVMM timed out.",
-        "target": "A holding-library copy of the 1486 missal (ISTC unreachable behind a bot challenge); Savoy diocesan histories."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Lane helpers read archive.org scholarship and Tolosana originals; the owner re-viewed the cited key pages.",
+        "target": "Resolve whether the Analecta hymnica print is BnF B-1484 (catalogue witness 7552) and inspect its leaves; confirm or reject the 1486 date; date Germonio's Roman adoption."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
       "inventory_status": "selected-witness-census-documented",
       "candidate_ids": [
         "french-tarentaise-usuarium-7552"
       ],
-      "missing_stage_chain": "No stage. Reason: no original or edition-specific description was reachable. Any inspected Tarentaise missal, including the 1486 Missale ad usum Tharentasie; no scholarly description was found. L'épiscopat français (p. 616) records only the restoration of the see in 1825."
+      "missing_stage_chain": "No documented stage. Provisional: an undated print assigned to about 1520–1521 (sequence witness; identity with 7552 unresolved). Missing: an inspected Tarentaise print, the doubtful 1486 date, the Roman adoption under Germonio and Chevron-Villette, and post-1825 books."
     },
     {
       "id": "french-toul",
@@ -32943,23 +33135,31 @@
       "coverage_unit": "trajectory-or-discovery-bucket",
       "proposed_tradition_ids": [],
       "canonical_tradition_ids": [
-        "french-dioceses-b-batch4:tours"
+        "french-dioceses-b-batch4:tours",
+        "french-dioceses-b-batch4:tours-saint-martin"
       ],
-      "mapping_strength": "catalogue-witness-links-only-no-canonical-stage-assigned",
+      "mapping_strength": "selected-bounded-publication-attestation-no-recension-or-actual-reception-inference",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
+        "status": "selected-stages-available",
         "dossier_ids": [
           "french-dioceses-b-batch4"
         ],
-        "stage_ids": [],
-        "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "stage_ids": [
+          "french-dioceses-b-batch4:tours-1485",
+          "french-dioceses-b-batch4:tours-saint-martin-1529"
+        ],
+        "provisional_stage_ids": [
+          "french-dioceses-b-batch4:tours-1492"
+        ],
+        "text_coverage_counts": {
+          "not-transcribed": 3
+        },
         "gap_ids": [
           "french-dioceses-b-batch4:tours-gaps"
         ],
-        "scope": "Exact bounded catalogue witnesses; no original-book or described stage could be supported for this route.",
-        "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
-        "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
+        "scope": "Two documented states: Tours 1485 (colophon quoted by Van Praet) and the separate Saint-Martin of Tours missal of 1529 (sole source of an edited sequence); a provisional, unlinked Tours 1492–93 sequence witness whose edition is unidentified.",
+        "reception_limit": "Not established; Saint-Martin is a distinct collegiate use.",
+        "date_limit": "Years are those quoted or cited by the bibliographer and editors; no leaf inspected."
       },
       "witnesses": [
         {
@@ -32968,7 +33168,7 @@
           "start_year": 1485,
           "end_year": 1485,
           "date_role": "catalogue age attributed to a printed witness; imprint, approval and reception not independently authenticated",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         },
         {
           "candidate_id": "french-tours-usuarium-7611",
@@ -33008,7 +33208,7 @@
           "start_year": 1529,
           "end_year": 1529,
           "date_role": "catalogue age attributed to a printed witness; imprint, approval and reception not independently authenticated",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         }
       ],
       "component_profile": "western",
@@ -33022,7 +33222,10 @@
           "french-tours-7616-usuarium",
           "french-tours-7614-usuarium",
           "french-b-touraine-bulletin-1926",
-          "french-b-liturgie-romaine-1849"
+          "french-b-liturgie-romaine-1849",
+          "french-b5-van-praet-1824-velins",
+          "french-b5-analecta-hymnica-sequence-editions",
+          "french-b5-bergier-1860-etudes-liturgiques"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/7610/view",
@@ -33032,13 +33235,16 @@
           "https://usuarium.elte.hu/book/7616/view",
           "https://usuarium.elte.hu/book/7614/view",
           "https://books.google.com/books?id=4jFMAAAAMAAJ",
-          "https://books.google.com/books?id=ngdTayagE3UC"
+          "https://books.google.com/books?id=ngdTayagE3UC",
+          "https://archive.org/details/cataloguedelivr02pragoog",
+          "https://archive.org/details/analectahymnica54blumuoft",
+          "https://archive.org/details/tudesliturgique00abbgoog"
         ],
-        "inspection": "Batch 4 lane B on 2026-10-21: Google Books feed ('missale turonense', 'missale turonense Conzie'), Europeana (Gallica 1493 copy only, 403), Numelyo (Tours breviaries only) found no reachable missal; bvh.univ-tours.fr timed out. Gallica SRU/IIIF returned HTTP 403 (Cloudflare challenge); archive.org and BVMM timed out.",
-        "target": "Originals of the 1784 missal and its mandate (BVH Tours was unreachable); a Tours mandement restoring the Roman liturgy."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Lane helpers read archive.org scholarship and Tolosana originals; the owner re-viewed the cited key pages.",
+        "target": "Inspect the incunable originals, the 1784 Conzié missal and Guibert's mandement of 15 February 1859."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
-      "inventory_status": "bounded-amiet-table-witness-census-documented",
+      "inventory_status": "bounded-scholarly-stage-evidence-documented",
       "candidate_ids": [
         "french-tours-usuarium-7610",
         "french-tours-usuarium-7611",
@@ -33047,7 +33253,7 @@
         "french-tours-usuarium-7616",
         "french-tours-usuarium-7614"
       ],
-      "missing_stage_chain": "No stage. Reason: no original or edition-specific description was reachable. Any inspected Tours missal (1485–1533, the Saint-Martin 1529 missal, 1784). The 1926 Touraine bulletin reports a 1784 breviary under Archbishop de Conzié but names no missal; the 1849 survey reports that at the 1780 provincial assembly the archbishop urged suffragans to take the Tours liturgy, in substance the Viger/Mésenguy Paris books (pp. 245–246), and lists Tours as Parisian; no Roman-adoption date was found (L'épiscopat français pp. 633–635 silent)."
+      "missing_stage_chain": "Documented: 1485 (Tours) and 1529 (Saint-Martin). Provisional: the 1492–93 Analecta hymnica witness (edition unidentified; Weale–Bohatta's 1493 Tours missal was printed at Rouen). Missing: originals, the 1491, 1517 and 1533 prints, the 1784 missal and the Roman restoration of 1859."
     },
     {
       "id": "french-verdun",
@@ -33299,8 +33505,8 @@
           "https://books.google.com/books?id=ky9-Spl_iZ4C",
           "https://books.google.com/books?id=ngdTayagE3UC"
         ],
-        "inspection": "Batch 4 lane B viewed Daux 1882 RA5-PA35–37 and RA8-PA63, Forestié 1898 p. 352 and the 1849 survey pp. 49, 381, 413 on 2026-10-21; Google Books feed found no full-view Montauban missal ('missale montalbanense', 'missale montalbanense Breteuil').",
-        "target": "Inspect the 1773, 1774 and 1827/1830 books; resolve 1773 vs the 24 February 1779 mandement; Doney's 1847 mandement."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Lane helpers read archive.org scholarship and Tolosana originals; the owner re-viewed the cited key pages. Daux's pages on the 1779, 1826/1827 and 1847 mandements re-read; no Montauban missal original was found online.",
+        "target": "Inspect the 1773 Breteuil missal (Chevalier saw a copy), the 1827/1830 Dubourg missal and Doney's 1847 mandement."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
       "inventory_status": "bounded-amiet-table-witness-census-documented",
@@ -33319,25 +33525,25 @@
       "canonical_tradition_ids": [
         "french-dioceses-b-batch4:vannes"
       ],
-      "mapping_strength": "provisional-scholarly-report-only",
+      "mapping_strength": "selected-bounded-publication-attestation-no-recension-or-actual-reception-inference",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
+        "status": "selected-stages-available",
         "dossier_ids": [
           "french-dioceses-b-batch4"
         ],
-        "stage_ids": [],
-        "provisional_stage_ids": [
+        "stage_ids": [
           "french-dioceses-b-batch4:vannes-1535"
         ],
+        "provisional_stage_ids": [],
         "text_coverage_counts": {
           "not-transcribed": 1
         },
         "gap_ids": [
           "french-dioceses-b-batch4:vannes-gaps"
         ],
-        "scope": "One provisional state (1535) from Duine's report; no documented state. Gallica's 1535 copy was unreachable (Cloudflare 403).",
-        "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
-        "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
+        "scope": "One state documented from La Borderie's verbatim title and colophon of the 1535 missal (Paris, Yolande Bonhomme, 10 December 1535), with Duine's printing description.",
+        "reception_limit": "The title designates Vannes use; uptake is not established.",
+        "date_limit": "10 December 1535 is the colophon date as transcribed; the original was not viewed by this lane."
       },
       "witnesses": [
         {
@@ -33354,7 +33560,7 @@
           "start_year": 1535,
           "end_year": 1535,
           "date_role": "catalogue age attributed to a printed witness; imprint, approval and reception not independently authenticated",
-          "status": "inventory-witness-candidate-cited-by-provisional-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         }
       ],
       "component_profile": "western",
@@ -33365,17 +33571,21 @@
           "french-vannes-860-usuarium",
           "french-vannes-5824-usuarium",
           "french-b-duine-1906-breton-missals",
-          "french-b-liturgie-romaine-1849"
+          "french-b-liturgie-romaine-1849",
+          "french-b5-borderie-1891-bibliophiles-bretons",
+          "french-b5-evenou-2009-missel-de-paris"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/7631/view",
           "https://usuarium.elte.hu/book/860/view",
           "https://usuarium.elte.hu/book/5824/view",
           "https://books.google.com/books?id=W5x3Cfx-_2QC",
-          "https://books.google.com/books?id=ngdTayagE3UC"
+          "https://books.google.com/books?id=ngdTayagE3UC",
+          "https://archive.org/details/bulletin05bretgoog",
+          "https://archive.org/details/sacris-erudiri"
         ],
-        "inspection": "Batch 4 lane B viewed Duine 1906 pp. 7, 143–144 and the 1849 survey pp. 245–246, 381 on 2026-10-21. Gallica bpt6k313781z returned HTTP 403 (Cloudflare challenge).",
-        "target": "Inspect the 1535 Gallica copy and the 1530 Auray copy; La Borderie 1887; date the Roman adoption by its mandement."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. La Borderie's 1891 exhibition notes read for the 1535 Vannes missal.",
+        "target": "Inspect the 1530 and 1535 originals, any later Vannes missal, and the Roman restoration mandement (1847/1848)."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
       "inventory_status": "bounded-amiet-table-witness-census-documented",
@@ -33383,7 +33593,7 @@
         "french-vannes-usuarium-7631",
         "french-vannes-usuarium-860"
       ],
-      "missing_stage_chain": "No documented stage. Provisional 1535 (Bonhomme) from Duine. Missing: inspected 1530/1535 originals, any later Vannes missal, the Paris-books phase, Roman adoption act (1847 vs 1848)."
+      "missing_stage_chain": "Documented: 1535 (Bonhomme; transcribed title and colophon). Missing: the 1530 Regnault edition, the Paris-books phase (about 1775 to 1848) and the Roman adoption instrument."
     },
     {
       "id": "french-bayonne",
@@ -33699,12 +33909,16 @@
           "french-dioceses-b-batch4"
         ],
         "stage_ids": [],
-        "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "provisional_stage_ids": [
+          "french-dioceses-b-batch4:mirepoix-1753"
+        ],
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "gap_ids": [
           "french-dioceses-b-batch4:mirepoix-gaps"
         ],
-        "scope": "Exact bounded catalogue witnesses; no original-book or described stage could be supported for this route.",
+        "scope": "A provisional 1753 state (Chevalier's remark on a prose; Bergier's Clermont-rite statement); no original was reachable.",
         "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
         "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
       },
@@ -33715,7 +33929,7 @@
           "start_year": 1753,
           "end_year": 1753,
           "date_role": "catalogue age attributed to a printed witness; imprint, approval and reception not independently authenticated",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         }
       ],
       "component_profile": "western",
@@ -33723,21 +33937,23 @@
       "next_sources": {
         "inventory_source_ids": [
           "french-mirepoix-5801-usuarium",
-          "french-b-liturgie-romaine-1849"
+          "french-b-liturgie-romaine-1849",
+          "french-b5-bergier-1860-etudes-liturgiques"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/5801/view",
-          "https://books.google.com/books?id=ngdTayagE3UC"
+          "https://books.google.com/books?id=ngdTayagE3UC",
+          "https://archive.org/details/tudesliturgique00abbgoog"
         ],
-        "inspection": "Batch 4 lane B on 2026-10-21: Google Books feed ('missale mirapiscense', 'missale Champflour'), Numelyo ('Mirapiscense': 0); Europeana located only the Gallica copy. Gallica SRU/IIIF returned HTTP 403 (Cloudflare challenge); archive.org and BVMM timed out.",
-        "target": "Gallica bpt6k325514v when reachable; the 1753 mandate."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Lane helpers read archive.org scholarship and Tolosana originals; the owner re-viewed the cited key pages. Gallica bpt6k325514v refused access; Tolosana and Rosalis hold no Mirepoix missal.",
+        "target": "Inspect the 1753 missal's title leaf and mandate."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
       "inventory_status": "bounded-amiet-table-witness-census-documented",
       "candidate_ids": [
         "french-mirepoix-usuarium-5801"
       ],
-      "missing_stage_chain": "No stage. Reason: no original or edition-specific description was reachable. Any inspected Mirepoix missal; the 1753 Missale Mirapiscense (Champflour) exists in a Gallica copy (bpt6k325514v) that returned Cloudflare 403. After the see's suppression, the Carcassonne mandement of 29 June 1842 (1849 survey p. 346) notes that parishes from old Mirepoix, Saint-Papoul and Alet had kept their former churches' rites."
+      "missing_stage_chain": "Provisional: 1753. Missing: any inspected Mirepoix missal and its mandate."
     },
     {
       "id": "french-saint-omer",
@@ -33784,8 +34000,8 @@
           "https://usuarium.elte.hu/book/6919/view",
           "https://books.google.com/books?id=lyPil4vfUA4C"
         ],
-        "inspection": "Batch 4 lane B on 2026-10-21: Google Books feed (intitle:missale intitle:audomarense; full-view 'missale audomarense'), Europeana ('missale AND audomarense/audomarensis': 0), Numelyo ('Audomarense': 0), and the Saint-Omer bibliography (1887) pp. 77, 86–88, in-volume searches 'Audomarense', 'missale', '1785', 'Chalabre', 'romain'.",
-        "target": "Find and inspect a copy of the 1785 Missale Audomarense with its mandate; resolve the 1747 Paris-breviary adoption against the 1779 Ordo 'juxta … missale Romanum'."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. archive.org full-text searches for the 1785 Missale Audomarense, its mandate and the 1747 Paris-breviary adoption found only catalogue entries; Leroquais's 'Missel de Saint-Omer' (ms. 60) is the pre-1558 collegiate provost's book.",
+        "target": "Inspect the Brussels or Lille copy of the 1785 Missale Audomarense and its mandate; the 1886 pamphlet on the 1747 adoption; the 1779 Ordo."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
       "inventory_status": "bounded-amiet-table-witness-census-documented",
@@ -33837,8 +34053,8 @@
         "source_urls": [
           "https://usuarium.elte.hu/book/5803/view"
         ],
-        "inspection": "Batch 4 lane B on 2026-10-21: Google Books feed ('missale sarlatense', 'missale sarlatense Montesquiou'), Numelyo ('Sarlatense': 0); Europeana located only the Gallica copy. Gallica SRU/IIIF returned HTTP 403 (Cloudflare challenge); archive.org and BVMM timed out.",
-        "target": "Gallica bpt6k325684k when reachable; the 1777 mandate."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Lane helpers read archive.org scholarship and Tolosana originals; the owner re-viewed the cited key pages. Gallica bpt6k325684k refused access again.",
+        "target": "Inspect the 1777 Missale Sarlatense and its mandate."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
       "inventory_status": "bounded-amiet-table-witness-census-documented",
@@ -33855,21 +34071,25 @@
       "canonical_tradition_ids": [
         "french-dioceses-b-batch4:tulle"
       ],
-      "mapping_strength": "catalogue-witness-links-only-no-canonical-stage-assigned",
+      "mapping_strength": "selected-bounded-publication-attestation-no-recension-or-actual-reception-inference",
       "dossier_coverage": {
-        "status": "no-new-researched-stage-sequence",
+        "status": "selected-stages-available",
         "dossier_ids": [
           "french-dioceses-b-batch4"
         ],
-        "stage_ids": [],
+        "stage_ids": [
+          "french-dioceses-b-batch4:tulle-1777"
+        ],
         "provisional_stage_ids": [],
-        "text_coverage_counts": {},
+        "text_coverage_counts": {
+          "not-transcribed": 1
+        },
         "gap_ids": [
           "french-dioceses-b-batch4:tulle-gaps"
         ],
-        "scope": "Exact bounded catalogue witnesses; no original-book or described stage could be supported for this route.",
-        "reception_limit": "No local adoption, continuous-use interval, normative revision or independent recension follows from title, printing year, origin label or catalogue membership.",
-        "date_limit": "Witness years are structured catalogue/object chronology, not the beginning or end of liturgical use."
+        "scope": "One state documented by a scholar's quotation of the mandate printed at the head of the 1777 Missale Tutellense (the Paris missal under a diocesan title).",
+        "reception_limit": "Not established.",
+        "date_limit": "1777 is the publication year given by Évenou; the mandate's date is not quoted."
       },
       "witnesses": [
         {
@@ -33878,7 +34098,7 @@
           "start_year": 1777,
           "end_year": 1777,
           "date_role": "catalogue age attributed to a printed witness; imprint, approval and reception not independently authenticated",
-          "status": "inventory-witness-candidate-not-a-stage"
+          "status": "inventory-witness-candidate-cited-by-selected-stage"
         }
       ],
       "component_profile": "western",
@@ -33886,21 +34106,25 @@
       "next_sources": {
         "inventory_source_ids": [
           "french-tulle-7617-usuarium",
-          "french-b-episcopat-1907"
+          "french-b-episcopat-1907",
+          "french-b5-evenou-2009-missel-de-paris",
+          "french-b5-bergier-1860-etudes-liturgiques"
         ],
         "source_urls": [
           "https://usuarium.elte.hu/book/7617/view",
-          "https://books.google.com/books?id=jcozAQAAMAAJ"
+          "https://books.google.com/books?id=jcozAQAAMAAJ",
+          "https://archive.org/details/sacris-erudiri",
+          "https://archive.org/details/tudesliturgique00abbgoog"
         ],
-        "inspection": "Batch 4 lane B on 2026-10-21: Google Books feed ('missale tutellense', 'missale tutellense Rafelis'), Europeana and Numelyo found no full-view or reachable original. Gallica SRU/IIIF returned HTTP 403 (Cloudflare challenge); archive.org and BVMM timed out.",
-        "target": "An original of the 1777 missal and its mandate; the 1866 restoration act."
+        "inspection": "Batch 5 lane B (2026-10-22): archive.org search, full-text search and page images; Gallica returned HTTP 403 (Cloudflare), BVMM timed out, HathiTrust page views returned 403 and ISTC served a bot challenge, none circumvented. Lane helpers read archive.org scholarship and Tolosana originals; the owner re-viewed the cited key pages.",
+        "target": "Inspect the 1777 missal and its mandate; date the Roman restoration (1853, 1861 or 1866)."
       },
       "caveat": "Catalogue clusters and first canonical witness admissions are research objects, not distinct-edition, native-recension, complete-copy or local-reception counts.",
-      "inventory_status": "bounded-amiet-table-witness-census-documented",
+      "inventory_status": "bounded-scholarly-stage-evidence-documented",
       "candidate_ids": [
         "french-tulle-usuarium-7617"
       ],
-      "missing_stage_chain": "No stage. Reason: no original or edition-specific description was reachable. Any inspected Tulle missal, including the 1777 Missale Tutellense (Rafélis de Saint-Sauveur). The 1849 survey lists Tulle as Parisian; L'épiscopat français (p. 655) dates the restoration of the Roman liturgy to 1866 under Bishop Berteaud."
+      "missing_stage_chain": "Documented: 1777 (quoted mandate). Missing: the original, earlier Tulle books and the Roman restoration instrument."
     },
     {
       "id": "historic-tarragona-use",
@@ -35713,9 +35937,9 @@
       "This audit records lane stages, transitions and gaps but creates none itself; no whole-book text, ancestry permission or local reception follows from a mapping, and final broader gates remain separate"
     ],
     "coverage_status_counts": {
-      "no-new-researched-stage-sequence": 44,
+      "no-new-researched-stage-sequence": 33,
       "related-dossier-only-local-reception-unresearched": 3,
-      "selected-stages-available": 127
+      "selected-stages-available": 138
     },
     "limit": "Dossier presence is a canonical file snapshot. Exact tradition and stage references resolve, but no count is a completeness score or proof of local reception.",
     "batch2_review": {
