@@ -4,7 +4,7 @@ schema_version = 1
 id = "register-remediation-2026-10-21"
 owner = "PROJECT-WORK.md"
 promise = "Find why AI-written proper studies still read with unearned profundity, empty significance, jargon, ham-fisted hokiness and little subtlety, remediate the guidance and the proper-study workflow, and prove the remediation by revising the Claude 1962 Christ the King study, concise study and homily under it, with mechanical sanity checks, a review-side test, a from-scratch generation test and independent cold review; on 21 October 2026 the maintainer then asked for the from-scratch homily and themes pages to be installed after checks, and for the result to be pushed to main."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "register-causes"
@@ -63,7 +63,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "register-publication"
   criterion = "The work reaches origin/main as a clean fast-forward after check-deployment-sources, public-site and public-alpha verify --deployment-target github-pages pass locally, and the Pages workflow run it triggers succeeds."
-  status = "open"
+  status = "pass"
   evidence = ["workflows/reviews/register-remediation-2026-10-21/RECORD.md"]
   check = "contains"
   path = "workflows/reviews/register-remediation-2026-10-21/RECORD.md"

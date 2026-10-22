@@ -11,7 +11,7 @@ Last reconciled: 2026-10-21.
 
 <!-- promised-deliverable: register-remediation-2026-10-21 -->
 
-**In progress: installing the from-scratch homily and themes pages, then pushing to main at the maintainer's direction.** The maintainer reported that produced
+**Complete and published.** Pushed to `main` at `90e13e78f`; the Pages deployment succeeded and the leaf's live web edition and PDFs match the verified build. The maintainer reported that produced
 documents still fall into unearned profundity, empty significance, jargon,
 ham-fisted hokiness and little subtlety, naming the Claude 1962 Christ the King
 documents, and asked for the cause, a remediation, its execution on those
@@ -25,10 +25,11 @@ documents are revised and their web edition, catalogue and release bindings
 regenerated, and the verification — version-14 reviews, from-scratch
 generation, blind comparisons, two fidelity reviews and the mechanical gates
 — is in [the remediation record](workflows/reviews/register-remediation-2026-10-21/RECORD.md).
-Open for the maintainer: whether to install the from-scratch homily and
-themes pages that every final judge preferred, and whether to revise other
-leaves with the same defect. No push, merge or deployment is part of this
-work.
+At the maintainer's direction the from-scratch homily and themes pages that
+every final judge preferred are installed after two further fidelity reviews.
+Open: the maintainer decided that the next real `proper-study` production
+under version 14 tests the guidance end to end before any backfill of other
+leaves with the same defect.
 
 ## Missal reader interrupted-work recovery, 2026-10-21
 
@@ -116,10 +117,20 @@ including commit metadata, with no credentials, machine-specific references or
 unintended paths. Only the four already-reviewed public-domain source binaries
 are newly reachable. The normal push was blocked before execution because the
 local secret scanner could not buffer the full outgoing-history diff.
-Remote main remains `90e13e78fd107e3649fe97870f8a76da39e52c5a`; no force-push,
+At that blocked attempt, remote main was
+`90e13e78fd107e3649fe97870f8a76da39e52c5a`; no force-push,
 scanner bypass or remote change occurred. A maintainer terminal push is required
 before automatic Pages and live-route verification can proceed. This independent
 disclosure audit does not override the blocked control.
+
+Subsequent remote verification found
+`37531cbc22ca16a1b4107dd3496c5b18d6730236` and no recovery checkpoint on GitHub,
+despite reported terminal success. Its three-file documentation-only update is
+now integrated, preserving the other workstream's completed publication record.
+It changes no served or publication-building input; the previously passing
+publication gates remain applicable. The merged ledger validates 86 tracked,
+70 complete, and release bindings remain exact. Recovery publication stays
+blocked until an actual remote ref includes the prepared workspace checkpoint.
 The full annual text-completeness promise remains separate and open;
 structural renderability must not stand in for missing source text.
 

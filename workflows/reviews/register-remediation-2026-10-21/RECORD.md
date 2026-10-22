@@ -236,6 +236,24 @@ and to push the result to main.
 The judged drafts remain in `evidence/generated/`; the installed texts differ
 from them by the changes above.
 
+## Publication
+
+The maintainer asked for the work to be pushed to main. The branch was rebased
+onto `origin/main` at `c9108e350`; the only conflicts were the release
+record's rights-table hash, resolved by re-recording the leaf's web edition and
+the document catalogue with `make refresh-release-bindings ONLY=…`. The
+deployment gate then found the Claude publication inventory stale for the
+eighteen changed sources, refreshed in `90e13e78f`.
+
+With every publication PDF built locally (277), the three gates the Pages
+workflow runs passed: `make check-deployment-sources`, `make public-site` and
+`tools/tpt public-alpha verify --deployment-target github-pages`. The push
+`c9108e350..90e13e78f` to `main` was a fast-forward. The Pages workflow run
+for `90e13e78f` succeeded (deploy job success), and so did Repository hygiene.
+The live web edition and the three PDFs of the leaf at `https://mystago.gy/`
+are byte-identical to the verified local build. This record is a
+documentation-only receipt and claims nothing about its own deployment.
+
 ## What the judges can and cannot show
 
 Every judge is a Claude model, and the defect is a Claude habit. Judges
