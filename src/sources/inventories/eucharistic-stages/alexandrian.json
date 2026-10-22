@@ -270,6 +270,26 @@
       "checked_on": "2026-10-21",
       "status": "inspected",
       "limitations": "Identifies a catalogue misdating only: this copy is the 1902 Orthodox comparison book already held from Bonn, not the 1898 Catholic book. It supplies no evidence about the 1898 text. Two other Google records give the 1898 Catholic book (Catholic St Mark press, 317 pages: sVGgIgAACAAJ and Ha5KHQAACAAJ) without any preview. The HathiTrust item itself was not opened (HathiTrust refused scripted access); its identity with this Google copy is inferred from the shared Oxford barcode 308011427Q."
+    },
+    {
+      "id": "alexandrian-stages-synod1898",
+      "title": "Synodus Alexandrina Coptorum habita Cairi in Aegypto anno MDCCCXCVIII (Rome: Typographia Polyglotta S. C. de Propaganda Fide, 1899); ULB Bonn digital copy 324533",
+      "url": "https://digitale-sammlungen.ulb.uni-bonn.de/i3f/v20/324533/manifest",
+      "kind": "primary-act",
+      "inspection": "Page images read 2026-10-22 from the Bonn IIIF/webcache copy (public-domain mark): index pp. 343–349; Sectio II cap. I art. II (pp. 51–53, liturgical language and books); cap. III art. IV prima pars V (pp. 90–92, form of the Eucharist and the Spirit invocation); secunda pars I canons I–XV (pp. 105–108, the sacred liturgy); recognitio decree p. 266. A Latin OCR of the introduction and the whole of Sectio II was used only to look for any mention of a new Euchologion edition; none was found, and that negative is not relied on.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "A normative act of the Coptic Catholic synod (sessions 18 January to 3 June 1898; acts recognized by Propaganda Fide for oriental-rite affairs on 1 May 1899 after papal approval in audience of 23 April 1899). It prescribes the contents and use of the Euchologion and several Mass rubrics but does not name, date or describe the 1898 Cairo printing, so it cannot show which of its prescriptions that book prints or when each first entered the printed text."
+    },
+    {
+      "id": "alexandrian-stages-mercer1915",
+      "title": "Samuel A. B. Mercer, The Ethiopic Liturgy: Its Sources, Development, and Present Form (Milwaukee and London, 1915)",
+      "url": "https://archive.org/details/ethiopicliturgyi00mercuoft",
+      "kind": "scholarship",
+      "inspection": "Printed pp. 146 (published texts) and 148 read on page images rendered from the archive.org PDF (PDF pages 164 and 166; SHA-256 aaee45cf…2bae) on 2026-10-22; the text layer was used only to locate them.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "A 1915 scholarly characterization; Mercer does not give folio loci in the 1548 book for the changes he lists, and his statements were not checked on the 1548 pages because Google Books refused page images to scripted access on 2026-10-22."
     }
   ],
   "stages": [
@@ -404,10 +424,30 @@
           "source_id": "alexandrian-stages-chaine1912",
           "locus": "Printed p. 229, opening paragraph",
           "claim": "Identifies Catholic Patriarchate publication in 1898 and a modified re-edition of Tuki’s 1736 text."
+        },
+        {
+          "source_id": "alexandrian-stages-synod1898",
+          "locus": "Sectio II cap. I art. II n. 4(a) and n. 5, pp. 52–53",
+          "claim": "The 1898 Coptic Catholic synod lists the Euchologium seu Missale as containing the three Alexandrian anaphoras preceded by the evening and morning incense offices, with the Katameros, hymn book, Synaxarium and homilies as complements, and requires every edition of the liturgical books to conform to the most ancient exemplars and to those approved by the Apostolic See."
+        },
+        {
+          "source_id": "alexandrian-stages-synod1898",
+          "locus": "Sectio II cap. III art. IV secunda pars I, canons I–III, VII and XIII, pp. 105–108",
+          "claim": "Only the three anaphoras (that ascribed to Mark and said to be arranged by Cyril, Basil and Gregory Nazianzen) may be used; Basil is customary on ordinary days and lesser feasts and Gregory on greater feasts of the Lord, and Mark is commended for his feast and fast days; no priest may celebrate without the printed exemplar before him; the Roman custom of joining thumb and forefinger after the consecration of the bread is stated as already in force; clergy genuflect after each consecration and before the fraction."
+        },
+        {
+          "source_id": "alexandrian-stages-synod1898",
+          "locus": "Sectio II cap. III art. IV prima pars V, pp. 90–92",
+          "claim": "The words of institution are declared the form of consecration; the Spirit invocation of the Alexandrian Basil liturgy is quoted in Latin and interpreted as presupposing a consecration already made; the canons require adoration after each consecration and the invocation to be said with head deeply bowed while ministers and people remain in adoration."
+        },
+        {
+          "source_id": "alexandrian-stages-synod1898",
+          "locus": "Decretum recognitionis, p. 266",
+          "claim": "Dates the synod (18 January–3 June 1898) and its Roman recognition (examined 27 February 1899, approved in papal audience 23 April 1899, decree 1 May 1899)."
         }
       ],
-      "limitations": "Original 1898 title, pagination and revised prayer wording not yet inspected. 1898 is an attested publication state, not necessarily when relocation first occurred.",
-      "reception": "Chaîne identifies the Catholic Patriarchate as publisher; Hammerschmidt independently lists this as a Catholic edition. Dates of actual local adoption are not established."
+      "limitations": "Original 1898 title, pagination and revised prayer wording not yet inspected. 1898 is an attested publication state, not necessarily when relocation first occurred. Addendum 2026-10-22: the 1898 synod acts (an inspected primary act) now fix the normative frame of the Catholic Euchologion in the same year: the three-anaphora repertoire with the incense offices, conformity to ancient and Apostolic-See-approved exemplars, a printed exemplar at every celebration, and adoration rubrics at the consecration and the Spirit invocation. They do not mention the 1898 printing or the relocation of the intercession, so they neither date nor confirm Lietzmann's description; the book itself remains unlocated (see the gap row).",
+      "reception": "Chaîne identifies the Catholic Patriarchate as publisher; Hammerschmidt independently lists this as a Catholic edition. Dates of actual local adoption are not established. The 1898 synod of the Coptic Catholic hierarchy, recognized at Rome in 1899, makes the printed Euchologion obligatory at every celebration and limits use to its three anaphoras; parish-level adoption dates of the 1898 printing remain unestablished."
     },
     {
       "id": "alexandrian-stages-geezum039",
@@ -480,10 +520,15 @@
           "source_id": "alexandrian-stages-rome1548",
           "locus": "Preface PP8–PP10",
           "claim": "The Latin preface presents the Ethiopians as devoted to the Roman Church while noting that they keep rites the universal Church has abrogated; it contains no approval of the liturgical text."
+        },
+        {
+          "source_id": "alexandrian-stages-mercer1915",
+          "locus": "Printed p. 146, Published texts a",
+          "claim": "Describes the 1548 Ordo communis with the Apostles anaphora as made for the Uniates: Monophysite names omitted, the Filioque added to the Creed, and other changes such as the mutilation of the Invocation."
         }
       ],
-      "limitations": "Section headings and paratext only; the Ge’ez prayers are not transcribed or compared with UM-039, later manuscripts or the Catholic printings. The section starting on f. 174r is unidentified. The printing date is the book’s; it does not date the composition of any anaphora. Only the INTROITVS MISSE heading was read at f. 158r; identifying ff. 158r–167v as the Ordo communis with the anaphora of the Apostles follows Hammerschmidt (inventory source geez-hammerschmidt-anaphoras-preview), not a heading on the page.",
-      "reception": "Printed in Rome under papal patronage by an Ethiopian monk of Santo Stefano; no approbation, imprimatur or Roman revision is printed on the inspected leaves, and no use by a Catholic community is evidenced. The Propaganda Fide college ex libris shows later Roman ownership only."
+      "limitations": "Section headings and paratext only; the Ge’ez prayers are not transcribed or compared with UM-039, later manuscripts or the Catholic printings. The section starting on f. 174r is unidentified. The printing date is the book’s; it does not date the composition of any anaphora. Only the INTROITVS MISSE heading was read at f. 158r; identifying ff. 158r–167v as the Ordo communis with the anaphora of the Apostles follows Hammerschmidt (inventory source geez-hammerschmidt-anaphoras-preview), not a heading on the page. Addendum 2026-10-22: Mercer (1915, p. 146) attributes Catholic-oriented alterations to the printed text (omitted Monophysite names, Filioque in the Creed, an altered Invocation); these are recorded as his scholarly description only, because the corresponding 1548 pages were not read.",
+      "reception": "Printed in Rome under papal patronage by an Ethiopian monk of Santo Stefano; no approbation, imprimatur or Roman revision is printed on the inspected leaves, and no use by a Catholic community is evidenced. The Propaganda Fide college ex libris shows later Roman ownership only. Mercer (1915) describes the text as prepared for the Uniates; that is an attribution of editorial intent, not evidence of use by a Catholic community."
     },
     {
       "id": "alexandrian-stages-geez1945",
@@ -665,6 +710,11 @@
           "source_id": "alexandrian-stages-semharay",
           "locus": "PDF p. 2, paragraph beginning Therefore",
           "claim": "English account identifies place, year and Catholic editorial context."
+        },
+        {
+          "source_id": "alexandrian-stages-mercer1915",
+          "locus": "Printed p. 148, first paragraph",
+          "claim": "By 1915 the Abyssinian Uniates possessed printed liturgical books while the Ethiopian Orthodox Church had no printed liturgy."
         }
       ],
       "limitations": "Original title, approval and one prayer are inspected; whole-book collation with 1890 is impossible without that book. Printed page numerals at the anaphora are not securely legible, so loci are PDF pages. The approbation’s claim of revision is unquantified. The Keren studies’ 1913 matches the approbation year; no separate 1913 impression is evidenced, so the stage’s publication bounds follow the imprint (1914/15).",
@@ -924,9 +974,9 @@
       "id": "alexandrian-stages-gap-coptic1898",
       "tradition_id": "coptic-catholic",
       "period": "1736–1898",
-      "missing": "Original 1898 book images, authorizing act, precise intercession loci and particular textual alterations.",
-      "next_source": "Cairo 1898 Euchologion, 317 pages (Catholic St Mark press), WorldCat 560963690; Google records sVGgIgAACAAJ and Ha5KHQAACAAJ give no preview. Correction 2026-10-21: the Oxford full-view copy (HathiTrust oxu1.308011427 = Google SI-xD4DY6GAC, barcode 308011427Q) catalogued as 1898 is the 1902 Orthodox Euchologion of ʿAbd al-Masīḥ Ṣalīb by its title page, so it is not a route to the 1898 book. Seek original intercession pages and cup loci Cyril p. 21, Gregory p. 28, Basil p. 63 supplied by the church’s comparative article.",
-      "consequence": "The relocation is documented by Lietzmann and dependence on Tuki is attributed by Chaîne; the actual prayer comparison and date of introduction remain open."
+      "missing": "Images of the 1898 Catholic Euchologion itself (title, imprimatur or patriarchal approval, pagination), its intercession placement and the actual altered wording. The same year's synodal norm for the book is now inspected (Synodus Alexandrina Coptorum, Rome 1899: three anaphoras with incense offices, conformity to approved exemplars, obligatory printed exemplar, consecration and invocation rubrics), but it does not mention the printing or the intercession.",
+      "next_source": "The physical 1898 book: Cairo, Catholic St Mark press, 317 pages (Kammerer 1410: 56, 113, 61, 46 and 41 pages; WorldCat 560963690; Google sVGgIgAACAAJ and Ha5KHQAACAAJ without preview). Searched 2026-10-22 without finding images: archive.org metadata search, the HathiTrust catalogue API (only the Oxford record 103390672, whose copy is the 1902 Orthodox Euchologion by barcode; HathiTrust search refused), BnF catalogue SRU, and the complete 92-title Coptic section of ULB Bonn (Goussen collection: 1887, 1902 and 1906 Orthodox euchologia, a 1899 Catholic Pascha book sealed under Patriarch Kyrillos II, but no 1898 Euchologion). Remaining routes: Coptic Catholic Patriarchate holdings, Vatican and PIO holdings, the WorldCat holders, and the church's comparative article (coptcatholic.net/1385), whose cup loci Cyril p. 21, Gregory p. 28, Basil p. 63 show that its author used a copy.",
+      "consequence": "The relocation is documented by Lietzmann and dependence on Tuki is attributed by Chaîne; the synod of 1898 documents the book's normative frame. The actual 1898 prayer comparison and the date the intercession moved remain open."
     },
     {
       "id": "alexandrian-stages-gap-coptic1934-modern",
@@ -934,14 +984,14 @@
       "period": "1898–present",
       "missing": "Original Cairo 1934 and Rome 1971 books, exact common-rubric deltas, acts and later received Arabic/Coptic revisions. The 1971 book is now identified with a reported 1957 synodal connection.",
       "next_source": "Rome 1971 Khulaji of the Church of Alexandria (Cyril p. 627, Gregory p. 498, Basil p. 305); Cairo 1934 Euchologium; Coptic Catholic Patriarchate/Vatican/PIO holdings. Church bibliography entries 47 and 52 also identify the complementary Basil chant book (1974; later impressions 1996/2006) and Basil order (1987; ninth printing 2009). No complete original 1971 volume was recovered from Arabic/Latin title searches or the church’s public text pages.",
-      "consequence": "A 1971 three-anaphora state can be positioned, but exact 1898–1971 or later revision edges require the original books. Neither a two-anaphora title nor later reprint numbers establish suppression or substantive reform."
+      "consequence": "A 1971 three-anaphora state can be positioned, but exact 1898–1971 or later revision edges require the original books. Neither a two-anaphora title nor later reprint numbers establish suppression or substantive reform. The 1898 synod (pp. 105–106) expressly retained the Mark/Cyril anaphora beside Basil and Gregory, so a later two-anaphora title would need its own evidence before any suppression is asserted."
     },
     {
       "id": "alexandrian-stages-gap-geez-ancient-reception",
       "tradition_id": "geez-catholic",
       "period": "Aksumite witness→Catholic printings",
-      "missing": "The manuscript or recension chain used by the Catholic editors of 1890, 1913 and 1945; any collation of the 1548 Roman printing with UM-039, later manuscripts or the Catholic books. The 1548 printing is now positioned from its own leaves; its paratext shows papal-reign dating and patronage but no approbation, Roman revision or Catholic use.",
-      "next_source": "Collate the 1548 Ordo communis and Apostles anaphora (Google jXZRAAAAcAAJ ff. 158r–167v) with the Asmara book PDF pp. 14–45 and with UM-039 ff. 46r–62v; identify the section beginning f. 174r; examine the Napoli copy (Google N0sAHdb4ANIC), the 1549 Latin rendering and Catholic editorial dossiers (Propaganda Fide, 1888–1913 and 1940–44).",
+      "missing": "The manuscript or recension chain used by the Catholic editors of 1890, 1913 and 1945; any collation of the 1548 Roman printing with UM-039, later manuscripts or the Catholic books. The 1548 printing is now positioned from its own leaves; its paratext shows papal-reign dating and patronage but no approbation, Roman revision or Catholic use. Mercer (1915, p. 146) now supplies a scholarly description of Catholic-oriented changes in the 1548 text (Monophysite names omitted, Filioque added to the Creed, Invocation altered); the 1548 pages carrying them have not been located or read.",
+      "next_source": "Collate the 1548 Ordo communis and Apostles anaphora (Google jXZRAAAAcAAJ ff. 158r–167v) with the Asmara book PDF pp. 14–45 and with UM-039 ff. 46r–62v; identify the section beginning f. 174r; examine the Napoli copy (Google N0sAHdb4ANIC), the 1549 Latin rendering and Catholic editorial dossiers (Propaganda Fide, 1888–1913 and 1940–44). Locate the Creed and the Invocation in ff. 158r–167v of Google jXZRAAAAcAAJ (page images refused to scripted access on 2026-10-22) or another copy, and check Mercer's three changes there before any 1548 revision claim.",
       "consequence": "Two separate early witnesses (UM-039 and Rome 1548) are positioned without any asserted line of descent to the Catholic printings."
     },
     {
@@ -949,7 +999,7 @@
       "tradition_id": "geez-catholic",
       "period": "1913–1945 revision",
       "missing": "Original 1945 title, imprint, index, approval and prayer pages; full 1940–44 editorial dossiers; original pages underlying the retrospective table.",
-      "next_source": "A lawful full scan/manifest for Vatican Missale aethiopicum (1945; LEV lead Meshàfé Keddasie, 234 pp., code 0927-8), and Congregatio Orientalis: Documenti relativi al Rito Etiopico I–II (1940), Notationes atque animadversiones de Anaphoris Ritus Aethiopici (1940), Liturgia-Etiopi. Revisione e ristampa del Messale Etiopico, Plenaria seconda, Allegati I–II (1944). These remain bibliography/access leads, not acquired originals.",
+      "next_source": "A lawful full scan/manifest for Vatican Missale aethiopicum (1945; LEV lead Meshàfé Keddasie, 234 pp., code 0927-8), and Congregatio Orientalis: Documenti relativi al Rito Etiopico I–II (1940), Notationes atque animadversiones de Anaphoris Ritus Aethiopici (1940), Liturgia-Etiopi. Revisione e ristampa del Messale Etiopico, Plenaria seconda, Allegati I–II (1944). These remain bibliography/access leads, not acquired originals. Searched 2026-10-22 without result: archive.org metadata search (Missale aethiopicum, Ge'ez-script መጽሐፈ ቅዳሴ and ሥርዓተ ቅዳሴ, qeddase spellings, Italian and French titles), the 49-title Ethiopian section of ULB Bonn (only the Asmara book), and the text layers of Orientalia Christiana Periodica 11–14 (1945–1948).",
       "consequence": "1890/1913 are identified preceding editions and 1945 revisions are source-described; exact original-page collation and canonical chronology remain open."
     },
     {
@@ -965,7 +1015,7 @@
       "tradition_id": "geez-catholic",
       "period": "1890–1913 Catholic printings",
       "missing": "Original title, index, approval and prayer pages of Keren 1890; the extent of the revision claimed by the 1913 approbation. The Asmara original (approved 1913, imprint 1914/15) is inspected and the Keren study’s sampled prayer is identified as the Apostles anaphora’s anamnesis and Spirit petition, whose 1913 wording is checked on PDF p. 45.",
-      "next_source": "A lawful complete scan or stable manifest of Keren 1890 (Bonn’s catalogue for the Asmara copy names a Keren 1890 imprint; Bonn search now returns a browser-verification page). Compare 1890 with Asmara PDF pp. 44–45 and the section openings; check the study’s 1890 column against that original.",
+      "next_source": "A lawful complete scan or stable manifest of Keren 1890 (Bonn’s catalogue for the Asmara copy names a Keren 1890 imprint; Bonn search now returns a browser-verification page). Compare 1890 with Asmara PDF pp. 44–45 and the section openings; check the study’s 1890 column against that original. Searched 2026-10-22: the complete 49-title Ethiopian section of ULB Bonn (public IIIF collection 17268) holds the Asmara book but no Keren 1890 printing; archive.org metadata search found none.",
       "consequence": "The 1913 approval and one prayer are documented from the original; 1890 remains source-described, so the 1890–1913 relation stays an attributed witness succession."
     }
   ]

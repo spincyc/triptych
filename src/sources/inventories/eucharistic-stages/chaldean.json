@@ -16,7 +16,7 @@
       "label": "Chaldean Catholic recension",
       "family": "East Syriac",
       "scope": "Chaldean Catholic native book line; Syro-Malabar is owned separately.",
-      "coverage_note": "Bounded states in 1767, 1901, 2007, 2014 and 2020. The 1971 revision and early Catholic manuscripts remain acquisition gaps. The 2025 reprint is not counted as a revision."
+      "coverage_note": "Bounded states in 1767, 1901, 1906 (Urmia), 2007, 2014 and 2020. The 1971 revision, the 1936 reprint text and early Catholic manuscripts remain acquisition gaps. The 2025 reprint is not counted as a revision."
     }
   ],
   "sources": [
@@ -199,6 +199,36 @@
       "checked_on": "2026-10-16",
       "status": "inspected",
       "limitations": "Not an independent substantive reform. Permission for overseas parishes to print for use is not a general repository redistribution licence. Confirmation year stated broadly as 2020; original act still needed."
+    },
+    {
+      "id": "chaldean-east-syriac:delly1957",
+      "title": "Emmanuel-Karim Delly, L'édition du Missel chaldéen de 1901, Orientalia Christiana Periodica 23 (1957), 159–170",
+      "url": "https://archive.org/details/orientalia-christiana-periodica_1957_23",
+      "kind": "scholarship",
+      "inspection": "Whole article read in the archive.org text layer and pp. 161, 162, 164, 165 and 170 read on page images (archive.org page index n = printed page − 1) on 2026-10-22. Delly reports Propaganda archive letters of 1894–1902 by number and date.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "A Chaldean priest's archival study covering 1890–1902 only; quotations of Propaganda letters are mediated by the article, and the archive itself was not consulted. It summarizes the 1767 consecration placement without page loci in the 1767 book."
+    },
+    {
+      "id": "chaldean-east-syriac:voste1945",
+      "title": "Jacques-Marie Vosté, Paul Bedjan, le lazariste persan, Orientalia Christiana Periodica 11 (1945), 45–102",
+      "url": "https://archive.org/details/orientalia-christiana-periodica_1945_11",
+      "kind": "scholarship",
+      "inspection": "Section 2 'Le missel chaldéen' (pp. 67–73) read in the archive.org text layer; pp. 68, 71 and 73 read on page images (archive.org page index n = printed page + 3) on 2026-10-22. Vosté states that the chapter rests on the Propaganda dossier Scritture riferite, Caldei 1890–1892, rubric Messale Caldeo.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Archival narrative mediated by the author; it does not list every imprint of the Urmia presses. It establishes that Bedjan's commission for the Chaldean missal was withdrawn on 24 March 1890, not that no Lazarist liturgical printing of any kind appeared at Urmia that year."
+    },
+    {
+      "id": "chaldean-east-syriac:urmia1906-bonn",
+      "title": "Taksā kaldāyā / Missale Chaldaicum (Urmia: Lazarist Fathers' press, 1906), ULB Bonn copy 3058506 (Goussen collection)",
+      "url": "https://digitale-sammlungen.ulb.uni-bonn.de/i3f/v20/3058506/manifest",
+      "kind": "primary-book",
+      "inspection": "IIIF manifest metadata (11, 245 pp.; Urmia, Lazarist Fathers, 1906) and page images of canvas 266 (title), 265 (approbation leaf) and 262 (French preface) read on 2026-10-22; the canvas order runs from the back of the Syriac book.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Title, approbation and French preface only; the Syriac preface and the 245-page body (ordinary and propers) were not read or collated with Rome 1767. The approbation leaf carries no date."
     }
   ],
   "stages": [
@@ -345,9 +375,19 @@
           "source_id": "chaldean-east-syriac:macomber1966",
           "locus": "p. 357 siglum Cr; p. 366 line 53 apparatus; p. 345 note 2",
           "claim": "Identifies Cr as 1767 pp. 280–286 and distinguishes the older printed omission from the later Mosul reading."
+        },
+        {
+          "source_id": "chaldean-east-syriac:delly1957",
+          "locus": "p. 162 n. 2; p. 164, second paragraph",
+          "claim": "The Roman edition of 1767 excluded the second and third anaphoras, and in its anaphora of the Apostles the double consecration of bread and wine was placed at the beginning of the fraction rite."
+        },
+        {
+          "source_id": "chaldean-east-syriac:voste1945",
+          "locus": "p. 68 and n. 4",
+          "claim": "The Propaganda missal printed in 1767 contained only the first (Apostles) liturgy; by 1885 the edition was exhausted."
         }
       ],
-      "limitations": "Only the titles and selected anaphoral pages have been checked. No claim of first Catholic printing or complete list of Latin/Maronite additions. Institution placement at the fraction still requires a precise comparison.",
+      "limitations": "Only the titles and selected anaphoral pages have been checked. No claim of first Catholic printing or complete list of Latin/Maronite additions. Institution placement at the fraction still requires a precise comparison. Addendum 2026-10-22: Delly (1957, p. 164) describes the 1767 Apostles anaphora as printing the double consecration at the start of the fraction, and Delly (p. 162 n. 2) and Vosté (1945, p. 68) report that the book omitted the second and third anaphoras; Vosté does not describe the consecration placement; the exact 1767 page of the displaced consecration has not been located on the low-resolution scan, so this remains a scholarly description.",
       "reception": "Publication by the Roman Propaganda Congregation identifies a Catholic book; breadth and continuity of local adoption not independently established."
     },
     {
@@ -393,10 +433,66 @@
           "source_id": "chaldean-east-syriac:source-mosul1901",
           "locus": "Printed p. 35/PDF 67",
           "claim": "Native intercession directly checked against Rome 1767 printed p. 284/PDF 339."
+        },
+        {
+          "source_id": "chaldean-east-syriac:delly1957",
+          "locus": "pp. 162–170",
+          "claim": "From Propaganda archive letters: the text was revised by Patriarch Khayyat's commission and the bishops; Propaganda had it printed by the Mosul Dominicans at its own expense while expressly granting no direct or indirect approval (letters of 18 September 1896 and 22 August 1901); printing was suspended after Khayyat's death on 6 November 1899 amid episcopal dispute over the text and over rubrics added by Joseph Khayyat; publication was announced on 21 March 1902."
+        },
+        {
+          "source_id": "chaldean-east-syriac:voste1945",
+          "locus": "p. 73",
+          "claim": "The Mosul Dominican missal contains the three liturgies; the lections, the missal for the dead and the baptism and marriage ritual were issued separately."
         }
       ],
-      "limitations": "The companion volume is not a second stage. 1901 attests these readings; it does not date their introduction. Macomber also finds the post-Sanctus insertion in a late nineteenth-century Mar Ya‘qob ritual.",
-      "reception": "Catholic imprimatur from Henricus Altmayer, Apostolic Delegate, 22 October 1901. It authorizes printing; it does not establish universal use or an independent complete reform."
+      "limitations": "The companion volume is not a second stage. 1901 attests these readings; it does not date their introduction. Macomber also finds the post-Sanctus insertion in a late nineteenth-century Mar Ya‘qob ritual. Addendum 2026-10-22: Delly reports that the Chaldean synod's approval was conditional on a revision by two bishops that, according to the Apostolic Delegation, was not carried out, and that Propaganda authorized printing without approving the text; the restoration of the second and third anaphoras relative to 1767 is source-described, not collated here.",
+      "reception": "Catholic imprimatur from Henricus Altmayer, Apostolic Delegate, 22 October 1901. It authorizes printing; it does not establish universal use or an independent complete reform. Delly (p. 170) reports opposition from Archbishop Thomas Audo of Urmia, who issued his own 1906 missal, and states that the 1901 book, reprinted in 1936 at the patriarchal press in Mosul, was in use in all Chaldean dioceses including Persia by 1957."
+    },
+    {
+      "id": "chaldean-east-syriac:urmia1906",
+      "tradition_id": "chaldean-catholic",
+      "label": "Urmia: Archbishop Thomas Audo's missal with integrated propers",
+      "date_label": "1906 (title); approbation leaf undated",
+      "start_year": 1906,
+      "end_year": 1906,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Chaldean Catholic missal printed at the Lazarist press in Urmia for the Urmia and Salmas parishes: the Rome 1767 ordinary with the Sunday and feast Epistles and Gospels and the proper chants placed in the same volume.",
+      "components": [
+        "ordinary",
+        "propers",
+        "lectionary"
+      ],
+      "witness_ids": [
+        "eastern:chaldean-urmia1906-audo"
+      ],
+      "witness_label": "Taksā kaldāyā / Missale Chaldaicum (Urmia: Lazarist Fathers' press, 1906), 11, 245 pp.; ULB Bonn 3058506",
+      "summary": "The approbation leaf carries Archbishop Thomas Audo of Urmia's attestation that, after careful collation, the book agrees with the missal printed at Rome in 1767, and the nihil obstat of Franciscus Lesné, Apostolic Delegate in Persia. The French preface says that earlier missals held only the ordinary, so that the Epistles and Gospels (in two separate manuscript books) and the introit, pre-Epistle verse, gradual, offertory and communion (in the Hudra and Gazza) had to be sought in four books; this missal places all of them in one volume, with only references for the psalms and the optional Old Testament lessons. It takes the 1767 ordinary as followed at Urmia and Salmas, rejects the unfixed Mesopotamian deviations, and disclaims any intention of imposing a new missal on the Chaldean Church.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:urmia1906-bonn",
+          "locus": "Canvas 266, title page",
+          "claim": "Syriac and Latin title Missale Chaldaicum with the date 1906."
+        },
+        {
+          "source_id": "chaldean-east-syriac:urmia1906-bonn",
+          "locus": "Canvas 265, approbation leaf",
+          "claim": "Collation statement concordat cum Missali impresso Romae anno 1767 signed by Thomas Audo, archbishop of the Chaldeans of Urmia, and nihil obstat of Franciscus Lesné, Apostolic Delegate in Persia."
+        },
+        {
+          "source_id": "chaldean-east-syriac:urmia1906-bonn",
+          "locus": "Canvas 262, Préface",
+          "claim": "States the integration of Epistles, Gospels and proper chants, the 1767 ordinary as followed at Urmia and Salmas, and the absence of any claim to impose the book on the Chaldean Church."
+        },
+        {
+          "source_id": "chaldean-east-syriac:delly1957",
+          "locus": "p. 170",
+          "claim": "Independently identifies the 1906 Urmia missal as Thomas Audo's, issued in opposition to the 1901 Mosul missal, and quotes the same preface."
+        }
+      ],
+      "limitations": "The body of the book (245 pages) was not read or collated: neither the agreement of its ordinary with 1767 nor the content of its propers is checked here. The approbation leaf is undated; 1906 is the title-page year. The preface's statement about earlier missals concerns the books then used in Urmia parishes and is the editor's description.",
+      "reception": "Issued by the Catholic archbishop of Urmia with the Apostolic Delegate's nihil obstat for the parishes of Urmia and Salmas, not as a patriarchal or synodal book for the whole Chaldean Church; Delly (1957) judges the opposition it expressed short-lived. No date of local adoption or abandonment is established."
     },
     {
       "id": "chaldean-east-syriac:reform2007",
@@ -891,6 +987,34 @@
       "limitations": "Comparison of the two instruction lists only, not of the prayer texts. An instruction absent from a list does not prove the practice was forbidden or that the book lacked a corresponding text elsewhere. The 2020 text is a born-digital copy, not the printed impression.",
       "comparison_ids": [],
       "historical_parentage": "attributed"
+    },
+    {
+      "id": "chaldean-east-syriac:urmia1906-receives-1767-ordinary",
+      "from_stage": "chaldean-east-syriac:rome1767",
+      "to_stage": "chaldean-east-syriac:urmia1906",
+      "kind": "reception",
+      "status": "documented",
+      "evidence_level": "primary-description",
+      "summary": "The Urmia 1906 missal declares that its ordinary is the one printed at Rome in 1767, as followed at Urmia and Salmas, and its archbishop attests concordance with the 1767 missal after collation; the preface declines to follow the unfixed Mesopotamian deviations from that ordinary, which Delly (1957, p. 170) presents as Audo's opposition to the Mosul 1901 missal.",
+      "components": [
+        "ordinary"
+      ],
+      "changes": [],
+      "evidence": [
+        {
+          "source_id": "chaldean-east-syriac:urmia1906-bonn",
+          "locus": "Canvas 265 approbation leaf; canvas 262 Préface, final paragraph",
+          "claim": "Primary statements of the 1767 ordinary's reception and of collation against the 1767 book."
+        },
+        {
+          "source_id": "chaldean-east-syriac:delly1957",
+          "locus": "p. 170",
+          "claim": "Quotes the same preface as Audo's reason for printing his own missal."
+        }
+      ],
+      "limitations": "A declared reception, not a text collation: the 1906 ordinary has not been compared with 1767 here, and the propers and lections added in 1906 have no 1767 counterpart examined. Not evidence of reception outside Urmia and Salmas. Cold review 2026-10-22: the concordance statement is the archbishop's attestation and the editor's declaration, so it evidences the claimed reception, not textual descent or identity, and grants no text inheritance; the preface itself does not name the Mosul 1901 missal.",
+      "comparison_ids": [],
+      "historical_parentage": "attributed"
     }
   ],
   "gaps": [
@@ -914,17 +1038,17 @@
       "id": "chaldean-east-syriac:gap-1767-full-collation",
       "tradition_id": "chaldean-catholic",
       "period": "1767",
-      "missing": "Complete 1767/1901 native-body collation, especially where (if anywhere) 1767 prints the institution narrative and the fraction arrangement, and borrowed prayers. A column-cropped Syriac OCR pass over 1767 PDF 318–350 did not locate the dominical words reliably; OCR quality does not support a negative.",
-      "next_source": "Retained 1767 original scan, edition.chaldean-catholic-church.missale.1767-rome-propaganda; Addai and Mari printed pp. 280–286 = PDF 343–337, alongside the held 1901 book.",
-      "consequence": "One direct native variant is established; it does not establish the full scope or date of the intervening reform."
+      "missing": "The exact 1767 page where the displaced consecration is printed and a complete 1767/1901 native-body collation, including borrowed prayers. Delly (OCP 23, p. 164) now describes the 1767 Apostles anaphora as printing the double consecration at the beginning of the fraction rite, and Delly (p. 162 n. 2) and Vosté (OCP 11, p. 68) report that the book omitted the second and third anaphoras; a column-cropped Syriac OCR pass over 1767 PDF 318–350 and a 2026-10-22 image check of PDF 333–337 (low-resolution scan, the Sanctus at PDF 336) did not yet locate the dominical words.",
+      "next_source": "Retained 1767 scan (archive.org bub_gb_PSttGL9Rf08C_2, SHA-256 matching the registered artifact 4d048b31…): the fraction rite following the anaphora from PDF 335 downward, at higher resolution than the Google scan offers if another copy is found (Russian State Library ЗВ 10-8/10; HMML APSTCH EMAP07 00002); then compare with Mosul 1901 printed pp. 24–36.",
+      "consequence": "One direct native variant and the scholarly-described 1767 consecration placement are recorded; the 1767 page locus and the full scope of the 1767–1901 change remain open, so no consecration-placement transition is drawn yet."
     },
     {
       "id": "chaldean-east-syriac:gap-1890-1971",
       "tradition_id": "chaldean-catholic",
-      "period": "1890–1971",
-      "missing": "Text of the 1936 Mosul reprint and of the 1971 synodal revision copied by Toma Hanuna, with the exact removed prayers. The book Sako illustrates as 'Urmia 1890' is now identified: his published title photograph matches the Syriac title setting of the Anglican mission edition (Macomber's Ur), not a Catholic Lazarist printing. His text attributes the 1890 Urmia printing of the three Masses to the Lazarist Paul Bedjan; the photograph match does not by itself show that no separate Bedjan-connected printing or text exists.",
-      "next_source": "Mosul 1936 and Baghdad 1971 originals (Najm al-Mashriq T/404/66 and T/404/60); Macomber's Cm36 apparatus; Vincent Van Vossel, The Chaldean Mass Over 50 Years (Baghdad, 2025), cited by Sako.",
-      "consequence": "Urmia 1876 remains a collateral ritual, not a Catholic Mass stage. Macomber’s 1890 Anglican witness must not automatically be equated with Sako’s Paul Bedjan reference. The 1971 revision is a specific acquisition lead, without a fabricated changed locus."
+      "period": "1878–1971",
+      "missing": "Patriarch Elias XII Abolionan's missal lithographed in Egypt (undated, before 1894; reported by Delly from a 1894 Apostolic Delegate letter and never authorized by Propaganda), the manuscript missal of 1885–1890 compiled with Clément Joseph David, the original 1936 Mosul reprint and the 1971 synodal revision copied by Toma Hanuna with its exact removed prayers. Settled on present evidence 2026-10-22: the 1890 Urmia printing of the three anaphoras is the Anglican mission edition (Delly pp. 161 n. 5 and 165: Thomas Audo's 1895 critique of the missal printed at Urmia by the Anglicans; the Anglicans published a missal for the Nestorians in 1890), and Vosté (pp. 68–73) shows that Propaganda withdrew Paul Bedjan's commission for the Chaldean missal on 24 March 1890, after which he no longer worked on liturgical books, so Sako's attribution of a 1890 Urmia printing of the three Masses to Bedjan is contradicted by Vosté's archival account and unsupported by Delly, who names only the Anglican 1890 missal; no Bedjan printing is recorded, though neither study lists every Urmia imprint of 1890.",
+      "next_source": "Mosul 1936 and Baghdad 1971 originals (Najm al-Mashriq T/404/66 and T/404/60); Macomber's Cm36 apparatus; Vincent Van Vossel, The Chaldean Mass Over 50 Years (Baghdad, 2025), cited by Sako; any surviving copy of the Abolionan lithograph; Moussess, Les livres liturgiques de l'Église chaldéenne (Beirut, 1955), pp. 53–67, cited by Delly.",
+      "consequence": "Urmia 1876 remains a collateral ritual and Urmia 1890 a collateral Anglican edition, not Catholic Mass stages. The Catholic Urmia 1906 missal is now a documented stage. Delly documents the 1936 printing as a reprint of 1901 at the patriarchal press, so it is a witness rather than a new state unless its text proves otherwise. The 1971 revision is a specific acquisition lead, without a fabricated changed locus."
     },
     {
       "id": "chaldean-east-syriac:gap-2007-book-reception",
@@ -939,7 +1063,7 @@
       "tradition_id": "chaldean-catholic",
       "period": "2019–2020",
       "missing": "Printed 2020 impression and the Holy See's recognition letter (21 November 2019 per the decree; 20 November per Sako); prayer-text changes between the 2014 trial and the 2020 collection. The patriarchal decree No. 31 and the 2014–2020 instruction changes are now inspected, and the 2025 reprint's instruction differences are recorded on the stage.",
-      "next_source": "Chaldean Patriarchate printed Baghdad 2020 رُتب القداس; Congregation for the Oriental Churches letter of November 2019; collate 2014 printed pp. 7–35 against the 2020 digital edition PDF 5–48.",
+      "next_source": "Chaldean Patriarchate printed Baghdad 2020 رُتب القداس; Congregation for the Oriental Churches letter of November 2019; collate 2014 printed pp. 7–35 against the 2020 digital edition PDF 5–48. A bounded image comparison on 2026-10-22 of the anamnesis (2014 printed p. 25 against the 2020 digital edition PDF 31) found only the Arabic wording differences already recorded under gap-translations; both born-digital files have unreliable text layers, so collation must be made on images.",
       "consequence": "The author describes the new Thomas order, witnessed in the later reprint. Exact 2020 wording cannot simply be copied back from 2025. The conflicting 2019/2020 confirmation dating remains attributed."
     },
     {
