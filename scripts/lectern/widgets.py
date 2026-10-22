@@ -1,21 +1,35 @@
-"""The few visual pieces every surface shares: the box, the meter, the strip."""
+"""The few visual pieces every surface shares: the box, the meter, the ink."""
 from __future__ import annotations
 
-from typing import Iterable, Sequence
-
-from rich.text import Text
 from textual.containers import Vertical, VerticalScroll
-from textual.reactive import reactive
 from textual.widget import Widget
-from textual.widgets import Static
 
 from .theme import METER_STOPS, blend
 
 SUPERSCRIPT = str.maketrans("0123456789", "⁰¹²³⁴⁵⁶⁷⁸⁹")
 
 
+def literal(text: object) -> str:
+    """Data, made safe to set inside markup: every bracket kept as itself.
+
+    Textual's own `escape` leaves "[Basel]" alone, and its parser then reads it
+    as a tag and drops the word; so every bracket is escaped, and a closing
+    backslash is kept off the tag that follows it."""
+    text = str(text).replace("[", "\\[")
+    return text + " " if text.endswith("\\") else text
+
+
+def count(number: int, word: str, plural: str | None = None) -> str:
+    """"1 edition", "2 editions": the number, and the word it agrees with."""
+    return f"{number:,} {word if number == 1 else (plural or word + 's')}"
+
+
 def titled(key: str | None, title: str) -> str:
-    """A box title in the btop manner: the key that reaches it, then its name."""
+    """A box title in the btop manner: the key that reaches it, then its name.
+
+    The name is data, escaped: a catalogue title such as "([Basel] for
+    Christoph Thum, 1510)" must not be read as markup and lose its words."""
+    title = literal(title)
     if not key:
         return f"[b]{title}[/]"
     return f"[$hotkey]{key.translate(SUPERSCRIPT)}[/][b]{title}[/]"
@@ -72,98 +86,32 @@ class ScrollPanel(VerticalScroll):
         self.border_title = titled(key, title)
 
 
-def meter(fraction: float, width: int, *, empty: str = "#2a2d36") -> Text:
-    """A btop meter: filled cells take the gradient colour of their position."""
-    width = max(1, width)
-    filled = round(min(1.0, max(0.0, fraction)) * width)
-    bar = Text()
+def meter(ink: "Ink", held: int, total: int, width: int) -> "Ink":
+    """A btop meter in theme-aware cells; the count is always written beside it."""
+    filled = round(min(1.0, held / total) * width) if total else 0
     for cell in range(width):
+        # Empty cells take another glyph, so the count is legible without colour.
         if cell < filled:
-            bar.append("■", style=blend(METER_STOPS, cell / max(1, width - 1)))
+            ink("■", blend(METER_STOPS, cell / max(1, width - 1)))
         else:
-            bar.append("■", style=empty)
-    return bar
+            ink("·", "$meter-empty")
+    return ink
 
 
-def meter_line(label: str, held: int, total: int | None, width: int, *,
-               label_width: int = 12, empty: str = "#2a2d36", unit: str = "") -> Text:
-    """`label ■■■■□□□ 12/40`, with the count always printed beside the bar."""
-    line = Text(f"{label[:label_width]:<{label_width}} ", style="bold")
-    if total:
-        line.append_text(meter(held / total, width, empty=empty))
-        line.append(f" {held}/{total}{unit}")
-    else:
-        line.append("·" * width, style="dim")
-        line.append(f" {held}{unit} (no denominator stated)", style="dim")
-    return line
-
-
-BLOCKS = " ▁▂▃▄▅▆▇█"
-
-
-def strip(values: Sequence[float], *, width: int | None = None, top: float | None = None,
-          colour: bool = True) -> Text:
-    """One row of block glyphs, one per value, scaled to the largest.
-
-    A zero is drawn as a dot, so "nothing here" never looks like "a little here".
-    """
-    values = list(values)
-    if width and len(values) > width:
-        bucket = len(values) / width
-        values = [max(values[int(i * bucket): max(int(i * bucket) + 1, int((i + 1) * bucket))])
-                  for i in range(width)]
-    peak = top if top is not None else max(values, default=0)
-    line = Text()
-    for value in values:
-        if not value:
-            line.append("·", style="#3a3d48")
-            continue
-        fraction = value / peak if peak else 0
-        glyph = BLOCKS[max(1, min(8, round(fraction * 8)))]
-        line.append(glyph, style=blend(METER_STOPS, fraction) if colour else "")
-    return line
-
-
-class Busy(Static):
-    """A one-line note that work is under way, with what is being asked."""
-
-    DEFAULT_CSS = """
-    Busy { color: $text-muted; height: auto; }
-    """
-    frame = reactive(0)
-    SPIN = "⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏"
-
-    def __init__(self, what: str = "", **options) -> None:
-        super().__init__("", **options)
-        self.what = what
-
-    def on_mount(self) -> None:
-        self.set_interval(0.08, self._tick)
-        self._paint()
-
-    def _tick(self) -> None:
-        self.frame = (self.frame + 1) % len(self.SPIN)
-
-    def watch_frame(self) -> None:
-        self._paint()
-
-    def _paint(self) -> None:
-        self.update(Text.assemble((self.SPIN[self.frame], "bold"), "  ", self.what))
-
-
-def lines(*rows: Iterable[Text | str]) -> Text:
-    """Join renderables into one Text, one per line."""
-    out = Text()
-    first = True
-    for row in rows:
-        if not first:
-            out.append("\n")
-        first = False
-        if isinstance(row, Text):
-            out.append_text(row)
+def fitted(parts: list[tuple[str, str]], width: int, ink: "Ink | None" = None) -> "Ink":
+    """Runs of text cut to one line of `width` cells, the cut marked with an ellipsis."""
+    ink = ink if ink is not None else Ink()
+    room = width
+    for text, style in parts:
+        if room <= 0:
+            break
+        if len(text) > room:
+            ink(text[: max(0, room - 1)] + "…", style)
+            room = 0
         else:
-            out.append(str(row))
-    return out
+            ink(text, style)
+            room -= len(text)
+    return ink
 
 
 class Ink:
@@ -176,6 +124,9 @@ class Ink:
     def __call__(self, text: object, style: str = "") -> "Ink":
         text = str(text)
         if text:
+            # In a content style `$text-muted` resolves to an "auto" colour and
+            # draws as plain white; the theme's own `$muted` is the muted ink.
+            style = style.replace("$text-muted", "$muted")
             self.parts.append((text, style) if style else text)
         return self
 

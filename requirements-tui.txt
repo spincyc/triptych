@@ -1,1 +1,4 @@
 textual==8.2.8
+# A web edition is set by the site's own Markdown renderer, which refuses any
+# Markdown but the one it pins; the pin lives once, there.
+-r requirements-public-alpha.txt

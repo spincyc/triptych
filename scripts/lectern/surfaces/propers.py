@@ -20,6 +20,7 @@ SEARCHED = "titles, keys, kinds, seasons, fixed dates, incipits, citations and w
 class Propers(Surface):
     key = "2"
     label = "Propers"
+    FIRST = "#propers-list"
     HELP = (
         ("/", "search this missal's formularies"),
         ("escape", "leave the search box"),
@@ -35,12 +36,12 @@ class Propers(Surface):
     )
     BINDINGS = [
         Binding("slash", "search", "search"),
-        Binding("c", "calendar", "missal"),
+        Binding("c", "calendar", "next missal"),
         Binding("o", "orations", "en/la"),
         Binding("b", "bible", "bible", show=False),
         Binding("w", "witness", "witness", show=False),
         Binding("s", "choose", "choose"),
-        Binding("m", "missal", "missal mode"),
+        Binding("m", "missal", "with the Ordinary"),
         Binding("r", "rubrics", "rubrics", show=False),
     ]
     CSS = """
@@ -61,7 +62,7 @@ class Propers(Surface):
         self.calendar = ""
         self.bibles: list[dict] = []
         self.bible = ""
-        self.orations = "en"
+        self.orations = ""
         self.ordinary = False
         self.rubrics = True
         self.catalogues: dict[str, dict] = {}
@@ -92,9 +93,9 @@ class Propers(Surface):
         try:
             opening = bridge.call(ADAPTER, "opening")
         except Refused as refusal:
-            self.app.call_from_thread(self.fail, str(refusal))
+            self.deliver(self.fail, str(refusal))
             return
-        self.app.call_from_thread(self.opened_with, opening)
+        self.deliver(self.opened_with, opening)
 
     def opened_with(self, opening: dict) -> None:
         self.opening = opening
@@ -102,8 +103,12 @@ class Propers(Surface):
         self.bibles = opening["bibles"]
         ids = [one["id"] for one in self.calendars]
         if self.calendar not in ids:
+            if self.calendar:
+                self.app.notify(f"No missal called {self.calendar!r} is offered here.", severity="warning")
             self.calendar = opening.get("default") if opening.get("default") in ids else ids[0]
-        self.bible = self.bible or self.bibles[0]["id"]
+        # The page's own defaults, as the day surface takes them.
+        self.bible = self.bible or opening.get("defaultBible") or self.bibles[0]["id"]
+        self.orations = self.orations or opening.get("defaultOrations") or "la"
         self.welcome()
         self.list_calendar()
         if self._intent.get("mass"):
@@ -152,34 +157,37 @@ class Propers(Surface):
             if calendar not in self.catalogues:
                 self.catalogues[calendar] = bridge.call(ADAPTER, "catalogue", calendar)
         except Refused as refusal:
-            self.app.call_from_thread(self.fail, str(refusal))
+            self.deliver(self.fail, str(refusal))
             return
-        query = self.query_one("#propers-query", Input).value
-        self.app.call_from_thread(self.filter, query)
+        self.deliver(self.again_find)
+
+    def again_find(self) -> None:
+        self.find(self.calendar, self.query_one("#propers-query", Input).value)
 
     @on(Input.Changed, "#propers-query")
     def typed(self, event: Input.Changed) -> None:
-        self.find(event.value)
+        self.find(self.calendar, event.value)
 
     @work(thread=True, exclusive=True, group="propers-find")
-    def find(self, query: str) -> None:
-        if self.calendar not in self.catalogues:
-            return
-        self.app.call_from_thread(self.filter, query)
-
-    def filter(self, query: str) -> None:
-        catalogue = self.catalogues.get(self.calendar)
+    def find(self, calendar: str, query: str) -> None:
+        """The page's own search, off the screen's thread; the list is drawn
+        only if the missal and the words are still the ones asked about."""
+        catalogue = self.catalogues.get(calendar)
         if not catalogue:
             return
+        try:
+            ordinals = (bridge.call(ADAPTER, "search", calendar, query) if query.strip()
+                        else list(range(len(catalogue["rows"]))))
+        except Refused as refusal:
+            self.deliver(self.fail, str(refusal))
+            return
+        self.deliver(self.filter, calendar, query, ordinals)
+
+    def filter(self, calendar: str, query: str, ordinals: list[int]) -> None:
+        catalogue = self.catalogues.get(calendar)
+        if not catalogue or calendar != self.calendar:
+            return
         rows = catalogue["rows"]
-        if query.strip():
-            try:
-                ordinals = bridge.call(ADAPTER, "search", self.calendar, query)
-            except Refused as refusal:
-                self.fail(str(refusal))
-                return
-        else:
-            ordinals = list(range(len(rows)))
         self.shown = ordinals
         listing = self.query_one("#propers-list", OptionList)
         listing.clear_options()
@@ -262,12 +270,12 @@ class Propers(Surface):
             view = bridge.call(ADAPTER, "propers", calendar, key, self.options())
         except Refused as refusal:
             view = {"refused": str(refusal), "calendar": calendar, "key": key}
-        self.app.call_from_thread(self.show, view)
+        self.deliver(self.show, view)
 
     def where(self) -> str:
         mass = (self.view or {}).get("mass") or {}
-        edition = next((one["short"] for one in self.calendars if one["id"] == self.calendar), self.calendar)
-        return f"{edition} · {mass.get('name') or 'browse'}"
+        edition = next((one["short"] for one in self.calendars if one["id"] == self.calendar), "")
+        return " · ".join(part for part in (edition, mass.get("name") or "choose a formulary") if part)
 
     def show(self, view: dict) -> None:
         self.view = view
@@ -385,8 +393,9 @@ class Propers(Surface):
                         cycles.append(cycle)
             if event.get("kind") == "proper-choice":
                 for option in event.get("options") or []:
-                    offers.append((("proper-choice", event["id"], option["id"]),
-                                   f"{event.get('group')}  →  option {option['id']}"))
+                    if option.get("unavailable"):
+                        continue
+                    offers.append((("proper-choice", event["id"], option["id"]), missal.choice_label(event, option)))
         offers += [(("cycle", cycle), f"Year {cycle}   (the lectionary cycle)") for cycle in cycles]
         if self.selection().get("cycle"):
             offers.append((("cycle", None), "every cycle, kept apart (no year chosen)"))

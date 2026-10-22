@@ -12,7 +12,9 @@ and what the site renders cannot disagree about anything but layout.
 TWO VERBS.
 
 `open` is the interactive reader. It needs a terminal and the Textual library
-(`requirements-tui.txt`, or `pacman -S python-textual`).
+(`requirements-tui.txt`, or `pacman -S python-textual`). Reading a web edition
+in full also needs the Markdown the site pins (`requirements-public-alpha.txt`);
+without it the texts surface says so where the text would be.
 
 `snapshot` renders the same reader headlessly at a fixed size, once every
 pending load has settled, and prints the screen: as plain text, as text with
@@ -39,7 +41,8 @@ from _tooling import (  # noqa: E402
 
 SURFACES = ("day", "propers", "catena", "scripture", "texts", "sources", "history", "law")
 THEMES = ("triptych", "triptych-vellum", "triptych-compline")
-DEPENDENCY = "the reader needs Textual: pacman -S python-textual, or pip install -r requirements-tui.txt"
+DEPENDENCY = ("the reader needs Textual: pacman -S python-textual, or pip install -r requirements-tui.txt, "
+              "which also brings the Markdown pin a web edition is set with")
 
 EXAMPLES = {
     "open": (
@@ -55,11 +58,35 @@ EXAMPLES = {
     "snapshot": (
         Example(
             "tools/lectern snapshot --surface day --date 2026-10-22 --size 120x36",
-            ("",),
+            (
+                " ✠ triptych  ¹ day  ²propers ³catena ⁴scripture ⁵texts ⁶sources ⁷history ⁸law  Thu 22 Oct 2026 · 1962 Missal · a fer…",
+                "╭─ Thursday 22 October 2026 ───────────╮╭─ a feria after Pentecost · 1962 Missal ──────────────────────────────────────╮",
+                "│             October 2026             ││ Thursday 22 October 2026                                                     │",
+                "│    Mo   Tu   We   Th   Fr   Sa   Su  ││ 1962 Missal · Universal · Douay-Rheims (Challoner) · Latin orations  ·       │",
+                "│                    1   •2   •3   ◇4  ││ after Pentecost                                                              │",
+                "│     5   •6   ◇7   •8   •9  •10  ◇11  ││ Latin Propers: 4/4 represented texts, 4/4 uses available. 6 Bible            │",
+                "│    12  •13  •14  •15  •16  •17  ◇18  ││ reconstructions. 1 cited Bible passages beside Missal texts.                 │",
+                "│   •19  •20   21   22  •23  •24  ◆25  ││                                                                              │",
+                "│    26   27  ◇28   29   30   31       ││ Formulary: Twenty-first Sunday after Pentecost                               │",
+                "│ ◆ class I  ◇ class II  • class III   ││                                                                              │",
+                "... 26 more lines",
+            ),
         ),
         Example(
             "tools/lectern snapshot --surface catena --ref 'Gen 1' --size 120x36",
-            ("",),
+            (
+                " ✠ triptych  ¹day ²propers ³ catena  ⁴scripture ⁵texts ⁶sources ⁷history ⁸law  Genesis 1 · Douay-Rheims (Challoner) …",
+                "╭─ books ────────────────────╮╭─ Genesis · Old Testament ──────────────────────────────────────────────────────────────╮",
+                "│ Old Testament              ││ █▇▅▃     ▃                                                                             │",
+                "│ Genesis            1351    ││ ████▃▇▃▅▅█▆▄▃▅▆▃▅▅▆▃▅▃▁▃▄▃▂▁▄▃▃▂▁▁▃▃▃▂▁▁▂▁▁▁▁▁▂▂▇▁                                     │",
+                "│ Exodus                ·    ││ ▲                                                                                      │",
+                "│ Leviticus             ·    ││ 1        10        20        30        40                                              │",
+                "│ Numbers               ·    │╰───────────────────────── █ fragments (50 of 50 chapters) · · only leads · ▲ chapter 1 ─╯",
+                "│ Deuteronomy           ·    │╭─ Genesis 1 · Douay-Rheims (Cha… ─╮╭─ 107 fragments held here · Everything held ────────╮",
+                "│ Joshua                ·    ││ ¹In the beginning God created    ││ ▸ Basil of Caesarea  378  · 18 fragments · 73,983  │",
+                "│ Judges                     ││ heaven, and earth. ²And the      ││ words                                              │",
+                "... 26 more lines",
+            ),
         ),
     ),
 }
@@ -93,12 +120,20 @@ def _common(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--calendar", help="the calendar to show first, e.g. roman-1962")
     parser.add_argument("--mass", help="a Mass key for the propers surface")
     parser.add_argument("--ref", help="a book and chapter for catena or scripture, e.g. 'Gen 1'")
+    parser.add_argument("--leaf", help="a work's path for the texts surface, e.g. biographies/origen")
+    parser.add_argument("--provider", choices=("claude", "gpt"), help="with --leaf: one treatment of the work")
+    parser.add_argument("--passage", help="a passage id for the sources surface, as Catena Omnia cites it")
+    parser.add_argument("--edition", help="an edition id for the sources surface")
+    parser.add_argument("--canon", help="a citation for the law surface, e.g. '1983 c. 1008'")
+    parser.add_argument("--view", choices=("timeline", "map", "catalogue"), help="the history view to open")
+    parser.add_argument("--tradition", help="a tradition id for the history timeline")
     parser.add_argument("--theme", choices=THEMES, default="triptych", help="palette (default: triptych)")
 
 
 def _intent(arguments: argparse.Namespace) -> dict[str, str]:
     found = {}
-    for name in ("date", "calendar", "mass", "ref"):
+    for name in ("date", "calendar", "mass", "ref", "leaf", "provider", "passage", "edition",
+                 "canon", "view", "tradition"):
         value = getattr(arguments, name, None)
         if value:
             found[name] = value
@@ -110,7 +145,8 @@ def open_reader(arguments: argparse.Namespace) -> int:
         raise InputRefused("open needs a terminal; use `lectern snapshot` to render without one")
     from lectern.app import TriptychApp
 
-    # A drawn reader cannot be ASCII; asked for plain, it drops colour instead.
+    # A drawn reader cannot be ASCII; asked for plain, it takes the monochrome
+    # palette, which keeps only the hues that mark a warning or a season.
     style = getattr(arguments, "style_resolved", None)
     theme = "triptych-compline" if style and style.plain else arguments.theme
     TriptychApp(start=arguments.surface, intent=_intent(arguments), theme=theme).run()
@@ -158,7 +194,9 @@ def main(argv: list[str] | None = None) -> int:
                       help="plain text, text with ANSI colour, or SVG (default: text)")
     # A bare `lectern` opens the reader, so the verb's defaults must hold
     # without its subparser having run.
-    parser.set_defaults(surface="day", date=None, calendar=None, mass=None, ref=None, theme="triptych")
+    parser.set_defaults(surface="day", date=None, calendar=None, mass=None, ref=None, leaf=None,
+                        provider=None, passage=None, edition=None, canon=None, view=None,
+                        tradition=None, theme="triptych")
     examples_live_on_the_verbs(parser, "lectern")
 
     def render(payload: object, arguments: argparse.Namespace) -> int:

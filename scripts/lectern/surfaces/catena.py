@@ -5,7 +5,7 @@ import re
 
 from textual import on, work
 from textual.binding import Binding
-from textual.containers import Horizontal, Vertical, VerticalScroll
+from textual.containers import Horizontal, Vertical
 from textual.widgets import OptionList, Static
 from textual.widgets.option_list import Option
 
@@ -14,7 +14,7 @@ from ..dialogs import Ask, Reading
 from ..repo import Refused
 from ..strip import Cell, ChapterStrip
 from ..surface import Surface
-from ..widgets import SUPERSCRIPT, Ink, Panel, ScrollPanel
+from ..widgets import SUPERSCRIPT, Ink, Panel, ScrollPanel, literal
 
 ADAPTER = "catena"
 
@@ -28,13 +28,15 @@ def _plain(text: str) -> str:
 class Catena(Surface):
     key = "3"
     label = "Catena"
+    FIRST = "#catena-chain-list"
     HELP = (
         ("← / →", "previous / next chapter"),
         ("[ / ]", "previous / next book"),
         ("g", "go to a reference, e.g. 'John 1' or '1 Cor 13'"),
         ("b", "next scripture edition"),
         ("v", "next commentary voice (everything held, own language, a translation)"),
-        ("enter", "read the highlighted fragment (n / p walk the chain)"),
+        ("enter", "open or close an author's fragments; on a fragment, read it (n / p walk the chain)"),
+        ("a", "open or close every author's fragments"),
         ("click", "a bar in the strip opens that chapter"),
         ("f", "focus: scripture and chain alone; again to restore"),
     )
@@ -46,6 +48,7 @@ class Catena(Surface):
         Binding("g", "goto", "go to"),
         Binding("b", "bible", "edition"),
         Binding("v", "voice", "voice"),
+        Binding("a", "expand_all", "open all authors", show=False),
     ]
     DEFAULT_CSS = """
     Catena #catena-books { width: 30; }
@@ -80,6 +83,10 @@ class Catena(Surface):
         self.voice = ""
         self.current: dict | None = None
         self.density: dict[str, list[dict]] = {}
+        # Which author groups of the chain in front of the reader are open; each
+        # chapter arrives with every group closed.
+        self.opened_groups: set[int] = set()
+        self.chain_for: tuple | None = None
 
     # --- building --------------------------------------------------------
 
@@ -108,9 +115,9 @@ class Catena(Surface):
         try:
             opening = bridge.call(ADAPTER, "opening")
         except Refused as refusal:
-            self.app.call_from_thread(self.fail, str(refusal))
+            self.deliver(self.fail, str(refusal))
             return
-        self.app.call_from_thread(self.opened_with, opening)
+        self.deliver(self.opened_with, opening)
 
     def opened_with(self, opening: dict) -> None:
         self.books = opening["books"]
@@ -133,7 +140,13 @@ class Catena(Surface):
         self.go(self.token, self.chapter)
 
     def fail(self, message: str) -> None:
-        self.query_one("#catena-loading", Static).update(Ink()(message, "bold $error").content())
+        self.say(Ink()(message, "bold $error"))
+
+    def say(self, ink: Ink) -> None:
+        """A message where the scripture would be, whatever the pane held before."""
+        box = self.query_one("#catena-scripture", ScrollPanel)
+        box.remove_children()
+        box.mount(Static(ink.content()))
 
     # --- moving ----------------------------------------------------------
 
@@ -150,7 +163,7 @@ class Catena(Surface):
     def goto_text(self, ref: str) -> None:
         found = refs.parse(ref, self.books)
         if found is None:
-            self.app.notify(f"No book of this canon is called {ref!r}.", severity="warning")
+            self.app.notify(f"No book of this canon is called {literal(repr(ref))}.", severity="warning")
             return
         book, chapter = found
         self.go(book["token"], chapter)
@@ -174,9 +187,9 @@ class Catena(Surface):
             if token not in self.density and not view.get("problems"):
                 self.density[token] = bridge.call(ADAPTER, "density", token)
         except Refused as refusal:
-            self.app.call_from_thread(self.fail, str(refusal))
+            self.deliver(self.fail, str(refusal))
             return
-        self.app.call_from_thread(self.show, view)
+        self.deliver(self.show, view)
 
     def action_chapter(self, step: int) -> None:
         if self.current and not self.current.get("problems"):
@@ -227,6 +240,21 @@ class Catena(Surface):
     def picked_fragment(self, event: OptionList.OptionSelected) -> None:
         if event.option.id and event.option.id.startswith("frag-"):
             self.read(int(event.option.id[5:]))
+        elif event.option.id and event.option.id.startswith("grp-"):
+            group = int(event.option.id[4:])
+            self.opened_groups ^= {group}
+            self.draw_chain(keep=event.option.id)
+
+    def action_expand_all(self) -> None:
+        if not self.current or not self.current.get("chain"):
+            return
+        groups = range(len(self.groups(self.current["chain"]["fragments"])))
+        self.opened_groups = set() if self.opened_groups >= set(groups) else set(groups)
+        listing = self.query_one("#catena-chain-list", OptionList)
+        keep = None
+        if listing.highlighted is not None:
+            keep = listing.get_option_at_index(listing.highlighted).id
+        self.draw_chain(keep=keep)
 
     # --- drawing ---------------------------------------------------------
 
@@ -236,10 +264,19 @@ class Catena(Surface):
         return f"{self.current['reference']} · {self.current['bible']['label']} · {self.current['tally']['spoken']}"
 
     def show(self, view: dict) -> None:
-        self.current = view
         if view.get("problems"):
+            good = self.current if self.current and not self.current.get("problems") else None
+            if good:
+                # Refused, as the page refuses it (catena.js:626); the chapter in
+                # front of the reader stays, and nothing nearby is put in its place.
+                self.token, self.chapter = good["book"]["token"], good["chapter"]
+                said = "; ".join(f"{one['key']} = {one['value']!r}: {one['note']}" for one in view["problems"])
+                self.app.notify(literal(f"{view['heading']}. {said}"), severity="warning", timeout=6)
+                return
+            self.current = view
             self.show_problems(view)
             return
+        self.current = view
         self.bible = view["bible"]["id"]
         self.show_books(view)
         self.show_strip(view)
@@ -252,7 +289,7 @@ class Catena(Surface):
         text = Ink().line(view["heading"], "bold").line()
         for problem in view["problems"]:
             text(f"{problem['key']} = {problem['value']!r}: ", "bold").line(problem["note"])
-        self.query_one("#catena-loading", Static).update(text.content())
+        self.say(text)
         self.app.notify(view["heading"], severity="warning")
 
     def show_books(self, view: dict) -> None:
@@ -296,7 +333,7 @@ class Catena(Surface):
         if not scripture["ok"]:
             widgets.append(Static(Ink()(scripture["problem"], "bold").content(), classes="note"))
         elif scripture["empty"]:
-            widgets.append(Static(scripture["empty"], classes="note"))
+            widgets.append(Static(scripture["empty"], classes="note", markup=False))
         else:
             for paragraph in scripture["paragraphs"]:
                 text = Ink()
@@ -315,7 +352,30 @@ class Catena(Surface):
         )
         box.scroll_home(animate=False)
 
+    @staticmethod
+    def groups(fragments: list[dict]) -> list[list[int]]:
+        """Contiguous runs of one author and date, in the chain's own order
+        (catena.js:454-467): the generator's order is never re-sorted."""
+        runs: list[list[int]] = []
+        last = None
+        for position, fragment in enumerate(fragments):
+            key = (fragment["author"], fragment["date"])
+            if fragment["author"] and runs and key == last:
+                runs[-1].append(position)
+            else:
+                runs.append([position])
+            last = key
+        return runs
+
     def show_chain(self, view: dict) -> None:
+        here = (view["book"]["token"], view["chapter"], view["voice"])
+        if here != self.chain_for:
+            self.chain_for = here
+            self.opened_groups = set()
+        self.draw_chain()
+
+    def draw_chain(self, keep: str | None = None) -> None:
+        view = self.current
         listing = self.query_one("#catena-chain-list", OptionList)
         listing.clear_options()
         box = self.query_one("#catena-chain", Panel)
@@ -327,14 +387,13 @@ class Catena(Surface):
         if not view["held"]:
             box.retitle("chain")
             box.border_subtitle = ""
-            listing.add_option(Option(Ink()(
-                f"Nothing held on {view['reference']}: the index records no commentary or lead here.",
-                "italic").content(), disabled=True))
+            for note in (chain or {}).get("notes") or []:
+                listing.add_option(Option(Ink()(note, "italic").content(), disabled=True))
             return
         voice = next((option["label"] for option in view["voices"] if option["value"] == view["voice"]),
                      "Everything held")
         box.retitle(f"{chain['heading']} · {voice}")
-        box.border_subtitle = "oldest first · ◌ inspected, not collated · ● verified"
+        box.border_subtitle = "oldest first · ▸ closed ▾ open · ◌ inspected, not collated · ● verified"
         for note in chain["notes"]:
             listing.add_option(Option(Ink()(note, "italic").content(), disabled=True))
         absences = chain.get("absences")
@@ -342,35 +401,56 @@ class Catena(Surface):
             if absences.get("summary"):
                 listing.add_option(Option(Ink()(absences["summary"], "bold $warning").content(), disabled=True))
             for row in absences.get("rows", []):
-                listing.add_option(Option(Ink()(f"{row['author']} — {row['work']}: ", "bold")(
-                    row["reason"]).content(), disabled=True))
+                said = Ink()(row["author"], "bold")
+                if row.get("author") and row.get("work"):
+                    said(" — ", "bold")
+                said(row.get("work") or "", "bold italic")
+                if row.get("reason"):
+                    said.line()(row["reason"])
+                if row.get("offer"):
+                    said.line()(row["offer"], "italic $success")
+                listing.add_option(Option(said.content(), disabled=True))
             if absences.get("unread"):
                 listing.add_option(Option(Ink()(absences["unread"], "italic").content(), disabled=True))
-        group = None
-        for position, fragment in enumerate(chain["fragments"]):
-            key = (fragment["author"], fragment["date"])
-            if fragment["author"] and key != group:
-                group = key
-                heading = Ink()(fragment["author"], "bold $catena-color")
-                if fragment["date"]:
-                    heading(f"  {fragment['date']}", "bold")
-                listing.add_option(Option(heading.content(), disabled=True))
-            row = Ink()("  ")
-            row("● " if fragment["review"] == "verified" else "◌ ", "$text-muted")
-            row(fragment["extent"], "bold")
-            if fragment["spans"]:
-                row(" ↔ runs across the chapter boundary", "$warning")
-            row("  ")(fragment["work"], "italic")
-            row.line()("    ")
-            locator = fragment["locator"]
-            if locator and locator != fragment["work"]:
-                row(locator if len(locator) <= 24 else locator[:23] + "…", "$text-muted")(" · ", "$text-muted")
-            row(fragment["chip"], "$text-muted")(f" · {fragment['text_words']:,} words", "$text-muted")
-            listing.add_option(Option(row.content(), id=f"frag-{position}"))
+        fragments = chain["fragments"]
+        for number, run in enumerate(self.groups(fragments)):
+            first = fragments[run[0]]
+            opened = number in self.opened_groups
+            words = sum(fragments[position]["text_words"] or 0 for position in run)
+            heading = Ink()("▾ " if opened else "▸ ", "bold $catena-color")
+            heading(first["author"] or first["work"], "bold $catena-color")
+            if first["date"]:
+                heading(f"  {first['date']}", "bold")
+            count = f"{len(run)} fragment" + ("" if len(run) == 1 else "s")
+            heading(f"  · {count} · {words:,} words", "$text-muted")
+            listing.add_option(Option(heading.content(), id=f"grp-{number}"))
+            if not opened:
+                continue
+            for position in run:
+                fragment = fragments[position]
+                row = Ink()("    ")
+                row("● " if fragment["review"] == "verified" else "◌ ", "$text-muted")
+                row(fragment["extent"], "bold")
+                if fragment["spans"]:
+                    row(" ↔ runs across the chapter boundary", "$warning")
+                row("  ")(fragment["work"], "italic")
+                row.line()("      ")
+                locator = fragment["locator"]
+                if locator and locator != fragment["work"]:
+                    row(locator if len(locator) <= 24 else locator[:23] + "…", "$text-muted")(" · ", "$text-muted")
+                row(fragment["chip"], "$text-muted")(f" · {fragment['text_words']:,} words", "$text-muted")
+                listing.add_option(Option(row.content(), id=f"frag-{position}"))
+        if keep is not None:
+            try:
+                listing.highlighted = listing.get_option_index(keep)
+                return
+            except Exception:  # noqa: BLE001 - the kept row may be gone; fall through to the first
+                pass
         first = next((index for index in range(listing.option_count)
                       if not listing.get_option_at_index(index).disabled), None)
         if first is not None:
             listing.highlighted = first
+            listing.call_after_refresh(listing.scroll_home, animate=False)
 
     def show_leads(self, view: dict) -> None:
         box = self.query_one("#catena-leads", ScrollPanel)
@@ -412,15 +492,17 @@ class Catena(Surface):
         fragments = self.current["chain"]["fragments"]
         if not 0 <= position < len(fragments):
             return
-        self.fetch_body(position, fragments[position])
+        # The chapter on screen, not one still loading behind it.
+        self.fetch_body(position, fragments[position], self.current["book"]["token"],
+                        self.current["chapter"], self.current["voice"])
 
     @work(thread=True, exclusive=True, group="catena-body")
-    def fetch_body(self, position: int, fragment: dict) -> None:
+    def fetch_body(self, position: int, fragment: dict, token: str, chapter: int, voice: str) -> None:
         try:
-            body = bridge.call(ADAPTER, "body", self.token, self.chapter, self.voice, fragment["id"])
+            body = bridge.call(ADAPTER, "body", token, chapter, voice, fragment["id"])
         except Refused as refusal:
             body = {"missing": True, "said": str(refusal)}
-        self.app.call_from_thread(self.open_reading, position, fragment, body)
+        self.deliver(self.open_reading, position, fragment, body)
 
     def open_reading(self, position: int, fragment: dict, body: dict) -> None:
         text = Ink()(fragment["author"], "bold $catena-color")
@@ -462,7 +544,7 @@ class Catena(Surface):
             elif step == "source":
                 self.app.action_surface("sources", passage=fragment["id"])
 
-        title = f"[b]{fragment['author']}[/] · {fragment['work']} {fragment['locator']}"
+        title = f"{fragment['author']} · {fragment['work']} {fragment['locator']}"
         self.app.push_screen(
             Reading(title, text.content(), f"{position + 1} of {len(self.current['chain']['fragments'])}"
                     " · esc close · n next · p previous · s source library", source=True),

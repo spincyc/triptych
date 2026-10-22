@@ -8,14 +8,14 @@ from textual.containers import Vertical, VerticalScroll
 from textual.screen import ModalScreen
 from textual.widgets import Input, Static
 
-from .widgets import titled
+from .widgets import literal, titled
 
 
 class Ask(ModalScreen[str | None]):
     """One line of input; Enter answers, Escape declines."""
 
     DEFAULT_CSS = """
-    Ask { align: center middle; }
+    Ask { align: center middle; background: $background 45%; }
     Ask > Vertical {
         width: 64; max-width: 95%; height: auto;
         border: round $accent; background: $surface; padding: 0 1;
@@ -38,7 +38,9 @@ class Ask(ModalScreen[str | None]):
             yield Input(value=self.value)
 
     def on_input_submitted(self, event: Input.Submitted) -> None:
-        self.dismiss(event.value.strip() or None)
+        # Enter answers, even with nothing (an empty answer clears); only
+        # Escape declines.
+        self.dismiss(event.value.strip())
 
     def action_decline(self) -> None:
         self.dismiss(None)
@@ -52,7 +54,7 @@ class Reading(ModalScreen[str | None]):
     """
 
     DEFAULT_CSS = """
-    Reading { align: center middle; }
+    Reading { align: center middle; background: $background 45%; }
     Reading > VerticalScroll {
         width: 96; max-width: 96%; height: 92%;
         border: round $accent; background: $surface; padding: 1 2;
@@ -84,8 +86,8 @@ class Reading(ModalScreen[str | None]):
 
     def compose(self) -> ComposeResult:
         with VerticalScroll() as box:
-            box.border_title = self.title_text
-            box.border_subtitle = self.subtitle or "esc close · n next · p previous"
+            box.border_title = titled(None, self.title_text)
+            box.border_subtitle = literal(self.subtitle or "esc close · n next · p previous")
             yield Static(self.body)
 
     def on_mount(self) -> None:
@@ -96,7 +98,7 @@ class Pick(ModalScreen[str | None]):
     """One choice among named options; nothing is preselected for the reader."""
 
     DEFAULT_CSS = """
-    Pick { align: center middle; }
+    Pick { align: center middle; background: $background 45%; }
     Pick > Vertical {
         width: 80; max-width: 95%; height: auto; max-height: 85%;
         border: round $accent; background: $surface; padding: 0 1;
@@ -122,6 +124,15 @@ class Pick(ModalScreen[str | None]):
             if self.hint:
                 yield Static(self.hint)
             yield OptionList(*[Option(label, id=str(index)) for index, (_, label) in enumerate(self.options)])
+
+    def on_mount(self) -> None:
+        from textual.widgets import OptionList
+
+        # Nothing is offered as already chosen: Enter does nothing until the
+        # reader has moved to an option.
+        listing = self.query_one(OptionList)
+        listing.focus()
+        listing.highlighted = None
 
     def on_option_list_option_selected(self, event) -> None:
         self.dismiss(self.options[int(event.option.id)][0])

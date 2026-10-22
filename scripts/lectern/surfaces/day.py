@@ -15,7 +15,7 @@ from ..month import Month
 from ..repo import Refused
 from ..surface import Surface
 from ..theme import SEASON_TONES
-from ..widgets import Ink, Panel, ScrollPanel
+from ..widgets import Ink, Panel, ScrollPanel, literal
 
 ADAPTER = "liturgy"
 
@@ -24,27 +24,39 @@ def tone(season: str | None) -> str:
     return f"$season-{season}" if season in SEASON_TONES else ""
 
 
-# Rank, as the derivation reports it: a class where the code has classes, a
-# nature where it does not. The glyph says it without colour.
-FIRST = {"solemnity", "solemnity-or-sunday", "triduum", "sacred-triduum"}
-SECOND = {"feast"}
-THIRD = {"memorial", "office", "vigil", "day-within-an-octave", "vigil-or-octave-day", "commemoration-of-the-dead"}
+# Rank, in the derivation's own terms: a class where the code has classes
+# (1962, pre-1955), else the day's nature (the postconciliar Norms rank by
+# nature, not class). The glyph says it without colour; the legend names it in
+# the words of whichever missal is on screen.
+CLASS_MARKS = {"I": "◆", "II": "◇", "III": "•"}
+NATURE_MARKS = {"solemnity": "◆", "solemnity-or-sunday": "◆", "triduum": "◆", "feast": "◇",
+                "memorial": "•", "sunday": "○"}
+REFUSED = "×"
 
 
 def rank_glyph(winner: dict | None) -> str:
     if not winner:
         return " "
-    level = winner.get("class")
-    nature = winner.get("nature") or ""
-    if level == "I" or (not level and nature in FIRST):
-        return "◆"
-    if level == "II" or (not level and nature in SECOND):
-        return "◇"
-    if level == "III" or (not level and nature in THIRD):
-        return "•"
-    if not level and nature == "sunday":
-        return "○"
-    return " "
+    if winner.get("class"):
+        return CLASS_MARKS.get(winner["class"], " ")
+    return NATURE_MARKS.get(winner.get("nature") or "", " ")
+
+
+def legend_for(month: dict | None) -> Ink:
+    """The marks of this month, said in its missal's own terms."""
+    days = (month or {}).get("days") or []
+    classed = any((branch.get("winner") or {}).get("class") for day in days for branch in day.get("branches") or [])
+    legend = Ink()
+    if classed:
+        legend("◆", "bold")(" class I  ")("◇", "bold")(" class II  ")("•", "bold").line(" class III")
+        legend.line("blank: class IV", "$text-muted")
+    else:
+        legend("◆", "bold")(" solemnity  ")("◇", "bold")(" feast  ")("•", "bold").line(" memorial")
+        legend("○", "bold")(" Sunday  ")("blank: weekday", "$text-muted").line()
+    legend("?", "bold $warning")(" not settled  ")("⑂", "bold $warning")(" a choice  ")
+    legend(REFUSED, "bold $error").line(" refused")
+    legend.line("hue = season; no colour is recorded", "italic $text-muted")
+    return legend
 
 
 def season_name(season: str | None) -> str:
@@ -65,6 +77,7 @@ def rank_words(winner: dict | None) -> str:
 class Day(Surface):
     key = "1"
     label = "Day"
+    FIRST = "#day-reading-a"
     HELP = (
         ("← / →", "previous / next day"),
         ("[ / ]", "previous / next week"),
@@ -72,7 +85,8 @@ class Day(Surface):
         ("t", "today"),
         ("g", "go to a date (YYYY-MM-DD)"),
         ("c", "next missal (postconciliar, 1962, pre-1955)"),
-        ("v", "compare: this missal beside the next, on the same date"),
+        ("v", "compare: this missal beside another, on the same date"),
+        ("V", "choose the missal to compare with"),
         ("m", "missal mode: the propers seated in the Ordinary"),
         ("o", "orations in English or Latin"),
         ("b", "next Bible edition for the readings"),
@@ -91,9 +105,10 @@ class Day(Surface):
         Binding("right_curly_bracket", "month(1)", "next month", show=False),
         Binding("t", "today", "today"),
         Binding("g", "goto", "go to"),
-        Binding("c", "calendar", "missal"),
+        Binding("c", "calendar", "next missal"),
         Binding("v", "compare", "compare"),
-        Binding("m", "missal", "missal mode"),
+        Binding("V", "peer", "compare with…", show=False),
+        Binding("m", "missal", "with the Ordinary"),
         Binding("o", "orations", "en/la"),
         Binding("b", "bible", "bible", show=False),
         Binding("w", "witness", "witness", show=False),
@@ -103,8 +118,9 @@ class Day(Surface):
     ]
     CSS = """
     .day.focus #day-left { display: none; }
-    .day.narrow #day-left { width: 30; }
+    .day.narrow #day-left { width: 32; }
     .day.narrow #day-legend { display: none; }
+    .day.wide #day-left { width: 50; }
     """
     DEFAULT_CSS = """
     Day #day-left { width: 40; }
@@ -125,7 +141,7 @@ class Day(Surface):
         self.calendar = ""
         self.bibles: list[dict] = []
         self.bible = ""
-        self.orations = "en"
+        self.orations = ""
         self.ordinary = False
         self.rubrics = True
         self.comparing = False
@@ -162,9 +178,9 @@ class Day(Surface):
         try:
             opening = bridge.call(ADAPTER, "opening")
         except Refused as refusal:
-            self.app.call_from_thread(self.fail, str(refusal))
+            self.deliver(self.fail, str(refusal))
             return
-        self.app.call_from_thread(self.opened_with, opening)
+        self.deliver(self.opened_with, opening)
 
     def opened_with(self, opening: dict) -> None:
         self.opening = opening
@@ -172,14 +188,15 @@ class Day(Surface):
         self.bibles = opening["bibles"]
         ids = [one["id"] for one in self.calendars]
         if self.calendar not in ids:
+            if self.calendar:
+                self.app.notify(f"No missal called {self.calendar!r} is offered here.", severity="warning")
             self.calendar = opening.get("default") if opening.get("default") in ids else ids[0]
+        # The page's own defaults: the declared Bible and the Missal's own
+        # language (reader-state.js DEFAULT_BIBLE_ID; Triptych.SOURCE_LANGUAGE).
         if not self.bible:
-            self.bible = self.bibles[0]["id"]
-        legend = Ink()
-        legend("◆", "bold")(" I ")("◇", "bold")(" II ")("•", "bold")(" III ")("○", "bold")(" Sun ")
-        legend("?", "bold $warning")(" open ")("⑂", "bold $warning").line(" choice")
-        legend.line("class, else rank · hue = season only", "italic $text-muted")
-        self.query_one("#day-legend", Static).update(legend.content())
+            self.bible = opening.get("defaultBible") or self.bibles[0]["id"]
+        if not self.orations:
+            self.orations = opening.get("defaultOrations") or "la"
         self.adopt_pending()
         self.load()
 
@@ -213,11 +230,17 @@ class Day(Surface):
         self.load()
 
     def action_step(self, days: int) -> None:
-        self.go(self.date + dt.timedelta(days=days))
+        try:
+            self.go(self.date + dt.timedelta(days=days))
+        except OverflowError:
+            self.app.notify("No date lies beyond the calendar's own range.", severity="warning")
 
     def action_month(self, step: int) -> None:
         month = self.date.month - 1 + step
         year = self.date.year + month // 12
+        if not dt.MINYEAR <= year <= dt.MAXYEAR:
+            self.app.notify("No date lies beyond the calendar's own range.", severity="warning")
+            return
         month = month % 12 + 1
         day = min(self.date.day, [31, 29 if year % 4 == 0 and (year % 100 or year % 400 == 0) else 28,
                                   31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1])
@@ -233,7 +256,7 @@ class Day(Surface):
             try:
                 self.go(dt.date.fromisoformat(value))
             except ValueError:
-                self.app.notify(f"Not a date: {value!r}. Write it YYYY-MM-DD.", severity="warning")
+                self.app.notify(f"Not a date: {literal(repr(value))}. Write it YYYY-MM-DD.", severity="warning")
 
         self.app.push_screen(Ask("go to a date", "A civil date, YYYY-MM-DD", self.date.isoformat()), answered)
 
@@ -269,12 +292,18 @@ class Day(Surface):
             self.load()
 
     def action_propers(self) -> None:
-        view = self.views.get(self.calendar)
-        mass = (view or {}).get("mass")
-        if not mass:
-            self.app.notify("No single formulary is being read on this date yet.", severity="warning")
+        rows = (self.views.get(self.calendar) or {}).get("rows") or []
+        masses = [row["mass"] for row in rows if row.get("mass")]
+        if not masses:
+            self.app.notify("No formulary is being read on this date yet.", severity="warning")
             return
-        self.app.action_surface("propers", calendar=self.calendar, mass=mass["key"])
+        if len(masses) == 1:
+            self.app.action_surface("propers", calendar=self.calendar, mass=masses[0]["key"])
+            return
+        self.app.push_screen(
+            Pick("open in propers", [(one["key"], one["name"]) for one in masses],
+                 "Each held territorial branch reads its own formulary."),
+            lambda key: key and self.app.action_surface("propers", calendar=self.calendar, mass=key))
 
     @on(Month.Chosen)
     def chosen_date(self, event: Month.Chosen) -> None:
@@ -291,21 +320,39 @@ class Day(Surface):
     def selection(self, calendar: str | None = None) -> dict:
         return self.choices.setdefault((calendar or self.calendar, self.date.isoformat()), {})
 
+    def offers(self, calendar: str) -> list:
+        """Every open choice of one missal's reading, each tagged with its branch."""
+        view = self.views.get(calendar) or {}
+        found = []
+        for row in view.get("rows") or []:
+            branch = (row.get("heading") or {}).get("label")
+            prefix = f"{branch} · " if branch else ""
+            context = {**row, "day": {"branches": [row.get("branch") or {}]}}
+            for choice in row.get("unresolvedChoices") or []:
+                ident = choice.get("id") or ""
+                for option in choice.get("options") or []:
+                    found.append(((calendar, row.get("option"), ident, option["id"], row),
+                                  f"{prefix}{missal.option_label(choice, option, context)}"
+                                  f"   ({choice.get('reason') or ident})"))
+            for event in row.get("events") or []:
+                if event.get("kind") == "proper-choice":
+                    for option in event.get("options") or []:
+                        if option.get("unavailable"):
+                            continue
+                        found.append(((calendar, row.get("option"), "proper-choice", (event["id"], option["id"]), row),
+                                      f"{prefix}{missal.choice_label(event, option)}"))
+        if (view.get("state") or {}).get("territory"):
+            found.append(((calendar, None, "every-branch", None, None),
+                          "every held territorial branch, as the page shows them"))
+        return found
+
     def action_choose(self) -> None:
-        view = self.views.get(self.calendar)
-        if not view:
-            return
+        sides = [self.calendar] + ([self.peer()] if self.comparing and self.peer() != self.calendar else [])
         offers = []
-        for choice in view.get("unresolvedChoices") or []:
-            ident = choice.get("id") or ""
-            for option in choice.get("options") or []:
-                offers.append(((ident, option["id"]), f"{missal.option_label(choice, option, view)}"
-                                                      f"   ({choice.get('reason') or ident})"))
-        for event in view.get("events") or []:
-            if event.get("kind") == "proper-choice":
-                for option in event.get("options") or []:
-                    offers.append((("proper-choice", event["id"], option["id"]),
-                                   f"{event.get('group')}  →  option {option['id']}"))
+        for side in sides:
+            edition = next((one["short"] for one in self.calendars if one["id"] == side), side)
+            for value, label in self.offers(side):
+                offers.append((value, f"{edition} · {label}" if len(sides) > 1 else label))
         if not offers:
             self.app.notify("Nothing on this date is left open for the reader to choose.")
             return
@@ -313,26 +360,31 @@ class Day(Surface):
         def picked(value) -> None:
             if not value:
                 return
-            selection = self.selection()
-            kind = value[0]
-            if kind == "calendar-territory":
+            calendar, option, kind, choice, row = value
+            selection = self.selection(calendar)
+            if kind == "every-branch":
                 selection.clear()
-                selection["territory"] = value[1]
-            elif kind == "calendar-formulary":
+                self.load()
+                return
+            # A choice belongs to the branch it was offered in; making it reads that branch.
+            if option and (self.views.get(calendar) or {}).get("multiple"):
+                selection.clear()
+                selection["territory"] = option
+            if kind == "calendar-formulary":
                 territory = selection.get("territory")
                 selection.clear()
                 if territory:
                     selection["territory"] = territory
-                selection["mass"] = value[1]
+                selection["mass"] = choice
             elif kind.startswith("proper-form"):
-                selection["form"] = value[1]
-                mass = (view.get("mass") or {}).get("key") or self.resolved_key(view)
-                if mass:
-                    selection.setdefault("mass", mass)
+                selection["form"] = choice
+                key = (row.get("mass") or {}).get("key") or self.resolved_key(row)
+                if key:
+                    selection.setdefault("mass", key)
             elif kind == "proper-choice":
-                selection.setdefault("properChoices", {})[value[1]] = value[2]
+                selection.setdefault("properChoices", {})[choice[0]] = choice[1]
             elif kind.startswith("translation-witness"):
-                selection["witness"] = value[1]
+                selection["witness"] = choice
             else:
                 self.app.notify(f"This reader cannot make the choice {kind!r} yet.", severity="warning")
                 return
@@ -342,14 +394,14 @@ class Day(Surface):
                                   "The rubrics or the sources leave this open. Nothing is chosen by order."), picked)
 
     @staticmethod
-    def resolved_key(view: dict) -> str | None:
-        resolved = view.get("resolved") or {}
+    def resolved_key(row: dict) -> str | None:
+        resolved = row.get("resolved") or {}
         formulary = resolved.get("formulary")
         return formulary.get("id") if isinstance(formulary, dict) else formulary
 
     def action_witness(self) -> None:
-        view = self.views.get(self.calendar) or {}
-        witnesses = ((view.get("mass") or {}).get("witnesses")) or []
+        rows = (self.views.get(self.calendar) or {}).get("rows") or []
+        witnesses = next((row["mass"].get("witnesses") for row in rows if row.get("mass")), None) or []
         if not witnesses:
             self.app.notify("No oration witness in this language is recorded for this missal.")
             return
@@ -380,7 +432,24 @@ class Day(Surface):
 
     def peer(self) -> str:
         ids = [one["id"] for one in self.calendars]
+        if getattr(self, "chosen_peer", None) in ids and self.chosen_peer != self.calendar:
+            return self.chosen_peer
         return ids[(ids.index(self.calendar) + 1) % len(ids)] if len(ids) > 1 else self.calendar
+
+    def action_peer(self) -> None:
+        others = [(one["id"], one["short"]) for one in self.calendars if one["id"] != self.calendar]
+        if not others:
+            return
+
+        def picked(value) -> None:
+            if value:
+                self.chosen_peer = value
+                if not self.comparing:
+                    self.action_compare()
+                else:
+                    self.load()
+
+        self.app.push_screen(Pick("compare with", others, "The other missal, read on the same date."), picked)
 
     def load(self) -> None:
         if not self.calendars:
@@ -404,9 +473,9 @@ class Day(Surface):
                 except Refused as refusal:
                     views[name] = {"refused": str(refusal), "calendar": name, "date": iso}
         except Refused as refusal:
-            self.app.call_from_thread(self.fail, str(refusal))
+            self.deliver(self.fail, str(refusal))
             return
-        self.app.call_from_thread(self.show, date, views)
+        self.deliver(self.show, date, views)
 
     # --- drawing ---------------------------------------------------------
 
@@ -415,8 +484,10 @@ class Day(Surface):
         if not rows:
             return None
         row = next((one for one in rows["days"] if one["date"] == date.isoformat()), None)
-        if not row or row.get("refused"):
+        if not row:
             return None
+        if row.get("refused"):
+            return REFUSED, "$error"
         hue = tone(row.get("season"))
         branches = row.get("branches") or []
         if len(branches) > 1 or any(branch.get("choiceRequired") for branch in branches):
@@ -427,16 +498,16 @@ class Day(Surface):
 
     def where(self) -> str:
         view = self.views.get(self.calendar) or {}
-        mass = view.get("mass") or {}
         edition = next((one["short"] for one in self.calendars if one["id"] == self.calendar), self.calendar)
-        title = mass.get("name") or "—"
-        return f"{self.date.strftime('%a %d %b %Y')} · {edition} · {title}"
+        return f"{self.date.strftime('%a %d %b %Y')} · {edition} · {view.get('title') or '—'}"
 
     def show(self, date: dt.date, views: dict[str, dict]) -> None:
         if date != self.date:
             return
         self.views = views
         self.query_one(Month).refresh()
+        self.query_one("#day-legend", Static).update(
+            legend_for(self.months.get((self.calendar, self.date.strftime("%Y-%m")))).content())
         self.show_missals()
         self.redraw()
         self.app.refresh_where()
@@ -508,54 +579,16 @@ class Day(Surface):
                      "$text-muted")
         for row in year.get("unresolved") or []:
             ink.line(f"? {row.get('what')}: {row.get('why')}", "italic $warning")
-        for branch in day["branches"]:
+        # The page's own "Why this Mass" (day-reader.js reasoningApparatus), per branch.
+        for row in view.get("rows") or []:
             ink.line()
-            if branch.get("option"):
-                ink.line(f"branch: {branch['option']}", "bold $day-color")
-            if branch.get("settled") is False:
-                ink.line("This date is not settled here:", "bold $warning")
-                for row in branch.get("unsettled") or []:
-                    ink("  ")(f"{row['what']}: ", "bold").line(row["why"])
-            winner = branch.get("winner")
-            if winner:
-                ink(rank_glyph(winner) + " ", "bold")(winner["name"], "bold").line()
-                ink.line(f"  {winner.get('rowLabel') or ''}", "$text-muted")
-                if winner.get("why"):
-                    ink.line(f"  {winner['why']}")
-                if winner.get("locus"):
-                    ink.line(f"  {winner['locus']}", "italic $day-color")
-                formulary = winner.get("formulary")
-                if formulary and formulary.get("kind") == "borrowed":
-                    ink.line(f"  Mass borrowed: {formulary.get('name') or formulary.get('key')}", "italic")
-            if branch.get("choice"):
-                choice = branch["choice"]
-                ink.line(f"⑂ {choice.get('what') or 'a choice'}", "bold $warning")
-                if choice.get("locus"):
-                    ink.line(f"  {choice['locus']}", "italic $day-color")
-            for condition in branch.get("conditions") or []:
-                said = condition if isinstance(condition, str) else (condition.get("what") or condition.get("id"))
-                ink.line(f"only if: {said}", "italic $warning")
-            readable = branch.get("readable") or []
-            for standing in missal.STANDING_ORDER:
-                group = [one for one in readable if one["state"] == standing]
-                if not group:
-                    continue
-                ink.line()
-                ink.line(missal.STANDING_GROUPS[standing], "bold underline")
-                for one in group:
-                    ink(f"{missal.STANDING_MARK[standing]} ", "bold")(one["label"]).line()
-                    if one.get("why") and standing != "said":
-                        ink.line(f"    {one['why']}", "$text-muted")
-                    if one.get("locus") and standing != "said":
-                        ink.line(f"    {one['locus']}", "italic $day-color")
-            orations = (branch.get("orations") or {}).get("low_mass") or []
-            if orations:
-                ink.line()
-                ink.line("Orations at Low Mass", "bold underline")
-                for row in orations:
-                    ink(f"{row.get('position')}. ", "bold")(row.get("label") or "")
-                    ink(f" — {row.get('of_name') or row.get('of')}").line()
-                    ink.line(f"    {row.get('kind') or ''} · {row.get('locus') or ''}", "$text-muted")
+            heading = row.get("heading")
+            if heading:
+                ink.line(heading["label"], "bold $day-color")
+            if row.get("failed"):
+                ink.line(row["failed"], "italic $warning")
+                continue
+            missal.blocks(ink, row.get("reasoning") or [], accent="$day-color")
         ink.line()
         for name in ("dayAdvisory", "advisory"):
             if day.get(name):
@@ -577,49 +610,57 @@ class Day(Surface):
             box.retitle(edition)
             text.update(ink.line(view["refused"], "bold $error").content())
             return
-        mass = view.get("mass") or {}
         state = view.get("state") or {}
-        day = view.get("day") or {}
-        resolved = view.get("resolved") or {}
-        standing = resolved.get("standing")
-        title = mass.get("name") or "No single Mass is read here yet"
-        box.retitle(f"{title} · {edition}")
+        rows = view.get("rows") or []
+        box.retitle(f"{view['title']} · {edition}")
         mode = "missal" if state.get("ordinary") else "read"
         language = "English" if state.get("orations") == "en" else "Latin"
-        chosen = [f"{name} {state[name]}" for name in ("territory", "form", "witness") if state.get(name)]
-        if state.get("mass") and standing != "said":
-            chosen.insert(0, "chosen Mass")
+        chosen = [f"{name} {state[name]}" for name in ("mass", "form", "witness") if state.get(name)]
         box.border_subtitle = " · ".join([mode, f"{language} orations", view["bible"]["label"], *chosen])
 
-        ink(dt.date.fromisoformat(view["date"]).strftime("%A %-d %B %Y"), "bold")
-        ink(f"  ·  {season_name(day.get('season'))}", tone(day.get("season"))).line()
-        if mass.get("rank"):
-            ink.line(f"{mass['rank']}", "$text-muted")
-        if standing and standing != "said":
-            ink.line(f"{missal.STANDING_MARK.get(standing, '')} {missal.STANDING_GROUPS.get(standing, standing)}",
-                     "bold $warning")
-        for branch in day.get("branches") or []:
-            if branch.get("settled") is False:
-                ink.line("This date is not settled here; no Mass is presented as the day's.", "bold $warning")
-                break
-        ink.line()
-        missal.choices(ink, view, (self.opening.get("territorial") or {}).get(calendar))
-        if mass.get("recension"):
-            ink.line(str(mass["recension"]), "italic $warning")
-        if mass.get("coverage"):
-            ink.line(mass["coverage"], "italic $text-muted")
-        if state.get("ordinary") and view.get("ordinary"):
-            ordinary = view["ordinary"]
-            if ordinary.get("advisory"):
-                ink.line(ordinary["advisory"], "italic $text-muted")
-        for row in view.get("ordinaryUnresolved") or []:
-            said = row if isinstance(row, str) else (row.get("reason") or row.get("id") or str(row))
-            ink.line(f"Ordinary unresolved: {said}", "italic $warning")
-        missal.events(ink, view, rubrics=self.rubrics, accent="$day-color")
-        if not view.get("events") and not view.get("unresolvedChoices"):
-            for absence in view.get("explicitAbsences") or []:
-                reason = absence.get("reason") or ""
-                if " " in reason:
-                    ink.line(reason, "italic $warning")
+        # The page's header: the long date, then its metadata line (day-reader.js:1683-1696).
+        ink.line(view.get("longDate") or view["date"], "bold")
+        branch = (f"{len(rows)} source-defined territorial results" if view.get("multiple")
+                  else (rows[0].get("option") if rows and rows[0].get("option") else "Universal"))
+        meta = [edition, branch, view["bible"]["label"], f"{language} orations"]
+        if state.get("ordinary"):
+            meta.append(f"{language} Ordinary")
+        ink(" · ".join(meta), "$text-muted")
+        ink(f"  ·  {season_name(view['day'].get('season'))}", tone(view["day"].get("season"))).line()
+        if view.get("multiple"):
+            ink.line("All held territorial branches are shown; no locality is inferred.", "italic $text-muted")
+            territorial = (self.opening.get("territorial") or {}).get(calendar)
+            if territorial:
+                ink.line(territorial, "italic $text-muted")
+        # The page's notices (day-reader.js:1711-1716): coverage, then any oration owner left open.
+        for row in rows:
+            if row.get("notice"):
+                ink.line(row["notice"], "italic $text-muted")
+            for unsettled in row.get("unsettled") or []:
+                ink.line(unsettled, "italic $warning")
+        for row in rows:
+            ink.line()
+            heading = row.get("heading")
+            if heading:
+                ink.line(heading["label"], "bold $day-color")
+                ink.line(heading["title"], "bold")
+            if row.get("failed"):
+                ink.line(row["failed"], "italic $warning")
+                continue
+            resolved = row.get("resolved") or {}
+            if row.get("mass") and not row.get("heading"):
+                ink("Formulary: ", "$text-muted").line(row["mass"]["name"], "bold")
+            if resolved.get("standing") and resolved["standing"] != "said":
+                ink.line(f"Standing: {resolved['standing']}", "bold $warning")
+            context = {**row, "day": {"branches": [row.get("branch") or {}]}, "ordinary": view.get("ordinary")}
+            missal.choices(ink, context)
+            for unresolved in row.get("ordinaryUnresolved") or []:
+                said = unresolved if isinstance(unresolved, str) else (
+                    unresolved.get("reason") or unresolved.get("id") or str(unresolved))
+                ink.line(f"Ordinary unresolved: {said}", "italic $warning")
+            missal.events(ink, context, rubrics=self.rubrics, accent="$day-color")
+        # The Ordinary's own advisory, at the foot (day.js:1609-1612).
+        if state.get("ordinary") and (view.get("ordinary") or {}).get("advisory"):
+            ink.line().line(view["ordinary"]["advisory"], "italic $text-muted")
         text.update(ink.content())
         box.scroll_home(animate=False)

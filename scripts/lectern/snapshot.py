@@ -12,22 +12,39 @@ import io
 
 from rich.console import Console
 
+from . import bridge
 from .app import TriptychApp
 
-# The drawing's own glyphs, one for one, so a plain-tier snapshot keeps its
-# columns. Prose characters are left to the repository's fold
-# (scripts/_tooling.py FOLD), which the plain tier applies after this.
+# The drawing's own glyphs, each mark that carries a meaning given its own
+# ASCII stand-in so a plain-tier snapshot keeps every distinction its legends
+# draw; lines keep their weights. Prose characters are left to the
+# repository's fold (scripts/_tooling.py FOLD), which the plain tier applies
+# after this. tools/tests/test_lectern.py holds each legend's marks apart.
 DRAWING = str.maketrans({
-    **{one: "-" for one in "─━╌╍┄┅┈┉═"},
-    **{one: "|" for one in "│┃╎╏┆┇┊┋║▏▕▎▍▌▊▉"},
+    **{one: "-" for one in "─╴╶"}, "━": "=", "═": "=", **{one: "~" for one in "╌╍"}, **{one: "." for one in "┄┅┈┉"},
+    **{one: "|" for one in "│║▏▕▎▍▌▊▉"}, "┃": "!", **{one: ":" for one in "╎╏┆┇┊┋"}, "⋮": ";",
     **{one: "+" for one in "╭╮╯╰┌┐└┘┏┓┗┛├┤┬┴┼┣┫┳┻╋╔╗╚╝╠╣╦╩╬"},
     **{one: "_" for one in "▁▂▃"}, **{one: "=" for one in "▄▅"}, **{one: "#" for one in "▆▇█"},
-    "▔": "-", "■": "#", "▲": "^", "◆": "*", "◇": "o", "•": ".", "○": "o", "●": "*", "◌": "o",
-    "◐": "~", "◑": "~", "✕": "x", "⑂": "Y", "↔": "~", "▶": ">", "▷": ">",
+    "▔": "-", "■": "#",
+    "◆": "#", "◇": "+", "•": ".", "○": "O", "●": "*", "◌": "o", "◉": "@", "◈": "%",
+    "◐": "(", "◑": ")", "✕": "x", "×": "x", "⊘": "X", "⑂": "Y",
+    "▶": ">", "▷": "}", "▸": ">", "▾": "v", "▼": "v", "▲": "^", "◁": "<", "▷": "}",
+    "←": "<", "→": ">", "↔": "<>", "↳": "L", "⤷": "\\", "☐": "[ ]", "☑": "[x]",
     "⠋": "-", "⠙": "\\", "⠹": "|", "⠸": "/", "⠼": "-", "⠴": "\\", "⠦": "|", "⠧": "/", "⠇": "-", "⠏": "|",
     **{chr(code): str(digit) for code, digit in zip((0x2070, 0xB9, 0xB2, 0xB3, 0x2074, 0x2075, 0x2076,
                                                       0x2077, 0x2078, 0x2079), range(10))},
 })
+
+# What each legend asks a reader to tell apart, for the test that keeps them so.
+LEGENDS = {
+    "day": "◆◇•○?⑂×",
+    "catena": "◌●▸▾┃╏",
+    "law": "┃⊘◌",
+    "history timeline": "●◇━─╌┄▶▼▲",
+    "history map": "●○◉┃│┆⋮",
+    "sources": "☐☑▸⤷",
+    "propers choice": "▶▷",
+}
 
 
 async def _settle(app: TriptychApp, pilot, rounds: int = 400) -> None:
@@ -35,7 +52,9 @@ async def _settle(app: TriptychApp, pilot, rounds: int = 400) -> None:
     quiet = 0
     for _ in range(rounds):
         await pilot.pause(0.05)
-        busy = any(not worker.is_finished for worker in app.workers)
+        # A superseded worker is finished in name while its thread may still be
+        # in a bridge call; wait for the bridge too.
+        busy = any(not worker.is_finished for worker in app.workers) or bridge.BRIDGE_PROCESS.waiting
         quiet = 0 if busy else quiet + 1
         if quiet >= 3:
             return

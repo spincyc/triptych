@@ -19,22 +19,6 @@ from _ordinary_text import SPOKEN, absence_side  # noqa: E402
 
 from .widgets import SUPERSCRIPT, Ink  # noqa: E402
 
-# The headings a Mass is offered under, by its standing on the date: the
-# Day page's own (src/web/browser/liturgy/day.js:379), which keep "may be said
-# instead" apart from "is certainly not said".
-STANDING_GROUPS = {
-    "said": "Said today",
-    "option": "The rubrics permit either",
-    "additional": "Also said today, at another hour",
-    "commemorated": "Commemorated within today’s Mass",
-    "displaced": "Not said today — displaced",
-    "unresolved": "Candidates; this date is not settled here",
-}
-STANDING_ORDER = ("said", "option", "additional", "commemorated", "displaced", "unresolved")
-STANDING_MARK = {
-    "said": "●", "option": "◐", "additional": "◑", "commemorated": "○", "displaced": "✕", "unresolved": "?",
-}
-
 # Run classes, most specific first, and the look each is given.
 RUN_STYLES = (
     ("verse-num", "bold $accent"),
@@ -58,6 +42,9 @@ RUN_STYLES = (
     ("proper-incipit", "italic"),
     ("text-side-label", "bold $text-muted"),
     ("proper-name", "bold $primary"),
+    ("reasoning-locus", "italic $accent"),
+    ("reasoning-latin", "italic"),
+    ("reasoning-lead", ""),
 )
 
 
@@ -75,7 +62,7 @@ def _run_style(classes: list[str], tags: list[str]) -> str:
 def blocks(ink: Ink, items: list[dict], *, accent: str = "$primary") -> Ink:
     """The page's blocks, one line group each, styled by the classes they carry."""
     for block in items:
-        heading = block.get("tag", "").startswith("h")
+        heading = block.get("tag", "").startswith("h") or block.get("tag") == "summary"
         previous = None
         for run in block.get("runs", []):
             text = run.get("text", "")
@@ -105,6 +92,8 @@ def blocks(ink: Ink, items: list[dict], *, accent: str = "$primary") -> Ink:
             style = _run_style(names, run.get("tags", []))
             if heading and "proper-name" in names and not ({"proper-ref", "proper-form", "citation-numbering"} & set(names)):
                 style = f"bold {accent}"
+            elif heading and not style:
+                style = "bold underline" if block.get("tag") == "summary" else "bold"
             ink(text, style)
             previous = names
         ink.line()
@@ -228,17 +217,22 @@ def events(ink: Ink, view: dict, *, rubrics: bool = True, accent: str = "$primar
             if why and (event.get("seat") or {}).get("locus"):
                 ink.line(f"seated by {event['seat']['locus']}", "$text-muted")
         elif kind == "proper-choice":
-            group = str(event.get("group") or "").replace("-", " ").replace("_", " ")
-            ink.line(f"Source Proper choice: {group.title()}", f"bold {accent}")
+            # As source-choice-controls.js sets it: title, note, basis, then each option.
+            ink.line(event.get("title") or "Source Proper choice", f"bold {accent}")
+            if event.get("note"):
+                ink.line(event["note"], "italic $warning")
             if event.get("basis"):
-                ink.line(event["basis"], "italic $text-muted")
+                ink.line(f"Source basis: {event['basis']}", "italic $text-muted")
             selection = event.get("selection") or {}
-            if selection.get("state") == "required":
-                ink.line("Choose one option before reading it as the day's; every option stays below.",
-                         "italic $warning")
-            for option in event.get("options") or []:
-                chosen = selection.get("option") == option.get("id")
-                ink.line(f"{'▶' if chosen else '▷'} option {option.get('id')}", "bold")
+            options = list(event.get("options") or [])
+            chosen = selection.get("option")
+            options.sort(key=lambda one: one.get("id") != chosen)  # the selected one first, as the page shows it
+            for option in options:
+                mark = "▶" if option.get("id") == chosen else "▷"
+                ink(f"{mark} {option.get('label') or option.get('id')}", "bold")
+                if option.get("unavailable"):
+                    ink(" — unavailable for this context", "italic $text-muted")
+                ink.line()
                 for member in option.get("members") or []:
                     blocks(ink, member.get("blocks") or [], accent=accent)
         else:
@@ -260,6 +254,11 @@ def option_label(choice: dict, option: dict, view: dict) -> str:
             if form.get("id") == ident and form.get("name"):
                 return form["name"]
     return ident.replace("-", " ")
+
+
+def choice_label(event: dict, option: dict) -> str:
+    """A source proper choice's option, by the page's name for it."""
+    return f"{event.get('title') or 'Source Proper choice'}  →  {option.get('label') or option.get('id')}"
 
 
 def choices(ink: Ink, view: dict, territorial: str | None = None) -> Ink:

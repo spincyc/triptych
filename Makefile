@@ -78,7 +78,9 @@ ARCH_BROWSER_PACKAGES := chromium
 # The terminal reader, `tools/lectern`, and only it. Like the browser it is not in
 # the list above: a clone that builds PDFs or runs the checks does not need it,
 # and its tests say by name that they did not run where it is absent. The pin
-# in requirements-tui.txt is the version this package ships.
+# in requirements-tui.txt is the version this package ships. Its web editions
+# are set by the site's own renderer, which holds the Markdown pin in
+# requirements-public-alpha.txt and refuses any other version.
 ARCH_TUI_PACKAGES := python-textual
 ARCH_CANONICAL_COMMANDS := make:/usr/bin/make sh:/usr/bin/sh \
 	env:/usr/bin/env id:/usr/bin/id find:/usr/bin/find sort:/usr/bin/sort \

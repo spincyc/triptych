@@ -7,7 +7,7 @@ from rich.style import Style
 from rich.text import Text
 from textual.app import App, ComposeResult
 from textual.binding import Binding
-from textual.containers import Horizontal, VerticalScroll
+from textual.containers import VerticalScroll
 from textual.reactive import reactive
 from textual.screen import ModalScreen
 from textual.widgets import ContentSwitcher, Footer, Static
@@ -141,6 +141,10 @@ def _surface_css() -> str:
     .{name} Panel:focus-within, .{name} ScrollPanel:focus, .{name} ScrollPanel:focus-within {{
         border: round {tone};
     }}
+    .{name} OptionList {{
+        scrollbar-color: {tone} 45%; scrollbar-color-hover: {tone} 75%; scrollbar-color-active: {tone};
+        scrollbar-background: $surface;
+    }}
     .{name} OptionList > .option-list--option-highlighted {{ background: {tone} 18%; color: $foreground; }}
     .{name} OptionList:focus > .option-list--option-highlighted {{
         background: {tone} 45%; color: $foreground; text-style: bold;
@@ -213,10 +217,7 @@ class TriptychApp(App[None]):
 
     def _focus_into(self, surface: Surface) -> None:
         if self.focused is None or surface not in self.focused.ancestors_with_self:
-            for widget in surface.query("*"):
-                if widget.focusable and widget.display and widget.visible:
-                    widget.focus()
-                    break
+            surface.refocus()
 
     def action_surface_at(self, number: int) -> None:
         order = surfaces()

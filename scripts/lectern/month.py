@@ -60,9 +60,12 @@ class Month(Widget, can_focus=True):
                     style = (style + " underline").strip()
                 if date == day:
                     style = (style + " reverse bold").strip()
-                out(" " * (cell - 3))
-                out(glyph, (tone + " bold").strip() if date != day else style)
-                out(f"{date.day:>2}", style)
+                # The mark touches the day it marks: "•2", never "• 2" between two days.
+                mark = glyph.strip()
+                out(" " * (cell - len(mark) - len(str(date.day))))
+                if mark:
+                    out(mark, (tone + " bold").strip() if date != day else style)
+                out(str(date.day), style)
             out.line()
         return out.content()
 

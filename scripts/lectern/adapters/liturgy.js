@@ -11,6 +11,7 @@
  * open is handed back open.
  */
 const path = require('path');
+const pages = require('./page-slice.js');
 
 module.exports = function liturgy(realm) {
   realm.script('shared/browser-core.js');
@@ -19,6 +20,56 @@ module.exports = function liturgy(realm) {
   const M = liturgyModel('assembly-model.js');
   const A = liturgyModel('reader-state-adapters.js');
   const S = liturgyModel('proper-search.js');
+  const C = liturgyModel('reader-state.js');
+
+  /* The readers' own words, sliced out of the pages (page-slice.js): the Day
+   * page's title, its coverage notice and its "Why this Mass", and the
+   * Propers page's notice. `runtime` stands for the page state they read. */
+  const runtime = { structure: null, ordinary: null, mode: 'read' };
+  let dayPage = null;
+  function dayReader() {
+    if (!dayPage) {
+      dayPage = pages.slicePage(realm, 'liturgy/day-reader.js', [
+        ['  const MONTHS = [', '\n  ];'],
+        ['  const WEEKDAY_NAMES = {', '\n  };'],
+        ['  function longDate(iso, weekday) {', pages.FN],
+        ['  function modeLabel(mode) {', pages.FN],
+        ['  function materialCoverageMessage(result) {', pages.FN],
+        ['  function coverageMessage(result, detail) {', pages.FN],
+        ['  function reasoningParagraph(text, locus) {', pages.FN],
+        ['  function reasoningLatin(text) {', pages.FN],
+        ['  const REASONING_SOURCE_WORDS = Object.freeze({', '\n  });'],
+        ['  const REASONING_ORDINALS = Object.freeze(', pages.LINE],
+        ['  function reasoningOrdinal(position) {', pages.FN],
+        ['  function appendOrationRuleReasoning(item, oration, branch) {', pages.FN],
+        ['  function appendProperReasoning(body, branch, rubrics, structure, result) {', pages.FN],
+        ['  function appendOrdinaryReasoning(body, result, ordinary) {', pages.FN],
+        ['  function reasoningApparatus(branch, rubrics, structure, result, ordinary) {', pages.FN],
+        ['  function branchHeading(branch, ordinal) {', pages.FN],
+        ['  function resultHeading(row, structure) {', pages.FN],
+      ], {
+        params: ['T', 'Model', 'runtime'],
+        args: [T, M, runtime],
+        returns: ['longDate', 'coverageMessage', 'reasoningApparatus', 'branchHeading', 'resultHeading'],
+      });
+    }
+    return dayPage;
+  }
+  let propersPage = null;
+  function propersReader(editionName) {
+    if (!propersPage) {
+      propersPage = pages.slicePage(realm, 'liturgy/propers-reader.js', [
+        ['  function recensionContext(structure, mass) {', pages.FN],
+        ['  function materialCoverageMessage(result) {', pages.FN],
+        ['  function coverageMessage(result, mass, structure, detail) {', pages.FN],
+      ], {
+        params: ['T', 'runtime', 'editionName'],
+        args: [T, runtime, editionName],
+        returns: ['coverageMessage'],
+      });
+    }
+    return propersPage;
+  }
 
   const held = new Map();
   function data(relative) {
@@ -34,7 +85,8 @@ module.exports = function liturgy(realm) {
   function bibles() { return data('bibles.json').bibles; }
   function bibleFor(id) {
     const all = bibles();
-    const found = id ? all.find((one) => one.id === id) : all[0];
+    // The declared default, never manifest order (reader-state.js:1157-1165).
+    const found = all.find((one) => one.id === (id || C.DEFAULT_BIBLE_ID));
     if (!found) throw new Error('the Bible ' + id + ' is not offered by bibles.json');
     return found;
   }
@@ -55,6 +107,8 @@ module.exports = function liturgy(realm) {
       territorial: Object.fromEntries((calendar.calendars || []).map((one) =>
         [one.calendar, one.territorial && one.territorial.note || null])),
       default: propers.default || null,
+      defaultBible: C.DEFAULT_BIBLE_ID,
+      defaultOrations: T.SOURCE_LANGUAGE,
       bibles: bibles().map((one) => ({ id: one.id, label: one.label, language: one.language,
         numbering: one.numbering, loci: one.loci, rights: one.rights })),
     };
@@ -153,7 +207,24 @@ module.exports = function liturgy(realm) {
     return found;
   }
 
-  async function events(result, calendar, mass, bible, state, ordinary) {
+  /* A proper choice as source-choice-controls.js presents it: its title, its
+   * note, and each option by name, marked where adapting it fails. */
+  function properChoice(event, probe) {
+    const selected = event.selection && event.selection.option || null;
+    return {
+      title: 'Source Proper choice: ' + T.titleCase(String(event.group).replace(/[-_]+/g, ' ')),
+      note: selected // source-choice-controls.js:54-56
+        ? 'The selected source option is shown first. Other source options remain collapsed and are not cumulative.'
+        : 'The source appoints one of these alternatives here. None is selected; the option groups below are not cumulative.',
+      options: (event.options || []).map((option) => {
+        let unavailable = false;
+        try { if (probe) probe(event.id, option.id); } catch (error) { unavailable = true; }
+        return { id: option.id, label: T.titleCase(String(option.id).replace(/[-_]+/g, ' ')), unavailable };
+      }),
+    };
+  }
+
+  async function events(result, calendar, mass, bible, state, ordinary, probe) {
     const owner = structure(calendar);
     const fragments = mass ? await T.fetchFragments(bible, T.citationsOf(mass)) : null;
     const elements = elementIndex(ordinary);
@@ -167,11 +238,11 @@ module.exports = function liturgy(realm) {
       if (event.kind === 'proper') {
         out.push(Object.assign(base, renderedProper(event, mass, owner, bible, fragments, state)));
       } else if (event.kind === 'proper-choice') {
+        const presented = properChoice(event, probe);
         out.push(Object.assign(base, {
           group: event.group, basis: event.choiceBasis || null,
-          selection: event.selection || null,
-          options: (event.options || []).map((option) => ({
-            id: option.id,
+          selection: event.selection || null, title: presented.title, note: presented.note,
+          options: (event.options || []).map((option, index) => Object.assign({}, presented.options[index], {
             members: (option.events || []).map((member) =>
               Object.assign({ id: member.id }, renderedProper(member, mass, owner, bible, fragments, state))),
           })),
@@ -227,9 +298,7 @@ module.exports = function liturgy(realm) {
     const owner = structure(calendar);
     const mass = (owner.masses || []).find((one) => one.key === key) || null;
     if (!mass) return { mass: null, context: null };
-    const editions = new Map((data('structure/rubrics/index.json').calendars || []).map((one) =>
-      [one.id || one.calendar, one.edition_short || one.edition]));
-    const recension = T.recensionContext(owner, mass, (id) => editions.get(id) || id);
+    const recension = T.recensionContext(owner, mass, editionName);
     const witnesses = (owner.translations || []).map((one) => ({ lang: one.lang, source_id: one.source_id,
       label: one.label, rights: one.rights, caution: one.caution || null,
       acknowledgement: one.acknowledgement || null, held: one.held, composed: one.composed }));
@@ -241,11 +310,7 @@ module.exports = function liturgy(realm) {
         forms: (mass.forms || []).map((one) => ({ id: one.id, name: one.name, ordinal: one.ordinal })),
         textStatus: mass.text_status || null,
         uncompiled: T.massIsUncompiled ? Boolean(T.massIsUncompiled(mass)) : false,
-        recension: recension ? (recension.notice || recension.text || recension) : null,
-        coverage: mass.coverage ? T.coverageNoticeText(mass.coverage, state.orations,
-          state.witness || null) : null,
-        coverageSummary: mass.coverage ? T.coverageSummaryText(mass.coverage, state.orations,
-          state.witness || null) : null,
+        recension: recension && recension.notice || null,
         witnesses: witnesses.filter((one) => one.lang === state.orations),
         edition: owner.edition || null, editionShort: owner.edition_short || null,
         numbering: owner.numbering || null,
@@ -272,7 +337,7 @@ module.exports = function liturgy(realm) {
   }
 
   function normal(options) {
-    const state = Object.assign({ orations: 'la' }, options || {});
+    const state = Object.assign({ orations: T.SOURCE_LANGUAGE }, options || {});
     if (!['la', 'en'].includes(state.orations)) throw new Error('orations are la or en');
     return state;
   }
@@ -289,24 +354,87 @@ module.exports = function liturgy(realm) {
     });
   }
 
+  function editionName(id) {
+    const row = (data('structure/rubrics/index.json').calendars || []).find((one) => (one.id || one.calendar) === id);
+    return row && (row.edition || row.edition_short) || id;
+  }
+
+  function resolvedKey(adapted) {
+    const formulary = adapted.resolved && adapted.resolved.formulary;
+    return formulary && typeof formulary === 'object' ? formulary.id : formulary || null;
+  }
+
+  /* The page's branch heading, read back as its two lines. */
+  function headingOf(page, branch, ordinal) {
+    const lines = realm.dom.read(page.branchHeading(branch, ordinal).node)
+      .map((block) => block.runs.map((run) => run.text).join(''));
+    return { label: lines[0] || '', title: lines[1] || '' };
+  }
+
   async function day(calendar, iso, options) {
     const state = normal(options);
     const bible = bibleFor(state.bible);
     const derived = derive(calendar, iso);
+    const owner = structure(calendar);
     const ordinary = state.ordinary ? ordinaryOf(calendar) : null;
-    const asked = Object.assign(request('day', calendar, state, bible), {
-      civilDate: iso, calendar: { id: calendar }, apparatus: { why: false, rubrics: true },
-    });
-    if (state.mass) asked.selectedReadableFormulary = { id: state.mass };
-    if (state.form) asked.form = state.form;
-    if (state.territory) asked.calendar.territory = { id: state.territory };
-    const adapted = A.adaptDay({ request: asked, derived, structure: structure(calendar), ordinary });
-    const key = adapted.resolved && adapted.resolved.formulary && adapted.resolved.formulary.id ||
-      (adapted.resolved && adapted.resolved.formulary) || null;
-    const { mass, context } = key ? massContext(calendar, typeof key === 'string' ? key : key.id, state)
-      : { mass: null, context: null };
-    const result = {
-      entrance: 'day', calendar, date: iso,
+    const rubrics = rubricsOf(calendar);
+    const page = dayReader();
+    Object.assign(runtime, { structure: owner, ordinary, mode: state.ordinary ? 'missal' : 'read' });
+    // Every held territorial branch, each read under its own territory, as the
+    // page reads them (day-reader.js:1236-1243). A branch the reader names
+    // narrows the reading to it.
+    const named = state.territory
+      ? derived.options.filter((one) => one.option === state.territory) : derived.options;
+    if (state.territory && !named.length) throw new Error('no territorial branch ' + state.territory + ' holds on ' + iso);
+    const multiple = named.length > 1;
+    const rows = [];
+    for (const [ordinal, branch] of named.entries()) {
+      const asked = Object.assign(request('day', calendar, state, bible), {
+        civilDate: iso, calendar: { id: calendar }, apparatus: { why: false, rubrics: true },
+      });
+      if (state.mass) asked.selectedReadableFormulary = { id: state.mass };
+      if (state.form) asked.form = state.form;
+      if (multiple || state.territory) asked.calendar.territory = { id: branch.option };
+      const heading = multiple ? headingOf(page, branch, ordinal) : null;
+      let adapted;
+      try {
+        adapted = A.adaptDay({ request: asked, derived, structure: owner, ordinary });
+      } catch (error) {
+        // page: day-reader.js:1251-1262
+        rows.push({ option: branch.option || null, heading, branch: branchSummary(branch),
+          failed: 'This territorial result cannot be rendered. ' + String(error && error.message || error) +
+            ' No locality, formulary, or liturgical text was substituted.' });
+        continue;
+      }
+      const key = resolvedKey(adapted);
+      const { mass, context } = key ? massContext(calendar, key, state) : { mass: null, context: null };
+      const row = {
+        option: branch.option || null,
+        heading,
+        title: page.resultHeading({ branch, result: adapted }, owner),
+        branch: branchSummary(branch),
+        mass: context,
+        // withRecensionNotice, day-reader.js:195-198
+        notice: [context && context.recension, page.coverageMessage(adapted)].filter(Boolean).join(' '),
+        // day-reader.js:1712-1716
+        unsettled: adapted.resolved && adapted.resolved.standing === 'unresolved'
+          ? (branch.unsettled || []).filter((one) => one.scope === 'oration-owner')
+            .map((one) => [one.what, one.why].filter(Boolean).join(': ')) : [],
+        reasoning: realm.dom.read(page.reasoningApparatus(branch, rubrics, owner, adapted, ordinary)),
+      };
+      common(row, adapted);
+      // properChoiceRequest, source-choice-controls.js: the same request with one choice made.
+      const probe = (id, option) => A.adaptDay({ request: Object.assign({}, asked, {
+        properChoices: Object.assign({}, asked.properChoices || {}, { [id]: option }) }),
+      derived, structure: owner, ordinary });
+      row.events = await events(adapted, calendar, mass, bible, state, ordinary, probe);
+      rows.push(row);
+    }
+    return {
+      entrance: 'day', calendar, date: iso, multiple,
+      longDate: page.longDate(derived.date, derived.weekday),
+      // day-reader.js:1679-1681
+      title: multiple ? 'Held territorial branches' : (rows[0] && rows[0].title) || 'No day is settled here',
       day: {
         weekday: derived.weekday, season: derived.season, week: derived.week,
         edition: derived.edition, advisory: derived.advisory || null,
@@ -317,11 +445,8 @@ module.exports = function liturgy(realm) {
         branches: derived.options.map(branchSummary),
       },
       bible: { id: bible.id, label: bible.label, language: bible.language, numbering: bible.numbering },
-      state, mass: context, ordinary: ordinaryContext(ordinary),
+      state, ordinary: ordinaryContext(ordinary), rows,
     };
-    common(result, adapted);
-    result.events = await events(adapted, calendar, mass, bible, state, ordinary);
-    return result;
   }
 
   async function propers(calendar, key, options) {
@@ -338,13 +463,19 @@ module.exports = function liturgy(realm) {
     if (state.cycle) asked.cycle = state.cycle;
     const adapted = A.adaptPropers({ request: asked, structure: owner, ordinary });
     const { mass, context } = massContext(calendar, key, state);
+    Object.assign(runtime, { structure: owner, ordinary, mode: state.ordinary ? 'missal' : 'read' });
     const result = {
       entrance: 'propers', calendar, key,
       bible: { id: bible.id, label: bible.label, language: bible.language, numbering: bible.numbering },
       state, mass: context, ordinary: ordinaryContext(ordinary),
+      // the page's own notice, recension first (propers-reader.js:783-795)
+      notice: propersReader(editionName).coverageMessage(adapted, mass, owner) || '',
     };
     common(result, adapted);
-    result.events = await events(adapted, calendar, mass, bible, state, ordinary);
+    const probe = (id, option) => A.adaptPropers({ request: Object.assign({}, asked, {
+      properChoices: Object.assign({}, asked.properChoices || {}, { [id]: option }) }),
+    structure: owner, ordinary });
+    result.events = await events(adapted, calendar, mass, bible, state, ordinary, probe);
     return result;
   }
 
