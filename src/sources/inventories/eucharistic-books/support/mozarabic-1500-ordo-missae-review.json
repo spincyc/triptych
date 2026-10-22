@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "mozarabic-1500-ordo-missae",
+  "title": "Independent complete-constituent image collation: Mozarabic Ordo missae core, 1500",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "Independent AI source reviewer (batch-5 text-mozarabic original-image collation), distinct from the transcriber and the coordinator",
+  "checked_on": "2026-10-22",
+  "binding_sha256": "259f6c26e505463f45fe583e71281e576e9f606a047a0874bcdbf0844860bae9",
+  "extent_sha256": "2fbceab1a1a1788dc3149937e8415db211a41de0820e4aecb91581f73e8dcfe4",
+  "witness_sha256": {
+    "copy": "f87526c92dc36199c80336a074d2427121ebfef2f348217eb9fea60567748e34"
+  },
+  "unit_sha256": {
+    "mozarabic.1500.ordo.adesto-rubrica": "8490f849c3f9bf02d980dca6e6bcd462fc82c00eadc44521060b279a8794f17a",
+    "mozarabic.1500.ordo.adesto": "6e792c3d9f7085e9ec7b82dd44226cf271b9103d1456c5faf105deb3ac622904",
+    "mozarabic.1500.ordo.institutio-panis": "fcf25479dc4f35fdf8f2b37d471663e4ef325cb9ba519779b636778531c19fd1",
+    "mozarabic.1500.ordo.institutio-calicis": "81b1fe39362fa78fdae93e87fc22258e5f016eab08ac860d56cec73afbfe4483",
+    "mozarabic.1500.ordo.commemoratio-rubrica": "aaaf1e3143ceb17e5bb6c1828c08d77a257517cbf51a22e1edff4f5e4ab00b78",
+    "mozarabic.1500.ordo.quotiescumque": "a89202c44e2ba3591c926d13416fb6a8b12c2b23b53f6a0f41417db8b936e844",
+    "mozarabic.1500.ordo.forma-consecrationis-nota": "c34fd6797c0d27167942248793ce9b34a07a920c05aa0d4450fd9ae519896b36",
+    "mozarabic.1500.ordo.forma-consecrationis": "86100bdd5bca746eade090124d95f600abb81d1ef4c083a55a4f0353e2a1a3c4",
+    "mozarabic.1500.ordo.post-pridie": "a5b60d6d9f3d0f549ed82c232b9bfb6d7042a5112e8480ec55bc5117778aa9fa",
+    "mozarabic.1500.ordo.te-prestante": "3dbb5ffb9e45319c99593acfdb05e759b5f78a04454b70d7eb3910f5e86f553e",
+    "mozarabic.1500.ordo.accipiat-corpus-rubrica": "31081b2df15a9ce0ee7a5b281d2be3c7357c4e66ee7666564f5feccceb334738",
+    "mozarabic.1500.ordo.fractio-figura": "4dd6336696b21da0b16522797ff36e898cd3efb58d8660f148720c774afb73b1",
+    "mozarabic.1500.ordo.fidem": "4f4833889b5bde8ee7caa8dbef2035723a33260823f61630ec9108db9dfdc6ca",
+    "mozarabic.1500.ordo.symbolum-rubrica": "5fa63533669f61b4a4b69f4b603c458fa5c3835ed7e1c0af0f9c7113290d4852",
+    "mozarabic.1500.ordo.symbolum": "eaebee539385021189cb420a5f47cdd53a1dfd0bc4abd5d22ccab0b0e3025575",
+    "mozarabic.1500.ordo.fractio-rubrica": "8abea5be40e5d9ec19642f24f1864739e0aec87b26a4ed423709ea5cce809cfe",
+    "mozarabic.1500.ordo.oratio-dominica-rubrica": "d8ce64bbe448ea5b0135b621c7e4f70947f881700a56899a36371546bc8e33ea",
+    "mozarabic.1500.ordo.ad-orationem-dominicam": "9f9369b032f73aa00df1b54b0293d66e28c2ec5ad5d91bc10aeb7aefd6dd3e06",
+    "mozarabic.1500.ordo.pater-noster": "08d3aad3cbdf99c7db3e34c305828a87c269a37e8204cdbb7b06a7a8286e6822",
+    "mozarabic.1500.ordo.liberati": "5bdba3f807e2055a0f26e5c5a86f1b4b42b0fe9cd9241c93766a3ba8dd7e2bad"
+  },
+  "scope": "Complete declared Ordo core printed in Dominica prima de adventu of the Toledo 1500 Missale mixtum, BCLM positions 31-34 (retained facsimile pages 1-4): from the red rubric Deinde dicat presbiter in silentio (position 31, right column) through the Amen after Per omnia secula seculorum ending the Liberati (position 34, left column). Includes the two variable Advent I prayers printed inside that span (post pridie Domine Iesu Christe hanc hostiam; ad orationem dominicam Verbum Patris), the marginal Forma ista note, the Roman consecration form printed below the columns and the nine-label fraction figure. Excludes the preceding Inlatio, Sanctus and Post Sanctus, the following Sic faciat commixtion rubric onward, folio numbers, running heads and the handwritten interlinear et between patre and filio on position 33. Neither the complete Ordinary nor the whole Missal is claimed.",
+  "method": "Cold collation on 2026-10-22: every unit and line was read first from the four provider JPEGs embedded in the retained PDF (2016x2864, each sha256 matching the registered page-delivery manifest) at full resolution with 2.5-5x crops, then compared word by word with the reading artifact. Positions 31 and 32 and the colophon position 965 were re-fetched from the provider and are byte-identical to the retained images; the colophon shows Toledo, Hagembach, 9 January 1500. Every red consecration colon was checked on contrast-enhanced crops. Binding, extent, facsimile, reading artifact, passage and all twenty unit hashes were recomputed from actual bytes after corrections.",
+  "findings_resolved": [
+    {
+      "id": "calix-colon-after-qui",
+      "resolution": "Corrected. No colon is printed or visible after the line-final qui in Hic est calix (position 32 left column); the lane's qui: was inferred from the pattern. Now sanguine: qui pro: vobis:. All other colons in both consecration formulas and the Roman form are visible and kept."
+    },
+    {
+      "id": "bene-cross-dicis",
+      "resolution": "Corrected. bene ✠ dicis in Te prestante is one word divided by a cross, printed with the same spacing as sancti✠cas; serialized bene✠dicis like the other in-word crosses."
+    },
+    {
+      "id": "bini-stop",
+      "resolution": "Corrected. 1500 prints bini ac bini. videlicet. with a stop after the second bini; restored under the declared 1500 pointing."
+    },
+    {
+      "id": "manuscript-et",
+      "resolution": "Accepted exclusion. The et between patre and filio on position 33 is a thin pen addition with a caret, not type; it is copy-specific later apparatus, and is declared in the excluded divisions, the extent census and the transformation."
+    },
+    {
+      "id": "as-printed-readings",
+      "resolution": "Confirmed on the image: sancti✠cas (no fi), meremur (no abbreviation mark), adventus tui, hoc eiusdem without est, ad dextera without nasal mark, Confiteor, Quotienscumque twice beside Quotiescumque, Hic elevetur corpus, preter festivis, Per omnia secula seculorum, requiemque and concede."
+    },
+    {
+      "id": "quod-faint-d",
+      "resolution": "Accepted as a qualified reading. The d of quod in Verbum Patris is a faint ghost in a full letter space; quod is the probable printed reading and no other letter fits the space."
+    },
+    {
+      "id": "oratio-cue",
+      "resolution": "Accepted. The red Oro printed beside the first line of Domine Iesu Christe is the overflow of the rubric, expanded Oratio and serialized in the rubric line, as 1755 prints post pridie. Oratio. Likewise the red orationem beside Adesto completes the preceding rubric."
+    },
+    {
+      "id": "qualibet",
+      "resolution": "Accepted. The abbreviated q-libet is expanded qualibet, as 1755 and 1804 print it in full."
+    }
+  ],
+  "normalization_limit": "Declared reading normalization only, not a diplomatic transcription: printed contractions, suspensions, ampersands and Tironian et expanded; long-s, consonantal u/v and i/j standardized; ae and oe ligatures expanded; the printed accents of 1755 and 1804 omitted; case and clause punctuation regularized so that all three Ordo readings use the 1500 pointing and capitalization for corresponding wording, with nomina sacra capitalized, and printed commas, semicolons, line layout, ink colour and italic are not recorded. The word-dividing colons of the consecration words and of the Roman form are recorded only where each edition prints them. Edition spellings, every lexical item, response, rubric and printed cross at its printed position are retained; the fraction figure is serialized as its nine labels.",
+  "review_limit": "Complete only for this declared Ordo core constituent of the 1500 edition. No whole-book text coverage, complete Ordinary, textual parentage or physical-copy completeness is certified."
+}

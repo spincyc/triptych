@@ -1,0 +1,464 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "mozarabic-1500-ordo-missae",
+  "title": "Mozarabic Ordo missae core, 1500 (Dominica prima de adventu): complete constituent",
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "All other Missal divisions and appendices",
+    "Preceding parts of the Order of Mass and of Dominica prima de adventu, from the Officium through the Inlatio, Sanctus and Post Sanctus",
+    "Following parts of the Order of Mass from the commixtion rubric Sic faciat presbiter onward",
+    "Folio numbers, running heads and the manuscript interlinear et on position 33"
+  ],
+  "scope": "The fixed core of the Mozarabic Mass order as printed within Dominica prima de adventu, together with the two variable Advent I prayers printed inside that span, positions 31-34 (ff. v r - vi v): from the rubric Deinde dicat presbiter in silentio before Adesto, through the institution narrative, the Advent I post pridie, Te prestante, Dominus sit semper vobiscum and Fidem, the creed, the fraction rubric and figure, the Advent I prayer ad orationem dominicam, the Pater noster with its responses and the Liberati embolism through its Amen. The marginal Forma ista note and the Roman consecration form printed below the columns are included. All other matter on these pages is excluded.",
+  "transcribed_by": "AI source transcriber (batch 5 Mozarabic Ordo lane)",
+  "stage_ids": [
+    "hispano-mozarabic-1500"
+  ],
+  "catalogue_witness_ids": [
+    "western:mozarabic-1500"
+  ],
+  "components": [
+    "ordinary",
+    "propers",
+    "rubrics"
+  ],
+  "languages": [
+    "la"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1500",
+    "start_year": 1500,
+    "end_year": 1500,
+    "evidence": [
+      {
+        "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.publication-date",
+        "locus": "Original 1500 colophon"
+      }
+    ]
+  },
+  "witnesses": [
+    {
+      "id": "copy",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.castilla-la-mancha-ordo-p031-034-f87526c9",
+      "completeness_evidence": [
+        {
+          "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-extent",
+          "locus": "Exact complete Ordo core from the rubric before Adesto through the Amen of the Liberati embolism."
+        }
+      ],
+      "scope_pages": [
+        [
+          1,
+          4
+        ]
+      ]
+    }
+  ],
+  "extent_path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-ordo-missae-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-ordo-missae-review.json",
+  "units": [
+    {
+      "unit_id": "mozarabic.1500.ordo.adesto-rubrica",
+      "native_path": [
+        "ordo-missae",
+        "adesto-rubrica"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-adesto-rubrica",
+      "text_sha256": "8490f849c3f9bf02d980dca6e6bcd462fc82c00eadc44521060b279a8794f17a"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.adesto",
+      "native_path": [
+        "ordo-missae",
+        "adesto"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-adesto",
+      "text_sha256": "6e792c3d9f7085e9ec7b82dd44226cf271b9103d1456c5faf105deb3ac622904"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.institutio-panis",
+      "native_path": [
+        "ordo-missae",
+        "institutio-panis"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-institutio-panis",
+      "text_sha256": "fcf25479dc4f35fdf8f2b37d471663e4ef325cb9ba519779b636778531c19fd1"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.institutio-calicis",
+      "native_path": [
+        "ordo-missae",
+        "institutio-calicis"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-institutio-calicis",
+      "text_sha256": "81b1fe39362fa78fdae93e87fc22258e5f016eab08ac860d56cec73afbfe4483"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.commemoratio-rubrica",
+      "native_path": [
+        "ordo-missae",
+        "commemoratio-rubrica"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-commemoratio-rubrica",
+      "text_sha256": "aaaf1e3143ceb17e5bb6c1828c08d77a257517cbf51a22e1edff4f5e4ab00b78"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.quotiescumque",
+      "native_path": [
+        "ordo-missae",
+        "quotiescumque"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "dialogue",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-quotiescumque",
+      "text_sha256": "a89202c44e2ba3591c926d13416fb6a8b12c2b23b53f6a0f41417db8b936e844"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.forma-consecrationis-nota",
+      "native_path": [
+        "ordo-missae",
+        "forma-consecrationis-nota"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "note",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-forma-consecrationis-nota",
+      "text_sha256": "c34fd6797c0d27167942248793ce9b34a07a920c05aa0d4450fd9ae519896b36"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.forma-consecrationis",
+      "native_path": [
+        "ordo-missae",
+        "forma-consecrationis"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "formula",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-forma-consecrationis",
+      "text_sha256": "86100bdd5bca746eade090124d95f600abb81d1ef4c083a55a4f0353e2a1a3c4"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.post-pridie",
+      "native_path": [
+        "dominica-prima-adventus",
+        "post-pridie"
+      ],
+      "source_order": 9,
+      "language": "la",
+      "component": "propers",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-post-pridie",
+      "text_sha256": "a5b60d6d9f3d0f549ed82c232b9bfb6d7042a5112e8480ec55bc5117778aa9fa"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.te-prestante",
+      "native_path": [
+        "ordo-missae",
+        "te-prestante"
+      ],
+      "source_order": 10,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-te-prestante",
+      "text_sha256": "3dbb5ffb9e45319c99593acfdb05e759b5f78a04454b70d7eb3910f5e86f553e"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.accipiat-corpus-rubrica",
+      "native_path": [
+        "ordo-missae",
+        "accipiat-corpus-rubrica"
+      ],
+      "source_order": 11,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          3
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-accipiat-corpus-rubrica",
+      "text_sha256": "31081b2df15a9ce0ee7a5b281d2be3c7357c4e66ee7666564f5feccceb334738"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.fractio-figura",
+      "native_path": [
+        "ordo-missae",
+        "fractio-figura"
+      ],
+      "source_order": 12,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "figure",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-fractio-figura",
+      "text_sha256": "4dd6336696b21da0b16522797ff36e898cd3efb58d8660f148720c774afb73b1"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.fidem",
+      "native_path": [
+        "ordo-missae",
+        "fidem"
+      ],
+      "source_order": 13,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "dialogue",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-fidem",
+      "text_sha256": "4f4833889b5bde8ee7caa8dbef2035723a33260823f61630ec9108db9dfdc6ca"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.symbolum-rubrica",
+      "native_path": [
+        "ordo-missae",
+        "symbolum-rubrica"
+      ],
+      "source_order": 14,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-symbolum-rubrica",
+      "text_sha256": "5fa63533669f61b4a4b69f4b603c458fa5c3835ed7e1c0af0f9c7113290d4852"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.symbolum",
+      "native_path": [
+        "ordo-missae",
+        "symbolum"
+      ],
+      "source_order": 15,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "creed",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-symbolum",
+      "text_sha256": "eaebee539385021189cb420a5f47cdd53a1dfd0bc4abd5d22ccab0b0e3025575"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.fractio-rubrica",
+      "native_path": [
+        "ordo-missae",
+        "fractio-rubrica"
+      ],
+      "source_order": 16,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-fractio-rubrica",
+      "text_sha256": "8abea5be40e5d9ec19642f24f1864739e0aec87b26a4ed423709ea5cce809cfe"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.oratio-dominica-rubrica",
+      "native_path": [
+        "ordo-missae",
+        "oratio-dominica-rubrica"
+      ],
+      "source_order": 17,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-oratio-dominica-rubrica",
+      "text_sha256": "d8ce64bbe448ea5b0135b621c7e4f70947f881700a56899a36371546bc8e33ea"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.ad-orationem-dominicam",
+      "native_path": [
+        "dominica-prima-adventus",
+        "ad-orationem-dominicam"
+      ],
+      "source_order": 18,
+      "language": "la",
+      "component": "propers",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-ad-orationem-dominicam",
+      "text_sha256": "9f9369b032f73aa00df1b54b0293d66e28c2ec5ad5d91bc10aeb7aefd6dd3e06"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.pater-noster",
+      "native_path": [
+        "ordo-missae",
+        "pater-noster"
+      ],
+      "source_order": 19,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-pater-noster",
+      "text_sha256": "08d3aad3cbdf99c7db3e34c305828a87c269a37e8204cdbb7b06a7a8286e6822"
+    },
+    {
+      "unit_id": "mozarabic.1500.ordo.liberati",
+      "native_path": [
+        "ordo-missae",
+        "liberati"
+      ],
+      "source_order": 20,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-liberati",
+      "text_sha256": "5bdba3f807e2055a0f26e5c5a86f1b4b42b0fe9cd9241c93766a3ba8dd7e2bad"
+    }
+  ]
+}

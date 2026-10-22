@@ -1457,6 +1457,35 @@ id = "mozarabic-1804-benedictio-panis"
 text_set = "mozarabic-1804-benedictio-panis"
 parents = []
 
+# Independently collated Mozarabic Ordo core (with the two Advent I prayers printed inside it);
+# whole-book coverage remains partial. Each version is an isolated root; parentage is not yet reviewed.
+[[text_sets]]
+id = "mozarabic-1500-ordo-missae"
+adapter = "native-book:mozarabic-1500-ordo-missae"
+
+[[text_versions]]
+id = "mozarabic-1500-ordo-missae"
+text_set = "mozarabic-1500-ordo-missae"
+parents = []
+
+[[text_sets]]
+id = "mozarabic-1755-ordo-missae"
+adapter = "native-book:mozarabic-1755-ordo-missae"
+
+[[text_versions]]
+id = "mozarabic-1755-ordo-missae"
+text_set = "mozarabic-1755-ordo-missae"
+parents = []
+
+[[text_sets]]
+id = "mozarabic-1804-ordo-missae"
+adapter = "native-book:mozarabic-1804-ordo-missae"
+
+[[text_versions]]
+id = "mozarabic-1804-ordo-missae"
+text_set = "mozarabic-1804-ordo-missae"
+parents = []
+
 # Scratch-only insertion into catholic-eucharistic-history-v1.toml presentation_groups.
 [[presentation_groups]]
 id = "trinitarian-order"

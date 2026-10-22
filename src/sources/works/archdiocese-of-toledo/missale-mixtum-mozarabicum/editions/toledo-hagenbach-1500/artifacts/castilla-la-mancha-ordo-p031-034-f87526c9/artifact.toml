@@ -1,0 +1,22 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.castilla-la-mancha-ordo-p031-034-f87526c9"
+edition_id = "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500"
+artifact_type = "scan-pdf"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "licensed"
+license = "CC-BY-4.0"
+rights_basis = "Biblioteca de Castilla-La Mancha, Inc.1, record 12134 expressly supplies this digitized work under CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ . Attribution: Biblioteca de Castilla-La Mancha, Patrimonio Digital de Castilla-La Mancha, Missale mixtum (Toledo 1500), Inc.1, images 100616861-100616864. The exact institutional JPEGs are embedded without recompression or alteration; packaging into one PDF is the only transformation. The historical Latin has an independent United States public-domain basis."
+rights_jurisdiction = "United States"
+source_url = "https://patrimoniodigital.castillalamancha.es/bidicam/es/catalogo_imagenes/grupo.do?path=1500616"
+provenance = "Exact JPEG streams of provider positions 31-34 (image ids 100616861-100616864) extracted byte-for-byte from the tracked part artifact castilla-la-mancha-positions-0001-0100 (its pages 31-34) and matched to the per-page SHA-256 in the registered page-delivery manifest: 1011cb4e..., 2459f2fe..., 196bb2f7..., 45f3c45c.... Packaged unchanged into a four-page PDF (DCTDecode, 150 ppi page geometry) by a deterministic project script; no resampling, crop or OCR."
+retrieved = "2026-10-17"
+sha256 = "f87526c92dc36199c80336a074d2427121ebfef2f348217eb9fea60567748e34"
+byte_size = 1296338
+path = "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-ordo-p031-034-f87526c9/positions-031-034.pdf"
+page_count = 4
+indexable = false
+derived_from = "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.castilla-la-mancha-positions-0001-0100"
+transformation = "Byte-for-byte extraction of four embedded provider JPEG streams (positions 31-34) and lossless repackaging, one image per PDF page, in provider order. No recompression, resampling, crop, OCR or editorial text."
+notes = "Folios v r - vi v of Dominica prima adventus. PDF page 1 = position 31 (f. v r): only the right column from Deinde dicat presbiter in silentio is in the constituent. Pages 2-3 = positions 32-33 are wholly inside it. Page 4 = position 34 (f. vi v): only the left column through the Amen after Per omnia secula seculorum is inside. On position 32 the marginal Forma ista note, the fraction figure and the Roman consecration form below the columns appear to be printed on separate pasted slips (visual impression only, not established). Position 33 carries a manuscript interlinear et between patre and filio in the creed, excluded as a copy-specific annotation. Identity: the separately retained original colophon (position 965) and its publication-date passage."

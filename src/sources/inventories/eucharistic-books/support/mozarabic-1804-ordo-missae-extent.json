@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "title": "Complete constituent extent: mozarabic-1804-ordo-missae",
+  "book_id": "mozarabic-1804-ordo-missae",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "mozarabic.1804.ordo.adesto-rubrica",
+    "mozarabic.1804.ordo.adesto",
+    "mozarabic.1804.ordo.institutio-panis",
+    "mozarabic.1804.ordo.institutio-calicis",
+    "mozarabic.1804.ordo.commemoratio-rubrica",
+    "mozarabic.1804.ordo.quotiescumque",
+    "mozarabic.1804.ordo.forma-consecrationis-nota",
+    "mozarabic.1804.ordo.forma-consecrationis",
+    "mozarabic.1804.ordo.post-pridie",
+    "mozarabic.1804.ordo.te-prestante",
+    "mozarabic.1804.ordo.accipiat-corpus-rubrica",
+    "mozarabic.1804.ordo.fidem",
+    "mozarabic.1804.ordo.symbolum-rubrica",
+    "mozarabic.1804.ordo.symbolum",
+    "mozarabic.1804.ordo.fractio-rubrica",
+    "mozarabic.1804.ordo.fractio-figura",
+    "mozarabic.1804.ordo.oratio-dominica-rubrica",
+    "mozarabic.1804.ordo.ad-orationem-dominicam",
+    "mozarabic.1804.ordo.pater-noster",
+    "mozarabic.1804.ordo.liberati"
+  ],
+  "pages": [
+    {
+      "witness_id": "copy",
+      "ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "mozarabic.1804.ordo.adesto-rubrica",
+        "mozarabic.1804.ordo.adesto",
+        "mozarabic.1804.ordo.institutio-panis"
+      ],
+      "description": "Canvas 28 (cols. 11-12): only the right column from Deinde dicat Presb. in silentio is inside; the earlier text is excluded."
+    },
+    {
+      "witness_id": "copy",
+      "ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "mozarabic.1804.ordo.institutio-panis",
+        "mozarabic.1804.ordo.institutio-calicis",
+        "mozarabic.1804.ordo.commemoratio-rubrica",
+        "mozarabic.1804.ordo.quotiescumque",
+        "mozarabic.1804.ordo.forma-consecrationis-nota",
+        "mozarabic.1804.ordo.forma-consecrationis",
+        "mozarabic.1804.ordo.post-pridie",
+        "mozarabic.1804.ordo.te-prestante",
+        "mozarabic.1804.ordo.accipiat-corpus-rubrica",
+        "mozarabic.1804.ordo.fidem",
+        "mozarabic.1804.ordo.symbolum-rubrica",
+        "mozarabic.1804.ordo.symbolum",
+        "mozarabic.1804.ordo.fractio-rubrica"
+      ],
+      "description": "Canvas 29 (cols. 13-14): wholly inside, including the marginal note and the Roman form below the columns."
+    },
+    {
+      "witness_id": "copy",
+      "ranges": [
+        [
+          3,
+          3
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "mozarabic.1804.ordo.fractio-rubrica",
+        "mozarabic.1804.ordo.fractio-figura",
+        "mozarabic.1804.ordo.oratio-dominica-rubrica",
+        "mozarabic.1804.ordo.ad-orationem-dominicam",
+        "mozarabic.1804.ordo.pater-noster",
+        "mozarabic.1804.ordo.liberati"
+      ],
+      "description": "Canvas 30 (cols. 15-16): wholly inside, including the numbered fraction figure."
+    },
+    {
+      "witness_id": "copy",
+      "ranges": [
+        [
+          4,
+          4
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "mozarabic.1804.ordo.liberati"
+      ],
+      "description": "Canvas 31 (cols. 17-18): only col. 17 through R. Amen is inside; the commixtion rubric Sic faciat Presb. and everything after are excluded."
+    }
+  ]
+}

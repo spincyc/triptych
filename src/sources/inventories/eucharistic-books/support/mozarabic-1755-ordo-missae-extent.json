@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "title": "Complete constituent extent: mozarabic-1755-ordo-missae",
+  "book_id": "mozarabic-1755-ordo-missae",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "mozarabic.1755.ordo.adesto-rubrica",
+    "mozarabic.1755.ordo.adesto",
+    "mozarabic.1755.ordo.institutio-panis",
+    "mozarabic.1755.ordo.institutio-calicis",
+    "mozarabic.1755.ordo.commemoratio-rubrica",
+    "mozarabic.1755.ordo.quotiescumque",
+    "mozarabic.1755.ordo.forma-consecrationis-nota",
+    "mozarabic.1755.ordo.forma-consecrationis",
+    "mozarabic.1755.ordo.post-pridie",
+    "mozarabic.1755.ordo.te-prestante",
+    "mozarabic.1755.ordo.accipiat-corpus-rubrica",
+    "mozarabic.1755.ordo.fractio-figura",
+    "mozarabic.1755.ordo.fidem",
+    "mozarabic.1755.ordo.symbolum-rubrica",
+    "mozarabic.1755.ordo.symbolum",
+    "mozarabic.1755.ordo.fractio-rubrica",
+    "mozarabic.1755.ordo.oratio-dominica-rubrica",
+    "mozarabic.1755.ordo.ad-orationem-dominicam",
+    "mozarabic.1755.ordo.pater-noster",
+    "mozarabic.1755.ordo.liberati"
+  ],
+  "pages": [
+    {
+      "witness_id": "copy",
+      "ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "NYPL copy title page (IA image 0011), retained only to identify the digitized copy's edition."
+    },
+    {
+      "witness_id": "copy",
+      "ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "mozarabic.1755.ordo.adesto-rubrica",
+        "mozarabic.1755.ordo.adesto",
+        "mozarabic.1755.ordo.institutio-panis",
+        "mozarabic.1755.ordo.institutio-calicis",
+        "mozarabic.1755.ordo.commemoratio-rubrica",
+        "mozarabic.1755.ordo.quotiescumque",
+        "mozarabic.1755.ordo.forma-consecrationis-nota",
+        "mozarabic.1755.ordo.forma-consecrationis",
+        "mozarabic.1755.ordo.post-pridie",
+        "mozarabic.1755.ordo.te-prestante",
+        "mozarabic.1755.ordo.accipiat-corpus-rubrica",
+        "mozarabic.1755.ordo.fractio-figura"
+      ],
+      "description": "Printed p. 5 (NYPL image 0127): from line 36 Deinde dicat Presb. in silentio to the end of the page, including the figure and the Roman form; Inlatio, Sanctus and Post Sanctus above and Lesley's line numbers are excluded. The gutter crops the marginal note, which is read on page 4."
+    },
+    {
+      "witness_id": "copy",
+      "ranges": [
+        [
+          3,
+          3
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "mozarabic.1755.ordo.accipiat-corpus-rubrica",
+        "mozarabic.1755.ordo.fidem",
+        "mozarabic.1755.ordo.symbolum-rubrica",
+        "mozarabic.1755.ordo.symbolum",
+        "mozarabic.1755.ordo.fractio-rubrica",
+        "mozarabic.1755.ordo.oratio-dominica-rubrica",
+        "mozarabic.1755.ordo.ad-orationem-dominicam",
+        "mozarabic.1755.ordo.pater-noster",
+        "mozarabic.1755.ordo.liberati"
+      ],
+      "description": "Printed p. 6 (NYPL image 0128): from the top through line 81 Amen; the commixtion rubric Sic faciat Presb. and everything after are excluded."
+    },
+    {
+      "witness_id": "copy",
+      "ranges": [
+        [
+          4,
+          4
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "mozarabic.1755.ordo.forma-consecrationis-nota"
+      ],
+      "description": "Florence copy image 0123, printed p. 5 again: used only for the complete marginal Forma ista note; its other text duplicates page 2 and is not separately transcribed."
+    }
+  ]
+}

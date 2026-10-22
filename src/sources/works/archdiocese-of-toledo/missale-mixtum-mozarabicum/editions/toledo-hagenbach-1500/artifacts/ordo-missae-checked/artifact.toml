@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.ordo-missae-checked"
+edition_id = "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This literal Latin constituent was printed in 1500, before the pre 1931 United States public-domain boundary applicable in 2026. The historical wording is public domain independently of image licensing. Mechanical abbreviation expansion and orthographic regularization add no new liturgical composition; no modern translation or protected edition is reproduced."
+rights_jurisdiction = "United States"
+derived_from = "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500.castilla-la-mancha-ordo-p031-034-f87526c9"
+transformation = "Independent page-image reading transcription, not OCR; OCR and Migne PL 85 used only as leads. Expand printed contractions and suspensions; long-s to s; consonantal u/v and i/j standardized; et replaces ampersand or Tironian et; ae and oe ligatures expanded as ae and oe; the printed accents of 1755 and 1804 omitted. Case and clause punctuation regularized: all three Ordo readings use the 1500 pointing and capitalization for corresponding wording, with nomina sacra capitalized; printed commas, semicolons and line layout are not recorded. The word-dividing colons of the consecration words and of the Roman form printed below them are recorded exactly as each edition prints them (present in 1500 and 1755, absent in 1804). Preserve every lexical item, edition spelling (for example celum/caelum, presbiter/presbyter, simbolum/symbolum, cenavit/coenavit, annunciabitis/annuntiabitis, temptationem/tentationem), response, rubric and printed cross at its printed position, including crosses inside words. No conjectural restoration: the 1500 sancti✠cas, meremur and ad dextera are kept as printed. The fraction figure's nine labels are serialized in the order that 1804 numbers 1-9 (column top to bottom, left arm, right arm, then the two right-hand labels); 1500 and 1755 print no numbers. Where the figure interrupts a unit, the figure is serialized after that unit. Running heads, folio, page, column and editorial line numbers, signatures, catchwords and manuscript annotations are excluded."
+provenance = "Read directly from the four retained provider page images at full resolution (2016x2864) by an AI source transcriber; independently collated word by word against the same retained images by a separate AI source reviewer on 2026-10-22; its corrections are listed in the collation receipt."
+retrieved = "2026-10-22"
+sha256 = "74b7e42df7ab15341f2f342be29fe0803a7a1b0883a149560ac231243393e5c2"
+byte_size = 5238
+path = "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/ordo-missae-checked/ordo-missae.txt"
+encoding = "utf-8"
+indexable = true
+notes = "47 semantic lines, 20 units: the Ordo core printed in Dominica prima de adventu, from the rubric before Adesto through the Amen of the Liberati embolism, including the two Advent I proper formulas printed inside it (post pridie; ad orationem dominicam). Complete only for this declared constituent, not the Missal. The historical wording is excluded from Triptych’s CC BY 4.0 licence."

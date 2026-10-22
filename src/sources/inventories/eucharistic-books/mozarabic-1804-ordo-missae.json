@@ -1,0 +1,464 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "mozarabic-1804-ordo-missae",
+  "title": "Mozarabic Ordo missae core, 1804 (Dominica prima de adventu): complete constituent",
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "All other Missal divisions and appendices",
+    "Preceding parts of the Order of Mass and of Dominica prima de adventu, from the Officium through the Inlatio, Sanctus and Post Sanctus",
+    "Following parts of the Order of Mass from the commixtion rubric Sic faciat presbiter onward",
+    "Printed column and marginal line numbers, running heads and the signature Miss.Moz. B"
+  ],
+  "scope": "The fixed core of the Mozarabic Mass order as printed within Dominica prima de adventu, together with the two variable Advent I prayers printed inside that span, printed cols. 12-17: from the rubric Deinde dicat Presb. in silentio before Adesto, through the institution narrative, the Advent I post pridie, Te praestante, Dominus sit semper vobiscum and Fidem, the creed, the fraction rubric and numbered figure, the Advent I prayer ad orationem dominicam, the Pater noster with its responses and the Liberati embolism through its Amen. The marginal Forma ista note and the Roman consecration form printed below the columns are included. All other matter on these pages is excluded.",
+  "transcribed_by": "AI source transcriber (batch 5 Mozarabic Ordo lane)",
+  "stage_ids": [
+    "hispano-mozarabic-1804"
+  ],
+  "catalogue_witness_ids": [
+    "western:mozarabic-1804"
+  ],
+  "components": [
+    "ordinary",
+    "propers",
+    "rubrics"
+  ],
+  "languages": [
+    "la"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1804",
+    "start_year": 1804,
+    "end_year": 1804,
+    "evidence": [
+      {
+        "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.publication-date",
+        "locus": "Original 1804 title page"
+      }
+    ]
+  },
+  "witnesses": [
+    {
+      "id": "copy",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804",
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.bsb-ordo-canvas28-31-695b81f0",
+      "completeness_evidence": [
+        {
+          "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-extent",
+          "locus": "Exact complete Ordo core from the rubric before Adesto through the Amen of the Liberati embolism."
+        }
+      ],
+      "scope_pages": [
+        [
+          1,
+          4
+        ]
+      ]
+    }
+  ],
+  "extent_path": "src/sources/inventories/eucharistic-books/support/mozarabic-1804-ordo-missae-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/mozarabic-1804-ordo-missae-review.json",
+  "units": [
+    {
+      "unit_id": "mozarabic.1804.ordo.adesto-rubrica",
+      "native_path": [
+        "ordo-missae",
+        "adesto-rubrica"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-adesto-rubrica",
+      "text_sha256": "b469ba1a5f44e0df7196da7c8c440b11cad5c619a78adfc96cd7b0b578452285"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.adesto",
+      "native_path": [
+        "ordo-missae",
+        "adesto"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-adesto",
+      "text_sha256": "ea98436b79ec1a138df5d10ed98a3b8a3ddb438b609cc341b0b568c52bbd45e0"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.institutio-panis",
+      "native_path": [
+        "ordo-missae",
+        "institutio-panis"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          1,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-institutio-panis",
+      "text_sha256": "2b89a0fa4a07658782bc2a6f071ee6b1bd1aae63c5da3df38d808b3e06da3992"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.institutio-calicis",
+      "native_path": [
+        "ordo-missae",
+        "institutio-calicis"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-institutio-calicis",
+      "text_sha256": "d149928788f720587bbe09b432fc65f4dfec9355c5c06b6a7906fda98cc3c4a7"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.commemoratio-rubrica",
+      "native_path": [
+        "ordo-missae",
+        "commemoratio-rubrica"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-commemoratio-rubrica",
+      "text_sha256": "a2a7048bcc526fbdd070867e0f0600ea91d4e76aac90822fcdd9ad0b06785778"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.quotiescumque",
+      "native_path": [
+        "ordo-missae",
+        "quotiescumque"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "dialogue",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-quotiescumque",
+      "text_sha256": "dbcc23dc1cfaab0ab931d8e97069ecb753cc978f4fda780c5bb21ab7bdb54b6d"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.forma-consecrationis-nota",
+      "native_path": [
+        "ordo-missae",
+        "forma-consecrationis-nota"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "note",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-forma-consecrationis-nota",
+      "text_sha256": "7958ebd3b4db52fd83319e0289decbf005e0d15c6c139e4508e492629b6bbb03"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.forma-consecrationis",
+      "native_path": [
+        "ordo-missae",
+        "forma-consecrationis"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "formula",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-forma-consecrationis",
+      "text_sha256": "f5e548155f58f8df3bcdae97d8c0febc3a907ef142477c8258f4fa913bc5ec24"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.post-pridie",
+      "native_path": [
+        "dominica-prima-adventus",
+        "post-pridie"
+      ],
+      "source_order": 9,
+      "language": "la",
+      "component": "propers",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-post-pridie",
+      "text_sha256": "b7781a92e55e09c9463591fa2bafbd016ea66b20c9d2e95b1a811d00bd9d3c66"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.te-prestante",
+      "native_path": [
+        "ordo-missae",
+        "te-prestante"
+      ],
+      "source_order": 10,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-te-prestante",
+      "text_sha256": "675cc97f7b559f10d3217f6256c49d7a3c47be057d799b9c134d5f1cbb393f79"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.accipiat-corpus-rubrica",
+      "native_path": [
+        "ordo-missae",
+        "accipiat-corpus-rubrica"
+      ],
+      "source_order": 11,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-accipiat-corpus-rubrica",
+      "text_sha256": "d72b02c3e340912236be051882e868260407d907fa869eafdd3f2ce2d9e745a5"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.fidem",
+      "native_path": [
+        "ordo-missae",
+        "fidem"
+      ],
+      "source_order": 12,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "dialogue",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-fidem",
+      "text_sha256": "5e8371566943277b366c4e39a1bce9f96a975460732691191fd4eb0a7fb4c643"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.symbolum-rubrica",
+      "native_path": [
+        "ordo-missae",
+        "symbolum-rubrica"
+      ],
+      "source_order": 13,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-symbolum-rubrica",
+      "text_sha256": "79bb63502570f64a212dab7a480066e2629a08e480658679db23719d7737d34f"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.symbolum",
+      "native_path": [
+        "ordo-missae",
+        "symbolum"
+      ],
+      "source_order": 14,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "creed",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-symbolum",
+      "text_sha256": "f4e9fd2fe3c89467fa800ae6938ba18bddf77d715267946a03cda2e3c7649510"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.fractio-rubrica",
+      "native_path": [
+        "ordo-missae",
+        "fractio-rubrica"
+      ],
+      "source_order": 15,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          3
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-fractio-rubrica",
+      "text_sha256": "f3bf1628bd51e5f592f41dadd29a7bf3a7e4cba4a0693986834da318a5abf746"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.fractio-figura",
+      "native_path": [
+        "ordo-missae",
+        "fractio-figura"
+      ],
+      "source_order": 16,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "figure",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-fractio-figura",
+      "text_sha256": "222b4dc7f43e0b8c9ea7f2de1b355d852e7d229fb3ebc5b62dc03410970bda78"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.oratio-dominica-rubrica",
+      "native_path": [
+        "ordo-missae",
+        "oratio-dominica-rubrica"
+      ],
+      "source_order": 17,
+      "language": "la",
+      "component": "rubrics",
+      "kind": "rubric",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-oratio-dominica-rubrica",
+      "text_sha256": "800b46bd8bb9529bde5e889a0b406110158d1caec391895e34539f88e2d15e51"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.ad-orationem-dominicam",
+      "native_path": [
+        "dominica-prima-adventus",
+        "ad-orationem-dominicam"
+      ],
+      "source_order": 18,
+      "language": "la",
+      "component": "propers",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-ad-orationem-dominicam",
+      "text_sha256": "581195d8ff6e07d823701c3e5312f1411a9271b6754c82bace34564763356a3b"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.pater-noster",
+      "native_path": [
+        "ordo-missae",
+        "pater-noster"
+      ],
+      "source_order": 19,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-pater-noster",
+      "text_sha256": "99b01ff905d02df362f73e50773d5b4b49fc35429b779ece584097160cdfa958"
+    },
+    {
+      "unit_id": "mozarabic.1804.ordo.liberati",
+      "native_path": [
+        "ordo-missae",
+        "liberati"
+      ],
+      "source_order": 20,
+      "language": "la",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          4
+        ]
+      ],
+      "passage_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.ordo-liberati",
+      "text_sha256": "3df3b2bccb007eff7cb0566f425ba8a11a0ecac5158fed8f75302a80d5d366d6"
+    }
+  ]
+}
