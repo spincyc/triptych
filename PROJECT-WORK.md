@@ -1619,8 +1619,8 @@ work plan persisted, and a push to `main`.
 - **How it ran.** Twelve lanes ran with exclusive ownership: eight research
   lanes for plan rows 1–5 and four text lanes for row 6. Each research
   lane passed an independent cold review that could only narrow claims.
-  Each text lane's transcription was collated line by line on the page
-  images by a distinct collator before activation.
+  Each integrated text lane's transcription was collated line by line on
+  the page images by a distinct collator before activation.
 - **Coverage.** Stages rose from 396 to 483 (446 documented, 37
   provisional), transitions from 107 to 116, and gaps from 251 to 283.
   Selected-stage routes rose from 124 to 141, and routes with no mapped stage
@@ -1630,8 +1630,10 @@ work plan persisted, and a push to `main`.
   - the Roman Canon for 1604 and 1635;
   - the Dominican Canon for 1550, 1553, 1603 and 1604.
 
-  These come with about 56 MB of tracked US-public-domain facsimile
-  extracts. Whole-book text stays at zero, and no ancestry edge was added.
+  These come with about 56 MB of tracked facsimile extracts of
+  US-public-domain printings; six are provider images kept on BSB
+  non-commercial or CC BY terms. Whole-book text stays at zero, and no
+  ancestry edge was added.
 - **Permissions.** The register reaches 40 findings read in the issuing
   instrument (35 without caveat), against the requested 30.
 - **A defect found.** The collation found that the already-published Rome
