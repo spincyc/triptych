@@ -828,6 +828,15 @@ class Scripture(Surface):
             if period["line"]:
                 ink.line()("    ")(period["line"])
             out.append(Static(ink.content(), classes="sc-p"))
+        text = self.opening.get("text")
+        if text:
+            out.append(Static(Ink()("Text and numbering").content(), classes="sc-h2"))  # page: plan.js:194
+            width = max(len(term) for term, _ in text["rows"])
+            facts = Ink()
+            for term, value in text["rows"]:
+                facts(f"{term:<{width}}   ", "bold $muted").line(value)
+            out.append(Static(facts.content(), classes="sc-table"))
+            out.append(Static(Ink()(text["lead"]).content(), classes="sc-lead"))
         return out
 
     def page_period(self) -> list[Static]:

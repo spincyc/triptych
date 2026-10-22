@@ -479,6 +479,58 @@ module.exports = function liturgy(realm) {
     return result;
   }
 
+  /* Day Compare, as day-compare.js builds it: each missal resolves the date
+   * on its own calendar, and the page's comparison pairs their slots and its
+   * view sets them; the terminal reads back what that view writes. */
+  async function compare(primary, peer, iso, options) {
+    const state = normal(options);
+    ['liturgy/reader-state.js', 'liturgy/reader-comparison.js', 'liturgy/reader-compare-view.js',
+      'liturgy/day-compare.js'].forEach(realm.script);
+    const D = globalThis.TriptychDayCompare;
+    const bible = bibleFor(state.bible);
+    const missals = (data('structure/rubrics/index.json').calendars || []).map((one) =>
+      ({ id: one.id || one.calendar, edition: one.edition, label: one.edition_short }));
+    const derived = derive(primary, iso);
+    const territories = D.territoryCodes(derived, derive(peer, iso));
+    const asked = Object.assign(request('day', primary, state, bible), {
+      civilDate: iso, calendar: { id: primary }, requestedMode: 'compare',
+      options: { ordinary: false, legitimate: {} },
+      comparison: {
+        dimension: 'recension',
+        anchor: { civilDate: iso, territorialContext: state.territory || 'universal' },
+        sides: [primary, peer].map((id) => ({ id, edition: { id }, calendar: { id } })),
+      },
+    });
+    let built;
+    try {
+      built = await D.build({
+        state: asked, derived, structures: { [primary]: structure(primary), [peer]: structure(peer) },
+        load: (where) => Promise.resolve(data(where)), Model: M, Adapters: A, T,
+        bibles: bibles(), missals, isCurrent: () => true,
+      });
+    } catch (error) {
+      return { refused: String(error && error.message || error), territories };
+    }
+    const view = built.view;
+    const editions = view.sides.map((side) => {
+      const row = missals.find((one) => one.id === side.result.resolved.edition);
+      return row && (row.edition || row.label) || side.id;
+    });
+    const unavailable = view.units.some((unit) => unit.sides.some((cell) => cell.status === 'text-unavailable'));
+    return {
+      title: 'Compare calendar results', // day-compare.js:209
+      longDate: dayReader().longDate(built.derived[0].date, built.derived[0].weekday),
+      // day-compare.js:219-222
+      metadata: editions.join(' · ') + ' · ' + view.anchor.territorialContext + ' · ' +
+        T.languageName(state.orations) + ' orations',
+      // day-compare.js:224-226
+      notice: unavailable
+        ? 'Some appointed text is unavailable on a compared side; each unavailable slot is identified below.' : '',
+      blocks: realm.dom.read(built.rendered.fragment),
+      territories,
+    };
+  }
+
   /* Discovery: the published index, found and scored by the page's own search. */
   function catalogue(calendar) {
     const index = data('structure/propers/search/' + calendar + '.json');
@@ -497,5 +549,5 @@ module.exports = function liturgy(realm) {
     return S.find(index, query).map((hit) => hit.ordinal);
   }
 
-  return { opening, month, day, propers, catalogue, search };
+  return { opening, month, day, propers, compare, catalogue, search };
 };

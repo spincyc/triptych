@@ -435,10 +435,14 @@ class Catena(Surface):
                     row(" ↔ runs across the chapter boundary", "$warning")
                 row("  ")(fragment["work"], "italic")
                 row.line()("      ")
+                # The language and the length are always whole; the locator takes what room is left.
+                tail = f"{fragment['chip']} · {fragment['text_words']:,} words"
+                room = (listing.size.width - 2 if listing.size.width else 60) - 6 - len(tail) - 3
                 locator = fragment["locator"]
-                if locator and locator != fragment["work"]:
-                    row(locator if len(locator) <= 24 else locator[:23] + "…", "$text-muted")(" · ", "$text-muted")
-                row(fragment["chip"], "$text-muted")(f" · {fragment['text_words']:,} words", "$text-muted")
+                if locator and locator != fragment["work"] and room >= 6:
+                    row(locator if len(locator) <= room else locator[:room - 1] + "…", "$text-muted")
+                    row(" · ", "$text-muted")
+                row(tail, "$text-muted")
                 listing.add_option(Option(row.content(), id=f"frag-{position}"))
         if keep is not None:
             try:

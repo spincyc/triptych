@@ -118,6 +118,19 @@ module.exports = function scripture(realm) {
         }),
       })),
       omissions: prose(plan.omissions),
+      // page: plan.js:194-212, "Text and numbering"
+      text: {
+        rows: [
+          ['Canon', T.titleCase(String(plan.canon || 'unstated'))],
+          ['References', T.titleCase(String(plan.numbering || 'unstated')) + ' numbering'],
+          ['Readings', String(widest.count) + ' in all, over ' + widest.periods.length + ' periods'],
+        ],
+        lead: 'A track offers every translation the corpus carries, and states the ' +
+          'reference again in that edition\'s own numbering wherever the two ' +
+          'differ — the psalter is numbered one way in the Vulgate tradition and ' +
+          'another in the Hebrew, and a reader who notices the disagreement is ' +
+          'owed the reason rather than left to doubt one of them.',
+      },
       bibles: bibles.map(bibleRow),
       books: Array.from(books.values()),
     };

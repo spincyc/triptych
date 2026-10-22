@@ -14,6 +14,13 @@ from .widgets import Ink
 Mark = Callable[[dt.date], tuple[str, str] | None]
 
 
+def month_weeks(day: dt.date) -> list[list[dt.date | None]]:
+    """The month's weeks, Monday first, None where a week runs outside it. Built
+    from day numbers, so no date beyond the calendar's own range is made."""
+    return [[dt.date(day.year, day.month, number) if number else None for number in week]
+            for week in calendar.Calendar(firstweekday=0).monthdayscalendar(day.year, day.month)]
+
+
 class Month(Widget, can_focus=True):
     """Seven columns, Monday first; the chosen date is reversed, today underlined."""
 
@@ -37,7 +44,7 @@ class Month(Widget, can_focus=True):
 
     def render(self):
         day = self.chosen
-        weeks = calendar.Calendar(firstweekday=0).monthdatescalendar(day.year, day.month)
+        weeks = month_weeks(day)
         cell = self._cell()
         out = Ink()
         out.line(day.strftime("%B %Y").center(cell * 7).rstrip(), "bold")
@@ -46,7 +53,7 @@ class Month(Widget, can_focus=True):
         out.line()
         for week in weeks:
             for date in week:
-                if date.month != day.month:
+                if date is None:
                     out(" " * cell, "")
                     continue
                 glyph, tone = " ", ""
@@ -71,7 +78,7 @@ class Month(Widget, can_focus=True):
 
     def get_content_height(self, container, viewport, width: int) -> int:
         day = self.chosen
-        return 2 + len(calendar.Calendar(firstweekday=0).monthdatescalendar(day.year, day.month))
+        return 2 + len(month_weeks(day))
 
     def _cell(self) -> int:
         return max(3, min(5, max(21, self.size.width) // 7))
@@ -81,7 +88,7 @@ class Month(Widget, can_focus=True):
         if offset is None:
             return
         day = self.chosen
-        weeks = calendar.Calendar(firstweekday=0).monthdatescalendar(day.year, day.month)
+        weeks = month_weeks(day)
         cell = self._cell()
         row, column = offset.y - 2, offset.x // cell
         if 0 <= row < len(weeks) and 0 <= column < 7:

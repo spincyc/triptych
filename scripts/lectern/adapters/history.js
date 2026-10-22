@@ -184,6 +184,10 @@ module.exports = function history(realm) {
       key: model.stageKeys[stage.id], id: stage.id, label: stage.label, date: stage.date_label + ' · ' + stage.date_kind,
       meta: stage.status + ' · Parts: ' + stage.components.map(words).join(', ') + ' · Text: ' + words(stage.text_coverage),
       scope: stage.scope, status: stage.status,
+      // the changes that arrive at it, documented ones unless leads are asked for (history.js:2920-2927)
+      changes: history.transitions.filter((t) => t.to_stage === stage.id && (current.leads || t.status === 'documented'))
+        .map((t) => ({ id: t.id, line: model.transitionKeys[t.id] + ' · ' + words(t.kind) + ' · ' + t.summary,
+          evidence: words(t.evidence_level) + ' · ' + t.status + ' · parentage ' + t.historical_parentage })),
     });
     // page: history.js:3017-3024 — a continuation outside the view says where it goes.
     const outside = (end, stage, key) => {
@@ -209,6 +213,8 @@ module.exports = function history(realm) {
           date_lines: node.dateLines, // the model's own card lines: date label · kind, and whether bounds run past the window
           incoming: node.incoming.map((entry) => entry.key),
         })),
+        // The chronological reading list: this lane's states, as the page's cards (history.js:2997-3001).
+        cards: lane.nodes.map((node) => card(node.stage)),
       })),
       edges: model.edges.map((edge) => ({
         id: edge.id, key: edge.key, from: edge.from, to: edge.to, from_key: edge.fromKey, to_key: edge.toKey,

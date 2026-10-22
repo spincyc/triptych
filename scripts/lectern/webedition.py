@@ -164,6 +164,22 @@ def _runs(ansi: str, accent: str) -> list[tuple[str, str]]:
     return merged
 
 
+_UNAVAILABLE: list = []
+
+
+def unavailable() -> str | None:
+    """Why no web edition can be set on this machine, said before one is asked
+    for; None where one can. Asked once: of the renderer with a trivial
+    document, so its refusal is its own, and of pandoc."""
+    if not _UNAVAILABLE:
+        try:
+            _ansi(_html("x"), 40)
+            _UNAVAILABLE.append(None)
+        except Refused as refusal:
+            _UNAVAILABLE.append(str(refusal))
+    return _UNAVAILABLE[0]
+
+
 def set_for_terminal(web: str, columns: int, accent: str = "$accent") -> dict:
     """The edition's text as styled runs, and how it was set.
 

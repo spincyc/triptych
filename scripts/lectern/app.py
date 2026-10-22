@@ -148,6 +148,10 @@ def _surface_css() -> str:
     .{name} OptionList > .option-list--option-highlighted {{ background: {tone} 18%; color: $foreground; }}
     .{name} OptionList:focus > .option-list--option-highlighted {{
         background: {tone} 45%; color: $foreground; text-style: bold;
+    }}
+    .-light-mode .{name} OptionList > .option-list--option-highlighted {{ background: {tone} 12%; }}
+    .-light-mode .{name} OptionList:focus > .option-list--option-highlighted {{
+        background: {tone} 22%; color: $foreground; text-style: bold;
     }}""")
     return "".join(rules)
 

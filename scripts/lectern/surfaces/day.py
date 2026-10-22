@@ -85,7 +85,7 @@ class Day(Surface):
         ("t", "today"),
         ("g", "go to a date (YYYY-MM-DD)"),
         ("c", "next missal (postconciliar, 1962, pre-1955)"),
-        ("v", "compare: this missal beside another, on the same date"),
+        ("v", "compare: the page's own comparison of this missal and another, slot by slot"),
         ("V", "choose the missal to compare with"),
         ("m", "missal mode: the propers seated in the Ordinary"),
         ("o", "orations in English or Latin"),
@@ -127,8 +127,13 @@ class Day(Surface):
     Day #day-calendar { height: auto; }
     Day #day-missals { height: auto; }
     Day #day-why { height: 1fr; }
-    Day #day-reading-b { display: none; }
-    Day.comparing #day-reading-b { display: block; }
+    Day #day-compare { display: none; }
+    Day.comparing #day-compare { display: block; }
+    Day.comparing #day-reading-a { display: none; }
+    Day #day-compare-body { height: auto; }
+    Day #day-compare-body Horizontal { height: auto; }
+    Day .compare-side { width: 1fr; height: auto; padding: 0 1 0 0; }
+    Day .compare-unit { height: auto; padding: 1 0 0 0; }
     Day OptionList { height: auto; }
     """
 
@@ -145,6 +150,8 @@ class Day(Surface):
         self.ordinary = False
         self.rubrics = True
         self.comparing = False
+        self.compare_territory = ""
+        self.compared: dict | None = None
         self.months: dict[tuple[str, str], dict] = {}
         self.choices: dict[tuple[str, str], dict] = {}
         self.views: dict[str, dict] = {}
@@ -167,7 +174,7 @@ class Day(Surface):
                 ),
                 Horizontal(
                     ScrollPanel(Static("", id="day-text-a"), title="mass", id="day-reading-a"),
-                    ScrollPanel(Static("", id="day-text-b"), title="mass", id="day-reading-b"),
+                    ScrollPanel(Vertical(id="day-compare-body"), title="compare", id="day-compare"),
                 ),
             )
         )
@@ -347,7 +354,21 @@ class Day(Surface):
         return found
 
     def action_choose(self) -> None:
-        sides = [self.calendar] + ([self.peer()] if self.comparing and self.peer() != self.calendar else [])
+        if self.comparing:
+            held = (getattr(self, "compared", None) or {}).get("territories") or []
+            if not held:
+                self.app.notify("No territory is held by both missals on this date.")
+                return
+
+            def chosen(value) -> None:
+                if value:
+                    self.compare_territory = "" if value == "universal" else value
+                    self.load()
+
+            self.app.push_screen(Pick("compare under", [(one, one.replace("-", " ")) for one in held],
+                                      "The territorial context both sides are read in."), chosen)
+            return
+        sides = [self.calendar]
         offers = []
         for side in sides:
             edition = next((one["short"] for one in self.calendars if one["id"] == side), side)
@@ -466,16 +487,26 @@ class Day(Surface):
                 key = (one["id"], month)
                 if key not in self.months:
                     self.months[key] = bridge.call(ADAPTER, "month", one["id"], month)
-            wanted = [calendar] + ([self.peer()] if comparing else [])
-            for name in wanted:
+            try:
+                views[calendar] = bridge.call(ADAPTER, "day", calendar, iso, self.options_for(calendar))
+            except Refused as refusal:
+                views[calendar] = {"refused": str(refusal), "calendar": calendar, "date": iso}
+            compared = None
+            if comparing:
+                # The page's Compare takes no Mass, form or witness of its own
+                # (day-compare.js:31-46 preflight): only the language, the Bible
+                # and a territory both sides hold.
+                asked = {"orations": self.orations, "bible": self.bible}
+                if self.compare_territory:
+                    asked["territory"] = self.compare_territory
                 try:
-                    views[name] = bridge.call(ADAPTER, "day", name, iso, self.options_for(name))
+                    compared = bridge.call(ADAPTER, "compare", calendar, self.peer(), iso, asked)
                 except Refused as refusal:
-                    views[name] = {"refused": str(refusal), "calendar": name, "date": iso}
+                    compared = {"refused": str(refusal), "territories": []}
         except Refused as refusal:
             self.deliver(self.fail, str(refusal))
             return
-        self.deliver(self.show, date, views)
+        self.deliver(self.show, date, views, compared)
 
     # --- drawing ---------------------------------------------------------
 
@@ -501,10 +532,11 @@ class Day(Surface):
         edition = next((one["short"] for one in self.calendars if one["id"] == self.calendar), self.calendar)
         return f"{self.date.strftime('%a %d %b %Y')} · {edition} · {view.get('title') or '—'}"
 
-    def show(self, date: dt.date, views: dict[str, dict]) -> None:
+    def show(self, date: dt.date, views: dict[str, dict], compared: dict | None = None) -> None:
         if date != self.date:
             return
         self.views = views
+        self.compared = compared
         self.query_one(Month).refresh()
         self.query_one("#day-legend", Static).update(
             legend_for(self.months.get((self.calendar, self.date.strftime("%Y-%m")))).content())
@@ -514,10 +546,77 @@ class Day(Surface):
 
     def redraw(self) -> None:
         self.show_why(self.views.get(self.calendar))
-        self.show_reading("#day-reading-a", "#day-text-a", self.views.get(self.calendar), self.calendar)
         if self.comparing:
-            peer = self.peer()
-            self.show_reading("#day-reading-b", "#day-text-b", self.views.get(peer), peer)
+            self.show_compare(getattr(self, "compared", None) or {})
+        else:
+            self.show_reading("#day-reading-a", "#day-text-a", self.views.get(self.calendar), self.calendar)
+
+    @staticmethod
+    def compare_sections(blocks: list[dict]) -> list[dict]:
+        """The page's compare document, cut where it is cut: a heading opens a
+        section, and each side's own heading opens that side's column."""
+        sections = [{"title": None, "lead": [], "sides": []}]
+        for block in blocks:
+            classes = block.get("classes") or []
+            if block.get("tag") == "h2":
+                sections.append({"title": block, "lead": [], "sides": []})
+            elif block.get("tag") == "h3" and ({"compare-side-title", "compare-calendar-side"} & set(classes)):
+                sections[-1]["sides"].append([block])
+            elif sections[-1]["sides"]:
+                sections[-1]["sides"][-1].append(block)
+            else:
+                sections[-1]["lead"].append(block)
+        return [one for one in sections if one["title"] or one["lead"] or one["sides"]]
+
+    def show_compare(self, compared: dict) -> None:
+        box = self.query_one("#day-compare", ScrollPanel)
+        body = self.query_one("#day-compare-body", Vertical)
+        body.remove_children()
+        peer = next((one["short"] for one in self.calendars if one["id"] == self.peer()), self.peer())
+        edition = next((one["short"] for one in self.calendars if one["id"] == self.calendar), self.calendar)
+        box.retitle(f"{compared.get('title') or 'compare'} · {edition} and {peer}")
+        language = "English" if self.orations == "en" else "Latin"
+        territory = self.compare_territory or "universal"
+        box.border_subtitle = f"compare · {language} orations · {territory} · V another missal · s territory"
+        widgets = []
+        if compared.get("refused"):
+            # The page fails closed, and says why (day-reader.js renderFailure).
+            ink = Ink().line("This comparison cannot be made as asked", "bold $warning")
+            ink.line(compared["refused"], "italic $warning").line()
+            ink.line("Compare reads each missal's own result for the date and pairs their Propers; it does not "
+                     "choose for either side. Leave compare (v) to make a choice on the missal that holds one.",
+                     "italic $text-muted")
+            if compared.get("territories"):
+                ink.line(f"Territories both sides hold: {', '.join(compared['territories'])}", "$text-muted")
+            widgets.append(Static(ink.content()))
+        else:
+            head = Ink().line(compared.get("longDate") or "", "bold")
+            head.line(compared.get("metadata") or "", "$text-muted")
+            if compared.get("notice"):
+                head.line(compared["notice"], "italic $text-muted")
+            widgets.append(Static(head.content()))
+            for section in self.compare_sections(compared.get("blocks") or []):
+                unit = Vertical(classes="compare-unit")
+                parts = []
+                if section["title"] or section["lead"]:
+                    lead = missal.blocks(Ink(), ([section["title"]] if section["title"] else []) + section["lead"],
+                                         accent="$day-color")
+                    parts.append(Static(lead.content()))
+                columns = [Static(missal.blocks(Ink(), side, accent="$day-color").content(), classes="compare-side")
+                           for side in section["sides"]]
+                if len(columns) == 2:
+                    parts.append(Horizontal(*columns))
+                else:
+                    parts.extend(columns)
+                widgets.append((unit, parts))
+        for widget in widgets:
+            if isinstance(widget, tuple):
+                container, parts = widget
+                body.mount(container)
+                container.mount_all(parts)
+            else:
+                body.mount(widget)
+        box.scroll_home(animate=False)
 
     def show_missals(self) -> None:
         listing = self.query_one("#day-missal-list", OptionList)

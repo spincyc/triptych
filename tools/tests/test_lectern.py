@@ -107,6 +107,16 @@ class LiturgyAdapterTests(unittest.TestCase):
         said = " ".join(run["text"] for block in view["rows"][0]["reasoning"] for run in block["runs"])
         self.assertIn("This day takes Twenty-first Sunday after Pentecost.", said)
 
+    def test_compare_is_the_pages_and_refuses_as_the_page_refuses(self) -> None:
+        built = bridge.call("liturgy", "compare", "roman-1962", "roman-pre-1955", "2026-10-25", {})
+        said = [" ".join(run["text"] for run in block["runs"]) for block in built["blocks"]]
+        self.assertEqual(built["title"], "Compare calendar results")
+        self.assertIn("Calendar results on this date", said)
+        self.assertIn("Compare corresponding Propers", said)
+        refused = bridge.call("liturgy", "compare", "roman-1962", "postconciliar", "2026-08-02", {})
+        self.assertIn("remain unresolved", refused["refused"])
+        self.assertNotIn("blocks", refused)
+
     def test_the_defaults_are_the_pages(self) -> None:
         opening = bridge.call("liturgy", "opening")
         self.assertEqual((opening["defaultBible"], opening["defaultOrations"]), ("douay-rheims", "la"))

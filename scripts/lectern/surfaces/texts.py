@@ -159,6 +159,11 @@ class Texts(Surface):
                  "The two treatments of a work usually carry different titles, so no work is given a single "
                  "name here: each treatment is listed under the title it actually prints.", "italic $text-muted")
         self.advisory(ink)
+        missing = webedition.unavailable()
+        if missing:
+            ink.line()
+            ink.line("Web editions cannot be read on this machine", "bold $warning")
+            ink.line(missing, "italic $warning")
         self.query_one("#texts-record-text", Static).update(ink.content())
         self.query_one("#texts-record", ScrollPanel).retitle("record")
 
@@ -471,6 +476,11 @@ class Texts(Surface):
             ink.line(f"The catalogue holds {held} for this work; the others are hidden by the choices in force.",
                      "italic $text-muted")
         self.advisory(ink)
+        missing = webedition.unavailable()
+        if missing:
+            ink.line()
+            ink.line("Web editions cannot be read on this machine", "bold $warning")
+            ink.line(missing, "italic $warning")
         self.query_one("#texts-record-text", Static).update(ink.content())
         box = self.query_one("#texts-record", ScrollPanel)
         box.retitle("work")
@@ -539,6 +549,11 @@ class Texts(Surface):
         else:
             ink("Not shown: ", "bold $warning").line(authorship["notice"])
         self.advisory(ink)
+        missing = webedition.unavailable()
+        if missing:
+            ink.line()
+            ink.line("Web editions cannot be read on this machine", "bold $warning")
+            ink.line(missing, "italic $warning")
         self.query_one("#texts-record-text", Static).update(ink.content())
         box.retitle(f"record · {record['treatment']['providerLabel']}")
         treatment = record["treatment"]

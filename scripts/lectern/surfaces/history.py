@@ -314,6 +314,7 @@ class History(Surface):
         ("a / y", "timeline: all recorded years / this tradition's full history"),
         ("r", "timeline: choose a tradition, or all traditions on one axis"),
         ("l", "timeline: include or leave out provisional leads"),
+        ("L", "timeline: read it as a chronological list, or as the year-axis map again"),
         ("n", "timeline: read the chosen state's source text, behind the page's checks"),
         ("c", "read a witness comparison (linked from the chosen transition, or any)"),
         ("s", "lines: the next recorded slice (latin-missal, Holy Week, the Code)"),
@@ -338,6 +339,7 @@ class History(Surface):
         Binding("a", "window('all-years')", "show all recorded years", show=False),
         Binding("y", "window('local-years')", "show this tradition's full history", show=False),
         Binding("l", "leads", "include or leave out provisional leads", show=False),
+        Binding("L", "listing", "read the timeline as a chronological list", show=False),
         Binding("s", "slice", "show the next recorded slice", show=False),
         Binding("x", "state", "read the record as it stood after the chosen act", show=False),
         Binding("u", "unit", "follow one prayer or canon through the record", show=False),
@@ -360,6 +362,9 @@ class History(Surface):
     # Frames that must outrank the shared rules: hidden views, focus, narrow.
     CSS = """
     .history .history-view.hidden { display: none; }
+    .history #history-list-box { display: none; }
+    .history.listing #history-list-box { display: block; }
+    .history.listing #history-chart-box { display: none; }
     .history.focus .history-side { display: none; }
     .history.narrow .history-side { width: 40; }
     .history OptionList { scrollbar-color: $history-color 45%; scrollbar-color-hover: $history-color 75%;
@@ -404,6 +409,8 @@ class History(Surface):
             Horizontal(
                 Panel(Drawing(paint_timeline, "history", id="history-chart"), title="timeline", key="ᵗ",
                       id="history-chart-box"),
+                ScrollPanel(Static("", id="history-list-text"), title="chronological reading list",
+                            id="history-list-box"),
                 Vertical(
                     ScrollPanel(Static("", id="history-detail-text"), title="state", id="history-detail"),
                     ScrollPanel(Static("", id="history-notes-text"), title="not yet established", id="history-notes"),
@@ -604,9 +611,43 @@ class History(Surface):
         if keep is None and self.chosen and self.chosen[0] in ("stage", "transition"):
             keep = self.chosen[1]
         drawing.show(model, keep=keep)
+        self.show_list(model)
         self.show_notes(model)
         self.show_status()
         self.app.refresh_where()
+
+    def action_listing(self) -> None:
+        """The page's other presentation of the same window: a chronological
+        reading list, for a narrow screen or a reader moving by keys
+        (history/index.html "Read as"; guidance/time-machine.md:676-677)."""
+        if not self._in("timeline"):
+            return
+        self.toggle_class("listing")
+        self.call_after_refresh(self.refocus)
+
+    def show_list(self, model: dict) -> None:
+        ink = Doc()
+        ink.line(model.get("status") or "", "italic $text-muted").line()
+        for lane in model.get("lanes") or []:
+            ink.line(lane["label"], f"bold {TONE}")
+            if lane.get("scope"):
+                ink.line(lane["scope"], "$text-muted")
+            if lane.get("coverage_note"):
+                ink.line(lane["coverage_note"], "italic $text-muted")
+            ink.line()
+            for card in lane.get("cards") or []:
+                ink(f"{card['key']} ", "$text-muted")(card["label"], "bold").line()
+                ink.line(f"  {card['date']}", TONE)
+                ink.line(f"  {card['meta']}", "$text-muted")
+                if card.get("scope"):
+                    ink.line(f"  {card['scope']}")
+                for change in card.get("changes") or []:
+                    ink.line(f"  ▶ {change['line']}", "italic")
+                    ink.line(f"    {change['evidence']}", "$text-muted")
+                ink.line()
+        self.query_one("#history-list-text", Static).update(ink)
+        box = self.query_one("#history-list-box", ScrollPanel)
+        box.border_subtitle = f"{model['state']['start']}–{model['state']['end']} · L the year-axis map"
 
     def show_notes(self, model: dict) -> None:
         ink = Doc()
