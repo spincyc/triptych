@@ -1,0 +1,440 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "byzantine-greek-1738-chrysostom-anaphora",
+  "title": "Greek service collection 1738: complete Chrysostom anaphora constituent",
+  "scope": "Complete Anaphora of the Liturgy of St John Chrysostom in the 1738 printing, as that book divides it: from the red deacon heading and Στῶμεν καλῶς (First pagination p. λʹ (provider PP36)) through the ekphonesis Καὶ δὸς ἡμῖν … τῶν αἰώνων that closes the intercessions (First pagination p. λεʹ (provider PP41)), with every red heading, rubric, diaconal and choir line printed inside it and the footnote on the hierarch commemoration. 18 units, 118 reading lines. Excludes everything before Στῶμεν καλῶς and from Καὶ ἔσται τὰ ἐλέη onward. Neither the whole Divine Liturgy nor the whole book is claimed; whole-book text coverage remains partial.",
+  "transcribed_by": "AI source transcriber (batch-5 text-greek original-image reading)",
+  "stage_ids": [
+    "byzantine-stages:greek1738"
+  ],
+  "catalogue_witness_ids": [
+    "eastern:byz-greek-1738"
+  ],
+  "components": [
+    "ordinary"
+  ],
+  "languages": [
+    "grc"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Creed and the preceding Divine Liturgy of John Chrysostom before the deacon’s Στῶμεν καλῶς on p. λʹ",
+    "Καὶ ἔσται τὰ ἐλέη (PP42) and all later Chrysostom liturgy, the Basil and Presanctified liturgies, and the second pagination",
+    "All other services, offices, sacraments, readings and appendices of the book, and the liturgies of Basil and the Presanctified gifts",
+    "Running heads, page numbers, signatures, catchwords, ornaments and drop-cap sizing; ligature and abbreviation glyph forms as declared in the reading normalization"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "April 1738 printing",
+    "start_year": 1738,
+    "end_year": 1738,
+    "evidence": [
+      {
+        "source_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.title-and-service-boundaries",
+        "locus": "Original title PP5: ἀπὸ τῆς ἐνσάρκου οἰκονομίας αψληʹ, κατὰ μῆνα Ἀπρίλλιον"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/byzantine-greek-1738-chrysostom-anaphora-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/byzantine-greek-1738-chrysostom-anaphora-review.json",
+  "witnesses": [
+    {
+      "id": "byz-greek-1738-anaphora-pages",
+      "edition_id": "edition.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda",
+      "artifact_id": "artifact.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-facsimile-a190a9e3",
+      "scope_pages": [
+        [
+          2,
+          7
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-facsimile",
+          "locus": "PDF pages 2–7, printed λʹ (30)–λεʹ (35); first and last pages carry material outside the constituent"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.dialogue",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "dialogue"
+      ],
+      "source_order": 1,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "dialogue-with-rubrics",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-dialogue",
+      "text_sha256": "c1bbf3ecbb5b068efb392589e73ce9b3d3322944ccae848acb81bd6284e8090b"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.preface",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "preface"
+      ],
+      "source_order": 2,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer-with-rubric",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          2,
+          3
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-preface",
+      "text_sha256": "2a5ced6fd4ffa0c95a6622c3a400accea0bc31f8ac69fe3312ca27964b859748"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.sanctus",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "sanctus"
+      ],
+      "source_order": 3,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "ekphonesis-with-rubrics",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-sanctus",
+      "text_sha256": "8e06ce7fbd7ce08ce59ac3d5d8dbd7d7fe53eff91150faf2258678d6fef240a5"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.post-sanctus",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "post-sanctus"
+      ],
+      "source_order": 4,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer-with-rubric",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-post-sanctus",
+      "text_sha256": "49d54d86ad54e64ccf29042856fac90b3190e51d69bbec7a83b3e1427b7e15a8"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.institution-bread",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "institution-bread"
+      ],
+      "source_order": 5,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "institution-ekphonesis-with-rubrics",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-institution-bread",
+      "text_sha256": "66153a994dfa48339fd52060ab62a638cf60d810f55ec53691a91960010bbd80"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.institution-cup",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "institution-cup"
+      ],
+      "source_order": 6,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "institution-ekphonesis-with-rubrics",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-institution-cup",
+      "text_sha256": "4a5a3167728484105f21016b1ee8b826668ac22a22cc00ce17c3b54ba6d25a61"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.anamnesis-oblation",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "anamnesis-oblation"
+      ],
+      "source_order": 7,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer-and-ekphonesis-with-rubrics",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-anamnesis-oblation",
+      "text_sha256": "62ac457d627b1a8f895a0586266cd558d14c7b16bc648db3c45c6c882f12c333"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.invocation-gifts",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "invocation-gifts"
+      ],
+      "source_order": 8,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "epiclesis-with-diaconal-dialogue-and-rubrics",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          4,
+          5
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-invocation-gifts",
+      "text_sha256": "3dfa89294cbf19276c4c25a5ecedf8fb65d5f451b304d65bfe8bad5281152277"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.communion-fruits",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "communion-fruits"
+      ],
+      "source_order": 9,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer-with-rubric",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-communion-fruits",
+      "text_sha256": "f42f64ecd903d405f47fb9a6012cb51e619efb7adb7cabd406f5a320b39618dd"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.commemoration-saints",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "commemoration-saints"
+      ],
+      "source_order": 10,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          5,
+          6
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-commemoration-saints",
+      "text_sha256": "5b4d86f70ab10586af57387449662d0e62589885060ff3b1d15d9d95350510d1"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.commemoration-theotokos",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "commemoration-theotokos"
+      ],
+      "source_order": 11,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "ekphonesis-with-rubric",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-commemoration-theotokos",
+      "text_sha256": "0c426592b13fa55f89fbafd26a27dfb28a397bf133fa15b48f6c6f32374a6c57"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.diptychs-departed",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "diptychs-departed"
+      ],
+      "source_order": 12,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-diptychs-departed",
+      "text_sha256": "2b9c6e30235632e1e628f2f74e0f3749d594e7ffc2ff7ad66b911e347525bbb5"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.intercession-episcopate",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "intercession-episcopate"
+      ],
+      "source_order": 13,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-intercession-episcopate",
+      "text_sha256": "e0efa80fbbb2545371d9a02f2a65f8908b73956ca0b87a34973707399c4987a1"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.intercession-world",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "intercession-world"
+      ],
+      "source_order": 14,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          6,
+          7
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-intercession-world",
+      "text_sha256": "103d8c9cc225587fd8d072ffbeabb6400343e588699cf7fe899020dc118ce3f2"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.commemoration-hierarch",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "commemoration-hierarch"
+      ],
+      "source_order": 15,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "ekphonesis-and-diaconal-commemoration-with-rubrics",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-commemoration-hierarch",
+      "text_sha256": "ee2878f6e617ea51af722cdc7d362e57e1ff0c963df2c02b2233e0bfffe4db86"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.intercession-city",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "intercession-city"
+      ],
+      "source_order": 16,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer-with-rubric",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-intercession-city",
+      "text_sha256": "9c2c3f8eff9463213bc3f3bf4b99aa86ad45090fe96b4aa7cd1557e784010c56"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.closing-ekphonesis",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "closing-ekphonesis"
+      ],
+      "source_order": 17,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "ekphonesis-with-rubric",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-closing-ekphonesis",
+      "text_sha256": "87a589975061a84b1dd49d4981aadbfd142dc9a0afce0e276891d38c79bbe018"
+    },
+    {
+      "unit_id": "unit.byz-greek-1738.chrysostom.commemoration-hierarch-footnote",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "commemoration-hierarch-footnote"
+      ],
+      "source_order": 18,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "footnote",
+      "witness_id": "byz-greek-1738-anaphora-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.holy-see.akolouthiai-ton-anonymon.1738-rome-propaganda.chrysostom-anaphora-commemoration-hierarch-footnote",
+      "text_sha256": "4036a269e4aba2feec288c1bcf603bf6d0c88efae6cfcd8f86eff7cc01cca907"
+    }
+  ]
+}

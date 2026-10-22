@@ -1,0 +1,440 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "byzantine-greek-1754-chrysostom-anaphora",
+  "title": "Greek Euchologion 1754: complete Chrysostom anaphora constituent",
+  "scope": "Complete Anaphora of the Liturgy of St John Chrysostom in the 1754 printing, as that book divides it: from the red deacon heading and Στῶμεν καλῶς (Printed p. 49 (provider PA49)) through the ekphonesis Καὶ δὸς ἡμῖν … τῶν αἰώνων that closes the intercessions (Printed p. 55 (provider PA55)), with every red heading, rubric, diaconal and choir line printed inside it and the footnote on the hierarch commemoration. 18 units, 120 reading lines. Excludes everything before Στῶμεν καλῶς and from Καὶ ἔσται τὰ ἐλέη onward. Neither the whole Divine Liturgy nor the whole book is claimed; whole-book text coverage remains partial.",
+  "transcribed_by": "AI source transcriber (batch-5 text-greek original-image reading)",
+  "stage_ids": [
+    "byzantine-stages:greek1754"
+  ],
+  "catalogue_witness_ids": [
+    "eastern:byz-greek-1754"
+  ],
+  "components": [
+    "ordinary"
+  ],
+  "languages": [
+    "grc"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Creed and the preceding Divine Liturgy of John Chrysostom before the deacon’s Στῶμεν καλῶς on printed p. 49",
+    "Καὶ ἔσται τὰ ἐλέη and all later Chrysostom liturgy from printed p. 55 onward",
+    "All other services, offices, sacraments, readings and appendices of the book, and the liturgies of Basil and the Presanctified gifts",
+    "Running heads, page numbers, signatures, catchwords, ornaments and drop-cap sizing; ligature and abbreviation glyph forms as declared in the reading normalization"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1754 Rome publication",
+    "start_year": 1754,
+    "end_year": 1754,
+    "evidence": [
+      {
+        "source_id": "passage.holy-see.euchologion.1754-rome-propaganda.title",
+        "locus": "Original title PP7: Ἐν Ῥώμῃ. αψνδʹ. 1754"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/byzantine-greek-1754-chrysostom-anaphora-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/byzantine-greek-1754-chrysostom-anaphora-review.json",
+  "witnesses": [
+    {
+      "id": "byz-greek-1754-anaphora-pages",
+      "edition_id": "edition.holy-see.euchologion.1754-rome-propaganda",
+      "artifact_id": "artifact.holy-see.euchologion.1754-rome-propaganda.chrysostom-facsimile-407a99d3",
+      "scope_pages": [
+        [
+          2,
+          8
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-facsimile",
+          "locus": "PDF pages 2–8, printed 49–55; first and last pages carry material outside the constituent"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.dialogue",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "dialogue"
+      ],
+      "source_order": 1,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "dialogue-with-rubrics",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          2,
+          3
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-dialogue",
+      "text_sha256": "c1bbf3ecbb5b068efb392589e73ce9b3d3322944ccae848acb81bd6284e8090b"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.preface",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "preface"
+      ],
+      "source_order": 2,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer-with-rubric",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-preface",
+      "text_sha256": "73c9dbb3a3de7947db2535a0221db5b2f929cf91964e35c30c9ed15988ffc407"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.sanctus",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "sanctus"
+      ],
+      "source_order": 3,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "ekphonesis-with-rubrics",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          3,
+          4
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-sanctus",
+      "text_sha256": "96266a608a625995e4883d83688e5e003f9daebd1c37ebd02e7fcf0cee3fdf1a"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.post-sanctus",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "post-sanctus"
+      ],
+      "source_order": 4,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer-with-rubric",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-post-sanctus",
+      "text_sha256": "abdb6532f43fcc6990d4efd9526211e0f96242d34f46d7f8365dce554e297d09"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.institution-bread",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "institution-bread"
+      ],
+      "source_order": 5,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "institution-ekphonesis-with-rubrics",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-institution-bread",
+      "text_sha256": "745c094b8f20dd3213db6c5b1afc29436b2f4df1541a50300c834fe17b8677dd"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.institution-cup",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "institution-cup"
+      ],
+      "source_order": 6,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "institution-ekphonesis-with-rubrics",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-institution-cup",
+      "text_sha256": "0eb4f8eae9c083477b3f5c48bd6a0743158567084f72d18a820d97afb39a92b4"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.anamnesis-oblation",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "anamnesis-oblation"
+      ],
+      "source_order": 7,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer-and-ekphonesis-with-rubrics",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          4,
+          5
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-anamnesis-oblation",
+      "text_sha256": "62ac457d627b1a8f895a0586266cd558d14c7b16bc648db3c45c6c882f12c333"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.invocation-gifts",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "invocation-gifts"
+      ],
+      "source_order": 8,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "epiclesis-with-diaconal-dialogue-and-rubrics",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          5,
+          6
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-invocation-gifts",
+      "text_sha256": "a7a76637fd35b5ea765030bca52dd863463b8f8afbab900f4df747392d26190f"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.communion-fruits",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "communion-fruits"
+      ],
+      "source_order": 9,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer-with-rubric",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-communion-fruits",
+      "text_sha256": "ca1d8aa77e47ec91d389894343f6835742efc812589de228b28bda6083126b0a"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.commemoration-saints",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "commemoration-saints"
+      ],
+      "source_order": 10,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-commemoration-saints",
+      "text_sha256": "5b4d86f70ab10586af57387449662d0e62589885060ff3b1d15d9d95350510d1"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.commemoration-theotokos",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "commemoration-theotokos"
+      ],
+      "source_order": 11,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "ekphonesis-with-rubric",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-commemoration-theotokos",
+      "text_sha256": "0c426592b13fa55f89fbafd26a27dfb28a397bf133fa15b48f6c6f32374a6c57"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.diptychs-departed",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "diptychs-departed"
+      ],
+      "source_order": 12,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-diptychs-departed",
+      "text_sha256": "c5edcfae44fbbff7e7187a43c656dd68394d581776abd1203727dabcc2095b50"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.intercession-episcopate",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "intercession-episcopate"
+      ],
+      "source_order": 13,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          6,
+          7
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-intercession-episcopate",
+      "text_sha256": "59455b346ebb4d44805bf952604f97cbe981f330b5c9bfdf601351f379e50ad8"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.intercession-world",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "intercession-world"
+      ],
+      "source_order": 14,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-intercession-world",
+      "text_sha256": "103d8c9cc225587fd8d072ffbeabb6400343e588699cf7fe899020dc118ce3f2"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.commemoration-hierarch",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "commemoration-hierarch"
+      ],
+      "source_order": 15,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "ekphonesis-and-diaconal-commemoration-with-rubrics",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-commemoration-hierarch",
+      "text_sha256": "000d0ff6a6918dda9c5d710a62ac2144395a4118f388b11f96dab0e7b0edc4b6"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.intercession-city",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "intercession-city"
+      ],
+      "source_order": 16,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "prayer-with-rubric",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-intercession-city",
+      "text_sha256": "9c2c3f8eff9463213bc3f3bf4b99aa86ad45090fe96b4aa7cd1557e784010c56"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.commemoration-hierarch-footnote",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "commemoration-hierarch-footnote"
+      ],
+      "source_order": 17,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "footnote",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-commemoration-hierarch-footnote",
+      "text_sha256": "ff8625be63f29dc1571f897c99e3bb0492794231bb236af378526096bc021b83"
+    },
+    {
+      "unit_id": "unit.byz-greek-1754.chrysostom.closing-ekphonesis",
+      "native_path": [
+        "chrysostom",
+        "anaphora",
+        "closing-ekphonesis"
+      ],
+      "source_order": 18,
+      "language": "grc",
+      "component": "ordinary",
+      "kind": "ekphonesis-with-rubric",
+      "witness_id": "byz-greek-1754-anaphora-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.holy-see.euchologion.1754-rome-propaganda.chrysostom-anaphora-closing-ekphonesis",
+      "text_sha256": "87a589975061a84b1dd49d4981aadbfd142dc9a0afce0e276891d38c79bbe018"
+    }
+  ]
+}
