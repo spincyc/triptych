@@ -1,6 +1,84 @@
 schema_version = 1
 
 [[deliverables]]
+id = "terminal-reader-lectern-2026-10-22"
+owner = "PROJECT-WORK.md"
+promise = "Make a comprehensive, elegant, intuitive and beautiful btop-like terminal reader for the project, starting with the Missal and extended to Catena Omnia and then every page of the site, built in Python and Textual over the local checkout, clarified with the maintainer, sanity-checked and cold-reviewed; on 22 October 2026 the maintainer asked for the Catena author groups to collapse and default to collapsed, for the plan to be persisted, and for the result to be pushed to main."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "lectern-registered-tool"
+  criterion = "tools/lectern is a registered tool (tmt.json entry, a reading group and a reach declaration in scripts/_tooling.py, a shell smoke test, replayed help examples with declared preconditions) that opens the reader and draws it headlessly with `lectern snapshot` as text, ANSI or SVG, honouring the plain tier."
+  status = "pass"
+  evidence = ["tools/lectern", "tmt.json", "tests/tools/lectern.test", "scripts/replay_examples.py"]
+  check = "contains"
+  path = "tmt.json"
+  needle = "\"lectern\": {"
+
+  [[deliverables.requirements]]
+  id = "lectern-derives-nothing"
+  criterion = "Every view is read from the published structure or asked of the browser's own models and renderers through one node bridge; page logic kept inside a page closure is sliced from the page source and fails closed when its marker moves; any remaining PORT line is cited and pinned by a test."
+  status = "pass"
+  evidence = ["scripts/lectern/README.md", "scripts/lectern/bridge.js", "scripts/lectern/adapters/page-slice.js", "tools/tests/test_lectern.py"]
+  check = "contains"
+  path = "scripts/lectern/README.md"
+  needle = "## The one rule"
+
+  [[deliverables.requirements]]
+  id = "lectern-missal"
+  criterion = "Day shows each missal's day as the live Day page words it (its title, coverage notice and Why this Mass sliced from day-reader.js), every held territorial branch, Read and Missal modes, and the page's own Compare; Propers browses and searches any formulary with the page's search and reads it without a date; every choice the data leaves open is offered and never made by order."
+  status = "pass"
+  evidence = ["scripts/lectern/surfaces/day.py", "scripts/lectern/surfaces/propers.py", "scripts/lectern/adapters/liturgy.js", "tools/tests/test_lectern.py"]
+  check = "contains"
+  path = "tools/tests/test_lectern.py"
+  needle = "def test_compare_is_the_pages_and_refuses_as_the_page_refuses"
+
+  [[deliverables.requirements]]
+  id = "lectern-catena-omnia"
+  criterion = "Catena Omnia shows a book's chapter strip, the chapter's scripture with printed and projected paragraph marks, the chain in the generator's order with author groups collapsed by default, the acquisition list apart from the chain, absences with their offers, and a fragment reader with its provenance and a link into the Source Library."
+  status = "pass"
+  evidence = ["scripts/lectern/surfaces/catena.py", "scripts/lectern/adapters/catena.js", "tools/tests/test_lectern.py"]
+  check = "contains"
+  path = "tools/tests/test_lectern.py"
+  needle = "def test_the_chain_arrives_with_every_author_closed"
+
+  [[deliverables.requirements]]
+  id = "lectern-every-page"
+  criterion = "The reading plan, the document catalogue with web editions set by the site's own renderer, the Source Library, How the Missal Changed (timeline, chronological reading list, recorded lines, book catalogue, comparisons and native texts) and The Code, Canon by Canon each open onto their data under the pages' display rules."
+  status = "pass"
+  evidence = ["scripts/lectern/surfaces/scripture.py", "scripts/lectern/surfaces/texts.py", "scripts/lectern/surfaces/sources.py", "scripts/lectern/surfaces/history.py", "scripts/lectern/surfaces/law.py", "tools/tests/test_lectern.py"]
+  check = "contains"
+  path = "tools/tests/test_lectern.py"
+  needle = "def test_every_surface_opens_onto_its_data"
+
+  [[deliverables.requirements]]
+  id = "lectern-review"
+  criterion = "The reader is sanity-checked (unit, smoke and drawing tests under the system and the pinned interpreters, a key sweep of every surface, rendered screenshots) and cold-reviewed by an independent code review and an independent fidelity and usability review, with every finding fixed or recorded."
+  status = "pass"
+  evidence = ["tools/tests/test_lectern.py", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "Two independent cold reviews"
+
+  [[deliverables.requirements]]
+  id = "lectern-page-mode-parity"
+  criterion = "The reader offers the liturgy pages' remaining modes: Propers Compare along its dimensions (oration language, lectionary cycle, reading alternative, translation witness, Bible edition) and the Study mode of Day and Propers, each through the page's own comparison and study code."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "scripts/lectern/README.md"]
+
+  [[deliverables.requirements]]
+  id = "lectern-maintainer-terminal-review"
+  criterion = "The maintainer has used the interactive reader in a real terminal and either accepted it or recorded the changes to make."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "lectern-on-main"
+  criterion = "The reader is pushed to main as a fast-forward after the deployment gates pass locally, and the Pages run that push triggers is verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "register-remediation-2026-10-21"
 owner = "PROJECT-WORK.md"
 promise = "Find why AI-written proper studies still read with unearned profundity, empty significance, jargon, ham-fisted hokiness and little subtlety, remediate the guidance and the proper-study workflow, and prove the remediation by revising the Claude 1962 Christ the King study, concise study and homily under it, with mechanical sanity checks, a review-side test, a from-scratch generation test and independent cold review; on 21 October 2026 the maintainer then asked for the from-scratch homily and themes pages to be installed after checks, and for the result to be pushed to main."

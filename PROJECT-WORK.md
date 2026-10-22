@@ -7,6 +7,66 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-22.
 
+## Terminal reader (lectern), 2026-10-22
+
+<!-- promised-deliverable: terminal-reader-lectern-2026-10-22 -->
+
+**Built, verified and reviewed; publication to `main` pending its gates.** The
+maintainer asked for a comprehensive, elegant, intuitive and beautiful
+btop-like terminal reader, starting with the Missal and extended to Catena
+Omnia, with clarification, a sanity check and a cold review. Decisions taken
+with the maintainer on 22 October 2026: Python and Textual; read the local
+checkout rather than the published site; after Catena, cover every page of the
+site; commit locally first (since superseded by the request to push to
+`main`); collapse Catena's author groups by default.
+
+What exists: `tools/lectern` (`open`, `snapshot`) and `scripts/lectern/`, whose
+README states the rule the reader keeps — nothing is derived in it. Each view
+is read from `src/web/data/` or asked of the browser's own models and
+renderers through one node process set up as a page's realm; page logic kept
+inside a page closure is sliced from the page source (`adapters/page-slice.js`,
+after `scripts/_act_history_preview.py`), and the few `PORT:` lines left in the
+History and Law adapters are cited and pinned by tests. Eight surfaces, one per
+page: Day (the live Day page's own titles, coverage notices and "Why this
+Mass", every territorial branch, Missal mode, and the page's own Compare),
+Propers, Catena Omnia, the reading plan, the document catalogue, the Source
+Library, How the Missal Changed, and The Code, Canon by Canon. Verification:
+`tools/tests/test_lectern.py` (46 tests, run under the system interpreter and
+under the pinned Markdown), `tests/tools/lectern.test`, the replayed help
+examples, `tmt check`, a key sweep of every surface and rendered screenshots.
+Two independent cold reviews — one of the code, one of fidelity and usability
+against the pages — reported their findings, and each was fixed: superseded
+worker results, markup in data titles, plain-tier marks, bridge timeouts, the
+Day page's wording and defaults, the territorial branches, focus and the
+choice dialog.
+
+Open (the ledger's open requirements): Propers Compare and the Study mode of
+Day and Propers are not in the reader yet; the maintainer has not yet used the
+interactive reader in a real terminal; the push to `main` and its Pages run.
+A web edition is set only where the Markdown pinned in
+`requirements-public-alpha.txt` is installed (`requirements-tui.txt` includes
+it); elsewhere the texts surface says so in place of the text.
+
+Findings outside the reader, recorded here and not yet promised work:
+
+- `mass-today show --expanded` seats the Trinity Preface on a 1962 feria that
+  borrows a Sunday's Mass (2026-10-22); the browser adapter seats the Common
+  Preface, because a borrowing feria takes none of the Sunday's Ordinary
+  appointments. The parity tests cover Sundays only.
+- The Catena page fetches a chapter of a Hebrew-numbered Bible (King James,
+  Revised Version, World English) by its Vulgate number, so in the Psalter it
+  shows another psalm with no refusal, against `guidance/catena.md` Rule 3.
+- The reading-plan page's `readingCitation` drops `edition_loci` and `refused`,
+  so 19 readings render wrongly in some editions (reading 255 under the
+  Catholic Public Domain Version shows other matter).
+- The law slice declares no as-of date and the Law page states no study-aid
+  caution, which `AGENTS.md` asks canon-law work to name; the reader states
+  both.
+- `history.js` says "1 dated states" and the like where a count is one.
+- The tracked Day Compare fixture `compare-day-2026-08-02` expects a
+  resolution that the current data refuses, because the postconciliar
+  Communion antiphon of that Sunday now offers alternatives.
+
 ## Register remediation, 2026-10-21
 
 <!-- promised-deliverable: register-remediation-2026-10-21 -->
