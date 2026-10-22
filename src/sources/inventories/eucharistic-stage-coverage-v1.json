@@ -3,7 +3,7 @@
   "record_type": "eucharistic-book-stage-coverage-audit",
   "audit_id": "stage-coverage-v1",
   "title": "Coverage limits and next evidence for the Eucharistic book-stage chronology",
-  "checked_on": "2026-10-21",
+  "checked_on": "2026-10-22",
   "scope": "Coverage crosswalk of the canonical candidate inventories and stage dossiers at the input hashes below. This audit reconciles their declared evidence, witnesses and gaps; it creates no stages, transitions, local reception claims or text-completion claims.",
   "inputs": [
     {
@@ -36448,15 +36448,15 @@
   "stages": [],
   "transitions": [],
   "validation": {
-    "result": "canonical-owner-crosswalk-refreshed-after-batch4; registered-reconciliation-receipt-recorded-separately; broad-gates-owned-separately",
+    "result": "canonical-owner-crosswalk-refreshed-after-batch5; registered-reconciliation-receipt-recorded-separately; broad-gates-owned-separately",
     "checks": [
-      "All 174 existing route IDs retained exactly once; candidate memberships and supplied numeric chronology reconcile to the batch-4 inventories",
-      "All 43 direct input fingerprints identify the inventories, routing, legacy acts and dossiers, including the three new batch-4 dossiers",
-      "All 39 dossier snapshots and 202 canonical tradition references follow their exact owners",
-      "Each batch-4 lane edited only its assigned route rows and dossiers; route rows were merged by owner and every lane passed independent cold review before integration",
+      "All 174 existing route IDs retained exactly once; candidate memberships and supplied numeric chronology reconcile to the batch-5 inventories",
+      "All 43 direct input fingerprints identify the inventories, routing, legacy acts and dossiers",
+      "All 39 dossier snapshots and 259 canonical tradition references follow their exact owners",
+      "Each batch-5 research lane edited only its assigned route rows and dossiers, and each text lane only the text fields of the stages it bound; route rows were merged by owner, shared dossiers field by field, and every lane passed independent cold review or collation before integration",
       "Provisional-only routes keep status no-new-researched-stage-sequence with their provisional stage IDs listed; provisional stages are not counted as selected sequences",
       "All 708 preserved source routes match the owning source IDs, factual URLs and source types",
-      "Historical batch 2, pre-batch 3 and pre-batch 4 checkpoints remain distinguishable from current measured results",
+      "Historical batch 2, pre-batch 3, pre-batch 4 and pre-batch 5 checkpoints remain distinguishable from current measured results",
       "This audit records lane stages, transitions and gaps but creates none itself; no whole-book text, ancestry permission or local reception follows from a mapping, and final broader gates remain separate"
     ],
     "coverage_status_counts": {
@@ -36857,6 +36857,41 @@
       "routes_without_any_mapped_stage_before": 76,
       "routes_without_any_mapped_stage_after": 45,
       "limit": "Counts describe owner records, not historical completeness. Stage additions rest on inspected leaves, primary acts or exact-locus scholarship as each stage states; text coverage remains not-transcribed or partial, with zero complete whole books."
+    },
+    "pre_batch5_checkpoint": {
+      "scope": "Historical pre-batch5 validation statements (batch 4, 2026-10-21); preserved without being asserted as current counts.",
+      "result": "canonical-owner-crosswalk-refreshed-after-batch4; registered-reconciliation-receipt-recorded-separately; broad-gates-owned-separately",
+      "checks": [
+        "All 174 existing route IDs retained exactly once; candidate memberships and supplied numeric chronology reconcile to the batch-4 inventories",
+        "All 43 direct input fingerprints identify the inventories, routing, legacy acts and dossiers, including the three new batch-4 dossiers",
+        "All 39 dossier snapshots and 202 canonical tradition references follow their exact owners",
+        "Each batch-4 lane edited only its assigned route rows and dossiers; route rows were merged by owner and every lane passed independent cold review before integration",
+        "Provisional-only routes keep status no-new-researched-stage-sequence with their provisional stage IDs listed; provisional stages are not counted as selected sequences",
+        "All 708 preserved source routes match the owning source IDs, factual URLs and source types",
+        "Historical batch 2, pre-batch 3 and pre-batch 4 checkpoints remain distinguishable from current measured results",
+        "This audit records lane stages, transitions and gaps but creates none itself; no whole-book text, ancestry permission or local reception follows from a mapping, and final broader gates remain separate"
+      ]
+    },
+    "batch5_review": {
+      "date": "2026-10-22",
+      "report": "workflows/reviews/missal-batch5-2026-10-22/REPORT.md",
+      "research_lane_receipts": [
+        "central-north-batch5-2026-10-22",
+        "eastern-census-batch5-2026-10-22",
+        "eastern-gaps-batch5-2026-10-22",
+        "french-a-batch5-2026-10-22",
+        "french-b-batch5-2026-10-22",
+        "orders-batch5-2026-10-22",
+        "permissions-batch5-2026-10-22",
+        "south-batch5-2026-10-22",
+        "text-roman-batch5-2026-10-22"
+      ],
+      "coverage_status_counts": {
+        "no-new-researched-stage-sequence": 30,
+        "related-dossier-only-local-reception-unresearched": 3,
+        "selected-stages-available": 141
+      },
+      "limit": "Counts are measured from the integrated owners; they are not completeness scores. Two text efforts (Greek Chrysostom anaphora collation; Rome 1570 re-collation) were stopped unintegrated."
     }
   }
 }

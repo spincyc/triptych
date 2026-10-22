@@ -1,0 +1,711 @@
+{
+  "adapter_id": "native-book:dominican-1604-canon",
+  "binding_sha256": "738d7bcad388d540f8027a6dda1d239c146a04c70a02ac10964a023105f73898",
+  "catalogue_witness_ids": [
+    "latin-missal:praedicatorum-xavierre-1604"
+  ],
+  "counts": {
+    "languages": {
+      "la": 15
+    },
+    "units": 15,
+    "whitespace_tokens": 657
+  },
+  "id": "dominican-1604-canon",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Complete Dominican Canon constituent as the 1604 book prints it: from p. 181 (PDF 245) display title CANON SACROSANCTI INCRUENTI SACRIFICII MISSAE and Te igitur through p. 185 (PDF 249) omnis honor et gloria, left column, immediately before the heading Cantus Solemnis. 15 source-order units, 26 printed crosses, no rubrics printed within these bounds. The book sets the concluding Per omnia saecula saeculorum. Amen only in the following notated chant block, which is excluded with it. Whole-book and complete-Ordinary coverage remain partial; no wording is inherited from another edition.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 5,
+    "known_extent_units": 15,
+    "omitted_book_divisions": [
+      "Front matter, including the title page and revision-basis instruments retained in the same facsimile only as identity and revision evidence",
+      "Prefaces with their seasonal proper Communicantes and Hanc igitur forms printed in the preface section, the Sanctus and the full-page crucifixion woodcut before the Canon",
+      "Everything after omnis honor et gloria: the Cantus Solemnis heading and the notated Per omnia saecula saeculorum, Amen, Oremus in the left column of p. 185, the notated Praeceptis and Pater in its right column, and everything after",
+      "All propers, calendar, lectionary, offertory and other Ordinary outside the Canon",
+      "Running heads, folio and page numbers, signatures, catchwords, woodcuts, ornaments, ink colour and chant notation"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "record_type": "artifact",
+      "rights_basis": "The original 1604 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item bub_gb_lefoIUlq2sgC, contributed by National Central Library of Rome, explicitly records Public Domain Mark 1.0 (http://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/bub_gb_lefoIUlq2sgC; acquired metadata SHA-256 8a5dfc63e214d8f34d608816a8648a7d7196d986b980916edd7723cab9ebf0b9. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://archive.org/download/bub_gb_lefoIUlq2sgC/bub_gb_lefoIUlq2sgC.pdf?download=1",
+      "transformation": "Poppler pdfseparate extracted each listed source page separately and pdfunite 26.10.0 concatenated them in the listed order. No rasterization, image recompression, OCR or text rewriting. The ordered SHA-256 list of the 27 embedded image streams extracted with pdfimages -all from the single-page extracts and from this file is identical. pdfunite output is not byte-reproducible (document ID); the image-stream list is the reproducibility check."
+    },
+    {
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "record_type": "artifact",
+      "rights_basis": "The original 1604 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item bub_gb_lefoIUlq2sgC, contributed by National Central Library of Rome, explicitly records Public Domain Mark 1.0 (http://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/bub_gb_lefoIUlq2sgC; acquired metadata SHA-256 8a5dfc63e214d8f34d608816a8648a7d7196d986b980916edd7723cab9ebf0b9. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://archive.org/download/bub_gb_lefoIUlq2sgC/bub_gb_lefoIUlq2sgC.pdf?download=1",
+      "transformation": "Render the 15-unit reading into 18 sequential UTF-8 LF lines in source order; the printed display title (where present) and each spoken block occupy their own lines, and the consecration words that the book sets as separate blocks occupy separate lines. The Dominican Canon pages of this book print no rubrics between Te igitur and omnis honor et gloria. Reading normalization follows the published roman-1570-canon-missae and batch-5 Roman readings so that Canon states compare word for word: long s becomes s; ae/oe ligatures and e-caudata become ae/oe; u/v are regularized (u vowel, v consonant) and j becomes i (final ij as ii); the ampersand and the Tironian et become et; enclitic q. and q; become que; nasal bars and other printed contractions are expanded (dne/Dne domine/Domine, dni, oibus omnibus, qsumus quaesumus, pstas praestas, final -um/-em/-am, cum, -rum); acute and grave accents are omitted; display initials and spaced capitals are merged in sentence case; line-end word divisions are joined and one space follows punctuation. Spelling, capitalization, punctuation (including the virgule /) and the N. placeholders are otherwise as printed. Printed crosses are rendered as U+2720 at their source positions, including crosses inside words. Running heads, folio and page numbers, signatures, catchwords, woodcuts, ornaments, ink colour and chant notation are excluded. This is a normalized reading transcription, not a glyph-diplomatic facsimile. The display title, printed in capitals, is rendered in sentence case with Missae capitalized as the book's own running head Canon Missae prints it."
+    },
+    {
+      "date": "1604",
+      "id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "language": "la",
+      "publication": "Rome: ex typographia Alfonsi Ciacconi, apud Carolum Vulliettum, 1604",
+      "record_type": "edition",
+      "title": "Missale juxta ritum sacri ordinis Praedicatorum S. P. N. Dominici"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-communicantes",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-hanc-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-heading",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-memento-defunctorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-memento-vivorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-nobis-quoque",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-per-ipsum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-per-quem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-quam-oblationem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-qui-pridie",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-simili-modo",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-supplices",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-supra-quae",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-te-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-unde-et-memores",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "latin-uses:dominican-1604"
+  ],
+  "title": "Dominican Missal 1604: complete Canon constituent",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "heading"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-heading",
+      "source_locator": "Canon unit heading (printed display title); p. 181 (PDF 245); facsimile PDF page(s) 5; normalized-text physical lines 1-1.",
+      "source_order": 1,
+      "text": "Canon sacrosancti incruenti sacrificii Missae.",
+      "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "text_sha256": "7e937e95fb39b733fa34051e60c0540e1efae5caebed1602f1ee48471ebb1f16",
+      "unit_id": "unit.dominican-1604.canon.heading",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-te-igitur",
+      "source_locator": "Canon unit te-igitur (Te igitur); p. 181 (PDF 245); facsimile PDF page(s) 5; normalized-text physical lines 2-2.",
+      "source_order": 2,
+      "text": "Te igitur clementissime Pater, per Iesum Christum Filium tuum Dominum nostrum, supplices rogamus, ac petimus, uti accepta habeas, et benedicas haec ✠ dona, haec ✠ munera, haec ✠ sancta sacrificia illibata. In primis quae tibi offerimus pro Ecclesia tua sancta catholica: quam pacificare, custodire, adunare, et regere digneris toto orbe terrarum: una cum famulo tuo Papa nostro N. et Antistite nostro N. et Rege nostro N. et omnibus orthodoxis, atque catholicae et Apostolicae fidei cultoribus.",
+      "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "text_sha256": "8eee3c060aaaced4cb7fcb47d7d278b739ad5c4b3eda585aec1743cce878a34d",
+      "unit_id": "unit.dominican-1604.canon.te-igitur",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-memento-vivorum",
+      "source_locator": "Canon unit memento-vivorum (Memento of the living); p. 181 (PDF 245); facsimile PDF page(s) 5; normalized-text physical lines 3-3.",
+      "source_order": 3,
+      "text": "Memento Domine famulorum, famularumque tuarum N. et N Et omnium circumstantium, quorum tibi fides cognita est, et nota devotio, pro quibus tibi offerimus, vel qui tibi offerunt hoc sacrificium laudis, pro se, suisque omnibus: pro redemptione animarum suarum, pro spe salutis, et incolumitatis suae: tibique reddunt vota sua aeterno Deo vivo et vero.",
+      "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "text_sha256": "aa1e7066b1a8c449c99e440d1ac73f02c096c74e9661f9781b806ff8f8a1c68a",
+      "unit_id": "unit.dominican-1604.canon.memento-vivorum",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-communicantes",
+      "source_locator": "Canon unit communicantes (Communicantes); p. 181 (PDF 245), p. 182 (PDF 246); facsimile PDF page(s) 5, 6; normalized-text physical lines 4-4.",
+      "source_order": 4,
+      "text": "Communicantes, et memoriam venerantes inprimis gloriosae semper Virginis Mariae Genitricis Dei et Domini nostri Iesu Christi: sed et Beatorum Apostolorum, ac Martyrum tuorum Petri et Pauli, Andreae, Iacobi, Ioannis, Thomae, Iacobi, Philippi, Bartholomaei, Matthaei, Simonis et Thadaei, Lini, Cleti, Clementis, Xysti, Cornelii, Cypriani, Laurentii, Chrysogoni, Ioannis et Pauli, Cosmae et Damiani, et omnium Sanctorum tuorum, quorum meritis, precibusque concedas, ut in omnibus protectionis tuae muniamur auxilio. Per eundem Christum Dominum nostrum. Amen.",
+      "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "text_sha256": "e24b33d89465c67bda445ed1f0bf1c156f80f74435c7d1f1516d559982c4a6f9",
+      "unit_id": "unit.dominican-1604.canon.communicantes",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          6
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-hanc-igitur",
+      "source_locator": "Canon unit hanc-igitur (Hanc igitur); p. 182 (PDF 246); facsimile PDF page(s) 6; normalized-text physical lines 5-5.",
+      "source_order": 5,
+      "text": "Hanc igitur oblationem servitutis nostrae, sed et cunctae familiae tuae, quaesumus Domine, ut placatus accipias: diesque nostros in tua pace disponas, atque ab aeterna damnatione nos eripi, et in electorum tuorum iubeas grege numerari. Per Christum Dominum nostrum. Amen.",
+      "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "text_sha256": "e1c984aae2fbc680e8310a26deaee9346bf6418dd306264aa66b32b0aba8a52a",
+      "unit_id": "unit.dominican-1604.canon.hanc-igitur",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-quam-oblationem",
+      "source_locator": "Canon unit quam-oblationem (Quam oblationem); p. 182 (PDF 246); facsimile PDF page(s) 6; normalized-text physical lines 6-6.",
+      "source_order": 6,
+      "text": "Quam oblationem tu Deus in omnibus, quaesumus, bene✠dictam, ascrip✠tam, ra✠tam, rationabilem, acceptabilemque facere digneris: ut nobis Cor✠pus, et San✠guis fiat dilectissimi Filii tui Domini nostri Iesu Christi.",
+      "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "text_sha256": "18e038ebdec0cb2498166a06dae8007bc54ac40c8b1108181889fc26c6a55b95",
+      "unit_id": "unit.dominican-1604.canon.quam-oblationem",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-qui-pridie",
+      "source_locator": "Canon unit qui-pridie (Qui pridie with Hoc est enim corpus meum); p. 182 (PDF 246), p. 183 (PDF 247); facsimile PDF page(s) 6, 7; normalized-text physical lines 7-8.",
+      "source_order": 7,
+      "text": "Qui pridie quam pateretur, accepit panem in sanctas ac venerabiles manus suas, et elevatis oculis in caelum ad te Deum Patrem suum omnipotentem, tibi gratias agens, bene✠dixit, fregit, deditque discipulis suis, dicens: Accipite, et manducate ex hoc omnes.\nHoc est enim corpus meum.",
+      "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "text_sha256": "a81ddb39e80a5d31e928091ac55046562c20404a21476c397108b488e6cd1788",
+      "unit_id": "unit.dominican-1604.canon.qui-pridie",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          7
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-simili-modo",
+      "source_locator": "Canon unit simili-modo (Simili modo with Hic est enim calix and Haec quotiescumque); p. 183 (PDF 247); facsimile PDF page(s) 7; normalized-text physical lines 9-11.",
+      "source_order": 8,
+      "text": "Simili modo postquam coenatum est, accipiens et hunc praeclarum calicem in sanctas ac venerabiles manus suas, item tibi gratias agens, bene✠dixit, deditque discipulis suis, dicens: Accipite, et bibite ex eo omnes.\nHic est enim calix sanguinis mei, novi, et aeterni testamenti, mysterium fidei, qui pro vobis, et pro multis effundetur in remissionem peccatorum.\nHaec quotiescumque feceritis, in mei memoriam facietis.",
+      "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "text_sha256": "680487b9865f0f9958b99a4156a689dbf06c0fbb3da6f68d9eec31a32da94880",
+      "unit_id": "unit.dominican-1604.canon.simili-modo",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-unde-et-memores",
+      "source_locator": "Canon unit unde-et-memores (Unde et memores); p. 183 (PDF 247); facsimile PDF page(s) 7; normalized-text physical lines 12-12.",
+      "source_order": 9,
+      "text": "Unde et memores Domine, nos servi tui, sed et plebs tua sancta eiusdem Christi Filii tui Domini Dei nostri, tam beatae Passionis, necnon et ab inferis Resurrectionis, sed et in caelos gloriosae Ascensionis, offerimus praeclarae Maiestati tuae, de tuis donis ac datis, Hostiam ✠ puram, Hostiam ✠ sanctam, Hostiam ✠ immaculatam, Pa✠nem sanctum vitae aeternae, et Cali✠cem salutis perpetuae.",
+      "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "text_sha256": "a6425c12e347a59567a9c3740a4e6ce28d6c660b1cbbed9ff498006204266844",
+      "unit_id": "unit.dominican-1604.canon.unde-et-memores",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-supra-quae",
+      "source_locator": "Canon unit supra-quae (Supra quae); p. 183 (PDF 247), p. 184 (PDF 248); facsimile PDF page(s) 7, 8; normalized-text physical lines 13-13.",
+      "source_order": 10,
+      "text": "Supra quae propitio ac sereno vultu respicere digneris, et accepta habere, sicuti accepta habere dignatus es munera pueri tui iusti Abel, et sacrificium Patriarchae nostri Abrahae, et quod tibi obtulit summus Sacerdos tuus Melchisedech, sanctum sacrificium, immaculatam Hostiam.",
+      "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "text_sha256": "1c4a96248599d99d81d2b1ca2c74b83da591fc79a9ba9ffbf4f4c50c02ac01b1",
+      "unit_id": "unit.dominican-1604.canon.supra-quae",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          8
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-supplices",
+      "source_locator": "Canon unit supplices (Supplices te rogamus); p. 184 (PDF 248); facsimile PDF page(s) 8; normalized-text physical lines 14-14.",
+      "source_order": 11,
+      "text": "Supplices te rogamus omnipotens Deus, iube haec perferri per manus Sancti Angeli tui in sublime altare tuum in conspectu divinae Maiestatis tuae. Ut quotquot, ex hac altaris participatione, sacrosanctum Filii tui Cor✠pus et San✠guinem sumpserimus, omni be✠nedictione caelesti, et gratia repleamur. Per eundem Christum Dominum nostrum. Amen.",
+      "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "text_sha256": "f6d99343af422d37075cf8c43d4c44c08576eb9299b5d727546855353ac2db79",
+      "unit_id": "unit.dominican-1604.canon.supplices",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-defunctorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-memento-defunctorum",
+      "source_locator": "Canon unit memento-defunctorum (Memento of the dead with Ipsis Domine); p. 184 (PDF 248); facsimile PDF page(s) 8; normalized-text physical lines 15-15.",
+      "source_order": 12,
+      "text": "Memento etiam Domine famulorum, famularumque tuarum, qui nos praecesserunt cum signo fidei, et dormiunt in somno pacis N. et N. Ipsis Domine; et omnibus in Christo quiescentibus locum refrigerii, lucis, et pacis, ut indulgeas deprecamur. Per eundem Christum Dominum nostrum. Amen.",
+      "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "text_sha256": "289e8997b487ef2412e3a1dc3fedf6faf224726f8a6c25bb939e5348d35f4ef4",
+      "unit_id": "unit.dominican-1604.canon.memento-defunctorum",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-nobis-quoque",
+      "source_locator": "Canon unit nobis-quoque (Nobis quoque peccatoribus); p. 184 (PDF 248), p. 185 (PDF 249); facsimile PDF page(s) 8, 9; normalized-text physical lines 16-16.",
+      "source_order": 13,
+      "text": "Nobis quoque peccatoribus famulis tuis, de multitudine miserationum tuarum sperantibus, partem aliquam et societatem donare digneris cum tuis Sanctis Apostolis; et Martyribus, cum Ioanne, Stephano, Matthia, Barnaba, Ignatio, Alexandro, Marcellino, Petro, Felicitate, Perpetua, Agatha, Lucia, Agnete, Caecilia, Anastasia, et omnibus Sanctis tuis: intra quorum nos consortium, non aestimator meriti, sed veniae, quaesumus, largitor admitte. Per Christum Dominum nostrum.",
+      "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "text_sha256": "6f350681782578a2e143a232f76449f4e8e90935efc848c81f8ed10b7bfcc6f9",
+      "unit_id": "unit.dominican-1604.canon.nobis-quoque",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          9
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-per-quem",
+      "source_locator": "Canon unit per-quem (Per quem haec omnia); p. 185 (PDF 249); facsimile PDF page(s) 9; normalized-text physical lines 17-17.",
+      "source_order": 14,
+      "text": "Per quem haec omnia Domine semper bona creas, sancti✠ficas, vivi✠ficas, bene✠dicis, et praestas nobis.",
+      "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "text_sha256": "b256eeff65489aef1292e213252560b00ef2cb7c12e6f653693a44bd7dc9ce16",
+      "unit_id": "unit.dominican-1604.canon.per-quem",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          9
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "doxology",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-reading-4676dff6",
+      "source_id": "passage.order-of-preachers.missale.1604-rome-xavierre.canon-per-ipsum",
+      "source_locator": "Canon unit per-ipsum (Per ipsum doxology through omnis honor et gloria); p. 185 (PDF 249); facsimile PDF page(s) 9; normalized-text physical lines 18-18.",
+      "source_order": 15,
+      "text": "Per ✠ ipsum, et cum ✠ ipso, et in ✠ ipso, est tibi Deo ✠ Patri omnipotenti, in unitate Spiritus ✠ sancti, omnis honor et gloria.",
+      "text_edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "text_sha256": "192f38ca35623120d2d63bbdf290dd6bb4a33f3caec4245ca5325792393a26e8",
+      "unit_id": "unit.dominican-1604.canon.per-ipsum",
+      "witness_id": "dominican-1604-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          9
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a",
+      "edition_id": "edition.order-of-preachers.missale.1604-rome-xavierre",
+      "id": "dominican-1604-canon-pages",
+      "scope_pages": [
+        [
+          5,
+          9
+        ]
+      ]
+    }
+  ]
+}

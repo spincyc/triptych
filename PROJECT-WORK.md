@@ -1551,6 +1551,40 @@ Earlier branch-only delivery statements below describe their dated batches.
 No whole-book, physical-print or full all-rite completion follows from main
 integration.
 
+**Fifth parallel batch, 22 October 2026: integrated after cold review.** The
+maintainer asked for all possible parallel work in sub-agents and a cold
+review after each phase. On 22 October they asked for a coherent stop, the
+work plan persisted, and a push to `main`.
+
+- **How it ran.** Twelve lanes ran with exclusive ownership: eight research
+  lanes for plan rows 1–5 and four text lanes for row 6. Each research
+  lane passed an independent cold review that could only narrow claims.
+  Each text lane's transcription was collated line by line on the page
+  images by a distinct collator before activation.
+- **Coverage.** Stages rose from 396 to 483 (446 documented, 37
+  provisional), transitions from 107 to 116, and gaps from 251 to 283.
+  Selected-stage routes rose from 124 to 141, and routes with no mapped stage
+  fell from 45 to 18.
+- **Texts.** Checked native constituents rose from 11 to 20:
+  - the Mozarabic Ordo core for 1500, 1755 and 1804;
+  - the Roman Canon for 1604 and 1635;
+  - the Dominican Canon for 1550, 1553, 1603 and 1604.
+
+  These come with about 56 MB of tracked US-public-domain facsimile
+  extracts. Whole-book text stays at zero, and no ancestry edge was added.
+- **Permissions.** The register reaches 40 findings read in the issuing
+  instrument (35 without caveat), against the requested 30.
+- **A defect found.** The collation found that the already-published Rome
+  1570 Canon reading departs from its own images, and the 1570 stage now
+  says so.
+- **Not integrated.** The 1570 re-collation and the Greek Chrysostom
+  anaphora collation were stopped at the wrap-up and are not integrated.
+
+The [batch review](workflows/reviews/missal-batch5-2026-10-22/REPORT.md)
+holds the corrections, the access refusals and the **persisted work plan
+for the remaining rows and decisions**. The all-rite project remains
+**in progress**.
+
 **Fourth parallel batch, 21 October 2026: published to `main` and verified
 live.** Implementation `1bc263922b9637edca88e5c46a03ce0fffb5f295` reached
 `origin/main` by an ordinary fast-forward from `5f2e74718` (no rebase was

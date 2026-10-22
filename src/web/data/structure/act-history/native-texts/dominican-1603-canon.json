@@ -1,0 +1,712 @@
+{
+  "adapter_id": "native-book:dominican-1603-canon",
+  "binding_sha256": "c686687d8cf5d34c1c49798764d95ec0e5391576e08cbd564ecffabcee288fed",
+  "catalogue_witness_ids": [
+    "western:dominican-1603-rome-ciacconi"
+  ],
+  "counts": {
+    "languages": {
+      "la": 15
+    },
+    "units": 15,
+    "whitespace_tokens": 659
+  },
+  "id": "dominican-1603-canon",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Complete Dominican Canon constituent as the 1603 book prints it: from p. 195 (canvas 265) display title CANON SACROSANCTI INCRUENTI SACRIFICII MISSAE and Te igitur through p. 198 (canvas 268) omnis honor et gloria, before the red heading Cantus Solemnis. 15 source-order units, 26 printed crosses, no rubrics printed within these bounds. The book sets the concluding Per omnia saecula saeculorum. Amen only in the following notated chant block, which is excluded with it. Whole-book and complete-Ordinary coverage remain partial; no wording is inherited from another edition.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 4,
+    "known_extent_units": 15,
+    "omitted_book_divisions": [
+      "Front matter, including the title page and revision-basis instruments retained in the same facsimile only as identity and revision evidence",
+      "Prefaces with their seasonal proper Communicantes and Hanc igitur forms printed in the preface section, the Sanctus and the full-page crucifixion woodcut before the Canon",
+      "Everything after omnis honor et gloria: the Cantus Solemnis heading and the notated Per omnia saecula saeculorum, Amen, Oremus, Praeceptis and Pater on p. 198 and after",
+      "All propers, calendar, lectionary, offertory and other Ordinary outside the Canon",
+      "Running heads, folio and page numbers, signatures, catchwords, woodcuts, ornaments, ink colour and chant notation"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "record_type": "artifact",
+      "rights_basis": "The identified 1603 printed text is public domain in the United States by expiration of its publication term. The Bayerische Staatsbibliothek digital images are supplied under No Copyright - Non-Commercial Use Only 1.0, https://rightsstatements.org/vocab/NoC-NC/1.0/ ; this is a rights statement, not a Creative Commons license. Noncommercial copying and redistribution retain that condition and attribution: München, Bayerische Staatsbibliothek, Res/2 Liturg. 234, bsb10164238. These source images and their derivative are excluded from Triptych’s CC BY 4.0 license. No unrestricted image reuse is asserted; the image condition is distinct from the public-domain historical Latin.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "permission",
+      "source_url": "https://www.digitale-sammlungen.de/en/view/bsb10164238",
+      "transformation": "ImageMagick decoded each exact package member, converted it to grayscale, resized it to at most 2000 px on the long side, stripped metadata and re-encoded it as quality-85 JPEG; a small deterministic writer embedded each JPEG stream unchanged as one PDF page (MediaBox in pixels) in package order. JPEG is lossy and colour is dropped; the exact colour provider images remain in the parent package. No crop, page omission, OCR or editorial text."
+    },
+    {
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded reading transcription of original Latin from the identified 1603 printing, whose United States publication term has expired. No modern translation, critical reconstruction or wording from another edition is imported. The historical wording is separate from the provider’s image-specific No Copyright - Non-Commercial Use Only 1.0 condition and attribution to München, Bayerische Staatsbibliothek, Res/2 Liturg. 234, bsb10164238. Third-party historical text is excluded from Triptych’s CC BY 4.0 license. Scholarly availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://www.digitale-sammlungen.de/en/view/bsb10164238",
+      "transformation": "Render the 15-unit reading into 18 sequential UTF-8 LF lines in source order; the printed display title (where present) and each spoken block occupy their own lines, and the consecration words that the book sets as separate blocks occupy separate lines. The Dominican Canon pages of this book print no rubrics between Te igitur and omnis honor et gloria. Reading normalization follows the published roman-1570-canon-missae and batch-5 Roman readings so that Canon states compare word for word: long s becomes s; ae/oe ligatures and e-caudata become ae/oe; u/v are regularized (u vowel, v consonant) and j becomes i (final ij as ii); the ampersand and the Tironian et become et; enclitic q. and q; become que; nasal bars and other printed contractions are expanded (dne/Dne domine/Domine, dni, oibus omnibus, qsumus quaesumus, pstas praestas, final -um/-em/-am, cum, -rum); acute and grave accents are omitted; display initials and spaced capitals are merged in sentence case; line-end word divisions are joined and one space follows punctuation. Spelling, capitalization, punctuation (including the virgule /) and the N. placeholders are otherwise as printed. Printed crosses are rendered as U+2720 at their source positions, including crosses inside words. Running heads, folio and page numbers, signatures, catchwords, woodcuts, ornaments, ink colour and chant notation are excluded. This is a normalized reading transcription, not a glyph-diplomatic facsimile. The display title, printed in capitals, is rendered in sentence case with Missae capitalized as the book's own running head Canon Missae prints it."
+    },
+    {
+      "authority": "Hieronymus Xavierre, Master General of the Order of Preachers, with apostolic approval: the brief of Clement VIII dated 2 April 1602 and Xavierre's letter dated 17 February 1603 are printed after the title.",
+      "date": "1603",
+      "id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "language": "la",
+      "publication": "Romae, in officina Alfonsi Ciacconi, apud Carolum Vulliettum, MDCIII (title page). BSB Munich copy Res/2 Liturg. 234, bsb10164238; catalogue extent [26] Bl., 304 S., [1] Bl., 344 S.",
+      "record_type": "edition",
+      "title": "Missale iuxta ritum sacri Ordinis Praedicatorum S. P. N. Dominici, sub R.mo P. F. Hieronymo Xavierre Caesaraugustano, totius praefati Ordinis Generali Magistro recognitum et emendatum, et auctoritate Apostolica approbatum et confirmatum"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-communicantes",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-hanc-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-heading",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-memento-defunctorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-memento-vivorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-nobis-quoque",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-per-ipsum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-per-quem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-quam-oblationem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-qui-pridie",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-simili-modo",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-supplices",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-supra-quae",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-te-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-unde-et-memores",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "latin-uses:dominican-1603"
+  ],
+  "title": "Dominican Missal 1603: complete Canon constituent",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "heading"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-heading",
+      "source_locator": "Canon unit heading (printed display title); p. 195 (BSB canvas 265); facsimile PDF page(s) 5; normalized-text physical lines 1-1.",
+      "source_order": 1,
+      "text": "Canon sacrosancti incruenti sacrificii Missae.",
+      "text_edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "text_sha256": "7e937e95fb39b733fa34051e60c0540e1efae5caebed1602f1ee48471ebb1f16",
+      "unit_id": "unit.dominican-1603.canon.heading",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-te-igitur",
+      "source_locator": "Canon unit te-igitur (Te igitur); p. 195 (BSB canvas 265); facsimile PDF page(s) 5; normalized-text physical lines 2-2.",
+      "source_order": 2,
+      "text": "Te igitur clementissime Pater, per Iesum Christum Filium tuum Dominum nostrum, supplices rogamus, ac petimus, uti accepta habeas, et benedicas haec ✠ dona, haec ✠ munera, haec ✠ sancta sacrificia illibata. In primis quae tibi offerimus pro Ecclesia tua sancta catholica: quam pacificare, custodire, adunare, et regere digneris toto orbe terrarum: una cum famulo tuo Papa nostro N. et Antistite nostro N. et Rege nostro N. et omnibus orthodoxis, atque catholicae et Apostolicae fidei cultoribus.",
+      "text_edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "text_sha256": "8eee3c060aaaced4cb7fcb47d7d278b739ad5c4b3eda585aec1743cce878a34d",
+      "unit_id": "unit.dominican-1603.canon.te-igitur",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-memento-vivorum",
+      "source_locator": "Canon unit memento-vivorum (Memento of the living); p. 195 (BSB canvas 265); facsimile PDF page(s) 5; normalized-text physical lines 3-3.",
+      "source_order": 3,
+      "text": "Memento Domine famulorum famularumque tuarum N. et N. Et omnium circumstantium, quorum tibi fides cognita est, et nota devotio, pro quibus tibi offerimus, vel qui tibi offerunt hoc sacrificium laudis, pro se, suisque omnibus: pro redemptione animarum suarum, pro spe salutis, et incolumitatis suae: tibique reddunt vota sua aeterno Deo vivo et vero.",
+      "text_edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "text_sha256": "354a0aa1444ed22ff1c9ac9c6bd634031cc33c7996d2f2c843bc91f5088f5c73",
+      "unit_id": "unit.dominican-1603.canon.memento-vivorum",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-communicantes",
+      "source_locator": "Canon unit communicantes (Communicantes); p. 195 (BSB canvas 265), p. 196 (canvas 266); facsimile PDF page(s) 5, 6; normalized-text physical lines 4-4.",
+      "source_order": 4,
+      "text": "Communicantes, et memoriam venerantes in primis gloriosae semper Virginis Mariae Genitricis Dei et Domini nostri Iesu Christi. Sed et Beatorum Apostolorum, ac Martyrum tuorum Petri et Pauli, Andreae, Iacobi, Ioannis, Thomae, Iacobi, Philippi, Bartholomaei, Matthaei, Simonis et Thadaei: Lini, Cleti, Clementis, Xysti, Cornelii, Cypriani, Laurentii, Crysogoni, Ioannis et Pauli, Cosmae et Damiani: Et omnium Sanctorum tuorum: quorum meritis precibusque concedas, ut in omnibus protectionis tuae muniamur auxilio. Per eundem Christum Dominum nostrum. Amen.",
+      "text_edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "text_sha256": "0be888e3ac83f3168a3389f8000ad11c66f2a6f75e6f10c0e11b0f027fe1e167",
+      "unit_id": "unit.dominican-1603.canon.communicantes",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          6
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-hanc-igitur",
+      "source_locator": "Canon unit hanc-igitur (Hanc igitur); p. 196 (canvas 266); facsimile PDF page(s) 6; normalized-text physical lines 5-5.",
+      "source_order": 5,
+      "text": "Hanc igitur oblationem servitutis nostrae, sed et cunctae familiae tuae, quaesumus Domine, ut placatus accipias: diesque nostros in tua pace disponas, atque ab aeterna damnatione nos eripi, et in electorum tuorum iubeas grege numerari. Per Christum Dominum nostrum. Amen.",
+      "text_edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "text_sha256": "e1c984aae2fbc680e8310a26deaee9346bf6418dd306264aa66b32b0aba8a52a",
+      "unit_id": "unit.dominican-1603.canon.hanc-igitur",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-quam-oblationem",
+      "source_locator": "Canon unit quam-oblationem (Quam oblationem); p. 196 (canvas 266); facsimile PDF page(s) 6; normalized-text physical lines 6-6.",
+      "source_order": 6,
+      "text": "Quam oblationem tu Deus in omnibus, quaesumus: bene✠dictam, ascrip✠tam, ra✠tam, rationabilem, acceptabilemque facere digneris: ut nobis Cor✠pus, et San✠guis fiat dilectissimi Filii tui Domini nostri Iesu Christi.",
+      "text_edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "text_sha256": "fbba6df26e68f674940ab86446f5d30d0520e62571b6437ee7e724350f248952",
+      "unit_id": "unit.dominican-1603.canon.quam-oblationem",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-qui-pridie",
+      "source_locator": "Canon unit qui-pridie (Qui pridie with Hoc est enim corpus meum); p. 196 (canvas 266); facsimile PDF page(s) 6; normalized-text physical lines 7-8.",
+      "source_order": 7,
+      "text": "Qui pridie quam pateretur, accepit panem in sanctas ac venerabiles manus suas: Et elevatis oculis in caelum ad te Deum Patrem suum omnipotentem, tibi gratias agens, bene✠dixit, fregit, deditque discipulis suis, dicens: Accipite et manducate ex hoc omnes.\nHoc est enim corpus meum.",
+      "text_edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "text_sha256": "92e4f58e6748dfe608a5c31349dbe070f367bc3425033707214605acb3635a23",
+      "unit_id": "unit.dominican-1603.canon.qui-pridie",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-simili-modo",
+      "source_locator": "Canon unit simili-modo (Simili modo with Hic est enim calix and Haec quotiescumque); p. 196 (canvas 266), p. 197 (canvas 267); facsimile PDF page(s) 6, 7; normalized-text physical lines 9-11.",
+      "source_order": 8,
+      "text": "Simili modo post quam coenatum est, accipiens et hunc praeclarum calicem in sanctas ac venerabiles manus suas: item tibi gratias agens, Bene✠dixit, deditque discipulis suis, dicens. Accipite et bibite ex eo omnes.\nHic est enim calix sanguinis mei, novi, et aeterni testamenti, mysterium fidei, qui pro vobis, et pro multis effundetur in remissionem peccatorum.\nHaec quotiescumque feceritis, in mei memoriam facietis.",
+      "text_edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "text_sha256": "f8f84cc15e569600f2f850ad27f5cfbe1d4b0414d74037561ed65d1ad439eb2a",
+      "unit_id": "unit.dominican-1603.canon.simili-modo",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          7
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-unde-et-memores",
+      "source_locator": "Canon unit unde-et-memores (Unde et memores); p. 197 (canvas 267); facsimile PDF page(s) 7; normalized-text physical lines 12-12.",
+      "source_order": 9,
+      "text": "Unde et memores Domine nos servi tui, sed et plebs tua sancta eiusdem Christi Filii tui Domini Dei nostri, tam beatae Passionis, necnon et ab inferis Resurrectionis, sed et in caelos gloriosae Ascensionis, offerimus praeclarae Maiestati tuae, de tuis donis ac datis, Hostiam ✠ puram: Hostiam ✠ sanctam: Hostiam ✠ immaculatam, Pa✠nem sanctum vitae aeternae, et Cali✠cem salutis perpetuae.",
+      "text_edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "text_sha256": "e10d04715a71747e6d0fe8c8d4fe29f37e3838db3098dfb3e804b4faad5aaab5",
+      "unit_id": "unit.dominican-1603.canon.unde-et-memores",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-supra-quae",
+      "source_locator": "Canon unit supra-quae (Supra quae); p. 197 (canvas 267); facsimile PDF page(s) 7; normalized-text physical lines 13-13.",
+      "source_order": 10,
+      "text": "Supra quae propitio ac sereno vultu respicere digneris: et accepta habere, sicuti accepta habere dignatus es munera pueri tui iusti Abel, et sacrificium Patriarchae nostri Abrahae: et quod tibi obtulit summus Sacerdos tuus Melchisedech, sanctum sacrificium, immaculatam Hostiam.",
+      "text_edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "text_sha256": "1244e88039d993914c550d5f7e71c0d213b20fb4e9c6f830a80d3e9cd10bce6d",
+      "unit_id": "unit.dominican-1603.canon.supra-quae",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-supplices",
+      "source_locator": "Canon unit supplices (Supplices te rogamus); p. 197 (canvas 267), p. 198 (canvas 268); facsimile PDF page(s) 7, 8; normalized-text physical lines 14-14.",
+      "source_order": 11,
+      "text": "Supplices te rogamus omnipotens Deus: iube haec perferri per manus Sancti Angeli tui in sublime altare tuum in conspectu divinae Maiestatis tuae. Ut quotquot, ex hac altaris participatione, sacrosanctum Filii tui, Cor✠pus et San✠guinem sumpserimus, omni be✠nedictione caelesti, et gratia repleamur. Per eundem Christum Dominum nostrum, Amen.",
+      "text_edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "text_sha256": "904851b61012d22df8ab323f9ed81e0414fc4e208e2b16aa306d8b387413fbad",
+      "unit_id": "unit.dominican-1603.canon.supplices",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          8
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-defunctorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-memento-defunctorum",
+      "source_locator": "Canon unit memento-defunctorum (Memento of the dead with Ipsis Domine); p. 198 (canvas 268); facsimile PDF page(s) 8; normalized-text physical lines 15-15.",
+      "source_order": 12,
+      "text": "Memento etiam Domine famulorum famularumque tuarum, qui nos praecesserunt cum signo fidei, et dormiunt in somno pacis N. et N. Ipsis Domine, et omnibus in Christo quiescentibus locum refrigerii, lucis, et pacis, ut indulgeas, deprecamur. Per eundem Christum Dominum nostrum. Amen.",
+      "text_edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "text_sha256": "17d276a99f3a3a5bbc7d5f2729000d6c31a8a9bc8450946c839399bf0cbd39a5",
+      "unit_id": "unit.dominican-1603.canon.memento-defunctorum",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-nobis-quoque",
+      "source_locator": "Canon unit nobis-quoque (Nobis quoque peccatoribus); p. 198 (canvas 268); facsimile PDF page(s) 8; normalized-text physical lines 16-16.",
+      "source_order": 13,
+      "text": "Nobis quoque peccatoribus famulis tuis, de multitudine miserationum tuarum sperantibus, partem aliquam et societatem donare digneris, cum tuis Sanctis Apostolis, et Martyribus, cum Ioanne, Stephano, Matthia, Barnaba, Ignatio, Alexandro, Marcellino, Petro, Felicitate, Perpetua, Agatha, Lucia, Agnete, Caecilia, Anastasia, et omnibus Sanctis tuis: intra quorum nos consortium, non aestimator meriti, sed veniae, quaesumus, largitor admitte. Per Christum Dominum nostrum.",
+      "text_edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "text_sha256": "40e51f3ae005536cadeb8341387bf06e079824b1064efb34ab79ac27fc0140f6",
+      "unit_id": "unit.dominican-1603.canon.nobis-quoque",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-per-quem",
+      "source_locator": "Canon unit per-quem (Per quem haec omnia); p. 198 (canvas 268); facsimile PDF page(s) 8; normalized-text physical lines 17-17.",
+      "source_order": 14,
+      "text": "Per quem haec omnia Domine semper bona creas, sancti✠ficas, vivi✠ficas, bene✠dicis, et praestas nobis.",
+      "text_edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "text_sha256": "b256eeff65489aef1292e213252560b00ef2cb7c12e6f653693a44bd7dc9ce16",
+      "unit_id": "unit.dominican-1603.canon.per-quem",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "doxology",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899",
+      "source_id": "passage.order-of-preachers.missale.1603-rome-ciacconi.canon-per-ipsum",
+      "source_locator": "Canon unit per-ipsum (Per ipsum doxology through omnis honor et gloria); p. 198 (canvas 268); facsimile PDF page(s) 8; normalized-text physical lines 18-18.",
+      "source_order": 15,
+      "text": "Per ✠ ipsum, et ✠ cum ipso, et in ✠ ipso, est tibi Deo ✠ Patri omnipotenti, in unitate Spiritus ✠ sancti, omnis honor et gloria.",
+      "text_edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "text_sha256": "2e52dfb355f7036a190674f37fc46ee774fff4866b1ad4642d65635ac4970cef",
+      "unit_id": "unit.dominican-1603.canon.per-ipsum",
+      "witness_id": "dominican-1603-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a",
+      "edition_id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+      "id": "dominican-1603-canon-pages",
+      "scope_pages": [
+        [
+          5,
+          8
+        ]
+      ]
+    }
+  ]
+}
