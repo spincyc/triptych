@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-sacred-heart-collect"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-schott-projection-20261022"
+artifact_sha256 = "dab1c4edc0d73c87a91406deb5c6e2178f8bd6ace6b505932ff7b615f47431d4"
+locus = "sacred-heart |  | Collect | PDF 460 / printed 379 (opening folio suppressed); left; unit 1453; Oratio; In festo Sacratissimi Cordis Iesu; Friday after second Sunday after Pentecost"
+physical_line_ranges = [[1, 5]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-22"
+context = "Bounded editorial projection, exact canonical UTF8 string; not a diplomatic historical printing."
+notes = "Whole canonical body SHA256 including hard wraps and final LF c7d00a4a72b472208ac1bc38e4479eb3c80e286b498734de8c024f8f3e4ce59d. Historical whole-petition passage passage.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.phase5-latin22-sacred-heart-collect; target control passage.catholic-church.missale-romanum.vatican-typica-1962.phase5-latin22-sacred-heart-collect. Pointing: historical dignaris; concede, quaesumus, ut illi / target dignaris: concede, quaesumus; ut, illi. Named normal annual feast Collect only; historical octave/rank/Creed and neighboring blocks not adopted. Historical ending \"Per eundem Dominum.\"; actual target ending \"Per eundem Dominum.\". Join physical wraps; remove stress; expand ligatures; project only target pointing/capitals and declared consonantal j (Jesum, Joannem, jugi/jugiter, ejus, cujus, majestati). Keep received Alleluia. Declare actual received spellings sepulchro/sepulcro, coel-/cael- and poenitentiae/paenitentiae where applicable. Every petition and address is independently complete. Actual conclusion length follows the target under guidance/propers-for-agents.md, not a generic oral expansion. Six expansions use the matching complete old formula plus rubric; two shortenings delete terminal nostrum only. No saint N. substitution or new Doctor/Pope clause."

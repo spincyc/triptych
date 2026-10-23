@@ -31,7 +31,18 @@ class PostconciliarLentTwoAcclamationTest(unittest.TestCase):
     def test_unit_is_retained_without_an_inferred_scripture_appointment(self):
         names = [p["name"] for p in self.mass["propers"]]
         index = names.index("Verse Before the Gospel")
-        self.assertEqual(names[index-1:index+2], ["Second Reading", "Verse Before the Gospel", "Gospel"])
+        self.assertEqual(names[index-2:index+2], [
+            "Second Reading", "Second Reading (shorter form)",
+            "Verse Before the Gospel", "Gospel",
+        ])
+        full = self.mass["propers"][index-2]["cycles"]["C"]
+        shorter = self.mass["propers"][index-1]
+        self.assertEqual(set(shorter["cycles"]), {"C"})
+        self.assertEqual([verse["ref"] for verse in full["verses"]], ["Philippians 3:17-4:1"])
+        self.assertEqual(
+            [verse["ref"] for verse in shorter["cycles"]["C"]["verses"]],
+            ["Philippians 3:20-4:1"],
+        )
         slot = self.mass["propers"][index]
         self.assertEqual(slot["source"], "composed")
         self.assertEqual(slot["text_status"], {"state":"unavailable", "scope":"proper-body", "reasons":[{"kind":"witness-gap", "source_id":ARTIFACT}]})

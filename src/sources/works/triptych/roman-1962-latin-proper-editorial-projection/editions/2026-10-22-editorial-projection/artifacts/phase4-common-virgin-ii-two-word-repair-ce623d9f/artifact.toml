@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-common-virgin-ii-two-word-repair-ce623d9f"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers its bounded transcription layout and normalization under CC BY 4.0. Each complete underlying petition has an independently named US-public-domain historical witness; under 17 U.S.C. 103(b) no exclusive right in preexisting Latin or blanket target-facsimile clearance is claimed."
+rights_jurisdiction = "United States"
+provenance = "Whole-petition page-image collation on 2026-10-22, not OCR, incipits or removed hashes. Historical images read at scale-to5000; target controls independently image-read, including400 dpi. No protected target image is retained here."
+retrieved = "2026-10-22"
+sha256 = "ce623d9f71e6021c3e7121f910ef5f7adce6122d6e007eb5905ec50834a6841e"
+byte_size = 328
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/phase4-common-virgin-ii-two-word-repair-ce623d9f/common-virgin-ii-collect-secret.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase4-common-virgin-ii-orations-pages-698-699-20261022", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Keep N., wraps, punctuation and final LF exactly as the prior canonical bodies; change only Collect mine to Domine and Secret mentis to meritis. The entire Pustet petitions independently match after joining wraps, stress/ligature normalization and target pointing. Collect historical extitit to target exstitit is an explicitly received spelling difference, not OCR damage; Pustet omits the comma after quaesumus. Both historical and target conclusions are short Per Dominum.; no conclusion expansion and no saint-blank substitution."
+indexable = true
+encoding = "utf-8"
+notes = "Bounded 2 prayers only. No English, pre-1955 target attestation, held Holy Week/Albert/Silvester/Doctor addition, unknown Dedication Secret, new appointment or annual-completeness claim. Old artifacts/passages remain immutable."

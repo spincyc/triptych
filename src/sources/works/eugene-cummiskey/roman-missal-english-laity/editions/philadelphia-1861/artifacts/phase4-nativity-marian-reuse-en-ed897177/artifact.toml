@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.phase4-nativity-marian-reuse-en-ed897177"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Unchanged existing Cummiskey1861 UnitedStates public-domain English expression; exact reuse from the already-checked tracked donor artifact, not a new historical inspection or rights decision."
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+provenance = "The derivation controller is the original witness bound by the unchanged verification passage. Mechanical bytes are reused from artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.common-marian-verified-en, SHA256 1c414c2fb24abd25f211841302a0b4ac95ff89d47a998afbefd2b9a323896851, not newly transcribed from that scan. Retain the donor's original verification date, passage and source locus unchanged; no new page-image inspection."
+transformation = "Recipient-keyed TSV: preserve the complete checked English unchanged, including literal N. and Through our Lord. where printed. Reflow layout wraps/division hyphens and small capitals only as recorded in the original reading. No supplied name, conclusion, Amen, translation or official1962 English claim. Full literal target-to-seed Latin bytes, not incipits, authorize reuse."
+retrieved = "2026-10-22"
+sha256 = "ed89717779d0b40259dee17372a269085854d3747c9aab34252df73c0a148f88"
+byte_size = 193
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/phase4-nativity-marian-reuse-en-ed897177/phase4-nativity-marian-reuse-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Phase4 source-only English31 scope. Latin publication permissions, old projections, all173 preceding English rows and source ownership are unchanged. Two conditional CommonVirginII Collect/Secret bindings remain absent."

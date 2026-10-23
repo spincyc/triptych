@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-advent-3-alleluia"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pustet-projection-20261022"
+artifact_sha256 = "f6993617fed59176e4e527f4c47c853b3e80b01f3e4fd61dfc41e68c8ef7661d"
+locus = "advent-3 |  | Alleluia | PDF 86 / printed 5; left top; unit 25; Third Advent Sunday continuation, before FeriaIV heading"
+physical_line_ranges = [[11, 12]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-22"
+context = "Bounded editorial projection, exact canonical UTF8 string; not a diplomatic historical printing."
+notes = "Whole canonical body SHA256 including hard wraps and final LF 0188d53c71815633e8cf11e8d8a245f74e98481cafb978ebe38348733b0b3ccc. Historical whole-petition passage passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-advent-3-alleluia; target control passage.catholic-church.missale-romanum.vatican-typica-1962.phase5-latin22-advent-3-alleluia. Alleluja/Alleluia j/i; target commas around Domine explicitly retained. Whole printed Alleluia, including double opening and terminal Alleluia; not clamped to Psalm79 Gradual above. Normal Sunday appointment only; target itself excludes this unit when the Sunday Mass is used on Advent ferias. Historical ending \"nos. Alleluja.\"; actual target ending \"nos. Alleluia.\". Join physical wraps; remove stress; expand ligatures; project only target pointing/capitals and declared consonantal j (Jesum, Joannem, jugi/jugiter, ejus, cujus, majestati). Keep received Alleluia. Declare actual received spellings sepulchro/sepulcro, coel-/cael- and poenitentiae/paenitentiae where applicable. Every petition and address is independently complete. Actual conclusion length follows the target under guidance/propers-for-agents.md, not a generic oral expansion. Six expansions use the matching complete old formula plus rubric; two shortenings delete terminal nostrum only. No saint N. substitution or new Doctor/Pope clause."

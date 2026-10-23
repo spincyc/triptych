@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase2-octnov-commemorations-20261022"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Triptych offers its bounded transcription layout and normalization under CC BY 4.0. All eighteen underlying complete petitions are independently witnessed in the public-domain Pustet Ratisbon 1862 printing. No exclusive right in the Latin or clearance of the 1962 edition is claimed."
+provenance = "Complete-prayer page-image collation on 2026-10-22. Target images read at 200 and 400 dpi; historical pages read at scale-to 2500 and 5000 because their PDF page boxes are defective. All eighteen target bodies were finally reopened at 400 dpi for project-j and conclusion checking. Neither OCR nor former removed-body hashes supplied wording."
+retrieved = "2026-10-22"
+sha256 = "cfb24c25cfb2496837f71eda4551e785e12f682075416d244aabffbf6aa44bd5"
+byte_size = 3084
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/phase2-octnov-commemorations-20261022/phase2-octnov-commemorations.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase2-octnov-commemoration-pages-20261022", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join printed wraps; remove stress accents; expand ae/oe ligatures; apply target pointing and capitals; retain project consonantal j (Majestatem, ejus, adjuvemur, adjuvari, Jesum, justorum, cujus); normalize historical coel- to target cael- and Saturninus natalitio to natalicio. Reproduce each target conclusion at precisely its printed length under guidance/propers-for-agents.md. Historical locally absent or shorter conclusions are recorded per prayer, never silently represented as printed long. No name or petition is inserted."
+indexable = true
+encoding = "utf-8"
+notes = "Eighteen prayers only: Sergius two, Ursula Secret only, Vitalis/Agricola three, Tryphon/Respicius/Nympha three, Mennas two, Felicitas two, Chrysogonus two, Saturninus three. Ursula Postcommunion remains excluded because 1862 lacks Ursula et Sociabus eius and prints no blank there. No English, Common choice, Dedication context, annual or whole-formulary completion is established."

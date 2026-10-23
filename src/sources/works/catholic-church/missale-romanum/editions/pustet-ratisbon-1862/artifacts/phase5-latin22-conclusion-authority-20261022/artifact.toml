@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Bounded Latin transcription of the US-public-domain1862 Pustet printing. The underlying words remain public domain; project metadata does not relicense them."
+rights_jurisdiction = "United States"
+provenance = "Four complete as-printed passages visually read on22October2026, following independently held whole scan identity and source page collation."
+retrieved = "2026-10-22"
+sha256 = "45634a9b0825436ff735d14d49b10634cb6ffde35196bba28bf5795a56079ad8"
+byte_size = 1269
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/phase5-latin22-conclusion-authority-20261022/latin-only.txt"
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-petitions-and-formulas-20261022"
+transformation = "Latin only; join physical wraps/hyphenation, remove stress accents, expand ligatures, retain as-printed wording and actual abbreviation lengths, normalize pointing as disclosed by the page readings. Four paragraphs: original PDF44/38 paragraph17;55/49 RitusV1;390/304 Praesta;532/446 Paschal Baylon. Last exemplar actually ends Deus etc.; etc. is NOT expanded."
+encoding = "utf-8"
+indexable = true
+notes = "Formula390 ends ejusdem Spiritus sancti Deus.; exemplar532 ends Spiritus sancti Deus etc. Targets use only their actually printed contiguous formula prefixes, ending in unitate where specified. No Spiritus Sancti, Deus, per omnia or Amen is supplied beyond a target stop. No new prayer petition is assembled."

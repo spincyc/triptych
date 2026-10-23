@@ -123,6 +123,8 @@ class HeldAnselmTargetTests(unittest.TestCase):
             ('Malachi 2:6', 'hebrew'),
             ('John 6:69, 70', 'hebrew'),
             ('Acts 7:58', 'hebrew'),
+            *((f'John 6:{span}', 'hebrew') for span in
+              ['1-15', '16-21', '22-29', '30-35', '35-40', '52-59', '60-69']),
         })
         other = canon.parse_citation('John 6:51')
         self.assertIn('unrecorded', propers.citation_structure(other, 'hebrew', propers.book_tokens(), tables)['refused']['hebrew'])

@@ -157,12 +157,12 @@ class ResolveProper(unittest.TestCase):
             )
         )
 
-    def test_real_historical_collect_gaps_keep_the_rest_of_the_common(self):
+    def test_real_unavailable_own_collects_keep_the_rest_of_the_common(self):
         cases = {
             "s-gregorii-barbadici-episcopi-confessoris":
                 "commune-confessoris-pontificis-1",
             "s-laurentii-brundusio-confessoris-ecclesiae-doctoris":
-                "commune-doctorum-pontificis",
+                "commune-doctorum-non-pontificis",
             "s-antonii-mariae-claret-episcopi-confessoris":
                 "commune-confessoris-pontificis-2",
         }
@@ -182,15 +182,36 @@ class ResolveProper(unittest.TestCase):
                     self.assertEqual(problems, [])
                     self.assertEqual(
                         names(resolved),
-                        [name for name in names(target) if name != "Collect"],
+                        names(target),
                     )
-                    self.assertNotIn("Collect", names(resolved))
+                    collect = next(
+                        (proper, provenance)
+                        for _, proper, provenance in resolved
+                        if proper["name"] == "Collect"
+                    )
+                    own_collect = next(
+                        proper for proper in index[key]["propers"]
+                        if proper["name"] == "Collect"
+                    )
+                    self.assertEqual(collect, (own_collect, None))
+                    self.assertEqual(own_collect["text_status"]["state"], "unavailable")
+                    self.assertEqual(own_collect["text_status"]["scope"], "proper-body")
+                    self.assertNotIn("text", own_collect)
                     self.assertIn("Secret", names(resolved))
                     self.assertIn("Postcommunion", names(resolved))
+                    self.assertEqual(
+                        [(form, proper) for form, proper, _ in resolved if proper["name"] != "Collect"],
+                        [(form, proper) for form, proper, _ in target if proper["name"] != "Collect"],
+                    )
+                    target_origins = {
+                        proper["name"]: provenance["mass"] if provenance else target_key
+                        for _, proper, provenance in target
+                    }
                     self.assertTrue(
                         all(
-                            provenance and provenance["mass"] == target_key
-                            for _, _, provenance in resolved
+                            provenance and provenance["mass"] == target_origins[proper["name"]]
+                            for _, proper, provenance in resolved
+                            if proper["name"] != "Collect"
                         )
                     )
 
@@ -299,6 +320,12 @@ class ResolveProper(unittest.TestCase):
         index = _calendars.mass_index(calendar)
         expected = {
             (
+                "commune-unius-martyris-3",
+                "Lesson (altera Epistola in Communi unius Martyris)",
+                "commune-unius-martyris-1",
+                "Epistle (altera in Communi unius Martyris)",
+            ),
+            (
                 "commune-martyrum-tempore-paschali-1",
                 "Collect (Pro Martyre tantum)",
                 "commune-unius-martyris-3",
@@ -358,6 +385,12 @@ class ResolveProper(unittest.TestCase):
                 "commune-festorum-bmv",
                 "Alleluia (Tempore paschali)",
             ),
+            (
+                "s-matthiae-apostoli",
+                "Alleluia (Tempore paschali)",
+                "commune-martyrum-tempore-paschali-1",
+                "Alleluia",
+            ),
         }
         actual = set()
         for mass_key, mass in index.items():
@@ -405,6 +438,13 @@ class ResolveProper(unittest.TestCase):
                 )
                 expected_proper = dict(target)
                 expected_proper["name"] = wrapper["name"]
+                if edge == (
+                    "missa-de-s-maria-in-sabbato-4", "Alleluia",
+                    "commune-festorum-bmv", "Alleluia (Tempore paschali)",
+                ):
+                    # The complete Paschal formula is appointed here, not the
+                    # Common's context-dependent alternative group.
+                    expected_proper.pop(_calendars.ORDINARY_DISPOSITION, None)
                 if _calendars.ORDINARY_DISPOSITION in wrapper:
                     expected_proper[_calendars.ORDINARY_DISPOSITION] = wrapper[
                         _calendars.ORDINARY_DISPOSITION
@@ -1659,12 +1699,14 @@ class ResolveCommonSets(unittest.TestCase):
         ):
             entries, problems = _calendars.resolve_propers(calendar, index[key])
             self.assertEqual(problems, [], key)
-            self.assertFalse(
-                any(
+            self.assertEqual(
+                [
                     _calendars.proper_family(name)
-                    in {"Collect", "Secret", "Postcommunion"}
                     for name in names(entries)
-                ),
+                    if _calendars.proper_family(name)
+                    in {"Collect", "Secret", "Postcommunion"}
+                ],
+                ["Collect", "Postcommunion"],
                 key,
             )
         supreme = [

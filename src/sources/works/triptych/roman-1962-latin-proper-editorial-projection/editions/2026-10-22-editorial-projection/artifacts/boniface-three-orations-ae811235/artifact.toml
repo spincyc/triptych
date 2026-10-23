@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.boniface-three-orations-ae811235"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Triptych offers its bounded transcription layout and normalization under CC BY 4.0. The underlying three prayers are independently witnessed in the public-domain Pustet Ratisbon 1862 printing on retained printed page 445; no exclusive right in the Latin or clearance of the 1962 edition is claimed."
+provenance = "Independent complete-prayer image comparison on 2026-10-22: exact Pustet PDF artifact page 531 at 2500 and 5000 pixels and exact CMAA Vatican 1962 control artifact page 611 at 200 and 400 dpi. All three petitions and conclusions were read; OCR and superseded removed bytes were not used to reconstruct wording."
+retrieved = "2026-10-22"
+sha256 = "ae81123525827b67576e175b54004653cce51016d900716364650afe56b5e74f"
+byte_size = 447
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/boniface-three-orations-ae811235/boniface-three-orations.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.boniface-page-445-883fb31d", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "join printed line wraps; remove stress accents; expand ae/oe ligatures; apply target punctuation; retain declared project consonantal j orthography; retain the target two-word Per Dominum. conclusions; normalize Bonifacii/Bonifacio to target Bonifatii/Bonifatio and coelestibus to caelestibus. Preserve the two existing Collect/Secret Unicode strings unchanged. The Postcommunion is freshly read from both page witnesses, not expanded from an incipit or Common blank."
+indexable = true
+encoding = "utf-8"
+notes = "The target Collect 2598 is P, Secret 2599 C 3, and Postcommunion 2600 C 4. Mixed C 3/C 4 classification does not justify selecting one Common oration set. All three local own appointments override the borrowed orations. No translation or non-Paschal formulary is supplied."

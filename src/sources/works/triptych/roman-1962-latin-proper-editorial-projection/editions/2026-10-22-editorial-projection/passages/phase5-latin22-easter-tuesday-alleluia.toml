@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-easter-tuesday-alleluia"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pustet-projection-20261022"
+artifact_sha256 = "f6993617fed59176e4e527f4c47c853b3e80b01f3e4fd61dfc41e68c8ef7661d"
+locus = "easter-tuesday |  | Alleluia | PDF 414 / printed 333; right; unit 1166; FeriaIII infra octavam Paschae; after Graduale1165 and before Sequentia1167"
+physical_line_ranges = [[14, 15]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-22"
+context = "Bounded editorial projection, exact canonical UTF8 string; not a diplomatic historical printing."
+notes = "Whole canonical body SHA256 including hard wraps and final LF a2964bcbc4d25603e63aaef01081a6db08505a9ea7cd841b206d3259e085c641. Historical whole-petition passage passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-easter-tuesday-alleluia; target control passage.catholic-church.missale-romanum.vatican-typica-1962.phase5-latin22-easter-tuesday-alleluia. Alleluja/Alleluia j/i. Historical sepulchro / target sepulcro is a real received spelling; not an OCR correction. Whole actual unit has double opening Alleluia and NO terminal Alleluia in either book; do not append the Sequence's Alleluia or another day's chant. Historical ending \"in ligno.\"; actual target ending \"in ligno.\". Join physical wraps; remove stress; expand ligatures; project only target pointing/capitals and declared consonantal j (Jesum, Joannem, jugi/jugiter, ejus, cujus, majestati). Keep received Alleluia. Declare actual received spellings sepulchro/sepulcro, coel-/cael- and poenitentiae/paenitentiae where applicable. Every petition and address is independently complete. Actual conclusion length follows the target under guidance/propers-for-agents.md, not a generic oral expansion. Six expansions use the matching complete old formula plus rubric; two shortenings delete terminal nostrum only. No saint N. substitution or new Doctor/Pope clause."

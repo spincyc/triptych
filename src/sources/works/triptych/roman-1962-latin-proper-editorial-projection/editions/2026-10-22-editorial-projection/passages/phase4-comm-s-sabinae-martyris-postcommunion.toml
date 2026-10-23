@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-comm-s-sabinae-martyris-postcommunion"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-mayoct-alexander-twentytwo-orations-20261022"
+artifact_sha256 = "dd94f56f258e665930043284c747c41852bb47371aa2fda01337a58bb459dc11"
+locus = "comm-s-sabinae-martyris Postcommunion; PDF 724 / printed 643, unit 3509 P, left bottom (not the prior repeated PC unit 3506); Pustet PDF 618 / printed 532, left middle"
+physical_line_ranges = [[39, 41]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-22"
+context = "Exact bounded editorial projection, not a historical printing."
+notes = "Whole UTF8 body SHA256 including final LF 5186ec98c729793f9904339c75a4344f6177c2de00759848608b53376f0faaa1. whole-petition match Historical conclusion \"Per Dominum.\"; actual target conclusion \"Per Dominum.\". Join wraps; remove stress accents; expand ae/oe ligatures; apply target pointing/capitals and declared consonantal j. Normalize only recorded received spellings (genitricis/Genetricis, Anne Secret mater extitit -> mater exstitit, coel-/cael-, exultatione/exsultatione, exequimur/exsequimur). Carry every actual target conclusion at its printed length, without asserting that a short or omitted historical ending prints it. Only Hilary fills an explicit historical N. blank, with nominative Hilarius. No other saint name, Doctor title, word, clause or petition is supplied."

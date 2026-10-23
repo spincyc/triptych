@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.phase4-nineteen-prayers-en-0779811a"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Existing US nonrenewal A110108/A192159 for original Lasance/Walsh revised1945 English on ordinary pages, excluding inserts1298a-1298n and1302a-1302d. The insert-excluded PD expression anchor is artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759 SHA25680b34759fb18ec60f6205460c2ac24dc9e4a861938a94ef1f8e04a08a398ac9a. See src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. No whole mixed-scan, insert, page image, art or Latin publication authority."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+provenance = "Nineteen historical prayers manually image-read in retained2026-10-22 discovery on seventeen physical pages, paired Latin and English including all actual endings. Twenty-two1962 seed groups independently checked. This derivative activates those retained inspections; no new reading is claimed per recipient. Independent cold source review remains required."
+transformation = "Recipient-keyed TSV: preserve the complete checked English unchanged, including literal N. and Through our Lord. where printed. Reflow layout wraps/division hyphens and small capitals only as recorded in the original reading. No supplied name, conclusion, Amen, translation or official1962 English claim. Full literal target-to-seed Latin bytes, not incipits, authorize reuse."
+retrieved = "2026-10-22"
+sha256 = "0779811a3d96a3ac4ba4427d6d11e3cfca6cb18a6c4071ccbcc70b0d1a6e6999"
+byte_size = 6786
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/phase4-nineteen-prayers-en-0779811a/phase4-nineteen-prayers-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Phase4 source-only English31 scope. Latin publication permissions, old projections, all173 preceding English rows and source ownership are unchanged. Two conditional CommonVirginII Collect/Secret bindings remain absent."

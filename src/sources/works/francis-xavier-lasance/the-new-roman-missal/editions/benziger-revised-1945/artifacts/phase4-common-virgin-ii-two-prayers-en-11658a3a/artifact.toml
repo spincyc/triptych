@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.phase4-common-virgin-ii-two-prayers-en-11658a3a"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Existing US nonrenewal A110108/A192159 for original Lasance/Walsh revised1945 English on ordinary pages, excluding inserts1298a-1298n and1302a-1302d. The insert-excluded PD expression anchor is artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759 SHA25680b34759fb18ec60f6205460c2ac24dc9e4a861938a94ef1f8e04a08a398ac9a. See src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. No whole mixed-scan, insert, page image, art or Latin publication authority."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+provenance = "Two freshly page-image-read historical English exemplars from retained2026-10-22 conditional proof, now separately authorized after explicit independent Common2 Latin-source acceptance. Collect is read whole across PDF1382-1383; Secret onPDF1385. The old held Collect paraphrase is explicitly rejected."
+transformation = "Complete actual English unchanged after declared display-wrap/decorative-capital treatment, preserving N. and the actual short Through our Lord. Both fresh source payloads include a final LF for their receipt hash; TSV english_json and served text preserve their wording without that record-separator LF. No supplied name, Amen, ending, translation or official1962 English claim."
+retrieved = "2026-10-22"
+sha256 = "11658a3a8b1e605ae3c589ecba978ee0f556ea1f198ccfc44be96dc8d9ccafdd"
+byte_size = 508
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/phase4-common-virgin-ii-two-prayers-en-11658a3a/phase4-common-virgin-ii-two-prayers-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Authorized English33 increment: exactly two terminal CommonVirginII owners, ten actual appointments, not ten distinct translations. Preserve sealed English31 projections and all204 preceding binding rows. Latin authority remains the accepted independent Pustet1862/Common2 chain; Pustet Collect extitit to canonical exstitit is a real declared received-spelling difference, not OCR damage, and is NOT smuggled into the typography-only Lasance-to-seed comparator. Other23 Latin review findings are a separate gate."

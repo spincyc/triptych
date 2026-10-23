@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pentecost-ember-wednesday-second-alleluia"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pustet-projection-20261022"
+artifact_sha256 = "f6993617fed59176e4e527f4c47c853b3e80b01f3e4fd61dfc41e68c8ef7661d"
+locus = "pentecost-ember-wednesday |  | Second Alleluia | PDF 443 / printed 362; right; unit 1346; FeriaIV Quatuor Temporum Pentecostes; follows second Lesson1345, before Sequence1347"
+physical_line_ranges = [[20, 21]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-22"
+context = "Bounded editorial projection, exact canonical UTF8 string; not a diplomatic historical printing."
+notes = "Whole canonical body SHA256 including hard wraps and final LF ffb81b41664b394f896ca1e4a08258361e4e605285923035f1d2f65a154ba51c. Historical whole-petition passage passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-pentecost-ember-wednesday-second-alleluia; target control passage.catholic-church.missale-romanum.vatican-typica-1962.phase5-latin22-pentecost-ember-wednesday-second-alleluia. Alleluja/Alleluia j/i; comma after Veni and capital Sancte are actual target pointing/case. Both books mark genuflection before verse; this is recorded as a rubric fact, excluded from candidate spoken Latin body. Whole Second Alleluia has double opening and NO terminal Alleluia. Not the Verbo Domini first Alleluia, not an assumed lettered part, not the Veni Sancte Spiritus Sequence. No extension to other ferias from this proof. Historical ending \"ignem accende.\"; actual target ending \"ignem accende.\". Join physical wraps; remove stress; expand ligatures; project only target pointing/capitals and declared consonantal j (Jesum, Joannem, jugi/jugiter, ejus, cujus, majestati). Keep received Alleluia. Declare actual received spellings sepulchro/sepulcro, coel-/cael- and poenitentiae/paenitentiae where applicable. Every petition and address is independently complete. Actual conclusion length follows the target under guidance/propers-for-agents.md, not a generic oral expansion. Six expansions use the matching complete old formula plus rubric; two shortenings delete terminal nostrum only. No saint N. substitution or new Doctor/Pope clause."

@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-commune-unius-martyris-2-alleluia"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pustet-projection-20261022"
+artifact_sha256 = "f6993617fed59176e4e527f4c47c853b3e80b01f3e4fd61dfc41e68c8ef7661d"
+locus = "commune-unius-martyris-2 |  | Alleluia | PDF 814 / printed [6]; left; unit 4208; Commune unius Martyris extra tempus paschale; II Pro Martyre Pontifice continuation"
+physical_line_ranges = [[8, 9]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-22"
+context = "Bounded editorial projection, exact canonical UTF8 string; not a diplomatic historical printing."
+notes = "Whole canonical body SHA256 including hard wraps and final LF 5b8d34963dd1739949a0933d110cbefd33977b552741d89a66b3c5ec97cc70b2. Historical whole-petition passage passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-commune-unius-martyris-2-alleluia; target control passage.catholic-church.missale-romanum.vatican-typica-1962.phase5-latin22-commune-unius-martyris-2-alleluia. Alleluja/Alleluia j/i; historical Sacerdos / target sacerdos capitalization. Whole double-opening, verse and terminal Alleluia. Outside-Paschal Common II only; actual target replaces it with the printed Tract after Septuagesima. No N. fill, no oration, no SupremePontiff transfer. Historical ending \"Dominus. Alleluja.\"; actual target ending \"Dominus. Alleluia.\". Join physical wraps; remove stress; expand ligatures; project only target pointing/capitals and declared consonantal j (Jesum, Joannem, jugi/jugiter, ejus, cujus, majestati). Keep received Alleluia. Declare actual received spellings sepulchro/sepulcro, coel-/cael- and poenitentiae/paenitentiae where applicable. Every petition and address is independently complete. Actual conclusion length follows the target under guidance/propers-for-agents.md, not a generic oral expansion. Six expansions use the matching complete old formula plus rubric; two shortenings delete terminal nostrum only. No saint N. substitution or new Doctor/Pope clause."

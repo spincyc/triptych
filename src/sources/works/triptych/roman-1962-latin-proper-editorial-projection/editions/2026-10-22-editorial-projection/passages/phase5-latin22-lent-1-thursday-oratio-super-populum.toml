@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-lent-1-thursday-oratio-super-populum"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pustet-projection-20261022"
+artifact_sha256 = "f6993617fed59176e4e527f4c47c853b3e80b01f3e4fd61dfc41e68c8ef7661d"
+locus = "lent-1-thursday |  | Oratio super populum | PDF 152 / printed 71; right top; unit 481; Super populum Oratio before FeriaSexta Quatuor Temporum"
+physical_line_ranges = [[30, 31]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-22"
+context = "Bounded editorial projection, exact canonical UTF8 string; not a diplomatic historical printing."
+notes = "Whole canonical body SHA256 including hard wraps and final LF 804b104f1f85757f51eddf555e651d41ab772bc9faf2ec636f436e400174548a. Historical whole-petition passage passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-lent-1-thursday-oratio-super-populum; target control passage.catholic-church.missale-romanum.vatican-typica-1962.phase5-latin22-lent-1-thursday-oratio-super-populum. Historical coeleste / target caeleste is a real received spelling. Target pointing around Domine, christianis, et quae and agnoscere is explicitly projected. Target omits terminal nostrum from the historical conclusion; deletion only, no new words or assembled conclusion. Proved with explicit target abbreviation, not diplomatic identity. Whole Thursday Oratio super populum only; preceding Postcommunion has a different target conclusion and was not used to construct this unit. Historical ending \"Per Dominum nostrum.\"; actual target ending \"Per Dominum.\". Join physical wraps; remove stress; expand ligatures; project only target pointing/capitals and declared consonantal j (Jesum, Joannem, jugi/jugiter, ejus, cujus, majestati). Keep received Alleluia. Declare actual received spellings sepulchro/sepulcro, coel-/cael- and poenitentiae/paenitentiae where applicable. Every petition and address is independently complete. Actual conclusion length follows the target under guidance/propers-for-agents.md, not a generic oral expansion. Six expansions use the matching complete old formula plus rubric; two shortenings delete terminal nostrum only. No saint N. substitution or new Doctor/Pope clause."

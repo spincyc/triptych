@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-10-21"
+audited_on = "2026-10-23"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 63
 source_surface_file_count = 2017
-snapshot = "sha256:850fb3861c81d3f6c03ac19c2e9b551d832cbf594ca648d090dedf1554ef1356"
+snapshot = "sha256:a42428e2deac9cc792a73966efe1f5a09bffcfce43d6d0713a6b3b372435eb45"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -5250,7 +5250,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecos
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/research/chronology-annotations.tex"
-sha256 = "348de50803545f63810ed68f9e7253d9abb52e2f0d642e673dfcc67ffe52be34"
+sha256 = "677340ee45e1da9df9925240ac79b8a1578fcb493ab311d3fa65c07624d508bd"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
 

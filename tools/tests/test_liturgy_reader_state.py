@@ -1974,19 +1974,24 @@ class ParityTests(unittest.TestCase):
         ordinary = json.loads(
             (DATA / "structure/ordinary/roman-1962.json").read_text(encoding="utf-8")
         )
-        witness = ordinary["translations"][0]["source_id"]
-        request["languages"]["ordinaryWitness"] = witness
-        result = node_call({"op": "ordinary-coverage", "request": request})
-        ordinary_events = [
-            event for event in result["events"] if event["kind"] == "ordinary-element"
-        ]
-        self.assertTrue(ordinary_events)
-        self.assertTrue(any(event["selected"]["sourceId"] == witness
-                            for event in ordinary_events))
-
-        request["languages"]["ordinaryWitness"] = "not-held"
-        with self.assertRaisesRegex(AssertionError, "Ordinary witness"):
-            node_call({"op": "ordinary-coverage", "request": request})
+        initial = node_call({"op": "ordinary-coverage", "request": request})
+        witnesses = {
+            event["selected"]["sourceId"]
+            for event in initial["events"]
+            if event["kind"] == "ordinary-element"
+            and event["selected"]["availability"] == "held"
+        }
+        # Held elements now use different checked witnesses. A registry entry
+        # is not proof that its English is held for every appointed element.
+        self.assertGreater(len(witnesses), 1)
+        self.assertTrue(witnesses.issubset({
+            translation["source_id"] for translation in ordinary["translations"]
+        }))
+        for witness in sorted(witnesses) + ["not-held"]:
+            with self.subTest(witness=witness):
+                request["languages"]["ordinaryWitness"] = witness
+                with self.assertRaisesRegex(AssertionError, "Ordinary witness"):
+                    node_call({"op": "ordinary-coverage", "request": request})
 
     def test_ordinary_antecedent_witness_is_never_reported_complete(self) -> None:
         request = copy.deepcopy(

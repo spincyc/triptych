@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-schott-projection-20261022"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Project layout/normalization under CC BY4.0 only. Complete independently US-public-domain historical Latin petitions and old formula prefixes remain public domain under17USC103(b); no exclusive right in underlying Latin or modern facsimile clearance is claimed."
+rights_jurisdiction = "United States"
+provenance = "Whole historical/target page-image comparisons of22October2026, followed by bounded authorized canonical adoption; not OCR, incipits, English, former removed hashes or model textual authority. JohnCross/Vianney target images re-read for actual pointing before canonicalization. Independent source cold review remains required."
+retrieved = "2026-10-22"
+sha256 = "dab1c4edc0d73c87a91406deb5c6e2178f8bd6ace6b505932ff7b615f47431d4"
+byte_size = 1599
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/phase5-latin22-schott-projection-20261022/latin.txt"
+projected_from = ["artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.phase5-latin22-seven-historical-prayers-20261022", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join physical wraps; remove stress; expand ligatures; project only target pointing/capitals and declared consonantal j (Jesum, Joannem, jugi/jugiter, ejus, cujus, majestati). Keep received Alleluia. Declare actual received spellings sepulchro/sepulcro, coel-/cael- and poenitentiae/paenitentiae where applicable. Every petition and address is independently complete. Actual conclusion length follows the target under guidance/propers-for-agents.md, not a generic oral expansion. Six expansions use the matching complete old formula plus rubric; two shortenings delete terminal nostrum only. No saint N. substitution or new Doctor/Pope clause."
+indexable = true
+encoding = "utf-8"
+notes = "Only7 selected complete Latin bodies. Neither the restricted target nor Schott whole parent becomes distributable. No P55 Latin publication/target attestation, English adoption, annual completeness, new appointment, HolyWeek/Albert/Anthony/Silvester/private or other Doctor/Pope fill."

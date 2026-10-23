@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-hilary-postcommunion-20261022"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers its bounded transcription layout and normalization under CC BY 4.0. Each complete underlying petition has an independently named US-public-domain historical witness; under 17 U.S.C. 103(b) no exclusive right in preexisting Latin or blanket target-facsimile clearance is claimed."
+rights_jurisdiction = "United States"
+provenance = "Whole-petition page-image collation on 2026-10-22, not OCR, incipits or removed hashes. Historical images read at scale-to5000; target controls independently image-read, including400 dpi. No protected target image is retained here."
+retrieved = "2026-10-22"
+sha256 = "7037ccdbaacb3debd53b93d275f320b12899fb9c5f7fbf98b2526dd8c497fab0"
+byte_size = 147
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/phase4-hilary-postcommunion-20261022/phase4-hilary-postcommunion.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.phase4-hilary-doctor-pontiff-pages-20261022", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join wraps; remove stress accents; expand ae/oe ligatures; apply target pointing/capitals and declared consonantal j. Normalize only recorded received spellings (genitricis/Genetricis, coel-/cael-, exultatione/exsultatione, exequimur/exsequimur). Carry every actual target conclusion at its printed length, without asserting that a short or omitted historical ending prints it. Only Hilary fills an explicit historical N. blank, with nominative Hilarius. No other saint name, Doctor title, word, clause or petition is supplied."
+indexable = true
+encoding = "utf-8"
+notes = "Bounded 1 prayers only. No English, pre-1955 target attestation, held Holy Week/Albert/Silvester/Doctor addition, unknown Dedication Secret, new appointment or annual-completeness claim. Old artifacts/passages remain immutable."

@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-phase3-comm-s-praxedis-virginis--main--postcommunion--all--1"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.commons-easter-orations-en-checked-c50bc1b6"
+artifact_sha256 = "c50bc1b6cbb2f258ab9868d20ca3f08701dc72fd4a4c8c2117dbff88c1837372"
+locus = "Common of a Virgin not a Martyr, Dilexisti; Postcommunion; printed p. 1373; IA leaf n1391"
+physical_line_ranges = [[2, 2]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-22"
+context = "Exactly one derivative TSV recipient row for comm-s-praxedis-virginis/main/Postcommunion/all/1. Source locus is the actual historical prayer's locus, not a claim that Lasance appointed the recipient."
+notes = "Mechanical derivative-byte and recipient-column verification; the genuine page-image inspection is owned separately by passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.verify-phase3-lasance-common-virgin-3-postcommunion. Checked English field SHA256 b14c743270654bdfbf7cb059d611b8ae1ffc400a7e37fa9161abda9fb0c63387. No new image-inspection event is claimed for this recipient row. The publication locus is intentionally identical to its source verification locus; recipient identity is independently bound by TSV mass/form_id/proper/cycle/occurrence columns. Complete target-to-seed Latin byte identity and the inferential reuse judgment belong to the Roman English sidecar. Historical wording and Through our Lord. are unchanged; no official English or whole-formulary claim."

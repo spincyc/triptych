@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only historical English wording from the 1861 Philadelphia printing, in the United States public domain by publication date. The 21 rows reuse nine distinct already-checked published bodies without changing spelling, punctuation, names or conclusions. No page image, Google/IA furniture, watermark, OCR material or modern translation is included. The controlling Google-digitized PDF remains remote and unresolved."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "2026-10-22 exact reuse of existing checked transcriptions, not a new page-image inspection or translation. Intermediate publication owners: artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-recovered-en, SHA256 c61752839c8b04282bac27592749d63a4f0227d3fa051e62418f609c562eb54a; artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-pentecost-en, SHA256 d0bd7b139ba8b2df99df66a09a6e91ec050bcf940ae47fc6f99966a4e460700b. Their original exact PDF derivation controller is retained for the production dual-binding contract. Each publication passage identifies its unchanged original published row; the existing eleven verification passages remain the sole owners of page-image inspection events. Only recipient mass/form/proper/cycle/occurrence cataloguing columns are added, as required by the production validator. English bytes are unchanged, with JSON encoding and the consumer's existing removal of one structural terminal TOML newline. Complete recipient and donor Latin bodies, including every registered conclusion byte, were compared literally; no normalization or conclusion expansion establishes reuse."
+retrieved = "2026-10-22"
+sha256 = "386eed26fa0bd7ddec6e188cde9db5d53597fbf406442586db07e3fe869e7c7c"
+byte_size = 4768
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/roman-1962-exact-prayer-reuse-en-386eed26/roman-1962-exact-prayer-reuse-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "One header and 21 recipient rows, all main/all/occurrence1. The Roman English sidecar owns each target-to-donor inference. Passage loci retain the existing verification passage's source locus; only the TSV columns declare the recipient identity. This is historical antecedent English, not official 1962 English. Advent II Collect is excluded. No source image inspection date, saint name, prayer ending or original evidence record is changed. Independent cold source review remains required."

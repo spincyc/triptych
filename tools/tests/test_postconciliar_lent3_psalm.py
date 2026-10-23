@@ -1,7 +1,7 @@
 """Keep OLM1981 n.237's second Psalm distinct from nearby provisions.
 
 Held OLM artifact ed4bc14e, artifact p.188 / printed p.134, n.237:
-the two Psalm cues are Ps41:2,3 and Ps42:2,3,4 (Vulgate). This test
+the two Psalm cues are Ps41:2,3 and Ps42:3,4 (Vulgate). This test
 uses appointment facts only; it supplies no protected liturgical wording.
 """
 from importlib.machinery import SourceFileLoader
@@ -27,7 +27,11 @@ class PostconciliarLentThreePsalmTest(unittest.TestCase):
         cls.source_masses = {mass["key"]: mass for _, mass in owner.masses_of(owner.load_calendar(ROOT / "src/sources/calendars", "postconciliar"))}
 
     def test_lent_three_monday_keeps_both_psalms_and_the_appointed_verse(self):
-        units = self.masses["lent-3-monday"]["propers"]
+        mass = self.masses["lent-3-monday"]
+        ferial = next(p for p in mass["proper_source_paths"][0]["paths"] if p["id"] == "ferial")
+        coordinates = {tuple(m["appointment"][k] for k in ("proper", "occurrence")) for m in ferial["members"]}
+        units = [p for p in mass["propers"]
+                 if (p["name"], p.get("appointment_identity", {}).get("occurrence")) in coordinates]
         self.assertEqual([p["name"] for p in units], [
             "First Reading", "Responsorial Psalm", "Responsorial Psalm",
             "Verse Before the Gospel", "Gospel",
@@ -38,12 +42,10 @@ class PostconciliarLentThreePsalmTest(unittest.TestCase):
         ])
         second = units[2]["citations"][0]
         self.assertEqual(second["loci"]["vulgate"], [
-            {"chapter": 42, "first": 2, "last": 2},
             {"chapter": 42, "first": 3, "last": 3},
             {"chapter": 42, "first": 4, "last": 4},
-        ], "OLM n.237 appoints verse2 in the second Psalm")
+        ], "OLM n.237 does not appoint verse2 in the second Psalm")
         self.assertEqual(second["loci"]["hebrew"], [
-            {"chapter": 43, "first": 2, "last": 2},
             {"chapter": 43, "first": 3, "last": 3},
             {"chapter": 43, "first": 4, "last": 4},
         ])
@@ -60,14 +62,23 @@ class PostconciliarLentThreePsalmTest(unittest.TestCase):
             {"chapter": 43, "first": 3, "last": 3},
             {"chapter": 43, "first": 4, "last": 4},
         ])
-        # n.238's Vulgate24:4bc is the whole of Hebrew25:4, as the
-        # existing 2026-10-01 source-specific colon relation records.
+        # Retain n.238's printed part bounds in the Vulgate source carrier.
+        # The public Hebrew whole-verse projection is not a part conversion.
         tuesday = next(p for p in self.masses["lent-3-tuesday"]["propers"] if p["name"] == "Responsorial Psalm")
         first = tuesday["citations"][0]
-        self.assertEqual(first["ref"], "Psalm 25:4-5ab, 6-7bc, 8-9")
+        self.assertEqual(first["ref"], "Psalm 24:4bc-5ab, 6-7bc, 8-9")
+        self.assertEqual(first["numbering"], "vulgate")
         self.assertEqual(first["loci"]["hebrew"][0], {"chapter": 25, "first": 4, "last": 5})
         source_psalm = next(p for p in self.source_masses["lent-3-tuesday"]["propers"] if p["name"] == "Responsorial Psalm")
-        self.assertEqual(source_psalm["verses"][0]["ranges"][0]["begin"], {"chapter": 25, "verse": 4})
+        self.assertEqual(source_psalm["psalm_numbering"], "vulgate")
+        self.assertEqual(source_psalm["verses"][0]["ranges"], [
+            {"begin": {"chapter": 24, "verse": 4, "part": "bc"},
+             "end": {"chapter": 24, "verse": 5, "part": "ab"}},
+            {"begin": {"chapter": 24, "verse": 6},
+             "end": {"chapter": 24, "verse": 7, "part": "bc"}},
+            {"begin": {"chapter": 24, "verse": 8},
+             "end": {"chapter": 24, "verse": 9}},
+        ])
 
 
 if __name__ == "__main__":

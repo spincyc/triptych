@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-ursula-postcommunion-20261022"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers its bounded transcription layout and normalization under CC BY 4.0. Every complete underlying petition is independently witnessed in the separately named public-domain historical artifact. No exclusive right in Latin or blanket clearance of the restricted target is claimed."
+rights_jurisdiction = "United States"
+provenance = "Complete-petition page-image collation on 2026-10-22, not OCR or former removed-body hashes. Target controls read at 200 and 400 dpi; historical complete petitions read at scale-to5000, with Ursula additionally at2500. Independent normalized full-petition comparison includes only explicitly directed Bibiana blanks."
+retrieved = "2026-10-22"
+sha256 = "5a5b9ed5c33e154ea2ca35320f7447da49d6100622ca563537e849b60d0137d2"
+byte_size = 196
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/phase3-ursula-postcommunion-20261022/phase3-ursula-postcommunion.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.phase3-ursula-postcommunion-page-20261022", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join printed wraps; remove stress accents; expand ligatures; apply target pointing/capitals; project ejus/Jesum orthography. The named Ursula et Sociabus ejus petition is fully printed in Mame1922; no name substitution or added petition. Historical Per Dominum. is projected at the actual target conclusion length Per Dominum nostrum Jesum Christum., not expanded beyond it."
+indexable = true
+encoding = "utf-8"
+notes = "Bounded one Ursula Postcommunion only. Artifact-specific historical/control pair; do not mix either historical source into the other artifact's permission. No English, contextual Secret, chant fact, Ordinary or annual-completeness claim."

@@ -16,8 +16,11 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "scripts"))
+sys.path[:0] = [str(ROOT), str(ROOT / "scripts")]
 
+from tools.tests.test_roman_1962_octnov_commemoration_source_repair import (
+    PHASE5_LATIN22, phase5_owner, phase5_predecessor_christmas, digest, canonical,
+)
 import _calendars  # noqa: E402
 from _proper_latin import (  # noqa: E402
     CLI_SURFACES,
@@ -211,7 +214,7 @@ class ProductionLedgerTests(unittest.TestCase):
         seen = set()
         import hashlib
         import copy
-        unchanged = copy.deepcopy(mass)
+        unchanged = phase5_predecessor_christmas(mass)
         unchanged.pop("notes", None)
         for form in unchanged["forms"]:
             form["propers"] = [p for p in form["propers"]
@@ -477,7 +480,11 @@ class ProductionLedgerTests(unittest.TestCase):
             # 1120 since 2026-10-20 (C3): St Lucy's Communion carries the
             # Missal antiphon rather than a Bible reconstruction.
             # +3 on 2026-10-20: source-backed Christ-the-King orations.
-            "roman-1962": (1216, 23),
+            # Phase 2 adds fifteen new owners and restores three removed ones:
+            # eighteen complete October-November commemoration prayers.
+            # Phase 3: seventeen new owners, two restored Collects; Dedication
+            # changes four appointments but no body or ledger row.
+            "roman-1962": (1289, 23),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -488,7 +495,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual(total, len(records))
             self.assertEqual(
                 # 46 since 2026-10-01: KI-054 published 31 quarantined bodies.
-                {"postconciliar": 329, "roman-1962": 30}.get(calendar, 0),
+                {"postconciliar": 329, "roman-1962": 20}.get(calendar, 0),
                 sum(row.get("body_status") == "removed" for row in records.values()),
             )
             # Four duplicate-name pairs and one six-item procession are all
@@ -499,7 +506,7 @@ class ProductionLedgerTests(unittest.TestCase):
     def test_publication_loader_validates_production_source_metadata(self) -> None:
         # 1114 since 2026-10-01: St Angela Merici's Secret and Postcommunion.
         # 1120 since 2026-10-20 (C3): St Lucy's Communion has its own body.
-        expected = {"postconciliar": 329, "roman-1962": 1216, "roman-pre-1955": 1216}
+        expected = {"postconciliar": 329, "roman-1962": 1289, "roman-pre-1955": 1289}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -541,8 +548,11 @@ class ProductionLedgerTests(unittest.TestCase):
         # read on the 1962 page image and on the 1862 Pustet's (and the Mame's).
         # 1074 since 2026-10-20 (C3): St Lucy's Communion is independently
         # collated on the 1962 and public-domain Mame 1922 page images.
-        self.assertEqual(1186, len(permitted))
-        self.assertEqual(1186, len(roman))
+        # Accepted Phase 1: 1187. Phase 2 independently adds exactly eighteen
+        # full bodies (fifteen new ledger rows, three restored Saturninus rows).
+        # Phase 3 adds nineteen complete bodies on two artifact-specific pairs.
+        self.assertEqual(1269, len(permitted))
+        self.assertEqual(1269, len(roman))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -618,8 +628,76 @@ class ProductionLedgerTests(unittest.TestCase):
                 "publication_source_ids": {'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.september-ember-wednesday-collect-la-checked-ddf31f59'},
                 "projected_from": {'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.september-ember-wednesday-collect-la-checked-ddf31f59', target_artifact},
             },
+            "editorial-projection-2026-10-22": {
+                "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.boniface-three-orations-ae811235",
+                "publication_source_ids": {
+                    "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.boniface-page-445-883fb31d",
+                },
+                "projected_from": {
+                    "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.boniface-page-445-883fb31d",
+                    target_artifact,
+                },
+            },
         }
 
+        # Keep the accepted Boniface witness pair exact. The second artifact
+        # in this edition has its own independently proved bounded page set;
+        # permitting either pair must not permit mixing their witnesses.
+        october22_artifact_specs = {
+            projection_specs["editorial-projection-2026-10-22"]["artifact_id"]:
+                projection_specs["editorial-projection-2026-10-22"],
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase2-octnov-commemorations-20261022": {
+                "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase2-octnov-commemorations-20261022",
+                "publication_source_ids": {
+                    "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase2-octnov-commemoration-pages-20261022",
+                },
+                "projected_from": {
+                    "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase2-octnov-commemoration-pages-20261022",
+                    target_artifact,
+                },
+            },
+        }
+        # Separate Phase3 pairs: the full named Ursula petition is in Mame1922,
+        # not in the older Pustet prayer that remains an inadequate witness.
+        october22_artifact_specs.update({
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-winter-eighteen-orations-20261022": {
+                "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-winter-eighteen-orations-20261022",
+                "publication_source_ids": {
+                    "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase3-winter-oration-pages-20261022",
+                },
+                "projected_from": {
+                    "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase3-winter-oration-pages-20261022",
+                    target_artifact,
+                },
+            },
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-ursula-postcommunion-20261022": {
+                "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-ursula-postcommunion-20261022",
+                "publication_source_ids": {
+                    "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.phase3-ursula-postcommunion-page-20261022",
+                },
+                "projected_from": {
+                    "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.phase3-ursula-postcommunion-page-20261022",
+                    target_artifact,
+                },
+            },
+        })
+        # Phase4 exact pairs; Common retains its1862 OCR anchor plus scoped images.
+        october22_artifact_specs.update({'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-mayoct-alexander-twentytwo-orations-20261022': {'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-mayoct-alexander-twentytwo-orations-20261022', 'publication_source_ids': {'artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase4-mayoct-alexander-oration-pages-20261022'}, 'projected_from': {'artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase4-mayoct-alexander-oration-pages-20261022', 'artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf'}}, 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-hilary-postcommunion-20261022': {'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-hilary-postcommunion-20261022', 'publication_source_ids': {'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.phase4-hilary-doctor-pontiff-pages-20261022'}, 'projected_from': {'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.phase4-hilary-doctor-pontiff-pages-20261022', 'artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf'}}, 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-common-virgin-ii-two-word-repair-ce623d9f': {'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-common-virgin-ii-two-word-repair-ce623d9f', 'publication_source_ids': {'artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf'}, 'projected_from': {'artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf', 'artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase4-common-virgin-ii-orations-pages-698-699-20261022'}}})
+        # Phase5 is exactly 10 Pustet pairs, 5 Pustet triples, 6 Schott
+        # pairs and one Schott triple. No arbitrary third witness is allowed.
+        october22_artifact_specs.update({'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pustet-projection-20261022': {'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pustet-projection-20261022',
+                                                                                                                                              'projected_from': {'artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022',
+                                                                                                                                                                 'artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-petitions-and-formulas-20261022',
+                                                                                                                                                                 'artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf'},
+                                                                                                                                              'publication_source_ids': {'artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-petitions-and-formulas-20261022'}},
+ 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-schott-projection-20261022': {'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-schott-projection-20261022',
+                                                                                                                                              'projected_from': {'artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.phase5-latin22-seven-historical-prayers-20261022',
+                                                                                                                                                                 'artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022',
+                                                                                                                                                                 'artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf'},
+                                                                                                                                              'publication_source_ids': {'artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.phase5-latin22-seven-historical-prayers-20261022'}}})
+        phase5_specs = {LatinKey(**s["key"]): s for s in PHASE5_LATIN22}
+        phase5_groups = {}
+        phase5_supplements = set()
         used_projection_editions = set()
         supplemented = []
         for calendar, key, row in permitted:
@@ -661,6 +739,18 @@ class ProductionLedgerTests(unittest.TestCase):
                 # is still pinned exactly.
                 ids = row["publication_source_ids"]
                 self.assertGreaterEqual(len(ids), 2, ids)
+                if edition == "editorial-projection-2026-10-22":
+                    self.assertIn(ids[0], october22_artifact_specs)
+                    spec = october22_artifact_specs[ids[0]]
+                    if key in phase5_specs:
+                        accepted = phase5_specs[key]
+                        self.assertEqual(accepted["publication_source_ids"], ids)
+                        self.assertEqual(accepted["row_sha256"], digest(canonical(row)))
+                        phase5_groups[(ids[0], len(ids))] = phase5_groups.get((ids[0], len(ids)), 0) + 1
+                        if len(ids) == 3:
+                            phase5_supplements.add(key)
+                    else:
+                        self.assertEqual(3 if ids[0] == 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-common-virgin-ii-two-word-repair-ce623d9f' else 2, len(ids), ids)
                 self.assertTrue(
                     ids[0].startswith(
                         "artifact.triptych.roman-1962-latin-proper-editorial-"
@@ -683,9 +773,15 @@ class ProductionLedgerTests(unittest.TestCase):
                 witness = registered_artifact(ids[1])
                 for extra in ids[2:]:
                     supplement = registered_artifact(extra)
-                    self.assertEqual(
-                        witness["edition_id"], supplement["edition_id"], extra
-                    )
+                    if key == LatinKey("s-teresiae-a-iesu-infante-virginis", "", "Collect", "", "", 1):
+                        # Sole cross-edition case: Schott petition + exact Pustet conclusion.
+                        self.assertEqual(['artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-schott-projection-20261022', 'artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.phase5-latin22-seven-historical-prayers-20261022', 'artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022'], ids)
+                        self.assertEqual("edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929", witness["edition_id"])
+                        self.assertEqual("edition.catholic-church.missale-romanum.pustet-ratisbon-1862", supplement["edition_id"])
+                    else:
+                        self.assertEqual(
+                            witness["edition_id"], supplement["edition_id"], extra
+                        )
                     self.assertEqual(
                         "public-domain", supplement["rights_status"], extra
                     )
@@ -710,7 +806,12 @@ class ProductionLedgerTests(unittest.TestCase):
         # Seven further cold-review repairs bind the 1862 page image as well.
         # 44 since 2026-10-19 (C3): the five Pentecost rows name the 1862
         # page-image leaves n384-n386 they were read on.
-        self.assertEqual(44, len(supplemented), supplemented)
+        self.assertEqual(52, len(supplemented), supplemented)
+        self.assertEqual({('artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pustet-projection-20261022', 2): 10,
+ ('artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pustet-projection-20261022', 3): 5,
+ ('artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-schott-projection-20261022', 2): 6,
+ ('artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-schott-projection-20261022', 3): 1}, phase5_groups)
+        self.assertEqual({LatinKey(**k) for k in [{'mass': 'thursday-after-ash-wednesday', 'form': '', 'proper': 'Oratio super populum', 'course': '', 'cycle': '', 'occurrence': 1}, {'mass': 'friday-after-ash-wednesday', 'form': '', 'proper': 'Oratio super populum', 'course': '', 'cycle': '', 'occurrence': 1}, {'mass': 'lent-1-monday', 'form': '', 'proper': 'Oratio super populum', 'course': '', 'cycle': '', 'occurrence': 1}, {'mass': 'lent-1-ember-wednesday', 'form': '', 'proper': 'Oratio', 'course': '', 'cycle': '', 'occurrence': 1}, {'mass': 'lent-1-ember-wednesday', 'form': '', 'proper': 'Oratio super populum', 'course': '', 'cycle': '', 'occurrence': 1}, {'mass': 's-teresiae-a-iesu-infante-virginis', 'form': '', 'proper': 'Collect', 'course': '', 'cycle': '', 'occurrence': 1}]}, phase5_supplements)
 
         work = tomllib.loads((EDITORIAL_PROJECTION / "work.toml").read_text())
         self.assertEqual("Triptych contributors", work["responsible"])
@@ -734,6 +835,10 @@ class ProductionLedgerTests(unittest.TestCase):
                 own = [a for i, a in artifacts.items() if f".{edition}." in i]
                 self.assertTrue(own, edition)
                 for artifact in own:
+                    artifact_spec = spec
+                    if edition == "editorial-projection-2026-10-22":
+                        self.assertIn(artifact["id"], october22_artifact_specs)
+                        artifact_spec = october22_artifact_specs[artifact["id"]]
                     self.assertEqual("project-created", artifact["rights_status"])
                     self.assertTrue(artifact["transformation"].strip())
                     # An artifact stands on the witnesses its own masses used,
@@ -742,12 +847,15 @@ class ProductionLedgerTests(unittest.TestCase):
                     # the Mame. The target must always be there.
                     stands_on = set(artifact["projected_from"])
                     self.assertTrue(
-                        stands_on <= spec["projected_from"],
-                        sorted(stands_on - spec["projected_from"]),
+                        stands_on <= artifact_spec["projected_from"],
+                        sorted(stands_on - artifact_spec["projected_from"]),
                     )
                     self.assertIn(target_artifact, stands_on)
+                    if edition == "editorial-projection-2026-10-22":
+                        self.assertEqual(artifact_spec["projected_from"], stands_on)
         for _, _, row in permitted:
             passage = passages[row["source_id"]]
+            self.assertEqual(row["publication_source_ids"][0], passage["artifact_id"])
             artifact = artifacts[passage["artifact_id"]]
             payload = (ROOT / artifact["path"]).read_text().splitlines(
                 keepends=True
@@ -758,11 +866,11 @@ class ProductionLedgerTests(unittest.TestCase):
                 for line in payload[start - 1 : end]
             )
             self.assertEqual(row["text_sha256"], text_sha256(projected_body))
-        self.assertEqual(359, len(nonpermitted))
+        self.assertEqual(349, len(nonpermitted))
         collated = [
             item for item in nonpermitted if item[2]["provenance_status"] == "collated"
         ]
-        self.assertEqual(4, len(collated))
+        self.assertEqual(3, len(collated))
         st_albert = [
             item
             for item in collated
@@ -785,21 +893,15 @@ class ProductionLedgerTests(unittest.TestCase):
                 for calendar, _, row in st_albert
             )
         )
-        vianney = [
-            item
-            for item in collated
-            if item[1].mass == "s-ioannis-mariae-vianney-confessoris"
-        ]
-        self.assertEqual(1, len(vianney))
-        _, vianney_key, vianney_row = vianney[0]
-        self.assertEqual("Collect", vianney_key.proper)
-        self.assertEqual("collated-non-exact", vianney_row["relationship"])
-        self.assertEqual("withheld", vianney_row["publication_status"])
-        self.assertEqual(
-            "non-exact-historical-witness",
-            vianney_row["publication_basis"],
-        )
-        self.assertEqual([], vianney_row["surfaces"])
+        # Vianney's named Collect is now exact on the bounded Schott1929 Latin.
+        vianney_key = LatinKey("s-ioannis-mariae-vianney-confessoris", "", "Collect", "", "", 1)
+        records, problems = publication_records(CALENDARS, "roman-1962", INVENTORIES)
+        self.assertEqual([], problems)
+        accepted = phase5_owner(_calendars.load_document(CALENDARS, "roman-1962"),
+                                vianney_key, records)
+        self.assertIn("sanctum Joannem Mariam", accepted["body"])
+        self.assertTrue(accepted["body"].endswith("eundem Dominum.\n"))
+        self.assertEqual([], [item for item in collated if item[1] == vianney_key])
 
         # The seventeen the Pustet review withheld are published as of
         # 2026-09-03, on the 1922 Mame, under the rule that a witness must carry
@@ -808,18 +910,18 @@ class ProductionLedgerTests(unittest.TestCase):
         # test_roman_pustet_common_collation; what changed is that a non-exact
         # Pustet page no longer keeps a body off every surface, because the
         # repository publishes its own declared orthography and has never served
-        # an exact 1962 string anywhere. Only St Albert's three and Vianney's one
-        # remain collated but withheld.
+        # an exact 1962 string anywhere. Only St Albert's three remain collated
+        # but withheld; Vianney now has the exact independently dated Schott witness.
         pustet = [
             item
             for item in collated
-            if item not in st_albert and item not in vianney
+            if item not in st_albert
         ]
         self.assertEqual(0, len(pustet))
         unresolved = [
             row for _, _, row in nonpermitted if row["provenance_status"] == "unresolved"
         ]
-        self.assertEqual(355, len(unresolved))
+        self.assertEqual(346, len(unresolved))
         self.assertTrue(all(row["publication_basis"] == "unresolved" for row in unresolved))
         postconciliar = [
             row for calendar, _, row in nonpermitted if calendar == "postconciliar"

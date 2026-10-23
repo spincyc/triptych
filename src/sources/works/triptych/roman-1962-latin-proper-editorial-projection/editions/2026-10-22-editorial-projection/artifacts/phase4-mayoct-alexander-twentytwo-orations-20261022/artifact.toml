@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-mayoct-alexander-twentytwo-orations-20261022"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers its bounded transcription layout and normalization under CC BY 4.0. Each complete underlying petition has an independently named US-public-domain historical witness; under 17 U.S.C. 103(b) no exclusive right in preexisting Latin or blanket target-facsimile clearance is claimed."
+rights_jurisdiction = "United States"
+provenance = "Whole-petition page-image collation on 2026-10-22, not OCR, incipits or removed hashes. Historical images read at scale-to5000; target controls independently image-read, including400 dpi. No protected target image is retained here. Independent reviewer and parent primary-image re-review corrected the author's Phase4 Jerome ending error and supplied Anne Secret's omitted real extitit/exstitit normalization. Historical facsimile bytes are unchanged."
+retrieved = "2026-10-22"
+sha256 = "dd94f56f258e665930043284c747c41852bb47371aa2fda01337a58bb459dc11"
+byte_size = 4242
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/phase4-mayoct-alexander-twentytwo-orations-20261022/phase4-mayoct-alexander-twentytwo-orations.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase4-mayoct-alexander-oration-pages-20261022", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join wraps; remove stress accents; expand ae/oe ligatures; apply target pointing/capitals and declared consonantal j. Normalize only recorded received spellings (genitricis/Genetricis, Anne Secret mater extitit -> mater exstitit, coel-/cael-, exultatione/exsultatione, exequimur/exsequimur). Carry every actual target conclusion at its printed length, without asserting that a short or omitted historical ending prints it. Only Hilary fills an explicit historical N. blank, with nominative Hilarius. No other saint name, Doctor title, word, clause or petition is supplied."
+indexable = true
+encoding = "utf-8"
+notes = "Bounded 22 prayers only. No English, pre-1955 target attestation, held Holy Week/Albert/Silvester/Doctor addition, unknown Dedication Secret, new appointment or annual-completeness claim. Old artifacts/passages remain immutable."

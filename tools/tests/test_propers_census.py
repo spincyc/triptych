@@ -808,6 +808,10 @@ class EnglishCoverageTests(unittest.TestCase):
             "edition.eugene-cummiskey.roman-missal-english-laity."
             "philadelphia-1861"
         )
+        reuse_artifact = (
+            "artifact.eugene-cummiskey.roman-missal-english-laity."
+            "philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26"
+        )
         expected = [
             row
             for row in document.get("entries") or []
@@ -815,20 +819,139 @@ class EnglishCoverageTests(unittest.TestCase):
                 translation.get("source_id") == cummiskey_source
                 for translation in row.get("translations") or []
             )
+            and row.get("publication_artifact_id") != reuse_artifact
         ]
-        lasance_advent_first_three = [
+        lasance_advent = [
             row for row in document.get("entries") or []
             if row.get("witness") == "lasance-1945"
-            and row.get("mass") == "advent-1"
+            and row.get("mass") in {"advent-1", "advent-2", "advent-3", "advent-4"}
             and row.get("proper") in {"Collect", "Secret", "Postcommunion"}
         ]
         self.assertEqual(
             {(row["mass"], row["form_id"], row["proper"], row["cycle"], row["occurrence"])
-             for row in lasance_advent_first_three},
-            {("advent-1", "main", proper, "all", 1)
-             for proper in ("Collect", "Secret", "Postcommunion")},
+             for row in lasance_advent},
+            {(mass, "main", proper, "all", 1)
+             for mass in ("advent-1", "advent-2", "advent-3", "advent-4")
+             for proper in ("Collect", "Secret", "Postcommunion")
+             if (mass, proper) != ("advent-2", "Collect")},
         )
-        expected += lasance_advent_first_three
+        expected += lasance_advent
+        # These are new target identities, not new page-image inspections.
+        # Keep this exact set independent of the artifact's own row count.
+        reused = [
+            row for row in document["entries"]
+            if row.get("publication_artifact_id") == reuse_artifact
+        ]
+        self.assertEqual(
+            {(row["mass"], row["form_id"], row["proper"], row["cycle"], row["occurrence"])
+             for row in reused},
+            {(mass, "main", proper, "all", 1) for mass, proper in {
+                ("commune-unius-martyris-3", "Secret"),
+                ("commune-plurimorum-martyrum-2", "Secret"),
+                ("commune-festorum-bmv", "Secret"),
+                ("commune-festorum-bmv", "Postcommunion"),
+                ("sanctissimi-nominis-beatae-mariae-virginis", "Secret"),
+                ("sanctissimi-nominis-beatae-mariae-virginis", "Postcommunion"),
+                ("s-pauli-primi-eremitae-confessoris", "Secret"),
+                ("s-pauli-primi-eremitae-confessoris", "Postcommunion"),
+                ("ss-vincentii-anastasii-martyrum", "Secret"),
+                ("comm-s-petri-apostoli", "Collect"),
+                ("comm-s-petri-apostoli", "Secret"),
+                ("s-ioannis-a-deo-confessoris", "Postcommunion"),
+                ("s-hermenegildi-martyris", "Secret"),
+                ("s-ioannis-baptistae-la-salle-confessoris", "Secret"),
+                ("s-bernardini-senensis-confessoris", "Secret"),
+                ("comm-s-alexii-confessoris", "Postcommunion"),
+                ("comm-s-romani-martyris", "Secret"),
+                ("s-iosephi-cupertino-confessoris", "Secret"),
+                ("s-iosephi-cupertino-confessoris", "Postcommunion"),
+                ("advent-ember-friday", "Secret"),
+                ("pentecost-thursday", "Secret"),
+            }},
+        )
+        self.assertEqual(len(reused), 21)
+        expected += reused
+        # Phase3: seven newly inspected prayers, exactly 21 terminal owners.
+        phase3_artifact = (
+            "artifact.francis-xavier-lasance.the-new-roman-missal."
+            "benziger-revised-1945.commons-easter-orations-en-checked-c50bc1b6"
+        )
+        phase3 = [row for row in document["entries"]
+                  if row.get("publication_artifact_id") == phase3_artifact]
+        self.assertEqual(
+            {(row["mass"], row["form_id"], row["proper"], row["cycle"], row["occurrence"])
+             for row in phase3},
+            {(mass, "main", proper, "all", 1) for mass, proper in {
+                ("comm-s-praxedis-virginis", "Postcommunion"),
+                ("comm-s-praxedis-virginis", "Secret"),
+                ("commune-confessoris-pontificis-1", "Secret"),
+                ("commune-martyrum-tempore-paschali-1", "Postcommunion (Pro Martyre tantum)"),
+                ("commune-plurimorum-martyrum-1", "Postcommunion"),
+                ("commune-virginum-3", "Postcommunion"),
+                ("commune-virginum-3", "Secret"),
+                ("easter-5", "Postcommunion"),
+                ("easter-monday", "Secret"),
+                ("easter-sunday", "Secret"),
+                ("s-antonini-episcopi-confessoris", "Secret"),
+                ("s-birgittae-viduae", "Secret"),
+                ("s-gregorii-thaumaturgi-episcopi-confessoris", "Secret"),
+                ("s-hermenegildi-martyris", "Postcommunion"),
+                ("s-luciae-virginis-martyris", "Postcommunion"),
+                ("s-luciae-virginis-martyris", "Secret"),
+                ("s-marthae-virginis", "Secret"),
+                ("s-monicae-viduae", "Postcommunion"),
+                ("s-monicae-viduae", "Secret"),
+                ("ss-philippi-iacobi-apostolorum", "Postcommunion"),
+                ("vigil-of-the-ascension", "Postcommunion"),
+            }},
+        )
+        self.assertEqual(len(phase3), 21)
+        expected += phase3
+        # Phase4: exact selected31 keys, not a count-only binding waiver.
+        phase4_artifacts = {'artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.phase4-nineteen-prayers-en-0779811a', 'artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.phase4-nativity-marian-reuse-en-ed897177'}
+        phase4 = [row for row in document["entries"]
+                  if row.get("publication_artifact_id") in phase4_artifacts]
+        self.assertEqual({(r["mass"], r["form_id"], r["proper"], r["cycle"], r["occurrence"])
+                          for r in phase4}, {('pentecost-ember-saturday', 'longer', 'Secret', 'all', 1), ('commune-abbatum', 'main', 'Postcommunion', 'all', 1), ('ss-septem-fratrum-martyrum-ac-ss', 'main', 'Collect', 'all', 1), ('pentecost-ember-saturday', 'longer', 'Postcommunion', 'all', 1), ('ss-quadraginta-martyrum', 'main', 'Collect', 'all', 1), ('s-bibianae-virginis-martyris', 'main', 'Collect', 'all', 1), ('pentecost-ember-saturday', 'shorter', 'Secret', 'all', 1), ('pentecost-4', 'main', 'Secret', 'all', 1), ('lent-4-saturday', 'main', 'Secret', 'all', 1), ('comm-impressionis-sacrorum-stigmatum-s-francisci', 'main', 'Secret', 'all', 1), ('lent-3-friday', 'main', 'Postcommunion', 'all', 1), ('commune-dedicationis-ecclesiae', 'main', 'Collect', 'all', 1), ('pentecost-4', 'main', 'Postcommunion', 'all', 1), ('comm-ss-quatuor-coronatorum-martyrum', 'main', 'Collect', 'all', 1), ('holy-monday', 'main', 'Postcommunion', 'all', 1), ('s-francisci-confessoris', 'main', 'Postcommunion', 'all', 1), ('commune-unius-martyris-2', 'main', 'Secret', 'all', 1), ('commune-unius-martyris-2', 'main', 'Postcommunion', 'all', 1), ('lent-4-monday', 'main', 'Postcommunion', 'all', 1), ('lent-4-tuesday', 'main', 'Postcommunion', 'all', 1), ('september-ember-saturday', 'longer', 'Collect', 'all', 1), ('nativitate-beatae-mariae-virginis', 'main', 'Communion', 'all', 1), ('pentecost-ember-saturday', 'shorter', 'Postcommunion', 'all', 1), ('commune-virginum-2', 'main', 'Postcommunion', 'all', 1), ('lent-1-ember-wednesday', 'main', 'Secret', 'all', 1), ('sexagesima', 'main', 'Secret', 'all', 1), ('s-francisci-confessoris', 'main', 'Secret', 'all', 1), ('commune-confessoris-pontificis-1', 'main', 'Postcommunion', 'all', 1), ('september-ember-saturday', 'shorter', 'Collect', 'all', 1), ('epiphany-5', 'main', 'Secret', 'all', 1), ('lent-4-monday', 'main', 'Secret', 'all', 1)})
+        self.assertEqual(len(phase4), 31)
+        expected += phase4
+        # Separately authorized CommonVirginII English+2; not ten duplicate owners.
+        conditional2 = [r for r in document["entries"]
+                        if r.get("publication_artifact_id") == 'artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.phase4-common-virgin-ii-two-prayers-en-11658a3a']
+        self.assertEqual({(r["mass"], r["form_id"], r["proper"], r["cycle"], r["occurrence"])
+                          for r in conditional2}, {('commune-virginum-2', 'main', 'Collect', 'all', 1), ('commune-virginum-2', 'main', 'Secret', 'all', 1)})
+        self.assertEqual(len(conditional2), 2)
+        expected += conditional2
+        # Phase5: twelve whole prayers, thirteen exact terminal owners.
+        phase5_artifact = (
+            "artifact.francis-xavier-lasance.the-new-roman-missal."
+            "benziger-revised-1945.phase5-twelve-prayers-thirteen-owners-en-cfd58bf4"
+        )
+        phase5 = [
+            row for row in document["entries"]
+            if row.get("publication_artifact_id") == phase5_artifact
+        ]
+        self.assertEqual(
+            {(row["mass"], row["form_id"], row["proper"], row["cycle"], row["occurrence"])
+             for row in phase5},
+            {(mass, form, proper, "all", 1) for mass, form, proper in {
+                ("apparitione-beatae-mariae-virginis-immaculatae", "main", "Collect"),
+                ("apparitione-beatae-mariae-virginis-immaculatae", "main", "Secret"),
+                ("comm-ss-sergii-bacchi-marcelli-apuleii", "main", "Postcommunion"),
+                ("comm-ss-sergii-bacchi-marcelli-apuleii", "main", "Secret"),
+                ("commune-plurimorum-martyrum-3", "main", "Collect"),
+                ("commune-virginum-4", "main", "Collect"),
+                ("epiphany-3", "main", "Postcommunion"),
+                ("epiphany-4", "main", "Collect"),
+                ("epiphany-6", "main", "Secret"),
+                ("lent-1-ember-saturday", "longer", "Collect"),
+                ("lent-1-ember-saturday", "shorter", "Collect"),
+                ("missa-de-s-maria-in-sabbato-2", "main", "Secret"),
+                ("missa-de-s-maria-in-sabbato-3", "main", "Postcommunion"),
+            }},
+        )
+        self.assertEqual(len(phase5), 13)
+        expected += phase5
         self.assertEqual(
             {
                 (
@@ -850,7 +973,7 @@ class EnglishCoverageTests(unittest.TestCase):
                 )
                 for row in expected
             },
-            "every deliberate Cummiskey positive and the first three Lasance Advent bodies must have a publication binding",
+            "every Cummiskey positive, checked Lasance Advent body and selected Phase3/Phase4/Phase5 owner must have a publication binding",
         )
         for row in rows:
             with self.subTest(

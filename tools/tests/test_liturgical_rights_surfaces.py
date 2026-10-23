@@ -17,6 +17,8 @@ from __future__ import annotations
 import csv
 import functools
 import hashlib
+import importlib.machinery
+import importlib.util
 from html.parser import HTMLParser
 import io
 import json
@@ -1239,9 +1241,367 @@ def restricted_liturgy_row(row: dict) -> bool:
     )
 
 
-def source_artifact_findings(path: Path, record: dict) -> list[str]:
-    """Policy findings for one manifest-declared protected source artifact."""
-    if record.get("rights_status") in SOURCE_DISTRIBUTABLE_RIGHTS:
+# These are regression fixtures of the already accepted Oct 20/21 source-Git
+# decisions, NOT new grants or a production rights registry. The owning
+# source-library fingerprints bind complete metadata and byte-parent lineage:
+# status, basis, attribution/conditions, CC exclusion, payload hash and extent.
+# BSB NoC-NC remains conditional permission, not CC/public-domain clearance.
+# Tournai remains a mixed legal exception, including its two non-PD covers.
+RETAINED_SOURCE_FIXTURES = {
+    "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.bsb-canvas22-176accd2": [
+        "toledo1804",
+        "sha256:061cc07ab1e81f30d1d9d4075a6f0dbefb64a39b98feef89dc36f45b5b45ec48"
+    ],
+    "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.bsb-colophon-canvas666": [
+        "toledo1804",
+        "sha256:e04a808670aaecbb9ea997ac5f8035218b90013b6c6fa0241743c7a7dd5dfefd"
+    ],
+    "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.bsb-editor-canvas667": [
+        "toledo1804",
+        "sha256:d292f3fcec6277f3235589a80c58ac909e9e0244f84da342355f0fca48725276"
+    ],
+    "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804.bsb-title-canvas7": [
+        "toledo1804",
+        "sha256:70e95f769315e54182c038ce87a97df3f5880a30bfae4276e2cec8411d00f6e8"
+    ],
+    "artifact.carthusian-order.missale-cartusiense.1627-lyon-pillehotte.bsb-canvas-00007-a28debe6": [
+        "carthusian1627",
+        "sha256:5e376ee3fdf63e5e825c807d6fd8e04c6afda03da675eb5b7a37e5f538bf4db0"
+    ],
+    "artifact.carthusian-order.missale-cartusiense.1627-lyon-pillehotte.bsb-canvas-00229-56e46a83": [
+        "carthusian1627",
+        "sha256:889e8a14cf0eb6cc32a260e50676a41b50fee449d3a155cf78a1c2cd0e51aee3"
+    ],
+    "artifact.carthusian-order.missale-cartusiense.1627-lyon-pillehotte.bsb-canvas-00230-24435bff": [
+        "carthusian1627",
+        "sha256:b285b6f3d701918cd99682bc00bffe75cc42e3f772e9e1db76393787215c7772"
+    ],
+    "artifact.carthusian-order.missale-cartusiense.1627-lyon-pillehotte.bsb-canvas-00231-249f27c4": [
+        "carthusian1627",
+        "sha256:4fa7238bc41ffd11452ac80007f5e282d62c183dff9cd51660a8f6ea89f1f560"
+    ],
+    "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00001-44b8ddf4": [
+        "cistercian1606",
+        "sha256:d6d8c84cffca65273fd3d8ce569a0c21fba40b019f58934a1d8a5b9dc3799995"
+    ],
+    "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00027-5ffde528": [
+        "cistercian1606",
+        "sha256:66584078885caaf7a6cca711b85665a271e900070c3dddcd3abcdeeb25208265"
+    ],
+    "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00028-e9916c53": [
+        "cistercian1606",
+        "sha256:a11cd96ea476d28c5117d830018420fca575c8a10ddc9a2c9f55fad18e2b4236"
+    ],
+    "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00234-7c8474ea": [
+        "cistercian1606",
+        "sha256:5a2a3f0bb629c4e5265f9a98e5c594130ca08141fc65b5f812c360e079b7eb55"
+    ],
+    "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.bsb-canvas-00235-2646b0f5": [
+        "cistercian1606",
+        "sha256:0f2fa1ba07333954521309d36fa32973612e3bb484ed3736dfee2ac24103a1f8"
+    ],
+    "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.canon-facsimile-dc62364f": [
+        "cistercian1606",
+        "sha256:b627876a66159ed926f783b6c9fef1c8406d7ac3e34acb0871ec7f5ba7d27c8c"
+    ],
+    "artifact.cistercian-order.missale-cisterciense.paris-marnef-cavellat-1606.post-canon-facsimile-ed5fd115": [
+        "cistercian1606",
+        "sha256:cddebb89716da2d5b7f5e687b55e3be326fc28f8900d6bd87ce7f4b5ca35fe6b"
+    ],
+    "artifact.diocese-of-tournai.missale-tornacense.1498-paris-higman-ghent-bhsl-res1379.google-images-1c403b1c": [
+        "tournai1498",
+        "sha256:2163dbbef7de61a143a8f3bfe8b6b9e7773ba122c2cbde08a23d4aef13c22cf9"
+    ]
+}
+RETAINED_SOURCE_NOTICE_PINS = {
+    "toledo1804": [
+        [
+            "The Toledo 1500",
+            "a1bdf692687ea6e636ca117b77a0c263df799aa57759c01da40b3ae49ab9188c"
+        ]
+    ],
+    "carthusian1627": [
+        [
+            "The Carthusian witness",
+            "34b4d83de9d9375ac5dcb54900049af8e90954332d117041ede9877f918113f4"
+        ],
+        [
+            "Bounded Cistercian, Dominican",
+            "e92da49b6ba93e7c1022a5d181182e3141be184b5120f2458f45f37c0614e50b"
+        ]
+    ],
+    "cistercian1606": [
+        [
+            "Bounded Cistercian, Dominican",
+            "e92da49b6ba93e7c1022a5d181182e3141be184b5120f2458f45f37c0614e50b"
+        ],
+        [
+            "Five complete BSB bsb10496382",
+            "1df57e6372b40f4a7388f4dfcf502e1c6af3c844d4b96003cb113b45555ab867"
+        ]
+    ],
+    "tournai1498": [
+        [
+            "The 1498 Tournai missal",
+            "0fc175d9c3e79e6c69b6ba777cb2d62573aa9b11c919c76321f88c37917b2716"
+        ]
+    ]
+}
+RETAINED_SOURCE_REVIEW_PINS = {
+    "source-retention-batch2-2026-10-20.json": "456111896e5beff5bed9b4484b0f3c2500997243d575447d9afbbe5969e5a592",
+    "source-retention-batch3-2026-10-20.json": "11ff8a059b8c1a92c3f9e7cbf096c083df8266a91656779e5cad2298ebe769ea",
+    "cistercian-1606-post-canon-2026-10-20.json": "7a38e8ff99f0a8ecad429f32727f16aadb8b74d014d041aaf22348e3ab757424",
+    "tournai-original-1498-2026-10-21.json": "71c56fc2434af30020542325f4cd7bbb7ef9bc6959cfa6e842574aea4b96a659"
+}
+RETAINED_SOURCE_REVIEWS = {
+    "toledo1804": ("source-retention-batch2-2026-10-20.json",),
+    "carthusian1627": ("source-retention-batch2-2026-10-20.json",),
+    "cistercian1606": (
+        "source-retention-batch2-2026-10-20.json",
+        "source-retention-batch3-2026-10-20.json",
+        "cistercian-1606-post-canon-2026-10-20.json",
+    ),
+    "tournai1498": (
+        "source-retention-batch3-2026-10-20.json",
+        "tournai-original-1498-2026-10-21.json",
+    ),
+}
+
+# Sources passage authority only: no calendar permission is inferred from the
+# dated Gregory ledger row. Common I and Gregory remain distinct targets.
+COMMON_I_SOURCE_PINS = {
+    "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.primary-commune-confessoris-pontificis-1-lesson": "sha256:c0e03608eb717ce4b15cdcaf478c3dbdbde83228f3cbcc19e6cf150ace20b656",
+    "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.primary-s-gregorii-thaumaturgi-episcopi-confessoris-lesson-checked-2026-10-20": "sha256:06bc13c63f2a1e4943793953634a0fabf523436a0b178f2b9972ae7839a57c6f",
+    "passage.catholic-church.missale-romanum.vatican-typica-1962.primary-commune-confessoris-pontificis-1-lesson-word-collation-2026-10-20": "sha256:8404757635f27d45653a9d75b604fbdd686ea355d4e0ae92318cd3bbbe082b3b",
+    "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.adapted-primary-readings-76d61000": "sha256:113c346c2d5cb9973f0058908f45c8b6c5662f6d574fca043dce28f80c747d41",
+    "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.adapted-primary-readings-la-checked-e3a67098": "sha256:56cc38a5430693f846746b31ec24bd4571f86b72ab5591c55bbd96473338f490",
+    "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "sha256:2aeeef19bd9fd55efb91a84ab940dd7be0abed5af53bc5d1d63517fb364b7661"
+}
+COMMON_I_PASSAGE, COMMON_I_HISTORICAL_PASSAGE, COMMON_I_TARGET_PASSAGE = (
+    list(COMMON_I_SOURCE_PINS)[:3]
+)
+COMMON_I_CONTROLLER, COMMON_I_HISTORICAL_CONTROLLER, COMMON_I_HISTORICAL_PARENT = (
+    list(COMMON_I_SOURCE_PINS)[3:]
+)
+COMMON_I_TARGET = (
+    "artifact.catholic-church.missale-romanum.vatican-typica-1962."
+    "cmaa-facsimile-pdf"
+)
+COMMON_I_READER_BODY_SHA256 = (
+    "a22a406e45b16b7acaae009af575f2499d2d111a3036e3d1ac5670d85e9c2d6e"
+)
+
+
+@functools.lru_cache(maxsize=1)
+def source_reader_module():
+    loader = importlib.machinery.SourceFileLoader(
+        "rights_surface_source_reader", str(ROOT / "tools/source-reader")
+    )
+    spec = importlib.util.spec_from_loader(loader.name, loader)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[loader.name] = module
+    loader.exec_module(module)
+    return module
+
+
+@functools.lru_cache(maxsize=1)
+def source_record_paths() -> dict[str, Path]:
+    """Use the owning loader, without global validation, bindings or cache writes."""
+    owner = source_reader_module().source_library()
+    library = owner.Library(ROOT, ROOT / "src/sources", [])
+    owner._load_source_records(library)
+    if library.errors:
+        raise AssertionError("\n".join(library.errors))
+    return {key: record.path for key, record in library.records.items()}
+
+
+def source_evidence_library(identifiers):
+    """Fresh bounded graph, using the owner's identities and dependency selectors."""
+    owner = source_reader_module().source_library()
+    library = owner.Library(ROOT, ROOT / "src/sources", [])
+    pending = list(identifiers)
+    paths = source_record_paths()
+    while pending:
+        identifier = pending.pop()
+        if identifier in library.records:
+            continue
+        path = paths[identifier]
+        data = tomllib.loads(path.read_text(encoding="utf-8"))
+        if data.get("id") != identifier:
+            raise ValueError(f"{path}: changed source identity")
+        record = owner.Record(path, data["record_type"], identifier, data)
+        library.records[identifier] = record
+        pending.extend(owner._dependency_ids(record))
+        pending.extend(data.get("projected_from") or [])
+        pending.extend(data.get("relations") or [])
+    return library
+
+
+def scoped_source_problems(library) -> list[str]:
+    """Run owning validators on selected evidence, not a global source acceptance."""
+    owner = source_reader_module().source_library()
+    library.errors.clear()
+    library.payload_paths.clear()
+    for record in library.records.values():
+        owner._validate_common_record(library, record.path, record.data)
+        owner._validate_strings(library, record)
+        owner._validate_record_path(library, record)
+    owner._validate_relationships(library)
+    owner._validate_artifacts(library)
+    owner._validate_passage_locators(library)
+    owner._validate_artifact_licenses(library)
+    # _validate_artifacts also walks the whole source tree for unowned siblings.
+    # Keep every error in this scope; unrelated directories are intentionally
+    # absent from this bounded Library and cannot be adjudicated by this check.
+    artifact_directories = [
+        library.relative(record.path.parent) + "/"
+        for record in library.records.values()
+        if record.record_type == "artifact"
+    ]
+    return [
+        problem for problem in library.errors
+        if not problem.endswith(
+            ": artifact payload is not declared by its local artifact manifest"
+        )
+        or any(problem.startswith(prefix) for prefix in artifact_directories)
+    ]
+
+
+def retained_source_evidence_matches(group: str, root: Path = ROOT) -> bool:
+    """Reuse dated local acceptance and outbound exclusions; no current-terms claim."""
+    try:
+        paragraphs = (root / "THIRD_PARTY.md").read_text(encoding="utf-8").split("\n\n")
+        for prefix, digest in RETAINED_SOURCE_NOTICE_PINS[group]:
+            matches = [one for one in paragraphs if one.startswith(prefix)]
+            if len(matches) != 1 or hashlib.sha256(
+                matches[0].encode("utf-8")
+            ).hexdigest() != digest:
+                return False
+        for name in RETAINED_SOURCE_REVIEWS[group]:
+            path = root / "src/sources/inventories/eucharistic-research-reviews" / name
+            if hashlib.sha256(path.read_bytes()).hexdigest() != RETAINED_SOURCE_REVIEW_PINS[name]:
+                return False
+    except (OSError, UnicodeError, KeyError):
+        return False
+    return True
+
+
+def reviewed_source_git_retention(path: Path, record: dict, *, library=None) -> bool:
+    """Exact historical source retention does not confer prose-reader eligibility."""
+    fixture = RETAINED_SOURCE_FIXTURES.get(record.get("id"))
+    if fixture is None:
+        return False
+    try:
+        group, fingerprint = fixture
+        library = library or source_evidence_library([record["id"]])
+        held = library.records[record["id"]]
+        owner = source_reader_module().source_library()
+        return (
+            held.path == path
+            and held.data == record
+            and owner.source_fingerprint(library, held.record_id) == fingerprint
+            and retained_source_evidence_matches(group)
+            and not scoped_source_problems(library)
+        )
+    except (OSError, UnicodeError, ValueError, KeyError):
+        return False
+
+
+def common_i_received_words(text: str) -> list[str]:
+    """Only the pinned projection's declared accent/ligature/pointing treatment.
+
+    This compares the whole already-identified historical reading; it never
+    looks up an identity by normalized text. Retain j and received spellings:
+    no i/j, v/u, y/i, ae/e or other undeclared equivalence is introduced.
+    """
+    value = unicodedata.normalize("NFD", text.casefold())
+    value = "".join(one for one in value if not unicodedata.combining(one))
+    value = value.replace("æ", "ae").replace("œ", "oe")
+    return re.findall(r"[^\W\d_]+", value)
+
+
+def common_i_verification_only_provenance(
+    row: dict, protected_identities: set[str], *, library=None
+) -> bool:
+    """Prove this exact reader row's controller and independent whole-word chain."""
+    if row.get("id") != COMMON_I_PASSAGE:
+        return False
+    try:
+        reader = source_reader_module()
+        owner = reader.source_library()
+        library = library or source_evidence_library(COMMON_I_SOURCE_PINS)
+        for identifier, fingerprint in COMMON_I_SOURCE_PINS.items():
+            if owner.source_fingerprint(library, identifier) != fingerprint:
+                return False
+        passage = library.records[COMMON_I_PASSAGE].data
+        historical = library.records[COMMON_I_HISTORICAL_PASSAGE].data
+        controller, _ = reader._controller(library, passage)
+        antecedent, _ = reader._controller(library, historical)
+        if (
+            controller["id"] != COMMON_I_CONTROLLER
+            or controller["rights_status"] != "project-created"
+            or set(controller["projected_from"]) != {
+                COMMON_I_HISTORICAL_CONTROLLER, COMMON_I_TARGET
+            }
+            or antecedent["id"] != COMMON_I_HISTORICAL_CONTROLLER
+            or antecedent["rights_status"] != "public-domain"
+            or antecedent["derived_from"] != COMMON_I_HISTORICAL_PARENT
+            or library.records[COMMON_I_HISTORICAL_PARENT].data["rights_status"] != "public-domain"
+            or library.records[COMMON_I_TARGET_PASSAGE].data["artifact_id"] != COMMON_I_TARGET
+        ):
+            return False
+        current = reader.reading_of(library, passage)
+        prior = reader.reading_of(library, historical)
+        if not current["readable"] or not prior["readable"]:
+            return False
+        words = common_i_received_words(prior["text"])
+        if (
+            len(words) != 105
+            or common_i_received_words(current["text"]) != words
+            or hashlib.sha256(current["text"].encode("utf-8")).hexdigest()
+            != COMMON_I_READER_BODY_SHA256
+        ):
+            return False
+        # Reuse the real reader's corpus selectors and output metadata, without
+        # invoking its structure writer or inventing a Common I calendar binding.
+        work = next(one for one in reader.corpus(library) if one["id"] == row.get("work_id"))
+        edition = next(one for one in work["editions"] if one["id"] == passage["edition_id"])
+        expected = {
+            "id": passage["id"],
+            "locus": passage["locus"],
+            "source": current["source"],
+            "language": edition["language"],
+            "text": current["text"],
+            "artifact_id": current["artifact_id"],
+            "artifact_type": current["artifact_type"],
+            "rights": current["rights"],
+            "rights_basis": current["rights_basis"],
+            "edition_id": edition["id"],
+            "edition_path": (
+                f"{reader.STRUCTURE_RELATIVE.as_posix()}/"
+                f"{edition['directory']}{edition['file']}"
+            ),
+            "work_id": work["id"],
+        }
+        return (
+            row == expected
+            and COMMON_I_TARGET in identities_in(row["locus"], protected_identities)
+            and not identities_in(
+                {key: value for key, value in row.items() if key != "locus"},
+                protected_identities,
+            )
+            and not protected_text_findings(row["text"], protected_identities, "Common I")
+            and not scoped_source_problems(library)
+        )
+    except (OSError, UnicodeError, ValueError, KeyError, TypeError, StopIteration):
+        return False
+
+def source_artifact_findings(path: Path, record: dict, *, library=None) -> list[str]:
+    """Separate exact reviewed source-Git retention from prose publication."""
+    retained = record.get("id") in RETAINED_SOURCE_FIXTURES
+    if retained and reviewed_source_git_retention(path, record, library=library):
+        return []
+    if not retained and record.get("rights_status") in SOURCE_DISTRIBUTABLE_RIGHTS:
         return []
     label = str(path)
     findings = []
@@ -1260,9 +1620,9 @@ def source_artifact_findings(path: Path, record: dict) -> list[str]:
 
 
 def source_inventory_findings(
-    document: object, protected_identities: set[str], label: str
+    document: object, protected_identities: set[str], label: str, *, library=None
 ) -> list[str]:
-    """Reject protected provenance only when its public source row has words."""
+    """Reject protected words/controllers, not independently proved target testimony."""
     findings = []
     for address, row in walk_json(document):
         payload = [
@@ -1286,7 +1646,12 @@ def source_inventory_findings(
             row.get("rights") not in (None, *SOURCE_DISTRIBUTABLE_RIGHTS)
             or row.get("rights_status")
             not in (None, *SOURCE_DISTRIBUTABLE_RIGHTS)
-            or identities_in(row, protected_identities)
+            or (
+                identities_in(row, protected_identities)
+                and not common_i_verification_only_provenance(
+                    row, protected_identities, library=library
+                )
+            )
         ):
             findings.append(f"{label} {address}: protected text is embedded")
     return findings
@@ -1785,7 +2150,7 @@ class TrackedSourceBoundary(unittest.TestCase):
         self.assertEqual(postconciliar_quarantine_hashes(), frozenset(values))
 
     def test_manifest_protected_sources_track_metadata_not_payloads(self) -> None:
-        """Every non-distributable manifest is remote/text-free, including FDLC."""
+        """Uncleared sources stay remote/text-free; exact retained evidence is separate."""
         protected = protected_artifact_manifests()
         self.assertTrue(protected, "the source library declares no protected artifacts")
         failures = [
@@ -2952,7 +3317,25 @@ class CliBoundary(unittest.TestCase):
         )
 
     def test_latin_unresolved_witnesses_are_text_free_public_capabilities(self) -> None:
-        """Known Latin gaps remain typed absences on both composed JSON surfaces."""
+        """Gaps stay text-free; Vianney alone now has an accepted Latin Collect."""
+        from tools.tests.test_roman_1962_octnov_commemoration_source_repair import phase5_owner
+        from _proper_latin import (LatinKey, SURFACES, decision_for,
+                                   publication_records, sanitize_proper)
+        import _calendars
+        calendar_root = ROOT / "src/sources/calendars"
+        document = _calendars.load_document(calendar_root, "roman-1962")
+        records, errors = publication_records(calendar_root, "roman-1962")
+        self.assertEqual([], errors)
+        vianney_key = LatinKey("s-ioannis-mariae-vianney-confessoris", "", "Collect", "", "", 1)
+        accepted = phase5_owner(document, vianney_key, records)
+        self.assertIn("sanctum Joannem Mariam", accepted["body"])
+        self.assertTrue(accepted["body"].endswith("eundem Dominum.\n"))
+        damaged = {"name": "Collect", "source": "composed",
+                   "text": accepted["body"].replace("sanctum", "beatum", 1)}
+        self.assertFalse(decision_for(vianney_key, damaged["text"], records).permits(SURFACES))
+        refused = sanitize_proper(damaged, vianney_key, records, SURFACES)
+        self.assertIsNone(refused.get("text"))
+        self.assertTrue(refused["latin"]["withheld"])
         cases = (
             (
                 "mass-propers St Albert",
@@ -2988,12 +3371,8 @@ class CliBoundary(unittest.TestCase):
                 {"Collect", "Secret", "Postcommunion"},
                 True,
             ),
-            # The collated-non-exact case. It was the Dedication Common's
-            # Gradual and Alleluia until 2026-09-04, when the 1922 Mame
-            # carried them word for word and they were published; Vianney's
-            # Collect is the one collated-non-exact row still withheld, its
-            # hand-missal witness reading `beatum` where the target reads
-            # `sanctum` (test_proper_latin pins that row's state).
+            # Schott1929 independently carries sanctum and Per eundem Dominum.
+            # Secret/Postcommunion are inherited, not new local Vianney bodies.
             (
                 "mass-propers Vianney",
                 (
@@ -3033,12 +3412,59 @@ class CliBoundary(unittest.TestCase):
             with self.subTest(surface=label):
                 run = self.run_tool(*arguments)
                 self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
-                self.assert_withheld_latin_capabilities(
-                    json.loads(run.stdout),
-                    targets,
-                    label,
-                    require_language_selection=requires_selection,
-                )
+                payload = json.loads(run.stdout)
+                if "Vianney" not in label:
+                    self.assert_withheld_latin_capabilities(
+                        payload, targets, label,
+                        require_language_selection=requires_selection,
+                    )
+                    continue
+                self.assertEqual({"Collect"}, targets)
+                if requires_selection:
+                    masses = [row for _, row in walk_json(payload)
+                              if row.get("key") == vianney_key.mass and
+                              isinstance(row.get("propers"), list)]
+                    self.assertTrue(masses, label)
+                    groups = [mass["propers"] for mass in masses]
+                else:
+                    self.assertEqual(vianney_key.mass, payload["mass"]["key"])
+                    groups = [payload["mass"]["propers"],
+                              [row["proper"] | {"taken_from": row["taken_from"]}
+                               for row in payload["appointed"]]]
+                for group in groups:
+                    self.assertEqual(1, sum(p.get("name") in targets for p in group))
+                candidates = [p for group in groups for p in group]
+                matches = [row for row in candidates if row.get("name") in targets]
+                self.assertTrue(matches, label)
+                for proper in matches:
+                    self.assertEqual(accepted["body"], proper.get("text"), label)
+                    self.assertIsNone(proper.get("taken_from"))
+                    latin = proper["latin"]
+                    self.assertIs(False, latin["withheld"])
+                    self.assertEqual(accepted["body_sha256"], latin["text_sha256"])
+                    self.assertEqual("collated", latin["provenance"]["status"])
+                    self.assertEqual(accepted["source_id"], latin["provenance"]["source_id"])
+                    self.assertEqual(accepted["verification_source_id"],
+                                     latin["provenance"]["verification_source_id"])
+                    self.assertEqual(("permitted", "public-domain"),
+                                     (latin["publication"]["status"], latin["publication"]["basis"]))
+                    self.assertEqual(accepted["publication_source_ids"],
+                                     latin["publication"]["source_ids"])
+                    self.assertEqual(set(SURFACES), set(latin["publication"]["surfaces"]))
+                    if requires_selection:
+                        self.assertEqual(
+                            {"available": True, "complete": True, "held": True,
+                             "requested": "la", "status": "full-text",
+                             "texts": [{"lang": "la", "text": accepted["body"]}]},
+                            proper["language_selection"],
+                        )
+                # The two inherited orations must still identify their Common owner.
+                inherited = [row for row in candidates
+                             if row.get("name") in {"Secret", "Postcommunion"} and
+                             isinstance(row.get("taken_from"), dict)]
+                self.assertEqual({"Secret", "Postcommunion"}, {r["name"] for r in inherited})
+                self.assertTrue(all(r["taken_from"]["mass"] ==
+                                    "commune-confessoris-non-pontificis-1" for r in inherited))
 
     def test_mass_ordinary_machine_surface_contains_only_public_states(self) -> None:
         run = self.run_tool(
@@ -3213,6 +3639,274 @@ class EllcAssemblyBoundary(unittest.TestCase):
             failures,
             "protected source material reached a tracked participation PDF",
         )
+
+
+class RetainedSourceScopeBoundary(unittest.TestCase):
+    """Real accepted fixtures and adversarial controls for the two scope seams."""
+
+    def scratch_directory(self):
+        scratch = ROOT / ".scratch"
+        scratch.mkdir(exist_ok=True)
+        return tempfile.TemporaryDirectory(prefix="retained-rights-", dir=scratch)
+
+    def common_i_row(self):
+        path = PUBLIC_SOURCE_TEXT / f"{COMMON_I_PASSAGE}.json"
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def test_retained_sixteen_are_source_git_only_not_reader_clearance(self) -> None:
+        self.assertEqual(len(RETAINED_SOURCE_FIXTURES), 16)
+        reader = source_reader_module()
+        for identifier in RETAINED_SOURCE_FIXTURES:
+            with self.subTest(artifact=identifier):
+                library = source_evidence_library([identifier])
+                artifact = library.records[identifier]
+                self.assertEqual(source_artifact_findings(artifact.path, artifact.data), [])
+                self.assertNotIn(artifact.data["rights_status"], SOURCE_DISTRIBUTABLE_RIGHTS)
+                self.assertNotIn(artifact.data["rights_status"], reader.DISTRIBUTABLE_RIGHTS)
+                # Even an explicit project-created transcription cannot borrow
+                # publication permission from this conditional image controller.
+                reading = reader.reading_of(library, {
+                    "artifact_id": identifier, "text": "Synthetic project test text."
+                })
+                self.assertFalse(reading["readable"])
+                self.assertEqual(reading["withheld"], "rights")
+                self.assertTrue(source_inventory_findings({
+                    "language": "la", "artifact_id": identifier,
+                    "rights": artifact.data["rights_status"],
+                    "text": "Synthetic project test text.",
+                }, {identifier}, "retained image is not a reading"))
+
+    def test_retained_metadata_and_conditions_cannot_drift(self) -> None:
+        mutations = {
+            "id": "artifact.synthetic.modern.permission-only",
+            "rights_status": "public-domain",
+            "rights_basis": "Unreviewed unrestricted use, without attribution or conditions.",
+            "sha256": "0" * 64,
+            "path": "src/sources/synthetic.txt",
+            "byte_size": 1,
+            "provenance": "Unreviewed replacement provider or lineage.",
+        }
+        for identifier in RETAINED_SOURCE_FIXTURES:
+            library = source_evidence_library([identifier])
+            artifact = library.records[identifier]
+            for field, value in mutations.items():
+                with self.subTest(artifact=identifier, field=field):
+                    changed = {**artifact.data, field: value}
+                    self.assertTrue(source_artifact_findings(artifact.path, changed))
+            for status in ("restricted", "unresolved", "legal-exception", "permission"):
+                if status == artifact.data["rights_status"]:
+                    continue
+                with self.subTest(artifact=identifier, status=status):
+                    self.assertTrue(source_artifact_findings(
+                        artifact.path, {**artifact.data, "rights_status": status}
+                    ))
+            with self.subTest(artifact=identifier, forged_path=True):
+                self.assertTrue(source_artifact_findings(
+                    artifact.path.with_name("forged.toml"), artifact.data
+                ))
+
+    def test_retained_byte_parent_and_payload_validation_is_live(self) -> None:
+        identifier = next(one for one in RETAINED_SOURCE_FIXTURES if ".canon-facsimile-" in one)
+        for field, value in (
+            ("derived_from", "artifact.synthetic.unreviewed.parent"),
+            ("transformation", "Unreviewed recompression"),
+        ):
+            library = source_evidence_library([identifier])
+            artifact = library.records[identifier]
+            artifact.data[field] = value
+            self.assertTrue(source_artifact_findings(
+                artifact.path, artifact.data, library=library
+            ))
+        library = source_evidence_library([identifier])
+        artifact = library.records[identifier]
+        library.records[artifact.data["derived_from"]].data["sha256"] = "0" * 64
+        self.assertTrue(source_artifact_findings(
+            artifact.path, artifact.data, library=library
+        ))
+        # Change actual bytes only in a scratch mirror, with all accepted
+        # metadata/hash/lineage still intact. The owning artifact validator,
+        # not a fixture path allow-list, must reject the corruption.
+        identifier = next(iter(RETAINED_SOURCE_FIXTURES))
+        library = source_evidence_library([identifier])
+        with self.scratch_directory() as temporary:
+            mirror = Path(temporary)
+            owner = source_reader_module().source_library()
+            library.records = {
+                key: owner.Record(
+                    mirror / record.path.relative_to(ROOT),
+                    record.record_type, record.record_id, record.data,
+                )
+                for key, record in library.records.items()
+            }
+            library.root = mirror
+            library.source_root = mirror / "src/sources"
+            artifact = library.records[identifier]
+            payload = mirror / artifact.data["path"]
+            payload.parent.mkdir(parents=True)
+            payload.write_bytes(b"Synthetic corrupt retained payload")
+            self.assertTrue(source_artifact_findings(
+                artifact.path, artifact.data, library=library
+            ))
+            self.assertTrue(any("sha256 mismatch" in one for one in library.errors))
+            payload.write_bytes((ROOT / artifact.data["path"]).read_bytes())
+            self.assertEqual(source_artifact_findings(
+                artifact.path, artifact.data, library=library
+            ), [])
+            (payload.parent / "unreviewed.bin").write_bytes(b"Synthetic extra bytes")
+            self.assertTrue(source_artifact_findings(
+                artifact.path, artifact.data, library=library
+            ))
+            self.assertTrue(any("unreviewed.bin" in one for one in library.errors))
+
+    def test_retention_decision_and_outbound_exclusion_are_required(self) -> None:
+        group = "tournai1498"
+        self.assertTrue(retained_source_evidence_matches(group))
+        with self.scratch_directory() as temporary:
+            mirror = Path(temporary)
+            notice = mirror / "THIRD_PARTY.md"
+            notice.write_bytes((ROOT / "THIRD_PARTY.md").read_bytes())
+            for name in RETAINED_SOURCE_REVIEWS[group]:
+                relative = Path("src/sources/inventories/eucharistic-research-reviews") / name
+                target = mirror / relative
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes((ROOT / relative).read_bytes())
+            self.assertTrue(retained_source_evidence_matches(group, mirror))
+            notice.write_text("Unreviewed cover/photo and unrestricted CC grant.\n")
+            self.assertFalse(retained_source_evidence_matches(group, mirror))
+            notice.write_bytes((ROOT / "THIRD_PARTY.md").read_bytes())
+            target.write_text('{"integration_status": "unreviewed"}\n')
+            self.assertFalse(retained_source_evidence_matches(group, mirror))
+            target.unlink()
+            self.assertFalse(retained_source_evidence_matches(group, mirror))
+
+    def test_modern_permission_and_unsettled_bytes_still_fail_closed(self) -> None:
+        with self.scratch_directory() as temporary:
+            path = Path(temporary) / "artifact.toml"
+            path.write_text('record_type = "artifact"\n')
+            (path.parent / "synthetic-modern.txt").write_text("Synthetic modern text.\n")
+            for rights in ("permission", "legal-exception", "restricted", "unresolved"):
+                with self.subTest(rights=rights):
+                    record = {
+                        "id": "artifact.synthetic.modern.web-excerpt-no-git",
+                        "rights_status": rights, "storage": "tracked",
+                        "rights_basis": "Web only; no public-Git or bundled reuse.",
+                        "path": str(path.parent / "synthetic-modern.txt"),
+                    }
+                    findings = source_artifact_findings(path, record)
+                    self.assertEqual(len(findings), 3, findings)
+
+    def test_common_i_has_independent_whole_words_and_honest_target(self) -> None:
+        row = self.common_i_row()
+        identities = protected_artifact_identities(protected_artifact_manifests())
+        library = source_evidence_library(COMMON_I_SOURCE_PINS)
+        reader = source_reader_module()
+        historical = reader.reading_of(
+            library, library.records[COMMON_I_HISTORICAL_PASSAGE].data
+        )
+        self.assertEqual(len(common_i_received_words(historical["text"])), 105)
+        self.assertEqual(
+            common_i_received_words(row["text"]),
+            common_i_received_words(historical["text"]),
+        )
+        self.assertEqual(
+            hashlib.sha256(row["text"].encode("utf-8")).hexdigest(),
+            COMMON_I_READER_BODY_SHA256,
+        )
+        self.assertIn(COMMON_I_TARGET, row["locus"])
+        self.assertEqual(identities_in(row, identities), [COMMON_I_TARGET])
+        self.assertTrue(common_i_verification_only_provenance(row, identities))
+        self.assertEqual(source_inventory_findings(row, identities, "Common I"), [])
+        # The received profile must not silently collapse substantive variants.
+        self.assertEqual(common_i_received_words("Ǽquum, jústus."), ["aequum", "justus"])
+        for left, right in (("justus", "iustus"), ("aequum", "equum"),
+                            ("vult", "uult"), ("mysterium", "misterium")):
+            self.assertNotEqual(common_i_received_words(left), common_i_received_words(right))
+
+    def test_common_i_row_mutations_cannot_hide_in_locus(self) -> None:
+        row = self.common_i_row()
+        identities = protected_artifact_identities(protected_artifact_manifests())
+        mutations = [
+            {"artifact_id": COMMON_I_TARGET},
+            {"artifact_id": "artifact.synthetic.forged.controller"},
+            {"rights": "unresolved"},
+            {"rights": "restricted"},
+            {"text": "Synthetic corrupt complete body."},
+            {"text": row["text"] + COMMON_I_TARGET},
+            {"text": " ".join(row["text"].split()[:-1])},
+            {"locus": row["locus"] + " " + COMMON_I_TARGET},
+            {"content": "Synthetic additional protected payload."},
+            {"id": COMMON_I_HISTORICAL_PASSAGE},
+            {"language": "en"},
+        ]
+        for mutation in mutations:
+            with self.subTest(fields=list(mutation)):
+                self.assertTrue(source_inventory_findings(
+                    {**row, **mutation}, identities, "mutated Common I"
+                ))
+        self.assertTrue(source_inventory_findings({
+            "language": "la", "rights": "project-created",
+            "text": "Synthetic unproved independent text.", "locus": COMMON_I_TARGET,
+        }, identities, "no registered authority"))
+
+    def test_common_i_authority_and_controller_mutations_fail_closed(self) -> None:
+        row = self.common_i_row()
+        identities = protected_artifact_identities(protected_artifact_manifests())
+        mutations = [
+            (COMMON_I_CONTROLLER, "rights_status", "restricted"),
+            (COMMON_I_CONTROLLER, "rights_status", "unresolved"),
+            (COMMON_I_CONTROLLER, "projected_from", [COMMON_I_TARGET]),
+            (COMMON_I_HISTORICAL_CONTROLLER, "rights_status", "restricted"),
+            (COMMON_I_HISTORICAL_CONTROLLER, "derived_from", COMMON_I_TARGET),
+            (COMMON_I_HISTORICAL_PARENT, "rights_status", "unresolved"),
+            (COMMON_I_HISTORICAL_PARENT, "sha256", "0" * 64),
+            (COMMON_I_PASSAGE, "artifact_id", COMMON_I_TARGET),
+            (COMMON_I_PASSAGE, "physical_line_ranges", [[114, 122]]),
+            (COMMON_I_TARGET_PASSAGE, "artifact_id", COMMON_I_HISTORICAL_PARENT),
+        ]
+        for identifier, field, value in mutations:
+            with self.subTest(source=identifier, field=field):
+                library = source_evidence_library(COMMON_I_SOURCE_PINS)
+                library.records[identifier].data[field] = value
+                self.assertTrue(source_inventory_findings(
+                    row, identities, "mutated authority", library=library
+                ))
+        library = source_evidence_library(COMMON_I_SOURCE_PINS)
+        del library.records[COMMON_I_HISTORICAL_CONTROLLER]
+        self.assertTrue(source_inventory_findings(
+            row, identities, "missing historical authority", library=library
+        ))
+
+    def test_common_i_corrupt_payloads_are_not_project_clearance(self) -> None:
+        row = self.common_i_row()
+        identities = protected_artifact_identities(protected_artifact_manifests())
+        owner = source_reader_module().source_library()
+        for identifier in (COMMON_I_CONTROLLER, COMMON_I_HISTORICAL_CONTROLLER):
+            with self.subTest(controller=identifier), self.scratch_directory() as temporary:
+                mirror = Path(temporary)
+                library = source_evidence_library(COMMON_I_SOURCE_PINS)
+                library.records = {
+                    key: owner.Record(
+                        mirror / record.path.relative_to(ROOT),
+                        record.record_type, record.record_id, record.data,
+                    )
+                    for key, record in library.records.items()
+                }
+                library.root = mirror
+                library.source_root = mirror / "src/sources"
+                for record in library.records.values():
+                    if record.record_type == "artifact" and record.data.get("path"):
+                        target = mirror / record.data["path"]
+                        target.parent.mkdir(parents=True, exist_ok=True)
+                        target.write_bytes((ROOT / record.data["path"]).read_bytes())
+                target = mirror / library.records[identifier].data["path"]
+                # Mutate inside the selected physical lines, not a header or
+                # a different reading, while leaving all manifest pins intact.
+                lines = target.read_text(encoding="utf-8").split("\n")
+                lines[113] = "Synthetic corrupt protected body " + COMMON_I_TARGET
+                target.write_text("\n".join(lines), encoding="utf-8")
+                self.assertTrue(source_inventory_findings(
+                    row, identities, "corrupt source bytes", library=library
+                ))
 
 
 class RightsMutationBoundary(unittest.TestCase):

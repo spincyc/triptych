@@ -230,7 +230,10 @@ class ExactUntranslatedSchemaTests(unittest.TestCase):
         # and therefore does not move the composed body's occurrence 2.
         self.assertEqual(self.problems([self.row(occurrence=2)]), [])
         joined = "\n".join(self.problems([self.row(occurrence=1)]))
-        self.assertIn("target owns no body", joined)
+        self.assertIn(
+            "Scripture body absence requires an exact English rights-withheld body witness",
+            joined,
+        )
 
         self.assertEqual(
             self.problems(

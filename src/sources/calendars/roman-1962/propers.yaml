@@ -206,14 +206,15 @@ open_collation_items:
   a contiguous range; confirm each against the facsimile
 - >-
   six Commons print more than one mutually exclusive set of orations. Their
-  `common_sets` definitions and all 45 whole-Mass inbound references are now
-  machine-readable: 38 references select the option established by the printed
-  numeral or singular/plural rubric, while seven remain explicitly unresolved.
-  The unresolved rows are Stanislaus, Boniface and Venantius between paschal
-  options C 3/C 4; Sabina and Felicitas between the non-Virgin singular/plural
-  options; and the two Dedication feasts among the three Dedication contexts.
-  The resolver omits every governed alternative for those seven and exposes the
-  candidate identities; collate the missing evidence rather than choosing one
+  `common_sets` definitions and inbound references are machine-readable.
+  The earlier seven-row unresolved list is superseded: Stanislaus, Venantius,
+  Sabina and Felicitas have later bounded appointment repairs. Three references
+  still carry unresolved candidates: Boniface between c3/c4 and the two
+  Dedication feasts among the three Dedication contexts. Boniface's own three
+  orations override every inherited prayer; the 2026-10-22 image recheck confirms
+  that its Secret is C 3 and Postcommunion C 4, so no uniform Common set is
+  selected. The Dedication contexts remain unchosen. Candidate identity is not
+  permission to appoint their union or infer the missing contextual facts
 - pre-1960 commemorations, suffrages, and suppressed octave texts were omitted
   as not appointed in 1962; confirm against the controlling edition's rubrics
 - 60 commemorations stood inside another celebration's name, in the shape the
@@ -1003,13 +1004,17 @@ sections:
           when: {fact: roman-1962-advent-sunday-alleluia-use, in: [chant-present]}
         incipit: Excita, Domine, potentiam tuam
         source: composed
-        notes: 'Missale Romanum 1962, artifact p. 86, printed p. 5, unit 25: this Alleluia is printed without a Scripture
-          citation. Its literal body is not supplied by an inferred psalm reference.'
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+        notes: >-
+          1962 target PDF 86 / printed 5; left top; unit 25; Third Advent Sunday continuation, before
+          FeriaIV heading. Whole independent historical Latin: PDF 92 / printed 6; left top; Third
+          Advent Sunday continuation, before FeriaIV heading. Alleluja/Alleluia j/i; target commas
+          around Domine explicitly retained. Whole printed Alleluia, including double opening and
+          terminal Alleluia; not clamped to Psalm79 Gradual above. Normal Sunday appointment only;
+          target itself excludes this unit when the Sunday Mass is used on Advent ferias. Historical
+          ending "nos. Alleluja."; actual target ending "nos. Alleluia.".
+        text: |
+          Alleluia, alleluia. V. Excita, Domine, potentiam tuam, et veni, ut
+          salvos facias nos. Alleluia.
       - name: Gospel
         source: scripture
         verses:
@@ -3599,14 +3604,19 @@ sections:
       - name: Oratio super populum
         incipit: Inclinantes se Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, Proprium de tempore, printed p. 58, artifact PDF p. 139, numbered unit 396, R column.
-          The Missal places this prayer after the Postcommunion, under the direction Super populum.
+        text: |
+          Inclinantes se, Domine, majestati tuae, propitiatus intende: ut, qui
+          divino munere sunt refecti, caelestibus semper nutriantur auxiliis.
+          Per Dominum.
+        notes: >-
+          1962 target PDF 139 / printed 58; right bottom; unit 396; Oratio after Ash Wednesday
+          Postcommunio395 and Humiliate capita cue. Whole independent historical Latin: PDF 142 /
+          printed 56; left; Oratio after Ash Wednesday Postcommunion complex and Humiliate capita cue,
+          before FeriaQuinta. Majestati/maiestati capitalization and j/i; historical coelestibus /
+          target caelestibus real received spelling. Whole normal Ash Wednesday Oratio super populum
+          only. Excludes Oremus/Humiliate directions from spoken-prayer payload; no historical
+          Benedicamus or earlier additional-orations rubric adoption. Historical ending "Per Dominum.";
+          actual target ending "Per Dominum.".
       ordinary_frame:
         applicability: unavailable
         basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 58, artifact PDF p. 139,
@@ -3724,14 +3734,25 @@ sections:
       - name: Oratio super populum
         incipit: Parce Domine parce
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, Proprium de tempore, printed p. 60, artifact PDF p. 141, numbered unit 406, L column.
-          The Missal places this prayer after the Postcommunion, under the direction Super populum.
+        text: |
+          Parce, Domine, parce populo tuo: ut, dignis flagellationibus
+          castigatus, in tua miseratione respiret. Per Dominum nostrum.
+        notes: >-
+          1962 target PDF 141 / printed 60; left bottom before FeriaSexta; unit 406. Whole independent
+          historical Latin: PDF 143 / printed 57; right; Super populum Oratio before FeriaSexta. Only
+          standard conclusion length changes: historical Per Dominum. to actual target Per Dominum
+          nostrum.; nostrum is witnessed in one complete old standard formula, not borrowed from another
+          petition. Target colon after tuo and comma after ut are pointing, not a petition variant.
+          Whole printed conclusion ends Deus. No Amen or per omnia supplied. Its ejusdem belongs to this
+          exemplar's explicit Spiritus sanctus petition. Every Father-directed target here stops BEFORE
+          ejusdem, so no ejusdem word is inserted, deleted from a target, or carried into these
+          petitions. Same-address standard conclusion prefix from passage.catholic-church.missale-
+          romanum.pustet-ratisbon-1862.phase5-latin22-father-through-son; governing historical
+          instructions passage.catholic-church.missale-romanum.pustet-
+          ratisbon-1862.phase5-latin22-rubricae-generales-17 and passage.catholic-church.missale-
+          romanum.pustet-ratisbon-1862.phase5-latin22-ritus-celebrandi-v-1. No historical proper is
+          claimed to print its expanded target ending. Historical ending "Per Dominum."; actual target
+          ending "Per Dominum nostrum.".
       ordinary_frame:
         applicability: unavailable
         basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 60, artifact PDF p. 141,
@@ -3883,14 +3904,29 @@ sections:
       - name: Oratio super populum
         incipit: Tuere Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, Proprium de tempore, printed p. 62, artifact PDF p. 143, numbered unit 417, L column.
-          The Missal places this prayer after the Postcommunion, under the direction Super populum.
+        text: |
+          Tuere, Domine, populum tuum, et ab omnibus peccatis clementer emunda:
+          quia nulla ei nocebit adversitas, si nulla ei dominetur iniquitas. Per
+          Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate.
+        notes: >-
+          1962 target PDF 143 / printed 62; left top before Sabbato; unit 417. Whole independent
+          historical Latin: PDF 145 / printed 59; left bottom; Super populum Oratio before Saturday
+          block in right column. Standard Father-through-Son conclusion expands only to the target's
+          actually printed in unitate.; it stops there. Historical formula Jesum to target Iesum is
+          declared j/i spelling; target comma after Christum is pointing. Exemplar words ejusdem
+          Spiritus sancti Deus are beyond the printed target stop and are NOT copied or supplied. Whole
+          printed conclusion ends Deus. No Amen or per omnia supplied. Its ejusdem belongs to this
+          exemplar's explicit Spiritus sanctus petition. Every Father-directed target here stops BEFORE
+          ejusdem, so no ejusdem word is inserted, deleted from a target, or carried into these
+          petitions. Same-address standard conclusion prefix from passage.catholic-church.missale-
+          romanum.pustet-ratisbon-1862.phase5-latin22-father-through-son; governing historical
+          instructions passage.catholic-church.missale-romanum.pustet-
+          ratisbon-1862.phase5-latin22-rubricae-generales-17 and passage.catholic-church.missale-
+          romanum.pustet-ratisbon-1862.phase5-latin22-ritus-celebrandi-v-1. No historical proper is
+          claimed to print its expanded target ending. Historical ending "Per Dominum nostrum."; actual
+          target ending "Per Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in
+          unitate.".
       ordinary_frame:
         applicability: unavailable
         basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 62, artifact PDF p. 143,
@@ -4020,14 +4056,15 @@ sections:
       - name: Oratio super populum
         incipit: Fideles tui Deus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, Proprium de tempore, printed p. 63, artifact PDF p. 144, numbered unit 427, R column.
-          The Missal places this prayer after the Postcommunion, under the direction Super populum.
+        text: |
+          Fideles tui, Deus, per tua dona firmentur: ut eadem et percipiendo
+          requirant, et quaerendo sine fine percipiant. Per Dominum.
+        notes: >-
+          1962 target PDF 144 / printed 63; right; unit 427; Super populum Oratio before
+          DominicaIinQuadragesima. Whole independent historical Latin: PDF 146 / printed 60; right
+          bottom; Super populum Oratio; final prayer of Saturday.  Whole Saturday Oratio super populum;
+          not the Sunday printed below it or a postcommunion. Historical ending "Per Dominum."; actual
+          target ending "Per Dominum.".
       ordinary_frame:
         applicability: unavailable
         basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 63, artifact PDF p. 144,
@@ -4269,14 +4306,28 @@ sections:
       - name: Oratio super populum
         incipit: Absolve quaesumus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, Proprium de tempore, printed p. 66, artifact PDF p. 147, numbered unit 448, R column.
-          The Missal places this prayer after the Postcommunion, under the direction Super populum.
+        text: |
+          Absolve, quaesumus, Domine, nostrorum vincula peccatorum: et, quidquid
+          pro eis meremur, propitiatus averte. Per Dominum nostrum Jesum
+          Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
+        notes: >-
+          1962 target PDF 147 / printed 66; right bottom, complete final prayer on same page; unit 448.
+          Whole independent historical Latin: PDF 150 / printed 64; left bottom continues at right top
+          of SAME page; Super populum Oratio before FeriaTertia heading. Only the same-class standard
+          conclusion expands; actual target stop is in unitate. Historical prayer pointing around
+          quaesumus Domine and et quidquid is normalized to the freshly read target; no petition words
+          change. Formula Jesum/Iesum is j/i; comma after Christum is pointing. No ejusdem Spiritus
+          sancti Deus, per omnia or Amen supplied. Whole printed conclusion ends Deus. No Amen or per
+          omnia supplied. Its ejusdem belongs to this exemplar's explicit Spiritus sanctus petition.
+          Every Father-directed target here stops BEFORE ejusdem, so no ejusdem word is inserted,
+          deleted from a target, or carried into these petitions. Same-address standard conclusion
+          prefix from passage.catholic-church.missale-romanum.pustet-
+          ratisbon-1862.phase5-latin22-father-through-son; governing historical instructions
+          passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-rubricae-
+          generales-17 and passage.catholic-church.missale-romanum.pustet-
+          ratisbon-1862.phase5-latin22-ritus-celebrandi-v-1. No historical proper is claimed to print
+          its expanded target ending. Historical ending "Per Dominum."; actual target ending "Per
+          Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.".
       ordinary_frame:
         applicability: unavailable
         basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 66, artifact PDF p. 147,
@@ -4468,14 +4519,29 @@ sections:
       - name: Oratio
         incipit: Devotionem populi
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, Proprium de tempore, printed p. 68, artifact PDF p. 149, numbered unit 463, R column.
-          The Missal places this prayer after the First Gradual and before the Second Lesson.
+        text: |
+          Devotionem populi tui, quaesumus, Domine, benignus intende: ut, qui
+          per abstinentiam macerantur in corpore, per fructum boni operis
+          reficiantur in mente. Per Dominum nostrum Jesum Christum, Filium tuum:
+          Qui tecum vivit et regnat in unitate.
+        notes: >-
+          1962 target PDF 149 / printed 68; right bottom, after first Gradual462; unit 463. Whole
+          independent historical Latin: PDF 152 / printed 66; right; Oremus Oratio after first Gradual,
+          before second Lesson; Hic non dicitur Flectamus cue. Role is the local unformed Oratio, raw
+          occurrence1, the second physical oration after first Gradual462; NOT opening Collect Preces
+          nostras460 and NOT Oratio super populum Mentes nostras471. Only the same-class standard
+          conclusion expands; actual stop in unitate is preserved. Commas around quaesumus Domine follow
+          target pointing; formula Jesum/Iesum is j/i. No further conclusion suffix added. Whole printed
+          conclusion ends Deus. No Amen or per omnia supplied. Its ejusdem belongs to this exemplar's
+          explicit Spiritus sanctus petition. Every Father-directed target here stops BEFORE ejusdem, so
+          no ejusdem word is inserted, deleted from a target, or carried into these petitions. Same-
+          address standard conclusion prefix from passage.catholic-church.missale-romanum.pustet-
+          ratisbon-1862.phase5-latin22-father-through-son; governing historical instructions
+          passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-rubricae-
+          generales-17 and passage.catholic-church.missale-romanum.pustet-
+          ratisbon-1862.phase5-latin22-ritus-celebrandi-v-1. No historical proper is claimed to print
+          its expanded target ending. Historical ending "Per Dominum nostrum."; actual target ending
+          "Per Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.".
       - name: Second Lesson
         source: scripture
         verses:
@@ -4544,14 +4610,25 @@ sections:
       - name: Oratio super populum
         incipit: Mentes nostras
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, Proprium de tempore, printed p. 70, artifact PDF p. 151, numbered unit 471, L column.
-          The Missal places this prayer after the Postcommunion, under the direction Super populum.
+        text: |
+          Mentes nostras, quaesumus, Domine, lumine tuae claritatis illustra: ut
+          videre possimus, quae agenda sunt; et, quae recta sunt, agere
+          valeamus. Per Dominum nostrum.
+        notes: >-
+          1962 target PDF 151 / printed 70; left before Feriaquinta; unit 471. Whole independent
+          historical Latin: PDF 154 / printed 68; left top; Final Wednesday Oratio, before FeriaQuinta
+          heading. Only same-class standard conclusion adds nostrum, witnessed contiguously in the old
+          formula. Target commas around quaesumus Domine, semicolon after sunt and comma after et are
+          pointing; petition/address unchanged. Whole printed conclusion ends Deus. No Amen or per omnia
+          supplied. Its ejusdem belongs to this exemplar's explicit Spiritus sanctus petition. Every
+          Father-directed target here stops BEFORE ejusdem, so no ejusdem word is inserted, deleted from
+          a target, or carried into these petitions. Same-address standard conclusion prefix from
+          passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-father-through-
+          son; governing historical instructions passage.catholic-church.missale-romanum.pustet-
+          ratisbon-1862.phase5-latin22-rubricae-generales-17 and passage.catholic-church.missale-
+          romanum.pustet-ratisbon-1862.phase5-latin22-ritus-celebrandi-v-1. No historical proper is
+          claimed to print its expanded target ending. Historical ending "Per Dominum."; actual target
+          ending "Per Dominum nostrum.".
     - key: lent-1-thursday
       name: Thursday of the First Week of Lent
       registry: '1962-T-lent-1-thursday'
@@ -4668,14 +4745,19 @@ sections:
       - name: Oratio super populum
         incipit: Da quaesumus Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, Proprium de tempore, printed p. 71, artifact PDF p. 152, numbered unit 481, R column.
-          The Missal places this prayer after the Postcommunion, under the direction Super populum.
+        text: |
+          Da, quaesumus, Domine, populis christianis: et, quae profitentur,
+          agnoscere, et caeleste munus diligere, quod frequentant. Per Dominum.
+        notes: >-
+          1962 target PDF 152 / printed 71; right top; unit 481; Super populum Oratio before FeriaSexta
+          Quatuor Temporum. Whole independent historical Latin: PDF 155 / printed 69; left bottom; Super
+          populum Oratio before FeriaSexta in right column. Historical coeleste / target caeleste is a
+          real received spelling. Target pointing around Domine, christianis, et quae and agnoscere is
+          explicitly projected. Target omits terminal nostrum from the historical conclusion; deletion
+          only, no new words or assembled conclusion. Proved with explicit target abbreviation, not
+          diplomatic identity. Whole Thursday Oratio super populum only; preceding Postcommunion has a
+          different target conclusion and was not used to construct this unit. Historical ending "Per
+          Dominum nostrum."; actual target ending "Per Dominum.".
       ordinary_frame:
         applicability: unavailable
         basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 71, artifact PDF p. 152,
@@ -11206,14 +11288,17 @@ sections:
       - name: Alleluia
         incipit: Surrexit Dominus de sepulcro
         source: composed
-        notes: Missale Romanum 1962, artifact p. 414, printed p. 333, numbered unit 1166; source-established normal appointment.
-          The printed acclamation has no biblical citation and follows Graduale1165. Exact wording remains unavailable
-          in this record.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+        notes: >-
+          1962 target PDF 414 / printed 333; right; unit 1166; FeriaIII infra octavam Paschae; after
+          Graduale1165 and before Sequentia1167. Whole independent historical Latin: PDF 358 / printed
+          272; right; FeriaIIIpostPascha; after Graduale and before Sequentia. Alleluja/Alleluia j/i.
+          Historical sepulchro / target sepulcro is a real received spelling; not an OCR correction.
+          Whole actual unit has double opening Alleluia and NO terminal Alleluia in either book; do not
+          append the Sequence's Alleluia or another day's chant. Historical ending "in ligno."; actual
+          target ending "in ligno.".
+        text: |
+          Alleluia, alleluia. V. Surrexit Dominus de sepulcro, qui pro nobis
+          pependit in ligno.
       - name: Sequence
         takes_from: {mass: easter-sunday}
       - name: Gospel
@@ -11444,14 +11529,16 @@ sections:
       - name: Alleluia
         incipit: Surrexit Christus, qui creavit
         source: composed
-        notes: Missale Romanum 1962, artifact p. 418, printed p. 337, numbered unit 1188; source-established normal appointment.
-          The printed acclamation has no biblical citation and follows Graduale1187. Exact wording remains unavailable
-          in this record.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+        notes: >-
+          1962 target PDF 418 / printed 337; left bottom; unit 1188; FeriaV infra octavam Paschae; after
+          Graduale1187. Whole independent historical Latin: PDF 362 / printed 276; right;
+          FeriaVpostPascha; after Graduale before Sequentia. Alleluja/Alleluia j/i; historical comma
+          after omnia / target colon. Whole actual chant, double opening and NO terminal Alleluia; not
+          Scripture assembly, not the next Sequence, not the Wednesday Surrexit Dominus vere verse.
+          Historical ending "humano generi."; actual target ending "humano generi.".
+        text: |
+          Alleluia, alleluia. V. Surrexit Christus, qui creavit omnia: et
+          misertus est humano generi.
       - name: Sequence
         takes_from: {mass: easter-sunday}
       - name: Gospel
@@ -13458,14 +13545,19 @@ sections:
       - name: Second Alleluia
         incipit: Veni, Sancte Spiritus
         source: composed
-        notes: Missale Romanum 1962, artifact p. 443, printed p. 362, numbered unit 1346; source-established normal appointment.
-          The printed invocation has no biblical citation and follows the second Lesson1345. Exact wording remains unavailable
-          in this record.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+        notes: >-
+          1962 target PDF 443 / printed 362; right; unit 1346; FeriaIV Quatuor Temporum Pentecostes;
+          follows second Lesson1345, before Sequence1347. Whole independent historical Latin: PDF 391 /
+          printed 305; left; FeriaIV Quatuor Temporum Pentecostes; after second Lesson and before
+          Sequence. Alleluja/Alleluia j/i; comma after Veni and capital Sancte are actual target
+          pointing/case. Both books mark genuflection before verse; this is recorded as a rubric fact,
+          excluded from candidate spoken Latin body. Whole Second Alleluia has double opening and NO
+          terminal Alleluia. Not the Verbo Domini first Alleluia, not an assumed lettered part, not the
+          Veni Sancte Spiritus Sequence. No extension to other ferias from this proof. Historical ending
+          "ignem accende."; actual target ending "ignem accende.".
+        text: |
+          Alleluia, alleluia. V. Veni, Sancte Spiritus, reple tuorum corda
+          fidelium: et tui amoris in eis ignem accende.
       - name: Sequence
         takes_from: {mass: pentecost}
       - name: Gospel
@@ -14665,12 +14757,20 @@ sections:
           ref: Psalm 32:1
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: |
+          Deus, qui nobis, in Corde Filii tui, nostris vulnerato peccatis,
+          infinitos dilectionis thesauros misericorditer largiri dignaris:
+          concede, quaesumus; ut, illi devotum pietatis nostrae praestantes
+          obsequium, dignae quoque satisfactionis exhibeamus officium. Per
+          eundem Dominum.
+        notes: >-
+          1962 target PDF 460 / printed 379 (opening folio suppressed); left; unit 1453; Oratio; In
+          festo Sacratissimi Cordis Iesu; Friday after second Sunday after Pentecost. Whole independent
+          historical Latin: PDF 1483 / printed [269]; left; Oratio; Fest des allerheiligsten Herzens
+          Jesu. Pointing: historical dignaris; concede, quaesumus, ut illi / target dignaris: concede,
+          quaesumus; ut, illi. Named normal annual feast Collect only; historical octave/rank/Creed and
+          neighboring blocks not adopted. Historical ending "Per eundem Dominum."; actual target ending
+          "Per eundem Dominum.".
       - name: Epistle
         source: scripture
         verses:
@@ -14718,12 +14818,18 @@ sections:
           ref: Psalm 68:21
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: |
+          Respice, quaesumus, Domine, ad ineffabilem Cordis dilecti Filii tui
+          caritatem: ut quod offerimus sit tibi munus acceptum et nostrorum
+          expiatio delictorum. Per eundem Dominum.
+        notes: >-
+          1962 target PDF 461 / printed 380; right; unit 1459; Secreta; same Sacred Heart formulary
+          continues above following Sunday. Whole independent historical Latin: PDF 1486 / printed
+          [272]; left; Secreta. Exact whole petition is unchanged. Target shortens the historical
+          conclusion by omitting terminal nostrum; explicit deletion, no addition or assembled
+          conclusion. Proved with explicit target abbreviation, not a claim of diplomatic identity. Only
+          named annual feast Secret; no Sacred Heart preface or other prayer clearance. Historical
+          ending "Per eundem Dominum nostrum."; actual target ending "Per eundem Dominum.".
       - name: Communion
         incipit: Unus militum lancea latus ejus aperuit
         source: scripture
@@ -18843,14 +18949,17 @@ sections:
       - name: Alleluia
         incipit: Hic est sacerdos
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: 1962 CMAA facsimile, artifact p. 814, printed [6]; raw text page line 8; Printed text unit 4208;
-          uncited chant. Its exact body remains unavailable; no Bible passage substitutes for it.
+        text: |
+          Alleluia, alleluia. V. Hic est sacerdos, quem coronavit Dominus.
+          Alleluia.
+        notes: >-
+          1962 target PDF 814 / printed [6]; left; unit 4208; Commune unius Martyris extra tempus
+          paschale; II Pro Martyre Pontifice continuation. Whole independent historical Latin: PDF 674 /
+          printed [4]; right; Commune unius Martyris Pontificis; De eodem Communi, Alia Missa.
+          Alleluja/Alleluia j/i; historical Sacerdos / target sacerdos capitalization. Whole double-
+          opening, verse and terminal Alleluia. Outside-Paschal Common II only; actual target replaces
+          it with the printed Tract after Septuagesima. No N. fill, no oration, no SupremePontiff
+          transfer. Historical ending "Dominus. Alleluja."; actual target ending "Dominus. Alleluia.".
         ordinary_disposition:
           kind: alternative
           group: unius-martyris-2-post-epistle
@@ -20136,14 +20245,17 @@ sections:
       - name: Alleluia
         incipit: Te Martyrum candidatus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: 1962 CMAA facsimile, artifact p. 821, printed [13]; raw text page line 27; Printed text unit
-          4264; uncited chant. Its exact body remains unavailable; no Bible passage substitutes for it.
+        text: |
+          Alleluia, alleluia. V. Te Martyrum candidatus laudat exercitus,
+          Domine. Alleluia.
+        notes: >-
+          1962 target PDF 821 / printed [13]; left; unit 4264; Commune plurimorum Martyrum extra tempus
+          paschale; III Salus autem iustorum continuation. Whole independent historical Latin: PDF 685 /
+          printed [15]; right bottom; Commune plurimorum Martyrum; De eodem Communi Alia Missa, Salus
+          autem iustorum. Alleluja/Alleluia j/i. Whole unit is on Pustet685, not686;686 inspected for
+          boundary, starts Tract rubric. Target Septuagesima replacement is explicit. No application to
+          Paschal common, CommonI/II or assumed saint name. Historical ending "Domine. Alleluja.";
+          actual target ending "Domine. Alleluia.".
         ordinary_disposition:
           kind: alternative
           group: plurimorum-martyrum-3-post-epistle
@@ -22939,7 +23051,7 @@ sections:
           text layer; the layer places these markers mid-page, so the folio is +/-1);
           text-layer lines 82718-82724; Commune Sanctorum.
         text: |
-          Indulgentiam nobis, quaesumus, mine, beata N. Virgo et Martyr imploret: quae
+          Indulgentiam nobis, quaesumus, Domine, beata N. Virgo et Martyr imploret: quae
           tibi grata semper exstitit, et merito castitatis, et tuae professione
           virtutis. Per Dominum.
       - name: Collect (Pro pluribus Virginibus Martyribus)
@@ -23128,7 +23240,7 @@ sections:
           text layer; the layer places these markers mid-page, so the folio is +/-1);
           text-layer lines 82836-82841; Commune Sanctorum.
         text: |
-          Hostias tibi, Domine, beatae N. Virginis et Martyris tuae dicatas mentis,
+          Hostias tibi, Domine, beatae N. Virginis et Martyris tuae dicatas meritis,
           benignus assume: et ad perpetuum nobis tribue provenire subsidium. Per
           Dominum.
       - name: Secret (Pro pluribus Virginibus Martyribus)
@@ -24430,24 +24542,56 @@ sections:
       name: Commune Dedicationis ecclesiae
       registry: 1962-C-dedicationis-ecclesiae
       common_sets:
-        orations:
-          families: [Collect, Secret, Postcommunion]
+        occasion-orations:
+          families:
+          - Collect
+          - Postcommunion
           options:
-            anniversary-in-church: [Collect, Secret (In ecclesia ipsa dedicata), Postcommunion]
-            anniversary-outside-church: [Collect, Secret (Extra ecclesiam ipsam dedicatam), Postcommunion]
-            dedication-day: [Collect (In ipso die Dedicationis), Secret (In ipso die Dedicationis), Postcommunion (In ipso die Dedicationis)]
-      notes: |
-        The Commune Sanctorum of the 1962 typica, printed pp. [39]-[41]. The
+            anniversary:
+            - Collect
+            - Postcommunion
+            dedication-day:
+            - Collect (In ipso die Dedicationis)
+            - Postcommunion (In ipso die Dedicationis)
+        contextual-secret:
+          families:
+          - Secret
+          options:
+            anniversary-in-church:
+            - Secret (In ecclesia ipsa dedicata)
+            anniversary-outside-church:
+            - Secret (Extra ecclesiam ipsam dedicatam)
+            dedication-day:
+            - Secret (In ipso die Dedicationis)
+      notes: 'The Commune Sanctorum of the 1962 typica, printed pp. [39]-[41]. The
+
         orations at marginal nos. 4461, 4462, 4470-4472, 4474 and 4475 were
+
         transcribed on 2026-08-01 from the controlling CMAA facsimile and
+
         corroborated against an independent 1962 Benziger scan. The Gradual and
+
         Paschaltide Alleluia at nos. 4464-4467 were visually collated on
+
         2026-08-26 against the registered facsimile page image. Their uncited
+
         wording was independently checked at Pustet 1862 p. [37] against
+
         registered artifact artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-706-b5705840.
+
         The target reads astat where Pustet reads adstat; the 1962 image controls
-        this formulary's wording and punctuation, while the 1862 image establishes
-        only the chants' pre-existing public-domain antecedent.
+
+        this formulary''s wording and punctuation, while the 1862 image establishes
+
+        only the chants'' pre-existing public-domain antecedent.
+
+        The 2026-10-22 role-only split separates anniversary/actual-dedication occasion for Collect/Postcommunion from
+        the anniversary Secret''s inside/outside church context. Common headings PDF847-849 and the actual-consecration
+        rubric distinguish these axes. Existing anniversary bodies are unchanged: Collect4461 PDF847/[39] matches Pustet1862
+        PDF707/[37]L; Postcommunion4474 PDF848/[40] matches PDF708/[38]L. These exact page-image folios refine the earlier
+        approximate text-layer folio notes without changing body or provenance bytes.
+
+        '
       propers:
       - name: Introit
         source: scripture
@@ -30097,13 +30241,17 @@ sections:
             ref: Psalms 97:3-4,2
         - name: Alleluia
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-            - kind: no-exemplar
-          notes: Missale Romanum 1962, artifact p. 102, printed p. 21, unit 135; source-appointed body; no exact publishable
-            exemplar is bound.
+          text: |
+            Alleluia, alleluia. V. Dies sanctificatus illuxit nobis: venite,
+            gentes, et adorate Dominum: quia hodie descendit lux magna super
+            terram. Alleluia.
+          notes: >-
+            1962 target PDF 102 / printed 21; right top; unit 135; In Nativitate Domini; third Mass in
+            die. Whole independent historical Latin: PDF 106 / printed 20; left top; Christmas third Mass
+            continuation, before St.Stephen heading. Alleluja/Alleluia j/i; target comma after venite
+            declared. Only named form Ad tertiam Missam in die; not midnight/dawn or an assumed octave-day
+            form. Both opening Alleluias and terminal Alleluia actually printed on the inspected pages.
+            Historical ending "terram. Alleluja."; actual target ending "terram. Alleluia.".
         - name: Gospel
           source: scripture
           verses:
@@ -30212,8 +30360,7 @@ sections:
         derived from the Common, because a name substitution is not something
         this schema performs: the Collect and the Secret carry published Latin bodies collated to the
         controlling 1962 edition, each on the public-domain witness its row in
-        src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names, and the
-        Postcommunion carries a typed rights-withheld state and no body. The commemoration of S.
+        src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names, and the Postcommunion now has independent Mame1922 Common Doctor Pontiff whole-petition proof, the explicit N. to Hilarius nominative blank and actual1962 ending at printed443/PDF524, no.1919 C1, with a bounded Latin binding dated2026-10-22. The commemoration of S.
         Felicis Presbyteri et
         Martyris that the day carries is its own dated entry, which carries its three orations.'
       takes_from:
@@ -30249,15 +30396,21 @@ sections:
           oratio: quae et munera nostra conciliet; et tuam nobis indulgentiam semper
           obtineat. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit
           et regnat in unitate.
-      - name: Postcommunion
-        incipit: 'Ut nobis, Domine'
+      - name: "Postcommunion"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        incipit: "Ut nobis, Domine"
+        notes: >-
+          PDF 524 / printed 443, unit 1919 C1, left top (not PDF 523 unit 1918, which is Felix Secret).
+          Complete own petition independently image-collated with Mame 1922 PDF 904 / printed 26*, right
+          bottom, Pro Doctore Pontifice Postcommunio; continues PDF 905 / printed 27*, left top. ready
+          removed restoration: whole petition, explicit rubric-directed N. -> Hilarius nominative and
+          target conclusion, no clause added; Mame 1922 US public domain. Historical conclusion "Per
+          Dominum."; actual target ending "Per Dominum nostrum.". Independent historical Latin rights
+          under17 U.S.C.103(b); no appointment/form change.
+        text: |
+          Ut nobis, Domine, tua sacrificia dent salutem: beatus Hilarius
+          Pontifex tuus et Doctor egregius, quaesumus, precator accedat. Per
+          Dominum nostrum.
     - key: comm-s-felicis-presbyteri-martyris
       name: Comm. S. Felicis Presbyteri et Martyris
       registry: '1962-01-14-comm'
@@ -38358,15 +38511,20 @@ sections:
           Super has hostias, quaesumus, Domine, benedictio copiosa descendat: quae et
           sanctificationem nobis clementer operetur, et de Sanctorum nos solemnitate
           laetificet. Per Dominum.
-      - name: Postcommunion
-        incipit: Refecti participatione muneris sacri
+      - name: "Postcommunion"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        incipit: "Refecti participatione muneris sacri"
+        notes: >-
+          PDF 600 / printed 519, unit 2507 P, left lower. Complete own petition independently image-
+          collated with Pustet PDF 525 / printed 439, right middle, Pro SS. Alexandro etc. Postcommunio.
+          ready removed restoration, whole named petition including Juvenal matches;
+          exequimur/exsequimur received spelling and j/i only. Historical conclusion "Per Dominum.";
+          actual target ending "Per Dominum.". Independent historical Latin rights under17 U.S.C.103(b);
+          no appointment/form change.
+        text: |
+          Refecti participatione muneris sacri, quaesumus, Domine Deus noster:
+          ut, cujus exsequimur cultum, intercedentibus sanctis tuis Alexandro,
+          Eventio, Theodulo et Juvenale, sentiamus effectum. Per Dominum.
       takes_from:
         mass: commune-martyrum-tempore-paschali-2
         common_sets:
@@ -39926,34 +40084,39 @@ sections:
       - name: Collect
         source: composed
         notes: >-
-          Printed locus printed p. 530; artifact PDF p. 611; no. 2598 (read on the
-          page image). Preexisting material under 17 U.S.C. 103(b), corroborated in
-          the tracked public-domain Pustet Ratisbon 1862 at printed p. 444; text-layer
-          lines 62957-62966; the 1862 files these words elsewhere in the same book,
-          not under this day.
+          1962 printed p. 530 R, artifact PDF p. 611, no. 2598, marked P.
+          Complete prayer and conclusion rechecked on 2026-10-22 against the
+          retained public-domain Pustet 1862 page, printed p. 445 R / PDF p. 531
+          (IA leaf n530), and the target page at 200 and 400 dpi. Exact source
+          bindings and spelling transformations are in the Latin provenance ledger.
         text: |
           Da, quaesumus, omnipotens Deus: ut, qui beati Bonifatii Martyris tui
           solemnia colimus, ejus apud te intercessionibus adjuvemur. Per Dominum.
       - name: Secret
-        incipit: Muneribus nostris, quaesumus Domine
+        incipit: "Muneribus nostris, quaesumus Domine"
         source: composed
         notes: >-
-          Printed locus printed p. 530, marginal no. 2599; artifact PDF p. 611.
-          Preexisting material under 17 U.S.C. 103(b), corroborated in the tracked
-          public-domain Pustet Ratisbon 1862 at printed p. 425; text-layer lines
-          60499-60507; this is the 1862's own entry for the day.
+          1962 printed p. 530 R, artifact PDF p. 611, no. 2599, marked C 3.
+          Complete prayer and conclusion rechecked on 2026-10-22 against the
+          retained public-domain Pustet 1862 page, printed p. 445 R / PDF p. 531
+          (IA leaf n530), and the target page at 200 and 400 dpi. Exact source
+          bindings and spelling transformations are in the Latin provenance ledger.
         text: |
           Muneribus nostris, quaesumus, Domine, precibusque susceptis: et caelestibus
           nos munda mysteriis, et clementer exaudi. Per Dominum.
       - name: Postcommunion
-        incipit: Refecti participatione muneris sacri
+        incipit: "Refecti participatione muneris sacri"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          1962 printed p. 530 R, artifact PDF p. 611, no. 2600, marked C 4.
+          Complete prayer and conclusion rechecked on 2026-10-22 against the
+          retained public-domain Pustet 1862 page, printed p. 445 R / PDF p. 531
+          (IA leaf n530), and the target page at 200 and 400 dpi. Exact source
+          bindings and spelling transformations are in the Latin provenance ledger.
+        text: |
+          Refecti participatione muneris sacri, quaesumus, Domine Deus noster:
+          ut, cujus exsequimur cultum, intercedente beato Bonifatio Martyre tuo,
+          sentiamus effectum. Per Dominum.
       takes_from:
         mass: commune-martyrum-tempore-paschali-1
         common_sets:
@@ -39961,25 +40124,18 @@ sections:
             state: unresolved
             candidates: [c3, c4]
         citation: Commune Sanctorum [15]
-      notes: 'The day''s identity and rank were read on 2026-08-08 from the embedded text layer of the CMAA
-        facsimile of the controlling edition, at this day''s own heading, and that reading was not
-        visually collated against that facsimile. That text layer cannot supply an oration -- it sets
-        each under
-        a drop capital and renders it as wreckage -- so that reading took no oration of the
-        controlling 1962 edition. All three orations were first transcribed instead from Internet
-        Archive item
-        bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862 printing the source library already tracks as public
-        domain, read from its PAGE IMAGES and not from any optical text layer -- that printing''s own OCR
-        corrupts roughly one word in three. The Collect was read on 2026-08-08 from leaf n530 (printed page
-        445); the Secret and the Postcommunion were read on 2026-08-19 from that same leaf n530 (printed page
-        445), under the heading verified there, "Festa Maji. (14.) Die xiv. S. Bonifacii, Martyris". That day''s
-        own rubric there reads "praeter Orationes sequentes", in the plural, which is the printing''s own
-        statement that all three of its orations are proper. The rest of the formulary is taken from the Common
-        named in takes_from. The bodies now published are not quoted from those 1862 readings: each is
-        collated to the controlling 1962 edition, on the public-domain witness its row in
-        src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names. The 1862 is a
-        pre-1955 printing whose
-        arrangement is not that of 1962.'
+      notes: >-
+        The three complete local orations were rechecked on 2026-10-22 in the
+        exact 1962 facsimile, artifact p. 611 / printed p. 530, against Pustet
+        1862, artifact p. 531 / printed p. 445 (IA leaf n530). The historical
+        page carries each complete petition and Per Dominum. conclusion.
+        The Collect is marked P, Secret C 3 and Postcommunion C 4. A single
+        Common oration-set selection cannot express that mixed source direction;
+        the existing unresolved c3/c4 metadata stays explicit, while the three
+        local orations override every inherited prayer. Tempore paschali the
+        source appoints Common Martyrs I [15]; extra tempus paschale it names
+        Common of one Martyr III [6]. The existing single-form referral represents
+        the Paschal appointment only; no extra-Paschal or votive use is inferred.
     - key: s-ioannis-baptistae-la-salle-confessoris
       name: S. Ioannis Baptistae de la Salle Confessoris
       registry: '1962-05-15'
@@ -40282,32 +40438,37 @@ sections:
           preces populi tui, et praesta; ut, qui ejus merita veneramur, fidei
           constantiam imitemur. Per Dominum nostrum Jesum Christum, Filium tuum: Qui
           tecum vivit et regnat in unitate.
-      - name: Secret
+      - name: "Secret"
         source: composed
-        notes: Printed p. 532 / artifact p. 613, marginal no. 2619, marked P; the saint's own oration in both source-referred
-          forms. The exact body remains unavailable; no Common oration is substituted.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      - name: Postcommunion
+        notes: >-
+          PDF 613 / printed 532, unit 2619 P, right middle. Complete own petition independently image-
+          collated with Pustet PDF 532 / printed 446, right middle. whole-petition match; target
+          conclusion length; preserve unsupported outside-Paschal whole-form obligation, no new branch.
+          Historical conclusion "Per Dominum."; actual target ending "Per Dominum nostrum Iesum
+          Christum, Filium tuum: Qui tecum vivit et regnat in unitate.". Independent historical Latin
+          rights under17 U.S.C.103(b); no appointment/form change.
+        text: |
+          Hanc oblationem, omnipotens Deus, beati Venantii merita tibi reddant
+          acceptam: ut, ipsius subsidiis adjuti, gloriae ejus consortes
+          efficiamur. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum
+          vivit et regnat in unitate.
+      - name: "Postcommunion"
         source: composed
-        notes: Printed p. 532 / artifact p. 613, marginal no. 2620, marked P; the saint's own oration in both source-referred
-          forms. The exact body remains unavailable; no Common oration is substituted.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          PDF 613 / printed 532, unit 2620 P, right lower. Complete own petition independently image-
+          collated with Pustet PDF 532 / printed 446, right middle-lower. whole-petition match; target
+          conclusion length; preserve existing referral and unresolved form obligation. Historical
+          conclusion "Per Dominum."; actual target ending "Per Dominum nostrum.". Independent historical
+          Latin rights under17 U.S.C.103(b); no appointment/form change.
+        text: |
+          Sumpsimus, Domine, aeternae vitae sacramenta, te humiliter
+          deprecantes: ut, beato Venantio Martyre tuo pro nobis deprecante,
+          veniam nobis concilient et gratiam. Per Dominum nostrum.
       notes: The controlling 1962 page image, printed p. 532 / artifact p. 613, appoints Protexisti from the first Paschal
         Common of Martyrs [15] in Paschal time and In virtute from the third Common of one Martyr [6] outside Paschal
         time. Both referrals retain the orations printed under this saint. Collect 2618, Secret 2619 and Postcommunion
         2620 are all marked P, so all three are the saint's own and no Common oration set is selected. The published Collect
-        retains its recorded target collation and public-domain provenance in its own record; the other two exact bodies
-        remain unavailable. This entry's existing whole-Mass referral represents the Paschal branch. The outside-Paschal
+        retains its recorded target collation and public-domain provenance in its own record; the Secret and Postcommunion now have independent Pustet1862 whole-image proof and exact bounded Latin bindings, dated2026-10-22. This entry's existing whole-Mass referral represents the Paschal branch. The outside-Paschal
         whole form is a source-established but currently unsupported appointment obligation; its rubric is not expressly
         restricted to votive Masses and is not replaced here by an inferred Common or season-only reading switch.
       takes_from:
@@ -46962,15 +47123,20 @@ sections:
       rank: II
       kind: sanctoral
       propers:
-      - name: Collect
+      - name: "Collect"
         source: composed
-        notes: Own Collect printed p. 602 (artifact p. 683), marginal no. 3175; exact wording remains unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          PDF 683 / printed 602, unit 3175, left lower. Complete own petition independently image-
+          collated with Pustet PDF 586 / printed 500, left middle-lower. whole-petition match;
+          historical genitricis/target Genetricis received spelling, not a lexical addition; target
+          conclusion. Historical conclusion "Per eundem Dominum."; actual target ending "Per eundem
+          Dominum nostrum.". Independent historical Latin rights under17 U.S.C.103(b); no
+          appointment/form change.
+        text: |
+          Deus, qui beatae Annae gratiam conferre dignatus es, ut Genetricis
+          unigeniti Filii tui mater effici mereretur: concede propitius; ut,
+          cujus solemnia celebramus, ejus apud te patrociniis adjuvemur. Per
+          eundem Dominum nostrum.
       - name: Lesson
         source: scripture
         verses:
@@ -47031,15 +47197,22 @@ sections:
               chapter: 44
               verse: 10
           ref: Psalms 44:10
-      - name: Secret
+      - name: "Secret"
         source: composed
-        notes: Own Secret printed p. 603 (artifact p. 684), marginal no. 3181; exact wording remains unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          PDF 684 / printed 603, unit 3181, left bottom. Complete own petition independently image-
+          collated with Pustet PDF 586 / printed 500, right upper. whole-petition match; historical
+          genitricis/target Genetricis and Anne Secret historical mater extitit -> target mater exstitit
+          are real received-spelling differences, not OCR damage; canonical exstitit retained; actual
+          target conclusion. Historical conclusion "Per eundem Dominum."; actual target ending "Per
+          eundem Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.".
+          Independent historical Latin rights under17 U.S.C.103(b); no appointment/form change.
+        text: |
+          Sacrificiis praesentibus, quaesumus, Domine, placatus intende: ut per
+          intercessionem beatae Annae, quae Genetricis Filii tui Domini nostri
+          Jesu Christi mater exstitit, et devotioni nostrae proficiant, et
+          saluti. Per eundem Dominum nostrum Jesum Christum, Filium tuum: Qui
+          tecum vivit et regnat in unitate.
       - name: Communion
         source: scripture
         verses:
@@ -47052,17 +47225,20 @@ sections:
               chapter: 44
               verse: 3
           ref: Psalms 44:3
-      - name: Postcommunion
+      - name: "Postcommunion"
         source: composed
-        notes: Own Postcommunion printed p. 603 (artifact p. 684), marginal no. 3183; exact wording remains unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          PDF 684 / printed 603, unit 3183, right upper. Complete own petition independently image-
+          collated with Pustet PDF 586 / printed 500, right middle. whole-petition match; historical
+          Coelestibus/genitricis versus target Caelestibus/Genetricis received spellings. Historical
+          conclusion "Per eundem Dominum."; actual target ending "Per eundem Dominum.". Independent
+          historical Latin rights under17 U.S.C.103(b); no appointment/form change.
+        text: |
+          Caelestibus sacramentis vegetati, quaesumus, Domine Deus noster: ut,
+          intercessione beatae Annae, quam Genetricis Filii tui matrem esse
+          voluisti, ad aeternam salutem pervenire mereamur. Per eundem Dominum.
       notes: The three own orations are printed at marginal nos. 3175, 3181 and 3183, printed pp. 602–603 (artifact pp.
-        683–684), in Collect, Secret and Postcommunion order. Their exact wording remains unavailable here.
+        683–684), in Collect, Secret and Postcommunion order. Their complete wording now has independent Pustet1862 whole-image proof, declared received spellings, actual1962 ending lengths and exact bounded Latin bindings, dated2026-10-22.
     - key: comm-s-pantaleonis-martyris
       name: Comm. S. Pantaleonis Martyris
       registry: '1962-07-27'
@@ -47442,28 +47618,35 @@ sections:
           Felicis, Simplicii, Faustini et Beatricis temporali solemnitate congaudet,
           ita perfruatur aeterna; et, quod votis celebrat, comprehendat effectu. Per
           Dominum.
-      - name: Secret
+      - name: "Secret"
         source: composed
-        notes: Own Secret printed p. 606 (artifact p. 687), marginal no. 3212, marked P; exact wording remains unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      - name: Postcommunion
+        notes: >-
+          PDF 687 / printed 606, unit 3212 P, right lower. Complete own petition independently image-
+          collated with Pustet PDF 588 / printed 502, right bottom; actual full names inside petition.
+          whole-petition match; target conclusion length; no saint blanks. Historical conclusion "Per
+          Dominum."; actual target ending "Per Dominum nostrum.". Independent historical Latin rights
+          under17 U.S.C.103(b); no appointment/form change.
+        text: |
+          Hostias tibi, Domine, pro sanctorum Martyrum tuorum Felicis,
+          Simplicii, Faustini et Beatricis commemoratione deferimus: suppliciter
+          deprecantes; ut indulgentiam nobis pariter conferant, et salutem. Per
+          Dominum nostrum.
+      - name: "Postcommunion"
         source: composed
-        notes: Own Postcommunion printed p. 606 (artifact p. 687), marginal no. 3213, marked P; exact wording remains
-          unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          PDF 687 / printed 606, unit 3213 P, right bottom. Complete own petition independently image-
+          collated with Pustet PDF 589 / printed 503, left middle; actual full names inside petition,
+          heading Felix et Socii. whole-petition match; historical coelestibus versus target caelestibus
+          spelling; no blanks. Historical conclusion "Per Dominum."; actual target ending "Per
+          Dominum.". Independent historical Latin rights under17 U.S.C.103(b); no appointment/form
+          change.
+        text: |
+          Praesta, quaesumus, omnipotens Deus: ut sanctorum Martyrum tuorum
+          Felicis, Simplicii, Faustini et Beatricis caelestibus mysteriis
+          celebrata solemnitas, indulgentiam nobis tuae propitiationis acquirat.
+          Per Dominum.
       notes: The Missal appoints the Common of Several Martyrs II [11], with the three own orations printed below the
-        referral at marginal nos. 3211–3213, all marked P, printed p. 606 (artifact p. 687). Exact Secret and Postcommunion
-        wording remains unavailable here.
+        referral at marginal nos. 3211–3213, all marked P, printed p. 606 (artifact p. 687). The complete Secret and Postcommunion now have independent Pustet1862 whole-image proof, actual1962 ending lengths and exact bounded Latin bindings, dated2026-10-22.
       takes_from:
         mass: commune-plurimorum-martyrum-2
         citation: 'Commune plurimorum Martyrum extra tempus paschale, Missa II: Sapientiam Sanctorum'
@@ -48602,13 +48785,26 @@ sections:
       - name: Collect
         incipit: Omnipotens et misericors Deus
         source: composed
-        notes: Printed p. 618, no. 3305, marked P.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          1962 target PDF 699 / printed 618; left; unit 3305 P. Whole independent historical Latin: PDF
+          1479 / printed [265] (opening numeral suppressed; integral contents confirms); left; Neueste
+          vorgeschriebene Feste; 9.Aug. Der hl.Johannes Maria Vianney; Oratio. line-end hyphenation,
+          stress, ligatures, case and pointing Joannem/Ioannem, jugi/iugi, ejus/eius historical
+          poenitentiae / target paenitentiae is a real received spelling, not a changed saint title or
+          OCR noise Historical Schott August9 source is a wording antecedent, not the controlling date.
+          Target1962 actually appoints the Collect on August8. Named Collect only. No beatum->sanctum
+          replacement is made; sanctum is actually typeset. Historical date/vigil/commemoration/last-
+          Gospel rules do not govern1962. Appendix attribution to1929 is the current bounded rights
+          record's explicit corroborated inference: original contents XII/PDF11 names Vianney[265],
+          inspected[264]-[265] and[274]-index[275] boundaries plus final[281], independently matching
+          DLI67078 pagination. No separately dated appendix imprint is claimed. Historical ending "Per
+          eundem Dominum."; actual target ending "Per eundem Dominum.".
+        text: |
+          Omnipotens et misericors Deus, qui sanctum Joannem Mariam pastorali
+          studio et jugi orationis ac paenitentiae ardore mirabilem effecisti:
+          da, quaesumus; ut, ejus exemplo et intercessione, animas fratrum
+          lucrari Christo, et cum eis aeternam gloriam consequi valeamus. Per
+          eundem Dominum.
     - key: comm-ss-cyriaci-largi-smaragdi-martyrum
       name: Comm. Ss. Cyriaci, Largi et Smaragdi Martyrum
       registry: '1962-08-08-comm'
@@ -50907,29 +51103,34 @@ sections:
           victoriam martyrii contulisti: concede propitius; ut, qui beatae Sabinae
           Martyris tuae natalicia colimus, per ejus ad te exempla gradiamur. Per
           Dominum nostrum.
-      - name: Secret
+      - name: "Secret"
         source: composed
-        notes: Own Secret printed p. 643 (artifact p. 724), marginal no. 3508, marked P; exact wording remains unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      - name: Postcommunion
+        notes: >-
+          PDF 724 / printed 643, unit 3508 P, left lower. Complete own petition independently image-
+          collated with Pustet PDF 617 / printed 531, right bottom, continues PDF 618 / printed 532 left
+          top. whole-petition match; target conclusion length. Historical conclusion "Per Dominum.";
+          actual target ending "Per Dominum nostrum.". Independent historical Latin rights under17
+          U.S.C.103(b); no appointment/form change.
+        text: |
+          Hostias tibi, Domine, beatae Sabinae Martyris tuae dicatas meritis,
+          benignus assume: et ad perpetuum nobis tribue provenire subsidium. Per
+          Dominum nostrum.
+      - name: "Postcommunion"
         source: composed
-        notes: Own Postcommunion printed p. 643 (artifact p. 724), marginal no. 3509, marked P; exact wording remains
-          unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          PDF 724 / printed 643, unit 3509 P, left bottom (not the prior repeated PC unit 3506).
+          Complete own petition independently image-collated with Pustet PDF 618 / printed 532, left
+          middle. whole-petition match. Historical conclusion "Per Dominum."; actual target ending "Per
+          Dominum.". Independent historical Latin rights under17 U.S.C.103(b); no appointment/form
+          change.
+        text: |
+          Divini muneris largitate satiati, quaesumus, Domine Deus noster: ut,
+          intercedente beata Sabina Martyre tua, in ejus semper participatione
+          vivamus. Per Dominum.
       notes: The Missal appoints the Common of a Martyr who is not a Virgin I [35], with the orations printed below the
         referral at marginal nos. 3507–3509, printed p. 643 (artifact p. 724). Collect no. 3507 is marked C and corresponds
         to the singular Common Collect no. 4433 (artifact p. 843); the singular prayer set is therefore selected. Secret
-        no. 3508 and Postcommunion no. 3509 are marked P. Exact Secret and Postcommunion wording remains unavailable here.
+        no. 3508 and Postcommunion no. 3509 are marked P. The complete Secret and Postcommunion now have independent Pustet1862 whole-image proof, actual1962 ending lengths and exact bounded Latin bindings, dated2026-10-22.
       takes_from:
         mass: commune-non-virginum-1
         common_sets:
@@ -51842,28 +52043,32 @@ sections:
           praeclara suscipiens, ad impetrandam misericordiam tuam semper ejus
           patrociniis adjuvetur. Per Dominum nostrum Jesum Christum, Filium tuum: Qui
           tecum vivit et regnat in unitate.
-      - name: Secret
+      - name: "Secret"
         source: composed
-        notes: Own Secret printed p. 658 (artifact p. 739), marginal no. 3633, marked P; exact wording remains unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      - name: Postcommunion
+        notes: >-
+          PDF 739 / printed 658, unit 3633 P, right middle, not repeated 3628. Complete own petition
+          independently image-collated with Pustet PDF 626 / printed 540, right bottom; below Pro S.
+          Nicomede Collect. whole-petition match; no blank. Historical conclusion "Per Dominum."; actual
+          target ending "Per Dominum.". Independent historical Latin rights under17 U.S.C.103(b); no
+          appointment/form change.
+        text: |
+          Suscipe, Domine, munera propitius oblata: quae majestati tuae beati
+          Nicomedis Martyris commendet oratio. Per Dominum.
+      - name: "Postcommunion"
         source: composed
-        notes: Own Postcommunion printed p. 658 (artifact p. 739), marginal no. 3634, marked P; exact wording remains
-          unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          PDF 739 / printed 658, unit 3634 P, right middle-lower, not repeated 3631. Complete own
+          petition independently image-collated with Pustet PDF 626 / printed 540, right bottom,
+          continues PDF 627 / printed 541 left top, directly above Nicomedes heading referring to
+          orations above. whole-petition match; no blank. Historical conclusion "Per Dominum nostrum.";
+          actual target ending "Per Dominum nostrum.". Independent historical Latin rights under17
+          U.S.C.103(b); no appointment/form change.
+        text: |
+          Purificent nos, Domine, sacramenta quae sumpsimus: et, intercedente
+          beato Nicomede Martyre tuo, a cunctis efficiant vitiis absolutos. Per
+          Dominum nostrum.
       notes: The Missal appoints the Common of One Martyr III [6], with the three own orations printed below the referral
-        at marginal nos. 3632–3634, all marked P, printed p. 658 (artifact p. 739). Exact Secret and Postcommunion wording
-        remains unavailable here.
+        at marginal nos. 3632–3634, all marked P, printed p. 658 (artifact p. 739). The complete Secret and Postcommunion now have independent Pustet1862 whole-image proof, actual1962 ending lengths and exact bounded Latin bindings, dated2026-10-22.
       takes_from:
         mass: commune-unius-martyris-3
         citation: 'Commune unius Martyris extra tempus paschale, Missa III: In virtute tua'
@@ -51915,15 +52120,21 @@ sections:
       rank: Comm.
       kind: sanctoral
       propers:
-      - name: Collect
+      - name: "Collect"
         source: composed
-        notes: Own Collect printed p. 659 (artifact p. 740), marginal no. 3641, marked P; exact wording remains unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          PDF 740 / printed 659, unit 3641 P, right middle. Complete own petition independently image-
+          collated with Pustet PDF 627 / printed 541, right lower, complete petition; no printed
+          conclusion before Tertia Oratio rubric. PDF 628 / printed 542 left middle explicitly refers
+          orations supra positae under the saints' heading.. whole-petition match; historical
+          exultatione versus target exsultatione received spelling; target conclusion independently
+          witnessed. Historical conclusion ""; actual target ending "Per Dominum nostrum.". Independent
+          historical Latin rights under17 U.S.C.103(b); no appointment/form change.
+        text: |
+          Praesta, Domine, precibus nostris cum exsultatione proventum: ut
+          sanctorum Martyrum Euphemiae, Luciae et Geminiani, quorum diem
+          passionis annua devotione recolimus, etiam fidei constantiam
+          subsequamur. Per Dominum nostrum.
       - name: Gospel
         source: scripture
         verses:
@@ -51936,25 +52147,31 @@ sections:
               chapter: 6
               verse: 23
           ref: Luke 6:17-23
-      - name: Secret
+      - name: "Secret"
         source: composed
-        notes: Own Secret printed p. 660 (artifact p. 741), marginal no. 3643, marked P; exact wording remains unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      - name: Postcommunion
+        notes: >-
+          PDF 741 / printed 660, unit 3643 P, left top. Complete own petition independently image-
+          collated with Pustet PDF 627 / printed 541, right bottom through intende, continues PDF 628 /
+          printed 542 left top through suffragiis, followed by Tertia Secreta rubric. whole-petition
+          match; target conclusion independently witnessed; no named saint or blank. Historical
+          conclusion ""; actual target ending "Per Dominum.". Independent historical Latin rights
+          under17 U.S.C.103(b); no appointment/form change.
+        text: |
+          Vota populi tui, quaesumus, Domine, propitius intende: et, quorum nos
+          tribuis solemnia celebrare, fac gaudere suffragiis. Per Dominum.
+      - name: "Postcommunion"
         source: composed
-        notes: Own Postcommunion printed p. 660 (artifact p. 741), marginal no. 3644, marked P; exact wording remains
-          unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          PDF 741 / printed 660, unit 3644 P, left upper. Complete own petition independently image-
+          collated with Pustet PDF 628 / printed 542, left upper-middle, complete petition; no printed
+          conclusion before Tertia Postcomm. rubric. whole-petition match; target conclusion
+          independently witnessed; whole named historical body. Historical conclusion ""; actual target
+          ending "Per Dominum.". Independent historical Latin rights under17 U.S.C.103(b); no
+          appointment/form change.
+        text: |
+          Exaudi, Domine, preces nostras: et sanctorum Martyrum tuorum
+          Euphemiae, Luciae et Geminiani, quorum festa solemniter celebramus,
+          continuis foveamur auxiliis. Per Dominum.
       takes_from:
         mass: commune-plurimorum-martyrum-1
         citation: Commune Sanctorum [10]
@@ -51972,7 +52189,7 @@ sections:
             et Evangelio ut infra.'
       notes: The Missal appoints the Common of Several Martyrs I [10], with the three own orations and Gospel printed
         below the referral. The orations are marginal nos. 3641, 3643 and 3644, all marked P, printed pp. 659–660 (artifact
-        pp. 740–741). Their exact wording remains unavailable here.
+        pp. 740–741). Their complete wording now has independent Pustet1862 whole-image proof, declared received spellings, actual1962 ending lengths and exact bounded Latin bindings, dated2026-10-22.
     - key: comm-impressionis-sacrorum-stigmatum-s-francisci
       name: Comm. Impressionis Sacrorum Stigmatum S. Francisci Confessoris
       registry: '1962-09-17'
@@ -53174,32 +53391,35 @@ sections:
           Confessorem tuum, Doctorem maximum providere dignatus es: praesta,
           quaesumus; ut, ejus suffragantibus meritis, quod ore simul et opere docuit,
           te adjuvante, exercere valeamus. Per Dominum.
-      - name: Secret
+      - name: "Secret"
         source: composed
-        incipit: Donis caelestibus da
-        notes: 'The controlling 1962 Missal prints this proper oration under the day, marked P: artifact p. 753, printed
-          p. 672, no. 3740. Its exact wording has not been supplied here.'
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      - name: Postcommunion
+        incipit: "Donis caelestibus da"
+        notes: >-
+          PDF 753 / printed 672, unit 3740 P, left lower-middle. Complete own petition independently
+          image-collated with Pustet PDF 637 / printed 551, right middle. whole-petition match; no saint
+          blank. Historical conclusion "Per Dominum."; actual target ending "Per Dominum.". Independent
+          historical Latin rights under17 U.S.C.103(b); no appointment/form change.
+        text: |
+          Donis caelestibus da nobis, quaesumus, Domine, libera tibi mente
+          servire: ut munera quae deferimus, interveniente beato Hieronymo
+          Confessore tuo, et medelam nobis operentur, et gloriam. Per Dominum.
+      - name: "Postcommunion"
         source: composed
-        incipit: Repleti alimonia caelesti
-        notes: 'The controlling 1962 Missal prints this proper oration under the day, marked P: artifact p. 753, printed
-          p. 672, no. 3741. Its exact wording has not been supplied here.'
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        incipit: "Repleti alimonia caelesti"
+        notes: >-
+          PDF 753 / printed 672, unit 3741 P, left bottom. Complete own petition independently image-
+          collated with Pustet PDF 637 / printed 551, right middle-lower. whole-petition match; both
+          Pustet1862 PDF637/printed551 and 1962 PDF753/printed672 no.3741 P end only Per Dominum.; no
+          expanded conclusion and no saint blank. Historical conclusion "Per Dominum."; actual target
+          ending "Per Dominum.". Independent historical Latin rights under17 U.S.C.103(b); no
+          appointment/form change.
+        text: |
+          Repleti alimonia caelesti, quaesumus, Domine: ut, interveniente beato
+          Hieronymo Confessore tuo, misericordiae tuae gratiam consequi
+          mereamur. Per Dominum.
       notes: The controlling 1962 Missal appoints the Common named below with the locally printed proper orations retained.
         The proper orations marked P are represented under this day; orations marked C continue to resolve from the Common.
-        The preexisting Collect body is preserved. Newly represented orations carry an explicit unavailable-body disposition
-        pending exact wording proof.
+        The preexisting Collect body is preserved. The selected formerly unavailable proper orations now have independent Pustet1862 whole-image proof and exact bounded Latin bindings, dated2026-10-22; every actual target ending length is retained.
       takes_from:
         mass: commune-doctorum-non-pontificis
         citation: Missa In medio, de Communi Doctorum [22], cum orationibus ut infra
@@ -53407,12 +53627,30 @@ sections:
           ref: "Psalms 112:1"
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: |
+          Domine, qui dixisti: Nisi efficiamini sicut parvuli, non intrabitis in
+          regnum caelorum: da nobis, quaesumus; ita sanctae Teresiae Virginis in
+          humilitate et simplicitate cordis vestigia sectari, ut praemia
+          consequamur aeterna: Qui vivis et regnas cum Deo Patre in unitate.
+        notes: >-
+          1962 target PDF 755 / printed 674; left bottom under Die3octobris; unit 3758. Whole
+          independent historical Latin: PDF 1480 / printed [266]; left; Oratio; Die hl.Theresia vom
+          Kinde Jesu, Jungfrau; 3.Okt.. The Son-directed Qui vivis family stays Son-directed; no Per
+          Dominum to Qui vivis addressee substitution. Actual target prints only through in unitate.; it
+          does NOT print Spiritus Sancti, Deus, per omnia or Amen. Formula exemplar comma after Patre is
+          absent in target: pointing only. Whole petition word identity is retained; accents, ligatures
+          and physical wraps normalized. Fresh actual unit number is3758, not the prior research
+          receipt's3761.3761 is the right-column Alleluia. Prior files remain unchanged. Whole as-
+          printed formula is itself explicitly abbreviated by etc.; no expansion of etc. is claimed or
+          used. All nine words actually printed by the Therese target precede Spiritus and stand
+          contiguously here. No Spiritus Sancti, Deus, per omnia or Amen is added to the target. Same-
+          address standard conclusion prefix from passage.catholic-church.missale-romanum.pustet-
+          ratisbon-1862.phase5-latin22-son-addressed; governing historical instructions
+          passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-rubricae-
+          generales-17 and passage.catholic-church.missale-romanum.pustet-
+          ratisbon-1862.phase5-latin22-ritus-celebrandi-v-1. No historical proper is claimed to print
+          its expanded target ending. Historical ending "Qui vivis."; actual target ending "Qui vivis et
+          regnas cum Deo Patre in unitate.".
       - name: "Lesson"
         source: scripture
         verses:
@@ -53490,12 +53728,18 @@ sections:
           ref: Luke 1:46-48, 49
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: |
+          Sacrificium nostrum tibi, Domine, quaesumus, sanctae Teresiae Virginis
+          tuae precatio sancta conciliet: ut, in cujus honore solemniter
+          exhibetur, ejus meritis efficiatur acceptum. Per Dominum nostrum.
+        notes: >-
+          1962 target PDF 756 / printed 675; left bottom; unit 3766; Secreta; Therese formulary continues.
+          Whole independent historical Latin: PDF 1482 / printed [268]; left; Secreta. cujus/cuius and
+          ejus/eius declared j/i orthography. Historical Schott PDF1482/[268] and target1962
+          PDF756/p675/unit3766 both print solemniter (one l); retained without spelling normalization.
+          Target commas after ut and exhibetur are explicitly projected. Named October3 Secret only;
+          actual saint name is printed, no N. fill or saint substitution. Historical ending "Per Dominum
+          nostrum."; actual target ending "Per Dominum nostrum.".
       - name: Communion
         source: scripture
         verses:
@@ -53510,12 +53754,16 @@ sections:
           ref: Deuteronomy 32:10-12
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: |
+          Illo nos, Domine, amoris igne caeleste mysterium inflammet: quo sancta
+          Teresia Virgo tua se tibi pro hominibus caritatis victimam devovit.
+          Per Dominum nostrum.
+        notes: >-
+          1962 target PDF 756 / printed 675; right top; unit 3768; Postcommunio; before October4
+          heading. Whole independent historical Latin: PDF 1482 / printed [268]; left; Postcommunio.
+          Named October3 Postcommunion only; actual saint name and caritatis are typeset in both whole
+          prayers. Historical ending "Per Dominum nostrum."; actual target ending "Per Dominum
+          nostrum.".
     - key: s-francisci-confessoris
       name: S. Francisci Confessoris
       registry: '1962-10-04'
@@ -53734,21 +53982,23 @@ sections:
           adjuvemur: ut, qui majestatem tuam graviter delinquendo offendimus, ejus
           meritis et precibus, nostrorum delictorum veniam consequamur. Per Dominum
           nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
-      - name: Postcommunion
+      - name: "Postcommunion"
         source: composed
-        incipit: Quaesumus, omnipotens Deus
-        notes: 'The controlling 1962 Missal prints this proper oration under the day, marked P: artifact p. 758, printed
-          p. 677, no. 3785. Its exact wording has not been supplied here.'
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        incipit: "Quaesumus, omnipotens Deus"
+        notes: >-
+          PDF 758 / printed 677, unit 3785 P, left bottom. Complete own petition independently image-
+          collated with Pustet PDF 641 / printed 555, right bottom. whole-petition match; target
+          conclusion length; no saint blank. Historical conclusion "Per Dominum."; actual target ending
+          "Per Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.".
+          Independent historical Latin rights under17 U.S.C.103(b); no appointment/form change.
+        text: |
+          Quaesumus, omnipotens Deus: ut, qui caelestia alimenta percepimus,
+          intercedente beato Brunone Confessore tuo, per haec contra omnia
+          adversa muniamur. Per Dominum nostrum Jesum Christum, Filium tuum: Qui
+          tecum vivit et regnat in unitate.
       notes: The controlling 1962 Missal appoints the Common named below with the locally printed proper orations retained.
         The proper orations marked P are represented under this day; orations marked C continue to resolve from the Common.
-        The preexisting Collect body is preserved. Newly represented orations carry an explicit unavailable-body disposition
-        pending exact wording proof.
+        The preexisting Collect body is preserved. The selected formerly unavailable proper orations now have independent Pustet1862 whole-image proof and exact bounded Latin bindings, dated2026-10-22; every actual target ending length is retained.
       takes_from:
         mass: commune-confessoris-non-pontificis-1
         citation: 'Commune Confessoris non Pontificis, Missa I: Os justi meditabitur'
@@ -53949,26 +54199,31 @@ sections:
           Sanctorum Martyrum tuorum nos, Domine, Sergii, Bacchi, Marcelli et Apuleii
           beata merita prosequantur: et tuo semper faciant amore ferventes. Per
           Dominum.
-      - name: Secret
+      - name: "Secret"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 762 / printed p. 681, marginal no. 3816, marked P, column L. The
-          body has not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      - name: Postcommunion
+        notes: >-
+          1962 printed p. 681, no. 3816, column L, marked P; artifact PDF p. 762. Complete own prayer
+          collated on 2026-10-22 with Pustet 1862 printed p. 556, L, Secreta; original PDF p. 642;
+          retained extract p. 4. Preexisting petition under 17 U.S.C. 103(b); project j orthography and
+          actual target conclusion length. Historical Majestatem; target Maiestatem. Historical grouped
+          commemoration has no conclusion printed here before Tertia Secreta. Target prints Per Dominum.
+          Pointing/capitals/accents/ligatures.
+        text: |
+          Majestatem tuam nobis, Domine, quaesumus, haec hostia reddat immolanda
+          placatam, tuorum digna postulatione Sanctorum. Per Dominum.
+      - name: "Postcommunion"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 762 / printed p. 681, marginal no. 3817, marked P, column L. The
-          body has not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          1962 printed p. 681, no. 3817, column L, marked P; artifact PDF p. 762. Complete own prayer
+          collated on 2026-10-22 with Pustet 1862 printed p. 556, R, Pro sanctis Martyribus.
+          Postcommunio; original PDF p. 642; retained extract p. 4. Preexisting petition under 17 U.S.C.
+          103(b); project j orthography and actual target conclusion length. Historical grouped
+          commemoration has no conclusion printed here before Tertia Postcommunio. Target prints Per
+          Dominum. Historical coelestibus; target caelestibus. Pointing/capitals/accents/ligatures.
+        text: |
+          Sacramentis, Domine, muniamur acceptis: et sanctorum Martyrum tuorum
+          Sergii, Bacchi, Marcelli et Apuleii intercessione, contra omnes
+          nequitias irruentes, armis caelestibus protegamur. Per Dominum.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry carries the directive
         rather than a copy. Read on 2026-08-08 from the embedded text layer of the CMAA facsimile at the day''s own heading,
         joined to the Common by the BRACKETED NUMBER the Missal itself prints -- Commune plurimorum Martyrum extra tempus
@@ -54324,32 +54579,36 @@ sections:
           ut, sicut beatum Franciscum in terreni honoris contemptu imitatorem tui
           gloriosum effecisti, ita nos ejusdem imitationis et gloriae tribuas esse
           consortes: Qui vivis et regnas cum Deo Patre in unitate.
-      - name: Secret
+      - name: "Secret"
         source: composed
-        incipit: Sacris altaribus, Domine
-        notes: 'The controlling 1962 Missal prints this proper oration under the day, marked P: artifact p. 766, printed
-          p. 685, no. 3844. Its exact wording has not been supplied here.'
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      - name: Postcommunion
+        incipit: "Sacris altaribus, Domine"
+        notes: >-
+          PDF 766 / printed 685, unit 3844 P, left lower. Complete own petition independently image-
+          collated with Pustet PDF 645 / printed 559, left middle. whole-petition match; target
+          conclusion length. Historical conclusion "Per Dominum."; actual target ending "Per Dominum
+          nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.". Independent
+          historical Latin rights under17 U.S.C.103(b); no appointment/form change.
+        text: |
+          Sacris altaribus, Domine, hostias superpositas sanctus Franciscus,
+          quaesumus, in salutem nobis provenire deposcat. Per Dominum nostrum
+          Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
+      - name: "Postcommunion"
         source: composed
-        incipit: Protegat nos, Domine
-        notes: 'The controlling 1962 Missal prints this proper oration under the day, marked P: artifact p. 766, printed
-          p. 685, no. 3845. Its exact wording has not been supplied here.'
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        incipit: "Protegat nos, Domine"
+        notes: >-
+          PDF 766 / printed 685, unit 3845 P, left bottom. Complete own petition independently image-
+          collated with Pustet PDF 645 / printed 559, left lower. whole-petition match; target
+          conclusion shorter. Historical conclusion "Per Dominum nostrum."; actual target ending "Per
+          Dominum.". Independent historical Latin rights under17 U.S.C.103(b); no appointment/form
+          change.
+        text: |
+          Protegat nos, Domine, cum tui perceptione sacramenti beatus
+          Franciscus, pro nobis intercedendo: ut et conversationis ejus
+          experiamur insignia, et intercessionis percipiamus suffragia. Per
+          Dominum.
       notes: The controlling 1962 Missal appoints the Common named below with the locally printed proper orations retained.
         The proper orations marked P are represented under this day; orations marked C continue to resolve from the Common.
-        The preexisting Collect body is preserved. Newly represented orations carry an explicit unavailable-body disposition
-        pending exact wording proof.
+        The preexisting Collect body is preserved. The selected formerly unavailable proper orations now have independent Pustet1862 whole-image proof and exact bounded Latin bindings, dated2026-10-22; every actual target ending length is retained.
       takes_from:
         mass: commune-abbatum
         citation: Commune Abbatum
@@ -54410,32 +54669,35 @@ sections:
         text: |
           Deus, qui nos conspicis ex nostra infirmitate deficere: ad amorem tuum nos
           misericorditer per Sanctorum tuorum exempla restaura. Per Dominum nostrum.
-      - name: Secret
+      - name: "Secret"
         source: composed
-        incipit: Mystica nobis, Domine
-        notes: 'The controlling 1962 Missal prints this proper oration under the day, marked P: artifact p. 768, printed
-          p. 687, no. 3862. Its exact wording has not been supplied here.'
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      - name: Postcommunion
+        incipit: "Mystica nobis, Domine"
+        notes: >-
+          PDF 768 / printed 687, unit 3862 P, left middle. Complete own petition independently image-
+          collated with Pustet PDF 646 / printed 560, left middle. whole-petition match; no saint blank.
+          Historical conclusion "Per Dominum."; actual target ending "Per Dominum.". Independent
+          historical Latin rights under17 U.S.C.103(b); no appointment/form change.
+        text: |
+          Mystica nobis, Domine, prosit oblatio: quae nos et a reatibus nostris
+          expediat, et perpetua salvatione confirmet. Per Dominum.
+      - name: "Postcommunion"
         source: composed
-        incipit: Quaesumus, omnipotens Deus
-        notes: 'The controlling 1962 Missal prints this proper oration under the day, marked P: artifact p. 768, printed
-          p. 687, no. 3863. Its exact wording has not been supplied here.'
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        incipit: "Quaesumus, omnipotens Deus"
+        notes: >-
+          PDF 768 / printed 687, unit 3863 P, left middle-lower. Complete own petition independently
+          image-collated with Pustet PDF 646 / printed 560, left middle-lower. whole-petition match;
+          target conclusion length; no saint blank. Historical conclusion "Per Dominum."; actual target
+          ending "Per Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in
+          unitate.". Independent historical Latin rights under17 U.S.C.103(b); no appointment/form
+          change.
+        text: |
+          Quaesumus, omnipotens Deus: ut reatus nostros munera sacrata
+          purificent, et recte vivendi nobis operentur effectum. Per Dominum
+          nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+          unitate.
       notes: The controlling 1962 Missal appoints the Common named below with the locally printed proper orations retained.
         The proper orations marked P are represented under this day; orations marked C continue to resolve from the Common.
-        The preexisting Collect body is preserved. Newly represented orations carry an explicit unavailable-body disposition
-        pending exact wording proof.
+        The preexisting Collect body is preserved. The selected formerly unavailable proper orations now have independent Pustet1862 whole-image proof and exact bounded Latin bindings, dated2026-10-22; every actual target ending length is retained.
       takes_from:
         mass: commune-summorum-pontificum
         common_sets:
@@ -55171,26 +55433,31 @@ sections:
           tuarum Ursulae et Sociarum ejus palmas incessabili devotione venerari: ut,
           quas digna mente non possumus celebrare, humilibus saltem frequentemus
           obsequiis. Per Dominum.
-      - name: Secret
+      - name: "Secret"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 775 / printed p. 694, marginal no. 3921, marked P, column L. The
-          body has not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      - name: Postcommunion
+        notes: >-
+          1962 printed p. 694, no. 3921, column L, marked P; artifact PDF p. 775. Complete own prayer
+          collated on 2026-10-22 with Pustet 1862 printed p. 563, R, Secreta; original PDF p. 649;
+          retained extract p. 5. Preexisting petition under 17 U.S.C. 103(b); project j orthography and
+          actual target conclusion length. Historical grouped commemoration has no conclusion printed
+          here before Tertia Secreta. Target prints Per Dominum. Pointing/capitals/accents/ligatures.
+        text: |
+          Intende, quaesumus, Domine, munera altaribus tuis pro sanctarum
+          Virginum et Martyrum tuarum Ursulae et Sociarum ejus festivitate
+          proposita; ut, sicut per haec beata mysteria illis gloriam contulisti;
+          ita nobis indulgentiam largiaris. Per Dominum.
+      - name: "Postcommunion"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 775 / printed p. 694, marginal no. 3922, marked P, column R. The
-          body has not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          1962 printed p. 694, no. 3922, column R, marked P; artifact PDF p. 775. Whole own prayer
+          collated on 2026-10-22 with Mame Tours 1922, editio quarta iuxta typicam printed p. 741,
+          column R top; original PDF p. 855; retained extract p. 1. Preexisting petition under 17 U.S.C.
+          103(b); project j and actual target conclusion length. ejus/eius; accents/ligatures/pointing
+          Target prints Per Dominum nostrum Iesum Christum.; historical prints Per Dominum.
+        text: |
+          Praesta nobis, quaesumus, Domine: intercedentibus sanctis Virginibus
+          et Martyribus tuis Ursula et Sociabus ejus; ut, quod ore contingimus,
+          pura mente capiamus. Per Dominum nostrum Jesum Christum.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry carries the directive
         rather than a copy. Read on 2026-08-08 from the embedded text layer of the CMAA facsimile at the day''s own heading,
         joined to the Common by the BRACKETED NUMBER the Missal itself prints -- Commune Virginum, Missa I: Loquebar de
@@ -56649,16 +56916,18 @@ sections:
               chapter: 44
               verse: 14
           ref: Sirach 44:14
-      - name: Collect
+      - name: "Collect"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 792 / printed p. 711, marginal no. 4035, column L. The body has
-          not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          1962 printed p. 711, no. 4035, column L; artifact PDF p. 792. Complete own prayer collated on
+          2026-10-22 with Pustet 1862 printed p. 571, R, Pro SS. Vitale et Agricola Martyribus. Oratio;
+          original PDF p. 657; retained extract p. 7. Preexisting petition under 17 U.S.C. 103(b);
+          project j orthography and actual target conclusion length. Historical adjuvemur; target
+          adiuvemur. Pointing/capitals/accents/ligatures.
+        text: |
+          Praesta, quaesumus, omnipotens Deus: ut, qui sanctorum Martyrum tuorum
+          Vitalis et Agricolae solemnia colimus, eorum apud te intercessionibus
+          adjuvemur. Per Dominum.
       - name: Epistle
         source: scripture
         verses:
@@ -56719,16 +56988,19 @@ sections:
               chapter: 149
               verse: 6
           ref: Psalms 149:5-6
-      - name: Secret
+      - name: "Secret"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 792 / printed p. 711, marginal no. 4041, column R. The body has
-          not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          1962 printed p. 711, no. 4041, column R; artifact PDF p. 792. Complete own prayer collated on
+          2026-10-22 with Pustet 1862 printed p. 572, L, Pro sanctis Martyribus. Secreta; original PDF
+          p. 658; retained extract p. 8. Preexisting petition under 17 U.S.C. 103(b); project j
+          orthography and actual target conclusion length. Historical Per Dominum. versus target
+          expanded conclusion ending in unitate. Pointing/capitals/accents/ligatures.
+        text: |
+          Oblatis, quaesumus, Domine, placare muneribus: et, intercedentibus
+          sanctis Martyribus tuis Vitale et Agricola, a cunctis nos defende
+          periculis. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum
+          vivit et regnat in unitate.
       - name: Communion
         source: scripture
         verses:
@@ -56741,16 +57013,20 @@ sections:
               chapter: 12
               verse: 4
           ref: Luke 12:4
-      - name: Postcommunion
+      - name: "Postcommunion"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 792 / printed p. 711, marginal no. 4043, column R. The body has
-          not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          1962 printed p. 711, no. 4043, column R; artifact PDF p. 792. Complete own prayer collated on
+          2026-10-22 with Pustet 1862 printed p. 572, L bottom to R top, Pro sanctis Martyribus.
+          Postcommunio; original PDF p. 658; retained extract p. 8. Preexisting petition under 17 U.S.C.
+          103(b); project j orthography and actual target conclusion length. Historical coelestis;
+          target caelestis. Historical Per Dominum.; target expanded conclusion ending in unitate.
+          Pointing/capitals/accents/ligatures.
+        text: |
+          Haec nos communio, Domine, purget a crimine: et, intercedentibus
+          sanctis Martyribus tuis Vitale et Agricola, caelestis remedii faciat
+          esse consortes. Per Dominum nostrum Jesum Christum, Filium tuum: Qui
+          tecum vivit et regnat in unitate.
       notes: 'Read on 2026-08-08 from the embedded text layer of the CMAA facsimile of the controlling edition, at this
         day''s own heading, and nothing has been visually collated. Only the printed scripture citations are recorded:
         the facsimile sets each oration under a drop capital that the text layer renders as wreckage, so the orations
@@ -56928,34 +57204,25 @@ sections:
       date: 11-09
       rank: II
       kind: sanctoral
-      notes: 'The Missal prints no formulary and no oration for this day. It prints a
-        directive and nothing else - Missa Terribilis, de Communi Dedicationis
-        ecclesiae [39]. Et fit commemoratio S. Theodori Mart., ut in Missa sequenti;
-        ac dicitur Credo - and this entry carries the directive. The Collect
-        placeholder this entry used to hold asserted a proper oration the book does
-        not print; it is removed, and its removal is a reading and not an omission.
-        Read on 2026-08-21 from the page image of the CMAA facsimile of the
-        controlling edition at printed p. 713 (digital p. 794), no optical text layer
-        supplying any reading, and corroborated in the tracked public-domain Lasance
-        New Roman Missal, Benziger revised-1945 edition in its ca. 1955-56 printing,
-        at printed p. 1282 (Internet Archive delivery locator
-        fr-lasance-missal-1937, locator mislabelled; leaf n1282), which likewise sends the day to the Mass
-        Terribilis of the Dedication of a Church with a commemoration of S. Theodore
-        and prints no oration of its own. TWO THINGS THIS ENTRY CANNOT SAY. The
-        Common it points at prints three contextual options - two anniversary
-        Secrets distinguished by place, and the set In ipso die Dedicationis - and
-        the directive names none. Its `common_sets` disposition therefore records
-        all three as unresolved candidates and the resolver appoints none of their
-        governed orations rather than emitting their union. And the
-        Credo and the commemoration are rubrics of the day that this schema has
-        nowhere to put.'
+      notes: 'Annual anniversary, not the Mass in the consecration rite: controlling 1962 printed p.713/PDF794 appoints
+        Missa Terribilis, Common [39]. Rechecked at 200/400 dpi on 2026-10-22 with Common headings 1 In anniversario (Collect4461
+        PDF847, Postcommunion4474 PDF848) and 2 In ipso die Dedicationis (PDF847-849), including the actual-consecration
+        Mass rubric. The annual occasion selects only anniversary Collect/Postcommunion. Secret4470/4471 depends on inside/outside
+        church and remains unresolved. No church identity, actual-dedication occasion default, ExtraPaschal branch or
+        chant fact is inferred. The day''s Theodore commemoration and Credo remain printed rubrics, not new appointments
+        in this schema.'
       takes_from:
         mass: commune-dedicationis-ecclesiae
         common_sets:
-          orations:
+          occasion-orations:
+            state: selected
+            option: anniversary
+          contextual-secret:
             state: unresolved
-            candidates: [anniversary-in-church, anniversary-outside-church, dedication-day]
-        citation: 'Missa Terribilis, de Communi Dedicationis ecclesiae [39]'
+            candidates:
+            - anniversary-in-church
+            - anniversary-outside-church
+        citation: Missa Terribilis, de Communi Dedicationis ecclesiae [39]
     - key: comm-s-theodori-martyris
       name: Comm. S. Theodori Martyris
       registry: 1962-11-09-comm
@@ -57102,16 +57369,18 @@ sections:
               chapter: 33
               verse: 18
           ref: Psalms 33:18
-      - name: Collect
+      - name: "Collect"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 795 / printed p. 714, marginal no. 4064, column R. The body has
-          not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          1962 printed p. 714, no. 4064, column R; artifact PDF p. 795. Complete own prayer collated on
+          2026-10-22 with Pustet 1862 printed p. 574, R, Oratio; original PDF p. 660; retained extract
+          p. 9. Preexisting petition under 17 U.S.C. 103(b); project j orthography and actual target
+          conclusion length. Historical Per Dominum nostrum.; target Per Dominum.
+          Pointing/capitals/accents/ligatures.
+        text: |
+          Fac nos, quaesumus, Domine, sanctorum Martyrum tuorum Tryphonis,
+          Respicii et Nymphae semper festa sectari: quorum suffragiis,
+          protectionis tuae dona sentiamus. Per Dominum.
       - name: Epistle
         source: scripture
         verses:
@@ -57181,16 +57450,17 @@ sections:
               chapter: 31
               verse: 11
           ref: Psalms 31:11
-      - name: Secret
+      - name: "Secret"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 796 / printed p. 715, marginal no. 4070, column L. The body has
-          not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          1962 printed p. 715, no. 4070, column L; artifact PDF p. 796. Complete own prayer collated on
+          2026-10-22 with Pustet 1862 printed p. 575, L, Secreta; original PDF p. 661; retained extract
+          p. 10. Preexisting petition under 17 U.S.C. 103(b); project j orthography and actual target
+          conclusion length. Historical justorum; target iustorum. Pointing/capitals/accents/ligatures.
+        text: |
+          Munera tibi, Domine, nostrae devotionis offerimus: quae et pro tuorum
+          tibi grata sint honore justorum, et nobis salutaria, te miserante,
+          reddantur. Per Dominum.
       - name: Communion
         source: scripture
         verses:
@@ -57203,16 +57473,19 @@ sections:
               chapter: 12
               verse: 50
           ref: Matthew 12:50
-      - name: Postcommunion
+      - name: "Postcommunion"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 796 / printed p. 715, marginal no. 4072, column R. The body has
-          not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          1962 printed p. 715, no. 4072, column R; artifact PDF p. 796. Complete own prayer collated on
+          2026-10-22 with Pustet 1862 printed p. 575, L, Postcommunio; original PDF p. 661; retained
+          extract p. 10. Preexisting petition under 17 U.S.C. 103(b); project j orthography and actual
+          target conclusion length. Historical Per Dominum.; target expanded conclusion ending in
+          unitate. Pointing/capitals/accents/ligatures.
+        text: |
+          Praesta nobis, quaesumus, Domine: intercedentibus sanctis Martyribus
+          tuis Tryphone, Respicio et Nympha; ut, quod ore contingimus, pura
+          mente capiamus. Per Dominum nostrum Jesum Christum, Filium tuum: Qui
+          tecum vivit et regnat in unitate.
       notes: 'Read on 2026-08-08 from the embedded text layer of the CMAA facsimile of the controlling edition, at this
         day''s own heading, and nothing has been visually collated. Only the printed scripture citations are recorded:
         the facsimile sets each oration under a drop capital that the text layer renders as wreckage, so the orations
@@ -57419,26 +57692,29 @@ sections:
           Praesta, quaesumus, omnipotens Deus: ut, qui beati Mennae Martyris tui
           natalicia colimus, intercessione ejus in tui nominis amore roboremur. Per
           Dominum nostrum.
-      - name: Secret
+      - name: "Secret"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 798 / printed p. 717, marginal no. 4088, marked P, column L. The
-          body has not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      - name: Postcommunion
+        notes: >-
+          1962 printed p. 717, no. 4088, column L, marked P; artifact PDF p. 798. Complete own prayer
+          collated on 2026-10-22 with Pustet 1862 printed p. 576, L, Secreta; original PDF p. 662;
+          retained extract p. 11. Preexisting petition under 17 U.S.C. 103(b); project j orthography and
+          actual target conclusion length. Historical coelestibus; target caelestibus.
+          Pointing/capitals/accents/ligatures.
+        text: |
+          Muneribus nostris, quaesumus, Domine, precibusque susceptis: et
+          caelestibus nos munda mysteriis, et clementer exaudi. Per Dominum.
+      - name: "Postcommunion"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 798 / printed p. 717, marginal no. 4089, marked P, column L. The
-          body has not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          1962 printed p. 717, no. 4089, column L, marked P; artifact PDF p. 798. Complete own prayer
+          collated on 2026-10-22 with Pustet 1862 printed p. 576, L-to-R, Postcommunio; original PDF p.
+          662; retained extract p. 11. Preexisting petition under 17 U.S.C. 103(b); project j
+          orthography and actual target conclusion length. Pointing/capitals/accents/ligatures only;
+          historical text crosses from bottom L to top R on the same page.
+        text: |
+          Da, quaesumus, Domine Deus noster: ut, sicut tuorum commemoratione
+          Sanctorum, temporali gratulamur officio; ita perpetuo laetemur
+          aspectu. Per Dominum.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry carries the directive
         rather than a copy. Read on 2026-08-08 from the embedded text layer of the CMAA facsimile at the day''s own heading,
         joined to the Common by the BRACKETED NUMBER the Missal itself prints -- Commune unius Martyris extra tempus paschale,
@@ -57910,17 +58186,23 @@ sections:
       date: 11-18
       rank: III
       kind: sanctoral
-      notes: The Missal gives this day the whole Mass of the Common of the Dedication of
-        a church and prints no oration of its own, adding only Et non dicitur Credo. The
-        pointer was read on 2026-08-01 from the page image of the CMAA facsimile of the
-        controlling edition at printed p. 721 (digital p. 802), rendered at 140 dpi from
-        the tracked PDF whose sha256 is 648fdb8f.
+      notes: 'Annual anniversary, not the Mass in the consecration rite: controlling 1962 printed p.721/PDF802 appoints
+        Missa Terribilis, Common [39]. Rechecked at 200/400 dpi on 2026-10-22 with Common headings 1 In anniversario (Collect4461
+        PDF847, Postcommunion4474 PDF848) and 2 In ipso die Dedicationis (PDF847-849), including the actual-consecration
+        Mass rubric. The annual occasion selects only anniversary Collect/Postcommunion. Secret4470/4471 depends on inside/outside
+        church and remains unresolved. No church identity, actual-dedication occasion default, ExtraPaschal branch or
+        chant fact is inferred. The printed non-Credo rubric is unchanged.'
       takes_from:
         mass: commune-dedicationis-ecclesiae
         common_sets:
-          orations:
+          occasion-orations:
+            state: selected
+            option: anniversary
+          contextual-secret:
             state: unresolved
-            candidates: [anniversary-in-church, anniversary-outside-church, dedication-day]
+            candidates:
+            - anniversary-in-church
+            - anniversary-outside-church
         citation: Missa Terribilis, de Communi Dedicationis ecclesiae [39]
     - key: s-elisabeth-viduae
       name: S. Elisabeth Viduae
@@ -58300,26 +58582,30 @@ sections:
           Praesta, quaesumus, omnipotens Deus: ut, beatae Felicitatis Martyris tuae
           solemnia recensentes, meritis ipsius protegamur et precibus. Per Dominum
           nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
-      - name: Secret
+      - name: "Secret"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 806 / printed p. 725, marginal no. 4158, marked P, column R. The
-          body has not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      - name: Postcommunion
+        notes: >-
+          1962 printed p. 725, no. 4158, column R, marked P; artifact PDF p. 806. Complete own prayer
+          collated on 2026-10-22 with Pustet 1862 printed p. 582, R, Pro S. Felicitate Mart. Secreta;
+          original PDF p. 668; retained extract p. 12. Preexisting petition under 17 U.S.C. 103(b);
+          project j orthography and actual target conclusion length. Historical cujus; target cuius.
+          Pointing/capitals/accents/ligatures.
+        text: |
+          Vota populi tui, Domine, propitiatus intende: et, cujus nos tribuis
+          solemnia celebrare, fac gaudere suffragiis. Per Dominum.
+      - name: "Postcommunion"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 806 / printed p. 725, marginal no. 4159, marked P, column R. The
-          body has not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          1962 printed p. 725, no. 4159, column R, marked P; artifact PDF p. 806. Complete own prayer
+          collated on 2026-10-22 with Pustet 1862 printed p. 583, L, Pro S. Felicitate Mart.
+          Postcommunio; original PDF p. 669; retained extract p. 13. Preexisting petition under 17
+          U.S.C. 103(b); project j orthography and actual target conclusion length. Historical Per
+          Dominum.; target own commemoration unit 4159 prints Per Dominum nostrum. Do not copy unit
+          4156's shorter conclusion. Pointing/capitals/accents/ligatures.
+        text: |
+          Supplices te rogamus, omnipotens Deus: ut, intercedentibus Sanctis
+          tuis, et tua in nobis dona multiplices, et tempora nostra disponas.
+          Per Dominum nostrum.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry carries the directive
         rather than a copy. Read on 2026-08-08 from the embedded text layer of the CMAA facsimile at the day''s own heading,
         joined to the Common by the BRACKETED NUMBER the Missal itself prints -- Commune non Virginum, Missa I: Me exspectaverunt
@@ -58348,12 +58634,20 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        text: |
+          Deus, qui sanctum Joannem Confessorem tuum atque Doctorem perfectae
+          sui abnegationis et Crucis amatorem eximium effecisti: concede; ut,
+          ejus imitationi jugiter inhaerentes, gloriam assequamur aeternam. Per
+          Dominum nostrum.
+        notes: >-
+          1962 target PDF 806 / printed 725; right bottom; unit 4160 P. Whole independent historical
+          Latin: PDF 1208 / printed 1138; left; 24.Nov. Der hl.Johannes vom Kreuz, Bekenner und
+          Kirchenlehrer; Oratio. line-end hyphenation, stress, ligatures, case and pointing
+          Joannem/Ioannem, ejus/eius, jugiter/iugiter are declared j/i orthography Named November24
+          Collect only. Historical rank/Creed/commemorations/last Gospel do not establish1962
+          appointments, other Doctor/Pope clauses or another form. Continuous core1138 belongs to
+          independently printed Herder1929 book; no later supplement or handwritten Doctor insertion is
+          used. Historical ending "Per Dominum nostrum."; actual target ending "Per Dominum nostrum.".
       notes: The printed Common of Doctors direction is retained with the non-pontifical prayer form established by the
         C2 marks on the local Secret and Postcommunion (artifact pp. 806–807, printed pp. 725–726, units 4162 and 4164).
         The own Collect remains separately represented. Exact body availability is recorded on each source-owned node.
@@ -58387,26 +58681,31 @@ sections:
           nos esse cognoscimus, beati Chrysogoni Martyris tui intercessione liberemur.
           Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
           in unitate.
-      - name: Secret
+      - name: "Secret"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 807 / printed p. 726, marginal no. 4163, column L. The body has
-          not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      - name: Postcommunion
+        notes: >-
+          1962 printed p. 726, no. 4163, column L; artifact PDF p. 807. Complete own prayer collated on
+          2026-10-22 with Pustet 1862 printed p. 584, R, Secreta in S. Chrysogoni Mart.; original PDF p.
+          670; retained extract p. 14. Preexisting petition under 17 U.S.C. 103(b); project j
+          orthography and actual target conclusion length. Historical standalone saint's Secret p.584
+          prints Per Dominum.; the parallel Pro S. Chrysogono on historical p.583 prints Per Dominum
+          nostrum. Both complete petitions agree. Target prints Per Dominum nostrum.
+          Pointing/capitals/accents/ligatures.
+        text: |
+          Oblatis, quaesumus, Domine, placare muneribus: et, intercedente beato
+          Chrysogono Martyre tuo, a cunctis nos defende periculis. Per Dominum
+          nostrum.
+      - name: "Postcommunion"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 807 / printed p. 726, marginal no. 4165, column L. The body has
-          not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          1962 printed p. 726, no. 4165, column L; artifact PDF p. 807. Complete own prayer collated on
+          2026-10-22 with Pustet 1862 printed p. 584, R, Postcommunio in S. Chrysogoni Mart.; original
+          PDF p. 670; retained extract p. 14. Preexisting petition under 17 U.S.C. 103(b); project j
+          orthography and actual target conclusion length. Pointing/capitals/accents/ligatures only;
+          full duplicate also appears in historical p.584 L under Pro Sancto Chrysogono.
+        text: |
+          Tui, Domine, perceptione sacramenti, et a nostris mundemur occultis,
+          et ab hostium liberemur insidiis. Per Dominum.
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry carries the directive
         rather than a copy. Read on 2026-08-08 from the embedded text layer of the CMAA facsimile at the day''s own heading,
         joined to the Common by the BRACKETED NUMBER the Missal itself prints -- Commune unius Martyris extra tempus paschale,
@@ -58554,53 +58853,61 @@ sections:
       rank: Comm.
       kind: sanctoral
       propers:
-      - name: Collect
+      - name: "Collect"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-      - name: Secret
-        incipit: Munera, Domine, tibi dicata sanctifica
+        notes: >-
+          1962 printed p. Proprium Sanctorum opening, unnumbered, no. 1809, column L, marked P; artifact
+          PDF p. 509. Complete own prayer collated on 2026-10-22 with Pustet 1862 printed p. 362
+          (opening leaf, number suppressed), R, Pro commemor. S. Saturnini Martyris. Oratio in Vigilia
+          S. Andreae; original PDF p. 448; retained extract p. 1. Preexisting petition under 17 U.S.C.
+          103(b); project j orthography and actual target conclusion length. Historical natalitio;
+          target natalicio: received spelling of the same word. Historical ejus/adjuvari; target
+          eius/adiuvari. Pointing/capitals/accents/ligatures.
+        text: |
+          Deus, qui nos beati Saturnini Martyris tui concedis natalicio perfrui:
+          ejus nos tribue meritis adjuvari. Per Dominum.
+      - name: "Secret"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-      - name: Postcommunion
-        incipit: Sanctificet nos, quaesumus Domine
+        incipit: "Munera, Domine, tibi dicata sanctifica"
+        notes: >-
+          1962 printed p. Proprium Sanctorum opening, unnumbered, no. 1810, column R, marked P; artifact
+          PDF p. 509. Complete own prayer collated on 2026-10-22 with Pustet 1862 printed p. 364, R, Pro
+          S. Saturnino. Secreta in Vigilia S. Andreae; original PDF p. 450; retained extract p. 2.
+          Preexisting petition under 17 U.S.C. 103(b); project j orthography and actual target
+          conclusion length. Pointing/capitals/accents/ligatures only.
+        text: |
+          Munera, Domine, tibi dicata sanctifica: et, intercedente beato
+          Saturnino Martyre tuo, per haec eadem nos placatus intende. Per
+          Dominum.
+      - name: "Postcommunion"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        incipit: "Sanctificet nos, quaesumus Domine"
+        notes: >-
+          1962 printed p. Proprium Sanctorum opening, unnumbered, no. 1811, column R, marked P; artifact
+          PDF p. 509. Complete own prayer collated on 2026-10-22 with Pustet 1862 printed p. 364/365, R
+          bottom to L top, Pro sancto Saturnino. Postcommunio in Vigilia S. Andreae; original PDF p.
+          450/451; retained extract p. 2/3. Preexisting petition under 17 U.S.C. 103(b); project j
+          orthography and actual target conclusion length. Historical short Per Dominum. appears at the
+          head of p.365. Target expanded conclusion ends in unitate.
+          Pointing/capitals/accents/ligatures.
+        text: |
+          Sanctificet nos, quaesumus, Domine, tui perceptio sacramenti: et
+          intercessione Sanctorum tuorum tibi reddat acceptos. Per Dominum
+          nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+          unitate.
       takes_from:
         mass: commune-unius-martyris-4
         citation: Commune Sanctorum [8]
-      notes: 'The day''s identity and rank were read on 2026-08-08 from the embedded text layer of the CMAA
-        facsimile of the controlling edition, at this day''s own heading, and nothing in this entry has been
-        visually collated against that facsimile. That text layer cannot supply an oration -- it sets each under
-        a drop capital and renders it as wreckage -- so no oration of the controlling 1962 edition has been read
-        for this day. All three orations carried here are transcribed instead from Internet Archive item
-        bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862 printing the source library already tracks as public
-        domain, read from its PAGE IMAGES and not from any optical text layer -- that printing''s own OCR
-        corrupts roughly one word in three. The Collect was read on 2026-08-08 from leaf n447 (printed page 362)
-        and re-verified against that image on 2026-08-19; the Secret was read on 2026-08-19 from leaf n449
-        (printed page 364), under the rubric "Pro S. Saturnino. Secreta."; the Postcommunion on 2026-08-19
-        across leaves n449 and n450 (printed pages 364 and 365), under the rubric "Pro sancto Saturnino.
-        Postcommunio.", beginning in the right column of page 364 and completing at the head of page 365. The
-        heading verified on leaf n447 is "PROPRIUM MISSARUM DE SANCTIS. Festa Novembris. Die xxix. In Vigilia S.
-        Andreae, Apostoli ... Pro commemor. S. Saturnini Martyris" -- leaf n447 being the opening leaf of that
-        printing''s Proprium de Sanctis, which opens at 29 November. The Secret and the Postcommunion stand
-        inside its Mass of the Vigil of St Andrew. The rest of the formulary is taken from the Common named in
-        takes_from. The wording of the orations is the 1862''s; the 1962 Missal is not quoted for any of it, and
-        the two books are not asserted to agree, and this witness is a pre-1955 printing whose arrangement is
+      notes: >-
+        Three own orations rechecked on 2026-10-22 on the controlling 1962 page images (artifact PDF
+        p. 509, Proprium Sanctorum opening; nos. 1809-1811, marked P), and matched word for word to
+        public-domain Pustet Ratisbon 1862 printed pp. 362, 364-365 (original PDF pp. 448, 450-451).
+        The historical Secret and Postcommunion occur inside the Vigil of St Andrew; the latter's
+        final acceptos and Per Dominum were read at the head of p.365. Project j, target natalicio
+        against historical natalitio, pointing and target conclusion length are declared
+        transformations, not new petitions. The three newly collated own bodies replace the
+        unavailable slots and override Common prayers. The existing Common referral is unchanged; no
+        English or whole-formulary completion is asserted.
         not that of 1962.'
     - key: s-andreae-apostoli
       name: S. Andreae Apostoli
@@ -58750,15 +59057,13 @@ sections:
       date: 12-02
       rank: III
       kind: sanctoral
-      notes: >-
-        The controlling edition at artifact PDF p. 511, printed p. 430,
-        appoints the second Virgin Mass [30] except for the following Collect.
-        Its printed Secret 1824 and Postcommunion 1825 are classified C but
-        expressly name Bibiana; their exact dated appointments are represented
-        locally, separately from Common wording origin. Own Collect remains
-        unchanged. The additional rows carry typed unavailable wording pending
-        a source-owned publication binding; no body or translation is supplied
-        by this appointment collation.
+      notes: Own Collect, Secret and Postcommunion are now whole-prayer page-image collations, dated 2026-10-22, of 1962
+        printed p. 430, no. 1823, column R, marked P; artifact PDF p. 511; 1962 printed p. 430, no. 1824, column R, marked
+        C; artifact PDF p. 511; 1962 printed p. 430, no. 1825, column R, marked C; artifact PDF p. 511, independently
+        witnessed in public-domain Pustet Ratisbon 1862. Each exact body, historical locus, declared spelling/pointing
+        and actual conclusion length has its own bounded projection/provenance binding. Existing Common referrals, other
+        appointments and prior scripture citations are unchanged. No English or whole-formulary completion is asserted.
+        Secret/Postcommunion are marked C and explicitly name Bibiana; Pustet Common N. blanks are filled only with Bibianae/Bibiana.
       takes_from:
         mass: commune-virginum-2
         common_sets:
@@ -58768,42 +59073,43 @@ sections:
         citation: Missa Me exspectaverunt, de Communi Virginum II loco [30], praeter
           orationem sequentem
       propers:
-      - name: Collect
-        incipit: Deus, omnium largitor bonorum
+      - name: "Collect"
         source: composed
-        notes: Printed p. 430, no. 1823, marked P.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-      - name: Secret
+        incipit: "Deus, omnium largitor bonorum"
+        notes: >-
+          1962 printed p. 430, no. 1823, column R, marked P; artifact PDF p. 511. Whole own prayer
+          collated on 2026-10-22 with Pustet Ratisbon 1862 printed p. 366, column R; original PDF p.
+          452; retained extract p. 8. Preexisting petition under 17 U.S.C. 103(b); project j and actual
+          target conclusion length. conjunxisti/coniunxisti, conjunge/coniunge, ejus/eius; pointing
+        text: |
+          Deus, omnium largitor bonorum, qui in famula tua Bibiana cum
+          virginitatis flore martyrii palmam conjunxisti: mentes nostras ejus
+          intercessione tibi caritate conjunge; ut, amotis periculis, praemia
+          consequamur aeterna. Per Dominum.
+      - name: "Secret"
         source: composed
         notes: >-
-          Direct named appointment, printed p. 430, no. 1824, marked C;
-          artifact PDF p. 511. Classification C describes the source origin,
-          not the speaker or permission to publish its wording. See
-          src/sources/inventories/roman-1962-named-oration-appointment-collation-v1.toml.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      - name: Postcommunion
+          1962 printed p. 430, no. 1824, column R, marked C; artifact PDF p. 511. Whole own prayer
+          collated on 2026-10-22 with Pustet Ratisbon 1862 printed p. [29], column L; original PDF p.
+          699; retained extract p. 10. Preexisting petition under 17 U.S.C. 103(b); project j and actual
+          target conclusion length. Printed rubrical blank N. filled with Bibianae as explicitly named
+          by target1824; no other word changed. Accents/pointing
+        text: |
+          Hostias tibi, Domine, beatae Bibianae Virginis et Martyris tuae
+          dicatas meritis, benignus assume: et ad perpetuum nobis tribue
+          provenire subsidium. Per Dominum.
+      - name: "Postcommunion"
         source: composed
         notes: >-
-          Direct named appointment, printed p. 430, no. 1825, marked C;
-          artifact PDF p. 511. Classification C describes the source origin,
-          not the speaker or permission to publish its wording. See
-          src/sources/inventories/roman-1962-named-oration-appointment-collation-v1.toml.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+          1962 printed p. 430, no. 1825, column R, marked C; artifact PDF p. 511. Whole own prayer
+          collated on 2026-10-22 with Pustet Ratisbon 1862 printed p. [29], column L; original PDF p.
+          699; retained extract p. 10. Preexisting petition under 17 U.S.C. 103(b); project j and actual
+          target conclusion length. Printed rubrical blank N. filled with Bibiana as explicitly named by
+          target1825; no other word changed. ejus/eius, accents/pointing
+        text: |
+          Divini muneris largitate satiati, quaesumus, Domine Deus noster: ut,
+          intercedente beata Bibiana Virgine et Martyre tua, in ejus semper
+          participatione vivamus. Per Dominum.
     - key: s-francisci-xaverii-confessoris
       name: S. Francisci Xaverii Confessoris
       registry: '1962-12-03'
@@ -59146,52 +59452,55 @@ sections:
       rank: Comm.
       kind: sanctoral
       propers:
-      - name: Collect
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-      - name: Secret
+      - name: "Collect"
         source: composed
         notes: >-
-          Direct named appointment, printed p. 433, no. 1850, marked P;
-          artifact PDF p. 514. Classification P describes the source origin,
-          not the speaker or permission to publish its wording. See
-          src/sources/inventories/roman-1962-named-oration-appointment-collation-v1.toml.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      - name: Postcommunion
+          1962 printed p. 433, no. 1849, column R, marked C; artifact PDF p. 514. Whole own prayer
+          collated on 2026-10-22 with Pustet Ratisbon 1862 printed p. 368, column R; original PDF p.
+          454; retained extract p. 9. Preexisting petition under 17 U.S.C. 103(b); project j and actual
+          target conclusion length. ejus/eius; pointing Historical Per Dominum.; target Per Dominum
+          nostrum.
+        text: |
+          Intercessio nos, quaesumus, Domine, beati Sabbae Abbatis commendet:
+          ut, quod nostris meritis non valemus, ejus patrocinio assequamur. Per
+          Dominum nostrum.
+      - name: "Secret"
         source: composed
         notes: >-
-          Direct named appointment, printed p. 434, no. 1851, marked P;
-          artifact PDF p. 515. Classification P describes the source origin,
-          not the speaker or permission to publish its wording. See
-          src/sources/inventories/roman-1962-named-oration-appointment-collation-v1.toml.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+          1962 printed p. 433, no. 1850, column R, marked P; artifact PDF p. 514. Whole own prayer
+          collated on 2026-10-22 with Pustet Ratisbon 1862 printed p. 368, column R; original PDF p.
+          454; retained extract p. 9. Preexisting petition under 17 U.S.C. 103(b); project j and actual
+          target conclusion length. Pointing Historical Per Dominum.; target explicitly prints Per
+          Dominum nostrum Iesum Christum, Filium tuum: Qui tecum. No vivit or longer ending may be
+          invented.
+        text: |
+          Sacris altaribus, Domine, hostias superpositas sanctus Sabbas,
+          quaesumus, in salutem nobis provenire deposcat. Per Dominum nostrum
+          Jesum Christum, Filium tuum: Qui tecum.
+      - name: "Postcommunion"
+        source: composed
+        notes: >-
+          1962 printed p. 434, no. 1851, column L, marked P; artifact PDF p. 515. Whole own prayer
+          collated on 2026-10-22 with Pustet Ratisbon 1862 printed p. 368, column R; original PDF p.
+          454; retained extract p. 9. Preexisting petition under 17 U.S.C. 103(b); project j and actual
+          target conclusion length. ejus/eius; pointing Historical Per Dominum nostrum.; target Per
+          Dominum.
+        text: |
+          Protegat nos, Domine, cum tui perceptione sacramenti beatus Sabbas,
+          pro nobis intercedendo: ut et conversationis ejus experiamur insignia,
+          et intercessionis percipiamus suffragia. Per Dominum.
       takes_from:
         mass: commune-abbatum
         citation: Missa Os iusti, de Communi Abbatum [27], cum orationibus ut
           infra
-      notes: >-
-        The controlling edition at artifact PDF pp. 514-515, printed pp.
-        433-434, appoints Missa Os iusti from the Common of Abbots [27], with
-        orations printed below. The existing own Collect 1849 is unchanged;
-        Secret 1850 and Postcommunion 1851 are printed named appointments,
-        classified P, and do not retain the Common wording's Abbas designation.
-        Their rows carry typed unavailable wording; no body, translation, or
-        rights determination is supplied by this appointment collation.
+      notes: Own Collect, Secret and Postcommunion are now whole-prayer page-image collations, dated 2026-10-22, of 1962
+        printed p. 433, no. 1849, column R, marked C; artifact PDF p. 514; 1962 printed p. 433, no. 1850, column R, marked
+        P; artifact PDF p. 514; 1962 printed p. 434, no. 1851, column L, marked P; artifact PDF p. 515, independently
+        witnessed in public-domain Pustet Ratisbon 1862. Each exact body, historical locus, declared spelling/pointing
+        and actual conclusion length has its own bounded projection/provenance binding. Existing Common referrals, other
+        appointments and prior scripture citations are unchanged. No English or whole-formulary completion is asserted.
+        Secret/Postcommunion are marked P and do not add the Common's Abbas designation; the Secret stops exactly at Qui
+        tecum.
     - key: s-nicolai-episcopi-confessoris
       name: S. Nicolai Episcopi et Confessoris
       registry: '1962-12-06'
@@ -59933,15 +60242,19 @@ sections:
               chapter: 118
               verse: 1
           ref: Psalms 118:1
-      - name: Collect
+      - name: "Collect"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
-        notes: Missale Romanum 1962, artifact p. 104, printed p. 23, unit 152; source-appointed body; no exact publishable
-          exemplar is bound.
+        notes: >-
+          1962 printed p. 23, no. 152, column R; artifact PDF p. 104. Whole own prayer collated on
+          2026-10-22 with Pustet Ratisbon 1862 printed p. 20, column R bottom; original PDF p. 106;
+          retained extract p. 1. Preexisting petition under 17 U.S.C. 103(b); project j and actual
+          target conclusion length. natalitia/natalicia received spelling; ejus/eius, Jesum/Iesum;
+          pointing Historical ends Qui tecum vivit.; target ends Qui tecum vivit et regnat in unitate.
+        text: |
+          Da nobis, quaesumus, Domine, imitari quod colimus: ut discamus et
+          inimicos diligere; quia ejus natalicia celebramus, qui novit etiam pro
+          persecutoribus exorare Dominum nostrum Jesum Christum, Filium tuum:
+          Qui tecum vivit et regnat in unitate.
       - name: Lesson
         source: scripture
         verses:
@@ -60038,15 +60351,19 @@ sections:
               chapter: 7
               verse: 59
           ref: Acts 7:59
-      - name: Secret
+      - name: "Secret"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
-        notes: Missale Romanum 1962, artifact p. 106, printed p. 25, unit 161; source-appointed body; no exact publishable
-          exemplar is bound.
+        notes: >-
+          1962 printed p. 25, no. 161, column L; artifact PDF p. 106. Whole own prayer collated on
+          2026-10-22 with Pustet Ratisbon 1862 printed p. 21/22, column R bottom to L top; original PDF
+          p. 107/108; retained extract p. 2/3. Preexisting petition under 17 U.S.C. 103(b); project j
+          and actual target conclusion length. Pointing and j/i Historical prints Per Dominum nostrum
+          Jesum Christum.; target expands through Filium tuum: Qui tecum vivit et regnat in unitate.
+        text: |
+          Suscipe, Domine, munera pro tuorum commemoratione Sanctorum: ut, sicut
+          illos passio gloriosos effecit; ita nos devotio reddat innocuos. Per
+          Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate.
       - name: Communion
         source: scripture
         verses:
@@ -60065,15 +60382,18 @@ sections:
               chapter: 7
               verse: 60
           ref: Acts 7:56,59-60
-      - name: Postcommunion
+      - name: "Postcommunion"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
-        notes: Missale Romanum 1962, artifact p. 106, printed p. 25, unit 164; source-appointed body; no exact publishable
-          exemplar is bound.
+        notes: >-
+          1962 printed p. 25, no. 164, column L; artifact PDF p. 106. Whole own prayer collated on
+          2026-10-22 with Pustet Ratisbon 1862 printed p. 22, column L; original PDF p. 108; retained
+          extract p. 3. Preexisting petition under 17 U.S.C. 103(b); project j and actual target
+          conclusion length. Pointing Historical Per Dominum.; target expanded through in unitate.
+        text: |
+          Auxilientur nobis, Domine, sumpta mysteria: et, intercedente beato
+          Stephano Martyre tuo, sempiterna protectione confirment. Per Dominum
+          nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+          unitate.
       notes: Source appointment and order collated against the controlling 1962 page images on 2026-10-20. The post-Septuagesima
         Tract157 and Paschal alternate158 are printed in the votive branch on artifact p.105, printed p.24, and are outside
         this normal annual formulary. The own orations are units152,161,164; the distinct Nativity-octave commemoration
@@ -60100,16 +60420,18 @@ sections:
               chapter: 15
               verse: 5
           ref: Sirach 15:5
-      - name: Collect
+      - name: "Collect"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 106 / printed p. 25, marginal no. 167, column R. The body has
-          not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          1962 printed p. 25, no. 167, column R; artifact PDF p. 106. Whole own prayer collated on
+          2026-10-22 with Pustet Ratisbon 1862 printed p. 22, column L; original PDF p. 108; retained
+          extract p. 3. Preexisting petition under 17 U.S.C. 103(b); project j and actual target
+          conclusion length. Joannis/Ioannis; pointing Historical Per Dominum.; target Per Dominum
+          nostrum.
+        text: |
+          Ecclesiam tuam, Domine, benignus illustra: ut, beati Joannis Apostoli
+          tui et Evangelistae illuminata doctrinis, ad dona perveniat
+          sempiterna. Per Dominum nostrum.
       - name: Lesson
         source: scripture
         verses:
@@ -60191,16 +60513,16 @@ sections:
               chapter: 91
               verse: 13
           ref: Psalms 91:13
-      - name: Secret
+      - name: "Secret"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 107 / printed p. 26, marginal no. 176, column R. The body has
-          not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          1962 printed p. 26, no. 176, column R; artifact PDF p. 107. Whole own prayer collated on
+          2026-10-22 with Pustet Ratisbon 1862 printed p. 23, column L; original PDF p. 109; retained
+          extract p. 4. Preexisting petition under 17 U.S.C. 103(b); project j and actual target
+          conclusion length. ejus/eius, cujus/cuius; pointing
+        text: |
+          Suscipe, Domine, munera, quae in ejus tibi solemnitate deferimus,
+          cujus nos confidimus patrocinio liberari. Per Dominum.
       - name: Communion
         source: scripture
         verses:
@@ -60213,23 +60535,24 @@ sections:
               chapter: 21
               verse: 23
           ref: John 21:23
-      - name: Postcommunion
+      - name: "Postcommunion"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 107 / printed p. 26, marginal no. 179, column R. The body has
-          not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      notes: 'Read on 2026-08-08 from the embedded text layer of the CMAA facsimile of the controlling edition, at this
-        day''s own heading, and nothing has been visually collated. Only the printed scripture citations are recorded:
-        the facsimile sets each oration under a drop capital that the text layer renders as wreckage, so the orations
-        the Missal prints here are appointed and not transcribed. Every citation was re-parsed against the repository''s
-        own canonical book list before it was written. Source appointment review of the held 1962 page images on 2026-10-20
-        confirms the three own orations, in Collect, Secret, Postcommunion order. The own orations override any Common
-        prayer formulas; the current Collect body is preserved where present.'
+        notes: >-
+          1962 printed p. 26, no. 179, column R; artifact PDF p. 107. Whole own prayer collated on
+          2026-10-22 with Pustet Ratisbon 1862 printed p. 23, column L; original PDF p. 109; retained
+          extract p. 4. Preexisting petition under 17 U.S.C. 103(b); project j and actual target
+          conclusion length. coelesti/caelesti, cujus/cuius, ejus/eius; pointing Historical Per Dominum
+          nostrum.; target Per Dominum.
+        text: |
+          Refecti cibo potuque caelesti, Deus noster, te supplices deprecamur:
+          ut, in cujus haec commemoratione percepimus, ejus muniamur et
+          precibus. Per Dominum.
+      notes: Own Collect, Secret and Postcommunion are now whole-prayer page-image collations, dated 2026-10-22, of 1962
+        printed p. 25, no. 167, column R; artifact PDF p. 106; 1962 printed p. 26, no. 176, column R; artifact PDF p.
+        107; 1962 printed p. 26, no. 179, column R; artifact PDF p. 107, independently witnessed in public-domain Pustet
+        Ratisbon 1862. Each exact body, historical locus, declared spelling/pointing and actual conclusion length has
+        its own bounded projection/provenance binding. Existing Common referrals, other appointments and prior scripture
+        citations are unchanged. No English or whole-formulary completion is asserted.
     - key: fourth-day-within-octave-ss-innocentium
       name: 'Fourth day within the octave: Ss. Innocentium Martyrum'
       registry: '1962-12-28'
@@ -60261,15 +60584,19 @@ sections:
               chapter: 8
               verse: 2
           ref: Psalms 8:2
-      - name: Collect
+      - name: "Collect"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
-        notes: Missale Romanum 1962, artifact p. 108, printed p. 27, unit 182; source-appointed body; no exact publishable
-          exemplar is bound.
+        notes: >-
+          1962 printed p. 27, no. 182, column L; artifact PDF p. 108. Whole own prayer collated on
+          2026-10-22 with Pustet Ratisbon 1862 printed p. 23, column R; original PDF p. 109; retained
+          extract p. 4. Preexisting petition under 17 U.S.C. 103(b); project j and actual target
+          conclusion length. cujus/cuius, pointing/capitals Historical Per Dominum.; target Per Dominum
+          nostrum.
+        text: |
+          Deus, cujus hodierna die praeconium Innocentes Martyres non loquendo,
+          sed moriendo confessi sunt: omnia in nobis vitiorum mala mortifica; ut
+          fidem tuam, quam lingua nostra loquitur, etiam moribus vita fateatur.
+          Per Dominum nostrum.
       - name: Lesson
         source: scripture
         verses:
@@ -60330,15 +60657,17 @@ sections:
               chapter: 123
               verse: 7
           ref: Psalms 123:7
-      - name: Secret
+      - name: "Secret"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
-        notes: Missale Romanum 1962, artifact p. 109, printed p. 28, unit 191; source-appointed body; no exact publishable
-          exemplar is bound.
+        notes: >-
+          1962 printed p. 28, no. 191, column L; artifact PDF p. 109. Whole own prayer collated on
+          2026-10-22 with Pustet Ratisbon 1862 printed p. 24, column R; original PDF p. 110; retained
+          extract p. 5. Preexisting petition under 17 U.S.C. 103(b); project j and actual target
+          conclusion length. Pointing Historical Per Dominum.; target Per Dominum nostrum.
+        text: |
+          Sanctorum tuorum, Domine, nobis pia non desit oratio: quae et munera
+          nostra conciliet, et tuam nobis indulgentiam semper obtineat. Per
+          Dominum nostrum.
       - name: Communion
         source: scripture
         verses:
@@ -60351,15 +60680,19 @@ sections:
               chapter: 2
               verse: 18
           ref: Matthew 2:18
-      - name: Postcommunion
+      - name: "Postcommunion"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
-        notes: Missale Romanum 1962, artifact p. 109, printed p. 28, unit 194; source-appointed body; no exact publishable
-          exemplar is bound.
+        notes: >-
+          1962 printed p. 28, no. 194, column R; artifact PDF p. 109. Whole own prayer collated on
+          2026-10-22 with Pustet Ratisbon 1862 printed p. 24/25, column R bottom to L top; original PDF
+          p. 110/111; retained extract p. 5/6. Preexisting petition under 17 U.S.C. 103(b); project j
+          and actual target conclusion length. Pointing Historical Per Dominum.; target expanded through
+          in unitate.
+        text: |
+          Votiva, Domine, dona percepimus: quae Sanctorum nobis precibus, et
+          praesentis, quaesumus, vitae pariter et aeternae tribue conferre
+          subsidium. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum
+          vivit et regnat in unitate.
       notes: Source appointment and order collated against the controlling 1962 page images on 2026-10-20. The post-Septuagesima
         Tract187 and Paschal alternate188 stand in the votive branch on artifact pp.108–109, printed pp.27–28, and are
         outside this normal annual formulary. The own orations are units182,191,194; the distinct Nativity-octave commemoration
@@ -60371,16 +60704,19 @@ sections:
       rank: Comm.
       kind: sanctoral
       propers:
-      - name: Collect
+      - name: "Collect"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 111 / printed p. 30, marginal no. 207, column L. The body has
-          not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          1962 printed p. 30, no. 207, column L; artifact PDF p. 111. Whole own prayer collated on
+          2026-10-22 with Pustet Ratisbon 1862 printed p. 25, column L; original PDF p. 111; retained
+          extract p. 6. Preexisting petition under 17 U.S.C. 103(b); project j and actual target
+          conclusion length. cujus/cuius, ejus/eius; pointing Historical Per Dominum.; target expanded
+          through in unitate.
+        text: |
+          Deus, pro cujus Ecclesia gloriosus Pontifex Thomas gladiis impiorum
+          occubuit: praesta, quaesumus; ut omnes, qui ejus implorant auxilium,
+          petitionis suae salutarem consequantur effectum. Per Dominum nostrum
+          Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
       - name: Epistle
         source: scripture
         verses:
@@ -60450,16 +60786,17 @@ sections:
               chapter: 20
               verse: 5
           ref: Psalms 20:4-5
-      - name: Secret
+      - name: "Secret"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 112 / printed p. 31, marginal no. 214, column L. The body has
-          not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          1962 printed p. 31, no. 214, column L; artifact PDF p. 112. Whole own prayer collated on
+          2026-10-22 with Pustet Ratisbon 1862 printed p. 26, column L bottom; original PDF p. 112;
+          retained extract p. 7. Preexisting petition under 17 U.S.C. 103(b); project j and actual
+          target conclusion length. Pointing Historical Per Dominum.; target Per Dominum nostrum.
+        text: |
+          Munera tibi, Domine, dicata sanctifica: et, intercedente beato Thoma
+          Martyre tuo atque Pontifice, per eadem nos placatus intende. Per
+          Dominum nostrum.
       - name: Communion
         source: scripture
         verses:
@@ -60472,23 +60809,23 @@ sections:
               chapter: 10
               verse: 14
           ref: John 10:14
-      - name: Postcommunion
+      - name: "Postcommunion"
         source: composed
-        notes: Own oration appointed at artifact PDF p. 112 / printed p. 31, marginal no. 217, column L. The body has
-          not yet been bound to a reviewed publishable witness.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-      notes: 'Read on 2026-08-08 from the embedded text layer of the CMAA facsimile of the controlling edition, at this
-        day''s own heading, and nothing has been visually collated. Only the printed scripture citations are recorded:
-        the facsimile sets each oration under a drop capital that the text layer renders as wreckage, so the orations
-        the Missal prints here are appointed and not transcribed. Every citation was re-parsed against the repository''s
-        own canonical book list before it was written. Source appointment review of the held 1962 page images on 2026-10-20
-        confirms the three own orations, in Collect, Secret, Postcommunion order. The own orations override any Common
-        prayer formulas; the current Collect body is preserved where present.'
+        notes: >-
+          1962 printed p. 31, no. 217, column L; artifact PDF p. 112. Whole own prayer collated on
+          2026-10-22 with Pustet Ratisbon 1862 printed p. 26, column R; original PDF p. 112; retained
+          extract p. 7. Preexisting petition under 17 U.S.C. 103(b); project j and actual target
+          conclusion length. coelestis/caelestis; pointing
+        text: |
+          Haec nos communio, Domine, purget a crimine: et, intercedente beato
+          Thoma Martyre tuo atque Pontifice, caelestis remedii faciat esse
+          consortes. Per Dominum.
+      notes: Own Collect, Secret and Postcommunion are now whole-prayer page-image collations, dated 2026-10-22, of 1962
+        printed p. 30, no. 207, column L; artifact PDF p. 111; 1962 printed p. 31, no. 214, column L; artifact PDF p.
+        112; 1962 printed p. 31, no. 217, column L; artifact PDF p. 112, independently witnessed in public-domain Pustet
+        Ratisbon 1862. Each exact body, historical locus, declared spelling/pointing and actual conclusion length has
+        its own bounded projection/provenance binding. Existing Common referrals, other appointments and prior scripture
+        citations are unchanged. No English or whole-formulary completion is asserted.
     - key: comm-s-silvestri-i-papae-confessoris
       name: Comm. S. Silvestri I Papae et Confessoris
       registry: 1962-12-31-comm

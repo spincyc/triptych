@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.phase5-latin22-seven-historical-prayers-20261022"
+edition_id = "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only the seven Latin prayers expressly enumerated in src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml. The actual printed Herder1929 identity, core/appendix continuity and DLI67078 catalog corroboration support the bounded1929 attribution; appendix attribution remains a corroborated inference, not a separately dated colophon. The maximum95-year US published-work term expired at end2024 under17USC304(b),305, even if renewed. No Lasance/English nonrenewal dependence; no whole-delivery permission."
+rights_jurisdiction = "United States"
+source_url = "https://missale.online/assets/liturgia/downloads/schott-1927-messbuch.pdf"
+provenance = "Whole actual selected Latin prayers and historical ending lengths image-read on22October2026; the1929 printer line, bounded printing/appendix evidence and existing rights inventory control. Parent scan independently rehashed."
+retrieved = "2026-10-22"
+sha256 = "ba9e819046bfea45167b7ba99f4fbd9b0fc8d0e69cc70adc9a6113dd59febc34"
+byte_size = 1553
+path = "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/phase5-latin22-seven-historical-prayers-20261022/latin-only.txt"
+derived_from = "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.facsimile-4511fa92"
+transformation = "Latin prayer blocks only, in canonical owner order. Join wraps/hyphenation; remove stress and expand ligatures. First five blocks retain historical pointing and spelling. JohnCross and Vianney are normalized complete historical WORD SEQUENCES with pointing removed, not diplomatic transcriptions; their final words preserve actual conclusion length. Historical solemniter, poenitentiae and short Qui vivis remain unchanged; target-controlled spellings/endings belong only to separate projections."
+encoding = "utf-8"
+indexable = true
+notes = "No German, page image/layout, watermark, rubric, neighbor, English or reconstructed missing scan page. Four previously registered missing scan pages remain unfilled; all seven selected prayer blocks are complete. Whole Schott parent remains restricted. URL1927/approval1927/handwriting are not the printed date."

@@ -67,7 +67,13 @@ class PostconciliarOlmPointerRecoveryTest(unittest.TestCase):
                 self.assertIn(f"artifact page {page}", mass["notes"])
                 self.assertIn(f"n. {number}", mass["notes"])
                 names = [proper["name"] for proper in mass["propers"]]
-                self.assertEqual(names[2:4], ["Gospel Acclamation", "Gospel"])
+                for name in ("Responsorial Psalm", "Gospel Acclamation", "Gospel"):
+                    self.assertEqual(names.count(name), 1)
+                psalm_index = names.index("Responsorial Psalm")
+                self.assertEqual(
+                    names[psalm_index : psalm_index + 3],
+                    ["Responsorial Psalm", "Gospel Acclamation", "Gospel"],
+                )
                 self.assertEqual(
                     self.proper(key, "Gospel Acclamation")["takes_from"],
                     {
@@ -124,13 +130,51 @@ class PostconciliarOlmPointerRecoveryTest(unittest.TestCase):
                     },
                 )
 
-    def test_holy_wednesday_retains_an_honest_two_target_absence(self) -> None:
+    def test_holy_wednesday_retains_two_unavailable_source_alternatives(self) -> None:
         mass = self.mass("holy-wednesday")
         self.assertIn("artifact page 194", mass["notes"])
         self.assertIn("n. 259", mass["notes"])
-        self.assertNotIn("Gospel Acclamation", [row["name"] for row in mass["propers"]])
+        names = [row["name"] for row in mass["propers"]]
+        expected = [
+            "Responsorial Psalm", "Gospel Acclamation",
+            "Gospel Acclamation (alternative)", "Gospel",
+        ]
+        for name in expected:
+            self.assertEqual(names.count(name), 1)
+        psalm_index = names.index("Responsorial Psalm")
+        self.assertEqual(names[psalm_index : psalm_index + 4], expected)
+        alternatives = [
+            self.proper("holy-wednesday", name) for name in expected[1:3]
+        ]
+        for row, owner, option in zip(
+            alternatives, ("holy-monday", "holy-tuesday"), ("monday", "tuesday")
+        ):
+            with self.subTest(option=option):
+                self.assertEqual(row["takes_from"], {
+                    "mass": owner, "proper": "Gospel Acclamation",
+                    "citation": "OLM 1981 n. 259: nn. 257-258",
+                })
+                self.assertEqual(set(row), {
+                    "name", "takes_from", "ordinary_disposition",
+                })
+                disposition = row["ordinary_disposition"]
+                self.assertEqual(set(disposition), {"kind", "group", "option", "basis"})
+                self.assertEqual(
+                    {key: disposition[key] for key in ("kind", "group", "option")},
+                    {"kind": "alternative", "group": "holy-week-acclamation", "option": option},
+                )
+                terminal = self.proper(owner, "Gospel Acclamation")
+                self.assertEqual(terminal["text_status"]["state"], "unavailable")
+                for field in ("text", "verses", "incipit", "translations"):
+                    self.assertNotIn(field, terminal)
+        self.assertEqual(
+            alternatives[0]["ordinary_disposition"]["basis"],
+            alternatives[1]["ordinary_disposition"]["basis"],
+        )
         self.assertIn("choice-pointer to two targets", mass["notes"])
-        self.assertIn("typed absence", mass["notes"])
+        self.assertIn("non-cumulative alternatives", mass["notes"])
+        self.assertIn("Both bodies remain unavailable", mass["notes"])
+        self.assertIn("no choice is made by default", mass["notes"])
         self.assertNotIn("prints a composed text", mass["notes"])
 
 

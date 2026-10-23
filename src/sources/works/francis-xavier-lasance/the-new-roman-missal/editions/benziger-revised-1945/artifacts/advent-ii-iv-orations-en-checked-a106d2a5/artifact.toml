@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.advent-ii-iv-orations-en-checked-a106d2a5"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded transcription of original English of the Lasance/Walsh registered1945 revision, ordinary printed106–107,109–110,112–113,130,132, outside excluded1298a–1298n and1302a–1302d. Existing affirmative nonrenewal basis is settled at src/sources/inventories/lasance-new-roman-missal-rights-v1.toml and corroborated by the separately retained insert-excluded public-domain artifact artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759 (sha256 80b34759fb18ec60f6205460c2ac24dc9e4a861938a94ef1f8e04a08a398ac9a). The exact whole PDF remains mixed/unresolved and private; its availability supplies no publication right. No later insert, host watermark, artwork or new1945-external matter is reproduced."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "Image transcription from the already held registered PDF sha256 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70, frozen nine-body page proof sha256 a01228efbc9989c1f9df38b0d75de6371e00fead595cd4303d7887cefe82c2ad, checked2026-10-22. Source English and paired Latin read at200/400dpi, and target1962 Latin checked at200/400dpi. OCR is a finding aid only, not the derivation parent or wording authority. Independent cold review remains required; no independent-review claim is made here."
+transformation = "Retain nine Sunday AdventII–IV English prayer bodies in source order Collect, Secret, Postcommunion for each Sunday. Join print layout wraps and end-line hyphenation only; preserve source capitals, punctuation, lower-case thee in AdventIV Collect, absent comma after Lord in AdventIV Secret and short conclusions. Omit headings, second/third prayers, rubrics, paired Latin and page furniture. Add exact target identity/page columns and one header. No supplied ending, Amen or generated English. AdventII Collect source English Who livest. differs from its paired Latin Qui tecum.; retain and flag the discrepancy, without harmonization. That row is evidence-only and is not attached to a target translation; only the other eight rows are active."
+retrieved = "2026-10-22"
+sha256 = "a106d2a587ef20ccd75a28548d95ba35554a383e5cbc6a8fcf75e92e43ff6024"
+byte_size = 2095
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/advent-ii-iv-orations-en-checked-a106d2a5/advent-ii-iv-orations-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Eight active rows plus one evidence-only AdventII Collect row; cataloguing lawful historical wording does not establish target conclusion identity. Historical antecedent English, not official English of1962. Same Sunday and prayer appointments, with identical Latin petition words after accents/ligatures/case/i-j normalization, not a cross-appointment reuse. Source and target punctuation and conclusion extents differ as recorded per passage; no claim to translate fuller target endings. The1945 date identifies the registered revision, not the physical date of this later ca1955–56 printing."
