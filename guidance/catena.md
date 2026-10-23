@@ -113,9 +113,17 @@ Douay-Rheims 23, King James 4,313 [verified].
 > chosen edition is reached through that edition's projection, at render time.
 > A fragment is never stored twice for two editions.
 
-This makes the catena the first real consumer of the projection, which until now
-nothing has consumed. That is a point in the design's favour: it turns an
-apparatus built on principle into one under load.
+The chapter's Scripture uses the same projection as a fragment's extent.
+`_catena.py structure` emits one lazy Scripture-citation file per canonical
+book, covering every chapter independently of held fragments or harvest leads.
+The index names its `scripture` directory. Web and terminal readers follow
+those citations' native book, chapter, range and order, retaining the edition's
+own verse labels. Canonical Psalm 50 therefore reads King James Psalm 51;
+a chapter divided across native books follows each projected portion. The
+payload contract is governed by `guidance/web-data.md`.
+
+An absent, unreadable or refused chapter projection is a visible refusal.
+Neither reader may substitute the same chapter number in the chosen edition.
 
 It also inherits the projection's refusals, and must honour them rather than
 route around them. Sixteen psalms are flagged `english_offset_uniform: no` —
@@ -186,19 +194,49 @@ boundary.
 "In chronological order" is underdetermined, and each ambiguity has a wrong
 answer that looks right.
 
-- **By what date?** Author death year is what the corpus already carries
-  [verified] and is the conventional ordering. Composition date would be better
-  and is unknown for most of the corpus.
+- **By what date?** The harvest's author-death years are acquisition metadata.
+  The Catena reads the work's `composed` date, or a justified fragment override
+  where the existing exception applies. A printing, translation, retrieval or
+  author-life date never supplies a missing composition date.
 - **Pseudonymous works.** A text circulating as Dionysius the Areopagite is not
   first-century. It orders by the date of the *text*, not of the claimed author,
   and the page says whose text it actually is. Getting this wrong would place a
   sixth-century work at the head of the chain, which is not a rendering error but
   a historical claim.
-- **Ties and unknowns.** Same year, and no year, both need a deterministic
-  secondary key or the page reorders itself between builds for no reason.
+- **Ties and unknowns.** Dated ties sort deterministically. Texts whose
+  composition date has not been established form a separate deterministic
+  section, with no chronological claim between its members.
 
-> **Rule 7.** Order by the date of the text. Where a work's attribution is
-> disputed, the page carries the dispute rather than resolving it silently.
+> **Rule 7.** Order dated texts by the date of the text. Present texts with an
+> explicitly unestablished composition date separately. Where a work's
+> attribution is disputed, the page carries the dispute rather than resolving
+> it silently.
+
+**Amended 2026-10-23.** A fragment without a numeric composition date may
+declare `composition_date_unestablished`, a nonempty plain-text statement of
+the evidence actually reviewed and its limit. This records what the project
+has not established; it does not assert that scholarship knows no date.
+An absent or malformed date alone never creates this class. The declaration
+cannot accompany a numeric `text_date` or a numeric year in the work's
+`composed`; an old `text_date_basis` still requires its integer override.
+
+The generator emits `date: null`, `composition_date_status: "unestablished"`
+and the trimmed reason as `composition_date_basis`, also retained in the
+ordinary lazy `date_basis` payload. Dated rows retain their dates and meaning.
+Web and terminal readers place these rows under **Composition date not
+established**, separately from the dated chain, ordered by author, work,
+extent and passage identity. Their counts include admitted undated fragments,
+and the reason remains available with the source apparatus.
+
+This date class changes no other admission rule: checked explicit text,
+controller ownership, work and author identity, rights, translation voice and
+credits, English-absence records, canonical natural extents, numbering
+refusals and disputed parallels remain required. The first three applications
+are Chrysostom's Philippians Homilies III-IV and Bede's Mark 10:42-45 block;
+their exact evidence and limits are recorded in the
+[dated amendment](../workflows/reviews/missal-reader-resume-2026-10-23/CATENA-DATE-AMENDMENT.md).
+The earlier 2026-10-22 zero-ready audit remains a record of its original
+numeric-date contract, not approval of this amendment.
 
 ---
 
@@ -365,11 +403,14 @@ translation and 9 in Latin translation [verified 2026-08-01].
   chapter counts, tokens and paths [verified]. The prerequisite is recorded
   rather than deleted because it is why the enumeration is derived in one place
   instead of typed into the browser.
-- **`work_id` is null on every entry** of both the discovery index and the mass
-  corpus [verified], so no harvested lead links to a source-library work record;
-  deduplication falls back to the string `"author | title"`. The commentary
-  README says this reconciliation should exist. It has not been done, and Rule 8
-  depends on it.
+- **Whole-work identity reconciliation is partial.** The initial reviewed
+  `review.canonical_work_ids` batch in `work-aliases.yaml` identifies Augustine's
+  Psalms and John tractates and Chrysostom's Philippians. Promotion carries
+  those source-library IDs into the discovery index and mass corpus without
+  changing the model ledger. Other leads still deduplicate by author and title.
+  Holdings joins cannot fill this field automatically: they can identify a
+  constituent of a broader harvested work. The commentary README owns the
+  declaration and its duplicate, stale-name and missing-record refusals.
 - **Editing an existing `artifact.toml` cascades a review obligation.** Its
   fingerprint feeds every segment, passage and corpus above it, and 101 tracked
   binding files carry pins. This is deliberate policy, not a bug. New records are
@@ -457,7 +498,8 @@ because a checklist that only ever grows teaches nothing.
    `source_fingerprint` and hand a review obligation to every pinned binding
    above it.
 6. **`work_id` reconciled** between the harvest's leads and the source library's
-   work records. Still open, and now the only item ahead of acquisition.
+   work records. Partial: three complete works have reviewed canonical IDs;
+   the remainder needs the same whole-work review, not an inferred holdings join.
 
 Two things the pilot added to this list that the study did not anticipate:
 
@@ -623,8 +665,9 @@ looser,
 because a join made by resemblance is how two works become one. A work held
 under a name none of those reaches is still reported absent; the remedy is an
 `identities` row with its reason, never a fuzzier match. The rows are not the
-`work_id` reconciliation of §8 item 6, which remains open: they close the misses
-a sweep has actually hit.
+whole-work `work_id` reconciliation of §8 item 6: they close the holdings misses
+a sweep has actually hit, including cases where the held work is a constituent
+of a broader lead.
 
 `commentary-work-index containment` validates the inventory, and
 `make check-sources` runs it. It refuses a container-shaped record nobody has

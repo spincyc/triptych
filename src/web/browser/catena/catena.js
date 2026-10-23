@@ -39,6 +39,7 @@
   let voices = { keys: [], whole: false };
   let editions = { bibles: [], whole: false };
   const chapterFiles = new Map();
+  const scriptureFiles = new Map();
   const fragmentTexts = new Map();
   const paragraphFiles = new Map();
   const asking = new WeakMap();
@@ -114,6 +115,17 @@
       : Promise.resolve(undefined);
   }
 
+  function scriptureChapter(bible, token, chapter) {
+    return M.readScripture(index, token, chapter, bible, {
+      file: (path) => cached(scriptureFiles, path),
+      chapter: (book, number) => T.loadChapter(bible.id, book, number),
+      paragraphs: (book, number) => chapterParagraphs(bible, book, number),
+      pick: (citation) => T.editionLoci(citation, bible),
+      recast: (citation, picked) => T.recastLoci(citation, bible, index.numbering, picked),
+      format: T.formatLoci
+    });
+  }
+
   // One fragment's prose, asked BY THE ROW and shared by path ONLY ONCE
   // FINISHED. `M.rowTransport` and `M.textCompleted` say why.
   function fragmentText(row) {
@@ -187,7 +199,7 @@
     const holder = T.el('details', 'chapter-body');
     holder.open = true;
     const head = T.el('summary', 'chapter-head');
-    head.appendChild(T.el('span', 'chapter-name', book.name + ' ' + chapter));
+    head.appendChild(T.el('span', 'chapter-name', result.label || book.name + ' ' + chapter));
     head.appendChild(T.el('span', 'chapter-count',
       lines.length + (lines.length === 1 ? ' verse' : ' verses')));
     // The chip counts the PARAGRAPHS on the page, not the recorded
@@ -198,28 +210,7 @@
     }
     holder.appendChild(head);
     holder.appendChild(body);
-    // Printed and projected marks are different claims; the note counts
-    // BREAKS, in those words.
-    if (printed + projected) {
-      const parts = [];
-      if (printed) {
-        parts.push(printed + (printed === 1 ? ' break is' : ' breaks are') +
-          ' printed in this edition');
-      }
-      if (projected) {
-        parts.push(projected + (projected === 1 ? ' is' : ' are') +
-          ' projected from the witnesses that concur, and marked');
-      }
-      holder.appendChild(
-        T.el('p', 'paragraph-note', 'Paragraphs: ' + parts.join('; ') + '.'));
-    } else {
-      holder.appendChild(T.el('p', 'paragraph-note',
-        read.marksUnread
-          ? 'The paragraph record for this chapter in this edition could not be ' +
-              'read, so whether it divides the chapter is not established here.'
-          : 'No paragraph division is held for this chapter in this edition, so it ' +
-              'runs on. Another edition’s paragraphs are not borrowed for it.'));
-    }
+    holder.appendChild(T.el('p', 'paragraph-note', M.paragraphNote(read)));
     section.appendChild(holder);
     container.appendChild(section);
   }
@@ -249,7 +240,8 @@
     // carries no field this function does not render.
     head.appendChild(T.el('span', 'fragment-author', fragment.author));
     head.appendChild(T.el('span', 'fragment-work', fragment.work));
-    if (fragment.date) head.appendChild(T.el('span', 'fragment-date', fragment.date));
+    const date = fragment.date || M.compositionDateLabel(fragment);
+    if (date) head.appendChild(T.el('span', 'fragment-date', date));
     // The language, and WHOSE it is; an unestablished voice says only it.
     // Derived beside the other typed prose, so the two cannot drift.
     const code = fragment.language;
@@ -277,6 +269,8 @@
     details.appendChild(text);
     const apparatus = T.el('div', 'fragment-apparatus');
     details.appendChild(apparatus);
+    if (fragment.composition_date_basis) apparatus.appendChild(
+      T.el('p', 'fragment-basis', 'Date — ' + fragment.composition_date_basis));
 
     // ONE point-of-use acknowledgement channel; `M.broken` says why `awry`
     // is kept apart from the note, and what the one channel costs.
@@ -327,7 +321,7 @@
               if (body.basis) {
                 apparatus.appendChild(T.el('p', 'fragment-basis', 'Extent — ' + body.basis));
               }
-              if (body.date_basis) {
+              if (body.date_basis && !fragment.composition_date_basis) {
                 apparatus.appendChild(T.el('p', 'fragment-basis', 'Date — ' + body.date_basis));
               }
             }
@@ -451,27 +445,22 @@
       renderAbsences(container, file, wanted);
     }
 
-    // Grouped WITHOUT reordering: only a CONTIGUOUS author+date run shares
-    // a heading — by-author grouping misfiled Augustine's 417 before 401.
-    const groups = [];
-    for (const fragment of held) {
-      const author = fragment.author;
-      const date = fragment.date || null;
-      const last = groups[groups.length - 1];
-      // Unnamed is not a name to group by: two unnamed fragments are not one man.
-      if (author && last && last.author === author && last.date === date) {
-        last.fragments.push(fragment);
-      } else {
-        groups.push({ author: author, date: date, fragments: [fragment] });
-      }
-    }
+    const groups = M.commentaryGroups(held);
 
     const chain = T.el('ul', 'chain');
+    let undated = null, undatedChain = null;
     const rendered = [];
     // The first group opens: all closed reads as nothing, all open as
     // a wall. No request either way.
     let first = true;
     for (const group of groups) {
+      if (group.undated && !undated) {
+        undated = T.el('section', 'aside');
+        undated.setAttribute('data-date-state', 'unestablished');
+        undated.appendChild(T.el('h3', 'section-heading', M.UNESTABLISHED_DATE));
+        undatedChain = T.el('ul', 'chain');
+        undated.appendChild(undatedChain);
+      }
       const item = T.el('li', 'author');
       const node = T.el('details', 'author-body');
       if (first) {
@@ -496,7 +485,7 @@
       }
       node.appendChild(inner);
       item.appendChild(node);
-      chain.appendChild(item);
+      (group.undated ? undatedChain : chain).appendChild(item);
       rendered.push({ author: group.author, item, count: group.fragments.length });
     }
 
@@ -556,7 +545,8 @@
       container.appendChild(filterHolder);
     }
 
-    container.appendChild(chain);
+    if (chain.children.length) container.appendChild(chain);
+    if (undated) container.appendChild(undated);
     applyFilter();
     return held.length;
   }
@@ -618,8 +608,7 @@
       sentence + ' Commentary on ' + book.name + ' ' + chapter +
         ' is anchored in Vulgate numbering, and this page will not guess ' +
         'where the boundary moves to in ' + bible.label +
-        '. The verse numbers you are reading correspond; the divisions of ' +
-        'the text may not.'));
+        '. The commentary keeps its canonical address.'));
     container.appendChild(node);
   }
 
@@ -701,12 +690,11 @@
     // stranded `aria-busy`, focus, the tally and the route. The keeper is taken
     // BEFORE the work, or it reads an emptied page and sees no loss.
     const refocus = focusKeeper();
-    let file, chapterResult, marks;
+    let file, scripture;
     try {
-      [file, chapterResult, marks] = await Promise.all([
+      [file, scripture] = await Promise.all([
         chapterFile(token, chapter),
-        T.loadChapter(bible.id, token, chapter),
-        chapterParagraphs(bible, token, chapter)
+        scriptureChapter(bible, token, chapter)
       ]);
       if (!T.isCurrentRender(renderToken)) return;
 
@@ -724,7 +712,15 @@
       T.clear(reading);
       let count = 0;
       renderRefusal(reading, file, bible, book, chapter);
-      renderChapter(reading, bible, book, chapter, chapterResult, marks);
+      const scriptureColumn = T.el('div', 'chapter');
+      if (scripture.ok) {
+        if (scripture.note) scriptureColumn.appendChild(T.el('p', 'citation-recast', scripture.note));
+        for (const part of scripture.parts) {
+          renderChapter(scriptureColumn, bible, part, part.chapter,
+            { ok: true, verses: part.verses, label: part.label }, part.marks);
+        }
+      } else renderChapter(scriptureColumn, bible, book, chapter, scripture);
+      reading.appendChild(scriptureColumn);
       if (unfetched) {
         const section = errorSection('This chapter’s commentary record did not load');
         section.appendChild(T.el('p', 'error-detail',

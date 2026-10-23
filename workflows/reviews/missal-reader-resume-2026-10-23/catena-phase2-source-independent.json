@@ -1,0 +1,61 @@
+{
+  "known_rows_preserved": 1356,
+  "existing_edges_exact": true,
+  "unknown_rows": [
+    {
+      "id": "passage.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.mark-10-42-45",
+      "date": null,
+      "composition_date_status": "unestablished",
+      "voice": "original",
+      "language": "la",
+      "rights": "public-domain",
+      "extent": {
+        "token": "Mark",
+        "first_chapter": 10,
+        "first_verse": 42,
+        "last_chapter": 10,
+        "last_verse": 45
+      }
+    },
+    {
+      "id": "passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.3",
+      "date": null,
+      "composition_date_status": "unestablished",
+      "voice": "translation",
+      "language": "en",
+      "rights": "public-domain",
+      "extent": {
+        "token": "Phil",
+        "first_chapter": 1,
+        "first_verse": 18,
+        "last_chapter": 1,
+        "last_verse": 24
+      }
+    },
+    {
+      "id": "passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.4",
+      "date": null,
+      "composition_date_status": "unestablished",
+      "voice": "translation",
+      "language": "en",
+      "rights": "public-domain",
+      "extent": {
+        "token": "Phil",
+        "first_chapter": 1,
+        "first_verse": 22,
+        "last_chapter": 1,
+        "last_verse": 30
+      }
+    }
+  ],
+  "ordinary_admission_errors": [],
+  "source_manifest_stale_inputs": [],
+  "hashes": {
+    ".scratch/resume-catena-projection/undated/phase2.patch": "e7410d7cefa452130e3096c302b85a9064edaed1f3e811a12a061dc4394889ff",
+    ".scratch/resume-catena-projection/undated/_catena.py": "3e2371bab6c81db14137bf958ee6f7af95ecbaf811de625f6b0b521825e9ff12",
+    ".scratch/resume-catena-projection/undated/test_catena_undated.py": "32685335eecd5e53b6c77f3fe7f7343de5784dfc66e806a127511c0ae6947e1f",
+    ".scratch/resume-corpus-recovery/undated/proposal-manifest.json": "20cdf81b27f48fc51f414cb68697ceb48bb733c3754ceaa875d71e48bc2d3ea5",
+    ".scratch/resume-corpus-recovery/undated/fragment-loci.candidate.yaml": "155b5a6a782b47269c233c952f27b0390a973cd60e96b9d49f0621a8eaf0d01a",
+    ".scratch/resume-corpus-recovery/undated/translation-absences.candidate.yaml": "5ad43a85a07f1368aaaded50dbef262473e9c9895fd6346897ba83eb2a72f123"
+  }
+}

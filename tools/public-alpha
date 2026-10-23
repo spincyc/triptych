@@ -988,7 +988,7 @@ def web_data_manifest_path() -> Path:
 
 
 def parse_bible_manifest(path: Path, label: str) -> dict[str, str]:
-    """Return {edition id: numbering} for a bibles.json, rejecting anything unsafe.
+    """Return {edition id: loci key} for bibles.json, rejecting anything unsafe.
 
     index-bible writes this manifest from the edition records that say
     publishable: true, so a licensed text is absent from it. This is the site's
@@ -1010,7 +1010,10 @@ def parse_bible_manifest(path: Path, label: str) -> dict[str, str]:
         numbering = entry.get("numbering")
         if not isinstance(numbering, str) or not numbering:
             raise ReleaseError(f"{label}: {bible_id} declares no numbering system")
-        editions[bible_id] = numbering
+        addressing = entry.get("loci", numbering)
+        if not isinstance(addressing, str) or not addressing:
+            raise ReleaseError(f"{label}: {bible_id} declares no loci key")
+        editions[bible_id] = addressing
     if not editions:
         raise ReleaseError(f"{label} offers no editions")
     return editions
@@ -2088,17 +2091,21 @@ def _scan_web_data_files() -> dict[str, Path]:
     return files
 
 
-def structure_loci(node: object, found: dict[str, set[tuple[str, int]]]) -> None:
-    """Collect every (book token, chapter) a structure file resolves, by numbering.
+def structure_loci(
+    node: object, found: dict[str, set[tuple[str, int]]],
+    editions: dict[str, str] | None = None,
+) -> None:
+    """Collect resolved chapters, by offered edition or legacy addressing key.
 
     Walked generically because the layers differ — propers nest citations under
     masses and cycles, the reading plan under periods — while the resolved locus
-    is the same shape everywhere. An unresolved citation carries no loci and so
-    demands no fragment, which is the point of recording the reason instead.
+    is the same shape everywhere. Offered editions select their own departures
+    before the manifest's addressing key, as the reader does. A refused edition
+    demands no fragment, and a native run may name a different book.
     """
     if isinstance(node, list):
         for item in node:
-            structure_loci(item, found)
+            structure_loci(item, found, editions)
         return
     if not isinstance(node, dict):
         return
@@ -2107,16 +2114,33 @@ def structure_loci(node: object, found: dict[str, set[tuple[str, int]]]) -> None
     if isinstance(token, str) and isinstance(loci, dict):
         if not BOOK_TOKEN_RE.fullmatch(token):
             raise ReleaseError(f"unsafe book token in structure data: {token!r}")
-        for numbering, entries in loci.items():
+        selections = loci.items()
+        if editions is not None:
+            refused = node.get("refused") or {}
+            departures = node.get("edition_loci") or {}
+            if not isinstance(refused, dict) or not isinstance(departures, dict):
+                raise ReleaseError(f"{token}: refused and edition_loci must be objects")
+            selections = []
+            for bible_id, addressing in editions.items():
+                if isinstance(refused.get(bible_id), str):
+                    continue
+                own = departures.get(bible_id)
+                entries = own if isinstance(own, list) else loci.get(addressing)
+                if entries is not None:
+                    selections.append((bible_id, entries))
+        for numbering, entries in selections:
             if not isinstance(entries, list):
                 raise ReleaseError(f"{token}: {numbering} loci must be a list")
             for locus in entries:
                 chapter = locus.get("chapter") if isinstance(locus, dict) else None
                 if not isinstance(chapter, int) or chapter < 1:
                     raise ReleaseError(f"invalid chapter for {token}: {chapter!r}")
-                found.setdefault(numbering, set()).add((token, chapter))
+                native_token = locus.get("book") or token
+                if not isinstance(native_token, str) or not BOOK_TOKEN_RE.fullmatch(native_token):
+                    raise ReleaseError(f"unsafe book token in structure data: {native_token!r}")
+                found.setdefault(numbering, set()).add((native_token, chapter))
     for value in node.values():
-        structure_loci(value, found)
+        structure_loci(value, found, editions)
 
 
 def site_source_paths(manifest: dict | None = None) -> set[str]:
@@ -4335,10 +4359,12 @@ def verify_web_data(
     loci: dict[str, set[tuple[str, int]]] = {}
     for path in sorted((data_root / "structure").rglob("*.json")):
         try:
-            structure_loci(load_json_file(path, path.relative_to(output).as_posix()), loci)
+            structure_loci(
+                load_json_file(path, path.relative_to(output).as_posix()), loci, offered,
+            )
         except ReleaseError as exc:
             errors.append(str(exc))
-    for bible_id, numbering in sorted(offered.items()):
+    for bible_id in sorted(offered):
         # An edition may legitimately not hold a book at all: the King James
         # and the World English print the Greek additions to Esther and Daniel
         # as separate books, so neither has an Esther 11-16 to ship. That is a
@@ -4349,7 +4375,7 @@ def verify_web_data(
         source_chapters = ROOT / BIBLE_SOURCE_ROOT_RELATIVE / bible_id / BIBLE_FRAGMENT_DIRECTORY
         missing = sorted(
             f"{token} {chapter}"
-            for token, chapter in loci.get(numbering, set())
+            for token, chapter in loci.get(bible_id, set())
             if (source_chapters / token / f"{chapter}.json").is_file()
             and (
                 SITE_DATA_ROOT / bible_id / BIBLE_FRAGMENT_DIRECTORY / token / f"{chapter}.json"

@@ -1,4 +1,4 @@
-"""Catena Omnia: a chapter, and the commentary held on it, oldest first."""
+"""Catena Omnia: a chapter, its dated chain and admitted undated commentary."""
 from __future__ import annotations
 
 import re
@@ -319,29 +319,25 @@ class Catena(Surface):
         box.retitle(f"{view['reference']} · {bible['label']}")
         scripture = view["scripture"]
         widgets = []
-        if bible["numbering"] != "vulgate":
-            widgets.append(Static(Ink()(
-                f"{bible['label']} numbers chapters in the {bible['numbering']} way. Like the site, "
-                f"this reader fetches it by the Vulgate chapter the commentary is anchored in, so in "
-                f"the Psalms and a few other books the chapter shown may not be the one addressed.",
-                "italic").content(), classes="refusal"))
         if view["refusal"]:
             widgets.append(Static(Ink()(view["refusal"]).content(), classes="refusal"))
         if not scripture["ok"]:
             widgets.append(Static(Ink()(scripture["problem"], "bold").content(), classes="note"))
-        elif scripture["empty"]:
-            widgets.append(Static(scripture["empty"], classes="note", markup=False))
         else:
-            for paragraph in scripture["paragraphs"]:
-                text = Ink()
-                for verse in paragraph["verses"]:
-                    text(str(verse["number"]).translate(SUPERSCRIPT), "bold $catena-color")
-                    text(verse["text"] + " ")
-                classes = "verse-paragraph"
-                if paragraph["kind"]:
-                    classes += " " + paragraph["kind"]
-                widgets.append(Static(text.content(), classes=classes))
-            widgets.append(Static(Ink()(scripture["note"], "italic").content(), classes="note"))
+            if scripture["note"]:
+                widgets.append(Static(Ink()(scripture["note"], "italic").content(), classes="note"))
+            for section in scripture["sections"]:
+                widgets.append(Static(Ink()(section["label"], "bold $catena-color").content()))
+                for paragraph in section["paragraphs"]:
+                    text = Ink()
+                    for verse in paragraph["verses"]:
+                        text(str(verse["number"]).translate(SUPERSCRIPT), "bold $catena-color")
+                        text(verse["text"] + " ")
+                    classes = "verse-paragraph"
+                    if paragraph["kind"]:
+                        classes += " " + paragraph["kind"]
+                    widgets.append(Static(text.content(), classes=classes))
+                widgets.append(Static(Ink()(section["note"], "italic").content(), classes="note"))
         box.mount_all(widgets)
         box.border_subtitle = (
             f"{scripture.get('verseCount', 0)} verses · ┃ printed ¶ · ╏ projected ¶"
@@ -351,12 +347,12 @@ class Catena(Surface):
 
     @staticmethod
     def groups(fragments: list[dict]) -> list[list[int]]:
-        """Contiguous runs of one author and date, in the chain's own order
-        (catena.js:454-467): the generator's order is never re-sorted."""
+        """Contiguous runs of one author, date and composition-date class
+        in the chain's own order; the adapter's order is never re-sorted."""
         runs: list[list[int]] = []
         last = None
         for position, fragment in enumerate(fragments):
-            key = (fragment["author"], fragment["date"])
+            key = (fragment["author"], fragment["date"], fragment.get("composition_date_status"))
             if fragment["author"] and runs and key == last:
                 runs[-1].append(position)
             else:
@@ -410,8 +406,17 @@ class Catena(Surface):
             if absences.get("unread"):
                 listing.add_option(Option(Ink()(absences["unread"], "italic").content(), disabled=True))
         fragments = chain["fragments"]
+        undated = False
         for number, run in enumerate(self.groups(fragments)):
             first = fragments[run[0]]
+            if first.get("composition_date_status") == "unestablished" and not undated:
+                listing.add_option(Option(Ink()("Composition date not established", "bold $warning").content(),
+                                          disabled=True))
+                box.border_subtitle = (
+                    "dated oldest first · undated separate · ▸ closed ▾ open · "
+                    "◌ inspected, not collated · ● verified"
+                )
+                undated = True
             opened = number in self.opened_groups
             words = sum(fragments[position]["text_words"] or 0 for position in run)
             heading = Ink()("▾ " if opened else "▸ ", "bold $catena-color")
@@ -509,6 +514,8 @@ class Catena(Surface):
         text = Ink()(fragment["author"], "bold $catena-color")
         if fragment["date"]:
             text(f"  {fragment['date']}", "bold")
+        elif fragment.get("composition_date_status") == "unestablished":
+            text("  Composition date not established", "bold $warning")
         text.line()
         text(fragment["work"], "italic").line(f"  {fragment['locator']}")
         text(fragment["extent"], "bold")
@@ -526,8 +533,9 @@ class Catena(Surface):
             text.line(_plain(said if isinstance(said, str) else ""))
         if body.get("basis"):
             text.line()("Extent — ", "bold").line(body["basis"])
-        if body.get("date_basis"):
-            text.line()("Date — ", "bold").line(body["date_basis"])
+        date_basis = fragment.get("composition_date_basis") or body.get("date_basis")
+        if date_basis:
+            text.line()("Date — ", "bold").line(date_basis)
         facts = [fragment["locator"], fragment["edition"], fragment["edition_published"]]
         if fragment["translators"]:
             facts.append("tr. " + ", ".join(fragment["translators"]))

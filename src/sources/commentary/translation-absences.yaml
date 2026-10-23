@@ -40,7 +40,7 @@
 #   partial-public-domain some public-domain text exists, but not the whole work
 #   not-surveyed          nobody has looked; this is data, not an estimate
 schema: triptych-commentary-translation-absences/v1
-updated: 2026-09-23
+updated: 2026-10-23
 
 question: >-
   for each work the catena holds, is there a public-domain English translation
@@ -75,6 +75,14 @@ bound: >-
   Fathers, Giles's Bede and Dods's Augustine, read volume by volume.
 
 absences:
+- 'work_id': 'work.bede.in-marci-evangelium-expositio'
+  'language': 'en'
+  'finding': 'not-surveyed'
+  'checked_on': '2026-10-23'
+  'reason': 'English translation availability and redistribution rights have not yet been surveyed for
+    this work. The checked fragment offered in this batch is the Latin commentary.'
+  'overturned_by': 'A completed edition-identified translation and rights survey, with the canonical English
+    holdings and their publication basis reviewed.'
 
 - work_id: work.ambrose.hexameron
   language: en

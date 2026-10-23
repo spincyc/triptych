@@ -5,8 +5,8 @@
  * Every value below is a return of `catena-model.js` or `browser-core.js`,
  * called in the order catena.js calls them, except the few sentences marked
  * `page:` — prose that lives in catena.js itself and is repeated here with its
- * line so the terminal says what the page says. The chain is never re-sorted:
- * its order is the generator's (oldest text first) and the model keeps it.
+ * line so the terminal says what the page says. The model keeps the dated
+ * chain's order and sets explicitly undated commentary apart in both readers.
  */
 module.exports = function catena(realm) {
   realm.script('shared/browser-core.js');
@@ -108,13 +108,23 @@ module.exports = function catena(realm) {
     const book = canon.books.find((one) => one.token === M.sound(token));
     voice = voice || '';
 
-    const paragraphPath = M.paragraphPath(paragraphs, bible.id, M.bag(book).path, chapter);
-    const marksPromise = paragraphPath === null ? Promise.resolve({ unfetched: true })
-      : paragraphPath ? cached(paragraphPath, ABSENT).then(
-        (file) => (file === ABSENT ? undefined : file), () => ({ unfetched: true }))
-        : Promise.resolve(undefined);
-    const [{ where, file }, reading, marks] = await Promise.all([
-      chapterFile(token, chapter), T.loadChapter(bible.id, token, chapter), marksPromise]);
+    const [{ where, file }, reading] = await Promise.all([
+      chapterFile(token, chapter),
+      M.readScripture(state.index, token, chapter, bible, {
+        file: (path) => cached(path),
+        chapter: (nativeBook, number) => T.loadChapter(bible.id, nativeBook, number),
+        paragraphs: (nativeBook, number) => {
+          const native = canon.books.find((one) => one.token === nativeBook);
+          const path = M.paragraphPath(paragraphs, bible.id, M.bag(native).path, number);
+          return path === null ? Promise.resolve({ unfetched: true })
+            : path ? cached(path, ABSENT).then(
+              (file) => (file === ABSENT ? undefined : file), () => ({ unfetched: true }))
+              : Promise.resolve(undefined);
+        },
+        pick: (citation) => T.editionLoci(citation, bible),
+        recast: (citation, picked) => T.recastLoci(citation, bible, state.index.numbering, picked),
+        format: T.formatLoci,
+      })]);
 
     const missing = M.chapterUnfetched(file);
     const blocked = M.chapterBlocked(file);
@@ -133,40 +143,30 @@ module.exports = function catena(realm) {
     const refusal = refused ? ( // page: catena.js:610-624
       'Boundary not established. ' + refused + ' Commentary on ' + book.name + ' ' + chapter +
       ' is anchored in Vulgate numbering, and this page will not guess where the boundary moves to in ' +
-      bible.label + '. The verse numbers you are reading correspond; the divisions of the text may not.'
+      bible.label + '. The commentary keeps its canonical address.'
     ) : '';
 
     let scripture;
     if (!reading.ok) {
       scripture = { ok: false, problem: reading.problem };
     } else {
-      const read = M.chapterReading(reading.verses, marks);
-      let printed = 0, projected = 0, current = null;
-      const paragraphsOut = [];
-      for (const line of read.lines) {
-        if (!current || line.kind) {
-          current = { kind: line.kind || '', verses: [] };
-          paragraphsOut.push(current);
-          if (line.kind === 'printed') printed += 1;
-          if (line.kind === 'projected') projected += 1;
+      const sections = reading.parts.map((part) => {
+        const read = M.chapterReading(part.verses, part.marks);
+        let current = null;
+        const paragraphsOut = [];
+        for (const line of read.lines) {
+          if (!current || line.kind) {
+            current = { kind: line.kind || '', verses: [] };
+            paragraphsOut.push(current);
+          }
+          current.verses.push({ number: line.number, text: line.text });
         }
-        current.verses.push({ number: line.number, text: line.text });
-      }
-      let note; // page: catena.js:201-222
-      if (printed + projected) {
-        const parts = [];
-        if (printed) parts.push(printed + (printed === 1 ? ' break is' : ' breaks are') + ' printed in this edition');
-        if (projected) parts.push(projected + (projected === 1 ? ' is' : ' are') + ' projected from the witnesses that concur, and marked');
-        note = 'Paragraphs: ' + parts.join('; ') + '.';
-      } else {
-        note = read.marksUnread
-          ? 'The paragraph record for this chapter in this edition could not be read, so whether it divides the chapter is not established here.'
-          : 'No paragraph division is held for this chapter in this edition, so it runs on. Another edition’s paragraphs are not borrowed for it.';
-      }
+        return { label: part.label, verseCount: read.lines.length,
+          paragraphs: paragraphsOut, note: M.paragraphNote(read) };
+      });
       scripture = {
-        ok: true, verseCount: read.lines.length, paragraphs: paragraphsOut, note,
-        empty: read.lines.length ? '' : book.name + ' ' + chapter +
-          (read.versesUnread ? ' arrived in a form this page cannot read.' : ' carries no verses.'),
+        ok: true, verseCount: sections.reduce((sum, part) => sum + part.verseCount, 0),
+        sections, note: reading.note,
       };
     }
 
@@ -190,8 +190,9 @@ module.exports = function catena(realm) {
           ? { summary: M.absenceSummary(rows, M.sayLanguage(asked.language)), rows }
           : { unread: M.absencesUnread(index(state)), rows: [] };
       }
-      const fragments = shown.map((row) => ({
+      const fragments = M.commentaryGroups(shown).flatMap((group) => group.fragments).map((row) => ({
         id: row.id, author: row.author, work: row.work, date: row.date,
+        ...M.compositionDateMetadata(row),
         language: row.language, voice: row.voice, text_words: row.text_words,
         locator: row.locator, edition: row.edition, edition_published: row.edition_published,
         translators: row.translators, rights: row.rights, attribution: row.attribution,

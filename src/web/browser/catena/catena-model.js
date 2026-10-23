@@ -733,7 +733,58 @@
   const SHARED_WITH_EDITION = [
     'work_id', 'author', 'work', 'date', 'language', 'voice', 'edition',
     'edition_published', 'translators', 'container', 'rights', 'attribution',
-    'rights_basis', 'acknowledgement'];
+    'rights_basis', 'acknowledgement', 'composition_date_status', 'composition_date_basis'];
+
+  const UNESTABLISHED_DATE = 'Composition date not established';
+
+  /** This class is explicit evidence, never a fallback for a missing year.
+   *  Dated rows retain their existing shape; a partial or contradictory
+   *  declaration grants no membership in the separately presented section. */
+  function compositionDateMetadata(fragment) {
+    const row = bag(fragment);
+    const reason = sound(ownData(row, 'composition_date_basis'));
+    return ownData(row, 'date') === null &&
+      ownData(row, 'composition_date_status') === 'unestablished' && reason
+      ? { composition_date_status: 'unestablished', composition_date_basis: reason }
+      : {};
+  }
+
+  function compositionDateLabel(fragment) {
+    return compositionDateMetadata(fragment).composition_date_status ? UNESTABLISHED_DATE : '';
+  }
+
+  /** Keep the dated chain's exact order. Only explicitly undated texts form
+   *  the second section, where author/work/extent/id order claims no year. */
+  function commentaryGroups(fragments) {
+    const dated = [], undated = [];
+    for (const row of records(fragments)) {
+      (compositionDateLabel(row) ? undated : dated).push(row);
+    }
+    const order = (row) => {
+      const extent = bag(ownData(row, 'extent'));
+      return [sound(ownData(row, 'author')), sound(ownData(row, 'work')),
+        whole(ownData(extent, 'first_chapter')) || 0,
+        whole(ownData(extent, 'first_verse')) || 0, ident(ownData(row, 'id'))];
+    };
+    undated.sort((a, b) => {
+      const left = order(a), right = order(b);
+      for (let n = 0; n < left.length; n += 1) {
+        if (left[n] !== right[n]) return left[n] < right[n] ? -1 : 1;
+      }
+      return 0;
+    });
+    const groups = [];
+    for (const row of dated.concat(undated)) {
+      const unknown = !!compositionDateLabel(row);
+      const author = sound(ownData(row, 'author'));
+      const previous = groups[groups.length - 1];
+      const date = ownData(row, 'date') || null;
+      if (author && previous && previous.author === author &&
+          previous.date === date && previous.undated === unknown) previous.fragments.push(row);
+      else groups.push({ author, date, undated: unknown, fragments: [row] });
+    }
+    return groups;
+  }
 
   /**
    * One fragment as this page may use it, or null.
@@ -807,6 +858,10 @@
 
     const extent = bag(said('extent'));
     const voice = sound(said('voice'));
+    const rawDate = said('date');
+    const composition = compositionDateMetadata({ date: rawDate,
+      composition_date_status: said('composition_date_status'),
+      composition_date_basis: said('composition_date_basis') });
     // The claim is re-asked, not trusted: `stated` must be the boolean itself
     // and the trail must still be the route's own namespace. V10, the V9
     // review: absence is ONE shape — `{stated: false, trail: ''}`, exactly
@@ -910,7 +965,8 @@
       text_note: refused ? (supplied ? TEXT_REFUSED : TEXT_UNESTABLISHED) : '',
       author: author,
       work: work,
-      date: say(said('date')),
+      date: composition.composition_date_status ? null : say(rawDate),
+      ...composition,
       language: tongue(said('language')),
       // The two the corpus derives, and there is no third; anything else
       // establishes no voice and answers no selection.
@@ -1986,6 +2042,108 @@
       String(number).padStart(whole(stated) || 1, '0') + '.json';
   }
 
+  /** The chapter projection is complete even where no commentary is held.
+   *  A missing projection never licenses a same-number Scripture request. */
+  function scripturePath(index, token) {
+    const root = bag(index);
+    const prefix = ownData(root, 'scripture');
+    const book = bookOf(ownData(root, 'canon'), token);
+    return prefix === 'structure/catena/scripture/' && book && book.path
+      ? prefix + book.path + '.json' : null;
+  }
+
+  function scriptureUnavailable(problem) {
+    return { ok: false, problem: sound(problem) ||
+      'The Scripture chapter correspondence could not be read; no chapter is substituted.' };
+  }
+
+  /** Read only the generator's edition-specific ranges. Numbering conversion
+   *  remains in the source tools; these hooks use the shared chapter cache and
+   *  citation picker in both the browser and the terminal reader. */
+  async function readScripture(index, token, chapter, bible, io) {
+    const path = scripturePath(index, token);
+    if (!path) return scriptureUnavailable();
+    try {
+      const file = bag(await io.file(path));
+      if (file.schema !== 'triptych-catena-scripture/v1' || file.token !== token) {
+        return scriptureUnavailable();
+      }
+      const chapters = bag(file.chapters);
+      const key = String(chapter);
+      const citation = Object.hasOwn(chapters, key) ? bag(chapters[key]) : {};
+      if (citation.token !== token || citation.numbering !== 'vulgate') {
+        return scriptureUnavailable();
+      }
+      if (sound(citation.unresolved)) return scriptureUnavailable(citation.unresolved);
+      const picked = io.pick(citation);
+      if (sound(bag(picked).problem)) return scriptureUnavailable(picked.problem);
+      const loci = list(bag(picked).loci);
+      if (!loci.length) return scriptureUnavailable();
+      const parts = [];
+      for (const entry of loci) {
+        const locus = bag(entry);
+        const book = bookToken(locus.book);
+        const number = whole(locus.chapter);
+        const first = locus.first == null ? null : whole(locus.first);
+        const last = locus.last == null ? null : whole(locus.last);
+        if (!book || number === null ||
+            (locus.first != null && first === null) ||
+            (locus.last != null && last === null) ||
+            (first !== null && last !== null && first > last)) {
+          return scriptureUnavailable();
+        }
+        const [result, marks] = await Promise.all([
+          io.chapter(book, number), io.paragraphs(book, number)
+        ]);
+        if (!result.ok) return scriptureUnavailable(result.problem);
+        const verses = Object.create(null);
+        const lines = chapterLines(result.verses);
+        const named = bookOf(bag(index).canon, book);
+        if (!lines.length) {
+          const raw = bag(result.verses);
+          return scriptureUnavailable((named ? named.name : book) + ' ' + number +
+            (raw === result.verses && !Object.keys(raw).length
+              ? ' carries no verses.' : ' arrived in a form this page cannot read.'));
+        }
+        // Sorted, unique native verse numbers must cover every integer of
+        // the selected run, including its interior. Checking endpoints alone
+        // accepted {1, 3} for 1-3 and silently lost the missing middle verse.
+        const low = first === null ? lines[0].number : first;
+        const high = last === null ? lines[lines.length - 1].number : last;
+        const selected = lines.filter((line) => line.number >= low && line.number <= high);
+        if (selected.length !== high - low + 1 || !selected.length ||
+            selected[0].number !== low || selected[selected.length - 1].number !== high) {
+          return scriptureUnavailable('The recorded Scripture extent is not present in this edition’s chapter fragment.');
+        }
+        for (const line of selected) verses[line.number] = line.text;
+        parts.push({ book, chapter: number, verses, marks,
+          name: named ? named.name : book,
+          label: io.format([locus], { book: named ? named.name : book }) });
+      }
+      const recast = sound(io.recast(citation, picked));
+      return { ok: true, parts, note: recast ? 'Shown as ' + recast + '.' : '' };
+    } catch (error) {
+      return scriptureUnavailable('The Scripture chapter correspondence could not be loaded: ' +
+        (sound(bag(error).message) || 'unreadable record') + '.');
+    }
+  }
+
+  /** The paragraph statement travels with each native chapter/range. */
+  function paragraphNote(read) {
+    const lines = list(bag(read).lines);
+    const printed = lines.filter((line) => line.kind === 'printed').length;
+    const projected = lines.filter((line) => line.kind === 'projected').length;
+    const parts = [];
+    if (printed) parts.push(printed + (printed === 1 ? ' break is' : ' breaks are') +
+      ' printed in this edition');
+    if (projected) parts.push(projected + (projected === 1 ? ' is' : ' are') +
+      ' projected from the witnesses that concur, and marked');
+    return parts.length ? 'Paragraphs: ' + parts.join('; ') + '.'
+      : bag(read).marksUnread
+        ? 'The paragraph record for this chapter in this edition could not be read, so whether it divides the chapter is not established here.'
+        : 'No paragraph division is held for this chapter in this edition, so it runs on. Another edition’s paragraphs are not borrowed for it.';
+  }
+
   // The two claims a recorded paragraph break may make, and there is no third.
   const BREAK_KINDS = ['printed', 'projected'];
 
@@ -2408,14 +2566,14 @@
     // the file, forty lines from the comment saying there must not be one
     // again — and it carried whatever the manifest held, including an
     // inherited `__proto__` payload whose `numbering` and `psalter` the
-    // shared shell reads. The eight fields below are the ones every tracked
-    // edition record writes and the only ones anything reads.
+    // shared shell reads. Only the manifest fields this route reads cross.
     return {
       id: id,
       label: label,
       language: tongue(record.language),
       edition: sound(record.edition),
       numbering: sound(record.numbering),
+      loci: sound(record.loci),
       psalter: sound(record.psalter),
       psalm_titles: sound(record.psalm_titles),
       rights: sound(record.rights)
@@ -2931,6 +3089,13 @@
     bookOf: bookOf,
     chapterPath: chapterPath,
     paragraphPath: paragraphPath,
+    compositionDateMetadata: compositionDateMetadata,
+    compositionDateLabel: compositionDateLabel,
+    commentaryGroups: commentaryGroups,
+    UNESTABLISHED_DATE: UNESTABLISHED_DATE,
+    scripturePath: scripturePath,
+    readScripture: readScripture,
+    paragraphNote: paragraphNote,
     chapterLines: chapterLines,
     chapterReading: chapterReading,
     chapterSummary: chapterSummary,

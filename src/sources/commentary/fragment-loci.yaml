@@ -31,6 +31,14 @@
 #           `text_date` survives for the two cases that need it — a text whose
 #           date is not its claimed author's, and a work whose record cannot yet
 #           carry `composed` — and each such row says which it is.
+#           Since 2026-10-23, `composition_date_unestablished` may instead carry
+#           a nonempty statement of the evidence reviewed and its dating limit.
+#           It cannot accompany a numeric work/fragment date; missing or malformed
+#           dates alone never qualify. `text_date_basis` still needs its integer.
+#           The generator emits null `date`, typed `composition_date_status`
+#           "unestablished", and `composition_date_basis` (also lazy `date_basis`).
+#           Both readers show a separate deterministic section, "Composition date
+#           not established", without changing any ordinary admission gate.
 #   Rule 8  `catena check` refuses a fragment whose work-alias group has a
 #           canonical title naming a book the group does not everywhere name.
 #   Rule 15 one text held under two or more disputed attributions is declared
@@ -70,7 +78,7 @@ author_aliases:
     Migne's Patrologia Latina 52 does ('SANCTI PETRI CHRYSOLOGI ARCHIEPISCOPI RAVENNATIS'), and the
     harvest names him without it. Both name the bishop of Ravenna whose sermons that volume prints.
 schema: triptych-commentary-fragment-loci/v1
-updated: '2026-09-23'
+updated: '2026-10-23'
 numbering: vulgate
 # ONE TEXT UNDER TWO NAMES (Rule 15). Where the library holds one text as two or
 # more passage records under disputed attributions, the catena hangs it once,
@@ -106,6 +114,213 @@ parallels:
     two printings are not collated as a whole. The notes of both passage records carry the
     evidence.'
 fragments:
+- 'passage_id': 'passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.3'
+  'work_id': 'work.john-chrysostom.homilies-on-philippians'
+  'work_alias':
+    'author': 'John Chrysostom'
+    'work': 'Homiliae in epistulam ad Philippenses'
+  'composition_date_unestablished': 'A numeric composition date for this individual homily has not been
+    established. Pauline Allen''s introduction to John Chrysostom, Homilies on Paul''s Letter to the Philippians
+    (Society of Biblical Literature, 2013), printed pages xii-xiii, read on 2026-10-23 in the actual publisher
+    PDF registered as artifact.john-chrysostom.homilies-on-philippians.2013-sbl-allen.publisher-pdf-861fbb6c,
+    explains that the individual homilies cannot be securely located or dated. The historical Oxford/NPNF
+    preface''s Constantinople assignment was also read but supplies no secure year for Homily III; no
+    locality, author-life, printing, translation or retrieval date is substituted. This records the project''s
+    unresolved dating of the homily, without calling its checked commentary text or received authorship
+    uncertain.'
+  'numbering': 'vulgate'
+  'extent':
+    'token': 'Phil'
+    'first_chapter': 1
+    'first_verse': 18
+    'last_chapter': 1
+    'last_verse': 24
+  'basis': 'The complete historical English Homily III begins with the continuation of Philippians 1:18,
+    then successively quotes and expounds 1:19-24. Its direct biblical unit therefore reaches 1:18-24,
+    rather than stopping at the opening 1:18-20 quotation. Checked body is retained at container physical
+    lines 17717-18040; the separate editorial note block is outside the explicit transcription. The subsequent
+    moral exhortation and its other biblical citations remain within this natural homily, not additional
+    primary Scripture edges. The exact NPNF/CCEL controller and constituent segment are preserved. The
+    volume''s own credits name W. C. Cotton as translator and John A. Broadus as reviser and note author.
+    This is the checked historical English witness, not an original-Greek or fresh print-image collation.'
+- 'passage_id': 'passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.4'
+  'work_id': 'work.john-chrysostom.homilies-on-philippians'
+  'work_alias':
+    'author': 'John Chrysostom'
+    'work': 'Homiliae in epistulam ad Philippenses'
+  'composition_date_unestablished': 'A numeric composition date for this individual homily has not been
+    established. Pauline Allen''s introduction to John Chrysostom, Homilies on Paul''s Letter to the Philippians
+    (Society of Biblical Literature, 2013), printed pages xii-xiii, read on 2026-10-23 in the actual publisher
+    PDF registered as artifact.john-chrysostom.homilies-on-philippians.2013-sbl-allen.publisher-pdf-861fbb6c,
+    explains that the individual homilies cannot be securely located or dated. The historical Oxford/NPNF
+    preface''s Constantinople assignment was also read but supplies no secure year for Homily IV; no locality,
+    author-life, printing, translation or retrieval date is substituted. This records the project''s unresolved
+    dating of the homily, without calling its checked commentary text or received authorship uncertain.'
+  'numbering': 'vulgate'
+  'extent':
+    'token': 'Phil'
+    'first_chapter': 1
+    'first_verse': 22
+    'last_chapter': 1
+    'last_verse': 30
+  'basis': 'The complete historical English Homily IV opens with Philippians 1:22-26 and continues with
+    explicit lemmata and exposition through 1:27-30. Its direct biblical unit therefore reaches 1:22-30,
+    rather than stopping at the initial quotation. Checked body is retained at container physical lines
+    18078-18455; the separate editorial note block is outside the explicit transcription. Other biblical
+    citations in its moral exhortation do not create additional primary Scripture edges. The exact NPNF/CCEL
+    controller and constituent segment are preserved. The volume''s own credits name W. C. Cotton as translator
+    and John A. Broadus as reviser and note author. This is the checked historical English witness, not
+    an original-Greek or fresh print-image collation.'
+- 'passage_id': 'passage.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.mark-10-42-45'
+  'work_id': 'work.bede.in-marci-evangelium-expositio'
+  'work_alias':
+    'author': 'Bede the Venerable'
+    'work': 'In Marci evangelium expositio'
+  'composition_date_unestablished': 'The composition date of this commentary has not been established
+    from the witnesses actually read for this batch. The retained Latin dedicatory preface at raw line
+    3 describes the earlier Luke exposition only in relative terms and provides no calendar year for the
+    Mark exposition; the checked Mark 10:42-45 block likewise gives no composition year. On 2026-10-23
+    the primary CNRS/IRHT Bibale and FAMA catalogue pages could not be acquired directly (timeouts/HTTP
+    403); their indexed 725-730 estimate remains an unadopted lead, as recorded in artifact.cnrs-irht.bibale-bede-in-marci.2026-10-23-web.bibale-entry-39610.
+    No author death, printing, retrieval or inferred calendar date is substituted. This is a bounded statement
+    about the project''s reviewed evidence, not a claim that scholarship knows no date for Bede''s work.'
+  'numbering': 'vulgate'
+  'extent':
+    'token': 'Mark'
+    'first_chapter': 10
+    'first_verse': 42
+    'last_chapter': 10
+    'last_verse': 45
+  'basis': 'Book III''s two consecutive paragraphs begin with the Mark 10:42 lemma about rulers among
+    the gentiles, explain the abbreviated 10:43-44 comparison with humble service, and then quote and
+    expound the Son of Man''s ransom at 10:45. The preceding paragraph treats 10:41 and the following
+    one begins 10:46. The complete natural unit is therefore Mark 10:42-45. Exact Latin substrings from
+    retained digital-witness lines 312-313 were checked against PL92 col.236A-B (retained image artifact.jacques-paul-migne.patrologia-latina-volume-92.paris-1862.ia-leaf-n122-4cdb234f);
+    the generated extraction prefixes are omitted and the source''s etc. abbreviation is preserved. The
+    digital expression is not silently identified with that 1862 printing. The existing page-only 1862
+    passage witnesses the same text and stays unmapped. Use beside a weekly study''s Matthew 22 reading
+    is a study-specific analogue, not direct Matthew commentary. Bede''s prefatory distinction between
+    inherited patristic material and his additions remains; individual sentence origins are not newly
+    authenticated.'
+- passage_id: passage.augustine.de-civitate-dei.dods-1871.17.8
+  work_id: work.augustine.de-civitate-dei
+  work_alias:
+    author: Augustine of Hippo
+    work: De civitate Dei
+  text_date: 413
+  text_date_basis: 'The retained Dods 1871 volume I introduction, artifact
+    artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf lines 239-243,
+    dates composition of the work from 413 to 426. This ordering key uses the
+    first year of that stated range, as composed_year does for work records;
+    it does not establish the exact year of Book XVII. The work record has no
+    composed field and its existing reviewed consumer bindings are preserved.'
+  numbering: vulgate
+  extent:
+    token: 2Kings
+    first_chapter: 7
+    first_verse: 1
+    last_chapter: 7
+    last_verse: 16
+  basis: 'Book XVII chapter 8 quotes Nathan''s promise from the taking of David
+    from the sheepfold through the everlasting throne, then expounds its
+    fulfilment in Christ and the house of believers. The retained historical
+    English body is explicit checked text at lines 7578-7668. The quoted range
+    is 2 Kings 7:8-16 in the canonical Vulgate (modern 2 Samuel 7:8-16), checked
+    against the tracked Clementine/Douay chapter. Its opening also narrates and
+    explains David''s proposed house and God''s never-commanded cedar house from
+    7:1-7; the complete natural chapter unit therefore reaches 7:1-16. Psalm 71:8
+    and 1 Corinthians 3:17 are supporting parallels
+    within this unit and do not create additional fragment edges. The source''s
+    different house-building clause at 7:11 remains as printed.'
+- passage_id: passage.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.120.9
+  work_id: work.augustine.in-iohannis-evangelium-tractatus
+  work_alias:
+    author: Augustine of Hippo
+    work: In Iohannis evangelium tractatus CXXIV
+  text_date: 416
+  text_date_basis: 'The retained NPNF I.7 introduction, artifact
+    artifact.nicene-and-post-nicene-fathers.series-1-volume-7.ccel-web-2026-09-17.ccel-text-266502c9
+    lines 82-85, dates delivery of the collection at Hippo to about 416 or later.
+    This is the approximate earliest ordering key of that historical editorial
+    dating, not an independently established year for Tractate 120. The work
+    record states no composed year; the per-fragment exception preserves its
+    existing reviewed consumer fingerprints.'
+  numbering: vulgate
+  extent:
+    token: John
+    first_chapter: 20
+    first_verse: 8
+    last_chapter: 20
+    last_verse: 9
+  basis: 'The checked Latin excerpt from Tractate 120 section 9 opens with the
+    other disciple entering the tomb and seeing and believing (John 20:8), then
+    explicitly quotes and explains Nondum enim sciebant Scripturam, quia oportet
+    eum a mortuis resurgere (20:9). Both verses belong to its natural extent.
+    The dated augustinus.it delivery is the witness actually transcribed; its
+    edition record preserves the unidentified Latin exemplar and orthographic
+    differences rather than claiming a Migne image collation.'
+- passage_id: passage.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888.augustine-tract-in-io-120.9
+  work_id: work.augustine.in-iohannis-evangelium-tractatus
+  work_alias:
+    author: Augustine of Hippo
+    work: In Iohannis evangelium tractatus CXXIV
+  constituent_of: edition.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888
+  text_date: 416
+  text_date_basis: 'The retained NPNF I.7 introduction, artifact
+    artifact.nicene-and-post-nicene-fathers.series-1-volume-7.ccel-web-2026-09-17.ccel-text-266502c9
+    lines 82-85, dates delivery of the collection at Hippo to about 416 or later.
+    This is the approximate earliest ordering key of that historical editorial
+    dating, not an independently established year for Tractate 120. The work
+    record states no composed year; the per-fragment exception preserves its
+    existing reviewed consumer fingerprints.'
+  numbering: vulgate
+  extent:
+    token: John
+    first_chapter: 20
+    first_verse: 8
+    last_chapter: 20
+    last_verse: 9
+  basis: 'The historical NPNF translation of the same Tractate 120 section 9
+    excerpt quotes and expounds both the disciple''s seeing and believing
+    (John 20:8) and the following statement about not yet knowing the Scripture
+    (20:9). Its existing passage record identifies the checked 1888 facsimile
+    page 436 and exact retained transcription. The owning anthology''s credited
+    translators are John Gibb and James Innes, and the retained NPNF introduction
+    lines 90-94 assigns Tractates 38-124 specifically to James Innes, the
+    translator of this excerpt. Schaff is its editor, while the
+    intellectual work and author remain Augustine''s. The Latin and English
+    witnesses are two language offers of one work, not two independent voices.'
+- passage_id: passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.88-sermo-ii-12
+  work_id: work.augustine.enarrationes-in-psalmos
+  work_alias:
+    author: Augustine of Hippo
+    work: Enarrationes in Psalmos
+  text_date: 411
+  text_date_basis: 'This discourse is dated 411-412, rather than the printing or
+    the entire collection. The work record carries no composed date. The complete
+    Augustinus.it Tavola cronologica, checked 2026-10-23 and registered as
+    artifact.augustinus-it.enarrationes-chronology.2026-10-23-web-state.whole-html-a2938c5d,
+    reports for Psalm 88 sermons 1-2 Zarb''s Hippo 411-412 and Rondet''s Carthage
+    411. The integer 411 is the first year of the proposed range used for ordering,
+    following composed_year; the range and disputed location remain explicit.
+    The table identifies Zarb 1948 pp. 253-256 and Rondet 1951 pp. 472-477;
+    those underlying studies were not directly consulted. Its modern HTML is
+    remote under an unresolved redistribution basis, not republished source text.'
+  numbering: vulgate
+  extent:
+    token: Ps
+    first_chapter: 88
+    first_verse: 51
+    last_chapter: 88
+    last_verse: 51
+  basis: 'The historical printing heads the complete section 12 of Psalm 88,
+    Sermo II, with vers. 51 and Memento, Domine, opprobrii, servorum tuorum.
+    The retained part-9 transcription line 190 carries this whole paragraph;
+    its wording was checked directly against PL 37 col. 1139, PDF page 63.
+    The extent follows that explicit verse label, not every biblical allusion
+    in the prose. The existing page-only PL37 passage of the same section stays
+    unmapped because it is the same Augustinian text. The Hebrew-equivalent
+    Psalm and verse are projected by the existing versification rules.'
 - passage_id: passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-1
   work_id: work.basil-of-caesarea.homiliae-in-hexaemeron
   work_alias:
@@ -285,13 +500,13 @@ fragments:
   work_alias:
     author: Augustine of Hippo
     work: De civitate Dei
-  text_date: 417
-  text_date_basis: Written between 413 and 426, book by book over thirteen years, which Augustine's
-    own Retractationes date. The date is carried on the fragment rather than on work.augustine.de-civitate-dei
-    because that work record has thirty-seven pinned research bindings above it in other publications,
-    and an edition depends on its work, so adding a field to it would move every one of their source
-    fingerprints and hand each of them a review obligation this lane has not performed. The backfill
-    is owed and is recorded here as owed.
+  text_date: 413
+  text_date_basis: 'The retained Dods 1871 volume I introduction, artifact
+    artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf lines 239-243,
+    dates composition of the work from 413 to 426. This ordering key uses the
+    first year of that stated range, as composed_year does for work records;
+    it does not establish the exact year of Book XI. The work record has no
+    composed field and its existing reviewed consumer bindings are preserved.'
   numbering: vulgate
   extent:
     token: Gen
@@ -309,13 +524,13 @@ fragments:
   work_alias:
     author: Augustine of Hippo
     work: De civitate Dei
-  text_date: 417
-  text_date_basis: Written between 413 and 426, book by book over thirteen years, which Augustine's
-    own Retractationes date. The date is carried on the fragment rather than on work.augustine.de-civitate-dei
-    because that work record has thirty-seven pinned research bindings above it in other publications,
-    and an edition depends on its work, so adding a field to it would move every one of their source
-    fingerprints and hand each of them a review obligation this lane has not performed. The backfill
-    is owed and is recorded here as owed.
+  text_date: 413
+  text_date_basis: 'The retained Dods 1871 volume I introduction, artifact
+    artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf lines 239-243,
+    dates composition of the work from 413 to 426. This ordering key uses the
+    first year of that stated range, as composed_year does for work records;
+    it does not establish the exact year of Book XI. The work record has no
+    composed field and its existing reviewed consumer bindings are preserved.'
   numbering: vulgate
   extent:
     token: Gen
@@ -332,13 +547,13 @@ fragments:
   work_alias:
     author: Augustine of Hippo
     work: De civitate Dei
-  text_date: 417
-  text_date_basis: Written between 413 and 426, book by book over thirteen years, which Augustine's
-    own Retractationes date. The date is carried on the fragment rather than on work.augustine.de-civitate-dei
-    because that work record has thirty-seven pinned research bindings above it in other publications,
-    and an edition depends on its work, so adding a field to it would move every one of their source
-    fingerprints and hand each of them a review obligation this lane has not performed. The backfill
-    is owed and is recorded here as owed.
+  text_date: 413
+  text_date_basis: 'The retained Dods 1871 volume I introduction, artifact
+    artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf lines 239-243,
+    dates composition of the work from 413 to 426. This ordering key uses the
+    first year of that stated range, as composed_year does for work records;
+    it does not establish the exact year of Book XI. The work record has no
+    composed field and its existing reviewed consumer bindings are preserved.'
   numbering: vulgate
   extent:
     token: Gen

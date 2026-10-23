@@ -112,7 +112,24 @@ into both — the multiplication `browser-core.js` forbids, and which
 `guidance/catena.md` Rule 6 forbids a second time, because a fragment cut at a
 boundary attributes to one chapter words written about another. A chapter with
 nothing at all gets no file, and `index.json` lists which chapters have one, so
-the empty case costs nothing.
+the empty commentary case costs no spine request.
+
+Scripture has a separate, complete addressing layer:
+`structure/catena/scripture/<canon.path>.json`, discovered through the Catena
+index's `scripture` prefix. `python3 scripts/_catena.py structure` writes one
+file per canonical book with schema `triptych-catena-scripture/v1`, its `token`,
+and every chapter under `chapters`. Each chapter is an ordinary Vulgate-numbered citation with
+precomputed addressing loci, edition departures, and refusals. It carries no
+verse text and exists even where the commentary spine holds nothing.
+
+The browser and terminal reader fetch this book file lazily and read the
+edition's native ranges in their recorded order, including splits across
+chapters or books. Native verse numbers, range labels, and paragraph records
+travel together. Canonical Psalm 50 therefore reads King James Psalm 51;
+canonical Daniel 13 can reach Susanna and then Bel. An absent, unreadable, or
+refused projection never falls back to fetching the same chapter number from
+the chosen edition. The source tools own all numbering conversion; consumers
+only select the loci already computed for that edition.
 
 The trade is real and is stated on the page rather than hidden: text that has
 not been fetched is not in the document, so the browser's own find-in-page

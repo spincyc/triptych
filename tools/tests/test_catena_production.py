@@ -1479,7 +1479,28 @@ V6_EMPTY_REFUSAL = _fixture(dict(
     refusals={"douay-rheims": [{}, {"note": "   "}, {"kind": "displaced"}]}))
 
 # The replay plan: only the scenarios the curated classes read.
+# Verse-shape fixtures intentionally replace the whole chapter with one or two
+# readable verses. Their projection must describe that fixture, independently
+# of the real Genesis chapter's finite 1-31 extent.
+GENESIS_FIXTURE_PROJECTION = {
+    "schema": "triptych-catena-scripture/v1", "token": "Gen",
+    "chapters": {"1": {"token": "Gen", "numbering": "vulgate", "unresolved": None,
+        "loci": {"vulgate": [{"chapter": 1, "first": None, "last": None}]}}},
+}
+
 SCENARIOS = [
+    {"name": "projected-miserere", "hash": "#book=Ps&chapter=50&bible=king-james-version",
+     "files": {"king-james-version/chapters/Ps/51.json": json.loads(
+         (ROOT / "src/sources/bibles/king-james-version/chapters/Ps/51.json").read_text())}},
+    {"name": "projected-psalm-9", "hash": "#book=Ps&chapter=9&bible=king-james-version",
+     "files": {f"king-james-version/chapters/Ps/{chapter}.json": json.loads(
+         (ROOT / f"src/sources/bibles/king-james-version/chapters/Ps/{chapter}.json").read_text())
+         for chapter in (9, 10)}},
+    {"name": "projected-daniel-13", "hash": "#book=Dan&chapter=13&bible=king-james-version",
+     "files": {f"king-james-version/chapters/{token}/1.json": json.loads(
+         (ROOT / f"src/sources/bibles/king-james-version/chapters/{token}/1.json").read_text())
+         for token in ("Sus", "Bel")}},
+    {"name": "projected-sirach-refusal", "hash": "#book=Ecclus&chapter=3&bible=king-james-version"},
     {"name": "default", "hash": GEN1,
      "steps": [{"do": "openFirstFragment", "label": "opened"}]},
     {"name": "voice-held", "hash": GEN1 + "&voice=translation:en"},
@@ -1829,7 +1850,10 @@ SCENARIOS = [
     # ---------------------------------------------------------------- V5 §8
     {"name": "malformed-verses", "hash": GEN1,
      "files": {"douay-rheims/chapters/Gen/1.json": MALFORMED_VERSES,
+               "structure/catena/scripture/01-gen.json": GENESIS_FIXTURE_PROJECTION,
                "structure/paragraphs/douay-rheims/01-gen/001.json": MALFORMED_BREAKS}},
+    {"name": "malformed-marks", "hash": GEN1,
+     "files": {"structure/paragraphs/douay-rheims/01-gen/001.json": MALFORMED_BREAKS}},
     # Every verse unreadable, but verses DID arrive. "carries no verses" is a
     # claim about the edition and this page may not make it from a parse
     # failure.
@@ -1943,9 +1967,11 @@ SCENARIOS = [
     # ---------------------------------------------------------------- §9
     # ONE VERSE, WRITTEN MORE THAN ONE WAY.
     {"name": "padded-verses", "hash": GEN1,
-     "files": {"douay-rheims/chapters/Gen/1.json": V6_PADDED_VERSES}},
+     "files": {"douay-rheims/chapters/Gen/1.json": V6_PADDED_VERSES,
+               "structure/catena/scripture/01-gen.json": GENESIS_FIXTURE_PROJECTION}},
     {"name": "unsafe-verses", "hash": GEN1,
-     "files": {"douay-rheims/chapters/Gen/1.json": V6_UNSAFE_VERSES}},
+     "files": {"douay-rheims/chapters/Gen/1.json": V6_UNSAFE_VERSES,
+               "structure/catena/scripture/01-gen.json": GENESIS_FIXTURE_PROJECTION}},
     # THE SAME FIXTURE WITH EVERY REFUSED FRAGMENT ACTUALLY OPENED. Opening
     # is what turns an id into a URL, so a scenario that opens only the safe
     # one proves nothing about the six it refused: the assertion that no
@@ -2650,6 +2676,7 @@ function inspect(page, document, location, fetched, hashWrites, replaced, status
     langAttributes: nodes.filter((one) => one.hasAttribute('lang'))
       .map((one) => (one.className || one.localName) + '=' + one.getAttribute('lang')),
     chapterOpen: Boolean((first('chapter-body') || {}).open),
+    chapterNames: withClass('chapter-name').map(text),
     chapterCounts: withClass('chapter-count').map(text),
     /* THE RENDERED SCRIPTURE ITSELF, verse by verse, in rendered order.
      * V6. The V5 verse-coercion oracle read `fragmentTexts` — the COMMENTARY —
@@ -3503,12 +3530,42 @@ class ReplayTest(unittest.TestCase):
         return {key: value for key, value in snap.items() if key not in journals}
 
 
+class CanonicalChapterScriptureTest(ReplayTest):
+    def test_miserere_uses_the_projected_native_chapter(self):
+        page = self.page("projected-miserere")
+        self.assertEqual(page["referenceText"], "Psalms 50")
+        self.assertEqual(page["chapterNames"], ["Psalms 51"])
+        self.assertEqual(page["notices"], [], "a successful projection is shown, not a refusal")
+        self.assertEqual(len(page["verseTexts"]), 19)
+        self.assertIn("Have mercy upon me", page["verseTexts"][0])
+        self.assertIn("king-james-version/chapters/Ps/51.json", page["fetched"])
+        self.assertNotIn("king-james-version/chapters/Ps/50.json", page["fetched"])
+
+    def test_a_joined_canonical_psalm_reads_two_native_psalms(self):
+        page = self.page("projected-psalm-9")
+        self.assertEqual(page["chapterNames"], ["Psalms 9", "Psalms 10"])
+        self.assertEqual(len(page["verseTexts"]), 38)
+
+    def test_daniel_redirects_across_books_without_losing_its_last_verse(self):
+        page = self.page("projected-daniel-13")
+        self.assertEqual(page["chapterNames"], ["Sus 1:1-64", "Bel 1:1"])
+        self.assertEqual(len(page["verseTexts"]), 65)
+        self.assertIn("king Astyages", page["verseTexts"][-1])
+        self.assertNotIn("king-james-version/chapters/Dan/13.json", page["fetched"])
+
+    def test_a_refused_correspondence_never_fetches_a_same_number(self):
+        page = self.page("projected-sirach-refusal")
+        self.assertFalse([path for path in page["fetched"] if "/chapters/" in path])
+        self.assertEqual(page["verseTexts"], [])
+        self.assertTrue(any("not mapped" in note for note in page["notices"]))
+
+
 class ChronologyTest(ReplayTest):
     """Finding 2 — the chain's chronology survives grouping.
 
     The generator orders fragments by text date. The first candidate then
     coalesced every work by author, so Genesis 1 rendered Augustine 401,
-    Augustine 417 and Severian 401 under one Augustine heading labelled 401.
+    Augustine 413 and Severian 401 under one Augustine heading labelled 401.
     Only a CONTIGUOUS run by one author with one date may share a heading.
     """
 
@@ -3519,7 +3576,7 @@ class ChronologyTest(ReplayTest):
         ("Jerome", "391", 2),
         ("Augustine of Hippo", "401", 4),
         ("Severian of Gabala", "401", 5),
-        ("Augustine of Hippo", "417", 3),
+        ("Augustine of Hippo", "413", 3),
         ("Bede", "717", 35),
         ("Alcuin of York", "796", 4),
         ("Angelomus of Luxeuil", "845", 17),
@@ -3540,7 +3597,7 @@ class ChronologyTest(ReplayTest):
         self.assertEqual(middle, [
             ("Augustine of Hippo", "401"),
             ("Severian of Gabala", "401"),
-            ("Augustine of Hippo", "417"),
+            ("Augustine of Hippo", "413"),
         ])
 
     def test_the_groups_carry_every_fragment_exactly_once(self):
@@ -3855,7 +3912,7 @@ class RightsRenderingTest(ReplayTest):
 
     def test_provenance_stands_whether_or_not_the_text_loads(self):
         # Source lines exist for all 107 fragments before any text is fetched.
-        self.assertEqual(len(self.page("voice-held")["snapshots"]["start"]["fetched"]), 6)
+        self.assertEqual(len(self.page("voice-held")["snapshots"]["start"]["fetched"]), 7)
         self.assertEqual(len(self.page("default")["sourceLines"]), 107)
 
     def test_a_recorded_acknowledgement_renders_above_the_prose(self):
@@ -5704,13 +5761,14 @@ class PayloadTest(ReplayTest):
         code = gz(without_comments(script, script=True))
         self.assertLessEqual(code, JS_CODE_BUDGET_GZ, f"the code alone is {code} B gzipped")
 
-    def test_the_corrections_added_no_request_to_a_first_load(self):
+    def test_a_first_load_fetches_one_lazy_book_projection(self):
         quiet = self.page("voice-held")["fetched"]
         self.assertEqual(quiet, [
             "structure/catena/index.json",
             "bibles.json",
             "structure/paragraphs/index.json",
             "structure/catena/01-gen/001.json",
+            "structure/catena/scripture/01-gen.json",
             "douay-rheims/chapters/Gen/1.json",
             "structure/paragraphs/douay-rheims/01-gen/001.json",
         ])
@@ -6133,9 +6191,15 @@ class TypedAbsenceFindingTest(ReplayTest):
 class NumericVerseAndPathTest(ReplayTest):
     """V5 §8 — numbers, verses, paths and the bootstrap record."""
 
-    def test_only_plainly_numbered_verses_with_readable_words_are_shown(self):
+    def test_an_incomplete_extent_is_refused_whole(self):
         page = self.page("malformed-verses")
-        self.assertEqual(page["chapterCounts"][0], "2 verses")
+        # Sound verses 1 and 9 do not cover the selected 1-9 extent. The
+        # malformed middle must not disappear while its endpoints make the
+        # resulting text look complete. Commentary remains independent.
+        self.assertEqual(page["verseTexts"], [])
+        self.assertEqual(page["chapterCounts"], [])
+        self.assertTrue(any("extent is not present" in note for note in page["notices"]))
+        self.assertEqual(page["fragmentCount"], 107)
 
     def test_no_verse_value_is_coerced_into_scripture(self):
         # CORRECTED ORACLE (V6). This read `fragmentTexts` — the COMMENTARY —
@@ -6161,7 +6225,7 @@ class NumericVerseAndPathTest(ReplayTest):
         # 3 and 9; the page cannot read any of the three, and denying that the
         # edition divides the chapter is a claim about how it sets its text
         # drawn from a record nobody could read.
-        page = self.page("malformed-verses")
+        page = self.page("malformed-marks")
         self.assertEqual(page["paragraphs"], 1)
         self.assertNotIn("No paragraph division is held", page["paragraphNote"])
         self.assertIn("could not be read", page["paragraphNote"])
@@ -6550,7 +6614,7 @@ class RenderedScriptureTruthTest(ReplayTest):
     """
 
     # Every scenario that renders a chapter under a verse-count chip.
-    NUMBERED = ("padded-verses", "unsafe-verses", "malformed-verses", "default")
+    NUMBERED = ("padded-verses", "unsafe-verses", "malformed-marks", "default")
 
     # Every scenario whose bible chapter is adversarial, plus the one whose
     # verses all arrived unreadable.
@@ -6607,7 +6671,7 @@ class RenderedScriptureTruthTest(ReplayTest):
         # replaced by the sentence that covers both halves — the chapter runs
         # on unmarked because nothing readable marked it, and whether the
         # edition divides it is not established here.
-        page = self.page("malformed-verses")
+        page = self.page("malformed-marks")
         self.assertEqual(page["paragraphs"], 1, "one unmarked paragraph runs on")
         self.assertEqual(page["projected"], 0)
         self.assertEqual(
@@ -7154,6 +7218,7 @@ class RootLanguageIdentityTest(ReplayTest):
     FETCHED = ["structure/catena/index.json", "bibles.json",
                "structure/paragraphs/index.json",
                "structure/catena/01-gen/001.json",
+               "structure/catena/scripture/01-gen.json",
                "douay-rheims/chapters/Gen/1.json",
                "structure/paragraphs/douay-rheims/01-gen/001.json"]
 
@@ -7290,13 +7355,14 @@ class EditionIdentityTest(ReplayTest):
                          ["Douay-Rheims (en)", "Clementine Vulgate (la)"])
 
     def test_no_unnameable_id_reaches_a_request(self):
-        # The whole request journal, exactly: six files, every one of them
+        # The whole request journal, exactly: seven files, every one of them
         # under the edition the reader actually selected.
         page = self.page("bible-identity-forms")
         self.assertEqual(page["fetched"],
                          ["structure/catena/index.json", "bibles.json",
                           "structure/paragraphs/index.json",
                           "structure/catena/01-gen/001.json",
+                          "structure/catena/scripture/01-gen.json",
                           "douay-rheims/chapters/Gen/1.json",
                           "structure/paragraphs/douay-rheims/01-gen/001.json"])
         for asked in page["fetched"]:
@@ -7732,6 +7798,7 @@ class RoutableIdentityTest(ReplayTest):
             "bibles.json",
             "structure/paragraphs/index.json",
             "structure/catena/01-gen/001.json",
+            "structure/catena/scripture/01-gen.json",
             "douay-rheims/chapters/Gen/1.json",
             "structure/paragraphs/douay-rheims/01-gen/001.json",
             "structure/catena/text/safe-first.json",
@@ -7860,6 +7927,7 @@ class V7TextPathRequestSinkTest(ReplayTest):
         "bibles.json",
         "structure/paragraphs/index.json",
         "structure/catena/01-gen/001.json",
+        "structure/catena/scripture/01-gen.json",
         "douay-rheims/chapters/Gen/1.json",
         "structure/paragraphs/douay-rheims/01-gen/001.json",
     ]
@@ -8281,8 +8349,8 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
             # --- the chapter around it ---------------------------------
             "referenceText": "Genesis 2",
             "tallyText": "1 fragment held",
-            "chapterCounts": ["31 verses", "3 paragraphs"],
-            "verseNumbers": [str(number) for number in range(1, 32)],
+            "chapterCounts": ["25 verses", "3 paragraphs"],
+            "verseNumbers": [str(number) for number in range(1, 26)],
             "paragraphNote": ("Paragraphs: 2 are projected from the "
                               "witnesses that concur, and marked."),
             # --- the controls ------------------------------------------
@@ -8381,7 +8449,7 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
         moved = [(one["seq"], one["path"], one["outcome"])
                  for one, then in zip(after["requests"], before["requests"])
                  if one != then]
-        self.assertEqual(moved, [(6, self.FALLBACK, "released")])
+        self.assertEqual(moved, [(7, self.FALLBACK, "released")])
 
 
 class V9PrefixStateClassificationTest(unittest.TestCase):
@@ -8844,8 +8912,8 @@ class V15TransportOwnershipTest(V14ProjectionAuthorityBase):
         "absencePartials": [],
         "paragraphNote": ("Paragraphs: 2 are projected from the witnesses "
                           "that concur, and marked."),
-        "chapterCounts": ["31 verses", "3 paragraphs"],
-        "verseNumbers": [str(number) for number in range(1, 32)],
+        "chapterCounts": ["25 verses", "3 paragraphs"],
+        "verseNumbers": [str(number) for number in range(1, 26)],
         "leads": [],
         "blocked": [],
         "voice": "",
@@ -8946,7 +9014,7 @@ class V15TransportOwnershipTest(V14ProjectionAuthorityBase):
         moved = [(one["seq"], one["path"], one["outcome"])
                  for one, then in zip(after["requests"], before["requests"])
                  if one != then]
-        self.assertEqual(moved, [(6, self.CARRIED, "released")])
+        self.assertEqual(moved, [(7, self.CARRIED, "released")])
         # NO SECOND APPLICATION. A's completion wrote nothing, so it is not
         # in the application roster at all — the containment check refuses it
         # before ownership is even recorded.

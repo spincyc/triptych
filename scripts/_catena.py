@@ -42,6 +42,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import functools
 import importlib.machinery
 import importlib.util
 import json
@@ -51,13 +52,16 @@ import sys
 import tempfile
 import tomllib
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any, Iterable, NamedTuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import _canon  # noqa: E402
+import _loci  # noqa: E402
 import _paragraphs  # noqa: E402
 import _projection  # noqa: E402
+import _psalms  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -108,9 +112,13 @@ FRAGMENT_FIELDS = {
 # `constituent_of` is required exactly when the passage's edition belongs to
 # another work; see `_passage_errors`. `text_date` and `text_date_basis` are the
 # override of a date the work record otherwise supplies, and are required
-# exactly when the work states no `composed` year; see `validate`. Both are
-# refused when they merely restate what is already stated elsewhere.
-OPTIONAL_FRAGMENT_FIELDS = {"constituent_of", "text_date", "text_date_basis"}
+# when the work states no `composed` year and a numeric date is established;
+# see `validate`. An explicit composition_date_unestablished instead records
+# the reviewed evidence's limit, mutually exclusive with a usable numeric
+# composition date. Numeric overrides are refused when they restate the work.
+OPTIONAL_FRAGMENT_FIELDS = {
+    "constituent_of", "text_date", "text_date_basis", "composition_date_unestablished",
+}
 
 # Rule 15. One text the library holds under two or more disputed attributions
 # is declared once, in `parallels`, and hung once, under the attribution the
@@ -503,6 +511,80 @@ def fragment_year(fragment: dict[str, Any], work: dict[str, Any] | None) -> int 
     return composed_year(work)
 
 
+def _date_errors(
+    label: str, fragment: dict[str, Any], work_id: str, work: dict[str, Any] | None,
+) -> list[str]:
+    """A known text date, or an explicit reviewed limit, and never a fallback."""
+    errors: list[str] = []
+    stated = fragment.get("text_date")
+    derived = composed_year(work)
+    numeric = isinstance(stated, int) and not isinstance(stated, bool)
+    declared = "composition_date_unestablished" in fragment
+    reason = fragment.get("composition_date_unestablished")
+    unestablished = isinstance(reason, str) and bool(reason.strip())
+    if declared:
+        if not unestablished:
+            errors.append(
+                f"{label} composition_date_unestablished must be a nonempty "
+                "plain-text statement of the reviewed evidence and its limit"
+            )
+        if numeric:
+            errors.append(
+                f"{label} composition_date_unestablished cannot accompany a numeric text_date"
+            )
+        if derived is not None:
+            errors.append(
+                f"{label} composition_date_unestablished contradicts {work_id}'s "
+                f"composed year {derived}; review and remove the stale declaration"
+            )
+    if numeric:
+        if not str(fragment.get("text_date_basis") or "").strip():
+            errors.append(f"{label} needs a text_date_basis for its text_date")
+        if stated == derived:
+            errors.append(
+                f"{label} restates text_date {stated}, which {work_id} already "
+                "states in `composed`; delete the restatement (guidance/the-shape.md 2)"
+            )
+    else:
+        if stated is not None:
+            errors.append(f"{label} text_date must be an integer year (Rule 7)")
+        elif derived is None and not unestablished:
+            errors.append(
+                f"{label} is dated by nothing: {work_id} states no `composed` year "
+                "and the fragment states neither text_date nor an explicit "
+                "composition_date_unestablished (Rule 7)"
+            )
+        if (declared and fragment.get("text_date_basis") is not None) or str(
+            fragment.get("text_date_basis") or ""
+        ).strip():
+            errors.append(
+                f"{label} carries a text_date_basis for a text_date it does not have"
+            )
+    return errors
+
+
+def _date_fields(fragment: dict[str, Any], work: dict[str, Any] | None) -> dict[str, Any]:
+    """Project the declared date class; malformed or missing dates cannot emit."""
+    errors = _date_errors(
+        str(fragment.get("passage_id") or "fragment"), fragment,
+        str(fragment.get("work_id") or "work"), work,
+    )
+    if errors:
+        raise CatenaError("; ".join(errors))
+    if "composition_date_unestablished" in fragment:
+        reason = fragment["composition_date_unestablished"].strip()
+        return {
+            "date": None,
+            "date_basis": reason,
+            "composition_date_status": "unestablished",
+            "composition_date_basis": reason,
+        }
+    return {
+        "date": fragment_year(fragment, work),
+        "date_basis": str(fragment.get("text_date_basis") or (work or {}).get("composed_basis") or ""),
+    }
+
+
 def fold_language(code: Any) -> str | None:
     """One ISO code space, or nothing. Never a guess; see LANGUAGE_EQUIVALENTS."""
     return LANGUAGE_EQUIVALENTS.get(str(code or "").strip().lower())
@@ -560,6 +642,46 @@ class Sources(NamedTuple):
     artifacts: dict[str, dict[str, Any]]
     segments: dict[str, dict[str, Any]]
     passages: dict[str, dict[str, Any]]
+
+
+@functools.lru_cache(maxsize=1)
+def _source_library():
+    """The owner of passage controllers, including borrowed anthology bytes."""
+    name = "_catena_source_library"
+    loader = importlib.machinery.SourceFileLoader(name, str(ROOT / "tools/source-library"))
+    spec = importlib.util.spec_from_loader(name, loader)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[name] = module
+    loader.exec_module(module)
+    return module
+
+
+class _ControllerRecords:
+    """The already loaded records in the source-library controller's view.
+
+    The library helper reads only record type and data. Keeping that view lazy
+    avoids parsing and validating the whole graph again for every fragment; the
+    source-library gate still owns controller and hash validation.
+    """
+
+    def __init__(self, sources: Sources) -> None:
+        self.sources = sources
+
+    def get(self, identifier: str):
+        data = self.sources.artifacts.get(identifier) or self.sources.segments.get(identifier)
+        return (
+            SimpleNamespace(data=data, record_type=data.get("record_type"))
+            if data is not None else None
+        )
+
+
+def controlling_artifact(sources: Sources, passage: dict[str, Any]) -> dict[str, Any] | None:
+    """Resolve the passage's exact controller through the source-library owner."""
+    artifact = _source_library()._controlling_artifact(
+        SimpleNamespace(records=_ControllerRecords(sources)),
+        SimpleNamespace(record_type="passage", data=passage),
+    )
+    return artifact.data if artifact is not None else None
 
 
 _SOURCES_CACHE: dict[Path, "Sources"] = {}
@@ -910,27 +1032,7 @@ def validate(root: Path = ROOT) -> list[str]:
         # may override it, and must then say why in `text_date_basis`; it may not
         # agree with it, because a row that restates agreement is a row that can
         # later contradict it.
-        stated = fragment.get("text_date")
-        derived = composed_year(work)
-        if isinstance(stated, int) and not isinstance(stated, bool):
-            if not str(fragment.get("text_date_basis") or "").strip():
-                errors.append(f"{label} needs a text_date_basis for its text_date")
-            if stated == derived:
-                errors.append(
-                    f"{label} restates text_date {stated}, which {work_id} already "
-                    f"states in `composed`; delete the restatement (guidance/the-shape.md 2)"
-                )
-        elif stated is not None:
-            errors.append(f"{label} text_date must be an integer year (Rule 7)")
-        elif derived is None:
-            errors.append(
-                f"{label} is dated by nothing: {work_id} states no `composed` year "
-                f"and the fragment states no text_date (Rule 7)"
-            )
-        elif str(fragment.get("text_date_basis") or "").strip():
-            errors.append(
-                f"{label} carries a text_date_basis for a text_date it does not have"
-            )
+        errors.extend(_date_errors(label, fragment, work_id, work))
 
         alias = fragment.get("work_alias")
         if not isinstance(alias, dict) or set(alias) != {"author", "work"}:
@@ -1303,8 +1405,9 @@ def _passage_errors(
         errors.append(f"{label}: {edition_id} declares no language")
     errors.extend(_voice_errors(sources, label, work_id, edition_id, edition))
 
-    artifact_id = str(passage.get("artifact_id") or "")
-    artifact = sources.artifacts.get(artifact_id)
+    artifact = controlling_artifact(sources, passage)
+    artifact_id = str((artifact or {}).get("id") or passage.get("segment_id")
+                      or passage.get("artifact_id") or "")
     if artifact is None:
         errors.append(
             f"{label} reaches no artifact through {artifact_id or '(none)'}, so it "
@@ -1372,7 +1475,7 @@ def fragments_for_book(root: Path, token: str) -> list[dict[str, Any]]:
         work = sources.works.get(work_id) or {}
         edition_id = str(passage.get("edition_id") or "")
         edition = sources.editions.get(edition_id) or {}
-        artifact = sources.artifacts.get(str(passage.get("artifact_id") or "")) or {}
+        artifact = controlling_artifact(sources, passage) or {}
         rows.append(
             {
                 "id": str(fragment["passage_id"]),
@@ -1385,10 +1488,7 @@ def fragments_for_book(root: Path, token: str) -> list[dict[str, Any]]:
                 # Derived, never stored beside the work reference.
                 "author": str(work.get("responsible") or ""),
                 "work": str(work.get("title") or ""),
-                "date": fragment_year(fragment, work),
-                "date_basis": str(
-                    fragment.get("text_date_basis") or work.get("composed_basis") or ""
-                ),
+                **_date_fields(fragment, work),
                 "language": str(edition.get("language") or ""),
                 # Whose words, on the axis the reader actually chooses along.
                 # Derived from the work and the edition together, because the
@@ -1425,7 +1525,8 @@ def fragments_for_book(root: Path, token: str) -> list[dict[str, Any]]:
             }
         )
     rows.sort(key=lambda row: (
-        row["date"] if isinstance(row["date"], int) else 1 << 30,
+        row["date"] is None,
+        () if row["date"] is None else (row["date"],),
         row["author"],
         row["work"],
         row["extent"]["first_chapter"],
@@ -1511,6 +1612,157 @@ def offered_editions(root: Path) -> list[dict[str, str]]:
             }
         )
     return editions
+
+
+def _scripture_editions(root: Path) -> list[tuple[_loci.EditionReader, Any]]:
+    """The offered editions, through the Bible resolver that owns their loci."""
+    offered = {edition["id"] for edition in offered_editions(root)}
+    if not offered:
+        return []
+    register = _index_bible(ROOT)
+    readers = []
+    for name, edition in sorted(register.EDITIONS.items()):
+        if name not in offered or not edition["publishable"]:
+            continue
+        artifacts = root / "src/sources/works" / str(edition["artifacts"])
+        bible = register.Bible(artifacts)
+        carried = {
+            tuple(point): (
+                None if target is None else tuple(target),
+                bible.alias_notes.get(".".join(map(str, point)), ""),
+            )
+            for point, target in bible.aliases.items()
+        }
+        reader = _loci.EditionReader(
+            name,
+            _psalms.addressing(str(edition["numbering"]), str(edition["psalm_titles"])),
+            carried,
+            frozenset((token, chapter) for token, chapter, _ in carried),
+        )
+        readers.append((reader, bible))
+    return readers
+
+
+def _native_scripture_loci(
+    reader: _loci.EditionReader, bible: Any, token: str, loci: list[dict],
+) -> tuple[list[dict], str]:
+    """Validate and place every native run, preserving its order and refusals.
+
+    Bible.span owns open bounds and verifies every cited verse before placed
+    follows the same alias table. In particular, a whole chapter may redirect
+    into several books; treating its open ends as identity would bypass those
+    rows and would serve Daniel 13 as a nonexistent native Daniel chapter.
+    """
+    native: list[dict] = []
+    for locus in loci:
+        held, chapter = locus.get("book") or token, locus["chapter"]
+        begin, end = {"chapter": chapter}, {"chapter": chapter}
+        if locus.get("first") is not None:
+            begin["verse"] = locus["first"]
+        if locus.get("last") is not None:
+            end["verse"] = locus["last"]
+        _text, problem, opened, closed = bible.span(held, {"begin": begin, "end": end})
+        if problem:
+            return [], f"{reader.id}: {problem}"
+        if not opened or not closed:
+            return [], f"{reader.id}: {held} {chapter} carries no verses"
+        if held == _psalms.PSALMS_TOKEN and locus.get("first") is None and locus.get("last") is None:
+            # A whole psalm means the edition's whole native psalm, including
+            # splits that intentionally have no point alias. Bible.span's open
+            # upper bound is native, so interpreting it as a cited upper bound
+            # would remap the tail twice (CPDV Psalm 13: canonical 3 is native
+            # 3-6, and canonical 4-7 is native 7-10). Keep the whole extent after
+            # validating the existing refusals above.
+            native.append(dict(locus))
+            continue
+        bounded = {**locus, "first": opened[1], "last": closed[1]}
+        moved, problem = _loci.placed(reader, token, [bounded])
+        if problem:
+            return [], f"{reader.id}: {problem}"
+        # Retain an open psalm endpoint only when it still reaches the native
+        # chapter's bound. The Bible resolver established those bounds above;
+        # no edition numbering or offset is inferred here.
+        for side, offset in (("first", 0), ("last", 1)):
+            if locus.get(side) is None and moved:
+                row = moved[0 if side == "first" else -1]
+                bounds = bible.chapters.get((row.get("book") or token, row["chapter"]))
+                if bounds is not None and row[side] == bounds[offset]:
+                    row[side] = None
+        native.extend(moved)
+    return native, ""
+
+
+def scripture_for_book(
+    root: Path, book: dict[str, Any], editions: list[tuple[_loci.EditionReader, Any]] | None = None,
+) -> dict[str, Any]:
+    """Every canonical chapter's citation, independent of commentary coverage.
+
+    Only addresses enter this lazy book file. Psalm splitting and title
+    treatment stay with _psalms, edition departures stay with the Bible's own
+    alias parser and _loci, and the browser fetches unaltered native chapters.
+    """
+    editions = _scripture_editions(root) if editions is None else editions
+    token, name = str(book["token"]), str(book["name"])
+    chapters: dict[str, dict[str, Any]] = {}
+    for chapter in range(1, int(book["last_chapter"]) + 1):
+        citation: dict[str, Any] = {
+            "ref": f"{'Psalm' if name == _psalms.PSALMS else name} {chapter}",
+            "book": name,
+            "token": token,
+            "numbering": _projection.CANONICAL,
+            "loci": {},
+            "unresolved": None,
+        }
+        begin, end = {"chapter": chapter}, {"chapter": chapter}
+        if token != _psalms.PSALMS_TOKEN:
+            path = root / BIBLES_RELATIVE / CANONICAL_BIBLE / "chapters" / token / f"{chapter}.json"
+            verses = json.loads(path.read_text(encoding="utf-8")).get("verses") or {}
+            numbers = sorted(int(key) for key in verses if str(key).isdigit())
+            if not numbers:
+                raise CatenaError(f"{path}: canonical chapter carries no numbered verses")
+            begin["verse"], end["verse"] = numbers[0], numbers[-1]
+        try:
+            converted = {
+                system: _psalms.convert_range_whole(name, begin, end, _projection.CANONICAL, system)
+                for system in _psalms.SYSTEMS
+            }
+            addressed, refused = _psalms.addressed(name, converted)
+        except _psalms.NumberingError as error:
+            citation["unresolved"] = str(error)
+            chapters[str(chapter)] = citation
+            continue
+        citation["loci"] = {
+            key: [locus for piece in pieces
+                  for locus in _loci.range_to_loci(piece["begin"], piece.get("end") or piece["begin"])]
+            for key, pieces in addressed.items()
+        }
+        departures = {}
+        for reader, bible in editions:
+            base = citation["loci"].get(reader.addressing)
+            if base is None:
+                continue
+            if token != _psalms.PSALMS_TOKEN and (token, chapter) not in reader.chapters:
+                canonical_bounds = (begin["verse"], end["verse"])
+                native_bounds = bible.chapters.get((token, chapter))
+                if native_bounds is not None and native_bounds != canonical_bounds:
+                    refused[reader.id] = (
+                        f"{reader.id}: canonical {token} {chapter} spans "
+                        f"{canonical_bounds[0]}-{canonical_bounds[1]}, but this edition "
+                        f"prints {native_bounds[0]}-{native_bounds[1]}; no chapter "
+                        "correspondence is recorded in its verse aliases"
+                    )
+                    continue
+            native, problem = _native_scripture_loci(reader, bible, token, base)
+            if problem:
+                refused[reader.id] = problem
+            elif native != base:
+                departures[reader.id] = native
+        if departures:
+            citation["edition_loci"] = departures
+        if refused:
+            citation["refused"] = refused
+        chapters[str(chapter)] = citation
+    return {"schema": "triptych-catena-scripture/v1", "token": token, "chapters": chapters}
 
 
 def refusals_for_book(root: Path, token: str) -> dict[str, list[dict[str, Any]]]:
@@ -1626,7 +1878,14 @@ SHARED_WITH_EDITION = (
     "translators",
     "container",
     "rights",
+    "composition_date_status",
+    "composition_date_basis",
 )
+
+# Optional only for the explicit unestablished class. Dated source groups keep
+# their exact prior shape, while the browser's typed shared-field allowlist can
+# still name the complete contract in one tuple above.
+OPTIONAL_DATE_FIELDS = frozenset({"composition_date_status", "composition_date_basis"})
 
 # The path a book and a chapter take. Derived in `scripts/_canon.py`, which owns
 # the canon and therefore owns everything derived from it; see its header for
@@ -1790,7 +2049,10 @@ def _fold_shared(rows: list[dict[str, Any]]) -> tuple[dict[str, dict[str, Any]],
         if key is None:
             key = str(len(groups))
             groups[signature] = key
-            shared[key] = {name: row.get(name) for name in SHARED_WITH_EDITION}
+            shared[key] = {
+                name: row.get(name) for name in SHARED_WITH_EDITION
+                if name not in OPTIONAL_DATE_FIELDS or name in row
+            }
         rest = {name: value for name, value in row.items() if name not in SHARED_WITH_EDITION}
         rest["source"] = key
         slim.append(rest)
@@ -1857,10 +2119,14 @@ def _structure_files(
     # `translation:grc` to offer. Counting the pairs is the only way to know
     # that; inferring support from the language alone invents a holding.
     voices: set[str] = set()
+    scripture_editions = _scripture_editions(root)
     for book in books:
         token = book["token"]
         folder = folders[token]
         chapters = list(range(1, int(book["last_chapter"]) + 1))
+        scripture_path = directory / "scripture" / f"{folder}.json"
+        files[scripture_path] = _serialise(scripture_for_book(root, book, scripture_editions))
+        written.append(scripture_path)
         rows = fragments_for_book(root, token)
         leads = leads_for_book(root, token, book["name"])
         held_back = blocked_for_book(root, token)
@@ -1984,6 +2250,7 @@ def _structure_files(
             # translation and so accepted a Greek translation nobody holds.
             "voices": sorted(voices),
             "texts": f"structure/catena/{TEXT_DIRECTORY}/",
+            "scripture": "structure/catena/scripture/",
             # Which held works do not reach a language, and why. Written ONCE
             # for the whole catena and keyed by the work id every chapter
             # spine's `sources` entry carries, rather than repeated into each
