@@ -800,3 +800,29 @@ The existing F01 row now links the GPT Full PDF, Synthesis PDF, Homily PDF
 and canonical Read edition in manifest order, preserving the Claude links.
 The terminal engine publication gate remains the acceptance boundary;
 installation is not deployment.
+
+## Register revision, 23 October 2026
+
+The maintainer requested this GPT set receive the 21 October register
+amendments already applied to the Claude counterpart. The matching expansive,
+concise and homily texts are revised in place. The original native run's
+provenance and acceptance remain historical; this manual revision has its own
+independent reviews and does not claim a fresh native workflow verdict.
+
+Independent content and fidelity reviewers accept the corrected expansive
+study, then its derived concise study, then the homily. They check retained
+electronic witnesses and the collated appointed-text record, without claiming
+new facsimile collation or chronology research. The expansive review's
+Postcommunion finding is corrected: heavenly reign is the petition for those
+already nourished who glory in serving Christ, while present perseverance is
+interpretation. Both companions preserve that distinction. Source quotations,+loci and material disagreements remain; the revised study components retain
+all 25 footnotes and the concise components retain all 23.
+
+The homily retains one connected argument from grace-enabled hearing to
+reconciliation and one response to a resented correction. Its Pandoc
+plain-text rendering contains 1,259 words, an estimated 10.1–11.4 minutes at
+110–125 words per minute. No audible rehearsal or timed human delivery is
+claimed. The shared source-finalization timestamp is
+`2026-10-23T19:40:04Z`. The current revision's review findings, exact accepted
+source hashes, artifact checks and publication evidence are owned by
+`workflows/reviews/gpt-register-remediation-2026-10-23/RECORD.md`.

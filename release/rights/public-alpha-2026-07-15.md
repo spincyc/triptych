@@ -14301,7 +14301,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-4.json` | `3a8aa5df1a6f757d2ee38e6db4c52cb1984ef682919f8186249223a7cc908e39` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-5.json` | `7df230786bbaaf1ace902521bc80b16163d0c9a37a19f862d37d1189ebf645e2` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-6.json` | `4ebbafc5fc61cc734be6f1ae180c007fb406bddbac8a51206d131b7a89a76d8f` |
-| `src/web/data/structure/documents/corpus.json` | `addc67ef386cbf88dcb3b1d040730c5a78eb3e5d515758dd09ec2e58062eebfc` |
+| `src/web/data/structure/documents/corpus.json` | `14035af4162f4d314d03b47589d8d67837b6db7c1c1533afa95f1ab523f9063e` |
 | `src/web/data/structure/ordinary/index.json` | `d42c3482d78158b8d1a0d51b65ce6d5704b5d634f8833bc46f2a8a65b3a73816` |
 | `src/web/data/structure/ordinary/postconciliar.json` | `9b94a5ea6b83fa56c558e3f2293a0d3b8ae93f83e7e79324e6d8ae7984096807` |
 | `src/web/data/structure/ordinary/roman-1962.json` | `6a131ccc5603941bc76b20159d03197315f2f2575b9bc4313e91c642faf7cf43` |
@@ -25501,7 +25501,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.md` | `019d919c1558305ae1cc3e3ebcb88fa6c39981fb44f90b23940f5bac7947e64f` |
 | `web/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.md` | `c812431a575cf7705e1e9597fb0a19e5be8df76ab35a3841d56c2c330f50acd8` |
 | `web/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.md` | `0a12ed464a3838f64e9e16f2820f1f55b87cd599466058919a440701f09fbd44` |
-| `web/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.md` | `c4229d8989d11befd1d43fc50a680d258459bd806978cc7f42a50d1d513a7e7f` |
+| `web/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.md` | `b42680fe8d4c26c60230bb25db4aaa3b549994528a0845fd074017bb11adf2fb` |
 | `web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.md` | `36ddab68ea8c5550cf5d9369500d3f70bfa649ff4898fff50caec004c4eb1c2b` |
 | `web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.md` | `0c358e85987752858f685b90697906a234953298140bea89df383ca9e9ce5eb7` |
 | `web/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.md` | `8ba182a2b9735de910cb9496424804bfedc101c2f9bbb41d8c7814a845a8e9a5` |

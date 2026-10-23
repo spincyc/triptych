@@ -3,7 +3,7 @@
  "counted": {
   "documents": 213,
   "issues": 271,
-  "pages": 7189,
+  "pages": 7188,
   "titles_unrecorded": 0,
   "works": 152
  },
@@ -7877,7 +7877,7 @@
        "kind": "synthesis",
        "pages": 10,
        "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.pdf",
-       "subject": "A concise comparison of two readings of the 1962 Roman Missal formulary for 25 October 2026",
+       "subject": "A concise comparison of two interpretations of the 1962 Roman Missal texts for 25 October 2026",
        "title": "Our Lord Jesus Christ the King: Hearing and Peace"
       },
       {
@@ -7934,13 +7934,18 @@
        "model": "GPT-6",
        "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
        "runtime": "OpenAI Codex API agent; homily rechecked against both revised accepted studies and retained reception witnesses, preserving its spoken argument and making the terminal delivery estimate precise; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "unexposed: exact model variant, reasoning effort and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; register revision of the expansive study, concise study and homily with independent content and source-fidelity reviews; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
       "GPT-6"
      ],
-     "pages": 23,
+     "pages": 22,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.pdf",
      "produced": {
       "run_id": "095fe00a9fe8cfee",
@@ -7950,10 +7955,10 @@
       "workflow_version": "13"
      },
      "provider": "gpt",
-     "reviewed": "2026-10-20",
-     "revised": "2026-10-20T14:42:53Z",
+     "reviewed": "2026-10-23",
+     "revised": "2026-10-23T19:40:04Z",
      "status": "alpha",
-     "subject": "An expansive study of the 1962 Roman Missal formulary for 25 October 2026",
+     "subject": "An expansive study of the 1962 Roman Missal texts for 25 October 2026",
      "title": "Our Lord Jesus Christ the King: Hearing the King and Receiving His Peace",
      "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/main.tex",
      "web": "web/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.html"

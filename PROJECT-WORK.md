@@ -7,6 +7,37 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-23.
 
+## GPT proper-study register revision, 2026-10-23
+
+<!-- promised-deliverable: gpt-propers-register-2026-10-23 -->
+
+**Reviewed candidate.** Apply the 21 October register guidance and the corresponding
+Claude amendments to the recent GPT proper studies, independently cold-review
+the voice guidance, verify the revised publications, and publish to `main`.
+The matching GPT 1962 Christ the King expansive study, concise study and homily
+are the selected scope, as proposed during clarification; no older target has
+been supplied. This request authorizes that backfill despite the earlier
+decision to defer it. The work
+starts from `2e030b564f4413b735ddbea3061082ebe981b11a` and stays on workspace
+branch `feature/propers/codex`. Existing native acceptance records remain
+historical; this revision receives its own content, fidelity, visual and web
+review rather than a restamped workflow verdict. The owning receipt is
+`workflows/reviews/gpt-register-remediation-2026-10-23/RECORD.md`.
+
+The guidance cold review finds no material contradiction in the new register
+rules and records two precision risks in the existing lexical screen. All
+three content revisions are independently accepted in upstream order after a
+corrected expansive Postcommunion-petition finding. All 25 footnotes in the
+revised study components and all 23 in the concise components remain intact,
+with their source loci and material disagreements. The finalized PDFs build
+at 22, 10 and 3 pages; baseline artifacts were 23, 10 and 3. The homily has
+1,259 spoken words. Independent artifact and web review accept the final bytes,
+all mirrors are installed unchanged, and inventories and release bindings are
+current. The complete source aggregate, tracked web-currentness, mechanical
+proper publication check, public-site build and GitHub Pages verifier pass.
+The source gate includes the exact deployment-source prerequisites. Main push,
+the resulting Actions runs and live-byte verification remain open.
+
 ## Reader and corpus recovery, 2026-10-23
 
 <!-- promised-deliverable: reader-corpus-recovery-2026-10-23 -->
