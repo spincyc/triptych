@@ -642,6 +642,48 @@
       .map(publicUnsettled);
   }
 
+  /**
+   * RG 110 is not an ordinary, independently disposable commemoration.
+   *
+   * Until the counted group and its consumers are implemented, refuse only
+   * where a source-identified member would actually enter either oration
+   * series. An occurrence where both members are omitted needs no group and
+   * remains settled. These exact pairs belong to the source, never to an
+   * inference from a saint's name or a formulary key fragment.
+   */
+  function inseparableUnsettledOn(rubrics, winner, low, sung) {
+    const rule = (rubrics.commemoration || {}).inseparable;
+    if (!rule || !Object.prototype.hasOwnProperty.call(rule, 'unapplied')) return [];
+    const limit = rule.unapplied;
+    if (!limit || typeof limit !== 'object' || Array.isArray(limit) ||
+        rule.applied !== false || Object.keys(limit).sort().join(',') !== 'pairs,scope,what,why' ||
+        !Array.isArray(limit.pairs) || !limit.pairs.length ||
+        typeof limit.what !== 'string' || !limit.what ||
+        typeof limit.why !== 'string' || !limit.why || limit.scope !== 'oration-owner') {
+      throw new Error('malformed unapplied inseparable-oration source rule');
+    }
+    const admitted = (low.commemorations || []).concat(sung ? sung.commemorations || [] : []);
+    const used = new Set();
+    return limit.pairs.filter(function (pair) {
+      if (!pair || Object.keys(pair).sort().join(',') !== 'companion,host,locus' ||
+          typeof pair.host !== 'string' || !pair.host ||
+          typeof pair.companion !== 'string' || !pair.companion ||
+          pair.host === pair.companion || typeof pair.locus !== 'string' || !pair.locus) {
+        throw new Error('malformed unapplied inseparable-oration pair');
+      }
+      if (!(rubrics.keys || {})[pair.host] || !(rubrics.keys || {})[pair.companion] ||
+          used.has(pair.host) || used.has(pair.companion)) {
+        throw new Error('unknown or repeated unapplied inseparable-oration member');
+      }
+      used.add(pair.host);
+      used.add(pair.companion);
+      return (winner && (winner.key === pair.host || winner.key === pair.companion)) ||
+        admitted.some(function (one) { return one.key === pair.host || one.key === pair.companion; });
+    }).map(function (pair) {
+      return { what: limit.what, why: limit.why, scope: limit.scope, locus: pair.locus };
+    });
+  }
+
   /* ------------------------------------------------------------------------
    * The territorial split
    *
@@ -1415,16 +1457,29 @@
             'source constitutes a day for it.'
       });
     }
-    const winner = ranked.winner;
+    let winner = ranked.winner;
     const losers = (ranked.contest || []).filter((one) => one !== winner)
       .concat(ranked.aside || []);
 
-    const low = winner ? dispose(rubrics, winner, losers, owner, isoDate, false, remarks)
+    let low = winner ? dispose(rubrics, winner, losers, owner, isoDate, false, remarks)
                        : { losers: [], commemorations: [] };
     const commemorates = !(rubrics.commemoration && rubrics.commemoration.exists === false);
-    const sung = winner && commemorates
+    let sung = winner && commemorates
       ? dispose(rubrics, winner, losers, owner, isoDate, true, [])
       : null;
+
+    const inseparableRefusals = inseparableUnsettledOn(rubrics, winner, low, sung);
+    if (inseparableRefusals.length) {
+      unsettled.push.apply(unsettled, inseparableRefusals);
+      // These were provisional admission results, used only to detect whether
+      // the unimplemented group matters. Reuse the existing refusal result:
+      // no public winner, omission or conclusion claim survives underneath it.
+      ranked = { winner: null, contest: [], defeated: [], aside: [] };
+      winner = null;
+      low = { losers: [], commemorations: [], ceiling: null };
+      sung = null;
+      remarks.length = 0;
+    }
 
     const conditions = effectiveCandidates
       .filter((one) => one.certain === false && one.caveat)

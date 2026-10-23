@@ -811,6 +811,51 @@ def check_mass_choices(document: dict, masses: dict[str, dict], basis_index: dic
     return problems
 
 
+def check_inseparable(document: dict, masses: dict[str, dict], where: str) -> list[str]:
+    """Validate the bounded source pairs that require an unapplied-group refusal."""
+    rule = (document.get("commemoration") or {}).get("inseparable") or {}
+    if not isinstance(rule, dict):
+        return [f"{where}: inseparable orations must be a mapping"]
+    if "unapplied" not in rule:
+        return []
+    limit = rule["unapplied"]
+    prefix = f"{where}: unapplied inseparable orations"
+    if rule.get("applied") is not False or not isinstance(limit, dict):
+        return [f"{prefix} require applied: false and a mapping"]
+    if set(limit) != {"scope", "what", "why", "pairs"}:
+        return [f"{prefix} have missing or unknown fields"]
+    if limit.get("scope") != "oration-owner" or any(
+        not isinstance(limit.get(key), str) or not limit[key].strip()
+        for key in ("what", "why")
+    ):
+        return [f"{prefix} require oration-owner scope and nonempty what/why"]
+    pairs = limit.get("pairs")
+    if not isinstance(pairs, list) or not pairs:
+        return [f"{prefix} require a nonempty pairs list"]
+    problems = []
+    used = set()
+    for position, pair in enumerate(pairs):
+        label = f"{prefix}, pair {position + 1}"
+        if not isinstance(pair, dict) or set(pair) != {"host", "companion", "locus"}:
+            problems.append(f"{label} has missing or unknown fields")
+            continue
+        if any(not isinstance(pair[key], str) or not pair[key].strip() for key in pair):
+            problems.append(f"{label} requires nonempty string values")
+            continue
+        host, companion = pair["host"], pair["companion"]
+        if host == companion or host in used or companion in used:
+            problems.append(f"{label} repeats an inseparable member")
+        used.update((host, companion))
+        if host not in masses or companion not in masses:
+            problems.append(f"{label} names a key the calendar index does not carry")
+            continue
+        if not masses[host].get("dated") or masses[host].get("rank") not in ("I", "II", "III"):
+            problems.append(f"{label} host must be a dated feast")
+        if not masses[companion].get("dated") or masses[companion].get("rank") != "Comm.":
+            problems.append(f"{label} companion must be a dated commemoration")
+    return problems
+
+
 def check_absences(document: dict, where: str) -> list[str]:
     problems: list[str] = []
     for entry in document.get("known_absences") or []:
@@ -1265,6 +1310,7 @@ def build(root: Path, only: str | None) -> tuple[list[dict], list[str], dict[str
         problems.extend(check_overrides(document, assigned, basis_index, where))
         problems.extend(check_seats(document, assigned, where))
         problems.extend(check_absences(document, where))
+        problems.extend(check_inseparable(document, masses, where))
         problems.extend(
             check_mass_choices(document, all_formularies(root, name), basis_index, where)
         )
