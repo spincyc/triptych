@@ -4283,20 +4283,6 @@ note = "no publishable English as yet: the approved translation is ICEL's, subje
 [[untranslated]]
 mass = "easter-vigil"
 form_id = "main"
-proper = "Prayer after the Seventh Reading (alternative)"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-rejected_detectors = ["liturgies-net-2026-08-22"]
-quarantined_text_sha256 = ["23df45745bb6c8ff93a19001bc825ba6871a5193f9fb0966f32c6860faf6e37d"]
-note = "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "easter-vigil"
-form_id = "main"
 proper = "Prayer after the Third Reading"
 cycle = "all"
 occurrence = 1
@@ -11547,3 +11533,32 @@ lang = "en"
 rights = "public-domain"
 source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
 text = "O God, Who dost ever multiply Thy Church by the calling of the nations, mercifully grant that those whom Thou dost wash with the water of baptism may be guarded by Thy continual protection. Through Our Lord."
+
+[[entries]]
+mass = "easter-vigil"
+form = ""
+form_id = "main"
+cycle = "all"
+proper = "Prayer after the Seventh Reading (alternative)"
+incipit = "Deus, qui nos ad celebrandum paschale sacramentum"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-easter-vigil-seventh-alternative-en-20261023"
+printed_page = "317"
+publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-easter-vigil-seventh-alternative-en-20261023"
+publication_artifact_sha256 = "e6754d2ce9e5a1a47b6b3c4d5bdd0f9cb65f9357d4840af13033d5d159d72bf2"
+publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-easter-vigil-seventh-alternative-en-20261023"
+verified_on_page = "2026-10-23"
+verified_heading = "ON HOLY SATURDAY / Prayer Deus qui nos after Prophecy VII"
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/romanmissaltran00churgoog.pdf"
+occurrence = 1
+ia_leaf = 325
+ia_leaf_range = [325, 325]
+witness_note = "Complete historical antecedent English for study, not approved contemporary English or an exact target-edition translation. Cummiskey printed p. 317, PDF p. 326 / IA n325, prints the complete Prayer Deus qui nos after old Prophecy VII, with the English short ending Thro’. and a separately printed response R. Amen. The payload preserves only the prayer body and its actual short ending; no ending is expanded and no response is appended. Complete corresponding historical Latin was independently read on Pustet1862 printed p. 196, PDF p. 282 / IA n281. Its entire petition has the same words as the photographed1970 p. 279 / PDF272 and separately viewed secondary2002 PDF215, with these explicit spelling differences: Pustet intelligere versus modern intellegere and Pustet expectatio versus modern exspectatio. These are received spellings of the same words, not a substituted petition; no broad donor normalization or inferred word is used. Accents, capitalization, ligatures, pointing and line wraps also differ. Actual conclusions are different and separately retained: Pustet prints Per Dominum nostrum etc.; Cummiskey prints Thro’. with separate R. Amen.; both modern witnesses print Per Christum Dominum nostrum. with separate R. Amen. No complete-prayer string identity or cue equivalence is asserted. Photographed1970 is primary evidence for its own reading; the digital2002 reproduction has unestablished printed-book fidelity, and correspondence to the2008 reimpressio remains unresolved. No protected Latin body, ICEL English or reconstructed Lasance words are imported. Controllers: passage.catholic-church.missale-romanum.pustet-ratisbon-1862.postconciliar-easter-vigil-seventh-alternative-latin-20261023; passage.catholic-church.missale-romanum.vatican-typica-1970.postconciliar-easter-vigil-seventh-alternative-comparison-20261023; passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.postconciliar-easter-vigil-seventh-alternative-comparison-20261023."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = "O God, who by the scriptures of both testaments teachest us to celebrate the Paschal sacrament: give us such a sense of thy mercy, that, by receiving thy present favours, we may have a firm hope of thy future blessings. Thro’."
