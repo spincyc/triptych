@@ -303,7 +303,7 @@ const STATES = Object.freeze({
   alternativeUnsupported: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'la', alternative: 'first-reading-alternative' }),
   alternative: hash({ missal: 'postconciliar', type: 'marian', mass: 'visitation-blessed-virgin-mary', bible: 'douay-rheims', orations: 'la' }),
   partial: hash({ missal: 'roman-1962', type: 'christological', mass: 'octava-nativitatis-domini', bible: 'douay-rheims', orations: 'la' }),
-  withheld: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 's-ioannis-mariae-vianney-confessoris', bible: 'douay-rheims', orations: 'la' }),
+  withheld: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 's-antonii-mariae-claret-episcopi-confessoris', bible: 'douay-rheims', orations: 'la' }),
   missing: hash({ missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' }),
   postMissing: hash({ missal: 'postconciliar', bible: 'douay-rheims', orations: 'la' }),
   invalid: hash({ missal: 'not-a-missal', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la' }),
@@ -820,8 +820,8 @@ async function assertions(cdp, base) {
     };
 
     // Typed material coverage, after the measurement above so that it counts
-    // only the deep link: St John Vianney's own Collect is rights-withheld 1962
-    // matter, so its Latin is reported unavailable over a partial formulary.
+    // only the deep link: Claret's own Collect remains rights-withheld, so its
+    // Latin is unavailable over a partial formulary. Vianney is now restored.
     await candidate(cdp, base, STATES.withheld);
     const withheld = await snapshot(cdp);
     assert.equal(withheld.outcome, 'ready');
@@ -831,7 +831,7 @@ async function assertions(cdp, base) {
       .find(row => row.querySelector('.proper-name')?.textContent === 'Collect')?.textContent`),
       /Latin text unavailable/);
     assert.deepEqual(withheld.semantic.coverage.map(row => [row.scope, row.state]),
-      [['formulary:s-ioannis-mariae-vianney-confessoris', 'supported'],
+      [['formulary:s-antonii-mariae-claret-episcopi-confessoris', 'supported'],
         ['proper-original:la', 'unavailable']]);
   });
 

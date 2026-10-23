@@ -2253,20 +2253,16 @@
   }
 
   function sameJson(left, right) {
-    return JSON.stringify(left) === JSON.stringify(right);
+    return JSON.stringify(jsonIdentity(left)) === JSON.stringify(jsonIdentity(right));
   }
 
-  function appointmentFactIdentity(facts) {
-    // Compare every source selector and binding proof, independent of mapping
-    // insertion order. Neither missing bindings nor per-Mass bases disappear.
-    function identity(value) {
-      if (Array.isArray(value)) return ['array', value.map(identity)];
-      if (value && typeof value === 'object') return ['object', Object.keys(value).sort().map(function (key) {
-        return [key, identity(value[key])];
-      })];
-      return [typeof value, value];
-    }
-    return identity(facts || {});
+  function jsonIdentity(value) {
+    // Mapping order is not identity. Array order, value types and exact keys are.
+    if (Array.isArray(value)) return ['array', value.map(jsonIdentity)];
+    if (value && typeof value === 'object') return ['object', Object.keys(value).sort().map(function (key) {
+      return [key, jsonIdentity(value[key])];
+    })];
+    return [typeof value, value];
   }
 
   function cliLanguageMaterial(proper, request, generated) {
@@ -2522,8 +2518,8 @@
       return one.key === mass.key;
     });
     if (!generatedMass) throw new Error('mass-today parity requires the matching generated formulary');
-    if (!sameJson(appointmentFactIdentity(mass.proper_appointment_facts),
-        appointmentFactIdentity(input.structure.proper_appointment_facts))) {
+    if (!sameJson(mass.proper_appointment_facts || {},
+        input.structure.proper_appointment_facts || {})) {
       throw new Error('mass-today Proper appointment facts disagree with the source structure');
     }
     if (!sameJson(mass.proper_source_paths || [], generatedMass.proper_source_paths || [])) {

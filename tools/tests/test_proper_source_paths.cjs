@@ -15,8 +15,26 @@ const ordinary = JSON.parse(fs.readFileSync(path.join(root, 'src/web/data/struct
 const copy = (one) => JSON.parse(JSON.stringify(one));
 const sameCoordinate = (left, right) => left && right && ['mass','form_id','proper','occurrence'].every((key) => left[key] === right[key]);
 const relationMasses = structure.masses.filter((mass) => (mass.proper_source_paths || []).length);
-assert(relationMasses.length >= 9, 'the exact authored nine Masses must be projected');
-assert.equal(relationMasses.reduce((count,mass) => count+mass.proper_source_paths.length,0),10);
+assert.equal(relationMasses.length,29);
+assert.equal(relationMasses.reduce((count,mass) => count+mass.proper_source_paths.length,0),31);
+assert.deepEqual(relationMasses.flatMap((mass)=>mass.proper_source_paths.map((relation)=>
+ mass.key+'/'+relation.form_id+'/'+relation.id)).sort(),[
+ 'advent-1-monday/main/advent-first-reading',
+ 'advent-1-monday/main/advent-psalm-strophes',
+ 'baptism-of-the-lord/main/baptism-reading-provisions',
+ 'easter-4-monday/main/easter-4-monday-gospel',
+ 'easter-6/main/easter-6-readings',
+ 'easter-sunday/main/easter-day-gospel',
+ 'easter-sunday/main/easter-day-second-reading',
+ 'holy-family/main/holy-family-reading-provisions',
+ 'lent-3/main/lent-3-readings',
+ 'lent-4/main/lent-4-readings',
+ 'lent-5/main/lent-5-readings',
+ ...[3,4,5].flatMap(week=>['monday','tuesday','wednesday','thursday','friday','saturday'].map(day=>
+  `lent-${week}-${day}/main/lent-${week}-${day}-reading-course`)),
+ 'palm-sunday/main/palm-procession-gospel',
+ 'pentecost/day/pentecost-day-readings'
+].sort(),'the exact source-owned relation inventory, not only its size, must survive');
 const before = JSON.stringify(structure); const checks = []; let executions=0;
 function test(name, run) { run(); checks.push(name); }
 function rowsFor(mass, form) {
@@ -33,7 +51,13 @@ function inputs(mass,relation,cycle,selected,framed,entrance){
   bible:{id:'douay-rheims',numbering:'vulgate'},languages:framed?{orations:'la',ordinary:'en'}:{orations:'la'},
   requestedMode:framed?'missal':'read',options:{ordinary:framed,legitimate:{}},coverage:[],unresolvedChoices:[],sourceHooks:[],
   properChoices:{[qualified(mass,relation)]:selected.id}};
- if(entrance==='day')request.calendar={id:structure.calendar};else{request.formulary={id:mass.key,type:mass.kind};request.cycle=cycle;}
+ if(entrance==='day')request.calendar={id:structure.calendar};else{
+  request.formulary={id:mass.key,type:mass.kind};
+  // A path's calendar permission is not an annual formulary's material cycle.
+  const holdsCycle=rowsFor(mass,relation.form_id).some(({proper})=>
+   [proper.cycles,proper.weekday_cycles].some((family)=>family&&Object.prototype.hasOwnProperty.call(family,cycle)));
+  if(holdsCycle)request.cycle=cycle;
+ }
  if((mass.forms||[]).length>1){request.form=relation.form_id;if(entrance==='day')request.selectedReadableFormulary={id:mass.key};}
  const derived={calendar:structure.calendar,date:request.civilDate,weekday:'sunday',season:'lent',liturgicalYear:{lectionary:{sunday:cycle,weekday:'II',note:'Technical calendar explanation, not a source-admission field.'},anchors:{}},
   options:[{option:null,winner:{id:mass.key,nature:'sunday'},settled:true,readable:[{key:mass.key,state:'said'}],absent:[]}]};
@@ -41,6 +65,85 @@ function inputs(mass,relation,cycle,selected,framed,entrance){
  return{request,structure,ordinary,derived,conditionFacts};
 }
 function allEvents(events){return events.flatMap((event)=>event.kind==='proper-choice'?event.options.flatMap((option)=>allEvents(option.events)):[event]);}
+test('ferial additions retain exact paths, roles, occurrences, cycles and actual-use predicates',()=>{
+ const adventFact='advent-1-sunday-isaiah-2-1-5-actually-read';
+ const lentFact='lent-5-sunday-john-8-1-11-actually-read';
+ const expected=[
+  ['advent-1-monday','advent-first-reading','First Reading','first-reading',[
+   ['isaiah-2','isaiah-2',1,['A','B','C'],'principal'],
+   ['isaiah-4','isaiah-4',2,['A'],'optional',{fact:adventFact,is:true}]
+  ]],
+  ['advent-1-monday','advent-psalm-strophes','Responsorial Psalm','psalm-strophes',[
+   ['without-parenthesized-block','without-parenthesized-block',1,['A','B','C'],'principal'],
+   ['with-parenthesized-block','with-parenthesized-block',2,['A','B','C'],'optional']
+  ]]
+ ];
+ for(const [massKey,relationId,role,group,paths] of expected){
+  const mass=relationMasses.find((one)=>one.key===massKey);
+  const relation=mass.proper_source_paths.find((one)=>one.id===relationId);
+  assert.equal(relation.form_id,'main');assert.equal(relation.source_edition,structure.calendar);
+  assert.deepEqual(relation.paths,paths.map(([id,option,occurrence,cycles,standing,when])=>({
+   id,standing,calendar_cycles:{family:'sunday',in:cycles},choices:{[group]:option},
+   members:[{appointment:{mass:massKey,form_id:'main',proper:role,occurrence},
+    material_cycle:{family:null,cycle:'all'}}],...(when?{when}:{})
+  })),massKey+'/'+relationId+' must retain its complete source tuple');
+ }
+ for(const week of [3,4,5])for(const day of ['monday','tuesday','wednesday','thursday','friday','saturday']){
+  const key=`lent-${week}-${day}`,number={3:236,4:243,5:250}[week];
+  const relation=relationMasses.find(m=>m.key===key).proper_source_paths[0];
+  const member=(proper,occurrence)=>({appointment:{mass:key,form_id:'main',proper,occurrence},material_cycle:{family:null,cycle:'all'}});
+  const path=(id,standing,cycles,choices,members,when)=>({id,standing,calendar_cycles:{family:'sunday',in:cycles},choices,members,...(when?{when}:{})});
+  const shared=key==='lent-3-thursday',monday=key==='lent-5-monday';
+  const psalms=key==='lent-3-monday'?[member('Responsorial Psalm',1),member('Responsorial Psalm',2)]:[member('Responsorial Psalm',1)];
+  const native=[];
+  if(monday){
+   for(const [id,cycles,occurrence,when] of [
+    ['john-8-1-11-ab',['A','B'],1],
+    ['john-8-1-11-c',['C'],1],
+    ['john-8-12-20-c',['C'],2,{fact:lentFact,is:true}]
+   ])for(const daniel of ['longer','shorter'])native.push(path(id+'-'+daniel,id==='john-8-12-20-c'?'optional':'principal',cycles,
+    {'first-reading':daniel,'responsorial-psalm':'ferial','verse-before-gospel':'ferial',gospel:id==='john-8-12-20-c'?'john-8-12-20':'john-8-1-11'},
+    [member(daniel==='longer'?'First Reading':'First Reading (shorter form)',1),...psalms,member('Verse Before the Gospel',1),member('Gospel',occurrence)],when));
+  }else native.push(path('ferial','principal',['A','B','C'],
+   {'first-reading':'ferial',...(!shared?{'responsorial-psalm':'ferial'}:{}),'verse-before-gospel':'ferial',gospel:'ferial'},
+   [member('First Reading',1),...psalms,member('Verse Before the Gospel',1),member('Gospel',1)]));
+  native.push(path('course-'+number,'optional',['A','B','C'],
+   {'first-reading':'course-'+number,...(!shared?{'responsorial-psalm':'course-'+number}:{}),'verse-before-gospel':'course-'+number,gospel:'course-'+number},
+   [member('First Reading',2),member('Responsorial Psalm',shared?1:key==='lent-3-monday'?3:2),member('Verse Before the Gospel',2),member('Gospel',monday?3:2)]));
+  assert.equal(relation.id,key+'-reading-course');assert.equal(relation.form_id,'main');assert.equal(relation.source_edition,structure.calendar);
+  assert.deepEqual(relation.paths,native,key+' must retain the exact complete-course inventory, not a Gospel-only alias');
+ }
+});
+test('Easter IV Monday exact native paths and nine shared John6 Gospel owners survive the broad projection',()=>{
+ const mass=relationMasses.find(m=>m.key==='easter-4-monday'),rel=mass.proper_source_paths[0];
+ assert.equal(rel.id,'easter-4-monday-gospel');assert.equal(rel.form_id,'main');assert.equal(rel.source_edition,'postconciliar');
+ assert.deepEqual(rel.paths.map(p=>[p.id,p.standing,p.calendar_cycles,p.choices,p.members,p.when]),[
+  ['john-10-1-10','principal',{family:'sunday',in:['A','B','C']},{gospel:'john-10-1-10'},
+   [{appointment:{mass:mass.key,form_id:'main',proper:'Gospel',occurrence:1},material_cycle:{family:null,cycle:'all'}}],undefined],
+  ['john-10-11-18-a','optional',{family:'sunday',in:['A']},{gospel:'john-10-11-18'},
+   [{appointment:{mass:mass.key,form_id:'main',proper:'Gospel',occurrence:2},material_cycle:{family:'cycles',cycle:'A'}}],
+   {fact:'easter-4-sunday-john-10-1-10-actually-read',is:true}]
+ ]);
+ const expected=[
+  ['easter-2-friday','all','John 6:1-15',1,15,1,15],
+  ['easter-2-saturday','all','John 6:16-21',16,21,16,21],
+  ['easter-3-monday','all','John 6:22-29',22,29,22,29],
+  ['easter-3-tuesday','all','John 6:30-35',30,35,30,35],
+  ['easter-3-wednesday','all','John 6:35-40',35,40,35,40],
+  ['easter-3-friday','all','John 6:52-59',53,60,52,59],
+  ['easter-3-saturday','all','John 6:60-69',61,70,60,69],
+  ['ot-17','B','John 6:1-15',1,15,1,15],
+  ['ot-21','B','John 6:60-69',61,70,60,69]
+ ];
+ for(const [key,cycle,ref,vfirst,vlast,hfirst,hlast] of expected){
+  const owner=structure.masses.find(m=>m.key===key).propers.filter(p=>p.name==='Gospel');assert.equal(owner.length,1);
+  const citations=cycle==='all'?owner[0].citations:owner[0].cycles[cycle].citations;assert.equal(citations.length,1);
+  assert.equal(citations[0].ref,ref);
+  assert.deepEqual(citations[0].loci.vulgate,[{chapter:6,first:vfirst,last:vlast}]);
+  for(const system of ['hebrew','hebrew-unnumbered-titles'])
+   assert.deepEqual(citations[0].loci[system],[{chapter:6,first:hfirst,last:hlast}]);
+ }
+});
 test('all actual source paths retain exact material, original ordinals and calendar course in both entrances and frames',()=>{
  for(const mass of relationMasses)for(const relation of mass.proper_source_paths)for(const selected of relation.paths)for(const cycle of selected.calendar_cycles.in)for(const framed of [false,true])for(const entrance of ['day','propers']){
   const input=inputs(mass,relation,cycle,selected,framed,entrance);
@@ -161,12 +264,24 @@ test('CLI raw guard presence is checked unconditionally before any source projec
  // coordinates, not a Missal source or a calendar appointment claim.
  const calendar='source-guard-contract';const key='contract';const date='2026-10-20';
  const proper={name:'Collect',form:null,form_id:'main',source:'composed',text:'Contract-only body.',citations:[],cycles:{},translations:[],taken_from:null};
+ proper.appointment_identity={mass:key,form_id:'main',proper:'Collect',occurrence:1};
  const model={calendar,masses:[{key,kind:'contract',propers:[copy(proper)]}]};
  const request={schema:C.STATE_SCHEMA,entrance:'day',civilDate:date,edition:{id:calendar},calendar:{id:calendar},
   bible:{id:'douay-rheims',numbering:'vulgate'},languages:{orations:'la'},requestedMode:'read',options:{ordinary:false,legitimate:{}},coverage:[],unresolvedChoices:[],sourceHooks:[]};
  const derived={calendar,date,weekday:'tuesday',liturgicalYear:{lectionary:null,anchors:{}},options:[{option:null,winner:{id:key,nature:'feast'},settled:true,readable:[{key,state:'said'}],absent:[]}]};
  const payload={date,scripture:{id:'douay-rheims'},days:[{calendar,selected_territory:null,settled:true,why:{lectionary:null},masses:[{key,standing:'said',selected_form:'main',bible:{id:'douay-rheims'},propers:[copy(proper)]}]}]};
  const input={request,derived,structure:model,payload};assert.equal(A.adaptCli(input).events.length,1);
+ const reordered=copy(payload);
+ reordered.days[0].masses[0].propers[0].appointment_identity={occurrence:1,proper:'Collect',form_id:'main',mass:key};
+ assert.equal(A.adaptCli({...input,payload:reordered}).events.length,1);
+ for(const mutate of [
+  (identity)=>{identity.occurrence=2;},
+  (identity)=>{delete identity.occurrence;},
+  (identity)=>{identity.extra=true;}
+ ]){
+  const changed=copy(reordered);mutate(changed.days[0].masses[0].propers[0].appointment_identity);
+  assert.throws(()=>A.adaptCli({...input,payload:changed}),/order disagrees|source.*metadata/);cliCases++;
+ }
  for(const malformed of [null,false,'']){
   const changed=copy(payload);changed.days[0].masses[0].propers[0].source_path_relation=malformed;
   assert.throws(()=>A.adaptCli({...input,payload:changed}),/order disagrees|source.*metadata/);cliCases++;
@@ -182,6 +297,12 @@ if(process.env.TRIPTYCH_SOURCE_PATH_CLI_PAYLOAD){
   input.request.civilDate=payload.date;input.request.languages={orations:'en',ordinary:'en'};
   input.derived.date=payload.date;input.derived.liturgicalYear.lectionary=day.why.lectionary;input.payload=payload;
   const result=A.adaptCli(input);assert.equal(result.sourcePathChoices[0].selection.option,selected.id);
+  const reordered=JSON.parse(JSON.stringify(payload,(_key,value)=>
+   value&&typeof value==='object'&&!Array.isArray(value)?Object.fromEntries(Object.entries(value).reverse()):value));
+  assert.equal(A.adaptCli({...input,payload:reordered}).sourcePathChoices[0].selection.option,selected.id);
+  const reversed=copy(payload);
+  reversed.days.find((one)=>one.calendar===structure.calendar).masses.find((one)=>one.key===mass.key).proper_source_paths[0].paths.reverse();
+  assert.throws(()=>A.adaptCli({...input,payload:reversed}),/source path relations disagree/);cliCases++;
   const unowned=projected.propers.findIndex((proper)=>!Object.prototype.hasOwnProperty.call(proper,'source_path_relation'));assert(unowned>=0);
   for(const malformed of [null,false,'']){
    const changed=copy(payload);changed.days.find((one)=>one.calendar===structure.calendar).masses.find((one)=>one.key===mass.key).propers[unowned].source_path_relation=malformed;

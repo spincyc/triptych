@@ -280,11 +280,9 @@ const STATES = Object.freeze({
   postPentecostDayMissal: hash({ date: '2026-05-24', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'pentecost', form: 'day', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0' }),
   romanEmberLongerMissal: hash({ date: '2026-12-19', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'advent-ember-saturday', form: 'longer', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0' }),
   multiple: hash({ date: '2026-01-11', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'comm-s-hygini-papae-martyris' }),
-  // A formulary whose appointed Latin is still withheld: St John Vianney's own
-  // Collect is rights-withheld 1962 matter. It was the Octave of Christmas on
-  // 2026-01-01 until the Latin backfill published those orations (3f86eed68 and
-  // its sanctoral sequels), after which only the Ordinary layer stays partial.
-  partial: hash({ date: '2026-08-08', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 's-ioannis-mariae-vianney-confessoris', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1' }),
+  // Claret's own Collect remains rights-withheld; the Common supplies the
+  // Secret and Postcommunion. Vianney's former gap was restored in Phase 5.
+  partial: hash({ date: '2026-10-23', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 's-antonii-mariae-claret-episcopi-confessoris', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1' }),
   ashBeforeFrame: hash({ date: '2026-02-18', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'ash-wednesday', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1' }),
   why: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10', ordinary: '1', 'ordinary-lang': 'en', why: '1' }),
   whyTransferred: hash({ date: '2024-03-25', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', why: '1' }),
@@ -2200,10 +2198,9 @@ async function runAssertions(cdp, base) {
     const fixedClock = await cdp.send('Page.addScriptToEvaluateOnNewDocument', { source: `
       (() => {
         const OriginalDate = Date;
-        // 8 August: St John Vianney, whose own Collect is still withheld, so
-        // the first visit has a limitation to disclose. On 2 August, the date
-        // used before 3f86eed68, every appointed text is now held.
-        const fixed = new OriginalDate(2026, 7, 8, 12, 0, 0, 0).getTime();
+        // 23 October: Claret's own Collect is still withheld, so the first
+        // visit has a limitation to disclose even without the Ordinary.
+        const fixed = new OriginalDate(2026, 9, 23, 12, 0, 0, 0).getTime();
         class FixedDate extends OriginalDate {
           constructor(...args) { super(...(args.length ? args : [fixed])); }
           static now() { return fixed; }
@@ -2215,7 +2212,7 @@ async function runAssertions(cdp, base) {
     try {
       await navigateCandidate(cdp, base, '');
       const state = await evaluate(cdp, 'dayReaderDebug.state');
-      assert.equal(state.civilDate, '2026-08-08');
+      assert.equal(state.civilDate, '2026-10-23');
       assert.equal(state.edition.id, 'roman-1962');
       assert.equal(state.bible.id, 'douay-rheims');
       assert.equal(state.languages.orations, 'la');

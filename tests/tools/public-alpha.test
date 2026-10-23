@@ -175,6 +175,10 @@ real_browser_expected = {
     for path in (tool.ROOT / tool.WEB_BROWSER_ROOT_RELATIVE / directory).glob("*")
     if path.is_file() and not path.is_symlink() and path.suffix in (".html", ".css", ".js")
 }
+real_browser_expected |= {
+    "src/web/browser/shared/fonts/OFL-Junicode.txt",
+    "src/web/browser/shared/fonts/triptych-punctus-elevatus.woff2",
+}
 real_browser_bound = {
     relative
     for relative in tool.site_source_paths()
@@ -582,9 +586,9 @@ ordinary_path = data / "structure/ordinary/test.json"
 write(
     ordinary_path,
     {"absences": [
-        {"key": "text-rights-withheld", "count": 2,
+        {"key": "text-rights-withheld", "label": "Text is not published here", "count": 2,
          "state": "rights-restricted", "kind": "rights-withheld"},
-        {"key": "witness-gap", "count": 1,
+        {"key": "witness-gap", "label": "No text payload is held here", "count": 1,
          "state": "unavailable", "kind": "witness-gap"},
     ]},
 )
@@ -592,17 +596,36 @@ tool.web_data_files()
 write(
     ordinary_path,
     {"language_absences": [
-        {"key": "text-rights-withheld", "lang": "en", "count": 2,
+        {"key": "text-rights-withheld", "label": "Text is not published here", "lang": "en", "count": 2,
          "state": "rights-restricted", "kind": "rights-withheld"},
-        {"key": "text-rights-unresolved", "lang": "la", "count": 1,
+        {"key": "text-rights-unresolved", "label": "Publication basis is unresolved", "lang": "la", "count": 1,
          "state": "unresolved", "kind": "rights-unresolved"},
     ]},
 )
 tool.web_data_files()
+# Labels are required public reader prose, not a schema relaxation. Keep the
+# formerly incomplete catalog and language rows as explicit negative controls.
+for field, expected_fields in (
+    ("absences", "key, label, count, state and kind"),
+    ("language_absences", "key, label, lang, count, state and kind"),
+):
+    missing_label = {
+        "key": "text-rights-withheld", "count": 2,
+        "state": "rights-restricted", "kind": "rights-withheld",
+    }
+    if field == "language_absences":
+        missing_label["lang"] = "en"
+    write(ordinary_path, {field: [missing_label]})
+    try:
+        tool.web_data_files()
+    except tool.ReleaseError as exc:
+        assert "must contain exactly " + expected_fields in str(exc), exc
+    else:
+        raise AssertionError("public Ordinary absence without a label was accepted")
 write(
     ordinary_path,
     {"language_absences": [{
-        "key": "text-rights-withheld", "lang": "en", "count": 2,
+        "key": "text-rights-withheld", "label": "Text is not published here", "lang": "en", "count": 2,
         "state": "rights-restricted", "kind": "rights-withheld",
         "source_id": "edition.example.private",
     }]},
@@ -610,14 +633,14 @@ write(
 try:
     tool.web_data_files()
 except tool.ReleaseError as exc:
-    assert "must contain exactly key, lang, count, state and kind" in str(exc), exc
+    assert "must contain exactly key, label, lang, count, state and kind" in str(exc), exc
 else:
     raise AssertionError("rich public Ordinary language absence was accepted")
 
 write(
     ordinary_path,
     {"absences": [{
-        "key": "text-rights-withheld", "count": 2,
+        "key": "text-rights-withheld", "label": "Text is not published here", "count": 2,
         "state": "rights-restricted", "kind": "rights-withheld",
         "what": "private source and permission prose",
     }]},
@@ -625,7 +648,7 @@ write(
 try:
     tool.web_data_files()
 except tool.ReleaseError as exc:
-    assert "must contain exactly key, count, state and kind" in str(exc), exc
+    assert "must contain exactly key, label, count, state and kind" in str(exc), exc
 else:
     raise AssertionError("rich public Ordinary absence catalog was accepted")
 

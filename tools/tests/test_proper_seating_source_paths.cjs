@@ -12,8 +12,74 @@ const ordinary = JSON.parse(fs.readFileSync(path.join(root, 'src/web/data/struct
 const copy = (value) => JSON.parse(JSON.stringify(value));
 const masses = structure.masses.filter((mass) => (mass.proper_source_paths || []).length);
 const records = [];
-assert.equal(masses.length, 9);
-assert.equal(masses.reduce((n, mass) => n + mass.proper_source_paths.length, 0), 10);
+assert.equal(masses.length, 29);
+assert.equal(masses.reduce((n, mass) => n + mass.proper_source_paths.length, 0), 31);
+assert.deepEqual(masses.flatMap((mass) => mass.proper_source_paths.map((relation) =>
+  mass.key + '/' + relation.form_id + '/' + relation.id)).sort(), [
+  'advent-1-monday/main/advent-first-reading',
+  'advent-1-monday/main/advent-psalm-strophes',
+  'baptism-of-the-lord/main/baptism-reading-provisions',
+  'easter-4-monday/main/easter-4-monday-gospel',
+  'easter-6/main/easter-6-readings',
+  'easter-sunday/main/easter-day-gospel',
+  'easter-sunday/main/easter-day-second-reading',
+  'holy-family/main/holy-family-reading-provisions',
+  'lent-3/main/lent-3-readings',
+  'lent-4/main/lent-4-readings',
+  'lent-5/main/lent-5-readings',
+  ...[3, 4, 5].flatMap(week => ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].map(day =>
+    `lent-${week}-${day}/main/lent-${week}-${day}-reading-course`)),
+  'palm-sunday/main/palm-procession-gospel',
+  'pentecost/day/pentecost-day-readings'
+].sort(), 'a count cannot replace an exact source-owned relation inventory');
+const ferialExtents = {
+  'easter-4-monday/main/easter-4-monday-gospel': [
+    ['john-10-1-10', 'Gospel', 1], ['john-10-11-18-a', 'Gospel', 2]
+  ],
+  'advent-1-monday/main/advent-first-reading': [
+    ['isaiah-2', 'First Reading', 1], ['isaiah-4', 'First Reading', 2]
+  ],
+  'advent-1-monday/main/advent-psalm-strophes': [
+    ['without-parenthesized-block', 'Responsorial Psalm', 1],
+    ['with-parenthesized-block', 'Responsorial Psalm', 2]
+  ]
+};
+for (const week of [3, 4, 5]) for (const day of ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']) {
+  const key = `lent-${week}-${day}`, number = {3: 236, 4: 243, 5: 250}[week];
+  const shared = key === 'lent-3-thursday', monday = key === 'lent-5-monday';
+  const psalms = [['Responsorial Psalm', 1], ...(key === 'lent-3-monday' ? [['Responsorial Psalm', 2]] : [])];
+  const extent = [];
+  if (monday) {
+    for (const [id, occurrence] of [['john-8-1-11-ab', 1], ['john-8-1-11-c', 1], ['john-8-12-20-c', 2]]) {
+      for (const daniel of ['longer', 'shorter']) extent.push(...[
+        [daniel === 'longer' ? 'First Reading' : 'First Reading (shorter form)', 1],
+        ...psalms, ['Verse Before the Gospel', 1], ['Gospel', occurrence]
+      ].map(([role, ordinal]) => [id + '-' + daniel, role, ordinal]));
+    }
+  } else extent.push(...[['First Reading', 1], ...psalms, ['Verse Before the Gospel', 1], ['Gospel', 1]]
+    .map(([role, ordinal]) => ['ferial', role, ordinal]));
+  extent.push(...[['First Reading', 2], ['Responsorial Psalm', shared ? 1 : key === 'lent-3-monday' ? 3 : 2],
+    ['Verse Before the Gospel', 2], ['Gospel', monday ? 3 : 2]]
+    .map(([role, ordinal]) => ['course-' + number, role, ordinal]));
+  ferialExtents[key + '/main/' + key + '-reading-course'] = extent;
+}
+const monday = masses.find(mass => mass.key === 'lent-5-monday');
+for (const sourcePath of monday.proper_source_paths[0].paths) {
+  if (sourcePath.id.startsWith('john-8-1-11-')) {
+    assert.equal(sourcePath.standing, 'principal');
+    assert.equal(Object.hasOwn(sourcePath, 'when'), false);
+  } else if (sourcePath.id.startsWith('john-8-12-20-c-')) {
+    assert.equal(sourcePath.standing, 'optional');
+    assert.deepEqual(sourcePath.when, {fact: 'lent-5-sunday-john-8-1-11-actually-read', is: true});
+  }
+}
+for (const mass of masses) for (const relation of mass.proper_source_paths) {
+  const id = mass.key + '/' + relation.form_id + '/' + relation.id;
+  if (!Object.prototype.hasOwnProperty.call(ferialExtents, id)) continue;
+  assert.deepEqual(relation.paths.flatMap((one) => one.members.map((member) =>
+    [one.id, member.appointment.proper, member.appointment.occurrence])), ferialExtents[id],
+  id + ' must retain every exact source path and its original semantic role');
+}
 function context(mass, form) {
   return {calendar: structure.calendar, mass: mass.key, form_id: form.id,
     full: ((form.ordinary_frame || mass.ordinary_frame || {}).applicability || 'full') === 'full',

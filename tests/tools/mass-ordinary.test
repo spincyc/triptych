@@ -61,7 +61,7 @@ if [ ! -d "$root" ]; then
 fi
 
 python3 - "$root" <<'PY'
-import json, pathlib, re, sys
+import hashlib, json, pathlib, re, sys
 
 root = pathlib.Path(sys.argv[1])
 index = json.loads((root / "index.json").read_text(encoding="utf-8"))
@@ -234,17 +234,35 @@ for path in files:
         assert sum(absence_counts.values()) == 86, absence_counts
 
         # The source-specific Cummiskey gap is not rewritten as facing Latin.
-        # Each new side owns its Mame provenance and an exact actor partition;
-        # Per evangelica's separate English source has priest with assistants.
+        # Each Latin side owns its Mame provenance and exact actor partition.
+        # The active English replacement is Lasance, not the original
+        # Cummiskey block whose source-level speaker remains unchanged.
         mame = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
         cummiskey = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+        lasance = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+        english_prayers = {
+            "munda-cor-meum": "CLEANSE my heart and my lips, O almighty God, Who didst cleanse with a burning coal the lips of the prophet Isaias; and vouchsafe in Thy loving kindness so to purify me that I may be enabled worthily to announce Thy holy Gospel. Through Christ our Lord. Amen.",
+            "dominus-sit-in-corde-meo": "The Lord be in my heart and on my lips, that I may worthily and becomingly announce His gospel. Amen.",
+            "per-evangelica-dicta": "P. May our sins be blotted out by the words of the Gospel.",
+        }
         witnesses = {(one["source_id"], one["lang"]): one for one in payload["translations"]}
         assert witnesses[(mame, "la")]["held"] == 3, witnesses
         assert witnesses[(cummiskey, "la")]["held"] == 114, witnesses
         for local in ("munda-cor-meum", "dominus-sit-in-corde-meo", "per-evangelica-dicta"):
             element = elements["oblatio/" + local]
             sides = {row["lang"]: row for row in element["translations"]}
-            assert sides["en"]["source_id"] == cummiskey, (local, sides)
+            english = sides["en"]
+            assert english["source_id"] == lasance, (local, english)
+            assert english["rights"] == "public-domain", (local, english)
+            assert (english["relation"], english["collation"]) == ("antecedent", "uncollated"), (local, english)
+            assert "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH" in english["note"], (local, english)
+            assert english["text"] == english_prayers[local], (local, english)
+            assert english["turns"] == [{
+                "key": "priest-1", "speaker": "priest",
+                "dialogue_role": None,
+                "printed_marker": "P." if local == "per-evangelica-dicta" else None,
+                "action": None, "text": english_prayers[local],
+            }], (local, english)
             latin = sides["la"]
             assert latin["source_id"] == mame and latin["rights"] == "public-domain", (local, latin)
             assert "English only" in latin["note"], (local, latin["note"])
@@ -256,7 +274,8 @@ for path in files:
         per = elements["oblatio/per-evangelica-dicta"]
         english = next(row for row in per["translations"] if row["lang"] == "en")
         assert per["speaker"] == "all" and len(english["turns"]) == 1, per
-        assert english["turns"][0]["speaker"] == "all", english
+        assert english["turns"][0]["speaker"] == "priest", english
+        assert english["turns"][0]["printed_marker"] == "P.", english
         assert english["turns"][0]["dialogue_role"] is None, english
 
     elif payload["calendar"] == "roman-pre-1955":
@@ -276,9 +295,9 @@ for path in files:
             assert key in elements, key
 
     if payload["calendar"] in ("roman-1962", "roman-pre-1955"):
-        # Only five printed blocks are source-owned as single-speaker rows. Each
-        # language partitions that exact row once and reconstructs its text;
-        # no dialogue role is inferred from an R. or P. glyph.
+        # Five base blocks have one source turn. A replacement owns its own
+        # partition, including an unknown actor; neither actor nor dialogue
+        # role can be inferred from an R. or P. glyph.
         partitioned = {
             "praeparatio/confiteor-sacerdotis": "priest",
             "praeparatio/confiteor-ministrorum": "server",
@@ -286,6 +305,124 @@ for path in files:
             "oblatio/suscipiat-dominus": "server",
             "conclusio/deo-gratias": "server",
         }
+        # The checked Lasance praeparatio derivative (SHA256 db17b99005f277fe
+        # 5d8471fe89aa0378c5145f65713604d55cd41f69d5eacb3b), seq12/14,
+        # printed758/758-759, explicitly records no P./R. on these bodies.
+        # Their priest/server actors come from the source context, not a cue
+        # inherited from Cummiskey. Only Roman1962 English uses this join.
+        lasance_confiteors = {
+            "praeparatio/confiteor-sacerdotis": "596bc7253087d5ae57847cc2f0e855a731f7b563f6a842674ca6afd0ce6820a2",
+            "praeparatio/confiteor-ministrorum": "9a1169016c0c5c6136579937b7c586a9ed9e6fdf69b8ed3bc8beb6e961db60e6",
+        }
+        # Independent pins from the registered Lasance checked-English TSVs
+        # and the explicit english_replacements declarations in the 1962
+        # inventory, not from mass-ordinary's output. Keys, actors, printed
+        # cues and separately established functional roles belong to that
+        # witness. The Cummiskey Latin/pre-1955 expectations below remain
+        # separate. In particular, R. need not establish a server actor.
+        # Tuple fields: turn key, source actor, printed marker, dialogue role.
+        P = ("priest-1", "priest", "P.", None)
+        S = ("server-1", "server", "R.", None)
+        U = ("response-1", None, "R.", None)
+        PV = ("priest-1", "priest", "P.", "versicle")
+        SR = ("server-1", "server", "R.", "response")
+        UR = ("response-1", None, "R.", "response")
+        lasance_cases = {
+            # ordo-praeparatio-checked-english-v1, seq401 through3202,
+            # printed756-762/AP754-760; Confiteors are seq12 and14.
+            "praeparatio/introibo-ad-altare-dei":
+                ("3aea67a439f39ada2d74662abcdf10b8182334f788bffeafd7df9c6d6be1f258", [P, S]),
+            "praeparatio/judica-me-deus":
+                ("5196174b88ecd0d8592ef7b111d72bd35501370af78de570e7270fd1eb2e66a0", [P, S]),
+            "praeparatio/emitte-lucem-tuam":
+                ("2400547a22c7aa77cb65eeb0125ee6377034d13fd5b81027e6fe3aa4d0516025", [P, S]),
+            "praeparatio/confitebor-tibi-in-cithara":
+                ("226ad3b64deeae090e4edd65e93f4edcc234e537f46e811b6497c0c434c5b2e9", [P, S]),
+            "praeparatio/gloria-patri":
+                ("2b82573987d9a48f44655620b6032f320ce7df9941a4a372127c16e0ce7e8ecf", [P, S]),
+            "praeparatio/introibo-ad-altare-dei-repetitio":
+                ("3aea67a439f39ada2d74662abcdf10b8182334f788bffeafd7df9c6d6be1f258", [P, SR]),
+            "praeparatio/adjutorium-nostrum":
+                ("39770b260d8fe749015b133b58ee6bcc87e0a2e6f664eb7f9fa0ada9683f35e7", [PV, SR]),
+            "praeparatio/confiteor-sacerdotis":
+                (lasance_confiteors["praeparatio/confiteor-sacerdotis"], [("confiteor-sacerdotis", "priest", None, None)]),
+            "praeparatio/misereatur-tui":
+                ("a1143e8a3d50f37cb61ec3a6d0e60399240b8838b58659b55661dc9ce9d70176", [S, P]),
+            "praeparatio/confiteor-ministrorum":
+                (lasance_confiteors["praeparatio/confiteor-ministrorum"], [("confiteor-ministrorum", "server", None, None)]),
+            "praeparatio/misereatur-vestri":
+                ("cfe38a8883223472f79a262eaa710abb8dded768a7d2cc6f8e1edf874b10c807", [P, SR]),
+            "praeparatio/indulgentiam":
+                ("b8235e5f5dda8ac4604cf30e3895beaf7a35b4a40e2cf31183749cc74f245efc", [P, SR]),
+            "praeparatio/deus-tu-conversus":
+                ("f4ee8800d1f8360b5f54c9fa75662e20d4ab115cd68828ae5c10702be9162789", [PV, SR]),
+            "praeparatio/ostende-nobis":
+                ("cf4e577e9982e1ab373dad3b63141e299400c969edac970f17cd543477534106", [PV, SR]),
+            "praeparatio/domine-exaudi":
+                ("c780cd214f0551eebd53e74182b7f2410b48cf962dfbff5744118da18d2e6d67", [PV, SR]),
+            "praeparatio/dominus-vobiscum":
+                ("436006006ea6821d75a5afa75e2fcb61939ad758c3f2e41c2f4b31624eda1471", [PV, SR, ("priest-2", "priest", "P.", None)]),
+            "praeparatio/kyrie-eleison":
+                ("b65fce7733a4758ee700f3071c849e06e5054f852582b04679a0f5fa95c48257", [P, S, ("priest-2", "priest", "P.", None)]),
+            "praeparatio/christe-eleison":
+                ("498ec041e2486431e578ce3126f3dbef99ed075bf2bd65943fd38cf3b23953a7", [S, P, ("server-2", "server", "R.", None)]),
+            "praeparatio/kyrie-eleison-repetitio":
+                ("60fc754e6d10a616b5238362bd75f501322f3b512b7f4369885db152e4a2cd37", [P, S, ("priest-2", "priest", "P.", None)]),
+            "praeparatio/dominus-vobiscum-post-gloriam":
+                ("36ab6ac0c0692438977ad5d69dd2a4e2f615d35ca25571a90159f948eeef7531", [PV, SR]),
+            # ordo-oblatio-checked-english-v1, seq3-7/14-15/36-44,
+            # printed764-772/AP762-770.
+            "oblatio/dominus-vobiscum-ante-evangelium":
+                ("2be4b190935efaf7818cad3d040004dcca0c07e8db6b3a7855741c3e91ad4eb1", [PV, UR, ("priest-2", "priest", "P.", None), ("response-2", None, "R.", None)]),
+            "oblatio/laus-tibi-christe":
+                ("de85863ec4f3cde9ea9a85c3dc597b82998dd693ff8127397ca8c63f0341300e", [S]),
+            "oblatio/dominus-vobiscum-ante-offertorium":
+                ("36ab6ac0c0692438977ad5d69dd2a4e2f615d35ca25571a90159f948eeef7531", [PV, UR]),
+            "oblatio/suscipiat-dominus":
+                ("005a8a623c2fe851b40262c1d07250628b6fc67be900f40edc9bb25e8e30767a", [U]),
+            "oblatio/per-omnia-saecula":
+                ("6b1002e5f3cc3a61728d679e5ce5538d70dad28ea19fdad249a53664803c05ec", [PV, UR]),
+            "oblatio/sursum-corda":
+                ("a68759dd5a5c633c110d5575093242edb274d801524f66560d0df52965bb4b2f", [PV, UR, ("priest-2", "priest", "P.", "versicle"), ("response-2", None, "R.", "response"), ("priest-3", "priest", "P.", "versicle"), ("response-3", None, "R.", "response")]),
+            # ordo-canon-checked-english-v1 seq2801/2901, printed786/AP785.
+            "canon/per-omnia-saecula":
+                ("2a16656154816dfb8c404952af0476dbb3e4cfc5a6c225bb2d0ff01a52d7c56d", [("priest-1", "priest", None, None), S]),
+            # ordo-communio-checked-english-v1 seq3201/3301/3401,
+            # 3601/3701/3801/3901, printed786-787/AP785-786.
+            "communio/pater-noster":
+                ("c1d689189e02609b476b3c0c2fd61ef35839a3211656e9a8af449d19d350d7d9", [("priest-1", "priest", None, None), S, ("priest-2", "priest", "P.", None)]),
+            "communio/per-omnia-saecula-post-libera-nos":
+                ("2a16656154816dfb8c404952af0476dbb3e4cfc5a6c225bb2d0ff01a52d7c56d", [("priest-1", "priest", None, None), S]),
+            "communio/pax-domini":
+                ("d38b766e7e0539dd3cfaa925a4436f77ad9d0a26044fa9372f24507d103aa491", [P, S]),
+            # ordo-conclusio-checked-english-v1 seq6101/6201/6301,
+            # 6801/6901,7501-7801,8201: no target-derived dialogue roles.
+            "conclusio/dominus-vobiscum-ante-postcommunionem":
+                ("436006006ea6821d75a5afa75e2fcb61939ad758c3f2e41c2f4b31624eda1471", [P, S, ("priest-2", "priest", "P.", None)]),
+            "conclusio/requiescant-in-pace":
+                ("9b299ba1781e66ac259d52049048e7556d0628af2c06f34df57bdd255670427b", [("priest-1", "priest", None, None), ("server-1", "server", None, None)]),
+            "conclusio/initium-sancti-evangelii":
+                ("da4e57536f54725c44411c042cb5fde0d3d001059eeb52eb5a130569c2b31714", [P, S, ("priest-2", "priest", "P.", None), ("server-2", "server", "R.", None)]),
+            "conclusio/deo-gratias":
+                ("fa1530111c17a356c2920765d88ebbc2d05c014b645bf1157bda6ff757cfef62", [S]),
+        }
+        lasance_seen = set()
+
+        def checked_lasance_shape(key, row):
+            assert row["source_id"] == "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945", (key, row)
+            assert row["rights"] == "public-domain", (key, row)
+            assert (row["relation"], row["collation"]) == ("antecedent", "uncollated"), (key, row)
+            digest, wanted = lasance_cases[key]
+            assert hashlib.sha256(row["text"].encode()).hexdigest() == digest, (key, row)
+            assert [
+                (turn["key"], turn["speaker"], turn["printed_marker"], turn["dialogue_role"], turn["action"])
+                for turn in row["turns"]
+            ] == [(*shape, None) for shape in wanted], (key, row["turns"])
+            assert "\n".join(turn["text"] for turn in row["turns"]) == row["text"], key
+            assert row["text"].count("\n") == len(wanted) - 1, (key, row)
+            lasance_seen.add(key)
+            return wanted
+
         reached = set()
         for key, speaker in partitioned.items():
             rows = elements[key]["translations"]
@@ -293,16 +430,24 @@ for path in files:
             for row in rows:
                 assert len(row["turns"]) == 1, (key, row["lang"], row["turns"])
                 turn = row["turns"][0]
-                assert turn["key"] == key.rsplit("/", 1)[1], (key, turn)
-                assert turn["speaker"] == speaker, (key, turn)
-                expected_role = "response" if (payload["calendar"], key) == ("roman-1962", "conclusio/deo-gratias") else None
+                if payload["calendar"] == "roman-1962" and row["lang"] == "en":
+                    expected_key, expected_speaker, marker, expected_role = checked_lasance_shape(key, row)[0]
+                else:
+                    if key in lasance_confiteors:
+                        assert row["source_id"] == "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", (key, row)
+                    expected_key, expected_speaker = key.rsplit("/", 1)[1], speaker
+                    expected_role = "response" if (payload["calendar"], key) == ("roman-1962", "conclusio/deo-gratias") else None
+                    marker = "P." if speaker == "priest" else "R."
+                assert turn["key"] == expected_key, (key, turn)
+                assert turn["speaker"] == expected_speaker, (key, turn)
                 assert turn["dialogue_role"] == expected_role and turn["action"] is None, (key, turn)
                 assert turn["text"] == row["text"], (key, row["lang"])
-                # The book's head letter is a reviewed, separated marker; it is
-                # kept in the row text and supplies no dialogue role.
-                marker = "P." if speaker == "priest" else "R."
                 assert turn["printed_marker"] == marker, (key, turn)
-                assert turn["text"].startswith(marker + " "), (key, turn)
+                if marker is None:
+                    assert not turn["text"].startswith(("P. ", "R. ")), (key, turn)
+                    assert turn["text"].startswith("I CONFESS "), (key, turn)
+                else:
+                    assert turn["text"].startswith(marker + " "), (key, turn)
                 reached.add((key, row["lang"]))
         assert reached == {
             (key, lang) for key in partitioned for lang in ("en", "la")
@@ -311,10 +456,10 @@ for path in files:
         # C4 step 2 (2026-10-19): ten printed blocks of dialogue are held as
         # reviewed child rows, one per printed turn, numbered seq*100+n from the
         # block they divide. Each language partitions those rows in order; the
-        # turns rejoin to the element's text. Speakers come from the 1861 P./R.
-        # marks; a dialogue role stands only where the 1962 typical edition
-        # prints a versicle or response mark at that turn, and never in the
-        # pre-1955 projection. Ant./Anth. is a label, never a printed cue.
+        # turns rejoin to the element's text. The base expectations are for
+        # 1861; English replacement expectations are independently pinned above.
+        # A dialogue role requires its own declaration, not an inherited cue.
+        # The pre-1955 projection has none. Ant./Anth. is not a printed cue.
         V, R = "versicle", "response"
         divided = {
             "praeparatio/introibo-ad-altare-dei": (4, [("priest", None, None), ("server", "R.", None)]),
@@ -358,6 +503,8 @@ for path in files:
             for row in rows:
                 turns = row["turns"]
                 wanted = expected + [(None, None, None)] if row["lang"] == "en" and key in {"praeparatio/kyrie-eleison", "praeparatio/christe-eleison", "praeparatio/kyrie-eleison-repetitio"} else expected
+                if roles_here and row["lang"] == "en" and key in lasance_cases:
+                    wanted = [shape[1:] for shape in checked_lasance_shape(key, row)]
                 assert len(turns) == len(wanted), (key, row["lang"], turns)
                 assert "\n".join(turn["text"] for turn in turns) == row["text"], key
                 assert row["text"].count("\n") == len(wanted) - 1, (key, row["lang"])
@@ -370,12 +517,19 @@ for path in files:
                         assert turn["text"].startswith(marker + " "), (key, turn)
                     else:
                         assert not turn["text"].startswith(("P. ", "R. ")), (key, turn)
-        # The antiphon's printed label survives as text in both columns.
+        if roles_here:
+            assert lasance_seen == set(lasance_cases), lasance_seen
+        # Cummiskey's Ant./Anth. labels survive in its own columns. Lasance's
+        # checked English instead starts with the source priest's P. cue.
         antiphon = {
             row["lang"]: row["turns"][0]["text"]
             for row in elements["praeparatio/introibo-ad-altare-dei"]["translations"]
         }
-        assert antiphon["la"].startswith("Ant. ") and antiphon["en"].startswith("Anth. "), antiphon
+        assert antiphon["la"].startswith("Ant. "), antiphon
+        if roles_here:
+            assert antiphon["en"] == "P. I will go in to the altar of God.", antiphon
+        else:
+            assert antiphon["en"].startswith("Anth. "), antiphon
 
         # Element headings set the incipit without the printed cue letter; the
         # reviewed marker is recorded beside it and the artifact keeps the cell.
@@ -812,8 +966,8 @@ esac
 # of this calendar. `collated` therefore costs a cited finding, `uncollated`
 # says in terms that the identity is not established, and the elements where a
 # comparison found a divergence carry nothing at all.
-python3 - "$root" <<'PY'
-import json, pathlib, sys
+python3 - "$root" "$repo" <<'PY'
+import json, pathlib, sys, tomllib
 
 root = pathlib.Path(sys.argv[1])
 pc = json.loads((root / "postconciliar.json").read_text(encoding="utf-8"))
@@ -867,11 +1021,40 @@ graded = sorted(row["collation"] for row in latin.values())
 assert graded.count("collated") == 5, graded
 assert graded.count("uncollated") == 15, graded
 
-# Both Roman frames are headed by a target typical edition later than the 1861
-# hand missal whose two columns supply their words. Every artifact-backed row is
-# therefore an explicitly uncollated antecedent, in both languages. The
-# section-level declaration is deliberately uniform: it makes no invented
-# element-level finding.
+# The two Roman frames retain Cummiskey's cautions on his own rows. The 1962
+# English replacements instead carry Lasance's independent historical-English
+# caution, not Cummiskey's boilerplate. Compare the whole source-owned note AND
+# its substantive warnings; a change to either the renderer or the declaration
+# must not silently remove the historical/non-target and collation boundaries.
+inventory = tomllib.loads((
+    pathlib.Path(sys.argv[2]) / "src/sources/inventories/roman-1962-ordo-missae-v1.toml"
+).read_text(encoding="utf-8"))
+lasance_notes = {
+    section["key"] + "/" + entry["element"]: entry["english"]
+    for section in inventory["sections"]
+    for entry in section.get("english_replacements", [])
+}
+assert {
+    section["key"]: len(section.get("english_replacements", []))
+    for section in inventory["sections"] if section.get("english_replacements")
+} == {"praeparatio": 24, "oblatio": 31, "canon": 20, "communio": 15, "conclusio": 11}
+assert len(lasance_notes) == 101
+lasance_cautions = {
+    "praeparatio": (
+        "LASANCE HISTORICAL ENGLISH, NOT THE TARGET EDITION'S ENGLISH.",
+        "No full English-to-target clause collation or exact-target relationship is asserted.",
+    ),
+    "oblatio": (
+        "LASANCE HISTORICAL ENGLISH, NOT APPROVED1962ENGLISH.",
+        "No complete English-to-target clause collation or exact-target wording claim.",
+    ),
+}
+for section in ("canon", "communio", "conclusio"):
+    lasance_cautions[section] = (
+        "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH.",
+        "Source-specific ceremonies, unsupported variants and target witness gaps are not resolved.",
+    )
+seen_lasance_notes = set()
 #
 # 2026-10-19 (C3, the 1962 Pentecost Ordinary-variable texts): exactly these
 # seven 1962 rows carry an element-level collated provenance, and each must
@@ -923,9 +1106,20 @@ for payload in (old, pre):
                 assert row["collation"] == "uncollated", (payload["calendar"], element["key"], lang)
                 assert not row.get("collation_finding"), (payload["calendar"], element["key"], lang)
                 note = row.get("note") or ""
-                assert "ANTECEDENT, NOT THE TARGET EDITION" in note, (payload["calendar"], element["key"], lang)
-                assert "UNCOLLATED" in note, (payload["calendar"], element["key"], lang)
+                if payload["calendar"] == "roman-1962" and lang == "en" and element["key"] in lasance_notes:
+                    declared = lasance_notes[element["key"]]
+                    lasance = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+                    assert row["source_id"] == declared["witness"] == lasance, (element["key"], row)
+                    assert (declared["relation"], declared["collation"]) == ("antecedent", "uncollated"), declared
+                    assert note == declared["note"], (element["key"], note)
+                    for caution in lasance_cautions[element["key"].split("/", 1)[0]]:
+                        assert caution in note, (element["key"], caution, note)
+                    seen_lasance_notes.add(element["key"])
+                else:
+                    assert "ANTECEDENT, NOT THE TARGET EDITION" in note, (payload["calendar"], element["key"], lang)
+                    assert "UNCOLLATED" in note, (payload["calendar"], element["key"], lang)
     assert seen_collated == collated_rows[payload["calendar"]], (payload["calendar"], seen_collated)
+assert seen_lasance_notes == set(lasance_notes), seen_lasance_notes
 
 # Where a comparison of the two Latins found a divergence, NOTHING is carried,
 # and the file still says why. These are the elements the summary would have

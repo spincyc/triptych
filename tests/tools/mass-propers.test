@@ -95,23 +95,19 @@ case "$out" in
 *) echo "scripture proper did not print its reference" >&2; exit 1 ;;
 esac
 
-# A historical English lead without exact publication binding is a typed
-# unavailable translation, never a payload reachable through the reading view.
-# The note states the unit's typed reason in the browser's words (`absenceClause`
-# in src/web/browser/shared/browser-core.js). 2026-10-19, C2 G3: Advent I's
-# English was `rights-withheld` until C2 step 1 retyped it `no-exemplar` -- a
-# public-domain witness exists, no passage binding does -- so it is "not yet
-# sourced", not rights restricted and not "deliberately" absent. Advent I's
-# Latin is published, so the reason is the whole note and it must not also
-# claim the Latin is unavailable.
+# Advent I now has exact Lasance oration bindings. A genuinely unsourced
+# composed unit, St Theodore's own Secret, keeps the no-exemplar control over
+# published Latin. A Bible selection must not manufacture its English body.
 english="$(run_tool --calendar roman-1962 --mass advent-1 --lang en)"
-case "$english" in
+unsourced="$(run_tool --calendar roman-1962 --mass comm-s-theodori-martyris \
+	--lang en --bible douay-rheims)"
+case "$unsourced" in
 *"(en translation unavailable: not yet sourced)"*) ;;
-*) echo "Advent I English did not state its typed reason" >&2; exit 1 ;;
+*) echo "Theodore English did not state its typed reason" >&2; exit 1 ;;
 esac
-case "$english" in
+case "$unsourced" in
 *"rights restricted"*|*"deliberately"*)
-	echo "Advent I English misstated a no-exemplar absence" >&2
+	echo "Theodore English misstated a no-exemplar absence" >&2
 	exit 1
 	;;
 esac
@@ -153,8 +149,8 @@ case "$english" in
 	exit 1
 	;;
 esac
-run_tool --calendar roman-1962 --mass advent-1 --lang en --format json >roman-english-withheld.json
-python3 - roman-english-withheld.json <<'PY'
+run_tool --calendar roman-1962 --mass advent-1 --lang en --format json >roman-english-lasance.json
+python3 - roman-english-lasance.json <<'PY'
 import json, sys
 
 document = json.load(open(sys.argv[1], encoding="utf-8"))
@@ -162,17 +158,49 @@ collect = next(
     row["proper"] for row in document["appointed"]
     if row["proper"]["name"] == "Collect"
 )
-assert not collect.get("translations"), collect
-# 2026-10-19, C2 G3: no-exemplar, so a typed `unavailable` and no restriction.
+assert collect["source"] == "composed", collect
+assert len(collect["translations"]) == 1, collect
+english = collect["translations"][0]
+assert english["lang"] == "en" and english["rights"] == "public-domain", english
+assert english["source_id"] == "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945", english
+assert english["text"] == (
+    "BESTIR, O Lord, Thy might, we pray Thee and come; That, defended by Thee, "
+    "we may deserve rescue from approaching dangers brought on by our sins, "
+    "and being set free by Thee, obtain our salvation. Who livest."
+), english
+for caution in (
+    "not an approved liturgical translation and never an altar book",
+    "actual source printed103",
+    "Who livest./Qui vivis. No ending expansion supplied",
+    "Former Cummiskey1861 lead remains unbound and quarantined",
+    "Historical antecedent English only; no generated ending, Amen or official English",
+):
+    assert caution in english["caution"], (caution, english)
+assert not collect.get("untranslated"), collect
 assert not collect.get("unavailable_translations"), collect
-assert collect["untranslated"] == [{
+PY
+run_tool --calendar roman-1962 --mass comm-s-theodori-martyris \
+	--lang en --bible douay-rheims --format json >roman-english-unsourced.json
+python3 - roman-english-unsourced.json <<'PY'
+import json, sys
+
+document = json.load(open(sys.argv[1], encoding="utf-8"))
+secret = next(
+    row["proper"] for row in document["appointed"]
+    if row["proper"]["name"] == "Secret"
+)
+assert secret["source"] == "composed", secret
+assert secret["latin"]["withheld"] is False, secret
+assert not secret.get("translations"), secret
+assert not secret.get("unavailable_translations"), secret
+assert secret["untranslated"] == [{
     "lang": "en",
     "state": "unavailable",
     "target": {
-        "mass": "advent-1", "form_id": "main", "proper": "Collect",
+        "mass": "comm-s-theodori-martyris", "form_id": "main", "proper": "Secret",
         "cycle": "all", "occurrence": 1, "extent": "body",
     },
-}], collect
+}], secret
 PY
 
 # Latin is the tracked text, so a language nothing records falls back and says so.
@@ -741,20 +769,74 @@ case "$missing" in
 esac
 
 # A historical hand-missal variant is not an exact translation of the 1962
-# slot. Its typed witness gap remains visible without serving either wording;
-# since 2026-10-19 (C2 G3) the note gives a witness gap's class, "not resolved".
+# slot. Its English witness gap remains visible without serving that wording
+# or falling back. Independently, accepted Latin22 permits the named Collect
+# from Schott1929; the Secret/Postcommunion are still the Common's own bodies.
 vianney="$(run_tool --calendar roman-1962 \
 	--mass s-ioannis-mariae-vianney-confessoris --lang en)"
 case "$vianney" in
-*"en translation unavailable: not resolved; Latin text unavailable"*) ;;
+*"en translation unavailable: not resolved"*) ;;
 *) echo "Vianney witness gap did not report unavailability" >&2; exit 1 ;;
 esac
 for forbidden in "The New Roman Missal in Latin and English" \
-	"beatum Joannem Mariam" "sanctum Ioannem Mariam"; do
+	"beatum Joannem Mariam" "sanctum Ioannem Mariam" \
+	"sanctum Joannem Mariam" "not resolved; Latin text unavailable"; do
 	case "$vianney" in
 	*"$forbidden"*) echo "Vianney witness-gap payload escaped quarantine: $forbidden" >&2; exit 1 ;;
 	esac
 done
+printf '%s\n' "$vianney" >vianney-english.txt
+run_tool --calendar roman-1962 --mass s-ioannis-mariae-vianney-confessoris \
+	--lang la >vianney-latin.txt
+run_tool --calendar roman-1962 --mass s-ioannis-mariae-vianney-confessoris \
+	--lang en --format json >vianney.json
+python3 - vianney.json vianney-latin.txt vianney-english.txt <<'PY'
+import hashlib, json, pathlib, sys
+
+document = json.load(open(sys.argv[1], encoding="utf-8"))
+# Collect hash is frozen by the independently accepted22 authority, not this
+# command's output or a regenerated mutable guard. The other two hashes belong
+# to the preexisting inherited Common, NOT two additional Vianney grants.
+wanted = {
+    "Collect": "12105ba3649c6e5b37c48e65fd93475d55706432eb8485f495625e32b20ddcb4",
+    "Secret": "a615d91669e7135cbd9addeb815d9243da1e51a45e297c1ff461089347d8fcd8",
+    "Postcommunion": "ebc9e676d622755e29bf9f334168521a47819a5182c5107f9f604e89730cef9f",
+}
+assert [p["name"] for p in document["mass"]["propers"]] == ["Collect"], document["mass"]
+orations = [row for row in document["appointed"] if row["proper"]["name"] in wanted]
+assert len(orations) == 3 and {row["proper"]["name"] for row in orations} == set(wanted), orations
+assert len(set(wanted.values())) == 3
+for row in orations:
+    proper = row["proper"]
+    name = proper["name"]
+    assert proper["source"] == "composed", proper
+    assert hashlib.sha256(proper["text"].encode()).hexdigest() == wanted[name], proper
+    assert proper["latin"]["withheld"] is False, proper
+    assert proper["latin"]["publication"]["status"] == "permitted", proper
+    assert proper["latin"]["publication"]["basis"] == "public-domain", proper
+    if name == "Collect":
+        assert row["taken_from"] is None, row
+        assert proper["latin"]["provenance"]["source_id"] == (
+            "passage.triptych.roman-1962-latin-proper-editorial-projection."
+            "editorial-projection-2026-10-22."
+            "phase5-latin22-s-ioannis-mariae-vianney-confessoris-collect"
+        ), proper
+        assert not proper.get("translations"), proper
+        assert not proper.get("unavailable_translations"), proper
+        assert proper["untranslated"] == [{
+            "lang": "en", "state": "unavailable",
+            "target": {
+                "mass": "s-ioannis-mariae-vianney-confessoris", "form_id": "main",
+                "proper": "Collect", "cycle": "all", "occurrence": 1, "extent": "body",
+            },
+        }], proper
+        body = " ".join(proper["text"].split())
+        assert body in " ".join(pathlib.Path(sys.argv[2]).read_text(encoding="utf-8").split())
+        assert body not in " ".join(pathlib.Path(sys.argv[3]).read_text(encoding="utf-8").split())
+    else:
+        assert row["taken_from"]["mass"] == "commune-confessoris-non-pontificis-1", row
+        assert row["taken_from"]["proper"] == name, row
+PY
 
 # `census` derives the count of both calendars once. One census used to exist in
 # three retyped copies that disagreed by as much as sixty masses in a section,

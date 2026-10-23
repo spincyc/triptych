@@ -42,9 +42,53 @@ for want in "roman-1962" "First Sunday of Advent" "Introit" "Epistle — Romans 
 	esac
 done
 
-# Daily projection preserves the same source-owned recension warning and stamp
-# that mass-propers exposes; composing the tools must not erase provenance.
-pre1955="$(run_tool show --date 2026-11-29 --calendar roman-pre-1955 --lang en)"
+# Inspect structural provenance without executing an inherited formulary.
+# mass-today must still refuse its foreign, unresolved source applicability.
+status=0
+run_tool show --date 2026-11-29 --calendar roman-pre-1955 --lang en \
+	>"$sandbox/pre1955-refused.txt" 2>"$sandbox/pre1955-refused.err" || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "foreign pre-1955 applicability should exit 2, got $status" >&2
+	exit 1
+fi
+for want in \
+	"unsupported foreign-source Proper applicability from roman-1962 in roman-pre-1955; source condition remains unresolved:" \
+	"on Advent ferias using this Sunday Mass only the Gradual remains; omit the Alleluia and its following verse"; do
+	if ! grep -qF "$want" "$sandbox/pre1955-refused.err"; then
+		echo "pre-1955 refusal lost its source boundary: $want" >&2
+		exit 1
+	fi
+done
+# render() prints the date, calendar/formulary heading and recension context
+# before calling mass_events(); that late seating refusal must print no Proper
+# or Ordinary body. Match only the permitted prelude, allowing its line wraps,
+# rather than mistaking those headers for an executed Mass.
+python3 - "$sandbox/pre1955-refused.txt" "$repo" <<'PY'
+import pathlib, re, sys
+import yaml
+
+out = pathlib.Path(sys.argv[1]).read_text(encoding="utf-8")
+lines = [line.strip() for line in out.splitlines() if line.strip()]
+assert len(lines) >= 3, out
+assert lines[0] == "2026-11-29", out
+assert re.fullmatch(r"roman-pre-1955 — advent(?:, week 1)?", lines[1]), out
+assert re.fullmatch(r"First Sunday of Advent(?: \([^()\n]+\))?", lines[2]), out
+source = yaml.safe_load((
+    pathlib.Path(sys.argv[2]) / "src/sources/calendars/roman-pre-1955/propers.yaml"
+).read_text(encoding="utf-8"))
+assert source["text_from"] == "roman-1962", source["text_from"]
+assert source["recension_coverage"]["status"] == "structural-only"
+prelude = [
+    "Historical boundary — stands before: " + "; ".join(source["stands_before"]),
+    "Recension coverage: structural-only",
+    "Proper text source: roman-1962 (inherited, uncollated)",
+    source["advisory"],
+]
+# Exact apparatus-only equality excludes every Proper heading/body, Bible text,
+# Ordinary body and any claimed successful execution after the refusal.
+assert " ".join(lines[3:]) == " ".join(" ".join(prelude).split()), out
+PY
+pre1955="$("$tool" mass-propers show --calendar roman-pre-1955 --mass advent-1 --lang en)"
 for want in "Historical boundary" \
 	"de-rubricis-simpliciorem-1955; maxima-redemptionis-1955" \
 	"Recension coverage: structural-only" \
@@ -55,32 +99,27 @@ for want in "Historical boundary" \
 	*) echo "pre-1955 day view is missing provenance: $want" >&2; exit 1 ;;
 	esac
 done
-run_tool show --date 2026-11-29 --calendar roman-pre-1955 --lang en \
+"$tool" mass-propers show --calendar roman-pre-1955 --mass advent-1 --lang en \
 	--format json >"$sandbox/pre1955-day-provenance.json"
 python3 - "$sandbox/pre1955-day-provenance.json" <<'PY'
 import json, sys
 
 document = json.load(open(sys.argv[1], encoding="utf-8"))
-selected = next(
-    mass
-    for day in document["days"]
-    for mass in day["masses"]
-    if mass["key"] == day["selected_mass"]
-)
-assert selected["advisory"].startswith("Structural-only pre-1955 projection")
-assert selected["stands_before"] == [
+assert document["advisory"].startswith("Structural-only pre-1955 projection")
+assert document["stands_before"] == [
     "de-rubricis-simpliciorem-1955", "maxima-redemptionis-1955"
 ]
-assert selected["recension_coverage"]["status"] == "structural-only"
-assert selected["recension_coverage"]["inheritance"]["source_calendar"] == "roman-1962"
-assert selected["recension"]["calendar"] == "roman-1962"
-assert selected["recension"]["text_from"] == "roman-1962"
-assert selected["recension"]["stated"] is False
+assert document["recension_coverage"]["status"] == "structural-only"
+assert document["recension_coverage"]["inheritance"]["source_calendar"] == "roman-1962"
+assert document["recension_coverage"]["inheritance"]["status"] == "uncollated"
+assert document["mass"]["recension"]["calendar"] == "roman-1962"
+assert document["mass"]["recension"]["text_from"] == "roman-1962"
+assert document["mass"]["recension"]["stated"] is False
 PY
-palm1955="$(run_tool show --date 2026-03-29 --calendar roman-pre-1955 --expanded --plain)"
+palm1955="$("$tool" mass-propers show --calendar roman-pre-1955 --mass palm-sunday --plain)"
 case "$palm1955" in
 *"Departure act: maxima-redemptionis-1955"*"Additional departure act (reslotted): maxima-redemptionis-1955"*) ;;
-*) echo "pre-1955 departure act stations are missing from the daily reading view" >&2; exit 1 ;;
+*) echo "pre-1955 departure act stations are missing from structural inspection" >&2; exit 1 ;;
 esac
 
 # A citation-backed postconciliar antiphon may carry a short Latin incipit as
@@ -148,6 +187,9 @@ PY
 
 # Loading the translation ledger for an unrelated settled date must continue
 # to succeed when another mass has occurrence-aware publication TSV bindings.
+# This JSON is the canonical inherited record: it lists the regular, Tract
+# and Paschal alternatives, NOT execution of every alternative on August19.
+# The source Common has BOTH James1:12 and Sirach45:9 in its Paschal Alleluia.
 run_tool show --date 2026-08-19 --calendar roman-1962 --lang en \
 	--bible douay-rheims --json \
 	>"$sandbox/unrelated-occurrence-binding.json"
@@ -160,8 +202,30 @@ assert payload["date"] == "2026-08-19", payload
 mass = payload["days"][0]["branches"][0]["masses"][0]
 assert mass["key"] == "s-ioannis-eudes-confessoris", mass
 verses = [verse for proper in mass["propers"] for verse in proper.get("verses", [])]
-assert len(verses) == 11, verses
+expected = [
+    ("Introit", "Psalms 36:30-31"),
+    ("Introit", "Psalms 36:1"),
+    ("Lesson", "Sirach 31:8-11"),
+    ("Gradual", "Psalms 91:13-14"),
+    ("Gradual", "Psalms 91:3"),
+    ("Alleluia", "James 1:12"),
+    ("Tract", "Psalms 111:1-3"),
+    ("Alleluia (Tempore paschali)", "James 1:12"),
+    ("Alleluia (Tempore paschali)", "Sirach 45:9"),
+    ("Gospel", "Luke 12:35-40"),
+    ("Offertory", "Psalms 88:25"),
+    ("Communion", "Matthew 24:46-47"),
+]
+assert len(verses) == len(expected) == len(set(expected)) == 12, verses
+assert [
+    (proper["name"], verse["ref"])
+    for proper in mass["propers"] for verse in proper.get("verses", [])
+] == expected, mass
 assert all(verse.get("text") for verse in verses), verses
+assert mass["bible"] == {
+    "id": "douay-rheims",
+    "edition": "The Holy Bible, Douay-Rheims (Challoner revision), Project Gutenberg eBook 1581",
+}, mass["bible"]
 PY
 
 # A settled implied feria can lack a held formulary.  That is neither an
@@ -187,6 +251,20 @@ PY
 #
 # The whole Mass in one piece: scripture in words, under a named edition, with
 # the propers set into the Ordinary at the places the missal appoints.
+# The resolved Roman1962 Sunday is the safe appointment, not a permission
+# upgrade for the structural-only pre-1955 inheritance inspected above.
+run_tool show --date 2026-11-29 --calendar roman-1962 --json \
+	>"$sandbox/expanded-appointment.json"
+python3 - "$sandbox/expanded-appointment.json" <<'PY'
+import json, sys
+
+document = json.load(open(sys.argv[1], encoding="utf-8"))
+assert document["status"] == "ok", document
+day, = document["days"]
+assert day["settled"] is True, day
+assert day["selected_mass"] == "advent-1", day
+assert day["branches"][0]["selected_mass"] == "advent-1", day
+PY
 expanded="$(run_tool show --date 2026-11-29 --calendar roman-1962 --expanded)"
 
 # Scripture is resolved, and the edition it was resolved from is printed. An
@@ -576,25 +654,147 @@ PY
 
 # ---- Absence, placeholders and provenance ---------------------------------
 #
-# The former pinned placeholders are now transcribed. Their remaining typed
-# Proper-Collect gap is rendered as availability beside the retained Common,
-# never as prayer text or a repository placeholder.
+# These days appoint their own text-free, rights-withheld Collects, not the
+# Common's different Collect and not a mass-level unavailable formulary. Check
+# the source identity, public absence and both actual expanded language views;
+# Secret and Postcommunion must remain the independently inherited Common.
 for candidate in 2027-06-17 2027-07-21 2027-10-23; do
-    found="$(run_tool show --date "$candidate" --calendar roman-1962 --expanded)"
-    case "$found" in
-    *"proper collect unavailable:"*) ;;
-    *)
-        echo "$candidate lost its typed proper-Collect availability" >&2
-        exit 1
-        ;;
-    esac
-    case "$found" in
-    *"This entry is a placeholder"*|*"placeholder: this Mass's text"*)
-        echo "$candidate printed repository placeholder prose as liturgy" >&2
-        exit 1
-        ;;
-    esac
+    for language in en la; do
+        run_tool show --date "$candidate" --calendar roman-1962 --lang "$language" \
+            --expanded --plain >"$sandbox/own-collect-$candidate.$language.txt"
+        run_tool show --date "$candidate" --calendar roman-1962 --lang "$language" \
+            --json >"$sandbox/own-collect-$candidate.$language.json"
+    done
 done
+python3 - "$sandbox" "$repo" <<'PY'
+import hashlib
+import importlib.machinery
+import importlib.util
+import json
+import pathlib
+import re
+import sys
+from types import SimpleNamespace
+import yaml
+
+root, repo = map(pathlib.Path, sys.argv[1:])
+source = yaml.safe_load((repo / "src/sources/calendars/roman-1962/propers.yaml").read_text(encoding="utf-8"))
+by_key = {mass["key"]: mass for section in source["sections"].values() for mass in section.get("masses", [])}
+# Source-derived pins, not hashes captured from the CLI's current output.
+own_collect_cases = {
+    "2027-06-17": (
+        "s-gregorii-barbadici-episcopi-confessoris", "commune-confessoris-pontificis-1",
+        "8810ec128f175a58303e5a367b14358d4d357d8033034755aa68d5c8db81f38f",
+    ),
+    "2027-07-21": (
+        "s-laurentii-brundusio-confessoris-ecclesiae-doctoris", "commune-doctorum-non-pontificis",
+        "7c1131275d78e601c529474267a92057f464ebdb8b48c90a9cbe75418672c1e7",
+    ),
+    "2027-10-23": (
+        "s-antonii-mariae-claret-episcopi-confessoris", "commune-confessoris-pontificis-2",
+        "ae2d6dd52d53fbea12ceccb1dbc6cf470cad5f648119e8d1179f7ebdee79a1fa",
+    ),
+}
+loader = importlib.machinery.SourceFileLoader("today_own_collect_render", str(repo / "tools/mass-today"))
+spec = importlib.util.spec_from_loader(loader.name, loader)
+today = importlib.util.module_from_spec(spec)
+loader.exec_module(today)
+plain_style = SimpleNamespace(heading=lambda head: [head], note=lambda note: note)
+fold = lambda text: " ".join(text.split())
+
+def source_oration(key, name):
+    owner = by_key[key]
+    matches = [proper for proper in owner.get("propers", []) if proper["name"] == name]
+    if matches:
+        proper, = matches
+        return proper
+    # The non-bishop Doctor Common takes its Collect from the bishop Doctor
+    # Common, but prints its own Secret/Postcommunion. Do not flatten that into
+    # three newly owned prayers for the dated saint.
+    return source_oration(owner["takes_from"]["mass"], name)
+
+def check_own_collect(candidate, language, payload, rendered):
+    key, common, excluded_hash = own_collect_cases[candidate]
+    declared = by_key[key]
+    own, = declared["propers"]
+    assert declared["date"] == candidate[5:] and declared["takes_from"]["mass"] == common
+    assert own["name"] == "Collect" and own["source"] == "composed"
+    assert own["text_status"] == {
+        "state": "unavailable", "scope": "proper-body", "body_status": "held-unpublished",
+        "reasons": [{
+            "kind": "rights-withheld",
+            "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        }],
+    }, own
+    assert not any(own.get(field) for field in ("text", "translations", "verses")), own
+    excluded = source_oration(common, "Collect")["text"]
+    assert hashlib.sha256(excluded.encode("utf-8")).hexdigest() == excluded_hash
+    assert payload["status"] == "ok" and payload["problems"] == [], payload
+    assert payload["date"] == candidate and payload["language"]["requested"] == language
+    day, = payload["days"]
+    assert day["calendar"] == "roman-1962" and day["selected_mass"] == key, day
+    mass, = [mass for mass in day["masses"] if mass["key"] == key]
+    assert mass["selected"] is True and mass["selected_form"] == "main", mass
+    assert mass["takes_from"] == declared["takes_from"] and mass["text_status"] is None, mass
+    assert mass["placeholders"] == 0 and not mass["form_choice_required"], mass
+    propers = mass["propers"]
+    assert not any(proper["name"] == "Placeholder" for proper in propers), propers
+    collect, = [proper for proper in propers if proper["name"].split(" (", 1)[0] == "Collect"]
+    assert set(collect) == {
+        "name", "source", "notes", "text_status", "latin", "verses",
+        "form", "form_id", "taken_from", "language_selection", "unavailable_translations",
+    } | ({"incipit"} if "incipit" in own else set()), collect
+    assert collect["name"] == "Collect" and collect["source"] == "composed", collect
+    assert collect["taken_from"] is None and collect["form"] is None and collect["form_id"] == "main", collect
+    assert collect["notes"] == own["notes"] and collect.get("incipit") == own.get("incipit"), collect
+    assert collect["text_status"] == {"state": "unavailable", "scope": "proper-body"}, collect
+    assert "text" not in collect and "translations" not in collect and collect["verses"] == [], collect
+    assert collect["unavailable_translations"] == [], collect
+    assert collect["latin"] == {
+        "target": "Collect", "state": "unavailable", "held": False, "available": False, "withheld": True,
+    }, collect
+    reason = (
+        {"state": "text-withheld", "lang": "la"} if language == "la" else {
+            "state": "ledgered-untranslated",
+            "records": [{"state": "ledgered-untranslated", "lang": "en", "unavailableState": "unavailable"}],
+        }
+    )
+    assert collect["language_selection"] == {
+        "requested": language, "status": "unavailable" if language == "la" else "absent",
+        "held": False, "available": False, "complete": False, "reason": reason,
+    }, collect
+    for name in ("Secret", "Postcommunion"):
+        inherited, = [proper for proper in propers if proper["name"] == name]
+        assert inherited["taken_from"] == {
+            "mass": common, "form": "", "proper": name, "citation": declared["takes_from"]["citation"],
+        }, inherited
+        assert inherited["text"] == source_oration(common, name)["text"], inherited
+        assert inherited["latin"]["withheld"] is False
+        assert inherited["latin"]["publication"]["status"] == "permitted"
+    message = "Latin text unavailable" if language == "la" else "No English or Latin body is held here."
+    # Check the complete proper fragment against a closed independent
+    # expectation. The following Ordinary rubric is not part of the Collect.
+    fragment = today.proper_lines(
+        collect, plain_style, "", lang=language, witness=None, seat=None, why=False,
+    )
+    assert [line.strip() for line in fragment if line.strip()] == ["Collect", message], fragment
+    assert re.search(r"(?m)^([ \t]*)Collect\n\1  " + re.escape(message) + r"\n(?=\n)", rendered), rendered
+    assert fold(excluded) not in fold(rendered), candidate
+    for forbidden in (
+        "This entry is a placeholder", "placeholder: this Mass's text", "proper collect unavailable:",
+    ):
+        assert forbidden not in fold(rendered), (candidate, forbidden)
+
+for candidate in own_collect_cases:
+    for language in ("en", "la"):
+        stem = root / f"own-collect-{candidate}.{language}"
+        check_own_collect(
+            candidate, language,
+            json.loads(stem.with_suffix(stem.suffix + ".json").read_text(encoding="utf-8")),
+            stem.with_suffix(stem.suffix + ".txt").read_text(encoding="utf-8"),
+        )
+    print(f"# own text-free Collect checked in English and Latin: {candidate}")
+PY
 
 # ---- The tiers ------------------------------------------------------------
 #
@@ -818,23 +1018,41 @@ if run_tool show --date 2026-11-29 --calendar roman-1962 \
 	echo "a mass-propers refusal exited successfully" >&2
 	exit 1
 fi
-mkdir -p "$sandbox/fake-repo/tools"
-cp "$repo/tools/mass-today" "$sandbox/fake-repo/tools/mass-today"
-ln -s "$repo/scripts" "$sandbox/fake-repo/scripts"
-for sibling in calendar-days calendar-rubrics mass-propers; do
-	ln -s "$repo/tools/$sibling" "$sandbox/fake-repo/tools/$sibling"
-done
-ln -s /dev/null "$sandbox/fake-repo/tools/mass-ordinary"
-if /usr/bin/python3 "$sandbox/fake-repo/tools/mass-today" show \
+# Each copied command needs its real shared seating owner at ROOT's exact
+# leaf. The UMD model is self-contained; no other browser files are required.
+# Refuse just one sibling per root, without hiding the command's own Node.
+refusal_repo() {
+	fake="$1"
+	refused="$2"
+	mkdir -p "$fake/tools" "$fake/src/web/browser/liturgy"
+	cp "$repo/tools/mass-today" "$fake/tools/mass-today"
+	cp "$repo/src/web/browser/liturgy/ordinary-seating.js" \
+		"$fake/src/web/browser/liturgy/ordinary-seating.js"
+	ln -s "$repo/scripts" "$fake/scripts"
+	for sibling in calendar-days calendar-rubrics mass-propers mass-ordinary; do
+		if [ "$sibling" != "$refused" ]; then
+			ln -s "$repo/tools/$sibling" "$fake/tools/$sibling"
+		fi
+	done
+}
+refusal_repo "$sandbox/ordinary-repo" mass-ordinary
+ln -s /dev/null "$sandbox/ordinary-repo/tools/mass-ordinary"
+if python3 "$sandbox/ordinary-repo/tools/mass-today" show \
 	--date 2026-11-29 --calendar roman-1962 --ordinary --lang en --json \
-	>"$sandbox/refused-ordinary.json"; then
+	>"$sandbox/refused-ordinary.json" 2>"$sandbox/refused-ordinary.err"; then
 	echo "a mass-ordinary refusal exited successfully" >&2
 	exit 1
 fi
-mkdir -p "$sandbox/path"
-ln -s /usr/bin/python3 "$sandbox/path/python3"
-if PATH="$sandbox/path" "$tool" "$tool_id" show --date 2026-11-29 \
-	--calendar roman-1962 --json >"$sandbox/refused-rubrics.json"; then
+refusal_repo "$sandbox/rubrics-repo" calendar-rubrics
+cat >"$sandbox/rubrics-repo/tools/calendar-rubrics" <<'PY'
+import sys
+
+print("fixture-only calendar-rubrics refusal", file=sys.stderr)
+raise SystemExit(23)
+PY
+if python3 "$sandbox/rubrics-repo/tools/mass-today" show \
+	--date 2026-11-29 --calendar roman-1962 --json \
+	>"$sandbox/refused-rubrics.json" 2>"$sandbox/refused-rubrics.err"; then
 	echo "a calendar-rubrics refusal exited successfully" >&2
 	exit 1
 fi
@@ -868,6 +1086,12 @@ assert [problem["component"] for problem in ordinary["problems"]] == [
     "mass-ordinary"
 ], ordinary["problems"]
 assert "refused" in ordinary["days"][0]["ordinary"], ordinary
+ordinary_problem = ordinary["problems"][0]
+assert set(ordinary_problem) == {"component", "date", "calendar", "error"}, ordinary_problem
+assert ordinary_problem["error"].startswith("mass-ordinary did not return JSON: "), ordinary_problem
+# A refused Ordinary is not a successful empty/body/permission-bearing object.
+assert ordinary["days"][0]["ordinary"] == {"refused": ordinary_problem["error"]}, ordinary
+assert ordinary["days"][0]["ranking_refused"] is None, ordinary
 
 rubrics = load(sys.argv[3])
 assert rubrics["status"] == "partial", rubrics
@@ -878,6 +1102,34 @@ assert rubrics["problems"][0]["fallback"] == "calendar-days", rubrics
 # The arithmetic fallback still supplies the inspectable day and Mass.
 assert rubrics["days"][0]["ranking_refused"], rubrics
 assert rubrics["days"][0]["masses"][0]["name"] == "First Sunday of Advent", rubrics
+rubrics_problem = rubrics["problems"][0]
+assert set(rubrics_problem) == {"component", "date", "calendar", "error", "fallback"}, rubrics_problem
+assert rubrics_problem["error"].startswith("calendar-rubrics "), rubrics_problem
+assert rubrics_problem["error"].endswith("exited 23: fixture-only calendar-rubrics refusal"), rubrics_problem
+assert rubrics["days"][0]["ranking_refused"] == rubrics_problem["error"], rubrics
+
+for payload, component in ((propers, "mass-propers"),
+                           (ordinary, "mass-ordinary"),
+                           (rubrics, "calendar-rubrics")):
+    assert {problem["component"] for problem in payload["problems"]} == {component}, payload
+    assert payload["date"] == "2026-11-29" and len(payload["days"]) == 1, payload
+    day = payload["days"][0]
+    assert day["calendar"] == "roman-1962" and day["masses"], day
+    assert day["masses"][0]["name"] == "First Sunday of Advent", day
+    assert len({mass["key"] for mass in day["masses"]}) == len(day["masses"]), day
+    for problem in payload["problems"]:
+        assert problem["date"] == "2026-11-29" and problem["calendar"] == "roman-1962", problem
+    if component == "mass-propers":
+        # Ranked commemorations also need their own additive, local refusal.
+        assert len(payload["problems"]) == len(day["masses"]), payload
+    for mass in day["masses"]:
+        if component == "mass-propers":
+            matching = [problem for problem in payload["problems"] if problem["mass"] == mass["key"]]
+            assert len(matching) == 1, mass
+            assert mass["refused"] == matching[0]["error"] and mass["propers"] == [], mass
+        else:
+            assert "refused" not in mass and mass["propers"], mass
+            assert not mass.get("placeholders"), mass
 PY
 for want in "refused:" "partial result:" "component failures"; do
 	if ! grep -q "$want" "$sandbox/refused-propers.txt"; then

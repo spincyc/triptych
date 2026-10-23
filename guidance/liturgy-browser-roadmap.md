@@ -23,6 +23,43 @@ recording it does not mark its implementation milestones accepted.
 
 ### Current priority: complete annual minimum reader, 2026-10-20
 
+**Integration amendment, 2026-10-23.** The maintainer authorizes coherent commits
+on the workspace feature branch and a non-force main push after consistency
+and publication checks. The exhaustive additions/unused-options audit is
+explicitly deferred and incomplete, not accepted; its confirmed findings and
+both completed conventions findings have independently accepted corrections.
+The exact fourteen-file terminal-reader and six-file Catena metadata correction
+sets are installed with hash/mode conservation. Registered-owner generation,
+full annual and settled native checks, final integrated cold review, fresh
+upstream ancestry and outgoing-object review remain required. This supersedes
+earlier current-action/no-publication statements, not their historical evidence
+or the open annual/product criteria. The phase record owns the exact receipts
+and the separate publication-basis qualifications.
+
+The subsequent owner window, fresh full 5,856-render annual matrix, targeted
+terminal/adapter/publication guards, deployment-source gate and public/preview
+builds and verifiers pass. One stale chronology inventory hash required a
+registered-owner refresh; the initial failed gate is retained. Settled native
+and independent integrated acceptance are still required. Refreshed main
+`74150dd4e9caaeaea191b35b55780219b5196769` adds a separately published
+missal-history batch, not yet reconciled here. Its source/index/release joins
+must preserve this accepted work and receive affected checks before publication.
+
+The first settled native run fails six coverage assertions (251/257 pass,
+twelve harnesses), without console, request or HTTP diagnostics. Its immutable
+failed packet remains preserved. Bounded fixture/source diagnosis, correction,
+fresh affected native checks and independent integrated acceptance are required;
+the annual/publication successes do not override this failure.
+
+Bounded diagnosis proves stale Vianney fixture use in all six failures. Seven
+hunks in three browser harnesses now use Claret's still-withheld Collect,
+preserving every assertion and Advent's unresolved appointment coverage.
+Syntax and source/preview model proofs pass. Candidate checkpoints precede
+ordinary upstream integration; the next complete native run and independent
+integrated acceptance target the final merged, rebuilt state, rather than
+duplicating the browser run before and after the merge. No acceptance gate
+is waived and no publication has occurred.
+
 The maintainer explicitly puts correctness and completeness of Propers and
 Commons first: one full TLM year and one full Novus Ordo year for **each**
 Sunday cycle A, B and C. This supersedes the previous next-action ordering.
@@ -37,9 +74,23 @@ The minimum reader uses the existing Day/Propers reading path and source model.
 
 The durable [annual structural gate](../tools/tests/test_complete_missal_year.py)
 uses these four intervals: 1,464 date/calendar coordinates, 2,928 English/Latin
-states and 5,856 JSON/text renderings. The full run remains opt-in and has not
-been run for this scope. Its structural checks do not establish correct
-appointments, literal wording or complete text availability.
+states and 5,856 JSON/text renderings. The full opt-in run passed after each of
+the bounded Phase 1–4 source repairs on 2026-10-22, alongside 257 native browser
+assertions, source and local publication gates, and fresh integrated cold
+review. The [phase record](../workflows/reviews/missal-reader-annual-2026-10-22/RECORD.md)
+owns its evidence and the next bounded repair scope. Its structural checks do
+not establish correct appointments, literal wording or complete text
+availability throughout the annual scope.
+
+Phase 4's replacement native run follows the settled preview build; the earlier
+overlapping run is not freshness evidence. Its superseding immutable candidate
+passes independent integrated acceptance. Phase 5 selects twenty-two Latin-body
+prospects, thirteen historical English terminal owners and fifteen Easter V–VII
+acclamation-classification repairs, with separate source cold reviews and new
+integrated acceptance still required. The phase record owns the exact scope,
+orthography and ending controls, and unresolved source and rights boundaries.
+The English scope is reduced from fourteen after independent primary review
+exposes a substantive Rosary word mismatch; its initial candidate is not accepted.
 
 The Novus Ordo intervals are complete liturgical years, including their own
 Advent, derived through the existing calendar owner under
