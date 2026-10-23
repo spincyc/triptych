@@ -14287,7 +14287,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-4.json` | `7f1956b102a7b765dc36210f5557ad25f07d075c8edcc87a3acc85cd3a03473d` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-5.json` | `61abb15daa555ada778b2eeb6137cbc6114102586c9cc2a27d5e4863521de0e3` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-6.json` | `54408d9f5e1c8b684850b05976d6e3ac9ee3b88b6194c37c7e1cf83d52256d28` |
-| `src/web/data/structure/documents/corpus.json` | `f8849b9812574ca221c99b07f972fafa3d20e17215e76735bc1b1866de0c2303` |
+| `src/web/data/structure/documents/corpus.json` | `addc67ef386cbf88dcb3b1d040730c5a78eb3e5d515758dd09ec2e58062eebfc` |
 | `src/web/data/structure/ordinary/index.json` | `d42c3482d78158b8d1a0d51b65ce6d5704b5d634f8833bc46f2a8a65b3a73816` |
 | `src/web/data/structure/ordinary/postconciliar.json` | `9b94a5ea6b83fa56c558e3f2293a0d3b8ae93f83e7e79324e6d8ae7984096807` |
 | `src/web/data/structure/ordinary/roman-1962.json` | `6a131ccc5603941bc76b20159d03197315f2f2575b9bc4313e91c642faf7cf43` |

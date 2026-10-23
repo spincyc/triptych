@@ -1,0 +1,73 @@
+{
+  "tracked_sha256": "f8849b9812574ca221c99b07f972fafa3d20e17215e76735bc1b1866de0c2303",
+  "candidate_sha256": "addc67ef386cbf88dcb3b1d040730c5a78eb3e5d515758dd09ec2e58062eebfc",
+  "total_leaf_changes": 3,
+  "changes_by_top_key": {
+    "workflows": 3
+  },
+  "changes": [
+    {
+      "path": "/workflows/1/digest",
+      "before": "ef61cf2a22095178605237cbf5e93101381da858b11879b4106e35e534256ae8",
+      "after": "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83"
+    },
+    {
+      "path": "/workflows/1/version",
+      "before": "14",
+      "after": "15"
+    },
+    {
+      "path": "/workflows/2/digest",
+      "before": "a6bfeaa2f1d269297a9d4ff956950214ef946318e4db6c99eed16d180b4e25ad",
+      "after": "d1a2a584aad0c67c3008b8d39344914cc12b4f83a62c8f5a2c5c8c3f4c3e8bac"
+    }
+  ],
+  "unchanged_frozen_generated_files": 7516,
+  "binding_changed_paths": [
+    "src/web/data/structure/documents/corpus.json"
+  ],
+  "authorization_policy_metadata_unchanged": true,
+  "source_trace": {
+    "proper-study": {
+      "version": 15,
+      "owner_digest": "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83",
+      "changed_referenced_inputs": [
+        "workflows/fragments/proper-study/research-review.md",
+        "workflows/fragments/proper-study/research.md",
+        "workflows/fragments/proper-study/source-registration.md",
+        "workflows/pipelines/proper-study.json"
+      ]
+    },
+    "proper": {
+      "version": 29,
+      "owner_digest": "d1a2a584aad0c67c3008b8d39344914cc12b4f83a62c8f5a2c5c8c3f4c3e8bac",
+      "changed_referenced_inputs": [
+        "workflows/fragments/propers/source-registration.md"
+      ]
+    },
+    "proper-finish": {
+      "version": 7,
+      "owner_digest": "99e6c941a04266c6596fde0857fd3be300d66d72b3ece7a45a3a7665e67b7c75",
+      "changed_referenced_inputs": []
+    }
+  },
+  "browser_model": {
+    "tracked": {
+      "editions": 213,
+      "unrecorded": 188,
+      "behind": 24,
+      "ahead": 0,
+      "revised": 0,
+      "current": 1
+    },
+    "candidate": {
+      "editions": 213,
+      "unrecorded": 188,
+      "behind": 24,
+      "ahead": 0,
+      "revised": 0,
+      "current": 1
+    }
+  },
+  "browser_classifications_unchanged": true
+}
