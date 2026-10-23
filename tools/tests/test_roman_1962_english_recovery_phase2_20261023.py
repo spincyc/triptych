@@ -789,7 +789,8 @@ class EnglishRecoveryPhase2Tests(unittest.TestCase):
   first=min(x[0]for x in found);best=[r for r in found if r[0]==first];self.assertEqual(len(best),1);return best[0]
  def test_exact_new_owner_set_and_preserved_previous_entries(self):
   self.assertFalse(self.stale);self.assertFalse(self.trouble);self.assertEqual(set(self.entries),set(ORACLES));ledger=tomllib.loads(LEDGER.read_text())
-  previous=[r for r in ledger['entries']if self.p.translation_record_identity(r,self.doc)not in ORACLES]
+  audit=tomllib.loads((ROOT/'src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml').read_text());later={tuple(r['target'])for r in audit['accepted']if r.get('batch')not in ['phase1','phase2',None]}
+  previous=[r for r in ledger['entries']if self.p.translation_record_identity(r,self.doc)not in ORACLES and self.p.translation_record_identity(r,self.doc)not in later]
   self.assertEqual(len(previous),275);self.assertEqual(sha(q(sorted(previous,key=q))),PREVIOUS_ENTRIES_SHA)
   missing={self.p.translation_record_identity(r,self.doc)for r in ledger['untranslated']};self.assertFalse(missing&set(ORACLES))
   for k,r in self.entries.items():self.assertEqual(sha(self.slots[k]['text']),ORACLES[k][0]);self.assertEqual(sha(r['translations'][0]['text']),ORACLES[k][1])

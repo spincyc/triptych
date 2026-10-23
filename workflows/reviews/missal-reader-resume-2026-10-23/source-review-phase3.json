@@ -1,0 +1,144 @@
+{
+  "review": "Independent Phase3 frozen source/translation acceptance",
+  "reviewed_on": "2026-10-23",
+  "completed_at_utc": "2026-10-23T15:04:49.625929+00:00",
+  "disposition": "accepted-for-root-integration-exact-frozen-revision-2",
+  "manifest": {
+    "path": ".scratch/resume-orations-recovery/phase3/revision-2/install-files.json",
+    "sha256": "2aafb8322321eb266a99f6d35805017ae2c0959b269f707748c534b8fb90cba1",
+    "paths": 247,
+    "all_proposed_postimages_independently_rehashed": true,
+    "all_eight_canonical_preimages_independently_rehashed": true
+  },
+  "oracle": {
+    "path": ".scratch/resume-orations-recovery/phase3/revision-2/selected-oracle.json",
+    "sha256": "7a681143a8a8306de24f5a1c251633caa0a1859470bd0c24b9c275f82d3f42a7",
+    "target_owners": 123,
+    "explicit_direct_candidates": 118,
+    "distinct_historical_bodies": 117,
+    "strict": 49,
+    "same_witness_table": 74,
+    "literal_canonical_byte_equal_joins": 5
+  },
+  "source": {
+    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+    "exact_held_pdf": ".scratch/c3-pentecost-plan/dl-lasance/lasance1945.pdf",
+    "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+    "bytes": 75268976,
+    "positive_source_images_actually_read": 111,
+    "all_positive_image_hashes_independently_rechecked": true,
+    "rights": "Unchanged existing original Lasance/Walsh revised-1945 ordinary-page United States nonrenewal authority, insert-excluded expression anchor. No scan or whole mixed-volume publication authority. No later lettered inserts used.",
+    "table": "Existing exact independently page-read PDF818/printed819 five-family conclusion table reused unchanged; derivative SHA2567dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934. Only actual source English retained; no formula/name/Amen expansion."
+  },
+  "mechanical_checks": {
+    "all123_live_target_full_bytes_hashes_and_owning_provenance_exact": true,
+    "all_full_petitions_word_equal_under_declared_typography_no_i_j_or_spelling_folding": true,
+    "strict_full_word_and_actual_ending_equality": 49,
+    "table_family_person_prefix_proofs": {
+      "through-our-lord": 65,
+      "who-livest": 7,
+      "who-with-thee": 2
+    },
+    "five_cross_owner_joins_entire_canonical_bytes_including_conclusion_wraps_final_LF_equal": true,
+    "source_TSV_overlay_publication_and_verification_passages_exactly_bound": true,
+    "all425_prior_positive_dictionaries_unchanged": true,
+    "all879_remaining_untranslated_dictionaries_unchanged": true,
+    "other_sidecar_metadata_preserved_except_merge": true,
+    "prior_accepted_and_refusal_audit_records_preserved": true,
+    "all15_new_measured_refusals_still_absent_and_bounded": true
+  },
+  "same_day_form_role_judgment": "Saturday Fideles tuos source p264 explicitly prints Prayer over the people after Postcommunion, before next Sunday. Both canonical longer Oratio6 and shorter Oratio2 explicitly carry Super populum role and independent original Latin proofs. These are two direct own-appointment source-to-target comparisons, strict/table respectively, not a cross-owner fanout. No historical 1962 form identity claimed for pre1955 source.",
+  "contrary_findings": [
+    {
+      "severity": "low",
+      "finding": "Artifact notes included unresolved literal {len(old)} template.",
+      "resolution": "Revision2 substitutes425 only; rolling audit updates only that artifact metadata hash/byte length. All other245 postimages and all source/English/sidecar bytes unchanged."
+    },
+    {
+      "finding": "Initial lent-late concern that p331 lacked a comma after that.",
+      "resolution": "Withdrawn: enlarged source crop and parent inspection prove comma. Frozen literal English was correct; no English correction made.",
+      "proof_path": ".scratch/resume-source-cold-review/phase3/lent-late/p0331-extra-comma-detail.png",
+      "proof_sha256": "94201fb65b496bb7e31c31fe5aa8e3e9055e959656571667c798bf81e88d7114"
+    }
+  ],
+  "disjoint_page_receipts": [
+    {
+      "lane": "lent-early",
+      "path": ".scratch/resume-source-cold-review/phase3/lent-early/receipt.json",
+      "sha256": "69ab4ecdc127a5ef92a660bc93421727baece31f8fedb9f5a6a8a61413aa5070",
+      "disposition": "CLEAR for the exact 33 rows / 22 pinned oracle images within this source-page lane; no actionable source-page finding. Two relevant refusals remain bounded and justified."
+    },
+    {
+      "lane": "lent-late",
+      "path": ".scratch/resume-source-cold-review/phase3/lent-late/receipt.json",
+      "sha256": "12d55d9fce7964cf9be83f2892aab82568a728df89387acfb2e7b15122b3d6bc",
+      "disposition": "ACCEPTED: all 29 assigned frozen source rows are exact at the stated transcription boundary; no blocker remains."
+    },
+    {
+      "lane": "spring-sanctoral",
+      "path": ".scratch/resume-source-cold-review/phase3/spring-sanctoral/receipt.json",
+      "sha256": "be7ab689d517d24f7fa24541cdfa2e3d52a642cb6896200d284f5f3fdbc7415a",
+      "disposition": "accepted-within-page-lane-scope"
+    },
+    {
+      "lane": "summer-sanctoral",
+      "path": ".scratch/resume-source-cold-review/phase3/summer-sanctoral/receipt.json",
+      "sha256": "1cb93c355ef639a098904780ce359e14dcb16e53e9de9d8f43d202496859cb44",
+      "disposition": "accepted-within-assigned-source-page-collation-scope"
+    }
+  ],
+  "parent_proofs": [
+    {
+      "path": ".scratch/resume-source-cold-review/phase3/oracle-proof.json",
+      "sha256": "c93ba1dcb8be2c31ebbec68d0320171e90fde32d8e115a1f7f0af6b01e10dd6c"
+    },
+    {
+      "path": ".scratch/resume-source-cold-review/phase3/record-proof.json",
+      "sha256": "366a2b6e0eef727780b764cc9297f7ab63e84fbcbaa834f47c3a36aaba6f5868"
+    },
+    {
+      "path": ".scratch/resume-source-cold-review/phase3/negative-proof.json",
+      "sha256": "c621be8a84ac520034ba53924d66fca76afea4c15fbf75faf4a18fcc3f5c3629"
+    },
+    {
+      "path": ".scratch/resume-source-cold-review/phase3/revision2-proof.json",
+      "sha256": "218b6eb5c6779f41b4d9fe1d795520a668691013e64dc5956439b6e064810d6c"
+    },
+    {
+      "path": ".scratch/resume-source-cold-review/phase3/winter-receipt.json",
+      "sha256": "5a39e1cc0b901cc74ea35991c4e02fb7a7056beb85651ef973ed04654f01767d"
+    }
+  ],
+  "independently_run_source_graph": {
+    "result": "valid",
+    "root": ".scratch/resume-orations-recovery/phase3/revision-2/validation-root",
+    "cache": "disabled",
+    "artifact": 3747,
+    "corpus": 5,
+    "edition": 1267,
+    "passage": 7276,
+    "segment": 114,
+    "work": 1067,
+    "bindings": 4159,
+    "validation_root_all247_postimages_match_frozen_manifest": true
+  },
+  "owner_run_checks": "Final revision2 owner-run source graph and all15 tests pass (11.944s), both calendars passed for unchanged calendar/source payload inputs. Source reviewer independently reran final candidate graph and own data proofs.",
+  "projected_counts": {
+    "roman1962_positive": 548,
+    "roman1962_total": 1427,
+    "remaining_primary_prayer_owners": 701,
+    "remaining_other_owners": 178
+  },
+  "limits": [
+    "Exact frozen source batch only; no annual textual-completeness or whole-source absence/irrecoverability acceptance.",
+    "No new translation, modern protected payload, name/Amen expansion or canonical Latin/calendar mutation.",
+    "Existing target Latin verification owners/dates retained, no new target-page collation implied.",
+    "This lane changed only its exclusive scratch; root owns integration and final publication gates."
+  ],
+  "source_review_blockers": [],
+  "canonical_install_performed_by_this_review": false,
+  "owner_final_validation_receipt": {
+    "path": ".scratch/resume-orations-recovery/phase3/revision-2/prospective-verification.json",
+    "sha256": "c008ad75dc000b2aff7a2027cc8020edd50c75e32df35beee16559d03ba8438a"
+  }
+}

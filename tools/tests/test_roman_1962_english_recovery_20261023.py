@@ -382,7 +382,7 @@ class EnglishRecovery20261023Tests(unittest.TestCase):
         audit = tomllib.loads(audit_path.read_text())
         self.assertEqual(audit["record_type"], "roman-1962-english-recovery-audit")
         self.assertEqual({tuple(r["target"]) for r in audit["accepted"] if r.get("batch", "phase1") == "phase1"}, set(ORACLES))
-        self.assertEqual(len(audit["rejected_comparisons"]), 44)
+        self.assertEqual(sum(r.get("comparison_batch", "phase1") == "phase1" for r in audit["rejected_comparisons"]), 44)
         for record in audit["input_snapshots"]:
             self.assertEqual(sha((ROOT / record["path"]).read_bytes()), record["after_sha256"])
         for record in audit["source_postimages"]:
