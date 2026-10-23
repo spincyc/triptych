@@ -656,6 +656,36 @@ def _source_library():
     return module
 
 
+@functools.lru_cache(maxsize=1)
+def _source_reader():
+    """The owner of the licensed-text acknowledgement rule."""
+    name = "_catena_source_reader"
+    loader = importlib.machinery.SourceFileLoader(name, str(ROOT / "tools/source-reader"))
+    spec = importlib.util.spec_from_loader(name, loader)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[name] = module
+    loader.exec_module(module)
+    return module
+
+
+def _rights_notice(artifact: dict[str, Any]) -> dict[str, str]:
+    """Carry the controller's actual required notice with its words, verbatim.
+
+    Source Reader already publishes licensed rights_basis as acknowledgement.
+    Catena's web and terminal lazy-text readers accept that same field; neither
+    a new attribution nor an edition/edge-basis substitute is needed.
+    """
+    if artifact.get("rights_status") not in _source_reader().ATTRIBUTION_REQUIRED:
+        return {}
+    notice = artifact.get("rights_basis")
+    if not isinstance(notice, str) or not notice.strip():
+        raise CatenaError(
+            f"{artifact.get('id') or 'licensed artifact'} records no nonempty "
+            "textual rights_basis for its required acknowledgement"
+        )
+    return {"acknowledgement": notice}
+
+
 class _ControllerRecords:
     """The already loaded records in the source-library controller's view.
 
@@ -1424,7 +1454,8 @@ def _passage_errors(
             + (f" under {identifier}" if identifier else "")
             + ", which may not be published (Rule 9)"
         )
-    if not str(artifact.get("rights_basis") or "").strip():
+    basis = artifact.get("rights_basis")
+    if (rights == "licensed" and not isinstance(basis, str)) or not str(basis or "").strip():
         errors.append(f"{label}: {artifact_id} records no rights_basis")
     return errors
 
@@ -1499,6 +1530,7 @@ def fragments_for_book(root: Path, token: str) -> list[dict[str, Any]]:
                 "translators": list(edition.get("translators") or ()),
                 "locator": str(passage.get("locus") or ""),
                 "rights": str(artifact.get("rights_status") or ""),
+                **_rights_notice(artifact),
                 # Shown truthfully or not at all. `inspected` means someone read
                 # it; `verified` means it was collated against the controlling
                 # witness. Two agreeing web transcriptions are the first and not
@@ -1860,6 +1892,10 @@ SAFE_ID = re.compile(r"[a-z0-9][a-z0-9._-]*\Z")
 # Genesis fragment metadata, read by nobody who had not opened the fragment.
 CARRIED_WITH_TEXT = ("text", "basis", "date_basis")
 
+# A mandatory licence notice travels in the existing lazy-body channel. Keep
+# it absent from unlicensed payloads so their bytes and metadata stay exact.
+OPTIONAL_CARRIED_WITH_TEXT = ("acknowledgement",)
+
 # What a fragment says about its EDITION rather than about itself. Written once
 # per chapter file under `sources` and referenced by key, because the alternative
 # is writing "Patrologia Latina, tomus 23, Paris: J.-P. Migne, 1845, coll.
@@ -2145,6 +2181,10 @@ def _structure_files(
         for row in rows:
             fragment = dict(row)
             carried = {name: fragment.pop(name, "") for name in CARRIED_WITH_TEXT}
+            carried.update({
+                name: fragment.pop(name) for name in OPTIONAL_CARRIED_WITH_TEXT
+                if name in fragment
+            })
             identifier = fragment["id"]
             if not SAFE_ID.fullmatch(identifier):
                 raise CatenaError(f"passage id is not safe as a filename: {identifier!r}")
