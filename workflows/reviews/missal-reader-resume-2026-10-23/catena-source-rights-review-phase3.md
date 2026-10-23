@@ -1,0 +1,25 @@
+Accepted: the exact frozen Phase 3 source packet and the separate narrow rights-forwarding patch. No blocking findings remain. This is scratch candidate acceptance; the integrating root still owns installation, guidance/inventory updates, regeneration and publication gates.
+
+Bound inputs:
+
+- Source freeze `59ed814372f0078bc6a971cbb8524e818eb65f3946919455ab8d8babf573948f`; all 67 pinned files and both external witnesses replay exactly.
+- Source patch `240b18100312ca0a22ea7669c8cdaf6b67ba0d82234a7b5300f5291088f49a16`.
+- Backend freeze `86816b5ea7ba716cc59098d0438ed4f6f2f10e2ae2552ff223831bf628770b2e`; rights patch `60919dcad33da1065df57d589d0f05578cbfe3fba586f890710904db214ee06b`.
+- Candidate `_catena.py` `25ffc39564070e7a5ac476ec621f62c4201701417dabd83a4380dd642075513a`; candidate production test `c5ed0064922fb531cdeec3ad7670bee1cbf4af14c2c1b8206958f40fde003b16`; new rights tests `9aa5978fedfedd1504b2a0b4e385f6a0754ae06c6c620308cdfe6fb5284c23ac`.
+- Generation freeze `95d237a94a738682b8e6ea20f214e903ffcd8e59130de147d0fa032df5ee18de`; all 2,009 files match the backend owner's independent derivation exactly. Both patches pass `git apply --check` against the current checkout.
+
+The 14 admissions are three Psalm 50 units, three Psalm 88 units, three City of God chapters and five Galatians units. Source-only City XVII.9 is the fifteenth complete source passage, with no false continuous Catena edge. Its actual discontinuous psalm and Nathan relationships remain documented. Galatians 1:10 and section 8 remain unadmitted because of the recorded web/printing discrepancies; incidental citations create no added edges.
+
+All 15 bodies independently replay their ultimate-controller ordered substrings. Whole City chapter bodies preserve every non-whitespace character apart from numeric reference calls; the five Galatians bodies exclude only their declared numbered/reference headings and PL column markers; Psalm 88 uses the exact whole numbered-section lines; Psalm 50 selects each complete numbered unit up to the next marker from its mechanically replayed whole-part derivative. PL35/37 printing images were read for the Galatians and Psalm 88 section boundaries, principal lemmata and rejected discrepancies. Psalm 50 correctly claims digital inspection only.
+
+The Psalm 50 raw delivery and changed derivative retain their actual CC BY-SA 4.0 treatment. The inspected HTML declares that licence and revision 230394. The controlling derivative's central rights basis supplies credits, source/history/licence URLs and the actual change notice. The wrapper HTML is evidence only and is not a proposed public payload. The required notice comes from the controller, independently of the edge's explanatory basis. Existing Severian Greek uses its actual six licensed controllers and notices. No age-of-Latin blanket PD claim replaces these licences. Historical City English is the held Dods 1871 expression, with George Wilson's Book XVII credit; no modern translation is substituted. Psalms retain the source-attributed chronology ranges and disagreement; Galatians retains the explicit reviewed unestablished composition-date limit and honest English not-surveyed finding.
+
+Independent validation:
+
+- All 116 candidate backend tests pass, including the 11 new rights tests. The patch imports the owning Source Reader's required-attribution class, rejects missing/blank/wrong-type licensed bases, preserves ordinary admission and redistributable-license guards, and adds only optional lazy acknowledgement metadata.
+- Full source-library validation passes 7,051 passages and all 4,159 bindings. Catena ordinary admission validation has zero errors. Reconstructed output is 1,373 rows across eight books.
+- All 1,353 prior PD rows remain exact. The six prior licensed rows preserve every prior field and word and gain only their actual acknowledgement. Against the actual served 1,995-file baseline, 1,984 files remain byte-identical, six lazy bodies gain only notice, five expected spines/index change, and 14 bodies are added. All Scripture projections remain exact.
+- Actual production terminal bridge, adapters and Reading content builder pass all 20 affected reading bodies, all nine licensed notices once before words, exact copy content and all 20 Source Library callbacks. Owner-generated Source Reader pointers open all 21 selected passages, retaining controller, words and notice.
+- Actual Chromium passes 18 cases with no exceptions: all affected source units, all six old licensed notices, wide/320px Psalm 50 and Galatians layouts, exact text and notices above words, all nine native clipboard copies and all nine real Source Library link/open routes. No horizontal overflow. Galatians shows five explicitly undated original-language units and the bounded English absence.
+
+The browser proof serves production source scripts with frozen scratch data, not a built release artifact. The terminal proof exercises production content and navigation code, not screenshot geometry. Unrelated English checkpoint changes and broader deployment are outside this acceptance. No tracked file was written by this reviewer.
