@@ -2,8 +2,25 @@
  "blocked": [],
  "chapter": 88,
  "chapters": 150,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 88,
+    "first_verse": 51,
+    "last_chapter": 88,
+    "last_verse": 51,
+    "token": "Ps"
+   },
+   "id": "passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.88-sermo-ii-12",
+   "locator": "88.12",
+   "review": "verified",
+   "source": "0",
+   "text_words": 184
+  }
+ ],
+ "languages": [
+  "la"
+ ],
  "leads": [
   {
    "author": "Albert the Great",
@@ -94,7 +111,21 @@
  "name": "Psalms",
  "numbering": "vulgate",
  "refusals": {},
- "sources": {},
+ "sources": {
+  "0": {
+   "author": "Augustine of Hippo",
+   "container": "",
+   "date": 411,
+   "edition": "Enarrationes in Psalmos, Migne's Latin as transcribed by Corpus Corporum and reproduced at la.wikisource.org",
+   "edition_published": "Dated web state of the Corpus Corporum transcription of the Benedictine text reprinted in Jacques-Paul Migne, Patrologia Latina 36-37 (Paris, 1841/1845), reproduced at la.wikisource.org and consulted 2026-09-05",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "voice": "original",
+   "work": "Enarrationes in Psalmos",
+   "work_id": "work.augustine.enarrationes-in-psalmos"
+  }
+ },
  "text_prefix": "structure/catena/text/",
  "token": "Ps"
 }

@@ -1,0 +1,103 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "facsimile-extract",
+   "byte_size": 2126018,
+   "edition_owned": true,
+   "id": "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-volume-5-english-1930.christ-the-king-identity-facsimile-a6eac9b9",
+   "media_type": "application/pdf",
+   "notes": "Retained PDF page 1 is the source title page (PDF9), page 2 the source colophon (PDF10), pages 3-7 are printed pp. 200-204 (source PDF220-224). The last retained page includes the next chapter’s heading and opening paragraph as boundary context. All other source pages are omitted; this is not the whole volume.",
+   "page_count": 7,
+   "retrieved": "2026-10-23",
+   "rights": "public-domain",
+   "rights_basis": "The identified volume says First published 1930 on its colophon, independently read at source PDF page 10 on 2026-10-23. Under the repository’s United States pre-1931 publication rule (guidance/missals.md section 5), this historical English printing is public domain. The artifact is a mechanical facsimile or uncorrected OCR of that printing, without an independently authored modern revision. This basis is limited to the United States.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "electronic-text",
+   "byte_size": 839682,
+   "edition_owned": true,
+   "id": "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-volume-5-english-1930.ia-volume-5-ocr-65192aa1",
+   "media_type": "text/plain",
+   "notes": "Complete raw OCR for volume V, 22817 LF-delimited physical lines. The Christ the King chapter heading begins at line 13391 and its closing paragraph ends at 13679; the next heading begins at 13682. The uncorrected OCR contains typographical recognition damage and is a finding aid; the retained facsimile controls quoted wording. No search of volumes I-IV is newly claimed.",
+   "page_count": null,
+   "retrieved": "2026-10-23",
+   "rights": "public-domain",
+   "rights_basis": "The identified volume says First published 1930 on its colophon, independently read at source PDF page 10 on 2026-10-23. Under the repository’s United States pre-1931 publication rule (guidance/missals.md section 5), this historical English printing is public domain. The artifact is a mechanical facsimile or uncorrected OCR of that printing, without an independently authored modern revision. This basis is limited to the United States.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/LiberSacramentorum/The%20Sacramentary%20%28Liber%20Sacramentorum%29%3A%20Historical%20%26%20Liturgical%20Notes%20on%20the%20Roman%20Missal%20%28vol.%205%29_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 124708354,
+   "edition_owned": true,
+   "id": "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-volume-5-english-1930.ia-volume-5-pdf-016b212d",
+   "media_type": "application/pdf",
+   "notes": "Complete volume V scan. Printed pp. 200-204 are source PDF pages 220-224 (one-based). The whole 124708354-byte PDF is not proposed for tracking because of demonstrated size; an offline clone is instead supplied the complete 839682-byte OCR and a 2126018-byte facsimile retaining the exact chapter and its title/colophon. This is a measured size disposition, not reliance on continuing online availability.",
+   "page_count": 376,
+   "retrieved": "2026-10-23",
+   "rights": "public-domain",
+   "rights_basis": "The identified volume says First published 1930 on its colophon, independently read at source PDF page 10 on 2026-10-23. Under the repository’s United States pre-1931 publication rule (guidance/missals.md section 5), this historical English printing is public domain. The artifact is a mechanical facsimile or uncorrected OCR of that printing, without an independently authored modern revision. This basis is limited to the United States.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/LiberSacramentorum/The%20Sacramentary%20%28Liber%20Sacramentorum%29%3A%20Historical%20%26%20Liturgical%20Notes%20on%20the%20Roman%20Missal%20%28vol.%205%29.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1930",
+  "editors": [],
+  "id": "edition.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-volume-5-english-1930",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "London: Burns Oates & Washbourne Ltd.; volume V, Parts 8 and 9; First published 1930; Westminster imprimatur 26 June 1930",
+  "title": "The Sacramentary (Liber Sacramentorum), volume V, Parts VIII and IX",
+  "translators": [
+   "Arthur Levelis-Marke",
+   "Mrs W. Fairfax-Cholmeley"
+  ],
+  "year": 1930
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-volume-5-english-1930.christ-the-king-identity-facsimile-a6eac9b9",
+   "artifact_type": "facsimile-extract",
+   "id": "passage.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-volume-5-english-1930.christ-the-king-pp200-204",
+   "locus": "V.pp.200-204",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-23",
+   "withheld": "no-transcription"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Liber Sacramentorum"
+  ],
+  "author": "Ildefonso Schuster",
+  "category": "liturgical-commentary",
+  "description": "Schuster's historical and theological commentary on the Roman Missal, translated into English in five volumes by Arthur Levelis-Marke.",
+  "id": "work.ildefonso-schuster.the-sacramentary",
+  "languages": [
+   "it",
+   "en"
+  ],
+  "title": "The Sacramentary (Liber Sacramentorum): Historical and Liturgical Notes on the Roman Missal"
+ }
+}

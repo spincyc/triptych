@@ -2,8 +2,25 @@
  "blocked": [],
  "chapter": 10,
  "chapters": 16,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 10,
+    "first_verse": 42,
+    "last_chapter": 10,
+    "last_verse": 45,
+    "token": "Mark"
+   },
+   "id": "passage.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.mark-10-42-45",
+   "locator": "III.Mc.10.42-45",
+   "review": "verified",
+   "source": "0",
+   "text_words": 163
+  }
+ ],
+ "languages": [
+  "la"
+ ],
  "leads": [
   {
    "author": "Albert the Great",
@@ -69,7 +86,23 @@
  "name": "Mark",
  "numbering": "vulgate",
  "refusals": {},
- "sources": {},
+ "sources": {
+  "0": {
+   "author": "Bede the Venerable",
+   "composition_date_basis": "The composition date of this commentary has not been established from the witnesses actually read for this batch. The retained Latin dedicatory preface at raw line 3 describes the earlier Luke exposition only in relative terms and provides no calendar year for the Mark exposition; the checked Mark 10:42-45 block likewise gives no composition year. On 2026-10-23 the primary CNRS/IRHT Bibale and FAMA catalogue pages could not be acquired directly (timeouts/HTTP 403); their indexed 725-730 estimate remains an unadopted lead, as recorded in artifact.cnrs-irht.bibale-bede-in-marci.2026-10-23-web.bibale-entry-39610. No author death, printing, retrieval or inferred calendar date is substituted. This is a bounded statement about the project's reviewed evidence, not a claim that scholarship knows no date for Bede's work.",
+   "composition_date_status": "unestablished",
+   "container": "",
+   "date": null,
+   "edition": "In Evangelium S. Marci, Latin Wikisource / Corpus Corporum Migne transcription",
+   "edition_published": "Latin Wikisource, revision 263992, accessed 13 October 2026",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "voice": "original",
+   "work": "In Marci evangelium expositio",
+   "work_id": "work.bede.in-marci-evangelium-expositio"
+  }
+ },
  "text_prefix": "structure/catena/text/",
  "token": "Mark"
 }

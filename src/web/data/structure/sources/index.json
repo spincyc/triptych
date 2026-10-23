@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3733,
-  "editions": 1259,
-  "passages": 6622,
-  "readable": 3751,
-  "works": 1064
+  "artifacts": 3746,
+  "editions": 1267,
+  "passages": 7036,
+  "readable": 3754,
+  "works": 1067
  },
  "facets": {
   "authors": [
@@ -290,6 +290,10 @@
     "works": 21
    },
    {
+    "id": "Augustinus.it",
+    "works": 1
+   },
+   {
     "id": "Bahya ben Asher ibn Halawa",
     "works": 1
    },
@@ -535,7 +539,7 @@
    },
    {
     "id": "Congregation for Divine Worship and the Discipline of the Sacraments",
-    "works": 17
+    "works": 18
    },
    {
     "id": "Congregation for the Doctrine of the Faith",
@@ -1111,6 +1115,10 @@
    },
    {
     "id": "Ilya Semenenko-Basin and Stefano Caprio",
+    "works": 1
+   },
+   {
+    "id": "Institut de recherche et d’histoire des textes (IRHT), CNRS",
     "works": 1
    },
    {
@@ -2932,6 +2940,10 @@
     "works": 1
    },
    {
+    "id": "bibliographic-catalogue-entry",
+    "works": 1
+   },
+   {
     "id": "bibliographical-article",
     "works": 1
    },
@@ -3576,6 +3588,10 @@
     "works": 1
    },
    {
+    "id": "official-liturgical-decree-with-additions",
+    "works": 1
+   },
+   {
     "id": "official-liturgical-notice",
     "works": 1
    },
@@ -3844,6 +3860,10 @@
     "works": 1
    },
    {
+    "id": "scholarly-chronology-table",
+    "works": 1
+   },
+   {
     "id": "scholarly-database-article",
     "works": 1
    },
@@ -3978,19 +3998,19 @@
   ],
   "languages": [
    {
-    "editions": 632,
+    "editions": 634,
     "id": "en"
    },
    {
-    "editions": 375,
+    "editions": 378,
     "id": "la"
    },
    {
-    "editions": 53,
+    "editions": 54,
     "id": "mul"
    },
    {
-    "editions": 42,
+    "editions": 43,
     "id": "fr"
    },
    {
@@ -3998,7 +4018,7 @@
     "id": "grc"
    },
    {
-    "editions": 27,
+    "editions": 28,
     "id": "it"
    },
    {
@@ -4173,30 +4193,30 @@
     "label": "19th century"
    },
    {
-    "editions": 277,
+    "editions": 279,
     "id": "1900",
     "label": "20th century"
    },
    {
-    "editions": 656,
+    "editions": 662,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 2085,
-    "editions": 483,
+    "artifacts": 2092,
+    "editions": 484,
     "id": "public-domain"
    },
    {
-    "artifacts": 874,
-    "editions": 433,
+    "artifacts": 878,
+    "editions": 438,
     "id": "restricted"
    },
    {
-    "artifacts": 419,
-    "editions": 205,
+    "artifacts": 421,
+    "editions": 207,
     "id": "unresolved"
    },
    {
@@ -7781,8 +7801,8 @@
      "file": "1871-dods-1871.json",
      "id": "edition.augustine.de-civitate-dei.dods-1871",
      "language": "en",
-     "passages": 20,
-     "readable": 20,
+     "passages": 21,
+     "readable": 21,
      "rights": [
       "licensed",
       "public-domain"
@@ -8102,8 +8122,8 @@
      "file": "2026-latin-migne-corpus-corporum-wikisource-web-2026-09-05.json",
      "id": "edition.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05",
      "language": "la",
-     "passages": 0,
-     "readable": 0,
+     "passages": 1,
+     "readable": 1,
      "rights": [
       "public-domain",
       "unresolved"
@@ -8592,6 +8612,34 @@
   },
   {
    "alternate_titles": [
+    "Enarrationes in Psalmos chronology table"
+   ],
+   "author": "Augustinus.it",
+   "category": "scholarly-chronology-table",
+   "directory": "editions/augustinus-it/enarrationes-chronology/",
+   "editions": [
+    {
+     "date": "2026-10-23",
+     "file": "2026-2026-10-23-web-state.json",
+     "id": "edition.augustinus-it.enarrationes-chronology.2026-10-23-web-state",
+     "language": "it",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Tavola cronologica, complete public web delivery checked 23 October 2026",
+     "year": 2026
+    }
+   ],
+   "id": "work.augustinus-it.enarrationes-chronology",
+   "languages": [
+    "it"
+   ],
+   "title": "Esposizioni sui Salmi: Tavola cronologica"
+  },
+  {
+   "alternate_titles": [
     "Rabbeinu Bahya on the Torah",
     "Bachya ben Asher"
    ],
@@ -8933,8 +8981,8 @@
      "file": "2026-2026-10-13-latin-wikisource-migne.json",
      "id": "edition.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne",
      "language": "la",
-     "passages": 0,
-     "readable": 0,
+     "passages": 1,
+     "readable": 1,
      "rights": [
       "public-domain"
      ],
@@ -10617,7 +10665,7 @@
      "file": "1862-pustet-ratisbon-1862.json",
      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
      "language": "la",
-     "passages": 426,
+     "passages": 427,
      "readable": 349,
      "rights": [
       "public-domain"
@@ -10782,11 +10830,24 @@
      "year": 1967
     },
     {
+     "date": "1970",
+     "file": "1970-vatican-typica-1970.json",
+     "id": "edition.catholic-church.missale-romanum.vatican-typica-1970",
+     "language": "la",
+     "passages": 2,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Missale Romanum, editio typica (1970)",
+     "year": 1970
+    },
+    {
      "date": "2002",
      "file": "2002-vatican-typica-tertia-2002.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
      "language": "la",
-     "passages": 35,
+     "passages": 37,
      "readable": 0,
      "rights": [
       "restricted"
@@ -11274,7 +11335,7 @@
      "file": "1861-philadelphia-1861.json",
      "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
      "language": "en",
-     "passages": 469,
+     "passages": 471,
      "readable": 22,
      "rights": [
       "public-domain",
@@ -12754,6 +12815,34 @@
     "en"
    ],
    "title": "Basic Norms for the Formation of Permanent Deacons; Directory for the Ministry and Life of Permanent Deacons"
+  },
+  {
+   "alternate_titles": [
+    "Decree Prot. 2492/01/L, 18 December 2001"
+   ],
+   "author": "Congregation for Divine Worship and the Discipline of the Sacraments",
+   "category": "official-liturgical-decree-with-additions",
+   "directory": "editions/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/",
+   "editions": [
+    {
+     "date": "2001-12-18",
+     "file": "2001-latin-notitiae-432-433.json",
+     "id": "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001.latin-notitiae-432-433",
+     "language": "la",
+     "passages": 2,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Additiones ad libros liturgicos, Prot. 2492/01/L",
+     "year": 2001
+    }
+   ],
+   "id": "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001",
+   "languages": [
+    "la"
+   ],
+   "title": "Additiones ad libros liturgicos circa celebrationes in Calendarium generale nuper insertas"
   },
   {
    "alternate_titles": [
@@ -16295,7 +16384,7 @@
      "file": "1945-benziger-revised-1945.json",
      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
      "language": "en",
-     "passages": 177,
+     "passages": 577,
      "readable": 0,
      "rights": [
       "public-domain",
@@ -19267,6 +19356,19 @@
      "year": 1999
     },
     {
+     "date": "2002",
+     "file": "2002-volume-38-numbers-432-433-2002.json",
+     "id": "edition.holy-see.notitiae.volume-38-numbers-432-433-2002",
+     "language": "mul",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Notitiae, volume 38, numbers 432-433",
+     "year": 2002
+    },
+    {
      "date": "2005",
      "file": "2005-volume-41-numbers-463-464-2005.json",
      "id": "edition.holy-see.notitiae.volume-41-numbers-463-464-2005",
@@ -19611,6 +19713,19 @@
      ],
      "title": "The Sacramentary (Liber Sacramentorum): Historical and Liturgical Notes on the Roman Missal",
      "year": 1927
+    },
+    {
+     "date": "1930",
+     "file": "1930-1930-burns-oates-washbourne-volume-5-english.json",
+     "id": "edition.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-volume-5-english-1930",
+     "language": "en",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Sacramentary (Liber Sacramentorum), volume V, Parts VIII and IX",
+     "year": 1930
     }
    ],
    "id": "work.ildefonso-schuster.the-sacramentary",
@@ -19648,6 +19763,32 @@
     "en"
    ],
    "title": "Russian Liturgical Memories in the Slavic Byzantine-Catholic Menologion (Recensio Vulgata) of the Mid-20th Century"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Institut de recherche et d’histoire des textes (IRHT), CNRS",
+   "category": "bibliographic-catalogue-entry",
+   "directory": "editions/cnrs-irht/bibale-bede-in-marci/",
+   "editions": [
+    {
+     "date": "2026-10-23",
+     "file": "2026-2026-10-23-web.json",
+     "id": "edition.cnrs-irht.bibale-bede-in-marci.2026-10-23-web",
+     "language": "fr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Bibale notice 39610, indexed representation observed 23 October 2026",
+     "year": 2026
+    }
+   ],
+   "id": "work.cnrs-irht.bibale-bede-in-marci",
+   "languages": [
+    "fr"
+   ],
+   "title": "Bibale notice 39610 on Bede, In Marci evangelium expositio"
   },
   {
    "alternate_titles": [
@@ -21585,6 +21726,19 @@
    "category": "patristic-work",
    "directory": "editions/john-chrysostom/homilies-on-philippians/",
    "editions": [
+    {
+     "date": "2013",
+     "file": "2013-2013-sbl-allen.json",
+     "id": "edition.john-chrysostom.homilies-on-philippians.2013-sbl-allen",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "John Chrysostom, Homilies on Paul's Letter to the Philippians, introduced, translated and annotated by Pauline Allen",
+     "year": 2013
+    },
     {
      "date": "2026-09-17",
      "file": "2026-2026-09-17-ccel-web.json",
@@ -34170,6 +34324,19 @@
       "restricted"
      ],
      "title": "Super Evangelium S. Ioannis lectura, Busa and Alarcon Latin text at the Corpus Thomisticum",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-23",
+     "file": "2026-2026-10-23-latin-corpusthomisticum.json",
+     "id": "edition.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-10-23",
+     "language": "la",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Super Evangelium S. Ioannis lectura, Corpus Thomisticum Latin delivery inspected 23 October 2026",
      "year": 2026
     }
    ],

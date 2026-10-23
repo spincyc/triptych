@@ -609,11 +609,26 @@
   },
   {
    "artifact_type": "normalized-text",
+   "byte_size": 308,
+   "edition_owned": true,
+   "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-advent4-antecedent-en-20261023",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "One header and one complete English body. Visual inspection of the complete p. 52 disproved the earlier absence note: the main Advent I Postcommunion Suscipiamus is followed on the same page by Of the B. V. M. / Gratiam tuam. The older prayer is served only as historical antecedent English, never approved contemporary English or an exact 2008 target claim.",
+   "page_count": null,
+   "retrieved": "2026-10-23",
+   "rights": "public-domain",
+   "rights_basis": "Only the historical English on printed p. 52 of the Philadelphia 1861 printing is retained. Its United States publication term expired; a faithful transcription of public-domain wording adds no authorship. This payload contains no scan image, Google or Internet Archive furniture, watermark, OCR wrapper, modern translation or project-composed prayer. It is excluded from Triptych's CC BY 4.0 offer. The separately registered Google-digitized PDF remains remote and unresolved.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
    "byte_size": 7724,
    "edition_owned": true,
    "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en",
    "media_type": "text/tab-separated-values; charset=utf-8",
-   "notes": "One header and 27 historical-English rows. Columns are entry_key, mass, form_id, cycle, occurrence, proper, and english. Every row records form_id main, cycle all, and occurrence 1 so its complete publication identity is checked against the overlay target. Each row is controlled by one exact one-line publication passage and a separate page-image verification passage. The entry_key records the recovered overlay index only as a stable audit locator; the calendar mass and proper remain the semantic identity.",
+   "notes": "One header and 27 historical-English rows. Columns are entry_key, mass, form_id, cycle, occurrence, proper, and english. The recipient coordinates are retained as former overlay audit locators, not source-native historical loci or proof of a current appointment. Source page and publication passages control the historical wording. On 2026-10-23 pc-113 (George Collect) and pc-119 (Apollinaris Collect) became source-only because primary evidence appoints different modern prayers; pc-116 (Jerome Emiliani Collect) remains a revised historical antecedent with complete per-entry differences. Only a live translation-inventory entry establishes a present study binding. The exact TSV bytes, historical English and verification/publication passages are unchanged.",
    "page_count": null,
    "retrieved": "2026-08-27",
    "rights": "public-domain",
@@ -4677,6 +4692,50 @@
    "storage": "tracked",
    "verified_on": null,
    "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-advent4-antecedent-en-20261023",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-advent4-collect-20261023",
+   "locus": "first-sunday-of-advent-marian/postcommunion",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-23",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-advent4-collect-20261023",
+   "locus": "first-sunday-of-advent-marian/postcommunion",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://archive.org/download/romanmissaltran00churgoog/romanmissaltran00churgoog.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-10-23",
+   "withheld": "rights"
   },
   {
    "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-recovered-en",

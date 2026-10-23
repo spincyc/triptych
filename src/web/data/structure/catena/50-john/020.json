@@ -2,8 +2,40 @@
  "blocked": [],
  "chapter": 20,
  "chapters": 21,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 20,
+    "first_verse": 8,
+    "last_chapter": 20,
+    "last_verse": 9,
+    "token": "John"
+   },
+   "id": "passage.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.120.9",
+   "locator": "120.9",
+   "review": "verified",
+   "source": "0",
+   "text_words": 93
+  },
+  {
+   "extent": {
+    "first_chapter": 20,
+    "first_verse": 8,
+    "last_chapter": 20,
+    "last_verse": 9,
+    "token": "John"
+   },
+   "id": "passage.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888.augustine-tract-in-io-120.9",
+   "locator": "Augustine, In Iohannis Evangelium Tractatus CXX.9",
+   "review": "verified",
+   "source": "1",
+   "text_words": 156
+  }
+ ],
+ "languages": [
+  "en",
+  "la"
+ ],
  "leads": [
   {
    "author": "Albert the Great",
@@ -104,7 +136,37 @@
  "name": "John",
  "numbering": "vulgate",
  "refusals": {},
- "sources": {},
+ "sources": {
+  "0": {
+   "author": "Augustine of Hippo",
+   "container": "",
+   "date": 416,
+   "edition": "In Iohannis Evangelium Tractatus, Latin text as delivered by augustinus.it",
+   "edition_published": "Dated web state of the Latin text published at augustinus.it, consulted 2026-07-25",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "voice": "original",
+   "work": "In Iohannis Evangelium Tractatus CXXIV",
+   "work_id": "work.augustine.in-iohannis-evangelium-tractatus"
+  },
+  "1": {
+   "author": "Augustine of Hippo",
+   "container": "edition.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888",
+   "date": 416,
+   "edition": "NPNF First Series, Volume VII: St. Augustin: Homilies on the Gospel of John, Homilies on the First Epistle of John, Soliloquies",
+   "edition_published": "Buffalo: Christian Literature Publishing Company, 1888",
+   "language": "en",
+   "rights": "public-domain",
+   "translators": [
+    "John Gibb",
+    "James Innes"
+   ],
+   "voice": "translation",
+   "work": "In Iohannis Evangelium Tractatus CXXIV",
+   "work_id": "work.augustine.in-iohannis-evangelium-tractatus"
+  }
+ },
  "text_prefix": "structure/catena/text/",
  "token": "John"
 }

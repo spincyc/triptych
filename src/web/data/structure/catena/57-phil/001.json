@@ -2,8 +2,39 @@
  "blocked": [],
  "chapter": 1,
  "chapters": 4,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 18,
+    "last_chapter": 1,
+    "last_verse": 24,
+    "token": "Phil"
+   },
+   "id": "passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.3",
+   "locator": "3",
+   "review": "verified",
+   "source": "0",
+   "text_words": 4101
+  },
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 22,
+    "last_chapter": 1,
+    "last_verse": 30,
+    "token": "Phil"
+   },
+   "id": "passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.4",
+   "locator": "4",
+   "review": "verified",
+   "source": "1",
+   "text_words": 4592
+  }
+ ],
+ "languages": [
+  "en"
+ ],
  "leads": [
   {
    "author": "Cornelius a Lapide",
@@ -79,7 +110,42 @@
  "name": "Philippians",
  "numbering": "vulgate",
  "refusals": {},
- "sources": {},
+ "sources": {
+  "0": {
+   "author": "John Chrysostom",
+   "composition_date_basis": "A numeric composition date for this individual homily has not been established. Pauline Allen's introduction to John Chrysostom, Homilies on Paul's Letter to the Philippians (Society of Biblical Literature, 2013), printed pages xii-xiii, read on 2026-10-23 in the actual publisher PDF registered as artifact.john-chrysostom.homilies-on-philippians.2013-sbl-allen.publisher-pdf-861fbb6c, explains that the individual homilies cannot be securely located or dated. The historical Oxford/NPNF preface's Constantinople assignment was also read but supplies no secure year for Homily III; no locality, author-life, printing, translation or retrieval date is substituted. This records the project's unresolved dating of the homily, without calling its checked commentary text or received authorship uncertain.",
+   "composition_date_status": "unestablished",
+   "container": "",
+   "date": null,
+   "edition": "Homilies on Philippians — NPNF English translation in CCEL",
+   "edition_published": "Nicene and Post-Nicene Fathers, First Series, volume 13, CCEL complete text delivery",
+   "language": "en",
+   "rights": "public-domain",
+   "translators": [
+    "W. C. Cotton"
+   ],
+   "voice": "translation",
+   "work": "Homilies on Philippians",
+   "work_id": "work.john-chrysostom.homilies-on-philippians"
+  },
+  "1": {
+   "author": "John Chrysostom",
+   "composition_date_basis": "A numeric composition date for this individual homily has not been established. Pauline Allen's introduction to John Chrysostom, Homilies on Paul's Letter to the Philippians (Society of Biblical Literature, 2013), printed pages xii-xiii, read on 2026-10-23 in the actual publisher PDF registered as artifact.john-chrysostom.homilies-on-philippians.2013-sbl-allen.publisher-pdf-861fbb6c, explains that the individual homilies cannot be securely located or dated. The historical Oxford/NPNF preface's Constantinople assignment was also read but supplies no secure year for Homily IV; no locality, author-life, printing, translation or retrieval date is substituted. This records the project's unresolved dating of the homily, without calling its checked commentary text or received authorship uncertain.",
+   "composition_date_status": "unestablished",
+   "container": "",
+   "date": null,
+   "edition": "Homilies on Philippians — NPNF English translation in CCEL",
+   "edition_published": "Nicene and Post-Nicene Fathers, First Series, volume 13, CCEL complete text delivery",
+   "language": "en",
+   "rights": "public-domain",
+   "translators": [
+    "W. C. Cotton"
+   ],
+   "voice": "translation",
+   "work": "Homilies on Philippians",
+   "work_id": "work.john-chrysostom.homilies-on-philippians"
+  }
+ },
  "text_prefix": "structure/catena/text/",
  "token": "Phil"
 }

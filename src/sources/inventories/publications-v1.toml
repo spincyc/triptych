@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-10-21"
+audited_on = "2026-10-23"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 150
 source_surface_file_count = 2747
-snapshot = "sha256:9ddea8b5c9f0e240f8d6e378b9ca15d88f2e0dff0a140f8fa9dfc3e59aad08af"
+snapshot = "sha256:a3e5c69693ce6d5cd07d91c7d9b20329ff8bc805951d04407f74d1ea0ddba04e"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -15300,7 +15300,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
-sha256 = "84e6f886ce4b9320d74afbb50073db4887fe31e5a5fa1854c22d0425f33d4796"
+sha256 = "339d72b8b232a5307b598fffad126bcf8e9515ff42b2dcddfc943ff1a67c43fe"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 

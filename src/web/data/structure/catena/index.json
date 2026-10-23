@@ -28,6 +28,13 @@
     "reason": "Two English translations exist and both are in copyright: John Hammond Taylor's The Literal Meaning of Genesis, Ancient Christian Writers 41-42 (Newman Press, 1982), and Edmund Hill's On Genesis, The Works of Saint Augustine I/13 (New City Press, 2002). Taylor's runs to 2078 in a life-plus-seventy jurisdiction."
    }
   ],
+  "work.bede.in-marci-evangelium-expositio": [
+   {
+    "finding": "not-surveyed",
+    "language": "en",
+    "reason": "English translation availability and redistribution rights have not yet been surveyed for this work. The checked fragment offered in this batch is the Latin commentary."
+   }
+  ],
   "work.bede.in-principium-genesis": [
    {
     "finding": "in-copyright",
@@ -891,8 +898,10 @@
   },
   {
    "chapters": 24,
-   "fragments": 0,
-   "languages": [],
+   "fragments": 1,
+   "languages": [
+    "en"
+   ],
    "name": "2 Samuel",
    "path": "structure/catena/10-kings-2/",
    "present": [
@@ -1001,8 +1010,10 @@
   },
   {
    "chapters": 150,
-   "fragments": 0,
-   "languages": [],
+   "fragments": 1,
+   "languages": [
+    "la"
+   ],
    "name": "Psalms",
    "path": "structure/catena/21-ps/",
    "present": [
@@ -1497,8 +1508,10 @@
   },
   {
    "chapters": 16,
-   "fragments": 0,
-   "languages": [],
+   "fragments": 1,
+   "languages": [
+    "la"
+   ],
    "name": "Mark",
    "path": "structure/catena/48-mark/",
    "present": [
@@ -1557,8 +1570,11 @@
   },
   {
    "chapters": 21,
-   "fragments": 0,
-   "languages": [],
+   "fragments": 2,
+   "languages": [
+    "en",
+    "la"
+   ],
    "name": "John",
    "path": "structure/catena/50-john/",
    "present": [
@@ -1711,8 +1727,10 @@
   },
   {
    "chapters": 4,
-   "fragments": 0,
-   "languages": [],
+   "fragments": 2,
+   "languages": [
+    "en"
+   ],
    "name": "Philippians",
    "path": "structure/catena/57-phil/",
    "present": [
@@ -1908,6 +1926,7 @@
   }
  ],
  "numbering": "vulgate",
+ "scripture": "structure/catena/scripture/",
  "texts": "structure/catena/text/",
  "voices": [
   "original",

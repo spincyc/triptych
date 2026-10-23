@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-10-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:9ddea8b5c9f0e240f8d6e378b9ca15d88f2e0dff0a140f8fa9dfc3e59aad08af"
+inventory_snapshot = "sha256:a3e5c69693ce6d5cd07d91c7d9b20329ff8bc805951d04407f74d1ea0ddba04e"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:6ed335d8da72bef42e08cfe75d6d126d301cac9be075e0a5976736ec938cb94f"
-canonical_catalog_snapshot = "sha256:57751175ac381fcb287dcddb4c95848e05ec966bb27b0bd9477531d4cdb8aa0f"
+canonical_catalog_snapshot = "sha256:ff59b01183a4e73e88ed70e738664ed610320ea2d6f7a5096cffe1263ac196a4"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:0363d6478758e4b284120bae706694b3b4f7159e99f22d0c2c2fdacd722310e3"
+snapshot = "sha256:a53eab6ed0a5bd64771a7f77f8d8744d4e0c800b3bef0a6cf5a0d3df049aa399"
 families = []
 
 [[review_units]]
@@ -653,7 +653,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:cf8ceae28badd66f037da50774faca989efc06daba1d4e4a6472149a40545e68"
+surface_snapshot = "sha256:f9fc5b86aa4c9f31829f324deb10dedab1751604c2d4ff903a79f6cc276eb8a4"
 review_state = "pending"
 
 [[review_units]]

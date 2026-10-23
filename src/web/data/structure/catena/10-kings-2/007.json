@@ -2,8 +2,25 @@
  "blocked": [],
  "chapter": 7,
  "chapters": 24,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 7,
+    "first_verse": 1,
+    "last_chapter": 7,
+    "last_verse": 16,
+    "token": "2Kings"
+   },
+   "id": "passage.augustine.de-civitate-dei.dods-1871.17.8",
+   "locator": "17.8",
+   "review": "verified",
+   "source": "0",
+   "text_words": 1137
+  }
+ ],
+ "languages": [
+  "en"
+ ],
  "leads": [
   {
    "author": "Angelomus of Luxeuil",
@@ -59,7 +76,25 @@
  "name": "2 Samuel",
  "numbering": "vulgate",
  "refusals": {},
- "sources": {},
+ "sources": {
+  "0": {
+   "author": "Augustine of Hippo",
+   "container": "",
+   "date": 413,
+   "edition": "The City of God, volumes I-II",
+   "edition_published": "The Works of Aurelius Augustine, A New Translation, volumes I-II (Edinburgh: T. & T. Clark, 1871)",
+   "language": "en",
+   "rights": "public-domain",
+   "translators": [
+    "Marcus Dods",
+    "George Wilson",
+    "J. J. Smith"
+   ],
+   "voice": "translation",
+   "work": "De civitate Dei",
+   "work_id": "work.augustine.de-civitate-dei"
+  }
+ },
  "text_prefix": "structure/catena/text/",
  "token": "2Kings"
 }
