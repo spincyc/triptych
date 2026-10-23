@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-next-leads-2.four-target-damage-repairs-20261023"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-next-leads-2"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Triptych offers its transcription layout and normalization under CC BY4.0. The entire underlying petitions are independently witnessed in US-public-domain1862 Pustet or1922 Tours Mame printings, as individually identified. Under17U.S.C.103(b), the1962 edition gains no exclusive right in those preexisting words. No blanket clearance of the1962 facsimile is asserted."
+provenance = "Four complete controlling1962 prayers independently read at200 and400dpi on2026-10-23, then checked word for word against complete historical page-image petitions atscale-to3000. Exact held parent PDF hashes were checked. No protected target images are included in this artifact."
+retrieved = "2026-10-23"
+sha256 = "2f26a3911507cac5a403ae3588eccb8e736fdd6090ce89ecf97dcd50c936e12b"
+byte_size = 772
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection-next-leads-2/artifacts/four-target-damage-repairs-20261023/latin-only.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.next-leads-2-complete-petitions-20261023", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.next-leads-2-control-pages-20261023", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.next-leads-2-complete-petitions-20261023", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.next-leads-2-control-pages-20261023", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Retain every existing wrap, LF and actual target conclusion stop. Catherine Secret removes XJL; Faustinus Secret removes JLJL, changes mentis to meritis, and restores the target comma after Adesto; Vincent Collect removes XI and restores the target comma after Adesto; Lent4Saturday Collect changes tune to tunc. Remove stress accents, expand ligatures, and retain the established calendar consonantal-j convention. Source pointing and actual conclusion-length differences are recorded in each exact passage; the separately registered PustetPDF390 formula supplies only the contiguous preexisting Vincent longer conclusion prefix through in unitate. No names, petitions, conclusion words or modern wording are inferred."
+encoding = "utf-8"
+indexable = true
+notes = "Count-neutral four-body repair packet. Full PD petitions supply all petition words. Existing source artifact and passage identities are never changed."

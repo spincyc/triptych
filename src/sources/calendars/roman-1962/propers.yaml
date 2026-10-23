@@ -8066,7 +8066,7 @@ sections:
           p. 148, artifact PDF p. 262.
         text: |
           Fiat, Domine, quaesumus, per gratiam tuam fructuosus nostrae devotionis
-          affectus: quia tune nobis proderunt suscepta jejunia, si tuae sint placita
+          affectus: quia tunc nobis proderunt suscepta jejunia, si tuae sint placita
           pietati. Per Dominum.
       - name: Lesson
         source: scripture
@@ -28987,7 +28987,7 @@ sections:
           Haec nos communio, Domine, purget a crimine: et, intercedente beata Virgine
           Dei Genetrice Maria, caelestis remedii faciat esse consortes. Per eundem
           Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
-          umitate.
+          unitate.
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the
         Missal prints for this day, the Collect, the Secret and the Postcommunion, carry published
         Latin bodies collated to the controlling 1962 edition, each on the public-domain witness its
@@ -29317,7 +29317,7 @@ sections:
           images are registered storage=remote and were not available to this lane;
           every 1862 reading here rests on the text layer alone).
         text: |
-          Caelesti lumine, quaesumus, Domine, semper et ubique nos praiveni: ut
+          Caelesti lumine, quaesumus, Domine, semper et ubique nos praeveni: ut
           mysterium, cujus nos participes esse voluisti, et puro cernamus intuitu, et
           digno percipiamus affectu. Per Dominum.
       notes: 'The scripture-bearing propers are recorded by their printed citations, and the orations the
@@ -31694,7 +31694,7 @@ sections:
           Ratisbon 1862 at printed p. 391; text-layer lines 56425-56439; this is the
           1862's own entry for the day.
         text: |
-          Adesto Domine, supplicationibus XI nostris: ut, qui ex iniquitate nostra
+          Adesto, Domine, supplicationibus nostris: ut, qui ex iniquitate nostra
           reos nos esse cognoscimus, beatorum Martyrum tuorum Vincentii et Anastasii
           intercessione liberemur. Per Dominum nostrum Jesum Christum, Filium tuum:
           Qui tecum vivit et regnat in unitate.
@@ -34118,9 +34118,9 @@ sections:
           80989-81001; the 1862 files these words elsewhere in the same book, not
           under this day.
         text: |
-          Adesto Domine, supplicationibus JLJL nostris, quas in Sanctorum tuorum
+          Adesto, Domine, supplicationibus nostris, quas in Sanctorum tuorum
           commemoratione deferimus: ut, qui nostrae justitiae fiduciam non habemus,
-          eorum, qui tibi placuerunt, mentis adjuvemur. Per Dominum.
+          eorum, qui tibi placuerunt, meritis adjuvemur. Per Dominum.
       - name: Postcommunion
         incipit: Quaesumus, Domine, salutaribus
         source: composed
@@ -36350,6 +36350,69 @@ sections:
               chapter: 6
               verse: 11
           ref: Luke 6:6-11
+      - name: "Offertory"
+        source: "mixed"
+        verses:
+        - book: "Job"
+          ranges:
+          - begin: {chapter: 14, verse: 7}
+            end: {chapter: 14, verse: 7}
+          ref: "Job 14:7"
+        notes: >-
+          Exact dated March27 non-Paschal base only: 1962 artifact579/printed498, unit2342, from Lignum through pullulant and its full stop, strictly before the printed optional (T.P. Alleluia.) clause. No complete-unit or Paschal exact-target grade is asserted. Complete base word collation against independently
+          public-domain Mame1922 artifact673/printed559, actual200/400dpi
+          page images checked on2026-10-23. Job14:7 remains a cited component;
+          selected Bible words do not replace this literal Missal body.
+        text: |
+          Lignum habet spem, si praecisum fuerit, rursum virescit, et rami ejus pullulant.
+        ordinary_disposition:
+          kind: "alternative"
+          group: "john-damascene-offertory"
+          option: "non-paschal-base"
+          basis: >-
+            1962 artifact577-579/printed496-498 establishes the dated March27 Mass and unit2342 with its explicitly marked optional Paschal continuation. The base choice is limited to the source-proved dated non-Paschal tract regime; the Paschal complete-body choice remains a witness gap. No ordinary-season, unknown-season or Triduum applicability is inferred.
+          anchor:
+            mass: "s-ioannis-damasceni-confessoris-ecclesiae-doctoris"
+            form_id: "main"
+            proper: "Offertory"
+            occurrence: 1
+          when:
+            fact: "roman-1962-common-chant-regime"
+            in: ["tract"]
+      - name: "Offertory (Tempore paschali)"
+        source: "mixed"
+        verses:
+        - book: "Job"
+          ranges:
+          - begin: {chapter: 14, verse: 7}
+            end: {chapter: 14, verse: 7}
+          ref: "Job 14:7"
+        notes: >-
+          The same1962 unit2342 adds a separately marked optional Paschal
+          clause after the matched base. Mame1922's local Offertory does not
+          print that continuation; no complete independent Paschal-body
+          publication proof is established here. The complete selected body
+          remains unavailable, not a Bible substitution or a truncated base.
+        text_status:
+          state: "unavailable"
+          scope: "proper-body"
+          reasons:
+          - kind: "witness-gap"
+            source_id: "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "john-damascene-offertory"
+          option: "paschal-body-gap"
+          basis: >-
+            1962 artifact577-579/printed496-498 establishes the dated March27 Mass and unit2342 with its explicitly marked optional Paschal continuation. The base choice is limited to the source-proved dated non-Paschal tract regime; the Paschal complete-body choice remains a witness gap. No ordinary-season, unknown-season or Triduum applicability is inferred.
+          anchor:
+            mass: "s-ioannis-damasceni-confessoris-ecclesiae-doctoris"
+            form_id: "main"
+            proper: "Offertory"
+            occurrence: 1
+          when:
+            fact: "roman-1962-common-chant-regime"
+            in: ["paschal"]
       - name: Secret
         source: composed
         notes: >-
@@ -38441,7 +38504,7 @@ sections:
           Ratisbon 1862 at printed p. 432; text-layer lines 61428-61442; this is the
           1862's own entry for the day.
         text: |
-          Ascendant ad te, Domine, quas in XJL beatae Catharinae solemnitate
+          Ascendant ad te, Domine, quas in beatae Catharinae solemnitate
           offerimus, preces, et hostia salutaris, virgineo fragrans odore. Per
           Dominum.
       - name: Postcommunion

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.next-leads-3-complete-petitions-20261023"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The underlying printed Latin in Pustet Ratisbon1862 is public domain in the United States by publication date. The bounded image-checked transcription adds no new prayer words and is excluded from the project license."
+provenance = "Every word of each complete petition and its actual conclusion was independently read from exact full page images atscale-to3000 on2026-10-23. OCR supplied locations only."
+retrieved = "2026-10-23"
+sha256 = "62242400a27c2eca9c06524fded9429dc4ac028cc96ca565ed34070e18d09416"
+byte_size = 343
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/next-leads-3-complete-petitions-20261023/latin-only.txt"
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.next-leads-3-control-pages-20261023"
+transformation = "Join wraps and line-end hyphens, remove stress accents, expand ae/oe ligatures and decorative initial capitalization. Retain actual source spellings, pointing and printed conclusion lengths. No conclusion cue is expanded."
+encoding = "utf-8"
+indexable = true
+notes = "Paragraph order: commemoratione-baptismatis-domini-nostri-iesu-christi Postcommunion, octava-nativitatis-domini Postcommunion. The separate project projection declares the target pointing and actual conclusion differences."

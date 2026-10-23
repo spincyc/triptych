@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-23"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-next-leads-3.target-damage-octava-nativitatis-domini-postcommunion"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-next-leads-3"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-next-leads-3.two-target-damage-repairs-20261023"
+artifact_sha256 = "c7aeebd999a12f5ba34e89f8404161b6fa8dd01dea81990322b97bc1fca965cf"
+locus = "1962 PDF115, printed34, n235; octava-nativitatis-domini Postcommunion; Pustet Ratisbon1862, original PDF pages[116, 117], printed30-31; complete petition and actually printed conclusion"
+physical_line_ranges = [[5, 8]]
+context = "Exact complete bounded editorial projection, not a historical printing."
+notes = "UTF-8 body SHA256 including final LF 9fefc62baab9a5c336bae60a00bc065deca16a01ca41b14c0f92cf0841ae7b49. Target conclusion: Per eundem Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate. Historical conclusion: Per eumdem Dominum. The complete historical prayer spans PustetPDF116-117/printed30-31, In Circumcisione Domini et Octava Nativitatis. Actual1962 clearly prints unitate. Pustet actually prints Genitrice and coelestis while1962 prints Genetrice and caelestis; these genuine source spelling differences are retained separately, not called OCR damage or silently changed in the historical transcription. Pustet omits the target comma after et. It actually concludes only Per eumdem Dominum., while the target prints the longer Per eundem Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate. The eumdem/eundem difference and calendar consonantal-j representation Jesum are explicit. The actual historical cue supplies Per eumdem Dominum; independently read PustetPDF390/printed304 Praesta supplies the contiguous longer through-the-Son formula prefix. No words after the target actual stop in unitate are imported, and the historical abbreviated cue is never expanded as if printed. All remaining complete petition words agree; no name or modern body is inferred."

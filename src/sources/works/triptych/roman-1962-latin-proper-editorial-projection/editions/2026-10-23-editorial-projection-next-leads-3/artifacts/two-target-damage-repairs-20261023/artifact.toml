@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-next-leads-3.two-target-damage-repairs-20261023"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-next-leads-3"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Triptych offers its transcription layout and normalization under CC BY4.0. The entire underlying petitions are independently witnessed in US-public-domain1862 Pustet printing, as individually identified. Under17U.S.C.103(b), the1962 edition gains no exclusive right in those preexisting words. No blanket clearance of the1962 facsimile is asserted."
+provenance = "Two complete controlling1962 prayers independently read at200 and400dpi on2026-10-23, then checked word for word against complete historical page-image petitions atscale-to3000. Exact held parent PDF hashes were checked. No protected target images are included in this artifact."
+retrieved = "2026-10-23"
+sha256 = "c7aeebd999a12f5ba34e89f8404161b6fa8dd01dea81990322b97bc1fca965cf"
+byte_size = 419
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection-next-leads-3/artifacts/two-target-damage-repairs-20261023/latin-only.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.next-leads-3-complete-petitions-20261023", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.next-leads-3-control-pages-20261023", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Retain every existing wrap, LF, punctuation and actual target conclusion stop. Baptism Postcommunion changes only praiveni to praeveni; January1 Postcommunion changes only umitate to unitate. Remove stress accents, expand ligatures and retain the established calendar consonantal-j convention. Actual historical Coelesti/Caelesti, coelestis/caelestis, Genitrice/Genetrice and eumdem/eundem spelling differences are explicit; the historical transcription retains its own source spellings. For January1 the actual historical Per eumdem Dominum cue plus the separately registered PustetPDF390 formula supply preexisting longer conclusion words only through the target actual stop in unitate. No names, petitions, added conclusion words or modern wording are inferred."
+encoding = "utf-8"
+indexable = true
+notes = "Count-neutral two-body repair packet. Complete PD petitions independently witness the wording under explicitly declared source spelling variants. Existing source artifact and passage identities are never changed."
