@@ -1367,13 +1367,38 @@ async function assertions(cdp, base) {
     assert.deepEqual(value.contents, value.dom);
     assert.ok(value.sides.every(row => row.length === 2));
     assert.deepEqual(value.semantic.units.find(row => row.semanticSlot === 'collect').sides
-      .map(row => row.status), ['text-held', 'text-unavailable']);
+      .map(row => row.status), ['text-held', 'text-held']);
     assert.equal(value.ordinaryLoads, 0);
     assert.match(value.hash, /compare=oration-language/);
     assert.match(value.hash, /peer-orations=en/);
     const projection = value.semantic;
     await current(cdp, base, route);
     assert.deepEqual(await evaluate(cdp, 'propersReaderDebug.semantic'), projection);
+
+    // Trinity now holds the checked Lasance English. Preserve the explicit
+    // unavailable-side contract using Ignatius's actually unsourced English
+    // Collect, while retaining the complete Trinity parity checks above.
+    const unavailableRoute = new URLSearchParams(STATES.englishNone.slice(1));
+    unavailableRoute.set('mass', 's-ignatii-confessoris');
+    unavailableRoute.set('orations', 'la');
+    unavailableRoute.set('mode', 'compare');
+    unavailableRoute.set('compare', 'oration-language');
+    unavailableRoute.set('peer-orations', 'en');
+    await candidate(cdp, base, '#' + unavailableRoute);
+    const unavailable = await evaluate(cdp, `({
+      outcome: propersReaderDebug.outcome,
+      state: propersReaderDebug.state,
+      semantic: propersReaderDebug.semantic,
+      sides: [...document.querySelectorAll('#reader-document [data-semantic-event-id="compare/proper/collect"] .compare-side')]
+        .map(side => side.dataset.compareStatus)
+    })`);
+    assert.equal(unavailable.outcome, 'ready', JSON.stringify(unavailable));
+    assert.equal(unavailable.state.civilDate, null);
+    assert.equal(unavailable.semantic.anchor.correspondingFormulary,
+      's-ignatii-confessoris');
+    assert.deepEqual(unavailable.semantic.units.find(row => row.semanticSlot === 'collect').sides
+      .map(row => row.status), ['text-held', 'text-unavailable']);
+    assert.deepEqual(unavailable.sides, ['text-held', 'text-unavailable']);
   });
 
   await check('C5 Propers Compare controls retain the Proper location on return to Read', async () => {

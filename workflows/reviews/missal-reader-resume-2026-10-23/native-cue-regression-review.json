@@ -1,0 +1,32 @@
+{
+  "head": "a7f44e2158c7b8a3e8711aef94fccaf9ec506520",
+  "base_snapshot": ".scratch/resume-root/verification-final",
+  "candidate_snapshot": ".scratch/resume-reader-typesetting/native-integration-candidate2-root",
+  "files": {
+    "src/web/browser/liturgy/reader-instrument.css": "51cb9dbd43c49f1f04feb8129f355804f9b409082471a1497201332fe5b98ee3",
+    "tools/tests/day_reader_integration_browser.mjs": "d689aae719c75a26ef01b859698864bd669bcaf22fb4ccbc11346552f4c4b609",
+    "tools/tests/propers_reader_integration_browser.mjs": "1093af7711336f9a926ed93bba7145fee2272fbd59355b207044c7c56f6ba89b"
+  },
+  "native_reports": {
+    "day": {
+      "raw_report": ".scratch/resume-reader-typesetting/native-integration-candidate2-day/raw.log",
+      "report_sha256": "e767d2fc0a87412c3a95a69a027165d9714871353684d3b87b4ba7aa9db1303e",
+      "checks": 57,
+      "failures": 0,
+      "unchanged_contract_names": true,
+      "invocation": ".scratch/resume-reader-typesetting/native-integration-candidate2-day/invocation.json"
+    },
+    "propers": {
+      "raw_report": ".scratch/resume-reader-typesetting/native-integration-candidate2-propers/raw.log",
+      "report_sha256": "4ddc7bd74f46374afa6d920968524183663743758c91e997aee2c4c63c457669",
+      "checks": 69,
+      "failures": 0,
+      "unchanged_contract_names": true,
+      "invocation": ".scratch/resume-reader-typesetting/native-integration-candidate2-propers/invocation.json"
+    }
+  },
+  "all_top_level_checks_preserved": 126,
+  "source_frozen": true,
+  "retained_original_receipt_sha256": "173dfc1c0d7bd40b853f58db8087367abd1cbf2684ead87192b11a2701b984bc",
+  "path_normalization": "Workspace prefixes rendered repository-relative; report/source hashes and results unchanged."
+}

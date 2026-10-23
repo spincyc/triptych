@@ -11392,12 +11392,12 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/reader-compare-view.css` | `ffd083ad1954bcf1c90a2accb9d3a16ddfdc2e6d57def11f9e7c52efa24c5249` |
 | `src/web/browser/liturgy/reader-compare-view.js` | `a17daa04bca64178947164100a3711243a50bb085addcccd3cb62f78ddf5db31` |
 | `src/web/browser/liturgy/reader-comparison.js` | `4b402415fa4968aebadf12403b9e7887f1c72e951d6c99322c09b1a7ab1f22ca` |
-| `src/web/browser/liturgy/reader-instrument.css` | `0034bea407de72b36d1c4f8a14b6c440cead82e75d3fb93daee15329c6653e01` |
+| `src/web/browser/liturgy/reader-instrument.css` | `51cb9dbd43c49f1f04feb8129f355804f9b409082471a1497201332fe5b98ee3` |
 | `src/web/browser/liturgy/reader-mode-keyboard.js` | `d08caa562d75f51b3a256c7bd3090cb0f1a2ace36066c5f97db1134fa6de1d33` |
 | `src/web/browser/liturgy/reader-optional-runtime.js` | `1505c30b1d35ad5a0c1ec81cb3d9925f2505646a8cb66b81af338fed60f3058b` |
 | `src/web/browser/liturgy/reader-proper-payload.js` | `993c7432383b6e46acd6cce811cb9d45972136d914ca05be88fb710421bcef7e` |
 | `src/web/browser/liturgy/reader-share-print.css` | `a3107110968a188a583c01524f85607a8fc2d122c956add90c24e7b3df762566` |
-| `src/web/browser/liturgy/reader-share-print.js` | `e9b2930e54b562c9ae1b05238b20f7d92fd084081fc6740dee6c66c45d2de170` |
+| `src/web/browser/liturgy/reader-share-print.js` | `c047ecff988a572ab10251f1fc6f91a22a38832993a75539098a3695d351a89a` |
 | `src/web/browser/liturgy/reader-shell.css` | `e7195cd86ed4fc4a8455e97369702239eb22d709a13d3d8462d7759c01fe814a` |
 | `src/web/browser/liturgy/reader-shell.js` | `c621b8d1e31a1f9b3abeb3e752c00429b25a50f1fd915bd0abab419e1b53d532` |
 | `src/web/browser/liturgy/reader-state-adapters.js` | `39fee299256cb0117ead3649afe10fc44bc04e66a9cc486427afc18aa7745184` |

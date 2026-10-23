@@ -432,7 +432,7 @@ body:has(.reader-instrument) > .site-footer,
 }
 .reader-instrument .reader-document .vr-glyph,
 .reader-instrument .reader-document .speaker-tag.is-opening-cue .cue-mark[data-dialogue-mark] {
-  font-family: var(--instrument-serif);
+  font-family: "Noto Sans Symbols 2", "Segoe UI Symbol", "Apple Symbols", "DejaVu Sans", var(--instrument-serif);
   font-size: 1.05em;
   line-height: 1.1;
 }

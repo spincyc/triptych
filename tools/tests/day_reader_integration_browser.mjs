@@ -1278,16 +1278,15 @@ async function modePerformance(cdp, base) {
 async function c4Step2DialogueTurns(cdp, base) {
   await test('C4 step 2 divided dialogues expose one visible, announced and copied cue per turn', async () => {
     const P = ['P', 'Priest'];
-    const S = ['S', 'Server'];
     const V = ['℣', 'Versicle — Priest'];
     const R = ['℟', 'Response — Server'];
     const spec = {
       'roman-1962': {
-        'praeparatio/introibo-ad-altare-dei': [P, S],
-        'praeparatio/judica-me-deus': [P, S],
-        'praeparatio/emitte-lucem-tuam': [P, S],
-        'praeparatio/confitebor-tibi-in-cithara': [P, S],
-        'praeparatio/gloria-patri': [P, S],
+        'praeparatio/introibo-ad-altare-dei': [P, R],
+        'praeparatio/judica-me-deus': [P, R],
+        'praeparatio/emitte-lucem-tuam': [P, R],
+        'praeparatio/confitebor-tibi-in-cithara': [P, R],
+        'praeparatio/gloria-patri': [P, R],
         'praeparatio/introibo-ad-altare-dei-repetitio': [P, R],
         'praeparatio/adjutorium-nostrum': [V, R],
         'oblatio/per-omnia-saecula': [V, R],
@@ -1301,7 +1300,7 @@ async function c4Step2DialogueTurns(cdp, base) {
           ['℣', 'Versicle — Priest'], ['℟', 'Response — All'],
           ['℣', 'Versicle — Priest'], ['℟', 'Response — All']
         ],
-        'ritus-communionis/pax-domini': [P, ['All', 'All']]
+        'ritus-communionis/pax-domini': [P, ['℟', 'Response — All']]
       }
     };
     const headed = [
@@ -1310,13 +1309,13 @@ async function c4Step2DialogueTurns(cdp, base) {
       'oblatio/per-omnia-saecula', 'oblatio/sursum-corda',
       'communio/per-omnia-saecula-post-libera-nos', 'communio/pax-domini'
     ];
-    // Lasance's held English does not name an actor for these responses,
-    // and prints no versicle/response role in the Pax dialogue.
+    // Lasance's held English does not name an actor for the Preface responses.
+    // Its Pax retains a printed R. without declaring a target dialogue role.
     const englishSpec = {
       ...spec['roman-1962'],
       'oblatio/per-omnia-saecula': [V, ['℟', 'Response']],
       'oblatio/sursum-corda': [V, ['℟', 'Response'], V, ['℟', 'Response'], V, ['℟', 'Response']],
-      'communio/pax-domini': [P, S]
+      'communio/pax-domini': [P, R]
     };
     const data = {};
     for (const calendar of Object.keys(spec)) {
@@ -1329,6 +1328,8 @@ async function c4Step2DialogueTurns(cdp, base) {
       const held = (data[calendar].get(key).translations || []).find((one) => one.lang === lang);
       assert.ok(held && Array.isArray(held.turns), `${calendar} ${key} ${lang} has turns`);
       return held.turns.map((turn) => ({
+        speaker: turn.speaker || null,
+        role: turn.dialogue_role || null,
         marker: turn.printed_marker || null,
         words: turn.printed_marker ? turn.text.slice(turn.printed_marker.length + 1) : turn.text
       }));
@@ -1387,6 +1388,8 @@ async function c4Step2DialogueTurns(cdp, base) {
                 cueLang: row.querySelector('.speaker-tag')?.lang || null,
                 label: label ? label.textContent : null,
                 printedMarker: row.dataset.printedMarker || null,
+                speaker: row.dataset.speaker || null,
+                dialogueRole: row.dataset.dialogueRole || null,
                 wordsLang: words ? words.lang : null,
                 words: words ? words.textContent : null,
                 selected
@@ -1442,6 +1445,8 @@ async function c4Step2DialogueTurns(cdp, base) {
             assert.equal(turn.cueLang, 'en', where + ' cue language');
             assert.equal(turn.wordsLang, lang, where + ' spoken language');
             assert.equal(turn.printedMarker, expected[index].marker, where + ' separated printed marker');
+            assert.equal(turn.speaker, expected[index].speaker, where + ' source actor remains independent of printed sign');
+            assert.equal(turn.dialogueRole, expected[index].role, where + ' printed sign adds no target role');
             assert.equal(turn.words, expected[index].words, where + ' spoken words are the source row');
             assert.doesNotMatch(turn.words, /^(?:[PRVS]\.|[℣℟])/, where + ' no printed cue');
             assert.deepEqual(announced[index], [label, turn.words], where + ' announcement');
@@ -3377,30 +3382,39 @@ async function runAssertions(cdp, base) {
         [STATES.romanMissal, 'en', [
           ['praeparatio/confiteor-sacerdotis', [['P', 'Priest', null, 'I CONFESS to almighty God, to blessed Mary']]],
           ['praeparatio/confiteor-ministrorum', [['S', 'Server', null, 'I CONFESS to almighty God, to blessed Mary']]],
-          // The printed R. alone does not establish an actor or structured role.
-          ['oblatio/suscipiat-dominus', [[null, null, null, 'R. MAY the Lord receive this sacrifice']]],
-          ['conclusio/deo-gratias', [['S', 'Server', 'R.', 'Thanks be to God.']]]
+          // The checked printed R. supplies its sign, without supplying an
+          // actor or a structured target role.
+          ['oblatio/suscipiat-dominus', [['℟', 'Response', 'R.', 'MAY the Lord receive this sacrifice']]],
+          ['conclusio/deo-gratias', [['℟', 'Response — Server', 'R.', 'Thanks be to God.']]]
         ]],
         [STATES.romanLatinMissal, 'la', [
           ['praeparatio/confiteor-sacerdotis', [['P', 'Priest', 'P.', 'Confiteor Deo omnipotenti, &c.']]],
-          ['praeparatio/confiteor-ministrorum', [['S', 'Server', 'R.', 'Confiteor Deo omnipotenti, beatæ Mariæ']]],
-          ['oblatio/suscipiat-dominus', [['S', 'Server', 'R.', 'Suscipiat Dominus sacrificium']]],
+          ['praeparatio/confiteor-ministrorum', [['℟', 'Response — Server', 'R.', 'Confiteor Deo omnipotenti, beatæ Mariæ']]],
+          ['oblatio/suscipiat-dominus', [['℟', 'Response — Server', 'R.', 'Suscipiat Dominus sacrificium']]],
           ['conclusio/deo-gratias', [['℟', 'Response — Server', 'R.', 'Deo gratias.']]]
         ]],
         // Speakers only since 2026-10-19 (C4): the 2002 Ordo n. 29 (artifact
         // p. 310) prints rubrics naming the priest and the people and no
-        // versicle or response mark, so the unsupported ℣/℟ roles were withdrawn.
+        // versicle or response mark, so the unsupported target roles were
+        // withdrawn. The antecedent's checked printed R. still sets as ℟.
         [STATES.postLatinMissal, 'la', [
           ['praeparatio-donorum/orate-fratres', [
             ['P', 'Priest', null, 'Orate Fratres: ut meum ac vestrum'],
-            ['All', 'All', 'R.', 'Suscipiat Dominus sacrificium de manibus tuis']
+            ['℟', 'Response — All', 'R.', 'Suscipiat Dominus sacrificium de manibus tuis']
           ]]
         ]]
       ];
       for (const [state, lang, events] of cases) {
+        const calendar = new URLSearchParams(state.slice(1)).get('missal');
+        const file = JSON.parse(await readFile(
+          resolve(ROOT, 'src/web/data/structure/ordinary', calendar + '.json'), 'utf8'));
+        const sourceElements = new Map(file.sections.flatMap(section =>
+          section.elements.map(element => [element.key, element])));
         await navigateCandidate(cdp, base, state);
         for (const [key, expected] of events) {
           const eventId = 'ordinary-element/' + key;
+          const sourceRows = sourceElements.get(key).translations.find(row => row.lang === lang).turns;
+          assert.equal(sourceRows.length, expected.length, eventId + ' exact selected-source turn extent');
           const observed = await evaluate(cdp, `(async () => {
             const event = [...document.querySelectorAll('[data-semantic-event-id]')]
               .find((node) => node.dataset.semanticEventId === ${JSON.stringify(eventId)});
@@ -3428,6 +3442,8 @@ async function runAssertions(cdp, base) {
                   .map((mark) => mark.getAttribute('aria-hidden')),
                 label: label ? label.textContent : null,
                 printedMarker: row.dataset.printedMarker || null,
+                speaker: row.dataset.speaker || null,
+                dialogueRole: row.dataset.dialogueRole || null,
                 wordsLang: words ? words.lang : null,
                 words: words ? words.textContent : null,
                 selected
@@ -3485,6 +3501,10 @@ async function runAssertions(cdp, base) {
             assert.equal(turn.cueLang, glyph ? 'en' : null, where + ' cue language');
             assert.equal(turn.wordsLang, lang, where + ' spoken language');
             assert.equal(turn.printedMarker, marker, where + ' separated printed marker');
+            assert.equal(turn.speaker, sourceRows[index].speaker || null, where + ' source actor is preserved');
+            assert.equal(turn.dialogueRole, sourceRows[index].dialogue_role || null, where + ' printed sign adds no target role');
+            assert.equal((marker ? marker + ' ' : '') + turn.words, sourceRows[index].text,
+              where + ' reconstructs the exact selected-source row');
             assert.ok(turn.words.startsWith(opening), where + ' spoken words: ' + turn.words);
             if (glyph) assert.doesNotMatch(turn.words, /^(?:[PRVS]\.|[℣℟])/, where + ' no duplicate printed cue');
             assert.deepEqual(announced[index], label ? [label, turn.words] : [turn.words], where + ' announcement');
