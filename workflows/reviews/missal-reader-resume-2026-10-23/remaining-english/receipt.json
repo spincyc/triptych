@@ -1,0 +1,122 @@
+{
+  "head": "b40293d4a588d544b84419c83a52e6e1cafca8be",
+  "scope": "Text-free remaining-English handoff for the currently represented Roman1962 sidecar. Not an annual textual-completion determination or publication gate.",
+  "positive_english_owners": 548,
+  "missing_english_owners": 879,
+  "primary_missing_owners": 701,
+  "primary_latin_held": 648,
+  "primary_latin_not_held": 53,
+  "primary_literal_full_body_groups": 636,
+  "primary_held_with_current_independent_publication_proof": 648,
+  "other_missing_owners": 178,
+  "other_latin_held": 77,
+  "other_latin_not_held": 101,
+  "donor_owners_scanned": 548,
+  "donor_owners_with_complete_Latin_body": 544,
+  "donor_distinct_complete_Latin_bodies": 478,
+  "complete_literal_Latin_reuse_pairs": 0,
+  "complete_literal_Latin_reuse_targets": 0,
+  "remaining_owners_with_bounded_audit_source_evidence": 40,
+  "remaining_owners_without_bounded_audit_source_evidence": 839,
+  "existing_comparison_records_for_remaining_owners": 40,
+  "proper_family_counts": {
+    "Epistle": 4,
+    "Collect": 286,
+    "Alleluia": 43,
+    "Oratio": 15,
+    "Postcommunion": 216,
+    "Secret": 199,
+    "Tract": 6,
+    "Oratio super populum": 29,
+    "Introit": 13,
+    "Communion": 11,
+    "Gradual": 7,
+    "Offertory": 12,
+    "Greater Alleluia": 1,
+    "Blessing of the Lighted Candle": 1,
+    "Blessing of the Paschal Candle": 1,
+    "Exsultet": 1,
+    "Litany of the Saints, first part": 1,
+    "Litany of the Saints, second part": 1,
+    "Prayer at the Font": 1,
+    "Renewal of Baptismal Promises": 1,
+    "Lesson": 7,
+    "Antiphons at the Translation of the Blessed Sacrament": 1,
+    "First Prayer after Communion": 1,
+    "Improperia": 1,
+    "Prayer after the Prostration": 1,
+    "Second Prayer after Communion": 1,
+    "Solemn Intercessions": 1,
+    "Third Prayer after Communion": 1,
+    "Hymn": 1,
+    "Hymn at the Translation of the Blessed Sacrament": 1,
+    "Mandatum Antiphon 8": 1,
+    "Prayer of the Mandatum": 1,
+    "Blessing of the Palms": 1,
+    "First Antiphon at the Distribution of Palms": 1,
+    "Hymn to Christ the King": 1,
+    "Oration to Conclude the Procession": 1,
+    "Procession Antiphon": 3,
+    "Second Antiphon at the Distribution of Palms": 1,
+    "Fourth Alleluia": 1,
+    "Third Lesson": 1,
+    "Second Alleluia": 2
+  },
+  "proper_source_type_counts": {
+    "mixed": 52,
+    "composed": 827
+  },
+  "source_evidence_class_owner_counts": {
+    "cross-owner-complete-Latin-byte-mismatch": 1,
+    "actual-conclusion-mismatch": 10,
+    "complete-petition-word-mismatch": 30,
+    "source-inline-option-boundary": 1,
+    "source-complete-wording-not-established": 1,
+    "target-Latin-not-held": 4,
+    "same-witness-conclusion-table-family-not-established": 1
+  },
+  "inputs": [
+    {
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "sha256": "79946d1bc6e015d8624d67ce243b59cf3ee634fc5997310aa6d764953349d815"
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "sha256": "560e82057dc0480a5b1fe835304ba57ed476b346a38cab6fac550298582016ea"
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+      "sha256": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0"
+    },
+    {
+      "path": "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+      "sha256": "2125b5c00cfec520ec15ccb50d6935375c5180df20f64cac22a478ec411154b1"
+    },
+    {
+      "path": "src/sources/calendars/roman-1962/propers.yaml",
+      "sha256": "018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877"
+    },
+    {
+      "path": "src/sources/calendars/roman-pre-1955/propers.yaml",
+      "sha256": "037c74fa2dc8ecab13e2bd3bebc2e0ee194255c149b35d2c546d8c36cd9af65d"
+    }
+  ],
+  "positive_dictionary_sha256": "4a0be65bef811b5d8fa42679a363cb4f0cf927850a647341ec68edfcb0de95e8",
+  "absence_dictionary_sha256": "d23e1efbe72f94a6aa988265a3871da4b4f50d82c62f15e7ceb9a4d607aeabcc",
+  "source_graph_errors": [],
+  "installed_phase3_manifest_sha256": "2aafb8322321eb266a99f6d35805017ae2c0959b269f707748c534b8fb90cba1",
+  "all247_installed_postimages_match": true,
+  "all_input_pre_post_hashes_match": true,
+  "cache_controls": {
+    "TRIPTYCH_SOURCE_LIBRARY_CACHE": "0",
+    "TRIPTYCH_LIBRARY_CACHE": "0",
+    "TRIPTYCH_YAML_CACHE": "0",
+    "TRIPTYCH_CONTAINMENT_CACHE": "0",
+    "TRIPTYCH_CORPUS_CACHE": "0"
+  },
+  "python_bytecode_writes": false,
+  "new_source_or_page_inspections": 0,
+  "canonical_writes": 0,
+  "admissions": 0,
+  "permissions": "Only exact complete canonical UTF8 Latin bytes were compared, including every stored conclusion and final line ending. No typography normalization or textual-edit permission is granted. Existing source comparisons remain bounded observations; no remaining target is declared irrecoverable."
+}

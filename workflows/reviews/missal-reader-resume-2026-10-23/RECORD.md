@@ -464,3 +464,10 @@ remain open. The [26-endpoint live plan](publication-preparation-phase3.json)
 is prepared against the tested artifact and makes zero live requests before
 successful deployment. An ordinary exact-main push, its resulting Actions and
 post-deployment byte checks remain separately observed publication gates.
+
+The complete [remaining-source queue](remaining-english/README.md) now preserves
+all 879 text-free target identities, appointment cohorts, exact-Latin groups,
+existing comparison pointers and next source prerequisites. Its publication
+manifest pins the seven metadata files and retains the separate scratch audit
+script hash. This queue admits no source text and changes no corpus or reader
+input.

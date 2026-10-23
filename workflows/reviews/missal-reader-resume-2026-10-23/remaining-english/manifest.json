@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "record_type": "text-free-remaining-English-handoff",
+  "head": "b40293d4a588d544b84419c83a52e6e1cafca8be",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "35c937457c7ae9bde5728124303b1b42d5fbff95b845e7a5aaa473d9b71106af",
+      "bytes": 3521
+    },
+    {
+      "path": "accepted-owners-without-complete-latin.json",
+      "sha256": "ee9812bc7014083fde974f4cc0c109530eb81f887d6c168d878c4f4e5c7ae849",
+      "bytes": 2833
+    },
+    {
+      "path": "appointment-cohorts.json",
+      "sha256": "e17a341e494e85fb28c7f0bf824c6a699a28d275dfbcf2b21176dd83d5ab3dda",
+      "bytes": 20729
+    },
+    {
+      "path": "complete-literal-latin-groups.json",
+      "sha256": "c23d10c545d5419436c4abcb77e43d90fb8c369283a603f81400fa977d230211",
+      "bytes": 244620
+    },
+    {
+      "path": "exact-reuse-candidates.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "receipt.json",
+      "sha256": "4fb7c3d782115a9a8595915db354362b5577ad4f868f0850a8b663594bafaf6f",
+      "bytes": 4846
+    },
+    {
+      "path": "remaining-targets.json",
+      "sha256": "509f1e22ac84d8bee280b4927c384589f1ec9019efdcdab6b6e3772bfcf039ca",
+      "bytes": 1274552
+    }
+  ],
+  "canonical_writes": 0,
+  "new_source_inspections": 0,
+  "admissions": 0,
+  "retained_source_packet_manifest_sha256": "7bbae74e169aa590edc996ad0eaa58b64f8c7eb535a3a06e97786839869ab565",
+  "retained_scratch_evidence_not_published": [
+    {
+      "path": "audit.py",
+      "sha256": "9a9d4bd902aea5664bfd4fbb0721263b1fe554d96b052081b68dd13133c287f3",
+      "bytes": 14431,
+      "reason": "Operational scratch script is not part of this metadata publication; its exact hash is retained."
+    }
+  ]
+}
