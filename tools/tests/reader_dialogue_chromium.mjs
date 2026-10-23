@@ -390,13 +390,19 @@ async function verifyGospelPrayers(cdp,entrance,paired) {
     if (key==='oblatio/per-evangelica-dicta') {
       assert.equal(element.speaker,'all','Cummiskey base actor remains all');
       assert.equal(english.turns.length,1,'one source-supported English turn');
-      assert.deepEqual([english.turns[0].speaker,english.turns[0].dialogue_role,english.turns[0].printed_marker],['all',null,null]);
+      // The legacy element keeps its Cummiskey base actor, but the selected
+      // Lasance replacement declares its own priest and printed P. (inventory
+      // english_replacements, ordo-oblatio checked English artifact row 8).
+      assert.deepEqual([english.turns[0].speaker,english.turns[0].dialogue_role,english.turns[0].printed_marker],
+        ['priest',null,'P.'],'Lasance English retains its own source actor and marker');
       assert.doesNotMatch(latin.text,/Amen/,'no added Per evangelica Amen');
       if (paired) {
         assert.deepEqual(rows.map(one=>[one.lang,one.speaker,one.labels,one.glyphs]),[
-          ['la','priest',['Priest'],['P']],['en','all',['All'],['All']]],'Latin Priest and English All remain independent');
-        assert.equal(rows[1].text,english.text,'exact unchanged English body');
-        assert.equal(rows[1].dialogueRole,null);assert.equal(rows[1].marker,null);
+          ['la','priest',['Priest'],['P']],['en','priest',['Priest'],['P']]],
+          'each language retains its independently sourced priest cue');
+        assert.equal(rows[1].text,words(english.turns[0]),'exact English spoken body without duplicate source cue');
+        assert.equal(rows[1].marker+' '+rows[1].text,english.text,'exact English source stream reconstructed');
+        assert.equal(rows[1].dialogueRole,null);assert.equal(rows[1].marker,'P.');
       }
     }
   }
