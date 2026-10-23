@@ -1,0 +1,57 @@
+{
+  "verdict": "ACCEPT",
+  "scope": "phase3 literal example currency ONLY; no canonical writes performed by reviewer",
+  "accepted_candidate": ".scratch/resume-corpus-pipeline/phase3/candidate-tools/commentary-work-index",
+  "candidate_sha256": "a4f43b8e40719b3e04658d4538ccaea8de4ab4ee4dfce0373ece71b289902a18",
+  "canonical_preimage_sha256": "b683bfdec43843809535a14efa00c178dd287af9728df5c18ec87cd327d34103",
+  "head": "337eae05542bf2b6ab1d6e39de50a175c44c8bb6",
+  "changed_tuple_ordinals": [
+    2,
+    4
+  ],
+  "fresh_exact_recapture": true,
+  "independent_actual_outputs_equal_owner_captured_outputs": true,
+  "non_examples_module_AST_identical": true,
+  "all_50_function_ASTs_identical": true,
+  "parser_and_help_governance_unchanged": true,
+  "independent_replay": {
+    "captured": 27,
+    "runnable_matches": 24,
+    "diverged": 0,
+    "model_related_exemptions_not_run": 3,
+    "tracked_writes": 0
+  },
+  "source_currency": {
+    "files": 25180,
+    "all_hashes_equal_owner_baseline": true,
+    "missing_or_extra_paths": 0
+  },
+  "source_and_web_data_git_status_before_after": "clean, same committed trees",
+  "runtime_and_annual_logic": "unchanged: exact non-EXAMPLES module AST and helper bytes are identical; this acceptance concerns literal help transcripts only",
+  "evidence": [
+    {
+      "path": "before.json",
+      "sha256": "74dff070ffeae9e669d3e72f85d5528ea693b189f8069d5e60649594aa2661e6"
+    },
+    {
+      "path": "ast-and-literal-scope.json",
+      "sha256": "d1d3bb3904b657ff51cfb1f83f4213de296dfaae6f9465b3c195d26cb9734ce8"
+    },
+    {
+      "path": "independent-replay-summary.json",
+      "sha256": "4d83a5968de22687d47717807584a1c7e96c2108c279cd89d77bce9368218c22"
+    },
+    {
+      "path": "independent-replay-results.json",
+      "sha256": "cfe3987472ebf958c47ca0a547089cf99fbeda3890a9befad65b7dd5db001640"
+    },
+    {
+      "path": "source-currency-proof.json",
+      "sha256": "5069bf0d72c86ab2f4ae8f226500a7f6d57427d12213e2782325a98423fc20db"
+    },
+    {
+      "path": "exact-capture-and-no-mutation.json",
+      "sha256": "c377cffdecde0d1b4c922331f8f7e5612cdda136623238288e589d177228b575"
+    }
+  ]
+}
