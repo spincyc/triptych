@@ -16,6 +16,7 @@ import unicodedata
 import unittest
 from unittest import mock
 
+from tools.tests import _source_batch_guards as source_batch
 ROOT = Path(__file__).resolve().parents[2]
 CALENDARS = ROOT / "src/sources/calendars"
 LEDGER = ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml"
@@ -334,15 +335,22 @@ class LasanceCommonsEasterPhase3Tests(unittest.TestCase):
             with self.subTest(wrong=wrong), self.assertRaises(AssertionError):
                 self.assert_exact_reuse(target, wrong)
 
-    def test_all_eleven_mismatches_and_advent_ii_collect_remain_unserved(self):
+    def test_original_eleven_mismatches_and_later_exact_dispositions(self):
         self.assertEqual(len(WITHHELD), 11)
+        calendar = self.propers.load_calendar(CALENDARS, "roman-1962")
+        current = {self.propers.translation_record_identity(row, calendar): row
+                   for row in self.document["entries"]}
+        source_batch.assert_current_english_entries(current)
         for pair in WITHHELD | {("advent-2", "Collect")}:
             with self.subTest(pair=pair):
-                self.assertNotIn(identity(pair), self.overlay)
-        gap = [r for r in self.document["untranslated"]
-               if (r["mass"], r["proper"]) == ("advent-2", "Collect")]
-        self.assertEqual(len(gap), 1)
-        self.assertEqual(gap[0]["reason"]["kind"], "witness-gap")
+                key = identity(pair)
+                self.assertNotIn(key, self.entries)
+                if key in current:
+                    self.assertEqual(self.overlay[key], current[key])
+                else:
+                    self.assertNotIn(key, self.overlay)
+        gap = source_batch.historical_english_absence(identity(("advent-2", "Collect")))
+        self.assertEqual(gap["reason"]["kind"], "witness-gap")
         holy = self.records["passage." + PREFIX + ".verify-phase3-lasance-holy-saturday-secret"]
         self.assertIn("Holy Saturday, older order", holy["locus"])
         self.assertIn("does not assert a whole-formulary match", holy["notes"])
@@ -401,12 +409,14 @@ class LasanceCommonsEasterPhase3Tests(unittest.TestCase):
         self.assertEqual(self.witnesses[EDITION]["witness_relation"], "antecedent")
         for calendar in ("roman-1962", "roman-pre-1955"):
             row = self.propers.english_coverage(CALENDARS, calendar)
+            source_batch.assert_current_english_coverage(row, calendar)
             for field in ("unaccounted", "outside_the_ledger", "unmatched_records",
                           "stale_translation_records", "rights_restricted"):
                 self.assertEqual(row[field], 0, (calendar, field))
             if calendar == "roman-1962":
-                self.assertEqual((row["slots"], row["with_english"],
-                                  row["ledgered_untranslated"]), (1427, 219, 1208))
+                historical = source_batch.historical_english_coverage(calendar)
+                self.assertEqual((historical["slots"], historical["with_english"],
+                                  historical["ledgered_untranslated"]), (1427, 219, 1208))
 
 
 if __name__ == "__main__":

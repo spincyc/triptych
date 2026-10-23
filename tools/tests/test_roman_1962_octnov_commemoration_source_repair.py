@@ -18,6 +18,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
+from tools.tests import _source_batch_guards as BATCH_GUARDS
 import _calendars as C
 from _proper_latin import LatinKey, SURFACES, body_owners, decision_for, read_sidecar
 
@@ -1756,7 +1757,12 @@ def _phase5_restore_fields(node, spec):
 
 
 def phase5_predecessor_document(document):
-    """Validate all accepted owners BEFORE masking exactly their three fields."""
+    """Validate the entire current batch before the historical Phase5 replay."""
+    return _phase5_predecessor_document_legacy(BATCH_GUARDS.historical_document(document))
+
+
+def _phase5_predecessor_document_legacy(document):
+    """Restore Phase5 only after the public current-input check has passed."""
     owners = collections.Counter((k, body, state)
                                  for k, body, state in body_owners(document))
     for spec in PHASE5_LATIN22:
@@ -1778,10 +1784,15 @@ def phase5_predecessor_document(document):
 
 
 def phase5_predecessor_yaml(source):
-    """Restore fixed raw slices; retain every other byte, including whitespace."""
+    """Validate whole current raw input before replaying two historical layers."""
+    return _phase5_predecessor_yaml_legacy(BATCH_GUARDS.historical_text(BATCH_GUARDS.YAML_PATH, source))
+
+
+def _phase5_predecessor_yaml_legacy(source):
+    """Private legacy step; public callers must supply the current input."""
     _phase5_require(digest(source) == PHASE5_CURRENT_YAML,
                     "complete current raw calendar before masking")
-    phase5_predecessor_document(yaml.load(source, Loader=yaml.CSafeLoader))
+    _phase5_predecessor_document_legacy(yaml.load(source, Loader=yaml.CSafeLoader))
     tree = yaml.compose(source, Loader=yaml.CLoader)
     lines = source.splitlines(keepends=True)
     replacements = []
@@ -1804,7 +1815,12 @@ def phase5_predecessor_yaml(source):
 
 
 def phase5_predecessor_ledger(source):
-    """Remove only 20 exact additions and restore only two exact former rows."""
+    """Validate whole current ledger before the historical Phase5 replay."""
+    return _phase5_predecessor_ledger_legacy(BATCH_GUARDS.historical_text(BATCH_GUARDS.LATIN_PATH, source))
+
+
+def _phase5_predecessor_ledger_legacy(source):
+    """Private legacy step retaining every non-Phase5 byte."""
     parts = re.split(r"(?m)^\[\[entries\]\]\n", source)
     specs = {_phase5_key(s["key"]): s for s in PHASE5_LATIN22}
     seen = collections.Counter()
@@ -2074,11 +2090,14 @@ class OctNovCommemorationSourceRepairTests(unittest.TestCase):
         self.assertEqual(1269, len(predecessor_rows))
         unowned = [r for r in predecessor_rows if (r["mass"], r["proper"]) not in KEYS]
         self.assertEqual("555c3d0866875122302b5d48219887c21f82438bdcd569ef139a6579d54f6a9c", digest(canonical(unowned)))
-        self.assertEqual(1289, len(rows))
+        BATCH_GUARDS.assert_live_baseline_bodies(self.document)
+        current_prior_records = BATCH_GUARDS.historical_latin_records(self.records)
+        historical_rows = tomllib.loads(BATCH_GUARDS.historical_text(BATCH_GUARDS.LATIN_PATH))["entries"]
+        self.assertEqual(1289, len(historical_rows))
         self.assertEqual(1269, sum(r["publication_status"] == "permitted"
-                                   for r in self.records.values()))
+                                   for r in current_prior_records.values()))
         self.assertEqual(20, sum(r.get("body_status") == "removed" for r in rows))
-        self.assertEqual(1269, sum(state == "present" for _, _, state in body_owners(self.document)))
+        self.assertEqual(1269, sum(state == "present" for _, _, state in body_owners(BATCH_GUARDS.historical_document(self.document))))
 
     def test_real_cli_raw_and_appointed_bodies_have_the_same_bytes(self):
         for mass in MASSES:

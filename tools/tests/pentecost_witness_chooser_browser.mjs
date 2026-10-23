@@ -274,7 +274,9 @@ try {
       assert.equal(controls[0].scope,
         'mass/roman-1962/commemoratione-omnium-fidelium-defunctorum');
       assert.match(controls[0].legend, /this Mass/);
-      assert.equal(controls[0].options.length, 3);
+      assert.equal(controls[0].options.length, 4);
+      assert.ok(controls[0].options.includes(
+        'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945'));
     }
   });
 

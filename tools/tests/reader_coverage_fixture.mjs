@@ -133,11 +133,13 @@ export function verifyRealWitnesses(structure, root) {
   const units = T.selectedCoverageUnits(pending, structure);
   const report = T.summarizeCoverage(units);
   const witnesses = T.coverageWitnesses(report, 'en');
-  assert.equal(witnesses.length, 3);
-  assert.deepEqual(witnesses.map(row => row.available).sort(), [1, 1, 3]);
-  assert.ok(witnesses.every(row => /[13] of 6 uses/.test(row.label)));
+  assert.equal(witnesses.length, 4);
+  assert.deepEqual(witnesses.map(row => row.available).sort(), [1, 1, 2, 3]);
+  assert.ok(witnesses.every(row => /[123] of 6 uses/.test(row.label)));
+  assert.ok(witnesses.some(row => row.id === 'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945' && row.available === 2));
   const rows = mass.forms.find(row => row.id === 'first').propers;
-  for (const [witness, held, absent] of [[caswall, 1, 3], [cummiskey, 3, 1]]) {
+  for (const [witness, held, absent] of [[caswall, 1, 5], [cummiskey, 3, 3],
+      ['edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945', 2, 4]]) {
     const request = { ...base, languages: { orations: 'en', translationWitness: witness } };
     const result = A.adaptPropers({ request, structure });
     assert.equal(result.events.filter(row => row.selected?.reason === 'absent-in-witness').length, absent);

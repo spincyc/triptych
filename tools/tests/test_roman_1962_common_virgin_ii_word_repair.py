@@ -10,6 +10,7 @@ import tomllib
 import unittest
 ROOT = Path(__file__).resolve().parents[2]
 sys.path[:0] = [str(ROOT), str(ROOT / "scripts")]
+from tools.tests import _source_batch_guards as BATCH_GUARDS
 import _calendars as C
 from _proper_latin import LatinKey, SURFACES, body_owners, decision_for, publication_records, read_sidecar
 from tools.tests.test_roman_1962_octnov_commemoration_source_repair import (
@@ -170,10 +171,12 @@ class CommonVirginIIWordRepairTests(unittest.TestCase):
             if (row["mass"],row["proper"]) not in ALL_KEYS:
                 unowned += "[[entries]]\n"+part
         self.assertEqual(UNOWNED_LEDGER_BYTES,digest(unowned))
-        owners = list(body_owners(self.document))
-        self.assertEqual((1289,1269,20),(len(self.records),sum(s=="present" for _,_,s in owners),sum(s=="removed" for _,_,s in owners)))
+        BATCH_GUARDS.assert_live_baseline_bodies(self.document)
+        prior_records = BATCH_GUARDS.historical_latin_records(self.records)
+        owners = list(body_owners(BATCH_GUARDS.historical_document(self.document)))
+        self.assertEqual((1289,1269,20),(len(prior_records),sum(s=="present" for _,_,s in owners),sum(s=="removed" for _,_,s in owners)))
         self.assertEqual(1244,sum(s=="present" and (k.mass,k.proper) not in ALL_KEYS for k,p,s in owners))
-        self.assertEqual((1269,17,3),(sum(r["publication_status"]=="permitted" for r in self.records.values()),sum(r["provenance_status"]=="unresolved" for r in self.records.values()),sum(r["publication_status"]=="withheld" for r in self.records.values())))
+        self.assertEqual((1269,17,3),(sum(r["publication_status"]=="permitted" for r in prior_records.values()),sum(r["provenance_status"]=="unresolved" for r in prior_records.values()),sum(r["publication_status"]=="withheld" for r in prior_records.values())))
     def test_inherited_two_word_corrections_are_not_pre1955_target_attestation(self):
         pre = C.load_document(ROOT/"src/sources/calendars","roman-pre-1955")
         index = C.mass_index(pre)

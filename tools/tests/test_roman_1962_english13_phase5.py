@@ -6,6 +6,7 @@ from pathlib import Path
 from importlib.machinery import SourceFileLoader
 from importlib.util import spec_from_loader, module_from_spec
 import copy, csv, hashlib, io, json, re, sys, tomllib, unicodedata, unittest
+from tools.tests import _source_batch_guards as source_batch
 ROOT = Path(__file__).resolve().parents[2]
 CAL = ROOT / "src/sources/calendars"
 LEDGER = ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml"
@@ -1243,7 +1244,7 @@ class English13SourceTests(unittest.TestCase):
         self.assertEqual(len({o["source_passage_id"] for o in ORACLES.values()}), 12)
         self.assertEqual(len({o["seed_passage_id"] for o in ORACLES.values()}), 13)
         self.assertEqual(len({p for o in ORACLES.values() for p in o["source_pdf_pages"]}), 11)
-        self.assertEqual(len(self.entries), 219)
+        self.assertEqual(len(source_batch.historical_english_entries(self.entries)), 219)
 
     def test_fresh_english_hashes_placeholders_same_ending_and_no_added_period(self):
         for key, o in ORACLES.items():
@@ -1398,13 +1399,7 @@ class English13SourceTests(unittest.TestCase):
     def test_all206_prior_entry_dictionaries_and773_old_english_source_files(self):
         self.assertEqual(len(PRIOR206_KEYS), 206)
         self.assertEqual(digest([self.entries[k] for k in sorted(PRIOR206_KEYS)]), PRIOR206_SHA)
-        actual = {}
-        for namespace in ("francis-xavier-lasance", "eugene-cummiskey", "edward-caswall"):
-            for path in (ROOT / "src/sources/works" / namespace).rglob("*"):
-                if path.is_file():
-                    relative = str(path.relative_to(ROOT))
-                    if relative not in OWNED_SOURCE_PATHS:
-                        actual[relative] = sha(path.read_bytes())
+        actual = source_batch.historical_english_source_files()
         self.assertEqual(len(actual), 773)
         self.assertEqual(digest(sorted(actual.items())), OLD_SOURCE_FILES_SHA)
 
@@ -1417,15 +1412,23 @@ class English13SourceTests(unittest.TestCase):
         self.assertIn("No Latin permission", artifact["notes"])
         self.assertEqual(artifact["derived_from"], self.records[next(iter(ORACLES.values()))["source_passage_id"]]["artifact_id"])
 
-    def test_measured_coverage_zero_accounting_errors_and_held_scope(self):
+    def test_current_coverage_and_original_held_scope(self):
+        historical_entries = source_batch.historical_english_entries(self.entries)
         for calendar, expected in COVERAGE.items():
+            historical = source_batch.historical_english_coverage(calendar)
+            self.assertEqual((historical["slots"], historical["with_english"], historical["ledgered_untranslated"]), expected)
             row = self.p.english_coverage(CAL, calendar)
-            self.assertEqual((row["slots"], row["with_english"], row["ledgered_untranslated"]), expected)
+            source_batch.assert_current_english_coverage(row, calendar)
             for field in ("unaccounted", "outside_the_ledger", "unmatched_records", "stale_translation_records", "rights_restricted"):
                 self.assertEqual(row[field], 0, (calendar, field))
-        self.assertEqual(self.p.english_coverage(CAL, "roman-pre-1955")["inherited_inapplicable_records"], 49)
+        self.assertEqual(source_batch.historical_english_coverage("roman-pre-1955")["inherited_inapplicable_records"], 49)
         for mass in ("s-ioannis-a-cruce-confessoris-ecclesiae", "s-ioannis-mariae-vianney-confessoris", "advent-2"):
-            self.assertNotIn((mass, "main", "Collect", "all", 1), self.overlay)
+            key = (mass, "main", "Collect", "all", 1)
+            self.assertNotIn(key, historical_entries)
+            if key in self.entries:
+                self.assertEqual(self.overlay[key], self.entries[key])
+            else:
+                self.assertNotIn(key, self.overlay)
         self.assertFalse(any("john-cross" in o["source_key"] or "vianney" in o["source_key"] for o in ORACLES.values()))
 
 

@@ -2,6 +2,7 @@
 from pathlib import Path
 import copy,csv,hashlib,io,json,tomllib,unittest
 from tools.tests import test_roman_1962_english31_phase4 as prior
+from tools.tests import _source_batch_guards as source_batch
 ROOT=Path(__file__).resolve().parents[2]
 CAL=ROOT/"src/sources/calendars"
 LEDGER=ROOT/"src/sources/inventories/roman-1962-proper-translations-v1.toml"
@@ -248,7 +249,7 @@ class CommonVirginIIEnglishTests(unittest.TestCase):
     def test_exact_two_owners_ten_actual_recipient_references_not_ten_entries(self):
         selected={k for k,r in self.entries.items() if r.get("publication_artifact_id")==ARTIFACT["id"]}
         self.assertEqual(selected,set(ORACLES))
-        self.assertEqual(len(self.entries),219)
+        self.assertEqual(len(source_batch.historical_english_entries(self.entries)),219)
         for calendar in COVERAGE:
             document=self.p.load_calendar(CAL,calendar);refs={k:set() for k in ORACLES}
             for _,mass in self.p.masses_of(document):
@@ -295,7 +296,8 @@ class CommonVirginIIEnglishTests(unittest.TestCase):
         common=[r for r in self.latin if r["mass"]=="commune-virginum-2" and r["proper"] in ("Collect","Secret")]
         self.assertEqual(digest(common),COMMON_ROWS_SHA)
         old="artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commons-2-orations-8f0f1a33"
-        shared=[r for r in self.latin if old in r.get("publication_source_ids",[])]
+        historical_latin=tomllib.loads(source_batch.historical_text(source_batch.LATIN_PATH))["entries"]
+        shared=[r for r in historical_latin if old in r.get("publication_source_ids",[])]
         self.assertEqual(len(shared),41);self.assertEqual(digest(shared),SHARED41_SHA)
         collect=self.entries[("commune-virginum-2","main","Collect","all",1)]
         for ident in (collect["passage_id"],collect["publication_passage_id"]):
@@ -305,12 +307,21 @@ class CommonVirginIIEnglishTests(unittest.TestCase):
         self.assertEqual((artifact["rights_status"],artifact["rights_jurisdiction"]),("public-domain","United States"))
         for phrase in ("A110108","A192159","1298a-1298n","1302a-1302d"):self.assertIn(phrase,artifact["rights_basis"])
 
-    def test_measured_both_calendar_coverage_zero_errors_and_advent_hold(self):
+    def test_current_both_calendar_coverage_and_original_advent_hold(self):
+        historical_entries=source_batch.historical_english_entries(self.entries)
         for calendar,expected in COVERAGE.items():
+            historical=source_batch.historical_english_coverage(calendar)
+            self.assertEqual((historical["slots"],historical["with_english"],historical["ledgered_untranslated"]),expected)
             row=self.p.english_coverage(CAL,calendar)
-            self.assertEqual((row["slots"],row["with_english"],row["ledgered_untranslated"]),expected)
+            source_batch.assert_current_english_coverage(row,calendar)
             for field in ("unaccounted","outside_the_ledger","unmatched_records","stale_translation_records","rights_restricted"):self.assertEqual(row[field],0,(calendar,field))
-        self.assertEqual(self.p.english_coverage(CAL,"roman-pre-1955")["inherited_inapplicable_records"],49)
-        self.assertNotIn(("advent-2","main","Collect","all",1),self.entries)
+        self.assertEqual(source_batch.historical_english_coverage("roman-pre-1955")["inherited_inapplicable_records"],49)
+        key=("advent-2","main","Collect","all",1)
+        self.assertNotIn(key,historical_entries)
+        overlay=self.p.translation_overlay("roman-1962",CAL)[0]
+        if key in self.entries:
+            self.assertEqual(overlay[key],self.entries[key])
+        else:
+            self.assertNotIn(key,overlay)
 
 if __name__=="__main__":unittest.main()

@@ -280,6 +280,7 @@ const STATES = Object.freeze({
   postPentecostDayMissal: hash({ date: '2026-05-24', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'pentecost', form: 'day', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0' }),
   romanEmberLongerMissal: hash({ date: '2026-12-19', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'advent-ember-saturday', form: 'longer', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0' }),
   multiple: hash({ date: '2026-01-11', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'comm-s-hygini-papae-martyris' }),
+  missingEnglish1962: hash({ date: '2026-06-07', missal: 'roman-1962', bible: 'douay-rheims', orations: 'en' }),
   // Claret's own Collect remains rights-withheld; the Common supplies the
   // Secret and Postcommunion. Vianney's former gap was restored in Phase 5.
   partial: hash({ date: '2026-10-23', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 's-antonii-mariae-claret-episcopi-confessoris', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1' }),
@@ -2713,7 +2714,7 @@ async function runAssertions(cdp, base) {
   });
 
   await test('C2 G10: a missing translation leaves the held Latin original visible with its typed absence', async () => {
-    await navigateCandidate(cdp, base, STATES.pentecost1962English);
+    await navigateCandidate(cdp, base, STATES.missingEnglish1962);
     const rows = await unitAbsenceAudit(cdp, 'roman-1962');
     const missing = rows.filter(row => row.requested !== 'available');
     assert.ok(missing.some(row => row.la === 'available'), 'exemplar has a held Latin body without English: ' +

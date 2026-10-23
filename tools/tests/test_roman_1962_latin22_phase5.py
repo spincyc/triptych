@@ -17,6 +17,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path[:0] = [str(ROOT), str(ROOT/"scripts")]
+from tools.tests import _source_batch_guards as BATCH_GUARDS
 import _calendars as C
 from _proper_latin import LatinKey, SURFACES, body_owners, decision_for, publication_records, read_sidecar
 from tools.tests.test_roman_1962_octnov_commemoration_source_repair import record
@@ -2072,22 +2073,26 @@ class Latin22Phase5Tests(unittest.TestCase):
         self.assertIn("1929",a["rights_basis"])
 
     def test_1247_prior_body_bytes_and_all_unowned_yaml_ledger_bytes(self):
-        present=[dict(key=k.as_dict(),body=b,state=s) for k,b,s in body_owners(self.doc) if s=="present" and k not in KEYS]
+        BATCH_GUARDS.assert_live_baseline_bodies(self.doc)
+        prior_document = BATCH_GUARDS.historical_document(self.doc)
+        present=[dict(key=k.as_dict(),body=b,state=s) for k,b,s in body_owners(prior_document) if s=="present" and k not in KEYS]
         self.assertEqual(1247,len(present))
         self.assertEqual(PRIOR_PRESENT_SHA256,digest(canonical(present)))
-        self.assertEqual(UNOWNED_YAML_SHA256,digest(yaml_unowned(self.source)))
-        self.assertEqual(UNOWNED_LEDGER_SHA256,digest(ledger_unowned(self.ledger)))
+        self.assertEqual(UNOWNED_YAML_SHA256,digest(yaml_unowned(BATCH_GUARDS.historical_text(BATCH_GUARDS.YAML_PATH, self.source))))
+        self.assertEqual(UNOWNED_LEDGER_SHA256,digest(ledger_unowned(BATCH_GUARDS.historical_text(BATCH_GUARDS.LATIN_PATH, self.ledger))))
         for x,wrapper in zip(ORACLES,WRAPPERS):
             p=node_at(self.doc,x["path"])
             self.assertEqual(wrapper,{k:v for k,v in p.items() if k not in {"text_status","text","notes"}})
-        for path,h in PRESERVED_FILES.items():self.assertEqual(h,digest((ROOT/path).read_bytes()),path)
+        for path,h in PRESERVED_FILES.items():self.assertEqual(h,digest(BATCH_GUARDS.historical_bytes(path)),path)
 
     def test_remaining_twenty_removed_holds_and_exact_accounting(self):
-        raw=tomllib.loads(self.ledger)["entries"]
+        BATCH_GUARDS.assert_current_latin(self.records)
+        BATCH_GUARDS.assert_live_baseline_bodies(self.doc)
+        raw=tomllib.loads(BATCH_GUARDS.historical_text(BATCH_GUARDS.LATIN_PATH, self.ledger))["entries"]
         removed=[x for x in raw if x.get("body_status")=="removed"]
         self.assertEqual(REMAINING_REMOVED,removed)
         self.assertEqual((1289,1269,20),(len(raw),sum(x.get("publication_status")=="permitted" for x in raw),len(removed)))
-        owners=list(body_owners(self.doc))
+        owners=list(body_owners(BATCH_GUARDS.historical_document(self.doc)))
         self.assertEqual((1269,20),(sum(s=="present" for _,_,s in owners),sum(s=="removed" for _,_,s in owners)))
 
     def test_raw_and_production_resolver_roles_and_boundaries(self):

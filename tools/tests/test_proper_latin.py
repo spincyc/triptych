@@ -21,6 +21,7 @@ sys.path[:0] = [str(ROOT), str(ROOT / "scripts")]
 from tools.tests.test_roman_1962_octnov_commemoration_source_repair import (
     PHASE5_LATIN22, phase5_owner, phase5_predecessor_christmas, digest, canonical,
 )
+from tools.tests import _source_batch_guards as BATCH_GUARDS
 import _calendars  # noqa: E402
 from _proper_latin import (  # noqa: E402
     CLI_SURFACES,
@@ -492,6 +493,8 @@ class ProductionLedgerTests(unittest.TestCase):
                 INVENTORIES / f"{calendar}{SIDECAR_SUFFIX}"
             )
             self.assertEqual([], problems)
+            if calendar != "roman-pre-1955":
+                records = BATCH_GUARDS.historical_latin_records(records, calendar)
             self.assertEqual(total, len(records))
             self.assertEqual(
                 # 46 since 2026-10-01: KI-054 published 31 quarantined bodies.
@@ -510,6 +513,7 @@ class ProductionLedgerTests(unittest.TestCase):
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
+            records = BATCH_GUARDS.historical_latin_records(records, calendar)
             self.assertEqual(count, len(records))
 
     def test_production_ledgers_publish_only_the_exact_historical_recoveries(self) -> None:
@@ -517,6 +521,8 @@ class ProductionLedgerTests(unittest.TestCase):
         nonpermitted = []
         for calendar in ("postconciliar", "roman-1962", "roman-pre-1955"):
             records, _ = read_sidecar(INVENTORIES / f"{calendar}{SIDECAR_SUFFIX}")
+            if calendar != "roman-pre-1955":
+                BATCH_GUARDS.assert_current_latin(records, calendar)
             for key, row in records.items():
                 (permitted if row["publication_status"] == "permitted" else nonpermitted).append(
                     (calendar, key, row)
@@ -551,8 +557,8 @@ class ProductionLedgerTests(unittest.TestCase):
         # Accepted Phase 1: 1187. Phase 2 independently adds exactly eighteen
         # full bodies (fifteen new ledger rows, three restored Saturninus rows).
         # Phase 3 adds nineteen complete bodies on two artifact-specific pairs.
-        self.assertEqual(1269, len(permitted))
-        self.assertEqual(1269, len(roman))
+        BATCH_GUARDS.assert_permitted_owners(permitted)
+        self.assertEqual(1269, len({BATCH_GUARDS.key_string(k) for k in roman} & set(BATCH_GUARDS.fixture()["latin_baseline_present_keys"])))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -695,6 +701,9 @@ class ProductionLedgerTests(unittest.TestCase):
                                                                                                                                                                  'artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022',
                                                                                                                                                                  'artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf'},
                                                                                                                                               'publication_source_ids': {'artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.phase5-latin22-seven-historical-prayers-20261022'}}})
+        BATCH_GUARDS.assert_current_projection_source_files()
+        BATCH_GUARDS.add_projection_specs(projection_specs)
+        batch_artifact_specs = BATCH_GUARDS.projection_artifact_specs()
         phase5_specs = {LatinKey(**s["key"]): s for s in PHASE5_LATIN22}
         phase5_groups = {}
         phase5_supplements = set()
@@ -739,6 +748,9 @@ class ProductionLedgerTests(unittest.TestCase):
                 # is still pinned exactly.
                 ids = row["publication_source_ids"]
                 self.assertGreaterEqual(len(ids), 2, ids)
+                if edition in BATCH_GUARDS.projection_specs():
+                    self.assertIn(ids[0], batch_artifact_specs)
+                    spec = batch_artifact_specs[ids[0]]
                 if edition == "editorial-projection-2026-10-22":
                     self.assertIn(ids[0], october22_artifact_specs)
                     spec = october22_artifact_specs[ids[0]]
@@ -774,10 +786,12 @@ class ProductionLedgerTests(unittest.TestCase):
                 for extra in ids[2:]:
                     supplement = registered_artifact(extra)
                     if key == LatinKey("s-teresiae-a-iesu-infante-virginis", "", "Collect", "", "", 1):
-                        # Sole cross-edition case: Schott petition + exact Pustet conclusion.
+                        # Original bounded Schott petition/Pustet conclusion case.
                         self.assertEqual(['artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-schott-projection-20261022', 'artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.phase5-latin22-seven-historical-prayers-20261022', 'artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022'], ids)
                         self.assertEqual("edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929", witness["edition_id"])
                         self.assertEqual("edition.catholic-church.missale-romanum.pustet-ratisbon-1862", supplement["edition_id"])
+                    elif BATCH_GUARDS.explicit_cross_supplement(key, extra):
+                        BATCH_GUARDS.assert_explicit_cross_supplement(key, ids, extra, witness, supplement)
                     else:
                         self.assertEqual(
                             witness["edition_id"], supplement["edition_id"], extra
@@ -806,7 +820,11 @@ class ProductionLedgerTests(unittest.TestCase):
         # Seven further cold-review repairs bind the 1862 page image as well.
         # 44 since 2026-10-19 (C3): the five Pentecost rows name the 1862
         # page-image leaves n384-n386 they were read on.
-        self.assertEqual(52, len(supplemented), supplemented)
+        BATCH_GUARDS.assert_supplemented_owners(supplemented)
+        historical_rows = tomllib.loads(BATCH_GUARDS.historical_text(BATCH_GUARDS.LATIN_PATH))["entries"]
+        historical_supplemented = [(LatinKey.from_mapping(row), row["publication_source_ids"][2:]) for row in historical_rows if row.get("publication_status") == "permitted" and len(row.get("publication_source_ids", [])) > 2]
+        self.assertEqual(52, len(historical_supplemented), historical_supplemented)
+        self.assertEqual({BATCH_GUARDS.key_string(k) for k, ids in historical_supplemented}, set(BATCH_GUARDS.fixture()["latin_baseline_supplemented_keys"]))
         self.assertEqual({('artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pustet-projection-20261022', 2): 10,
  ('artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pustet-projection-20261022', 3): 5,
  ('artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-schott-projection-20261022', 2): 6,
@@ -836,6 +854,10 @@ class ProductionLedgerTests(unittest.TestCase):
                 self.assertTrue(own, edition)
                 for artifact in own:
                     artifact_spec = spec
+                    if edition in BATCH_GUARDS.projection_specs():
+                        self.assertIn(artifact["id"], batch_artifact_specs)
+                        artifact_spec = batch_artifact_specs[artifact["id"]]
+                        self.assertEqual(artifact_spec["projected_from"], set(artifact["projected_from"]))
                     if edition == "editorial-projection-2026-10-22":
                         self.assertIn(artifact["id"], october22_artifact_specs)
                         artifact_spec = october22_artifact_specs[artifact["id"]]

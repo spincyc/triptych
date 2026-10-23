@@ -311,14 +311,14 @@ const STATES = Object.freeze({
   fast: hash({ missal: 'postconciliar', type: 'marian', mass: 'visitation-blessed-virgin-mary', bible: 'douay-rheims', orations: 'la' }),
   englishMultiple: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'commemoratione-omnium-fidelium-defunctorum', form: 'first', bible: 'douay-rheims', orations: 'en' }),
   englishWitness: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'commemoratione-omnium-fidelium-defunctorum', form: 'first', bible: 'douay-rheims', orations: 'en', 'translation-witness': MULTIPLE_TRANSLATION_WITNESS }),
-  englishOne: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'comm-ss-alexandri-eventii-theoduli-martyrum', bible: 'douay-rheims', orations: 'en' }),
+  englishOne: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'comm-s-saturnini-martyris', bible: 'douay-rheims', orations: 'en' }),
   englishNone: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 's-hilarii-episcopi-confessoris-ecclesiae-doctoris', bible: 'douay-rheims', orations: 'en' }),
   romanChristmasForms: hash({ missal: 'roman-1962', type: 'christological', mass: 'nativitate-domini-octave', bible: 'douay-rheims', orations: 'la' }),
   romanChristmasNight: hash({ missal: 'roman-1962', type: 'christological', mass: 'nativitate-domini-octave', bible: 'douay-rheims', orations: 'la', form: 'night' }),
   postPentecostDay: hash({ missal: 'postconciliar', type: 'seasonal', mass: 'pentecost', bible: 'douay-rheims', orations: 'la', form: 'day' }),
   romanPentecost: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'pentecost', bible: 'douay-rheims', orations: 'la' }),
   romanPentecostEnglish: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'pentecost', bible: 'douay-rheims', orations: 'en' }),
-  englishWithoutLatinBody: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'comm-ss-alexandri-eventii-theoduli-martyrum', bible: 'douay-rheims', orations: 'en' }),
+  englishWithoutLatinBody: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 's-alberti-magni-episcopi-confessoris-ecclesiae', bible: 'douay-rheims', orations: 'en' }),
   pre1955Advent: hash({ missal: 'roman-pre-1955', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la' }),
   pre1955Trinity: hash({ missal: 'roman-pre-1955', type: 'seasonal', mass: 'trinity', bible: 'douay-rheims', orations: 'la' }),
   pre1955Palm: hash({ missal: 'roman-pre-1955', type: 'seasonal', mass: 'palm-sunday', bible: 'douay-rheims', orations: 'la' }),
@@ -1108,21 +1108,31 @@ async function assertions(cdp, base) {
     const value = await snapshot(cdp);
     assert.equal(value.outcome, 'ready', JSON.stringify(value));
     assert.match(value.source,
-      /Translation witness: (?:Antecedent English \(not the Missale Romanum 2002's text\): )?The Roman Missal translated into the English language/);
+      /Translation witness: .*The New Roman Missal/);
     assert.match(value.source, /Rights: Public Domain/);
-    const row = await evaluate(cdp, `(() => {
+    const row = await evaluate(cdp, `(async () => {
+      const T = window.Triptych;
+      const structure = await T.loadJSON('structure/propers/roman-1962.json');
       const event = propersReaderDebug.semantic.events.find(one =>
         one.kind === 'proper' && one.editionSlotLabel === 'Postcommunion');
       if (!event) throw new Error('Postcommunion semantic event is absent');
+      const units = T.selectedCoverageUnits({ events: [event] }, structure)
+        .filter(unit => unit.component !== 'scripture');
+      if (units.length !== 1) throw new Error('Postcommunion body coverage is not unique');
+      const state = lang => units[0].languages.find(row => row.lang === lang)?.availability;
       const node = document.querySelector('[data-semantic-event-id="' + event.id + '"]');
       const composed = node && node.querySelector('.composed');
       return {
         text: node && node.textContent.replace(/\\s+/g, ' ').trim(),
         composed: composed && composed.textContent.replace(/\\s+/g, ' ').trim(),
-        lang: composed && composed.lang
+        lang: composed && composed.lang, source: event.selected.sourceId,
+        latinAvailability: state('la'), englishAvailability: state('en')
       };
     })()`);
-    assert.match(row.composed, /Being refreshed by the participation of these sacred mysteries/);
+    assert.equal(row.latinAvailability, 'unresolved');
+    assert.equal(row.englishAvailability, 'available');
+    assert.equal(row.source, 'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945');
+    assert.match(row.composed, /Through this holy nourishment which we have consumed/);
     assert.equal(row.lang, 'en');
     assert.doesNotMatch(row.text, /Latin text unavailable|No English body is held/i);
   });
@@ -2033,10 +2043,10 @@ async function assertions(cdp, base) {
     await click(cdp, '[data-reader-action="browse"]');
     const form = await browseSnapshot(cdp);
     assert.equal(form.witnessHidden, false); assert.notEqual(form.witnessDisplay, 'none');
-    assert.equal(form.witnesses.length, 4);
+    assert.equal(form.witnesses.length, 5);
     assert.equal(form.witnesses[0], '');
     assert.ok(form.orationLabels.every(label => /represented texts available/.test(label)));
-    assert.ok(form.witnessLabels.slice(1).every(label => /[13] of 6 uses/.test(label)));
+    assert.ok(form.witnessLabels.slice(1).every(label => /[123] of 6 uses/.test(label)));
     const witness = MULTIPLE_TRANSLATION_WITNESS;
     assert.ok(form.witnesses.includes(witness));
     await select(cdp, '#reader-witness', witness);
@@ -2050,11 +2060,11 @@ async function assertions(cdp, base) {
       `[...new URLSearchParams(location.hash.slice(1)).keys()].some(key => key.startsWith('_candidate-'))`), false);
     assert.equal(await evaluate(cdp, `document.querySelectorAll('.composed[lang="en"]').length`), 1);
     assert.equal((await snapshot(cdp)).semantic.events.filter(row =>
-      row.selected?.reason === 'absent-in-witness').length, 3);
+      row.selected?.reason === 'absent-in-witness').length, 5);
     const selectedNotes = await evaluate(cdp,
       `[...document.querySelectorAll('.composed-note')].map(node => node.textContent)`);
     assert.equal(selectedNotes.filter(text =>
-      /No English text is available from the selected witness for this Proper/.test(text)).length, 3);
+      /No English text is available from the selected witness for this Proper/.test(text)).length, 5);
     assert.ok(!selectedNotes.some(text => /No English or Latin body is held here/.test(text)));
     assert.match((await snapshot(cdp)).notice, /from the selected witness/);
   });

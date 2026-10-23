@@ -3,6 +3,7 @@ from pathlib import Path
 from importlib.machinery import SourceFileLoader
 from importlib.util import spec_from_loader,module_from_spec
 import copy,csv,hashlib,io,json,re,sys,tomllib,unicodedata,unittest
+from tools.tests import _source_batch_guards as source_batch
 ROOT=Path(__file__).resolve().parents[2]
 CAL=ROOT/"src/sources/calendars"
 LEDGER=ROOT/"src/sources/inventories/roman-1962-proper-translations-v1.toml"
@@ -1074,12 +1075,18 @@ class English31SourceTests(unittest.TestCase):
   self.assertEqual(len(old),173)
   self.assertEqual(sha(json.dumps(old,sort_keys=True,ensure_ascii=False)),OLD_ENTRY_SHA)
 
- def test_only_authorized_common_two_is_served_and_advent_collect_stays_unserved(self):
+ def test_authorized_common_two_and_original_advent_hold(self):
+  historical=source_batch.historical_english_entries(self.entries)
   for proper in ("Collect","Secret"):
    key=("commune-virginum-2","main",proper,"all",1)
    self.assertIn(key,self.overlay)
    self.assertEqual(self.entries[key]["publication_artifact_id"],'artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.phase4-common-virgin-ii-two-prayers-en-11658a3a')
-  self.assertNotIn(("advent-2","main","Collect","all",1),self.overlay)
+  key=("advent-2","main","Collect","all",1)
+  self.assertNotIn(key,historical)
+  if key in self.entries:
+   self.assertEqual(self.overlay[key],self.entries[key])
+  else:
+   self.assertNotIn(key,self.overlay)
 
  def test_existing_rights_boundary_does_not_become_latin_authority(self):
   lasance=next(r for k,r in self.records.items() if k in ARTIFACT_ORACLES and r["edition_id"]=="edition."+LP)
@@ -1102,8 +1109,10 @@ class English31SourceTests(unittest.TestCase):
  def test_current_coverage_has_zero_accounting_errors(self):
   self.assertEqual(self.stale,[])
   for cal,expected in COVERAGE.items():
+   historical=source_batch.historical_english_coverage(cal)
+   self.assertEqual((historical["slots"],historical["with_english"],historical["ledgered_untranslated"]),expected)
    row=self.p.english_coverage(CAL,cal)
-   self.assertEqual((row["slots"],row["with_english"],row["ledgered_untranslated"]),expected)
+   source_batch.assert_current_english_coverage(row,cal)
    for field in ("unaccounted","outside_the_ledger","unmatched_records","stale_translation_records","rights_restricted"):
     self.assertEqual(row[field],0,(cal,field))
 
