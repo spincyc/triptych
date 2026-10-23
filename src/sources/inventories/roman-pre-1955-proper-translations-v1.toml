@@ -3,8 +3,8 @@
 # This sidecar carries no English text and does not restate the parent ledger.
 # The effective pre-1955 calendar replaces the restored Palm Sunday, Good
 # Friday, and Easter Vigil formularies source-side, and removes the later
-# Chrism Mass, St Joseph the Worker, and the Queenship entirely. (The parent
-# English ledger carries no Queenship row.) Each row below suppresses one exact inherited
+# Chrism Mass, St Joseph the Worker, and the Queenship entirely. (The current parent
+# Queenship records are suppressed by their exact identities below.) Each row below suppresses one exact inherited
 # roman-1962 ledger record that therefore cannot answer a source slot in this
 # child recension.
 
@@ -107,7 +107,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "palm-sunday"
 form_id = "main"
 proper = "Postcommunion"
@@ -137,7 +137,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "palm-sunday"
 form_id = "main"
 proper = "Secret"
@@ -504,6 +504,86 @@ record = "untranslated"
 mass = "s-ioseph-opificis-sponsi-beatae-mariae"
 form_id = "main"
 proper = "Alleluia"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "beatae-mariae-virginis-reginae"
+form_id = "main"
+proper = "Alleluia"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "beatae-mariae-virginis-reginae"
+form_id = "main"
+proper = "Alleluia (Tempore paschali)"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "beatae-mariae-virginis-reginae"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "beatae-mariae-virginis-reginae"
+form_id = "main"
+proper = "Communion"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "beatae-mariae-virginis-reginae"
+form_id = "main"
+proper = "Introit"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "beatae-mariae-virginis-reginae"
+form_id = "main"
+proper = "Offertory"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "beatae-mariae-virginis-reginae"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "beatae-mariae-virginis-reginae"
+form_id = "main"
+proper = "Secret"
 cycle = "all"
 occurrence = 1
 reason = "recension-absent"
