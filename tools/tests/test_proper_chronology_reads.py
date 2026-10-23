@@ -266,10 +266,10 @@ class SealCompositionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unregistered chronology source"):
             self.seal()
 
-    def test_the_current_pipeline_selects_v4_for_research_review_only(self):
+    def test_the_current_pipeline_inherits_v4_chronology_reads_in_the_v5_research_seal(self):
         pipeline = json.loads((ROOT / "workflows/pipelines/proper-study.json").read_text())
         selected = [stage["id"] for stage in pipeline["stages"]
-                    if "--review-contract proper-study-v4" in stage.get("review_input_command", "")]
+                    if "--review-contract proper-study-v5" in stage.get("review_input_command", "")]
         self.assertEqual(selected, ["research-review"])
         with self.assertRaisesRegex(ValueError, "only to research"):
             study.review_inputs(self.root, "gpt", self.document, "study",

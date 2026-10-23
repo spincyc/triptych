@@ -44,6 +44,9 @@ class DefinitionTests(unittest.TestCase):
             with self.subTest(author=author):
                 self.assertEqual(self.stages[author]["execution"], {"mode": "single"})
                 gate = self.stages[self.stages[author]["next"]]
+                if author == "research":
+                    self.assertEqual(gate["id"], "source-registration")
+                    gate = self.stages[gate["next"]]
                 self.assertEqual(gate["type"], "gate")
                 self.assertEqual(gate["pass_transition"], review)
                 self.assertEqual(self.stages[review]["effort"], "xhigh")
