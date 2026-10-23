@@ -177,12 +177,13 @@ class LiturgyAdapterTests(unittest.TestCase):
         self.assertEqual((opening["defaultBible"], opening["defaultOrations"]), ("douay-rheims", "la"))
 
     def test_a_missing_translation_is_said_at_the_text_and_the_latin_kept(self) -> None:
-        view = bridge.call("liturgy", "day", "roman-1962", "2026-10-22", {"orations": "en"})
+        # Pentecost II remains an explicit English gap with held target Latin.
+        view = bridge.call("liturgy", "day", "roman-1962", "2026-06-07", {"orations": "en"})
         collect = next(event for event in view["rows"][0]["events"] if event.get("slot") == "Collect")
         said = [" ".join(run["text"] for run in block["runs"]) for block in collect["blocks"]]
         self.assertTrue(any("English translation unavailable" in line for line in said), said)
         self.assertTrue(any("The Latin original is shown." in line for line in said), said)
-        self.assertTrue(any("Familiam tuam" in line for line in said), said)
+        self.assertTrue(any("Sancti nominis tui" in line for line in said), said)
 
     def test_a_formulary_read_without_a_date_has_no_calendar_result(self) -> None:
         view = bridge.call("liturgy", "propers", "roman-1962", "advent-1", {"orations": "en"})
