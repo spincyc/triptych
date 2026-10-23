@@ -1,0 +1,54 @@
+{
+  "schema": "triptych-one-target-comparison-boundary/v1",
+  "id": "christmas-day-collect-exact-separate-response-2026-10-23",
+  "decision": "approve exact one-target comparison boundary; no automatic English admission",
+  "decided_on": "2026-10-23",
+  "target": [
+    "nativitate-domini-octave",
+    "day",
+    "Collect",
+    "all",
+    1
+  ],
+  "target_latin_sha256": "56acab1dd52c97f54e612270f44534e3372c3ad3ffee7fc49f6ce12ec97a54ad",
+  "historical_latin_sha256": "90c6061d95f7dca118492c0c63e071647f5e63975201cfbb283f393ce5c98d8a",
+  "english_sha256": "b5ae925b8a004e08cdf3376f0dc20b4f1cc3af19d0c31d3dbd2824f3d24fa706",
+  "whole_current_latin_proof_dictionary_sha256": "c0ec3b89dbc4bbfcc0126eeff3c2f51c45c6df1def77d60a1b2b161c31df7ca7",
+  "source_locus": "PDF144–145, printed143–144; actual complete Christmas third Mass heading, Collect Latin and English. Actual Latin cue Per eumdem.; actual received English cue Through the same.",
+  "table": {
+    "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-conclusion-table-2026-10-23-7dbb4a25/conclusions.json",
+    "sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+    "physical_response_evidence": "Actual through-the-same Latin and English complete formulas on PDF818 printed819 are each followed by a separately marked ℟. Amen. The existing transcription deliberately excludes this response from full_latin and full_english."
+  },
+  "separate_target_response": {
+    "literal": "℟. Amen.\n",
+    "unicode_marker": "U+211F",
+    "utf8_hex": "e2849f2e20416d656e2e0a",
+    "byte_offset_0based": 285,
+    "byte_extent": 11,
+    "source_response_absent_from_actual_short_prayer": true,
+    "table_Latin_and_English_separately_print_marked_response": true
+  },
+  "contract": [
+    "Apply only to this exact target body SHA and exact source/English SHAs. Preserve every raw source/target/English byte including target wraps and terminal LF.",
+    "Identify exactly the literal terminal target suffix U+211F U+002E U+0020 Amen. followed by existing terminal LF; record its original byte offsets and original bytes separately. Do not transliterate ℟ to ASCII R.",
+    "Before treating that suffix as a response, independently require the preceding entire target conclusion to equal the COMPLETE printed through-the-same Latin formula under existing case/stress/pointing/layout/ligature comparison and sole already-approved exact eundem/eumdem at complete-prayer token21. A short prefix followed by response is refused.",
+    "Require the complete source and target petitions to align exactly, unchanged own appointment and exact current public Latin proof. Source Per eumdem. and received English Through the same. remain actual short forms; no English Amen added.",
+    "Reject any extra clause, incomplete formula plus response, unmarked Amen, wrong marker/family/person, repeated response or trailing words. Preserve conservative original hold until explicit dated root decision and reviewed successor."
+  ],
+  "source_comparison_pair": {
+    "source_form": "eumdem",
+    "target_form": "eundem",
+    "source_token_position_0based": 21,
+    "target_token_position_0based": 21,
+    "same_lexeme_form": "idem masculine accusative singular; explicit Dominum in target/printed full formula, abbreviated in source"
+  },
+  "preservation": [
+    "Retain every target/source/English byte, including the original Unicode marker and terminal LF.",
+    "Record the response boundary separately for comparison only; never convert marker, strip a generic Amen, add an English response or alter any conclusion family.",
+    "Only this exact body/source/English/proof tuple is authorized. Other targets or forms require separate evidence and decision.",
+    "Original conservative source hold remains historical; independent source and final assembled joins still precede canonical admission."
+  ],
+  "authority_record_sha256": "d401480b5cc8ab735fd9a86b98d96c881b3fff6701c7d0f0e553c49fe7e8eeba",
+  "scope": "Exact one target/source/English/full-Latin-proof tuple; comparison boundary only, no automatic English admission."
+}

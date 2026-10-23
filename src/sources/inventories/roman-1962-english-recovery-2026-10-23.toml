@@ -2,7 +2,7 @@ schema = 1
 record_type = "roman-1962-english-recovery-audit"
 audited_on = "2026-10-23"
 calendar = "roman-1962"
-scope = "Three bounded source recoveries. Phase 3 adds checked Lent weekday and sanctoral orations plus Advent Ember prayers. Original measured refusals remain bounded comparisons. The current text-free queue covers untranslated Collect/Secret/Postcommunion terminal owners only; it is neither a source survey nor a recoverability claim. Immutable CORE193 strict/table and CORE39 own-appointment declared-orthography batches are combined only in current owner/accounting records. Their distinct comparison methods, exact source artifacts and literal English remain separate; prior method and refusal history is unchanged. Separate immutable append209 artifacts add165 strict/table,43 bounded own-appointment orthography and1 complete-canonical-Latin donor reuse. Exact source/target/English remain literal; previous source methods, baseline and bounded refusals retain their historical scope. Current outcome and remaining_groups are the cumulative owner accounting. Dated exact-row integration adds26 separately accepted lexical/context source owners and6 independently source-reviewed strict/table Holy Week owners; the32 exact per-target methods and physical1945/1946 witnesses remain distinct."
+scope = "Three bounded source recoveries. Phase 3 adds checked Lent weekday and sanctoral orations plus Advent Ember prayers. Original measured refusals remain bounded comparisons. The current text-free queue covers untranslated Collect/Secret/Postcommunion terminal owners only; it is neither a source survey nor a recoverability claim. Immutable CORE193 strict/table and CORE39 own-appointment declared-orthography batches are combined only in current owner/accounting records. Their distinct comparison methods, exact source artifacts and literal English remain separate; prior method and refusal history is unchanged. Separate immutable append209 artifacts add165 strict/table,43 bounded own-appointment orthography and1 complete-canonical-Latin donor reuse. Exact source/target/English remain literal; previous source methods, baseline and bounded refusals retain their historical scope. Current outcome and remaining_groups are the cumulative owner accounting. Dated exact-row integration adds26 separately accepted lexical/context source owners and6 independently source-reviewed strict/table Holy Week owners; the32 exact per-target methods and physical1945/1946 witnesses remain distinct. Dated remaining33 adds12 strict/own-witness-table and21 separately recorded bounded-orthography source owners, retaining actual1945/1946 physical source and table controllers. Prior source/refusal history and methods remain exact. Dated christmas-day-one-20261023 adds only the exact one-target source-reviewed Unicode response-boundary comparison with sole approved idem pair21, literal public row proof and dated public decision; prior method claims and bounded refusals remain unchanged."
 source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
 source_artifact_sha256 = "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70"
 rights_anchor = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759"
@@ -28,19 +28,19 @@ typography_full_word_and_ending_groups = 920
 
 [outcome]
 represented_english_slots = 1439
-positive_english = 1021
-untranslated_english = 418
-untranslated_prayer_owners = 321
-untranslated_prayer_owners_with_latin = 265
+positive_english = 1055
+untranslated_english = 384
+untranslated_prayer_owners = 287
+untranslated_prayer_owners_with_latin = 231
 untranslated_prayers_without_latin = 56
-literal_full_body_and_ending_groups = 261
-typography_full_word_and_ending_groups = 259
+literal_full_body_and_ending_groups = 229
+typography_full_word_and_ending_groups = 227
 other_untranslated_english_owners = 97
-new_source_prayers = 726
-new_terminal_owners = 802
-new_effective_appointments = 916
+new_source_prayers = 760
+new_terminal_owners = 836
+new_effective_appointments = 956
 exact_existing_donor_pairs_before_batch = 0
-new_source_bodies = 775
+new_source_bodies = 809
 phase1_terminal_owners = 56
 phase2_terminal_owners = 150
 phase2_historical_bodies = 137
@@ -106,11 +106,31 @@ holyweek_lexical3_source_verifications = 3
 holyweek_lexical3_historical_bodies = 3
 holyweek_lexical3_whole_sequence_owners = 0
 holyweek_lexical3_table_family_owners = 3
+remaining_strict12_terminal_owners = 12
+remaining_strict12_source_verifications = 12
+remaining_strict12_historical_bodies = 12
+remaining_strict12_whole_sequence_owners = 2
+remaining_strict12_table_family_owners = 10
+remaining_orth20_terminal_owners = 20
+remaining_orth20_source_verifications = 20
+remaining_orth20_historical_bodies = 19
+remaining_orth20_whole_sequence_owners = 10
+remaining_orth20_table_family_owners = 10
+remaining_orth1946_1_terminal_owners = 1
+remaining_orth1946_1_source_verifications = 1
+remaining_orth1946_1_historical_bodies = 1
+remaining_orth1946_1_whole_sequence_owners = 1
+remaining_orth1946_1_table_family_owners = 0
+christmas_day_one_20261023_terminal_owners = 1
+christmas_day_one_20261023_source_verifications = 1
+christmas_day_one_20261023_historical_bodies = 1
+christmas_day_one_20261023_whole_sequence_owners = 0
+christmas_day_one_20261023_table_family_owners = 1
 
 [[input_snapshots]]
 path = "src/sources/inventories/roman-1962-proper-translations-v1.toml"
 before_sha256 = "41b0d7017d8b926bdab9bfd8bcef5526d5d3b1f79f5d495fca07bc295373c741"
-after_sha256 = "227e609a84001cfcaafb0fdea2e8b2d39f0c40e358eb9029afcb52c83a887c69"
+after_sha256 = "c37b6ea3ebfff40fdd4e25f7cdaa927f18fee16e5ee83a7bcd380b0401b074e9"
 
 [[input_snapshots]]
 path = "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
@@ -704,8 +724,8 @@ bytes = 1461
 
 [[source_postimages]]
 path = "src/sources/inventories/roman-1962-proper-translations-v1.toml"
-sha256 = "227e609a84001cfcaafb0fdea2e8b2d39f0c40e358eb9029afcb52c83a887c69"
-bytes = 2668082
+sha256 = "c37b6ea3ebfff40fdd4e25f7cdaa927f18fee16e5ee83a7bcd380b0401b074e9"
+bytes = 2760334
 
 [[source_postimages]]
 path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-conclusion-table-2026-10-23-7dbb4a25/conclusions.json"
@@ -8831,6 +8851,436 @@ bytes = 2631
 path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-holyweek6-ready1945-5-2026-10-23-verify-mass-of-the-lords-supper--main--secret--all--1.toml"
 sha256 = "4c9ef6ca6e8496f5d7c6763aa8013d10ab8d41085771051bd338eb8a3d9d67ec"
 bytes = 3166
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/resume-orthography-remaining-orth1946-1-c80ee109/artifact.toml"
+sha256 = "04b8a70b69fcfffa0978624d8c91f11f06c5949acc57445c174d7cd2434ceec9"
+bytes = 2789
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/resume-orthography-remaining-orth1946-1-c80ee109/english.tsv"
+sha256 = "c80ee1091ed0f0a2a7317195ca95344b3dee9768dd9740afd87a2b46996999c4"
+bytes = 441
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/resume-orthography-remaining-orth1946-1-publish-s-ioannis-damasceni-confessoris-ecclesiae-doctoris--main--collect--all--1.toml"
+sha256 = "a4f2fbc4084176d66ecb945d5c714461c783004cd17beab23dee3b76f9fb12b7"
+bytes = 2403
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/resume-orthography-remaining-orth1946-1-verify-s-ioannis-damasceni-confessoris-ecclesiae-doctoris--main--collect--all--1.toml"
+sha256 = "31e02240df6bff8fbadf79b8b94d307aece341ff8a44ac3b4018360e648282e6"
+bytes = 2832
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-remaining-strict12-a160a2e7/artifact.toml"
+sha256 = "5242912af94a9e6b935cb41b27bd7cba93d3e23863551392308efa09cc9b6ea7"
+bytes = 3263
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-remaining-strict12-a160a2e7/english.tsv"
+sha256 = "a160a2e7dc466334d7382eddb4b598ccbc8c0d378d93d9f6b96426ced0116b0b"
+bytes = 3138
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orthography-remaining-orth20-7d313a0e/artifact.toml"
+sha256 = "f9c529bf437c4861dfee56d4fdc3912acf6e9d841421936aceccbe0db72bf036"
+bytes = 3330
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orthography-remaining-orth20-7d313a0e/english.tsv"
+sha256 = "7d313a0e51d4ee23a538337cee78667096bd3fdf03f47b19f8d86ec0559eb32d"
+bytes = 6251
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-publish-comm-s-petri-apostoli--main--postcommunion--all--1.toml"
+sha256 = "186f95debb44a374572325633bd28618319c6b71b926b2b1901432ae5a3a1ed8"
+bytes = 2229
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-publish-exaltatione-s-crucis--main--postcommunion--all--1.toml"
+sha256 = "528bda500fad54e44c0277e1a8e2b8eac47e85c079ef01f3ca0f03f5eda80f50"
+bytes = 2056
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-publish-nativitate-domini-octave--day--postcommunion--all--1.toml"
+sha256 = "7e73b68173aa2a6787fb6115bc0d0092fc96ad0d5e061c888565d578fbb84d14"
+bytes = 2114
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-publish-nativitate-domini-octave--night--collect--all--1.toml"
+sha256 = "df8c0fa57d050c892bf4bdc162195280353de5a315ade864fb6214d3ed1f52a2"
+bytes = 2084
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-publish-nativitate-domini-octave--night--postcommunion--all--1.toml"
+sha256 = "f4d14f3c37ed39ddf39fc0bda53a9223f2b931b3106bc95234b40fbf603f0819"
+bytes = 2158
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-publish-nativitate-domini-octave--night--secret--all--1.toml"
+sha256 = "eb44be83aa796f0aee4b347f83831f6052dd7b972924d4e8d1df16725eb7c317"
+bytes = 2145
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-publish-pretiosissimi-sanguinis-domini-nostri-iesu-christi--main--postcommunion--all--1.toml"
+sha256 = "b85aeda977a6932c67e1d62a69f029f6811533f6300f0aff18eaf3f9f9b3f47e"
+bytes = 2197
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-publish-s-francisci-paula-confessoris--main--secret--all--1.toml"
+sha256 = "8d89f90d4b3b2f86a800eebbbfdb71657a18509389c7cf97070a8e13235e24c1"
+bytes = 2026
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-publish-s-titi-episcopi-confessoris--main--secret--all--1.toml"
+sha256 = "6f91c4a1b28aa81b1ff9b4710845e131303ea444a59153ac10f86e678cd9b496"
+bytes = 2221
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-publish-ss-philippi-iacobi-apostolorum--main--collect--all--1.toml"
+sha256 = "9a9c6232f0080eaf559a751bc1d26303a692c4bfd5b5b6c8e899c42c328a55d1"
+bytes = 2024
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-publish-ss-philippi-iacobi-apostolorum--main--secret--all--1.toml"
+sha256 = "ba2f954156fb8c00d4733d28ffdc5efc817698f612b94b0c357c12f61af4732b"
+bytes = 2176
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-publish-vigil-nativity-lord--main--collect--all--1.toml"
+sha256 = "4956b4b5427c12b4a91ddc8796cf1dc30066009620ec6c383df9cd009ce7c51d"
+bytes = 1990
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-verify-comm-s-petri-apostoli--main--postcommunion--all--1.toml"
+sha256 = "62a931a19a5db4960d3ab88eaaf91c5f7e92e7258e49221b00e48d81b4138e83"
+bytes = 3127
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-verify-exaltatione-s-crucis--main--postcommunion--all--1.toml"
+sha256 = "8a9154f54f74a65bf10ea03af6b54f28eee1d884404109780a3e7549fa5dfe5d"
+bytes = 2752
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-verify-nativitate-domini-octave--day--postcommunion--all--1.toml"
+sha256 = "900680993688ff91e4e3ec0e8d1fcad58b89dfd9135f98c9f37d3fc7d42da76d"
+bytes = 2890
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-verify-nativitate-domini-octave--night--collect--all--1.toml"
+sha256 = "2cf0f470235b9641b05b8d617856b0cfe83e306509d23378bac49a57189a9e0c"
+bytes = 2903
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-verify-nativitate-domini-octave--night--postcommunion--all--1.toml"
+sha256 = "bb492085362baeb2a7e9e1baf088277d10e38063894398f9b0ee90ff8d35aa06"
+bytes = 3002
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-verify-nativitate-domini-octave--night--secret--all--1.toml"
+sha256 = "6d8a358afdaa411835b686c683ee5b086c9b92830138518a0dc475c8bbc27e28"
+bytes = 3014
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-verify-pretiosissimi-sanguinis-domini-nostri-iesu-christi--main--postcommunion--all--1.toml"
+sha256 = "954a4f1ab5e7537e5714e2032051587c6693174cf719a4fcfd1f4e03211e9a03"
+bytes = 2907
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-verify-s-francisci-paula-confessoris--main--secret--all--1.toml"
+sha256 = "1fc3beb3a533fe146b5a5d013062726d54cff30826c56a3b2bba1eac3fb94a7c"
+bytes = 2307
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-verify-s-titi-episcopi-confessoris--main--secret--all--1.toml"
+sha256 = "182dce30c274aab5d4fb16c2cc5455a3041c801689be18492dced0b3aeed8e6a"
+bytes = 3082
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-verify-ss-philippi-iacobi-apostolorum--main--collect--all--1.toml"
+sha256 = "af3a4b1b967fe6e3e8962640542e098e06f5de30f53b1d65c667220edba18008"
+bytes = 2291
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-verify-ss-philippi-iacobi-apostolorum--main--secret--all--1.toml"
+sha256 = "e7c5b0a407fb700a4afe5c490b6c43acf7984ed52118b35b95a648aba7ca3188"
+bytes = 2978
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-remaining-strict12-verify-vigil-nativity-lord--main--collect--all--1.toml"
+sha256 = "916aa914bc9f02c50c8d4ceaf3a6abd2f03c7705f0c35ff243e646e3d8296cbd"
+bytes = 2777
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-context-apparitione-beatae-mariae-virginis-immaculatae--main--postcommunion--all--1.toml"
+sha256 = "6767369e34acdd03035c5988c3fc3ba8168ea71cfaef2baaac5f48b8d589c019"
+bytes = 2048
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-context-s-bernardini-senensis-confessoris--main--postcommunion--all--1.toml"
+sha256 = "669cc6d445560975d163650f48eb52f5405c6dad217044c91215a6fb9909e124"
+bytes = 2197
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-context-s-ioannis-baptistae-la-salle-confessoris--main--postcommunion--all--1.toml"
+sha256 = "f0d4f3ef1d655d3140cbdde5d54b75ae8a561f5a9225226f3412a15d458c6fc4"
+bytes = 2255
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-context-s-iustini-martyris--main--postcommunion--all--1.toml"
+sha256 = "7e6dac9f8a6354958961bb01cd7f95095ffc31822dde93bbcfc573661ef1ffe1"
+bytes = 1919
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-apparitione-beatae-mariae-virginis-immaculatae--main--postcommunion--all--1.toml"
+sha256 = "6cfa8745bc27998d48fd4f66c819a169ad5865fb45a697f7463009edfad4e255"
+bytes = 3024
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-beatae-mariae-virginis-a-rosario--main--postcommunion--all--1.toml"
+sha256 = "c77a6c1cf212b18c8eb68cd06f8d88eeda68bd9592a9fe7698372401d5cc16c1"
+bytes = 2346
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-comm-beatae-mariae-virginis-monte-carmelo--main--collect--all--1.toml"
+sha256 = "c104165e123d1f56aca9033df2243231040d8fb207f94c7d0966d0831f23b928"
+bytes = 2301
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-comm-beatae-mariae-virginis-monte-carmelo--main--postcommunion--all--1.toml"
+sha256 = "db056e3adcc0254369418864a8ed8675abee6c04a422bede7f75cfef4eee0b97"
+bytes = 2357
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-comm-s-valentini-presbyteri-martyris--main--postcommunion--all--1.toml"
+sha256 = "8f7dbba9f56421f670c5a9dfddc2b598ed9af20cc7a1d332f9aee398c18b9114"
+bytes = 2280
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-conceptione-immaculata-beatae-mariae-virginis--main--secret--all--1.toml"
+sha256 = "f2fa78918fbb36225f02bdfc2492e34dc26a925249c1537c941bbf04e2a57b25"
+bytes = 2336
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-s-agnetis-virginis-martyris--main--postcommunion--all--1.toml"
+sha256 = "db83a4dc49149209c899e0cdf2f9e46766da8279c10c318b92134ad5cc97834e"
+bytes = 2316
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-s-bernardini-senensis-confessoris--main--postcommunion--all--1.toml"
+sha256 = "6644f02cba41ed3f910b9ac41118737bc3bbcf4c5dd33ebeee825cebe4cf1942"
+bytes = 2899
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-s-catharinae-senensis-virginis--main--postcommunion--all--1.toml"
+sha256 = "f73c8acc9eae78d535815383dc7b922caad07fdf447195d627f860a6965910bc"
+bytes = 2603
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-s-francisci-paula-confessoris--main--postcommunion--all--1.toml"
+sha256 = "13d3d484b25f11f699b8f4e25e1b5b84902e35f37c92b36ba96d43e71b64d782"
+bytes = 2252
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-s-gabrielis-a-virgine-perdolente-confessoris--main--collect--all--1.toml"
+sha256 = "9e4cb372aed23bc5dd7249d60533653d270b0f08f637ce70850cd43f69a7571d"
+bytes = 2414
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-s-hermenegildi-martyris--main--collect--all--1.toml"
+sha256 = "5c692a9eff20db0da8281ba3fe8d73564c815b281948724dc04f029d6094a0b7"
+bytes = 2219
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-s-ioannis-baptistae-la-salle-confessoris--main--collect--all--1.toml"
+sha256 = "3d4f86b17ddfbedd5a8fce59ff78d707079a892e00e174d259c400f3439489ec"
+bytes = 2276
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-s-ioannis-baptistae-la-salle-confessoris--main--postcommunion--all--1.toml"
+sha256 = "33421356bde63b6d69499ebe48ef56b346d6179acd57ed4c4a2a82689cdcd97f"
+bytes = 2940
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-s-ioannis-capistrano-confessoris--main--postcommunion--all--1.toml"
+sha256 = "7cb4f8f7476d25c8f1a7c4d1870f848638dbaf42af0561585e7a0fa32130d3d2"
+bytes = 2309
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-s-iustini-martyris--main--postcommunion--all--1.toml"
+sha256 = "04a795491b5fc488aea9ff2d88447d517f0b5fa3b0e0c147f89b3d844192402d"
+bytes = 2666
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-s-philippi-nerii-confessoris--main--postcommunion--all--1.toml"
+sha256 = "d0dd4b7d4a12a0cebc6e33421eda03f1e82c9065b2322ed914d1f3eba5f7bb77"
+bytes = 2281
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-sanctissimi-nominis-beatae-mariae-virginis--main--collect--all--1.toml"
+sha256 = "c76355ade0c6a1085b8697070c50eb7e9984781bd8a832188dcda33de36142e9"
+bytes = 2276
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-ss-vincentii-anastasii-martyrum--main--postcommunion--all--1.toml"
+sha256 = "79d50f66b63fca1167f1b3960bd8f6a741fd774c216a646d04ec93fe5666f8c9"
+bytes = 2332
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-publish-visitatione-beatae-mariae-virginis--main--collect--all--1.toml"
+sha256 = "f537355512e0e44eb2c8d2ea55ff76f2ac32be3cdc3d2832b946add825494028"
+bytes = 2212
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-apparitione-beatae-mariae-virginis-immaculatae--main--postcommunion--all--1.toml"
+sha256 = "271f107730fcee8766662dccd406c39a32f23f4a7361dbf250e6e84631dba6fa"
+bytes = 4242
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-beatae-mariae-virginis-a-rosario--main--postcommunion--all--1.toml"
+sha256 = "7115e50d38be0231b3978fd0a2f80ebd610defedb8e1f3a42a24a0593eecba6c"
+bytes = 3150
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-comm-beatae-mariae-virginis-monte-carmelo--main--collect--all--1.toml"
+sha256 = "c5a0e1befd3b4fd90bda0ba350375e58291dae18e104115f6bbc40988680abe6"
+bytes = 3117
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-comm-beatae-mariae-virginis-monte-carmelo--main--postcommunion--all--1.toml"
+sha256 = "bc6e5f7f069ce759e84d50da0d178aa8e0ea7718320b7edd241e80dbd7d6db45"
+bytes = 3135
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-comm-s-valentini-presbyteri-martyris--main--postcommunion--all--1.toml"
+sha256 = "8ac12ab08ca3ca2d5b079e2b703d9f147df8c78c7f9c8d8f98798b86ab8c076e"
+bytes = 2628
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-conceptione-immaculata-beatae-mariae-virginis--main--secret--all--1.toml"
+sha256 = "a74fc34d914e8f3b789b9a638f160149e42a0dda87ca3d37425315e24cbb279e"
+bytes = 2764
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-s-agnetis-virginis-martyris--main--postcommunion--all--1.toml"
+sha256 = "7a63f2d050c0adc20dfaa3ec7779f448094393b4b637d686800eb295aba6b589"
+bytes = 3090
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-s-bernardini-senensis-confessoris--main--postcommunion--all--1.toml"
+sha256 = "acacfa568ea8787b4aca53dea7de63b59fd7e0355d7a90a276b1060ba53ebca1"
+bytes = 4221
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-s-catharinae-senensis-virginis--main--postcommunion--all--1.toml"
+sha256 = "1a66d6e735f0bb4953c509aa4d0b86e6b3b8b84c11379b3329364dac77c9fcbc"
+bytes = 3622
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-s-francisci-paula-confessoris--main--postcommunion--all--1.toml"
+sha256 = "0e565901c469e9df33b2e61eb8161ccc8e59ddb074ade1f76c8d54ad7bb2c998"
+bytes = 2589
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-s-gabrielis-a-virgine-perdolente-confessoris--main--collect--all--1.toml"
+sha256 = "11aeee1ee070967702447f13e2c1cd6fdf8b0479ba13806df7a394780f21c30e"
+bytes = 3336
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-s-hermenegildi-martyris--main--collect--all--1.toml"
+sha256 = "e9bd49d9b18c7b714637646f12c0965c0cbfe7c4597692efd3d996e2db519431"
+bytes = 2974
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-s-ioannis-baptistae-la-salle-confessoris--main--collect--all--1.toml"
+sha256 = "124862a9333826659d18114cec95201a50a6e814d0193a28d3e3951a05d0ac15"
+bytes = 2788
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-s-ioannis-baptistae-la-salle-confessoris--main--postcommunion--all--1.toml"
+sha256 = "677f595ebc2f666628a87272286ab87fb51a50da9a6eec53714154cc8e07577f"
+bytes = 4257
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-s-ioannis-capistrano-confessoris--main--postcommunion--all--1.toml"
+sha256 = "7208fa10ab359f8ee0c912a968d81b707067b6578aa939f0bc858a2b3c338195"
+bytes = 2728
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-s-iustini-martyris--main--postcommunion--all--1.toml"
+sha256 = "8af3a5bc71b10adf2abfca5682730ad6949375c560bee60cb7d28f0307ce5b26"
+bytes = 3487
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-s-philippi-nerii-confessoris--main--postcommunion--all--1.toml"
+sha256 = "cd89d301ffca87b73f28c4b1603d938da17fe5b8ab6ab2b7e95dacbe941aa1c3"
+bytes = 2643
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-sanctissimi-nominis-beatae-mariae-virginis--main--collect--all--1.toml"
+sha256 = "629f7bc1bfe6ecfc79f88e119fd8249a33829809c08acf4dbef0575277ebc0d1"
+bytes = 2670
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-ss-vincentii-anastasii-martyrum--main--postcommunion--all--1.toml"
+sha256 = "1890950def513861a38be0cbef88b84bdf92040346f0589e07fed9f0134ab2cb"
+bytes = 2766
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orthography-remaining-orth20-verify-visitatione-beatae-mariae-virginis--main--collect--all--1.toml"
+sha256 = "4f55d0f99be924e160de5e40229a3ff1958b723aa6c888acfcc1e284204e3207"
+bytes = 2560
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-christmas-one-christmas-day-one-20261023-f78698cb/artifact.toml"
+sha256 = "32c7d9765f8e46acad85148c09d6be26a272e90747bdc351e9c632283298460a"
+bytes = 2457
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-christmas-one-christmas-day-one-20261023-f78698cb/english.tsv"
+sha256 = "f78698cb500680240a2659429f49963c2d8bb1be95f721a821af66a9aebd789d"
+bytes = 288
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-christmas-one-decision-46500b9a/artifact.toml"
+sha256 = "b85064097e40c7a431629974946508478400644e5ce52c00481ee06b0d645810"
+bytes = 2040
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-christmas-one-decision-46500b9a/decision.json"
+sha256 = "46500b9af35a0c18b7f0c880c99f143a8e3dc28ea634303ce3ecb3987d4d5484"
+bytes = 4174
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-christmas-one-proof-396bf3de/artifact.toml"
+sha256 = "59549764f603c8dd925899664d31f49fe5ffe919bb6257bcfb4daaa39e9ace34"
+bytes = 2031
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-christmas-one-proof-396bf3de/proof.json"
+sha256 = "396bf3deb6add79f67de18c0fed6259f82156f345ad3daa4a88f8bc87edb8858"
+bytes = 5388
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-christmas-one-christmas-day-one-20261023-publish-nativitate-domini-octave--day--collect--all--1.toml"
+sha256 = "851a2e5de1f5171aefe85d5d31034f703daf3793750d89632c99c0339885b4a7"
+bytes = 3570
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-christmas-one-christmas-day-one-20261023-verify-nativitate-domini-octave--day--collect--all--1.toml"
+sha256 = "182fc179aba91aaa5eddbf153e7ad5bbae06ff94a18839616be9a0cc73f17eea"
+bytes = 4702
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-christmas-one-decision-46500b9a.toml"
+sha256 = "f629a89eaed204860edf803b41163044ee844a6d8874c32c8d26799cea9a8f6e"
+bytes = 829
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-christmas-one-proof-396bf3de.toml"
+sha256 = "4a560066a0cc14f19fb16858c4060e2f0135353dee2926eec9f2b2c77ca1a059"
+bytes = 820
 
 [[accepted]]
 target = ["pentecost-6", "main", "Secret", "all", 1]
@@ -20820,6 +21270,736 @@ table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benzig
 table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
 english_treatment = "Literal own-source English and actual cue; unexpanded"
 
+[[accepted]]
+target = ["comm-s-petri-apostoli", "main", "Postcommunion", "all", 1]
+batch = "remaining-strict12"
+comparison_route = "same-witness-conclusion-table"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "2121835b24465e15221a0eb4d00a9d00db59b5120deb7b3103696e13a5c49f48"
+english_sha256 = "abbc6cbb26dee68b5fb91fa12733d7698393b82a6fcd9266adb48b298904e15b"
+historical_latin_sha256 = "a3b8a1aba1a746e7a9f05a06645caf89bae174f0db7797e9de1ca0f73c63df27"
+pdf_pages = [889]
+printed_pages = ["890"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.recovery-2026-10-01-comm-s-petri-apostoli-postcommunion"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"a3b8a1aba1a746e7a9f05a06645caf89bae174f0db7797e9de1ca0f73c63df27\", \"target_Latin_sha256\": \"2121835b24465e15221a0eb4d00a9d00db59b5120deb7b3103696e13a5c49f48\", \"family\": \"through-our-lord\", \"person\": \"God the Father\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"per\", \"dominum\"], \"target_cue_tokens\": [\"per\", \"dominum\", \"nostrum\", \"jesum\", \"christum\", \"filium\", \"tuum\", \"qui\", \"tecum\", \"vivit\", \"et\", \"regnat\", \"in\", \"unitate\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"through\", \"our\", \"lord\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "through-our-lord"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["s-titi-episcopi-confessoris", "main", "Secret", "all", 1]
+batch = "remaining-strict12"
+comparison_route = "same-witness-conclusion-table"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "80d5f4e03a555f6707332ed17fa4091e03b5186c98cb021504016107cf60b7fa"
+english_sha256 = "22c98188bae9580f0b396cf6442970bdb554cd9e3bb9a214262fa713515eccb3"
+historical_latin_sha256 = "b7117f62b40c23c65e933d5eaed575c2dfc27da08831b9326a3fffd8360abbd3"
+pdf_pages = [1359]
+printed_pages = ["1340"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-titi-episcopi-confessoris-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"b7117f62b40c23c65e933d5eaed575c2dfc27da08831b9326a3fffd8360abbd3\", \"target_Latin_sha256\": \"80d5f4e03a555f6707332ed17fa4091e03b5186c98cb021504016107cf60b7fa\", \"family\": \"through-our-lord\", \"person\": \"God the Father\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"per\", \"dominum\"], \"target_cue_tokens\": [\"per\", \"dominum\", \"nostrum\", \"jesum\", \"christum\", \"filium\", \"tuum\", \"qui\", \"tecum\", \"vivit\", \"et\", \"regnat\", \"in\", \"unitate\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"through\", \"our\", \"lord\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "through-our-lord"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["exaltatione-s-crucis", "main", "Postcommunion", "all", 1]
+batch = "remaining-strict12"
+comparison_route = "same-witness-conclusion-table"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "7a472c8d124d2dcc4d1bae8954fb5dc9a5d18aed7f8b2e52a60a444e35704a35"
+english_sha256 = "a3d442c90e795113eddc33949e294e188141416f767a8e5bafb606381604bef1"
+historical_latin_sha256 = "9372efc8e4e29d3edc9252890c9e94f2efd7cd4aa3cf445b7c911baad70d2668"
+pdf_pages = [1190, 1191, 1192]
+printed_pages = ["1195", "1196", "1197"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-exaltatione-s-crucis-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"9372efc8e4e29d3edc9252890c9e94f2efd7cd4aa3cf445b7c911baad70d2668\", \"target_Latin_sha256\": \"7a472c8d124d2dcc4d1bae8954fb5dc9a5d18aed7f8b2e52a60a444e35704a35\", \"family\": \"through-our-lord\", \"person\": \"God the Father\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"per\", \"dominum\"], \"target_cue_tokens\": [\"per\", \"dominum\", \"nostrum\", \"jesum\", \"christum\", \"filium\", \"tuum\", \"qui\", \"tecum\", \"vivit\", \"et\", \"regnat\", \"in\", \"unitate\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"through\", \"our\", \"lord\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "through-our-lord"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["nativitate-domini-octave", "day", "Postcommunion", "all", 1]
+batch = "remaining-strict12"
+comparison_route = "same-witness-conclusion-table"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "959f01005caf1c72a9e22382504447c8723e6f61b41f818f3a88e7616deda780"
+english_sha256 = "e64c2a2aa19703a317688d97b31e548c2c6613566782468ff9fce587199b8f09"
+historical_latin_sha256 = "b6413f82d7c4ab105119c02d21ba96e1043eda26e0bd925bdab781e7d58d3a01"
+pdf_pages = [144, 145, 146, 147]
+printed_pages = ["143", "144", "145", "146"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.christmas-nine-principal-orations-word-collation-2026-10-20"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"b6413f82d7c4ab105119c02d21ba96e1043eda26e0bd925bdab781e7d58d3a01\", \"target_Latin_sha256\": \"959f01005caf1c72a9e22382504447c8723e6f61b41f818f3a88e7616deda780\", \"family\": \"who-with-thee\", \"person\": \"Final clause refers to our Blessed Lord\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"qui\", \"tecum\"], \"target_cue_tokens\": [\"qui\", \"tecum\", \"vivit\", \"et\", \"regnat\", \"in\", \"unitate\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"who\", \"with\", \"thee\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "who-with-thee"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["nativitate-domini-octave", "night", "Collect", "all", 1]
+batch = "remaining-strict12"
+comparison_route = "same-witness-conclusion-table"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "43cf746196c66232af49c9d4a1c2f1927e452c82869582052845c2fe1ff8d166"
+english_sha256 = "9bf930961ff2f272e098d96c2661f885c4bfd8208dfef7544f86f33afbc5f372"
+historical_latin_sha256 = "2fe047a9006d7e836c969a4bf5ca5d75b5009cf0c189230b94a8a5ad486f6332"
+pdf_pages = [138]
+printed_pages = ["137"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.christmas-nine-principal-orations-word-collation-2026-10-20"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"2fe047a9006d7e836c969a4bf5ca5d75b5009cf0c189230b94a8a5ad486f6332\", \"target_Latin_sha256\": \"43cf746196c66232af49c9d4a1c2f1927e452c82869582052845c2fe1ff8d166\", \"family\": \"who-with-thee\", \"person\": \"Final clause refers to our Blessed Lord\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"qui\", \"tecum\"], \"target_cue_tokens\": [\"qui\", \"tecum\", \"vivit\", \"et\", \"regnat\", \"in\", \"unitate\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"who\", \"with\", \"thee\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "who-with-thee"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["nativitate-domini-octave", "night", "Postcommunion", "all", 1]
+batch = "remaining-strict12"
+comparison_route = "same-witness-conclusion-table"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "53f6ace4a9b54ab897e13e4e7de8fc6ff97fff5c3f38eb5238d4ce88f0d99c7e"
+english_sha256 = "874a00adfa1ac68ae0bb38dcd10e42275be0ef284763df8031bcbe85c13aad5b"
+historical_latin_sha256 = "2b1afcc32dfa71c0fb2461de6252aec0de673e073c8f6371e49544050e4da17a"
+pdf_pages = [138, 139, 140, 141]
+printed_pages = ["137", "138", "139", "140"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.christmas-nine-principal-orations-word-collation-2026-10-20"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"2b1afcc32dfa71c0fb2461de6252aec0de673e073c8f6371e49544050e4da17a\", \"target_Latin_sha256\": \"53f6ace4a9b54ab897e13e4e7de8fc6ff97fff5c3f38eb5238d4ce88f0d99c7e\", \"family\": \"who-with-thee\", \"person\": \"Final clause refers to our Blessed Lord\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"qui\", \"tecum\"], \"target_cue_tokens\": [\"qui\", \"tecum\", \"vivit\", \"et\", \"regnat\", \"in\", \"unitate\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"who\", \"with\", \"thee\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "who-with-thee"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["nativitate-domini-octave", "night", "Secret", "all", 1]
+batch = "remaining-strict12"
+comparison_route = "same-witness-conclusion-table"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "e7e29c76ab1a0ccf0b8eb4bd35ded4431d55db9e8a9272fbdb1cef93b25528e7"
+english_sha256 = "efe6e6dba4d3f607cd9554e4ea1f109c7615b228d37ad158a4948b8e4681fdd1"
+historical_latin_sha256 = "c4b37114e15798a23ff4a9d612f010b20872e54608a4359f37766f2a74198e43"
+pdf_pages = [138, 139, 140, 141]
+printed_pages = ["137", "138", "139", "140"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.christmas-nine-principal-orations-word-collation-2026-10-20"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"c4b37114e15798a23ff4a9d612f010b20872e54608a4359f37766f2a74198e43\", \"target_Latin_sha256\": \"e7e29c76ab1a0ccf0b8eb4bd35ded4431d55db9e8a9272fbdb1cef93b25528e7\", \"family\": \"who-with-thee\", \"person\": \"Final clause refers to our Blessed Lord\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"qui\", \"tecum\"], \"target_cue_tokens\": [\"qui\", \"tecum\", \"vivit\", \"et\", \"regnat\", \"in\", \"unitate\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"who\", \"with\", \"thee\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "who-with-thee"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["pretiosissimi-sanguinis-domini-nostri-iesu-christi", "main", "Postcommunion", "all", 1]
+batch = "remaining-strict12"
+comparison_route = "same-witness-conclusion-table"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "769396568a7c49b62b1cf84f78597dc84982ff745441cf76992674b7e833ee2d"
+english_sha256 = "f6ecf3b7581a890e5e1db97e078550e3eee37e8d945e00bea83fb196e009a3e6"
+historical_latin_sha256 = "b4831a66ee0111eba7ce07a1cceda8201435df59c9fd24f97dbf7ca1e1acd8b1"
+pdf_pages = [1076, 1077, 1078, 1079, 1080]
+printed_pages = ["1083", "1084", "1085", "1086", "1087"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-pretiosissimi-sanguinis-domini-nostri-iesu-christi-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"b4831a66ee0111eba7ce07a1cceda8201435df59c9fd24f97dbf7ca1e1acd8b1\", \"target_Latin_sha256\": \"769396568a7c49b62b1cf84f78597dc84982ff745441cf76992674b7e833ee2d\", \"family\": \"who-with-thee\", \"person\": \"Final clause refers to our Blessed Lord\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"qui\", \"tecum\"], \"target_cue_tokens\": [\"qui\", \"tecum\", \"vivit\", \"et\", \"regnat\", \"in\", \"unitate\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"who\", \"with\", \"thee\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "who-with-thee"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["vigil-nativity-lord", "main", "Collect", "all", 1]
+batch = "remaining-strict12"
+comparison_route = "same-witness-conclusion-table"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "1852a226da3f9cde24d6eb680712e543ea5d889e41903fe55e5a5bf4f51cbbe3"
+english_sha256 = "d8f4ba87b2b1ab464d9ae6e60d6f4325350da2a1356e162d6c435bd25dbca7fa"
+historical_latin_sha256 = "4d4ef29c8da9ea194f4cc1be190a85ea23bad91b6fb4c84b6443ef72ba107bce"
+pdf_pages = [134, 135, 136]
+printed_pages = ["133", "134", "135"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-vigil-nativity-lord-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"4d4ef29c8da9ea194f4cc1be190a85ea23bad91b6fb4c84b6443ef72ba107bce\", \"target_Latin_sha256\": \"1852a226da3f9cde24d6eb680712e543ea5d889e41903fe55e5a5bf4f51cbbe3\", \"family\": \"who-with-thee\", \"person\": \"Final clause refers to our Blessed Lord\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"qui\", \"tecum\"], \"target_cue_tokens\": [\"qui\", \"tecum\", \"vivit\", \"et\", \"regnat\", \"in\", \"unitate\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"who\", \"with\", \"thee\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "who-with-thee"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["s-francisci-paula-confessoris", "main", "Secret", "all", 1]
+batch = "remaining-strict12"
+comparison_route = "strict"
+comparison_subroute = "strict"
+target_latin_sha256 = "72fc354689a235504aecb159bd7ddd3cd7247a79a11923cfef48fe7dd1ebc3ab"
+english_sha256 = "695c062655aa0301bcb5c66f8308ffdf42362ca4c63db7fb38af024ad2735290"
+historical_latin_sha256 = "a402583127b0a969d693071760d134ac5ebcdb436d34c9db4a1d6366f42209c0"
+pdf_pages = [966, 967]
+printed_pages = ["973", "974"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-francisci-paula-confessoris-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"strict\", \"lexical_differences\": [], \"orthography_differences\": [], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"a402583127b0a969d693071760d134ac5ebcdb436d34c9db4a1d6366f42209c0\", \"target_Latin_sha256\": \"72fc354689a235504aecb159bd7ddd3cd7247a79a11923cfef48fe7dd1ebc3ab\"}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+
+[[accepted]]
+target = ["ss-philippi-iacobi-apostolorum", "main", "Collect", "all", 1]
+batch = "remaining-strict12"
+comparison_route = "strict"
+comparison_subroute = "strict"
+target_latin_sha256 = "4992ab218209910d97ec6d47b1efa96ad20dfed68892b0c0431417f97e8dcec3"
+english_sha256 = "cc049fd8d8530a40400ff2bb9bef335d478bb97bf610aa4ba4c95046c7c8dca6"
+historical_latin_sha256 = "84fb1fe0d8fd65f8f77d88f33768d4f6904665eeb86b468a00ef3ee058346277"
+pdf_pages = [993, 994]
+printed_pages = ["1000", "1001"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-ss-philippi-iacobi-apostolorum-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"strict\", \"lexical_differences\": [], \"orthography_differences\": [], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"84fb1fe0d8fd65f8f77d88f33768d4f6904665eeb86b468a00ef3ee058346277\", \"target_Latin_sha256\": \"4992ab218209910d97ec6d47b1efa96ad20dfed68892b0c0431417f97e8dcec3\"}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+
+[[accepted]]
+target = ["ss-philippi-iacobi-apostolorum", "main", "Secret", "all", 1]
+batch = "remaining-strict12"
+comparison_route = "same-witness-conclusion-table"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "32e7b71a3d4d7462ea558aaa4bfb22351f71cc985166fa8364546a1d7de5596f"
+english_sha256 = "bdb0f12637e0859933bef4d06241faa6ffb6ef5d3c1fa8c0033e0098015d7a1f"
+historical_latin_sha256 = "182362182a0c208338851f9eb31fe8c6476371f16f67642cf362488d0f34ff78"
+pdf_pages = [993, 994, 995, 996, 997]
+printed_pages = ["1000", "1001", "1002", "1003", "1004"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-ss-philippi-iacobi-apostolorum-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"182362182a0c208338851f9eb31fe8c6476371f16f67642cf362488d0f34ff78\", \"target_Latin_sha256\": \"32e7b71a3d4d7462ea558aaa4bfb22351f71cc985166fa8364546a1d7de5596f\", \"family\": \"through-our-lord\", \"person\": \"God the Father\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"per\", \"dominum\"], \"target_cue_tokens\": [\"per\", \"dominum\", \"nostrum\", \"jesum\", \"christum\", \"filium\", \"tuum\", \"qui\", \"tecum\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"through\", \"our\", \"lord\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "through-our-lord"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["apparitione-beatae-mariae-virginis-immaculatae", "main", "Postcommunion", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "1cd943e0f6ec2671931376bd9d5e6e005fee3db064442e7f1774f32678415c52"
+english_sha256 = "9ddcd360e5d745b3f9f7994b79f06a6635c643e4d25c96be22fbf0ce3e80bd85"
+historical_latin_sha256 = "b90e4be45d86c0f4a474794a0ed51204ab0eeb3e248912cf5e7a1269df134502"
+pdf_pages = [917, 918]
+printed_pages = ["918", "919"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-apparitione-beatae-mariae-virginis-immaculatae-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 2, \"target_word_1_based\": 2, \"source\": \"coelesti\", \"target\": \"caelesti\", \"rule\": \"declared-coel-cael\"}, {\"source_word_1_based\": 8, \"target_word_1_based\": 8, \"source\": \"genitricis\", \"target\": \"genetricis\", \"rule\": \"declared-Genetrix-Genitrix-received-form\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"b90e4be45d86c0f4a474794a0ed51204ab0eeb3e248912cf5e7a1269df134502\", \"target_Latin_sha256\": \"1cd943e0f6ec2671931376bd9d5e6e005fee3db064442e7f1774f32678415c52\", \"family\": \"who-livest\", \"person\": \"Prayer addressed directly to God the Son\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"qui\", \"vivis\"], \"target_cue_tokens\": [\"qui\", \"vivis\", \"et\", \"regnas\", \"cum\", \"deo\", \"patre\", \"in\", \"unitate\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"who\", \"livest\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "who-livest"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+declared_full_source_pdf_pages = [915, 917, 918]
+declared_full_source_printed_pages = ["916", "918", "919"]
+own_appointment_context_pdf_pages = [915]
+own_appointment_context_printed_pages = ["916"]
+own_appointment_context_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orthography-remaining-orth20-context-apparitione-beatae-mariae-virginis-immaculatae--main--postcommunion--all--1"
+
+[[accepted]]
+target = ["comm-beatae-mariae-virginis-monte-carmelo", "main", "Collect", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "924126e5788c73c2e4169b17da5a4b9e40d20d15c1bc57c737cc64f60c29cc1e"
+english_sha256 = "a229750b5f3be64d899c1a1c81b6c0bc33636a21aaba15310f4f8fd5a1af01fa"
+historical_latin_sha256 = "fcea8cb3134016596136e4bf1c1c5e0696238e1d4e5e5442d981880f67b834bd"
+pdf_pages = [1099]
+printed_pages = ["1106"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-beatae-mariae-virginis-monte-carmelo-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 7, \"target_word_1_based\": 7, \"source\": \"genitricis\", \"target\": \"genetricis\", \"rule\": \"declared-Genetrix-Genitrix-received-form\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"fcea8cb3134016596136e4bf1c1c5e0696238e1d4e5e5442d981880f67b834bd\", \"target_Latin_sha256\": \"924126e5788c73c2e4169b17da5a4b9e40d20d15c1bc57c737cc64f60c29cc1e\", \"family\": \"who-livest\", \"person\": \"Prayer addressed directly to God the Son\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"qui\", \"vivis\"], \"target_cue_tokens\": [\"qui\", \"vivis\", \"et\", \"regnas\", \"cum\", \"deo\", \"patre\", \"in\", \"unitate\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"who\", \"livest\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "who-livest"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["comm-beatae-mariae-virginis-monte-carmelo", "main", "Postcommunion", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "d9674f3c5e762421f51021f092b2fa89b37ae1b5d7c18578005b0e44a8e1d6e9"
+english_sha256 = "d77253312a4bfec58d7c71954a0a20b17fd9560fe2a8de3d3a1010ca398d2395"
+historical_latin_sha256 = "38fa5e947bea012c97eb8bbfbdbaa6336d7518d21d348ce1c35dde992d898930"
+pdf_pages = [1099, 1100, 1101]
+printed_pages = ["1106", "1107", "1108"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-beatae-mariae-virginis-monte-carmelo-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 7, \"target_word_1_based\": 7, \"source\": \"genitricis\", \"target\": \"genetricis\", \"rule\": \"declared-Genetrix-Genitrix-received-form\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"38fa5e947bea012c97eb8bbfbdbaa6336d7518d21d348ce1c35dde992d898930\", \"target_Latin_sha256\": \"d9674f3c5e762421f51021f092b2fa89b37ae1b5d7c18578005b0e44a8e1d6e9\", \"family\": \"who-livest\", \"person\": \"Prayer addressed directly to God the Son\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"qui\", \"vivis\"], \"target_cue_tokens\": [\"qui\", \"vivis\", \"et\", \"regnas\", \"cum\", \"deo\", \"patre\", \"in\", \"unitate\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"who\", \"livest\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "who-livest"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["s-bernardini-senensis-confessoris", "main", "Postcommunion", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "058cd6d47f6f7348ce5e1e0dff29b0c9a028683c5b469b257794438462a6984a"
+english_sha256 = "1079cd1e921ee4800d01daf898d2ce780befe31b6a4065b528da7f39d6563a2a"
+historical_latin_sha256 = "e0c9107e9e6703c25a3e08854e41d5071a886e43483fd15739731b214f66df79"
+pdf_pages = [1371]
+printed_pages = ["1352"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-bernardini-senensis-confessoris-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 4, \"target_word_1_based\": 4, \"source\": \"coelesti\", \"target\": \"caelesti\", \"rule\": \"declared-coel-cael\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"e0c9107e9e6703c25a3e08854e41d5071a886e43483fd15739731b214f66df79\", \"target_Latin_sha256\": \"058cd6d47f6f7348ce5e1e0dff29b0c9a028683c5b469b257794438462a6984a\", \"family\": \"through-our-lord\", \"person\": \"God the Father\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"per\", \"dominum\"], \"target_cue_tokens\": [\"per\", \"dominum\", \"nostrum\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"through\", \"our\", \"lord\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "through-our-lord"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+declared_full_source_pdf_pages = [1017, 1368, 1369, 1370, 1371]
+declared_full_source_printed_pages = ["1024", "1349", "1350", "1351", "1352"]
+own_appointment_context_pdf_pages = [1017, 1368, 1369, 1370]
+own_appointment_context_printed_pages = ["1024", "1349", "1350", "1351"]
+own_appointment_context_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orthography-remaining-orth20-context-s-bernardini-senensis-confessoris--main--postcommunion--all--1"
+
+[[accepted]]
+target = ["s-francisci-paula-confessoris", "main", "Postcommunion", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "strict"
+target_latin_sha256 = "6064dbf8f994bb6d8dafe6f2393ced415b08d8658f631ac2ddf7a89baaa975fd"
+english_sha256 = "0846b3df3b1812b2f68ecd835a456fa05febae9b5f1114b08568f99f6b6a4f41"
+historical_latin_sha256 = "dedbae04078a5c6935bc8aa9a89d75fe756a8351c4715eeabcc1a48a32965b6c"
+pdf_pages = [966, 967]
+printed_pages = ["973", "974"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-francisci-paula-confessoris-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"strict\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 4, \"target_word_1_based\": 4, \"source\": \"coelestia\", \"target\": \"caelestia\", \"rule\": \"declared-coel-cael\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"dedbae04078a5c6935bc8aa9a89d75fe756a8351c4715eeabcc1a48a32965b6c\", \"target_Latin_sha256\": \"6064dbf8f994bb6d8dafe6f2393ced415b08d8658f631ac2ddf7a89baaa975fd\"}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+
+[[accepted]]
+target = ["s-hermenegildi-martyris", "main", "Collect", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "4f34d556c1a2c563c4ac1a62f33cddc9d659d94c2dcda5de35ead830c0c6a1ee"
+english_sha256 = "9cde860e566434e2145fc70eaebf370eac016d0102b7512f1eb46f075d6d488f"
+historical_latin_sha256 = "d3a0541aaa9e16db3ee7afb60789bfe927109f33c710a8566a2978cb2be20086"
+pdf_pages = [972]
+printed_pages = ["979"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-hermenegildi-martyris-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 7, \"target_word_1_based\": 7, \"source\": \"coelesti\", \"target\": \"caelesti\", \"rule\": \"declared-coel-cael\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"d3a0541aaa9e16db3ee7afb60789bfe927109f33c710a8566a2978cb2be20086\", \"target_Latin_sha256\": \"4f34d556c1a2c563c4ac1a62f33cddc9d659d94c2dcda5de35ead830c0c6a1ee\", \"family\": \"through-our-lord\", \"person\": \"God the Father\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"per\", \"dominum\"], \"target_cue_tokens\": [\"per\", \"dominum\", \"nostrum\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"through\", \"our\", \"lord\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "through-our-lord"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["s-ioannis-baptistae-la-salle-confessoris", "main", "Collect", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "strict"
+target_latin_sha256 = "823f557a2ee9b7d8ca9742e052a882df60a25eadf82fbc8c2abaa9b8e1974c45"
+english_sha256 = "76139bf564f200cd1f1fb76c42f00d22b5467a093bb0c0caa03edb91f52a9899"
+historical_latin_sha256 = "650c8e6907c69827e71b2ef60c3ac70ad7eff17ef3af50daf34ac338e8c47b13"
+pdf_pages = [1014, 1015]
+printed_pages = ["1021", "1022"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-ioannis-baptistae-la-salle-confessoris-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"strict\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 43, \"target_word_1_based\": 43, \"source\": \"coelis\", \"target\": \"caelis\", \"rule\": \"declared-coel-cael\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"650c8e6907c69827e71b2ef60c3ac70ad7eff17ef3af50daf34ac338e8c47b13\", \"target_Latin_sha256\": \"823f557a2ee9b7d8ca9742e052a882df60a25eadf82fbc8c2abaa9b8e1974c45\"}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+
+[[accepted]]
+target = ["s-ioannis-baptistae-la-salle-confessoris", "main", "Postcommunion", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "058cd6d47f6f7348ce5e1e0dff29b0c9a028683c5b469b257794438462a6984a"
+english_sha256 = "1079cd1e921ee4800d01daf898d2ce780befe31b6a4065b528da7f39d6563a2a"
+historical_latin_sha256 = "e0c9107e9e6703c25a3e08854e41d5071a886e43483fd15739731b214f66df79"
+pdf_pages = [1371]
+printed_pages = ["1352"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-ioannis-baptistae-la-salle-confessoris-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 4, \"target_word_1_based\": 4, \"source\": \"coelesti\", \"target\": \"caelesti\", \"rule\": \"declared-coel-cael\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"e0c9107e9e6703c25a3e08854e41d5071a886e43483fd15739731b214f66df79\", \"target_Latin_sha256\": \"058cd6d47f6f7348ce5e1e0dff29b0c9a028683c5b469b257794438462a6984a\", \"family\": \"through-our-lord\", \"person\": \"God the Father\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"per\", \"dominum\"], \"target_cue_tokens\": [\"per\", \"dominum\", \"nostrum\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"through\", \"our\", \"lord\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "through-our-lord"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+declared_full_source_pdf_pages = [1014, 1015, 1368, 1369, 1370, 1371]
+declared_full_source_printed_pages = ["1021", "1022", "1349", "1350", "1351", "1352"]
+own_appointment_context_pdf_pages = [1014, 1015, 1368, 1369, 1370]
+own_appointment_context_printed_pages = ["1021", "1022", "1349", "1350", "1351"]
+own_appointment_context_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orthography-remaining-orth20-context-s-ioannis-baptistae-la-salle-confessoris--main--postcommunion--all--1"
+
+[[accepted]]
+target = ["s-ioannis-capistrano-confessoris", "main", "Postcommunion", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "strict"
+target_latin_sha256 = "2bf74fe89b49d2916507e8bc2d8151897d9490b65663d607b869196198327b84"
+english_sha256 = "729030e25da078d1859d3555614546a737e1194890e786405a9db392205ca857"
+historical_latin_sha256 = "768dcadcad31ab162019762d29465cf885da6b627cede2e838f35cbcfc419281"
+pdf_pages = [956, 957, 958, 959]
+printed_pages = ["963", "964", "965", "966"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-ioannis-capistrano-confessoris-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"strict\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 3, \"target_word_1_based\": 3, \"source\": \"coelesti\", \"target\": \"caelesti\", \"rule\": \"declared-coel-cael\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"768dcadcad31ab162019762d29465cf885da6b627cede2e838f35cbcfc419281\", \"target_Latin_sha256\": \"2bf74fe89b49d2916507e8bc2d8151897d9490b65663d607b869196198327b84\"}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+
+[[accepted]]
+target = ["s-iustini-martyris", "main", "Postcommunion", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "strict"
+target_latin_sha256 = "5f746b0a4384ae2366e1b285d3e49ca35489dfed397e2eb34a8aa689420063da"
+english_sha256 = "76ae840b0d95212e70d1d11548fa57b20c5ab80f15cf2a649b05b348a0819901"
+historical_latin_sha256 = "f0db06e2973f6e4a5c27df5490d619cf1cb8cf00e8a176d9a8f3096f652a7f52"
+pdf_pages = [976, 977]
+printed_pages = ["983", "984"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-iustini-martyris-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"strict\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 1, \"target_word_1_based\": 1, \"source\": \"coelesti\", \"target\": \"caelesti\", \"rule\": \"declared-coel-cael\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"f0db06e2973f6e4a5c27df5490d619cf1cb8cf00e8a176d9a8f3096f652a7f52\", \"target_Latin_sha256\": \"5f746b0a4384ae2366e1b285d3e49ca35489dfed397e2eb34a8aa689420063da\"}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+declared_full_source_pdf_pages = [972, 976, 977]
+declared_full_source_printed_pages = ["979", "983", "984"]
+own_appointment_context_pdf_pages = [972]
+own_appointment_context_printed_pages = ["979"]
+own_appointment_context_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orthography-remaining-orth20-context-s-iustini-martyris--main--postcommunion--all--1"
+
+[[accepted]]
+target = ["s-philippi-nerii-confessoris", "main", "Postcommunion", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "strict"
+target_latin_sha256 = "40293ca2f86c9433e4bed6893cdb3278418fad1264bf341781e4a3e80223fb2a"
+english_sha256 = "5674f351a758c2a8db28f89f65879de9d95901f96ccfccc6af391fd377c5bb2a"
+historical_latin_sha256 = "a446141dab458e6ae6b96c16385ab19d02f1a3c990a2476228bc9525c8568aab"
+pdf_pages = [1019, 1020, 1021]
+printed_pages = ["1026", "1027", "1028"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-philippi-nerii-confessoris-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"strict\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 1, \"target_word_1_based\": 1, \"source\": \"coelestibus\", \"target\": \"caelestibus\", \"rule\": \"declared-coel-cael\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"a446141dab458e6ae6b96c16385ab19d02f1a3c990a2476228bc9525c8568aab\", \"target_Latin_sha256\": \"40293ca2f86c9433e4bed6893cdb3278418fad1264bf341781e4a3e80223fb2a\"}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+
+[[accepted]]
+target = ["visitatione-beatae-mariae-virginis", "main", "Collect", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "strict"
+target_latin_sha256 = "3eb4ba042b9b66601a32afb081a07ad9c40264d89c8f28244b312fe183c2891c"
+english_sha256 = "9bb66cff699f1d20b43e6d836385d473ba951899672aeb6ac402f107c4c4e1a4"
+historical_latin_sha256 = "11dcf3badc30cfafd21ddb07cf4050b89de3d9e0b04410ec8eb8e872704fe040"
+pdf_pages = [1080]
+printed_pages = ["1087"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-visitatione-beatae-mariae-virginis-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"strict\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 5, \"target_word_1_based\": 5, \"source\": \"coelestis\", \"target\": \"caelestis\", \"rule\": \"declared-coel-cael\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"11dcf3badc30cfafd21ddb07cf4050b89de3d9e0b04410ec8eb8e872704fe040\", \"target_Latin_sha256\": \"3eb4ba042b9b66601a32afb081a07ad9c40264d89c8f28244b312fe183c2891c\"}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+
+[[accepted]]
+target = ["beatae-mariae-virginis-a-rosario", "main", "Postcommunion", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "cbf847be295d419274bb665ad284c14f1021ca49fed8be632dddb9b421a00fa5"
+english_sha256 = "63248d3a79ecd4047b632723bc6bcea57ee2f978390362477f9a14c8264fbb30"
+historical_latin_sha256 = "a8d383bae86f24546cb4583ea4f90d76948203f44e7c2e1898f761a7c17d7177"
+pdf_pages = [1220, 1221, 1222, 1223, 1224]
+printed_pages = ["1225", "1226", "1227", "1228", "1229"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-beatae-mariae-virginis-a-rosario-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 2, \"target_word_1_based\": 2, \"source\": \"genitricis\", \"target\": \"genetricis\", \"rule\": \"declared-Genetrix-Genitrix-received-form\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"a8d383bae86f24546cb4583ea4f90d76948203f44e7c2e1898f761a7c17d7177\", \"target_Latin_sha256\": \"cbf847be295d419274bb665ad284c14f1021ca49fed8be632dddb9b421a00fa5\", \"family\": \"who-livest\", \"person\": \"Prayer addressed directly to God the Son\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"qui\", \"vivis\"], \"target_cue_tokens\": [\"qui\", \"vivis\", \"et\", \"regnas\", \"cum\", \"deo\", \"patre\", \"in\", \"unitate\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"who\", \"livest\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "who-livest"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["conceptione-immaculata-beatae-mariae-virginis", "main", "Secret", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "strict"
+target_latin_sha256 = "6755a936e24660ef77e7c0ceffba13c28d21a82cc941bf8fb9ba5b57863f31a9"
+english_sha256 = "f8454e341de2bf920c81a4317581876edc14e7bac94831d25e18d24ea518fe49"
+historical_latin_sha256 = "e05800af668a697fa1b1f6a1e454a334e9b6f9700d2da35f8ea5dca0760c39d8"
+pdf_pages = [850, 851, 852, 853]
+printed_pages = ["851", "852", "853", "854"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.immaculate-conception-selected-feast-four-propers-word-collation-2026-10-20"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"strict\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 29, \"target_word_1_based\": 29, \"source\": \"ejus\", \"target\": \"eius\", \"rule\": \"declared-consonantal-i-j-including-Alleluja\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"e05800af668a697fa1b1f6a1e454a334e9b6f9700d2da35f8ea5dca0760c39d8\", \"target_Latin_sha256\": \"6755a936e24660ef77e7c0ceffba13c28d21a82cc941bf8fb9ba5b57863f31a9\"}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+
+[[accepted]]
+target = ["sanctissimi-nominis-beatae-mariae-virginis", "main", "Collect", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "strict"
+target_latin_sha256 = "fed60d2ab90097a00e036de689ed52691268187b138b648f8e05f3f0f8adcaed"
+english_sha256 = "92efa03ed6cb3bacc26c805cb6a935ee833918ced8baac9f20dda2430fd607be"
+historical_latin_sha256 = "0c6d612fc9308e28f2f9417a0376834ae278c4998cdfcea972fc87506021ff36"
+pdf_pages = [1188, 1189]
+printed_pages = ["1193", "1194"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-sanctissimi-nominis-beatae-mariae-virginis-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"strict\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 33, \"target_word_1_based\": 33, \"source\": \"coelis\", \"target\": \"caelis\", \"rule\": \"declared-coel-cael\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"0c6d612fc9308e28f2f9417a0376834ae278c4998cdfcea972fc87506021ff36\", \"target_Latin_sha256\": \"fed60d2ab90097a00e036de689ed52691268187b138b648f8e05f3f0f8adcaed\"}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+
+[[accepted]]
+target = ["comm-s-valentini-presbyteri-martyris", "main", "Postcommunion", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "strict"
+target_latin_sha256 = "b2a6baa0d26541e8a02fdee4579a1c3c4ff4d62060fa478c3029bdaefc629b5c"
+english_sha256 = "536d7992af7329cc53c96bd552a25ff39956a0e0721d0369d7cdae1badfb8c3c"
+historical_latin_sha256 = "624fb9dc7dbb894e7309e36e943bdd278e91ed6677c6113b12fa2e454054ec95"
+pdf_pages = [922]
+printed_pages = ["923"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-s-valentini-presbyteri-martyris-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"strict\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 8, \"target_word_1_based\": 8, \"source\": \"coeleste\", \"target\": \"caeleste\", \"rule\": \"declared-coel-cael\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"624fb9dc7dbb894e7309e36e943bdd278e91ed6677c6113b12fa2e454054ec95\", \"target_Latin_sha256\": \"b2a6baa0d26541e8a02fdee4579a1c3c4ff4d62060fa478c3029bdaefc629b5c\"}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+
+[[accepted]]
+target = ["s-agnetis-virginis-martyris", "main", "Postcommunion", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "058cd6d47f6f7348ce5e1e0dff29b0c9a028683c5b469b257794438462a6984a"
+english_sha256 = "b4c7e9cdfd80465b448034d8c8fc7a4dd9becee055b698a8d889cd17066ee871"
+historical_latin_sha256 = "3a91523453e4e30a83f1a63c49fb3e503f64e7a1496ee557d8904ef94f5302e3"
+pdf_pages = [881]
+printed_pages = ["882"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-agnetis-virginis-martyris-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 4, \"target_word_1_based\": 4, \"source\": \"coelesti\", \"target\": \"caelesti\", \"rule\": \"declared-coel-cael\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"3a91523453e4e30a83f1a63c49fb3e503f64e7a1496ee557d8904ef94f5302e3\", \"target_Latin_sha256\": \"058cd6d47f6f7348ce5e1e0dff29b0c9a028683c5b469b257794438462a6984a\", \"family\": \"through-our-lord\", \"person\": \"God the Father\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"per\", \"dominum\"], \"target_cue_tokens\": [\"per\", \"dominum\", \"nostrum\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"through\", \"our\", \"lord\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "through-our-lord"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["s-gabrielis-a-virgine-perdolente-confessoris", "main", "Collect", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "0e9a516c928eab56050a4fb624c028055096e88910fa76e7d8aa119b2733a681"
+english_sha256 = "33f97c0250c9837d149221867f64fb12c9e596032e860263305e959933b183b9"
+historical_latin_sha256 = "8740e07b8b7caba5dbae0d0210950fb7744f205490e327233f45216753827d8d"
+pdf_pages = [932]
+printed_pages = ["933"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-gabrielis-a-virgine-perdolente-confessoris-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 27, \"target_word_1_based\": 27, \"source\": \"genitricis\", \"target\": \"genetricis\", \"rule\": \"declared-Genetrix-Genitrix-received-form\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"8740e07b8b7caba5dbae0d0210950fb7744f205490e327233f45216753827d8d\", \"target_Latin_sha256\": \"0e9a516c928eab56050a4fb624c028055096e88910fa76e7d8aa119b2733a681\", \"family\": \"who-livest\", \"person\": \"Prayer addressed directly to God the Son\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"qui\", \"vivis\"], \"target_cue_tokens\": [\"qui\", \"vivis\", \"et\", \"regnas\", \"cum\", \"deo\", \"patre\", \"in\", \"unitate\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"who\", \"livest\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "who-livest"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["ss-vincentii-anastasii-martyrum", "main", "Postcommunion", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "strict"
+target_latin_sha256 = "6b79c3cf29c8f536f3fb38142292972c223482a8ed6e135ac731b2623a0e10f4"
+english_sha256 = "7b866e5d759de16fcd6e7dc19b7467ec3dc94b18b27f46e65d0c6f1986f4b119"
+historical_latin_sha256 = "e3a2572a80acec55636996d9fbb8d0b3f91c6cbccc5dd0ac2fb31fa39da6a422"
+pdf_pages = [882]
+printed_pages = ["883"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-ss-vincentii-anastasii-martyrum-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"strict\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 6, \"target_word_1_based\": 6, \"source\": \"coelestia\", \"target\": \"caelestia\", \"rule\": \"declared-coel-cael\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"e3a2572a80acec55636996d9fbb8d0b3f91c6cbccc5dd0ac2fb31fa39da6a422\", \"target_Latin_sha256\": \"6b79c3cf29c8f536f3fb38142292972c223482a8ed6e135ac731b2623a0e10f4\"}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+
+[[accepted]]
+target = ["s-catharinae-senensis-virginis", "main", "Postcommunion", "all", 1]
+batch = "remaining-orth20"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "same-witness-conclusion-table"
+target_latin_sha256 = "200db2470368836607584b486f573c2b97cc1e1d6305ab7674eeb6a9bc5ec68e"
+english_sha256 = "4f0f4ac796b480cdd505edc3b04183be14b1a74b3a4cae366efa632b0a6c1e3a"
+historical_latin_sha256 = "332d095ebe3032c1c8cd44b2a1982d30ca3cdbc08d5744e33e27ded8f87cef05"
+pdf_pages = [989, 990]
+printed_pages = ["996", "997"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-catharinae-senensis-virginis-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"same-witness-conclusion-table\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 9, \"target_word_1_based\": 9, \"source\": \"coelestis\", \"target\": \"caelestis\", \"rule\": \"declared-coel-cael\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"332d095ebe3032c1c8cd44b2a1982d30ca3cdbc08d5744e33e27ded8f87cef05\", \"target_Latin_sha256\": \"200db2470368836607584b486f573c2b97cc1e1d6305ab7674eeb6a9bc5ec68e\", \"family\": \"through-our-lord\", \"person\": \"God the Father\", \"table_pdf_page\": 818, \"table_printed_page\": \"819\", \"historical_cue_tokens\": [\"per\", \"dominum\"], \"target_cue_tokens\": [\"per\", \"dominum\", \"nostrum\"], \"target_response_tokens\": [], \"actual_English_cue_tokens\": [\"through\", \"our\", \"lord\"]}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+table_family = "through-our-lord"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
+[[accepted]]
+target = ["s-ioannis-damasceni-confessoris-ecclesiae-doctoris", "main", "Collect", "all", 1]
+batch = "remaining-orth1946-1"
+comparison_route = "declared-orthography-own-appointment"
+comparison_subroute = "strict"
+target_latin_sha256 = "a53a75284d113537500ca47db7921d2e38c656e96e720d66a5a7a62713a0af84"
+english_sha256 = "f998f8ff02e04621b6584ab192d843d39e6996f3fe6cb5dd930a918380deb329"
+historical_latin_sha256 = "6086dbdff7055b38cb562ede4fc908d942d05fe4d267025c0be7da5fd7b178f8"
+pdf_pages = [969]
+printed_pages = ["959"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-ioannis-damasceni-confessoris-ecclesiae-doctoris-orations"
+comparison_method_date = "2026-10-23"
+recorded_complete_petition_and_actual_ending_json = "{\"subroute\": \"strict\", \"lexical_differences\": [], \"orthography_differences\": [{\"source_word_1_based\": 12, \"target_word_1_based\": 12, \"source\": \"coelesti\", \"target\": \"caelesti\", \"rule\": \"declared-coel-cael\"}], \"donor_fanout\": false, \"source_historical_Latin_sha256\": \"6086dbdff7055b38cb562ede4fc908d942d05fe4d267025c0be7da5fd7b178f8\", \"target_Latin_sha256\": \"a53a75284d113537500ca47db7921d2e38c656e96e720d66a5a7a62713a0af84\"}"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+
+[[accepted]]
+target = ["nativitate-domini-octave", "day", "Collect", "all", 1]
+batch = "christmas-day-one-20261023"
+comparison_route = "lexically-attested-own-appointment"
+comparison_subroute = "exact-one-target-complete-formula-separate-unicode-response"
+target_latin_sha256 = "56acab1dd52c97f54e612270f44534e3372c3ad3ffee7fc49f6ce12ec97a54ad"
+english_sha256 = "b5ae925b8a004e08cdf3376f0dc20b4f1cc3af19d0c31d3dbd2824f3d24fa706"
+historical_latin_sha256 = "90c6061d95f7dca118492c0c63e071647f5e63975201cfbb283f393ce5c98d8a"
+pdf_pages = [144, 145]
+printed_pages = ["143", "144"]
+target_verification_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.christmas-nine-principal-orations-word-collation-2026-10-20"
+comparison_method_date = "2026-10-23"
+recorded_lexical_context_json = "[{\"source\": \"eumdem\", \"target\": \"eundem\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"idem\", \"part_of_speech\": \"demonstrative pronoun/adjective\", \"gender\": \"masculine\", \"number\": \"singular\", \"case\": \"accusative\"}, \"contextual_parse_evidence\": \"Target eundem agrees with explicit accusative masculine singular Dominum after per. Source eumdem is the unambiguous accusative masculine singular and is an explicit abbreviated Per eumdem cue identified by this same witness’s complete Per eumdem Dominum formula. Both petitions address almighty God and name Unigeniti tui; no eiusdem or person/case conflation.\", \"lexical_passage_ids\": [\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem\"], \"source_word_index_zero_based\": 21, \"target_word_index_zero_based\": 21}]"
+recorded_orthography_json = "[]"
+donor_fanout = false
+source_edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+source_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+comparison_boundary_decision_id = "christmas-day-collect-exact-separate-response-2026-10-23"
+comparison_boundary_source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-christmas-one-decision-46500b9a"
+comparison_public_proof_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-christmas-one-proof-396bf3de"
+comparison_public_proof_sha256 = "396bf3deb6add79f67de18c0fed6259f82156f345ad3daa4a88f8bc87edb8858"
+recorded_response_boundary_json = "{\"literal\": \"℟. Amen.\\n\", \"utf8_hex\": \"e2849f2e20416d656e2e0a\", \"byte_offset_0based\": 285, \"byte_extent\": 11, \"byte_end_exclusive\": 296, \"original_bytes_preserved\": true, \"ASCII_transliteration_performed\": false, \"English_response_added\": false, \"actor_inferred\": false}"
+table_family = "through-the-same"
+table_pdf_page = 818
+table_printed_page = "819"
+table_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+table_artifact_sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+english_treatment = "Literal own-source English and actual cue; unexpanded"
+
 [[rejected_comparisons]]
 target = ["pentecost-2", "main", "Collect", "all", 1]
 source_artifact_sha256 = "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70"
@@ -24530,12 +25710,6 @@ latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
 [[remaining_groups]]
-target_latin_sha256 = "058cd6d47f6f7348ce5e1e0dff29b0c9a028683c5b469b257794438462a6984a"
-targets = [["s-agnetis-virginis-martyris", "main", "Postcommunion", "all", 1], ["s-bernardini-senensis-confessoris", "main", "Postcommunion", "all", 1], ["s-ioannis-baptistae-la-salle-confessoris", "main", "Postcommunion", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
 target_latin_sha256 = "065c6887ffea243726b7fdc716b379c1088d2c2e523e30009d742cfaa18a379b"
 targets = [["s-ignatii-episcopi-martyris", "main", "Postcommunion", "all", 1]]
 latin_state = "held"
@@ -24586,12 +25760,6 @@ english_source_review = "not-established-by-this-batch"
 [[remaining_groups]]
 target_latin_sha256 = "0e09c19929b2682cf4d6fb415749b44c3f7aa3679464abb4e18ac9d2dee15fe1"
 targets = [["s-ioachim-patris-beatae-mariae-virginis", "main", "Secret", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "0e9a516c928eab56050a4fb624c028055096e88910fa76e7d8aa119b2733a681"
-targets = [["s-gabrielis-a-virgine-perdolente-confessoris", "main", "Collect", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -24668,12 +25836,6 @@ latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
 [[remaining_groups]]
-target_latin_sha256 = "1852a226da3f9cde24d6eb680712e543ea5d889e41903fe55e5a5bf4f51cbbe3"
-targets = [["vigil-nativity-lord", "main", "Collect", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
 target_latin_sha256 = "188d2be3aa23062412ef633dbae62f8b1b909a29203f6b734a4cdc9b6b232cb1"
 targets = [["s-gregorii-thaumaturgi-episcopi-confessoris", "main", "Collect", "all", 1]]
 latin_state = "held"
@@ -24698,12 +25860,6 @@ latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
 [[remaining_groups]]
-target_latin_sha256 = "1cd943e0f6ec2671931376bd9d5e6e005fee3db064442e7f1774f32678415c52"
-targets = [["apparitione-beatae-mariae-virginis-immaculatae", "main", "Postcommunion", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
 target_latin_sha256 = "1d92213456735f1d25223bb80ba90f80a65baeaa31219c9a0f11bbfc1fdb8584"
 targets = [["s-petri-chrysologi-episcopi-confessoris-ecclesiae", "main", "Postcommunion", "all", 1]]
 latin_state = "held"
@@ -24716,20 +25872,8 @@ latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
 [[remaining_groups]]
-target_latin_sha256 = "200db2470368836607584b486f573c2b97cc1e1d6305ab7674eeb6a9bc5ec68e"
-targets = [["s-catharinae-senensis-virginis", "main", "Postcommunion", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
 target_latin_sha256 = "20c9af3a72d7ffb4ae746c3a2c52962c3b2e9dfb33a308431eaee3cd52646001"
 targets = [["commune-unius-martyris-3", "main", "Collect", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "2121835b24465e15221a0eb4d00a9d00db59b5120deb7b3103696e13a5c49f48"
-targets = [["comm-s-petri-apostoli", "main", "Postcommunion", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -24806,12 +25950,6 @@ latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
 [[remaining_groups]]
-target_latin_sha256 = "2bf74fe89b49d2916507e8bc2d8151897d9490b65663d607b869196198327b84"
-targets = [["s-ioannis-capistrano-confessoris", "main", "Postcommunion", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
 target_latin_sha256 = "2c627d20091cc66a7526d2600770202f08b59e357575c8db5fda04f7c4d09e3a"
 targets = [["s-augustini-episcopi-confessoris-ecclesiae-doctoris", "main", "Postcommunion", "all", 1]]
 latin_state = "held"
@@ -24844,12 +25982,6 @@ english_source_review = "not-established-by-this-batch"
 [[remaining_groups]]
 target_latin_sha256 = "32bf99fe1c99f27776f1d8ca929af7ce3e70acf9fba4e6dbc108c35658367241"
 targets = [["pentecost-ember-wednesday", "main", "Collect", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "32e7b71a3d4d7462ea558aaa4bfb22351f71cc985166fa8364546a1d7de5596f"
-targets = [["ss-philippi-iacobi-apostolorum", "main", "Secret", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -24890,20 +26022,8 @@ latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
 [[remaining_groups]]
-target_latin_sha256 = "3eb4ba042b9b66601a32afb081a07ad9c40264d89c8f28244b312fe183c2891c"
-targets = [["visitatione-beatae-mariae-virginis", "main", "Collect", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
 target_latin_sha256 = "3eeef603999b6ead72e83f1efcf9b2ea5b4bfe3fb317cb356d3dcba1a3446adb"
 targets = [["s-alfonsi-mariae-ligorio-episcopi-confessoris", "main", "Postcommunion", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "40293ca2f86c9433e4bed6893cdb3278418fad1264bf341781e4a3e80223fb2a"
-targets = [["s-philippi-nerii-confessoris", "main", "Postcommunion", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -24922,12 +26042,6 @@ english_source_review = "not-established-by-this-batch"
 [[remaining_groups]]
 target_latin_sha256 = "436baaecd84d3f42bd478e024ea1779afadb1fb79a0f619314dfc7426c67cbaa"
 targets = [["comm-s-valentini-presbyteri-martyris", "main", "Collect", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "43cf746196c66232af49c9d4a1c2f1927e452c82869582052845c2fe1ff8d166"
-targets = [["nativitate-domini-octave", "night", "Collect", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -24956,12 +26070,6 @@ latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
 [[remaining_groups]]
-target_latin_sha256 = "4992ab218209910d97ec6d47b1efa96ad20dfed68892b0c0431417f97e8dcec3"
-targets = [["ss-philippi-iacobi-apostolorum", "main", "Collect", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
 target_latin_sha256 = "4a3f6c7bc60cea967f7e201ac4265b91fbe061f3fd16487cb991269e0bc9d062"
 targets = [["epiphania-domini", "main", "Collect", "all", 1]]
 latin_state = "held"
@@ -24976,12 +26084,6 @@ english_source_review = "not-established-by-this-batch"
 [[remaining_groups]]
 target_latin_sha256 = "4beeffcce351f10c0318560a3072f37c3e50ddce5221062f849137cb957f3e05"
 targets = [["s-timothei-episcopi-martyris", "main", "Collect", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "4f34d556c1a2c563c4ac1a62f33cddc9d659d94c2dcda5de35ead830c0c6a1ee"
-targets = [["s-hermenegildi-martyris", "main", "Collect", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -25006,12 +26108,6 @@ english_source_review = "not-established-by-this-batch"
 [[remaining_groups]]
 target_latin_sha256 = "52805a41b0b2518a1add9fd9115b21f6c6d603bb2bcd5bc6674bf62c9beb76c9"
 targets = [["holy-tuesday", "main", "Collect", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "53f6ace4a9b54ab897e13e4e7de8fc6ff97fff5c3f38eb5238d4ce88f0d99c7e"
-targets = [["nativitate-domini-octave", "night", "Postcommunion", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -25042,12 +26138,6 @@ english_source_review = "not-established-by-this-batch"
 [[remaining_groups]]
 target_latin_sha256 = "5645ce4b211974872761201de670697b79cc5c637022e01665c760f878c839d2"
 targets = [["conversione-s-pauli-apostoli", "main", "Secret", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "56acab1dd52c97f54e612270f44534e3372c3ad3ffee7fc49f6ce12ec97a54ad"
-targets = [["nativitate-domini-octave", "day", "Collect", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -25136,20 +26226,8 @@ latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
 [[remaining_groups]]
-target_latin_sha256 = "5f746b0a4384ae2366e1b285d3e49ca35489dfed397e2eb34a8aa689420063da"
-targets = [["s-iustini-martyris", "main", "Postcommunion", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
 target_latin_sha256 = "5fc1c7279e05899dedb0e9d5445b56b3abb3686800344617dc64ec87aaf1829a"
 targets = [["transfiguratione-domini-nostri-iesu-christi", "main", "Secret", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "6064dbf8f994bb6d8dafe6f2393ced415b08d8658f631ac2ddf7a89baaa975fd"
-targets = [["s-francisci-paula-confessoris", "main", "Postcommunion", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -25190,12 +26268,6 @@ latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
 [[remaining_groups]]
-target_latin_sha256 = "6755a936e24660ef77e7c0ceffba13c28d21a82cc941bf8fb9ba5b57863f31a9"
-targets = [["conceptione-immaculata-beatae-mariae-virginis", "main", "Secret", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
 target_latin_sha256 = "6911e4704ca86b71ac314baa9ac7eb099c411b91614ecd67c9fa9c3c1416d699"
 targets = [["commune-doctorum-non-pontificis", "main", "Postcommunion", "all", 1]]
 latin_state = "held"
@@ -25216,12 +26288,6 @@ english_source_review = "not-established-by-this-batch"
 [[remaining_groups]]
 target_latin_sha256 = "6b6b31975c3f0e0cf8a75abebc5dee23d0a50b1909f4d50e90c9e98ec92af5b7"
 targets = [["s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris", "main", "Postcommunion", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "6b79c3cf29c8f536f3fb38142292972c223482a8ed6e135ac731b2623a0e10f4"
-targets = [["ss-vincentii-anastasii-martyrum", "main", "Postcommunion", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -25274,12 +26340,6 @@ latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
 [[remaining_groups]]
-target_latin_sha256 = "72fc354689a235504aecb159bd7ddd3cd7247a79a11923cfef48fe7dd1ebc3ab"
-targets = [["s-francisci-paula-confessoris", "main", "Secret", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
 target_latin_sha256 = "74502b8c7c784423dc10e8c2bd4fae0dfe865c7301ade470b17a3c53210fc3fb"
 targets = [["comm-s-sabbae-abbatis", "main", "Collect", "all", 1]]
 latin_state = "held"
@@ -25294,18 +26354,6 @@ english_source_review = "not-established-by-this-batch"
 [[remaining_groups]]
 target_latin_sha256 = "76533c5879f838e218a947f66800c14748f888bcf7bdda0b2b6fe3fcfe859967"
 targets = [["pentecost-20", "main", "Postcommunion", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "769396568a7c49b62b1cf84f78597dc84982ff745441cf76992674b7e833ee2d"
-targets = [["pretiosissimi-sanguinis-domini-nostri-iesu-christi", "main", "Postcommunion", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "7a472c8d124d2dcc4d1bae8954fb5dc9a5d18aed7f8b2e52a60a444e35704a35"
-targets = [["exaltatione-s-crucis", "main", "Postcommunion", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -25358,20 +26406,8 @@ latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
 [[remaining_groups]]
-target_latin_sha256 = "80d5f4e03a555f6707332ed17fa4091e03b5186c98cb021504016107cf60b7fa"
-targets = [["s-titi-episcopi-confessoris", "main", "Secret", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
 target_latin_sha256 = "815291a3598483dea16d126aee13e70a5668bcbeee7e0ff9fe9c12c22400dc29"
 targets = [["commemoratione-baptismatis-domini-nostri-iesu-christi", "main", "Postcommunion", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "823f557a2ee9b7d8ca9742e052a882df60a25eadf82fbc8c2abaa9b8e1974c45"
-targets = [["s-ioannis-baptistae-la-salle-confessoris", "main", "Collect", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -25472,12 +26508,6 @@ latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
 [[remaining_groups]]
-target_latin_sha256 = "924126e5788c73c2e4169b17da5a4b9e40d20d15c1bc57c737cc64f60c29cc1e"
-targets = [["comm-beatae-mariae-virginis-monte-carmelo", "main", "Collect", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
 target_latin_sha256 = "930d2a1efd6953449a0b2ca03ad38af696e56035d64bc75b88b1e89e62a06f65"
 targets = [["comm-ss-faustini-iovitae-martyrum", "main", "Secret", "all", 1]]
 latin_state = "held"
@@ -25492,12 +26522,6 @@ english_source_review = "not-established-by-this-batch"
 [[remaining_groups]]
 target_latin_sha256 = "9494beb0e946c834aee935f957f4194a507dd5911eb5fa6de6fa806c00a843ca"
 targets = [["advent-2", "main", "Collect", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "959f01005caf1c72a9e22382504447c8723e6f61b41f818f3a88e7616deda780"
-targets = [["nativitate-domini-octave", "day", "Postcommunion", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -25552,12 +26576,6 @@ english_source_review = "not-established-by-this-batch"
 [[remaining_groups]]
 target_latin_sha256 = "a38026d2ecc085e3af8696e19a7979d14ca4ac63525c9c3f552df7b004a953df"
 targets = [["s-francisci-borgiae-confessoris", "main", "Postcommunion", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "a53a75284d113537500ca47db7921d2e38c656e96e720d66a5a7a62713a0af84"
-targets = [["s-ioannis-damasceni-confessoris-ecclesiae-doctoris", "main", "Collect", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -25636,12 +26654,6 @@ english_source_review = "not-established-by-this-batch"
 [[remaining_groups]]
 target_latin_sha256 = "b1c7bd9afb6473bf73cd9b63a404108f31e2c665a72de40c9b5eb16af232e7ed"
 targets = [["lent-4-saturday", "main", "Collect", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "b2a6baa0d26541e8a02fdee4579a1c3c4ff4d62060fa478c3029bdaefc629b5c"
-targets = [["comm-s-valentini-presbyteri-martyris", "main", "Postcommunion", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -25796,12 +26808,6 @@ latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
 [[remaining_groups]]
-target_latin_sha256 = "cbf847be295d419274bb665ad284c14f1021ca49fed8be632dddb9b421a00fa5"
-targets = [["beatae-mariae-virginis-a-rosario", "main", "Postcommunion", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
 target_latin_sha256 = "cbfe896505fd560a713fcfdc4bf0fbea2f01768b17d5429d965e6afe25ada8f4"
 targets = [["commune-unius-martyris-1", "main", "Secret", "all", 1]]
 latin_state = "held"
@@ -25858,12 +26864,6 @@ english_source_review = "not-established-by-this-batch"
 [[remaining_groups]]
 target_latin_sha256 = "d7ff4d9890fa65ebaad78475b232116e933ddff39aae32ee9e50698940f1832a"
 targets = [["pentecost-tuesday", "main", "Postcommunion", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "d9674f3c5e762421f51021f092b2fa89b37ae1b5d7c18578005b0e44a8e1d6e9"
-targets = [["comm-beatae-mariae-virginis-monte-carmelo", "main", "Postcommunion", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
@@ -25964,12 +26964,6 @@ latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 
 [[remaining_groups]]
-target_latin_sha256 = "e7e29c76ab1a0ccf0b8eb4bd35ded4431d55db9e8a9272fbdb1cef93b25528e7"
-targets = [["nativitate-domini-octave", "night", "Secret", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
 target_latin_sha256 = "e80327a44fdc784f48d4b8661619cd4e4722b7359cf9914fea8633acdac27441"
 targets = [["s-basilii-magni-episcopi-confessoris-ecclesiae", "main", "Collect", "all", 1]]
 latin_state = "held"
@@ -26062,12 +27056,6 @@ english_source_review = "not-established-by-this-batch"
 [[remaining_groups]]
 target_latin_sha256 = "fd5d9eff97985f676a6f42b092659a8581991fc3bcc77ba47a4d8f9fc421797d"
 targets = [["cathedrae-s-petri-apostoli", "main", "Secret", "all", 1]]
-latin_state = "held"
-english_source_review = "not-established-by-this-batch"
-
-[[remaining_groups]]
-target_latin_sha256 = "fed60d2ab90097a00e036de689ed52691268187b138b648f8e05f3f0f8adcaed"
-targets = [["sanctissimi-nominis-beatae-mariae-virginis", "main", "Collect", "all", 1]]
 latin_state = "held"
 english_source_review = "not-established-by-this-batch"
 

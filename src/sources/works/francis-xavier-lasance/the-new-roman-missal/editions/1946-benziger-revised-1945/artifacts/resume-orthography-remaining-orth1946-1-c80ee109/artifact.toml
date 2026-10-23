@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-orthography-remaining-orth1946-1-c80ee109"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The ordinary English expression of the 1937 and 1945 registered editions is United States public domain by nonrenewal of A 110108 and A 192159, as established in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. The actual title and copyright images identify this physical book as the 1946 printing with the 1937/1945 copyright statement. That is the basis for independently transcribed ordinary-page words, not a host public-domain label. These exact whole PDF bytes include Google digitization framing, page marks and library material for which no repository redistribution basis was established; whole bytes are not tracked or served. No permission for every unexamined constituent is inferred."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+provenance = "Literal received human English from the complete bounded own-appointment source prayers independently checked on page images. Exact source/target bodies, source contexts and exact individually recorded orthography and own-book conclusion proofs were independently reviewed before this mechanical publication derivative."
+transformation = "Encode checked English without changing words, case, punctuation or actual ending. Latin comparison treats declared typography plus only independently recorded bounded spelling pairs at their exact positions; no unlisted spelling or lexical substitutions. Source Latin and target Latin remain unchanged. Own-book conclusion formulas only; no English expansion, new translation, name substitution, added response or donor fanout."
+retrieved = "2026-10-23"
+sha256 = "c80ee1091ed0f0a2a7317195ca95344b3dee9768dd9740afd87a2b46996999c4"
+byte_size = 441
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/resume-orthography-remaining-orth1946-1-c80ee109/english.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "This bounded historical witness is not official English of the1962Missal. The exact physical printing and its own conclusion table remain distinct. The original-expression publication basis does not clear mixed whole-scan bytes, framing or unexamined inserts. No annual textual completeness or human-terminal acceptance is claimed."

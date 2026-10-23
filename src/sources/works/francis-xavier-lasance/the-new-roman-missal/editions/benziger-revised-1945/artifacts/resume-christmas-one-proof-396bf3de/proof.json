@@ -1,0 +1,71 @@
+{
+  "schema": "triptych-one-target-oration-comparison-proof/v1",
+  "method": "own-appointment lexical spelling with exact dated separate-response boundary",
+  "boundary_decision_id": "christmas-day-collect-exact-separate-response-2026-10-23",
+  "boundary_decided_on": "2026-10-23",
+  "target": [
+    "nativitate-domini-octave",
+    "day",
+    "Collect",
+    "all",
+    1
+  ],
+  "target_latin_sha256": "56acab1dd52c97f54e612270f44534e3372c3ad3ffee7fc49f6ce12ec97a54ad",
+  "historical_latin_sha256": "90c6061d95f7dca118492c0c63e071647f5e63975201cfbb283f393ce5c98d8a",
+  "english_sha256": "b5ae925b8a004e08cdf3376f0dc20b4f1cc3af19d0c31d3dbd2824f3d24fa706",
+  "whole_current_latin_proof_dictionary_sha256": "c0ec3b89dbc4bbfcc0126eeff3c2f51c45c6df1def77d60a1b2b161c31df7ca7",
+  "proof_dictionary_digest_encoding": "SHA256 of UTF8 JSON ensure_ascii=false, sort_keys=true, separators comma/colon",
+  "source_locus": "Christmas Third Mass heading and complete Collect: PDF144–145, printed143–144. Actual source Latin Per eumdem.; actual received English Through the same.",
+  "same_witness_table": {
+    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25",
+    "sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+    "verification_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify",
+    "transcription_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-transcription",
+    "pdf_page": 818,
+    "printed_page": "819",
+    "family_key": "through-the-same",
+    "source_full_latin": "Per eumdem Dominum nostrum Jesum Christum, filium tuum, qui tecum vivit et regnat in unitate Spiritus Sancti, Deus, per omnia saecula saeculorum.",
+    "source_full_english": "Through the same Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end.",
+    "physical_response_boundary": "Each actual full Latin and English formula is followed by a separately marked response; the response is not part of the formula transcription."
+  },
+  "complete_source_and_target_petitions_equal_under_typography_only": true,
+  "source_latin_cue": "Per eumdem.",
+  "source_english_cue": "Through the same.",
+  "actual_target_formula_before_response": "Per eundem\nDominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in\nunitate Spiritus Sancti, Deus: per omnia saecula saeculorum. ",
+  "entire_target_formula_equals_complete_printed_family_after_only_exact_pair": true,
+  "source_actual_cue_is_exact_family_prefix": true,
+  "address_person": "Father; the complete petition names His only-begotten Son and the actual source/target through-the-same conclusion is unchanged in family/person.",
+  "exact_lexical_spelling_differences": [
+    {
+      "source_token_index_zero_based": 21,
+      "target_token_index_zero_based": 21,
+      "source_spelling": "eumdem",
+      "target_spelling": "eundem",
+      "source_original_token": "eumdem",
+      "target_original_token": "eundem",
+      "type": "independently-attested-lexical-spelling",
+      "lexical_source_passage_ids": [
+        "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem"
+      ],
+      "source_contextual_parse": "masculine accusative singular of idem, governed by per in the same through-the-same conclusion",
+      "target_contextual_parse": "masculine accusative singular of idem, governed by per in the same through-the-same conclusion",
+      "contextual_parse_reason": "Target eundem agrees with explicit accusative masculine singular Dominum after per. Source eumdem is the unambiguous accusative masculine singular and is an explicit abbreviated Per eumdem cue identified by this same witness’s complete Per eumdem Dominum formula. Both petitions address almighty God and name Unigeniti tui; no eiusdem or person/case conflation."
+    }
+  ],
+  "separate_actual_target_response": {
+    "literal": "℟. Amen.\n",
+    "unicode_marker": "U+211F",
+    "utf8_hex": "e2849f2e20416d656e2e0a",
+    "byte_offset_0based": 285,
+    "byte_extent": 11,
+    "byte_end_exclusive": 296,
+    "original_bytes_preserved": true,
+    "ASCII_transliteration_performed": false,
+    "actor_inferred": false,
+    "English_response_added": false,
+    "source_actual_short_prayer_response_absent": true
+  },
+  "one_target_scope": "Only this exact target/source/English/full-proof tuple. The complete through-the-same formula must precede the exact existing terminal response. No short prefix plus response, unmarked Amen, other marker/family/person, extra clause, repeated response or trailing words is admitted.",
+  "preservation": "All raw source, target and English bytes remain unchanged, including target wraps and final LF. Record the actual response separately for comparison only; no ASCII conversion, English Amen, expanded English ending or actor assignment. Original conservative hold remains historical.",
+  "implementation_gap_preserved": "The earlier Phase3 ASCII token branch does not implement this U+211F boundary and had no actual accepted response-bearing oracle. This dated exact-one-target boundary is explicit new authority, not a retroactive claim."
+}
