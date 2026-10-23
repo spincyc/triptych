@@ -1802,7 +1802,7 @@ window.Triptych = (function () {
   const VERSICLE_MARKS = { V: '℣', R: '℟' };
   const VERSICLE_NAMES = { V: 'Versicle.', R: 'Response.' };
 
-  const VERSICLE_CANDIDATE = /([VR])\.(?=\s|$)|([℣℟])\.?(?=\s|$)/g;
+  const VERSICLE_CANDIDATE = /([VR])(?:\/\.?|\.)(?=\s|$)|([℣℟])\.?(?=\s|$)/g;
   const PRINTED_ROLE_LETTERS = { '℣': 'V', '℟': 'R' };
   // Start of text; after sentence or clause punctuation; at the head of a line,
   // whatever ended the one above — liturgical verse is set a colon to the line
@@ -1863,6 +1863,252 @@ window.Triptych = (function () {
     const source = text === null || text === undefined ? '' : String(text);
     appendVersicled(fragment, source, 0, source.length, versicleMarksIn(source));
     return fragment;
+  }
+
+  /* ------------------------------------------------------------------------
+   * Who is speaking
+   *
+   * The 1861 book mixes two axes.
+   * `P.` marks the PRIEST — a person. `R.` marks a RESPONSE — a position in a
+   * dialogue, whoever makes it. They are not two values of one thing, and the
+   * book prints them in one column as though they were:
+   *
+   *   priest   P. I confess to Almighty God, &c.
+   *   server   R. May Almighty God be merciful to thee…
+   *   server   R. I confess to Almighty God…
+   *   priest   P. May Almighty God be merciful unto you…
+   *
+   * In the fourth row the priest's `P.` line IS the response to the server. So
+   * setting every `P.` as ℣ would put "versicle" over a response — and in two
+   * rubric elements `P.` is not a speaker mark at all but an abbreviation
+   * inside running text ("is said the P. COMMUNION"). A printed R. names a
+   * response; a printed P. must never be recast as a versicle.
+   *
+   * Where reviewed child rows exist their speaker and dialogue_role supply
+   * each cue. Otherwise a marked element may hold a two-party dialogue inside one
+   * element — "P. The Lord be with you. R. And with thy spirit." carries
+   * `speaker: priest`, which names the first line only. Drop every mark and the
+   * server's responses are printed as the priest's words. Only a leading P.
+   * that repeats the declared priest is removed. Each existing marked change
+   * starts its own line; source hard wraps create no additional turns.
+   *
+   * Nothing upstream is edited: the artifacts keep what the book prints.
+   * --------------------------------------------------------------------- */
+
+  const SPEAKER_WORDS = { priest: 'Priest', server: 'Server', all: 'All' };
+  const SPEAKER_CUES = { priest: 'P', server: 'S', all: 'All' };
+  const DIALOGUE_ROLE_WORDS = { versicle: 'Versicle', response: 'Response' };
+  const DIALOGUE_ROLE_CUES = { versicle: '℣', response: '℟' };
+  const MARK_WORDS = { 'P.': 'Priest', 'R.': 'Response' };
+  // Only where a mark can be a speaker at all. A rubric is printed matter about
+  // the Mass, not words said in it, and it is where both false positives live.
+  const SPOKEN_KINDS = { dialogue: true, prayer: true, form: true };
+  const A_MARK = /(^|[.;:,!?)\]"'’”]\s+|\n\s*)(P\.|R(?:\/\.?|\.)|℟\.?)(?=\s|$)/g;
+
+  function speakerTag(word, speaker, opening) {
+    const tag = el(
+      'span',
+      'speaker-tag' + (speaker ? ' is-' + speaker : '') + (opening ? ' is-opening-cue' : '')
+    );
+    if (!opening) {
+      // The label is an English word set inside a text that may be Latin;
+      // without its own language it is announced with Latin pronunciation.
+      tag.lang = 'en';
+      tag.textContent = word;
+      return tag;
+    }
+
+    // This cue comes only from the element's structured `speaker` field. It is
+    // presentation furniture, not another word of the Ordinary; keep the full
+    // identity for assistive technology and the compact role mark for sighted
+    // readers. Interior P./R. marks remain untouched because they are held in
+    // opaque prose and are not trustworthy turn boundaries.
+    tag.setAttribute('data-presentation-only', 'speaker-cue');
+    tag.lang = 'en';
+    tag.appendChild(el('span', 'visually-hidden', word));
+    const mark = el('span', 'cue-mark');
+    mark.setAttribute('data-cue', SPEAKER_CUES[speaker] || word);
+    mark.setAttribute('aria-hidden', 'true');
+    tag.appendChild(mark);
+    return tag;
+  }
+
+  /** One explicit turn cue, with one accessible label and no spoken glyph. */
+  function structuredTurnCue(turn) {
+    if (turn.action === true || turn.gloss === true) return null;
+    const speakerWord = SPEAKER_WORDS[turn.speaker] || null;
+    // A checked printed R./V. is evidence for its own typographic sign even
+    // when the target edition's dialogue_role has not been classified. This
+    // normalizes only a declared, matching source marker; it assigns no role
+    // to a speaker, and never turns the priest's P. into a versicle.
+    const printed = turnBody(turn).marker;
+    const letter = printed && /^(?:V|R)(?:\/\.?|\.)$/.test(printed)
+      ? printed.charAt(0) : PRINTED_ROLE_LETTERS[printed && printed.replace(/\.$/, '')] || null;
+    const roleWord = DIALOGUE_ROLE_WORDS[turn.dialogue_role] ||
+      (letter ? VERSICLE_NAMES[letter].replace(/\.$/, '') : null);
+    const visible = DIALOGUE_ROLE_CUES[turn.dialogue_role] ||
+      (letter ? VERSICLE_MARKS[letter] : null) ||
+      SPEAKER_CUES[turn.speaker] || null;
+    if (!visible || (!speakerWord && !roleWord)) return null;
+
+    // Dialogue role and speaker are independent axes. A priest may answer and
+    // a server may initiate, so the explicit role chooses only the visible
+    // ℣/℟ mark while the single accessible label retains both held facts.
+    const fullLabel = roleWord && speakerWord
+      ? roleWord + ' — ' + speakerWord
+      : roleWord || speakerWord;
+    const tag = el(
+      'span',
+      'speaker-tag is-opening-cue ordinary-turn-cue' +
+        (turn.speaker ? ' is-' + turn.speaker : '')
+    );
+    tag.setAttribute('data-presentation-only', 'speaker-cue');
+    tag.lang = 'en';
+    tag.appendChild(el('span', 'visually-hidden', fullLabel));
+    const mark = el('span', 'cue-mark');
+    mark.setAttribute('data-cue', visible);
+    if (DIALOGUE_ROLE_CUES[turn.dialogue_role] || letter) {
+      mark.setAttribute('data-dialogue-mark', 'true');
+    }
+    mark.setAttribute('aria-hidden', 'true');
+    tag.appendChild(mark);
+    return tag;
+  }
+
+  /**
+   * A turn's spoken matter, apart from the book's own printed head letter.
+   *
+   * `printed_marker` is a reviewed inventory declaration, validated by the
+   * generator: the row is exactly that marker, one space, then spoken text. The
+   * structured cue already says who speaks or which side of the dialogue this
+   * is, so the printed letter would be a second visible cue on one turn. It is
+   * kept on the row as data, never re-read as a speaker or a role, and if the
+   * declaration does not fit the text the row is shown exactly as printed.
+   */
+  function turnBody(turn) {
+    const text = String(turn.text === null || turn.text === undefined ? '' : turn.text);
+    const marker = typeof turn.printed_marker === 'string' ? turn.printed_marker : '';
+    if (!marker || !text.startsWith(marker + ' ') || text.length <= marker.length + 1) {
+      return { marker: null, body: text };
+    }
+    return { marker: marker, body: text.slice(marker.length + 1) };
+  }
+
+  /** Exact source-owned turns inside one Ordinary element and semantic event. */
+  function structuredTurns(held, locus) {
+    const body = el('div', 'composed ordinary-dialogue');
+    body.lang = held.lang;
+    if (locus) body.appendChild(el('span', 'ordinary-locus', locus));
+
+    for (const turn of held.turns) {
+      const action = turn.action === true;
+      const gloss = turn.gloss === true;
+      const row = el('p', 'ordinary-turn' + (action ? ' is-action' : '') + (gloss ? ' is-gloss' : ''));
+      if (gloss) {
+        row.setAttribute('data-gloss', 'true');
+        row.setAttribute('role', 'note');
+        row.setAttribute('aria-label', 'Source translation');
+      }
+      if (turn.speaker) row.setAttribute('data-speaker', turn.speaker);
+      if (turn.dialogue_role) {
+        row.setAttribute('data-dialogue-role', turn.dialogue_role);
+      }
+      if (action) row.setAttribute('data-action', 'true');
+
+      // One visible cue per turn. Only where the structured cue is set does the
+      // printed letter step aside; a turn with no structured cue keeps it.
+      const cue = structuredTurnCue(turn);
+      const spokenPart = cue ? turnBody(turn) : { marker: null, body: turn.text };
+      if (cue) row.appendChild(cue);
+      if (spokenPart.marker) row.setAttribute('data-printed-marker', spokenPart.marker);
+      const text = el('span', 'ordinary-turn-text', spokenPart.body);
+      text.lang = held.lang;
+      row.appendChild(text);
+      body.appendChild(row);
+    }
+    return body;
+  }
+
+  /**
+   * One element's words, with every change of speaker made plain.
+   *
+   * Returns a fragment. The element's own speaker opens it; a mark inside the
+   * text opens each further turn.
+   */
+  function spoken(element, text) {
+    const source = String(text === null || text === undefined ? '' : text);
+    if (!SPOKEN_KINDS[element.kind]) return document.createTextNode(source);
+
+    const fragment = document.createDocumentFragment();
+    // `all` is frequently attached to a composite element whose first turn is
+    // the priest (for example the postconciliar Greeting). Without structured
+    // turns it is not an honest opening cue, so do not present it as one. And
+    // because nothing then announces the opening speaker, a leading P./R. is
+    // not furniture there: it is the only attribution the first line has, and
+    // it is kept like an interior mark (the Preface dialogue, the Pax).
+    const opening = element.speaker !== 'all'
+      ? SPEAKER_WORDS[element.speaker] || null
+      : null;
+    if (opening) {
+      fragment.appendChild(speakerTag(opening, element.speaker, true));
+    }
+
+    // Explicit V./R. marks already name their dialogue roles. Use the same
+    // setting as a Proper; a hard wrap or an unmarked speaker creates no turn.
+    if (versicleMarksIn(source).some(function (mark) { return mark.letter === 'V'; })) {
+      fragment.appendChild(versicled(source));
+      return fragment;
+    }
+
+    let at = 0;
+    let found;
+    let first = true;
+    let droppedLast = false;
+    A_MARK.lastIndex = 0;
+    while ((found = A_MARK.exec(source)) !== null) {
+      const response = /^[R℟]/.test(found[2]);
+      const word = MARK_WORDS[response ? 'R.' : 'P.'];
+      const start = found.index + found[1].length;
+      if (AN_INITIAL_BEFORE.test(source.slice(0, start))) continue;
+      // A priest's leading letter may repeat the declared speaker. A response
+      // mark retains its independent role even when the speaker is known.
+      const leading = first && source.slice(0, start).trim() === '';
+      first = false;
+      if (leading && opening && found[2] === 'P.') {
+        at = start + found[2].length;
+        droppedLast = true;
+        continue;
+      }
+      // The source's R. explicitly names a response; P. names only the
+      // priest. Keep those independent axes and the existing marked boundary.
+      if (start > at) {
+        fragment.appendChild(document.createTextNode(source.slice(at, start)));
+      }
+      if (source.slice(0, start).trim()) fragment.appendChild(el('br'));
+      fragment.appendChild(response
+        ? versicleMark('R') : speakerTag(word, 'priest'));
+      at = start + found[2].length;
+      droppedLast = false;
+    }
+    // The space after a DROPPED mark was that mark's own spacing, and left in
+    // place it opened the turn with a double space. The space after a KEPT
+    // word label separates the label from the words, exactly as it does for
+    // every interior turn above; stripping it here glued the last label to its
+    // text in copied and announced text ("ResponseEt cum spiritu tuo.").
+    const rest = source.slice(at);
+    const tail = droppedLast ? rest.replace(/^[ \t]+/, '') : rest;
+    if (tail) fragment.appendChild(document.createTextNode(tail));
+    return fragment;
+  }
+
+  /** The Ordinary's words, shared by the browser and terminal readers. */
+  function ordinaryText(element, held, locus) {
+    if (Array.isArray(held.turns) && held.turns.length) return structuredTurns(held, locus);
+    const body = el('p', element.kind === 'heading' ? 'ordinary-head' : 'composed');
+    if (locus) body.appendChild(el('span', 'ordinary-locus', locus));
+    body.appendChild(spoken(element, held.text));
+    body.lang = held.lang;
+    return body;
   }
 
   /* ------------------------------------------------------------------------
@@ -2369,11 +2615,57 @@ window.Triptych = (function () {
     return side;
   }
 
+  // Presentation labels for the identified witnesses, not replacements for
+  // their full source records. Unclassified witnesses retain every caution
+  // inline; no sentence is shortened or discarded to meet a display budget.
+  const TRANSLATION_PRESENTATIONS = {
+    'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945': {
+      label: 'Lasance and Walsh, The New Roman Missal (1945 revision)',
+      qualification: 'Historical lay translation; not approved for liturgical use. Its wording and recension may differ from the selected Missal.'
+    },
+    'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861': {
+      label: 'The Roman Missal for the Laity (Cummiskey, 1861)',
+      qualification: 'Historical lay translation; not approved for liturgical use. Its wording and recension may differ from the selected Missal.'
+    },
+    'edition.edward-caswall.lyra-catholica.london-1849': {
+      label: 'Edward Caswall, Lyra Catholica (1849)',
+      qualification: 'Metrical literary translation, not clause for clause. Stanza divisions may differ from the Latin; no Amen or Alleluia is rendered.'
+    },
+    'edition.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890': {
+      label: 'Hymns Ancient and Modern (1890), English attributed to W. J. Irons',
+      qualification: 'Historical literary translation; this printing is not established as Irons’s own wording.'
+    }
+  };
+  TRANSLATION_PRESENTATIONS['artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en'] =
+    TRANSLATION_PRESENTATIONS['edition.edward-caswall.lyra-catholica.london-1849'];
+  TRANSLATION_PRESENTATIONS['artifact.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890.dies-irae-irons-en'] =
+    TRANSLATION_PRESENTATIONS['edition.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890'];
+
+  /** Exact source notes, available both beside the text and in terminal Study. */
+  function translationCredits(oration, options) {
+    const credits = el('div', 'translation-credits');
+    const presentation = TRANSLATION_PRESENTATIONS[oration.source];
+    if (oration.source) credits.appendChild(el('p', 'composed-note translation-credit',
+      'Translation: ' + (presentation ? presentation.label : oration.sourceLabel || oration.source)));
+    if (presentation && oration.caution) {
+      credits.appendChild(el('p', 'composed-note translation-qualification', presentation.qualification));
+      const details = el('details', 'translation-apparatus');
+      if (options && options.expanded) details.setAttribute('open', '');
+      details.appendChild(el('summary', 'composed-note', 'Translation source, differences and qualifications'));
+      if (oration.sourceLabel) details.appendChild(el('p', 'composed-note', oration.sourceLabel));
+      details.appendChild(el('p', 'composed-note', oration.caution));
+      credits.appendChild(details);
+    } else if (oration.caution) {
+      credits.appendChild(el('p', 'composed-note translation-qualification', oration.caution));
+    }
+    // Required acknowledgements always travel verbatim with the words. They
+    // never enter a closed disclosure, even for a classified public-domain source.
+    if (oration.notice) credits.appendChild(el('p', 'composed-note translation-notice', oration.notice));
+    return credits;
+  }
+
   function orationCredits(container, oration) {
-    if (oration.source) container.appendChild(el('p', 'composed-note',
-      'Translation: ' + (oration.sourceLabel || oration.source)));
-    if (oration.caution) container.appendChild(el('p', 'composed-note', oration.caution));
-    if (oration.notice) container.appendChild(el('p', 'composed-note', oration.notice));
+    container.appendChild(translationCredits(oration));
   }
 
   function renderOrationState(container, owner, held, scope, parentSource) {
@@ -2666,6 +2958,8 @@ window.Triptych = (function () {
     absenceReasons: ABSENCE_REASONS,
     orationFor: orationFor,
     versicled: versicled,
+    ordinaryText: ordinaryText,
+    translationCredits: translationCredits,
     composedBody: composedBody,
     textSide: textSide,
     renderProper: renderProper,
@@ -2677,6 +2971,7 @@ window.Triptych = (function () {
     notice: notice,
     renderLocus: renderLocus,
     renderCitation: renderCitation,
+    recastLoci: recastLoci,
     showBanner: showBanner,
     statusLine: statusLine,
     fail: fail,

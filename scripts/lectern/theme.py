@@ -36,7 +36,7 @@ def _variables(dark: bool) -> dict[str, str]:
     found = {f"{name}-color": pair[index] for name, pair in SURFACE_ACCENTS.items()}
     found.update({f"season-{name}": pair[index] for name, pair in SEASON_TONES.items()})
     found["hotkey"] = "#ff5f6d" if dark else "#b3122e"
-    found["muted"] = "#7d7a72" if dark else "#857d70"
+    found["muted"] = "#99958a" if dark else "#706658"
     found["rubric"] = "#e05252" if dark else "#a3141c"
     found["meter-empty"] = "#2a2d36" if dark else "#ddd5c4"
     found["rule"] = "#30333d" if dark else "#cfc6b4"

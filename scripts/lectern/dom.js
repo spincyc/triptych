@@ -75,6 +75,22 @@ class Node {
     if (!this.parentNode) return;
     items.forEach((item) => this.parentNode.insertBefore(typeof item === 'string' ? new Text(item) : item, this));
   }
+  contains(other) {
+    for (let node = other; node; node = node.parentNode) if (node === this) return true;
+    return false;
+  }
+  querySelectorAll(selector) {
+    const direct = /^:scope\s*>\s*(.+)$/.exec(selector.trim());
+    if (direct) return this.children.filter((one) => one.matches(direct[1]));
+    const found = [];
+    const walk = (node) => node.children.forEach((one) => {
+      if (one.matches(selector)) found.push(one);
+      walk(one);
+    });
+    walk(this);
+    return found;
+  }
+  querySelector(selector) { return this.querySelectorAll(selector)[0] || null; }
   addEventListener() {}
   removeEventListener() {}
 }
@@ -109,14 +125,39 @@ class Element extends Node {
     this.localName = String(tag).toLowerCase();
     this.className = '';
     this.attributes = {};
-    this.dataset = {};
+    const dataName = (key) => 'data-' + String(key).replace(/[A-Z]/g, (letter) => '-' + letter.toLowerCase());
+    this.dataset = new Proxy({}, {
+      set: (data, key, value) => {
+        data[key] = String(value);
+        this.attributes[dataName(key)] = String(value);
+        return true;
+      },
+      deleteProperty: (data, key) => {
+        delete data[key];
+        delete this.attributes[dataName(key)];
+        return true;
+      },
+    });
     this.style = {};
     this.classList = new ClassList(this);
   }
-  setAttribute(name, value) { this.attributes[name] = String(value); if (name === 'class') this.className = String(value); }
+  setAttribute(name, value) {
+    this.attributes[name] = String(value);
+    if (name === 'class') this.className = String(value);
+    if (name.startsWith('data-')) {
+      this.dataset[name.slice(5).replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())] = value;
+    }
+  }
   getAttribute(name) { return Object.prototype.hasOwnProperty.call(this.attributes, name) ? this.attributes[name] : null; }
   hasAttribute(name) { return Object.prototype.hasOwnProperty.call(this.attributes, name); }
-  removeAttribute(name) { delete this.attributes[name]; }
+  removeAttribute(name) {
+    delete this.attributes[name];
+    if (name.startsWith('data-')) {
+      delete this.dataset[name.slice(5).replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())];
+    }
+  }
+  get hidden() { return this.hasAttribute('hidden'); }
+  set hidden(value) { this.toggleAttribute('hidden', Boolean(value)); }
   toggleAttribute(name, force) {
     const on = force === undefined ? !this.hasAttribute(name) : force;
     if (on) this.attributes[name] = ''; else delete this.attributes[name];
@@ -131,18 +172,6 @@ class Element extends Node {
     }
     return null;
   }
-  querySelectorAll(selector) {
-    const direct = /^:scope\s*>\s*(.+)$/.exec(selector.trim());
-    if (direct) return this.children.filter((one) => one.matches(direct[1]));
-    const found = [];
-    const walk = (node) => node.children.forEach((one) => {
-      if (one.matches(selector)) found.push(one);
-      walk(one);
-    });
-    walk(this);
-    return found;
-  }
-  querySelector(selector) { return this.querySelectorAll(selector)[0] || null; }
   focus() {}
   scrollIntoView() {}
 }
@@ -174,7 +203,8 @@ const document = {
 /*
  * The reader. A block is a paragraph-like node: a heading, a paragraph, a list
  * item. Its runs are text with the class names and tags of every node above
- * them inside the block, which is all a terminal needs to set them. A node the
+ * them inside the block, which is all a terminal needs to set them. Generated
+ * cue text and the verse marker's margin are preserved as visible runs. A node the
  * page hides from sight (`visually-hidden`, or `hidden`) is not read: it is
  * there for a screen reader, and a terminal reader sees what the page shows.
  */
@@ -204,6 +234,16 @@ function read(root) {
         lang: node.lang || trail.lang,
       };
       if (node.dataset && node.dataset.cycle) inner.classes.push('cycle-' + node.dataset.cycle);
+      // The browser closes routine translation research by default. The
+      // terminal's Study asks the same owner for an explicitly open disclosure.
+      if (node.tagName === 'DETAILS' && names.includes('translation-apparatus') &&
+          !node.hasAttribute('open')) {
+        inner.classes.push('translation-apparatus-closed');
+        const summary = node.children.find((child) => child.tagName === 'SUMMARY');
+        if (summary) walk(summary, inner);
+        current = null;
+        return;
+      }
       if (BLOCKS.has(node.tagName)) {
         const saved = current;
         open(node, inner);
@@ -211,6 +251,14 @@ function read(root) {
         current = null;
         void saved;
         return;
+      }
+      // Ordinary cues are printed by the browser's ::before from data-cue.
+      // Preserve that explicit renderer output, including its column gap;
+      // otherwise every structured turn reaches the terminal without a cue.
+      if (names.includes('cue-mark') && node.hasAttribute('data-cue')) {
+        if (!current) open(node, inner);
+        current.runs.push({ text: node.getAttribute('data-cue') + ' ',
+          tags: inner.tags.slice(), classes: inner.classes.slice(), lang: inner.lang });
       }
       if (node.tagName === 'BR') {
         if (current) current.runs.push({ text: '\n', tags: inner.tags, classes: inner.classes, lang: inner.lang });
@@ -220,6 +268,14 @@ function read(root) {
       const container = ['SECTION', 'DIV', 'ARTICLE', 'UL', 'OL', 'DL', 'TABLE', 'TBODY', 'DETAILS', 'NAV', 'ASIDE', 'HEADER', 'FOOTER'].includes(node.tagName);
       if (container) current = null;
       node.childNodes.forEach((child) => walk(child, inner));
+      // The browser sets a margin between a superscript verse number and the
+      // words. A terminal has no CSS margin; keep that gap outside the numbered
+      // run so a verse-per-line consumer does not see a second verse marker.
+      if ((names.includes('verse-num') || names.includes('ordinary-locus')) && current) {
+        const verse = names.includes('verse-num');
+        current.runs.push({ text: verse ? ' ' : '  ', tags: trail.tags.slice(),
+          classes: trail.classes.concat(verse ? 'verse-gap' : 'ordinary-locus-gap'), lang: inner.lang });
+      }
       if (container) current = null;
       return;
     }

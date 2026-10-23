@@ -15,10 +15,10 @@ class Ask(ModalScreen[str | None]):
     """One line of input; Enter answers, Escape declines."""
 
     DEFAULT_CSS = """
-    Ask { align: center middle; background: $background 45%; }
+    Ask { align: center middle; background: $background 65%; }
     Ask > Vertical {
         width: 64; max-width: 95%; height: auto;
-        border: round $accent; background: $surface; padding: 0 1;
+        border: round $primary 65%; background: $surface; padding: 1 2;
     }
     Ask Static { color: $text-muted; padding: 0 0 1 0; }
     """
@@ -33,6 +33,7 @@ class Ask(ModalScreen[str | None]):
     def compose(self) -> ComposeResult:
         with Vertical() as box:
             box.border_title = titled(None, self.title_text)
+            box.border_subtitle = "enter apply · esc cancel"
             if self.hint:
                 yield Static(self.hint)
             yield Input(value=self.value)
@@ -54,10 +55,10 @@ class Reading(ModalScreen[str | None]):
     """
 
     DEFAULT_CSS = """
-    Reading { align: center middle; background: $background 45%; }
+    Reading { align: center middle; background: $background 65%; }
     Reading > VerticalScroll {
         width: 96; max-width: 96%; height: 92%;
-        border: round $accent; background: $surface; padding: 1 2;
+        border: round $primary 65%; background: $surface; padding: 1 3;
         scrollbar-size-vertical: 1;
     }
     """
@@ -87,7 +88,8 @@ class Reading(ModalScreen[str | None]):
     def compose(self) -> ComposeResult:
         with VerticalScroll() as box:
             box.border_title = titled(None, self.title_text)
-            box.border_subtitle = literal(self.subtitle or "esc close · n next · p previous")
+            hint = "esc close · n next · p previous" if self.walks else "esc close"
+            box.border_subtitle = literal(self.subtitle or hint)
             yield Static(self.body)
 
     def on_mount(self) -> None:
@@ -98,10 +100,10 @@ class Pick(ModalScreen[str | None]):
     """One choice among named options; nothing is preselected for the reader."""
 
     DEFAULT_CSS = """
-    Pick { align: center middle; background: $background 45%; }
+    Pick { align: center middle; background: $background 65%; }
     Pick > Vertical {
         width: 80; max-width: 95%; height: auto; max-height: 85%;
-        border: round $accent; background: $surface; padding: 0 1;
+        border: round $primary 65%; background: $surface; padding: 1 2;
     }
     Pick Static { color: $text-muted; padding: 0 0 1 0; }
     Pick OptionList { border: none; background: transparent; padding: 0; height: auto; max-height: 30; }
@@ -121,6 +123,7 @@ class Pick(ModalScreen[str | None]):
 
         with Vertical() as box:
             box.border_title = titled(None, self.title_text)
+            box.border_subtitle = "↑↓ choose · enter apply · esc cancel"
             if self.hint:
                 yield Static(self.hint)
             yield OptionList(*[Option(label, id=str(index)) for index, (_, label) in enumerate(self.options)])

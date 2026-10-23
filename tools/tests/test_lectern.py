@@ -447,7 +447,7 @@ class DrawingTests(unittest.TestCase):
         "catena": "▸ Basil of Caesarea",
         "scripture": "The Full Account",
         "texts": "152 works",
-        "sources": "1,064",
+        "sources": f"{json.loads((STRUCTURE / 'sources' / 'index.json').read_text())['counted']['works']:,} works",
         "history": "How the Missal Changed",
         "law": "The Code, Canon by Canon",
     }
@@ -731,9 +731,11 @@ class ReaderInteractionTests(unittest.IsolatedAsyncioTestCase):
                 await self.idle(app, pilot)
                 owner.read("roman-1962", row["key"], None)
                 await self.idle(app, pilot)
+                offered = [one["id"] for one in opening["propersCalendars"]]
+                next_calendar = offered[(offered.index(owner.calendar) + 1) % len(offered)]
                 owner.action_calendar()
                 await self.idle(app, pilot)
-                self.assertEqual(owner.calendar, "roman-pre-1955")
+                self.assertEqual(owner.calendar, next_calendar)
                 self.assertEqual(owner.view["calendar"], "roman-1962")
                 self.assertTrue(owner.where().startswith(short + " · "))
                 owner.action_orations()
@@ -1112,10 +1114,15 @@ class PropersCoverageNoticeTests(unittest.IsolatedAsyncioTestCase):
                                 self.assertIn(reason, rendered)
                         choices.assert_called_once()
                         self.assertIs(choices.call_args.args[1], view)
-                        events.assert_called_once()
-                        self.assertIs(events.call_args.args[1], view)
-                        self.assertEqual(events.call_args.kwargs,
-                                         {"rubrics": owner.rubrics, "accent": "$propers-color"})
+                        # Contents records the rendered prefix at each real
+                        # event. The visitor still sees each source event once,
+                        # in order, with unchanged coverage/Ordinary context.
+                        self.assertEqual(events.call_count, len(view["events"]))
+                        for call, event in zip(events.call_args_list, view["events"]):
+                            self.assertEqual(call.args[1], {**view, "events": [event]})
+                            self.assertIs(call.args[1]["events"][0], event)
+                            self.assertEqual(call.kwargs,
+                                             {"rubrics": owner.rubrics, "accent": "$propers-color"})
                         self.assertEqual(view, before)
                         notices[(calendar, language, ordinary)] = notice
                 self.assertNotEqual(notices[("roman-1962", "en", False)],

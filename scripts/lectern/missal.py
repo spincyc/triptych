@@ -2,27 +2,25 @@
 
 What a proper says is written by the browser's own renderer and arrives here as
 blocks of runs, each run carrying the class names the page gave it; this
-module only decides how a class looks. An Ordinary element is set by its
-`kind`, as `scripts/_ordinary_text.py` sets it for the command line: a rubric
-bracketed, a heading as a heading, the words of a prayer plainly, a dialogue
-with its cues. Nothing is chosen here that the reader state left open.
+module only decides how a class looks. Ordinary words and cues come from that
+same browser owner; a rubric is bracketed and a heading set as a heading.
+Nothing is chosen here that the reader state left open.
 """
 from __future__ import annotations
 
 import re
-import sys
-from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-
-from _ordinary_text import SPOKEN, absence_side  # noqa: E402
-
-from .widgets import SUPERSCRIPT, Ink  # noqa: E402
+from .widgets import SUPERSCRIPT, Ink
 
 # Run classes, most specific first, and the look each is given.
 RUN_STYLES = (
     ("verse-num", "bold $accent"),
     ("vr-glyph", "bold $rubric"),
+    ("cue-mark", "bold $rubric"),
+    ("speaker-tag", "bold $text-muted"),
+    ("ordinary-locus", "$text-muted"),
+    ("ordinary-head", "bold underline"),
+    ("is-rubric", "italic $rubric"),
     ("inline-rubric", "italic $rubric"),
     ("elision", "$text-muted"),
     ("citation-numbering", "$text-muted"),
@@ -66,7 +64,18 @@ def _run_style(classes: list[str], tags: list[str]) -> str:
 
 def blocks(ink: Ink, items: list[dict], *, accent: str = "$primary") -> Ink:
     """The page's blocks, one line group each, styled by the classes they carry."""
+    previous_block = []
     for block in items:
+        names = block.get("classes", [])
+        if (("stanza" in names and "stanza" in previous_block) or
+                ("passage" in names and "passage" in previous_block)):
+            ink.line()
+        action = "is-action" in names
+        gloss = "is-gloss" in names
+        rubric = "is-rubric" in names and block.get("tag") != "summary"
+        if action or gloss or rubric:
+            ink("[ Source translation: " if gloss else "[ ",
+                "italic $text-muted" if gloss else "italic $rubric")
         heading = block.get("tag", "").startswith("h") or block.get("tag") == "summary"
         previous = None
         for run in block.get("runs", []):
@@ -95,92 +104,36 @@ def blocks(ink: Ink, items: list[dict], *, accent: str = "$primary") -> Ink:
             if "citation-recast" in names and previous is not None and "citation-recast" not in previous:
                 ink("  ")
             style = _run_style(names, run.get("tags", []))
+            if action or gloss:
+                style = "italic $text-muted" if gloss else "italic $rubric"
             if heading and "proper-name" in names and not ({"proper-ref", "proper-form", "citation-numbering"} & set(names)):
                 style = f"bold {accent}"
             elif heading and not style:
                 style = "bold underline" if block.get("tag") == "summary" else "bold"
             ink(text, style)
             previous = names
+        if action or gloss or rubric:
+            ink(" ]", "italic $text-muted" if gloss else "italic $rubric")
+        if "translation-apparatus-closed" in block.get("classes", []):
+            ink("  (d Study)", "$text-muted")
         ink.line()
+        previous_block = block.get("classes", [])
     return ink
-
-
-def absence_label(ordinary: dict | None, key: str | None) -> str | None:
-    """The Ordinary's own label for an absence it declares, by its key."""
-    if not ordinary or not key:
-        return None
-    for row in ordinary.get("absences") or []:
-        if row.get("key") == key and row.get("label"):
-            return row["label"]
-    return None
 
 
 WHITESPACE = re.compile(r"\s+")
 
-CUES = {"priest": "Priest", "server": "Server", "all": "All", "people": "People", "deacon": "Deacon"}
-ROLES = {"versicle": "℣", "response": "℟"}
 
-
-def ordinary_element(ink: Ink, event: dict, ordinary: dict | None, *, rubrics: bool = True) -> Ink:
-    """One element of the Ordinary, set as what its kind says it is. Never a blank."""
+def ordinary_element(ink: Ink, event: dict, ordinary: dict | None, *, rubrics: bool = True,
+                     accent: str = "$primary") -> Ink:
+    """The browser's Ordinary element, including its exact absences and grants."""
     element = event.get("element") or {}
-    text = event.get("text") or {}
-    kind = element.get("kind") or ""
-    if kind == "rubric" and not rubrics:
+    if element.get("kind") == "rubric" and not rubrics:
         return ink
-    words = text.get("text")
-    named = element.get("name") or element.get("latin_incipit")
-    if kind == "heading":
-        if words:
-            ink.line(str(words).strip(), "bold underline")
-        return ink
-    if named and kind in SPOKEN:
-        ink(str(named), "bold")
-        if element.get("speaker"):
-            ink(f"  ({element['speaker']})", "$text-muted")
-        ink.line()
-    if words:
-        if kind == "rubric":
-            ink.line(f"[ {' '.join(str(words).split())} ]", "italic $rubric")
-            return ink
-        turns = text.get("turns") or []
-        if turns and kind in SPOKEN:
-            for turn in turns:
-                said = str(turn.get("text") or "")
-                if turn.get("gloss") is True:
-                    ink.line(f"[ Source translation: {said} ]", "italic $text-muted")
-                    continue
-                if turn.get("action") is True:
-                    if rubrics:
-                        ink.line(f"[ {said} ]", "italic $rubric")
-                    continue
-                speaker = CUES.get(turn.get("speaker") or "")
-                role = ROLES.get(turn.get("dialogue_role") or "")
-                marker = turn.get("printed_marker")
-                if (role or speaker) and marker and said.startswith(marker + " "):
-                    said = said[len(marker) + 1:]
-                if role:
-                    ink(role + " ", "bold $rubric")
-                if speaker:
-                    ink(speaker + ": ", "$text-muted")
-                ink.line(said)
-        else:
-            ink.line(str(words).strip())
-        return ink
-    # Absent: the element's own recorded reason, by the side of the book it names.
-    if not named:
-        ink.line(f"[{kind or 'element'}]", "$text-muted")
-    language = text.get("language") or ""
-    reason = absence_label(ordinary, text.get("absenceKey")) or \
-        ((element.get("absent") or {}).get(absence_side(language)) if language else None)
-    availability = text.get("availability")
-    if availability == "choice-required":
-        ink.line("Several witnesses hold this text; choose one before reading it.", "italic $warning")
-    else:
-        ink.line(f"[absent: {reason or 'not held'}]", "italic $warning")
-    if element.get("latin_incipit") and element.get("latin_incipit") != element.get("name"):
-        ink.line(f"opens {element['latin_incipit']}", "italic $text-muted")
-    return ink
+    if "blocks" not in event:
+        raise ValueError("Ordinary elements must be set by the shared browser renderer")
+    return blocks(ink, [block for block in event["blocks"]
+                        if rubrics or "is-action" not in block.get("classes", [])], accent=accent)
 
 
 def seat_note(event: dict) -> str | None:
@@ -204,7 +157,7 @@ def events(ink: Ink, view: dict, *, rubrics: bool = True, accent: str = "$primar
             continue
         if kind == "ordinary-element":
             ink.line()
-            ordinary_element(ink, event, ordinary, rubrics=rubrics)
+            ordinary_element(ink, event, ordinary, rubrics=rubrics, accent=accent)
             continue
         ink.line()
         if kind == "proper":
@@ -271,7 +224,11 @@ def choices(ink: Ink, view: dict) -> Ink:
         for number, option in enumerate(choice.get("options") or [], 1):
             ink(f"   {number}. ", "bold")(option_label(choice, option, view))
             ink(f"   {option.get('id')}", "$text-muted").line()
-        ink.line("   Press s to choose. Nothing is selected for you by order.", "italic $text-muted")
+        if str(choice.get("id") or "").startswith(("proper-condition/", "common-set:")):
+            ink.line("   This source condition remains unresolved; no selection is offered here.",
+                     "italic $text-muted")
+        else:
+            ink.line("   Press s to choose. Nothing is selected for you by order.", "italic $text-muted")
     for event in view.get("events") or []:
         selected = event.get("selected") or {}
         if selected.get("kind") == "cycle-alternatives" and selected.get("availability") == "choice-required":

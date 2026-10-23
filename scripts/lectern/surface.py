@@ -7,6 +7,7 @@ from textual.widgets import Static
 
 NARROW = 110  # below this many columns a surface draws its side panes lean
 WIDE = 160  # from this many, it gives them room
+COMPACT = 90  # below this, the Missal's text and navigation take turns
 
 
 class Surface(Container):
@@ -24,13 +25,14 @@ class Surface(Container):
     #: stylesheet, which a widget's DEFAULT_CSS never outranks. A surface hides
     #: its side panes under `.<id>.focus`, and leans them under `.<id>.narrow`.
     CSS = ""
-    BINDINGS = [Binding("f", "focus_reading", "focus", show=False)]
+    BINDINGS = [Binding("f", "focus_reading", "panes")]
     #: The pane a reader's keys should reach first: the one that holds the reading.
     FIRST = ""
 
     def __init__(self, **options) -> None:
         super().__init__(id=self.surface_id(), **options)
         self.opened = False
+        self._initial_focus_pending = False
         self.add_class(self.surface_id())
 
     @classmethod
@@ -42,6 +44,11 @@ class Surface(Container):
         (a date, a reference). The first call builds it."""
         if not self.opened:
             self.opened = True
+            self._initial_focus_pending = True
+            # A date-first reader starts with the text; a formulary-first
+            # visitor needs Browse until a formulary is explicitly opened.
+            if self.surface_id() == "propers" and not intent.get("mass"):
+                self.add_class("navigation")
             self.build()
         if intent:
             self.follow(**intent)
@@ -64,31 +71,72 @@ class Surface(Container):
         def current() -> None:
             if not worker.is_cancelled:
                 callback(*args, **options)
+                if self._initial_focus_pending and shown(self):
+                    self.call_after_refresh(self.focus_initial)
 
         self.app.call_from_thread(current)
 
     def on_resize(self, event) -> None:
         self.set_class(event.size.width < NARROW, "narrow")
         self.set_class(event.size.width >= WIDE, "wide")
+        self.set_class(event.size.width < COMPACT, "compact")
+        self.set_class(event.size.height < 34, "short")
+        if self.surface_id() in ("day", "propers"):
+            self.call_after_refresh(self.refocus)
 
     def action_focus_reading(self) -> None:
         """Side panes away, the reading full width; again to bring them back."""
-        self.toggle_class("focus")
+        if self.has_class("compact") and self.surface_id() in ("day", "propers"):
+            self.toggle_class("navigation")
+        else:
+            self.toggle_class("focus")
         self.call_after_refresh(self.refocus)
+
+    def show_reading_pane(self) -> None:
+        """A deliberate selection brings its reading forward on a small screen."""
+        self.remove_class("navigation")
+        if self.has_class("compact"):
+            self.call_after_refresh(self.refocus)
+
+    def focus_initial(self) -> None:
+        """Apply a declared initial target without replacing a surface's own focus.
+
+        Mounting may finish after the shell's first frame. Surfaces that name
+        FIRST retry on delivery; the others retain their explicit catalogue,
+        lookup or view-specific focus and the zero-argument refocus hook.
+        """
+        if not self._initial_focus_pending:
+            return
+        if self.FIRST:
+            self._refocus(prefer_first=True)
+        else:
+            self._initial_focus_pending = False
+            focused = self.app.focused
+            if focused is None or self not in focused.ancestors_with_self:
+                self.refocus()
 
     def refocus(self) -> None:
         """Keep the keys working: focus may not stay on a pane that was hidden."""
+        self._refocus()
+
+    def _refocus(self, *, prefer_first: bool = False) -> None:
         focused = self.app.focused
-        if focused is not None and self in focused.ancestors and shown(focused):
+        if not prefer_first and focused is not None and self in focused.ancestors and shown(focused):
             return
-        if self.FIRST:
-            for widget in self.query(self.FIRST):
+        first_widgets = list(self.query(self.FIRST)) if self.FIRST else []
+        if first_widgets:
+            for widget in first_widgets:
                 if widget.focusable and shown(widget):
                     widget.focus()
+                    self._initial_focus_pending = False
                     return
         for widget in self.query("*"):
             if widget.focusable and shown(widget):
                 widget.focus()
+                # The preferred pane may be deliberately hidden by the
+                # compact reading layout. A visible fallback completes entry.
+                if first_widgets:
+                    self._initial_focus_pending = False
                 return
 
 

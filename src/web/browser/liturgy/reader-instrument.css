@@ -427,6 +427,15 @@ body:has(.reader-instrument) > .site-footer,
 .reader-instrument .reader-document .speaker-tag.is-opening-cue .cue-mark::before {
   content: attr(data-cue);
 }
+.reader-instrument .reader-document .speaker-tag.is-opening-cue:has(.cue-mark[data-dialogue-mark]) {
+  font-size: inherit;
+}
+.reader-instrument .reader-document .vr-glyph,
+.reader-instrument .reader-document .speaker-tag.is-opening-cue .cue-mark[data-dialogue-mark] {
+  font-family: var(--instrument-serif);
+  font-size: 1.05em;
+  line-height: 1.1;
+}
 .reader-instrument .reader-document .ordinary-element > .ordinary-dialogue {
   grid-column: 1 / -1;
   display: grid;

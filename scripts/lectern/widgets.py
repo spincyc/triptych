@@ -40,7 +40,7 @@ class Panel(Vertical):
 
     DEFAULT_CSS = """
     Panel {
-        border: round $panel-lighten-2;
+        border: round $rule;
         border-title-color: $foreground;
         border-subtitle-color: $text-muted;
         padding: 0 1;
@@ -65,7 +65,7 @@ class ScrollPanel(VerticalScroll):
 
     DEFAULT_CSS = """
     ScrollPanel {
-        border: round $panel-lighten-2;
+        border: round $rule;
         border-title-color: $foreground;
         border-subtitle-color: $text-muted;
         padding: 0 1;

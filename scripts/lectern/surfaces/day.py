@@ -10,9 +10,10 @@ from textual.widgets import OptionList, Static
 from textual.widgets.option_list import Option
 
 from .. import bridge, missal
-from ..dialogs import Ask, Pick
+from ..dialogs import Ask, Pick, Reading
 from ..month import Month
 from ..repo import Refused
+from ..reader_navigation import ReadingNavigation, share
 from ..surface import Surface
 from ..theme import SEASON_TONES
 from ..widgets import Ink, Panel, ScrollPanel, literal
@@ -90,11 +91,17 @@ class Day(Surface):
         ("m", "missal mode: the propers seated in the Ordinary"),
         ("o", "orations in English or Latin"),
         ("b", "next Bible edition for the readings"),
+        ("B", "pair Latin and the selected language, or show the selected language alone"),
+        ("L", "choose the Ordinary language independently of the orations"),
+        ("K", "choose a named Latin Bible companion, or remove it"),
+        ("i", "Contents: move to a semantic liturgical unit"),
+        ("u", "copy the canonical website URL for this reading"),
+        ("d", "Study: the page's coverage, placement and source apparatus"),
         ("w", "choose an oration witness, where several are held"),
         ("s", "make a choice the rubrics leave open (Mass, form, branch, cycle)"),
         ("r", "rubrics shown or hidden in missal mode"),
         ("p", "open this formulary in the Propers surface"),
-        ("f", "focus: the reading alone, full width; again to restore"),
+        ("f", "show or hide navigation panes; narrow screens start with the reading"),
     )
     BINDINGS = [
         Binding("left,h", "step(-1)", "previous day", show=False),
@@ -104,13 +111,19 @@ class Day(Surface):
         Binding("left_curly_bracket", "month(-1)", "previous month", show=False),
         Binding("right_curly_bracket", "month(1)", "next month", show=False),
         Binding("t", "today", "today"),
-        Binding("g", "goto", "go to"),
-        Binding("c", "calendar", "next missal"),
+        Binding("g", "goto", "date"),
+        Binding("c", "calendar", "missal"),
         Binding("v", "compare", "compare"),
         Binding("V", "peer", "compare with…", show=False),
-        Binding("m", "missal", "with the Ordinary"),
-        Binding("o", "orations", "en/la"),
+        Binding("m", "missal", "missal mode"),
+        Binding("o", "orations", "language"),
         Binding("b", "bible", "bible", show=False),
+        Binding("B", "bilingual", "bilingual", show=False),
+        Binding("L", "ordinary_language", "Ordinary language", show=False),
+        Binding("K", "companion", "Latin Bible", show=False),
+        Binding("i", "contents", "contents"),
+        Binding("u", "share", "share", show=False),
+        Binding("d", "study", "study"),
         Binding("w", "witness", "witness", show=False),
         Binding("s", "choose", "choose"),
         Binding("r", "rubrics", "rubrics", show=False),
@@ -120,11 +133,24 @@ class Day(Surface):
     .day.focus #day-left { display: none; }
     .day.narrow #day-left { width: 32; }
     .day.narrow #day-legend { display: none; }
-    .day.wide #day-left { width: 50; }
+    .day.wide #day-left { width: 36; }
+    .day.compact #day-left { display: none; }
+    .day.compact.navigation #day-left { display: block; width: 100%; margin-right: 0; }
+    .day.compact.navigation #day-reading-a, .day.compact.navigation #day-compare { display: none; }
+    .day.short #day-why { display: none; }
+    .day.compact.navigation.short #day-why { display: block; }
+    .day #day-reading-a, .day #day-compare { padding: 1 3; }
+    .day #day-reading-a { align: center top; }
+    .day.narrow #day-reading-a, .day.narrow #day-compare { padding: 1 2; }
+    .day.narrow #day-compare-body Horizontal { layout: vertical; }
+    .day.narrow .compare-side { width: 100%; padding: 0 0 1 0; }
+    .day #day-text-a { max-width: 78; }
     """
     DEFAULT_CSS = """
-    Day #day-left { width: 40; }
-    Day #day-calendar { height: auto; }
+    Day #day-left { width: 36; margin-right: 1; }
+    Day #day-calendar { height: auto; align: center top; }
+    Day #day-month { width: 35; max-width: 100%; }
+    Day #day-legend { display: none; }
     Day #day-missals { height: auto; }
     Day #day-why { height: 1fr; }
     Day #day-compare { display: none; }
@@ -147,6 +173,15 @@ class Day(Surface):
         self.bibles: list[dict] = []
         self.bible = ""
         self.orations = ""
+        self.ordinary_language = ""
+        self.text_display = "selected"
+        self.companion = ""
+        self.navigation = ReadingNavigation()
+        self.compare_locations: list = []
+        self.compare_focus: tuple[str, float] | None = None
+        self.pending_study = False
+        self.pending_selection: dict = {}
+        self.url_legacy: dict = {}
         self.ordinary = False
         self.rubrics = True
         self.comparing = False
@@ -193,17 +228,17 @@ class Day(Surface):
         self.opening = opening
         self.calendars = opening["calendars"]
         self.bibles = opening["bibles"]
+        # Defaults are declared by the same page owners, never inferred from
+        # the order of witnesses or missals.
+        self.bible = self.bible or opening.get("defaultBible") or self.bibles[0]["id"]
+        self.orations = self.orations or opening.get("defaultOrations") or "la"
+        self.ordinary_language = self.ordinary_language or opening.get("defaultOrdinaryLanguage") or "en"
         ids = [one["id"] for one in self.calendars]
         if self.calendar not in ids:
             if self.calendar:
-                self.app.notify(f"No missal called {self.calendar!r} is offered here.", severity="warning")
+                self.fail(f"No missal called {self.calendar!r} is offered here. Choose a held missal with c.")
+                return
             self.calendar = opening.get("default") if opening.get("default") in ids else ids[0]
-        # The page's own defaults: the declared Bible and the Missal's own
-        # language (reader-state.js DEFAULT_BIBLE_ID; Triptych.SOURCE_LANGUAGE).
-        if not self.bible:
-            self.bible = opening.get("defaultBible") or self.bibles[0]["id"]
-        if not self.orations:
-            self.orations = opening.get("defaultOrations") or "la"
         self.adopt_pending()
         self.load()
 
@@ -212,7 +247,7 @@ class Day(Surface):
 
     # --- intent and movement ---------------------------------------------
 
-    def follow(self, date: str | None = None, calendar: str | None = None, mass: str | None = None, **_) -> None:
+    def follow(self, date: str | None = None, calendar: str | None = None, mass: str | None = None, **options) -> None:
         if date:
             self.date = dt.date.fromisoformat(date)
             self.pinned = True
@@ -220,6 +255,24 @@ class Day(Surface):
             self.calendar = calendar
         if mass:
             self.pending_mass = mass
+        for key, attribute in (("bible", "bible"), ("orations", "orations"), ("ordinary", "ordinary"),
+                               ("ordinaryLang", "ordinary_language"), ("textDisplay", "text_display"),
+                               ("companion", "companion"), ("rubrics", "rubrics"), ("comparing", "comparing")):
+            if key in options:
+                setattr(self, attribute, options[key])
+        if "urlLegacy" in options:
+            self.url_legacy = options["urlLegacy"]
+        self.set_class(self.comparing, "comparing")
+        if options.get("peer"):
+            self.chosen_peer = options["peer"]
+        if "compare_territory" in options:
+            self.compare_territory = "" if options["compare_territory"] == "universal" else options["compare_territory"]
+        if options.get("replace"):
+            self.choices[(self.calendar, self.date.isoformat())] = {}
+        self.pending_selection = {key: options[key] for key in ("form", "witness", "properChoices", "variants")
+                                  if key in options}
+        self.navigation.pending = options.get("location")
+        self.pending_study = bool(options.get("study"))
         if self.calendars:
             self.adopt_pending()
             self.load()
@@ -231,6 +284,9 @@ class Day(Surface):
         if mass:
             self.choices[(self.calendar, self.date.isoformat())] = {"mass": mass}
             self.pending_mass = None
+        if self.pending_selection:
+            self.selection().update(self.pending_selection)
+            self.pending_selection = {}
 
     def go(self, date: dt.date) -> None:
         self.date = date
@@ -260,27 +316,66 @@ class Day(Surface):
         def answered(value: str | None) -> None:
             if not value:
                 return
+            if "#" in value or "://" in value:
+                self.open_link(value)
+                return
             try:
                 self.go(dt.date.fromisoformat(value))
             except ValueError:
                 self.app.notify(f"Not a date: {literal(repr(value))}. Write it YYYY-MM-DD.", severity="warning")
 
-        self.app.push_screen(Ask("go to a date", "A civil date, YYYY-MM-DD", self.date.isoformat()), answered)
+        self.app.push_screen(Ask("go to a date or reader URL", "YYYY-MM-DD, or paste a Day or Propers URL",
+                                self.date.isoformat()), answered)
+
+    @work(thread=True, exclusive=True, group="day-open-url")
+    def open_link(self, value: str) -> None:
+        try:
+            target = bridge.call(ADAPTER, "openReaderLink", value, "day")
+        except Refused as refusal:
+            self.deliver(self.app.notify, str(refusal), severity="warning")
+            return
+        self.deliver(self.app.action_surface, target["entrance"], **target["intent"])
 
     def action_calendar(self) -> None:
         ids = [one["id"] for one in self.calendars]
         if ids:
-            self.calendar = ids[(ids.index(self.calendar) + 1) % len(ids)]
+            self.calendar = ids[(ids.index(self.calendar) + 1) % len(ids)] if self.calendar in ids else ids[0]
             self.load()
 
     def action_compare(self) -> None:
+        self.map_mode_location("read" if self.comparing else "compare")
         self.comparing = not self.comparing
         self.set_class(self.comparing, "comparing")
         self.load()
 
     def action_missal(self) -> None:
+        if self.ordinary and not self.comparing:
+            self.map_mode_location("read")
         self.ordinary = not self.ordinary
         self.load()
+
+    def map_mode_location(self, mode: str) -> None:
+        current = self.compare_current() if self.comparing else self.navigation.current(
+            self.query_one("#day-reading-a", ScrollPanel), self.query_one("#day-text-a", Static))
+        destination = None
+        for row in (self.views.get(self.calendar) or {}).get("rows") or []:
+            prefix = row.get("prefix") or ""
+            maps = row.get("navigation") or {}
+            if self.comparing:
+                target = ((maps.get("fromCompare") or {}).get("recension") or {}).get(current)
+                if target:
+                    destination = prefix + target
+                    break
+            elif current and current.startswith(prefix):
+                source = current[len(prefix):]
+                target = (((maps.get("compare") or {}).get("recension") or {}).get(source) if mode == "compare"
+                          else (maps.get("nearest") or {}).get(source))
+                if target:
+                    destination = target if mode == "compare" else prefix + target
+                    break
+        self.navigation.pending = destination
+        if not destination:
+            self.navigation.identity = None
 
     def action_rubrics(self) -> None:
         self.rubrics = not self.rubrics
@@ -292,6 +387,94 @@ class Day(Surface):
             selection.pop("witness", None)
         self.load()
 
+    def action_bilingual(self) -> None:
+        self.text_display = "selected" if self.text_display == "latin-and-selected" else "latin-and-selected"
+        self.load()
+
+    def action_companion(self) -> None:
+        offers = [("", "no Latin Bible companion")]
+        offers += [(one["id"], one["label"]) for one in self.bibles if one.get("language") == "la"]
+
+        def picked(value) -> None:
+            if value is not None:
+                self.companion = value
+                self.load()
+
+        self.app.push_screen(Pick("Latin Bible companion", offers,
+                                  "Each edition retains its own numbering, provenance and refusals."), picked)
+
+    def action_contents(self) -> None:
+        if self.comparing:
+            if not self.compare_locations:
+                self.app.notify("There are no comparison units in this selection yet.")
+                return
+            box = self.query_one("#day-compare", ScrollPanel)
+
+            def picked(ident) -> None:
+                if ident is None:
+                    return
+                host = next(host for key, _, host in self.compare_locations if key == ident)
+                self.show_reading_pane()
+                self.call_after_refresh(self.move_compare_to, ident, host)
+                box.focus()
+
+            self.app.push_screen(Pick("Contents", [(key, label) for key, label, _ in self.compare_locations],
+                                      "Calendar results, then corresponding semantic units."), picked)
+        else:
+            self.navigation.choose(self, self.query_one("#day-reading-a", ScrollPanel),
+                                   self.query_one("#day-text-a", Static))
+
+    @work(thread=True, exclusive=True, group="day-share")
+    def action_share(self) -> None:
+        if self.comparing:
+            options = {"orations": self.orations, "bible": self.bible, "territory": self.compare_territory,
+                       "companion": self.companion, "textDisplay": self.text_display, "urlLegacy": self.url_legacy}
+            location = self.compare_current()
+            comparison = {"peer": self.peer()}
+        else:
+            options = self.options_for(self.calendar)
+            location = self.navigation.current(self.query_one("#day-reading-a", ScrollPanel),
+                                               self.query_one("#day-text-a", Static))
+            comparison = None
+        options["location"] = location
+        try:
+            route = bridge.call(ADAPTER, "readerUrl", "day", self.calendar, self.date.isoformat(), options, comparison)
+        except Refused as refusal:
+            self.deliver(self.app.notify, str(refusal), severity="warning")
+            return
+        self.deliver(share, self, route)
+
+    def action_ordinary_language(self) -> None:
+        ordinary = (self.views.get(self.calendar) or {}).get("ordinary") or {}
+        languages = [(one["lang"], one.get("label") or one.get("name") or one["lang"])
+                     for one in ordinary.get("languages") or []]
+        if not languages:
+            self.app.notify("Open Missal mode (m) to choose this edition's Ordinary language.")
+            return
+
+        def picked(value) -> None:
+            if value:
+                self.ordinary_language = value
+                self.load()
+
+        self.app.push_screen(Pick("Ordinary language", languages,
+                                  "The oration language stays independently selected; unavailable text stays explicit."),
+                             picked)
+
+    @work(thread=True, exclusive=True, group="day-study")
+    def action_study(self) -> None:
+        try:
+            rows = bridge.call(ADAPTER, "studyDay", self.calendar, self.date.isoformat(), self.options_for(self.calendar))
+        except Refused as refusal:
+            self.deliver(self.app.notify, str(refusal), severity="warning")
+            return
+        ink = Ink()
+        for row in rows:
+            if row.get("option"):
+                ink.line(row["option"], "bold $day-color")
+            missal.blocks(ink, row.get("blocks") or [], accent="$day-color")
+        self.deliver(self.app.push_screen, Reading("Study this day", ink.content(), walks=False))
+
     def action_bible(self) -> None:
         ids = [one["id"] for one in self.bibles]
         if ids:
@@ -300,27 +483,43 @@ class Day(Surface):
 
     def action_propers(self) -> None:
         rows = (self.views.get(self.calendar) or {}).get("rows") or []
-        masses = [row["mass"] for row in rows if row.get("mass")]
-        if not masses:
+        readable = [row for row in rows if row.get("mass")]
+        if not readable:
             self.app.notify("No formulary is being read on this date yet.", severity="warning")
             return
-        if len(masses) == 1:
-            self.app.action_surface("propers", calendar=self.calendar, mass=masses[0]["key"])
+        def open_row(row: dict) -> None:
+            options = self.options_for(self.calendar)
+            options.pop("territory", None)
+            options.pop("mass", None)
+            options.pop("urlLegacy", None)
+            resolved = row.get("resolved") or {}
+            if resolved.get("form"):
+                options["form"] = resolved["form"]
+            cycles = {(event.get("selected") or {}).get("cycle") for event in row.get("events") or []}
+            cycles.discard(None)
+            if len(cycles) == 1:
+                options["cycle"] = cycles.pop()
+            self.app.action_surface("propers", calendar=self.calendar, mass=row["mass"]["key"], **options)
+
+        if len(readable) == 1:
+            open_row(readable[0])
             return
         self.app.push_screen(
-            Pick("open in propers", [(one["key"], one["name"]) for one in masses],
+            Pick("open in propers", [(str(index), row["mass"]["name"]) for index, row in enumerate(readable)],
                  "Each held territorial branch reads its own formulary."),
-            lambda key: key and self.app.action_surface("propers", calendar=self.calendar, mass=key))
+            lambda key: key is not None and open_row(readable[int(key)]))
 
     @on(Month.Chosen)
     def chosen_date(self, event: Month.Chosen) -> None:
         self.go(event.date)
+        self.show_reading_pane()
 
     @on(OptionList.OptionSelected, "#day-missal-list")
     def picked_calendar(self, event: OptionList.OptionSelected) -> None:
         if event.option.id and event.option.id.startswith("cal-"):
             self.calendar = event.option.id[4:]
             self.load()
+            self.show_reading_pane()
 
     # --- choices the rubrics leave open -----------------------------------
 
@@ -335,12 +534,20 @@ class Day(Surface):
             branch = (row.get("heading") or {}).get("label")
             prefix = f"{branch} · " if branch else ""
             context = {**row, "day": {"branches": [row.get("branch") or {}]}}
+            path_ids = {path["id"] for path in row.get("sourcePaths") or []}
             for choice in row.get("unresolvedChoices") or []:
                 ident = choice.get("id") or ""
+                if ident in path_ids or ident.startswith(("proper-condition/", "common-set:")):
+                    continue
                 for option in choice.get("options") or []:
                     found.append(((calendar, row.get("option"), ident, option["id"], row),
                                   f"{prefix}{missal.option_label(choice, option, context)}"
                                   f"   ({choice.get('reason') or ident})"))
+            for path in row.get("sourcePaths") or []:
+                for option in path["options"]:
+                    if not option["unavailable"] and option.get("properChoices"):
+                        found.append(((calendar, row.get("option"), "source-path", option["properChoices"], row),
+                                      prefix + option["label"]))
             for event in row.get("events") or []:
                 if event.get("kind") == "proper-choice":
                     for option in event.get("options") or []:
@@ -351,6 +558,13 @@ class Day(Surface):
         if (view.get("state") or {}).get("territory"):
             found.append(((calendar, None, "every-branch", None, None),
                           "every held territorial branch, as the page shows them"))
+        ordinary = view.get("ordinary") or {}
+        for group in ordinary.get("variants") or []:
+            selected = (ordinary.get("selection") or {}).get(group["group"])
+            for option in group.get("options") or []:
+                mark = " (selected)" if option["id"] == selected else ""
+                found.append(((calendar, None, "ordinary-variant", (group["group"], option["id"]), None),
+                              f"{group.get('name') or group['group']}: {option['name']}{mark}"))
         return found
 
     def action_choose(self) -> None:
@@ -406,6 +620,11 @@ class Day(Surface):
                 selection.setdefault("properChoices", {})[choice[0]] = choice[1]
             elif kind.startswith("translation-witness"):
                 selection["witness"] = choice
+            elif kind == "ordinary-variant":
+                selection.setdefault("variants", {})[choice[0]] = choice[1]
+            elif kind == "source-path":
+                selection["properChoices"] = choice
+                selection.pop("alternative", None)
             else:
                 self.app.notify(f"This reader cannot make the choice {kind!r} yet.", severity="warning")
                 return
@@ -426,8 +645,8 @@ class Day(Surface):
         if not witnesses:
             self.app.notify("No oration witness in this language is recorded for this missal.")
             return
-        offers = [("", "every held witness, each named (no single witness chosen)")]
-        offers += [(one["source_id"], f"{one['label'] or 'Triptych'}  ·  {one['held']} held") for one in witnesses]
+        offers = [("", "no single witness chosen; coequal witnesses remain open")]
+        offers += [(one["id"], one["label"]) for one in witnesses]
 
         def picked(value) -> None:
             if value is None:
@@ -447,7 +666,8 @@ class Day(Surface):
     def options_for(self, calendar: str) -> dict:
         chosen = dict(self.choices.get((calendar, self.date.isoformat()), {}))
         options = {"orations": self.orations, "bible": self.bible, "ordinary": self.ordinary,
-                   "ordinaryLang": self.orations}
+                   "ordinaryLang": self.ordinary_language or self.orations, "textDisplay": self.text_display,
+                   "companion": self.companion, "rubrics": self.rubrics, "urlLegacy": self.url_legacy}
         options.update({key: value for key, value in chosen.items() if value})
         return options
 
@@ -496,7 +716,8 @@ class Day(Surface):
                 # The page's Compare takes no Mass, form or witness of its own
                 # (day-compare.js:31-46 preflight): only the language, the Bible
                 # and a territory both sides hold.
-                asked = {"orations": self.orations, "bible": self.bible}
+                asked = {"orations": self.orations, "bible": self.bible, "companion": self.companion,
+                         "textDisplay": self.text_display}
                 if self.compare_territory:
                     asked["territory"] = self.compare_territory
                 try:
@@ -543,6 +764,9 @@ class Day(Surface):
         self.show_missals()
         self.redraw()
         self.app.refresh_where()
+        if self.pending_study:
+            self.pending_study = False
+            self.action_study()
 
     def redraw(self) -> None:
         self.show_why(self.views.get(self.calendar))
@@ -571,7 +795,10 @@ class Day(Surface):
     def show_compare(self, compared: dict) -> None:
         box = self.query_one("#day-compare", ScrollPanel)
         body = self.query_one("#day-compare-body", Vertical)
-        body.remove_children()
+        restore = self.navigation.pending or self.compare_current()
+        self.navigation.pending = None
+        self.compare_locations = []
+        self.compare_focus = None
         peer = next((one["short"] for one in self.calendars if one["id"] == self.peer()), self.peer())
         edition = next((one["short"] for one in self.calendars if one["id"] == self.calendar), self.calendar)
         box.retitle(f"{compared.get('title') or 'compare'} · {edition} and {peer}")
@@ -595,8 +822,11 @@ class Day(Surface):
             if compared.get("notice"):
                 head.line(compared["notice"], "italic $text-muted")
             widgets.append(Static(head.content()))
-            for section in self.compare_sections(compared.get("blocks") or []):
-                unit = Vertical(classes="compare-unit")
+            source_sections = [{"id": None, "label": "Introduction", "blocks": compared.get("lead") or []}]
+            source_sections += compared.get("sections") or []
+            units = ((source, section) for source in source_sections
+                     for section in self.compare_sections(source["blocks"]))
+            for source_section, section in units:
                 parts = []
                 if section["title"] or section["lead"]:
                     lead = missal.blocks(Ink(), ([section["title"]] if section["title"] else []) + section["lead"],
@@ -608,15 +838,40 @@ class Day(Surface):
                     parts.append(Horizontal(*columns))
                 else:
                     parts.extend(columns)
-                widgets.append((unit, parts))
-        for widget in widgets:
-            if isinstance(widget, tuple):
-                container, parts = widget
-                body.mount(container)
-                container.mount_all(parts)
+                unit = Vertical(*parts, classes="compare-unit")
+                if source_section.get("id"):
+                    self.compare_locations.append((source_section["id"], source_section["label"], unit))
+                widgets.append(unit)
+
+        self.mount_comparison(widgets, restore)
+
+    @work(exclusive=True, group="day-compare-layout")
+    async def mount_comparison(self, widgets: list, restore: str | None) -> None:
+        body = self.query_one("#day-compare-body", Vertical)
+        await body.remove_children()
+        await body.mount_all(widgets)
+
+        def restore_location() -> None:
+            host = next((host for ident, _, host in self.compare_locations if ident == restore), None)
+            if host:
+                self.move_compare_to(restore, host)
             else:
-                body.mount(widget)
-        box.scroll_home(animate=False)
+                self.query_one("#day-compare", ScrollPanel).scroll_home(animate=False)
+
+        self.call_after_refresh(restore_location)
+
+    def move_compare_to(self, ident: str, host) -> None:
+        box = self.query_one("#day-compare", ScrollPanel)
+        box.scroll_to_widget(host, top=True, animate=False, force=True, immediate=True)
+        self.compare_focus = (ident, box.scroll_y)
+
+    def compare_current(self) -> str | None:
+        box = self.query_one("#day-compare", ScrollPanel)
+        if self.compare_focus and abs(self.compare_focus[1] - box.scroll_y) < 0.5:
+            return self.compare_focus[0]
+        self.compare_focus = None
+        return next((ident for ident, _, host in reversed(self.compare_locations)
+                     if host.virtual_region.y <= box.scroll_y), None)
 
     def show_missals(self) -> None:
         listing = self.query_one("#day-missal-list", OptionList)
@@ -655,7 +910,7 @@ class Day(Surface):
         box.border_subtitle = "c next · enter read"
         calendar_box = self.query_one("#day-calendar", Panel)
         calendar_box.retitle(self.date.strftime("%A %-d %B %Y"))
-        calendar_box.border_subtitle = "computed, not celebrated"
+        calendar_box.border_subtitle = "? marks · computed calendar"
 
     def show_why(self, view: dict | None) -> None:
         box = self.query_one("#day-why", ScrollPanel)
@@ -711,6 +966,7 @@ class Day(Surface):
             return
         state = view.get("state") or {}
         rows = view.get("rows") or []
+        self.navigation.begin((calendar, view["date"]), box, text)
         box.retitle(f"{view['title']} · {edition}")
         mode = "missal" if state.get("ordinary") else "read"
         language = "English" if state.get("orations") == "en" else "Latin"
@@ -723,7 +979,12 @@ class Day(Surface):
                   else (rows[0].get("option") if rows and rows[0].get("option") else "Universal"))
         meta = [edition, branch, view["bible"]["label"], f"{language} orations"]
         if state.get("ordinary"):
-            meta.append(f"{language} Ordinary")
+            ordinary_language = "English" if state.get("ordinaryLang") == "en" else "Latin"
+            meta.append(f"{ordinary_language} Ordinary")
+        if state.get("textDisplay") == "latin-and-selected":
+            meta.append("Latin paired with selected language")
+        if state.get("companion"):
+            meta.append(f"Latin Bible: {state['companion']}")
         ink(" · ".join(meta), "$text-muted")
         ink(f"  ·  {season_name(view['day'].get('season'))}", tone(view["day"].get("season"))).line()
         if view.get("multiple"):
@@ -753,13 +1014,26 @@ class Day(Surface):
                 ink.line(f"Standing: {resolved['standing']}", "bold $warning")
             context = {**row, "day": {"branches": [row.get("branch") or {}]}, "ordinary": view.get("ordinary")}
             missal.choices(ink, context)
+            for path in row.get("sourcePaths") or []:
+                if not path.get("beforeEventId"):
+                    missal.blocks(ink, path["blocks"], accent="$day-color")
             for unresolved in row.get("ordinaryUnresolved") or []:
                 said = unresolved if isinstance(unresolved, str) else (
                     unresolved.get("reason") or unresolved.get("id") or str(unresolved))
                 ink.line(f"Ordinary unresolved: {said}", "italic $warning")
-            missal.events(ink, context, rubrics=self.rubrics, accent="$day-color")
+            for event in context.get("events") or []:
+                if not self.rubrics and (event.get("element") or {}).get("kind") == "rubric":
+                    continue
+                for path in row.get("sourcePaths") or []:
+                    if path.get("beforeEventId") == event["id"]:
+                        missal.blocks(ink, path["blocks"], accent="$day-color")
+                label = event.get("slot") or event.get("name") or (event.get("element") or {}).get("name") or event["id"]
+                prefix = row.get("prefix") or ""
+                branch_label = f"{row['option']} · " if prefix else ""
+                self.navigation.mark(prefix + event["id"], branch_label + label, ink)
+                missal.events(ink, {**context, "events": [event]}, rubrics=self.rubrics, accent="$day-color")
         # The Ordinary's own advisory, at the foot (day.js:1609-1612).
         if state.get("ordinary") and (view.get("ordinary") or {}).get("advisory"):
             ink.line().line(view["ordinary"]["advisory"], "italic $text-muted")
         text.update(ink.content())
-        box.scroll_home(animate=False)
+        self.navigation.finish(self, box, text)

@@ -22,10 +22,19 @@ const KEYS = ['praeparatio/deus-tu-conversus', 'praeparatio/ostende-nobis',
 const GOSPEL_PRAYERS = ['oblatio/munda-cor-meum', 'oblatio/dominus-sit-in-corde-meo',
   'oblatio/per-evangelica-dicta'];
 const MAME = 'edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam';
-const CUMMISKEY = 'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861';
+const LASANCE = 'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945';
 const KYRIE = KEYS.filter(key => /(?:kyrie|christe)-eleison/.test(key));
+// The selected historical English witness has no Kyrie glosses. Exercise the
+// same owner with an explicitly non-liturgical fixture, so source replacement
+// cannot silently remove native note/AX/copy/print/reflow coverage.
+const GLOSS_KEY = 'non-liturgical-gloss-probe';
+const GLOSS_TURNS = [1,2,3].flatMap(number=>[
+  {key:'spoken-'+number,speaker:'priest',text:'Spoken probe '+number+'.'},
+  {key:'gloss-'+number,gloss:true,text:'Source-note probe '+number+'.'},
+]);
 const clean = value => value.replace(/\s+/g, ' ').trim();
-const eventSelector = key => `[data-semantic-event-id="ordinary-element/${key}"]`;
+const eventSelector = key => key === GLOSS_KEY ? '[data-native-gloss-fixture]' :
+  `[data-semantic-event-id="ordinary-element/${key}"]`;
 const assertions = [], failures = [], consoleProblems = [], failedRequests = [], httpProblems = [];
 const clipboard = [], accessibility = [], pdfs = [];
 
@@ -160,12 +169,21 @@ async function visit(cdp, base, entrance, lang, options={}) {
     (window.${entrance}ReaderDebug.state.form || null) === ${JSON.stringify(requested.get('form'))} &&
     document.getElementById('reader-document').getAttribute('aria-busy') === 'false' &&
     document.querySelector('#reader-document [data-semantic-event-id]')`, entrance+' '+lang+' ready');
+  if (lang==='en') await evaluate(cdp,`(()=>{
+    const T=window.Triptych,fixture=T.el('section','proper ordinary-element');
+    fixture.setAttribute('data-native-gloss-fixture','true');
+    fixture.appendChild(T.el('h3','proper-name','Non-liturgical source-note test fixture'));
+    fixture.appendChild(T.ordinaryText({kind:'dialogue'},
+      {lang:'en',turns:${JSON.stringify(GLOSS_TURNS)}}));
+    document.querySelector('#reader-document').appendChild(fixture);
+  })()`);
   return evaluate(cdp, `({outcome:${entrance}ReaderDebug.outcome,error:${entrance}ReaderDebug.error,
     events:${entrance}ReaderDebug.semantic?.events?.map(row=>row.id) || null,hash:location.hash})`);
 }
 const data = JSON.parse(await source('src/web/data/structure/ordinary/roman-1962.json'));
 const elements = new Map(data.sections.flatMap(section=>section.elements.map(element=>[element.key,element])));
 const turns = (key,lang) => {
+  if (key===GLOSS_KEY) {assert.equal(lang,'en');return GLOSS_TURNS;}
   const held = elements.get(key)?.translations.find(row=>row.lang===lang);
   assert.ok(held?.turns?.length,key+' '+lang+' source turns');
   assert.equal(held.turns.map(row=>row.text).join('\n'),held.text,key+' exact generated source-row stream');
@@ -173,9 +191,14 @@ const turns = (key,lang) => {
 };
 function cue(turn) {
   const speaker = {priest:'Priest',server:'Server',all:'All'}[turn.speaker];
-  const role = {versicle:'Versicle',response:'Response'}[turn.dialogue_role];
+  const marker = turn.printed_marker;
+  const printedRole = typeof marker === 'string' && turn.text.startsWith(marker+' ')
+    ? (/^(?:V(?:\/\.?|\.)|℣\.?)$/.test(marker) ? 'versicle' :
+      /^(?:R(?:\/\.?|\.)|℟\.?)$/.test(marker) ? 'response' : null) : null;
+  const shownRole = turn.dialogue_role || printedRole;
+  const role = {versicle:'Versicle',response:'Response'}[shownRole];
   return {label: role && speaker ? role+' — '+speaker : role || speaker,
-    glyph: {versicle:'℣',response:'℟'}[turn.dialogue_role] || {priest:'P',server:'S',all:'All'}[turn.speaker]};
+    glyph: {versicle:'℣',response:'℟'}[shownRole] || {priest:'P',server:'S',all:'All'}[turn.speaker]};
 }
 function words(turn) {
   return turn.printed_marker ? turn.text.slice(turn.printed_marker.length+1) : turn.text;
@@ -236,11 +259,16 @@ async function verifyRows(cdp,entrance,lang) {
   }
   const semantic=await evaluate(cdp, `(() => ({ids:[...document.querySelectorAll('#reader-document [data-semantic-event-id]')].map(node=>node.dataset.semanticEventId),
     glosses:document.querySelectorAll('[data-gloss="true"]').length,
+    sourceGlosses:document.querySelectorAll('#reader-document [data-semantic-event-id] [data-gloss="true"]').length,
+    fixtureGlosses:document.querySelectorAll('[data-native-gloss-fixture] [data-gloss="true"]').length,
     qualification:document.querySelector('#reader-document').innerText,
     crossed:[...document.querySelectorAll('${eventSelector('praeparatio/misereatur-tui')} .ordinary-turn')].map(row=>[row.dataset.speaker,row.dataset.dialogueRole||null])}))()`);
   assert.equal(new Set(semantic.ids).size,semantic.ids.length,'unique semantic event identities');
   assert.deepEqual(semantic.crossed,[['server',null],['priest',null]],'crossed Misereatur retains server then priest without target roles');
   assert.equal(semantic.glosses,lang==='en'?3:0,'language-local gloss count');
+  const sourceGlosses=KEYS.reduce((count,key)=>count+turns(key,lang).filter(turn=>turn.gloss).length,0);
+  assert.equal(semantic.sourceGlosses,sourceGlosses,'selected source retains its own exact gloss extent');
+  assert.equal(semantic.fixtureGlosses,lang==='en'?3:0,'separate non-liturgical fixture retains three notes');
   assert.ok(clean(semantic.qualification).includes(clean(data.advisory)),'exact source/target advisory remains visible');
   for (const witness of data.translations) {
     assert.ok(clean(semantic.qualification).includes(clean(witness.label)),'source witness label remains visible');
@@ -279,6 +307,7 @@ async function axRows(cdp,key,lang=null) {
   return result;
 }
 async function verifyAX(cdp,entrance,lang,keys=[...KYRIE,'praeparatio/misereatur-tui','praeparatio/misereatur-vestri','communio/pater-noster']) {
+  if(lang==='en') keys=keys.concat(GLOSS_KEY);
   for(const key of keys) {
     const actual=await axRows(cdp,key,lang),expected=turns(key,lang);
     assert.equal(actual.length,expected.length,key+' '+lang+' exact AX row count');
@@ -292,6 +321,7 @@ async function verifyAX(cdp,entrance,lang,keys=[...KYRIE,'praeparatio/misereatur
   }
 }
 async function verifyCopy(cdp,entrance,lang,keys=[...KYRIE,'praeparatio/misereatur-tui']) {
+  if(lang==='en') keys=keys.concat(GLOSS_KEY);
   await cdp.send('Page.bringToFront');
   await cdp.send('Emulation.setFocusEmulationEnabled',{enabled:true});
   for(const key of keys) {
@@ -327,7 +357,7 @@ async function verifyGospelPrayers(cdp,entrance,paired) {
     const element=elements.get(key),latin=element.translations.find(row=>row.lang==='la');
     const english=element.translations.find(row=>row.lang==='en');
     assert.equal(latin.source_id,MAME,key+' independent Latin source');
-    assert.equal(english.source_id,CUMMISKEY,key+' original English source');
+    assert.equal(english.source_id,LASANCE,key+' selected historical English source');
     assert.equal(latin.target_wording,'word-exact',key+' bounded collation');
     assert.ok(latin.note.includes('Cummiskey 1861 prints this existing block in English only'),key+' source-specific absence retained');
     const expected=turns(key,'la');assert.equal(expected.length,1,key+' one Latin priest turn');
@@ -351,7 +381,7 @@ async function verifyGospelPrayers(cdp,entrance,paired) {
     })()`);
     assert.ok(!facts.headings.includes('All'),key+' no inherited All heading');
     if (paired) {
-      assert.deepEqual(facts.sides.map(side=>[side.lang,side.source,side.rights]),[['la',MAME,'public-domain'],['en',CUMMISKEY,'public-domain']],key+' independently attributed language sides');
+      assert.deepEqual(facts.sides.map(side=>[side.lang,side.source,side.rights]),[['la',MAME,'public-domain'],['en',LASANCE,'public-domain']],key+' independently attributed language sides');
       assert.ok(facts.sides[0].credit.includes(witness.label),key+' Latin source credit');
     } else {
       assert.equal(facts.source,MAME,key+' selected Latin semantic source');
@@ -430,12 +460,12 @@ try {
               const extracted=spawnSync('pdftotext',['-layout',path,'-'],{encoding:'utf8'});
               assert.equal(extracted.status,0,extracted.stderr);
               const text=clean(extracted.stdout);
-              assert.equal(text.split('Lord, have mercy upon us.').length-1,2,'two exact Lord glosses in PDF');
-              assert.equal(text.split('Christ, have mercy upon us.').length-1,1,'one exact Christ gloss in PDF');
+              for(const turn of GLOSS_TURNS.filter(turn=>turn.gloss))
+                assert.equal(text.split(turn.text).length-1,1,'one exact source-note probe in PDF');
               const pages=extracted.stdout.split('\f');
-              for(const gloss of ['Lord, have mercy upon us.','Christ, have mercy upon us.']) {
-                for(const page of pages.filter(page=>clean(page).includes(gloss)))
-                  assert.match(page,/Kyrie eleison|Christe eleison/,'gloss page retains an acclamation');
+              for(const number of [1,2,3]) {
+                for(const page of pages.filter(page=>clean(page).includes('Source-note probe '+number+'.')))
+                  assert.ok(clean(page).includes('Spoken probe '+number+'.'),'source note stays with its spoken line');
               }
               pdfs.push({entrance,pages:pages.filter(page=>page.trim()).length,glosses:3});
               await writeFile(resolve(SCRATCH,`${entrance}-dialogue-pdf.txt`),extracted.stdout);
@@ -448,8 +478,8 @@ try {
       await visit(cdp,base,entrance,lang,{requiem:true});
       const actual=await observedRows(cdp,'conclusio/requiescant-in-pace');
       assert.ok(actual,'source-supported All Souls renders Requiescant');
-      assert.deepEqual(actual.map(row=>[row.labels,row.glyphs]),[
-        [['Versicle — Priest'],['℣']],[['Response — Server'],['℟']]]);
+      assert.deepEqual(actual.map(row=>[row.labels,row.glyphs]),
+        turns('conclusio/requiescant-in-pace',lang).map(turn=>[[cue(turn).label],[cue(turn).glyph]]));
       assert.deepEqual(actual.map(row=>(row.marker?row.marker+' ':'')+row.text),turns('conclusio/requiescant-in-pace',lang).map(row=>row.text));
     });
   }
@@ -535,7 +565,11 @@ finally {
 }
 const report={status:failures.length||consoleProblems.length||failedRequests.length||httpProblems.length?'fail':'pass',
   checks:assertions.length,assertions,failures,consoleProblems,failedRequests,httpProblems,expectedHttpProblems:[],
-  clipboard,accessibility,pdfs,acceptance:{realAccessibilityTree:accessibility.length===38,nativeClipboard:clipboard.length===38,
+  clipboard,accessibility,pdfs,acceptance:{
+    realAccessibilityTree:accessibility.filter(row=>row.key!==GLOSS_KEY).length===38 &&
+      accessibility.filter(row=>row.key===GLOSS_KEY).length===4,
+    nativeClipboard:clipboard.filter(row=>row.key!==GLOSS_KEY).length===38 &&
+      clipboard.filter(row=>row.key===GLOSS_KEY).length===6,
     screenReader:false,manualPrintReview:false,literalBrowserZoom:false,
     reason:'Real AX, native copy, CSS viewport equivalence and automated PDF checks were run; assistive technology, literal desktop zoom and complete human print review were not run.'}};
 await writeFile(resolve(SCRATCH,'dialogue-evidence.json'),JSON.stringify(report,null,2)+'\n');
