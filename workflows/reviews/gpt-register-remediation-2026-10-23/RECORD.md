@@ -266,5 +266,49 @@ no renderer, dependency-lock or document-byte change.
 The staged scope is the single GPT set, its current receipts and mirrors,
 catalogue and derived bindings/inventories, and this review and promise
 bookkeeping. No transient rasters, logs, scratch scripts, source acquisitions,
-unrelated publications or native-run state enter the change. Publication to
-main and verification of its resulting Actions and live artifacts remain open.
+unrelated publications or native-run state enter the change. The following
+receipt records the completed main publication and live verification.
+
+### Main publication
+
+The exact outgoing range contains one ordinary commit,
+`d2521988ff8ad17535f554673501b87d61ae3f77`, over base
+`2e030b564f4413b735ddbea3061082ebe981b11a`. All newly reachable objects are
+the intended 29-path public revision and its trees; no temporary, ignored or
+unrelated content is added. The working tree is clean before publication.
+Both workspace feature ref and `main` receive the commit through non-force
+pushes, and remote ref inspection confirms both exact heads.
+
+[Pages run 40015900747](https://github.com/spincyc/triptych/actions/runs/40015900747)
+and [hygiene run 40015901118](https://github.com/spincyc/triptych/actions/runs/40015901118)
+both complete successfully for that exact commit. The Pages deploy job
+finishes at `2026-10-23T20:20:39Z`; the successful run is last updated at
+`2026-10-23T20:20:40Z`.
+
+At `2026-10-23T20:22:07Z`, nine live routes have been fetched successfully and
+compared byte for byte with the verified local site. Every response is HTTP
+200. PDF content type is `application/pdf`, the HTML routes are `text/html;
+charset=utf-8`, and catalogue data is `application/json; charset=utf-8`.
+
+The six PDF routes are beneath
+`pdf/gpt/liturgy/roman-rite/1962/propers/temporal/` at `https://mystago.gy/`:
+
+| Live basename | SHA-256 |
+| --- | --- |
+| `f01-christ-the-king.pdf` | `974a970bb94750e7a9bd0d31d7a36f6bdf00796f49807c407d877d2068c6dc14` |
+| `f01-christ-the-king-gpt-58faa2feadc98f0f.pdf` | `974a970bb94750e7a9bd0d31d7a36f6bdf00796f49807c407d877d2068c6dc14` |
+| `f01-christ-the-king-synthesis.pdf` | `6d169f83a6ecaaf552f3818ea907c3dd42ec9c29f359223763f5e689fdc4d676` |
+| `f01-christ-the-king-synthesis-gpt-aa0415a9b0a255fb.pdf` | `6d169f83a6ecaaf552f3818ea907c3dd42ec9c29f359223763f5e689fdc4d676` |
+| `f01-christ-the-king-homily.pdf` | `0f6ec5744e40c8c1efbcb13d8a2cdeb2958e6a81c90ad891e7531b5db014bce3` |
+| `f01-christ-the-king-homily-gpt-1a8f6511fc84dc8e.pdf` | `0f6ec5744e40c8c1efbcb13d8a2cdeb2958e6a81c90ad891e7531b5db014bce3` |
+
+The remaining three routes are likewise exact:
+
+| Live path | SHA-256 |
+| --- | --- |
+| `web/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.html` | `3deebabef013339873829a1e5f4418585880b22b7797424c8e53994c28e0ca4c` |
+| `browse/structure/documents/corpus.json` | `9ecaec529db7f8fb703556f123a7b9a115e6431e89f3b0ffe2624878823abc55` |
+| `library/traditional-latin-mass.html` | `fd5fee456883cfbd99db60b5f4098718cb11b2d4c2d54a195ae44b4c458ca0f8` |
+
+This is a documentation-only receipt for the verified publication commit. It
+does not claim its own deployment or grant a new native workflow acceptance.

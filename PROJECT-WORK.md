@@ -11,7 +11,7 @@ Last reconciled: 2026-10-23.
 
 <!-- promised-deliverable: gpt-propers-register-2026-10-23 -->
 
-**Reviewed candidate.** Apply the 21 October register guidance and the corresponding
+**Complete.** Apply the 21 October register guidance and the corresponding
 Claude amendments to the recent GPT proper studies, independently cold-review
 the voice guidance, verify the revised publications, and publish to `main`.
 The matching GPT 1962 Christ the King expansive study, concise study and homily
@@ -35,8 +35,15 @@ at 22, 10 and 3 pages; baseline artifacts were 23, 10 and 3. The homily has
 all mirrors are installed unchanged, and inventories and release bindings are
 current. The complete source aggregate, tracked web-currentness, mechanical
 proper publication check, public-site build and GitHub Pages verifier pass.
-The source gate includes the exact deployment-source prerequisites. Main push,
-the resulting Actions runs and live-byte verification remain open.
+The source gate includes the exact deployment-source prerequisites. Commit
+`d2521988ff8ad17535f554673501b87d61ae3f77` is pushed to the workspace feature
+ref and to `main` by genuine fast-forward. Pages run `40015900747` and hygiene
+run `40015901118` both complete successfully for that exact commit. At
+20:22 UTC all nine checked live routes return 200 with exact reviewed bytes:
+the three canonical PDFs and their three public aliases, the canonical web
+study, the document catalogue data and the owning library page. The focused
+review record preserves exact artifact hashes and public run links. This
+receipt describes the verified publication commit, not its own deployment.
 
 ## Reader and corpus recovery, 2026-10-23
 

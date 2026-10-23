@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-propers-register-2026-10-23"
 owner = "PROJECT-WORK.md"
 promise = "Amend the recent GPT proper studies under the 21 October voice guidance as the Claude documents were amended, cold-review that guidance independently, verify the revised documents and canonical web edition, and publish the reviewed result to main with deployment verification."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "scope-and-guidance-review"
@@ -27,7 +27,7 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "main-and-live-publication"
   criterion = "The intended public outgoing range is reviewed, the deployment gates pass, the workspace commits reach main without force or history rewriting, and the resulting Pages run and affected live artifacts are verified."
-  status = "open"
+  status = "pass"
   evidence = ["workflows/reviews/gpt-register-remediation-2026-10-23/RECORD.md"]
 
 [[deliverables]]
