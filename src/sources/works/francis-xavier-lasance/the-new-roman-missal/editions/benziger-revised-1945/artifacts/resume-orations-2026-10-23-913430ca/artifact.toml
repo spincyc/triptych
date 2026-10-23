@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-2026-10-23-913430ca"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Existing United States nonrenewal of A110108/A192159 for original Lasance/Walsh revised-1945 English on ordinary pages; unchanged insert-excluded expression anchor artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759, SHA256 80b34759fb18ec60f6205460c2ac24dc9e4a861938a94ef1f8e04a08a398ac9a. See src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. Lettered inserts1298a-1298n and1302a-1302d excluded. No scan-image, whole mixed-book or new Latin publication authority."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+provenance = "56 complete historical prayers manually transcribed from bounded ordinary-page images of the held exact facsimile on2026-10-23. Source Latin and English both read, including continuations and actual short endings. Existing independently verified target Latin provenance retained unchanged; source-to-target comparison is a separate per-prayer inference."
+transformation = "Reflow printed line divisions and division hyphens; initial decorative/small capitals rendered in sentence case. Preserve wording, punctuation, sacred-name case, lexical hyphens, optional N. and actual abbreviated conclusions. No new translation, supplied name, Amen or conclusion expansion. Full Latin word sequence and actual ending compared with stated typography treatment; i/j deviations, if any, explicitly itemized. Cross-owner reuse requires literal complete canonical UTF8 equality, including final LF."
+retrieved = "2026-10-23"
+sha256 = "913430ca8abf6959e6d3c18e9c79ef28d69f9e79343de48e038a3b06f403d1df"
+byte_size = 13999
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-2026-10-23-913430ca/english.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "56 terminal English owner bindings; historical antecedent English, not official1962 English. Whole mixed scan and page rasters remain unretained because excluded insert material has no affirmative publication basis. Offline readers can reopen this bounded derivative and checked passage records; exact visual evidence requires the registered remote scan. Existing219 positive entry dictionaries preserved."

@@ -1,0 +1,72 @@
+{
+  "scope": "Independent read-only SOURCE review of settled first batch; not whole-corpus or annual-translation completion",
+  "base": "37c018cad",
+  "findings": [
+    {
+      "severity": "medium",
+      "finding": "City of God XVII.8 full natural extent includes narrative/comment on 2Kings7:1-7 as well as quoted8-16",
+      "disposition": "fixed to2Kings7:1-16"
+    },
+    {
+      "severity": "low",
+      "finding": "NPNF John120 specific translator is James Innes; intro assigns him Tractates38-124",
+      "disposition": "edge basis corrected; anthology source metadata preserved"
+    },
+    {
+      "severity": "medium",
+      "finding": "Bede725 date based only on inaccessible primary notice search snippet",
+      "disposition": "source-only passage, no Mark edge/date override"
+    },
+    {
+      "severity": "note",
+      "finding": "Lasance44 rejected exact fullstring comparisons do not prove source absence; compatible shortcue differences admit separate own-appointment source route",
+      "disposition": "root assigned next batch; not accepted by this receipt"
+    }
+  ],
+  "verified": [
+    "56 English historical prayers independently read against all provided complete page images, including page continuations, pointing, case, names and actual short endings",
+    "Held Lasance completePDF hash6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70 matches canonical scan record",
+    "56 exact canonical target hashes and complete Latin+conclusion wordsequences match under only case/accent/ligature/punctuation normalization; no i/j conversion needed",
+    "All56 installed overlay English bodies match reviewed source proposals;275 totalpositiveentries,219 preserved according to contributing lane test; ownfullpreservationtest not independently rerun",
+    "First batch117file final-files.json manifest matches installedbytes",
+    "City17.8 exact retainedGutenberg9cb737d9 body after declared405-408 note removal and whitespace joining; complete chapterboundary checked",
+    "Canonical 2Kings7:1-16, Ps88:51 and John20:8-9 checked in trackedDouay witnesses; City7:11 sourcevariant retained",
+    "Psalm88SermoII12 completeLatin line190 matches PL37col1139 PDF63 lexicaltext; webtypography declared, duplicatepage-onlyrecord unmapped",
+    "CityDodsintro413-426 and JohnNPNFintroabout416orlater read; PsalmchronologycompleteHTMLa2938c5d row88s1-2 read, Zarb411-412/Rondet411 and location disagreement preserved",
+    "ChrysostomPhilippians3/4 wholetranslatedbodies exact against pinnedCCEL54274dd9 under declaredfootnotecall/whitespace removal; allsegments match; OxfordCotton/Broaduscredits read; impact exactly4consumerbindings in2files",
+    "Allen2013copyrightedpublisherPDF861fbb6c uncertainindividualhomilydatingdiscussionread atintroxii-xiii; no protectedpayloadtracked",
+    "BedeMark10:42-45 source-only explicitLatin checked against retainedPL92col236A-B image4cdb234f and digitalwording; naturalblockboundary and unresolveddate honest",
+    "PCAdvent4 exactCummiskeyEnglish read printed52 PDF63 and hashes85034c90/1daf6156; Pustetprinted[52] image and secondaryMR2002PDF97 body/cuecomparisonread; Per eumdem Dominum nostrum vs PerDominum declared",
+    "GeneratedPCAdvent4 projection labels Englishhistorical-antecedent andcollationunresolved; Latinwithheld, no exact2008claim",
+    "Lasanceprinted819 PDF818conclusiontable all5families independentlyread, fornextbatchsourceauthority only"
+  ],
+  "checks": {
+    "source_library_validate": "exit0 at settled firstbatch: artifact3738 edition1262 passage6742 work1066 bindings4159",
+    "source_diff_check": "exit0",
+    "prayer_token_receipt": ".scratch/resume-source-cold-review/prayer-token-receipt.json"
+  },
+  "limits": [
+    "No annual textual completeness certified",
+    "44 rejection imagechecks not independently repeated as a set",
+    "Current 952untranslated1962prayerowners remain; nextbatchmay change this",
+    "No authenticated2008Missalcomparison",
+    "No direct Zarb/Rondet studyconsultation, no exactTractate120compositionyear",
+    "No blanket dating acceptance from inaccessible catalogue snippets",
+    "Rights bases checked against governing repository records; underlying historicalnonrenewal research not independently rerun"
+  ],
+  "frozen_manifest": {
+    "path": ".scratch/resume-orations-recovery/final-files.json",
+    "sha256": "157dac68ba133f24a55b5f828a72e7d22de1fb6826b06656349026355248f93f"
+  },
+  "audit_reclassification": {
+    "audit_sha256": "0c71bb9f0705777032e9d1ac913b5c18128f4360aa81ff92a30dda414c913c4f",
+    "semantic_changes": "Only28 rejected comparison mismatch_classes arrays; all other audit fields unchanged against staged593c62 baseline.",
+    "verification": ".scratch/resume-source-cold-review/audit-classification-verification.json",
+    "independent_token_counts": {
+      "complete-petition-word-mismatch": 22,
+      "actual-conclusion-mismatch": 29,
+      "source-inline-option-boundary": 1
+    },
+    "limits": "Independent token classification against pinned source/target strings; all44 image readings not independently repeated."
+  }
+}
