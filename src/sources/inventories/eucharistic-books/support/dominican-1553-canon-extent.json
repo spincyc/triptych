@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "book_id": "dominican-1553-canon",
+  "title": "Dominican 1553 Canon complete constituent page/unit census",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "unit.dominican-1553.canon.te-igitur",
+    "unit.dominican-1553.canon.memento-vivorum",
+    "unit.dominican-1553.canon.communicantes",
+    "unit.dominican-1553.canon.hanc-igitur",
+    "unit.dominican-1553.canon.quam-oblationem",
+    "unit.dominican-1553.canon.qui-pridie",
+    "unit.dominican-1553.canon.simili-modo",
+    "unit.dominican-1553.canon.unde-et-memores",
+    "unit.dominican-1553.canon.supra-quae",
+    "unit.dominican-1553.canon.supplices",
+    "unit.dominican-1553.canon.memento-defunctorum",
+    "unit.dominican-1553.canon.nobis-quoque",
+    "unit.dominican-1553.canon.per-quem",
+    "unit.dominican-1553.canon.per-ipsum"
+  ],
+  "scope": "Complete Dominican Canon constituent as the 1553 book prints it: from fol. 89r (canvas 219) Te igitur under the woodcut through fol. 90r (canvas 221) omnis honor, et gloria, left column, immediately followed by the notated Per omnia secula seculorum under the page's red running head Cantus solennis (this book prints no in-column heading there). 14 source-order units, 26 printed crosses, no rubrics printed within these bounds. The book sets the concluding Per omnia saecula saeculorum. Amen only in the following notated chant block, which is excluded with it. Whole-book and complete-Ordinary coverage remain partial; no wording is inherited from another edition.",
+  "pages": [
+    {
+      "witness_id": "dominican-1553-canon-pages",
+      "ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "BSB canvas 5 title page: Missale secundum ordinem fratrum Praedicatorum, iuxta decreta Capituli Generalis anno Domini 1551 Salmanticae celebrati reformatum, et authoritate Apostolica comprobatum; Venetiis apud Iuntas MDLIII. Retained for edition identity and stated revision basis only."
+    },
+    {
+      "witness_id": "dominican-1553-canon-pages",
+      "ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "role": "outside-constituent",
+      "unit_ids": [],
+      "description": "BSB canvas 6: the letter of the Master General Franciscus Romaeus on the 1551 Salamanca general chapter's reform of the Missal and Breviary, and the brief of Julius III (Dilecte fili, dated Rome 1552) confirming the reformed books. Retained as revision-basis evidence only; not transcribed."
+    },
+    {
+      "witness_id": "dominican-1553-canon-pages",
+      "ranges": [
+        [
+          3,
+          3
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.dominican-1553.canon.te-igitur",
+        "unit.dominican-1553.canon.memento-vivorum",
+        "unit.dominican-1553.canon.communicantes"
+      ],
+      "description": "Facsimile PDF page 3, fol. 89r (BSB canvas 219); only Canon text within the declared bounds belongs to this constituent. Woodcuts, running heads and any following chant block are outside it."
+    },
+    {
+      "witness_id": "dominican-1553-canon-pages",
+      "ranges": [
+        [
+          4,
+          4
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.dominican-1553.canon.communicantes",
+        "unit.dominican-1553.canon.hanc-igitur",
+        "unit.dominican-1553.canon.quam-oblationem",
+        "unit.dominican-1553.canon.qui-pridie",
+        "unit.dominican-1553.canon.simili-modo",
+        "unit.dominican-1553.canon.unde-et-memores",
+        "unit.dominican-1553.canon.supra-quae",
+        "unit.dominican-1553.canon.supplices",
+        "unit.dominican-1553.canon.memento-defunctorum"
+      ],
+      "description": "Facsimile PDF page 4, fol. 89v (BSB canvas 220); only Canon text within the declared bounds belongs to this constituent. Woodcuts, running heads and any following chant block are outside it."
+    },
+    {
+      "witness_id": "dominican-1553-canon-pages",
+      "ranges": [
+        [
+          5,
+          5
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "unit.dominican-1553.canon.memento-defunctorum",
+        "unit.dominican-1553.canon.nobis-quoque",
+        "unit.dominican-1553.canon.per-quem",
+        "unit.dominican-1553.canon.per-ipsum"
+      ],
+      "description": "Facsimile PDF page 5, fol. 90r (BSB canvas 221); only Canon text within the declared bounds belongs to this constituent. Woodcuts, running heads and any following chant block are outside it."
+    }
+  ],
+  "source_boundary_audit": {
+    "start": "fol. 89r (canvas 219) Te igitur under the woodcut",
+    "end": "fol. 90r (canvas 221) omnis honor, et gloria, left column, immediately followed by the notated Per omnia secula seculorum under the page's red running head Cantus solennis (this book prints no in-column heading there)",
+    "unit_count": 14,
+    "printed_crosses": 26,
+    "facsimile_sha256": "01039899570786b6076e3632f788731f885d6a803fb33eb215bcb35a303311de",
+    "reading_sha256": "4ce34b7217f9c2930d1a456c058e1e9832c09369b50c22c120def00250075af5"
+  },
+  "serialization_line_classes": [
+    {
+      "unit_id": "unit.dominican-1553.canon.te-igitur",
+      "physical_lines": [
+        {
+          "line": 1,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 3,
+      "printed_crosses": 3
+    },
+    {
+      "unit_id": "unit.dominican-1553.canon.memento-vivorum",
+      "physical_lines": [
+        {
+          "line": 2,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 1,
+      "printed_crosses": 0
+    },
+    {
+      "unit_id": "unit.dominican-1553.canon.communicantes",
+      "physical_lines": [
+        {
+          "line": 3,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 0
+    },
+    {
+      "unit_id": "unit.dominican-1553.canon.hanc-igitur",
+      "physical_lines": [
+        {
+          "line": 4,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 0
+    },
+    {
+      "unit_id": "unit.dominican-1553.canon.quam-oblationem",
+      "physical_lines": [
+        {
+          "line": 5,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 5
+    },
+    {
+      "unit_id": "unit.dominican-1553.canon.qui-pridie",
+      "physical_lines": [
+        {
+          "line": 6,
+          "type": "reading"
+        },
+        {
+          "line": 7,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 1
+    },
+    {
+      "unit_id": "unit.dominican-1553.canon.simili-modo",
+      "physical_lines": [
+        {
+          "line": 8,
+          "type": "reading"
+        },
+        {
+          "line": 9,
+          "type": "reading"
+        },
+        {
+          "line": 10,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 1
+    },
+    {
+      "unit_id": "unit.dominican-1553.canon.unde-et-memores",
+      "physical_lines": [
+        {
+          "line": 11,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 5
+    },
+    {
+      "unit_id": "unit.dominican-1553.canon.supra-quae",
+      "physical_lines": [
+        {
+          "line": 12,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 0
+    },
+    {
+      "unit_id": "unit.dominican-1553.canon.supplices",
+      "physical_lines": [
+        {
+          "line": 13,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 3
+    },
+    {
+      "unit_id": "unit.dominican-1553.canon.memento-defunctorum",
+      "physical_lines": [
+        {
+          "line": 14,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 1,
+      "printed_crosses": 0
+    },
+    {
+      "unit_id": "unit.dominican-1553.canon.nobis-quoque",
+      "physical_lines": [
+        {
+          "line": 15,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 0
+    },
+    {
+      "unit_id": "unit.dominican-1553.canon.per-quem",
+      "physical_lines": [
+        {
+          "line": 16,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 3
+    },
+    {
+      "unit_id": "unit.dominican-1553.canon.per-ipsum",
+      "physical_lines": [
+        {
+          "line": 17,
+          "type": "reading"
+        }
+      ],
+      "name_placeholders": 0,
+      "printed_crosses": 5
+    }
+  ]
+}

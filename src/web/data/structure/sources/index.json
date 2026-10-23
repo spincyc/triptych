@@ -1,10 +1,10 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3711,
-  "editions": 1256,
-  "passages": 6449,
-  "readable": 3599,
+  "artifacts": 3733,
+  "editions": 1259,
+  "passages": 6622,
+  "readable": 3751,
   "works": 1064
  },
  "facets": {
@@ -3982,7 +3982,7 @@
     "id": "en"
    },
    {
-    "editions": 372,
+    "editions": 375,
     "id": "la"
    },
    {
@@ -4153,12 +4153,12 @@
     "label": "15th century"
    },
    {
-    "editions": 14,
+    "editions": 15,
     "id": "1500",
     "label": "16th century"
    },
    {
-    "editions": 30,
+    "editions": 32,
     "id": "1600",
     "label": "17th century"
    },
@@ -4185,8 +4185,8 @@
   ],
   "rights": [
    {
-    "artifacts": 2069,
-    "editions": 480,
+    "artifacts": 2085,
+    "editions": 483,
     "id": "public-domain"
    },
    {
@@ -4200,7 +4200,7 @@
     "id": "unresolved"
    },
    {
-    "artifacts": 180,
+    "artifacts": 181,
     "editions": 91,
     "id": "licensed"
    },
@@ -4210,8 +4210,8 @@
     "id": "project-created"
    },
    {
-    "artifacts": 19,
-    "editions": 4,
+    "artifacts": 24,
+    "editions": 6,
     "id": "permission"
    },
    {
@@ -7096,8 +7096,8 @@
      "file": "1500-toledo-hagenbach-1500.json",
      "id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.toledo-hagenbach-1500",
      "language": "la",
-     "passages": 11,
-     "readable": 9,
+     "passages": 32,
+     "readable": 29,
      "rights": [
       "licensed",
       "project-created",
@@ -7111,8 +7111,8 @@
      "file": "1755-rome-monaldini-1755.json",
      "id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
      "language": "la",
-     "passages": 13,
-     "readable": 9,
+     "passages": 35,
+     "readable": 29,
      "rights": [
       "public-domain"
      ],
@@ -7124,8 +7124,8 @@
      "file": "1804-rome-fulgoni-1804.json",
      "id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-fulgoni-1804",
      "language": "la",
-     "passages": 13,
-     "readable": 9,
+     "passages": 34,
+     "readable": 29,
      "rights": [
       "permission",
       "public-domain"
@@ -10591,13 +10591,26 @@
      "file": "1604-vatican-typica-1604.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1604",
      "language": "la",
-     "passages": 0,
-     "readable": 0,
+     "passages": 20,
+     "readable": 17,
      "rights": [
       "public-domain"
      ],
      "title": "Missale Romanum ex decreto sacrosancti Concilii Tridentini restitutum, Pii V Pont. Max. iussu editum et Clementis VIII auctoritate recognitum: the typical edition of 1604",
      "year": 1604
+    },
+    {
+     "date": "1635",
+     "file": "1635-vatican-urbanian-1635.json",
+     "id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+     "language": "la",
+     "passages": 22,
+     "readable": 17,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Missale Romanum ex decreto sacrosancti Concilii Tridentini restitutum, Pii V iussu editum, Clementis VIII primum, nunc denuo Urbani VIII auctoritate recognitum: Rome, Typographia Vaticana, 1635",
+     "year": 1635
     },
     {
      "date": "1862",
@@ -24611,8 +24624,8 @@
      "file": "1550-1550-venice.json",
      "id": "edition.order-of-preachers.missale.1550-venice",
      "language": "la",
-     "passages": 4,
-     "readable": 1,
+     "passages": 19,
+     "readable": 15,
      "rights": [
       "public-domain"
      ],
@@ -24620,12 +24633,40 @@
      "year": 1550
     },
     {
+     "date": "1553",
+     "file": "1553-1553-venice-giunta.json",
+     "id": "edition.order-of-preachers.missale.1553-venice-giunta",
+     "language": "la",
+     "passages": 17,
+     "readable": 14,
+     "rights": [
+      "permission",
+      "public-domain"
+     ],
+     "title": "Missale secundum ordinem fratrum Praedicatorum, iuxta decreta Capituli Generalis, anno Domini 1551 Salmanticae celebrati, reformatum, et authoritate Apostolica comprobatum",
+     "year": 1553
+    },
+    {
+     "date": "1603",
+     "file": "1603-1603-rome-ciacconi.json",
+     "id": "edition.order-of-preachers.missale.1603-rome-ciacconi",
+     "language": "la",
+     "passages": 18,
+     "readable": 15,
+     "rights": [
+      "permission",
+      "public-domain"
+     ],
+     "title": "Missale iuxta ritum sacri Ordinis Praedicatorum S. P. N. Dominici, sub R.mo P. F. Hieronymo Xavierre Caesaraugustano, totius praefati Ordinis Generali Magistro recognitum et emendatum, et auctoritate Apostolica approbatum et confirmatum",
+     "year": 1603
+    },
+    {
      "date": "1604",
      "file": "1604-1604-rome-xavierre.json",
      "id": "edition.order-of-preachers.missale.1604-rome-xavierre",
      "language": "la",
-     "passages": 7,
-     "readable": 1,
+     "passages": 24,
+     "readable": 16,
      "rights": [
       "public-domain"
      ],

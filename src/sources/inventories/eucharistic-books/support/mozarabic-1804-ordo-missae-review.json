@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "mozarabic-1804-ordo-missae",
+  "title": "Independent complete-constituent image collation: Mozarabic Ordo missae core, 1804",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "Independent AI source reviewer (batch-5 text-mozarabic original-image collation), distinct from the transcriber and the coordinator",
+  "checked_on": "2026-10-22",
+  "binding_sha256": "f9bdca86ff13e0ca15e397d3bd16821095fa3551562ffcc2ece22120e53628ce",
+  "extent_sha256": "37d5d184ee9aa447b78129bc3ba3f1af3249eb994374164ee9cfa1fa90ca562c",
+  "witness_sha256": {
+    "copy": "695b81f0e0e25e9d923397ebfe21f3fc109c9fd19ab092b2a5546aa34dde36b4"
+  },
+  "unit_sha256": {
+    "mozarabic.1804.ordo.adesto-rubrica": "b469ba1a5f44e0df7196da7c8c440b11cad5c619a78adfc96cd7b0b578452285",
+    "mozarabic.1804.ordo.adesto": "ea98436b79ec1a138df5d10ed98a3b8a3ddb438b609cc341b0b568c52bbd45e0",
+    "mozarabic.1804.ordo.institutio-panis": "2b89a0fa4a07658782bc2a6f071ee6b1bd1aae63c5da3df38d808b3e06da3992",
+    "mozarabic.1804.ordo.institutio-calicis": "d149928788f720587bbe09b432fc65f4dfec9355c5c06b6a7906fda98cc3c4a7",
+    "mozarabic.1804.ordo.commemoratio-rubrica": "a2a7048bcc526fbdd070867e0f0600ea91d4e76aac90822fcdd9ad0b06785778",
+    "mozarabic.1804.ordo.quotiescumque": "dbcc23dc1cfaab0ab931d8e97069ecb753cc978f4fda780c5bb21ab7bdb54b6d",
+    "mozarabic.1804.ordo.forma-consecrationis-nota": "7958ebd3b4db52fd83319e0289decbf005e0d15c6c139e4508e492629b6bbb03",
+    "mozarabic.1804.ordo.forma-consecrationis": "f5e548155f58f8df3bcdae97d8c0febc3a907ef142477c8258f4fa913bc5ec24",
+    "mozarabic.1804.ordo.post-pridie": "b7781a92e55e09c9463591fa2bafbd016ea66b20c9d2e95b1a811d00bd9d3c66",
+    "mozarabic.1804.ordo.te-prestante": "675cc97f7b559f10d3217f6256c49d7a3c47be057d799b9c134d5f1cbb393f79",
+    "mozarabic.1804.ordo.accipiat-corpus-rubrica": "d72b02c3e340912236be051882e868260407d907fa869eafdd3f2ce2d9e745a5",
+    "mozarabic.1804.ordo.fidem": "5e8371566943277b366c4e39a1bce9f96a975460732691191fd4eb0a7fb4c643",
+    "mozarabic.1804.ordo.symbolum-rubrica": "79bb63502570f64a212dab7a480066e2629a08e480658679db23719d7737d34f",
+    "mozarabic.1804.ordo.symbolum": "f4e9fd2fe3c89467fa800ae6938ba18bddf77d715267946a03cda2e3c7649510",
+    "mozarabic.1804.ordo.fractio-rubrica": "f3bf1628bd51e5f592f41dadd29a7bf3a7e4cba4a0693986834da318a5abf746",
+    "mozarabic.1804.ordo.fractio-figura": "222b4dc7f43e0b8c9ea7f2de1b355d852e7d229fb3ebc5b62dc03410970bda78",
+    "mozarabic.1804.ordo.oratio-dominica-rubrica": "800b46bd8bb9529bde5e889a0b406110158d1caec391895e34539f88e2d15e51",
+    "mozarabic.1804.ordo.ad-orationem-dominicam": "581195d8ff6e07d823701c3e5312f1411a9271b6754c82bace34564763356a3b",
+    "mozarabic.1804.ordo.pater-noster": "99b01ff905d02df362f73e50773d5b4b49fc35429b779ece584097160cdfa958",
+    "mozarabic.1804.ordo.liberati": "3df3b2bccb007eff7cb0566f425ba8a11a0ecac5158fed8f75302a80d5d366d6"
+  },
+  "scope": "Complete declared Ordo core printed in Dominica prima de adventu of the Lorenzana-Arevalo Rome 1804 Missale Gothicum, printed cols. 12-17, BSB canvases 28-31 (retained facsimile pages 1-4): from the red rubric Deinde dicat Presb. in silentio (col. 12) through R. Amen after per omnia saecula saeculorum ending the Liberati (col. 17). Includes the two variable Advent I prayers printed inside that span, the marginal Forma ista note, the Roman consecration form below the columns and the numbered fraction figure. Excludes the preceding Inlatio, Sanctus and Post Sanctus, the Sic faciat rubric onward, column and line numbers, running heads and the signature. Neither the complete Ordinary nor the whole Missal is claimed.",
+  "method": "Cold collation on 2026-10-22: the four BSB IIIF JPEGs embedded in the retained PDF (1800 px wide) were read at full resolution in column crops, then compared word by word with the reading artifact. Canvases 28 and 29 were re-fetched from the IIIF service and are byte-identical to the retained images; the title canvas 7 re-fetch differs in bytes (IIIF renders on request) but shows Missale Gothicum ... Lorenzanae recognitum et recusum ... Romae anno MDCCCIV apud Antonium Fulgonium. Binding, extent, facsimile, reading artifact, passage and all twenty unit hashes were recomputed from actual bytes after correction.",
+  "findings_resolved": [
+    {
+      "id": "bini-stop",
+      "resolution": "Corrected under the declared 1500 pointing: bini ac bini. videlicet. (1804 prints bini, ac bini; videlicet.)."
+    },
+    {
+      "id": "lorenzana-readings",
+      "resolution": "Confirmed on the image and kept visible as wording differences: et sancti✠fica, coenavit (oe ligature), praeter festivos, annuntiabitis, donec veniat, ut sint benedicta, Deum de Deo, Homousion, loquutus, Confitemur, factas, faciat memento, quod caro factum es ut inhabitares, tentationem, and no consecration colons."
+    },
+    {
+      "id": "figure",
+      "resolution": "Confirmed: the figure prints arabic numerals 1-9 under the nine labels; it interrupts the fraction rubric and is serialized after it."
+    },
+    {
+      "id": "punctuation-limit",
+      "resolution": "Accepted under the declared normalization, with a limit: 1804 prints donec veniat in claritatem de caelis as one clause; the 1500 pointing serializes donec veniat. In claritatem. Punctuation is not evidence in this binding."
+    }
+  ],
+  "normalization_limit": "Declared reading normalization only, not a diplomatic transcription: printed contractions, suspensions, ampersands and Tironian et expanded; long-s, consonantal u/v and i/j standardized; ae and oe ligatures expanded; the printed accents of 1755 and 1804 omitted; case and clause punctuation regularized so that all three Ordo readings use the 1500 pointing and capitalization for corresponding wording, with nomina sacra capitalized, and printed commas, semicolons, line layout, ink colour and italic are not recorded. The word-dividing colons of the consecration words and of the Roman form are recorded only where each edition prints them. Edition spellings, every lexical item, response, rubric and printed cross at its printed position are retained; the fraction figure is serialized as its nine labels.",
+  "review_limit": "Complete only for this declared Ordo core constituent of the 1804 edition. No whole-book text coverage, complete Ordinary, Arevalo apparatus or textual parentage is certified."
+}

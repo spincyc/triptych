@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "dominican-1604-canon",
+  "title": "Rome 1604 Dominican Canon (Xavierre revision): independent complete original-image collation",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "Independent AI source reviewer (batch-5 text-dominican original-image collation), distinct from the transcriber and the coordinator",
+  "checked_on": "2026-10-22",
+  "binding_sha256": "738d7bcad388d540f8027a6dda1d239c146a04c70a02ac10964a023105f73898",
+  "extent_sha256": "774d494e283c1e53d7d08196c8b148ee0b8cb9d84ab47c7db6240d63b1109c8e",
+  "witness_sha256": {
+    "dominican-1604-canon-pages": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+  },
+  "unit_sha256": {
+    "unit.dominican-1604.canon.heading": "7e937e95fb39b733fa34051e60c0540e1efae5caebed1602f1ee48471ebb1f16",
+    "unit.dominican-1604.canon.te-igitur": "8eee3c060aaaced4cb7fcb47d7d278b739ad5c4b3eda585aec1743cce878a34d",
+    "unit.dominican-1604.canon.memento-vivorum": "aa1e7066b1a8c449c99e440d1ac73f02c096c74e9661f9781b806ff8f8a1c68a",
+    "unit.dominican-1604.canon.communicantes": "e24b33d89465c67bda445ed1f0bf1c156f80f74435c7d1f1516d559982c4a6f9",
+    "unit.dominican-1604.canon.hanc-igitur": "e1c984aae2fbc680e8310a26deaee9346bf6418dd306264aa66b32b0aba8a52a",
+    "unit.dominican-1604.canon.quam-oblationem": "18e038ebdec0cb2498166a06dae8007bc54ac40c8b1108181889fc26c6a55b95",
+    "unit.dominican-1604.canon.qui-pridie": "a81ddb39e80a5d31e928091ac55046562c20404a21476c397108b488e6cd1788",
+    "unit.dominican-1604.canon.simili-modo": "680487b9865f0f9958b99a4156a689dbf06c0fbb3da6f68d9eec31a32da94880",
+    "unit.dominican-1604.canon.unde-et-memores": "a6425c12e347a59567a9c3740a4e6ce28d6c660b1cbbed9ff498006204266844",
+    "unit.dominican-1604.canon.supra-quae": "1c4a96248599d99d81d2b1ca2c74b83da591fc79a9ba9ffbf4f4c50c02ac01b1",
+    "unit.dominican-1604.canon.supplices": "f6d99343af422d37075cf8c43d4c44c08576eb9299b5d727546855353ac2db79",
+    "unit.dominican-1604.canon.memento-defunctorum": "289e8997b487ef2412e3a1dc3fedf6faf224726f8a6c25bb939e5348d35f4ef4",
+    "unit.dominican-1604.canon.nobis-quoque": "6f350681782578a2e143a232f76449f4e8e90935efc848c81f8ed10b7bfcc6f9",
+    "unit.dominican-1604.canon.per-quem": "b256eeff65489aef1292e213252560b00ef2cb7c12e6f653693a44bd7dc9ce16",
+    "unit.dominican-1604.canon.per-ipsum": "192f38ca35623120d2d63bbdf290dd6bb4a33f3caec4245ca5325792393a26e8"
+  },
+  "scope": "Complete Dominican Canon constituent of the Rome 1604 Missal revised under Hieronymus Xavierre (Ex Typographia Alfonsi Ciacconi, apud Carolum Vulliettum, MDCIIII; Internet Archive bub_gb_lefoIUlq2sgC): from the display title CANON SACROSANCTI INCRVENTI SACRIFICII MISSAE and Te igitur on p. 181 (retained facsimile PDF 5 = source PDF 245) through omnis honor et gloria on p. 185 (facsimile PDF 9 = source PDF 249), left column, immediately before the heading Cantus Solemnis and the notated Per omnia saecula saeculorum. Amen. Oremus, which are excluded as a declared book division with the notated Praeceptis and Pater in the right column. 15 source-order units in 18 physical lines, 26 printed crosses and 7 N. placeholders; no rubrics are printed within these bounds. The title page and the reprinted Clement VIII brief and Xavierre letter (facsimile PDF 1-4) are identity and revision-basis evidence only.",
+  "method": "The collator did not read the lane's reading or draft before reading the images. It made its own blind reading of every physical line of every Canon page from overlapping zoomed column strips of the retained images, then compared that reading word by word with the lane artifact. Every disagreement, every instance of the uncertain-reading classes relayed from the lane (virgules, stops, cross positions, quotiescunque) and every e-caudata and N. placeholder was resolved on enlarged pixel crops, colour crops where the book has red ink, and connected-component measurements of the marks against unambiguous periods, commas, colons and semicolons on the same page. The corrected reading was then regenerated with the lane's own generator, and the collator's blind reading was diffed again against it: every remaining difference is a place where the collator's blind reading was overruled by the zoomed image. Unit boundaries, page incidence of every unit, the printed crosses and N. placeholders, the start of the Canon and the boundary into the notated Cantus solemnis block were checked on the images. Identity and derivation: Re-fetched the exact Internet Archive PDF bub_gb_lefoIUlq2sgC (SHA-256 7e7d61dbc7b45a53d7c16cd1e86d3a8f301dba8158e0c8441b00e69a5ff01eaf, matching the registered parent artifact); the ordered SHA-256 list of the 27 embedded image streams of source PDF pages 3, 5, 6, 7 and 245-249 is identical to that of the retained facsimile. Every retained page was rendered at its native 600 ppi for reading, with colour renders for faint marks. The title reads MISSALE IVXTA RITVM SACRI ORDINIS PRAEDICATORVM S. P. N. DOMINICI. SVB R.MO P. F. HIERONYMO XAVIERRE ... ROMAE, Ex Typographia Alfonsi Ciacconi. Apud Carolum Vulliettum. MDCIIII; the reprinted brief is dated 2 April 1602 and the letter 17 February 1603 (MDCIII).",
+  "normalization_limit": "Declared selective Latin reading normalization shared with the Roman Canon readings: long s, u/v, i/j, ligatures and e-caudata, ampersand/Tironian et, enclitic que and printed contractions are normalized and accents omitted; display initials and spaced capitals are merged in sentence case; spelling, capitalization, punctuation including the virgule, N. placeholders and printed cross positions are kept. Not glyph-diplomatic typography, abbreviation signs, colour reproduction or chant notation.",
+  "findings_resolved": [
+    "heading (line 1): CANON SACROSANCTI INCRUENTI SACRIFICII MISSAE. -> Canon sacrosancti incruenti sacrificii Missae. ; p. 181: declared sentence-case normalization of spaced capitals, Missae capitalized as in the book's running head Canon Missae. The normalization statement now says so.",
+    "Confirmed against the image, not changed: tibique reddunt; Domine, nos servi tui; postquam coenatum ... deditque; Xysti, Chrysogoni; inprimis (one word); Memento ... N. et N Et omnium (no period after the second, red-printed N: the only mark there is a 6x5 px speck at mid-height, against 14x14 px for a real period); Ipsis Domine; and Apostolis; (both semicolons: a printed upper point above the comma); et cum ✠ ipso; omni be✠nedictione.",
+    "Stops at participatione, ; tuae. Ut quotquot (a black period; the grey sliver above-right of it is a stray mark, unlike the upper points of the semicolons after Domine and Apostolis); Accipite, et manducate were confirmed on the image."
+  ],
+  "unresolved": [],
+  "review_limit": "Complete declared Dominican Canon constituent only; the notated Per omnia/Amen, the rest of the Ordinary and the whole Missal are not claimed. Witness identity: this Internet Archive copy is the stage witness latin-missal:praedicatorum-xavierre-1604 and is a different setting from the Rome 1603 BSB printing (see the 1603 receipt). No first-printing, republication or immediate-parent claim is made."
+}

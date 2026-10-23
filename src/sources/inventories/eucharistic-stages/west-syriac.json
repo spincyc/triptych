@@ -16,14 +16,14 @@
       "label": "Syriac Catholic deacon and server books",
       "family": "West Syriac",
       "scope": "Complementary Eucharistic minister books; not successive whole altar missals.",
-      "coverage_note": "Held 1881 Mosul book role corrected; the 1868/1905 auxiliary line remains uninspected."
+      "coverage_note": "Held 1881 Mosul book role corrected; the 1905 Sharfeh minister's book is documented from its title and preface. The 1868 Mosul and undated reprint and the Beirut minister's book (1884 per the Bonn pencil note, 1888 per Brightman p. lvi) remain uninspected."
     },
     {
       "id": "syro-malankara-catholic",
       "label": "Syro-Malankara Catholic",
       "family": "West Syriac",
       "scope": "Catholic Syriac Eucharistic books, Malayalam service-book witnesses under use review, and original Eucharistic legislation; independent diaspora and lay translation histories deferred.",
-      "coverage_note": "1934 two-anaphora book documented from contemporary page image; the approved, issued 1966 Malayalam book and the 2006 approval/2007 release of the Malayalam Taksa remain in Eastern origin review pending evidence of their actual use. The 2007 rubrical act is separately documented here. The 1934 original, exact 2007 printing and textual predecessors remain uninspected."
+      "coverage_note": "1934 two-anaphora book documented from contemporary page image; the approved, issued 1966 Malayalam book and the 2006 approval/2007 release of the Malayalam Taksa remain in Eastern origin review pending evidence of their actual use. The 2007 rubrical act is separately documented here. The 1934 original, exact 2007 printing and textual predecessors remain uninspected. A 1930 reception stage records the Holy See's retention of the liturgical books described as coming from Propaganda and the reunited bishops' earliest reported Mass from the Syriac Catholic missal, edition unidentified."
     }
   ],
   "sources": [
@@ -78,6 +78,16 @@
       "limitations": "Auxiliary deacon/server book with priest cues. Full edition retained in the source library; selected body pages inspected, no complete transcription or collation."
     },
     {
+      "id": "west-syriac-stages-diaconicon1905",
+      "title": "Kitab khidmat al-quddas hasab taqs al-kanisa al-suryaniyya al-antakiyya (Shumlaya de-qurraba), compiled by Patriarch Ignatius Ephrem II Rahmani, Sharfeh: Syriac patriarchal press, 1905 (Bonn ULB Goussen 72)",
+      "url": "https://digitale-sammlungen.ulb.uni-bonn.de/download/pdf/3724368",
+      "kind": "primary-book",
+      "inspection": "Tracked source-library artifact (SHA-256 a6e0d3174445bfa192f6693bcfe78a838881f1d0a7fbc5f3596f5ecdfec9903f); page images read on 2026-10-22 in the reversed provider order: PDF 461 Arabic title (compiled and arranged by Mar Ignatius Ephrem II, Syriac Antiochene patriarch; printed at the Syriac patriarchal press at Sharfeh, 1905); PDF 459-450 Arabic preface al-muqaddima, read in full.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Arabic preface statements are the editor's; the Syriac body is not transcribed or collated with the 1881 Mosul book. The Bonn title record's 1912 conflicts with the printed 1905."
+    },
+    {
       "id": "west-syriac-stages-ziade1941",
       "title": "Ignace Ziadé, “Syrienne (Église)”, Dictionnaire de théologie catholique 14.2 (1941), col 3026",
       "url": "https://fr.wikisource.org/wiki/Page:Alfred_Vacant_-_Dictionnaire_de_th%C3%A9ologie_catholique,_1908,_Tome_14.2.djvu/762",
@@ -96,6 +106,16 @@
       "checked_on": "2026-10-16",
       "status": "inspected",
       "limitations": "Contemporary bibliographic testimony, not inspection of the 1934 original. Author-name anaphora labels do not establish identity. Aggregate scan filename 1908 is not this article’s publication date."
+    },
+    {
+      "id": "west-syriac-stages-pallath2023-documents",
+      "title": "Paul Pallath, Syro-Malankara Catholic Church: Important Documents (1925-2019) (2023), Internet Archive item syro-malankara-catholic-church",
+      "url": "https://archive.org/details/syro-malankara-catholic-church",
+      "kind": "scholarship",
+      "inspection": "Scanned PDF (printed page = PDF page + 1) searched through its text layer and read on page images on 2026-10-22: printed 130-132 (Document 1), 167-168 (Document 12), 171-173 (Document 13), 204-206 (Document 22), 251 (Document 46), 255 (Document 47), 262 (Document 50) and 264-265 (Document 52).",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Documentary edition with English translations of Italian, Latin and Syriac originals held in the Vatican and Trivandrum archives; originals not seen. Document 52 dates the letter 22 September 1930 but its text places the reception on the afternoon of the 29th instant; the discrepancy is retained, while Documents 49-51 and 53 date the reception 20 September 1930 (cold review 2026-10-22). No missal edition is identified by title in these documents."
     },
     {
       "id": "west-syriac-stages-malankara2007",
@@ -145,7 +165,7 @@
       "inspection": "Read online OCR paragraph under Liturgy of the Presanctified reporting passage from Rahmani 1922 to Syro-Malankara 1934; original page image not inspected.",
       "checked_on": "2026-10-16",
       "status": "lead",
-      "limitations": "OCR is a lead, not support for an established transition. Its shorthand “restored” must be distinguished from the 1922 primary statement that an 1843 constructed Presanctified form was replaced."
+      "limitations": "OCR is a lead, not support for an established transition. Its shorthand “restored” must be distinguished from the 1922 primary statement that an 1843 constructed Presanctified form was replaced. Archive.org copies of King 1947 (ritesofeasternch0001unse, ritesofeasternch0001arch, ritesofeasternch0001arch_h9e0) are access-restricted lending items on 2026-10-22, so p. 203 could not be read as an image without borrowing."
     },
     {
       "id": "west-syriac-stages-malankara-feb2007",
@@ -259,6 +279,52 @@
       "reception": "Arabic approbation expressly addresses Syriac Catholics of Mosul. Its role is auxiliary to celebrant books; the same Eucharistic rite does not make it a new whole-missal state."
     },
     {
+      "id": "west-syriac-stages-sharfeh1905-diaconicon",
+      "tradition_id": "syriac-catholic-auxiliary",
+      "label": "Rahmani's Sharfeh deacon and server book",
+      "date_label": "1905",
+      "start_year": 1905,
+      "end_year": 1905,
+      "date_kind": "publication",
+      "status": "documented",
+      "scope": "Minister's Mass-service book for deacon, congregation and chanters in simple, solemn and pontifical celebration, with a second part of Sunday and feast chants; distinct book role from the altar missal.",
+      "components": [
+        "ordinary",
+        "propers",
+        "chant"
+      ],
+      "witness_ids": [
+        "eastern:syriac-malankara-syr-sharfeh-1905"
+      ],
+      "witness_label": "Kitab khidmat al-quddas hasab taqs al-kanisa al-suryaniyya al-antakiyya, compiled by Ignatius Ephrem II Rahmani, Sharfeh: Syriac patriarchal press, 1905",
+      "summary": "The editor reports a reprinting whose deacon text was established against old manuscripts, kept in Syriac with Arabic only for the Creed, the angels' hymn, the diptychs, the litanies and the Lord's Prayer; a new second part of variable chants for Sundays and feasts compiled from an eighth- and an eleventh-century manuscript, the old Sharfeh codex and copies used by Aleppo deacons; and appended Arabic hymns for the fraction in some seasons. The patriarch orders the book to be kept and followed.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "west-syriac-stages-diaconicon1905",
+          "locus": "PDF 461, Arabic title",
+          "claim": "Title names the book of the Mass service according to the Syriac Antiochene rite, compiled by Patriarch Ignatius Ephrem II, printed at the Sharfeh patriarchal press in 1905."
+        },
+        {
+          "source_id": "west-syriac-stages-diaconicon1905",
+          "locus": "PDF 459-458, preface opening",
+          "claim": "Scope is everything said by deacon, faithful or chanters in simple, solemn or pontifical Mass; the need to reprint led to establishing the text against old manuscripts; Arabic is limited to the Creed, the angels' hymn, the diptychs, the litanies and the Lord's Prayer; a second part of Sunday and feast items is added."
+        },
+        {
+          "source_id": "west-syriac-stages-diaconicon1905",
+          "locus": "PDF 457-452, preface on the second part",
+          "claim": "Names six kinds of variable chant and the manuscripts used: one of the eighth and one of the eleventh century, especially the Sharfeh monastery's old codex, and copies used by Aleppo deacons under Patriarch Ignatius Peter."
+        },
+        {
+          "source_id": "west-syriac-stages-diaconicon1905",
+          "locus": "PDF 451-450, preface close",
+          "claim": "Arabic hymns appended for the fraction in some seasons; the patriarch orders the book followed without deviation."
+        }
+      ],
+      "limitations": "Editor-described state; the Syriac body is not collated with the Mosul 1881 book or with the Beirut minister's book that a pencil note on the title page names as a first edition of 1884 (Brightman p. lvi gives a Beirut edition of 1888; that they are one book is not established). The book's predecessor is not identified by the preface, so no transition is drawn.",
+      "reception": "Prescribed by the Syriac Catholic patriarch for his Church; the order does not prove uniform adoption."
+    },
+    {
       "id": "west-syriac-stages-sharfeh1922",
       "tradition_id": "syriac-catholic-celebrant",
       "label": "Rahmani’s revised altar missal",
@@ -324,6 +390,44 @@
       ],
       "limitations": "These are primary-described changes, not independent before/after Syriac collation. The editor’s authorship/confessional diagnoses are not adopted as modern critical conclusions. His statement about no alteration to institution narrative/epiclesis is narrower than “no changes to anaphoras.” The six-section Twelve Apostles diptychs are an explicitly retained feature, not a new 1922 innovation. The James manuscript-reference footnote is malformed as printed and needs shelfmark disambiguation.",
       "reception": "Issued by Syriac Catholic patriarch Ignatius Ephrem II Rahmani. The decree makes this edition alone authentic within his stated jurisdiction/rite; it does not legislate for all West Syriac churches or prove universal actual adoption."
+    },
+    {
+      "id": "west-syriac-stages-malankara-reception1930",
+      "tradition_id": "syro-malankara-catholic",
+      "label": "Reunited bishops celebrate from the Syriac Catholic missal",
+      "date_label": "September 1930: reported Mass on the day before Benziger's letter of 22 September; context: Holy See decision of 4-5 July 1930",
+      "start_year": 1930,
+      "end_year": 1930,
+      "date_kind": "attestation",
+      "status": "documented",
+      "scope": "Reception event at the 1930 reunion: retention of the liturgical books described as coming from Propaganda, subject to examination, and the bishops' earliest reported Mass according to the Catholic missal of the Syrian rite of Antioch. The missal edition is not identified.",
+      "components": [
+        "ordinary",
+        "anaphoras"
+      ],
+      "witness_ids": [],
+      "witness_label": "Unidentified Catholic missal of the Syrian rite of Antioch named in Bishop Benziger's report of September 1930",
+      "summary": "The plenary meeting of the Congregation for the Eastern Church (4 July 1930, approved by Pius XI on 5 July) kept the liturgical books (missals, rituals, pontifical) described as those coming from Propaganda, after removal of improper and erroneous expressions, assigning Bishops Kalacherry and Benziger to examine them. Benziger's report on their reception states that on the previous day Mar Ivanios and Mar Theophilos had said Mass according to the Catholic missal of the Syrian rite of Antioch.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "west-syriac-stages-pallath2023-documents",
+          "locus": "Document 46, printed 251, decision 4",
+          "claim": "The liturgical books described as those coming from Propaganda are retained, with non-proper and erroneous expressions to be removed; Kalacherry and Benziger designated to examine them."
+        },
+        {
+          "source_id": "west-syriac-stages-pallath2023-documents",
+          "locus": "Document 52, printed 265",
+          "claim": "Benziger reports receiving Mar Ivanios and Mar Theophilos and states that 'yesterday' (relative to his letter) they said Mass according to the Catholic missal of the Syrian rite of Antioch."
+        },
+        {
+          "source_id": "west-syriac-stages-pallath2023-documents",
+          "locus": "Document 12, printed 167-168; Document 13, printed 173",
+          "claim": "Before reunion Ivanios held printed copies of the missal in use in the Syriac Catholic patriarchate and found it the same as his own except for the commemoration of the pope and the filioque; Patriarch Rahmani wrote from Beirut on 15 January 1928 that he was sending one book of the anaphoras (missal)."
+        }
+      ],
+      "limitations": "The missal used in September 1930 is not identified by edition: it may be a Sharfeh 1922 copy, an earlier Catholic printing or the group's own corrected book. Documents are read in English translation in a documentary edition; Document 52's '29th instant' conflicts with the 20 September 1930 reception date given in Documents 49-51 and 53, so the Mass is dated only as the day before the 22 September letter. The date is an observed use (attestation); the July decision is context, not an effective date of any identified book (cold review 2026-10-22). No textual link to the 1934 Pampakuda book is established.",
+      "reception": "The earliest reported use by the two reunited bishops; it says nothing about parish practice or about the later printed Malankara books."
     },
     {
       "id": "west-syriac-stages-pampakuda1934",
@@ -573,16 +677,16 @@
       "tradition_id": "syriac-catholic-celebrant",
       "period": "1843 → 1922",
       "missing": "Full before/after collation of the 1843 and 1922 native prayer bodies, especially the entrance propitiatory prayers Rahmani says 1843 shortened and the two Presanctified forms. The fraction formula change is now page-collated (1843 printed 29; 1922 printed 81 and 134), and complete Syriac OCR layers of both retained books exist in lane scratch as discovery aids.",
-      "next_source": "Retained 1843 and 1922 books: compare the 1922 entrance prayers (contents: printed 19 onward) with the 1843 ordinary (printed 1–52), and the 1843 Presanctified (printed 53/PDF 84) with the 1922 order of the signing of the chalice (contents: printed 225).",
+      "next_source": "Retained 1843 and 1922 books: compare the 1922 entrance prayers (contents: printed 19 onward) with the 1843 ordinary (printed 1-52), and the 1843 Presanctified (printed 53/PDF 84, opening under a long Garshuni rubric) with the 1922 Order of the signing of the chalice, which begins at printed 225 = PDF 79 of the Bonn scan (printed = 304 - PDF in this reversed scan).",
       "consequence": "Established primary-described revision remains source-described, not an actual before/after Syriac comparison."
     },
     {
       "id": "west-syriac-stages-mosul-role-line",
       "tradition_id": "syriac-catholic-auxiliary",
       "period": "1868–1905",
-      "missing": "The 1868 first edition, undated patriarch-approved reprint and 1905 Sharfeh complete diaconicon have not been inspected.",
-      "next_source": "Ziadé 1941, column 3026; Mosul Service de la messe privée, 1868; Sharfeh diaconicon, 1905; compare held 1881 ordinary and contents.",
-      "consequence": "No additional auxiliary book stages or evolution edges created from bibliographical dates alone."
+      "missing": "The 1868 Mosul first edition, the undated patriarch-approved reprint and the Beirut minister's book (1884 per the Bonn pencil note, 1888 per Brightman p. lvi) have not been inspected. The 1905 Sharfeh book is now documented from its title and preface, but its predecessor is not named and its body is not collated with the 1881 book.",
+      "next_source": "Ziade 1941, column 3026; Mosul Service de la messe privee, 1868; Beirut Jesuit-press minister's book (1884 per the Bonn pencil note, 1888 per Brightman p. lvi); collate held 1881 ordinary (PDF 382-355) with the 1905 first part.",
+      "consequence": "The auxiliary line has two documented states (1881, 1905) without a drawn transition; no edges are created from bibliographic dates alone."
     },
     {
       "id": "west-syriac-stages-later-syriac",
@@ -597,16 +701,16 @@
       "tradition_id": "syro-malankara-catholic",
       "period": "1934",
       "missing": "Original Pampakuda title, approval, Xystus/short James and Presanctified leaves not located.",
-      "next_source": "1934 Pampakuda copy via Malankara Catholic archives, SEERI or Malankara Library; Tisserant, DTC column 3160; Codrington, Eastern Churches Quarterly 1, no. 3 (July 1936), page 98.",
+      "next_source": "1934 Pampakuda copy via Malankara Catholic archives or SEERI; the Malankara Library catalogue (no SEERI affiliation stated), reachable on 2026-10-22, lists no 1934 item under Thaksa, Qurbono, Pampakuda, 1934 or Missal; Tisserant, DTC column 3160; Codrington, Eastern Churches Quarterly 1, no. 3 (July 1936), page 98.",
       "consequence": "The two-anaphora state is documented bibliographically; native body and direct parentage are still missing."
     },
     {
       "id": "west-syriac-stages-malankara-presanctified",
       "tradition_id": "syro-malankara-catholic",
       "period": "1922 → 1934",
-      "missing": "King’s reported reception of the 1922 Presanctified in 1934 has been read only as OCR; no original image or 1934 book comparison.",
-      "next_source": "Archdale King, Rites of Eastern Christendom I (1947), page 203, Liturgy of the Presanctified; Codrington 1936, page 98; 1934 Pampakuda missal.",
-      "consequence": "Potential bounded cross-community reception lead, no documented transition until verified; do not infer wholesale 1922 book descent."
+      "missing": "King's reported reception of the 1922 Presanctified in 1934 has still been read only as OCR (archive.org copies are restricted lending items); no 1934 book comparison. Reunion documents now show that Ivanios held the Syriac Catholic patriarchate's printed missal by March 1928 and that the reunited bishops are first reported celebrating from a Catholic Syrian missal in September 1930, without naming its edition or its Presanctified form.",
+      "next_source": "Archdale King, Rites of Eastern Christendom I (1947), p. 203 (a non-restricted copy or library loan); Codrington 1936, p. 98; 1934 Pampakuda missal; Trivandrum archive AMAET-HAN-COR-12 (Document 22) on books sent and missing.",
+      "consequence": "A bounded reception context exists from 1928-1930, but no documented Presanctified transition; do not infer wholesale 1922 book descent."
     },
     {
       "id": "west-syriac-stages-malankara1966-origin",

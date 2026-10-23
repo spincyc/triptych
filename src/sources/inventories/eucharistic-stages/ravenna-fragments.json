@@ -102,6 +102,36 @@
       "checked_on": "2026-10-21",
       "status": "inspected",
       "limitations": "Catalogue identity and contents evidence, not independent palaeographic dating, Ravenna copying, local use or complete annual-book evidence."
+    },
+    {
+      "id": "ravenna-fragments:ceriani1884",
+      "title": "Antonio Ceriani and Giulio Porro, Il rotolo opistografo del Principe Antonio Pio di Savoja, Archivio storico lombardo, 2nd series 1 (1884)",
+      "url": "https://archive.org/download/ArchivioStoricoLombardoS2V1/Archivio_storico_lombardo_s2_v1.pdf",
+      "kind": "scholarship",
+      "inspection": "Complete volume PDF acquired 2026-10-22 (38,954,535 bytes, identical to an earlier lane copy). Printed pp. 2–3 (PDF 22–23) read as page images: roll 3.60 x 0.19 m of seven sewn membranes, mutilated at both ends, in uncial; its prayers served the Office rather than Mass and all concern Advent; meant for a church of Roman rite; use at Ravenna only 'con qualche probabilità', inferred from the verso documents of the Ravenna archbishopric of the late ninth and early tenth centuries.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Nineteenth-century first description and edition; no new image of the roll was inspected. Later datings and interpretations (Mohlberg, Benz, Olivar) are not re-read here."
+    },
+    {
+      "id": "ravenna-fragments:wlb-codfragm",
+      "title": "Württembergische Landesbibliothek, Bestandsübersicht Cod. fragm. (state July 2026)",
+      "url": "https://wiki.wlb-stuttgart.de/images/f/f0/Cod_fragm_Bestandsliste.pdf",
+      "kind": "institutional-catalogue",
+      "inspection": "Complete holding list acquired 2026-10-22 (385,780 bytes); PDF p. 1 read as a page image: Cod. fragm. 4, Sakramentar, 11th/12th century, removed from Inc. 15370b; Cod. fragm. 5, Plenarmissale, second quarter of the 10th century, removed from Inc. fol. 8774, origin central Italy (Ravenna?).",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Holding list only; images are internal to the library. Identity of Cod. fragm. 4 with the fragment catalogued elsewhere as Ink. 15370 b is inferred from the shared source incunable."
+    },
+    {
+      "id": "ravenna-fragments:hsp-codfragm5",
+      "title": "Handschriftenportal, Kulturobjektdokument Stuttgart WLB Cod. fragm. 5 (issued 30 November 2022)",
+      "url": "https://handschriftenportal.de/api/tei/HSP-6c730b55-84b8-312d-b3de-de6cbbfee063",
+      "kind": "institutional-catalogue",
+      "inspection": "TEI record acquired 2026-10-22 (7,980 bytes) and read: Plenarmissale, fragment, 2 leaves, parchment, 33.5 x 23 cm, Latin, 10th century second quarter (926–950), origin Ravenna (?).",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Structured metadata without content description or image; the Ravenna origin is queried by the record itself."
     }
   ],
   "stages": [
@@ -260,14 +290,14 @@
       "tradition_id": "ravenna-fragments:associated-fragments",
       "period": "late antique and early medieval",
       "missing": "No original local-use or copying-place evidence identifies these fragments as a Ravenna recension.",
-      "next_source": "Reopen Gamber CLLA646, 650-651, 659-660, 701 and named critical editions against full original leaves; obtain documented provenance and contemporary church-use evidence.",
+      "next_source": "Reopen Gamber CLLA646, 650-651, 659-660, 701 and named critical editions against full original leaves; obtain documented provenance and contemporary church-use evidence. New catalogue lead (2026-10-22): Stuttgart WLB Cod. fragm. 5, a two-leaf plenary-missal fragment of 926–950 whose origin is given as 'Ravenna (?)' (WLB holding list; Handschriftenportal TEI); obtain images and a content description before any stage.",
       "consequence": "Keep the grouping attributed and separate from local reception. No ancestry, revision or text-inheritance edge follows."
     },
     {
       "id": "ravenna-fragments:canon-extent",
       "tradition_id": "ravenna-fragments:associated-fragments",
       "period": "seventh to tenth centuries",
-      "missing": "Complete Eucharistic-prayer extent and literal readings for 100A, the Stockholm-Wroclaw codex, Montecassino lower 2 and Ink.15370.",
+      "missing": "Complete Eucharistic-prayer extent and literal readings for 100A, the Stockholm-Wroclaw codex, Montecassino lower 2 and Ink.15370. For Ink. 15370 the dating itself is disputed: USUARIUM 6349 and IRHT give 900–1000, while the WLB holding list (July 2026) gives the sacramentary fragment Cod. fragm. 4, removed from Inc. 15370b, as 11th/12th century; no image is public.",
       "next_source": "Dold 1923 pp. 10-11; Gamber 1960 pp. 455-460; Gamber 1958 pp. 111-126 and 1966 pp. 242-250; Dold 1943 pp. 1*-52*; Catella-Dell'Oro-Martini 2005 pp. 513-525. Collate surviving leaves before declaring anaphora coverage.",
       "consequence": "No anaphoras component or complete text is asserted by this dossier."
     },
@@ -283,7 +313,7 @@
       "id": "ravenna-fragments:roll-and-context",
       "tradition_id": "ravenna-fragments:associated-fragments",
       "period": "late antique to medieval",
-      "missing": "The Rotulus is bounded Advent prayer evidence with Office-use interpretation; sermon, diptychon, ritual and lectionary leads do not identify annual Mass books.",
+      "missing": "The Rotulus is bounded Advent prayer evidence: Ceriani's 1884 first description (pp. 2–3) states that its prayers served the Office rather than Mass, concern Advent, were meant for a Roman-rite church, and belonged to Ravenna only with some probability inferred from the verso archiepiscopal documents. Sermon, diptych (USUARIUM 6346, CLLA 646, no shelfmark), ritual and lectionary leads do not identify annual Mass books.",
       "next_source": "Read Benz 1967 pp. 20–31 and prayer analysis, Olivar 1969 pp. 40-58, Mohlberg appendix pp. 173-178; obtain Caronti 1922 pp. 114-118 and physical identity for Usuarium 6346. Munich’s current-object distinction is now checked against BSB/Hauke/ELMSS: the sixth-century northern Italian Comes duplex strips Clm 29303(1 (former Clm 29155 c, CLA IX 1334 / CLLA 1201) are distinct from the linked current Clm 29270(8 / bsb00001710 Gospel-fragment collection, which BSB assigns to first-half ninth-century Salzburg. Usuarium 6411’s conflicting current label/link remains recorded. Obtain all surviving original sides of Clm 29303(1 and seek object-provenance and actual receiving-use evidence. Resolve Ravenna-held IRHT fragments from their original leaves. Ward 1989 printed pp. 351–352 / PDF pp. 43–44 is now inspected: numbering to 42 includes fragmentary no. 1 and combined nos. 40/41; orthography is adapted. The separate official modern diocesan Proper announcement does not establish ancient Rotulus or fragment use.",
       "consequence": "No Rotulus, sermon collection, diptychon or unspecified Exultet roll is admitted as a complete annual Eucharistic book."
     }

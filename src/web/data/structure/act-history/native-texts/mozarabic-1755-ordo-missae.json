@@ -1,0 +1,903 @@
+{
+  "adapter_id": "native-book:mozarabic-1755-ordo-missae",
+  "binding_sha256": "bdb37101b9997173b5dbe0fdb96d06c6a5a898707931053da950be34ddcd5b88",
+  "catalogue_witness_ids": [
+    "latin-missal:mozarabicum-lesley-1755"
+  ],
+  "counts": {
+    "languages": {
+      "la": 20
+    },
+    "units": 20,
+    "whitespace_tokens": 778
+  },
+  "id": "mozarabic-1755-ordo-missae",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "The fixed core of the Mozarabic Mass order as printed within Dominica prima de adventu, together with the two variable Advent I prayers printed inside that span, printed pp. 5-6: from the rubric Deinde dicat Presb. in silentio before Adesto, through the institution narrative, the Advent I post pridie, Te prestante, Dominus sit semper vobiscum and Fidem, the creed, the fraction rubric and figure, the Advent I prayer ad orationem dominicam, the Pater noster with its responses and the Liberati embolism through its Amen. The marginal Forma ista note and the Roman consecration form printed below the columns are included. Lesley's line numbers, all other matter on these pages and the title page are excluded.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 3,
+    "known_extent_units": 20,
+    "omitted_book_divisions": [
+      "All other Missal divisions and appendices",
+      "Preceding parts of the Order of Mass and of Dominica prima de adventu, from the Officium through the Inlatio, Sanctus and Post Sanctus",
+      "Following parts of the Order of Mass from the commixtion rubric Sic faciat presbiter onward",
+      "Lesley's printed marginal line numbers, running heads, page numbers and notes elsewhere in the volume"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ia-ordo-pp5-6-b42ee9f1",
+      "record_type": "artifact",
+      "rights_basis": "The underlying 1755 Latin printing is public domain in the United States: publication at Rome in 1755, before the pre 1931 boundary applicable in 2026. Faithful mechanical scans add no original authorship. These four pages contain only book pages, without Google's front usage leaves. No modern translation or protected scholarly apparatus is included. The historical text and third-party scans are excluded from Triptych's CC BY 4.0 licence.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://archive.org/download/missalemixtumse00leslgoog/missalemixtumse00leslgoog_jp2.zip"
+    },
+    {
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "record_type": "artifact",
+      "rights_basis": "The underlying 1755 Latin printing is public domain in the United States by expiration of its publication term; publication at Rome in 1755 precedes the pre 1931 boundary applicable in 2026. Mechanical abbreviation expansion and orthographic regularization add no new liturgical composition. Lesley's own notes and line numbers are not transcribed; no modern translation or protected scholarly apparatus is included. The historical text is excluded from Triptych’s CC BY 4.0 licence.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "transformation": "Independent page-image reading transcription, not OCR; OCR and Migne PL 85 used only as leads. Expand printed contractions and suspensions; long-s to s; consonantal u/v and i/j standardized; et replaces ampersand or Tironian et; ae and oe ligatures expanded as ae and oe; the printed accents of 1755 and 1804 omitted. Case and clause punctuation regularized: all three Ordo readings use the 1500 pointing and capitalization for corresponding wording, with nomina sacra capitalized; printed commas, semicolons and line layout are not recorded. The word-dividing colons of the consecration words and of the Roman form printed below them are recorded exactly as each edition prints them (present in 1500 and 1755, absent in 1804). Preserve every lexical item, edition spelling (for example celum/caelum, presbiter/presbyter, simbolum/symbolum, cenavit/coenavit, annunciabitis/annuntiabitis, temptationem/tentationem), response, rubric and printed cross at its printed position, including crosses inside words. No conjectural restoration: the 1500 sancti✠cas, meremur and ad dextera are kept as printed. The fraction figure's nine labels are serialized in the order that 1804 numbers 1-9 (column top to bottom, left arm, right arm, then the two right-hand labels); 1500 and 1755 print no numbers. Where the figure interrupts a unit, the figure is serialized after that unit. Running heads, folio, page, column and editorial line numbers, signatures, catchwords and manuscript annotations are excluded."
+    },
+    {
+      "authority": "None. `Superiorum permissu` on the title page is the ordinary Roman printing licence and nothing more; the book is a bookseller's undertaking dedicated to the reigning pope, not a promulgation. Monaldini’s dedication explains why it was made: the Cisneros book had become so rare that it could not be had except for a great sum, and liturgical scholarship needed it in print again.",
+      "date": "1755",
+      "id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "language": "la",
+      "publication": "MISSALE MIXTUM SECUNDUM REGULAM BEATI ISIDORI DICTUM MOZARABES, PRAEFATIONE, NOTIS, ET APPENDICE AB ALEXANDRO LESLEO S. J. SACERDOTE ORNATUM. PARS PRIMA. ROMAE MDCCLV. Sumptibus Venantii Monaldini Bibliopolae in Via Cursus. TYPIS JOANNIS GENEROSI SALOMONI. SUPERIORUM PERMISSU. Dedicated by the bookseller Monaldini to Benedict XIV.",
+      "record_type": "edition",
+      "title": "Missale mixtum ... ab Alexandro Lesleo ornatum, Rome: Venantius Monaldini, 1755"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-accipiat-corpus-rubrica",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-ad-orationem-dominicam",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-adesto",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-adesto-rubrica",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-commemoratio-rubrica",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-fidem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-forma-consecrationis",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-forma-consecrationis-nota",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-fractio-figura",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-fractio-rubrica",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-institutio-calicis",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-institutio-panis",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-liberati",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-oratio-dominica-rubrica",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-pater-noster",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-post-pridie",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-quotiescumque",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-symbolum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-symbolum-rubrica",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-te-prestante",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "hispano-mozarabic-1755"
+  ],
+  "title": "Mozarabic Ordo missae core, 1755 (Dominica prima de adventu): complete constituent",
+  "units": [
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "adesto-rubrica"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-adesto-rubrica",
+      "source_locator": "Ordo missae (Dominica prima de adventu): adesto-rubrica; retained facsimile page(s) 2",
+      "source_order": 1,
+      "text": "Deinde dicat presbyter in silentio iunctis manibus inclinando se ante altare hanc orationem.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "b469ba1a5f44e0df7196da7c8c440b11cad5c619a78adfc96cd7b0b578452285",
+      "unit_id": "mozarabic.1755.ordo.adesto-rubrica",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "adesto"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-adesto",
+      "source_locator": "Ordo missae (Dominica prima de adventu): adesto; retained facsimile page(s) 2",
+      "source_order": 2,
+      "text": "Adesto adesto Iesu bone pontifex in medio nostri: sicut fuisti in medio discipulorum tuorum. sancti✠fica hanc oblationem: ✠ ut sanctificata ✠ sumamus per manus sancti angeli tui sancte Domine ac redemptor eterne.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "6e792c3d9f7085e9ec7b82dd44226cf271b9103d1456c5faf105deb3ac622904",
+      "unit_id": "mozarabic.1755.ordo.adesto",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "institutio-panis"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-institutio-panis",
+      "source_locator": "Ordo missae (Dominica prima de adventu): institutio-panis; retained facsimile page(s) 2",
+      "source_order": 3,
+      "text": "Dominus noster Iesus Christus in qua nocte tradebatur accepit panem: et gratias agens bene✠dixit ac fregit: deditque discipulis suis dicens. Accipite et manducate. Hoc: est: corpus: meum: quod: pro: vobis: tradetur.\nHic elevatur corpus.\nQuotiescumque manducaveritis: hoc facite in meam ✠ commemorationem.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "8aaad51c36fcef29969cbb67250e4b8de5f985516d354b4309702c7e406928dc",
+      "unit_id": "mozarabic.1755.ordo.institutio-panis",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "institutio-calicis"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-institutio-calicis",
+      "source_locator": "Ordo missae (Dominica prima de adventu): institutio-calicis; retained facsimile page(s) 2",
+      "source_order": 4,
+      "text": "Similiter et calicem postquam cenavit dicens. Hic ✠ est: calix: novi: testamenti: in: meo: sanguine: qui: pro: vobis: et: pro: multis: effundetur: in: remissionem: peccatorum.\nHic elevetur calix coopertus cum filiola.\nQuotiescumque biberitis hoc facite in meam ✠ commemorationem.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "60e7b7989fbe78ececa81cb9b7043e371a2bb1734e99a1bc7da8e9323835affd",
+      "unit_id": "mozarabic.1755.ordo.institutio-calicis",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "commemoratio-rubrica"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-commemoratio-rubrica",
+      "source_locator": "Ordo missae (Dominica prima de adventu): commemoratio-rubrica; retained facsimile page(s) 2",
+      "source_order": 5,
+      "text": "Et cum perventum fuerit ubi dicit In meam commemorationem. dicat presbyter alta voce omnibus diebus preter festivis. pari modo ubi dicit In claritatem de celis. et qualibet vice respondeat chorus. Amen.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "ed9cbe35b80ef44c645dbdcd0a1e2f95f64c43e6776ec0d635296af0da800579",
+      "unit_id": "mozarabic.1755.ordo.commemoratio-rubrica",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "dialogue",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "quotiescumque"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-quotiescumque",
+      "source_locator": "Ordo missae (Dominica prima de adventu): quotiescumque; retained facsimile page(s) 2",
+      "source_order": 6,
+      "text": "Quotiescumque manducaveritis panem hunc et calicem istum biberitis: mortem Domini annunciabitis donec veniet. In claritatem ✠ de celis.\n℟. Chorus. Amen.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "a89202c44e2ba3591c926d13416fb6a8b12c2b23b53f6a0f41417db8b936e844",
+      "unit_id": "mozarabic.1755.ordo.quotiescumque",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "note",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "forma-consecrationis-nota"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-forma-consecrationis-nota",
+      "source_locator": "Ordo missae (Dominica prima de adventu): forma-consecrationis-nota; retained facsimile page(s) 2, 4",
+      "source_order": 7,
+      "text": "Forma ista consecrationis ponitur: ne antiquitas ignoretur. sed hodie servetur ecclesie traditio. vide infra.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "c34fd6797c0d27167942248793ce9b34a07a920c05aa0d4450fd9ae519896b36",
+      "unit_id": "mozarabic.1755.ordo.forma-consecrationis-nota",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "formula",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "forma-consecrationis"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-forma-consecrationis",
+      "source_locator": "Ordo missae (Dominica prima de adventu): forma-consecrationis; retained facsimile page(s) 2",
+      "source_order": 8,
+      "text": "Hoc: est: enim: corpus: meum.\nHic: est: enim: calix: sanguinis: mei: novi: et: eterni: testamenti: mysterium: fidei: qui: pro: vobis: et: pro: multis: effundetur: in: remissionem: peccatorum.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "86100bdd5bca746eade090124d95f600abb81d1ef4c083a55a4f0353e2a1a3c4",
+      "unit_id": "mozarabic.1755.ordo.forma-consecrationis",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "propers",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "dominica-prima-adventus",
+        "post-pridie"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-post-pridie",
+      "source_locator": "Ordo missae (Dominica prima de adventu): post-pridie; retained facsimile page(s) 2",
+      "source_order": 9,
+      "text": "Dicat presbyter. Post pridie. Oratio.\nDomine Iesu Christe hanc hostiam vivam illustratione adventus sanctifica: ut ex ea libantes: mundemur a crimine: et tuam gratiam mereamur percipere sine fine.\n℟. Amen.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "b7781a92e55e09c9463591fa2bafbd016ea66b20c9d2e95b1a811d00bd9d3c66",
+      "unit_id": "mozarabic.1755.ordo.post-pridie",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "te-prestante"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-te-prestante",
+      "source_locator": "Ordo missae (Dominica prima de adventu): te-prestante; retained facsimile page(s) 2",
+      "source_order": 10,
+      "text": "Postea dicat presbyter.\nTe prestante sancte Domine: quia tu hec omnia nobis indignis servis tuis: valde bona creas. sancti✠ficas. vivificas ✠ benedi✠cis ✠ ac prestas nobis: ut sit benedicta a te Deo nostro in secula seculorum.\n℟. Chorus. Amen.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "31a60b8d2665ef807d13579a8a80a6705173521f67cb7cc8c1eab3b829e5bd17",
+      "unit_id": "mozarabic.1755.ordo.te-prestante",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "accipiat-corpus-rubrica"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-accipiat-corpus-rubrica",
+      "source_locator": "Ordo missae (Dominica prima de adventu): accipiat-corpus-rubrica; retained facsimile page(s) 2-3",
+      "source_order": 11,
+      "text": "Et tunc presbyter accipiat corpus Domini de patena et ponat super calicem discoopertum: et dicat alta voce omnibus diebus videlicet festivis et dominicis. preter in locis in quibus erit antiphona propria ad confractionem panis.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "8ecbdd69b233a46afa3c15f12972cbbc435010df1e794d9b1dc84d1b3082d5f7",
+      "unit_id": "mozarabic.1755.ordo.accipiat-corpus-rubrica",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "figure",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "fractio-figura"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-fractio-figura",
+      "source_locator": "Ordo missae (Dominica prima de adventu): fractio-figura; retained facsimile page(s) 2",
+      "source_order": 12,
+      "text": "corporatio. nativitas. circumcisio. apparitio. passio. mors. resurrectio. gloria. regnum.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "4dd6336696b21da0b16522797ff36e898cd3efb58d8660f148720c774afb73b1",
+      "unit_id": "mozarabic.1755.ordo.fractio-figura",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "dialogue",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "fidem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-fidem",
+      "source_locator": "Ordo missae (Dominica prima de adventu): fidem; retained facsimile page(s) 3",
+      "source_order": 13,
+      "text": "Dominus sit semper vobiscum.\n℟. Et cum.\nDicat presbyter. Fidem quam corde credimus: ore autem dicamus.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "5e8371566943277b366c4e39a1bce9f96a975460732691191fd4eb0a7fb4c643",
+      "unit_id": "mozarabic.1755.ordo.fidem",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "symbolum-rubrica"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-symbolum-rubrica",
+      "source_locator": "Ordo missae (Dominica prima de adventu): symbolum-rubrica; retained facsimile page(s) 3",
+      "source_order": 14,
+      "text": "Et elevet sacerdos corpus Christi ut videatur a populo. Et dicat chorus simbolum bini ac bini. videlicet.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "5fa63533669f61b4a4b69f4b603c458fa5c3835ed7e1c0af0f9c7113290d4852",
+      "unit_id": "mozarabic.1755.ordo.symbolum-rubrica",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "creed",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "symbolum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-symbolum",
+      "source_locator": "Ordo missae (Dominica prima de adventu): symbolum; retained facsimile page(s) 3",
+      "source_order": 15,
+      "text": "Credimus in unum Deum Patrem omnipotentem. Factorem celi et terre. Visibilium omnium et invisibilium conditorem. Et in unum Dominum nostrum Iesum Christum Filium Dei unigenitum. Et ex Patre natum ante omnia secula. Deum ex Deo. Lumen ex lumine. Deum verum ex Deo vero. Natum non factum. Omousion Patri hoc est eiusdem cum Patre substantie. Per quem omnia facta sunt que in celo et que in terra. Qui propter nos homines et propter nostram salutem descendit de celis. Et incarnatus est de Spiritu Sancto ex Maria Virgine et homo factus est. Passus sub Pontio Pilato. Sepultus tertia die resurrexit. Ascendit ad celos sedet ad dexteram Dei Patris omnipotentis. Inde venturus est iudicare vivos et mortuos. Cuius regni non erit finis. Et in Spiritum Sanctum Dominum vivificatorem et ex Patre et Filio procedentem. Cum Patre et Filio adorandum et conglorificandum. Qui locutus est per prophetas Et unam sanctam catholicam et apostolicam ecclesiam. Confiteor unum baptisma in remissionem peccatorum. Expectamus resurrectionem mortuorum et vitam venturi seculi Amen.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "87fc225bb4562c23ed37cd6dc204ebb67b41ff2023d04f8523f729babea474df",
+      "unit_id": "mozarabic.1755.ordo.symbolum",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "fractio-rubrica"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-fractio-rubrica",
+      "source_locator": "Ordo missae (Dominica prima de adventu): fractio-rubrica; retained facsimile page(s) 3",
+      "source_order": 16,
+      "text": "Et deinde faciat presbyter sic Frangat eucharistiam per medium: et ponat mediam partem in patena: et de alia parte faciat quinque particulas et ponat in patena: et accipiat aliam partem et faciat quatuor particulas et ponat in patena similiter per ordinem facte per rotas istas que supra sunt.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "9dc413a122326c4bde013cbdaa3ecdd825a2672cb490e22b96edf306ebab1169",
+      "unit_id": "mozarabic.1755.ordo.fractio-rubrica",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "rubrics",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "oratio-dominica-rubrica"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-oratio-dominica-rubrica",
+      "source_locator": "Ordo missae (Dominica prima de adventu): oratio-dominica-rubrica; retained facsimile page(s) 3",
+      "source_order": 17,
+      "text": "Et statim purget bene digitos: et cooperto calice fiat memento pro vivis. Postea dicat presbyter ad orationem dominicam equaliter istam orationem.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "b689721a936b3bb0334b7df25091b3fee1353e418dbae9b123d37ce763ef429b",
+      "unit_id": "mozarabic.1755.ordo.oratio-dominica-rubrica",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "propers",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "dominica-prima-adventus",
+        "ad-orationem-dominicam"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-ad-orationem-dominicam",
+      "source_locator": "Ordo missae (Dominica prima de adventu): ad-orationem-dominicam; retained facsimile page(s) 3",
+      "source_order": 18,
+      "text": "Oremus.\nVerbum Patris quod cum factum es ut habitares in nobis. Presta nobis ut qui te venisse iam credimus: ab omni peccatorum eruamur contagione: cum preceptionis tue oraculis proclamaverimus e terris.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "9f9369b032f73aa00df1b54b0293d66e28c2ec5ad5d91bc10aeb7aefd6dd3e06",
+      "unit_id": "mozarabic.1755.ordo.ad-orationem-dominicam",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "pater-noster"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-pater-noster",
+      "source_locator": "Ordo missae (Dominica prima de adventu): pater-noster; retained facsimile page(s) 3",
+      "source_order": 19,
+      "text": "Pater noster qui es in celis.\n℟. Amen.\nSanctificetur nomen tuum.\n℟. Amen.\nAdveniat regnum tuum.\n℟. Amen.\nFiat voluntas tua: sicut in celo et in terra.\n℟. Amen.\nPanem nostrum quotidianum da nobis hodie.\n℟. Quia tu Deus es.\nEt dimitte nobis debita nostra: sicut et nos dimittimus debitoribus nostris\n℟. Amen.\nEt ne nos inducas in temptationem.\n℟. Sed libera nos a malo.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "aaff2dc511086727c57cfb73bec0b770d4c5b10b1668099b56f36c39b183bdb8",
+      "unit_id": "mozarabic.1755.ordo.pater-noster",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "ordinary",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "ordo-missae",
+        "liberati"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-missae-checked",
+      "source_id": "passage.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ordo-liberati",
+      "source_locator": "Ordo missae (Dominica prima de adventu): liberati; retained facsimile page(s) 3",
+      "source_order": 20,
+      "text": "Dicat presbyter. Liberati a malo: confirmati semper in bono: tibi servire mereamur Deo ac Domino nostro. Pone Domine finem: Hic percutiat pectus: peccatis nostris. da gaudium tribulatis. prebe redemptionem captivis. sanitatem infirmis: requiemque defunctis. concede pacem et securitatem in omnibus diebus nostris. frange audaciam inimicorum nostrorum. et exaudi Deus orationes servorum tuorum omnium fidelium christianorum in hac die et in omni tempore. Per Dominum nostrum Iesum Christum Filium tuum. qui tecum vivit et regnat in unitate Spiritus Sancti Deus. Per omnia secula seculorum.\n℟. Amen.",
+      "text_edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "text_sha256": "ae0cf805dbb8dc83dc2a0535aedb8f39cc451984b65789a420f9db56e7025bb5",
+      "unit_id": "mozarabic.1755.ordo.liberati",
+      "witness_id": "copy",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ia-ordo-pp5-6-b42ee9f1",
+      "edition_id": "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+      "id": "copy",
+      "scope_pages": [
+        [
+          2,
+          4
+        ]
+      ]
+    }
+  ]
+}

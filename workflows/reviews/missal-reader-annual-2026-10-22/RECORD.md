@@ -2448,3 +2448,170 @@ then run the complete native suite once and obtain independent integrated cold
 acceptance of that actual final candidate. No failing result becomes a pass,
 no annual/product criterion is weakened, and no push is allowed before those
 gates and outgoing-object review. The immutable failed packet remains unchanged.
+
+### Ordinary refreshed-main union, 2026-10-23
+
+The reviewed candidate is checkpointed at
+`d69237f261376a9e70f2c5e9a2cab9f1edc03761`. The oversized combined commit was
+blocked by the secret scanner's diff buffer. Smaller coherent source, terminal,
+projection and record commits pass with that scanner enabled; no safeguard is
+disabled. A fresh fetch leaves upstream at
+`74150dd4e9caaeaea191b35b55780219b5196769`. An ordinary nonrewriting
+`--no-ff --no-commit` merge is in progress on the same feature branch.
+
+There are 24 actual conflicts: 21 differing terminal additions, two coupled
+release records and the Sources index. The accepted feature terminal bytes
+are retained, and all 31 History comparisons retain exact upstream bytes.
+Publication maps join by path into 23,665 pins, preserving every non-map
+permission and all rights prose. Both parents' deliverable/requirement objects
+and evidence survive exact semantic joins. Textual auto-merge inserted a
+duplicate terminal-reader record and deliverable; the semantic guard catches
+this, and the duplicate is removed without dropping the extra open integration
+criterion. The upstream fifth-batch history record remains present.
+
+Evidence root:
+`.scratch/ordinary-main-merge-20261023T033530302361Z/`.
+`resolution-receipt.json` and `owner-union-receipt.json` own the exact joins.
+The combined canonical source graph validates at 1,064 works, 1,259 editions,
+3,733 artifacts and 6,622 passages. Strict Source Reader write/check passes:
+5,011 files, 3,751 readable passages and 2,871 held passages. Only the index
+changes from the already combined parent outputs; 5,010 other files remain
+exact. The source-family owner changes only catalog/snapshot fields, retaining
+all 162 pending review units and zero screened/promoted states. Release refresh
+names only that exact existing index pin; the corresponding rights table and
+record hash change, and global status is `exact: 0 stale binding(s)`.
+
+The current annual terminal log remains seven passing tests in 957.566 seconds.
+An exact dependency join proves unchanged annual test/runtime/calendar/Bible/
+Proper/Ordinary controls. The only two tool differences are the already
+reviewed EXAMPLES-only History and reconciliation changes. The new global
+source graph validates separately. Reuse is dependency-based, not a claim of a
+new annual execution.
+
+Thirteen affected rights/Sources tests pass. The selected terminal subset
+initially fails one assertion that hardcodes the former 2,008-record History
+catalogue. The merged catalogue has 2,031 records. One test hunk replaces that
+literal with exact authoritative record-ID membership, duplicate-sensitive
+counts and precise tally/status checks. All thirteen affected terminal tests
+then pass; corrupting either the shown rows or the fixed status is rejected
+by two negative controls. No runtime or source change is needed. Its final
+hunk still belongs in the independent integrated cold review.
+
+The initial separate History check-only command times out at 180 seconds,
+before output or the chained reconciliation begins. Its empty log and timeout
+remain recorded; there is no History writer or inferred pass. The final complete
+deployment-source gate is running with a larger budget. Final public/preview
+artifacts, native execution, independent integrated acceptance, merge commit,
+outgoing-object review and publication are not yet complete.
+
+### Final merged local-publication gates pass
+
+The complete `make check-deployment-sources` invocation exits 0 in 220 seconds,
+including a current 557-file History projection for three slices, 118 stations
+and 23 lines. This supersedes the check-only timeout as validation evidence;
+the failed timed-out attempt remains retained and no History writer is used.
+The final public build and Pages-target verifier both exit 0 (20 seconds each);
+the preview build and preview verifier exit 0 (19 and 20 seconds). All builders
+are terminal before the forthcoming native freeze.
+
+The corrected affected terminal run is thirteen passing tests in 5.455 seconds.
+Its prior failure and both corrupted-view rejection controls remain recorded.
+The rights/Sources subset is thirteen passing tests in 22.386 seconds.
+These logs and exact result receipts are in the current ordinary-merge evidence
+root. Final native execution and independent integrated acceptance remain open.
+
+A separate read-only publication review of the immutable feature checkpoints
+relative to upstream enumerates 1,379 newly reachable objects: sixteen commits,
+217 trees and 1,146 blobs. Intermediate commits are included, with no
+intermediate-only blobs. All 1,200 changed paths join retained source, guard,
+payload and generated-output proofs; fresh bounded object/message screening
+finds zero candidates and no actionable disclosure gap. Source-body and rights
+semantics are adopted from accepted evidence, not freshly re-collated.
+Evidence:
+`.scratch/outgoing-F-d69237f2-publication-readonly-20261023T034100250658Z/REPORT.md`
+and its object/identity/authority/screening ledgers. This covers the checkpoints,
+not the subsequent merge outputs or a push. Exact final merge-object review,
+native evidence, independent cold disposition and deployment verification are
+still required.
+
+### Phase 5 merged native integration accepted
+
+The final settled merged candidate tree
+`20a07a0ee6bb80902a5a2b39bc392875599a3608` receives exactly one fresh native
+invocation after every builder and canonical writer is terminal. Exit 0:
+seven tests, twelve harnesses, 257/257 assertions, zero skips, 249.020 unittest
+seconds. All eight actual emitted screenshots are opened and inspected.
+Twenty thousand six hundred sixty-one completed responses form 1,379 identity
+groups, with synthetic fixtures and two intentional HTTP 404 refusals classified
+separately and no unexpected recorded diagnostics. Canceled or unfinished
+requests are outside completed-response observation.
+
+Sources has 5,011 files and History has 557; all 11,136 public/preview inventory
+joins are exact. Actual Sources/History HTTP request counts are both zero.
+These inventory joins do not claim browser coverage for either namespace.
+Twelve fresh browser profiles are cleaned, with no remaining owned jobs.
+Repository, artifact, parent-record, index, control and merge-state conservation
+passes before and after execution and after ZIP verification.
+
+The original authority, native result and observation evidence remain under
+`.scratch/merged-native-preparation-20261023T034838906200Z/`.
+The response-proof SHA-256 is
+`ae58928e650f901db8918b151463bc25789790e3788ca51c038a8cb5bb4fa86d`.
+The native authority signal remains
+`d3131119d4f73b0dd5653bddda42c148a89f200400c0b9a87524b759ae7001ec`.
+
+Two subsequent packaging attempts fail honestly before sealing or ZIP creation.
+The first rejects descriptive metadata mislabeled as commands with null exits;
+the recovery preserves the descriptions separately and correctly uses null
+command/exit fields rather than fabricating success. The second rejects local
+absolute paths in machinery receipts. A further transport-only recovery uses
+the existing portable serialization for metadata copies, retaining separate
+original/portable identities and field qualifications. Original authority,
+scripts, native evidence and both failed partial packets remain unchanged.
+There is no native rerun, screenshot recapture, source change or relaxed gate.
+
+The superseding immutable packet is successfully created and sealed at
+`.scratch/agent-handoffs/20261023T043357102655Z-merged-settled-native-pass/`;
+its sibling ZIP is successfully created and verified. Exact identities:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| ZIP | `4a9bebb6ad0eb362b55e99d4104fab9355823a61db149c8a12e729235e2fbd9c` |
+| `changes.patch` | `865f77a82e61b9b62bd01af373c9432093b9e585cf64d2efebd43b0c48141746` |
+| `inventory.json` | `c8ad9080e59f758a2917a54c67c2e8c9e169f5e45dc2bd4ec25c24e465c8c3f1` |
+
+The ZIP has 1,981 members and 181,519,073 bytes. Its P4-relative delta has
+1,267 paths: 633 modified, 634 added, none deleted, 4,023 text hunks and fourteen
+binary sections. Member privacy/approval checks, CRC, complete inventory,
+directory/ZIP byte-and-mode equality, isolated forward/reverse replay and
+post-ZIP conservation pass. Nine additional bounded facsimile extracts are
+exact already-published upstream bytes, explicitly approved for internal
+review transport under their existing artifact conditions, not a new license,
+acquisition, prose-publication permission or whole-book clearance.
+
+Fresh independent execution review finds no blockers; its immutable receipt
+is `.scratch/integrated-native-evidence-cold-20261023-r1/receipt.json`,
+SHA-256 `ae8ba0c4438940b059817d3b62b638ec46a2694e8303fca6f9c06bb52ea611c7`.
+The final independent packet-only review accepts **bounded Phase 5 and merged
+native integration**, with no findings or blockers. It freshly replays 1,267
+postimages and 633 preimages, removes 634 additions on reverse replay, verifies
+the original authority and portable-copy provenance, and confirms that current
+canonical/artifact inventories remain exact. Its immutable receipt is
+`.scratch/integrated-final-packet-cold-20261023-r1/receipt.json`,
+SHA-256 `3cf8585cff49d8da25bcd1f192efeac1aeab9ad7e2753c086057fb5063226b33`.
+One incorrect reviewer sealing-mode assumption is corrected and retained,
+not reported as a packet defect. Historical external evidence dependencies
+remain explicitly identified rather than silently claimed self-contained.
+
+The separate final-tree disclosure review finds no actionable gap across 33
+novel objects, comprising 24 trees and nine blobs; the other 48,175 paths are
+parent-exact. Its report is
+`.scratch/merge-tree-20a07a0e-disclosure-readonly-20261023T040437372405Z/REPORT.md`.
+It does not cover this later documentation addendum or the actual merge message.
+Those final objects, fresh remote ancestry and the deployment attempt still
+require verification before publication is reported complete.
+
+Bounded acceptance does not complete annual appointments or text, terminal
+page-mode parity, maintainer real-terminal review or other product criteria.
+The exhaustive audit stays explicitly deferred: 1,147 completed obligations
+and 2,498 pending, not accepted. No requirement or rights hold is waived.

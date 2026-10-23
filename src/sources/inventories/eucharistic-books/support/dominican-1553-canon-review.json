@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "dominican-1553-canon",
+  "title": "Venice 1553 Dominican Canon (Salamanca 1551 reform): independent complete original-image collation",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "Independent AI source reviewer (batch-5 text-dominican original-image collation), distinct from the transcriber and the coordinator",
+  "checked_on": "2026-10-22",
+  "binding_sha256": "11f7dec5c23b9962599318fafd1c4aea30d50e35efa46020fd38572de0299ed6",
+  "extent_sha256": "34d83c559ac7bec323b275a81534b7accb9a3c5ee145e3964e964883f73817af",
+  "witness_sha256": {
+    "dominican-1553-canon-pages": "01039899570786b6076e3632f788731f885d6a803fb33eb215bcb35a303311de"
+  },
+  "unit_sha256": {
+    "unit.dominican-1553.canon.te-igitur": "9cf9f0b0f24a3aa623a729902a0421c8a8dd34f62f47907284438f961601bcd4",
+    "unit.dominican-1553.canon.memento-vivorum": "d90e9efe9b93af728738020bb7cd2795efc1c16aa4adfd8edaa10705f02591ee",
+    "unit.dominican-1553.canon.communicantes": "fbd2967f8c9d60fe5da00048eee4e6fb076e41cca4057c732ada71a204ccc811",
+    "unit.dominican-1553.canon.hanc-igitur": "46edc8e247e361bd68a2109fa46ae7a377248517d7d45d66ff74479bc2aa9cd1",
+    "unit.dominican-1553.canon.quam-oblationem": "caaa8e859e03112eda7861b59ec8a39bbf2dcaa08e6171727073fa7c361d7240",
+    "unit.dominican-1553.canon.qui-pridie": "82465a45acba454e34998fb291807854f93ebc016bfb0de5906e33baca669e2b",
+    "unit.dominican-1553.canon.simili-modo": "316177f9e42aaa927dac5425bfce5d4e063908d2b238a10af2e3f8a770839f87",
+    "unit.dominican-1553.canon.unde-et-memores": "570eb205b21d268372190ea1518bc3f9e5784562669237187801b85312bc1255",
+    "unit.dominican-1553.canon.supra-quae": "866586af076a1dcb279503f44dcd8fcbaff438a4a10e12b22594349f9e46d09f",
+    "unit.dominican-1553.canon.supplices": "b2cc335d0718bcaf27c232ddd69b686b534be7847c95b67c51606239219a4d5b",
+    "unit.dominican-1553.canon.memento-defunctorum": "e197eb1fb184fbefa724fe523e533802f1e2e46dc683529fccd58601bb0c5871",
+    "unit.dominican-1553.canon.nobis-quoque": "f3703df3e85d6f59115d8e9f40246ae22aa0a181906a9bf91baa2a9e379ea24a",
+    "unit.dominican-1553.canon.per-quem": "fa8aceeda32f0f1a44fac1ac296e6d6644f0a8b4049ceffc4e2d53ebfd1ec0cb",
+    "unit.dominican-1553.canon.per-ipsum": "7aa53523c5049d89ef2055dbd28c63425e1baec4adc4c418155f5dbf57c68263"
+  },
+  "scope": "Complete Dominican Canon constituent of the Venice (Giunta) 1553 Missal reformed after the Salamanca general chapter of 1551: from Te igitur beside the historiated woodcut initial T on fol. 89r (retained facsimile PDF 3 = BSB canvas 219) through omnis honor, et gloria on fol. 90r (facsimile PDF 5 = canvas 221), left column. 14 source-order units in 17 physical lines, 26 printed red crosses and 5 N. placeholders; no rubrics are printed within these bounds. This book prints no in-column heading at the end of the Canon: the notated Per omnia secula seculorum. R. Amen. Oremus. Praeceptis follows directly in the same column under the page's red running head Cantus solennis, and the Pater continues in the right column; that notated block is excluded as a declared book division, as in the other three Dominican states. The title page and the Romaeus letter with the Julius III brief (facsimile PDF 1-2) are identity and revision-basis evidence only.",
+  "method": "The collator did not read the lane's reading or draft before reading the images. It made its own blind reading of every physical line of every Canon page from overlapping zoomed column strips of the retained images, then compared that reading word by word with the lane artifact. Every disagreement, every instance of the uncertain-reading classes relayed from the lane (virgules, stops, cross positions, quotiescunque) and every e-caudata and N. placeholder was resolved on enlarged pixel crops, colour crops where the book has red ink, and connected-component measurements of the marks against unambiguous periods, commas, colons and semicolons on the same page. The corrected reading was then regenerated with the lane's own generator, and the collator's blind reading was diffed again against it: every remaining difference is a place where the collator's blind reading was overruled by the zoomed image. Unit boundaries, page incidence of every unit, the printed crosses and N. placeholders, the start of the Canon and the boundary into the notated Cantus solemnis block were checked on the images. Identity and derivation: Re-fetched the BSB IIIF manifest for bsb10869682 (SHA-256 4750c0798611b7dc2ec1e89f5ee02378607e6b3ed32be3a4f625535b97e33f47, as recorded) and the full-size images of canvases 5, 219 and 221: each is byte-identical to its package member. Every package member's SHA-256 matches sequence.json and the package artifact record, and re-running the declared grayscale derivation reproduces all five embedded JPEG streams of the facsimile PDF byte for byte. The title reads Missale secundum ordinem Fratrum Predicatorum, iuxta decreta Capituli Generalis, Anno Domini 1551 Salmantice celebrati, reformatum ... Venetiis apud Iuntas M D LIII; canvas 6 carries the letter of the Master General Franciscus Romaeus on the 1551 chapter and the brief of Julius III dated Rome, 3 May 1552. Reading was done on the exact colour provider images.",
+  "normalization_limit": "Declared selective Latin reading normalization shared with the Roman Canon readings: long s, u/v, i/j, ligatures and e-caudata, ampersand/Tironian et, enclitic que and printed contractions are normalized and accents omitted; display initials and spaced capitals are merged in sentence case; spelling, capitalization, punctuation including the virgule, N. placeholders and printed cross positions are kept. Not glyph-diplomatic typography, abbreviation signs, colour reproduction or chant notation.",
+  "findings_resolved": [
+    "memento-vivorum (line 2): circumstantium -> circumastantium ; fol. 89r (facsimile PDF 3), the word is divided cir- (left column foot) / cumastantium (right column head) and the second part clearly prints cumaſtantium with an a before the long s.",
+    "simili-modo (line 10): quotiescumque -> quotiescunque ; fol. 89v (facsimile PDF 4), right column: printed quotieſcunq; with n before q.",
+    "Confirmed against the image, not changed: tibique reddunt; nos tui servi; postea quam caenatum ... et dedit; Sixti; incolumitatis (the mark over the first i is a nasal bar about twice the width of the i-dots on the same line); catholicae, et apostolicae (comma); benedi✠ctione; et cum ✠ ipso; Panem ✠ sanctum.",
+    "The Canon end was checked on the colour image: omnis honor, et gloria. is followed directly by the notated Per omnia with a red initial and a red R. before Amen; the only Cantus solennis heading on this page is the red running head."
+  ],
+  "unresolved": [],
+  "review_limit": "Complete declared Dominican Canon constituent only, from Te igitur through omnis honor, et gloria; the notated Per omnia/R. Amen, the rest of the Ordinary and the whole Missal are not claimed. The Romaeus letter and Julius III brief are revision-basis evidence only; which Canon readings the 1551 chapter changed is not established. No historical parentage or immediate exemplar is asserted. BSB image conditions (NoC-NC) remain separate from the United States public-domain basis of the 1553 Latin."
+}

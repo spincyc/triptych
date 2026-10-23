@@ -9,7 +9,7 @@
       "label": "Beauvais diocesan missal",
       "family": "latin",
       "scope": "The 1756 Paris and Beauvais Fratres Desaint Missale Bellovacense, as offered by Numelyo from Lyon SJ L 013/12.",
-      "coverage_note": "One printing and its scoped episcopal mandate are directly inspected; predecessor versions, actual local uptake and complete liturgical texts remain unestablished."
+      "coverage_note": "One printing and its scoped episcopal mandate are directly inspected; a secondary bibliography of Noyon dates the replacement of 'the old Noyon liturgy' by the Roman liturgy to Pentecost 1857, without saying whether the Beauvais books were affected. Predecessor versions, the end of the Beauvais books, actual local uptake and complete liturgical texts remain unestablished."
     },
     {
       "id": "historic-toul-use",
@@ -43,8 +43,8 @@
       "id": "historic-huesca-use",
       "label": "Huesca local missal witnesses",
       "family": "latin",
-      "scope": "The 1488 Huesca missal as described by Lambert’s inspected scholarly copy report, including his explicit defective-tail limit.",
-      "coverage_note": "One bounded publication attestation; complete text, predecessor comparison and actual local reception remain unresolved."
+      "scope": "Printed missals of the Huesca use: the 1488 book described by Lambert and the 1504 Zaragoza printing recorded by USTC, whose catalogued title names the churches of Huesca and Jaca.",
+      "coverage_note": "One scholarly-described 1488 publication attestation and one catalogue-recorded 1504 Huesca–Jaca printing; no original page of either has been inspected, and complete text, predecessor comparison and actual local reception remain unresolved."
     },
     {
       "id": "historic-besancon-use",
@@ -154,6 +154,26 @@
       "checked_on": "2026-10-20",
       "status": "inspected",
       "limitations": "Conventional cataloguing title and copy-condition report remain library testimony, rather than an original printed title or this project’s complete physical collation. Enumerating 606 image descriptions does not acquire or inspect all images."
+    },
+    {
+      "id": "western-originals-batch3:huesca-jaca-1504-ustc",
+      "title": "USTC 347646, Missale secundum ritum insignium ecclesiarum Oscensis et Iaccensi, Zaragoza: Jorge Coci, 1504",
+      "url": "https://www.ustc.ac.uk/editions/347646",
+      "kind": "institutional-catalogue",
+      "inspection": "Edition record read 2026-10-22 (data embedded in the page): heading 'Ecclesia Catholica - Missale - Huesca'; standard title ending 'admodum completum'; imprint Zaragoza, Jorge Coci, 1504; folio; Latin; copies Barbastro cathedral 1-10 and 305-22; references Wilkinson, Iberian Books 6341, Martín Abad, Post-incunables ibéricos 1054, Norton, Descriptive catalogue 610; no digitisation listed. USUARIUM 7335 (read the same day) gives the same title and year, Amiet 692, and the origin field 'Irrelevant (None)'.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "Bibliographic record only: no title-page, colophon, mandate or contents image has been seen, and the standard title is a cataloguer's transcription."
+    },
+    {
+      "id": "western-originals-batch3:noyon-bibliography-1877",
+      "title": "Bibliographie noyonnaise (1877), section Liturgie, printed pp. 31–32 (Google Books 0ho6AQAAMAAJ)",
+      "url": "https://books.google.com/books?id=0ho6AQAAMAAJ&pg=PP31",
+      "kind": "scholarship",
+      "inspection": "Page images PP31 and PP32 acquired by the batch-4 french-b lane on 2026-10-21 (SHA-256 de08954f… for PP31) and re-viewed 2026-10-22: the footnote to the heading Liturgie on p. 31 states that the old Noyon liturgy was replaced by the Roman liturgy from Pentecost 1857, citing a mandement of Mgr Gignoux ('N° 181').",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "A nineteenth-century bibliography's footnote, not the mandate itself; its cross-reference 'N° 181' does not match item 181 of the same list (a 1813 Processionale on p. 32), so the mandate's own date and wording are unverified. It names only 'the old Noyon liturgy'; whether that phrase covers Beauvais books then in use at Noyon is not stated."
     }
   ],
   "stages": [
@@ -203,7 +223,7 @@
           "claim": "Original staff notation is present in the end of Præfationes cum cantu and in the Canon ending/Pater. Image 292’s right-column Advent preface is unnotated; the two columns retain different functions."
         }
       ],
-      "limitations": "The mandate describes changes relative to earlier practice, but no exact predecessor book has been collated; no substantive transition, native parent, whole-book text or physical completeness is claimed. Publication year and 19 April mandate are distinct events.",
+      "limitations": "The mandate describes changes relative to earlier practice, but no exact predecessor book has been collated; no substantive transition, native parent, whole-book text or physical completeness is claimed. Publication year and 19 April mandate are distinct events. A later Noyon bibliography (1877) records that 'the old Noyon liturgy' was replaced by the Roman liturgy from Pentecost 1857 by a mandate of Bishop Gignoux; it does not say which books that liturgy used or whether the 1756 Beauvais missal was affected, and no date for the replacement of the Beauvais missal itself has been found.",
       "reception": "The mandate directs all churches, chapters, colleges, monasteries and orders of his diocese, and all priests who are bound by law or custom to celebrate or recite the Beauvais Office, to use this missal henceforth. The printed institutional list and qualified priest clause remain distinct. This records the stated command and its recipients, without establishing universal religious-order jurisdiction, uniform actual uptake or a first effective-use date."
     },
     {
@@ -432,6 +452,36 @@
       "reception": "The scholar identifies the local Huesca book; no directly inspected episcopal mandate or actual parish receipt is established here."
     },
     {
+      "id": "western-originals-batch3:huesca-jaca-1504",
+      "tradition_id": "historic-huesca-use",
+      "label": "1504 missal for the churches of Huesca and Jaca, Zaragoza (Coci)",
+      "date_label": "1504 printing (catalogue-reported year; title and colophon uninspected)",
+      "start_year": 1504,
+      "end_year": 1504,
+      "date_kind": "publication",
+      "status": "provisional",
+      "scope": "One catalogued printed missal whose recorded title names the use of the churches of Huesca (Osca) and Jaca.",
+      "components": [
+        "propers",
+        "ordinary"
+      ],
+      "witness_ids": [
+        "western:amiet-usuarium-7335"
+      ],
+      "witness_label": "Copies recorded at Barbastro cathedral (USTC 347646); no digitisation located",
+      "summary": "USTC records a folio Latin missal 'secundum ritum insignium ecclesiarum Oscensis et Iaccensi, admodum completum', printed at Zaragoza by Jorge Coci in 1504, under the heading Missale – Huesca; USUARIUM 7335 carries the same title and year.",
+      "text_coverage": "not-transcribed",
+      "evidence": [
+        {
+          "source_id": "western-originals-batch3:huesca-jaca-1504-ustc",
+          "locus": "USTC edition 347646, title, imprint, copies and references",
+          "claim": "A 1504 Zaragoza printing for the use of the churches of Huesca and Jaca is catalogued with two Barbastro copies."
+        }
+      ],
+      "limitations": "Provisional because the evidence is catalogue metadata only: no original image, mandate or colophon has been inspected, so the date stays catalogue-reported and the Huesca–Jaca use is taken from the recorded title. Components are those implied by a complete missal title, not observed. No relation to the 1488 book or to Zaragoza books is claimed.",
+      "reception": "The title names Huesca and Jaca; no dated local use is established."
+    },
+    {
       "id": "western-originals-batch3:besancon-1485",
       "tradition_id": "historic-besancon-use",
       "label": "1485 Besançon missal printed at Salins",
@@ -481,8 +531,8 @@
       "id": "western-originals-batch3:beauvais-predecessor-reception",
       "tradition_id": "beauvais-diocesan-missal",
       "period": "before and after 1756",
-      "missing": "Component collation of the 1756 book against its predecessor. BnF catalogue records include a 1625 Missale Bellovacense ad formam Tridentini issued under Bishop Augustin Potier (Beauvais, Godefroy Valet; BnF B-781, undigitized), which by the bishop's name is probably the earlier Potier missal named in the mandate (an unverified match, not a catalogue statement), and 1514 Morin, 1520 Vostre and 1538 Du Pré/Lefèvre printings; a c. 1285–1290 cathedral manuscript (Beinecke MS 748.5, dispersed) is a separate lead. None is inspected. Complete native divisions, chant coverage, actual uptake and later replacement remain open.",
-      "next_source": "BnF B-781 (1625) title and mandate leaves; BnF 1514 Morin record cb36817356x; usuarium 6953/6954; Fagin Davis, Florilegium 33 (2016) on the Beauvais Missal; cathedral and parish inventories.",
+      "missing": "Component collation of the 1756 book against its predecessor. BnF catalogue records include a 1625 Missale Bellovacense ad formam Tridentini issued under Bishop Augustin Potier (Beauvais, Godefroy Valet; BnF B-781, undigitized), which by the bishop's name is probably the earlier Potier missal named in the mandate (an unverified match, not a catalogue statement), and 1514 Morin, 1520 Vostre and 1538 Du Pré/Lefèvre printings; a c. 1285–1290 cathedral manuscript (Beinecke MS 748.5, dispersed) is a separate lead. None is inspected. Complete native divisions, chant coverage, actual uptake and later replacement remain open. Lead followed 2026-10-22: Bibliographie noyonnaise (1877) p. 31 n. 1 states that the old Noyon liturgy was replaced by the Roman liturgy from Pentecost 1857 by a mandement of Bishop Gignoux; the mandate itself, its scope within the diocese of Beauvais, and whether and when the 1756 Beauvais books were likewise replaced remain unverified.",
+      "next_source": "BnF B-781 (1625) title and mandate leaves; BnF 1514 Morin record cb36817356x; usuarium 6953/6954; Fagin Davis, Florilegium 33 (2016) on the Beauvais Missal; cathedral and parish inventories. Gignoux's 1857 mandate (diocesan archives, BnF mandement collections, Ami de la religion 1857); date of the Beauvais adoption of the Roman Missal.",
       "consequence": "A 1756 publication state and scoped mandate are documented, while substantive before/after changes, actual adoption and ancestry remain open."
     },
     {
@@ -520,9 +570,9 @@
     {
       "id": "western-originals-batch3:huesca-text-and-reception",
       "tradition_id": "historic-huesca-use",
-      "period": "Before and after 1488",
-      "missing": "Public original 1488 book images and copy extent (no digitization found in GW, CCPB, Europeana, Memòria Digital de Catalunya, Zaguán or the web; CCPB000111205-8 records one Spanish copy at the Seo de Zaragoza chapter archive and GW adds the Hispanic Society copy); original calendar, bishop letter, colophon and tail; complete text, separate authority and reception. The Holy Saturday archiepiscopal supplication Lambert quotes recurs verbatim in Zaragoza 1485 (BC Res. 700-Fol., printed f. CIXr col. 2 l. 3), one folio before Lambert's Huesca locus, so the sheet relationship and foliation remain unverified.",
-      "next_source": "Hispanic Society or Seo de Zaragoza copy images; a complete Zaragoza 1485 copy with foliation for sheet comparison; candidate amiet-usuarium-7335 (1504 Oscensis et Iaccensis missal, USTC 347646) for the later Huesca–Jaca sequence.",
+      "period": "Before and after 1488; 1504",
+      "missing": "Public original 1488 book images and copy extent (no digitization found in GW, CCPB, Europeana, Memòria Digital de Catalunya, Zaguán or the web; CCPB000111205-8 records one Spanish copy at the Seo de Zaragoza chapter archive and GW adds the Hispanic Society copy); original calendar, bishop letter, colophon and tail; complete text, separate authority and reception. The Holy Saturday archiepiscopal supplication Lambert quotes recurs verbatim in Zaragoza 1485 (BC Res. 700-Fol., printed f. CIXr col. 2 l. 3), one folio before Lambert's Huesca locus, so the sheet relationship and foliation remain unverified. The 1504 Huesca–Jaca printing (Zaragoza, Coci; USTC 347646, two Barbastro cathedral copies, no digitisation) is now a provisional catalogue stage; its title page, colophon, any mandate and its relation to the 1488 book remain uninspected. Searches on 2026-10-22 (USTC, USUARIUM, Biblioteca Virtual de Aragón, general web) found no digitised copy of either book.",
+      "next_source": "Hispanic Society or Seo de Zaragoza copy images of 1488; Barbastro cathedral library copies 1-10 and 305-22 of the 1504 missal (title, colophon, calendar); Norton 1978 no. 610 and Martín Abad 2001 no. 1054 descriptions; a complete Zaragoza 1485 copy with foliation for sheet comparison.",
       "consequence": "A mediated 1488 publication attestation does not become original acquisition, a verified sheet relationship, a complete recension or a parent edge."
     },
     {

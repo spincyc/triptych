@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.vatican-typica-1604.canon-facsimile-68d68bc2"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1604"
+artifact_type = "facsimile-pdf-derivative"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The Rome 1604 Typographia Vaticana printing is public domain in the United States by publication date (first published abroad before the pre-1931 line derived for 2026). The Google digitization of the National Central Library of Rome copy, served by Internet Archive as item bub_gb_aaPpAuHRY9IC, is a faithful mechanical reproduction that adds no original authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)); the item carries the Public Domain Mark, recorded as a fact and not relied on. The 'Digitized by Google' page-foot stamp carries no notice or reservation. Mechanical extraction, resampling and a faithful bounded reading transcription add no separately claimed rights. Excluded from the Triptych CC BY 4.0 grant."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/details/bub_gb_aaPpAuHRY9IC"
+provenance = "6 complete provider page images in provider order from the exact retained page-image package. PDF 1 = archive leaf 0004 (title page), sha256 9d4c62d4a3715dc50577687686ac6ba8f1a3a596f83712504537a9792889c987; PDF 2 = archive leaf 0008 (Cum sanctissimum, sig. cross-iij), sha256 f4763a299b821d93f189b2c1cdeff8239147c55c9fb402b57e4aac54db3f1a63; PDF 3 = archive leaf 0348 (printed p. 251), sha256 8c30be5b9ac75a007d94fb080c26cba45e8d98703e4b2c97f71136baf4dd4a91; PDF 4 = archive leaf 0349 (printed p. 252), sha256 6c056bb87e122ab4d9bf1419042483def744c99fac40f927a8d0726a1ff35ffa; PDF 5 = archive leaf 0350 (printed p. 253), sha256 5ae90b277b8b1654f5133af560532b0ef25b4c4c128adf8821640fe8a461796d; PDF 6 = archive leaf 0351 (printed p. 254), sha256 acf21524f5f4072fbea23191808f9625b7e8b1065b4d261cc888491dcf492198."
+retrieved = "2026-10-22"
+sha256 = "68d68bc261098e977131e965130007ed1c3bb8c1de4cd25cd39389446fa5fc5d"
+byte_size = 2984291
+path = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/artifacts/canon-facsimile-68d68bc2/canon-pages.pdf"
+indexable = false
+page_count = 6
+derived_from = "artifact.catholic-church.missale-romanum.vatican-typica-1604.canon-pages-6d3538f8"
+transformation = "ImageMagick decoded each exact package member, resized it to at most 2000 px on the long side, stripped metadata and embedded it as a colour quality-85 JPEG page of a PDF in package order. Colour is kept because red and black ink distinguish rubrics from spoken text. JPEG is lossy; the exact provider images remain in the parent package. No crop, page omission, OCR or editorial text."

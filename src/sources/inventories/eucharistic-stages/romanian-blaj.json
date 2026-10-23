@@ -44,6 +44,16 @@
       "limitations": "Contemporary comparative argument, not this project's independent page-level collation of the predecessor and the two Blaj printings. Its summary does not establish complete textual identity or exact descent."
     },
     {
+      "id": "romanian-blaj:foia1885",
+      "title": "Câteva observări la Liturgiariulu celu nou tiparitu in Blasiu la 1870, Foia basericesca 3, no. 23 (Blaj, 10 December 1885), pp. 362–366, with the editors' note in no. 24 (25 December 1885), p. 384",
+      "url": "https://dspace.bcucluj.ro/handle/123456789/14552",
+      "kind": "scholarship",
+      "inspection": "Both issue PDFs acquired from the BCU Cluj digital library on 2026-10-22 (handles 14552 and 14566); printed pp. 362–365 and the Varietăţi note on p. 384 viewed as page images, p. 366 read in the text layer. This is the 1885 article that Bălan 1915 (p. 144 n. 3) cites.",
+      "checked_on": "2026-10-22",
+      "status": "inspected",
+      "limitations": "An anonymous contemporary review in the Blaj church periodical, citing the 1870 book by page but quoting only single words and phrases; the book itself was not seen. The editors' note dates the same book 1872."
+    },
+    {
       "id": "romanian-blaj:book1807",
       "title": "Dumnezeeştile Liturghii, Blaj 1807 (third printing), BCU Cluj BRV 721, parts 1–2",
       "url": "https://www.bcucluj.ro/synfilebibdigit/patrimoniu/BCUCLUJ_FCS_BRV721_1.pdf",
@@ -212,17 +222,27 @@
         "eastern:byzantine-regional-blaj1870"
       ],
       "witness_label": "Domnedieescile si sântele liturgii … Blasiu MDCCCLXX, cited by Bălan 1915, p. 143 n. 1",
-      "summary": "Bălan reports Latinizing vocabulary in the Vespers litia, litanies, anaphora and Our Father, and corp for trup at the consecration. He also reports a blessing of the people with the holy gifts first found in a Blaj edition of 1870, whose place in the Liturgy his note leaves unclear.",
+      "summary": "Bălan reports Latinizing vocabulary in the Vespers litia, litanies, anaphora and Our Father, and corp for trup at the consecration. He also reports a blessing of the people with the holy gifts first found in a Blaj edition of 1870, whose place in the Liturgy his note leaves unclear. A contemporary Blaj review of 1885 confirms the Latinizing vocabulary at named pages of the 1870 book and reports that its printed metropolitan approval was a press formality.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {
           "source_id": "romanian-blaj:balan1915",
           "locus": "Printed pp. 140 (main text and note 6), 141–144 with notes, especially p. 143 nn. 1–9",
           "claim": "Contemporary comparison quoting 1870 wording against the 1807 book with page loci, and reporting clerical objections published in 1885–1886."
+        },
+        {
+          "source_id": "romanian-blaj:foia1885",
+          "locus": "Printed pp. 362–366",
+          "claim": "Contemporary review of the Liturgiariu printed at Blaj in Latin letters in 1870, objecting at its pp. 73, 76, 88, 98, 130 and 132 to bine sciresci and bine inscientiatoriu for the gospel-proclaiming words, a marturi for a mărturisi, îndestulează for învredniceşte in the catechumen prayer and before the Lord's Prayer, sfânta aducere for the eucharistic sacrifice, and începătoriile for the angelic principalities in the Basil anaphora, and to tentaţiune, crucifipt and suscepând generally."
+        },
+        {
+          "source_id": "romanian-blaj:foia1885",
+          "locus": "No. 24, printed p. 384",
+          "claim": "The editors state that the metropolitan's approval printed in the book was added by the press by custom while he was at the Vatican Council, and that he had not expressly revised or approved it."
         }
       ],
-      "limitations": "The 1870 book itself was not located or inspected; the readings are Bălan's, transcribed by him in modern orthography. Bălan's note for the gifts blessing reads only 'Liturghier p. 82'; if it refers to 1870, it falls before that book's consecration (p. 90), not after communion.",
-      "reception": "Bălan reports objections in the Blaj Foaia bisericească (1885, 1886); the extent of use is not established."
+      "limitations": "The 1870 book itself was not located or inspected; the readings are Bălan's, transcribed by him in modern orthography. Bălan's note for the gifts blessing reads only 'Liturghier p. 82'; if it refers to 1870, it falls before that book's consecration (p. 90), not after communion. The 1885 review and its editors' note (which gives the year as 1872) cite the book by page, so its pagination is partly known, but its own title leaf and approval were not seen.",
+      "reception": "The Blaj Foia basericesca criticized the book in 1885 and 1886 and asked for corrections in a new edition; its editors said the printed approval of the metropolitan was not an express approval. The extent of use is not established."
     },
     {
       "id": "romanian-blaj:1905-revision",
@@ -580,16 +600,16 @@
       "tradition_id": "romanian-blaj:historical",
       "period": "Before 1756 (Antim exemplar) and 1756–1807 beyond the inspected loci",
       "missing": "An identified Antim Liturghier copy (Râmnic 1706 or Târgovişte 1713) collated at Bălan's loci against 1756; whole-text comparison of 1756, 1775 and 1807 beyond the entrance, litia, anaphora and post-communion loci now read; early approval/front matter and dated parish use.",
-      "next_source": "Bălan's Antim page loci (pp. 50, 60, 67, 71, 73, 97–98, 104, 109) and Blaj 1756 pp. 79, 84–85, 113, 118, 126, 133 give the collation grid; locate a digitized Antim book (Romanian Academy Library, BAR Cluj, or Petroaia's repertoire); read the same loci in the held 1775 and 1807 scans; Sana's parish inventories for receipt dates.",
+      "next_source": "Bălan's Antim page loci (pp. 50, 60, 67, 71, 73, 97–98, 104, 109) and Blaj 1756 pp. 79, 84–85, 113, 118, 126, 133 give the collation grid; locate a digitized Antim book (Romanian Academy Library, BAR Cluj, or Petroaia's repertoire); read the same loci in the held 1775 and 1807 scans; Sana's parish inventories for receipt dates. A modern edition of the Antim 1713 book exists: Alina Camil (ed.), Antim Ivireanul, Dumnezeieştile şi Sfintele Liturghii, Târgovişte 1713 (Bucharest: Basilica, 2015), cited by Vanca, Transylvanian Review 30, suppl. 1 (2021), p. 256 n. 30 (BCU DSpace handle 195498); not openly available.",
       "consequence": "1756, 1775 and 1807 are shown as a printed succession with an agreeing entrance locus; Antim-to-Blaj changes remain attributed to Bălan and no documented Antim stage or transition is drawn."
     },
     {
       "id": "romanian-blaj:later-book-line-gap",
       "tradition_id": "romanian-blaj:historical",
       "period": "1870–2015",
-      "missing": "Original copies of the 1870, 1905, 1931, 1996 and 2014 books; a concrete 1905-to-1931 comparison; the place and form of the blessing with the holy gifts Bălan reports for 1870 (his locus 'Liturghier p. 82'); the identity of 1996 with 1931; Acte Sinodale IV/4 (2009) approving 1931 and 1996.",
-      "next_source": "Library copies of the books (BCU Cluj and its Blaj Greek Catholic theology branch, Romanian Academy Library); Magdău and Mastan-Magdău 2007, which compares 1807, 1870, 1905 and 1931 (CEEOL, not openly accessible); the 1885–1886 Foaia bisericească articles cited by Bălan; Acte Sinodale IV/4 (2009), pp. 59–60.",
-      "consequence": "The 1870, 1905, 1931 and 2014 states and their transitions rest on contemporary comparison, participant account and official act rather than inspected books; 1996 is not drawn as a separate state."
+      "missing": "Original copies of the 1870, 1905, 1931, 1996 and 2014 books; a concrete 1905-to-1931 comparison; the place and form of the blessing with the holy gifts Bălan reports for 1870 (his locus 'Liturghier p. 82'); the 1870 title leaf and approval (the 1885 editors date it 1872); the identity of 1996 with 1931; Acte Sinodale IV/4 (2009) approving 1931 and 1996.",
+      "next_source": "Library copies of the books (BCU Cluj and its Blaj Greek Catholic theology branch, Romanian Academy Library); BCU DSpace title searches on 2026-10-22 (Liturghier, Liturgier, Liturgiariu, Liturghii Blaj) returned only the 1756, 1775 and 1807 Blaj books and periodicals. Magdău and Mastan-Magdău 2007, which compares 1807, 1870, 1905 and 1931 (CEEOL, not openly accessible); the 1886 Foia basericesca article cited by Bălan (p. 338; BCU DSpace issues of 1886); Acte Sinodale IV/4 (2009), pp. 59–60. The Internet Archive Liturghier items of 1840, 1887 and 1937 are Orthodox books (Buzău, Bucharest), not Blaj.",
+      "consequence": "The 1870, 1905, 1931 and 2014 states and their transitions rest on contemporary comparison and review, participant account and official act rather than inspected books; the 1870 book's printed approval is reported as a press formality; 1996 is not drawn as a separate state."
     }
   ]
 }

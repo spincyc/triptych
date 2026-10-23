@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-extent",
+  "title": "Complete constituent extent: mozarabic-1500-ordo-missae",
+  "book_id": "mozarabic-1500-ordo-missae",
+  "status": "complete",
+  "unresolved": [],
+  "omitted": [],
+  "expected_unit_ids": [
+    "mozarabic.1500.ordo.adesto-rubrica",
+    "mozarabic.1500.ordo.adesto",
+    "mozarabic.1500.ordo.institutio-panis",
+    "mozarabic.1500.ordo.institutio-calicis",
+    "mozarabic.1500.ordo.commemoratio-rubrica",
+    "mozarabic.1500.ordo.quotiescumque",
+    "mozarabic.1500.ordo.forma-consecrationis-nota",
+    "mozarabic.1500.ordo.forma-consecrationis",
+    "mozarabic.1500.ordo.post-pridie",
+    "mozarabic.1500.ordo.te-prestante",
+    "mozarabic.1500.ordo.accipiat-corpus-rubrica",
+    "mozarabic.1500.ordo.fractio-figura",
+    "mozarabic.1500.ordo.fidem",
+    "mozarabic.1500.ordo.symbolum-rubrica",
+    "mozarabic.1500.ordo.symbolum",
+    "mozarabic.1500.ordo.fractio-rubrica",
+    "mozarabic.1500.ordo.oratio-dominica-rubrica",
+    "mozarabic.1500.ordo.ad-orationem-dominicam",
+    "mozarabic.1500.ordo.pater-noster",
+    "mozarabic.1500.ordo.liberati"
+  ],
+  "pages": [
+    {
+      "witness_id": "copy",
+      "ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "mozarabic.1500.ordo.adesto-rubrica",
+        "mozarabic.1500.ordo.adesto",
+        "mozarabic.1500.ordo.institutio-panis"
+      ],
+      "description": "Position 31 (f. v r): only the right column from Deinde dicat presbiter in silentio is inside; the left column and the right column above (Inlatio end, Sanctus, Post Sanctus) are excluded."
+    },
+    {
+      "witness_id": "copy",
+      "ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "mozarabic.1500.ordo.institutio-panis",
+        "mozarabic.1500.ordo.institutio-calicis",
+        "mozarabic.1500.ordo.commemoratio-rubrica",
+        "mozarabic.1500.ordo.quotiescumque",
+        "mozarabic.1500.ordo.forma-consecrationis-nota",
+        "mozarabic.1500.ordo.forma-consecrationis",
+        "mozarabic.1500.ordo.post-pridie",
+        "mozarabic.1500.ordo.te-prestante",
+        "mozarabic.1500.ordo.accipiat-corpus-rubrica",
+        "mozarabic.1500.ordo.fractio-figura"
+      ],
+      "description": "Position 32 (f. v v): wholly inside, including the marginal Forma ista note, the fraction figure and the Roman form below the columns."
+    },
+    {
+      "witness_id": "copy",
+      "ranges": [
+        [
+          3,
+          3
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "mozarabic.1500.ordo.accipiat-corpus-rubrica",
+        "mozarabic.1500.ordo.fidem",
+        "mozarabic.1500.ordo.symbolum-rubrica",
+        "mozarabic.1500.ordo.symbolum",
+        "mozarabic.1500.ordo.fractio-rubrica",
+        "mozarabic.1500.ordo.oratio-dominica-rubrica",
+        "mozarabic.1500.ordo.ad-orationem-dominicam"
+      ],
+      "description": "Position 33 (f. vi r): wholly inside; the manuscript interlinear et is excluded as a copy annotation."
+    },
+    {
+      "witness_id": "copy",
+      "ranges": [
+        [
+          4,
+          4
+        ]
+      ],
+      "role": "text",
+      "unit_ids": [
+        "mozarabic.1500.ordo.pater-noster",
+        "mozarabic.1500.ordo.liberati"
+      ],
+      "description": "Position 34 (f. vi v): only the left column through the Amen after Per omnia secula seculorum is inside; the commixtion rubric Sic faciat presbiter and everything after are excluded."
+    }
+  ]
+}

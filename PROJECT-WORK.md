@@ -41,8 +41,8 @@ All 26 new source payloads and their manifests join retained accepted
 publication evidence, with no material basis gap or privacy candidate in the
 bounded screen. This is not blanket clearance: regenerated bodies, assembled
 artifacts, staged/outgoing history and deployment still need their final gates.
-Registered-owner transforms, annual and settled native checks, final integrated
-cold review, coherent commits and upstream reconciliation are next. Annual
+Final merged native checks, integrated cold review, the merge checkpoint and
+outgoing-object/deployment verification remain required. Annual
 textual completeness and the terminal reader's remaining product gates stay open.
 
 The owner window and full annual/local-publication gates now pass. Generation
@@ -79,6 +79,55 @@ Fresh upstream is now `74150dd4e9caaeaea191b35b55780219b5196769`, adding
 seventeen published missal-history commits beyond the originally incorporated
 TUI range. Those changes are not yet merged; ordinary reconciliation must retain
 both source graphs and revalidate their affected outputs before any push.
+
+The accepted candidate is now checkpointed on the feature branch, and ordinary
+integration of that exact upstream is in progress. Twenty-four conflicts have
+explicit resolutions: accepted terminal postimages, the combined Sources index
+and coupled publication maps. Thirty-one History comparisons retain exact
+upstream bytes. Semantic joins remove duplicate terminal-reader records while
+preserving both parents' requirements and evidence. The source graph validates:
+1,064 works, 1,259 editions, 3,733 artifacts and 6,622 passages. The Sources
+owner derives 5,011 files and 3,751 readable passages; only its index changes
+from the already combined parent tree. All 162 pending family-review units
+remain unchanged. Publication bindings are exact at 23,665 pins, with no new
+permissions or retirements.
+
+The annual test, runtime, calendar, Bible, Proper and Ordinary inputs remain
+exact, permitting reuse of the current 5,856-render success. Thirteen affected
+rights/Sources checks pass. The affected terminal subset first exposes one
+obsolete fixed catalogue count; its test now checks every authoritative record
+ID and exact tally/status, rather than substituting a new fixed count. All
+thirteen affected terminal tests then pass and two corrupted-view negatives
+are rejected. The initial History check-only attempt times out after 180
+seconds without output; no History writer is run. The complete merged
+deployment-source gate then passes in 220 seconds, including the 557-file
+History check. Final public and preview builds and both verifiers pass.
+Native execution, integrated cold acceptance, merge commit and publication
+remain open. A read-only review of the 1,379 newly reachable checkpoint
+objects, including all intermediate commits, finds no actionable disclosure
+gap; final merge objects still need their own join.
+
+### Final merged integration accepted, 2026-10-23
+
+The settled merged candidate passes its single fresh native invocation: seven
+tests, twelve harnesses, 257 of 257 assertions and zero skips. All eight emitted
+screenshots are inspected. Independent review accepts bounded Phase 5 and the
+combined terminal-reader integration without findings or blockers, after
+verifying the sealed packet, privacy boundary, exact inventories and isolated
+forward/reverse replay. The earlier native failure and two failed packaging
+attempts remain retained; packaging-only metadata corrections do not rerun or
+change native tests. The annual record owns the exact packet and acceptance
+receipt identities.
+
+The 20,661 completed responses form 1,379 identity groups. Sources and History
+have 11,136 exact public/preview inventory joins, but zero actual HTTP requests
+in this native run; inventory checks do not establish browser coverage.
+Independent review of the merged tree's 33 novel objects finds no actionable
+disclosure gap. The subsequent documentation addendum and actual commit message
+still require their separate review before the authorized merge commit and
+non-force publication. Annual textual completion, terminal page-mode parity,
+maintainer real-terminal acceptance and the explicitly deferred exhaustive
+audit remain open. No new source permission or whole-book clearance is granted.
 
 **In progress.** The maintainer requests execution of the reader plan with
 independent repair work run in parallel, sanity checks, and a fresh cold review
@@ -2091,6 +2140,48 @@ deployment; the later documentation push triggers a separate automatic run.
 Earlier branch-only delivery statements below describe their dated batches.
 No whole-book, physical-print or full all-rite completion follows from main
 integration.
+
+**Fifth parallel batch, 22 October 2026: published to `main` and verified
+live.** Implementation `0a1b78eb3` reached `origin/main` by an ordinary
+fast-forward. Main's lectern commits were merged in, not rebased. Pages run
+[`39860724845`](https://github.com/spincyc/triptych/actions/runs/39860724845)
+and repository hygiene passed, and 18 live routes matched the local build
+([receipt](workflows/reviews/missal-batch5-2026-10-22/publication.json)).
+This documentation commit triggers its own run. The
+maintainer asked for all possible parallel work in sub-agents and a cold
+review after each phase. On 22 October they asked for a coherent stop, the
+work plan persisted, and a push to `main`.
+
+- **How it ran.** Twelve lanes ran with exclusive ownership: eight research
+  lanes for plan rows 1–5 and four text lanes for row 6. Each research
+  lane passed an independent cold review that could only narrow claims.
+  Each integrated text lane's transcription was collated line by line on
+  the page images by a distinct collator before activation.
+- **Coverage.** Stages rose from 396 to 483 (446 documented, 37
+  provisional), transitions from 107 to 116, and gaps from 251 to 283.
+  Selected-stage routes rose from 124 to 141, and routes with no mapped stage
+  fell from 45 to 18.
+- **Texts.** Checked native constituents rose from 11 to 20:
+  - the Mozarabic Ordo core for 1500, 1755 and 1804;
+  - the Roman Canon for 1604 and 1635;
+  - the Dominican Canon for 1550, 1553, 1603 and 1604.
+
+  These come with about 56 MB of tracked facsimile extracts of
+  US-public-domain printings; six are provider images kept on BSB
+  non-commercial or CC BY terms. Whole-book text stays at zero, and no
+  ancestry edge was added.
+- **Permissions.** The register reaches 40 findings read in the issuing
+  instrument (35 without caveat), against the requested 30.
+- **A defect found.** The collation found that the already-published Rome
+  1570 Canon reading departs from its own images, and the 1570 stage now
+  says so.
+- **Not integrated.** The 1570 re-collation and the Greek Chrysostom
+  anaphora collation were stopped at the wrap-up and are not integrated.
+
+The [batch review](workflows/reviews/missal-batch5-2026-10-22/REPORT.md)
+holds the corrections, the access refusals and the **persisted work plan
+for the remaining rows and decisions**. The all-rite project remains
+**in progress**.
 
 **Fourth parallel batch, 21 October 2026: published to `main` and verified
 live.** Implementation `1bc263922b9637edca88e5c46a03ce0fffb5f295` reached

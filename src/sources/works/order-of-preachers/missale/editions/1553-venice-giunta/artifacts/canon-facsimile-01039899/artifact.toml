@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.order-of-preachers.missale.1553-venice-giunta.canon-facsimile-01039899"
+edition_id = "edition.order-of-preachers.missale.1553-venice-giunta"
+artifact_type = "facsimile-pdf-derivative"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "permission"
+rights_jurisdiction = "United States"
+rights_basis = "The identified 1553 printed text is public domain in the United States by expiration of its publication term. The Bayerische Staatsbibliothek digital images are supplied under No Copyright - Non-Commercial Use Only 1.0, https://rightsstatements.org/vocab/NoC-NC/1.0/ ; this is a rights statement, not a Creative Commons license. Noncommercial copying and redistribution retain that condition and attribution: München, Bayerische Staatsbibliothek, Res/2 Liturg. 232, bsb10869682. These source images and their derivative are excluded from Triptych’s CC BY 4.0 license. No unrestricted image reuse is asserted; the image condition is distinct from the public-domain historical Latin."
+source_url = "https://www.digitale-sammlungen.de/en/view/bsb10869682"
+provenance = "5 complete provider page images in package order from the exact parent package: PDF 1 = BSB canvas 5 (title page); PDF 2 = BSB canvas 6 (Franciscus Romaeus letter on the 1551 Salamanca chapter reform and Julius III brief (dated 1552)); PDF 3 = BSB canvas 219 (Canon fol. 89r); PDF 4 = BSB canvas 220 (Canon fol. 89v); PDF 5 = BSB canvas 221 (Canon fol. 90r)."
+retrieved = "2026-10-22"
+sha256 = "01039899570786b6076e3632f788731f885d6a803fb33eb215bcb35a303311de"
+byte_size = 3095056
+path = "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/artifacts/canon-facsimile-01039899/canon-pages.pdf"
+indexable = false
+page_count = 5
+derived_from = "artifact.order-of-preachers.missale.1553-venice-giunta.canon-pages-da53ecc3"
+transformation = "ImageMagick decoded each exact package member, converted it to grayscale, resized it to at most 2000 px on the long side, stripped metadata and re-encoded it as quality-85 JPEG; a small deterministic writer embedded each JPEG stream unchanged as one PDF page (MediaBox in pixels) in package order. JPEG is lossy and colour is dropped; the exact colour provider images remain in the parent package. No crop, page omission, OCR or editorial text."

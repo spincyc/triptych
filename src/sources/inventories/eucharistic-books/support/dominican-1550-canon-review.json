@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "dominican-1550-canon",
+  "title": "Venice 1550 Dominican Canon: independent complete original-image collation",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "Independent AI source reviewer (batch-5 text-dominican original-image collation), distinct from the transcriber and the coordinator",
+  "checked_on": "2026-10-22",
+  "binding_sha256": "c87fddd6e1f7a717d0cc064b077eac8a917ea5fe38c4bb12036a5e0e74a1e7c7",
+  "extent_sha256": "8b06a3734d72f6c93f9c04394510ceb43c2780c09d2b27f966194166c4319e2e",
+  "witness_sha256": {
+    "dominican-1550-canon-pages": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+  },
+  "unit_sha256": {
+    "unit.dominican-1550.canon.te-igitur": "b6cc3e77420778face6300bcaf58a699f20a6e86bfd5e6ba9e77b958aba146c6",
+    "unit.dominican-1550.canon.memento-vivorum": "ee5735e26030c7e8d2f56e1dabbd331d3f22b78577e5687a778a2d8cc3953817",
+    "unit.dominican-1550.canon.communicantes": "d6d20ccc7b7445e5d4fb8ee607ba355cf50585ad797e080700fe67ac1f315d0a",
+    "unit.dominican-1550.canon.hanc-igitur": "c2bc7892a3eee87a5d836b2ea9ab7c707a5c6c1fa198f1183a723b79dbd732b3",
+    "unit.dominican-1550.canon.quam-oblationem": "cdcf15e68616c45079ddeb128213b438c22993fdb10865cf8d68c700e203e510",
+    "unit.dominican-1550.canon.qui-pridie": "94b8981977fabb2eeaa673361d0016603e31caeea954f3a91b3dff8701266921",
+    "unit.dominican-1550.canon.simili-modo": "0433697007754b410ccf9cf5d833970e0e00c1c2efaabef97af8e9f8b4149dc6",
+    "unit.dominican-1550.canon.unde-et-memores": "1a48f1e3e9989d32c8225e34c9d4e2249e48a1f461c08e113cf98757c01e8171",
+    "unit.dominican-1550.canon.supra-quae": "9cd332c8244bae34cfb10a4b83a5af0d311c93f5fcd2959ccdaac2daad0604b4",
+    "unit.dominican-1550.canon.supplices": "ab193a1b00f64b9081ff840fb16e94c48103de451bc13934877bb20f7e1d4357",
+    "unit.dominican-1550.canon.memento-defunctorum": "8e3f306cdc46d12a3a963178708e2ded44bc0fc0b321d4007e5074ab78a8ac35",
+    "unit.dominican-1550.canon.nobis-quoque": "d93847468acef9f5082188aaa397d8f81d5a1e558c02f8563b6a9035cb70ab8d",
+    "unit.dominican-1550.canon.per-quem": "def69d5389b03c5a2ba5dd0eff2043dc112bb990568ee96ee0a2b4f0d44afd64",
+    "unit.dominican-1550.canon.per-ipsum": "8470aeae2a9fd2bb0c57ca88f2f385d7a3a27a47f5a13051b503a5965e7d11af"
+  },
+  "scope": "Complete Dominican Canon constituent of the Venice 1550 Missal (title Venetiis MDL; Dominican use, revised, with the Rosary Mass approved by Paul III): from Te igitur, set beside the historiated woodcut initial T below the top woodcut band on fol. 94r (retained facsimile PDF 2 = source PDF 228), through omnis honor et gloria on fol. 95v (facsimile PDF 5 = source PDF 231), immediately before the in-column heading Cantus solennis. 14 source-order units in 17 physical lines, 26 printed crosses and 5 N. placeholders; no rubrics are printed within these bounds. The concluding Per omnia secula seculorum. Amen. is printed only as notated chant at the head of the Cantus solennis block on fol. 96r (source PDF 232, checked on the re-fetched complete source PDF, not retained), with Oremus, Praeceptis and Pater, and is excluded as a declared book division together with the prefaces, Sanctus and crucifixion before the Canon. The title page (facsimile PDF 1) is identity and revision-statement evidence only.",
+  "method": "The collator did not read the lane's reading or draft before reading the images. It made its own blind reading of every physical line of every Canon page from overlapping zoomed column strips of the retained images, then compared that reading word by word with the lane artifact. Every disagreement, every instance of the uncertain-reading classes relayed from the lane (virgules, stops, cross positions, quotiescunque) and every e-caudata and N. placeholder was resolved on enlarged pixel crops, colour crops where the book has red ink, and connected-component measurements of the marks against unambiguous periods, commas, colons and semicolons on the same page. The corrected reading was then regenerated with the lane's own generator, and the collator's blind reading was diffed again against it: every remaining difference is a place where the collator's blind reading was overruled by the zoomed image. Unit boundaries, page incidence of every unit, the printed crosses and N. placeholders, the start of the Canon and the boundary into the notated Cantus solemnis block were checked on the images. Identity and derivation: Re-fetched the exact Internet Archive PDF bub_gb_FqVWqqFkUDsC (SHA-256 7754c4c5e9affe0fcb631d058da7d807652e15248676af4aca35b6d10855055e, matching the registered parent artifact); the ordered SHA-256 list of the 15 embedded image streams of source PDF pages 5, 228, 229, 230 and 231 is identical to that of the retained facsimile. Every retained page was rendered at its native 294 ppi for reading. The title page reads Missale ad vsum fratrum Predicatorum Sancti Dominici ... Venetiis. M D L.",
+  "normalization_limit": "Declared selective Latin reading normalization shared with the Roman Canon readings: long s, u/v, i/j, ligatures and e-caudata, ampersand/Tironian et, enclitic que and printed contractions are normalized and accents omitted; display initials and spaced capitals are merged in sentence case; spelling, capitalization, punctuation including the virgule, N. placeholders and printed cross positions are kept. Not glyph-diplomatic typography, abbreviation signs, colour reproduction or chant notation.",
+  "findings_resolved": [
+    "nobis-quoque (line 15): digneris. -> digneris, ; fol. 95v (facsimile PDF 5): the mark after digneris is a small oblique stroke at the baseline (about 10x9 px), not the round period sort of this page (about 14x15 px, e.g. after deprecamur); read as a comma, consistent with the commas of the same list.",
+    "nobis-quoque (line 15): Agata. -> Agata, ; fol. 95v: the mark after Agata is an upright 9x16 px stroke from mid x-height to the baseline, matching the comma sorts after Agnete and sperantibus (10-13 x 17-18 px), not the round period sort.",
+    "Confirmed against the image, not changed: tibi reddunt (no -que); nos tui servi; postea quam caenatum ... et dedit; Sixti, Cipriani, Grisogoni, Tadei, Bartholomei, Matthaei; semperque (printed sempq;); the first Hostiam lower-case hostiam; per-ipsum Per ✠ ipsum: et ✠ cum ipso.",
+    "Confirmed e-caudata decisions by pixel dump: aeterna in Hanc igitur (detached cauda under the e, larger than any b-ascender overlap); eterni in Hic est (plain e, no cauda); praeclarae at the line start of Unde et memores (cauda under the e).",
+    "The virgules (In primis/, una/ cum, Communicantes/, the saint list, Unde et memores, Quam oblationem and Qui pridie) and the quotiescunque spelling were confirmed on the image."
+  ],
+  "unresolved": [],
+  "review_limit": "Complete declared Dominican Canon constituent only, from Te igitur through omnis honor et gloria; the notated Per omnia/Amen, the rest of the Ordinary and the whole Missal are not claimed. Two stop readings (after digneris and Agata) rest on glyph-shape measurement of worn sorts and are the least certain readings in this book. No historical parentage, immediate exemplar, introduction date or contemporary liturgical authorization is asserted."
+}

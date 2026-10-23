@@ -1,0 +1,670 @@
+{
+  "adapter_id": "native-book:dominican-1553-canon",
+  "binding_sha256": "11f7dec5c23b9962599318fafd1c4aea30d50e35efa46020fd38572de0299ed6",
+  "catalogue_witness_ids": [
+    "western:dominican-1553-venice-giunta"
+  ],
+  "counts": {
+    "languages": {
+      "la": 14
+    },
+    "units": 14,
+    "whitespace_tokens": 654
+  },
+  "id": "dominican-1553-canon",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Complete Dominican Canon constituent as the 1553 book prints it: from fol. 89r (canvas 219) Te igitur under the woodcut through fol. 90r (canvas 221) omnis honor, et gloria, left column, immediately followed by the notated Per omnia secula seculorum under the page's red running head Cantus solennis (this book prints no in-column heading there). 14 source-order units, 26 printed crosses, no rubrics printed within these bounds. The book sets the concluding Per omnia saecula saeculorum. Amen only in the following notated chant block, which is excluded with it. Whole-book and complete-Ordinary coverage remain partial; no wording is inherited from another edition.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 3,
+    "known_extent_units": 14,
+    "omitted_book_divisions": [
+      "Front matter, including the title page and revision-basis instruments retained in the same facsimile only as identity and revision evidence",
+      "Prefaces with their seasonal proper Communicantes and Hanc igitur forms printed in the preface section, the Sanctus and the full-page crucifixion woodcut before the Canon",
+      "Everything after omnis honor et gloria: the notated Per omnia saecula saeculorum, R. Amen, Oremus, Praeceptis and Pater that follow directly on fol. 90r under the red running head Cantus solennis, and everything after",
+      "All propers, calendar, lectionary, offertory and other Ordinary outside the Canon",
+      "Running heads, folio and page numbers, signatures, catchwords, woodcuts, ornaments, ink colour and chant notation"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-facsimile-01039899",
+      "record_type": "artifact",
+      "rights_basis": "The identified 1553 printed text is public domain in the United States by expiration of its publication term. The Bayerische Staatsbibliothek digital images are supplied under No Copyright - Non-Commercial Use Only 1.0, https://rightsstatements.org/vocab/NoC-NC/1.0/ ; this is a rights statement, not a Creative Commons license. Noncommercial copying and redistribution retain that condition and attribution: München, Bayerische Staatsbibliothek, Res/2 Liturg. 232, bsb10869682. These source images and their derivative are excluded from Triptych’s CC BY 4.0 license. No unrestricted image reuse is asserted; the image condition is distinct from the public-domain historical Latin.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "permission",
+      "source_url": "https://www.digitale-sammlungen.de/en/view/bsb10869682",
+      "transformation": "ImageMagick decoded each exact package member, converted it to grayscale, resized it to at most 2000 px on the long side, stripped metadata and re-encoded it as quality-85 JPEG; a small deterministic writer embedded each JPEG stream unchanged as one PDF page (MediaBox in pixels) in package order. JPEG is lossy and colour is dropped; the exact colour provider images remain in the parent package. No crop, page omission, OCR or editorial text."
+    },
+    {
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "record_type": "artifact",
+      "rights_basis": "Faithful bounded reading transcription of original Latin from the identified 1553 printing, whose United States publication term has expired. No modern translation, critical reconstruction or wording from another edition is imported. The historical wording is separate from the provider’s image-specific No Copyright - Non-Commercial Use Only 1.0 condition and attribution to München, Bayerische Staatsbibliothek, Res/2 Liturg. 232, bsb10869682. Third-party historical text is excluded from Triptych’s CC BY 4.0 license. Scholarly availability does not authorize contemporary liturgical use.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://www.digitale-sammlungen.de/en/view/bsb10869682",
+      "transformation": "Render the 14-unit reading into 17 sequential UTF-8 LF lines in source order; the printed display title (where present) and each spoken block occupy their own lines, and the consecration words that the book sets as separate blocks occupy separate lines. The Dominican Canon pages of this book print no rubrics between Te igitur and omnis honor et gloria. Reading normalization follows the published roman-1570-canon-missae and batch-5 Roman readings so that Canon states compare word for word: long s becomes s; ae/oe ligatures and e-caudata become ae/oe; u/v are regularized (u vowel, v consonant) and j becomes i (final ij as ii); the ampersand and the Tironian et become et; enclitic q. and q; become que; nasal bars and other printed contractions are expanded (dne/Dne domine/Domine, dni, oibus omnibus, qsumus quaesumus, pstas praestas, final -um/-em/-am, cum, -rum); acute and grave accents are omitted; display initials and spaced capitals are merged in sentence case; line-end word divisions are joined and one space follows punctuation. Spelling, capitalization, punctuation (including the virgule /) and the N. placeholders are otherwise as printed. Printed crosses are rendered as U+2720 at their source positions, including crosses inside words. Running heads, folio and page numbers, signatures, catchwords, woodcuts, ornaments, ink colour and chant notation are excluded. This is a normalized reading transcription, not a glyph-diplomatic facsimile."
+    },
+    {
+      "authority": "Order of Preachers: reformed according to the decrees of the general chapter held at Salamanca in 1551 and approved by apostolic authority (title); the prefatory letter of the Master General Franciscus Romaeus and a brief of Julius III dated 1552 are printed after the title.",
+      "date": "1553",
+      "id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "language": "la",
+      "publication": "Venetiis apud Iuntas, MDLIII (title page). BSB Munich copy Res/2 Liturg. 232, bsb10869682; catalogue extent [18], 239 Bl.",
+      "record_type": "edition",
+      "title": "Missale secundum ordinem fratrum Praedicatorum, iuxta decreta Capituli Generalis, anno Domini 1551 Salmanticae celebrati, reformatum, et authoritate Apostolica comprobatum"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-communicantes",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-hanc-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-memento-defunctorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-memento-vivorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-nobis-quoque",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-per-ipsum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-per-quem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-quam-oblationem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-qui-pridie",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-simili-modo",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-supplices",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-supra-quae",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-te-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-unde-et-memores",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "latin-uses:dominican-1553"
+  ],
+  "title": "Dominican Missal 1553: complete Canon constituent",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "source_id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-te-igitur",
+      "source_locator": "Canon unit te-igitur (Te igitur); fol. 89r (BSB canvas 219); facsimile PDF page(s) 3; normalized-text physical lines 1-1.",
+      "source_order": 1,
+      "text": "Te igitur clementissime pater per Iesum Christum filium tuum dominum nostrum supplices rogamus ac petimus, uti accepta habeas, et benedicas: Haec ✠ dona: haec ✠ munera: haec ✠ sancta sacrificia illibata: In primis quae tibi offerimus pro ecclesia tua sancta catholica: quam pacificare: custodire: adunare: et regere digneris toto orbe terrarum: una cum famulo tuo papa nostro N. et antistite nostro. N. et Rege nostro N. et omnibus orthodoxis, atque catholicae, et apostolicae fidei cultoribus.",
+      "text_edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "text_sha256": "9cf9f0b0f24a3aa623a729902a0421c8a8dd34f62f47907284438f961601bcd4",
+      "unit_id": "unit.dominican-1553.canon.te-igitur",
+      "witness_id": "dominican-1553-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "source_id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-memento-vivorum",
+      "source_locator": "Canon unit memento-vivorum (Memento of the living); fol. 89r (BSB canvas 219); facsimile PDF page(s) 3; normalized-text physical lines 2-2.",
+      "source_order": 2,
+      "text": "Memento domine famulorum, famularumque tuarum. N. et omnium circumastantium: quorum tibi fides cognita est: et nota devotio: pro quibus tibi offerimus: vel qui tibi offerunt hoc sacrificium laudis: pro se, suisque omnibus: pro redemptione animarum suarum: pro spe salutis, et incolumitatis suae: tibique reddunt vota sua aeterno Deo vivo, et vero.",
+      "text_edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "text_sha256": "d90e9efe9b93af728738020bb7cd2795efc1c16aa4adfd8edaa10705f02591ee",
+      "unit_id": "unit.dominican-1553.canon.memento-vivorum",
+      "witness_id": "dominican-1553-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "source_id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-communicantes",
+      "source_locator": "Canon unit communicantes (Communicantes); fol. 89r (BSB canvas 219), fol. 89v (BSB canvas 220); facsimile PDF page(s) 3, 4; normalized-text physical lines 3-3.",
+      "source_order": 3,
+      "text": "Communicantes, et memoriam venerantes, In primis gloriosae, semperque virginis Mariae: genitricis dei, et domini nostri Iesu Christi. Sed et beatorum apostolorum ac martyrum tuorum Petri et Pauli: Andreae: Iacobi: Ioannis: Thomae: Iacobi: Philippi: Bartholomaei: Matthaei: Simonis: et Thadaei: Lini: Cleti: Clementis: Sixti: Cornelii: Cypriani: Laurentii: Grisogoni: Ioannis, et Pauli: Cosmae, et Damiani: et omnium sanctorum tuorum: quorum meritis precibusque concedas: ut in omnibus protectionis tuae muniamur auxilio. Per eundem Christum dominum nostrum. Amen.",
+      "text_edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "text_sha256": "fbd2967f8c9d60fe5da00048eee4e6fb076e41cca4057c732ada71a204ccc811",
+      "unit_id": "unit.dominican-1553.canon.communicantes",
+      "witness_id": "dominican-1553-canon-pages",
+      "witness_pages": [
+        [
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "source_id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-hanc-igitur",
+      "source_locator": "Canon unit hanc-igitur (Hanc igitur); fol. 89v (BSB canvas 220); facsimile PDF page(s) 4; normalized-text physical lines 4-4.",
+      "source_order": 4,
+      "text": "Hanc igitur oblationem servitutis nostrae: sed et cunctae familiae tuae: quaesumus domine, ut placatus accipias: diesque nostros in tua pace disponas: atque ab aeterna damnatione nos eripi: et in electorum tuorum iubeas grege numerari. Per Christum dominum nostrum, Amen.",
+      "text_edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "text_sha256": "46edc8e247e361bd68a2109fa46ae7a377248517d7d45d66ff74479bc2aa9cd1",
+      "unit_id": "unit.dominican-1553.canon.hanc-igitur",
+      "witness_id": "dominican-1553-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "source_id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-quam-oblationem",
+      "source_locator": "Canon unit quam-oblationem (Quam oblationem); fol. 89v (BSB canvas 220); facsimile PDF page(s) 4; normalized-text physical lines 5-5.",
+      "source_order": 5,
+      "text": "Quam oblationem tu Deus in omnibus quaesumus: Bene✠dictam, Ascri✠ptam, Ra✠tam, rationabilem, acceptabilemque facere digneris: ut nobis Cor✠pus, et San✠guis, fiat dilectissimi filii tui domini nostri Iesu Christi.",
+      "text_edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "text_sha256": "caaa8e859e03112eda7861b59ec8a39bbf2dcaa08e6171727073fa7c361d7240",
+      "unit_id": "unit.dominican-1553.canon.quam-oblationem",
+      "witness_id": "dominican-1553-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "source_id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-qui-pridie",
+      "source_locator": "Canon unit qui-pridie (Qui pridie with Hoc est enim corpus meum); fol. 89v (BSB canvas 220); facsimile PDF page(s) 4; normalized-text physical lines 6-7.",
+      "source_order": 6,
+      "text": "Qui pridie quam pateretur accepit panem in sanctas, ac venerabiles manus suas: et elevatis oculis in caelum, ad te deum patrem suum omnipotentem, tibi gratias agens: bene✠dixit, fregit, deditque discipulis suis dicens, Accipite et manducate ex hoc omnes.\nHoc est enim corpus meum.",
+      "text_edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "text_sha256": "82465a45acba454e34998fb291807854f93ebc016bfb0de5906e33baca669e2b",
+      "unit_id": "unit.dominican-1553.canon.qui-pridie",
+      "witness_id": "dominican-1553-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "source_id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-simili-modo",
+      "source_locator": "Canon unit simili-modo (Simili modo with Hic est enim calix and Haec quotiescumque); fol. 89v (BSB canvas 220); facsimile PDF page(s) 4; normalized-text physical lines 8-10.",
+      "source_order": 7,
+      "text": "Simili modo postea quam caenatum est: accipiens et hunc praeclarum calicem in sanctas, ac venerabiles manus suas. Item tibi gratias agens, Bene✠dixit, et dedit discipulis suis dicens, Accipite, et bibite ex eo omnes.\nHic est enim calix sanguinis mei: novi et aeterni testamenti: mysterium fidei: qui pro vobis et pro multis effundetur in remissionem peccatorum.\nHaec quotiescunque feceritis: in mei memoriam facietis.",
+      "text_edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "text_sha256": "316177f9e42aaa927dac5425bfce5d4e063908d2b238a10af2e3f8a770839f87",
+      "unit_id": "unit.dominican-1553.canon.simili-modo",
+      "witness_id": "dominican-1553-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "source_id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-unde-et-memores",
+      "source_locator": "Canon unit unde-et-memores (Unde et memores); fol. 89v (BSB canvas 220); facsimile PDF page(s) 4; normalized-text physical lines 11-11.",
+      "source_order": 8,
+      "text": "Unde et memores domine nos tui servi: sed et plebs tua sancta eiusdem christi filii tui domini dei nostri: tam beatae passionis: necnon et ab inferis resurrectionis: sed et in caelos gloriosae ascensionis, offerimus praeclarae maiestati tuae de tuis donis, ac datis: Hostiam ✠ puram: Hostiam ✠ sanctam, Hostiam ✠ immaculatam, Panem ✠ sanctum vitae aeternae, et cali✠cem salutis perpetuae.",
+      "text_edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "text_sha256": "570eb205b21d268372190ea1518bc3f9e5784562669237187801b85312bc1255",
+      "unit_id": "unit.dominican-1553.canon.unde-et-memores",
+      "witness_id": "dominican-1553-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "source_id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-supra-quae",
+      "source_locator": "Canon unit supra-quae (Supra quae); fol. 89v (BSB canvas 220); facsimile PDF page(s) 4; normalized-text physical lines 12-12.",
+      "source_order": 9,
+      "text": "Supra quae propitio, ac sereno vultu respicere digneris: et accepta habere, sicuti accepta habere dignatus es munera pueri tui iusti Abel, et sacrificium patriarchae nostri Abrahae: et quod tibi obtulit summus sacerdos tuus melchisedech: sanctum sacrificium, immaculatam hostiam.",
+      "text_edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "text_sha256": "866586af076a1dcb279503f44dcd8fcbaff438a4a10e12b22594349f9e46d09f",
+      "unit_id": "unit.dominican-1553.canon.supra-quae",
+      "witness_id": "dominican-1553-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "source_id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-supplices",
+      "source_locator": "Canon unit supplices (Supplices te rogamus); fol. 89v (BSB canvas 220); facsimile PDF page(s) 4; normalized-text physical lines 13-13.",
+      "source_order": 10,
+      "text": "Supplices te rogamus omnipotens deus: iube haec perferri per manus sancti angeli tui: in sublime altare tuum: in conspectu divinae maiestatis tuae: ut quotquot ex hac altaris participatione: sacrosanctum filii tui cor✠pus, et san✠guinem sumpserimus: omni benedi✠ctione caelesti, et gratia repleamur, Per eundem Christum dominum nostrum. Amen.",
+      "text_edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "text_sha256": "b2cc335d0718bcaf27c232ddd69b686b534be7847c95b67c51606239219a4d5b",
+      "unit_id": "unit.dominican-1553.canon.supplices",
+      "witness_id": "dominican-1553-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-defunctorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "source_id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-memento-defunctorum",
+      "source_locator": "Canon unit memento-defunctorum (Memento of the dead with Ipsis Domine); fol. 89v (BSB canvas 220), fol. 90r (BSB canvas 221); facsimile PDF page(s) 4, 5; normalized-text physical lines 14-14.",
+      "source_order": 11,
+      "text": "Memento etiam domine: famulorum famularumque tuarum: qui nos praecesserunt cum signo fidei: et dormiunt in somno pacis. N. ipsis domine et omnibus in Christo quiescentibus: locum refrigerii, lucis, et pacis, ut indulgeas deprecamur. Per eundem Christum dominum nostrum. Amen.",
+      "text_edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "text_sha256": "e197eb1fb184fbefa724fe523e533802f1e2e46dc683529fccd58601bb0c5871",
+      "unit_id": "unit.dominican-1553.canon.memento-defunctorum",
+      "witness_id": "dominican-1553-canon-pages",
+      "witness_pages": [
+        [
+          4,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "source_id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-nobis-quoque",
+      "source_locator": "Canon unit nobis-quoque (Nobis quoque peccatoribus); fol. 90r (BSB canvas 221); facsimile PDF page(s) 5; normalized-text physical lines 15-15.",
+      "source_order": 12,
+      "text": "Nobis quoque peccatoribus famulis tuis: de multitudine miserationum tuarum sperantibus partem aliquam: et societatem donare digneris, cum tuis sanctis, apostolis, et martyribus: cum Ioanne, Stephano: Mathia, barnaba, ignatio, Alexandro, Marcellino, Petro, Felicitate, Perpetua, Agata, Lucia, Agnete, Cecilia, Anastasia, et cum omnibus sanctis tuis: intra quorum nos consortium: non aestimator meriti sed veniae quaesumus largitor admitte. Per christum dominum nostrum. Amen.",
+      "text_edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "text_sha256": "f3703df3e85d6f59115d8e9f40246ae22aa0a181906a9bf91baa2a9e379ea24a",
+      "unit_id": "unit.dominican-1553.canon.nobis-quoque",
+      "witness_id": "dominican-1553-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "source_id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-per-quem",
+      "source_locator": "Canon unit per-quem (Per quem haec omnia); fol. 90r (BSB canvas 221); facsimile PDF page(s) 5; normalized-text physical lines 16-16.",
+      "source_order": 13,
+      "text": "Per quem haec omnia domine semper bona creas: san✠ctificas: vivifi✠cas: bene✠dicis, et praestas nobis:",
+      "text_edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "text_sha256": "fa8aceeda32f0f1a44fac1ac296e6d6644f0a8b4049ceffc4e2d53ebfd1ec0cb",
+      "unit_id": "unit.dominican-1553.canon.per-quem",
+      "witness_id": "dominican-1553-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "doxology",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-reading-4ce34b72",
+      "source_id": "passage.order-of-preachers.missale.1553-venice-giunta.canon-per-ipsum",
+      "source_locator": "Canon unit per-ipsum (Per ipsum doxology through omnis honor et gloria); fol. 90r (BSB canvas 221); facsimile PDF page(s) 5; normalized-text physical lines 17-17.",
+      "source_order": 14,
+      "text": "Per ✠ ipsum: et cum ✠ ipso: et in ✠ ipso: est tibi deo ✠ patri omnipotenti: in unitate spiritus ✠ sancti: omnis honor, et gloria.",
+      "text_edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "text_sha256": "7aa53523c5049d89ef2055dbd28c63425e1baec4adc4c418155f5dbf57c68263",
+      "unit_id": "unit.dominican-1553.canon.per-ipsum",
+      "witness_id": "dominican-1553-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.order-of-preachers.missale.1553-venice-giunta.canon-facsimile-01039899",
+      "edition_id": "edition.order-of-preachers.missale.1553-venice-giunta",
+      "id": "dominican-1553-canon-pages",
+      "scope_pages": [
+        [
+          3,
+          5
+        ]
+      ]
+    }
+  ]
+}

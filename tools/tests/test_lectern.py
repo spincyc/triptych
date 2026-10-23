@@ -236,7 +236,12 @@ class PortedPageLogicTests(unittest.TestCase):
 
     def test_the_catalogue_shows_every_record_unfiltered(self) -> None:
         view = bridge.call("history", "catalogue", {})
-        self.assertIn("2008", json.dumps(view["tally"]) + json.dumps(view["status"]))
+        catalogue = json.loads((STRUCTURE / "act-history" / "catalogue.json").read_text())
+        expected = {row["id"] for row in catalogue["entries"]}
+        shown = [row["id"] for section in view["sections"] for row in section["rows"]]
+        self.assertCountEqual(shown, expected)
+        self.assertEqual(view["status"], f"{len(expected)} of {len(expected)} source records shown.")
+        self.assertTrue(view["tally"].startswith(f"{len(expected)} source records across "))
 
     def test_the_reading_plan_keeps_its_tracks_and_never_ships_a_period_key(self) -> None:
         opening = bridge.call("scripture", "opening")

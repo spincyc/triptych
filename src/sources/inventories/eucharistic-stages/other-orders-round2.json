@@ -46,10 +46,10 @@
       "title": "Missale Ordinis Fratrum Eremitarum Sancti Augustini de observantia, BSB 2 Inc.c.a. 2591",
       "url": "https://api.digitale-sammlungen.de/iiif/presentation/v3/bsb00032995/manifest",
       "kind": "primary-book",
-      "inspection": "The source inventory reports BSB canvas 565 directly inspected for its 1496 colophon and the opening's Roman Curia order; BSB manifest metadata identifies shelfmark, 256 leaves and conflicting 1491 catalogue date. These identified leaves are used only at that extent.",
-      "checked_on": "2026-10-20",
+      "inspection": "The source inventory reports BSB canvas 565 directly inspected for its 1496 colophon and the opening's Roman Curia order; BSB manifest metadata identifies shelfmark, 256 leaves and conflicting 1491 catalogue date. These identified leaves are used only at that extent. Re-inspected 2026-10-22 (orders batch5): canvas 565 (fol. 270v) downloaded at 1600 px (SHA-256 7920b830…, 728,665 bytes) and the date line cropped and viewed. The printed colophon reads Anno salutis M.CCCC. lxxxxi with Pontifice maximo Innocentio; the red Arabic numerals 1496 after it are an added, non-typographic entry, not the printed date. GW M23973 and BSB-Ink M-441 (records read) date the edition 1491 (Nuremberg, types of Georg Stuchs).",
+      "checked_on": "2026-10-22",
       "status": "inspected",
-      "limitations": "The 1491/1496 conflict has not been reconciled against printer records or another copy. BSB marks the images Public Domain, but no scan or text is retained in this dossier."
+      "limitations": "The red 1496 entry in this copy is unexplained (rubricator's or owner's addition); it does not date the printing. Only the colophon and catalogue identity are used; no scan or text is retained in this dossier."
     },
     {
       "id": "other-orders:osa-pal500-images",
@@ -226,10 +226,10 @@
     {
       "id": "other-orders:osa-early-print",
       "tradition_id": "osa-hermits-round2",
-      "label": "OSA observance missal, conflicting 1491/1496 dates",
-      "date_label": "BSB catalogue 1491; printed colophon 1496",
-      "start_year": null,
-      "end_year": null,
+      "label": "OSA observance missal printed at Nuremberg, 1491",
+      "date_label": "1491 printed colophon (M.CCCC. lxxxxi, under Pope Innocent VIII); a red 1496 is added in the BSB copy",
+      "start_year": 1491,
+      "end_year": 1491,
       "date_kind": "publication",
       "status": "documented",
       "scope": "Order-labelled Latin whole missal in Roman Curia order; title and colophon evidence only.",
@@ -241,16 +241,16 @@
         "western:additional-orders-osa-1491"
       ],
       "witness_label": "BSB 2 Inc.c.a. 2591, Missale Ordinis Fratrum Eremitarum Sancti Augustini de observantia",
-      "summary": "The book is an Augustinian Hermits observance missal; its colophon and library catalogue disagree on publication year.",
+      "summary": "An Augustinian Hermits observance missal printed for the order at the command of vicar general Andreas Proles; its printed colophon dates it 1491, and the 1496 previously read there is a later red addition in this copy.",
       "text_coverage": "not-transcribed",
       "evidence": [
         {
           "source_id": "other-orders:osa1496",
-          "locus": "BSB IIIF canvas 565 colophon; manifest Date and shelfmark metadata",
-          "claim": "The printed colophon reads 1496 while the catalogue assigns 1491 to the identified copy."
+          "locus": "BSB IIIF canvas 565 (fol. 270v), colophon; GW M23973; BSB-Ink M-441",
+          "claim": "The printed dating formula is Anno salutis M.CCCC. lxxxxi under Pope Innocent; the red Arabic 1496 following it is not typeset. Both incunable catalogues give 1491."
         }
       ],
-      "limitations": "No coordinate is supplied until the date conflict is resolved. Title and opening do not establish an independent rite or textual relation to Roman and later OSA books.",
+      "limitations": "The former 1491/1496 conflict was a misreading of an added red numeral; the coordinate now follows the printed colophon. Title, opening and colophon do not establish an independent rite or textual relation to Roman and later OSA books.",
       "reception": "An intended order-use title, without a named house's adoption record."
     },
     {
@@ -731,8 +731,8 @@
       "id": "other-orders:osa-gap",
       "tradition_id": "osa-hermits-round2",
       "period": "Fourteenth century–2006",
-      "missing": "Resolve 1491/1496 print identity; collate Pal. lat. 500 layers beyond the four inspected folios; intervening OSA books and proper texts (1674, 1715, 1926 body, 1965); the printed Latin book behind the 15 April 1975 confirmation; original 2006 Latin approval.",
-      "next_source": "BSB printing and colophon records; remaining Pal. lat. 500 folios (Canons 85ra–88rb and 96va–99ra in full, additions 184va–185ra); 1674/1715/1926/1965 source books; the 1975 Latin proper volume or the 1976 Rome missal; Acta OAR 2007 with the 2006 Latin proper.",
+      "missing": "Collate Pal. lat. 500 layers beyond the four inspected folios; intervening OSA books and proper texts (1674, 1715, 1926 body, 1965); the printed Latin book behind the 15 April 1975 confirmation; original 2006 Latin approval. Narrowed 2026-10-22: the 1491/1496 conflict is resolved: the BSB incunable's printed colophon (canvas 565) reads 1491 under Pope Innocent, and the red 1496 beside it is an added, non-typographic entry; GW M23973 agrees. The OSA calendar confirmation of 18 October 1971 (Prot. n. 1763/71, Notitiae 8 (1972) p. 11, OCR text) and the 15 November 1974 calendar listing (Prot. n. 2329/74, Notitiae 11 (1975) p. 42, image) are separate component events.",
+      "next_source": "Remaining Pal. lat. 500 folios (Canons 85ra–88rb and 96va–99ra in full, additions 184va–185ra); 1674/1715/1926/1965 source books; the 1975 Latin proper volume or the 1976 Rome missal; Acta OAR 2007 with the 2006 Latin proper.",
       "consequence": "Pal. lat. 500 core, inserted Canon and 1466 addition are separate dated attestations, and the 1975 Latin confirmation is documented; no early-to-modern OSA revision, text inheritance or continuous use is asserted."
     },
     {
@@ -740,7 +740,7 @@
       "tradition_id": "mercedarian-round2",
       "period": "1507–1976",
       "missing": "Original 1507/1560 books, 1617 and 1641 proper booklets, and 1694 printing need separation and text comparison.",
-      "next_source": "ACA XXVI.1.1 original leaves and copy census; Madrid 1617 Royal Press copy; 1976 Latin proper and decree.",
+      "next_source": "ACA XXVI.1.1 original leaves and copy census; Madrid 1617 Royal Press copy; 1976 Latin proper and decree. 2026-10-22: Notitiae 9 (1973) p. 260 (OCR text) records the order's proper calendar confirmed 6 June 1973 (Prot. n. 882/73) and p. 256 a Latin profession rite (30 May 1973); no early-book information.",
       "consequence": "The 1976 proper cannot be presented as a whole-missal replacement or descendant of a particular early print."
     },
     {
@@ -756,7 +756,7 @@
       "tradition_id": "trinitarian-round2",
       "period": "Thirteenth century–1975",
       "missing": "BnF Latin 1022 Mass folios and later use layers; the 1529 Provins print beyond seven inspected openings, including any dated colophon; the order-issued book of the 1975 confirmed Latin proper.",
-      "next_source": "BnF Latin 1022 ff. 233–385; remaining ARCA Provins Impr. XVI a 8 views (host timed out on 21 October 2026); order-issued 1975 Latin proper volume.",
+      "next_source": "BnF Latin 1022 ff. 233–385; remaining ARCA Provins Impr. XVI a 8 views (host timed out on 21 October 2026); order-issued 1975 Latin proper volume. 2026-10-22: ARCA (arca.irht.cnrs.fr) timed out again at 10:28 UTC and Gallica returned HTTP 403.",
       "consequence": "The 1529 title, calendar and Canon opening and the 1975 Latin confirmation are documented separately; catalogue year and modern approval do not establish a single whole-missal sequence."
     },
     {

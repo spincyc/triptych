@@ -1,0 +1,263 @@
+{
+ "schema_version": 1,
+ "record_type": "missal-batch-publication",
+ "batch": "missal-batch5-2026-10-22",
+ "authority": "Maintainer request of 2026-10-22: get to a coherent place to stop, persist the work plan, and push to main.",
+ "implementation_commit": "0a1b78eb32f3f4fd1c9cabc9ee14ea53d973afb4",
+ "remote": "origin",
+ "destination": "refs/heads/main",
+ "main_before": "7d74f617e",
+ "fast_forward": true,
+ "force_push": false,
+ "rebase": false,
+ "main_merge": "ed07a4514 merges main's lectern and comparison-rebind commits (7d74f617e) without rewriting history; no conflicts",
+ "outgoing_commits": 16,
+ "local_gates": [
+  {
+   "command": "make check-deployment-sources",
+   "exit_status": 0,
+   "note": "run with the pinned Markdown 3.10.3 venv; the clone's stale installed Christ the King PDFs were replaced by the CI-typeset live copies first"
+  },
+  {
+   "command": "make public-site",
+   "exit_status": 0
+  },
+  {
+   "command": "tools/public-alpha verify --deployment-target github-pages",
+   "exit_status": 0
+  },
+  {
+   "command": "tools/release-bindings status",
+   "result": "exact: 0 stale binding(s)"
+  },
+  {
+   "command": "tools/tpt check-promised-deliverables",
+   "result": "87 tracked, 71 complete"
+  },
+  {
+   "command": "tools/missal-coverage-reconciliation --json",
+   "result": "ok, 0 findings"
+  },
+  {
+   "command": "tools/act-history structure --check",
+   "result": "current: 557 files"
+  },
+  {
+   "command": "tools/source-reader structure --check",
+   "result": "current: 4912 files"
+  }
+ ],
+ "disclosure": "Outgoing diff scanned for absolute paths, usernames, hostnames, credentials and private keys (none); git diff --check clean; largest new file 12,265,800 bytes; 13 new facsimile binaries totalling 55,774,114 bytes, each with a recorded rights basis.",
+ "pages": {
+  "run_id": 39860724845,
+  "url": "https://github.com/spincyc/triptych/actions/runs/39860724845",
+  "head_sha": "0a1b78eb32f3f4fd1c9cabc9ee14ea53d973afb4",
+  "status": "completed",
+  "conclusion": "success"
+ },
+ "repository_hygiene": {
+  "run_id": 39860724875,
+  "url": "https://github.com/spincyc/triptych/actions/runs/39860724875",
+  "head_sha": "0a1b78eb32f3f4fd1c9cabc9ee14ea53d973afb4",
+  "status": "completed",
+  "conclusion": "success"
+ },
+ "previous_main_pages_run": {
+  "run_id": 39843055508,
+  "head_sha": "7d74f617e",
+  "conclusion": "failure",
+  "failed_step": "Verify artifact and GitHub Pages compatibility",
+  "note": "Recorded only; this receipt does not diagnose that run."
+ },
+ "live_routes": {
+  "started_at": "2026-10-22T22:08:21.053888+00:00",
+  "finished_at": "2026-10-22T22:08:24.960273+00:00",
+  "passed": 18,
+  "failed": 0,
+  "scope": "Selected production routes compared with the locally verified public artifact by HTTP status, exact byte length and SHA-256: History assets, the act-history catalogue, all nine new native-text payloads, the Sources index and four Sources edition pages. Served-byte verification only; not interactive-browser acceptance.",
+  "routes": [
+   {
+    "path": "history/index.html",
+    "url": "https://mystago.gy/history/index.html",
+    "http_status": 200,
+    "bytes": 15790,
+    "sha256": "7784e354a802a45dff9af2f22a41505f567c228bf3db90972de0bbfbafa53b62",
+    "observed_bytes": 15790,
+    "observed_sha256": "7784e354a802a45dff9af2f22a41505f567c228bf3db90972de0bbfbafa53b62",
+    "matches": true
+   },
+   {
+    "path": "history/history.js",
+    "url": "https://mystago.gy/history/history.js",
+    "http_status": 200,
+    "bytes": 182816,
+    "sha256": "5859fd6086ab24cd5d79bd63103e251d55e8cc5dfe1fcc03969580f205b271fa",
+    "observed_bytes": 182816,
+    "observed_sha256": "5859fd6086ab24cd5d79bd63103e251d55e8cc5dfe1fcc03969580f205b271fa",
+    "matches": true
+   },
+   {
+    "path": "history/history.css",
+    "url": "https://mystago.gy/history/history.css",
+    "http_status": 200,
+    "bytes": 25747,
+    "sha256": "69d7f6e9d4f8af892d14b01f1477f4986c7f7291e119e307c7ec16cf284e11c6",
+    "observed_bytes": 25747,
+    "observed_sha256": "69d7f6e9d4f8af892d14b01f1477f4986c7f7291e119e307c7ec16cf284e11c6",
+    "matches": true
+   },
+   {
+    "path": "browse/structure/act-history/catalogue.json",
+    "url": "https://mystago.gy/browse/structure/act-history/catalogue.json",
+    "http_status": 200,
+    "bytes": 11582660,
+    "sha256": "5a627f852919510dda5992bbd4d69319b95c6538fe47b8e43b74c1dcfd4b5c36",
+    "observed_bytes": 11582660,
+    "observed_sha256": "5a627f852919510dda5992bbd4d69319b95c6538fe47b8e43b74c1dcfd4b5c36",
+    "matches": true
+   },
+   {
+    "path": "browse/structure/sources/index.json",
+    "url": "https://mystago.gy/browse/structure/sources/index.json",
+    "http_status": 200,
+    "bytes": 989609,
+    "sha256": "207e89a51d40d9e83c5c4e874dcfa351934d39500774ac940026ba5a0a0b16a8",
+    "observed_bytes": 989609,
+    "observed_sha256": "207e89a51d40d9e83c5c4e874dcfa351934d39500774ac940026ba5a0a0b16a8",
+    "matches": true
+   },
+   {
+    "path": "browse/structure/act-history/native-texts/dominican-1550-canon.json",
+    "url": "https://mystago.gy/browse/structure/act-history/native-texts/dominican-1550-canon.json",
+    "http_status": 200,
+    "bytes": 33703,
+    "sha256": "db6a0dc03f4dca737d943b9106b5762f24a71aa03869f36068575b8f51446ce6",
+    "observed_bytes": 33703,
+    "observed_sha256": "db6a0dc03f4dca737d943b9106b5762f24a71aa03869f36068575b8f51446ce6",
+    "matches": true
+   },
+   {
+    "path": "browse/structure/act-history/native-texts/dominican-1553-canon.json",
+    "url": "https://mystago.gy/browse/structure/act-history/native-texts/dominican-1553-canon.json",
+    "http_status": 200,
+    "bytes": 34993,
+    "sha256": "eacfce5db1e488ae45c3647da165d63b49d4db90ba90dc843e652a9e2b7558dd",
+    "observed_bytes": 34993,
+    "observed_sha256": "eacfce5db1e488ae45c3647da165d63b49d4db90ba90dc843e652a9e2b7558dd",
+    "matches": true
+   },
+   {
+    "path": "browse/structure/act-history/native-texts/dominican-1603-canon.json",
+    "url": "https://mystago.gy/browse/structure/act-history/native-texts/dominican-1603-canon.json",
+    "http_status": 200,
+    "bytes": 36630,
+    "sha256": "45a47579e414f6e46859b185e9a71720e2e6454fd0802ead6f6ccd5a861be561",
+    "observed_bytes": 36630,
+    "observed_sha256": "45a47579e414f6e46859b185e9a71720e2e6454fd0802ead6f6ccd5a861be561",
+    "matches": true
+   },
+   {
+    "path": "browse/structure/act-history/native-texts/dominican-1604-canon.json",
+    "url": "https://mystago.gy/browse/structure/act-history/native-texts/dominican-1604-canon.json",
+    "http_status": 200,
+    "bytes": 36425,
+    "sha256": "863c505dbb03148e67be9af2cf4631aa72806095b16588da799a186ceb175ac9",
+    "observed_bytes": 36425,
+    "observed_sha256": "863c505dbb03148e67be9af2cf4631aa72806095b16588da799a186ceb175ac9",
+    "matches": true
+   },
+   {
+    "path": "browse/structure/act-history/native-texts/mozarabic-1500-ordo-missae.json",
+    "url": "https://mystago.gy/browse/structure/act-history/native-texts/mozarabic-1500-ordo-missae.json",
+    "http_status": 200,
+    "bytes": 45490,
+    "sha256": "b6c9b69224ec91bb711aa59d97a8f1ee3d6ba7170d4a4b4784626f2d0d97a9ee",
+    "observed_bytes": 45490,
+    "observed_sha256": "b6c9b69224ec91bb711aa59d97a8f1ee3d6ba7170d4a4b4784626f2d0d97a9ee",
+    "matches": true
+   },
+   {
+    "path": "browse/structure/act-history/native-texts/mozarabic-1755-ordo-missae.json",
+    "url": "https://mystago.gy/browse/structure/act-history/native-texts/mozarabic-1755-ordo-missae.json",
+    "http_status": 200,
+    "bytes": 45773,
+    "sha256": "c62e2612963de07821422d956cb533d5894b665f288c24e3f15c5a1d5d32e539",
+    "observed_bytes": 45773,
+    "observed_sha256": "c62e2612963de07821422d956cb533d5894b665f288c24e3f15c5a1d5d32e539",
+    "matches": true
+   },
+   {
+    "path": "browse/structure/act-history/native-texts/mozarabic-1804-ordo-missae.json",
+    "url": "https://mystago.gy/browse/structure/act-history/native-texts/mozarabic-1804-ordo-missae.json",
+    "http_status": 200,
+    "bytes": 44744,
+    "sha256": "851556325ee7909f568560bd4184e581d338a41940140ed1e2de3d9d9ebbedf7",
+    "observed_bytes": 44744,
+    "observed_sha256": "851556325ee7909f568560bd4184e581d338a41940140ed1e2de3d9d9ebbedf7",
+    "matches": true
+   },
+   {
+    "path": "browse/structure/act-history/native-texts/roman-1604-canon-missae.json",
+    "url": "https://mystago.gy/browse/structure/act-history/native-texts/roman-1604-canon-missae.json",
+    "http_status": 200,
+    "bytes": 43796,
+    "sha256": "fe8efb37d2a1e2a1adad475fbdc6d0861062e6447cb99117e5e7b8fb18300d1f",
+    "observed_bytes": 43796,
+    "observed_sha256": "fe8efb37d2a1e2a1adad475fbdc6d0861062e6447cb99117e5e7b8fb18300d1f",
+    "matches": true
+   },
+   {
+    "path": "browse/structure/act-history/native-texts/roman-1635-canon-missae.json",
+    "url": "https://mystago.gy/browse/structure/act-history/native-texts/roman-1635-canon-missae.json",
+    "http_status": 200,
+    "bytes": 43385,
+    "sha256": "1aaaea716fd990ee2b5a018289478a38ac791496318897c23c1c7744a74b66c0",
+    "observed_bytes": 43385,
+    "observed_sha256": "1aaaea716fd990ee2b5a018289478a38ac791496318897c23c1c7744a74b66c0",
+    "matches": true
+   },
+   {
+    "path": "browse/structure/sources/editions/catholic-church/missale-romanum/1635-vatican-urbanian-1635.json",
+    "url": "https://mystago.gy/browse/structure/sources/editions/catholic-church/missale-romanum/1635-vatican-urbanian-1635.json",
+    "http_status": 200,
+    "bytes": 44873,
+    "sha256": "6322b32c05b1e7dffe9e0fa2c39c7d0d9bc1fd3b209cd7d5909a48f3ec0c541e",
+    "observed_bytes": 44873,
+    "observed_sha256": "6322b32c05b1e7dffe9e0fa2c39c7d0d9bc1fd3b209cd7d5909a48f3ec0c541e",
+    "matches": true
+   },
+   {
+    "path": "browse/structure/sources/editions/order-of-preachers/missale/1553-1553-venice-giunta.json",
+    "url": "https://mystago.gy/browse/structure/sources/editions/order-of-preachers/missale/1553-1553-venice-giunta.json",
+    "http_status": 200,
+    "bytes": 33925,
+    "sha256": "b566bbd6cc3d7d3b30aa1abd691edf5cd933e756c19072747bc8fbef603bce30",
+    "observed_bytes": 33925,
+    "observed_sha256": "b566bbd6cc3d7d3b30aa1abd691edf5cd933e756c19072747bc8fbef603bce30",
+    "matches": true
+   },
+   {
+    "path": "browse/structure/sources/editions/order-of-preachers/missale/1603-1603-rome-ciacconi.json",
+    "url": "https://mystago.gy/browse/structure/sources/editions/order-of-preachers/missale/1603-1603-rome-ciacconi.json",
+    "http_status": 200,
+    "bytes": 35788,
+    "sha256": "7dec05487bf6e94970f7938282e49a9e56f14c14cd7732d403b84f3e54ae3602",
+    "observed_bytes": 35788,
+    "observed_sha256": "7dec05487bf6e94970f7938282e49a9e56f14c14cd7732d403b84f3e54ae3602",
+    "matches": true
+   },
+   {
+    "path": "browse/structure/sources/editions/catholic-church/missale-romanum/1604-vatican-typica-1604.json",
+    "url": "https://mystago.gy/browse/structure/sources/editions/catholic-church/missale-romanum/1604-vatican-typica-1604.json",
+    "http_status": 200,
+    "bytes": 55322,
+    "sha256": "f0a5c40e40516ed0c11053d80867a785a0b4c91632a8e13e2b5e16ab7b598fe0",
+    "observed_bytes": 55322,
+    "observed_sha256": "f0a5c40e40516ed0c11053d80867a785a0b4c91632a8e13e2b5e16ab7b598fe0",
+    "matches": true
+   }
+  ]
+ },
+ "not_published": "batch5/text-greek and batch5/text-roman-1570 remain local, unintegrated work-in-progress branches.",
+ "claims_limit": "This documentation-only receipt makes no claim about its own later deployment run."
+}

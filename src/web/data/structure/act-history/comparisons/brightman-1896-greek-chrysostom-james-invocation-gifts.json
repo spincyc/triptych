@@ -8,14 +8,14 @@
   "identity_claim": "parallel-function-not-same-composition",
   "inputs": [
     {
-      "byte_size": 188631,
+      "byte_size": 190717,
       "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
-      "sha256": "8362843cc22d7b7cc4044ec79471f874a4248ac543c128b9b00909a844c4b449"
+      "sha256": "e9a98cc82601fbfb459467654727c245cf6756252b7e77215270617d4084af4c"
     },
     {
-      "byte_size": 1472169,
+      "byte_size": 1527311,
       "path": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml",
-      "sha256": "c012a5e4359b7e15ce9fd29310f1a10e6081dd973435129d769ff7f5c407b000"
+      "sha256": "8595afcdf8e6d89c50030322f5d3af585cdc2eb0e9ed75ba9c45977fb644ed7f"
     },
     {
       "byte_size": 91788,
@@ -53,9 +53,34 @@
       "sha256": "22bf58d344f284e32c2ee540d6d7a3135f3412f259a7cbc1c22883fe1b9e6013"
     },
     {
+      "byte_size": 14231,
+      "path": "src/sources/inventories/eucharistic-books/dominican-1550-canon.json",
+      "sha256": "c87fddd6e1f7a717d0cc064b077eac8a917ea5fe38c4bb12036a5e0e74a1e7c7"
+    },
+    {
+      "byte_size": 14637,
+      "path": "src/sources/inventories/eucharistic-books/dominican-1553-canon.json",
+      "sha256": "11f7dec5c23b9962599318fafd1c4aea30d50e35efa46020fd38572de0299ed6"
+    },
+    {
+      "byte_size": 15302,
+      "path": "src/sources/inventories/eucharistic-books/dominican-1603-canon.json",
+      "sha256": "c686687d8cf5d34c1c49798764d95ec0e5391576e08cbd564ecffabcee288fed"
+    },
+    {
+      "byte_size": 15367,
+      "path": "src/sources/inventories/eucharistic-books/dominican-1604-canon.json",
+      "sha256": "738d7bcad388d540f8027a6dda1d239c146a04c70a02ac10964a023105f73898"
+    },
+    {
       "byte_size": 7325,
       "path": "src/sources/inventories/eucharistic-books/mozarabic-1500-benedictio-panis.json",
       "sha256": "e39bae86bdaf1dbd344a8f774b63b5d2e3f7c112a5ded703c453e97d09a21737"
+    },
+    {
+      "byte_size": 14335,
+      "path": "src/sources/inventories/eucharistic-books/mozarabic-1500-ordo-missae.json",
+      "sha256": "259f6c26e505463f45fe583e71281e576e9f606a047a0874bcdbf0844860bae9"
     },
     {
       "byte_size": 7301,
@@ -63,14 +88,34 @@
       "sha256": "c094fd1bc024c5db9953850a6699089b3eaac9c0ef149f2bd538aa63d6e8ee57"
     },
     {
+      "byte_size": 14626,
+      "path": "src/sources/inventories/eucharistic-books/mozarabic-1755-ordo-missae.json",
+      "sha256": "bdb37101b9997173b5dbe0fdb96d06c6a5a898707931053da950be34ddcd5b88"
+    },
+    {
       "byte_size": 7242,
       "path": "src/sources/inventories/eucharistic-books/mozarabic-1804-benedictio-panis.json",
       "sha256": "ad3d60bd19824466e8b337eb27b0da3a13c15916da82a000992386abde462f59"
     },
     {
+      "byte_size": 14231,
+      "path": "src/sources/inventories/eucharistic-books/mozarabic-1804-ordo-missae.json",
+      "sha256": "f9bdca86ff13e0ca15e397d3bd16821095fa3551562ffcc2ece22120e53628ce"
+    },
+    {
       "byte_size": 16331,
       "path": "src/sources/inventories/eucharistic-books/roman-1570-canon-missae.json",
       "sha256": "8cbb45f8fee8fad2522e928ac5598bfc184c7117747e3502f653f2cf0c5ba1dd"
+    },
+    {
+      "byte_size": 17966,
+      "path": "src/sources/inventories/eucharistic-books/roman-1604-canon-missae.json",
+      "sha256": "2a64dcd109240a5391b699c49e128704e4d7a3e0cfdb04bf5f5e35dc71615ee7"
+    },
+    {
+      "byte_size": 18207,
+      "path": "src/sources/inventories/eucharistic-books/roman-1635-canon-missae.json",
+      "sha256": "318f418bfc3c49faee1e60659f0344c29bd8757ad1199bd4a8c4352fe0525f87"
     },
     {
       "byte_size": 32541,
@@ -133,6 +178,46 @@
       "sha256": "b0c1df5a3d6319d32ea48ca8d9ed32d7332579eded33e80ac7ebcd49ea17d29a"
     },
     {
+      "byte_size": 8347,
+      "path": "src/sources/inventories/eucharistic-books/support/dominican-1550-canon-extent.json",
+      "sha256": "8b06a3734d72f6c93f9c04394510ceb43c2780c09d2b27f966194166c4319e2e"
+    },
+    {
+      "byte_size": 7360,
+      "path": "src/sources/inventories/eucharistic-books/support/dominican-1550-canon-review.json",
+      "sha256": "7d27e428e141b9a09fd413ff04572190086a14f2b59d12c79289d3ec059b59be"
+    },
+    {
+      "byte_size": 8704,
+      "path": "src/sources/inventories/eucharistic-books/support/dominican-1553-canon-extent.json",
+      "sha256": "34d83c559ac7bec323b275a81534b7accb9a3c5ee145e3964e964883f73817af"
+    },
+    {
+      "byte_size": 7400,
+      "path": "src/sources/inventories/eucharistic-books/support/dominican-1553-canon-review.json",
+      "sha256": "36ace5e7a8f8be678a4affeea2fbc930e71b4acad3346e4300f91f14f926c795"
+    },
+    {
+      "byte_size": 10240,
+      "path": "src/sources/inventories/eucharistic-books/support/dominican-1603-canon-extent.json",
+      "sha256": "7eaa587d9e070dfb524dee6879e2a60c6804ffdb9d638ea46505546eda69890c"
+    },
+    {
+      "byte_size": 8107,
+      "path": "src/sources/inventories/eucharistic-books/support/dominican-1603-canon-review.json",
+      "sha256": "feedf98c4b30cf3760ab8240d77dbc243dceea6151fcf3f551edf06f7b6158da"
+    },
+    {
+      "byte_size": 10115,
+      "path": "src/sources/inventories/eucharistic-books/support/dominican-1604-canon-extent.json",
+      "sha256": "774d494e283c1e53d7d08196c8b148ee0b8cb9d84ab47c7db6240d63b1109c8e"
+    },
+    {
+      "byte_size": 7272,
+      "path": "src/sources/inventories/eucharistic-books/support/dominican-1604-canon-review.json",
+      "sha256": "0d99abad050ffb15276cb82af6573191b2e1c1c9bae10d9c364fd757a1f58c61"
+    },
+    {
       "byte_size": 1579,
       "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-benedictio-panis-extent.json",
       "sha256": "afaeefa2fa521bf2d66dbc1a47519b71dfe4a5cc3af42830b33ad8d9913e58cf"
@@ -141,6 +226,16 @@
       "byte_size": 2576,
       "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-benedictio-panis-review.json",
       "sha256": "33350c80e8ab57bb1d8ce1385e3f7c3cc19bafbd753fae29233d794219259065"
+    },
+    {
+      "byte_size": 3548,
+      "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-ordo-missae-extent.json",
+      "sha256": "2fbceab1a1a1788dc3149937e8415db211a41de0820e4aecb91581f73e8dcfe4"
+    },
+    {
+      "byte_size": 7817,
+      "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1500-ordo-missae-review.json",
+      "sha256": "fdeb83a8c40d0cebbcee5ae4b102c664b870c4b4ff99d9e5b17249a986e11ad3"
     },
     {
       "byte_size": 1575,
@@ -153,6 +248,16 @@
       "sha256": "d9157cc97d1129c083fa0a8327c94056378cd63aa021842d3e583c8eed69fc3c"
     },
     {
+      "byte_size": 3643,
+      "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1755-ordo-missae-extent.json",
+      "sha256": "bb145a78f2a67b5192da3621844d35c7fe362f9a251e6ef943c0e5833cebe61e"
+    },
+    {
+      "byte_size": 6993,
+      "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1755-ordo-missae-review.json",
+      "sha256": "12d640f4c1e0ddfc882b1e85ac764f0891bca1bca6e3c403ba04397faca56dd5"
+    },
+    {
       "byte_size": 1563,
       "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1804-benedictio-panis-extent.json",
       "sha256": "15b31fa9e183bd80a6b6529be006b90ad15fda738f155b2bdbe0a01a5355d320"
@@ -163,6 +268,16 @@
       "sha256": "8c85bd0a75c7c6ce5111c49467b118c8c853fab6b90a5370383c88c3fed2c1d0"
     },
     {
+      "byte_size": 3422,
+      "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1804-ordo-missae-extent.json",
+      "sha256": "37d5d184ee9aa447b78129bc3ba3f1af3249eb994374164ee9cfa1fa90ca562c"
+    },
+    {
+      "byte_size": 6472,
+      "path": "src/sources/inventories/eucharistic-books/support/mozarabic-1804-ordo-missae-review.json",
+      "sha256": "f1da8951b28d96fb760a0cf441624a1646fb6d9f5d0935041fc4b7f1f42136f1"
+    },
+    {
       "byte_size": 12078,
       "path": "src/sources/inventories/eucharistic-books/support/roman-1570-canon-missae-extent.json",
       "sha256": "f1d97c3993c2d3545c6f1ce1f1c226886bcee876da71b633569715218f6303d8"
@@ -171,6 +286,26 @@
       "byte_size": 3869,
       "path": "src/sources/inventories/eucharistic-books/support/roman-1570-canon-missae-review.json",
       "sha256": "e862a73aee907aa4d9dcf89de254f34682d7b7ff3aaedd11a89e73a5af281316"
+    },
+    {
+      "byte_size": 14968,
+      "path": "src/sources/inventories/eucharistic-books/support/roman-1604-canon-missae-extent.json",
+      "sha256": "d208abe5f54adde80330df20388a79b655802b76d5bd1616254cd1307e332f08"
+    },
+    {
+      "byte_size": 8935,
+      "path": "src/sources/inventories/eucharistic-books/support/roman-1604-canon-missae-review.json",
+      "sha256": "68b21a12273114c96de608e5f6b67161410b280200a8e81d4d8839371049e9f0"
+    },
+    {
+      "byte_size": 16259,
+      "path": "src/sources/inventories/eucharistic-books/support/roman-1635-canon-missae-extent.json",
+      "sha256": "244a5b42a088e9b4dadd528ef4fc436641d5f41d6c7c416c4732cf42de97dbf7"
+    },
+    {
+      "byte_size": 9678,
+      "path": "src/sources/inventories/eucharistic-books/support/roman-1635-canon-missae-review.json",
+      "sha256": "6516802e447853b9a0b3bd481f1e5370d5b6f62447188cd30a48e04f3e8d9dae"
     },
     {
       "byte_size": 2472,
@@ -188,19 +323,19 @@
       "sha256": "1cabeaf38fae7ebf85c4b42f372347795c0012a397c784955d3cb936bedbc9ec"
     },
     {
-      "byte_size": 68704,
+      "byte_size": 76958,
       "path": "src/sources/inventories/eucharistic-stages/alexandrian.json",
-      "sha256": "07db37ec7cdaba079e48d294d7d59cbebc2caef99edb42d07b6f997fb4289690"
+      "sha256": "37a8ccc32d3963095005b6dec3ea3d440a46b05a2f03b1ba4858a0b56c42dfc5"
     },
     {
-      "byte_size": 61449,
+      "byte_size": 73448,
       "path": "src/sources/inventories/eucharistic-stages/ambrosian.json",
-      "sha256": "8ce1e15aa46adff358b10ccccb27ff22bb5471f9b3b109103200267d834c2783"
+      "sha256": "63447fb3f954cdc1c580a84303b0bcfc43ed6e997153e72d1fb1b921a73fc0d5"
     },
     {
-      "byte_size": 68797,
+      "byte_size": 79718,
       "path": "src/sources/inventories/eucharistic-stages/armenian.json",
-      "sha256": "8a1ac1e7425fc21b6397811fffe72af47c261d2d4c55add08bd0afab5c0f4af5"
+      "sha256": "3b519b1899327d456742b6e43004a7d1746d5b8c858e54ab498a6a40091eaa19"
     },
     {
       "byte_size": 19176,
@@ -208,29 +343,29 @@
       "sha256": "689926efc9723a9a0293ed2bd568f7651d31bb78041b2e3082ff781d783952fa"
     },
     {
-      "byte_size": 87460,
+      "byte_size": 111473,
       "path": "src/sources/inventories/eucharistic-stages/byzantine.json",
-      "sha256": "96986ee0cad2112a0c47b3ce1f6296e69ce3239204da47cabf9b3261575b5a68"
+      "sha256": "07f2e609b3a7a6250433a6c34c5688c57c1cb2f57b5d25f516ed035b9c14800c"
     },
     {
-      "byte_size": 42123,
+      "byte_size": 51637,
       "path": "src/sources/inventories/eucharistic-stages/canonical-orders.json",
-      "sha256": "d4673fc8991b695ce08ac7424578d96741b8b9d9bafdb9cc5b010b4808f338ba"
+      "sha256": "8c34c172637db0ba0d03bb3cfd93feace9a39312cd2e541f43bb7c42ae765ab4"
     },
     {
-      "byte_size": 73571,
+      "byte_size": 80871,
       "path": "src/sources/inventories/eucharistic-stages/central-europe-round3.json",
-      "sha256": "d2083f95c9ff946d8fb0bf833477484ab370a318dfbc481973ca52abc6b9de5a"
+      "sha256": "cf91e28ee2ad00e44a48055618f57b489531194cab987fa41f3c3c0fcfb41c90"
     },
     {
-      "byte_size": 58990,
+      "byte_size": 71571,
       "path": "src/sources/inventories/eucharistic-stages/chaldean.json",
-      "sha256": "42e01e0d944e398e79931dc6959ba844517ae37cde361b52580362b05070d9cd"
+      "sha256": "e7c065acafc7560dd8b97a52d66984468fd2fd9151753c5bd88121d653547683"
     },
     {
-      "byte_size": 45402,
+      "byte_size": 45776,
       "path": "src/sources/inventories/eucharistic-stages/cistercian.json",
-      "sha256": "7f544773dad30c20f5831ff860e6955edd637ed68a0e87d9c759abc32531ff55"
+      "sha256": "c4391b5fdfa82cc46858101f3ad7a0928ba4358da223b7b08f8763bc7660b1c1"
     },
     {
       "byte_size": 44154,
@@ -238,9 +373,9 @@
       "sha256": "216aeb5055c0e80254d630920a73c279fb1855d7882d67d68c7966b6128ccdf5"
     },
     {
-      "byte_size": 22070,
+      "byte_size": 30503,
       "path": "src/sources/inventories/eucharistic-stages/eastern-local-round2.json",
-      "sha256": "82128343b6a5d6ebf111cdd732c29f5c2e879eecdd02154afeb22c7924784a5f"
+      "sha256": "917caed43d62f86a274811f67d6e368708a868792b997ab2e1408ead00eaafe0"
     },
     {
       "byte_size": 7311,
@@ -248,89 +383,89 @@
       "sha256": "01c35bde86fccf9da3ee8abd8c540c855b1b7e6ef737b99d5b1c0f6fabdd11ed"
     },
     {
-      "byte_size": 61853,
+      "byte_size": 161747,
       "path": "src/sources/inventories/eucharistic-stages/french-dioceses-a-batch4.json",
-      "sha256": "a13c6f52a9198d2c558b2c56f26a4cc5a459e7f24b16b06a8c8ca44bde9891fa"
+      "sha256": "8a0f7a5034a8d2ed37edf31c64971926c249498ddd8375b21e7bddf381b45672"
     },
     {
-      "byte_size": 119568,
+      "byte_size": 177511,
       "path": "src/sources/inventories/eucharistic-stages/french-dioceses-b-batch4.json",
-      "sha256": "2506af4b0a203275265554e0277533dd9fa7e790359083d9497ab01f4773e662"
+      "sha256": "108308882a21c82b6294ec74bd33f0460bb58d380fb7b7511c593afc346e509d"
     },
     {
-      "byte_size": 47930,
+      "byte_size": 67400,
       "path": "src/sources/inventories/eucharistic-stages/french-local-round2.json",
-      "sha256": "5dac610a6b496519d6d525f2d6e06e077513092c5b9eeeac2cb4858cfcf5c3b4"
+      "sha256": "e7c51443fb14caba666a701058cdfe145b63d302e72e3fd654ad725d3562b81d"
     },
     {
-      "byte_size": 39748,
+      "byte_size": 108092,
       "path": "src/sources/inventories/eucharistic-stages/german-regional.json",
-      "sha256": "640ae986d80980966db1cf5f2d65859580c9456e95ad32710d352655ac71b3b4"
+      "sha256": "c024ecce07e46718a341ff57587546005b483c03a48f056ba83ab4ac3de8d668"
     },
     {
-      "byte_size": 23922,
+      "byte_size": 25425,
       "path": "src/sources/inventories/eucharistic-stages/greek-italo-local-reception.json",
-      "sha256": "87754cf056979cee6049fdd146ae0af631f205930f60c454c3203baf2b317765"
+      "sha256": "c1349c9ad4da88eacb77fb25f48b9fc943d1888b20a283b57e2c3ffbbb9e6276"
     },
     {
-      "byte_size": 21241,
+      "byte_size": 21894,
       "path": "src/sources/inventories/eucharistic-stages/hungarian-reception.json",
-      "sha256": "1c6272a32f6d82eda1fca426f96fb5350877c4d6483a0953e99026ca23065291"
+      "sha256": "97bc0ac42b467a7c7d7f75381a3875d57718cadd2fda727634f153e0e3745262"
     },
     {
-      "byte_size": 22164,
+      "byte_size": 41612,
       "path": "src/sources/inventories/eucharistic-stages/iberian-historic-batch4.json",
-      "sha256": "6affe19864ffef74db09fbd3feb98990de00fe83667e514bf45bea172e0b0eb9"
+      "sha256": "a9a07bc9f6be039044a5d9fad2a44005501c911a2dd9d10a060231dea1fead8c"
     },
     {
-      "byte_size": 42156,
+      "byte_size": 46333,
       "path": "src/sources/inventories/eucharistic-stages/italian-local-round2.json",
-      "sha256": "a7a0491d343a04829aa8f9df6ffc0fb552f199f5909f72de0d63a84b217d5cdf"
+      "sha256": "92760e80361080c82d9ae4c42829b50e3750a6cbdc72be8f0c6685fc6e9188d6"
     },
     {
-      "byte_size": 116866,
+      "byte_size": 130800,
       "path": "src/sources/inventories/eucharistic-stages/latin-uses.json",
-      "sha256": "5d39634aa6f58127e2f2ce5244b750751ea8982a0b29f8f065a4a6679ef8680a"
+      "sha256": "873fc164fbf3a946992516a9a47668244697342a12b73778dfd660ed72edd162"
     },
     {
-      "byte_size": 43813,
+      "byte_size": 54622,
       "path": "src/sources/inventories/eucharistic-stages/malabar.json",
-      "sha256": "cb16f1cff27a1c1ae8907d03483c955b0697b4ff47d33db92d16753dbbdc175e"
+      "sha256": "d26de4fc738f750897b958a58106e3a8fa900639f6f891c6ad67d9f1811f180b"
     },
     {
-      "byte_size": 65199,
+      "byte_size": 94919,
       "path": "src/sources/inventories/eucharistic-stages/maronite.json",
-      "sha256": "dd53f5daeb9fdfc6fa19ff14f60166f22f76da3e74f27cd3b1a3fa2c4a471198"
+      "sha256": "8f539fc57ec4ed1bba9e2b7e067a301677be5d6a56b98e0b72152d433c9cffc2"
     },
     {
-      "byte_size": 9588,
+      "byte_size": 9917,
       "path": "src/sources/inventories/eucharistic-stages/monza-local-next.json",
-      "sha256": "773889b075f13dc98a8736f548ca6f3deef6caa54ef8f1b3d0abee6f1e194772"
+      "sha256": "96f13740877494e75e458a0ef6c7659694aeab0ccaf51e468014c2572ee593ba"
     },
     {
-      "byte_size": 61137,
+      "byte_size": 70254,
       "path": "src/sources/inventories/eucharistic-stages/mozarabic.json",
-      "sha256": "507ae9f19c8719d3885c57277646c54ef50419b94c9e9d14084047d160e193f7"
+      "sha256": "d25a1cfcbe629feb2c255112b68ab25cbb24fb49603da17c907f1a773f230be3"
     },
     {
-      "byte_size": 17048,
+      "byte_size": 31318,
       "path": "src/sources/inventories/eucharistic-stages/northern-central-regional.json",
-      "sha256": "b0e489ef2f53ab3293980b7916fe6581d486c3ec4f1506cc402f12180e3b633c"
+      "sha256": "daefb3fe5b535ee2659414f834c50b4e9609fdbf3cd38ece5a438bc31a0cccc3"
     },
     {
-      "byte_size": 63056,
+      "byte_size": 66541,
       "path": "src/sources/inventories/eucharistic-stages/northwest-round2.json",
-      "sha256": "5d13abbb9e35948d145852e27a1bfdde219a7ecaf5f202a6d923cca136b565d2"
+      "sha256": "9aada22cd59dce4e5c001bc03a4495f144b967789c5a29f9ce7e55051a6f0ecc"
     },
     {
-      "byte_size": 22949,
+      "byte_size": 29199,
       "path": "src/sources/inventories/eucharistic-stages/ocso-next.json",
-      "sha256": "a86a7745a12bc3da1a25dbc9c286fa8755fdaef9b21aae32e7ce3b9f23a3de75"
+      "sha256": "a97391b153584caae42a11d43e6ef6103296bf5a479a6e871d02bb6cb7749df3"
     },
     {
-      "byte_size": 47328,
+      "byte_size": 48794,
       "path": "src/sources/inventories/eucharistic-stages/other-orders-round2.json",
-      "sha256": "8dd7ff30444beb671f69d76425ede9385cc05866b0c814a3b44ccf8796657304"
+      "sha256": "69cda0e877870bc88b1d72bd55ccb561d3a2078d89f6a23463c47b6cdfd89ed2"
     },
     {
       "byte_size": 13807,
@@ -338,9 +473,9 @@
       "sha256": "324e8b8be5d02e32ff8b24a8ef23be579b3e8edfee88678a2c0ab2f9936ff612"
     },
     {
-      "byte_size": 20688,
+      "byte_size": 24150,
       "path": "src/sources/inventories/eucharistic-stages/ravenna-fragments.json",
-      "sha256": "d69e370785d1c4641e68860ecd9c621476b8cab7c41d55ddae65e7e52d0a459c"
+      "sha256": "80babd0d5b764879aa4fa53aefd01f6a68522d11f0f96f44801f46b7b40fe626"
     },
     {
       "byte_size": 37745,
@@ -348,9 +483,9 @@
       "sha256": "ea9ce5e7a346a3b90ef8aa88d877e108103bc3c0d79968613f89cbb52100ecd6"
     },
     {
-      "byte_size": 35328,
+      "byte_size": 35821,
       "path": "src/sources/inventories/eucharistic-stages/residual-orders-round3.json",
-      "sha256": "c4da2c200e0ca914ef4e6bc561a381d15b9b5f39e2d87a1b4f8b1138e9516cb7"
+      "sha256": "c8a3c4806149480e5772cc7d659ac3e150d5c0ec826e4adc0e60892f0cbe150c"
     },
     {
       "byte_size": 28591,
@@ -358,29 +493,29 @@
       "sha256": "91f3e5016565e3c2c2659e555156b3b6e9eb75add631de78bca604f0dea08929"
     },
     {
-      "byte_size": 125276,
+      "byte_size": 135937,
       "path": "src/sources/inventories/eucharistic-stages/roman.json",
-      "sha256": "190871701d3d2bcbc942173c8d8cc41f4e9a798ce8c51bc32398be696c9e0538"
+      "sha256": "597f9842e5f9ab4773e4c4a7bcb0595727624869c9706e529dcdb632a173c7ff"
     },
     {
-      "byte_size": 35994,
+      "byte_size": 39125,
       "path": "src/sources/inventories/eucharistic-stages/romanian-blaj.json",
-      "sha256": "7272196db304885303d2dc24b4107c25083206f2a8c7165bc8716a0eeef581b7"
+      "sha256": "ffc833585d60d80621df4698258f205d7a41482a29cc3296dbd9d8b7b5c679b5"
     },
     {
-      "byte_size": 23959,
+      "byte_size": 30787,
       "path": "src/sources/inventories/eucharistic-stages/slavonic-roman.json",
-      "sha256": "378c45273960198fc3d0b60c4a2c269ace2adbb876ae97b4dccc3f7a246fd273"
+      "sha256": "1387fcbb6c28d8887f153fd398fa4e710c2aa95568da92e298dee70c7d0b350e"
     },
     {
-      "byte_size": 45065,
+      "byte_size": 55925,
       "path": "src/sources/inventories/eucharistic-stages/west-syriac.json",
-      "sha256": "baf3743635c613db31316bfae3f00318293a239131d15ae420306c8737b32611"
+      "sha256": "44f44c9d17085cefab9634555d0f582a8305440e3cb8a991791cdaefa4d6da75"
     },
     {
-      "byte_size": 43702,
+      "byte_size": 49343,
       "path": "src/sources/inventories/eucharistic-stages/western-originals-batch3.json",
-      "sha256": "b5198ec28c46cb3491a1e68cd48130130e695dbf9d3df6c7f042a540ffad4fef"
+      "sha256": "41da4bfbd5bf9bc9948ba0aa44430514ed698c86fdbcaaa6ef9c2c535deaccd0"
     },
     {
       "byte_size": 190275,
@@ -398,9 +533,9 @@
       "sha256": "a441e1d2de4577177e7f0c8243dabb69d1f3051bdc11b3258512d6ec2ac67684"
     },
     {
-      "byte_size": 2900398,
+      "byte_size": 3001580,
       "path": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml",
-      "sha256": "bd9c3c9ce5fa3df8c28c93cfb5a6f045ff6f8a68948a805a76ed9f64f5723e12"
+      "sha256": "1c029a4cef64810193cd7e9b8d1ff51231f6bba5e11b3aca7cd29b99427472f7"
     },
     {
       "byte_size": 973,
@@ -428,6 +563,16 @@
       "sha256": "176accd26d07aa14930b4e9d23d6cff005395cb73d23cd1b7738fcd3238daf24"
     },
     {
+      "byte_size": 2835,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/bsb-ordo-canvas28-31-695b81f0/artifact.toml",
+      "sha256": "8987c93baa76411a29d28e43ebaa3affa17cfdff4a5411aa9067a4e06518bdce"
+    },
+    {
+      "byte_size": 3110664,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/bsb-ordo-canvas28-31-695b81f0/ordo-canvas28-31.pdf",
+      "sha256": "695b81f0e0e25e9d923397ebfe21f3fc109c9fd19ab092b2a5546aa34dde36b4"
+    },
+    {
       "byte_size": 1829,
       "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/bsb-title-canvas7/artifact.toml",
       "sha256": "60fb96ee918dfe1e184b2d4effafa790a1c4acbc453c1faf54a42adbf483c538"
@@ -436,6 +581,16 @@
       "byte_size": 493891,
       "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/bsb-title-canvas7/canvas-7.jpg",
       "sha256": "bfe6b7ca48c0a714092cbfc2530885259fcaa7b13fe100f97255e2ec34720d2a"
+    },
+    {
+      "byte_size": 3406,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/ordo-missae-checked/artifact.toml",
+      "sha256": "44f1d5274173ae63dfcbd35bf4e01e4d5e0020456c3b45c822a2eb8a090700d6"
+    },
+    {
+      "byte_size": 5257,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/ordo-missae-checked/ordo-missae.txt",
+      "sha256": "1eafbd52ca4ef22422e07da69cfe25ce2a5a454949ab17ab0351209092be268f"
     },
     {
       "byte_size": 1093,
@@ -493,6 +648,111 @@
       "sha256": "bc8b1a5ec8703fd47f7e4126e82dff4408de1b01c4006b3d4e3dcef95b7418a8"
     },
     {
+      "byte_size": 2325,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-accipiat-corpus-rubrica.toml",
+      "sha256": "00ccf67460136cd1134f6db9db098369a91678654ae29e760f8f2dbf3e99dee4"
+    },
+    {
+      "byte_size": 2323,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-ad-orationem-dominicam.toml",
+      "sha256": "2537618954c33f7e95eeaffaac091d131941fd9d3095cc12fec8840d5d8e49bd"
+    },
+    {
+      "byte_size": 2305,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-adesto-rubrica.toml",
+      "sha256": "017f32b3de1431e4b9c0118bcbce4f4beedf877037049d3323568d1b97ed625b"
+    },
+    {
+      "byte_size": 2289,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-adesto.toml",
+      "sha256": "a32258025fc37b77b00b3b086ecd9fe267010a497f8b3159743fd9be6eb1f804"
+    },
+    {
+      "byte_size": 2317,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-commemoratio-rubrica.toml",
+      "sha256": "ecb054bdf31f2a266d0423e16b2ba8f03f2a5f735d98a3215f64a175c746db43"
+    },
+    {
+      "byte_size": 2433,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-extent.toml",
+      "sha256": "b526c9e0104fb9cce7480f9d67f6a72646fe869d28ee45c8ace982099d0ace22"
+    },
+    {
+      "byte_size": 2289,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-fidem.toml",
+      "sha256": "2a898cd8e0da6e9039136a326c6603747d4571837d29f76441044804ced9c4cc"
+    },
+    {
+      "byte_size": 2329,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-forma-consecrationis-nota.toml",
+      "sha256": "1c709bf1be45ae8055cbbe0d3bc7b0b0ab1c4227665ae92c8f67d0bb07142c5c"
+    },
+    {
+      "byte_size": 2319,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-forma-consecrationis.toml",
+      "sha256": "aa6c742e44b46a275cb21280f64fb6861fd7b484478e351adea5270059c7151b"
+    },
+    {
+      "byte_size": 2307,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-fractio-figura.toml",
+      "sha256": "5fe64b1f745e8aff06623c0d71bae2228f59724fdd4522f4b7e8647e2c8a6771"
+    },
+    {
+      "byte_size": 2311,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-fractio-rubrica.toml",
+      "sha256": "ff4c4541f170609a229c0f870c0414a4f24e13e200c45356627d9c55a2896378"
+    },
+    {
+      "byte_size": 2313,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-institutio-calicis.toml",
+      "sha256": "4b6ea773a21ff419dcb809bcb1674284b101509f4b7d5666ddb98a62ad4b3093"
+    },
+    {
+      "byte_size": 2311,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-institutio-panis.toml",
+      "sha256": "fecd54db4925c7553a76ba3144b44e700f84b5f9ecbb6531a96e02d2939b6333"
+    },
+    {
+      "byte_size": 2297,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-liberati.toml",
+      "sha256": "4a3ec6389b6e36b01925f7f9ce066d0d2a511f7d53c2b3ba0b66282fb57fb72e"
+    },
+    {
+      "byte_size": 2325,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-oratio-dominica-rubrica.toml",
+      "sha256": "a0f666308646f16396c461063152762a219dd7dcd72b8687c39545c09b6d3744"
+    },
+    {
+      "byte_size": 2303,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-pater-noster.toml",
+      "sha256": "6ebf3a8fb187ac442c0e72ae134976ff7742e2200dd6cedf7d170fb433e001a4"
+    },
+    {
+      "byte_size": 2301,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-post-pridie.toml",
+      "sha256": "d3d73703f07c1adc1c942bd2cdd2157df9f3583dc175519c82fadf68f72140a9"
+    },
+    {
+      "byte_size": 2305,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-quotiescumque.toml",
+      "sha256": "be675a39fe5b138132fbc4e7d4502f9531491947a8e921dacd5a69fb7ce2cc65"
+    },
+    {
+      "byte_size": 2311,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-symbolum-rubrica.toml",
+      "sha256": "3fb002784bd616c1bf15e2e5581fa6d59e9e5c8866367c41023d055aefcef38e"
+    },
+    {
+      "byte_size": 2295,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-symbolum.toml",
+      "sha256": "7638873310414c07baaffa13987c0af587458fa872bbb4bb88fa2a4dd79e42f4"
+    },
+    {
+      "byte_size": 2303,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/ordo-te-prestante.toml",
+      "sha256": "cdd7665153b01823a101cb8d1b2483d1d03acfb83b2bf9127b1c4ab8b93a702d"
+    },
+    {
       "byte_size": 825,
       "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/passages/publication-date.toml",
       "sha256": "493f6c54b298989bc916cf638ee58abb73716ebc5383e91323cb3b678f3f05e3"
@@ -518,6 +778,16 @@
       "sha256": "06fa2cf519045e236e20d66bd64d6a1625625d22a6bacc97428f3da7a713fccf"
     },
     {
+      "byte_size": 2890,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-ordo-pp5-6-b42ee9f1/artifact.toml",
+      "sha256": "91a00a6152dea2b851cb9ceb64c44802f29b207054252572d6e4c1f186d076e9"
+    },
+    {
+      "byte_size": 1703816,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-ordo-pp5-6-b42ee9f1/ordo-pp5-6.pdf",
+      "sha256": "b42ee9f1a2fde02df2c8727920defc32e3c34c5be8603caae278492036fca796"
+    },
+    {
       "byte_size": 1965,
       "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-pdf-225d6721/artifact.toml",
       "sha256": "0ec27f9f654bde9fc0bccceb74a238edce5721328cec0f11bf8e1b921873c67e"
@@ -526,6 +796,16 @@
       "byte_size": 13372022,
       "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-pdf-225d6721/missale-mixtum-1755.pdf",
       "sha256": "225d6721834132ba0a354db2a041029968efbe39e701e5b37615a2675caddc45"
+    },
+    {
+      "byte_size": 3597,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ordo-missae-checked/artifact.toml",
+      "sha256": "9c72b86b970a371c78748b943ea5a1a2219618ea51380c949d197496ec050662"
+    },
+    {
+      "byte_size": 5245,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ordo-missae-checked/ordo-missae.txt",
+      "sha256": "53aafb397584b8fe66692ab002111714ec9ad8679cda446599231df7f42bf44f"
     },
     {
       "byte_size": 2669,
@@ -583,6 +863,116 @@
       "sha256": "32c64b8ee912f565ea34a11256189b8ed1f6f25d523f7214d069da88fc14d3eb"
     },
     {
+      "byte_size": 2333,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-accipiat-corpus-rubrica.toml",
+      "sha256": "1d4e31dfe696df6d811438d3c9840498336197800364734134d37639d3e26fed"
+    },
+    {
+      "byte_size": 2329,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-ad-orationem-dominicam.toml",
+      "sha256": "b409ad56d88f0f367860d204d3774aff8db8949647f54b06ce082988352b252a"
+    },
+    {
+      "byte_size": 2311,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-adesto-rubrica.toml",
+      "sha256": "ab835e2f1ba49a4e124ff835da5fd3a142840ef4b00892908780a961f046e364"
+    },
+    {
+      "byte_size": 2295,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-adesto.toml",
+      "sha256": "c9f5e74c5f589e1f65aaed20edd6b9a9b51c63df7b7e59287361ab126cc4e229"
+    },
+    {
+      "byte_size": 2323,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-commemoratio-rubrica.toml",
+      "sha256": "4e9e03867a72326e5485bc8cc7cbf8e63fdb819bcc58bd55948a31470cc340f5"
+    },
+    {
+      "byte_size": 2558,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-extent.toml",
+      "sha256": "ad4c0537f9267697966c9db3cc615536b0e50f5196e91f8d8cdca4502dde3ac2"
+    },
+    {
+      "byte_size": 2295,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-fidem.toml",
+      "sha256": "6da6c347c1afdc8adb0917a3537d42a665a99d2e4de8d603ab566514a0ee9609"
+    },
+    {
+      "byte_size": 2338,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-forma-consecrationis-nota.toml",
+      "sha256": "a87b1bc081957c9a5697a2839091d0e6e84967cbfd7e59052f2d5bc38870b6f2"
+    },
+    {
+      "byte_size": 2325,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-forma-consecrationis.toml",
+      "sha256": "991b14e45b6acbd35a30b5181f9853de39f69f2af5f126348d5169b140202d55"
+    },
+    {
+      "byte_size": 2313,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-fractio-figura.toml",
+      "sha256": "be501b9df11bd46f8d8fb5e57abc5761c86676264c8f78721f6b163f53de3dcb"
+    },
+    {
+      "byte_size": 2315,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-fractio-rubrica.toml",
+      "sha256": "dbe5cd852e645851b0ea5916f2463002ae71d6736eda9fb2edf318005601a8af"
+    },
+    {
+      "byte_size": 2319,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-institutio-calicis.toml",
+      "sha256": "fba314586d185c35ef9754770b9577126f7a22e7cc7c88b60f5c0bcb984b7f3b"
+    },
+    {
+      "byte_size": 2315,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-institutio-panis.toml",
+      "sha256": "69ebfdb2c55d548c52cac0680cbae3c695f54df36cef778316db347a550e6130"
+    },
+    {
+      "byte_size": 2301,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-liberati.toml",
+      "sha256": "d7ff4bd0628681d4e17cf4c92cec67cc508666eb661abd372e5a07c8ea46b093"
+    },
+    {
+      "byte_size": 2331,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-oratio-dominica-rubrica.toml",
+      "sha256": "157dd5365fdc0bfb69829b5cc419be3316bb7ac933dc2e09963e04ac03c6f658"
+    },
+    {
+      "byte_size": 2309,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-pater-noster.toml",
+      "sha256": "9be1376760f14748a774a5c180c956d0bb81c54fa8e2938241294434339d788a"
+    },
+    {
+      "byte_size": 2307,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-post-pridie.toml",
+      "sha256": "4ae237f8a6133d3f800f9827e6a487cf248bf1d7114f7d449ee8a27ebff58c0c"
+    },
+    {
+      "byte_size": 2311,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-quotiescumque.toml",
+      "sha256": "46b6536b1b8f1ae23189159915a78c16c70027dd07af6d1742d8b80fd425b386"
+    },
+    {
+      "byte_size": 2317,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-symbolum-rubrica.toml",
+      "sha256": "da2f05edc21fa6ab106cc185bfed17c3f2bee4a687b10902024f58daa3b682e6"
+    },
+    {
+      "byte_size": 2301,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-symbolum.toml",
+      "sha256": "400526c2238627c0b66e79a6b8d24702d0e85f92ae7f3994c3b5b18fac84909e"
+    },
+    {
+      "byte_size": 2309,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-te-prestante.toml",
+      "sha256": "81aac462be97b60d3932dab4f89241b92dbd1a64afb0c5ea37cf5b445f201f97"
+    },
+    {
+      "byte_size": 1048,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/ordo-title.toml",
+      "sha256": "dffb476dd4ea57cb3767e7dd1738fd1b5ddf83f5baaa4b74d49994bacae7d48b"
+    },
+    {
       "byte_size": 824,
       "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/passages/publication-date.toml",
       "sha256": "fa3a6e89b93c382b1a572b43b74911883f56dd2915489d6acd8d3a44717ba001"
@@ -596,6 +986,16 @@
       "byte_size": 899,
       "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/benedictio-panis-checked/benedictio-panis.txt",
       "sha256": "443342e10cec49650fa8d2c0d8ff2ab6a75b18ab1ff05bf18c7c7d04224529dd"
+    },
+    {
+      "byte_size": 3015,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-ordo-p031-034-f87526c9/artifact.toml",
+      "sha256": "7deedc7bc44c6f8a46b365c9fac87934eb635401fe4dbbd4c19546eb49ecd2a3"
+    },
+    {
+      "byte_size": 1296338,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-ordo-p031-034-f87526c9/positions-031-034.pdf",
+      "sha256": "f87526c92dc36199c80336a074d2427121ebfef2f348217eb9fea60567748e34"
     },
     {
       "byte_size": 1834,
@@ -616,6 +1016,26 @@
       "byte_size": 166290,
       "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-p965-992df6eb/position-965.jpg",
       "sha256": "992df6eb3f47b38c8e092454a224c11821e0f9ae4108457209af2975a6fe0df8"
+    },
+    {
+      "byte_size": 2148,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-positions-0001-0100/artifact.toml",
+      "sha256": "f712b7fc4522ee3616008bb1cc240852618b2711a35c3ee71d77db82cc97ecb3"
+    },
+    {
+      "byte_size": 31643391,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/castilla-la-mancha-positions-0001-0100/castilla-la-mancha-positions-0001-0100.pdf",
+      "sha256": "d36f31945f37eed53d475e79c531b0dbb2d18d41df5c6cbfbb1f9f1689f2ab15"
+    },
+    {
+      "byte_size": 3446,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/ordo-missae-checked/artifact.toml",
+      "sha256": "aeea0d241d52c08eab16335340b5049d804e22ef2fbcd5e5d05ce74fcc59687a"
+    },
+    {
+      "byte_size": 5238,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/ordo-missae-checked/ordo-missae.txt",
+      "sha256": "74b7e42df7ab15341f2f342be29fe0803a7a1b0883a149560ac231243393e5c2"
     },
     {
       "byte_size": 957,
@@ -671,6 +1091,111 @@
       "byte_size": 1418,
       "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/benedictio-sprinkling.toml",
       "sha256": "f71ae3cdbb1c2cbdeb2c363da23dedfa46314119d00640b52224a4ae57aace82"
+    },
+    {
+      "byte_size": 2339,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-accipiat-corpus-rubrica.toml",
+      "sha256": "b145ce200a646cf4be9eeba469dd8395c972da9d6e96ed7af0c5b4c40dc05780"
+    },
+    {
+      "byte_size": 2335,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-ad-orationem-dominicam.toml",
+      "sha256": "5b6ae32d4675a0579eef2bf8829a207c7f5994bd1b67d07a832e35f8045bdfff"
+    },
+    {
+      "byte_size": 2317,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-adesto-rubrica.toml",
+      "sha256": "00cb2d9e5012c26591f3e2a0ecb95a3a03942a5cc66cf3ab203a1638a8e79c02"
+    },
+    {
+      "byte_size": 2301,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-adesto.toml",
+      "sha256": "faa50249f995f941aa74f38de9daf1c726b69103ffdaaaa19897946efa80ed55"
+    },
+    {
+      "byte_size": 2329,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-commemoratio-rubrica.toml",
+      "sha256": "2887d34a24b54997a8a754a2e90a41c470adb0f2cf85d306887e2e16a8a6de63"
+    },
+    {
+      "byte_size": 2479,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-extent.toml",
+      "sha256": "8c1162424c0c8fc1a78481376dc53bdac158f3df1e210828f46998433f3d966c"
+    },
+    {
+      "byte_size": 2301,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-fidem.toml",
+      "sha256": "015f7d6e72eb87c379d057b8c169283b5be341cea831a2b418ba7d88a1f2dea2"
+    },
+    {
+      "byte_size": 2341,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-forma-consecrationis-nota.toml",
+      "sha256": "068208682b6ea8628c5df1cb6731ada6bd9ecd586ef726416ac0f92180b7f5a9"
+    },
+    {
+      "byte_size": 2331,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-forma-consecrationis.toml",
+      "sha256": "70a5367c29201e27c1dd98ccf7e31f051d2323dc94d93120371c31cdafade654"
+    },
+    {
+      "byte_size": 2319,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-fractio-figura.toml",
+      "sha256": "57dcba7b04d83f2c1e90095ceee16198989e00953a2a34e1cc2431d3cb722c54"
+    },
+    {
+      "byte_size": 2321,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-fractio-rubrica.toml",
+      "sha256": "7db87201156e5566793e097e5c1c956a740c57a4e9c3e778012483d5bf15792d"
+    },
+    {
+      "byte_size": 2325,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-institutio-calicis.toml",
+      "sha256": "2d20602b9b473262fdbe573570dda90e20ab4fe162f010b99c6b48bf3a261221"
+    },
+    {
+      "byte_size": 2323,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-institutio-panis.toml",
+      "sha256": "ead277884061b2f016d2dbb78a5c87e2f4b382b3c62d05efaefeecabbbe90be5"
+    },
+    {
+      "byte_size": 2307,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-liberati.toml",
+      "sha256": "ee6260ac67ccd2953a66c059cf159d551d18d237cc38e9e63144199eb73c9bad"
+    },
+    {
+      "byte_size": 2337,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-oratio-dominica-rubrica.toml",
+      "sha256": "6ace90ebfd052ac6fdc7364f7b8a4f9331cf62c8a2f4f94608c64aa0dd600fe6"
+    },
+    {
+      "byte_size": 2315,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-pater-noster.toml",
+      "sha256": "9f8c083d01ccbdf8afb50367451ecf0a065517dba805e6397bbf084473eff214"
+    },
+    {
+      "byte_size": 2313,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-post-pridie.toml",
+      "sha256": "44026cc0eab140536c2921f306da8e7d4c000f6e5b958e589b0f683b69f16a66"
+    },
+    {
+      "byte_size": 2317,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-quotiescumque.toml",
+      "sha256": "9b22d5d775f828e5f7097b4a92a5805fd041eceef5b26cd620bf57843b81a589"
+    },
+    {
+      "byte_size": 2323,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-symbolum-rubrica.toml",
+      "sha256": "7a11352f7780be05c6e791c08be64d13ca3839e432af49debf13cc30c9842335"
+    },
+    {
+      "byte_size": 2307,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-symbolum.toml",
+      "sha256": "32c4b924d55a75d101205b17189b54e9d4013caf52b24d960a5334237c7deaff"
+    },
+    {
+      "byte_size": 2315,
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/passages/ordo-te-prestante.toml",
+      "sha256": "0611300b2dade3573897521631dbb9d85131a3039e7be9096972c7f5d72b772d"
     },
     {
       "byte_size": 863,
@@ -891,6 +1416,276 @@
       "byte_size": 811,
       "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-ordo-ritus-de-defectibus-1965/edition.toml",
       "sha256": "7ec978c66e9358af5553207e24e6fbec1aabf5c7c75968b28a95ec748b542f85"
+    },
+    {
+      "byte_size": 2825,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/artifacts/canon-facsimile-68d68bc2/artifact.toml",
+      "sha256": "72c3846ff6bf0de043f512dcbd302678694b1c2f076bb50cb51d481867650479"
+    },
+    {
+      "byte_size": 2984291,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/artifacts/canon-facsimile-68d68bc2/canon-pages.pdf",
+      "sha256": "68d68bc261098e977131e965130007ed1c3bb8c1de4cd25cd39389446fa5fc5d"
+    },
+    {
+      "byte_size": 2699,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/artifacts/canon-pages-6d3538f8/artifact.toml",
+      "sha256": "dc8282511af0b306a8d6482dc336fdd6bedf0f90d0b337875cb8e93bd62c84c6"
+    },
+    {
+      "byte_size": 4011896,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/artifacts/canon-pages-6d3538f8/canon-pages.zip",
+      "sha256": "6d3538f82ddbac21e54ffca158df5c198f83201b64dca1eb6abb866186db23aa"
+    },
+    {
+      "byte_size": 3586,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/artifacts/canon-reading-38b1f81b/artifact.toml",
+      "sha256": "a3aabf6b9f6e8bb1351741a571efbb58768b072762ba9f322ecc60780641fc9d"
+    },
+    {
+      "byte_size": 6904,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/artifacts/canon-reading-38b1f81b/canon-reading.txt",
+      "sha256": "38b1f81b65a25c776dec864395ce6f32517f9191ac16f47dd8aff4d05577fe8e"
+    },
+    {
+      "byte_size": 4326,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/edition.toml",
+      "sha256": "0da876f27edad6be624dda45fdf5f313c5a948d607f86156ba45ac9e09b6ba1f"
+    },
+    {
+      "byte_size": 1050,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-communicantes.toml",
+      "sha256": "39021039201fc684409e32ea1da66fce85e551334001f143bdb4b366ace9e1e0"
+    },
+    {
+      "byte_size": 1062,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-concluding-response.toml",
+      "sha256": "80e1ee7f707f700d4e477b58e9ee5ca90a6c5b9466a08067a0ca25fe238eaf9b"
+    },
+    {
+      "byte_size": 1256,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-facsimile.toml",
+      "sha256": "49c75b04147b2669cf2d089539fc737a4879064571df0698e4c2ad1c986ff617"
+    },
+    {
+      "byte_size": 1046,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-hanc-igitur.toml",
+      "sha256": "5e96996a69f90233b646673abeb21a60d028502387107b3c5eff5e9c1885764b"
+    },
+    {
+      "byte_size": 1034,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-heading.toml",
+      "sha256": "d331ee8b500f1c22a242d33259611389e1603ae4f189d1c10edd4dfea80e3d8b"
+    },
+    {
+      "byte_size": 1062,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-memento-defunctorum.toml",
+      "sha256": "820dba0e945b69f7d30d5abf2dd1d8858c671521f6a5be8dc5ca9bce08d98244"
+    },
+    {
+      "byte_size": 1054,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-memento-vivorum.toml",
+      "sha256": "d488fb91f8b2897efbda74cbc1eb4f01990c2bfc0d2f50eb39d4cc9eda918a8a"
+    },
+    {
+      "byte_size": 1048,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-nobis-quoque.toml",
+      "sha256": "2fcf12a4ac8d05035f9f389b7016e836dc26746c7314af1a8e8941405bd06790"
+    },
+    {
+      "byte_size": 1048,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-opening-rubric.toml",
+      "sha256": "75e89ac8b214055f5175faae8652713f382aa3b908f5ece0bbf535068e02b781"
+    },
+    {
+      "byte_size": 1042,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-per-ipsum.toml",
+      "sha256": "0a2f5da65993940e9dcab301f34bc641059669dcc0e3a01a336c16112878a04d"
+    },
+    {
+      "byte_size": 1040,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-per-quem.toml",
+      "sha256": "df624c98839d4ed28a5415ba7c25ec167a0bb3e09be231904f2bb8a5bab072ca"
+    },
+    {
+      "byte_size": 1054,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-quam-oblationem.toml",
+      "sha256": "712feb57f4f9bbc1ccddfc5a82b2ba3f9fe8dc9f1a3fe952f9fad3749fe7e9fd"
+    },
+    {
+      "byte_size": 1044,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-qui-pridie.toml",
+      "sha256": "593e0202bc7839200f8c9149e63e69954b8b610b469b2c34e222a15d95b0112c"
+    },
+    {
+      "byte_size": 1060,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-simili-modo.toml",
+      "sha256": "1a4668c523d719fd9b25236555034b35c793f3e37d622d8f33869a63d73db3b8"
+    },
+    {
+      "byte_size": 1042,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-supplices.toml",
+      "sha256": "57ef9eb3176cc6e313e70655c8f7a1d27d236a3ab63c5a914b30f2a118b4312a"
+    },
+    {
+      "byte_size": 1044,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-supra-quae.toml",
+      "sha256": "f181a0b6b4d6558b65efee55359126fb975aa94aa4ddd2888fcd64bd20ac1dd4"
+    },
+    {
+      "byte_size": 1038,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-te-igitur.toml",
+      "sha256": "bcbab6d03b0f0d016f4f40181d329eb8de85f61a590a38bcf97589a9f006d57d"
+    },
+    {
+      "byte_size": 1054,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/canon-unde-et-memores.toml",
+      "sha256": "d680ec4b4da4495bf571e0396048d3e4251049cdae88fc74004f9d7ad6abae41"
+    },
+    {
+      "byte_size": 972,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/cum-sanctissimum.toml",
+      "sha256": "2f25f2bf95ba6e532fe52ed84cdd55503500fdddec8a8d0e2159c9aa2a42a1f7"
+    },
+    {
+      "byte_size": 923,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/passages/title-page.toml",
+      "sha256": "9e5a3e0ba0ee752933ff85994bfda5780b97f4829b5994391598e87526473951"
+    },
+    {
+      "byte_size": 3226,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/artifacts/canon-facsimile-81503a85/artifact.toml",
+      "sha256": "0f7aace9fd4f1b25865f7740da31e140015bb9725b3f16a0c99efd24283fc3a5"
+    },
+    {
+      "byte_size": 6043091,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/artifacts/canon-facsimile-81503a85/canon-pages.pdf",
+      "sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "byte_size": 3097,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/artifacts/canon-pages-5822dfde/artifact.toml",
+      "sha256": "f3ceb6b479dc97336b78c96e5c47b8329b5af68ac14a42ccb7f42de018577d05"
+    },
+    {
+      "byte_size": 6406002,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/artifacts/canon-pages-5822dfde/canon-pages.zip",
+      "sha256": "5822dfdec429965d753eaf3add84b56ad4e232d5deda141c7c122d1263f0875b"
+    },
+    {
+      "byte_size": 3668,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/artifacts/canon-reading-4c671eae/artifact.toml",
+      "sha256": "4de8ad4dc7ad153578b8ba0b3eae16406950418dc7eedbddbf43ef0cb1a70ae6"
+    },
+    {
+      "byte_size": 6924,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/artifacts/canon-reading-4c671eae/canon-reading.txt",
+      "sha256": "4c671eae9178c75966d1bcb10a77a9a2bd3e4a5bcecbba4bc62e9a310e83a9cb"
+    },
+    {
+      "byte_size": 1515,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/edition.toml",
+      "sha256": "069b015044f0c53cd191e830885a65146f94e5beb5bbd40110c3a17cc28644ce"
+    },
+    {
+      "byte_size": 1056,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-communicantes.toml",
+      "sha256": "749602e28260a68900ca65eb0359e71f5897c56bf0e7cef4665b55b25402049e"
+    },
+    {
+      "byte_size": 1068,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-concluding-response.toml",
+      "sha256": "ad858b81dd9256508dd9aa828b5d7d58dcc7bd9d8e26b0edff9cbb489aea8e9e"
+    },
+    {
+      "byte_size": 1262,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-facsimile.toml",
+      "sha256": "4297bd5db39b8aac3d8af70178358f6dc754fdbb0be77bf7ae1e094f2078e274"
+    },
+    {
+      "byte_size": 1052,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-hanc-igitur.toml",
+      "sha256": "ef54e5840e508ff86e674c0f7693df047743bd559c0342c38e901be574a3286c"
+    },
+    {
+      "byte_size": 1040,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-heading.toml",
+      "sha256": "459af8f7e9dc6405e5ce085d53870d718616314730e8d2533f1a62500c45059b"
+    },
+    {
+      "byte_size": 1083,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-memento-defunctorum.toml",
+      "sha256": "f061d0d21da69febb2259ddefb701825758c6487acd651b40fa5c0d316a4bc91"
+    },
+    {
+      "byte_size": 1060,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-memento-vivorum.toml",
+      "sha256": "a478637afb2c55e400a65d39bb0457f238f0659c1f2f9cfc89ae934c86b12569"
+    },
+    {
+      "byte_size": 1054,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-nobis-quoque.toml",
+      "sha256": "bd4a12152aa5a64173d03ac28ae3c6d212e32365600c2e9a27d880ede56a8795"
+    },
+    {
+      "byte_size": 1054,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-opening-rubric.toml",
+      "sha256": "f8d994d881d7c24f73b5546ec30dab7a44167b50d952c53089eb9ee525e27dfb"
+    },
+    {
+      "byte_size": 1048,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-per-ipsum.toml",
+      "sha256": "ccc401ba6369f1efcf96178204e6f984b5f1d23558c085e471acfa92757b5983"
+    },
+    {
+      "byte_size": 1046,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-per-quem.toml",
+      "sha256": "7ae9bed707fe74f566450dcc632d3b94646eca9c0900865c702578106184c061"
+    },
+    {
+      "byte_size": 1060,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-quam-oblationem.toml",
+      "sha256": "3a22d6c8fb089bfe670a0c5a2cafc2e377a4dbca722d09603dfcd760d34813b1"
+    },
+    {
+      "byte_size": 1050,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-qui-pridie.toml",
+      "sha256": "ad759a0be48eeadfa4bfdae875fd3d61b1feb7718744c1829cdd477f3f7c0a2f"
+    },
+    {
+      "byte_size": 1067,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-simili-modo.toml",
+      "sha256": "b15285b5152eff44759c94d563dedf1fe0fb2ab4671baf3a985e6d4e450d546a"
+    },
+    {
+      "byte_size": 1048,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-supplices.toml",
+      "sha256": "e492a33780c47560217be1689862ce949f6f4a3364dabe5e844c468b4fbdc083"
+    },
+    {
+      "byte_size": 1050,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-supra-quae.toml",
+      "sha256": "348cc9fe31433439e66e15b1a973bf959587fcc2c68691109dca3187afc1df88"
+    },
+    {
+      "byte_size": 1044,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-te-igitur.toml",
+      "sha256": "dae4156111be4bb7a7d2ad9d5f20cc3191f1adab5cae5fbd7f5bc1a379ee3ab6"
+    },
+    {
+      "byte_size": 1060,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/canon-unde-et-memores.toml",
+      "sha256": "d15c36a1560a2909c891a2a20a099d3e94284d91176719601527bcabadb9cb30"
+    },
+    {
+      "byte_size": 848,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/colophon.toml",
+      "sha256": "75ddb88c3998b941e9ecf9984f7048d7008aa7000fdedb61e889b8c8ea04f797"
+    },
+    {
+      "byte_size": 994,
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/passages/title-page.toml",
+      "sha256": "8aa2356edf963dd77122d35caa23cdbbff105ddd2e077bb518abd62bbe4ccd5a"
     },
     {
       "byte_size": 536,
@@ -2898,14 +3693,489 @@
       "sha256": "1511381b49d641d59ee3443e07a6c89d3e4bed5f20145e1f9b42b4b6299fa271"
     },
     {
+      "byte_size": 2381,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/canon-facsimile-d8bccdc6/artifact.toml",
+      "sha256": "416f4408810377f94361cba6fd8e1b69fbadac6fb72f1eeacc69d7f1e6ef0517"
+    },
+    {
+      "byte_size": 813341,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/canon-facsimile-d8bccdc6/canon-pages.pdf",
+      "sha256": "d8bccdc66725131b4cde5d58a4591793e891274ea0ea7eb120a130ea263f79d3"
+    },
+    {
+      "byte_size": 3713,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/canon-reading-e6d0e91f/artifact.toml",
+      "sha256": "b45c8ff2b2c61de71802b97cbaef6ca6577ef8076b6c0b08f3a8628cea74f2bd"
+    },
+    {
+      "byte_size": 4623,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/canon-reading-e6d0e91f/canon-reading.txt",
+      "sha256": "e6d0e91f2ee6a0d81851801d35065fbd9d6f4b9e8472627eef28efa851e309cc"
+    },
+    {
+      "byte_size": 2472,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/ia-complete-pdf-7754c4c5/artifact.toml",
+      "sha256": "58155341aa405621c9ac4b832c941a7ae51ac6b2f21b32fe677fcf990508678a"
+    },
+    {
+      "byte_size": 2709,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/pdf-page-5-image-2db9d0ae/artifact.toml",
+      "sha256": "697ab65766a8bc129a322544934f402f8a05cc367f24b418cdf70346ac424dfd"
+    },
+    {
+      "byte_size": 2592403,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/pdf-page-5-image-2db9d0ae/page.png",
+      "sha256": "2db9d0aef8743747806ab4537f3d9811253dd9bddc82fc31c129553d9e6fda2d"
+    },
+    {
       "byte_size": 553,
       "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/edition.toml",
       "sha256": "9915215f493f5de7520c1ed2504d1e4a4d2479192b49aab985a09bbd20b9904d"
     },
     {
+      "byte_size": 1001,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/canon-communicantes.toml",
+      "sha256": "e5880dc552cf2082582df0786003fd6020c55473af989086d76c9ff6ae3a0675"
+    },
+    {
+      "byte_size": 1332,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/canon-facsimile.toml",
+      "sha256": "885b34a957f91928717f39a14c9f8bcd8c672af67105d81e538b7f129fdb4d55"
+    },
+    {
+      "byte_size": 995,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/canon-hanc-igitur.toml",
+      "sha256": "1b8e76e161dab7c9f5cda99b88db318649aa7b4db114a8d222b6f5bed0545c56"
+    },
+    {
+      "byte_size": 1041,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/canon-memento-defunctorum.toml",
+      "sha256": "4f61eed4148a3e4b229366e70a5ec07d6371acfdede1c6c0fbfdc645ab73475f"
+    },
+    {
+      "byte_size": 1036,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/canon-memento-vivorum.toml",
+      "sha256": "21cfc4ed9002a2d44c3c46a461f4b15b1159f36a1a4142ce084540fe940217c3"
+    },
+    {
+      "byte_size": 1015,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/canon-nobis-quoque.toml",
+      "sha256": "b38e52f51a39a594140fa6fc42b48ec570ab75b409c930997a6f5a05057ca1d9"
+    },
+    {
+      "byte_size": 1032,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/canon-per-ipsum.toml",
+      "sha256": "993f1990b130ecdd5d6612f4686f4f12bebd30e9eaa510531ab3edbef8d17408"
+    },
+    {
+      "byte_size": 1001,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/canon-per-quem.toml",
+      "sha256": "c4a5796763104e84d79c6f8a51d598f2b12b856930f8bbe77d292789d4046bd4"
+    },
+    {
+      "byte_size": 1007,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/canon-quam-oblationem.toml",
+      "sha256": "d667bfb6e25b145b03a4943483b4db422ee68a73837f1d16ebeeea49d31be244"
+    },
+    {
+      "byte_size": 1045,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/canon-qui-pridie.toml",
+      "sha256": "310dcd94c371bab7826608c1116dabe7a63bad802378b326c751ed58e65ae5dc"
+    },
+    {
+      "byte_size": 1044,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/canon-simili-modo.toml",
+      "sha256": "df3d5ebf5b23a4f964477988776d65d448548cc69e1fe6ef6c8137dbfc520343"
+    },
+    {
+      "byte_size": 1027,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/canon-supplices.toml",
+      "sha256": "af424a109a9f189a4ba897f2fa089194fffa21823c9cf6663d74bbcd0b517d69"
+    },
+    {
+      "byte_size": 996,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/canon-supra-quae.toml",
+      "sha256": "ff4995e6bad62cdd52b6315548ff831d4774a1cdcf73769aaf2c1336419e8ff1"
+    },
+    {
+      "byte_size": 989,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/canon-te-igitur.toml",
+      "sha256": "21e135db16a2b24dd860ff22059efe98d4b2b92147527be958dffbfee39502f5"
+    },
+    {
+      "byte_size": 1011,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/canon-unde-et-memores.toml",
+      "sha256": "6d2a57f17fa67222a59f25633a5f1f4f9561852f21b2a876f8edbe8ca9894b15"
+    },
+    {
+      "byte_size": 1103,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/passages/title.toml",
+      "sha256": "13e92b9eae41dad36be359595519d9471c878f5dcbc6dfd0ee8b1d2bad382f43"
+    },
+    {
+      "byte_size": 2343,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/artifacts/canon-facsimile-01039899/artifact.toml",
+      "sha256": "5033cd2ed45843a490b253b6a31f9a2776d2a69f9b7fbfabb1454ea5ae21e551"
+    },
+    {
+      "byte_size": 3095056,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/artifacts/canon-facsimile-01039899/canon-pages.pdf",
+      "sha256": "01039899570786b6076e3632f788731f885d6a803fb33eb215bcb35a303311de"
+    },
+    {
+      "byte_size": 2695,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/artifacts/canon-pages-da53ecc3/artifact.toml",
+      "sha256": "1b9187e47bd1b4a05f013f80b474c3a5d70a4fd77a88aaf24c0808e810d05d90"
+    },
+    {
+      "byte_size": 7963253,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/artifacts/canon-pages-da53ecc3/canon-pages.zip",
+      "sha256": "da53ecc32b1a4e4e3c78e62eb3ca24f3acd09e35d8bd81d1eb59b8c94a858b8d"
+    },
+    {
+      "byte_size": 3617,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/artifacts/canon-reading-4ce34b72/artifact.toml",
+      "sha256": "0e58f24ccabebd221726b7a5819a03815978308fd1ebda34b902381b7cab65bf"
+    },
+    {
+      "byte_size": 4639,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/artifacts/canon-reading-4ce34b72/canon-reading.txt",
+      "sha256": "4ce34b7217f9c2930d1a456c058e1e9832c09369b50c22c120def00250075af5"
+    },
+    {
+      "byte_size": 1026,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/edition.toml",
+      "sha256": "85f706da07d0dea5e4f47525e7358e6b909f1f61d0bc981bd2e66dbf5c71020d"
+    },
+    {
+      "byte_size": 1059,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/canon-communicantes.toml",
+      "sha256": "6da9bfa92e4cb91f449a885fdae0821d8937e96e809c1a97d51080a9664803c3"
+    },
+    {
+      "byte_size": 1523,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/canon-facsimile.toml",
+      "sha256": "f5c58697a9afffbd6a59032ca7a0fb9a4426619133a3dcae74ccd731023f8c67"
+    },
+    {
+      "byte_size": 1023,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/canon-hanc-igitur.toml",
+      "sha256": "a41fc18954239d89773b2bc70f64f642af6a73085ca61b100113a5b88641f7ed"
+    },
+    {
+      "byte_size": 1099,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/canon-memento-defunctorum.toml",
+      "sha256": "4f78fab86c7338b4837dc0942cf1bfa77361068cbb731cdbbb6c1436f5dd2f52"
+    },
+    {
+      "byte_size": 1041,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/canon-memento-vivorum.toml",
+      "sha256": "3c6e927b7a1fa9196b90a8cdcfa84388bcae82c5b7d40643377ac7546fc267e7"
+    },
+    {
+      "byte_size": 1043,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/canon-nobis-quoque.toml",
+      "sha256": "6694a33d12da3d84b64219f9a8d9e170dfe0879b1370a6924e79d152d4be0177"
+    },
+    {
+      "byte_size": 1060,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/canon-per-ipsum.toml",
+      "sha256": "27e5423cf50b7094697a64460ee1f917583cb9dca1195981d995b4d6c008cef9"
+    },
+    {
+      "byte_size": 1029,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/canon-per-quem.toml",
+      "sha256": "e6e84a50a2b54fa225c644a223bdb4c74df113eed3a88e87d2f74922b761a07b"
+    },
+    {
+      "byte_size": 1035,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/canon-quam-oblationem.toml",
+      "sha256": "5dd0728ffa63a07f077a2f6ed7b8e403d5ed7656a95a94135c8c4daf7b1665c7"
+    },
+    {
+      "byte_size": 1050,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/canon-qui-pridie.toml",
+      "sha256": "4c8e2e96f918a0f0f9c131cd0ba62f7d4871381ecfb25ab94bbfe195eaf603a6"
+    },
+    {
+      "byte_size": 1072,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/canon-simili-modo.toml",
+      "sha256": "b121628dd8b5db4ea9bd92fcfdc7c9a5ad56a246fb478c4e7a7f6a59a5c71667"
+    },
+    {
+      "byte_size": 1032,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/canon-supplices.toml",
+      "sha256": "4ee7ec5f0969cebdb7ac4b09e331aa8fae1f6855e0e90027954e009ce375491c"
+    },
+    {
+      "byte_size": 1024,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/canon-supra-quae.toml",
+      "sha256": "0283b16e7ff239ed4d64cf29284c04d0a0912af72f61f4b8085d396ca1cf5f57"
+    },
+    {
+      "byte_size": 1017,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/canon-te-igitur.toml",
+      "sha256": "0d9550f73c03c96e96811ffde88f2fcb2c9b47c291d72887d15f9caf286f27a1"
+    },
+    {
+      "byte_size": 1039,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/canon-unde-et-memores.toml",
+      "sha256": "64b964073d5caff0729c213d029cf3837ec5cadc8a31e4b708002352f55f23b6"
+    },
+    {
+      "byte_size": 1123,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/passages/title.toml",
+      "sha256": "4e329007e5b4a482434ce5131a75424fa0feeb446ebd6e2b3966b8b9a50defb1"
+    },
+    {
+      "byte_size": 2449,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/artifacts/canon-facsimile-8a76918a/artifact.toml",
+      "sha256": "eaf946e90d659f3d38050623d238e8cac2bd8ea8752ef6c1bfef3071f81a2108"
+    },
+    {
+      "byte_size": 4674989,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/artifacts/canon-facsimile-8a76918a/canon-pages.pdf",
+      "sha256": "8a76918a100a36b818dd5ca1548ce9b5c19b5aadfb7f72c8fdcc8f075274d541"
+    },
+    {
+      "byte_size": 3048,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/artifacts/canon-pages-6c9665c8/artifact.toml",
+      "sha256": "bdf9c652996fd54c09c2236d3b75c835c4ae5e577105ccfb79ffd618e4dc2d6a"
+    },
+    {
+      "byte_size": 12265800,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/artifacts/canon-pages-6c9665c8/canon-pages.zip",
+      "sha256": "6c9665c8fa1a9297a186b8d4948f4c82d58fafcbd83b208c5cb1fae24ee45bfa"
+    },
+    {
+      "byte_size": 3792,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/artifacts/canon-reading-ba247899/artifact.toml",
+      "sha256": "7c291a9fba25b7b1e5f88a980b1fe90b4a92920bb6ff9bdc3b2d26936dcb0db6"
+    },
+    {
+      "byte_size": 4674,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/artifacts/canon-reading-ba247899/canon-reading.txt",
+      "sha256": "ba2478994fb023899be640404cd3d52089e8f6d4fa4a7d3ae920dd7a47f85615"
+    },
+    {
+      "byte_size": 1249,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/edition.toml",
+      "sha256": "d3b23fd20e949cf68d0595175f86ad37285e8675930f710521b9e1fe783bd587"
+    },
+    {
+      "byte_size": 1051,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-communicantes.toml",
+      "sha256": "ec046bd33faff9b6bdc084e0672d6df0aa1125af3322096582eb7e08b77d755e"
+    },
+    {
+      "byte_size": 1389,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-facsimile.toml",
+      "sha256": "7eb314e26dfc33f0020a3469f48ad827715b8b3c699b5a799430edd1684d5cc6"
+    },
+    {
+      "byte_size": 1017,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-hanc-igitur.toml",
+      "sha256": "a9baab3d6db442610358650039d09b6daf32d87c9fc53a2c4071ccf64610901f"
+    },
+    {
+      "byte_size": 1023,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-heading.toml",
+      "sha256": "5d25e81ed571a484a337111cff30682da807e0d6cc67fd9a352f7435536b4fb3"
+    },
+    {
+      "byte_size": 1063,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-memento-defunctorum.toml",
+      "sha256": "876be24e09dce42d389dd33f2d9a28affc5f9a2a242da03c7e500c1fa41ebd44"
+    },
+    {
+      "byte_size": 1039,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-memento-vivorum.toml",
+      "sha256": "efce3c2d8ce6d7c9a143a2dfba383f4fdd2bf462b4a6af1a32fbe2c5d4cfb933"
+    },
+    {
+      "byte_size": 1037,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-nobis-quoque.toml",
+      "sha256": "e375b19d918828eb9f49f357bc35a8628cc3c21660d0e582204e3e42d9c5ddd9"
+    },
+    {
+      "byte_size": 1054,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-per-ipsum.toml",
+      "sha256": "5ea66df6f8d59ae3d112dc11d57ff63434f160603a5dcd0a0829f2d62adc2acb"
+    },
+    {
+      "byte_size": 1023,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-per-quem.toml",
+      "sha256": "e0b165577ecc39cbabc9ce4d03211c22af2c8e073c69c23500bf227311d3b4b9"
+    },
+    {
+      "byte_size": 1029,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-quam-oblationem.toml",
+      "sha256": "c17c6ef66bd555eb6046271b07aefea7eb6f1bd2c777897e9fae03011d8831bc"
+    },
+    {
+      "byte_size": 1044,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-qui-pridie.toml",
+      "sha256": "70a72c64724ec68ddad8f56fc8ae260571798bc5c730423ad433ac43dd62fa1d"
+    },
+    {
+      "byte_size": 1090,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-simili-modo.toml",
+      "sha256": "2c328803f941df39356a0d432e6a5597f27fef2cf4af99682b5aee882df58ab9"
+    },
+    {
+      "byte_size": 1050,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-supplices.toml",
+      "sha256": "d2a7ce443cd809d7f96d47b942d85708f6331f5aee2a8cdbf164aa44e4bd36a8"
+    },
+    {
+      "byte_size": 1018,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-supra-quae.toml",
+      "sha256": "5e215dab9deb902f1b95974bc5bdb518afe5f4956c2c9d248a9fe859c4e4a239"
+    },
+    {
+      "byte_size": 1015,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-te-igitur.toml",
+      "sha256": "43c8c751e601dbe9461fc9c29e6cfda2595638e3d863bfd3e966fbe23dc288d8"
+    },
+    {
+      "byte_size": 1033,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/canon-unde-et-memores.toml",
+      "sha256": "917c3ac118c8a1f63c031c3ae642d256949ee0b168093b8459d9d7ecfd904c3e"
+    },
+    {
+      "byte_size": 1176,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/passages/title.toml",
+      "sha256": "fbad0afb2294587e9774121e2b49c2685a85743ac2594e7abf0b852ba2ea4f6e"
+    },
+    {
+      "byte_size": 2498,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/canon-facsimile-10863c4a/artifact.toml",
+      "sha256": "05e1f050042baf467604731969379b2b99f5032de4f26586c03a9e6c659bf78e"
+    },
+    {
+      "byte_size": 1405577,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/canon-facsimile-10863c4a/canon-pages.pdf",
+      "sha256": "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+    },
+    {
+      "byte_size": 3900,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/canon-reading-4676dff6/artifact.toml",
+      "sha256": "a447d787a673cedcb2bbc670a6bb0c054ad15b38578e35bb0eb573163f7438ba"
+    },
+    {
+      "byte_size": 4675,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/canon-reading-4676dff6/canon-reading.txt",
+      "sha256": "4676dff6bd7b44aceb12aebd01b705e6f0bba99e91c0d8a74da14ac1f7d49358"
+    },
+    {
+      "byte_size": 2512,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/ia-complete-pdf-7e7d61db/artifact.toml",
+      "sha256": "75e1a9810fc9034a24b8e6a066874d0c4a9dab8b6cd040e11294007c0644ae02"
+    },
+    {
+      "byte_size": 2680,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/pdf-page-3-image-45984dff/artifact.toml",
+      "sha256": "2083fea4a291370966399a1a35f283c16f08152517ff50fbe7dcda754b73309c"
+    },
+    {
+      "byte_size": 845851,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/pdf-page-3-image-45984dff/page.png",
+      "sha256": "45984dff778900d37665eec7252aca7020615faa6f2f4f542fa8ffb4251c2eed"
+    },
+    {
       "byte_size": 583,
       "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/edition.toml",
       "sha256": "e87c4ae6c93d4aa9117a84a040cdb6afbd0b8c18c1510e2572e518ee96c00c7b"
+    },
+    {
+      "byte_size": 1041,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-communicantes.toml",
+      "sha256": "f55b8f6e4f75c8aa3109b2da3a32ff048d2117718642d492508e4c10b80f69db"
+    },
+    {
+      "byte_size": 1469,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-facsimile.toml",
+      "sha256": "db8f991884317a860acfb903c34ae3acf2fc82d99049f072721b5ca88b8bcf0d"
+    },
+    {
+      "byte_size": 1014,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-hanc-igitur.toml",
+      "sha256": "fc9f52b7bc0f43f8efc7bcfd8a3fbcbfb6d1381d2eef5e8f736e0101cfcda42a"
+    },
+    {
+      "byte_size": 1016,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-heading.toml",
+      "sha256": "226da1212c4a57489b4953faa2be960affe7402cc9596a78797572fd96112be4"
+    },
+    {
+      "byte_size": 1060,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-memento-defunctorum.toml",
+      "sha256": "7741227d14a9a33329a0142dd9e867e4333405b8e5d969224c671f1702b1067f"
+    },
+    {
+      "byte_size": 1032,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-memento-vivorum.toml",
+      "sha256": "35fb31e886bb4d9cc1a2cebad05687f5404b88324d36dd720d165d5d8564fedc"
+    },
+    {
+      "byte_size": 1055,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-nobis-quoque.toml",
+      "sha256": "0a55bb6bde79f8eb08e87779500461319598443a0b05d2ca030d31f98ab8fd87"
+    },
+    {
+      "byte_size": 1051,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-per-ipsum.toml",
+      "sha256": "389a66cb54705c247159ce3a235c4b25468c7abc0f0ae05d1042edb09df6877f"
+    },
+    {
+      "byte_size": 1020,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-per-quem.toml",
+      "sha256": "09dce5f095e7f506f40894010affee86b640a1d469606c929fed30319989be3e"
+    },
+    {
+      "byte_size": 1026,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-quam-oblationem.toml",
+      "sha256": "16c269e9558a6d20e3fe5fc8be32e8dd82e72209b8fd156e0b7e02d7632dbda3"
+    },
+    {
+      "byte_size": 1062,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-qui-pridie.toml",
+      "sha256": "2d03165c5f0c3ff5ebc4ac0604cea17b45163981c04a1e65b908c4cb30ec2683"
+    },
+    {
+      "byte_size": 1063,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-simili-modo.toml",
+      "sha256": "9a1a7f9bb8bc5eafc78bd4d838173676fac1806d5a6fcffc3ef12966e2f0a693"
+    },
+    {
+      "byte_size": 1023,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-supplices.toml",
+      "sha256": "9cc1dd566714549ebb5a8ea9e2c7b2fdd6d5c7756743e7d6b518fb38e66dd920"
+    },
+    {
+      "byte_size": 1036,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-supra-quae.toml",
+      "sha256": "ed23ad176383e45b58e780a537fe0960762d1c0925c4d81450cc70b6366f0177"
+    },
+    {
+      "byte_size": 1008,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-te-igitur.toml",
+      "sha256": "6e2facfedacf308db49ab034c3fdcd53152dd653ba3ccc40903ab1f3afb42380"
+    },
+    {
+      "byte_size": 1030,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/canon-unde-et-memores.toml",
+      "sha256": "8411d2881fe5ff3d6f4fcab2381bd9b89891e7b32457dff039d5ca3a14a45706"
+    },
+    {
+      "byte_size": 1051,
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/passages/title.toml",
+      "sha256": "e0bc40aeac537f19f6b9c8a62247a438a25661c5979c6bd0fc788eff02120f36"
+    },
+    {
+      "byte_size": 625,
+      "path": "src/sources/works/order-of-preachers/missale/work.toml",
+      "sha256": "6e93270abf09b2db8c94184d6406d56a1ae79533310c36357896062aeff5beee"
     },
     {
       "byte_size": 1175,
@@ -3620,7 +4890,7 @@
     {
       "byte_size": 255818,
       "path": "tools/act-history",
-      "sha256": "53dc898b8b94642039863ef06a86c88321bb5fc5260713fdd1be0fcff0191f0b"
+      "sha256": "cf2d6ae5b90d07f130a653cb1d11de7493a16b9bdcf3f9e4e39d76ae27151e6f"
     },
     {
       "byte_size": 124276,

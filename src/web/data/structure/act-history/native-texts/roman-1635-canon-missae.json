@@ -1,0 +1,804 @@
+{
+  "adapter_id": "native-book:roman-1635-canon-missae",
+  "binding_sha256": "318f418bfc3c49faee1e60659f0344c29bd8757ad1199bd4a8c4352fe0525f87",
+  "catalogue_witness_ids": [
+    "western:roman-modern-1635-vatican-gb-xnc4a07qpqqc"
+  ],
+  "counts": {
+    "languages": {
+      "la": 17
+    },
+    "units": 17,
+    "whitespace_tokens": 959
+  },
+  "id": "roman-1635-canon-missae",
+  "schema": "triptych-eucharistic-native-text/v1",
+  "scope": {
+    "complete_declared_extent": true,
+    "description": "Complete strict Eucharistic Canon of the Rome 1635 Typographia Vaticana printing of the Missal recognized by Urban VIII, from the display title CANON MISSAE and red Sacerdos rubric on printed p. 245 through Per omnia saecula saeculorum, R. Amen and the red Iungit manus beside the chant staff on printed p. 249, before Oremus. Praeceptis salutaribus. Includes the display title, three red headings, all action rubrics and 25 printed crosses under a declared selective reading normalization that shares the letter-form conventions of roman-1570-canon-missae but keeps printed capitalization and punctuation. Excludes the prefaces and Sanctus before p. 245, the Crucifixion plate (Google page PA244), the Oremus, Pater noster and everything after it, and the retained title, Cum sanctissimum, Si quid est and colophon pages, which are identity and promulgation evidence only. Neither the whole Missal nor diplomatic glyph, accent or chant-pitch completeness is claimed.",
+    "extent_kind": "constituent",
+    "known_extent_pages": 5,
+    "known_extent_units": 17,
+    "omitted_book_divisions": [
+      "Prefaces and Sanctus before the Canon display title on printed p. 245",
+      "Oremus, Pater noster, communion, dismissal and all other material after Per omnia saecula saeculorum, R. Amen and Iungit manus, even where the Canon Missae running head continues",
+      "Front matter, title, papal bulls and colophon retained in the same artifact only as identity and promulgation evidence",
+      "All propers, calendar, lectionary, general rubrics, Ritus servandus and other ordinary outside the strict Canon",
+      "Running heads, page numbers, signatures, catchwords, ornaments, engraved frames and plates, diplomatic glyph and accent variants and chant-note pitches"
+    ],
+    "status": "complete-native-constituent",
+    "whole_book_complete": false
+  },
+  "sources": [
+    {
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "record_type": "artifact",
+      "rights_basis": "The Rome 1635 Typographia Vaticana printing is public domain in the United States by publication date (first published abroad before the pre-1931 line derived for 2026). The page images are Google's public full-view digitization of an original copy (Google Books XNC4a07qPqQC), faithful mechanical reproductions that add no original authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)); no Google front-matter text is included in the retained bytes. Mechanical extraction, resampling and a faithful bounded reading transcription add no separately claimed rights. Excluded from the Triptych CC BY 4.0 grant.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC",
+      "transformation": "ImageMagick decoded each exact package member, resized it to at most 2000 px on the long side, stripped metadata and embedded it as a colour quality-85 JPEG page of a PDF in package order. Colour is kept because red and black ink distinguish rubrics from spoken text. JPEG is lossy; the exact provider images remain in the parent package. No crop, page omission, OCR or editorial text."
+    },
+    {
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "record_type": "artifact",
+      "rights_basis": "The Rome 1635 Typographia Vaticana printing is public domain in the United States by publication date (first published abroad before the pre-1931 line derived for 2026). The page images are Google's public full-view digitization of an original copy (Google Books XNC4a07qPqQC), faithful mechanical reproductions that add no original authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)); no Google front-matter text is included in the retained bytes. Mechanical extraction, resampling and a faithful bounded reading transcription add no separately claimed rights. Excluded from the Triptych CC BY 4.0 grant.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "source_url": "https://books.google.com/books?id=XNC4a07qPqQC",
+      "transformation": "Render the 17-unit reading into 83 sequential UTF-8 LF lines. The display title, each red heading, each red rubric and each spoken or read block occupy their own lines in source order. Letter-form normalization uses the conventions of the roman-1570-canon-missae reading so that dated Roman Canon states can be compared word for word: long s becomes s; ae/oe ligatures and e-caudata become ae/oe; u/v are regularized (u vowel, v consonant) and j becomes i (final ij as ii); the ampersand becomes et; enclitic q. becomes que; nasal bars and other printed contractions are expanded (Dne Domine, Dni Domini, final -um/-em/-am, cum, -tum); acute and grave accents are omitted; display initials and spaced capitals are merged in sentence case; line-end word divisions are joined and one space follows punctuation. Unlike the roman-1570-canon-missae reading, whose capitalization does not consistently follow its print, spelling, capitalization and punctuation are otherwise kept as printed, so case differences against that reading are not evidence of change (for example eumdem, coenatum, saecula, Thadaei/Thaddaei, Matthia/Mathia). Printed crosses are rendered as U+2720 at their source positions; printed N. is kept; the printed response sign is R. Running heads, page numbers, signatures, catchwords, ornaments and chant notes are excluded. This is a normalized reading transcription, not a glyph-diplomatic facsimile. The native extent record classifies every physical line as heading, red-heading, red-rubric or reading without duplicating the literal wording."
+    },
+    {
+      "authority": "Urban VIII, by the brief Si quid est, printed in the book after Quo primum and Cum sanctissimum and dated at S. Maria Maggiore 2 September 1634; it names Pius V and Clement VIII as the predecessors whose recognition it revises and entrusts the corrected Missal to Andrea Brogiotto, prefect of the Apostolic press.",
+      "date": "1635",
+      "id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "language": "la",
+      "publication": "Romae: Ex Typographia Vaticana, MDCXXXV (title and colophon); De licentia Superiorum. Google Books XNC4a07qPqQC, an original copy with manuscript ownership inscription Balth. Moreti; holding library not identified.",
+      "record_type": "edition",
+      "title": "Missale Romanum ex decreto sacrosancti Concilii Tridentini restitutum, Pii V iussu editum, Clementis VIII primum, nunc denuo Urbani VIII auctoritate recognitum: Rome, Typographia Vaticana, 1635"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-communicantes",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-concluding-response",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-hanc-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-heading",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-memento-defunctorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-memento-vivorum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-nobis-quoque",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-opening-rubric",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-per-ipsum",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-per-quem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-quam-oblationem",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-qui-pridie",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-simili-modo",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-supplices",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-supra-quae",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-te-igitur",
+      "record_type": "passage"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-unde-et-memores",
+      "record_type": "passage"
+    }
+  ],
+  "stage_ids": [
+    "roman-stages-1634"
+  ],
+  "title": "Rome 1635 (Urbanian recension): complete strict Canon Missae constituent",
+  "units": [
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "heading",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "heading"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-heading",
+      "source_locator": "Strict Canon unit heading; printed p. 245; Google page PA245; PDF page(s) 5; normalized-text physical lines 1-1.",
+      "source_order": 1,
+      "text": "Canon Missae.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "70d0ade9cefbb09038134c3a892d793218d0a32c213d4401170a3abc337ebcba",
+      "unit_id": "unit.rome-1635.canon.heading",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "rubric",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "opening-rubric"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-opening-rubric",
+      "source_locator": "Strict Canon unit opening-rubric; printed p. 245; Google page PA245; PDF page(s) 5; normalized-text physical lines 2-2.",
+      "source_order": 2,
+      "text": "Sacerdos extendens et iungens manus, elevans ad caelum oculos, et statim demittens, profunde inclinatus ante Altare, manibus super eo positis, dicit.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "4469e89e6991fbbd4cef65d60a898c7885f471712d17b89329836ffb8c50065c",
+      "unit_id": "unit.rome-1635.canon.opening-rubric",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-te-igitur",
+      "source_locator": "Strict Canon unit te-igitur; printed p. 245; Google page PA245; PDF page(s) 5; normalized-text physical lines 3-9.",
+      "source_order": 3,
+      "text": "Te igitur, clementissime Pater, per Iesum Christum Filium tuum Dominum nostrum, supplices rogamus ac petimus,\nOsculatur Altare,\nuti accepta habeas, et benedicas,\nIungat manus, deinde signet ter super oblata.\nhaec ✠ dona, haec ✠ munera, haec ✠ sancta sacrificia illibata,\nExtensis manibus prosequitur.\nin primis quae tibi offerimus pro Ecclesia tua sancta catholica: quam pacificare, custodire, adunare, et regere digneris toto orbe terrarum: una cum famulo tuo Papa nostro N. et Antistite nostro N. et omnibus orthodoxis, atque catholicae et Apostolicae fidei cultoribus.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "a6bb25b24952482c71f8a056c244193fe2345e6aec392d9bb5b843bfe4968021",
+      "unit_id": "unit.rome-1635.canon.te-igitur",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-memento-vivorum",
+      "source_locator": "Strict Canon unit memento-vivorum; printed p. 246; Google page PA246; PDF page(s) 6; normalized-text physical lines 10-13.",
+      "source_order": 4,
+      "text": "Commemoratio pro vivis.\nMemento Domine, famulorum famularumque tuarum N. et N.\nIungit manus, orat aliquantulum pro quibus orare intendit: deinde manibus extensis prosequitur.\nEt omnium circumstantium, quorum tibi fides cognita est, et nota devotio, pro quibus tibi offerimus: vel qui tibi offerunt hoc sacrificium laudis, pro se, suisque omnibus: pro redemptione animarum suarum, pro spe salutis et incolumitatis suae: tibique reddunt vota sua aeterno Deo, vivo et vero.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "0c29b33d3e4a85cfae975b533404ad89719184407fae2332ac8dc30786d8801d",
+      "unit_id": "unit.rome-1635.canon.memento-vivorum",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-communicantes",
+      "source_locator": "Strict Canon unit communicantes; printed p. 246; Google page PA246; PDF page(s) 6; normalized-text physical lines 14-17.",
+      "source_order": 5,
+      "text": "Infra actionem.\nCommunicantes, et memoriam venerantes, in primis gloriosae semper virginis Mariae, genitricis Dei et Domini nostri Iesu Christi: sed et beatorum Apostolorum ac Martyrum tuorum, Petri et Pauli, Andreae, Iacobi, Ioannis, Thomae, Iacobi, Philippi, Bartholomaei, Matthaei, Simonis et Thaddaei: Lini, Cleti, Clementis, Xysti, Cornelii, Cypriani, Laurentii, Chrysogoni, Ioannis et Pauli, Cosmae et Damiani: et omnium sanctorum tuorum: quorum meritis precibusque concedas, ut in omnibus protectionis tuae muniamur auxilio.\nIungit manus.\nPer eumdem Christum Dominum nostrum, Amen.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "84d8bbf331fe877d88af4d97bcc59600edb777867fadbe2b0a03e186b1cebcad",
+      "unit_id": "unit.rome-1635.canon.communicantes",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-hanc-igitur",
+      "source_locator": "Strict Canon unit hanc-igitur; printed p. 246; Google page PA246; PDF page(s) 6; normalized-text physical lines 18-21.",
+      "source_order": 6,
+      "text": "Tenens manus expansas super oblata dicit.\nHanc igitur oblationem servitutis nostrae, sed et cunctae familiae tuae, quaesumus Domine, ut placatus accipias: diesque nostros in tua pace disponas, atque ab aeterna damnatione nos eripi, et in electorum tuorum iubeas grege numerari.\nIungit manus.\nPer Christum Dominum nostrum, Amen.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "e1f7abd74486185b1997f39566fd95dbc84e50eac41b451fbc543e4ed1de7cb1",
+      "unit_id": "unit.rome-1635.canon.hanc-igitur",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-quam-oblationem",
+      "source_locator": "Strict Canon unit quam-oblationem; printed p. 246; Google page PA246; PDF page(s) 6; normalized-text physical lines 22-26.",
+      "source_order": 7,
+      "text": "Quam oblationem tu Deus in omnibus, quaesumus,\nSignat ter super oblata,\nbene✠dictam, adscri✠ptam, ra✠tam, rationabilem, acceptabilemque facere digneris:\nSignat semel super Hostiam, et semel super Calicem:\nut nobis Cor✠pus, et San✠guis fiat dilectissimi Filii tui Domini nostri Iesu Christi.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "1f72e6acafa4255d98c913ba0ffb594a5680a0004a15e01dda9725221e9d9f1a",
+      "unit_id": "unit.rome-1635.canon.quam-oblationem",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-qui-pridie",
+      "source_locator": "Strict Canon unit qui-pridie; printed p. 247; Google page PA247; PDF page(s) 7; normalized-text physical lines 27-36.",
+      "source_order": 8,
+      "text": "Qui pridie quam pateretur,\nAccipit Hostiam:\naccepit panem in sanctas ac venerabiles manus suas:\nElevat oculos ad caelum:\net elevatis oculis in caelum ad te Deum Patrem suum omnipotentem: tibi gratias agens,\nSignat super Hostiam,\nbene✠dixit, fregit, deditque discipulis suis, dicens: Accipite, et manducate ex hoc omnes.\nTenens ambabus manibus Hostiam inter indices et pollices, profert verba consecrationis secrete, distincte, et attente.\nHoc est enim corpus meum.\nProlatis verbis consecrationis, statim Hostiam consecratam genuflexus adorat: surgit, ostendit populo, reponit super Corporale, iterum adorat: et non disiungit pollices et indices, nisi quando Hostia tractanda est, usque ad ablutionem digitorum. Tunc detecto Calice dicit.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "f7443bcb01ed084194368ec6b764fefb5289b283b80cb16112430e387ce8dd76",
+      "unit_id": "unit.rome-1635.canon.qui-pridie",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "institution-narrative-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-simili-modo",
+      "source_locator": "Strict Canon unit simili-modo; printed p. 247, 248; Google page PA247, PA248; PDF page(s) 7, 8; normalized-text physical lines 37-46.",
+      "source_order": 9,
+      "text": "Simili modo postquam coenatum est,\nAmbabus manibus accipit Calicem.\naccipiens et hunc praeclarum Calicem in sanctas ac venerabiles manus suas: item tibi gratias agens,\nSinistra tenens Calicem, dextera signat super eum.\nbene✠dixit, deditque discipulis suis, dicens: Accipite et bibite ex eo omnes.\nProfert verba consecrationis secrete super Calicem, tenens illum parum elevatum.\nHic est enim Calix sanguinis mei, novi et aeterni testamenti: mysterium fidei: qui pro vobis et pro multis effundetur in remissionem peccatorum.\nProlatis verbis consecrationis, deponit Calicem super Corporale, et dicens secrete:\nHaec quotiescumque feceritis, in mei memoriam facietis.\ngenuflexus adorat: surgit, ostendit populo, deponit, cooperit, et iterum adorat. Deinde disiunctis manibus dicit.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "149d534f44dcb3e5275505a157a4ac47762b0ad72ced14c1781a3598520a8ffa",
+      "unit_id": "unit.rome-1635.canon.simili-modo",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-unde-et-memores",
+      "source_locator": "Strict Canon unit unde-et-memores; printed p. 248; Google page PA248; PDF page(s) 8; normalized-text physical lines 47-52.",
+      "source_order": 10,
+      "text": "Unde et memores Domine, nos servi tui, sed et plebs tua sancta, eiusdem Christi Filii tui Domini nostri tam beatae passionis, necnon et ab inferis resurrectionis, sed et in caelos gloriosae ascensionis: offerimus praeclarae maiestati tuae de tuis donis ac datis,\nIungit manus, et signat ter super Hostiam et Calicem simul.\nHostiam ✠ puram, hostiam ✠ sanctam, hostiam ✠ immaculatam,\nSignat semel super Hostiam, et semel super Calicem:\nPanem ✠ sanctum vitae aeternae, et Calicem ✠ salutis perpetuae.\nExtensis manibus prosequitur.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "f739ec4361fa60c4dfc6333ca1d3c7654b45ce86398769753148a1034cd9550f",
+      "unit_id": "unit.rome-1635.canon.unde-et-memores",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-supra-quae",
+      "source_locator": "Strict Canon unit supra-quae; printed p. 248; Google page PA248; PDF page(s) 8; normalized-text physical lines 53-53.",
+      "source_order": 11,
+      "text": "Supra quae propitio ac sereno vultu respicere digneris: et accepta habere, sicuti accepta habere dignatus es munera pueri tui iusti Abel, et sacrificium patriarchae nostri Abrahae: et quod tibi obtulit summus sacerdos tuus Melchisedech, sanctum sacrificium, immaculatam hostiam.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "7c19bf675ea732405654289ef846bee07a0b15da9f79250674b7fd507a894ac9",
+      "unit_id": "unit.rome-1635.canon.supra-quae",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-supplices",
+      "source_locator": "Strict Canon unit supplices; printed p. 248; Google page PA248; PDF page(s) 8; normalized-text physical lines 54-61.",
+      "source_order": 12,
+      "text": "Profunde inclinatus iunctis manibus, et super Altare positis dicit.\nSupplices te rogamus, omnipotens Deus: iube haec perferri per manus sancti Angeli tui in sublime altare tuum, in conspectu divinae maiestatis tuae: ut quotquot\nosculatur Altare,\nex hac altaris participatione, sacrosanctum Filii tui,\nIungit manus, et signat semel super Hostiam, et semel super Calicem,\nCor✠pus, et San✠guinem sumpserimus,\nSeipsum signat,\nomni benedictione caelesti, et gratia repleamur. Per eumdem Christum Dominum nostrum. Amen.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "0fbd8e05e21c20d9f1b672b6cc851c86e69d2efdc4a3d8cb30f0f9849243ce17",
+      "unit_id": "unit.rome-1635.canon.supplices",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-defunctorum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-memento-defunctorum",
+      "source_locator": "Strict Canon unit memento-defunctorum; printed p. 248, 249; Google page PA248, PA249; PDF page(s) 8, 9; normalized-text physical lines 62-67.",
+      "source_order": 13,
+      "text": "Commemoratio pro Defunctis.\nMemento etiam, Domine, famulorum famularumque tuarum N. et N. qui nos praecesserunt cum signo fidei, et dormiunt in somno pacis.\nIungit manus, orat aliquantulum pro iis defunctis, pro quibus orare intendit, deinde extensis manibus prosequitur:\nIpsis Domine, et omnibus in Christo quiescentibus, locum refrigerii, lucis et pacis, ut indulgeas, deprecamur.\nIungit manus, et caput inclinat.\nPer eumdem Christum Dominum nostrum, Amen.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "7fe173cc98b09eb97a8458aec6fdbece13f0aa5223ce3ec2686ac948048505af",
+      "unit_id": "unit.rome-1635.canon.memento-defunctorum",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-nobis-quoque",
+      "source_locator": "Strict Canon unit nobis-quoque; printed p. 249; Google page PA249; PDF page(s) 9; normalized-text physical lines 68-71.",
+      "source_order": 14,
+      "text": "Manu dextera percutit sibi pectus, elata parum voce dicens.\nNobis quoque peccatoribus famulis tuis, de multitudine miserationum tuarum sperantibus, partem aliquam et societatem donare digneris, cum tuis sanctis Apostolis et Martyribus: cum Ioanne, Stephano, Mathia, Barnaba, Ignatio, Alexandro, Marcellino, Petro, Felicitate, Perpetua, Agatha, Lucia, Agnete, Caecilia, Anastasia, et omnibus sanctis tuis: intra quorum nos consortium, non aestimator meriti, sed veniae, quaesumus, largitor admitte.\nIungit manus.\nPer Christum Dominum nostrum.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "18eebd0cf3eed27039612e8549bfb27ee58f2cc9b9e6401d6b18ab23912bff2a",
+      "unit_id": "unit.rome-1635.canon.nobis-quoque",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          9
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "prayer-with-rubrics",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-per-quem",
+      "source_locator": "Strict Canon unit per-quem; printed p. 249; Google page PA249; PDF page(s) 9; normalized-text physical lines 72-75.",
+      "source_order": 15,
+      "text": "Per quem haec omnia, Domine, semper bona creas,\nSignat ter super Hostiam et Calicem simul, dicens:\nsancti✠ficas, vivi✠ficas, bene✠dicis, et praestas nobis.\nDiscooperit Calicem, genuflectit, accipit Sacramentum dextera, tenens sinistra Calicem: signat cum Hostia ter a labio ad labium Calicis, dicens:",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "48467e938a299340646359026274fb0cf1923bb8b029dbff361baca404f2e283",
+      "unit_id": "unit.rome-1635.canon.per-quem",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          9
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "doxology-with-rubrics-and-response",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-per-ipsum",
+      "source_locator": "Strict Canon unit per-ipsum; printed p. 249; Google page PA249; PDF page(s) 9; normalized-text physical lines 76-81.",
+      "source_order": 16,
+      "text": "Per ip✠sum, et cum ip✠so, et in ip✠so,\nbis signat inter Calicem et pectus,\nest tibi Deo Patri ✠ omnipotenti, in unitate Spiritus ✠ sancti,\nElevans parum Calicem cum Hostia, dicit:\nomnis honor et gloria.\nReponit Hostiam, cooperit Calicem, genuflectit, surgit et dicit.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "60bb6b36104294c3a9ecab9066805757f9aded47557418ceb443d241970f00f0",
+      "unit_id": "unit.rome-1635.canon.per-ipsum",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          9
+        ]
+      ]
+    },
+    {
+      "component": "anaphoras",
+      "direction": "ltr",
+      "kind": "notated-dialogue",
+      "language": "la",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "concluding-response"
+      ],
+      "publication": {
+        "basis": "public-domain",
+        "basis_source_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+        "jurisdiction": "United States",
+        "status": "permitted",
+        "surfaces": [
+          "public-git",
+          "corpus-data"
+        ]
+      },
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-reading-4c671eae",
+      "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-concluding-response",
+      "source_locator": "Strict Canon unit concluding-response; printed p. 249; Google page PA249; PDF page(s) 9; normalized-text physical lines 82-83.",
+      "source_order": 17,
+      "text": "Per omnia saecula saeculorum. R. Amen.\nIungit manus.",
+      "text_edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "text_sha256": "b6c63e5befb9914114f651c55901e635b93601f5e234374db7105d4a979761e5",
+      "unit_id": "unit.rome-1635.canon.concluding-response",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          9
+        ]
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "id": "rome-1635-canon-pages",
+      "scope_pages": [
+        [
+          5,
+          9
+        ]
+      ]
+    }
+  ]
+}

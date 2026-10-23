@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-book-collation",
+  "book_id": "mozarabic-1755-ordo-missae",
+  "title": "Independent complete-constituent image collation: Mozarabic Ordo missae core, 1755",
+  "status": "verified",
+  "independent": true,
+  "complete_extent_verified": true,
+  "reviewer": "Independent AI source reviewer (batch-5 text-mozarabic original-image collation), distinct from the transcriber and the coordinator",
+  "checked_on": "2026-10-22",
+  "binding_sha256": "bdb37101b9997173b5dbe0fdb96d06c6a5a898707931053da950be34ddcd5b88",
+  "extent_sha256": "bb145a78f2a67b5192da3621844d35c7fe362f9a251e6ef943c0e5833cebe61e",
+  "witness_sha256": {
+    "copy": "b42ee9f1a2fde02df2c8727920defc32e3c34c5be8603caae278492036fca796"
+  },
+  "unit_sha256": {
+    "mozarabic.1755.ordo.adesto-rubrica": "b469ba1a5f44e0df7196da7c8c440b11cad5c619a78adfc96cd7b0b578452285",
+    "mozarabic.1755.ordo.adesto": "6e792c3d9f7085e9ec7b82dd44226cf271b9103d1456c5faf105deb3ac622904",
+    "mozarabic.1755.ordo.institutio-panis": "8aaad51c36fcef29969cbb67250e4b8de5f985516d354b4309702c7e406928dc",
+    "mozarabic.1755.ordo.institutio-calicis": "60e7b7989fbe78ececa81cb9b7043e371a2bb1734e99a1bc7da8e9323835affd",
+    "mozarabic.1755.ordo.commemoratio-rubrica": "ed9cbe35b80ef44c645dbdcd0a1e2f95f64c43e6776ec0d635296af0da800579",
+    "mozarabic.1755.ordo.quotiescumque": "a89202c44e2ba3591c926d13416fb6a8b12c2b23b53f6a0f41417db8b936e844",
+    "mozarabic.1755.ordo.forma-consecrationis-nota": "c34fd6797c0d27167942248793ce9b34a07a920c05aa0d4450fd9ae519896b36",
+    "mozarabic.1755.ordo.forma-consecrationis": "86100bdd5bca746eade090124d95f600abb81d1ef4c083a55a4f0353e2a1a3c4",
+    "mozarabic.1755.ordo.post-pridie": "b7781a92e55e09c9463591fa2bafbd016ea66b20c9d2e95b1a811d00bd9d3c66",
+    "mozarabic.1755.ordo.te-prestante": "31a60b8d2665ef807d13579a8a80a6705173521f67cb7cc8c1eab3b829e5bd17",
+    "mozarabic.1755.ordo.accipiat-corpus-rubrica": "8ecbdd69b233a46afa3c15f12972cbbc435010df1e794d9b1dc84d1b3082d5f7",
+    "mozarabic.1755.ordo.fractio-figura": "4dd6336696b21da0b16522797ff36e898cd3efb58d8660f148720c774afb73b1",
+    "mozarabic.1755.ordo.fidem": "5e8371566943277b366c4e39a1bce9f96a975460732691191fd4eb0a7fb4c643",
+    "mozarabic.1755.ordo.symbolum-rubrica": "5fa63533669f61b4a4b69f4b603c458fa5c3835ed7e1c0af0f9c7113290d4852",
+    "mozarabic.1755.ordo.symbolum": "87fc225bb4562c23ed37cd6dc204ebb67b41ff2023d04f8523f729babea474df",
+    "mozarabic.1755.ordo.fractio-rubrica": "9dc413a122326c4bde013cbdaa3ecdd825a2672cb490e22b96edf306ebab1169",
+    "mozarabic.1755.ordo.oratio-dominica-rubrica": "b689721a936b3bb0334b7df25091b3fee1353e418dbae9b123d37ce763ef429b",
+    "mozarabic.1755.ordo.ad-orationem-dominicam": "9f9369b032f73aa00df1b54b0293d66e28c2ec5ad5d91bc10aeb7aefd6dd3e06",
+    "mozarabic.1755.ordo.pater-noster": "aaff2dc511086727c57cfb73bec0b770d4c5b10b1668099b56f36c39b183bdb8",
+    "mozarabic.1755.ordo.liberati": "ae0cf805dbb8dc83dc2a0535aedb8f39cc451984b65789a420f9db56e7025bb5"
+  },
+  "scope": "Complete declared Ordo core printed in Dominica prima de adventu of Lesley's Rome 1755 Missale mixtum, printed pp. 5-6 of the NYPL/Google copy (retained facsimile pages 2-3), with the marginal Forma ista note read on the Florence copy of p. 5 (facsimile page 4) because the NYPL gutter crops it: from the italic rubric Deinde dicat Presb. in silentio (p. 5, Lesley line 36) through the Amen after Per omnia secula seculorum ending the Liberati (p. 6, line 81). Includes the two variable Advent I prayers printed inside that span, the Roman consecration form below the columns and the fraction figure. Excludes the title page (identity only), the preceding Inlatio, Sanctus and Post Sanctus, the Sic faciat rubric onward and Lesley's line numbers, running heads and page numbers; no Lesley footnote falls within these pages. Neither the complete Ordinary nor the whole Missal is claimed.",
+  "method": "Cold collation on 2026-10-22: the NYPL title (image 0011) and pp. 5-6 (images 0127-0128, 4450x7209 JPEG2000) were read at full resolution in column strips, then compared word by word with the reading artifact; all four embedded JPEG2000 members were re-fetched from Internet Archive and are byte-identical. The title page reads Missale mixtum ... ab Alexandro Lesleo ... Romae MDCCLV, Monaldini, typis Salomoni. The Florence image is 685 pixels wide; the margin note was read on 8x Lanczos and point-sampled enlargements, where every word is legible (Forma ista consecratio-nis ponitur: ne antiqui-tas ignore-tur: sed ho-die servetur Ecclesie tra-ditio. Vide infra.), and the NYPL gutter fragments independently show the same line ends (-tio-, -tur:, -i-, -e-, ho-, -tur, tra-, Vide). Binding, extent, facsimile, reading artifact, passage and all twenty unit hashes were recomputed from actual bytes after correction.",
+  "findings_resolved": [
+    {
+      "id": "bini-stop",
+      "resolution": "Corrected under the declared 1500 pointing: bini ac bini. videlicet. (1755 prints no stop)."
+    },
+    {
+      "id": "margin-note-legibility",
+      "resolution": "Verified. The 685-pixel Florence image is sufficient for every word of the note on enlargement, and the NYPL gutter fragments corroborate the line ends. The unit is complete in extent."
+    },
+    {
+      "id": "accents",
+      "resolution": "Declaration corrected. 1755 prints occasional accents (bone with accent in Adesto, qui with accent in the Roman form); the transformation now says 1755 accents are omitted as well as 1804 accents."
+    },
+    {
+      "id": "edition-readings",
+      "resolution": "Confirmed on the image: Hic elevatur corpus, Quotiescumque throughout, Oratio after post pridie, adventus without tui, mereamur, sancti✠ficas, benedi✠cis, ut sit, hoc est eiusdem, ad dexteram, et ex Patre et Filio, fiat memento, Quia tu Deus es, and every consecration colon including qui: and et: (printed &:)."
+    }
+  ],
+  "normalization_limit": "Declared reading normalization only, not a diplomatic transcription: printed contractions, suspensions, ampersands and Tironian et expanded; long-s, consonantal u/v and i/j standardized; ae and oe ligatures expanded; the printed accents of 1755 and 1804 omitted; case and clause punctuation regularized so that all three Ordo readings use the 1500 pointing and capitalization for corresponding wording, with nomina sacra capitalized, and printed commas, semicolons, line layout, ink colour and italic are not recorded. The word-dividing colons of the consecration words and of the Roman form are recorded only where each edition prints them. Edition spellings, every lexical item, response, rubric and printed cross at its printed position are retained; the fraction figure is serialized as its nine labels.",
+  "review_limit": "Complete only for this declared Ordo core constituent of the 1755 edition. The two digitized copies are of the same edition; no whole-book text coverage, Lesley apparatus, complete Ordinary or textual parentage is certified."
+}

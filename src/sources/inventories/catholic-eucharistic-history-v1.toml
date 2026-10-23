@@ -1365,6 +1365,14 @@ id = "roman-1570-canon-missae"
 adapter = "native-book:roman-1570-canon-missae"
 
 [[text_sets]]
+id = "roman-1604-canon-missae"
+adapter = "native-book:roman-1604-canon-missae"
+
+[[text_sets]]
+id = "roman-1635-canon-missae"
+adapter = "native-book:roman-1635-canon-missae"
+
+[[text_sets]]
 id = "tuki-1736-arabic-creed"
 adapter = "native-book:tuki-1736-arabic-creed"
 
@@ -1438,6 +1446,16 @@ text_set = "roman-1570-canon-missae"
 parents = []
 
 [[text_versions]]
+id = "roman-1604-canon-missae"
+text_set = "roman-1604-canon-missae"
+parents = []
+
+[[text_versions]]
+id = "roman-1635-canon-missae"
+text_set = "roman-1635-canon-missae"
+parents = []
+
+[[text_versions]]
 id = "tuki-1736-arabic-creed"
 text_set = "tuki-1736-arabic-creed"
 parents = []
@@ -1455,6 +1473,35 @@ parents = [{ version_id = "mozarabic-1500-benedictio-panis", evidence_path = "sr
 [[text_versions]]
 id = "mozarabic-1804-benedictio-panis"
 text_set = "mozarabic-1804-benedictio-panis"
+parents = []
+
+# Independently collated Mozarabic Ordo core (with the two Advent I prayers printed inside it);
+# whole-book coverage remains partial. Each version is an isolated root; parentage is not yet reviewed.
+[[text_sets]]
+id = "mozarabic-1500-ordo-missae"
+adapter = "native-book:mozarabic-1500-ordo-missae"
+
+[[text_versions]]
+id = "mozarabic-1500-ordo-missae"
+text_set = "mozarabic-1500-ordo-missae"
+parents = []
+
+[[text_sets]]
+id = "mozarabic-1755-ordo-missae"
+adapter = "native-book:mozarabic-1755-ordo-missae"
+
+[[text_versions]]
+id = "mozarabic-1755-ordo-missae"
+text_set = "mozarabic-1755-ordo-missae"
+parents = []
+
+[[text_sets]]
+id = "mozarabic-1804-ordo-missae"
+adapter = "native-book:mozarabic-1804-ordo-missae"
+
+[[text_versions]]
+id = "mozarabic-1804-ordo-missae"
+text_set = "mozarabic-1804-ordo-missae"
 parents = []
 
 # Scratch-only insertion into catholic-eucharistic-history-v1.toml presentation_groups.
@@ -1877,7 +1924,7 @@ basis = "The directly compared Suscepimus Deus formularies change the collect fr
 scope = "The 1604 Dominican book’s selected formulary, represented by the existing act-keyed catalogue row; 1604 is the witness date, not the dates of its reprinted 1602/1603 authorizations."
 evidence_level = "text-collated"
 stage_dossier_ref = "src/sources/inventories/eucharistic-stages/latin-uses.json"
-stage_transition_ids = ["latin-uses:dominican-suscepimus-recombination"]
+stage_transition_ids = ["latin-uses:dominican-1553-1603-recombination"]
 stage_source_ids = ["latin-uses:dom1550", "latin-uses:dom1604"]
 source_urls = ["https://archive.org/details/bub_gb_FqVWqqFkUDsC", "https://archive.org/details/bub_gb_lefoIUlq2sgC"]
 locus = "1550 fols 125r–125v (PDF 289–290), Suscepimus Deus; 1604 pp. 238–239 (PDF 314–315), Suscepimus Deus"
@@ -2633,6 +2680,43 @@ adapter = "native-book:cistercian-1657-pater-noster"
 [[text_versions]]
 id = "cistercian-1657-pater-noster"
 text_set = "cistercian-1657-pater-noster"
+parents = []
+
+# Independently collated Dominican Canon constituents (Venice 1550, Venice 1553, Rome 1603, Rome 1604); isolated roots, no ancestry or text inheritance.
+[[text_sets]]
+id = "dominican-1550-canon"
+adapter = "native-book:dominican-1550-canon"
+
+[[text_versions]]
+id = "dominican-1550-canon"
+text_set = "dominican-1550-canon"
+parents = []
+
+[[text_sets]]
+id = "dominican-1553-canon"
+adapter = "native-book:dominican-1553-canon"
+
+[[text_versions]]
+id = "dominican-1553-canon"
+text_set = "dominican-1553-canon"
+parents = []
+
+[[text_sets]]
+id = "dominican-1603-canon"
+adapter = "native-book:dominican-1603-canon"
+
+[[text_versions]]
+id = "dominican-1603-canon"
+text_set = "dominican-1603-canon"
+parents = []
+
+[[text_sets]]
+id = "dominican-1604-canon"
+adapter = "native-book:dominican-1604-canon"
+
+[[text_versions]]
+id = "dominican-1604-canon"
+text_set = "dominican-1604-canon"
 parents = []
 
 [[comparisons]]

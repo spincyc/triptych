@@ -1,0 +1,466 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-native-book",
+  "id": "roman-1635-canon-missae",
+  "title": "Rome 1635 (Urbanian recension): complete strict Canon Missae constituent",
+  "scope": "Complete strict Eucharistic Canon of the Rome 1635 Typographia Vaticana printing of the Missal recognized by Urban VIII, from the display title CANON MISSAE and red Sacerdos rubric on printed p. 245 through Per omnia saecula saeculorum, R. Amen and the red Iungit manus beside the chant staff on printed p. 249, before Oremus. Praeceptis salutaribus. Includes the display title, three red headings, all action rubrics and 25 printed crosses under a declared selective reading normalization that shares the letter-form conventions of roman-1570-canon-missae but keeps printed capitalization and punctuation. Excludes the prefaces and Sanctus before p. 245, the Crucifixion plate (Google page PA244), the Oremus, Pater noster and everything after it, and the retained title, Cum sanctissimum, Si quid est and colophon pages, which are identity and promulgation evidence only. Neither the whole Missal nor diplomatic glyph, accent or chant-pitch completeness is claimed.",
+  "transcribed_by": "AI source transcriber (text-roman batch 5, Rome 1635 Canon original-image reading)",
+  "stage_ids": [
+    "roman-stages-1634"
+  ],
+  "catalogue_witness_ids": [
+    "western:roman-modern-1635-vatican-gb-xnc4a07qpqqc"
+  ],
+  "components": [
+    "anaphoras"
+  ],
+  "languages": [
+    "la"
+  ],
+  "extent_kind": "constituent",
+  "excluded_book_divisions": [
+    "Prefaces and Sanctus before the Canon display title on printed p. 245",
+    "Oremus, Pater noster, communion, dismissal and all other material after Per omnia saecula saeculorum, R. Amen and Iungit manus, even where the Canon Missae running head continues",
+    "Front matter, title, papal bulls and colophon retained in the same artifact only as identity and promulgation evidence",
+    "All propers, calendar, lectionary, general rubrics, Ritus servandus and other ordinary outside the strict Canon",
+    "Running heads, page numbers, signatures, catchwords, ornaments, engraved frames and plates, diplomatic glyph and accent variants and chant-note pitches"
+  ],
+  "date": {
+    "kind": "publication",
+    "label": "1635 Rome, Typographia Vaticana printing (title and colophon MDCXXXV) of the Urbanian recension approved by Si quid est, 2 September 1634",
+    "start_year": 1635,
+    "end_year": 1635,
+    "evidence": [
+      {
+        "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.title-page",
+        "locus": "Retained Canon artifact PDF page 1 (Google PP7), title imprint ROMAE, Ex Typographia Vaticana. MDCXXXV"
+      },
+      {
+        "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.colophon",
+        "locus": "Retained Canon artifact PDF page 10 (Google PT4), colophon ROMAE, Ex Typographia Vaticana. MDCXXXV"
+      }
+    ]
+  },
+  "extent_path": "src/sources/inventories/eucharistic-books/support/roman-1635-canon-missae-extent.json",
+  "collation_path": "src/sources/inventories/eucharistic-books/support/roman-1635-canon-missae-review.json",
+  "witnesses": [
+    {
+      "id": "rome-1635-canon-pages",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-urbanian-1635",
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "scope_pages": [
+        [
+          5,
+          9
+        ]
+      ],
+      "completeness_evidence": [
+        {
+          "source_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile",
+          "locus": "PDF pp. 5-9 = Google pages PA245-PA249, printed pp. 245-249; Canon title to R. Amen and Iungit manus"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit.rome-1635.canon.heading",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "heading"
+      ],
+      "source_order": 1,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "heading",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-heading",
+      "text_sha256": "70d0ade9cefbb09038134c3a892d793218d0a32c213d4401170a3abc337ebcba",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.opening-rubric",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "opening-rubric"
+      ],
+      "source_order": 2,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "rubric",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-opening-rubric",
+      "text_sha256": "4469e89e6991fbbd4cef65d60a898c7885f471712d17b89329836ffb8c50065c",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.te-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "te-igitur"
+      ],
+      "source_order": 3,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          5,
+          5
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-te-igitur",
+      "text_sha256": "a6bb25b24952482c71f8a056c244193fe2345e6aec392d9bb5b843bfe4968021",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.memento-vivorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-vivorum"
+      ],
+      "source_order": 4,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-memento-vivorum",
+      "text_sha256": "0c29b33d3e4a85cfae975b533404ad89719184407fae2332ac8dc30786d8801d",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.communicantes",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "communicantes"
+      ],
+      "source_order": 5,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-communicantes",
+      "text_sha256": "84d8bbf331fe877d88af4d97bcc59600edb777867fadbe2b0a03e186b1cebcad",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.hanc-igitur",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "hanc-igitur"
+      ],
+      "source_order": 6,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-hanc-igitur",
+      "text_sha256": "e1f7abd74486185b1997f39566fd95dbc84e50eac41b451fbc543e4ed1de7cb1",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.quam-oblationem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "quam-oblationem"
+      ],
+      "source_order": 7,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          6,
+          6
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-quam-oblationem",
+      "text_sha256": "1f72e6acafa4255d98c913ba0ffb594a5680a0004a15e01dda9725221e9d9f1a",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.qui-pridie",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "qui-pridie"
+      ],
+      "source_order": 8,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative-with-rubrics",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-qui-pridie",
+      "text_sha256": "f7443bcb01ed084194368ec6b764fefb5289b283b80cb16112430e387ce8dd76",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.simili-modo",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "simili-modo"
+      ],
+      "source_order": 9,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "institution-narrative-with-rubrics",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-simili-modo",
+      "text_sha256": "149d534f44dcb3e5275505a157a4ac47762b0ad72ced14c1781a3598520a8ffa",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.unde-et-memores",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "unde-et-memores"
+      ],
+      "source_order": 10,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-unde-et-memores",
+      "text_sha256": "f739ec4361fa60c4dfc6333ca1d3c7654b45ce86398769753148a1034cd9550f",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.supra-quae",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supra-quae"
+      ],
+      "source_order": 11,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-supra-quae",
+      "text_sha256": "7c19bf675ea732405654289ef846bee07a0b15da9f79250674b7fd507a894ac9",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.supplices",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "supplices"
+      ],
+      "source_order": 12,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-supplices",
+      "text_sha256": "0fbd8e05e21c20d9f1b672b6cc851c86e69d2efdc4a3d8cb30f0f9849243ce17",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.memento-defunctorum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "memento-defunctorum"
+      ],
+      "source_order": 13,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-memento-defunctorum",
+      "text_sha256": "7fe173cc98b09eb97a8458aec6fdbece13f0aa5223ce3ec2686ac948048505af",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.nobis-quoque",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "nobis-quoque"
+      ],
+      "source_order": 14,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          9
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-nobis-quoque",
+      "text_sha256": "18eebd0cf3eed27039612e8549bfb27ee58f2cc9b9e6401d6b18ab23912bff2a",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.per-quem",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-quem"
+      ],
+      "source_order": 15,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "prayer-with-rubrics",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          9
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-per-quem",
+      "text_sha256": "48467e938a299340646359026274fb0cf1923bb8b029dbff361baca404f2e283",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.per-ipsum",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "per-ipsum"
+      ],
+      "source_order": 16,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "doxology-with-rubrics-and-response",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          9
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-per-ipsum",
+      "text_sha256": "60bb6b36104294c3a9ecab9066805757f9aded47557418ceb443d241970f00f0",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    },
+    {
+      "unit_id": "unit.rome-1635.canon.concluding-response",
+      "native_path": [
+        "anaphoras",
+        "canon-missae",
+        "concluding-response"
+      ],
+      "source_order": 17,
+      "language": "la",
+      "component": "anaphoras",
+      "kind": "notated-dialogue",
+      "witness_id": "rome-1635-canon-pages",
+      "witness_pages": [
+        [
+          9,
+          9
+        ]
+      ],
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-urbanian-1635.canon-concluding-response",
+      "text_sha256": "b6c63e5befb9914114f651c55901e635b93601f5e234374db7105d4a979761e5",
+      "verified_against_artifact_id": "artifact.catholic-church.missale-romanum.vatican-urbanian-1635.canon-facsimile-81503a85",
+      "verified_against_artifact_sha256": "81503a8599ec760ad3b70fbc8229b51b0bb08d35428d2bf8e9a0ef2574c67520"
+    }
+  ]
+}

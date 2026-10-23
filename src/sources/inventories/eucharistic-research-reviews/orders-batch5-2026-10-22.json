@@ -1,0 +1,683 @@
+{
+  "schema_version": 1,
+  "record_type": "eucharistic-research-lane-review",
+  "id": "orders-batch5-2026-10-22",
+  "lane": "orders-batch5",
+  "title": "Batch 5 orders lane: religious orders and Latin uses, from inspected originals and an OCR text-layer sweep of Notitiae 1965–1995",
+  "side": "western",
+  "checked_on": "2026-10-22",
+  "target_inventory": "src/sources/inventories/western-eucharistic-books-timeline-v1.toml; src/sources/inventories/eucharistic-stages/{canonical-orders,cistercian,ocso-next,other-orders-round2,residual-orders-round3,latin-uses}.json; src/sources/inventories/eucharistic-stage-coverage-v1.json",
+  "review_files": {
+    "lane_worklog_sha256": "b856623af64372a70b8f54b504993b4b85e3e5c4a255fabdaa2b3bd77e93666b",
+    "storage": "untracked lane scratch (.scratch/batch5-20261022/orders/), pinned by SHA-256",
+    "independent_review_sha256": "9a66c9c27b62eeec96a73689e6e11b75bbdbc391e492224fbd61096b39fefff8"
+  },
+  "coverage_rows": [
+    "augustinian-hermits",
+    "carthusian",
+    "cistercian",
+    "dominican",
+    "ocso",
+    "premonstratensian",
+    "regular-canonical-uses"
+  ],
+  "uses": [
+    {
+      "id": "augustinian-hermits",
+      "disposition": "date-conflict-resolved-and-candidate-requalified",
+      "finding": "The BSB incunable's printed colophon reads M.CCCC. lxxxxi under Pope Innocent; the red 1496 is an added entry, so the stage is dated 1491. The postconciliar Spanish-proper candidate is retitled as the Spanish version of the Latin proper confirmed 15 April 1975.",
+      "limit": "Pal. lat. 500, intervening books and the printed 1975 Latin book remain uninspected.",
+      "next_sources": "Remaining Pal. lat. 500 folios; 1975 Latin proper volume; 2006 Latin approval."
+    },
+    {
+      "id": "dominican",
+      "disposition": "duplicate-edge-removed-and-postconciliar-stage-added",
+      "finding": "The 1550→1604 Suscepimus edge duplicated the 1550→1553→1603→1604 chain and was removed (no stage deleted). CD 98/69 of 2 June 1969 read in Notitiae 5 (1969) pp. 359–360; the 1971 chapter confirmation and Dirks's commentary read in Notitiae 8 (1972) pp. 14, 17–18; the 1985 Proprium Missale et Lectionarium is a new documented stage from its title, mandate, decrees and promulgation letter.",
+      "limit": "No 1985 body collation; no transition from 1604; the routing classification for the 1604 witness still names the removed transition id.",
+      "next_sources": "Bettini 1576, Castrucci 1596/1600; 1933/1939/1965 missals; ASOP 39 (1969) pp. 250–251."
+    },
+    {
+      "id": "cistercian",
+      "disposition": "cross-reference-added",
+      "finding": "The joint 8 June 1971 reply to OCist and OCSO is recorded once (ocso-next:ordo-particularities-1971) and now mapped on the Cistercian route and tradition note; the OCist Latin supplement of 11 March 1980 (CD 375/80) is recorded on the 1983 book stage.",
+      "limit": "No OCist postconciliar book state staged; calendar months and 1487 offertory not attempted (FIDES serves DjVu only; no decoder).",
+      "next_sources": "FIDES 1657 calendar page-files with a DjVu-capable reader; BSB 1487 front matter."
+    },
+    {
+      "id": "ocso",
+      "disposition": "stages-qualified-and-gaps-narrowed",
+      "finding": "The OCR text layers of every Notitiae issue 1965–1995 were searched (bounded; OCR misses possible): no general OCSO Latin proper approval after CD 83/75 (1975) was found; the 1983 entries found concern Blessed Maria Gabriella, including the Latin collect of CD 124/83 (already staged), calendar grants and vernacular versions. Confirmations of French (1976), Spanish, Dutch and English (1979–1980) and Irish (1981) versions date the order's requests for vernacular versions by language region, not use of the Latin texts; 1980 house-level grant at four Italian monasteries; 2011 Latin collect and memorial for Blessed John Paul II.",
+      "limit": "Signed instruments and the Rome 1983 book still unseen; no named house's use of an exact Latin book; no medieval OCSO identity assigned.",
+      "next_sources": "DLI 83442; order archive; Notitiae 1996–2011 beyond index issues."
+    },
+    {
+      "id": "carthusian",
+      "disposition": "provisional-stage-added",
+      "finding": "An undated incunable (BSB bsb00030081; BSB-Ink [1496], GW not after 1496) is a provisional stage (downgraded from documented by the cold review because its year is a catalogue attribution); it prints the same oblation prayer, with word-order variants, and the same Gloria reading as Pavia 1561; the 1561 rubricated offertory section is not in its pre-Canon block.",
+      "limit": "Year is a catalogue attribution; only the pre-Canon block read; no Carthusian missal confirmation in Notitiae 1965–1995.",
+      "next_sources": "Kerver and Lyon printings; complementary Ordinarium; 1677 ordinance."
+    },
+    {
+      "id": "premonstratensian",
+      "disposition": "original-located-and-transition-added",
+      "finding": "The 1622 missal (BSB bsb10869683) title and embolism rubric were read; the older paten ceremonial of the copies catalogued 1530 and 1578 has given way by 1622 to the rubric King (p. 177) associates with the Pian Ordinary (new documented transition); the existing 1739 edge now starts from 1622.",
+      "limit": "1663 missal and 1739 ordinal not found online; 1530 copy's own date unverified.",
+      "next_sources": "1663 missal; 1739 ordinal; 1622 sequence tables."
+    },
+    {
+      "id": "regular-canonical-uses",
+      "disposition": "gap-narrowed",
+      "finding": "Notitiae dates the Canons Regular Confederation's Latin Mass proper (1974; Rome 1974 printing listed) and the Windesheim-Victorine Congregation's calendar (1974) and Latin Proprium Missarum (1976).",
+      "limit": "Books uninspected; no medieval continuity asserted.",
+      "next_sources": "Rome 1974 Missae Propriae; 1976 Windesheim-Victorine proper."
+    }
+  ],
+  "searches": [
+    {
+      "repository": "Notitiae (cultodivino.va), whole-issue OCR text layers",
+      "queries": [
+        "cisterc|trappist|strictioris",
+        "Praedicator",
+        "Cartus|Carthus|Chartreu",
+        "Praemonstrat|Teutonic|S. Pauli primi eremitae",
+        "de Mercede",
+        "Vindesem|Canonicorum Regularium",
+        "Discalceat"
+      ],
+      "url": "https://www.cultodivino.va/it/rivista-notitiae.html",
+      "checked_on": "2026-10-22",
+      "outcome": "Every issue 1965–1995 (221 prior-lane copies read in place, 91 downloaded) plus the locally held annual/index issues 1996–2015 and 2018. Cited hits were checked against page images except where marked OCR-only (1972 p. 11, 1973 pp. 256, 260, 1974 p. 288, 1978 pp. 9, 129, 1977 p. 455, 1979 p. 617). Cold review 2026-10-22 re-read every listed OCR-only item, and the Teutonic 1966/1967 and Pauline 1980/1981 items, on page images. OCSO: no general Latin proper approval found after 1975 (the 1983 Maria Gabriella Latin collect, CD 124/83, is a single-Mass text); Carthusian: no missal confirmation; Dominican: 1969 concession and 1971 chapter decree. [gaps: ocso-original-books-and-instruments-gap, ocso-web-lectionary-and-later-use-gap, ocso-early-distinct-branch-reception-gap, latin-uses:carthusian-modern, canonical-orders:regular-canonical-diversity, canonical-orders:teutonic-medieval-modern-bridge, canonical-orders:pauline-original-revisions, other-orders:merced-gap, residual-orders-round3:ocd-gap]",
+      "extent_examined": "All issues 1965–1995; index issues only 1996–2015.",
+      "unexamined_range": "Non-index issues 1996–2015; OCR misses possible."
+    },
+    {
+      "repository": "BSB digital collections API and IIIF",
+      "queries": [
+        "missale praemonstratense",
+        "praemonstratensis",
+        "missale carmelitarum",
+        "missale ordinis praedicatorum",
+        "missale praedicatorum",
+        "manifests bsb00030081, bsb11105495, bsb10197405, bsb10164241, bsb10197414, bsb10869683, bsb00032995, bsb00032846"
+      ],
+      "url": "https://www.digitale-sammlungen.de/api/search",
+      "checked_on": "2026-10-22",
+      "outcome": "Found the 1622 Premonstratensian missal bsb10869683; no 1663 missal or 1739 ordinal; no Dominican missal 1554–1602; no Carmelite missal in first 100 rows. Teutonic incunable undated (GW M24184). [gaps: canonical-orders:premon-original-comparison, latin-uses:dominican-intermediates, latin-uses:carmelite-interventions, latin-uses:carthusian-revisions]",
+      "extent_examined": "First 100 rows per query; named manifests.",
+      "unexamined_range": "Rows beyond 100."
+    },
+    {
+      "repository": "Internet Archive advanced search",
+      "queries": [
+        "title:(missale) AND (praedicatorum OR predicatorum)",
+        "title:(missale) AND carmel*",
+        "title:(sarum missal)"
+      ],
+      "url": "https://archive.org/advancedsearch.php",
+      "checked_on": "2026-10-22",
+      "outcome": "Reachable again. Dominican: only 1504, 1530, 1550, 1603, 1604, 1933, 1939 items; Carmelite: 1574, 1621 and an undated unattributed item; Sarum: Legg 1916 items identified but not collated. [gaps: latin-uses:dominican-intermediates, latin-uses:carmelite-interventions, latin-uses:sarum-print-boundary]",
+      "extent_examined": "All returned rows (≤50).",
+      "unexamined_range": "Non-title fields."
+    },
+    {
+      "repository": "Access retries",
+      "queries": [
+        "Gallica bpt6k993722f page and IIIF manifest",
+        "repositorio.ucp.pt handle 10400.14/29449",
+        "BNE Biblioteca Digital Hispánica search",
+        "ARCA IRHT Provins record",
+        "USUARIUM book 8572"
+      ],
+      "url": "https://gallica.bnf.fr/ark:/12148/bpt6k993722f",
+      "checked_on": "2026-10-22",
+      "outcome": "Gallica HTTP 403 (10:27:54Z); UCP served an Anubis bot-check page (not bypassed); BNE HTTP 403; ARCA timed out after 45 s; USUARIUM reachable (record not used). [gaps: latin-uses:braga-primary-pairs, latin-uses:braga-1924-reform, residual-orders-round3:santiago-gap, other-orders:trinitarian-gap, residual-orders-round3:cluny-gap]",
+      "extent_examined": "One request each.",
+      "unexamined_range": "-"
+    },
+    {
+      "repository": "FIDES (digital.fides.org.pl) publication 3978 edition 3755",
+      "queries": [
+        "content and download routes"
+      ],
+      "url": "https://digital.fides.org.pl/dlibra/publication/3978/edition/3755/content",
+      "checked_on": "2026-10-22",
+      "outcome": "Only DjVu delivery; no DjVu decoder in this environment, so the 1657 calendar months were not compared. [gaps: cistercian-1606-1657-wide-revision]",
+      "extent_examined": "Route listing only.",
+      "unexamined_range": "All page-files."
+    }
+  ],
+  "versions": [
+    {
+      "id": "latin-uses:dominican-1985-proprium",
+      "label": "Dominican Proprium Missale et Lectionarium, editio typica",
+      "tradition_or_use": "dominican",
+      "date_label": "Rome 1985; promulgation letter 15 August 1983; printing mandate 3 April 1985",
+      "date_role": "publication",
+      "record_class": "documented-stage",
+      "distinctness_basis": "Postconciliar order proper for Mass and lectionary as a supplement to the Roman Missal, with its own confirming decrees.",
+      "existing_candidate_ids": [
+        "mendicant-op-1985"
+      ],
+      "source_refs": [
+        "latin-uses:op1985",
+        "latin-uses:notitiae1969-op",
+        "latin-uses:notitiae1972-op"
+      ],
+      "unresolved": "Body not collated."
+    },
+    {
+      "id": "latin-uses:carthusian-1496",
+      "label": "Carthusian incunable missal",
+      "tradition_or_use": "carthusian",
+      "date_label": "[1496] (BSB-Ink M-423); GW M24135: not after 1496",
+      "date_role": "catalogue-attributed publication",
+      "record_class": "provisional-stage",
+      "distinctness_basis": "Earliest printed Carthusian missal state inspected; no substantive difference from 1561 encoded, so it is provisional (cold review).",
+      "existing_candidate_ids": [
+        "carthusian-1496-speyer"
+      ],
+      "source_refs": [
+        "latin-uses:carthusian1496"
+      ],
+      "unresolved": "Year not printed in the copy."
+    },
+    {
+      "id": "canonical-orders:premon-1622",
+      "label": "Premonstratensian missal 1622 (existing stage, now original-checked)",
+      "tradition_or_use": "premonstratensian",
+      "date_label": "1622",
+      "date_role": "publication",
+      "record_class": "documented-stage",
+      "distinctness_basis": "Chapter-corrected edition with a changed embolism rubric (no kiss of the paten), unlike 1530/1578; King p. 177 associates the 1622 Ordinary with the Pian form.",
+      "existing_candidate_ids": [
+        "premon-1622"
+      ],
+      "source_refs": [
+        "canonical-orders:premon1622-primary"
+      ],
+      "unresolved": "Ordinary and sequences still from King."
+    },
+    {
+      "id": "other-orders:osa-early-print",
+      "label": "OSA observance missal, Nuremberg 1491 (existing stage, now dated)",
+      "tradition_or_use": "osa-hermits-round2",
+      "date_label": "1491",
+      "date_role": "publication",
+      "record_class": "documented-stage",
+      "distinctness_basis": "Unchanged; date conflict resolved.",
+      "existing_candidate_ids": [
+        "additional-orders-osa-1491"
+      ],
+      "source_refs": [
+        "other-orders:osa1496"
+      ],
+      "unresolved": "Meaning of the red 1496 entry."
+    },
+    {
+      "id": "mendicant-op-1969-control",
+      "label": "OP Roman Missal concession 2 June 1969",
+      "tradition_or_use": "dominican",
+      "date_label": "2 June 1969",
+      "date_role": "approval",
+      "record_class": "adoption-event-evidence-not-a-stage",
+      "distinctness_basis": "Permission to adopt the Roman Missal; recorded as evidence on the 1985 stage.",
+      "existing_candidate_ids": [
+        "mendicant-op-1969-control"
+      ],
+      "source_refs": [
+        "latin-uses:notitiae1969-op"
+      ],
+      "unresolved": "Signed rescript; ASOP text; house changeovers."
+    }
+  ],
+  "acquisitions": [
+    {
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/rivista-notitiae (91 issue PDFs 1978–1993; list in manifest)",
+      "retrieved_at_utc": "2026-10-22T10:10:26Z",
+      "sha256": "440e67ff7ca6cffdf817243857ca46e217054a7a582d78e31c51761fbb32b8ca",
+      "byte_size": 8088,
+      "retrieved_extent": "SHA-256 manifest of 91 whole Notitiae issue PDFs (623 MB) downloaded 10:03–10:10 UTC, all HTTP 200; manifest written 13:48 UTC",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; scratch only.",
+      "scratch_path": ".scratch/batch5-20261022/orders/acq/MANIFEST-notitiae-dl.sha256"
+    },
+    {
+      "source_url": "multiple BSB/MDZ IIIF images, GW and BSB-Ink records, op.org PDF; see manifest",
+      "retrieved_at_utc": "2026-10-22T13:48:12Z",
+      "sha256": "ea851ee5c70ae785c0db79f191f531bdbb4a9de3d927e534fe9fcc65794b69b7",
+      "byte_size": 11509,
+      "retrieved_extent": "SHA-256 manifest of 131 page images, renders and records acquired or rendered in this lane",
+      "source_role": "acquisition-manifest",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "BSB images under provider terms; renders of Notitiae pages; none assessed for redistribution.",
+      "scratch_path": ".scratch/batch5-20261022/orders/acq/MANIFEST-images.sha256"
+    },
+    {
+      "source_url": "https://www.op.org/wp-content/uploads/2026/05/TL-01-Missale-et-Lectionarium-OP-1985.pdf",
+      "retrieved_at_utc": "2026-10-22T10:07:29Z",
+      "sha256": "ea5f25d61a5b3a6d9fc047f70d1bf0439fa08d0933dd806988e769610506f734",
+      "byte_size": 49872759,
+      "retrieved_extent": "whole 604-page PDF; PDF 1–14 viewed",
+      "source_role": "original-book-facsimile",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Order-hosted facsimile of a 1985 book; modern protected text; scratch only, short loci only.",
+      "scratch_path": ".scratch/batch5-20261022/orders/acq/op1985/TL-01-Missale-et-Lectionarium-OP-1985.pdf"
+    },
+    {
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00032995_00565/full/1600,/0/default.jpg",
+      "retrieved_at_utc": "2026-10-22T10:10:50Z",
+      "sha256": "7920b8300919fa7392a1674b234cfeec5163dcac8397d62c52fbe0f3c1a5ad9c",
+      "byte_size": 728665,
+      "retrieved_extent": "canvas 565 (fol. 270v) colophon",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "BSB public-domain-marked incunable image; scratch only.",
+      "scratch_path": ".scratch/batch5-20261022/orders/acq/osa1496/c0565.jpg"
+    },
+    {
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb00030081_00231/full/1800,/0/default.jpg",
+      "retrieved_at_utc": "2026-10-22T10:20:30Z",
+      "sha256": "c73bbfb3a7bb001032bd6f8ce9da77dac340bcccdeb13d9b105547fece052252",
+      "byte_size": 1010452,
+      "retrieved_extent": "canvas 231 (fol. xxix); canvases 230, 232–234 in images manifest",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "BSB image; scratch only.",
+      "scratch_path": ".scratch/batch5-20261022/orders/acq/carth/c1496_231.jpg"
+    },
+    {
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10197405_00256/full/1600,/0/default.jpg",
+      "retrieved_at_utc": "2026-10-22T10:20:46Z",
+      "sha256": "02434fc19ae0b8dd19a815e7691d99d0a81892fea143ca66be32bbaaf27b8f5a",
+      "byte_size": 701953,
+      "retrieved_extent": "1561 canvas 256 (fol. 107v); 254–255 in images manifest",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "BSB image; scratch only.",
+      "scratch_path": ".scratch/batch5-20261022/orders/acq/carth/c1561_256.jpg"
+    },
+    {
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10869683_00321/full/1600,/0/default.jpg",
+      "retrieved_at_utc": "2026-10-22T10:26:47Z",
+      "sha256": "d2ed87e95e3928f34380b40990b8f164d231fd19aa15e4aa13c4c8cb2e0b0a32",
+      "byte_size": 687240,
+      "retrieved_extent": "1622 printed p. 269 (canvas 321); title canvas 7 SHA-256 c8beb16664768b0ef24e8d1f5de066c678a648314d94692f3645034c6c4a31cf",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "BSB image; scratch only.",
+      "scratch_path": ".scratch/batch5-20261022/orders/acq/premon/p1622_321.jpg"
+    },
+    {
+      "source_url": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10197414_00314/full/1400,/0/default.jpg",
+      "retrieved_at_utc": "2026-10-22T10:23:52Z",
+      "sha256": "cfea11e4d4d609e4a837a14464d71216c3cca79eb4f00b34fcc82a1ab0cba874",
+      "byte_size": 554781,
+      "retrieved_extent": "1578 canvas 314 (fol. 146v); 1530 canvases 276–277 SHA-256 dece2bdf0eea692501d0b6399b379fa62cac27de4d026b3d5f2def904013ff10 / 046f97ac311ed1a4684638b5cce3a66873e3f7bd928afaab0b6e37b5e7adf351",
+      "source_role": "original-book-page-image",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "BSB image; scratch only.",
+      "scratch_path": ".scratch/batch5-20261022/orders/acq/premon/p1578_314.jpg"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-05-%281969%29/Notitiae-048-1969.pdf",
+      "retrieved_at_utc": "2026-10-22T10:00:54Z",
+      "sha256": "f31becd3adaba007d9509c5c1d78b6546da7331e52eb3686277cc9cfb64c2f8e",
+      "byte_size": 7146389,
+      "retrieved_extent": "whole issue; copied from .scratch/completion-orders-mendicant/notitiae1969.pdf (identical SHA-256); pp. 359–360 viewed",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; scratch only.",
+      "scratch_path": ".scratch/batch5-20261022/orders/acq/notitiae/Notitiae-048-1969.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-08-%281972%29/Notitiae-069-1972.pdf",
+      "retrieved_at_utc": "2026-10-22T10:06:44Z",
+      "sha256": "0ccd64a258ca32ad903c927a9f27bfa6be70ce0072bd785f81491052ed0eee50",
+      "byte_size": 10263412,
+      "retrieved_extent": "whole issue; copied from .scratch/batch4-20261021/permissions-cold/acq/notitiae-069-1972.pdf (identical SHA-256); pp. 14, 17–18 viewed",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; scratch only.",
+      "scratch_path": ".scratch/batch5-20261022/orders/acq/notitiae/Notitiae-069-1972.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/it/rivista-notitiae.html (issue 121-122 of 1976)",
+      "retrieved_at_utc": "2026-10-22T10:15:00Z",
+      "sha256": "2d093652c5efb6a0874164e6eb70fc20c9273c0f2767bbf2d2f5efa18c57b070",
+      "byte_size": 7108803,
+      "retrieved_extent": "prior-lane whole-issue copy read in place (not re-downloaded); cited pages rendered",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; original copy left in its earlier scratch location.",
+      "scratch_path": ".scratch/mission_permits_sweep/notitiae-121-122-1976.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/it/rivista-notitiae.html (issue 161 of 1979)",
+      "retrieved_at_utc": "2026-10-22T10:15:00Z",
+      "sha256": "607899027f3f0a8c495106fed27a936201dae1fd150a9c52c80e33b8de973576",
+      "byte_size": 9336210,
+      "retrieved_extent": "prior-lane whole-issue copy read in place (not re-downloaded); cited pages rendered",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; original copy left in its earlier scratch location.",
+      "scratch_path": ".scratch/batch4-20261021/western-gaps/sub-orders/acq/notitiae/Notitiae-161-1979.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/it/rivista-notitiae.html (issue 173 of 1980)",
+      "retrieved_at_utc": "2026-10-22T10:15:00Z",
+      "sha256": "4d30fb6ce804efa91dcc7938f81289adf042c2ff24fbc69b736ef8daa63dba8a",
+      "byte_size": 7477895,
+      "retrieved_extent": "prior-lane whole-issue copy read in place (not re-downloaded); cited pages rendered",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; original copy left in its earlier scratch location.",
+      "scratch_path": ".scratch/batch4-20261021/western-gaps/sub-orders/acq/notitiae/Notitiae-173-1980.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/it/rivista-notitiae.html (issue 175 of 1981)",
+      "retrieved_at_utc": "2026-10-22T10:15:00Z",
+      "sha256": "285db47550cac74f574cacf15e0f51f1984fc01158a174b50acb38f16b4db160",
+      "byte_size": 4595786,
+      "retrieved_extent": "prior-lane whole-issue copy read in place (not re-downloaded); cited pages rendered",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; original copy left in its earlier scratch location.",
+      "scratch_path": ".scratch/batch4-20261021/permissions/forkB/acq/Notitiae-175-1981.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/it/rivista-notitiae.html (issue 101 of 1975)",
+      "retrieved_at_utc": "2026-10-22T10:15:00Z",
+      "sha256": "a602e6fdac9bf7f012f4857a7c5321793b872c17a12a36f2e634c6f85ab1ab5a",
+      "byte_size": 4545735,
+      "retrieved_extent": "prior-lane whole-issue copy read in place (not re-downloaded); cited pages rendered",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; original copy left in its earlier scratch location.",
+      "scratch_path": ".scratch/batch4-20261021/permissions/forkB/acq/Notitiae-101-1975.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/it/rivista-notitiae.html (issue 102 of 1975)",
+      "retrieved_at_utc": "2026-10-22T10:15:00Z",
+      "sha256": "acafed931331f1765aa2562363cf8bf41ddf76ca1c02d84c3ff3d62b6508f345",
+      "byte_size": 4775820,
+      "retrieved_extent": "prior-lane whole-issue copy read in place (not re-downloaded); cited pages rendered",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; original copy left in its earlier scratch location.",
+      "scratch_path": ".scratch/completion-iberian/notitiae-1975-102.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/it/rivista-notitiae.html (issue 103 of 1975)",
+      "retrieved_at_utc": "2026-10-22T10:15:00Z",
+      "sha256": "0d6532f18993048dedd2ba03c7eeb01141d117b84bea2d612e774c1b323bb279",
+      "byte_size": 4716144,
+      "retrieved_extent": "prior-lane whole-issue copy read in place (not re-downloaded); cited pages rendered",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; original copy left in its earlier scratch location.",
+      "scratch_path": ".scratch/batch4-20261021/permissions/forkB/acq/Notitiae-103-1975.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/it/rivista-notitiae.html (issue 085 of 1973)",
+      "retrieved_at_utc": "2026-10-22T10:15:00Z",
+      "sha256": "1d3c66aac8414c913e2f026a4634268785a43d370f38efb297d1a041b3ce4fe7",
+      "byte_size": 4857758,
+      "retrieved_extent": "prior-lane whole-issue copy read in place (not re-downloaded); cited pages rendered",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; original copy left in its earlier scratch location.",
+      "scratch_path": ".scratch/batch4-20261021/permissions/forkB/acq/Notitiae-085-1973.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/it/rivista-notitiae.html (issue 545-546 of 2012)",
+      "retrieved_at_utc": "2026-10-22T10:15:00Z",
+      "sha256": "f69c5f585ba2f7fcc6989ece3b81496241861c394d2f59fab5db7d1645acdd7a",
+      "byte_size": 1228018,
+      "retrieved_extent": "prior-lane whole-issue copy read in place (not re-downloaded); cited pages rendered",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; original copy left in its earlier scratch location.",
+      "scratch_path": ".scratch/batch4-20261021/permissions/forkB/acq/Notitiae-545-546-2012.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/it/rivista-notitiae.html (issue 133-134-135 of 1977)",
+      "retrieved_at_utc": "2026-10-22T10:15:00Z",
+      "sha256": "5257b672328e3f6253babde187fa72b7d66e7b1bdf0f2e4c74f54475a63de55c",
+      "byte_size": 11865827,
+      "retrieved_extent": "prior-lane whole-issue copy read in place (not re-downloaded); cited pages rendered",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; original copy left in its earlier scratch location.",
+      "scratch_path": ".scratch/batch4-20261021/originals/italian-ocso/downloads/notitiae/Notitiae-133-134-135-1977.pdf"
+    },
+    {
+      "source_url": "https://www.cultodivino.va/it/rivista-notitiae.html (issue 095-096 of 1974)",
+      "retrieved_at_utc": "2026-10-22T10:15:00Z",
+      "sha256": "aa3ba52fbf6d3e207b933513028633ffbd78f64eda235d2a1e170537a99be8c7",
+      "byte_size": 5788140,
+      "retrieved_extent": "prior-lane whole-issue copy read in place (not re-downloaded); cited pages rendered",
+      "source_role": "primary-act-periodical",
+      "storage_decision": "scratch-only; retention deferred to the coordinator",
+      "rights_and_offline_limit": "Holy See publication; original copy left in its earlier scratch location.",
+      "scratch_path": ".scratch/batch4-20261021/permissions-cold/acq/notitiae-095-096-1974.pdf"
+    }
+  ],
+  "gap_dispositions": [
+    {
+      "gap_id": "latin-uses:dominican-intermediates",
+      "disposition": "unchanged-searched",
+      "evidence": "BSB API and Internet Archive title searches found no Dominican missal 1554–1602.",
+      "remaining": "Bettini 1576 and Castrucci 1596/1600 printings."
+    },
+    {
+      "gap_id": "latin-uses:carmelite-interventions",
+      "disposition": "unchanged-searched",
+      "evidence": "Internet Archive and BSB API searches found no intervening Carmelite missal.",
+      "remaining": "Chapter acts and intervening printings."
+    },
+    {
+      "gap_id": "latin-uses:braga-primary-pairs",
+      "disposition": "unchanged-searched",
+      "evidence": "Gallica 403 again.",
+      "remaining": "1558 Ordo and Palm pages."
+    },
+    {
+      "gap_id": "latin-uses:braga-1924-reform",
+      "disposition": "unchanged-searched",
+      "evidence": "UCP Anubis page again; not bypassed.",
+      "remaining": "Pinheiro thesis or 1558 pages."
+    },
+    {
+      "gap_id": "latin-uses:braga-layer-map",
+      "disposition": "not-attempted",
+      "evidence": "Not worked this batch.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "latin-uses:carthusian-revisions",
+      "disposition": "narrowed",
+      "evidence": "New provisional stage latin-uses:carthusian-1496 from BSB canvases 230–234 and a provisional witness-succession edge to 1561 (canvases 254–256 re-viewed); downgraded from documented by the cold review.",
+      "remaining": "Kerver/Lyon printings, Ordinarium, 1677 ordinance."
+    },
+    {
+      "gap_id": "latin-uses:carthusian-modern",
+      "disposition": "unchanged-searched",
+      "evidence": "Notitiae 1965–1995 text layers: no missal confirmation; 1974 meeting only.",
+      "remaining": "Recognition instrument and 1981 printing."
+    },
+    {
+      "gap_id": "latin-uses:sarum-print-boundary",
+      "disposition": "not-attempted",
+      "evidence": "Internet Archive reachable again; Legg 1916 items identified only.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "latin-uses:hereford-local-versus-diocesan",
+      "disposition": "not-attempted",
+      "evidence": "Not worked.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "latin-uses:york-manuscript-identities",
+      "disposition": "not-attempted",
+      "evidence": "Not worked.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "latin-uses:esztergom-intermediate-revisions",
+      "disposition": "not-attempted",
+      "evidence": "Not worked.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "ocso-early-distinct-branch-reception-gap",
+      "disposition": "unchanged-searched",
+      "evidence": "Notitiae 1965–1969 OCSO entries are vernacular and Office items only.",
+      "remaining": "1892–1971 Latin book sequence and approvals."
+    },
+    {
+      "gap_id": "ocso-original-books-and-instruments-gap",
+      "disposition": "narrowed",
+      "evidence": "OCR text-layer search of Notitiae 1965–1995 (cited hits on page images): no general Latin proper approval found after CD 83/75; the reported 1983 approval is consistent with the publication and the Maria Gabriella additions (including the CD 124/83 Latin collect). Bounded negative search, not proof of absence.",
+      "remaining": "Signed instruments; Rome 1983 book."
+    },
+    {
+      "gap_id": "ocso-web-lectionary-and-later-use-gap",
+      "disposition": "narrowed",
+      "evidence": "Later-addition instruments 1983 and 2011 located; 1980 house-level grant; vernacular-version confirmations 1976–1981 date the order's requests by language region (permissions, not evidence of use).",
+      "remaining": "DOC edition identity; exact books used in named houses."
+    },
+    {
+      "gap_id": "cistercian-1606-1657-pre1606",
+      "disposition": "not-attempted",
+      "evidence": "Not reached.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "cistercian-1606-1657-wide-revision",
+      "disposition": "not-attempted",
+      "evidence": "FIDES delivers DjVu only; no decoder available.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "cistercian-1606-1657-reception",
+      "disposition": "not-attempted",
+      "evidence": "Not reached.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "cistercian-1606-1657-post-canon-source-damage",
+      "disposition": "not-attempted",
+      "evidence": "Needs repair imaging.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "canonical-orders:premon-original-comparison",
+      "disposition": "narrowed",
+      "evidence": "1622 original located and read; 1530 copy shows the older rubrics; new transition 1578→1622.",
+      "remaining": "1663 missal, 1739 ordinal, chapter acts."
+    },
+    {
+      "gap_id": "canonical-orders:gilbertine-originals",
+      "disposition": "not-attempted",
+      "evidence": "Not worked.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "canonical-orders:pauline-original-revisions",
+      "disposition": "unchanged-searched",
+      "evidence": "Notitiae 1965–1995: postconciliar Pauline items only.",
+      "remaining": "ca. 1490/1514/1537 originals; Roman adoption instrument."
+    },
+    {
+      "gap_id": "canonical-orders:regular-canonical-diversity",
+      "disposition": "narrowed",
+      "evidence": "Notitiae 1975 pp. 13, 42, 86 and 1976 p. 307 date two further Canons Regular postconciliar propers.",
+      "remaining": "Their books; medieval congregations; Windesheim comparisons."
+    },
+    {
+      "gap_id": "canonical-orders:teutonic-medieval-modern-bridge",
+      "disposition": "unchanged-searched",
+      "evidence": "BSB incunable undated; Notitiae items post-1903 only.",
+      "remaining": "1244 and 1257 acts; dated change to the Roman Missal."
+    },
+    {
+      "gap_id": "other-orders:osa-gap",
+      "disposition": "narrowed",
+      "evidence": "1491/1496 resolved from the printed colophon; calendar events 1971 and 1974 noted.",
+      "remaining": "Pal. lat. 500 layers; intervening books; 1975 Latin book; 2006 approval."
+    },
+    {
+      "gap_id": "other-orders:merced-gap",
+      "disposition": "unchanged-searched",
+      "evidence": "Notitiae 1973: calendar 6 June 1973 and Latin profession rite only.",
+      "remaining": "Early originals and booklets."
+    },
+    {
+      "gap_id": "other-orders:servite-gap",
+      "disposition": "not-attempted",
+      "evidence": "Not worked.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "other-orders:trinitarian-gap",
+      "disposition": "unchanged-searched",
+      "evidence": "ARCA timeout; Gallica 403.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "other-orders:hosp-gap",
+      "disposition": "not-attempted",
+      "evidence": "Not worked.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "residual-orders-round3:cluny-gap",
+      "disposition": "unchanged-searched",
+      "evidence": "Gallica 403 again.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "residual-orders-round3:hum-gap",
+      "disposition": "not-attempted",
+      "evidence": "Not worked.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "residual-orders-round3:minim-gap",
+      "disposition": "not-attempted",
+      "evidence": "Not worked.",
+      "remaining": "As recorded."
+    },
+    {
+      "gap_id": "residual-orders-round3:ocd-gap",
+      "disposition": "narrowed",
+      "evidence": "Notitiae 11 (1975) p. 86 note 3 (image) fixes the 1973 first typical edition's title, place and year; Spanish version 4 May 1973 (OCR).",
+      "remaining": "1973 contents; 1933 proper; collation."
+    },
+    {
+      "gap_id": "residual-orders-round3:santiago-gap",
+      "disposition": "unchanged-searched",
+      "evidence": "BNE 403 again.",
+      "remaining": "As recorded."
+    }
+  ],
+  "remaining_gaps": [
+    "Dominican: Bettini 1576 and Castrucci 1596/1600; 1933–1965 missals as stages; 1985 body collation.",
+    "Carthusian: Kerver/Lyon printings, Ordinarium, 1677 ordinance; postconciliar recognition instrument and 1981 printing.",
+    "Cistercian: calendar months 1606/1657 (needs DjVu-capable reader for FIDES), 1487 offertory, 1601/1605 acts, reception.",
+    "OCSO: signed 1971/1972/1975/1977 instruments; Rome 1983 book; 1892–1971 Latin sequence; house use of exact books.",
+    "Premonstratensian: 1663 missal and 1739 ordinal.",
+    "Braga 1558 (Gallica 403), Pinheiro thesis (Anubis); Sarum, York, Hereford, Esztergom, Gilbertine, Servite, Hospitaller, Humiliati, Minim gaps not attempted."
+  ],
+  "limits": "Sub-agent delegation was refused by the harness (concurrent limit), so the lane ran sequentially and 14 gaps were not attempted. Every documented change rests on page images viewed in this batch; Notitiae entries marked OCR-only were read in the text layer. No body text was collated beyond the named units, and no transition grants Git ancestry or text inheritance. Vernacular versions cited for OCSO reception remain outside the original-language corpus.",
+  "independent_review": {
+    "status": "accepted-with-corrections",
+    "independent": true,
+    "reviewer": "independent batch-5 cold reviewer, distinct from the lane author and the coordinator",
+    "checked_on": "2026-10-22",
+    "verdict_sha256": "9a66c9c27b62eeec96a73689e6e11b75bbdbc391e492224fbd61096b39fefff8",
+    "scope": "Reviewed lane commit 8ec97d9a3 against base a17f42c7e. The reviewer fetched into its own scratch, and looked at, the BSB page images for every added or changed stage and transition: OSA 1491 colophon canvas 565; Carthusian incunable canvases 230-236 and 558-571; Pavia 1561 canvases 254-256; Premonstratensian copies catalogued 1530 (276-277) and 1578 (314); 1622 title and p. 269. It also read the GW and BSB-Ink records, the op.org 1985 Dominican Proprium (PDF 1-17 and 48-53), and 29 Notitiae issues covering every cited page: Dominican 1969 and 1972; OCSO 1976-1983 and 2012; Canons Regular 1975-1976; OSA 1972 and 1975; and every item the lane had read only in OCR (1972, 1973, 1974, 1977, 1978, 1979), plus unmarked Teutonic, Pauline and OCSO 1965-1967 items. King pp. 176-177 and 217-218 and Bonniwell pp. 320-321 were read from hash-recorded earlier-batch copies. Ownership, text-field, route-row and hygiene checks were also run. Corrections: the Carthusian 1496 stage and its witness-succession edge became provisional (catalogue-only year; GW 'not after 1496'; no encoded difference from 1561); a wrong shelfmark and a wrong register locus were fixed; the oblation 'agreement' was narrowed to word-order variants; the 1985 Dominican promulgation was re-dated to Couesnongle's letter of 15 August 1983, distinct from the 3 April 1985 printing mandate and the 1985 publication; OCSO negative findings were rephrased as a bounded OCR search naming the 1983 Latin collect (CD 124/83); vernacular confirmations were narrowed from 'reception' to permissions; the Premonstratensian 'Pian' label was attributed to King p. 177; unmarked OCR-derived items were qualified and two were re-described; the receipt counts and title were corrected. Not checked: whole-book or body collations; the 1570 Roman Missal against the 1622 rubric; ISTC (bot check); re-probes of access refusals and negative catalogue searches beyond plausibility. No stage, transition or candidate was added. The routing classification in catholic-eucharistic-history-v1.toml that still names the removed Dominican transition is left to the coordinator."
+  }
+}

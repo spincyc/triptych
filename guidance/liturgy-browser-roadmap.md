@@ -60,6 +60,33 @@ integrated acceptance target the final merged, rebuilt state, rather than
 duplicating the browser run before and after the merge. No acceptance gate
 is waived and no publication has occurred.
 
+Ordinary integration of upstream `74150dd4e` is now underway after coherent
+feature checkpoints. Both parent source graphs, terminal repairs and exact
+upstream History outputs survive. The combined Sources owner is current at
+5,011 files and 3,751 readable passages; only its index changes from the parent
+union, and all 162 pending family units remain exact. The 23,665 publication
+pins are exact without new permissions. Annual controls remain byte-exact.
+Thirteen rights/Sources checks pass. An obsolete terminal catalogue-count
+fixture is strengthened to compare all authoritative IDs and exact count
+messages; thirteen affected tests and two rejection controls then pass.
+The initial 180-second History check-only timeout is retained; no History
+writer runs. The complete merged deployment-source gate then passes in 220
+seconds, including the 557-file History check. Final public/preview builds
+and both verifiers pass. Native checks and integrated cold acceptance remain
+required, along with the final merge-object and deployment joins.
+
+The settled merged candidate now passes seven native tests, twelve harnesses
+and all 257 assertions with no skips. All eight emitted screenshots are
+inspected. Independent review accepts bounded Phase 5 and merged integration
+after exact sealed-packet, privacy, inventory and forward/reverse replay joins.
+The earlier native failure and two packaging failures remain retained;
+packaging-only metadata recovery changes no native evidence. Sources/History
+inventory joins are exact, but the native run makes no HTTP requests to those
+namespaces. A separate review finds no actionable disclosure gap in the exact
+merged tree's novel objects. The annual record owns packet and acceptance
+identities. Final documentation/message review, merge commit and publication
+remain pending; annual textual completion and other product gates remain open.
+
 The maintainer explicitly puts correctness and completeness of Propers and
 Commons first: one full TLM year and one full Novus Ordo year for **each**
 Sunday cycle A, B and C. This supersedes the previous next-action ordering.

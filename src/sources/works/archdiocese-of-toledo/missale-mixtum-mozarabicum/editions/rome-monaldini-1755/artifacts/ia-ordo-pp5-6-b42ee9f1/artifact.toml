@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.ia-ordo-pp5-6-b42ee9f1"
+edition_id = "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755"
+artifact_type = "scan-pdf"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The underlying 1755 Latin printing is public domain in the United States: publication at Rome in 1755, before the pre 1931 boundary applicable in 2026. Faithful mechanical scans add no original authorship. These four pages contain only book pages, without Google's front usage leaves. No modern translation or protected scholarly apparatus is included. The historical text and third-party scans are excluded from Triptych's CC BY 4.0 licence."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/missalemixtumse00leslgoog/missalemixtumse00leslgoog_jp2.zip"
+provenance = "Exact original JPEG2000 members served by Internet Archive, retrieved 2026-10-22 and embedded unchanged (JPXDecode): PDF page 1 = NYPL/Google copy missalemixtumse00leslgoog image 0011 (title, sha256 28ba32e2c101cdd64090ec847d8be4623fea45bbb304f55a75bfb48ae1904ed0); page 2 = image 0127 (printed p. 5, sha256 5d303db3f155414373c78db002084c48387cea0fe51be7f4cd2243ad1bcd1616); page 3 = image 0128 (printed p. 6, sha256 e2dc7df7715043ecfc3ead9dc5b41a42961f4e337a0c12398039ff7932a30bba); page 4 = Florence/Google copy bub_gb_hAJaQabODUYC image 0123 (printed p. 5 again, sha256 8f535d79fb4cf509a02743aff988602083bf981f024a4bc906c946e41836968f), from https://archive.org/download/bub_gb_hAJaQabODUYC/bub_gb_hAJaQabODUYC_jp2.zip . Member URLs follow the provider zip-member pattern used by the existing ia-jp2-page590 artifact. The NYPL copy is used because its 4450x7209 bilevel images are far more legible than the 685-pixel Florence images; the Florence page is included only because the NYPL binding gutter crops the marginal Forma ista note on p. 5."
+retrieved = "2026-10-22"
+sha256 = "b42ee9f1a2fde02df2c8727920defc32e3c34c5be8603caae278492036fca796"
+byte_size = 1703816
+path = "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ia-ordo-pp5-6-b42ee9f1/ordo-pp5-6.pdf"
+page_count = 4
+indexable = false
+notes = "Both IA items are digitizations of this one edition; the NYPL title page (page 1) was visually checked: MISSALE MIXTUM ... AB ALEXANDRO LESLEO ... PARS PRIMA. ROMAE MDCCLV. Sumptibus Venantii Monaldini ... TYPIS JOANNIS GENEROSI SALOMONI. The constituent runs from Deinde dicat Presb. in silentio (p. 5, left column, Lesley line 36) to the Amen after Per omnia secula seculorum (p. 6, right column, line 81). Lesley's printed marginal line numbers are excluded apparatus. The NYPL copy is partial elsewhere in the volume; no complete-book claim is made from it."

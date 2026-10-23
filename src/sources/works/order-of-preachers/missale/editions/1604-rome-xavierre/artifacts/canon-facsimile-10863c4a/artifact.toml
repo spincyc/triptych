@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.order-of-preachers.missale.1604-rome-xavierre.canon-facsimile-10863c4a"
+edition_id = "edition.order-of-preachers.missale.1604-rome-xavierre"
+artifact_type = "scan-pdf"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The original 1604 printing is public domain in the United States by expiration of its publication term. The exact Internet Archive item bub_gb_lefoIUlq2sgC, contributed by National Central Library of Rome, explicitly records Public Domain Mark 1.0 (http://creativecommons.org/publicdomain/mark/1.0/) in https://archive.org/metadata/bub_gb_lefoIUlq2sgC; acquired metadata SHA-256 8a5dfc63e214d8f34d608816a8648a7d7196d986b980916edd7723cab9ebf0b9. This is a mechanical scan of historical pages, not a modern critical edition or translation. Visible scan marks and historical handwriting are preserved in image derivatives, but handwriting is excluded from printed-text claims. This third-party source is excluded from Triptych’s CC BY 4.0 license."
+source_url = "https://archive.org/download/bub_gb_lefoIUlq2sgC/bub_gb_lefoIUlq2sgC.pdf?download=1"
+provenance = "Bounded lossless page selection made 2026-10-22 from the exact complete Internet Archive PDF SHA-256 7e7d61dbc7b45a53d7c16cd1e86d3a8f301dba8158e0c8441b00e69a5ff01eaf (re-hashed locally before extraction). Source PDF pages 3, 5, 6, 7, 245, 246, 247, 248, 249 in that order: the title page and the reprinted Clement VIII brief and Xavierre letter, then every page of the Canon. The whole book remains remote under its parent record."
+retrieved = "2026-10-16"
+sha256 = "10863c4a2ac21c40040e66e817ddfdc2d853b5d5592e829f08f519e3938649c7"
+byte_size = 1405577
+path = "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/canon-facsimile-10863c4a/canon-pages.pdf"
+indexable = false
+page_count = 9
+derived_from = "artifact.order-of-preachers.missale.1604-rome-xavierre.ia-complete-pdf-7e7d61db"
+transformation = "Poppler pdfseparate extracted each listed source page separately and pdfunite 26.10.0 concatenated them in the listed order. No rasterization, image recompression, OCR or text rewriting. The ordered SHA-256 list of the 27 embedded image streams extracted with pdfimages -all from the single-page extracts and from this file is identical. pdfunite output is not byte-reproducible (document ID); the image-stream list is the reproducibility check."

@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-reading-ba247899"
+edition_id = "edition.order-of-preachers.missale.1603-rome-ciacconi"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful bounded reading transcription of original Latin from the identified 1603 printing, whose United States publication term has expired. No modern translation, critical reconstruction or wording from another edition is imported. The historical wording is separate from the provider’s image-specific No Copyright - Non-Commercial Use Only 1.0 condition and attribution to München, Bayerische Staatsbibliothek, Res/2 Liturg. 234, bsb10164238. Third-party historical text is excluded from Triptych’s CC BY 4.0 license. Scholarly availability does not authorize contemporary liturgical use."
+source_url = "https://www.digitale-sammlungen.de/en/view/bsb10164238"
+provenance = "Bounded 15-unit Canon reading transcribed 2026-10-22 by an AI source transcriber, word by word on the original page images (zoomed crops of every column); the provider OCR text layer and the older bounded act-slice records were used only to locate pages. An independent AI collator then made its own blind reading of every Canon page from the retained images, compared it word by word with this reading, resolved each disagreement on zoomed pixel crops and corrected the reading where the image required (heading: printed capitals to declared sentence case; qui-pridie: omnes: to omnes.; unde-et-memores: aeternae; to aeternae,). Receipt: src/sources/inventories/eucharistic-books/support/dominican-1603-canon-review.json."
+retrieved = "2026-10-22"
+sha256 = "ba2478994fb023899be640404cd3d52089e8f6d4fa4a7d3ae920dd7a47f85615"
+byte_size = 4674
+path = "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/artifacts/canon-reading-ba247899/canon-reading.txt"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.order-of-preachers.missale.1603-rome-ciacconi.canon-facsimile-8a76918a"
+transformation = "Render the 15-unit reading into 18 sequential UTF-8 LF lines in source order; the printed display title (where present) and each spoken block occupy their own lines, and the consecration words that the book sets as separate blocks occupy separate lines. The Dominican Canon pages of this book print no rubrics between Te igitur and omnis honor et gloria. Reading normalization follows the published roman-1570-canon-missae and batch-5 Roman readings so that Canon states compare word for word: long s becomes s; ae/oe ligatures and e-caudata become ae/oe; u/v are regularized (u vowel, v consonant) and j becomes i (final ij as ii); the ampersand and the Tironian et become et; enclitic q. and q; become que; nasal bars and other printed contractions are expanded (dne/Dne domine/Domine, dni, oibus omnibus, qsumus quaesumus, pstas praestas, final -um/-em/-am, cum, -rum); acute and grave accents are omitted; display initials and spaced capitals are merged in sentence case; line-end word divisions are joined and one space follows punctuation. Spelling, capitalization, punctuation (including the virgule /) and the N. placeholders are otherwise as printed. Printed crosses are rendered as U+2720 at their source positions, including crosses inside words. Running heads, folio and page numbers, signatures, catchwords, woodcuts, ornaments, ink colour and chant notation are excluded. This is a normalized reading transcription, not a glyph-diplomatic facsimile. The display title, printed in capitals, is rendered in sentence case with Missae capitalized as the book's own running head Canon Missae prints it."

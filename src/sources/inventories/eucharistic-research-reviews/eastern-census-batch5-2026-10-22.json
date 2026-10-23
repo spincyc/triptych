@@ -1,0 +1,2014 @@
+{
+ "schema_version": 1,
+ "record_type": "eucharistic-research-lane-review",
+ "id": "eastern-census-batch5-2026-10-22",
+ "lane": "eastern-census-batch5",
+ "title": "Eastern census and local-reception lane, batch 5: dated official enumeration crosswalk, named Albanian and Macedonian gaps, Lungro Holy Week book leads, a further defective 1646 copy",
+ "side": "eastern",
+ "checked_on": "2026-10-22",
+ "target_inventory": "src/sources/inventories/eastern-eucharistic-books-timeline-v1.toml; src/sources/inventories/eucharistic-stages/eastern-local-round2.json; src/sources/inventories/eucharistic-stages/greek-italo-local-reception.json; src/sources/inventories/eucharistic-stages/hungarian-reception.json; src/sources/inventories/eucharistic-stage-coverage-v1.json",
+ "review_files": {
+  "lane_worklog_sha256": "0b8b65f54941933cbbf019af7270def125f50b56da7349737a36744a44f266fb",
+  "independent_review_sha256": "bda268f487b90e9788130eada104c15543a608133cd23959589f75c801222ee8"
+ },
+ "coverage_rows": [
+  "albanian",
+  "macedonian",
+  "greek",
+  "italo-albanian",
+  "hungarian",
+  "bulgarian",
+  "melkite",
+  "russian"
+ ],
+ "uses": [
+  {
+   "id": "current-named-eastern-census",
+   "disposition": "dated-official-enumeration-crosswalked; current-2026-census-unobtained",
+   "finding": "The latest official named enumeration reachable is Cardinal Sandri's list of 15 November 2016 (SICO 2015–2016, printed p. 325, re-viewed as a page image): 6 patriarchal, 4 major archiepiscopal, 5 metropolitan and 8 other names, 23 in all, which map one-to-one onto the 23 research slots (including Albanian, Russian, Belarusian, Macedonian, Bulgarian, Greek, Italo-Albanian, and Croatia with Serbia as one). The census method now names this list as the latest official named enumeration found (a list in the Prefect's lecture printed in SICO, not a canonical act) and keeps the July 2016, 2017 and 2019 groupings separate. A newly acquired Dicastery-linked SICO 2017–2018 volume (722 pp.) and the SICO 2019–2020 volume contain no named enumeration by text-layer and page-density searches.",
+   "limit": "A 2016 list is not a 2026 census. The Annuario Pontificio is subscription-only and was not accessed; its December 2025 presentation PDF returned HTTP 404. Secondary 2025–2026 lists (including a partial fetch of the Catholic World Report article) were not used as evidence.",
+   "next_sources": "Annuario Pontificio 2026 named section (print); any later Dicastery or Holy See document naming all Churches."
+  },
+  {
+   "id": "albanian",
+   "disposition": "named-gap-added; unchanged-searched; no-stage",
+   "finding": "A gap-only tradition eastern-local-round2:albanian and gap eastern-local-round2:albanian-book now name the missing Elbasan celebrant book and list the searches. OPAC SBN any-field queries (Papamihali, Scarpelli Pietro, mesha hyjnore, Gojarti, Gojarit, Joan Gojarti liturgjia, shqiperia bizantine liturgjia, Elbasan with all 21 records screened) return BVE0501507 as the only liturgical record; Internet Archive metadata found no Albanian Catholic service book.",
+   "limit": "The National Library of Albania catalogue API returned unusable responses instead of search results and could not be searched. BVE0501507 remains uninspected. No Orthodox Albanian or Italo-Albanian book was transferred.",
+   "next_sources": "Grottaferrata copy of BVE0501507; ACCO Prot. 441/28; Greek College correspondence; the Albanian national catalogue when usable."
+  },
+  {
+   "id": "macedonian",
+   "disposition": "named-gap-added; unchanged-searched; no-stage",
+   "finding": "Gap-only tradition eastern-local-round2:macedonian and gap eastern-local-round2:macedonian-book added. Nineteen katolici.mk WordPress queries (language, liturgy, translation and book terms) and twelve posts read: dated hierarchical Liturgies and the 2 December 2018 inauguration of the eparchy are reported (the eparch calls the community particular by language and rite) but no post names the celebrant book or the language of celebration.",
+   "limit": "COBISS.MK presented a proof-of-work bot challenge (2026-10-22T10:08:58Z) and was not attempted. The 9 December 2009 approval names translated liturgies only, so no approval-dated stage was created: without an identified book or evidenced use it would contradict the admission rule in time-machine §11.",
+   "next_sources": "2009 Литургикон holding record and title leaves; original pages of the 2024 jubilee monograph; a dated announcement naming the book or language."
+  },
+  {
+   "id": "italo-albanian",
+   "disposition": "catalogue-leads-added; no-stage",
+   "finding": "OPAC SBN identifies Lungro's eparchial Holy Week books, Grande e Santa Settimana e Santa Domenica di Pasqua: 1977 (CSA0027251, VIII+264 p.), 1989 (FOG0195240, 219 p.) and 2016 in two volumes (VIA0340273, 518+622 p.). The eparchy's own report dates to 18 March 2016 the presentation at the diocesan museum of a two-volume work of that title wanted by Bishop Donato Oliverio; its identity with the 2016 record rests on title, year and volume count. These are added as origin-review records italo-albanian-lungro-holyweek1977, -1989 and -2016. The eparchy's profile of 26 February 2026, a modern self-description and not the 1968 decree, an approval or book evidence, restates Arbëresh as a liturgical language since 1968 beside Greek, with Chrysostom the most widespread official text, Basil on ten fixed days and James rare.",
+   "limit": "None of the books was seen. All are catalogued in Italian; languages printed, contents (including whether any Eucharistic service is included), approval and altar use are unknown, and an Italian translation would fall under the deferred translation scope. The 2026 profile names no book or decree day. The 1999 faithful's Chrysostom (PUG0004702) was already recorded as byzantine-greek-lungro1999-faithful and was not duplicated.",
+   "next_sources": "Title, contents and approval leaves of the 2016 volumes (Rende or Venice copies); Bollettino 3 (1968) pp. 14–16; Piana 2006 Ieratikon leaves."
+  },
+  {
+   "id": "greek",
+   "disposition": "unchanged-searched",
+   "finding": "A Greek web search for the approval of the 2014 Papadimitriou Euchologion found nothing relevant.",
+   "limit": "No receiving edition, adoption act or dated celebration with a named book; Istanbul not searched.",
+   "next_sources": "As in greek-italo-local-reception:greek-receiving-editions."
+  },
+  {
+   "id": "hungarian",
+   "disposition": "further-defective-edition-copy-found; no-gap-narrowed; no-stage",
+   "finding": "The Ukrainian Catholic University digital library item 156 is a public IIIF copy catalogued as the Lviv 1646 Sluzhebnik (Mshanets church provenance), leaves 14–297 and two unnumbered (570 canvases, CC BY-NC). Canvases 3 (leaf 14, Great Vespers), 563, 566, 568 and 570 (daily and festal dismissals ending in the Nativity dismissal) were viewed. The record cites Zapasko and Isaievych no. 352 for the edition ([6], 308, [2] leaves) and a foreword by Arsenii Zhelyborskyi dated 23 August 1646. Added as source hungarian-src-ucu-1646-copy.",
+   "limit": "It lacks title, opening leaves and colophon, so it gives neither the requested title nor colophon images; it has no Hungarian provenance and says nothing about Nyírderzs. The foreword date is reported by the catalogue, not viewed. Google Books returned HTTP 429; Polona has no copy among first results; no source dates Fr. István Zolcsák's Nyírderzs incumbency. It is less complete than the Czech copy A 003340 already recorded (305 surviving folios; its catalogue describes the preliminaries, leaves 306–307 and the terminal leaves as missing), so it is not a fuller copy; its edition identity rests on the provider's citation of Zapasko and Isaievych no. 352.",
+   "next_sources": "Szent Atanáz copies Ant10467 and Ant10560 ownership leaves; a Hajdúdorog or Nyíregyháza schematism; the 1920 and 1949 originals."
+  },
+  {
+   "id": "bulgarian",
+   "disposition": "unchanged-searched; caution-added",
+   "finding": "Exarchate pages re-read (2007 Holy Week collection, Burgas 2005 combined book) without source or approval statements. A web search found a study of the 1985 Bulgarian Orthodox Synodal Sluzhebnik; the gap now warns that this different 1985 book must not be conflated with Eldarov's Rome 1985 Sluzhebnik.",
+   "limit": "No title, approval or source leaf of the Catholic books.",
+   "next_sources": "As in eastern-local-round2:bulgarian-receipt."
+  },
+  {
+   "id": "melkite",
+   "disposition": "unchanged-searched",
+   "finding": "A further Arabic web search found no scan or title leaves of the synodal Book of the Divine Liturgy.",
+   "limit": "Originals unacquired.",
+   "next_sources": "As in eastern-local-round2:melkite-sequence."
+  },
+  {
+   "id": "russian",
+   "disposition": "unchanged-searched",
+   "finding": "A Russian web search found no parish record naming a Roman Slavonic Liturgikon in use; a Vulgata menologion study (Semenenko-Basin and Caprio) is a calendar lead only.",
+   "limit": "No act or parish record.",
+   "next_sources": "As in eastern-local-round2:russian-use."
+  }
+ ],
+ "searches": [
+  {
+   "repository": "Dicastery for the Eastern Churches and Holy See websites",
+   "queries": [
+    "orientchurch.va home, dicastero, pubblicazioni, linee-guida-testi-liturgici pages",
+    "vatican.va Dicastery profilo (it, en)",
+    "press.vatican.va 9 December 2025 Annuario digitale page and linked PDF",
+    "Google Drive file 1u3fZh8lEB7GvKsO2ZPGInDCzDqY51Ifg linked from pubblicazioni"
+   ],
+   "url": "https://www.orientchurch.va/pubblicazioni.html",
+   "checked_on": "2026-10-22",
+   "outcome": "No named enumeration on any page. The Drive file is SICO 2017–2018 (722 pp.); its index groups appointments by Church; no named enumeration found. Annuario presentation PDF HTTP 404 (retry).",
+   "extent_examined": "Whole pages; SICO 2017–2018 index read and whole text layer searched (count phrases, Albanian/Belarusian/Russian Church labels, pages naming 14 or more Churches); SICO 2019–2020 and 2015–2016 text layers scanned the same way; SICO 2015–2016 p. 325 viewed as image.",
+   "unexamined_range": "Annuario Pontificio (subscription); SICO volumes not online; printed Dicastery reference works beyond their offered extracts."
+  },
+  {
+   "repository": "Vatican News and general web search (census)",
+   "queries": [
+    "site:vatican.va Chiese orientali cattoliche elenco sui iuris 23",
+    "vaticannews 23 Chiese orientali cattoliche elenco 2025 OR 2026",
+    "Gugerotti Chiese orientali cattoliche sui iuris elenco",
+    "Annuario Pontificio 2024–2026 list Eastern Catholic Churches Albanian Russian Belarusian"
+   ],
+   "url": "https://www.vaticannews.va/de/vatikan/news/2025-07/dikasterium-ostkirchen-orientalisch-kirchen-vatikan-vorstellung.html",
+   "checked_on": "2026-10-22",
+   "outcome": "Vatican News July 2025 Dicastery presentation read: no list. Other results secondary (Wikipedia, Cathopedia, Catholic World Report/EWTN 20 September 2026, ACI Afrique); not used as evidence.",
+   "extent_examined": "Result lists; one official article read in full.",
+   "unexamined_range": "Paywalled and print sources."
+  },
+  {
+   "repository": "OPAC SBN public JSON gateway",
+   "queries": [
+    "Papamihali",
+    "Scarpelli Pietro",
+    "mesha hyjnore",
+    "Gojarti",
+    "Gojarit",
+    "Joan Gojarti liturgjia",
+    "shqiperia bizantine liturgjia",
+    "Elbasan",
+    "grande e santa settimana",
+    "java e madhe",
+    "eparchia di Lungro liturgia",
+    "Oliverio liturgia",
+    "Lungro 2016 settimana santa",
+    "Liturgjia Hyjnore",
+    "Ieratikon Piana",
+    "Ieratikòn"
+   ],
+   "url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "checked_on": "2026-10-22",
+   "outcome": "Hits 3, 75, 1, 0, 0, 0, 0, 21, 30, 1, 1, 0, 0, 3, 0, 10. New: Lungro Holy Week books CSA0027251 (1977), FOG0195240 (1989), VIA0340273/75/77 (2016); Piana PAL0035879 (1987 municipal booklet). Full records read for these and PUG0004702 (already in inventory).",
+   "extent_examined": "All hits for queries with 30 or fewer; first 50 for Scarpelli Pietro.",
+   "unexamined_range": "Non-SBN catalogues; the books themselves."
+  },
+  {
+   "repository": "National Library of Albania (BKSH) catalogue",
+   "queries": [
+    "liturgjia (public API search)"
+   ],
+   "url": "https://www.bksh.al/",
+   "checked_on": "2026-10-22",
+   "outcome": "The catalogue is a JavaScript client; its public API endpoints returned unusable responses instead of search results (about 10:04 UTC). Not usable; the responses were deleted unread beyond identification and not retained; no further probing.",
+   "extent_examined": "Two requests.",
+   "unexamined_range": "The whole catalogue."
+  },
+  {
+   "repository": "Internet Archive metadata search",
+   "queries": [
+    "(Elbasan) AND (liturgjia OR liturgji OR mesha OR meshari OR liturgia)"
+   ],
+   "url": "https://archive.org/advancedsearch.php",
+   "checked_on": "2026-10-22",
+   "outcome": "2 hits, both general Albanian literary anthologies; no service book.",
+   "extent_examined": "All hits.",
+   "unexamined_range": "Full-text search; uncatalogued items."
+  },
+  {
+   "repository": "katolici.mk WordPress API",
+   "queries": [
+    "македонски јазик",
+    "литургиски јазик",
+    "богослужбен јазик",
+    "на македонски",
+    "Василиј Велики",
+    "Литургијата на свети Василиј",
+    "Златоустова",
+    "архиерејска Литургија",
+    "литургиски книги",
+    "Часослов",
+    "Требник",
+    "Преосвештени дарови",
+    "Апостол и Евангелие",
+    "црковнословенски",
+    "старословенски",
+    "превод",
+    "литургиски текстови",
+    "Литургикон",
+    "Јован Златоуст"
+   ],
+   "url": "https://katolici.mk/wp-json/wp/v2/search",
+   "checked_on": "2026-10-22",
+   "outcome": "Titles screened; posts 31976, 31987, 61833, 56073, 55652, 62427, 65161, 61438, 52408, 31930, 55126, 54118 read. No book title, imprint, approval or language of celebration.",
+   "extent_examined": "Up to 100 rows per query; twelve post bodies.",
+   "unexamined_range": "Other post bodies; media library; print issues."
+  },
+  {
+   "repository": "COBISS.MK",
+   "queries": [
+    "Литургикон"
+   ],
+   "url": "https://plus.cobiss.net/cobiss/mk/mk/bib/search",
+   "checked_on": "2026-10-22",
+   "outcome": "Proof-of-work bot challenge page at 2026-10-22T10:08:58Z; not attempted.",
+   "extent_examined": "One request.",
+   "unexamined_range": "Whole catalogue."
+  },
+  {
+   "repository": "Eparchy of Lungro website (WordPress API and media)",
+   "queries": [
+    "1968",
+    "lingua albanese",
+    "Liturgjia Hyjnore",
+    "decreto liturgia",
+    "Bollettino ecclesiastico",
+    "Ieratikon",
+    "Hieratikon",
+    "Archieratikon",
+    "libri liturgici",
+    "media search Lajme"
+   ],
+   "url": "https://www.eparchialungro.it/wp-json/wp/v2/search",
+   "checked_on": "2026-10-22",
+   "outcome": "Hits 9, 31, 0, 7, 1, 0, 0, 0, 12; posts 7660, 5851, 6017, 3398 and pages 2109, 2112 read. 96 Lajme PDFs listed; 34 downloaded (1990–1999, 2016–2017, May–August 2013). 2016–2017 text layers: no Holy Week book report. 2013 pp. 58–59 decree passage already in inventory.",
+   "extent_examined": "All returned titles; six bodies read; text layers of five issues searched.",
+   "unexamined_range": "The 1990s Lajme issues are image-only and were not OCR-searched (no Italian OCR model available); 62 other issues not downloaded; the original Bollettino 1968."
+  },
+  {
+   "repository": "Eparchy of Piana degli Albanesi website",
+   "queries": [
+    "home, eparchia, comunicazioni, curia pages; August 2026 circular"
+   ],
+   "url": "https://www.eparchiapiana.org/",
+   "checked_on": "2026-10-22",
+   "outcome": "No Ieratikon decree, approval or liturgical-book notice; the circular (image PDF, p. 1 viewed) is pastoral.",
+   "extent_examined": "Four pages and one circular page.",
+   "unexamined_range": "Non-linked documents; diocesan bulletins."
+  },
+  {
+   "repository": "Ukrainian Catholic University digital library and Atla Digital Library",
+   "queries": [
+    "web search Служебник 1646 Львів Сльозка оцифрований"
+   ],
+   "url": "https://dlib.ucu.org.ua/items/show/156",
+   "checked_on": "2026-10-22",
+   "outcome": "Public IIIF copy of the Lviv 1646 Sluzhebnik, leaves 14–297 and two unnumbered; five canvases viewed; no title or colophon.",
+   "extent_examined": "Item and mirror records, manifest, canvases 3, 563, 566, 568, 570 (others downloaded at 700 px: 1, 2, 4, 5, 6, 560, 565, 567, 569 but not examined).",
+   "unexamined_range": "Canvases 7–559 (body)."
+  },
+  {
+   "repository": "Polona and Google Books",
+   "queries": [
+    "Polona: Służebnik 1646; Leiturgiarion 1646; Liturgiarion Lwów 1646; Служебник 1646; Słuzhebnyk Lwów Slozka",
+    "Google Books API volume jr1nAAAAcAAJ"
+   ],
+   "url": "https://polona.pl/",
+   "checked_on": "2026-10-22",
+   "outcome": "Polona: no Lviv 1646 Sluzhebnik among the first 50 hits of each query. Google Books: HTTP 429 quota (2026-10-22T10:25:09Z), not retried further.",
+   "extent_examined": "First 50 hits per Polona query.",
+   "unexamined_range": "Later Polona pages; Google Books images."
+  },
+  {
+   "repository": "General web search (owned rows)",
+   "queries": [
+    "Elbasan rit bizantin katolik Shën Pjetri meshë liturgjia gjuhën shqipe",
+    "Литургикон Струмичко-скопска епархија католичка 2009 превод",
+    "Eparchia di Piana degli Albanesi Ieratikon 2006 decreto",
+    "Ευχολόγιον 2014 Παπαδημητρίου Ελληνική Καθολική Εξαρχία έγκριση",
+    "Zolcsák István görögkatolikus parókus",
+    "Nyírderzs görögkatolikus parókia parókusai Zolcsák",
+    "Служебник 1985 Елдъров ... 2005 2007 екзархия",
+    "كتاب القداس الإلهي الروم الملكيين الكاثوليك 2006",
+    "русские католики византийского обряда служебник 1956 1983"
+   ],
+   "url": "https://www.google.com/",
+   "checked_on": "2026-10-22",
+   "outcome": "No book, approval or use evidence for any owned row. Found the UCU 1646 copy (separate entry) and a study of the 1985 Bulgarian Orthodox Synodal Sluzhebnik (caution only).",
+   "extent_examined": "Returned result lists.",
+   "unexamined_range": "Unindexed archives; paywalled sources."
+  }
+ ],
+ "versions": [
+  {
+   "id": "italo-albanian-lungro-holyweek1977",
+   "label": "Grande e Santa Settimana e Santa Domenica di Pasqua (Lungro, 1977)",
+   "tradition_or_use": "Eparchy of Lungro",
+   "date_label": "1977",
+   "date_role": "catalogue-publication-year",
+   "record_class": "eparchial-holy-week-book-catalogue-lead",
+   "distinctness_basis": "None established; contents uninspected.",
+   "existing_candidate_ids": [],
+   "source_refs": [
+    "italo-albanian-src-sbn-lungro-holyweek1977"
+   ],
+   "unresolved": "Languages, Eucharistic contents, approval, use."
+  },
+  {
+   "id": "italo-albanian-lungro-holyweek1989",
+   "label": "Grande e Santa Settimana e Santa Domenica di Pasqua (Lungro, 1989)",
+   "tradition_or_use": "Eparchy of Lungro",
+   "date_label": "1989",
+   "date_role": "catalogue-publication-year",
+   "record_class": "eparchial-holy-week-book-catalogue-lead",
+   "distinctness_basis": "None established; relation to 1977 unknown.",
+   "existing_candidate_ids": [],
+   "source_refs": [
+    "italo-albanian-src-sbn-lungro-holyweek1989"
+   ],
+   "unresolved": "Languages, contents, approval, use; revision or reprint of 1977."
+  },
+  {
+   "id": "italo-albanian-lungro-holyweek2016",
+   "label": "Grande e Santa Settimana e Santa Domenica di Pasqua, 2 vols. (Lungro, 2016)",
+   "tradition_or_use": "Eparchy of Lungro",
+   "date_label": "2016; presented 18 March 2016",
+   "date_role": "catalogue-publication-year; reported presentation event",
+   "record_class": "eparchial-holy-week-book-catalogue-lead",
+   "distinctness_basis": "None established; much larger extent than 1977/1989 is not evidence of revision.",
+   "existing_candidate_ids": [],
+   "source_refs": [
+    "italo-albanian-src-sbn-lungro-holyweek2016",
+    "italo-albanian-src-lungro-holyweek2016-presentation"
+   ],
+   "unresolved": "Languages, contents, approval, use."
+  }
+ ],
+ "acquisitions": [
+  {
+   "source_url": "https://archive.org/advancedsearch.php",
+   "retrieved_at_utc": "2026-10-22T10:05:02Z",
+   "sha256": "ef49282e27ef73ee92a16e6a82c6bdb8eed14e01e30ba6e64314bcc0c8565b0c",
+   "byte_size": 1071,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Internet Archive metadata search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/al/ia1.json"
+  },
+  {
+   "source_url": "https://www.kae-bg.org/?act=content&rec=136",
+   "retrieved_at_utc": "2026-10-22T10:28:50Z",
+   "sha256": "b900b9552536e8a9d95ee89963be0d3483f733205c65ec5288a98e9031d8191a",
+   "byte_size": 5051,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Bulgarian exarchate publications page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/bg/kae-136.html"
+  },
+  {
+   "source_url": "https://www.kae-bg.org/?act=content&rec=41",
+   "retrieved_at_utc": "2026-10-22T10:28:51Z",
+   "sha256": "43bd49fbf3d4755a3115638c42729bf5a6e2227a6b2ba390fe76e1645ed8bfb4",
+   "byte_size": 10749,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Bulgarian exarchate Burgas parish page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/bg/kae-41.html"
+  },
+  {
+   "source_url": "https://www.annuariopontificio.catholic/welcome",
+   "retrieved_at_utc": "2026-10-22T09:58:42Z",
+   "sha256": "7ca28281694dca5b7a60181108a7e997e699045d8859fbfb881961a65f715443",
+   "byte_size": 1280,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Annuario public application shell",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/census/ap-welcome.html"
+  },
+  {
+   "source_url": "https://www.catholicworldreport.com/2026/09/20/the-23-eastern-catholic-churches-ancient-traditions-in-communion-with-rome/",
+   "retrieved_at_utc": "2026-10-22T10:01:56Z",
+   "sha256": "423089c30373f38dec4797c89d05068f5bd6e60fbd2e0b762bbab94fb15ec624",
+   "byte_size": 33360,
+   "retrieved_extent": "complete response as delivered; partial delivery after timeout",
+   "source_role": "secondary article, partial delivery (timeout); not used as evidence",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/census/cwr-2026-09-20.html"
+  },
+  {
+   "source_url": "https://www.orientchurch.va/comunicazioni/linee-guida-testi-liturgici.html",
+   "retrieved_at_utc": "2026-10-22T09:58:12Z",
+   "sha256": "1e24b6a6c76372001c392adb3066efa5d4d0d096deb0f6cd0a4973411f40a4c9",
+   "byte_size": 18916,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Dicastery page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/census/dco-comunicazioni_linee-guida-testi-liturgici.html"
+  },
+  {
+   "source_url": "https://www.orientchurch.va/dicastero.html",
+   "retrieved_at_utc": "2026-10-22T09:58:11Z",
+   "sha256": "736ffb7c2cbb9b09b8f9311acc38cd932eb72048daa931e324a5f916ccd5240c",
+   "byte_size": 25646,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Dicastery page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/census/dco-dicastero.html"
+  },
+  {
+   "source_url": "https://www.orientchurch.va/",
+   "retrieved_at_utc": "2026-10-22T09:58:05Z",
+   "sha256": "826c29907e10e5b4fc8d66260c493ef8efa9195e9ecd47c4f4dcafa38404f89f",
+   "byte_size": 19298,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Dicastery homepage",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/census/dco-home.html"
+  },
+  {
+   "source_url": "https://drive.google.com/uc?export=download&id=1u3fZh8lEB7GvKsO2ZPGInDCzDqY51Ifg",
+   "retrieved_at_utc": "2026-10-22T09:59:59Z",
+   "sha256": "0db7dda4341af23412733bda484852bd23be31b3d5c0aedef31533be1b15a3b0",
+   "byte_size": 13512661,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "SICO 2017-2018 volume linked from the Dicastery publications page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/census/gd-1u3f.pdf"
+  },
+  {
+   "source_url": "https://press.vatican.va/content/salastampa/it/info/2025/12/09/segreteria-di-statopresentazione-dellannuario-pontificio-digital.html",
+   "retrieved_at_utc": "2026-10-22T10:00:30Z",
+   "sha256": "ef633dacfa7c20a928f5d2efb6cf50b7d8e00674d0d3557e828e236762460ecc",
+   "byte_size": 8353,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Holy See Press Office page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/census/press-annuario-2025-12-09.html"
+  },
+  {
+   "source_url": "https://press.vatican.va/content/dam/salastampa/it/bollettino/documentazione-linkata/Segreteria%20di%20Stato_Annuario%20Pontificio%20digitale%20(1).pdf",
+   "retrieved_at_utc": "2026-10-22T10:00:39Z",
+   "sha256": "2e1fe84926e06cfcd23d3280ad449eede1fe62cfbd535a3fc01018351cd77a79",
+   "byte_size": 3016,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "HTTP 404 error page (access record)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/census/press-annuario-digitale.pdf"
+  },
+  {
+   "source_url": "https://www.orientchurch.va/images/Imp_SICO_2015-16_1.pdf",
+   "retrieved_at_utc": "2026-10-22T10:03:00Z",
+   "sha256": "f23588eb62dead02bf033c3e1a7c3d28baedad0075a16044c6bb802b41f96d04",
+   "byte_size": 3426678,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "copied from batch-2 scratch (.scratch/batch2-20261020/eastern-census/acquired/sico-2015-2016.pdf), same SHA-256",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/census/sico-2015-2016.pdf"
+  },
+  {
+   "source_url": "https://drive.google.com/uc?export=download&id=1VP2-NpExpl8bq2Ex5vfEf01B-poeN771",
+   "retrieved_at_utc": "2026-10-22T10:02:48Z",
+   "sha256": "44b4255634d8ca025c52798043004ae4329c9a0165f5fa6f8ac68dbea83100ec",
+   "byte_size": 40753254,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "copied from batch-3 scratch (.scratch/batch3-20261020/eastern-census/dicastery-review/acquired/sico-2019-2020.pdf), same SHA-256",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/census/sico-2019-2020.pdf"
+  },
+  {
+   "source_url": "https://www.vatican.va/content/romancuria/en/dicasteri/dicastero-chiese-orientali/profilo.html",
+   "retrieved_at_utc": "2026-10-22T09:58:32Z",
+   "sha256": "08c1aaf85aadfb79a76900fa84b45e6f954b8325523470f935a838aa4d6e073a",
+   "byte_size": 23540,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Holy See Dicastery profile",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/census/va-dco-profilo-en.html"
+  },
+  {
+   "source_url": "https://www.vatican.va/content/romancuria/it/dicasteri/dicastero-chiese-orientali/profilo.html",
+   "retrieved_at_utc": "2026-10-22T09:58:32Z",
+   "sha256": "e571fc7036292916c3fe9146745cbedbb59fc307877f48015432cea2d214f709",
+   "byte_size": 23760,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Holy See Dicastery profile",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/census/va-dco-profilo-it.html"
+  },
+  {
+   "source_url": "https://www.vaticannews.va/de/vatikan/news/2025-07/dikasterium-ostkirchen-orientalisch-kirchen-vatikan-vorstellung.html",
+   "retrieved_at_utc": "2026-10-22T10:00:39Z",
+   "sha256": "e849a1923c0686d010e76691d068555814db93b36748a965fc826f27fe949e61",
+   "byte_size": 100085,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Vatican News presentation of the Dicastery",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/census/vn-de-2025-07-dikasterium.html"
+  },
+  {
+   "source_url": "https://dl.atla.com/concern/works/9306tj43k?locale=en",
+   "retrieved_at_utc": "2026-10-22T10:25:26Z",
+   "sha256": "21abf784a09376735d71a6a6e3312321f19025c681525088d00c6547c8324c2d",
+   "byte_size": 26356,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Atla Digital Library record of the UCU 1646 copy",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/atla-9306tj43k.html"
+  },
+  {
+   "source_url": "https://www.googleapis.com/books/v1/volumes/jr1nAAAAcAAJ",
+   "retrieved_at_utc": "2026-10-22T10:25:09Z",
+   "sha256": "1ef7b1ee7ee818f3f8787703615466dbd2ac0acae987358460e3dffd54961fda",
+   "byte_size": 1306,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "HTTP 429 quota error (access record)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/gb-vol.json"
+  },
+  {
+   "source_url": "https://polona.pl/api/search-service/search/simple",
+   "retrieved_at_utc": "2026-10-22T10:24:47Z",
+   "sha256": "f1f4f902cb29c620e4489aa66e892664188c4f2a163b0697cbb5fb71e47ff374",
+   "byte_size": 253558,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Polona search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/polona1.json"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/iiif-img/28340/full/700,/0/default.jpg",
+   "retrieved_at_utc": "2026-10-22T10:26:28Z",
+   "sha256": "936b57229b5e715bc52283e18a4c103630e679247f58efbe566630fb715fca24",
+   "byte_size": 96013,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU IIIF canvas 1 image (700 px)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu/c0001.jpg"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/iiif-img/28341/full/700,/0/default.jpg",
+   "retrieved_at_utc": "2026-10-22T10:26:29Z",
+   "sha256": "b84b4c8dc4b358ab7aa050fc669cfc3fa98976eca26072d2922578752e5c8b5b",
+   "byte_size": 94748,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU IIIF canvas 2 image (700 px)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu/c0002.jpg"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/iiif-img/28342/full/700,/0/default.jpg",
+   "retrieved_at_utc": "2026-10-22T10:26:31Z",
+   "sha256": "e0a18dc707ee6c3c853bf361c93f6fb016cb3fac118a23965bb0ce01ab45d571",
+   "byte_size": 98190,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU IIIF canvas 3 image (700 px)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu/c0003.jpg"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/iiif-img/28343/full/700,/0/default.jpg",
+   "retrieved_at_utc": "2026-10-22T10:26:33Z",
+   "sha256": "92fb02e545538e620b29f688493c6e986d67ee8bbc0cd5130186a005a7689faa",
+   "byte_size": 98569,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU IIIF canvas 4 image (700 px)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu/c0004.jpg"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/iiif-img/28344/full/700,/0/default.jpg",
+   "retrieved_at_utc": "2026-10-22T10:26:34Z",
+   "sha256": "3bc6ef773aa39d4797bba1676184e2102bd34916591d402cada5425383514bd3",
+   "byte_size": 112962,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU IIIF canvas 5 image (700 px)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu/c0005.jpg"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/iiif-img/28345/full/700,/0/default.jpg",
+   "retrieved_at_utc": "2026-10-22T10:26:36Z",
+   "sha256": "d1b6da4551d42200265377a69050e227a2e83ef647cb116635d2c44f79c17e2c",
+   "byte_size": 106887,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU IIIF canvas 6 image (700 px)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu/c0006.jpg"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/iiif-img/28899/full/700,/0/default.jpg",
+   "retrieved_at_utc": "2026-10-22T10:26:38Z",
+   "sha256": "daafadd0d2a471d1dbd0a4e815e0c06ecd36e2593ee66b58b2cc27c2dd9b894f",
+   "byte_size": 110278,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU IIIF canvas 560 image (700 px)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu/c0560.jpg"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/iiif-img/28902/full/700,/0/default.jpg",
+   "retrieved_at_utc": "2026-10-22T10:26:41Z",
+   "sha256": "ae5fe097dbb16a020f406722ab11c8703de75a396e0a21a7b9e4555a1a02aa3b",
+   "byte_size": 101350,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU IIIF canvas 563 image (700 px)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu/c0563.jpg"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/iiif-img/28904/full/700,/0/default.jpg",
+   "retrieved_at_utc": "2026-10-22T10:26:43Z",
+   "sha256": "415141607dc27d1fda3dac15f66d18ce9e6cc88ab708dc275e6ad4eb0fd09492",
+   "byte_size": 104284,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU IIIF canvas 565 image (700 px)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu/c0565.jpg"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/iiif-img/28905/full/700,/0/default.jpg",
+   "retrieved_at_utc": "2026-10-22T10:26:44Z",
+   "sha256": "df33558ee76f1cbbbd3d68b8129707237644321c84e68c0f387d5b207c2a9996",
+   "byte_size": 94367,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU IIIF canvas 566 image (700 px)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu/c0566.jpg"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/iiif-img/28906/full/700,/0/default.jpg",
+   "retrieved_at_utc": "2026-10-22T10:26:46Z",
+   "sha256": "21fcbebb8f4a9aa85b66c4566c868c58ab3bf79b7fcf7aec958f4b548e9ba4d9",
+   "byte_size": 110298,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU IIIF canvas 567 image (700 px)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu/c0567.jpg"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/iiif-img/28907/full/700,/0/default.jpg",
+   "retrieved_at_utc": "2026-10-22T10:26:48Z",
+   "sha256": "e648fa47b4080e13775c2de7e804aa8fb92eec0a3be619c99ecb52a00fd29a67",
+   "byte_size": 102737,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU IIIF canvas 568 image (700 px)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu/c0568.jpg"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/iiif-img/28908/full/700,/0/default.jpg",
+   "retrieved_at_utc": "2026-10-22T10:26:49Z",
+   "sha256": "81e96db21f71e014b5fa57e8d7d9f64f72889935d463d3012d3afd02c387064b",
+   "byte_size": 98065,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU IIIF canvas 569 image (700 px)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu/c0569.jpg"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/iiif-img/28909/full/700,/0/default.jpg",
+   "retrieved_at_utc": "2026-10-22T10:26:51Z",
+   "sha256": "bf2dee53977f754c6556e1aa740282734abf7e065e2e61a6d8f994c498121b8b",
+   "byte_size": 99122,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU IIIF canvas 570 image (700 px)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu/c0570.jpg"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/iiif/156/manifest",
+   "retrieved_at_utc": "2026-10-22T10:26:19Z",
+   "sha256": "4eb30ae255492804d2bbf900027b2db6b5079ee00fc2edd3fe29ccd4c5edb992",
+   "byte_size": 506002,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU IIIF manifest",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu-156-manifest.json"
+  },
+  {
+   "source_url": "https://dlib.ucu.org.ua/items/show/156",
+   "retrieved_at_utc": "2026-10-22T10:25:33Z",
+   "sha256": "3f0b482b9ac7a302f272595683d5b9969174647b2b529ee5cf1d76ad7199bbfe",
+   "byte_size": 19687,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "UCU digital library item page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/hu/ucu-156.html"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/01/Eparchia-di-Lungro-Lajme-1990-n.-1.pdf",
+   "retrieved_at_utc": "2026-10-22T10:16:54Z",
+   "sha256": "fa34659240f6907079889f1150f0c9e1756b9e33a98ef5ab9f78fbd317ec954e",
+   "byte_size": 3568507,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Eparchia-di-Lungro-Lajme-1990-n.-1.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/01/Eparchia-di-Lungro-Lajme-1990-n.-2.pdf",
+   "retrieved_at_utc": "2026-10-22T10:17:07Z",
+   "sha256": "09c950fe9d252766aa042ffe4d79d1d5c37bf34243bd25cd939e18e1841fe5fa",
+   "byte_size": 5325423,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Eparchia-di-Lungro-Lajme-1990-n.-2.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/01/Eparchia-di-Lungro-Lajme-1990-n.-4.pdf",
+   "retrieved_at_utc": "2026-10-22T10:17:17Z",
+   "sha256": "cc4ee1a063a0f0296349ace7b8ba5a041ee22159ffc2f4be35f1ef16f45e0d17",
+   "byte_size": 4034243,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Eparchia-di-Lungro-Lajme-1990-n.-4.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/01/Eparchia-di-Lungro-Lajme-1994-n.-2.pdf",
+   "retrieved_at_utc": "2026-10-22T10:18:07Z",
+   "sha256": "b761618990a5176e4bd90b22ff0b2d7468a086518ef36d809139d3cbe14d637b",
+   "byte_size": 23930251,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Eparchia-di-Lungro-Lajme-1994-n.-2.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/01/Eparchia-di-Lungro-Lajme-1995-n.-3.pdf",
+   "retrieved_at_utc": "2026-10-22T10:18:57Z",
+   "sha256": "bec2ed805ba8530724f762659a3bd41493f7eaabee9db55228f21da162e76fad",
+   "byte_size": 24020665,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Eparchia-di-Lungro-Lajme-1995-n.-3.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/01/Eparchia-di-Lungro-Lajme-1997-n.-1.pdf",
+   "retrieved_at_utc": "2026-10-22T10:19:45Z",
+   "sha256": "f7dde3cf95f79b6cffd0550e94c14b919afd4f02457beb02558d9ba048d79a0a",
+   "byte_size": 22924091,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Eparchia-di-Lungro-Lajme-1997-n.-1.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/02/Lajme-1-1992.pdf",
+   "retrieved_at_utc": "2026-10-22T10:20:56Z",
+   "sha256": "088bf53ad32a036f8fceecdf4f7888d536b3b09ca8ff4827eb36908d6afe5d42",
+   "byte_size": 13053293,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-1-1992.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/02/Lajme-1-1993.pdf",
+   "retrieved_at_utc": "2026-10-22T10:21:24Z",
+   "sha256": "be2e9ace5666ed659ae1c67bf619abb23945a8d92a8490d9876c927133b1c5f2",
+   "byte_size": 13257314,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-1-1993.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/02/Lajme-1-1994.pdf",
+   "retrieved_at_utc": "2026-10-22T10:22:33Z",
+   "sha256": "da547f5805815d4e1ca8985c5d222c94e186406b87518068e2924095d58cba19",
+   "byte_size": 33712179,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-1-1994.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/1995/04/Lajme-1-1995.pdf",
+   "retrieved_at_utc": "2026-10-22T10:14:26Z",
+   "sha256": "8ce1f210b6559df1bf9212a4eeb4404c54d8ff2f3fd3e25aa500ee40d47d14fe",
+   "byte_size": 17647192,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-1-1995.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/02/Lajme-1-1996.pdf",
+   "retrieved_at_utc": "2026-10-22T10:23:16Z",
+   "sha256": "3d389b7b0f6dc2ef3c9237ebb2afe7a1b81783589bc158bddd66514e00165a8d",
+   "byte_size": 20440101,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-1-1996.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/1998/04/Lajme-1-1998.pdf",
+   "retrieved_at_utc": "2026-10-22T10:15:55Z",
+   "sha256": "43d0d8ddd2a9031c13bf427920ac940da106eaab77398e6972494d0109218d3d",
+   "byte_size": 22128274,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-1-1998.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/04/Lajme-1-1999.pdf",
+   "retrieved_at_utc": "2026-10-22T10:27:35Z",
+   "sha256": "544d71a0085d81a8da5e04626249c5c29435c5f61ea2cf51ee6266f56f29c795",
+   "byte_size": 20549080,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-1-1999.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/01/Lajme-1-3-1991.pdf",
+   "retrieved_at_utc": "2026-10-22T10:19:59Z",
+   "sha256": "83e88f856e55fbebea1f8249e18118cbcc28a2e545ae8caf0b4dc8ae8e93d008",
+   "byte_size": 6187216,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-1-3-1991.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/02/Lajme-2-1992.pdf",
+   "retrieved_at_utc": "2026-10-22T10:23:56Z",
+   "sha256": "5e5ce4c6fbbab81339645732e9332c957835a6911f3fc4cae7a754c2b2dce8be",
+   "byte_size": 18968067,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-2-1992.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/02/Lajme-2-1993.pdf",
+   "retrieved_at_utc": "2026-10-22T10:24:39Z",
+   "sha256": "6ccb5284342890dc88a0cfe0815d1ae4103d306ae5ff68f9fc9b32a7cb1a8961",
+   "byte_size": 20137640,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-2-1993.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/02/Lajme-2-1995.pdf",
+   "retrieved_at_utc": "2026-10-22T10:25:27Z",
+   "sha256": "1d4c928e91c644a49fd5311ccec97f40c0acc96206b05ab8c20812375ccd077a",
+   "byte_size": 22520129,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-2-1995.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/04/Lajme-2-1996.pdf",
+   "retrieved_at_utc": "2026-10-22T10:15:09Z",
+   "sha256": "6da3ed526f4ccb42efb6d74be0f5750614c78612f77aeae9be0b012977ef36dc",
+   "byte_size": 19310009,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-2-1996.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/04/Lajme-2-1997.pdf",
+   "retrieved_at_utc": "2026-10-22T10:28:23Z",
+   "sha256": "7d2a1c27acda3847c642fbc8931b20ef17c9021a03a7c65f067591f061298400",
+   "byte_size": 22952658,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-2-1997.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/04/Lajme-2-1998.pdf",
+   "retrieved_at_utc": "2026-10-22T10:29:07Z",
+   "sha256": "522d207d6b7eccf6de95324ce1927f7f7890fa8222f681e8b57be3a71573201c",
+   "byte_size": 20510749,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-2-1998.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/04/Lajme-2-1999_compressed.pdf",
+   "retrieved_at_utc": "2026-10-22T10:30:02Z",
+   "sha256": "7ccf89a2704c64d2aa5ae89f27afbcaf7a2b8b719733b62da4a37e218ff0adf5",
+   "byte_size": 26202772,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-2-1999_compressed.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/01/Lajme-3-1990.pdf",
+   "retrieved_at_utc": "2026-10-22T10:20:08Z",
+   "sha256": "817d2fe7bef7428bf6eb297020a3e9ebf7e1d46a05946c842771fd5d0066c664",
+   "byte_size": 3565780,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-3-1990.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/02/Lajme-3-1993.pdf",
+   "retrieved_at_utc": "2026-10-22T10:26:07Z",
+   "sha256": "3b6321967faae02eaa8755c75cc1052fc759ae622884f8a76f77608d57587e02",
+   "byte_size": 18679543,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-3-1993.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/02/Lajme-3-1994.pdf",
+   "retrieved_at_utc": "2026-10-22T10:26:53Z",
+   "sha256": "d45c0a1d1d689361dbb4e78ffbb2da65796891ef23911d9cf4ccc904e593427f",
+   "byte_size": 20935791,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-3-1994.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/04/Lajme-3-1996.pdf",
+   "retrieved_at_utc": "2026-10-22T10:30:48Z",
+   "sha256": "ff495af59cd8671ff293f5ca7eb91f79729819d5ae48013007d0e3f42f6ca6d8",
+   "byte_size": 22442791,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-3-1996.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/04/Lajme-3-1997.pdf",
+   "retrieved_at_utc": "2026-10-22T10:31:35Z",
+   "sha256": "e5fc5aca78ec3e0fc825e70d3c630910bf6c03363be40ad7ad9b74321156d5b3",
+   "byte_size": 22007070,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-3-1997.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/04/Lajme-3-1998.pdf",
+   "retrieved_at_utc": "2026-10-22T10:32:21Z",
+   "sha256": "84e9bb17a09bfdb34a36ca4ba97bca5c8fce7ecb4fb7e9c18735952279582a14",
+   "byte_size": 21626934,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-3-1998.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/05/Lajme-3-1999.pdf",
+   "retrieved_at_utc": "2026-10-22T10:33:19Z",
+   "sha256": "1473c24f737d90d2edc30d4e456d16b721e2e85840ca68ad1a74966aa0f28007",
+   "byte_size": 27712481,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-3-1999.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2024/01/Lajme-4-1991.pdf",
+   "retrieved_at_utc": "2026-10-22T10:20:29Z",
+   "sha256": "ce871ecdacc317b1d194390515832dd8862df89d4cc139ed7309e22996f1faee",
+   "byte_size": 9508009,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-4-1991.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/06/Lajme-Sett.-Dic.-2016.pdf",
+   "retrieved_at_utc": "2026-10-22T10:16:45Z",
+   "sha256": "56ac0d8b1db48871499e39ee5f8c34c5f2ffa9969186cbd0c493b2ac32c08bea",
+   "byte_size": 2477902,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/Lajme-Sett.-Dic.-2016.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/06/lajme-1-2017-1.pdf",
+   "retrieved_at_utc": "2026-10-22T10:16:08Z",
+   "sha256": "74973dbcb0c0f0ad13b15159cb66376fb18230c0bc7864aaa83a1ce6dd410454",
+   "byte_size": 5760120,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/lajme-1-2017-1.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/06/lajme-1-2017.pdf",
+   "retrieved_at_utc": "2026-10-22T10:16:21Z",
+   "sha256": "74973dbcb0c0f0ad13b15159cb66376fb18230c0bc7864aaa83a1ce6dd410454",
+   "byte_size": 5760120,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/lajme-1-2017.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/06/lajme-maggio-agosto-2016.pdf",
+   "retrieved_at_utc": "2026-10-22T10:16:32Z",
+   "sha256": "81d19bb0e66380c8ce79c1d845825e5558e37c4b669248a85026b26a811de9e3",
+   "byte_size": 4300178,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/lajme-maggio-agosto-2016.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-content/uploads/sites/2/2020/06/lajme.pdf",
+   "retrieved_at_utc": "2026-10-22T10:16:39Z",
+   "sha256": "8ae76cf1679f39691a8d95aee349a7aa33e98c0ccb0d28c9d73662a1671c8545",
+   "byte_size": 2513164,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro eparchial bulletin Lajme/Notizie issue",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/lajme/lajme.pdf"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/media",
+   "retrieved_at_utc": "2026-10-22T10:12:45Z",
+   "sha256": "e90cc44750c18b95a6e1535342a08976808eb4c58a83f93af80c043e91bd3988",
+   "byte_size": 271599,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress media search (Lajme)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/media_lajme.json"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/pages/2109",
+   "retrieved_at_utc": "2026-10-22T10:10:14Z",
+   "sha256": "f068560ed28c2f57eb2cd7ef605cd9197a27cd569a7677e18d369789ee84088a",
+   "byte_size": 35195,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress post/page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/pages_2109.json"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/pages/2112",
+   "retrieved_at_utc": "2026-10-22T10:10:16Z",
+   "sha256": "8a1e949ba27436f959bcf8cc2c4c31beadec6654cff2fd0c994c4ef862fc1053",
+   "byte_size": 36791,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress post/page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/pages_2112.json"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/posts/3398",
+   "retrieved_at_utc": "2026-10-22T10:10:22Z",
+   "sha256": "ff4065f3d4121080f6747a03cb553e09640faa6a0b4c6555e493f07aa87a565e",
+   "byte_size": 22087,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress post/page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/posts_3398.json"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/posts/5851",
+   "retrieved_at_utc": "2026-10-22T10:10:18Z",
+   "sha256": "15a7ea7e03dcb24cecb10853ef633fc7cfe09019ca18b9bca94b5029453a2e78",
+   "byte_size": 16684,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress post/page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/posts_5851.json"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/posts/6017",
+   "retrieved_at_utc": "2026-10-22T10:10:20Z",
+   "sha256": "5b9af8179b549e1129307e32c57f5cc5246cb23a64a11ba2e910cf626ad7dc9b",
+   "byte_size": 23451,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress post/page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/posts_6017.json"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/posts/7660",
+   "retrieved_at_utc": "2026-10-22T10:10:12Z",
+   "sha256": "ac3abd84d74fbe5d2a09b1b06523c8bfa2e8da2e8b7728df4439c2c015537b02",
+   "byte_size": 27315,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress post/page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/posts_7660.json"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:09:44Z",
+   "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "byte_size": 2,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/s_0e94f919.json"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:10:02Z",
+   "sha256": "9b370c0ba7495438b3ae4643333b8b0c9d0e2be230c777dd52def638a00a579d",
+   "byte_size": 6414,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/s_16e7eb04.json"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:09:40Z",
+   "sha256": "55d4d17a3853c7a2fbc5e34062f2c10f33469e170dc85edc8e192fc04d69c476",
+   "byte_size": 4765,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/s_72a95004.json"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:09:57Z",
+   "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "byte_size": 2,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/s_7efe775f.json"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:09:42Z",
+   "sha256": "307b5491b2257b9a76cf5ed75639d1a46cafc7f3fbde01fd2cda0780bf5d7bdb",
+   "byte_size": 16064,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/s_b5fcb005.json"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:09:46Z",
+   "sha256": "c1fd44f5636952212fe86fd84e1ffe99e9c7cea2af32a6909de9cb1f22b1af8a",
+   "byte_size": 3608,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/s_d0c5f657.json"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:09:55Z",
+   "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "byte_size": 2,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/s_dc6c3866.json"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:09:49Z",
+   "sha256": "c983b79498b53e516d5c736cdd355c01e528fda06cdd2656a1785c6dce1c7fe1",
+   "byte_size": 511,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/s_e215f5b2.json"
+  },
+  {
+   "source_url": "https://www.eparchialungro.it/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:09:52Z",
+   "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "byte_size": 2,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Lungro WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/lungro/s_e84d607c.json"
+  },
+  {
+   "source_url": "https://plus.cobiss.net/cobiss/mk/mk/bib/search",
+   "retrieved_at_utc": "2026-10-22T10:09:00Z",
+   "sha256": "85577252e7f5c8d1f435ff201add01c6b4a36b1823d66790e092762627cabad2",
+   "byte_size": 5977,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "COBISS.MK bot-challenge page (access record)",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/cobiss1.html"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/posts/31930",
+   "retrieved_at_utc": "2026-10-22T10:08:51Z",
+   "sha256": "0b5ef61699c9d5355835f5526a947d8d34447124aae72f2f04d1d82c59b73161",
+   "byte_size": 53753,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk post",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/post31930.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/posts/31976",
+   "retrieved_at_utc": "2026-10-22T10:07:34Z",
+   "sha256": "84dbbc0863d26acb452c043c0c79d6d574687f5b5bc551a5c354a9c1a79984e8",
+   "byte_size": 66187,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk post",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/post31976.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/posts/31987",
+   "retrieved_at_utc": "2026-10-22T10:07:35Z",
+   "sha256": "109b25c5c58545bfecc50bab05e3e63e833013dbeae5391dd03a94f93ecfcd85",
+   "byte_size": 48325,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk post",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/post31987.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/posts/52408",
+   "retrieved_at_utc": "2026-10-22T10:08:49Z",
+   "sha256": "e3077c8eaf3463ea2e495694842f869ad9530f6232230f3a58ecf3829f9957b5",
+   "byte_size": 45792,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk post",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/post52408.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/posts/54118",
+   "retrieved_at_utc": "2026-10-22T13:54:46Z",
+   "sha256": "5eeffb679ff7c3b950c6f8d372c579d37d73a89f6cebace99ca97b32d395e33f",
+   "byte_size": 32453,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk post",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/post54118.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/posts/55126",
+   "retrieved_at_utc": "2026-10-22T13:54:45Z",
+   "sha256": "0971d7aceb656c83dacd3a283322813239fbad851fceb4c57a70da60ab667228",
+   "byte_size": 34495,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk post",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/post55126.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/posts/55652",
+   "retrieved_at_utc": "2026-10-22T10:08:40Z",
+   "sha256": "606d6bc57d661d13d0110cc90dbe5ca92fe04115eea025e7f0ad82fb77b48fc5",
+   "byte_size": 34951,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk post",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/post55652.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/posts/56073",
+   "retrieved_at_utc": "2026-10-22T10:08:38Z",
+   "sha256": "e171f10f3a92502cf9e72e8848dd8802951fe7a7cb76b6f22e6af67f1a16285c",
+   "byte_size": 43602,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk post",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/post56073.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/posts/61438",
+   "retrieved_at_utc": "2026-10-22T10:08:47Z",
+   "sha256": "f8ac7a11c9df2ad75b0458cee341f24c4bc473746f04dc9410e313472a578e2c",
+   "byte_size": 37817,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk post",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/post61438.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/posts/61833",
+   "retrieved_at_utc": "2026-10-22T10:08:36Z",
+   "sha256": "cf1043f18e110dacbe0fb91374aa5f3a690413af69fff737122948e342c51861",
+   "byte_size": 55675,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk post",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/post61833.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/posts/62427",
+   "retrieved_at_utc": "2026-10-22T10:08:42Z",
+   "sha256": "92cd5674815a4c3359f89a21fae544c4d3f79197e2a2324fe77691727bf30826",
+   "byte_size": 39892,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk post",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/post62427.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/posts/65161",
+   "retrieved_at_utc": "2026-10-22T10:08:45Z",
+   "sha256": "a7fed409b57b17e66e78397e8cbb19f70a95d43f977b46b5325662e6ae22f624",
+   "byte_size": 40971,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk post",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/post65161.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:06:55Z",
+   "sha256": "a64c6296a412332d47925dcee2927ae38011c8baa97f337d3c958c69c4248c6b",
+   "byte_size": 3766,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_002c1d64.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:08:11Z",
+   "sha256": "a160db6183f304f686c65773965b5615f78b75a78c1961fcf83f3138ffd365ad",
+   "byte_size": 21058,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_0bb322be.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:07:18Z",
+   "sha256": "22eea6c72ce3d6a4e940166bb5fbe433c9926c6480da93c65535474f623a1d1d",
+   "byte_size": 84770,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_0be8d61f.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:08:20Z",
+   "sha256": "e6ad54dcdd942f6570d550b8b503c493874cc5931eec6bdcf1c74a3b1f569f9f",
+   "byte_size": 33270,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_0e8003ca.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:07:48Z",
+   "sha256": "4ba11e5282787151bfb97d36904159b0b5290cfdec0918485c31d31febf906c5",
+   "byte_size": 91506,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_1048d2db.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:07:04Z",
+   "sha256": "9fff6b5c99bcfbff9e8294a630f63918f85c30d14dba64644eb8742e340948fd",
+   "byte_size": 3652,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_208d17f8.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:08:03Z",
+   "sha256": "e1ce7d8c8a5dc940f7214559915229f1e86b1e7cb853c4cffb30442bcaa64cfa",
+   "byte_size": 100113,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_3c336bd5.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:07:52Z",
+   "sha256": "6fbf4456ba8a7dafe88b5ad91707460f9279fa3ec29618bd2835d4f2f5d69a12",
+   "byte_size": 722,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_3e71802d.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:06:45Z",
+   "sha256": "4c60ddc630701f1b37eeaf20248083d04f6d6c5cc87451e1367d052c47263fee",
+   "byte_size": 72090,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_660c277b.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:07:27Z",
+   "sha256": "ec19b39e84e374a92cf0ab00c80f651a26ac1bfd6b3801f4488d595d2afa7660",
+   "byte_size": 1514,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_69efebf1.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:06:59Z",
+   "sha256": "b12ac6d088b12d2e4d53b3c251c53542b99f7aa6cedfa0ae365cfde636144d8f",
+   "byte_size": 3394,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_88a17265.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:07:53Z",
+   "sha256": "d2b77975590c62f0911a629ca88d837fcb391fb4e90a4ef29e3ee61999404002",
+   "byte_size": 11157,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_8ae89b11.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:08:25Z",
+   "sha256": "4c63c52ae54cd14da4d0d7cc9a29168b68596ad0b406109a45d53e2142c29b60",
+   "byte_size": 90487,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_8fa56ea2.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:07:13Z",
+   "sha256": "0a2bd7b14e616cd31ebd0e928515453079a5ad512ea8f76971ec9cbcb864c9b0",
+   "byte_size": 909,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_983f919f.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:06:50Z",
+   "sha256": "6b1e0659079d96b5d5ba8fbcf1d9eadfe57670d3ff26c1ba12411b2e0f03eb22",
+   "byte_size": 49507,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_9d3501c8.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:07:57Z",
+   "sha256": "57dd46f0ab5196df59bf0b40026a8db3994f2b00dc174a810cf906d2774e4d66",
+   "byte_size": 4344,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_9eb2a56f.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:08:16Z",
+   "sha256": "e7526f9a4360fd590555d5b3a1107042f18a6ace66a09cbbfd266f86621266fb",
+   "byte_size": 3,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_af8b1557.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:08:07Z",
+   "sha256": "e7526f9a4360fd590555d5b3a1107042f18a6ace66a09cbbfd266f86621266fb",
+   "byte_size": 3,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_b36ed7c4.json"
+  },
+  {
+   "source_url": "https://katolici.mk/wp-json/wp/v2/search",
+   "retrieved_at_utc": "2026-10-22T10:07:22Z",
+   "sha256": "6a912edae114ae049eb929520b0767037efcdb6d96bfb6dd2159d7fd19ca1973",
+   "byte_size": 25280,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "katolici.mk WordPress search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/mk/s_bfb77566.json"
+  },
+  {
+   "source_url": "https://irp.cdn-website.com/89b1017e/files/uploaded/Circolare+agosto+2026.pdf",
+   "retrieved_at_utc": "2026-10-22T10:24:21Z",
+   "sha256": "881fe7b3abb4983cb0370b9963772e05e4bbe7c328ece0929068a064e727b5eb",
+   "byte_size": 1122995,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Piana bishop's circular, August 2026",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/piana/circolare-agosto-2026.pdf"
+  },
+  {
+   "source_url": "https://www.eparchiapiana.org/",
+   "retrieved_at_utc": "2026-10-22T10:24:06Z",
+   "sha256": "be95b796b22a26267f2e73b000fb3cfdef737e12cf2ba781b8c4ce81500220f3",
+   "byte_size": 132000,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Piana eparchy website page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/piana/home_7e76af.html"
+  },
+  {
+   "source_url": "https://www.eparchiapiana.org/",
+   "retrieved_at_utc": "2026-10-22T10:24:12Z",
+   "sha256": "0a88cda7c4201058507a930d945b09f0ce71e0e96ba741a39940d824327cf4a5",
+   "byte_size": 58910,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Piana eparchy website page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/piana/pg_comunicazioni.html"
+  },
+  {
+   "source_url": "https://www.eparchiapiana.org/",
+   "retrieved_at_utc": "2026-10-22T10:24:14Z",
+   "sha256": "898f4cf27a3290924521bc867a4c9d120d5580e9bf1d087770d90209f563766a",
+   "byte_size": 103434,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Piana eparchy website page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/piana/pg_curia.html"
+  },
+  {
+   "source_url": "https://www.eparchiapiana.org/",
+   "retrieved_at_utc": "2026-10-22T10:24:13Z",
+   "sha256": "7ff9129fa1bb5682f59ed25fd70cd170d2efc4feab6bf5c677d9a0d11f2cf045",
+   "byte_size": 68253,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "Piana eparchy website page",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/piana/pg_eparchia.html"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CCSA%5C0027251",
+   "retrieved_at_utc": "2026-10-22T10:11:52Z",
+   "sha256": "7cb41ea819105f2fac6eb66e8547199b6b73222022687d3232d1f0516657702b",
+   "byte_size": 2596,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN full record",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/full_CSA_0027251.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CFOG%5C0195240",
+   "retrieved_at_utc": "2026-10-22T10:12:23Z",
+   "sha256": "0b66af0f731f49e11d010cbc4afbdb3ebfb5d23ebc247a6bf1733561ff7e0d5e",
+   "byte_size": 9577,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN full record",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/full_FOG_0195240.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CPAL%5C0035879",
+   "retrieved_at_utc": "2026-10-22T10:12:02Z",
+   "sha256": "9ac2b58636d8fd0f8dfd46be761a52bd60a801404f0fb51c6d748d63b729945a",
+   "byte_size": 1428,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN full record",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/full_PAL_0035879.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CPUG%5C0004702",
+   "retrieved_at_utc": "2026-10-22T10:11:58Z",
+   "sha256": "94cbf05d98beb5a2251123418163a4c87f6ae36c3f31d24575c41639d97cb2ad",
+   "byte_size": 1111,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN full record",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/full_PUG_0004702.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CVIA%5C0340273",
+   "retrieved_at_utc": "2026-10-22T10:11:41Z",
+   "sha256": "afa85219bd0a9f3cff52de89aa7f80e44a68e58fde959f0382fb4a37cf0ecaa7",
+   "byte_size": 1234,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN full record",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/full_VIA_0340273.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CVIA%5C0340275",
+   "retrieved_at_utc": "2026-10-22T10:11:45Z",
+   "sha256": "975faa1e7208ce6309d5e219b13769f0d85dc10df09523f6b4cef4b7f3568fc7",
+   "byte_size": 1017,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN full record",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/full_VIA_0340275.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/full.json?bid=IT%5CICCU%5CVIA%5C0340277",
+   "retrieved_at_utc": "2026-10-22T10:11:48Z",
+   "sha256": "397915f0beb1da3a355fb33d25168845385a322e6858400c539774d929666d1e",
+   "byte_size": 1020,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN full record",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/full_VIA_0340277.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:05:33Z",
+   "sha256": "7aec0aa11e49fd741e0ca3f3023fd2073e371eac1e5527cd12fc31a0e2b4f6ca",
+   "byte_size": 2088,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_1.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:10:51Z",
+   "sha256": "cc120b19c7d35f6c10492fde4afc90387715d22e5bc7540d243494e2ed2d2645",
+   "byte_size": 933,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_10.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:10:56Z",
+   "sha256": "3455e33179ace377f265519ae5aec32223919fd6dda36193b18434b825be4d88",
+   "byte_size": 1026,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_11.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:11:00Z",
+   "sha256": "897884f747b29ad591f9454baf24bb843556b5900158e9b12e05179c06719f7a",
+   "byte_size": 70,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_12.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:11:03Z",
+   "sha256": "897884f747b29ad591f9454baf24bb843556b5900158e9b12e05179c06719f7a",
+   "byte_size": 70,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_13.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:11:09Z",
+   "sha256": "2ae0136fdd43caee400002c9eea902bbdd4e08330ec5e69fc17eff7223651df9",
+   "byte_size": 1778,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_14.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:11:14Z",
+   "sha256": "897884f747b29ad591f9454baf24bb843556b5900158e9b12e05179c06719f7a",
+   "byte_size": 70,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_15.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:11:21Z",
+   "sha256": "08ac517e2ad697de620d773c20d88e3c4dabc63759a91e86f3ccec22dd9f7783",
+   "byte_size": 6356,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_16.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:05:40Z",
+   "sha256": "7686c95c34beeb1e7ce7dadbea4d0838ff6612ca6b6fc09e6c515023d69094de",
+   "byte_size": 26097,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_2.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:05:43Z",
+   "sha256": "3304ab6de192475de5c6fa0884630e1c756b117f2c6381b3d8ca4a0bd8c91f11",
+   "byte_size": 948,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_3.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:05:47Z",
+   "sha256": "897884f747b29ad591f9454baf24bb843556b5900158e9b12e05179c06719f7a",
+   "byte_size": 70,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_4.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:05:50Z",
+   "sha256": "897884f747b29ad591f9454baf24bb843556b5900158e9b12e05179c06719f7a",
+   "byte_size": 70,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_5.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:05:54Z",
+   "sha256": "897884f747b29ad591f9454baf24bb843556b5900158e9b12e05179c06719f7a",
+   "byte_size": 70,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_6.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:05:57Z",
+   "sha256": "897884f747b29ad591f9454baf24bb843556b5900158e9b12e05179c06719f7a",
+   "byte_size": 70,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_7.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:06:05Z",
+   "sha256": "01f92552fc95ebacdf45e2aea460e13be646efb2275ebee92deb181ebce290b5",
+   "byte_size": 10746,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_8.json"
+  },
+  {
+   "source_url": "https://opac.sbn.it/opacmobilegw/search.json",
+   "retrieved_at_utc": "2026-10-22T10:10:43Z",
+   "sha256": "58337d40f3764a967ea478a572cd0fa839960bccaf0ff176ef7979132a62ff6c",
+   "byte_size": 13948,
+   "retrieved_extent": "complete response as delivered",
+   "source_role": "OPAC SBN search response",
+   "storage_decision": "scratch-only; retention deferred to the coordinator",
+   "rights_and_offline_limit": "No repository redistribution basis established; bytes stay in lane scratch and tracked records carry only identity, hash and bounded factual paraphrase.",
+   "scratch_path": ".scratch/batch5-20261022/eastern-census/acq/sbn/q_9.json"
+  }
+ ],
+ "gap_dispositions": [
+  {
+   "gap_id": "eastern-local-round2:melkite-sequence",
+   "disposition": "unchanged-searched",
+   "evidence": "Arabic web search.",
+   "remaining": "As before."
+  },
+  {
+   "gap_id": "eastern-local-round2:greek-reception",
+   "disposition": "unchanged-searched",
+   "evidence": "Greek web search for the 2014 Euchologion approval.",
+   "remaining": "As before."
+  },
+  {
+   "gap_id": "eastern-local-round2:italo-albanian-eparchies",
+   "disposition": "unchanged-searched",
+   "evidence": "SBN Holy Week catalogue leads (contents unseen) and website searches; no altar book, approval or dated adoption resolved.",
+   "remaining": "As before."
+  },
+  {
+   "gap_id": "eastern-local-round2:hungarian-use",
+   "disposition": "unchanged-searched",
+   "evidence": "A further defective copy catalogued as the 1646 edition (UCU item 156), less complete than the recorded Czech copy, was found, but it bears on edition control, not on dated Nyírderzs ownership or use; Zolcsák incumbency searches negative.",
+   "remaining": "Dated Nyírderzs ownership or use; Kriva/Krive identity; inspected M–920 leaves."
+  },
+  {
+   "gap_id": "eastern-local-round2:bulgarian-receipt",
+   "disposition": "unchanged-searched",
+   "evidence": "Exarchate pages re-read; Orthodox 1985 Sluzhebnik caution added.",
+   "remaining": "As before."
+  },
+  {
+   "gap_id": "eastern-local-round2:russian-use",
+   "disposition": "unchanged-searched",
+   "evidence": "Russian web search.",
+   "remaining": "As before."
+  },
+  {
+   "gap_id": "greek-italo-local-reception:lungro-original",
+   "disposition": "unchanged-searched",
+   "evidence": "Lungro website and SBN searches; 2026 eparchy profile and Holy Week book leads recorded; no decree original or exemplar.",
+   "remaining": "Original 1968 decree; printing identity; Greek exemplar; receiving copies."
+  },
+  {
+   "gap_id": "greek-italo-local-reception:piana-altar-book",
+   "disposition": "unchanged-searched",
+   "evidence": "Piana website, SBN and web searches.",
+   "remaining": "Exact Piana celebrant book, approval, implementation."
+  },
+  {
+   "gap_id": "greek-italo-local-reception:greek-receiving-editions",
+   "disposition": "unchanged-searched",
+   "evidence": "Greek web search.",
+   "remaining": "As before; Istanbul unsearched."
+  },
+  {
+   "gap_id": "hungarian-reception:early-local-reception",
+   "disposition": "unchanged-searched",
+   "evidence": "UCU 1646 copy found; no Hungarian provenance or dated use.",
+   "remaining": "A supported sequence of exact books in use."
+  },
+  {
+   "gap_id": "hungarian-reception:originals-and-approval",
+   "disposition": "not-attempted",
+   "evidence": "No new route to the 1920/1949 originals or circulars was tried beyond a failed Google Books request for the 1646 book.",
+   "remaining": "As before."
+  },
+  {
+   "gap_id": "hungarian-reception:later-operative-sequence",
+   "disposition": "not-attempted",
+   "evidence": "Not searched this batch.",
+   "remaining": "As before."
+  }
+ ],
+ "remaining_gaps": [
+  "Census: a current (2026) official named enumeration; the latest official named one found is dated 15 November 2016.",
+  "Albanian: eastern-local-round2:albanian-book (exact Elbasan celebrant book, approval, exemplar, dated use).",
+  "Macedonian: eastern-local-round2:macedonian-book (2009 Литургикон title, imprint, approval, exemplar; dated use naming book or language).",
+  "Italo-Albanian: original 1968 decree; Lungro Holy Week volumes' languages, contents and approval; Piana 2006 Ieratikon approval and use; OCR of 1990s Lajme scans.",
+  "Greek: receiving editions and adoption at Athens and Istanbul.",
+  "Hungarian: dated Nyírderzs use; M–920 ownership leaves; 1646 title/colophon images (the UCU copy lacks both); 1920/1949 originals; later sequence.",
+  "Bulgarian, Melkite, Russian: as in eastern-local-round2."
+ ],
+ "limits": "No stage or transition was added: every new item is a catalogue record, an eparchial news report or profile, or a defective copy of an already-dated edition, which the evidence rules admit only as inventory leads or sources. The two new gap-only traditions document missing books and searches; they claim no book state. No Macedonian approval-dated stage was created because neither a book nor use is evidenced. Downloads of 1990s Lajme scans (about 380 MB) were not searchable without Italian OCR and remain unexamined. Derived page renderings and text layers are in scratch and not listed separately. No outreach, account, purchase or access-control bypass: a proof-of-work bot challenge (COBISS.MK), HTTP 429 (Google Books), HTTP 404 (Annuario presentation PDF) and a subscription wall (Annuario) were recorded and not circumvented; the unusable Albanian catalogue API was not probed further and its responses were not retained.",
+ "independent_review": {
+  "status": "accepted-with-corrections",
+  "independent": true,
+  "reviewer": "independent batch-5 cold reviewer, distinct from the lane author and the coordinator",
+  "checked_on": "2026-10-22",
+  "verdict_sha256": "bda268f487b90e9788130eada104c15543a608133cd23959589f75c801222ee8",
+  "scope": "Reviewed lane commit a7e0604cc against base a17f42c7e; the lane added two gap-only traditions, two gaps, three origin-review records and seven sources, and no stage, transition or narrowed gap. Re-fetched and compared by hash: SICO 2015-2016 (pp. 317 and 325 rendered and viewed; the 15 November 2016 list of 6+4+5+8 = 23 names maps one-to-one onto the 23 slots), SICO 2017-2018 and 2019-2020 from the Dicastery-linked Drive files (own density and count-phrase scans: no named enumeration), the Dicastery publications page, Lungro posts 7660 and 5851, eight OPAC SBN full records, the UCU item 156 record and manifest with canvases 3, 563 and 570 viewed; re-ran the SBN Elbasan, Internet Archive and katolici.mk Литургикон searches and read katolici.mk post 31987. Checked all 145 acquisition hashes, the worklog hash, ownership, field boundaries and path hygiene. Corrections: the UCU copy is no longer called a fuller copy (the recorded Czech copy A 003340 is more complete) and its edition identity is marked catalogue-cited; the Lungro Holy Week records lose a generic expectation of Eucharistic contents, take research_priority language-and-origin-review and the catalogue imprints, and the 2016 presentation is no longer attributed to the bishop or silently identified with the SBN record; the census list is the latest official named enumeration found, a lecture list rather than a controlling act; the Macedonian scope no longer presupposes an existing celebrant book or earlier Slavonic books; Macedonian search counts corrected to nineteen queries and twelve posts; the misattributed Google Books 429 removed from the Hungarian originals gap; PUG0004702 identified as the already recorded 1999 book; SBN holdings and the Piana booklet wording corrected; the Lungro 2026 profile labelled a modern self-description in every summary; a third-party server fault reworded. Not checked: the Melkite, Russian and Greek web searches, the Lungro and Piana site searches and Polona beyond their recorded text; the unexamined 1990s Lajme scans; original book leaves (none were available); generated browser data."
+ }
+}
