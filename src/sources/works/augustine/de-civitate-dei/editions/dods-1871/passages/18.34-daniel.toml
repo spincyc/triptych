@@ -1,0 +1,26 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.de-civitate-dei.dods-1871.18.34-daniel"
+edition_id = "edition.augustine.de-civitate-dei.dods-1871"
+artifact_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+artifact_sha256 = "9cb737d9d8e33d67335d4f5585cf3318f40d2b120ca7212beae8aa26cb9a473a"
+locus = "18.34"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete naturally separated named-prophet paragraph 18.34, body raw lines 10411-10421, read with the chapter heading at lines 10408 onward and adjacent complete paragraph/chapter context. George Wilson translated this book, as the retained volume II translator attribution at lines 133-135, title-page Dods credit and edition identity state. The complete first paragraph of XVIII.34 introduces Daniel and Ezekiel and then treats Daniel's Son of man, Ancient of days and everlasting dominion as Christ's power and glory. Its actual quotation and note 559 correspond to canonical Daniel 7:13-14, checked in the held Challoner text. The general mention of Daniel's chronological computation supplies no chapter-9 edge, and the separate Ezekiel paragraph is not included."
+physical_line_ranges = [[10411, 10421]]
+text = "Daniel and Ezekiel, other two of the greater prophets, also first prophesied in the very captivity of Babylon. Daniel even defined the time when Christ was to come and suffer by the exact date. It would take too long to show this by computation, and it has been done often by others before us. But of His power and glory he has thus spoken: \"I saw in a night vision, and, behold, one like the Son of man was coming with the clouds of heaven, and He came even to the Ancient of days, and He was brought into His presence. And to Him there was given dominion, and honour, and a kingdom: and all people, tribes, and tongues shall serve Him. His power is an everlasting power, which shall not pass away, and His kingdom shall not be destroyed.\""
+transcription_segments = [
+  { line = 10411, text = "Daniel and Ezekiel, other two of the greater prophets, also first" },
+  { line = 10412, text = "prophesied in the very captivity of Babylon. Daniel even defined the" },
+  { line = 10413, text = "time when Christ was to come and suffer by the exact date. It would" },
+  { line = 10414, text = "take too long to show this by computation, and it has been done often" },
+  { line = 10415, text = "by others before us. But of His power and glory he has thus spoken:" },
+  { line = 10416, text = "\"I saw in a night vision, and, behold, one like the Son of man was" },
+  { line = 10417, text = "coming with the clouds of heaven, and He came even to the Ancient" },
+  { line = 10418, text = "of days, and He was brought into His presence. And to Him there was" },
+  { line = 10419, text = "given dominion, and honour, and a kingdom: and all people, tribes," },
+  { line = 10420, text = "and tongues shall serve Him. His power is an everlasting power, which" },
+  { line = 10421, text = "shall not pass away, and His kingdom shall not be destroyed.\"" },
+]
+verified_on = "2026-10-23"
+notes = "Exact historical English of the retained normalized Gutenberg witness, selected as ordered physical-line substrings. Paragraph breaks are preserved as blank lines; in-paragraph line wrapping is joined, and reference-only numeric note callouts are omitted. Source words, source ellipses, underscore emphasis and bracketed interpolations are retained; separate note prose and chapter headings are excluded. Verification is against these exact held digital bytes, not a fresh printing-image or Latin-original collation. The existing artifact records the transcription's punctuation/spelling corrections and its public-domain United States rights; no whole-volume review or new licence is claimed."

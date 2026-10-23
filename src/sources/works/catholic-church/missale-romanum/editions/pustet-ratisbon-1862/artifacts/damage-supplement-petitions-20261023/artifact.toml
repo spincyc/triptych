@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.damage-supplement-petitions-20261023"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The underlying 1862 printed Latin is public domain in the United States by publication date. This bounded image-checked transcription adds no new prayer wording and is excluded from the project license."
+provenance = "Two complete historical petitions and their actually printed conclusion cues were independently read on the exact Pustet page images on 2026-10-23, at scale-to3000. OCR supplied candidate locations only."
+retrieved = "2026-10-23"
+sha256 = "1f3293565f11db435d9a1bc48aa6c9c4fd14b672f39dd80afda79e107e27ea7d"
+byte_size = 380
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/damage-supplement-petitions-20261023/latin-only.txt"
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.damage-supplement-pages-20261023"
+transformation = "Join physical wraps and line-end hyphenation, remove stress accents, expand ae/oe ligatures, normalize decorative initial capitalization, and retain the historical words, spellings, pointing and actual abbreviated conclusions. Paragraph order is Marius Secret then Easter Friday Collect. No conclusion is expanded here."
+encoding = "utf-8"
+indexable = true
+notes = "Historical Paschale capitalization and actual etc. are retained. Source petition bodies agree with the separately checked 1962 target under the recorded orthography transformations; target conclusion length is carried only by the separate editorial projection."

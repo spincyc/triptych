@@ -282,7 +282,12 @@ In particular:
   recitation. The same 1861 Cummiskey book is also quoted, on the same
   public-domain basis, by antecedent entries in the postconciliar file described
   above; the rights position is identical and only the relation to the prayer
-  differs.
+  differs. Three postconciliar Easter Vigil antecedent rows also use the
+  Lasance/Walsh ordinary-page English on printed pp. 502, 514 and 524, under
+  that work's separate U.S. nonrenewal basis. Their actual short endings are
+  preserved; the entries record the differing modern Latin conclusions and
+  the bounded photographed-1970/secondary-2002 comparison without claiming
+  authenticated 2008 wording or contemporary approval.
 
 Their inclusion as evidence or text for study is not a representation that
 they may be extracted and redistributed independently. Their redistribution

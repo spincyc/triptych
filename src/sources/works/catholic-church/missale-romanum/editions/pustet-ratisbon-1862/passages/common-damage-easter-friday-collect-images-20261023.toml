@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-23"
+id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.common-damage-easter-friday-collect-images-20261023"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.damage-supplement-pages-20261023"
+artifact_sha256 = "7a6bf0ac0daed9e666d40f8fa5afb193f1650a4ce8823976d299aeaadfbe31df"
+locus = "Pustet1862 original PDF pages [363], printed277; complete petition and actual conclusion cue"
+artifact_page_ranges = [[1, 1]]
+context = "Complete page-image boundaries of the independently checked historical petition."
+notes = "Read at scale-to3000; the source PDF has tiny page boxes. Page images, not OCR, control every petition word and actual conclusion cue."

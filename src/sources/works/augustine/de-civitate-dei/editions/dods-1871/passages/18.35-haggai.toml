@@ -1,0 +1,30 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.de-civitate-dei.dods-1871.18.35-haggai"
+edition_id = "edition.augustine.de-civitate-dei.dods-1871"
+artifact_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+artifact_sha256 = "9cb737d9d8e33d67335d4f5585cf3318f40d2b120ca7212beae8aa26cb9a473a"
+locus = "18.35"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete naturally separated named-prophet paragraph 18.35, body raw lines 10445-10459, read with the chapter heading at lines 10442 onward and adjacent complete paragraph/chapter context. George Wilson translated this book, as the retained volume II translator attribution at lines 133-135, title-page Dods credit and edition identity state. The complete first paragraph of XVIII.35 treats Haggai: the shaking of heaven/earth/sea/dry land and nations, and the coming of the desired of nations, receive Christological exposition. The English witness's short note 562 says Hag. ii. 6, but actual clauses fall at Vulgate/Challoner Aggeus 2:7-8. This canonical mapping was checked by reading those exact verses, rather than copying the witness's reference or assuming a same-number match. The separate Zechariah and Malachi paragraphs are not included."
+physical_line_ranges = [[10445, 10459]]
+text = "There remain three minor prophets, Haggai, Zechariah, and Malachi, who prophesied at the close of the captivity. Of these Haggai more openly prophesies of Christ and the Church thus briefly: \"Thus saith the Lord of hosts, Yet one little while, and I will shake the heaven, and the earth, and the sea, and the dry land; and I will move all nations, and the desired of all nations shall come.\" The fulfilment of this prophecy is in part already seen, and in part hoped for in the end. For He moved the heaven by the testimony of the angels and the stars, when Christ became incarnate. He moved the earth by the great miracle of His birth of the virgin. He moved the sea and the dry land, when Christ was proclaimed both in the isles and in the whole world. So we see all nations moved to the faith; and the fulfilment of what follows, \"And the desired of all nations shall come,\" is looked for at His last coming. For ere men can desire and wait for Him, they must believe and love Him."
+transcription_segments = [
+  { line = 10445, text = "There remain three minor prophets, Haggai, Zechariah, and Malachi," },
+  { line = 10446, text = "who prophesied at the close of the captivity. Of these Haggai more" },
+  { line = 10447, text = "openly prophesies of Christ and the Church thus briefly: \"Thus" },
+  { line = 10448, text = "saith the Lord of hosts, Yet one little while, and I will shake the" },
+  { line = 10449, text = "heaven, and the earth, and the sea, and the dry land; and I will" },
+  { line = 10450, text = "move all nations, and the desired of all nations shall come.\"" },
+  { line = 10451, text = "The fulfilment of this prophecy is in part already seen, and in part" },
+  { line = 10452, text = "hoped for in the end. For He moved the heaven by the testimony of" },
+  { line = 10453, text = "the angels and the stars, when Christ became incarnate. He moved the" },
+  { line = 10454, text = "earth by the great miracle of His birth of the virgin. He moved the" },
+  { line = 10455, text = "sea and the dry land, when Christ was proclaimed both in the isles" },
+  { line = 10456, text = "and in the whole world. So we see all nations moved to the faith; and" },
+  { line = 10457, text = "the fulfilment of what follows, \"And the desired of all nations shall" },
+  { line = 10458, text = "come,\" is looked for at His last coming. For ere men can desire and" },
+  { line = 10459, text = "wait for Him, they must believe and love Him." },
+]
+verified_on = "2026-10-23"
+notes = "Exact historical English of the retained normalized Gutenberg witness, selected as ordered physical-line substrings. Paragraph breaks are preserved as blank lines; in-paragraph line wrapping is joined, and reference-only numeric note callouts are omitted. Source words, source ellipses, underscore emphasis and bracketed interpolations are retained; separate note prose and chapter headings are excluded. Verification is against these exact held digital bytes, not a fresh printing-image or Latin-original collation. The existing artifact records the transcription's punctuation/spelling corrections and its public-domain United States rights; no whole-volume review or new licence is claimed."

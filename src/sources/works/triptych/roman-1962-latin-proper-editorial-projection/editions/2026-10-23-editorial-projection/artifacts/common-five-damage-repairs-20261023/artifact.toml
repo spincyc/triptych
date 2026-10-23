@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.common-five-damage-repairs-20261023"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Triptych offers its transcription layout and normalization under CC BY 4.0. The entire underlying petitions are independently witnessed in the US-public-domain 1862 Pustet printing; 17 U.S.C. 103(b) gives the later edition no exclusive right in those preexisting words. No blanket clearance of the target facsimile is asserted."
+provenance = "Five complete target prayers read independently on exact controlling 1962 page images at 200 and 400 dpi on 2026-10-23, then checked word for word against complete Pustet1862 page-image petitions. The target facsimile hash was rechecked; its protected page images are not retained in this artifact."
+retrieved = "2026-10-23"
+sha256 = "83298af7a7630bb9cab769bdcf718323e6f7d835b365960b66882a874e2bdff3"
+byte_size = 1163
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/common-five-damage-repairs-20261023/latin-only.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.common-damage-petitions-20261023", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.common-damage-pages-20261023", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Retain prior canonical wraps, punctuation, N. and final LF except these six evidenced repairs: tuas to tuae; insert vivit after Qui tecum; Marl tyris to Martyris; insert ut, after deferimus:; mentis to meritis; mine to Domine. Apply the calendar j orthography, target pointing and actual printed conclusion lengths. Historical coelestia to target caelestia and eumdem to target eundem are received spelling normalizations. Pustet PDF44 paragraph17 and PDF390 Praesta supply the conclusion rule and contiguous longer formula prefixes; no phrase beyond a target stop is supplied."
+encoding = "utf-8"
+indexable = true
+notes = "Count-neutral five-body repair only. Complete petition matching includes the newly detected omitted ut in the Paschal Martyrs II Secret. The exact target passage for that prayer is n4298, not the different alternative n4300 described by the superseded broad target passage. No older artifact or passage is changed by identity."

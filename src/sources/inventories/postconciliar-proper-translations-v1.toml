@@ -672,6 +672,20 @@ transcription. No ICEL English wording remains in this tracked inventory.
 """
 caution = "Official ICEL chant-sheet metadata only. The artifacts are tone sheets rather than a ritual edition, and their permission does not authorize this repository's tracked or downloadable publication surfaces."
 
+
+[[sources]]
+id = "lasance-1945"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759"
+label = "Antecedent English (not the Missale Romanum 2002's text): The New Roman Missal, Lasance and Walsh, revised 1945, ca. 1955-56 printing"
+attests = "editio-typica-1920"
+attests_kind = "date-bound"
+attests_basis = "The revised-1945 base text postdates the 1920 typical edition and retains pre-1955 Holy Week. No Latin exemplar is established here; this is a date bound, not a conformity or promulgation claim. The later printing's lettered inserts remain outside the admitted body/rights boundary."
+rights = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The registered 1937 and revised-1945 English is United States public domain by failure to renew, under the existing registration-level lasance-new-roman-missal-rights-v1.toml finding. Only ordinary, fully image-checked pre-1955 prayers are offered. The whole scanned artifact remains remote/unresolved and neither excluded lettered insert is imported."
+caution = "Historical antecedent English for study. These are pre-1955 prayers with their actual printed short endings, not approved contemporary English or exact target-edition translations. Entry-specific body and conclusion comparisons identify the photographed 1970 and secondary 2002 evidence; authenticated 2008 correspondence remains unresolved."
+
 [[entries]]
 mass = "advent-2"
 form = ""
@@ -4199,20 +4213,6 @@ note = "no publishable English as yet: the approved translation is ICEL's, subje
 [[untranslated]]
 mass = "easter-vigil"
 form_id = "main"
-proper = "Prayer after the Fifth Reading"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-rejected_detectors = ["liturgies-net-2026-08-22"]
-quarantined_text_sha256 = ["56d4cad5c945c8c2c3a8adf156814de58bad30af8a4e3a7a194c049ab0d36144"]
-note = "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "easter-vigil"
-form_id = "main"
 proper = "Prayer after the First Reading"
 cycle = "all"
 occurrence = 1
@@ -4222,20 +4222,6 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 rejected_detectors = ["liturgies-net-2026-08-22"]
 quarantined_text_sha256 = ["935a4d758ec2362c8c7ce56f825819ba10eafcc1c0c77dc05f7176a8802f0c7d"]
-note = "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "easter-vigil"
-form_id = "main"
-proper = "Prayer after the First Reading (alternative)"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-rejected_detectors = ["liturgies-net-2026-08-22"]
-quarantined_text_sha256 = ["5283ad74deb7bcfe15130dc38acdbb0a1abb3cc2044ddff478eecba1b13061c7"]
 note = "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
@@ -4306,20 +4292,6 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 rejected_detectors = ["liturgies-net-2026-08-22"]
 quarantined_text_sha256 = ["23df45745bb6c8ff93a19001bc825ba6871a5193f9fb0966f32c6860faf6e37d"]
-note = "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "easter-vigil"
-form_id = "main"
-proper = "Prayer after the Sixth Reading"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-rejected_detectors = ["liturgies-net-2026-08-22"]
-quarantined_text_sha256 = ["daa2d60721e74c388186f1bb894dcdbbeb12562f72c4d61cbd082d48725853dc"]
 note = "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
@@ -11485,3 +11457,93 @@ availability = "unavailable"
 note = "The photographed Vatican1970 missal affirmatively appoints a materially different Saint George Collect beginning Magnificantes Domine potentiam tuam, with Per Dominum cue: printed p.542 / PDF528, passage.catholic-church.missale-romanum.vatican-typica-1970.postconciliar-george-collect-comparison-20261023. Its full body was compared with the full older Deus qui nos beati Georgii prayer on the Pustet1862 image, printed p.428 / IA leaf n513. The existing Cummiskey1861 English translates that unrelated older prayer; its complete text and publication passage publish-postconciliar-antecedent-pc-113 remain available in Sources, without a modern Collect binding. A second comparison with secondary2002 PDF438 agrees with the photographed1970 reading, but neither printed2002 fidelity nor an authenticated2008 collation is claimed. No lawful English exemplar for the appointed prayer is established and no new prayer translation is supplied."
 [untranslated.reason]
 kind = "no-exemplar"
+
+
+[[entries]]
+mass = "easter-vigil"
+form = ""
+form_id = "main"
+cycle = "all"
+proper = "Prayer after the First Reading (alternative)"
+incipit = "Deus, qui mirabiliter creasti hominem"
+witness = "lasance-1945"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.verify-postconciliar-easter-vigil-first-reading-alternative-20261023"
+printed_page = "502"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.postconciliar-easter-vigil-antecedents-en-20261023"
+publication_artifact_sha256 = "1be0746fd336061e523246e48b223164fff3c4ff1ce61ed89f35967bd3915450"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-postconciliar-easter-vigil-first-reading-alternative-20261023"
+verified_on_page = "2026-10-23"
+verified_heading = "HOLY SATURDAY / Prayer after Prophecy 1"
+verified_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+occurrence = 1
+ia_leaf = 499
+ia_leaf_range = [499, 499]
+witness_note = "Historical antecedent English for study, not approved contemporary English or an exact target-edition translation. Lasance/Walsh ordinary printed p. 502 / PDF 500 / IA n499 prints this complete English of the old Holy Saturday prayer after Prophecy 1. Complete historical Latin petition agrees word for word with the photographed 1970 and separately inspected secondary 2002 petitions, after accent, case, ligature, pointing and line-wrap normalization only. Every conclusion is separately compared: Lasance prints Per Dominum. and Through our Lord.; both modern witnesses print Per Christum Dominum nostrum. followed by the response Amen. No complete-prayer string identity, cue equivalence, English ending expansion, or added Amen is asserted. The English is exactly the older prayer's, not a translation of the modern prayer. Photographed 1970 is direct primary evidence; printed-2002 fidelity of the secondary digital witness and correspondence to the 2008 reimpressio remain unresolved. Comparison controllers: passage.catholic-church.missale-romanum.vatican-typica-1970.postconciliar-easter-vigil-first-reading-alternative-20261023 and passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.postconciliar-easter-vigil-first-reading-alternative-20261023."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, Who hast wonderfully created man and more wonderfully redeemed him, grant us, we beseech Thee, to withstand by strength of spirit the allurements of sin, that we may be worthy to reach everlasting joys. Through our Lord."
+
+
+[[entries]]
+mass = "easter-vigil"
+form = ""
+form_id = "main"
+cycle = "all"
+proper = "Prayer after the Fifth Reading"
+incipit = "Omnipotens sempiterne Deus, spes unica mundi"
+witness = "lasance-1945"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.verify-postconciliar-easter-vigil-fifth-reading-20261023"
+printed_page = "524"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.postconciliar-easter-vigil-antecedents-en-20261023"
+publication_artifact_sha256 = "1be0746fd336061e523246e48b223164fff3c4ff1ce61ed89f35967bd3915450"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-postconciliar-easter-vigil-fifth-reading-20261023"
+verified_on_page = "2026-10-23"
+verified_heading = "HOLY SATURDAY / Prayer after Prophecy 12"
+verified_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+occurrence = 1
+ia_leaf = 521
+ia_leaf_range = [521, 521]
+witness_note = "Historical antecedent English for study, not approved contemporary English or an exact target-edition translation. Lasance/Walsh ordinary printed p. 524 / PDF 522 / IA n521 prints this complete English of the old Holy Saturday prayer after Prophecy 12. Complete historical Latin petition agrees word for word with the photographed 1970 and separately inspected secondary 2002 petitions, after accent, case, ligature, pointing and line-wrap normalization only. Every conclusion is separately compared: Lasance prints Per Dominum. and Through our Lord.; both modern witnesses print Per Christum Dominum nostrum. followed by the response Amen. No complete-prayer string identity, cue equivalence, English ending expansion, or added Amen is asserted. The English is exactly the older prayer's, not a translation of the modern prayer. Photographed 1970 is direct primary evidence; printed-2002 fidelity of the secondary digital witness and correspondence to the 2008 reimpressio remain unresolved. Comparison controllers: passage.catholic-church.missale-romanum.vatican-typica-1970.postconciliar-easter-vigil-fifth-reading-20261023 and passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.postconciliar-easter-vigil-fifth-reading-20261023."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "Almighty, eternal God, only hope of the world, Who, by the mouth of Thy prophets hast shown forth the mysteries of the present time, be pleased to give increase to the desires of Thy people, for in none of the faithful do any virtues bear fruit but by Thy inspiration. Through our Lord."
+
+
+[[entries]]
+mass = "easter-vigil"
+form = ""
+form_id = "main"
+cycle = "all"
+proper = "Prayer after the Sixth Reading"
+incipit = "Deus, qui Ecclesiam tuam semper gentium vocatione multiplicas"
+witness = "lasance-1945"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.verify-postconciliar-easter-vigil-sixth-reading-20261023"
+printed_page = "514"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.postconciliar-easter-vigil-antecedents-en-20261023"
+publication_artifact_sha256 = "1be0746fd336061e523246e48b223164fff3c4ff1ce61ed89f35967bd3915450"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-postconciliar-easter-vigil-sixth-reading-20261023"
+verified_on_page = "2026-10-23"
+verified_heading = "HOLY SATURDAY / Prayer after Prophecy 6"
+verified_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+occurrence = 1
+ia_leaf = 511
+ia_leaf_range = [511, 511]
+witness_note = "Historical antecedent English for study, not approved contemporary English or an exact target-edition translation. Lasance/Walsh ordinary printed p. 514 / PDF 512 / IA n511 prints this complete English of the old Holy Saturday prayer after Prophecy 6. Complete historical Latin petition agrees word for word with the photographed 1970 and separately inspected secondary 2002 petitions, after accent, case, ligature, pointing and line-wrap normalization only. Every conclusion is separately compared: Lasance prints Per Dominum. and Through Our Lord.; both modern witnesses print Per Christum Dominum nostrum. followed by the response Amen. No complete-prayer string identity, cue equivalence, English ending expansion, or added Amen is asserted. The English is exactly the older prayer's, not a translation of the modern prayer. Photographed 1970 is direct primary evidence; printed-2002 fidelity of the secondary digital witness and correspondence to the 2008 reimpressio remain unresolved. Comparison controllers: passage.catholic-church.missale-romanum.vatican-typica-1970.postconciliar-easter-vigil-sixth-reading-20261023 and passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.postconciliar-easter-vigil-sixth-reading-20261023."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, Who dost ever multiply Thy Church by the calling of the nations, mercifully grant that those whom Thou dost wash with the water of baptism may be guarded by Thy continual protection. Through Our Lord."

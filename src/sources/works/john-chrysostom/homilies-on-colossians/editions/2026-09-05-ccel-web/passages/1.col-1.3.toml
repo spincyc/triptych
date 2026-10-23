@@ -1,0 +1,24 @@
+schema = 2
+record_type = "passage"
+id = "passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.1.col-1.3"
+edition_id = "edition.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05"
+segment_id = "segment.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.homily-1"
+artifact_sha256 = "54274dd9aa73ca36e4da9e763e4a27d1818b09e42ffc73795529afec703a4210"
+locus = "1"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Homily 1: the complete verse-3 lemma and exposition, ending before the first verse-4 block. Complete selected consecutive source unit read against the exact held digital expression with adjacent lemmata/section markers checked; no whole-homily, facsimile or original-Greek inspection is claimed."
+physical_line_ranges = [[23243, 23253]]
+text = "Ver. 3. \"We give thanks to God, the Father of our Lord Jesus Christ.\"\n\nHe seems to me to refer everything to the Father, that what he has to say may not at once offend them.\n\n\"Praying always for you.\"\n\nHe shows his love, not by giving thanks only, but also by continual prayer, in that those whom he did not see, he had continually within himself."
+transcription_segments = [
+  { line = 23243, text = "Ver. 3. \"We give thanks to God," },
+  { line = 23243, text = "the Father of our Lord Jesus" },
+  { line = 23244, text = "Christ.\"" },
+  { line = 23246, text = "He seems to me to refer everything to the Father, that what he has to" },
+  { line = 23247, text = "say may not at once offend them." },
+  { line = 23249, text = "\"Praying always for you.\"" },
+  { line = 23251, text = "He shows his love, not by giving thanks only, but also by continual" },
+  { line = 23252, text = "prayer, in that those whom he did not see, he had continually within" },
+  { line = 23253, text = "himself." },
+]
+verified_on = "2026-10-23"
+notes = "The explicit body preserves the historical translation’s spelling, punctuation, verse/section labels and inline lexical glosses, changing only wrapping whitespace and omitting numeric footnote calls. Separate editorial footnote prose remains in the complete segment and is not attributed to Chrysostom here. The passage’s locus is the enclosing homily number; this context and the exact line range identify its smaller natural unit. The common constituent title credits John A. Broadus with revision and additional notes (16481-16495). The Oxford preface specifically credits J. Ashworth with the Colossians translation (16557-16561), separately from Cotton on Philippians and Tweed on Thessalonians. The American preface at 160-220 states its conformity to Field and its revisions of the Oxford translation."

@@ -1,0 +1,39 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.de-civitate-dei.dods-1871.17.19"
+edition_id = "edition.augustine.de-civitate-dei.dods-1871"
+artifact_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+artifact_sha256 = "9cb737d9d8e33d67335d4f5585cf3318f40d2b120ca7212beae8aa26cb9a473a"
+locus = "17.19"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete chapter 17.19, body raw lines 8260-8281, read with the chapter heading at lines 8257 onward and adjacent complete paragraph/chapter context. George Wilson translated this book, as the retained volume II translator attribution at lines 133-135, title-page Dods credit and edition identity state. Complete chapter XVII.19 expounds the gall/vinegar clause and the immediately following table, eyes and bowed-back clauses. They are Psalm 69:21-23 in this English witness's notes 473-474; actual held Vulgate Psalm 68:22-24 supplies the canonical address. The short final notice closes the chapter and is retained. The Gospel fulfilment is a supporting comparison rather than a separately mapped commentary."
+physical_line_ranges = [[8257, 8281]]
+text = "But when the Jews will not in the least yield to the testimonies of this prophecy, which are so manifest, and are also brought by events to so clear and certain a completion, certainly that is fulfilled in them which is written in that psalm which here follows. For when the things which pertain to His passion are prophetically spoken there also in the person, of Christ, that is mentioned which is unfolded in the Gospel: \"They gave me gall for my meat; and in my thirst they gave me vinegar for drink.\" And as it were after such a feast and dainties in this way given to Himself, presently He brings in [these words]: \"Let their table become a trap before them, and a retribution, and an offence: let their eyes be dimmed that they see not, and their back be always bowed down,\" etc. Which things are not spoken as wished for, but are predicted under the prophetic form of wishing. What wonder, then, if those whose eyes are dimmed that they see not do not see these manifest things? What wonder if those do not look up at heavenly things whose back is always bowed down that they may grovel among earthly things? For these words transferred from the body signify mental faults. Let these things which have been said about the Psalms, that is, about king David's prophecy, suffice, that we may keep within some bound. But let those readers excuse us who knew them all before; and let them not complain about those perhaps stronger proofs which they know or think I have passed by."
+transcription_segments = [
+  { line = 8260, text = "But when the Jews will not in the least yield to the testimonies of" },
+  { line = 8261, text = "this prophecy, which are so manifest, and are also brought by events to" },
+  { line = 8262, text = "so clear and certain a completion, certainly that is fulfilled in them" },
+  { line = 8263, text = "which is written in that psalm which here follows. For when the things" },
+  { line = 8264, text = "which pertain to His passion are prophetically spoken there also in the" },
+  { line = 8265, text = "person, of Christ, that is mentioned which is unfolded in the Gospel:" },
+  { line = 8266, text = "\"They gave me gall for my meat; and in my thirst they gave me vinegar" },
+  { line = 8267, text = "for drink.\"" },
+  { line = 8267, text = "And as it were after such a feast and dainties in this" },
+  { line = 8268, text = "way given to Himself, presently He brings in [these words]: \"Let their" },
+  { line = 8269, text = "table become a trap before them, and a retribution, and an offence: let" },
+  { line = 8270, text = "their eyes be dimmed that they see not, and their back be always bowed" },
+  { line = 8271, text = "down,\"" },
+  { line = 8271, text = "etc. Which things are not spoken as wished for, but are" },
+  { line = 8272, text = "predicted under the prophetic form of wishing. What wonder, then, if" },
+  { line = 8273, text = "those whose eyes are dimmed that they see not do not see these manifest" },
+  { line = 8274, text = "things? What wonder if those do not look up at heavenly things whose" },
+  { line = 8275, text = "back is always bowed down that they may grovel among earthly things?" },
+  { line = 8276, text = "For these words transferred from the body signify mental faults. Let" },
+  { line = 8277, text = "these things which have been said about the Psalms, that is, about king" },
+  { line = 8278, text = "David's prophecy, suffice, that we may keep within some bound. But let" },
+  { line = 8279, text = "those readers excuse us who knew them all before; and let them not" },
+  { line = 8280, text = "complain about those perhaps stronger proofs which they know or think I" },
+  { line = 8281, text = "have passed by." },
+]
+verified_on = "2026-10-23"
+notes = "Exact historical English of the retained normalized Gutenberg witness, selected as ordered physical-line substrings. Paragraph breaks are preserved as blank lines; in-paragraph line wrapping is joined, and reference-only numeric note callouts are omitted. Source words, source ellipses, underscore emphasis and bracketed interpolations are retained; separate note prose and chapter headings are excluded. Verification is against these exact held digital bytes, not a fresh printing-image or Latin-original collation. The existing artifact records the transcription's punctuation/spelling corrections and its public-domain United States rights; no whole-volume review or new licence is claimed."

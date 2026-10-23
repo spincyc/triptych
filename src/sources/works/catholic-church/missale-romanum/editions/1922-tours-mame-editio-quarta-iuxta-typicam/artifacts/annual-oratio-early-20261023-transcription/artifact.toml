@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.annual-oratio-early-20261023-transcription"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Image-checked Latin transcription of the US-public-domain Tours Mame 1922 printing. Underlying Latin remains public domain; project metadata and normalization confer no exclusive right in it."
+rights_jurisdiction = "United States"
+provenance = "Transcribed from complete page images at 200 dpi and rechecked against complete prayer details at 400 dpi on 23 October 2026. The text layer and remembered prayer forms supplied no readings."
+retrieved = "2026-10-23"
+sha256 = "cf28329ca64ea77be28cf53a595979ca53cd9592e6551954fe6c91a574386438"
+byte_size = 1934
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/annual-oratio-early-20261023-transcription/latin.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.annual-oratio-early-20261023-pages"
+transformation = "Join physical wraps and split words; remove stress accents; expand ae/oe ligatures; normalize initial small capitals to sentence case. Preserve each historical petition, punctuation and ACTUAL printed conclusion length. The Dominum abbreviation with its mark in Subjectum is represented as Dm. and not silently expanded. Blank lines separate prayers in target-list order."
+encoding = "utf-8"
+indexable = true
+notes = "Thirteen complete historical prayers only; no target wording is attributed to this historical printing. Source page correspondence and differences are stated per passage."

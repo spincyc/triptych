@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-23"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-supplement.common-damage-easter-friday-collect"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-supplement"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-supplement.two-damage-supplement-20261023"
+artifact_sha256 = "8b75446c496ccf6feb97b4279670e2bd9a02ce130f936b122098cdb12fb2dfdf"
+locus = "1962 PDF419, printed338, n1196; easter-friday Collect; Pustet1862 original PDF pages [363], printed277; complete petition and actual conclusion cue"
+physical_line_ranges = [[5, 7]]
+context = "Exact complete bounded editorial projection; not a historical printing."
+notes = "UTF-8 body SHA256 including final LF 1ca5613b8bca7d4132094a70554093c41b456ae85520f133860a77a7c46dc355. Target conclusion: Per Dominum nostrum. Historical conclusion: Per Dominum nostrum etc. Pustet capitalizes Paschale, omits the target comma after ut, and actually prints Per Dominum nostrum etc. Target prints Per Dominum nostrum. The printed etc. is neither expanded nor attributed to the target; no words follow the actual target stop. Both page images print foedere, with oe ligature expanded mechanically; fcedere is recognizer damage."

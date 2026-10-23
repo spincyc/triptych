@@ -1,0 +1,19 @@
+schema = 2
+record_type = "passage"
+id = "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.2.rom-1.14"
+edition_id = "edition.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17"
+segment_id = "segment.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.homily-2"
+artifact_sha256 = "8bdb50c6fd132a9558cbd16808ae05000ddcc7059cfd6c1d282f4f734e539c15"
+locus = "2"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Homily 2: the complete verse-14 lemma and its exposition. Complete selected consecutive source unit read against the exact held digital expression with adjacent lemmata/section markers checked; no whole-homily, facsimile or original-Greek inspection is claimed."
+physical_line_ranges = [[32199, 32203]]
+text = "Ver. 14. \"I am a debtor to the Greeks and to the Barbarians, both to the wise and to the unwise.\"\n\nWhich also he said when writing to the Corinthians. And he says it, to ascribe the whole to God. (1 Cor. ix. 16.)"
+transcription_segments = [
+  { line = 32199, text = "Ver. 14. \"I am a debtor to the Greeks and to the Barbarians, both to" },
+  { line = 32200, text = "the wise and to the unwise.\"" },
+  { line = 32202, text = "Which also he said when writing to the Corinthians. And he says it, to" },
+  { line = 32203, text = "ascribe the whole to God. (1 Cor. ix. 16.)" },
+]
+verified_on = "2026-10-23"
+notes = "The explicit body preserves the historical translation’s spelling, punctuation, verse/section labels and inline lexical glosses, changing only wrapping whitespace and omitting numeric footnote calls. Separate editorial footnote prose remains in the complete segment and is not attributed to Chrysostom here. The passage’s locus is the enclosing homily number; this context and the exact line range identify its smaller natural unit. The constituent title credits J. B. Morris and W. H. Simcox as translators, with George B. Stevens as reviser and note author (30997-31023). The Oxford preface credits Morris with the translation and much note matter (31139-31141); the 1876 prefatory addendum identifies Simcox as revising the translation against Field (31145-31155)."

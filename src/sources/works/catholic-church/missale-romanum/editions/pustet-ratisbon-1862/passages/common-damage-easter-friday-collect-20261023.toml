@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-23"
+id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.common-damage-easter-friday-collect-20261023"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.damage-supplement-petitions-20261023"
+artifact_sha256 = "1f3293565f11db435d9a1bc48aa6c9c4fd14b672f39dd80afda79e107e27ea7d"
+locus = "Pustet1862 original PDF pages [363], printed277; complete petition and actual conclusion cue"
+physical_line_ranges = [[3, 3]]
+context = "Complete historical petition, including only its actually printed conclusion length."
+notes = "Pustet capitalizes Paschale, omits the target comma after ut, and actually prints Per Dominum nostrum etc. Target prints Per Dominum nostrum. The printed etc. is neither expanded nor attributed to the target; no words follow the actual target stop. Both page images print foedere, with oe ligature expanded mechanically; fcedere is recognizer damage."

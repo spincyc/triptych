@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.postconciliar-easter-vigil-antecedents-en-20261023"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only three complete historical English prayers from ordinary printed pp. 502, 514 and 524 of the Lasance/Walsh revised-1945 missal are retained. Their United States public-domain basis is the registration-level nonrenewal finding in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml; these are ordinary pre-1955 pages, outside both excluded lettered inserts. A faithful transcription adds no authorship. No page image, watermark, OCR wrapper, modern Latin, ICEL English or project-composed prayer is included. Excluded from Triptych's CC BY 4.0 offer."
+rights_jurisdiction = "United States"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "Direct complete page-image transcription, including actual English short endings. Joined printed line wraps and hyphenated line divisions; retained wording, spelling, capitalization and punctuation. Initial drop/small capitals rendered in ordinary initial casing. Calendar-address columns identify historical study use, not source appointment. No ending expansion or Amen added."
+retrieved = "2026-10-23"
+sha256 = "1be0746fd336061e523246e48b223164fff3c4ff1ce61ed89f35967bd3915450"
+byte_size = 947
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/postconciliar-easter-vigil-antecedents-en-20261023/text.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Three rows. Lasance ordinary printed pp. 502/514/524, artifact PDF pp. 500/512/522 (IA leaves n499/n511/n521). Whole facsimile remains remote/unresolved; this derivative contains only independently public-domain historical English. Every full body and actual ending was read from the images. No authenticated 2008 target relation is asserted."

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.annual-oratio-early-20261023"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Project organization and normalization under CC BY 4.0 only. Independently witnessed historical Latin and standard conclusion prefixes remain public domain under 17 U.S.C. 103(b); the modern scan is not cleared or redistributed."
+rights_jurisdiction = "United States"
+provenance = "Complete same-prayer comparisons on 23 October 2026: exact 1962 target images at 200/400 dpi against Mame 1922 page images at 200/400 dpi. Existing Pustet 1862 full Father-through-Son formula rechecked on its retained page image. No OCR, incipit inference, English translation or model authority supplies the prayer words."
+retrieved = "2026-10-23"
+sha256 = "d2a7263379b4e8cc2904f31a5cac7f9fb479392c67853473111038abf5f7059c"
+byte_size = 2022
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/annual-oratio-early-20261023/latin.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.annual-oratio-early-20261023-pages", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.annual-oratio-early-20261023-transcription", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join printed wraps; remove stress accents; expand ligatures; apply target pointing and capitalization; retain declared consonantal j. Only conclusion abbreviation/length changes are made: Lent2Thursday/Saturday add nostrum; Lent3Monday follows the checked old formula through the actual target stop in unitate; Lent3Thursday expands Dm. to Dominum. No petition words are added, omitted or replaced. The target Jesum/Iesum and Subjectum/Subiectum, adjuvante/adiuvante differences are orthography. No ejusdem, Spiritus sancti Deus, per omnia or Amen is supplied after the actual target stop."
+encoding = "utf-8"
+indexable = true
+notes = "Only thirteen complete Lenten Oratio super populum bodies. Exact target page images stay private. Generic Ordinary-frame unavailability remains an independent unchanged limitation. No English, Common appointment, annual schedule, Holy Week or pre-1955 target attestation is established."
