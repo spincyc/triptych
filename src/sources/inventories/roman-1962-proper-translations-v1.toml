@@ -14,6 +14,8 @@ calendar = "roman-1962"
 target = "src/sources/calendars/roman-1962/propers.yaml"
 recorded_on = "2026-08-02"
 merge = """
+Dated exact-source row integration, 2026-10-23: 26 independently accepted bounded lexical/context English admissions and six separately assembled strict/table Holy Week admissions, retaining their distinct methods, own physical witnesses and actual endings. All earlier source/refusal history, literal English and source registrations remain exact. No new translation, automatic fanout, official1962English or annual completeness claim.
+
 append209-orth43 own-appointment declared-orthography recovery, 2026-10-23: 43 checked historical bodies supply 43 terminal owners (25 full-sequence matches after exactly recorded spelling substitutions; 18 table-family complete-petition matches after those substitutions with the existing same-witness printed conclusion-family authority). Actual human English and short cues remain literal and unexpanded. Both table and prayer loci recorded. All 548 previous positive dictionaries and independent Latin proofs preserved; no annual textual-completeness claim.
 
 append209-literal1 complete-canonical-latin-literal-reuse recovery, 2026-10-23: 1 checked historical bodies supply 1 terminal owners (0 strict entire-Latin matches; 1 complete-petition matches with the existing same-witness printed conclusion-family authority). Actual human English and short cues remain literal and unexpanded. Both table and prayer loci recorded. All 713 previous positive dictionaries and independent Latin proofs preserved; no annual textual-completeness claim.
@@ -3887,26 +3889,6 @@ verified_on_page = "2026-08-27"
 verified_printed_page = "502-504"
 note = "The only held Lasance generic-slot reading is on the excluded 1302a-1302d insert and has no affirmative publication binding. Independently, bounded Cummiskey pp. 502-504 show that its numbered Commons end at Mass XXI and pass directly to the Dedication Mass, so it supplies no public-domain Common of Supreme Pontiffs as a fallback. No body is recorded."
 
-[[untranslated]]
-mass = "commune-non-virginum-1"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
-witness_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-witness_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-non-virgin-first-common-gap"
-verified_artifact_page = 511
-verified_on_page = "2026-08-27"
-verified_printed_page = "502-504"
-note = "Cummiskey's numbered Common ends with Mass XXI Cognovi of Holy Women, which answers the second non-Virgin Mass; the book then passes directly to the Dedication Mass. It prints no first Mass of a Martyr who is not a Virgin, so no exact English counterpart exists for this slot."
-
-
-
-
 
 [[entries]]
 mass = "palm-sunday"
@@ -4753,77 +4735,11 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
-[[untranslated]]
-mass = "mass-of-the-lords-supper"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
-[[untranslated]]
-mass = "mass-of-the-lords-supper"
-form_id = "main"
-proper = "Secret"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
-[[untranslated]]
-mass = "mass-of-the-lords-supper"
-form_id = "main"
-proper = "Postcommunion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
-[[untranslated]]
-mass = "good-friday"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
-[[untranslated]]
-mass = "easter-vigil"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
-[[untranslated]]
-mass = "easter-vigil"
-form_id = "main"
-proper = "Secret"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
 [[untranslated]]
 mass = "easter-vigil"
@@ -5046,19 +4962,6 @@ reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
 
-[[untranslated]]
-mass = "commune-unius-martyris-2"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
-
-
 
 [[untranslated]]
 mass = "commune-unius-martyris-3"
@@ -5076,43 +4979,8 @@ note = "No exact English exemplar is bound. A historical English lead from the p
 
 
 
-[[untranslated]]
-mass = "commune-plurimorum-martyrum-2"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
 
-
-[[untranslated]]
-mass = "commune-martyrum-tempore-paschali-1"
-form_id = "main"
-proper = "Collect (Item altera oratio)"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
-
-[[untranslated]]
-mass = "commune-martyrum-tempore-paschali-1"
-form_id = "main"
-proper = "Collect (Pro Martyre tantum, item altera oratio)"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
 [[untranslated]]
 mass = "commune-martyrum-tempore-paschali-1"
@@ -5128,17 +4996,6 @@ note = "No exact English exemplar is bound. A historical English lead from the p
 
 
 
-[[untranslated]]
-mass = "commune-martyrum-tempore-paschali-2"
-form_id = "main"
-proper = "Collect (Pro pluribus Martyribus tantum)"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
 [[untranslated]]
 mass = "commune-martyrum-tempore-paschali-2"
@@ -5167,18 +5024,6 @@ reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
 
-[[untranslated]]
-mass = "commune-confessoris-non-pontificis-1"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
-
 
 [[untranslated]]
 mass = "commune-confessoris-non-pontificis-2"
@@ -5194,55 +5039,12 @@ note = "No exact English exemplar is bound. A historical English lead from the p
 
 
 
-[[untranslated]]
-mass = "commune-virginum-1"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
-
-
-
-
-
-
-
-
-
-[[untranslated]]
-mass = "missa-de-s-maria-in-sabbato-1"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
 [[untranslated]]
 mass = "missa-de-s-maria-in-sabbato-1"
 form_id = "main"
 proper = "Secret"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
-
-[[untranslated]]
-mass = "missa-de-s-maria-in-sabbato-1"
-form_id = "main"
-proper = "Postcommunion"
 cycle = "all"
 occurrence = 1
 lang = "en"
@@ -5304,17 +5106,6 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
-[[untranslated]]
-mass = "comm-s-priscae-virginis-martyris"
-form_id = "main"
-proper = "Secret"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
 [[untranslated]]
 mass = "ss-vincentii-anastasii-martyrum"
@@ -5457,17 +5248,6 @@ note = "No exact English exemplar is bound. A historical English lead from the p
 
 
 
-[[untranslated]]
-mass = "s-catharinae-senensis-virginis"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
 [[untranslated]]
 mass = "s-catharinae-senensis-virginis"
@@ -5602,17 +5382,6 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
-[[untranslated]]
-mass = "comm-ss-naboris-felicis-martyrum"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
 
 [[untranslated]]
 mass = "comm-s-zephyrini-papae-martyris"
@@ -5733,29 +5502,7 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound to this source-established Latin proper."
 
-[[untranslated]]
-mass = "holy-wednesday"
-form_id = "main"
-proper = "Secret"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established Latin proper."
 
-[[untranslated]]
-mass = "holy-wednesday"
-form_id = "main"
-proper = "Postcommunion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established Latin proper."
 
 [[untranslated]]
 mass = "chrism-mass"
@@ -6990,17 +6737,6 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound to this source-established Latin proper."
 
-[[untranslated]]
-mass = "s-agathae-virginis-martyris"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established Latin proper."
 
 [[untranslated]]
 mass = "s-titi-episcopi-confessoris"
@@ -7652,18 +7388,6 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound to this source-established Latin proper."
 
-[[untranslated]]
-mass = "comm-ss-processi-martiniani-martyrum"
-form_id = "main"
-proper = "Postcommunion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established Latin proper."
-
 
 [[untranslated]]
 mass = "s-irenaei-episcopi-martyris"
@@ -7678,17 +7402,6 @@ reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound to this source-established Latin proper."
 
 
-[[untranslated]]
-mass = "s-antonii-mariae-zaccaria-confessoris"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established Latin proper."
 
 [[untranslated]]
 mass = "s-ioannis-gualberti-abbatis"
@@ -7848,17 +7561,6 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound to this source-established Latin proper."
 
-[[untranslated]]
-mass = "comm-ss-abdon-sennen-martyrum"
-form_id = "main"
-proper = "Secret"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established Latin proper."
 
 [[untranslated]]
 mass = "s-alfonsi-mariae-ligorio-episcopi-confessoris"
@@ -7899,17 +7601,6 @@ note = "No exact English exemplar is bound to this source-established Latin prop
 
 
 
-[[untranslated]]
-mass = "comm-ss-cyriaci-largi-smaragdi-martyrum"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established Latin proper."
 
 [[untranslated]]
 mass = "s-ioachim-patris-beatae-mariae-virginis"
@@ -7935,17 +7626,6 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound to this source-established Latin proper."
 
-[[untranslated]]
-mass = "s-ioachim-patris-beatae-mariae-virginis"
-form_id = "main"
-proper = "Postcommunion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established Latin proper."
 
 [[untranslated]]
 mass = "s-bernardi-abbatis-ecclesiae-doctoris"
@@ -8019,17 +7699,6 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound to this source-established Latin proper."
 
-[[untranslated]]
-mass = "s-ludovici-regis-confessoris"
-form_id = "main"
-proper = "Postcommunion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established Latin proper."
 
 [[untranslated]]
 mass = "s-iosephi-calasanctii-confessoris"
@@ -10397,17 +10066,6 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No exact English whole-body exemplar is bound to this source-established normal appointment. Its Scripture component does not supply the uncited Missal wording."
 
-[[untranslated]]
-mass = "holy-wednesday"
-form_id = "main"
-proper = "Oratio super populum"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English whole-body exemplar is bound to this source-established normal appointment. Its Scripture component does not supply the uncited Missal wording."
 
 [[untranslated]]
 mass = "lent-1-ember-saturday"
@@ -10593,41 +10251,8 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "The own source-appointed composed or mixed whole body has no attached exact English exemplar or publication binding; a Bible companion or Common translation does not supply this exact own body."
 
-[[untranslated]]
-mass = "s-annae-matris-beatae-mariae-virginis"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established own oration."
 
-[[untranslated]]
-mass = "s-annae-matris-beatae-mariae-virginis"
-form_id = "main"
-proper = "Postcommunion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established own oration."
 
-[[untranslated]]
-mass = "s-annae-matris-beatae-mariae-virginis"
-form_id = "main"
-proper = "Secret"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established own oration."
 
 [[untranslated]]
 mass = "s-antonii-mariae-claret-episcopi-confessoris"
@@ -32787,3 +32412,803 @@ lang = "en"
 rights = "public-domain"
 source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
 text = "Mercifully receive, O Lord, the sacrifices which we offer Thee, and by the intercession of blessed Lawrence, Thy martyr, loose the bonds of our sins. Through our Lord."
+
+[[entries]]
+mass = "comm-s-priscae-virginis-martyris"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "872"
+ia_leaf = 870
+ia_leaf_range = [870, 870]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-comm-s-priscae-virginis-martyris--main--secret--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-comm-s-priscae-virginis-martyris--main--secret--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree after only exact recorded pairs; actual Latin conclusions are prefixes of the same own-book family through-our-lord, with person God the Father. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 1df0dc2784c918bfc4e13f7e49783a4868ba6376d24ae0117547d14850e916ff; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-s-priscae-virginis-martyris-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"natalitia\", \"target\": \"natalicia\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"natalitium/natalicium, substantive birthday celebration\", \"gender\": \"neuter\", \"number\": \"plural\", \"case\": \"accusative\", \"function\": \"direct object of recensentes\", \"part_of_speech\": \"substantive noun\", \"part_of_speech_basis\": \"Original reviewed lexeme explicitly says substantive; its particular nominative or accusative function remains unchanged.\"}, \"contextual_parse_evidence\": \"Both complete contexts govern natalitia/natalicia with recensentes. The transitive verb or observing participle requires its object in the accusative; the saint-name/saints modifier is genitive. Thus this is the neuter accusative plural substantive, not a feminine nominative form or an arbitrary adjective.\", \"lexical_passage_ids\": [\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension\"], \"source_word_index_zero_based\": 7, \"target_word_index_zero_based\": 7}], \"orthography_differences\": [], \"subroute\": \"same-witness-conclusion-table\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "May this sacrifice, we beseech Thee, O Lord, which we offer to commemorate the birthday of Thy saints, both loose the bonds of our base nature and bring upon us the gifts of Thy mercy. Through our Lord."
+
+[[entries]]
+mass = "comm-ss-abdon-sennen-martyrum"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1131"
+ia_leaf = 1123
+ia_leaf_range = [1123, 1123]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-comm-ss-abdon-sennen-martyrum--main--secret--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-comm-ss-abdon-sennen-martyrum--main--secret--all--1"
+witness_note = "Own-appointment historical witness. Entire spoken-word sequences and actual endings agree after only the exact recorded comparison pairs. Exact current target UTF8 SHA256 e80db91fb412cb1b0fff06b9fcac515ad306d110100357da650d57d3303c53c1; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-ss-abdon-sennen-martyrum-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"natalitia\", \"target\": \"natalicia\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"natalitium / natalicium (neuter substantive festival/birthday)\", \"gender\": \"neuter\", \"number\": \"plural\", \"case\": \"accusative\", \"particular_syntax\": \"Direct object of recensentes, the nominative plural participle modifying the understood nos subject of offerimus.\", \"part_of_speech\": \"substantive noun\", \"part_of_speech_basis\": \"Original reviewed lexeme explicitly says substantive; its particular nominative or accusative function remains unchanged.\"}, \"contextual_parse_evidence\": \"Direct object of recensentes, the nominative plural participle modifying the understood nos subject of offerimus.\", \"lexical_passage_ids\": [\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension\"], \"source_word_index_zero_based\": 8, \"target_word_index_zero_based\": 8}], \"orthography_differences\": [], \"subroute\": \"strict\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "May this offering, which we present, O Lord, in commemorating the natal feast of Thy martyrs, both loose, we beseech Thee, the bonds of our base desires and win for us the gifts of Thy mercy. Through our Lord."
+
+[[entries]]
+mass = "comm-ss-cyriaci-largi-smaragdi-martyrum"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1147"
+ia_leaf = 1139
+ia_leaf_range = [1139, 1139]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-comm-ss-cyriaci-largi-smaragdi-martyrum--main--collect--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-comm-ss-cyriaci-largi-smaragdi-martyrum--main--collect--all--1"
+witness_note = "Own-appointment historical witness. Entire spoken-word sequences and actual endings agree after only the exact recorded comparison pairs. Exact current target UTF8 SHA256 464d8b5d6e11cd14dc777f3296dca356c82bdddd9c7322e52462b65c5acef822; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-ss-cyriaci-largi-smaragdi-martyrum-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"natalitia\", \"target\": \"natalicia\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"natalitium / natalicium (neuter substantive festival/birthday)\", \"gender\": \"neuter\", \"number\": \"plural\", \"case\": \"accusative\", \"particular_syntax\": \"Direct object of colimus in quorum natalitia/natalicia colimus; quorum is the genitive plural reference to the named martyrs.\", \"part_of_speech\": \"substantive noun\", \"part_of_speech_basis\": \"Original reviewed lexeme explicitly says substantive; its particular nominative or accusative function remains unchanged.\"}, \"contextual_parse_evidence\": \"Direct object of colimus in quorum natalitia/natalicia colimus; quorum is the genitive plural reference to the named martyrs.\", \"lexical_passage_ids\": [\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension\"], \"source_word_index_zero_based\": 17, \"target_word_index_zero_based\": 17}], \"orthography_differences\": [], \"subroute\": \"strict\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, Who dost gladden us with the solemn yearly festival of Thy holy martyrs, Cyriacus, Largus, and Smaragdus, mercifully grant that we may imitate the virtue of their martyrdom whose feast-day we now celebrate. Through our Lord."
+
+[[entries]]
+mass = "comm-ss-naboris-felicis-martyrum"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1104"
+ia_leaf = 1096
+ia_leaf_range = [1096, 1096]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-comm-ss-naboris-felicis-martyrum--main--collect--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-comm-ss-naboris-felicis-martyrum--main--collect--all--1"
+witness_note = "Own-appointment historical witness. Entire spoken-word sequences and actual endings agree after only the exact recorded comparison pairs. Exact current target UTF8 SHA256 0b6a323b4a7f2a2cd4194a8b2f5a0d8b3a3283c386b11e7a22e430b76173368c; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-ss-naboris-felicis-martyrum-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"natalitia\", \"target\": \"natalicia\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"natalitium / natalicium (neuter substantive festival/birthday)\", \"gender\": \"neuter\", \"number\": \"plural\", \"case\": \"nominative\", \"particular_syntax\": \"Subject of non deserunt; celebranda agrees with it and nos is the object. Both complete petitions have exactly this syntax.\", \"part_of_speech\": \"substantive noun\", \"part_of_speech_basis\": \"Original reviewed lexeme explicitly says substantive; its particular nominative or accusative function remains unchanged.\"}, \"contextual_parse_evidence\": \"Subject of non deserunt; celebranda agrees with it and nos is the object. Both complete petitions have exactly this syntax.\", \"lexical_passage_ids\": [\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension\"], \"source_word_index_zero_based\": 12, \"target_word_index_zero_based\": 12}], \"orthography_differences\": [], \"subroute\": \"strict\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "Grant, we beseech Thee, O Lord, that as we never fail to celebrate the natal feast of Thy holy martyrs, Nabor and Felix, we may continually be helped by their prayers. Through our Lord."
+
+[[entries]]
+mass = "comm-ss-processi-martiniani-martyrum"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1091"
+ia_leaf = 1083
+ia_leaf_range = [1083, 1083]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-comm-ss-processi-martiniani-martyrum--main--postcommunion--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-comm-ss-processi-martiniani-martyrum--main--postcommunion--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree after only exact recorded pairs; actual Latin conclusions are prefixes of the same own-book family through-the-same, with person Prayer making mention of our Blessed Lord. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 42fffa1635d92a1f4ce2a37774552be9367579ea6cca5ed525610b8935d1bb35; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-ss-processi-martiniani-martyrum-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"eumdem\", \"target\": \"eundem\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"idem\", \"gender\": \"masculine\", \"number\": \"singular\", \"case\": \"accusative\", \"particular_syntax\": \"Agrees with Dominum after the preposition Per; both full prayer contexts end the prayer addressed to the Father through the same Lord.\", \"part_of_speech\": \"demonstrative pronoun/adjective\", \"part_of_speech_basis\": \"Exact independently verified idem paradigm and reviewed same masculine accusative singular contextual parse. This includes the separately reviewed Louis anaphoric petition object, not only concluding modifiers.\"}, \"contextual_parse_evidence\": \"Agrees with Dominum after the preposition Per; both full prayer contexts end the prayer addressed to the Father through the same Lord.\", \"lexical_passage_ids\": [\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem\"], \"source_word_index_zero_based\": 20, \"target_word_index_zero_based\": 20}], \"orthography_differences\": [], \"subroute\": \"same-witness-conclusion-table\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "Filled with the offering of Thy sacred body and Thy precious blood, we beseech Thee, O Lord, that what we do in pious devotion may assure us of redemption. Through the same."
+
+[[entries]]
+mass = "commune-confessoris-non-pontificis-1"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1349"
+ia_leaf = 1367
+ia_leaf_range = [1367, 1367]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-commune-confessoris-non-pontificis-1--main--collect--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-commune-confessoris-non-pontificis-1--main--collect--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree after only exact recorded pairs; actual Latin conclusions are prefixes of the same own-book family through-our-lord, with person God the Father. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 df1a7f6cbf9837e3c169f02333074deca61d2c3c805fec1cbc936e8b2011757d; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-confessoris-non-pontificis-1-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"natalitia\", \"target\": \"natalicia\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"natalitium/natalicium, substantive birthday celebration\", \"gender\": \"neuter\", \"number\": \"plural\", \"case\": \"accusative\", \"function\": \"direct object of colimus\", \"part_of_speech\": \"substantive noun\", \"part_of_speech_basis\": \"Original reviewed lexeme explicitly says substantive; its particular nominative or accusative function remains unchanged.\"}, \"contextual_parse_evidence\": \"Both complete contexts govern natalitia/natalicia with colimus. The transitive verb or observing participle requires its object in the accusative; the saint-name/saints modifier is genitive. Thus this is the neuter accusative plural substantive, not a feminine nominative form or an arbitrary adjective.\", \"lexical_passage_ids\": [\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension\"], \"source_word_index_zero_based\": 14, \"target_word_index_zero_based\": 14}], \"orthography_differences\": [], \"subroute\": \"same-witness-conclusion-table\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, Who dost gladden us by the annual feast of blessed N., Thy confessor, mercifully grant that, as we celebrate his natal day, we may also imitate his actions. Through our Lord."
+
+[[entries]]
+mass = "commune-martyrum-tempore-paschali-1"
+form_id = "main"
+proper = "Collect (Item altera oratio)"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1328-1329"
+ia_leaf = 1346
+ia_leaf_range = [1346, 1347]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-commune-martyrum-tempore-paschali-1--main--collect-item-altera-oratio--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-commune-martyrum-tempore-paschali-1--main--collect-item-altera-oratio--all--1"
+witness_note = "Own-appointment historical witness. Entire spoken-word sequences and actual endings agree after only the exact recorded comparison pairs. Exact current target UTF8 SHA256 6a8bb0221634314ca1d5d206761b970f7fbc4fb1ac405b99a3db666defd75662; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-martyrum-tempore-paschali-1-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"natalitia\", \"target\": \"natalicia\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"natalitium/natalicium, substantive birthday celebration\", \"gender\": \"neuter\", \"number\": \"plural\", \"case\": \"accusative\", \"function\": \"direct object of colimus\", \"part_of_speech\": \"substantive noun\", \"part_of_speech_basis\": \"Original reviewed lexeme explicitly says substantive; its particular nominative or accusative function remains unchanged.\"}, \"contextual_parse_evidence\": \"Both complete contexts govern natalitia/natalicia with colimus. The transitive verb or observing participle requires its object in the accusative; the saint-name/saints modifier is genitive. Thus this is the neuter accusative plural substantive, not a feminine nominative form or an arbitrary adjective.\", \"lexical_passage_ids\": [\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension\"], \"source_word_index_zero_based\": 16, \"target_word_index_zero_based\": 16}], \"orthography_differences\": [], \"subroute\": \"strict\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God who dost gladden us by the yearly festival of blessed N., thy martyr and bishop, mercifully grant that we who celebrate his birthday to heaven may ever live with joy in his holy keeping. Through our Lord."
+
+[[entries]]
+mass = "commune-martyrum-tempore-paschali-1"
+form_id = "main"
+proper = "Collect (Pro Martyre tantum, item altera oratio)"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1328-1329"
+ia_leaf = 1346
+ia_leaf_range = [1346, 1347]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-commune-martyrum-tempore-paschali-1--main--collect-pro-martyre-tantum-item-altera-oratio--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-commune-martyrum-tempore-paschali-1--main--collect-pro-martyre-tantum-item-altera-oratio--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree after only exact recorded pairs; actual Latin conclusions are prefixes of the same own-book family through-our-lord, with person God the Father. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 20c9af3a72d7ffb4ae746c3a2c52962c3b2e9dfb33a308431eaee3cd52646001; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-martyrum-tempore-paschali-1-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"natalitia\", \"target\": \"natalicia\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"natalitium/natalicium, substantive birthday celebration\", \"gender\": \"neuter\", \"number\": \"plural\", \"case\": \"accusative\", \"function\": \"direct object of colimus\", \"part_of_speech\": \"substantive noun\", \"part_of_speech_basis\": \"Original reviewed lexeme explicitly says substantive; its particular nominative or accusative function remains unchanged.\"}, \"contextual_parse_evidence\": \"Both complete contexts govern natalitia/natalicia with colimus. The transitive verb or observing participle requires its object in the accusative; the saint-name/saints modifier is genitive. Thus this is the neuter accusative plural substantive, not a feminine nominative form or an arbitrary adjective.\", \"lexical_passage_ids\": [\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension\"], \"source_word_index_zero_based\": 10, \"target_word_index_zero_based\": 10}], \"orthography_differences\": [], \"subroute\": \"same-witness-conclusion-table\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "Grant, we beseech Thee, O almighty God, that we who keep the birth day to heaven of blessed N., thy martyr, may by his prayers be strengthened in the love of thy holy name. Through our Lord."
+
+[[entries]]
+mass = "commune-martyrum-tempore-paschali-2"
+form_id = "main"
+proper = "Collect (Pro pluribus Martyribus tantum)"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1333-1334"
+ia_leaf = 1351
+ia_leaf_range = [1351, 1352]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-commune-martyrum-tempore-paschali-2--main--collect-pro-pluribus-martyribus-tantum--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-commune-martyrum-tempore-paschali-2--main--collect-pro-pluribus-martyribus-tantum--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree after only exact recorded pairs; actual Latin conclusions are prefixes of the same own-book family through-our-lord, with person God the Father. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 89dfb041c7fe47bd4704f738766633b0eccee94de34d236f11c9f17593712d53; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-martyrum-tempore-paschali-2-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"natalitia\", \"target\": \"natalicia\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"natalitium/natalicium, substantive birthday celebration\", \"gender\": \"neuter\", \"number\": \"plural\", \"case\": \"accusative\", \"function\": \"direct object of colere\", \"part_of_speech\": \"substantive noun\", \"part_of_speech_basis\": \"Original reviewed lexeme explicitly says substantive; its particular nominative or accusative function remains unchanged.\"}, \"contextual_parse_evidence\": \"Both complete contexts govern natalitia/natalicia with colere. The transitive verb or observing participle requires its object in the accusative; the saint-name/saints modifier is genitive. Thus this is the neuter accusative plural substantive, not a feminine nominative form or an arbitrary adjective.\", \"lexical_passage_ids\": [\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension\"], \"source_word_index_zero_based\": 10, \"target_word_index_zero_based\": 10}], \"orthography_differences\": [], \"subroute\": \"same-witness-conclusion-table\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, Who dost permit us to celebrate the birthday of Thy holy martyrs, N. and N., grant us to enjoy their companionship in everlasting beatitude. Through our Lord."
+
+[[entries]]
+mass = "commune-non-virginum-1"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1378-1379"
+ia_leaf = 1396
+ia_leaf_range = [1396, 1397]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-commune-non-virginum-1--main--collect--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-commune-non-virginum-1--main--collect--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree after only exact recorded pairs; actual Latin conclusions are prefixes of the same own-book family through-our-lord, with person God the Father. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 2dc71bd3a069044bfec2124645251bd1f7f01b5994385adc9170ac53aeb3e512; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-non-virginum-1-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"natalitia\", \"target\": \"natalicia\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"natalitium/natalicium, substantive birthday celebration\", \"gender\": \"neuter\", \"number\": \"plural\", \"case\": \"accusative\", \"function\": \"direct object of colimus\", \"part_of_speech\": \"substantive noun\", \"part_of_speech_basis\": \"Original reviewed lexeme explicitly says substantive; its particular nominative or accusative function remains unchanged.\"}, \"contextual_parse_evidence\": \"Both complete contexts govern natalitia/natalicia with colimus. The transitive verb or observing participle requires its object in the accusative; the saint-name/saints modifier is genitive. Thus this is the neuter accusative plural substantive, not a feminine nominative form or an arbitrary adjective.\", \"lexical_passage_ids\": [\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension\"], \"source_word_index_zero_based\": 22, \"target_word_index_zero_based\": 22}], \"orthography_differences\": [], \"subroute\": \"same-witness-conclusion-table\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, Who, among other miracles of Thy power, hast conferred the victory of martyrdom even on the weaker sex, mercifully grant that we who celebrate the natal feast of blessed N., Thy martyr, may advance toward Thee through her example. Through our Lord."
+
+[[entries]]
+mass = "commune-plurimorum-martyrum-2"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1321"
+ia_leaf = 1339
+ia_leaf_range = [1339, 1339]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-commune-plurimorum-martyrum-2--main--collect--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-commune-plurimorum-martyrum-2--main--collect--all--1"
+witness_note = "Own-appointment historical witness. Entire spoken-word sequences and actual endings agree after only the exact recorded comparison pairs. Exact current target UTF8 SHA256 10e75b9578168617aba8573af4cae4e6f920a762bf64a4c6b6cc8ee2757aa57b; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-plurimorum-martyrum-2-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"natalitia\", \"target\": \"natalicia\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"natalitium/natalicium, substantive birthday celebration\", \"gender\": \"neuter\", \"number\": \"plural\", \"case\": \"accusative\", \"function\": \"direct object of colere\", \"part_of_speech\": \"substantive noun\", \"part_of_speech_basis\": \"Original reviewed lexeme explicitly says substantive; its particular nominative or accusative function remains unchanged.\"}, \"contextual_parse_evidence\": \"Both complete contexts govern natalitia/natalicia with colere. The transitive verb or observing participle requires its object in the accusative; the saint-name/saints modifier is genitive. Thus this is the neuter accusative plural substantive, not a feminine nominative form or an arbitrary adjective.\", \"lexical_passage_ids\": [\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension\"], \"source_word_index_zero_based\": 10, \"target_word_index_zero_based\": 10}], \"orthography_differences\": [], \"subroute\": \"strict\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, Who dost permit us to celebrate the birthday of Thy holy martyrs, N. and N., grant us to enjoy their companionship in everlasting beatitude. Through our Lord."
+
+[[entries]]
+mass = "commune-unius-martyris-2"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1306"
+ia_leaf = 1324
+ia_leaf_range = [1324, 1324]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-commune-unius-martyris-2--main--collect--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-commune-unius-martyris-2--main--collect--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree after only exact recorded pairs; actual Latin conclusions are prefixes of the same own-book family through-our-lord, with person God the Father. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 cad66fd0084404e147448d4938c924839bb005ad0035a98a93166b623941a9ab; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-unius-martyris-2-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"natalitia\", \"target\": \"natalicia\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"natalitium/natalicium, substantive birthday celebration\", \"gender\": \"neuter\", \"number\": \"plural\", \"case\": \"accusative\", \"function\": \"direct object of colimus\", \"part_of_speech\": \"substantive noun\", \"part_of_speech_basis\": \"Original reviewed lexeme explicitly says substantive; its particular nominative or accusative function remains unchanged.\"}, \"contextual_parse_evidence\": \"Both complete contexts govern natalitia/natalicia with colimus. The transitive verb or observing participle requires its object in the accusative; the saint-name/saints modifier is genitive. Thus this is the neuter accusative plural substantive, not a feminine nominative form or an arbitrary adjective.\", \"lexical_passage_ids\": [\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension\"], \"source_word_index_zero_based\": 16, \"target_word_index_zero_based\": 16}], \"orthography_differences\": [], \"subroute\": \"same-witness-conclusion-table\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, Who dost gladden us with the yearly festival of blessed N., Thy martyr and bishop, mercifully grant that, as we venerate his festival, we may also rejoice in his protection. Through our Lord."
+
+[[entries]]
+mass = "commune-virginum-1"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1359"
+ia_leaf = 1377
+ia_leaf_range = [1377, 1377]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-commune-virginum-1--main--collect--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-commune-virginum-1--main--collect--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree after only exact recorded pairs; actual Latin conclusions are prefixes of the same own-book family through-our-lord, with person God the Father. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 53d17cbe4e14686cfaa134335f24ddcd1d62f5b222b05d16d397f1fb989574e7; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-virginum-1-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"natalitia\", \"target\": \"natalicia\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"natalitium/natalicium, substantive birthday celebration\", \"gender\": \"neuter\", \"number\": \"plural\", \"case\": \"accusative\", \"function\": \"direct object of colimus\", \"part_of_speech\": \"substantive noun\", \"part_of_speech_basis\": \"Original reviewed lexeme explicitly says substantive; its particular nominative or accusative function remains unchanged.\"}, \"contextual_parse_evidence\": \"Both complete contexts govern natalitia/natalicia with colimus. The transitive verb or observing participle requires its object in the accusative; the saint-name/saints modifier is genitive. Thus this is the neuter accusative plural substantive, not a feminine nominative form or an arbitrary adjective.\", \"lexical_passage_ids\": [\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension\"], \"source_word_index_zero_based\": 24, \"target_word_index_zero_based\": 24}], \"orthography_differences\": [], \"subroute\": \"same-witness-conclusion-table\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, Who, among other miracles of Thy power, hast conferred the victory of martyrdom even on the weaker sex, mercifully grant that we, who celebrate the natal feast of blessed N., Thy virgin and martyr, may advance toward Thee through her example. Through our Lord."
+
+[[entries]]
+mass = "easter-vigil"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "533"
+ia_leaf = 530
+ia_leaf_range = [530, 530]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-holyweek-lexical3-verify-easter-vigil--main--collect--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-holyweek-lexical3-2c021a9e"
+publication_artifact_sha256 = "2c021a9e28bcd24806ecd2403de0c0531a527056b143ca983998a1cf1a183f55"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-holyweek-lexical3-publish-easter-vigil--main--collect--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree after only exact recorded pairs; actual Latin conclusions are prefixes of the same own-book family through-the-same, with person Prayer making mention of our Blessed Lord. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 0b0a86707a0624f61eb38e46f49c8a44d403df74bc09695a1cb210b08acbd1cf; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.common-damage-easter-vigil-collect-20261023. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"eumdem\", \"target\": \"eundem\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"idem\", \"part_of_speech\": \"demonstrative pronoun/adjective\", \"gender\": \"masculine\", \"number\": \"singular\", \"case\": \"accusative\"}, \"contextual_parse_evidence\": \"Source Per eumdem Dominum nostrum and target Per eundem Dominum nostrum Jesum Christum each place idem after Per and in masculine accusative singular agreement with Dominum (Christ). The complete petition refers to the Lord’s resurrection; both source and target continue through the same Son/Lord, addressed to the Father. Neither token is genitive eiusdem.\", \"lexical_passage_ids\": [\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem\"], \"source_word_index_zero_based\": 29, \"target_word_index_zero_based\": 29}], \"orthography_differences\": [], \"subroute\": \"same-witness-conclusion-table\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, Who dost illuminate this most sacred night with the glory of the Lord's resurrection, preserve in the new offspring of Thy family the spirit which Thou hast given, that, being renewed in body and mind, they may render Thee pure service. Through the same."
+
+[[entries]]
+mass = "easter-vigil"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "535"
+ia_leaf = 532
+ia_leaf_range = [532, 532]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-holyweek6-ready1945-5-2026-10-23-verify-easter-vigil--main--secret--all--1"
+collated = "page-image, same-witness conclusion table where needed, and bounded tracked transcription, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-holyweek6-ready1945-5-2026-10-23-5c171982"
+publication_artifact_sha256 = "5c1719825da5899dce3c500d4947c6f7c4a23d33938ab1c7f1c3932b0f18256b"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-holyweek6-ready1945-5-2026-10-23-publish-easter-vigil--main--secret--all--1"
+witness_note = "Historical source easter-vigil/main/Secret/all/1; strict. Complete Latin word sequence and actual ending equal under typography only. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 3e997b7e2f1d23e55d7c24ec9a9c681f9006070532892968df42dbac3084dc8a. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-easter-vigil-orations retained. No source-recipient calendar attestation or official 1962 English claimed."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "Receive, we beseech Thee, O Lord, the prayers of Thy people, with the offerings of sacrifices, that the sacred mysteries begun with these sacraments of Easter may avail us under grace a remedy unto life everlasting. Through our Lord."
+
+[[entries]]
+mass = "good-friday"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "471"
+ia_leaf = 468
+ia_leaf_range = [468, 468]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-holyweek6-ready1945-5-2026-10-23-verify-good-friday--main--collect--all--1"
+collated = "page-image, same-witness conclusion table where needed, and bounded tracked transcription, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-holyweek6-ready1945-5-2026-10-23-5c171982"
+publication_artifact_sha256 = "5c1719825da5899dce3c500d4947c6f7c4a23d33938ab1c7f1c3932b0f18256b"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-holyweek6-ready1945-5-2026-10-23-publish-good-friday--main--collect--all--1"
+witness_note = "Historical source good-friday/main/Collect/all/1; same-witness-conclusion-table. Complete petitions equal and actual Latin conclusion prefixes match the same printed family who-with-thee at passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked rule/formula passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-transcription. Actual English short cue retained literally, without expansion or response. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 0d05d364d14f27d7864d5027a3c1f4ce2bcec034e9d0f26cdcdb8a8b02ad1533. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-good-friday-orations retained. No source-recipient calendar attestation or official 1962 English claimed."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, from Whom Judas received the punishment of his crime and the thief the reward of his confession, grant us the effect of Thy clemency, that, as Jesus Christ, our Lord, in His passion dealt according to their deserts with the one and the other, so, putting away from us the error of the past, He may bestow upon us the grace of His resurrection. Who with Thee."
+
+[[entries]]
+mass = "holy-wednesday"
+form_id = "main"
+proper = "Oratio super populum"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+printed_page = "445"
+ia_leaf = 454
+ia_leaf_range = [454, 454]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-orations-holyweek6-oratio1946-1-verify-holy-wednesday--main--oratio-super-populum--all--1"
+collated = "Independently checked complete own-source page images, typography-only complete-Latin comparison and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-orations-holyweek6-oratio1946-1-2f3842da"
+publication_artifact_sha256 = "2f3842daef686a971f42369c899250e2aa56de82f81fae4360fdd8e77e48f7c4"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-orations-holyweek6-oratio1946-1-publish-holy-wednesday--main--oratio-super-populum--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree under declared typography only; actual Latin conclusions are prefixes of the same own-book family who-with-thee, with person Final clause refers to our Blessed Lord. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.prayer-conclusions-printed-819; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.prayer-conclusions-checked-20261023. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 359843b7ed66997981419510228d5d61620c45bb9a42b835dc42d5c8deb61d47; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.resume-oratio-late-20261023-holy-wednesday-oratio-super-populum. Recorded typography-only own-book conclusion proof {\"comparison\": \"typography-only-complete-petition-and-actual-own-book-ending-prefix\", \"subroute\": \"same-witness-conclusion-table\", \"family\": \"who-with-thee\", \"source_table_artifact_id\": \"artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.prayer-conclusions-checked-20261023\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Look down, we beseech Thee, O Lord, upon this Thy household, for which Our Lord Jesus Christ did not hesitate to be delivered into the hands of wicked men, and to suffer the torment of the cross. Who with Thee liveth."
+
+[[entries]]
+mass = "holy-wednesday"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+printed_page = "445"
+ia_leaf = 454
+ia_leaf_range = [454, 454]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-holyweek-lexical3-verify-holy-wednesday--main--postcommunion--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-holyweek-lexical3-55f8d0b6"
+publication_artifact_sha256 = "55f8d0b637bc7a063c5ff1c8817b963c0c1ec559839a8ac0f8e61ac6706c9059"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-holyweek-lexical3-publish-holy-wednesday--main--postcommunion--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree after only exact recorded pairs; actual Latin conclusions are prefixes of the same own-book family through-the-same, with person Prayer making mention of our Blessed Lord. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.prayer-conclusions-printed-819; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.prayer-conclusions-checked-20261023. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 1843b97d2726e0707bfe19aa93301c55ee2d04687202ccaf5687009b3838164a; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-holy-wednesday-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"eumdem\", \"target\": \"eundem\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"idem\", \"part_of_speech\": \"demonstrative pronoun/adjective\", \"gender\": \"masculine\", \"number\": \"singular\", \"case\": \"accusative\"}, \"contextual_parse_evidence\": \"Source Per eumdem is the accusative object of Per and refers to the same masculine Son/Lord named in the complete petition. This printing’s own actual formula expands its referent as Dominum nostrum Jesum Christum. Target Per eundem Dominum nostrum uses the same preposition, masculine accusative singular agreement, and Christ referent. Neither token is genitive eiusdem.\", \"lexical_passage_ids\": [\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem\"], \"source_word_index_zero_based\": 22, \"target_word_index_zero_based\": 22}], \"orthography_differences\": [], \"subroute\": \"same-witness-conclusion-table\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Bestow Thy plenteous gifts on our senses, O almighty God, that through the temporal death of Thy Son, of which the august mysteries give testimony, we may have confidence that thou hast given us life everlasting. Through the same."
+
+[[entries]]
+mass = "holy-wednesday"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+printed_page = "445"
+ia_leaf = 454
+ia_leaf_range = [454, 454]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-holyweek-lexical3-verify-holy-wednesday--main--secret--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-holyweek-lexical3-55f8d0b6"
+publication_artifact_sha256 = "55f8d0b637bc7a063c5ff1c8817b963c0c1ec559839a8ac0f8e61ac6706c9059"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-holyweek-lexical3-publish-holy-wednesday--main--secret--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree after only exact recorded pairs; actual Latin conclusions are prefixes of the same own-book family through-the-same, with person Prayer making mention of our Blessed Lord. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.prayer-conclusions-printed-819; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.prayer-conclusions-checked-20261023. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 ec9d6542e34b19efb6e7d0c4fc753ee4559ce005eb1f85dd48c10a8da6afd5cd; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-holy-wednesday-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"eumdem\", \"target\": \"eundem\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"idem\", \"part_of_speech\": \"demonstrative pronoun/adjective\", \"gender\": \"masculine\", \"number\": \"singular\", \"case\": \"accusative\"}, \"contextual_parse_evidence\": \"Source Per eumdem is the accusative object of Per and refers to the same masculine Son/Lord named in the complete petition. This printing’s own actual formula expands its referent as Dominum nostrum Jesum Christum. Target Per eundem Dominum nostrum Jesum Christum uses the same preposition, masculine accusative singular agreement, and Christ referent. Neither token is genitive eiusdem.\", \"lexical_passage_ids\": [\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem\"], \"source_word_index_zero_based\": 21, \"target_word_index_zero_based\": 21}], \"orthography_differences\": [], \"subroute\": \"same-witness-conclusion-table\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Receive, we beseech Thee, O almighty God, the gift we offer, and deign to bring it to pass that what we perform in the mystery of the passion of Thy Son, Our Lord we may follow with loving affection. Through the same."
+
+[[entries]]
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "448"
+ia_leaf = 445
+ia_leaf_range = [445, 445]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-holyweek6-ready1945-5-2026-10-23-verify-mass-of-the-lords-supper--main--collect--all--1"
+collated = "page-image, same-witness conclusion table where needed, and bounded tracked transcription, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-holyweek6-ready1945-5-2026-10-23-5c171982"
+publication_artifact_sha256 = "5c1719825da5899dce3c500d4947c6f7c4a23d33938ab1c7f1c3932b0f18256b"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-holyweek6-ready1945-5-2026-10-23-publish-mass-of-the-lords-supper--main--collect--all--1"
+witness_note = "Historical source mass-of-the-lords-supper/main/Collect/all/1; same-witness-conclusion-table. Complete petitions equal and actual Latin conclusion prefixes match the same printed family who-with-thee at passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked rule/formula passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-transcription. Actual English short cue retained literally, without expansion or response. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 ac12f72f3bf62d862e41a1a9d23711f3f892ecca396277f8bd550b2421bfb7cf. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-mass-of-the-lords-supper-orations retained. No source-recipient calendar attestation or official 1962 English claimed."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, from Whom Judas received the punishment of his crime, and the thief the reward of his confession, grant us the effect of Thy clemency, that, as Jesus Christ, our Lord, in His passion dealt according to their deserts with the one and the other, so, putting away from us the error of the past, He may bestow upon us the grace of His resurrection. Who with Thee liveth."
+
+[[entries]]
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "454"
+ia_leaf = 451
+ia_leaf_range = [451, 451]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-holyweek6-ready1945-5-2026-10-23-verify-mass-of-the-lords-supper--main--postcommunion--all--1"
+collated = "page-image, same-witness conclusion table where needed, and bounded tracked transcription, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-holyweek6-ready1945-5-2026-10-23-5c171982"
+publication_artifact_sha256 = "5c1719825da5899dce3c500d4947c6f7c4a23d33938ab1c7f1c3932b0f18256b"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-holyweek6-ready1945-5-2026-10-23-publish-mass-of-the-lords-supper--main--postcommunion--all--1"
+witness_note = "Historical source mass-of-the-lords-supper/main/Postcommunion/all/1; strict. Complete Latin word sequence and actual ending equal under typography only. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 a839e55cfef53ab69098ea103cb8da3c57783c39f8fa2be0b63af70d70494550. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-mass-of-the-lords-supper-orations retained. No source-recipient calendar attestation or official 1962 English claimed."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "Refreshed with life-giving nourishment, we beseech Thee, O Lord, our God, that what we perform in the time of our mortality, we may attain by the gift of Thine immortality. Through our Lord."
+
+[[entries]]
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "451"
+ia_leaf = 448
+ia_leaf_range = [448, 448]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-holyweek6-ready1945-5-2026-10-23-verify-mass-of-the-lords-supper--main--secret--all--1"
+collated = "page-image, same-witness conclusion table where needed, and bounded tracked transcription, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-holyweek6-ready1945-5-2026-10-23-5c171982"
+publication_artifact_sha256 = "5c1719825da5899dce3c500d4947c6f7c4a23d33938ab1c7f1c3932b0f18256b"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-holyweek6-ready1945-5-2026-10-23-publish-mass-of-the-lords-supper--main--secret--all--1"
+witness_note = "Historical source mass-of-the-lords-supper/main/Secret/all/1; same-witness-conclusion-table. Complete petitions equal and actual Latin conclusion prefixes match the same printed family who-with-thee at passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked rule/formula passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-transcription. Actual English short cue retained literally, without expansion or response. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 3fbbff4b8eacffc9473def04e4d43f8eae5550e8a7f70a90d2c533e958bfebad. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-mass-of-the-lords-supper-orations retained. No source-recipient calendar attestation or official 1962 English claimed."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "We beseech Thee, O holy Lord, almighty Father, eternal God, that He may render our sacrifice acceptable to Thee, Who, by giving it to His disciples on this day, taught them that it is done in commemoration of Him, Jesus Christ, Thy Son, our Lord. Who with Thee."
+
+[[entries]]
+mass = "missa-de-s-maria-in-sabbato-1"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1399"
+ia_leaf = 1417
+ia_leaf_range = [1417, 1417]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-missa-de-s-maria-in-sabbato-1--main--collect--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-missa-de-s-maria-in-sabbato-1--main--collect--all--1"
+witness_note = "Own-appointment historical witness. Entire spoken-word sequences and actual endings agree after only the exact recorded comparison pairs. Exact current target UTF8 SHA256 4f39aa21ec6962ed5a99bfd22f4cdd7c472deb243c54c9e21c8c331fccbc009b; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-missa-de-s-maria-in-sabbato-1-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"eumdem\", \"target\": \"eundem\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"idem\", \"gender\": \"masculine\", \"number\": \"singular\", \"case\": \"accusative\", \"function\": \"agrees with Dominum governed by Per\", \"part_of_speech\": \"demonstrative pronoun/adjective\", \"part_of_speech_basis\": \"Exact independently verified idem paradigm and reviewed same masculine accusative singular contextual parse. This includes the separately reviewed Louis anaphoric petition object, not only concluding modifiers.\"}, \"contextual_parse_evidence\": \"Both actual endings have Per eumdem/eundem Dominum; Per governs accusative, and Dominum is masculine singular. The pronoun refers to the same Son named as Verbum tuum or Christi Filii tui in the complete petition. It is neither genitive eiusdem nor a mixed formula.\", \"lexical_passage_ids\": [\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem\"], \"source_word_index_zero_based\": 30, \"target_word_index_zero_based\": 30}], \"orthography_differences\": [{\"source_word_index_zero_based\": 21, \"target_word_index_zero_based\": 21, \"source\": \"genitricem\", \"target\": \"genetricem\"}], \"subroute\": \"strict\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, Who didst will that at the message of an angel Thy word should take flesh in the womb of the Blessed Virgin Mary: grant that we, Thy suppliants, who believe her to be truly the mother of God, may be helped by her intercession with Thee. Through the same."
+
+[[entries]]
+mass = "missa-de-s-maria-in-sabbato-1"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1399-1402"
+ia_leaf = 1417
+ia_leaf_range = [1417, 1420]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-missa-de-s-maria-in-sabbato-1--main--postcommunion--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-missa-de-s-maria-in-sabbato-1--main--postcommunion--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree after only exact recorded pairs; actual Latin conclusions are prefixes of the same own-book family through-the-same, with person Prayer making mention of our Blessed Lord. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 e03f3ce10b9ef9debfb8ccf901912dcfab6c63173ebe46fffb287cf5315ff071; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-missa-de-s-maria-in-sabbato-1-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"eumdem\", \"target\": \"eundem\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"idem\", \"gender\": \"masculine\", \"number\": \"singular\", \"case\": \"accusative\", \"function\": \"agrees with Dominum governed by Per\", \"part_of_speech\": \"demonstrative pronoun/adjective\", \"part_of_speech_basis\": \"Exact independently verified idem paradigm and reviewed same masculine accusative singular contextual parse. This includes the separately reviewed Louis anaphoric petition object, not only concluding modifiers.\"}, \"contextual_parse_evidence\": \"Both actual endings have Per eumdem/eundem Dominum; Per governs accusative, and Dominum is masculine singular. The pronoun refers to the same Son named as Verbum tuum or Christi Filii tui in the complete petition. It is neither genitive eiusdem nor a mixed formula.\", \"lexical_passage_ids\": [\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem\"], \"source_word_index_zero_based\": 26, \"target_word_index_zero_based\": 26}], \"orthography_differences\": [], \"subroute\": \"same-witness-conclusion-table\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "Pour forth, we beseech Thee, O Lord, Thy grace into our hearts, that we, to whom the incarnation of Christ Thy Son was made known by the message of an angel, may, by His passion and cross, be brought to the glory of His resurrection. Through the same."
+
+[[entries]]
+mass = "s-agathae-virginis-martyris"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "909-910"
+ia_leaf = 907
+ia_leaf_range = [907, 908]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-s-agathae-virginis-martyris--main--collect--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-s-agathae-virginis-martyris--main--collect--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree after only exact recorded pairs; actual Latin conclusions are prefixes of the same own-book family through-our-lord, with person God the Father. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 80caabc0e13cd44eb7294315ce866f88c3b7f6e6eca9f4b50ac0e9fa079f7d8a; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-agathae-virginis-martyris-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"natalitia\", \"target\": \"natalicia\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"natalitium/natalicium, substantive birthday celebration\", \"gender\": \"neuter\", \"number\": \"plural\", \"case\": \"accusative\", \"function\": \"direct object of colimus\", \"part_of_speech\": \"substantive noun\", \"part_of_speech_basis\": \"Original reviewed lexeme explicitly says substantive; its particular nominative or accusative function remains unchanged.\"}, \"contextual_parse_evidence\": \"Both complete contexts govern natalitia/natalicia with colimus. The transitive verb or observing participle requires its object in the accusative; the saint-name/saints modifier is genitive. Thus this is the neuter accusative plural substantive, not a feminine nominative form or an arbitrary adjective.\", \"lexical_passage_ids\": [\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension\"], \"source_word_index_zero_based\": 24, \"target_word_index_zero_based\": 24}], \"orthography_differences\": [], \"subroute\": \"same-witness-conclusion-table\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, Who, among the other miracles of Thy power, hast bestowed the victory of martyrdom on the weaker sex also, graciously grant that we, who keep the feast of blessed Agatha, Thy Virgin and Martyr, may advance toward Thee by the path of her examples. Through our Lord."
+
+[[entries]]
+mass = "s-annae-matris-beatae-mariae-virginis"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1126"
+ia_leaf = 1118
+ia_leaf_range = [1118, 1118]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-s-annae-matris-beatae-mariae-virginis--main--collect--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-s-annae-matris-beatae-mariae-virginis--main--collect--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree after only exact recorded pairs; actual Latin conclusions are prefixes of the same own-book family through-the-same, with person Prayer making mention of our Blessed Lord. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 63350515ef181152ed0a9b7ea5f52a46bd6e2c43cea24dd0b6eafc3ed49b15c2; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.phase4-s-annae-matris-beatae-mariae-virginis-orations-recheck-2026-10-22. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"eumdem\", \"target\": \"eundem\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"idem\", \"gender\": \"masculine\", \"number\": \"singular\", \"case\": \"accusative\", \"particular_syntax\": \"Agrees with Dominum after the preposition Per; both full prayer contexts end the prayer addressed to the Father through the same Lord.\", \"part_of_speech\": \"demonstrative pronoun/adjective\", \"part_of_speech_basis\": \"Exact independently verified idem paradigm and reviewed same masculine accusative singular contextual parse. This includes the separately reviewed Louis anaphoric petition object, not only concluding modifiers.\"}, \"contextual_parse_evidence\": \"Agrees with Dominum after the preposition Per; both full prayer contexts end the prayer addressed to the Father through the same Lord.\", \"lexical_passage_ids\": [\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem\"], \"source_word_index_zero_based\": 28, \"target_word_index_zero_based\": 28}], \"orthography_differences\": [{\"source_word_index_zero_based\": 9, \"target_word_index_zero_based\": 9, \"source\": \"genitricis\", \"target\": \"genetricis\"}], \"subroute\": \"same-witness-conclusion-table\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, Who didst vouchsafe to confer grace on blessed Anne that she might deserve to be made the mother of the mother of Thine only-begotten Son, mercifully grant that, as we celebrate her solemnity, we may be assisted with Thee by her patronage. Through the same."
+
+[[entries]]
+mass = "s-annae-matris-beatae-mariae-virginis"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1127"
+ia_leaf = 1119
+ia_leaf_range = [1119, 1119]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-s-annae-matris-beatae-mariae-virginis--main--postcommunion--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-s-annae-matris-beatae-mariae-virginis--main--postcommunion--all--1"
+witness_note = "Own-appointment historical witness. Entire spoken-word sequences and actual endings agree after only the exact recorded comparison pairs. Exact current target UTF8 SHA256 318338d87f9133de9b5495330926862ea901aa7bb0d6791c479a39ce60f8d08f; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.phase4-s-annae-matris-beatae-mariae-virginis-orations-recheck-2026-10-22. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"eumdem\", \"target\": \"eundem\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"idem\", \"gender\": \"masculine\", \"number\": \"singular\", \"case\": \"accusative\", \"particular_syntax\": \"Agrees with Dominum after the preposition Per; both full prayer contexts end the prayer addressed to the Father through the same Lord.\", \"part_of_speech\": \"demonstrative pronoun/adjective\", \"part_of_speech_basis\": \"Exact independently verified idem paradigm and reviewed same masculine accusative singular contextual parse. This includes the separately reviewed Louis anaphoric petition object, not only concluding modifiers.\"}, \"contextual_parse_evidence\": \"Agrees with Dominum after the preposition Per; both full prayer contexts end the prayer addressed to the Father through the same Lord.\", \"lexical_passage_ids\": [\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem\"], \"source_word_index_zero_based\": 24, \"target_word_index_zero_based\": 24}], \"orthography_differences\": [{\"source_word_index_zero_based\": 12, \"target_word_index_zero_based\": 12, \"source\": \"genitricis\", \"target\": \"genetricis\"}], \"subroute\": \"strict\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "Nourished by Thy heavenly sacraments, we beseech Thee, O Lord, our God, that, by the intercession of blessed Anne, whom Thou didst will to be the mother of Thy Son's mother, we may be worthy to attain unto everlasting salvation. Through the same."
+
+[[entries]]
+mass = "s-annae-matris-beatae-mariae-virginis"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1127"
+ia_leaf = 1119
+ia_leaf_range = [1119, 1119]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-s-annae-matris-beatae-mariae-virginis--main--secret--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-s-annae-matris-beatae-mariae-virginis--main--secret--all--1"
+witness_note = "Own-appointment historical witness. Complete petitions agree after only exact recorded pairs; actual Latin conclusions are prefixes of the same own-book family through-the-same, with person Prayer making mention of our Blessed Lord. Source rule passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked formula artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25. Target response tokens [] remain separate and are not added to English. Exact current target UTF8 SHA256 e67e8b433dd1b1cd08acc54bc3135120e92bb2b27a0398935340d383f6402ff7; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.phase4-s-annae-matris-beatae-mariae-virginis-orations-recheck-2026-10-22. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"eumdem\", \"target\": \"eundem\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"idem\", \"gender\": \"masculine\", \"number\": \"singular\", \"case\": \"accusative\", \"particular_syntax\": \"Agrees with Dominum after the preposition Per; both full prayer contexts end the prayer addressed to the Father through the same Lord.\", \"part_of_speech\": \"demonstrative pronoun/adjective\", \"part_of_speech_basis\": \"Exact independently verified idem paradigm and reviewed same masculine accusative singular contextual parse. This includes the separately reviewed Louis anaphoric petition object, not only concluding modifiers.\"}, \"contextual_parse_evidence\": \"Agrees with Dominum after the preposition Per; both full prayer contexts end the prayer addressed to the Father through the same Lord.\", \"lexical_passage_ids\": [\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem\"], \"source_word_index_zero_based\": 28, \"target_word_index_zero_based\": 28}], \"orthography_differences\": [{\"source_word_index_zero_based\": 12, \"target_word_index_zero_based\": 12, \"source\": \"genitricis\", \"target\": \"genetricis\"}], \"subroute\": \"same-witness-conclusion-table\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "Be appeased, O Lord, we beseech Thee, and look upon the sacrifices here before Thee, that, by the intercession of blessed Anne, who was the mother of Thy Son's mother, Our Lord Jesus Christ, they may profit both for our devotion and our salvation. Through the same."
+
+[[entries]]
+mass = "s-antonii-mariae-zaccaria-confessoris"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1094"
+ia_leaf = 1086
+ia_leaf_range = [1086, 1086]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-s-antonii-mariae-zaccaria-confessoris--main--collect--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-s-antonii-mariae-zaccaria-confessoris--main--collect--all--1"
+witness_note = "Own-appointment historical witness. Entire spoken-word sequences and actual endings agree after only the exact recorded comparison pairs. Exact current target UTF8 SHA256 6eb4d4903eed230e3e4322b76ef4fffe97bf1bc2df5ecbe2373f578f7b920ae3; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-antonii-mariae-zaccaria-confessoris-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"eumdem\", \"target\": \"eundem\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"idem\", \"gender\": \"masculine\", \"number\": \"singular\", \"case\": \"accusative\", \"particular_syntax\": \"Agrees with Dominum after the preposition Per; both full prayer contexts end the prayer addressed to the Father through the same Lord.\", \"part_of_speech\": \"demonstrative pronoun/adjective\", \"part_of_speech_basis\": \"Exact independently verified idem paradigm and reviewed same masculine accusative singular contextual parse. This includes the separately reviewed Louis anaphoric petition object, not only concluding modifiers.\"}, \"contextual_parse_evidence\": \"Agrees with Dominum after the preposition Per; both full prayer contexts end the prayer addressed to the Father through the same Lord.\", \"lexical_passage_ids\": [\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem\"], \"source_word_index_zero_based\": 28, \"target_word_index_zero_based\": 28}], \"orthography_differences\": [], \"subroute\": \"strict\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "Grant us, O Lord God, to learn, in the spirit of Paul the apostle, that transcendent knowledge of Jesus Christ, by which blessed Antony Mary, wonderfully instructed, gathered in Thy Church new families of clerics and virgins. Through the same."
+
+[[entries]]
+mass = "s-catharinae-senensis-virginis"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "996-997"
+ia_leaf = 988
+ia_leaf_range = [988, 989]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-s-catharinae-senensis-virginis--main--collect--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-s-catharinae-senensis-virginis--main--collect--all--1"
+witness_note = "Own-appointment historical witness. Entire spoken-word sequences and actual endings agree after only the exact recorded comparison pairs. Exact current target UTF8 SHA256 1a5a3e5f9e8b63dd8b5e9c72a9a01af3c101cc3bf87b793cb7baeeb3230a23a0; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-catharinae-senensis-virginis-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"natalitia\", \"target\": \"natalicia\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"natalitium/natalicium, substantive birthday celebration\", \"gender\": \"neuter\", \"number\": \"plural\", \"case\": \"accusative\", \"function\": \"direct object of colimus\", \"part_of_speech\": \"substantive noun\", \"part_of_speech_basis\": \"Original reviewed lexeme explicitly says substantive; its particular nominative or accusative function remains unchanged.\"}, \"contextual_parse_evidence\": \"Both complete contexts govern natalitia/natalicia with colimus. The transitive verb or observing participle requires its object in the accusative; the saint-name/saints modifier is genitive. Thus this is the neuter accusative plural substantive, not a feminine nominative form or an arbitrary adjective.\", \"lexical_passage_ids\": [\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension\"], \"source_word_index_zero_based\": 10, \"target_word_index_zero_based\": 10}], \"orthography_differences\": [], \"subroute\": \"strict\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "Grant, we beseech Thee, O almighty God, that we who venerate the natal feast of blessed Catharine, Thy virgin, may be both gladdened by her annual solemnity and helped by the example of so great virtue. Through our Lord."
+
+[[entries]]
+mass = "s-ioachim-patris-beatae-mariae-virginis"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1163-1164"
+ia_leaf = 1155
+ia_leaf_range = [1155, 1156]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-s-ioachim-patris-beatae-mariae-virginis--main--postcommunion--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-s-ioachim-patris-beatae-mariae-virginis--main--postcommunion--all--1"
+witness_note = "Own-appointment historical witness. Entire spoken-word sequences and actual endings agree after only the exact recorded comparison pairs. Exact current target UTF8 SHA256 4f87c0452631f58edd589369a68a58ac5c6f68c3c2c34651ec48f373df5a8383; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-ioachim-patris-beatae-mariae-virginis-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"eumdem\", \"target\": \"eundem\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"idem\", \"gender\": \"masculine\", \"number\": \"singular\", \"case\": \"accusative\", \"particular_syntax\": \"Agrees with Dominum after the preposition Per; both full prayer contexts end the prayer addressed to the Father through the same Lord.\", \"part_of_speech\": \"demonstrative pronoun/adjective\", \"part_of_speech_basis\": \"Exact independently verified idem paradigm and reviewed same masculine accusative singular contextual parse. This includes the separately reviewed Louis anaphoric petition object, not only concluding modifiers.\"}, \"contextual_parse_evidence\": \"Agrees with Dominum after the preposition Per; both full prayer contexts end the prayer addressed to the Father through the same Lord.\", \"lexical_passage_ids\": [\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem\"], \"source_word_index_zero_based\": 37, \"target_word_index_zero_based\": 37}], \"orthography_differences\": [{\"source_word_index_zero_based\": 16, \"target_word_index_zero_based\": 16, \"source\": \"genitricis\", \"target\": \"genetricis\"}], \"subroute\": \"strict\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "We beseech Thee, O almighty God, that by this sacrament which we have received, and by the interceding merits and prayers of blessed Joachim, the father of the mother of Thy beloved Son, Our Lord Jesus Christ, we may deserve to share Thy grace in the present and eternal glory in the future. Through the same."
+
+[[entries]]
+mass = "s-ludovici-regis-confessoris"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "1174"
+ia_leaf = 1168
+ia_leaf_range = [1168, 1168]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-verify-s-ludovici-regis-confessoris--main--postcommunion--all--1"
+collated = "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-26f95688"
+publication_artifact_sha256 = "26f95688542889b90834ecb3fb6526c728fa8807ba1d43205ef1bb5d62942d41"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-lexical-first23-publish-s-ludovici-regis-confessoris--main--postcommunion--all--1"
+witness_note = "Own-appointment historical witness. Entire spoken-word sequences and actual endings agree after only the exact recorded comparison pairs. Exact current target UTF8 SHA256 138157e3a8f093b512f9c3da16d75511fe5a589d526dda04cb06f5acd68aaf8b; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-ludovici-regis-confessoris-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"eumdem\", \"target\": \"eundem\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"idem\", \"gender\": \"masculine\", \"number\": \"singular\", \"case\": \"accusative\", \"particular_syntax\": \"Anaphoric direct object of constitue, referring to beatum Confessorem tuum Ludovicum; defensorem is its predicate accusative.\", \"part_of_speech\": \"demonstrative pronoun/adjective\", \"part_of_speech_basis\": \"Exact independently verified idem paradigm and reviewed same masculine accusative singular contextual parse. This includes the separately reviewed Louis anaphoric petition object, not only concluding modifiers.\"}, \"contextual_parse_evidence\": \"Anaphoric direct object of constitue, referring to beatum Confessorem tuum Ludovicum; defensorem is its predicate accusative.\", \"lexical_passage_ids\": [\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem\"], \"source_word_index_zero_based\": 14, \"target_word_index_zero_based\": 14}], \"orthography_differences\": [{\"source_word_index_zero_based\": 12, \"target_word_index_zero_based\": 12, \"source\": \"coelis\", \"target\": \"caelis\"}], \"subroute\": \"strict\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "O God, Who didst make Thy blessed confessor, Louis, wonderful on earth and glorious in heaven, constitute him, we beseech Thee, the defender of Thy Church. Through our Lord."
