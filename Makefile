@@ -1100,7 +1100,8 @@ check-calendar-days:
 # writes nothing; `mass-propers structure` is what fixes a failure.
 check-calendar-masses:
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
-		$(PYTHON) tools/tpt check-calendar-masses; \
+		$(PYTHON) tools/tpt check-calendar-masses && \
+		$(PYTHON) -m unittest tools.tests.test_lasance_source_printing_1946 -v && \
 		$(PYTHON) tools/tpt mass-propers structure --check; \
 	else echo "PyYAML missing; skipping calendar-mass check"; fi
 
