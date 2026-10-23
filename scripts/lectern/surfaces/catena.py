@@ -332,7 +332,7 @@ class Catena(Surface):
                     text = Ink()
                     for verse in paragraph["verses"]:
                         text(str(verse["number"]).translate(SUPERSCRIPT), "bold $catena-color")
-                        text(verse["text"] + " ")
+                        text(" " + verse["text"] + " ")
                     classes = "verse-paragraph"
                     if paragraph["kind"]:
                         classes += " " + paragraph["kind"]
