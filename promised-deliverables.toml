@@ -1,5 +1,148 @@
 schema_version = 1
 
+# Current direction, 2026-10-23: coherent feature-branch commits and a non-force
+# main push are authorized after consistency/publication gates. The maintainer
+# defers the exhaustive additions audit, explicitly incomplete, not passed.
+# Accepted scoped corrections are installed; final combined gates remain open.
+# No annual, terminal-reader or other acceptance criterion is weakened.
+# Owner/currentness, annual5856, targeted regressions and public/preview gates
+# pass. The first settled native run fails six assertions (251/257 pass);
+# its immutable evidence is retained. Repair, fresh affected native checks and
+# independent integrated acceptance remain required;
+# refreshed main74150dd4e includes a further published history batch to reconcile.
+# Seven fixture-only hunks replace restored Vianney with still-withheld Claret,
+# without dropping assertions. Candidate checkpoints may precede the ordinary
+# merge; the next full native run and integrated acceptance target its final
+# rebuilt state. No public push or annual/product completion is claimed.
+
+[[deliverables]]
+id = "missal-reader-annual-completion-2026-10-22"
+owner = "guidance/liturgy-browser-roadmap.md"
+promise = "Complete source-correct annual Propers and Commons for Roman 1962 civil 2026 and the complete Postconciliar Missal A/2026, B/2027 and C/2028 liturgical years, using independent parallel repair lanes, sanity checks and fresh cold review after every phase, without confusing structural renderability, typed gaps or a bounded phase with annual textual completeness."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "annual-appointed-content"
+  criterion = "Every date, appointed formulary, Common referral, commemoration, form, cycle and alternative in the four roadmap intervals is audited against its controlling source; appointment correctness, exact wording, available languages and publication rights remain distinct, and unfinished or withheld bodies cannot establish textual completeness."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "guidance/liturgy-browser-roadmap.md"]
+
+  [[deliverables.requirements]]
+  id = "annual-phase-reviews"
+  criterion = "Each completed repair phase has focused regression and source-validation evidence, a sanity check of its integrated changes, and a fresh independent cold-review disposition; unresolved blocking findings keep that phase open."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "annual-integrated-validation"
+  criterion = "The final integrated source and generated-data checks, 5,856-render annual structural matrix, affected native browser paths and local publication gates pass, or unchanged inherited failures are explicitly compared; no structural result is reported as proof of complete annual text."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "tools/tests/test_complete_missal_year.py"]
+
+[[deliverables]]
+id = "corpus-catena-cross-reference-audit-2026-10-22"
+owner = "PROJECT-WORK.md"
+promise = "Audit the full held corpus for sources that comment on biblical books, identify which and where should be cross-referenced into Catena Omnia, and explain the current narrow visible coverage with an evidence-backed book/source/locus matrix and a plan through existing owners."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "catena-corpus-coverage-matrix"
+  criterion = "The full registered-work closure is classified with exact source paths, proved biblical loci, author or anthology voice, language, edition, rights and held/readable/fragmented/indexed state; direct commentary, incidental citations, remote leads and uncertain anchors remain distinct."
+  status = "pass"
+  evidence = ["workflows/reviews/corpus-catena-cross-reference-2026-10-22/RECORD.md", "workflows/reviews/corpus-catena-cross-reference-2026-10-22/work-classification.csv", "workflows/reviews/corpus-catena-cross-reference-2026-10-22/eligible-works.csv", "workflows/reviews/corpus-catena-cross-reference-2026-10-22/target-gates.csv", "workflows/reviews/corpus-catena-cross-reference-2026-10-22/book-summary.csv"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "catena-pipeline-gap-plan"
+  criterion = "The actual indexed book/chapter/source coverage and owning acquisition, fragment, generator and reader contracts are traced, causes are distinguished from content gaps, and a concrete cross-reference plan names existing owners and numbering/rights prerequisites without inventing anchors or permissions."
+  status = "pass"
+  evidence = ["workflows/reviews/corpus-catena-cross-reference-2026-10-22/RECORD.md", "workflows/reviews/corpus-catena-cross-reference-2026-10-22/findings.json", "workflows/reviews/corpus-catena-cross-reference-2026-10-22/provenance.json", "workflows/reviews/corpus-catena-cross-reference-2026-10-22/historical/final-receipt.json"]
+  check = "path_exists"
+
+[[deliverables]]
+id = "terminal-reader-lectern-2026-10-22"
+owner = "PROJECT-WORK.md"
+promise = "Make a comprehensive, elegant, intuitive and beautiful btop-like terminal reader for the project, starting with the Missal and extended to Catena Omnia and then every page of the site, built in Python and Textual over the local checkout, clarified with the maintainer, sanity-checked and cold-reviewed; on 22 October 2026 the maintainer asked for the Catena author groups to collapse and default to collapsed, for the plan to be persisted, and for the result to be pushed to main."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "lectern-registered-tool"
+  criterion = "tools/lectern is a registered tool (tmt.json entry, a reading group and a reach declaration in scripts/_tooling.py, a shell smoke test, replayed help examples with declared preconditions) that opens the reader and draws it headlessly with `lectern snapshot` as text, ANSI or SVG, honouring the plain tier."
+  status = "pass"
+  evidence = ["tools/lectern", "tmt.json", "tests/tools/lectern.test", "scripts/replay_examples.py"]
+  check = "contains"
+  path = "tmt.json"
+  needle = "\"lectern\": {"
+
+  [[deliverables.requirements]]
+  id = "lectern-derives-nothing"
+  criterion = "Every view is read from the published structure or asked of the browser's own models and renderers through one node bridge; page logic kept inside a page closure is sliced from the page source and fails closed when its marker moves; any remaining PORT line is cited and pinned by a test."
+  status = "pass"
+  evidence = ["scripts/lectern/README.md", "scripts/lectern/bridge.js", "scripts/lectern/adapters/page-slice.js", "tools/tests/test_lectern.py"]
+  check = "contains"
+  path = "scripts/lectern/README.md"
+  needle = "## The one rule"
+
+  [[deliverables.requirements]]
+  id = "lectern-missal"
+  criterion = "Day shows each missal's day as the live Day page words it (its title, coverage notice and Why this Mass sliced from day-reader.js), every held territorial branch, Read and Missal modes, and the page's own Compare; Propers browses and searches any formulary with the page's search and reads it without a date; every choice the data leaves open is offered and never made by order."
+  status = "pass"
+  evidence = ["scripts/lectern/surfaces/day.py", "scripts/lectern/surfaces/propers.py", "scripts/lectern/adapters/liturgy.js", "tools/tests/test_lectern.py"]
+  check = "contains"
+  path = "tools/tests/test_lectern.py"
+  needle = "def test_compare_is_the_pages_and_refuses_as_the_page_refuses"
+
+  [[deliverables.requirements]]
+  id = "lectern-catena-omnia"
+  criterion = "Catena Omnia shows a book's chapter strip, the chapter's scripture with printed and projected paragraph marks, the chain in the generator's order with author groups collapsed by default, the acquisition list apart from the chain, absences with their offers, and a fragment reader with its provenance and a link into the Source Library."
+  status = "pass"
+  evidence = ["scripts/lectern/surfaces/catena.py", "scripts/lectern/adapters/catena.js", "tools/tests/test_lectern.py"]
+  check = "contains"
+  path = "tools/tests/test_lectern.py"
+  needle = "def test_the_chain_arrives_with_every_author_closed"
+
+  [[deliverables.requirements]]
+  id = "lectern-every-page"
+  criterion = "The reading plan, the document catalogue with web editions set by the site's own renderer, the Source Library, How the Missal Changed (timeline, chronological reading list, recorded lines, book catalogue, comparisons and native texts) and The Code, Canon by Canon each open onto their data under the pages' display rules."
+  status = "pass"
+  evidence = ["scripts/lectern/surfaces/scripture.py", "scripts/lectern/surfaces/texts.py", "scripts/lectern/surfaces/sources.py", "scripts/lectern/surfaces/history.py", "scripts/lectern/surfaces/law.py", "tools/tests/test_lectern.py"]
+  check = "contains"
+  path = "tools/tests/test_lectern.py"
+  needle = "def test_every_surface_opens_onto_its_data"
+
+  [[deliverables.requirements]]
+  id = "lectern-review"
+  criterion = "The reader is sanity-checked (unit, smoke and drawing tests under the system and the pinned interpreters, a key sweep of every surface, rendered screenshots) and cold-reviewed by an independent code review and an independent fidelity and usability review, with every finding fixed or recorded."
+  status = "pass"
+  evidence = ["tools/tests/test_lectern.py", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "Two independent cold reviews"
+
+  [[deliverables.requirements]]
+  id = "lectern-page-mode-parity"
+  criterion = "The reader offers the liturgy pages' remaining modes: Propers Compare along its dimensions (oration language, lectionary cycle, reading alternative, translation witness, Bible edition) and the Study mode of Day and Propers, each through the page's own comparison and study code."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "scripts/lectern/README.md"]
+
+  [[deliverables.requirements]]
+  id = "lectern-maintainer-terminal-review"
+  criterion = "The maintainer has used the interactive reader in a real terminal and either accepted it or recorded the changes to make."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "lectern-on-main"
+  criterion = "The reader is pushed to main as a fast-forward after the deployment gates pass locally, and the Pages run that push triggers is verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "lectern-missal-integration-2026-10-22"
+  criterion = "The refreshed-main reader is incorporated without overwriting the annual missal work, the exact upstream tool and generated fingerprint frontier and shared-record reconciliation are preserved, combined functional and terminal checks pass, and fresh independent cold review accepts the combined changes without treating upstream results as fresh evidence."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/missal-reader-annual-2026-10-22/RECORD.md"]
+
 [[deliverables]]
 id = "register-remediation-2026-10-21"
 owner = "PROJECT-WORK.md"

@@ -5,7 +5,548 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-22.
+Last reconciled: 2026-10-23.
+
+## Annual Missal reader completion, 2026-10-22
+
+<!-- promised-deliverable: missal-reader-annual-completion-2026-10-22 -->
+
+### Current integration direction, 2026-10-23
+
+The maintainer now authorizes coherent commits and a non-force push to `main`
+once the combined result is consistent. Work and commits stay on
+`feature/missal-reader`; fresh upstream ancestry, outgoing public objects and
+the deployment attempt still require verification. This supersedes earlier
+statements that this continuation has no commit or publication authority.
+
+The maintainer explicitly defers the exhaustive additions/unused-options
+audit and directs integration to proceed. Its last formal continuation closes
+1,147 obligations and leaves 2,498 pending, with lexical candidates still
+unrefined. It is stopped, incomplete and not accepted. Its eight confirmed
+findings and the completed conventions review's two findings have independently
+accepted corrections. No annual or terminal-reader requirement is waived.
+
+Twenty exact correction postimages are installed: fourteen terminal-reader
+files and six Catena research metadata files. Strict preimage, accepted packet,
+CRC, final hash and canonical-mode joins pass; the other ten Catena paths remain
+exact. The terminal corrections restore the actual Propers notice and remove
+proved unused code/options without changing the browser derivation owner.
+Catena now distinguishes original-work from owning-edition languages, correcting
+508 cells while preserving all 1,064 original-language values and other cells.
+The research remains a plan, not commentary admission. The
+[annual record](workflows/reviews/missal-reader-annual-2026-10-22/RECORD.md)
+owns the scoped receipts, audit deferral and remaining release gates.
+
+All 26 new source payloads and their manifests join retained accepted
+publication evidence, with no material basis gap or privacy candidate in the
+bounded screen. This is not blanket clearance: regenerated bodies, assembled
+artifacts, staged/outgoing history and deployment still need their final gates.
+Registered-owner transforms, annual and settled native checks, final integrated
+cold review, coherent commits and upstream reconciliation are next. Annual
+textual completeness and the terminal reader's remaining product gates stay open.
+
+The owner window and full annual/local-publication gates now pass. Generation
+changes 538 Proper/Source paths, including 33 new readable projections and no
+retirements. The exact 571-path release union also includes the already accepted
+Postconciliar translation-ledger hash pin omitted from the original proposal;
+only generated rights rows and hash bindings change. A newly exposed stale
+Claude chronology inventory hash is refreshed through its owner, preserving
+all classification data and the accepted annotation. The failed deployment
+attempt remains recorded; its corrected complete rerun passes.
+
+Fresh results: 5,856 annual renderings across seven tests, no skips;
+77 terminal tests pass with one intentional pin-environment skip; eight adapter
+checks pass; 40 publication/source-path tests pass with one optional
+predecessor-baseline skip. All 538 generated paths and 68 new body/provenance
+carriers join their accepted source evidence, with no actionable publication
+finding. Deployment-source, public and preview builds and both verifiers pass.
+The first settled native run fails six coverage assertions: 251 of 257 pass
+across twelve harnesses, with no console, request or HTTP diagnostics. The
+failed immutable packet is retained. Coverage/date fixtures are under bounded
+diagnosis against the restored texts; no fixture-only disposition is presumed.
+Fresh affected native evidence and independent integrated acceptance remain
+required before publication.
+Bounded diagnosis now confirms stale Vianney fixture use in all six assertions,
+including the later withheld-body branch of the Propers deep-link test. Seven
+test-only hunks use Claret's still-withheld Collect instead; Advent coverage
+and every assertion remain unchanged. Source/preview model checks and syntax
+checks pass; native acceptance is not yet claimed. To avoid duplicate browser
+runs, coherent candidate checkpoints precede the ordinary upstream merge, and
+the next complete native run and integrated cold acceptance target that final
+merged, rebuilt state. The independent Catena research checkpoint is committed;
+no push has occurred.
+Fresh upstream is now `74150dd4e9caaeaea191b35b55780219b5196769`, adding
+seventeen published missal-history commits beyond the originally incorporated
+TUI range. Those changes are not yet merged; ordinary reconciliation must retain
+both source graphs and revalidate their affected outputs before any push.
+
+**In progress.** The maintainer requests execution of the reader plan with
+independent repair work run in parallel, sanity checks, and a fresh cold review
+after each phase. The existing content-first priority governs: Roman 1962
+civil 2026 and complete Postconciliar Missal liturgical years A/2026, B/2027
+and C/2028, including Advent, with the exact intervals in the
+[roadmap](guidance/liturgy-browser-roadmap.md#current-priority-complete-annual-minimum-reader-2026-10-20).
+This annual promise does not replace the narrower completed recovery promise
+or close the C2 exemplar, C3 Pentecost, ritual-flow or full-product gates.
+
+The first phase separates Roman 1962 Latin appointments and Commons, held
+English prayer recovery, and postconciliar annual appointments. Each lane must
+retain its exact source, rights and text-availability boundaries. Integration
+requires focused regressions, source and generated-data checks, and fresh
+independent review of the actual changed evidence. The full annual structural
+matrix must be replayed after integration; its successful renderings cannot
+stand in for complete or correct words. Later design, advanced modes,
+performance and release acceptance retain their existing deferred ordering.
+No new publication or default-branch integration is part of this continuation.
+
+Phase 1 adds Boniface's missing Latin Postcommunion with corrected source
+bindings, eight checked Lasance Advent English prayers, and Holy Week
+acclamation roles and explicit referral choices. Two independent cold source
+reviews found no actionable defects; the separate conventions review's neutral
+book-label correction is applied. The
+[phase record](workflows/reviews/missal-reader-annual-2026-10-22/RECORD.md)
+preserves exact scope, source loci, focused checks and the proved inherited
+overlay-fixture failure. Phase 1 is accepted after fresh integrated cold review:
+the annual 5,856-render matrix, 257 native browser assertions, deployment-source
+checks, local publication gates and corrected 178-test regression suite pass.
+This is not annual textual completion.
+
+Phase 2 proceeds in independent lanes: eighteen checked Latin commemoration
+orations, twenty-one exact full-Latin-and-conclusion English reuses, and bounded
+postconciliar ferial appointment corrections. Each phase retains its own
+source review and integrated acceptance; broader optional Lenten reading sets
+and contextual Dedication choices remain separate work.
+
+Those Phase 2 source changes are implemented and pass fresh Roman and ferial
+cold reviews. The additions audit's duplicate test helper is removed. An
+inherited serialized CLI/browser mapping-order defect and two obsolete test
+expectations are repaired; 112 affected regressions, 316 source-path executions
+and 12 CLI cases pass, with an additional independent cold review finding no
+actionable defects. Fresh derived-data, annual, native-browser and
+local-publication checks pass. A new independent integrated review accepts
+bounded Phase 2 with no blockers after verifying its snapshot and scope and
+replaying additional regressions. Annual textual completion remains open.
+
+Phase 3 begins with twenty-one terminal English owners from seven newly
+checked Lasance prayers, with full Latin-and-conclusion controls and separate
+source review and integrated acceptance. A parallel Latin batch adds nineteen
+checked bodies and resolves four existing Dedication Collect/Postcommunion
+appointments while leaving both contextual Secrets unknown. The postconciliar
+lane adds the three source-checked optional Lent III–V weekday reading courses,
+with complete four-role coupling, nineteen explicitly untranslated acclamation
+owners and the narrow Lent III Tuesday Psalm-bound correction. It publishes no
+new acclamation body or translation. The phase record owns the selected scope.
+Other next-batch discovery does not authorize further source edits.
+
+The three Phase 3 source lanes and parent test guards are implemented; their
+initial Roman, ferial, conventions and additions cold reviews return no findings.
+The initial annual, native-browser, source and local-publication integration
+gates pass. The inherited Lent II adjacency test is corrected without source
+or runtime changes, and its final immutable snapshot is verified. A further
+primary-source check identifies an over-restriction in Lent V Monday's native
+Gospel choice: the principal remains permitted in C even when actual preceding
+Sunday use is true or unknown. That source correction, fresh affected checks,
+and fresh source, conventions and additions cold reviews pass. Fresh corrected
+annual, native-browser, source and local-publication gates then pass. A new
+independent integrated review accepts the corrected immutable Phase 3 snapshot
+with no blockers, independently replaying 628 files and 161 tests, CLI and
+seating checks. Annual textual completion remains open.
+
+Phase 4 proceeds in disjoint source lanes: twenty-three checked Latin bodies
+and two independently witnessed Common Virgin II word corrections; thirty-one
+new English terminal bindings, with two further Common translations gated on
+separate acceptance of the Latin corrections; and bounded Easter II–IV ferial
+appointments, acclamation classification and exact John 6 numbering repairs.
+The split endpoint at n. 276 and unrelated Psalm/edition refusals remain
+explicit. The phase record fixes the selected scope and source boundaries.
+
+The initial Latin source candidate passes 297 tests, but independent primary
+review finds an over-expanded Jerome Postcommunion conclusion and an
+undeclared Anne Secret spelling difference. Both findings are confirmed
+against the page images and require correction and re-review. The two Common
+Virgin II corrections and their hash bindings pass separate independent source
+review, satisfying the prerequisite for the two additional English bindings.
+Both findings are corrected and pass independent re-review; all twenty-five
+Latin nodes now have bounded source acceptance. The final thirty-three English
+bindings, including both gated Common translations, pass independent source
+review, as does the Easter source candidate. The whole-phase additions audit
+finds no actionable defects. The single required YAML quoting correction
+passes independent re-review, with identical parsed data and production
+structure. All bounded Phase 4 source, conventions and additions gates are
+accepted. Fresh full integration and independent integrated acceptance remain
+required. Annual textual completion remains open.
+
+Phase 4 integration is now independently accepted without findings or blockers.
+The fresh annual matrix passes 5,856 renders. The replacement native run passes
+all seven tests, twelve harnesses and 257 assertions after the final preview
+build; its full candidate and preview inventories remain unchanged. The earlier
+overlapping native run remains explicitly unproved for freshness. Source,
+generation, census, deployment-source and local publication gates pass. The
+reviewer verifies the superseding immutable packet, its exact 713-file identity
+and the retained source chain, then closes the freshness blocker. The phase
+record owns the packet, receipt, qualifications and independently replayed
+checks. This is bounded acceptance, not annual completion or deployment.
+
+Phase 5 selects twenty-two independently witnessed Latin-body prospects,
+including two restored Collects; initially fourteen new historical English terminal
+owners; and fifteen Easter V–VII acclamation-classification repairs. The Latin
+ending transformations have explicit earlier whole-formula authority and retain
+only the actual target's printed length. Five English witnesses require declared
+consonantal i/j collation, while every recipient join remains literal complete
+canonical UTF-8. No normalized donor lookup is authorized. The postconciliar
+lane publishes no newly classified body or translation. The phase record fixes
+the exact scope, held alternatives and separate source-review prerequisites.
+Source implementation, independent cold reviews and fresh integrated acceptance
+remain required. The annual promise and authenticated 2008 witness gap stay open.
+
+Independent English primary review finds a real Rosary Collect word mismatch
+and a Virgin-not-martyr Collect punctuation error. Both are confirmed directly
+from the images. Withdraw the Rosary owner and restore its untranslated record;
+correct the printed full stop without changing other English words. The selected
+English tranche is now thirteen owners, subject to corrected-packet review.
+The initial fourteen-owner packet remains immutable and unaccepted. Latin and
+postconciliar candidate reviews, regression repairs and rights-failure diagnosis
+continue in separate lanes; integration is not authorized yet.
+
+Latin candidate review confirms all twenty-two whole prayers or chants but
+blocks a false Thérèse Secret spelling attestation. Both witnesses print
+`solemniter`; the candidate attributes `sollemniter` to the target. Use the
+actual one-l spelling and correct all dependent evidence and hashes, preserving
+the other twenty-one bodies. A new immutable packet and independent re-review
+are required. Separate rights failures are now proved identical at accepted
+Phase 4 and the candidate; their substantive disposition remains unresolved.
+
+Both corrected source candidates are now sealed. English13 passes thirteen new
+tests; Latin22 passes 177 focused tests, preserving the other twenty-one new
+bodies and all 1,247 older bodies. Both corrected source candidates now pass
+independent cold review without findings. Parent guard reconciliation remains
+pending. Rights diagnosis distinguishes
+conditional artifact retention from prose publication and verifies an
+independent historical-wording chain for the Sources finding. The checker
+reconciliation passes parent cold review, preserving modern-text refusals.
+Two obsolete Vianney fixture expectations still need repair. No payload deletion
+or rights reclassification is authorized, and no all-rights-green or
+annual-completion claim is made.
+
+The five-file Easter V–VII source/code candidate passes independent cold review
+with no findings or blockers. Its 54 core appointments, thirty antiphon owners
+and six model absences remain exact. The two obsolete retained English coverage
+assertions are repaired, with 32 retained tests and parent cold review passing.
+English parent guards pass 66 tests and parent cold review against English13.
+Latin guards, three test pins, whole-phase reviews, generated-data and global
+integration gates remain pending.
+
+The maintainer now asks for local `main` to be refreshed and the newly completed
+terminal reader to be incorporated without losing this session's work. Local
+`main` and `origin/main` are refreshed to
+`7d74f617ed449604cb6ae48bfc2d084c732f8e67`; the workspace branch, HEAD and index
+remain unchanged. The selected five-commit upstream range contains only the
+terminal reader and its required tool-input fingerprint followup. Incorporation
+is limited to forty-four clean tool paths, thirty-one exact upstream generated
+comparison bindings, and explicit reconciliation of these shared records.
+The existing dirty liturgy reader adapter is preserved. Combined tests and
+independent cold review remain required; earlier upstream checks do not establish
+combined acceptance. No commit, push or deployment is authorized by this request.
+The earlier Phase 5 preflight does not cover this expanded candidate.
+
+The six Latin parent guards now pass independent cold review across all thirty
+hunks, with no findings or blockers. The reviewer confirms eighty unique Latin
+methods (a sixty-one-method run before timeout, then the remaining nineteen),
+all fifty rights methods and 406 malformed-input refusals without skips or
+weakened guards. Both predecessor source files reconstruct exactly; the prior
+rights-checker delta remains intact. After that acceptance, exactly three
+Latin22 preservation-pin literals are updated to the accepted guard hashes.
+All ten Latin22 methods pass without skips. Independent narrow review now
+accepts exactly the three pin replacements, with no findings or blockers;
+ten unique methods pass across two five-method runs after a timeout. No other
+source-test byte changes. The amended source130 frontier changes only this
+test's postimage and preserves every original packet. The
+combined promise ledger now validates at 89 tracked deliverables, 71 complete;
+this does not close either the annual, TUI or Catena audit promise.
+
+## Corpus-to-Catena cross-reference audit, 2026-10-22
+
+<!-- promised-deliverable: corpus-catena-cross-reference-audit-2026-10-22 -->
+
+**Research audit complete.** The maintainer asks which sources throughout the held corpus
+comment on biblical books beyond the few passages currently visible in Catena
+Omnia, and where those sources should be cross-referenced. Independent,
+read-only investigations cover the complete registered corpus and the actual
+Catena acquisition, fragment, generator and reader pipeline. The result must
+identify works and exact source paths, proved biblical loci, author or
+anthology voice, language, edition, rights, retention and indexing state.
+Direct commentary, incidental citations, remote leads and uncertain anchors
+remain distinct; a title alone cannot establish verse coverage.
+
+The audits distinguish missing content, unregistered fragments, stale
+projections and interface filtering, and provide a book-by-book matrix and a
+concrete plan through the existing owners. Cross-edition numbering, especially
+the Psalter, must retain its refusals. No source acquisition, canonical Catena
+edit or broad regeneration has been authorized under this investigation.
+
+Both audits are now complete. The current 1,352 fragments really cover Genesis
+(1,351) and Matthew 9:1–7 (one); all 1,915 generated files are current and the
+browser model drops no mapped row. The source audit classifies all 1,064 works:
+123 eligible owning records, 625 not eligible for the proposed additional
+primary-commentary role on current evidence, and 316 uncertain/container
+records. Its 2,159-row research matrix finds sixteen retained-text/locus research
+relations, fourteen passage records in ten owning works, across Wisdom,
+Matthew, Mark, Luke, John, Acts and Philippians. Independent synthesis accepts
+the research while establishing that zero relations are Catena-admission-ready.
+Every relation needs composition-date evidence and a typed edge; subsets also
+need explicit passage text, segment-controller support, translator metadata,
+an exact alias, an English-absence finding or license compliance. The harmony's
+three biblical relations cannot become three fragments under the current
+single-passage identity contract. The reviewed compact matrix and plan are
+installed under the existing provider-neutral workflow-review owner.
+The first installation under commentary is rejected because its four CSVs
+correctly trigger the source library's unowned-payload guard; relocation, not
+a schema exception or renamed payload, is authorized. Registration-level
+closure does not mean every held body or research-search hit was collated.
+No source, edge, code, date, translator or acquisition changes follow from
+accepting this research.
+
+Parent review accepts the corrected durable installation after inspecting its
+changed prose, provenance and links and verifying all fifteen checksum entries.
+The actual source-library validator now passes with zero diagnostics; neither
+its protector nor a source schema changes. The
+[research record and plan](workflows/reviews/corpus-catena-cross-reference-2026-10-22/RECORD.md),
+[123 eligible owning registrations](workflows/reviews/corpus-catena-cross-reference-2026-10-22/eligible-works.csv)
+and [73-book summary](workflows/reviews/corpus-catena-cross-reference-2026-10-22/book-summary.csv)
+are durable metadata, not Catena imports. The two audit criteria pass, and the
+required completion validator passes at 89 tracked deliverables, 72 complete.
+Annual, terminal-reader and future Catena implementation remain separate.
+Historical receipts and the installation record retain their pre-parent-closure
+wording; this register and the ledger own the subsequent closure.
+
+## Terminal reader (lectern), 2026-10-22
+
+<!-- promised-deliverable: terminal-reader-lectern-2026-10-22 -->
+
+**Incorporated from refreshed `main`; combined acceptance pending.**
+The upstream work records a maintainer request for a comprehensive, elegant,
+intuitive and beautiful btop-like terminal reader, starting with the Missal and
+extended to Catena Omnia, with clarification, a sanity check and a cold review.
+Decisions taken with the maintainer on 22 October 2026: Python and Textual;
+read the local checkout rather than the published site; after Catena, cover
+every page of the site; commit locally first (since superseded upstream by the
+request to push to `main`); collapse Catena's author groups by default. This
+continuation incorporates that result, not its publication authority.
+
+What exists upstream: `tools/lectern` (`open`, `snapshot`) and
+`scripts/lectern/`, whose README states the rule the reader keeps, nothing is
+derived in it. Each view is read from `src/web/data/` or asked of the browser's
+own models and renderers through one node process set up as a page's realm;
+page logic kept inside a page closure is sliced from the page source
+(`adapters/page-slice.js`, after `scripts/_act_history_preview.py`), and the
+few `PORT:` lines left in the History and Law adapters are cited and pinned
+by tests. Eight surfaces, one per page: Day (the live Day page's own titles,
+coverage notices and "Why this Mass", every territorial branch, Missal mode,
+and the page's own Compare), Propers, Catena Omnia, the reading plan, the
+document catalogue, the Source Library, How the Missal Changed, and The Code,
+Canon by Canon.
+
+Upstream verification records `tools/tests/test_lectern.py` (46 tests under
+the system interpreter and pinned Markdown), `tests/tools/lectern.test`,
+replayed help examples, `tmt check`, a key sweep of every surface and rendered
+screenshots. Two independent cold reviews, one of the code and one of fidelity
+and usability against the pages, reported findings that upstream records as
+fixed: superseded worker results, markup in data titles, plain-tier marks,
+bridge timeouts, the Day page's wording and defaults, territorial branches,
+focus and the choice dialog. These are upstream results, not fresh validation
+against the current annual missal source and adapter changes.
+
+Open (the ledger's open requirements): Propers Compare and the Study mode of
+Day and Propers are not in the reader yet; the maintainer has not yet used the
+interactive reader in a real terminal. The code is present on fetched `main`,
+but its upstream Pages run has not been inspected here. Combined functional
+checks and terminal sanity checks are recorded below; fresh cold review and
+final post-regeneration acceptance remain open. A web
+edition is set only where the Markdown pinned in
+`requirements-public-alpha.txt` is installed (`requirements-tui.txt` includes
+it); elsewhere the texts surface says so in place of the text.
+
+The initial seventy-five-path import matched upstream bytes and executable modes,
+preserving the current missal adapter and source work. Under
+`TERM=xterm-256color`, each interpreter runs forty-six methods, with forty-five
+passing and one complementary dependency skip. The initial `TERM=dumb` runs
+fail one bare-invocation theme expectation; no application change hides that
+result. The own shell smoke test, both replayable examples, twenty-nine bounded
+registry methods, `tmt check` and the 548-file act-history freshness check pass.
+The full registry's broad smoke method still has twelve failing subtests,
+thirty-five of forty-seven scripts passing; these are not proved inherited.
+Their diagnosis and final annual owner regeneration remain open.
+
+The parent completes forty-eight interactive terminal steps and captures thirty
+PNGs, visually inspecting all eight default surfaces and seven additional states.
+The checks include Day Read/Missal/Compare, explicit unresolved choices, Catena
+author expansion and Source handoff, Law text withholding, search, help, palette,
+three themes, narrow layouts and a full pinned-renderer web edition. Two wrong
+runner expectations are retained and corrected without application changes.
+Both terminal sessions and the owned loopback daemon are closed. This evidence
+uses the current pre-Phase-5 generated data, not a settled final annual build.
+The bridge/integration group passes independent cold review across forty-seven
+paths and fifty hunks, with no findings or blockers. Its fifty-two bridge
+requests satisfy forty-four assertions, and forty-five gate probes pass without
+skips. The twenty-eight-path Python/launcher review is complete and finds ten
+concrete defects. They include blank calendar-cell crashes, stale asynchronous
+Sources and Texts deliveries, Law back-navigation identity, History full-record
+navigation, rapid Scripture stepping, Propers edition labeling, snapshot
+settling timeout, a terminal-environment test assumption and blank Catena
+reference handling. Targeted parent inspection confirms the triggers.
+Bounded repairs and regressions are implemented in nine Python implementation
+files and the existing test file. Fourteen focused regressions pass. Under each
+interpreter and both terminal environments, fifty-nine methods run with
+fifty-eight passes and one complementary dependency skip. Own smoke, unchanged
+example replay and tool-registry checks pass. The new ten-file correction
+packet's independent re-review closes eight findings but retains two blockers:
+the Texts lookup-refusal sibling still permits a stale record delivery, and
+active bridge shutdown can mask the snapshot timeout with a worker failure.
+Targeted inspection confirms both. Follow-up authority covers Texts, snapshot,
+the existing bridge lifetime owner and the test file; a live busy-child
+regression and fresh independent review are required. The first correction's
+frontier is sixty-five exact original
+paths plus ten corrected paths, not seventy-five upstream-exact paths. The
+original upstream packet remains unchanged, and combined acceptance remains open.
+
+Both residual repairs are now implemented in Texts, snapshot, the existing
+bridge lifetime owner and the test file. Nineteen focused methods pass; each
+full interpreter run passes sixty-three methods with one complementary skip.
+Smoke, unchanged example replay and registry checks pass without final
+ResourceWarnings. The new candidate frontier is sixty-four original-exact
+paths plus eleven corrected paths. Independent residual re-review remains
+required in that candidate packet. It has now accepted the four-file residual
+delta with no findings or blockers. Five new focused methods, two retained real
+reproductions and three negative controls pass. The stale delivery stays refused;
+the live busy child reports the intended timeout, is reaped with streams closed,
+and the same bridge owner can restart. The earlier eight closures and original
+packets remain intact. Whole-phase conventions, additions and integration
+acceptance remain open; upstream product requirements are not closed by this
+scoped review.
+
+The twelve broad-smoke failures are now classified, not dismissed as inherited.
+Four source-specific assertions contradict already accepted Phase 4 inputs;
+the fifth fixture exposes a foreign-recension applicability rejection whose
+mechanism, but not full baseline CLI outcome, is proved. Exactly five shell
+fixtures are authorized for source-specific repairs with every refusal guard
+kept. Three other failures require the existing licensed-output, build-output
+and pinned-renderer environments, not relaxed protections. Fresh pinned runs
+with workspace scratch outside all repositories now pass all three unchanged
+Knox, typeset-Bible and web-edition smokes. No fixture, licensed-root guard,
+output guard or renderer lock changes. This is three narrow reruns, not a new
+forty-seven-script result. Source-reader and
+family snapshots await their ordinary owner refresh. The first five-fixture
+candidate passes only coverage reconciliation and remains unaccepted. Later
+Ordinary marker and synthetic absence-schema mismatches need source-specific
+disposition; the author's added Today empty-stdout assertion is overstrong
+because the refusal follows a printed header. No protector is waived.
+
+The exact owner-input diagnosis is now complete. All seven publishable Bible
+indexes were stale at Phase 4; Phase 5 adds only three citation removals per
+edition. Existing passage bodies and all chapter fragments remain unchanged.
+The one Claude Fourteenth Sunday annotation is entirely inherited staleness;
+its chronology record is current. A narrow owner refresh is authorized for
+exactly those seven indexes and that annotation, with staged index generation,
+no source/date/rights changes and no publication of the withdrawn Claude leaf.
+All eight outputs now pass independent cold review across ninety hunks, twelve
+focused checks and eight negative controls, with no findings or blockers.
+This accepts only the bounded refresh, not global integration.
+Whole-phase review and final global generation remain deferred.
+
+The latest five-fixture candidate passes coverage reconciliation and Public
+Alpha. All thirty-four Lasance English body and seventy-seven turn controls
+pass before Ordinary reaches a later witness-note mismatch. Propers reaches
+the obsolete joint Vianney Latin/English absence expectation, and Today reaches
+an eleven-versus-twelve Common citation census mismatch. The refusal and
+structural-only checks now pass, but later expanded positive checks have not
+yet run. Source-specific repairs are authorized: retain Lasance's own historical
+cautions; assert accepted Vianney Latin independently while preserving the
+English witness gap; and check the exact twelve canonical variant citations
+without claiming all variants execute on one day. All five complete smokes and
+independent review remain required.
+
+The next exact run passes Ordinary, reconciliation and Alpha. The Vianney and
+Eudes controls also pass. Propers now stops at the legitimately stale generated
+census: the accepted fifteen acclamation repairs reduce scripture-bearing
+postconciliar propers from 3,066 to 3,051. Authorize only the registered census
+owner to update the existing blocks in its three declared documents, preserving
+every byte outside those blocks. Today reaches a later legacy mass-level
+availability expectation where the source now owns a text-free, rights-withheld
+Collect at proper-body scope; reconcile that assertion while keeping the own
+Collect unavailable and suppressing the Common's different Collect. Neither
+currentness nor typed absence may be waived. This is a narrow prerequisite
+refresh, not authority for the deferred global writer window.
+
+The registered census owner has completed that prerequisite, and an independent
+bounded review accepts it without findings. Each of the three blocks changes
+only scripture-bearing propers 3,066 to 3,051 and encoded passages 4,045 to 4,030:
+six of 327 numeric cells, with all outside-marker bytes exact. Fresh currentness
+passes and a deliberately stale row is refused without writing. Only the
+existing `docs/the-mass.md` release pin, its generated rights row and the final
+rights-record hash need a later scoped refresh; no release change is made here.
+Cold review of the four settled fixtures is running while Today's last
+source-specific follow-up continues. No final five-fixture or global pass is
+claimed.
+
+The next Today-only run passes all three own-Collect cases in both languages
+and views, plus the later tier, language and withheld-Latin controls, but exits
+1 at the unchanged component-refusal harness. Its copied repository omits the
+shared seating module, and its broad PATH restriction removes Node needed by
+more than the intended failing sibling. Complete only that fixture dependency
+closure and isolate the Ordinary and rubric failures separately, preserving
+the inspectable partial result and fallback assertions. After focused tail
+checks pass, run all five complete smokes once. Four-file cold review continues
+in parallel; the 555-second Today run is not a pass.
+
+Independent review now accepts the four settled fixture changes without
+findings: all 22 cumulative hunks, seven targeted CLI checks and 511 rejected
+bad cases. Today is excluded from that acceptance. Its six already-settled
+assertion hunks enter separate review while its later refusal harness is fixed.
+The fresh complete-five run and final fifth-file review are still required.
+
+Today's six settled assertion hunks have also passed independent review without
+findings: eighteen targeted calls return their expected statuses and 509 bad
+cases are rejected against independent YAML, ledger and Bible expectations.
+The live prefix through line 1,020 matched the sealed candidate. This accepts
+only those assertion changes, not the changing refusal harness, the failed
+555-second run, or the whole fifth fixture. Final complete-five validation and
+the small remaining harness review stay open.
+
+All five complete scripts now pass in one fresh parallel run, once each:
+Ordinary, Propers, Today, reconciliation and Alpha. Today reaches every later
+refusal and invalid-input control. The repaired focused tail also passes, and
+its original failure and an intermediate overstrict commemoration assertion
+remain retained. The final three-hunk Today harness delta is under independent
+review; passing scripts alone do not close that review or global acceptance.
+
+Independent final review now accepts the exact five fixtures with no findings
+or blockers. It closes the remaining three harness hunks, rejects 63 predicate
+and two shell negatives, and adopts the five completed passing runs without
+repeating the full smokes. All 31 cumulative hunks are covered by the linked
+receipts, and the earlier failures remain retained. The source, guard, TUI,
+fixture, research and census prerequisites are now ready for a combined input
+freeze and whole-change conventions/additions reviews. No global generator,
+annual/publication/native run or integrated acceptance is claimed yet.
+
+Findings outside the reader, recorded upstream and not yet promised fixes:
+
+- `mass-today show --expanded` seats the Trinity Preface on a 1962 feria that
+  borrows a Sunday's Mass (2026-10-22); the browser adapter seats the Common
+  Preface, because a borrowing feria takes none of the Sunday's Ordinary
+  appointments. The parity tests cover Sundays only.
+- The Catena page fetches a chapter of a Hebrew-numbered Bible (King James,
+  Revised Version, World English) by its Vulgate number, so in the Psalter it
+  shows another psalm with no refusal, against `guidance/catena.md` Rule 3.
+- The reading-plan page's `readingCitation` drops `edition_loci` and `refused`,
+  so 19 readings render wrongly in some editions (reading 255 under the
+  Catholic Public Domain Version shows other matter).
+- The law slice declares no as-of date and the Law page states no study-aid
+  caution, which `AGENTS.md` asks canon-law work to name; the reader states
+  both.
+- `history.js` says "1 dated states" and the like where a count is one.
+- The tracked Day Compare fixture `compare-day-2026-08-02` expects a
+  resolution that the current data refuses, because the postconciliar
+  Communion antiphon of that Sunday now offers alternatives.
 
 ## Register remediation, 2026-10-21
 
