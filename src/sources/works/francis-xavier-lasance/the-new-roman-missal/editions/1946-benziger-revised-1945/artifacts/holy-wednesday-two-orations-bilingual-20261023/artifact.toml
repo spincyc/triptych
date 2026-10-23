@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.holy-wednesday-two-orations-bilingual-20261023"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact_type = "checked-bilingual-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The selected ordinary-page English is expression of the revised-1945 edition printed in 1946, with its actual 1937/1945 copyright leaf inspected; A 110108 and A 192159 were not renewed under the registered United States rights audit. The historical Latin is independently preexisting wording. This derivative retains ordinary prayer words alone, excluding Google framing, stamps, library annotations, typography, adjacent prayers and scan images."
+rights_jurisdiction = "United States"
+provenance = "Complete Secret and Postcommunion at printed p. 445/PDF455 were read from actual 200/400 dpi page images; direct checked transcription, not OCR supply. English and opposite Latin are retained independently; correspondence to any modern target is a separate decision."
+retrieved = "2026-10-23"
+sha256 = "097dcb7bffcd0b92338f41ddd70d774501209a7b3cd0f2f1d82761e14bcec4e8"
+byte_size = 788
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/holy-wednesday-two-orations-bilingual-20261023/bilingual.txt"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+transformation = "Join physical wraps and division hyphens; render decorative/small-cap English openings as ordinary running case. Preserve English words, pointing, lexical hyphens and sacred-name case, including lowercase thou. Latin joins wraps, expands ae/oe ligatures and removes stress. Lines 1/2 are Secret English/Latin; lines 3/4 Postcommunion English/Latin. Actual short conclusions stay short."
+indexable = true
+encoding = "utf-8"
+notes = "Two received historical prayers only. Source Secret Latin Domine and English O almighty God are both retained as printed. No target Latin spelling change, generated English, new conclusion or official 1962 English status."

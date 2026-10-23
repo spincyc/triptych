@@ -70,7 +70,7 @@ core39_table_family_after_recorded_substitutions = 10
 [[input_snapshots]]
 path = "src/sources/inventories/roman-1962-proper-translations-v1.toml"
 before_sha256 = "41b0d7017d8b926bdab9bfd8bcef5526d5d3b1f79f5d495fca07bc295373c741"
-after_sha256 = "215f1b3caee1856494f3c36f1117980e00fc3ff2330a504148fb0c29381894a6"
+after_sha256 = "502a3683c5eac870592a7285bb4646307f014bd689536a164b45ede282d892dd"
 
 [[input_snapshots]]
 path = "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
@@ -664,8 +664,8 @@ bytes = 1461
 
 [[source_postimages]]
 path = "src/sources/inventories/roman-1962-proper-translations-v1.toml"
-sha256 = "215f1b3caee1856494f3c36f1117980e00fc3ff2330a504148fb0c29381894a6"
-bytes = 2153954
+sha256 = "502a3683c5eac870592a7285bb4646307f014bd689536a164b45ede282d892dd"
+bytes = 2156814
 
 [[source_postimages]]
 path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-conclusion-table-2026-10-23-7dbb4a25/conclusions.json"
@@ -6156,6 +6156,151 @@ bytes = 1108
 path = "src/sources/works/joseph-henry-allen/new-latin-grammar/editions/ginn-1903/passages/lexical-supplement-v2-two-termination-adjectives.toml"
 sha256 = "7e655871c1f0779c4913cd3af2c3a0b236f7a750ad166db5426fa9f83560b70e"
 bytes = 1054
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/holy-wednesday-two-orations-bilingual-20261023/artifact.toml"
+sha256 = "e395a0f7a821099548563c1022be6d9a0505be715b23c469f73bc93df2963068"
+bytes = 2316
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/holy-wednesday-two-orations-bilingual-20261023/bilingual.txt"
+sha256 = "097dcb7bffcd0b92338f41ddd70d774501209a7b3cd0f2f1d82761e14bcec4e8"
+bytes = 788
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/ia-google-facsimile-pdf-4573991d/artifact.toml"
+sha256 = "1abaf2370ebd4d7fd82807ab9285b4a7b3e1a487e1d9936fcead9865e3f5f16a"
+bytes = 2665
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/prayer-conclusions-checked-20261023/artifact.toml"
+sha256 = "027e14529d4ca1db6c43bfbd5e6f9aaf298cb76dd3fdc3772cb98480cc431f7b"
+bytes = 1784
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/prayer-conclusions-checked-20261023/conclusions.json"
+sha256 = "b90aa8e6630ca32be43f8405f71c95aefbd870ddac5dd2c71ff1b9831f3d4b59"
+bytes = 3483
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/edition.toml"
+sha256 = "ba5d10bb9858ebcc9cc6a1d9d4cd3c3f2f1f35d96a1024e7fa7ceda717f3e746"
+bytes = 1255
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/holy-wednesday-postcommunion-english.toml"
+sha256 = "6d5dbd22876f28cf12754714071fd50bdab1cbf7eebf7d3d72e988be0ba2e5be"
+bytes = 968
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/holy-wednesday-postcommunion-latin.toml"
+sha256 = "216b38602daabaebf57c697560683c4f6811066c8e927934d3ba745493a4c781"
+bytes = 964
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/holy-wednesday-secret-english.toml"
+sha256 = "78a020c717bf82da11b5a30f12b4e22c0a8c3b6fed92e0800600beb9ce39eaf7"
+bytes = 1039
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/holy-wednesday-secret-latin.toml"
+sha256 = "b266b8cf2698b946dbabafa2a0711d9366fc4c3c1c21f9d142989eea53236665"
+bytes = 1035
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/holy-wednesday-secret-postcommunion-page-445.toml"
+sha256 = "3d7f394983a7aa193c72ae8f3afd7f35f21ff57b6ebe362fe0e96e47935d3ef6"
+bytes = 1287
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/identity-title-and-copyright.toml"
+sha256 = "7fe35e658141ac74f2ed5daf342ba552c8bc442d746641d9e669d1308e486a3b"
+bytes = 941
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/prayer-conclusions-printed-819.toml"
+sha256 = "91226feded548204af8ad9d88b50af4358be0f7736a53d38404b2b4aea3b5091"
+bytes = 1097
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/holyweek-seven-primary-bilingual-20261023/artifact.toml"
+sha256 = "ea2539eef37ffb192476b0f72a0446f9aca1588c962c59c7fe53de2fac67688d"
+bytes = 2595
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/holyweek-seven-primary-bilingual-20261023/bilingual.txt"
+sha256 = "c415f3f83f54b5d1b066fc55cfab298021107b121055e0abd9d608fda35a1837"
+bytes = 3594
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-easter-vigil-collect-english.toml"
+sha256 = "769e6a6419b1cd926307b9bb3703d17e3e9c1f0bb943466ca4ae75d811a04cc6"
+bytes = 970
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-easter-vigil-collect-latin.toml"
+sha256 = "b3bba501e6819dee0e0152ce643e7b9616f5e8956df7f7f6603ab76594341a14"
+bytes = 966
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-easter-vigil-postcommunion-english.toml"
+sha256 = "0657278cf9dce9f6c21652f04b1a33a0409a86d90c6497bf6a8624b86d60aa05"
+bytes = 1043
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-easter-vigil-postcommunion-latin.toml"
+sha256 = "1bdbac3c98a9224a01bd8e50a0fd3ea61909a7b0bd9db241abe1f47848d4e748"
+bytes = 1039
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-easter-vigil-secret-english.toml"
+sha256 = "6c2defd6ef3174e75aaf077a2afd1276547b3982fa270dbc5a1fe5ef3a539578"
+bytes = 952
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-easter-vigil-secret-latin.toml"
+sha256 = "7727a6a85aca384c28baff4890175c0307db51142f0b31546e17ad99beeedc59"
+bytes = 951
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-good-friday-collect-english.toml"
+sha256 = "6ace20e0223147fcebbe61bf562390afef04a03dbd3585eaef1084ee91c2035d"
+bytes = 1037
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-good-friday-collect-latin.toml"
+sha256 = "2a0cbe4a754fe441b13639b4fff395603290f0143fac55c38d19ba0328b79107"
+bytes = 1033
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-mass-of-the-lords-supper-collect-english.toml"
+sha256 = "45e8274e871ca95c9ff599f7a6ddb95de8d83d3b20214ec1e95707ec54fcdc12"
+bytes = 956
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-mass-of-the-lords-supper-collect-latin.toml"
+sha256 = "9ad0a441680c0cf1b445cf7c33f30e505667dd5dd25d23b4ae744f7e636870ce"
+bytes = 952
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-mass-of-the-lords-supper-postcommunion-english.toml"
+sha256 = "d6018b2a506aa72171492f211889e7262092c1594e3624bcbf31c22922aedeb2"
+bytes = 954
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-mass-of-the-lords-supper-postcommunion-latin.toml"
+sha256 = "4a4d2e508b67a33a52498c48f2cfddc8d9330b2ce977d1dedcb2ed0420f0ba10"
+bytes = 950
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-mass-of-the-lords-supper-secret-english.toml"
+sha256 = "17fb7e25c85216405629a2ef21172626a84e762981fd83b2627e385fd88d525e"
+bytes = 931
+
+[[source_postimages]]
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-mass-of-the-lords-supper-secret-latin.toml"
+sha256 = "426187468b39b3d57fede2bc2efac395eb7f5bd8d6ab90324853b25a4f160511"
+bytes = 927
 
 [[accepted]]
 target = ["pentecost-6", "main", "Secret", "all", 1]

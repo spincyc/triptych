@@ -36,7 +36,10 @@ from _loci import Divergences, RESOLVED_IN, edition_departures, range_to_loci  #
 from _lasance_publication import (  # noqa: E402
     LASANCE_1945_RIGHTS_ARTIFACT,
     LASANCE_1945_PAGE_ARTIFACT,
+    LASANCE_PUBLICATION_EDITIONS,
+    LASANCE_PUBLICATION_RECORD_IDS,
     approved_lasance_publication,
+    shared_lasance_rights_owner,
 )
 from _proper_latin import (  # noqa: E402
     CLI_SURFACES,
@@ -2112,17 +2115,17 @@ def validate_translation_publication_binding(
     edition = records.get(str(edition_id or ""))
     edition_date = edition.get("date") if isinstance(edition, dict) else None
     pre_1931 = (
-        isinstance(edition, dict)
+        edition_id not in LASANCE_PUBLICATION_EDITIONS
+        and isinstance(edition, dict)
         and edition.get("record_type") == "edition"
         and isinstance(edition_date, str)
         and edition_date.isdigit()
         and int(edition_date) < 1931
     )
-    lasance_1945 = False
+    lasance = False
     if (
         isinstance(edition, dict)
         and edition.get("record_type") == "edition"
-        and edition_date == "1945"
     ):
         # Share the exact approved-rights predicate without importing another
         # CLI. Keep this consumer's stronger byte/row/parent checks below.
@@ -2130,16 +2133,17 @@ def validate_translation_publication_binding(
 
         owners = {
             key: SimpleNamespace(record_type=value.get("record_type"), data=value)
-            for key in (LASANCE_1945_RIGHTS_ARTIFACT, LASANCE_1945_PAGE_ARTIFACT)
+            for key in LASANCE_PUBLICATION_RECORD_IDS
             if isinstance(value := records.get(key), dict)
         }
-        lasance_1945 = approved_lasance_publication(
+        lasance = approved_lasance_publication(
             entry, artifact, owners, witnesses
         )
-    if not (pre_1931 or lasance_1945):
+    if not (pre_1931 or lasance):
         raise ValueError(
             f"{path}: publication artifact must belong to a pre-1931 edition "
-            "or the registered Lasance1945 original-expression rights witness"
+            "or the registered Lasance1945 original-expression rights witness "
+            "(1945 or separately verified 1946 printing)"
         )
     if artifact_id == verification_artifact_id:
         raise ValueError(
@@ -2510,10 +2514,14 @@ def translation_overlay(
                         "must be nonempty"
                     )
                 if alias in witnesses and witnesses[alias] is not row:
-                    raise ValueError(
-                        f"{path}: duplicate translation source alias {alias!r}"
-                    )
-                witnesses[alias] = row
+                    rights_owner = shared_lasance_rights_owner(alias, witnesses[alias], row)
+                    if rights_owner is None:
+                        raise ValueError(
+                            f"{path}: duplicate translation source alias {alias!r}"
+                        )
+                    witnesses[alias] = rights_owner
+                else:
+                    witnesses[alias] = row
 
         exclusions = ledger_rows(document, "inherited_inapplicable", path)
         if exclusions and owner_index == 0:

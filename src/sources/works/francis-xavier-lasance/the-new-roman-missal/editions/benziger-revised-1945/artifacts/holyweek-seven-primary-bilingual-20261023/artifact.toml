@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.holyweek-seven-primary-bilingual-20261023"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "checked-bilingual-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Selected ordinary-page words of the registered Lasance/Walsh revised-1945 expression are United States public domain through nonrenewal of A110108/A192159 under src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. No selected text is from the excluded later lettered inserts. Historical Latin is preexisting. Google/host framing, library marks, scan images and unrelated constituents are excluded."
+rights_jurisdiction = "United States"
+provenance = "Direct 200/400 dpi full-image readings from exact whole PDF6cf3c3d0, printed448,451,454,471,533,535,536-537. Complete opposite-language units and all continuations were inspected. OCR used only to locate, not supply words. Each historical source unit is retained independently of target admission; Easter Collect and Postcommunion require their separately recorded holds."
+retrieved = "2026-10-23"
+sha256 = "c415f3f83f54b5d1b066fc55cfab298021107b121055e0abd9d608fda35a1837"
+byte_size = 3594
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/holyweek-seven-primary-bilingual-20261023/bilingual.txt"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "Join wraps and division hyphens. Decorative/small-cap English opening words become ordinary running case. Preserve received English words, punctuation, sacred-name case and lexical hyphens, actual short/full endings. Latin comparison transcription removes stress, expands ae/oe ligatures, joins physical wraps. Consecutive English/Latin line pairs are Lords Supper Collect, Secret, Postcommunion; Good Friday Collect; Easter Vigil Secret, Collect, Postcommunion. Separate response Amen excluded."
+indexable = true
+encoding = "utf-8"
+notes = "A checked historical witness transcription, not a new translation or authority to alter target Latin. Easter Vigil Collect requires noctern typo repair plus independently approved eumdem/eundem proof; Easter Postcommunion does not satisfy the exact complete same-witness formula-prefix rule. Their source text is retained for review only. No English1962 approval implied."

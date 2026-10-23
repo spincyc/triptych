@@ -70,7 +70,11 @@ from _lasance_publication import (
     LASANCE_1945_RIGHTS_SHA256,
     LASANCE_1945_PAGE_ARTIFACT,
     LASANCE_1945_PAGE_SHA256,
+    LASANCE_PUBLICATION_EDITIONS,
     approved_lasance_publication,
+    approved_lasance_printed_page,
+    numbered_page_match,
+    shared_lasance_rights_owner,
 )
 from _proper_latin import (
     EXACT_WITNESS_TYPES,
@@ -1544,11 +1548,9 @@ def overlay_entry_source_problems(
         )
 
     printed = entry.get("printed_page")
-    printed_match = (
-        re.fullmatch(r"([0-9]+)(?:-([0-9]+))?", printed)
-        if isinstance(printed, str)
-        else None
-    )
+    printed_match = numbered_page_match(printed)
+    if printed_match is not None and not approved_lasance_printed_page(entry):
+        printed_match = None
     if printed_match is None:
         problems.append(
             f"{where}: a bound page-image collation requires printed_page as "
@@ -1775,22 +1777,23 @@ def overlay_entry_publication_problems(
     edition = records.get(edition_id) if isinstance(edition_id, str) else None
     edition_date = edition.data.get("date") if edition is not None else None
     pre_1931 = (
-        edition is not None
+        edition_id not in LASANCE_PUBLICATION_EDITIONS
+        and edition is not None
         and edition.record_type == "edition"
         and isinstance(edition_date, str)
         and re.fullmatch(r"[0-9]{4}", edition_date) is not None
         and int(edition_date) < 1931
     )
-    lasance_1945 = (
+    lasance = (
         edition is not None
         and edition.record_type == "edition"
-        and edition_date == "1945"
         and approved_lasance_publication(entry, artifact_data, records, witnesses)
     )
-    if not (pre_1931 or lasance_1945):
+    if not (pre_1931 or lasance):
         problems.append(
             f"{where}: publication artifact must resolve to a pre-1931 edition "
-            "or the registered Lasance1945 original-expression rights witness"
+            "or the registered Lasance1945 original-expression rights witness "
+            "(1945 or separately verified 1946 printing)"
         )
 
     # The scan proof and the distributable transcription witness the same
@@ -3685,9 +3688,13 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
                     continue
                 other = source_alias_rows.get(alias)
                 if other is not None and other is not row:
-                    problems.append(
-                        f"{sidecar}: duplicate translation source alias {alias!r}"
-                    )
+                    rights_owner = shared_lasance_rights_owner(alias, other, row)
+                    if rights_owner is None:
+                        problems.append(
+                            f"{sidecar}: duplicate translation source alias {alias!r}"
+                        )
+                    else:
+                        source_alias_rows[alias] = rights_owner
                 else:
                     source_alias_rows[alias] = row
             for field in ("label", "rights"):
