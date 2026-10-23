@@ -1,0 +1,127 @@
+{
+  "schema": "catena-research-input-identities/v1",
+  "path_resolution": "repository-relative; .scratch paths are original ephemeral provenance, not required replay inputs",
+  "original_audit_inputs_not_installed": {
+    ".scratch/catena-corpus-audit/REPORT.md": "26e6ccb82c25c411efaec733021a87203db5526ede9ff3361a96895d8462fb70",
+    ".scratch/catena-corpus-audit/book-matrix.csv": "c11aceb56a119f36e3e6f6382df06920b6af405c2a1edf155b46ea15b70c282f",
+    ".scratch/catena-corpus-audit/book-matrix.json": "721ac822f5b9417ab30f2e8ab71f209f8a16d2ca0eb7484620bcdba4873722e9",
+    ".scratch/catena-corpus-audit/classification.json": "9aa7e7c5d1b50cc29786ef1271add0e8d5252b5f8b944ea053c10e37c6c2483d",
+    ".scratch/catena-corpus-audit/counts.json": "b497a19dc67f7101e2a7075d365d7c14b25a44262935cbfcf6a98eca717102d0",
+    ".scratch/catena-corpus-audit/crossref-matrix.csv": "d8c4f2cba4ff11990e346091d6491ea46611a4db81b168ad77f58115c1272e2c",
+    ".scratch/catena-corpus-audit/crossref-matrix.json": "7d7b90526953dc60cc312602cba5d1a933206cb6874e15fe455f281ff35da9f9",
+    ".scratch/catena-corpus-audit/receipt.json": "1f9ca58893f7e7e53fc48d9fb8ec8c216fd2f534c5e84548ff2f3b925f57d5e5",
+    ".scratch/catena-corpus-audit/work-inventory.csv": "4180e4e341a21c160a75635d55915c835f07d85b02c1d6e261a323e466e95b90",
+    ".scratch/catena-corpus-audit/work-inventory.json": "45578aff05663f028f614b4fcffb9fa3520d8b1be1f5751cdf951dd44000a633",
+    ".scratch/catena-pipeline-audit/REPORT.md": "bc39c08dae0f41fe53bf85cecd05829cd3fc3cfafbad9295ddfcb83bf60185bb",
+    ".scratch/catena-pipeline-audit/coverage.json": "5cb883e60d5e6ecd4c3f2ea986ca32907170016361ded705e1cd596fc667ee7d",
+    ".scratch/catena-pipeline-audit/evidence.json": "9253aa9dcc1f14d9f893cd0d19cdab902bb305b1916436bd1f9ba803f934501a",
+    ".scratch/catena-pipeline-audit/receipt.json": "09b4f57519f71fab2d1e08937871d4f82038ad4b6ca25b57dc96b500caaf224e",
+    ".scratch/catena-pipeline-audit/target-contract.json": "409257faa0d2764a902560b5d52f980b06d3a286c748e2f6410b6dfd2983fc1b"
+  },
+  "original_synthesis_files": {
+    ".scratch/catena-cold-synthesis-20261022T203906857871Z/RECORD.md": "bbea11c4c07c9741dfa149abc3f5088cffde7ab35031828f5fca2ccdded34631",
+    ".scratch/catena-cold-synthesis-20261022T203906857871Z/SHA256SUMS": "72cd7b24e72f592fc674067f57861cfa45dc6af00adbd4a244beec696d9a34b8",
+    ".scratch/catena-cold-synthesis-20261022T203906857871Z/book-summary.csv": "601b068d78525180a5f199250efb78401f50e3a66ba83d33e4fffcd3239cc9c1",
+    ".scratch/catena-cold-synthesis-20261022T203906857871Z/build_synthesis.py": "02656fd4bb69fa8dcbaa00608251402d7c8527237bf509af31d119429ac52a0e",
+    ".scratch/catena-cold-synthesis-20261022T203906857871Z/closure.json": "8edde0a49d6992543e42d3066d31641f0d751e8b6c1412a51680212af1c55ebc",
+    ".scratch/catena-cold-synthesis-20261022T203906857871Z/eligible-works.csv": "411f33c42a6487ed7d4c33444d15edacab6a18c2f6c9a2cb5e391317103c16d5",
+    ".scratch/catena-cold-synthesis-20261022T203906857871Z/final-receipt.json": "263db64877a41d0ee79c489aa2f0d9605f7ee6d70ed9d2bbe80b64711700ecfd",
+    ".scratch/catena-cold-synthesis-20261022T203906857871Z/findings.json": "08261e52a4fd61adc2962ff12a81cb648a80376e4f30c7f163f28c10eb8b8ce3",
+    ".scratch/catena-cold-synthesis-20261022T203906857871Z/preflight.json": "d94597dd3e6b0e0c1b08979bcfe0aad9ba9c7e0c8a22c609811d44803a0018c9",
+    ".scratch/catena-cold-synthesis-20261022T203906857871Z/preservation.json": "23d033d68941a479aa7a627d5e25425393d9433e3f993851c3e289a321188d4f",
+    ".scratch/catena-cold-synthesis-20261022T203906857871Z/provenance.json": "29d476c4dcd04b7466c63c45581a7f1314d64443f2e3074a188ad08aca6d1ffd",
+    ".scratch/catena-cold-synthesis-20261022T203906857871Z/selected-segment-hashes.json": "224beed3915d245260a7939202d3f35ea846ad40cbed2516876459ac196c43c5",
+    ".scratch/catena-cold-synthesis-20261022T203906857871Z/target-gates.csv": "def548f5def5898a464c0125de94e1d15d4f451d1fecb3ad31defcd2c38c1ea6",
+    ".scratch/catena-cold-synthesis-20261022T203906857871Z/target-table.md.json": "f5fc3d3db5f7b38e3b348764b2e69aa4d980cca8ad2c134d16fef876ffaec9df",
+    ".scratch/catena-cold-synthesis-20261022T203906857871Z/work-classification.csv": "1bced2329e04eff2df724cef1a28626dfd9d9f040b9aff66cdfd41c3d8f9593a"
+  },
+  "retained_byte_exact_copies": [
+    {
+      "original_ephemeral_path": ".scratch/catena-cold-synthesis-20261022T203906857871Z/eligible-works.csv",
+      "durable_path": "workflows/reviews/corpus-catena-cross-reference-2026-10-22/eligible-works.csv",
+      "sha256": "411f33c42a6487ed7d4c33444d15edacab6a18c2f6c9a2cb5e391317103c16d5"
+    },
+    {
+      "original_ephemeral_path": ".scratch/catena-cold-synthesis-20261022T203906857871Z/target-gates.csv",
+      "durable_path": "workflows/reviews/corpus-catena-cross-reference-2026-10-22/target-gates.csv",
+      "sha256": "def548f5def5898a464c0125de94e1d15d4f451d1fecb3ad31defcd2c38c1ea6"
+    },
+    {
+      "original_ephemeral_path": ".scratch/catena-cold-synthesis-20261022T203906857871Z/book-summary.csv",
+      "durable_path": "workflows/reviews/corpus-catena-cross-reference-2026-10-22/book-summary.csv",
+      "sha256": "601b068d78525180a5f199250efb78401f50e3a66ba83d33e4fffcd3239cc9c1"
+    },
+    {
+      "original_ephemeral_path": ".scratch/catena-cold-synthesis-20261022T203906857871Z/selected-segment-hashes.json",
+      "durable_path": "workflows/reviews/corpus-catena-cross-reference-2026-10-22/selected-segment-hashes.json",
+      "sha256": "224beed3915d245260a7939202d3f35ea846ad40cbed2516876459ac196c43c5"
+    },
+    {
+      "original_ephemeral_path": ".scratch/catena-cold-synthesis-20261022T203906857871Z/findings.json",
+      "durable_path": "workflows/reviews/corpus-catena-cross-reference-2026-10-22/historical/findings.json",
+      "sha256": "08261e52a4fd61adc2962ff12a81cb648a80376e4f30c7f163f28c10eb8b8ce3"
+    },
+    {
+      "original_ephemeral_path": ".scratch/catena-cold-synthesis-20261022T203906857871Z/provenance.json",
+      "durable_path": "workflows/reviews/corpus-catena-cross-reference-2026-10-22/historical/provenance.json",
+      "sha256": "29d476c4dcd04b7466c63c45581a7f1314d64443f2e3074a188ad08aca6d1ffd"
+    },
+    {
+      "original_ephemeral_path": ".scratch/catena-cold-synthesis-20261022T203906857871Z/final-receipt.json",
+      "durable_path": "workflows/reviews/corpus-catena-cross-reference-2026-10-22/historical/final-receipt.json",
+      "sha256": "263db64877a41d0ee79c489aa2f0d9605f7ee6d70ed9d2bbe80b64711700ecfd"
+    },
+    {
+      "original_ephemeral_path": ".scratch/catena-cold-synthesis-20261022T203906857871Z/preservation.json",
+      "durable_path": "workflows/reviews/corpus-catena-cross-reference-2026-10-22/historical/preservation.json",
+      "sha256": "23d033d68941a479aa7a627d5e25425393d9433e3f993851c3e289a321188d4f"
+    }
+  ],
+  "omitted": "Original large matrices/inventories, full protected-map dump and scratch helpers are not installed; no raw source text is included.",
+  "rejected_installation_inputs": {
+    "meaning": "historical byte-verified relocation preimages, not current companion paths or accepted placement",
+    "file_sha256": {
+      "src/sources/commentary/research/corpus-cross-reference-2026-10-22/RECORD.md": "db898ea6b72137d83598eba24c11d077453dd565924cc73df89201293b94e7fe",
+      "src/sources/commentary/research/corpus-cross-reference-2026-10-22/SHA256SUMS": "2e58ae55407ccb30247382768856c755219b1cc27f9bf7a75c74fb2f31ceb498",
+      "src/sources/commentary/research/corpus-cross-reference-2026-10-22/book-summary.csv": "601b068d78525180a5f199250efb78401f50e3a66ba83d33e4fffcd3239cc9c1",
+      "src/sources/commentary/research/corpus-cross-reference-2026-10-22/closure.json": "8edde0a49d6992543e42d3066d31641f0d751e8b6c1412a51680212af1c55ebc",
+      "src/sources/commentary/research/corpus-cross-reference-2026-10-22/eligible-works.csv": "411f33c42a6487ed7d4c33444d15edacab6a18c2f6c9a2cb5e391317103c16d5",
+      "src/sources/commentary/research/corpus-cross-reference-2026-10-22/findings.json": "cb403db5555d27cbe466b4bbbbead5d6a82691d1b397d6ea26eca9cec3959962",
+      "src/sources/commentary/research/corpus-cross-reference-2026-10-22/historical/final-receipt.json": "263db64877a41d0ee79c489aa2f0d9605f7ee6d70ed9d2bbe80b64711700ecfd",
+      "src/sources/commentary/research/corpus-cross-reference-2026-10-22/historical/findings.json": "08261e52a4fd61adc2962ff12a81cb648a80376e4f30c7f163f28c10eb8b8ce3",
+      "src/sources/commentary/research/corpus-cross-reference-2026-10-22/historical/preservation.json": "23d033d68941a479aa7a627d5e25425393d9433e3f993851c3e289a321188d4f",
+      "src/sources/commentary/research/corpus-cross-reference-2026-10-22/historical/provenance.json": "29d476c4dcd04b7466c63c45581a7f1314d64443f2e3074a188ad08aca6d1ffd",
+      "src/sources/commentary/research/corpus-cross-reference-2026-10-22/input-hashes.json": "34fa477d52beaefd76b24cdf4fdd916981b5e639c5eb57f5c17a103f2857e779",
+      "src/sources/commentary/research/corpus-cross-reference-2026-10-22/provenance.json": "08c9d2eb038f49a83afe4d8447b4b350ffd2df510704f5f95249056add1e7b9a",
+      "src/sources/commentary/research/corpus-cross-reference-2026-10-22/selected-segment-hashes.json": "224beed3915d245260a7939202d3f35ea846ad40cbed2516876459ac196c43c5",
+      "src/sources/commentary/research/corpus-cross-reference-2026-10-22/target-gates.csv": "def548f5def5898a464c0125de94e1d15d4f451d1fecb3ad31defcd2c38c1ea6",
+      "src/sources/commentary/research/corpus-cross-reference-2026-10-22/work-classification.csv": "1bced2329e04eff2df724cef1a28626dfd9d9f040b9aff66cdfd41c3d8f9593a"
+    },
+    "installation_receipt": ".scratch/catena-durable-install-20261022T210652614874Z/installation-receipt.json",
+    "installation_receipt_sha256": "9841b8e20f2bf1751182582624bb1723acac3b495845554fefd93a4c04d95b1e",
+    "immutable_transport": ".scratch/agent-handoffs/20261022T211305Z-catena-research-durable-metadata.zip",
+    "immutable_transport_sha256": "846168c5e1296bd9a2b4d2879708863fee8fb94fc7751068a0e9103da4f349b4"
+  },
+  "current_output_derivations": [
+    {
+      "durable_path": "workflows/reviews/corpus-catena-cross-reference-2026-10-22/work-classification.csv",
+      "sha256": "6f7cd019cafccd21ea3211555d95a1fff2a873f6c44770a3efae02f47280dd40",
+      "historical_byte_exact_copy_binding_before_CONV_2": {
+        "original_ephemeral_path": ".scratch/catena-cold-synthesis-20261022T203906857871Z/work-classification.csv",
+        "durable_path": "workflows/reviews/corpus-catena-cross-reference-2026-10-22/work-classification.csv",
+        "sha256": "1bced2329e04eff2df724cef1a28626dfd9d9f040b9aff66cdfd41c3d8f9593a"
+      },
+      "derivation": "CONV-2 current language metadata/column-count correction; historical original and source inputs unchanged"
+    },
+    {
+      "durable_path": "workflows/reviews/corpus-catena-cross-reference-2026-10-22/closure.json",
+      "sha256": "d2e435527d3ae83dbdbf84c2d56a9c78d759fd75ed4ddf2d0b1648bd604595db",
+      "historical_byte_exact_copy_binding_before_CONV_2": {
+        "original_ephemeral_path": ".scratch/catena-cold-synthesis-20261022T203906857871Z/closure.json",
+        "durable_path": "workflows/reviews/corpus-catena-cross-reference-2026-10-22/closure.json",
+        "sha256": "8edde0a49d6992543e42d3066d31641f0d751e8b6c1412a51680212af1c55ebc"
+      },
+      "derivation": "CONV-2 current language metadata/column-count correction; historical original and source inputs unchanged"
+    }
+  ]
+}

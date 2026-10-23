@@ -1,0 +1,101 @@
+{
+  "schema": "catena-cold-review-closure/v1",
+  "work_registration_total": 1064,
+  "work_classification": {
+    "no-identified-commentary-evidence": 573,
+    "direct-exegesis-work": 109,
+    "uncertain-cross-genre": 217,
+    "direct-exegesis-already-mapped": 14,
+    "container": 99,
+    "related-apparatus-or-reception": 25,
+    "scripture-witness-not-commentary": 19,
+    "duplicate-or-constituent-identity": 4,
+    "non-scriptural-commentary": 3,
+    "disputed-parallel-not-second-entry": 1
+  },
+  "aggregate": {
+    "eligible_owning_registrations": 123,
+    "ineligible_current_role": 625,
+    "uncertain_cross_genre": 217,
+    "uncertain_containers": 99
+  },
+  "matrix_total": 2159,
+  "matrix_row_kinds": {
+    "work-scope": 127,
+    "existing-fragment": 1352,
+    "passage-candidate": 337,
+    "artifact-candidate": 245,
+    "container-constituent": 86,
+    "newly-noticed-container-constituent": 3,
+    "focused-container-artifact": 8,
+    "research-only-lead": 1
+  },
+  "canonical_books": 73,
+  "books_with_any_candidate_including_catalog_scope": 35,
+  "existing_catena": {
+    "fragments": 1352,
+    "by_book": {
+      "Gen": 1351,
+      "Matt": 1
+    },
+    "intellectual_works": 13,
+    "authors": 12,
+    "generated_files": 1915,
+    "chapter_files": 562,
+    "fragment_payloads": 1352,
+    "index_files": 1
+  },
+  "target_gates": {
+    "target_rows": 16,
+    "unique_passages": 14,
+    "works": 10,
+    "books": 7,
+    "missing_explicit_text_rows": 10,
+    "missing_explicit_text_unique_passages": 8,
+    "segment_controlled_rows": 8,
+    "segment_controlled_unique_passages": 6,
+    "missing_translator_rows": 4,
+    "missing_translator_editions": 3,
+    "missing_numeric_composition_date_rows": 16,
+    "missing_exact_alias_rows": 1,
+    "english_absence_required_rows": 8,
+    "english_absence_required_works": 5,
+    "admission_ready_rows": 0
+  },
+  "compact_table_checks": {
+    "work-classification.csv": {
+      "data_rows": 1064,
+      "columns": 21,
+      "full_cell_round_trip": true
+    },
+    "eligible-works.csv": {
+      "data_rows": 123,
+      "columns": 26,
+      "full_cell_round_trip": true
+    },
+    "target-gates.csv": {
+      "data_rows": 16,
+      "columns": 41,
+      "full_cell_round_trip": true
+    },
+    "book-summary.csv": {
+      "data_rows": 73,
+      "columns": 10,
+      "full_cell_round_trip": true
+    }
+  },
+  "input_csv_json_full_cell_parity": true,
+  "canonical_work_manifests_exact": 1064,
+  "pipeline_pinned_files_exact": 9,
+  "holding_record_tags_among_eligible": {
+    "catalog-only": 27,
+    "retained-text-needs-local-boundary-review": 59,
+    "remote-or-restricted-only": 28,
+    "retained-images-or-other-data-needs-transcription": 9
+  },
+  "historical_checks_reused_not_rerun": {
+    "reported_structure_seconds": 371.7,
+    "reported_tests_passed": 65
+  },
+  "snapshot_limit": "Full source validation, broad corpus reading, structural generation and test suite were not rerun. Non-target holdings use the completed audited inventory, not a new reading claim."
+}

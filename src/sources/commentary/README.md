@@ -4,6 +4,15 @@ Maps a scripture passage to the commentary works worth pulling into the source
 library, then unions those mappings across every proper to produce the corpus
 of works the vault should acquire.
 
+The [accepted corpus-to-Catena research record](../../../workflows/reviews/corpus-catena-cross-reference-2026-10-22/RECORD.md)
+and its [work classifications](../../../workflows/reviews/corpus-catena-cross-reference-2026-10-22/work-classification.csv),
+[eligible owning registrations](../../../workflows/reviews/corpus-catena-cross-reference-2026-10-22/eligible-works.csv),
+[target-specific gates](../../../workflows/reviews/corpus-catena-cross-reference-2026-10-22/target-gates.csv)
+and [book summary](../../../workflows/reviews/corpus-catena-cross-reference-2026-10-22/book-summary.csv)
+preserve the bounded research evidence and future implementation constraints.
+They are research metadata, not an import, fragment-admission approval or
+completion of the parent-owned promise check.
+
 ## Chain
 
 | Stage | Tool | Input | Output |

@@ -1,0 +1,24 @@
+{
+  "schema": "catena-cold-review-preservation/v1",
+  "checked_utc": "2026-10-22T20:54:59.658215+00:00",
+  "protected_baseline_paths": 3054,
+  "protected_unchanged_paths": 3053,
+  "protected_changes_observed": [
+    {
+      "path": "PROJECT-WORK.md",
+      "before_sha256": "8e9f30d5782b6bcb7f49a4e4fd59cd168672eee637eaf0f1a0f38fecf9738a3c",
+      "after_sha256": "34c735c389aa1bcc6cbd324332f905d0ad82373ae92ea92e6f70a687a9f7be98"
+    }
+  ],
+  "change_interpretation": "Concurrent project-ledger changes are observed, not attributed to or overwritten by this lane; all other protected changes are blockers.",
+  "unexpected_protected_changes": [],
+  "additional_selected_segment_records": 5,
+  "selected_segments_unchanged": true,
+  "all_1915_generated_catena_files_unchanged": true,
+  "fifteen_audit_inputs_unchanged": true,
+  "current_branch": "feature/missal-reader",
+  "current_head": "a17f42c7e6ac61b51579784c4ee6e67108a70d47",
+  "canonical_writes_by_this_lane": 0,
+  "intentional_authored_output_root": ".scratch/catena-cold-synthesis-20261022T203906857871Z",
+  "stage_commit_push_ref_changes_by_this_lane": false
+}

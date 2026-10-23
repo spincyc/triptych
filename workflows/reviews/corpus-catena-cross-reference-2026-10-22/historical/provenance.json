@@ -1,0 +1,41 @@
+{
+  "schema": "catena-cold-research-provenance/v1",
+  "as_of": "2026-10-22",
+  "head": "a17f42c7e6ac61b51579784c4ee6e67108a70d47",
+  "branch": "feature/missal-reader",
+  "promise": "corpus-catena-cross-reference-audit-2026-10-22",
+  "status": "proposed research record; parent acceptance and durable installation pending",
+  "original_audit_input_sha256": {
+    ".scratch/catena-corpus-audit/REPORT.md": "26e6ccb82c25c411efaec733021a87203db5526ede9ff3361a96895d8462fb70",
+    ".scratch/catena-corpus-audit/book-matrix.csv": "c11aceb56a119f36e3e6f6382df06920b6af405c2a1edf155b46ea15b70c282f",
+    ".scratch/catena-corpus-audit/book-matrix.json": "721ac822f5b9417ab30f2e8ab71f209f8a16d2ca0eb7484620bcdba4873722e9",
+    ".scratch/catena-corpus-audit/classification.json": "9aa7e7c5d1b50cc29786ef1271add0e8d5252b5f8b944ea053c10e37c6c2483d",
+    ".scratch/catena-corpus-audit/counts.json": "b497a19dc67f7101e2a7075d365d7c14b25a44262935cbfcf6a98eca717102d0",
+    ".scratch/catena-corpus-audit/crossref-matrix.csv": "d8c4f2cba4ff11990e346091d6491ea46611a4db81b168ad77f58115c1272e2c",
+    ".scratch/catena-corpus-audit/crossref-matrix.json": "7d7b90526953dc60cc312602cba5d1a933206cb6874e15fe455f281ff35da9f9",
+    ".scratch/catena-corpus-audit/receipt.json": "1f9ca58893f7e7e53fc48d9fb8ec8c216fd2f534c5e84548ff2f3b925f57d5e5",
+    ".scratch/catena-corpus-audit/work-inventory.csv": "4180e4e341a21c160a75635d55915c835f07d85b02c1d6e261a323e466e95b90",
+    ".scratch/catena-corpus-audit/work-inventory.json": "45578aff05663f028f614b4fcffb9fa3520d8b1be1f5751cdf951dd44000a633",
+    ".scratch/catena-pipeline-audit/REPORT.md": "bc39c08dae0f41fe53bf85cecd05829cd3fc3cfafbad9295ddfcb83bf60185bb",
+    ".scratch/catena-pipeline-audit/coverage.json": "5cb883e60d5e6ecd4c3f2ea986ca32907170016361ded705e1cd596fc667ee7d",
+    ".scratch/catena-pipeline-audit/evidence.json": "9253aa9dcc1f14d9f893cd0d19cdab902bb305b1916436bd1f9ba803f934501a",
+    ".scratch/catena-pipeline-audit/receipt.json": "09b4f57519f71fab2d1e08937871d4f82038ad4b6ca25b57dc96b500caaf224e",
+    ".scratch/catena-pipeline-audit/target-contract.json": "409257faa0d2764a902560b5d52f980b06d3a286c748e2f6410b6dfd2983fc1b"
+  },
+  "full_protected_map_file": ".scratch/catena-cold-synthesis-20261022T203906857871Z/preflight.json",
+  "full_protected_map_sha256": "d94597dd3e6b0e0c1b08979bcfe0aad9ba9c7e0c8a22c609811d44803a0018c9",
+  "full_protected_map_entries": 3054,
+  "snapshot_limit": "Full corpus validation, broad source reading, generation and the65-test suite were not rerun.",
+  "rights_recheck": {
+    "public_domain_tracked_target_rows": 15,
+    "licensed_tracked_target_rows": 1,
+    "licensed_witness": "Gregory Gospel HomilyXIX; CC-BY-SA-3.0 obligations retained"
+  },
+  "scratch_setup_corrections": [
+    "Preflight corrected repository-relative artifact paths before writing any output, as recorded in preflight.json.",
+    "Scratch builder initially required literal unknown; corrected to accept absent/null composition metadata as well.",
+    "Scratch builder initially assumed all controllers public-domain; canonical metadata correctly identifies GregoryXIX as licensed CC-BY-SA-3.0. Final table preserves that license.",
+    "Final independent checker initially counted nonempty book work-ID lists (29) as all candidate books; corrected to use the union of candidate categories (35), matching the retained audit."
+  ],
+  "no_canonical_data_was_changed_to_pass_a_check": true
+}

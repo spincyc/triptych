@@ -1,0 +1,38 @@
+{
+  "schema": "catena-cold-review-final-receipt/v1",
+  "verdict": "Research synthesis ready for parent inspection and installation; no Catena admission or implementation approved.",
+  "table_rows": {
+    "work-classification.csv": 1064,
+    "eligible-works.csv": 123,
+    "target-gates.csv": 16,
+    "book-summary.csv": 73
+  },
+  "independent_metadata_cross_checks_passed": true,
+  "source_input_csv_json_full_cell_parity": true,
+  "compact_output_csv_full_cell_round_trip": true,
+  "all_1064_work_paths_ids_and_hashes_exact": true,
+  "all_16_target_metadata_controller_hashes_sizes_and_rights_exact": true,
+  "all_eligible_edition_controller_and_retained_payload_locations_exist": true,
+  "all_73_book_rows_reconciled": true,
+  "target_rows": 16,
+  "unique_target_passages": 14,
+  "catena_admission_ready_rows": 0,
+  "missing_text_rows": 10,
+  "segment_controller_rows": 8,
+  "missing_translator_rows": 4,
+  "missing_exact_alias_rows": 1,
+  "english_absence_required_rows": 8,
+  "findings_by_priority": {
+    "P2": 4
+  },
+  "preservation_receipt": ".scratch/catena-cold-synthesis-20261022T203906857871Z/preservation.json",
+  "preservation_receipt_sha256": "23d033d68941a479aa7a627d5e25425393d9433e3f993851c3e289a321188d4f",
+  "parent_followups": [
+    "Inspect and accept the research record, compact tables, findings and provenance.",
+    "Install only accepted research metadata under the existing tracked research owner and retarget companion references coherently.",
+    "Run parent-owned promised-deliverable sanity; close only this audit promise if both research criteria are met.",
+    "Require separate explicit authorization for source/date/translator/alias/controller/edge changes or publication."
+  ],
+  "canonical_implementation_edits": 0,
+  "promise_edits": 0
+}

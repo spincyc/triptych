@@ -1,0 +1,30 @@
+{
+  "schema": "catena-cold-review-findings/v1",
+  "scope": "research synthesis only; no fixes or admission authorized",
+  "findings": [
+    {
+      "priority": "P2",
+      "path": "scripts/_catena.py",
+      "line": 1306,
+      "body": "Valid source schema-2 passages resolve their controller through segment_id, but this direct passage.artifact_id lookup rejects all eight segment-controlled target rows (six unique passages). Emission at line1375 repeats the direct lookup for rights. A separately authorized repair must reuse existing source-controller authority in both validation and rights emission; preserve Rule1 explicit-text and Rule9 rights gates. Current 1352 Catena fragments are direct-controlled, so this is a new-admission blocker, not a present indexing/UI failure."
+    },
+    {
+      "priority": "P2",
+      "path": "src/sources/works/john-chrysostom/homilies-on-philippians/editions/2026-09-17-ccel-web/edition.toml",
+      "line": 6,
+      "body": "Four English target rows across three editions have no canonical translators metadata: this Philippians edition (Homilies III and IV), the analogous homilies-on-acts edition, and Augustine's sermo-87 edition. Their works are Greek/Latin originals, so _voice_errors at scripts/_catena.py:1214-1226 rejects them as translations without a translator. Schaff is recorded as editor and must not be substituted as translator. Verify retained edition credits and fingerprint impact before any separately authorized metadata change."
+    },
+    {
+      "priority": "P2",
+      "path": ".scratch/catena-corpus-audit/REPORT.md",
+      "line": 173,
+      "body": "The five suggested first-backfill units are SOURCE-text/locus-readable, not edge-only wins. All five lack explicit passage.text, all five lack numeric composition dates, four are segment-controlled, and three English rows lack translators metadata. Across all16 rows the corresponding counts are10,16,8,4. This clarifies the report's stated non-publication readiness rather than rejecting its source-readable classification. Plan checked source transcription and date/voice/controller gates before adding typed edges; never weaken the explicit-text refusal."
+    },
+    {
+      "priority": "P2",
+      "path": ".scratch/catena-corpus-audit/crossref-matrix.json",
+      "line": 22730,
+      "body": "The harmony evidence's suggestion of separate book edges is not directly representable: its Matthew, Mark and Luke relations share one passage_id, while scripts/_catena.py:877-881 enforces one fragment per passage and a typed extent has one book. Keep the Matthew primary candidate subject to ordinary gates, and Mark/Luke as research/harmony relations unless separately authorized relation support is designed. Do not clone the passage or claim full Samaritan exposition from the Luke comparison."
+    }
+  ]
+}

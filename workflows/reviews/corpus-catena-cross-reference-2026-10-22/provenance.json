@@ -1,0 +1,145 @@
+{
+  "schema": "catena-durable-research-provenance/v1",
+  "as_of": "2026-10-22",
+  "research_disposition": "independent research synthesis accepted; original placement rejected; corrected workflow-review location pending parent final review",
+  "promise_closure": "parent-owned installed-delta review and actual mechanical validator pending; no promise closed here",
+  "durable_root": "workflows/reviews/corpus-catena-cross-reference-2026-10-22",
+  "path_resolution": "repository-relative data paths; local Markdown links resolve beside RECORD.md",
+  "original_ephemeral_root": ".scratch/catena-cold-synthesis-20261022T203906857871Z",
+  "original_ephemeral_root_role": "immutable historical provenance; no durable runtime/replay dependency",
+  "original_review_head": "a17f42c7e6ac61b51579784c4ee6e67108a70d47",
+  "original_review_branch": "feature/missal-reader",
+  "historical_receipts": {
+    "workflows/reviews/corpus-catena-cross-reference-2026-10-22/historical/findings.json": {
+      "sha256": "08261e52a4fd61adc2962ff12a81cb648a80376e4f30c7f163f28c10eb8b8ce3",
+      "meaning": "byte-exact historical evidence, not review of later installed bytes"
+    },
+    "workflows/reviews/corpus-catena-cross-reference-2026-10-22/historical/provenance.json": {
+      "sha256": "29d476c4dcd04b7466c63c45581a7f1314d64443f2e3074a188ad08aca6d1ffd",
+      "meaning": "byte-exact historical evidence, not review of later installed bytes"
+    },
+    "workflows/reviews/corpus-catena-cross-reference-2026-10-22/historical/final-receipt.json": {
+      "sha256": "263db64877a41d0ee79c489aa2f0d9605f7ee6d70ed9d2bbe80b64711700ecfd",
+      "meaning": "byte-exact historical evidence, not review of later installed bytes"
+    },
+    "workflows/reviews/corpus-catena-cross-reference-2026-10-22/historical/preservation.json": {
+      "sha256": "23d033d68941a479aa7a627d5e25425393d9433e3f993851c3e289a321188d4f",
+      "meaning": "byte-exact historical evidence, not review of later installed bytes"
+    }
+  },
+  "original_reviewed_record_sha256": "bbea11c4c07c9741dfa149abc3f5088cffde7ab35031828f5fca2ccdded34631",
+  "installation_adaptations": [
+    "RECORD status acknowledges parent research acceptance while leaving promise closure pending.",
+    "Companion links identify durable evidence separately from original ephemeral provenance.",
+    "Four constraints retain original bodies; two ephemeral evidence locators are relocated to durable RECORD lines with historical locations preserved.",
+    "All four compact CSVs, closure, selected segment hashes and historical receipts remain byte-exact."
+  ],
+  "gate_totals_at_accepted_snapshot": {
+    "admission_ready": 0,
+    "D_rows": 16,
+    "L_rows": 16,
+    "T_rows": 10,
+    "T_passages": 8,
+    "C_rows": 8,
+    "C_passages": 6,
+    "V_rows": 4,
+    "V_editions": 3,
+    "A_rows": 1,
+    "E_rows": 8,
+    "E_works": 5,
+    "H_related_rows": 2,
+    "H_primary_Matthew_candidate": 1,
+    "R_CC_BY_SA_3_0_rows": 1
+  },
+  "uncertainties_preserved": {
+    "cross_genre": 217,
+    "containers": 99,
+    "total": 316,
+    "books_without_confirmed_candidate_not_negative": 38
+  },
+  "scope_limits": [
+    "Metadata-only installation; no source bodies or full original audit matrices retained.",
+    "No new whole-work/source collation, audit-body reread, acquisition, harvest, code/source/edge change, generation, build or runtime validation.",
+    "The65-test suite and371.7-second structure check are historical and were not rerun.",
+    "Harmony Matthew remains primary candidate; Mark/Luke remain research-only; no cloning or new edge contract.",
+    "Independent repair work requires its own acceptance and cannot retroactively change historical receipts."
+  ],
+  "placement_correction": {
+    "rejected_location_historical_only": "src/sources/commentary/research/corpus-cross-reference-2026-10-22",
+    "current_location": "workflows/reviews/corpus-catena-cross-reference-2026-10-22",
+    "reason": "Four CSVs and bare SHA256SUMS were unowned source-library payloads; research audit metadata belongs to workflow reviews.",
+    "basis": "narrow relocation versus byte-exact211305 installation post-state; not a full first-install patch",
+    "ownership_precondition": "all15 original files byte-exact to prior installation receipt and git-untracked before mutation",
+    "schema_or_allowance_change": false,
+    "research_or_source_change": false,
+    "current_reference_adaptations": [
+      "RECORD disposition and location note",
+      "current finding locators",
+      "current provenance/copy maps",
+      "README paragraph links",
+      "current SHA256SUMS"
+    ],
+    "historical_receipts_rewritten": false,
+    "actual_validation": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 tools/tpt source-library validate",
+      "before_exit_code": 1,
+      "before_diagnostics": 5,
+      "after_exit_code": 0,
+      "after_diagnostics": 0,
+      "removed_diagnostics": "four CSVs and bare SHA256SUMS outside the source-library schema",
+      "new_diagnostics": [],
+      "after_summary": "source-library valid: artifact=3711 corpus=5 edition=1256 passage=6449 segment=113 work=1064 bindings=4159",
+      "before_log_sha256": "8df2f3212ddcf4f64bd6c002b02d6ac4e4bcbd957679af5fccdf46c945254894",
+      "after_log_sha256": "a8d75822e47a1b6580e9ee61b49816e5616c654241540d24e40f17a5e1336dea",
+      "scope": "new placement-correction validation; not a rewritten historical review receipt"
+    }
+  },
+  "CONV_2_language_correction_proposal": {
+    "as_of": "2026-10-23",
+    "status": "scratch-only candidate; not installed or accepted",
+    "basis": "exact frozen combined candidate post-state, not HEAD or first-install basis",
+    "finding": "CONV-2",
+    "rows": 1064,
+    "old_columns": 20,
+    "new_columns": 21,
+    "existing_edition_language_cells_changed": 508,
+    "original_work_language_cells_preserved": 1064,
+    "all_other_cells_and_row_order_unchanged": true,
+    "aggregation": "original owner producer joined(): sorted unique raw edition.language codes joined by semicolon-space; required fields validated before aggregation",
+    "work_language_source": "actual work.languages for1060 records; four explicitly identified absent declarations preserve their original blank cells without inference",
+    "work_original_language_absences_preserved": [
+      "work.holy-see.acta-apostolicae-sedis",
+      "work.holy-see.acta-sanctae-sedis",
+      "work.holy-see.decreta-authentica-congregationis-sacrorum-rituum",
+      "work.holy-see.notitiae"
+    ],
+    "edition_language_source": "actual named edition IDs with exact registered work ownership",
+    "original_producer": {
+      "historical_path": ".scratch/catena-cold-synthesis-20261022T203906857871Z/build_synthesis.py",
+      "sha256": "02656fd4bb69fa8dcbaa00608251402d7c8527237bf509af31d119429ac52a0e",
+      "unchanged": true
+    },
+    "copied_producer_sha256": "cca5096776d2244f8a277283ab1c716828e6253087164ee1232ce9d99eca79fd",
+    "execution_bound": "only original joined/write_csv functions and amended language expressions; no broad inventory/matrix/body processing",
+    "exhaustive_join_sha256": "c9c8b2916378506b500f00f41d7590321fd8b5f39197d0d8344599bdac790e94",
+    "current_output_sha256": {
+      "workflows/reviews/corpus-catena-cross-reference-2026-10-22/work-classification.csv": "6f7cd019cafccd21ea3211555d95a1fff2a873f6c44770a3efae02f47280dd40",
+      "workflows/reviews/corpus-catena-cross-reference-2026-10-22/closure.json": "d2e435527d3ae83dbdbf84c2d56a9c78d759fd75ed4ddf2d0b1648bd604595db",
+      "workflows/reviews/corpus-catena-cross-reference-2026-10-22/input-hashes.json": "7b752a04de5f3d943bf9e0f601d74e1d059b8c444577f7ac5d0f5aa10522a18e",
+      "workflows/reviews/corpus-catena-cross-reference-2026-10-22/RECORD.md": "bd017ed7a78dec002560bb2efcdbc5d9ed57af28dabfa0d955154d495e404eed"
+    },
+    "historical_copy_assertions": "installation_adaptations/placement_correction describe their historical snapshots; only classification and closure cease to be original byte-exact copies",
+    "historical_receipts_and_original_input_bindings_rewritten": false,
+    "current_findings_and_selected_segment_pins_unchanged": true,
+    "source_records_rights_gates_and_counts_unchanged": true,
+    "scope": "research metadata identity correction only; no L3 implementation",
+    "approval": "Independent reviewer and parent disposition still required; no historical closure accepts this candidate",
+    "edition_cardinality": {
+      "zero": 183,
+      "single": 716,
+      "multiple": 165,
+      "named_editions": 1256,
+      "unresolved_IDs_or_languages": 0
+    }
+  }
+}
