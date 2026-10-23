@@ -426,10 +426,14 @@ try {
   failures.push({name:activeCase,detail});
 } finally {
   if(cdp) cdp.close();
-  chrome.kill('SIGTERM');
-  if(chrome.exitCode===null && chrome.signalCode===null) await new Promise(done=>chrome.once('exit',done));
-  await instance.close();
-  await rm(profile,{recursive:true,force:true});
+  if(chrome.exitCode===null && chrome.signalCode===null) {
+    const exited = new Promise(done=>chrome.once('exit',done));
+    chrome.kill('SIGTERM');
+    await exited;
+  }
+  instance.closeAllConnections();
+  await new Promise(done=>instance.close(done));
+  await rm(profile,{recursive:true,force:true,maxRetries:5,retryDelay:100});
 }
 const clean = failures.length===0 && consoleProblems.length===0 && failedRequests.length===0 && httpProblems.length===0;
 process.stdout.write(JSON.stringify({status:clean?'pass':'fail',checks:assertions.length,
