@@ -144,14 +144,14 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index coverage",
             (
-                "coverage: 15 works held, 18 work-and-book pairs, 210 chapters not held",
-                "  gap 2 · unexamined 8 · not-established 1 · complete 7 · extents recorded 10 of 18",
+                "coverage: 17 works held, 20 work-and-book pairs, 228 chapters not held",
+                "  gap 2 · unexamined 10 · not-established 1 · complete 7 · extents recorded 10 of 20",
                 "",
                 "  1. Augustine of Hippo — Enarrationes in Psalmos · Psalms  [unexamined, 129 of 150 chapters not held]",
                 "     named on 130 · held on 1 · 1 fragment · extent unrecorded",
                 "     not held: 1-2, 4-34, 36-37, 39-50, 53-56, 58-59, 61-62, 64-73, 75-80, 82-87, 89-92, 94-97, 99, 101-122, 124-125, 127-130, 132, 134, 136-140, 142-148, 150",
                 "     no extent recorded, so nothing can say whether this is a gap",
-                "... 36 more lines",
+                "... 44 more lines",
             ),
             "ranked by how much is missing; a gap is a work item, never a build failure",
         ),
@@ -178,7 +178,7 @@ EXAMPLES = {
             "tools/commentary-work-index containment",
             (
                 "containment: 134 containers (101 records, 33 whole-volume artifacts), 358 constituents, 68 of them commentary-index leads",
-                "  resolved 25 · partial 92 · unresolved 17 · not containers 36 · identities 6",
+                "  resolved 25 · partial 92 · unresolved 17 · not containers 37 · identities 6",
             ),
             "validates the inventory; a container-shaped record with no entry, an unknown record or a malformed extent fails it",
         ),
@@ -186,7 +186,7 @@ EXAMPLES = {
             "tools/commentary-work-index containment --container work.jacques-paul-migne.patrologia-latina-volume-37",
             (
                 "containment: 134 containers (101 records, 33 whole-volume artifacts), 358 constituents, 68 of them commentary-index leads",
-                "  resolved 25 · partial 92 · unresolved 17 · not containers 36 · identities 6",
+                "  resolved 25 · partial 92 · unresolved 17 · not containers 37 · identities 6",
                 "",
                 "  work.jacques-paul-migne.patrologia-latina-volume-37  [resolved]",
                 "    Augustine of Hippo -- Enarrationes in Psalmos (index lead): Psalms 80-150",

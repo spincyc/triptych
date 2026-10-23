@@ -1,0 +1,31 @@
+{
+  "head_before": "1638851d7c66ba9ad640a6b156b12f5efc7c2547",
+  "head_after": "1638851d7c66ba9ad640a6b156b12f5efc7c2547",
+  "source_files": 24917,
+  "source_paths_changed": [],
+  "tools": {
+    "commentary-work-index": {
+      "sha256": "b683bfdec43843809535a14efa00c178dd287af9728df5c18ec87cd327d34103",
+      "functions_unchanged": true,
+      "outside_examples_ast_unchanged": true
+    },
+    "harvest": {
+      "sha256": "c80decce87b9183f2234097a38dc61b35729856f4a7ce99c48e4bd91f6243d56",
+      "functions_unchanged": true,
+      "outside_examples_ast_unchanged": true
+    }
+  },
+  "prior_failed_evidence_preserved": true,
+  "replay": {
+    "captured": 27,
+    "executed": 24,
+    "divergences": 0,
+    "model_or_dependent_record_exemptions": 3,
+    "tracked_writes_during_replay": 0,
+    "recaptured_tuples": [
+      "coverage",
+      "containment",
+      "containment_with_explicit_inventory"
+    ]
+  }
+}
