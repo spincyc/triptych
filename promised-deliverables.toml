@@ -1,5 +1,47 @@
 schema_version = 1
 
+[[deliverables]]
+id = "reader-corpus-recovery-2026-10-23"
+owner = "PROJECT-WORK.md"
+promise = "Recover interrupted reader work; repair weekly/daily research ingestion, organization and biblical cross-references; expand checked Catena coverage and historical English orations; correct response and Scripture typography; and provide elegant, usable terminal views with website feature parity and independent cold review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "recovered-state"
+  criterion = "The committed, remote and deployment states are reconciled from durable evidence, preserving existing work and open annual/product requirements."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/missal-reader-resume-2026-10-23/RECORD.md"]
+
+  [[deliverables.requirements]]
+  id = "research-and-catena"
+  criterion = "The research-to-source-to-Catena route is cold-reviewed and its demonstrated defects fixed; checked source admissions cover Psalms and New Testament material beyond the existing Matthew fragment, with exact extents, truthful provenance, rights and regression evidence."
+  status = "pass"
+  evidence = ["workflows/reviews/missal-reader-resume-2026-10-23/RECORD.md"]
+
+  [[deliverables.requirements]]
+  id = "reader-presentation-and-parity"
+  criterion = "Terminal and website reader behavior is compared explicitly; response markers, separate response lines and Scripture projections are consistent, missing terminal modes are implemented through browser owners, and actual narrow/wide views pass independent usability and fidelity review."
+  status = "pass"
+  evidence = ["workflows/reviews/missal-reader-resume-2026-10-23/RECORD.md"]
+
+  [[deliverables.requirements]]
+  id = "orations-and-integrated-checks"
+  criterion = "Missing historical English orations are recovered with checked provenance and exact reuse controls; remaining gaps are quantified; integrated source, generated-data, reader and relevant publication checks pass with independent cold-review disposition."
+  status = "pass"
+  evidence = ["workflows/reviews/missal-reader-resume-2026-10-23/RECORD.md", "workflows/reviews/missal-reader-resume-2026-10-23/final-validation.json"]
+
+  [[deliverables.requirements]]
+  id = "coherent-main-publication"
+  criterion = "Consistent coherent checkpoints are committed on the workspace branch and pushed without force to main; the exact remote commit and successful resulting GitHub Actions deployment are verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/missal-reader-resume-2026-10-23/RECORD.md"]
+
+  [[deliverables.requirements]]
+  id = "remaining-corpus-and-english-backlog"
+  criterion = "The remaining prayer translations and unexamined commentary extents are processed through checked source owners; unresolved acquisition, target-text, rights and translation gaps remain explicit, and leads or plans are never counted as admitted text."
+  status = "open"
+  evidence = ["src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml", "workflows/reviews/corpus-catena-cross-reference-2026-10-22/target-gates.csv", "workflows/reviews/missal-reader-resume-2026-10-23/RECORD.md"]
+
 # Current direction, 2026-10-23: coherent feature-branch commits and a non-force
 # main push are authorized after consistency/publication gates. The maintainer
 # defers the exhaustive additions audit, explicitly incomplete, not passed.
@@ -150,7 +192,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "lectern-on-main"
   criterion = "The reader is pushed to main as a fast-forward after the deployment gates pass locally, and the Pages run that push triggers is verified."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
   [[deliverables.requirements]]

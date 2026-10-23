@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-23",
+  "functional_head": "70050447a8f75dd2237124a47de84cc8619d5691",
+  "disposition": "local integrated gates pass; exact new-main deployment pending",
+  "source_aggregate": {
+    "command": "make --jobs=4 check-sources",
+    "exit_code": 0,
+    "includes_deployment_source_gate": true,
+    "retained_log_sha256": "fdb8e8d0a703437b7b491c4c60693b6e0bdaf9872aad804c1edb243c05e07e4d"
+  },
+  "annual_matrix": {
+    "tested_commit": "1638851d7c66ba9ad640a6b156b12f5efc7c2547",
+    "tests": 7,
+    "renderings": 5856,
+    "skips": 0,
+    "passed": true,
+    "inputs_unchanged_to_functional_head": true,
+    "unchanged_scope": ["src/sources", "scripts", "Makefile", "tools/mass-today", "tools/mass-propers", "tools/mass-ordinary", "tools/calendar-rubrics", "tools/calendar-days", "src/web/data/bibles.json"],
+    "retained_log_sha256": "c2109810435db6c386c9a7fa6c71fce9c81b69fa2370a4c004a3061e913bff3e",
+    "proves": "structural renderability; not annual textual completeness"
+  },
+  "terminal_suite": {
+    "tests": 116,
+    "skips": 1,
+    "skip_basis": "mutually exclusive runtime pin branch",
+    "passed": true,
+    "retained_log_sha256": "7a4ed7c5ae2c015f5644ddbe69bf04a254af0cc5c0e263bcb2e575900849bc94"
+  },
+  "native_dialogue": {
+    "tests": 2,
+    "assertions": 44,
+    "skips": 0,
+    "passed": true,
+    "retained_log_sha256": "e77324080d6792b5b2df0f2ba6ae32dfde0390752df613d380355e7cee8090cd"
+  },
+  "native_browser": {
+    "tests": 7,
+    "harnesses": 12,
+    "assertions": 257,
+    "skips": 0,
+    "passed": true,
+    "console_request_http_problems": 0,
+    "harness_contracts": {
+      "day_reader_compare_browser.mjs": 10,
+      "day_reader_read_payload_browser.mjs": 9,
+      "day_reader_study_browser.mjs": 25,
+      "day_reader_choices_browser.mjs": 8,
+      "liturgy_reader_preferences_browser.mjs": 11,
+      "liturgy_reader_share_print_browser.mjs": 7,
+      "reader_text_size_browser.mjs": 5,
+      "pentecost_witness_chooser_browser.mjs": 5,
+      "day_reader_integration_browser.mjs": 57,
+      "liturgy_reader_shell_browser.mjs": 18,
+      "liturgy_reader_visual_reset_browser.mjs": 33,
+      "propers_reader_integration_browser.mjs": 69
+    },
+    "retained_log_sha256": "6c5c541938d70dca43d5d0f1fcda6942cf224122688f0a47895e3cf3f1f1ea5f",
+    "retained_full_reports_sha256": "7ea5b32a926fa582ff090887a2bcf7a80f8145aa61479e9236aa50592bf1c9b7",
+    "retained_summary_sha256": "02be4818e693c4cc1cfa19a1cf30d75255959d5188efda56201e34cb2aedbe1a"
+  },
+  "publication_builds": {
+    "public_passed": true,
+    "public_verified_for_github_pages": true,
+    "preview_passed": true,
+    "preview_verified": true,
+    "retained_log_sha256": {
+      "public_build": "8f4f2b88bc70bd80179020cbd62f472d8ad411ffdeaa7636c9aa7dbe5fba586d",
+      "public_verify": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14",
+      "preview_build": "f5f5c4dd718213a95c65bc2dc8be91401b71c1198cedd0d43e06ff0d93efd85b",
+      "preview_verify": "2d87689935ce2ac9799e8734369261a2c512c6b0a60e5acaadee1f31940a8bae"
+    }
+  },
+  "generated_freeze": {
+    "files": 7516,
+    "sources": 5022,
+    "proper": 499,
+    "catena": 1995,
+    "manifest_sha256": "ddb7f8b7375ebcb2900244f64a911206e59e6a0aa33d11f1f408ec79b772e9c3",
+    "mismatches": 0
+  },
+  "example_replay": {"executed": 24, "divergences": 0, "model_or_dependent_exemptions": 3, "tracked_writes": 0},
+  "tool_registry_check": {"passed": true, "retained_log_sha256": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22"},
+  "independent_outgoing_functional_review": {
+    "disposition": "ACCEPTED_BOUNDED",
+    "receipt": "outgoing-functional-review.md",
+    "sha256": "ded7b1548e837b20b97525f2d9409ca880a6f18215034806e7c81cdf300d387b"
+  },
+  "limits": ["remaining source and English gaps stay open", "maintainer real-terminal approval remains open", "annual textual completeness remains open", "new exact-main push and Actions must be verified separately"],
+  "retention": "Raw operational logs and full native reports are retained in repository scratch; hashes bind the observed runs without publishing host paths or runtime output. Tracked source, generated and independent review receipts preserve their stated evidence separately."
+}

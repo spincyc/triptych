@@ -7,6 +7,72 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-23.
 
+## Reader and corpus recovery, 2026-10-23
+
+<!-- promised-deliverable: reader-corpus-recovery-2026-10-23 -->
+
+**In progress.** Recover the interrupted work and correct the source-to-corpus
+pipeline, Catena book coverage, English oration gaps, response typography,
+Scripture presentation and terminal/browser parity. Independent implementation
+and cold-review lanes must retain source identity, checked loci and publication
+bounds. Existing annual and terminal-reader promises remain open until their
+own criteria pass; a research plan or a successful render is not text coverage.
+
+Recovery starts from clean merge `37c018cad`. Read-only remote inspection
+confirms that this exact commit already reached `origin/main`; the feature ref
+has separate history. Earlier statements that the merge and main push remain
+pending are superseded by that ref evidence. Pages run `39942941690` then
+completed successfully; fresh Day, Propers and Catena requests return HTTP 200.
+No abandoned local runtime was found. The remote deployment was still active
+when recovered and was monitored to completion without starting another run.
+
+The initial Catena projection contains 1,352 admitted fragments: 1,351 on
+Genesis and one on Matthew 9. Other books' chapter spines and acquisition leads
+are not admitted commentary. The previous cross-reference audit deliberately
+accepted no new commentary. Recovery must repair admission and research reuse,
+as well as explain coverage truthfully on both reading surfaces.
+
+The focused [recovery record](workflows/reviews/missal-reader-resume-2026-10-23/RECORD.md)
+owns new verification and findings. Work stays on `feature/missal-reader` under
+the workspace rules. The maintainer's subsequent instruction authorizes
+coherent commits and pushes of consistent checkpoints to `main`, followed by
+verification of the exact remote commit and successful GitHub Actions. Commit
+on the workspace branch and publish its validated descendant to `main` without
+switching or renaming the branch.
+
+The remote feature ref is the pre-sanitization history: its acquisition audit
+still carries the two machine-specific references removed by the preceding
+authorized recovery. An ancestry-only merge would reintroduce those historical
+objects. Recovery preserves the current clean history; publishing the new work
+to that existing feature ref therefore requires a separate safe ref
+disposition. The authorized main publication can proceed directly from the
+sanitized main ancestry without reconnecting that old feature history.
+
+The recovered implementation is now checkpointed in coherent commits.
+Weekly research must register or explicitly defer each source, including exact
+binding and source evidence; inherited Masses and weekday I/II courses now reach
+the worklist. Checked Catena commentary expands to seven books, with a separate
+explicit unestablished-date section for verified Mark and Philippians texts.
+Both readers follow canonical Scripture projections and shared liturgical
+formatting, and the terminal adds the browser-owned comparison, source, Study,
+Contents and sharing paths with responsive layout and independent cold review.
+
+Two independently reviewed historical English batches add 206 terminal owners.
+Roman 1962 represented English coverage is 425/1,427; 1,002 absences remain
+explicit. Postconciliar unrelated George/Apollinaris bindings are removed and
+Jerome's revised antecedent is accurately qualified. The 539-test integrated
+Catena/projection/artifact suite and final 36-test layout/parity/typography
+rerun pass. Owner generation and all 7,516 source/Proper/Catena pins are exact.
+The immutable annual matrix passes 5,856 renderings; final terminal tests pass
+116 cases with one intentionally inapplicable runtime skip. The complete
+source aggregate, public/preview builds and both verifiers pass. Final native
+execution passes 44 dialogue checks and all 257 browser assertions across
+twelve harnesses without skips or console/request/HTTP problems. The
+[validation receipt](workflows/reviews/missal-reader-resume-2026-10-23/final-validation.json)
+pins the tested revisions and retained evidence. Exact new-main deployment
+verification remains open. This supersedes no annual textual-completeness or
+maintainer terminal-acceptance requirement.
+
 ## Annual Missal reader completion, 2026-10-22
 
 <!-- promised-deliverable: missal-reader-annual-completion-2026-10-22 -->
