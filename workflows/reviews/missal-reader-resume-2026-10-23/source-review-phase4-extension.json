@@ -1,0 +1,136 @@
+{
+  "schema": "triptych-source-review-receipt/v1",
+  "review": "independent assembled lexical evidence and two Latin repairs",
+  "reviewed_on": "2026-10-23",
+  "disposition": "accepted-and-installed-historical-source-extension",
+  "source_baseline": "2e030b564f4413b735ddbea3061082ebe981b11a",
+  "installed_commit": "d5b6f387b563a9b207ad2754ecff0580ac1eee64",
+  "parent_core_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-23/source-review-phase4-core.json",
+    "sha256": "8d284fe64d2dd30adcc24a65079627eb348539788e081f0177cd70ef37aad9ee",
+    "bytes": 7702
+  },
+  "parent_core_manifest_sha256": "d1741a844db97aa71c27c43db913f220006c3081a99130d3eba6839ac825ae69",
+  "extension_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-23/source-postimages-phase4-extension.json",
+    "sha256": "247ad5a588bb5692ebe23c6668c4b947c1ba770e3e173a6892a6a2c2ef1f9610"
+  },
+  "combined_source_epoch_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-23/source-postimages-phase4-source-epoch.json",
+    "sha256": "0f7912bcc119f7818c2cd63e79f2f2e549042cc8c38e4d634a408e250c92fee7"
+  },
+  "raw_review_receipt_sha256": "73b8db51f8bc4a0be9e5021acca8fd4c3dbac65c645a45eef1cda040e321caec",
+  "source_paths": 41,
+  "new_paths": 38,
+  "replaced_parent_paths": [
+    "src/sources/calendars/roman-1962/propers.yaml",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+    "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml"
+  ],
+  "verified_parent_paths": 664,
+  "combined_source_epoch_paths": 702,
+  "lexical_evidence": {
+    "exact_form_pairs": 20,
+    "prayer_admissions": 0,
+    "method": "own-appointment-lexically-attested-spelling-2026-10-23",
+    "canonical_method_owner": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+    "source_review_receipt_sha256": "2c8164d63e68035bfb8bd1eaa386f433364322c602bca5fbfabd33bbe6f3a4e0",
+    "pair_decisions_receipt_sha256": "9ce96be6e4ac5d40a46164291a7f5026d26e121e461f232c65556fd1b83aae4e",
+    "dated_method_receipt_sha256": "35d983d09a3f9129c9662ce4ec61edcb9923d1d48bca7183df78767947b0cd30",
+    "limits": "Each application still needs the same particular lexeme and grammatical form in full own-appointment source and target context, exact aligned original tokens and unchanged received English. Homograph/case ambiguity, name changes, different words and forms outside the source proof remain excluded. No broad character fold or new prayer admission."
+  },
+  "latin_repairs": [
+    {
+      "target": [
+        "pentecost-thursday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "prior_body_sha256": "f7306692c3cb553fccbb625f5fc86c5c3ef715116729bd783d8543ec0cf24941",
+      "accepted_body_sha256": "37d148a157556f9beb8c74b89a33a30a41cd00a976d225418325c24e7821f5da",
+      "projection_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-next-leads.common-damage-pentecost-thursday-collect",
+      "target_control_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.common-damage-pentecost-thursday-collect-20261023",
+      "historical_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.common-damage-pentecost-thursday-collect-20261023"
+    },
+    {
+      "target": [
+        "easter-vigil",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "prior_body_sha256": "d9d471a71851c3303a05dc9c7f6a9127423be3a2e16797632eef7a2d34305cdc",
+      "accepted_body_sha256": "0b0a86707a0624f61eb38e46f49c8a44d403df74bc09695a1cb210b08acbd1cf",
+      "projection_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-next-leads.common-damage-easter-vigil-collect",
+      "target_control_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.common-damage-easter-vigil-collect-20261023",
+      "historical_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.common-damage-easter-vigil-collect-20261023"
+    }
+  ],
+  "latin_source_review_receipt_sha256": "ae5dbd09a7413466016435a2fe8928f4f50d47994a1f3c6dc03b63875d761634",
+  "other_latin_ledger_rows_unchanged": 1313,
+  "latin_owner_order_and_unowned_raw_bytes_unchanged": true,
+  "english_inventory_bytes_unchanged": true,
+  "english_counts": {
+    "with_english": 780,
+    "untranslated": 657,
+    "new_admissions": 0
+  },
+  "audit_update": {
+    "changed_keys": [
+      "lexical_comparison_method_20261023_json",
+      "source_postimages",
+      "input_snapshots",
+      "remaining_groups"
+    ],
+    "prior_baseline_acceptances_refusals_and_outcomes_preserved": true,
+    "current_missing_latin_count": 56
+  },
+  "correction_history": [
+    {
+      "kind": "explicit core prose rejoin",
+      "predecessor_extension_manifest_sha256": "af086e0156897c4359b5754df621a2ae6701c0d066aa24be325062bbacf9ed2c",
+      "accepted_extension_manifest_sha256": "247ad5a588bb5692ebe23c6668c4b947c1ba770e3e173a6892a6a2c2ef1f9610",
+      "changed_ascii_bytes": 1,
+      "change": "Current remaining-work count 53 changed to 56; all other 40 source postimages and all other parsed audit fields are exact.",
+      "exact_delta_receipt_sha256": "82ff0de16e3391ab7667458b8490688f1eac23ecf08e72d82aa7e2322de562ed"
+    }
+  ],
+  "retained_refusals": {
+    "target": [
+      "pentecost-monday",
+      "main",
+      "Postcommunion",
+      "all",
+      1
+    ],
+    "current_body_sha256": "d43135c6c7d92a6c067eb119edf55b4b5771f1ded959afbc140c9d311c7ff679",
+    "decision": "refuse-target-repair",
+    "current_body_preserved": true
+  },
+  "independent_source_graph": {
+    "problems": [],
+    "counts": {
+      "corpus": 5,
+      "edition": 1276,
+      "work": 1069,
+      "artifact": 3771,
+      "passage": 7922,
+      "segment": 124
+    }
+  },
+  "installed_snapshot_verification": {
+    "commit": "d5b6f387b563a9b207ad2754ecff0580ac1eee64",
+    "manifest_paths": 702,
+    "all_historical_git_objects_exact": true
+  },
+  "limits": [
+    "These are historical accepted source snapshots, independently reviewed within the stated scopes and installed at the named commits. Later changes require their own exact receipt.",
+    "Source, generated-output, integrated validation and publication are separate decisions. No annual textual completeness, whole-source reading, human terminal approval, integrated native/browser acceptance or deployment is asserted.",
+    "Restricted target controls remain metadata-only in these public receipts. Existing source-specific rights and witness qualifications remain controlling.",
+    "Later additional English cohorts and later Holy Week witnesses are outside these installed snapshots; source-stage candidates are not counted as admitted English.",
+    "The historical witness conclusion difference for the Easter Vigil remains recorded in its source provenance; it was not harmonized into a false identity."
+  ]
+}

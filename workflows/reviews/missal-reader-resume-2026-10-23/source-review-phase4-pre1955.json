@@ -1,0 +1,201 @@
+{
+  "schema": "triptych-source-review-receipt/v1",
+  "review": "independent pre-1955 inherited-disposition reconciliation",
+  "reviewed_on": "2026-10-23",
+  "disposition": "accepted-and-installed-historical-record-reconciliation",
+  "source_baseline": "2e030b564f4413b735ddbea3061082ebe981b11a",
+  "installed_commit": "3cd71839588fd004659902c74a62f94dc1995440",
+  "parent_core_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-23/source-review-phase4-core.json",
+    "sha256": "8d284fe64d2dd30adcc24a65079627eb348539788e081f0177cd70ef37aad9ee",
+    "bytes": 7702
+  },
+  "parent_core_manifest_sha256": "d1741a844db97aa71c27c43db913f220006c3081a99130d3eba6839ac825ae69",
+  "raw_review_receipt_sha256": "6d3616c6fa603dbbc18ce93708757f4ab19dc997a2b40e4ebc107228e59096b4",
+  "source_manifest_sha256": "6e2ae52b6c5151d9b9b45988c98c204bb646c30a05b66ccabea89353f8a956b9",
+  "accepted_path": "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml",
+  "preimage_sha256": "465e15d42b7301b22c2d93be1b95b00eb326ee0cd2ad1f928520952a89e89faa",
+  "postimage_sha256": "17a761d02223beb7b3c08fe705784acea5bf9c8cc09fd57ff13b3e0d45cbf7a2",
+  "prior_exclusions": 49,
+  "final_exclusions": 57,
+  "old_rows_unchanged": 47,
+  "record_category_transitions": [
+    {
+      "target": [
+        "palm-sunday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Postcommunion",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Postcommunion",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      }
+    },
+    {
+      "target": [
+        "palm-sunday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Secret",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Secret",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      }
+    }
+  ],
+  "new_exact_exclusions": [
+    {
+      "record": "untranslated",
+      "mass": "beatae-mariae-virginis-reginae",
+      "form_id": "main",
+      "proper": "Alleluia",
+      "cycle": "all",
+      "occurrence": 1,
+      "reason": "recension-absent",
+      "basis": "calendar-departure"
+    },
+    {
+      "record": "untranslated",
+      "mass": "beatae-mariae-virginis-reginae",
+      "form_id": "main",
+      "proper": "Alleluia (Tempore paschali)",
+      "cycle": "all",
+      "occurrence": 1,
+      "reason": "recension-absent",
+      "basis": "calendar-departure"
+    },
+    {
+      "record": "untranslated",
+      "mass": "beatae-mariae-virginis-reginae",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "reason": "recension-absent",
+      "basis": "calendar-departure"
+    },
+    {
+      "record": "untranslated",
+      "mass": "beatae-mariae-virginis-reginae",
+      "form_id": "main",
+      "proper": "Communion",
+      "cycle": "all",
+      "occurrence": 1,
+      "reason": "recension-absent",
+      "basis": "calendar-departure"
+    },
+    {
+      "record": "untranslated",
+      "mass": "beatae-mariae-virginis-reginae",
+      "form_id": "main",
+      "proper": "Introit",
+      "cycle": "all",
+      "occurrence": 1,
+      "reason": "recension-absent",
+      "basis": "calendar-departure"
+    },
+    {
+      "record": "untranslated",
+      "mass": "beatae-mariae-virginis-reginae",
+      "form_id": "main",
+      "proper": "Offertory",
+      "cycle": "all",
+      "occurrence": 1,
+      "reason": "recension-absent",
+      "basis": "calendar-departure"
+    },
+    {
+      "record": "untranslated",
+      "mass": "beatae-mariae-virginis-reginae",
+      "form_id": "main",
+      "proper": "Postcommunion",
+      "cycle": "all",
+      "occurrence": 1,
+      "reason": "recension-absent",
+      "basis": "calendar-departure"
+    },
+    {
+      "record": "untranslated",
+      "mass": "beatae-mariae-virginis-reginae",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "reason": "recension-absent",
+      "basis": "calendar-departure"
+    }
+  ],
+  "owning_coverage_checks": {
+    "roman-1962": {
+      "slots": 1437,
+      "with_english": 780,
+      "ledgered_untranslated": 657,
+      "unaccounted": 0,
+      "outside_the_ledger": 0,
+      "unmatched_records": 0,
+      "stale_translation_records": 0,
+      "rights_restricted": 0,
+      "inherited_inapplicable_records": 0
+    },
+    "roman-pre-1955": {
+      "slots": 1380,
+      "with_english": 765,
+      "ledgered_untranslated": 615,
+      "unaccounted": 0,
+      "outside_the_ledger": 0,
+      "unmatched_records": 0,
+      "stale_translation_records": 0,
+      "rights_restricted": 0,
+      "inherited_inapplicable_records": 57
+    }
+  },
+  "negative_cases": 15,
+  "all_corruption_negatives_detected": true,
+  "source_body_or_appointment_changes": 0,
+  "installed_snapshot_verification": {
+    "commit": "3cd71839588fd004659902c74a62f94dc1995440",
+    "manifest_paths": 1,
+    "all_historical_git_objects_exact": true
+  },
+  "limits": [
+    "This is exact inherited-record accounting, not a pre1955 textual collation, new English admission or rights clearance.",
+    "Later parent admissions can require further exact record-category transitions; this receipt covers the stated frozen core-v2 parent only.",
+    "No final aggregate, annual, native, TUI or release gate was run."
+  ]
+}

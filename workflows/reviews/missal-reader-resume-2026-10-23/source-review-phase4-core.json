@@ -1,0 +1,148 @@
+{
+  "schema": "triptych-source-review-receipt/v1",
+  "review": "independent assembled source recovery core",
+  "reviewed_on": "2026-10-23",
+  "disposition": "accepted-and-installed-historical-source-snapshot",
+  "source_baseline": "2e030b564f4413b735ddbea3061082ebe981b11a",
+  "installed_commit": "eeab39fefcabcde75429e07c8d6efe911e19640a",
+  "install_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-23/source-postimages-phase4-core.json",
+    "sha256": "d1741a844db97aa71c27c43db913f220006c3081a99130d3eba6839ac825ae69"
+  },
+  "source_paths": 664,
+  "reviews": [
+    {
+      "scope": "Latin bodies and appointments",
+      "raw_receipt_sha256": "18a75c725cf1d3a4ab3a53832312e6e43a810f780c48cbff5ff6e09393a1c381",
+      "disposition": "accepted",
+      "accepted_source_paths": 135,
+      "scope_note": "English sidecar acceptance in this review reaches ten exact new absence identities; English bodies receive their separate review.",
+      "new_complete_latin_bodies": 26,
+      "repaired_existing_latin_bodies": 7,
+      "prior_latin_owner_identities_retained": 1289,
+      "mass_records_preserved": 491,
+      "seasonal_selections_checked": 7,
+      "source_graph_result": "pass",
+      "new_rights_clearance": false
+    },
+    {
+      "scope": "Roman and postconciliar English bodies and source bindings",
+      "raw_receipt_sha256": "700f6952600ffba5d1b91de515749a0f1c3daab56e14c137e741cb040b3e0e6d",
+      "disposition": "accepted",
+      "new_roman_owners": 232,
+      "strict_and_table_cohort": {
+        "owners": 193,
+        "strict": 92,
+        "same_witness_conclusion_table": 101,
+        "historical_bodies": 187
+      },
+      "separate_bounded_spelling_cohort": {
+        "owners": 39,
+        "complete_sequence_after_exact_position_comparison": 29,
+        "same_witness_conclusion_table_after_exact_position_comparison": 10,
+        "historical_bodies": 39
+      },
+      "source_images_reused_by_exact_hash": 208,
+      "prior_roman_positive_dictionaries_preserved": 548,
+      "residual_old_absence_dictionaries_preserved": 647,
+      "exact_new_appointment_absence_dictionaries": 10,
+      "roman1962_counts": {
+        "with_english": 780,
+        "untranslated": 657,
+        "total": 1437
+      },
+      "postconciliar_counts": {
+        "prior_positive_dictionaries_preserved": 112,
+        "new_owners": 3,
+        "with_english": 115,
+        "untranslated": 446,
+        "total": 561
+      },
+      "owning_tests": {
+        "tests": 25,
+        "exit_code": 0,
+        "skips": 0
+      },
+      "calendar_result": "pass with the existing Psalm 56:14 bound exception",
+      "literal_source_policy": "Received English, source punctuation and actual printed conclusion cues remain literal. No witness typo is silently modernized, and no name, option, response or English ending is supplied.",
+      "comparison_limits": "Whole ordered petitions and actual ending identity; the separately documented same-witness conclusion-family/person/prefix route; exact position-bound spelling routes remain separate. Cross-owner reuse requires complete canonical Latin byte equality including conclusion and final line ending."
+    },
+    {
+      "scope": "Catena source merge and generated Catena output",
+      "raw_receipt_sha256": "9120d3bc1ed3981fd391f7cd14f6e0f1da02e097a26f23560aa1d3f0ec237a1b",
+      "disposition": "accepted",
+      "accepted_source_paths": 48,
+      "prior_rows_preserved": 1373,
+      "new_rows": 31,
+      "final_rows": 1404,
+      "books": 19,
+      "generated_files": 2043,
+      "generated_manifest_sha256": "a5e7c3ea62dfd430af78b3ed4b263dcc3d501d60fbcbdea054d20c8db1f916fe",
+      "old_lazy_bodies_preserved": 1373,
+      "old_licensed_notices_preserved": 9,
+      "scripture_projection_files_preserved": 73,
+      "generated_currentness": {
+        "result": "pass",
+        "files": 2043,
+        "drifted_files": 0,
+        "completed_receipt_sha256": "0ad2da7129a821154959efaba65f49628daf1f1dbb44c5b9c2e745faab1f5098"
+      },
+      "remaining_source_limits": [
+        "City of God XVII.9 remains source-only and unmapped.",
+        "Galatians sections 5 and 8 remain unadmitted."
+      ],
+      "new_rights_permissions": false,
+      "reader_code_changes": false
+    }
+  ],
+  "correction_history": [
+    {
+      "kind": "current audit count prose",
+      "predecessor_manifest_sha256": "97cc01bff559a9b270e22d5c690e78a984a5d7a0e4aa24a5c69d3e2b2716dfbf",
+      "accepted_manifest_sha256": "d1741a844db97aa71c27c43db913f220006c3081a99130d3eba6839ac825ae69",
+      "canonical_path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+      "change": "Current remaining-work count 53 changed to 56.",
+      "changed_ascii_bytes": 1,
+      "other_source_postimages_unchanged": 663,
+      "all_other_parsed_audit_fields_unchanged": true,
+      "exact_delta_receipt_sha256": "a7580812705034de6bffeb3b5f71c68330847f78e4808f77a54e0aed23d7200e"
+    },
+    {
+      "kind": "Catena candidate source extent and paragraphs",
+      "held_receipt_sha256": "259543de39b6c41408bb3ed063cff7eec78022c17671a0e82b464ea76c1e767b",
+      "corrected_acceptance_receipt_sha256": "4b85c08f7aaf655f573f450ccc3d01613a384884bf63bcf6ac139ed5f458565b",
+      "resolution": "Ten homily segment endpoints include the terminal editorial-note line; three source paragraph divisions are restored before acceptance."
+    },
+    {
+      "kind": "English reviewer setup failure",
+      "resolution": "The first isolated replay omitted required baseline roots and passed 20 of 25 tests. Supplying the exact unchanged baseline inputs resolved five owner/input failures; the unchanged 25 tests and calendar check then passed.",
+      "incomplete_test_log_sha256": "1c1c03de4dbd2c9b162af3718a45f0831ba0cc2ead75c2214701c919b8648335",
+      "incomplete_calendar_log_sha256": "538e94c6c165c3c43e632a325ad03c77ae5d6f39122e53b81c8358831fef0fc8",
+      "corrected_input_receipt_sha256": "bf89dfd560405348a5691693775ae08d173083e4bc0e376eec96f28991c3cedb",
+      "completed_test_log_sha256": "49848a9f8b16cb762355995dc30b9731d45b914e7bd42b748533ad5fbc1ced26"
+    },
+    {
+      "kind": "interrupted second Catena currentness derivation",
+      "exit_status": 143,
+      "counted_as_pass": false,
+      "completed_source_and_first_generation_checks_retained": true,
+      "replacement_currentness_result": "pass",
+      "replacement_receipt_sha256": "0ad2da7129a821154959efaba65f49628daf1f1dbb44c5b9c2e745faab1f5098"
+    }
+  ],
+  "retained_refusals": [
+    "The source spelling/name and conclusion-family limits remain explicit; the excluded eumdem/eundem owner remains untranslated in this core.",
+    "The John Damascene Offertory unit 2342 question remains outside the narrow appointment repair."
+  ],
+  "installed_snapshot_verification": {
+    "commit": "eeab39fefcabcde75429e07c8d6efe911e19640a",
+    "manifest_paths": 664,
+    "all_historical_git_objects_exact": true
+  },
+  "limits": [
+    "These are historical accepted source snapshots, independently reviewed within the stated scopes and installed at the named commits. Later changes require their own exact receipt.",
+    "Source, generated-output, integrated validation and publication are separate decisions. No annual textual completeness, whole-source reading, human terminal approval, integrated native/browser acceptance or deployment is asserted.",
+    "Restricted target controls remain metadata-only in these public receipts. Existing source-specific rights and witness qualifications remain controlling.",
+    "Later additional English cohorts and later Holy Week witnesses are outside these installed snapshots; source-stage candidates are not counted as admitted English."
+  ]
+}
