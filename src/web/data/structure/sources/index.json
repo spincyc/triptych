@@ -1,10 +1,10 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3685,
-  "editions": 1255,
-  "passages": 6067,
-  "readable": 3501,
+  "artifacts": 3711,
+  "editions": 1256,
+  "passages": 6449,
+  "readable": 3599,
   "works": 1064
  },
  "facets": {
@@ -3982,7 +3982,7 @@
     "id": "en"
    },
    {
-    "editions": 371,
+    "editions": 372,
     "id": "la"
    },
    {
@@ -4178,14 +4178,14 @@
     "label": "20th century"
    },
    {
-    "editions": 655,
+    "editions": 656,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 2052,
+    "artifacts": 2069,
     "editions": 480,
     "id": "public-domain"
    },
@@ -4205,8 +4205,8 @@
     "id": "licensed"
    },
    {
-    "artifacts": 140,
-    "editions": 33,
+    "artifacts": 149,
+    "editions": 34,
     "id": "project-created"
    },
    {
@@ -6556,8 +6556,8 @@
      "file": "1929-herder-second-revised-1929.json",
      "id": "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929",
      "language": "la-de",
-     "passages": 2,
-     "readable": 1,
+     "passages": 9,
+     "readable": 8,
      "rights": [
       "public-domain",
       "restricted"
@@ -10604,8 +10604,8 @@
      "file": "1862-pustet-ratisbon-1862.json",
      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
      "language": "la",
-     "passages": 380,
-     "readable": 345,
+     "passages": 426,
+     "readable": 349,
      "rights": [
       "public-domain"
      ],
@@ -10656,7 +10656,7 @@
      "file": "1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
      "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
      "language": "la",
-     "passages": 93,
+     "passages": 95,
      "readable": 36,
      "rights": [
       "public-domain"
@@ -10708,7 +10708,7 @@
      "file": "1962-vatican-typica-1962.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
      "language": "la",
-     "passages": 477,
+     "passages": 566,
      "readable": 0,
      "rights": [
       "unresolved"
@@ -10924,7 +10924,7 @@
      "file": "1981-latin-editio-typica-altera-1981.json",
      "id": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
      "language": "la",
-     "passages": 28,
+     "passages": 33,
      "readable": 0,
      "rights": [
       "restricted"
@@ -11261,7 +11261,7 @@
      "file": "1861-philadelphia-1861.json",
      "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
      "language": "en",
-     "passages": 447,
+     "passages": 469,
      "readable": 22,
      "rights": [
       "public-domain",
@@ -16282,7 +16282,7 @@
      "file": "1945-benziger-revised-1945.json",
      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
      "language": "en",
-     "passages": 53,
+     "passages": 177,
      "readable": 0,
      "rights": [
       "public-domain",
@@ -34478,6 +34478,19 @@
       "project-created"
      ],
      "title": "Roman 1962 Latin Proper Editorial Projection, 21 October 2026",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-22",
+     "file": "2026-2026-10-22-editorial-projection.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22",
+     "language": "la",
+     "passages": 87,
+     "readable": 87,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 22 October 2026",
      "year": 2026
     }
    ],

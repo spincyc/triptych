@@ -594,6 +594,21 @@
   },
   {
    "artifact_type": "normalized-text",
+   "byte_size": 193,
+   "edition_owned": true,
+   "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.phase4-nativity-marian-reuse-en-ed897177",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "Phase4 source-only English31 scope. Latin publication permissions, old projections, all173 preceding English rows and source ownership are unchanged. Two conditional CommonVirginII Collect/Secret bindings remain absent.",
+   "page_count": null,
+   "retrieved": "2026-10-22",
+   "rights": "public-domain",
+   "rights_basis": "Unchanged existing Cummiskey1861 UnitedStates public-domain English expression; exact reuse from the already-checked tracked donor artifact, not a new historical inspection or rights decision.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
    "byte_size": 7724,
    "edition_owned": true,
    "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en",
@@ -648,6 +663,21 @@
    "retrieved": "2026-08-20",
    "rights": "public-domain",
    "rights_basis": "The 1861 Philadelphia printing was published long before 1930 and is in the public domain in the United States. This file contains only that printing's own Latin wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced. The rights basis is a United States one: a reader elsewhere must establish the position in their own jurisdiction.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 4768,
+   "edition_owned": true,
+   "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "One header and 21 recipient rows, all main/all/occurrence1. The Roman English sidecar owns each target-to-donor inference. Passage loci retain the existing verification passage's source locus; only the TSV columns declare the recipient identity. This is historical antecedent English, not official 1962 English. Advent II Collect is excluded. No source image inspection date, saint name, prayer ending or original evidence record is changed. Independent cold source review remains required.",
+   "page_count": null,
+   "retrieved": "2026-10-22",
+   "rights": "public-domain",
+   "rights_basis": "Only historical English wording from the 1861 Philadelphia printing, in the United States public domain by publication date. The 21 rows reuse nine distinct already-checked published bodies without changing spelling, punctuation, names or conclusions. No page image, Google/IA furniture, watermark, OCR material or modern translation is included. The controlling Google-digitized PDF remains remote and unresolved.",
    "rights_jurisdiction": "United States",
    "source_url": null,
    "storage": "tracked"
@@ -1014,6 +1044,94 @@
    ],
    "storage": "tracked",
    "verified_on": "2026-08-27",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-advent-ember-friday--main--secret--all--1",
+   "locus": "comm-s-bonifatii-martyris/secret",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-comm-s-romani-martyris--main--secret--all--1",
+   "locus": "comm-s-bonifatii-martyris/secret",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-commune-unius-martyris-3--main--secret--all--1",
+   "locus": "comm-s-bonifatii-martyris/secret",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-s-hermenegildi-martyris--main--secret--all--1",
+   "locus": "comm-s-bonifatii-martyris/secret",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
    "withheld": "not-prose"
   },
   {
@@ -1589,6 +1707,28 @@
    "withheld": "not-prose"
   },
   {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-comm-s-petri-apostoli--main--collect--all--1",
+   "locus": "comm-s-petri-apostoli-2/collect",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
+   "withheld": "not-prose"
+  },
+  {
    "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
    "artifact_type": "facsimile-pdf",
    "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-comm-s-petri-apostoli-2--main--collect--all--1",
@@ -1674,6 +1814,28 @@
    ],
    "storage": "tracked",
    "verified_on": "2026-08-27",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-comm-s-petri-apostoli--main--secret--all--1",
+   "locus": "comm-s-petri-apostoli-2/secret",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
    "withheld": "not-prose"
   },
   {
@@ -2689,6 +2851,50 @@
    "withheld": "not-prose"
   },
   {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-commune-plurimorum-martyrum-2--main--secret--all--1",
+   "locus": "comm-ss-symphorosae-septem-eius-filiorum/secret",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-ss-vincentii-anastasii-martyrum--main--secret--all--1",
+   "locus": "comm-ss-symphorosae-septem-eius-filiorum/secret",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
+   "withheld": "not-prose"
+  },
+  {
    "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
    "artifact_type": "facsimile-pdf",
    "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-comm-ss-symphorosae-septem-eius-filiorum--main--secret--all--1",
@@ -2997,6 +3203,72 @@
    "withheld": "not-prose"
   },
   {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-comm-s-alexii-confessoris--main--postcommunion--all--1",
+   "locus": "commune-confessoris-non-pontificis-1/postcommunion",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-s-ioannis-a-deo-confessoris--main--postcommunion--all--1",
+   "locus": "commune-confessoris-non-pontificis-1/postcommunion",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-s-pauli-primi-eremitae-confessoris--main--postcommunion--all--1",
+   "locus": "commune-confessoris-non-pontificis-1/postcommunion",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
+   "withheld": "not-prose"
+  },
+  {
    "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
    "artifact_type": "facsimile-pdf",
    "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-commune-confessoris-non-pontificis-1--main--postcommunion--all--1",
@@ -3038,6 +3310,50 @@
    ],
    "storage": "tracked",
    "verified_on": "2026-08-27",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-s-ioannis-baptistae-la-salle-confessoris--main--secret--all--1",
+   "locus": "commune-confessoris-non-pontificis-1/secret",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-s-pauli-primi-eremitae-confessoris--main--secret--all--1",
+   "locus": "commune-confessoris-non-pontificis-1/secret",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
    "withheld": "not-prose"
   },
   {
@@ -3650,6 +3966,28 @@
    ],
    "storage": "tracked",
    "verified_on": "2026-10-19",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-pentecost-thursday--main--secret--all--1",
+   "locus": "dom-pentecostes/secret",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
    "withheld": "not-prose"
   },
   {
@@ -4490,6 +4828,28 @@
    ],
    "storage": "tracked",
    "verified_on": "2026-08-26",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.phase4-nativity-marian-reuse-en-ed897177",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase4-en31-nativitate-beatae-mariae-virginis--main--communion--all--1",
+   "locus": "missa-de-s-maria-in-sabbato-2/communion",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
    "withheld": "not-prose"
   },
   {
@@ -8303,6 +8663,50 @@
    "withheld": "not-prose"
   },
   {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-commune-festorum-bmv--main--postcommunion--all--1",
+   "locus": "praesentatione-beatae-mariae-virginis/postcommunion",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-sanctissimi-nominis-beatae-mariae-virginis--main--postcommunion--all--1",
+   "locus": "praesentatione-beatae-mariae-virginis/postcommunion",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
+   "withheld": "not-prose"
+  },
+  {
    "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
    "artifact_type": "facsimile-pdf",
    "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-praesentatione-beatae-mariae-virginis--main--postcommunion--all--1",
@@ -8344,6 +8748,50 @@
    ],
    "storage": "tracked",
    "verified_on": "2026-08-27",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-commune-festorum-bmv--main--secret--all--1",
+   "locus": "praesentatione-beatae-mariae-virginis/secret",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-sanctissimi-nominis-beatae-mariae-virginis--main--secret--all--1",
+   "locus": "praesentatione-beatae-mariae-virginis/secret",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
    "withheld": "not-prose"
   },
   {
@@ -9802,6 +10250,28 @@
    "withheld": "not-prose"
   },
   {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-s-iosephi-cupertino-confessoris--main--postcommunion--all--1",
+   "locus": "s-petri-nolasci-confessoris/postcommunion",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
+   "withheld": "not-prose"
+  },
+  {
    "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
    "artifact_type": "facsimile-pdf",
    "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-s-petri-nolasci-confessoris--main--postcommunion--all--1",
@@ -9843,6 +10313,50 @@
    ],
    "storage": "tracked",
    "verified_on": "2026-08-27",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-s-bernardini-senensis-confessoris--main--secret--all--1",
+   "locus": "s-petri-nolasci-confessoris/secret",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-exact-prayer-reuse-en-386eed26",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-phase2-exact-reuse-s-iosephi-cupertino-confessoris--main--secret--all--1",
+   "locus": "s-petri-nolasci-confessoris/secret",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-22",
    "withheld": "not-prose"
   },
   {
