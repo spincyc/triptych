@@ -2,9 +2,11 @@
 
 Status: source and implementation batches independently reviewed and committed;
 owner generation, complete source validation, local site builds, the annual
-matrix, terminal tests and the complete native browser run pass. Exact new-main
-deployment remains open. This record does not accept annual textual completeness
-or maintainer real-terminal review.
+matrix, terminal tests and the complete native browser run pass. The repair
+checkpoint is published on main with successful exact-revision Pages and hygiene
+runs; all 19 independently checked live endpoints match the tested artifact.
+This record does not accept annual textual completeness or maintainer real-terminal
+review. This later evidence-only commit requires its own exact-head Actions check.
 
 ## Recovered state
 
@@ -70,7 +72,8 @@ Independent review reproduced and resolved four defects: omitted weekday
 courses, wrong-author identity acceptance, raw-ID bypass and same-source
 different-locus binding reorder. Its 112 distinct tests and read-only currency
 checks pass. The implementation's expanded workflow battery passes 169 tests.
-Final integrated source validation passes; exact new-main deployment is separate.
+Final integrated source validation passes; exact new-main deployment is recorded
+separately below.
 
 ## Source candidate
 
@@ -195,8 +198,8 @@ product pass. A source aggregate then correctly exposed the three catalogue
 metadata leaves; canonical regeneration and the complete corrected source gate
 then pass.
 
-No new main push is claimed yet. Maintainer terminal acceptance, full annual
-textual completeness and the remaining source/translation backlog stay open.
+The new main publication is recorded below. Maintainer terminal acceptance, full
+annual textual completeness and the remaining source/translation backlog stay open.
 
 ## Coherent checkpoints
 
@@ -211,7 +214,7 @@ textual completeness and the remaining source/translation backlog stay open.
 The combined Catena/backend/reader/projection/public-artifact suite passes 539
 tests. The existing chronology assertions now use the directly reviewed 413
 range-start ordering key. New test imports work under both package and discovery
-invocation. No new main push is claimed before the final publication gates.
+invocation. No new main push was made before the final publication gates passed.
 
 Further coherent checkpoints retain the final verse gap, source-specific native
 Gospel actor proof, recovered Aquinas/Schuster research handoff, visible
@@ -234,7 +237,42 @@ assertions; 44 separate dialogue assertions also pass. Terminal tests pass
 The [final functional outgoing audit](outgoing-functional-review.md) independently
 accepts the committed delta and all 7,516 generated pins, 116 code-file pins and
 13,936 published-data pins. It preserves the sanitized ancestry and excludes
-the obsolete feature history. The main publication gate stays open until a
-fresh non-force push, exact remote revision and successful resulting Actions
-deployment are observed. The ledger keeps the remaining source/English backlog
+the obsolete feature history. The [operational checkpoint review](outgoing-operational-review.md)
+also accepts the eight documentation and receipt paths at `feca4b42d`, independently
+joining their test-log hashes and exact evidence counts. The publication gate is
+met by the observed non-force push, exact remote revision and successful resulting
+Actions deployment below. The ledger keeps the remaining source/English backlog
 open; no annual text or human terminal approval is inferred from these checks.
+
+## Verified main publication
+
+An ordinary non-force push publishes the 19 coherent repair commits to main at
+`feca4b42d15d5e17251974a68c5ef5ded547c1d8`. Fresh remote-ref reads after the push
+and after Actions completion both return that exact revision. The local branch
+remains `feature/missal-reader`; the obsolete pre-sanitization feature history is
+not reconnected or rewritten.
+
+[Pages run 39963022000](https://github.com/spincyc/triptych/actions/runs/39963022000)
+completes successfully for event `push`, branch `main` and the exact published
+revision. Its PDF rebuild, deployment-source validation, public build, artifact
+verification, upload and Deploy step all pass. Deployment completes at
+`2026-10-23T14:05:40Z`.
+[Repository hygiene run 39963022044](https://github.com/spincyc/triptych/actions/runs/39963022044)
+also completes successfully for the same revision. The
+[Actions receipt](publication-actions.json) preserves exact workflow/run identities.
+
+Independent [live verification](publication-live.json) then checks 19 bounded
+endpoints: actual Day/Propers/Catena HTML, corrected reader assets, Catena index
+and Psalm/David/John/Mark/Philippians chapter payloads, canonical Psalm projection,
+Sources index, recovered English Proper, postconciliar Proper data and the served
+document catalogue. All return HTTP 200 with the expected content type and exact
+length/SHA-256: 11,191,955 bytes match the tested public artifact. Each endpoint
+receives one cache-busted request after deployment; no adaptive requests are used.
+Raw HTTP bodies and host-specific runtime data remain outside tracked receipts.
+
+This follow-up records those observed results and changes only operational
+documents, evidence and ledger status. Its own final main revision must also
+receive successful exact-head Actions verification; the earlier run is evidence
+for `feca4b42d`, not a claim about a future commit. The overall recovery remains
+in progress because the source/English backlog and separate annual/product
+acceptance requirements remain unmet.

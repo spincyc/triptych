@@ -69,9 +69,18 @@ source aggregate, public/preview builds and both verifiers pass. Final native
 execution passes 44 dialogue checks and all 257 browser assertions across
 twelve harnesses without skips or console/request/HTTP problems. The
 [validation receipt](workflows/reviews/missal-reader-resume-2026-10-23/final-validation.json)
-pins the tested revisions and retained evidence. Exact new-main deployment
-verification remains open. This supersedes no annual textual-completeness or
-maintainer terminal-acceptance requirement.
+pins the tested revisions and retained evidence. The 19 coherent repair commits
+reach main at `feca4b42d15d5e17251974a68c5ef5ded547c1d8` by ordinary non-force push.
+[Pages](https://github.com/spincyc/triptych/actions/runs/39963022000) and
+[repository hygiene](https://github.com/spincyc/triptych/actions/runs/39963022044)
+both complete successfully for that exact revision. Independent live verification
+finds all 19 affected endpoints return 200 with exact tested bytes, lengths and
+content types. The [publication receipt](workflows/reviews/missal-reader-resume-2026-10-23/publication-actions.json)
+and [live receipt](workflows/reviews/missal-reader-resume-2026-10-23/publication-live.json)
+preserve those observations. This evidence-only follow-up changes no production
+inputs; its final main revision still requires its own Actions check. The
+remaining corpus/English backlog, annual textual completeness and maintainer
+terminal acceptance remain open.
 
 ## Annual Missal reader completion, 2026-10-22
 

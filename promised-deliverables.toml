@@ -33,8 +33,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "coherent-main-publication"
   criterion = "Consistent coherent checkpoints are committed on the workspace branch and pushed without force to main; the exact remote commit and successful resulting GitHub Actions deployment are verified."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "workflows/reviews/missal-reader-resume-2026-10-23/RECORD.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/missal-reader-resume-2026-10-23/RECORD.md", "workflows/reviews/missal-reader-resume-2026-10-23/publication-actions.json", "workflows/reviews/missal-reader-resume-2026-10-23/publication-live.json"]
 
   [[deliverables.requirements]]
   id = "remaining-corpus-and-english-backlog"

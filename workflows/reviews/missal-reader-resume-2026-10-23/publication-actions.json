@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-23",
+  "functional_head": "70050447a8f75dd2237124a47de84cc8619d5691",
+  "published_head": "feca4b42d15d5e17251974a68c5ef5ded547c1d8",
+  "previous_main": "37c018cadcd373acd4fc09e3defa481822b86a44",
+  "coherent_commits": 19,
+  "publication": {
+    "method": "ordinary non-force push of HEAD to refs/heads/main",
+    "local_branch_preserved": "feature/missal-reader",
+    "remote_head_after_push": "feca4b42d15d5e17251974a68c5ef5ded547c1d8",
+    "remote_head_after_actions_success": "feca4b42d15d5e17251974a68c5ef5ded547c1d8",
+    "obsolete_feature_history_reconnected": false
+  },
+  "pages": {
+    "workflow_id": 313831956,
+    "run_id": 39963022000,
+    "url": "https://github.com/spincyc/triptych/actions/runs/39963022000",
+    "event": "push",
+    "branch": "main",
+    "head_sha": "feca4b42d15d5e17251974a68c5ef5ded547c1d8",
+    "status": "completed",
+    "conclusion": "success",
+    "deploy_completed_at": "2026-10-23T14:05:40Z",
+    "verified_steps": [
+      "Typeset the outstanding PDFs in the pinned container",
+      "Verify deployable sources and inventories",
+      "Build public artifact",
+      "Verify artifact and GitHub Pages compatibility",
+      "Upload verified artifact",
+      "Deploy"
+    ]
+  },
+  "repository_hygiene": {
+    "workflow_id": 350947015,
+    "run_id": 39963022044,
+    "url": "https://github.com/spincyc/triptych/actions/runs/39963022044",
+    "event": "push",
+    "branch": "main",
+    "head_sha": "feca4b42d15d5e17251974a68c5ef5ded547c1d8",
+    "status": "completed",
+    "conclusion": "success",
+    "verified_step": "Refuse tracked paths the ignore rules exclude"
+  },
+  "operational_outgoing_review": {
+    "disposition": "ACCEPTED_BOUNDED",
+    "receipt": "outgoing-operational-review.md",
+    "sha256": "bafef3eda7548c0697180ae81cf3952ff72391e97650c05d81e50d6148ca2215"
+  },
+  "independent_live_verification": {
+    "receipt": "publication-live.json",
+    "sha256": "d326298dc43cbcf914ffd1726ab9062b4462c0bdd191f917ccb46fca960f799f",
+    "endpoints": 19,
+    "exact_matches": 19,
+    "bytes": 11191955
+  },
+  "scope": "Observed publication of the reviewed repair checkpoint. Later evidence-only commits require their own exact-head Actions verification. This receipt does not accept remaining corpus or English gaps, annual textual completeness, or maintainer real-terminal approval."
+}
