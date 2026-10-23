@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-next-leads.next-leads-two-collect-repairs-20261023"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-next-leads"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Triptych offers its transcription layout and normalization under CC BY 4.0. The entire underlying petitions are independently witnessed in the US-public-domain 1862 Pustet printing; 17 U.S.C. 103(b) gives the later edition no exclusive right in those preexisting words. No blanket clearance of the target facsimile is asserted."
+provenance = "Two complete target prayers read independently on exact controlling 1962 page images at 200 and 400 dpi on 2026-10-23, then checked word for word against complete Pustet1862 page-image petitions. The target facsimile hash was rechecked; its protected page images are not retained in this artifact."
+retrieved = "2026-10-23"
+sha256 = "2f0e96d72072b5ac54511f3e3b2849f433768bb47080b3615b91ec0ceca0c4d8"
+byte_size = 582
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection-next-leads/artifacts/next-leads-two-collect-repairs-20261023/latin-only.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.next-leads-petitions-formula-20261023", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.next-leads-control-pages-20261023", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.next-leads-vigil-collect-page-382-20261023", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Retain every prior canonical wrap, N., punctuation and final LF except Aeus to Deus in Pentecost Thursday Collect and noctern to noctem in Easter Vigil Collect. Read complete target prayers at200/400dpi and complete historical petitions on page images; expand ligatures and remove stress accents only. Declare historical pointing, capitalization, eumdem/eundem spelling, actual abbreviation lengths, and the real Easter Vigil conclusion ejusdem difference. PustetPDF88 supplies the full no-ejusdem conclusion; its registered paragraph17 directs eumdem. Mame1922PDF382 independently corroborates the full Easter Vigil petition and prints only Per eumdem Dominum. No conclusion word or actual target stop is altered."
+encoding = "utf-8"
+indexable = true
+notes = "Count-neutral two-body supplement only. Independent complete target and historical petitions confirm both repairs. No earlier source artifact, passage, or earlier seven-body packet path changes identity."

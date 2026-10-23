@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-23"
+id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.common-damage-easter-vigil-collect-20261023"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.next-leads-petitions-formula-20261023"
+artifact_sha256 = "0e0b599f7faa94db966dc2f0acae0021237d997b8b9f19eb99b0b6708dc32872"
+locus = "Pustet1862 original PDF pages [296], printed210; complete petition and actual conclusion cue"
+physical_line_ranges = [[3, 3]]
+context = "Complete historical petition, including only its actually printed conclusion length."
+notes = "Pustet capitalizes Dominicae and omits the target comma after ut. Its whole petition agrees word for word, including noctem. Its actual conclusion is Per eumdem Dominum nostrum. in unitate ejusdem Spiritus sancti Deus etc.; the target actually prints the longer through-the-Son conclusion ending in unitate Spiritus Sancti, without ejusdem. This is a real conclusion difference, not OCR damage and not silently normalized. The complete independent Mame1922 prayer at PDF382/printed268 agrees in every petition word and simply prints Per eumdem Dominum. PustetPDF88 independently prints the full no-ejusdem standard conclusion, and its Rubricae generales17/PDF44 explicitly directs Per eumdem Dominum nostrum for mention of the Son. Those public-domain formula controls establish preexisting conclusion words while the actual1962 page controls the target form and length; etc. is never expanded and no target word after Spiritus Sancti is supplied."
