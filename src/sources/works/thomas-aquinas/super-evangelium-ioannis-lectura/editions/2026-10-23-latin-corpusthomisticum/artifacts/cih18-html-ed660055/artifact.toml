@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-10-23.cih18-html-ed660055"
+edition_id = "edition.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-10-23"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The underlying medieval Latin is public domain. No permission to redistribute the exact modern Corpus Thomisticum electronic presentation or markup has been established; the existing source-library treatment of this expression is retained. No response body is proposed for tracking."
+source_url = "https://www.corpusthomisticum.org/cih18.html"
+provenance = "Fresh complete HTTPS retrieval on 2026-10-23 from the stated URL. The acquired 130526 bytes match SHA-256 ed660055d0c0db268918e9f42583fa770a86b7ff1cc108f0ba92976657a05ce3 and the same size recorded by Claude F01 research/source-bindings.toml for its 2026-10-19 read. This registration does not reconstruct or independently certify the old retrieval event. A local HTML parser exposed the acquired text without model-based retrieval or reconstruction; chapter 18 lecture 6 was read in full, together with its displayed boundary and the following chapter heading."
+retrieved = "2026-10-23"
+sha256 = "ed660055d0c0db268918e9f42583fa770a86b7ff1cc108f0ba92976657a05ce3"
+byte_size = 130526
+indexable = false
+notes = "Complete 131-line HTML delivery, chapters 18-19, not the complete John commentary. Native anchor 87545 and physical line 100 contain chapter 18 lecture 6; anchor 87546 begins chapter 19. Source wording was inspected electronically; no 1952 printed-page collation is claimed. An offline clone can inspect this identity and the publication-local audit but cannot reopen this restricted delivery; a lawful retained textual witness remains an acquisition task."
