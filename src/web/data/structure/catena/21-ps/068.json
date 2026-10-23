@@ -2,8 +2,25 @@
  "blocked": [],
  "chapter": 68,
  "chapters": 150,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 68,
+    "first_verse": 22,
+    "last_chapter": 68,
+    "last_verse": 24,
+    "token": "Ps"
+   },
+   "id": "passage.augustine.de-civitate-dei.dods-1871.17.19",
+   "locator": "17.19",
+   "review": "verified",
+   "source": "0",
+   "text_words": 270
+  }
+ ],
+ "languages": [
+  "en"
+ ],
  "leads": [
   {
    "author": "Albert the Great",
@@ -79,7 +96,25 @@
  "name": "Psalms",
  "numbering": "vulgate",
  "refusals": {},
- "sources": {},
+ "sources": {
+  "0": {
+   "author": "Augustine of Hippo",
+   "container": "",
+   "date": 413,
+   "edition": "The City of God, volumes I-II",
+   "edition_published": "The Works of Aurelius Augustine, A New Translation, volumes I-II (Edinburgh: T. & T. Clark, 1871)",
+   "language": "en",
+   "rights": "public-domain",
+   "translators": [
+    "Marcus Dods",
+    "George Wilson",
+    "J. J. Smith"
+   ],
+   "voice": "translation",
+   "work": "De civitate Dei",
+   "work_id": "work.augustine.de-civitate-dei"
+  }
+ },
  "text_prefix": "structure/catena/text/",
  "token": "Ps"
 }

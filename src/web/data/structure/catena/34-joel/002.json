@@ -2,8 +2,25 @@
  "blocked": [],
  "chapter": 2,
  "chapters": 3,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 2,
+    "first_verse": 28,
+    "last_chapter": 2,
+    "last_verse": 29,
+    "token": "Joel"
+   },
+   "id": "passage.augustine.de-civitate-dei.dods-1871.18.30-joel",
+   "locator": "18.30",
+   "review": "verified",
+   "source": "0",
+   "text_words": 117
+  }
+ ],
+ "languages": [
+  "en"
+ ],
  "leads": [
   {
    "author": "Albert the Great",
@@ -74,7 +91,25 @@
  "name": "Joel",
  "numbering": "vulgate",
  "refusals": {},
- "sources": {},
+ "sources": {
+  "0": {
+   "author": "Augustine of Hippo",
+   "container": "",
+   "date": 413,
+   "edition": "The City of God, volumes I-II",
+   "edition_published": "The Works of Aurelius Augustine, A New Translation, volumes I-II (Edinburgh: T. & T. Clark, 1871)",
+   "language": "en",
+   "rights": "public-domain",
+   "translators": [
+    "Marcus Dods",
+    "George Wilson",
+    "J. J. Smith"
+   ],
+   "voice": "translation",
+   "work": "De civitate Dei",
+   "work_id": "work.augustine.de-civitate-dei"
+  }
+ },
  "text_prefix": "structure/catena/text/",
  "token": "Joel"
 }

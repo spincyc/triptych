@@ -494,3 +494,18 @@ it makes no new live endpoint requests. All 7,546 current generated core pins an
 the retained validation-log hashes remain exact. The obsolete remote feature
 history stays separate. Remaining source/English work, annual textual completeness
 and maintainer terminal acceptance remain open.
+
+### Urgent reboot checkpoint, 2026-10-23
+
+The maintainer requests a persisted handoff, commit, non-force main publication
+and stop before reboot. The installed source frontier is Roman English
+1,055/1,439 with 384 explicit gaps, postconciliar 116/561 with 445 gaps, and
+Catena 1,404 fragments across 19 books. All source-stage acceptances, 27 Latin
+additions and 15 existing-body repairs remain bounded; annual textual completeness
+and human TUI acceptance remain open. Sources/Propers/Catena generation and
+scoped inventory/family/release refresh pass. Focused 32 Latin / 41 English tests
+and independent source/test/fixture review pass. Full new aggregate, annual, TUI,
+native and local public/preview gates remain pending at the reboot boundary.
+The [handoff](HANDOFF.md) owns the
+exact deferred packets, stopped review states and missing validation; no deferred
+source46/13/Latin9/Genitrice/extra-English packet is adopted.

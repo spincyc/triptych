@@ -2,8 +2,67 @@
  "blocked": [],
  "chapter": 1,
  "chapters": 16,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 5,
+    "last_chapter": 1,
+    "last_verse": 6,
+    "token": "Rom"
+   },
+   "id": "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.1.rom-1.5-6",
+   "locator": "1",
+   "review": "verified",
+   "source": "0",
+   "text_words": 832
+  },
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 14,
+    "last_chapter": 1,
+    "last_verse": 14,
+    "token": "Rom"
+   },
+   "id": "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.2.rom-1.14",
+   "locator": "2",
+   "review": "verified",
+   "source": "0",
+   "text_words": 44
+  },
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 15,
+    "last_chapter": 1,
+    "last_verse": 15,
+    "token": "Rom"
+   },
+   "id": "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.2.rom-1.15",
+   "locator": "2",
+   "review": "verified",
+   "source": "0",
+   "text_words": 146
+  },
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 18,
+    "last_chapter": 1,
+    "last_verse": 18,
+    "token": "Rom"
+   },
+   "id": "passage.john-chrysostom.homilies-on-romans.ccel-web-2026-09-17.3.rom-1.18",
+   "locator": "3",
+   "review": "verified",
+   "source": "0",
+   "text_words": 874
+  }
+ ],
+ "languages": [
+  "en"
+ ],
  "leads": [
   {
    "author": "Augustine of Hippo",
@@ -104,7 +163,26 @@
  "name": "Romans",
  "numbering": "vulgate",
  "refusals": {},
- "sources": {},
+ "sources": {
+  "0": {
+   "author": "John Chrysostom",
+   "composition_date_basis": "The held NPNF/CCEL prefatory discussion at physical lines 31062-31077 argues for delivery at Antioch rather than Constantinople, but supplies no calendar year for these homilies. This bounded source review has not established their composition year; no printing, translation, retrieval or author-life year is substituted.",
+   "composition_date_status": "unestablished",
+   "container": "",
+   "date": null,
+   "edition": "Homilies on Romans — historical NPNF English in the held CCEL container",
+   "edition_published": "Nicene and Post-Nicene Fathers, First Series, volume 11; complete CCEL digital delivery",
+   "language": "en",
+   "rights": "public-domain",
+   "translators": [
+    "J. B. Morris",
+    "W. H. Simcox"
+   ],
+   "voice": "translation",
+   "work": "Homiliae in epistulam ad Romanos",
+   "work_id": "work.john-chrysostom.homilies-on-romans"
+  }
+ },
  "text_prefix": "structure/catena/text/",
  "token": "Rom"
 }

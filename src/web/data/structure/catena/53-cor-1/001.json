@@ -2,8 +2,81 @@
  "blocked": [],
  "chapter": 1,
  "chapters": 16,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 1,
+    "last_chapter": 1,
+    "last_verse": 2,
+    "token": "1Cor"
+   },
+   "id": "passage.john-chrysostom.homilies-on-first-corinthians.ccel-web-2026-09-28.1.1cor-1.1-2",
+   "locator": "1",
+   "review": "verified",
+   "source": "0",
+   "text_words": 501
+  },
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 2,
+    "last_chapter": 1,
+    "last_verse": 2,
+    "token": "1Cor"
+   },
+   "id": "passage.john-chrysostom.homilies-on-first-corinthians.ccel-web-2026-09-28.1.1cor-1.2",
+   "locator": "1",
+   "review": "verified",
+   "source": "0",
+   "text_words": 254
+  },
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 4,
+    "last_chapter": 1,
+    "last_verse": 6,
+    "token": "1Cor"
+   },
+   "id": "passage.john-chrysostom.homilies-on-first-corinthians.ccel-web-2026-09-28.2.1cor-1.4-6",
+   "locator": "2",
+   "review": "verified",
+   "source": "0",
+   "text_words": 362
+  },
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 4,
+    "last_chapter": 1,
+    "last_verse": 4,
+    "token": "1Cor"
+   },
+   "id": "passage.john-chrysostom.homilies-on-first-corinthians.ccel-web-2026-09-28.2.1cor-1.4-sec-1",
+   "locator": "2",
+   "review": "verified",
+   "source": "0",
+   "text_words": 151
+  },
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 4,
+    "last_chapter": 1,
+    "last_verse": 4,
+    "token": "1Cor"
+   },
+   "id": "passage.john-chrysostom.homilies-on-first-corinthians.ccel-web-2026-09-28.2.1cor-1.4-sec-2",
+   "locator": "2",
+   "review": "verified",
+   "source": "0",
+   "text_words": 165
+  }
+ ],
+ "languages": [
+  "en"
+ ],
  "leads": [
   {
    "author": "Cornelius a Lapide",
@@ -79,7 +152,26 @@
  "name": "1 Corinthians",
  "numbering": "vulgate",
  "refusals": {},
- "sources": {},
+ "sources": {
+  "0": {
+   "author": "John Chrysostom",
+   "composition_date_basis": "The held Oxford preface in the exact NPNF/CCEL container, physical lines 153-169, explicitly says that the date of these homilies is not exactly known while assigning them to Antioch. No independent calendar year was established in this bounded review. This records the project’s present evidence limit, not a claim that scholarly dating is impossible.",
+   "composition_date_status": "unestablished",
+   "container": "",
+   "date": null,
+   "edition": "Homilies on 1 Corinthians — historical NPNF English in the held CCEL container",
+   "edition_published": "Nicene and Post-Nicene Fathers, First Series, volume 12; complete CCEL digital delivery",
+   "language": "en",
+   "rights": "public-domain",
+   "translators": [
+    "Hubert Kestell Cornish",
+    "John Medley"
+   ],
+   "voice": "translation",
+   "work": "Homilies on First Corinthians",
+   "work_id": "work.john-chrysostom.homilies-on-first-corinthians"
+  }
+ },
  "text_prefix": "structure/catena/text/",
  "token": "1Cor"
 }

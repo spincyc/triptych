@@ -47,6 +47,21 @@ receipt describes the verified publication commit, not its own deployment.
 
 ## Reader and corpus recovery, 2026-10-23
 
+### Urgent reboot checkpoint, 2026-10-23
+
+The maintainer requests a persisted handoff, commit, non-force main publication
+and stop before reboot. The installed source frontier is Roman English
+1,055/1,439 with 384 explicit gaps, postconciliar 116/561 with 445 gaps, and
+Catena 1,404 fragments across 19 books. All source-stage acceptances, 27 Latin
+additions and 15 existing-body repairs remain bounded; annual textual completeness
+and human TUI acceptance remain open. Sources/Propers/Catena generation and
+scoped inventory/family/release refresh pass. Focused 32 Latin / 41 English tests
+and independent source/test/fixture review pass. Full new aggregate, annual, TUI,
+native and local public/preview gates remain pending at the reboot boundary.
+The [handoff](workflows/reviews/missal-reader-resume-2026-10-23/HANDOFF.md) owns the
+exact deferred packets, stopped review states and missing validation; no deferred
+source46/13/Latin9/Genitrice/extra-English packet is adopted.
+
 <!-- promised-deliverable: reader-corpus-recovery-2026-10-23 -->
 
 **In progress.** Recover the interrupted work and correct the source-to-corpus

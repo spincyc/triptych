@@ -2,8 +2,81 @@
  "blocked": [],
  "chapter": 1,
  "chapters": 4,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 3,
+    "last_chapter": 1,
+    "last_verse": 3,
+    "token": "Col"
+   },
+   "id": "passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.1.col-1.3",
+   "locator": "1",
+   "review": "verified",
+   "source": "0",
+   "text_words": 67
+  },
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 5,
+    "last_chapter": 1,
+    "last_verse": 5,
+    "token": "Col"
+   },
+   "id": "passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.1.col-1.5",
+   "locator": "1",
+   "review": "verified",
+   "source": "0",
+   "text_words": 186
+  },
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 9,
+    "last_chapter": 1,
+    "last_verse": 12,
+    "token": "Col"
+   },
+   "id": "passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.2.col-1.9-12",
+   "locator": "2",
+   "review": "verified",
+   "source": "0",
+   "text_words": 2301
+  },
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 13,
+    "last_chapter": 1,
+    "last_verse": 14,
+    "token": "Col"
+   },
+   "id": "passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.2.col-1.13-14",
+   "locator": "2",
+   "review": "verified",
+   "source": "0",
+   "text_words": 581
+  },
+  {
+   "extent": {
+    "first_chapter": 1,
+    "first_verse": 21,
+    "last_chapter": 1,
+    "last_verse": 23,
+    "token": "Col"
+   },
+   "id": "passage.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05.4.col-1.21-23",
+   "locator": "4",
+   "review": "verified",
+   "source": "0",
+   "text_words": 1017
+  }
+ ],
+ "languages": [
+  "en"
+ ],
  "leads": [
   {
    "author": "Cornelius a Lapide",
@@ -74,7 +147,25 @@
  "name": "Colossians",
  "numbering": "vulgate",
  "refusals": {},
- "sources": {},
+ "sources": {
+  "0": {
+   "author": "John Chrysostom",
+   "composition_date_basis": "The held Oxford preface, physical lines 16504-16514 in the exact NPNF/CCEL container, assigns these homilies to Constantinople chiefly from episcopal language and singles out the close of Colossians Homily III; it supplies no secure calendar year for the selected Homilies I, II and IV. This review has not established a composition year and adopts neither a retrieval year nor an author-life date as a surrogate.",
+   "composition_date_status": "unestablished",
+   "container": "",
+   "date": null,
+   "edition": "Homilies on Colossians — historical NPNF English in the held CCEL container",
+   "edition_published": "Nicene and Post-Nicene Fathers, First Series, volume 13; complete CCEL digital delivery",
+   "language": "en",
+   "rights": "public-domain",
+   "translators": [
+    "J. Ashworth"
+   ],
+   "voice": "translation",
+   "work": "Homiliae in epistulam ad Colossenses",
+   "work_id": "work.john-chrysostom.homilies-on-colossians"
+  }
+ },
  "text_prefix": "structure/catena/text/",
  "token": "Col"
 }

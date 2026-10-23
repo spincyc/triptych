@@ -1,0 +1,99 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "editorial-projection",
+   "byte_size": 368,
+   "edition_owned": true,
+   "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-supplement.two-damage-supplement-20261023",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Count-neutral two-body supplement only. Independent complete target and historical petitions confirm both repairs. No earlier source artifact, passage, or first-five packet path changes identity.",
+   "page_count": null,
+   "retrieved": "2026-10-23",
+   "rights": "project-created",
+   "rights_basis": "Triptych offers its transcription layout and normalization under CC BY 4.0. The entire underlying petitions are independently witnessed in the US-public-domain 1862 Pustet printing; 17 U.S.C. 103(b) gives the later edition no exclusive right in those preexisting words. No blanket clearance of the target facsimile is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Project editorial projection; not a Missal edition or liturgical authority",
+  "date": "2026-10-23",
+  "editors": [
+   "Triptych contributors"
+  ],
+  "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-supplement",
+  "jurisdiction": "United States",
+  "language": "la",
+  "publication": "Triptych project-created editorial projection",
+  "title": "Roman 1962 Latin Proper Editorial Projection, 23 October 2026, two-body supplement",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-supplement.two-damage-supplement-20261023",
+   "artifact_type": "editorial-projection",
+   "context": "Exact complete bounded editorial projection; not a historical printing.",
+   "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-supplement.common-damage-easter-friday-collect",
+   "locus": "1962 PDF419, printed338, n1196; easter-friday Collect; Pustet1862 original PDF pages [363], printed277; complete petition and actual conclusion cue",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "UTF-8 body SHA256 including final LF 1ca5613b8bca7d4132094a70554093c41b456ae85520f133860a77a7c46dc355. Target conclusion: Per Dominum nostrum. Historical conclusion: Per Dominum nostrum etc. Pustet capitalizes Paschale, omits the target comma after ut, and actually prints Per Dominum nostrum etc. Target prints Per Dominum nostrum. The printed etc. is neither expanded nor attributed to the target; no words follow the actual target stop. Both page images print foedere, with oe ligature expanded mechanically; fcedere is recognizer damage.",
+   "readable": true,
+   "rights": "project-created",
+   "rights_basis": "Triptych offers its transcription layout and normalization under CC BY 4.0. The entire underlying petitions are independently witnessed in the US-public-domain 1862 Pustet printing; 17 U.S.C. 103(b) gives the later edition no exclusive right in those preexisting words. No blanket clearance of the target facsimile is asserted.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-supplement.common-damage-easter-friday-collect.json",
+   "verified_on": "2026-10-23",
+   "words": 23
+  },
+  {
+   "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-supplement.two-damage-supplement-20261023",
+   "artifact_type": "editorial-projection",
+   "context": "Exact complete bounded editorial projection; not a historical printing.",
+   "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-supplement.common-damage-comm-ss-marii-marthae-audifacis-abachum-secret",
+   "locus": "1962 PDF529, printed448, n1962; comm-ss-marii-marthae-audifacis-abachum Secret; Pustet1862 original PDF pages [474], printed388; complete petition and actual conclusion cue",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "UTF-8 body SHA256 including final LF e4785f600385334928ae402f0d3e736f2985921681b83040bcc2299bd024c5c3. Target conclusion: Per Dominum. Historical conclusion: Per Dominum nostrum. Pustet sets a comma after respice which the target omits. Pustet concludes Per Dominum nostrum.; the target actually concludes Per Dominum. The same whole petition is present, with tuae in both independent page images; no name or petition word is substituted.",
+   "readable": true,
+   "rights": "project-created",
+   "rights_basis": "Triptych offers its transcription layout and normalization under CC BY 4.0. The entire underlying petitions are independently witnessed in the US-public-domain 1862 Pustet printing; 17 U.S.C. 103(b) gives the later edition no exclusive right in those preexisting words. No blanket clearance of the target facsimile is asserted.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-supplement.common-damage-comm-ss-marii-marthae-audifacis-abachum-secret.json",
+   "verified_on": "2026-10-23",
+   "words": 23
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Triptych contributors",
+  "category": "editorial-source-projection",
+  "description": "A project-created editorial source projection containing bounded Latin prayer bodies in date-specific artifacts. It is neither an edition of a historical hand missal nor an edition of the Missale Romanum. Each artifact records the transformation rule over separate public-domain antecedent and 1962 page-image witnesses; its passages let consumers cite the projected bodies without assigning Triptych's target-controlled collation choices to the antecedent printing.",
+  "id": "work.triptych.roman-1962-latin-proper-editorial-projection",
+  "languages": [
+   "la"
+  ],
+  "title": "Roman 1962 Latin Proper Editorial Projection"
+ }
+}

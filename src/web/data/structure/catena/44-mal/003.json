@@ -2,8 +2,39 @@
  "blocked": [],
  "chapter": 3,
  "chapters": 4,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 3,
+    "first_verse": 2,
+    "last_chapter": 3,
+    "last_verse": 4,
+    "token": "Mal"
+   },
+   "id": "passage.augustine.de-civitate-dei.dods-1871.20.25",
+   "locator": "20.25",
+   "review": "verified",
+   "source": "0",
+   "text_words": 507
+  },
+  {
+   "extent": {
+    "first_chapter": 3,
+    "first_verse": 3,
+    "last_chapter": 3,
+    "last_verse": 6,
+    "token": "Mal"
+   },
+   "id": "passage.augustine.de-civitate-dei.dods-1871.20.26",
+   "locator": "20.26",
+   "review": "verified",
+   "source": "0",
+   "text_words": 1059
+  }
+ ],
+ "languages": [
+  "en"
+ ],
  "leads": [
   {
    "author": "Albert the Great",
@@ -74,7 +105,25 @@
  "name": "Malachi",
  "numbering": "vulgate",
  "refusals": {},
- "sources": {},
+ "sources": {
+  "0": {
+   "author": "Augustine of Hippo",
+   "container": "",
+   "date": 413,
+   "edition": "The City of God, volumes I-II",
+   "edition_published": "The Works of Aurelius Augustine, A New Translation, volumes I-II (Edinburgh: T. & T. Clark, 1871)",
+   "language": "en",
+   "rights": "public-domain",
+   "translators": [
+    "Marcus Dods",
+    "George Wilson",
+    "J. J. Smith"
+   ],
+   "voice": "translation",
+   "work": "De civitate Dei",
+   "work_id": "work.augustine.de-civitate-dei"
+  }
+ },
  "text_prefix": "structure/catena/text/",
  "token": "Mal"
 }
