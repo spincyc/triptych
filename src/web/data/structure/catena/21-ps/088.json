@@ -6,6 +6,34 @@
   {
    "extent": {
     "first_chapter": 88,
+    "first_verse": 47,
+    "last_chapter": 88,
+    "last_verse": 47,
+    "token": "Ps"
+   },
+   "id": "passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.88-sermo-ii-8",
+   "locator": "88.8",
+   "review": "verified",
+   "source": "0",
+   "text_words": 85
+  },
+  {
+   "extent": {
+    "first_chapter": 88,
+    "first_verse": 50,
+    "last_chapter": 88,
+    "last_verse": 50,
+    "token": "Ps"
+   },
+   "id": "passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.88-sermo-ii-11",
+   "locator": "88.11",
+   "review": "verified",
+   "source": "0",
+   "text_words": 128
+  },
+  {
+   "extent": {
+    "first_chapter": 88,
     "first_verse": 51,
     "last_chapter": 88,
     "last_verse": 51,
@@ -16,9 +44,52 @@
    "review": "verified",
    "source": "0",
    "text_words": 184
+  },
+  {
+   "extent": {
+    "first_chapter": 88,
+    "first_verse": 52,
+    "last_chapter": 88,
+    "last_verse": 52,
+    "token": "Ps"
+   },
+   "id": "passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.88-sermo-ii-13",
+   "locator": "88.13",
+   "review": "verified",
+   "source": "0",
+   "text_words": 145
+  },
+  {
+   "extent": {
+    "first_chapter": 88,
+    "first_verse": 39,
+    "last_chapter": 88,
+    "last_verse": 46,
+    "token": "Ps"
+   },
+   "id": "passage.augustine.de-civitate-dei.dods-1871.17.10",
+   "locator": "17.10",
+   "review": "verified",
+   "source": "1",
+   "text_words": 433
+  },
+  {
+   "extent": {
+    "first_chapter": 88,
+    "first_verse": 47,
+    "last_chapter": 88,
+    "last_verse": 49,
+    "token": "Ps"
+   },
+   "id": "passage.augustine.de-civitate-dei.dods-1871.17.11",
+   "locator": "17.11",
+   "review": "verified",
+   "source": "1",
+   "text_words": 468
   }
  ],
  "languages": [
+  "en",
   "la"
  ],
  "leads": [
@@ -124,6 +195,23 @@
    "voice": "original",
    "work": "Enarrationes in Psalmos",
    "work_id": "work.augustine.enarrationes-in-psalmos"
+  },
+  "1": {
+   "author": "Augustine of Hippo",
+   "container": "",
+   "date": 413,
+   "edition": "The City of God, volumes I-II",
+   "edition_published": "The Works of Aurelius Augustine, A New Translation, volumes I-II (Edinburgh: T. & T. Clark, 1871)",
+   "language": "en",
+   "rights": "public-domain",
+   "translators": [
+    "Marcus Dods",
+    "George Wilson",
+    "J. J. Smith"
+   ],
+   "voice": "translation",
+   "work": "De civitate Dei",
+   "work_id": "work.augustine.de-civitate-dei"
   }
  },
  "text_prefix": "structure/catena/text/",

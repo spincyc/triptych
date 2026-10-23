@@ -1,0 +1,83 @@
+{
+  "canonical_bible_chapters": {
+    "count": 1334,
+    "path": ".scratch/resume-generated-integration/phase3/canonical-bible-chapter-pins.json",
+    "sha256": "626e834eee92ab5908b4a68ee46cdccdc04335f57caee247e743d2dd90d9598c"
+  },
+  "catena_chapter_spines": {
+    "count": 562,
+    "path": ".scratch/resume-generated-integration/phase3/catena-chapter-pins.json",
+    "sha256": "81a6c5922eecd8d7074358bae8ea822888764838574ca72a7a8eee6fafdecc90"
+  },
+  "licensed_notice_count": 9,
+  "new_catena_text_files": {
+    "src/web/data/structure/catena/text/passage.augustine.de-civitate-dei.dods-1871.17.10.json": "087cd6b91219c3b042e46eac63a2185d0930b33e147b9fdcf2974c4358e47a8b",
+    "src/web/data/structure/catena/text/passage.augustine.de-civitate-dei.dods-1871.17.11.json": "dbfde02feef9f27cd052a4f885368dd95a63d7f70c32899aa24830f8d53eb1c5",
+    "src/web/data/structure/catena/text/passage.augustine.de-civitate-dei.dods-1871.17.13.json": "de1893d292c8fb056069d8c53dce16394aafdea2f05029e56b5aa0bfc7f88ed0",
+    "src/web/data/structure/catena/text/passage.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.50.14.json": "352835047384f366d82a4a6c166ffb6c1a8cdffd42be0c483ef64c15ddfe5c81",
+    "src/web/data/structure/catena/text/passage.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.50.15.json": "50d62507507f21da0acbe2672c74f881be19c42fc0f4e911707432581c1a3cd7",
+    "src/web/data/structure/catena/text/passage.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.50.16.json": "738ad3c77e38d46cc90520aca89f439fb87762ba33fecbdbd5fc4f6c8d6b529d",
+    "src/web/data/structure/catena/text/passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.88-sermo-ii-11.json": "9b9d0d60a1e08e28d06788a14522cc9c876be93bf90f3a9efd64bd1b40a0a288",
+    "src/web/data/structure/catena/text/passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.88-sermo-ii-13.json": "e59fb9b7be05b5d8572b926c3eb5c2df568e495a2fa9bc1507fc8f8bac6b61dd",
+    "src/web/data/structure/catena/text/passage.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.88-sermo-ii-8.json": "c4bce60a7e2278afe5894b76de80001687591b02cf4fb6500ccd9249de44e1f9",
+    "src/web/data/structure/catena/text/passage.augustine.epistolae-ad-galatas-expositio.2026-09-05-wikisource-migne.2.json": "e076981fc7d15d34f3b931b03dc546ea1746611e9c403780d9713b5bf391b1a9",
+    "src/web/data/structure/catena/text/passage.augustine.epistolae-ad-galatas-expositio.2026-09-05-wikisource-migne.3.json": "c78109031b2fb16ad437242d34dc12ad0cedce3980699a11a365d1f3592aa2f0",
+    "src/web/data/structure/catena/text/passage.augustine.epistolae-ad-galatas-expositio.2026-09-05-wikisource-migne.4.json": "004c79cc800fa7bbea8316c32c26fb6df3181c3ba06cf08473d0ca7aee56a045",
+    "src/web/data/structure/catena/text/passage.augustine.epistolae-ad-galatas-expositio.2026-09-05-wikisource-migne.6.json": "8749b7fd4beea2d4f58b6478f15bf0ea3427ff7c550ad87e36186be161fe56e7",
+    "src/web/data/structure/catena/text/passage.augustine.epistolae-ad-galatas-expositio.2026-09-05-wikisource-migne.7.json": "98c2a3ca895ea532fec3ec3381d8ff2a885de55691c8ae4a909adbbc0d1749c9"
+  },
+  "postconciliar_english": {
+    "available": 112,
+    "total": 561
+  },
+  "roman1962_english": {
+    "available": 548,
+    "ignatius_confessor_collect": "no-exemplar; English unavailable in source ledger and generated Proper",
+    "missing": 879,
+    "total": 1427
+  },
+  "scripture_book_projections": {
+    "count": 73,
+    "path": ".scratch/resume-generated-integration/phase3/catena-scripture-pins.json",
+    "sha256": "1f2d0a9ddd8bb4a799d2acad33cf2240ccd11ba47f6b98aed6383061de475ca5",
+    "unchanged_owner_manifest_sha256": "f468d43ba6f8a6ad72556db5647de1dfb463ba869964f46ed892c5a206646139"
+  },
+  "six_notice_only_changes": [
+    {
+      "acknowledgement_sha256": "a38550a2aa62e9eed8b7cdf2e91d6bda1093c027136e415a1f2025990d32bdb2",
+      "after_sha256": "23e50e9a291c4886e1426b3affd3ea9e01fd97b049bbcf7175a3c6485eeb3c35",
+      "before_sha256": "1509bd658cc3ce3823f9252a1da2e561f64f6a05c3b50d51edd48dcaec80373a",
+      "path": "src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-1.json"
+    },
+    {
+      "acknowledgement_sha256": "a38550a2aa62e9eed8b7cdf2e91d6bda1093c027136e415a1f2025990d32bdb2",
+      "after_sha256": "90503e2c17e1ee8e2e26c3415b921550863539d2b31b425c09a54fd8ef2da7b3",
+      "before_sha256": "a1f8c831c5a8f68e0aa477c820f0363dd11f8d0d68f10ba6ae5850509febbf0c",
+      "path": "src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-2.json"
+    },
+    {
+      "acknowledgement_sha256": "a38550a2aa62e9eed8b7cdf2e91d6bda1093c027136e415a1f2025990d32bdb2",
+      "after_sha256": "677f91806ab4f03fa12ffc3a756027e0c7100a30e9b95cb76e19fbe5a546a711",
+      "before_sha256": "c99bb63ac61d4799dee473f1f435dbb389ea9ed321d4cebc1da068c76beb6a9f",
+      "path": "src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-3.json"
+    },
+    {
+      "acknowledgement_sha256": "a38550a2aa62e9eed8b7cdf2e91d6bda1093c027136e415a1f2025990d32bdb2",
+      "after_sha256": "3a8aa5df1a6f757d2ee38e6db4c52cb1984ef682919f8186249223a7cc908e39",
+      "before_sha256": "7f1956b102a7b765dc36210f5557ad25f07d075c8edcc87a3acc85cd3a03473d",
+      "path": "src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-4.json"
+    },
+    {
+      "acknowledgement_sha256": "a38550a2aa62e9eed8b7cdf2e91d6bda1093c027136e415a1f2025990d32bdb2",
+      "after_sha256": "7df230786bbaaf1ace902521bc80b16163d0c9a37a19f862d37d1189ebf645e2",
+      "before_sha256": "61abb15daa555ada778b2eeb6137cbc6114102586c9cc2a27d5e4863521de0e3",
+      "path": "src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-5.json"
+    },
+    {
+      "acknowledgement_sha256": "a38550a2aa62e9eed8b7cdf2e91d6bda1093c027136e415a1f2025990d32bdb2",
+      "after_sha256": "4ebbafc5fc61cc734be6f1ae180c007fb406bddbac8a51206d131b7a89a76d8f",
+      "before_sha256": "54408d9f5e1c8b684850b05976d6e3ac9ee3b88b6194c37c7e1cf83d52256d28",
+      "path": "src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-6.json"
+    }
+  ]
+}

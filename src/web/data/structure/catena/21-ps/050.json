@@ -2,8 +2,53 @@
  "blocked": [],
  "chapter": 50,
  "chapters": 150,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 50,
+    "first_verse": 11,
+    "last_chapter": 50,
+    "last_verse": 11,
+    "token": "Ps"
+   },
+   "id": "passage.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.50.14",
+   "locator": "50.14",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 229
+  },
+  {
+   "extent": {
+    "first_chapter": 50,
+    "first_verse": 12,
+    "last_chapter": 50,
+    "last_verse": 12,
+    "token": "Ps"
+   },
+   "id": "passage.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.50.15",
+   "locator": "50.15",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 338
+  },
+  {
+   "extent": {
+    "first_chapter": 50,
+    "first_verse": 13,
+    "last_chapter": 50,
+    "last_verse": 13,
+    "token": "Ps"
+   },
+   "id": "passage.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.50.16",
+   "locator": "50.16",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 147
+  }
+ ],
+ "languages": [
+  "la"
+ ],
  "leads": [
   {
    "author": "Albert the Great",
@@ -89,7 +134,21 @@
  "name": "Psalms",
  "numbering": "vulgate",
  "refusals": {},
- "sources": {},
+ "sources": {
+  "0": {
+   "author": "Augustine of Hippo",
+   "container": "",
+   "date": 411,
+   "edition": "Enarrationes in Psalmos, Migne Latin via Corpus Corporum and Latin Wikisource, web state 23 October 2026",
+   "edition_published": "Latin Wikisource, Enarrationes in Psalmos (ed. Migne), part 5, complete offered Psalms XLI-L; source banner names Migne 1841 and Corpus Corporum. Acquired directly 23 October 2026.",
+   "language": "la",
+   "rights": "licensed",
+   "translators": [],
+   "voice": "original",
+   "work": "Enarrationes in Psalmos",
+   "work_id": "work.augustine.enarrationes-in-psalmos"
+  }
+ },
  "text_prefix": "structure/catena/text/",
  "token": "Ps"
 }

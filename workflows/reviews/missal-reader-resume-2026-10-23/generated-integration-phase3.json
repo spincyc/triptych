@@ -1,0 +1,137 @@
+{
+  "accepted_inputs": {
+    "english_manifest_sha256": "2aafb8322321eb266a99f6d35805017ae2c0959b269f707748c534b8fb90cba1",
+    "generation_freeze_sha256": "95d237a94a738682b8e6ea20f214e903ffcd8e59130de147d0fa032df5ee18de",
+    "installed_247_English_postimages_rechecked_exact": true,
+    "installed_29_source_backend_UI_pins_rechecked_exact": true,
+    "rights_freeze_sha256": "86816b5ea7ba716cc59098d0438ed4f6f2f10e2ae2552ff223831bf628770b2e",
+    "source_freeze_sha256": "59ed814372f0078bc6a971cbb8524e818eb65f3946919455ab8d8babf573948f"
+  },
+  "catalogue": {
+    "sha256": "addc67ef386cbf88dcb3b1d040730c5a78eb3e5d515758dd09ec2e58062eebfc",
+    "unchanged": true
+  },
+  "catena": {
+    "accepted_manifest_sha256": "aae05d0275830418da535b7c04a5c91a0a0e8a57466adce4f251d2474dbceb96",
+    "all2009_hashes_exact": true,
+    "books": 8,
+    "canon": 73,
+    "files": 2009,
+    "fragments": 1373,
+    "licensed_notices": 9
+  },
+  "checks_passed": [
+    "source-library validate",
+    "source-reader check: rights and actual browser model",
+    "source-reader structure --check",
+    "mass-propers structure --check",
+    "check-calendar-masses: existing Psalm56:14 exception retained",
+    "mass-propers census --check",
+    "scripts/_catena.py check",
+    "all2009 Catena files equal accepted manifest",
+    "all73 accepted Scripture projection hashes unchanged",
+    "all9 required notices; six old payloads notice-only",
+    "both provider source-inventory check",
+    "source-family-migration check",
+    "commentary-work-index containment",
+    "document-library structure --check",
+    "release-bindings status: exact0stale",
+    "git diff --check within owned scope"
+  ],
+  "classification": {
+    "constituents": 358,
+    "containers": 134,
+    "family_pending": 162,
+    "family_review_units": 162,
+    "family_screened": 0,
+    "new_classification_rows": 0,
+    "not_containers": 37,
+    "provider_inventories_refreshed_and_checked_without_byte_changes": true
+  },
+  "completed_at_utc": "2026-10-23T15:42:43.156826+00:00",
+  "generated_core_pins": {
+    "count": 7546,
+    "path": ".scratch/resume-generated-integration/phase3/generated-file-pins.json",
+    "sha256": "6a8b90dd63516a3ddf93aa10ca1a80707c2b22bdd5492e4471f301aebad7d59c"
+  },
+  "generation_commands": [
+    "tools/source-reader structure --out src/web/data --strict",
+    "tools/mass-propers structure --out src/web/data",
+    "scripts/_catena.py structure --out src/web/data",
+    "tools/source-inventory refresh --audited-on 2026-10-23 --review src/sources/inventories/classification-review-v1.toml src/sources/inventories/publications-v1.toml",
+    "tools/source-inventory refresh --audited-on 2026-10-23 --review src/sources/inventories/claude-classification-review-v1.toml src/sources/inventories/claude-publications-v1.toml",
+    "tools/source-family-migration refresh --audited-on 2026-10-23 --accept-canonical-catalog",
+    "tools/release-bindings refresh --adopt-new-site-sources --only src/web/data/structure/sources --only src/web/data/structure/propers --only src/web/data/structure/catena"
+  ],
+  "graph": {
+    "artifact": 3750,
+    "binding": 4159,
+    "corpus": 5,
+    "edition": 1268,
+    "passage": 7291,
+    "segment": 114,
+    "work": 1067
+  },
+  "limits": [
+    "No source/code/reader/test/docs edits. Catalogue/censuses current without writes.",
+    "One combined Sources/Proper/Catena writer window; no repeat Catena writer.",
+    "Aggregate publication/native/annual gates and commit/push remain coordinator work."
+  ],
+  "pathscope": {
+    "count": 545,
+    "path": ".scratch/resume-generated-integration/phase3/generated-pathscope.nul",
+    "sha256": "606e77c59001262f047de7d06d9fa7993f71d5f9a861ed96c33e9228347d1b00"
+  },
+  "propers": {
+    "files": 499,
+    "postconciliar_english": 112,
+    "postconciliar_total": 561,
+    "roman1962_english": 548,
+    "roman1962_missing": 879,
+    "roman1962_total": 1427
+  },
+  "reader_proof": {
+    "Ignatius_confessor_Collect_remains_no_exemplar": true,
+    "canonical_Douay_Rheims_chapters": 1334,
+    "held_Catena_chapter_spines": 562,
+    "new_lazy_texts": 14,
+    "old_notice_only_changes": 6,
+    "path": ".scratch/resume-generated-integration/phase3/reader-freeze-proof.json",
+    "sha256": "8c4af27cff0bb72852d035a631111ec28f50e8f266ef235daf34719050c11609",
+    "unchanged_Scripture_book_projections": 73
+  },
+  "record_type": "phase3-generated-integration-freeze",
+  "release": {
+    "existing_hashes_refreshed": 512,
+    "manifest_sha256": "8ebd766368058a323ebd152ef2bddf9c3ca5f5dcebdd843f232d4a0654553682",
+    "new_paths_adopted": 30,
+    "out_of_scope": 0,
+    "policy_authorization_unchanged": true,
+    "retired": 0,
+    "rights_sha256": "88cd95a66f0b7f9b0ed42c15f3553230179722871eabea125de02eb65dc6ad4d",
+    "stale": 0
+  },
+  "runtime": {
+    "python": ".scratch/public-preview-venv/bin/python",
+    "repository_relative_environment": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "TMPDIR": ".scratch/resume-generated-integration/phase3/tmp",
+      "TRIPTYCH_CONTAINMENT_CACHE": "0",
+      "TRIPTYCH_CORPUS_CACHE": "0",
+      "TRIPTYCH_LIBRARY_CACHE_DIR": ".scratch/resume-generated-integration/phase3/library-cache",
+      "TRIPTYCH_SOURCE_LIBRARY_CACHE": "0",
+      "TRIPTYCH_YAML_CACHE": "0"
+    },
+    "temporary_paths_expanded_to_absolute_at_execution": true
+  },
+  "source_input_head": "9f9f73f304dd60b8fbd014555f5d7bc38b57f07d",
+  "sources": {
+    "additional_correct_withholding": {
+      "restricted_facsimile_controls": 117,
+      "structured_TSV_without_own_prose": 123
+    },
+    "files": 5038,
+    "readable": 3769,
+    "withheld": 3522
+  }
+}
