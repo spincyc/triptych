@@ -515,7 +515,10 @@ class NumberingSurveyTests(unittest.TestCase):
             for entry in tracked_index().get("passages") or []
             if entry.get("numbering")
         }
-        self.assertEqual(tracked, self.survey)
+        harvested = {entry["passage"] for entry in tracked_index().get("passages") or []}
+        self.assertEqual(tracked, {
+            locus: row for locus, row in self.survey.items() if locus in harvested
+        })
 
     def test_the_count_in_the_header_matches_the_rows(self) -> None:
         document = tracked_index()
@@ -540,7 +543,10 @@ class NumberingSurveyTests(unittest.TestCase):
         `Isaiah 7:10-14; 8:10`, which reaches that chapter and means it. The key
         is sound now, on the same "every, not any" rule that keeps `Malachi 3`.
         """
-        self.assertEqual(sorted(self.survey), ["Esther 4", "Joel 3"])
+        # The weekday I/II course adds Joel 4:12-21, which the calendar maps
+        # to Vulgate Joel 3. It is pending research, not an invented index row.
+        self.assertEqual(sorted(self.survey), ["Esther 4", "Joel 3", "Joel 4"])
+        self.assertNotIn("Joel 4", {entry["passage"] for entry in tracked_index()["passages"]})
         for locus in self.survey:
             with self.subTest(locus=locus):
                 self.assertEqual(self.survey[locus]["numbering"], UNRECORDED)
@@ -1066,10 +1072,9 @@ class OwnNumberingTests(unittest.TestCase):
     def test_a_built_corpus_converts_the_vulgate_antiphons(self) -> None:
         """Built from the tracked calendars and index into a scratch file.
 
-        Not read from the tracked `mass-commentary-corpus.yaml`: that file was
-        last built on 2026-07-31 and the calendars and the discovery index have
-        moved on since, so rebuilding it is a decision about the harvest's
-        pending loci and not a side effect of this rule.
+        Not read from the tracked corpus: the test must exercise the builder.
+        The weekday course also exposes its recorded unresolved Psalm 56:14;
+        keep that refusal rather than treating it as a Vulgate antiphon.
         """
         import subprocess
         import tempfile
@@ -1088,7 +1093,11 @@ class OwnNumberingTests(unittest.TestCase):
         self.assertEqual(
             [row for row in corpus.get("unconvertible_references") or []
              if row["mass"].startswith("postconciliar::")],
-            [],
+            [{
+                "mass": "postconciliar::ot-24-saturday",
+                "ref": "Psalm 56:10, 11-12, 13-14",
+                "reason": "hebrew Psalm 56:14 is outside the psalm",
+            }],
         )
         (twenty_fifth,) = [
             row for row in corpus["masses"]

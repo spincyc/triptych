@@ -11,6 +11,17 @@ Review `research/context.md`, `scope.md`, `interpretations.md`, source bindings,
 and the edition-controlled collation records. Verify the Sunday, cycle,
 territory, exact passage boundaries, full ordered inventory, and branches.
 Check the retained primary sources at their exact loci, attribution and rights.
+Reconcile every actually inspected or used source in the complete reception
+matrix and bibliography against `research/source-bindings.toml` and
+`research/source-dispositions.toml`. A cataloged work or edition cannot stand
+in for a checked artifact. Verify that no checked witness has disappeared into
+ordinary bibliography or been mislabeled an uninspected lead, including
+analogues and witnesses not retained in the final prose. Inspect admitted
+passages at their exact source loci and natural Scripture extents; a relation
+to this Mass does not make its appointed passage the author's subject. Check
+each deferred or rejected row's concrete missing criteria, reason and stable
+identity. A restricted source may remain metadata-only and deferred; no
+recorded disposition grants rights or promotes a harvest lead into a fragment.
 Test the passage-by-passage reception sweep for omissions and unsupported
 claims of having searched or verified. Do not substitute the old profile's
 mandatory gallery or proposal counts for this new task.

@@ -268,7 +268,8 @@
       "purpose": "Harvest pre-1900 commentary for the propers; `ask` calls a model.",
       "requires": [
         "citations",
-        "commentary-work-index"
+        "commentary-work-index",
+        "source-library"
       ],
       "stage": "draft",
       "usage": "harvest {propers,plan,ask,record,aliases,harvest,promote} | harvest ask --corpus F --dry-run"

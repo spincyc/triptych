@@ -6,7 +6,7 @@ Usage:
     [--numbering {vulgate,hebrew}] [--max-results N]
   commentary-work-index build-corpus [--discovery PATH] [--root DIR]
     [--calendar CALENDAR ...] [--max-results-per-mass N]
-    [--max-results-per-passage N] [--output PATH]
+    [--max-results-per-passage N] [--output PATH] [--check]
   commentary-work-index coverage [--book TOKEN] [--all]
   commentary-work-index containment [--container ID] [--unresolved]
   commentary-work-index formulary [--calendar CALENDAR --mass KEY]
@@ -117,7 +117,7 @@ EXAMPLES = {
                 "      role: church-father",
                 "      matched on the chapter, not the verses cited: John 3",
                 "      holdings: held",
-                "        record work.augustine.in-iohannis-evangelium-tractatus (In Iohannis Evangelium Tractatus CXXIV): 6 editions [en, la], 7 artifacts (5 remote, 1 restricted, 1 tracked), 1 segment, 6 passages; joined by constituent, title",
+                "        record work.augustine.in-iohannis-evangelium-tractatus (In Iohannis Evangelium Tractatus CXXIV): 6 editions [en, la], 7 artifacts (5 remote, 1 restricted, 1 tracked), 1 segment, 6 passages; joined by index-work-id, constituent, fragment-edge, title",
                 "        inside work.jacques-paul-migne.patrologia-latina-volume-35: the whole work (cols. 1379-1976); 2 artifacts (1 remote, 1 tracked)",
                 "        inside work.nicene-and-post-nicene-fathers.series-1-volume-7: the whole work; 3 artifacts (1 remote, 2 tracked)",
                 "  none registered: no library record, fragment edge, identity row or containment entry joins this work; that is an absence from those joins, not proof that no copy exists",
@@ -126,7 +126,7 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index discover --passage 'Psalm 24:1-3' --numbering vulgate --max-results 2 --json",
             (
-                "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"passage\":\"Psalms 24:1-24:3\"... [+22795 chars]",
+                "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"passage\":\"Psalms 24:1-24:3\"... [+22863 chars]",
             ),
         ),
         Example(
@@ -144,14 +144,14 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index coverage",
             (
-                "coverage: 13 works held, 15 work-and-book pairs, 61 chapters not held",
-                "  gap 2 · unexamined 5 · not-established 1 · complete 7 · extents recorded 10 of 15",
+                "coverage: 15 works held, 18 work-and-book pairs, 210 chapters not held",
+                "  gap 2 · unexamined 8 · not-established 1 · complete 7 · extents recorded 10 of 18",
                 "",
-                "  1. Martin Luther — Enarrationes in Genesin · Genesis  [gap, 41 of 50 chapters not held]",
-                "     named on 14 · held on 9 · 10 fragments · extent 1:1-50:25 continuous",
-                "     not held: 10-50",
-                "     acquisition stopped inside the work's own extent",
-                "... 28 more lines",
+                "  1. Augustine of Hippo — Enarrationes in Psalmos · Psalms  [unexamined, 129 of 150 chapters not held]",
+                "     named on 130 · held on 1 · 1 fragment · extent unrecorded",
+                "     not held: 1-2, 4-34, 36-37, 39-50, 53-56, 58-59, 61-62, 64-73, 75-80, 82-87, 89-92, 94-97, 99, 101-122, 124-125, 127-130, 132, 134, 136-140, 142-148, 150",
+                "     no extent recorded, so nothing can say whether this is a gap",
+                "... 36 more lines",
             ),
             "ranked by how much is missing; a gap is a work item, never a build failure",
         ),
@@ -177,7 +177,7 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index containment",
             (
-                "containment: 134 containers (101 records, 33 whole-volume artifacts), 357 constituents, 68 of them commentary-index leads",
+                "containment: 134 containers (101 records, 33 whole-volume artifacts), 358 constituents, 68 of them commentary-index leads",
                 "  resolved 25 · partial 92 · unresolved 17 · not containers 36 · identities 6",
             ),
             "validates the inventory; a container-shaped record with no entry, an unknown record or a malformed extent fails it",
@@ -185,7 +185,7 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index containment --container work.jacques-paul-migne.patrologia-latina-volume-37",
             (
-                "containment: 134 containers (101 records, 33 whole-volume artifacts), 357 constituents, 68 of them commentary-index leads",
+                "containment: 134 containers (101 records, 33 whole-volume artifacts), 358 constituents, 68 of them commentary-index leads",
                 "  resolved 25 · partial 92 · unresolved 17 · not containers 36 · identities 6",
                 "",
                 "  work.jacques-paul-migne.patrologia-latina-volume-37  [resolved]",
@@ -278,8 +278,8 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index build-corpus --calendar roman-1962 --output build/example-corpus.yaml",
             (
-                "masses: 330 covered of 330",
-                "total works in union corpus: 174",
+                "masses: 494 covered of 494",
+                "total works in union corpus: 172",
                 "unresolved passages: 115",
                 "refused loci: 0",
                 "",
@@ -923,34 +923,16 @@ def _passage_records_from_proper(
 
     out: list[tuple[str, dict[str, Any], str]] = []
     source = _coerce_str(proper.get("source"))
-    numbering = {
-        id(owner): _coerce_str(declared or default)
-        for _, owner, _, declared in citations.numbered_verse_lists(proper, default)
-    }
-
-    cycles = proper.get("cycles")
     proper_name = _coerce_str(proper.get("name") or "proper")
-
-    if isinstance(cycles, dict) and cycles:
-        for cycle_name, cycle_owner in cycles.items():
-            if not isinstance(cycle_owner, dict):
-                continue
-            cycle_source = _coerce_str(cycle_owner.get("source") or source)
-            if cycle_source not in {"scripture", "mixed"}:
-                continue
-            for raw in _extract_passages_from_owner(cycle_owner, "verses"):
-                for passage in _parse_passage_value(citations, raw):
-                    out.append(
-                        (f"{proper_name}/{cycle_name}", passage,
-                         numbering.get(id(cycle_owner), default))
-                    )
-        return out
-
-    if source not in {"scripture", "mixed"}:
-        return []
-    for raw in _extract_passages_from_owner(proper, "verses"):
-        for passage in _parse_passage_value(citations, raw):
-            out.append((proper_name, passage, numbering.get(id(proper), default)))
+    # This owner iterator includes both the A/B/C Sunday course and I/II
+    # weekday course, along with each owner's numbering inheritance.
+    for suffix, owner, key, declared in citations.numbered_verse_lists(proper, default):
+        owner_source = _coerce_str(owner.get("source") or source)
+        if owner_source not in {"scripture", "mixed"}:
+            continue
+        for raw in _extract_passages_from_owner(owner, key):
+            for passage in _parse_passage_value(citations, raw):
+                out.append((f"{proper_name}{suffix}", passage, _coerce_str(declared or default)))
     return out
 
 
@@ -987,52 +969,32 @@ def _collect_mass_records(citations, doc: dict[str, Any], calendar: str) -> list
         mass_kind = _coerce_str(entry.get("kind")) or section_kind
         date = _coerce_str(entry.get("date") or entry.get("season"))
 
-        # Top-level propers.
-        for proper in entry.get("propers", []):
-            if not isinstance(proper, dict):
-                continue
+        # The calendar owns inheritance and overrides. A raw walk loses every
+        # Scripture slot a daily Mass or resumed Sunday takes from elsewhere.
+        resolved, problems = _calendars.resolve_propers(doc, entry)
+        if problems:
+            raise ValueError(f"{calendar}::{mass_key}: " + "; ".join(problems))
+        form_kinds = {
+            _coerce_str(form.get("name") or "form"): _coerce_str(form.get("kind") or mass_kind)
+            for form in entry.get("forms") or [] if isinstance(form, dict)
+        }
+        for form_name, proper, _provenance in resolved:
             for slot_name, passage, cited_in in _passage_records_from_proper(
                 citations, proper, numbering
             ):
                 entries.append(
                     {
                         "calendar": calendar,
-                        "mass_key": mass_key,
-                        "mass_name": mass_name,
-                        "mass_kind": mass_kind,
+                        "mass_key": f"{mass_key}:{form_name}" if form_name else mass_key,
+                        "mass_name": f"{mass_name} ({form_name})" if form_name else mass_name,
+                        "mass_kind": form_kinds.get(form_name, mass_kind),
                         "date": date,
                         "proper_slot": slot_name,
                         "passage": passage,
                         "numbering": cited_in,
-                        "source_category": "base",
+                        "source_category": "form" if form_name else "base",
                     }
                 )
-
-        # Seasonal forms.
-        for form in entry.get("forms", []):
-            if not isinstance(form, dict):
-                continue
-            form_name = _coerce_str(form.get("name") or "form")
-            form_kind = _coerce_str(form.get("kind") or mass_kind)
-            for proper in form.get("propers", []):
-                if not isinstance(proper, dict):
-                    continue
-                for slot_name, passage, cited_in in _passage_records_from_proper(
-                    citations, proper, numbering
-                ):
-                    entries.append(
-                        {
-                            "calendar": calendar,
-                            "mass_key": f"{mass_key}:{form_name}",
-                            "mass_name": f"{mass_name} ({form_name})",
-                            "mass_kind": form_kind,
-                            "date": date,
-                            "proper_slot": slot_name,
-                            "passage": passage,
-                            "numbering": cited_in,
-                            "source_category": "form",
-                        }
-                    )
 
     return entries
 
@@ -2074,8 +2036,17 @@ def run_build_corpus(args: argparse.Namespace, citations) -> dict[str, object]:
     }
 
     if args.output:
-        Path(args.output).parent.mkdir(parents=True, exist_ok=True)
-        Path(args.output).write_text(_dump_yaml(payload), encoding="utf-8")
+        target = Path(args.output)
+        expected = _dump_yaml(payload)
+        if getattr(args, "check", False):
+            if not target.is_file() or target.read_text(encoding="utf-8") != expected:
+                raise ValueError(
+                    f"{target}: commentary corpus is missing or stale; rerun "
+                    "commentary-work-index build-corpus with the same inputs without --check"
+                )
+        else:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(expected, encoding="utf-8")
 
     return payload
 
@@ -2278,6 +2249,10 @@ def main(argv: list[str] | None = None) -> int:
         type=Path,
         default=DEFAULT_CORPUS_PATH,
         help=f"write corpus output (default: {DEFAULT_CORPUS_PATH})",
+    )
+    build.add_argument(
+        "--check", action="store_true",
+        help="refuse a missing or stale corpus output without writing it",
     )
 
     cover = with_examples(

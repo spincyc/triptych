@@ -10,7 +10,7 @@ available for legacy schema-1 work. The current three-document contract
 restores the established first four pages for the concise companion, while
 its remaining argument and the expansive study follow their distinct roles. Read
 `guidance/liturgy/propers-three-documents.md` for the owning standard. The
-`proper-study` workflow is at version 14. The version paragraphs below say what
+`proper-study` workflow is at version 15. The version paragraphs below say what
 each bump changed.
 
 The driver grammar is unchanged:
@@ -36,7 +36,7 @@ edition-locale. The initial resolver supports Proper-of-Time targets; additional
 postconciliar families require an explicit registry resolver rather than a
 grammar-only pass.
 
-The sequence is context, research, cold research review, expansive study and
+The sequence is context, research, reusable source registration, cold research review, expansive study and
 cold review, concise study and cold review, homily and cold review, build and
 cold visual review, canonical web conversion and cold review, installation and
 terminal publication gates. Every author stage runs at `high`; every review at
@@ -71,9 +71,11 @@ and visual review at its terminal gate.
 The research-review command explicitly selects a seal contract.
 `--review-contract proper-study-v3` requires canonical chronology records and separately seals
 their computation code and applicable identity registry even before a new
-leaf's component manifest exists. `proper-study-v4`, which version 8 selects,
+leaf's component manifest exists. `proper-study-v4`, introduced in version 8,
 also seals what that computation reads and what its answer cites; Version 8
-below says how. The default seal contract remains unchanged for historical
+below says how. New version-15 runs select `proper-study-v5`, which inherits
+that chronology boundary and adds the source-admission evidence described below.
+The default seal contract remains unchanged for historical
 runs, including older studies that already carried chronology, and so does
 `proper-study-v3`.
 
@@ -327,11 +329,34 @@ fresh version-14 run to adopt it; preserve historical runs and their verdicts.
 The evidence and the decisions are in
 `workflows/reviews/register-remediation-2026-10-21/RECORD.md`.
 
+Version 15 restores a source-registration stage between research and its
+preflight. The three-document workflow had omitted the older pipeline's
+registration stage and allowed a checked witness absent from the library to
+remain ordinary bibliography. New runs must register exact used witnesses and
+reconcile every binding in `research/source-dispositions.toml`. An admitted
+fragment requires a verified passage and the Catena owner's validated canonical
+Scripture edge; checked holdings can instead carry a concrete deferral,
+rejection or non-commentary disposition. Uninspected leads remain explicit
+leads. The [source-registration fragment](fragments/proper-study/source-registration.md)
+owns the record format and commands, including the complete local-binding hash
+that keeps two uses of the same artifact distinct. Rights still govern storage
+and publication separately, and no harvest lead is automatically admitted.
+
+The research preflight enforces this handoff and checks the source-library
+reading projection is current after registration. Research seal v5 retains the
+v4 chronology evidence and adds admitted passage ancestry, any constituent work
+outside an anthology controller's ancestry, the canonical edge and alias
+records, canonical endpoint evidence, and bounded admission computation inputs.
+Existing source-library schemas, historical v3/v4 seals and terminal run
+records keep their meanings. Seed a fresh version-15 run to adopt this contract;
+reuse historical research only after checking its evidence and disposition,
+without restamping its old acceptance.
+
 A driver archives a terminal run into its leaf with
 `tools/proper-study-run-archive <run-id> --cycles <cycles-record>`, which
 verifies every result and packet against the run's state before it writes.
 While a run is live, land nothing that its stages do not own. The
-`proper-study-v4` research seal covers every module the chronology
+`proper-study-v4` and `proper-study-v5` research seals cover every module the chronology
 computation compiles, `scripts/_tooling.py` included, so registering any tool
 mid-run stales the accepted research review. The artifact gate then routes
 back to research, and the linear pipeline reruns every stage after it. The

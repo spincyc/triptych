@@ -255,7 +255,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-source-inventory check-source-inventory-tool \
 	check-source-family-migration check-source-family-migration-tool \
 	check-source-family-screening check-source-containment \
-	check-commentator-inventories \
+	check-commentator-inventories check-commentary-corpus \
 	check-source-graph check-publication-inventories \
 	check-artwork-manifests \
 	check-catena check-catena-structure check-catena-paragraphs \
@@ -491,7 +491,7 @@ check-deployment-sources: check-act-history \
 	@$(PYTHON) tools/tpt mass-ordinary check
 
 check-sources: check-deployment-sources check-source-containment \
-		check-commentator-inventories
+		check-commentator-inventories check-commentary-corpus
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
 
 # A work held only inside another record -- a Migne volume, an NPNF anthology,
@@ -514,6 +514,16 @@ check-source-containment:
 check-commentator-inventories:
 	@$(PYTHON) tools/tpt commentary-work-index standing
 	@$(PYTHON) tools/tpt commentary-work-index formulary
+
+# Re-derive the research worklist without repairing it: a stale snapshot once
+# omitted daily Masses and hid the passages that had never been harvested.
+check-commentary-corpus:
+	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
+		$(PYTHON) tools/tpt harvest promote --check --json >/dev/null && \
+		$(PYTHON) tools/tpt commentary-work-index build-corpus --check >/dev/null && \
+		$(PYTHON) -m unittest tools.tests.test_harvest_work_identity \
+			tools.tests.test_commentary_mass_inheritance; \
+	else echo "PyYAML missing; skipping commentary corpus check"; fi
 
 check-source-library:
 	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_source_library.py' -v
@@ -993,7 +1003,7 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-propers-census check-propers-structure \
 	check-mass-ordinary check-bible-indexes check-catena \
 	check-catena-paragraphs \
-	check-commentary-coverage check-scripture-chronology check-examples
+	check-commentary-coverage check-commentary-corpus check-scripture-chronology check-examples
 	@printf '%s\n' \
 		'check covers tracked sources. It does not run: $(INSTALLED_TREE_CHECKS)' \
 		'Those read the installed tree; `make check-installed` builds it and runs them.' \

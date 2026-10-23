@@ -25,8 +25,20 @@ completion of the parent-owned promise check.
 
 Only the harvest stage consults a model. Everything downstream reads the
 tracked index, so the chain reproduces exactly from a given index: two runs of
-`build-corpus` over one index are byte-identical, and the corpus header records
-the index's `discovery_sha256`.
+`build-corpus` over one index and calendar snapshot are byte-identical, and the
+corpus header records the index's `discovery_sha256`. The union reads appointed
+propers through `_calendars.resolve_propers`, including inherited Masses,
+individual proper references, forms and local overrides. A broken reference is
+a refusal, never an empty research list.
+
+`tools/tpt commentary-work-index build-corpus --check` derives the same output
+and refuses a missing or stale `mass-commentary-corpus.yaml` without writing it.
+`make check-commentary-corpus` first runs `harvest promote --check`, reusing
+the installed index's review date, then checks the corpus and runs the
+identity/inheritance regressions. Both checks refuse stale output without
+writing it. Rebuild the index after changing the ledger or alias review, and
+rebuild the corpus after changing the index or relevant calendars;
+neither check nor rebuild calls a model or admits a Catena fragment.
 
 ## Index format
 
@@ -72,12 +84,40 @@ works. Ids should reconcile to the `work.*` identities `source-library` already
 uses, which is what lets a harvested candidate become a vault record without a
 second identity reconciliation.
 
+The reviewable bridge is `review.canonical_work_ids` in `work-aliases.yaml`:
+
+```yaml
+canonical_work_ids:
+  - author: Augustine of Hippo
+    work: Enarrationes in Psalmos
+    work_id: work.augustine.enarrationes-in-psalmos
+    reason: The owning work record identifies the complete collection under this title.
+```
+
+Each row identifies the **whole** canonical harvested work, including a
+single-title work without an alias group. Promotion validates that the
+canonical name is still harvested, the library work exists, and its author
+matches through the declared author equivalences. It refuses a
+missing reason, two identities for one group or one library ID assigned to two
+groups; resolve the aliases before declaring one identity. The reviewed ID
+travels through `harvest propers`, `promote` and `build-corpus`; the model's raw
+ledger remains unchanged. An ID carried in an unreviewed run stays provenance
+and is omitted from promoted or aggregate metadata. Holdings joins are
+deliberately separate: a lead
+for all of a writer's commentaries may join a held constituent without being
+the same intellectual work.
+
+The initial reviewed batch identifies Augustine's Psalms and John tractates
+and Chrysostom's Philippians. Other groups remain unreconciled until their
+whole-work identity is reviewed; a missing ID is not a missing holding or a
+negative finding about a passage.
+
 ## Key spaces
 
 The index and the propers do not speak the same key space, and the bridge
 between them is `discover`'s, not the index's.
 
-- **The index is keyed by chapter locus, and by nothing else.** All 490 keys are
+- **The index is keyed by chapter locus, and by nothing else.** Its keys are
   one chapter (`Psalms 24`), because the harvest is run `--by-chapter` and a
   locus is one chapter, never wider. It once also held 7 verse ranges left by
   the pilot runs (`Psalms 24:1-24:3`), and the two granularities disagreed:
@@ -89,10 +129,10 @@ between them is `discover`'s, not the index's.
   `Psalms 24:4` is that run's answer about Psalms 24 — widened, which is sound,
   and never narrowed, which would not be. `overlapping_keys` refuses to write an
   index where two keys cover the same text.
-- **A proper cites a verse range** (`Psalm 24:1-3`, `Baruch 3:9-15, 32-4:4`).
-  Of the 1600 distinct references the corpus carries, 6 name a bare chapter and
-  so meet an index key as a string; the other 1594 reach the index only through
-  the bridge below, which is `discover`'s and not the index's.
+- **A proper usually cites a verse range** (`Psalm 24:1-3`,
+  `Baruch 3:9-15, 32-4:4`). A bare chapter can meet an index key directly;
+  a verse range reaches it through the bridge below, which is `discover`'s
+  and not the index's.
 
 Three rules close the gap, all of them in `commentary-work-index`:
 
@@ -134,9 +174,9 @@ declaration never reach a key at all: each exceeds its Hebrew psalm and is
 refused as `unconvertible`, so the psalter half of the index is clean by
 construction. (So it was built, on 2026-07-31. Since 2026-10-01 `build-corpus`
 reads those antiphons under the Vulgate numbering they declare, so they convert
-and key their own psalms; the tracked corpus predates that and has not been
-rebuilt, because the calendars and the index have moved on since and a rebuild
-is a decision about the harvest's pending loci.)
+and key their own psalms. The 2026-10-23 corpus refresh includes that correction
+and both weekday courses; the separately recorded unresolved weekday Psalm
+56:14 endpoint remains refused under the calendar's `psalm_numbering_exceptions`.)
 
 **The rest of the canon is not converted, so the file is mixed.** A non-psalm
 citation's chapter becomes the key as printed, which is the Vulgate's division
@@ -301,3 +341,11 @@ and cannot be undone from the index, so nothing is merged on resemblance.
 Nothing enters the source library on a harvest alone. Candidates are reviewed
 into the vault under `../../../guidance/sources.md`, the way a `trace-scan`
 family presence is promoted to `reviewed`.
+
+A checked commentary passage enters Catena through a separate handoff: retain
+its edition-controlled natural unit as a source-library passage, then review
+its canonical Scripture extent in `fragment-loci.yaml` under
+`guidance/catena.md`. Explicit text, provenance, controller rights, composition
+date and original/translation identity remain admission gates. Registering a
+work or artifact, reconciling its ID or rebuilding this acquisition corpus
+does not discharge them.

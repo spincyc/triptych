@@ -10,6 +10,9 @@
 # groups, that no name declared ambiguous still groups a work, that no chain of
 # aliases has re-joined works declared distinct, and that no group's canonical
 # title names a book its own other names do not share.
+# `review.canonical_work_ids` separately identifies a complete harvested work
+# with its source-library work record. Holdings joins can identify a part of
+# a work, so they never supply this identity automatically.
 #
 # `evidence_sha256` covers the alias claims alone, so recording a run that
 # asserts a new alias ages the table and `harvest promote` refuses until the
@@ -18,6 +21,28 @@ schema: triptych-commentary-work-aliases/v1
 derived_on: '2026-09-23'
 evidence_sha256: 506ced533d1151fd6c61e71b41dd2438db776cb9c03539790c4738a6adea59c3
 review:
+  canonical_work_ids:
+  - author: Augustine of Hippo
+    work: Enarrationes in Psalmos
+    work_id: work.augustine.enarrationes-in-psalmos
+    reason: The owning work record identifies Augustine's complete psalm-exposition
+      collection as Enarrationes in Psalmos, with Expositions on the Psalms as an
+      alternate title. This is the alias group's whole collection, not one psalm
+      exposition or a containing Migne volume.
+  - author: Augustine of Hippo
+    work: In Iohannis evangelium tractatus CXXIV
+    work_id: work.augustine.in-iohannis-evangelium-tractatus
+    reason: The owning work record identifies Augustine's collection of 124 tractates
+      on John's Gospel and explicitly lists Tractates on the Gospel of John and
+      Homilies on the Gospel of John. Those titles belong to this alias group;
+      the identity is the collection, not one tractate or an anthology.
+  - author: John Chrysostom
+    work: Homiliae in epistulam ad Philippenses
+    work_id: work.john-chrysostom.homilies-on-philippians
+    reason: The owning work record names Homilies on Philippians and the alternate
+      In epistulam ad Philippenses homiliae, both titles in this alias group. Its
+      patristic-work registration distinguishes the whole work from the English
+      translation and NPNF anthology that delivers it.
   ambiguous_titles:
   - author: Peter Lombard
     title: Magna Glossatura

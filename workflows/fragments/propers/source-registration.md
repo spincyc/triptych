@@ -113,6 +113,30 @@ For each source that survives the checks above, create or extend, under
   `storage`, `rights_status`, `rights_basis`, and the measured extent in
   `notes`. Retain the file beside its record when `storage = "tracked"`.
 
+An artifact is a holding, not yet a reusable commentary fragment. For checked
+biblical commentary, retain an addressable passage and its transcription when
+wording, natural excerpt extent, attribution, exact controller and rights are
+established. Follow `guidance/catena.md` for the canonical Scripture edge in
+`src/sources/commentary/fragment-loci.yaml`, original or translation voice,
+text date and attribution disputes. Anchor the excerpt to the Scripture the
+source actually expounds; an analogue in a proper study may concern another
+passage. Acquisition, a harvest attribution and a checked publication claim
+are distinct from fragment admission.
+
+Give each actually inspected witness an explicit corpus disposition in your
+handoff summary: admitted
+passage and validated edge, a durable deferral with native checked locus,
+canonical Scripture relation and concrete missing criteria, a reasoned
+rejection, or a non-commentary use. Keep truly uninspected leads separate.
+The new `proper-study` workflow owns the machine-checked format and examples
+in `workflows/fragments/proper-study/source-registration.md`; its standalone
+`scripts/_proper_study.py source-dispositions` command can check an adopted
+record after the author preserves the handoff in the leaf. This older `proper`
+stage still writes only `src/sources/` and its generated projections, as below;
+its pipeline does not require that new schema and does
+not acquire its enforcement merely by reading this fragment. Do not restamp
+historical records or infer an admission from an existing artifact.
+
 Use the language codes the library already uses — `la`, `grc`, `en`, `he`,
 `arc` — and not their alternates. The vocabulary is mixed today (`la` 242
 against `lat` 8, `de` 12 against `deu` 2, `grc` 61 against `el` 3) and nothing
@@ -133,7 +157,9 @@ deterministic and it is yours to run: the deployment gate refuses a stale
 projection, and one registration of 112 artifacts left the gate red for a
 console to notice because no stage owned the regeneration.
 
-Both must pass over what you wrote. `make check-sources` is the ordinary
+All must pass over what you wrote. Regenerate the Catena structure and
+paragraphs under its owning guidance after passage or edge changes.
+`make check-sources` is the ordinary
 non-completion gate: it validates the canonical source graph and bindings and
 replays the inventory. A record that does not validate is not registered, and
 returning `PASS` over one hands `author-proper` a fingerprint that will refuse.

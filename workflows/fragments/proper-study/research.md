@@ -11,9 +11,33 @@ Read and verify `research/context.md`; correct a contextual error from evidence.
 Complete the governing edition's source records, rights audit, and every
 appointed element's bounded reception search. Read complete biblical contexts,
 direct patristic exegesis, and relevant medieval or later saintly reception.
-Register or reuse exact sources lawfully and keep valid
-`research/source-bindings.toml`. A source absent from the reusable library may
-still be cited accurately in ordinary bibliography; never invent a binding ID.
+Resolve existing holdings through uncapped `commentary-work-index discover`
+for every appointed passage and `formulary` for the target Mass, as the Catena
+guidance requires. Register or reuse exact sources lawfully and keep valid
+`research/source-bindings.toml`; never invent a binding ID. Every source
+actually read or used must reach an exact artifact, segment, passage or corpus,
+with honest evidence states and the reviewed source fingerprint. A work or
+edition catalog entry alone cannot represent a checked witness. Keep genuinely
+uninspected bibliography as `lead`, without claiming acquisition or inspection.
+
+Keep complete retrieval receipts and bytes in this run's assigned scratch area
+until the following `source-registration` stage finishes. Give that worker the
+actual receipt locations in your result's `notes`, and put durable URL, edition,
+hash, size, retrieval date, native checked loci, rights and extent findings in
+the research records. Do not put machine paths in tracked files. Registration
+retains lawful reusable bytes in `src/sources/`, and registers restricted
+identities and hashes without their bytes. A bibliography-only citation does
+not finish the reusable-source handoff in this version of the workflow.
+
+Identify every checked reception witness for source registration, including
+analogues, liturgical commentators and sources omitted from the final prose.
+The next stage records each binding in `research/source-dispositions.toml`:
+an admitted, validated passage/Scripture edge; a durable deferral with concrete
+missing criteria and the source's actual Scripture relation; a reasoned
+rejection; a non-commentary use; or an explicitly uninspected lead. Acquiring
+an artifact, finding a harvest attribution, or verifying a claim never by itself
+admits a fragment. Keep the source's native locus and the Scripture it actually
+expounds distinct from this Mass's appointed passage.
 
 Write `research/scope.md` with precise checked loci, witness roles, material
 disagreements, negative searches, unresolved leads, rights, and evidence bounds.

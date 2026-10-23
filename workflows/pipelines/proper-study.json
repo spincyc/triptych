@@ -1,6 +1,6 @@
 {
   "id": "proper-study",
-  "version": 14,
+  "version": 15,
   "description": "Source-first proper study, concise study and standalone homily, with independent reviews",
   "default_effort": "high",
   "document_argument": "proper",
@@ -88,6 +88,25 @@
         "proper-study/research.md"
       ],
       "result_schema": "worker-result.json",
+      "next": "source-registration",
+      "repairs": [
+        "research"
+      ],
+      "reports_repairs": true
+    },
+    {
+      "id": "source-registration",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "proper-study/contract.md",
+        "proper-study/source-registration.md"
+      ],
+      "result_schema": "worker-result.json",
       "next": "research-preflight",
       "repairs": [
         "research"
@@ -103,12 +122,17 @@
       "checks": [
         {
           "id": "research-records",
-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase research",
-          "required_result": "Context, bounded research and valid source bindings must exist before cold evidence review."
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase research --require-source-dispositions",
+          "required_result": "Research must bind exact used witnesses and reconcile every binding with a validated fragment admission or an explicit durable disposition before cold evidence review."
+        },
+        {
+          "id": "source-projection-current",
+          "command": "tools/tpt source-reader structure --check",
+          "required_result": "The source-library reading projection must reflect the registered records. Run make source-projection after source registration."
         }
       ],
       "pass_transition": "research-review",
-      "fail_transition": "research",
+      "fail_transition": "source-registration",
       "max_iterations": 4
     },
     {
@@ -139,7 +163,7 @@
       "max_novel_iterations": 4,
       "review_scope": true,
       "records_standing_findings": true,
-      "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review research --review-contract proper-study-v4",
+      "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review research --review-contract proper-study-v5",
       "review_input_repair_target": "research"
     },
     {

@@ -130,6 +130,19 @@ proper; do not attribute the editor's complete Mass synthesis to an author who
 only explained one passage. A catena supplies leads, not proof that its named
 author or underlying work has been checked.
 
+From `proper-study` version 15, research is followed by reusable source
+registration before cold review. Every source actually read or used receives
+an exact registered witness and an honest publication-local binding; restricted
+rights can forbid retained bytes without excusing identity registration. Each
+checked commentary witness also has an explicit admission, deferral, rejection
+or non-commentary disposition. Uninspected leads remain separate. The
+[source-registration fragment](../../workflows/fragments/proper-study/source-registration.md)
+owns the machine-checked handoff format and commands; the source and Catena
+contracts continue to own evidence states, rights and fragment admission.
+Historical workflows and research seals keep their original contracts and
+bibliographic fallback; a substantive new version-15 run independently checks
+reused evidence under this handoff rather than restamping old acceptance.
+
 Every lane's declared `sources` path belongs beneath the same leaf's
 `research/` directory. Its bytes are research evidence and are also included
 in the immutable study-review input seal. Moving the record outside that owner
@@ -636,7 +649,8 @@ substantive-text preservation and build/install byte identity remain mandatory.
 Do not enlarge type, pad pages or suppress evidence to meet page targets.
 No ornamental image is required.
 
-`proper-study` runs source resolution and research, cold research review,
+`proper-study` runs source resolution, research and reusable source registration,
+cold research review,
 study authoring and cold review, concise authoring and cold review, homily
 authoring and cold review, build and cold visual review, then canonical web
 conversion, review, installation and publication gates. Each substantive

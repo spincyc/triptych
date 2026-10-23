@@ -179,6 +179,10 @@ finding; a quiet substitution is a defect.
 
 ## Research and claim discipline
 
+New `proper-study` runs follow the [three-document profile's version-15
+reusable-source handoff](propers-three-documents.md#research-before-interpretation),
+including its historical compatibility boundary.
+
 Read every selected passage in its complete literary context. Distinguish composition, first audience, and narrated event; preserve traditional attribution, modern judgment, disagreement, and uncertainty without silent harmonization. Seek direct patristic or saintly exegesis before later doctrinal or liturgical illumination, and record material negative results rather than inventing a witness.
 
 Maintain a passage-by-passage reception matrix in `research/scope.md` for every reading, psalm, scriptural acclamation, and book-identified antiphon or adaptation in every authorized branch. Consolidate repeated passages while naming all uses. Each row records direct ancient exegesis checked; medieval, Doctoral, or later saintly reception checked; works, loci, languages, and corpora searched; the role of every retained witness; and material negative results. Search direct commentaries, homilies, and psalm expositions first; then major relevant Greek and Latin Fathers; then medieval Doctors and later canonized exegetes or spiritual writers; and only then illuminating doctrinal or liturgical reuse. Use a catena as a lead map only and verify the underlying work and locus.

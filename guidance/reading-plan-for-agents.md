@@ -269,12 +269,18 @@ work           author, title, role, death_year, aliases[]?, work_id?
 
 ```sh
 tools/tpt harvest plan --corpus src/sources/commentary/mass-commentary-corpus.yaml \
-  --by-chapter --json          # → total 525, pending 0, cutoff_year 1900
+  --by-chapter --json          # recompute total and pending after every corpus refresh
 tools/tpt harvest promote --audited-on <date> --dry-run --json
 ```
 
-The 525 loci are the ones both missals' propers cite. The corpus is wider —
-1,600 passages, of which 1,591 are chapter-matched. Read the
+The 2026-10-23 refresh derives 777 chapter loci, 232 below the three-run target,
+from 3,594 distinct references; 3,237 references have chapter matches. The
+corpus resolves the calendar's inherited propers and local overrides through
+`_calendars.resolve_propers`. It does not copy the raw rows and silently lose
+the Common's Scripture from a daily Mass. The citations tool's
+`numbered_verse_lists` supplies both the Sunday A/B/C and weekday I/II courses
+and each owner's psalm numbering; a walk of Sunday `cycles` alone drops daily
+readings and psalms. Read the
 scale before starting: `ask --dry-run` reports the query count, and it is one
 query per passage per run.
 
@@ -302,7 +308,16 @@ re-derive rather than quoting the table.
 | Distinct (locus, author) | 6,511 |
 | Distinct (locus, author, title) | 10,293 |
 
-The corpus itself has since grown to **196 masses, all covered**.
+The 196-row corpus snapshot was stale. Its 2026-10-23 rebuild covers 1,096
+Mass/form rows, 1,095 carrying harvest leads, with 351 unresolved references.
+These are discovery counts, not Catena fragments or proof of verse-level
+commentary. One unconvertible weekday reference remains refused under the
+postconciliar calendar's recorded `psalm_numbering_exceptions`.
+`commentary-work-index build-corpus --check` and
+`make check-commentary-corpus` now refuse a missing or stale derived corpus
+without repairing it during the check. The latter also runs `harvest promote
+--check` first, so an unpromoted ledger or identity review cannot leave both
+derived files agreeing with an obsolete index.
 
 ### The corroboration measurement
 
@@ -389,16 +404,17 @@ Open tasks, in order:
 1. ~~Populate a **work-identity registry**~~ — **the alias half is done.**
    `src/sources/commentary/work-aliases.yaml` is tracked and derived by
    `tools/tpt harvest aliases --rebuild`, with `genesis-work-aliases.yaml`
-   beside it. What remains is the reconciliation to the `work.*` identities
-   `tools/source-library` uses: **`work_id` is still null on all 9,083 entries**
-   [verified], so deduplication still falls back to the string
-   `"author | title"`. That is the open item, not the alias data.
-2. Decide the **whole-versus-part titling rule** for per-book commentaries and
-   apply it as aliases.
-3. Reconcile the **two locus granularities**: three pilot runs use verse-range
-   keys (`Psalms 24:1-24:3`), the three full passes use chapter keys
-   (`Psalms 24`). They do not collide, which is why promotion reports 497
-   passages for 491 harvested loci.
+   beside it. Reconciliation to `work.*` identities is partial:
+   `review.canonical_work_ids` explicitly identifies three complete works,
+   producing 155 identified discovery entries on 2026-10-23. Other entries
+   still deduplicate by author and title. The commentary README owns this
+   declaration and its validation; holdings joins alone cannot identify a
+   whole work because some reach only one constituent.
+2. The **whole-versus-part titling rule** was settled in
+   `guidance/catena.md` §5; keep applying it when reviewing groups.
+3. The **two locus granularities** were reconciled by chapter folding;
+   `guidance/catena.md` §3 owns that settled rule. Raw pilot answers retain
+   their original verse-range provenance in the ledger.
 4. Then promote with a confidence floor and review into the vault under
    `guidance/sources.md`.
 
@@ -406,12 +422,14 @@ Open tasks, in order:
 
 | Symptom | Cause | Note |
 | --- | --- | --- |
-| **A recorded run vanishes** | `record` and `promote` do load → mutate → whole-file `_dump`. Two processes writing the ledger concurrently: the loser's write reverts the winner's runs. Observed 2026-07-31: the ledger dropped from 6 runs to 3 and was restored a minute later. | **Silent.** Only a run count or file size reveals it. Never run two harvest mutations at once; check `runs:` count before and after. |
+| **A recorded run vanishes** | Historical concurrent whole-file mutation defect, observed 2026-07-31. | `record` now locks its complete read/mutate/write operation and writes atomically; `tests/tools/harvest.test` exercises concurrent writers and shrink refusal. |
 | One work counted twice | title variance, no `work_id`, no alias | silent — appears as two lower-confidence entries |
 | Confidence divided by the wrong denominator | `promote` uses runs *for that passage*, not total runs; pilot and full loci have different denominators | silent |
 | A work outside its real extent | model error | not detectable by the tool; check against the extent table above |
-| `harvest promote` exits non-zero | **defect:** the text renderer iterates `payload["works"]`, which `run_promote` returns as an `int` → `TypeError`. Non-dry-run `_dump`s the index *before* the crash. | use `--json`; treat a text-mode promote as having already written the file |
+| `harvest promote` exits non-zero | Historical count/list text-renderer mismatch. | Text, YAML and JSON reporting are tested; the index write is deferred until reporting succeeds. |
 | A locus silently loses works | a reference grouped across chapters | always pass `--by-chapter` |
+| A daily Mass loses Scripture | corpus builder bypasses the calendar's resolver or traverses only Sunday cycles | `test_commentary_mass_inheritance.py` covers Mass, proper and form references, local overrides, both weekday courses and numbering; unresolved references refuse the build. |
+| Research worklist stays on an older calendar/index snapshot | generated corpus was never rebuilt or checked | `make check-commentary-corpus` refuses stale output; rebuild with `tools/tpt commentary-work-index build-corpus`. |
 | A post-1900 work enters | — | cannot: `record` rejects `death_year > 1900` |
 
 ### Verification
@@ -419,13 +437,16 @@ Open tasks, in order:
 ```sh
 sh tests/tools/harvest.test                    # prints "ok"
 sh tests/tools/commentary-work-index.test
+make check-commentary-corpus
 tools/tpt harvest plan --corpus src/sources/commentary/mass-commentary-corpus.yaml \
-  --by-chapter --json                          # pending should be 0
-tools/tpt harvest promote --audited-on <date> --dry-run --json   # --json is required
+  --by-chapter --json                          # pending is a worklist, not a failed gate
+tools/tpt harvest promote --audited-on <date> --dry-run --json
 tools/tpt harvest propers --top 20             # the acquisition list as it stands
 ```
 
-`harvest` is **not** in `make check`. Run its test explicitly.
+The corpus currency and targeted identity/inheritance regressions run in
+`make check` and `make check-sources`. The broader harvest shell test remains
+explicit.
 
 ### Standing caveat
 

@@ -32,7 +32,18 @@ RESEARCH_REVIEW_CONTRACT = "proper-study-v3"
 # and available payloads of every source its answer cites. v3 stays as it was,
 # so a review sealed under it verifies as it always did.
 CHRONOLOGY_READS_CONTRACT = "proper-study-v4"
-RESEARCH_REVIEW_CONTRACTS = (RESEARCH_REVIEW_CONTRACT, CHRONOLOGY_READS_CONTRACT)
+# v5 (proper-study version 15) adds the reusable-source handoff. Older seals
+# retain their exact shape; neither historical bindings nor verdicts migrate.
+SOURCE_DISPOSITIONS_CONTRACT = "proper-study-v5"
+RESEARCH_REVIEW_CONTRACTS = (RESEARCH_REVIEW_CONTRACT, CHRONOLOGY_READS_CONTRACT,
+                           SOURCE_DISPOSITIONS_CONTRACT)
+SOURCE_DISPOSITIONS = "research/source-dispositions.toml"
+SOURCE_DISPOSITIONS_SCHEMA = "proper-study-source-dispositions-v1"
+SOURCE_ADMISSION_INPUTS = (
+    "scripts/_proper_study.py", "scripts/_catena.py", "scripts/_canon.py",
+    "scripts/_loci.py", "scripts/_projection.py", "scripts/_psalms.py",
+    "tools/source-library", "requirements-tools.txt",
+)
 # Within the leaf the research seal's own rule decides what is evidence: these
 # three directories, which it seals whole. The component manifest is opened by
 # the postconciliar adapter only to refuse a disagreement; it is authored after
@@ -302,6 +313,200 @@ def source_evidence(root: Path, ids, role: str = "bound evidence") -> set[Path]:
     return paths
 
 
+def binding_digest(binding: dict) -> str:
+    """Pin the local use as well as the source: role, loci, states and context."""
+    if not isinstance(binding, dict):
+        raise ValueError("source-bindings.toml requires binding tables")
+    try:
+        canonical = json.dumps(binding, sort_keys=True, separators=(",", ":"))
+    except TypeError as error:
+        raise ValueError("source binding values must follow the source-library schema") from error
+    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+
+def source_admission_computation_inputs(root: Path) -> dict[str, str]:
+    return {name: digest(root / name) for name in SOURCE_ADMISSION_INPUTS}
+
+
+def source_dispositions(root: Path, provider: str, document: str) -> set[Path]:
+    """Reconcile research bindings with reusable holdings and fragment admission.
+
+    This is a workflow contract, not an extension of the frozen source schemas.
+    An inspected artifact is L2 evidence; only the Catena owner's validated
+    passage/Scripture edge establishes L3. Deferred rows are the durable queue,
+    with stable keys, exact witness pins and the concrete criteria still missing.
+    """
+    leaf = leaf_path(root, provider, document)
+    path = leaf / SOURCE_DISPOSITIONS
+    if not path.is_file():
+        raise ValueError(f"missing reusable-source handoff: {SOURCE_DISPOSITIONS}")
+    data = tomllib.loads(path.read_text())
+    if (set(data) != {"schema", "contract", "document", "numbering", "sources"}
+            or type(data.get("schema")) is not int or data["schema"] != 1
+            or data.get("contract") != SOURCE_DISPOSITIONS_SCHEMA
+            or data.get("document") != document or data.get("numbering") != "vulgate"
+            or not isinstance(data.get("sources"), list)):
+        raise ValueError(f"{SOURCE_DISPOSITIONS} requires schema 1, contract "
+                         f"{SOURCE_DISPOSITIONS_SCHEMA}, this document, vulgate numbering and sources[]")
+    binding_path = leaf / "research/source-bindings.toml"
+    bindings = tomllib.loads(binding_path.read_text()).get("bindings", [])
+    if not isinstance(bindings, list):
+        raise ValueError("source-bindings.toml requires bindings[]")
+    library_tool, library = _source_library(root)
+    covered, keys, admitted, paths = set(), set(), set(), set()
+    ceilings = None
+    evidence_ids = set()
+    required = {"id", "binding_index", "binding_sha256", "source_id", "locus", "relationship", "disposition", "reason"}
+    allowed = required | {"source_fingerprint", "passage_ids", "scripture_extents", "missing_criteria"}
+    commentary = {"direct-exegesis", "analogue", "doctrinal-illumination", "liturgical-commentary"}
+
+    def strings(value) -> bool:
+        return isinstance(value, list) and all(isinstance(one, str) and one.strip() for one in value)
+
+    def ancestry(identifier: str) -> set[str]:
+        pending, found = [identifier], set()
+        while pending:
+            current = pending.pop()
+            if current not in found:
+                if current not in library.records:
+                    raise ValueError(f"unregistered reusable-source evidence: {current}")
+                found.add(current)
+                pending.extend(library_tool._dependency_ids(library.records[current]))
+        return found
+
+    def canonical_evidence(extent) -> None:
+        # These exact canonical bytes bound candidate and admitted Scripture
+        # endpoints, including analogues outside this leaf's appointments.
+        paths.update(path for path in (root / "src/sources/works").glob(
+            "*/*/editions/*/artifacts/book-index-*/book-index.tsv")
+                     if "vulgata-clementina" in path.as_posix())
+        for chapter in (extent.first_chapter, extent.last_chapter):
+            path = root / _catena.BIBLES_RELATIVE / _catena.CANONICAL_BIBLE / "chapters" / extent.token / f"{chapter}.json"
+            if path.is_file():
+                paths.add(path)
+
+    for ordinal, item in enumerate(data["sources"], 1):
+        label = f"{SOURCE_DISPOSITIONS}: sources[{ordinal}]"
+        if not isinstance(item, dict) or not required <= set(item) or set(item) - allowed:
+            raise ValueError(f"{label} has missing or unknown fields")
+        if any(not isinstance(item[name], str) or not item[name].strip()
+               for name in required - {"binding_index"}):
+            raise ValueError(f"{label} requires nonempty string identity, locus, relationship, disposition and reason")
+        key = item["id"]
+        if not isinstance(key, str) or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", key) or key in keys:
+            raise ValueError(f"{label} requires a unique stable kebab-case id")
+        keys.add(key)
+        index = item["binding_index"]
+        if type(index) is not int or not 1 <= index <= len(bindings):
+            raise ValueError(f"{label} binding_index must name an existing one-based binding")
+        binding = bindings[index - 1]
+        if item["binding_sha256"] != binding_digest(binding):
+            raise ValueError(f"{label} binding_sha256 disagrees with bindings[{index}]; "
+                             "reconcile the changed role, loci, states and context")
+        source_id = item["source_id"]
+        if source_id != binding.get("source_id"):
+            raise ValueError(f"{label} source_id disagrees with bindings[{index}]")
+        covered.add(index)
+        relationship, disposition = item["relationship"], item["disposition"]
+        if relationship not in commentary | {"not-commentary", "lead"}:
+            raise ValueError(f"{label} has an unknown Scripture relationship")
+        if disposition not in {"admitted", "deferred", "rejected", "not-commentary", "lead"}:
+            raise ValueError(f"{label} has an unknown admission disposition")
+        if not strings(binding.get("states", [])):
+            raise ValueError(f"{label} binding states must be a string list")
+        states = set(binding.get("states", []))
+        record = library.records.get(source_id)
+        if record is None:
+            raise ValueError(f"{label} names an unregistered source: {source_id}")
+        passages, extents, missing = (item.get(name, []) for name in
+                                      ("passage_ids", "scripture_extents", "missing_criteria"))
+        if not strings(passages) or not strings(missing) or not isinstance(extents, list):
+            raise ValueError(f"{label} passage_ids/missing_criteria must be string lists and scripture_extents an array")
+        if disposition == "lead":
+            if (relationship != "lead" or binding.get("role") != "lead"
+                    or states - {"cataloged"} or item.get("source_fingerprint") is not None
+                    or passages or extents or missing):
+                raise ValueError(f"{label} lead requires an explicitly uninspected, catalog-only lead binding")
+            continue
+        if relationship == "lead" or binding.get("role") == "lead":
+            raise ValueError(f"{label} cannot turn an uninspected lead into used evidence")
+        exact = library_tool._exact_artifacts(library, record)
+        if (record.record_type not in {"artifact", "segment", "passage", "corpus"}
+                or not exact or any(not re.fullmatch(r"[0-9a-f]{64}", str(one.data.get("sha256", "")))
+                                    for one in exact)):
+            raise ValueError(f"{label} used evidence requires an exact hashed artifact, segment, passage or corpus; "
+                             "catalog-only bibliography is a lead")
+        if not states & {"acquired", "searched", "inspected", "verified"}:
+            raise ValueError(f"{label} used evidence cannot remain catalog-only")
+        if (binding.get("role") in {"direct-witness", "reception"} or relationship in commentary) and not states & {"inspected", "verified"}:
+            raise ValueError(f"{label} claim-carrying witness requires actual inspection")
+        fingerprint = library_tool.source_fingerprint(library, source_id)
+        if binding.get("source_fingerprint") != fingerprint or item.get("source_fingerprint") != fingerprint:
+            raise ValueError(f"{label} requires the current reviewed binding source_fingerprint; reread changed evidence")
+        evidence_ids.add(source_id)
+        if disposition == "not-commentary":
+            if relationship != "not-commentary" or passages or extents or missing:
+                raise ValueError(f"{label} not-commentary requires that relationship and no fragment claims")
+            continue
+        if relationship not in commentary:
+            raise ValueError(f"{label} commentary admission requires its actual Scripture relationship")
+        import _catena
+        if disposition in {"deferred", "rejected"}:
+            if not missing or passages or not extents and "scripture-extent" not in missing:
+                raise ValueError(f"{label} deferred/rejected commentary requires concrete missing_criteria and "
+                                 "canonical scripture_extents (or scripture-extent explicitly unresolved)")
+            if extents and ceilings is None:
+                ceilings = _catena._chapter_ceiling(root)
+            for value in extents:
+                extent = _catena._extent(value)
+                if (extent is None or not isinstance(value["token"], str)
+                        or any(type(value[name]) is not int for name in _catena.EXTENT_FIELDS - {"token"})):
+                    raise ValueError(f"{label} has a malformed canonical Scripture extent")
+                errors = _catena._extent_errors(root, label, extent, ceilings)
+                if errors:
+                    raise ValueError("\n".join(errors))
+                canonical_evidence(extent)
+            continue
+        if not passages or extents or missing:
+            raise ValueError(f"{label} admitted requires passage_ids; Scripture extents derive only from the canonical edge")
+        parent_ids = {one.record_id for one in exact} if record.record_type == "corpus" else {source_id}
+        for passage_id in passages:
+            passage = library.records.get(passage_id)
+            if passage is None or passage.record_type != "passage":
+                raise ValueError(f"{label} admission requires an existing passage: {passage_id}")
+            if not parent_ids & ancestry(passage_id):
+                raise ValueError(f"{label} admitted passage is not controlled by its bound witness: {passage_id}")
+            if "verified" not in passage.data.get("states", []):
+                raise ValueError(f"{label} admitted passage has not been verified: {passage_id}")
+            admitted.add(passage_id)
+    omitted = sorted(set(range(1, len(bindings) + 1)) - covered)
+    if omitted:
+        raise ValueError(f"{SOURCE_DISPOSITIONS} omits source bindings: {omitted}")
+    paths.update(source_evidence(root, evidence_ids | admitted, "reusable-source evidence"))
+    if admitted:
+        import _catena
+        edges = _catena.load_edges(root)
+        mapped = {item.get("passage_id") for item in edges.get("fragments", []) if isinstance(item, dict)}
+        if admitted - mapped:
+            raise ValueError("admitted passages lack a canonical Scripture edge: " + ", ".join(sorted(admitted - mapped)))
+        errors = _catena.validate(root)
+        if errors:
+            raise ValueError("Catena admission failed:\n" + "\n".join(errors))
+        selected = [item for item in edges["fragments"] if item["passage_id"] in admitted]
+        # Anthology passages can name a constituent work outside their source
+        # controller's ancestry. Its attribution, language and date also count.
+        paths.update(source_evidence(root, {item["work_id"] for item in selected}, "admitted commentary work"))
+        for item in selected:
+            canonical_evidence(_catena._extent(item["extent"]))
+        paths.update(root / name for name in (_catena.EDGES_RELATIVE, _catena.ALIASES_RELATIVE,
+                                             _catena.ABSENCES_RELATIVE) if (root / name).is_file())
+    relevant = {str(one.relative_to(root)) + ": " for one in paths | {binding_path}}
+    errors = [error for error in library.errors if any(error.startswith(prefix) for prefix in relevant)]
+    if errors:
+        raise ValueError("invalid reusable-source evidence:\n" + "\n".join(errors))
+    return paths
+
+
 def research_dependencies(root: Path, provider: str, document: str) -> set[Path]:
     leaf = leaf_path(root, provider, document)
     record = leaf / "research/review-dependencies.toml"
@@ -478,7 +683,7 @@ def review_inputs(root: Path, provider: str, document: str, review: str, *,
                                      f"chronology input: {name}")
             value["review_contract"] = review_contract
             computation = chronology_computation_inputs(root, provider, document)
-            if review_contract == CHRONOLOGY_READS_CONTRACT:
+            if review_contract in {CHRONOLOGY_READS_CONTRACT, SOURCE_DISPOSITIONS_CONTRACT}:
                 reads, modules, cited = chronology_reads(root, provider, document)
                 # The named list stays; anything else the computation compiled joins it.
                 computation.update(modules)
@@ -486,6 +691,9 @@ def review_inputs(root: Path, provider: str, document: str, review: str, *,
                 paths.update(source_evidence(root, cited, "chronology source"))
                 value["chronology_cited_sources"] = cited
             value["chronology_computation_inputs"] = computation
+            if review_contract == SOURCE_DISPOSITIONS_CONTRACT:
+                paths.update(source_dispositions(root, provider, document))
+                value["source_admission_computation_inputs"] = source_admission_computation_inputs(root)
     elif review in {"study", "synthesis", "homily"}:
         data = manifest(leaf)
         mode = "research" if review == "study" else review
@@ -675,7 +883,8 @@ def publication(root: Path, provider: str, document: str) -> None:
 def check(root: Path, provider: str, document: str, phase: str,
           edition: str | None, *, require_presentation: bool = False,
           require_format: bool = False, require_authority: bool = False,
-          require_orientation: bool = False, require_orientation_v2: bool = False) -> None:
+          require_orientation: bool = False, require_orientation_v2: bool = False,
+          require_source_dispositions: bool = False) -> None:
     scope(root, provider, document)
     leaf = leaf_path(root, provider, document)
     if phase == "scope":
@@ -689,6 +898,8 @@ def check(root: Path, provider: str, document: str, phase: str,
         run(root, sys.executable, str(root / "tools/check-content-preflight"),
             "--root", str(root), "--provider", provider, "--document", document,
             "--check", "bindings-valid")
+        if require_source_dispositions:
+            source_dispositions(root, provider, document)
         review_inputs(root, provider, document, "research")
         return
     presentation_contract(manifest(leaf), required=require_presentation)
@@ -708,7 +919,8 @@ def check(root: Path, provider: str, document: str, phase: str,
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=("identity", "check", "snapshot", "snapshot-web", "seal"))
+    parser.add_argument("action", choices=("identity", "check", "snapshot", "snapshot-web", "seal",
+                                          "source-dispositions", "binding-digests"))
     parser.add_argument("--root", type=Path, default=ROOT)
     parser.add_argument("--provider", choices=("gpt", "claude"), default="gpt")
     parser.add_argument("--document", required=True)
@@ -724,10 +936,12 @@ def main() -> int:
                         help="require generated passage/subject/date rows (proper-study v10)")
     parser.add_argument("--require-orientation-v2", action="store_true",
                         help="require the orientation-v2 declaration that new runs use (proper-study v12)")
+    parser.add_argument("--require-source-dispositions", action="store_true",
+                        help="require exact source registration and explicit fragment admission dispositions (proper-study v15)")
     parser.add_argument("--date", default="undated")
     parser.add_argument("--review", choices=("research", "study", "synthesis", "homily", "visual", "web"))
     parser.add_argument("--review-contract", choices=RESEARCH_REVIEW_CONTRACTS,
-                        help="explicit v3 or v4 research seal; omitted for historical review receipts")
+                        help="explicit versioned research seal; omitted for historical review receipts")
     args = parser.parse_args()
     root = args.root.resolve()
     try:
@@ -740,8 +954,17 @@ def main() -> int:
                                            review_contract=args.review_contract),
                              sort_keys=True, separators=(",", ":")))
             return 0
+        if args.action == "binding-digests":
+            path = leaf_path(root, args.provider, args.document) / "research/source-bindings.toml"
+            bindings = tomllib.loads(path.read_text()).get("bindings", [])
+            print(json.dumps({"bindings": [{"binding_index": index, "source_id": binding["source_id"],
+                                           "binding_sha256": binding_digest(binding)}
+                                          for index, binding in enumerate(bindings, 1)]}, sort_keys=True))
+            return 0
         if args.action == "identity":
             identity(root, args.document)
+        elif args.action == "source-dispositions":
+            source_dispositions(root, args.provider, args.document)
         elif args.action.startswith("snapshot"):
             snapshot(root, args.provider, args.document, web=args.action == "snapshot-web")
         elif not args.phase:
@@ -751,7 +974,8 @@ def main() -> int:
                   require_presentation=args.require_presentation, require_format=args.require_format,
                   require_authority=args.require_authority,
                   require_orientation=args.require_orientation,
-                  require_orientation_v2=args.require_orientation_v2)
+                  require_orientation_v2=args.require_orientation_v2,
+                  require_source_dispositions=args.require_source_dispositions)
     except (OSError, ValueError, KeyError, subprocess.TimeoutExpired) as error:
         print(f"proper-study: {error}", file=sys.stderr)
         return 1
