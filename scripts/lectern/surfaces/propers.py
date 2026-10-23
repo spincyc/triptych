@@ -207,7 +207,6 @@ class Propers(Surface):
             chosen = one["id"] == self.calendar
             short = one["short"].replace(" Missal", "")
             names(f" {short} ", "bold reverse $propers-color" if chosen else "$text-muted")(" ")
-        names("c", "bold $hotkey")
         self.query_one("#propers-missals", Static).update(names.content())
         self.load_catalogue(self.calendar)
 

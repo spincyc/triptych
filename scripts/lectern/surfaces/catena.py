@@ -38,7 +38,7 @@ class Catena(Surface):
         ("enter", "open or close an author's fragments; on a fragment, read it (n / p walk the chain)"),
         ("a", "open or close every author's fragments"),
         ("click", "a bar in the strip opens that chapter"),
-        ("f", "focus: scripture and chain alone; again to restore"),
+        ("f", "focus: scripture and chain alone; again to restore chapter and acquisition panes"),
     )
     BINDINGS = [
         Binding("left,h", "chapter(-1)", "previous chapter", show=False),
@@ -57,6 +57,7 @@ class Catena(Surface):
     Catena #catena-right { width: 3fr; }
     Catena #catena-chain { height: 2fr; }
     Catena #catena-leads { height: 1fr; min-height: 5; }
+    Catena #catena-instruction { display: none; height: auto; color: $text-muted; }
     Catena .verse-paragraph { padding: 0 0 1 0; }
     Catena .verse-paragraph.projected { border-left: dashed $catena-color 70%; padding: 0 0 1 1; }
     Catena .verse-paragraph.printed { border-left: heavy $catena-color; padding: 0 0 1 1; }
@@ -69,6 +70,13 @@ class Catena(Surface):
     CSS = """
     .catena.focus #catena-books, .catena.focus #catena-strip-box, .catena.focus #catena-leads { display: none; }
     .catena.narrow #catena-books { display: none; }
+    .catena.compact #catena-reading { layout: vertical; }
+    .catena.compact #catena-scripture, .catena.compact #catena-right { width: 1fr; height: 1fr; }
+    .catena.compact #catena-instruction { display: block; }
+    .catena.compact #catena-chain-list { height: 1fr; }
+    .catena.compact.cramped #catena-instruction { display: none; }
+    .catena.compact.cramped #catena-chain { min-height: 6; }
+    .catena.compact.cramped #catena-right { min-height: 11; }
     .catena #catena-leads { border: dashed $catena-color 45%; }
     .catena #catena-leads:focus, .catena #catena-leads:focus-within { border: dashed $catena-color; }
     """
@@ -90,6 +98,10 @@ class Catena(Surface):
 
     # --- building --------------------------------------------------------
 
+    def on_resize(self, event) -> None:
+        super().on_resize(event)
+        self.set_class(event.size.height < 27, "cramped")
+
     def build(self) -> None:
         self.mount(
             Horizontal(
@@ -99,11 +111,13 @@ class Catena(Surface):
                     Horizontal(
                         ScrollPanel(Static("", id="catena-loading"), title="scripture", id="catena-scripture"),
                         Vertical(
-                            Panel(OptionList(id="catena-chain-list"), title="chain", id="catena-chain"),
+                            Panel(Static("Enter opens an author; Enter on a fragment reads it.", id="catena-instruction"),
+                                  OptionList(id="catena-chain-list"), title="chain", id="catena-chain"),
                             ScrollPanel(Static("", id="catena-lead-text"), title="acquisition list",
                                         id="catena-leads"),
                             id="catena-right",
                         ),
+                        id="catena-reading",
                     ),
                 ),
             )
