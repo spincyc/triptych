@@ -27,10 +27,10 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "orations-and-integrated-checks"
   criterion = "Missing historical English orations are recovered with checked provenance and exact reuse controls; remaining gaps are quantified; integrated source, generated-data, reader and relevant publication checks pass with independent cold-review disposition."
-  # The published checkpoint passed; the newly accepted Phase 3 source batch
-  # requires fresh integrated checks after canonical installation.
-  status = "open"
-  evidence = ["workflows/reviews/missal-reader-resume-2026-10-23/RECORD.md", "workflows/reviews/missal-reader-resume-2026-10-23/final-validation.json"]
+  # Phase 3 source/reader/data review and fresh integrated checks now pass;
+  # this scoped result does not close the remaining or annual text backlog.
+  status = "pass"
+  evidence = ["workflows/reviews/missal-reader-resume-2026-10-23/RECORD.md", "workflows/reviews/missal-reader-resume-2026-10-23/final-validation.json", "workflows/reviews/missal-reader-resume-2026-10-23/validation-phase3.json"]
 
   [[deliverables.requirements]]
   id = "coherent-main-publication"

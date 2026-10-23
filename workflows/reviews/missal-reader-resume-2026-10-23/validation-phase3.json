@@ -1,0 +1,183 @@
+{
+  "date": "2026-10-23",
+  "functional_head": "337eae05542bf2b6ab1d6e39de50a175c44c8bb6",
+  "disposition": "Fresh integrated checks pass; a subsequent exact-main push, resulting Actions and live checks must be observed separately.",
+  "source_aggregate": {
+    "command": "make --jobs=4 check-sources",
+    "exit_code": 0,
+    "includes_deployment_source_gate": true,
+    "elapsed_seconds": 324.315,
+    "library_cache": "fresh isolated task cache over immutable inputs",
+    "other_cache_classes": "SOURCE_LIBRARY, YAML, CORPUS and CONTAINMENT disabled",
+    "separate_cache_disabled_source_graph_and_strict_reader_checks_pass": true,
+    "log_sha256": "6ab85a564332f221cf38671cbf62250139a088701d1bdba24fb1268ea743950a"
+  },
+  "annual_matrix": {
+    "tested_commit": "337eae05542bf2b6ab1d6e39de50a175c44c8bb6",
+    "tests": 7,
+    "renderings": 5856,
+    "skips": 0,
+    "passed": true,
+    "elapsed_seconds": 600.27,
+    "workers": 16,
+    "fresh_cache_classes": [
+      "LIBRARY",
+      "SOURCE_LIBRARY",
+      "YAML"
+    ],
+    "disabled_cache_classes": [
+      "CORPUS",
+      "CONTAINMENT"
+    ],
+    "all_cache_paths_empty_before_bootstrap": true,
+    "bootstrap_identity": {
+      "date": "2026-10-22",
+      "calendar": "roman-1962",
+      "language": "en"
+    },
+    "immutable_files": 49267,
+    "immutable_bytes": 5539440208,
+    "immutable_checksum_before": "6b5070a546ae64fd1b11dc0702aaffe8539e6d3b28afd381224fa2dbfb914821",
+    "immutable_checksum_after": "6b5070a546ae64fd1b11dc0702aaffe8539e6d3b28afd381224fa2dbfb914821",
+    "inputs_unchanged": true,
+    "log_sha256": "ed9106a303e6e4fcd8007daddaa46c46a2654d0bd06dae697754454e3c0c98cf",
+    "retained_raw_receipt_sha256": "1b87707e62ad0dfc34945497126dee34323d79ba393661de62243a5c2297834d",
+    "proves": "structural renderability; not annual textual completeness",
+    "independent_final_results_sha256": "580d2c08d178a38f922c51e68ed77b6a56ae27af2be18a4586adccf98e7fa04a",
+    "all_snapshot_PDFs_hashed": 427,
+    "restored_installed_PDFs": 277
+  },
+  "terminal_suite": {
+    "tests": 120,
+    "skips": 1,
+    "skip_basis": "The pinned Markdown is installed, so the mutually exclusive missing-pin refusal branch is inapplicable.",
+    "passed": true,
+    "log_sha256": "37393f9a349a1b50188d7c7eff454f4c9268f5890fcec78ecf18a72d7cda6840"
+  },
+  "native_dialogue": {
+    "tests": 2,
+    "passed": true,
+    "skips": 0,
+    "failures": 0,
+    "errors": 0,
+    "native_assertions": 44,
+    "log_sha256": "4824bd52924d8a328595882bae1cecbeb2b7e3411c2aececca88b781ceabaae3"
+  },
+  "native_browser": {
+    "tests": 7,
+    "passed": true,
+    "skips": 0,
+    "failures": 0,
+    "errors": 0,
+    "harnesses": 12,
+    "expected_assertions": 257,
+    "contracts": {
+      "day_reader_compare_browser.mjs": 10,
+      "day_reader_read_payload_browser.mjs": 9,
+      "day_reader_study_browser.mjs": 25,
+      "day_reader_choices_browser.mjs": 8,
+      "liturgy_reader_preferences_browser.mjs": 11,
+      "liturgy_reader_share_print_browser.mjs": 7,
+      "reader_text_size_browser.mjs": 5,
+      "pentecost_witness_chooser_browser.mjs": 5,
+      "day_reader_integration_browser.mjs": 57,
+      "liturgy_reader_shell_browser.mjs": 18,
+      "liturgy_reader_visual_reset_browser.mjs": 33,
+      "propers_reader_integration_browser.mjs": 69
+    },
+    "console_request_http_problems": 0,
+    "log_sha256": "5061abd97125ec4a71ae39bf3822ac2b82efd0a69d8bf8004c72647c24fd2702",
+    "raw_reports_sha256": "445c548030d7a2bf5f127a887a18916e5d7685f38e0fbca8a85c8520f228de39",
+    "summary_sha256": "883264dc311c7f5de0eaf56dca2988dbfd88277f0c511b5c356ae3c98e7753a3"
+  },
+  "publication_builds": {
+    "public_passed": true,
+    "public_verified_for_github_pages": true,
+    "preview_passed": true,
+    "preview_verified": true,
+    "log_sha256": {
+      "public-build": "9beacb1ce8ca912801431c2d902515bf0ce9da7f6e2fb1d4253f18858fb73cc0",
+      "public-verify": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14",
+      "preview-build": "911dae54e09f246f54aa24be9b381009901882aff65ee5540a1d6eda7356bfca",
+      "preview-verify": "2d87689935ce2ac9799e8734369261a2c512c6b0a60e5acaadee1f31940a8bae"
+    }
+  },
+  "source_graph": {
+    "works": 1067,
+    "editions": 1268,
+    "artifacts": 3750,
+    "passages": 7291,
+    "bindings": 4159,
+    "Source_Reader_readable": 3769,
+    "Source_Reader_withheld": 3522
+  },
+  "English_coverage": {
+    "roman1962": {
+      "represented": 548,
+      "total": 1427,
+      "missing": 879
+    },
+    "postconciliar": {
+      "represented": 112,
+      "total": 561,
+      "missing": 449
+    }
+  },
+  "generated_freeze": {
+    "files": 7546,
+    "Sources": 5038,
+    "Proper": 499,
+    "Catena": 2009,
+    "manifest_sha256": "6a8b90dd63516a3ddf93aa10ca1a80707c2b22bdd5492e4471f301aebad7d59c",
+    "mismatches": 0,
+    "Catena_fragments": 1373,
+    "Catena_books": 8,
+    "licensed_notices": 9
+  },
+  "focused_tests": {
+    "English_recovery": 15,
+    "Catena_backend": 116,
+    "Catena_production": 408,
+    "Catena_native_cases": 14,
+    "terminal_source_notice_routes": 9
+  },
+  "example_replay": {
+    "executed": 24,
+    "divergences": 0,
+    "model_or_dependent_exemptions_not_run": 3,
+    "tracked_writes": 0,
+    "followup": "Exactly two literal EXAMPLES output tuples were independently recaptured; all 50 function ASTs and all source/data bytes remain unchanged.",
+    "independent_receipt_sha256": "b0d7f44ddfa338c9729a8cb5768777435226ed8fa8ec6a7c90da740ebd8cdea0"
+  },
+  "independent_reader_binding": {
+    "receipt": "integrated-reader-review-phase3.md",
+    "sha256": "0c0d49e4743da2472b9604ae6bb619cab55ab5f5ca534cce0a81a95c47f51043",
+    "reader_code_files": 116,
+    "published_data_files": 13966
+  },
+  "independent_outgoing_functional_review": {
+    "receipt": "outgoing-functional-review-phase3.md",
+    "sha256": "e81a0f0742fb90b8af5af487da1f65390696f346a9171a3aea3eb0f3331f98c7",
+    "disposition": "ACCEPTED_BOUNDED"
+  },
+  "retained_incomplete_performance_runs": {
+    "annual": {
+      "status": "incomplete; interrupted for fresh-cache restart; not a pass",
+      "log_sha256": "3c82e8115288d78ae9d47764da10c07d8abd6c00ae54ce4090da141ea2553433",
+      "raw_receipt_sha256": "a0d46ef4798ccafffadd901ab0176a4342664b6120c4001d67b3fc110f4ea4c0"
+    },
+    "source_aggregate": {
+      "status": "incomplete; interrupted for library-cache restart; not a pass",
+      "elapsed_seconds": 764.191,
+      "log_sha256": "83f7e51edcda0f2422065f33371a3ae17a6b915e5618d1fa9f8cafcaa889dc59",
+      "interruption_receipt_sha256": "60c91ca086495d4d100dcc05062b66add2ede1389f200ea1b9b3dc79fbd4a0f7"
+    }
+  },
+  "limits": [
+    "remaining source and English gaps stay open",
+    "maintainer real-terminal approval remains open",
+    "annual textual completeness remains open",
+    "exact main push, resulting Actions and live deployment checks remain separate observations"
+  ],
+  "retention": "Raw logs and runtime paths remain in repository scratch; hashes preserve observed runs. Tracked source, generated and independent review receipts retain their own bounded evidence."
+}

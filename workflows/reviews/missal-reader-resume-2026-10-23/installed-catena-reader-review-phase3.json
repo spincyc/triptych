@@ -1,0 +1,37 @@
+{
+  "status": "pass",
+  "head": "337eae05542bf2b6ab1d6e39de50a175c44c8bb6",
+  "canonical_mutations": false,
+  "accepted_rights_freeze_sha256": "86816b5ea7ba716cc59098d0438ed4f6f2f10e2ae2552ff223831bf628770b2e",
+  "accepted_projection_proof_sha256": "548ea64581c5661541f3e33bb6630f82cafe1558eb0877c64bfac0ad2fa0e4f5",
+  "installed_rights_postimages": {
+    "scripts/_catena.py": "25ffc39564070e7a5ac476ec621f62c4201701417dabd83a4380dd642075513a",
+    "tools/tests/test_catena_rights.py": "9aa5978fedfedd1504b2a0b4e385f6a0754ae06c6c620308cdfe6fb5284c23ac",
+    "tools/tests/test_catena_production.py": "c5ed0064922fb531cdeec3ad7670bee1cbf4af14c2c1b8206958f40fde003b16"
+  },
+  "current_catena_data_file_count": 2009,
+  "current_fragments": 1373,
+  "backend_tests_prior_installed_run": 116,
+  "production_tests_this_run": 408,
+  "native_cases_this_run": 14,
+  "native_clipboard_and_actual_source_link_cases": 9,
+  "actual_terminal_notice_copy_and_source_callbacks": 9,
+  "central_controller_notices_expected": 9,
+  "central_controller_notices_present_verbatim": 9,
+  "other_fragments_without_invented_notice": 1364,
+  "source_and_code_pins_unchanged_during_native_probe": true,
+  "data_matches_accepted_manifest_before_and_after": true,
+  "browser_exceptions": 0,
+  "failures": 0,
+  "errors": 0,
+  "evidence": {
+    "backend-proof.json": "4ffd3db2a879ff3ca74577f83a80f81b4b474fdb5750419331e0bc689569020b",
+    "backend-tests.log": "76c9e37086d05f8c899ddf779878b078faab00f7fc6c0db5b419523b4a05c595",
+    "production-proof.json": "dc65b6939c4e1662e3082ddd901b524047166f8471f3815faa3aee880f141e3b",
+    "production-tests.log": "feec4932b48f7d6dc7d71aeb7c18586dc959b67db70cca470f851da413abd414",
+    "notice-readers-proof.json": "42704267b2c2b326f7c6751acceaa1766b39f9bc31f7c2fdd65a49c6c597ee14",
+    "native/browser.mjs": "cef90b3aaccfb38aa4e9bd67fee9c2b2d45fef5264d8b5151d615d4f3ff717d0",
+    "native/independent-browser.json": "18948b22168428cd6e9f9c5ee38170399c43a353dc1f33c71d67061efc8b80c4",
+    "native/browser-expected.json": "ea905832fe3c1ab942232054ac44cc6cbe66da2913118d3547683b6f37c13910"
+  }
+}

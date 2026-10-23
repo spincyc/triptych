@@ -1,0 +1,37 @@
+{
+  "added_paths": 7,
+  "artifact_root": ".scratch/resume-root/phase3-release-verification/build/public-alpha/site",
+  "endpoint_count": 26,
+  "expected_bytes": 23639427,
+  "expected_manifest_sha256": "1e51ed364c1704734227c19340017b966781b8a814bd9e4a20823f543e38b577",
+  "live_requests_made": 0,
+  "new_checks": [
+    "licensed-psalm-50-body",
+    "licensed-severian-greek-body",
+    "galatians-1-chapter",
+    "new-galatians-body",
+    "new-lent-english-1962",
+    "new-lent-english-pre1955",
+    "new-source-only-passage"
+  ],
+  "normalization": "Only endpoint paths and MIME labels are reused from the previous core plan; every expected byte length and SHA256 is freshly derived from the phase3 tested artifact and matches its SHA256SUMS. Artifact root is repository-relative; no private headers or runtime identifiers included.",
+  "record_type": "phase3-live-verification-preparation",
+  "reused_core_paths": 19,
+  "script_sha256": "905357c04a89b0f7dfdefedc382a95a4b0dcd50dd2d3ae33b81ca0a31462685d",
+  "summary_fields": [
+    "final deployment head/run URL/success time",
+    "request interval",
+    "repository-relative artifact root",
+    "frozen manifest hash",
+    "all26 URLs with status/MIME/expected-observed bytes and SHA256",
+    "cache-busting/concurrency/request limits",
+    "manifest/body normalization and privacy statement"
+  ],
+  "tested_checkpoint": "337eae05542bf2b6ab1d6e39de50a175c44c8bb6",
+  "waiting_for": [
+    "root Pages-success signal",
+    "final pushed head SHA",
+    "Pages run URL",
+    "Deploy success time"
+  ]
+}

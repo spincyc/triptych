@@ -399,3 +399,68 @@ The [English outgoing review](english-outgoing-review-phase3.md) also accepts th
 exact preceding 248-path commit, all 123 body/publication joins and preserved
 positive/absence dictionaries. Global generation and fresh integrated gates
 remain distinct from these source and installed-input acceptances.
+
+### Continuation combined verification
+
+The [fresh validation receipt](validation-phase3.json) binds functional commit
+`337eae05542bf2b6ab1d6e39de50a175c44c8bb6`. Its plain exact-SHA archive retains
+all 277 installed PDFs with exact paths and hashes. Combined Sources/Proper/Catena
+generation yields 7,546 exact files and zero stale release bindings; all 2,009
+Catena files equal the accepted generation and the 73 Scripture projections
+remain unchanged. The [independent combined reader review](integrated-reader-review-phase3.md)
+binds all 116 reader code and 13,966 published data files to the committed Git
+objects. Its [publication manifest](integrated-reader-review-phase3.json) retains
+the raw manifest hash and changes only the runtime snapshot path to a declared
+repository-relative representation.
+
+The complete source aggregate passes, including the deployment-source gate.
+The fresh annual suite passes seven tests and all 5,856 renderings without skips;
+all 49,267 immutable snapshot files, including 427 PDFs (277 installed PDFs
+restored by root and 150 already tracked elsewhere), retain the same before/after
+checksum. The terminal suite passes 120 tests, with only the mutually exclusive
+missing-Markdown-pin refusal branch skipped because the pinned version is
+installed. Native execution passes all 44 dialogue checks and all 257 assertions
+across twelve browser harnesses, with zero skips and console/request/HTTP problems.
+Public and preview builds and both verifiers pass, including explicit GitHub Pages
+artifact verification.
+
+Two fully cold runs were intentionally interrupted for performance: the source
+aggregate after 764.191 seconds and the annual run after 338.749 seconds. Neither
+is counted as a pass or hidden. The source aggregate restarts from the beginning
+with an empty isolated library cache; its other four cache classes remain off.
+The full annual restarts with empty library, source-library and YAML caches and
+a validated single bootstrap over the exact immutable snapshot. Independent
+cache-disabled graph and strict Source Reader validation remain passing evidence.
+The fresh annual completes in 600.221 seconds; its retained wrapper observes
+600.270 seconds. Every result and interrupted-run hash is recorded separately.
+
+The [installed Catena reader audit](installed-catena-reader-review-phase3.json)
+passes 408 production tests, fourteen actual Chromium cases and nine terminal
+notice/copy/Source-route probes. All nine licensed notices travel verbatim from
+their controlling records into lazy text and Source views; all other 1,364
+fragments gain no invented notice. All 2,009 hashes remain exact before/after.
+
+The [outgoing functional review](outgoing-functional-review-phase3.md) accepts
+the exact preceding six-commit range, 937 novel objects and 839 final paths,
+with no disclosure or ancestry finding. The later
+[independent example review](example-review-phase3.json) accepts exactly two
+recaptured output tuples: all 24 runnable examples match, three model-related
+examples remain unrun, and all fifty function ASTs, source and data bytes remain
+unchanged. That literal-only follow-up changes no tested reader or annual logic.
+
+The [remaining English handoff](remaining-english-handoff-phase3.json) organizes
+879 explicit gaps: 701 primary prayers (648 with independently verified Latin,
+53 without it) and 178 other slots. The complete literal-byte comparison finds
+zero remaining reuse targets against all usable current English donors. Forty
+remaining owners have bounded source-comparison evidence; 839 have no such
+comparison recorded in the canonical audit. This does not establish that they
+were never examined or that any gap is irrecoverable. All source inputs and
+247 installed English postimages remain exact. Fresh checked source pages and
+target wording remain the next prerequisites; no English is manufactured.
+
+The scoped combined-check requirement passes; overall recovery, remaining corpus
+and English work, annual textual completeness and human terminal acceptance
+remain open. The [26-endpoint live plan](publication-preparation-phase3.json)
+is prepared against the tested artifact and makes zero live requests before
+successful deployment. An ordinary exact-main push, its resulting Actions and
+post-deployment byte checks remain separately observed publication gates.

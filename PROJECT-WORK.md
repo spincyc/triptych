@@ -87,9 +87,10 @@ All 19 repeated live checks also match exactly. The working branch remains
 The original backlog continues after that verified checkpoint. A third English
 batch is independently accepted and installed from its exact 247-path manifest:
 123 more owners, 117 historical bodies and 111 independently read source images.
-Local Roman 1962 coverage is now 548/1,427, with 879 gaps still explicit. The
-published main checkpoint remains at 425/1,427 until the new generation and
-publication gates pass. All 425 prior positive dictionaries remain unchanged.
+Roman 1962 coverage is now 548/1,427, with 879 gaps still explicit. The
+preceding verified main checkpoint contains 425/1,427; this continuation has
+fresh generation, integrated checks and a separate publication gate. All 425
+prior positive dictionaries remain unchanged.
 Complete literal-Latin comparison at that preceding checkpoint finds no remaining
 reuse pair between the 425 accepted English owners and 1,002 missing targets.
 Further prayer recovery needs fresh checked pages. Independent review now
@@ -110,10 +111,23 @@ interaction tests pass; wide views, full bodies, notices and location state
 are preserved. The installed source library validates 7,291 passages and 4,159
 bindings. Its 3,769 readable passages exclude the new 123 structured prayer rows
 and 117 restricted verification controls under the existing Source Reader rules;
-Propers reads the checked English through its own table owner. Combined owner
-generation, fresh annual/native gates and exact-head publication remain pending
-for this continuation. The remaining corpus/English backlog, annual textual
-completeness and maintainer terminal acceptance remain open.
+Propers reads the checked English through its own table owner.
+
+Combined generation and fresh integrated gates now pass at functional commit
+`337eae05542bf2b6ab1d6e39de50a175c44c8bb6`: 7,546 exact core pins, zero stale
+release bindings, the complete source aggregate, all 5,856 annual renderings,
+120 terminal tests (one expected installed-pin skip), 44 native dialogue checks,
+all 257 native browser assertions and both public/preview builds and verifiers.
+Independent review binds all 116 reader code and 13,966 published data files.
+Two literal tool-example transcripts are subsequently recaptured and independently
+verified without changing any function AST, source or reader data. The
+[continuation validation](workflows/reviews/missal-reader-resume-2026-10-23/validation-phase3.json)
+preserves these results and both incomplete cold performance runs. The
+[remaining English handoff](workflows/reviews/missal-reader-resume-2026-10-23/remaining-english-handoff-phase3.json)
+finds zero complete-Latin reuse pairs among the 879 gaps; 701 are primary prayers,
+including 53 without held Latin. New exact-main publication, resulting Actions
+and live-byte verification are separate observations. The remaining corpus/English
+backlog, annual textual completeness and maintainer terminal acceptance remain open.
 
 ## Annual Missal reader completion, 2026-10-22
 
