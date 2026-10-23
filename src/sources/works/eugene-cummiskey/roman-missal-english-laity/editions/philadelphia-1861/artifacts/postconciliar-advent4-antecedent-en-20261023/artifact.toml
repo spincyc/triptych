@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-advent4-antecedent-en-20261023"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only the historical English on printed p. 52 of the Philadelphia 1861 printing is retained. Its United States publication term expired; a faithful transcription of public-domain wording adds no authorship. This payload contains no scan image, Google or Internet Archive furniture, watermark, OCR wrapper, modern translation or project-composed prayer. It is excluded from Triptych's CC BY 4.0 offer. The separately registered Google-digitized PDF remains remote and unresolved."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "Direct page-image transcription of the complete subsidiary Marian Postcommunion on printed p. 52, artifact PDF p. 63 / IA leaf n62. Only the historical English body is retained, without the heading or Latin incipit. Line breaks are joined; spelling, capitalization, punctuation and the printed abbreviated conclusion Thro’. are retained exactly. No conclusion is expanded and no English is generated. The calendar-address columns identify the historical antecedent's study use, not its original liturgical appointment."
+retrieved = "2026-10-23"
+sha256 = "1daf61563e8fb3de5efcfe596473c2e4b2b6d94f1fe5fffb32a7ce97a651bf1e"
+byte_size = 308
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/postconciliar-advent4-antecedent-en-20261023/text.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "One header and one complete English body. Visual inspection of the complete p. 52 disproved the earlier absence note: the main Advent I Postcommunion Suscipiamus is followed on the same page by Of the B. V. M. / Gratiam tuam. The older prayer is served only as historical antecedent English, never approved contemporary English or an exact 2008 target claim."

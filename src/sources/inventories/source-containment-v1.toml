@@ -71,7 +71,7 @@
 
 schema = "triptych-source-containment/v1"
 record_type = "source-containment"
-audited_on = "2026-10-20"
+audited_on = "2026-10-23"
 numbering = "vulgate"
 
 [shapes]
@@ -2176,6 +2176,13 @@ manifest_sha256 = "a38c4a4885bf3c761bab70eea6fffccbf5c6d744a0d782ad014424850debe
 status = "partial"
 basis = "Description: 'Issue editions and exact delivery artifacts remain container identities distinct from the documentary acts, notices, studies, and liturgical texts printed within them.'"
 unresolved = "Only acts the library registers through segments are listed."
+
+[[containers.constituents]]
+author = "Congregation for Divine Worship and the Discipline of the Sacraments"
+title = "Additiones ad libros liturgicos circa celebrationes in Calendarium generale nuper insertas"
+work_id = "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001"
+locator = "Notitiae (2002), nos. 432-433, printed pp. 313-318 / PDF 19-24"
+basis = "segment.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001.latin-notitiae-432-433.notitiae-pages-313-318: bounded excerpt containing the complete promulgation decree and the beginning of its attached Mass additions through the Apollinaris Collect; not the entire appended text collection."
 
 [[containers.constituents]]
 author = "Catholic Church"
