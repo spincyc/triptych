@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-7dbb4a25"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "application/json; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Original Lasance/Walsh revised-1945 English on ordinary pages: existing United States nonrenewal of A110108/A192159, with unchanged insert-excluded expression anchor artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759, SHA256 80b34759fb18ec60f6205460c2ac24dc9e4a861938a94ef1f8e04a08a398ac9a. See src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. Lettered inserts 1298a-1298n and 1302a-1302d excluded. No scan-image or whole mixed-book publication authority."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+provenance = "Actual Prayer Conclusions table read from held exact facsimile PDF p. 818, printed p. 819, on 2026-10-23. Independently image-checked. The page explicitly explains that frequent repetition permits abbreviated designations and prints each complete human Latin and English formula."
+transformation = "Join printed line divisions. Preserve actual English words, case and punctuation. Latin comparison transcription normalizes case, removes stress accents and expands ae ligatures. Each separately marked response remains separate from its formula. No English generated or added."
+retrieved = "2026-10-23"
+sha256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+byte_size = 3524
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-conclusion-table-2026-10-23-7dbb4a25/conclusions.json"
+encoding = "utf-8"
+indexable = true
+notes = "Bounded text transcription only. Exact source page-image SHA256 267a9b9ff134bef93d6a80634050c550435d9c7f231458b34c9953f91e20298b. Original English rights anchor unchanged; preexisting Latin formulas are retained with the same historical source. No prayer ending expanded in the associated publication rows."

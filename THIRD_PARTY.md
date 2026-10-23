@@ -248,17 +248,19 @@ In particular:
   derived from ICEL's, and nothing in the file may be used for recitation; and
 - the English recorded in
   `src/sources/inventories/roman-1962-proper-translations-v1.toml` comes from
-  several public-domain historical witnesses. Sixty-one proper entries use *The
+  several public-domain historical witnesses. Entries use *The
   Roman Missal translated into the English language for the use of the laity*,
-  first revised edition (Philadelphia: Eugene Cummiskey, 1861), including three
+  first revised edition (Philadelphia: Eugene Cummiskey, 1861), including
   page-collated Palm Sunday procession antiphons and the St Augustine Collect
-  at printed p. 652, Internet Archive leaf n660; six sequence
+  at printed p. 652, Internet Archive leaf n660; sequence
   entries use Edward Caswall's *Lyra Catholica* (London, 1849), with the
   *Hymns Ancient and Modern* printing attributed to William Josiah Irons
   (London, complete edition, catalogued 1890) retained as an alternative for
-  one sequence; and thirty-two oration entries use Francis Xavier Lasance and
+  one sequence; and entries use Francis Xavier Lasance and
   Francis Augustine Walsh's *The New Roman Missal*, 1945 revised edition, in a
-  printing of about 1955--56. Every Lasance entry is bound to an exact
+  printing of about 1955--56. The inventory's per-entry witness, collation,
+  passage and publication-artifact records identify the current bindings and
+  their evidence. Every Lasance entry is bound to an exact
   ordinary-numbered page-image passage. The only Common-of-a-Supreme-Pontiff
   row served from that witness is the Collect on ordinary printed p. 1302;
   none of the five candidate rows on inserted pp. 1302a--1302d is served.

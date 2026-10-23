@@ -381,7 +381,7 @@ class EnglishRecovery20261023Tests(unittest.TestCase):
         audit_path = ROOT / "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml"
         audit = tomllib.loads(audit_path.read_text())
         self.assertEqual(audit["record_type"], "roman-1962-english-recovery-audit")
-        self.assertEqual({tuple(r["target"]) for r in audit["accepted"]}, set(ORACLES))
+        self.assertEqual({tuple(r["target"]) for r in audit["accepted"] if r.get("batch", "phase1") == "phase1"}, set(ORACLES))
         self.assertEqual(len(audit["rejected_comparisons"]), 44)
         for record in audit["input_snapshots"]:
             self.assertEqual(sha((ROOT / record["path"]).read_bytes()), record["after_sha256"])
