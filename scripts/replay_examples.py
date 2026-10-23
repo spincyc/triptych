@@ -172,6 +172,12 @@ EXEMPT: dict[str, str] = {
     "tools/knox-bible fetch --root build/knox":
         "the one verb that opens a socket; it refuses this root before fetching, but a "
         "replay must not be one edit away from retrieving licensed text",
+    "tools/lectern open --surface day --date 2026-12-25":
+        "starts the interactive reader, which needs a terminal; `lectern snapshot` draws the same "
+        "reader headlessly and is replayed",
+    "tools/lectern open --surface catena --ref 'John 1'":
+        "starts the interactive reader, which needs a terminal; `lectern snapshot` draws the same "
+        "reader headlessly and is replayed",
     "tools/release-bindings refresh":
         "rewrites tracked release/ bindings, which the deploy requires to be exact",
     "tools/release-bindings migrate-publications":
@@ -234,6 +240,14 @@ REQUIRES: dict[str, tuple[str, str]] = {
     "tools/document-library show --document articles/faith/ontological-vertigo --provider claude": (
         "path:pdf/claude",
         "the installed tree; pdf/<provider>/ is built, not tracked",
+    ),
+    "tools/lectern snapshot --surface day --date 2026-10-22 --size 120x36": (
+        "pins:requirements-tui.txt",
+        "the reader's drawing library, which only the terminal reader needs",
+    ),
+    "tools/lectern snapshot --surface catena --ref 'Gen 1' --size 120x36": (
+        "pins:requirements-tui.txt",
+        "the reader's drawing library, which only the terminal reader needs",
     ),
     "tools/public-alpha check --preview": (
         "path:pdf/claude",

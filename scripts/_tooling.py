@@ -148,6 +148,12 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         ),
     ),
     (
+        "reading",
+        "Reading what the site publishes, in a terminal rather than a browser, "
+        "from the same structure and the same derivations.",
+        ("lectern",),
+    ),
+    (
         "launcher",
         "Finding and running the tools themselves.",
         ("tpt",),
@@ -214,6 +220,7 @@ REACHES: dict[str, str] = {
     "history-browser-acceptance": LOCAL,
     "index-bible": NOTHING,
     "knox-bible": NETWORK,
+    "lectern": NOTHING,
     "mass-ordinary": NOTHING,
     "mass-propers": NOTHING,
     "mass-today": NOTHING,

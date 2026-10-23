@@ -45,6 +45,7 @@ largely a register of how that data has already gone wrong:
 | a calendar recension and its departures from a base | `guidance/recensions.md` |
 | whether a publication's research has gone stale | `guidance/staleness.md` |
 | a promised deliverable and whether it is met | `guidance/promised-deliverables.md` |
+| the terminal reader, `tools/lectern` and `scripts/lectern/` | `scripts/lectern/README.md`, then the guidance of the surface it reads (the rows above) |
 
 The non-liturgy corpus browser route does not govern the Liturgy browser or
 relax its dedicated routing and protections.
