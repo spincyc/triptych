@@ -1,0 +1,199 @@
+{
+  "schema": "triptych-source-review-receipt/v1",
+  "status": "accepted",
+  "scope": "missal-source-batch",
+  "reviewed_on": "2026-10-23",
+  "source_baseline": "2e030b564f4413b735ddbea3061082ebe981b11a",
+  "checkpoint_source_parent_commit": "1e49daf32472e58def268ffa437a1f4f00663407",
+  "source_postimage_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-23/source-postimages-checkpoint1055.json",
+    "sha256": "a7701c40d3f56068562567375074da93e4c5ad4b349be0dd5c3c4219ea1bfde7",
+    "bytes": 439800
+  },
+  "source_postimage_paths": 1400,
+  "parent_source_approval_sha256": "ddcb56bc467ee150d9addb138bef3a8fc725b7b479784f28d69ba807262f43c5",
+  "parent_source_epoch_sha256": "9025b0bce0bc00b3999b610677073113cc2aa2fbdc3177b0bea9b92ca56429a0",
+  "acceptance_chain": [
+    {
+      "scope": "complete 1400-path parent source and separately accepted owner-code composition",
+      "role": "root accepted parent",
+      "raw_receipt_sha256": "ddcb56bc467ee150d9addb138bef3a8fc725b7b479784f28d69ba807262f43c5"
+    },
+    {
+      "scope": "reviewed1309source-parent",
+      "role": "accepted parent composition",
+      "raw_receipt_sha256": "9c21bd4afef8c29126c6fb895faa425359f95fee05c7f45247a663a715632d83"
+    },
+    {
+      "scope": "reviewed1233source-and-gate-parent",
+      "role": "accepted parent composition",
+      "raw_receipt_sha256": "2144c597e93686616cd2a8a39a1c36c0955c472b6834dbd96ff353338a6f3ed0"
+    },
+    {
+      "scope": "reviewed798source-and-owner-parent",
+      "role": "accepted parent composition",
+      "raw_receipt_sha256": "0f0bcd9c6241ce7095ca9e49fccb6475219015ec6ba0cd8c3fee1e8b360fc17f"
+    },
+    {
+      "scope": "reviewed765source-parent",
+      "role": "accepted parent composition",
+      "raw_receipt_sha256": "26d9d5c42019c1899339aca34f71a509cbdf11cb67a585f3b63569fe01e40867"
+    },
+    {
+      "scope": "core-latin",
+      "role": "component acceptance",
+      "raw_receipt_sha256": "18a75c725cf1d3a4ab3a53832312e6e43a810f780c48cbff5ff6e09393a1c381"
+    },
+    {
+      "scope": "core-english",
+      "role": "component acceptance",
+      "raw_receipt_sha256": "700f6952600ffba5d1b91de515749a0f1c3daab56e14c137e741cb040b3e0e6d"
+    },
+    {
+      "scope": "core-catena",
+      "role": "component acceptance",
+      "raw_receipt_sha256": "9120d3bc1ed3981fd391f7cd14f6e0f1da02e097a26f23560aa1d3f0ec237a1b"
+    },
+    {
+      "scope": "extension-v3",
+      "role": "component acceptance",
+      "raw_receipt_sha256": "73b8db51f8bc4a0be9e5021acca8fd4c3dbac65c645a45eef1cda040e321caec"
+    },
+    {
+      "scope": "pre1955",
+      "role": "component acceptance",
+      "raw_receipt_sha256": "6d3616c6fa603dbbc18ce93708757f4ab19dc997a2b40e4ebc107228e59096b4"
+    },
+    {
+      "scope": "source-bundle",
+      "role": "component acceptance",
+      "raw_receipt_sha256": "8327734126ad2f1bec199ef2738b0c78359133219668d573fa5d26901fce8e43"
+    },
+    {
+      "scope": "source29andtruthfulalias",
+      "role": "component acceptance",
+      "raw_receipt_sha256": "db04ebd4e9ce73c41dbd04563d4952465a204b1c728567765e2ea223ce7520e7"
+    },
+    {
+      "scope": "exactsource-owner-adapters",
+      "role": "component acceptance",
+      "raw_receipt_sha256": "ced0117a8f8ad4407bda5a83053b406b68d0dd8c20e139ed2788866cc8b073c8"
+    },
+    {
+      "scope": "additional209-current798-and-pre1955",
+      "role": "component acceptance",
+      "raw_receipt_sha256": "ef7a964956d63ad5816ecfefbff64bb5b08f82ced938be600459cfdb5d42a5b4"
+    },
+    {
+      "scope": "qualified-PC1-exact-eight-postimages",
+      "role": "component acceptance",
+      "raw_receipt_sha256": "4fba6f020bfde78626ede09dba270494c383fcc4d17cdde263aa00482b073df9"
+    },
+    {
+      "scope": "exact32-source-ledger-audit-union",
+      "role": "component acceptance",
+      "raw_receipt_sha256": "306a227c97e6d9ebf3e648775a68332f4be30f837ca9093f67c341d9b4f1fa7a"
+    },
+    {
+      "scope": "exactjoint34-source-and-RG-preservation",
+      "role": "component acceptance",
+      "raw_receipt_sha256": "7701abb4bef4973f2fd27d8ad173dfa345fe445023fc0358fe8003ccd5eb0e5f"
+    },
+    {
+      "scope": "separateRG110diagnostic-code-source-generated-test",
+      "role": "component acceptance",
+      "raw_receipt_sha256": "34dc3a0b8c1192e4c66e703606a7162aff6dda76c7de19714a9de18477997951"
+    },
+    {
+      "scope": "final current1055 pre-1955 suppression-category partition, exact one-file delta",
+      "role": "independent component acceptance",
+      "raw_receipt_sha256": "abc7402264ad6cb09a9fffbf32919cc40097163bd0d78779213735cecccb6d3f"
+    }
+  ],
+  "acceptance_chain_boundary": "Exact parent composition receipts transitively retain their separately pinned source, source-image, rights and assembled-postimage judgments. This checkpoint does not broaden their scopes.",
+  "checkpoint_counts": {
+    "roman1962": {
+      "represented": 1439,
+      "with_english": 1055,
+      "untranslated": 384
+    },
+    "postconciliar": {
+      "represented": 561,
+      "with_english": 116,
+      "untranslated": 445
+    },
+    "catena": {
+      "source_fragments": 1404,
+      "books": 19
+    },
+    "latin_recovery_from_source_baseline": {
+      "new_complete_bodies": 27,
+      "repaired_existing_bodies": 15
+    },
+    "roman_pre1955": {
+      "represented": 1382,
+      "with_english": 1035,
+      "untranslated": 347,
+      "inherited_inapplicable_records": 57
+    }
+  },
+  "scope_boundaries": {
+    "source_acceptance": "Literal source bodies and bounded comparison methods only as accepted in the exact component receipts; no source typo, name, response or ending is silently supplied or normalized.",
+    "pre1955": "Final one-file reconciliation retains all 57 suppression identities and changes only their categories against the settled current1055 parent. No source prayer body or suppression identity is added.",
+    "rg110": "Separately accepted diagnostic refusal remains bounded to its exact code/source/generated/test component. Grouped execution remains unapplied.",
+    "code_and_runtime": "Separately reviewed source-owner and runtime code retains its own acceptance. A source-batch approval does not certify all runtime or native behavior.",
+    "postconciliar": "The new historical antecedent remains a study source; contemporary approved translation and broad modern-edition authentication are not asserted.",
+    "rights": "Existing source-specific rights judgments remain bounded. No complete scan or unexamined insert receives blanket clearance."
+  },
+  "retained_correction_history": [
+    "Earlier source-join holds and exact successor corrections remain pinned through their original receipts; literal English payloads were preserved.",
+    "The 209-owner source stage distinguishes its historical parent count from its exact later-parent rejoin.",
+    "The current34 union independently checks 34 removals and 384 residual absences; an inherited producer key mentioning 33 is not reused as a 33-removal claim.",
+    "Reviewer setup failures remain in their original pinned evidence and are not counted as successful checks.",
+    "The final suppression-category replacement changes an existing manifest entry, so the source epoch remains 1400 paths."
+  ],
+  "deferred_from_this_checkpoint": [
+    "Uncommitted remaining46 and postrepair13 candidate cohorts.",
+    "New nine-Latin candidate work, further spelling evidence or comparison methods, and further English candidates."
+  ],
+  "limits": [
+    "This receipt accepts the exact source checkpoint only; generation currentness, complete combined gates, annual textual completeness, human TUI, native, release and deployment acceptance remain separate.",
+    "The remaining 384 Roman and 445 postconciliar absences remain explicit; no whole-year textual completeness is asserted."
+  ],
+  "pre1955_reconciliation": {
+    "identities_preserved": 57,
+    "unchanged_dictionaries": 54,
+    "only_record_categories_changed": [
+      [
+        "good-friday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      [
+        "easter-vigil",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      [
+        "easter-vigil",
+        "main",
+        "Secret",
+        "all",
+        1
+      ]
+    ],
+    "source_bodies_changed": 0
+  },
+  "source_input_manifest_sha256": "82d841f80c73f2d32965719faeea647c78ce633a751619957ec1e633d57841c4",
+  "root_final_source_approval_sha256": "80782dd74ed3924784ec30ec9425a55b874fbe9944a6ca7b1046bd59b662fcba",
+  "source_snapshot_commit": "292a3b9e3115d644ab8090d7d0770fb9a350c926",
+  "separate_fixture_code_provenance": {
+    "manifest_sha256": "abfc1fa0e6739838fe8f56f719f168a67e6db2e47bd61191ba026e91387ba0cd",
+    "acceptance_sha256": "5c4a236320a9693c62d5a01b026cdcec56bd491cda20a29ce9c884880b5d1abb",
+    "scope": "Separate accepted V3 code component only; no final native or deployment gate."
+  }
+}
