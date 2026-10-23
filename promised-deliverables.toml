@@ -1,6 +1,36 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-propers-register-2026-10-23"
+owner = "PROJECT-WORK.md"
+promise = "Amend the recent GPT proper studies under the 21 October voice guidance as the Claude documents were amended, cold-review that guidance independently, verify the revised documents and canonical web edition, and publish the reviewed result to main with deployment verification."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "scope-and-guidance-review"
+  criterion = "The recent GPT scope is explicit, the voice guidance receives an independent cold review, and material findings and dispositions are recorded."
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-register-remediation-2026-10-23/RECORD.md"]
+
+  [[deliverables.requirements]]
+  id = "three-document-register-and-fidelity"
+  criterion = "Every scoped expansive study, concise study and homily meets the register guidance, preserves substantive evidence and source-local qualifications, and passes independent content and fidelity review in upstream order."
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-register-remediation-2026-10-23/RECORD.md"]
+
+  [[deliverables.requirements]]
+  id = "rendered-and-web-verification"
+  criterion = "Every affected PDF builds within its page contract, is visually reviewed and installed; source and metadata checks pass or have an explicitly compared inherited failure set; the canonical web edition, catalogue, source inventories and release bindings are current."
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-register-remediation-2026-10-23/RECORD.md"]
+
+  [[deliverables.requirements]]
+  id = "main-and-live-publication"
+  criterion = "The intended public outgoing range is reviewed, the deployment gates pass, the workspace commits reach main without force or history rewriting, and the resulting Pages run and affected live artifacts are verified."
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-register-remediation-2026-10-23/RECORD.md"]
+
+[[deliverables]]
 id = "reader-corpus-recovery-2026-10-23"
 owner = "PROJECT-WORK.md"
 promise = "Recover interrupted reader work; repair weekly/daily research ingestion, organization and biblical cross-references; expand checked Catena coverage and historical English orations; correct response and Scripture typography; and provide elegant, usable terminal views with website feature parity and independent cold review."

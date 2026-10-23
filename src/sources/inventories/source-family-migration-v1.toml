@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-10-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:a3e5c69693ce6d5cd07d91c7d9b20329ff8bc805951d04407f74d1ea0ddba04e"
+inventory_snapshot = "sha256:1fedf26dc582197fa8526c55448519f7b48bf7d6db03470aee355d98208436a8"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:6ed335d8da72bef42e08cfe75d6d126d301cac9be075e0a5976736ec938cb94f"
 canonical_catalog_snapshot = "sha256:1a7fe9af59db66d597ca446bbf5c18400b199fba4fc01a6175abb5e3609fc348"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:f84919d2ecbef9deacc770c1f7bf907d6b43e12b9ce1f3cd21ff05f46f2b1be7"
+snapshot = "sha256:a1b8d702993d313ec15a7d5e6242567da17449a6fa4cd5d7884c04c6f2660142"
 families = []
 
 [[review_units]]
@@ -503,7 +503,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
-surface_snapshot = "sha256:ee3359e2d861b66a31819b6617a99fa117efe6235f72e219b6505edcf1f10123"
+surface_snapshot = "sha256:34fb96fe1ba9aad98f55c0f0afa5605e30eee38845ff596ad4ed857703d86335"
 review_state = "pending"
 
 [[review_units]]
