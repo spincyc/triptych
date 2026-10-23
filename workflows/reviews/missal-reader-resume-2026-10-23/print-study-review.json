@@ -1,0 +1,26 @@
+{
+  "exit_code": 0,
+  "native_checks": 7,
+  "all_checks_pass": true,
+  "source_hashes_still_match": true,
+  "input_hashes": {
+    "tools/tests/liturgy_reader_share_print_browser.mjs": "1d402ee908fbb61b43d770edb7961ec23747ed55d7f20e8ab60180a4fbc1f277",
+    "src/web/browser/liturgy/reader-share-print.js": "c047ecff988a572ab10251f1fc6f91a22a38832993a75539098a3695d351a89a"
+  },
+  "physical_regression": {
+    "before_pages": 7,
+    "after_pages": 7,
+    "same_text_ignoring_whitespace": true,
+    "before_last_page": "Study notes for Postcommunion\nEvent               proper/roman-1962/last-sunday-after-pentecost/010\nKind                proper\nFunctional slot     prayer-after-communion\nSelected material   composed\nAvailability        held\nLanguage            la\nSource record       proper-structure: roman-1962/last-sunday-after-pentecost/010",
+    "after_last_page": "Postcommunion\n\nComposed text \u2014 not scripture\n\nConcede nobis, quaesumus, Domine: ut per haec sacramenta quae sumpsimus, quidquid\nin nostra mente vitiosum est, ipsorum medicationis dono curetur. Per Dominum.\nStudy notes for Postcommunion\nEvent                 proper/roman-1962/last-sunday-after-pentecost/010\nKind                  proper\nFunctional slot       prayer-after-communion\nSelected material     composed\nAvailability          held\nLanguage              la\nSource record         proper-structure: roman-1962/last-sunday-after-pentecost/010"
+  },
+  "pdf_sha256": {
+    "day-compare-share-print.pdf": "cfd5810cdb626b724e62b396e97bacb04d4c2fb0c14fcf93ca4f1923c778fad2",
+    "day-missal-print-pagination.pdf": "950bfcef84d1051b11813f24fb925985647c4c354615f8a91f44b33d82ec83da",
+    "day-paired-study-ordinary-pdf-seams.pdf": "fbfb16a1409bf2ed2d03b7a404d965b7159735f902894e8fafc54ac2decc68e9",
+    "day-study-print-composition.pdf": "9c7b3797c1de38d13fb745a8c4d57c38a73bda10960f93be4e4ff076a858bbde",
+    "propers-compare-print-composition.pdf": "22fb48a2f48ae3d775675d8831c4c8807048c7c31f75a04a54e1e486c90ddca5",
+    "propers-reading-alternative-pdf-seams.pdf": "d481728f51286908b0492ca45a65a5d156e6ee553b15c7cc5a669362306201ba",
+    "propers-study-share-print.pdf": "4d3e0103726ca4e7dfe4a7cd0fb3ac782bc7914fdc1d1a647ca4ea387cd9cc89"
+  }
+}

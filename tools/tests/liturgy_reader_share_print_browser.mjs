@@ -421,14 +421,35 @@ try {
       assert.equal(printed.compareColumns.split(' ').filter(Boolean).length, 2,
         'printed Compare keeps both semantic sides aligned');
     }
+    const printSnapshot = () => evaluate(cdp, `(() => ({
+      url:location.href,state:${entrance}ReaderDebug.state,
+      html:document.querySelector('#reader-document').innerHTML,
+      ids:[...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
+        .map(node=>node.dataset.semanticEventId),
+      semanticIds:(${entrance}ReaderDebug.semantic?.events||[]).map(event=>event.id)
+    }))()`);
+    const beforePrint = await printSnapshot();
+    await writeFile(resolve(SCRATCH, activeCase + '.print-state.json'), JSON.stringify(
+      await evaluate(cdp, `(() => ({state:${entrance}ReaderDebug.state, expectedPrint:${JSON.stringify(expectedPrint)},
+        html:document.querySelector('#reader-document').innerHTML,
+        propers:[...document.querySelectorAll('#reader-document .proper:has(> .study-event)')].map(node=>({
+          id:node.dataset.semanticEventId,
+          children:[...node.children].map(child=>({tag:child.tagName,classes:child.className,
+            height:child.getBoundingClientRect().height,text:child.textContent}))}))}))()`), null, 2) + '\n');
     const pdf = await cdp.send('Page.printToPDF', {
       printBackground: true, preferCSSPageSize: true
     });
     assert.ok(pdf.data.length > 10000, 'the selected reader generates a PDF');
-    const pdfFile = resolve(profile, entrance + '-' + state.requestedMode + '.pdf');
+    const pdfFile = resolve(SCRATCH, activeCase + '.pdf');
     await writeFile(pdfFile, Buffer.from(pdf.data, 'base64'));
+    await waitFor(cdp, `!document.querySelector('#reader-document')?.querySelector(
+      '.ordinary-print-tie,.study-print-tie,.print-keep-short-body,.print-keep-short-psalm')`,
+    activeCase + ' afterprint cleanup');
+    assert.deepEqual(await printSnapshot(), beforePrint,
+      'actual PDF printing restores exact DOM, ordered source events and selected state');
     const { stdout: pdfText } = await execFileAsync('pdftotext', ['-layout', pdfFile, '-'],
       { maxBuffer: 2 * 1024 * 1024 });
+    await writeFile(resolve(SCRATCH, activeCase + '.txt'), pdfText);
     const pages = pdfText.split('\f').filter((page) => page.trim());
     assert.ok(pages.length > 0 && pages.every((page) => page.trim().length > 80),
       'no detached or empty PDF page');
@@ -506,10 +527,11 @@ try {
     const pdf = await cdp.send('Page.printToPDF', {
       printBackground: true, preferCSSPageSize: true
     });
-    const pdfFile = resolve(profile, 'day-missal-composition.pdf');
+    const pdfFile = resolve(SCRATCH, activeCase + '.pdf');
     await writeFile(pdfFile, Buffer.from(pdf.data, 'base64'));
     const { stdout } = await execFileAsync('pdftotext', ['-layout', pdfFile, '-'],
       { maxBuffer: 2 * 1024 * 1024 });
+    await writeFile(resolve(SCRATCH, activeCase + '.txt'), stdout);
     const pages = stdout.split('\f').filter((page) => page.trim());
     assert.ok(pages.length > 15 && pages.every((page) => page.trim().length > 80));
     for (const [direction, continuation] of [
@@ -611,6 +633,11 @@ try {
       const extract = async option => (await execFileAsync('pdftotext',
         [option,pdfFile,'-'], {maxBuffer:4 * 1024 * 1024})).stdout;
       const [layout,bbox] = await Promise.all(['-layout','-bbox'].map(extract));
+      await Promise.all([
+        writeFile(resolve(SCRATCH, label + '.txt'), layout),
+        writeFile(resolve(SCRATCH, label + '.bbox.html'), bbox),
+        writeFile(resolve(SCRATCH, label + '.print-state.json'), JSON.stringify(before, null, 2) + '\n')
+      ]);
       return {before,pages:pdfPages(layout),bbox};
     } finally {
       await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });

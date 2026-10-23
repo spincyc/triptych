@@ -216,12 +216,21 @@
       if (shell.dataset.readerMode === 'study') {
         current.querySelectorAll('.proper:has(> .study-event)').forEach(function (proper) {
           const note = proper.lastElementChild;
-          const tail = note && note.previousElementSibling;
+          let tail = note && note.previousElementSibling;
+          // Credits are typed metadata of this same rendered Proper. They may
+          // be empty for Latin, but still stand between its body and its note.
+          while (tail && tail.classList.contains('translation-credits')) {
+            tail = tail.previousElementSibling;
+          }
           if (!note || !note.classList.contains('study-event') ||
               !tail || !tail.matches('.citation,.composed')) return;
           const tailHeight = tail.getBoundingClientRect().height;
-          const noteHeight = note.getBoundingClientRect().height;
-          if (!tailHeight || tailHeight > 240 || tailHeight + noteHeight > 560) return;
+          let attachmentHeight = 0;
+          for (let node = tail; node; node = node.nextElementSibling) {
+            attachmentHeight += node.getBoundingClientRect().height;
+            if (node === note) break;
+          }
+          if (!tailHeight || tailHeight > 240 || attachmentHeight > 560) return;
           wrap(proper, tail, note, 'study-print-tie');
         });
       } else if (shell.dataset.readerMode === 'missal') {
