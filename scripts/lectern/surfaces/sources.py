@@ -276,7 +276,12 @@ class Sources(Surface):
         self.refind()
 
     def action_search(self) -> None:
-        self.query_one("#sources-query", Input).focus()
+        self._focus_finder("#sources-query")
+
+    def _focus_finder(self, selector: str) -> None:
+        """An explicit finder command reveals its target before moving focus."""
+        self.remove_class("focus")
+        self.call_after_refresh(self.query_one(selector).focus)
 
     def key_escape(self) -> None:
         if self.query_one("#sources-query", Input).has_focus:
@@ -693,7 +698,7 @@ class Sources(Surface):
         self.query_one("#sources-overview").display = True
         self.query_one("#sources-head").display = False
         self.query_one("#sources-body").display = False
-        self.query_one("#sources-list", OptionList).focus()
+        self._focus_finder("#sources-list")
         self.app.refresh_where()
 
     # --- where, and being sent here --------------------------------------

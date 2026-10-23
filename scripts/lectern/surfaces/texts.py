@@ -225,7 +225,8 @@ class Texts(Surface):
         self.refind()
 
     def action_search(self) -> None:
-        self.query_one("#texts-query", Input).focus()
+        self.remove_class("focus")
+        self.call_after_refresh(self.query_one("#texts-query", Input).focus)
 
     def key_escape(self) -> None:
         if self.query_one("#texts-query", Input).has_focus:

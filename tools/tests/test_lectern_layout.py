@@ -201,6 +201,61 @@ class ReaderLayoutTests(unittest.IsolatedAsyncioTestCase):
                         await pilot.press("escape")
                         await pilot.pause()
 
+    async def test_search_reveals_hidden_catalogue_before_typing(self):
+        from lectern.surface import shown
+
+        for surface, term in (("sources", "alcuin"), ("texts", "origen")):
+            for width in (80, 140):
+                with self.subTest(surface=surface, width=width):
+                    app = self.app(surface)
+                    async with app.run_test(size=(width, 30)) as pilot:
+                        await self.settle(app, pilot)
+                        owner = app.current()
+                        left = owner.query_one(f"#{surface}-left")
+                        before = len(owner.found["rows"])
+                        await pilot.press("f")
+                        await self.settle(app, pilot)
+                        self.assertFalse(shown(left))
+                        await pilot.press("slash")
+                        await self.settle(app, pilot)
+                        query = owner.query_one(f"#{surface}-query")
+                        self.assertTrue(shown(query))
+                        self.assertTrue(query.has_focus)
+                        self.assertGreater(query.region.intersection(app.screen.region).area, 0)
+                        await pilot.press(*term)
+                        await self.settle(app, pilot)
+                        self.assertEqual(query.value, term)
+                        self.assertEqual(owner.found["state"]["find"], term)
+                        self.assertTrue(owner.found["rows"])
+                        self.assertLess(len(owner.found["rows"]), before)
+
+    async def test_sources_back_reveals_hidden_catalogue_before_list_navigation(self):
+        from lectern.surface import shown
+
+        edition = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+        for width in (80, 140):
+            with self.subTest(width=width):
+                app = self.app("sources", edition=edition)
+                async with app.run_test(size=(width, 30)) as pilot:
+                    await self.settle(app, pilot)
+                    owner = app.current()
+                    self.assertIsNotNone(owner.open_edition)
+                    self.assertNotIn("problem", owner.open_edition)
+                    await pilot.press("f")
+                    await self.settle(app, pilot)
+                    self.assertFalse(shown(owner.query_one("#sources-left")))
+                    await pilot.press("b")
+                    await self.settle(app, pilot)
+                    listing = owner.query_one("#sources-list")
+                    self.assertIsNone(owner.open_edition)
+                    self.assertTrue(shown(listing))
+                    self.assertTrue(listing.has_focus)
+                    self.assertGreater(listing.region.intersection(app.screen.region).area, 0)
+                    before = listing.highlighted
+                    await pilot.press("down")
+                    await self.settle(app, pilot)
+                    self.assertNotEqual(listing.highlighted, before)
+
 
 if __name__ == "__main__":
     unittest.main()
