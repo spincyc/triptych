@@ -1,0 +1,107 @@
+{
+  "schema": "triptych-source-review-receipt/v1",
+  "review": "independent source-printing alias layer and separate source-owner code review",
+  "reviewed_on": "2026-10-23",
+  "disposition": "accepted-and-installed-historical-source-snapshot",
+  "source_baseline": "2e030b564f4413b735ddbea3061082ebe981b11a",
+  "installed_commit": "af4fd078928a5eb848dfdeb9db11109eb51df907",
+  "epoch_boundary": "Historical installed stage only; later accepted stages and final generation, annual, native, release and deployment gates remain separate.",
+  "install_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-23/source-postimages-phase5-installed-stages.json",
+    "sha256": "7ff852dc58c963044866ee9f029d8bdb1c8a8af51e2ae70d282bc128f3082e1b",
+    "bytes": 191544,
+    "sections": [
+      "source31",
+      "owner4"
+    ]
+  },
+  "parent_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-23/source-review-phase5-latin-bundle.json",
+    "sha256": "68811b405df9bf3778459aad160be8facc842e995431c754e6fa66db6b8d9f2c",
+    "bytes": 5306
+  },
+  "reviews": [
+    {
+      "scope": "31-path assembled source metadata and alias layer",
+      "raw_receipt_sha256": "db04ebd4e9ce73c41dbd04563d4952465a204b1c728567765e2ea223ce7520e7",
+      "disposition": "accepted"
+    },
+    {
+      "scope": "four source-owner code and test postimages",
+      "raw_receipt_sha256": "ced0117a8f8ad4407bda5a83053b406b68d0dd8c20e139ed2788866cc8b073c8",
+      "disposition": "accepted"
+    }
+  ],
+  "composition": {
+    "parent_reviewed_epoch_paths": 765,
+    "installed_source_paths": 31,
+    "new_source_paths": 29,
+    "replacement_metadata_inventories": 2,
+    "installed_owner_code_and_test_paths": 4,
+    "source_only_epoch_paths": 794,
+    "source_only_epoch_manifest_sha256": "10bc6300c7039dc77a78440c66f758d55ec15a5ec35f3be5784f9f8eeadb6915",
+    "source_plus_owner_epoch_paths": 798,
+    "source_plus_owner_epoch_manifest_sha256": "34ac0d320db885b99d1ada9b3dbc6b62455e0f880876af17630c48159ffd03c4",
+    "prior_source_image_acceptance_sha256": "1344344acd6cb8b0c4076e5bb13a5a8f51187bccab75c428b8ce18b4d3e36888",
+    "exact_alias_dictionary_sha256": "7a9fd9e57ffc9a6348017472995354e8fc964f03c5ad51f379f2aefecceec61f"
+  },
+  "source_acceptance": {
+    "all_prior_positive_dictionaries_exact": 780,
+    "all_prior_absence_dictionaries_exact": 659,
+    "old_sources_aliases_and_publication_relations_exact": true,
+    "only_source_array_change": "Append the exact reviewed 1946 printing alias dictionary.",
+    "english_admissions": 0,
+    "new_absence_dispositions": 0,
+    "new_source_image_readings": 0,
+    "prior_image_acceptance_reused_by_exact_pins": true,
+    "source_layer_tests": 42,
+    "source_layer_test_skips": 0,
+    "source_graph": "Producer focused evidence reused by exact hash; no fresh whole-graph sweep claimed."
+  },
+  "owner_code_acceptance": {
+    "scope": "Complete three-code-file diff and new test reviewed; source and code approvals remain distinct.",
+    "code_paths": 3,
+    "test_paths": 1,
+    "legacy_1945_helper_body_ast_exact": true,
+    "changed_reader_functions": 2,
+    "changed_checker_functions": 3,
+    "baseline_tests": 13,
+    "postimage_tests": 51,
+    "test_exit_code": 0,
+    "test_skips": 0,
+    "actual_lettered_source_entries_checked_in_both_consumers": 7,
+    "actual_body_and_excluded_range_negatives": "refused by both consumers",
+    "exact_old_and_new_alias_pair_only": true,
+    "legacy_alias_resolution_deterministic_in_either_order": true,
+    "existing_source_body_hash_target_proof_and_publication_guards_retained": true,
+    "source_schema_writer_or_cache_change": false
+  },
+  "rights_boundary": {
+    "physical_source_printing": 1946,
+    "physical_pdf_identity_remains_exact_and_separate": true,
+    "original_1937_1945_ordinary_expression_us_nonrenewal_anchor_only": true,
+    "whole_1946_scan_rights_clearance": false,
+    "source_or_target_words_relabelled": false,
+    "unexamined_inserts_admitted": false,
+    "excluded_lettered_folios": [
+      "1298a-1298n",
+      "1302a-1302d"
+    ],
+    "physical_leaf_range_separate_from_literal_printed_folios": true
+  },
+  "correction_history": [
+    {
+      "kind": "reviewer setup",
+      "resolution": "The first replay omitted two accepted 1946 metadata fixtures after an incorrect manifest hash-field lookup. Exact approved inputs resolved setup; the same candidate and test expectations passed 51 tests.",
+      "retained_failure_log_sha256": "ce3bfba06f9535cc69d1d27fa4491421c57a68268699ec68f3eb143f41f43ddc"
+    },
+    {
+      "kind": "producer harness diagnostics",
+      "resolution": "Diagnostic-expectation and missing payload setup failures remain pinned in the sealed owner manifest; no invalid source was admitted."
+    }
+  ],
+  "limits": [
+    "Source alias metadata and bounded owner code only; no English prayer, new rights decision or whole-PDF clearance is added.",
+    "Full release-write auditing, generation and final release gates remain separate."
+  ]
+}

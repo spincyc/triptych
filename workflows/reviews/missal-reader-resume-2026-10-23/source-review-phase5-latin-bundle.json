@@ -1,0 +1,142 @@
+{
+  "schema": "triptych-source-review-receipt/v1",
+  "review": "independent assembled bounded Latin and source-evidence bundle",
+  "reviewed_on": "2026-10-23",
+  "disposition": "accepted-and-installed-historical-source-snapshot",
+  "source_baseline": "2e030b564f4413b735ddbea3061082ebe981b11a",
+  "installed_commit": "7b3e16079794dbca7030ef0189fa122705af292e",
+  "epoch_boundary": "Historical installed stage only; later accepted stages and final generation, annual, native, release and deployment gates remain separate.",
+  "install_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-23/source-postimages-phase5-installed-stages.json",
+    "sha256": "7ff852dc58c963044866ee9f029d8bdb1c8a8af51e2ae70d282bc128f3082e1b",
+    "bytes": 191544,
+    "sections": [
+      "bundle66"
+    ]
+  },
+  "reviews": [
+    {
+      "scope": "assembled source merge and controllers",
+      "raw_receipt_sha256": "8327734126ad2f1bec199ef2738b0c78359133219668d573fa5d26901fce8e43",
+      "disposition": "accepted"
+    }
+  ],
+  "composition": {
+    "parent_reviewed_epoch_paths": 703,
+    "installed_source_postimages": 66,
+    "new_source_paths": 62,
+    "replacement_source_paths": 4,
+    "reviewed_epoch_paths": 765,
+    "reviewed_epoch_manifest_sha256": "2e7355831cdf86e66e1092ae5e66422f8b52f7bc6664076e10f265609981cff0",
+    "parent_phase4_extension_review": {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-23/source-review-phase4-extension.json",
+      "sha256": "434baf04eee8f4097a7ede300a3777e00b29bae9b644acf094d1218893860ca3"
+    },
+    "parent_pre1955_review": {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-23/source-review-phase4-pre1955.json",
+      "sha256": "bf5beb87a39634b3d2c0b504e590f9e242117c82ea83dc1082d5edb4513caff0"
+    }
+  },
+  "source_component_review_sha256": {
+    "four_latin_repairs": "10016bfe1c2d0a281022dc8b81fe918267d00a0be5ff56091e3382933e5168d9",
+    "two_latin_repairs": "eb23ae55ccffdfdee4b0ddd68e8d7dff1d3e67d3b0bc0b698a027764f5c8eed1",
+    "bounded_offertory_owner": "8b2d08d6df005a9df9f0069abe7842d079538c0bc78f429c751dbdab60d7fb88",
+    "six_pair_method_supplement": "2b2d25bab96a947dd6fea28ecfa772490c970621bba7dd7f06b1a0ba44666967"
+  },
+  "latin_preservation": {
+    "prior_rows": 1315,
+    "unchanged_prior_dictionaries": 1309,
+    "exact_accepted_full_replacements": 6,
+    "new_bounded_owner": 1,
+    "final_rows": 1316,
+    "whole_raw_calendar_and_ledger_replay_exact": true,
+    "standalone_ledger_EOF_LF_removed": 1,
+    "prior26_additions_and9_repairs_preserved": true
+  },
+  "english_preservation": {
+    "prior_positive_dictionaries_and_order_exact": 780,
+    "prior_absence_dictionaries_and_order_exact": 657,
+    "new_exact_absences": 2,
+    "english_admissions": 0,
+    "explicit_text_free_old_absence_block_relocations": 10,
+    "raw_english_append_only_claim": false
+  },
+  "bounded_owner": {
+    "target": [
+      "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+      "main",
+      "Offertory",
+      "all",
+      1
+    ],
+    "literal_base_sha256": "b06720237c7314a55174aecedcabdbac4dbbbbd6fa43b11c160c689b703340b4",
+    "ends_before_optional_clause": true,
+    "selected_tract_base_only": true,
+    "paschal_body_unavailable_without_body_hash_or_latin_row": true,
+    "runtime_or_schema_change": false
+  },
+  "historical_coverage": {
+    "roman-1962": {
+      "slots": 1439,
+      "with_english": 780,
+      "ledgered_untranslated": 659,
+      "unaccounted": 0,
+      "outside_the_ledger": 0,
+      "unmatched_records": 0,
+      "stale_translation_records": 0,
+      "inherited_inapplicable_records": 0
+    },
+    "roman-pre-1955": {
+      "slots": 1382,
+      "with_english": 765,
+      "ledgered_untranslated": 617,
+      "unaccounted": 0,
+      "outside_the_ledger": 0,
+      "unmatched_records": 0,
+      "stale_translation_records": 0,
+      "inherited_inapplicable_records": 57
+    },
+    "postconciliar": {
+      "slots": 561,
+      "with_english": 115,
+      "ledgered_untranslated": 446,
+      "unaccounted": 0,
+      "outside_the_ledger": 0,
+      "unmatched_records": 0,
+      "stale_translation_records": 0,
+      "inherited_inapplicable_records": 0
+    }
+  },
+  "checks": {
+    "source_graph": {
+      "problems": [],
+      "counts": {
+        "corpus": 5,
+        "edition": 1278,
+        "work": 1069,
+        "artifact": 3783,
+        "passage": 7958,
+        "segment": 124
+      }
+    },
+    "focused_negative_controls": 7,
+    "all_install_and_epoch_pins_exact": true
+  },
+  "correction_history": [
+    {
+      "kind": "explicit ledger formatting delta",
+      "standalone_latin_ledger_eof_lf_removed": 1,
+      "scope": "Accepted in this successor only; phase4 accepted hashes remain unchanged."
+    },
+    {
+      "kind": "text-free absence layout",
+      "old_blocks_relocated": 10,
+      "scope": "Explicitly accepted; old dictionaries and order remain exact."
+    }
+  ],
+  "limits": [
+    "Previously accepted complete source-image readings and rights evidence are reused through exact hashes; this assembled review performs no new image reading or source-word interpretation.",
+    "The separate six-pair comparison method makes no English admission.",
+    "No source-owner code, additional209 English, later Holy Week or later lexical admission is certified by this stage."
+  ]
+}

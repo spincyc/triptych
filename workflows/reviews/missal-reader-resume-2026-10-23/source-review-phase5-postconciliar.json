@@ -1,0 +1,70 @@
+{
+  "schema": "triptych-source-review-receipt/v1",
+  "review": "independent bounded postconciliar historical antecedent source admission",
+  "reviewed_on": "2026-10-23",
+  "disposition": "accepted-and-installed-historical-source-snapshot",
+  "source_baseline": "2e030b564f4413b735ddbea3061082ebe981b11a",
+  "installed_commit": "5d8386d9007a56985253f4e808371a2a7c89fef8",
+  "epoch_boundary": "Historical installed stage only; later accepted stages and final generation, annual, native, release and deployment gates remain separate.",
+  "install_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-23/source-postimages-phase5-installed-stages.json",
+    "sha256": "7ff852dc58c963044866ee9f029d8bdb1c8a8af51e2ae70d282bc128f3082e1b",
+    "bytes": 191544,
+    "sections": [
+      "postconciliar8"
+    ]
+  },
+  "reviews": [
+    {
+      "scope": "complete source reading, exact eight-postimage replay and scoped controls",
+      "raw_receipt_sha256": "4fba6f020bfde78626ede09dba270494c383fcc4d17cdde263aa00482b073df9",
+      "disposition": "accepted"
+    }
+  ],
+  "composition": {
+    "installed_source_postimages": 8,
+    "new_source_paths": 7,
+    "replacement_inventory_paths": 1,
+    "accepted_manifest_sha256": "c4d91667e8f8e98aab40765e29c154e582fc4424c46bb4cbef94e3a601ff19bc"
+  },
+  "target": [
+    "easter-vigil",
+    "main",
+    "Prayer after the Seventh Reading (alternative)",
+    "all",
+    1
+  ],
+  "english_admissions": 1,
+  "source_english_and_complete_qualified_latin_petition_independently_read": true,
+  "preservation": {
+    "prior115_positive_dictionaries_exact": true,
+    "other445_absence_dictionaries_exact": true
+  },
+  "historical_postconciliar_counts": {
+    "slots": 561,
+    "positive": 116,
+    "absence": 445
+  },
+  "checks": {
+    "source_graph": "pass on exact eight-postimage replay",
+    "scoped_calendar": "pass with the pre-existing Psalm 56:14 exception",
+    "negative_controls": 8,
+    "source_reading_receipt_sha256": "9afb890b1b9d29f15b5dca03095adc1f06e851f0380fa883b5ba64a96bd879cf",
+    "join_and_preservation_receipt_sha256": "8f6b1bfa4a76b2e89d0d9155939fdec0fd0c512ad95529498f7c8bccedb17e56",
+    "controls_and_coverage_receipt_sha256": "4c1c00d1ea90628ddf4a0d20b006f3e4dfb2ab9efa0876e09cc3a8468ba9f030"
+  },
+  "correction_history": [
+    {
+      "kind": "initial source-metadata candidate not accepted",
+      "resolution": "Two Cummiskey locus strings were corrected to the edition-specific single-component grammar. All other six postimages and all English, source comparisons and evidence remained exact; the predecessor was not source-graph accepted.",
+      "exact_delta_receipt_sha256": "e5b9d4e6df817dc69483544ecc9fb60e2e62aad9462c84355a99b8b56d0c79f3"
+    }
+  ],
+  "qualification": "Study historical antecedent only. No contemporary approved ICEL translation, general 2008 authentication, full-prayer string identity or conclusion equivalence is claimed. The photographed 1970 source supports its own edition; secondary 2002 printed-book fidelity and continuity to 2008 remain unresolved.",
+  "rights_boundary": "Only the faithful historical English plaintext is newly admitted; source images, protected modern source bodies, citation-adapted English and reconstructed occluded wording are excluded.",
+  "limits": [
+    "One study historical antecedent only; no contemporary approved ICEL translation, general 2008 authentication, complete-prayer string identity or conclusion equivalence is asserted.",
+    "The photographed 1970 source supports its own edition; secondary 2002 printed-book fidelity and continuity to 2008 remain unresolved.",
+    "No annual, full-site, deployment or canonical assembled-state gate is represented."
+  ]
+}

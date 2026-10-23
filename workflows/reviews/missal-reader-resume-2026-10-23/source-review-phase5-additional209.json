@@ -1,0 +1,153 @@
+{
+  "schema": "triptych-source-review-receipt/v1",
+  "review": "independent additional209 source admission and exact current-parent rejoin",
+  "reviewed_on": "2026-10-23",
+  "disposition": "accepted-and-installed-historical-source-snapshot",
+  "source_baseline": "2e030b564f4413b735ddbea3061082ebe981b11a",
+  "installed_commit": "3cd51e852a6d9a71b84cffd3f5ac73cee69403d5",
+  "epoch_boundary": "Historical installed stage only; later accepted stages and final generation, annual, native, release and deployment gates remain separate.",
+  "install_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-23/source-postimages-phase5-installed-stages.json",
+    "sha256": "7ff852dc58c963044866ee9f029d8bdb1c8a8af51e2ae70d282bc128f3082e1b",
+    "bytes": 191544,
+    "sections": [
+      "additional209-current798"
+    ]
+  },
+  "parent_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-23/source-review-phase5-printing-alias-owners.json",
+    "sha256": "e2d1500c2945bda10ef10b1f3afeacd799f60ee630ecee4968eb284f24642b2b",
+    "bytes": 4995
+  },
+  "reviews": [
+    {
+      "scope": "historical 702-path-parent assembled source judgments",
+      "raw_receipt_sha256": "841bd61de02c0db8c6e9564c44c8861243a10f40a5a87241403dcc28d2fc747b",
+      "disposition": "accepted"
+    },
+    {
+      "scope": "exact installable 798-path-parent composite and inherited pre1955 bindings",
+      "raw_receipt_sha256": "ef7a964956d63ad5816ecfefbff64bb5b08f82ced938be600459cfdb5d42a5b4",
+      "disposition": "accepted"
+    }
+  ],
+  "composition": {
+    "accepted_historical_source_version": {
+      "parent_epoch_paths": 702,
+      "postimages": 429,
+      "install_manifest_sha256": "7750115c5e758b22148b964ce7d3a2b10962afde85ac76c3093665b4ae73ec18",
+      "epoch_paths": 1129,
+      "epoch_manifest_sha256": "ada80e6ea1019c90c0fcee5058fc8fe346aa727f8376b9c7f45932655e017e37"
+    },
+    "installed_current_parent_version": {
+      "parent_epoch_paths": 798,
+      "postimages": 430,
+      "new_paths": 427,
+      "shared_replacement_paths": 3,
+      "install_manifest_sha256": "c10579a668ae86a4624ce6a202a75c71d600fa9459db17c94d667cc75c1ebb62",
+      "epoch_paths": 1225,
+      "epoch_manifest_sha256": "d47e613d2cd250c4bc4f57b8eab32ec9c2ac95c39a2e2abe7cf4b826c8569fc5"
+    },
+    "unchanged_source_postimages_carried_from_source_review": 427,
+    "new_source_image_readings_in_rejoin": 0
+  },
+  "english_admissions": 209,
+  "accepted_methods": {
+    "strict": 81,
+    "same-witness-conclusion-table": 84,
+    "bounded-own-appointment-orthography": 43,
+    "complete-canonical-latin-literal-reuse": 1
+  },
+  "bounded_spelling_subroutes": {
+    "complete_sequence_after_exact_positions": 25,
+    "same_witness_table_after_exact_positions": 18
+  },
+  "strict_table_physical_source_bodies": 163,
+  "strict_table_target_context_verifications": 165,
+  "source_and_prerequisite_checks": {
+    "all_literal_source_english_latin_complete_targets_and_proof_joins_pass": true,
+    "conditional_source_owners_closed": 25,
+    "exact_accepted_latin_prerequisites_checked": 26,
+    "exact_spelling_and_comparison_only_marker_positions_preserved": true,
+    "literal_reuse_donor_complete_utf8_and_same_batch_publication_dependency_pass": true,
+    "literal_witness_typos_and_punctuation_preserved": true,
+    "source_image_files_rehashed": 224,
+    "distinct_image_byte_hashes": 223,
+    "new_image_readings_in_assembled_review": 0,
+    "prior_actual_image_and_rights_judgments_reused_by_exact_pins": true
+  },
+  "installed_parent_preservation": {
+    "all780_prior_positive_dictionaries_exact": true,
+    "exact209_prior_absences_removed": true,
+    "remaining450_current_parent_absences_exact": true,
+    "two_later_bounded_owner_absences_preserved": true,
+    "current_source_alias_metadata_and_latin_proof_history_preserved": true,
+    "all57_pre1955_dispositions_retained": true,
+    "only_two_selected_palm_record_categories_changed": true,
+    "other55_pre1955_dictionaries_exact": true,
+    "selected_palm_entry_proof_source_publication_and_payload_bindings_exact": true
+  },
+  "historical_counts": {
+    "702_parent_source_judgment": {
+      "roman1962_positive": 989,
+      "roman1962_absence": 448
+    },
+    "installed_798_parent_rejoin": {
+      "roman1962_slots": 1439,
+      "roman1962_positive": 989,
+      "roman1962_absence": 450
+    }
+  },
+  "correction_history": [
+    {
+      "kind": "three verification-owner joins held before acceptance",
+      "held_receipt_sha256": "cd6014a965113830c5d859a19740f13dc497d008973ce0b485f6373ce121d5b5",
+      "resolution": "Three separate exact own-source verification records replace inappropriate shared verification bindings. Only the three passage identifiers and dependent metadata change; all English wording, payloads and artifact identities remain exact.",
+      "targets": [
+        [
+          "s-petri-alcantara-confessoris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        [
+          "comm-s-mennae-martyris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        [
+          "s-andreae-avellini-confessoris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ]
+      ],
+      "unchanged_predecessor_postimages": 419,
+      "new_verification_records": 3,
+      "dependent_changed_paths": 7
+    },
+    {
+      "kind": "historical parent preimages advanced",
+      "resolution": "Four canonical historical preimages advanced while review was running. Their frozen Git bytes and the accepted successor epoch were verified; other 711 immutable inputs remained exact. The historical whole ledger was not used to overwrite the later parent."
+    },
+    {
+      "kind": "reviewer setup",
+      "resolution": "Two initial source-inspector attempts omitted baseline calendar scripts. Exact baseline inputs resolved setup; the completed review retained only the three owner-join findings, subsequently corrected."
+    },
+    {
+      "kind": "current-parent checker assumptions",
+      "resolution": "Two preliminary checks assumed merge prose was unchanged or kept historical paragraph order. The final check reconstructed the exact three accepted paragraphs before the exact current-parent prose; candidate bytes did not change.",
+      "initial_check_log_sha256": "0b7f64da5ac5b4350652d3b4c0900b46d003baffb455a17c622f86225e429e61",
+      "second_check_log_sha256": "f029f587a88770c799ab04a28295f7d3ad6e2e5f5053bf3e08f43a3afa53074e"
+    }
+  ],
+  "limits": [
+    "These are source and assembled-postimage approvals; no new source-image or rights judgment is made by the rejoin.",
+    "The historical 448-absence count belongs to the earlier parent; the installed rejoin retains 450 absences.",
+    "Later Holy Week and lexical cohorts, broader generation, annual, native, release and deployment acceptance remain separate."
+  ]
+}
