@@ -36,7 +36,7 @@ state = "in_progress"
   id = "coherent-main-publication"
   criterion = "Consistent coherent checkpoints are committed on the workspace branch and pushed without force to main; the exact remote commit and successful resulting GitHub Actions deployment are verified."
   status = "pass"
-  evidence = ["PROJECT-WORK.md", "workflows/reviews/missal-reader-resume-2026-10-23/RECORD.md", "workflows/reviews/missal-reader-resume-2026-10-23/publication-actions.json", "workflows/reviews/missal-reader-resume-2026-10-23/publication-live.json"]
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/missal-reader-resume-2026-10-23/RECORD.md", "workflows/reviews/missal-reader-resume-2026-10-23/publication-actions.json", "workflows/reviews/missal-reader-resume-2026-10-23/publication-live.json", "workflows/reviews/missal-reader-resume-2026-10-23/publication-recovery-phase3.json"]
 
   [[deliverables.requirements]]
   id = "remaining-corpus-and-english-backlog"
@@ -182,8 +182,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "lectern-page-mode-parity"
   criterion = "The reader offers the liturgy pages' remaining modes: Propers Compare along its dimensions (oration language, lectionary cycle, reading alternative, translation witness, Bible edition) and the Study mode of Day and Propers, each through the page's own comparison and study code."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "scripts/lectern/README.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "scripts/lectern/README.md", "scripts/lectern/adapters/liturgy.js", "tools/tests/test_lectern_liturgy_parity.py", "workflows/reviews/missal-reader-resume-2026-10-23/reader-cold-review.md", "workflows/reviews/missal-reader-resume-2026-10-23/integrated-reader-review-phase3.md"]
 
   [[deliverables.requirements]]
   id = "lectern-maintainer-terminal-review"

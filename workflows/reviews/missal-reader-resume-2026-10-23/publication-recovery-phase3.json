@@ -1,0 +1,84 @@
+{
+  "Actions": [
+    {
+      "branch": "main",
+      "conclusion": "success",
+      "event": "push",
+      "head": "2e030b564f4413b735ddbea3061082ebe981b11a",
+      "name": "Repository hygiene",
+      "run_id": 39985274562,
+      "status": "completed",
+      "url": "https://github.com/spincyc/triptych/actions/runs/39985274562"
+    },
+    {
+      "branch": "main",
+      "conclusion": "success",
+      "event": "push",
+      "head": "2e030b564f4413b735ddbea3061082ebe981b11a",
+      "name": "Publish GitHub Pages",
+      "run_id": 39985274729,
+      "status": "completed",
+      "url": "https://github.com/spincyc/triptych/actions/runs/39985274729"
+    }
+  ],
+  "deploy_completed_at": "2026-10-23T16:33:47Z",
+  "functional_checkpoint": "337eae05542bf2b6ab1d6e39de50a175c44c8bb6",
+  "head": "2e030b564f4413b735ddbea3061082ebe981b11a",
+  "limits": [
+    "Existing remote feature history remains separate and obsolete; it was not merged, rewritten or pushed.",
+    "Live evidence is the retained original 2026-10-23 observation, not a fresh HTTP check.",
+    "Annual textual completeness, remaining source/English work and maintainer real-terminal approval remain open."
+  ],
+  "live": {
+    "all_26_raw_body_response_artifact_manifest_joins_rechecked": true,
+    "endpoints": 26,
+    "exact_bytes": 23639427,
+    "expected_manifest_sha256": "1e51ed364c1704734227c19340017b966781b8a814bd9e4a20823f543e38b577",
+    "receipt": "publication-live-phase3.json",
+    "request_interval": [
+      "2026-10-23T16:37:06.131Z",
+      "2026-10-23T16:37:07.604Z"
+    ],
+    "sha256": "7ec3358f9ab21285b710010c027ed5e2921ce71c802172863a489939060634c1"
+  },
+  "original_publication_complete_at": "2026-10-23T16:38:01.618841+00:00",
+  "original_push": {
+    "branch": "feature/missal-reader",
+    "previous_main": "ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+    "push": "ordinary non-force HEAD:refs/heads/main",
+    "pushed_head": "2e030b564f4413b735ddbea3061082ebe981b11a",
+    "remote_main_verified": "2e030b564f4413b735ddbea3061082ebe981b11a",
+    "verified_at": "2026-10-23T16:15:30.693945+00:00",
+    "working_tree_clean": true
+  },
+  "read_only_reconciliation": {
+    "no_new_live_endpoint_requests": true,
+    "no_ref_mutation": true,
+    "observed_at": "2026-10-23T17:05:56.269575+00:00",
+    "outgoing_commit_count": 0,
+    "remote_feature": "3b89c2a05bece2394942a0f8aa2cbcdad33ba33b",
+    "remote_main": "2e030b564f4413b735ddbea3061082ebe981b11a"
+  },
+  "record_type": "phase3-publication-evidence-recovery",
+  "validation_currency": {
+    "all_retained_log_hashes_exact": {
+      "annual": true,
+      "annual_receipt": true,
+      "browser": true,
+      "browser_raw_reports": true,
+      "dialogue": true,
+      "preview-build": true,
+      "preview-verify": true,
+      "public-build": true,
+      "public-verify": true,
+      "source_aggregate": true,
+      "terminal": true
+    },
+    "commentary_tool_function_ASTs_unchanged": 50,
+    "followup_scope": "Two literal example-output tuples, validation/review records and text-free remaining-source queues.",
+    "generated_core_files_rechecked": 7546,
+    "generated_mismatches": 0,
+    "receipt": "validation-phase3.json",
+    "source_reader_release_test_inputs_unchanged_since_functional": true
+  }
+}

@@ -471,3 +471,26 @@ existing comparison pointers and next source prerequisites. Its publication
 manifest pins the seven metadata files and retains the separate scratch audit
 script hash. This queue admits no source text and changes no corpus or reader
 input.
+
+### Recovered third-batch main publication
+
+Retained publication evidence resolves the preceding pending-publication wording.
+An ordinary non-force push published the continuation and its source-work queue
+to main at `2e030b564f4413b735ddbea3061082ebe981b11a`; work stayed on
+`feature/missal-reader`. [Pages run 39985274729](https://github.com/spincyc/triptych/actions/runs/39985274729)
+and [hygiene run 39985274562](https://github.com/spincyc/triptych/actions/runs/39985274562)
+both completed successfully for event `push`, branch `main` and that exact SHA.
+The Deploy step completed at `2026-10-23T16:33:47Z`. The
+[Actions receipt](publication-actions-phase3.json) preserves the original result;
+[read-only recovery](publication-recovery-phase3.json) independently reconfirms
+the remote main and both successful runs without changing refs.
+
+The retained [live verification](publication-live-phase3.json) ran after successful
+deployment from `2026-10-23T16:37:06.131Z` to `2026-10-23T16:37:07.604Z`.
+All 26 endpoints returned HTTP 200 with exact MIME, byte length and SHA-256,
+preserving 23,639,427 tested bytes. Recovery rejoins every retained raw response
+and body to the frozen endpoint manifest, tested artifact and its `SHA256SUMS`;
+it makes no new live endpoint requests. All 7,546 current generated core pins and
+the retained validation-log hashes remain exact. The obsolete remote feature
+history stays separate. Remaining source/English work, annual textual completeness
+and maintainer terminal acceptance remain open.

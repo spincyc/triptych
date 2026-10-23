@@ -125,9 +125,13 @@ verified without changing any function AST, source or reader data. The
 preserves these results and both incomplete cold performance runs. The
 [remaining English handoff](workflows/reviews/missal-reader-resume-2026-10-23/remaining-english-handoff-phase3.json)
 finds zero complete-Latin reuse pairs among the 879 gaps; 701 are primary prayers,
-including 53 without held Latin. New exact-main publication, resulting Actions
-and live-byte verification are separate observations. The remaining corpus/English
-backlog, annual textual completeness and maintainer terminal acceptance remain open.
+including 53 without held Latin. The continuation reaches main at `2e030b564f4413b735ddbea3061082ebe981b11a`;
+its exact-revision Pages and hygiene runs succeed. Retained live verification
+matches all 26 endpoints and 23,639,427 tested bytes; read-only recovery rejoins
+every raw body, response and frozen artifact without issuing new live requests.
+The [publication recovery](workflows/reviews/missal-reader-resume-2026-10-23/publication-recovery-phase3.json)
+preserves the exact observations. The remaining corpus/English backlog, annual
+textual completeness and maintainer terminal acceptance remain open.
 
 ## Annual Missal reader completion, 2026-10-22
 
@@ -494,7 +498,7 @@ wording; this register and the ledger own the subsequent closure.
 
 <!-- promised-deliverable: terminal-reader-lectern-2026-10-22 -->
 
-**Incorporated from refreshed `main`; combined acceptance pending.**
+**Integrated and published; maintainer terminal acceptance remains open.**
 The upstream work records a maintainer request for a comprehensive, elegant,
 intuitive and beautiful btop-like terminal reader, starting with the Missal and
 extended to Catena Omnia, with clarification, a sanity check and a cold review.
@@ -527,13 +531,20 @@ bridge timeouts, the Day page's wording and defaults, territorial branches,
 focus and the choice dialog. These are upstream results, not fresh validation
 against the current annual missal source and adapter changes.
 
-Open (the ledger's open requirements): Propers Compare and the Study mode of
-Day and Propers are not in the reader yet; the maintainer has not yet used the
-interactive reader in a real terminal. The code is present on fetched `main`,
-but its upstream Pages run has not been inspected here. Combined functional
-checks and terminal sanity checks are recorded below; fresh cold review and
-final post-regeneration acceptance remain open. A web
-edition is set only where the Markdown pinned in
+The 23 October recovery closes the scoped page-mode parity requirement:
+Propers Compare offers all five specified dimensions through the production
+comparison builder, and Day/Propers Study uses the production Study presenter.
+The [independent reader review](workflows/reviews/missal-reader-resume-2026-10-23/reader-cold-review.md)
+checks all five axes (41 paired units), shared-renderer fidelity and actual
+Study keyboard/focus behavior. The
+[combined reader review](workflows/reviews/missal-reader-resume-2026-10-23/integrated-reader-review-phase3.md)
+binds that evidence to all 116 installed reader/browser code files and the
+final generated data; the fresh terminal/native and exact-main publication
+results are recorded in the recovery section above. Read-only reconciliation
+finds all 116 accepted code pins still exact. This is evidence reconciliation,
+not a new implementation or test run. Maintainer interactive real-terminal
+acceptance remains open and keeps the overall terminal-reader promise in progress.
+A web edition is set only where the Markdown pinned in
 `requirements-public-alpha.txt` is installed (`requirements-tui.txt` includes
 it); elsewhere the texts surface says so in place of the text.
 
