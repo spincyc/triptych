@@ -1,0 +1,452 @@
+{
+  "status": "accepted installed stable input pins; outgoing Git-object review waits for coordinator frozen head",
+  "source_ops": 23,
+  "rights_ops": 3,
+  "ui_ops": 3,
+  "checked_paths": 29,
+  "postimages": [
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/17.10.toml",
+      "expected_sha256": "4a7c7c86ee723537560c8cb21a9c940bd5a092f5b97c82ce759e7b461a4d7a56",
+      "actual_sha256": "4a7c7c86ee723537560c8cb21a9c940bd5a092f5b97c82ce759e7b461a4d7a56",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/17.11.toml",
+      "expected_sha256": "984ffb263960999a002ac4019fdbed4d34bf6ba0f036b773fd40c2b6de197496",
+      "actual_sha256": "984ffb263960999a002ac4019fdbed4d34bf6ba0f036b773fd40c2b6de197496",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/17.13.toml",
+      "expected_sha256": "1bf34795c87635bd2ed2ffb1eef0174b6aa30cea822ca169285dff6ac0a9c1bf",
+      "actual_sha256": "1bf34795c87635bd2ed2ffb1eef0174b6aa30cea822ca169285dff6ac0a9c1bf",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/17.9.toml",
+      "expected_sha256": "b56f58cc48f1dbade183a2f91e1eba92949e61e964d98d768eaddb69d310144b",
+      "actual_sha256": "b56f58cc48f1dbade183a2f91e1eba92949e61e964d98d768eaddb69d310144b",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/epistolae-ad-galatas-expositio/editions/2026-09-05-wikisource-migne/passages/2.toml",
+      "expected_sha256": "bb57cbad99f1d9a307ef36b003091a727771b16f66ee2616a77d5fed5e87c481",
+      "actual_sha256": "bb57cbad99f1d9a307ef36b003091a727771b16f66ee2616a77d5fed5e87c481",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/epistolae-ad-galatas-expositio/editions/2026-09-05-wikisource-migne/passages/3.toml",
+      "expected_sha256": "6bcea2f6b74e96ae8d3d183aaefb13d420f539d753e98916653deec385732252",
+      "actual_sha256": "6bcea2f6b74e96ae8d3d183aaefb13d420f539d753e98916653deec385732252",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/epistolae-ad-galatas-expositio/editions/2026-09-05-wikisource-migne/passages/4.toml",
+      "expected_sha256": "65cf4914216c197a58ded83bfce529084c0154b6bc801eddf424b43b4d978d3b",
+      "actual_sha256": "65cf4914216c197a58ded83bfce529084c0154b6bc801eddf424b43b4d978d3b",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/epistolae-ad-galatas-expositio/editions/2026-09-05-wikisource-migne/passages/6.toml",
+      "expected_sha256": "0eeda403511b4d80935c14130115d8f809d62722cdcb4852f610e24638caee61",
+      "actual_sha256": "0eeda403511b4d80935c14130115d8f809d62722cdcb4852f610e24638caee61",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/epistolae-ad-galatas-expositio/editions/2026-09-05-wikisource-migne/passages/7.toml",
+      "expected_sha256": "61e5f57dcbad54eeaa5a69c12ef59fc13b1077a8a956f41140c1fd07053131eb",
+      "actual_sha256": "61e5f57dcbad54eeaa5a69c12ef59fc13b1077a8a956f41140c1fd07053131eb",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/artifacts/wikisource-part-5-html/artifact.toml",
+      "expected_sha256": "45a89b7efc94ac5d9f79687f226f1283220e42a92f8635b5ff1b66cb6c811fb6",
+      "actual_sha256": "45a89b7efc94ac5d9f79687f226f1283220e42a92f8635b5ff1b66cb6c811fb6",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/artifacts/wikisource-part-5-latin/artifact.toml",
+      "expected_sha256": "921ebee95381d13527c0e32256ed2dd4d4d7e1ae33461855da080baee8476cb3",
+      "actual_sha256": "921ebee95381d13527c0e32256ed2dd4d4d7e1ae33461855da080baee8476cb3",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/artifacts/wikisource-part-5-latin/enarrationes-part-5.txt",
+      "expected_sha256": "1ee71bb7cb370491355bb675968e16e019740ac5261e3e07356bbca171728e84",
+      "actual_sha256": "1ee71bb7cb370491355bb675968e16e019740ac5261e3e07356bbca171728e84",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/artifacts/wikisource-part-5-raw/artifact.toml",
+      "expected_sha256": "7cc583bcc129fb25746ee9e0067c6edbf21ae21cef551df5ed985b25e9f99180",
+      "actual_sha256": "7cc583bcc129fb25746ee9e0067c6edbf21ae21cef551df5ed985b25e9f99180",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/artifacts/wikisource-part-5-raw/enarrationes-part-5.wiki",
+      "expected_sha256": "3dda306dfff3edc9fac47fdeeafa520d3ae2aaa00a94da4baaff1569c2f47db6",
+      "actual_sha256": "3dda306dfff3edc9fac47fdeeafa520d3ae2aaa00a94da4baaff1569c2f47db6",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/edition.toml",
+      "expected_sha256": "e48f0c59c26ead0f4fa59833cbe276568f8e059ded3146079947fbaaeb790dc1",
+      "actual_sha256": "e48f0c59c26ead0f4fa59833cbe276568f8e059ded3146079947fbaaeb790dc1",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/passages/50.14.toml",
+      "expected_sha256": "2bf0f0db1581d66e36add341eaa4c3d393b78f849e9090006b00dbf31e16d204",
+      "actual_sha256": "2bf0f0db1581d66e36add341eaa4c3d393b78f849e9090006b00dbf31e16d204",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/passages/50.15.toml",
+      "expected_sha256": "5ab67d698cd236b5e70bc28159f6412d223e947cdf079da73261c23e1a02189b",
+      "actual_sha256": "5ab67d698cd236b5e70bc28159f6412d223e947cdf079da73261c23e1a02189b",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/passages/50.16.toml",
+      "expected_sha256": "54d64db09bd60c476889b3f5f2a872d7de9d22174a3d936a2ee08b8244b2c57f",
+      "actual_sha256": "54d64db09bd60c476889b3f5f2a872d7de9d22174a3d936a2ee08b8244b2c57f",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/latin-migne-corpus-corporum-wikisource-web-2026-09-05/passages/88-sermo-ii-11.toml",
+      "expected_sha256": "17a6949b6a8631a4af742020a07e59778c7b139c6a8183b258e39fda712972b6",
+      "actual_sha256": "17a6949b6a8631a4af742020a07e59778c7b139c6a8183b258e39fda712972b6",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/latin-migne-corpus-corporum-wikisource-web-2026-09-05/passages/88-sermo-ii-13.toml",
+      "expected_sha256": "596d2675aa77b873413f6c3359d2bea57545cc333d844baf950dfd112f4ec4fd",
+      "actual_sha256": "596d2675aa77b873413f6c3359d2bea57545cc333d844baf950dfd112f4ec4fd",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/latin-migne-corpus-corporum-wikisource-web-2026-09-05/passages/88-sermo-ii-8.toml",
+      "expected_sha256": "6a835f88d637924bf6804e21abcb9629329622ae4e5d3f74c80f376f284cfb49",
+      "actual_sha256": "6a835f88d637924bf6804e21abcb9629329622ae4e5d3f74c80f376f284cfb49",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/commentary/fragment-loci.yaml",
+      "expected_sha256": "15ac223e4a593ec422dc0cd744e752e425bc1765a808c93ef7f6e7ccfdd922c5",
+      "actual_sha256": "15ac223e4a593ec422dc0cd744e752e425bc1765a808c93ef7f6e7ccfdd922c5",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "source",
+      "path": "src/sources/commentary/translation-absences.yaml",
+      "expected_sha256": "c604f97b56dcfa3ee3ae38d7ade84025512ea681f832781549cf9af408dcb66b",
+      "actual_sha256": "c604f97b56dcfa3ee3ae38d7ade84025512ea681f832781549cf9af408dcb66b",
+      "hash_exact": true,
+      "bytes_exact": true
+    },
+    {
+      "scope": "rights",
+      "path": "scripts/_catena.py",
+      "expected_sha256": "25ffc39564070e7a5ac476ec621f62c4201701417dabd83a4380dd642075513a",
+      "actual_sha256": "25ffc39564070e7a5ac476ec621f62c4201701417dabd83a4380dd642075513a",
+      "hash_exact": true,
+      "scratch_postimage_exact": true
+    },
+    {
+      "scope": "rights",
+      "path": "tools/tests/test_catena_rights.py",
+      "expected_sha256": "9aa5978fedfedd1504b2a0b4e385f6a0754ae06c6c620308cdfe6fb5284c23ac",
+      "actual_sha256": "9aa5978fedfedd1504b2a0b4e385f6a0754ae06c6c620308cdfe6fb5284c23ac",
+      "hash_exact": true,
+      "scratch_postimage_exact": true
+    },
+    {
+      "scope": "rights",
+      "path": "tools/tests/test_catena_production.py",
+      "expected_sha256": "c5ed0064922fb531cdeec3ad7670bee1cbf4af14c2c1b8206958f40fde003b16",
+      "actual_sha256": "c5ed0064922fb531cdeec3ad7670bee1cbf4af14c2c1b8206958f40fde003b16",
+      "hash_exact": true,
+      "scratch_postimage_exact": true
+    },
+    {
+      "scope": "UI",
+      "path": "scripts/lectern/surfaces/catena.py",
+      "expected_sha256": "8ddcc5713370e5767ae43dc69e653597d04c5ef98e79e48dff7a742febbc16f3",
+      "actual_sha256": "8ddcc5713370e5767ae43dc69e653597d04c5ef98e79e48dff7a742febbc16f3",
+      "hash_exact": true,
+      "accepted_independent_pin_exact": true
+    },
+    {
+      "scope": "UI",
+      "path": "scripts/lectern/surfaces/propers.py",
+      "expected_sha256": "2af6664e8af8275d633ee45d5cb10d7d54773dd56996ed32a7f216996a36b95d",
+      "actual_sha256": "2af6664e8af8275d633ee45d5cb10d7d54773dd56996ed32a7f216996a36b95d",
+      "hash_exact": true,
+      "accepted_independent_pin_exact": true
+    },
+    {
+      "scope": "UI",
+      "path": "tools/tests/test_lectern_compact.py",
+      "expected_sha256": "4fb9047ab177e688d5f603d1ff51a79b5adbeb3c9fee591566211abfd0c8c628",
+      "actual_sha256": "4fb9047ab177e688d5f603d1ff51a79b5adbeb3c9fee591566211abfd0c8c628",
+      "hash_exact": true,
+      "accepted_independent_pin_exact": true
+    }
+  ],
+  "pin_errors": [],
+  "source_freeze_operation_joins": [
+    {
+      "path": "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/17.10.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/17.11.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/17.13.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/17.9.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/epistolae-ad-galatas-expositio/editions/2026-09-05-wikisource-migne/passages/2.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/epistolae-ad-galatas-expositio/editions/2026-09-05-wikisource-migne/passages/3.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/epistolae-ad-galatas-expositio/editions/2026-09-05-wikisource-migne/passages/4.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/epistolae-ad-galatas-expositio/editions/2026-09-05-wikisource-migne/passages/6.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/epistolae-ad-galatas-expositio/editions/2026-09-05-wikisource-migne/passages/7.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/artifacts/wikisource-part-5-html/artifact.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/artifacts/wikisource-part-5-latin/artifact.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/artifacts/wikisource-part-5-latin/enarrationes-part-5.txt",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/artifacts/wikisource-part-5-raw/artifact.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/artifacts/wikisource-part-5-raw/enarrationes-part-5.wiki",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/edition.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/passages/50.14.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/passages/50.15.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/passages/50.16.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/latin-migne-corpus-corporum-wikisource-web-2026-09-05/passages/88-sermo-ii-11.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/latin-migne-corpus-corporum-wikisource-web-2026-09-05/passages/88-sermo-ii-13.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/latin-migne-corpus-corporum-wikisource-web-2026-09-05/passages/88-sermo-ii-8.toml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/commentary/fragment-loci.yaml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    },
+    {
+      "path": "src/sources/commentary/translation-absences.yaml",
+      "source_freeze_hash_exact": true,
+      "source_frozen_postimage_exact": true
+    }
+  ],
+  "patches": [
+    {
+      "path": ".scratch/resume-corpus-recovery/phase3/source-candidate.patch",
+      "sha256": "240b18100312ca0a22ea7669c8cdaf6b67ba0d82234a7b5300f5291088f49a16",
+      "bytes": 910505,
+      "accepted_hash_exact": true
+    },
+    {
+      "path": ".scratch/resume-catena-projection/phase3-rights/rights.patch",
+      "sha256": "60919dcad33da1065df57d589d0f05578cbfe3fba586f890710904db214ee06b",
+      "bytes": 20289,
+      "accepted_hash_exact": true
+    },
+    {
+      "path": ".scratch/resume-tui-design/phase3/v2/proposal.patch",
+      "sha256": "22570c0b45a9546b2a9a0987fd1f5f7c8d2a3a2095fce46d5aed1b46c588f345",
+      "bytes": 10639,
+      "accepted_hash_exact": true
+    }
+  ],
+  "freezes": [
+    {
+      "path": ".scratch/resume-corpus-recovery/phase3/SOURCE-FREEZE.json",
+      "sha256": "59ed814372f0078bc6a971cbb8524e818eb65f3946919455ab8d8babf573948f",
+      "bytes": 14918,
+      "accepted_hash_exact": true
+    },
+    {
+      "path": ".scratch/resume-catena-projection/phase3-rights/freeze.json",
+      "sha256": "86816b5ea7ba716cc59098d0438ed4f6f2f10e2ae2552ff223831bf628770b2e",
+      "bytes": 7007,
+      "accepted_hash_exact": true
+    }
+  ],
+  "independent_receipts": [
+    {
+      "path": ".scratch/resume-projection-cold-review/phase3/ACCEPTANCE.md",
+      "sha256": "a0b90954ebe82aab1ea338638e8dd795ba3f0546b70475215c4fbd7dcbc1dfc6",
+      "bytes": 5135
+    },
+    {
+      "path": ".scratch/resume-projection-cold-review/phase3/ACCEPTANCE.json",
+      "sha256": "3a3c6af324262f1f2ac724f377efe729ba499c63ae3a8fcbe9fb75b46dfea98e",
+      "bytes": 2170
+    },
+    {
+      "path": ".scratch/resume-reader-cold-review/phase3/V2-REVIEW.md",
+      "sha256": "998f145c58c6a21c6603c9888870217930aa77eb1a03cab97e345d5ab90c62fd",
+      "bytes": 4721
+    },
+    {
+      "path": ".scratch/resume-reader-cold-review/phase3/v2-final-manifest.json",
+      "sha256": "e08a17a3db0933916ba1ce9a633496835785d13a4298fb072fafdf5ed366ebd9",
+      "bytes": 6391
+    }
+  ],
+  "source_artifacts": [
+    {
+      "id": "artifact.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.wikisource-part-5-html",
+      "rights_status": "unresolved",
+      "storage": "remote",
+      "artifact_type": "web-page",
+      "path": null,
+      "indexable": false,
+      "derived_from": null,
+      "sha256": "849700a90cdd23f492da25d4acf18d435e4d9a666cfb91282e5295bd47c410d3",
+      "byte_size": 446992
+    },
+    {
+      "id": "artifact.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.wikisource-part-5-latin",
+      "rights_status": "licensed",
+      "storage": "tracked",
+      "artifact_type": "normalized-text",
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/artifacts/wikisource-part-5-latin/enarrationes-part-5.txt",
+      "indexable": true,
+      "derived_from": "artifact.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.wikisource-part-5-raw",
+      "sha256": "1ee71bb7cb370491355bb675968e16e019740ac5261e3e07356bbca171728e84",
+      "byte_size": 392799
+    },
+    {
+      "id": "artifact.augustine.enarrationes-in-psalmos.2026-10-23-latin-migne-wikisource.wikisource-part-5-raw",
+      "rights_status": "licensed",
+      "storage": "tracked",
+      "artifact_type": "web-transcription",
+      "path": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-10-23-latin-migne-wikisource/artifacts/wikisource-part-5-raw/enarrationes-part-5.wiki",
+      "indexable": true,
+      "derived_from": null,
+      "sha256": "3dda306dfff3edc9fac47fdeeafa520d3ae2aaa00a94da4baaff1569c2f47db6",
+      "byte_size": 393520
+    }
+  ],
+  "sensitive_candidates": [],
+  "limitations": "No generated-tree hashing or global writers. Accepted source, projection, browser and visual reviews adopted without repeating image proofs; this checks installed bounded source/rights/UI bytes only."
+}

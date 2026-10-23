@@ -6,7 +6,8 @@ matrix, terminal tests and the complete native browser run pass. The repair
 checkpoint is published on main with successful exact-revision Pages and hygiene
 runs; all 19 independently checked live endpoints match the tested artifact.
 This record does not accept annual textual completeness or maintainer real-terminal
-review. This later evidence-only commit requires its own exact-head Actions check.
+review. The later evidence-only revision also receives its own successful Actions
+and repeated live verification, recorded below.
 
 ## Recovered state
 
@@ -270,9 +271,131 @@ length/SHA-256: 11,191,955 bytes match the tested public artifact. Each endpoint
 receives one cache-busted request after deployment; no adaptive requests are used.
 Raw HTTP bodies and host-specific runtime data remain outside tracked receipts.
 
-This follow-up records those observed results and changes only operational
-documents, evidence and ledger status. Its own final main revision must also
-receive successful exact-head Actions verification; the earlier run is evidence
-for `feca4b42d`, not a claim about a future commit. The overall recovery remains
-in progress because the source/English backlog and separate annual/product
-acceptance requirements remain unmet.
+The evidence-only follow-up is published without force at
+`ff07e4bd9e7d6377dbe841334483bf97ff4c62bc`. Its own
+[Pages run 39967817555](https://github.com/spincyc/triptych/actions/runs/39967817555)
+and [hygiene run 39967817540](https://github.com/spincyc/triptych/actions/runs/39967817540)
+complete successfully for event `push`, branch `main` and that exact SHA. Deploy
+completes at `2026-10-23T14:29:55Z`; a fresh remote-ref read still returns the
+same SHA. Independent [final live verification](publication-final-live.json)
+repeats the same 19 endpoints with the final commit's cache key. All return 200
+with exact MIME, length and SHA-256, preserving 11,191,955 tested bytes and all
+first-verification evidence. No production file changes in this follow-up.
+
+## Continuing the original backlog
+
+The overall recovery remains in progress because the source/English backlog and
+separate annual/product acceptance requirements remain unmet. The successful
+main checkpoint does not cancel those requirements.
+
+A third source batch is prepared in disjoint scratch-only lanes before canonical
+installation. Its initial comparison scans all 425 accepted English owners and
+all 1,002 missing targets using complete literal Latin bytes, finding zero
+remaining reusable pairs. The 813 primary gaps comprise 760 held-Latin targets
+in 744 literal groups and 53 targets without held Latin; another 189 gaps are
+other English slots. Typography-only grouping is diagnostic and grants no reuse.
+Fresh image-reading lanes cover Lent and sanctoral appointments, with an initial
+coherent candidate aim of about 100 safe owners and independent source review.
+
+A separate candidate aims at 12–16 complete natural commentary units for Psalms,
+David and New Testament readings, using actual held or freshly verified witnesses.
+The existing source, date, extent, voice and publication gates remain unchanged.
+Neither candidate changes canonical files or counts as admitted/held content
+before independent acceptance. Rejected comparisons and genuine evidence limits
+remain explicit; new words, names, conclusions and dates are not manufactured.
+
+Direct inspection of the accepted reader screenshots raises two further bounded
+visual questions: a standalone wrapped calendar shortcut in the 120-column
+Proper finder, and crowded Bible/source panes with truncated labels in the
+80-column Catena. A fresh implementation/independent-review pair investigates
+those actual views in scratch, preserving required notices, source fidelity,
+keyboard access, URL/location state and shared derivation owners. No layout
+candidate is accepted before that review.
+
+Fresh licensed Psalm material exposes an existing projection omission: Catena
+keeps a controller's rights status but drops its recorded acknowledgement.
+Six already admitted Severian Greek homilies from the licensed PTA edition have
+complete central credits and CC BY-SA 4.0 notices that do not reach lazy Catena
+text. A separate bounded backend candidate reuses the Source reader's existing
+licensed `rights_basis` to `acknowledgement` mapping. It must carry the exact
+central notice into both web and terminal text, changing only that notice for
+the six prior licensed rows while preserving the other 1,353 rows and all source
+words, dates, extents, voices, controllers and rights decisions. Three new
+licensed Psalm candidates remain conditional on independent acceptance of that
+fix. Notices will not be hidden to claim false byte preservation, and neither
+an edge-basis workaround nor a new admission exemption replaces the proper
+projection owner.
+
+### Third English batch installed after independent acceptance
+
+Revision 2 adds 123 terminal English owners from 117 historical source bodies.
+The [independent source receipt](source-review-phase3.json) records actual reading
+of all 111 positive source images, all 123 target comparisons, 49 strict and 74
+same-witness conclusion-table cases, five complete-Latin-byte joins and all 15
+bounded refusals. The same day's explicitly identified Prayer over the people
+has separate source-to-target comparisons for its two current form positions;
+it is not treated as a mechanical cross-owner reuse. All 425 prior positive
+dictionaries and all 879 remaining absence dictionaries remain unchanged.
+
+Root installs exactly 247 accepted postimages after checking all eight canonical
+preimages. The manifest SHA-256 is
+`2aafb8322321eb266a99f6d35805017ae2c0959b269f707748c534b8fb90cba1`.
+The only confirmed review correction replaces an unresolved artifact-note
+template with the actual prior count 425 and updates its dependent audit pin;
+no source English changes between candidate versions. All 15 installed English
+tests pass. Local represented coverage is **548/1,427**, leaving 701 primary
+prayer owners (53 without held Latin) and 178 other English slots. This is not
+annual textual completeness. Main's previously verified publication still has
+425 represented slots until new owner generation, integrated checks and a fresh
+exact-head deployment pass. The combined-check requirement is reopened for the
+new source state; the earlier checkpoint's passing evidence remains retained.
+
+### Accepted compact terminal correction
+
+The [V2 independent review](compact-reader-review-phase3.md) and its
+[38-artifact manifest](compact-reader-review-phase3.json) accept patch
+`22570c0b45a9546b2a9a0987fd1f5f7c8d2a3a2095fce46d5aed1b46c588f345`.
+Root installs its exact three postimages and all four installed tests pass.
+Actual 80×24 author/fragment selection, Enter, focus, resize and Sources return
+are checked. Narrow content is 74 columns; all nine regular screenshot pairs
+and six geometry/body/location records remain equal. The initial clipped-list
+finding and V1 hold remain retained. This is independent AI visual/interaction
+review, with maintainer real-terminal approval still open.
+
+### Accepted Psalm, David and Galatians sources and licence notices
+
+The [independent source/projection review](catena-source-rights-review-phase3.md)
+and [pinned receipt](catena-source-rights-review-phase3.json) accept the exact
+source patch `240b18100312ca0a22ea7669c8cdaf6b67ba0d82234a7b5300f5291088f49a16`
+and attribution patch
+`60919dcad33da1065df57d589d0f05578cbfe3fba586f890710904db214ee06b`.
+All [23 source postimages](catena-source-postimages-phase3.json) and all
+[29 installed source/backend/UI inputs](installed-input-pins-phase3.json)
+match the accepted pins. Fifteen complete source passages supply fourteen new
+Catena links: Psalm 50 §§14–16, Psalm 88 sermon II §§8/11/13, City XVII.10/11/13
+and Galatians §§2/3/4/6/7. City XVII.9 remains source-only: its actual
+Psalm/Nathan links are discontinuous. Galatians §5/8 discrepancies remain
+excluded; verse 1:10 is an explicit gap. Source languages, translators,
+chronology qualifications and bounded English absences are preserved.
+
+Psalm 50's actual CC BY-SA 4.0 derivative retains its recorded attribution,
+source/history/licence URLs and change notice. The backend forwards the exact
+central required notice, reusing the Source Reader's ownership rules and
+rejecting malformed licensed bases. Six existing licensed Severian units gain
+only their previously omitted notice; their words and other fields are exact,
+as are all 1,353 prior ordinary rows. The three new licensed Psalm units depend
+on this independently accepted fix. All [116 installed backend tests](installed-backend-review-phase3.json)
+pass. Independent actual-browser/native-copy and terminal/Source-route proof
+accepts the frozen candidate; combined generated-release verification follows.
+
+The [installed source receipt](installed-source-review-phase3.json) validates
+1,067 works, 1,268 editions, 3,750 artifacts, 7,291 passages and 4,159 bindings.
+Actual Source Reader readability is 3,769, not the initial predicted 4,009:
+123 new publication records are structured TSV rows without standalone prose,
+and 117 verification records use restricted facsimiles. All 240 refusals are
+correct under the existing owning rules. Propers reads those lawful publication
+rows through its own owner. No refusal is relaxed to match a predicted count.
+The [English outgoing review](english-outgoing-review-phase3.md) also accepts the
+exact preceding 248-path commit, all 123 body/publication joins and preserved
+positive/absence dictionaries. Global generation and fresh integrated gates
+remain distinct from these source and installed-input acceptances.

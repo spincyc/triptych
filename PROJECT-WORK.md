@@ -77,10 +77,43 @@ both complete successfully for that exact revision. Independent live verificatio
 finds all 19 affected endpoints return 200 with exact tested bytes, lengths and
 content types. The [publication receipt](workflows/reviews/missal-reader-resume-2026-10-23/publication-actions.json)
 and [live receipt](workflows/reviews/missal-reader-resume-2026-10-23/publication-live.json)
-preserve those observations. This evidence-only follow-up changes no production
-inputs; its final main revision still requires its own Actions check. The
-remaining corpus/English backlog, annual textual completeness and maintainer
-terminal acceptance remain open.
+preserve those observations. The evidence-only follow-up reaches main at
+`ff07e4bd9e7d6377dbe841334483bf97ff4c62bc`, with its own successful
+[Pages](https://github.com/spincyc/triptych/actions/runs/39967817555) and
+[hygiene](https://github.com/spincyc/triptych/actions/runs/39967817540) runs.
+All 19 repeated live checks also match exactly. The working branch remains
+`feature/missal-reader` and tracks the published main ancestry.
+
+The original backlog continues after that verified checkpoint. A third English
+batch is independently accepted and installed from its exact 247-path manifest:
+123 more owners, 117 historical bodies and 111 independently read source images.
+Local Roman 1962 coverage is now 548/1,427, with 879 gaps still explicit. The
+published main checkpoint remains at 425/1,427 until the new generation and
+publication gates pass. All 425 prior positive dictionaries remain unchanged.
+Complete literal-Latin comparison at that preceding checkpoint finds no remaining
+reuse pair between the 425 accepted English owners and 1,002 missing targets.
+Further prayer recovery needs fresh checked pages. Independent review now
+accepts and root installs fourteen more Catena links from fifteen complete
+Augustine source units on Psalms 50/88, David and Galatians. Catena reaches
+1,373 fragments across eight books. City XVII.9 remains source-only because its
+actual biblical relationships are discontinuous; two Galatians sections with
+witness discrepancies remain unadmitted. Dates, original-language limits and
+English survey gaps retain their explicit evidence qualifications.
+
+The accepted attribution fix carries the exact controlling licence notice into
+both Catena readers and copied text, restoring notices for six already held
+licensed Greek units and supplying the three newly licensed Psalm units. All
+116 installed backend tests pass. The independently accepted compact TUI fix
+removes the wrapped finder shortcut, gives narrow Scripture/commentary panes
+74 content columns and contains author lists at 80×24. All four installed
+interaction tests pass; wide views, full bodies, notices and location state
+are preserved. The installed source library validates 7,291 passages and 4,159
+bindings. Its 3,769 readable passages exclude the new 123 structured prayer rows
+and 117 restricted verification controls under the existing Source Reader rules;
+Propers reads the checked English through its own table owner. Combined owner
+generation, fresh annual/native gates and exact-head publication remain pending
+for this continuation. The remaining corpus/English backlog, annual textual
+completeness and maintainer terminal acceptance remain open.
 
 ## Annual Missal reader completion, 2026-10-22
 

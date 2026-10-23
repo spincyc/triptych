@@ -1,0 +1,643 @@
+{
+  "all_exact": true,
+  "artifact_checksums_sha256": "cd33ab23170c1565721e306fb006d6519be1651beb221b4e23e67a1a31a479a2",
+  "artifact_root": ".scratch/resume-root/release-verification/build/public-alpha/site",
+  "completed_at": "2026-10-23T14:32:09.618Z",
+  "deployment": {
+    "authorization": "Root confirmed successful deployment before live requests.",
+    "deploy_success_at": "2026-10-23T14:29:55Z",
+    "head_sha": "ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+    "pages_result": "success",
+    "pages_run_id": 39967817555,
+    "pages_run_url": "https://github.com/spincyc/triptych/actions/runs/39967817555"
+  },
+  "endpoint_count": 19,
+  "failed": 0,
+  "first_verification_preserved": {
+    "all_unchanged": true,
+    "first_summary_sha256": "d326298dc43cbcf914ffd1726ab9062b4462c0bdd191f917ccb46fca960f799f",
+    "prior_receipt_pin_manifest_sha256": "0b6c0427e1167013cb4a0d0defc7638f65c75cf1284214123cfd7a201f6e0d76",
+    "receipt_file_count": 41
+  },
+  "normalization": {
+    "body": "Content-encoding is decoded if present; no text, whitespace, newline, Unicode or JSON normalization is applied before hashing.",
+    "manifest": "Converted artifact_root to a repository-relative path and advanced publication-head metadata to the final documentation-only checkpoint; endpoint URL/length/hash expectations are unchanged.",
+    "summary": "Includes public URLs, deployment metadata, status, MIME, lengths and hashes; raw HTTP headers/bodies and local runtime identifiers remain excluded."
+  },
+  "origin": "https://mystago.gy",
+  "original_expected_manifest_sha256": "23631ef03639b688c82351ba18b460277e829ae11323978e617edb0e480b613b",
+  "passed": 19,
+  "publication_safe_expected_manifest_sha256": "eafa6d0af79ea6e66a40e1893df8e9d1a9777d2316c809fcd9e7a992e5542a29",
+  "record_type": "bounded-live-publication-verification",
+  "request_policy": {
+    "accept_encoding": "identity",
+    "adaptive_requests": 0,
+    "cache_bust_query": "deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+    "cache_control": "no-cache",
+    "concurrency": 4,
+    "per_request_timeout_seconds": 45,
+    "planned_endpoint_count": 19,
+    "requests_per_endpoint": 1
+  },
+  "results": [
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:08.652Z",
+      "content_encoding": "identity",
+      "expected_bytes": 13112,
+      "expected_mime": [
+        "text/html"
+      ],
+      "expected_sha256": "936551e917433488a343d3ea73052c554812af0c68691af4b5f03cf1946dfac5",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/liturgy/day.html?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "day-html",
+      "observed_content_type": "text/html; charset=utf-8",
+      "observed_decoded_bytes": 13112,
+      "observed_mime": "text/html",
+      "observed_sha256": "936551e917433488a343d3ea73052c554812af0c68691af4b5f03cf1946dfac5",
+      "observed_wire_bytes": 13112,
+      "passed": true,
+      "requested_url": "https://mystago.gy/liturgy/day.html?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.494Z",
+      "url": "https://mystago.gy/liturgy/day.html"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:08.617Z",
+      "content_encoding": "identity",
+      "expected_bytes": 15300,
+      "expected_mime": [
+        "text/html"
+      ],
+      "expected_sha256": "0acad7ea4b528e896b0ee93ee5ce81b6a43833e9d875b68f39c9c8678a17a1dc",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/liturgy/index.html?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "propers-html",
+      "observed_content_type": "text/html; charset=utf-8",
+      "observed_decoded_bytes": 15300,
+      "observed_mime": "text/html",
+      "observed_sha256": "0acad7ea4b528e896b0ee93ee5ce81b6a43833e9d875b68f39c9c8678a17a1dc",
+      "observed_wire_bytes": 15300,
+      "passed": true,
+      "requested_url": "https://mystago.gy/liturgy/index.html?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.494Z",
+      "url": "https://mystago.gy/liturgy/index.html"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:08.636Z",
+      "content_encoding": "identity",
+      "expected_bytes": 10694,
+      "expected_mime": [
+        "text/html"
+      ],
+      "expected_sha256": "54a7b5b92b6c30f3be420149324149a885748f4d471bfd21b1d5fb074dac5ebe",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/catena/index.html?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "catena-html",
+      "observed_content_type": "text/html; charset=utf-8",
+      "observed_decoded_bytes": 10694,
+      "observed_mime": "text/html",
+      "observed_sha256": "54a7b5b92b6c30f3be420149324149a885748f4d471bfd21b1d5fb074dac5ebe",
+      "observed_wire_bytes": 10694,
+      "passed": true,
+      "requested_url": "https://mystago.gy/catena/index.html?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.495Z",
+      "url": "https://mystago.gy/catena/index.html"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:08.642Z",
+      "content_encoding": "identity",
+      "expected_bytes": 47147,
+      "expected_mime": [
+        "text/css"
+      ],
+      "expected_sha256": "51cb9dbd43c49f1f04feb8129f355804f9b409082471a1497201332fe5b98ee3",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/liturgy/reader-instrument.css?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "reader-markers-css",
+      "observed_content_type": "text/css; charset=utf-8",
+      "observed_decoded_bytes": 47147,
+      "observed_mime": "text/css",
+      "observed_sha256": "51cb9dbd43c49f1f04feb8129f355804f9b409082471a1497201332fe5b98ee3",
+      "observed_wire_bytes": 47147,
+      "passed": true,
+      "requested_url": "https://mystago.gy/liturgy/reader-instrument.css?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.496Z",
+      "url": "https://mystago.gy/liturgy/reader-instrument.css"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:08.730Z",
+      "content_encoding": "identity",
+      "expected_bytes": 20853,
+      "expected_mime": [
+        "application/javascript",
+        "text/javascript",
+        "application/x-javascript"
+      ],
+      "expected_sha256": "c047ecff988a572ab10251f1fc6f91a22a38832993a75539098a3695d351a89a",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/liturgy/reader-share-print.js?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "share-print-js",
+      "observed_content_type": "application/javascript; charset=utf-8",
+      "observed_decoded_bytes": 20853,
+      "observed_mime": "application/javascript",
+      "observed_sha256": "c047ecff988a572ab10251f1fc6f91a22a38832993a75539098a3695d351a89a",
+      "observed_wire_bytes": 20853,
+      "passed": true,
+      "requested_url": "https://mystago.gy/liturgy/reader-share-print.js?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.618Z",
+      "url": "https://mystago.gy/liturgy/reader-share-print.js"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:08.765Z",
+      "content_encoding": "identity",
+      "expected_bytes": 42139,
+      "expected_mime": [
+        "application/javascript",
+        "text/javascript",
+        "application/x-javascript"
+      ],
+      "expected_sha256": "a8fe78094922d1c32b0dfa7daf7994e517b9f787829eb3320f51f0d86b025c5c",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/catena/catena.js?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "catena-controller-js",
+      "observed_content_type": "application/javascript; charset=utf-8",
+      "observed_decoded_bytes": 42139,
+      "observed_mime": "application/javascript",
+      "observed_sha256": "a8fe78094922d1c32b0dfa7daf7994e517b9f787829eb3320f51f0d86b025c5c",
+      "observed_wire_bytes": 42139,
+      "passed": true,
+      "requested_url": "https://mystago.gy/catena/catena.js?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.637Z",
+      "url": "https://mystago.gy/catena/catena.js"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:08.783Z",
+      "content_encoding": "identity",
+      "expected_bytes": 154098,
+      "expected_mime": [
+        "application/javascript",
+        "text/javascript",
+        "application/x-javascript"
+      ],
+      "expected_sha256": "6ee3da652c8269120e12feb123f2be13fbbdfe7c8590db50515bd495d41adedc",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/catena/catena-model.js?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "catena-model-js",
+      "observed_content_type": "application/javascript; charset=utf-8",
+      "observed_decoded_bytes": 154098,
+      "observed_mime": "application/javascript",
+      "observed_sha256": "6ee3da652c8269120e12feb123f2be13fbbdfe7c8590db50515bd495d41adedc",
+      "observed_wire_bytes": 154098,
+      "passed": true,
+      "requested_url": "https://mystago.gy/catena/catena-model.js?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.642Z",
+      "url": "https://mystago.gy/catena/catena-model.js"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:08.811Z",
+      "content_encoding": "identity",
+      "expected_bytes": 34465,
+      "expected_mime": [
+        "application/json"
+      ],
+      "expected_sha256": "588df21eb2c2b83df4eca8d2d9a628d4336831c365a21856b3cad059c304af44",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/browse/structure/catena/index.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "catena-index",
+      "observed_content_type": "application/json; charset=utf-8",
+      "observed_decoded_bytes": 34465,
+      "observed_mime": "application/json",
+      "observed_sha256": "588df21eb2c2b83df4eca8d2d9a628d4336831c365a21856b3cad059c304af44",
+      "observed_wire_bytes": 34465,
+      "passed": true,
+      "requested_url": "https://mystago.gy/browse/structure/catena/index.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.653Z",
+      "url": "https://mystago.gy/browse/structure/catena/index.json"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:08.858Z",
+      "content_encoding": "identity",
+      "expected_bytes": 3255,
+      "expected_mime": [
+        "application/json"
+      ],
+      "expected_sha256": "f61b4a3a891f6ebb374c57a5f132d0a9a8812d3de41a8f6521474b79e99dbdb7",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/browse/structure/catena/48-mark/010.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "mark-10",
+      "observed_content_type": "application/json; charset=utf-8",
+      "observed_decoded_bytes": 3255,
+      "observed_mime": "application/json",
+      "observed_sha256": "f61b4a3a891f6ebb374c57a5f132d0a9a8812d3de41a8f6521474b79e99dbdb7",
+      "observed_wire_bytes": 3255,
+      "passed": true,
+      "requested_url": "https://mystago.gy/browse/structure/catena/48-mark/010.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.730Z",
+      "url": "https://mystago.gy/browse/structure/catena/48-mark/010.json"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:08.881Z",
+      "content_encoding": "identity",
+      "expected_bytes": 5237,
+      "expected_mime": [
+        "application/json"
+      ],
+      "expected_sha256": "5dfe75b4e02a7ef901c61457f8af5924f8508da6db6c04aa5c83240dabc18a5d",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/browse/structure/catena/57-phil/001.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "philippians-1",
+      "observed_content_type": "application/json; charset=utf-8",
+      "observed_decoded_bytes": 5237,
+      "observed_mime": "application/json",
+      "observed_sha256": "5dfe75b4e02a7ef901c61457f8af5924f8508da6db6c04aa5c83240dabc18a5d",
+      "observed_wire_bytes": 5237,
+      "passed": true,
+      "requested_url": "https://mystago.gy/browse/structure/catena/57-phil/001.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.766Z",
+      "url": "https://mystago.gy/browse/structure/catena/57-phil/001.json"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:08.912Z",
+      "content_encoding": "identity",
+      "expected_bytes": 2957,
+      "expected_mime": [
+        "application/json"
+      ],
+      "expected_sha256": "abbb4b56125a0c809eb6fb804f3ba55af5c6e691600fc02a53b65b2c60e117cc",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/browse/structure/catena/21-ps/088.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "psalm-88",
+      "observed_content_type": "application/json; charset=utf-8",
+      "observed_decoded_bytes": 2957,
+      "observed_mime": "application/json",
+      "observed_sha256": "abbb4b56125a0c809eb6fb804f3ba55af5c6e691600fc02a53b65b2c60e117cc",
+      "observed_wire_bytes": 2957,
+      "passed": true,
+      "requested_url": "https://mystago.gy/browse/structure/catena/21-ps/088.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.784Z",
+      "url": "https://mystago.gy/browse/structure/catena/21-ps/088.json"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:08.925Z",
+      "content_encoding": "identity",
+      "expected_bytes": 2105,
+      "expected_mime": [
+        "application/json"
+      ],
+      "expected_sha256": "6fec88408e852c595905192dc4a9670f094be29ff010e8914b9c086f28d46e09",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/browse/structure/catena/10-kings-2/007.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "second-samuel-7",
+      "observed_content_type": "application/json; charset=utf-8",
+      "observed_decoded_bytes": 2105,
+      "observed_mime": "application/json",
+      "observed_sha256": "6fec88408e852c595905192dc4a9670f094be29ff010e8914b9c086f28d46e09",
+      "observed_wire_bytes": 2105,
+      "passed": true,
+      "requested_url": "https://mystago.gy/browse/structure/catena/10-kings-2/007.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.812Z",
+      "url": "https://mystago.gy/browse/structure/catena/10-kings-2/007.json"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:09.002Z",
+      "content_encoding": "identity",
+      "expected_bytes": 4162,
+      "expected_mime": [
+        "application/json"
+      ],
+      "expected_sha256": "892cc10c4b8999a776fbe38212c2df512e67bc623eca670556de604d767d5503",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/browse/structure/catena/50-john/020.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "john-20",
+      "observed_content_type": "application/json; charset=utf-8",
+      "observed_decoded_bytes": 4162,
+      "observed_mime": "application/json",
+      "observed_sha256": "892cc10c4b8999a776fbe38212c2df512e67bc623eca670556de604d767d5503",
+      "observed_wire_bytes": 4162,
+      "passed": true,
+      "requested_url": "https://mystago.gy/browse/structure/catena/50-john/020.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.858Z",
+      "url": "https://mystago.gy/browse/structure/catena/50-john/020.json"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:09.050Z",
+      "content_encoding": "identity",
+      "expected_bytes": 69935,
+      "expected_mime": [
+        "application/json"
+      ],
+      "expected_sha256": "9c3f69b73c0448d5da056376be41549e9725709855a2abef1c18189dd63c0033",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/browse/structure/catena/scripture/21-ps.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "canonical-psalm-bible-projection",
+      "observed_content_type": "application/json; charset=utf-8",
+      "observed_decoded_bytes": 69935,
+      "observed_mime": "application/json",
+      "observed_sha256": "9c3f69b73c0448d5da056376be41549e9725709855a2abef1c18189dd63c0033",
+      "observed_wire_bytes": 69935,
+      "passed": true,
+      "requested_url": "https://mystago.gy/browse/structure/catena/scripture/21-ps.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.881Z",
+      "url": "https://mystago.gy/browse/structure/catena/scripture/21-ps.json"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:09.013Z",
+      "content_encoding": "identity",
+      "expected_bytes": 1341,
+      "expected_mime": [
+        "application/json"
+      ],
+      "expected_sha256": "98e870e01c8e3842608502239855be0597492fb7fd03a044143bd002e9f6ebd9",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/browse/catholic-public-domain-version/chapters/Ps/13.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "cpdv-native-psalm-13",
+      "observed_content_type": "application/json; charset=utf-8",
+      "observed_decoded_bytes": 1341,
+      "observed_mime": "application/json",
+      "observed_sha256": "98e870e01c8e3842608502239855be0597492fb7fd03a044143bd002e9f6ebd9",
+      "observed_wire_bytes": 1341,
+      "passed": true,
+      "requested_url": "https://mystago.gy/browse/catholic-public-domain-version/chapters/Ps/13.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.913Z",
+      "url": "https://mystago.gy/browse/catholic-public-domain-version/chapters/Ps/13.json"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:09.262Z",
+      "content_encoding": "identity",
+      "expected_bytes": 994971,
+      "expected_mime": [
+        "application/json"
+      ],
+      "expected_sha256": "3d1d34619d4dfbee868c6cd321b0e9741b1ee476c427579577a1c9e5ac0ce156",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/browse/structure/sources/index.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "sources-index",
+      "observed_content_type": "application/json; charset=utf-8",
+      "observed_decoded_bytes": 994971,
+      "observed_mime": "application/json",
+      "observed_sha256": "3d1d34619d4dfbee868c6cd321b0e9741b1ee476c427579577a1c9e5ac0ce156",
+      "observed_wire_bytes": 994971,
+      "passed": true,
+      "requested_url": "https://mystago.gy/browse/structure/sources/index.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:08.925Z",
+      "url": "https://mystago.gy/browse/structure/sources/index.json"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:09.143Z",
+      "content_encoding": "identity",
+      "expected_bytes": 179342,
+      "expected_mime": [
+        "application/json"
+      ],
+      "expected_sha256": "7bb552e879d09fbd2058d6caa4724201a36bbb69bd67c65643be4922269e9cf2",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/browse/structure/propers/mass/roman-1962/advent-ember-saturday.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "new-english-historical-proper",
+      "observed_content_type": "application/json; charset=utf-8",
+      "observed_decoded_bytes": 179342,
+      "observed_mime": "application/json",
+      "observed_sha256": "7bb552e879d09fbd2058d6caa4724201a36bbb69bd67c65643be4922269e9cf2",
+      "observed_wire_bytes": 179342,
+      "passed": true,
+      "requested_url": "https://mystago.gy/browse/structure/propers/mass/roman-1962/advent-ember-saturday.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:09.003Z",
+      "url": "https://mystago.gy/browse/structure/propers/mass/roman-1962/advent-ember-saturday.json"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:09.615Z",
+      "content_encoding": "identity",
+      "expected_bytes": 8580659,
+      "expected_mime": [
+        "application/json"
+      ],
+      "expected_sha256": "24b538d74672b39bbf3258f5df21af40a10ba3f0f1c6e8f4cf23d7e6e1bf6df2",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/browse/structure/propers/postconciliar.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "postconciliar-propers",
+      "observed_content_type": "application/json; charset=utf-8",
+      "observed_decoded_bytes": 8580659,
+      "observed_mime": "application/json",
+      "observed_sha256": "24b538d74672b39bbf3258f5df21af40a10ba3f0f1c6e8f4cf23d7e6e1bf6df2",
+      "observed_wire_bytes": 8580659,
+      "passed": true,
+      "requested_url": "https://mystago.gy/browse/structure/propers/postconciliar.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:09.013Z",
+      "url": "https://mystago.gy/browse/structure/propers/postconciliar.json"
+    },
+    {
+      "checks": {
+        "content_decoded": true,
+        "http_200": true,
+        "https_same_origin": true,
+        "length_matches": true,
+        "mime_matches": true,
+        "sha256_matches": true,
+        "transport_ok": true
+      },
+      "completed_at": "2026-10-23T14:32:09.254Z",
+      "content_encoding": "identity",
+      "expected_bytes": 1010183,
+      "expected_mime": [
+        "application/json"
+      ],
+      "expected_sha256": "942c29879158f446207999e0fa756316430ebbde9a85282da19dbed2a7f32cce",
+      "expected_status": 200,
+      "final_url": "https://mystago.gy/browse/structure/documents/corpus.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "http_status": 200,
+      "id": "document-catalogue",
+      "observed_content_type": "application/json; charset=utf-8",
+      "observed_decoded_bytes": 1010183,
+      "observed_mime": "application/json",
+      "observed_sha256": "942c29879158f446207999e0fa756316430ebbde9a85282da19dbed2a7f32cce",
+      "observed_wire_bytes": 1010183,
+      "passed": true,
+      "requested_url": "https://mystago.gy/browse/structure/documents/corpus.json?deployment_check=ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+      "started_at": "2026-10-23T14:32:09.051Z",
+      "url": "https://mystago.gy/browse/structure/documents/corpus.json"
+    }
+  ],
+  "started_at": "2026-10-23T14:32:08.494Z",
+  "tested_functional_commit": "70050447a8f75dd2237124a47de84cc8619d5691",
+  "total_expected_bytes": 11191955,
+  "total_observed_decoded_bytes": 11191955
+}

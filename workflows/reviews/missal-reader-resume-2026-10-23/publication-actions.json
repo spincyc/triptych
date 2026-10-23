@@ -53,5 +53,24 @@
     "exact_matches": 19,
     "bytes": 11191955
   },
+  "evidence_only_followup": {
+    "published_head": "ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+    "remote_head_after_actions_success": "ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+    "pages_run_id": 39967817555,
+    "pages_url": "https://github.com/spincyc/triptych/actions/runs/39967817555",
+    "hygiene_run_id": 39967817540,
+    "hygiene_url": "https://github.com/spincyc/triptych/actions/runs/39967817540",
+    "both_status": "completed",
+    "both_conclusion": "success",
+    "both_event": "push",
+    "both_branch": "main",
+    "both_head_sha": "ff07e4bd9e7d6377dbe841334483bf97ff4c62bc",
+    "deploy_completed_at": "2026-10-23T14:29:55Z",
+    "production_files_unchanged": true,
+    "live_receipt": "publication-final-live.json",
+    "live_receipt_sha256": "66c9c197b44c8e927ad26f4db9aa12b5f6f7b2ab43543d0b9a805ce28ffaa736",
+    "live_exact_matches": 19,
+    "live_bytes": 11191955
+  },
   "scope": "Observed publication of the reviewed repair checkpoint. Later evidence-only commits require their own exact-head Actions verification. This receipt does not accept remaining corpus or English gaps, annual textual completeness, or maintainer real-terminal approval."
 }
