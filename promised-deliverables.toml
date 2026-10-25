@@ -9,8 +9,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "four-essays"
   criterion = "All four GPT essays meet the current Catholic voice and plain-drafting guidance, preserve material source claims and qualifications and their intended extent, and pass independent content and fidelity review with material findings resolved."
-  status = "open"
-  evidence = ["workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md", "src/gpt/articles/faith/four-last-things-shared/production-review.json"]
 
   [[deliverables.requirements]]
   id = "sunday-workflow"

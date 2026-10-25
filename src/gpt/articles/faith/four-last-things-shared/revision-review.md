@@ -432,3 +432,43 @@ entries also compare equal to the base. This verifies both the corrected
 publication and the protected Claude boundary. `production-review.json`
 retains the commit, workflow, manifest hash and bounded live-check result.
 The authorized revision, correction and main publication are complete.
+
+## Plain-drafting revision — 25 October 2026
+
+The maintainer requested the recent Catholic voice and plain-drafting guidance
+for the four GPT essays. One author revised each leaf, and a fresh independent
+reviewer read each complete candidate and baseline diff. The revisions preserve
+the developed spiritual reading, all substantive sections, exact quotations,
+source loci and material qualifications. References and source bindings remain
+byte-identical to the starting snapshot. Death divides one Luke citation into
+contiguous ranges with the same complete verse coverage.
+
+The cold reviews accept all four final sources. Their findings produced three
+bounded correction sets: Judgment states Benedict's theological-proposal
+qualification once; Heaven removes two redundant sentences and identifies
+created things explicitly where a pronoun had become ambiguous; Hell corrects
+the position of Augustine's obedience appeal within *City of God* XXI.23.
+The source reviewers independently accepted the repairs. Death's isolated
+repetition of a Peter transition remains a nonblocking style preference: the
+two paragraphs develop distinct applications.
+
+Separate production reviewers inspected every rendered page, conversion
+fidelity and the current public renderer at desktop and mobile widths. The
+accepted PDFs are **24, 24, 25 and 23 pages**, 96 in total, at unchanged 11-point
+type and one-inch margins. All source and PDF metadata, contents/bookmark
+anchors, embedded fonts, extracted text and companion links pass. One empty
+terminal underfull-box diagnostic in each PDF is visually harmless; each rights
+colophon remains legible on its substantive final page.
+
+The four accepted PDFs and generated Markdown files are installed byte for
+byte. Each web declaration now records the actual 25 October review date.
+`production-review.json` pins the final source, PDF, Markdown and reviewed HTML
+hashes and retains the prior publication receipt. The eight independent
+reviews are under
+`workflows/reviews/gpt-flt-and-sunday-2026-10-25/`.
+
+This is content and artifact acceptance, not a claim of main publication.
+The owning work record and promise still require the integrated source and
+release checks, completion of the separately requested All Saints workflow,
+main push and exact live deployment verification. Claude source and web
+editions remain unchanged.

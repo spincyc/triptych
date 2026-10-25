@@ -26,6 +26,17 @@ validated publication to `main` uses a genuine fast-forward ref update,
 without changing the local branch or rewriting history. The owning record is
 `workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md`.
 
+The four essays now pass independent content/source and separate artifact/web
+reviews, including focused rereview of the Judgment, Heaven and Hell repairs.
+All 96 pages (24/24/25/23) and the four web editions are reviewed and installed
+at their accepted hashes, with references and bindings preserved. The shared
+production receipt retains the preceding publication. All Saints is registered
+as F02 and its version-15 run `fb0417d471635250` has passed context resolution;
+research and the remaining native stages are in progress. The global chronology
+audit remains open; a separately inspected Wisdom date concern is cleared by
+the existing qualified lower-bound output. Integrated source/release checks,
+native workflow completion and main/live publication remain outstanding.
+
 ## GPT proper-study register revision, 2026-10-23
 
 <!-- promised-deliverable: gpt-propers-register-2026-10-23 -->
