@@ -229,7 +229,8 @@
         }
         if (cell.status === 'text-held' || cell.status === 'text-unavailable' &&
             (input.view.sides[index].result.request.textDisplay === 'latin-and-selected' ||
-              input.view.sides[index].result.request.scriptureCompanion)) {
+              input.view.sides[index].result.request.scriptureCompanion ||
+              (cell.event.orationGroups || []).length || cell.event.orationContext)) {
           const proper = properFor(side, cell.event);
           const selected = cell.event.selected;
           column.appendChild(T.renderProper(proper, side.bible, { fragments: side.fragments, companion: side.companion }, {
@@ -237,7 +238,9 @@
             orations: input.view.sides[index].result.request.languages.orations,
             textDisplay: input.view.sides[index].result.request.textDisplay,
             translationWitness: input.view.sides[index].result.request.languages.translationWitness || null,
-            heading: 'h4', cycle: selected.cycle || null
+            heading: 'h4', cycle: selected.cycle || null,
+            orationGroups: cell.event.orationGroups || null, orationContext: cell.event.orationContext || null,
+            eventId: cell.event.id, structure: side.structure
           }));
         } else {
           column.appendChild(T.el('p', 'compare-status', STATUS_NOTES[cell.status]));

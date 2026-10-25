@@ -46,6 +46,18 @@ class Rg110Diagnostic(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.source = yaml.safe_load(SOURCE.read_text())
+        # Exercise the retained refusal contract independently of whether the
+        # installed source has since enabled its bounded execution path.
+        rule = cls.source["commemoration"]["inseparable"]
+        if rule.get("applied") is True:
+            pairs = rule.pop("pairs")
+            rule.pop("execution")
+            rule["applied"] = False
+            rule["unapplied"] = {
+                "scope": "oration-owner", "what": "unapplied inseparable fixture",
+                "why": "this fixture does not implement the source-identified RG 110 group",
+                "pairs": pairs,
+            }
         cls.masses = tool.load_masses(ROOT / "src/sources/calendars", "roman-1962")
         cls.rubrics = json.loads((ROOT / "src/web/data/structure/rubrics/roman-1962.json").read_text())
         cls.rubrics["commemoration"] = copy.deepcopy(cls.source["commemoration"])

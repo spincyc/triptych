@@ -1879,6 +1879,49 @@ def validate_propers_read_payload_sources(data_root: Path) -> None:
         fail("catalog structure differs from the public source")
 
     masses = monolith["masses"]
+    # The conditional relation is source-owned metadata, never an open-ended
+    # Mass extension. Bind its complete value and membership to the public
+    # rubric rule that the Proper producer consumed. This also detects a
+    # dropped relation even if every split file and generation is refreshed.
+    expected_oration_relations = {}
+    rubric_path = data_root / "structure/rubrics/roman-1962.json"
+    if rubric_path.parent.is_symlink():
+        fail("symlink in inseparable-oration rubric source")
+    if rubric_path.exists() or rubric_path.is_symlink():
+        rubrics, _ = read(rubric_path)
+        if not isinstance(rubrics, dict) or rubrics.get("calendar") != "roman-1962":
+            fail("inseparable-oration rubric source has an invalid calendar")
+        commemoration = rubrics.get("commemoration") or {}
+        rule = commemoration.get("inseparable") if isinstance(commemoration, dict) else None
+        if rule is not None and not isinstance(rule, dict):
+            fail("inseparable-oration rubric rule must be a mapping")
+        if rule and rule.get("applied") is not True and ("pairs" in rule or "execution" in rule):
+            fail("inseparable-oration execution fields require applied: true")
+        if rule and rule.get("applied") is True:
+            execution = {
+                "scope": "dated-mass-of-office", "count": 1, "conclusion": "single",
+                "commemorated_order": "before-other-commemorations",
+                "slots": ["Collect", "Secret", "Postcommunion"],
+            }
+            if ("unapplied" in rule or rule.get("execution") != execution
+                    or type((rule.get("execution") or {}).get("count")) is not int):
+                fail("inseparable-oration rubric has unsupported execution")
+            pairs = rule.get("pairs")
+            if not isinstance(pairs, list) or not pairs:
+                fail("inseparable-oration rubric requires exact pairs")
+            mass_keys = {mass.get("key") for mass in masses if isinstance(mass, dict)
+                         and isinstance(mass.get("key"), str)}
+            for pair in pairs:
+                if (not isinstance(pair, dict) or set(pair) != {"host", "companion", "locus"}
+                        or any(not isinstance(pair[field], str) or not pair[field].strip()
+                               for field in ("host", "companion", "locus"))
+                        or pair["host"] == pair["companion"]
+                        or any(pair[field] not in mass_keys or pair[field] in expected_oration_relations
+                               for field in ("host", "companion"))):
+                    fail("inseparable-oration rubric has unknown or repeated members")
+                relation = {**pair, "scope": execution["scope"], "slots": execution["slots"]}
+                expected_oration_relations[pair["host"]] = relation
+                expected_oration_relations[pair["companion"]] = relation
     descriptors = catalog["masses"]
     if not isinstance(descriptors, list) or len(descriptors) != len(masses):
         fail("catalog Mass descriptors do not cover the public source")
@@ -1889,7 +1932,7 @@ def validate_propers_read_payload_sources(data_root: Path) -> None:
             "common_from", "common_sets", "coverage", "date", "key", "kind",
             "name", "propers", "registry", "season", "takes_from", "text_status",
         }
-        optional_mass_fields = {"forms", "ordinary_appointments", "ordinary_frame"}
+        optional_mass_fields = {"forms", "ordinary_appointments", "ordinary_frame", "oration_relation"}
         if (not isinstance(mass, dict)
                 or not common_mass_fields <= set(mass)
                 or not set(mass) <= common_mass_fields | optional_mass_fields):
@@ -1900,6 +1943,11 @@ def validate_propers_read_payload_sources(data_root: Path) -> None:
                 or key in seen_keys):
             fail(f"source Mass {ordinal} has an unsafe or duplicate key")
         seen_keys.add(key)
+        if ("oration_relation" in mass) != (key in expected_oration_relations) or (
+            key in expected_oration_relations
+            and mass["oration_relation"] != expected_oration_relations[key]
+        ):
+            fail(f"source Mass {key} has an unbound inseparable-oration relation")
         forms = mass.get("forms") or []
         if not isinstance(forms, list) or any(not isinstance(form, dict) for form in forms):
             fail(f"source Mass {key} has invalid forms")

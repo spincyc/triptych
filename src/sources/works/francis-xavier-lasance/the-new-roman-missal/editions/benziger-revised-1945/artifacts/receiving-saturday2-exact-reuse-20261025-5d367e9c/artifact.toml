@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.receiving-saturday2-exact-reuse-20261025-5d367e9c"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Original Lasance/Walsh revised-1945 English on ordinary pages: existing United States nonrenewal of A110108/A192159, with unchanged insert-excluded expression anchor artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759, SHA256 80b34759fb18ec60f6205460c2ac24dc9e4a861938a94ef1f8e04a08a398ac9a. See src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. Lettered inserts 1298a-1298n and 1302a-1302d excluded. No scan-image or whole mixed-book publication authority."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+provenance = "Project receiving-address derivative of the exact previously accepted Maternity publication row. The English remains its literal historical Lasance/Walsh wording. Only the receiving coordinates are new, under the separately approved complete canonical Latin byte-identity relation."
+transformation = "Copy the exact182-byte English value into a new Saturday2-addressed TSV row after exact158-byte whole canonical Latin identity, including wraps, punctuation, ending and final LF. No raw-source comparator, finite lexical/orthographic method, normalization, new translation, source emendation, conclusion expansion or response is applied to the recipient."
+retrieved = "2026-10-25"
+sha256 = "5d367e9c5e2df9acf3a42a31a66edabb71698c6fbedf89791f3e69ed2997f0ab"
+byte_size = 294
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/receiving-saturday2-exact-reuse-20261025-5d367e9c/english.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Actual human source evidence remains the Maternity witness and its original bounds. This does not assert Lasance printed or appointed this English at Saturday2; no new historical body or image inspection is claimed. Exact receiving relation {\"id\": \"maternity-to-saturday-bvm2-postcommunion-literal-reuse-2026-10-25\", \"authorization\": {\"path\": \"workflows/reviews/missal-reader-resume-2026-10-25/saturday2-exact-reuse-approval.json\", \"sha256\": \"c8973bf6e515b18554dfc8cb95d990603dee471a719c8f032d1bbf1e6afb157b\"}, \"donor\": [\"maternitatis-beatae-mariae-virginis\", \"main\", \"Postcommunion\", \"all\", 1], \"recipient\": [\"missa-de-s-maria-in-sabbato-2\", \"main\", \"Postcommunion\", \"all\", 1], \"complete_canonical_Latin_sha256\": \"72e13d8a2be0ec58b499d88d06ab51ca6b076746a23046e29f06d6913044a229\", \"complete_canonical_Latin_bytes\": 158, \"final_LF\": true, \"English_sha256\": \"8b4f98aecc0bafde13db0d573a1d1b2049f7ef404a6b8dc3d7cd0168a1defaa1\", \"English_bytes\": 182, \"donor_positive_dictionary_sha256\": \"ed2c4b0e89ace8dabbd864442a2c5f1d7e171fbe6a9a4e263d1afa1588c3232e\", \"recipient_full_Latin_proof_sha256\": \"4142c2057379a8e3610a73a4c0a14977aa5bb52b8d13e5ca187afbc5ffe0a35f\", \"donor_source_verification_id\": \"passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-resume-20261025-lexical46-verify-maternitatis-beatae-mariae-virginis--main--postcommunion--all--1\", \"donor_publication_passage_id\": \"passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-resume-20261025-lexical46-publish-maternitatis-beatae-mariae-virginis--main--postcommunion--all--1\", \"finite_comparison_applied_to_recipient\": false, \"new_image_inspection\": false, \"Lasance_Saturday_appointment_attested\": false, \"automatic_fanout\": false}"

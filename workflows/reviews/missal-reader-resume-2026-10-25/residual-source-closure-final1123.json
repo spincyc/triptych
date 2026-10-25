@@ -1,0 +1,376 @@
+{
+  "schema": "triptych-final-source-residual-closure/v1",
+  "scope": "Observed canonical source state and literal donor closure; independent source, assembly, annual, native, release and human acceptance remain separate.",
+  "calendar": "roman-1962",
+  "current_owner_coverage": [
+    {
+      "calendar": "roman-1962",
+      "translation_ledger_calendar": "roman-1962",
+      "translation_ledger_calendars": [
+        "roman-1962"
+      ],
+      "translation_ledger_inherited": false,
+      "inherited_inapplicable_records": 0,
+      "slots": 1439,
+      "with_english": 1123,
+      "with_english_held": 1123,
+      "rights_restricted": 0,
+      "ledgered_untranslated": 316,
+      "cycle_unavailable_records": 0,
+      "incipit_only_records": 0,
+      "unaccounted": 0,
+      "outside_the_ledger": 0,
+      "unmatched_records": 0,
+      "stale_translation_records": 0
+    },
+    {
+      "calendar": "postconciliar",
+      "translation_ledger_calendar": "postconciliar",
+      "translation_ledger_calendars": [
+        "postconciliar"
+      ],
+      "translation_ledger_inherited": false,
+      "inherited_inapplicable_records": 0,
+      "slots": 561,
+      "with_english": 116,
+      "with_english_held": 116,
+      "rights_restricted": 0,
+      "ledgered_untranslated": 445,
+      "cycle_unavailable_records": 3,
+      "incipit_only_records": 0,
+      "unaccounted": 0,
+      "outside_the_ledger": 0,
+      "unmatched_records": 0,
+      "stale_translation_records": 0
+    }
+  ],
+  "historical_domains": {
+    "prior_positive548": 548,
+    "prior_positive_dictionaries_exact": true,
+    "original879": 879,
+    "original879_current_positive": 574,
+    "original879_current_gaps": 305,
+    "surviving_original_gap_dictionaries_exact": 305,
+    "new12_current_positive": 1,
+    "new12_current_gaps": 11,
+    "historical_new12_preserved": true,
+    "accepted_one_identity_transport": [
+      {
+        "historical": [
+          "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+          "main",
+          "Offertory (Tempore paschali)",
+          "all",
+          1
+        ],
+        "current": [
+          "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+          "main",
+          "Offertory",
+          "all",
+          2
+        ],
+        "english_state": "untranslated-before-and-after",
+        "body_or_rights_changes": false
+      }
+    ],
+    "identity_transport_receipt_sha256": "447c9ede73f81f2bcc05fb70a6f2989c055becd6827e54da4e1290598879a927"
+  },
+  "historical_v5_prepared_selection": {
+    "count": 566,
+    "original879": 565,
+    "new12": 1,
+    "actually_current_positive": 566,
+    "literal_English_hashes_match": 566,
+    "all_recorded_complete_target_Latin_hashes_match": true,
+    "additional_current_original879_positives": [
+      [
+        "ascension",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      [
+        "ascension",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      [
+        "easter-2",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      [
+        "missa-de-s-maria-in-sabbato-2",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      [
+        "s-antonii-padua-confessoris-ecclesiae-doctoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      [
+        "s-ioannae-franciscae-fremiot-chantal-viduae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      [
+        "septem-dolorum-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      [
+        "septem-dolorum-beatae-mariae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      [
+        "septem-dolorum-beatae-mariae-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ]
+    ]
+  },
+  "newly_installed_English4": [
+    {
+      "target": [
+        "septem-dolorum-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "complete_Latin_sha256": "5e705b56b91a3f1be8277f9729315172ab42f29b059612d29f02057c7c35c7c1",
+      "complete_Latin_UTF8_bytes": 292,
+      "current_Latin_proof_dictionary_sha256": "2c63ab6b9fb260b805157d745a34e179186e48f55d2c6cc59f01d2ce3de645f0",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.september-dolors-orations-20261023-collect",
+      "publication_status": "permitted",
+      "literal_English_sha256": "2f4d06de5f5f431ceec378b162bbbcec9a93dcae6213c24e62ae9fb0cff47694",
+      "literal_English_UTF8_bytes": 249,
+      "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-september-dolors3-26268a5a",
+      "publication_artifact_sha256": "26268a5ad7251c0b997713391846c31ce576110e5890ae21c8153435688554f7",
+      "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-september-dolors3-publish-septem-dolorum-beatae-mariae-virginis--main--collect--all--1",
+      "publication_binding_validation": "passed owning validator"
+    },
+    {
+      "target": [
+        "septem-dolorum-beatae-mariae-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "complete_Latin_sha256": "161f3da5944a943cd504c8c421e71d5b2603950e8e24b0b7cc229253a620bf5f",
+      "complete_Latin_UTF8_bytes": 343,
+      "current_Latin_proof_dictionary_sha256": "f956c4c091f5e65ef7806590eeb02b798abe7352af64ddb1bf6109eb40b21fcb",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.september-dolors-orations-20261023-secret",
+      "publication_status": "permitted",
+      "literal_English_sha256": "bd687c8cf0f2ea6229cd8f19bc8bd16d3407ae9a40d5d63a431db2bab022bc3a",
+      "literal_English_UTF8_bytes": 350,
+      "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-september-dolors3-26268a5a",
+      "publication_artifact_sha256": "26268a5ad7251c0b997713391846c31ce576110e5890ae21c8153435688554f7",
+      "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-september-dolors3-publish-septem-dolorum-beatae-mariae-virginis--main--secret--all--1",
+      "publication_binding_validation": "passed owning validator"
+    },
+    {
+      "target": [
+        "septem-dolorum-beatae-mariae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "complete_Latin_sha256": "c557628e6c50fef9abd51c8b52657da465a153c989d4959ed9f07e3bf1c16002",
+      "complete_Latin_UTF8_bytes": 221,
+      "current_Latin_proof_dictionary_sha256": "ff7b44cf58739003ed3cf49e8a37dd9130ebbe987c92c97bb1d9112415abc5f7",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.september-dolors-orations-20261023-postcommunion",
+      "publication_status": "permitted",
+      "literal_English_sha256": "624564d01115feff15360c3c27e834a101a1b95dd88a96c883a79bd44f092348",
+      "literal_English_UTF8_bytes": 211,
+      "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-september-dolors3-26268a5a",
+      "publication_artifact_sha256": "26268a5ad7251c0b997713391846c31ce576110e5890ae21c8153435688554f7",
+      "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-september-dolors3-publish-septem-dolorum-beatae-mariae-virginis--main--postcommunion--all--1",
+      "publication_binding_validation": "passed owning validator"
+    },
+    {
+      "target": [
+        "missa-de-s-maria-in-sabbato-2",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "complete_Latin_sha256": "72e13d8a2be0ec58b499d88d06ab51ca6b076746a23046e29f06d6913044a229",
+      "complete_Latin_UTF8_bytes": 158,
+      "current_Latin_proof_dictionary_sha256": "4142c2057379a8e3610a73a4c0a14977aa5bb52b8d13e5ca187afbc5ffe0a35f",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-missa-de-s-maria-in-sabbato-2-orations",
+      "publication_status": "permitted",
+      "literal_English_sha256": "8b4f98aecc0bafde13db0d573a1d1b2049f7ef404a6b8dc3d7cd0168a1defaa1",
+      "literal_English_UTF8_bytes": 182,
+      "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.receiving-saturday2-exact-reuse-20261025-5d367e9c",
+      "publication_artifact_sha256": "5d367e9c5e2df9acf3a42a31a66edabb71698c6fbedf89791f3e69ed2997f0ab",
+      "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.receiving-saturday2-exact-reuse-20261025-publication",
+      "publication_binding_validation": "passed owning validator"
+    }
+  ],
+  "Saturday2_literal_reuse": {
+    "complete_current_Latin_bytes_equal": true,
+    "literal_English_and_rights_source_metadata_equal": true,
+    "explicit_separate_root_reuse_approval": {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/saturday2-exact-reuse-approval.json",
+      "sha256": "c8973bf6e515b18554dfc8cb95d990603dee471a719c8f032d1bbf1e6afb157b",
+      "bytes": 28063
+    },
+    "donor_and_recipient_complete_current_proof_dictionaries_match_approval": true,
+    "new_lexical_inference_or_automatic_fanout_claimed": false
+  },
+  "current_positive_publication_metadata": {
+    "positive_owners": 1123,
+    "complete_publication_binding_fields_present": 1080,
+    "legacy_owners_without_complete_publication_binding_fields": 43,
+    "new_four_positive_bindings_individually_replayed": 4,
+    "unverified_legacy_transfer_performed": false
+  },
+  "literal_donor_scan": {
+    "positive_owners": 1123,
+    "gap_owners": 316,
+    "positive_held_Latin_owners": 1119,
+    "positive_missing_Latin_owners": 4,
+    "gap_held_Latin_owners": 186,
+    "gap_missing_Latin_owners": 130,
+    "exact_donor_recipient_pairs": [],
+    "prospective_Dolors3_to_remaining_gap_pairs": [],
+    "equality": "Complete unmodified canonical text values encoded in UTF-8; conclusions, punctuation, case, wraps and final LF retained.",
+    "normalization_or_stem_lookup": false,
+    "empty_missing_bodies_compared": false
+  },
+  "remaining_current_gap_reason_counts": {
+    "no-exemplar": 264,
+    "witness-gap": 47,
+    "rights-withheld": 5
+  },
+  "remaining_material_dependency_holds": [
+    {
+      "target": [
+        "commemoratione-s-pauli-apostoli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "current_English_state": "untranslated",
+      "complete_current_Latin_sha256": "b2f29e451a2ba64f2a1fb01732ac5c4503f3ba81e70f9c8c483637088e0218b1",
+      "blocker": "material-hold-received-source-has-ending-target-has-no-ending-or-cue",
+      "new_source_read_or_method_claimed": false
+    },
+    {
+      "target": [
+        "commemoratione-s-pauli-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "current_English_state": "untranslated",
+      "complete_current_Latin_sha256": "5645ce4b211974872761201de670697b79cc5c637022e01665c760f878c839d2",
+      "blocker": "material-hold-received-source-has-ending-target-has-no-ending-or-cue",
+      "new_source_read_or_method_claimed": false
+    },
+    {
+      "target": [
+        "commemoratione-s-pauli-apostoli",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "current_English_state": "untranslated",
+      "complete_current_Latin_sha256": "c6acaf6d03ca6bd5c165a710d720158596c63031c7439a608cdac76326fa6175",
+      "blocker": "material-hold-received-source-has-ending-target-has-no-ending-or-cue",
+      "new_source_read_or_method_claimed": false
+    },
+    {
+      "target": [
+        "s-ioannae-franciscae-fremiot-chantal-viduae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "current_English_state": "untranslated",
+      "complete_current_Latin_sha256": "2794019c53ed54413c5afbf873d542885581ca44f6988d1815e63edf11491051",
+      "blocker": "material-hold-same-Holy-Spirit-conclusion-family-mismatch",
+      "new_source_read_or_method_claimed": false
+    }
+  ],
+  "bounded_conclusion": "No additional literal-byte donor route exists among the currently held canonical owners after these four installations.",
+  "limits": [
+    "This conclusion is bounded to checked retained packets and accepted methods; no whole-book irrecoverability or acquisition-wide absence is claimed.",
+    "Owners with no complete canonical Latin have no byte-comparison result.",
+    "Current source counts do not establish annual textual completeness, authenticated postconciliar wording, generated output, release or real-terminal acceptance."
+  ],
+  "canonical_input_pins": [
+    {
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "sha256": "a8140456e71ed2a1a94589740de62ca2dc2619abe7f7adfbcf5a1a5c3f4d88ea",
+      "bytes": 3067400
+    },
+    {
+      "path": "src/sources/calendars/roman-1962/propers.yaml",
+      "sha256": "ef47c63c9528a99f2e5b70bd849f0014f8bbddfc1a8af116d77e500e08c0f9bf",
+      "bytes": 2625397
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "sha256": "aafe43ebf3c4a7c5a7a7ab974c19472fe331b936c6d671b110be94f1bad81eb2",
+      "bytes": 5076568
+    },
+    {
+      "path": "tools/mass-propers",
+      "sha256": "2f65d5d164c36f614c125a66254a1fd5eb3064b60809a654618d7380c02faaf2",
+      "bytes": 243653
+    },
+    {
+      "path": "scripts/_calendars.py",
+      "sha256": "c2ec47e2001a219429ca879165d56202a0cd587b00c36f3abe18a6a4dec593ef",
+      "bytes": 142150
+    },
+    {
+      "path": "scripts/_proper_latin.py",
+      "sha256": "064d6567ba12b7ab19191fb3c530b248c70a9de0855afe5c932c7be81a5874a6",
+      "bytes": 50284
+    },
+    {
+      "path": "scripts/_lasance_publication.py",
+      "sha256": "dcc71f9b222920602a42bd5c7213ce7877f9a85e898e30cd3602d695ccda2074",
+      "bytes": 9513
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/saturday2-exact-reuse-approval.json",
+      "sha256": "c8973bf6e515b18554dfc8cb95d990603dee471a719c8f032d1bbf1e6afb157b",
+      "bytes": 28063
+    }
+  ],
+  "canonical_writes": 0,
+  "source_acquisitions": 0,
+  "new_source_image_inspections": 0,
+  "new_lexical_methods": 0
+}

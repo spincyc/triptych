@@ -1,0 +1,130 @@
+{
+  "schema": "triptych-independent-reader-fixture-review/v1",
+  "review_date": "2026-10-25",
+  "decision": "ACCEPT_BOUNDED_TWO_FIXTURE_DIFF_WITH_EXACT_SOURCE_SEMANTIC_REPLAY",
+  "base_commit": "6a1fe6e3361fec6d1f011a0ae03a0e47d12fa6cf",
+  "reviewed_files": [
+    {
+      "path": "tools/tests/reader_coverage_fixture.mjs",
+      "sha256": "ed6210b1ba8b081e18d9134ee980ebf8919ee09a6dceb65942c59c9aa4359d95"
+    },
+    {
+      "path": "tools/tests/day_reader_choices_browser.mjs",
+      "sha256": "0d3463fa67e9342990a1eb98ec81aea7f4670152cf1d86a258ece3da9b520d39"
+    }
+  ],
+  "reviewed_diff_sha256": "a56c85b2c1a0080c46e3801427fb1f419b59552d95e32e9d4e250ff0087d548d",
+  "diff_rationale": [
+    "September 15 now offers the union of Caswall Sequence and Lasance Collect, Secret and Postcommunion as two canonical witnesses. Physical Caswall artifact and edition identities remain one witness.",
+    "Explicit Caswall selection leaves all three Lasance prayers absent-in-witness. Explicit Lasance selection leaves the Caswall Sequence absent-in-witness. Missing bodies remain null without fallback; four other September bodies preserve ledgered-untranslated state.",
+    "All Souls first form has six appointed composed body units. Caswall holds Sequence; Cummiskey holds Collect, Secret and Postcommunion; Lasance holds Tract and Offertory. Correct witness gaps are five, three and four. Scripture appointments and alternate translation rows do not enlarge the denominator.",
+    "The fourth All Souls witness, Hymns Ancient and Modern, remains available for Sequence, with its unresolved target relationship preserved. Unselected coequal Sequence translations still require a choice.",
+    "The final helper accepts only the known Caswall edition or physical artifact source identities while retaining exact selected-text equality. Existing missing-text, foreign-witness, rights-state and coverage-label assertions remain."
+  ],
+  "exact_source_basis": {
+    "accepted_parent": "1119 positive English targets with 320 explicit gaps",
+    "accepted_parent_source_epoch_sha256": "8e7c1d71925704e35c3e873ff742c9fca6ea44858aa3128ca13a4a31fc613c2d",
+    "accepted_three_recipient_assembly_sha256": "4e904a8e40eac23e959bc0f31967008baebc4b865837a3ebbec2fffbc1905442",
+    "independent_three_recipient_assembly_review_sha256": "d11aebeaae67da6c7816f8092e2d29ad9ff51b1b249f64bd9b5636f1ee78abc9",
+    "joined_source_files": 1665,
+    "joined_component_postimages": 12,
+    "fresh_owner_projection_sha256": "2463fa766e66e4c481de26de449fc2c6956977da49c18762613492849bed0e54",
+    "fresh_owner_projection_bytes": 20976013,
+    "projection_method": "Production mass-propers calendar_structure and serializer over the exact accepted September three-recipient source stage. Inherited generated browser data was not used.",
+    "accepted_three_exact_projected_English": [
+      {
+        "target": [
+          "septem-dolorum-beatae-mariae-virginis",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "English_sha256": "2f4d06de5f5f431ceec378b162bbbcec9a93dcae6213c24e62ae9fb0cff47694",
+        "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+      },
+      {
+        "target": [
+          "septem-dolorum-beatae-mariae-virginis",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "English_sha256": "bd687c8cf0f2ea6229cd8f19bc8bd16d3407ae9a40d5d63a431db2bab022bc3a",
+        "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+      },
+      {
+        "target": [
+          "septem-dolorum-beatae-mariae-virginis",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "English_sha256": "624564d01115feff15360c3c27e834a101a1b95dd88a96c883a79bd44f092348",
+        "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+      }
+    ]
+  },
+  "semantic_runtime": [
+    {
+      "path": "src/web/browser/shared/browser-core.js",
+      "sha256": "1bd170f131c6ff4a08bbb9daa0e1cbfafaac9af602c46b0ea7da5b980a63ac68"
+    },
+    {
+      "path": "src/web/browser/liturgy/reader-state-adapters.js",
+      "sha256": "2c1df43fd6b7a0659b003928c6e8dca7788e775530ea8ba901200ede4ef144f2"
+    }
+  ],
+  "verification": {
+    "syntax_checks": {
+      "node --check tools/tests/reader_coverage_fixture.mjs": 0,
+      "node --check tools/tests/day_reader_choices_browser.mjs": 0
+    },
+    "actual_verifyRealWitnesses_replay": {
+      "exit": 0,
+      "checks": [
+        "canonical-witness-aliases",
+        "partial-witness-no-fallback",
+        "report-language-labels"
+      ]
+    },
+    "independent_source_unit_accounting_replay": {
+      "exit": 0,
+      "source_projection_sha256": "2463fa766e66e4c481de26de449fc2c6956977da49c18762613492849bed0e54",
+      "September_main": {
+        "appointed_body_units": 8,
+        "Caswall_available": 1,
+        "Lasance_available": 3,
+        "globally_ledgered_untranslated": 4
+      },
+      "All_Souls_first": {
+        "appointed_body_units": 6,
+        "Caswall_available": 1,
+        "Caswall_witness_gaps": 5,
+        "Cummiskey_available": 3,
+        "Cummiskey_witness_gaps": 3,
+        "Lasance_available": 2,
+        "Lasance_witness_gaps": 4,
+        "Hymns_Ancient_and_Modern_available": 1
+      },
+      "exact_available_source_texts_and_aliases_joined": true,
+      "all_explicit_missing_texts_null_without_fallback": true,
+      "foreign_witness_requests_rejected": true
+    },
+    "fixture_and_runtime_hashes_rechecked_at_seal": true
+  },
+  "evidence_hashes": {
+    "exact_source_projection_join_sha256": "ff49f858270496286d0d399493fa2ea18b93a690a083e657fb86cc51ca537cfa",
+    "independent_semantic_replay_sha256": "040a9e5efbb23deeb96981023f180a03267f075a4fed962f449d28f41eebdb01",
+    "source_projection_producer_sha256": "389ec5ea893678366c9ef72829d5882c00bd71001d0e2343fcd039e3c57fb328",
+    "independent_semantic_replay_program_sha256": "22eed7c486aeaa760c6740345578b78ff602ece0a4438eb5300c32264c5c856a"
+  },
+  "scope": "Only the two fixture changes and their appointed-source semantic expectations are accepted. Final union source adoption, regenerated final browser data, native Chromium execution and annual or terminal acceptance remain separate.",
+  "findings": [],
+  "canonical_writes": false,
+  "native_browser_runs": false,
+  "native_builds": false,
+  "public_safe": true
+}

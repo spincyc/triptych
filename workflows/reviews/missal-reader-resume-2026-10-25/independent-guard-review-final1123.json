@@ -1,0 +1,77 @@
+{
+  "schema": "triptych-independent-final1123-guard-review/v1",
+  "decision": "ACCEPT_EXACT_FINAL1123_GUARD_DATA_COMPILER_AND_REAL_RECEIPT_BINDING",
+  "priority_findings": [],
+  "accepted_fixture_sha256": "702391e010ab4618ef28e57ad3d70cbfeb9de72c423cdee60ecc075d7e0d52a7",
+  "pending_fixture_sha256": "4cbf364f1c152df215c99a93b420636c3fe805e24a8bc8b5fb3eb5d0da3907a5",
+  "guard_install_manifest_sha256": "89d62be8a8cdbe5c8b83b891cb7dc56f3b34509c552a6dda2ef3ccc23fae890a",
+  "source_input_manifest_sha256": "2a9f93dc6edd6005f5ddf91ded3021db6b4401aa39418528b65e070df6036cc1",
+  "source_epoch_sha256": "7eb3e2b5acd21ac37d9132b8a4bc2b3e6465ee4194a61d79d319c87d80b237a2",
+  "source_epoch_paths": 1671,
+  "guard_input_paths": 1682,
+  "root_source_receipt_sha256": "3ebdde006403a03457f27170c4120a67610ae082b8bfc07c6654a93c533c1cde",
+  "independent_source_receipt_sha256": "f0775933d3ff13db8d61e0def26d58c443fb8eb7574c27eeac078d69b9c5ce87",
+  "accepted_parent_fixture_sha256": "4cc158eaf07d71db1a58c69b86c130557531275eeee6ae66637d7f793b10cffe",
+  "accepted_parent_receipt_sha256": "8deb4b56f18f4e1f93f553b4bdc05bbef50a0d719727ee074526fe544dfc6e2a",
+  "all1119_positive_and316_unselected_absence_dictionaries_preserved": true,
+  "all_Latin_body_proof_refusal_oracle_and13_historical_fields_exact": true,
+  "all17_actual_runtime_original2e030b_replays_exact": true,
+  "exact19_increment_pins_and16_new_paths": true,
+  "one_terminal_LF_removal_and_two_audit_metadata_rows_only_vs_v1": true,
+  "root_one_pair_reuse_authority_c897_distinct_from_unchanged_finite_method": true,
+  "separate_Dolors_Saturday_assemblies_and_PA_code_acceptances_bound": true,
+  "only_acceptance_fields_changed_from_pending": true,
+  "actual_runtime_consumed_accepted1123_and_refused_real1119_receipt": true,
+  "actual_compiler_parent_positive_passed": true,
+  "compiler_authority_history_corruptions_refused": [
+    "missing explicit parent SHA",
+    "wrong parent fixture SHA",
+    "parent SHA without parent fixture",
+    "pending parent",
+    "wrong parent receipt hash",
+    "wrong parent manifest hash",
+    "parent receipt path traversal",
+    "changed historical cohort",
+    "changed original-before hash"
+  ],
+  "actual_runtime_source_control_corruptions_refused": [
+    "workflows/reviews/missal-reader-resume-2026-10-25/saturday2-exact-reuse-approval.json",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
+  ],
+  "strict_runtime_helper_unchanged": true,
+  "no_circular_generated_oracle_source_approval": true,
+  "no_canonical_or_frozen_source_writes": true,
+  "full_snapshot_or_broad_gates_run": false,
+  "new_primary_image_reading_claimed": false,
+  "evidence": [
+    {
+      "path": ".scratch/resume-20261025-guard-test-review/final1123/delta-review.json",
+      "sha256": "d23c3f89476c2758cff2900997c4326fdcfa82c493d7fe84f3c8a8f033345ff7",
+      "byte_size": 1488
+    },
+    {
+      "path": ".scratch/resume-20261025-guard-test-review/final1123/pending-v2-data-review/data-review.json",
+      "sha256": "f2866222495c540c625a9c815f8e217d1ab10325c46cfacf7ee5bbd1e428518b",
+      "byte_size": 6656
+    },
+    {
+      "path": ".scratch/resume-20261025-guard-test-review/final1123/review_delta.py",
+      "sha256": "a4923aac0ac1738e091b900c9534682f76b4ea5e82b0744f125709c00be698c9",
+      "byte_size": 10771
+    },
+    {
+      "path": ".scratch/resume-20261025-guard-test-review/final1123/review_binding.py",
+      "sha256": "2546bd0cbb8e1d96503e7316bf079ce0fc026f099ffc5b68f02feedb66fb8be2",
+      "byte_size": 14187
+    },
+    {
+      "path": ".scratch/resume-20261025-guard-test-review/final1123/binding-checks.json",
+      "sha256": "bba9547c5e8c17dbbe1d984bd7c7db112e224e94964b736654a6108387458123",
+      "byte_size": 773236
+    }
+  ],
+  "limits": [
+    "Exact guard/data/compiler binding review only; source and receiving permission remain the separately pinned independent source, root reuse and assembled-publication decisions.",
+    "Final root atomic installation, postinstallation checks, owner currentness, annual/native/browser/release/publication gates remain coordinator work."
+  ]
+}

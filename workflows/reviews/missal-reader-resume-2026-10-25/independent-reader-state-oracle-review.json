@@ -1,0 +1,55 @@
+{
+  "schema": "triptych-independent-bounded-test-oracle-review/v2",
+  "date": "2026-10-25",
+  "decision": "ACCEPT_EXACT_TWO_METHOD_TEST_ONLY_SUCCESSOR_PENDING_ROOT_INSTALL_AND_NORMAL_TWO_METHOD_RERUN",
+  "final_proposal_seal": {
+    "path": ".scratch/resume-20261025-validation/final-pre1955-oracle-proposal-v2/SEALED-PROPOSAL.json",
+    "sha256": "ad847d6724b44dda5fb9f922acaa0adc94272850b038bb6bfe3b1d10a753dfde",
+    "bytes": 1673
+  },
+  "preimage_sha256": "0f5a33ae57a09764db18e4a0669c85d5326e4de5dc8eeab8e08a6bb9a377b99b",
+  "proposed_postimage": {
+    "path": ".scratch/resume-20261025-validation/final-pre1955-oracle-proposal-v2/postimages/tools/tests/test_liturgy_reader_state.py",
+    "sha256": "66017cf64a9961f9044f1bae3ed3389fd2ac6ea254cc7824948d77fde4fbc5ed",
+    "bytes": 164850
+  },
+  "changed_path": "tools/tests/test_liturgy_reader_state.py",
+  "accepted_v1_receipt_immutable": {
+    "path": ".scratch/resume-20261025-pre1955-oracle-review/ORACLE-REVIEW.json",
+    "sha256": "a7fe652077b07d8e85a5aa056919237f5fce775de88d0cd4260ad00db7508204",
+    "bytes": 3168
+  },
+  "source_and_AST_review": {
+    "path": ".scratch/resume-20261025-pre1955-oracle-review-v2/source-and-AST-review.json",
+    "sha256": "37ddc77a8de2c8d30881e25ed6bf8e5d689b8c45299bb6ac65ebc26e548dc9d4",
+    "bytes": 29179
+  },
+  "independent_actual_owner_positive_and4negative_probes": {
+    "path": ".scratch/resume-20261025-pre1955-oracle-review-v2/independent-operational-probes.json",
+    "sha256": "23e43266b2d7d45dc9fd0d60f2c6b0153d9d7de4e49d3343df3858e2263a364e",
+    "bytes": 1671
+  },
+  "source_findings": "Accepted v1 SacredHeart correction is byte-exact; its3 current proof and inherited-uncollated/withheld3 evidence remain authoritative. Claret on1962 source date10-23 has exactly one main Collect, source-owned unavailable/proper-body held-unpublished/rights-withheld, no positive Latin proof, and published text-null unavailable/withheld metadata. Vianney is already restored/permitted at6a1 and has no withheld Collect, so the old next(any withheld) selection is stale. This review preserves the existing hold rather than deciding a new rights/source position.",
+  "test_bounds": "Only2 named methods differ. All other module AST nodes, runtime calls, SacredHeart partial and Advent/refusal assertions are exact. CLI changes only exact date/formulary/owner selection and cardinality+full unavailable/null assertions; all4 old mutation assignments, append ASTs, expected errors and assertRaises loop remain unchanged.",
+  "operational_validation": "Existing H1 ordinary mass-today owner returns exact Claret main/Collect unavailable metadata, null text and9 Scripture-bearing rows; actual Node full-parity positive passes and all4 original Bible/lectionary/reference/withheld-state probes reject their specific errors. Candidate successor methods were not executed or installed.",
+  "baseline_boundary": "Both Claret hold and restored Vianney body already match checkpoint6a1. Accepted v1 chronology remains unchanged. No production/source/served-data/recension/rights change or new source reading is proposed. Canonical research mass-commentary file change is outside this dependency scope; relevant source/proof/test/runtime pins still equal H1.",
+  "normal_focused_rerun_after_root_install": [
+    "tools.tests.test_liturgy_reader_state.ParityTests.test_inherited_pre_1955_propers_are_partial_not_complete",
+    "tools.tests.test_liturgy_reader_state.ParityTests.test_cli_parity_rejects_bible_lectionary_reference_and_text_drift"
+  ],
+  "normal_focused_command": [
+    ".scratch/public-preview-venv/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "tools.tests.test_liturgy_reader_state.ParityTests.test_inherited_pre_1955_propers_are_partial_not_complete",
+    "tools.tests.test_liturgy_reader_state.ParityTests.test_cli_parity_rejects_bible_lectionary_reference_and_text_drift"
+  ],
+  "acceptance_holds": [],
+  "not_accepted": "This does not turn the old full240 regression failure into a pass; other test proposals and whole-checkout final acceptance remain separately owned. Only final sealad847d is accepted; provisional00026 is historical metadata evidence.",
+  "canonical_installation": false,
+  "canonical_writes": false,
+  "frozen_input_writes": false,
+  "candidate_successor_test_run": false
+}

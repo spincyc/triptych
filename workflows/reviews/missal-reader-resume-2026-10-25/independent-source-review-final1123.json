@@ -1,0 +1,147 @@
+{
+  "schema": "triptych-independent-final-source-union-review/v1",
+  "status": "accepted",
+  "scope": "missal-source-batch",
+  "decision": "ACCEPT_EXACT_FINAL1123_SOURCE_AND_SEPARATELY_ACCEPTED_PUBLICATION_GUARD_TRANSPORT_WITH_ONE_BYTE_PROOF_EOF_EXCEPTION",
+  "reviewed_on": "2026-10-25",
+  "intended_durable_receipt": "workflows/reviews/missal-reader-resume-2026-10-25/source-review-final1123.json",
+  "source_baseline_commit": "6a1fe6e3361fec6d1f011a0ae03a0e47d12fa6cf",
+  "accepted_parent": {
+    "root_receipt": "workflows/reviews/missal-reader-resume-2026-10-25/source-review-final1119.json",
+    "root_receipt_sha256": "8deb4b56f18f4e1f93f553b4bdc05bbef50a0d719727ee074526fe544dfc6e2a",
+    "independent_receipt_sha256": "98e711b460dfd5a340fef93aae5d01cfd3f76f50648570675a50233654354da4",
+    "epoch_sha256": "8e7c1d71925704e35c3e873ff742c9fca6ea44858aa3128ca13a4a31fc613c2d",
+    "source_input_manifest_sha256": "9afec42a11d1495ff18258cb08f83dc9a0915a7ccce25df65a7575d7bdc9f2fc"
+  },
+  "frozen_candidate": {
+    "seal_sha256": "9b27b5d7cc876655bcfc8545ce7c2db270cee7a55cea1bba610bade60c4874e7",
+    "installation_manifest_sha256": "dc17b4714a6e3c6e1f7333797bec45e1b5afbe2b7e1b4af7052886a6524d4080",
+    "installation_paths": 281,
+    "increment_manifest_sha256": "63b7fe8a12eb1db59074bcecf797e7f4744bcd7e58d9a09fa7312f7c5c2bf966",
+    "increment_paths": 19,
+    "source_epoch_sha256": "7eb3e2b5acd21ac37d9132b8a4bc2b3e6465ee4194a61d79d319c87d80b237a2",
+    "source_epoch_paths": 1671,
+    "mode_manifest_sha256": "3c5860d1b22a9666d23b4be3848176136e56f890d61bee569f9bbe2c752784fe",
+    "executed_granular_assembler_sha256": "e3e76285b4e48fb1dd0998b3dc0614bb6ba018de397638c413eba7ad8e10515e",
+    "executed_proof_EOF_normalizer_sha256": "bde0c44a10f0d3a486fbfdb58b132b24dada28824072775f7b56c3266a64b88b"
+  },
+  "approved_source_epoch_sha256": "7eb3e2b5acd21ac37d9132b8a4bc2b3e6465ee4194a61d79d319c87d80b237a2",
+  "source_epoch_paths": 1671,
+  "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+  "source_input_manifest_sha256": "2a9f93dc6edd6005f5ddf91ded3021db6b4401aa39418528b65e070df6036cc1",
+  "source_input_manifest_paths": 1682,
+  "component_acceptances": [
+    {
+      "id": "September-Dolors3-source",
+      "sha256": "3d78784eae6605f80a4cf9eab794c8e9c17978f77768ea04762019d14c6db842",
+      "scope": "Three exact independently read source prayers, actual short cues and explicit Friday referral/context evidence."
+    },
+    {
+      "id": "September-Dolors3-assembled-source",
+      "sha256": "d11aebeaae67da6c7816f8092e2d29ad9ff51b1b249f64bd9b5636f1ee78abc9",
+      "manifest_sha256": "ad171a677223079198dd8af02f07e1e159aa0cf6b097e6aae4110fc0cb547e2d",
+      "paths": 12,
+      "receiving_owners": 3
+    },
+    {
+      "id": "Saturday2-new-one-pair-root-reuse-authority",
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/saturday2-exact-reuse-approval.json",
+      "sha256": "c8973bf6e515b18554dfc8cb95d990603dee471a719c8f032d1bbf1e6afb157b",
+      "scope": "Only the named Maternity-to-Saturday2 complete-canonical-body reuse relation; original finite method unchanged."
+    },
+    {
+      "id": "Saturday2-five-file-receiving-assembly",
+      "sha256": "5be69d1ed967e757b7765d86b8e41fe15fcdcef3926d895dd94ee171c31c4b53",
+      "manifest_sha256": "0206ee3c0477eb7651e4878a7d88057273fde9e4d9c55c66936e0403f376dc4c",
+      "paths": 5,
+      "receiving_owners": 1
+    },
+    {
+      "id": "Public-alpha-RG110-metadata-guard-code",
+      "sha256": "e8e1dae852870e94142236362950dd6815672e371eb73e0b9daec6b38fa6fa2d",
+      "manifest_sha256": "d967eb24b1ed4dced901469bd1f5d9b6fb6ddad7b89640b96591a457e04b016f",
+      "paths": [
+        "tools/public-alpha",
+        "tools/tests/test_rg110_publication.py"
+      ],
+      "scope": "Separately accepted exact two-file publication transport guard; this source-union review verifies its bytes/preimages/modes only."
+    }
+  ],
+  "source_frontier": {
+    "Roman1962_English": {
+      "represented": 1439,
+      "with_English": 1123,
+      "explicit_gaps": 316
+    },
+    "new_receiving_English_owners": 4,
+    "new_Latin_bodies": 0
+  },
+  "preservation": {
+    "all1119_prior_positive_dictionaries_exact": true,
+    "all316_unselected_absence_dictionaries_exact": true,
+    "only_four_documented_English_absence_removals": true,
+    "prior900_accepted_audit_rows_and283_refusals_exact": true,
+    "all_historical_methods_baseline_and_qualifications_exact": true,
+    "all_Latin_body_values_and_all_parsed_Latin_proof_dictionaries_exact": true,
+    "all_old_runtime_rubric_source_and_generated_carrier_bytes_exact": true,
+    "only_explicit_separately_accepted_public_alpha_two_file_code_delta": true,
+    "immutable_parent_prefix_payload_paths_reused_by_same_inodes_or_symlink_targets": 50812,
+    "all281_source_root_and_postimage_modes_verified": true,
+    "all_component_new_source_controllers_and_selected_entry_audit_dictionaries_exact": true,
+    "same11_auxiliary_guard_input_records_exact": true,
+    "normalized1682_manifest_equals_exact1671_epoch_plus11_auxiliary_reads": true
+  },
+  "bounded_format_exception": {
+    "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+    "before_sha256": "4b4a2521c24afbc95868ae71c01966288b6701936bc31c089bc90908cfa2f0b1",
+    "after_sha256": "aafe43ebf3c4a7c5a7a7ab974c19472fe331b936c6d671b110be94f1bad81eb2",
+    "removed_bytes": 1,
+    "after_is_exact_before_without_final_LF": true,
+    "all_parsed_proof_dictionaries_unchanged": true,
+    "only_additional_audit_changes": "Current Latin input snapshot after hash and source-postimage hash/byte metadata; every before hash, history, accepted row, refusal, header and counter remains unchanged.",
+    "producer_equivalence_proof_sha256": "d00aee85e343b0954e4239aeff2e7ee0fe7e9fcbb6452b1a827abe7f0a62e7fd",
+    "independent_equivalence_receipt_sha256": "8e8959d30118d0959531d97f59cf16978eadc69cfcfb57cc56539ce2884d5294",
+    "prior1119_and_first1123_candidate_receipts_preserved_as_historical": true
+  },
+  "receiving_identity_and_source_roles": {
+    "Saturday_complete_Latin_UTF8_bytes": 158,
+    "Saturday_complete_Latin_sha256": "72e13d8a2be0ec58b499d88d06ab51ca6b076746a23046e29f06d6913044a229",
+    "Saturday_received_English_UTF8_bytes": 182,
+    "Saturday_received_English_sha256": "8b4f98aecc0bafde13db0d573a1d1b2049f7ef404a6b8dc3d7cd0168a1defaa1",
+    "new_Saturday_recipient_TSV_and_publication_passage_distinct_from_donor": true,
+    "original_Maternity_historical_verifier_source_locus_and_page_bounds_preserved": true,
+    "donor_positive_dictionary_unchanged": true,
+    "independent_recipient_Latin_proof_unchanged": true,
+    "Lasance_Saturday_appointment_attestation_claimed": false,
+    "finite_comparison_applied_to_Saturday": false,
+    "new_image_inspection_for_Saturday_claimed": false,
+    "literal_short_English_cues_and_all_four_body_identity_publication_validators_pass": true
+  },
+  "historical_body_accounting": {
+    "new_historical_body": 1,
+    "reused_historical_bodies": 3,
+    "receiving_owners": 4,
+    "new_receiving_verifier_IDs": 3,
+    "new_publication_proofs": 4
+  },
+  "legacy_aggregate_accounting": {
+    "semantics": "Existing distinct source-verification-ID and effective-appointment sets; historical counter semantics are retained, not recast as physical source bodies.",
+    "independently_derived": {
+      "new_source_bodies": 876,
+      "new_source_prayers": 826,
+      "new_terminal_owners": 904,
+      "new_effective_appointments": 1035
+    }
+  },
+  "review_evidence_sha256": "e8d931efb1d70db92129be22b9d2deea842d97c728f125fff19f719c7d7b5d1c",
+  "public_reference_disposition": "The exact approved Saturday grant retains two repository-relative recovery evidence handles as intentional historical audit pointers. It is self-contained in complete proof dictionaries, bodies, hashes and closed authority; those pointers are not sole evidence or machine-private paths. Exact approved grant bytes remain unchanged.",
+  "acceptance_limits": [
+    "Exact source composition and separately accepted publication-guard transport only. No new general lexical or grammatical rule, normalization, source-word change, conclusion expansion, response, name substitution or automatic fanout follows.",
+    "This union review adds no primary-image reading, new source rights grant, whole-scan clearance or target-proof confidence upgrade.",
+    "Earlier full source-prefix proof is reused through exact immutable inode/symlink identity; only the changed delta, necessary inventories and control manifests are hashed again. Ignored private build caches are excluded from publication/source payload identity.",
+    "The new receiving accounting is one newly recovered historical body plus three reused historical bodies, four receiving owners, three new receiving verifiers and four publication proofs. It is not four newly discovered human translations.",
+    "Root atomic installation, independently accepted final guard fixture/compiler binding, owner generation/currentness, complete annual/native/TUI/publication/deployment/live verification and maintainer product acceptance remain separate."
+  ],
+  "canonical_writes": 0,
+  "Git_mutations": 0
+}

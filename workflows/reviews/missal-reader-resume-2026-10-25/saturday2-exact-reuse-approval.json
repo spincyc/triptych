@@ -1,0 +1,257 @@
+{
+  "schema": "triptych-approved-one-pair-canonical-body-reuse/v1",
+  "id": "maternity-to-saturday-bvm2-postcommunion-literal-reuse-2026-10-25",
+  "reviewed_on": "2026-10-25",
+  "reviewer_decision": "JUSTIFIED_EXACT_REUSE_EVIDENCE_SUPPORTS_SEPARATE_EXPLICIT_ROOT_APPROVAL",
+  "root_approval_granted_here": true,
+  "English_admission": false,
+  "source_publication_assembly_accepted_here": false,
+  "relation_kind": "full-unmodified-canonical-UTF8-Latin-body-identity",
+  "donor": [
+    "maternitatis-beatae-mariae-virginis",
+    "main",
+    "Postcommunion",
+    "all",
+    1
+  ],
+  "recipient": [
+    "missa-de-s-maria-in-sabbato-2",
+    "main",
+    "Postcommunion",
+    "all",
+    1
+  ],
+  "governing_general_policy": {
+    "path": "guidance/propers-for-agents.md",
+    "locus": "Roman1962 English policy, lines93-96",
+    "requirement": "Reuse requires complete checked target Latin and actual conclusion identity at exact source-owner/occurrence coordinates; incipit, saint, citation or Common name is insufficient."
+  },
+  "candid_scope_judgment": "This is justified as a new explicitly bounded reuse relation after root approval. The accepted donor English is already bound to a complete canonical Latin body. The recipient has the identical whole canonical Latin value and a separate current collated/permitted proof. Reuse adds no linguistic inference. Existing finite-method evidence by itself remains insufficient to authorize this recipient, so no automatic fanout or retroactive expansion is inferred.",
+  "prior_boundary": {
+    "public_finite_method": {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/finite-genitrice-method.json",
+      "sha256": "3966b121b7dd7255d92b2e1a9fc69d6b4e8288caf2758e440fee6f5dc2cbb583"
+    },
+    "root_original_method_sha256": "6579da1896d8fcb7bd116bf758afe1d4d0e2d6023375fc177acaaeceb457c60d",
+    "existing_exclusion": "Cross-owner donor reuse or automatic fanout.",
+    "original_scope_preserved": true
+  },
+  "proposed_root_decision": "APPROVE_EXACT_ONE_PAIR_REUSE_RELATION_ONLY_NO_AUTOMATIC_ADMISSION",
+  "proposed_supersession": "For this donor/recipient pair and the exact body/proof/English/controller hashes below only, this new relation supersedes the old no-cross-owner-reuse barrier as a receiving permission. The original finite method remains unchanged, restricted to its two own-appointment contexts. This relation does not apply that lexical comparison method to Saturday2 and does not relax any other old exclusion, refusal or source boundary.",
+  "complete_canonical_Latin": {
+    "value": "Haec nos communio, Domine, purget a crimine: et, intercedente beata Virgine\nDei Genetrice Maria, caelestis remedii faciat esse consortes. Per eundem\nDominum.\n",
+    "sha256": "72e13d8a2be0ec58b499d88d06ab51ca6b076746a23046e29f06d6913044a229",
+    "bytes": 158,
+    "final_LF": true,
+    "normalization_or_text_transformation": false
+  },
+  "literal_received_English": {
+    "value": "May this communion, O Lord, purge away our guilt and, by the intercession of blessed Mary the Mother of God, make us companions of Him, Who is our heavenly healing. Through the same.",
+    "sha256": "8b4f98aecc0bafde13db0d573a1d1b2049f7ef404a6b8dc3d7cd0168a1defaa1",
+    "bytes": 182,
+    "implicit_LF": false
+  },
+  "donor_positive_dictionary": {
+    "mass": "maternitatis-beatae-mariae-virginis",
+    "form_id": "main",
+    "proper": "Postcommunion",
+    "cycle": "all",
+    "occurrence": 1,
+    "witness": "lasance-1945",
+    "printed_page": "1233-1236",
+    "ia_leaf": 1233,
+    "ia_leaf_range": [
+      1233,
+      1236
+    ],
+    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+    "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-resume-20261025-lexical46-verify-maternitatis-beatae-mariae-virginis--main--postcommunion--all--1",
+    "collated": "Independently checked complete own-source page images, bounded exact lexical/context evidence and own-witness conclusion table where needed, 2026-10-25",
+    "collation_result": "confirmed",
+    "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-resume-20261025-lexical46-fb73370e",
+    "publication_artifact_sha256": "fb73370e5ddba9f574483415183d6b2204baa9cde51e79121b690439a87f5cff",
+    "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-resume-20261025-lexical46-publish-maternitatis-beatae-mariae-virginis--main--postcommunion--all--1",
+    "witness_note": "Own-appointment historical witness. Entire spoken-word sequences and actual endings agree after only the exact recorded comparison pairs. Exact current target UTF8 SHA256 72e13d8a2be0ec58b499d88d06ab51ca6b076746a23046e29f06d6913044a229; original full target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-maternitatis-beatae-mariae-virginis-orations. Exact dated lexical/context proof {\"lexical_differences\": [{\"source\": \"eumdem\", \"target\": \"eundem\", \"method_id\": \"own-appointment-lexically-attested-spelling-2026-10-23\", \"contextual_parse\": {\"lexeme\": \"idem\", \"gender\": \"masculine\", \"case\": \"accusative\", \"number\": \"singular\", \"part_of_speech\": null, \"reviewed_parse_text\": \"masculine accusative singular of idem, modifying Dominum as object of per\"}, \"contextual_parse_evidence\": \"Both complete actual endings explicitly say Per eumdem/eundem Dominum (or the immediately abbreviated Per eumdem); Dominum is masculine accusative singular governed by per. The same Lord referred to in the petition is the Son; no genitive eiusdem is conflated.\", \"lexical_passage_ids\": [\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem\"], \"materialization_binding\": {\"accepted_review_receipt_sha256\": \"1ac890f989e0144d52aae6f59de4c6a7d75f078d298cfed6d169561109d90b0c\", \"original_proof_pointer\": \"/5/exact_lexical_spelling_differences/0\", \"original_proof_value_sha256\": \"d9147debe98087d8e1846bd1de2d446bc19f5375a2d599642bf56516479d69d8\", \"original_parse_proof_pointer\": \"/5/exact_lexical_spelling_differences/0\", \"original_parse_proof_value_sha256\": \"d9147debe98087d8e1846bd1de2d446bc19f5375a2d599642bf56516479d69d8\", \"source_form\": \"eumdem\", \"target_form\": \"eundem\", \"source_parse\": {\"lexeme\": \"idem\", \"gender\": \"masculine\", \"case\": \"accusative\", \"number\": \"singular\", \"part_of_speech\": null, \"reviewed_parse_text\": \"masculine accusative singular of idem, modifying Dominum as object of per\"}, \"target_parse\": {\"lexeme\": \"idem\", \"gender\": \"masculine\", \"case\": \"accusative\", \"number\": \"singular\", \"part_of_speech\": null, \"reviewed_parse_text\": \"masculine accusative singular of idem, modifying Dominum as object of per\"}, \"contextual_parse_evidence\": \"Both complete actual endings explicitly say Per eumdem/eundem Dominum (or the immediately abbreviated Per eumdem); Dominum is masculine accusative singular governed by per. The same Lord referred to in the petition is the Son; no genitive eiusdem is conflated.\", \"lexical_passage_ids\": [\"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem\"], \"parse_materialization_map_sha256\": \"5036c1760cd1d557be7b60d52b0dc60d636830a6fa5b8ad5592554766025e292\", \"map_entry_sha256\": \"d546386bf0ff406286cdcef5745da735033d4e214c8c74e34a9bdfd559f514df\", \"root_approval_sha256\": \"6c128e462a62e203eb6f540a6cbfd0032887c3d0f65420f376d72383aea2b7e2\"}, \"source_word_index_zero_based\": 20, \"target_word_index_zero_based\": 20}], \"orthography_differences\": [{\"source_word_index_zero_based\": 12, \"target_word_index_zero_based\": 12, \"source\": \"genitrice\", \"target\": \"genetrice\", \"finite_context_method\": {\"method_id\": \"own-appointment-genitrice-genetrice-two-targets-2026-10-25\", \"method_date\": \"2026-10-25\", \"root_method_sha256\": \"6579da1896d8fcb7bd116bf758afe1d4d0e2d6023375fc177acaaeceb457c60d\", \"particular_form\": {\"lexeme\": \"genetrix/genitrix\", \"case\": \"ablative\", \"number\": \"singular\", \"gender\": \"feminine\"}, \"source_passage_fingerprints\": {\"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.genitrice-genetrice-source-identity\": \"sha256:5ad9dba02d80c8077a6002c3679ee81cfd47b6312d8846889764cbd82f7666fd\", \"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.genitrice-genetrice-orthographical-reservation\": \"sha256:84b34a66df770ffa211c08f012153b368a0ac604d9e64fc7693a9faf9eec09d7\", \"passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.genitrice-genetrice-lemma-identity\": \"sha256:97b0c74d522c0401ae7d2bf1de549beea0174e89741434b8a11f65279758ae39\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.genitrice-genetrice-source-identity\": \"sha256:0cc405343bb0c76347f1350cbf005476800fa9887a4122f0de8a93c96a0f1a4a\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.genitrice-genetrice-third-declension-ablative\": \"sha256:4cea34d5b72cf71e50aa468b3e927e54acd7ffada0ec8885a64d81691268faca\", \"passage.joseph-henry-allen.new-latin-grammar.ginn-1903.genitrice-genetrice-virgine-case-reference\": \"sha256:b793f0fcabd78f9d0c16ce8948a09611ddff50725ae892ae027d9a157f8536eb\"}, \"printed_ablative_in_dictionary\": false, \"finite_grammatical_inference\": \"For the two named dictionary spellings only, the -icis genitive and feminine mute-stem paradigm yield Genitrice and Genetrice, with the same -e ablative ending. This statement is an explicitly reviewed grammatical inference, not a transcription of an ablative printed in the lexicon and not permission to generate any other form.\", \"dictionary_qualifications\": [\"The main entry marks genitrix less frequent.\", \"The Orthographical Index prints genetivus, genetrix, not genitivus, genitrix.\", \"The index introduction acknowledges variation and disagreements, referring readers to the Lexicon.\"], \"general_stem_folding_or_case_closure\": false, \"full_prayer_position_zero_based\": 12, \"source_contextual_parse\": \"Feminine ablative singular of genitrix; appositional to Virgine Maria in intercedente beata Virgine Dei Genitrice Maria.\", \"target_contextual_parse\": \"Feminine ablative singular of genetrix; appositional to Virgine Maria in intercedente beata Virgine Dei Genetrice Maria.\", \"case_binding_basis\": \"Actual full Latin context is retained verbatim above; the pre-existing independent source/context reviews remain external decisions. Intercedente beata Virgine Maria is an ablative absolute; Dei is genitive dependent on the feminine title. The title has the same case, number, gender and referent, and is not the prayer addressee.\"}, \"received_declaration_count\": 2, \"original_proof_value_sha256\": \"b7b973552a787074ba0804d9c90e82e0e8cd70e04c5866c04a3242b45cfe88dc\"}, {\"source_word_index_zero_based\": 14, \"target_word_index_zero_based\": 14, \"source\": \"coelestis\", \"target\": \"caelestis\", \"received_declaration_count\": 2, \"original_proof_value_sha256\": \"44b56db4c3efdc147ca514749cfc0a453044ade7b1fcaaf22936d8702bfc0204\"}], \"orthography_raw_evidence_declarations\": 4, \"orthography_unique_word_changes\": 2, \"subroute\": \"strict\", \"donor_fanout\": false}. Received English and short cue retained literally; no normalized donor lookup, source/target emendation, name substitution, new translation or added response.",
+    "translations": [
+      {
+        "lang": "en",
+        "rights": "public-domain",
+        "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+        "text": "May this communion, O Lord, purge away our guilt and, by the intercession of blessed Mary the Mother of God, make us companions of Him, Who is our heavenly healing. Through the same."
+      }
+    ]
+  },
+  "donor_positive_dictionary_sha256": "ed2c4b0e89ace8dabbd864442a2c5f1d7e171fbe6a9a4e263d1afa1588c3232e",
+  "recipient_current_absence_dictionary": {
+    "mass": "missa-de-s-maria-in-sabbato-2",
+    "form_id": "main",
+    "proper": "Postcommunion",
+    "cycle": "all",
+    "occurrence": 1,
+    "lang": "en",
+    "extent": "body",
+    "availability": "unavailable",
+    "reason": {
+      "kind": "no-exemplar"
+    },
+    "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+  },
+  "recipient_current_absence_dictionary_sha256": "ac1dd8588a6826ec2d0296419c2531eb7d6113a5225b2aa8272814371e762966",
+  "donor_full_current_Latin_proof": {
+    "provenance_status": "collated",
+    "publication_status": "permitted",
+    "publication_basis": "public-domain",
+    "surfaces": [
+      "web",
+      "download",
+      "print",
+      "cli",
+      "corpus-data",
+      "public-git"
+    ],
+    "mass": "maternitatis-beatae-mariae-virginis",
+    "form": "",
+    "proper": "Postcommunion",
+    "course": "",
+    "cycle": "",
+    "occurrence": 1,
+    "text_sha256": "72e13d8a2be0ec58b499d88d06ab51ca6b076746a23046e29f06d6913044a229",
+    "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.maternitatis-beatae-mariae-virginis-postcommunion",
+    "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+    "locator": "editorial-projection artifact physical lines 140-142; antecedent 1922 Tours Mame, printed p. 36; artifact PDF p. 150; text-layer lines 64-69 of that page",
+    "relationship": "editorial-projection-exact-to-target",
+    "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-maternitatis-beatae-mariae-virginis-orations",
+    "verification_locator": "printed p. 686, no. 3857; artifact PDF p. 767",
+    "transformations": [
+      "join printed line wraps",
+      "remove stress accents",
+      "expand printed ae/oe ligatures to ae/oe",
+      "normalise consonantal i to the calendar's j orthography",
+      "apply the target printing's punctuation",
+      "carry the target's conclusion at its printed length"
+    ],
+    "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Haec\"; 1922 Tours Mame reads \"Zc\" (edit distance 2); token 12: 1962 prints \"Genetrice\"; 1922 Tours Mame reads \"Genitrice\" (edit distance 1); token 20: 1962 prints \"eundem\"; 1922 Tours Mame reads \"eumdem\" (edit distance 1, conclusion); 1922 Mame prints Genitrice where the 1962 prints Genetrice; 1922 Mame sets the conclusion in parentheses. Corroboration: 1862 Pustet Ratisbon text-layer lines 16671-16684: 15 of 22 tokens identical after normalisation (n-gram similarity 0.68); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.44, which is noise).",
+    "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+    "provenance_confidence": "high",
+    "publication_source_ids": [
+      "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+      "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+    ],
+    "publication_locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 36; artifact PDF p. 150; text-layer lines 64-69 of that page; artifact rights_status public-domain",
+    "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+  },
+  "donor_full_current_Latin_proof_sha256": "870f90775e84ee5389e59440d75e3d3326ac45df213b96f070bd13672cd369d6",
+  "recipient_full_current_Latin_proof": {
+    "provenance_status": "collated",
+    "publication_status": "permitted",
+    "publication_basis": "public-domain",
+    "surfaces": [
+      "web",
+      "download",
+      "print",
+      "cli",
+      "corpus-data",
+      "public-git"
+    ],
+    "mass": "missa-de-s-maria-in-sabbato-2",
+    "form": "",
+    "proper": "Postcommunion",
+    "course": "",
+    "cycle": "",
+    "occurrence": 1,
+    "text_sha256": "72e13d8a2be0ec58b499d88d06ab51ca6b076746a23046e29f06d6913044a229",
+    "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-2-postcommunion",
+    "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+    "locator": "editorial-projection artifact physical lines 180-182; antecedent printed p. 40 (nearest printed-folio marker in the text layer; the layer places these markers mid-page, so the folio is +/-1); text-layer lines 17813-17817; elsewhere in the book",
+    "relationship": "editorial-projection-exact-to-target",
+    "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-missa-de-s-maria-in-sabbato-2-orations",
+    "verification_locator": "printed p. [45], no. 4509; artifact PDF p. 853",
+    "transformations": [
+      "join printed line wraps",
+      "remove stress accents",
+      "expand printed ae/oe ligatures to ae/oe",
+      "normalise consonantal i to the calendar's j orthography",
+      "apply the target printing's punctuation",
+      "carry the target's conclusion at its printed length"
+    ],
+    "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: the 1862 opening word carried by an ornamental initial; the scan's recogniser loses it (target opens hec); recogniser damage, same word: target reads domine, the 1862 layer reads d mii ne; recogniser damage, same word: target reads intercedente beata, the 1862 layer reads interceente edta; recogniser damage, same word: target reads genetrice, the 1862 layer reads genitrice; recogniser damage, same word: target reads consortes, the 1862 layer reads cons rtes; conclusion length: the 1862 prints the short printed cue where the 1962 writes the conclusion out. Corroboration: 1922 Mame, artifact PDF p. 1051 (column-correct raw text extraction); reading: ZC nos communio, Domine, purget a crimine : et, intercedénte beata Virgine Dei Genitrice Maria, celéstis remédii faciat esse consortes. Per eumdem Dominum.",
+    "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+    "provenance_confidence": "high",
+    "publication_source_ids": [
+      "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commons-2-orations-8f0f1a33",
+      "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+    ],
+    "publication_locator": "Pustet Ratisbon 1862, printed p. 40 (nearest printed-folio marker in the text layer; the layer places these markers mid-page, so the folio is +/-1); text-layer lines 17813-17817; elsewhere in the book; artifact rights_status public-domain on a book first published in 1862",
+    "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+  },
+  "recipient_full_current_Latin_proof_sha256": "4142c2057379a8e3610a73a4c0a14977aa5bb52b8d13e5ca187afbc5ffe0a35f",
+  "donor_source_record_pins": [
+    {
+      "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "record_type": "artifact",
+      "record_dictionary_sha256": "04b4a8bd8d62d7f636a6b9372323c6574f1b224dd16ac8519d3b2e7818674d8c"
+    },
+    {
+      "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-resume-20261025-lexical46-verify-maternitatis-beatae-mariae-virginis--main--postcommunion--all--1",
+      "record_type": "passage",
+      "record_dictionary_sha256": "d973c6813b85844fba5f82bef5b280fe970c7bfade8e5e7bd597ba2fcb424dac"
+    },
+    {
+      "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-resume-20261025-lexical46-fb73370e",
+      "record_type": "artifact",
+      "record_dictionary_sha256": "49007e76fe6b3a0069974a0d4752128cd209eb2d07c5eef00e26718650105605"
+    },
+    {
+      "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-lexical-resume-20261025-lexical46-publish-maternitatis-beatae-mariae-virginis--main--postcommunion--all--1",
+      "record_type": "passage",
+      "record_dictionary_sha256": "95a866b6b0ea4a63dd5500bc8e7bc235b8c5106c6671236441153d7686441604"
+    }
+  ],
+  "separate_donor_English_acceptance": {
+    "path": ".scratch/resume-20261025-lexical-review/full46-v1/acceptance46.json",
+    "sha256": "dc6e12339ab8cea5f38f0e23101cbe9b3ae7e0b8e10e9d89c9f1820cea166230",
+    "scope": "Only prior accepted own-Maternity source/English/publication dictionary; no Saturday2 admission in that old receipt."
+  },
+  "required_receiving_binding": [
+    "Retain donor English exactly182UTF8bytes with hash8b4f98aecc0bafde13db0d573a1d1b2049f7ef404a6b8dc3d7cd0168a1defaa1; do not add LF, expand Through the same., add a response, change punctuation or create a new translation.",
+    "Keep both complete canonical Latin values exactly158UTF8bytes with hash72e13d8a2be0ec58b499d88d06ab51ca6b076746a23046e29f06d6913044a229, including every codepoint, punctuation mark, physical wrap, conclusion and final LF. No normalization or shortened comparison.",
+    "Keep the donor positive row/source comparison and the full independent recipient Latin proof unchanged; rejoin their exact complete current dictionaries at assembly time.",
+    "Give Saturday2 its own recipient-addressed publication TSV row/artifact/passage and translation entry; the old donor-addressed TSV row is not a recipient publication binding.",
+    "Retain the existing Maternity historical English verification passage and original source page bounds as the actual evidence, or provide an equally honest source-qualified wrapper that claims no fresh image inspection. Explain that the English is reused from Maternity only through literal canonical-body identity.",
+    "Do not claim Lasance printed, prescribed or attested Saturday2 or this recipient appointment. Retain Lasance/Walsh1945 original-expression identity, actual Oct11 Maternity context and existing rights/publication limitations.",
+    "Append a new dated receiving/reuse audit disposition with exact donor/recipient/hash/reference pins; preserve all original source methods, original refusals and the dated old no-reuse exclusion.",
+    "Count one newly represented receiving English owner only after assembly/adoption; do not claim a new human source translation, new image inspection or new source language body. Derive source-controller and effective-appointment counters from actual owner sets.",
+    "Fresh independent source/publication/sidecar/absence/audit assembled acceptance and owning publication-binding validation must pass before canonical admission. A changed identity, body, ending, English value, proof dictionary or source controller requires a new review."
+  ],
+  "permitted_delta_after_root_grant": "Exactly one receiving English binding at Saturday2/main/Postcommunion/all/1, plus its honest source-publication carriers and current audit/accounting joins; donor remains exact. No other automatic fanout.",
+  "negative_controls_required": [
+    "Any Latin word, ending, wrap, Unicode or final-LF change refuses the relation.",
+    "Wrong donor/recipient/form/cycle/occurrence refuses.",
+    "Stale/missing recipient proof or stale donor publication controller refuses.",
+    "Donor-addressed TSV reused as recipient binding refuses.",
+    "Changed English body or expanded short cue refuses."
+  ],
+  "review_evidence": {
+    "path": ".scratch/resume-20261025-saturday2-reuse-review/independent-pair-replay.json",
+    "sha256": "473f107a77222b1a29c3708c23fb9996490cfcaea7cd3b730051c19ce0241e50"
+  },
+  "observed_current_inputs": {
+    "tools/mass-propers": "2f65d5d164c36f614c125a66254a1fd5eb3064b60809a654618d7380c02faaf2",
+    "scripts/_calendars.py": "c2ec47e2001a219429ca879165d56202a0cd587b00c36f3abe18a6a4dec593ef",
+    "src/sources/calendars/roman-1962/propers.yaml": "ef47c63c9528a99f2e5b70bd849f0014f8bbddfc1a8af116d77e500e08c0f9bf",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "4b4a2521c24afbc95868ae71c01966288b6701936bc31c089bc90908cfa2f0b1",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "60e40d0e4d01857a1836d9f476afede8a8addecea40fb18e67063994dc6c4239",
+    "workflows/reviews/missal-reader-resume-2026-10-25/finite-genitrice-method.json": "3966b121b7dd7255d92b2e1a9fc69d6b4e8288caf2758e440fee6f5dc2cbb583"
+  },
+  "limitations": [
+    "No new source-image reading or acquisition by this reviewer.",
+    "No new lexical pair, grammatical form, case, stem closure, normalized donor lookup, English word, response, conclusion family or expanded ending is authorized.",
+    "Current donor English publication validator and both independent Latin permissions pass; these existing rights are not broadened to an entire scan or edition.",
+    "Source/publication assembly, global owner generation, annual/native/publication/deployment and maintainer product acceptance remain separate."
+  ],
+  "root_approved_on": "2026-10-25",
+  "root_decision": "APPROVE_EXACT_ONE_PAIR_REUSE_RELATION_ONLY_NO_AUTOMATIC_ADMISSION",
+  "decision": "APPROVE_EXACT_ONE_PAIR_REUSE_RELATION_ONLY_NO_AUTOMATIC_ADMISSION",
+  "root_supersession": "For this donor/recipient pair and the exact body/proof/English/controller hashes below only, this new relation supersedes the old no-cross-owner-reuse barrier as a receiving permission. The original finite method remains unchanged, restricted to its two own-appointment contexts. This relation does not apply that lexical comparison method to Saturday2 and does not relax any other old exclusion, refusal or source boundary.",
+  "independent_proposal_sha256": "8076190cf8430c3a9b1fde5d613dda9f6b5c2338050ad01ccf987c5aa1b2c4fe"
+}

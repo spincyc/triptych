@@ -1989,6 +1989,11 @@
         });
       } else {
         properEvents.push(event);
+        (event.orationGroups || []).forEach(function (group) {
+          (group.members || []).forEach(function (member) {
+            if (member.id !== event.id) properEvents.push(member);
+          });
+        });
       }
     });
     properEvents.forEach(function (event) {
@@ -2112,7 +2117,9 @@
         mass: mass, formId: formSelection.id || 'main'
       }}
     );
-    const events = seated.events;
+    const events = withOrationGroups(
+      seated.events, branch, readable, mass, adaptedRequest, input.structure
+    );
     assertExplicitWitnesses(events, adaptedRequest, input.structure);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, standing: readable.state
@@ -2151,6 +2158,65 @@
       ),
       ordinaryUnresolved: seated.ordinaryUnresolved
     };
+  }
+
+  /**
+   * Keep a counted oration as one semantic slot while retaining both exact
+   * source owners. The frame seats that slot once; its ordered members follow
+   * within it. A selected raw/displaced formulary never acquires this Day use.
+   */
+  function withOrationGroups(events, branch, readable, mass, request, structure) {
+    if (!branch.settled || readable.state !== 'said') return events;
+    const series = branch.orations && (branch.orations.all || branch.orations.low_mass) || [];
+    const groups = series.filter(function (one) { return one.group === 'inseparable'; });
+    if (!groups.length) return events;
+    groups.forEach(function (group) {
+      (group.slots || []).forEach(function (slot) {
+        if (events.filter(function (event) {
+          return event.kind === 'proper' && event.editionSlotLabel === slot;
+        }).length !== 1) {
+          throw new Error('inseparable group lacks a unique principal source slot: ' + slot);
+        }
+      });
+    });
+    return events.map(function (event) {
+      if (event.kind !== 'proper') return event;
+      const applicable = groups.filter(function (group) {
+        return group.slots.indexOf(event.editionSlotLabel) >= 0;
+      });
+      if (!applicable.length) return event;
+      const attached = applicable.map(function (group) {
+        if (group.count !== 1 || !Array.isArray(group.members) || group.members.length !== 2) {
+          throw new Error('invalid counted inseparable oration group');
+        }
+        return {
+          kind: 'inseparable', count: group.count, position: group.position,
+          conclusion: group.conclusion, locus: group.group_locus,
+          members: group.members.map(function (member) {
+            const owner = (structure.masses || []).find(function (one) { return one.key === member.of; });
+            const matching = owner && (owner.propers || []).map(function (proper, index) {
+              return {proper: proper, index: index};
+            }).filter(function (row) {
+              return row.proper.name === event.editionSlotLabel && row.proper.form_id === 'main';
+            });
+            if (!matching || matching.length !== 1) {
+              throw new Error('inseparable oration lacks an exact source-owned slot: ' + member.of);
+            }
+            const row = matching[0];
+            const projected = projectProper(row.proper, row.index, owner, request, structure,
+              'day', event.seat, event.semanticSlot);
+            projected.of_name = member.of_name;
+            return projected;
+          })
+        };
+      });
+      return Object.assign({}, event, {orationGroups: attached,
+        sourceHooks: uniqueSourceHooks([event].concat(attached.flatMap(function (group) {
+          return group.members;
+        }))).concat(attached.map(function (group) {
+          return {kind: 'locus', id: group.locus};
+        }))});
+    });
   }
 
   function adaptPropers(input) {
@@ -2217,7 +2283,27 @@
         appointments: formularyAppointments(mass, formSelection.form, null)
       }), {conditionFacts: input.conditionFacts}
     );
-    const events = seated.events;
+    const relation = mass.oration_relation;
+    if (relation && (Object.keys(relation).sort().join(',') !== 'companion,host,locus,scope,slots' ||
+        relation.scope !== 'dated-mass-of-office' ||
+        typeof relation.host !== 'string' || !relation.host ||
+        typeof relation.companion !== 'string' || !relation.companion ||
+        typeof relation.locus !== 'string' || !relation.locus ||
+        [relation.host, relation.companion].indexOf(mass.key) < 0 ||
+        relation.host === relation.companion ||
+        ![relation.host, relation.companion].every(function (key) {
+          return (input.structure.masses || []).some(function (one) { return one.key === key; });
+        }) ||
+        JSON.stringify(relation.slots) !== JSON.stringify(['Collect', 'Secret', 'Postcommunion']))) {
+      throw new Error('invalid source-qualified inseparable oration relation');
+    }
+    const events = relation ? seated.events.map(function (event) {
+      if (event.kind !== 'proper' || relation.slots.indexOf(event.editionSlotLabel) < 0) return event;
+      return Object.assign({}, event, {orationContext: {
+        kind: 'inseparable-use-context-unresolved', relation: relation,
+        reason: 'date-independent-propers-does-not-establish-mass-of-office'
+      }});
+    }) : seated.events;
     assertExplicitWitnesses(events, request, input.structure);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, type: mass.kind || null
@@ -2235,13 +2321,17 @@
       coverage: coverageFor(
         input.structure, mass, seated.prepared.activeRows.map(function (row) { return row.proper; }),
         request, ordinary, events, seated.ordinaryUnresolved, formSelection.form, seated.prepared.unresolved.concat(seated.prepared.sourcePathUnresolved)
-      ),
+      ).concat(relation ? [Contract.coverage('unsupported', 'inseparable-oration-assembly', null,
+        [{kind: 'unsupported-object', basis: 'mass-of-office-use-context-not-established'}])] : []),
       explicitAbsences: [{
         kind: 'explicit-semantic-absence',
         scope: 'civil-date-and-calendar-result',
         repositoryTerm: 'semantic-absence',
         reason: 'propers-entrance-is-date-independent'
-      }].concat(claimLocalCollectAbsences(mass, request, formSelection.form)),
+      }].concat(relation ? [{kind: 'explicit-semantic-absence', scope: 'inseparable-oration-assembly',
+        repositoryTerm: 'unresolved', reason: 'mass-of-office-use-context-not-established',
+        sourceHooks: [{kind: 'locus', id: relation.locus}], relation: relation}] : [],
+        claimLocalCollectAbsences(mass, request, formSelection.form)),
       unresolvedChoices: (request.unresolvedChoices || []).concat(
         unresolvedCommonSetChoices(input.structure, mass, request),
         appointmentChoices(seated.prepared, mass, request, input.structure),

@@ -28007,19 +28007,7 @@ sections:
       kind: marian
       ordinary_appointments:
         preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 739 / printed p. 658, raw page-local line 23; Praefatio de beata Mafia Vifg. Et te in; expected-target row roman-1962:sanctoral-form:p737-l2:preface:p739-l23"}
-      notes: >-
-        Only the scripture-bearing propers and the Sequence are recorded; the orations the
-        Missal prints for this day are appointed and not transcribed here. Identity, rank
-        and the printed citations were read on 2026-08-01 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 656 (digital p. 737),
-        not from the facsimile images, and nothing but the Sequence has been visually
-        collated. The Sequence was added on 2026-08-02 off the page images and carries its
-        own witness note.
-        This is not the Mass of the Friday after Passion Sunday, which the Missal prints
-        whole and separately at pp. 499-501 and which this file carries as
-        comm-septem-dolorum-beatae-mariae-virginis. Seven of the two days' propers agree
-        word for word; the Collect, the chant after the Lesson, the Sequence and the Credo
-        do not, and that entry's notes set out the differences.
+      notes: "The three normal feast orations are now recorded from complete 1962 target page images, independently compared against complete lawful historical prayers and conclusion evidence on 23 October 2026. The former source record carried only the scripture-bearing propers and the Sequence, with the orations appointed but unavailable. Its identity, rank and printed citations had been read on 2026-08-01 from the embedded text layer at printed p. 656 (digital p. 737); the Sequence was separately added on 2026-08-02 from page images and retains its own proof. The present collation adds only Collect, Secret and Postcommunion at units 3616, 3627 and 3630; the distinct votive Collect, Nicomedes prayers and other composed chants are not added. This is not the Friday-after-Passion-Sunday Mass. Its Collect differs in the complete middle clause; its chant, Sequence and Credo differences remain as recorded in that separate entry. September and Friday Secret/Postcommunion were freshly compared in full, including exact endings and person. No takes_from relation or calendar rule is introduced."
       propers:
       - name: Introit
         source: scripture
@@ -28043,16 +28031,14 @@ sections:
           normal feast Mass appointment, checked on the page image. The printed numeric reference is retained without
           substituting a Bible for the Missal wording.
       - name: Collect
+        incipit: "Deus, in cujus passione"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 737, printed page 656, numbered unit 3616;
-          normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source
-          record.
+        notes: "Missale Romanum 1962, 15 September normal feast Collect, printed p. 656, PDF p. 737, unit 3616. Complete target read at 200/400 dpi on 23 October 2026; independently witnessed whole historical petition and contiguous conclusion prefix are recorded in the separate Latin-provenance row. Only the actual printed target conclusion through in unitate is retained."
+        text: |
+          Deus, in cujus passione, secundum Simeonis prophetiam, dulcissimam animam
+          gloriosae Virginis et Matris Mariae doloris gladius pertransivit: concede
+          propitius; ut, qui dolores ejus venerando recolimus, passionis tuae effectum
+          felicem consequamur: Qui vivis et regnas cum Deo Patre in unitate.
       - name: Lesson
         source: scripture
         verses:
@@ -28184,16 +28170,15 @@ sections:
           - kind: witness-gap
             source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
       - name: Secret
+        incipit: "Offerimus tibi preces et hostias"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 739, printed page 658, numbered unit 3627;
-          normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source
-          record.
+        notes: "Missale Romanum 1962, 15 September normal feast Secret, printed p. 658, PDF p. 739, unit 3627. Complete target read at 200/400 dpi on 23 October 2026; independently witnessed whole historical petition and contiguous conclusion prefix are recorded in the separate Latin-provenance row. Only the actual printed target conclusion through in unitate is retained."
+        text: |
+          Offerimus tibi preces et hostias, Domine Jesu Christe, humiliter
+          supplicantes: ut, qui Transfixionem dulcissimi spiritus beatae Mariae Matris
+          tuae precibus recensemus; suo suorumque sub Cruce Sanctorum consortium
+          multiplicato piissimo interventu, meritis mortis tuae, meritum cum beatis
+          habeamus: Qui vivis et regnas cum Deo Patre in unitate.
       - name: Communion
         source: composed
         text_status:
@@ -28206,16 +28191,13 @@ sections:
           normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source
           record.
       - name: Postcommunion
+        incipit: "Sacrificia, quae sumpsimus"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 739, printed page 658, numbered unit 3630;
-          normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source
-          record.
+        notes: "Missale Romanum 1962, 15 September normal feast Postcommunion, printed p. 658, PDF p. 739, unit 3630. Complete target read at 200/400 dpi on 23 October 2026; independently witnessed whole historical petition and contiguous conclusion prefix are recorded in the separate Latin-provenance row. Only the actual printed target conclusion through in unitate is retained."
+        text: |
+          Sacrificia, quae sumpsimus, Domine Jesu Christe, Transfixionem Matris tuae
+          et Virginis devote celebrantes: nobis impetrent apud clementiam tuam omnis
+          boni salutaris effectum: Qui vivis et regnas cum Deo Patre in unitate.
     - key: comm-beatae-mariae-virginis-a-mercede
       name: Comm. Beatae Mariae Virginis a Mercede
       registry: '1962-09-24'
@@ -36379,7 +36361,7 @@ sections:
           when:
             fact: "roman-1962-common-chant-regime"
             in: ["tract"]
-      - name: "Offertory (Tempore paschali)"
+      - name: "Offertory"
         source: "mixed"
         verses:
         - book: "Job"
@@ -42945,17 +42927,9 @@ sections:
             source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
       - name: Secret
         source: composed
-        notes: >-
-          Direct named appointment, printed p. 552, no. 2777, marked P;
-          artifact PDF p. 633. Classification P describes the source origin,
-          not the speaker or permission to publish its wording. See
-          src/sources/inventories/roman-1962-named-oration-appointment-collation-v1.toml.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: |
+          Praesens oblatio fiat, Domine, populo tuo salutaris: pro quo dignatus es Patri tuo te viventem hostiam immolare: Qui cum eodem Deo Patre et Spiritu Sancto vivis et regnas Deus, per omnia saecula saeculorum.
+        notes: "Missale Romanum1962 original PDF633, printed 552, numbered unit 2777, left top; own named appointment. Complete Latin independently corroborated by Pustet Ratisbon1862 original PDF544,545, printed 458–459; named June13 heading on PDF544 right; complete Secret PDF545 left upper middle. All prayer words and the complete printed conclusion are identical; target changes the stop after immolare to a colon, removes the comma after Patre and capitalizes Sancto. No doctrinal title, person or prayer word is added. P classifies source origin, not permission."
       - name: Postcommunion
         source: composed
         notes: >-
@@ -42979,6 +42953,10 @@ sections:
         appointments with typed unavailable wording. No Common prayer body is
         silently substituted for either printed own prayer. The appointment
         collation makes no new wording, translation, or rights determination.
+        2026-10-23 availability supersession: Secret 2777 now carries a complete Latin body
+        corroborated by the Pustet Ratisbon 1862 prayer; its earlier typed-unavailable description
+        above is historical. Postcommunion 2778 remains a named appointment with typed unavailable
+        wording.
       takes_from:
         mass: commune-doctorum-non-pontificis
         citation: Missa In medio, de Communi Doctorum [22], cum orationibus ut
@@ -44729,11 +44707,14 @@ sections:
           ref: Psalms 138:1-2
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+        notes: >-
+          Complete own June30 primary prayer, image-collated at1962 PDF652/printed571,n2923.
+          Independently witnessed in complete Pustet1862 and Mame1922 June30 prayers;
+          authentic target has no individual conclusion before the separate Peter commemoration.
+        text: |
+          Deus, qui multitudinem gentium beati Pauli Apostoli praedicatione docuisti:
+          da nobis, quaesumus; ut, cujus natalicia colimus, ejus apud te patrocinia
+          sentiamus.
       - name: Epistle
         source: scripture
         verses:
@@ -44800,11 +44781,13 @@ sections:
           ref: Psalms 138:17
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+        notes: >-
+          Complete own June30 primary prayer, image-collated at1962 PDF653/printed572,n2932.
+          Independently witnessed in complete Pustet1862 and Mame1922 June30 prayers;
+          authentic target has no individual conclusion before the separate Peter commemoration.
+        text: |
+          Apostoli tui Pauli precibus, Domine, plebis tuae dona sanctifica: ut, quae
+          tibi tuo grata sunt instituto, gratiora fiant patrocinio supplicantis.
       - name: Communion
         source: scripture
         verses:
@@ -44825,20 +44808,15 @@ sections:
           ref: Matthew 19:28,29
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
-      notes: 'Read on 2026-08-08 from the embedded text layer of the CMAA facsimile of the controlling edition, at this
-        day''s own heading, and nothing has been visually collated. Only the printed scripture citations are recorded:
-        the facsimile sets each oration under a drop capital that the text layer renders as wreckage, so the orations
-        the Missal prints here are appointed and not transcribed. Every citation was re-parsed against the repository''s
-        own canonical book list before it was written. Appointment collation, 2026-10-20: artifact pp.652-653/printed571-572
-        appoint ownCollect2923, Alleluia2927, Secret2932 and Postcommunion2935, whose exact wording remains unavailable
-        here. The three Pro S.Petro units2924/2933/2936 belong to the separately indexed commemoration. VotiveTract2928
-        and the following Paschal2929 paragraph remain outside this normal form; no season alone establishes that votive
-        eligibility.'
+        notes: >-
+          Complete own June30 primary prayer, image-collated at1962 PDF653/printed572,n2935.
+          Independently witnessed in complete Pustet1862 and Mame1922 June30 prayers;
+          authentic target has no individual conclusion before the separate Peter commemoration.
+        text: |
+          Perceptis, Domine, sacramentis: beato Paulo Apostolo tuo interveniente,
+          deprecamur; ut, quae pro illius celebrata sunt gloria, nobis proficiant ad
+          medelam.
+      notes: "Historical index/appointment notes retained verbatim: Read on 2026-08-08 from the embedded text layer of the CMAA facsimile of the controlling edition, at this day's own heading, and nothing has been visually collated. Only the printed scripture citations are recorded: the facsimile sets each oration under a drop capital that the text layer renders as wreckage, so the orations the Missal prints here are appointed and not transcribed. Every citation was re-parsed against the repository's own canonical book list before it was written. Appointment collation, 2026-10-20: artifact pp.652-653/printed571-572 appoint ownCollect2923, Alleluia2927, Secret2932 and Postcommunion2935, whose exact wording remains unavailable here. The three Pro S.Petro units2924/2933/2936 belong to the separately indexed commemoration. VotiveTract2928 and the following Paschal2929 paragraph remain outside this normal form; no season alone establishes that votive eligibility. Fresh whole-prayer collation,2026-10-23: only the three primary Paul bodies2923/2932/2935 are now held from complete1962 images and independent complete1862/1922 June30 witnesses. Each authentic target paragraph has no individual conclusion before the separately indexed Peter prayer. Alleluia2927 remains unavailable; no sung body, separate ProS.Petro unit, votiveTract2928 or Paschal2929 body/eligibility is newly admitted. No shared-conclusion assembly behavior is changed."
     - key: comm-s-petri-apostoli-2
       name: Comm. S. Petri Apostoli
       registry: '1962-06-30-comm'
@@ -50295,24 +50273,14 @@ sections:
           adversantia vincamus. Per Dominum.
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: 'Source-established own appointment: Missale Romanum 1962, printed p. 632, marginal no. 3421. Exact body
-          wording is not supplied here.'
+        text: |
+          Illo nos amoris igne, quaesumus, Domine, haec hostia salutaris inflammet: quo beatae Joannae Franciscae cor vehementer incendit, et flammis adussit aeternae caritatis. Per Dominum.
+        notes: "Missale Romanum1962 original PDF713, printed 632, numbered unit 3421, right bottom; own named appointment. Complete Latin independently corroborated by Pustet Ratisbon1862 original PDF885,886, printed xxv–xxvi; named August21 Visitation-convent heading PDF885 left lower; complete Secret PDF886 left middle. The complete Mame1922 prayer and actual Per Dominum ending match. Pustet1862 independently corroborates the entire petition, with different pointing and an additional terminal nostrum. Target Ioannae is the same name in i/j orthography, projected as Joannae. No person or prayer word is adapted. P classifies source origin, not permission."
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: 'Source-established own appointment: Missale Romanum 1962, printed p. 633, marginal no. 3422. Exact body
-          wording is not supplied here.'
+        text: |
+          Spiritum nobis, Domine, tuae caritatis infunde: ut, quos caelestis panis virtute satiasti, beata Joanna Francisca intercedente, facias terrena despicere, et te solum Deum pura mente sectari. Per Dominum nostrum ... in unitate ejusdem.
+        notes: "Missale Romanum1962 original PDF714, printed 633, numbered unit 3422, left top; own named appointment. Complete Latin independently corroborated by Pustet Ratisbon1862 original PDF885,886, printed xxv–xxvi; named August21 Visitation-convent heading PDF885 left lower; complete Postcommunion PDF886 left bottom. Entire named petition identical. Mame1922 same proper explicitly prints Per Dominum... in unitate ejusdem.; its IX17 expressly supplies Per Dominum nostrum and In unitate ejusdem Spiritus Sancti. Pustet1862 same named proper independently prints Per Dominum nostrum. Only the word nostrum within this explicit historical cue is restored; the actual target ellipsis and stop after ejusdem are retained. No omitted intervening or terminal words are expanded. Target Ioanna/eiusdem to Joanna/ejusdem and historical coelestis to target caelestis are declared spelling only. No person or prayer word is adapted. P classifies source origin, not permission."
       notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry carries the directive
         rather than a copy. Read on 2026-08-08 from the embedded text layer of the CMAA facsimile at the day''s own heading,
         joined to the Common by the BRACKETED NUMBER the Missal itself prints -- Commune non Virginum, Missa II: Cognovi,
@@ -50327,7 +50295,11 @@ sections:
         the Pustet Ratisbon 1862 printing the source library already tracks as public domain, and not from any optical
         text layer -- that printing''s own OCR corrupts roughly one word in three. The body now published is not quoted
         from that 1862 reading: it is collated to the controlling 1962 edition, on the public-domain witness its row in
-        src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names.'
+        src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names.
+        2026-10-23 availability supersession: the earlier description of Secret 3421 and
+        Postcommunion 3422 as text-free own appointments is historical. Both now carry complete
+        Latin bodies corroborated by the Pustet Ratisbon 1862 and Mame Tours 1922 prayers. The
+        remaining slots retain the Common referral described above.'
       takes_from:
         mass: commune-non-virginum-2
         citation: 'Commune non Virginum, Missa II: Cognovi, Domine, quia aequitas'

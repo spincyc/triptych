@@ -1385,11 +1385,12 @@ async function assertions(cdp, base) {
     await current(cdp, base, route);
     assert.deepEqual(await evaluate(cdp, 'propersReaderDebug.semantic'), projection);
 
-    // Trinity now holds the checked Lasance English. Preserve the explicit
-    // unavailable-side contract using Ignatius's actually unsourced English
-    // Collect, while retaining the complete Trinity parity checks above.
+    // Trinity and Ignatius hold checked English. Lent I's Collect retains its
+    // exact Latin body and ledgered English gap, preserving the unavailable-side
+    // contract alongside the complete Trinity parity checks above.
     const unavailableRoute = new URLSearchParams(STATES.englishNone.slice(1));
-    unavailableRoute.set('mass', 's-ignatii-confessoris');
+    unavailableRoute.set('mass', 'lent-1');
+    unavailableRoute.set('type', 'seasonal');
     unavailableRoute.set('orations', 'la');
     unavailableRoute.set('mode', 'compare');
     unavailableRoute.set('compare', 'oration-language');
@@ -1405,7 +1406,7 @@ async function assertions(cdp, base) {
     assert.equal(unavailable.outcome, 'ready', JSON.stringify(unavailable));
     assert.equal(unavailable.state.civilDate, null);
     assert.equal(unavailable.semantic.anchor.correspondingFormulary,
-      's-ignatii-confessoris');
+      'lent-1');
     assert.deepEqual(unavailable.semantic.units.find(row => row.semanticSlot === 'collect').sides
       .map(row => row.status), ['text-held', 'text-unavailable']);
     assert.deepEqual(unavailable.sides, ['text-held', 'text-unavailable']);

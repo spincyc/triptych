@@ -3867,7 +3867,8 @@ async function captureMatrix(cdp, base, directory) {
   await click(cdp, '[data-reader-action="mode"]');
   await click(cdp, '[data-mode="missal"]');
   switchSettlement = await waitForCommittedRender(cdp, captureGeneration,
-    updatedHash(STATES.postReadLatent, 'ordinary', '1'), 'captured Missal switch',
+    updatedHash(updatedHash(STATES.postReadLatent, 'ordinary', '1'),
+      'location', switchSemanticId), 'captured Missal switch',
     { semanticEventId: switchSemanticId });
   const switchAfterFile = 'day-reader-missal-mode-switch-missal-after-393x852.png';
   await shot(cdp, join(directory, switchAfterFile));
@@ -3876,7 +3877,8 @@ async function captureMatrix(cdp, base, directory) {
   const readGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
   await click(cdp, '[data-reader-action="mode"]');
   await click(cdp, '[data-mode="read"]');
-  const capturedReadHash = updatedHash(STATES.postReadLatent, 'ordinary', '0');
+  const capturedReadHash = updatedHash(
+    updatedHash(STATES.postReadLatent, 'ordinary', '0'), 'location', switchSemanticId);
   switchSettlement = await waitForCommittedRender(cdp, readGeneration, capturedReadHash,
     'captured Read return', { semanticEventId: switchSemanticId });
   const switchReturnFile = 'day-reader-missal-mode-switch-read-return-393x852.png';

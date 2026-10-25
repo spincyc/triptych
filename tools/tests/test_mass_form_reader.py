@@ -99,7 +99,35 @@ function projection(result) {
 }
 
 let output;
-if (input.op === 'selected') {
+if (input.op === 'appointment-boundary') {
+  const Seating = require('./src/web/browser/liturgy/ordinary-seating.js');
+  const structure = JSON.parse(fs.readFileSync(
+    'src/web/data/structure/propers/roman-1962.json', 'utf8'));
+  const ordinary = JSON.parse(fs.readFileSync(
+    'src/web/data/structure/ordinary/roman-1962.json', 'utf8'));
+  const heldMass = structure.masses.find((one) => one.key === 'commune-summorum-pontificum');
+  const conditional = heldMass.propers.find((proper) =>
+    proper.ordinary_disposition && proper.ordinary_disposition.kind === 'conditional');
+  let rawError = null;
+  try { Seating.unframedEvents([conditional]); }
+  catch (error) { rawError = error.message; }
+  const before = JSON.stringify(heldMass);
+  const result = A.adaptPropers({
+    request: {
+      schema: C.STATE_SCHEMA, entrance: 'propers', edition: {id: 'roman-1962'},
+      formulary: {id: heldMass.key}, bible: {id: 'douay-rheims', numbering: 'vulgate'},
+      languages: {orations: 'la', ordinary: 'la'}, requestedMode: 'missal',
+      options: {ordinary: true, legitimate: {}},
+      coverage: [], unresolvedChoices: [], sourceHooks: []
+    }, structure, ordinary
+  });
+  output = {
+    rawError, sourceUnchanged: JSON.stringify(heldMass) === before,
+    prepared: projection(result),
+    conditionalChoice: result.unresolvedChoices.some((choice) =>
+      choice.id.startsWith('proper-condition/roman-1962/' + heldMass.key + '/'))
+  };
+} else if (input.op === 'selected') {
   output = projection(adapt(input.key, input.ids, input.form, true));
 } else if (input.op === 'unresolved') {
   output = projection(adapt(input.key, input.ids, null, true));
@@ -207,9 +235,9 @@ process.stdout.write(JSON.stringify(output));
 
 
 # This is intentionally a production-data walk, rather than a fixture census.
-# It proves the join shared by Day and mass-today for every source-authored form
-# and preserves global Proper offsets (the IDs the adapters expose).  New
-# annotated exceptional rows therefore enter this gate automatically.
+# It crosses the same appointment owner as the reader before seating and keeps
+# the static candidate census separate from the admitted event sequence. Global
+# Proper offsets remain the IDs the adapters expose.
 PRODUCTION_SEATING_NODE = r"""
 const fs = require('fs');
 const Seating = require('./src/web/browser/liturgy/ordinary-seating.js');
@@ -277,7 +305,10 @@ for (const calendar of calendars) {
   const stats = report.calendars[calendar] = {
     masses: 0, forms: 0, full: 0, nonfull: 0, sourceOccurrences: 0,
     plainOccurrences: 0, alternativeOccurrences: 0, unplacedOccurrences: 0,
-    choiceEvents: 0
+    choiceEvents: 0, candidates: 0, conditionalCandidates: 0,
+    candidateChoiceGroups: 0, unadmittedPathCandidates: 0,
+    unresolvedConditions: 0, inactiveConditions: 0, unresolvedPaths: 0,
+    unsupportedForms: 0, unsupportedCandidates: 0
   };
 
   for (const mass of structure.masses || []) {
@@ -314,20 +345,86 @@ for (const calendar of calendars) {
         continue;
       }
 
-      const selected = form.rows.filter((row) =>
+      const candidates = form.rows.filter((row) =>
         row.proper && row.proper.name !== 'Placeholder');
-      stats.sourceOccurrences += selected.length;
       const byIndex = new Map();
-      selected.forEach((row) => {
+      candidates.forEach((row) => {
         if (row.proper.form_id !== form.id) {
           failure(...context,
-            'selected occurrence does not retain form identity at ' + row.sourceIndex);
+            'source candidate does not retain form identity at ' + row.sourceIndex);
         }
         if (byIndex.has(row.sourceIndex)) {
           failure(...context, 'selected form repeats global sourceIndex ' + row.sourceIndex);
         }
         byIndex.set(row.sourceIndex, row);
       });
+      let prepared;
+      const before = JSON.stringify(form.rows);
+      try {
+        const checked = Seating.validateProperSeating(
+          ordinary, form.rows.map((row) => row.proper), {
+            calendar, mass: mass.key, form_id: form.id,
+            full: application === 'full',
+            facts: structure.proper_appointment_facts || {},
+            sourcePaths: mass.proper_source_paths || []
+          });
+        if (checked.candidates !== candidates.length) {
+          throw new Error('static seating did not conserve every source candidate');
+        }
+        stats.candidates += checked.candidates;
+        stats.conditionalCandidates += checked.conditional_rows;
+        stats.candidateChoiceGroups += checked.choice_groups;
+        try {
+          prepared = Seating.prepareProperAppointments(form.rows, {
+            calendar, entrance: 'propers', mass: mass.key, formId: form.id,
+            sourcePaths: mass.proper_source_paths || [], calendarCycles: {},
+            date: null, season: null,
+            facts: structure.proper_appointment_facts || {}, choices: {}
+          });
+        } catch (error) {
+          if (!checked.diagnostics.length ||
+              !/^unsupported foreign-source (Proper|path) applicability/.test(error.message)) {
+            throw error;
+          }
+          stats.unsupportedForms += 1;
+          stats.unsupportedCandidates += candidates.length;
+          continue;
+        }
+        if (checked.diagnostics.length) {
+          throw new Error('foreign source candidates escaped their runtime refusal');
+        }
+        stats.unresolvedConditions += prepared.unresolved.length;
+        stats.inactiveConditions += prepared.inactive.length;
+        stats.unresolvedPaths += prepared.sourcePathUnresolved.length;
+      } catch (error) {
+        failure(...context, 'appointment preparation refused: ' + error.message);
+        continue;
+      } finally {
+        if (JSON.stringify(form.rows) !== before) {
+          failure(...context, 'appointment validation mutated authored source rows');
+        }
+      }
+      const selected = prepared.rows.filter((row) =>
+        row.proper && row.proper.name !== 'Placeholder');
+      const accounted = new Set(selected.map((row) => row.sourceIndex));
+      prepared.unresolved.concat(prepared.inactive).forEach((row) => {
+        if (accounted.has(row.sourceIndex)) {
+          failure(...context, 'one source candidate has multiple applicability states');
+        }
+        accounted.add(row.sourceIndex);
+      });
+      for (const row of candidates) {
+        if (accounted.has(row.sourceIndex)) continue;
+        const relation = (mass.proper_source_paths || []).find((one) =>
+          one.id === row.proper.source_path_relation && one.form_id === form.id);
+        if (!relation) {
+          failure(...context,
+            'source candidate disappeared without a conditional or source-path disposition');
+        } else {
+          stats.unadmittedPathCandidates += 1;
+        }
+      }
+      stats.sourceOccurrences += selected.length;
 
       let events;
       let placed = null;
@@ -340,18 +437,20 @@ for (const calendar of calendars) {
           }
           const shown = Seating.shownElements(ordinary, null, predicates);
           placed = Seating.seatPropers(
-            form.rows,
+            prepared.rows,
             Seating.seats(ordinary, shown),
-            (proper) => proper && proper.name === 'Placeholder'
+            (proper) => proper && proper.name === 'Placeholder',
+            prepared.selections
           );
           events = Seating.massEvents(shown, placed);
           for (const selection of ordinarySelections(ordinary)) {
             try {
               const branchShown = Seating.shownElements(ordinary, selection, predicates);
               const branchPlaced = Seating.seatPropers(
-                form.rows,
+                prepared.rows,
                 Seating.seats(ordinary, branchShown),
-                (proper) => proper && proper.name === 'Placeholder'
+                (proper) => proper && proper.name === 'Placeholder',
+                prepared.selections
               );
               if (branchPlaced.broke || branchPlaced.sourceCount !== selected.length ||
                   placedRows(branchPlaced).some((row) => !row || !row.seat)) {
@@ -367,7 +466,8 @@ for (const calendar of calendars) {
         } else {
           stats.nonfull += 1;
           events = Seating.unframedEvents(
-            form.rows, (proper) => proper && proper.name === 'Placeholder');
+            prepared.rows, (proper) => proper && proper.name === 'Placeholder',
+            prepared.selections);
         }
       } catch (error) {
         failure(...context, 'seating refused: ' + error.message);
@@ -382,16 +482,16 @@ for (const calendar of calendars) {
       }
 
       const appearances = new Map();
-      const eventOrder = [];
+      const unitOrder = [];
       const choiceGroups = new Map();
       function appearance(row, owner, option) {
-        eventOrder.push(row.sourceIndex);
         if (!appearances.has(row.sourceIndex)) appearances.set(row.sourceIndex, []);
         appearances.get(row.sourceIndex).push({row, owner, option});
       }
 
       for (const event of events || []) {
         if (event.kind === 'proper') {
+          unitOrder.push(event.sourceIndex);
           appearance(event, event, null);
           const disposition = Seating.dispositionOf(event.proper);
           if (disposition && disposition.kind === 'alternative') {
@@ -424,6 +524,7 @@ for (const calendar of calendars) {
           continue;
         }
         if (event.kind !== 'proper_choice') continue;
+        unitOrder.push(event.sourceIndex);
 
         stats.choiceEvents += 1;
         if (event.formId !== form.id) {
@@ -439,6 +540,17 @@ for (const calendar of calendars) {
         const ids = (event.options || []).map((option) => option.id);
         if (new Set(ids).size < 2 || new Set(ids).size !== ids.length) {
           failure(...context, 'alternative choice lacks distinct options: ' + event.group);
+        }
+        const members = (event.options || []).flatMap((option) => option.rows || []);
+        const firstDisposition = members.length && Seating.dispositionOf(members[0].proper);
+        const anchor = firstDisposition && firstDisposition.anchor;
+        const anchored = anchor && selected.find((row) =>
+          row.proper.appointment_identity && ['mass', 'form_id', 'proper', 'occurrence']
+            .every((key) => row.proper.appointment_identity[key] === anchor[key]));
+        const expectedAnchor = anchor ? anchored && anchored.sourceIndex
+          : Math.min(...members.map((row) => row.sourceIndex));
+        if (event.sourceIndex !== expectedAnchor) {
+          failure(...context, 'alternative choice moved from its exact source anchor');
         }
         if (application === 'full') {
           if (!event.seat || String(event.seat.key || '').startsWith('unplaced/') ||
@@ -463,6 +575,10 @@ for (const calendar of calendars) {
               failure(...context,
                 'choice member disagrees with its source annotation at ' + row.sourceIndex);
             }
+          }
+          const offsets = option.rows.map((row) => row.sourceIndex);
+          if (offsets.some((offset, index) => index && offset <= offsets[index - 1])) {
+            failure(...context, 'source option bundle changed its internal order');
           }
         }
       }
@@ -490,9 +606,8 @@ for (const calendar of calendars) {
             'plain or unplaced occurrence changed event kind: ' + source.sourceIndex);
         }
       }
-      const expectedOrder = selected.map((row) => row.sourceIndex);
-      if (JSON.stringify(eventOrder) !== JSON.stringify(expectedOrder)) {
-        failure(...context, 'Proper event leaves do not retain exact source order');
+      if (unitOrder.some((offset, index) => index && offset <= unitOrder[index - 1])) {
+        failure(...context, 'Proper units do not retain their source anchor order');
       }
     }
   }
@@ -528,6 +643,20 @@ class MassFormReaderTests(unittest.TestCase):
         ("synthetic-all-souls", ["first", "second", "third"]),
         ("synthetic-ember", ["longer", "shorter"]),
     )
+
+    def test_conditional_source_candidates_cross_the_reader_appointment_owner(self) -> None:
+        result = node_call({"op": "appointment-boundary"})
+        self.assertEqual(
+            result["rawError"],
+            "conditional Proper applicability must be prepared before seating",
+        )
+        self.assertTrue(result["sourceUnchanged"])
+        self.assertTrue(result["conditionalChoice"])
+        self.assertGreater(len(result["prepared"]["proper"]), 0)
+        self.assertGreater(len(result["prepared"]["ordinary"]), 0)
+        self.assertNotIn("Gradual", {
+            row["label"] for row in result["prepared"]["proper"]
+        })
 
     def test_explicit_form_is_an_exact_source_order_subsequence(self) -> None:
         for key, ids in self.CASES:
@@ -680,14 +809,27 @@ class MassFormReaderTests(unittest.TestCase):
             with self.subTest(calendar=calendar):
                 self.assertGreater(stats["full"], 0)
                 self.assertGreater(stats["nonfull"], 0)
-                self.assertGreater(stats["choiceEvents"], 0)
-                self.assertGreater(stats["alternativeOccurrences"], 0)
+                self.assertGreater(stats["candidateChoiceGroups"], 0)
                 self.assertEqual(
                     stats["sourceOccurrences"],
                     stats["plainOccurrences"] +
                     stats["alternativeOccurrences"] +
                     stats["unplacedOccurrences"],
                 )
+                self.assertEqual(
+                    stats["candidates"],
+                    stats["sourceOccurrences"] + stats["unresolvedConditions"] +
+                    stats["inactiveConditions"] + stats["unadmittedPathCandidates"] +
+                    stats["unsupportedCandidates"],
+                )
+                self.assertEqual(
+                    stats["forms"],
+                    stats["full"] + stats["nonfull"] + stats["unsupportedForms"],
+                )
+        self.assertGreater(
+            sum(stats["alternativeOccurrences"] for stats in report["calendars"].values()),
+            0,
+        )
         self.assertGreater(
             sum(stats["unplacedOccurrences"] for stats in report["calendars"].values()),
             0,

@@ -1,0 +1,225 @@
+{
+  "schema": "triptych-independent-jan1-private-context-source-review/v1",
+  "date": "2026-10-25",
+  "decision": "ACCEPT_SOURCE_AND_SAME_FAMILY_PREFIX_EVIDENCE; SUPPORT_ONLY_EXACT_ROOT_APPROVAL_OF_ONE_PRIVATE_POS_MATERIALIZATION",
+  "proposal": {
+    "path": ".scratch/resume-20261025-jan1-diagnosis/JAN1-PRIVATE-CONTEXT-PROPOSAL.json",
+    "sha256": "ed5ba53c82833ee16b5e335cef49aee64b99cc468bd20a275969f12655c60c22",
+    "bytes": 16306
+  },
+  "target": [
+    "octava-nativitatis-domini",
+    "main",
+    "Postcommunion",
+    "all",
+    1
+  ],
+  "full_raw_row": {
+    "artifact": {
+      "path": ".scratch/resume-next-review-english-e/postrepair-six/accepted-author-v2-rows6.json",
+      "sha256": "5f75867918318593b42be68040a33c8e0a894b3890597aa201342783a2d1e1dc",
+      "byte_size": 670981
+    },
+    "json_pointer": "/5",
+    "value_sha256": "714619ac60ced4b14390162210fabf3734b82ae8ce4cd60f332417b3fecde5e5"
+  },
+  "raw_idem_proof": {
+    "artifact": {
+      "path": ".scratch/resume-next-review-english-e/postrepair-six/accepted-author-v2-rows6.json",
+      "sha256": "5f75867918318593b42be68040a33c8e0a894b3890597aa201342783a2d1e1dc",
+      "byte_size": 670981
+    },
+    "json_pointer": "/5/exact_lexical_spelling_differences/0",
+    "value_sha256": "5cfd7e21e203182d2e2caad8d294443b051309a130423c4fb6c8a53c0e089512"
+  },
+  "Genitrice_raw_declaration": {
+    "json_pointer": "/5/declared_orthography_changes/0",
+    "value_sha256": "5c86407747dea70b3d709df379fdfee860dc3785177c68e3fdf8f7a32f0c931f"
+  },
+  "source_English_sha256": "dfe2944c54c45e79f0e4d5ec2060ef811b013c4ce2d49529153c3334ca03e8f5",
+  "source_Latin_sha256": "8325ade9f843b3093de6ac72035f4f36fb8af05327fa94c0f7d2e2eede83d9c1",
+  "target_Latin_sha256": "9fefc62baab9a5c336bae60a00bc065deca16a01ca41b14c0f92cf0841ae7b49",
+  "complete_current_target_proof_sha256": "32b4b4e4e2dad4e08871532005a2d0edfd0e04b07db3feff9b51d7429607ecfe",
+  "current_absence": {
+    "mass": "octava-nativitatis-domini",
+    "form_id": "main",
+    "proper": "Postcommunion",
+    "cycle": "all",
+    "occurrence": 1,
+    "lang": "en",
+    "extent": "body",
+    "availability": "unavailable",
+    "reason": {
+      "kind": "no-exemplar"
+    },
+    "note": "No exact English exemplar is bound to this source-established Latin proper."
+  },
+  "current_absence_sha256": "17dbf26532cff9f7e569de85525ca4ee713f8aa56585e688c5bd5833aaa3962a",
+  "current_input_files": [
+    {
+      "path": "src/sources/calendars/roman-1962/propers.yaml",
+      "sha256": "10e0919f483774c7ccac45d16b85a14a43675661a1b553d2e4c6e4bf9373101c",
+      "bytes": 2620686
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "sha256": "c0191ad579809d8abac8f80d878cafca0e4d8222fb4c6e9a25dc72d81ec66687",
+      "bytes": 5040105
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "sha256": "c37b6ea3ebfff40fdd4e25f7cdaa927f18fee16e5ee83a7bcd380b0401b074e9",
+      "bytes": 2760334
+    }
+  ],
+  "allowed_private_approval_record": {
+    "target": [
+      "octava-nativitatis-domini",
+      "main",
+      "Postcommunion",
+      "all",
+      1
+    ],
+    "change_index": 0,
+    "map_entry_sha256": "584b992e1ca886166277718805ac2e0bc44b44d3b5152e206a044613051c20de",
+    "comparison_field_materializations": [
+      {
+        "field": "part_of_speech",
+        "received_field_present": true,
+        "received_value": null,
+        "comparison_value": "demonstrative pronoun/adjective",
+        "original_parse_proof_value_sha256": "5cfd7e21e203182d2e2caad8d294443b051309a130423c4fb6c8a53c0e089512",
+        "method_id": "own-appointment-lexically-attested-spelling-2026-10-23",
+        "lexical_passage_ids": [
+          "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem"
+        ],
+        "reviewed_basis": "Exact Jan1 own-source Per eumdem Dominum and current target Per eundem Dominum show idem modifying the same masculine accusative singular Dominum governed by per; the existing first20 Allen1903 idem passage establishes this lexical class. This private class label changes no raw/public field, token, case, referent, ending or English word."
+      }
+    ]
+  },
+  "allowed_private_approval_record_sha256": "d9bf3966710aa0575bc0a4084ba7c80eb5d5ba242bbfcfe722d0bace55fbdb37",
+  "allowed_private_field_descriptor": {
+    "field": "part_of_speech",
+    "received_field_present": true,
+    "received_value": null,
+    "comparison_value": "demonstrative pronoun/adjective",
+    "original_parse_proof_value_sha256": "5cfd7e21e203182d2e2caad8d294443b051309a130423c4fb6c8a53c0e089512",
+    "method_id": "own-appointment-lexically-attested-spelling-2026-10-23",
+    "lexical_passage_ids": [
+      "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem"
+    ],
+    "reviewed_basis": "Exact Jan1 own-source Per eumdem Dominum and current target Per eundem Dominum show idem modifying the same masculine accusative singular Dominum governed by per; the existing first20 Allen1903 idem passage establishes this lexical class. This private class label changes no raw/public field, token, case, referent, ending or English word."
+  },
+  "allowed_private_field_descriptor_sha256": "57224ce01044d868f18c5fdbb59bb4f9b8319d8a5e5f2664063e7e269f904ad3",
+  "allowed_private_materializations_array_sha256": "a0a6da62ab1c85fd50eacb31adfa3e58547bfe8130c5d639cc4e96adf0d2666e",
+  "exact_private_source_parse": {
+    "lexeme": "idem",
+    "gender": "masculine",
+    "case": "accusative",
+    "number": "singular",
+    "part_of_speech": "demonstrative pronoun/adjective",
+    "reviewed_parse_text": "masculine accusative singular of idem, agreeing with Dominum as the object of per"
+  },
+  "exact_private_source_parse_sha256": "c921532ffb251f844f9ae1eb874c5ecd94e4bb6e3fb93ef8a4e9a3d9a59c6b61",
+  "exact_private_target_parse": {
+    "lexeme": "idem",
+    "gender": "masculine",
+    "case": "accusative",
+    "number": "singular",
+    "part_of_speech": "demonstrative pronoun/adjective",
+    "reviewed_parse_text": "masculine accusative singular of idem, agreeing with Dominum as the object of per"
+  },
+  "exact_private_target_parse_sha256": "c921532ffb251f844f9ae1eb874c5ecd94e4bb6e3fb93ef8a4e9a3d9a59c6b61",
+  "preserved_public_source_parse": {
+    "lexeme": "idem",
+    "gender": "masculine",
+    "case": "accusative",
+    "number": "singular",
+    "part_of_speech": null,
+    "reviewed_parse_text": "masculine accusative singular of idem, agreeing with Dominum as the object of per"
+  },
+  "preserved_public_target_parse": {
+    "lexeme": "idem",
+    "gender": "masculine",
+    "case": "accusative",
+    "number": "singular",
+    "part_of_speech": null,
+    "reviewed_parse_text": "masculine accusative singular of idem, agreeing with Dominum as the object of per"
+  },
+  "same_context_judgment": "The actual Per eumdem/eundem Dominum tokens at full-prayer20 are the same masculine accusative singular idem modifying Dominum governed by per. The original raw parse explicitly gives that case/gender/number/lexeme; Allen1903 idem evidence establishes the one class label. Only the private comparator copies receive demonstrative pronoun/adjective. All raw/public part_of_speech nulls remain null. This supplies no generic class inference or other target permission.",
+  "same_family_and_person_judgment": "Complete own-source pages168–170 and table818 were actually viewed and read. Source has19 petition tokens plus actual3-token Per eumdem Dominum; target has the same19 petition tokens after finite Genitrice token12, then15-token through-the-same table prefix after idem token20. Both suffixes are exact prefixes of that same own-book formula. Literal English remains Through the same. Domine is a vocative; Mary is the third-person intercessor. The petition does not contain tuum/tuae/tibi or Thy/Thee. Father/Son address is established by the actual source cue and the table full wording Jesus Christ, Thy Son ... with Thee, plus the target Filium tuum/Qui tecum; no formula words are inserted into English.",
+  "corrected_person_proof_already_selected": {
+    "registry_pointer": "/lanes/1/target_records/0/accepted_particular_person_proof_delta",
+    "accepted_value_sha256": "767e9d89f0bb59c797396a9f422f0f7df0f07d2e517744101a850e420ed1f56a",
+    "raw_full_row_already_contains_value": true,
+    "new_text_rewrite_required": false,
+    "old_false_generic_note_preserved_as_history": true
+  },
+  "images_actually_viewed_and_read": [
+    {
+      "path": ".scratch/resume-next-postrepair-english-six/lasance-0168-400.png",
+      "sha256": "dad594f89472809b4f75bc8fae24231975661a252ded9042ab05f7a3c373d0ef",
+      "bytes": 800589
+    },
+    {
+      "path": ".scratch/resume-next-postrepair-english-six/lasance-0169-400.png",
+      "sha256": "56b8cf8d88b47a138cdda3880dbb40691b7e6ff17ccccaded1a33937a73543f2",
+      "bytes": 1003463
+    },
+    {
+      "path": ".scratch/resume-next-postrepair-english-six/lasance-0170-400.png",
+      "sha256": "01878a646d329592e1eccf6c9af05494591588888a328a749daab33b11d292ab",
+      "bytes": 743203
+    },
+    {
+      "path": ".scratch/resume-next-review-english-e/postrepair-six/jan1/own-lasance-818.png",
+      "sha256": "946350cdb53e038dddf93e322f56bc38736b20d6401fcc09b261f3f6cbe072c1",
+      "bytes": 1055254
+    }
+  ],
+  "table_artifact": {
+    "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-conclusion-table-2026-10-23-7dbb4a25/artifact.toml",
+    "sha256": "80abea0f7a194c3a4ee6808fc5aee30468a666b716ec4f74c4b1c5872b4523de",
+    "bytes": 2351
+  },
+  "table_payload": {
+    "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-conclusion-table-2026-10-23-7dbb4a25/conclusions.json",
+    "sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+    "bytes": 3524
+  },
+  "projection_byte_join": {
+    "passage": {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection-next-leads-3/passages/target-damage-octava-nativitatis-domini-postcommunion.toml",
+      "sha256": "d55cd4ac06c5da4da55f15c37bbd3eb68965e544823a2ac023d2e0635e19e272",
+      "bytes": 2307
+    },
+    "artifact": {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection-next-leads-3/artifacts/two-target-damage-repairs-20261023/artifact.toml",
+      "sha256": "8780334520bdef8df00db843eb6a13db722f7f97b70c6ee9dd5dd6cdd2b47867",
+      "bytes": 2913
+    },
+    "payload": {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection-next-leads-3/artifacts/two-target-damage-repairs-20261023/latin-only.txt",
+      "sha256": "c7aeebd999a12f5ba34e89f8404161b6fa8dd01dea81990322b97bc1fca965cf",
+      "bytes": 419
+    },
+    "physical_line_ranges": [
+      [
+        5,
+        8
+      ]
+    ],
+    "whole_target_byte_equal": true
+  },
+  "scope_limits": [
+    "Root must separately approve the exact single target/change_index0 approval object and select a fresh Jan1-only successor.",
+    "Original46/12 packets, raw714619ac row, null public fields, parse map and old refusals/receipts remain immutable.",
+    "Current accepted1118 parent and source10 installation/composition must be joined by the later assembler; no canonical adoption follows from this source receipt.",
+    "No other targets, forms, names, grammatical fields, spelling pairs, conclusion families, English words, responses or words after target unitate are authorized.",
+    "New immutable source/publication/ledger/absence/audit carrier and independent assembly/negative review remain required."
+  ],
+  "root_approval_granted_here": false,
+  "canonical_writes": false,
+  "English_admission": false,
+  "no_remaining_actual_source_or_ending_mismatch_found": true
+}

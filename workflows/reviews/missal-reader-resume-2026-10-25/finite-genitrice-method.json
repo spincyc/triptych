@@ -1,0 +1,458 @@
+{
+  "schema": "triptych-proposed-finite-lexical-method/v1",
+  "id": "own-appointment-genitrice-genetrice-two-targets-2026-10-25",
+  "date": "2026-10-25",
+  "decision": "APPROVED_FINITE_COMPARISON_METHOD_ONLY",
+  "extends_without_rewriting": [
+    "own-appointment-lexically-attested-spelling-2026-10-23",
+    "own-appointment-lexical-supplement-six-exact-pairs-2026-10-23"
+  ],
+  "exact_pairs": [
+    [
+      "genitrice",
+      "genetrice"
+    ]
+  ],
+  "required_same_form": {
+    "lexeme": "genetrix/genitrix",
+    "case": "ablative",
+    "number": "singular",
+    "gender": "feminine"
+  },
+  "within_token_change": {
+    "source_span_zero_based_half_open": [
+      3,
+      4
+    ],
+    "source_characters": "i",
+    "target_span_zero_based_half_open": [
+      3,
+      4
+    ],
+    "target_characters": "e"
+  },
+  "printed_evidence": {
+    "lemma_pair": [
+      "genitrix",
+      "genetrix"
+    ],
+    "same_entry": true,
+    "gender": "feminine",
+    "genitive_ending": "-icis",
+    "prescriptive_qualifications": [
+      "The main entry marks genitrix less frequent.",
+      "The Orthographical Index prints genetivus, genetrix, not genitivus, genitrix.",
+      "The index introduction acknowledges variation and disagreements, referring readers to the Lexicon."
+    ],
+    "exact_ablative_printed_in_entries": false
+  },
+  "finite_inference": {
+    "surface_pair": [
+      "Genitrice",
+      "Genetrice"
+    ],
+    "case": "ablative",
+    "number": "singular",
+    "gender": "feminine",
+    "dictionary_genitives": [
+      "genitricis",
+      "genetricis"
+    ],
+    "parallel_printed_feminine_paradigm": [
+      "radix",
+      "radicis",
+      "radice"
+    ],
+    "explicit_like_declined_feminine_example": "cornix, -icis (F.), §57a",
+    "explanation": "For the two named dictionary spellings only, the -icis genitive and feminine mute-stem paradigm yield Genitrice and Genetrice, with the same -e ablative ending. This statement is an explicitly reviewed grammatical inference, not a transcription of an ablative printed in the lexicon and not permission to generate any other form.",
+    "general_stem_folding_or_case_closure": false
+  },
+  "source_passage_fingerprints": {
+    "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.genitrice-genetrice-source-identity": "sha256:5ad9dba02d80c8077a6002c3679ee81cfd47b6312d8846889764cbd82f7666fd",
+    "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.genitrice-genetrice-orthographical-reservation": "sha256:84b34a66df770ffa211c08f012153b368a0ac604d9e64fc7693a9faf9eec09d7",
+    "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.genitrice-genetrice-lemma-identity": "sha256:97b0c74d522c0401ae7d2bf1de549beea0174e89741434b8a11f65279758ae39",
+    "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.genitrice-genetrice-source-identity": "sha256:0cc405343bb0c76347f1350cbf005476800fa9887a4122f0de8a93c96a0f1a4a",
+    "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.genitrice-genetrice-third-declension-ablative": "sha256:4cea34d5b72cf71e50aa468b3e927e54acd7ffada0ec8885a64d81691268faca",
+    "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.genitrice-genetrice-virgine-case-reference": "sha256:b793f0fcabd78f9d0c16ce8948a09611ddff50725ae892ae027d9a157f8536eb"
+  },
+  "required_contextual_parse": "In each separately pinned complete prayer, intercedente beata Virgine Dei Genitrice/Genetrice Maria is an ablative absolute. Genitrice/Genetrice is feminine ablative singular appositional to Virgine Maria, the same third-person intercessor; Dei is dependent genitive; Domine is the vocative addressee. No person, referent, grammatical case, number, gender or sense is changed.",
+  "qualifications": [
+    "Genitrix remains less frequent.",
+    "The Orthographical Index prefers genetrix and acknowledges differences among manuscript/edition spellings and authorities; no equal-preference claim.",
+    "The main entry characterizes usage as poetical and in post-Augustan prose; retain this source register judgment.",
+    "Lewis and Short title is undated and damaged; registered1879 edition and catalogue1899 impression remain distinct.",
+    "Allen and Greenough1903 US publication remains qualified by actual1888/1903 copyright notices and1903 dated preface; pencil dates and printer code are not independent dating."
+  ],
+  "required_per_prayer": [
+    "Use only the exact target identity, original source/target/English strings, complete current Latin proof dictionary and raw full-row/declaration hashes enumerated here.",
+    "Token12 zero-based (13 one-based) must literally read Genitrice in source and Genetrice in target. Full context must support the stated apposition.",
+    "All other spelling pairs, punctuation and conclusion differences need their separate existing authorizations; this method changes none of them.",
+    "Retain every original source/target/English byte, predecessor refusal and dated source review; this comparison is not a new translation or a normalized donor lookup."
+  ],
+  "excluded": [
+    "All other targets and token positions.",
+    "All unlisted forms or cases, generic stem folding, e/i conversion and generated paradigms.",
+    "Names, compounds, printer-error repair, sanctus/beatus, different persons/referents, homographs and semantic substitutions.",
+    "Cross-owner donor reuse or automatic fanout.",
+    "Any conclusion-family, short-cue or English-word expansion.",
+    "English January1 admission: its independent conclusion/materialization hold remains separate.",
+    "Chantal Postcommunion: remains held, outside this method."
+  ],
+  "prayer_or_English_admissions": 0,
+  "root_disposition": "Source-only independent primary-image review and the explicit feminine third-declension inference support only the two exact contexts. Require installation of the ten reviewed source postimages and complete per-prayer current joins. January1 English remains held on its separate conclusion issue. This accepts no English prayer, other form, donor reuse, or conclusion expansion.",
+  "owning_inventory": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+  "source_postimages": {
+    "manifest_sha256": "54734372d5a92030cca8d3b988f6dd854a51d47f8224b68e1a4444145b927727",
+    "required_postimages": 10,
+    "required_unchanged_controllers": [
+      {
+        "canonical_path": "src/sources/works/charlton-t-lewis/a-latin-dictionary/work.toml",
+        "id": "work.charlton-t-lewis.a-latin-dictionary",
+        "sha256": "503892dd07eee97577dac2e06bedc8bdc1b360de2417f67c5b093f939bc3df3f",
+        "byte_size": 906
+      },
+      {
+        "canonical_path": "src/sources/works/charlton-t-lewis/a-latin-dictionary/editions/harper-new-york-1879/edition.toml",
+        "id": "edition.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879",
+        "sha256": "fb73773e13db22b4edb5cbdf2efd573e43a5a106f13b8197853f4857de6f145b",
+        "byte_size": 1383
+      },
+      {
+        "canonical_path": "src/sources/works/charlton-t-lewis/a-latin-dictionary/editions/harper-new-york-1879/artifacts/internet-archive-pdf-4558fe9c/artifact.toml",
+        "id": "artifact.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.internet-archive-pdf-4558fe9c",
+        "sha256": "36f1ecaf70a19e47511ba50b3a7cc71d1403cb183b56771a82e2521fd2f99f72",
+        "byte_size": 2131
+      },
+      {
+        "canonical_path": "src/sources/works/joseph-henry-allen/new-latin-grammar/work.toml",
+        "id": "work.joseph-henry-allen.new-latin-grammar",
+        "sha256": "430292b693ec24cd15e673eda5ed36971fbc051b17b2aba56582475ace6b4018",
+        "byte_size": 1032
+      },
+      {
+        "canonical_path": "src/sources/works/joseph-henry-allen/new-latin-grammar/editions/ginn-1903/edition.toml",
+        "id": "edition.joseph-henry-allen.new-latin-grammar.ginn-1903",
+        "sha256": "4fc1ca9423f620dec5270bd3aa4b5b0bb1cd89e05c42c590a7178417a4a883d3",
+        "byte_size": 1132
+      },
+      {
+        "canonical_path": "src/sources/works/joseph-henry-allen/new-latin-grammar/editions/ginn-1903/artifacts/loc-whole-pdf-147963c1/artifact.toml",
+        "id": "artifact.joseph-henry-allen.new-latin-grammar.ginn-1903.loc-whole-pdf-147963c1",
+        "sha256": "3f27d9d96c7559ecd82332e7c7346742ce54be6e71e953efc5f0bd3513040c55",
+        "byte_size": 2275
+      }
+    ]
+  },
+  "accepted_contexts": [
+    {
+      "target": [
+        "octava-nativitatis-domini",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "raw_full_row_value_sha256": "714619ac60ced4b14390162210fabf3734b82ae8ce4cd60f332417b3fecde5e5",
+      "declaration_value_sha256": "5c86407747dea70b3d709df379fdfee860dc3785177c68e3fdf8f7a32f0c931f",
+      "declaration": {
+        "source_token_index_zero_based": 12,
+        "target_token_index_zero_based": 12,
+        "source_original_token": "Genitrice",
+        "target_original_token": "Genetrice",
+        "source_spelling": "genitrice",
+        "target_spelling": "genetrice",
+        "type": "individually-enumerated-orthography",
+        "source_contextual_parse": "feminine ablative singular Genitrix, appositional to Virgine Maria in the ablative absolute intercedente beata Virgine Dei Genitrice Maria",
+        "target_contextual_parse": "feminine ablative singular Genetrix, appositional to Virgine Maria in the ablative absolute intercedente beata Virgine Dei Genetrice Maria",
+        "contextual_parse_reason": "Intercedente agrees with the ablative feminine singular beata Virgine; Maria and Genitrice/Genetrice denote the same appositional subject. Dei is the dependent genitive singular. Neither form is nominative, a different name, or the addressee."
+      },
+      "source_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "source_artifact_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "source_context": "Own Circumcision of Our Lord Jesus Christ heading on printed167; continuous Mass through168 to complete own Postcommunion on169, before the new Holy Name heading. Genitrice and actual short Per eumdem Dominum are preserved; English remains Through the same.",
+      "source_pdf_pages": [
+        168,
+        169,
+        170
+      ],
+      "source_printed_pages": [
+        "167",
+        "168",
+        "169"
+      ],
+      "source_latin_full_unchanged": "Haec nos communio, Domine, purget a crimine: et intercedente beata Virgine Dei Genitrice Maria, caelestis remedii faciat esse consortes. Per eumdem Dominum.",
+      "source_latin_sha256": "8325ade9f843b3093de6ac72035f4f36fb8af05327fa94c0f7d2e2eede83d9c1",
+      "target_latin_full_unchanged": "Haec nos communio, Domine, purget a crimine: et, intercedente beata Virgine\nDei Genetrice Maria, caelestis remedii faciat esse consortes. Per eundem\nDominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in\nunitate.\n",
+      "target_latin_sha256": "9fefc62baab9a5c336bae60a00bc065deca16a01ca41b14c0f92cf0841ae7b49",
+      "english_sha256_unchanged": "dfe2944c54c45e79f0e4d5ec2060ef811b013c4ce2d49529153c3334ca03e8f5",
+      "source_full_prayer_tokens": [
+        "Haec",
+        "nos",
+        "communio",
+        "Domine",
+        "purget",
+        "a",
+        "crimine",
+        "et",
+        "intercedente",
+        "beata",
+        "Virgine",
+        "Dei",
+        "Genitrice",
+        "Maria",
+        "caelestis",
+        "remedii",
+        "faciat",
+        "esse",
+        "consortes",
+        "Per",
+        "eumdem",
+        "Dominum"
+      ],
+      "target_full_prayer_tokens": [
+        "Haec",
+        "nos",
+        "communio",
+        "Domine",
+        "purget",
+        "a",
+        "crimine",
+        "et",
+        "intercedente",
+        "beata",
+        "Virgine",
+        "Dei",
+        "Genetrice",
+        "Maria",
+        "caelestis",
+        "remedii",
+        "faciat",
+        "esse",
+        "consortes",
+        "Per",
+        "eundem",
+        "Dominum",
+        "nostrum",
+        "Jesum",
+        "Christum",
+        "Filium",
+        "tuum",
+        "Qui",
+        "tecum",
+        "vivit",
+        "et",
+        "regnat",
+        "in",
+        "unitate"
+      ],
+      "position_zero_based": 12,
+      "position_one_based": 13,
+      "source_form": "Genitrice",
+      "target_form": "Genetrice",
+      "source_contextual_parse": "Feminine ablative singular of genitrix; appositional to Virgine Maria in intercedente beata Virgine Dei Genitrice Maria.",
+      "target_contextual_parse": "Feminine ablative singular of genetrix; appositional to Virgine Maria in intercedente beata Virgine Dei Genetrice Maria.",
+      "case_binding_basis": "Actual full Latin context is retained verbatim above; the pre-existing independent source/context reviews remain external decisions. Intercedente beata Virgine Maria is an ablative absolute; Dei is genitive dependent on the feminine title. The title has the same case, number, gender and referent, and is not the prayer addressee.",
+      "no_context_or_English_approval_here": true,
+      "no_latin_or_English_bytes_changed": true,
+      "english_full_unchanged": "May this communion, O Lord, cleanse us from sin and, by the intercession of the Blessed Virgin Mary, Mother of God, make us partakers of the heavenly remedy. Through the same.",
+      "english_sha256": "dfe2944c54c45e79f0e4d5ec2060ef811b013c4ce2d49529153c3334ca03e8f5",
+      "english_hash_convention": "SHA256 exact UTF8 raw English value; no implicit LF is appended",
+      "full_current_target_proof_sha256": "32b4b4e4e2dad4e08871532005a2d0edfd0e04b07db3feff9b51d7429607ecfe",
+      "full_current_target_proof": {
+        "mass": "octava-nativitatis-domini",
+        "form": "",
+        "proper": "Postcommunion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "9fefc62baab9a5c336bae60a00bc065deca16a01ca41b14c0f92cf0841ae7b49",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-next-leads-3.target-damage-octava-nativitatis-domini-postcommunion",
+        "source_date": "2026-10-23 project editorial projection; independently page-checked Pustet Ratisbon1862 antecedent",
+        "locator": "Corrected projection physical lines[[5, 8]]; Pustet Ratisbon1862, original PDF pages[116, 117], printed30-31; complete petition and actually printed conclusion",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.next-leads-3-octava-nativitatis-domini-postcommunion-20261023",
+        "verification_locator": "1962 PDF115, printed34, n235; octava-nativitatis-domini Postcommunion",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "apply the target printing's punctuation",
+          "carry the target's conclusion at its printed length"
+        ],
+        "provenance_evidence": "Complete controlling target and historical petitions independently read on page images on2026-10-23, target at200/400dpi and historical atscale-to3000. Exact source owner and occurrence remain unchanged. The complete historical prayer spans PustetPDF116-117/printed30-31, In Circumcisione Domini et Octava Nativitatis. Actual1962 clearly prints unitate. Pustet actually prints Genitrice and coelestis while1962 prints Genetrice and caelestis; these genuine source spelling differences are retained separately, not called OCR damage or silently changed in the historical transcription. Pustet omits the target comma after et. It actually concludes only Per eumdem Dominum., while the target prints the longer Per eundem Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate. The eumdem/eundem difference and calendar consonantal-j representation Jesum are explicit. The actual historical cue supplies Per eumdem Dominum; independently read PustetPDF390/printed304 Praesta supplies the contiguous longer through-the-Son formula prefix. No words after the target actual stop in unitate are imported, and the historical abbreviated cue is never expanded as if printed. All remaining complete petition words agree; no name or modern body is inferred.",
+        "provenance_authority": "Triptych bounded editorial projection independently checked against exact target and historical page images",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-next-leads-3.two-target-damage-repairs-20261023",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.next-leads-3-complete-petitions-20261023",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.next-leads-3-control-pages-20261023",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022"
+        ],
+        "publication_locator": "Pustet Ratisbon1862, original PDF pages[116, 117], printed30-31; complete petition and actually printed conclusion",
+        "publication_evidence": "Every complete petition word is independently witnessed in the registered US-public-domain historical image/text artifacts under the explicitly recorded source spelling variants. Historical pointing and actual conclusion differences are explicit. Target conclusion length is carried from its complete checked page, with the actual historical conclusion and separately identified formula authority where needed. Publication rests on preexisting material under17U.S.C.103(b) plus the registered historical witness; the1962 facsimile is not asserted public domain. The complete historical prayer spans PustetPDF116-117/printed30-31, In Circumcisione Domini et Octava Nativitatis. Actual1962 clearly prints unitate. Pustet actually prints Genitrice and coelestis while1962 prints Genetrice and caelestis; these genuine source spelling differences are retained separately, not called OCR damage or silently changed in the historical transcription. Pustet omits the target comma after et. It actually concludes only Per eumdem Dominum., while the target prints the longer Per eundem Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate. The eumdem/eundem difference and calendar consonantal-j representation Jesum are explicit. The actual historical cue supplies Per eumdem Dominum; independently read PustetPDF390/printed304 Praesta supplies the contiguous longer through-the-Son formula prefix. No words after the target actual stop in unitate are imported, and the historical abbreviated cue is never expanded as if printed. All remaining complete petition words agree; no name or modern body is inferred."
+      }
+    },
+    {
+      "target": [
+        "maternitatis-beatae-mariae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "raw_full_row_value_sha256": "cab64d29c507495eb9237c51bc3578e2906555aa64b62fdb2ba389ed45d15c8e",
+      "declaration_value_sha256": "b7b973552a787074ba0804d9c90e82e0e8cd70e04c5866c04a3242b45cfe88dc",
+      "declaration": {
+        "source_token_index_zero_based": 12,
+        "target_token_index_zero_based": 12,
+        "source_spelling": "genitrice",
+        "target_spelling": "genetrice",
+        "type": "individually-enumerated-orthography",
+        "source_original_token": "Genitrice",
+        "target_original_token": "Genetrice"
+      },
+      "source_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "source_artifact_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "source_context": "Oct11 Maternity own Postcommunion printed1236; complete own Mass heading1233 and continuity1234–1236.",
+      "source_pdf_pages": [
+        1234,
+        1235,
+        1236,
+        1237
+      ],
+      "source_printed_pages": [
+        "1233",
+        "1234",
+        "1235",
+        "1236"
+      ],
+      "source_latin_full_unchanged": "Haec nos communio Domine purget a crimine: et intercedente beata Virgine Dei Genitrice Maria, coelestis remedii faciat esse consortes. Per eumdem Dominum.",
+      "source_latin_sha256": "265891c6d2ac4317b4068ed1a90c33c89913c994a57900629195bd2842e13f23",
+      "target_latin_full_unchanged": "Haec nos communio, Domine, purget a crimine: et, intercedente beata Virgine\nDei Genetrice Maria, caelestis remedii faciat esse consortes. Per eundem\nDominum.\n",
+      "target_latin_sha256": "72e13d8a2be0ec58b499d88d06ab51ca6b076746a23046e29f06d6913044a229",
+      "english_sha256_unchanged": "8b4f98aecc0bafde13db0d573a1d1b2049f7ef404a6b8dc3d7cd0168a1defaa1",
+      "source_full_prayer_tokens": [
+        "Haec",
+        "nos",
+        "communio",
+        "Domine",
+        "purget",
+        "a",
+        "crimine",
+        "et",
+        "intercedente",
+        "beata",
+        "Virgine",
+        "Dei",
+        "Genitrice",
+        "Maria",
+        "coelestis",
+        "remedii",
+        "faciat",
+        "esse",
+        "consortes",
+        "Per",
+        "eumdem",
+        "Dominum"
+      ],
+      "target_full_prayer_tokens": [
+        "Haec",
+        "nos",
+        "communio",
+        "Domine",
+        "purget",
+        "a",
+        "crimine",
+        "et",
+        "intercedente",
+        "beata",
+        "Virgine",
+        "Dei",
+        "Genetrice",
+        "Maria",
+        "caelestis",
+        "remedii",
+        "faciat",
+        "esse",
+        "consortes",
+        "Per",
+        "eundem",
+        "Dominum"
+      ],
+      "position_zero_based": 12,
+      "position_one_based": 13,
+      "source_form": "Genitrice",
+      "target_form": "Genetrice",
+      "source_contextual_parse": "Feminine ablative singular of genitrix; appositional to Virgine Maria in intercedente beata Virgine Dei Genitrice Maria.",
+      "target_contextual_parse": "Feminine ablative singular of genetrix; appositional to Virgine Maria in intercedente beata Virgine Dei Genetrice Maria.",
+      "case_binding_basis": "Actual full Latin context is retained verbatim above; the pre-existing independent source/context reviews remain external decisions. Intercedente beata Virgine Maria is an ablative absolute; Dei is genitive dependent on the feminine title. The title has the same case, number, gender and referent, and is not the prayer addressee.",
+      "no_context_or_English_approval_here": true,
+      "no_latin_or_English_bytes_changed": true,
+      "english_full_unchanged": "May this communion, O Lord, purge away our guilt and, by the intercession of blessed Mary the Mother of God, make us companions of Him, Who is our heavenly healing. Through the same.",
+      "english_sha256": "8b4f98aecc0bafde13db0d573a1d1b2049f7ef404a6b8dc3d7cd0168a1defaa1",
+      "english_hash_convention": "SHA256 exact UTF8 raw English value; no implicit LF is appended",
+      "full_current_target_proof_sha256": "870f90775e84ee5389e59440d75e3d3326ac45df213b96f070bd13672cd369d6",
+      "full_current_target_proof": {
+        "mass": "maternitatis-beatae-mariae-virginis",
+        "form": "",
+        "proper": "Postcommunion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "72e13d8a2be0ec58b499d88d06ab51ca6b076746a23046e29f06d6913044a229",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.maternitatis-beatae-mariae-virginis-postcommunion",
+        "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+        "locator": "editorial-projection artifact physical lines 140-142; antecedent 1922 Tours Mame, printed p. 36; artifact PDF p. 150; text-layer lines 64-69 of that page",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-maternitatis-beatae-mariae-virginis-orations",
+        "verification_locator": "printed p. 686, no. 3857; artifact PDF p. 767",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "apply the target printing's punctuation",
+          "carry the target's conclusion at its printed length"
+        ],
+        "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Haec\"; 1922 Tours Mame reads \"Zc\" (edit distance 2); token 12: 1962 prints \"Genetrice\"; 1922 Tours Mame reads \"Genitrice\" (edit distance 1); token 20: 1962 prints \"eundem\"; 1922 Tours Mame reads \"eumdem\" (edit distance 1, conclusion); 1922 Mame prints Genitrice where the 1962 prints Genetrice; 1922 Mame sets the conclusion in parentheses. Corroboration: 1862 Pustet Ratisbon text-layer lines 16671-16684: 15 of 22 tokens identical after normalisation (n-gram similarity 0.68); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.44, which is noise).",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+        ],
+        "publication_locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 36; artifact PDF p. 150; text-layer lines 64-69 of that page; artifact rights_status public-domain",
+        "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+      }
+    }
+  ],
+  "acceptance_evidence": {
+    "approved_method_sha256": "6579da1896d8fcb7bd116bf758afe1d4d0e2d6023375fc177acaaeceb457c60d",
+    "independent_source_review_sha256": "372711024d32f2af3aa7581913a79662f8d69b43925065354f3ce255d5ea428d",
+    "raw_context_replay_sha256s": [
+      "c3d1ab1a5227c2357030cfa0511e2b084007ea8282f059c68da7aa89df1bab7d"
+    ]
+  }
+}

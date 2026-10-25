@@ -74,6 +74,12 @@ state = "in_progress"
   status = "open"
   evidence = ["src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml", "workflows/reviews/corpus-catena-cross-reference-2026-10-22/target-gates.csv", "workflows/reviews/missal-reader-resume-2026-10-23/RECORD.md"]
 
+  [[deliverables.requirements]]
+  id = "resumed-checkpoint-2026-10-25"
+  criterion = "The reboot handoff and installed 1055-owner checkpoint receive independent cold review; bounded deferred packets are rejoined to current source evidence and accepted or explicitly held; accepted changes are installed and regenerated with fresh integrated validation, and publication follows the current workspace branch and public-history boundaries."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/missal-reader-resume-2026-10-25/RECORD.md", "workflows/reviews/missal-reader-resume-2026-10-25/source-review-final1123.json", "workflows/reviews/missal-reader-resume-2026-10-25/validation-final.json", "workflows/reviews/missal-reader-resume-2026-10-25/independent-integrated-review.json"]
+
 # Current direction, 2026-10-23: coherent feature-branch commits and a non-force
 # main push are authorized after consistency/publication gates. The maintainer
 # defers the exhaustive additions audit, explicitly incomplete, not passed.

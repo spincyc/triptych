@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-paul-june30.three-primary-petitions-20261023"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23-paul-june30"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+sha256 = "0d1949eab2397dfd284714aa9914161fe8b9762e43bcc04bc526e1e236915524"
+byte_size = 465
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection-paul-june30/artifacts/three-primary-petitions-20261023/latin-only.txt"
+encoding = "utf-8"
+retrieved = "2026-10-23"
+indexable = true
+rights_basis = "Triptych offers its transcription layout under CC BY4.0. The underlying complete petitions are independently witnessed in US-public-domain1862 Pustet and1922 Tours Mame printings. Under17U.S.C.103(b) the1962 revision acquires no exclusive right in those preexisting words. No whole-facsimile clearance or redistribution of protected target images is asserted."
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.paul-june30-primary-petitions-20261023", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf", "artifact.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-facsimile-e5c044e6", "artifact.joseph-henry-allen.new-latin-grammar.ginn-1903.identity-and-grammar-facsimile-c992ef6b"]
+provenance = "Complete controlling1962 own June30 prayers2923/2932/2935 independently read at200 and400dpi from the exact648fdb8f whole facsimile; whole Pustet562-563 and Mame754-756 pages independently read atscale-to3000. All whole parent hashes rechecked. Source images, not OCR, control every word, role and actual ending."
+transformation = "Join physical wraps into the stated project layout; remove stress accents, expand ligatures and normalize printed cuius/eius to declared calendar cujus/ejus. Preserve all1962 target words and pointing. Preserve the authentic empty individual target conclusion in all three prayers. The exact known natalitia/natalicia pair occurs only as neuter accusative plural object of colimus, attested by the registered historical lexical/paradigm passages; no general t/c fold or new spelling family. Historical Per Dominum/Per/Dnum abbreviations remain in their actual witnesses and are never appended to these target bodies."
+notes = "No prayer is borrowed from the February22 companion Paul owner. June30 Collect says natalicia, not commemorationem; PC is Perceptis, not Sanctificati. No Peter prayer, conclusion, name, date, option or votive/Paschal scope is transferred."

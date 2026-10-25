@@ -91,7 +91,19 @@
         semanticSlot: event.semanticSlot && event.semanticSlot.state === 'mapped'
           ? event.semanticSlot.identity.id : null,
         seat: seatFacts(event.seat), selected: selectedFacts(event.selected),
-        sourceHooks: sourceFacts(event.sourceHooks)
+        sourceHooks: sourceFacts(event.sourceHooks),
+        ...(event.orationContext ? {orationContext: event.orationContext} : {}),
+        ...(event.orationGroups ? {orationGroups: event.orationGroups.map(function (group) {
+          if (group.kind !== 'inseparable' || group.count !== 1 ||
+              !Array.isArray(group.members) || group.members.length !== 2) {
+            fail('an inseparable oration needs two source owners counting as one');
+          }
+          return {count: group.count, conclusion: group.conclusion, locus: group.locus,
+            members: group.members.map(function (member) {
+              return {id: member.id, label: member.of_name, selected: selectedFacts(member.selected),
+                sourceHooks: sourceFacts(member.sourceHooks)};
+            })};
+        })} : {})
       };
     });
     const calendar = result.entrance === 'day' ? {
@@ -288,6 +300,20 @@
       }
       event.sourceHooks.forEach(function (hook) {
         fact(facts, 'Source record', hook.kind + ': ' + hook.id);
+      });
+      if (event.orationContext) {
+        fact(facts, 'Unresolved prayer assembly', T.orationContextText(event.orationContext));
+        fact(facts, 'Group source', event.orationContext.relation.locus);
+      }
+      (event.orationGroups || []).forEach(function (group) {
+        fact(facts, 'Oration group', 'two inseparable prayers count as one');
+        fact(facts, 'Conclusion', group.conclusion);
+        fact(facts, 'Group basis', group.locus);
+        group.members.forEach(function (member) {
+          fact(facts, 'Prayer owner', member.label);
+          fact(facts, 'Prayer availability', member.selected && member.selected.availability);
+          fact(facts, 'Prayer witness', member.selected && member.selected.sourceId);
+        });
       });
       node.appendChild(facts);
       // Ordinary divisions are heading events. Keep their apparatus adjacent

@@ -1,0 +1,232 @@
+{
+  "schema": "triptych-reader-continuation-validation/v1",
+  "status": "locally-validated-publication-pending",
+  "validated_on": "2026-10-25",
+  "base_commit": "6a1fe6e3361fec6d1f011a0ae03a0e47d12fa6cf",
+  "workspace_branch": "feature/missal-reader",
+  "source_acceptance": {
+    "path": "source-review-final1123.json",
+    "sha256": "3ebdde006403a03457f27170c4120a67610ae082b8bfc07c6654a93c533c1cde",
+    "source_epoch_paths": 1671,
+    "source_epoch_sha256": "7eb3e2b5acd21ac37d9132b8a4bc2b3e6465ee4194a61d79d319c87d80b237a2",
+    "normalized_guard_inputs": 1682,
+    "guard_manifest_sha256": "2a9f93dc6edd6005f5ddf91ded3021db6b4401aa39418528b65e070df6036cc1",
+    "accepted_guard_sha256": "702391e010ab4618ef28e57ad3d70cbfeb9de72c423cdee60ecc075d7e0d52a7"
+  },
+  "frontier": {
+    "roman1962": {
+      "with_english": 1123,
+      "represented": 1439,
+      "explicit_gaps": 316
+    },
+    "pre1955": {
+      "with_english": 1103,
+      "represented": 1382,
+      "explicit_gaps": 279
+    },
+    "postconciliar": {
+      "with_english": 116,
+      "represented": 561,
+      "explicit_gaps": 445
+    },
+    "new_english_receiving_owners": 68,
+    "new_latin_bodies": 9,
+    "catena_admitted_fragments": 1404,
+    "catena_books": 19
+  },
+  "frozen_epochs": {
+    "H1": {
+      "input_manifest_sha256": "5b4c48bb37ca95317ca7ef3ed9b28e29c95ce5c64f0ca60aaa164473cb36abf9",
+      "files": 51215,
+      "bytes": 5591833519,
+      "preserved": true
+    },
+    "H2": {
+      "input_manifest_sha256": "967dba045652619829f18433f2870315abf713e0483f7b9e07f0a54d41e7bf86",
+      "files": 51221,
+      "bytes": 5591889533,
+      "old_paths_changed": 7,
+      "new_review_metadata_files": 6,
+      "test_only_files_changed": 4,
+      "research_worklist_changed": true,
+      "runtime_code_source_bodies_generated_data_release_inputs_unchanged": true,
+      "input_hashes_and_modes_exact_before_after": true
+    }
+  },
+  "fresh_H2_checks": {
+    "source_aggregate": {
+      "command": "make --jobs=4 PYTHON=.scratch/public-preview-venv/bin/python check-sources",
+      "exit_status": 0,
+      "elapsed_seconds": 301.5874489130001,
+      "log_sha256": "bb2d44adef4a135fc63156465da0ef6e27421e61cb48736d755df03943deae2d",
+      "raw_receipt_sha256": "5d72534ef13fe82b686201507d00462011aad91c2ba82698eeac19dfb0c926fd",
+      "location": "actual checkout with every frozen H2 byte and mode equal before and after; normal Git discovery required by curriculum owner",
+      "includes_complete_deployment_source_gate": true,
+      "interpreter_override": "Make PYTHON explicitly selected the tested dependency environment Python 3.14.8."
+    },
+    "code_regressions": {
+      "command": "python -B -m unittest -v tools.tests.test_mass_ordinary tools.tests.test_mass_form_reader tools.tests.test_calendar_rubrics tools.tests.test_mass_today_proper_usage tools.tests.test_mass_today_source_mass_context tools.tests.test_mass_today_typed_body_language tools.tests.test_mass_propers_show tools.tests.test_liturgy_reader_state",
+      "exit_status": 0,
+      "tests": 240,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "log_sha256": "dc2b73fbc7839ed2e9c559c236384f09f8bdb337f236d75217614638b54fb5bc",
+      "raw_receipt_sha256": "832d70a7e6dd7c05d9154bb33a1696c3ee5520558db113bc7896da3b20dff37e",
+      "all_frozen_inputs_unchanged": true
+    },
+    "native_browser": {
+      "command": "python -m unittest -v tools.tests.test_browser_harnesses",
+      "exit_status": 0,
+      "tests": 7,
+      "harnesses": 12,
+      "assertions": 257,
+      "passed": 257,
+      "skipped": 0,
+      "console_request_http_diagnostics": 0,
+      "complete_suite_runs": 1,
+      "raw_receipt_sha256": "4d0139651cb47e65c7187817f6370784ee4781f4756df6215f21cec30cc28f5f",
+      "activation_environment": {
+        "TRIPTYCH_BROWSER_HARNESSES": "1",
+        "TRIPTYCH_CHROME": "/usr/bin/chromium"
+      }
+    },
+    "artifact_verifiers": {
+      "github_pages_exit_status": 0,
+      "preview_exit_status": 0,
+      "normal_owner_guards_unchanged": true
+    },
+    "capture_owners": {
+      "day": {
+        "assertions": 57,
+        "captures": 77,
+        "exit": 0,
+        "passed": 57
+      },
+      "propers": {
+        "assertions": 69,
+        "exit": 0,
+        "passed": 69
+      }
+    },
+    "postchecks": {
+      "frozen_input_files": 51221,
+      "artifact_files": 48845,
+      "artifact_bytes": 1712118397,
+      "all_input_and_output_hash_mode_errors": 0,
+      "raw_receipt_sha256": "a1650c7dddfab582b1af5a066b72a20ab73dad58246e5eba872bbeb4258ac090"
+    }
+  },
+  "reused_H1_checks_with_unchanged_dependencies": {
+    "annual_structural": {
+      "command": "python -B -m unittest tools.tests.test_complete_missal_year -v",
+      "exit_status": 0,
+      "tests": 7,
+      "renderings": 5856,
+      "workers": 16,
+      "skipped": 0,
+      "log_sha256": "9e5894891cc34b7dead40fcbab4273b6f3efe6e264283631dcff1c59b1025df4",
+      "raw_receipt_sha256": "cc87033288d29107e7dfe0737162655d7b79e5f6014003f1266ad85d65afd328",
+      "activation_environment": {
+        "TRIPTYCH_COMPLETE_MISSAL_YEAR": "1",
+        "TRIPTYCH_COMPLETE_MISSAL_YEAR_WORKERS": "16"
+      }
+    },
+    "terminal": {
+      "exit_status": 0,
+      "tests": 120,
+      "passed": 119,
+      "skipped": 1,
+      "skip_reason": "complementary optional-Markdown dependency branch"
+    },
+    "source_regressions": {
+      "exit_status": 0,
+      "tests": 145,
+      "numeric_exit_observed_in_unchanged_recovery_run": true,
+      "log_sha256": "29c760316b70408327a34cf059a6e1d80ea5b1b5f030abc9a2a2200ec099ffeb"
+    },
+    "rg110": {
+      "unit_tests": 32,
+      "browser_states": 32,
+      "english_hold_check": true,
+      "console_request_http_diagnostics": 0,
+      "browser_scope": "Actual later frozen H1 source-served run, distinct from the earlier component run.",
+      "browser_command": "node tools/tests/rg110_assembly_chromium.mjs",
+      "browser_activation_environment": {
+        "TRIPTYCH_REVIEW_ROOT": "frozen H1 source snapshot",
+        "TRIPTYCH_CHROME": "/usr/bin/chromium"
+      },
+      "browser_raw_report_sha256": "ef543f89c6afa7a4f8a265089a2e97ee8704ebc482e71ef20b768ab394dd575e",
+      "browser_scope_receipt_sha256": "e19e353fa31afaa165d6b86cfd2216ba07a6c60929d8ac2a6c26a5b809c926d1"
+    },
+    "dialogue": {
+      "tests": 2,
+      "checks": 44,
+      "real_accessibility_tree": true,
+      "native_clipboard": true
+    },
+    "reuse_proof_raw_receipt_sha256": "1a18987fb58f0af67408046d5b7aba4f843f59ab033afcb1e47a8c1bec601cd7",
+    "reused_results_not_reattributed_as_new_runs": true
+  },
+  "owner_currency": {
+    "sources_files": 5174,
+    "sources_works": 1069,
+    "sources_editions": 1280,
+    "sources_artifacts": 3826,
+    "sources_passages": 8747,
+    "sources_readable": 3893,
+    "propers_files": 499,
+    "propers_retired": 0,
+    "family_pending_review_units_unchanged": 162,
+    "reviewed_families": 0,
+    "release_updated_bindings": 517,
+    "release_adopted_generated_source_paths": 18,
+    "release_retired_paths": 0,
+    "release_manifest_sha256": "43a240391a99356157f10bc59e2d63585296c2b6c05df267898b61648ceb5976",
+    "release_rights_record_sha256": "41cfeced93a88a22a1e5652201661baeed3e54de1fe18bdf499354325a93d2c6",
+    "approval_and_authority_unchanged": true
+  },
+  "research_worklist": {
+    "chapters": 779,
+    "pending": 234,
+    "new_unharvested": [
+      "1 Samuel 25",
+      "Job 14"
+    ],
+    "work_union_224_exact": true,
+    "new_commentary_admissions": 0
+  },
+  "bounded_visual": {
+    "initial_unique_images_inspected": 16,
+    "H2_selected_eight_PNGs_byte_identical_to_inspected_H1": true,
+    "additional_actual_mode_switch_images_inspected": 3,
+    "read_missal_read_outcomes": [
+      "ready",
+      "unresolved",
+      "ready"
+    ],
+    "semantic_location_retained": "proper/postconciliar/advent-1/007",
+    "committed_generations": [
+      1,
+      2,
+      3
+    ],
+    "complete_Missal_content_claimed": false
+  },
+  "retained_failures_and_operational_corrections": [
+    "All initial H1 failures and wrapper143 observations remain in validation-h1.json and private evidence.",
+    "The first H2 output verification refused shared hard links. All 48,845 artifact outputs were atomically detached without rebuilding or changing bytes/modes. Both unchanged verifiers and full native suite then pass; no guard was waived.",
+    "The H1 Git-discovery and Chromium socket-path environment failures were corrected as described in validation-h1.json; production sources and runtime were not altered for those corrections."
+  ],
+  "independent_integrated_acceptance": {
+    "path": "independent-integrated-review.json",
+    "sha256": "8890b3e89f991e837bc2fd3a0b05fc4b3a955f0f022852c2ec9e5c6252eb27e3"
+  },
+  "remaining_acceptance": [
+    "Safe publication and exact-revision Actions/live observations remain pending explicit disposition of the workspace publication conflict.",
+    "Annual appointment/text/language/rights completeness remains open; structural rendering and typed gaps are not textual completion.",
+    "Maintainer interactive-terminal and broader product acceptance remain open.",
+    "The broader remaining English/commentary backlog and material source holds remain explicit."
+  ],
+  "tested_interpreter_version": "3.14.8"
+}

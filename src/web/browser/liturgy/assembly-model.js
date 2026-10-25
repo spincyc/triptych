@@ -684,6 +684,90 @@
     });
   }
 
+  /** The source's closed, dated RG 110 relationships, when execution is enabled. */
+  function inseparablePairs(rubrics) {
+    const rule = (rubrics.commemoration || {}).inseparable;
+    if (!rule) return [];
+    if (rule.applied !== true) {
+      if (Object.prototype.hasOwnProperty.call(rule, 'pairs') ||
+          Object.prototype.hasOwnProperty.call(rule, 'execution')) {
+        throw new Error('inseparable execution fields require applied: true');
+      }
+      return [];
+    }
+    if (Object.prototype.hasOwnProperty.call(rule, 'unapplied') ||
+        !Array.isArray(rule.pairs) || !rule.pairs.length ||
+        !rule.execution || Object.keys(rule.execution).sort().join(',') !==
+          'commemorated_order,conclusion,count,scope,slots' ||
+        rule.execution.count !== 1 || rule.execution.conclusion !== 'single' ||
+        rule.execution.commemorated_order !== 'before-other-commemorations' ||
+        rule.execution.scope !== 'dated-mass-of-office' ||
+        JSON.stringify(rule.execution.slots) !== JSON.stringify(['Collect', 'Secret', 'Postcommunion'])) {
+      throw new Error('malformed applied inseparable-oration source rule');
+    }
+    const used = new Set();
+    rule.pairs.forEach(function (pair) {
+      if (!pair || Object.keys(pair).sort().join(',') !== 'companion,host,locus' ||
+          typeof pair.host !== 'string' || !pair.host ||
+          typeof pair.companion !== 'string' || !pair.companion ||
+          pair.host === pair.companion || typeof pair.locus !== 'string' || !pair.locus ||
+          !(rubrics.keys || {})[pair.host] || !(rubrics.keys || {})[pair.companion] ||
+          used.has(pair.host) || used.has(pair.companion)) {
+        throw new Error('malformed applied inseparable-oration pair');
+      }
+      const host = classify(rubrics, pair.host).basis;
+      const companion = classify(rubrics, pair.companion).basis;
+      if (host.nature !== 'feast' || companion.nature !== 'commemoration') {
+        throw new Error('inseparable orations require a feast host and commemoration companion');
+      }
+      used.add(pair.host); used.add(pair.companion);
+    });
+    return rule.pairs;
+  }
+
+  /**
+   * A companion has no independent ceiling admission. Admit the host first;
+   * attach the pair only if that host survives, in either Low or sung use.
+   * A missing calendar member cannot be supplied from a name or a Common.
+   */
+  function disposeWithInseparable(rubrics, winner, losers, owner, isoDate, sung, remarks, pairs) {
+    if (!pairs.length) return dispose(rubrics, winner, losers, owner, isoDate, sung, remarks);
+    const companions = new Set(pairs.map(function (pair) { return pair.companion; }));
+    const candidates = [winner].concat(losers).filter(Boolean);
+    const held = dispose(rubrics, winner, losers.filter(function (one) {
+      return !companions.has(one.key);
+    }), owner, isoDate, sung, remarks);
+    const groups = [];
+    const unresolved = [];
+    pairs.forEach(function (pair) {
+      const host = candidates.find(function (one) { return one.key === pair.host; });
+      const companion = candidates.find(function (one) { return one.key === pair.companion; });
+      const admitted = host && (host === winner || held.commemorations.indexOf(host) >= 0);
+      if (admitted && companion) {
+        groups.push({ host: host, companion: companion, locus: pair.locus });
+        held.losers.push({candidate: companion, id: companion.id, disposition: 'attached',
+          locus: pair.locus, why: 'inseparably joined to ' + host.name + ' under one conclusion; counted with it as one prayer'});
+      } else if (admitted || (companion && !host &&
+          dispose(rubrics, winner, losers, owner, isoDate, sung, []).commemorations
+            .indexOf(companion) >= 0)) {
+        unresolved.push({what: 'the inseparable Peter-Paul prayer group', scope: 'oration-owner',
+          locus: pair.locus, why: 'an admitted inseparable group lacks its source-identified host or companion in this calendar result; no missing member is manufactured'});
+      } else if (companion) {
+        held.losers.push({candidate: companion, id: companion.id, disposition: 'omitted',
+          locus: pair.locus, why: 'the inseparable host is not admitted; its companion is not independently commemorated'});
+      }
+    });
+    // RG 110 c is the specific exception to the ordinary RG 113 ordering.
+    held.commemorations.sort(function (a, b) {
+      const aGroup = groups.some(function (one) { return one.host === a; });
+      const bGroup = groups.some(function (one) { return one.host === b; });
+      return Number(bGroup) - Number(aGroup);
+    });
+    held.groups = groups;
+    held.unsettled = unresolved;
+    return held;
+  }
+
   /* ------------------------------------------------------------------------
    * The territorial split
    *
@@ -1159,7 +1243,7 @@
 
   const ORDINALS = ['Collect', 'Second collect', 'Third collect', 'Fourth collect'];
 
-  function orationsFrom(rubrics, winner, commemorations) {
+  function orationsFrom(rubrics, winner, commemorations, groups) {
     if (!winner) return [];
     const cap = ((rubrics.orations || {}).absolute_cap || {}).value || null;
     const series = [{
@@ -1183,6 +1267,19 @@
         locus: one.basis.commemoration_locus || null,
         conclusion: 'a second conclusion'
       });
+    });
+    (groups || []).forEach(function (group) {
+      const unit = series.find(function (one) { return one.of === group.host.id; });
+      if (!unit) return;
+      unit.members = [group.host, group.companion].map(function (one) {
+        return {of: one.id, of_name: one.name};
+      });
+      unit.group = 'inseparable';
+      unit.group_locus = group.locus;
+      unit.slots = rubrics.commemoration.inseparable.execution.slots.slice();
+      unit.count = 1;
+      unit.conclusion = unit.position === 1 ? 'one conclusion shared by both prayers' :
+        'a second conclusion shared by both prayers';
     });
     return cap ? series.slice(0, cap) : series;
   }
@@ -1375,7 +1472,7 @@
         id: one.id,
         key: candidate.key,
         label: candidate.name,
-        state: one.disposition === 'commemorated' ? 'commemorated' : 'displaced',
+        state: one.disposition === 'commemorated' || one.disposition === 'attached' ? 'commemorated' : 'displaced',
         disposition: one.disposition,
         locus: one.locus || null,
         why: one.why
@@ -1461,14 +1558,19 @@
     const losers = (ranked.contest || []).filter((one) => one !== winner)
       .concat(ranked.aside || []);
 
-    let low = winner ? dispose(rubrics, winner, losers, owner, isoDate, false, remarks)
+    const pairs = inseparablePairs(rubrics);
+    let low = winner ? disposeWithInseparable(rubrics, winner, losers, owner, isoDate, false, remarks, pairs)
                        : { losers: [], commemorations: [] };
     const commemorates = !(rubrics.commemoration && rubrics.commemoration.exists === false);
     let sung = winner && commemorates
-      ? dispose(rubrics, winner, losers, owner, isoDate, true, [])
+      ? disposeWithInseparable(rubrics, winner, losers, owner, isoDate, true, [], pairs)
       : null;
 
-    const inseparableRefusals = inseparableUnsettledOn(rubrics, winner, low, sung);
+    const inseparableRefusals = inseparableUnsettledOn(rubrics, winner, low, sung)
+      .concat(low.unsettled || [], sung && sung.unsettled || [])
+      .filter(function (one, index, all) {
+        return all.findIndex(function (other) { return other.locus === one.locus; }) === index;
+      });
     if (inseparableRefusals.length) {
       unsettled.push.apply(unsettled, inseparableRefusals);
       // These were provisional admission results, used only to detect whether
@@ -1491,8 +1593,8 @@
 
     const orations = commemorates
       ? {
-          low_mass: orationsFrom(rubrics, winner, low.commemorations),
-          sung_non_conventual: orationsFrom(rubrics, winner, sung ? sung.commemorations : [])
+          low_mass: orationsFrom(rubrics, winner, low.commemorations, low.groups),
+          sung_non_conventual: orationsFrom(rubrics, winner, sung ? sung.commemorations : [], sung && sung.groups)
         }
       : { all: orationsFrom(rubrics, winner, []) };
     const ceilings = commemorates

@@ -5,6 +5,7 @@ import yaml
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
 from _calendars import resolve_propers, _public_appointment_proper
+from tools.tests._source_recovery_assertions import assert_current_latin_body_or_gap
 DATA=ROOT/'src/sources/calendars/roman-1962/propers.yaml'
 RECORD=ROOT/'src/sources/inventories/roman-1962-chant-appointment-collation-v1.toml'
 # Independent physical source coordinates and source-order anchors.
@@ -25,20 +26,22 @@ def source_problems(d):
   if len(ps)!=1 or ps[0].get('source')!='composed':problems.append((key,name))
  for key,*_ in MIXED:
   p=next(p for p in ms[key]['propers'] if p['name']=='Alleluia')
-  if p.get('source')!='mixed' or not p.get('verses') or p.get('text_status',{}).get('state')!='unavailable':problems.append((key,'Alleluia'))
+  if p.get('source')!='mixed' or not p.get('verses'):problems.append((key,'Alleluia'))
  return problems
 class EasterNormalAppointments(unittest.TestCase):
  @classmethod
  def setUpClass(c):
   c.doc=yaml.safe_load(DATA.read_text());c.ms=mass_index(c.doc);c.record=tomllib.loads(RECORD.read_text())
- def test_direct_units_keep_exact_source_order_and_body_gaps(self):
+ def test_direct_units_keep_exact_source_order_and_reviewed_body_states(self):
   self.assertEqual(source_problems(self.doc),[])
   for key,name,_,_,_,prior,following in EXPECTED:
    ps=self.ms[key]['propers'];ix=next(i for i,p in enumerate(ps) if p['name']==name)
    self.assertEqual(ps[ix-1]['name'],prior)
    self.assertEqual(ps[ix+1]['name'] if ix+1<len(ps) else None,following)
-   self.assertEqual(ps[ix]['text_status'],{'state':'unavailable','scope':'proper-body','reasons':[{'kind':'no-exemplar'}]})
-   self.assertNotIn('text',ps[ix]);self.assertNotIn('verses',ps[ix])
+   assert_current_latin_body_or_gap(self,key,name,ps[ix]);self.assertNotIn('verses',ps[ix])
+  for key,*_ in MIXED:
+   p=next(p for p in self.ms[key]['propers'] if p['name']=='Alleluia')
+   assert_current_latin_body_or_gap(self,key,'Alleluia',p)
  def test_page_coordinates_and_raster_receipts_remain_source_specific(self):
   for key,name,number,page,folio,*_ in EXPECTED+[(k,'Alleluia',n,p,f) for k,n,p,f in MIXED]:
    rows=[r for r in self.record['appointments'] if r['mass']==key and r['proper']==name and r['marginal_number']==number]
@@ -49,11 +52,14 @@ class EasterNormalAppointments(unittest.TestCase):
   path=ROOT/'tools/check-calendar-masses';loader=importlib.machinery.SourceFileLoader('easter_normal_checker',str(path));spec=importlib.util.spec_from_loader(loader.name,loader);checker=importlib.util.module_from_spec(spec);sys.modules[spec.name]=checker;loader.exec_module(checker)
   p=next(p for p in self.ms['holy-wednesday']['propers'] if p['name']=='Oratio');problems=[]
   checker.check_proper('holy-wednesday',p,problems,calendar='roman-1962');self.assertEqual(problems,[])
-  bad=copy.deepcopy(p);bad['text_status']['reasons'][0]['note']='not an allowed reason field';problems=[]
+  # This technical gap exercises the reason schema even if the source body is recovered.
+  gap={k:v for k,v in p.items() if k!='text'};gap['text_status']={'state':'unavailable','scope':'proper-body','reasons':[{'kind':'no-exemplar'}]}
+  problems=[];checker.check_proper('technical-gap',gap,problems,calendar='roman-1962');self.assertEqual(problems,[])
+  bad=copy.deepcopy(gap);bad['text_status']['reasons'][0]['note']='not an allowed reason field';problems=[]
   checker.check_proper('negative',bad,problems,calendar='roman-1962');self.assertTrue(problems)
  def test_omitted_unit_and_lost_uncited_component_are_detected(self):
   bad=copy.deepcopy(self.doc);m=mass_index(bad)['easter-thursday'];m['propers']=[p for p in m['propers'] if p['name']!='Alleluia'];self.assertIn(('easter-thursday','Alleluia'),source_problems(bad))
-  bad=copy.deepcopy(self.doc);p=next(p for p in mass_index(bad)['pentecost-monday']['propers'] if p['name']=='Alleluia');p['source']='scripture';p.pop('text_status');self.assertIn(('pentecost-monday','Alleluia'),source_problems(bad))
+  bad=copy.deepcopy(self.doc);p=next(p for p in mass_index(bad)['pentecost-monday']['propers'] if p['name']=='Alleluia');p['source']='scripture';p.pop('text_status',None);self.assertIn(('pentecost-monday','Alleluia'),source_problems(bad))
  def test_rogation_exact_source_courses_and_incompatible_choice(self):
   rows,errors=resolve_propers(self.doc,self.ms['rogation-mass']);self.assertEqual(errors,[])
   payload={'rows':[_public_appointment_proper(p) for _,p,_ in rows],'facts':self.doc['proper_appointment_facts']}
@@ -71,9 +77,11 @@ console.log('exact three seasonal courses; incompatible choice, unknown and fore
   self.assertEqual(self.ms['holy-wednesday']['ordinary_frame']['applicability'],'unavailable')
   rows,errors=resolve_propers(self.doc,self.ms['holy-wednesday']);self.assertEqual(errors,[])
   ps=[p for _,p,_ in rows];names=[p['name'] for p in ps];self.assertEqual(names[-2:],['Postcommunion','Oratio super populum'])
-  self.assertEqual(ps[-1]['text_status']['state'],'unavailable')
+  state=assert_current_latin_body_or_gap(self,'holy-wednesday','Oratio super populum',ps[-1])
   self.assertLess(names.index('Oratio'),names.index('Second Lesson'))
   path=ROOT/'tools/mass-today';loader=importlib.machinery.SourceFileLoader('easter_normal_today',str(path));spec=importlib.util.spec_from_loader(loader.name,loader);today=importlib.util.module_from_spec(spec);sys.modules[spec.name]=today;loader.exec_module(today)
   self.assertEqual(today.validated_ordinary_frame(self.ms['holy-wednesday']['ordinary_frame'])['applicability'],'unavailable')
-  gap=today.language_projection(ps[-1],'la',None);self.assertFalse(gap['available']);self.assertEqual(gap['status'],'unavailable')
+  projection=today.language_projection(ps[-1],'la',None)
+  self.assertEqual(projection['available'],state=='present');self.assertEqual(projection['status'],'full-text' if state=='present' else 'unavailable')
+  if state=='present':self.assertEqual(projection['texts'],[{'lang':'la','text':ps[-1]['text']}])
 if __name__=='__main__':unittest.main()

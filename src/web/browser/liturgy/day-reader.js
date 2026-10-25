@@ -956,6 +956,11 @@
   }
 
   function appendOrationRuleReasoning(item, oration, branch) {
+    if (oration.members) {
+      item.appendChild(reasoningParagraph(oration.members.map(function (member) {
+        return member.of_name;
+      }).join(' and ') + ': two inseparable prayers count as one.', oration.group_locus));
+    }
     if (oration.why) item.appendChild(reasoningParagraph(oration.why, oration.locus));
     if (oration.conclusion) {
       item.appendChild(reasoningParagraph('Said under ' + oration.conclusion + '.'));
@@ -966,7 +971,8 @@
         ' may be said in its place: ' + oration.alternative.what,
         oration.alternative.locus));
     }
-    if (branch.sungDiffers) {
+    const sung = branch.orations && branch.orations.sung_non_conventual;
+    if (branch.sungDiffers && sung && !sung.some(function (one) { return one.of === oration.of; })) {
       item.appendChild(reasoningParagraph(
         'Not said at a sung Mass that is not the conventual Mass.'));
     }
@@ -974,7 +980,7 @@
 
   function appendProperReasoning(body, branch, rubrics, structure, result) {
     const series = branch.orations && (branch.orations.all || branch.orations.low_mass) || [];
-    const subordinate = series.filter(function (row) { return row.position > 1; });
+    const subordinate = series.filter(function (row) { return row.position > 1 || row.members; });
     if (!subordinate.length) return;
     const slots = [];
     if (series[0] && series[0].label) {
@@ -1838,7 +1844,8 @@
       textDisplay: state.textDisplay,
       translationWitness: state.languages.translationWitness || null,
       heading: heading,
-      cycle: event.selected && event.selected.cycle || null
+      cycle: event.selected && event.selected.cycle || null,
+      orationGroups: event.orationGroups || null, orationContext: event.orationContext || null, eventId: event.id, structure: structure
     });
     const choice = renderTranslationWitnessChoice(
       event, resolvableTranslationWitnessState(result, structure, state), prefix, result,

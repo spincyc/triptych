@@ -2590,32 +2590,21 @@ class ParityTests(unittest.TestCase):
             ))
             return {row["scope"]: row for row in result["coverage"]}
 
-        # Sacred Heart has no conditional inherited appointments. Its Collect
-        # and Secret remain unheld bodies; the held 1962 Postcommunion is
-        # withheld in the uncollated pre-1955 projection.
+        # Sacred Heart has no conditional inherited appointments. All three
+        # 1962 prayer bodies are held; each remains withheld in the uncollated
+        # pre-1955 projection, which stays partial without a new attestation.
         key = "sacred-heart"
         inherited = coverage(key, "seasonal")
         self.assertEqual(inherited.get("formulary:" + key), {
             "state": "supported",
             "scope": "formulary:" + key,
             "completeness": "partial",
-            "reasons": [recension, {
-                "kind": "text-not-held",
-                "count": 2,
-                "repositoryTerm": "proper-body",
-                "claims": [
-                    {"proper": "Collect", "cycle": None},
-                    {"proper": "Secret", "cycle": None},
-                ],
-            }],
+            "reasons": [recension],
         })
         self.assertEqual(inherited.get("proper-original:la"), {
             "state": "unavailable",
             "scope": "proper-original:la",
-            "reasons": [
-                {"kind": "text-withheld", "count": 1},
-                {"kind": "text-not-held", "count": 2},
-            ],
+            "reasons": [{"kind": "text-withheld", "count": 3}],
         })
 
         # New 1962 Advent-use and Common conditions cannot establish pre-1955
@@ -3320,12 +3309,12 @@ class ParityTests(unittest.TestCase):
     def test_cli_parity_rejects_bible_lectionary_reference_and_text_drift(self) -> None:
         fixture = fixture_named("day-roman-1962-2026-08-02")
         request = copy.deepcopy(fixture["requested"])
-        # A day carrying a withheld Latin body to drift: St John Vianney's own
-        # Collect is rights-withheld 1962 matter. The 2 August Sunday's orations
-        # have been held since 3f86eed68, so that day no longer carries one.
-        request["civilDate"] = "2026-08-08"
+        # Claret's own Collect is explicitly unavailable in this source
+        # projection. Vianney's Collect is now held and is no longer a valid
+        # unavailable-body control; select this exact source owner instead.
+        request["civilDate"] = "2026-10-23"
         request["selectedReadableFormulary"] = {
-            "id": "s-ioannis-mariae-vianney-confessoris"
+            "id": "s-antonii-mariae-claret-episcopi-confessoris"
         }
         request["requestedMode"] = "missal"
         request["options"]["ordinary"] = True
@@ -3349,12 +3338,18 @@ class ParityTests(unittest.TestCase):
         scripture["verses"][0]["ref"] = "invented drift"
         mutations.append((changed, "scripture references disagree"))
         changed = copy.deepcopy(payload)
-        withheld = next(
+        withheld, = (
             one
             for mass in changed["days"][0]["masses"]
+            if mass["key"] == "s-antonii-mariae-claret-episcopi-confessoris"
             for one in mass["propers"]
-            if (one.get("latin") or {}).get("withheld")
+            if one["form_id"] == "main" and one["name"] == "Collect"
         )
+        self.assertEqual(withheld.get("latin"), {
+            "available": False, "held": False, "state": "unavailable",
+            "target": "Collect", "withheld": True,
+        })
+        self.assertIsNone(withheld.get("text"))
         withheld["latin"]["state"] = (
             "rights-restricted"
             if withheld["latin"]["state"] == "unavailable"

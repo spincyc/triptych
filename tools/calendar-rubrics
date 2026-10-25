@@ -812,22 +812,33 @@ def check_mass_choices(document: dict, masses: dict[str, dict], basis_index: dic
 
 
 def check_inseparable(document: dict, masses: dict[str, dict], where: str) -> list[str]:
-    """Validate the bounded source pairs that require an unapplied-group refusal."""
+    """Validate the closed dated pairs and their supported execution boundary."""
     rule = (document.get("commemoration") or {}).get("inseparable") or {}
     if not isinstance(rule, dict):
         return [f"{where}: inseparable orations must be a mapping"]
-    if "unapplied" not in rule:
+    applied = rule.get("applied") is True
+    if not applied and ("pairs" in rule or "execution" in rule):
+        return [f"{where}: inseparable execution fields require applied: true"]
+    if "unapplied" not in rule and not applied:
         return []
-    limit = rule["unapplied"]
-    prefix = f"{where}: unapplied inseparable orations"
-    if rule.get("applied") is not False or not isinstance(limit, dict):
+    limit = rule if applied else rule["unapplied"]
+    prefix = f"{where}: {'applied' if applied else 'unapplied'} inseparable orations"
+    if applied:
+        expected = {"scope": "dated-mass-of-office", "count": 1, "conclusion": "single",
+                    "commemorated_order": "before-other-commemorations",
+                    "slots": ["Collect", "Secret", "Postcommunion"]}
+        execution = rule.get("execution")
+        if ("unapplied" in rule or not isinstance(execution, dict) or execution != expected
+                or isinstance(execution.get("count"), bool)):
+            return [f"{prefix} have an unsupported execution boundary"]
+    elif rule.get("applied") is not False or not isinstance(limit, dict):
         return [f"{prefix} require applied: false and a mapping"]
-    if set(limit) != {"scope", "what", "why", "pairs"}:
+    if not applied and set(limit) != {"scope", "what", "why", "pairs"}:
         return [f"{prefix} have missing or unknown fields"]
-    if limit.get("scope") != "oration-owner" or any(
+    if not applied and (limit.get("scope") != "oration-owner" or any(
         not isinstance(limit.get(key), str) or not limit[key].strip()
         for key in ("what", "why")
-    ):
+    )):
         return [f"{prefix} require oration-owner scope and nonempty what/why"]
     pairs = limit.get("pairs")
     if not isinstance(pairs, list) or not pairs:

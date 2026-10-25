@@ -532,6 +532,8 @@ async function testTranslationWitnesses(cdp, base) {
     'artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en';
   const prayerWitness =
     'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861';
+  const lasanceWitness =
+    'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945';
   const baseState = state({
     date: '2026-09-15', missal: 'roman-1962',
     mass: 'septem-dolorum-beatae-mariae-virginis', orations: 'en'
@@ -539,16 +541,30 @@ async function testTranslationWitnesses(cdp, base) {
   await navigate(cdp, base, baseState);
   const held = await snapshot(cdp);
   assert.equal(held.outcome, 'ready', JSON.stringify(held.error));
-  assert.deepEqual(held.witnessChoices, []);
-  assert.deepEqual(held.witnessOptions, []);
-  assert.equal(held.englishComposed, 1);
+  assert.deepEqual(held.witnessChoices, ['mass/roman-1962/septem-dolorum-beatae-mariae-virginis']);
+  assert.deepEqual([...new Set(held.witnessOptions)].sort(), [editionWitness, lasanceWitness].sort());
+  assert.equal(held.englishComposed, 4);
   for (const witness of [editionWitness, artifactWitness]) {
     await navigate(cdp, base, baseState + '&translation-witness=' + witness);
     const alias = await snapshot(cdp);
     assert.equal(alias.outcome, 'ready', JSON.stringify(alias.error));
     assert.deepEqual(alias.witnessChoices, []);
     assert.equal(alias.englishComposed, 1);
+    const orations = await evaluate(cdp,
+      `(dayReaderDebug.semantic.events || []).filter(row => ['Collect', 'Secret', 'Postcommunion'].includes(row.editionSlotLabel)).map(row => [row.editionSlotLabel, row.selected.reason, row.selected.text])`);
+    assert.deepEqual(orations, ['Collect', 'Secret', 'Postcommunion']
+      .map(name => [name, 'absent-in-witness', null]));
   }
+  await navigate(cdp, base, baseState + '&translation-witness=' + lasanceWitness);
+  const dolorsOrations = await snapshot(cdp);
+  assert.equal(dolorsOrations.outcome, 'ready', JSON.stringify(dolorsOrations.error));
+  assert.deepEqual(dolorsOrations.witnessChoices, []);
+  assert.equal(dolorsOrations.englishComposed, 3);
+  assert.match(dolorsOrations.coverageNotice, /3\/8 uses available from the selected witness/);
+  const sequence = await evaluate(cdp,
+    `(dayReaderDebug.semantic.events || []).find(row => row.editionSlotLabel === 'Sequence').selected`);
+  assert.equal(sequence.reason, 'absent-in-witness');
+  assert.equal(sequence.text, null);
 
   await navigate(cdp, base, baseState + '&translation-witness=foreign');
   const invalid = await snapshot(cdp);
@@ -566,7 +582,7 @@ async function testTranslationWitnesses(cdp, base) {
   assert.ok(partial.witnessChoices.length > 0);
   assert.ok(partial.witnessChoices.every((id) => id.startsWith('mass/')));
   assert.deepEqual([...new Set(partial.witnessOptions)].sort(), [
-    editionWitness, prayerWitness,
+    editionWitness, prayerWitness, lasanceWitness,
     'edition.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890'
   ].sort());
   assert.deepEqual(partial.witnessLimitations, []);
@@ -586,11 +602,11 @@ async function testTranslationWitnesses(cdp, base) {
   assert.equal(new URLSearchParams(selected.hash.slice(1)).get('translation-witness'), editionWitness);
   assert.deepEqual(selected.witnessChoices, []);
   assert.equal(selected.englishComposed, 1);
-  assert.equal(selected.absentInWitness, 3);
+  assert.equal(selected.absentInWitness, 5);
   const selectedNotes = await evaluate(cdp,
     `[...document.querySelectorAll('.composed-note')].map(node => node.textContent)`);
   assert.equal(selectedNotes.filter(text =>
-    /No English text is available from the selected witness for this Proper/.test(text)).length, 3);
+    /No English text is available from the selected witness for this Proper/.test(text)).length, 5);
   assert.ok(!selectedNotes.some(text => /No English or Latin body is held here/.test(text)));
   assert.match(selected.coverageNotice, /1\/6 uses available from the selected witness/);
   assert.equal(await evaluate(cdp,
@@ -600,8 +616,14 @@ async function testTranslationWitnesses(cdp, base) {
   const prayers = await snapshot(cdp);
   assert.equal(prayers.outcome, 'ready', JSON.stringify(prayers.error));
   assert.equal(prayers.englishComposed, 3);
-  assert.equal(prayers.absentInWitness, 1);
+  assert.equal(prayers.absentInWitness, 3);
   assert.match(prayers.coverageNotice, /3\/6 uses available from the selected witness/);
+  await navigate(cdp, base, allSouls + '&translation-witness=' + lasanceWitness);
+  const lasance = await snapshot(cdp);
+  assert.equal(lasance.outcome, 'ready', JSON.stringify(lasance.error));
+  assert.equal(lasance.englishComposed, 2);
+  assert.equal(lasance.absentInWitness, 4);
+  assert.match(lasance.coverageNotice, /2\/6 uses available from the selected witness/);
 }
 
 async function testSemanticLocations(cdp, base) {

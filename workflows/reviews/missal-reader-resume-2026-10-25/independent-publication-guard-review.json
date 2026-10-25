@@ -1,0 +1,97 @@
+{
+  "schema": "triptych-rg110-publication-independent-review/v1",
+  "reviewed_at_utc": "2026-10-25T22:19:41.292194+00:00",
+  "status": "accepted-bounded-candidate",
+  "blocking_findings": [],
+  "canonical_edits": 0,
+  "reviewed_head": "6a1fe6e3361fec6d1f011a0ae03a0e47d12fa6cf",
+  "candidate": {
+    "manifest": ".scratch/resume-20261025-rg110-publication/MANIFEST.json",
+    "manifest_sha256": "d967eb24b1ed4dced901469bd1f5d9b6fb6ddad7b89640b96591a457e04b016f",
+    "code_and_test_paths": 2,
+    "preimage_postimage_and_mode_pins_exact": true,
+    "producer_evidence_pins_exact": 4,
+    "tested_input_pins_exact": 496,
+    "tested_inputs_sha256": "05b373dec2bd2cec686deb2a98077fc8f3c531d91b6c6326a018e108138b5735"
+  },
+  "historical_runtime_review": {
+    "path": ".scratch/resume-20261025-rg110-review/code-review.json",
+    "sha256": "5507ff117c9c8e5e79b566b6a8cab6d0108b93872d12acfc1588f2164a43f213",
+    "relationship": "Separate historical runtime/source-transition review; this publication receipt does not replace or expand it."
+  },
+  "cause": "The public-alpha exact split-source guard rejected valid generated oration_relation as an unbound optional Mass field at source Mass 73.",
+  "accepted_change": "Recognize only source-qualified oration_relation values and exact membership from the applied public Roman1962 rubric pairs and closed dated-Mass-of-Office execution contract. Require each pair member metadata exactly; retain exact whole-Mass monolith/split equality and generation bindings.",
+  "scope_observations": [
+    "Current source has exactly three dated source pairs and six relation-bearing Mass owners; every current relation equals its rubric-derived host, companion, locus, scope and slot list.",
+    "Missing relation, extra relation fields, wrong member/context/locus/order, and unlisted ownership reject even with internally matching regenerated monolith, catalog, envelopes and generation.",
+    "Unknown Mass fields remain rejected. All existing path, symlink, orphan, schema, descriptor, generation, choice-anchor, permission-rights and quarantined-body protections remain in place.",
+    "No date/rank/calendar arithmetic, saint-name interpretation, Office/votive inference, wording, printed ending, rights disposition or source corpus body is changed by this patch."
+  ],
+  "checks": [
+    {
+      "check": "Independent canonical baseline helper reproduction",
+      "exit_code": 0,
+      "result": "Expected ReleaseError: 1962 Proper Read payload: source Mass 73 has unbound fields."
+    },
+    {
+      "check": "Independent candidate helper over complete current generated data",
+      "exit_code": 0,
+      "result": "All 491 Masses, their split envelopes/catalog/index and source rubric authority accepted; exact six qualified owners equal three source pairs."
+    },
+    {
+      "check": "Fresh proposed regression suite",
+      "exit_code": 0,
+      "tests": 6,
+      "log": "final-producer-regressions.log"
+    },
+    {
+      "check": "Fresh existing 1962 Read split regression suite",
+      "exit_code": 0,
+      "tests": 6,
+      "log": "final-existing-regressions.log",
+      "coverage": "Current source, source appointment facts/anchors, public-safe copy/rights/quarantine, unknown fields, unsafe paths/drift/orphans/symlinks, index binding."
+    },
+    {
+      "check": "Independent real-six-owner negative fixture",
+      "exit_code": 0,
+      "negative_controls": 53,
+      "result": "Every member tested for split relation removal/scope drift, all 18 prayer-body drifts, matching regenerated relationship/drop drift and unknown Mass fields; missing rubric authority, boolean count, unsupported scope, repeated pair and unknown source member also reject."
+    },
+    {
+      "check": "Final frozen artifact audit",
+      "exit_code": 0,
+      "result": "Two proposed paths including file modes, four producer evidence artifacts and all 496 producer tested-input pins rehashed exactly."
+    }
+  ],
+  "acceptance_limits": [
+    "Acceptance is for the exact two-file sealed publication-guard candidate, not a completed release or deployment.",
+    "No new source-body, translation, ending, rights, runtime, annual completeness or votive-use admission follows.",
+    "Coordinator still owns atomic installation and full final source/currentness/native/publication/build/verify gates on the integrated tree."
+  ],
+  "artifacts": {
+    "baseline-and-source.json": {
+      "path": ".scratch/resume-20261025-rg110-publication-review/baseline-and-source.json",
+      "sha256": "efedd999300aaa5d4522bcce11caa4f6601326e0f2317085627224b7b4fccaac"
+    },
+    "independent.py": {
+      "path": ".scratch/resume-20261025-rg110-publication-review/independent.py",
+      "sha256": "cd32b4c21ad0153c0a26cb25f6f79e1b07dceb7b2b5b754b2f407edb1d928fcd"
+    },
+    "independent-results.json": {
+      "path": ".scratch/resume-20261025-rg110-publication-review/independent-results.json",
+      "sha256": "1c3c9002182ee141d6183ed39deadae702e97dba5f4ed9ee7550b671314e1528"
+    },
+    "final-producer-regressions.log": {
+      "path": ".scratch/resume-20261025-rg110-publication-review/final-producer-regressions.log",
+      "sha256": "858d9b4720b34c07aeebb3122bb71ee3054e042ae79fcd53bb59fac174394f60"
+    },
+    "final-existing-regressions.log": {
+      "path": ".scratch/resume-20261025-rg110-publication-review/final-existing-regressions.log",
+      "sha256": "1ca138635990440780a83b0b0bf0f84e342759ac64e79bb0b6ad26448b5227cd"
+    },
+    "final-independent-summary.json": {
+      "path": ".scratch/resume-20261025-rg110-publication-review/final-independent-summary.json",
+      "sha256": "dc93233d930317abe409c5b746164d19867f89179a43a39a260dbc352726262b"
+    }
+  }
+}

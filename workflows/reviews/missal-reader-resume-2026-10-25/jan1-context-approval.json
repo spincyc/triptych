@@ -1,0 +1,107 @@
+{
+  "schema": "triptych-root-jan1-private-context-approval/v1",
+  "decision": "approved-exact-one-row-private-context-comparison",
+  "approved_on": "2026-10-25",
+  "target": [
+    "octava-nativitatis-domini",
+    "main",
+    "Postcommunion",
+    "all",
+    1
+  ],
+  "selected_source_dictionary_sha256": "714619ac60ced4b14390162210fabf3734b82ae8ce4cd60f332417b3fecde5e5",
+  "approved_parse_materialization_map_sha256": "530e299d08f936c059acab696bc7d038475f979d49622e669ccbb6b7f465b7ca",
+  "parse_materialization_approvals": [
+    {
+      "target": [
+        "octava-nativitatis-domini",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "change_index": 0,
+      "map_entry_sha256": "584b992e1ca886166277718805ac2e0bc44b44d3b5152e206a044613051c20de",
+      "comparison_field_materializations": [
+        {
+          "field": "part_of_speech",
+          "received_field_present": true,
+          "received_value": null,
+          "comparison_value": "demonstrative pronoun/adjective",
+          "original_parse_proof_value_sha256": "5cfd7e21e203182d2e2caad8d294443b051309a130423c4fb6c8a53c0e089512",
+          "method_id": "own-appointment-lexically-attested-spelling-2026-10-23",
+          "lexical_passage_ids": [
+            "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-idem-eundem-eumdem"
+          ],
+          "reviewed_basis": "Exact Jan1 own-source Per eumdem Dominum and current target Per eundem Dominum show idem modifying the same masculine accusative singular Dominum governed by per; the existing first20 Allen1903 idem passage establishes this lexical class. This private class label changes no raw/public field, token, case, referent, ending or English word."
+        }
+      ]
+    }
+  ],
+  "exact_genitrice_authority": {
+    "targets": [
+      [
+        "octava-nativitatis-domini",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ]
+    ],
+    "source_pair": [
+      "genitrice",
+      "genetrice"
+    ],
+    "grammatical_form": {
+      "gender": "feminine",
+      "number": "singular",
+      "case": "ablative"
+    },
+    "target_positions": [
+      {
+        "target": [
+          "octava-nativitatis-domini",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "source_index_zero_based": 12,
+        "target_index_zero_based": 12
+      }
+    ],
+    "method": {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/finite-genitrice-method.json",
+      "sha256": "3966b121b7dd7255d92b2e1a9fc69d6b4e8288caf2758e440fee6f5dc2cbb583"
+    }
+  },
+  "independent_source_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-25/jan1-source-review.json",
+    "sha256": "c9d46ff7716f25f35e6345fa6aa129cfefbf736a1410605094289f3252ef856e"
+  },
+  "original_proposal_sha256": "ed5ba53c82833ee16b5e335cef49aee64b99cc468bd20a275969f12655c60c22",
+  "current_full_target_proof_sha256": "32b4b4e4e2dad4e08871532005a2d0edfd0e04b07db3feff9b51d7429607ecfe",
+  "source_person_proof_sha256": "767e9d89f0bb59c797396a9f422f0f7df0f07d2e517744101a850e420ed1f56a",
+  "same_family_prefix_proof": {
+    "source_Latin_literal": "Per eumdem Dominum.",
+    "source_English_literal": "Through the same.",
+    "target_actual_prefix": "Per eundem Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.",
+    "same_own_book_family": "through-the-same",
+    "table_PDF": 818,
+    "table_printed": "819",
+    "source_and_target_are_actual_prefixes_of_same_table_formula_after_only_two_exact_pairs": true,
+    "English_expansion_permitted_or_performed": false,
+    "response_or_words_after_unitate_added": false,
+    "actual_petition_person": "Domine vocative; Marian intercession third-person. No petition tuum/tuae/tibi or Thy/Thee; Father/Son distinction established by actual target conclusion and own source table."
+  },
+  "raw_public_nulls_must_remain_unchanged": true,
+  "only_private_comparison_copy_receives_label": true,
+  "source_and_target_and_English_originals_unchanged": true,
+  "supersession": "Only the prior separate January1 private-context and source-person materialization hold is resolved by this exact decision. The finite method retains its original dated scope and neither it nor this approval admits an English prayer automatically.",
+  "limits": [
+    "Only this complete raw row, exact parse-map entry and specified null field.",
+    "No new spelling pair, ending, word, response, name, donor reuse or public metadata normalization.",
+    "Fresh publication/source assembly and independent combined acceptance remain required."
+  ],
+  "English_admission": false
+}

@@ -881,6 +881,71 @@ class OrdinaryTool(unittest.TestCase):
                     with self.assertRaisesRegex(tool.SourceError, message):
                         tool.check_appointment_seating(ordinary, [bad], facts)
 
+    def damascene_seating_case(self):
+        ordinary = load("roman-1962")
+        payload = json.loads((PROPERS / "roman-1962.json").read_text(encoding="utf-8"))
+        mass = next(row for row in payload["masses"]
+                    if row["key"] == "s-ioannis-damasceni-confessoris-ecclesiae-doctoris")
+        return ordinary, payload, {
+            "mass": mass["key"], "form_id": "main",
+            "where": "roman-1962/" + mass["key"] + "/main",
+            "full": True, "propers": mass["propers"],
+        }
+
+    def test_damascene_offertory_keeps_exact_seats_and_distinct_body_owners(self) -> None:
+        tool = self.tool_module
+        ordinary, payload, form = self.damascene_seating_case()
+        expected = {"mass": form["mass"], "form_id": "main", "candidates": 12,
+                    "conditional_rows": 1, "choice_groups": 2, "diagnostics": []}
+        self.assertEqual(tool.check_appointment_seating(
+            ordinary, [form], payload["proper_appointment_facts"]), [expected])
+        rows = [row for row in form["propers"] if
+                (row.get("ordinary_disposition") or {}).get("group") == "john-damascene-offertory"]
+        self.assertEqual([row["name"] for row in rows], ["Offertory", "Offertory"])
+        anchor = {"mass": form["mass"], "form_id": "main", "proper": "Offertory", "occurrence": 1}
+        self.assertEqual([row["appointment_identity"] for row in rows],
+                         [anchor, {**anchor, "occurrence": 2}])
+        for row, option, regime in zip(rows, ["non-paschal-base", "paschal-body-gap"],
+                                       ["tract", "paschal"]):
+            disposition = row["ordinary_disposition"]
+            self.assertEqual(disposition["anchor"], anchor)
+            self.assertEqual(disposition["option"], option)
+            self.assertEqual(disposition["when"],
+                             {"fact": "roman-1962-common-chant-regime", "in": [regime]})
+        base, paschal = rows
+        self.assertEqual(hashlib.sha256(base["text"].encode()).hexdigest(),
+                         "b06720237c7314a55174aecedcabdbac4dbbbbd6fa43b11c160c689b703340b4")
+        self.assertIsNone(paschal["text"])
+        self.assertEqual(paschal["text_status"], {"state": "unavailable", "scope": "proper-body"})
+        self.assertEqual(paschal["untranslated"], [{
+            "lang": "en", "state": "unavailable",
+            "target": {**anchor, "occurrence": 2, "cycle": "all", "extent": "body"},
+        }])
+
+    def test_damascene_inactive_and_unknown_paschal_option_keeps_seat_guards(self) -> None:
+        tool = self.tool_module
+        ordinary, payload, form = self.damascene_seating_case()
+        unknown = payload["proper_appointment_facts"]
+        inactive = deepcopy(unknown)
+        fact = inactive["roman-1962-common-chant-regime"]
+        fact.pop("season_values")
+        fact["mass_values"] = {form["mass"]: {
+            "value": "tract", "basis": "Synthetic known non-Paschal guard control."}}
+        for state, facts in [("unknown", unknown), ("inactive", inactive)]:
+            self.assertEqual(tool.check_appointment_seating(
+                ordinary, [form], facts)[0]["candidates"], len(form["propers"]))
+            for name, message in [
+                ("Offertory (Tempore paschali)", "share one usable semantic Ordinary seat"),
+                ("Communion", "share one established semantic seat"),
+            ]:
+                with self.subTest(applicability=state, corruption=name):
+                    bad = deepcopy(form)
+                    row = next(row for row in bad["propers"] if
+                               (row.get("ordinary_disposition") or {}).get("option") == "paschal-body-gap")
+                    row["name"] = name
+                    with self.assertRaisesRegex(tool.SourceError, message):
+                        tool.check_appointment_seating(ordinary, [bad], facts)
+
     def test_cross_layer_seating_refuses_unknown_backward_and_stale_rows(self) -> None:
         tool = self.tool_module
         ordinary = {
@@ -2286,10 +2351,10 @@ process.stdout.write(JSON.stringify({
     def test_ordered_mass_text_contract_for_both_missals(self) -> None:
         """Navigation must not alter the text-bearing event stream.
 
-        The harness hashes received text, explicitly omitting nodes marked
-        presentation-only. Speaker and role cues therefore cannot change this
-        digest; the postconciliar movement records the ICEL quarantine and the
-        current Proper corpus, while the separate cue test holds accessibility.
+        The harness freezes the complete DOM-text projection, omitting nodes
+        marked presentation-only. Opaque source signs keep their semantic glyph
+        and hidden English name in this projection. Separate cue, source-row
+        reconstruction and shared copy-owner checks hold those distinct layers.
         """
         report = self.run_harness()
         # Compared with the pinned 7285e3ec9 payloads on 2026-10-01: only
@@ -2337,6 +2402,10 @@ process.stdout.write(JSON.stringify({
         # child rows replace interior speaker labels with presentation-only
         # cues. Kyrie translation glosses remain exact, named nonspoken notes.
         # Every source word and semantic event position is unchanged.
+        # Replayed 2026-10-25: clean 6a1fe6e33 and the current frozen reader
+        # produce identical complete 178/67 arrays. These pins include the
+        # existing source-qualified R./V. presentation; its hidden role label
+        # also enters this DOM-text projection. Copy is checked independently.
         expected = {
             # The 1962 Missal p. 389 (artifact p. 470, n. 1532) specifies
             # Psalm 54:17-18, 20, 23 and 54:2 for this Introit. The held
@@ -2345,7 +2414,7 @@ process.stdout.write(JSON.stringify({
             # translation fields and the postconciliar stream stay identical.
             "pentecost_10_text": (
                 178,
-                "7a67fe1856d2089fd3995d7ad6dddbc6b9776a1cadeb0fabc16878040f1e1d75",
+                "1edc606286d8f909b86af9fa6f2de2c54ade781f731dcf0fed1044d657b19384",
             ),
             # Re-pinned 2026-10-19 (C4 step 2), diffed against HEAD 1107fdc1a:
             # the sequence is unchanged and only the Preface dialogue and the
@@ -2363,7 +2432,7 @@ process.stdout.write(JSON.stringify({
             # All event positions and every non-citation field are unchanged.
             "ot_18_text": (
                 67,
-                "544006efae120118b383881b6ec7b20bd5795b8c463656c39f3c6379e5aa2d8d",
+                "f59b35a245b8078c33787bd79148c88d260e27a84a8decc9487842f016bf0b15",
             ),
         }
         for key, (count, wanted_digest) in expected.items():
@@ -2625,10 +2694,20 @@ process.stdout.write(JSON.stringify({
         self.assertNotIn("Priest Priest", held)
 
         raw = report["raw_vr"]
-        self.assertEqual(raw["received"], "V. Literal call. R. Literal response.")
+        self.assertEqual(raw["source"], "V. Literal call. R. Literal response.")
+        self.assertEqual(raw["received"],
+                         "℣Versicle. Literal call. ℟Response. Literal response.",
+                         "the raw Ordinary rendering retains every literal word")
         self.assertEqual(raw["turns"], [], "opaque text is never split into turns")
-        self.assertEqual(raw["vr_marks"], 0)
+        self.assertEqual(raw["role_marks"], [
+            {"glyphs": ["℣"], "hidden": ["true"], "labels": ["Versicle."], "languages": ["en"]},
+            {"glyphs": ["℟"], "hidden": ["true"], "labels": ["Response."], "languages": ["en"]},
+        ])
+        self.assertEqual(raw["vr_marks"], 2, "literal V./R. retain their own signs")
         self.assertEqual(raw["cues"], ["P"], "priest is a speaker, not a versicle")
+        self.assertEqual(report["role_copy"], {
+            "prevented": True, "writes": [["text/plain", "℣ Literal call.\n℟ Literal response."]],
+        }, "the shared copy owner keeps glyphs and words, without hidden labels")
 
     def test_explicit_turns_keep_role_speaker_accessibility_and_language_apart(self) -> None:
         """Structured turns are lossless presentation inside one element.
@@ -2653,7 +2732,7 @@ process.stdout.write(JSON.stringify({
                     "speaker": "server", "dialogue_role": "versicle",
                     "action": None, "printed_marker": None,
                     "id": None, "semantic_id": None,
-                    "labels": ["Versicle — Server"],
+                    "labels": ["Versicle — Server"], "cue_langs": ["en"],
                     "cues": [{"mark": "℣", "aria_hidden": "true"}],
                     "texts": [{"lang": "en", "text": "Server call."}],
                     "received": "Server call.",
@@ -2662,7 +2741,7 @@ process.stdout.write(JSON.stringify({
                     "speaker": "priest", "dialogue_role": "response",
                     "action": None, "printed_marker": None,
                     "id": None, "semantic_id": None,
-                    "labels": ["Response — Priest"],
+                    "labels": ["Response — Priest"], "cue_langs": ["en"],
                     "cues": [{"mark": "℟", "aria_hidden": "true"}],
                     "texts": [{"lang": "en", "text": "Priest response."}],
                     "received": "Priest response.",
@@ -2671,7 +2750,7 @@ process.stdout.write(JSON.stringify({
                     "speaker": "priest", "dialogue_role": None,
                     "action": None, "printed_marker": None,
                     "id": None, "semantic_id": None,
-                    "labels": ["Priest"],
+                    "labels": ["Priest"], "cue_langs": ["en"],
                     "cues": [{"mark": "P", "aria_hidden": "true"}],
                     "texts": [{"lang": "en", "text": "Priest part."}],
                     "received": "Priest part.",
@@ -2680,7 +2759,7 @@ process.stdout.write(JSON.stringify({
                     "speaker": "server", "dialogue_role": None,
                     "action": None, "printed_marker": None,
                     "id": None, "semantic_id": None,
-                    "labels": ["Server"],
+                    "labels": ["Server"], "cue_langs": ["en"],
                     "cues": [{"mark": "S", "aria_hidden": "true"}],
                     "texts": [{"lang": "en", "text": "Server part."}],
                     "received": "Server part.",
@@ -2689,7 +2768,7 @@ process.stdout.write(JSON.stringify({
                     "speaker": None, "dialogue_role": None,
                     "action": "true", "printed_marker": None,
                     "id": None, "semantic_id": None,
-                    "labels": [], "cues": [],
+                    "labels": [], "cue_langs": [], "cues": [],
                     "texts": [{"lang": "en", "text": "Bow."}],
                     "received": "Bow.",
                 },
@@ -2720,7 +2799,8 @@ process.stdout.write(JSON.stringify({
         # The generated row keeps the printed `R.`; the reader sets the
         # speaker's one cue and the spoken words, and records the separated
         # marker. Speakers only since 2026-10-19 (C4): the 2002 Ordo n. 29
-        # prints no versicle or response mark, so no role and no ℣/℟ cue.
+        # prints no versicle or response mark, so no target role is inferred.
+        # The antecedent's separately checked printed R. retains its sign.
         self.assertEqual(
             [
                 (row["printed_marker"] or "") + (" " if row["printed_marker"] else "")
@@ -2743,8 +2823,8 @@ process.stdout.write(JSON.stringify({
                     [{"mark": "P", "aria_hidden": "true"}],
                 ),
                 (
-                    "all", None, ["All"],
-                    [{"mark": "All", "aria_hidden": "true"}],
+                    "all", None, ["Response — All"],
+                    [{"mark": "℟", "aria_hidden": "true"}],
                 ),
             ],
         )
@@ -2763,11 +2843,17 @@ process.stdout.write(JSON.stringify({
                 for row in marked["turns"]
             ],
             [
-                ("R.", ["S"], "Cued answer."),
-                (None, [], "R. Uncued answer."),
+                ("R.", ["℟"], "Cued answer."),
+                ("R.", ["℟"], "Uncued answer."),
                 (None, ["P"], "P. Misdeclared row."),
             ],
         )
+        self.assertEqual([row["labels"] for row in marked["turns"]],
+                         [["Response — Server"], ["Response"], ["Priest"]])
+        self.assertEqual([row["dialogue_role"] for row in marked["turns"]], [None] * 3,
+                         "a printed sign never assigns a target dialogue role")
+        self.assertEqual(english["copy"], {"prevented": False, "writes": []},
+                         "the shared copy owner leaves Ordinary rows to native selection")
 
     def test_each_verified_turn_sets_exactly_one_visible_cue(self) -> None:
         """Confiteor, Suscipiat and Orate fratres: one cue, one label per turn.
@@ -2782,23 +2868,24 @@ process.stdout.write(JSON.stringify({
         report = self.run_harness()
         dialogues = report["real_dialogues"]
         self.assertEqual(len(dialogues), 72)
-        priest_server = [("P", "Priest", "P."), ("S", "Server", "R.")]
+        priest_server = [("P", "Priest", "P."), ("℟", "Response — Server", "R.")]
         versicle_response = [("℣", "Versicle — Priest", "P."), ("℟", "Response — Server", "R.")]
         expected_cues = {
             "praeparatio/confiteor-sacerdotis": [("P", "Priest", "P.")],
-            "praeparatio/confiteor-ministrorum": [("S", "Server", "R.")],
-            "oblatio/suscipiat-dominus": [("S", "Server", "R.")],
+            "praeparatio/confiteor-ministrorum": [("℟", "Response — Server", "R.")],
+            "oblatio/suscipiat-dominus": [("℟", "Response — Server", "R.")],
             # Speakers only since 2026-10-19 (C4): n. 29 of the 2002 Ordo
-            # prints no versicle or response mark, so no ℣/℟ cue is set.
+            # prints no versicle or response mark; the antecedent's printed
+            # R. retains its sign without assigning a target dialogue role.
             "praeparatio-donorum/orate-fratres": [
                 ("P", "Priest", None),
-                ("All", "All", "R."),
+                ("℟", "Response — All", "R."),
             ],
             # C4 step 2 (2026-10-19). The antiphon's Ant./Anth. is a label and
             # stays in the words; the Judica verses carry speakers only, as the
             # 1962 prints S./M. there; ℣/℟ only where the 1962 prints them.
-            "praeparatio/introibo-ad-altare-dei": [("P", "Priest", None), ("S", "Server", "R.")],
-            "praeparatio/judica-me-deus": [("P", "Priest", None), ("S", "Server", "R.")],
+            "praeparatio/introibo-ad-altare-dei": [("P", "Priest", None), ("℟", "Response — Server", "R.")],
+            "praeparatio/judica-me-deus": [("P", "Priest", None), ("℟", "Response — Server", "R.")],
             "praeparatio/emitte-lucem-tuam": priest_server,
             "praeparatio/confitebor-tibi-in-cithara": priest_server,
             "praeparatio/gloria-patri": priest_server,
@@ -2810,16 +2897,16 @@ process.stdout.write(JSON.stringify({
             'praeparatio/ostende-nobis': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
             'praeparatio/domine-exaudi': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
             'praeparatio/dominus-vobiscum': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
-            'praeparatio/misereatur-tui': [('S', 'Server', 'R.'), ('P', 'Priest', 'P.')],
+            'praeparatio/misereatur-tui': [('℟', 'Response — Server', 'R.'), ('P', 'Priest', 'P.')],
             'praeparatio/misereatur-vestri': [('P', 'Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
             'praeparatio/indulgentiam': [('P', 'Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
-            'praeparatio/kyrie-eleison': [('P', 'Priest', 'P.'), ('S', 'Server', 'R.'), ('P', 'Priest', 'P.')],
-            'praeparatio/christe-eleison': [('S', 'Server', 'R.'), ('P', 'Priest', 'P.'), ('S', 'Server', 'R.')],
-            'praeparatio/kyrie-eleison-repetitio': [('P', 'Priest', 'P.'), ('S', 'Server', 'R.'), ('P', 'Priest', 'P.')],
+            'praeparatio/kyrie-eleison': [('P', 'Priest', 'P.'), ('℟', 'Response — Server', 'R.'), ('P', 'Priest', 'P.')],
+            'praeparatio/christe-eleison': [('℟', 'Response — Server', 'R.'), ('P', 'Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
+            'praeparatio/kyrie-eleison-repetitio': [('P', 'Priest', 'P.'), ('℟', 'Response — Server', 'R.'), ('P', 'Priest', 'P.')],
             'praeparatio/dominus-vobiscum-post-gloriam': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
-            'oblatio/dominus-vobiscum-ante-evangelium': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.'), ('P', 'Priest', 'P.'), ('S', 'Server', 'R.')],
+            'oblatio/dominus-vobiscum-ante-evangelium': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.'), ('P', 'Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
             'oblatio/dominus-vobiscum-ante-offertorium': [('℣', 'Versicle — Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
-            'conclusio/dominus-vobiscum-ante-postcommunionem': [('P', 'Priest', None), ('S', 'Server', 'R.'), ('P', 'Priest', None)],
+            'conclusio/dominus-vobiscum-ante-postcommunionem': [('P', 'Priest', None), ('℟', 'Response — Server', 'R.'), ('P', 'Priest', None)],
             'canon/per-omnia-saecula': [('P', 'Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
             'communio/pater-noster': [('P', 'Priest', None), ('℟', 'Response — Server', 'R.'), ('P', 'Priest', 'P.')],
             'communio/per-omnia-saecula-post-libera-nos': [('P', 'Priest', 'P.'), ('℟', 'Response — Server', 'R.')],
@@ -2836,9 +2923,9 @@ process.stdout.write(JSON.stringify({
             "prex-eucharistica/praefationis-dialogus": [
                 ("℣", "Versicle — Priest", "P."), ("℟", "Response — All", "R."),
             ] * 3,
-            "ritus-communionis/pax-domini": [("P", "Priest", "P."), ("All", "All", "R.")],
+            "ritus-communionis/pax-domini": [("P", "Priest", "P."), ("℟", "Response — All", "R.")],
             "prex-eucharistica/doxologia": [
-                ("P", "Priest", None), ("P", "Priest", "P."), ("All", "All", "R."),
+                ("P", "Priest", None), ("P", "Priest", "P."), ("℟", "Response — All", "R."),
             ],
         }
         antiphon = dialogues["roman-1962 praeparatio/introibo-ad-altare-dei la"]
@@ -2852,14 +2939,18 @@ process.stdout.write(JSON.stringify({
             wanted = expected_cues[key]
             if calendar == "roman-1962" and lang == "en":
                 # The new witness supplies its own actors and roles. An
-                # unassigned printed R. must not inherit the old Server.
+                # unassigned printed R. keeps its sign without inheriting
+                # the old Server or manufacturing a target dialogue role.
                 speakers = {"priest": ("P", "Priest"), "server": ("S", "Server"),
                             "all": ("All", "All")}
                 roles = {"versicle": ("℣", "Versicle"), "response": ("℟", "Response")}
                 wanted = []
                 for source in spoken_source:
                     speaker = speakers.get(source["speaker"])
-                    role = roles.get(source["dialogue_role"])
+                    marker = source.get("printed_marker")
+                    checked_sign = marker in {"V.", "R."} and source["text"].startswith(marker + " ")
+                    role = roles.get(source["dialogue_role"]) or (
+                        roles["versicle" if marker == "V." else "response"] if checked_sign else None)
                     mark = role[0] if role else speaker[0] if speaker else None
                     label = (role[1] + (" — " + speaker[1] if speaker else "")
                              if role else speaker[1] if speaker else None)
@@ -2878,11 +2969,19 @@ process.stdout.write(JSON.stringify({
                 )
                 self.assertEqual(len(rows), len(spoken_source))
                 for row, source in zip(rows, spoken_source):
-                    cued = bool(source["speaker"] or source["dialogue_role"])
-                    self.assertEqual(len(row["cues"]), int(cued), "one cue only for a known actor or role")
+                    marker = source.get("printed_marker")
+                    checked_sign = marker in {"V.", "R."} and source["text"].startswith(marker + " ")
+                    cued = bool(source["speaker"] or source["dialogue_role"] or checked_sign)
+                    self.assertEqual(len(row["cues"]), int(cued),
+                                     "one cue for a known actor, role or checked printed sign")
+                    self.assertEqual(row["speaker"], source["speaker"])
+                    self.assertEqual(row["dialogue_role"], source["dialogue_role"],
+                                     "a source sign adds no target role or actor")
                     if cued:
                         self.assertEqual(row["cues"][0]["aria_hidden"], "true")
                     self.assertEqual(len(row["labels"]), int(cued), "one accessible label per cue")
+                    self.assertEqual(row["cue_langs"], ["en"] if cued else [],
+                                     "cue names retain their own English language")
                     self.assertEqual(row["texts"][0]["lang"], lang)
                     body = row["texts"][0]["text"]
                     # No printed cue letter survives in the spoken words, and
@@ -2912,21 +3011,27 @@ process.stdout.write(JSON.stringify({
         self.assertEqual(preface["opening_cues"], 0)
         self.assertEqual(
             preface["received"],
-            "Priest Dominus vobiscum. Response Et cum spiritu tuo. "
-            "Priest Sursum corda. Response Habemus ad Dominum. "
-            "Priest Gratias agamus Domino Deo nostro. Response Dignum et justum est.",
+            "Priest Dominus vobiscum. ℟Response. Et cum spiritu tuo. "
+            "Priest Sursum corda. ℟Response. Habemus ad Dominum. "
+            "Priest Gratias agamus Domino Deo nostro. ℟Response. Dignum et justum est.",
         )
-        self.assertEqual(preface["tags"], ["Priest", "Response"] * 3)
+        self.assertEqual(preface["tags"], ["Priest"] * 3)
+        self.assertEqual(preface["role_marks"], [
+            {"glyphs": ["℟"], "hidden": ["true"], "labels": ["Response."], "languages": ["en"]},
+        ] * 3)
         # English word labels inside Latin words carry their own language.
         self.assertEqual(preface["body_lang"], "la")
-        self.assertEqual(preface["tag_langs"], ["en"] * 6)
+        self.assertEqual(preface["tag_langs"], ["en"] * 3)
 
         pax = opaque["pax"]
         self.assertEqual(pax["speaker"], "all")
         self.assertEqual(pax["opening_cues"], 0)
         self.assertEqual(
-            pax["received"], "Priest Pax Domini sit semper vobiscum. Response Et cum spiritu tuo."
+            pax["received"], "Priest Pax Domini sit semper vobiscum. ℟Response. Et cum spiritu tuo."
         )
+        self.assertEqual(pax["role_marks"], [
+            {"glyphs": ["℟"], "hidden": ["true"], "labels": ["Response."], "languages": ["en"]},
+        ])
 
         # Where the speaker IS announced, the redundant leading mark still goes.
         priest = opaque["priest_dominus_vobiscum"]
@@ -3360,10 +3465,26 @@ class ProperPlacementNotesPage(unittest.TestCase):
 # Only the things that reach the network or the URL are replaced.
 HARNESS = r"""
 const fs = require('fs');
+const documentListeners = {};
 function node(tag) {
-  return { tagName: tag, className: '', textContent: '', lang: null, hidden: false,
+  return { nodeType: 1, tagName: tag.toUpperCase(), className: '', textContent: '', lang: null, hidden: false,
     children: [], attrs: {}, style: {},
-    appendChild(c) { this.children.push(c); return c; },
+    appendChild(c) { this.children.push(c); c.parentElement = this; return c; },
+    get childNodes() {
+      // A real textContent value is a text child, which the copy owner walks.
+      return this.textContent ? [{nodeType: 3, nodeValue: this.textContent,
+        parentElement: this}].concat(this.children) : this.children;
+    },
+    matches(selectors) {
+      return selectors.split(',').some((selector) => {
+        selector = selector.trim();
+        if (selector.startsWith('.')) return hasClass(this, selector.slice(1));
+        if (selector === '[data-copy="skip"]') return this.attrs['data-copy'] === 'skip';
+        return this.tagName.toLowerCase() === selector;
+      });
+    },
+    closest(selectors) { return this.matches(selectors) ? this
+      : this.parentElement && this.parentElement.closest(selectors); },
     setAttribute(k, v) { this.attrs[k] = v; },
     querySelectorAll() { return []; }, addEventListener() {},
     text() { let o = this.textContent || '';
@@ -3379,10 +3500,14 @@ function node(tag) {
 }
 const ids = {};
 global.document = { createElement: node, createTextNode: (t) => ({
-    data: t, text: () => t, receivedText: () => t }),
+    nodeType: 3, nodeValue: t, data: t, text: () => t, receivedText: () => t }),
   createDocumentFragment: () => node('#fragment'),
   getElementById: (id) => (ids[id] = ids[id] || node('div')),
-  body: { classList: { toggle() {} }, appendChild() {} }, addEventListener() {} };
+  body: { classList: { toggle() {} }, appendChild() {} },
+  addEventListener(type, listener) { documentListeners[type] = listener; } };
+global.getComputedStyle = (one) => ({
+  display: ['P', 'DIV', 'BR'].includes(one.tagName) ? 'block' : 'inline', visibility: 'visible'
+});
 global.window = { location: { search: '' }, addEventListener() {},
   MassAssembly: { derive: () => ({}) }, matchMedia: null };
 global.window.OrdinarySeating = require(
@@ -3415,6 +3540,30 @@ function descendants(root, wanted) {
   visit(root);
   return out;
 }
+function roleMarks(root) {
+  return descendants(root, 'vr-mark').map((one) => ({
+    glyphs: descendants(one, 'vr-glyph').map((mark) => mark.text()),
+    hidden: descendants(one, 'vr-glyph').map((mark) => mark.attrs['aria-hidden']),
+    labels: descendants(one, 'visually-hidden').map((label) => label.text()),
+    languages: descendants(one, 'visually-hidden').map((label) => label.lang)
+  }));
+}
+// Invoke the shared copy listener. This proves its serialization/deferral
+// decision; real native selection and AX are covered by test_reader_dialogue.
+function ownerCopy(body) {
+  const wrapper = node('div'); wrapper.className = 'reader-document';
+  if (body.tagName === '#FRAGMENT') body.children.forEach((child) => wrapper.appendChild(child));
+  else wrapper.appendChild(body);
+  const range = {commonAncestorContainer: wrapper, intersectsNode: () => true,
+    startContainer: wrapper, endContainer: wrapper, startOffset: 0, endOffset: wrapper.children.length};
+  document.getSelection = () => ({isCollapsed: false, rangeCount: 1, getRangeAt: () => range});
+  const result = {prevented: false, writes: []};
+  documentListeners.copy({
+    clipboardData: {setData(type, value) { result.writes.push([type, value]); }},
+    preventDefault() { result.prevented = true; }
+  });
+  return result;
+}
 function dialogueReport(rendered) {
   return descendants(rendered, 'ordinary-turn').map((row) => ({
     speaker: row.attrs['data-speaker'] || null,
@@ -3425,6 +3574,7 @@ function dialogueReport(rendered) {
     id: row.attrs.id || null,
     semantic_id: row.attrs['data-semantic-id'] || null,
     labels: descendants(row, 'visually-hidden').map((one) => one.text()),
+    cue_langs: descendants(row, 'ordinary-turn-cue').map((one) => one.lang),
     cues: descendants(row, 'cue-mark').map((one) => ({
       mark: one.attrs['data-cue'] || null,
       aria_hidden: one.attrs['aria-hidden'] || null
@@ -3756,6 +3906,7 @@ function opaqueCues(file, key, lang) {
     opening_cues: descendants(rendered, 'is-opening-cue').length,
     tags: descendants(body, 'speaker-tag').map((one) => one.text()),
     tag_langs: descendants(body, 'speaker-tag').map((one) => one.lang),
+    role_marks: roleMarks(body),
     body_lang: body.lang
   };
 }
@@ -3801,7 +3952,8 @@ process.stdout.write(JSON.stringify({
   structured_english: {
     turns: dialogueReport(structuredEnglish),
     received: structuredEnglish.receivedText(),
-    dialogue_count: descendants(structuredEnglish, 'ordinary-dialogue').length
+    dialogue_count: descendants(structuredEnglish, 'ordinary-dialogue').length,
+    copy: ownerCopy(structuredEnglish)
   },
   structured_latin: {
     turns: dialogueReport(structuredLatin),
@@ -3809,11 +3961,14 @@ process.stdout.write(JSON.stringify({
     dialogue_count: descendants(structuredLatin, 'ordinary-dialogue').length
   },
   raw_vr: {
+    source: raw.translations[0].text,
     received: rawRendered.receivedText(),
     turns: dialogueReport(rawRendered),
     vr_marks: descendants(rawRendered, 'vr-mark').length,
+    role_marks: roleMarks(rawRendered),
     cues: descendants(rawRendered, 'cue-mark').map((one) => one.attrs['data-cue'])
   },
+  role_copy: ownerCopy(window.Triptych.versicled(raw.translations[0].text)),
   marked_synthetic: {
     turns: dialogueReport(markedRendered),
     received: markedRendered.receivedText()
