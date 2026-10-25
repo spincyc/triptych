@@ -41,9 +41,7 @@ EXAMPLES = {
             "tools/check-proper-identity --document "
             "liturgy/roman-rite/1962/propers/temporal/99-invented-sunday",
             (
-                "check-proper-identity error: identity '99' is registered by no mass "
-                "entry in the roman-1962 calendar; run --list for the 69 identities it "
-                "does carry",
+                "check-proper-identity error: identity '99' is registered by no mass entry in the roman-1962 calendar; run --list for the 70 identities it does carry",
             ),
             "exits 1; this is the refusal a scope-gate stage is built on",
         ),
@@ -53,7 +51,7 @@ EXAMPLES = {
                 "01",
                 "02",
                 "03",
-                "... 66 more lines",
+                "... 67 more lines",
             ),
             "prints every identity prefix the calendar registers, one a line",
         ),
