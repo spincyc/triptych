@@ -31,11 +31,17 @@ reviews, including focused rereview of the Judgment, Heaven and Hell repairs.
 All 96 pages (24/24/25/23) and the four web editions are reviewed and installed
 at their accepted hashes, with references and bindings preserved. The shared
 production receipt retains the preceding publication. All Saints is registered
-as F02 and its version-15 run `fb0417d471635250` has passed context resolution;
-research and the remaining native stages are in progress. The global chronology
+as F02 and its version-15 run `fb0417d471635250` has passed context resolution,
+source registration, research preflight and independent cold research review.
+The expansive study is being drafted from 1,779 sealed evidence files;
+the remaining document and publication stages are in progress. The global chronology
 audit remains open; a separately inspected Wisdom date concern is cleared by
 the existing qualified lower-bound output. Integrated source/release checks,
 native workflow completion and main/live publication remain outstanding.
+The source checkpoint includes 72 bindings, five admitted Bede passages and
+the reviewed Source/Catena/Proper projections. Its aggregate receipt records
+the expected pre-author missing-web-declaration failure without claiming a
+global source pass; all focused registration and currentness checks pass.
 
 ## GPT proper-study register revision, 2026-10-23
 

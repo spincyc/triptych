@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-10-23"
+audited_on = "2026-10-25"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:1fedf26dc582197fa8526c55448519f7b48bf7d6db03470aee355d98208436a8"
+inventory_snapshot = "sha256:72321b478be89956e55e652acbbfdaf0c983a7d13c7d499fd5280e0333ea3295"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
-classification_snapshot = "sha256:6ed335d8da72bef42e08cfe75d6d126d301cac9be075e0a5976736ec938cb94f"
-canonical_catalog_snapshot = "sha256:dd4f6409ae3b344350f1c5a7022e59bccd8437fe922574398c3d18762c0e07c8"
+classification_snapshot = "sha256:080d5e634e8a9b4a964d4771e522f1e0363f3656829175fa40c5d78d4475d650"
+canonical_catalog_snapshot = "sha256:1bca13f2d05c7aec788b4f5593eea9b06f666507f78a8f1e9adb834eabc5f5b4"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:820200c9392e7d61d14ef808cd27c426d9c6557f7f379323d6b7ff1d59c9730a"
+snapshot = "sha256:e5f278f6dd0404316c14a605d467986967296b2fbd10fb745292649138b9c7eb"
 families = []
 
 [[review_units]]
@@ -43,22 +43,22 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-01-death"
-surface_snapshot = "sha256:39870bf418f126e4fcc6a38d51c08b556635b8eb48bb389b62f01c374c40da13"
+surface_snapshot = "sha256:df606f5168aacced6a4df54c30c184d0c661e2e6573576443d2050285e362d80"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-02-judgment"
-surface_snapshot = "sha256:ca13a4ec9049aa7e0b115e437295c33f46d658dff4e08992e9db45be5a32f052"
+surface_snapshot = "sha256:1664883730b661e736647311c1d6c6b2e88593f02dbd4813816e14d9f1280d3c"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-03-hell"
-surface_snapshot = "sha256:17f2cc063afeaf4ea7891be47637b54141773d3825fcbb4bedbc31211bb5dafa"
+surface_snapshot = "sha256:526efc0fd94f313d1be8b7b527f0370b773ebe5cf26c24c889ddf2e085149121"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-04-heaven"
-surface_snapshot = "sha256:dbcc1c5df92c0015ccde6e6c8cbc9f9598855283108120dfde8a43b2ac58c465"
+surface_snapshot = "sha256:82f921b7e14c641e1414b1b3b9213b873419704c97d3cda811f8fb09514814bf"
 review_state = "pending"
 
 [[review_units]]
@@ -507,6 +507,11 @@ surface_snapshot = "sha256:34fb96fe1ba9aad98f55c0f0afa5605e30eee38845ff596ad4ed8
 review_state = "pending"
 
 [[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
+surface_snapshot = "sha256:4c0e2acdcf256245ee4ece985f28725c8e8ee6d9d4eabdc6a452c0dddf791d72"
+review_state = "pending"
+
+[[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
 surface_snapshot = "sha256:9ec0f48e2abd49a11820dc231a3d71f1d83da915221cf98d8c9c38d1245c8fad"
 review_state = "pending"
@@ -678,7 +683,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.articles.faith.four-last-things"
-surface_snapshot = "sha256:1a7ebba0eaa76850eca610fb3225bec7acdfbe7ef03c0e20eeab35f044b77840"
+surface_snapshot = "sha256:32e09674b1283cc819bcc7a6a08faa60b2cfdaf664bfb799cb3b8da10ef96cb4"
 review_state = "pending"
 
 [[review_units]]

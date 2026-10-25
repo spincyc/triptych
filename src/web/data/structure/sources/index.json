@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3802,
-  "editions": 1279,
-  "passages": 8540,
-  "readable": 3876,
-  "works": 1069
+  "artifacts": 3815,
+  "editions": 1282,
+  "passages": 8566,
+  "readable": 3902,
+  "works": 1070
  },
  "facets": {
   "authors": [
@@ -1758,6 +1758,10 @@
     "works": 1
    },
    {
+    "id": "Priestly Society of Saint Pius X",
+    "works": 1
+   },
+   {
     "id": "Prosper Guéranger and continuators",
     "works": 1
    },
@@ -3356,6 +3360,10 @@
     "works": 1
    },
    {
+    "id": "institutional-liturgical-calendar",
+    "works": 1
+   },
+   {
     "id": "institutional-web-page",
     "works": 1
    },
@@ -4006,11 +4014,11 @@
   ],
   "languages": [
    {
-    "editions": 640,
+    "editions": 642,
     "id": "en"
    },
    {
-    "editions": 384,
+    "editions": 385,
     "id": "la"
    },
    {
@@ -4196,7 +4204,7 @@
     "label": "18th century"
    },
    {
-    "editions": 217,
+    "editions": 218,
     "id": "1800",
     "label": "19th century"
    },
@@ -4206,15 +4214,15 @@
     "label": "20th century"
    },
    {
-    "editions": 672,
+    "editions": 674,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 2134,
-    "editions": 490,
+    "artifacts": 2145,
+    "editions": 491,
     "id": "public-domain"
    },
    {
@@ -4223,8 +4231,8 @@
     "id": "restricted"
    },
    {
-    "artifacts": 423,
-    "editions": 209,
+    "artifacts": 424,
+    "editions": 210,
     "id": "unresolved"
    },
    {
@@ -4233,8 +4241,8 @@
     "id": "licensed"
    },
    {
-    "artifacts": 159,
-    "editions": 40,
+    "artifacts": 160,
+    "editions": 41,
     "id": "project-created"
    },
    {
@@ -8910,8 +8918,22 @@
    ],
    "author": "Bede the Venerable",
    "category": "biblical-commentary",
-   "directory": null,
-   "editions": [],
+   "directory": "editions/bede/explanatio-apocalypsis/",
+   "editions": [
+    {
+     "date": "1878",
+     "file": "1878-1878-marshall-parker.json",
+     "id": "edition.bede.explanatio-apocalypsis.1878-marshall-parker",
+     "language": "en",
+     "passages": 5,
+     "readable": 5,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Explanation of the Apocalypse",
+     "year": 1878
+    }
+   ],
    "id": "work.bede.explanatio-apocalypsis",
    "languages": [
     "la"
@@ -10739,8 +10761,8 @@
      "file": "1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
      "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
      "language": "la",
-     "passages": 127,
-     "readable": 37,
+     "passages": 133,
+     "readable": 43,
      "rights": [
       "public-domain"
      ],
@@ -16406,8 +16428,8 @@
      "file": "1945-benziger-revised-1945.json",
      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
      "language": "en",
-     "passages": 1843,
-     "readable": 14,
+     "passages": 1849,
+     "readable": 20,
      "rights": [
       "project-created",
       "public-domain",
@@ -28638,6 +28660,32 @@
    "title": "Constitutions of the Priestly Fraternity of Saint Peter"
   },
   {
+   "alternate_titles": [],
+   "author": "Priestly Society of Saint Pius X",
+   "category": "institutional-liturgical-calendar",
+   "directory": "editions/fsspx/ordo/",
+   "editions": [
+    {
+     "date": "2026-10-25",
+     "file": "2026-2026-10-25-web.json",
+     "id": "edition.fsspx.ordo.2026-10-25-web",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Ordo: 1 November 2026, default English view, retrieved 25 October 2026",
+     "year": 2026
+    }
+   ],
+   "id": "work.fsspx.ordo",
+   "languages": [
+    "en"
+   ],
+   "title": "FSSPX Ordo"
+  },
+  {
    "alternate_titles": [
     "L'Année liturgique"
    ],
@@ -34898,6 +34946,19 @@
       "project-created"
      ],
      "title": "Roman 1962 Latin Proper Editorial Projection, 23 October 2026, two-body supplement",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-25",
+     "file": "2026-2026-10-25-f02-editorial-projection.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-25-f02",
+     "language": "la",
+     "passages": 9,
+     "readable": 9,
+     "rights": [
+      "project-created"
+     ],
+     "title": "All Saints dated 1962 text projection, 25 October 2026",
      "year": 2026
     }
    ],

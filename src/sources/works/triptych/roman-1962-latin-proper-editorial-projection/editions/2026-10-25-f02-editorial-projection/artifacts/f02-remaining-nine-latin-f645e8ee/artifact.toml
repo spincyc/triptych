@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-25-f02.f02-remaining-nine-latin-f645e8ee"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-25-f02"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Project-created selection, normalization and target-relation record under CC BY4.0; no exclusive right in the historical Latin is claimed. Independent preexisting words are printed in Mame1922 and Pustet1862, under their artifact-specific United States public-domain bases. The registered 1962 facsimile supplies comparison, not a whole-edition license. Its modern rubric wording, layout and page images are not reproduced."
+retrieved = "2026-10-25"
+indexable = true
+encoding = "utf-8"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-scriptural-propers-la-checked-415a1d46", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Retain six complete 1962 appointed reading/chant bodies and three Twenty-third Sunday oration petitions. Join line/page wraps and initials, remove stress accents and expand ligatures. Preserve target pointing, capitalization and i/j spellings, versicle sign as V., and literal printed conclusion cues. Historical Pustet petitions match; its Collect/Postcommunion Per Dominum. and Secret Per Dominum nostrum. are separately recorded antecedent cues, not target lengths. Target orations retain only the actually printed longer words through in unitate.; no implicit Amen or remainder is composed. Exclude headings, source citations, Creed, historical octave directions and unrelated Sunday texts."
+provenance = "Research independently collated target783-784,497-498 and historical Mame862-864/Pustet443-444 images at200/400dpi on25October2026. Registration reread those same-word witnesses and exact printed cues and rehashed the complete source bytes. This is a bounded editorial projection, not a Bible-string reconstruction."
+notes = "One body per line in the stated order. Existing four-own All Saints projected bodies and Common Preface Latin/English remain separate reusable owners. The historical sources’ spellings and shorter cues are not silently represented as the target edition."
+sha256 = "f645e8eef968bc61d51002ca959f812b7f45ffcdc3f4be4a5c15f6100ec0c4fb"
+byte_size = 3495
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-25-f02-editorial-projection/artifacts/f02-remaining-nine-latin-f645e8ee/propers.txt"

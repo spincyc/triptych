@@ -2,8 +2,81 @@
  "blocked": [],
  "chapter": 7,
  "chapters": 22,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 7,
+    "first_verse": 4,
+    "last_chapter": 7,
+    "last_verse": 4,
+    "token": "Apoc"
+   },
+   "id": "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-4",
+   "locator": "Book I, chapter VII, comment on Apocalypse 7:4; printed 46 / PDF58",
+   "review": "verified",
+   "source": "0",
+   "text_words": 144
+  },
+  {
+   "extent": {
+    "first_chapter": 7,
+    "first_verse": 9,
+    "last_chapter": 7,
+    "last_verse": 9,
+    "token": "Apoc"
+   },
+   "id": "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-9",
+   "locator": "Book I, chapter VII, comment on Apocalypse 7:9; printed 52-53 / PDF64-65",
+   "review": "verified",
+   "source": "0",
+   "text_words": 119
+  },
+  {
+   "extent": {
+    "first_chapter": 7,
+    "first_verse": 10,
+    "last_chapter": 7,
+    "last_verse": 10,
+    "token": "Apoc"
+   },
+   "id": "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-10",
+   "locator": "Book I, chapter VII, comment on Apocalypse 7:10; printed 52-53 / PDF64-65",
+   "review": "verified",
+   "source": "0",
+   "text_words": 91
+  },
+  {
+   "extent": {
+    "first_chapter": 7,
+    "first_verse": 11,
+    "last_chapter": 7,
+    "last_verse": 11,
+    "token": "Apoc"
+   },
+   "id": "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-11",
+   "locator": "Book I, chapter VII, comment on Apocalypse 7:11; printed 52-53 / PDF64-65",
+   "review": "verified",
+   "source": "0",
+   "text_words": 101
+  },
+  {
+   "extent": {
+    "first_chapter": 7,
+    "first_verse": 12,
+    "last_chapter": 7,
+    "last_verse": 12,
+    "token": "Apoc"
+   },
+   "id": "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-12",
+   "locator": "Book I, chapter VII, comment on Apocalypse 7:12; printed 52-53 / PDF64-65",
+   "review": "verified",
+   "source": "0",
+   "text_words": 24
+  }
+ ],
+ "languages": [
+  "en"
+ ],
  "leads": [
   {
    "author": "Ambrose Autpert",
@@ -104,7 +177,23 @@
  "name": "Revelation",
  "numbering": "vulgate",
  "refusals": {},
- "sources": {},
+ "sources": {
+  "0": {
+   "author": "Bede the Venerable",
+   "container": "",
+   "date": 710,
+   "edition": "The Explanation of the Apocalypse",
+   "edition_published": "Oxford and London: James Parker and Co., 1878",
+   "language": "en",
+   "rights": "public-domain",
+   "translators": [
+    "Edward Marshall"
+   ],
+   "voice": "translation",
+   "work": "Explanatio Apocalypsis",
+   "work_id": "work.bede.explanatio-apocalypsis"
+  }
+ },
  "text_prefix": "structure/catena/text/",
  "token": "Apoc"
 }

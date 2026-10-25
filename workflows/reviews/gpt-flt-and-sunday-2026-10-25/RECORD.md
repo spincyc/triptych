@@ -87,3 +87,39 @@ remain visible. Currency checks and two focused boundary tests pass. No
 source or code repair was needed. `wisdom-chronology.md` records the actual
 evidence and six-argument display interface. This does not close the global
 chronology audit.
+
+## All Saints reusable-source registration boundary
+
+The registrar's frozen source set has 72 bindings and 75 dispositions: five
+Bede passages admitted, 17 bounded commentary deferrals and 56 non-commentary
+rows. Thirteen new artifacts retain 9,792,728 lawfully distributable bytes;
+the preceding 37 binding dictionaries and pins are unchanged. Source graph,
+Source/Proper/Catena projection currentness, paragraph checks, both publication
+inventories and the family ledger pass. The GPT inventory now contains 151
+publications; the read-only Claude inventory remains at 63. All 163 family
+units remain pending, with no screened-family completion claim.
+
+The generated-data delta is 537 files: 36 Source, seven Catena and 494 Proper.
+The Proper audit identifies 491 generation-digest changes and three inherited
+All Saints registry changes from `1962-11-01` to `F02`, without wording changes.
+Catena has 1,409 admitted fragments and all 2,048 structure files are current.
+
+`source-registration-aggregate.json` records exact commands and exits.
+The complete `make check-sources` attempt returned 2 because the intentionally
+comment-only pre-author F02 scaffold has no `web-edition.toml` yet. Before
+stopping it passed act-history currentness, the source graph, both inventories
+and six curriculum-rights tests. The downstream aggregate recipes did not
+run. No early declaration, metadata or catalogue was fabricated, and no global
+source pass is claimed. The full gate remains required after the accepted
+publications are built and installed. All operations at this boundary are
+terminal; the native research preflight and independent review may now proceed
+under their own exact requirements.
+
+The native runner subsequently accepted source-registration, research
+preflight and a fresh independent research review. The reviewer found no
+blocking issue and verified all 1,779 v5-sealed files, the principal interpretive
+difficulties and source loci, exact selected text boundaries, dispositions,
+qualified chronological alternatives and unresolved dates.
+`research-acceptance.json` summarizes the actual engine outcomes and hashes
+their native result files. That acceptance authorizes drafting, not future
+prose or artifact acceptance. The expansive-study stage is now active.

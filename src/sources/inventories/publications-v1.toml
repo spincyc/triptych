@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-10-23"
+audited_on = "2026-10-25"
 discovery_rule = "src/gpt/**/main.tex"
-publication_count = 150
-source_surface_file_count = 2747
-snapshot = "sha256:1fedf26dc582197fa8526c55448519f7b48bf7d6db03470aee355d98208436a8"
+publication_count = 151
+source_surface_file_count = 2761
+snapshot = "sha256:72321b478be89956e55e652acbbfdaf0c983a7d13c7d499fd5280e0333ea3295"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -1343,6 +1343,17 @@ inventory_state = "sources-categorized"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
+relationship = "local"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
+main = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
 relationship = "local"
 
 [[documents]]
@@ -2748,7 +2759,7 @@ owners = ["articles/faith/council-missal-and-crisis"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-01-death/main.tex"
-sha256 = "65934e0400158c4896a947c8774c7451a3ead4ea4a950b902818ae41d9a103f3"
+sha256 = "4a02d4c12e8403f0f1032f9cd765ae74ca876f5cb5b968fae5f9630026a71bf3"
 kind = "publication-main"
 owners = ["articles/faith/four-last-things-01-death"]
 
@@ -2759,14 +2770,20 @@ kind = "rendered-content"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
+path = "src/gpt/articles/faith/four-last-things-01-death/research/revision-2026-10-25.md"
+sha256 = "dd812ca5c504af1cbca9296211d7df7fd2e9d34ae3635465f336130e76a92719"
+kind = "research-record"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
 path = "src/gpt/articles/faith/four-last-things-01-death/research/scope.md"
-sha256 = "135ed39993f559d61b81d4cd8a353b7dd1f929c1a5629cb0bd6b812a82e11953"
+sha256 = "6aada6d96867cefbced77603cb6e4bed1ceda76e516612614b4b1862e4d0d6a5"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-01-death/research/source-audit.md"
-sha256 = "f480af0fd004ef6ddcb7dddb75a392c08743ba65b59c75b27a187656f42f4cd7"
+sha256 = "379c48049defd345dae4a71e6b26191513e645941599fbdaee31c0ae9a41f064"
 kind = "legacy-source-audit"
 owners = ["articles/faith/four-last-things-01-death"]
 
@@ -2790,13 +2807,13 @@ owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-01-death/web-edition.toml"
-sha256 = "09e34512dd6dd8da6af7abd36c07e276f1271021bc435d4ed72ba8ecb5d74077"
+sha256 = "d13f07e15f71d043b62bb68214d068fcdcd0dbb22a845bd89cd9ad98a717b1f0"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-02-judgment/main.tex"
-sha256 = "1673c58c9424bf3cd648b48ee7899cb04b68a1c9c4a2f906ee8994b83d22ee46"
+sha256 = "94b02eb66c3fdbaf226a606b83ab7482f8ba18849f87e881357896d1e5f5dd6e"
 kind = "publication-main"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
@@ -2808,13 +2825,13 @@ owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-02-judgment/research/scope.md"
-sha256 = "46844214228027efd63422ff1f21771b3d0b1d795dd22d5c96f3db32245362e9"
+sha256 = "fa70c27ebb772fa20bbf60779fdd862872fa5d77ca09dd05861ce2626117e52a"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-02-judgment/research/source-audit.md"
-sha256 = "184d7cde8b78f752893bb4395af5a8edd922bd84d4e4e3cbf277ea7fa1eb790a"
+sha256 = "701e853a2d45a9151a76ee151ac8c0aa1b792fa9d120471d16c0ad0ee6405051"
 kind = "legacy-source-audit"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
@@ -2838,13 +2855,13 @@ owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-02-judgment/web-edition.toml"
-sha256 = "aab32c749cba0a88a6f8c0c39bc2d8ec4863ff6f57fb22764ad22cff72320d67"
+sha256 = "0d49d79a1028d4aa0ced34104ecad5f639e2b7e57f31cb450f3f1cd5c9e2bac8"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-03-hell/main.tex"
-sha256 = "1d6c9abe96ddbb469784a73483c0c6a0c084440af7fc54e491a37ba89abbaaa7"
+sha256 = "f0297747467df2701088eafa241df938176bf168f4f49500273299698a1b041f"
 kind = "publication-main"
 owners = ["articles/faith/four-last-things-03-hell"]
 
@@ -2856,13 +2873,13 @@ owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-03-hell/research/scope.md"
-sha256 = "4f84fc2945c01fd632203793d59c6b9c76c720e5f4211158e57fffb6e94cfa64"
+sha256 = "4974e6ade1e4ff7bf21cb80dcb4a752399cdcb3c1c054c323a55d5aa13fd46b8"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-03-hell/research/source-audit.md"
-sha256 = "c677c308a68e917fbd631f9b472052131988975050a2a3b43e6509233cd8d220"
+sha256 = "d7f35a19b7c5516c364e6b45b7ae0fed36ecf0194a3c5112f132c4b78ca716ec"
 kind = "legacy-source-audit"
 owners = ["articles/faith/four-last-things-03-hell"]
 
@@ -2880,13 +2897,13 @@ owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-03-hell/web-edition.toml"
-sha256 = "17cbeb94ad4dc5deed90ddf6baf60ce1571f5fbd5bfa7a1086e3ae24c8f477e8"
+sha256 = "9a7595740282732728ebb70171e19d729240d3db20227afdcc46b6f44f688a98"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-04-heaven/main.tex"
-sha256 = "eb6da667b7ad864d20ad7bf4235531b371a7f9826d58931eccf023c7ac949b3c"
+sha256 = "11c1fddde04e322df45be718b1611b025628a5b580292a740302e7965a197b02"
 kind = "publication-main"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
@@ -2898,13 +2915,13 @@ owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-04-heaven/research/scope.md"
-sha256 = "325f1624396e4d9f292a9643bd5569f86a339cc9b8340d8e8e85c82e4711fd89"
+sha256 = "36dacdf16c572bbf43acb88ab4ce9b2fabe71347256ba7ebcc000a6d7ad218a0"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-04-heaven/research/source-audit.md"
-sha256 = "62912be692de64aedefc7a8de87aba6f4c29854caf958fdfe4f20acaa1196ee6"
+sha256 = "058f165794771719c7b27ae69720e2c679c7a932c8f27e8784e63637c70e984f"
 kind = "legacy-source-audit"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
@@ -2928,7 +2945,7 @@ owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-04-heaven/web-edition.toml"
-sha256 = "be225a5567b076f82768d805067a8585d2387ddfa4e8c725f74a4b18580a1210"
+sha256 = "24c8ca9f8bd1406e5bf7696e41d684cf9590d242be16dc33a90fcb5b6d9abaf4"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
@@ -2940,7 +2957,7 @@ owners = ["owner.articles.faith.four-last-things"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-shared/revision-review.md"
-sha256 = "eb693ec5ded7052f31b4531bd7a5ce3138057b62409db3833bdd22ccc09ff331"
+sha256 = "7adb4df646223fc876241ecefd24a52f2edaaf39db550e2d99da7570d70d7fb7"
 kind = "rendered-content"
 owners = ["owner.articles.faith.four-last-things"]
 
@@ -11733,6 +11750,84 @@ path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/web
 sha256 = "613a463c7c2d154758a33d7290cc682fbb099f102ef5e23a1be12f84ad794289"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/main.tex"
+sha256 = "6d163e91017ed9445c2ba60363fe57bcc1c88de33a605351cd0861b2f529a2d0"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/propers/retrieved.txt"
+sha256 = "40c7ac7a90c2733b463e4fb3ffb9ee5ef1ccabfda7916ed6eafe92a8cf15116c"
+kind = "local-evidence-payload"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/propers/verified.md"
+sha256 = "aaaab4876be51ac2c21023ca557460a2c9f8c861d5e9c99078b7db45de5cbee6"
+kind = "proper-verification"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/chronology-annotations.tex"
+sha256 = "d396816f55517a7918ac3d74bed09420c977a11f524ec904a923668d7bbf3c51"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/chronology.toml"
+sha256 = "6ab0109bd1bc0e7953a23fa47f546883454948ce34f01a2b42c999633b1cccaa"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/context.md"
+sha256 = "3e8c49cb755cc92abdaf8b0f909eaf81f069a91a5def947fec5d07698d5a4609"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/interpretations.md"
+sha256 = "a2c3d969d4bd190b420942e4d346c83e98b66222f6c59babdbba4e11593a2de2"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/review-dependencies.toml"
+sha256 = "2068ececb8331800655bd7123e38d316933a1a34ab72b26d8c89340094f3b469"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/scope.md"
+sha256 = "bfba609a58e751b44de767ea0ca62a6005bc79293cdcb084b50654b9b16575a7"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/source-bindings.toml"
+sha256 = "39c3420421dfc2014689000c10d2b19e1cd8df4a05e151dfba41a3e7192caba8"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/source-dispositions.toml"
+sha256 = "6211a2028eece2dcfd0a9662af2288c138ea0bd9f917fc60a63d0ffb5c090469"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/source-plan.md"
+sha256 = "6f029afecc4542bc61a2484d4d7df3e048987f4b7cc26d4edbaf3a0eedb67e9b"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/source-registration-handoff.md"
+sha256 = "0eac29c13cfb1a9056fe2224a27096cec84c895ad961ec78ec94d480644ecc24"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards/main.tex"

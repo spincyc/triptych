@@ -939,3 +939,25 @@ Source pins and the deterministic subset/rename recipe are recorded in
 Cistercian 1657 batch3 Pater and source-damage research. The historical Latin Paris Cramoisy 1657 printing is outside its United States publication term. The eleven newly retained exact FIDES native pages 0277–0287, two mechanical page-view JPEGs, bounded three-page PDF/package and checked Latin preserve this historical source; existing pages 0275/0276, page 0275 JPEG and 83-byte annotation are reused unchanged. FIDES marks its object public domain and unrestricted. These historical texts and mechanical facsimiles are excluded from Triptych’s CC BY 4.0 grant. Source acquisition does not imply whole-book collation. The eight-unit functional Pater includes both chant forms and governing rubrics, stopping before Deinde/Libera; final Amén. retains an explicit probable-acute/crease reservation. Wider post-Canon letters and punctuation remain obscured. The earlier 25-unit offertory and 52-unit Canon remain unchanged.
 
 Two original Google Books images from Lyon, stable volume a8329mzqJMUC locators PP7 and PA215, are separately retained under the observed-setting edition. Their original title shows the 1657 Paris Cramoisy imprint, while printed 293 differs visibly in setting from FIDES. No source wording is transferred. They are faithful flat reproductions of the old Latin printing under the bounded United States originality/publication-term basis documented in the retained U.S. Copyright Office materials; the intact Digitized by Google stamp is preserved. This is no general Google licence, contract conclusion or other-jurisdiction claim. Stable viewer locators are distinguished from the actual signed image delivery routes, whose transient parameters are omitted publicly. Modern metadata HTML, cookie-bearing headers, private request controls and redundant review images are not published; factual status/provenance and exact measured dispositions are recorded separately.
+
+
+### All Saints reusable source evidence (25 October 2026)
+
+Bede’s *The Explanation of the Apocalypse*, translated by Edward Marshall
+(Oxford and London: James Parker and Co.,1878), is retained as its complete
+192-page facsimile, a distinct uncorrected text extraction and five separately
+checked verse-comment transcriptions. The historical translation and mechanical
+page reproduction have the recorded United States public-domain basis. Original
+Google digitizer attribution remains intact under
+`src/sources/inventories/google-usage-guidelines-rights-v1.toml`; it is separate
+from Bede’s text and is not offered under Triptych’s CC BY4.0 license. The
+transcription records declare their treatment of line breaks, catchwords and
+translator footnotes; they supply no new translation or original-Latin collation.
+
+The same registration retains bounded original-page evidence from Mame1922,
+Pustet1862, Cummiskey1861, ordinary numbered Lasance/Walsh1945 pages, and
+Schuster’s1927/1930 English volumes. Each artifact names its exact parent,
+selected pages and individual United States rights basis. Lasance’s later
+lettered inserts are excluded. These historical words and images remain outside
+the project license; the restricted1962 whole facsimile, modern CT response,
+dated Ordo HTML and modern Haydock delivery are not distributed by this addition.

@@ -1,0 +1,647 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Printed702–703/PDF783–784 marginal3974–3983", "Printed416–417/PDF497–498 orations1720,1726,1728", "Printed252–253/PDF333–334 Common Preface1057", "PDF15–17,29,31–33: occurrence, commemoration, color, Ordinary and Preface rules"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole cached bytes rehashed; target feast, commemoration orations and Preface independently image-read at200/400dpi. Rubrics independently read at200dpi. Ancient appointed wording only; no whole-facsimile or modern rubric-body republication claimed. See verified.md for actual bounds."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+loci = ["Printed748–750/PDF862–864, All Saints ten bodies"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole cached PDF rehashed; all ten antecedent Latin bodies and boundaries compared at200/400dpi with the target. Historical octave/votive rules excluded; Postcommunion conclusion-cue difference retained. This is Tours1922, not an authenticated Vatican1920 impression."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:2aeeef19bd9fd55efb91a84ab940dd7be0abed5af53bc5d1d63517fb364b7661"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+loci = ["Printed357–358/PDF443–444: three Twenty-third Sunday oration petitions and printed cues"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole cached PDF rehashed. Correct artifact pages443–444 directly inspected at200/400dpi; earlier navigation pages438–439 concern another Sunday and supply no evidence. Petitions equal; conclusion-cue differences retained."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:53cf8c027d0647a872a62d51ef6884807380f4b5050ae98f65506b3578ce4fd8"
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+loci = ["Printed1265–1268/PDF1266–1269 feast", "Printed733,735–736/PDF731,733–734 commemorated Sunday orations"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole cached PDF rehashed. Actual Latin/English images independently read at200/400dpi; historical English retained literally. Body source excludes later lettered inserts; no official1962 English or historical octave appointment claimed."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:376ca4e5db5bd3291c6c11b085c73dafdd1a09a8a7af523652257183cc25d645"
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefatio-communis"
+loci = ["praefatio-communis"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Registered Latin/English TSVs read against independently inspected200/400dpi page. Common body compared with target252–253/PDF333–334; historical asterisk insertion seam and broken seraphim glyph noted in registered transcription. Dialogue is not supplied by this bounded page. Inspection locator: Printedxxviii/PDF39/IAleafn38, Common Preface body and Sanctus."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:d39b3f4e69dd54dea9a2e8fe39c4bae52dea2f71424f674a6a4ca649fdcf8512"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la"
+loci = ["praefatio-communis"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact retained TSV independently read and compared with its registered historical page image at200/400dpi. No modernized or newly generated prayer translation. Inspection locator: Common Preface body row, printedxxviii."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:4dd570d15a594e4ab3b870a81e16e96c4802adaf6907f2f26dd29b76fdaae4ff"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en"
+loci = ["praefatio-communis"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact retained TSV independently read and compared with its registered historical page image at200/400dpi. No modernized or newly generated prayer translation. Inspection locator: Common Preface body row, printedxxviii."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:228733d9248988b0eb27e84b159ee4053384eb72863134056c1c9ed115f753b5"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-phase2-2026-10-23-publish-pentecost-23--main--collect--all--1"
+loci = ["pentecost-23, own Collect; preceding and succeeding formulary boundaries actually inspected.; printed p. 733; PDF p. 731"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Retained historical English body independently compared with actual same-witness page at200/400dpi. Exact short conclusion cue retained; existing same-witness conclusion-table rule read as an audit, with no expansion composed. Inspection locator: pentecost-23/Collect; printed733."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:7dbfe645677c89543ae2a929d62df6d278188f8b6e4a585c079a81795b437f70"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-phase2-2026-10-23-publish-pentecost-23--main--postcommunion--all--1"
+loci = ["pentecost-23, own Postcommunion; preceding and succeeding formulary boundaries actually inspected.; printed p. 736; PDF p. 734"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Retained historical English body independently compared with actual same-witness page at200/400dpi. Exact short conclusion cue retained; existing same-witness conclusion-table rule read as an audit, with no expansion composed. Inspection locator: pentecost-23/Postcommunion; printed736."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:29d9791f74a509df85ed979b5425119d184b5cb95f925271f2cfb64bc58482ce"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-phase2-2026-10-23-publish-pentecost-23--main--secret--all--1"
+loci = ["pentecost-23, own Secret; preceding and succeeding formulary boundaries actually inspected.; printed pp. 735-736; PDF pp. 733-734"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Retained historical English body independently compared with actual same-witness page at200/400dpi. Exact short conclusion cue retained; existing same-witness conclusion-table rule read as an audit, with no expansion composed. Inspection locator: pentecost-23/Secret; printed735-736."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:43a37d87bedbfe649be10b5d7c5d8eda2571b1f9e6ad4894418d3235aad81ebe"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-core193-2026-10-23-publish-omnium-sanctorum--main--collect--all--1"
+loci = ["November 1 All Saints own Prayer.; printed p. 1265; PDF p. 1266"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Retained historical English body independently compared with actual same-witness page at200/400dpi. Exact short conclusion cue retained; existing same-witness conclusion-table rule read as an audit, with no expansion composed. Inspection locator: omnium-sanctorum/Collect; printed1265."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:9de357888e172b9bf35bb0633deae59783614e66355367e8d71f57ac86aadfd3"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-core193-2026-10-23-publish-omnium-sanctorum--main--introit--all--1"
+loci = ["November1 All Saints; complete own Introit, Psalm verse and Glory cue. The earlier source vigil p.1261 is a different Introit and supplies no words here.; printed p. 1265; PDF p. 1266"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Retained historical English body independently compared with actual same-witness page at200/400dpi. Exact short conclusion cue retained; existing same-witness conclusion-table rule read as an audit, with no expansion composed. Inspection locator: omnium-sanctorum/Introit; printed1265."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:4e5577337c79af217976693b170748aa031c723b0516a28712da2ed443a503aa"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-core193-2026-10-23-publish-omnium-sanctorum--main--postcommunion--all--1"
+loci = ["November 1 All Saints own Postcommunion.; printed p. 1268; PDF p. 1269"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Retained historical English body independently compared with actual same-witness page at200/400dpi. Exact short conclusion cue retained; existing same-witness conclusion-table rule read as an audit, with no expansion composed. Inspection locator: omnium-sanctorum/Postcommunion; printed1268."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:042c0a5c310d18670f03b7bcdf2f403358a23180ae27ee1095369675e785dca0"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-core193-2026-10-23-publish-omnium-sanctorum--main--secret--all--1"
+loci = ["November 1 All Saints own Secret; source prints our selves as two words.; printed p. 1268; PDF p. 1269"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Retained historical English body independently compared with actual same-witness page at200/400dpi. Exact short conclusion cue retained; existing same-witness conclusion-table rule read as an audit, with no expansion composed. Inspection locator: omnium-sanctorum/Secret; printed1268."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:2cf986bc9797474a5d017905d8de549e90fc02f717ebb1bfaf83cb2f59d75593"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.32.1-22", "Ps.33.1-23"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact registered verse artifact read for the stated complete canonical contexts and the quoted English selections. Biblical wording is kept distinct from Missal framing and adaptations; no original-print facsimile collation claimed. Inspection locator: Psalms32–33 complete."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-25-wisdom-2fe4073b"
+loci = ["Wis.1.1-5.24"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact registered verse artifact read for the stated complete canonical contexts and the quoted English selections. Biblical wording is kept distinct from Missal framing and adaptations; no original-print facsimile collation claimed. Inspection locator: Wisdom1–5 complete."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:ba6486854e8c3bfd51466a3a0992b72fe10788c371c5839b92799410b5cd21f7"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = ["Matt.4.18-25", "Matt.5.1-7.29", "Matt.11.1-30"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact registered verse artifact read for the stated complete canonical contexts and the quoted English selections. Biblical wording is kept distinct from Missal framing and adaptations; no original-print facsimile collation claimed. Inspection locator: Matthew4:18–25;5–7 and11 complete."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-73-apocalypse-9ae5c352"
+loci = ["Apoc.1.1-20", "Apoc.6.1-8.13"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact registered verse artifact read for the stated complete canonical contexts and the quoted English selections. Biblical wording is kept distinct from Missal framing and adaptations; no original-print facsimile collation claimed. Inspection locator: Apocalypse1;6–8 complete."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:b28bde358a8ffc3aa2486baeeeda9bb23021b0bab1a8dccd447d33b2f7225cdb"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+loci = ["Augustine Sermon on the MountI.1.1–I.4.12;physical580–685,788–1095"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Findlay English, Schaff revision/notes, exact held CCEL collection independently read; paragraph argument and author versus editorial footnotes distinguished. Claim fidelity checked in this electronic witness; no verified identity with a particular nineteenth-century impression or new print-image collation."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:7f21e16b88aa6eba6556891bfa99280fd5662bf42ef391de140ad6d2960b329a"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9"
+loci = ["ChrysostomMatthewXV.1–9;physical8742–9210", "MatthewXXXVIII.2–5;physical23850–24065"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Prevost translation/Riddle revision in exact registered CCEL collection independently read, including sensible-earth alternative and qualifying conditions on persecution. Claim fidelity checked; no original Greek collation or verified historical printing identity."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:0209917237dc0599614ab5b3a70d1563de63045007c4a8d4eb7776dd6ec37992"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+loci = ["32.1", "33.14-15", "87.5"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact English text independently read for three stated arguments. Native Latin versus English Psalm/paragraph numbering explicitly distinguished. The latter is directWisdom3:1 reuse; no continuous Wisdom commentary or image-collated Latin claim. Inspection locator: NPNF PsalmXXXIII§1 and opening context,physical7871–7920; NPNF PsalmXXXIV§§13–24,physical8245–8490; NPNF PsalmLXXXVIII§4 with context,physical43400–43490."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+loci = ["20.9"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Dods1871 volumeII exact registered derivative independently read. Native Apocalypse20 lemma and doctrinal illumination for this Mass distinguished. Departed souls remain members while resurrection remains future; no directApocalypse7 attribution. Inspection locator: XX.9 and immediate preceding context;physical14530–14665."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.moralia-in-iob.2026-10-12-library-of-fathers-lectionarycentral.complete-text-d9f9ed86"
+loci = ["12.5.6", "12.5.7"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact registered Library of Fathers English independently read. DirectWisdom3:2 reuse inJob exegesis; moral fruit of martyrdom versus alternate bodily-resurrection interpretation distinguished. No historical scan collation or continuousWisdom commentary claimed. Inspection locator: XII.5.6–7 onJob14:8–9;physical19520–19585."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:f86bcd2a0e74aedfede4a2a00415c5e8a1a545c525df8ba06e480a9fd97a0e42"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-09-05.cps31-html-e2d50b43"
+loci = ["33.n7", "33.n8", "33.n9", "33.n10", "33.n11", "33.n12", "33.n13"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole saved response hash matched registered artifact; exact paragraphs independently read through local extraction. Several explanations of lack retained. Modern CT artifact is restricted; original Latin quotation/public text derivative not authorized. No historical page collation claimed. Inspection locator: SuperPsalmo33 nn.7–13, especially10–11, CT87111–87117."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:11dc9cdea389b800174e01e20c09884009e778b75849f6accb566c6137d81489"
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-volume-5-english-1930.ia-volume-5-ocr-65192aa1"
+loci = ["November1 Feast of All Saints;printed208–212;physical13900–14180"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact retained OCR independently read at the indicated full-chapter locus. Finding-aid reading was subsequently controlled by independently read same-volume PDF images: III printed186–189/PDF202–205; V printed208–212/PDF228–232. See companion PDF binding. OCR is not itself a print-image witness or an admitted Catena fragment."
+source_fingerprint = "sha256:e195464aa99196e7adecce391e1e921f36f27880f016c1eb9b2b12eb26379a51"
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-volume-3-ocr-4d8c8988"
+loci = ["Twenty-third Sunday after Pentecost;printed186–189;physical11586–11788"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact retained OCR independently read at the indicated full-chapter locus. Finding-aid reading was subsequently controlled by independently read same-volume PDF images: III printed186–189/PDF202–205; V printed208–212/PDF228–232. See companion PDF binding. OCR is not itself a print-image witness or an admitted Catena fragment."
+source_fingerprint = "sha256:04f9c86491a663faa60eb325af91ca9056441e83aadb4608fbb0d8b87136a32f"
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
+loci = ["vol-xi-p-499", "vol-xi-p-500"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact retained OCR independently read at stated locus. This is inspection of a finding aid: quotations and final source-dependent wording require historical page-image control at source registration/review. This use supplies leads/qualified reasoning, not a newly admitted Catena fragment. The continuation writer is not assumed from the series founder. Inspection locator: Secret/Postcommunion,printed499–500;physical29870–29965."
+source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01594b-7f47696f-article-text"
+loci = ["Apocalypse,Time and place,physical33 with literary context"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact retained article-only derivative independently inspected for material returned chronology claims and qualifications. Source testimony is attributed at its dated edition, not substituted for generated dates; no modern scholarly consensus claimed."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:cadc306783f19877e45c114ebfa32c0e13c444f55be2bec37b661bd1c6eefada"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef-article-text"
+loci = ["Gospel ofStMatthew,Date and place,physical201–203"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact retained article-only derivative independently inspected for material returned chronology claims and qualifications. Source testimony is attributed at its dated edition, not substituted for generated dates; no modern scholarly consensus claimed."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:a5698ebe70292d9dc1c32df2c8cc440778cb8d0dc2f840f11d127482a4c4d5dd"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text"
+loci = ["The New Testament,physical29,35"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact retained article-only derivative independently inspected for material returned chronology claims and qualifications. Source testimony is attributed at its dated edition, not substituted for generated dates; no modern scholarly consensus claimed."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc28dc4e8f410d4"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-15.new-york-1912.newadvent-15666a-999fbc07-article-text"
+loci = ["Book ofWisdom,physical23–29"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact retained article-only derivative independently inspected for material returned chronology claims and qualifications. Source testimony is attributed at its dated edition, not substituted for generated dates; no modern scholarly consensus claimed."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:06b80c78cc59f0d76590a5994e34bf394b98cb1911ea10a37853548546cc220c"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"
+loci = ["King David,opening paragraph"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact retained article-only derivative independently inspected for material returned chronology claims and qualifications. Source testimony is attributed at its dated edition, not substituted for generated dates; no modern scholarly consensus claimed."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:f6d97140146a6cb3adcbb583db08c82f18a5f42f59b85e884f8feabb8380640d"
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction-2026-09-28"
+loci = ["Whole Psalms introduction;superscriptions and pre-Maccabean composition-bound paragraph"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact cached complete response rehashed and matched this registered dated artifact; introduction independently read. Existing chronology passage preserves older testimony; no claim made to inspect the unavailable oldedaba4b4 response. Modern protected text summarized without retained public payload."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:efc1b3e8a57dbda5d9bcb97137ea9911558ec6ec792b2247b0e8e7c8fed07cc3"
+
+[[bindings]]
+source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-21-achis-geth-chronology"
+loci = ["1K.21.1-15"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole cached facsimile rehashed against registered artifact; actual page images independently read. Marker inheritance and reportedUssher qualification retained. No fresh biblical date inferred and no date of captivity imported intoPsalm33. Inspection locator: PDF396,398–399;printed366,368–369."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:03f8280e24c117cf77439fcb27b944cda1e49ae923106239d959c815e1f3d7a0"
+
+[[bindings]]
+source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology"
+loci = ["Ps.70.1"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole cached facsimile rehashed against registered artifact; actual page images independently read. Marker inheritance and reportedUssher qualification retained. No fresh biblical date inferred and no date of captivity imported intoPsalm33. Inspection locator: PDF776;printed740;Usher-attributed chronology paragraph."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:990320f2c5e36d93cd853a817851aaae26d68f0b2434706f3e5162f92f2c709f"
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-scan-volume-3-410f6d11"
+loci = ["Printed186–189/PDF202–205; Twenty-third Sunday after Pentecost"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole registered volume III bytes rehashed. All indicated chapter pages independently image-read at200dpi, after full OCR context reading. Printed text controls the documented paraphrases. Volume V actually prints the erroneous chapter label viii; its vision is Apocalypse7. No historical rubrics or medieval Preface govern1962. No whole-volume inspection or automatic Catena admission claimed."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:765e56515c01f4983b213615c6241c91fdb853e38d082a70ca61373369b43f6c"
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-volume-5-english-1930.ia-volume-5-pdf-016b212d"
+loci = ["Printed208–212/PDF228–232; November1 Feast of All Saints"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole registered volume V bytes rehashed. All indicated chapter pages independently image-read at200dpi, after full OCR context reading. Printed text controls the documented paraphrases. Volume V actually prints the erroneous chapter label viii; its vision is Apocalypse7. No historical rubrics or medieval Preface govern1962. No whole-volume inspection or automatic Catena admission claimed."
+verified_on = "2026-10-25"
+source_fingerprint = "sha256:958743cdbcdfcb5006851f64561a81c0f1c81ba915e01d4c7cda7d228f1511b1"
+
+[[bindings]]
+source_id = "artifact.bede.explanatio-apocalypsis.1878-marshall-parker.whole-scan-65cb5fc5"
+loci = ["BookI chapterVII onApoc7:1-17; printed44-54; image checks46,52-53/PDF58,64-65", "Prefaceiv-v/PDF4-5; title/PDF1"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete192-page original scan rehashed. ChapterVII context independently read during research; central numbered comments4,9-12 and title/preface independently image-read during registration. English is Edward Marshall1878, based on Giles1844. Exact checked excerpt bodies and edges are separately registered. No full-chapter image collation or original-Latin collation claimed."
+source_fingerprint = "sha256:b6bcc7fc92307e3606218a6535077932562aaa22762dc446e4a2efd5b2cb10b2"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "artifact.bede.explanatio-apocalypsis.1878-marshall-parker.whole-text-layer-f4e3b01e"
+loci = ["BookI chapterVII; whole chapter context and chapterVI/VIII boundaries"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete registered PDF text extraction used as a finding aid in research; central words were separately checked against the scan. Full extraction is retained uncorrected; not itself an admitted fragment."
+source_fingerprint = "sha256:9417c4a1b7403906d4d403f6f8fd4312262520c187a922d0f845f776b2bd8516"
+
+[[bindings]]
+source_id = "artifact.bede.explanatio-apocalypsis.1878-marshall-parker.chapter-7-checked-comments-f98721e2"
+loci = ["BookI chapterVII numbered comments4,9,10,11,12"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Five full natural verse-comment bodies independently checked against printed46,52-53; all alternate interpretations retained. Corrected text is separate from the original uncorrected text layer."
+source_fingerprint = "sha256:9f880dfb5a2158f60ac9e952b629143952340029d96016585e93e2496e50ea2f"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "artifact.fsspx.ordo.2026-10-25-web.default-2026-11-01-a7d8fbbf"
+loci = ["Default1November2026 date heading, All Saints, first class, white, XXIII Sunday commemoration"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact complete dated institutional response rehashed; independently inspected by research for calendar corroboration only. No text authority, universal canonical permission or payload-rights finding is inferred."
+source_fingerprint = "sha256:acea80b759fa0b2a9348aa131ee29e3a7c57dcf8a10a236904b54f20d7382743"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-lesson-la-checked-2026-10-25"
+loci = ["1962 printed702–703/PDF783–784 no.3976; Mame1922 printed748–749/PDF862–863; Apoc7:2–12 with liturgical incipit"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact bounded la historical All Saints lesson, checked in the original research at200/400dpi; independently reconciled with same-witness images and literal boundaries during registration. Retained as historical source text, not a substituted Bible string or new translation."
+source_fingerprint = "sha256:c4ab3a34f654fcae7713f1e930e3b0eab39870c106cab36ec4e23421d3d969f6"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-gradual-la-checked-2026-10-25"
+loci = ["1962 printed703/PDF784 no.3977; Mame1922 printed749/PDF863; Ps33:10 and second clause11"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact bounded la historical All Saints gradual, checked in the original research at200/400dpi; independently reconciled with same-witness images and literal boundaries during registration. Retained as historical source text, not a substituted Bible string or new translation."
+source_fingerprint = "sha256:6e1d2bab59d115d1bbf72521202e86f957c686107bdc38c333e10dbd36c3e319"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-alleluia-la-checked-2026-10-25"
+loci = ["1962 printed703/PDF784 no.3978; Mame1922 printed749/PDF863; Mt11:28"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact bounded la historical All Saints alleluia, checked in the original research at200/400dpi; independently reconciled with same-witness images and literal boundaries during registration. Retained as historical source text, not a substituted Bible string or new translation."
+source_fingerprint = "sha256:20a5f53198dcfd4fbb7542b84436c7d71538cf5c42c9abc5efe1806eae1f3bec"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-gospel-la-checked-2026-10-25"
+loci = ["1962 printed703/PDF784 no.3979; Mame1922 printed749/PDF863; Mt5:1–12a; Credo is outside body"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact bounded la historical All Saints gospel, checked in the original research at200/400dpi; independently reconciled with same-witness images and literal boundaries during registration. Retained as historical source text, not a substituted Bible string or new translation."
+source_fingerprint = "sha256:0e41b8094efa2f464aca40651a2acd0c28116f2b4eab074205e84b43b01cdff9"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-offertory-la-checked-2026-10-25"
+loci = ["1962 printed703/PDF784 no.3980; Mame1922 printed750/PDF864; selected/adapted Wis3:1,2,3"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact bounded la historical All Saints offertory, checked in the original research at200/400dpi; independently reconciled with same-witness images and literal boundaries during registration. Retained as historical source text, not a substituted Bible string or new translation."
+source_fingerprint = "sha256:c4738c69201836edb9d99305d86e9bb9501f798de7dceff7109f6dff64aaa763"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-communion-la-checked-2026-10-25"
+loci = ["1962 printed703/PDF784 no.3982; Mame1922 printed750/PDF864; Mt5:8–10"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact bounded la historical All Saints communion, checked in the original research at200/400dpi; independently reconciled with same-witness images and literal boundaries during registration. Retained as historical source text, not a substituted Bible string or new translation."
+source_fingerprint = "sha256:362182ef1040e2c451d277e648acf79daf76b77a005f531fc0cac6e6988f4d47"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.all-saints-lesson-en-checked-2026-10-25"
+loci = ["printed1265–1266/PDF1266–1267"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact bounded en historical All Saints lesson, checked in the original research at200/400dpi; independently reconciled with same-witness images and literal boundaries during registration. Retained as historical source text, not a substituted Bible string or new translation."
+source_fingerprint = "sha256:e882bf564fcf16cdd31af9ba3f2607747fc11a131af365d6c4a848d12e4fd8ab"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.all-saints-gradual-en-checked-2026-10-25"
+loci = ["printed1266/PDF1267"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact bounded en historical All Saints gradual, checked in the original research at200/400dpi; independently reconciled with same-witness images and literal boundaries during registration. Retained as historical source text, not a substituted Bible string or new translation."
+source_fingerprint = "sha256:990ed58555e9de0a82c62b34253b1e6343bf3f226f7ec0fc0cbb7292b54d746d"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.all-saints-alleluia-en-checked-2026-10-25"
+loci = ["printed1267/PDF1268"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact bounded en historical All Saints alleluia, checked in the original research at200/400dpi; independently reconciled with same-witness images and literal boundaries during registration. Retained as historical source text, not a substituted Bible string or new translation."
+source_fingerprint = "sha256:f9cd143626fcaaf886337cdb469a68713272bef9959222a9cd4a9fcbbdac22a7"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.all-saints-gospel-en-checked-2026-10-25"
+loci = ["printed1267/PDF1268"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact bounded en historical All Saints gospel, checked in the original research at200/400dpi; independently reconciled with same-witness images and literal boundaries during registration. Retained as historical source text, not a substituted Bible string or new translation."
+source_fingerprint = "sha256:0f06af03bab65c34638cb64c9a5c91114b2d2aa021fb3ce71a5aee04079926e1"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.all-saints-offertory-en-checked-2026-10-25"
+loci = ["printed1267–1268/PDF1268–1269"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact bounded en historical All Saints offertory, checked in the original research at200/400dpi; independently reconciled with same-witness images and literal boundaries during registration. Retained as historical source text, not a substituted Bible string or new translation."
+source_fingerprint = "sha256:cb6bfd0dbc981ad536e37580861fe248f470ef16026e90b247fb5f9ede170292"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.all-saints-communion-en-checked-2026-10-25"
+loci = ["printed1268/PDF1269"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact bounded en historical All Saints communion, checked in the original research at200/400dpi; independently reconciled with same-witness images and literal boundaries during registration. Retained as historical source text, not a substituted Bible string or new translation."
+source_fingerprint = "sha256:8437a280af261c81acd9ed157d9e247400c3dbc7a5fd5de9f05ea6b9c3884efb"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-25-f02.f02-lesson"
+loci = ["1962 printed702–703/PDF783–784 no.3976; Mame1922 printed748–749/PDF862–863; Apoc7:2–12 with liturgical incipit"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bounded 1962 editorial projection reconciled to research’s checked words, exact target and independently lawful historical antecedent. Actual longer commemoration cues remain distinguished from historical short cues; no source-image redistribution."
+source_fingerprint = "sha256:91e30a0d11e8f9d301a18fb5a08b3329217c0d0137ae8e68f6a89bdca9f6eb1f"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-25-f02.f02-gradual"
+loci = ["1962 printed703/PDF784 no.3977; Mame1922 printed749/PDF863; Ps33:10 and second clause11"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bounded 1962 editorial projection reconciled to research’s checked words, exact target and independently lawful historical antecedent. Actual longer commemoration cues remain distinguished from historical short cues; no source-image redistribution."
+source_fingerprint = "sha256:730e7d1db6dcf03fab824313d5ccaba9c1d130106120d07feba65ce0a20994b0"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-25-f02.f02-alleluia"
+loci = ["1962 printed703/PDF784 no.3978; Mame1922 printed749/PDF863; Mt11:28"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bounded 1962 editorial projection reconciled to research’s checked words, exact target and independently lawful historical antecedent. Actual longer commemoration cues remain distinguished from historical short cues; no source-image redistribution."
+source_fingerprint = "sha256:66ae34f79fde600bd18b2cb5c41efb165938a30e487eee7f586e327d9d88cc48"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-25-f02.f02-gospel"
+loci = ["1962 printed703/PDF784 no.3979; Mame1922 printed749/PDF863; Mt5:1–12a; Credo is outside body"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bounded 1962 editorial projection reconciled to research’s checked words, exact target and independently lawful historical antecedent. Actual longer commemoration cues remain distinguished from historical short cues; no source-image redistribution."
+source_fingerprint = "sha256:be928f5b3f4f2af77c52fd0eef2c449599d88c48131d2f5bc301ef2a807a364c"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-25-f02.f02-offertory"
+loci = ["1962 printed703/PDF784 no.3980; Mame1922 printed750/PDF864; selected/adapted Wis3:1,2,3"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bounded 1962 editorial projection reconciled to research’s checked words, exact target and independently lawful historical antecedent. Actual longer commemoration cues remain distinguished from historical short cues; no source-image redistribution."
+source_fingerprint = "sha256:a314355815409190fbd23c1109e9213fc4ea3819295f685fff836a84c8e020ed"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-25-f02.f02-communion"
+loci = ["1962 printed703/PDF784 no.3982; Mame1922 printed750/PDF864; Mt5:8–10"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bounded 1962 editorial projection reconciled to research’s checked words, exact target and independently lawful historical antecedent. Actual longer commemoration cues remain distinguished from historical short cues; no source-image redistribution."
+source_fingerprint = "sha256:de14ffe5c02f8099611ab472ce79ba50488ab075c5dc3a21cd7080a88d56cdd4"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-25-f02.f02-commemoration-collect"
+loci = ["1962 printed416/PDF497 no.1720; Pustet1862 printed357/PDF443, petition with Per Dominum cue"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bounded 1962 editorial projection reconciled to research’s checked words, exact target and independently lawful historical antecedent. Actual longer commemoration cues remain distinguished from historical short cues; no source-image redistribution."
+source_fingerprint = "sha256:9cffad2293c8cff690509c01f4ef2cc046af1a5da5bc5332d55bc162ccab305e"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-25-f02.f02-commemoration-secret"
+loci = ["1962 printed417/PDF498 no.1726; Pustet1862 printed358/PDF444, petition with Per Dominum nostrum cue"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bounded 1962 editorial projection reconciled to research’s checked words, exact target and independently lawful historical antecedent. Actual longer commemoration cues remain distinguished from historical short cues; no source-image redistribution."
+source_fingerprint = "sha256:4cc95ff90077c6058f6754774cb6f61b02f92efb6cf24708364ea71f5ffb7022"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-25-f02.f02-commemoration-postcommunion"
+loci = ["1962 printed417/PDF498 no.1728; Pustet1862 printed358/PDF444, petition with Per Dominum cue"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bounded 1962 editorial projection reconciled to research’s checked words, exact target and independently lawful historical antecedent. Actual longer commemoration cues remain distinguished from historical short cues; no source-image redistribution."
+source_fingerprint = "sha256:3ef36ccf05cf5b669686d78061ab7fd569dde9ee7cd34ec4ddeda1128c960f64"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-saints-introit"
+loci = ["All Saints Introit, editorial projection physical lines 1-3; Mame 1922 artifact p. 862 / printed p. 748, left; 1962 control artifact p. 783 / printed p. 702, no. 3974."]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Existing four-own-proper projection independently reread and compared with this research’s target and historical image evidence. Existing immutable identity and fingerprint are reused; original2026-10-20 verification is not restamped."
+source_fingerprint = "sha256:7648f7519675d4297c82caa39ca0b441c586a5cff6a1b15ec207c5415b1f83f3"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-saints-collect"
+loci = ["All Saints Collect, editorial projection physical lines 5-8; Mame 1922 artifact p. 862 / printed p. 748, left; 1962 control artifact p. 783 / printed p. 702, no. 3975."]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Existing four-own-proper projection independently reread and compared with this research’s target and historical image evidence. Existing immutable identity and fingerprint are reused; original2026-10-20 verification is not restamped."
+source_fingerprint = "sha256:97492e46ccd620720ea5e114a99f2a0d94898c29abeb5e8874313457698c4288"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-saints-secret"
+loci = ["All Saints Secret, editorial projection physical lines 10-12; Mame 1922 artifact p. 864 / printed p. 750, left; 1962 control artifact p. 784 / printed p. 703, no. 3981."]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Existing four-own-proper projection independently reread and compared with this research’s target and historical image evidence. Existing immutable identity and fingerprint are reused; original2026-10-20 verification is not restamped."
+source_fingerprint = "sha256:15ac1fa379a906c623b0ae99316762de1cfa349c57a0e39922d91f3cf0f48cbb"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-saints-postcommunion"
+loci = ["All Saints Postcommunion, editorial projection physical lines 14-15; Mame 1922 artifact p. 864 / printed p. 750, left bottom through right top on same page; 1962 control artifact p. 784 / printed p. 703, no. 3983."]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Existing four-own-proper projection independently reread and compared with this research’s target and historical image evidence. Existing immutable identity and fingerprint are reused; original2026-10-20 verification is not restamped."
+source_fingerprint = "sha256:cd1533bce5715a3f326be3fe495946166ee3f83eb5b2393dfb7161d847a87364"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.all-saints-research-chapter-volume-3-2a21487d"
+loci = ["Complete retained chapter pages; native printed186-189 forIII or208-212 forV"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bounded chapter-page derivative of independently rehashed whole PDF. All selected original pages were image-read in research; retained pages supply the full cited chapter offline. No complete literal excerpt or automatic Catena admission follows."
+source_fingerprint = "sha256:3656301ddd8d9c493064320586a18c57e4e20f6a03be8fba1034157a5c230c91"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-volume-5-english-1930.all-saints-research-chapter-volume-5-d55b5905"
+loci = ["Complete retained chapter pages; native printed186-189 forIII or208-212 forV"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bounded chapter-page derivative of independently rehashed whole PDF. All selected original pages were image-read in research; retained pages supply the full cited chapter offline. No complete literal excerpt or automatic Catena admission follows."
+source_fingerprint = "sha256:dc5ac554b9eee66d99795e0c50b1425263e577d9e90327edb5afecee68d7dca4"
+verified_on = "2026-10-25"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-1922-pages-0682b2da"
+loci = ["Selected complete parent PDF pages 862,863,864"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-25"
+context = "Lawful retained bounded facsimile evidence for the exact appointed-text words checked in research; source appointment, literal incipits and actual conclusion cues remain edition-specific. No whole-book or neighbouring-text collation claim."
+source_fingerprint = "sha256:46bedc4234316ad0523378540f306aa94f51def7fcbd94a2e9cd9f2e5fb1898a"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.pentecost-23-prayer-pages-7e6ef53b"
+loci = ["Selected complete parent PDF pages 443,444"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-25"
+context = "Lawful retained bounded facsimile evidence for the exact appointed-text words checked in research; source appointment, literal incipits and actual conclusion cues remain edition-specific. No whole-book or neighbouring-text collation claim."
+source_fingerprint = "sha256:184d1fd95966d97dfb12b66051da32de2511a47fa2225c86fdf490536e2a713a"
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.f02-ordinary-numbered-pages-0ad238ce"
+loci = ["Selected complete parent PDF pages 731,733,734,1266,1267,1268,1269"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-25"
+context = "Lawful retained bounded facsimile evidence for the exact appointed-text words checked in research; source appointment, literal incipits and actual conclusion cues remain edition-specific. No whole-book or neighbouring-text collation claim."
+source_fingerprint = "sha256:99f51f9058211f231790b14b8007636c964c7c1243019a3623190550ea3305a9"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.common-preface-page-0a982c76"
+loci = ["praefatio-communis"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-25"
+context = "Lawful retained bounded facsimile evidence for the exact appointed-text words checked in research; source appointment, literal incipits and actual conclusion cues remain edition-specific. No whole-book or neighbouring-text collation claim."
+source_fingerprint = "sha256:c3c7f6d5f5c3f8024362cae944e9bc214b21976db0dd65c51387b8a45f75749c"

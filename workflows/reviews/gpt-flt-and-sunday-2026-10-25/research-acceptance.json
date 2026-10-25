@@ -1,0 +1,27 @@
+{
+  "record_type": "native-research-acceptance-summary",
+  "run": "fb0417d471635250",
+  "workflow": "proper-study",
+  "version": 15,
+  "seed_commit": "24c1b7ce1781f79937f57b66c221b0ed82e219d9",
+  "results": {
+    "source-registration-0000": {
+      "stage": "source-registration",
+      "iteration": 0,
+      "disposition": "PASS",
+      "summary": "Registered every checked witness, completed72 exact bindings and75 source dispositions, retained lawful source evidence, and admitted five image-checked Bede comments. Local graph, disposition and Catena admission checks pass; the broad source check records the expected pre-author web-declaration absence without claiming a global PASS.",
+      "native_result_sha256": "78c661f113fbfa0aeea7e8e114279888588e3e18c23a93a78bfaeaf656df7a8b"
+    },
+    "research-review-0000": {
+      "stage": "research-review",
+      "iteration": 0,
+      "disposition": "PASS",
+      "summary": "Independently reviewed GPT F02's complete-mode context, fourteen appointments, collation records, reception matrix, interpretations, 72 bindings, 75 dispositions and chronology against the sealed evidence: Bede I on Apocalypse 7:4 and 7:9\u201312 with Augustine City of God XX.9 supports the communion argument, while Augustine Sermon on the Mount I.1.3\u2013I.4.12 and Chrysostom Matthew XXXVIII.3\u20135 explain humility, Christ's rest and costly discipleship without removing suffering; their substantive contributions, distinct four senses and editorial whole-Mass connections are adequately supported. PASS authorizes drafting from this bounded research, retaining Bede's alternatives, the Fathers' different earth interpretations, exact selected/adapted text boundaries, qualified composition dates and unresolved event/occasion dates; it neither completes the open global chronology audit nor accepts future prose or artifacts, and the unverified Breviary/Gloria evidence and deferred corpus admissions remain explicitly outside the verified claims.",
+      "native_result_sha256": "81781b5341455b26679c3031cbc64f6c8f7533e333a1e17c61cc0db3dd944447",
+      "findings": [],
+      "review_contract": "proper-study-v5",
+      "sealed_files": 1779
+    }
+  },
+  "boundary": "This derives from actual native results; raw engine records will be archived by the owning workflow. Future prose, artifacts and global chronology acceptance are excluded."
+}
