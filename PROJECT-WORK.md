@@ -5,7 +5,26 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-23.
+Last reconciled: 2026-10-25.
+
+## GPT Last Things and next Sunday propers, 2026-10-25
+
+<!-- promised-deliverable: gpt-flt-and-sunday-2026-10-25 -->
+
+**In progress.** Apply the recent Catholic voice and plain-drafting guidance
+to the four GPT Four Last Things essays, preserving their substantive
+source-based spiritual reading and approximate existing extent. Complete the
+GPT 1962 proper-study workflow for next Sunday, 1 November 2026, after verifying
+the appointed Mass and its permanent identity. Use independent cold review,
+resolve material findings, review every affected rendered page and web edition,
+and publish the validated result to `main` with deployment verification.
+The Claude publications are outside this provider's revision scope.
+
+Work begins from clean `6a1fe6e33`, fast-forwarded from `origin/main`, on
+workspace branch `feature/propers/codex`. Commits stay on that branch;
+validated publication to `main` uses a genuine fast-forward ref update,
+without changing the local branch or rewriting history. The owning record is
+`workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md`.
 
 ## GPT proper-study register revision, 2026-10-23
 
