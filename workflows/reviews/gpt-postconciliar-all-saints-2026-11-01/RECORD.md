@@ -381,3 +381,11 @@ paths. Rights narrative, authorization policy and unrelated rows remain exact.
 All Saints installed PDFs, canonical Markdown, all 80 archive file hashes and
 frozen CYCLES remain unchanged. Merged aggregate/site checks and cold rechecks
 remain required before publication.
+
+The complete merged source aggregate, production site, Pages verifier,
+release/ledger and tool-registry checks all pass at
+`b68df8feb75f3fe8c7cbc60646df2951caf046a7`. The current validation record
+contains actual numeric exits and merged input objects, with the EOF wording
+corrected to two file-level diagnostics. Main subsequently adds only PROJECT
+and promises receipt updates in `57aa30629fff0a05395b1b7449d5e66bd9d073ac`;
+those records will be preserved without changing tested product inputs.
